@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?><plugin>
   <!--Defined extension-points for pre- and post-procession-->
-  <extension-point id="ProcessingPgFwd" name="org.gravity.tgg.modisco.processing.pg.fwd" schema="schema/ProcessingPgFwd.exsd"/>
-  <extension-point id="ProcessingPgBwd" name="org.gravity.tgg.modisco.processing.pg.bwd" schema="schema/ProcessingPgBwd.exsd"/>
+  <extension-point id="ProcessingPgFwd" name="org.gravity.tgg.modisco.pm.processing.pg.fwd" schema="schema/ProcessingPgFwd.exsd"/>
+  <extension-point id="ProcessingPgBwd" name="org.gravity.tgg.modisco.pm.processing.pg.bwd" schema="schema/ProcessingPgBwd.exsd"/>
   <extension-point id="ProcessingModiscoBwd" name="org.gravity.tgg.modisco.processing.modisco.bwd" schema="schema/ProcessingModiscoBwd.exsd"/>
   <!--Registred extensions of this plugin as converter modisco -> pg-->
   <extension point="org.gravity.eclipse.converters">
-    <converter class="org.gravity.tgg.modisco.MoDiscoTGGConverterFactory"/>
+    <converter class="org.gravity.tgg.modisco.pm.MoDiscoTGGConverterFactory"/>
   </extension>
   <!--Registred extensions for pre- and post processing-->
-  <extension point="org.gravity.tgg.modisco.ProcessingModiscoBwd">
-    <processor priority="10" processor="org.gravity.tgg.modisco.processing.modisco.MoDiscoProcessorBwd"/>
+  <extension point="org.gravity.tgg.modisco.pm.ProcessingModiscoBwd">
+    <processor priority="10" processor="org.gravity.tgg.modisco.pm.processing.modisco.MoDiscoProcessorBwd"/>
   </extension>
-  <extension point="org.gravity.tgg.modisco.ProcessingPgFwd">
-    <processor priority="10" processor="org.gravity.tgg.modisco.processing.pg.ProgramGraphProcessorFWD"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.dynamic_package">
-    <resource location="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore" uri="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore"/>
+  <extension point="org.gravity.tgg.modisco.pm.ProcessingPgFwd">
+    <processor priority="10" processor="org.gravity.tgg.modisco.pm.processing.pg.ProgramGraphProcessorFWD"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.tgg.modisco.ModiscoPackage" genModel="model/Modisco.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore"/>
+    <package class="org.gravity.tgg.modisco.pm.PmPackage" genModel="model/Pm.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.tgg.modisco.Rules.RulesPackage" genModel="model/Modisco.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore#//Rules"/>
+    <package class="org.gravity.tgg.modisco.pm.Rules.RulesPackage" genModel="model/Pm.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules"/>
   </extension>
 </plugin>

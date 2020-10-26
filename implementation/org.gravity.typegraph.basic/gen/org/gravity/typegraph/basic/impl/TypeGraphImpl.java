@@ -617,12 +617,31 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		final String name = fullyQualifiedName.substring(index + 1);
 		final TPackage tPackage = getPackage(defaultPackage);
 		if (tPackage != null) {
+			String[] types = name.split("\\$");
+			TAbstractType tOuterType = null;
 			for (final TAbstractType tType : tPackage.getOwnedTypes()) {
-				if (tType.getTName().equals(name) || tType.getTName().contentEquals(fullyQualifiedName)) {
+				if (tType.getTName().equals(types[0])) {
+					tOuterType = tType;
+					break;
+				}
+			}
+			if (tOuterType != null) {
+				TAbstractType tType = tOuterType;
+				for (int i = 1; i < types.length; i++) {
+					EList<TAbstractType> innerTypes = tType.getInnerTypes();
+					tType = null;
+					for(TAbstractType innerType : innerTypes) {
+						if(innerType.getTName().equals(types[i])) {
+							tType = innerType;
+							break;
+						}
+					}
+				}
+				if (tType != null) {
 					return tType;
 				}
 			}
-			if(index > 0) {
+			if (index > 0) {
 				return null;
 			}
 		}
@@ -701,9 +720,9 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * Searches a fitting method signature
 	 * 
-	 * @param method For this method name
-	 * @param returnType Returning this type
-	 * @param returnsArray Whether an array is returned
+	 * @param method              For this method name
+	 * @param returnType          Returning this type
+	 * @param returnsArray        Whether an array is returned
 	 * @param parameterSignatures The signatures of the parameters
 	 * @return The method signature
 	 */
@@ -750,8 +769,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		String name;
 		if (paramIsArray) {
 			name = signature.substring(0, open);
-		}
-		else {
+		} else {
 			name = signature;
 		}
 		return name.equals(other) && paramIsArray == parameter.isArray();
@@ -760,15 +778,14 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * Searches the field with the given type and name
 	 * 
-	 * @param name The name of the field
-	 * @param type The type of the field
+	 * @param name  The name of the field
+	 * @param type  The type of the field
 	 * @param array If the field is an array
 	 * @return the signature of the field
 	 */
 	private TSignature getFieldSignature(String name, TAbstractType type, boolean array) {
 		return getField(name).getSignatures().parallelStream()
-				.filter(element -> type.equals(element.getType()) && array == element.isArray())
-				.findAny().orElse(null);
+				.filter(element -> type.equals(element.getType()) && array == element.isArray()).findAny().orElse(null);
 	}
 
 	/**
@@ -830,8 +847,14 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	@Override
 	public TMethodDefinition getMethodDefinition(String signature) {
 		int index = signature.lastIndexOf('.', signature.lastIndexOf('('));
+		if(index < 0) {
+			return null;
+		}
 		TMethodSignature methodSig = getMethodSignature(signature.substring(index + 1));
 		TAbstractType type = getType(signature.substring(0, index));
+		if(type == null) {
+			return null;
+		}
 		return type.getDefines().parallelStream().filter(member -> member.getSignature().equals(methodSig))
 				.map(member -> (TMethodDefinition) member).findAny().orElse(null);
 	}

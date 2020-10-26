@@ -763,12 +763,12 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
 		var_feature_visibility.setValue(feature.getVisibility());
 		var_feature_visibility.setType("uml.VisibilityKind");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
-		var_feature_name.setValue(feature.getName());
-		var_feature_name.setType("String");
 		Variable var_classDec_name = CSPFactoryHelper.eINSTANCE.createVariable("classDec.name", true, csp);
 		var_classDec_name.setValue(classDec.getName());
 		var_classDec_name.setType("String");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
+		var_feature_name.setValue(feature.getName());
+		var_feature_name.setType("String");
 
 		// Create unbound variables
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier.static", csp);
@@ -795,9 +795,9 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_bodyDeclaration_name, var_feature_name);
+		eq_0.solve(var_classDec_name, var_bodyDeclaration_name);
 		eq_1.setRuleName("NoRuleName");
-		eq_1.solve(var_classDec_name, var_bodyDeclaration_name);
+		eq_1.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("feature", feature);
@@ -850,7 +850,7 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_265(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_118(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2Operation4EnumWithModifierImpl
 				.pattern_ConstructorDec2Operation4EnumWithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -911,7 +911,7 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_274(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_124(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2Operation4EnumWithModifierImpl
 				.pattern_ConstructorDec2Operation4EnumWithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -991,21 +991,21 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Variable var_classDec_name = CSPFactoryHelper.eINSTANCE.createVariable("classDec", true, csp);
 		var_classDec_name.setValue(__helper.getValue("classDec", "name"));
@@ -1083,21 +1083,21 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Variable var_classDec_name = CSPFactoryHelper.eINSTANCE.createVariable("classDec", true, csp);
 		var_classDec_name.setValue(__helper.getValue("classDec", "name"));
@@ -1122,10 +1122,10 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 		jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
 
 		eq2.setRuleName("ConstructorDec2Operation4EnumWithModifier");
-		eq2.solve(var_bodyDeclaration_name, var_feature_name);
+		eq2.solve(var_classDec_name, var_bodyDeclaration_name);
 
 		eq3.setRuleName("ConstructorDec2Operation4EnumWithModifier");
-		eq3.solve(var_classDec_name, var_bodyDeclaration_name);
+		eq3.solve(var_bodyDeclaration_name, var_feature_name);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
@@ -1136,8 +1136,8 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 			var_bodyDeclaration_name.setBound(false);
 			eq0.solve(var_modifier_static, var_feature_isStatic);
 			jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
-			eq2.solve(var_bodyDeclaration_name, var_feature_name);
-			eq3.solve(var_classDec_name, var_bodyDeclaration_name);
+			eq2.solve(var_classDec_name, var_bodyDeclaration_name);
+			eq3.solve(var_bodyDeclaration_name, var_feature_name);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
@@ -1552,10 +1552,10 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 			return null;
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION4_ENUM_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION4_ENUM_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_265__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_265((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION4_ENUM_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_274__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_274((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION4_ENUM_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_118__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_118((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION4_ENUM_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_124__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_124((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION4_ENUM_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION4_ENUM_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2889,8 +2889,8 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_ConstructorDec2Operation4EnumWithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			Operation feature) {
-		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_799771 = feature.getClass_();
-		if (__DEC_feature_ownedOperation_799771 != null) {
+		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_33847 = feature.getClass_();
+		if (__DEC_feature_ownedOperation_33847 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2899,8 +2899,8 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_ConstructorDec2Operation4EnumWithModifier_20_2_testcorematchandDECs_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_148794 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_148794 != null) {
+		Interface __DEC_feature_ownedOperation_310213 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_310213 != null) {
 			return new Object[] { feature };
 		}
 
@@ -3034,9 +3034,9 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_ConstructorDec2Operation4EnumWithModifier_21_2_testcorematchandDECs_black_nac_0B(
 			MConstructorDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_704766 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_644262 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_704766 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_644262 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3304,9 +3304,9 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_ConstructorDec2Operation4EnumWithModifier_27_1_matchtggpattern_black_nac_0B(
 			MConstructorDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_871305 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_999178 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_871305 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_999178 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3338,8 +3338,8 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_ConstructorDec2Operation4EnumWithModifier_28_1_matchtggpattern_black_nac_0B(
 			Operation feature) {
-		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_637991 = feature.getClass_();
-		if (__DEC_feature_ownedOperation_637991 != null) {
+		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_67744 = feature.getClass_();
+		if (__DEC_feature_ownedOperation_67744 != null) {
 			return new Object[] { feature };
 		}
 
@@ -3348,8 +3348,8 @@ public class ConstructorDec2Operation4EnumWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_ConstructorDec2Operation4EnumWithModifier_28_1_matchtggpattern_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_933112 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_933112 != null) {
+		Interface __DEC_feature_ownedOperation_822356 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_822356 != null) {
 			return new Object[] { feature };
 		}
 

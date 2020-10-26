@@ -1,0 +1,36 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule TextAnnotations
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mMember : MDefinition {
+		++  -comments -> mComment
+	}
+	++ mComment : LineComment {
+		prefixOfParent := true
+	}
+}
+
+#target {
+	++ tText : TTextAnnotation {
+		++  -tAnnotated -> tMember
+	}
+	tMember : TMember
+}
+
+#correspondence {
+	mMemberToTMember : MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+	++ mCommentToTText : LineCommentToTTextAnnotation {
+		#src->mComment
+		#trg->tText
+	}
+}
+
+#attributeConditions {
+	eq(mComment.content, tText.text)
+}

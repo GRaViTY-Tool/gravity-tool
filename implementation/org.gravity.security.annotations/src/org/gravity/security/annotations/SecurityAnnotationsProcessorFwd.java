@@ -24,7 +24,7 @@ import org.gravity.security.annotations.requirements.RequirementsPackage;
 import org.gravity.security.annotations.requirements.Secrecy;
 import org.gravity.security.annotations.requirements.TAnnotationWithCounterMeasure;
 import org.gravity.security.annotations.requirements.TCritical;
-import org.gravity.tgg.modisco.processing.pg.IProgramGraphProcessor;
+import org.gravity.tgg.modisco.pm.processing.pg.IProgramGraphProcessor;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TSignature;

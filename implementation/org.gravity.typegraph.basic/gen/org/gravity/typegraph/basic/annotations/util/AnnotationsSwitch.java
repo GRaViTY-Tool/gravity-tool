@@ -104,24 +104,34 @@ public class AnnotationsSwitch<T> extends Switch<T> {
 			case AnnotationsPackage.TTEXT_NODE: {
 				TTextNode tTextNode = (TTextNode)theEObject;
 				T result = caseTTextNode(tTextNode);
+				if (result == null) result = caseTAbstractNode(tTextNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AnnotationsPackage.TNUMBER_NODE: {
 				TNumberNode tNumberNode = (TNumberNode)theEObject;
 				T result = caseTNumberNode(tNumberNode);
+				if (result == null) result = caseTAbstractNode(tNumberNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AnnotationsPackage.TBOOL_NODE: {
 				TBoolNode tBoolNode = (TBoolNode)theEObject;
 				T result = caseTBoolNode(tBoolNode);
+				if (result == null) result = caseTAbstractNode(tBoolNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AnnotationsPackage.TCLASS_NODE: {
 				TClassNode tClassNode = (TClassNode)theEObject;
 				T result = caseTClassNode(tClassNode);
+				if (result == null) result = caseTAbstractNode(tClassNode);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AnnotationsPackage.TABSTRACT_NODE: {
+				TAbstractNode tAbstractNode = (TAbstractNode)theEObject;
+				T result = caseTAbstractNode(tAbstractNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -261,6 +271,21 @@ public class AnnotationsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTClassNode(TClassNode object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TAbstract Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TAbstract Node</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTAbstractNode(TAbstractNode object) {
 		return null;
 	}
 

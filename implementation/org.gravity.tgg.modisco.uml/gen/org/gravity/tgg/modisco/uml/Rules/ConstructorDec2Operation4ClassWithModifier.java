@@ -47,7 +47,7 @@ public interface ConstructorDec2Operation4ClassWithModifier extends EObject, Abs
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, MConstructorDefinition bodyDeclaration,
+	boolean isAppropriate_FWD(Match match, MConstructorDefinition bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -72,7 +72,7 @@ public interface ConstructorDec2Operation4ClassWithModifier extends EObject, Abs
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, MConstructorDefinition bodyDeclaration,
+	void registerObjectsToMatch_FWD(Match match, MConstructorDefinition bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -81,7 +81,7 @@ public interface ConstructorDec2Operation4ClassWithModifier extends EObject, Abs
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, MConstructorDefinition bodyDeclaration,
+	CSP isAppropriate_solveCsp_FWD(Match match, MConstructorDefinition bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -98,8 +98,8 @@ public interface ConstructorDec2Operation4ClassWithModifier extends EObject, Abs
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			MConstructorDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass, NamedElement2NamedElement cd2c,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MConstructorDefinition bodyDeclaration,
+			Modifier modifier, org.eclipse.uml2.uml.Class umlClass, NamedElement2NamedElement cd2c,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -117,7 +117,7 @@ public interface ConstructorDec2Operation4ClassWithModifier extends EObject, Abs
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject umlClass, EObject cd2c, EObject classDec);
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,7 +199,7 @@ public interface ConstructorDec2Operation4ClassWithModifier extends EObject, Abs
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject umlClass, EObject cd2c, EObject classDec);
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface ConstructorDec2Operation4ClassWithModifier extends EObject, Abs
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_271(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_132(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface ConstructorDec2Operation4ClassWithModifier extends EObject, Abs
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_280(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_137(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,7 +255,7 @@ public interface ConstructorDec2Operation4ClassWithModifier extends EObject, Abs
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Operation feature, Modifier modifier, MConstructorDefinition bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Operation feature, MConstructorDefinition bodyDeclaration, Modifier modifier,
 			org.eclipse.uml2.uml.Class umlClass, AbstractTypeDeclaration classDec, Match sourceMatch,
 			Match targetMatch);
 
@@ -273,7 +273,7 @@ public interface ConstructorDec2Operation4ClassWithModifier extends EObject, Abs
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, MConstructorDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
+	boolean checkDEC_FWD(MConstructorDefinition bodyDeclaration, Modifier modifier, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->

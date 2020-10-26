@@ -314,6 +314,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference Basic.ecore#//annotations/TClassNode/tClass"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="Basic.ecore#//annotations/TAbstractNode"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

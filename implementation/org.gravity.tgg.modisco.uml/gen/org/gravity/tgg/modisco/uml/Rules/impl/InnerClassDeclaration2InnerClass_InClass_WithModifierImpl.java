@@ -823,7 +823,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_332(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_142(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerClassDeclaration2InnerClass_InClass_WithModifierImpl
 				.pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -886,7 +886,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_342(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_147(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = InnerClassDeclaration2InnerClass_InClass_WithModifierImpl
 				.pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -960,13 +960,13 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
@@ -1024,13 +1024,13 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
@@ -1448,10 +1448,10 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 			return null;
 		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_332__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_332((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_342__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_342((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_142__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_142((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_147__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_147((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2806,7 +2806,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_194287 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_722867 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -2815,7 +2815,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_20_2_testcorematchandDECs_black_nac_1B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (Interface __DEC_feature_nestedClassifier_336994 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_989163 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2952,9 +2952,9 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_21_2_testcorematchandDECs_black_nac_0B(
 			MClass bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_10245 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_223218 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_10245 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_223218 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2963,8 +2963,8 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_21_2_testcorematchandDECs_black_nac_1B(
 			MClass bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_710419 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_710419 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_412390 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_412390 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2973,7 +2973,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_21_2_testcorematchandDECs_black_nac_2B(
 			MClass bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_451571 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_758355 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3264,9 +3264,9 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_27_1_matchtggpattern_black_nac_0B(
 			MClass bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_526212 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_166351 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_526212 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_166351 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3275,8 +3275,8 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_27_1_matchtggpattern_black_nac_1B(
 			MClass bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_727158 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_727158 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_166461 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_166461 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3285,7 +3285,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_27_1_matchtggpattern_black_nac_2B(
 			MClass bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_544598 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_206339 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3325,7 +3325,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_28_1_matchtggpattern_black_nac_0B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_9236 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_70309 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -3334,7 +3334,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_28_1_matchtggpattern_black_nac_1B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (Interface __DEC_feature_nestedClassifier_16592 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_969576 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}

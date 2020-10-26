@@ -1,0 +1,103 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule FlowNode #with org.gravity.tgg.modisco.pm
+
+#source {	
+	mOwner:MAbstractFlowElement {
+		++	-ownedFlows -> mFlow  
+	}
+	
+	++mFlow:MFlow
+}
+
+#target {	
+	tOwner:TAbstractFlowElement {
+		++	-ownedFlows -> tFlow 
+	}
+	
+	++tFlow:TFlow
+}
+
+#correspondence {
+	++mFlowToTFlow:MFlowToTFlow {
+		#src->mFlow
+		#trg->tFlow
+	}
+	
+	++mAbstFlowToTAbstFlow:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mFlow
+		#trg->tFlow
+	}
+	
+	mOwnerToTOwner:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mOwner
+		#trg->tOwner
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule DataFlowOut
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mTarget:MAbstractFlowElement {
+		++	-incomingFlows -> mSource
+	}
+	
+	mSource:MFlow
+}
+
+#target {
+	tFlow:TAbstractFlowElement {
+		++	-outgoingFlows-> tSource
+	}
+	
+	tSource:TAbstractFlowElement
+}
+
+#correspondence {
+	mFlowToTFlow:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mTarget
+		#trg->tFlow
+	}
+	
+	mSourceToTSource:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSource
+		#trg->tSource
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule DataFlowIn
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mTarget:MAbstractFlowElement {
+		++	-incomingFlows -> mSource
+	}
+	
+	mSource:MFlow
+}
+
+#target {
+	tFlow:TAbstractFlowElement {
+		++	-incomingFlows-> tSource
+	}
+	
+	tSource:TAbstractFlowElement
+}
+
+#correspondence {
+	mFlowToTFlow:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mTarget
+		#trg->tFlow
+	}
+	
+	mSourceToTSource:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSource
+		#trg->tSource
+	}
+}

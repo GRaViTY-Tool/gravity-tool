@@ -2277,13 +2277,31 @@ public interface ModiscoPackage extends EPackage {
 	int MFLOW__OUTGOING_FLOWS = MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
 
 	/**
+	 * The feature id for the '<em><b>Flow Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MFLOW__FLOW_SOURCE = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Flow Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MFLOW__FLOW_TARGET = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Flow Owner</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MFLOW__FLOW_OWNER = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
+	int MFLOW__FLOW_OWNER = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>MFlow</em>' class.
@@ -2292,7 +2310,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MFLOW_FEATURE_COUNT = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
+	int MFLOW_FEATURE_COUNT = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MSingleVariableAccessImpl <em>MSingle Variable Access</em>}' class.
@@ -3771,6 +3789,28 @@ public interface ModiscoPackage extends EPackage {
 	EClass getMFlow();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.gravity.modisco.MFlow#getFlowSource <em>Flow Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Flow Source</em>'.
+	 * @see org.gravity.modisco.MFlow#getFlowSource()
+	 * @see #getMFlow()
+	 * @generated
+	 */
+	EReference getMFlow_FlowSource();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.modisco.MFlow#getFlowTarget <em>Flow Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Flow Target</em>'.
+	 * @see org.gravity.modisco.MFlow#getFlowTarget()
+	 * @see #getMFlow()
+	 * @generated
+	 */
+	EReference getMFlow_FlowTarget();
+
+	/**
 	 * Returns the meta object for the container reference '{@link org.gravity.modisco.MFlow#getFlowOwner <em>Flow Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4409,6 +4449,22 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MFLOW = eINSTANCE.getMFlow();
+
+		/**
+		 * The meta object literal for the '<em><b>Flow Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MFLOW__FLOW_SOURCE = eINSTANCE.getMFlow_FlowSource();
+
+		/**
+		 * The meta object literal for the '<em><b>Flow Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MFLOW__FLOW_TARGET = eINSTANCE.getMFlow_FlowTarget();
 
 		/**
 		 * The meta object literal for the '<em><b>Flow Owner</b></em>' container reference feature.

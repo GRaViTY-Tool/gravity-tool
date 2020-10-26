@@ -1,0 +1,50 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule MemberInClassVisibility #with org.gravity.tgg.modisco.pm
+
+#source {
+	mClass:ClassDeclaration {
+		-bodyDeclarations -> mDefinition
+	}
+
+	mDefinition:MDefinition{
+		++ -modifier -> mModifier
+	}
+
+	++mModifier:Modifier
+}
+
+#target {
+	tClass:TClass {
+		-defines -> tMember
+	}
+
+	tMember:TMember{
+		++ -tModifier -> tModifier
+	}
+
+	++tModifier:TModifier
+}
+
+#correspondence {
+	mTypeToTType :TypeToTAbstractType {
+		#src->mClass
+		#trg->tClass
+	}
+
+	defToMember:MDefinitionToTMember{
+		#src->mDefinition
+		#trg->tMember
+	}
+
+	++ mModifierToTModifier:MModifierToTModifier{
+		#src->mModifier
+		#trg->tModifier
+	}
+}
+
+#attributeConditions {
+	defaultVisibility(mModifier.visibility, tModifier.tVisibility)
+	eq(mModifier.static, tModifier.isStatic)
+}

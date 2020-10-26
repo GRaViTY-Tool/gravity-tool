@@ -457,10 +457,13 @@
         <setEntry value="org.gravity.hulk.antipatterngraph@default:default"/>
         <setEntry value="org.gravity.hulk.refactoringgraph@default:default"/>
         <setEntry value="org.gravity.hulk.tests@default:default"/>
+        <setEntry value="org.gravity.hulk.ui.visualization@default:default"/>
         <setEntry value="org.gravity.hulk.ui@default:default"/>
         <setEntry value="org.gravity.hulk@default:default"/>
         <setEntry value="org.gravity.modisco@default:default"/>
+        <setEntry value="org.gravity.refactorings.ui@default:default"/>
         <setEntry value="org.gravity.refactorings@default:default"/>
+        <setEntry value="org.gravity.security.analysis@default:default"/>
         <setEntry value="org.gravity.security.annotations@default:default"/>
         <setEntry value="org.gravity.tgg.modisco.uml.tests@default:default"/>
         <setEntry value="org.gravity.tgg.modisco.uml@default:default"/>

@@ -1,0 +1,46 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule UnresolvedMethodDeclaration #with org.gravity.tgg.modisco.pm
+
+#source {
+	mModel:Model {
+		++-unresolvedItems -> mMethod
+	}
+
+	++mMethod:UnresolvedMethodDeclaration
+}
+
+#target {
+	tModel:TypeGraph {
+		++-methods -> tMethodName
+	}
+
+	++tMethodName:TMethod {
+		++-signatures -> tMethodSignature
+	}
+
+	++tMethodSignature:TMethodSignature {
+		++-definitions -> tMethodDefinition
+	}
+
+	++tMethodDefinition:TMethodDefinition
+}
+
+#correspondence {
+	model2pm : ModelToTypeGraph {
+		#src->mModel
+		#trg->tModel
+	}
+	
+	++unresolved2Definiton :  MDefinitionToTMember {
+		#src->mMethod
+		#trg->tMethodDefinition
+	}
+}
+
+#attributeConditions {
+	eq(mMethod.name, tMethodName.tName)
+}
+
+

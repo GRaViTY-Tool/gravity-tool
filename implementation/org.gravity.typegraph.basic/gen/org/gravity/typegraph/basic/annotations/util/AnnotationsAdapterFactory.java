@@ -105,6 +105,10 @@ public class AnnotationsAdapterFactory extends AdapterFactoryImpl {
 				return createTClassNodeAdapter();
 			}
 			@Override
+			public Adapter caseTAbstractNode(TAbstractNode object) {
+				return createTAbstractNodeAdapter();
+			}
+			@Override
 			public Adapter caseTAbstractType(TAbstractType object) {
 				return createTAbstractTypeAdapter();
 			}
@@ -250,6 +254,20 @@ public class AnnotationsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTClassNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.annotations.TAbstractNode <em>TAbstract Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.annotations.TAbstractNode
+	 * @generated
+	 */
+	public Adapter createTAbstractNodeAdapter() {
 		return null;
 	}
 

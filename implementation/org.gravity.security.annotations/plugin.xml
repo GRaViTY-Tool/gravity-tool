@@ -31,7 +31,7 @@
             genModel="model/Annotations.genmodel"/>
    </extension>
    <extension
-         point="org.gravity.tgg.modisco.ProcessingPgFwd">
+         point="org.gravity.tgg.modisco.pm.ProcessingPgFwd">
       <processor
             priority="1"
             processor="org.gravity.security.annotations.SecurityAnnotationsProcessorFwd">

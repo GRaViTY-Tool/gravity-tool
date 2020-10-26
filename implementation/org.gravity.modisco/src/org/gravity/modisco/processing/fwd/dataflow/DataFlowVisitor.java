@@ -110,15 +110,14 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(final Expression expression) {
+		final FlowNode member = this.handler.getFlowNode(expression);
+		if (member != null && member.alreadySeen()) {
+			return member;
+		}
+
 		if (expression instanceof ArrayLengthAccess) {
 			final ArrayLengthAccess arrayLengthAccess = (ArrayLengthAccess) expression;
-			final FlowNode member = this.handler.getFlowNodeOrCreate(arrayLengthAccess);
-			if (member.alreadySeen()) {
-				return member;
-			}
-			addFlowToContainer(arrayLengthAccess, member);
-			handle(arrayLengthAccess.getArray());
-			return member;
+			return handle(arrayLengthAccess);
 		} else if (expression instanceof FieldAccess) {
 			final FieldAccess fieldAccess = (FieldAccess) expression;
 			return handle(fieldAccess);
@@ -208,6 +207,19 @@ public class DataFlowVisitor {
 			LOGGER.info("ERROR: Unknown Expression: " + expression);
 		}
 		return null;
+	}
+
+	/**
+	 * @param arrayLengthAccess
+	 * @return
+	 */
+	private FlowNode handle(final ArrayLengthAccess arrayLengthAccess) {
+		final FlowNode member = this.handler.getFlowNodeOrCreate(arrayLengthAccess);
+		if (member.alreadySeen()) {
+			return member;
+		}
+		member.addInRef(handle(arrayLengthAccess.getArray()));
+		return member;
 	}
 
 	private FlowNode handle(final SuperFieldAccess superFieldAccess) {
@@ -556,8 +568,10 @@ public class DataFlowVisitor {
 		if (member.alreadySeen()) {
 			return member;
 		}
-		addFlowToContainer(parenthesizedExpression, member);
-		handle(parenthesizedExpression.getExpression());
+		FlowNode node = handle(parenthesizedExpression.getExpression());
+		if(node != null){
+			member.addInRef(node);
+		}
 		return member;
 	}
 
@@ -667,6 +681,12 @@ public class DataFlowVisitor {
 		if (calledMethod != null) {
 			// Creating just a FlowNode for the called method; no handling needed
 			this.handler.getFlowNodeOrCreate(calledMethod);
+		}
+		if (methodInvocation instanceof MethodInvocation) {
+			Expression expression = ((MethodInvocation) methodInvocation).getExpression();
+			if (expression != null) {
+				handle(expression);
+			}
 		}
 		final EList<Expression> arguments = methodInvocation.getArguments();
 		if (!arguments.isEmpty()) {
@@ -912,9 +932,13 @@ public class DataFlowVisitor {
 			return member;
 		}
 		final Expression expression = switchCase.getExpression();
-		if (expression != null) {
-			member.addInRef(handle(expression));
+		if(expression != null) {
+			final FlowNode expressionNode = handle(expression);
+			if (expressionNode != null) {
+				member.addInRef(expressionNode);
+			}
 		}
+		
 		return member;
 	}
 

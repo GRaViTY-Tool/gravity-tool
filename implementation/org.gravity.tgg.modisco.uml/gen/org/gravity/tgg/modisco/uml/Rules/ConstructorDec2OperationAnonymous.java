@@ -113,7 +113,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject b2e, EObject mAnon,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne, EObject mAnon,
 			EObject bodyDeclaration, EObject ba2na, EObject uAnon);
 
 	/**
@@ -195,7 +195,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject b2e, EObject mAnon,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne, EObject mAnon,
 			EObject bodyDeclaration, EObject ba2na, EObject uAnon);
 
 	/**
@@ -212,7 +212,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_300(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_162(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_309(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_167(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->

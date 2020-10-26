@@ -46,7 +46,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	boolean isAppropriate_FWD(Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -71,7 +71,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	void registerObjectsToMatch_FWD(Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -80,7 +80,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	CSP isAppropriate_solveCsp_FWD(Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -97,8 +97,8 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			InterfaceDeclaration bodyDeclaration, Interface uContainer, AbstractTypeDeclaration jContainer,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration bodyDeclaration,
+			Modifier modifier, Interface uContainer, AbstractTypeDeclaration jContainer,
 			NamedElement2NamedElement ne2ne);
 
 	/**
@@ -116,7 +116,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,7 +198,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_315(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_93(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_325(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_97(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,7 +254,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Interface feature, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Interface feature, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			Interface uContainer, AbstractTypeDeclaration jContainer, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -271,7 +271,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer);
+	boolean checkDEC_FWD(InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer);
 
 	/**
 	 * <!-- begin-user-doc -->

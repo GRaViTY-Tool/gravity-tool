@@ -93,7 +93,7 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jp2up,
-			org.eclipse.uml2.uml.Model umlPackage, MClass bodyDeclaration, Model jPackage);
+			MClass bodyDeclaration, Model jPackage, org.eclipse.uml2.uml.Model umlPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,8 +109,8 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject jp2up, EObject umlPackage,
-			EObject bodyDeclaration, EObject jPackage, EObject md2o, EObject feature);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jp2up, EObject md2o, EObject bodyDeclaration,
+			EObject feature, EObject jPackage, EObject b2e, EObject umlPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,7 +126,7 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature);
+	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Model umlPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,8 +150,8 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Model umlPackage,
-			org.eclipse.uml2.uml.Class feature);
+	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Class feature,
+			org.eclipse.uml2.uml.Model umlPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,8 +159,8 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Model umlPackage,
-			org.eclipse.uml2.uml.Class feature);
+	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Class feature,
+			org.eclipse.uml2.uml.Model umlPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,7 +177,7 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jp2up,
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, org.eclipse.uml2.uml.Class feature);
+			org.eclipse.uml2.uml.Class feature, Model jPackage, org.eclipse.uml2.uml.Model umlPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,8 +193,8 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject jp2up, EObject umlPackage,
-			EObject bodyDeclaration, EObject jPackage, EObject md2o, EObject feature);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jp2up, EObject md2o, EObject bodyDeclaration,
+			EObject feature, EObject jPackage, EObject b2e, EObject umlPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_301(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_139(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_310(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_144(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,8 +250,8 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Model umlPackage, MClass bodyDeclaration, Model jPackage,
-			org.eclipse.uml2.uml.Class feature, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(MClass bodyDeclaration, org.eclipse.uml2.uml.Class feature, Model jPackage,
+			org.eclipse.uml2.uml.Model umlPackage, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,7 +275,7 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature);
+	boolean checkDEC_BWD(org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Model umlPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -291,8 +291,8 @@ public interface OrphanedClassDec2OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jp2up,
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jp2up, Model jPackage,
+			org.eclipse.uml2.uml.Model umlPackage, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

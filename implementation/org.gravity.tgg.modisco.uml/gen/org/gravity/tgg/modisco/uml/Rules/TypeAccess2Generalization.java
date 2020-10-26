@@ -47,7 +47,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Type superClassDec, ClassDeclaration classDec, TypeAccess typeAcc);
+	boolean isAppropriate_FWD(Match match, TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Type superClassDec, ClassDeclaration classDec, TypeAccess typeAcc);
+	void registerObjectsToMatch_FWD(Match match, TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Type superClassDec, ClassDeclaration classDec, TypeAccess typeAcc);
+	CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,9 +95,9 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			NamedElement2NamedElement cd2c, Type superClassDec, Classifier umlClassifier, ClassDeclaration classDec,
-			NamedElement2NamedElement cd2c2, TypeAccess typeAcc);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeAccess typeAcc,
+			NamedElement2NamedElement cd2c2, ClassDeclaration classDec, org.eclipse.uml2.uml.Class superClass,
+			NamedElement2NamedElement cd2c, Classifier umlClassifier, Type superClassDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,9 +113,9 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject generalization, EObject superClass, EObject cd2c,
-			EObject ta2g, EObject superClassDec, EObject umlClassifier, EObject classDec, EObject cd2c2,
-			EObject typeAcc);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject ta2g, EObject generalization, EObject typeAcc,
+			EObject cd2c2, EObject classDec, EObject superClass, EObject cd2c, EObject umlClassifier,
+			EObject superClassDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,8 +183,8 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Generalization generalization,
-			org.eclipse.uml2.uml.Class superClass, NamedElement2NamedElement cd2c, Type superClassDec,
-			Classifier umlClassifier, ClassDeclaration classDec, NamedElement2NamedElement cd2c2);
+			NamedElement2NamedElement cd2c2, ClassDeclaration classDec, org.eclipse.uml2.uml.Class superClass,
+			NamedElement2NamedElement cd2c, Classifier umlClassifier, Type superClassDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,9 +200,9 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject generalization, EObject superClass, EObject cd2c,
-			EObject ta2g, EObject superClassDec, EObject umlClassifier, EObject classDec, EObject cd2c2,
-			EObject typeAcc);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject ta2g, EObject generalization, EObject typeAcc,
+			EObject cd2c2, EObject classDec, EObject superClass, EObject cd2c, EObject umlClassifier,
+			EObject superClassDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_326(EMoflonEdge _edge_general);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_130(EMoflonEdge _edge_generalization);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_336(EMoflonEdge _edge_superClass);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_135(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,9 +258,9 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Generalization generalization, org.eclipse.uml2.uml.Class superClass,
-			Type superClassDec, Classifier umlClassifier, ClassDeclaration classDec, TypeAccess typeAcc,
-			Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Generalization generalization, TypeAccess typeAcc, ClassDeclaration classDec,
+			org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier, Type superClassDec, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +276,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Type superClassDec, ClassDeclaration classDec, TypeAccess typeAcc);
+	boolean checkDEC_FWD(TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,9 +302,9 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			NamedElement2NamedElement cd2c, Type superClassDec, Classifier umlClassifier, ClassDeclaration classDec,
-			NamedElement2NamedElement cd2c2, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement cd2c2,
+			ClassDeclaration classDec, org.eclipse.uml2.uml.Class superClass, NamedElement2NamedElement cd2c,
+			Classifier umlClassifier, Type superClassDec, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

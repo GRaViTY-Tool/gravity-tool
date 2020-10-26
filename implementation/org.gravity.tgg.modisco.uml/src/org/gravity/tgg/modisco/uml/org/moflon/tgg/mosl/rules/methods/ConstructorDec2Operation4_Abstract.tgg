@@ -16,8 +16,7 @@
 
 #target {
 
-	++ feature : Operation{
-	}
+	++ feature : Operation
 
 }
 

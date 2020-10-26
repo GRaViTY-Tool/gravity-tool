@@ -47,10 +47,14 @@ public final class ModelSaver {
 		if (model == null) {
 			return false;
 		}
+		URI uri = URI.createPlatformResourceURI(new File(new File(file.getProject().getName()),file.getProjectRelativePath().toString()).toString(), true);
 		Resource resource = model.eResource();
 		if (resource == null) {
-			resource = new ResourceSetImpl().createResource(URI.createURI(file.getName()));
+			resource = new ResourceSetImpl().createResource(uri);
 			resource.getContents().add(model);
+		}
+		else {
+			resource.setURI(uri);
 		}
 		return saveModel(resource, file, monitor);
 	}

@@ -19,4 +19,9 @@ public class GravityMoDiscoActivator extends Plugin {
 	 * The id of the fwd processing extension point
 	 */
 	public static final String PROCESS_MODISCO_FWD = "org.gravity.modisco.ProcessingModiscoFwd";
+	
+	/**
+	 * The name of the modisco model file
+	 */
+	public static final String FILE_NAME = "modisco.xmi";
 }

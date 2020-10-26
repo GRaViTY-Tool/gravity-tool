@@ -1,0 +1,31 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule EnumInAnonymous
+#extends NestedTypesInAnonymous
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++mNestedType:EnumDeclaration
+}
+
+#target {
+	pg:TypeGraph {
+		++  -classes -> tNestedType
+	}
+
+	++tNestedType:TClass {
+		++-tAnnotation -> tAnnotation
+	}
+
+	++tAnnotation:TEnum
+}
+
+#correspondence {
+	++ mNestedTypeToTNestedType :TypeToTAbstractType {
+		#src->mNestedType
+		#trg->tNestedType
+	}
+}
+
+

@@ -258,9 +258,9 @@ public class TypeAccessType2ParameterType_ReturnImpl extends AbstractRuleImpl
 						.pattern_TypeAccessType2ParameterType_Return_2_3_findcontext_greenBBBBBBBFFFFFFFF(method, param,
 								uType, jType, typeAccess, ta2p, ne2ne);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge ta2p__typeAccess____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge ta2p__typeAccess____source = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge method__typeAccess____returnType = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge ne2ne__jType____source = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge ne2ne__uType____target = (EMoflonEdge) result3_green[13];
@@ -726,7 +726,7 @@ public class TypeAccessType2ParameterType_ReturnImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_298(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_107(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = TypeAccessType2ParameterType_ReturnImpl
 				.pattern_TypeAccessType2ParameterType_Return_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -786,7 +786,7 @@ public class TypeAccessType2ParameterType_ReturnImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_307(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_113(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = TypeAccessType2ParameterType_ReturnImpl
 				.pattern_TypeAccessType2ParameterType_Return_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1232,10 +1232,10 @@ public class TypeAccessType2ParameterType_ReturnImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_RETURN___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_RETURN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_298__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_298((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_RETURN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_307__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_307((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_RETURN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_107__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_107((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_RETURN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_113__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_113((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_RETURN___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_RETURN___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1654,8 +1654,8 @@ public class TypeAccessType2ParameterType_ReturnImpl extends AbstractRuleImpl
 			MethodDeclaration method, Parameter param, org.eclipse.uml2.uml.Type uType, Type jType,
 			TypeAccess typeAccess, TypeAccess2Parameter ta2p, NamedElement2NamedElement ne2ne) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (typeAccess.equals(ta2p.getSource())) {
-			if (jType.equals(typeAccess.getType())) {
+		if (jType.equals(typeAccess.getType())) {
+			if (typeAccess.equals(ta2p.getSource())) {
 				if (typeAccess.equals(method.getReturnType())) {
 					if (jType.equals(ne2ne.getSource())) {
 						if (uType.equals(ne2ne.getTarget())) {
@@ -1674,16 +1674,16 @@ public class TypeAccessType2ParameterType_ReturnImpl extends AbstractRuleImpl
 			MethodDeclaration method, Parameter param, org.eclipse.uml2.uml.Type uType, Type jType,
 			TypeAccess typeAccess, TypeAccess2Parameter ta2p, NamedElement2NamedElement ne2ne) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge ta2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ta2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__typeAccess____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__jType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ta2p__param____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String ta2p__typeAccess____source_name_prime = "source";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String ta2p__typeAccess____source_name_prime = "source";
 		String method__typeAccess____returnType_name_prime = "returnType";
 		String ne2ne__jType____source_name_prime = "source";
 		String ne2ne__uType____target_name_prime = "target";
@@ -1695,15 +1695,15 @@ public class TypeAccessType2ParameterType_ReturnImpl extends AbstractRuleImpl
 		isApplicableMatch.getAllContextElements().add(typeAccess);
 		isApplicableMatch.getAllContextElements().add(ta2p);
 		isApplicableMatch.getAllContextElements().add(ne2ne);
-		ta2p__typeAccess____source.setSrc(ta2p);
-		ta2p__typeAccess____source.setTrg(typeAccess);
-		isApplicableMatch.getAllContextElements().add(ta2p__typeAccess____source);
 		typeAccess__jType____type.setSrc(typeAccess);
 		typeAccess__jType____type.setTrg(jType);
 		isApplicableMatch.getAllContextElements().add(typeAccess__jType____type);
 		jType__typeAccess____usagesInTypeAccess.setSrc(jType);
 		jType__typeAccess____usagesInTypeAccess.setTrg(typeAccess);
 		isApplicableMatch.getAllContextElements().add(jType__typeAccess____usagesInTypeAccess);
+		ta2p__typeAccess____source.setSrc(ta2p);
+		ta2p__typeAccess____source.setTrg(typeAccess);
+		isApplicableMatch.getAllContextElements().add(ta2p__typeAccess____source);
 		method__typeAccess____returnType.setSrc(method);
 		method__typeAccess____returnType.setTrg(typeAccess);
 		isApplicableMatch.getAllContextElements().add(method__typeAccess____returnType);
@@ -1716,15 +1716,15 @@ public class TypeAccessType2ParameterType_ReturnImpl extends AbstractRuleImpl
 		ta2p__param____target.setSrc(ta2p);
 		ta2p__param____target.setTrg(param);
 		isApplicableMatch.getAllContextElements().add(ta2p__param____target);
-		ta2p__typeAccess____source.setName(ta2p__typeAccess____source_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
+		ta2p__typeAccess____source.setName(ta2p__typeAccess____source_name_prime);
 		method__typeAccess____returnType.setName(method__typeAccess____returnType_name_prime);
 		ne2ne__jType____source.setName(ne2ne__jType____source_name_prime);
 		ne2ne__uType____target.setName(ne2ne__uType____target_name_prime);
 		ta2p__param____target.setName(ta2p__param____target_name_prime);
 		return new Object[] { method, param, uType, jType, typeAccess, ta2p, ne2ne, isApplicableMatch,
-				ta2p__typeAccess____source, typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess,
+				typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess, ta2p__typeAccess____source,
 				method__typeAccess____returnType, ne2ne__jType____source, ne2ne__uType____target,
 				ta2p__param____target };
 	}

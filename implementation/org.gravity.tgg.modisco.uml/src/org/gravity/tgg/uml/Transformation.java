@@ -14,6 +14,7 @@ import java.util.Collections;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -23,6 +24,7 @@ import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
@@ -32,6 +34,7 @@ import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.modisco.GravityMoDiscoActivator;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.codegen.GravityModiscoCodeGenerator;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
@@ -39,6 +42,7 @@ import org.gravity.security.annotations.AnnotationsActivator;
 import org.gravity.tgg.modisco.uml.UmlPackage;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.moflon.tgg.language.analysis.StaticAnalysis;
+import org.moflon.tgg.runtime.CorrespondenceModel;
 
 /**
  * This class provides the API for transforming Java projects into UML models
@@ -54,17 +58,12 @@ public final class Transformation extends SynchronizationHelper {
 	/**
 	 * The name of the protocol file
 	 */
-	public static final String PROTOCOL_XMI = "protocol.xmi";
-
-	/**
-	 * The name of the modisco model file
-	 */
-	public static final String SRC_XMI = "modisco.xmi";
+	public static final String PROTOCOL_XMI = "uml_protocol.xmi";
 
 	/**
 	 * The name of the correspondence model file
 	 */
-	public static final String CORR_XMI = "corr.xmi";
+	public static final String CORRESPONDENCE_MODEL_XMI = "uml_correspondence_model.xmi";
 
 	/**
 	 * The name of the output folder
@@ -78,8 +77,7 @@ public final class Transformation extends SynchronizationHelper {
 
 	public Transformation(IJavaProject javaProject, Resource target) throws IOException, CoreException {
 		this.project = javaProject;
-		this.outputFolder = EclipseProjectUtil.getGravityFolder(javaProject.getProject(), new NullProgressMonitor())
-				.getFolder(UML);
+		this.outputFolder = getFolder(javaProject.getProject(), new NullProgressMonitor());
 		if (!outputFolder.exists()) {
 			outputFolder.create(true, true, new NullProgressMonitor());
 		}
@@ -97,6 +95,11 @@ public final class Transformation extends SynchronizationHelper {
 		clearChanges();
 
 		loadRulesFromProject();
+	}
+
+	public static IFolder getFolder(IProject project, IProgressMonitor monitor) throws IOException {
+		return EclipseProjectUtil.getGravityFolder(project, monitor)
+				.getFolder(UML);
 	}
 
 	private void loadRulesFromProject() throws IOException, MalformedURLException {
@@ -166,7 +169,7 @@ public final class Transformation extends SynchronizationHelper {
 		final SubMonitor subMonitor = SubMonitor.convert(monitor);
 		Resource eResource = mGravityModel.eResource();
 		if(eResource == null ) {
-			getResourceSet().createResource(URI.createURI(mGravityModel.getName()+".xmi")).getContents().add(mGravityModel);
+			getResourceSet().createResource(URI.createURI(GravityMoDiscoActivator.FILE_NAME)).getContents().add(mGravityModel);
 		}
 		else if(!eResource.getResourceSet().equals(getResourceSet())) {
 			getResourceSet().getResources().add(eResource);
@@ -207,7 +210,7 @@ public final class Transformation extends SynchronizationHelper {
 	 * @throws IOException                   If writing files failed
 	 */
 	public void umlToProject(final IProgressMonitor monitor) throws TransformationFailedException, IOException {
-		final IFile corrFile = outputFolder.getFile(CORR_XMI);
+		final IFile corrFile = outputFolder.getFile(CORRESPONDENCE_MODEL_XMI);
 		if (!corrFile.exists()) {
 			return;
 		}
@@ -253,21 +256,31 @@ public final class Transformation extends SynchronizationHelper {
 
 	private boolean save(IFolder folder, IProgressMonitor monitor) {
 		monitor.setTaskName("Save UML Model");
-		IFile umlFile = folder.getProject().getFile(folder.getProject().getName() + ".uml");
+		IFile umlFile = folder.getFile(folder.getProject().getName() + ".uml");
 		if(!ModelSaver.saveModel(getTrg(), umlFile, monitor)) {
 			return false;
 		}
-		if(!ModelSaver.saveModel(getSrc(), folder.getFile(SRC_XMI), monitor)) {
+		if(!ModelSaver.saveModel(getCorr(), folder.getFile(CORRESPONDENCE_MODEL_XMI), monitor)) {
 			return false;
 		}
-		if(!ModelSaver.saveModel(getCorr(), folder.getFile(CORR_XMI), monitor)) {
-			return false;
-		}
-		saveSynchronizationProtocol(folder.getFile("sync__protocol.xmi").getLocation().toString()); //$NON-NLS-1$
+		saveSynchronizationProtocol(folder.getFile(PROTOCOL_XMI).getLocation().toString()); //$NON-NLS-1$
 		return true;
 	}
 
 	public IJavaProject getProject() {
 		return this.project;
+	}
+	
+	public static CorrespondenceModel getCorrespondenceModel(IProject project, ResourceSet set) throws IOException {
+		IFile corrFile = getFolder(project, new NullProgressMonitor()).getFile(CORRESPONDENCE_MODEL_XMI);
+		if(!corrFile.exists()) {
+			return null;
+		}
+		Resource resource = set.getResource(URI.createPlatformResourceURI(corrFile.getFullPath().toString(), true), true);
+		return (CorrespondenceModel) resource.getContents().get(0);
+	}
+
+	public static IFile getUMLFile(IProject project, IProgressMonitor monitor) throws IOException {
+		return getFolder(project, monitor).getFile(project.getName()+'.'+UML);
 	}
 }

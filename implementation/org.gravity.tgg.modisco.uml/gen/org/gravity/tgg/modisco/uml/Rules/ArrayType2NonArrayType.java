@@ -44,7 +44,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, TypeAccess typeAccess, Type jType, ArrayType arrayType);
+	boolean isAppropriate_FWD(Match match, Type jType, ArrayType arrayType, TypeAccess typeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, TypeAccess typeAccess, Type jType, ArrayType arrayType);
+	void registerObjectsToMatch_FWD(Match match, Type jType, ArrayType arrayType, TypeAccess typeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,7 +76,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess typeAccess, Type jType, ArrayType arrayType);
+	CSP isAppropriate_solveCsp_FWD(Match match, Type jType, ArrayType arrayType, TypeAccess typeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,8 +92,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeAccess typeAccess, Type jType,
-			org.eclipse.uml2.uml.Type uType, ArrayType arrayType, NamedElement2NamedElement ne2ne1);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Type jType, ArrayType arrayType,
+			TypeAccess typeAccess, NamedElement2NamedElement ne2ne1, org.eclipse.uml2.uml.Type uType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,8 +109,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject typeAccess, EObject jType, EObject uType,
-			EObject arrayType, EObject ne2ne1, EObject ne2ne2);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jType, EObject arrayType, EObject typeAccess,
+			EObject ne2ne2, EObject ne2ne1, EObject uType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +182,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Type_1(org.eclipse.uml2.uml.Type uType);
+	EObjectContainer isAppropriate_BWD_Type_0(org.eclipse.uml2.uml.Type uType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,7 +190,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_265(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_99(EMoflonEdge _edge_elementType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,8 +222,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TypeAccess typeAccess, Type jType, org.eclipse.uml2.uml.Type uType,
-			ArrayType arrayType, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Type jType, ArrayType arrayType, TypeAccess typeAccess,
+			org.eclipse.uml2.uml.Type uType, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -239,7 +239,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(TypeAccess typeAccess, Type jType, ArrayType arrayType);
+	boolean checkDEC_FWD(Type jType, ArrayType arrayType, TypeAccess typeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,8 +264,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type jType, org.eclipse.uml2.uml.Type uType,
-			NamedElement2NamedElement ne2ne1, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type jType, NamedElement2NamedElement ne2ne1,
+			org.eclipse.uml2.uml.Type uType, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -1,0 +1,104 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule ClassInnerMember
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mDefinition:MAbstractMethodDefinition {
+		++ -mInnerTypes -> mInnerClass
+	}
+
+	++mInnerClass:MClass
+}
+
+#target {
+	++tInnerPackage:TPackage {
+		++  -parent -> tOuterPackage
+		++  -classes -> tInnerClass
+		++  -ownedTypes -> tInnerClass
+	}
+
+	typeGraph:TypeGraph {
+		++  -ownedTypes -> tInnerClass
+		++  -classes -> tInnerClass
+		-ownedTypes -> tOuterClass
+	}
+
+	tOuterClass:TAbstractType {
+		++ -innerTypes -> tInnerClass
+		-package -> tOuterPackage
+	}
+
+	++tInnerClass:TClass
+
+	tOuterPackage:TPackage
+}
+
+#correspondence {
+	++ tInnerClassToTInnerClass :ClassDeclarationToTClass {
+		#src->mInnerClass
+		#trg->tInnerClass
+	}
+
+	++ tInnerTypeToTInnerAbstractType :TypeToTAbstractType {
+		#src->mInnerClass
+		#trg->tInnerClass
+	}
+}
+
+#attributeConditions {
+	eq(mInnerClass.name, tInnerClass.tName)
+
+	addSuffix(tOuterClass.tName, "$1", tInnerPackage.tName)
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule ClassInnerClassMember #extends ClassInnerMember
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	eOuterClass:ClassDeclaration {
+		-bodyDeclarations -> mDefinition
+	}
+
+	mDefinition:MAbstractMethodDefinition
+}
+
+#target {
+	tOuterClass:TClass
+}
+
+#correspondence {
+	eOuterClassToTOuterClass :TypeToTAbstractType {
+		#src->eOuterClass
+		#trg->tOuterClass
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule ClassInnerAnonClassMember #extends ClassInnerMember
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	eOuterClass:AnonymousClassDeclaration {
+		-bodyDeclarations -> mDefinition
+	}
+
+	mDefinition:MAbstractMethodDefinition
+}
+
+#target {
+	tOuterClass:TClass
+}
+
+#correspondence {
+	eOuterClassToTOuterClass :AnonymousClassDeclarationToTClass {
+		#src->eOuterClass
+		#trg->tOuterClass
+	}
+}
+
+

@@ -1,0 +1,41 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule ArrayTypeToClass
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++eTypeAccess:TypeAccess {
+		++  -type -> eType
+	}
+
+	eModel:Model {
+		++  -orphanTypes -> eArrayType
+	}
+
+	eType:Type 
+
+	++eArrayType:ArrayType {
+		++  -elementType -> eTypeAccess
+	}
+}
+
+#target {
+	typeGraph:TypeGraph {
+		-ownedTypes -> tArrayClass
+	}
+
+	tArrayClass:TAbstractType
+}
+
+#correspondence {
+	eModelToTypeGraph :ModelToTypeGraph {
+		#src->eModel
+		#trg->typeGraph
+	}
+
+	eTypeToTArrayClass :TypeToTAbstractType {
+		#src->eType
+		#trg->tArrayClass
+	}
+}

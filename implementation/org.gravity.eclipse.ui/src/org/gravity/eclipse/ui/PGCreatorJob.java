@@ -28,7 +28,7 @@ public final class PGCreatorJob extends ModelCreatorJob {
 	 * @param selection A selection from the workspace
 	 */
 	public PGCreatorJob(final List<?> selection) {
-		super(selection, "program model", "xmi");
+		super(selection, "program model");
 	}
 
 	@Override
@@ -49,6 +49,6 @@ public final class PGCreatorJob extends ModelCreatorJob {
 			LOGGER.log(Level.ERROR, "No program model has been created for " + iProject.getName());
 			return false;
 		}
-		return save(iProject, converter.getPG(), monitor);
+		return true;
 	}
 }

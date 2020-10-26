@@ -31,6 +31,7 @@ import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runners.model.InitializationError;
 
 /**
  * A class for testing the HulkAPI This test should be executed as JUnit plugin
@@ -53,9 +54,10 @@ public class HulkApiTest {
 	 * @throws CoreException     If no projects could be imported
 	 * @throws GitCloneException If the test projects cannot be cloned
 	 * @throws IOException       If the git client cannot be closed
+	 * @throws InitializationError 
 	 */
 	@BeforeClass
-	public static void collectProjects() throws CoreException, GitCloneException, IOException {
+	public static void collectProjects() throws CoreException, GitCloneException, IOException, InitializationError {
 		final File location = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), "repository");
 		new GitTools("https://github.com/GRaViTY-Tool/gravity-evaluation-data.git", location, true, false).close();
 
@@ -63,6 +65,9 @@ public class HulkApiTest {
 				.importProjects(new File(location, "gravity-evaluation-data"), new NullProgressMonitor())
 				.parallelStream().filter(project -> "SecureMailApp".equals(project.getName()))
 				.map(project -> JavaProjectUtil.getJavaProject(project)).findAny().orElse(null);
+		if(javaProject == null) {
+			throw new InitializationError("Couldn't load java project");
+		}
 	}
 
 	/**

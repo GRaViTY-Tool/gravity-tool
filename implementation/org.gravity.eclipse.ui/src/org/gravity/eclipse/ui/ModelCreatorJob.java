@@ -33,7 +33,6 @@ public abstract class ModelCreatorJob extends Job {
 
 	private final List<?> selection;
 	private final String modelKind;
-	private final String fileExtension;
 
 	/**
 	 * Creates a new instance of a model creator job
@@ -43,9 +42,8 @@ public abstract class ModelCreatorJob extends Job {
 	 * @param fileExtension The file extension of the file into which the model will
 	 *                      be stored
 	 */
-	protected ModelCreatorJob(List<?> selection, String modelKind, String fileExtension) {
+	protected ModelCreatorJob(List<?> selection, String modelKind) {
 		super("GRaViTY Create " + modelKind);
-		this.fileExtension = fileExtension;
 		this.modelKind = modelKind;
 		this.selection = selection;
 	}
@@ -83,23 +81,4 @@ public abstract class ModelCreatorJob extends Job {
 	 */
 	protected abstract boolean process(IJavaProject iJavaProject, IProgressMonitor monitor);
 
-	/**
-	 * Saves a model into the project
-	 *
-	 * @param iProject The project
-	 * @param model    The model
-	 * @param monitor  A progress monitor
-	 * @return true, iff the model has been saved successfully
-	 */
-	protected boolean save(IProject iProject, EObject model, IProgressMonitor monitor) {
-		IFolder folder;
-		try {
-			folder = EclipseProjectUtil.getGravityFolder(iProject, monitor);
-		} catch (final IOException e) {
-			LOGGER.error(e.getLocalizedMessage(), e);
-			return false;
-		}
-		final IFile file = folder.getFile(iProject.getName() + '.' + this.fileExtension);
-		return ModelSaver.saveModel(model, file, monitor);
-	}
 }

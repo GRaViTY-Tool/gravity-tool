@@ -184,8 +184,8 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 		PrimitiveTypeIntImpl.pattern_PrimitiveTypeInt_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, jm, umpt, up,
 				jpt2upt2, jpt);
 		//nothing EMoflonEdge up__umpt____packagedElement = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge jm__jpt____orphanTypes = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge jpt2upt2__jpt____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge jpt2upt2__jpt____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge jm__jpt____orphanTypes = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge jpt2upt2__umpt____target = (EMoflonEdge) result3_green[9];
 
 		// 
@@ -472,8 +472,8 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 		PrimitiveTypeIntImpl.pattern_PrimitiveTypeInt_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, jm, umpt, up,
 				jpt2upt2, jpt);
 		//nothing EMoflonEdge up__umpt____packagedElement = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge jm__jpt____orphanTypes = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge jpt2upt2__jpt____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge jpt2upt2__jpt____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge jm__jpt____orphanTypes = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge jpt2upt2__umpt____target = (EMoflonEdge) result3_green[9];
 
 		// 
@@ -671,7 +671,7 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_329(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_168(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIntImpl
 				.pattern_PrimitiveTypeInt_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -728,7 +728,7 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_339(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_173(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIntImpl
 				.pattern_PrimitiveTypeInt_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -800,13 +800,13 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 			return ruleResult;
 		}
 
-		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
-		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
-		var_jpt_name.setType("String");
-
 		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
 		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
 		var_umpt_name.setType("String");
+
+		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
+		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
+		var_jpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -852,13 +852,13 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 			return ruleResult;
 		}
 
-		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
-		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
-		var_jpt_name.setType("String");
-
 		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
 		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
 		var_umpt_name.setType("String");
+
+		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
+		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
+		var_jpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1045,8 +1045,8 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 				.pattern_PrimitiveTypeInt_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList jm2upList = (RuleEntryList) result2_black[0];
 			JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) result2_black[1];
-			Model jm = (Model) result2_black[2];
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_black[3];
+			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_black[2];
+			Model jm = (Model) result2_black[3];
 
 			Object[] result3_bindingAndBlack = PrimitiveTypeIntImpl
 					.pattern_PrimitiveTypeInt_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, jm2up, jm,
@@ -1198,10 +1198,10 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_INT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_INT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_329__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_329((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_INT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_339__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_339((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_INT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_168__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_168((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_INT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_173__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_173((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_INT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_INT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1444,33 +1444,33 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	public static final Object[] pattern_PrimitiveTypeInt_1_3_bookkeepingforedges_greenBBBBBBFFFF(
 			PerformRuleResult ruleresult, EObject jm, EObject umpt, EObject up, EObject jpt2upt2, EObject jpt) {
 		EMoflonEdge up__umpt____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm__jpt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jpt2upt2__jpt____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm__jpt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jpt2upt2__umpt____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "PrimitiveTypeInt";
 		String up__umpt____packagedElement_name_prime = "packagedElement";
-		String jm__jpt____orphanTypes_name_prime = "orphanTypes";
 		String jpt2upt2__jpt____source_name_prime = "source";
+		String jm__jpt____orphanTypes_name_prime = "orphanTypes";
 		String jpt2upt2__umpt____target_name_prime = "target";
 		up__umpt____packagedElement.setSrc(up);
 		up__umpt____packagedElement.setTrg(umpt);
 		ruleresult.getCreatedEdges().add(up__umpt____packagedElement);
-		jm__jpt____orphanTypes.setSrc(jm);
-		jm__jpt____orphanTypes.setTrg(jpt);
-		ruleresult.getTranslatedEdges().add(jm__jpt____orphanTypes);
 		jpt2upt2__jpt____source.setSrc(jpt2upt2);
 		jpt2upt2__jpt____source.setTrg(jpt);
 		ruleresult.getCreatedEdges().add(jpt2upt2__jpt____source);
+		jm__jpt____orphanTypes.setSrc(jm);
+		jm__jpt____orphanTypes.setTrg(jpt);
+		ruleresult.getTranslatedEdges().add(jm__jpt____orphanTypes);
 		jpt2upt2__umpt____target.setSrc(jpt2upt2);
 		jpt2upt2__umpt____target.setTrg(umpt);
 		ruleresult.getCreatedEdges().add(jpt2upt2__umpt____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		up__umpt____packagedElement.setName(up__umpt____packagedElement_name_prime);
-		jm__jpt____orphanTypes.setName(jm__jpt____orphanTypes_name_prime);
 		jpt2upt2__jpt____source.setName(jpt2upt2__jpt____source_name_prime);
+		jm__jpt____orphanTypes.setName(jm__jpt____orphanTypes_name_prime);
 		jpt2upt2__umpt____target.setName(jpt2upt2__umpt____target_name_prime);
 		return new Object[] { ruleresult, jm, umpt, up, jpt2upt2, jpt, up__umpt____packagedElement,
-				jm__jpt____orphanTypes, jpt2upt2__jpt____source, jpt2upt2__umpt____target };
+				jpt2upt2__jpt____source, jm__jpt____orphanTypes, jpt2upt2__umpt____target };
 	}
 
 	public static final void pattern_PrimitiveTypeInt_1_5_registerobjects_expressionBBBBBBBB(PrimitiveTypeInt _this,
@@ -1825,8 +1825,8 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 		org.eclipse.modisco.java.PrimitiveTypeInt jpt = JavaFactory.eINSTANCE.createPrimitiveTypeInt();
 		Object _localVariable_0 = csp.getValue("jpt", "name");
 		jpt2upt2.setTarget(umpt);
-		jm.getOrphanTypes().add(jpt);
 		jpt2upt2.setSource(jpt);
+		jm.getOrphanTypes().add(jpt);
 		String jpt_name_prime = (String) _localVariable_0;
 		jpt.setName(jpt_name_prime);
 		return new Object[] { jm, umpt, jpt2upt2, jpt, csp };
@@ -1887,33 +1887,33 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	public static final Object[] pattern_PrimitiveTypeInt_11_3_bookkeepingforedges_greenBBBBBBFFFF(
 			PerformRuleResult ruleresult, EObject jm, EObject umpt, EObject up, EObject jpt2upt2, EObject jpt) {
 		EMoflonEdge up__umpt____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm__jpt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jpt2upt2__jpt____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm__jpt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jpt2upt2__umpt____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "PrimitiveTypeInt";
 		String up__umpt____packagedElement_name_prime = "packagedElement";
-		String jm__jpt____orphanTypes_name_prime = "orphanTypes";
 		String jpt2upt2__jpt____source_name_prime = "source";
+		String jm__jpt____orphanTypes_name_prime = "orphanTypes";
 		String jpt2upt2__umpt____target_name_prime = "target";
 		up__umpt____packagedElement.setSrc(up);
 		up__umpt____packagedElement.setTrg(umpt);
 		ruleresult.getTranslatedEdges().add(up__umpt____packagedElement);
-		jm__jpt____orphanTypes.setSrc(jm);
-		jm__jpt____orphanTypes.setTrg(jpt);
-		ruleresult.getCreatedEdges().add(jm__jpt____orphanTypes);
 		jpt2upt2__jpt____source.setSrc(jpt2upt2);
 		jpt2upt2__jpt____source.setTrg(jpt);
 		ruleresult.getCreatedEdges().add(jpt2upt2__jpt____source);
+		jm__jpt____orphanTypes.setSrc(jm);
+		jm__jpt____orphanTypes.setTrg(jpt);
+		ruleresult.getCreatedEdges().add(jm__jpt____orphanTypes);
 		jpt2upt2__umpt____target.setSrc(jpt2upt2);
 		jpt2upt2__umpt____target.setTrg(umpt);
 		ruleresult.getCreatedEdges().add(jpt2upt2__umpt____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		up__umpt____packagedElement.setName(up__umpt____packagedElement_name_prime);
-		jm__jpt____orphanTypes.setName(jm__jpt____orphanTypes_name_prime);
 		jpt2upt2__jpt____source.setName(jpt2upt2__jpt____source_name_prime);
+		jm__jpt____orphanTypes.setName(jm__jpt____orphanTypes_name_prime);
 		jpt2upt2__umpt____target.setName(jpt2upt2__umpt____target_name_prime);
 		return new Object[] { ruleresult, jm, umpt, up, jpt2upt2, jpt, up__umpt____packagedElement,
-				jm__jpt____orphanTypes, jpt2upt2__jpt____source, jpt2upt2__umpt____target };
+				jpt2upt2__jpt____source, jm__jpt____orphanTypes, jpt2upt2__umpt____target };
 	}
 
 	public static final void pattern_PrimitiveTypeInt_11_5_registerobjects_expressionBBBBBBBB(PrimitiveTypeInt _this,
@@ -2170,7 +2170,7 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	}
 
 	public static final Object[] pattern_PrimitiveTypeInt_20_2_testcorematchandDECs_black_nac_0B(PrimitiveType umpt) {
-		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_995560 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_139037 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}
@@ -2178,7 +2178,7 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	}
 
 	public static final Object[] pattern_PrimitiveTypeInt_20_2_testcorematchandDECs_black_nac_1B(PrimitiveType umpt) {
-		for (Interface __DEC_umpt_nestedClassifier_341792 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_umpt_nestedClassifier_273182 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, Interface.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}
@@ -2563,7 +2563,7 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	}
 
 	public static final Object[] pattern_PrimitiveTypeInt_28_1_matchtggpattern_black_nac_0B(PrimitiveType umpt) {
-		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_549809 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_908312 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}
@@ -2571,7 +2571,7 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	}
 
 	public static final Object[] pattern_PrimitiveTypeInt_28_1_matchtggpattern_black_nac_1B(PrimitiveType umpt) {
-		for (Interface __DEC_umpt_nestedClassifier_570629 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_umpt_nestedClassifier_706944 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, Interface.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}
@@ -2625,17 +2625,17 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	}
 
 	public static final Object[] pattern_PrimitiveTypeInt_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, Model jm) {
-		if (ruleResult.getSourceObjects().contains(jm)) {
-			return new Object[] { ruleResult, jm };
+			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Package up) {
+		if (ruleResult.getTargetObjects().contains(up)) {
+			return new Object[] { ruleResult, up };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_PrimitiveTypeInt_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Package up) {
-		if (ruleResult.getTargetObjects().contains(up)) {
-			return new Object[] { ruleResult, up };
+			ModelgeneratorRuleResult ruleResult, Model jm) {
+		if (ruleResult.getSourceObjects().contains(jm)) {
+			return new Object[] { ruleResult, jm };
 		}
 		return null;
 	}
@@ -2647,19 +2647,19 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 			for (EObject tmpJm2up : jm2upList.getEntryObjects()) {
 				if (tmpJm2up instanceof JavaModel2UMLPackage) {
 					JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) tmpJm2up;
-					Model jm = jm2up.getSource();
-					if (jm != null) {
-						org.eclipse.uml2.uml.Package up = jm2up.getTarget();
-						if (up != null) {
+					org.eclipse.uml2.uml.Package up = jm2up.getTarget();
+					if (up != null) {
+						Model jm = jm2up.getSource();
+						if (jm != null) {
 							String up_name = up.getName();
 							if (up_name.equals("Common Java datatypes")) {
 								if (pattern_PrimitiveTypeInt_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 										jm2up) == null) {
 									if (pattern_PrimitiveTypeInt_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-											jm) == null) {
+											up) == null) {
 										if (pattern_PrimitiveTypeInt_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-												up) == null) {
-											_result.add(new Object[] { jm2upList, jm2up, jm, up, ruleEntryContainer,
+												jm) == null) {
+											_result.add(new Object[] { jm2upList, jm2up, up, jm, ruleEntryContainer,
 													ruleResult });
 										}
 									}
@@ -2748,8 +2748,8 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 		ruleResult.getTargetObjects().add(umpt);
 		jpt2upt2.setTarget(umpt);
 		ruleResult.getCorrObjects().add(jpt2upt2);
-		jm.getOrphanTypes().add(jpt);
 		jpt2upt2.setSource(jpt);
+		jm.getOrphanTypes().add(jpt);
 		ruleResult.getSourceObjects().add(jpt);
 		String umpt_name_prime = (String) _localVariable_0;
 		String jpt_name_prime = (String) _localVariable_1;

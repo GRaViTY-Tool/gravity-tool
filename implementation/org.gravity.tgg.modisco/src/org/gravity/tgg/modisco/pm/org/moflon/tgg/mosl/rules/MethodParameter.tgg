@@ -1,0 +1,99 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule MethodParameter
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mSignature:MMethodSignature {
+		++  -mEntrys -> mEntry
+	}
+
+	++mEntry:MEntry{
+		++  -type -> mType
+	}
+
+	mType:Type
+}
+
+#target {
+	tSiganture:TMethodSignature {
+		++  -parameters -> tParameter
+	}
+
+	++tParameter:TParameter {
+		++  -type -> tAbstractType
+	}
+
+	tAbstractType:TAbstractType
+}
+
+#correspondence {
+	++ mEntryToTParameter :MEntryToTParameter {
+		#src->mEntry
+		#trg->tParameter
+	}
+
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mEntry
+		#trg->tParameter
+	}
+
+	mSignatureToTSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSiganture
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule MethodParameterSingleType #extends MethodParameter
+#with org.gravity.tgg.modisco.pm
+
+#source{
+	mType : Type
+}
+
+#target {
+	tAbstractType : TAbstractType
+}
+
+#correspondence {
+	mTypeToTAbstractType :TypeToTAbstractType {
+		#src->mType
+		#trg->tAbstractType
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule MethodParameterArrayType #extends MethodParameter
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mType:ArrayType{
+		-elementType -> mTypeAccess
+	}
+
+	mTypeAccess:TypeAccess {
+		-type -> mTypeOfArray
+	}
+
+	mTypeOfArray:Type
+}
+
+#target {
+	++ tParameter :TParameter {
+		lowerBound := 0
+		upperBound := -1
+	}
+	
+	tAbstractType : TAbstractType
+}
+
+#correspondence {
+	mTypeToTAbstractType :TypeToTAbstractType {
+		#src->mTypeOfArray
+		#trg->tAbstractType
+	}
+}

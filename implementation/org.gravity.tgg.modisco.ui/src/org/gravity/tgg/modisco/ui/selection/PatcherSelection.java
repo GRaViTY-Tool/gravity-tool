@@ -13,7 +13,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
-import org.gravity.tgg.modisco.MoDiscoTGGActivator;
+import org.gravity.tgg.modisco.pm.MoDiscoTGGActivator;
 
 /**
  * This class provides the functionality for listing all modisco model patcher

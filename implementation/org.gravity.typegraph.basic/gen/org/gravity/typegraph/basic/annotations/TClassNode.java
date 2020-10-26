@@ -23,7 +23,7 @@ import org.gravity.typegraph.basic.TAbstractType;
  * @model
  * @generated
  */
-public interface TClassNode extends EObject {
+public interface TClassNode extends EObject, TAbstractNode {
 	/**
 	 * Returns the value of the '<em><b>TClass</b></em>' reference.
 	 * <!-- begin-user-doc -->

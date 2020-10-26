@@ -103,25 +103,25 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	public boolean isAppropriate_FWD(Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer) {
 
 		Object[] result1_black = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_1_initialbindings_blackBBBBB(
-						this, match, modifier, bodyDeclaration, jContainer);
+						this, match, bodyDeclaration, modifier, jContainer);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[jContainer] = " + jContainer + ".");
+					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = "
+					+ modifier + ", " + "[jContainer] = " + jContainer + ".");
 		}
 
 		Object[] result2_bindingAndBlack = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_2_SolveCSP_bindingAndBlackFBBBBB(
-						this, match, modifier, bodyDeclaration, jContainer);
+						this, match, bodyDeclaration, modifier, jContainer);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[jContainer] = " + jContainer + ".");
+					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = "
+					+ modifier + ", " + "[jContainer] = " + jContainer + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -131,15 +131,15 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 			Object[] result4_black = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 					.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_4_collectelementstobetranslated_blackBBBB(
-							match, modifier, bodyDeclaration, jContainer);
+							match, bodyDeclaration, modifier, jContainer);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ", "
 						+ "[jContainer] = " + jContainer + ".");
 			}
 			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 					.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_4_collectelementstobetranslated_greenBBBBFFFF(
-							match, modifier, bodyDeclaration, jContainer);
+							match, bodyDeclaration, modifier, jContainer);
 			//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result4_green[4];
 			//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result4_green[5];
 			//nothing EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result4_green[6];
@@ -147,10 +147,10 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 			Object[] result5_black = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 					.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_5_collectcontextelements_blackBBBB(
-							match, modifier, bodyDeclaration, jContainer);
+							match, bodyDeclaration, modifier, jContainer);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ", "
 						+ "[jContainer] = " + jContainer + ".");
 			}
 			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
@@ -160,7 +160,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 			// 
 			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 					.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_6_registerobjectstomatch_expressionBBBBB(
-							this, match, modifier, bodyDeclaration, jContainer);
+							this, match, bodyDeclaration, modifier, jContainer);
 			return InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 					.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_7_expressionF();
 		} else {
@@ -184,15 +184,15 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Modifier modifier = (Modifier) result1_bindingAndBlack[0];
-		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_bindingAndBlack[1];
+		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_bindingAndBlack[0];
+		Modifier modifier = (Modifier) result1_bindingAndBlack[1];
 		Interface uContainer = (Interface) result1_bindingAndBlack[2];
 		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result1_bindingAndBlack[3];
 		NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_greenFFFFBBBB(
-						modifier, bodyDeclaration, uContainer, csp);
+						bodyDeclaration, modifier, uContainer, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
 		Interface feature = (Interface) result1_green[1];
 		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[2];
@@ -200,30 +200,30 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 		Object[] result2_black = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_2_collecttranslatedelements_blackBBBBBB(
-						m2f, feature, bd2ne, b2e, modifier, bodyDeclaration);
+						m2f, feature, bd2ne, b2e, bodyDeclaration, modifier);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
 					+ "[feature] = " + feature + ", " + "[bd2ne] = " + bd2ne + ", " + "[b2e] = " + b2e + ", "
-					+ "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		Object[] result2_green = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_2_collecttranslatedelements_greenFBBBBBB(
-						m2f, feature, bd2ne, b2e, modifier, bodyDeclaration);
+						m2f, feature, bd2ne, b2e, bodyDeclaration, modifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-						ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer, ne2ne);
+						ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, jContainer, ne2ne);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[bd2ne] = " + bd2ne + ", "
-					+ "[b2e] = " + b2e + ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer
-					+ ", " + "[ne2ne] = " + ne2ne + ".");
+					+ "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = "
+					+ modifier + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ", "
+					+ "[ne2ne] = " + ne2ne + ".");
 		}
 		InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(
-						ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer);
+						ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, jContainer);
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[11];
@@ -240,7 +240,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		// 
 		InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_5_registerobjects_expressionBBBBBBBBBBB(
-						this, ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer,
+						this, ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, jContainer,
 						ne2ne);
 		return InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_6_expressionFB(ruleresult);
@@ -274,21 +274,21 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Modifier modifier = (Modifier) result2_binding[0];
-		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_binding[1];
+		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_binding[0];
+		Modifier modifier = (Modifier) result2_binding[1];
 		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_binding[2];
 		for (Object[] result2_black : InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_2_corematch_blackBBFBFB(
-						modifier, bodyDeclaration, jContainer, match)) {
+						bodyDeclaration, modifier, jContainer, match)) {
 			Interface uContainer = (Interface) result2_black[2];
 			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 					.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_3_findcontext_blackBBBBB(
-							modifier, bodyDeclaration, uContainer, jContainer, ne2ne)) {
+							bodyDeclaration, modifier, uContainer, jContainer, ne2ne)) {
 				Object[] result3_green = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 						.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_3_findcontext_greenBBBBBFFFFFFF(
-								modifier, bodyDeclaration, uContainer, jContainer, ne2ne);
+								bodyDeclaration, modifier, uContainer, jContainer, ne2ne);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
 				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
@@ -299,12 +299,12 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 				Object[] result4_bindingAndBlack = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 						.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_4_solveCSP_bindingAndBlackFBBBBBBB(
-								this, isApplicableMatch, modifier, bodyDeclaration, uContainer, jContainer, ne2ne);
+								this, isApplicableMatch, bodyDeclaration, modifier, uContainer, jContainer, ne2ne);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[modifier] = " + modifier + ", "
-							+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[uContainer] = " + uContainer + ", "
-							+ "[jContainer] = " + jContainer + ", " + "[ne2ne] = " + ne2ne + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ", " + "[modifier] = " + modifier + ", " + "[uContainer] = "
+							+ uContainer + ", " + "[jContainer] = " + jContainer + ", " + "[ne2ne] = " + ne2ne + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -338,10 +338,10 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	public void registerObjectsToMatch_FWD(Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer) {
-		match.registerObject("modifier", modifier);
 		match.registerObject("bodyDeclaration", bodyDeclaration);
+		match.registerObject("modifier", modifier);
 		match.registerObject("jContainer", jContainer);
 
 	}
@@ -351,7 +351,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	public CSP isAppropriate_solveCsp_FWD(Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -381,8 +381,8 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			InterfaceDeclaration bodyDeclaration, Interface uContainer, AbstractTypeDeclaration jContainer,
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration bodyDeclaration,
+			Modifier modifier, Interface uContainer, AbstractTypeDeclaration jContainer,
 			NamedElement2NamedElement ne2ne) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -390,36 +390,36 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		// Create literals
 
 		// Create attribute variables
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
-		var_modifier_visibility.setValue(modifier.getVisibility());
-		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
 				csp);
 		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
 		var_bodyDeclaration_name.setType("String");
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
+		var_modifier_visibility.setValue(modifier.getVisibility());
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		// Create unbound variables
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
-		var_feature_visibility.setType("uml.VisibilityKind");
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
 		var_feature_name.setType("String");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		// Create constraints
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 		Eq eq = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(jVisibility2umlVisibility);
 		csp.getConstraints().add(eq);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		jVisibility2umlVisibility.setRuleName("NoRuleName");
-		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 		eq.setRuleName("NoRuleName");
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		jVisibility2umlVisibility.setRuleName("NoRuleName");
+		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("modifier", modifier);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("modifier", modifier);
 		isApplicableMatch.registerObject("uContainer", uContainer);
 		isApplicableMatch.registerObject("jContainer", jContainer);
 		isApplicableMatch.registerObject("ne2ne", ne2ne);
@@ -441,14 +441,14 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne,
-			EObject b2e, EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer,
+			EObject b2e, EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer,
 			EObject ne2ne) {
 		ruleresult.registerObject("m2f", m2f);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("b2e", b2e);
-		ruleresult.registerObject("modifier", modifier);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("modifier", modifier);
 		ruleresult.registerObject("uContainer", uContainer);
 		ruleresult.registerObject("jContainer", jContainer);
 		ruleresult.registerObject("ne2ne", ne2ne);
@@ -462,9 +462,9 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 */
 	public boolean checkTypes_FWD(Match match) {
 		return true
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("modifier").eClass()).equals("java.Modifier.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("bodyDeclaration").eClass())
-						.equals("java.InterfaceDeclaration.");
+						.equals("java.InterfaceDeclaration.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("modifier").eClass()).equals("java.Modifier.");
 	}
 
 	/**
@@ -558,35 +558,35 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
 		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[2];
 		ASTNode2Element b2e = (ASTNode2Element) result1_green[3];
-		Modifier modifier = (Modifier) result1_green[4];
-		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_green[5];
+		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_green[4];
+		Modifier modifier = (Modifier) result1_green[5];
 
 		Object[] result2_black = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_2_collecttranslatedelements_blackBBBBBB(
-						m2f, feature, bd2ne, b2e, modifier, bodyDeclaration);
+						m2f, feature, bd2ne, b2e, bodyDeclaration, modifier);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
 					+ "[feature] = " + feature + ", " + "[bd2ne] = " + bd2ne + ", " + "[b2e] = " + b2e + ", "
-					+ "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		Object[] result2_green = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_2_collecttranslatedelements_greenFBBBBBB(
-						m2f, feature, bd2ne, b2e, modifier, bodyDeclaration);
+						m2f, feature, bd2ne, b2e, bodyDeclaration, modifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-						ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer, ne2ne);
+						ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, jContainer, ne2ne);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[bd2ne] = " + bd2ne + ", "
-					+ "[b2e] = " + b2e + ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer
-					+ ", " + "[ne2ne] = " + ne2ne + ".");
+					+ "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = "
+					+ modifier + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ", "
+					+ "[ne2ne] = " + ne2ne + ".");
 		}
 		InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(
-						ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer);
+						ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, jContainer);
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[11];
@@ -603,7 +603,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		// 
 		InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_5_registerobjects_expressionBBBBBBBBBBB(
-						this, ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer,
+						this, ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, jContainer,
 						ne2ne);
 		return InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_6_expressionFB(
@@ -747,31 +747,31 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		// Create literals
 
 		// Create attribute variables
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
-		var_feature_visibility.setValue(feature.getVisibility());
-		var_feature_visibility.setType("uml.VisibilityKind");
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
 		var_feature_name.setValue(feature.getName());
 		var_feature_name.setType("String");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
+		var_feature_visibility.setValue(feature.getVisibility());
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		// Create unbound variables
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
-		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
 		var_bodyDeclaration_name.setType("String");
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		// Create constraints
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 		Eq eq = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(jVisibility2umlVisibility);
 		csp.getConstraints().add(eq);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		jVisibility2umlVisibility.setRuleName("NoRuleName");
-		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 		eq.setRuleName("NoRuleName");
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		jVisibility2umlVisibility.setRuleName("NoRuleName");
+		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("feature", feature);
@@ -796,14 +796,14 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne,
-			EObject b2e, EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer,
+			EObject b2e, EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer,
 			EObject ne2ne) {
 		ruleresult.registerObject("m2f", m2f);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("b2e", b2e);
-		ruleresult.registerObject("modifier", modifier);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("modifier", modifier);
 		ruleresult.registerObject("uContainer", uContainer);
 		ruleresult.registerObject("jContainer", jContainer);
 		ruleresult.registerObject("ne2ne", ne2ne);
@@ -825,7 +825,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_315(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_93(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -888,7 +888,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_325(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_97(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -907,8 +907,8 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		for (Object[] result2_black : InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_21_2_testcorematchandDECs_blackFFFB(
 						_edge_modifier)) {
-			Modifier modifier = (Modifier) result2_black[0];
-			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_black[1];
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_black[0];
+			Modifier modifier = (Modifier) result2_black[1];
 			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[2];
 			Object[] result2_green = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 					.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_21_2_testcorematchandDECs_greenFB(
@@ -918,7 +918,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 			// 
 			if (InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 					.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, modifier, bodyDeclaration, jContainer)) {
+							this, match, bodyDeclaration, modifier, jContainer)) {
 				// 
 				if (InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 						.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -962,14 +962,6 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
@@ -978,30 +970,38 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
 
-		JVisibility2umlVisibility jVisibility2umlVisibility0 = new JVisibility2umlVisibility();
-		csp.getConstraints().add(jVisibility2umlVisibility0);
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Eq eq1 = new Eq();
-		csp.getConstraints().add(eq1);
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
-		jVisibility2umlVisibility0.setRuleName("InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier");
-		jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
+		Eq eq0 = new Eq();
+		csp.getConstraints().add(eq0);
 
-		eq1.setRuleName("InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier");
-		eq1.solve(var_bodyDeclaration_name, var_feature_name);
+		JVisibility2umlVisibility jVisibility2umlVisibility1 = new JVisibility2umlVisibility();
+		csp.getConstraints().add(jVisibility2umlVisibility1);
+
+		eq0.setRuleName("InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier");
+		eq0.solve(var_bodyDeclaration_name, var_feature_name);
+
+		jVisibility2umlVisibility1.setRuleName("InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier");
+		jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_feature_visibility.setBound(false);
 			var_feature_name.setBound(false);
-			jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
-			eq1.solve(var_bodyDeclaration_name, var_feature_name);
+			var_feature_visibility.setBound(false);
+			eq0.solve(var_bodyDeclaration_name, var_feature_name);
+			jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("feature", "visibility", var_feature_visibility.getValue());
 				__helper.setValue("feature", "name", var_feature_name.getValue());
+				__helper.setValue("feature", "visibility", var_feature_visibility.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1026,14 +1026,6 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
@@ -1042,30 +1034,38 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
 
-		JVisibility2umlVisibility jVisibility2umlVisibility0 = new JVisibility2umlVisibility();
-		csp.getConstraints().add(jVisibility2umlVisibility0);
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Eq eq1 = new Eq();
-		csp.getConstraints().add(eq1);
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
-		jVisibility2umlVisibility0.setRuleName("InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier");
-		jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
+		Eq eq0 = new Eq();
+		csp.getConstraints().add(eq0);
 
-		eq1.setRuleName("InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier");
-		eq1.solve(var_bodyDeclaration_name, var_feature_name);
+		JVisibility2umlVisibility jVisibility2umlVisibility1 = new JVisibility2umlVisibility();
+		csp.getConstraints().add(jVisibility2umlVisibility1);
+
+		eq0.setRuleName("InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier");
+		eq0.solve(var_bodyDeclaration_name, var_feature_name);
+
+		jVisibility2umlVisibility1.setRuleName("InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier");
+		jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_modifier_visibility.setBound(false);
 			var_bodyDeclaration_name.setBound(false);
-			jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
-			eq1.solve(var_bodyDeclaration_name, var_feature_name);
+			var_modifier_visibility.setBound(false);
+			eq0.solve(var_bodyDeclaration_name, var_feature_name);
+			jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("modifier", "visibility", var_modifier_visibility.getValue());
 				__helper.setValue("bodyDeclaration", "name", var_bodyDeclaration_name.getValue());
+				__helper.setValue("modifier", "visibility", var_modifier_visibility.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1099,19 +1099,20 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		Interface feature = (Interface) result2_bindingAndBlack[0];
-		Modifier modifier = (Modifier) result2_bindingAndBlack[1];
-		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_bindingAndBlack[2];
+		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_bindingAndBlack[1];
+		Modifier modifier = (Modifier) result2_bindingAndBlack[2];
 		Interface uContainer = (Interface) result2_bindingAndBlack[3];
 		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_bindingAndBlack[4];
 
 		Object[] result3_bindingAndBlack = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_3_solvecsp_bindingAndBlackFBBBBBBBB(
-						this, feature, modifier, bodyDeclaration, uContainer, jContainer, sourceMatch, targetMatch);
+						this, feature, bodyDeclaration, modifier, uContainer, jContainer, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[feature] = " + feature + ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer
-					+ ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[feature] = " + feature
+							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ", "
+							+ "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ", "
+							+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
@@ -1130,16 +1131,16 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 				Object[] result6_black = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 						.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_6_createcorrespondence_blackBBBBBB(
-								feature, modifier, bodyDeclaration, uContainer, jContainer, ccMatch);
+								feature, bodyDeclaration, modifier, uContainer, jContainer, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature
-							+ ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ", "
 							+ "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
 				InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 						.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_6_createcorrespondence_greenFBFFBBB(
-								feature, modifier, bodyDeclaration, ccMatch);
+								feature, bodyDeclaration, modifier, ccMatch);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
 				//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[2];
 				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[3];
@@ -1168,19 +1169,13 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Interface feature, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	public CSP isApplicable_solveCsp_CC(Interface feature, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			Interface uContainer, AbstractTypeDeclaration jContainer, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
 
 		// Create attribute variables
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
-		var_modifier_visibility.setValue(modifier.getVisibility());
-		var_modifier_visibility.setType("java.VisibilityKind");
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
-		var_feature_visibility.setValue(feature.getVisibility());
-		var_feature_visibility.setType("uml.VisibilityKind");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
 				csp);
 		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
@@ -1188,21 +1183,27 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
 		var_feature_name.setValue(feature.getName());
 		var_feature_name.setType("String");
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
+		var_modifier_visibility.setValue(modifier.getVisibility());
+		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
+		var_feature_visibility.setValue(feature.getVisibility());
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		// Create unbound variables
 
 		// Create constraints
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 		Eq eq = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(jVisibility2umlVisibility);
 		csp.getConstraints().add(eq);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		jVisibility2umlVisibility.setRuleName("NoRuleName");
-		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 		eq.setRuleName("NoRuleName");
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		jVisibility2umlVisibility.setRuleName("NoRuleName");
+		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 		return csp;
 	}
 
@@ -1220,11 +1221,11 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	public boolean checkDEC_FWD(InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer) {// 
 		Object[] result1_black = InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 				.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_27_1_matchtggpattern_blackBBB(
-						modifier, bodyDeclaration, jContainer);
+						bodyDeclaration, modifier, jContainer);
 		if (result1_black != null) {
 			return InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierImpl
 					.pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_27_2_expressionF();
@@ -1317,8 +1318,8 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 					//nothing Interface feature = (Interface) result6_green[1];
 					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[2];
 					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[3];
-					//nothing Modifier modifier = (Modifier) result6_green[4];
-					//nothing InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result6_green[5];
+					//nothing InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result6_green[4];
+					//nothing Modifier modifier = (Modifier) result6_green[5];
 
 				} else {
 				}
@@ -1347,27 +1348,27 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
-		var_modifier_visibility.setType("java.VisibilityKind");
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
-		var_feature_visibility.setType("uml.VisibilityKind");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
 		var_bodyDeclaration_name.setType("String");
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
 		var_feature_name.setType("String");
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
+		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		// Create constraints
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 		Eq eq = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(jVisibility2umlVisibility);
 		csp.getConstraints().add(eq);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		jVisibility2umlVisibility.setRuleName("NoRuleName");
-		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 		eq.setRuleName("NoRuleName");
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		jVisibility2umlVisibility.setRuleName("NoRuleName");
+		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("uContainer", uContainer);
@@ -1393,25 +1394,25 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD__MATCH_MODIFIER_INTERFACEDECLARATION_ABSTRACTTYPEDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
-					(InterfaceDeclaration) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
+		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD__MATCH_INTERFACEDECLARATION_MODIFIER_ABSTRACTTYPEDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(Modifier) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
 		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODIFIER_INTERFACEDECLARATION_ABSTRACTTYPEDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
-					(InterfaceDeclaration) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
+		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_INTERFACEDECLARATION_MODIFIER_ABSTRACTTYPEDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(Modifier) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
 			return null;
-		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODIFIER_INTERFACEDECLARATION_ABSTRACTTYPEDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
-					(InterfaceDeclaration) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
+		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_INTERFACEDECLARATION_MODIFIER_ABSTRACTTYPEDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(Modifier) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
 		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODIFIER_INTERFACEDECLARATION_INTERFACE_ABSTRACTTYPEDECLARATION_NAMEDELEMENT2NAMEDELEMENT:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Modifier) arguments.get(1),
-					(InterfaceDeclaration) arguments.get(2), (Interface) arguments.get(3),
+		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_MODIFIER_INTERFACE_ABSTRACTTYPEDECLARATION_NAMEDELEMENT2NAMEDELEMENT:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+					(InterfaceDeclaration) arguments.get(1), (Modifier) arguments.get(2), (Interface) arguments.get(3),
 					(AbstractTypeDeclaration) arguments.get(4), (NamedElement2NamedElement) arguments.get(5));
 		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
@@ -1453,24 +1454,24 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 			return null;
 		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_315__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_315((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_325__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_325((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_93__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_93((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_97__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_97((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACE_MODIFIER_INTERFACEDECLARATION_INTERFACE_ABSTRACTTYPEDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Interface) arguments.get(0), (Modifier) arguments.get(1),
-					(InterfaceDeclaration) arguments.get(2), (Interface) arguments.get(3),
+		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACE_INTERFACEDECLARATION_MODIFIER_INTERFACE_ABSTRACTTYPEDECLARATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Interface) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(Modifier) arguments.get(2), (Interface) arguments.get(3),
 					(AbstractTypeDeclaration) arguments.get(4), (Match) arguments.get(5), (Match) arguments.get(6));
 		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___CHECK_DEC_FWD__MODIFIER_INTERFACEDECLARATION_ABSTRACTTYPEDECLARATION:
-			return checkDEC_FWD((Modifier) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___CHECK_DEC_FWD__INTERFACEDECLARATION_MODIFIER_ABSTRACTTYPEDECLARATION:
+			return checkDEC_FWD((InterfaceDeclaration) arguments.get(0), (Modifier) arguments.get(1),
 					(AbstractTypeDeclaration) arguments.get(2));
 		case RulesPackage.INNER_INTERFACE_DECLARATION2_INNER_INTERFACE_IN_INTERFACE_WITH_MODIFIER___CHECK_DEC_BWD__INTERFACE_INTERFACE:
 			return checkDEC_BWD((Interface) arguments.get(0), (Interface) arguments.get(1));
@@ -1487,21 +1488,21 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_1_initialbindings_blackBBBBB(
-			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Match match, Modifier modifier,
-			InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer) {
+			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Match match,
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer) {
 		if (!bodyDeclaration.equals(jContainer)) {
-			return new Object[] { _this, match, modifier, bodyDeclaration, jContainer };
+			return new Object[] { _this, match, bodyDeclaration, modifier, jContainer };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_2_SolveCSP_bindingFBBBBB(
-			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Match match, Modifier modifier,
-			InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, modifier, bodyDeclaration, jContainer);
+			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Match match,
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, bodyDeclaration, modifier, jContainer);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, modifier, bodyDeclaration, jContainer };
+			return new Object[] { csp, _this, match, bodyDeclaration, modifier, jContainer };
 		}
 		return null;
 	}
@@ -1512,10 +1513,10 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_2_SolveCSP_bindingAndBlackFBBBBB(
-			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Match match, Modifier modifier,
-			InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer) {
+			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Match match,
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer) {
 		Object[] result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_2_SolveCSP_binding = pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, modifier, bodyDeclaration, jContainer);
+				_this, match, bodyDeclaration, modifier, jContainer);
 		if (result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_2_SolveCSP_binding[0];
 
@@ -1523,7 +1524,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 					csp);
 			if (result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, modifier, bodyDeclaration, jContainer };
+				return new Object[] { csp, _this, match, bodyDeclaration, modifier, jContainer };
 			}
 		}
 		return null;
@@ -1537,22 +1538,22 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_4_collectelementstobetranslated_blackBBBB(
-			Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer) {
+			Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer) {
 		if (!bodyDeclaration.equals(jContainer)) {
-			return new Object[] { match, modifier, bodyDeclaration, jContainer };
+			return new Object[] { match, bodyDeclaration, modifier, jContainer };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_4_collectelementstobetranslated_greenBBBBFFFF(
-			Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer) {
+			Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer) {
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jContainer____abstractTypeDeclaration = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(modifier);
 		match.getToBeTranslatedNodes().add(bodyDeclaration);
+		match.getToBeTranslatedNodes().add(modifier);
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
 		String jContainer__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
@@ -1575,15 +1576,15 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 				.setName(jContainer__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jContainer____abstractTypeDeclaration
 				.setName(bodyDeclaration__jContainer____abstractTypeDeclaration_name_prime);
-		return new Object[] { match, modifier, bodyDeclaration, jContainer, bodyDeclaration__modifier____modifier,
+		return new Object[] { match, bodyDeclaration, modifier, jContainer, bodyDeclaration__modifier____modifier,
 				modifier__bodyDeclaration____bodyDeclaration, jContainer__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jContainer____abstractTypeDeclaration };
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_5_collectcontextelements_blackBBBB(
-			Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer) {
+			Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer) {
 		if (!bodyDeclaration.equals(jContainer)) {
-			return new Object[] { match, modifier, bodyDeclaration, jContainer };
+			return new Object[] { match, bodyDeclaration, modifier, jContainer };
 		}
 		return null;
 	}
@@ -1595,9 +1596,9 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final void pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_0_6_registerobjectstomatch_expressionBBBBB(
-			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Match match, Modifier modifier,
-			InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer) {
-		_this.registerObjectsToMatch_FWD(match, modifier, bodyDeclaration, jContainer);
+			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Match match,
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer) {
+		_this.registerObjectsToMatch_FWD(match, bodyDeclaration, modifier, jContainer);
 
 	}
 
@@ -1613,27 +1614,27 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("modifier");
-		EObject _localVariable_1 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_0 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_1 = isApplicableMatch.getObject("modifier");
 		EObject _localVariable_2 = isApplicableMatch.getObject("uContainer");
 		EObject _localVariable_3 = isApplicableMatch.getObject("jContainer");
 		EObject _localVariable_4 = isApplicableMatch.getObject("ne2ne");
-		EObject tmpModifier = _localVariable_0;
-		EObject tmpBodyDeclaration = _localVariable_1;
+		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpModifier = _localVariable_1;
 		EObject tmpUContainer = _localVariable_2;
 		EObject tmpJContainer = _localVariable_3;
 		EObject tmpNe2ne = _localVariable_4;
-		if (tmpModifier instanceof Modifier) {
-			Modifier modifier = (Modifier) tmpModifier;
-			if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
-				InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
+		if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
+			if (tmpModifier instanceof Modifier) {
+				Modifier modifier = (Modifier) tmpModifier;
 				if (tmpUContainer instanceof Interface) {
 					Interface uContainer = (Interface) tmpUContainer;
 					if (tmpJContainer instanceof AbstractTypeDeclaration) {
 						AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
 						if (tmpNe2ne instanceof NamedElement2NamedElement) {
 							NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) tmpNe2ne;
-							return new Object[] { modifier, bodyDeclaration, uContainer, jContainer, ne2ne,
+							return new Object[] { bodyDeclaration, modifier, uContainer, jContainer, ne2ne,
 									isApplicableMatch };
 						}
 					}
@@ -1644,7 +1645,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_blackBBBBBFBB(
-			Modifier modifier, InterfaceDeclaration bodyDeclaration, Interface uContainer,
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, Interface uContainer,
 			AbstractTypeDeclaration jContainer, NamedElement2NamedElement ne2ne,
 			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this,
 			IsApplicableMatch isApplicableMatch) {
@@ -1652,7 +1653,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { modifier, bodyDeclaration, uContainer, jContainer, ne2ne, csp, _this,
+					return new Object[] { bodyDeclaration, modifier, uContainer, jContainer, ne2ne, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1666,18 +1667,18 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		Object[] result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_binding = pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_binding != null) {
-			Modifier modifier = (Modifier) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_binding[0];
-			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_binding[1];
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_binding[0];
+			Modifier modifier = (Modifier) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_binding[1];
 			Interface uContainer = (Interface) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_binding[2];
 			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_binding[3];
 			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_binding[4];
 
 			Object[] result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_black = pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_blackBBBBBFBB(
-					modifier, bodyDeclaration, uContainer, jContainer, ne2ne, _this, isApplicableMatch);
+					bodyDeclaration, modifier, uContainer, jContainer, ne2ne, _this, isApplicableMatch);
 			if (result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_black[5];
 
-				return new Object[] { modifier, bodyDeclaration, uContainer, jContainer, ne2ne, csp, _this,
+				return new Object[] { bodyDeclaration, modifier, uContainer, jContainer, ne2ne, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1685,13 +1686,13 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_1_performtransformation_greenFFFFBBBB(
-			Modifier modifier, InterfaceDeclaration bodyDeclaration, Interface uContainer, CSP csp) {
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, Interface uContainer, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		Interface feature = UMLFactory.eINSTANCE.createInterface();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Object _localVariable_0 = csp.getValue("feature", "visibility");
-		Object _localVariable_1 = csp.getValue("feature", "name");
+		Object _localVariable_0 = csp.getValue("feature", "name");
+		Object _localVariable_1 = csp.getValue("feature", "visibility");
 		m2f.setSource(modifier);
 		m2f.setTarget(feature);
 		uContainer.getNestedClassifiers().add(feature);
@@ -1699,35 +1700,35 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		bd2ne.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
-		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_0;
-		String feature_name_prime = (String) _localVariable_1;
-		feature.setVisibility(feature_visibility_prime);
+		String feature_name_prime = (String) _localVariable_0;
+		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
 		feature.setName(feature_name_prime);
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, csp };
+		feature.setVisibility(feature_visibility_prime);
+		return new Object[] { m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, csp };
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_2_collecttranslatedelements_blackBBBBBB(
 			Modifier2NamedElement m2f, Interface feature, NamedElement2NamedElement bd2ne, ASTNode2Element b2e,
-			Modifier modifier, InterfaceDeclaration bodyDeclaration) {
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration };
+			InterfaceDeclaration bodyDeclaration, Modifier modifier) {
+		return new Object[] { m2f, feature, bd2ne, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_2_collecttranslatedelements_greenFBBBBBB(
 			Modifier2NamedElement m2f, Interface feature, NamedElement2NamedElement bd2ne, ASTNode2Element b2e,
-			Modifier modifier, InterfaceDeclaration bodyDeclaration) {
+			InterfaceDeclaration bodyDeclaration, Modifier modifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
 		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getCreatedLinkElements().add(b2e);
-		ruleresult.getTranslatedElements().add(modifier);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration };
+		ruleresult.getTranslatedElements().add(modifier);
+		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier,
-			EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne) {
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne) {
 		if (!m2f.equals(modifier)) {
 			if (!m2f.equals(uContainer)) {
 				if (!m2f.equals(ne2ne)) {
@@ -1738,36 +1739,36 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 									if (!feature.equals(ne2ne)) {
 										if (!bd2ne.equals(m2f)) {
 											if (!bd2ne.equals(feature)) {
-												if (!bd2ne.equals(modifier)) {
-													if (!bd2ne.equals(bodyDeclaration)) {
+												if (!bd2ne.equals(bodyDeclaration)) {
+													if (!bd2ne.equals(modifier)) {
 														if (!bd2ne.equals(uContainer)) {
 															if (!bd2ne.equals(jContainer)) {
 																if (!bd2ne.equals(ne2ne)) {
 																	if (!b2e.equals(m2f)) {
 																		if (!b2e.equals(feature)) {
 																			if (!b2e.equals(bd2ne)) {
-																				if (!b2e.equals(modifier)) {
-																					if (!b2e.equals(bodyDeclaration)) {
+																				if (!b2e.equals(bodyDeclaration)) {
+																					if (!b2e.equals(modifier)) {
 																						if (!b2e.equals(uContainer)) {
 																							if (!b2e.equals(
 																									jContainer)) {
 																								if (!b2e.equals(
 																										ne2ne)) {
-																									if (!modifier
-																											.equals(uContainer)) {
-																										if (!modifier
-																												.equals(ne2ne)) {
+																									if (!bodyDeclaration
+																											.equals(m2f)) {
+																										if (!bodyDeclaration
+																												.equals(feature)) {
 																											if (!bodyDeclaration
-																													.equals(m2f)) {
+																													.equals(modifier)) {
 																												if (!bodyDeclaration
-																														.equals(feature)) {
+																														.equals(uContainer)) {
 																													if (!bodyDeclaration
-																															.equals(modifier)) {
+																															.equals(jContainer)) {
 																														if (!bodyDeclaration
-																																.equals(uContainer)) {
-																															if (!bodyDeclaration
-																																	.equals(jContainer)) {
-																																if (!bodyDeclaration
+																																.equals(ne2ne)) {
+																															if (!modifier
+																																	.equals(uContainer)) {
+																																if (!modifier
 																																		.equals(ne2ne)) {
 																																	if (!jContainer
 																																			.equals(m2f)) {
@@ -1785,8 +1786,8 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 																																								feature,
 																																								bd2ne,
 																																								b2e,
-																																								modifier,
 																																								bodyDeclaration,
+																																								modifier,
 																																								uContainer,
 																																								jContainer,
 																																								ne2ne };
@@ -1830,8 +1831,8 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier,
-			EObject bodyDeclaration, EObject uContainer, EObject jContainer) {
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer) {
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1903,7 +1904,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 				.setName(bodyDeclaration__jContainer____abstractTypeDeclaration_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer,
+		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, jContainer,
 				bd2ne__bodyDeclaration____source, m2f__feature____target, bodyDeclaration__modifier____modifier,
 				modifier__bodyDeclaration____bodyDeclaration, bd2ne__feature____target, b2e__bodyDeclaration____source,
 				uContainer__feature____nestedClassifier, jContainer__bodyDeclaration____bodyDeclarations,
@@ -1913,9 +1914,9 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final void pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_1_5_registerobjects_expressionBBBBBBBBBBB(
 			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, PerformRuleResult ruleresult,
-			EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier, EObject bodyDeclaration,
+			EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject bodyDeclaration, EObject modifier,
 			EObject uContainer, EObject jContainer, EObject ne2ne) {
-		_this.registerObjects_FWD(ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer,
+		_this.registerObjects_FWD(ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer,
 				jContainer, ne2ne);
 
 	}
@@ -1979,19 +1980,19 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_2_corematch_bindingFFFB(
 			Match match) {
-		EObject _localVariable_0 = match.getObject("modifier");
-		EObject _localVariable_1 = match.getObject("bodyDeclaration");
+		EObject _localVariable_0 = match.getObject("bodyDeclaration");
+		EObject _localVariable_1 = match.getObject("modifier");
 		EObject _localVariable_2 = match.getObject("jContainer");
-		EObject tmpModifier = _localVariable_0;
-		EObject tmpBodyDeclaration = _localVariable_1;
+		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpModifier = _localVariable_1;
 		EObject tmpJContainer = _localVariable_2;
-		if (tmpModifier instanceof Modifier) {
-			Modifier modifier = (Modifier) tmpModifier;
-			if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
-				InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
+		if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
+			if (tmpModifier instanceof Modifier) {
+				Modifier modifier = (Modifier) tmpModifier;
 				if (tmpJContainer instanceof AbstractTypeDeclaration) {
 					AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
-					return new Object[] { modifier, bodyDeclaration, jContainer, match };
+					return new Object[] { bodyDeclaration, modifier, jContainer, match };
 				}
 			}
 		}
@@ -1999,7 +2000,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Iterable<Object[]> pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_2_corematch_blackBBFBFB(
-			Modifier modifier, InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer, Match match) {
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!bodyDeclaration.equals(jContainer)) {
 			for (NamedElement2NamedElement ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
@@ -2007,7 +2008,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 				NamedElement tmpUContainer = ne2ne.getTarget();
 				if (tmpUContainer instanceof Interface) {
 					Interface uContainer = (Interface) tmpUContainer;
-					_result.add(new Object[] { modifier, bodyDeclaration, uContainer, jContainer, ne2ne, match });
+					_result.add(new Object[] { bodyDeclaration, modifier, uContainer, jContainer, ne2ne, match });
 				}
 
 			}
@@ -2016,7 +2017,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Iterable<Object[]> pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_3_findcontext_blackBBBBB(
-			Modifier modifier, InterfaceDeclaration bodyDeclaration, Interface uContainer,
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, Interface uContainer,
 			AbstractTypeDeclaration jContainer, NamedElement2NamedElement ne2ne) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!bodyDeclaration.equals(jContainer)) {
@@ -2024,7 +2025,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 				if (modifier.equals(bodyDeclaration.getModifier())) {
 					if (jContainer.getBodyDeclarations().contains(bodyDeclaration)) {
 						if (uContainer.equals(ne2ne.getTarget())) {
-							_result.add(new Object[] { modifier, bodyDeclaration, uContainer, jContainer, ne2ne });
+							_result.add(new Object[] { bodyDeclaration, modifier, uContainer, jContainer, ne2ne });
 						}
 					}
 				}
@@ -2034,7 +2035,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_3_findcontext_greenBBBBBFFFFFFF(
-			Modifier modifier, InterfaceDeclaration bodyDeclaration, Interface uContainer,
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, Interface uContainer,
 			AbstractTypeDeclaration jContainer, NamedElement2NamedElement ne2ne) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2050,8 +2051,8 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		String jContainer__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__jContainer____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String ne2ne__uContainer____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(modifier);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(modifier);
 		isApplicableMatch.getAllContextElements().add(uContainer);
 		isApplicableMatch.getAllContextElements().add(jContainer);
 		isApplicableMatch.getAllContextElements().add(ne2ne);
@@ -2081,7 +2082,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		bodyDeclaration__jContainer____abstractTypeDeclaration
 				.setName(bodyDeclaration__jContainer____abstractTypeDeclaration_name_prime);
 		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
-		return new Object[] { modifier, bodyDeclaration, uContainer, jContainer, ne2ne, isApplicableMatch,
+		return new Object[] { bodyDeclaration, modifier, uContainer, jContainer, ne2ne, isApplicableMatch,
 				ne2ne__jContainer____source, bodyDeclaration__modifier____modifier,
 				modifier__bodyDeclaration____bodyDeclaration, jContainer__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jContainer____abstractTypeDeclaration, ne2ne__uContainer____target };
@@ -2089,13 +2090,13 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_4_solveCSP_bindingFBBBBBBB(
 			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this,
-			IsApplicableMatch isApplicableMatch, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+			IsApplicableMatch isApplicableMatch, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			Interface uContainer, AbstractTypeDeclaration jContainer, NamedElement2NamedElement ne2ne) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, modifier, bodyDeclaration, uContainer,
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, bodyDeclaration, modifier, uContainer,
 				jContainer, ne2ne);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, modifier, bodyDeclaration, uContainer, jContainer,
+			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, modifier, uContainer, jContainer,
 					ne2ne };
 		}
 		return null;
@@ -2108,10 +2109,10 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_4_solveCSP_bindingAndBlackFBBBBBBB(
 			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this,
-			IsApplicableMatch isApplicableMatch, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+			IsApplicableMatch isApplicableMatch, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			Interface uContainer, AbstractTypeDeclaration jContainer, NamedElement2NamedElement ne2ne) {
 		Object[] result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_4_solveCSP_binding = pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, modifier, bodyDeclaration, uContainer, jContainer, ne2ne);
+				_this, isApplicableMatch, bodyDeclaration, modifier, uContainer, jContainer, ne2ne);
 		if (result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_4_solveCSP_binding[0];
 
@@ -2119,7 +2120,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 					csp);
 			if (result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, modifier, bodyDeclaration, uContainer, jContainer,
+				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, modifier, uContainer, jContainer,
 						ne2ne };
 			}
 		}
@@ -2323,47 +2324,47 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
 		InterfaceDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createInterfaceDeclaration();
-		Object _localVariable_0 = csp.getValue("modifier", "visibility");
-		Object _localVariable_1 = csp.getValue("bodyDeclaration", "name");
+		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
+		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
+		Object _localVariable_1 = csp.getValue("modifier", "visibility");
 		m2f.setTarget(feature);
 		bd2ne.setTarget(feature);
 		b2e.setTarget(feature);
-		m2f.setSource(modifier);
 		bd2ne.setSource(bodyDeclaration);
-		bodyDeclaration.setModifier(modifier);
 		b2e.setSource(bodyDeclaration);
 		jContainer.getBodyDeclarations().add(bodyDeclaration);
-		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_0;
-		String bodyDeclaration_name_prime = (String) _localVariable_1;
-		modifier.setVisibility(modifier_visibility_prime);
+		bodyDeclaration.setModifier(modifier);
+		m2f.setSource(modifier);
+		String bodyDeclaration_name_prime = (String) _localVariable_0;
+		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_1;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, jContainer, csp };
+		modifier.setVisibility(modifier_visibility_prime);
+		return new Object[] { m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, jContainer, csp };
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_2_collecttranslatedelements_blackBBBBBB(
 			Modifier2NamedElement m2f, Interface feature, NamedElement2NamedElement bd2ne, ASTNode2Element b2e,
-			Modifier modifier, InterfaceDeclaration bodyDeclaration) {
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration };
+			InterfaceDeclaration bodyDeclaration, Modifier modifier) {
+		return new Object[] { m2f, feature, bd2ne, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_2_collecttranslatedelements_greenFBBBBBB(
 			Modifier2NamedElement m2f, Interface feature, NamedElement2NamedElement bd2ne, ASTNode2Element b2e,
-			Modifier modifier, InterfaceDeclaration bodyDeclaration) {
+			InterfaceDeclaration bodyDeclaration, Modifier modifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
 		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getCreatedLinkElements().add(b2e);
-		ruleresult.getCreatedElements().add(modifier);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration };
+		ruleresult.getCreatedElements().add(modifier);
+		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier,
-			EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne) {
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne) {
 		if (!m2f.equals(modifier)) {
 			if (!m2f.equals(uContainer)) {
 				if (!m2f.equals(ne2ne)) {
@@ -2374,36 +2375,36 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 									if (!feature.equals(ne2ne)) {
 										if (!bd2ne.equals(m2f)) {
 											if (!bd2ne.equals(feature)) {
-												if (!bd2ne.equals(modifier)) {
-													if (!bd2ne.equals(bodyDeclaration)) {
+												if (!bd2ne.equals(bodyDeclaration)) {
+													if (!bd2ne.equals(modifier)) {
 														if (!bd2ne.equals(uContainer)) {
 															if (!bd2ne.equals(jContainer)) {
 																if (!bd2ne.equals(ne2ne)) {
 																	if (!b2e.equals(m2f)) {
 																		if (!b2e.equals(feature)) {
 																			if (!b2e.equals(bd2ne)) {
-																				if (!b2e.equals(modifier)) {
-																					if (!b2e.equals(bodyDeclaration)) {
+																				if (!b2e.equals(bodyDeclaration)) {
+																					if (!b2e.equals(modifier)) {
 																						if (!b2e.equals(uContainer)) {
 																							if (!b2e.equals(
 																									jContainer)) {
 																								if (!b2e.equals(
 																										ne2ne)) {
-																									if (!modifier
-																											.equals(uContainer)) {
-																										if (!modifier
-																												.equals(ne2ne)) {
+																									if (!bodyDeclaration
+																											.equals(m2f)) {
+																										if (!bodyDeclaration
+																												.equals(feature)) {
 																											if (!bodyDeclaration
-																													.equals(m2f)) {
+																													.equals(modifier)) {
 																												if (!bodyDeclaration
-																														.equals(feature)) {
+																														.equals(uContainer)) {
 																													if (!bodyDeclaration
-																															.equals(modifier)) {
+																															.equals(jContainer)) {
 																														if (!bodyDeclaration
-																																.equals(uContainer)) {
-																															if (!bodyDeclaration
-																																	.equals(jContainer)) {
-																																if (!bodyDeclaration
+																																.equals(ne2ne)) {
+																															if (!modifier
+																																	.equals(uContainer)) {
+																																if (!modifier
 																																		.equals(ne2ne)) {
 																																	if (!jContainer
 																																			.equals(m2f)) {
@@ -2421,8 +2422,8 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 																																								feature,
 																																								bd2ne,
 																																								b2e,
-																																								modifier,
 																																								bodyDeclaration,
+																																								modifier,
 																																								uContainer,
 																																								jContainer,
 																																								ne2ne };
@@ -2466,8 +2467,8 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier,
-			EObject bodyDeclaration, EObject uContainer, EObject jContainer) {
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer) {
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2539,7 +2540,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 				.setName(bodyDeclaration__jContainer____abstractTypeDeclaration_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer,
+		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, jContainer,
 				bd2ne__bodyDeclaration____source, m2f__feature____target, bodyDeclaration__modifier____modifier,
 				modifier__bodyDeclaration____bodyDeclaration, bd2ne__feature____target, b2e__bodyDeclaration____source,
 				uContainer__feature____nestedClassifier, jContainer__bodyDeclaration____bodyDeclarations,
@@ -2549,9 +2550,9 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final void pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_11_5_registerobjects_expressionBBBBBBBBBBB(
 			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, PerformRuleResult ruleresult,
-			EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier, EObject bodyDeclaration,
+			EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject bodyDeclaration, EObject modifier,
 			EObject uContainer, EObject jContainer, EObject ne2ne) {
-		_this.registerObjects_BWD(ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer,
+		_this.registerObjects_BWD(ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer,
 				jContainer, ne2ne);
 
 	}
@@ -2813,7 +2814,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			Interface feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_810284 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_709084 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -2822,7 +2823,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_20_2_testcorematchandDECs_black_nac_1B(
 			Interface feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_503081 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_44434 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2959,9 +2960,9 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_44287 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_487695 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_44287 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_487695 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2970,8 +2971,8 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_21_2_testcorematchandDECs_black_nac_1B(
 			InterfaceDeclaration bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_189797 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_189797 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_855363 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_855363 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2980,7 +2981,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_21_2_testcorematchandDECs_black_nac_2B(
 			InterfaceDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_452321 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_131919 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3007,7 +3008,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 									if (pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_21_2_testcorematchandDECs_black_nac_2B(
 											bodyDeclaration) == null) {
 										_result.add(
-												new Object[] { modifier, bodyDeclaration, jContainer, _edge_modifier });
+												new Object[] { bodyDeclaration, modifier, jContainer, _edge_modifier });
 									}
 								}
 							}
@@ -3033,9 +3034,9 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final boolean pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Match match, Modifier modifier,
-			InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, modifier, bodyDeclaration, jContainer);
+			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Match match,
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, bodyDeclaration, modifier, jContainer);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3082,26 +3083,26 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_bindingFFFFFBB(
 			Match targetMatch, Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("feature");
-		EObject _localVariable_1 = sourceMatch.getObject("modifier");
-		EObject _localVariable_2 = sourceMatch.getObject("bodyDeclaration");
+		EObject _localVariable_1 = sourceMatch.getObject("bodyDeclaration");
+		EObject _localVariable_2 = sourceMatch.getObject("modifier");
 		EObject _localVariable_3 = targetMatch.getObject("uContainer");
 		EObject _localVariable_4 = sourceMatch.getObject("jContainer");
 		EObject tmpFeature = _localVariable_0;
-		EObject tmpModifier = _localVariable_1;
-		EObject tmpBodyDeclaration = _localVariable_2;
+		EObject tmpBodyDeclaration = _localVariable_1;
+		EObject tmpModifier = _localVariable_2;
 		EObject tmpUContainer = _localVariable_3;
 		EObject tmpJContainer = _localVariable_4;
 		if (tmpFeature instanceof Interface) {
 			Interface feature = (Interface) tmpFeature;
-			if (tmpModifier instanceof Modifier) {
-				Modifier modifier = (Modifier) tmpModifier;
-				if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
-					InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
+			if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
+				InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
+				if (tmpModifier instanceof Modifier) {
+					Modifier modifier = (Modifier) tmpModifier;
 					if (tmpUContainer instanceof Interface) {
 						Interface uContainer = (Interface) tmpUContainer;
 						if (tmpJContainer instanceof AbstractTypeDeclaration) {
 							AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
-							return new Object[] { feature, modifier, bodyDeclaration, uContainer, jContainer,
+							return new Object[] { feature, bodyDeclaration, modifier, uContainer, jContainer,
 									targetMatch, sourceMatch };
 						}
 					}
@@ -3112,12 +3113,12 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_blackBBBBBBB(
-			Interface feature, Modifier modifier, InterfaceDeclaration bodyDeclaration, Interface uContainer,
+			Interface feature, InterfaceDeclaration bodyDeclaration, Modifier modifier, Interface uContainer,
 			AbstractTypeDeclaration jContainer, Match sourceMatch, Match targetMatch) {
 		if (!feature.equals(uContainer)) {
 			if (!bodyDeclaration.equals(jContainer)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { feature, modifier, bodyDeclaration, uContainer, jContainer, sourceMatch,
+					return new Object[] { feature, bodyDeclaration, modifier, uContainer, jContainer, sourceMatch,
 							targetMatch };
 				}
 			}
@@ -3131,16 +3132,16 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 				targetMatch, sourceMatch);
 		if (result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_binding != null) {
 			Interface feature = (Interface) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_binding[0];
-			Modifier modifier = (Modifier) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_binding[1];
-			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_binding[2];
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_binding[1];
+			Modifier modifier = (Modifier) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_binding[2];
 			Interface uContainer = (Interface) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_binding[3];
 			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_binding[4];
 
 			Object[] result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_black = pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_blackBBBBBBB(
-					feature, modifier, bodyDeclaration, uContainer, jContainer, sourceMatch, targetMatch);
+					feature, bodyDeclaration, modifier, uContainer, jContainer, sourceMatch, targetMatch);
 			if (result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { feature, modifier, bodyDeclaration, uContainer, jContainer, sourceMatch,
+				return new Object[] { feature, bodyDeclaration, modifier, uContainer, jContainer, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3149,13 +3150,13 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_3_solvecsp_bindingFBBBBBBBB(
 			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Interface feature,
-			Modifier modifier, InterfaceDeclaration bodyDeclaration, Interface uContainer,
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, Interface uContainer,
 			AbstractTypeDeclaration jContainer, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(feature, modifier, bodyDeclaration, uContainer,
+		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(feature, bodyDeclaration, modifier, uContainer,
 				jContainer, sourceMatch, targetMatch);
 		CSP csp = _localVariable_5;
 		if (csp != null) {
-			return new Object[] { csp, _this, feature, modifier, bodyDeclaration, uContainer, jContainer, sourceMatch,
+			return new Object[] { csp, _this, feature, bodyDeclaration, modifier, uContainer, jContainer, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -3168,10 +3169,10 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_3_solvecsp_bindingAndBlackFBBBBBBBB(
 			InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier _this, Interface feature,
-			Modifier modifier, InterfaceDeclaration bodyDeclaration, Interface uContainer,
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, Interface uContainer,
 			AbstractTypeDeclaration jContainer, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_3_solvecsp_binding = pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_3_solvecsp_bindingFBBBBBBBB(
-				_this, feature, modifier, bodyDeclaration, uContainer, jContainer, sourceMatch, targetMatch);
+				_this, feature, bodyDeclaration, modifier, uContainer, jContainer, sourceMatch, targetMatch);
 		if (result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_3_solvecsp_binding[0];
 
@@ -3179,7 +3180,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 					csp);
 			if (result_pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, feature, modifier, bodyDeclaration, uContainer, jContainer,
+				return new Object[] { csp, _this, feature, bodyDeclaration, modifier, uContainer, jContainer,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3219,18 +3220,18 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_6_createcorrespondence_blackBBBBBB(
-			Interface feature, Modifier modifier, InterfaceDeclaration bodyDeclaration, Interface uContainer,
+			Interface feature, InterfaceDeclaration bodyDeclaration, Modifier modifier, Interface uContainer,
 			AbstractTypeDeclaration jContainer, CCMatch ccMatch) {
 		if (!feature.equals(uContainer)) {
 			if (!bodyDeclaration.equals(jContainer)) {
-				return new Object[] { feature, modifier, bodyDeclaration, uContainer, jContainer, ccMatch };
+				return new Object[] { feature, bodyDeclaration, modifier, uContainer, jContainer, ccMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_6_createcorrespondence_greenFBFFBBB(
-			Interface feature, Modifier modifier, InterfaceDeclaration bodyDeclaration, CCMatch ccMatch) {
+			Interface feature, InterfaceDeclaration bodyDeclaration, Modifier modifier, CCMatch ccMatch) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -3243,7 +3244,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, ccMatch };
+		return new Object[] { m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, ccMatch };
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_24_7_addtoreturnedresult_blackBB(
@@ -3269,9 +3270,9 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_907273 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_952486 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_907273 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_952486 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3280,8 +3281,8 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_27_1_matchtggpattern_black_nac_1B(
 			InterfaceDeclaration bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_867074 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_867074 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_105383 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_105383 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3290,7 +3291,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_27_1_matchtggpattern_black_nac_2B(
 			InterfaceDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_276374 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_558508 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3298,7 +3299,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 	}
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_27_1_matchtggpattern_blackBBB(
-			Modifier modifier, InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer) {
+			InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer) {
 		if (!bodyDeclaration.equals(jContainer)) {
 			if (modifier.equals(bodyDeclaration.getModifier())) {
 				if (jContainer.getBodyDeclarations().contains(bodyDeclaration)) {
@@ -3308,7 +3309,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 								bodyDeclaration) == null) {
 							if (pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_27_1_matchtggpattern_black_nac_2B(
 									bodyDeclaration) == null) {
-								return new Object[] { modifier, bodyDeclaration, jContainer };
+								return new Object[] { bodyDeclaration, modifier, jContainer };
 							}
 						}
 					}
@@ -3330,7 +3331,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_28_1_matchtggpattern_black_nac_0B(
 			Interface feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_925336 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_939711 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -3339,7 +3340,7 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 
 	public static final Object[] pattern_InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier_28_1_matchtggpattern_black_nac_1B(
 			Interface feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_19393 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_273901 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -3504,12 +3505,12 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		Interface feature = UMLFactory.eINSTANCE.createInterface();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
 		InterfaceDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createInterfaceDeclaration();
-		Object _localVariable_0 = csp.getValue("feature", "visibility");
-		Object _localVariable_1 = csp.getValue("feature", "name");
-		Object _localVariable_2 = csp.getValue("modifier", "visibility");
-		Object _localVariable_3 = csp.getValue("bodyDeclaration", "name");
+		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
+		Object _localVariable_0 = csp.getValue("feature", "name");
+		Object _localVariable_1 = csp.getValue("feature", "visibility");
+		Object _localVariable_2 = csp.getValue("bodyDeclaration", "name");
+		Object _localVariable_3 = csp.getValue("modifier", "visibility");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(m2f);
@@ -3520,25 +3521,25 @@ public class InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifierIm
 		ruleResult.getCorrObjects().add(bd2ne);
 		b2e.setTarget(feature);
 		ruleResult.getCorrObjects().add(b2e);
-		m2f.setSource(modifier);
-		ruleResult.getSourceObjects().add(modifier);
 		bd2ne.setSource(bodyDeclaration);
-		bodyDeclaration.setModifier(modifier);
 		b2e.setSource(bodyDeclaration);
 		jContainer.getBodyDeclarations().add(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
-		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_0;
-		String feature_name_prime = (String) _localVariable_1;
-		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_2;
-		String bodyDeclaration_name_prime = (String) _localVariable_3;
+		bodyDeclaration.setModifier(modifier);
+		m2f.setSource(modifier);
+		ruleResult.getSourceObjects().add(modifier);
+		String feature_name_prime = (String) _localVariable_0;
+		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
+		String bodyDeclaration_name_prime = (String) _localVariable_2;
+		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		feature.setVisibility(feature_visibility_prime);
 		feature.setName(feature_name_prime);
-		modifier.setVisibility(modifier_visibility_prime);
+		feature.setVisibility(feature_visibility_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
+		modifier.setVisibility(modifier_visibility_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer, ruleResult,
+		return new Object[] { m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, jContainer, ruleResult,
 				csp };
 	}
 

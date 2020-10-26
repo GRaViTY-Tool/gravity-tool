@@ -823,7 +823,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_268(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_113(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -886,7 +886,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_277(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_119(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -960,13 +960,13 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
@@ -1024,13 +1024,13 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
@@ -1449,10 +1449,10 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 			return null;
 		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_CLASS_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_268__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_268((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_277__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_277((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_113__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_113((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_119__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_119((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_CLASS_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_CLASS_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2791,7 +2791,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			Enumeration feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_346644 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_302908 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -2800,7 +2800,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_20_2_testcorematchandDECs_black_nac_1B(
 			Enumeration feature) {
-		for (Interface __DEC_feature_nestedClassifier_804875 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_88662 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2935,9 +2935,9 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_21_2_testcorematchandDECs_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_385110 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_429022 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_385110 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_429022 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2946,8 +2946,8 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_21_2_testcorematchandDECs_black_nac_1B(
 			EnumDeclaration bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_779757 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_779757 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_879191 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_879191 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2956,7 +2956,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_21_2_testcorematchandDECs_black_nac_2B(
 			EnumDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_688787 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_58143 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3243,9 +3243,9 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_27_1_matchtggpattern_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_358625 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_449907 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_358625 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_449907 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3254,8 +3254,8 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_27_1_matchtggpattern_black_nac_1B(
 			EnumDeclaration bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_488277 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_488277 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_502675 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_502675 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3264,7 +3264,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_27_1_matchtggpattern_black_nac_2B(
 			EnumDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_597184 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_297983 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3304,7 +3304,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_28_1_matchtggpattern_black_nac_0B(
 			Enumeration feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_804289 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_882312 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -3313,7 +3313,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InClass_WithModifierImpl exte
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier_28_1_matchtggpattern_black_nac_1B(
 			Enumeration feature) {
-		for (Interface __DEC_feature_nestedClassifier_687664 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_905988 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}

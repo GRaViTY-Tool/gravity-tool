@@ -1527,6 +1527,34 @@ public interface AnnotationsPackage extends EPackage {
 	int TCLASS_NODE_OPERATION_COUNT = EcorePackage.EOBJECT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.annotations.impl.TAbstractNodeImpl <em>TAbstract Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.annotations.impl.TAbstractNodeImpl
+	 * @see org.gravity.typegraph.basic.annotations.impl.AnnotationsPackageImpl#getTAbstractNode()
+	 * @generated
+	 */
+	int TABSTRACT_NODE = 9;
+
+	/**
+	 * The number of structural features of the '<em>TAbstract Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_NODE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>TAbstract Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_NODE_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.annotations.TAnnotationValue <em>TAnnotation Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1789,6 +1817,16 @@ public interface AnnotationsPackage extends EPackage {
 	EReference getTClassNode_TClass();
 
 	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.annotations.TAbstractNode <em>TAbstract Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TAbstract Node</em>'.
+	 * @see org.gravity.typegraph.basic.annotations.TAbstractNode
+	 * @generated
+	 */
+	EClass getTAbstractNode();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2028,6 +2066,16 @@ public interface AnnotationsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TCLASS_NODE__TCLASS = eINSTANCE.getTClassNode_TClass();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.annotations.impl.TAbstractNodeImpl <em>TAbstract Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.annotations.impl.TAbstractNodeImpl
+		 * @see org.gravity.typegraph.basic.annotations.impl.AnnotationsPackageImpl#getTAbstractNode()
+		 * @generated
+		 */
+		EClass TABSTRACT_NODE = eINSTANCE.getTAbstractNode();
 
 	}
 

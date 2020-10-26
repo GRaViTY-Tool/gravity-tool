@@ -47,7 +47,7 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration,
+	boolean isAppropriate_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -72,7 +72,7 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration,
+	void registerObjectsToMatch_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -81,7 +81,7 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration,
+	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -98,8 +98,8 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			MMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass, NamedElement2NamedElement cd2c,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition bodyDeclaration,
+			Modifier modifier, org.eclipse.uml2.uml.Class umlClass, NamedElement2NamedElement cd2c,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -116,8 +116,8 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject umlClass, EObject cd2c, EObject classDec);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,8 +198,8 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject umlClass, EObject cd2c, EObject classDec);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_292(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_166(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_301(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_171(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,7 +255,7 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Operation feature, Modifier modifier, MMethodDefinition bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Operation feature, MMethodDefinition bodyDeclaration, Modifier modifier,
 			org.eclipse.uml2.uml.Class umlClass, AbstractTypeDeclaration classDec, Match sourceMatch,
 			Match targetMatch);
 
@@ -273,7 +273,7 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, MMethodDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
+	boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, Modifier modifier, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->

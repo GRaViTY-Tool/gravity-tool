@@ -784,7 +784,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_264(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_101(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = EnumDecWithModifier2EnumImpl
 				.pattern_EnumDecWithModifier2Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -842,7 +842,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_273(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_106(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = EnumDecWithModifier2EnumImpl
 				.pattern_EnumDecWithModifier2Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -911,13 +911,13 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
@@ -975,13 +975,13 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
@@ -1385,10 +1385,10 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 			return null;
 		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_264__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_264((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_273__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_273((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_101__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_101((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_106__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_106((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2689,7 +2689,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_20_2_testcorematchandDECs_black_nac_0B(
 			Enumeration feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_962222 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_624252 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2698,7 +2698,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_20_2_testcorematchandDECs_black_nac_1B(
 			Enumeration feature) {
-		for (Interface __DEC_feature_nestedClassifier_920801 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_917475 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2828,10 +2828,10 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_21_2_testcorematchandDECs_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_313855 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_11778 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_313855 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_313855)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_11778 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_11778)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -2841,9 +2841,9 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_21_2_testcorematchandDECs_black_nac_1B(
 			EnumDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_50266 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_312896 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_50266 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_312896 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2852,7 +2852,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_21_2_testcorematchandDECs_black_nac_2B(
 			EnumDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_584390 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_16199 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3125,10 +3125,10 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_27_1_matchtggpattern_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_940700 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_490214 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_940700 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_940700)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_490214 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_490214)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -3138,9 +3138,9 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_27_1_matchtggpattern_black_nac_1B(
 			EnumDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_851302 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_387112 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_851302 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_387112 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3149,7 +3149,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_27_1_matchtggpattern_black_nac_2B(
 			EnumDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_435443 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_704131 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3185,7 +3185,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_28_1_matchtggpattern_black_nac_0B(
 			Enumeration feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_409720 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_473811 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -3194,7 +3194,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_28_1_matchtggpattern_black_nac_1B(
 			Enumeration feature) {
-		for (Interface __DEC_feature_nestedClassifier_159080 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_256195 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}

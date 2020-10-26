@@ -1,0 +1,11 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule ArrayInitializerIgnoreExpressionsEdge #with org.gravity.tgg.modisco.pm
+
+#source { 
+	array : ArrayInitializer {
+		++ -expressions->	invocation
+	}
+	invocation : MethodInvocation
+}

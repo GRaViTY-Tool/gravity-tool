@@ -1,0 +1,35 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule Interface
+#extends Types
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++mType:InterfaceDeclaration
+}
+
+#target {
+	++tType:TInterface
+
+	pg:TypeGraph {
+		++  -interfaces -> tType
+	}
+
+	tPackage:TPackage {
+		++  -interfaces -> tType
+	}
+}
+
+#correspondence {
+	++ mInterfaceDeclarationtoTInterface :InterfaceDeclarationToTInterface {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#attributeConditions {
+	eq(mType.name, tType.tName)
+}
+
+

@@ -154,19 +154,6 @@ public final class EclipseProjectUtil {
 	}
 
 	/**
-	 * Returns the default location for the program model of a project
-	 * 
-	 * @param project A project for which the program model location should be returned
-	 * @param monitor A progress monitor
-	 * @return The default location where the program model is stored by gravity
-	 * @throws IOException If the gravity folder doesn't exists and cannot be created
-	 */
-	public static IFile getProgramModelFile(IProject project, IProgressMonitor monitor) throws IOException {
-		return EclipseProjectUtil.getGravityFolder(project, monitor)
-				.getFile(project.getName() + ".xmi");  // $NON-NLS-1$
-	}
-
-	/**
 	 * Creates a class path entry for the given file
 	 *
 	 * @param file The file

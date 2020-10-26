@@ -1,0 +1,31 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule VariableDeclarationFragment
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++varDeclFragment:VariableDeclarationFragment {
+		++  -variablesContainer -> mDefinition
+	}
+
+	mDefinition:MFieldDefinition
+}
+
+#target {
+	tDefinition:TFieldDefinition
+}
+
+#correspondence {
+	eFieldDeclarationToTFieldDefinition :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	++ varDeclFragmentToTFieldDefinition :VariableDeclarationFragmentToTFieldDefinition {
+		#src->varDeclFragment
+		#trg->tDefinition
+	}
+}
+
+

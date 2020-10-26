@@ -1,0 +1,62 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule NestedTypes
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++eNestedType:AbstractTypeDeclaration {
+		++  -abstractTypeDeclaration -> eOuterType
+	}
+
+	eOuterType:AbstractTypeDeclaration
+}
+
+#target {
+	typeGraph:TypeGraph {
+		++  -ownedTypes -> tNestedType
+		-ownedTypes -> tOuterType
+	}
+
+	tOuterType:TAbstractType {
+		++ -innerTypes -> tNestedType
+	}
+
+	++tNestedType:TAbstractType
+
+	tOuterPackage:TPackage {
+		++  -subpackage -> tNestedPackage
+		-typeGraph -> typeGraph
+		-ownedTypes -> tOuterType
+	}
+
+	++tNestedPackage:TPackage {
+		++  -typeGraph -> typeGraph
+		++  -ownedTypes -> tNestedType
+	}
+}
+
+#correspondence {
+	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
+		#src->eNestedType
+		#trg->tNestedType
+	}
+
+	eOuterTypeToTOuterInterface :TypeToTAbstractType {
+		#src->eOuterType
+		#trg->tOuterType
+	}
+
+	++ eNestedTypeToTNestedType :TypeToTAbstractType {
+		#src->eNestedType
+		#trg->tNestedType
+	}
+}
+
+#attributeConditions {
+	addSuffix(eOuterType.name, "$", tNestedPackage.tName)
+
+	eq(eNestedType.proxy, tNestedType.tLib)
+}
+
+

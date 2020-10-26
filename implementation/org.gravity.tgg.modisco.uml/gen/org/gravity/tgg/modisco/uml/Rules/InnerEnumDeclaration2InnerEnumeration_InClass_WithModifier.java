@@ -214,7 +214,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_268(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_113(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_277(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_119(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

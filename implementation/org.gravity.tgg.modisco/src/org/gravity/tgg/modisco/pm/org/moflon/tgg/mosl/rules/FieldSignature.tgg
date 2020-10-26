@@ -1,0 +1,99 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule FieldSignatureAbstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mFieldName:MFieldName {
+		++-mSignatures -> mSignature
+	}
+
+	++mSignature:MFieldSignature{
+		++  -type -> mType
+	}
+
+	mType:Type
+}
+
+#target {
+	tField:TField {
+		++-signatures->tSignature
+	}
+
+	++tSignature:TFieldSignature {
+		++  -type -> tType
+	}
+	
+	tType:TAbstractType
+}
+
+#correspondence {
+	eFieldDeclarationToTField :MFieldNameToTField {
+		#src->mFieldName
+		#trg->tField
+	}
+
+	++ mSignatureToTSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSignature
+	}
+
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSignature
+		#trg->tSignature
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule FieldSignature #extends FieldSignatureAbstract
+#with org.gravity.tgg.modisco.pm
+
+#source{
+	mType : Type
+}
+
+#target {
+	tType : TAbstractType
+}
+
+
+#correspondence {
+	mTypeToTType : TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule FieldSignatureArrayType #extends FieldSignatureAbstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mType : ArrayType {
+		-elementType->mTypeAccess
+	}
+	
+	mTypeAccess : TypeAccess {
+		-type->mArrayType
+	}
+	
+	mArrayType : Type
+}
+
+#target {
+	tType : TAbstractType
+	
+	++ tSignature : TFieldSignature {
+		upperBound := -1
+	} 
+}
+
+#correspondence {	
+	mTypeToTType : TypeToTAbstractType {
+		#src->mArrayType
+		#trg->tType
+	}
+}

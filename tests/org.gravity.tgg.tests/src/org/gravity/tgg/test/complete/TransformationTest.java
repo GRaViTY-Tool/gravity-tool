@@ -50,7 +50,7 @@ import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.security.annotations.AnnotationsActivator;
-import org.gravity.tgg.modisco.MoDiscoTGGConverter;
+import org.gravity.tgg.modisco.pm.MoDiscoTGGConverter;
 import org.gravity.tgg.uml.Transformation;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TypeGraph;

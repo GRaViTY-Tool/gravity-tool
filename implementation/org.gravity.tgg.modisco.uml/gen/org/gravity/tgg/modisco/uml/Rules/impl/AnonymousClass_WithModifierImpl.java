@@ -103,62 +103,62 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, MClassInstanceCreation mConstructor, MDefinition mMember,
-			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer) {
+	public boolean isAppropriate_FWD(Match match, AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer,
+			MDefinition mMember, MClassInstanceCreation mConstructor) {
 
 		Object[] result1_black = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_0_1_initialbindings_blackBBBBBB(this, match, mConstructor, mMember,
-						mAnon, jContainer);
+				.pattern_AnonymousClass_WithModifier_0_1_initialbindings_blackBBBBBB(this, match, mAnon, jContainer,
+						mMember, mConstructor);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mConstructor] = " + mConstructor + ", " + "[mMember] = " + mMember
-					+ ", " + "[mAnon] = " + mAnon + ", " + "[jContainer] = " + jContainer + ".");
+					+ "[match] = " + match + ", " + "[mAnon] = " + mAnon + ", " + "[jContainer] = " + jContainer + ", "
+					+ "[mMember] = " + mMember + ", " + "[mConstructor] = " + mConstructor + ".");
 		}
 
 		Object[] result2_bindingAndBlack = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_0_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, mConstructor,
-						mMember, mAnon, jContainer);
+				.pattern_AnonymousClass_WithModifier_0_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, mAnon, jContainer,
+						mMember, mConstructor);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mConstructor] = " + mConstructor + ", " + "[mMember] = " + mMember
-					+ ", " + "[mAnon] = " + mAnon + ", " + "[jContainer] = " + jContainer + ".");
+					+ "[match] = " + match + ", " + "[mAnon] = " + mAnon + ", " + "[jContainer] = " + jContainer + ", "
+					+ "[mMember] = " + mMember + ", " + "[mConstructor] = " + mConstructor + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = AnonymousClass_WithModifierImpl
-					.pattern_AnonymousClass_WithModifier_0_4_collectelementstobetranslated_blackBBBBB(match,
-							mConstructor, mMember, mAnon, jContainer);
+					.pattern_AnonymousClass_WithModifier_0_4_collectelementstobetranslated_blackBBBBB(match, mAnon,
+							jContainer, mMember, mConstructor);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mConstructor] = " + mConstructor + ", " + "[mMember] = " + mMember + ", " + "[mAnon] = "
-						+ mAnon + ", " + "[jContainer] = " + jContainer + ".");
+						+ "[mAnon] = " + mAnon + ", " + "[jContainer] = " + jContainer + ", " + "[mMember] = " + mMember
+						+ ", " + "[mConstructor] = " + mConstructor + ".");
 			}
 			AnonymousClass_WithModifierImpl
-					.pattern_AnonymousClass_WithModifier_0_4_collectelementstobetranslated_greenBBBBFFF(match,
-							mConstructor, mMember, mAnon);
+					.pattern_AnonymousClass_WithModifier_0_4_collectelementstobetranslated_greenBBBBFFF(match, mAnon,
+							mMember, mConstructor);
 			//nothing EMoflonEdge mMember__mConstructor____mMethodInvocations = (EMoflonEdge) result4_green[4];
 			//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result4_green[5];
 			//nothing EMoflonEdge mAnon__mConstructor____classInstanceCreation = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = AnonymousClass_WithModifierImpl
-					.pattern_AnonymousClass_WithModifier_0_5_collectcontextelements_blackBBBBB(match, mConstructor,
-							mMember, mAnon, jContainer);
+					.pattern_AnonymousClass_WithModifier_0_5_collectcontextelements_blackBBBBB(match, mAnon, jContainer,
+							mMember, mConstructor);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mConstructor] = " + mConstructor + ", " + "[mMember] = " + mMember + ", " + "[mAnon] = "
-						+ mAnon + ", " + "[jContainer] = " + jContainer + ".");
+						+ "[mAnon] = " + mAnon + ", " + "[jContainer] = " + jContainer + ", " + "[mMember] = " + mMember
+						+ ", " + "[mConstructor] = " + mConstructor + ".");
 			}
 			AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_0_5_collectcontextelements_greenBBBFF(
-					match, mMember, jContainer);
+					match, jContainer, mMember);
 			//nothing EMoflonEdge jContainer__mMember____bodyDeclarations = (EMoflonEdge) result5_green[3];
 			//nothing EMoflonEdge mMember__jContainer____abstractTypeDeclaration = (EMoflonEdge) result5_green[4];
 
 			// 
 			AnonymousClass_WithModifierImpl
-					.pattern_AnonymousClass_WithModifier_0_6_registerobjectstomatch_expressionBBBBBB(this, match,
-							mConstructor, mMember, mAnon, jContainer);
+					.pattern_AnonymousClass_WithModifier_0_6_registerobjectstomatch_expressionBBBBBB(this, match, mAnon,
+							jContainer, mMember, mConstructor);
 			return AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_0_7_expressionF();
 		} else {
 			return AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_0_8_expressionF();
@@ -180,43 +180,44 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		MClassInstanceCreation mConstructor = (MClassInstanceCreation) result1_bindingAndBlack[0];
-		MDefinition mMember = (MDefinition) result1_bindingAndBlack[1];
-		AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result1_bindingAndBlack[2];
+		AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result1_bindingAndBlack[0];
+		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result1_bindingAndBlack[1];
+		MDefinition mMember = (MDefinition) result1_bindingAndBlack[2];
 		NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result1_bindingAndBlack[3];
-		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[4];
-		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result1_bindingAndBlack[5];
+		MClassInstanceCreation mConstructor = (MClassInstanceCreation) result1_bindingAndBlack[4];
+		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		Object[] result1_green = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_1_1_performtransformation_greenFFBB(mAnon, uContainer);
-		ASTNode2Element bd2ne = (ASTNode2Element) result1_green[0];
-		org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) result1_green[1];
+				.pattern_AnonymousClass_WithModifier_1_1_performtransformation_greenBFFB(mAnon, uContainer);
+		ASTNode2Element bd2ne = (ASTNode2Element) result1_green[1];
+		org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) result1_green[2];
 
 		Object[] result2_black = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_1_2_collecttranslatedelements_blackBBBB(mConstructor, bd2ne, uAnon,
-						mAnon);
+				.pattern_AnonymousClass_WithModifier_1_2_collecttranslatedelements_blackBBBB(mAnon, bd2ne, uAnon,
+						mConstructor);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mConstructor] = " + mConstructor
-					+ ", " + "[bd2ne] = " + bd2ne + ", " + "[uAnon] = " + uAnon + ", " + "[mAnon] = " + mAnon + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[mAnon] = " + mAnon + ", " + "[bd2ne] = " + bd2ne
+							+ ", " + "[uAnon] = " + uAnon + ", " + "[mConstructor] = " + mConstructor + ".");
 		}
 		Object[] result2_green = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_1_2_collecttranslatedelements_greenFBBBB(mConstructor, bd2ne,
-						uAnon, mAnon);
+				.pattern_AnonymousClass_WithModifier_1_2_collecttranslatedelements_greenFBBBB(mAnon, bd2ne, uAnon,
+						mConstructor);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_1_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, mConstructor,
-						mMember, bd2ne, uAnon, mAnon, ne2ne, uContainer, jContainer);
+				.pattern_AnonymousClass_WithModifier_1_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, mAnon,
+						jContainer, bd2ne, uAnon, mMember, ne2ne, mConstructor, uContainer);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mConstructor] = " + mConstructor + ", " + "[mMember] = " + mMember + ", " + "[bd2ne] = "
-					+ bd2ne + ", " + "[uAnon] = " + uAnon + ", " + "[mAnon] = " + mAnon + ", " + "[ne2ne] = " + ne2ne
-					+ ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ".");
+					+ ", " + "[mAnon] = " + mAnon + ", " + "[jContainer] = " + jContainer + ", " + "[bd2ne] = " + bd2ne
+					+ ", " + "[uAnon] = " + uAnon + ", " + "[mMember] = " + mMember + ", " + "[ne2ne] = " + ne2ne + ", "
+					+ "[mConstructor] = " + mConstructor + ", " + "[uContainer] = " + uContainer + ".");
 		}
 		AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-				ruleresult, mConstructor, mMember, bd2ne, uAnon, mAnon, uContainer);
-		//nothing EMoflonEdge bd2ne__uAnon____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge bd2ne__mAnon____source = (EMoflonEdge) result3_green[8];
+				ruleresult, mAnon, bd2ne, uAnon, mMember, mConstructor, uContainer);
+		//nothing EMoflonEdge bd2ne__mAnon____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge bd2ne__uAnon____target = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge mMember__mConstructor____mMethodInvocations = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge uContainer__uAnon____nestedClassifier = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[11];
@@ -225,7 +226,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		// 
 		// 
 		AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_1_5_registerobjects_expressionBBBBBBBBBB(
-				this, ruleresult, mConstructor, mMember, bd2ne, uAnon, mAnon, ne2ne, uContainer, jContainer);
+				this, ruleresult, mAnon, jContainer, bd2ne, uAnon, mMember, ne2ne, mConstructor, uContainer);
 		return AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_1_6_expressionFB(ruleresult);
 	}
 
@@ -254,39 +255,39 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		MClassInstanceCreation mConstructor = (MClassInstanceCreation) result2_binding[0];
-		MDefinition mMember = (MDefinition) result2_binding[1];
-		AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result2_binding[2];
-		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_binding[3];
+		AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result2_binding[0];
+		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_binding[1];
+		MDefinition mMember = (MDefinition) result2_binding[2];
+		MClassInstanceCreation mConstructor = (MClassInstanceCreation) result2_binding[3];
 		for (Object[] result2_black : AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_2_2_corematch_blackBBBFFBB(mConstructor, mMember, mAnon,
-						jContainer, match)) {
+				.pattern_AnonymousClass_WithModifier_2_2_corematch_blackBBBFBFB(mAnon, jContainer, mMember,
+						mConstructor, match)) {
 			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result2_black[3];
-			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_black[4];
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : AnonymousClass_WithModifierImpl
-					.pattern_AnonymousClass_WithModifier_2_3_findcontext_blackBBBBBB(mConstructor, mMember, mAnon,
-							ne2ne, uContainer, jContainer)) {
+					.pattern_AnonymousClass_WithModifier_2_3_findcontext_blackBBBBBB(mAnon, jContainer, mMember, ne2ne,
+							mConstructor, uContainer)) {
 				Object[] result3_green = AnonymousClass_WithModifierImpl
-						.pattern_AnonymousClass_WithModifier_2_3_findcontext_greenBBBBBBFFFFFFFF(mConstructor, mMember,
-								mAnon, ne2ne, uContainer, jContainer);
+						.pattern_AnonymousClass_WithModifier_2_3_findcontext_greenBBBBBBFFFFFFFF(mAnon, jContainer,
+								mMember, ne2ne, mConstructor, uContainer);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge mMember__mConstructor____mMethodInvocations = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mAnon__mConstructor____classInstanceCreation = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge jContainer__mMember____bodyDeclarations = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mMember__jContainer____abstractTypeDeclaration = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge jContainer__mMember____bodyDeclarations = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mMember__jContainer____abstractTypeDeclaration = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mMember__mConstructor____mMethodInvocations = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mAnon__mConstructor____classInstanceCreation = (EMoflonEdge) result3_green[13];
 
 				Object[] result4_bindingAndBlack = AnonymousClass_WithModifierImpl
 						.pattern_AnonymousClass_WithModifier_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, mConstructor, mMember, mAnon, ne2ne, uContainer, jContainer);
+								isApplicableMatch, mAnon, jContainer, mMember, ne2ne, mConstructor, uContainer);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mConstructor] = " + mConstructor
-							+ ", " + "[mMember] = " + mMember + ", " + "[mAnon] = " + mAnon + ", " + "[ne2ne] = "
-							+ ne2ne + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mAnon] = " + mAnon + ", "
+							+ "[jContainer] = " + jContainer + ", " + "[mMember] = " + mMember + ", " + "[ne2ne] = "
+							+ ne2ne + ", " + "[mConstructor] = " + mConstructor + ", " + "[uContainer] = " + uContainer
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -319,12 +320,12 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, MClassInstanceCreation mConstructor, MDefinition mMember,
-			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer) {
-		match.registerObject("mConstructor", mConstructor);
-		match.registerObject("mMember", mMember);
+	public void registerObjectsToMatch_FWD(Match match, AnonymousClassDeclaration mAnon,
+			AbstractTypeDeclaration jContainer, MDefinition mMember, MClassInstanceCreation mConstructor) {
 		match.registerObject("mAnon", mAnon);
 		match.registerObject("jContainer", jContainer);
+		match.registerObject("mMember", mMember);
+		match.registerObject("mConstructor", mConstructor);
 
 	}
 
@@ -333,8 +334,8 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, MClassInstanceCreation mConstructor, MDefinition mMember,
-			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, AnonymousClassDeclaration mAnon,
+			AbstractTypeDeclaration jContainer, MDefinition mMember, MClassInstanceCreation mConstructor) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -363,9 +364,9 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MClassInstanceCreation mConstructor,
-			MDefinition mMember, AnonymousClassDeclaration mAnon, NamedElement2NamedElement ne2ne,
-			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnon,
+			AbstractTypeDeclaration jContainer, MDefinition mMember, NamedElement2NamedElement ne2ne,
+			MClassInstanceCreation mConstructor, org.eclipse.uml2.uml.Class uContainer) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -380,12 +381,12 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mConstructor", mConstructor);
-		isApplicableMatch.registerObject("mMember", mMember);
 		isApplicableMatch.registerObject("mAnon", mAnon);
-		isApplicableMatch.registerObject("ne2ne", ne2ne);
-		isApplicableMatch.registerObject("uContainer", uContainer);
 		isApplicableMatch.registerObject("jContainer", jContainer);
+		isApplicableMatch.registerObject("mMember", mMember);
+		isApplicableMatch.registerObject("ne2ne", ne2ne);
+		isApplicableMatch.registerObject("mConstructor", mConstructor);
+		isApplicableMatch.registerObject("uContainer", uContainer);
 		return csp;
 	}
 
@@ -403,16 +404,16 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mConstructor, EObject mMember, EObject bd2ne,
-			EObject uAnon, EObject mAnon, EObject ne2ne, EObject uContainer, EObject jContainer) {
-		ruleresult.registerObject("mConstructor", mConstructor);
-		ruleresult.registerObject("mMember", mMember);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAnon, EObject jContainer, EObject bd2ne,
+			EObject uAnon, EObject mMember, EObject ne2ne, EObject mConstructor, EObject uContainer) {
+		ruleresult.registerObject("mAnon", mAnon);
+		ruleresult.registerObject("jContainer", jContainer);
 		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("uAnon", uAnon);
-		ruleresult.registerObject("mAnon", mAnon);
+		ruleresult.registerObject("mMember", mMember);
 		ruleresult.registerObject("ne2ne", ne2ne);
+		ruleresult.registerObject("mConstructor", mConstructor);
 		ruleresult.registerObject("uContainer", uContainer);
-		ruleresult.registerObject("jContainer", jContainer);
 
 	}
 
@@ -423,10 +424,10 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 */
 	public boolean checkTypes_FWD(Match match) {
 		return true
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("mConstructor").eClass())
-						.equals("modisco.MClassInstanceCreation.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("mAnon").eClass())
-						.equals("java.AnonymousClassDeclaration.");
+						.equals("java.AnonymousClassDeclaration.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("mConstructor").eClass())
+						.equals("modisco.MClassInstanceCreation.");
 	}
 
 	/**
@@ -501,43 +502,44 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		MDefinition mMember = (MDefinition) result1_bindingAndBlack[0];
+		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result1_bindingAndBlack[0];
 		org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[1];
-		NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result1_bindingAndBlack[2];
-		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[3];
-		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result1_bindingAndBlack[4];
+		MDefinition mMember = (MDefinition) result1_bindingAndBlack[2];
+		NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result1_bindingAndBlack[3];
+		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[4];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_11_1_performtransformation_greenFBFBF(mMember, uAnon);
-		MClassInstanceCreation mConstructor = (MClassInstanceCreation) result1_green[0];
-		ASTNode2Element bd2ne = (ASTNode2Element) result1_green[2];
-		AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result1_green[4];
+				.pattern_AnonymousClass_WithModifier_11_1_performtransformation_greenFFBBF(uAnon, mMember);
+		AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result1_green[0];
+		ASTNode2Element bd2ne = (ASTNode2Element) result1_green[1];
+		MClassInstanceCreation mConstructor = (MClassInstanceCreation) result1_green[4];
 
 		Object[] result2_black = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_11_2_collecttranslatedelements_blackBBBB(mConstructor, bd2ne,
-						uAnon, mAnon);
+				.pattern_AnonymousClass_WithModifier_11_2_collecttranslatedelements_blackBBBB(mAnon, bd2ne, uAnon,
+						mConstructor);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mConstructor] = " + mConstructor
-					+ ", " + "[bd2ne] = " + bd2ne + ", " + "[uAnon] = " + uAnon + ", " + "[mAnon] = " + mAnon + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[mAnon] = " + mAnon + ", " + "[bd2ne] = " + bd2ne
+							+ ", " + "[uAnon] = " + uAnon + ", " + "[mConstructor] = " + mConstructor + ".");
 		}
 		Object[] result2_green = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_11_2_collecttranslatedelements_greenFBBBB(mConstructor, bd2ne,
-						uAnon, mAnon);
+				.pattern_AnonymousClass_WithModifier_11_2_collecttranslatedelements_greenFBBBB(mAnon, bd2ne, uAnon,
+						mConstructor);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_11_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, mConstructor,
-						mMember, bd2ne, uAnon, mAnon, ne2ne, uContainer, jContainer);
+				.pattern_AnonymousClass_WithModifier_11_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, mAnon,
+						jContainer, bd2ne, uAnon, mMember, ne2ne, mConstructor, uContainer);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mConstructor] = " + mConstructor + ", " + "[mMember] = " + mMember + ", " + "[bd2ne] = "
-					+ bd2ne + ", " + "[uAnon] = " + uAnon + ", " + "[mAnon] = " + mAnon + ", " + "[ne2ne] = " + ne2ne
-					+ ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ".");
+					+ ", " + "[mAnon] = " + mAnon + ", " + "[jContainer] = " + jContainer + ", " + "[bd2ne] = " + bd2ne
+					+ ", " + "[uAnon] = " + uAnon + ", " + "[mMember] = " + mMember + ", " + "[ne2ne] = " + ne2ne + ", "
+					+ "[mConstructor] = " + mConstructor + ", " + "[uContainer] = " + uContainer + ".");
 		}
 		AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-				ruleresult, mConstructor, mMember, bd2ne, uAnon, mAnon, uContainer);
-		//nothing EMoflonEdge bd2ne__uAnon____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge bd2ne__mAnon____source = (EMoflonEdge) result3_green[8];
+				ruleresult, mAnon, bd2ne, uAnon, mMember, mConstructor, uContainer);
+		//nothing EMoflonEdge bd2ne__mAnon____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge bd2ne__uAnon____target = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge mMember__mConstructor____mMethodInvocations = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge uContainer__uAnon____nestedClassifier = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[11];
@@ -546,7 +548,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		// 
 		// 
 		AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_11_5_registerobjects_expressionBBBBBBBBBB(
-				this, ruleresult, mConstructor, mMember, bd2ne, uAnon, mAnon, ne2ne, uContainer, jContainer);
+				this, ruleresult, mAnon, jContainer, bd2ne, uAnon, mMember, ne2ne, mConstructor, uContainer);
 		return AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_11_6_expressionFB(ruleresult);
 	}
 
@@ -578,32 +580,32 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) result2_binding[0];
 		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_binding[1];
 		for (Object[] result2_black : AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_12_2_corematch_blackBFBFB(uAnon, uContainer, match)) {
-			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result2_black[1];
-			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[3];
+				.pattern_AnonymousClass_WithModifier_12_2_corematch_blackFBFBB(uAnon, uContainer, match)) {
+			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[0];
+			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : AnonymousClass_WithModifierImpl
-					.pattern_AnonymousClass_WithModifier_12_3_findcontext_blackFBBBB(uAnon, ne2ne, uContainer,
-							jContainer)) {
-				MDefinition mMember = (MDefinition) result3_black[0];
+					.pattern_AnonymousClass_WithModifier_12_3_findcontext_blackBBFBB(jContainer, uAnon, ne2ne,
+							uContainer)) {
+				MDefinition mMember = (MDefinition) result3_black[2];
 				Object[] result3_green = AnonymousClass_WithModifierImpl
-						.pattern_AnonymousClass_WithModifier_12_3_findcontext_greenBBBBBFFFFFF(mMember, uAnon, ne2ne,
-								uContainer, jContainer);
+						.pattern_AnonymousClass_WithModifier_12_3_findcontext_greenBBBBBFFFFFF(jContainer, uAnon,
+								mMember, ne2ne, uContainer);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
-				//nothing EMoflonEdge uContainer__uAnon____nestedClassifier = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge jContainer__mMember____bodyDeclarations = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mMember__jContainer____abstractTypeDeclaration = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge jContainer__mMember____bodyDeclarations = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mMember__jContainer____abstractTypeDeclaration = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge uContainer__uAnon____nestedClassifier = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[10];
 
 				Object[] result4_bindingAndBlack = AnonymousClass_WithModifierImpl
 						.pattern_AnonymousClass_WithModifier_12_4_solveCSP_bindingAndBlackFBBBBBBB(this,
-								isApplicableMatch, mMember, uAnon, ne2ne, uContainer, jContainer);
+								isApplicableMatch, jContainer, uAnon, mMember, ne2ne, uContainer);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMember] = " + mMember + ", "
-							+ "[uAnon] = " + uAnon + ", " + "[ne2ne] = " + ne2ne + ", " + "[uContainer] = " + uContainer
-							+ ", " + "[jContainer] = " + jContainer + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jContainer] = " + jContainer
+							+ ", " + "[uAnon] = " + uAnon + ", " + "[mMember] = " + mMember + ", " + "[ne2ne] = "
+							+ ne2ne + ", " + "[uContainer] = " + uContainer + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -677,9 +679,9 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mMember,
-			org.eclipse.uml2.uml.Class uAnon, NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration jContainer,
+			org.eclipse.uml2.uml.Class uAnon, MDefinition mMember, NamedElement2NamedElement ne2ne,
+			org.eclipse.uml2.uml.Class uContainer) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -694,11 +696,11 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mMember", mMember);
+		isApplicableMatch.registerObject("jContainer", jContainer);
 		isApplicableMatch.registerObject("uAnon", uAnon);
+		isApplicableMatch.registerObject("mMember", mMember);
 		isApplicableMatch.registerObject("ne2ne", ne2ne);
 		isApplicableMatch.registerObject("uContainer", uContainer);
-		isApplicableMatch.registerObject("jContainer", jContainer);
 		return csp;
 	}
 
@@ -716,16 +718,16 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mConstructor, EObject mMember, EObject bd2ne,
-			EObject uAnon, EObject mAnon, EObject ne2ne, EObject uContainer, EObject jContainer) {
-		ruleresult.registerObject("mConstructor", mConstructor);
-		ruleresult.registerObject("mMember", mMember);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mAnon, EObject jContainer, EObject bd2ne,
+			EObject uAnon, EObject mMember, EObject ne2ne, EObject mConstructor, EObject uContainer) {
+		ruleresult.registerObject("mAnon", mAnon);
+		ruleresult.registerObject("jContainer", jContainer);
 		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("uAnon", uAnon);
-		ruleresult.registerObject("mAnon", mAnon);
+		ruleresult.registerObject("mMember", mMember);
 		ruleresult.registerObject("ne2ne", ne2ne);
+		ruleresult.registerObject("mConstructor", mConstructor);
 		ruleresult.registerObject("uContainer", uContainer);
-		ruleresult.registerObject("jContainer", jContainer);
 
 	}
 
@@ -743,7 +745,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_327(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_117(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass_WithModifierImpl
 				.pattern_AnonymousClass_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -802,7 +804,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_337(EMoflonEdge _edge_mMethodInvocations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_123(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass_WithModifierImpl
 				.pattern_AnonymousClass_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -819,10 +821,10 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		// ForEach 
 		for (Object[] result2_black : AnonymousClass_WithModifierImpl
 				.pattern_AnonymousClass_WithModifier_21_2_testcorematchandDECs_blackFFFFB(_edge_mMethodInvocations)) {
-			MClassInstanceCreation mConstructor = (MClassInstanceCreation) result2_black[0];
-			MDefinition mMember = (MDefinition) result2_black[1];
-			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result2_black[2];
-			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[3];
+			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result2_black[0];
+			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[1];
+			MDefinition mMember = (MDefinition) result2_black[2];
+			MClassInstanceCreation mConstructor = (MClassInstanceCreation) result2_black[3];
 			Object[] result2_green = AnonymousClass_WithModifierImpl
 					.pattern_AnonymousClass_WithModifier_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -830,7 +832,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 			// 
 			if (AnonymousClass_WithModifierImpl
 					.pattern_AnonymousClass_WithModifier_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-							this, match, mConstructor, mMember, mAnon, jContainer)) {
+							this, match, mAnon, jContainer, mMember, mConstructor)) {
 				// 
 				if (AnonymousClass_WithModifierImpl
 						.pattern_AnonymousClass_WithModifier_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -951,21 +953,21 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		MClassInstanceCreation mConstructor = (MClassInstanceCreation) result2_bindingAndBlack[0];
-		MDefinition mMember = (MDefinition) result2_bindingAndBlack[1];
+		AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result2_bindingAndBlack[0];
+		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_bindingAndBlack[1];
 		org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[2];
-		AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result2_bindingAndBlack[3];
-		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[4];
-		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_bindingAndBlack[5];
+		MDefinition mMember = (MDefinition) result2_bindingAndBlack[3];
+		MClassInstanceCreation mConstructor = (MClassInstanceCreation) result2_bindingAndBlack[4];
+		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, mConstructor,
-						mMember, uAnon, mAnon, uContainer, jContainer, sourceMatch, targetMatch);
+				.pattern_AnonymousClass_WithModifier_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, mAnon, jContainer,
+						uAnon, mMember, mConstructor, uContainer, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mConstructor] = " + mConstructor + ", " + "[mMember] = " + mMember + ", " + "[uAnon] = " + uAnon
-					+ ", " + "[mAnon] = " + mAnon + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = "
-					+ jContainer + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch
+					+ "[mAnon] = " + mAnon + ", " + "[jContainer] = " + jContainer + ", " + "[uAnon] = " + uAnon + ", "
+					+ "[mMember] = " + mMember + ", " + "[mConstructor] = " + mConstructor + ", " + "[uContainer] = "
+					+ uContainer + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch
 					+ ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -973,26 +975,26 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		if (AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : AnonymousClass_WithModifierImpl
-					.pattern_AnonymousClass_WithModifier_24_5_matchcorrcontext_blackFBBBB(uContainer, jContainer,
+					.pattern_AnonymousClass_WithModifier_24_5_matchcorrcontext_blackBFBBB(jContainer, uContainer,
 							sourceMatch, targetMatch)) {
-				NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result5_black[0];
+				NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result5_black[1];
 				Object[] result5_green = AnonymousClass_WithModifierImpl
 						.pattern_AnonymousClass_WithModifier_24_5_matchcorrcontext_greenBBBF(ne2ne, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = AnonymousClass_WithModifierImpl
-						.pattern_AnonymousClass_WithModifier_24_6_createcorrespondence_blackBBBBBBB(mConstructor,
-								mMember, uAnon, mAnon, uContainer, jContainer, ccMatch);
+						.pattern_AnonymousClass_WithModifier_24_6_createcorrespondence_blackBBBBBBB(mAnon, jContainer,
+								uAnon, mMember, mConstructor, uContainer, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mConstructor] = "
-							+ mConstructor + ", " + "[mMember] = " + mMember + ", " + "[uAnon] = " + uAnon + ", "
-							+ "[mAnon] = " + mAnon + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = "
-							+ jContainer + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mAnon] = " + mAnon + ", "
+							+ "[jContainer] = " + jContainer + ", " + "[uAnon] = " + uAnon + ", " + "[mMember] = "
+							+ mMember + ", " + "[mConstructor] = " + mConstructor + ", " + "[uContainer] = "
+							+ uContainer + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				AnonymousClass_WithModifierImpl
-						.pattern_AnonymousClass_WithModifier_24_6_createcorrespondence_greenFBBB(uAnon, mAnon, ccMatch);
-				//nothing ASTNode2Element bd2ne = (ASTNode2Element) result6_green[0];
+						.pattern_AnonymousClass_WithModifier_24_6_createcorrespondence_greenBFBB(mAnon, uAnon, ccMatch);
+				//nothing ASTNode2Element bd2ne = (ASTNode2Element) result6_green[1];
 
 				Object[] result7_black = AnonymousClass_WithModifierImpl
 						.pattern_AnonymousClass_WithModifier_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1015,9 +1017,9 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MClassInstanceCreation mConstructor, MDefinition mMember,
-			org.eclipse.uml2.uml.Class uAnon, AnonymousClassDeclaration mAnon, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer,
+			org.eclipse.uml2.uml.Class uAnon, MDefinition mMember, MClassInstanceCreation mConstructor,
+			org.eclipse.uml2.uml.Class uContainer, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1046,11 +1048,11 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(MClassInstanceCreation mConstructor, MDefinition mMember,
-			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer) {// 
+	public boolean checkDEC_FWD(AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer,
+			MDefinition mMember, MClassInstanceCreation mConstructor) {// 
 		Object[] result1_black = AnonymousClass_WithModifierImpl
-				.pattern_AnonymousClass_WithModifier_27_1_matchtggpattern_blackBBBB(mConstructor, mMember, mAnon,
-						jContainer);
+				.pattern_AnonymousClass_WithModifier_27_1_matchtggpattern_blackBBBB(mAnon, jContainer, mMember,
+						mConstructor);
 		if (result1_black != null) {
 			return AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_27_2_expressionF();
 		} else {
@@ -1100,19 +1102,19 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 				.pattern_AnonymousClass_WithModifier_29_2_isapplicablecore_blackFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList ne2neList = (RuleEntryList) result2_black[0];
-			MDefinition mMember = (MDefinition) result2_black[1];
-			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[2];
+			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[1];
+			MDefinition mMember = (MDefinition) result2_black[2];
 			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result2_black[3];
 			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_black[4];
 
 			Object[] result3_bindingAndBlack = AnonymousClass_WithModifierImpl
 					.pattern_AnonymousClass_WithModifier_29_3_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
-							mMember, ne2ne, uContainer, jContainer, ruleResult);
+							jContainer, mMember, ne2ne, uContainer, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMember] = " + mMember + ", "
-						+ "[ne2ne] = " + ne2ne + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = "
-						+ jContainer + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jContainer] = " + jContainer + ", "
+						+ "[mMember] = " + mMember + ", " + "[ne2ne] = " + ne2ne + ", " + "[uContainer] = " + uContainer
+						+ ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1120,24 +1122,24 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 					csp)) {
 				// 
 				Object[] result5_black = AnonymousClass_WithModifierImpl
-						.pattern_AnonymousClass_WithModifier_29_5_checknacs_blackBBBB(mMember, ne2ne, uContainer,
-								jContainer);
+						.pattern_AnonymousClass_WithModifier_29_5_checknacs_blackBBBB(jContainer, mMember, ne2ne,
+								uContainer);
 				if (result5_black != null) {
 
 					Object[] result6_black = AnonymousClass_WithModifierImpl
-							.pattern_AnonymousClass_WithModifier_29_6_perform_blackBBBBB(mMember, ne2ne, uContainer,
-									jContainer, ruleResult);
+							.pattern_AnonymousClass_WithModifier_29_6_perform_blackBBBBB(jContainer, mMember, ne2ne,
+									uContainer, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mMember] = "
-								+ mMember + ", " + "[ne2ne] = " + ne2ne + ", " + "[uContainer] = " + uContainer + ", "
-								+ "[jContainer] = " + jContainer + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jContainer] = "
+								+ jContainer + ", " + "[mMember] = " + mMember + ", " + "[ne2ne] = " + ne2ne + ", "
+								+ "[uContainer] = " + uContainer + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_29_6_perform_greenFBFFFBB(
+					AnonymousClass_WithModifierImpl.pattern_AnonymousClass_WithModifier_29_6_perform_greenFFFBFBB(
 							mMember, uContainer, ruleResult);
-					//nothing MClassInstanceCreation mConstructor = (MClassInstanceCreation) result6_green[0];
-					//nothing ASTNode2Element bd2ne = (ASTNode2Element) result6_green[2];
-					//nothing org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) result6_green[3];
-					//nothing AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result6_green[4];
+					//nothing AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result6_green[0];
+					//nothing ASTNode2Element bd2ne = (ASTNode2Element) result6_green[1];
+					//nothing org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) result6_green[2];
+					//nothing MClassInstanceCreation mConstructor = (MClassInstanceCreation) result6_green[4];
 
 				} else {
 				}
@@ -1154,8 +1156,8 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mMember,
-			NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration jContainer,
+			MDefinition mMember, NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1171,10 +1173,10 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("jContainer", jContainer);
 		isApplicableMatch.registerObject("mMember", mMember);
 		isApplicableMatch.registerObject("ne2ne", ne2ne);
 		isApplicableMatch.registerObject("uContainer", uContainer);
-		isApplicableMatch.registerObject("jContainer", jContainer);
 		return csp;
 	}
 
@@ -1195,30 +1197,30 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPROPRIATE_FWD__MATCH_MCLASSINSTANCECREATION_MDEFINITION_ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
-					(MDefinition) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3),
-					(AbstractTypeDeclaration) arguments.get(4));
+		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPROPRIATE_FWD__MATCH_ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION_MDEFINITION_MCLASSINSTANCECREATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (AnonymousClassDeclaration) arguments.get(1),
+					(AbstractTypeDeclaration) arguments.get(2), (MDefinition) arguments.get(3),
+					(MClassInstanceCreation) arguments.get(4));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASSINSTANCECREATION_MDEFINITION_ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
-					(MDefinition) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3),
-					(AbstractTypeDeclaration) arguments.get(4));
+		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION_MDEFINITION_MCLASSINSTANCECREATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (AnonymousClassDeclaration) arguments.get(1),
+					(AbstractTypeDeclaration) arguments.get(2), (MDefinition) arguments.get(3),
+					(MClassInstanceCreation) arguments.get(4));
 			return null;
-		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASSINSTANCECREATION_MDEFINITION_ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
-					(MDefinition) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3),
-					(AbstractTypeDeclaration) arguments.get(4));
+		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION_MDEFINITION_MCLASSINSTANCECREATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (AnonymousClassDeclaration) arguments.get(1),
+					(AbstractTypeDeclaration) arguments.get(2), (MDefinition) arguments.get(3),
+					(MClassInstanceCreation) arguments.get(4));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCLASSINSTANCECREATION_MDEFINITION_ANONYMOUSCLASSDECLARATION_NAMEDELEMENT2NAMEDELEMENT_CLASS_ABSTRACTTYPEDECLARATION:
+		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION_MDEFINITION_NAMEDELEMENT2NAMEDELEMENT_MCLASSINSTANCECREATION_CLASS:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(MClassInstanceCreation) arguments.get(1), (MDefinition) arguments.get(2),
-					(AnonymousClassDeclaration) arguments.get(3), (NamedElement2NamedElement) arguments.get(4),
-					(org.eclipse.uml2.uml.Class) arguments.get(5), (AbstractTypeDeclaration) arguments.get(6));
+					(AnonymousClassDeclaration) arguments.get(1), (AbstractTypeDeclaration) arguments.get(2),
+					(MDefinition) arguments.get(3), (NamedElement2NamedElement) arguments.get(4),
+					(MClassInstanceCreation) arguments.get(5), (org.eclipse.uml2.uml.Class) arguments.get(6));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1245,10 +1247,11 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 					(org.eclipse.uml2.uml.Class) arguments.get(2));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITION_CLASS_NAMEDELEMENT2NAMEDELEMENT_CLASS_ABSTRACTTYPEDECLARATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MDefinition) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2), (NamedElement2NamedElement) arguments.get(3),
-					(org.eclipse.uml2.uml.Class) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5));
+		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ABSTRACTTYPEDECLARATION_CLASS_MDEFINITION_NAMEDELEMENT2NAMEDELEMENT_CLASS:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(AbstractTypeDeclaration) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
+					(MDefinition) arguments.get(3), (NamedElement2NamedElement) arguments.get(4),
+					(org.eclipse.uml2.uml.Class) arguments.get(5));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1259,35 +1262,37 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_327__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_327((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_337__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_337((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_117__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_117((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_123__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_123((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_CC__MCLASSINSTANCECREATION_MDEFINITION_CLASS_ANONYMOUSCLASSDECLARATION_CLASS_ABSTRACTTYPEDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MClassInstanceCreation) arguments.get(0), (MDefinition) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3),
-					(org.eclipse.uml2.uml.Class) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5),
-					(Match) arguments.get(6), (Match) arguments.get(7));
+		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_CC__ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION_CLASS_MDEFINITION_MCLASSINSTANCECREATION_CLASS_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((AnonymousClassDeclaration) arguments.get(0),
+					(AbstractTypeDeclaration) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
+					(MDefinition) arguments.get(3), (MClassInstanceCreation) arguments.get(4),
+					(org.eclipse.uml2.uml.Class) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___CHECK_DEC_FWD__MCLASSINSTANCECREATION_MDEFINITION_ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION:
-			return checkDEC_FWD((MClassInstanceCreation) arguments.get(0), (MDefinition) arguments.get(1),
-					(AnonymousClassDeclaration) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
+		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___CHECK_DEC_FWD__ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION_MDEFINITION_MCLASSINSTANCECREATION:
+			return checkDEC_FWD((AnonymousClassDeclaration) arguments.get(0),
+					(AbstractTypeDeclaration) arguments.get(1), (MDefinition) arguments.get(2),
+					(MClassInstanceCreation) arguments.get(3));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___CHECK_DEC_BWD__CLASS_CLASS:
 			return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0),
 					(org.eclipse.uml2.uml.Class) arguments.get(1));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___GENERATE_MODEL__RULEENTRYCONTAINER_NAMEDELEMENT2NAMEDELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0), (NamedElement2NamedElement) arguments.get(1));
-		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITION_NAMEDELEMENT2NAMEDELEMENT_CLASS_ABSTRACTTYPEDECLARATION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MDefinition) arguments.get(1),
-					(NamedElement2NamedElement) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-					(AbstractTypeDeclaration) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
+		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ABSTRACTTYPEDECLARATION_MDEFINITION_NAMEDELEMENT2NAMEDELEMENT_CLASS_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(AbstractTypeDeclaration) arguments.get(1), (MDefinition) arguments.get(2),
+					(NamedElement2NamedElement) arguments.get(3), (org.eclipse.uml2.uml.Class) arguments.get(4),
+					(ModelgeneratorRuleResult) arguments.get(5));
 		case RulesPackage.ANONYMOUS_CLASS_WITH_MODIFIER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1295,18 +1300,18 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_0_1_initialbindings_blackBBBBBB(
-			AnonymousClass_WithModifier _this, Match match, MClassInstanceCreation mConstructor, MDefinition mMember,
-			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer) {
-		return new Object[] { _this, match, mConstructor, mMember, mAnon, jContainer };
+			AnonymousClass_WithModifier _this, Match match, AnonymousClassDeclaration mAnon,
+			AbstractTypeDeclaration jContainer, MDefinition mMember, MClassInstanceCreation mConstructor) {
+		return new Object[] { _this, match, mAnon, jContainer, mMember, mConstructor };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_0_2_SolveCSP_bindingFBBBBBB(
-			AnonymousClass_WithModifier _this, Match match, MClassInstanceCreation mConstructor, MDefinition mMember,
-			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mConstructor, mMember, mAnon, jContainer);
+			AnonymousClass_WithModifier _this, Match match, AnonymousClassDeclaration mAnon,
+			AbstractTypeDeclaration jContainer, MDefinition mMember, MClassInstanceCreation mConstructor) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mAnon, jContainer, mMember, mConstructor);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mConstructor, mMember, mAnon, jContainer };
+			return new Object[] { csp, _this, match, mAnon, jContainer, mMember, mConstructor };
 		}
 		return null;
 	}
@@ -1316,10 +1321,10 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_0_2_SolveCSP_bindingAndBlackFBBBBBB(
-			AnonymousClass_WithModifier _this, Match match, MClassInstanceCreation mConstructor, MDefinition mMember,
-			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer) {
+			AnonymousClass_WithModifier _this, Match match, AnonymousClassDeclaration mAnon,
+			AbstractTypeDeclaration jContainer, MDefinition mMember, MClassInstanceCreation mConstructor) {
 		Object[] result_pattern_AnonymousClass_WithModifier_0_2_SolveCSP_binding = pattern_AnonymousClass_WithModifier_0_2_SolveCSP_bindingFBBBBBB(
-				_this, match, mConstructor, mMember, mAnon, jContainer);
+				_this, match, mAnon, jContainer, mMember, mConstructor);
 		if (result_pattern_AnonymousClass_WithModifier_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnonymousClass_WithModifier_0_2_SolveCSP_binding[0];
 
@@ -1327,7 +1332,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_AnonymousClass_WithModifier_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mConstructor, mMember, mAnon, jContainer };
+				return new Object[] { csp, _this, match, mAnon, jContainer, mMember, mConstructor };
 			}
 		}
 		return null;
@@ -1341,18 +1346,18 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_0_4_collectelementstobetranslated_blackBBBBB(
-			Match match, MClassInstanceCreation mConstructor, MDefinition mMember, AnonymousClassDeclaration mAnon,
-			AbstractTypeDeclaration jContainer) {
-		return new Object[] { match, mConstructor, mMember, mAnon, jContainer };
+			Match match, AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer, MDefinition mMember,
+			MClassInstanceCreation mConstructor) {
+		return new Object[] { match, mAnon, jContainer, mMember, mConstructor };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_0_4_collectelementstobetranslated_greenBBBBFFF(
-			Match match, MClassInstanceCreation mConstructor, MDefinition mMember, AnonymousClassDeclaration mAnon) {
+			Match match, AnonymousClassDeclaration mAnon, MDefinition mMember, MClassInstanceCreation mConstructor) {
 		EMoflonEdge mMember__mConstructor____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnon__mConstructor____classInstanceCreation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(mConstructor);
 		match.getToBeTranslatedNodes().add(mAnon);
+		match.getToBeTranslatedNodes().add(mConstructor);
 		String mMember__mConstructor____mMethodInvocations_name_prime = "mMethodInvocations";
 		String mConstructor__mAnon____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
 		String mAnon__mConstructor____classInstanceCreation_name_prime = "classInstanceCreation";
@@ -1369,22 +1374,22 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		mConstructor__mAnon____anonymousClassDeclaration
 				.setName(mConstructor__mAnon____anonymousClassDeclaration_name_prime);
 		mAnon__mConstructor____classInstanceCreation.setName(mAnon__mConstructor____classInstanceCreation_name_prime);
-		return new Object[] { match, mConstructor, mMember, mAnon, mMember__mConstructor____mMethodInvocations,
+		return new Object[] { match, mAnon, mMember, mConstructor, mMember__mConstructor____mMethodInvocations,
 				mConstructor__mAnon____anonymousClassDeclaration, mAnon__mConstructor____classInstanceCreation };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_0_5_collectcontextelements_blackBBBBB(Match match,
-			MClassInstanceCreation mConstructor, MDefinition mMember, AnonymousClassDeclaration mAnon,
-			AbstractTypeDeclaration jContainer) {
-		return new Object[] { match, mConstructor, mMember, mAnon, jContainer };
+			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer, MDefinition mMember,
+			MClassInstanceCreation mConstructor) {
+		return new Object[] { match, mAnon, jContainer, mMember, mConstructor };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_0_5_collectcontextelements_greenBBBFF(Match match,
-			MDefinition mMember, AbstractTypeDeclaration jContainer) {
+			AbstractTypeDeclaration jContainer, MDefinition mMember) {
 		EMoflonEdge jContainer__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__jContainer____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(mMember);
 		match.getContextNodes().add(jContainer);
+		match.getContextNodes().add(mMember);
 		String jContainer__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mMember__jContainer____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		jContainer__mMember____bodyDeclarations.setSrc(jContainer);
@@ -1396,14 +1401,14 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		jContainer__mMember____bodyDeclarations.setName(jContainer__mMember____bodyDeclarations_name_prime);
 		mMember__jContainer____abstractTypeDeclaration
 				.setName(mMember__jContainer____abstractTypeDeclaration_name_prime);
-		return new Object[] { match, mMember, jContainer, jContainer__mMember____bodyDeclarations,
+		return new Object[] { match, jContainer, mMember, jContainer__mMember____bodyDeclarations,
 				mMember__jContainer____abstractTypeDeclaration };
 	}
 
 	public static final void pattern_AnonymousClass_WithModifier_0_6_registerobjectstomatch_expressionBBBBBB(
-			AnonymousClass_WithModifier _this, Match match, MClassInstanceCreation mConstructor, MDefinition mMember,
-			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer) {
-		_this.registerObjectsToMatch_FWD(match, mConstructor, mMember, mAnon, jContainer);
+			AnonymousClass_WithModifier _this, Match match, AnonymousClassDeclaration mAnon,
+			AbstractTypeDeclaration jContainer, MDefinition mMember, MClassInstanceCreation mConstructor) {
+		_this.registerObjectsToMatch_FWD(match, mAnon, jContainer, mMember, mConstructor);
 
 	}
 
@@ -1419,31 +1424,31 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mConstructor");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mMember");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mAnon");
+		EObject _localVariable_0 = isApplicableMatch.getObject("mAnon");
+		EObject _localVariable_1 = isApplicableMatch.getObject("jContainer");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mMember");
 		EObject _localVariable_3 = isApplicableMatch.getObject("ne2ne");
-		EObject _localVariable_4 = isApplicableMatch.getObject("uContainer");
-		EObject _localVariable_5 = isApplicableMatch.getObject("jContainer");
-		EObject tmpMConstructor = _localVariable_0;
-		EObject tmpMMember = _localVariable_1;
-		EObject tmpMAnon = _localVariable_2;
+		EObject _localVariable_4 = isApplicableMatch.getObject("mConstructor");
+		EObject _localVariable_5 = isApplicableMatch.getObject("uContainer");
+		EObject tmpMAnon = _localVariable_0;
+		EObject tmpJContainer = _localVariable_1;
+		EObject tmpMMember = _localVariable_2;
 		EObject tmpNe2ne = _localVariable_3;
-		EObject tmpUContainer = _localVariable_4;
-		EObject tmpJContainer = _localVariable_5;
-		if (tmpMConstructor instanceof MClassInstanceCreation) {
-			MClassInstanceCreation mConstructor = (MClassInstanceCreation) tmpMConstructor;
-			if (tmpMMember instanceof MDefinition) {
-				MDefinition mMember = (MDefinition) tmpMMember;
-				if (tmpMAnon instanceof AnonymousClassDeclaration) {
-					AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) tmpMAnon;
+		EObject tmpMConstructor = _localVariable_4;
+		EObject tmpUContainer = _localVariable_5;
+		if (tmpMAnon instanceof AnonymousClassDeclaration) {
+			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) tmpMAnon;
+			if (tmpJContainer instanceof AbstractTypeDeclaration) {
+				AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
+				if (tmpMMember instanceof MDefinition) {
+					MDefinition mMember = (MDefinition) tmpMMember;
 					if (tmpNe2ne instanceof NamedElement2NamedElement) {
 						NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) tmpNe2ne;
-						if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
-							org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
-							if (tmpJContainer instanceof AbstractTypeDeclaration) {
-								AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
-								return new Object[] { mConstructor, mMember, mAnon, ne2ne, uContainer, jContainer,
+						if (tmpMConstructor instanceof MClassInstanceCreation) {
+							MClassInstanceCreation mConstructor = (MClassInstanceCreation) tmpMConstructor;
+							if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
+								org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
+								return new Object[] { mAnon, jContainer, mMember, ne2ne, mConstructor, uContainer,
 										isApplicableMatch };
 							}
 						}
@@ -1455,13 +1460,13 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_1_1_performtransformation_blackBBBBBBFBB(
-			MClassInstanceCreation mConstructor, MDefinition mMember, AnonymousClassDeclaration mAnon,
-			NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
+			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer, MDefinition mMember,
+			NamedElement2NamedElement ne2ne, MClassInstanceCreation mConstructor, org.eclipse.uml2.uml.Class uContainer,
 			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mConstructor, mMember, mAnon, ne2ne, uContainer, jContainer, csp, _this,
+				return new Object[] { mAnon, jContainer, mMember, ne2ne, mConstructor, uContainer, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1473,26 +1478,26 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		Object[] result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding = pattern_AnonymousClass_WithModifier_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding != null) {
-			MClassInstanceCreation mConstructor = (MClassInstanceCreation) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[0];
-			MDefinition mMember = (MDefinition) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[1];
-			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[2];
+			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[0];
+			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[1];
+			MDefinition mMember = (MDefinition) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[2];
 			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[3];
-			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[4];
-			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[5];
+			MClassInstanceCreation mConstructor = (MClassInstanceCreation) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[4];
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_black = pattern_AnonymousClass_WithModifier_1_1_performtransformation_blackBBBBBBFBB(
-					mConstructor, mMember, mAnon, ne2ne, uContainer, jContainer, _this, isApplicableMatch);
+					mAnon, jContainer, mMember, ne2ne, mConstructor, uContainer, _this, isApplicableMatch);
 			if (result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnonymousClass_WithModifier_1_1_performtransformation_black[6];
 
-				return new Object[] { mConstructor, mMember, mAnon, ne2ne, uContainer, jContainer, csp, _this,
+				return new Object[] { mAnon, jContainer, mMember, ne2ne, mConstructor, uContainer, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnonymousClass_WithModifier_1_1_performtransformation_greenFFBB(
+	public static final Object[] pattern_AnonymousClass_WithModifier_1_1_performtransformation_greenBFFB(
 			AnonymousClassDeclaration mAnon, org.eclipse.uml2.uml.Class uContainer) {
 		ASTNode2Element bd2ne = UmlFactory.eINSTANCE.createASTNode2Element();
 		org.eclipse.uml2.uml.Class uAnon = UMLFactory.eINSTANCE.createClass();
@@ -1501,74 +1506,74 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		bd2ne.setTarget(uAnon);
 		uContainer.getNestedClassifiers().add(uAnon);
 		uAnon.setName(uAnon_name_prime);
-		return new Object[] { bd2ne, uAnon, mAnon, uContainer };
+		return new Object[] { mAnon, bd2ne, uAnon, uContainer };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_1_2_collecttranslatedelements_blackBBBB(
-			MClassInstanceCreation mConstructor, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class uAnon,
-			AnonymousClassDeclaration mAnon) {
-		return new Object[] { mConstructor, bd2ne, uAnon, mAnon };
+			AnonymousClassDeclaration mAnon, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class uAnon,
+			MClassInstanceCreation mConstructor) {
+		return new Object[] { mAnon, bd2ne, uAnon, mConstructor };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_1_2_collecttranslatedelements_greenFBBBB(
-			MClassInstanceCreation mConstructor, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class uAnon,
-			AnonymousClassDeclaration mAnon) {
+			AnonymousClassDeclaration mAnon, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class uAnon,
+			MClassInstanceCreation mConstructor) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(mConstructor);
+		ruleresult.getTranslatedElements().add(mAnon);
 		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getCreatedElements().add(uAnon);
-		ruleresult.getTranslatedElements().add(mAnon);
-		return new Object[] { ruleresult, mConstructor, bd2ne, uAnon, mAnon };
+		ruleresult.getTranslatedElements().add(mConstructor);
+		return new Object[] { ruleresult, mAnon, bd2ne, uAnon, mConstructor };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_1_3_bookkeepingforedges_blackBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mConstructor, EObject mMember, EObject bd2ne, EObject uAnon,
-			EObject mAnon, EObject ne2ne, EObject uContainer, EObject jContainer) {
-		if (!mConstructor.equals(mMember)) {
-			if (!mConstructor.equals(uAnon)) {
-				if (!mConstructor.equals(ne2ne)) {
-					if (!mConstructor.equals(uContainer)) {
-						if (!mMember.equals(uAnon)) {
-							if (!mMember.equals(ne2ne)) {
-								if (!mMember.equals(uContainer)) {
-									if (!bd2ne.equals(mConstructor)) {
-										if (!bd2ne.equals(mMember)) {
-											if (!bd2ne.equals(uAnon)) {
-												if (!bd2ne.equals(mAnon)) {
-													if (!bd2ne.equals(ne2ne)) {
-														if (!bd2ne.equals(uContainer)) {
-															if (!bd2ne.equals(jContainer)) {
-																if (!uAnon.equals(uContainer)) {
-																	if (!mAnon.equals(mConstructor)) {
-																		if (!mAnon.equals(mMember)) {
-																			if (!mAnon.equals(uAnon)) {
-																				if (!mAnon.equals(ne2ne)) {
-																					if (!mAnon.equals(uContainer)) {
-																						if (!ne2ne.equals(uAnon)) {
-																							if (!ne2ne.equals(
+			PerformRuleResult ruleresult, EObject mAnon, EObject jContainer, EObject bd2ne, EObject uAnon,
+			EObject mMember, EObject ne2ne, EObject mConstructor, EObject uContainer) {
+		if (!mAnon.equals(uAnon)) {
+			if (!mAnon.equals(mMember)) {
+				if (!mAnon.equals(ne2ne)) {
+					if (!mAnon.equals(mConstructor)) {
+						if (!mAnon.equals(uContainer)) {
+							if (!jContainer.equals(mAnon)) {
+								if (!jContainer.equals(uAnon)) {
+									if (!jContainer.equals(mMember)) {
+										if (!jContainer.equals(ne2ne)) {
+											if (!jContainer.equals(mConstructor)) {
+												if (!jContainer.equals(uContainer)) {
+													if (!bd2ne.equals(mAnon)) {
+														if (!bd2ne.equals(jContainer)) {
+															if (!bd2ne.equals(uAnon)) {
+																if (!bd2ne.equals(mMember)) {
+																	if (!bd2ne.equals(ne2ne)) {
+																		if (!bd2ne.equals(mConstructor)) {
+																			if (!bd2ne.equals(uContainer)) {
+																				if (!uAnon.equals(uContainer)) {
+																					if (!mMember.equals(uAnon)) {
+																						if (!mMember.equals(ne2ne)) {
+																							if (!mMember.equals(
 																									uContainer)) {
-																								if (!jContainer.equals(
-																										mConstructor)) {
-																									if (!jContainer
-																											.equals(mMember)) {
-																										if (!jContainer
+																								if (!ne2ne.equals(
+																										uAnon)) {
+																									if (!ne2ne.equals(
+																											uContainer)) {
+																										if (!mConstructor
 																												.equals(uAnon)) {
-																											if (!jContainer
-																													.equals(mAnon)) {
-																												if (!jContainer
+																											if (!mConstructor
+																													.equals(mMember)) {
+																												if (!mConstructor
 																														.equals(ne2ne)) {
-																													if (!jContainer
+																													if (!mConstructor
 																															.equals(uContainer)) {
 																														return new Object[] {
 																																ruleresult,
-																																mConstructor,
-																																mMember,
+																																mAnon,
+																																jContainer,
 																																bd2ne,
 																																uAnon,
-																																mAnon,
+																																mMember,
 																																ne2ne,
-																																uContainer,
-																																jContainer };
+																																mConstructor,
+																																uContainer };
 																													}
 																												}
 																											}
@@ -1601,27 +1606,27 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject mConstructor, EObject mMember, EObject bd2ne, EObject uAnon,
-			EObject mAnon, EObject uContainer) {
-		EMoflonEdge bd2ne__uAnon____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mAnon, EObject bd2ne, EObject uAnon, EObject mMember,
+			EObject mConstructor, EObject uContainer) {
 		EMoflonEdge bd2ne__mAnon____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__uAnon____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__mConstructor____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uContainer__uAnon____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnon__mConstructor____classInstanceCreation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnonymousClass_WithModifier";
-		String bd2ne__uAnon____target_name_prime = "target";
 		String bd2ne__mAnon____source_name_prime = "source";
+		String bd2ne__uAnon____target_name_prime = "target";
 		String mMember__mConstructor____mMethodInvocations_name_prime = "mMethodInvocations";
 		String uContainer__uAnon____nestedClassifier_name_prime = "nestedClassifier";
 		String mConstructor__mAnon____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
 		String mAnon__mConstructor____classInstanceCreation_name_prime = "classInstanceCreation";
-		bd2ne__uAnon____target.setSrc(bd2ne);
-		bd2ne__uAnon____target.setTrg(uAnon);
-		ruleresult.getCreatedEdges().add(bd2ne__uAnon____target);
 		bd2ne__mAnon____source.setSrc(bd2ne);
 		bd2ne__mAnon____source.setTrg(mAnon);
 		ruleresult.getCreatedEdges().add(bd2ne__mAnon____source);
+		bd2ne__uAnon____target.setSrc(bd2ne);
+		bd2ne__uAnon____target.setTrg(uAnon);
+		ruleresult.getCreatedEdges().add(bd2ne__uAnon____target);
 		mMember__mConstructor____mMethodInvocations.setSrc(mMember);
 		mMember__mConstructor____mMethodInvocations.setTrg(mConstructor);
 		ruleresult.getTranslatedEdges().add(mMember__mConstructor____mMethodInvocations);
@@ -1635,24 +1640,24 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		mAnon__mConstructor____classInstanceCreation.setTrg(mConstructor);
 		ruleresult.getTranslatedEdges().add(mAnon__mConstructor____classInstanceCreation);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		bd2ne__uAnon____target.setName(bd2ne__uAnon____target_name_prime);
 		bd2ne__mAnon____source.setName(bd2ne__mAnon____source_name_prime);
+		bd2ne__uAnon____target.setName(bd2ne__uAnon____target_name_prime);
 		mMember__mConstructor____mMethodInvocations.setName(mMember__mConstructor____mMethodInvocations_name_prime);
 		uContainer__uAnon____nestedClassifier.setName(uContainer__uAnon____nestedClassifier_name_prime);
 		mConstructor__mAnon____anonymousClassDeclaration
 				.setName(mConstructor__mAnon____anonymousClassDeclaration_name_prime);
 		mAnon__mConstructor____classInstanceCreation.setName(mAnon__mConstructor____classInstanceCreation_name_prime);
-		return new Object[] { ruleresult, mConstructor, mMember, bd2ne, uAnon, mAnon, uContainer,
-				bd2ne__uAnon____target, bd2ne__mAnon____source, mMember__mConstructor____mMethodInvocations,
+		return new Object[] { ruleresult, mAnon, bd2ne, uAnon, mMember, mConstructor, uContainer,
+				bd2ne__mAnon____source, bd2ne__uAnon____target, mMember__mConstructor____mMethodInvocations,
 				uContainer__uAnon____nestedClassifier, mConstructor__mAnon____anonymousClassDeclaration,
 				mAnon__mConstructor____classInstanceCreation };
 	}
 
 	public static final void pattern_AnonymousClass_WithModifier_1_5_registerobjects_expressionBBBBBBBBBB(
-			AnonymousClass_WithModifier _this, PerformRuleResult ruleresult, EObject mConstructor, EObject mMember,
-			EObject bd2ne, EObject uAnon, EObject mAnon, EObject ne2ne, EObject uContainer, EObject jContainer) {
-		_this.registerObjects_FWD(ruleresult, mConstructor, mMember, bd2ne, uAnon, mAnon, ne2ne, uContainer,
-				jContainer);
+			AnonymousClass_WithModifier _this, PerformRuleResult ruleresult, EObject mAnon, EObject jContainer,
+			EObject bd2ne, EObject uAnon, EObject mMember, EObject ne2ne, EObject mConstructor, EObject uContainer) {
+		_this.registerObjects_FWD(ruleresult, mAnon, jContainer, bd2ne, uAnon, mMember, ne2ne, mConstructor,
+				uContainer);
 
 	}
 
@@ -1714,23 +1719,23 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_2_2_corematch_bindingFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mConstructor");
-		EObject _localVariable_1 = match.getObject("mMember");
-		EObject _localVariable_2 = match.getObject("mAnon");
-		EObject _localVariable_3 = match.getObject("jContainer");
-		EObject tmpMConstructor = _localVariable_0;
-		EObject tmpMMember = _localVariable_1;
-		EObject tmpMAnon = _localVariable_2;
-		EObject tmpJContainer = _localVariable_3;
-		if (tmpMConstructor instanceof MClassInstanceCreation) {
-			MClassInstanceCreation mConstructor = (MClassInstanceCreation) tmpMConstructor;
-			if (tmpMMember instanceof MDefinition) {
-				MDefinition mMember = (MDefinition) tmpMMember;
-				if (tmpMAnon instanceof AnonymousClassDeclaration) {
-					AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) tmpMAnon;
-					if (tmpJContainer instanceof AbstractTypeDeclaration) {
-						AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
-						return new Object[] { mConstructor, mMember, mAnon, jContainer, match };
+		EObject _localVariable_0 = match.getObject("mAnon");
+		EObject _localVariable_1 = match.getObject("jContainer");
+		EObject _localVariable_2 = match.getObject("mMember");
+		EObject _localVariable_3 = match.getObject("mConstructor");
+		EObject tmpMAnon = _localVariable_0;
+		EObject tmpJContainer = _localVariable_1;
+		EObject tmpMMember = _localVariable_2;
+		EObject tmpMConstructor = _localVariable_3;
+		if (tmpMAnon instanceof AnonymousClassDeclaration) {
+			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) tmpMAnon;
+			if (tmpJContainer instanceof AbstractTypeDeclaration) {
+				AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
+				if (tmpMMember instanceof MDefinition) {
+					MDefinition mMember = (MDefinition) tmpMMember;
+					if (tmpMConstructor instanceof MClassInstanceCreation) {
+						MClassInstanceCreation mConstructor = (MClassInstanceCreation) tmpMConstructor;
+						return new Object[] { mAnon, jContainer, mMember, mConstructor, match };
 					}
 				}
 			}
@@ -1738,16 +1743,16 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnonymousClass_WithModifier_2_2_corematch_blackBBBFFBB(
-			MClassInstanceCreation mConstructor, MDefinition mMember, AnonymousClassDeclaration mAnon,
-			AbstractTypeDeclaration jContainer, Match match) {
+	public static final Iterable<Object[]> pattern_AnonymousClass_WithModifier_2_2_corematch_blackBBBFBFB(
+			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer, MDefinition mMember,
+			MClassInstanceCreation mConstructor, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (NamedElement2NamedElement ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(jContainer, NamedElement2NamedElement.class, "source")) {
 			NamedElement tmpUContainer = ne2ne.getTarget();
 			if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
 				org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
-				_result.add(new Object[] { mConstructor, mMember, mAnon, ne2ne, uContainer, jContainer, match });
+				_result.add(new Object[] { mAnon, jContainer, mMember, ne2ne, mConstructor, uContainer, match });
 			}
 
 		}
@@ -1755,16 +1760,16 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Iterable<Object[]> pattern_AnonymousClass_WithModifier_2_3_findcontext_blackBBBBBB(
-			MClassInstanceCreation mConstructor, MDefinition mMember, AnonymousClassDeclaration mAnon,
-			NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer) {
+			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer, MDefinition mMember,
+			NamedElement2NamedElement ne2ne, MClassInstanceCreation mConstructor,
+			org.eclipse.uml2.uml.Class uContainer) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mMember.getMMethodInvocations().contains(mConstructor)) {
-			if (uContainer.equals(ne2ne.getTarget())) {
-				if (mAnon.equals(mConstructor.getAnonymousClassDeclaration())) {
-					if (jContainer.getBodyDeclarations().contains(mMember)) {
-						if (jContainer.equals(ne2ne.getSource())) {
-							_result.add(new Object[] { mConstructor, mMember, mAnon, ne2ne, uContainer, jContainer });
+		if (jContainer.getBodyDeclarations().contains(mMember)) {
+			if (mMember.getMMethodInvocations().contains(mConstructor)) {
+				if (jContainer.equals(ne2ne.getSource())) {
+					if (uContainer.equals(ne2ne.getTarget())) {
+						if (mAnon.equals(mConstructor.getAnonymousClassDeclaration())) {
+							_result.add(new Object[] { mAnon, jContainer, mMember, ne2ne, mConstructor, uContainer });
 						}
 					}
 				}
@@ -1774,33 +1779,42 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_2_3_findcontext_greenBBBBBBFFFFFFFF(
-			MClassInstanceCreation mConstructor, MDefinition mMember, AnonymousClassDeclaration mAnon,
-			NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer) {
+			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer, MDefinition mMember,
+			NamedElement2NamedElement ne2ne, MClassInstanceCreation mConstructor,
+			org.eclipse.uml2.uml.Class uContainer) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge jContainer__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__jContainer____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__mConstructor____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnon__mConstructor____classInstanceCreation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jContainer__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__jContainer____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String jContainer__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mMember__jContainer____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String mMember__mConstructor____mMethodInvocations_name_prime = "mMethodInvocations";
+		String ne2ne__jContainer____source_name_prime = "source";
 		String ne2ne__uContainer____target_name_prime = "target";
 		String mConstructor__mAnon____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
 		String mAnon__mConstructor____classInstanceCreation_name_prime = "classInstanceCreation";
-		String jContainer__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
-		String mMember__jContainer____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		String ne2ne__jContainer____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(mConstructor);
-		isApplicableMatch.getAllContextElements().add(mMember);
 		isApplicableMatch.getAllContextElements().add(mAnon);
-		isApplicableMatch.getAllContextElements().add(ne2ne);
-		isApplicableMatch.getAllContextElements().add(uContainer);
 		isApplicableMatch.getAllContextElements().add(jContainer);
+		isApplicableMatch.getAllContextElements().add(mMember);
+		isApplicableMatch.getAllContextElements().add(ne2ne);
+		isApplicableMatch.getAllContextElements().add(mConstructor);
+		isApplicableMatch.getAllContextElements().add(uContainer);
+		jContainer__mMember____bodyDeclarations.setSrc(jContainer);
+		jContainer__mMember____bodyDeclarations.setTrg(mMember);
+		isApplicableMatch.getAllContextElements().add(jContainer__mMember____bodyDeclarations);
+		mMember__jContainer____abstractTypeDeclaration.setSrc(mMember);
+		mMember__jContainer____abstractTypeDeclaration.setTrg(jContainer);
+		isApplicableMatch.getAllContextElements().add(mMember__jContainer____abstractTypeDeclaration);
 		mMember__mConstructor____mMethodInvocations.setSrc(mMember);
 		mMember__mConstructor____mMethodInvocations.setTrg(mConstructor);
 		isApplicableMatch.getAllContextElements().add(mMember__mConstructor____mMethodInvocations);
+		ne2ne__jContainer____source.setSrc(ne2ne);
+		ne2ne__jContainer____source.setTrg(jContainer);
+		isApplicableMatch.getAllContextElements().add(ne2ne__jContainer____source);
 		ne2ne__uContainer____target.setSrc(ne2ne);
 		ne2ne__uContainer____target.setTrg(uContainer);
 		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
@@ -1810,41 +1824,31 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		mAnon__mConstructor____classInstanceCreation.setSrc(mAnon);
 		mAnon__mConstructor____classInstanceCreation.setTrg(mConstructor);
 		isApplicableMatch.getAllContextElements().add(mAnon__mConstructor____classInstanceCreation);
-		jContainer__mMember____bodyDeclarations.setSrc(jContainer);
-		jContainer__mMember____bodyDeclarations.setTrg(mMember);
-		isApplicableMatch.getAllContextElements().add(jContainer__mMember____bodyDeclarations);
-		mMember__jContainer____abstractTypeDeclaration.setSrc(mMember);
-		mMember__jContainer____abstractTypeDeclaration.setTrg(jContainer);
-		isApplicableMatch.getAllContextElements().add(mMember__jContainer____abstractTypeDeclaration);
-		ne2ne__jContainer____source.setSrc(ne2ne);
-		ne2ne__jContainer____source.setTrg(jContainer);
-		isApplicableMatch.getAllContextElements().add(ne2ne__jContainer____source);
+		jContainer__mMember____bodyDeclarations.setName(jContainer__mMember____bodyDeclarations_name_prime);
+		mMember__jContainer____abstractTypeDeclaration
+				.setName(mMember__jContainer____abstractTypeDeclaration_name_prime);
 		mMember__mConstructor____mMethodInvocations.setName(mMember__mConstructor____mMethodInvocations_name_prime);
+		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
 		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
 		mConstructor__mAnon____anonymousClassDeclaration
 				.setName(mConstructor__mAnon____anonymousClassDeclaration_name_prime);
 		mAnon__mConstructor____classInstanceCreation.setName(mAnon__mConstructor____classInstanceCreation_name_prime);
-		jContainer__mMember____bodyDeclarations.setName(jContainer__mMember____bodyDeclarations_name_prime);
-		mMember__jContainer____abstractTypeDeclaration
-				.setName(mMember__jContainer____abstractTypeDeclaration_name_prime);
-		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
-		return new Object[] { mConstructor, mMember, mAnon, ne2ne, uContainer, jContainer, isApplicableMatch,
-				mMember__mConstructor____mMethodInvocations, ne2ne__uContainer____target,
-				mConstructor__mAnon____anonymousClassDeclaration, mAnon__mConstructor____classInstanceCreation,
+		return new Object[] { mAnon, jContainer, mMember, ne2ne, mConstructor, uContainer, isApplicableMatch,
 				jContainer__mMember____bodyDeclarations, mMember__jContainer____abstractTypeDeclaration,
-				ne2ne__jContainer____source };
+				mMember__mConstructor____mMethodInvocations, ne2ne__jContainer____source, ne2ne__uContainer____target,
+				mConstructor__mAnon____anonymousClassDeclaration, mAnon__mConstructor____classInstanceCreation };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_2_4_solveCSP_bindingFBBBBBBBB(
-			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, MClassInstanceCreation mConstructor,
-			MDefinition mMember, AnonymousClassDeclaration mAnon, NamedElement2NamedElement ne2ne,
-			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mConstructor, mMember, mAnon, ne2ne,
-				uContainer, jContainer);
+			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnon,
+			AbstractTypeDeclaration jContainer, MDefinition mMember, NamedElement2NamedElement ne2ne,
+			MClassInstanceCreation mConstructor, org.eclipse.uml2.uml.Class uContainer) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mAnon, jContainer, mMember, ne2ne,
+				mConstructor, uContainer);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mConstructor, mMember, mAnon, ne2ne, uContainer,
-					jContainer };
+			return new Object[] { csp, _this, isApplicableMatch, mAnon, jContainer, mMember, ne2ne, mConstructor,
+					uContainer };
 		}
 		return null;
 	}
@@ -1854,11 +1858,11 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, MClassInstanceCreation mConstructor,
-			MDefinition mMember, AnonymousClassDeclaration mAnon, NamedElement2NamedElement ne2ne,
-			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer) {
+			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnon,
+			AbstractTypeDeclaration jContainer, MDefinition mMember, NamedElement2NamedElement ne2ne,
+			MClassInstanceCreation mConstructor, org.eclipse.uml2.uml.Class uContainer) {
 		Object[] result_pattern_AnonymousClass_WithModifier_2_4_solveCSP_binding = pattern_AnonymousClass_WithModifier_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, mConstructor, mMember, mAnon, ne2ne, uContainer, jContainer);
+				_this, isApplicableMatch, mAnon, jContainer, mMember, ne2ne, mConstructor, uContainer);
 		if (result_pattern_AnonymousClass_WithModifier_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnonymousClass_WithModifier_2_4_solveCSP_binding[0];
 
@@ -1866,8 +1870,8 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_AnonymousClass_WithModifier_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mConstructor, mMember, mAnon, ne2ne, uContainer,
-						jContainer };
+				return new Object[] { csp, _this, isApplicableMatch, mAnon, jContainer, mMember, ne2ne, mConstructor,
+						uContainer };
 			}
 		}
 		return null;
@@ -2003,27 +2007,27 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_11_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mMember");
+		EObject _localVariable_0 = isApplicableMatch.getObject("jContainer");
 		EObject _localVariable_1 = isApplicableMatch.getObject("uAnon");
-		EObject _localVariable_2 = isApplicableMatch.getObject("ne2ne");
-		EObject _localVariable_3 = isApplicableMatch.getObject("uContainer");
-		EObject _localVariable_4 = isApplicableMatch.getObject("jContainer");
-		EObject tmpMMember = _localVariable_0;
+		EObject _localVariable_2 = isApplicableMatch.getObject("mMember");
+		EObject _localVariable_3 = isApplicableMatch.getObject("ne2ne");
+		EObject _localVariable_4 = isApplicableMatch.getObject("uContainer");
+		EObject tmpJContainer = _localVariable_0;
 		EObject tmpUAnon = _localVariable_1;
-		EObject tmpNe2ne = _localVariable_2;
-		EObject tmpUContainer = _localVariable_3;
-		EObject tmpJContainer = _localVariable_4;
-		if (tmpMMember instanceof MDefinition) {
-			MDefinition mMember = (MDefinition) tmpMMember;
+		EObject tmpMMember = _localVariable_2;
+		EObject tmpNe2ne = _localVariable_3;
+		EObject tmpUContainer = _localVariable_4;
+		if (tmpJContainer instanceof AbstractTypeDeclaration) {
+			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
 			if (tmpUAnon instanceof org.eclipse.uml2.uml.Class) {
 				org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) tmpUAnon;
-				if (tmpNe2ne instanceof NamedElement2NamedElement) {
-					NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) tmpNe2ne;
-					if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
-						org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
-						if (tmpJContainer instanceof AbstractTypeDeclaration) {
-							AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
-							return new Object[] { mMember, uAnon, ne2ne, uContainer, jContainer, isApplicableMatch };
+				if (tmpMMember instanceof MDefinition) {
+					MDefinition mMember = (MDefinition) tmpMMember;
+					if (tmpNe2ne instanceof NamedElement2NamedElement) {
+						NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) tmpNe2ne;
+						if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
+							org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
+							return new Object[] { jContainer, uAnon, mMember, ne2ne, uContainer, isApplicableMatch };
 						}
 					}
 				}
@@ -2033,14 +2037,14 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_11_1_performtransformation_blackBBBBBFBB(
-			MDefinition mMember, org.eclipse.uml2.uml.Class uAnon, NamedElement2NamedElement ne2ne,
-			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
-			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch) {
+			AbstractTypeDeclaration jContainer, org.eclipse.uml2.uml.Class uAnon, MDefinition mMember,
+			NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer, AnonymousClass_WithModifier _this,
+			IsApplicableMatch isApplicableMatch) {
 		if (!uAnon.equals(uContainer)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { mMember, uAnon, ne2ne, uContainer, jContainer, csp, _this,
+					return new Object[] { jContainer, uAnon, mMember, ne2ne, uContainer, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -2053,100 +2057,100 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		Object[] result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding = pattern_AnonymousClass_WithModifier_11_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding != null) {
-			MDefinition mMember = (MDefinition) result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding[0];
+			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding[0];
 			org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding[1];
-			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding[2];
-			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding[3];
-			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding[4];
+			MDefinition mMember = (MDefinition) result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding[2];
+			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding[3];
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_binding[4];
 
 			Object[] result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_black = pattern_AnonymousClass_WithModifier_11_1_performtransformation_blackBBBBBFBB(
-					mMember, uAnon, ne2ne, uContainer, jContainer, _this, isApplicableMatch);
+					jContainer, uAnon, mMember, ne2ne, uContainer, _this, isApplicableMatch);
 			if (result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnonymousClass_WithModifier_11_1_performtransformation_black[5];
 
-				return new Object[] { mMember, uAnon, ne2ne, uContainer, jContainer, csp, _this, isApplicableMatch };
+				return new Object[] { jContainer, uAnon, mMember, ne2ne, uContainer, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnonymousClass_WithModifier_11_1_performtransformation_greenFBFBF(
-			MDefinition mMember, org.eclipse.uml2.uml.Class uAnon) {
-		MClassInstanceCreation mConstructor = ModiscoFactory.eINSTANCE.createMClassInstanceCreation();
-		ASTNode2Element bd2ne = UmlFactory.eINSTANCE.createASTNode2Element();
+	public static final Object[] pattern_AnonymousClass_WithModifier_11_1_performtransformation_greenFFBBF(
+			org.eclipse.uml2.uml.Class uAnon, MDefinition mMember) {
 		AnonymousClassDeclaration mAnon = JavaFactory.eINSTANCE.createAnonymousClassDeclaration();
-		mMember.getMMethodInvocations().add(mConstructor);
-		bd2ne.setTarget(uAnon);
+		ASTNode2Element bd2ne = UmlFactory.eINSTANCE.createASTNode2Element();
+		MClassInstanceCreation mConstructor = ModiscoFactory.eINSTANCE.createMClassInstanceCreation();
 		bd2ne.setSource(mAnon);
+		bd2ne.setTarget(uAnon);
+		mMember.getMMethodInvocations().add(mConstructor);
 		mConstructor.setAnonymousClassDeclaration(mAnon);
-		return new Object[] { mConstructor, mMember, bd2ne, uAnon, mAnon };
+		return new Object[] { mAnon, bd2ne, uAnon, mMember, mConstructor };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_11_2_collecttranslatedelements_blackBBBB(
-			MClassInstanceCreation mConstructor, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class uAnon,
-			AnonymousClassDeclaration mAnon) {
-		return new Object[] { mConstructor, bd2ne, uAnon, mAnon };
+			AnonymousClassDeclaration mAnon, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class uAnon,
+			MClassInstanceCreation mConstructor) {
+		return new Object[] { mAnon, bd2ne, uAnon, mConstructor };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_11_2_collecttranslatedelements_greenFBBBB(
-			MClassInstanceCreation mConstructor, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class uAnon,
-			AnonymousClassDeclaration mAnon) {
+			AnonymousClassDeclaration mAnon, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class uAnon,
+			MClassInstanceCreation mConstructor) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(mConstructor);
+		ruleresult.getCreatedElements().add(mAnon);
 		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getTranslatedElements().add(uAnon);
-		ruleresult.getCreatedElements().add(mAnon);
-		return new Object[] { ruleresult, mConstructor, bd2ne, uAnon, mAnon };
+		ruleresult.getCreatedElements().add(mConstructor);
+		return new Object[] { ruleresult, mAnon, bd2ne, uAnon, mConstructor };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_11_3_bookkeepingforedges_blackBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mConstructor, EObject mMember, EObject bd2ne, EObject uAnon,
-			EObject mAnon, EObject ne2ne, EObject uContainer, EObject jContainer) {
-		if (!mConstructor.equals(mMember)) {
-			if (!mConstructor.equals(uAnon)) {
-				if (!mConstructor.equals(ne2ne)) {
-					if (!mConstructor.equals(uContainer)) {
-						if (!mMember.equals(uAnon)) {
-							if (!mMember.equals(ne2ne)) {
-								if (!mMember.equals(uContainer)) {
-									if (!bd2ne.equals(mConstructor)) {
-										if (!bd2ne.equals(mMember)) {
-											if (!bd2ne.equals(uAnon)) {
-												if (!bd2ne.equals(mAnon)) {
-													if (!bd2ne.equals(ne2ne)) {
-														if (!bd2ne.equals(uContainer)) {
-															if (!bd2ne.equals(jContainer)) {
-																if (!uAnon.equals(uContainer)) {
-																	if (!mAnon.equals(mConstructor)) {
-																		if (!mAnon.equals(mMember)) {
-																			if (!mAnon.equals(uAnon)) {
-																				if (!mAnon.equals(ne2ne)) {
-																					if (!mAnon.equals(uContainer)) {
-																						if (!ne2ne.equals(uAnon)) {
-																							if (!ne2ne.equals(
+			PerformRuleResult ruleresult, EObject mAnon, EObject jContainer, EObject bd2ne, EObject uAnon,
+			EObject mMember, EObject ne2ne, EObject mConstructor, EObject uContainer) {
+		if (!mAnon.equals(uAnon)) {
+			if (!mAnon.equals(mMember)) {
+				if (!mAnon.equals(ne2ne)) {
+					if (!mAnon.equals(mConstructor)) {
+						if (!mAnon.equals(uContainer)) {
+							if (!jContainer.equals(mAnon)) {
+								if (!jContainer.equals(uAnon)) {
+									if (!jContainer.equals(mMember)) {
+										if (!jContainer.equals(ne2ne)) {
+											if (!jContainer.equals(mConstructor)) {
+												if (!jContainer.equals(uContainer)) {
+													if (!bd2ne.equals(mAnon)) {
+														if (!bd2ne.equals(jContainer)) {
+															if (!bd2ne.equals(uAnon)) {
+																if (!bd2ne.equals(mMember)) {
+																	if (!bd2ne.equals(ne2ne)) {
+																		if (!bd2ne.equals(mConstructor)) {
+																			if (!bd2ne.equals(uContainer)) {
+																				if (!uAnon.equals(uContainer)) {
+																					if (!mMember.equals(uAnon)) {
+																						if (!mMember.equals(ne2ne)) {
+																							if (!mMember.equals(
 																									uContainer)) {
-																								if (!jContainer.equals(
-																										mConstructor)) {
-																									if (!jContainer
-																											.equals(mMember)) {
-																										if (!jContainer
+																								if (!ne2ne.equals(
+																										uAnon)) {
+																									if (!ne2ne.equals(
+																											uContainer)) {
+																										if (!mConstructor
 																												.equals(uAnon)) {
-																											if (!jContainer
-																													.equals(mAnon)) {
-																												if (!jContainer
+																											if (!mConstructor
+																													.equals(mMember)) {
+																												if (!mConstructor
 																														.equals(ne2ne)) {
-																													if (!jContainer
+																													if (!mConstructor
 																															.equals(uContainer)) {
 																														return new Object[] {
 																																ruleresult,
-																																mConstructor,
-																																mMember,
+																																mAnon,
+																																jContainer,
 																																bd2ne,
 																																uAnon,
-																																mAnon,
+																																mMember,
 																																ne2ne,
-																																uContainer,
-																																jContainer };
+																																mConstructor,
+																																uContainer };
 																													}
 																												}
 																											}
@@ -2179,27 +2183,27 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject mConstructor, EObject mMember, EObject bd2ne, EObject uAnon,
-			EObject mAnon, EObject uContainer) {
-		EMoflonEdge bd2ne__uAnon____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mAnon, EObject bd2ne, EObject uAnon, EObject mMember,
+			EObject mConstructor, EObject uContainer) {
 		EMoflonEdge bd2ne__mAnon____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__uAnon____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__mConstructor____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uContainer__uAnon____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnon__mConstructor____classInstanceCreation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnonymousClass_WithModifier";
-		String bd2ne__uAnon____target_name_prime = "target";
 		String bd2ne__mAnon____source_name_prime = "source";
+		String bd2ne__uAnon____target_name_prime = "target";
 		String mMember__mConstructor____mMethodInvocations_name_prime = "mMethodInvocations";
 		String uContainer__uAnon____nestedClassifier_name_prime = "nestedClassifier";
 		String mConstructor__mAnon____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
 		String mAnon__mConstructor____classInstanceCreation_name_prime = "classInstanceCreation";
-		bd2ne__uAnon____target.setSrc(bd2ne);
-		bd2ne__uAnon____target.setTrg(uAnon);
-		ruleresult.getCreatedEdges().add(bd2ne__uAnon____target);
 		bd2ne__mAnon____source.setSrc(bd2ne);
 		bd2ne__mAnon____source.setTrg(mAnon);
 		ruleresult.getCreatedEdges().add(bd2ne__mAnon____source);
+		bd2ne__uAnon____target.setSrc(bd2ne);
+		bd2ne__uAnon____target.setTrg(uAnon);
+		ruleresult.getCreatedEdges().add(bd2ne__uAnon____target);
 		mMember__mConstructor____mMethodInvocations.setSrc(mMember);
 		mMember__mConstructor____mMethodInvocations.setTrg(mConstructor);
 		ruleresult.getCreatedEdges().add(mMember__mConstructor____mMethodInvocations);
@@ -2213,24 +2217,24 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		mAnon__mConstructor____classInstanceCreation.setTrg(mConstructor);
 		ruleresult.getCreatedEdges().add(mAnon__mConstructor____classInstanceCreation);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		bd2ne__uAnon____target.setName(bd2ne__uAnon____target_name_prime);
 		bd2ne__mAnon____source.setName(bd2ne__mAnon____source_name_prime);
+		bd2ne__uAnon____target.setName(bd2ne__uAnon____target_name_prime);
 		mMember__mConstructor____mMethodInvocations.setName(mMember__mConstructor____mMethodInvocations_name_prime);
 		uContainer__uAnon____nestedClassifier.setName(uContainer__uAnon____nestedClassifier_name_prime);
 		mConstructor__mAnon____anonymousClassDeclaration
 				.setName(mConstructor__mAnon____anonymousClassDeclaration_name_prime);
 		mAnon__mConstructor____classInstanceCreation.setName(mAnon__mConstructor____classInstanceCreation_name_prime);
-		return new Object[] { ruleresult, mConstructor, mMember, bd2ne, uAnon, mAnon, uContainer,
-				bd2ne__uAnon____target, bd2ne__mAnon____source, mMember__mConstructor____mMethodInvocations,
+		return new Object[] { ruleresult, mAnon, bd2ne, uAnon, mMember, mConstructor, uContainer,
+				bd2ne__mAnon____source, bd2ne__uAnon____target, mMember__mConstructor____mMethodInvocations,
 				uContainer__uAnon____nestedClassifier, mConstructor__mAnon____anonymousClassDeclaration,
 				mAnon__mConstructor____classInstanceCreation };
 	}
 
 	public static final void pattern_AnonymousClass_WithModifier_11_5_registerobjects_expressionBBBBBBBBBB(
-			AnonymousClass_WithModifier _this, PerformRuleResult ruleresult, EObject mConstructor, EObject mMember,
-			EObject bd2ne, EObject uAnon, EObject mAnon, EObject ne2ne, EObject uContainer, EObject jContainer) {
-		_this.registerObjects_BWD(ruleresult, mConstructor, mMember, bd2ne, uAnon, mAnon, ne2ne, uContainer,
-				jContainer);
+			AnonymousClass_WithModifier _this, PerformRuleResult ruleresult, EObject mAnon, EObject jContainer,
+			EObject bd2ne, EObject uAnon, EObject mMember, EObject ne2ne, EObject mConstructor, EObject uContainer) {
+		_this.registerObjects_BWD(ruleresult, mAnon, jContainer, bd2ne, uAnon, mMember, ne2ne, mConstructor,
+				uContainer);
 
 	}
 
@@ -2306,7 +2310,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnonymousClass_WithModifier_12_2_corematch_blackBFBFB(
+	public static final Iterable<Object[]> pattern_AnonymousClass_WithModifier_12_2_corematch_blackFBFBB(
 			org.eclipse.uml2.uml.Class uAnon, org.eclipse.uml2.uml.Class uContainer, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!uAnon.equals(uContainer)) {
@@ -2317,7 +2321,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 					org.eclipse.modisco.java.NamedElement tmpJContainer = ne2ne.getSource();
 					if (tmpJContainer instanceof AbstractTypeDeclaration) {
 						AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
-						_result.add(new Object[] { uAnon, ne2ne, uContainer, jContainer, match });
+						_result.add(new Object[] { jContainer, uAnon, ne2ne, uContainer, match });
 					}
 
 				}
@@ -2327,20 +2331,20 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_AnonymousClass_WithModifier_12_3_findcontext_blackFBBBB(
-			org.eclipse.uml2.uml.Class uAnon, NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer) {
+	public static final Iterable<Object[]> pattern_AnonymousClass_WithModifier_12_3_findcontext_blackBBFBB(
+			AbstractTypeDeclaration jContainer, org.eclipse.uml2.uml.Class uAnon, NamedElement2NamedElement ne2ne,
+			org.eclipse.uml2.uml.Class uContainer) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!uAnon.equals(uContainer)) {
 			if (uContainer.getNestedClassifiers().contains(uAnon)) {
-				if (uContainer.equals(ne2ne.getTarget())) {
-					if (jContainer.equals(ne2ne.getSource())) {
+				if (jContainer.equals(ne2ne.getSource())) {
+					if (uContainer.equals(ne2ne.getTarget())) {
 						String uAnon_name = uAnon.getName();
 						if (uAnon_name.equals("Anonymous")) {
 							for (BodyDeclaration tmpMMember : jContainer.getBodyDeclarations()) {
 								if (tmpMMember instanceof MDefinition) {
 									MDefinition mMember = (MDefinition) tmpMMember;
-									_result.add(new Object[] { mMember, uAnon, ne2ne, uContainer, jContainer });
+									_result.add(new Object[] { jContainer, uAnon, mMember, ne2ne, uContainer });
 								}
 							}
 						}
@@ -2353,60 +2357,59 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_12_3_findcontext_greenBBBBBFFFFFF(
-			MDefinition mMember, org.eclipse.uml2.uml.Class uAnon, NamedElement2NamedElement ne2ne,
-			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer) {
+			AbstractTypeDeclaration jContainer, org.eclipse.uml2.uml.Class uAnon, MDefinition mMember,
+			NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge uContainer__uAnon____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__jContainer____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uContainer__uAnon____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String uContainer__uAnon____nestedClassifier_name_prime = "nestedClassifier";
-		String ne2ne__uContainer____target_name_prime = "target";
+		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String jContainer__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mMember__jContainer____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String uContainer__uAnon____nestedClassifier_name_prime = "nestedClassifier";
 		String ne2ne__jContainer____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(mMember);
+		String ne2ne__uContainer____target_name_prime = "target";
+		isApplicableMatch.getAllContextElements().add(jContainer);
 		isApplicableMatch.getAllContextElements().add(uAnon);
+		isApplicableMatch.getAllContextElements().add(mMember);
 		isApplicableMatch.getAllContextElements().add(ne2ne);
 		isApplicableMatch.getAllContextElements().add(uContainer);
-		isApplicableMatch.getAllContextElements().add(jContainer);
-		uContainer__uAnon____nestedClassifier.setSrc(uContainer);
-		uContainer__uAnon____nestedClassifier.setTrg(uAnon);
-		isApplicableMatch.getAllContextElements().add(uContainer__uAnon____nestedClassifier);
-		ne2ne__uContainer____target.setSrc(ne2ne);
-		ne2ne__uContainer____target.setTrg(uContainer);
-		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
 		jContainer__mMember____bodyDeclarations.setSrc(jContainer);
 		jContainer__mMember____bodyDeclarations.setTrg(mMember);
 		isApplicableMatch.getAllContextElements().add(jContainer__mMember____bodyDeclarations);
 		mMember__jContainer____abstractTypeDeclaration.setSrc(mMember);
 		mMember__jContainer____abstractTypeDeclaration.setTrg(jContainer);
 		isApplicableMatch.getAllContextElements().add(mMember__jContainer____abstractTypeDeclaration);
+		uContainer__uAnon____nestedClassifier.setSrc(uContainer);
+		uContainer__uAnon____nestedClassifier.setTrg(uAnon);
+		isApplicableMatch.getAllContextElements().add(uContainer__uAnon____nestedClassifier);
 		ne2ne__jContainer____source.setSrc(ne2ne);
 		ne2ne__jContainer____source.setTrg(jContainer);
 		isApplicableMatch.getAllContextElements().add(ne2ne__jContainer____source);
-		uContainer__uAnon____nestedClassifier.setName(uContainer__uAnon____nestedClassifier_name_prime);
-		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
+		ne2ne__uContainer____target.setSrc(ne2ne);
+		ne2ne__uContainer____target.setTrg(uContainer);
+		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
 		jContainer__mMember____bodyDeclarations.setName(jContainer__mMember____bodyDeclarations_name_prime);
 		mMember__jContainer____abstractTypeDeclaration
 				.setName(mMember__jContainer____abstractTypeDeclaration_name_prime);
+		uContainer__uAnon____nestedClassifier.setName(uContainer__uAnon____nestedClassifier_name_prime);
 		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
-		return new Object[] { mMember, uAnon, ne2ne, uContainer, jContainer, isApplicableMatch,
-				uContainer__uAnon____nestedClassifier, ne2ne__uContainer____target,
+		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
+		return new Object[] { jContainer, uAnon, mMember, ne2ne, uContainer, isApplicableMatch,
 				jContainer__mMember____bodyDeclarations, mMember__jContainer____abstractTypeDeclaration,
-				ne2ne__jContainer____source };
+				uContainer__uAnon____nestedClassifier, ne2ne__jContainer____source, ne2ne__uContainer____target };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_12_4_solveCSP_bindingFBBBBBBB(
-			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, MDefinition mMember,
-			org.eclipse.uml2.uml.Class uAnon, NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mMember, uAnon, ne2ne, uContainer,
-				jContainer);
+			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration jContainer,
+			org.eclipse.uml2.uml.Class uAnon, MDefinition mMember, NamedElement2NamedElement ne2ne,
+			org.eclipse.uml2.uml.Class uContainer) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jContainer, uAnon, mMember, ne2ne,
+				uContainer);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMember, uAnon, ne2ne, uContainer, jContainer };
+			return new Object[] { csp, _this, isApplicableMatch, jContainer, uAnon, mMember, ne2ne, uContainer };
 		}
 		return null;
 	}
@@ -2416,11 +2419,11 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_12_4_solveCSP_bindingAndBlackFBBBBBBB(
-			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, MDefinition mMember,
-			org.eclipse.uml2.uml.Class uAnon, NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer) {
+			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration jContainer,
+			org.eclipse.uml2.uml.Class uAnon, MDefinition mMember, NamedElement2NamedElement ne2ne,
+			org.eclipse.uml2.uml.Class uContainer) {
 		Object[] result_pattern_AnonymousClass_WithModifier_12_4_solveCSP_binding = pattern_AnonymousClass_WithModifier_12_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, mMember, uAnon, ne2ne, uContainer, jContainer);
+				_this, isApplicableMatch, jContainer, uAnon, mMember, ne2ne, uContainer);
 		if (result_pattern_AnonymousClass_WithModifier_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnonymousClass_WithModifier_12_4_solveCSP_binding[0];
 
@@ -2428,7 +2431,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_AnonymousClass_WithModifier_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMember, uAnon, ne2ne, uContainer, jContainer };
+				return new Object[] { csp, _this, isApplicableMatch, jContainer, uAnon, mMember, ne2ne, uContainer };
 			}
 		}
 		return null;
@@ -2518,7 +2521,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.uml2.uml.Class uAnon) {
-		for (org.eclipse.uml2.uml.Package __DEC_uAnon_packagedElement_239734 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_uAnon_packagedElement_851147 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(uAnon, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { uAnon };
 		}
@@ -2527,7 +2530,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_20_2_testcorematchandDECs_black_nac_1B(
 			org.eclipse.uml2.uml.Class uAnon) {
-		for (Interface __DEC_uAnon_nestedClassifier_290677 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_uAnon_nestedClassifier_74183 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(uAnon, Interface.class, "nestedClassifier")) {
 			return new Object[] { uAnon };
 		}
@@ -2668,7 +2671,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_21_2_testcorematchandDECs_black_nac_0B(
 			MClassInstanceCreation mConstructor) {
-		for (AnnotationMemberValuePair __DEC_mConstructor_value_739362 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mConstructor_value_432592 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mConstructor };
 		}
@@ -2677,7 +2680,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_21_2_testcorematchandDECs_black_nac_1B(
 			MClassInstanceCreation mConstructor) {
-		for (ArrayInitializer __DEC_mConstructor_expressions_361158 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayInitializer __DEC_mConstructor_expressions_478532 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, ArrayInitializer.class, "expressions")) {
 			return new Object[] { mConstructor };
 		}
@@ -2686,9 +2689,9 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_21_2_testcorematchandDECs_black_nac_2BB(
 			MClassInstanceCreation mConstructor, MDefinition mMember) {
-		for (MDefinition __DEC_mConstructor_mMethodInvocations_451139 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_mConstructor_mMethodInvocations_950541 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_451139)) {
+			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_950541)) {
 				return new Object[] { mConstructor, mMember };
 			}
 		}
@@ -2715,7 +2718,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 										mConstructor) == null) {
 									if (pattern_AnonymousClass_WithModifier_21_2_testcorematchandDECs_black_nac_2BB(
 											mConstructor, mMember) == null) {
-										_result.add(new Object[] { mConstructor, mMember, mAnon, jContainer,
+										_result.add(new Object[] { mAnon, jContainer, mMember, mConstructor,
 												_edge_mMethodInvocations });
 									}
 								}
@@ -2743,9 +2746,9 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final boolean pattern_AnonymousClass_WithModifier_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-			AnonymousClass_WithModifier _this, Match match, MClassInstanceCreation mConstructor, MDefinition mMember,
-			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mConstructor, mMember, mAnon, jContainer);
+			AnonymousClass_WithModifier _this, Match match, AnonymousClassDeclaration mAnon,
+			AbstractTypeDeclaration jContainer, MDefinition mMember, MClassInstanceCreation mConstructor) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mAnon, jContainer, mMember, mConstructor);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2791,31 +2794,31 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_bindingFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("mConstructor");
-		EObject _localVariable_1 = sourceMatch.getObject("mMember");
+		EObject _localVariable_0 = sourceMatch.getObject("mAnon");
+		EObject _localVariable_1 = sourceMatch.getObject("jContainer");
 		EObject _localVariable_2 = targetMatch.getObject("uAnon");
-		EObject _localVariable_3 = sourceMatch.getObject("mAnon");
-		EObject _localVariable_4 = targetMatch.getObject("uContainer");
-		EObject _localVariable_5 = sourceMatch.getObject("jContainer");
-		EObject tmpMConstructor = _localVariable_0;
-		EObject tmpMMember = _localVariable_1;
+		EObject _localVariable_3 = sourceMatch.getObject("mMember");
+		EObject _localVariable_4 = sourceMatch.getObject("mConstructor");
+		EObject _localVariable_5 = targetMatch.getObject("uContainer");
+		EObject tmpMAnon = _localVariable_0;
+		EObject tmpJContainer = _localVariable_1;
 		EObject tmpUAnon = _localVariable_2;
-		EObject tmpMAnon = _localVariable_3;
-		EObject tmpUContainer = _localVariable_4;
-		EObject tmpJContainer = _localVariable_5;
-		if (tmpMConstructor instanceof MClassInstanceCreation) {
-			MClassInstanceCreation mConstructor = (MClassInstanceCreation) tmpMConstructor;
-			if (tmpMMember instanceof MDefinition) {
-				MDefinition mMember = (MDefinition) tmpMMember;
+		EObject tmpMMember = _localVariable_3;
+		EObject tmpMConstructor = _localVariable_4;
+		EObject tmpUContainer = _localVariable_5;
+		if (tmpMAnon instanceof AnonymousClassDeclaration) {
+			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) tmpMAnon;
+			if (tmpJContainer instanceof AbstractTypeDeclaration) {
+				AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
 				if (tmpUAnon instanceof org.eclipse.uml2.uml.Class) {
 					org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) tmpUAnon;
-					if (tmpMAnon instanceof AnonymousClassDeclaration) {
-						AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) tmpMAnon;
-						if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
-							org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
-							if (tmpJContainer instanceof AbstractTypeDeclaration) {
-								AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
-								return new Object[] { mConstructor, mMember, uAnon, mAnon, uContainer, jContainer,
+					if (tmpMMember instanceof MDefinition) {
+						MDefinition mMember = (MDefinition) tmpMMember;
+						if (tmpMConstructor instanceof MClassInstanceCreation) {
+							MClassInstanceCreation mConstructor = (MClassInstanceCreation) tmpMConstructor;
+							if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
+								org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
+								return new Object[] { mAnon, jContainer, uAnon, mMember, mConstructor, uContainer,
 										sourceMatch, targetMatch };
 							}
 						}
@@ -2827,14 +2830,14 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_blackBBBBBBBB(
-			MClassInstanceCreation mConstructor, MDefinition mMember, org.eclipse.uml2.uml.Class uAnon,
-			AnonymousClassDeclaration mAnon, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
+			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer, org.eclipse.uml2.uml.Class uAnon,
+			MDefinition mMember, MClassInstanceCreation mConstructor, org.eclipse.uml2.uml.Class uContainer,
 			Match sourceMatch, Match targetMatch) {
 		if (!uAnon.equals(uContainer)) {
 			if (!sourceMatch.equals(targetMatch)) {
 				String uAnon_name = uAnon.getName();
 				if (uAnon_name.equals("Anonymous")) {
-					return new Object[] { mConstructor, mMember, uAnon, mAnon, uContainer, jContainer, sourceMatch,
+					return new Object[] { mAnon, jContainer, uAnon, mMember, mConstructor, uContainer, sourceMatch,
 							targetMatch };
 				}
 
@@ -2848,18 +2851,18 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		Object[] result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding = pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_bindingFFFFFFBB(
 				sourceMatch, targetMatch);
 		if (result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding != null) {
-			MClassInstanceCreation mConstructor = (MClassInstanceCreation) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[0];
-			MDefinition mMember = (MDefinition) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[1];
+			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[0];
+			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[1];
 			org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[2];
-			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[3];
-			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[4];
-			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[5];
+			MDefinition mMember = (MDefinition) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[3];
+			MClassInstanceCreation mConstructor = (MClassInstanceCreation) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[4];
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_black = pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					mConstructor, mMember, uAnon, mAnon, uContainer, jContainer, sourceMatch, targetMatch);
+					mAnon, jContainer, uAnon, mMember, mConstructor, uContainer, sourceMatch, targetMatch);
 			if (result_pattern_AnonymousClass_WithModifier_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mConstructor, mMember, uAnon, mAnon, uContainer, jContainer, sourceMatch,
+				return new Object[] { mAnon, jContainer, uAnon, mMember, mConstructor, uContainer, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2867,14 +2870,14 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_24_3_solvecsp_bindingFBBBBBBBBB(
-			AnonymousClass_WithModifier _this, MClassInstanceCreation mConstructor, MDefinition mMember,
-			org.eclipse.uml2.uml.Class uAnon, AnonymousClassDeclaration mAnon, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(mConstructor, mMember, uAnon, mAnon, uContainer,
-				jContainer, sourceMatch, targetMatch);
+			AnonymousClass_WithModifier _this, AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer,
+			org.eclipse.uml2.uml.Class uAnon, MDefinition mMember, MClassInstanceCreation mConstructor,
+			org.eclipse.uml2.uml.Class uContainer, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(mAnon, jContainer, uAnon, mMember, mConstructor,
+				uContainer, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, mConstructor, mMember, uAnon, mAnon, uContainer, jContainer, sourceMatch,
+			return new Object[] { csp, _this, mAnon, jContainer, uAnon, mMember, mConstructor, uContainer, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2885,11 +2888,11 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			AnonymousClass_WithModifier _this, MClassInstanceCreation mConstructor, MDefinition mMember,
-			org.eclipse.uml2.uml.Class uAnon, AnonymousClassDeclaration mAnon, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer, Match sourceMatch, Match targetMatch) {
+			AnonymousClass_WithModifier _this, AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer,
+			org.eclipse.uml2.uml.Class uAnon, MDefinition mMember, MClassInstanceCreation mConstructor,
+			org.eclipse.uml2.uml.Class uContainer, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_AnonymousClass_WithModifier_24_3_solvecsp_binding = pattern_AnonymousClass_WithModifier_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, mConstructor, mMember, uAnon, mAnon, uContainer, jContainer, sourceMatch, targetMatch);
+				_this, mAnon, jContainer, uAnon, mMember, mConstructor, uContainer, sourceMatch, targetMatch);
 		if (result_pattern_AnonymousClass_WithModifier_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_AnonymousClass_WithModifier_24_3_solvecsp_binding[0];
 
@@ -2897,7 +2900,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_AnonymousClass_WithModifier_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mConstructor, mMember, uAnon, mAnon, uContainer, jContainer,
+				return new Object[] { csp, _this, mAnon, jContainer, uAnon, mMember, mConstructor, uContainer,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -2910,15 +2913,15 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_AnonymousClass_WithModifier_24_5_matchcorrcontext_blackFBBBB(
-			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer, Match sourceMatch,
+	public static final Iterable<Object[]> pattern_AnonymousClass_WithModifier_24_5_matchcorrcontext_blackBFBBB(
+			AbstractTypeDeclaration jContainer, org.eclipse.uml2.uml.Class uContainer, Match sourceMatch,
 			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (NamedElement2NamedElement ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(uContainer, NamedElement2NamedElement.class, "target")) {
-				if (jContainer.equals(ne2ne.getSource())) {
-					_result.add(new Object[] { ne2ne, uContainer, jContainer, sourceMatch, targetMatch });
+					.getOppositeReferenceTyped(jContainer, NamedElement2NamedElement.class, "source")) {
+				if (uContainer.equals(ne2ne.getTarget())) {
+					_result.add(new Object[] { jContainer, ne2ne, uContainer, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2937,22 +2940,22 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_24_6_createcorrespondence_blackBBBBBBB(
-			MClassInstanceCreation mConstructor, MDefinition mMember, org.eclipse.uml2.uml.Class uAnon,
-			AnonymousClassDeclaration mAnon, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
+			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer, org.eclipse.uml2.uml.Class uAnon,
+			MDefinition mMember, MClassInstanceCreation mConstructor, org.eclipse.uml2.uml.Class uContainer,
 			CCMatch ccMatch) {
 		if (!uAnon.equals(uContainer)) {
-			return new Object[] { mConstructor, mMember, uAnon, mAnon, uContainer, jContainer, ccMatch };
+			return new Object[] { mAnon, jContainer, uAnon, mMember, mConstructor, uContainer, ccMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnonymousClass_WithModifier_24_6_createcorrespondence_greenFBBB(
-			org.eclipse.uml2.uml.Class uAnon, AnonymousClassDeclaration mAnon, CCMatch ccMatch) {
+	public static final Object[] pattern_AnonymousClass_WithModifier_24_6_createcorrespondence_greenBFBB(
+			AnonymousClassDeclaration mAnon, org.eclipse.uml2.uml.Class uAnon, CCMatch ccMatch) {
 		ASTNode2Element bd2ne = UmlFactory.eINSTANCE.createASTNode2Element();
-		bd2ne.setTarget(uAnon);
 		bd2ne.setSource(mAnon);
+		bd2ne.setTarget(uAnon);
 		ccMatch.getCreateCorr().add(bd2ne);
-		return new Object[] { bd2ne, uAnon, mAnon, ccMatch };
+		return new Object[] { mAnon, bd2ne, uAnon, ccMatch };
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_24_7_addtoreturnedresult_blackBB(
@@ -2978,7 +2981,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_27_1_matchtggpattern_black_nac_0B(
 			MClassInstanceCreation mConstructor) {
-		for (AnnotationMemberValuePair __DEC_mConstructor_value_838363 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mConstructor_value_516415 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mConstructor };
 		}
@@ -2987,7 +2990,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_27_1_matchtggpattern_black_nac_1B(
 			MClassInstanceCreation mConstructor) {
-		for (ArrayInitializer __DEC_mConstructor_expressions_487936 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayInitializer __DEC_mConstructor_expressions_869954 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, ArrayInitializer.class, "expressions")) {
 			return new Object[] { mConstructor };
 		}
@@ -2996,9 +2999,9 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_27_1_matchtggpattern_black_nac_2BB(
 			MClassInstanceCreation mConstructor, MDefinition mMember) {
-		for (MDefinition __DEC_mConstructor_mMethodInvocations_486368 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_mConstructor_mMethodInvocations_579990 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_486368)) {
+			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_579990)) {
 				return new Object[] { mConstructor, mMember };
 			}
 		}
@@ -3006,17 +3009,17 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_27_1_matchtggpattern_blackBBBB(
-			MClassInstanceCreation mConstructor, MDefinition mMember, AnonymousClassDeclaration mAnon,
-			AbstractTypeDeclaration jContainer) {
-		if (mMember.getMMethodInvocations().contains(mConstructor)) {
-			if (mAnon.equals(mConstructor.getAnonymousClassDeclaration())) {
-				if (jContainer.getBodyDeclarations().contains(mMember)) {
+			AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer, MDefinition mMember,
+			MClassInstanceCreation mConstructor) {
+		if (jContainer.getBodyDeclarations().contains(mMember)) {
+			if (mMember.getMMethodInvocations().contains(mConstructor)) {
+				if (mAnon.equals(mConstructor.getAnonymousClassDeclaration())) {
 					if (pattern_AnonymousClass_WithModifier_27_1_matchtggpattern_black_nac_0B(mConstructor) == null) {
 						if (pattern_AnonymousClass_WithModifier_27_1_matchtggpattern_black_nac_1B(
 								mConstructor) == null) {
 							if (pattern_AnonymousClass_WithModifier_27_1_matchtggpattern_black_nac_2BB(mConstructor,
 									mMember) == null) {
-								return new Object[] { mConstructor, mMember, mAnon, jContainer };
+								return new Object[] { mAnon, jContainer, mMember, mConstructor };
 							}
 						}
 					}
@@ -3038,7 +3041,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_28_1_matchtggpattern_black_nac_0B(
 			org.eclipse.uml2.uml.Class uAnon) {
-		for (org.eclipse.uml2.uml.Package __DEC_uAnon_packagedElement_284532 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_uAnon_packagedElement_706242 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(uAnon, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { uAnon };
 		}
@@ -3047,7 +3050,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_28_1_matchtggpattern_black_nac_1B(
 			org.eclipse.uml2.uml.Class uAnon) {
-		for (Interface __DEC_uAnon_nestedClassifier_339973 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_uAnon_nestedClassifier_646178 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(uAnon, Interface.class, "nestedClassifier")) {
 			return new Object[] { uAnon };
 		}
@@ -3099,17 +3102,17 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
-		if (ruleResult.getSourceObjects().contains(mMember)) {
-			return new Object[] { ruleResult, mMember };
+			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration jContainer) {
+		if (ruleResult.getSourceObjects().contains(jContainer)) {
+			return new Object[] { ruleResult, jContainer };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration jContainer) {
-		if (ruleResult.getSourceObjects().contains(jContainer)) {
-			return new Object[] { ruleResult, jContainer };
+			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
+		if (ruleResult.getSourceObjects().contains(mMember)) {
+			return new Object[] { ruleResult, mMember };
 		}
 		return null;
 	}
@@ -3145,16 +3148,16 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 							org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
 							if (pattern_AnonymousClass_WithModifier_29_2_isapplicablecore_black_nac_2BB(ruleResult,
 									ne2ne) == null) {
-								if (pattern_AnonymousClass_WithModifier_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+								if (pattern_AnonymousClass_WithModifier_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 										jContainer) == null) {
 									if (pattern_AnonymousClass_WithModifier_29_2_isapplicablecore_black_nac_3BB(
 											ruleResult, uContainer) == null) {
 										for (BodyDeclaration tmpMMember : jContainer.getBodyDeclarations()) {
 											if (tmpMMember instanceof MDefinition) {
 												MDefinition mMember = (MDefinition) tmpMMember;
-												if (pattern_AnonymousClass_WithModifier_29_2_isapplicablecore_black_nac_0BB(
+												if (pattern_AnonymousClass_WithModifier_29_2_isapplicablecore_black_nac_1BB(
 														ruleResult, mMember) == null) {
-													_result.add(new Object[] { ne2neList, mMember, jContainer, ne2ne,
+													_result.add(new Object[] { ne2neList, jContainer, mMember, ne2ne,
 															uContainer, ruleEntryContainer, ruleResult });
 												}
 											}
@@ -3173,14 +3176,14 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_29_3_solveCSP_bindingFBBBBBBB(
-			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, MDefinition mMember,
-			NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
+			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration jContainer,
+			MDefinition mMember, NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mMember, ne2ne, uContainer,
-				jContainer, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jContainer, mMember, ne2ne,
+				uContainer, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMember, ne2ne, uContainer, jContainer, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, jContainer, mMember, ne2ne, uContainer, ruleResult };
 		}
 		return null;
 	}
@@ -3190,11 +3193,11 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnonymousClass_WithModifier_29_3_solveCSP_bindingAndBlackFBBBBBBB(
-			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, MDefinition mMember,
-			NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
+			AnonymousClass_WithModifier _this, IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration jContainer,
+			MDefinition mMember, NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_AnonymousClass_WithModifier_29_3_solveCSP_binding = pattern_AnonymousClass_WithModifier_29_3_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, mMember, ne2ne, uContainer, jContainer, ruleResult);
+				_this, isApplicableMatch, jContainer, mMember, ne2ne, uContainer, ruleResult);
 		if (result_pattern_AnonymousClass_WithModifier_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnonymousClass_WithModifier_29_3_solveCSP_binding[0];
 
@@ -3202,7 +3205,7 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_AnonymousClass_WithModifier_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMember, ne2ne, uContainer, jContainer,
+				return new Object[] { csp, _this, isApplicableMatch, jContainer, mMember, ne2ne, uContainer,
 						ruleResult };
 			}
 		}
@@ -3216,41 +3219,41 @@ public class AnonymousClass_WithModifierImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_AnonymousClass_WithModifier_29_5_checknacs_blackBBBB(MDefinition mMember,
-			NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer) {
-		return new Object[] { mMember, ne2ne, uContainer, jContainer };
+	public static final Object[] pattern_AnonymousClass_WithModifier_29_5_checknacs_blackBBBB(
+			AbstractTypeDeclaration jContainer, MDefinition mMember, NamedElement2NamedElement ne2ne,
+			org.eclipse.uml2.uml.Class uContainer) {
+		return new Object[] { jContainer, mMember, ne2ne, uContainer };
 	}
 
-	public static final Object[] pattern_AnonymousClass_WithModifier_29_6_perform_blackBBBBB(MDefinition mMember,
-			NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
-			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { mMember, ne2ne, uContainer, jContainer, ruleResult };
-	}
-
-	public static final Object[] pattern_AnonymousClass_WithModifier_29_6_perform_greenFBFFFBB(MDefinition mMember,
+	public static final Object[] pattern_AnonymousClass_WithModifier_29_6_perform_blackBBBBB(
+			AbstractTypeDeclaration jContainer, MDefinition mMember, NamedElement2NamedElement ne2ne,
 			org.eclipse.uml2.uml.Class uContainer, ModelgeneratorRuleResult ruleResult) {
-		MClassInstanceCreation mConstructor = ModiscoFactory.eINSTANCE.createMClassInstanceCreation();
+		return new Object[] { jContainer, mMember, ne2ne, uContainer, ruleResult };
+	}
+
+	public static final Object[] pattern_AnonymousClass_WithModifier_29_6_perform_greenFFFBFBB(MDefinition mMember,
+			org.eclipse.uml2.uml.Class uContainer, ModelgeneratorRuleResult ruleResult) {
+		AnonymousClassDeclaration mAnon = JavaFactory.eINSTANCE.createAnonymousClassDeclaration();
 		ASTNode2Element bd2ne = UmlFactory.eINSTANCE.createASTNode2Element();
 		org.eclipse.uml2.uml.Class uAnon = UMLFactory.eINSTANCE.createClass();
-		AnonymousClassDeclaration mAnon = JavaFactory.eINSTANCE.createAnonymousClassDeclaration();
+		MClassInstanceCreation mConstructor = ModiscoFactory.eINSTANCE.createMClassInstanceCreation();
 		String uAnon_name_prime = "Anonymous";
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		mMember.getMMethodInvocations().add(mConstructor);
-		ruleResult.getSourceObjects().add(mConstructor);
+		ruleResult.getSourceObjects().add(mAnon);
+		bd2ne.setSource(mAnon);
 		ruleResult.getCorrObjects().add(bd2ne);
 		bd2ne.setTarget(uAnon);
 		uContainer.getNestedClassifiers().add(uAnon);
 		ruleResult.getTargetObjects().add(uAnon);
-		bd2ne.setSource(mAnon);
+		mMember.getMMethodInvocations().add(mConstructor);
 		mConstructor.setAnonymousClassDeclaration(mAnon);
-		ruleResult.getSourceObjects().add(mAnon);
+		ruleResult.getSourceObjects().add(mConstructor);
 		uAnon.setName(uAnon_name_prime);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mConstructor, mMember, bd2ne, uAnon, mAnon, uContainer, ruleResult };
+		return new Object[] { mAnon, bd2ne, uAnon, mMember, mConstructor, uContainer, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_AnonymousClass_WithModifier_29_7_expressionFB(

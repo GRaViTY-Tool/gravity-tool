@@ -1,0 +1,33 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule MethodParameterLink
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mEntry:MEntry 
+
+	mPrevEntry:MEntry {
+		++  -mNext -> mEntry
+	}
+}
+
+#target {
+	tParameter:TParameter
+
+	tPrevParameter:TParameter {
+		++  -next -> tParameter
+	}
+}
+
+#correspondence {
+	eSingleVariableDeclarationToTParameter :MEntryToTParameter {
+		#src->mEntry
+		#trg->tParameter
+	}
+
+	mmethodSignatureToTMethodSignature :MEntryToTParameter {
+		#src->mPrevEntry
+		#trg->tPrevParameter
+	}
+}

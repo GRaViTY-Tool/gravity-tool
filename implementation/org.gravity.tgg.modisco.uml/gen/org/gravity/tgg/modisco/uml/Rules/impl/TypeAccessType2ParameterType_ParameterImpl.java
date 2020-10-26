@@ -265,9 +265,9 @@ public class TypeAccessType2ParameterType_ParameterImpl extends AbstractRuleImpl
 								param, uType, jType, typeAccess, variableDec, ta2p, ne2ne);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[8];
 				//nothing EMoflonEdge variableDec__typeAccess____type = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge ta2p__typeAccess____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge ta2p__typeAccess____source = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge ne2ne__jType____source = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge ne2ne__uType____target = (EMoflonEdge) result3_green[14];
 				//nothing EMoflonEdge method__variableDec____parameters = (EMoflonEdge) result3_green[15];
@@ -746,7 +746,7 @@ public class TypeAccessType2ParameterType_ParameterImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_260(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_122(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = TypeAccessType2ParameterType_ParameterImpl
 				.pattern_TypeAccessType2ParameterType_Parameter_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -806,7 +806,7 @@ public class TypeAccessType2ParameterType_ParameterImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_270(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_127(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = TypeAccessType2ParameterType_ParameterImpl
 				.pattern_TypeAccessType2ParameterType_Parameter_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1273,10 +1273,10 @@ public class TypeAccessType2ParameterType_ParameterImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_PARAMETER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_PARAMETER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_260__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_260((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_PARAMETER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_270__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_270((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_PARAMETER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_122__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_122((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_PARAMETER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_127__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_127((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_PARAMETER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS_TYPE2_PARAMETER_TYPE_PARAMETER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1758,8 +1758,8 @@ public class TypeAccessType2ParameterType_ParameterImpl extends AbstractRuleImpl
 			NamedElement2NamedElement ne2ne) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (typeAccess.equals(variableDec.getType())) {
-			if (typeAccess.equals(ta2p.getSource())) {
-				if (jType.equals(typeAccess.getType())) {
+			if (jType.equals(typeAccess.getType())) {
+				if (typeAccess.equals(ta2p.getSource())) {
 					if (jType.equals(ne2ne.getSource())) {
 						if (uType.equals(ne2ne.getTarget())) {
 							if (method.getParameters().contains(variableDec)) {
@@ -1782,18 +1782,18 @@ public class TypeAccessType2ParameterType_ParameterImpl extends AbstractRuleImpl
 			NamedElement2NamedElement ne2ne) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge variableDec__typeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ta2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ta2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__jType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__variableDec____parameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge variableDec__method____methodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ta2p__param____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String variableDec__typeAccess____type_name_prime = "type";
-		String ta2p__typeAccess____source_name_prime = "source";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String ta2p__typeAccess____source_name_prime = "source";
 		String ne2ne__jType____source_name_prime = "source";
 		String ne2ne__uType____target_name_prime = "target";
 		String method__variableDec____parameters_name_prime = "parameters";
@@ -1810,15 +1810,15 @@ public class TypeAccessType2ParameterType_ParameterImpl extends AbstractRuleImpl
 		variableDec__typeAccess____type.setSrc(variableDec);
 		variableDec__typeAccess____type.setTrg(typeAccess);
 		isApplicableMatch.getAllContextElements().add(variableDec__typeAccess____type);
-		ta2p__typeAccess____source.setSrc(ta2p);
-		ta2p__typeAccess____source.setTrg(typeAccess);
-		isApplicableMatch.getAllContextElements().add(ta2p__typeAccess____source);
 		typeAccess__jType____type.setSrc(typeAccess);
 		typeAccess__jType____type.setTrg(jType);
 		isApplicableMatch.getAllContextElements().add(typeAccess__jType____type);
 		jType__typeAccess____usagesInTypeAccess.setSrc(jType);
 		jType__typeAccess____usagesInTypeAccess.setTrg(typeAccess);
 		isApplicableMatch.getAllContextElements().add(jType__typeAccess____usagesInTypeAccess);
+		ta2p__typeAccess____source.setSrc(ta2p);
+		ta2p__typeAccess____source.setTrg(typeAccess);
+		isApplicableMatch.getAllContextElements().add(ta2p__typeAccess____source);
 		ne2ne__jType____source.setSrc(ne2ne);
 		ne2ne__jType____source.setTrg(jType);
 		isApplicableMatch.getAllContextElements().add(ne2ne__jType____source);
@@ -1835,17 +1835,17 @@ public class TypeAccessType2ParameterType_ParameterImpl extends AbstractRuleImpl
 		ta2p__param____target.setTrg(param);
 		isApplicableMatch.getAllContextElements().add(ta2p__param____target);
 		variableDec__typeAccess____type.setName(variableDec__typeAccess____type_name_prime);
-		ta2p__typeAccess____source.setName(ta2p__typeAccess____source_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
+		ta2p__typeAccess____source.setName(ta2p__typeAccess____source_name_prime);
 		ne2ne__jType____source.setName(ne2ne__jType____source_name_prime);
 		ne2ne__uType____target.setName(ne2ne__uType____target_name_prime);
 		method__variableDec____parameters.setName(method__variableDec____parameters_name_prime);
 		variableDec__method____methodDeclaration.setName(variableDec__method____methodDeclaration_name_prime);
 		ta2p__param____target.setName(ta2p__param____target_name_prime);
 		return new Object[] { method, param, uType, jType, typeAccess, variableDec, ta2p, ne2ne, isApplicableMatch,
-				variableDec__typeAccess____type, ta2p__typeAccess____source, typeAccess__jType____type,
-				jType__typeAccess____usagesInTypeAccess, ne2ne__jType____source, ne2ne__uType____target,
+				variableDec__typeAccess____type, typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess,
+				ta2p__typeAccess____source, ne2ne__jType____source, ne2ne__uType____target,
 				method__variableDec____parameters, variableDec__method____methodDeclaration, ta2p__param____target };
 	}
 

@@ -141,47 +141,57 @@ public class GradleBuild {
 	 */
 	public static Process createBuildProcess(final File path, final String buildTarget)
 			throws IOException, UnsupportedOperationSystemException {
-		String gradleVersion = Files.readAllLines(new File(path, "gradle/wrapper/gradle-wrapper.properties").toPath())
-				.parallelStream().filter(line -> line.startsWith("distributionUrl=")).map(line -> {
-					String version = line.substring(0, line.lastIndexOf('-'));
-					return version.substring(version.lastIndexOf('-') + 1);
-				}).findAny().orElse("5.0");
-
-		String java = null;
 		List<String> env = null;
-		if (gradleVersion.compareTo("5.0") < 0) {
-			IExecutionEnvironmentsManager manager = JavaRuntime.getExecutionEnvironmentsManager();
-			Optional<IExecutionEnvironment> optional = Stream.of(manager.getExecutionEnvironments())
-					.filter(e -> e.getId().indexOf(JavaCore.VERSION_1_8) != -1).findAny();
-			if (optional.isPresent()) {
-				IExecutionEnvironment ienv = optional.get();
-				IVMInstall vm = ienv.getDefaultVM();
-				if (vm == null) {
-					IVMInstall[] comp = ienv.getCompatibleVMs();
-					if (comp.length > 0) {
-						vm = comp[0];
+		List<String> args = new LinkedList<>();
+		
+		String java = getCompatibleJvmPath(path);
+		if (java != null) {
+			args.add("-Dorg.gradle.java.home=" + java);
+			HashMap<String, String> envMap = new HashMap<>(System.getenv());
+			envMap.put("JAVA_HOME", java);
+			env = envMap.entrySet().parallelStream().map(e -> e.getKey() + '=' + e.getValue())
+					.collect(Collectors.toList());
+		}
+		args.add(buildTarget);
+
+		return Execute.run(path, "gradlew", args, env);
+	}
+
+	/**
+	 * @param root
+	 * @return
+	 * @throws IOException
+	 */
+	private static String getCompatibleJvmPath(final File root) throws IOException {
+		String java = null;
+		File propertiesPath = new File(root, "gradle/wrapper/gradle-wrapper.properties");
+		if (propertiesPath.exists()) {
+			String gradleVersion = Files.readAllLines(propertiesPath.toPath()).parallelStream()
+					.filter(line -> line.startsWith("distributionUrl=")).map(line -> {
+						String version = line.substring(0, line.lastIndexOf('-'));
+						return version.substring(version.lastIndexOf('-') + 1);
+					}).findAny().orElse("5.0");
+			if (gradleVersion.compareTo("5.0") < 0) {
+				IExecutionEnvironmentsManager manager = JavaRuntime.getExecutionEnvironmentsManager();
+				Optional<IExecutionEnvironment> optional = Stream.of(manager.getExecutionEnvironments())
+						.filter(e -> e.getId().indexOf(JavaCore.VERSION_1_8) != -1).findAny();
+				if (optional.isPresent()) {
+					IExecutionEnvironment ienv = optional.get();
+					IVMInstall vm = ienv.getDefaultVM();
+					if (vm == null) {
+						IVMInstall[] comp = ienv.getCompatibleVMs();
+						if (comp.length > 0) {
+							vm = comp[0];
+						}
 					}
-				}
-				if (vm != null) {
-					File location = vm.getInstallLocation();
-					java = "-Dorg.gradle.java.home="+location.toString();
-					HashMap<String, String> envMap = new HashMap<>(System.getenv());
-					envMap.put("JAVA_HOME", location.toString());
-					env = envMap.entrySet().parallelStream().map(e -> e.getKey()+'='+e.getValue()).collect(Collectors.toList());
+					if (vm != null) {
+						File location = vm.getInstallLocation();
+						java = location.toString();
+					}
 				}
 			}
 		}
-
-		String binary = "gradlew";
-
-		
-		List<String> args = new LinkedList<>();
-		if(java != null) {
-			args.add(java);
-		}
-		args.add(buildTarget);
-		
-		return Execute.run(path, binary, args, env);
+		return java;
 	}
 
 	/**

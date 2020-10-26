@@ -96,8 +96,9 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration type, Artifact artifact,
-			CompilationUnit compilationUnit, CompilationUnit2Artifact c2a, Classifier classifier, ASTNode2Element t2c);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Artifact artifact, Classifier classifier,
+			AbstractTypeDeclaration type, CompilationUnit2Artifact c2a, ASTNode2Element t2c,
+			CompilationUnit compilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +114,8 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject manifestation, EObject type, EObject artifact,
-			EObject compilationUnit, EObject c2a, EObject classifier, EObject t2c);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject artifact, EObject classifier, EObject type,
+			EObject manifestation, EObject c2a, EObject t2c, EObject compilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +131,7 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Manifestation manifestation, Artifact artifact, Classifier classifier);
+	boolean isAppropriate_BWD(Match match, Artifact artifact, Classifier classifier, Manifestation manifestation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +155,7 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Manifestation manifestation, Artifact artifact, Classifier classifier);
+	void registerObjectsToMatch_BWD(Match match, Artifact artifact, Classifier classifier, Manifestation manifestation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +163,7 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Manifestation manifestation, Artifact artifact, Classifier classifier);
+	CSP isAppropriate_solveCsp_BWD(Match match, Artifact artifact, Classifier classifier, Manifestation manifestation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,9 +179,9 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Manifestation manifestation,
-			AbstractTypeDeclaration type, Artifact artifact, CompilationUnit compilationUnit,
-			CompilationUnit2Artifact c2a, Classifier classifier, ASTNode2Element t2c);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Artifact artifact, Classifier classifier,
+			AbstractTypeDeclaration type, Manifestation manifestation, CompilationUnit2Artifact c2a,
+			ASTNode2Element t2c, CompilationUnit compilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +197,8 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject manifestation, EObject type, EObject artifact,
-			EObject compilationUnit, EObject c2a, EObject classifier, EObject t2c);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject artifact, EObject classifier, EObject type,
+			EObject manifestation, EObject c2a, EObject t2c, EObject compilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +214,7 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_316(EMoflonEdge _edge_manifestation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_151(EMoflonEdge _edge_manifestation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +222,7 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_326(EMoflonEdge _edge_originalCompilationUnit);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_156(EMoflonEdge _edge_originalCompilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,8 +254,8 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Manifestation manifestation, AbstractTypeDeclaration type, Artifact artifact,
-			CompilationUnit compilationUnit, Classifier classifier, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Artifact artifact, Classifier classifier, AbstractTypeDeclaration type,
+			Manifestation manifestation, CompilationUnit compilationUnit, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,7 +279,7 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Manifestation manifestation, Artifact artifact, Classifier classifier);
+	boolean checkDEC_BWD(Artifact artifact, Classifier classifier, Manifestation manifestation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,8 +287,8 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element t2cParameter,
-			CompilationUnit2Artifact c2aParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, CompilationUnit2Artifact c2aParameter,
+			ASTNode2Element t2cParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,9 +296,9 @@ public interface Manifestation4CompilationUnit2Artifact extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration type, Artifact artifact,
-			CompilationUnit compilationUnit, CompilationUnit2Artifact c2a, Classifier classifier, ASTNode2Element t2c,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Artifact artifact, Classifier classifier,
+			AbstractTypeDeclaration type, CompilationUnit2Artifact c2a, ASTNode2Element t2c,
+			CompilationUnit compilationUnit, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

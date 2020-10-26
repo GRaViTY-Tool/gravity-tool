@@ -831,7 +831,7 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_269(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_131(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = MethodDec2Operation4InterfaceWithModifierImpl
 				.pattern_MethodDec2Operation4InterfaceWithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -892,7 +892,7 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_278(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_136(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = MethodDec2Operation4InterfaceWithModifierImpl
 				.pattern_MethodDec2Operation4InterfaceWithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -972,21 +972,21 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1053,21 +1053,21 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1502,10 +1502,10 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 			return null;
 		case RulesPackage.METHOD_DEC2_OPERATION4_INTERFACE_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION4_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_269__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_269((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION4_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_278__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_278((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION4_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_131__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_131((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION4_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_136__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_136((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION4_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION4_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2839,8 +2839,8 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_MethodDec2Operation4InterfaceWithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			Operation feature) {
-		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_289399 = feature.getClass_();
-		if (__DEC_feature_ownedOperation_289399 != null) {
+		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_875255 = feature.getClass_();
+		if (__DEC_feature_ownedOperation_875255 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2849,8 +2849,8 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_MethodDec2Operation4InterfaceWithModifier_20_2_testcorematchandDECs_black_nac_1B(
 			Operation feature) {
-		DataType __DEC_feature_ownedOperation_9131 = feature.getDatatype();
-		if (__DEC_feature_ownedOperation_9131 != null) {
+		DataType __DEC_feature_ownedOperation_235021 = feature.getDatatype();
+		if (__DEC_feature_ownedOperation_235021 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2984,9 +2984,9 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_MethodDec2Operation4InterfaceWithModifier_21_2_testcorematchandDECs_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_356339 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_806226 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_356339 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_806226 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3254,9 +3254,9 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_MethodDec2Operation4InterfaceWithModifier_27_1_matchtggpattern_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_301961 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_498583 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_301961 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_498583 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3288,8 +3288,8 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_MethodDec2Operation4InterfaceWithModifier_28_1_matchtggpattern_black_nac_0B(
 			Operation feature) {
-		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_492899 = feature.getClass_();
-		if (__DEC_feature_ownedOperation_492899 != null) {
+		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_447690 = feature.getClass_();
+		if (__DEC_feature_ownedOperation_447690 != null) {
 			return new Object[] { feature };
 		}
 
@@ -3298,8 +3298,8 @@ public class MethodDec2Operation4InterfaceWithModifierImpl extends AbstractRuleI
 
 	public static final Object[] pattern_MethodDec2Operation4InterfaceWithModifier_28_1_matchtggpattern_black_nac_1B(
 			Operation feature) {
-		DataType __DEC_feature_ownedOperation_266338 = feature.getDatatype();
-		if (__DEC_feature_ownedOperation_266338 != null) {
+		DataType __DEC_feature_ownedOperation_597303 = feature.getDatatype();
+		if (__DEC_feature_ownedOperation_597303 != null) {
 			return new Object[] { feature };
 		}
 

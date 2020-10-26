@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface TNumberNode extends EObject {
+public interface TNumberNode extends EObject, TAbstractNode {
 	/**
 	 * Returns the value of the '<em><b>TNumber</b></em>' attribute.
 	 * <!-- begin-user-doc -->

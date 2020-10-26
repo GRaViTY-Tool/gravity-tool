@@ -1,0 +1,64 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule AnonymousClass
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++ mAnonymous : AnonymousClassDeclaration
+	mCreation : ClassInstanceCreation {
+		++-anonymousClassDeclaration->mAnonymous
+	}
+	
+	mMebmber : MDefinition {
+		-mMethodInvocations->mCreation
+	}
+	
+	mType : AbstractTypeDeclaration {
+		-bodyDeclarations->mMebmber
+	}
+	
+	mPackage : Package {
+		-ownedElements->mType
+	} 
+}
+
+#target {
+	tPackage : TPackage 
+	tType : TAbstractType {
+		-package->tPackage
+		-pg->pg
+		++-innerTypes->tAnonymous
+	}
+	++ tNewPackage : TPackage {
+		++-ownedTypes->tAnonymous
+		++-parent->tPackage
+	}
+	++ tAnonymous : TClass {
+		tLib := false
+		tName := "Anonymous"
+	}
+	pg : TypeGraph {
+		++  -classes -> tAnonymous
+		++  -ownedTypes -> tAnonymous
+	}
+}
+
+#correspondence {
+	++ eAnonymousClassDeclarationToTClass : AnonymousClassDeclarationToTClass {
+		#src->mAnonymous
+		#trg->tAnonymous
+	}
+	mTypeToTType : TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+	mPackageToTPackage : PackageToTPackage {
+		#src->mPackage
+		#trg->tPackage
+	}
+}
+
+#attributeConditions {
+	addSuffix(tType.tName, "$1", tNewPackage.tName)
+}

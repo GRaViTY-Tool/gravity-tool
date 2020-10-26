@@ -1,0 +1,67 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule AbstractAnnotationTypeAccess
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mAnnotation:Annotation {
+		++  -type -> mAccess
+	}
+
+	++mAccess:TypeAccess {
+		++ -type -> mAnnotationType
+	}
+
+	mAnnotationType:AnnotationTypeDeclaration
+}
+
+#target {
+	tAnnotationType:TAnnotationType {
+		++  -annotations -> tAnnotation
+	}
+
+	tAnnotation:TAnnotation
+}
+
+#correspondence {
+	AnnotationTypeToTAnnotationType :TypeToTAbstractType {
+		#src->mAnnotationType
+		#trg->tAnnotationType
+	}
+
+	AnnotationToTAnnotation :AnnotationToTAnnotation {
+		#src->mAnnotation
+		#trg->tAnnotation
+	}
+}
+
+#rule AnnotationTypeAccessOnBodyDecl #extends AbstractAnnotationTypeAccess #with org.gravity.tgg.modisco.pm
+
+#source {
+	mOwner : BodyDeclaration {
+		-annotations->mAnnotation
+	}
+	
+	mAnnotation : Annotation
+}
+
+#rule AnnotationTypeAccessOnAnnotation #extends AbstractAnnotationTypeAccess #with org.gravity.tgg.modisco.pm
+
+#source {
+	mOwner : AnnotationMemberValuePair {
+		-value->mAnnotation
+	}
+	
+	mAnnotation : Annotation
+}
+
+#rule AnnotationTypeAccessOnSelf #extends AbstractAnnotationTypeAccess #with org.gravity.tgg.modisco.pm
+
+#source {
+		mAnnotationType:AnnotationTypeDeclaration {
+		-annotations->mAnnotation
+	}
+	
+	mAnnotation : Annotation
+}

@@ -108,6 +108,9 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		}
 
 		final List<FlowNode> outRef = node.getOutRef();
+		if(outRef.isEmpty()) {
+			return true;
+		}
 		final List<FlowNode> inRef = node.getInRef();
 
 		List<MAbstractFlowElement> flowSources = new ArrayList<>(inRef.size());
@@ -318,7 +321,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @return A list of the statement handlers resulting from the pre-processing.
 	 */
 	private List<MemberHandler> preProcessStatements(IFolder debug) {
-		final List<MemberHandler> handlers = new LinkedList<>();
+	 	final List<MemberHandler> handlers = new LinkedList<>();
 		for (MAbstractMethodDefinition methodDef : this.model.getMAbstractMethodDefinitions()) {
 			final MemberHandler methodProcessor = new MemberHandler(methodDef);
 			methodProcessor.getFlowNodeOrCreate(methodDef);

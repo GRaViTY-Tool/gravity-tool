@@ -8,9 +8,8 @@ Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.gravity.eclipse,
  org.eclipse.jdt.core,
  org.eclipse.modisco.java.generation,
- org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.core.runtime,
- org.slf4j.api
+ org.slf4j.api,
+ org.apache.xmlgraphics
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

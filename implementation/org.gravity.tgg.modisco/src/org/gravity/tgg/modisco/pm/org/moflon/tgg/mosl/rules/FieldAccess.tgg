@@ -1,0 +1,95 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule FieldAccess
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mMember:MDefinition {
+		++  -mAbstractFieldAccess -> mAccess
+	}
+
+	++mAccess:MSingleVariableAccess {
+		++  -variable -> varDeclFrag
+	}
+
+	varDeclFrag:VariableDeclarationFragment {
+		-variablesContainer -> mField
+	}
+
+	mField:MFieldDefinition
+}
+
+#target {
+	tMember:TMember {
+		++  -tAccessing -> tAccess
+	}
+
+	++tAccess:TAccess {
+		++-tTarget -> tField
+	}
+
+	tField:TFieldDefinition
+}
+
+#correspondence {
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+
+	mMethodToTMethod :MDefinitionToTMember {
+		#src->mField
+		#trg->tField
+	}
+
+	++ mAccessToTAccess :MSingleVariableAccessToTAccess {
+		#src->mAccess
+		#trg->tAccess
+	}
+	
+	++ mFlowOwnerToTFlowOwner:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mAccess
+		#trg->tAccess
+	}
+}
+
+
+#rule FieldAccessRead #extends FieldAccess
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++mAccess:MSingleVariableAccess {
+		accessKind := enum::AccessKind::READ
+	}
+}
+
+#target { 
+	++tAccess:TRead
+}
+
+#rule FieldAccessWrite #extends FieldAccess
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++mAccess:MSingleVariableAccess {
+		accessKind := enum::AccessKind::WRITE
+	}
+}
+
+#target { 
+	++tAccess:TWrite
+}
+
+#rule FieldAccessReadWrite #extends FieldAccess
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++mAccess:MSingleVariableAccess {
+		accessKind := enum::AccessKind::READWRITE
+	}
+}
+
+#target { 
+	++tAccess:TReadWrite
+}

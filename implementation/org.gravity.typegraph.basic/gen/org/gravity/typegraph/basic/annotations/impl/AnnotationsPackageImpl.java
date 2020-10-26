@@ -14,6 +14,7 @@ import org.gravity.typegraph.basic.BasicPackage;
 
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
 import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
+import org.gravity.typegraph.basic.annotations.TAbstractNode;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
@@ -94,6 +95,13 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 	 * @generated
 	 */
 	private EClass tClassNodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tAbstractNodeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -418,6 +426,16 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 	 * @generated
 	 */
 	@Override
+	public EClass getTAbstractNode() {
+		return tAbstractNodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public AnnotationsFactory getAnnotationsFactory() {
 		return (AnnotationsFactory)getEFactoryInstance();
 	}
@@ -474,6 +492,8 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 
 		tClassNodeEClass = createEClass(TCLASS_NODE);
 		createEReference(tClassNodeEClass, TCLASS_NODE__TCLASS);
+
+		tAbstractNodeEClass = createEClass(TABSTRACT_NODE);
 	}
 
 	/**
@@ -511,9 +531,13 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 		tAnnotationEClass.getESuperTypes().add(ecorePackage.getEObject());
 		tAnnotationTypeEClass.getESuperTypes().add(theBasicPackage.getTAbstractType());
 		tTextNodeEClass.getESuperTypes().add(ecorePackage.getEObject());
+		tTextNodeEClass.getESuperTypes().add(this.getTAbstractNode());
 		tNumberNodeEClass.getESuperTypes().add(ecorePackage.getEObject());
+		tNumberNodeEClass.getESuperTypes().add(this.getTAbstractNode());
 		tBoolNodeEClass.getESuperTypes().add(ecorePackage.getEObject());
+		tBoolNodeEClass.getESuperTypes().add(this.getTAbstractNode());
 		tClassNodeEClass.getESuperTypes().add(ecorePackage.getEObject());
+		tClassNodeEClass.getESuperTypes().add(this.getTAbstractNode());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(tAnnotationValueEClass, TAnnotationValue.class, "TAnnotationValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -558,6 +582,8 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 
 		initEClass(tClassNodeEClass, TClassNode.class, "TClassNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTClassNode_TClass(), theBasicPackage.getTAbstractType(), null, "tClass", null, 0, 1, TClassNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tAbstractNodeEClass, TAbstractNode.class, "TAbstractNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //AnnotationsPackageImpl

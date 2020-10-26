@@ -40,8 +40,8 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jp,
-			org.eclipse.modisco.java.Package jParent);
+	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jParent,
+			org.eclipse.modisco.java.Package jp);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,8 +65,8 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jp,
-			org.eclipse.modisco.java.Package jParent);
+	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jParent,
+			org.eclipse.modisco.java.Package jp);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,8 +74,8 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jp,
-			org.eclipse.modisco.java.Package jParent);
+	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jParent,
+			org.eclipse.modisco.java.Package jp);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,8 +91,8 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jp,
-			org.eclipse.modisco.java.Package jParent, org.eclipse.uml2.uml.Package uParent, JavaPackage2UmlPackage p2p);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jParent,
+			org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Package uParent, JavaPackage2UmlPackage p2p);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,8 +108,8 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jp, EObject up, EObject jParent, EObject uParent,
-			EObject jp2up, EObject p2p);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject up, EObject jParent, EObject jp2up, EObject jp,
+			EObject uParent, EObject p2p);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,8 +190,8 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jp, EObject up, EObject jParent, EObject uParent,
-			EObject jp2up, EObject p2p);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject up, EObject jParent, EObject jp2up, EObject jp,
+			EObject uParent, EObject p2p);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,7 +207,7 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_319(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_98(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_329(EMoflonEdge _edge_ownedPackages);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_103(EMoflonEdge _edge_ownedPackages);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -247,8 +247,8 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Package up,
-			org.eclipse.modisco.java.Package jParent, org.eclipse.uml2.uml.Package uParent, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jParent,
+			org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Package uParent, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -265,7 +265,7 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(org.eclipse.modisco.java.Package jp, org.eclipse.modisco.java.Package jParent);
+	boolean checkDEC_FWD(org.eclipse.modisco.java.Package jParent, org.eclipse.modisco.java.Package jp);
 
 	/**
 	 * <!-- begin-user-doc -->

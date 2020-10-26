@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EOperation;
 
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.BodyDeclaration;
 import org.eclipse.modisco.java.Modifier;
 
 import org.eclipse.uml2.uml.Interface;
@@ -223,8 +224,8 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 						ruleresult, feature, bd2ne, method, b2e, bodyDeclaration, uContainer);
 		//nothing EMoflonEdge method__bodyDeclaration____mInnerTypes = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[12];
 
@@ -581,8 +582,8 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 						ruleresult, feature, bd2ne, method, b2e, bodyDeclaration, uContainer);
 		//nothing EMoflonEdge method__bodyDeclaration____mInnerTypes = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[12];
 
@@ -814,7 +815,7 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_274(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_100(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerClassDeclaration2InnerClass_InMethodImpl
 				.pattern_InnerClassDeclaration2InnerClass_InMethod_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -876,7 +877,7 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_283(EMoflonEdge _edge_mInnerTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_105(EMoflonEdge _edge_mInnerTypes) {
 
 		Object[] result1_bindingAndBlack = InnerClassDeclaration2InnerClass_InMethodImpl
 				.pattern_InnerClassDeclaration2InnerClass_InMethod_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1205,7 +1206,7 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 	 * @generated
 	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			NamedElement2NamedElement me2opParameter) {
+			NamedElement2NamedElement ne2neParameter) {
 
 		Object[] result1_black = InnerClassDeclaration2InnerClass_InMethodImpl
 				.pattern_InnerClassDeclaration2InnerClass_InMethod_29_1_createresult_blackB(this);
@@ -1221,13 +1222,13 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 		for (Object[] result2_black : InnerClassDeclaration2InnerClass_InMethodImpl
 				.pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_blackFFFFFFFBB(
 						ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList me2opList = (RuleEntryList) result2_black[0];
+			//nothing RuleEntryList ne2neList = (RuleEntryList) result2_black[0];
 			MAbstractMethodDefinition method = (MAbstractMethodDefinition) result2_black[1];
-			NamedElement2NamedElement me2op = (NamedElement2NamedElement) result2_black[2];
-			Operation operation = (Operation) result2_black[3];
+			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[2];
+			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result2_black[3];
 			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_black[4];
-			NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result2_black[5];
-			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[6];
+			Operation operation = (Operation) result2_black[5];
+			NamedElement2NamedElement me2op = (NamedElement2NamedElement) result2_black[6];
 
 			Object[] result3_bindingAndBlack = InnerClassDeclaration2InnerClass_InMethodImpl
 					.pattern_InnerClassDeclaration2InnerClass_InMethod_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this,
@@ -1398,10 +1399,10 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 			return null;
 		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_METHOD___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_METHOD___IS_APPROPRIATE_BWD_EMOFLON_EDGE_274__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_274((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_METHOD___IS_APPROPRIATE_FWD_EMOFLON_EDGE_283__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_283((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_METHOD___IS_APPROPRIATE_BWD_EMOFLON_EDGE_100__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_100((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_METHOD___IS_APPROPRIATE_FWD_EMOFLON_EDGE_105__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_105((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_METHOD___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_METHOD___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1805,15 +1806,15 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 			EObject bodyDeclaration, EObject uContainer) {
 		EMoflonEdge method__bodyDeclaration____mInnerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InnerClassDeclaration2InnerClass_InMethod";
 		String method__bodyDeclaration____mInnerTypes_name_prime = "mInnerTypes";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
-		String bd2ne__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
+		String bd2ne__feature____target_name_prime = "target";
 		String uContainer__feature____nestedClassifier_name_prime = "nestedClassifier";
 		String b2e__feature____target_name_prime = "target";
 		method__bodyDeclaration____mInnerTypes.setSrc(method);
@@ -1822,12 +1823,12 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		uContainer__feature____nestedClassifier.setSrc(uContainer);
 		uContainer__feature____nestedClassifier.setTrg(feature);
 		ruleresult.getCreatedEdges().add(uContainer__feature____nestedClassifier);
@@ -1837,13 +1838,14 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		method__bodyDeclaration____mInnerTypes.setName(method__bodyDeclaration____mInnerTypes_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		return new Object[] { ruleresult, feature, bd2ne, method, b2e, bodyDeclaration, uContainer,
-				method__bodyDeclaration____mInnerTypes, bd2ne__bodyDeclaration____source, bd2ne__feature____target,
-				b2e__bodyDeclaration____source, uContainer__feature____nestedClassifier, b2e__feature____target };
+				method__bodyDeclaration____mInnerTypes, bd2ne__bodyDeclaration____source,
+				b2e__bodyDeclaration____source, bd2ne__feature____target, uContainer__feature____nestedClassifier,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_InnerClassDeclaration2InnerClass_InMethod_1_5_registerobjects_expressionBBBBBBBBBBBB(
@@ -2502,15 +2504,15 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 			EObject bodyDeclaration, EObject uContainer) {
 		EMoflonEdge method__bodyDeclaration____mInnerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InnerClassDeclaration2InnerClass_InMethod";
 		String method__bodyDeclaration____mInnerTypes_name_prime = "mInnerTypes";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
-		String bd2ne__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
+		String bd2ne__feature____target_name_prime = "target";
 		String uContainer__feature____nestedClassifier_name_prime = "nestedClassifier";
 		String b2e__feature____target_name_prime = "target";
 		method__bodyDeclaration____mInnerTypes.setSrc(method);
@@ -2519,12 +2521,12 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		uContainer__feature____nestedClassifier.setSrc(uContainer);
 		uContainer__feature____nestedClassifier.setTrg(feature);
 		ruleresult.getTranslatedEdges().add(uContainer__feature____nestedClassifier);
@@ -2534,13 +2536,14 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		method__bodyDeclaration____mInnerTypes.setName(method__bodyDeclaration____mInnerTypes_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		return new Object[] { ruleresult, feature, bd2ne, method, b2e, bodyDeclaration, uContainer,
-				method__bodyDeclaration____mInnerTypes, bd2ne__bodyDeclaration____source, bd2ne__feature____target,
-				b2e__bodyDeclaration____source, uContainer__feature____nestedClassifier, b2e__feature____target };
+				method__bodyDeclaration____mInnerTypes, bd2ne__bodyDeclaration____source,
+				b2e__bodyDeclaration____source, bd2ne__feature____target, uContainer__feature____nestedClassifier,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_InnerClassDeclaration2InnerClass_InMethod_11_5_registerobjects_expressionBBBBBBBBBBBB(
@@ -2884,7 +2887,7 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_20_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_814653 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_840984 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -2893,7 +2896,7 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_20_2_testcorematchandDECs_black_nac_1B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (Interface __DEC_feature_nestedClassifier_668912 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_505643 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -3033,8 +3036,8 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_21_2_testcorematchandDECs_black_nac_0B(
 			MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_341625 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_341625 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_603433 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_603433 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3044,11 +3047,11 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_21_2_testcorematchandDECs_black_nac_1BB(
 			MClass bodyDeclaration, AbstractTypeDeclaration jContainer) {
 		if (!bodyDeclaration.equals(jContainer)) {
-			AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_327122 = bodyDeclaration
+			AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_632609 = bodyDeclaration
 					.getAbstractTypeDeclaration();
-			if (__DEC_bodyDeclaration_bodyDeclarations_327122 != null) {
-				if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_327122)) {
-					if (!jContainer.equals(__DEC_bodyDeclaration_bodyDeclarations_327122)) {
+			if (__DEC_bodyDeclaration_bodyDeclarations_632609 != null) {
+				if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_632609)) {
+					if (!jContainer.equals(__DEC_bodyDeclaration_bodyDeclarations_632609)) {
 						return new Object[] { bodyDeclaration, jContainer };
 					}
 				}
@@ -3060,9 +3063,9 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_21_2_testcorematchandDECs_black_nac_2B(
 			MClass bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_45721 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_530624 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_45721 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_530624 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3071,8 +3074,8 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_21_2_testcorematchandDECs_black_nac_3B(
 			MClass bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_889167 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_889167 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_882738 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_882738 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3081,9 +3084,9 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_21_2_testcorematchandDECs_black_nac_4BB(
 			MClass bodyDeclaration, MAbstractMethodDefinition method) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_15652 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_245422 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
-			if (!method.equals(__DEC_bodyDeclaration_mInnerTypes_15652)) {
+			if (!method.equals(__DEC_bodyDeclaration_mInnerTypes_245422)) {
 				return new Object[] { bodyDeclaration, method };
 			}
 		}
@@ -3390,8 +3393,8 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_27_1_matchtggpattern_black_nac_0B(
 			MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_456152 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_456152 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_250071 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_250071 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3401,11 +3404,11 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_27_1_matchtggpattern_black_nac_1BB(
 			MClass bodyDeclaration, AbstractTypeDeclaration jContainer) {
 		if (!bodyDeclaration.equals(jContainer)) {
-			AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_354217 = bodyDeclaration
+			AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_31296 = bodyDeclaration
 					.getAbstractTypeDeclaration();
-			if (__DEC_bodyDeclaration_bodyDeclarations_354217 != null) {
-				if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_354217)) {
-					if (!jContainer.equals(__DEC_bodyDeclaration_bodyDeclarations_354217)) {
+			if (__DEC_bodyDeclaration_bodyDeclarations_31296 != null) {
+				if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_31296)) {
+					if (!jContainer.equals(__DEC_bodyDeclaration_bodyDeclarations_31296)) {
 						return new Object[] { bodyDeclaration, jContainer };
 					}
 				}
@@ -3417,9 +3420,9 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_27_1_matchtggpattern_black_nac_2B(
 			MClass bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_642672 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_182216 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_642672 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_182216 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3428,8 +3431,8 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_27_1_matchtggpattern_black_nac_3B(
 			MClass bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_203420 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_203420 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_97643 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_97643 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3438,9 +3441,9 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_27_1_matchtggpattern_black_nac_4BB(
 			MClass bodyDeclaration, MAbstractMethodDefinition method) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_835472 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_784475 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
-			if (!method.equals(__DEC_bodyDeclaration_mInnerTypes_835472)) {
+			if (!method.equals(__DEC_bodyDeclaration_mInnerTypes_784475)) {
 				return new Object[] { bodyDeclaration, method };
 			}
 		}
@@ -3486,7 +3489,7 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_28_1_matchtggpattern_black_nac_0B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_971803 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_920175 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -3495,7 +3498,7 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_28_1_matchtggpattern_black_nac_1B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (Interface __DEC_feature_nestedClassifier_155230 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_406647 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -3552,17 +3555,17 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 	}
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, NamedElement2NamedElement me2op) {
-		if (ruleResult.getCorrObjects().contains(me2op)) {
-			return new Object[] { ruleResult, me2op };
+			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration jContainer) {
+		if (ruleResult.getSourceObjects().contains(jContainer)) {
+			return new Object[] { ruleResult, jContainer };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Operation operation) {
-		if (ruleResult.getTargetObjects().contains(operation)) {
-			return new Object[] { ruleResult, operation };
+			ModelgeneratorRuleResult ruleResult, NamedElement2NamedElement ne2ne) {
+		if (ruleResult.getCorrObjects().contains(ne2ne)) {
+			return new Object[] { ruleResult, ne2ne };
 		}
 		return null;
 	}
@@ -3576,17 +3579,17 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 	}
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, NamedElement2NamedElement ne2ne) {
-		if (ruleResult.getCorrObjects().contains(ne2ne)) {
-			return new Object[] { ruleResult, ne2ne };
+			ModelgeneratorRuleResult ruleResult, Operation operation) {
+		if (ruleResult.getTargetObjects().contains(operation)) {
+			return new Object[] { ruleResult, operation };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration jContainer) {
-		if (ruleResult.getSourceObjects().contains(jContainer)) {
-			return new Object[] { ruleResult, jContainer };
+			ModelgeneratorRuleResult ruleResult, NamedElement2NamedElement me2op) {
+		if (ruleResult.getCorrObjects().contains(me2op)) {
+			return new Object[] { ruleResult, me2op };
 		}
 		return null;
 	}
@@ -3594,41 +3597,43 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 	public static final Iterable<Object[]> pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_blackFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList me2opList : ruleEntryContainer.getRuleEntryList()) {
-			for (EObject tmpMe2op : me2opList.getEntryObjects()) {
-				if (tmpMe2op instanceof NamedElement2NamedElement) {
-					NamedElement2NamedElement me2op = (NamedElement2NamedElement) tmpMe2op;
-					org.eclipse.modisco.java.NamedElement tmpMethod = me2op.getSource();
-					if (tmpMethod instanceof MAbstractMethodDefinition) {
-						MAbstractMethodDefinition method = (MAbstractMethodDefinition) tmpMethod;
-						NamedElement tmpOperation = me2op.getTarget();
-						if (tmpOperation instanceof Operation) {
-							Operation operation = (Operation) tmpOperation;
-							AbstractTypeDeclaration jContainer = method.getAbstractTypeDeclaration();
-							if (jContainer != null) {
-								org.eclipse.uml2.uml.Class uContainer = operation.getClass_();
-								if (uContainer != null) {
-									if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_1BB(
-											ruleResult, me2op) == null) {
-										if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, method) == null) {
-											if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, operation) == null) {
-												if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_5BB(
-														ruleResult, jContainer) == null) {
-													if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_3BB(
-															ruleResult, uContainer) == null) {
-														for (NamedElement2NamedElement ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
-																.getOppositeReferenceTyped(jContainer,
-																		NamedElement2NamedElement.class, "source")) {
-															if (!me2op.equals(ne2ne)) {
-																if (uContainer.equals(ne2ne.getTarget())) {
-																	if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_4BB(
-																			ruleResult, ne2ne) == null) {
-																		_result.add(new Object[] { me2opList, method,
-																				me2op, operation, uContainer, ne2ne,
-																				jContainer, ruleEntryContainer,
-																				ruleResult });
+		for (RuleEntryList ne2neList : ruleEntryContainer.getRuleEntryList()) {
+			for (EObject tmpNe2ne : ne2neList.getEntryObjects()) {
+				if (tmpNe2ne instanceof NamedElement2NamedElement) {
+					NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) tmpNe2ne;
+					org.eclipse.modisco.java.NamedElement tmpJContainer = ne2ne.getSource();
+					if (tmpJContainer instanceof AbstractTypeDeclaration) {
+						AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
+						NamedElement tmpUContainer = ne2ne.getTarget();
+						if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
+							org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
+							if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_2BB(
+									ruleResult, ne2ne) == null) {
+								if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_1BB(
+										ruleResult, jContainer) == null) {
+									if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_3BB(
+											ruleResult, uContainer) == null) {
+										for (BodyDeclaration tmpMethod : jContainer.getBodyDeclarations()) {
+											if (tmpMethod instanceof MAbstractMethodDefinition) {
+												MAbstractMethodDefinition method = (MAbstractMethodDefinition) tmpMethod;
+												if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_0BB(
+														ruleResult, method) == null) {
+													for (Operation operation : uContainer.getOwnedOperations()) {
+														if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_4BB(
+																ruleResult, operation) == null) {
+															for (NamedElement2NamedElement me2op : org.moflon.core.utilities.eMoflonEMFUtil
+																	.getOppositeReferenceTyped(method,
+																			NamedElement2NamedElement.class,
+																			"source")) {
+																if (!me2op.equals(ne2ne)) {
+																	if (operation.equals(me2op.getTarget())) {
+																		if (pattern_InnerClassDeclaration2InnerClass_InMethod_29_2_isapplicablecore_black_nac_5BB(
+																				ruleResult, me2op) == null) {
+																			_result.add(new Object[] { ne2neList,
+																					method, jContainer, ne2ne,
+																					uContainer, operation, me2op,
+																					ruleEntryContainer, ruleResult });
+																		}
 																	}
 																}
 															}
@@ -3639,9 +3644,7 @@ public class InnerClassDeclaration2InnerClass_InMethodImpl extends AbstractRuleI
 										}
 									}
 								}
-
 							}
-
 						}
 
 					}

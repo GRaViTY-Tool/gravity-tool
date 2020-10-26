@@ -1,0 +1,185 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule AnnotationMemberValueArray
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mOwner : BodyDeclaration {
+		-annotations->annotation
+	}
+	
+	annotation : Annotation {
+		 -values-> mAnnotationValue
+	}
+	
+	mAnnotationValue:AnnotationMemberValuePair {
+		++ -value -> mArray
+	}
+
+	++mArray:ArrayInitializer {
+		++ -expressions -> mValue
+	}
+
+	++mValue:Expression
+}
+
+#target {
+	tAnnotationValue:TAnnotationValue
+}
+
+#correspondence {
+	AnnotationMemberValuePairToTAnnotationValue :AnnotationMemberValuePairToTAnnotationValue {
+		#src->mAnnotationValue
+		#trg->tAnnotationValue
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule AnnotationMemberValueAnnotationArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco.pm
+
+#source {
+	++mValue:Annotation
+}
+
+#target {
+	tAnnotationValue:TAnnotationValue {
+		++ -tValue -> tValue
+	}
+
+	++tValue:TAnnotation
+}
+
+#correspondence {
+	++ mTypeToTType :AnnotationToTAnnotation {
+		#src->mValue
+		#trg->tValue
+	}
+}
+
+
+#using AttrCondDefLibrary.*
+
+#rule AnnotationMemberValueBooleanArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco.pm
+
+#source {
+	++mValue:BooleanLiteral
+}
+
+#target {
+	tAnnotationValue:TAnnotationValue {
+		++ -tValue -> tValue
+	}
+
+	++tValue:TBoolNode
+}
+
+#correspondence {
+	++ mValueToTValue :org.gravity.tgg.modisco.pm.BooleanLiteralToTBoolNode {
+		#src->mValue
+		#trg->tValue
+	}
+}
+
+#attributeConditions {
+	eq(mValue.value, tValue.value)
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule AnnotationMemberValueClassArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco.pm
+
+#source {
+	++mValue:TypeLiteral {
+		++ -type -> mAccess
+	}
+
+	++mAccess:TypeAccess {
+		++ -type -> mType
+	}
+
+	mType:Type
+}
+
+#target {
+	tAnnotationValue:TAnnotationValue {
+		++ -tValue -> tValue
+	}
+
+	++tValue:TClassNode {
+		++ -tClass -> tType
+	}
+
+	tType:TAbstractType
+}
+
+#correspondence {
+	++ mValueToTValue :ClassLiteralToClassNode {
+		#src->mValue
+		#trg->tValue
+	}
+
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+
+#using AttrCondDefLibrary.*
+
+#rule AnnotationMemberValueNumberArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco.pm
+
+#source {
+	++mValue:NumberLiteral
+}
+
+#target {
+	tAnnotationValue:TAnnotationValue {
+		++ -tValue -> tValue
+	}
+
+	++tValue:TNumberNode
+}
+
+#correspondence {
+	++ mTypeToTType :org.gravity.tgg.modisco.pm.NumberLiteralToTNumberNode {
+		#src->mValue
+		#trg->tValue
+	}
+}
+
+#attributeConditions {
+	eq(mValue.tokenValue, tValue.tNumber)
+}
+
+
+#using AttrCondDefLibrary.*
+
+#rule AnnotationMemberValueStringArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco.pm
+
+#source {
+	++mValue:StringLiteral
+}
+
+#target {
+	tAnnotationValue:TAnnotationValue {
+		++ -tValue -> tValue
+	}
+
+	++tValue:TTextNode
+}
+
+#correspondence {
+	++ mTypeToTType :org.gravity.tgg.modisco.pm.StringLiteralToTTextNode {
+		#src->mValue
+		#trg->tValue
+	}
+}
+
+#attributeConditions {
+	eq(mValue.escapedValue, tValue.tText)
+}
+
+
