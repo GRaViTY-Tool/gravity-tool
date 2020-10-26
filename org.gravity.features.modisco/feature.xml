@@ -52,7 +52,7 @@ Darmstadt.
          unpack="false"/>
 
    <plugin
-         id="org.gravity.tgg.modisco"
+         id="org.gravity.tgg.modisco.pm"
          download-size="0"
          install-size="0"
          version="0.0.0"
