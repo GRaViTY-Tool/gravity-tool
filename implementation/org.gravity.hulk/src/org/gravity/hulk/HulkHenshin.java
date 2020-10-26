@@ -165,23 +165,53 @@ public class HulkHenshin {
 
 		while (tree.hasNext()) {
 			EObject eObject = (EObject) tree.next();
-			List<TAnnotation> pcEObjectList;
+			List<TAnnotation> eObjectList;
 
 			if (eObject instanceof TAnnotatable) {
-				pcEObjectList = ((TAnnotatable) eObject)
-						.getTAnnotation(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern());
+				eObjectList = ((TAnnotatable) eObject)
+						.getTAnnotation(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern()).stream()
+						.filter(object -> {
 
-				// System.out.println(pcEObjectList);
-				pcEObjectList.removeAll(Collections.singleton(""));
+							return object.getTAnnotated() != null;
+						}).collect(Collectors.toList());
 
-				List<Map<EObject, EObject>> result = pcEObjectList.stream().distinct().map(pcEObject -> {
-					EObject annotatedObject = pcEObject.getTAnnotated();
-					Map<EObject, EObject> tempMap = new HashMap<>();
-					tempMap.put(pcEObject, annotatedObject);
+				if (!eObjectList.isEmpty()) {
+					List<Map<EObject, EObject>> result = eObjectList.stream().distinct().map(pcEObject -> {
+						EObject annotatedObject = pcEObject.getTAnnotated();
+						Map<EObject, EObject> tempMap = new HashMap<>();
+						tempMap.put(pcEObject, annotatedObject);
 
-					return tempMap;
-				}).collect(Collectors.toList());
-				System.out.println(result);
+						return tempMap;
+					}).collect(Collectors.toList());
+
+					System.out.println("Anti-Pattern detected:" + result);
+				}
+			}
+		}
+	}
+
+	public static void logPresenceConditions(Resource resource) {
+
+		TreeIterator<EObject> tree = resource.getAllContents();
+		Map<EObject, String> pcs = new HashMap<>();
+
+		while (tree.hasNext()) {
+			EObject eObject = (EObject) tree.next();
+			List<TAnnotation> pcEObjectList;
+			// TODO: graph.getPCS();
+
+			if (eObject instanceof TAnnotatable) {
+				pcEObjectList = ((TAnnotatable) eObject).getTAnnotation(SplPackage.eINSTANCE.getTPresenceCondition());
+				pcEObjectList.stream().forEach(pcEObject -> {
+					final String pc = ((TPresenceCondition) pcEObject).getPc();
+					if (pcEObjectList.size() <= 1) {
+						if (pcEObjectList.size() != 0) {
+							pcs.put(eObject, pc);
+						}
+					} else {
+						throw new RuntimeException("More than one TPresenceCondition detected.");
+					}
+				});
 			}
 		}
 	}
