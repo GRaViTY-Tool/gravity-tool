@@ -18,6 +18,7 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -144,8 +145,18 @@ public class HulkHenshin {
 		// Log Anti-Patterns and Code Smells
 		final String targetModel = "instances/Test.trg.xmi";
 		final Resource currentTargetModel = resourceSet.getResource(URI.createURI(targetModel), true);
+		
 
 		logAntiPattern(currentTargetModel);
+		
+		Map<EObject,Map<EObject, String>> pcToAPMap = logPresenceConditions(graph);
+		
+		pcToAPMap.forEach((key,value)->{
+			System.out.println("Anti-Pattern / Code Smell:" + key);
+			System.out.println("Presence Conditions:" + value);
+			System.out.println("");
+		});
+
 	}
 
 	public static String writeCNF(IFeatureModel featureModel) {
@@ -190,30 +201,21 @@ public class HulkHenshin {
 		}
 	}
 
-	public static void logPresenceConditions(Resource resource) {
+	public static Map<EObject, Map<EObject,String>> logPresenceConditions(MultiVarEGraph graph) {
 
-		TreeIterator<EObject> tree = resource.getAllContents();
-		Map<EObject, String> pcs = new HashMap<>();
+		Map<EObject, Map<EObject, String>> outerMap = new HashMap<>();
+		Map<EObject, String> innerMap = new HashMap<>();
 
-		while (tree.hasNext()) {
-			EObject eObject = (EObject) tree.next();
-			List<TAnnotation> pcEObjectList;
-			// TODO: graph.getPCS();
+		graph.getPCS().forEach((key, entry) -> {
+			if (key instanceof TAnnotation) {
 
-			if (eObject instanceof TAnnotatable) {
-				pcEObjectList = ((TAnnotatable) eObject).getTAnnotation(SplPackage.eINSTANCE.getTPresenceCondition());
-				pcEObjectList.stream().forEach(pcEObject -> {
-					final String pc = ((TPresenceCondition) pcEObject).getPc();
-					if (pcEObjectList.size() <= 1) {
-						if (pcEObjectList.size() != 0) {
-							pcs.put(eObject, pc);
-						}
-					} else {
-						throw new RuntimeException("More than one TPresenceCondition detected.");
-					}
-				});
+				outerMap.put(key, innerMap);
+				innerMap.clear();
+				return;
 			}
-		}
+			innerMap.put(key, entry);
+		});
+		return outerMap;
 	}
 
 	public static IFeatureModel addFeatureModel() {
