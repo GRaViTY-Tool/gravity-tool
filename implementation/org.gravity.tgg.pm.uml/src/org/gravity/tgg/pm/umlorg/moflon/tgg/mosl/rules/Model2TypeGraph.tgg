@@ -1,0 +1,57 @@
+#using org.gravity.tgg.pm.uml.*
+#using AttrCondDefLibrary.*
+
+#rule Model2TypeGraph #with org.gravity.tgg.pm.uml
+
+#source {
+	++model:Model
+}
+
+#target {
+	++pm:TypeGraph
+}
+
+#correspondence {
+	++ model2PM :Model2TypeGraph{
+		#src->model
+		#trg->pm
+	}
+}
+
+#attributeConditions {
+	eq(model.name, pm.tName)
+}
+
+
+#using org.gravity.tgg.pm.uml.*
+#using AttrCondDefLibrary.*
+
+#rule ModelNested2TypeGraph #with org.gravity.tgg.pm.uml
+
+#source {
+	outerModel:Model {
+		++ -nestedPackage -> model
+	}
+
+	++model:Model
+}
+
+#target {
+	++pm:TypeGraph
+}
+
+#correspondence {
+	outerModel2PM :Model2TypeGraph{
+		#src->outerModel
+		#trg->pm
+	}
+	
+	++ model2PM :Model2TypeGraph{
+		#src->model
+		#trg->pm
+	}
+}
+
+#attributeConditions {
+	eq(model.name, pm.tName)
+}

@@ -149,6 +149,12 @@
        <version>1.0.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+        <groupId>org.gravity</groupId>
+        <artifactId>org.gravity.tgg.pm.uml</artifactId>
+       <version>1.0.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
     <!--tests/-->
     <dependency>
         <groupId>org.gravity</groupId>

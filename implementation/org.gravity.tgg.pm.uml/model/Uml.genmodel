@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gravity.tgg.pm.uml/gen" modelPluginID="org.gravity.tgg.pm.uml"
+    modelName="Uml" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel#//types platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml ../../org.gravity.typegraph.basic/model/Basic.genmodel#//basic platform:/plugin/org.moflon.tgg.runtime/model/Runtime.genmodel#//runtime platform:/plugin/org.moflon.tgg.language/model/Language.genmodel#//language platform:/plugin/SDMLanguage/model/SDMLanguage.genmodel#//SDMLanguage platform:/plugin/MocaTree/model/MocaTree.genmodel#//MocaTree"
+    operationReflection="true">
+  <foreignModel>Uml.ecore</foreignModel>
+  <genPackages prefix="Uml" basePackage="org.gravity.tgg.pm" resource="XML" disposableProviderFactory="true"
+      ecorePackage="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#/">
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Package2TPackage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Package2TPackage/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Package2TPackage/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Model2TypeGraph">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Model2TypeGraph/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Model2TypeGraph/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Operation2TMethodDefinition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Operation2TMethodDefinition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Operation2TMethodDefinition/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//PrimitiveType2TClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//PrimitiveType2TClass/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//PrimitiveType2TClass/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Interface2TInterface">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Interface2TInterface/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Interface2TInterface/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Property2TFieldName">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Property2TFieldName/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Property2TFieldName/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TSignature">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TSignature/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TSignature/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Property2TFieldSignature">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Property2TFieldSignature/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Property2TFieldSignature/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//FDependency2TAccess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//FDependency2TAccess/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//FDependency2TAccess/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Class2TClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Class2TClass/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Class2TClass/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Comment2TTextAnnotation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Comment2TTextAnnotation/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Comment2TTextAnnotation/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Operation2TMethodSignature">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Operation2TMethodSignature/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Operation2TMethodSignature/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Stereotype2TAnnotation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Stereotype2TAnnotation/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Stereotype2TAnnotation/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Element2TAnnotatable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Element2TAnnotatable/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Element2TAnnotatable/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//StereotypeProperty2AnnotationNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//StereotypeProperty2AnnotationNode/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//StereotypeProperty2AnnotationNode/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Operation2TMethodName">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Operation2TMethodName/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Operation2TMethodName/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Parameter2TParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Parameter2TParameter/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Parameter2TParameter/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Property2TFieldDefinition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Property2TFieldDefinition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Property2TFieldDefinition/target"/>
+    </genClasses>
+    <nestedGenPackages prefix="Rules" resource="XML" disposableProviderFactory="true"
+        ecorePackage="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph">
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_FWD/model"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjectsToMatch_FWD/model"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_solveCsp_FWD/model"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_FWD/model"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjects_FWD/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjects_FWD/pm"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjects_FWD/model2PM"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_BWD/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjectsToMatch_BWD/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_solveCsp_BWD/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_BWD/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjects_BWD/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjects_BWD/pm"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/registerObjects_BWD/model2PM"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/model"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_CC/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_CC/pm"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkDEC_FWD/model"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkDEC_BWD/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/generateModel/ruleEntryContainer"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph">
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_FWD/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_FWD/outerModel"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjectsToMatch_FWD/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjectsToMatch_FWD/outerModel"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_solveCsp_FWD/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_solveCsp_FWD/outerModel"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_FWD/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_FWD/outerModel"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_FWD/outerModel2PM"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_FWD/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_FWD/pm"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_FWD/outerModel"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_FWD/model2PM"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_FWD/outerModel2PM"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_BWD/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjectsToMatch_BWD/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_solveCsp_BWD/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_BWD/pm"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_BWD/outerModel"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_BWD/outerModel2PM"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_BWD/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_BWD/pm"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_BWD/outerModel"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_BWD/model2PM"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/registerObjects_BWD/outerModel2PM"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/_edge_nestedPackage"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_CC/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_CC/pm"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_CC/outerModel"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkDEC_FWD/model"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkDEC_FWD/outerModel"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkDEC_BWD/pm"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/generateModel/outerModel2PMParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/generateModel_solveCsp_BWD/outerModel"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/generateModel_solveCsp_BWD/outerModel2PM"/>
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

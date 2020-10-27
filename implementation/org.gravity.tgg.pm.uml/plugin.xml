@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.ui.commands">
+    <command defaultHandler="org.gravity.tgg.pm.uml.CorrespondenceGraphGenHandler" id="org.gravity.tgg.command.corr" name="Generate UML PM Correspondence Model"/>
+  </extension>
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution allPopups="false" locationURI="popup:org.gravity.mainmenu">
+      <command commandId="org.gravity.tgg.command.corr" label="Generate UML PM Correspondence Model" style="push"/>
+    </menuContribution>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.tgg.pm.uml.UmlPackage" genModel="model/Uml.genmodel" uri="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.tgg.pm.uml.Rules.RulesPackage" genModel="model/Uml.genmodel" uri="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules"/>
+  </extension>
+</plugin>

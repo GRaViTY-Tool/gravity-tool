@@ -52,6 +52,7 @@
     <module>implementation/org.gravity.tgg.modisco.pm</module>
     <module>implementation/org.gravity.tgg.modisco.ui</module>
     <module>implementation/org.gravity.tgg.modisco.uml</module>
+    <module>implementation/org.gravity.tgg.pm.uml/</module>
     <module>implementation/org.gravity.typegraph.basic</module>
     <module>tests/org.gravity.eclipse.tests</module>
     <module>tests/org.gravity.goblin.tests</module>

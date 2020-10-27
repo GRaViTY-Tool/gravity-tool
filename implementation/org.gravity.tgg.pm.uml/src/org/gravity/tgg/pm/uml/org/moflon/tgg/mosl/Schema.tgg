@@ -1,0 +1,130 @@
+#import "platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"
+#import "http://www.eclipse.org/uml2/5.0.0/UML"
+#import "http://www.eclipse.org/uml2/5.0.0/Types"
+
+#schema org.gravity.tgg.pm.uml
+
+#source {
+	uml
+}
+
+#target {
+	basic
+}
+
+#correspondence {
+	
+	// Containers
+	
+	Model2TypeGraph {
+		#src->Model
+		#trg->TypeGraph
+	}
+
+	Package2TPackage {
+		#src->Package
+		#trg->TPackage
+	}
+	
+	// Types
+
+	Type2TAbstractType {
+		#src->Type
+		#trg->TAbstractType
+	}
+
+	Class2TClass {
+		#src->Class
+		#trg->TClass
+	}
+
+	Interface2TInterface {
+		#src->Interface
+		#trg->TInterface
+	}
+
+	PrimitiveType2TClass {
+		#src->PrimitiveType
+		#trg->TClass
+	}
+
+	// Methods and Fields
+
+	Feature2TMember {
+		#src->Feature
+		#trg->TMember
+	}
+
+	Feature2TSignature {
+		#src->Feature
+		#trg->TSignature
+	}
+	
+	// Methods
+
+	Operation2TMethodName {
+		#src->Operation
+		#trg->TMethod
+	}
+
+	Operation2TMethodSignature {
+		#src->Operation
+		#trg->TMethodSignature
+	}
+
+	Operation2TMethodDefinition {
+		#src->Operation
+		#trg->TMethodDefinition
+	}
+
+	Parameter2TParameter {
+		#src->Parameter
+		#trg->TParameter
+	}
+
+	// Fields
+
+	Property2TFieldName {
+		#src->Property
+		#trg->TField
+	}
+	
+	Property2TFieldSignature {
+		#src->Property
+		#trg->TFieldSignature
+	}
+	
+	Property2TFieldDefinition {
+		#src->Property
+		#trg->TFieldDefinition
+	}
+	
+	// Dependencies
+
+	FDependency2TAccess {
+		#src->Dependency
+		#trg->TAccess
+	}
+	
+	// Annotations, Stereotypes and Comments
+
+	Element2TAnnotatable {
+		#src->Element
+		#trg->TAnnotatable
+	}
+
+	Stereotype2TAnnotation {
+		#src->Stereotype
+		#trg->TAnnotation
+	}
+	
+	StereotypeProperty2AnnotationNode {
+		#src->Property
+		#trg->TAbstractNode
+	}
+
+	Comment2TTextAnnotation {
+		#src->Comment
+		#trg->TTextAnnotation
+	}
+}
