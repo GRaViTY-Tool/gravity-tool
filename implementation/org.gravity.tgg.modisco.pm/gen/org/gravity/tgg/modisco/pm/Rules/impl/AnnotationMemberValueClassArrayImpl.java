@@ -199,8 +199,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		Annotation annotation = (Annotation) result1_bindingAndBlack[0];
 		TypeAccess mAccess = (TypeAccess) result1_bindingAndBlack[1];
 		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result1_bindingAndBlack[2];
-		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[3];
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[4];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[4];
 		ArrayInitializer mArray = (ArrayInitializer) result1_bindingAndBlack[5];
 		TypeLiteral mValue = (TypeLiteral) result1_bindingAndBlack[6];
 		Type mType = (Type) result1_bindingAndBlack[7];
@@ -229,14 +229,14 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 		Object[] result3_black = AnnotationMemberValueClassArrayImpl
 				.pattern_AnnotationMemberValueClassArray_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(ruleresult,
-						annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray, tValue, mValue, mType,
+						annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray, tValue, mValue, mType,
 						AnnotationMemberValuePairToTAnnotationValue, mOwner, mValueToTValue, tAnnotationValue);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[annotation] = " + annotation + ", " + "[mAccess] = " + mAccess + ", "
-					+ "[mAnnotationValue] = " + mAnnotationValue + ", " + "[tType] = " + tType + ", "
-					+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mArray] = " + mArray + ", " + "[tValue] = " + tValue
-					+ ", " + "[mValue] = " + mValue + ", " + "[mType] = " + mType + ", "
+					+ "[mAnnotationValue] = " + mAnnotationValue + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
+					+ "[tType] = " + tType + ", " + "[mArray] = " + mArray + ", " + "[tValue] = " + tValue + ", "
+					+ "[mValue] = " + mValue + ", " + "[mType] = " + mType + ", "
 					+ "[AnnotationMemberValuePairToTAnnotationValue] = " + AnnotationMemberValuePairToTAnnotationValue
 					+ ", " + "[mOwner] = " + mOwner + ", " + "[mValueToTValue] = " + mValueToTValue + ", "
 					+ "[tAnnotationValue] = " + tAnnotationValue + ".");
@@ -259,7 +259,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		// 
 		AnnotationMemberValueClassArrayImpl
 				.pattern_AnnotationMemberValueClassArray_1_5_registerobjects_expressionBBBBBBBBBBBBBBB(this, ruleresult,
-						annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray, tValue, mValue, mType,
+						annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray, tValue, mValue, mType,
 						AnnotationMemberValuePairToTAnnotationValue, mOwner, mValueToTValue, tAnnotationValue);
 		return AnnotationMemberValueClassArrayImpl.pattern_AnnotationMemberValueClassArray_1_6_expressionFB(ruleresult);
 	}
@@ -299,18 +299,18 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		for (Object[] result2_black : AnnotationMemberValueClassArrayImpl
 				.pattern_AnnotationMemberValueClassArray_2_2_corematch_blackBBBFFBBBFBFB(annotation, mAccess,
 						mAnnotationValue, mArray, mValue, mType, mOwner, match)) {
-			TAbstractType tType = (TAbstractType) result2_black[3];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[4];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[3];
+			TAbstractType tType = (TAbstractType) result2_black[4];
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result2_black[8];
 			TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_black[10];
 			// ForEach 
 			for (Object[] result3_black : AnnotationMemberValueClassArrayImpl
 					.pattern_AnnotationMemberValueClassArray_2_3_findcontext_blackBBBBBBBBBBB(annotation, mAccess,
-							mAnnotationValue, tType, mTypeToTType, mArray, mValue, mType,
+							mAnnotationValue, mTypeToTType, tType, mArray, mValue, mType,
 							AnnotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue)) {
 				Object[] result3_green = AnnotationMemberValueClassArrayImpl
 						.pattern_AnnotationMemberValueClassArray_2_3_findcontext_greenBBBBBBBBBBBFFFFFFFFFFFF(
-								annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray, mValue, mType,
+								annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray, mValue, mType,
 								AnnotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[11];
 				//nothing EMoflonEdge mValue__mAccess____type = (EMoflonEdge) result3_green[12];
@@ -327,13 +327,13 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 				Object[] result4_bindingAndBlack = AnnotationMemberValueClassArrayImpl
 						.pattern_AnnotationMemberValueClassArray_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBBBB(this,
-								isApplicableMatch, annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray,
+								isApplicableMatch, annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray,
 								mValue, mType, AnnotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[annotation] = " + annotation
 							+ ", " + "[mAccess] = " + mAccess + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", "
-							+ "[tType] = " + tType + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mArray] = "
+							+ "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = " + tType + ", " + "[mArray] = "
 							+ mArray + ", " + "[mValue] = " + mValue + ", " + "[mType] = " + mType + ", "
 							+ "[AnnotationMemberValuePairToTAnnotationValue] = "
 							+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mOwner] = " + mOwner + ", "
@@ -419,7 +419,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation, TypeAccess mAccess,
-			AnnotationMemberValuePair mAnnotationValue, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
 			ArrayInitializer mArray, TypeLiteral mValue, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {// Create CSP
@@ -440,8 +440,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		isApplicableMatch.registerObject("annotation", annotation);
 		isApplicableMatch.registerObject("mAccess", mAccess);
 		isApplicableMatch.registerObject("mAnnotationValue", mAnnotationValue);
-		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
+		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mArray", mArray);
 		isApplicableMatch.registerObject("mValue", mValue);
 		isApplicableMatch.registerObject("mType", mType);
@@ -467,14 +467,14 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject mAccess,
-			EObject mAnnotationValue, EObject tType, EObject mTypeToTType, EObject mArray, EObject tValue,
+			EObject mAnnotationValue, EObject mTypeToTType, EObject tType, EObject mArray, EObject tValue,
 			EObject mValue, EObject mType, EObject AnnotationMemberValuePairToTAnnotationValue, EObject mOwner,
 			EObject mValueToTValue, EObject tAnnotationValue) {
 		ruleresult.registerObject("annotation", annotation);
 		ruleresult.registerObject("mAccess", mAccess);
 		ruleresult.registerObject("mAnnotationValue", mAnnotationValue);
-		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mArray", mArray);
 		ruleresult.registerObject("tValue", tValue);
 		ruleresult.registerObject("mValue", mValue);
@@ -584,8 +584,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		}
 		Annotation annotation = (Annotation) result1_bindingAndBlack[0];
 		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result1_bindingAndBlack[1];
-		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[2];
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[2];
+		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[3];
 		TClassNode tValue = (TClassNode) result1_bindingAndBlack[4];
 		Type mType = (Type) result1_bindingAndBlack[5];
 		AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result1_bindingAndBlack[6];
@@ -615,14 +615,14 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 		Object[] result3_black = AnnotationMemberValueClassArrayImpl
 				.pattern_AnnotationMemberValueClassArray_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(ruleresult,
-						annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray, tValue, mValue, mType,
+						annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray, tValue, mValue, mType,
 						AnnotationMemberValuePairToTAnnotationValue, mOwner, mValueToTValue, tAnnotationValue);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[annotation] = " + annotation + ", " + "[mAccess] = " + mAccess + ", "
-					+ "[mAnnotationValue] = " + mAnnotationValue + ", " + "[tType] = " + tType + ", "
-					+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mArray] = " + mArray + ", " + "[tValue] = " + tValue
-					+ ", " + "[mValue] = " + mValue + ", " + "[mType] = " + mType + ", "
+					+ "[mAnnotationValue] = " + mAnnotationValue + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
+					+ "[tType] = " + tType + ", " + "[mArray] = " + mArray + ", " + "[tValue] = " + tValue + ", "
+					+ "[mValue] = " + mValue + ", " + "[mType] = " + mType + ", "
 					+ "[AnnotationMemberValuePairToTAnnotationValue] = " + AnnotationMemberValuePairToTAnnotationValue
 					+ ", " + "[mOwner] = " + mOwner + ", " + "[mValueToTValue] = " + mValueToTValue + ", "
 					+ "[tAnnotationValue] = " + tAnnotationValue + ".");
@@ -645,7 +645,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		// 
 		AnnotationMemberValueClassArrayImpl
 				.pattern_AnnotationMemberValueClassArray_11_5_registerobjects_expressionBBBBBBBBBBBBBBB(this,
-						ruleresult, annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray, tValue, mValue,
+						ruleresult, annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray, tValue, mValue,
 						mType, AnnotationMemberValuePairToTAnnotationValue, mOwner, mValueToTValue, tAnnotationValue);
 		return AnnotationMemberValueClassArrayImpl
 				.pattern_AnnotationMemberValueClassArray_11_6_expressionFB(ruleresult);
@@ -680,22 +680,22 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		TClassNode tValue = (TClassNode) result2_binding[1];
 		TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_binding[2];
 		for (Object[] result2_black : AnnotationMemberValueClassArrayImpl
-				.pattern_AnnotationMemberValueClassArray_12_2_corematch_blackFBFBFFBB(tType, tValue, tAnnotationValue,
+				.pattern_AnnotationMemberValueClassArray_12_2_corematch_blackFFBBFFBB(tType, tValue, tAnnotationValue,
 						match)) {
 			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result2_black[0];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[2];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[1];
 			Type mType = (Type) result2_black[4];
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : AnnotationMemberValueClassArrayImpl
-					.pattern_AnnotationMemberValueClassArray_12_3_findcontext_blackFBBBBBBFB(mAnnotationValue, tType,
-							mTypeToTType, tValue, mType, AnnotationMemberValuePairToTAnnotationValue,
+					.pattern_AnnotationMemberValueClassArray_12_3_findcontext_blackFBBBBBBFB(mAnnotationValue,
+							mTypeToTType, tType, tValue, mType, AnnotationMemberValuePairToTAnnotationValue,
 							tAnnotationValue)) {
 				Annotation annotation = (Annotation) result3_black[0];
 				BodyDeclaration mOwner = (BodyDeclaration) result3_black[7];
 				Object[] result3_green = AnnotationMemberValueClassArrayImpl
 						.pattern_AnnotationMemberValueClassArray_12_3_findcontext_greenBBBBBBBBBFFFFFFFFF(annotation,
-								mAnnotationValue, tType, mTypeToTType, tValue, mType,
+								mAnnotationValue, mTypeToTType, tType, tValue, mType,
 								AnnotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[9];
 				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__tAnnotationValue____target = (EMoflonEdge) result3_green[10];
@@ -709,14 +709,14 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 				Object[] result4_bindingAndBlack = AnnotationMemberValueClassArrayImpl
 						.pattern_AnnotationMemberValueClassArray_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
-								isApplicableMatch, annotation, mAnnotationValue, tType, mTypeToTType, tValue, mType,
+								isApplicableMatch, annotation, mAnnotationValue, mTypeToTType, tType, tValue, mType,
 								AnnotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[annotation] = " + annotation
-							+ ", " + "[mAnnotationValue] = " + mAnnotationValue + ", " + "[tType] = " + tType + ", "
-							+ "[mTypeToTType] = " + mTypeToTType + ", " + "[tValue] = " + tValue + ", " + "[mType] = "
-							+ mType + ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
+							+ ", " + "[mAnnotationValue] = " + mAnnotationValue + ", " + "[mTypeToTType] = "
+							+ mTypeToTType + ", " + "[tType] = " + tType + ", " + "[tValue] = " + tValue + ", "
+							+ "[mType] = " + mType + ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
 							+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mOwner] = " + mOwner + ", "
 							+ "[tAnnotationValue] = " + tAnnotationValue + ".");
 				}
@@ -795,7 +795,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
 			TClassNode tValue, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {// Create CSP
@@ -815,8 +815,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("annotation", annotation);
 		isApplicableMatch.registerObject("mAnnotationValue", mAnnotationValue);
-		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
+		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("tValue", tValue);
 		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("AnnotationMemberValuePairToTAnnotationValue",
@@ -841,14 +841,14 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject mAccess,
-			EObject mAnnotationValue, EObject tType, EObject mTypeToTType, EObject mArray, EObject tValue,
+			EObject mAnnotationValue, EObject mTypeToTType, EObject tType, EObject mArray, EObject tValue,
 			EObject mValue, EObject mType, EObject AnnotationMemberValuePairToTAnnotationValue, EObject mOwner,
 			EObject mValueToTValue, EObject tAnnotationValue) {
 		ruleresult.registerObject("annotation", annotation);
 		ruleresult.registerObject("mAccess", mAccess);
 		ruleresult.registerObject("mAnnotationValue", mAnnotationValue);
-		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mArray", mArray);
 		ruleresult.registerObject("tValue", tValue);
 		ruleresult.registerObject("mValue", mValue);
@@ -876,7 +876,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_86(EMoflonEdge _edge_tClass) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_16(EMoflonEdge _edge_tClass) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueClassArrayImpl
 				.pattern_AnnotationMemberValueClassArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -936,7 +936,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_88(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_17(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueClassArrayImpl
 				.pattern_AnnotationMemberValueClassArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1107,9 +1107,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 				.pattern_AnnotationMemberValueClassArray_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : AnnotationMemberValueClassArrayImpl
-					.pattern_AnnotationMemberValueClassArray_24_5_matchcorrcontext_blackBBFBFBBB(mAnnotationValue,
+					.pattern_AnnotationMemberValueClassArray_24_5_matchcorrcontext_blackBFBBFBBB(mAnnotationValue,
 							tType, mType, tAnnotationValue, sourceMatch, targetMatch)) {
-				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[2];
+				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[1];
 				AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result5_black[4];
 				Object[] result5_green = AnnotationMemberValueClassArrayImpl
 						.pattern_AnnotationMemberValueClassArray_24_5_matchcorrcontext_greenBBBBF(mTypeToTType,
@@ -1245,19 +1245,19 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 			TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_black[4];
 			BodyDeclaration mOwner = (BodyDeclaration) result2_black[5];
 			//nothing RuleEntryList mTypeToTTypeList = (RuleEntryList) result2_black[6];
-			TAbstractType tType = (TAbstractType) result2_black[7];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[8];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[7];
+			TAbstractType tType = (TAbstractType) result2_black[8];
 			Type mType = (Type) result2_black[9];
 
 			Object[] result3_bindingAndBlack = AnnotationMemberValueClassArrayImpl
 					.pattern_AnnotationMemberValueClassArray_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
-							isApplicableMatch, annotation, mAnnotationValue, tType, mTypeToTType, mType,
+							isApplicableMatch, annotation, mAnnotationValue, mTypeToTType, tType, mType,
 							AnnotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[annotation] = " + annotation + ", "
-						+ "[mAnnotationValue] = " + mAnnotationValue + ", " + "[tType] = " + tType + ", "
-						+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mType] = " + mType + ", "
+						+ "[mAnnotationValue] = " + mAnnotationValue + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
+						+ "[tType] = " + tType + ", " + "[mType] = " + mType + ", "
 						+ "[AnnotationMemberValuePairToTAnnotationValue] = "
 						+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mOwner] = " + mOwner + ", "
 						+ "[tAnnotationValue] = " + tAnnotationValue + ", " + "[ruleResult] = " + ruleResult + ".");
@@ -1269,19 +1269,19 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 				// 
 				Object[] result5_black = AnnotationMemberValueClassArrayImpl
 						.pattern_AnnotationMemberValueClassArray_29_5_checknacs_blackBBBBBBBB(annotation,
-								mAnnotationValue, tType, mTypeToTType, mType,
+								mAnnotationValue, mTypeToTType, tType, mType,
 								AnnotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue);
 				if (result5_black != null) {
 
 					Object[] result6_black = AnnotationMemberValueClassArrayImpl
 							.pattern_AnnotationMemberValueClassArray_29_6_perform_blackBBBBBBBBB(annotation,
-									mAnnotationValue, tType, mTypeToTType, mType,
+									mAnnotationValue, mTypeToTType, tType, mType,
 									AnnotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[annotation] = "
-								+ annotation + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", " + "[tType] = "
-								+ tType + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mType] = " + mType + ", "
-								+ "[AnnotationMemberValuePairToTAnnotationValue] = "
+								+ annotation + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", "
+								+ "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = " + tType + ", " + "[mType] = "
+								+ mType + ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
 								+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mOwner] = " + mOwner + ", "
 								+ "[tAnnotationValue] = " + tAnnotationValue + ", " + "[ruleResult] = " + ruleResult
 								+ ".");
@@ -1312,7 +1312,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
 			Type mType, AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
@@ -1331,8 +1331,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("annotation", annotation);
 		isApplicableMatch.registerObject("mAnnotationValue", mAnnotationValue);
-		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
+		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("AnnotationMemberValuePairToTAnnotationValue",
 				AnnotationMemberValuePairToTAnnotationValue);
@@ -1380,10 +1380,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 					(BodyDeclaration) arguments.get(7));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANNOTATION_TYPEACCESS_ANNOTATIONMEMBERVALUEPAIR_TABSTRACTTYPE_TYPETOTABSTRACTTYPE_ARRAYINITIALIZER_TYPELITERAL_TYPE_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_BODYDECLARATION_TANNOTATIONVALUE:
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANNOTATION_TYPEACCESS_ANNOTATIONMEMBERVALUEPAIR_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_ARRAYINITIALIZER_TYPELITERAL_TYPE_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_BODYDECLARATION_TANNOTATIONVALUE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Annotation) arguments.get(1),
 					(TypeAccess) arguments.get(2), (AnnotationMemberValuePair) arguments.get(3),
-					(TAbstractType) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
+					(TypeToTAbstractType) arguments.get(4), (TAbstractType) arguments.get(5),
 					(ArrayInitializer) arguments.get(6), (TypeLiteral) arguments.get(7), (Type) arguments.get(8),
 					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(9), (BodyDeclaration) arguments.get(10),
 					(TAnnotationValue) arguments.get(11));
@@ -1414,10 +1414,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 					(TClassNode) arguments.get(2), (TAnnotationValue) arguments.get(3));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_TABSTRACTTYPE_TYPETOTABSTRACTTYPE_TCLASSNODE_TYPE_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_BODYDECLARATION_TANNOTATIONVALUE:
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_TCLASSNODE_TYPE_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_BODYDECLARATION_TANNOTATIONVALUE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Annotation) arguments.get(1),
-					(AnnotationMemberValuePair) arguments.get(2), (TAbstractType) arguments.get(3),
-					(TypeToTAbstractType) arguments.get(4), (TClassNode) arguments.get(5), (Type) arguments.get(6),
+					(AnnotationMemberValuePair) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+					(TAbstractType) arguments.get(4), (TClassNode) arguments.get(5), (Type) arguments.get(6),
 					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(7), (BodyDeclaration) arguments.get(8),
 					(TAnnotationValue) arguments.get(9));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
@@ -1431,10 +1431,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_86__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_86((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_88__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_88((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_16__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_16((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_17__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_17((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1460,10 +1460,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 			return generateModel((RuleEntryContainer) arguments.get(0),
 					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1),
 					(TypeToTAbstractType) arguments.get(2));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_TABSTRACTTYPE_TYPETOTABSTRACTTYPE_TYPE_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_BODYDECLARATION_TANNOTATIONVALUE_MODELGENERATORRULERESULT:
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_TYPE_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_BODYDECLARATION_TANNOTATIONVALUE_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Annotation) arguments.get(1),
-					(AnnotationMemberValuePair) arguments.get(2), (TAbstractType) arguments.get(3),
-					(TypeToTAbstractType) arguments.get(4), (Type) arguments.get(5),
+					(AnnotationMemberValuePair) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+					(TAbstractType) arguments.get(4), (Type) arguments.get(5),
 					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(6), (BodyDeclaration) arguments.get(7),
 					(TAnnotationValue) arguments.get(8), (ModelgeneratorRuleResult) arguments.get(9));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
@@ -1623,8 +1623,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		EObject _localVariable_0 = isApplicableMatch.getObject("annotation");
 		EObject _localVariable_1 = isApplicableMatch.getObject("mAccess");
 		EObject _localVariable_2 = isApplicableMatch.getObject("mAnnotationValue");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tType");
 		EObject _localVariable_5 = isApplicableMatch.getObject("mArray");
 		EObject _localVariable_6 = isApplicableMatch.getObject("mValue");
 		EObject _localVariable_7 = isApplicableMatch.getObject("mType");
@@ -1634,8 +1634,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		EObject tmpAnnotation = _localVariable_0;
 		EObject tmpMAccess = _localVariable_1;
 		EObject tmpMAnnotationValue = _localVariable_2;
-		EObject tmpTType = _localVariable_3;
-		EObject tmpMTypeToTType = _localVariable_4;
+		EObject tmpMTypeToTType = _localVariable_3;
+		EObject tmpTType = _localVariable_4;
 		EObject tmpMArray = _localVariable_5;
 		EObject tmpMValue = _localVariable_6;
 		EObject tmpMType = _localVariable_7;
@@ -1648,10 +1648,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 				TypeAccess mAccess = (TypeAccess) tmpMAccess;
 				if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
 					AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
-					if (tmpTType instanceof TAbstractType) {
-						TAbstractType tType = (TAbstractType) tmpTType;
-						if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-							TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+					if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+						TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+						if (tmpTType instanceof TAbstractType) {
+							TAbstractType tType = (TAbstractType) tmpTType;
 							if (tmpMArray instanceof ArrayInitializer) {
 								ArrayInitializer mArray = (ArrayInitializer) tmpMArray;
 								if (tmpMValue instanceof TypeLiteral) {
@@ -1664,8 +1664,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 												BodyDeclaration mOwner = (BodyDeclaration) tmpMOwner;
 												if (tmpTAnnotationValue instanceof TAnnotationValue) {
 													TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
-													return new Object[] { annotation, mAccess, mAnnotationValue, tType,
-															mTypeToTType, mArray, mValue, mType,
+													return new Object[] { annotation, mAccess, mAnnotationValue,
+															mTypeToTType, tType, mArray, mValue, mType,
 															annotationMemberValuePairToTAnnotationValue, mOwner,
 															tAnnotationValue, isApplicableMatch };
 												}
@@ -1683,15 +1683,15 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_1_1_performtransformation_blackBBBBBBBBBBBFBB(
-			Annotation annotation, TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue, TAbstractType tType,
-			TypeToTAbstractType mTypeToTType, ArrayInitializer mArray, TypeLiteral mValue, Type mType,
-			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
+			Annotation annotation, TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue,
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, ArrayInitializer mArray, TypeLiteral mValue,
+			Type mType, AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, AnnotationMemberValueClassArray _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray, mValue, mType,
+				return new Object[] { annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray, mValue, mType,
 						annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, csp, _this,
 						isApplicableMatch };
 			}
@@ -1707,8 +1707,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 			Annotation annotation = (Annotation) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[0];
 			TypeAccess mAccess = (TypeAccess) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[1];
 			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[2];
-			TAbstractType tType = (TAbstractType) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[3];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[4];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[3];
+			TAbstractType tType = (TAbstractType) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[4];
 			ArrayInitializer mArray = (ArrayInitializer) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[5];
 			TypeLiteral mValue = (TypeLiteral) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[6];
 			Type mType = (Type) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[7];
@@ -1717,12 +1717,12 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_binding[10];
 
 			Object[] result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_black = pattern_AnnotationMemberValueClassArray_1_1_performtransformation_blackBBBBBBBBBBBFBB(
-					annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray, mValue, mType,
+					annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray, mValue, mType,
 					annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, _this, isApplicableMatch);
 			if (result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnnotationMemberValueClassArray_1_1_performtransformation_black[11];
 
-				return new Object[] { annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray, mValue, mType,
+				return new Object[] { annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray, mValue, mType,
 						annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, csp, _this,
 						isApplicableMatch };
 			}
@@ -1760,14 +1760,14 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject annotation, EObject mAccess, EObject mAnnotationValue, EObject tType,
-			EObject mTypeToTType, EObject mArray, EObject tValue, EObject mValue, EObject mType,
+			PerformRuleResult ruleresult, EObject annotation, EObject mAccess, EObject mAnnotationValue,
+			EObject mTypeToTType, EObject tType, EObject mArray, EObject tValue, EObject mValue, EObject mType,
 			EObject annotationMemberValuePairToTAnnotationValue, EObject mOwner, EObject mValueToTValue,
 			EObject tAnnotationValue) {
 		if (!annotation.equals(mAccess)) {
 			if (!annotation.equals(mAnnotationValue)) {
-				if (!annotation.equals(tType)) {
-					if (!annotation.equals(mTypeToTType)) {
+				if (!annotation.equals(mTypeToTType)) {
+					if (!annotation.equals(tType)) {
 						if (!annotation.equals(mArray)) {
 							if (!annotation.equals(tValue)) {
 								if (!annotation.equals(mValue)) {
@@ -1776,8 +1776,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 											if (!annotation.equals(mValueToTValue)) {
 												if (!annotation.equals(tAnnotationValue)) {
 													if (!mAccess.equals(mAnnotationValue)) {
-														if (!mAccess.equals(tType)) {
-															if (!mAccess.equals(mTypeToTType)) {
+														if (!mAccess.equals(mTypeToTType)) {
+															if (!mAccess.equals(tType)) {
 																if (!mAccess.equals(mArray)) {
 																	if (!mAccess.equals(tValue)) {
 																		if (!mAccess.equals(mValue)) {
@@ -1788,9 +1788,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																						if (!mAccess.equals(
 																								tAnnotationValue)) {
 																							if (!mAnnotationValue
-																									.equals(tType)) {
+																									.equals(mTypeToTType)) {
 																								if (!mAnnotationValue
-																										.equals(mTypeToTType)) {
+																										.equals(tType)) {
 																									if (!mAnnotationValue
 																											.equals(mArray)) {
 																										if (!mAnnotationValue
@@ -1805,22 +1805,22 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																																.equals(mValueToTValue)) {
 																															if (!mAnnotationValue
 																																	.equals(tAnnotationValue)) {
-																																if (!tType
-																																		.equals(tValue)) {
+																																if (!mTypeToTType
+																																		.equals(tType)) {
 																																	if (!mTypeToTType
-																																			.equals(tType)) {
+																																			.equals(tValue)) {
 																																		if (!mTypeToTType
-																																				.equals(tValue)) {
+																																				.equals(mValue)) {
 																																			if (!mTypeToTType
-																																					.equals(mValue)) {
+																																					.equals(mValueToTValue)) {
 																																				if (!mTypeToTType
-																																						.equals(mValueToTValue)) {
-																																					if (!mTypeToTType
-																																							.equals(tAnnotationValue)) {
+																																						.equals(tAnnotationValue)) {
+																																					if (!tType
+																																							.equals(tValue)) {
 																																						if (!mArray
-																																								.equals(tType)) {
+																																								.equals(mTypeToTType)) {
 																																							if (!mArray
-																																									.equals(mTypeToTType)) {
+																																									.equals(tType)) {
 																																								if (!mArray
 																																										.equals(tValue)) {
 																																									if (!mArray
@@ -1842,9 +1842,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																																																	if (!mValue
 																																																			.equals(tAnnotationValue)) {
 																																																		if (!mType
-																																																				.equals(tType)) {
+																																																				.equals(mTypeToTType)) {
 																																																			if (!mType
-																																																					.equals(mTypeToTType)) {
+																																																					.equals(tType)) {
 																																																				if (!mType
 																																																						.equals(tValue)) {
 																																																					if (!mType
@@ -1860,9 +1860,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																																																										if (!annotationMemberValuePairToTAnnotationValue
 																																																												.equals(mAnnotationValue)) {
 																																																											if (!annotationMemberValuePairToTAnnotationValue
-																																																													.equals(tType)) {
+																																																													.equals(mTypeToTType)) {
 																																																												if (!annotationMemberValuePairToTAnnotationValue
-																																																														.equals(mTypeToTType)) {
+																																																														.equals(tType)) {
 																																																													if (!annotationMemberValuePairToTAnnotationValue
 																																																															.equals(mArray)) {
 																																																														if (!annotationMemberValuePairToTAnnotationValue
@@ -1878,9 +1878,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																																																																			if (!annotationMemberValuePairToTAnnotationValue
 																																																																					.equals(tAnnotationValue)) {
 																																																																				if (!mOwner
-																																																																						.equals(tType)) {
+																																																																						.equals(mTypeToTType)) {
 																																																																					if (!mOwner
-																																																																							.equals(mTypeToTType)) {
+																																																																							.equals(tType)) {
 																																																																						if (!mOwner
 																																																																								.equals(tValue)) {
 																																																																							if (!mOwner
@@ -1906,8 +1906,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																																																																																		annotation,
 																																																																																		mAccess,
 																																																																																		mAnnotationValue,
-																																																																																		tType,
 																																																																																		mTypeToTType,
+																																																																																		tType,
 																																																																																		mArray,
 																																																																																		tValue,
 																																																																																		mValue,
@@ -2065,10 +2065,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final void pattern_AnnotationMemberValueClassArray_1_5_registerobjects_expressionBBBBBBBBBBBBBBB(
 			AnnotationMemberValueClassArray _this, PerformRuleResult ruleresult, EObject annotation, EObject mAccess,
-			EObject mAnnotationValue, EObject tType, EObject mTypeToTType, EObject mArray, EObject tValue,
+			EObject mAnnotationValue, EObject mTypeToTType, EObject tType, EObject mArray, EObject tValue,
 			EObject mValue, EObject mType, EObject annotationMemberValuePairToTAnnotationValue, EObject mOwner,
 			EObject mValueToTValue, EObject tAnnotationValue) {
-		_this.registerObjects_FWD(ruleresult, annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray,
+		_this.registerObjects_FWD(ruleresult, annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray,
 				tValue, mValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner, mValueToTValue,
 				tAnnotationValue);
 
@@ -2185,7 +2185,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 						.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
 					TAbstractType tType = mTypeToTType.getTarget();
 					if (tType != null) {
-						_result.add(new Object[] { annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray,
+						_result.add(new Object[] { annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray,
 								mValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue,
 								match });
 					}
@@ -2198,9 +2198,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Iterable<Object[]> pattern_AnnotationMemberValueClassArray_2_3_findcontext_blackBBBBBBBBBBB(
-			Annotation annotation, TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue, TAbstractType tType,
-			TypeToTAbstractType mTypeToTType, ArrayInitializer mArray, TypeLiteral mValue, Type mType,
-			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
+			Annotation annotation, TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue,
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, ArrayInitializer mArray, TypeLiteral mValue,
+			Type mType, AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (mAccess.equals(mValue.getType())) {
@@ -2213,8 +2213,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 									if (mArray.getExpressions().contains(mValue)) {
 										if (mType.equals(mTypeToTType.getSource())) {
 											if (mArray.equals(mAnnotationValue.getValue())) {
-												_result.add(new Object[] { annotation, mAccess, mAnnotationValue, tType,
-														mTypeToTType, mArray, mValue, mType,
+												_result.add(new Object[] { annotation, mAccess, mAnnotationValue,
+														mTypeToTType, tType, mArray, mValue, mType,
 														annotationMemberValuePairToTAnnotationValue, mOwner,
 														tAnnotationValue });
 											}
@@ -2231,9 +2231,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_2_3_findcontext_greenBBBBBBBBBBBFFFFFFFFFFFF(
-			Annotation annotation, TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue, TAbstractType tType,
-			TypeToTAbstractType mTypeToTType, ArrayInitializer mArray, TypeLiteral mValue, Type mType,
-			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
+			Annotation annotation, TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue,
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, ArrayInitializer mArray, TypeLiteral mValue,
+			Type mType, AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge mValue__mAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2263,8 +2263,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		isApplicableMatch.getAllContextElements().add(annotation);
 		isApplicableMatch.getAllContextElements().add(mAccess);
 		isApplicableMatch.getAllContextElements().add(mAnnotationValue);
-		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType);
+		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(mArray);
 		isApplicableMatch.getAllContextElements().add(mValue);
 		isApplicableMatch.getAllContextElements().add(mType);
@@ -2321,7 +2321,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		mArray__mValue____expressions.setName(mArray__mValue____expressions_name_prime);
 		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mAnnotationValue__mArray____value.setName(mAnnotationValue__mArray____value_name_prime);
-		return new Object[] { annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray, mValue, mType,
+		return new Object[] { annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray, mValue, mType,
 				annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, isApplicableMatch,
 				mValue__mAccess____type, mAccess__mType____type, mType__mAccess____usagesInTypeAccess,
 				annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target,
@@ -2333,17 +2333,17 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_2_4_solveCSP_bindingFBBBBBBBBBBBBB(
 			AnnotationMemberValueClassArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
-			TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue, TAbstractType tType,
-			TypeToTAbstractType mTypeToTType, ArrayInitializer mArray, TypeLiteral mValue, Type mType,
+			TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType,
+			TAbstractType tType, ArrayInitializer mArray, TypeLiteral mValue, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {
 		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, annotation, mAccess, mAnnotationValue,
-				tType, mTypeToTType, mArray, mValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner,
+				mTypeToTType, tType, mArray, mValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner,
 				tAnnotationValue);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, annotation, mAccess, mAnnotationValue, tType,
-					mTypeToTType, mArray, mValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner,
+			return new Object[] { csp, _this, isApplicableMatch, annotation, mAccess, mAnnotationValue, mTypeToTType,
+					tType, mArray, mValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner,
 					tAnnotationValue };
 		}
 		return null;
@@ -2355,12 +2355,12 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBBBB(
 			AnnotationMemberValueClassArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
-			TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue, TAbstractType tType,
-			TypeToTAbstractType mTypeToTType, ArrayInitializer mArray, TypeLiteral mValue, Type mType,
+			TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType,
+			TAbstractType tType, ArrayInitializer mArray, TypeLiteral mValue, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {
 		Object[] result_pattern_AnnotationMemberValueClassArray_2_4_solveCSP_binding = pattern_AnnotationMemberValueClassArray_2_4_solveCSP_bindingFBBBBBBBBBBBBB(
-				_this, isApplicableMatch, annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray, mValue,
+				_this, isApplicableMatch, annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray, mValue,
 				mType, annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue);
 		if (result_pattern_AnnotationMemberValueClassArray_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationMemberValueClassArray_2_4_solveCSP_binding[0];
@@ -2369,8 +2369,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 					csp);
 			if (result_pattern_AnnotationMemberValueClassArray_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, annotation, mAccess, mAnnotationValue, tType,
-						mTypeToTType, mArray, mValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner,
+				return new Object[] { csp, _this, isApplicableMatch, annotation, mAccess, mAnnotationValue,
+						mTypeToTType, tType, mArray, mValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner,
 						tAnnotationValue };
 			}
 		}
@@ -2508,8 +2508,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("annotation");
 		EObject _localVariable_1 = isApplicableMatch.getObject("mAnnotationValue");
-		EObject _localVariable_2 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tType");
 		EObject _localVariable_4 = isApplicableMatch.getObject("tValue");
 		EObject _localVariable_5 = isApplicableMatch.getObject("mType");
 		EObject _localVariable_6 = isApplicableMatch.getObject("AnnotationMemberValuePairToTAnnotationValue");
@@ -2517,8 +2517,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		EObject _localVariable_8 = isApplicableMatch.getObject("tAnnotationValue");
 		EObject tmpAnnotation = _localVariable_0;
 		EObject tmpMAnnotationValue = _localVariable_1;
-		EObject tmpTType = _localVariable_2;
-		EObject tmpMTypeToTType = _localVariable_3;
+		EObject tmpMTypeToTType = _localVariable_2;
+		EObject tmpTType = _localVariable_3;
 		EObject tmpTValue = _localVariable_4;
 		EObject tmpMType = _localVariable_5;
 		EObject tmpAnnotationMemberValuePairToTAnnotationValue = _localVariable_6;
@@ -2528,10 +2528,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 			Annotation annotation = (Annotation) tmpAnnotation;
 			if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
 				AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
-				if (tmpTType instanceof TAbstractType) {
-					TAbstractType tType = (TAbstractType) tmpTType;
-					if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-						TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+				if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+					TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+					if (tmpTType instanceof TAbstractType) {
+						TAbstractType tType = (TAbstractType) tmpTType;
 						if (tmpTValue instanceof TClassNode) {
 							TClassNode tValue = (TClassNode) tmpTValue;
 							if (tmpMType instanceof Type) {
@@ -2542,7 +2542,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 										BodyDeclaration mOwner = (BodyDeclaration) tmpMOwner;
 										if (tmpTAnnotationValue instanceof TAnnotationValue) {
 											TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
-											return new Object[] { annotation, mAnnotationValue, tType, mTypeToTType,
+											return new Object[] { annotation, mAnnotationValue, mTypeToTType, tType,
 													tValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner,
 													tAnnotationValue, isApplicableMatch };
 										}
@@ -2558,15 +2558,15 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_11_1_performtransformation_blackBBBBBBBBBFBB(
-			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TAbstractType tType,
-			TypeToTAbstractType mTypeToTType, TClassNode tValue, Type mType,
+			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType,
+			TAbstractType tType, TClassNode tValue, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, AnnotationMemberValueClassArray _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { annotation, mAnnotationValue, tType, mTypeToTType, tValue, mType,
+				return new Object[] { annotation, mAnnotationValue, mTypeToTType, tType, tValue, mType,
 						annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, csp, _this,
 						isApplicableMatch };
 			}
@@ -2581,8 +2581,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		if (result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding != null) {
 			Annotation annotation = (Annotation) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding[0];
 			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding[1];
-			TAbstractType tType = (TAbstractType) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding[2];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding[3];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding[2];
+			TAbstractType tType = (TAbstractType) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding[3];
 			TClassNode tValue = (TClassNode) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding[4];
 			Type mType = (Type) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding[5];
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding[6];
@@ -2590,12 +2590,12 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_binding[8];
 
 			Object[] result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_black = pattern_AnnotationMemberValueClassArray_11_1_performtransformation_blackBBBBBBBBBFBB(
-					annotation, mAnnotationValue, tType, mTypeToTType, tValue, mType,
+					annotation, mAnnotationValue, mTypeToTType, tType, tValue, mType,
 					annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, _this, isApplicableMatch);
 			if (result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnnotationMemberValueClassArray_11_1_performtransformation_black[9];
 
-				return new Object[] { annotation, mAnnotationValue, tType, mTypeToTType, tValue, mType,
+				return new Object[] { annotation, mAnnotationValue, mTypeToTType, tType, tValue, mType,
 						annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, csp, _this,
 						isApplicableMatch };
 			}
@@ -2637,14 +2637,14 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject annotation, EObject mAccess, EObject mAnnotationValue, EObject tType,
-			EObject mTypeToTType, EObject mArray, EObject tValue, EObject mValue, EObject mType,
+			PerformRuleResult ruleresult, EObject annotation, EObject mAccess, EObject mAnnotationValue,
+			EObject mTypeToTType, EObject tType, EObject mArray, EObject tValue, EObject mValue, EObject mType,
 			EObject annotationMemberValuePairToTAnnotationValue, EObject mOwner, EObject mValueToTValue,
 			EObject tAnnotationValue) {
 		if (!annotation.equals(mAccess)) {
 			if (!annotation.equals(mAnnotationValue)) {
-				if (!annotation.equals(tType)) {
-					if (!annotation.equals(mTypeToTType)) {
+				if (!annotation.equals(mTypeToTType)) {
+					if (!annotation.equals(tType)) {
 						if (!annotation.equals(mArray)) {
 							if (!annotation.equals(tValue)) {
 								if (!annotation.equals(mValue)) {
@@ -2653,8 +2653,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 											if (!annotation.equals(mValueToTValue)) {
 												if (!annotation.equals(tAnnotationValue)) {
 													if (!mAccess.equals(mAnnotationValue)) {
-														if (!mAccess.equals(tType)) {
-															if (!mAccess.equals(mTypeToTType)) {
+														if (!mAccess.equals(mTypeToTType)) {
+															if (!mAccess.equals(tType)) {
 																if (!mAccess.equals(mArray)) {
 																	if (!mAccess.equals(tValue)) {
 																		if (!mAccess.equals(mValue)) {
@@ -2665,9 +2665,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																						if (!mAccess.equals(
 																								tAnnotationValue)) {
 																							if (!mAnnotationValue
-																									.equals(tType)) {
+																									.equals(mTypeToTType)) {
 																								if (!mAnnotationValue
-																										.equals(mTypeToTType)) {
+																										.equals(tType)) {
 																									if (!mAnnotationValue
 																											.equals(mArray)) {
 																										if (!mAnnotationValue
@@ -2682,22 +2682,22 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																																.equals(mValueToTValue)) {
 																															if (!mAnnotationValue
 																																	.equals(tAnnotationValue)) {
-																																if (!tType
-																																		.equals(tValue)) {
+																																if (!mTypeToTType
+																																		.equals(tType)) {
 																																	if (!mTypeToTType
-																																			.equals(tType)) {
+																																			.equals(tValue)) {
 																																		if (!mTypeToTType
-																																				.equals(tValue)) {
+																																				.equals(mValue)) {
 																																			if (!mTypeToTType
-																																					.equals(mValue)) {
+																																					.equals(mValueToTValue)) {
 																																				if (!mTypeToTType
-																																						.equals(mValueToTValue)) {
-																																					if (!mTypeToTType
-																																							.equals(tAnnotationValue)) {
+																																						.equals(tAnnotationValue)) {
+																																					if (!tType
+																																							.equals(tValue)) {
 																																						if (!mArray
-																																								.equals(tType)) {
+																																								.equals(mTypeToTType)) {
 																																							if (!mArray
-																																									.equals(mTypeToTType)) {
+																																									.equals(tType)) {
 																																								if (!mArray
 																																										.equals(tValue)) {
 																																									if (!mArray
@@ -2719,9 +2719,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																																																	if (!mValue
 																																																			.equals(tAnnotationValue)) {
 																																																		if (!mType
-																																																				.equals(tType)) {
+																																																				.equals(mTypeToTType)) {
 																																																			if (!mType
-																																																					.equals(mTypeToTType)) {
+																																																					.equals(tType)) {
 																																																				if (!mType
 																																																						.equals(tValue)) {
 																																																					if (!mType
@@ -2737,9 +2737,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																																																										if (!annotationMemberValuePairToTAnnotationValue
 																																																												.equals(mAnnotationValue)) {
 																																																											if (!annotationMemberValuePairToTAnnotationValue
-																																																													.equals(tType)) {
+																																																													.equals(mTypeToTType)) {
 																																																												if (!annotationMemberValuePairToTAnnotationValue
-																																																														.equals(mTypeToTType)) {
+																																																														.equals(tType)) {
 																																																													if (!annotationMemberValuePairToTAnnotationValue
 																																																															.equals(mArray)) {
 																																																														if (!annotationMemberValuePairToTAnnotationValue
@@ -2755,9 +2755,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																																																																			if (!annotationMemberValuePairToTAnnotationValue
 																																																																					.equals(tAnnotationValue)) {
 																																																																				if (!mOwner
-																																																																						.equals(tType)) {
+																																																																						.equals(mTypeToTType)) {
 																																																																					if (!mOwner
-																																																																							.equals(mTypeToTType)) {
+																																																																							.equals(tType)) {
 																																																																						if (!mOwner
 																																																																								.equals(tValue)) {
 																																																																							if (!mOwner
@@ -2783,8 +2783,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																																																																																		annotation,
 																																																																																		mAccess,
 																																																																																		mAnnotationValue,
-																																																																																		tType,
 																																																																																		mTypeToTType,
+																																																																																		tType,
 																																																																																		mArray,
 																																																																																		tValue,
 																																																																																		mValue,
@@ -2942,10 +2942,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final void pattern_AnnotationMemberValueClassArray_11_5_registerobjects_expressionBBBBBBBBBBBBBBB(
 			AnnotationMemberValueClassArray _this, PerformRuleResult ruleresult, EObject annotation, EObject mAccess,
-			EObject mAnnotationValue, EObject tType, EObject mTypeToTType, EObject mArray, EObject tValue,
+			EObject mAnnotationValue, EObject mTypeToTType, EObject tType, EObject mArray, EObject tValue,
 			EObject mValue, EObject mType, EObject annotationMemberValuePairToTAnnotationValue, EObject mOwner,
 			EObject mValueToTValue, EObject tAnnotationValue) {
-		_this.registerObjects_BWD(ruleresult, annotation, mAccess, mAnnotationValue, tType, mTypeToTType, mArray,
+		_this.registerObjects_BWD(ruleresult, annotation, mAccess, mAnnotationValue, mTypeToTType, tType, mArray,
 				tValue, mValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner, mValueToTValue,
 				tAnnotationValue);
 
@@ -3028,7 +3028,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationMemberValueClassArray_12_2_corematch_blackFBFBFFBB(
+	public static final Iterable<Object[]> pattern_AnnotationMemberValueClassArray_12_2_corematch_blackFFBBFFBB(
 			TAbstractType tType, TClassNode tValue, TAnnotationValue tAnnotationValue, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue : org.moflon.core.utilities.eMoflonEMFUtil
@@ -3040,7 +3040,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 						.getOppositeReferenceTyped(tType, TypeToTAbstractType.class, "target")) {
 					Type mType = mTypeToTType.getSource();
 					if (mType != null) {
-						_result.add(new Object[] { mAnnotationValue, tType, mTypeToTType, tValue, mType,
+						_result.add(new Object[] { mAnnotationValue, mTypeToTType, tType, tValue, mType,
 								annotationMemberValuePairToTAnnotationValue, tAnnotationValue, match });
 					}
 
@@ -3052,7 +3052,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Iterable<Object[]> pattern_AnnotationMemberValueClassArray_12_3_findcontext_blackFBBBBBBFB(
-			AnnotationMemberValuePair mAnnotationValue, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
 			TClassNode tValue, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			TAnnotationValue tAnnotationValue) {
@@ -3068,7 +3068,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 									for (BodyDeclaration mOwner : org.moflon.core.utilities.eMoflonEMFUtil
 											.getOppositeReferenceTyped(annotation, BodyDeclaration.class,
 													"annotations")) {
-										_result.add(new Object[] { annotation, mAnnotationValue, tType, mTypeToTType,
+										_result.add(new Object[] { annotation, mAnnotationValue, mTypeToTType, tType,
 												tValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner,
 												tAnnotationValue });
 									}
@@ -3083,8 +3083,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_12_3_findcontext_greenBBBBBBBBBFFFFFFFFF(
-			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TAbstractType tType,
-			TypeToTAbstractType mTypeToTType, TClassNode tValue, Type mType,
+			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType,
+			TAbstractType tType, TClassNode tValue, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
@@ -3108,8 +3108,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		String tAnnotationValue__tValue____tValue_name_prime = "tValue";
 		isApplicableMatch.getAllContextElements().add(annotation);
 		isApplicableMatch.getAllContextElements().add(mAnnotationValue);
-		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType);
+		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(tValue);
 		isApplicableMatch.getAllContextElements().add(mType);
 		isApplicableMatch.getAllContextElements().add(annotationMemberValuePairToTAnnotationValue);
@@ -3153,7 +3153,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
 		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
-		return new Object[] { annotation, mAnnotationValue, tType, mTypeToTType, tValue, mType,
+		return new Object[] { annotation, mAnnotationValue, mTypeToTType, tType, tValue, mType,
 				annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, isApplicableMatch,
 				annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target, tValue__tType____tClass,
 				annotation__mAnnotationValue____values,
@@ -3164,15 +3164,16 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_12_4_solveCSP_bindingFBBBBBBBBBBB(
 			AnnotationMemberValueClassArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
 			TClassNode tValue, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, annotation, mAnnotationValue, tType,
-				mTypeToTType, tValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue);
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, annotation, mAnnotationValue,
+				mTypeToTType, tType, tValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner,
+				tAnnotationValue);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, annotation, mAnnotationValue, tType, mTypeToTType,
+			return new Object[] { csp, _this, isApplicableMatch, annotation, mAnnotationValue, mTypeToTType, tType,
 					tValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue };
 		}
 		return null;
@@ -3184,12 +3185,12 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(
 			AnnotationMemberValueClassArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
 			TClassNode tValue, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {
 		Object[] result_pattern_AnnotationMemberValueClassArray_12_4_solveCSP_binding = pattern_AnnotationMemberValueClassArray_12_4_solveCSP_bindingFBBBBBBBBBBB(
-				_this, isApplicableMatch, annotation, mAnnotationValue, tType, mTypeToTType, tValue, mType,
+				_this, isApplicableMatch, annotation, mAnnotationValue, mTypeToTType, tType, tValue, mType,
 				annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue);
 		if (result_pattern_AnnotationMemberValueClassArray_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationMemberValueClassArray_12_4_solveCSP_binding[0];
@@ -3198,7 +3199,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 					csp);
 			if (result_pattern_AnnotationMemberValueClassArray_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, annotation, mAnnotationValue, tType, mTypeToTType,
+				return new Object[] { csp, _this, isApplicableMatch, annotation, mAnnotationValue, mTypeToTType, tType,
 						tValue, mType, annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue };
 			}
 		}
@@ -3412,10 +3413,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_0BBB(
 			TypeAccess mAccess, Type mType, BodyDeclaration mOwner) {
-		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_772676 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_997741 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mAccess_superInterfaces_772676)) {
-				if (!mOwner.equals(__DEC_mAccess_superInterfaces_772676)) {
+			if (!mType.equals(__DEC_mAccess_superInterfaces_997741)) {
+				if (!mOwner.equals(__DEC_mAccess_superInterfaces_997741)) {
 					return new Object[] { mAccess, mType, mOwner };
 				}
 			}
@@ -3425,9 +3426,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_1BB(
 			TypeAccess mAccess, Annotation annotation) {
-		for (Annotation __DEC_mAccess_type_516884 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mAccess_type_321664 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, Annotation.class, "type")) {
-			if (!annotation.equals(__DEC_mAccess_type_516884)) {
+			if (!annotation.equals(__DEC_mAccess_type_321664)) {
 				return new Object[] { mAccess, annotation };
 			}
 		}
@@ -3436,9 +3437,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_2BB(
 			TypeAccess mAccess, Type mType) {
-		for (ArrayType __DEC_mAccess_elementType_240646 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mAccess_elementType_267145 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ArrayType.class, "elementType")) {
-			if (!mType.equals(__DEC_mAccess_elementType_240646)) {
+			if (!mType.equals(__DEC_mAccess_elementType_267145)) {
 				return new Object[] { mAccess, mType };
 			}
 		}
@@ -3447,7 +3448,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess mAccess) {
-		for (ClassInstanceCreation __DEC_mAccess_type_813769 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mAccess_type_57667 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3456,10 +3457,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_4BBB(
 			TypeAccess mAccess, Type mType, BodyDeclaration mOwner) {
-		for (ClassDeclaration __DEC_mAccess_superClass_660071 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mAccess_superClass_687888 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mAccess_superClass_660071)) {
-				if (!mOwner.equals(__DEC_mAccess_superClass_660071)) {
+			if (!mType.equals(__DEC_mAccess_superClass_687888)) {
+				if (!mOwner.equals(__DEC_mAccess_superClass_687888)) {
 					return new Object[] { mAccess, mType, mOwner };
 				}
 			}
@@ -3469,9 +3470,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_5BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (MethodDeclaration __DEC_mAccess_returnType_38560 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mAccess_returnType_7939 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, MethodDeclaration.class, "returnType")) {
-			if (!mOwner.equals(__DEC_mAccess_returnType_38560)) {
+			if (!mOwner.equals(__DEC_mAccess_returnType_7939)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -3480,9 +3481,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_6BB(
 			TypeAccess mAccess, Type mType) {
-		for (ParameterizedType __DEC_mAccess_type_292042 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mAccess_type_902235 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mAccess_type_292042)) {
+			if (!mType.equals(__DEC_mAccess_type_902235)) {
 				return new Object[] { mAccess, mType };
 			}
 		}
@@ -3491,9 +3492,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_7BB(
 			TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_997789 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_115926 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mAccess_value_997789)) {
+			if (!mAnnotationValue.equals(__DEC_mAccess_value_115926)) {
 				return new Object[] { mAccess, mAnnotationValue };
 			}
 		}
@@ -3502,9 +3503,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_8BB(
 			TypeLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_704395 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_740794 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_704395)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_740794)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -3818,7 +3819,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationMemberValueClassArray_24_5_matchcorrcontext_blackBBFBFBBB(
+	public static final Iterable<Object[]> pattern_AnnotationMemberValueClassArray_24_5_matchcorrcontext_blackBFBBFBBB(
 			AnnotationMemberValuePair mAnnotationValue, TAbstractType tType, Type mType,
 			TAnnotationValue tAnnotationValue, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -3830,7 +3831,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 					for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(tType, TypeToTAbstractType.class, "target")) {
 						if (mType.equals(mTypeToTType.getSource())) {
-							_result.add(new Object[] { mAnnotationValue, tType, mTypeToTType, mType,
+							_result.add(new Object[] { mAnnotationValue, mTypeToTType, tType, mType,
 									annotationMemberValuePairToTAnnotationValue, tAnnotationValue, sourceMatch,
 									targetMatch });
 						}
@@ -3896,10 +3897,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_0BBB(
 			TypeAccess mAccess, Type mType, BodyDeclaration mOwner) {
-		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_621564 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_62662 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mAccess_superInterfaces_621564)) {
-				if (!mOwner.equals(__DEC_mAccess_superInterfaces_621564)) {
+			if (!mType.equals(__DEC_mAccess_superInterfaces_62662)) {
+				if (!mOwner.equals(__DEC_mAccess_superInterfaces_62662)) {
 					return new Object[] { mAccess, mType, mOwner };
 				}
 			}
@@ -3909,9 +3910,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_1BB(
 			TypeAccess mAccess, Annotation annotation) {
-		for (Annotation __DEC_mAccess_type_941607 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mAccess_type_886796 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, Annotation.class, "type")) {
-			if (!annotation.equals(__DEC_mAccess_type_941607)) {
+			if (!annotation.equals(__DEC_mAccess_type_886796)) {
 				return new Object[] { mAccess, annotation };
 			}
 		}
@@ -3920,9 +3921,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_2BB(
 			TypeAccess mAccess, Type mType) {
-		for (ArrayType __DEC_mAccess_elementType_932077 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mAccess_elementType_487187 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ArrayType.class, "elementType")) {
-			if (!mType.equals(__DEC_mAccess_elementType_932077)) {
+			if (!mType.equals(__DEC_mAccess_elementType_487187)) {
 				return new Object[] { mAccess, mType };
 			}
 		}
@@ -3931,7 +3932,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_3B(
 			TypeAccess mAccess) {
-		for (ClassInstanceCreation __DEC_mAccess_type_633051 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mAccess_type_535404 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3940,10 +3941,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_4BBB(
 			TypeAccess mAccess, Type mType, BodyDeclaration mOwner) {
-		for (ClassDeclaration __DEC_mAccess_superClass_375972 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mAccess_superClass_123509 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mAccess_superClass_375972)) {
-				if (!mOwner.equals(__DEC_mAccess_superClass_375972)) {
+			if (!mType.equals(__DEC_mAccess_superClass_123509)) {
+				if (!mOwner.equals(__DEC_mAccess_superClass_123509)) {
 					return new Object[] { mAccess, mType, mOwner };
 				}
 			}
@@ -3953,9 +3954,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_5BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (MethodDeclaration __DEC_mAccess_returnType_604066 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mAccess_returnType_922744 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, MethodDeclaration.class, "returnType")) {
-			if (!mOwner.equals(__DEC_mAccess_returnType_604066)) {
+			if (!mOwner.equals(__DEC_mAccess_returnType_922744)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -3964,9 +3965,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_6BB(
 			TypeAccess mAccess, Type mType) {
-		for (ParameterizedType __DEC_mAccess_type_274633 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mAccess_type_185990 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mAccess_type_274633)) {
+			if (!mType.equals(__DEC_mAccess_type_185990)) {
 				return new Object[] { mAccess, mType };
 			}
 		}
@@ -3975,9 +3976,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_7BB(
 			TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_47162 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_444232 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mAccess_value_47162)) {
+			if (!mAnnotationValue.equals(__DEC_mAccess_value_444232)) {
 				return new Object[] { mAccess, mAnnotationValue };
 			}
 		}
@@ -3986,9 +3987,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_8BB(
 			TypeLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_1000 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_248238 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_1000)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_248238)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -4161,17 +4162,17 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, TAbstractType tType) {
-		if (ruleResult.getTargetObjects().contains(tType)) {
-			return new Object[] { ruleResult, tType };
+			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mTypeToTType) {
+		if (ruleResult.getCorrObjects().contains(mTypeToTType)) {
+			return new Object[] { ruleResult, mTypeToTType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_6BB(
-			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mTypeToTType) {
-		if (ruleResult.getCorrObjects().contains(mTypeToTType)) {
-			return new Object[] { ruleResult, mTypeToTType };
+			ModelgeneratorRuleResult ruleResult, TAbstractType tType) {
+		if (ruleResult.getTargetObjects().contains(tType)) {
+			return new Object[] { ruleResult, tType };
 		}
 		return null;
 	}
@@ -4213,9 +4214,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 														if (tType != null) {
 															Type mType = mTypeToTType.getSource();
 															if (mType != null) {
-																if (pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_6BB(
+																if (pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_5BB(
 																		ruleResult, mTypeToTType) == null) {
-																	if (pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_5BB(
+																	if (pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_6BB(
 																			ruleResult, tType) == null) {
 																		if (pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_7BB(
 																				ruleResult, mType) == null) {
@@ -4243,7 +4244,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																									tAnnotationValue,
 																									mOwner,
 																									mTypeToTTypeList,
-																									tType, mTypeToTType,
+																									mTypeToTType, tType,
 																									mType,
 																									ruleEntryContainer,
 																									ruleResult });
@@ -4277,14 +4278,15 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_29_3_solveCSP_bindingFBBBBBBBBBBB(
 			AnnotationMemberValueClassArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
 			Type mType, AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, annotation, mAnnotationValue, tType,
-				mTypeToTType, mType, annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, annotation, mAnnotationValue,
+				mTypeToTType, tType, mType, annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue,
+				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, annotation, mAnnotationValue, tType, mTypeToTType,
+			return new Object[] { csp, _this, isApplicableMatch, annotation, mAnnotationValue, mTypeToTType, tType,
 					mType, annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, ruleResult };
 		}
 		return null;
@@ -4296,11 +4298,11 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBB(
 			AnnotationMemberValueClassArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
 			Type mType, AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_AnnotationMemberValueClassArray_29_3_solveCSP_binding = pattern_AnnotationMemberValueClassArray_29_3_solveCSP_bindingFBBBBBBBBBBB(
-				_this, isApplicableMatch, annotation, mAnnotationValue, tType, mTypeToTType, mType,
+				_this, isApplicableMatch, annotation, mAnnotationValue, mTypeToTType, tType, mType,
 				annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, ruleResult);
 		if (result_pattern_AnnotationMemberValueClassArray_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationMemberValueClassArray_29_3_solveCSP_binding[0];
@@ -4309,7 +4311,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 					csp);
 			if (result_pattern_AnnotationMemberValueClassArray_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, annotation, mAnnotationValue, tType, mTypeToTType,
+				return new Object[] { csp, _this, isApplicableMatch, annotation, mAnnotationValue, mTypeToTType, tType,
 						mType, annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, ruleResult };
 			}
 		}
@@ -4324,20 +4326,20 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_29_5_checknacs_blackBBBBBBBB(
-			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TAbstractType tType,
-			TypeToTAbstractType mTypeToTType, Type mType,
+			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType,
+			TAbstractType tType, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {
-		return new Object[] { annotation, mAnnotationValue, tType, mTypeToTType, mType,
+		return new Object[] { annotation, mAnnotationValue, mTypeToTType, tType, mType,
 				annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue };
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_29_6_perform_blackBBBBBBBBB(
-			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TAbstractType tType,
-			TypeToTAbstractType mTypeToTType, Type mType,
+			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType,
+			TAbstractType tType, Type mType,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { annotation, mAnnotationValue, tType, mTypeToTType, mType,
+		return new Object[] { annotation, mAnnotationValue, mTypeToTType, tType, mType,
 				annotationMemberValuePairToTAnnotationValue, mOwner, tAnnotationValue, ruleResult };
 	}
 

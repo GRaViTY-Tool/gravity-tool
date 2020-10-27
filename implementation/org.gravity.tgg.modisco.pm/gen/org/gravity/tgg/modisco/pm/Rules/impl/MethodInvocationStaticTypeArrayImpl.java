@@ -782,7 +782,7 @@ public class MethodInvocationStaticTypeArrayImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_119(EMoflonEdge _edge_staticType) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_43(EMoflonEdge _edge_staticType) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationStaticTypeArrayImpl
 				.pattern_MethodInvocationStaticTypeArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -841,7 +841,7 @@ public class MethodInvocationStaticTypeArrayImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_121(EMoflonEdge _edge_mStaticType) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_44(EMoflonEdge _edge_mStaticType) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationStaticTypeArrayImpl
 				.pattern_MethodInvocationStaticTypeArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1131,10 +1131,10 @@ public class MethodInvocationStaticTypeArrayImpl extends AbstractRuleImpl implem
 						ruleResult)) {
 			//nothing RuleEntryList mStaticTypeTotStaticTypeList = (RuleEntryList) result2_black[0];
 			Type arrayType = (Type) result2_black[1];
-			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result2_black[2];
-			TAbstractType tStaticType = (TAbstractType) result2_black[3];
-			TypeAccess typeAccess = (TypeAccess) result2_black[4];
-			ArrayType mStaticType = (ArrayType) result2_black[5];
+			TypeAccess typeAccess = (TypeAccess) result2_black[2];
+			ArrayType mStaticType = (ArrayType) result2_black[3];
+			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result2_black[4];
+			TAbstractType tStaticType = (TAbstractType) result2_black[5];
 			//nothing RuleEntryList invocationToTAccessList = (RuleEntryList) result2_black[6];
 			MMethodInvocation invocation = (MMethodInvocation) result2_black[7];
 			MAbstractMethodDefinition method = (MAbstractMethodDefinition) result2_black[8];
@@ -1311,10 +1311,10 @@ public class MethodInvocationStaticTypeArrayImpl extends AbstractRuleImpl implem
 			return null;
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE_ARRAY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_119__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_119((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_121__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_121((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_43__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_43((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_44__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_44((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3162,22 +3162,6 @@ public class MethodInvocationStaticTypeArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mStaticTypeTotStaticType) {
-		if (ruleResult.getCorrObjects().contains(mStaticTypeTotStaticType)) {
-			return new Object[] { ruleResult, mStaticTypeTotStaticType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TAbstractType tStaticType) {
-		if (ruleResult.getTargetObjects().contains(tStaticType)) {
-			return new Object[] { ruleResult, tStaticType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, TypeAccess typeAccess) {
 		if (ruleResult.getSourceObjects().contains(typeAccess)) {
 			return new Object[] { ruleResult, typeAccess };
@@ -3185,10 +3169,26 @@ public class MethodInvocationStaticTypeArrayImpl extends AbstractRuleImpl implem
 		return null;
 	}
 
-	public static final Object[] pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_4BB(
+	public static final Object[] pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, ArrayType mStaticType) {
 		if (ruleResult.getSourceObjects().contains(mStaticType)) {
 			return new Object[] { ruleResult, mStaticType };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mStaticTypeTotStaticType) {
+		if (ruleResult.getCorrObjects().contains(mStaticTypeTotStaticType)) {
+			return new Object[] { ruleResult, mStaticTypeTotStaticType };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, TAbstractType tStaticType) {
+		if (ruleResult.getTargetObjects().contains(tStaticType)) {
+			return new Object[] { ruleResult, tStaticType };
 		}
 		return null;
 	}
@@ -3238,11 +3238,11 @@ public class MethodInvocationStaticTypeArrayImpl extends AbstractRuleImpl implem
 							if (arrayType != null) {
 								TAbstractType tStaticType = mStaticTypeTotStaticType.getTarget();
 								if (tStaticType != null) {
-									if (pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_1BB(
+									if (pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_3BB(
 											ruleResult, mStaticTypeTotStaticType) == null) {
 										if (pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_0BB(
 												ruleResult, arrayType) == null) {
-											if (pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_2BB(
+											if (pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_4BB(
 													ruleResult, tStaticType) == null) {
 												for (EObject tmpInvocationToTAccess : invocationToTAccessList
 														.getEntryObjects()) {
@@ -3269,7 +3269,7 @@ public class MethodInvocationStaticTypeArrayImpl extends AbstractRuleImpl implem
 																						ruleResult, method) == null) {
 																					for (TypeAccess typeAccess : arrayType
 																							.getUsagesInTypeAccess()) {
-																						if (pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_3BB(
+																						if (pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_1BB(
 																								ruleResult,
 																								typeAccess) == null) {
 																							for (ArrayType mStaticType : org.moflon.core.utilities.eMoflonEMFUtil
@@ -3279,17 +3279,17 @@ public class MethodInvocationStaticTypeArrayImpl extends AbstractRuleImpl implem
 																											"elementType")) {
 																								if (!arrayType.equals(
 																										mStaticType)) {
-																									if (pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_4BB(
+																									if (pattern_MethodInvocationStaticTypeArray_29_2_isapplicablecore_black_nac_2BB(
 																											ruleResult,
 																											mStaticType) == null) {
 																										_result.add(
 																												new Object[] {
 																														mStaticTypeTotStaticTypeList,
 																														arrayType,
-																														mStaticTypeTotStaticType,
-																														tStaticType,
 																														typeAccess,
 																														mStaticType,
+																														mStaticTypeTotStaticType,
+																														tStaticType,
 																														invocationToTAccessList,
 																														invocation,
 																														method,

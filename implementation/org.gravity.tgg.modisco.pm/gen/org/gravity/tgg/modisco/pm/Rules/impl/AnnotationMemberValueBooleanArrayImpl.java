@@ -223,8 +223,8 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 						mAnnotationValue, mArray, tValue, mValueToTValue, mValue, tAnnotationValue);
 		//nothing EMoflonEdge mValueToTValue__mValue____source = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge mArray__mValue____expressions = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mValueToTValue__tValue____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mValueToTValue__tValue____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge mAnnotationValue__mArray____value = (EMoflonEdge) result3_green[11];
 
 		// 
@@ -582,8 +582,8 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 						mAnnotationValue, mArray, tValue, mValueToTValue, mValue, tAnnotationValue);
 		//nothing EMoflonEdge mValueToTValue__mValue____source = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge mArray__mValue____expressions = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mValueToTValue__tValue____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mValueToTValue__tValue____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge mAnnotationValue__mArray____value = (EMoflonEdge) result3_green[11];
 
 		// 
@@ -810,7 +810,7 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_164(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_61(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueBooleanArrayImpl
 				.pattern_AnnotationMemberValueBooleanArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -870,7 +870,7 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_168(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_63(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueBooleanArrayImpl
 				.pattern_AnnotationMemberValueBooleanArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1391,10 +1391,10 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_164__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_164((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_168__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_168((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_61__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_61((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_63__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_63((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1780,14 +1780,14 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 			EObject mValueToTValue, EObject mValue, EObject tAnnotationValue) {
 		EMoflonEdge mValueToTValue__mValue____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mArray__mValue____expressions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mValueToTValue__tValue____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnnotationValue__mArray____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationMemberValueBooleanArray";
 		String mValueToTValue__mValue____source_name_prime = "source";
 		String mArray__mValue____expressions_name_prime = "expressions";
-		String tAnnotationValue__tValue____tValue_name_prime = "tValue";
 		String mValueToTValue__tValue____target_name_prime = "target";
+		String tAnnotationValue__tValue____tValue_name_prime = "tValue";
 		String mAnnotationValue__mArray____value_name_prime = "value";
 		mValueToTValue__mValue____source.setSrc(mValueToTValue);
 		mValueToTValue__mValue____source.setTrg(mValue);
@@ -1795,24 +1795,24 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 		mArray__mValue____expressions.setSrc(mArray);
 		mArray__mValue____expressions.setTrg(mValue);
 		ruleresult.getTranslatedEdges().add(mArray__mValue____expressions);
-		tAnnotationValue__tValue____tValue.setSrc(tAnnotationValue);
-		tAnnotationValue__tValue____tValue.setTrg(tValue);
-		ruleresult.getCreatedEdges().add(tAnnotationValue__tValue____tValue);
 		mValueToTValue__tValue____target.setSrc(mValueToTValue);
 		mValueToTValue__tValue____target.setTrg(tValue);
 		ruleresult.getCreatedEdges().add(mValueToTValue__tValue____target);
+		tAnnotationValue__tValue____tValue.setSrc(tAnnotationValue);
+		tAnnotationValue__tValue____tValue.setTrg(tValue);
+		ruleresult.getCreatedEdges().add(tAnnotationValue__tValue____tValue);
 		mAnnotationValue__mArray____value.setSrc(mAnnotationValue);
 		mAnnotationValue__mArray____value.setTrg(mArray);
 		ruleresult.getTranslatedEdges().add(mAnnotationValue__mArray____value);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mValueToTValue__mValue____source.setName(mValueToTValue__mValue____source_name_prime);
 		mArray__mValue____expressions.setName(mArray__mValue____expressions_name_prime);
-		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
 		mValueToTValue__tValue____target.setName(mValueToTValue__tValue____target_name_prime);
+		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
 		mAnnotationValue__mArray____value.setName(mAnnotationValue__mArray____value_name_prime);
 		return new Object[] { ruleresult, mAnnotationValue, mArray, tValue, mValueToTValue, mValue, tAnnotationValue,
-				mValueToTValue__mValue____source, mArray__mValue____expressions, tAnnotationValue__tValue____tValue,
-				mValueToTValue__tValue____target, mAnnotationValue__mArray____value };
+				mValueToTValue__mValue____source, mArray__mValue____expressions, mValueToTValue__tValue____target,
+				tAnnotationValue__tValue____tValue, mAnnotationValue__mArray____value };
 	}
 
 	public static final void pattern_AnnotationMemberValueBooleanArray_1_5_registerobjects_expressionBBBBBBBBBBB(
@@ -2401,14 +2401,14 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 			EObject mValueToTValue, EObject mValue, EObject tAnnotationValue) {
 		EMoflonEdge mValueToTValue__mValue____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mArray__mValue____expressions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mValueToTValue__tValue____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnnotationValue__mArray____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationMemberValueBooleanArray";
 		String mValueToTValue__mValue____source_name_prime = "source";
 		String mArray__mValue____expressions_name_prime = "expressions";
-		String tAnnotationValue__tValue____tValue_name_prime = "tValue";
 		String mValueToTValue__tValue____target_name_prime = "target";
+		String tAnnotationValue__tValue____tValue_name_prime = "tValue";
 		String mAnnotationValue__mArray____value_name_prime = "value";
 		mValueToTValue__mValue____source.setSrc(mValueToTValue);
 		mValueToTValue__mValue____source.setTrg(mValue);
@@ -2416,24 +2416,24 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 		mArray__mValue____expressions.setSrc(mArray);
 		mArray__mValue____expressions.setTrg(mValue);
 		ruleresult.getCreatedEdges().add(mArray__mValue____expressions);
-		tAnnotationValue__tValue____tValue.setSrc(tAnnotationValue);
-		tAnnotationValue__tValue____tValue.setTrg(tValue);
-		ruleresult.getTranslatedEdges().add(tAnnotationValue__tValue____tValue);
 		mValueToTValue__tValue____target.setSrc(mValueToTValue);
 		mValueToTValue__tValue____target.setTrg(tValue);
 		ruleresult.getCreatedEdges().add(mValueToTValue__tValue____target);
+		tAnnotationValue__tValue____tValue.setSrc(tAnnotationValue);
+		tAnnotationValue__tValue____tValue.setTrg(tValue);
+		ruleresult.getTranslatedEdges().add(tAnnotationValue__tValue____tValue);
 		mAnnotationValue__mArray____value.setSrc(mAnnotationValue);
 		mAnnotationValue__mArray____value.setTrg(mArray);
 		ruleresult.getCreatedEdges().add(mAnnotationValue__mArray____value);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mValueToTValue__mValue____source.setName(mValueToTValue__mValue____source_name_prime);
 		mArray__mValue____expressions.setName(mArray__mValue____expressions_name_prime);
-		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
 		mValueToTValue__tValue____target.setName(mValueToTValue__tValue____target_name_prime);
+		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
 		mAnnotationValue__mArray____value.setName(mAnnotationValue__mArray____value_name_prime);
 		return new Object[] { ruleresult, mAnnotationValue, mArray, tValue, mValueToTValue, mValue, tAnnotationValue,
-				mValueToTValue__mValue____source, mArray__mValue____expressions, tAnnotationValue__tValue____tValue,
-				mValueToTValue__tValue____target, mAnnotationValue__mArray____value };
+				mValueToTValue__mValue____source, mArray__mValue____expressions, mValueToTValue__tValue____target,
+				tAnnotationValue__tValue____tValue, mAnnotationValue__mArray____value };
 	}
 
 	public static final void pattern_AnnotationMemberValueBooleanArray_11_5_registerobjects_expressionBBBBBBBBBBB(
@@ -2857,9 +2857,9 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueBooleanArray_21_2_testcorematchandDECs_black_nac_0BB(
 			BooleanLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_745527 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_849674 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_745527)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_849674)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -3159,9 +3159,9 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueBooleanArray_27_1_matchtggpattern_black_nac_0BB(
 			BooleanLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_989079 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_954013 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_989079)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_954013)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}

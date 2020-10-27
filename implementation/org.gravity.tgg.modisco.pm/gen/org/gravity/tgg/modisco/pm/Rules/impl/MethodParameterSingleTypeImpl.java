@@ -278,8 +278,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 						.pattern_MethodParameterSingleType_2_3_findcontext_greenBBBBBBBFFFFFFF(tSiganture,
 								mTypeToTAbstractType, tAbstractType, mEntry, mSignatureToTSignature, mType, mSignature);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge mEntry__mType____type = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mEntry__mType____type = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge mSignatureToTSignature__tSiganture____target = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge mTypeToTAbstractType__tAbstractType____target = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge mTypeToTAbstractType__mType____source = (EMoflonEdge) result3_green[12];
@@ -780,7 +780,7 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_118(EMoflonEdge _edge_parameters) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_45(EMoflonEdge _edge_parameters) {
 
 		Object[] result1_bindingAndBlack = MethodParameterSingleTypeImpl
 				.pattern_MethodParameterSingleType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -839,7 +839,7 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_120(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_46(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = MethodParameterSingleTypeImpl
 				.pattern_MethodParameterSingleType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1126,8 +1126,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 			MMethodSignature mSignature = (MMethodSignature) result2_black[3];
 			//nothing RuleEntryList mTypeToTAbstractTypeList = (RuleEntryList) result2_black[4];
 			TypeToTAbstractType mTypeToTAbstractType = (TypeToTAbstractType) result2_black[5];
-			TAbstractType tAbstractType = (TAbstractType) result2_black[6];
-			Type mType = (Type) result2_black[7];
+			Type mType = (Type) result2_black[6];
+			TAbstractType tAbstractType = (TAbstractType) result2_black[7];
 
 			Object[] result3_bindingAndBlack = MethodParameterSingleTypeImpl
 					.pattern_MethodParameterSingleType_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
@@ -1290,10 +1290,10 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 			return null;
 		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_118__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_118((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_120__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_120((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_45__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_45((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_46__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_46((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1850,8 +1850,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 			TMethodSignature tSiganture, TypeToTAbstractType mTypeToTAbstractType, TAbstractType tAbstractType,
 			MEntry mEntry, MSignatureToTSignature mSignatureToTSignature, Type mType, MMethodSignature mSignature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mType.equals(mEntry.getType())) {
-			if (mSignature.equals(mSignatureToTSignature.getSource())) {
+		if (mSignature.equals(mSignatureToTSignature.getSource())) {
+			if (mType.equals(mEntry.getType())) {
 				if (tSiganture.equals(mSignatureToTSignature.getTarget())) {
 					if (tAbstractType.equals(mTypeToTAbstractType.getTarget())) {
 						if (mType.equals(mTypeToTAbstractType.getSource())) {
@@ -1871,14 +1871,14 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 			TMethodSignature tSiganture, TypeToTAbstractType mTypeToTAbstractType, TAbstractType tAbstractType,
 			MEntry mEntry, MSignatureToTSignature mSignatureToTSignature, Type mType, MMethodSignature mSignature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mEntry__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mEntry__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignatureToTSignature__tSiganture____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTAbstractType__tAbstractType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTAbstractType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mEntry____mEntrys = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mEntry__mType____type_name_prime = "type";
 		String mSignatureToTSignature__mSignature____source_name_prime = "source";
+		String mEntry__mType____type_name_prime = "type";
 		String mSignatureToTSignature__tSiganture____target_name_prime = "target";
 		String mTypeToTAbstractType__tAbstractType____target_name_prime = "target";
 		String mTypeToTAbstractType__mType____source_name_prime = "source";
@@ -1890,12 +1890,12 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature);
 		isApplicableMatch.getAllContextElements().add(mType);
 		isApplicableMatch.getAllContextElements().add(mSignature);
-		mEntry__mType____type.setSrc(mEntry);
-		mEntry__mType____type.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(mEntry__mType____type);
 		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
 		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__mSignature____source);
+		mEntry__mType____type.setSrc(mEntry);
+		mEntry__mType____type.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mEntry__mType____type);
 		mSignatureToTSignature__tSiganture____target.setSrc(mSignatureToTSignature);
 		mSignatureToTSignature__tSiganture____target.setTrg(tSiganture);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__tSiganture____target);
@@ -1908,14 +1908,14 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		mSignature__mEntry____mEntrys.setSrc(mSignature);
 		mSignature__mEntry____mEntrys.setTrg(mEntry);
 		isApplicableMatch.getAllContextElements().add(mSignature__mEntry____mEntrys);
-		mEntry__mType____type.setName(mEntry__mType____type_name_prime);
 		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
+		mEntry__mType____type.setName(mEntry__mType____type_name_prime);
 		mSignatureToTSignature__tSiganture____target.setName(mSignatureToTSignature__tSiganture____target_name_prime);
 		mTypeToTAbstractType__tAbstractType____target.setName(mTypeToTAbstractType__tAbstractType____target_name_prime);
 		mTypeToTAbstractType__mType____source.setName(mTypeToTAbstractType__mType____source_name_prime);
 		mSignature__mEntry____mEntrys.setName(mSignature__mEntry____mEntrys_name_prime);
 		return new Object[] { tSiganture, mTypeToTAbstractType, tAbstractType, mEntry, mSignatureToTSignature, mType,
-				mSignature, isApplicableMatch, mEntry__mType____type, mSignatureToTSignature__mSignature____source,
+				mSignature, isApplicableMatch, mSignatureToTSignature__mSignature____source, mEntry__mType____type,
 				mSignatureToTSignature__tSiganture____target, mTypeToTAbstractType__tAbstractType____target,
 				mTypeToTAbstractType__mType____source, mSignature__mEntry____mEntrys };
 	}
@@ -3185,17 +3185,17 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodParameterSingleType_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, TAbstractType tAbstractType) {
-		if (ruleResult.getTargetObjects().contains(tAbstractType)) {
-			return new Object[] { ruleResult, tAbstractType };
+			ModelgeneratorRuleResult ruleResult, Type mType) {
+		if (ruleResult.getSourceObjects().contains(mType)) {
+			return new Object[] { ruleResult, mType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodParameterSingleType_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, Type mType) {
-		if (ruleResult.getSourceObjects().contains(mType)) {
-			return new Object[] { ruleResult, mType };
+			ModelgeneratorRuleResult ruleResult, TAbstractType tAbstractType) {
+		if (ruleResult.getTargetObjects().contains(tAbstractType)) {
+			return new Object[] { ruleResult, tAbstractType };
 		}
 		return null;
 	}
@@ -3225,23 +3225,24 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 														.getEntryObjects()) {
 													if (tmpMTypeToTAbstractType instanceof TypeToTAbstractType) {
 														TypeToTAbstractType mTypeToTAbstractType = (TypeToTAbstractType) tmpMTypeToTAbstractType;
-														TAbstractType tAbstractType = mTypeToTAbstractType.getTarget();
-														if (tAbstractType != null) {
-															Type mType = mTypeToTAbstractType.getSource();
-															if (mType != null) {
+														Type mType = mTypeToTAbstractType.getSource();
+														if (mType != null) {
+															TAbstractType tAbstractType = mTypeToTAbstractType
+																	.getTarget();
+															if (tAbstractType != null) {
 																if (pattern_MethodParameterSingleType_29_2_isapplicablecore_black_nac_3BB(
 																		ruleResult, mTypeToTAbstractType) == null) {
 																	if (pattern_MethodParameterSingleType_29_2_isapplicablecore_black_nac_4BB(
-																			ruleResult, tAbstractType) == null) {
+																			ruleResult, mType) == null) {
 																		if (pattern_MethodParameterSingleType_29_2_isapplicablecore_black_nac_5BB(
-																				ruleResult, mType) == null) {
+																				ruleResult, tAbstractType) == null) {
 																			_result.add(new Object[] {
 																					mSignatureToTSignatureList,
 																					tSiganture, mSignatureToTSignature,
 																					mSignature,
 																					mTypeToTAbstractTypeList,
-																					mTypeToTAbstractType, tAbstractType,
-																					mType, ruleEntryContainer,
+																					mTypeToTAbstractType, mType,
+																					tAbstractType, ruleEntryContainer,
 																					ruleResult });
 																		}
 																	}

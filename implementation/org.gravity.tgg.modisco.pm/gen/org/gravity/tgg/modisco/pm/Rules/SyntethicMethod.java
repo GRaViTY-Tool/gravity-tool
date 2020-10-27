@@ -51,8 +51,8 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, ClassDeclaration mClass, MSyntheticMethodDefinition mSyntethic,
-			MMethodDefinition mDef);
+	boolean isAppropriate_FWD(Match match, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic,
+			ClassDeclaration mClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,8 +76,8 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, ClassDeclaration mClass, MSyntheticMethodDefinition mSyntethic,
-			MMethodDefinition mDef);
+	void registerObjectsToMatch_FWD(Match match, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic,
+			ClassDeclaration mClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,8 +85,8 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, ClassDeclaration mClass, MSyntheticMethodDefinition mSyntethic,
-			MMethodDefinition mDef);
+	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic,
+			ClassDeclaration mClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,10 +102,10 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMethodDefinition tDef, ClassDeclaration mClass,
-			TClass tClass, MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef,
-			MDefinitionToTMember mDefinitionToTMember, TMethodSignature tSig,
-			ClassDeclarationToTClass mClassDeclarationToTClass);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic, TMethodSignature tSig,
+			ClassDeclarationToTClass mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TMethodDefinition tDef, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,9 +121,9 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tDef, EObject tSyntethic, EObject mSyntToTSynt,
-			EObject mClass, EObject tClass, EObject mSyntethic, EObject mDef, EObject mDefinitionToTMember,
-			EObject tSig, EObject mClassDeclarationToTClass);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tSyntethic, EObject mDef, EObject mSyntethic,
+			EObject tSig, EObject mClassDeclarationToTClass, EObject mClass, EObject mDefinitionToTMember, EObject tDef,
+			EObject mSyntToTSynt, EObject tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,8 +139,8 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass,
-			TMethodSignature tSig);
+	boolean isAppropriate_BWD(Match match, TSyntethicMethod tSyntethic, TMethodSignature tSig, TMethodDefinition tDef,
+			TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,8 +164,8 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass,
-			TMethodSignature tSig);
+	void registerObjectsToMatch_BWD(Match match, TSyntethicMethod tSyntethic, TMethodSignature tSig,
+			TMethodDefinition tDef, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,8 +173,8 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass,
-			TMethodSignature tSig);
+	CSP isAppropriate_solveCsp_BWD(Match match, TSyntethicMethod tSyntethic, TMethodSignature tSig,
+			TMethodDefinition tDef, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,10 +190,9 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethodDefinition tDef,
-			TSyntethicMethod tSyntethic, ClassDeclaration mClass, TClass tClass, MMethodDefinition mDef,
-			MDefinitionToTMember mDefinitionToTMember, TMethodSignature tSig,
-			ClassDeclarationToTClass mClassDeclarationToTClass);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TSyntethicMethod tSyntethic,
+			MMethodDefinition mDef, TMethodSignature tSig, ClassDeclarationToTClass mClassDeclarationToTClass,
+			ClassDeclaration mClass, MDefinitionToTMember mDefinitionToTMember, TMethodDefinition tDef, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,9 +208,9 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tDef, EObject tSyntethic, EObject mSyntToTSynt,
-			EObject mClass, EObject tClass, EObject mSyntethic, EObject mDef, EObject mDefinitionToTMember,
-			EObject tSig, EObject mClassDeclarationToTClass);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tSyntethic, EObject mDef, EObject mSyntethic,
+			EObject tSig, EObject mClassDeclarationToTClass, EObject mClass, EObject mDefinitionToTMember, EObject tDef,
+			EObject mSyntToTSynt, EObject tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +226,7 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_163(EMoflonEdge _edge_defines);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_84(EMoflonEdge _edge_signature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,7 +234,7 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_167(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_87(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -267,9 +266,9 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TMethodDefinition tDef, TSyntethicMethod tSyntethic, ClassDeclaration mClass,
-			TClass tClass, MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef, TMethodSignature tSig,
-			Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TSyntethicMethod tSyntethic, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic, TMethodSignature tSig, ClassDeclaration mClass,
+			TMethodDefinition tDef, TClass tClass, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,7 +284,7 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(ClassDeclaration mClass, MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef);
+	boolean checkDEC_FWD(MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic, ClassDeclaration mClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +292,7 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass, TMethodSignature tSig);
+	boolean checkDEC_BWD(TSyntethicMethod tSyntethic, TMethodSignature tSig, TMethodDefinition tDef, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -311,9 +310,10 @@ public interface SyntethicMethod extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethodDefinition tDef, ClassDeclaration mClass,
-			TClass tClass, MMethodDefinition mDef, MDefinitionToTMember mDefinitionToTMember, TMethodSignature tSig,
-			ClassDeclarationToTClass mClassDeclarationToTClass, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mDef, TMethodSignature tSig,
+			ClassDeclarationToTClass mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TMethodDefinition tDef, TClass tClass,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -107,25 +107,25 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, AnnotationTypeDeclaration Annotation, Modifier mModifier,
-			MDefinition mDefinition) {
+	public boolean isAppropriate_FWD(Match match, MDefinition mDefinition, AnnotationTypeDeclaration Annotation,
+			Modifier mModifier) {
 
 		Object[] result1_black = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_0_1_initialbindings_blackBBBBB(this, match, Annotation, mModifier,
-						mDefinition);
+				.pattern_MemberInAnnotationVisibility_0_1_initialbindings_blackBBBBB(this, match, mDefinition,
+						Annotation, mModifier);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier
-					+ ", " + "[mDefinition] = " + mDefinition + ".");
+					+ "[match] = " + match + ", " + "[mDefinition] = " + mDefinition + ", " + "[Annotation] = "
+					+ Annotation + ", " + "[mModifier] = " + mModifier + ".");
 		}
 
 		Object[] result2_bindingAndBlack = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, Annotation,
-						mModifier, mDefinition);
+				.pattern_MemberInAnnotationVisibility_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mDefinition,
+						Annotation, mModifier);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier
-					+ ", " + "[mDefinition] = " + mDefinition + ".");
+					+ "[match] = " + match + ", " + "[mDefinition] = " + mDefinition + ", " + "[Annotation] = "
+					+ Annotation + ", " + "[mModifier] = " + mModifier + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -133,36 +133,36 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 				csp)) {
 
 			Object[] result4_black = MemberInAnnotationVisibilityImpl
-					.pattern_MemberInAnnotationVisibility_0_4_collectelementstobetranslated_blackBBBB(match, Annotation,
-							mModifier, mDefinition);
+					.pattern_MemberInAnnotationVisibility_0_4_collectelementstobetranslated_blackBBBB(match,
+							mDefinition, Annotation, mModifier);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier + ", "
-						+ "[mDefinition] = " + mDefinition + ".");
+						+ "[mDefinition] = " + mDefinition + ", " + "[Annotation] = " + Annotation + ", "
+						+ "[mModifier] = " + mModifier + ".");
 			}
 			MemberInAnnotationVisibilityImpl
-					.pattern_MemberInAnnotationVisibility_0_4_collectelementstobetranslated_greenBBBFF(match, mModifier,
-							mDefinition);
+					.pattern_MemberInAnnotationVisibility_0_4_collectelementstobetranslated_greenBBBFF(match,
+							mDefinition, mModifier);
 			//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = MemberInAnnotationVisibilityImpl
-					.pattern_MemberInAnnotationVisibility_0_5_collectcontextelements_blackBBBB(match, Annotation,
-							mModifier, mDefinition);
+					.pattern_MemberInAnnotationVisibility_0_5_collectcontextelements_blackBBBB(match, mDefinition,
+							Annotation, mModifier);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier + ", "
-						+ "[mDefinition] = " + mDefinition + ".");
+						+ "[mDefinition] = " + mDefinition + ", " + "[Annotation] = " + Annotation + ", "
+						+ "[mModifier] = " + mModifier + ".");
 			}
 			MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_0_5_collectcontextelements_greenBBBFF(
-					match, Annotation, mDefinition);
+					match, mDefinition, Annotation);
 			//nothing EMoflonEdge Annotation__mDefinition____bodyDeclarations = (EMoflonEdge) result5_green[3];
 			//nothing EMoflonEdge mDefinition__Annotation____abstractTypeDeclaration = (EMoflonEdge) result5_green[4];
 
 			// 
 			MemberInAnnotationVisibilityImpl
 					.pattern_MemberInAnnotationVisibility_0_6_registerobjectstomatch_expressionBBBBB(this, match,
-							Annotation, mModifier, mDefinition);
+							mDefinition, Annotation, mModifier);
 			return MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_0_7_expressionF();
 		} else {
 			return MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_0_8_expressionF();
@@ -185,55 +185,56 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		MDefinitionToTMember defToMember = (MDefinitionToTMember) result1_bindingAndBlack[0];
-		AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result1_bindingAndBlack[1];
-		Modifier mModifier = (Modifier) result1_bindingAndBlack[2];
-		TMember tMember = (TMember) result1_bindingAndBlack[3];
-		TAnnotationType tAnnotation = (TAnnotationType) result1_bindingAndBlack[4];
-		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[5];
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[6];
+		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[1];
+		TMember tMember = (TMember) result1_bindingAndBlack[2];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result1_bindingAndBlack[4];
+		Modifier mModifier = (Modifier) result1_bindingAndBlack[5];
+		TAnnotationType tAnnotation = (TAnnotationType) result1_bindingAndBlack[6];
 		CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_1_1_performtransformation_greenFBBFB(mModifier, tMember, csp);
-		TModifier tModifier = (TModifier) result1_green[0];
-		MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result1_green[3];
+				.pattern_MemberInAnnotationVisibility_1_1_performtransformation_greenBFFBB(tMember, mModifier, csp);
+		MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result1_green[1];
+		TModifier tModifier = (TModifier) result1_green[2];
 
 		Object[] result2_black = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_1_2_collecttranslatedelements_blackBBB(tModifier, mModifier,
-						mModifierToTModifier);
+				.pattern_MemberInAnnotationVisibility_1_2_collecttranslatedelements_blackBBB(mModifierToTModifier,
+						tModifier, mModifier);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tModifier] = " + tModifier + ", "
-					+ "[mModifier] = " + mModifier + ", " + "[mModifierToTModifier] = " + mModifierToTModifier + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[mModifierToTModifier] = " + mModifierToTModifier
+							+ ", " + "[tModifier] = " + tModifier + ", " + "[mModifier] = " + mModifier + ".");
 		}
 		Object[] result2_green = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_1_2_collecttranslatedelements_greenFBBB(tModifier, mModifier,
-						mModifierToTModifier);
+				.pattern_MemberInAnnotationVisibility_1_2_collecttranslatedelements_greenFBBB(mModifierToTModifier,
+						tModifier, mModifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, tModifier,
-						defToMember, Annotation, mModifier, tMember, tAnnotation, mDefinition, mModifierToTModifier,
-						mTypeToTType);
+				.pattern_MemberInAnnotationVisibility_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, defToMember,
+						mDefinition, tMember, mModifierToTModifier, tModifier, mTypeToTType, Annotation, mModifier,
+						tAnnotation);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tModifier] = " + tModifier + ", " + "[defToMember] = " + defToMember + ", "
-					+ "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier + ", " + "[tMember] = "
-					+ tMember + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[mDefinition] = " + mDefinition + ", "
-					+ "[mModifierToTModifier] = " + mModifierToTModifier + ", " + "[mTypeToTType] = " + mTypeToTType
-					+ ".");
+					+ ", " + "[defToMember] = " + defToMember + ", " + "[mDefinition] = " + mDefinition + ", "
+					+ "[tMember] = " + tMember + ", " + "[mModifierToTModifier] = " + mModifierToTModifier + ", "
+					+ "[tModifier] = " + tModifier + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
+					+ "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier + ", " + "[tAnnotation] = "
+					+ tAnnotation + ".");
 		}
 		MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-				ruleresult, tModifier, mModifier, tMember, mDefinition, mModifierToTModifier);
-		//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mModifierToTModifier__tModifier____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result3_green[10];
+				ruleresult, mDefinition, tMember, mModifierToTModifier, tModifier, mModifier);
+		//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mModifierToTModifier__tModifier____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_1_5_registerobjects_expressionBBBBBBBBBBB(
-				this, ruleresult, tModifier, defToMember, Annotation, mModifier, tMember, tAnnotation, mDefinition,
-				mModifierToTModifier, mTypeToTType);
+				this, ruleresult, defToMember, mDefinition, tMember, mModifierToTModifier, tModifier, mTypeToTType,
+				Annotation, mModifier, tAnnotation);
 		return MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_1_6_expressionFB(ruleresult);
 	}
 
@@ -262,45 +263,45 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result2_binding[0];
-		Modifier mModifier = (Modifier) result2_binding[1];
-		MDefinition mDefinition = (MDefinition) result2_binding[2];
+		MDefinition mDefinition = (MDefinition) result2_binding[0];
+		AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result2_binding[1];
+		Modifier mModifier = (Modifier) result2_binding[2];
 		for (Object[] result2_black : MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_2_2_corematch_blackFBBFFBFB(Annotation, mModifier, mDefinition,
+				.pattern_MemberInAnnotationVisibility_2_2_corematch_blackFBFFBBFB(mDefinition, Annotation, mModifier,
 						match)) {
 			MDefinitionToTMember defToMember = (MDefinitionToTMember) result2_black[0];
-			TMember tMember = (TMember) result2_black[3];
-			TAnnotationType tAnnotation = (TAnnotationType) result2_black[4];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[6];
+			TMember tMember = (TMember) result2_black[2];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[3];
+			TAnnotationType tAnnotation = (TAnnotationType) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : MemberInAnnotationVisibilityImpl
-					.pattern_MemberInAnnotationVisibility_2_3_findcontext_blackBBBBBBB(defToMember, Annotation,
-							mModifier, tMember, tAnnotation, mDefinition, mTypeToTType)) {
+					.pattern_MemberInAnnotationVisibility_2_3_findcontext_blackBBBBBBB(defToMember, mDefinition,
+							tMember, mTypeToTType, Annotation, mModifier, tAnnotation)) {
 				Object[] result3_green = MemberInAnnotationVisibilityImpl
 						.pattern_MemberInAnnotationVisibility_2_3_findcontext_greenBBBBBBBFFFFFFFFFFF(defToMember,
-								Annotation, mModifier, tMember, tAnnotation, mDefinition, mTypeToTType);
+								mDefinition, tMember, mTypeToTType, Annotation, mModifier, tAnnotation);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge defToMember__tMember____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge Annotation__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mDefinition__Annotation____abstractTypeDeclaration = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge defToMember__mDefinition____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mTypeToTType__Annotation____source = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge defToMember__tMember____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge defToMember__mDefinition____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mTypeToTType__Annotation____source = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result3_green[14];
 				//nothing EMoflonEdge mTypeToTType__tAnnotation____target = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge Annotation__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge mDefinition__Annotation____abstractTypeDeclaration = (EMoflonEdge) result3_green[17];
 
 				Object[] result4_bindingAndBlack = MemberInAnnotationVisibilityImpl
 						.pattern_MemberInAnnotationVisibility_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, defToMember, Annotation, mModifier, tMember, tAnnotation,
-								mDefinition, mTypeToTType);
+								isApplicableMatch, defToMember, mDefinition, tMember, mTypeToTType, Annotation,
+								mModifier, tAnnotation);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[defToMember] = " + defToMember
-							+ ", " + "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier + ", "
-							+ "[tMember] = " + tMember + ", " + "[tAnnotation] = " + tAnnotation + ", "
-							+ "[mDefinition] = " + mDefinition + ", " + "[mTypeToTType] = " + mTypeToTType + ".");
+							+ ", " + "[mDefinition] = " + mDefinition + ", " + "[tMember] = " + tMember + ", "
+							+ "[mTypeToTType] = " + mTypeToTType + ", " + "[Annotation] = " + Annotation + ", "
+							+ "[mModifier] = " + mModifier + ", " + "[tAnnotation] = " + tAnnotation + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -332,11 +333,11 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, AnnotationTypeDeclaration Annotation, Modifier mModifier,
-			MDefinition mDefinition) {
+	public void registerObjectsToMatch_FWD(Match match, MDefinition mDefinition, AnnotationTypeDeclaration Annotation,
+			Modifier mModifier) {
+		match.registerObject("mDefinition", mDefinition);
 		match.registerObject("Annotation", Annotation);
 		match.registerObject("mModifier", mModifier);
-		match.registerObject("mDefinition", mDefinition);
 
 	}
 
@@ -345,8 +346,8 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, AnnotationTypeDeclaration Annotation, Modifier mModifier,
-			MDefinition mDefinition) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mDefinition, AnnotationTypeDeclaration Annotation,
+			Modifier mModifier) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -376,49 +377,49 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
-			AnnotationTypeDeclaration Annotation, Modifier mModifier, TMember tMember, TAnnotationType tAnnotation,
-			MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {// Create CSP
+			MDefinition mDefinition, TMember tMember, TypeToTAbstractType mTypeToTType,
+			AnnotationTypeDeclaration Annotation, Modifier mModifier, TAnnotationType tAnnotation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
 		// Create literals
 
 		// Create attribute variables
-		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.static", true, csp);
-		var_mModifier_static.setValue(mModifier.isStatic());
-		var_mModifier_static.setType("Boolean");
 		Variable var_mModifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.visibility", true,
 				csp);
 		var_mModifier_visibility.setValue(mModifier.getVisibility());
 		var_mModifier_visibility.setType("java.VisibilityKind");
+		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.static", true, csp);
+		var_mModifier_static.setValue(mModifier.isStatic());
+		var_mModifier_static.setType("Boolean");
 
 		// Create unbound variables
-		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.isStatic", csp);
-		var_tModifier_isStatic.setType("Boolean");
 		Variable var_tModifier_tVisibility = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.tVisibility", csp);
 		var_tModifier_tVisibility.setType("basic.TVisibility");
+		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.isStatic", csp);
+		var_tModifier_isStatic.setType("Boolean");
 
 		// Create constraints
-		Eq eq = new Eq();
 		DefaultVisibility defaultVisibility = new DefaultVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(defaultVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_mModifier_static, var_tModifier_isStatic);
 		defaultVisibility.setRuleName("NoRuleName");
 		defaultVisibility.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_mModifier_static, var_tModifier_isStatic);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("defToMember", defToMember);
+		isApplicableMatch.registerObject("mDefinition", mDefinition);
+		isApplicableMatch.registerObject("tMember", tMember);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("Annotation", Annotation);
 		isApplicableMatch.registerObject("mModifier", mModifier);
-		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
-		isApplicableMatch.registerObject("mDefinition", mDefinition);
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		return csp;
 	}
 
@@ -436,18 +437,18 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tModifier, EObject defToMember,
-			EObject Annotation, EObject mModifier, EObject tMember, EObject tAnnotation, EObject mDefinition,
-			EObject mModifierToTModifier, EObject mTypeToTType) {
-		ruleresult.registerObject("tModifier", tModifier);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject defToMember, EObject mDefinition,
+			EObject tMember, EObject mModifierToTModifier, EObject tModifier, EObject mTypeToTType, EObject Annotation,
+			EObject mModifier, EObject tAnnotation) {
 		ruleresult.registerObject("defToMember", defToMember);
+		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("tMember", tMember);
+		ruleresult.registerObject("mModifierToTModifier", mModifierToTModifier);
+		ruleresult.registerObject("tModifier", tModifier);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("Annotation", Annotation);
 		ruleresult.registerObject("mModifier", mModifier);
-		ruleresult.registerObject("tMember", tMember);
 		ruleresult.registerObject("tAnnotation", tAnnotation);
-		ruleresult.registerObject("mDefinition", mDefinition);
-		ruleresult.registerObject("mModifierToTModifier", mModifierToTModifier);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 
 	}
 
@@ -466,23 +467,23 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TModifier tModifier, TMember tMember, TAnnotationType tAnnotation) {
+	public boolean isAppropriate_BWD(Match match, TMember tMember, TModifier tModifier, TAnnotationType tAnnotation) {
 
 		Object[] result1_black = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_10_1_initialbindings_blackBBBBB(this, match, tModifier, tMember,
+				.pattern_MemberInAnnotationVisibility_10_1_initialbindings_blackBBBBB(this, match, tMember, tModifier,
 						tAnnotation);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tModifier] = " + tModifier + ", " + "[tMember] = " + tMember
+					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tModifier] = " + tModifier
 					+ ", " + "[tAnnotation] = " + tAnnotation + ".");
 		}
 
 		Object[] result2_bindingAndBlack = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tModifier,
-						tMember, tAnnotation);
+				.pattern_MemberInAnnotationVisibility_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tMember,
+						tModifier, tAnnotation);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tModifier] = " + tModifier + ", " + "[tMember] = " + tMember
+					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tModifier] = " + tModifier
 					+ ", " + "[tAnnotation] = " + tAnnotation + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
@@ -491,24 +492,24 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 				csp)) {
 
 			Object[] result4_black = MemberInAnnotationVisibilityImpl
-					.pattern_MemberInAnnotationVisibility_10_4_collectelementstobetranslated_blackBBBB(match, tModifier,
-							tMember, tAnnotation);
+					.pattern_MemberInAnnotationVisibility_10_4_collectelementstobetranslated_blackBBBB(match, tMember,
+							tModifier, tAnnotation);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tModifier] = " + tModifier + ", " + "[tMember] = " + tMember + ", " + "[tAnnotation] = "
+						+ "[tMember] = " + tMember + ", " + "[tModifier] = " + tModifier + ", " + "[tAnnotation] = "
 						+ tAnnotation + ".");
 			}
 			MemberInAnnotationVisibilityImpl
-					.pattern_MemberInAnnotationVisibility_10_4_collectelementstobetranslated_greenBBBF(match, tModifier,
-							tMember);
+					.pattern_MemberInAnnotationVisibility_10_4_collectelementstobetranslated_greenBBBF(match, tMember,
+							tModifier);
 			//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = MemberInAnnotationVisibilityImpl
-					.pattern_MemberInAnnotationVisibility_10_5_collectcontextelements_blackBBBB(match, tModifier,
-							tMember, tAnnotation);
+					.pattern_MemberInAnnotationVisibility_10_5_collectcontextelements_blackBBBB(match, tMember,
+							tModifier, tAnnotation);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tModifier] = " + tModifier + ", " + "[tMember] = " + tMember + ", " + "[tAnnotation] = "
+						+ "[tMember] = " + tMember + ", " + "[tModifier] = " + tModifier + ", " + "[tAnnotation] = "
 						+ tAnnotation + ".");
 			}
 			MemberInAnnotationVisibilityImpl
@@ -520,7 +521,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 			// 
 			MemberInAnnotationVisibilityImpl
 					.pattern_MemberInAnnotationVisibility_10_6_registerobjectstomatch_expressionBBBBB(this, match,
-							tModifier, tMember, tAnnotation);
+							tMember, tModifier, tAnnotation);
 			return MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_10_7_expressionF();
 		} else {
 			return MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_10_8_expressionF();
@@ -542,58 +543,59 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TModifier tModifier = (TModifier) result1_bindingAndBlack[0];
-		MDefinitionToTMember defToMember = (MDefinitionToTMember) result1_bindingAndBlack[1];
-		AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result1_bindingAndBlack[2];
-		TMember tMember = (TMember) result1_bindingAndBlack[3];
-		TAnnotationType tAnnotation = (TAnnotationType) result1_bindingAndBlack[4];
-		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[5];
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[6];
+		MDefinitionToTMember defToMember = (MDefinitionToTMember) result1_bindingAndBlack[0];
+		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[1];
+		TMember tMember = (TMember) result1_bindingAndBlack[2];
+		TModifier tModifier = (TModifier) result1_bindingAndBlack[3];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[4];
+		AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result1_bindingAndBlack[5];
+		TAnnotationType tAnnotation = (TAnnotationType) result1_bindingAndBlack[6];
 		CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_11_1_performtransformation_greenBFBFB(tModifier, mDefinition,
+				.pattern_MemberInAnnotationVisibility_11_1_performtransformation_greenBFBFB(mDefinition, tModifier,
 						csp);
-		Modifier mModifier = (Modifier) result1_green[1];
-		MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result1_green[3];
+		MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result1_green[1];
+		Modifier mModifier = (Modifier) result1_green[3];
 
 		Object[] result2_black = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_11_2_collecttranslatedelements_blackBBB(tModifier, mModifier,
-						mModifierToTModifier);
+				.pattern_MemberInAnnotationVisibility_11_2_collecttranslatedelements_blackBBB(mModifierToTModifier,
+						tModifier, mModifier);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tModifier] = " + tModifier + ", "
-					+ "[mModifier] = " + mModifier + ", " + "[mModifierToTModifier] = " + mModifierToTModifier + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[mModifierToTModifier] = " + mModifierToTModifier
+							+ ", " + "[tModifier] = " + tModifier + ", " + "[mModifier] = " + mModifier + ".");
 		}
 		Object[] result2_green = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_11_2_collecttranslatedelements_greenFBBB(tModifier, mModifier,
-						mModifierToTModifier);
+				.pattern_MemberInAnnotationVisibility_11_2_collecttranslatedelements_greenFBBB(mModifierToTModifier,
+						tModifier, mModifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, tModifier,
-						defToMember, Annotation, mModifier, tMember, tAnnotation, mDefinition, mModifierToTModifier,
-						mTypeToTType);
+				.pattern_MemberInAnnotationVisibility_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, defToMember,
+						mDefinition, tMember, mModifierToTModifier, tModifier, mTypeToTType, Annotation, mModifier,
+						tAnnotation);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tModifier] = " + tModifier + ", " + "[defToMember] = " + defToMember + ", "
-					+ "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier + ", " + "[tMember] = "
-					+ tMember + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[mDefinition] = " + mDefinition + ", "
-					+ "[mModifierToTModifier] = " + mModifierToTModifier + ", " + "[mTypeToTType] = " + mTypeToTType
-					+ ".");
+					+ ", " + "[defToMember] = " + defToMember + ", " + "[mDefinition] = " + mDefinition + ", "
+					+ "[tMember] = " + tMember + ", " + "[mModifierToTModifier] = " + mModifierToTModifier + ", "
+					+ "[tModifier] = " + tModifier + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
+					+ "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier + ", " + "[tAnnotation] = "
+					+ tAnnotation + ".");
 		}
 		MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-				ruleresult, tModifier, mModifier, tMember, mDefinition, mModifierToTModifier);
-		//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mModifierToTModifier__tModifier____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result3_green[10];
+				ruleresult, mDefinition, tMember, mModifierToTModifier, tModifier, mModifier);
+		//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mModifierToTModifier__tModifier____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		MemberInAnnotationVisibilityImpl
 				.pattern_MemberInAnnotationVisibility_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
-						tModifier, defToMember, Annotation, mModifier, tMember, tAnnotation, mDefinition,
-						mModifierToTModifier, mTypeToTType);
+						defToMember, mDefinition, tMember, mModifierToTModifier, tModifier, mTypeToTType, Annotation,
+						mModifier, tAnnotation);
 		return MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_11_6_expressionFB(ruleresult);
 	}
 
@@ -622,44 +624,44 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TModifier tModifier = (TModifier) result2_binding[0];
-		TMember tMember = (TMember) result2_binding[1];
+		TMember tMember = (TMember) result2_binding[0];
+		TModifier tModifier = (TModifier) result2_binding[1];
 		TAnnotationType tAnnotation = (TAnnotationType) result2_binding[2];
 		for (Object[] result2_black : MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_12_2_corematch_blackBFFBBFFB(tModifier, tMember, tAnnotation,
+				.pattern_MemberInAnnotationVisibility_12_2_corematch_blackFFBBFFBB(tMember, tModifier, tAnnotation,
 						match)) {
-			MDefinitionToTMember defToMember = (MDefinitionToTMember) result2_black[1];
-			AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result2_black[2];
-			MDefinition mDefinition = (MDefinition) result2_black[5];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[6];
+			MDefinitionToTMember defToMember = (MDefinitionToTMember) result2_black[0];
+			MDefinition mDefinition = (MDefinition) result2_black[1];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[4];
+			AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : MemberInAnnotationVisibilityImpl
-					.pattern_MemberInAnnotationVisibility_12_3_findcontext_blackBBBBBBB(tModifier, defToMember,
-							Annotation, tMember, tAnnotation, mDefinition, mTypeToTType)) {
+					.pattern_MemberInAnnotationVisibility_12_3_findcontext_blackBBBBBBB(defToMember, mDefinition,
+							tMember, tModifier, mTypeToTType, Annotation, tAnnotation)) {
 				Object[] result3_green = MemberInAnnotationVisibilityImpl
-						.pattern_MemberInAnnotationVisibility_12_3_findcontext_greenBBBBBBBFFFFFFFFFF(tModifier,
-								defToMember, Annotation, tMember, tAnnotation, mDefinition, mTypeToTType);
+						.pattern_MemberInAnnotationVisibility_12_3_findcontext_greenBBBBBBBFFFFFFFFFF(defToMember,
+								mDefinition, tMember, tModifier, mTypeToTType, Annotation, tAnnotation);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge defToMember__tMember____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge Annotation__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mDefinition__Annotation____abstractTypeDeclaration = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge defToMember__mDefinition____source = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge mTypeToTType__Annotation____source = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge mTypeToTType__tAnnotation____target = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge defToMember__tMember____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge defToMember__mDefinition____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mTypeToTType__Annotation____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mTypeToTType__tAnnotation____target = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge Annotation__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge mDefinition__Annotation____abstractTypeDeclaration = (EMoflonEdge) result3_green[16];
 
 				Object[] result4_bindingAndBlack = MemberInAnnotationVisibilityImpl
 						.pattern_MemberInAnnotationVisibility_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, tModifier, defToMember, Annotation, tMember, tAnnotation,
-								mDefinition, mTypeToTType);
+								isApplicableMatch, defToMember, mDefinition, tMember, tModifier, mTypeToTType,
+								Annotation, tAnnotation);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tModifier] = " + tModifier + ", "
-							+ "[defToMember] = " + defToMember + ", " + "[Annotation] = " + Annotation + ", "
-							+ "[tMember] = " + tMember + ", " + "[tAnnotation] = " + tAnnotation + ", "
-							+ "[mDefinition] = " + mDefinition + ", " + "[mTypeToTType] = " + mTypeToTType + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[defToMember] = " + defToMember
+							+ ", " + "[mDefinition] = " + mDefinition + ", " + "[tMember] = " + tMember + ", "
+							+ "[tModifier] = " + tModifier + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
+							+ "[Annotation] = " + Annotation + ", " + "[tAnnotation] = " + tAnnotation + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -691,10 +693,10 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TModifier tModifier, TMember tMember,
+	public void registerObjectsToMatch_BWD(Match match, TMember tMember, TModifier tModifier,
 			TAnnotationType tAnnotation) {
-		match.registerObject("tModifier", tModifier);
 		match.registerObject("tMember", tMember);
+		match.registerObject("tModifier", tModifier);
 		match.registerObject("tAnnotation", tAnnotation);
 
 	}
@@ -704,7 +706,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TModifier tModifier, TMember tMember,
+	public CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TModifier tModifier,
 			TAnnotationType tAnnotation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -734,50 +736,50 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TModifier tModifier,
-			MDefinitionToTMember defToMember, AnnotationTypeDeclaration Annotation, TMember tMember,
-			TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
+			MDefinition mDefinition, TMember tMember, TModifier tModifier, TypeToTAbstractType mTypeToTType,
+			AnnotationTypeDeclaration Annotation, TAnnotationType tAnnotation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
 		// Create literals
 
 		// Create attribute variables
-		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.isStatic", true, csp);
-		var_tModifier_isStatic.setValue(tModifier.isIsStatic());
-		var_tModifier_isStatic.setType("Boolean");
 		Variable var_tModifier_tVisibility = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.tVisibility", true,
 				csp);
 		var_tModifier_tVisibility.setValue(tModifier.getTVisibility());
 		var_tModifier_tVisibility.setType("basic.TVisibility");
+		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.isStatic", true, csp);
+		var_tModifier_isStatic.setValue(tModifier.isIsStatic());
+		var_tModifier_isStatic.setType("Boolean");
 
 		// Create unbound variables
-		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.static", csp);
-		var_mModifier_static.setType("Boolean");
 		Variable var_mModifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.visibility", csp);
 		var_mModifier_visibility.setType("java.VisibilityKind");
+		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.static", csp);
+		var_mModifier_static.setType("Boolean");
 
 		// Create constraints
-		Eq eq = new Eq();
 		DefaultVisibility defaultVisibility = new DefaultVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(defaultVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_mModifier_static, var_tModifier_isStatic);
 		defaultVisibility.setRuleName("NoRuleName");
 		defaultVisibility.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_mModifier_static, var_tModifier_isStatic);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tModifier", tModifier);
 		isApplicableMatch.registerObject("defToMember", defToMember);
-		isApplicableMatch.registerObject("Annotation", Annotation);
-		isApplicableMatch.registerObject("tMember", tMember);
-		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
+		isApplicableMatch.registerObject("tMember", tMember);
+		isApplicableMatch.registerObject("tModifier", tModifier);
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
+		isApplicableMatch.registerObject("Annotation", Annotation);
+		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		return csp;
 	}
 
@@ -795,18 +797,18 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tModifier, EObject defToMember,
-			EObject Annotation, EObject mModifier, EObject tMember, EObject tAnnotation, EObject mDefinition,
-			EObject mModifierToTModifier, EObject mTypeToTType) {
-		ruleresult.registerObject("tModifier", tModifier);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject defToMember, EObject mDefinition,
+			EObject tMember, EObject mModifierToTModifier, EObject tModifier, EObject mTypeToTType, EObject Annotation,
+			EObject mModifier, EObject tAnnotation) {
 		ruleresult.registerObject("defToMember", defToMember);
+		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("tMember", tMember);
+		ruleresult.registerObject("mModifierToTModifier", mModifierToTModifier);
+		ruleresult.registerObject("tModifier", tModifier);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("Annotation", Annotation);
 		ruleresult.registerObject("mModifier", mModifier);
-		ruleresult.registerObject("tMember", tMember);
 		ruleresult.registerObject("tAnnotation", tAnnotation);
-		ruleresult.registerObject("mDefinition", mDefinition);
-		ruleresult.registerObject("mModifierToTModifier", mModifierToTModifier);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 
 	}
 
@@ -825,7 +827,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_110(EMoflonEdge _edge_tModifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_76(EMoflonEdge _edge_tModifier) {
 
 		Object[] result1_bindingAndBlack = MemberInAnnotationVisibilityImpl
 				.pattern_MemberInAnnotationVisibility_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -842,8 +844,8 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		// ForEach 
 		for (Object[] result2_black : MemberInAnnotationVisibilityImpl
 				.pattern_MemberInAnnotationVisibility_20_2_testcorematchandDECs_blackFFFB(_edge_tModifier)) {
-			TModifier tModifier = (TModifier) result2_black[0];
-			TMember tMember = (TMember) result2_black[1];
+			TMember tMember = (TMember) result2_black[0];
+			TModifier tModifier = (TModifier) result2_black[1];
 			TAnnotationType tAnnotation = (TAnnotationType) result2_black[2];
 			Object[] result2_green = MemberInAnnotationVisibilityImpl
 					.pattern_MemberInAnnotationVisibility_20_2_testcorematchandDECs_greenFB(__eClass);
@@ -852,7 +854,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 			// 
 			if (MemberInAnnotationVisibilityImpl
 					.pattern_MemberInAnnotationVisibility_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, tModifier, tMember, tAnnotation)) {
+							this, match, tMember, tModifier, tAnnotation)) {
 				// 
 				if (MemberInAnnotationVisibilityImpl
 						.pattern_MemberInAnnotationVisibility_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -885,7 +887,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_112(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_79(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = MemberInAnnotationVisibilityImpl
 				.pattern_MemberInAnnotationVisibility_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -902,9 +904,9 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		// ForEach 
 		for (Object[] result2_black : MemberInAnnotationVisibilityImpl
 				.pattern_MemberInAnnotationVisibility_21_2_testcorematchandDECs_blackFFFB(_edge_modifier)) {
-			AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result2_black[0];
-			Modifier mModifier = (Modifier) result2_black[1];
-			MDefinition mDefinition = (MDefinition) result2_black[2];
+			MDefinition mDefinition = (MDefinition) result2_black[0];
+			AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result2_black[1];
+			Modifier mModifier = (Modifier) result2_black[2];
 			Object[] result2_green = MemberInAnnotationVisibilityImpl
 					.pattern_MemberInAnnotationVisibility_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -912,7 +914,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 			// 
 			if (MemberInAnnotationVisibilityImpl
 					.pattern_MemberInAnnotationVisibility_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, Annotation, mModifier, mDefinition)) {
+							this, match, mDefinition, Annotation, mModifier)) {
 				// 
 				if (MemberInAnnotationVisibilityImpl
 						.pattern_MemberInAnnotationVisibility_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -955,14 +957,6 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier", true, csp);
-		var_tModifier_isStatic.setValue(__helper.getValue("tModifier", "isStatic"));
-		var_tModifier_isStatic.setType("boolean");
-
-		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
-		var_mModifier_static.setValue(__helper.getValue("mModifier", "static"));
-		var_mModifier_static.setType("boolean");
-
 		Variable var_tModifier_tVisibility = CSPFactoryHelper.eINSTANCE.createVariable("tModifier", true, csp);
 		var_tModifier_tVisibility.setValue(__helper.getValue("tModifier", "tVisibility"));
 		var_tModifier_tVisibility.setType("basic.TVisibility");
@@ -971,30 +965,38 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		var_mModifier_visibility.setValue(__helper.getValue("mModifier", "visibility"));
 		var_mModifier_visibility.setType("java.VisibilityKind");
 
-		Eq eq0 = new Eq();
-		csp.getConstraints().add(eq0);
+		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
+		var_mModifier_static.setValue(__helper.getValue("mModifier", "static"));
+		var_mModifier_static.setType("boolean");
 
-		DefaultVisibility defaultVisibility1 = new DefaultVisibility();
-		csp.getConstraints().add(defaultVisibility1);
+		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier", true, csp);
+		var_tModifier_isStatic.setValue(__helper.getValue("tModifier", "isStatic"));
+		var_tModifier_isStatic.setType("boolean");
 
-		eq0.setRuleName("MemberInAnnotationVisibility");
-		eq0.solve(var_mModifier_static, var_tModifier_isStatic);
+		DefaultVisibility defaultVisibility0 = new DefaultVisibility();
+		csp.getConstraints().add(defaultVisibility0);
 
-		defaultVisibility1.setRuleName("MemberInAnnotationVisibility");
-		defaultVisibility1.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
+
+		defaultVisibility0.setRuleName("MemberInAnnotationVisibility");
+		defaultVisibility0.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+
+		eq1.setRuleName("MemberInAnnotationVisibility");
+		eq1.solve(var_mModifier_static, var_tModifier_isStatic);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_tModifier_isStatic.setBound(false);
 			var_tModifier_tVisibility.setBound(false);
-			eq0.solve(var_mModifier_static, var_tModifier_isStatic);
-			defaultVisibility1.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+			var_tModifier_isStatic.setBound(false);
+			defaultVisibility0.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+			eq1.solve(var_mModifier_static, var_tModifier_isStatic);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("tModifier", "isStatic", var_tModifier_isStatic.getValue());
 				__helper.setValue("tModifier", "tVisibility", var_tModifier_tVisibility.getValue());
+				__helper.setValue("tModifier", "isStatic", var_tModifier_isStatic.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1019,14 +1021,6 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier", true, csp);
-		var_tModifier_isStatic.setValue(__helper.getValue("tModifier", "isStatic"));
-		var_tModifier_isStatic.setType("boolean");
-
-		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
-		var_mModifier_static.setValue(__helper.getValue("mModifier", "static"));
-		var_mModifier_static.setType("boolean");
-
 		Variable var_tModifier_tVisibility = CSPFactoryHelper.eINSTANCE.createVariable("tModifier", true, csp);
 		var_tModifier_tVisibility.setValue(__helper.getValue("tModifier", "tVisibility"));
 		var_tModifier_tVisibility.setType("basic.TVisibility");
@@ -1035,30 +1029,38 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		var_mModifier_visibility.setValue(__helper.getValue("mModifier", "visibility"));
 		var_mModifier_visibility.setType("java.VisibilityKind");
 
-		Eq eq0 = new Eq();
-		csp.getConstraints().add(eq0);
+		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
+		var_mModifier_static.setValue(__helper.getValue("mModifier", "static"));
+		var_mModifier_static.setType("boolean");
 
-		DefaultVisibility defaultVisibility1 = new DefaultVisibility();
-		csp.getConstraints().add(defaultVisibility1);
+		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier", true, csp);
+		var_tModifier_isStatic.setValue(__helper.getValue("tModifier", "isStatic"));
+		var_tModifier_isStatic.setType("boolean");
 
-		eq0.setRuleName("MemberInAnnotationVisibility");
-		eq0.solve(var_mModifier_static, var_tModifier_isStatic);
+		DefaultVisibility defaultVisibility0 = new DefaultVisibility();
+		csp.getConstraints().add(defaultVisibility0);
 
-		defaultVisibility1.setRuleName("MemberInAnnotationVisibility");
-		defaultVisibility1.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
+
+		defaultVisibility0.setRuleName("MemberInAnnotationVisibility");
+		defaultVisibility0.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+
+		eq1.setRuleName("MemberInAnnotationVisibility");
+		eq1.solve(var_mModifier_static, var_tModifier_isStatic);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_mModifier_static.setBound(false);
 			var_mModifier_visibility.setBound(false);
-			eq0.solve(var_mModifier_static, var_tModifier_isStatic);
-			defaultVisibility1.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+			var_mModifier_static.setBound(false);
+			defaultVisibility0.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+			eq1.solve(var_mModifier_static, var_tModifier_isStatic);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("mModifier", "static", var_mModifier_static.getValue());
 				__helper.setValue("mModifier", "visibility", var_mModifier_visibility.getValue());
+				__helper.setValue("mModifier", "static", var_mModifier_static.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1091,21 +1093,21 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TModifier tModifier = (TModifier) result2_bindingAndBlack[0];
-		AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result2_bindingAndBlack[1];
-		Modifier mModifier = (Modifier) result2_bindingAndBlack[2];
-		TMember tMember = (TMember) result2_bindingAndBlack[3];
-		TAnnotationType tAnnotation = (TAnnotationType) result2_bindingAndBlack[4];
-		MDefinition mDefinition = (MDefinition) result2_bindingAndBlack[5];
+		MDefinition mDefinition = (MDefinition) result2_bindingAndBlack[0];
+		TMember tMember = (TMember) result2_bindingAndBlack[1];
+		TModifier tModifier = (TModifier) result2_bindingAndBlack[2];
+		AnnotationTypeDeclaration Annotation = (AnnotationTypeDeclaration) result2_bindingAndBlack[3];
+		Modifier mModifier = (Modifier) result2_bindingAndBlack[4];
+		TAnnotationType tAnnotation = (TAnnotationType) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, tModifier,
-						Annotation, mModifier, tMember, tAnnotation, mDefinition, sourceMatch, targetMatch);
+				.pattern_MemberInAnnotationVisibility_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, mDefinition,
+						tMember, tModifier, Annotation, mModifier, tAnnotation, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tModifier] = " + tModifier + ", " + "[Annotation] = " + Annotation + ", " + "[mModifier] = "
-					+ mModifier + ", " + "[tMember] = " + tMember + ", " + "[tAnnotation] = " + tAnnotation + ", "
-					+ "[mDefinition] = " + mDefinition + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[mDefinition] = " + mDefinition + ", " + "[tMember] = " + tMember + ", " + "[tModifier] = "
+					+ tModifier + ", " + "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier + ", "
+					+ "[tAnnotation] = " + tAnnotation + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1113,28 +1115,28 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		if (MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : MemberInAnnotationVisibilityImpl
-					.pattern_MemberInAnnotationVisibility_24_5_matchcorrcontext_blackFBBBBFBB(Annotation, tMember,
-							tAnnotation, mDefinition, sourceMatch, targetMatch)) {
+					.pattern_MemberInAnnotationVisibility_24_5_matchcorrcontext_blackFBBFBBBB(mDefinition, tMember,
+							Annotation, tAnnotation, sourceMatch, targetMatch)) {
 				MDefinitionToTMember defToMember = (MDefinitionToTMember) result5_black[0];
-				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[5];
+				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[3];
 				Object[] result5_green = MemberInAnnotationVisibilityImpl
 						.pattern_MemberInAnnotationVisibility_24_5_matchcorrcontext_greenBBBBF(defToMember,
 								mTypeToTType, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = MemberInAnnotationVisibilityImpl
-						.pattern_MemberInAnnotationVisibility_24_6_createcorrespondence_blackBBBBBBB(tModifier,
-								Annotation, mModifier, tMember, tAnnotation, mDefinition, ccMatch);
+						.pattern_MemberInAnnotationVisibility_24_6_createcorrespondence_blackBBBBBBB(mDefinition,
+								tMember, tModifier, Annotation, mModifier, tAnnotation, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tModifier] = "
-							+ tModifier + ", " + "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier
-							+ ", " + "[tMember] = " + tMember + ", " + "[tAnnotation] = " + tAnnotation + ", "
-							+ "[mDefinition] = " + mDefinition + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mDefinition] = "
+							+ mDefinition + ", " + "[tMember] = " + tMember + ", " + "[tModifier] = " + tModifier + ", "
+							+ "[Annotation] = " + Annotation + ", " + "[mModifier] = " + mModifier + ", "
+							+ "[tAnnotation] = " + tAnnotation + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				MemberInAnnotationVisibilityImpl
-						.pattern_MemberInAnnotationVisibility_24_6_createcorrespondence_greenBBFB(tModifier, mModifier,
+						.pattern_MemberInAnnotationVisibility_24_6_createcorrespondence_greenFBBB(tModifier, mModifier,
 								ccMatch);
-				//nothing MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result6_green[2];
+				//nothing MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result6_green[0];
 
 				Object[] result7_black = MemberInAnnotationVisibilityImpl
 						.pattern_MemberInAnnotationVisibility_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1157,20 +1159,14 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TModifier tModifier, AnnotationTypeDeclaration Annotation, Modifier mModifier,
-			TMember tMember, TAnnotationType tAnnotation, MDefinition mDefinition, Match sourceMatch,
+	public CSP isApplicable_solveCsp_CC(MDefinition mDefinition, TMember tMember, TModifier tModifier,
+			AnnotationTypeDeclaration Annotation, Modifier mModifier, TAnnotationType tAnnotation, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
 
 		// Create attribute variables
-		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.static", true, csp);
-		var_mModifier_static.setValue(mModifier.isStatic());
-		var_mModifier_static.setType("Boolean");
-		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.isStatic", true, csp);
-		var_tModifier_isStatic.setValue(tModifier.isIsStatic());
-		var_tModifier_isStatic.setType("Boolean");
 		Variable var_mModifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.visibility", true,
 				csp);
 		var_mModifier_visibility.setValue(mModifier.getVisibility());
@@ -1179,21 +1175,27 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 				csp);
 		var_tModifier_tVisibility.setValue(tModifier.getTVisibility());
 		var_tModifier_tVisibility.setType("basic.TVisibility");
+		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.static", true, csp);
+		var_mModifier_static.setValue(mModifier.isStatic());
+		var_mModifier_static.setType("Boolean");
+		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.isStatic", true, csp);
+		var_tModifier_isStatic.setValue(tModifier.isIsStatic());
+		var_tModifier_isStatic.setType("Boolean");
 
 		// Create unbound variables
 
 		// Create constraints
-		Eq eq = new Eq();
 		DefaultVisibility defaultVisibility = new DefaultVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(defaultVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_mModifier_static, var_tModifier_isStatic);
 		defaultVisibility.setRuleName("NoRuleName");
 		defaultVisibility.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_mModifier_static, var_tModifier_isStatic);
 		return csp;
 	}
 
@@ -1211,9 +1213,9 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(AnnotationTypeDeclaration Annotation, Modifier mModifier, MDefinition mDefinition) {// 
+	public boolean checkDEC_FWD(MDefinition mDefinition, AnnotationTypeDeclaration Annotation, Modifier mModifier) {// 
 		Object[] result1_black = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_27_1_matchtggpattern_blackBBB(Annotation, mModifier, mDefinition);
+				.pattern_MemberInAnnotationVisibility_27_1_matchtggpattern_blackBBB(mDefinition, Annotation, mModifier);
 		if (result1_black != null) {
 			return MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_27_2_expressionF();
 		} else {
@@ -1227,9 +1229,9 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TModifier tModifier, TMember tMember, TAnnotationType tAnnotation) {// 
+	public boolean checkDEC_BWD(TMember tMember, TModifier tModifier, TAnnotationType tAnnotation) {// 
 		Object[] result1_black = MemberInAnnotationVisibilityImpl
-				.pattern_MemberInAnnotationVisibility_28_1_matchtggpattern_blackBBB(tModifier, tMember, tAnnotation);
+				.pattern_MemberInAnnotationVisibility_28_1_matchtggpattern_blackBBB(tMember, tModifier, tAnnotation);
 		if (result1_black != null) {
 			return MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_28_2_expressionF();
 		} else {
@@ -1270,14 +1272,14 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 			Object[] result3_bindingAndBlack = MemberInAnnotationVisibilityImpl
 					.pattern_MemberInAnnotationVisibility_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-							isApplicableMatch, defToMember, Annotation, tMember, tAnnotation, mDefinition, mTypeToTType,
+							isApplicableMatch, defToMember, mDefinition, tMember, mTypeToTType, Annotation, tAnnotation,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[defToMember] = " + defToMember + ", "
-						+ "[Annotation] = " + Annotation + ", " + "[tMember] = " + tMember + ", " + "[tAnnotation] = "
-						+ tAnnotation + ", " + "[mDefinition] = " + mDefinition + ", " + "[mTypeToTType] = "
-						+ mTypeToTType + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[mDefinition] = " + mDefinition + ", " + "[tMember] = " + tMember + ", "
+						+ "[mTypeToTType] = " + mTypeToTType + ", " + "[Annotation] = " + Annotation + ", "
+						+ "[tAnnotation] = " + tAnnotation + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1285,25 +1287,25 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					csp)) {
 				// 
 				Object[] result5_black = MemberInAnnotationVisibilityImpl
-						.pattern_MemberInAnnotationVisibility_29_5_checknacs_blackBBBBBB(defToMember, Annotation,
-								tMember, tAnnotation, mDefinition, mTypeToTType);
+						.pattern_MemberInAnnotationVisibility_29_5_checknacs_blackBBBBBB(defToMember, mDefinition,
+								tMember, mTypeToTType, Annotation, tAnnotation);
 				if (result5_black != null) {
 
 					Object[] result6_black = MemberInAnnotationVisibilityImpl
-							.pattern_MemberInAnnotationVisibility_29_6_perform_blackBBBBBBB(defToMember, Annotation,
-									tMember, tAnnotation, mDefinition, mTypeToTType, ruleResult);
+							.pattern_MemberInAnnotationVisibility_29_6_perform_blackBBBBBBB(defToMember, mDefinition,
+									tMember, mTypeToTType, Annotation, tAnnotation, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[defToMember] = "
-								+ defToMember + ", " + "[Annotation] = " + Annotation + ", " + "[tMember] = " + tMember
-								+ ", " + "[tAnnotation] = " + tAnnotation + ", " + "[mDefinition] = " + mDefinition
-								+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[ruleResult] = " + ruleResult
-								+ ".");
+								+ defToMember + ", " + "[mDefinition] = " + mDefinition + ", " + "[tMember] = "
+								+ tMember + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[Annotation] = "
+								+ Annotation + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[ruleResult] = "
+								+ ruleResult + ".");
 					}
-					MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_29_6_perform_greenFFBBFBB(
-							tMember, mDefinition, ruleResult, csp);
-					//nothing TModifier tModifier = (TModifier) result6_green[0];
-					//nothing Modifier mModifier = (Modifier) result6_green[1];
-					//nothing MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result6_green[4];
+					MemberInAnnotationVisibilityImpl.pattern_MemberInAnnotationVisibility_29_6_perform_greenBBFFFBB(
+							mDefinition, tMember, ruleResult, csp);
+					//nothing MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result6_green[2];
+					//nothing TModifier tModifier = (TModifier) result6_green[3];
+					//nothing Modifier mModifier = (Modifier) result6_green[4];
 
 				} else {
 				}
@@ -1321,8 +1323,8 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
-			AnnotationTypeDeclaration Annotation, TMember tMember, TAnnotationType tAnnotation, MDefinition mDefinition,
-			TypeToTAbstractType mTypeToTType, ModelgeneratorRuleResult ruleResult) {// Create CSP
+			MDefinition mDefinition, TMember tMember, TypeToTAbstractType mTypeToTType,
+			AnnotationTypeDeclaration Annotation, TAnnotationType tAnnotation, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1331,35 +1333,35 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.static", csp);
-		var_mModifier_static.setType("Boolean");
-		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.isStatic", csp);
-		var_tModifier_isStatic.setType("Boolean");
 		Variable var_mModifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.visibility", csp);
 		var_mModifier_visibility.setType("java.VisibilityKind");
 		Variable var_tModifier_tVisibility = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.tVisibility", csp);
 		var_tModifier_tVisibility.setType("basic.TVisibility");
+		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier.static", csp);
+		var_mModifier_static.setType("Boolean");
+		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier.isStatic", csp);
+		var_tModifier_isStatic.setType("Boolean");
 
 		// Create constraints
-		Eq eq = new Eq();
 		DefaultVisibility defaultVisibility = new DefaultVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(defaultVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_mModifier_static, var_tModifier_isStatic);
 		defaultVisibility.setRuleName("NoRuleName");
 		defaultVisibility.solve(var_mModifier_visibility, var_tModifier_tVisibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_mModifier_static, var_tModifier_isStatic);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("defToMember", defToMember);
-		isApplicableMatch.registerObject("Annotation", Annotation);
-		isApplicableMatch.registerObject("tMember", tMember);
-		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
+		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
+		isApplicableMatch.registerObject("Annotation", Annotation);
+		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		return csp;
 	}
 
@@ -1380,27 +1382,27 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_FWD__MATCH_ANNOTATIONTYPEDECLARATION_MODIFIER_MDEFINITION:
-			return isAppropriate_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(Modifier) arguments.get(2), (MDefinition) arguments.get(3));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_FWD__MATCH_MDEFINITION_ANNOTATIONTYPEDECLARATION_MODIFIER:
+			return isAppropriate_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
+					(AnnotationTypeDeclaration) arguments.get(2), (Modifier) arguments.get(3));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATIONTYPEDECLARATION_MODIFIER_MDEFINITION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(Modifier) arguments.get(2), (MDefinition) arguments.get(3));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MDEFINITION_ANNOTATIONTYPEDECLARATION_MODIFIER:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
+					(AnnotationTypeDeclaration) arguments.get(2), (Modifier) arguments.get(3));
 			return null;
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATIONTYPEDECLARATION_MODIFIER_MDEFINITION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(Modifier) arguments.get(2), (MDefinition) arguments.get(3));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MDEFINITION_ANNOTATIONTYPEDECLARATION_MODIFIER:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
+					(AnnotationTypeDeclaration) arguments.get(2), (Modifier) arguments.get(3));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_ANNOTATIONTYPEDECLARATION_MODIFIER_TMEMBER_TANNOTATIONTYPE_MDEFINITION_TYPETOTABSTRACTTYPE:
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MDEFINITION_TMEMBER_TYPETOTABSTRACTTYPE_ANNOTATIONTYPEDECLARATION_MODIFIER_TANNOTATIONTYPE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(MDefinitionToTMember) arguments.get(1), (AnnotationTypeDeclaration) arguments.get(2),
-					(Modifier) arguments.get(3), (TMember) arguments.get(4), (TAnnotationType) arguments.get(5),
-					(MDefinition) arguments.get(6), (TypeToTAbstractType) arguments.get(7));
+					(MDefinitionToTMember) arguments.get(1), (MDefinition) arguments.get(2), (TMember) arguments.get(3),
+					(TypeToTAbstractType) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
+					(Modifier) arguments.get(6), (TAnnotationType) arguments.get(7));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1411,27 +1413,27 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 			return null;
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_BWD__MATCH_TMODIFIER_TMEMBER_TANNOTATIONTYPE:
-			return isAppropriate_BWD((Match) arguments.get(0), (TModifier) arguments.get(1), (TMember) arguments.get(2),
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TMODIFIER_TANNOTATIONTYPE:
+			return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TModifier) arguments.get(2),
 					(TAnnotationType) arguments.get(3));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODIFIER_TMEMBER_TANNOTATIONTYPE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TModifier) arguments.get(1),
-					(TMember) arguments.get(2), (TAnnotationType) arguments.get(3));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TMODIFIER_TANNOTATIONTYPE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+					(TModifier) arguments.get(2), (TAnnotationType) arguments.get(3));
 			return null;
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODIFIER_TMEMBER_TANNOTATIONTYPE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModifier) arguments.get(1),
-					(TMember) arguments.get(2), (TAnnotationType) arguments.get(3));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TMODIFIER_TANNOTATIONTYPE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+					(TModifier) arguments.get(2), (TAnnotationType) arguments.get(3));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMODIFIER_MDEFINITIONTOTMEMBER_ANNOTATIONTYPEDECLARATION_TMEMBER_TANNOTATIONTYPE_MDEFINITION_TYPETOTABSTRACTTYPE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TModifier) arguments.get(1),
-					(MDefinitionToTMember) arguments.get(2), (AnnotationTypeDeclaration) arguments.get(3),
-					(TMember) arguments.get(4), (TAnnotationType) arguments.get(5), (MDefinition) arguments.get(6),
-					(TypeToTAbstractType) arguments.get(7));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MDEFINITION_TMEMBER_TMODIFIER_TYPETOTABSTRACTTYPE_ANNOTATIONTYPEDECLARATION_TANNOTATIONTYPE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(MDefinitionToTMember) arguments.get(1), (MDefinition) arguments.get(2), (TMember) arguments.get(3),
+					(TModifier) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
+					(AnnotationTypeDeclaration) arguments.get(6), (TAnnotationType) arguments.get(7));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1442,35 +1444,36 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 			return null;
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_110__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_110((EMoflonEdge) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_112__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_112((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_76__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_76((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_79__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_79((EMoflonEdge) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_SOLVE_CSP_CC__TMODIFIER_ANNOTATIONTYPEDECLARATION_MODIFIER_TMEMBER_TANNOTATIONTYPE_MDEFINITION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TModifier) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(Modifier) arguments.get(2), (TMember) arguments.get(3), (TAnnotationType) arguments.get(4),
-					(MDefinition) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_SOLVE_CSP_CC__MDEFINITION_TMEMBER_TMODIFIER_ANNOTATIONTYPEDECLARATION_MODIFIER_TANNOTATIONTYPE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((MDefinition) arguments.get(0), (TMember) arguments.get(1),
+					(TModifier) arguments.get(2), (AnnotationTypeDeclaration) arguments.get(3),
+					(Modifier) arguments.get(4), (TAnnotationType) arguments.get(5), (Match) arguments.get(6),
+					(Match) arguments.get(7));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_DEC_FWD__ANNOTATIONTYPEDECLARATION_MODIFIER_MDEFINITION:
-			return checkDEC_FWD((AnnotationTypeDeclaration) arguments.get(0), (Modifier) arguments.get(1),
-					(MDefinition) arguments.get(2));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_DEC_BWD__TMODIFIER_TMEMBER_TANNOTATIONTYPE:
-			return checkDEC_BWD((TModifier) arguments.get(0), (TMember) arguments.get(1),
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_DEC_FWD__MDEFINITION_ANNOTATIONTYPEDECLARATION_MODIFIER:
+			return checkDEC_FWD((MDefinition) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
+					(Modifier) arguments.get(2));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_DEC_BWD__TMEMBER_TMODIFIER_TANNOTATIONTYPE:
+			return checkDEC_BWD((TMember) arguments.get(0), (TModifier) arguments.get(1),
 					(TAnnotationType) arguments.get(2));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
 			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_ANNOTATIONTYPEDECLARATION_TMEMBER_TANNOTATIONTYPE_MDEFINITION_TYPETOTABSTRACTTYPE_MODELGENERATORRULERESULT:
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MDEFINITION_TMEMBER_TYPETOTABSTRACTTYPE_ANNOTATIONTYPEDECLARATION_TANNOTATIONTYPE_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MDefinitionToTMember) arguments.get(1), (AnnotationTypeDeclaration) arguments.get(2),
-					(TMember) arguments.get(3), (TAnnotationType) arguments.get(4), (MDefinition) arguments.get(5),
-					(TypeToTAbstractType) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+					(MDefinitionToTMember) arguments.get(1), (MDefinition) arguments.get(2), (TMember) arguments.get(3),
+					(TypeToTAbstractType) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
+					(TAnnotationType) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1478,18 +1481,18 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_0_1_initialbindings_blackBBBBB(
-			MemberInAnnotationVisibility _this, Match match, AnnotationTypeDeclaration annotation, Modifier mModifier,
-			MDefinition mDefinition) {
-		return new Object[] { _this, match, annotation, mModifier, mDefinition };
+			MemberInAnnotationVisibility _this, Match match, MDefinition mDefinition,
+			AnnotationTypeDeclaration annotation, Modifier mModifier) {
+		return new Object[] { _this, match, mDefinition, annotation, mModifier };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_0_2_SolveCSP_bindingFBBBBB(
-			MemberInAnnotationVisibility _this, Match match, AnnotationTypeDeclaration annotation, Modifier mModifier,
-			MDefinition mDefinition) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, annotation, mModifier, mDefinition);
+			MemberInAnnotationVisibility _this, Match match, MDefinition mDefinition,
+			AnnotationTypeDeclaration annotation, Modifier mModifier) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mDefinition, annotation, mModifier);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, annotation, mModifier, mDefinition };
+			return new Object[] { csp, _this, match, mDefinition, annotation, mModifier };
 		}
 		return null;
 	}
@@ -1499,10 +1502,10 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_0_2_SolveCSP_bindingAndBlackFBBBBB(
-			MemberInAnnotationVisibility _this, Match match, AnnotationTypeDeclaration annotation, Modifier mModifier,
-			MDefinition mDefinition) {
+			MemberInAnnotationVisibility _this, Match match, MDefinition mDefinition,
+			AnnotationTypeDeclaration annotation, Modifier mModifier) {
 		Object[] result_pattern_MemberInAnnotationVisibility_0_2_SolveCSP_binding = pattern_MemberInAnnotationVisibility_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, annotation, mModifier, mDefinition);
+				_this, match, mDefinition, annotation, mModifier);
 		if (result_pattern_MemberInAnnotationVisibility_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MemberInAnnotationVisibility_0_2_SolveCSP_binding[0];
 
@@ -1510,7 +1513,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					csp);
 			if (result_pattern_MemberInAnnotationVisibility_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, annotation, mModifier, mDefinition };
+				return new Object[] { csp, _this, match, mDefinition, annotation, mModifier };
 			}
 		}
 		return null;
@@ -1524,12 +1527,12 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_0_4_collectelementstobetranslated_blackBBBB(
-			Match match, AnnotationTypeDeclaration annotation, Modifier mModifier, MDefinition mDefinition) {
-		return new Object[] { match, annotation, mModifier, mDefinition };
+			Match match, MDefinition mDefinition, AnnotationTypeDeclaration annotation, Modifier mModifier) {
+		return new Object[] { match, mDefinition, annotation, mModifier };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_0_4_collectelementstobetranslated_greenBBBFF(
-			Match match, Modifier mModifier, MDefinition mDefinition) {
+			Match match, MDefinition mDefinition, Modifier mModifier) {
 		EMoflonEdge mDefinition__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mDefinition____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mModifier);
@@ -1543,21 +1546,21 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		match.getToBeTranslatedEdges().add(mModifier__mDefinition____bodyDeclaration);
 		mDefinition__mModifier____modifier.setName(mDefinition__mModifier____modifier_name_prime);
 		mModifier__mDefinition____bodyDeclaration.setName(mModifier__mDefinition____bodyDeclaration_name_prime);
-		return new Object[] { match, mModifier, mDefinition, mDefinition__mModifier____modifier,
+		return new Object[] { match, mDefinition, mModifier, mDefinition__mModifier____modifier,
 				mModifier__mDefinition____bodyDeclaration };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_0_5_collectcontextelements_blackBBBB(Match match,
-			AnnotationTypeDeclaration annotation, Modifier mModifier, MDefinition mDefinition) {
-		return new Object[] { match, annotation, mModifier, mDefinition };
+			MDefinition mDefinition, AnnotationTypeDeclaration annotation, Modifier mModifier) {
+		return new Object[] { match, mDefinition, annotation, mModifier };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_0_5_collectcontextelements_greenBBBFF(Match match,
-			AnnotationTypeDeclaration annotation, MDefinition mDefinition) {
+			MDefinition mDefinition, AnnotationTypeDeclaration annotation) {
 		EMoflonEdge annotation__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__Annotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(annotation);
 		match.getContextNodes().add(mDefinition);
+		match.getContextNodes().add(annotation);
 		String annotation__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mDefinition__Annotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		annotation__mDefinition____bodyDeclarations.setSrc(annotation);
@@ -1569,14 +1572,14 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		annotation__mDefinition____bodyDeclarations.setName(annotation__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__Annotation____abstractTypeDeclaration
 				.setName(mDefinition__Annotation____abstractTypeDeclaration_name_prime);
-		return new Object[] { match, annotation, mDefinition, annotation__mDefinition____bodyDeclarations,
+		return new Object[] { match, mDefinition, annotation, annotation__mDefinition____bodyDeclarations,
 				mDefinition__Annotation____abstractTypeDeclaration };
 	}
 
 	public static final void pattern_MemberInAnnotationVisibility_0_6_registerobjectstomatch_expressionBBBBB(
-			MemberInAnnotationVisibility _this, Match match, AnnotationTypeDeclaration annotation, Modifier mModifier,
-			MDefinition mDefinition) {
-		_this.registerObjectsToMatch_FWD(match, annotation, mModifier, mDefinition);
+			MemberInAnnotationVisibility _this, Match match, MDefinition mDefinition,
+			AnnotationTypeDeclaration annotation, Modifier mModifier) {
+		_this.registerObjectsToMatch_FWD(match, mDefinition, annotation, mModifier);
 
 	}
 
@@ -1593,35 +1596,35 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	public static final Object[] pattern_MemberInAnnotationVisibility_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("defToMember");
-		EObject _localVariable_1 = isApplicableMatch.getObject("Annotation");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mModifier");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tMember");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tAnnotation");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mDefinition");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tMember");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("Annotation");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mModifier");
+		EObject _localVariable_6 = isApplicableMatch.getObject("tAnnotation");
 		EObject tmpDefToMember = _localVariable_0;
-		EObject tmpAnnotation = _localVariable_1;
-		EObject tmpMModifier = _localVariable_2;
-		EObject tmpTMember = _localVariable_3;
-		EObject tmpTAnnotation = _localVariable_4;
-		EObject tmpMDefinition = _localVariable_5;
-		EObject tmpMTypeToTType = _localVariable_6;
+		EObject tmpMDefinition = _localVariable_1;
+		EObject tmpTMember = _localVariable_2;
+		EObject tmpMTypeToTType = _localVariable_3;
+		EObject tmpAnnotation = _localVariable_4;
+		EObject tmpMModifier = _localVariable_5;
+		EObject tmpTAnnotation = _localVariable_6;
 		if (tmpDefToMember instanceof MDefinitionToTMember) {
 			MDefinitionToTMember defToMember = (MDefinitionToTMember) tmpDefToMember;
-			if (tmpAnnotation instanceof AnnotationTypeDeclaration) {
-				AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) tmpAnnotation;
-				if (tmpMModifier instanceof Modifier) {
-					Modifier mModifier = (Modifier) tmpMModifier;
-					if (tmpTMember instanceof TMember) {
-						TMember tMember = (TMember) tmpTMember;
-						if (tmpTAnnotation instanceof TAnnotationType) {
-							TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-							if (tmpMDefinition instanceof MDefinition) {
-								MDefinition mDefinition = (MDefinition) tmpMDefinition;
-								if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-									TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-									return new Object[] { defToMember, annotation, mModifier, tMember, tAnnotation,
-											mDefinition, mTypeToTType, isApplicableMatch };
+			if (tmpMDefinition instanceof MDefinition) {
+				MDefinition mDefinition = (MDefinition) tmpMDefinition;
+				if (tmpTMember instanceof TMember) {
+					TMember tMember = (TMember) tmpTMember;
+					if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+						TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+						if (tmpAnnotation instanceof AnnotationTypeDeclaration) {
+							AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) tmpAnnotation;
+							if (tmpMModifier instanceof Modifier) {
+								Modifier mModifier = (Modifier) tmpMModifier;
+								if (tmpTAnnotation instanceof TAnnotationType) {
+									TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
+									return new Object[] { defToMember, mDefinition, tMember, mTypeToTType, annotation,
+											mModifier, tAnnotation, isApplicableMatch };
 								}
 							}
 						}
@@ -1633,14 +1636,14 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_1_1_performtransformation_blackBBBBBBBFBB(
-			MDefinitionToTMember defToMember, AnnotationTypeDeclaration annotation, Modifier mModifier, TMember tMember,
-			TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType,
-			MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch) {
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TMember tMember,
+			TypeToTAbstractType mTypeToTType, AnnotationTypeDeclaration annotation, Modifier mModifier,
+			TAnnotationType tAnnotation, MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { defToMember, annotation, mModifier, tMember, tAnnotation, mDefinition,
-						mTypeToTType, csp, _this, isApplicableMatch };
+				return new Object[] { defToMember, mDefinition, tMember, mTypeToTType, annotation, mModifier,
+						tAnnotation, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1652,125 +1655,126 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 				isApplicableMatch);
 		if (result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding != null) {
 			MDefinitionToTMember defToMember = (MDefinitionToTMember) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[0];
-			AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[1];
-			Modifier mModifier = (Modifier) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[2];
-			TMember tMember = (TMember) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[3];
-			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[4];
-			MDefinition mDefinition = (MDefinition) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[5];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[6];
+			MDefinition mDefinition = (MDefinition) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[1];
+			TMember tMember = (TMember) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[2];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[3];
+			AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[4];
+			Modifier mModifier = (Modifier) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[5];
+			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_black = pattern_MemberInAnnotationVisibility_1_1_performtransformation_blackBBBBBBBFBB(
-					defToMember, annotation, mModifier, tMember, tAnnotation, mDefinition, mTypeToTType, _this,
+					defToMember, mDefinition, tMember, mTypeToTType, annotation, mModifier, tAnnotation, _this,
 					isApplicableMatch);
 			if (result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MemberInAnnotationVisibility_1_1_performtransformation_black[7];
 
-				return new Object[] { defToMember, annotation, mModifier, tMember, tAnnotation, mDefinition,
-						mTypeToTType, csp, _this, isApplicableMatch };
+				return new Object[] { defToMember, mDefinition, tMember, mTypeToTType, annotation, mModifier,
+						tAnnotation, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MemberInAnnotationVisibility_1_1_performtransformation_greenFBBFB(
-			Modifier mModifier, TMember tMember, CSP csp) {
-		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
+	public static final Object[] pattern_MemberInAnnotationVisibility_1_1_performtransformation_greenBFFBB(
+			TMember tMember, Modifier mModifier, CSP csp) {
 		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
-		Object _localVariable_0 = csp.getValue("tModifier", "isStatic");
-		Object _localVariable_1 = csp.getValue("tModifier", "tVisibility");
-		tMember.setTModifier(tModifier);
+		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
+		Object _localVariable_0 = csp.getValue("tModifier", "tVisibility");
+		Object _localVariable_1 = csp.getValue("tModifier", "isStatic");
 		mModifierToTModifier.setSource(mModifier);
+		tMember.setTModifier(tModifier);
 		mModifierToTModifier.setTarget(tModifier);
-		boolean tModifier_isStatic_prime = (boolean) _localVariable_0;
-		TVisibility tModifier_tVisibility_prime = (TVisibility) _localVariable_1;
-		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
+		TVisibility tModifier_tVisibility_prime = (TVisibility) _localVariable_0;
+		boolean tModifier_isStatic_prime = (boolean) _localVariable_1;
 		tModifier.setTVisibility(tModifier_tVisibility_prime);
-		return new Object[] { tModifier, mModifier, tMember, mModifierToTModifier, csp };
+		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
+		return new Object[] { tMember, mModifierToTModifier, tModifier, mModifier, csp };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_1_2_collecttranslatedelements_blackBBB(
-			TModifier tModifier, Modifier mModifier, MModifierToTModifier mModifierToTModifier) {
-		return new Object[] { tModifier, mModifier, mModifierToTModifier };
+			MModifierToTModifier mModifierToTModifier, TModifier tModifier, Modifier mModifier) {
+		return new Object[] { mModifierToTModifier, tModifier, mModifier };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_1_2_collecttranslatedelements_greenFBBB(
-			TModifier tModifier, Modifier mModifier, MModifierToTModifier mModifierToTModifier) {
+			MModifierToTModifier mModifierToTModifier, TModifier tModifier, Modifier mModifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(mModifierToTModifier);
 		ruleresult.getCreatedElements().add(tModifier);
 		ruleresult.getTranslatedElements().add(mModifier);
-		ruleresult.getCreatedLinkElements().add(mModifierToTModifier);
-		return new Object[] { ruleresult, tModifier, mModifier, mModifierToTModifier };
+		return new Object[] { ruleresult, mModifierToTModifier, tModifier, mModifier };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tModifier, EObject defToMember, EObject annotation, EObject mModifier,
-			EObject tMember, EObject tAnnotation, EObject mDefinition, EObject mModifierToTModifier,
-			EObject mTypeToTType) {
-		if (!defToMember.equals(tModifier)) {
-			if (!defToMember.equals(mModifier)) {
-				if (!defToMember.equals(tMember)) {
-					if (!defToMember.equals(tAnnotation)) {
-						if (!defToMember.equals(mDefinition)) {
-							if (!defToMember.equals(mModifierToTModifier)) {
-								if (!defToMember.equals(mTypeToTType)) {
-									if (!annotation.equals(tModifier)) {
-										if (!annotation.equals(defToMember)) {
-											if (!annotation.equals(mModifier)) {
-												if (!annotation.equals(tMember)) {
-													if (!annotation.equals(tAnnotation)) {
-														if (!annotation.equals(mDefinition)) {
-															if (!annotation.equals(mModifierToTModifier)) {
-																if (!annotation.equals(mTypeToTType)) {
-																	if (!mModifier.equals(tModifier)) {
-																		if (!mModifier.equals(tMember)) {
-																			if (!mModifier.equals(tAnnotation)) {
-																				if (!mModifier
-																						.equals(mModifierToTModifier)) {
-																					if (!mModifier
-																							.equals(mTypeToTType)) {
-																						if (!tMember
-																								.equals(tModifier)) {
-																							if (!tAnnotation.equals(
-																									tModifier)) {
-																								if (!tAnnotation.equals(
-																										tMember)) {
-																									if (!mDefinition
-																											.equals(tModifier)) {
-																										if (!mDefinition
-																												.equals(mModifier)) {
-																											if (!mDefinition
-																													.equals(tMember)) {
-																												if (!mDefinition
-																														.equals(tAnnotation)) {
-																													if (!mDefinition
-																															.equals(mModifierToTModifier)) {
-																														if (!mDefinition
-																																.equals(mTypeToTType)) {
-																															if (!mModifierToTModifier
-																																	.equals(tModifier)) {
-																																if (!mModifierToTModifier
-																																		.equals(tMember)) {
-																																	if (!mModifierToTModifier
-																																			.equals(tAnnotation)) {
-																																		if (!mModifierToTModifier
+			PerformRuleResult ruleresult, EObject defToMember, EObject mDefinition, EObject tMember,
+			EObject mModifierToTModifier, EObject tModifier, EObject mTypeToTType, EObject annotation,
+			EObject mModifier, EObject tAnnotation) {
+		if (!defToMember.equals(mDefinition)) {
+			if (!defToMember.equals(tMember)) {
+				if (!defToMember.equals(mModifierToTModifier)) {
+					if (!defToMember.equals(tModifier)) {
+						if (!defToMember.equals(mTypeToTType)) {
+							if (!defToMember.equals(mModifier)) {
+								if (!defToMember.equals(tAnnotation)) {
+									if (!mDefinition.equals(tMember)) {
+										if (!mDefinition.equals(mModifierToTModifier)) {
+											if (!mDefinition.equals(tModifier)) {
+												if (!mDefinition.equals(mTypeToTType)) {
+													if (!mDefinition.equals(mModifier)) {
+														if (!mDefinition.equals(tAnnotation)) {
+															if (!tMember.equals(tModifier)) {
+																if (!mModifierToTModifier.equals(tMember)) {
+																	if (!mModifierToTModifier.equals(tModifier)) {
+																		if (!mModifierToTModifier
+																				.equals(mTypeToTType)) {
+																			if (!mModifierToTModifier
+																					.equals(tAnnotation)) {
+																				if (!mTypeToTType.equals(tMember)) {
+																					if (!mTypeToTType
+																							.equals(tModifier)) {
+																						if (!mTypeToTType
+																								.equals(tAnnotation)) {
+																							if (!annotation.equals(
+																									defToMember)) {
+																								if (!annotation.equals(
+																										mDefinition)) {
+																									if (!annotation
+																											.equals(tMember)) {
+																										if (!annotation
+																												.equals(mModifierToTModifier)) {
+																											if (!annotation
+																													.equals(tModifier)) {
+																												if (!annotation
+																														.equals(mTypeToTType)) {
+																													if (!annotation
+																															.equals(mModifier)) {
+																														if (!annotation
+																																.equals(tAnnotation)) {
+																															if (!mModifier
+																																	.equals(tMember)) {
+																																if (!mModifier
+																																		.equals(mModifierToTModifier)) {
+																																	if (!mModifier
+																																			.equals(tModifier)) {
+																																		if (!mModifier
 																																				.equals(mTypeToTType)) {
-																																			if (!mTypeToTType
-																																					.equals(tModifier)) {
-																																				if (!mTypeToTType
+																																			if (!mModifier
+																																					.equals(tAnnotation)) {
+																																				if (!tAnnotation
 																																						.equals(tMember)) {
-																																					if (!mTypeToTType
-																																							.equals(tAnnotation)) {
+																																					if (!tAnnotation
+																																							.equals(tModifier)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								tModifier,
 																																								defToMember,
+																																								mDefinition,
+																																								tMember,
+																																								mModifierToTModifier,
+																																								tModifier,
+																																								mTypeToTType,
 																																								annotation,
 																																								mModifier,
-																																								tMember,
-																																								tAnnotation,
-																																								mDefinition,
-																																								mModifierToTModifier,
-																																								mTypeToTType };
+																																								tAnnotation };
 																																					}
 																																				}
 																																			}
@@ -1811,52 +1815,52 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject tModifier, EObject mModifier, EObject tMember, EObject mDefinition,
-			EObject mModifierToTModifier) {
-		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModifierToTModifier__mModifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mDefinition, EObject tMember, EObject mModifierToTModifier,
+			EObject tModifier, EObject mModifier) {
 		EMoflonEdge mDefinition__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mDefinition____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModifierToTModifier__mModifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MemberInAnnotationVisibility";
-		String tMember__tModifier____tModifier_name_prime = "tModifier";
-		String mModifierToTModifier__mModifier____source_name_prime = "source";
-		String mModifierToTModifier__tModifier____target_name_prime = "target";
 		String mDefinition__mModifier____modifier_name_prime = "modifier";
 		String mModifier__mDefinition____bodyDeclaration_name_prime = "bodyDeclaration";
-		tMember__tModifier____tModifier.setSrc(tMember);
-		tMember__tModifier____tModifier.setTrg(tModifier);
-		ruleresult.getCreatedEdges().add(tMember__tModifier____tModifier);
-		mModifierToTModifier__mModifier____source.setSrc(mModifierToTModifier);
-		mModifierToTModifier__mModifier____source.setTrg(mModifier);
-		ruleresult.getCreatedEdges().add(mModifierToTModifier__mModifier____source);
-		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
-		mModifierToTModifier__tModifier____target.setTrg(tModifier);
-		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
+		String tMember__tModifier____tModifier_name_prime = "tModifier";
+		String mModifierToTModifier__tModifier____target_name_prime = "target";
+		String mModifierToTModifier__mModifier____source_name_prime = "source";
 		mDefinition__mModifier____modifier.setSrc(mDefinition);
 		mDefinition__mModifier____modifier.setTrg(mModifier);
 		ruleresult.getTranslatedEdges().add(mDefinition__mModifier____modifier);
 		mModifier__mDefinition____bodyDeclaration.setSrc(mModifier);
 		mModifier__mDefinition____bodyDeclaration.setTrg(mDefinition);
 		ruleresult.getTranslatedEdges().add(mModifier__mDefinition____bodyDeclaration);
+		tMember__tModifier____tModifier.setSrc(tMember);
+		tMember__tModifier____tModifier.setTrg(tModifier);
+		ruleresult.getCreatedEdges().add(tMember__tModifier____tModifier);
+		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
+		mModifierToTModifier__tModifier____target.setTrg(tModifier);
+		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
+		mModifierToTModifier__mModifier____source.setSrc(mModifierToTModifier);
+		mModifierToTModifier__mModifier____source.setTrg(mModifier);
+		ruleresult.getCreatedEdges().add(mModifierToTModifier__mModifier____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
-		mModifierToTModifier__mModifier____source.setName(mModifierToTModifier__mModifier____source_name_prime);
-		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
 		mDefinition__mModifier____modifier.setName(mDefinition__mModifier____modifier_name_prime);
 		mModifier__mDefinition____bodyDeclaration.setName(mModifier__mDefinition____bodyDeclaration_name_prime);
-		return new Object[] { ruleresult, tModifier, mModifier, tMember, mDefinition, mModifierToTModifier,
-				tMember__tModifier____tModifier, mModifierToTModifier__mModifier____source,
-				mModifierToTModifier__tModifier____target, mDefinition__mModifier____modifier,
-				mModifier__mDefinition____bodyDeclaration };
+		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
+		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
+		mModifierToTModifier__mModifier____source.setName(mModifierToTModifier__mModifier____source_name_prime);
+		return new Object[] { ruleresult, mDefinition, tMember, mModifierToTModifier, tModifier, mModifier,
+				mDefinition__mModifier____modifier, mModifier__mDefinition____bodyDeclaration,
+				tMember__tModifier____tModifier, mModifierToTModifier__tModifier____target,
+				mModifierToTModifier__mModifier____source };
 	}
 
 	public static final void pattern_MemberInAnnotationVisibility_1_5_registerobjects_expressionBBBBBBBBBBB(
-			MemberInAnnotationVisibility _this, PerformRuleResult ruleresult, EObject tModifier, EObject defToMember,
-			EObject annotation, EObject mModifier, EObject tMember, EObject tAnnotation, EObject mDefinition,
-			EObject mModifierToTModifier, EObject mTypeToTType) {
-		_this.registerObjects_FWD(ruleresult, tModifier, defToMember, annotation, mModifier, tMember, tAnnotation,
-				mDefinition, mModifierToTModifier, mTypeToTType);
+			MemberInAnnotationVisibility _this, PerformRuleResult ruleresult, EObject defToMember, EObject mDefinition,
+			EObject tMember, EObject mModifierToTModifier, EObject tModifier, EObject mTypeToTType, EObject annotation,
+			EObject mModifier, EObject tAnnotation) {
+		_this.registerObjects_FWD(ruleresult, defToMember, mDefinition, tMember, mModifierToTModifier, tModifier,
+				mTypeToTType, annotation, mModifier, tAnnotation);
 
 	}
 
@@ -1918,27 +1922,27 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_2_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("Annotation");
-		EObject _localVariable_1 = match.getObject("mModifier");
-		EObject _localVariable_2 = match.getObject("mDefinition");
-		EObject tmpAnnotation = _localVariable_0;
-		EObject tmpMModifier = _localVariable_1;
-		EObject tmpMDefinition = _localVariable_2;
-		if (tmpAnnotation instanceof AnnotationTypeDeclaration) {
-			AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) tmpAnnotation;
-			if (tmpMModifier instanceof Modifier) {
-				Modifier mModifier = (Modifier) tmpMModifier;
-				if (tmpMDefinition instanceof MDefinition) {
-					MDefinition mDefinition = (MDefinition) tmpMDefinition;
-					return new Object[] { annotation, mModifier, mDefinition, match };
+		EObject _localVariable_0 = match.getObject("mDefinition");
+		EObject _localVariable_1 = match.getObject("Annotation");
+		EObject _localVariable_2 = match.getObject("mModifier");
+		EObject tmpMDefinition = _localVariable_0;
+		EObject tmpAnnotation = _localVariable_1;
+		EObject tmpMModifier = _localVariable_2;
+		if (tmpMDefinition instanceof MDefinition) {
+			MDefinition mDefinition = (MDefinition) tmpMDefinition;
+			if (tmpAnnotation instanceof AnnotationTypeDeclaration) {
+				AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) tmpAnnotation;
+				if (tmpMModifier instanceof Modifier) {
+					Modifier mModifier = (Modifier) tmpMModifier;
+					return new Object[] { mDefinition, annotation, mModifier, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MemberInAnnotationVisibility_2_2_corematch_blackFBBFFBFB(
-			AnnotationTypeDeclaration annotation, Modifier mModifier, MDefinition mDefinition, Match match) {
+	public static final Iterable<Object[]> pattern_MemberInAnnotationVisibility_2_2_corematch_blackFBFFBBFB(
+			MDefinition mDefinition, AnnotationTypeDeclaration annotation, Modifier mModifier, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember defToMember : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mDefinition, MDefinitionToTMember.class, "source")) {
@@ -1949,8 +1953,8 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					TAbstractType tmpTAnnotation = mTypeToTType.getTarget();
 					if (tmpTAnnotation instanceof TAnnotationType) {
 						TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-						_result.add(new Object[] { defToMember, annotation, mModifier, tMember, tAnnotation,
-								mDefinition, mTypeToTType, match });
+						_result.add(new Object[] { defToMember, mDefinition, tMember, mTypeToTType, annotation,
+								mModifier, tAnnotation, match });
 					}
 
 				}
@@ -1961,18 +1965,19 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Iterable<Object[]> pattern_MemberInAnnotationVisibility_2_3_findcontext_blackBBBBBBB(
-			MDefinitionToTMember defToMember, AnnotationTypeDeclaration annotation, Modifier mModifier, TMember tMember,
-			TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TMember tMember,
+			TypeToTAbstractType mTypeToTType, AnnotationTypeDeclaration annotation, Modifier mModifier,
+			TAnnotationType tAnnotation) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tMember.equals(defToMember.getTarget())) {
-			if (tAnnotation.getDefines().contains(tMember)) {
-				if (annotation.getBodyDeclarations().contains(mDefinition)) {
-					if (mDefinition.equals(defToMember.getSource())) {
-						if (annotation.equals(mTypeToTType.getSource())) {
+		if (mModifier.equals(mDefinition.getModifier())) {
+			if (tMember.equals(defToMember.getTarget())) {
+				if (mDefinition.equals(defToMember.getSource())) {
+					if (annotation.equals(mTypeToTType.getSource())) {
+						if (tAnnotation.getDefines().contains(tMember)) {
 							if (tAnnotation.equals(mTypeToTType.getTarget())) {
-								if (mModifier.equals(mDefinition.getModifier())) {
-									_result.add(new Object[] { defToMember, annotation, mModifier, tMember, tAnnotation,
-											mDefinition, mTypeToTType });
+								if (annotation.getBodyDeclarations().contains(mDefinition)) {
+									_result.add(new Object[] { defToMember, mDefinition, tMember, mTypeToTType,
+											annotation, mModifier, tAnnotation });
 								}
 							}
 						}
@@ -1984,95 +1989,95 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_2_3_findcontext_greenBBBBBBBFFFFFFFFFFF(
-			MDefinitionToTMember defToMember, AnnotationTypeDeclaration annotation, Modifier mModifier, TMember tMember,
-			TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TMember tMember,
+			TypeToTAbstractType mTypeToTType, AnnotationTypeDeclaration annotation, Modifier mModifier,
+			TAnnotationType tAnnotation) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge defToMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnnotation__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMember__tAnnotation____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotation__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinition__Annotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge defToMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__Annotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mDefinition____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String defToMember__tMember____target_name_prime = "target";
-		String tAnnotation__tMember____defines_name_prime = "defines";
-		String tMember__tAnnotation____definedBy_name_prime = "definedBy";
-		String annotation__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
-		String mDefinition__Annotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		String defToMember__mDefinition____source_name_prime = "source";
-		String mTypeToTType__Annotation____source_name_prime = "source";
-		String mTypeToTType__tAnnotation____target_name_prime = "target";
+		EMoflonEdge defToMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge defToMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__Annotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnnotation__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tAnnotation____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotation__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinition__Annotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mDefinition__mModifier____modifier_name_prime = "modifier";
 		String mModifier__mDefinition____bodyDeclaration_name_prime = "bodyDeclaration";
+		String defToMember__tMember____target_name_prime = "target";
+		String defToMember__mDefinition____source_name_prime = "source";
+		String mTypeToTType__Annotation____source_name_prime = "source";
+		String tAnnotation__tMember____defines_name_prime = "defines";
+		String tMember__tAnnotation____definedBy_name_prime = "definedBy";
+		String mTypeToTType__tAnnotation____target_name_prime = "target";
+		String annotation__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mDefinition__Annotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		isApplicableMatch.getAllContextElements().add(defToMember);
+		isApplicableMatch.getAllContextElements().add(mDefinition);
+		isApplicableMatch.getAllContextElements().add(tMember);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType);
 		isApplicableMatch.getAllContextElements().add(annotation);
 		isApplicableMatch.getAllContextElements().add(mModifier);
-		isApplicableMatch.getAllContextElements().add(tMember);
 		isApplicableMatch.getAllContextElements().add(tAnnotation);
-		isApplicableMatch.getAllContextElements().add(mDefinition);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType);
-		defToMember__tMember____target.setSrc(defToMember);
-		defToMember__tMember____target.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(defToMember__tMember____target);
-		tAnnotation__tMember____defines.setSrc(tAnnotation);
-		tAnnotation__tMember____defines.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(tAnnotation__tMember____defines);
-		tMember__tAnnotation____definedBy.setSrc(tMember);
-		tMember__tAnnotation____definedBy.setTrg(tAnnotation);
-		isApplicableMatch.getAllContextElements().add(tMember__tAnnotation____definedBy);
-		annotation__mDefinition____bodyDeclarations.setSrc(annotation);
-		annotation__mDefinition____bodyDeclarations.setTrg(mDefinition);
-		isApplicableMatch.getAllContextElements().add(annotation__mDefinition____bodyDeclarations);
-		mDefinition__Annotation____abstractTypeDeclaration.setSrc(mDefinition);
-		mDefinition__Annotation____abstractTypeDeclaration.setTrg(annotation);
-		isApplicableMatch.getAllContextElements().add(mDefinition__Annotation____abstractTypeDeclaration);
-		defToMember__mDefinition____source.setSrc(defToMember);
-		defToMember__mDefinition____source.setTrg(mDefinition);
-		isApplicableMatch.getAllContextElements().add(defToMember__mDefinition____source);
-		mTypeToTType__Annotation____source.setSrc(mTypeToTType);
-		mTypeToTType__Annotation____source.setTrg(annotation);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__Annotation____source);
-		mTypeToTType__tAnnotation____target.setSrc(mTypeToTType);
-		mTypeToTType__tAnnotation____target.setTrg(tAnnotation);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__tAnnotation____target);
 		mDefinition__mModifier____modifier.setSrc(mDefinition);
 		mDefinition__mModifier____modifier.setTrg(mModifier);
 		isApplicableMatch.getAllContextElements().add(mDefinition__mModifier____modifier);
 		mModifier__mDefinition____bodyDeclaration.setSrc(mModifier);
 		mModifier__mDefinition____bodyDeclaration.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mModifier__mDefinition____bodyDeclaration);
+		defToMember__tMember____target.setSrc(defToMember);
+		defToMember__tMember____target.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(defToMember__tMember____target);
+		defToMember__mDefinition____source.setSrc(defToMember);
+		defToMember__mDefinition____source.setTrg(mDefinition);
+		isApplicableMatch.getAllContextElements().add(defToMember__mDefinition____source);
+		mTypeToTType__Annotation____source.setSrc(mTypeToTType);
+		mTypeToTType__Annotation____source.setTrg(annotation);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__Annotation____source);
+		tAnnotation__tMember____defines.setSrc(tAnnotation);
+		tAnnotation__tMember____defines.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(tAnnotation__tMember____defines);
+		tMember__tAnnotation____definedBy.setSrc(tMember);
+		tMember__tAnnotation____definedBy.setTrg(tAnnotation);
+		isApplicableMatch.getAllContextElements().add(tMember__tAnnotation____definedBy);
+		mTypeToTType__tAnnotation____target.setSrc(mTypeToTType);
+		mTypeToTType__tAnnotation____target.setTrg(tAnnotation);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__tAnnotation____target);
+		annotation__mDefinition____bodyDeclarations.setSrc(annotation);
+		annotation__mDefinition____bodyDeclarations.setTrg(mDefinition);
+		isApplicableMatch.getAllContextElements().add(annotation__mDefinition____bodyDeclarations);
+		mDefinition__Annotation____abstractTypeDeclaration.setSrc(mDefinition);
+		mDefinition__Annotation____abstractTypeDeclaration.setTrg(annotation);
+		isApplicableMatch.getAllContextElements().add(mDefinition__Annotation____abstractTypeDeclaration);
+		mDefinition__mModifier____modifier.setName(mDefinition__mModifier____modifier_name_prime);
+		mModifier__mDefinition____bodyDeclaration.setName(mModifier__mDefinition____bodyDeclaration_name_prime);
 		defToMember__tMember____target.setName(defToMember__tMember____target_name_prime);
+		defToMember__mDefinition____source.setName(defToMember__mDefinition____source_name_prime);
+		mTypeToTType__Annotation____source.setName(mTypeToTType__Annotation____source_name_prime);
 		tAnnotation__tMember____defines.setName(tAnnotation__tMember____defines_name_prime);
 		tMember__tAnnotation____definedBy.setName(tMember__tAnnotation____definedBy_name_prime);
+		mTypeToTType__tAnnotation____target.setName(mTypeToTType__tAnnotation____target_name_prime);
 		annotation__mDefinition____bodyDeclarations.setName(annotation__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__Annotation____abstractTypeDeclaration
 				.setName(mDefinition__Annotation____abstractTypeDeclaration_name_prime);
-		defToMember__mDefinition____source.setName(defToMember__mDefinition____source_name_prime);
-		mTypeToTType__Annotation____source.setName(mTypeToTType__Annotation____source_name_prime);
-		mTypeToTType__tAnnotation____target.setName(mTypeToTType__tAnnotation____target_name_prime);
-		mDefinition__mModifier____modifier.setName(mDefinition__mModifier____modifier_name_prime);
-		mModifier__mDefinition____bodyDeclaration.setName(mModifier__mDefinition____bodyDeclaration_name_prime);
-		return new Object[] { defToMember, annotation, mModifier, tMember, tAnnotation, mDefinition, mTypeToTType,
-				isApplicableMatch, defToMember__tMember____target, tAnnotation__tMember____defines,
-				tMember__tAnnotation____definedBy, annotation__mDefinition____bodyDeclarations,
-				mDefinition__Annotation____abstractTypeDeclaration, defToMember__mDefinition____source,
-				mTypeToTType__Annotation____source, mTypeToTType__tAnnotation____target,
-				mDefinition__mModifier____modifier, mModifier__mDefinition____bodyDeclaration };
+		return new Object[] { defToMember, mDefinition, tMember, mTypeToTType, annotation, mModifier, tAnnotation,
+				isApplicableMatch, mDefinition__mModifier____modifier, mModifier__mDefinition____bodyDeclaration,
+				defToMember__tMember____target, defToMember__mDefinition____source, mTypeToTType__Annotation____source,
+				tAnnotation__tMember____defines, tMember__tAnnotation____definedBy, mTypeToTType__tAnnotation____target,
+				annotation__mDefinition____bodyDeclarations, mDefinition__Annotation____abstractTypeDeclaration };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_2_4_solveCSP_bindingFBBBBBBBBB(
 			MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
-			AnnotationTypeDeclaration annotation, Modifier mModifier, TMember tMember, TAnnotationType tAnnotation,
-			MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, defToMember, annotation, mModifier,
-				tMember, tAnnotation, mDefinition, mTypeToTType);
+			MDefinition mDefinition, TMember tMember, TypeToTAbstractType mTypeToTType,
+			AnnotationTypeDeclaration annotation, Modifier mModifier, TAnnotationType tAnnotation) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, defToMember, mDefinition, tMember,
+				mTypeToTType, annotation, mModifier, tAnnotation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, defToMember, annotation, mModifier, tMember,
-					tAnnotation, mDefinition, mTypeToTType };
+			return new Object[] { csp, _this, isApplicableMatch, defToMember, mDefinition, tMember, mTypeToTType,
+					annotation, mModifier, tAnnotation };
 		}
 		return null;
 	}
@@ -2083,11 +2088,11 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(
 			MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
-			AnnotationTypeDeclaration annotation, Modifier mModifier, TMember tMember, TAnnotationType tAnnotation,
-			MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {
+			MDefinition mDefinition, TMember tMember, TypeToTAbstractType mTypeToTType,
+			AnnotationTypeDeclaration annotation, Modifier mModifier, TAnnotationType tAnnotation) {
 		Object[] result_pattern_MemberInAnnotationVisibility_2_4_solveCSP_binding = pattern_MemberInAnnotationVisibility_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, defToMember, annotation, mModifier, tMember, tAnnotation, mDefinition,
-				mTypeToTType);
+				_this, isApplicableMatch, defToMember, mDefinition, tMember, mTypeToTType, annotation, mModifier,
+				tAnnotation);
 		if (result_pattern_MemberInAnnotationVisibility_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MemberInAnnotationVisibility_2_4_solveCSP_binding[0];
 
@@ -2095,8 +2100,8 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					csp);
 			if (result_pattern_MemberInAnnotationVisibility_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, defToMember, annotation, mModifier, tMember,
-						tAnnotation, mDefinition, mTypeToTType };
+				return new Object[] { csp, _this, isApplicableMatch, defToMember, mDefinition, tMember, mTypeToTType,
+						annotation, mModifier, tAnnotation };
 			}
 		}
 		return null;
@@ -2131,18 +2136,18 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_10_1_initialbindings_blackBBBBB(
-			MemberInAnnotationVisibility _this, Match match, TModifier tModifier, TMember tMember,
+			MemberInAnnotationVisibility _this, Match match, TMember tMember, TModifier tModifier,
 			TAnnotationType tAnnotation) {
-		return new Object[] { _this, match, tModifier, tMember, tAnnotation };
+		return new Object[] { _this, match, tMember, tModifier, tAnnotation };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_10_2_SolveCSP_bindingFBBBBB(
-			MemberInAnnotationVisibility _this, Match match, TModifier tModifier, TMember tMember,
+			MemberInAnnotationVisibility _this, Match match, TMember tMember, TModifier tModifier,
 			TAnnotationType tAnnotation) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tModifier, tMember, tAnnotation);
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tMember, tModifier, tAnnotation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tModifier, tMember, tAnnotation };
+			return new Object[] { csp, _this, match, tMember, tModifier, tAnnotation };
 		}
 		return null;
 	}
@@ -2152,10 +2157,10 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_10_2_SolveCSP_bindingAndBlackFBBBBB(
-			MemberInAnnotationVisibility _this, Match match, TModifier tModifier, TMember tMember,
+			MemberInAnnotationVisibility _this, Match match, TMember tMember, TModifier tModifier,
 			TAnnotationType tAnnotation) {
 		Object[] result_pattern_MemberInAnnotationVisibility_10_2_SolveCSP_binding = pattern_MemberInAnnotationVisibility_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, tModifier, tMember, tAnnotation);
+				_this, match, tMember, tModifier, tAnnotation);
 		if (result_pattern_MemberInAnnotationVisibility_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MemberInAnnotationVisibility_10_2_SolveCSP_binding[0];
 
@@ -2163,7 +2168,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					csp);
 			if (result_pattern_MemberInAnnotationVisibility_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tModifier, tMember, tAnnotation };
+				return new Object[] { csp, _this, match, tMember, tModifier, tAnnotation };
 			}
 		}
 		return null;
@@ -2177,12 +2182,12 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_10_4_collectelementstobetranslated_blackBBBB(
-			Match match, TModifier tModifier, TMember tMember, TAnnotationType tAnnotation) {
-		return new Object[] { match, tModifier, tMember, tAnnotation };
+			Match match, TMember tMember, TModifier tModifier, TAnnotationType tAnnotation) {
+		return new Object[] { match, tMember, tModifier, tAnnotation };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_10_4_collectelementstobetranslated_greenBBBF(
-			Match match, TModifier tModifier, TMember tMember) {
+			Match match, TMember tMember, TModifier tModifier) {
 		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tModifier);
 		String tMember__tModifier____tModifier_name_prime = "tModifier";
@@ -2190,12 +2195,12 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		tMember__tModifier____tModifier.setTrg(tModifier);
 		match.getToBeTranslatedEdges().add(tMember__tModifier____tModifier);
 		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
-		return new Object[] { match, tModifier, tMember, tMember__tModifier____tModifier };
+		return new Object[] { match, tMember, tModifier, tMember__tModifier____tModifier };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_10_5_collectcontextelements_blackBBBB(Match match,
-			TModifier tModifier, TMember tMember, TAnnotationType tAnnotation) {
-		return new Object[] { match, tModifier, tMember, tAnnotation };
+			TMember tMember, TModifier tModifier, TAnnotationType tAnnotation) {
+		return new Object[] { match, tMember, tModifier, tAnnotation };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_10_5_collectcontextelements_greenBBBFF(
@@ -2219,9 +2224,9 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final void pattern_MemberInAnnotationVisibility_10_6_registerobjectstomatch_expressionBBBBB(
-			MemberInAnnotationVisibility _this, Match match, TModifier tModifier, TMember tMember,
+			MemberInAnnotationVisibility _this, Match match, TMember tMember, TModifier tModifier,
 			TAnnotationType tAnnotation) {
-		_this.registerObjectsToMatch_BWD(match, tModifier, tMember, tAnnotation);
+		_this.registerObjectsToMatch_BWD(match, tMember, tModifier, tAnnotation);
 
 	}
 
@@ -2237,36 +2242,36 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tModifier");
-		EObject _localVariable_1 = isApplicableMatch.getObject("defToMember");
-		EObject _localVariable_2 = isApplicableMatch.getObject("Annotation");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tMember");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tAnnotation");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mDefinition");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mTypeToTType");
-		EObject tmpTModifier = _localVariable_0;
-		EObject tmpDefToMember = _localVariable_1;
-		EObject tmpAnnotation = _localVariable_2;
-		EObject tmpTMember = _localVariable_3;
-		EObject tmpTAnnotation = _localVariable_4;
-		EObject tmpMDefinition = _localVariable_5;
-		EObject tmpMTypeToTType = _localVariable_6;
-		if (tmpTModifier instanceof TModifier) {
-			TModifier tModifier = (TModifier) tmpTModifier;
-			if (tmpDefToMember instanceof MDefinitionToTMember) {
-				MDefinitionToTMember defToMember = (MDefinitionToTMember) tmpDefToMember;
-				if (tmpAnnotation instanceof AnnotationTypeDeclaration) {
-					AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) tmpAnnotation;
-					if (tmpTMember instanceof TMember) {
-						TMember tMember = (TMember) tmpTMember;
-						if (tmpTAnnotation instanceof TAnnotationType) {
-							TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-							if (tmpMDefinition instanceof MDefinition) {
-								MDefinition mDefinition = (MDefinition) tmpMDefinition;
-								if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-									TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-									return new Object[] { tModifier, defToMember, annotation, tMember, tAnnotation,
-											mDefinition, mTypeToTType, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("defToMember");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tMember");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tModifier");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_5 = isApplicableMatch.getObject("Annotation");
+		EObject _localVariable_6 = isApplicableMatch.getObject("tAnnotation");
+		EObject tmpDefToMember = _localVariable_0;
+		EObject tmpMDefinition = _localVariable_1;
+		EObject tmpTMember = _localVariable_2;
+		EObject tmpTModifier = _localVariable_3;
+		EObject tmpMTypeToTType = _localVariable_4;
+		EObject tmpAnnotation = _localVariable_5;
+		EObject tmpTAnnotation = _localVariable_6;
+		if (tmpDefToMember instanceof MDefinitionToTMember) {
+			MDefinitionToTMember defToMember = (MDefinitionToTMember) tmpDefToMember;
+			if (tmpMDefinition instanceof MDefinition) {
+				MDefinition mDefinition = (MDefinition) tmpMDefinition;
+				if (tmpTMember instanceof TMember) {
+					TMember tMember = (TMember) tmpTMember;
+					if (tmpTModifier instanceof TModifier) {
+						TModifier tModifier = (TModifier) tmpTModifier;
+						if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+							TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+							if (tmpAnnotation instanceof AnnotationTypeDeclaration) {
+								AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) tmpAnnotation;
+								if (tmpTAnnotation instanceof TAnnotationType) {
+									TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
+									return new Object[] { defToMember, mDefinition, tMember, tModifier, mTypeToTType,
+											annotation, tAnnotation, isApplicableMatch };
 								}
 							}
 						}
@@ -2278,14 +2283,14 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_11_1_performtransformation_blackBBBBBBBFBB(
-			TModifier tModifier, MDefinitionToTMember defToMember, AnnotationTypeDeclaration annotation,
-			TMember tMember, TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType,
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TMember tMember, TModifier tModifier,
+			TypeToTAbstractType mTypeToTType, AnnotationTypeDeclaration annotation, TAnnotationType tAnnotation,
 			MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tModifier, defToMember, annotation, tMember, tAnnotation, mDefinition,
-						mTypeToTType, csp, _this, isApplicableMatch };
+				return new Object[] { defToMember, mDefinition, tMember, tModifier, mTypeToTType, annotation,
+						tAnnotation, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -2296,126 +2301,127 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		Object[] result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding = pattern_MemberInAnnotationVisibility_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding != null) {
-			TModifier tModifier = (TModifier) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[0];
-			MDefinitionToTMember defToMember = (MDefinitionToTMember) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[1];
-			AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[2];
-			TMember tMember = (TMember) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[3];
-			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[4];
-			MDefinition mDefinition = (MDefinition) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[5];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[6];
+			MDefinitionToTMember defToMember = (MDefinitionToTMember) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[0];
+			MDefinition mDefinition = (MDefinition) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[1];
+			TMember tMember = (TMember) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[2];
+			TModifier tModifier = (TModifier) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[3];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[4];
+			AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[5];
+			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_black = pattern_MemberInAnnotationVisibility_11_1_performtransformation_blackBBBBBBBFBB(
-					tModifier, defToMember, annotation, tMember, tAnnotation, mDefinition, mTypeToTType, _this,
+					defToMember, mDefinition, tMember, tModifier, mTypeToTType, annotation, tAnnotation, _this,
 					isApplicableMatch);
 			if (result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MemberInAnnotationVisibility_11_1_performtransformation_black[7];
 
-				return new Object[] { tModifier, defToMember, annotation, tMember, tAnnotation, mDefinition,
-						mTypeToTType, csp, _this, isApplicableMatch };
+				return new Object[] { defToMember, mDefinition, tMember, tModifier, mTypeToTType, annotation,
+						tAnnotation, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_11_1_performtransformation_greenBFBFB(
-			TModifier tModifier, MDefinition mDefinition, CSP csp) {
-		Modifier mModifier = JavaFactory.eINSTANCE.createModifier();
+			MDefinition mDefinition, TModifier tModifier, CSP csp) {
 		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
-		Object _localVariable_0 = csp.getValue("mModifier", "static");
-		Object _localVariable_1 = csp.getValue("mModifier", "visibility");
+		Modifier mModifier = JavaFactory.eINSTANCE.createModifier();
+		Object _localVariable_0 = csp.getValue("mModifier", "visibility");
+		Object _localVariable_1 = csp.getValue("mModifier", "static");
+		mModifierToTModifier.setTarget(tModifier);
 		mDefinition.setModifier(mModifier);
 		mModifierToTModifier.setSource(mModifier);
-		mModifierToTModifier.setTarget(tModifier);
-		boolean mModifier_static_prime = (boolean) _localVariable_0;
-		VisibilityKind mModifier_visibility_prime = (VisibilityKind) _localVariable_1;
-		mModifier.setStatic(Boolean.valueOf(mModifier_static_prime));
+		VisibilityKind mModifier_visibility_prime = (VisibilityKind) _localVariable_0;
+		boolean mModifier_static_prime = (boolean) _localVariable_1;
 		mModifier.setVisibility(mModifier_visibility_prime);
-		return new Object[] { tModifier, mModifier, mDefinition, mModifierToTModifier, csp };
+		mModifier.setStatic(Boolean.valueOf(mModifier_static_prime));
+		return new Object[] { mDefinition, mModifierToTModifier, tModifier, mModifier, csp };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_11_2_collecttranslatedelements_blackBBB(
-			TModifier tModifier, Modifier mModifier, MModifierToTModifier mModifierToTModifier) {
-		return new Object[] { tModifier, mModifier, mModifierToTModifier };
+			MModifierToTModifier mModifierToTModifier, TModifier tModifier, Modifier mModifier) {
+		return new Object[] { mModifierToTModifier, tModifier, mModifier };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_11_2_collecttranslatedelements_greenFBBB(
-			TModifier tModifier, Modifier mModifier, MModifierToTModifier mModifierToTModifier) {
+			MModifierToTModifier mModifierToTModifier, TModifier tModifier, Modifier mModifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(mModifierToTModifier);
 		ruleresult.getTranslatedElements().add(tModifier);
 		ruleresult.getCreatedElements().add(mModifier);
-		ruleresult.getCreatedLinkElements().add(mModifierToTModifier);
-		return new Object[] { ruleresult, tModifier, mModifier, mModifierToTModifier };
+		return new Object[] { ruleresult, mModifierToTModifier, tModifier, mModifier };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tModifier, EObject defToMember, EObject annotation, EObject mModifier,
-			EObject tMember, EObject tAnnotation, EObject mDefinition, EObject mModifierToTModifier,
-			EObject mTypeToTType) {
-		if (!defToMember.equals(tModifier)) {
-			if (!defToMember.equals(mModifier)) {
-				if (!defToMember.equals(tMember)) {
-					if (!defToMember.equals(tAnnotation)) {
-						if (!defToMember.equals(mDefinition)) {
-							if (!defToMember.equals(mModifierToTModifier)) {
-								if (!defToMember.equals(mTypeToTType)) {
-									if (!annotation.equals(tModifier)) {
-										if (!annotation.equals(defToMember)) {
-											if (!annotation.equals(mModifier)) {
-												if (!annotation.equals(tMember)) {
-													if (!annotation.equals(tAnnotation)) {
-														if (!annotation.equals(mDefinition)) {
-															if (!annotation.equals(mModifierToTModifier)) {
-																if (!annotation.equals(mTypeToTType)) {
-																	if (!mModifier.equals(tModifier)) {
-																		if (!mModifier.equals(tMember)) {
-																			if (!mModifier.equals(tAnnotation)) {
-																				if (!mModifier
-																						.equals(mModifierToTModifier)) {
-																					if (!mModifier
-																							.equals(mTypeToTType)) {
-																						if (!tMember
-																								.equals(tModifier)) {
-																							if (!tAnnotation.equals(
-																									tModifier)) {
-																								if (!tAnnotation.equals(
-																										tMember)) {
-																									if (!mDefinition
-																											.equals(tModifier)) {
-																										if (!mDefinition
-																												.equals(mModifier)) {
-																											if (!mDefinition
-																													.equals(tMember)) {
-																												if (!mDefinition
-																														.equals(tAnnotation)) {
-																													if (!mDefinition
-																															.equals(mModifierToTModifier)) {
-																														if (!mDefinition
-																																.equals(mTypeToTType)) {
-																															if (!mModifierToTModifier
-																																	.equals(tModifier)) {
-																																if (!mModifierToTModifier
-																																		.equals(tMember)) {
-																																	if (!mModifierToTModifier
-																																			.equals(tAnnotation)) {
-																																		if (!mModifierToTModifier
+			PerformRuleResult ruleresult, EObject defToMember, EObject mDefinition, EObject tMember,
+			EObject mModifierToTModifier, EObject tModifier, EObject mTypeToTType, EObject annotation,
+			EObject mModifier, EObject tAnnotation) {
+		if (!defToMember.equals(mDefinition)) {
+			if (!defToMember.equals(tMember)) {
+				if (!defToMember.equals(mModifierToTModifier)) {
+					if (!defToMember.equals(tModifier)) {
+						if (!defToMember.equals(mTypeToTType)) {
+							if (!defToMember.equals(mModifier)) {
+								if (!defToMember.equals(tAnnotation)) {
+									if (!mDefinition.equals(tMember)) {
+										if (!mDefinition.equals(mModifierToTModifier)) {
+											if (!mDefinition.equals(tModifier)) {
+												if (!mDefinition.equals(mTypeToTType)) {
+													if (!mDefinition.equals(mModifier)) {
+														if (!mDefinition.equals(tAnnotation)) {
+															if (!tMember.equals(tModifier)) {
+																if (!mModifierToTModifier.equals(tMember)) {
+																	if (!mModifierToTModifier.equals(tModifier)) {
+																		if (!mModifierToTModifier
+																				.equals(mTypeToTType)) {
+																			if (!mModifierToTModifier
+																					.equals(tAnnotation)) {
+																				if (!mTypeToTType.equals(tMember)) {
+																					if (!mTypeToTType
+																							.equals(tModifier)) {
+																						if (!mTypeToTType
+																								.equals(tAnnotation)) {
+																							if (!annotation.equals(
+																									defToMember)) {
+																								if (!annotation.equals(
+																										mDefinition)) {
+																									if (!annotation
+																											.equals(tMember)) {
+																										if (!annotation
+																												.equals(mModifierToTModifier)) {
+																											if (!annotation
+																													.equals(tModifier)) {
+																												if (!annotation
+																														.equals(mTypeToTType)) {
+																													if (!annotation
+																															.equals(mModifier)) {
+																														if (!annotation
+																																.equals(tAnnotation)) {
+																															if (!mModifier
+																																	.equals(tMember)) {
+																																if (!mModifier
+																																		.equals(mModifierToTModifier)) {
+																																	if (!mModifier
+																																			.equals(tModifier)) {
+																																		if (!mModifier
 																																				.equals(mTypeToTType)) {
-																																			if (!mTypeToTType
-																																					.equals(tModifier)) {
-																																				if (!mTypeToTType
+																																			if (!mModifier
+																																					.equals(tAnnotation)) {
+																																				if (!tAnnotation
 																																						.equals(tMember)) {
-																																					if (!mTypeToTType
-																																							.equals(tAnnotation)) {
+																																					if (!tAnnotation
+																																							.equals(tModifier)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								tModifier,
 																																								defToMember,
+																																								mDefinition,
+																																								tMember,
+																																								mModifierToTModifier,
+																																								tModifier,
+																																								mTypeToTType,
 																																								annotation,
 																																								mModifier,
-																																								tMember,
-																																								tAnnotation,
-																																								mDefinition,
-																																								mModifierToTModifier,
-																																								mTypeToTType };
+																																								tAnnotation };
 																																					}
 																																				}
 																																			}
@@ -2456,52 +2462,52 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject tModifier, EObject mModifier, EObject tMember, EObject mDefinition,
-			EObject mModifierToTModifier) {
-		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModifierToTModifier__mModifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mDefinition, EObject tMember, EObject mModifierToTModifier,
+			EObject tModifier, EObject mModifier) {
 		EMoflonEdge mDefinition__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mDefinition____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModifierToTModifier__mModifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MemberInAnnotationVisibility";
-		String tMember__tModifier____tModifier_name_prime = "tModifier";
-		String mModifierToTModifier__mModifier____source_name_prime = "source";
-		String mModifierToTModifier__tModifier____target_name_prime = "target";
 		String mDefinition__mModifier____modifier_name_prime = "modifier";
 		String mModifier__mDefinition____bodyDeclaration_name_prime = "bodyDeclaration";
-		tMember__tModifier____tModifier.setSrc(tMember);
-		tMember__tModifier____tModifier.setTrg(tModifier);
-		ruleresult.getTranslatedEdges().add(tMember__tModifier____tModifier);
-		mModifierToTModifier__mModifier____source.setSrc(mModifierToTModifier);
-		mModifierToTModifier__mModifier____source.setTrg(mModifier);
-		ruleresult.getCreatedEdges().add(mModifierToTModifier__mModifier____source);
-		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
-		mModifierToTModifier__tModifier____target.setTrg(tModifier);
-		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
+		String tMember__tModifier____tModifier_name_prime = "tModifier";
+		String mModifierToTModifier__tModifier____target_name_prime = "target";
+		String mModifierToTModifier__mModifier____source_name_prime = "source";
 		mDefinition__mModifier____modifier.setSrc(mDefinition);
 		mDefinition__mModifier____modifier.setTrg(mModifier);
 		ruleresult.getCreatedEdges().add(mDefinition__mModifier____modifier);
 		mModifier__mDefinition____bodyDeclaration.setSrc(mModifier);
 		mModifier__mDefinition____bodyDeclaration.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mModifier__mDefinition____bodyDeclaration);
+		tMember__tModifier____tModifier.setSrc(tMember);
+		tMember__tModifier____tModifier.setTrg(tModifier);
+		ruleresult.getTranslatedEdges().add(tMember__tModifier____tModifier);
+		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
+		mModifierToTModifier__tModifier____target.setTrg(tModifier);
+		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
+		mModifierToTModifier__mModifier____source.setSrc(mModifierToTModifier);
+		mModifierToTModifier__mModifier____source.setTrg(mModifier);
+		ruleresult.getCreatedEdges().add(mModifierToTModifier__mModifier____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
-		mModifierToTModifier__mModifier____source.setName(mModifierToTModifier__mModifier____source_name_prime);
-		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
 		mDefinition__mModifier____modifier.setName(mDefinition__mModifier____modifier_name_prime);
 		mModifier__mDefinition____bodyDeclaration.setName(mModifier__mDefinition____bodyDeclaration_name_prime);
-		return new Object[] { ruleresult, tModifier, mModifier, tMember, mDefinition, mModifierToTModifier,
-				tMember__tModifier____tModifier, mModifierToTModifier__mModifier____source,
-				mModifierToTModifier__tModifier____target, mDefinition__mModifier____modifier,
-				mModifier__mDefinition____bodyDeclaration };
+		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
+		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
+		mModifierToTModifier__mModifier____source.setName(mModifierToTModifier__mModifier____source_name_prime);
+		return new Object[] { ruleresult, mDefinition, tMember, mModifierToTModifier, tModifier, mModifier,
+				mDefinition__mModifier____modifier, mModifier__mDefinition____bodyDeclaration,
+				tMember__tModifier____tModifier, mModifierToTModifier__tModifier____target,
+				mModifierToTModifier__mModifier____source };
 	}
 
 	public static final void pattern_MemberInAnnotationVisibility_11_5_registerobjects_expressionBBBBBBBBBBB(
-			MemberInAnnotationVisibility _this, PerformRuleResult ruleresult, EObject tModifier, EObject defToMember,
-			EObject annotation, EObject mModifier, EObject tMember, EObject tAnnotation, EObject mDefinition,
-			EObject mModifierToTModifier, EObject mTypeToTType) {
-		_this.registerObjects_BWD(ruleresult, tModifier, defToMember, annotation, mModifier, tMember, tAnnotation,
-				mDefinition, mModifierToTModifier, mTypeToTType);
+			MemberInAnnotationVisibility _this, PerformRuleResult ruleresult, EObject defToMember, EObject mDefinition,
+			EObject tMember, EObject mModifierToTModifier, EObject tModifier, EObject mTypeToTType, EObject annotation,
+			EObject mModifier, EObject tAnnotation) {
+		_this.registerObjects_BWD(ruleresult, defToMember, mDefinition, tMember, mModifierToTModifier, tModifier,
+				mTypeToTType, annotation, mModifier, tAnnotation);
 
 	}
 
@@ -2563,27 +2569,27 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_12_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tModifier");
-		EObject _localVariable_1 = match.getObject("tMember");
+		EObject _localVariable_0 = match.getObject("tMember");
+		EObject _localVariable_1 = match.getObject("tModifier");
 		EObject _localVariable_2 = match.getObject("tAnnotation");
-		EObject tmpTModifier = _localVariable_0;
-		EObject tmpTMember = _localVariable_1;
+		EObject tmpTMember = _localVariable_0;
+		EObject tmpTModifier = _localVariable_1;
 		EObject tmpTAnnotation = _localVariable_2;
-		if (tmpTModifier instanceof TModifier) {
-			TModifier tModifier = (TModifier) tmpTModifier;
-			if (tmpTMember instanceof TMember) {
-				TMember tMember = (TMember) tmpTMember;
+		if (tmpTMember instanceof TMember) {
+			TMember tMember = (TMember) tmpTMember;
+			if (tmpTModifier instanceof TModifier) {
+				TModifier tModifier = (TModifier) tmpTModifier;
 				if (tmpTAnnotation instanceof TAnnotationType) {
 					TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-					return new Object[] { tModifier, tMember, tAnnotation, match };
+					return new Object[] { tMember, tModifier, tAnnotation, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MemberInAnnotationVisibility_12_2_corematch_blackBFFBBFFB(
-			TModifier tModifier, TMember tMember, TAnnotationType tAnnotation, Match match) {
+	public static final Iterable<Object[]> pattern_MemberInAnnotationVisibility_12_2_corematch_blackFFBBFFBB(
+			TMember tMember, TModifier tModifier, TAnnotationType tAnnotation, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember defToMember : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
@@ -2595,8 +2601,8 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					Type tmpAnnotation = mTypeToTType.getSource();
 					if (tmpAnnotation instanceof AnnotationTypeDeclaration) {
 						AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) tmpAnnotation;
-						_result.add(new Object[] { tModifier, defToMember, annotation, tMember, tAnnotation,
-								mDefinition, mTypeToTType, match });
+						_result.add(new Object[] { defToMember, mDefinition, tMember, tModifier, mTypeToTType,
+								annotation, tAnnotation, match });
 					}
 
 				}
@@ -2607,18 +2613,18 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Iterable<Object[]> pattern_MemberInAnnotationVisibility_12_3_findcontext_blackBBBBBBB(
-			TModifier tModifier, MDefinitionToTMember defToMember, AnnotationTypeDeclaration annotation,
-			TMember tMember, TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TMember tMember, TModifier tModifier,
+			TypeToTAbstractType mTypeToTType, AnnotationTypeDeclaration annotation, TAnnotationType tAnnotation) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tMember.equals(defToMember.getTarget())) {
-			if (tModifier.equals(tMember.getTModifier())) {
-				if (tAnnotation.getDefines().contains(tMember)) {
-					if (annotation.getBodyDeclarations().contains(mDefinition)) {
-						if (mDefinition.equals(defToMember.getSource())) {
-							if (annotation.equals(mTypeToTType.getSource())) {
-								if (tAnnotation.equals(mTypeToTType.getTarget())) {
-									_result.add(new Object[] { tModifier, defToMember, annotation, tMember, tAnnotation,
-											mDefinition, mTypeToTType });
+		if (tModifier.equals(tMember.getTModifier())) {
+			if (tMember.equals(defToMember.getTarget())) {
+				if (mDefinition.equals(defToMember.getSource())) {
+					if (annotation.equals(mTypeToTType.getSource())) {
+						if (tAnnotation.getDefines().contains(tMember)) {
+							if (tAnnotation.equals(mTypeToTType.getTarget())) {
+								if (annotation.getBodyDeclarations().contains(mDefinition)) {
+									_result.add(new Object[] { defToMember, mDefinition, tMember, tModifier,
+											mTypeToTType, annotation, tAnnotation });
 								}
 							}
 						}
@@ -2630,89 +2636,88 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_12_3_findcontext_greenBBBBBBBFFFFFFFFFF(
-			TModifier tModifier, MDefinitionToTMember defToMember, AnnotationTypeDeclaration annotation,
-			TMember tMember, TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TMember tMember, TModifier tModifier,
+			TypeToTAbstractType mTypeToTType, AnnotationTypeDeclaration annotation, TAnnotationType tAnnotation) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge defToMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnnotation__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMember__tAnnotation____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotation__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinition__Annotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge defToMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge defToMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__Annotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnnotation__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tAnnotation____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String defToMember__tMember____target_name_prime = "target";
+		EMoflonEdge annotation__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinition__Annotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tMember__tModifier____tModifier_name_prime = "tModifier";
-		String tAnnotation__tMember____defines_name_prime = "defines";
-		String tMember__tAnnotation____definedBy_name_prime = "definedBy";
-		String annotation__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
-		String mDefinition__Annotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String defToMember__tMember____target_name_prime = "target";
 		String defToMember__mDefinition____source_name_prime = "source";
 		String mTypeToTType__Annotation____source_name_prime = "source";
+		String tAnnotation__tMember____defines_name_prime = "defines";
+		String tMember__tAnnotation____definedBy_name_prime = "definedBy";
 		String mTypeToTType__tAnnotation____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(tModifier);
+		String annotation__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mDefinition__Annotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		isApplicableMatch.getAllContextElements().add(defToMember);
-		isApplicableMatch.getAllContextElements().add(annotation);
-		isApplicableMatch.getAllContextElements().add(tMember);
-		isApplicableMatch.getAllContextElements().add(tAnnotation);
 		isApplicableMatch.getAllContextElements().add(mDefinition);
+		isApplicableMatch.getAllContextElements().add(tMember);
+		isApplicableMatch.getAllContextElements().add(tModifier);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType);
-		defToMember__tMember____target.setSrc(defToMember);
-		defToMember__tMember____target.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(defToMember__tMember____target);
+		isApplicableMatch.getAllContextElements().add(annotation);
+		isApplicableMatch.getAllContextElements().add(tAnnotation);
 		tMember__tModifier____tModifier.setSrc(tMember);
 		tMember__tModifier____tModifier.setTrg(tModifier);
 		isApplicableMatch.getAllContextElements().add(tMember__tModifier____tModifier);
-		tAnnotation__tMember____defines.setSrc(tAnnotation);
-		tAnnotation__tMember____defines.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(tAnnotation__tMember____defines);
-		tMember__tAnnotation____definedBy.setSrc(tMember);
-		tMember__tAnnotation____definedBy.setTrg(tAnnotation);
-		isApplicableMatch.getAllContextElements().add(tMember__tAnnotation____definedBy);
-		annotation__mDefinition____bodyDeclarations.setSrc(annotation);
-		annotation__mDefinition____bodyDeclarations.setTrg(mDefinition);
-		isApplicableMatch.getAllContextElements().add(annotation__mDefinition____bodyDeclarations);
-		mDefinition__Annotation____abstractTypeDeclaration.setSrc(mDefinition);
-		mDefinition__Annotation____abstractTypeDeclaration.setTrg(annotation);
-		isApplicableMatch.getAllContextElements().add(mDefinition__Annotation____abstractTypeDeclaration);
+		defToMember__tMember____target.setSrc(defToMember);
+		defToMember__tMember____target.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(defToMember__tMember____target);
 		defToMember__mDefinition____source.setSrc(defToMember);
 		defToMember__mDefinition____source.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(defToMember__mDefinition____source);
 		mTypeToTType__Annotation____source.setSrc(mTypeToTType);
 		mTypeToTType__Annotation____source.setTrg(annotation);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__Annotation____source);
+		tAnnotation__tMember____defines.setSrc(tAnnotation);
+		tAnnotation__tMember____defines.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(tAnnotation__tMember____defines);
+		tMember__tAnnotation____definedBy.setSrc(tMember);
+		tMember__tAnnotation____definedBy.setTrg(tAnnotation);
+		isApplicableMatch.getAllContextElements().add(tMember__tAnnotation____definedBy);
 		mTypeToTType__tAnnotation____target.setSrc(mTypeToTType);
 		mTypeToTType__tAnnotation____target.setTrg(tAnnotation);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__tAnnotation____target);
-		defToMember__tMember____target.setName(defToMember__tMember____target_name_prime);
+		annotation__mDefinition____bodyDeclarations.setSrc(annotation);
+		annotation__mDefinition____bodyDeclarations.setTrg(mDefinition);
+		isApplicableMatch.getAllContextElements().add(annotation__mDefinition____bodyDeclarations);
+		mDefinition__Annotation____abstractTypeDeclaration.setSrc(mDefinition);
+		mDefinition__Annotation____abstractTypeDeclaration.setTrg(annotation);
+		isApplicableMatch.getAllContextElements().add(mDefinition__Annotation____abstractTypeDeclaration);
 		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
+		defToMember__tMember____target.setName(defToMember__tMember____target_name_prime);
+		defToMember__mDefinition____source.setName(defToMember__mDefinition____source_name_prime);
+		mTypeToTType__Annotation____source.setName(mTypeToTType__Annotation____source_name_prime);
 		tAnnotation__tMember____defines.setName(tAnnotation__tMember____defines_name_prime);
 		tMember__tAnnotation____definedBy.setName(tMember__tAnnotation____definedBy_name_prime);
+		mTypeToTType__tAnnotation____target.setName(mTypeToTType__tAnnotation____target_name_prime);
 		annotation__mDefinition____bodyDeclarations.setName(annotation__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__Annotation____abstractTypeDeclaration
 				.setName(mDefinition__Annotation____abstractTypeDeclaration_name_prime);
-		defToMember__mDefinition____source.setName(defToMember__mDefinition____source_name_prime);
-		mTypeToTType__Annotation____source.setName(mTypeToTType__Annotation____source_name_prime);
-		mTypeToTType__tAnnotation____target.setName(mTypeToTType__tAnnotation____target_name_prime);
-		return new Object[] { tModifier, defToMember, annotation, tMember, tAnnotation, mDefinition, mTypeToTType,
-				isApplicableMatch, defToMember__tMember____target, tMember__tModifier____tModifier,
-				tAnnotation__tMember____defines, tMember__tAnnotation____definedBy,
-				annotation__mDefinition____bodyDeclarations, mDefinition__Annotation____abstractTypeDeclaration,
-				defToMember__mDefinition____source, mTypeToTType__Annotation____source,
-				mTypeToTType__tAnnotation____target };
+		return new Object[] { defToMember, mDefinition, tMember, tModifier, mTypeToTType, annotation, tAnnotation,
+				isApplicableMatch, tMember__tModifier____tModifier, defToMember__tMember____target,
+				defToMember__mDefinition____source, mTypeToTType__Annotation____source, tAnnotation__tMember____defines,
+				tMember__tAnnotation____definedBy, mTypeToTType__tAnnotation____target,
+				annotation__mDefinition____bodyDeclarations, mDefinition__Annotation____abstractTypeDeclaration };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_12_4_solveCSP_bindingFBBBBBBBBB(
-			MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch, TModifier tModifier,
-			MDefinitionToTMember defToMember, AnnotationTypeDeclaration annotation, TMember tMember,
-			TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tModifier, defToMember, annotation,
-				tMember, tAnnotation, mDefinition, mTypeToTType);
+			MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
+			MDefinition mDefinition, TMember tMember, TModifier tModifier, TypeToTAbstractType mTypeToTType,
+			AnnotationTypeDeclaration annotation, TAnnotationType tAnnotation) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, defToMember, mDefinition, tMember,
+				tModifier, mTypeToTType, annotation, tAnnotation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tModifier, defToMember, annotation, tMember,
-					tAnnotation, mDefinition, mTypeToTType };
+			return new Object[] { csp, _this, isApplicableMatch, defToMember, mDefinition, tMember, tModifier,
+					mTypeToTType, annotation, tAnnotation };
 		}
 		return null;
 	}
@@ -2722,12 +2727,12 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch, TModifier tModifier,
-			MDefinitionToTMember defToMember, AnnotationTypeDeclaration annotation, TMember tMember,
-			TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {
+			MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
+			MDefinition mDefinition, TMember tMember, TModifier tModifier, TypeToTAbstractType mTypeToTType,
+			AnnotationTypeDeclaration annotation, TAnnotationType tAnnotation) {
 		Object[] result_pattern_MemberInAnnotationVisibility_12_4_solveCSP_binding = pattern_MemberInAnnotationVisibility_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, tModifier, defToMember, annotation, tMember, tAnnotation, mDefinition,
-				mTypeToTType);
+				_this, isApplicableMatch, defToMember, mDefinition, tMember, tModifier, mTypeToTType, annotation,
+				tAnnotation);
 		if (result_pattern_MemberInAnnotationVisibility_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MemberInAnnotationVisibility_12_4_solveCSP_binding[0];
 
@@ -2735,8 +2740,8 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					csp);
 			if (result_pattern_MemberInAnnotationVisibility_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tModifier, defToMember, annotation, tMember,
-						tAnnotation, mDefinition, mTypeToTType };
+				return new Object[] { csp, _this, isApplicableMatch, defToMember, mDefinition, tMember, tModifier,
+						mTypeToTType, annotation, tAnnotation };
 			}
 		}
 		return null;
@@ -2826,9 +2831,9 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_20_2_testcorematchandDECs_black_nac_0BB(
 			TModifier tModifier, TAnnotationType tAnnotation) {
-		for (TAbstractType __DEC_tModifier_tModifier_526499 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_393941 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tAnnotation.equals(__DEC_tModifier_tModifier_526499)) {
+			if (!tAnnotation.equals(__DEC_tModifier_tModifier_393941)) {
 				return new Object[] { tModifier, tAnnotation };
 			}
 		}
@@ -2860,7 +2865,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 								tAnnotation) == null) {
 							if (pattern_MemberInAnnotationVisibility_20_2_testcorematchandDECs_black_nac_1BB(
 									tAnnotation, tModifier) == null) {
-								_result.add(new Object[] { tModifier, tMember, tAnnotation, _edge_tModifier });
+								_result.add(new Object[] { tMember, tModifier, tAnnotation, _edge_tModifier });
 							}
 						}
 					}
@@ -2884,9 +2889,9 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final boolean pattern_MemberInAnnotationVisibility_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			MemberInAnnotationVisibility _this, Match match, TModifier tModifier, TMember tMember,
+			MemberInAnnotationVisibility _this, Match match, TMember tMember, TModifier tModifier,
 			TAnnotationType tAnnotation) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tModifier, tMember, tAnnotation);
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tMember, tModifier, tAnnotation);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2987,7 +2992,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					AbstractTypeDeclaration tmpAnnotation = mDefinition.getAbstractTypeDeclaration();
 					if (tmpAnnotation instanceof AnnotationTypeDeclaration) {
 						AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) tmpAnnotation;
-						_result.add(new Object[] { annotation, mModifier, mDefinition, _edge_modifier });
+						_result.add(new Object[] { mDefinition, annotation, mModifier, _edge_modifier });
 					}
 
 				}
@@ -3009,9 +3014,9 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final boolean pattern_MemberInAnnotationVisibility_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			MemberInAnnotationVisibility _this, Match match, AnnotationTypeDeclaration annotation, Modifier mModifier,
-			MDefinition mDefinition) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, annotation, mModifier, mDefinition);
+			MemberInAnnotationVisibility _this, Match match, MDefinition mDefinition,
+			AnnotationTypeDeclaration annotation, Modifier mModifier) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mDefinition, annotation, mModifier);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3056,33 +3061,33 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_bindingFFFFFFBB(
-			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("tModifier");
-		EObject _localVariable_1 = sourceMatch.getObject("Annotation");
-		EObject _localVariable_2 = sourceMatch.getObject("mModifier");
-		EObject _localVariable_3 = targetMatch.getObject("tMember");
-		EObject _localVariable_4 = targetMatch.getObject("tAnnotation");
-		EObject _localVariable_5 = sourceMatch.getObject("mDefinition");
-		EObject tmpTModifier = _localVariable_0;
-		EObject tmpAnnotation = _localVariable_1;
-		EObject tmpMModifier = _localVariable_2;
-		EObject tmpTMember = _localVariable_3;
-		EObject tmpTAnnotation = _localVariable_4;
-		EObject tmpMDefinition = _localVariable_5;
-		if (tmpTModifier instanceof TModifier) {
-			TModifier tModifier = (TModifier) tmpTModifier;
-			if (tmpAnnotation instanceof AnnotationTypeDeclaration) {
-				AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) tmpAnnotation;
-				if (tmpMModifier instanceof Modifier) {
-					Modifier mModifier = (Modifier) tmpMModifier;
-					if (tmpTMember instanceof TMember) {
-						TMember tMember = (TMember) tmpTMember;
-						if (tmpTAnnotation instanceof TAnnotationType) {
-							TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-							if (tmpMDefinition instanceof MDefinition) {
-								MDefinition mDefinition = (MDefinition) tmpMDefinition;
-								return new Object[] { tModifier, annotation, mModifier, tMember, tAnnotation,
-										mDefinition, targetMatch, sourceMatch };
+			Match sourceMatch, Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("mDefinition");
+		EObject _localVariable_1 = targetMatch.getObject("tMember");
+		EObject _localVariable_2 = targetMatch.getObject("tModifier");
+		EObject _localVariable_3 = sourceMatch.getObject("Annotation");
+		EObject _localVariable_4 = sourceMatch.getObject("mModifier");
+		EObject _localVariable_5 = targetMatch.getObject("tAnnotation");
+		EObject tmpMDefinition = _localVariable_0;
+		EObject tmpTMember = _localVariable_1;
+		EObject tmpTModifier = _localVariable_2;
+		EObject tmpAnnotation = _localVariable_3;
+		EObject tmpMModifier = _localVariable_4;
+		EObject tmpTAnnotation = _localVariable_5;
+		if (tmpMDefinition instanceof MDefinition) {
+			MDefinition mDefinition = (MDefinition) tmpMDefinition;
+			if (tmpTMember instanceof TMember) {
+				TMember tMember = (TMember) tmpTMember;
+				if (tmpTModifier instanceof TModifier) {
+					TModifier tModifier = (TModifier) tmpTModifier;
+					if (tmpAnnotation instanceof AnnotationTypeDeclaration) {
+						AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) tmpAnnotation;
+						if (tmpMModifier instanceof Modifier) {
+							Modifier mModifier = (Modifier) tmpMModifier;
+							if (tmpTAnnotation instanceof TAnnotationType) {
+								TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
+								return new Object[] { mDefinition, tMember, tModifier, annotation, mModifier,
+										tAnnotation, sourceMatch, targetMatch };
 							}
 						}
 					}
@@ -3093,10 +3098,10 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_blackBBBBBBBB(
-			TModifier tModifier, AnnotationTypeDeclaration annotation, Modifier mModifier, TMember tMember,
-			TAnnotationType tAnnotation, MDefinition mDefinition, Match sourceMatch, Match targetMatch) {
+			MDefinition mDefinition, TMember tMember, TModifier tModifier, AnnotationTypeDeclaration annotation,
+			Modifier mModifier, TAnnotationType tAnnotation, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tModifier, annotation, mModifier, tMember, tAnnotation, mDefinition, sourceMatch,
+			return new Object[] { mDefinition, tMember, tModifier, annotation, mModifier, tAnnotation, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -3105,20 +3110,20 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	public static final Object[] pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding = pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_bindingFFFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding != null) {
-			TModifier tModifier = (TModifier) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[0];
-			AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[1];
-			Modifier mModifier = (Modifier) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[2];
-			TMember tMember = (TMember) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[3];
-			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[4];
-			MDefinition mDefinition = (MDefinition) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[5];
+			MDefinition mDefinition = (MDefinition) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[0];
+			TMember tMember = (TMember) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[1];
+			TModifier tModifier = (TModifier) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[2];
+			AnnotationTypeDeclaration annotation = (AnnotationTypeDeclaration) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[3];
+			Modifier mModifier = (Modifier) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[4];
+			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_black = pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					tModifier, annotation, mModifier, tMember, tAnnotation, mDefinition, sourceMatch, targetMatch);
+					mDefinition, tMember, tModifier, annotation, mModifier, tAnnotation, sourceMatch, targetMatch);
 			if (result_pattern_MemberInAnnotationVisibility_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tModifier, annotation, mModifier, tMember, tAnnotation, mDefinition, sourceMatch,
+				return new Object[] { mDefinition, tMember, tModifier, annotation, mModifier, tAnnotation, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3126,14 +3131,14 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_24_3_solvecsp_bindingFBBBBBBBBB(
-			MemberInAnnotationVisibility _this, TModifier tModifier, AnnotationTypeDeclaration annotation,
-			Modifier mModifier, TMember tMember, TAnnotationType tAnnotation, MDefinition mDefinition,
-			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(tModifier, annotation, mModifier, tMember, tAnnotation,
-				mDefinition, sourceMatch, targetMatch);
+			MemberInAnnotationVisibility _this, MDefinition mDefinition, TMember tMember, TModifier tModifier,
+			AnnotationTypeDeclaration annotation, Modifier mModifier, TAnnotationType tAnnotation, Match sourceMatch,
+			Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(mDefinition, tMember, tModifier, annotation, mModifier,
+				tAnnotation, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, tModifier, annotation, mModifier, tMember, tAnnotation, mDefinition,
+			return new Object[] { csp, _this, mDefinition, tMember, tModifier, annotation, mModifier, tAnnotation,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -3144,11 +3149,11 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			MemberInAnnotationVisibility _this, TModifier tModifier, AnnotationTypeDeclaration annotation,
-			Modifier mModifier, TMember tMember, TAnnotationType tAnnotation, MDefinition mDefinition,
-			Match sourceMatch, Match targetMatch) {
+			MemberInAnnotationVisibility _this, MDefinition mDefinition, TMember tMember, TModifier tModifier,
+			AnnotationTypeDeclaration annotation, Modifier mModifier, TAnnotationType tAnnotation, Match sourceMatch,
+			Match targetMatch) {
 		Object[] result_pattern_MemberInAnnotationVisibility_24_3_solvecsp_binding = pattern_MemberInAnnotationVisibility_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, tModifier, annotation, mModifier, tMember, tAnnotation, mDefinition, sourceMatch, targetMatch);
+				_this, mDefinition, tMember, tModifier, annotation, mModifier, tAnnotation, sourceMatch, targetMatch);
 		if (result_pattern_MemberInAnnotationVisibility_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_MemberInAnnotationVisibility_24_3_solvecsp_binding[0];
 
@@ -3156,7 +3161,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					csp);
 			if (result_pattern_MemberInAnnotationVisibility_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tModifier, annotation, mModifier, tMember, tAnnotation, mDefinition,
+				return new Object[] { csp, _this, mDefinition, tMember, tModifier, annotation, mModifier, tAnnotation,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3169,8 +3174,8 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MemberInAnnotationVisibility_24_5_matchcorrcontext_blackFBBBBFBB(
-			AnnotationTypeDeclaration annotation, TMember tMember, TAnnotationType tAnnotation, MDefinition mDefinition,
+	public static final Iterable<Object[]> pattern_MemberInAnnotationVisibility_24_5_matchcorrcontext_blackFBBFBBBB(
+			MDefinition mDefinition, TMember tMember, AnnotationTypeDeclaration annotation, TAnnotationType tAnnotation,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
@@ -3180,8 +3185,8 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(annotation, TypeToTAbstractType.class, "source")) {
 						if (tAnnotation.equals(mTypeToTType.getTarget())) {
-							_result.add(new Object[] { defToMember, annotation, tMember, tAnnotation, mDefinition,
-									mTypeToTType, sourceMatch, targetMatch });
+							_result.add(new Object[] { defToMember, mDefinition, tMember, mTypeToTType, annotation,
+									tAnnotation, sourceMatch, targetMatch });
 						}
 					}
 				}
@@ -3203,18 +3208,18 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_24_6_createcorrespondence_blackBBBBBBB(
-			TModifier tModifier, AnnotationTypeDeclaration annotation, Modifier mModifier, TMember tMember,
-			TAnnotationType tAnnotation, MDefinition mDefinition, CCMatch ccMatch) {
-		return new Object[] { tModifier, annotation, mModifier, tMember, tAnnotation, mDefinition, ccMatch };
+			MDefinition mDefinition, TMember tMember, TModifier tModifier, AnnotationTypeDeclaration annotation,
+			Modifier mModifier, TAnnotationType tAnnotation, CCMatch ccMatch) {
+		return new Object[] { mDefinition, tMember, tModifier, annotation, mModifier, tAnnotation, ccMatch };
 	}
 
-	public static final Object[] pattern_MemberInAnnotationVisibility_24_6_createcorrespondence_greenBBFB(
+	public static final Object[] pattern_MemberInAnnotationVisibility_24_6_createcorrespondence_greenFBBB(
 			TModifier tModifier, Modifier mModifier, CCMatch ccMatch) {
 		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
-		mModifierToTModifier.setSource(mModifier);
 		mModifierToTModifier.setTarget(tModifier);
+		mModifierToTModifier.setSource(mModifier);
 		ccMatch.getCreateCorr().add(mModifierToTModifier);
-		return new Object[] { tModifier, mModifier, mModifierToTModifier, ccMatch };
+		return new Object[] { mModifierToTModifier, tModifier, mModifier, ccMatch };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_24_7_addtoreturnedresult_blackBB(
@@ -3239,10 +3244,10 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_27_1_matchtggpattern_blackBBB(
-			AnnotationTypeDeclaration annotation, Modifier mModifier, MDefinition mDefinition) {
-		if (annotation.getBodyDeclarations().contains(mDefinition)) {
-			if (mModifier.equals(mDefinition.getModifier())) {
-				return new Object[] { annotation, mModifier, mDefinition };
+			MDefinition mDefinition, AnnotationTypeDeclaration annotation, Modifier mModifier) {
+		if (mModifier.equals(mDefinition.getModifier())) {
+			if (annotation.getBodyDeclarations().contains(mDefinition)) {
+				return new Object[] { mDefinition, annotation, mModifier };
 			}
 		}
 		return null;
@@ -3260,9 +3265,9 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_28_1_matchtggpattern_black_nac_0BB(
 			TModifier tModifier, TAnnotationType tAnnotation) {
-		for (TAbstractType __DEC_tModifier_tModifier_458683 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_153349 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tAnnotation.equals(__DEC_tModifier_tModifier_458683)) {
+			if (!tAnnotation.equals(__DEC_tModifier_tModifier_153349)) {
 				return new Object[] { tModifier, tAnnotation };
 			}
 		}
@@ -3277,15 +3282,15 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 		return null;
 	}
 
-	public static final Object[] pattern_MemberInAnnotationVisibility_28_1_matchtggpattern_blackBBB(TModifier tModifier,
-			TMember tMember, TAnnotationType tAnnotation) {
+	public static final Object[] pattern_MemberInAnnotationVisibility_28_1_matchtggpattern_blackBBB(TMember tMember,
+			TModifier tModifier, TAnnotationType tAnnotation) {
 		if (tModifier.equals(tMember.getTModifier())) {
 			if (tAnnotation.getDefines().contains(tMember)) {
 				if (pattern_MemberInAnnotationVisibility_28_1_matchtggpattern_black_nac_0BB(tModifier,
 						tAnnotation) == null) {
 					if (pattern_MemberInAnnotationVisibility_28_1_matchtggpattern_black_nac_1BB(tAnnotation,
 							tModifier) == null) {
-						return new Object[] { tModifier, tMember, tAnnotation };
+						return new Object[] { tMember, tModifier, tAnnotation };
 					}
 				}
 			}
@@ -3426,14 +3431,14 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_29_3_solveCSP_bindingFBBBBBBBBB(
 			MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
-			AnnotationTypeDeclaration annotation, TMember tMember, TAnnotationType tAnnotation, MDefinition mDefinition,
-			TypeToTAbstractType mTypeToTType, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, defToMember, annotation, tMember,
-				tAnnotation, mDefinition, mTypeToTType, ruleResult);
+			MDefinition mDefinition, TMember tMember, TypeToTAbstractType mTypeToTType,
+			AnnotationTypeDeclaration annotation, TAnnotationType tAnnotation, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, defToMember, mDefinition, tMember,
+				mTypeToTType, annotation, tAnnotation, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, defToMember, annotation, tMember, tAnnotation,
-					mDefinition, mTypeToTType, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, defToMember, mDefinition, tMember, mTypeToTType,
+					annotation, tAnnotation, ruleResult };
 		}
 		return null;
 	}
@@ -3444,10 +3449,10 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
 			MemberInAnnotationVisibility _this, IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
-			AnnotationTypeDeclaration annotation, TMember tMember, TAnnotationType tAnnotation, MDefinition mDefinition,
-			TypeToTAbstractType mTypeToTType, ModelgeneratorRuleResult ruleResult) {
+			MDefinition mDefinition, TMember tMember, TypeToTAbstractType mTypeToTType,
+			AnnotationTypeDeclaration annotation, TAnnotationType tAnnotation, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_MemberInAnnotationVisibility_29_3_solveCSP_binding = pattern_MemberInAnnotationVisibility_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, defToMember, annotation, tMember, tAnnotation, mDefinition, mTypeToTType,
+				_this, isApplicableMatch, defToMember, mDefinition, tMember, mTypeToTType, annotation, tAnnotation,
 				ruleResult);
 		if (result_pattern_MemberInAnnotationVisibility_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MemberInAnnotationVisibility_29_3_solveCSP_binding[0];
@@ -3456,8 +3461,8 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 					csp);
 			if (result_pattern_MemberInAnnotationVisibility_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, defToMember, annotation, tMember, tAnnotation,
-						mDefinition, mTypeToTType, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, defToMember, mDefinition, tMember, mTypeToTType,
+						annotation, tAnnotation, ruleResult };
 			}
 		}
 		return null;
@@ -3471,48 +3476,48 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_29_5_checknacs_blackBBBBBB(
-			MDefinitionToTMember defToMember, AnnotationTypeDeclaration annotation, TMember tMember,
-			TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType) {
-		return new Object[] { defToMember, annotation, tMember, tAnnotation, mDefinition, mTypeToTType };
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TMember tMember,
+			TypeToTAbstractType mTypeToTType, AnnotationTypeDeclaration annotation, TAnnotationType tAnnotation) {
+		return new Object[] { defToMember, mDefinition, tMember, mTypeToTType, annotation, tAnnotation };
 	}
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_29_6_perform_blackBBBBBBB(
-			MDefinitionToTMember defToMember, AnnotationTypeDeclaration annotation, TMember tMember,
-			TAnnotationType tAnnotation, MDefinition mDefinition, TypeToTAbstractType mTypeToTType,
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TMember tMember,
+			TypeToTAbstractType mTypeToTType, AnnotationTypeDeclaration annotation, TAnnotationType tAnnotation,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { defToMember, annotation, tMember, tAnnotation, mDefinition, mTypeToTType, ruleResult };
+		return new Object[] { defToMember, mDefinition, tMember, mTypeToTType, annotation, tAnnotation, ruleResult };
 	}
 
-	public static final Object[] pattern_MemberInAnnotationVisibility_29_6_perform_greenFFBBFBB(TMember tMember,
-			MDefinition mDefinition, ModelgeneratorRuleResult ruleResult, CSP csp) {
+	public static final Object[] pattern_MemberInAnnotationVisibility_29_6_perform_greenBBFFFBB(MDefinition mDefinition,
+			TMember tMember, ModelgeneratorRuleResult ruleResult, CSP csp) {
+		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
 		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
 		Modifier mModifier = JavaFactory.eINSTANCE.createModifier();
-		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
-		Object _localVariable_0 = csp.getValue("tModifier", "isStatic");
-		Object _localVariable_1 = csp.getValue("tModifier", "tVisibility");
-		Object _localVariable_2 = csp.getValue("mModifier", "static");
-		Object _localVariable_3 = csp.getValue("mModifier", "visibility");
+		Object _localVariable_0 = csp.getValue("tModifier", "tVisibility");
+		Object _localVariable_1 = csp.getValue("tModifier", "isStatic");
+		Object _localVariable_2 = csp.getValue("mModifier", "visibility");
+		Object _localVariable_3 = csp.getValue("mModifier", "static");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
+		ruleResult.getCorrObjects().add(mModifierToTModifier);
 		tMember.setTModifier(tModifier);
+		mModifierToTModifier.setTarget(tModifier);
 		ruleResult.getTargetObjects().add(tModifier);
 		mDefinition.setModifier(mModifier);
-		ruleResult.getSourceObjects().add(mModifier);
 		mModifierToTModifier.setSource(mModifier);
-		mModifierToTModifier.setTarget(tModifier);
-		ruleResult.getCorrObjects().add(mModifierToTModifier);
-		boolean tModifier_isStatic_prime = (boolean) _localVariable_0;
-		TVisibility tModifier_tVisibility_prime = (TVisibility) _localVariable_1;
-		boolean mModifier_static_prime = (boolean) _localVariable_2;
-		VisibilityKind mModifier_visibility_prime = (VisibilityKind) _localVariable_3;
+		ruleResult.getSourceObjects().add(mModifier);
+		TVisibility tModifier_tVisibility_prime = (TVisibility) _localVariable_0;
+		boolean tModifier_isStatic_prime = (boolean) _localVariable_1;
+		VisibilityKind mModifier_visibility_prime = (VisibilityKind) _localVariable_2;
+		boolean mModifier_static_prime = (boolean) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
 		tModifier.setTVisibility(tModifier_tVisibility_prime);
-		mModifier.setStatic(Boolean.valueOf(mModifier_static_prime));
+		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
 		mModifier.setVisibility(mModifier_visibility_prime);
+		mModifier.setStatic(Boolean.valueOf(mModifier_static_prime));
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tModifier, mModifier, tMember, mDefinition, mModifierToTModifier, ruleResult, csp };
+		return new Object[] { mDefinition, tMember, mModifierToTModifier, tModifier, mModifier, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_MemberInAnnotationVisibility_29_7_expressionFB(

@@ -22,13 +22,112 @@ public interface PmFactory extends EFactory {
 	PmFactory eINSTANCE = org.gravity.tgg.modisco.pm.impl.PmFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Modifier To TMethod Entity</em>'.
+	 * Returns a new object of class '<em>Line Comment To TText Annotation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Modifier To TMethod Entity</em>'.
+	 * @return a new object of class '<em>Line Comment To TText Annotation</em>'.
 	 * @generated
 	 */
-	ModifierToTMethodEntity createModifierToTMethodEntity();
+	LineCommentToTTextAnnotation createLineCommentToTTextAnnotation();
+
+	/**
+	 * Returns a new object of class '<em>AST Node To TAnnotatable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>AST Node To TAnnotatable</em>'.
+	 * @generated
+	 */
+	ASTNodeToTAnnotatable createASTNodeToTAnnotatable();
+
+	/**
+	 * Returns a new object of class '<em>MFlow To TFlow</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MFlow To TFlow</em>'.
+	 * @generated
+	 */
+	MFlowToTFlow createMFlowToTFlow();
+
+	/**
+	 * Returns a new object of class '<em>MModifier To TModifier</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MModifier To TModifier</em>'.
+	 * @generated
+	 */
+	MModifierToTModifier createMModifierToTModifier();
+
+	/**
+	 * Returns a new object of class '<em>Primitive Type To TClass</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Primitive Type To TClass</em>'.
+	 * @generated
+	 */
+	PrimitiveTypeToTClass createPrimitiveTypeToTClass();
+
+	/**
+	 * Returns a new object of class '<em>MField Name To TField</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MField Name To TField</em>'.
+	 * @generated
+	 */
+	MFieldNameToTField createMFieldNameToTField();
+
+	/**
+	 * Returns a new object of class '<em>Unresolved Type Declaration To TClass</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Unresolved Type Declaration To TClass</em>'.
+	 * @generated
+	 */
+	UnresolvedTypeDeclarationToTClass createUnresolvedTypeDeclarationToTClass();
+
+	/**
+	 * Returns a new object of class '<em>Annotation To TAnnotation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Annotation To TAnnotation</em>'.
+	 * @generated
+	 */
+	AnnotationToTAnnotation createAnnotationToTAnnotation();
+
+	/**
+	 * Returns a new object of class '<em>MAbstract Flow Element To TAbstract Flow Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MAbstract Flow Element To TAbstract Flow Element</em>'.
+	 * @generated
+	 */
+	MAbstractFlowElementToTAbstractFlowElement createMAbstractFlowElementToTAbstractFlowElement();
+
+	/**
+	 * Returns a new object of class '<em>Static Type To Access Static Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Static Type To Access Static Type</em>'.
+	 * @generated
+	 */
+	StaticTypeToAccessStaticType createStaticTypeToAccessStaticType();
+
+	/**
+	 * Returns a new object of class '<em>String Literal To TText Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Literal To TText Node</em>'.
+	 * @generated
+	 */
+	StringLiteralToTTextNode createStringLiteralToTTextNode();
+
+	/**
+	 * Returns a new object of class '<em>MEntry To TParameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MEntry To TParameter</em>'.
+	 * @generated
+	 */
+	MEntryToTParameter createMEntryToTParameter();
 
 	/**
 	 * Returns a new object of class '<em>Class Declaration To TClass</em>'.
@@ -38,15 +137,6 @@ public interface PmFactory extends EFactory {
 	 * @generated
 	 */
 	ClassDeclarationToTClass createClassDeclarationToTClass();
-
-	/**
-	 * Returns a new object of class '<em>Modifier To Abstract Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Modifier To Abstract Type</em>'.
-	 * @generated
-	 */
-	ModifierToAbstractType createModifierToAbstractType();
 
 	/**
 	 * Returns a new object of class '<em>Boolean Literal To TBool Node</em>'.
@@ -67,58 +157,22 @@ public interface PmFactory extends EFactory {
 	ClassLiteralToClassNode createClassLiteralToClassNode();
 
 	/**
-	 * Returns a new object of class '<em>Static Type To Access Static Type</em>'.
+	 * Returns a new object of class '<em>Modifier To TField Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Static Type To Access Static Type</em>'.
+	 * @return a new object of class '<em>Modifier To TField Entity</em>'.
 	 * @generated
 	 */
-	StaticTypeToAccessStaticType createStaticTypeToAccessStaticType();
+	ModifierToTFieldEntity createModifierToTFieldEntity();
 
 	/**
-	 * Returns a new object of class '<em>MDefinition To TMember</em>'.
+	 * Returns a new object of class '<em>Modifier To TClass Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MDefinition To TMember</em>'.
+	 * @return a new object of class '<em>Modifier To TClass Entity</em>'.
 	 * @generated
 	 */
-	MDefinitionToTMember createMDefinitionToTMember();
-
-	/**
-	 * Returns a new object of class '<em>Primitive Type To TClass</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Primitive Type To TClass</em>'.
-	 * @generated
-	 */
-	PrimitiveTypeToTClass createPrimitiveTypeToTClass();
-
-	/**
-	 * Returns a new object of class '<em>String Literal To TText Node</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>String Literal To TText Node</em>'.
-	 * @generated
-	 */
-	StringLiteralToTTextNode createStringLiteralToTTextNode();
-
-	/**
-	 * Returns a new object of class '<em>Interface Declaration To TInterface</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Interface Declaration To TInterface</em>'.
-	 * @generated
-	 */
-	InterfaceDeclarationToTInterface createInterfaceDeclarationToTInterface();
-
-	/**
-	 * Returns a new object of class '<em>MAbstract Flow Element To TAbstract Flow Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MAbstract Flow Element To TAbstract Flow Element</em>'.
-	 * @generated
-	 */
-	MAbstractFlowElementToTAbstractFlowElement createMAbstractFlowElementToTAbstractFlowElement();
+	ModifierToTClassEntity createModifierToTClassEntity();
 
 	/**
 	 * Returns a new object of class '<em>Number Literal To TNumber Node</em>'.
@@ -130,49 +184,40 @@ public interface PmFactory extends EFactory {
 	NumberLiteralToTNumberNode createNumberLiteralToTNumberNode();
 
 	/**
-	 * Returns a new object of class '<em>Type To TAbstract Type</em>'.
+	 * Returns a new object of class '<em>MDefinition To TMember</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type To TAbstract Type</em>'.
+	 * @return a new object of class '<em>MDefinition To TMember</em>'.
 	 * @generated
 	 */
-	TypeToTAbstractType createTypeToTAbstractType();
+	MDefinitionToTMember createMDefinitionToTMember();
 
 	/**
-	 * Returns a new object of class '<em>MEntry To TParameter</em>'.
+	 * Returns a new object of class '<em>Interface Declaration To TInterface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MEntry To TParameter</em>'.
+	 * @return a new object of class '<em>Interface Declaration To TInterface</em>'.
 	 * @generated
 	 */
-	MEntryToTParameter createMEntryToTParameter();
+	InterfaceDeclarationToTInterface createInterfaceDeclarationToTInterface();
 
 	/**
-	 * Returns a new object of class '<em>Modifier To TField Entity</em>'.
+	 * Returns a new object of class '<em>Abstract Method Invocation To TAccess</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Modifier To TField Entity</em>'.
+	 * @return a new object of class '<em>Abstract Method Invocation To TAccess</em>'.
 	 * @generated
 	 */
-	ModifierToTFieldEntity createModifierToTFieldEntity();
+	AbstractMethodInvocationToTAccess createAbstractMethodInvocationToTAccess();
 
 	/**
-	 * Returns a new object of class '<em>Unresolved Type Declaration To TClass</em>'.
+	 * Returns a new object of class '<em>Modifier To TMethod Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unresolved Type Declaration To TClass</em>'.
+	 * @return a new object of class '<em>Modifier To TMethod Entity</em>'.
 	 * @generated
 	 */
-	UnresolvedTypeDeclarationToTClass createUnresolvedTypeDeclarationToTClass();
-
-	/**
-	 * Returns a new object of class '<em>MMethod Name To TMethod</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MMethod Name To TMethod</em>'.
-	 * @generated
-	 */
-	MMethodNameToTMethod createMMethodNameToTMethod();
+	ModifierToTMethodEntity createModifierToTMethodEntity();
 
 	/**
 	 * Returns a new object of class '<em>Field Access To TAccess</em>'.
@@ -184,13 +229,49 @@ public interface PmFactory extends EFactory {
 	FieldAccessToTAccess createFieldAccessToTAccess();
 
 	/**
-	 * Returns a new object of class '<em>MFlow To TFlow</em>'.
+	 * Returns a new object of class '<em>Model To Type Graph</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MFlow To TFlow</em>'.
+	 * @return a new object of class '<em>Model To Type Graph</em>'.
 	 * @generated
 	 */
-	MFlowToTFlow createMFlowToTFlow();
+	ModelToTypeGraph createModelToTypeGraph();
+
+	/**
+	 * Returns a new object of class '<em>MSyntethic Method To TSyntethic Method</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MSyntethic Method To TSyntethic Method</em>'.
+	 * @generated
+	 */
+	MSyntethicMethodToTSyntethicMethod createMSyntethicMethodToTSyntethicMethod();
+
+	/**
+	 * Returns a new object of class '<em>Variable Declaration Fragment To TField Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Variable Declaration Fragment To TField Definition</em>'.
+	 * @generated
+	 */
+	VariableDeclarationFragmentToTFieldDefinition createVariableDeclarationFragmentToTFieldDefinition();
+
+	/**
+	 * Returns a new object of class '<em>MMethod Name To TMethod</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MMethod Name To TMethod</em>'.
+	 * @generated
+	 */
+	MMethodNameToTMethod createMMethodNameToTMethod();
+
+	/**
+	 * Returns a new object of class '<em>Modifier To Abstract Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Modifier To Abstract Type</em>'.
+	 * @generated
+	 */
+	ModifierToAbstractType createModifierToAbstractType();
 
 	/**
 	 * Returns a new object of class '<em>MSignature To TSignature</em>'.
@@ -211,13 +292,13 @@ public interface PmFactory extends EFactory {
 	AnnotationMemberValuePairToTAnnotationValue createAnnotationMemberValuePairToTAnnotationValue();
 
 	/**
-	 * Returns a new object of class '<em>Package To TPackage</em>'.
+	 * Returns a new object of class '<em>Type Parameter To TClass</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Package To TPackage</em>'.
+	 * @return a new object of class '<em>Type Parameter To TClass</em>'.
 	 * @generated
 	 */
-	PackageToTPackage createPackageToTPackage();
+	TypeParameterToTClass createTypeParameterToTClass();
 
 	/**
 	 * Returns a new object of class '<em>MSingle Variable Access To TAccess</em>'.
@@ -229,22 +310,22 @@ public interface PmFactory extends EFactory {
 	MSingleVariableAccessToTAccess createMSingleVariableAccessToTAccess();
 
 	/**
-	 * Returns a new object of class '<em>Line Comment To TText Annotation</em>'.
+	 * Returns a new object of class '<em>Package To TPackage</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Line Comment To TText Annotation</em>'.
+	 * @return a new object of class '<em>Package To TPackage</em>'.
 	 * @generated
 	 */
-	LineCommentToTTextAnnotation createLineCommentToTTextAnnotation();
+	PackageToTPackage createPackageToTPackage();
 
 	/**
-	 * Returns a new object of class '<em>MModifier To TModifier</em>'.
+	 * Returns a new object of class '<em>Type To TAbstract Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MModifier To TModifier</em>'.
+	 * @return a new object of class '<em>Type To TAbstract Type</em>'.
 	 * @generated
 	 */
-	MModifierToTModifier createMModifierToTModifier();
+	TypeToTAbstractType createTypeToTAbstractType();
 
 	/**
 	 * Returns a new object of class '<em>Anonymous Class Declaration To TClass</em>'.
@@ -254,87 +335,6 @@ public interface PmFactory extends EFactory {
 	 * @generated
 	 */
 	AnonymousClassDeclarationToTClass createAnonymousClassDeclarationToTClass();
-
-	/**
-	 * Returns a new object of class '<em>Variable Declaration Fragment To TField Definition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variable Declaration Fragment To TField Definition</em>'.
-	 * @generated
-	 */
-	VariableDeclarationFragmentToTFieldDefinition createVariableDeclarationFragmentToTFieldDefinition();
-
-	/**
-	 * Returns a new object of class '<em>Annotation To TAnnotation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Annotation To TAnnotation</em>'.
-	 * @generated
-	 */
-	AnnotationToTAnnotation createAnnotationToTAnnotation();
-
-	/**
-	 * Returns a new object of class '<em>Type Parameter To TClass</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type Parameter To TClass</em>'.
-	 * @generated
-	 */
-	TypeParameterToTClass createTypeParameterToTClass();
-
-	/**
-	 * Returns a new object of class '<em>AST Node To TAnnotatable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>AST Node To TAnnotatable</em>'.
-	 * @generated
-	 */
-	ASTNodeToTAnnotatable createASTNodeToTAnnotatable();
-
-	/**
-	 * Returns a new object of class '<em>Model To Type Graph</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model To Type Graph</em>'.
-	 * @generated
-	 */
-	ModelToTypeGraph createModelToTypeGraph();
-
-	/**
-	 * Returns a new object of class '<em>Modifier To TClass Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Modifier To TClass Entity</em>'.
-	 * @generated
-	 */
-	ModifierToTClassEntity createModifierToTClassEntity();
-
-	/**
-	 * Returns a new object of class '<em>Abstract Method Invocation To TAccess</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Abstract Method Invocation To TAccess</em>'.
-	 * @generated
-	 */
-	AbstractMethodInvocationToTAccess createAbstractMethodInvocationToTAccess();
-
-	/**
-	 * Returns a new object of class '<em>MSyntethic Method To TSyntethic Method</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MSyntethic Method To TSyntethic Method</em>'.
-	 * @generated
-	 */
-	MSyntethicMethodToTSyntethicMethod createMSyntethicMethodToTSyntethicMethod();
-
-	/**
-	 * Returns a new object of class '<em>MField Name To TField</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MField Name To TField</em>'.
-	 * @generated
-	 */
-	MFieldNameToTField createMFieldNameToTField();
 
 	/**
 	 * Returns the package supported by this factory.

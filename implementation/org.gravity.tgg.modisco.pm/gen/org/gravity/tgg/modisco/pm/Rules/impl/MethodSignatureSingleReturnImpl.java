@@ -779,7 +779,7 @@ public class MethodSignatureSingleReturnImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_112(EMoflonEdge _edge_returnType) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_25(EMoflonEdge _edge_returnType) {
 
 		Object[] result1_bindingAndBlack = MethodSignatureSingleReturnImpl
 				.pattern_MethodSignatureSingleReturn_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -839,7 +839,7 @@ public class MethodSignatureSingleReturnImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_114(EMoflonEdge _edge_mSignatures) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_26(EMoflonEdge _edge_mSignatures) {
 
 		Object[] result1_bindingAndBlack = MethodSignatureSingleReturnImpl
 				.pattern_MethodSignatureSingleReturn_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1150,8 +1150,8 @@ public class MethodSignatureSingleReturnImpl extends AbstractRuleImpl implements
 			Type mType = (Type) result2_black[3];
 			//nothing RuleEntryList mNameToTNameList = (RuleEntryList) result2_black[4];
 			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result2_black[5];
-			MMethodName mName = (MMethodName) result2_black[6];
-			TMethod tName = (TMethod) result2_black[7];
+			TMethod tName = (TMethod) result2_black[6];
+			MMethodName mName = (MMethodName) result2_black[7];
 
 			Object[] result3_bindingAndBlack = MethodSignatureSingleReturnImpl
 					.pattern_MethodSignatureSingleReturn_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this,
@@ -1309,10 +1309,10 @@ public class MethodSignatureSingleReturnImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.METHOD_SIGNATURE_SINGLE_RETURN___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE_SINGLE_RETURN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_112__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_112((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE_SINGLE_RETURN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_114__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_114((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_SIGNATURE_SINGLE_RETURN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_25__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_25((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_SIGNATURE_SINGLE_RETURN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_26__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_26((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE_SINGLE_RETURN___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE_SINGLE_RETURN___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3269,17 +3269,17 @@ public class MethodSignatureSingleReturnImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_MethodSignatureSingleReturn_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, MMethodName mName) {
-		if (ruleResult.getSourceObjects().contains(mName)) {
-			return new Object[] { ruleResult, mName };
+			ModelgeneratorRuleResult ruleResult, TMethod tName) {
+		if (ruleResult.getTargetObjects().contains(tName)) {
+			return new Object[] { ruleResult, tName };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodSignatureSingleReturn_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, TMethod tName) {
-		if (ruleResult.getTargetObjects().contains(tName)) {
-			return new Object[] { ruleResult, tName };
+			ModelgeneratorRuleResult ruleResult, MMethodName mName) {
+		if (ruleResult.getSourceObjects().contains(mName)) {
+			return new Object[] { ruleResult, mName };
 		}
 		return null;
 	}
@@ -3306,20 +3306,20 @@ public class MethodSignatureSingleReturnImpl extends AbstractRuleImpl implements
 												for (EObject tmpMNameToTName : mNameToTNameList.getEntryObjects()) {
 													if (tmpMNameToTName instanceof MMethodNameToTMethod) {
 														MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) tmpMNameToTName;
-														MMethodName mName = mNameToTName.getSource();
-														if (mName != null) {
-															TMethod tName = mNameToTName.getTarget();
-															if (tName != null) {
+														TMethod tName = mNameToTName.getTarget();
+														if (tName != null) {
+															MMethodName mName = mNameToTName.getSource();
+															if (mName != null) {
 																if (pattern_MethodSignatureSingleReturn_29_2_isapplicablecore_black_nac_3BB(
 																		ruleResult, mNameToTName) == null) {
 																	if (pattern_MethodSignatureSingleReturn_29_2_isapplicablecore_black_nac_4BB(
-																			ruleResult, mName) == null) {
+																			ruleResult, tName) == null) {
 																		if (pattern_MethodSignatureSingleReturn_29_2_isapplicablecore_black_nac_5BB(
-																				ruleResult, tName) == null) {
+																				ruleResult, mName) == null) {
 																			_result.add(new Object[] { mTypeToTTypeList,
 																					tType, mTypeToTType, mType,
 																					mNameToTNameList, mNameToTName,
-																					mName, tName, ruleEntryContainer,
+																					tName, mName, ruleEntryContainer,
 																					ruleResult });
 																		}
 																	}

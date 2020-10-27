@@ -162,49 +162,50 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		Model mModel = (Model) result1_bindingAndBlack[0];
-		ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[1];
-		MClass mType = (MClass) result1_bindingAndBlack[2];
-		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[3];
+		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[1];
+		ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[2];
+		MClass mType = (MClass) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = TypesOrphanedImpl.pattern_TypesOrphaned_1_1_performtransformation_greenFBBFFB(mType,
-				pg, csp);
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_green[0];
-		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[3];
-		TClass tType = (TClass) result1_green[4];
+		Object[] result1_green = TypesOrphanedImpl.pattern_TypesOrphaned_1_1_performtransformation_greenFBFFBB(pg,
+				mType, csp);
+		TClass tType = (TClass) result1_green[0];
+		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[2];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_green[3];
 
-		Object[] result2_black = TypesOrphanedImpl.pattern_TypesOrphaned_1_2_collecttranslatedelements_blackBBBB(
-				mTypeToTType, mType, mBodyToTAnnotation, tType);
+		Object[] result2_black = TypesOrphanedImpl.pattern_TypesOrphaned_1_2_collecttranslatedelements_blackBBBB(tType,
+				mBodyToTAnnotation, mTypeToTType, mType);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mTypeToTType] = " + mTypeToTType
-					+ ", " + "[mType] = " + mType + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
-					+ "[tType] = " + tType + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tType] = " + tType + ", "
+					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
+					+ "[mType] = " + mType + ".");
 		}
-		Object[] result2_green = TypesOrphanedImpl.pattern_TypesOrphaned_1_2_collecttranslatedelements_greenFBBBB(
-				mTypeToTType, mType, mBodyToTAnnotation, tType);
+		Object[] result2_green = TypesOrphanedImpl.pattern_TypesOrphaned_1_2_collecttranslatedelements_greenFBBBB(tType,
+				mBodyToTAnnotation, mTypeToTType, mType);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypesOrphanedImpl.pattern_TypesOrphaned_1_3_bookkeepingforedges_blackBBBBBBBB(
-				ruleresult, mModel, mTypeToTType, mModelToTypeGraph, mType, pg, mBodyToTAnnotation, tType);
+				ruleresult, tType, mModel, pg, mModelToTypeGraph, mBodyToTAnnotation, mTypeToTType, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mModel] = " + mModel + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
-					+ "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[mType] = " + mType + ", " + "[pg] = " + pg
-					+ ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[tType] = " + tType + ".");
+					+ ", " + "[tType] = " + tType + ", " + "[mModel] = " + mModel + ", " + "[pg] = " + pg + ", "
+					+ "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[mBodyToTAnnotation] = "
+					+ mBodyToTAnnotation + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mType] = " + mType
+					+ ".");
 		}
-		TypesOrphanedImpl.pattern_TypesOrphaned_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult, mModel,
-				mTypeToTType, mType, pg, mBodyToTAnnotation, tType);
-		//nothing EMoflonEdge mModel__mType____orphanTypes = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[9];
+		TypesOrphanedImpl.pattern_TypesOrphaned_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult, tType, mModel,
+				pg, mBodyToTAnnotation, mTypeToTType, mType);
+		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mModel__mType____orphanTypes = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
-		TypesOrphanedImpl.pattern_TypesOrphaned_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, mModel,
-				mTypeToTType, mModelToTypeGraph, mType, pg, mBodyToTAnnotation, tType);
+		TypesOrphanedImpl.pattern_TypesOrphaned_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, tType, mModel,
+				pg, mModelToTypeGraph, mBodyToTAnnotation, mTypeToTType, mType);
 		return TypesOrphanedImpl.pattern_TypesOrphaned_1_6_expressionFB(ruleresult);
 	}
 
@@ -234,28 +235,28 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		}
 		Model mModel = (Model) result2_binding[0];
 		MClass mType = (MClass) result2_binding[1];
-		for (Object[] result2_black : TypesOrphanedImpl.pattern_TypesOrphaned_2_2_corematch_blackBFBFB(mModel, mType,
+		for (Object[] result2_black : TypesOrphanedImpl.pattern_TypesOrphaned_2_2_corematch_blackBFFBB(mModel, mType,
 				match)) {
-			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result2_black[1];
-			TypeGraph pg = (TypeGraph) result2_black[3];
+			TypeGraph pg = (TypeGraph) result2_black[1];
+			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result2_black[2];
 			// ForEach 
-			for (Object[] result3_black : TypesOrphanedImpl.pattern_TypesOrphaned_2_3_findcontext_blackBBBB(mModel,
-					mModelToTypeGraph, mType, pg)) {
+			for (Object[] result3_black : TypesOrphanedImpl.pattern_TypesOrphaned_2_3_findcontext_blackBBBB(mModel, pg,
+					mModelToTypeGraph, mType)) {
 				Object[] result3_green = TypesOrphanedImpl.pattern_TypesOrphaned_2_3_findcontext_greenBBBBFFFF(mModel,
-						mModelToTypeGraph, mType, pg);
+						pg, mModelToTypeGraph, mType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mModel__mType____orphanTypes = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge mModelToTypeGraph__pg____target = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge mModelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mModelToTypeGraph__pg____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mModel__mType____orphanTypes = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = TypesOrphanedImpl
-						.pattern_TypesOrphaned_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mModel,
-								mModelToTypeGraph, mType, pg);
+						.pattern_TypesOrphaned_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mModel, pg,
+								mModelToTypeGraph, mType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModel] = " + mModel + ", "
-							+ "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[mType] = " + mType + ", "
-							+ "[pg] = " + pg + ".");
+							+ "[pg] = " + pg + ", " + "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[mType] = "
+							+ mType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -324,8 +325,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, MClass mType, TypeGraph pg) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model mModel, TypeGraph pg,
+			ModelToTypeGraph mModelToTypeGraph, MClass mType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -351,9 +352,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mModel", mModel);
+		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("mModelToTypeGraph", mModelToTypeGraph);
 		isApplicableMatch.registerObject("mType", mType);
-		isApplicableMatch.registerObject("pg", pg);
 		return csp;
 	}
 
@@ -371,15 +372,15 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType,
-			EObject mModelToTypeGraph, EObject mType, EObject pg, EObject mBodyToTAnnotation, EObject tType) {
-		ruleresult.registerObject("mModel", mModel);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
-		ruleresult.registerObject("mModelToTypeGraph", mModelToTypeGraph);
-		ruleresult.registerObject("mType", mType);
-		ruleresult.registerObject("pg", pg);
-		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tType, EObject mModel, EObject pg,
+			EObject mModelToTypeGraph, EObject mBodyToTAnnotation, EObject mTypeToTType, EObject mType) {
 		ruleresult.registerObject("tType", tType);
+		ruleresult.registerObject("mModel", mModel);
+		ruleresult.registerObject("pg", pg);
+		ruleresult.registerObject("mModelToTypeGraph", mModelToTypeGraph);
+		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+		ruleresult.registerObject("mType", mType);
 
 	}
 
@@ -398,45 +399,45 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TypeGraph pg, TClass tType) {
+	public boolean isAppropriate_BWD(Match match, TClass tType, TypeGraph pg) {
 
-		Object[] result1_black = TypesOrphanedImpl.pattern_TypesOrphaned_10_1_initialbindings_blackBBBB(this, match, pg,
-				tType);
+		Object[] result1_black = TypesOrphanedImpl.pattern_TypesOrphaned_10_1_initialbindings_blackBBBB(this, match,
+				tType, pg);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[pg] = " + pg + ", " + "[tType] = " + tType + ".");
+					+ "[match] = " + match + ", " + "[tType] = " + tType + ", " + "[pg] = " + pg + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TypesOrphanedImpl
-				.pattern_TypesOrphaned_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, pg, tType);
+				.pattern_TypesOrphaned_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tType, pg);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[pg] = " + pg + ", " + "[tType] = " + tType + ".");
+					+ "[match] = " + match + ", " + "[tType] = " + tType + ", " + "[pg] = " + pg + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (TypesOrphanedImpl.pattern_TypesOrphaned_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = TypesOrphanedImpl
-					.pattern_TypesOrphaned_10_4_collectelementstobetranslated_blackBBB(match, pg, tType);
+					.pattern_TypesOrphaned_10_4_collectelementstobetranslated_blackBBB(match, tType, pg);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[pg] = " + pg + ", " + "[tType] = " + tType + ".");
+						+ "[tType] = " + tType + ", " + "[pg] = " + pg + ".");
 			}
-			TypesOrphanedImpl.pattern_TypesOrphaned_10_4_collectelementstobetranslated_greenBBBFF(match, pg, tType);
+			TypesOrphanedImpl.pattern_TypesOrphaned_10_4_collectelementstobetranslated_greenBBBFF(match, tType, pg);
 			//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = TypesOrphanedImpl.pattern_TypesOrphaned_10_5_collectcontextelements_blackBBB(match,
-					pg, tType);
+					tType, pg);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[pg] = " + pg + ", " + "[tType] = " + tType + ".");
+						+ "[tType] = " + tType + ", " + "[pg] = " + pg + ".");
 			}
 			TypesOrphanedImpl.pattern_TypesOrphaned_10_5_collectcontextelements_greenBB(match, pg);
 
 			// 
-			TypesOrphanedImpl.pattern_TypesOrphaned_10_6_registerobjectstomatch_expressionBBBB(this, match, pg, tType);
+			TypesOrphanedImpl.pattern_TypesOrphaned_10_6_registerobjectstomatch_expressionBBBB(this, match, tType, pg);
 			return TypesOrphanedImpl.pattern_TypesOrphaned_10_7_expressionF();
 		} else {
 			return TypesOrphanedImpl.pattern_TypesOrphaned_10_8_expressionF();
@@ -457,50 +458,51 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Model mModel = (Model) result1_bindingAndBlack[0];
-		ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[1];
+		TClass tType = (TClass) result1_bindingAndBlack[0];
+		Model mModel = (Model) result1_bindingAndBlack[1];
 		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[2];
-		TClass tType = (TClass) result1_bindingAndBlack[3];
+		ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = TypesOrphanedImpl.pattern_TypesOrphaned_11_1_performtransformation_greenBFFFBB(mModel,
-				tType, csp);
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_green[1];
-		MClass mType = (MClass) result1_green[2];
-		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[3];
+		Object[] result1_green = TypesOrphanedImpl.pattern_TypesOrphaned_11_1_performtransformation_greenBBFFFB(tType,
+				mModel, csp);
+		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[2];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_green[3];
+		MClass mType = (MClass) result1_green[4];
 
-		Object[] result2_black = TypesOrphanedImpl.pattern_TypesOrphaned_11_2_collecttranslatedelements_blackBBBB(
-				mTypeToTType, mType, mBodyToTAnnotation, tType);
+		Object[] result2_black = TypesOrphanedImpl.pattern_TypesOrphaned_11_2_collecttranslatedelements_blackBBBB(tType,
+				mBodyToTAnnotation, mTypeToTType, mType);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mTypeToTType] = " + mTypeToTType
-					+ ", " + "[mType] = " + mType + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
-					+ "[tType] = " + tType + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tType] = " + tType + ", "
+					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
+					+ "[mType] = " + mType + ".");
 		}
 		Object[] result2_green = TypesOrphanedImpl.pattern_TypesOrphaned_11_2_collecttranslatedelements_greenFBBBB(
-				mTypeToTType, mType, mBodyToTAnnotation, tType);
+				tType, mBodyToTAnnotation, mTypeToTType, mType);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypesOrphanedImpl.pattern_TypesOrphaned_11_3_bookkeepingforedges_blackBBBBBBBB(
-				ruleresult, mModel, mTypeToTType, mModelToTypeGraph, mType, pg, mBodyToTAnnotation, tType);
+				ruleresult, tType, mModel, pg, mModelToTypeGraph, mBodyToTAnnotation, mTypeToTType, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mModel] = " + mModel + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
-					+ "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[mType] = " + mType + ", " + "[pg] = " + pg
-					+ ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[tType] = " + tType + ".");
+					+ ", " + "[tType] = " + tType + ", " + "[mModel] = " + mModel + ", " + "[pg] = " + pg + ", "
+					+ "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[mBodyToTAnnotation] = "
+					+ mBodyToTAnnotation + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mType] = " + mType
+					+ ".");
 		}
-		TypesOrphanedImpl.pattern_TypesOrphaned_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult, mModel,
-				mTypeToTType, mType, pg, mBodyToTAnnotation, tType);
-		//nothing EMoflonEdge mModel__mType____orphanTypes = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[9];
+		TypesOrphanedImpl.pattern_TypesOrphaned_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult, tType, mModel,
+				pg, mBodyToTAnnotation, mTypeToTType, mType);
+		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mModel__mType____orphanTypes = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
-		TypesOrphanedImpl.pattern_TypesOrphaned_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, mModel,
-				mTypeToTType, mModelToTypeGraph, mType, pg, mBodyToTAnnotation, tType);
+		TypesOrphanedImpl.pattern_TypesOrphaned_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, tType,
+				mModel, pg, mModelToTypeGraph, mBodyToTAnnotation, mTypeToTType, mType);
 		return TypesOrphanedImpl.pattern_TypesOrphaned_11_6_expressionFB(ruleresult);
 	}
 
@@ -528,31 +530,31 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TypeGraph pg = (TypeGraph) result2_binding[0];
-		TClass tType = (TClass) result2_binding[1];
-		for (Object[] result2_black : TypesOrphanedImpl.pattern_TypesOrphaned_12_2_corematch_blackFFBBB(pg, tType,
+		TClass tType = (TClass) result2_binding[0];
+		TypeGraph pg = (TypeGraph) result2_binding[1];
+		for (Object[] result2_black : TypesOrphanedImpl.pattern_TypesOrphaned_12_2_corematch_blackBFBFB(tType, pg,
 				match)) {
-			Model mModel = (Model) result2_black[0];
-			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result2_black[1];
+			Model mModel = (Model) result2_black[1];
+			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : TypesOrphanedImpl.pattern_TypesOrphaned_12_3_findcontext_blackBBBB(mModel,
-					mModelToTypeGraph, pg, tType)) {
-				Object[] result3_green = TypesOrphanedImpl.pattern_TypesOrphaned_12_3_findcontext_greenBBBBFFFFF(mModel,
-						mModelToTypeGraph, pg, tType);
+			for (Object[] result3_black : TypesOrphanedImpl.pattern_TypesOrphaned_12_3_findcontext_blackBBBB(tType,
+					mModel, pg, mModelToTypeGraph)) {
+				Object[] result3_green = TypesOrphanedImpl.pattern_TypesOrphaned_12_3_findcontext_greenBBBBFFFFF(tType,
+						mModel, pg, mModelToTypeGraph);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mModelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge mModelToTypeGraph__pg____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mModelToTypeGraph__pg____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mModelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = TypesOrphanedImpl
-						.pattern_TypesOrphaned_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mModel,
-								mModelToTypeGraph, pg, tType);
+						.pattern_TypesOrphaned_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, tType,
+								mModel, pg, mModelToTypeGraph);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModel] = " + mModel + ", "
-							+ "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[pg] = " + pg + ", " + "[tType] = "
-							+ tType + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tType] = " + tType + ", "
+							+ "[mModel] = " + mModel + ", " + "[pg] = " + pg + ", " + "[mModelToTypeGraph] = "
+							+ mModelToTypeGraph + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -581,9 +583,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TypeGraph pg, TClass tType) {
-		match.registerObject("pg", pg);
+	public void registerObjectsToMatch_BWD(Match match, TClass tType, TypeGraph pg) {
 		match.registerObject("tType", tType);
+		match.registerObject("pg", pg);
 
 	}
 
@@ -592,7 +594,7 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph pg, TClass tType) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TClass tType, TypeGraph pg) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -621,8 +623,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, TypeGraph pg, TClass tType) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tType, Model mModel, TypeGraph pg,
+			ModelToTypeGraph mModelToTypeGraph) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -647,10 +649,10 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		eq.solve(var_mType_proxy, var_tType_tLib);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mModel", mModel);
-		isApplicableMatch.registerObject("mModelToTypeGraph", mModelToTypeGraph);
-		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("tType", tType);
+		isApplicableMatch.registerObject("mModel", mModel);
+		isApplicableMatch.registerObject("pg", pg);
+		isApplicableMatch.registerObject("mModelToTypeGraph", mModelToTypeGraph);
 		return csp;
 	}
 
@@ -668,15 +670,15 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType,
-			EObject mModelToTypeGraph, EObject mType, EObject pg, EObject mBodyToTAnnotation, EObject tType) {
-		ruleresult.registerObject("mModel", mModel);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
-		ruleresult.registerObject("mModelToTypeGraph", mModelToTypeGraph);
-		ruleresult.registerObject("mType", mType);
-		ruleresult.registerObject("pg", pg);
-		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tType, EObject mModel, EObject pg,
+			EObject mModelToTypeGraph, EObject mBodyToTAnnotation, EObject mTypeToTType, EObject mType) {
 		ruleresult.registerObject("tType", tType);
+		ruleresult.registerObject("mModel", mModel);
+		ruleresult.registerObject("pg", pg);
+		ruleresult.registerObject("mModelToTypeGraph", mModelToTypeGraph);
+		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+		ruleresult.registerObject("mType", mType);
 
 	}
 
@@ -694,7 +696,7 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_147(EMoflonEdge _edge_ownedTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_41(EMoflonEdge _edge_ownedTypes) {
 
 		Object[] result1_bindingAndBlack = TypesOrphanedImpl
 				.pattern_TypesOrphaned_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -710,15 +712,15 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		// ForEach 
 		for (Object[] result2_black : TypesOrphanedImpl
 				.pattern_TypesOrphaned_20_2_testcorematchandDECs_blackFFB(_edge_ownedTypes)) {
-			TypeGraph pg = (TypeGraph) result2_black[0];
-			TClass tType = (TClass) result2_black[1];
+			TClass tType = (TClass) result2_black[0];
+			TypeGraph pg = (TypeGraph) result2_black[1];
 			Object[] result2_green = TypesOrphanedImpl
 					.pattern_TypesOrphaned_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (TypesOrphanedImpl.pattern_TypesOrphaned_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-					this, match, pg, tType)) {
+					this, match, tType, pg)) {
 				// 
 				if (TypesOrphanedImpl
 						.pattern_TypesOrphaned_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -750,7 +752,7 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_151(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_42(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = TypesOrphanedImpl
 				.pattern_TypesOrphaned_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -915,40 +917,40 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Model mModel = (Model) result2_bindingAndBlack[0];
-		MClass mType = (MClass) result2_bindingAndBlack[1];
+		TClass tType = (TClass) result2_bindingAndBlack[0];
+		Model mModel = (Model) result2_bindingAndBlack[1];
 		TypeGraph pg = (TypeGraph) result2_bindingAndBlack[2];
-		TClass tType = (TClass) result2_bindingAndBlack[3];
+		MClass mType = (MClass) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = TypesOrphanedImpl
-				.pattern_TypesOrphaned_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, mModel, mType, pg, tType,
+				.pattern_TypesOrphaned_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, tType, mModel, pg, mType,
 						sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mModel] = " + mModel + ", " + "[mType] = " + mType + ", " + "[pg] = " + pg + ", " + "[tType] = "
-					+ tType + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[tType] = " + tType + ", " + "[mModel] = " + mModel + ", " + "[pg] = " + pg + ", " + "[mType] = "
+					+ mType + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (TypesOrphanedImpl.pattern_TypesOrphaned_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : TypesOrphanedImpl
-					.pattern_TypesOrphaned_24_5_matchcorrcontext_blackBFBBB(mModel, pg, sourceMatch, targetMatch)) {
-				ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result5_black[1];
+					.pattern_TypesOrphaned_24_5_matchcorrcontext_blackBBFBB(mModel, pg, sourceMatch, targetMatch)) {
+				ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result5_black[2];
 				Object[] result5_green = TypesOrphanedImpl.pattern_TypesOrphaned_24_5_matchcorrcontext_greenBBBF(
 						mModelToTypeGraph, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = TypesOrphanedImpl
-						.pattern_TypesOrphaned_24_6_createcorrespondence_blackBBBBB(mModel, mType, pg, tType, ccMatch);
+						.pattern_TypesOrphaned_24_6_createcorrespondence_blackBBBBB(tType, mModel, pg, mType, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mModel] = " + mModel
-							+ ", " + "[mType] = " + mType + ", " + "[pg] = " + pg + ", " + "[tType] = " + tType + ", "
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tType] = " + tType + ", "
+							+ "[mModel] = " + mModel + ", " + "[pg] = " + pg + ", " + "[mType] = " + mType + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
-				TypesOrphanedImpl.pattern_TypesOrphaned_24_6_createcorrespondence_greenFBFBB(mType, tType, ccMatch);
-				//nothing TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result6_green[0];
-				//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[2];
+				TypesOrphanedImpl.pattern_TypesOrphaned_24_6_createcorrespondence_greenBFFBB(tType, mType, ccMatch);
+				//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[1];
+				//nothing TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result6_green[2];
 
 				Object[] result7_black = TypesOrphanedImpl
 						.pattern_TypesOrphaned_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -970,7 +972,7 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Model mModel, MClass mType, TypeGraph pg, TClass tType, Match sourceMatch,
+	public CSP isApplicable_solveCsp_CC(TClass tType, Model mModel, TypeGraph pg, MClass mType, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -1026,8 +1028,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TypeGraph pg, TClass tType) {// 
-		Object[] result1_black = TypesOrphanedImpl.pattern_TypesOrphaned_28_1_matchtggpattern_blackBB(pg, tType);
+	public boolean checkDEC_BWD(TClass tType, TypeGraph pg) {// 
+		Object[] result1_black = TypesOrphanedImpl.pattern_TypesOrphaned_28_1_matchtggpattern_blackBB(tType, pg);
 		if (result1_black != null) {
 			return TypesOrphanedImpl.pattern_TypesOrphaned_28_2_expressionF();
 		} else {
@@ -1061,34 +1063,34 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 			TypeGraph pg = (TypeGraph) result2_black[3];
 
 			Object[] result3_bindingAndBlack = TypesOrphanedImpl
-					.pattern_TypesOrphaned_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mModel,
-							mModelToTypeGraph, pg, ruleResult);
+					.pattern_TypesOrphaned_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mModel, pg,
+							mModelToTypeGraph, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModel] = " + mModel + ", "
-						+ "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[pg] = " + pg + ", "
+						+ "[pg] = " + pg + ", " + "[mModelToTypeGraph] = " + mModelToTypeGraph + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (TypesOrphanedImpl.pattern_TypesOrphaned_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = TypesOrphanedImpl.pattern_TypesOrphaned_29_5_checknacs_blackBBB(mModel,
-						mModelToTypeGraph, pg);
+				Object[] result5_black = TypesOrphanedImpl.pattern_TypesOrphaned_29_5_checknacs_blackBBB(mModel, pg,
+						mModelToTypeGraph);
 				if (result5_black != null) {
 
-					Object[] result6_black = TypesOrphanedImpl.pattern_TypesOrphaned_29_6_perform_blackBBBB(mModel,
-							mModelToTypeGraph, pg, ruleResult);
+					Object[] result6_black = TypesOrphanedImpl.pattern_TypesOrphaned_29_6_perform_blackBBBB(mModel, pg,
+							mModelToTypeGraph, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mModel] = " + mModel
-								+ ", " + "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[pg] = " + pg + ", "
+								+ ", " + "[pg] = " + pg + ", " + "[mModelToTypeGraph] = " + mModelToTypeGraph + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					TypesOrphanedImpl.pattern_TypesOrphaned_29_6_perform_greenBFFBFFBB(mModel, pg, ruleResult, csp);
-					//nothing TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result6_green[1];
-					//nothing MClass mType = (MClass) result6_green[2];
-					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[4];
-					//nothing TClass tType = (TClass) result6_green[5];
+					TypesOrphanedImpl.pattern_TypesOrphaned_29_6_perform_greenFBBFFFBB(mModel, pg, ruleResult, csp);
+					//nothing TClass tType = (TClass) result6_green[0];
+					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[3];
+					//nothing TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result6_green[4];
+					//nothing MClass mType = (MClass) result6_green[5];
 
 				} else {
 				}
@@ -1105,8 +1107,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, TypeGraph pg, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model mModel, TypeGraph pg,
+			ModelToTypeGraph mModelToTypeGraph, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1131,8 +1133,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mModel", mModel);
-		isApplicableMatch.registerObject("mModelToTypeGraph", mModelToTypeGraph);
 		isApplicableMatch.registerObject("pg", pg);
+		isApplicableMatch.registerObject("mModelToTypeGraph", mModelToTypeGraph);
 		return csp;
 	}
 
@@ -1167,9 +1169,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 					(MClass) arguments.get(2));
 		case RulesPackage.TYPES_ORPHANED___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_MODELTOTYPEGRAPH_MCLASS_TYPEGRAPH:
+		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_TYPEGRAPH_MODELTOTYPEGRAPH_MCLASS:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(ModelToTypeGraph) arguments.get(2), (MClass) arguments.get(3), (TypeGraph) arguments.get(4));
+					(TypeGraph) arguments.get(2), (ModelToTypeGraph) arguments.get(3), (MClass) arguments.get(4));
 		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.TYPES_ORPHANED___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1179,24 +1181,24 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 			return null;
 		case RulesPackage.TYPES_ORPHANED___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPES_ORPHANED___IS_APPROPRIATE_BWD__MATCH_TYPEGRAPH_TCLASS:
-			return isAppropriate_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1), (TClass) arguments.get(2));
+		case RulesPackage.TYPES_ORPHANED___IS_APPROPRIATE_BWD__MATCH_TCLASS_TYPEGRAPH:
+			return isAppropriate_BWD((Match) arguments.get(0), (TClass) arguments.get(1), (TypeGraph) arguments.get(2));
 		case RulesPackage.TYPES_ORPHANED___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPES_ORPHANED___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPEGRAPH_TCLASS:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
-					(TClass) arguments.get(2));
+		case RulesPackage.TYPES_ORPHANED___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TCLASS_TYPEGRAPH:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
+					(TypeGraph) arguments.get(2));
 			return null;
-		case RulesPackage.TYPES_ORPHANED___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPEGRAPH_TCLASS:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
-					(TClass) arguments.get(2));
+		case RulesPackage.TYPES_ORPHANED___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TCLASS_TYPEGRAPH:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
+					(TypeGraph) arguments.get(2));
 		case RulesPackage.TYPES_ORPHANED___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODELTOTYPEGRAPH_TYPEGRAPH_TCLASS:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(ModelToTypeGraph) arguments.get(2), (TypeGraph) arguments.get(3), (TClass) arguments.get(4));
+		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TCLASS_MODEL_TYPEGRAPH_MODELTOTYPEGRAPH:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TClass) arguments.get(1),
+					(Model) arguments.get(2), (TypeGraph) arguments.get(3), (ModelToTypeGraph) arguments.get(4));
 		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.TYPES_ORPHANED___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1206,31 +1208,31 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 			return null;
 		case RulesPackage.TYPES_ORPHANED___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPES_ORPHANED___IS_APPROPRIATE_BWD_EMOFLON_EDGE_147__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_147((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPES_ORPHANED___IS_APPROPRIATE_FWD_EMOFLON_EDGE_151__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_151((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPES_ORPHANED___IS_APPROPRIATE_BWD_EMOFLON_EDGE_41__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_41((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPES_ORPHANED___IS_APPROPRIATE_FWD_EMOFLON_EDGE_42__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_42((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPES_ORPHANED___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPES_ORPHANED___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MCLASS_TYPEGRAPH_TCLASS_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Model) arguments.get(0), (MClass) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_SOLVE_CSP_CC__TCLASS_MODEL_TYPEGRAPH_MCLASS_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TClass) arguments.get(0), (Model) arguments.get(1),
+					(TypeGraph) arguments.get(2), (MClass) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.TYPES_ORPHANED___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.TYPES_ORPHANED___CHECK_DEC_FWD__MODEL_MCLASS:
 			return checkDEC_FWD((Model) arguments.get(0), (MClass) arguments.get(1));
-		case RulesPackage.TYPES_ORPHANED___CHECK_DEC_BWD__TYPEGRAPH_TCLASS:
-			return checkDEC_BWD((TypeGraph) arguments.get(0), (TClass) arguments.get(1));
+		case RulesPackage.TYPES_ORPHANED___CHECK_DEC_BWD__TCLASS_TYPEGRAPH:
+			return checkDEC_BWD((TClass) arguments.get(0), (TypeGraph) arguments.get(1));
 		case RulesPackage.TYPES_ORPHANED___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-		case RulesPackage.TYPES_ORPHANED___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODELTOTYPEGRAPH_TYPEGRAPH_MODELGENERATORRULERESULT:
+		case RulesPackage.TYPES_ORPHANED___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_TYPEGRAPH_MODELTOTYPEGRAPH_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(ModelToTypeGraph) arguments.get(2), (TypeGraph) arguments.get(3),
+					(TypeGraph) arguments.get(2), (ModelToTypeGraph) arguments.get(3),
 					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.TYPES_ORPHANED___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1325,22 +1327,22 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	public static final Object[] pattern_TypesOrphaned_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mModel");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mModelToTypeGraph");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("pg");
+		EObject _localVariable_1 = isApplicableMatch.getObject("pg");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mModelToTypeGraph");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mType");
 		EObject tmpMModel = _localVariable_0;
-		EObject tmpMModelToTypeGraph = _localVariable_1;
-		EObject tmpMType = _localVariable_2;
-		EObject tmpPg = _localVariable_3;
+		EObject tmpPg = _localVariable_1;
+		EObject tmpMModelToTypeGraph = _localVariable_2;
+		EObject tmpMType = _localVariable_3;
 		if (tmpMModel instanceof Model) {
 			Model mModel = (Model) tmpMModel;
-			if (tmpMModelToTypeGraph instanceof ModelToTypeGraph) {
-				ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) tmpMModelToTypeGraph;
-				if (tmpMType instanceof MClass) {
-					MClass mType = (MClass) tmpMType;
-					if (tmpPg instanceof TypeGraph) {
-						TypeGraph pg = (TypeGraph) tmpPg;
-						return new Object[] { mModel, mModelToTypeGraph, mType, pg, isApplicableMatch };
+			if (tmpPg instanceof TypeGraph) {
+				TypeGraph pg = (TypeGraph) tmpPg;
+				if (tmpMModelToTypeGraph instanceof ModelToTypeGraph) {
+					ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) tmpMModelToTypeGraph;
+					if (tmpMType instanceof MClass) {
+						MClass mType = (MClass) tmpMType;
+						return new Object[] { mModel, pg, mModelToTypeGraph, mType, isApplicableMatch };
 					}
 				}
 			}
@@ -1349,12 +1351,12 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_1_1_performtransformation_blackBBBBFBB(Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, MClass mType, TypeGraph pg, TypesOrphaned _this,
+			TypeGraph pg, ModelToTypeGraph mModelToTypeGraph, MClass mType, TypesOrphaned _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mModel, mModelToTypeGraph, mType, pg, csp, _this, isApplicableMatch };
+				return new Object[] { mModel, pg, mModelToTypeGraph, mType, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1366,86 +1368,84 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 				isApplicableMatch);
 		if (result_pattern_TypesOrphaned_1_1_performtransformation_binding != null) {
 			Model mModel = (Model) result_pattern_TypesOrphaned_1_1_performtransformation_binding[0];
-			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result_pattern_TypesOrphaned_1_1_performtransformation_binding[1];
-			MClass mType = (MClass) result_pattern_TypesOrphaned_1_1_performtransformation_binding[2];
-			TypeGraph pg = (TypeGraph) result_pattern_TypesOrphaned_1_1_performtransformation_binding[3];
+			TypeGraph pg = (TypeGraph) result_pattern_TypesOrphaned_1_1_performtransformation_binding[1];
+			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result_pattern_TypesOrphaned_1_1_performtransformation_binding[2];
+			MClass mType = (MClass) result_pattern_TypesOrphaned_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_TypesOrphaned_1_1_performtransformation_black = pattern_TypesOrphaned_1_1_performtransformation_blackBBBBFBB(
-					mModel, mModelToTypeGraph, mType, pg, _this, isApplicableMatch);
+					mModel, pg, mModelToTypeGraph, mType, _this, isApplicableMatch);
 			if (result_pattern_TypesOrphaned_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypesOrphaned_1_1_performtransformation_black[4];
 
-				return new Object[] { mModel, mModelToTypeGraph, mType, pg, csp, _this, isApplicableMatch };
+				return new Object[] { mModel, pg, mModelToTypeGraph, mType, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypesOrphaned_1_1_performtransformation_greenFBBFFB(MClass mType, TypeGraph pg,
+	public static final Object[] pattern_TypesOrphaned_1_1_performtransformation_greenFBFFBB(TypeGraph pg, MClass mType,
 			CSP csp) {
-		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
-		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TClass tType = BasicFactory.eINSTANCE.createTClass();
+		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
+		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		Object _localVariable_0 = csp.getValue("tType", "tLib");
-		mTypeToTType.setSource(mType);
-		mBodyToTAnnotation.setSource(mType);
-		mBodyToTAnnotation.setTarget(tType);
-		mTypeToTType.setTarget(tType);
 		pg.getOwnedTypes().add(tType);
+		mBodyToTAnnotation.setTarget(tType);
+		mBodyToTAnnotation.setSource(mType);
+		mTypeToTType.setTarget(tType);
+		mTypeToTType.setSource(mType);
 		boolean tType_tLib_prime = (boolean) _localVariable_0;
 		tType.setTLib(Boolean.valueOf(tType_tLib_prime));
-		return new Object[] { mTypeToTType, mType, pg, mBodyToTAnnotation, tType, csp };
+		return new Object[] { tType, pg, mBodyToTAnnotation, mTypeToTType, mType, csp };
 	}
 
-	public static final Object[] pattern_TypesOrphaned_1_2_collecttranslatedelements_blackBBBB(
-			TypeToTAbstractType mTypeToTType, MClass mType, ASTNodeToTAnnotatable mBodyToTAnnotation, TClass tType) {
-		return new Object[] { mTypeToTType, mType, mBodyToTAnnotation, tType };
+	public static final Object[] pattern_TypesOrphaned_1_2_collecttranslatedelements_blackBBBB(TClass tType,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TypeToTAbstractType mTypeToTType, MClass mType) {
+		return new Object[] { tType, mBodyToTAnnotation, mTypeToTType, mType };
 	}
 
-	public static final Object[] pattern_TypesOrphaned_1_2_collecttranslatedelements_greenFBBBB(
-			TypeToTAbstractType mTypeToTType, MClass mType, ASTNodeToTAnnotatable mBodyToTAnnotation, TClass tType) {
+	public static final Object[] pattern_TypesOrphaned_1_2_collecttranslatedelements_greenFBBBB(TClass tType,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TypeToTAbstractType mTypeToTType, MClass mType) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedElements().add(tType);
+		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
 		ruleresult.getCreatedLinkElements().add(mTypeToTType);
 		ruleresult.getTranslatedElements().add(mType);
-		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
-		ruleresult.getCreatedElements().add(tType);
-		return new Object[] { ruleresult, mTypeToTType, mType, mBodyToTAnnotation, tType };
+		return new Object[] { ruleresult, tType, mBodyToTAnnotation, mTypeToTType, mType };
 	}
 
 	public static final Object[] pattern_TypesOrphaned_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType, EObject mModelToTypeGraph,
-			EObject mType, EObject pg, EObject mBodyToTAnnotation, EObject tType) {
-		if (!mModel.equals(mTypeToTType)) {
-			if (!mModel.equals(mModelToTypeGraph)) {
-				if (!mModel.equals(mType)) {
-					if (!mModel.equals(pg)) {
-						if (!mModel.equals(tType)) {
-							if (!mTypeToTType.equals(pg)) {
-								if (!mTypeToTType.equals(tType)) {
-									if (!mModelToTypeGraph.equals(mTypeToTType)) {
-										if (!mModelToTypeGraph.equals(mType)) {
-											if (!mModelToTypeGraph.equals(pg)) {
-												if (!mModelToTypeGraph.equals(tType)) {
-													if (!mType.equals(mTypeToTType)) {
-														if (!mType.equals(pg)) {
-															if (!mType.equals(tType)) {
-																if (!pg.equals(tType)) {
-																	if (!mBodyToTAnnotation.equals(mModel)) {
-																		if (!mBodyToTAnnotation.equals(mTypeToTType)) {
-																			if (!mBodyToTAnnotation
-																					.equals(mModelToTypeGraph)) {
-																				if (!mBodyToTAnnotation.equals(mType)) {
-																					if (!mBodyToTAnnotation
-																							.equals(pg)) {
-																						if (!mBodyToTAnnotation
-																								.equals(tType)) {
+			PerformRuleResult ruleresult, EObject tType, EObject mModel, EObject pg, EObject mModelToTypeGraph,
+			EObject mBodyToTAnnotation, EObject mTypeToTType, EObject mType) {
+		if (!mModel.equals(tType)) {
+			if (!mModel.equals(pg)) {
+				if (!mModel.equals(mModelToTypeGraph)) {
+					if (!mModel.equals(mTypeToTType)) {
+						if (!mModel.equals(mType)) {
+							if (!pg.equals(tType)) {
+								if (!mModelToTypeGraph.equals(tType)) {
+									if (!mModelToTypeGraph.equals(pg)) {
+										if (!mModelToTypeGraph.equals(mTypeToTType)) {
+											if (!mModelToTypeGraph.equals(mType)) {
+												if (!mBodyToTAnnotation.equals(tType)) {
+													if (!mBodyToTAnnotation.equals(mModel)) {
+														if (!mBodyToTAnnotation.equals(pg)) {
+															if (!mBodyToTAnnotation.equals(mModelToTypeGraph)) {
+																if (!mBodyToTAnnotation.equals(mTypeToTType)) {
+																	if (!mBodyToTAnnotation.equals(mType)) {
+																		if (!mTypeToTType.equals(tType)) {
+																			if (!mTypeToTType.equals(pg)) {
+																				if (!mType.equals(tType)) {
+																					if (!mType.equals(pg)) {
+																						if (!mType
+																								.equals(mTypeToTType)) {
 																							return new Object[] {
-																									ruleresult, mModel,
-																									mTypeToTType,
+																									ruleresult, tType,
+																									mModel, pg,
 																									mModelToTypeGraph,
-																									mType, pg,
 																									mBodyToTAnnotation,
-																									tType };
+																									mTypeToTType,
+																									mType };
 																						}
 																					}
 																				}
@@ -1471,63 +1471,63 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType, EObject mType, EObject pg,
-			EObject mBodyToTAnnotation, EObject tType) {
-		EMoflonEdge mModel__mType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject tType, EObject mModel, EObject pg, EObject mBodyToTAnnotation,
+			EObject mTypeToTType, EObject mType) {
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModel__mType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypesOrphaned";
-		String mModel__mType____orphanTypes_name_prime = "orphanTypes";
-		String mTypeToTType__mType____source_name_prime = "source";
-		String mBodyToTAnnotation__mType____source_name_prime = "source";
-		String mBodyToTAnnotation__tType____target_name_prime = "target";
-		String mTypeToTType__tType____target_name_prime = "target";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____pg_name_prime = "pg";
-		mModel__mType____orphanTypes.setSrc(mModel);
-		mModel__mType____orphanTypes.setTrg(mType);
-		ruleresult.getTranslatedEdges().add(mModel__mType____orphanTypes);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
-		mBodyToTAnnotation__mType____source.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mType____source);
-		mBodyToTAnnotation__tType____target.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tType____target);
-		mTypeToTType__tType____target.setSrc(mTypeToTType);
-		mTypeToTType__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
+		String mModel__mType____orphanTypes_name_prime = "orphanTypes";
+		String mBodyToTAnnotation__tType____target_name_prime = "target";
+		String mTypeToTType__tType____target_name_prime = "target";
+		String mTypeToTType__mType____source_name_prime = "source";
+		String mBodyToTAnnotation__mType____source_name_prime = "source";
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(pg__tType____ownedTypes);
 		tType__pg____pg.setSrc(tType);
 		tType__pg____pg.setTrg(pg);
 		ruleresult.getCreatedEdges().add(tType__pg____pg);
+		mModel__mType____orphanTypes.setSrc(mModel);
+		mModel__mType____orphanTypes.setTrg(mType);
+		ruleresult.getTranslatedEdges().add(mModel__mType____orphanTypes);
+		mBodyToTAnnotation__tType____target.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__tType____target.setTrg(tType);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tType____target);
+		mTypeToTType__tType____target.setSrc(mTypeToTType);
+		mTypeToTType__tType____target.setTrg(tType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
+		mBodyToTAnnotation__mType____source.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mType____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mModel__mType____orphanTypes.setName(mModel__mType____orphanTypes_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
-		mBodyToTAnnotation__mType____source.setName(mBodyToTAnnotation__mType____source_name_prime);
-		mBodyToTAnnotation__tType____target.setName(mBodyToTAnnotation__tType____target_name_prime);
-		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____pg.setName(tType__pg____pg_name_prime);
-		return new Object[] { ruleresult, mModel, mTypeToTType, mType, pg, mBodyToTAnnotation, tType,
-				mModel__mType____orphanTypes, mTypeToTType__mType____source, mBodyToTAnnotation__mType____source,
-				mBodyToTAnnotation__tType____target, mTypeToTType__tType____target, pg__tType____ownedTypes,
-				tType__pg____pg };
+		mModel__mType____orphanTypes.setName(mModel__mType____orphanTypes_name_prime);
+		mBodyToTAnnotation__tType____target.setName(mBodyToTAnnotation__tType____target_name_prime);
+		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
+		mBodyToTAnnotation__mType____source.setName(mBodyToTAnnotation__mType____source_name_prime);
+		return new Object[] { ruleresult, tType, mModel, pg, mBodyToTAnnotation, mTypeToTType, mType,
+				pg__tType____ownedTypes, tType__pg____pg, mModel__mType____orphanTypes,
+				mBodyToTAnnotation__tType____target, mTypeToTType__tType____target, mTypeToTType__mType____source,
+				mBodyToTAnnotation__mType____source };
 	}
 
 	public static final void pattern_TypesOrphaned_1_5_registerobjects_expressionBBBBBBBBB(TypesOrphaned _this,
-			PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType, EObject mModelToTypeGraph,
-			EObject mType, EObject pg, EObject mBodyToTAnnotation, EObject tType) {
-		_this.registerObjects_FWD(ruleresult, mModel, mTypeToTType, mModelToTypeGraph, mType, pg, mBodyToTAnnotation,
-				tType);
+			PerformRuleResult ruleresult, EObject tType, EObject mModel, EObject pg, EObject mModelToTypeGraph,
+			EObject mBodyToTAnnotation, EObject mTypeToTType, EObject mType) {
+		_this.registerObjects_FWD(ruleresult, tType, mModel, pg, mModelToTypeGraph, mBodyToTAnnotation, mTypeToTType,
+				mType);
 
 	}
 
@@ -1599,69 +1599,69 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypesOrphaned_2_2_corematch_blackBFBFB(Model mModel, MClass mType,
+	public static final Iterable<Object[]> pattern_TypesOrphaned_2_2_corematch_blackBFFBB(Model mModel, MClass mType,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph mModelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mModel, ModelToTypeGraph.class, "source")) {
 			TypeGraph pg = mModelToTypeGraph.getTarget();
 			if (pg != null) {
-				_result.add(new Object[] { mModel, mModelToTypeGraph, mType, pg, match });
+				_result.add(new Object[] { mModel, pg, mModelToTypeGraph, mType, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TypesOrphaned_2_3_findcontext_blackBBBB(Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, MClass mType, TypeGraph pg) {
+	public static final Iterable<Object[]> pattern_TypesOrphaned_2_3_findcontext_blackBBBB(Model mModel, TypeGraph pg,
+			ModelToTypeGraph mModelToTypeGraph, MClass mType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mModel.getOrphanTypes().contains(mType)) {
+		if (pg.equals(mModelToTypeGraph.getTarget())) {
 			if (mModel.equals(mModelToTypeGraph.getSource())) {
-				if (pg.equals(mModelToTypeGraph.getTarget())) {
-					_result.add(new Object[] { mModel, mModelToTypeGraph, mType, pg });
+				if (mModel.getOrphanTypes().contains(mType)) {
+					_result.add(new Object[] { mModel, pg, mModelToTypeGraph, mType });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_TypesOrphaned_2_3_findcontext_greenBBBBFFFF(Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, MClass mType, TypeGraph pg) {
+	public static final Object[] pattern_TypesOrphaned_2_3_findcontext_greenBBBBFFFF(Model mModel, TypeGraph pg,
+			ModelToTypeGraph mModelToTypeGraph, MClass mType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mModel__mType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModelToTypeGraph__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModelToTypeGraph__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mModel__mType____orphanTypes_name_prime = "orphanTypes";
-		String mModelToTypeGraph__mModel____source_name_prime = "source";
+		EMoflonEdge mModelToTypeGraph__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModel__mType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mModelToTypeGraph__pg____target_name_prime = "target";
+		String mModelToTypeGraph__mModel____source_name_prime = "source";
+		String mModel__mType____orphanTypes_name_prime = "orphanTypes";
 		isApplicableMatch.getAllContextElements().add(mModel);
+		isApplicableMatch.getAllContextElements().add(pg);
 		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph);
 		isApplicableMatch.getAllContextElements().add(mType);
-		isApplicableMatch.getAllContextElements().add(pg);
-		mModel__mType____orphanTypes.setSrc(mModel);
-		mModel__mType____orphanTypes.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(mModel__mType____orphanTypes);
-		mModelToTypeGraph__mModel____source.setSrc(mModelToTypeGraph);
-		mModelToTypeGraph__mModel____source.setTrg(mModel);
-		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__mModel____source);
 		mModelToTypeGraph__pg____target.setSrc(mModelToTypeGraph);
 		mModelToTypeGraph__pg____target.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__pg____target);
-		mModel__mType____orphanTypes.setName(mModel__mType____orphanTypes_name_prime);
-		mModelToTypeGraph__mModel____source.setName(mModelToTypeGraph__mModel____source_name_prime);
+		mModelToTypeGraph__mModel____source.setSrc(mModelToTypeGraph);
+		mModelToTypeGraph__mModel____source.setTrg(mModel);
+		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__mModel____source);
+		mModel__mType____orphanTypes.setSrc(mModel);
+		mModel__mType____orphanTypes.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mModel__mType____orphanTypes);
 		mModelToTypeGraph__pg____target.setName(mModelToTypeGraph__pg____target_name_prime);
-		return new Object[] { mModel, mModelToTypeGraph, mType, pg, isApplicableMatch, mModel__mType____orphanTypes,
-				mModelToTypeGraph__mModel____source, mModelToTypeGraph__pg____target };
+		mModelToTypeGraph__mModel____source.setName(mModelToTypeGraph__mModel____source_name_prime);
+		mModel__mType____orphanTypes.setName(mModel__mType____orphanTypes_name_prime);
+		return new Object[] { mModel, pg, mModelToTypeGraph, mType, isApplicableMatch, mModelToTypeGraph__pg____target,
+				mModelToTypeGraph__mModel____source, mModel__mType____orphanTypes };
 	}
 
 	public static final Object[] pattern_TypesOrphaned_2_4_solveCSP_bindingFBBBBBB(TypesOrphaned _this,
-			IsApplicableMatch isApplicableMatch, Model mModel, ModelToTypeGraph mModelToTypeGraph, MClass mType,
-			TypeGraph pg) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mModel, mModelToTypeGraph, mType, pg);
+			IsApplicableMatch isApplicableMatch, Model mModel, TypeGraph pg, ModelToTypeGraph mModelToTypeGraph,
+			MClass mType) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mModel, pg, mModelToTypeGraph, mType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mModel, mModelToTypeGraph, mType, pg };
+			return new Object[] { csp, _this, isApplicableMatch, mModel, pg, mModelToTypeGraph, mType };
 		}
 		return null;
 	}
@@ -1671,17 +1671,17 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_2_4_solveCSP_bindingAndBlackFBBBBBB(TypesOrphaned _this,
-			IsApplicableMatch isApplicableMatch, Model mModel, ModelToTypeGraph mModelToTypeGraph, MClass mType,
-			TypeGraph pg) {
+			IsApplicableMatch isApplicableMatch, Model mModel, TypeGraph pg, ModelToTypeGraph mModelToTypeGraph,
+			MClass mType) {
 		Object[] result_pattern_TypesOrphaned_2_4_solveCSP_binding = pattern_TypesOrphaned_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mModel, mModelToTypeGraph, mType, pg);
+				_this, isApplicableMatch, mModel, pg, mModelToTypeGraph, mType);
 		if (result_pattern_TypesOrphaned_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypesOrphaned_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_TypesOrphaned_2_4_solveCSP_black = pattern_TypesOrphaned_2_4_solveCSP_blackB(csp);
 			if (result_pattern_TypesOrphaned_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mModel, mModelToTypeGraph, mType, pg };
+				return new Object[] { csp, _this, isApplicableMatch, mModel, pg, mModelToTypeGraph, mType };
 			}
 		}
 		return null;
@@ -1715,16 +1715,16 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_10_1_initialbindings_blackBBBB(TypesOrphaned _this, Match match,
-			TypeGraph pg, TClass tType) {
-		return new Object[] { _this, match, pg, tType };
+			TClass tType, TypeGraph pg) {
+		return new Object[] { _this, match, tType, pg };
 	}
 
 	public static final Object[] pattern_TypesOrphaned_10_2_SolveCSP_bindingFBBBB(TypesOrphaned _this, Match match,
-			TypeGraph pg, TClass tType) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, pg, tType);
+			TClass tType, TypeGraph pg) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tType, pg);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, pg, tType };
+			return new Object[] { csp, _this, match, tType, pg };
 		}
 		return null;
 	}
@@ -1734,16 +1734,16 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_10_2_SolveCSP_bindingAndBlackFBBBB(TypesOrphaned _this,
-			Match match, TypeGraph pg, TClass tType) {
+			Match match, TClass tType, TypeGraph pg) {
 		Object[] result_pattern_TypesOrphaned_10_2_SolveCSP_binding = pattern_TypesOrphaned_10_2_SolveCSP_bindingFBBBB(
-				_this, match, pg, tType);
+				_this, match, tType, pg);
 		if (result_pattern_TypesOrphaned_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypesOrphaned_10_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_TypesOrphaned_10_2_SolveCSP_black = pattern_TypesOrphaned_10_2_SolveCSP_blackB(csp);
 			if (result_pattern_TypesOrphaned_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, pg, tType };
+				return new Object[] { csp, _this, match, tType, pg };
 			}
 		}
 		return null;
@@ -1756,12 +1756,12 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_10_4_collectelementstobetranslated_blackBBB(Match match,
-			TypeGraph pg, TClass tType) {
-		return new Object[] { match, pg, tType };
+			TClass tType, TypeGraph pg) {
+		return new Object[] { match, tType, pg };
 	}
 
 	public static final Object[] pattern_TypesOrphaned_10_4_collectelementstobetranslated_greenBBBFF(Match match,
-			TypeGraph pg, TClass tType) {
+			TClass tType, TypeGraph pg) {
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tType);
@@ -1775,12 +1775,12 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		match.getToBeTranslatedEdges().add(tType__pg____pg);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____pg.setName(tType__pg____pg_name_prime);
-		return new Object[] { match, pg, tType, pg__tType____ownedTypes, tType__pg____pg };
+		return new Object[] { match, tType, pg, pg__tType____ownedTypes, tType__pg____pg };
 	}
 
-	public static final Object[] pattern_TypesOrphaned_10_5_collectcontextelements_blackBBB(Match match, TypeGraph pg,
-			TClass tType) {
-		return new Object[] { match, pg, tType };
+	public static final Object[] pattern_TypesOrphaned_10_5_collectcontextelements_blackBBB(Match match, TClass tType,
+			TypeGraph pg) {
+		return new Object[] { match, tType, pg };
 	}
 
 	public static final Object[] pattern_TypesOrphaned_10_5_collectcontextelements_greenBB(Match match, TypeGraph pg) {
@@ -1789,8 +1789,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final void pattern_TypesOrphaned_10_6_registerobjectstomatch_expressionBBBB(TypesOrphaned _this,
-			Match match, TypeGraph pg, TClass tType) {
-		_this.registerObjectsToMatch_BWD(match, pg, tType);
+			Match match, TClass tType, TypeGraph pg) {
+		_this.registerObjectsToMatch_BWD(match, tType, pg);
 
 	}
 
@@ -1806,23 +1806,23 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 
 	public static final Object[] pattern_TypesOrphaned_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mModel");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mModelToTypeGraph");
+		EObject _localVariable_0 = isApplicableMatch.getObject("tType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mModel");
 		EObject _localVariable_2 = isApplicableMatch.getObject("pg");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tType");
-		EObject tmpMModel = _localVariable_0;
-		EObject tmpMModelToTypeGraph = _localVariable_1;
+		EObject _localVariable_3 = isApplicableMatch.getObject("mModelToTypeGraph");
+		EObject tmpTType = _localVariable_0;
+		EObject tmpMModel = _localVariable_1;
 		EObject tmpPg = _localVariable_2;
-		EObject tmpTType = _localVariable_3;
-		if (tmpMModel instanceof Model) {
-			Model mModel = (Model) tmpMModel;
-			if (tmpMModelToTypeGraph instanceof ModelToTypeGraph) {
-				ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) tmpMModelToTypeGraph;
+		EObject tmpMModelToTypeGraph = _localVariable_3;
+		if (tmpTType instanceof TClass) {
+			TClass tType = (TClass) tmpTType;
+			if (tmpMModel instanceof Model) {
+				Model mModel = (Model) tmpMModel;
 				if (tmpPg instanceof TypeGraph) {
 					TypeGraph pg = (TypeGraph) tmpPg;
-					if (tmpTType instanceof TClass) {
-						TClass tType = (TClass) tmpTType;
-						return new Object[] { mModel, mModelToTypeGraph, pg, tType, isApplicableMatch };
+					if (tmpMModelToTypeGraph instanceof ModelToTypeGraph) {
+						ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) tmpMModelToTypeGraph;
+						return new Object[] { tType, mModel, pg, mModelToTypeGraph, isApplicableMatch };
 					}
 				}
 			}
@@ -1830,13 +1830,13 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		return null;
 	}
 
-	public static final Object[] pattern_TypesOrphaned_11_1_performtransformation_blackBBBBFBB(Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, TypeGraph pg, TClass tType, TypesOrphaned _this,
+	public static final Object[] pattern_TypesOrphaned_11_1_performtransformation_blackBBBBFBB(TClass tType,
+			Model mModel, TypeGraph pg, ModelToTypeGraph mModelToTypeGraph, TypesOrphaned _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mModel, mModelToTypeGraph, pg, tType, csp, _this, isApplicableMatch };
+				return new Object[] { tType, mModel, pg, mModelToTypeGraph, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1847,87 +1847,85 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		Object[] result_pattern_TypesOrphaned_11_1_performtransformation_binding = pattern_TypesOrphaned_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TypesOrphaned_11_1_performtransformation_binding != null) {
-			Model mModel = (Model) result_pattern_TypesOrphaned_11_1_performtransformation_binding[0];
-			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result_pattern_TypesOrphaned_11_1_performtransformation_binding[1];
+			TClass tType = (TClass) result_pattern_TypesOrphaned_11_1_performtransformation_binding[0];
+			Model mModel = (Model) result_pattern_TypesOrphaned_11_1_performtransformation_binding[1];
 			TypeGraph pg = (TypeGraph) result_pattern_TypesOrphaned_11_1_performtransformation_binding[2];
-			TClass tType = (TClass) result_pattern_TypesOrphaned_11_1_performtransformation_binding[3];
+			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result_pattern_TypesOrphaned_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_TypesOrphaned_11_1_performtransformation_black = pattern_TypesOrphaned_11_1_performtransformation_blackBBBBFBB(
-					mModel, mModelToTypeGraph, pg, tType, _this, isApplicableMatch);
+					tType, mModel, pg, mModelToTypeGraph, _this, isApplicableMatch);
 			if (result_pattern_TypesOrphaned_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypesOrphaned_11_1_performtransformation_black[4];
 
-				return new Object[] { mModel, mModelToTypeGraph, pg, tType, csp, _this, isApplicableMatch };
+				return new Object[] { tType, mModel, pg, mModelToTypeGraph, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypesOrphaned_11_1_performtransformation_greenBFFFBB(Model mModel,
-			TClass tType, CSP csp) {
+	public static final Object[] pattern_TypesOrphaned_11_1_performtransformation_greenBBFFFB(TClass tType,
+			Model mModel, CSP csp) {
+		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		MClass mType = ModiscoFactory.eINSTANCE.createMClass();
-		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		Object _localVariable_0 = csp.getValue("mType", "proxy");
+		mBodyToTAnnotation.setTarget(tType);
 		mTypeToTType.setTarget(tType);
 		mModel.getOrphanTypes().add(mType);
 		mTypeToTType.setSource(mType);
 		mBodyToTAnnotation.setSource(mType);
-		mBodyToTAnnotation.setTarget(tType);
 		boolean mType_proxy_prime = (boolean) _localVariable_0;
 		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
-		return new Object[] { mModel, mTypeToTType, mType, mBodyToTAnnotation, tType, csp };
+		return new Object[] { tType, mModel, mBodyToTAnnotation, mTypeToTType, mType, csp };
 	}
 
-	public static final Object[] pattern_TypesOrphaned_11_2_collecttranslatedelements_blackBBBB(
-			TypeToTAbstractType mTypeToTType, MClass mType, ASTNodeToTAnnotatable mBodyToTAnnotation, TClass tType) {
-		return new Object[] { mTypeToTType, mType, mBodyToTAnnotation, tType };
+	public static final Object[] pattern_TypesOrphaned_11_2_collecttranslatedelements_blackBBBB(TClass tType,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TypeToTAbstractType mTypeToTType, MClass mType) {
+		return new Object[] { tType, mBodyToTAnnotation, mTypeToTType, mType };
 	}
 
-	public static final Object[] pattern_TypesOrphaned_11_2_collecttranslatedelements_greenFBBBB(
-			TypeToTAbstractType mTypeToTType, MClass mType, ASTNodeToTAnnotatable mBodyToTAnnotation, TClass tType) {
+	public static final Object[] pattern_TypesOrphaned_11_2_collecttranslatedelements_greenFBBBB(TClass tType,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TypeToTAbstractType mTypeToTType, MClass mType) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getTranslatedElements().add(tType);
+		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
 		ruleresult.getCreatedLinkElements().add(mTypeToTType);
 		ruleresult.getCreatedElements().add(mType);
-		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
-		ruleresult.getTranslatedElements().add(tType);
-		return new Object[] { ruleresult, mTypeToTType, mType, mBodyToTAnnotation, tType };
+		return new Object[] { ruleresult, tType, mBodyToTAnnotation, mTypeToTType, mType };
 	}
 
 	public static final Object[] pattern_TypesOrphaned_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType, EObject mModelToTypeGraph,
-			EObject mType, EObject pg, EObject mBodyToTAnnotation, EObject tType) {
-		if (!mModel.equals(mTypeToTType)) {
-			if (!mModel.equals(mModelToTypeGraph)) {
-				if (!mModel.equals(mType)) {
-					if (!mModel.equals(pg)) {
-						if (!mModel.equals(tType)) {
-							if (!mTypeToTType.equals(pg)) {
-								if (!mTypeToTType.equals(tType)) {
-									if (!mModelToTypeGraph.equals(mTypeToTType)) {
-										if (!mModelToTypeGraph.equals(mType)) {
-											if (!mModelToTypeGraph.equals(pg)) {
-												if (!mModelToTypeGraph.equals(tType)) {
-													if (!mType.equals(mTypeToTType)) {
-														if (!mType.equals(pg)) {
-															if (!mType.equals(tType)) {
-																if (!pg.equals(tType)) {
-																	if (!mBodyToTAnnotation.equals(mModel)) {
-																		if (!mBodyToTAnnotation.equals(mTypeToTType)) {
-																			if (!mBodyToTAnnotation
-																					.equals(mModelToTypeGraph)) {
-																				if (!mBodyToTAnnotation.equals(mType)) {
-																					if (!mBodyToTAnnotation
-																							.equals(pg)) {
-																						if (!mBodyToTAnnotation
-																								.equals(tType)) {
+			PerformRuleResult ruleresult, EObject tType, EObject mModel, EObject pg, EObject mModelToTypeGraph,
+			EObject mBodyToTAnnotation, EObject mTypeToTType, EObject mType) {
+		if (!mModel.equals(tType)) {
+			if (!mModel.equals(pg)) {
+				if (!mModel.equals(mModelToTypeGraph)) {
+					if (!mModel.equals(mTypeToTType)) {
+						if (!mModel.equals(mType)) {
+							if (!pg.equals(tType)) {
+								if (!mModelToTypeGraph.equals(tType)) {
+									if (!mModelToTypeGraph.equals(pg)) {
+										if (!mModelToTypeGraph.equals(mTypeToTType)) {
+											if (!mModelToTypeGraph.equals(mType)) {
+												if (!mBodyToTAnnotation.equals(tType)) {
+													if (!mBodyToTAnnotation.equals(mModel)) {
+														if (!mBodyToTAnnotation.equals(pg)) {
+															if (!mBodyToTAnnotation.equals(mModelToTypeGraph)) {
+																if (!mBodyToTAnnotation.equals(mTypeToTType)) {
+																	if (!mBodyToTAnnotation.equals(mType)) {
+																		if (!mTypeToTType.equals(tType)) {
+																			if (!mTypeToTType.equals(pg)) {
+																				if (!mType.equals(tType)) {
+																					if (!mType.equals(pg)) {
+																						if (!mType
+																								.equals(mTypeToTType)) {
 																							return new Object[] {
-																									ruleresult, mModel,
-																									mTypeToTType,
+																									ruleresult, tType,
+																									mModel, pg,
 																									mModelToTypeGraph,
-																									mType, pg,
 																									mBodyToTAnnotation,
-																									tType };
+																									mTypeToTType,
+																									mType };
 																						}
 																					}
 																				}
@@ -1953,63 +1951,63 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType, EObject mType, EObject pg,
-			EObject mBodyToTAnnotation, EObject tType) {
-		EMoflonEdge mModel__mType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject tType, EObject mModel, EObject pg, EObject mBodyToTAnnotation,
+			EObject mTypeToTType, EObject mType) {
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModel__mType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypesOrphaned";
-		String mModel__mType____orphanTypes_name_prime = "orphanTypes";
-		String mTypeToTType__mType____source_name_prime = "source";
-		String mBodyToTAnnotation__mType____source_name_prime = "source";
-		String mBodyToTAnnotation__tType____target_name_prime = "target";
-		String mTypeToTType__tType____target_name_prime = "target";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____pg_name_prime = "pg";
-		mModel__mType____orphanTypes.setSrc(mModel);
-		mModel__mType____orphanTypes.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mModel__mType____orphanTypes);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
-		mBodyToTAnnotation__mType____source.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mType____source);
-		mBodyToTAnnotation__tType____target.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tType____target);
-		mTypeToTType__tType____target.setSrc(mTypeToTType);
-		mTypeToTType__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
+		String mModel__mType____orphanTypes_name_prime = "orphanTypes";
+		String mBodyToTAnnotation__tType____target_name_prime = "target";
+		String mTypeToTType__tType____target_name_prime = "target";
+		String mTypeToTType__mType____source_name_prime = "source";
+		String mBodyToTAnnotation__mType____source_name_prime = "source";
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(pg__tType____ownedTypes);
 		tType__pg____pg.setSrc(tType);
 		tType__pg____pg.setTrg(pg);
 		ruleresult.getTranslatedEdges().add(tType__pg____pg);
+		mModel__mType____orphanTypes.setSrc(mModel);
+		mModel__mType____orphanTypes.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mModel__mType____orphanTypes);
+		mBodyToTAnnotation__tType____target.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__tType____target.setTrg(tType);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tType____target);
+		mTypeToTType__tType____target.setSrc(mTypeToTType);
+		mTypeToTType__tType____target.setTrg(tType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
+		mBodyToTAnnotation__mType____source.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mType____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mModel__mType____orphanTypes.setName(mModel__mType____orphanTypes_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
-		mBodyToTAnnotation__mType____source.setName(mBodyToTAnnotation__mType____source_name_prime);
-		mBodyToTAnnotation__tType____target.setName(mBodyToTAnnotation__tType____target_name_prime);
-		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____pg.setName(tType__pg____pg_name_prime);
-		return new Object[] { ruleresult, mModel, mTypeToTType, mType, pg, mBodyToTAnnotation, tType,
-				mModel__mType____orphanTypes, mTypeToTType__mType____source, mBodyToTAnnotation__mType____source,
-				mBodyToTAnnotation__tType____target, mTypeToTType__tType____target, pg__tType____ownedTypes,
-				tType__pg____pg };
+		mModel__mType____orphanTypes.setName(mModel__mType____orphanTypes_name_prime);
+		mBodyToTAnnotation__tType____target.setName(mBodyToTAnnotation__tType____target_name_prime);
+		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
+		mBodyToTAnnotation__mType____source.setName(mBodyToTAnnotation__mType____source_name_prime);
+		return new Object[] { ruleresult, tType, mModel, pg, mBodyToTAnnotation, mTypeToTType, mType,
+				pg__tType____ownedTypes, tType__pg____pg, mModel__mType____orphanTypes,
+				mBodyToTAnnotation__tType____target, mTypeToTType__tType____target, mTypeToTType__mType____source,
+				mBodyToTAnnotation__mType____source };
 	}
 
 	public static final void pattern_TypesOrphaned_11_5_registerobjects_expressionBBBBBBBBB(TypesOrphaned _this,
-			PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType, EObject mModelToTypeGraph,
-			EObject mType, EObject pg, EObject mBodyToTAnnotation, EObject tType) {
-		_this.registerObjects_BWD(ruleresult, mModel, mTypeToTType, mModelToTypeGraph, mType, pg, mBodyToTAnnotation,
-				tType);
+			PerformRuleResult ruleresult, EObject tType, EObject mModel, EObject pg, EObject mModelToTypeGraph,
+			EObject mBodyToTAnnotation, EObject mTypeToTType, EObject mType) {
+		_this.registerObjects_BWD(ruleresult, tType, mModel, pg, mModelToTypeGraph, mBodyToTAnnotation, mTypeToTType,
+				mType);
 
 	}
 
@@ -2067,90 +2065,89 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("pg");
-		EObject _localVariable_1 = match.getObject("tType");
-		EObject tmpPg = _localVariable_0;
-		EObject tmpTType = _localVariable_1;
-		if (tmpPg instanceof TypeGraph) {
-			TypeGraph pg = (TypeGraph) tmpPg;
-			if (tmpTType instanceof TClass) {
-				TClass tType = (TClass) tmpTType;
-				return new Object[] { pg, tType, match };
+		EObject _localVariable_0 = match.getObject("tType");
+		EObject _localVariable_1 = match.getObject("pg");
+		EObject tmpTType = _localVariable_0;
+		EObject tmpPg = _localVariable_1;
+		if (tmpTType instanceof TClass) {
+			TClass tType = (TClass) tmpTType;
+			if (tmpPg instanceof TypeGraph) {
+				TypeGraph pg = (TypeGraph) tmpPg;
+				return new Object[] { tType, pg, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypesOrphaned_12_2_corematch_blackFFBBB(TypeGraph pg, TClass tType,
+	public static final Iterable<Object[]> pattern_TypesOrphaned_12_2_corematch_blackBFBFB(TClass tType, TypeGraph pg,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph mModelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(pg,
 				ModelToTypeGraph.class, "target")) {
 			Model mModel = mModelToTypeGraph.getSource();
 			if (mModel != null) {
-				_result.add(new Object[] { mModel, mModelToTypeGraph, pg, tType, match });
+				_result.add(new Object[] { tType, mModel, pg, mModelToTypeGraph, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TypesOrphaned_12_3_findcontext_blackBBBB(Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, TypeGraph pg, TClass tType) {
+	public static final Iterable<Object[]> pattern_TypesOrphaned_12_3_findcontext_blackBBBB(TClass tType, Model mModel,
+			TypeGraph pg, ModelToTypeGraph mModelToTypeGraph) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mModel.equals(mModelToTypeGraph.getSource())) {
+		if (pg.getOwnedTypes().contains(tType)) {
 			if (pg.equals(mModelToTypeGraph.getTarget())) {
-				if (pg.getOwnedTypes().contains(tType)) {
-					_result.add(new Object[] { mModel, mModelToTypeGraph, pg, tType });
+				if (mModel.equals(mModelToTypeGraph.getSource())) {
+					_result.add(new Object[] { tType, mModel, pg, mModelToTypeGraph });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_TypesOrphaned_12_3_findcontext_greenBBBBFFFFF(Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, TypeGraph pg, TClass tType) {
+	public static final Object[] pattern_TypesOrphaned_12_3_findcontext_greenBBBBFFFFF(TClass tType, Model mModel,
+			TypeGraph pg, ModelToTypeGraph mModelToTypeGraph) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mModelToTypeGraph__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModelToTypeGraph__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mModelToTypeGraph__mModel____source_name_prime = "source";
-		String mModelToTypeGraph__pg____target_name_prime = "target";
+		EMoflonEdge mModelToTypeGraph__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModelToTypeGraph__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____pg_name_prime = "pg";
-		isApplicableMatch.getAllContextElements().add(mModel);
-		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph);
-		isApplicableMatch.getAllContextElements().add(pg);
+		String mModelToTypeGraph__pg____target_name_prime = "target";
+		String mModelToTypeGraph__mModel____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(tType);
-		mModelToTypeGraph__mModel____source.setSrc(mModelToTypeGraph);
-		mModelToTypeGraph__mModel____source.setTrg(mModel);
-		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__mModel____source);
-		mModelToTypeGraph__pg____target.setSrc(mModelToTypeGraph);
-		mModelToTypeGraph__pg____target.setTrg(pg);
-		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__pg____target);
+		isApplicableMatch.getAllContextElements().add(mModel);
+		isApplicableMatch.getAllContextElements().add(pg);
+		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph);
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(pg__tType____ownedTypes);
 		tType__pg____pg.setSrc(tType);
 		tType__pg____pg.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tType__pg____pg);
-		mModelToTypeGraph__mModel____source.setName(mModelToTypeGraph__mModel____source_name_prime);
-		mModelToTypeGraph__pg____target.setName(mModelToTypeGraph__pg____target_name_prime);
+		mModelToTypeGraph__pg____target.setSrc(mModelToTypeGraph);
+		mModelToTypeGraph__pg____target.setTrg(pg);
+		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__pg____target);
+		mModelToTypeGraph__mModel____source.setSrc(mModelToTypeGraph);
+		mModelToTypeGraph__mModel____source.setTrg(mModel);
+		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__mModel____source);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____pg.setName(tType__pg____pg_name_prime);
-		return new Object[] { mModel, mModelToTypeGraph, pg, tType, isApplicableMatch,
-				mModelToTypeGraph__mModel____source, mModelToTypeGraph__pg____target, pg__tType____ownedTypes,
-				tType__pg____pg };
+		mModelToTypeGraph__pg____target.setName(mModelToTypeGraph__pg____target_name_prime);
+		mModelToTypeGraph__mModel____source.setName(mModelToTypeGraph__mModel____source_name_prime);
+		return new Object[] { tType, mModel, pg, mModelToTypeGraph, isApplicableMatch, pg__tType____ownedTypes,
+				tType__pg____pg, mModelToTypeGraph__pg____target, mModelToTypeGraph__mModel____source };
 	}
 
 	public static final Object[] pattern_TypesOrphaned_12_4_solveCSP_bindingFBBBBBB(TypesOrphaned _this,
-			IsApplicableMatch isApplicableMatch, Model mModel, ModelToTypeGraph mModelToTypeGraph, TypeGraph pg,
-			TClass tType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mModel, mModelToTypeGraph, pg, tType);
+			IsApplicableMatch isApplicableMatch, TClass tType, Model mModel, TypeGraph pg,
+			ModelToTypeGraph mModelToTypeGraph) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tType, mModel, pg, mModelToTypeGraph);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mModel, mModelToTypeGraph, pg, tType };
+			return new Object[] { csp, _this, isApplicableMatch, tType, mModel, pg, mModelToTypeGraph };
 		}
 		return null;
 	}
@@ -2160,17 +2157,17 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_12_4_solveCSP_bindingAndBlackFBBBBBB(TypesOrphaned _this,
-			IsApplicableMatch isApplicableMatch, Model mModel, ModelToTypeGraph mModelToTypeGraph, TypeGraph pg,
-			TClass tType) {
+			IsApplicableMatch isApplicableMatch, TClass tType, Model mModel, TypeGraph pg,
+			ModelToTypeGraph mModelToTypeGraph) {
 		Object[] result_pattern_TypesOrphaned_12_4_solveCSP_binding = pattern_TypesOrphaned_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mModel, mModelToTypeGraph, pg, tType);
+				_this, isApplicableMatch, tType, mModel, pg, mModelToTypeGraph);
 		if (result_pattern_TypesOrphaned_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypesOrphaned_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_TypesOrphaned_12_4_solveCSP_black = pattern_TypesOrphaned_12_4_solveCSP_blackB(csp);
 			if (result_pattern_TypesOrphaned_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mModel, mModelToTypeGraph, pg, tType };
+				return new Object[] { csp, _this, isApplicableMatch, tType, mModel, pg, mModelToTypeGraph };
 			}
 		}
 		return null;
@@ -2257,7 +2254,7 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_20_2_testcorematchandDECs_black_nac_0B(TClass tType) {
-		for (TPackage __DEC_tType_classes_112382 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_291707 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
 			return new Object[] { tType };
 		}
@@ -2266,9 +2263,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 
 	public static final Object[] pattern_TypesOrphaned_20_2_testcorematchandDECs_black_nac_1BB(TClass tType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_63643 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_373700 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_63643)) {
+			if (!pg.equals(__DEC_tType_classes_373700)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2276,8 +2273,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_20_2_testcorematchandDECs_black_nac_2B(TClass tType) {
-		TPackage __DEC_tType_ownedTypes_916338 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_916338 != null) {
+		TPackage __DEC_tType_ownedTypes_787851 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_787851 != null) {
 			return new Object[] { tType };
 		}
 
@@ -2285,9 +2282,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_20_2_testcorematchandDECs_black_nac_3B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_25060 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_25060 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_25060)) {
+		TAbstractType __DEC_tType_innerTypes_377158 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_377158 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_377158)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2319,7 +2316,7 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 								if (pattern_TypesOrphaned_20_2_testcorematchandDECs_black_nac_3B(tType) == null) {
 									if (pattern_TypesOrphaned_20_2_testcorematchandDECs_black_nac_4BB(pg,
 											tType) == null) {
-										_result.add(new Object[] { pg, tType, _edge_ownedTypes });
+										_result.add(new Object[] { tType, pg, _edge_ownedTypes });
 									}
 								}
 							}
@@ -2343,8 +2340,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final boolean pattern_TypesOrphaned_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			TypesOrphaned _this, Match match, TypeGraph pg, TClass tType) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, pg, tType);
+			TypesOrphaned _this, Match match, TClass tType, TypeGraph pg) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tType, pg);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2431,9 +2428,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_21_2_testcorematchandDECs_black_nac_0B(MClass mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_470072 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_470072 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_470072)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_785302 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_785302 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_785302)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2442,9 +2439,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_21_2_testcorematchandDECs_black_nac_1B(MClass mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_829002 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_802823 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_829002 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_802823 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2452,8 +2449,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_21_2_testcorematchandDECs_black_nac_2B(MClass mType) {
-		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_534251 = mType.getPackage();
-		if (__DEC_mType_ownedElements_534251 != null) {
+		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_845050 = mType.getPackage();
+		if (__DEC_mType_ownedElements_845050 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2461,7 +2458,7 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_21_2_testcorematchandDECs_black_nac_3B(MClass mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_106863 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_338147 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -2548,25 +2545,25 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_TypesOrphaned_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
-			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("mModel");
-		EObject _localVariable_1 = sourceMatch.getObject("mType");
+	public static final Object[] pattern_TypesOrphaned_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
+			Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("tType");
+		EObject _localVariable_1 = sourceMatch.getObject("mModel");
 		EObject _localVariable_2 = targetMatch.getObject("pg");
-		EObject _localVariable_3 = targetMatch.getObject("tType");
-		EObject tmpMModel = _localVariable_0;
-		EObject tmpMType = _localVariable_1;
+		EObject _localVariable_3 = sourceMatch.getObject("mType");
+		EObject tmpTType = _localVariable_0;
+		EObject tmpMModel = _localVariable_1;
 		EObject tmpPg = _localVariable_2;
-		EObject tmpTType = _localVariable_3;
-		if (tmpMModel instanceof Model) {
-			Model mModel = (Model) tmpMModel;
-			if (tmpMType instanceof MClass) {
-				MClass mType = (MClass) tmpMType;
+		EObject tmpMType = _localVariable_3;
+		if (tmpTType instanceof TClass) {
+			TClass tType = (TClass) tmpTType;
+			if (tmpMModel instanceof Model) {
+				Model mModel = (Model) tmpMModel;
 				if (tmpPg instanceof TypeGraph) {
 					TypeGraph pg = (TypeGraph) tmpPg;
-					if (tmpTType instanceof TClass) {
-						TClass tType = (TClass) tmpTType;
-						return new Object[] { mModel, mType, pg, tType, sourceMatch, targetMatch };
+					if (tmpMType instanceof MClass) {
+						MClass mType = (MClass) tmpMType;
+						return new Object[] { tType, mModel, pg, mType, targetMatch, sourceMatch };
 					}
 				}
 			}
@@ -2574,10 +2571,10 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		return null;
 	}
 
-	public static final Object[] pattern_TypesOrphaned_24_2_matchsrctrgcontext_blackBBBBBB(Model mModel, MClass mType,
-			TypeGraph pg, TClass tType, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_TypesOrphaned_24_2_matchsrctrgcontext_blackBBBBBB(TClass tType, Model mModel,
+			TypeGraph pg, MClass mType, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { mModel, mType, pg, tType, sourceMatch, targetMatch };
+			return new Object[] { tType, mModel, pg, mType, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2585,29 +2582,29 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	public static final Object[] pattern_TypesOrphaned_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_binding = pattern_TypesOrphaned_24_2_matchsrctrgcontext_bindingFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_binding != null) {
-			Model mModel = (Model) result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_binding[0];
-			MClass mType = (MClass) result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_binding[1];
+			TClass tType = (TClass) result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_binding[0];
+			Model mModel = (Model) result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_binding[1];
 			TypeGraph pg = (TypeGraph) result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_binding[2];
-			TClass tType = (TClass) result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_binding[3];
+			MClass mType = (MClass) result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_black = pattern_TypesOrphaned_24_2_matchsrctrgcontext_blackBBBBBB(
-					mModel, mType, pg, tType, sourceMatch, targetMatch);
+					tType, mModel, pg, mType, sourceMatch, targetMatch);
 			if (result_pattern_TypesOrphaned_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mModel, mType, pg, tType, sourceMatch, targetMatch };
+				return new Object[] { tType, mModel, pg, mType, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypesOrphaned_24_3_solvecsp_bindingFBBBBBBB(TypesOrphaned _this, Model mModel,
-			MClass mType, TypeGraph pg, TClass tType, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mModel, mType, pg, tType, sourceMatch, targetMatch);
+	public static final Object[] pattern_TypesOrphaned_24_3_solvecsp_bindingFBBBBBBB(TypesOrphaned _this, TClass tType,
+			Model mModel, TypeGraph pg, MClass mType, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(tType, mModel, pg, mType, sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, mModel, mType, pg, tType, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, tType, mModel, pg, mType, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2617,16 +2614,16 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_24_3_solvecsp_bindingAndBlackFBBBBBBB(TypesOrphaned _this,
-			Model mModel, MClass mType, TypeGraph pg, TClass tType, Match sourceMatch, Match targetMatch) {
+			TClass tType, Model mModel, TypeGraph pg, MClass mType, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_TypesOrphaned_24_3_solvecsp_binding = pattern_TypesOrphaned_24_3_solvecsp_bindingFBBBBBBB(
-				_this, mModel, mType, pg, tType, sourceMatch, targetMatch);
+				_this, tType, mModel, pg, mType, sourceMatch, targetMatch);
 		if (result_pattern_TypesOrphaned_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_TypesOrphaned_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_TypesOrphaned_24_3_solvecsp_black = pattern_TypesOrphaned_24_3_solvecsp_blackB(csp);
 			if (result_pattern_TypesOrphaned_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mModel, mType, pg, tType, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, tType, mModel, pg, mType, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2638,14 +2635,14 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TypesOrphaned_24_5_matchcorrcontext_blackBFBBB(Model mModel,
+	public static final Iterable<Object[]> pattern_TypesOrphaned_24_5_matchcorrcontext_blackBBFBB(Model mModel,
 			TypeGraph pg, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (ModelToTypeGraph mModelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(mModel, ModelToTypeGraph.class, "source")) {
-				if (pg.equals(mModelToTypeGraph.getTarget())) {
-					_result.add(new Object[] { mModel, mModelToTypeGraph, pg, sourceMatch, targetMatch });
+					.getOppositeReferenceTyped(pg, ModelToTypeGraph.class, "target")) {
+				if (mModel.equals(mModelToTypeGraph.getSource())) {
+					_result.add(new Object[] { mModel, pg, mModelToTypeGraph, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2663,22 +2660,22 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		return new Object[] { mModelToTypeGraph, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_TypesOrphaned_24_6_createcorrespondence_blackBBBBB(Model mModel, MClass mType,
-			TypeGraph pg, TClass tType, CCMatch ccMatch) {
-		return new Object[] { mModel, mType, pg, tType, ccMatch };
+	public static final Object[] pattern_TypesOrphaned_24_6_createcorrespondence_blackBBBBB(TClass tType, Model mModel,
+			TypeGraph pg, MClass mType, CCMatch ccMatch) {
+		return new Object[] { tType, mModel, pg, mType, ccMatch };
 	}
 
-	public static final Object[] pattern_TypesOrphaned_24_6_createcorrespondence_greenFBFBB(MClass mType, TClass tType,
+	public static final Object[] pattern_TypesOrphaned_24_6_createcorrespondence_greenBFFBB(TClass tType, MClass mType,
 			CCMatch ccMatch) {
-		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		mTypeToTType.setSource(mType);
-		mTypeToTType.setTarget(tType);
-		ccMatch.getCreateCorr().add(mTypeToTType);
-		mBodyToTAnnotation.setSource(mType);
+		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		mBodyToTAnnotation.setTarget(tType);
+		mBodyToTAnnotation.setSource(mType);
 		ccMatch.getCreateCorr().add(mBodyToTAnnotation);
-		return new Object[] { mTypeToTType, mType, mBodyToTAnnotation, tType, ccMatch };
+		mTypeToTType.setTarget(tType);
+		mTypeToTType.setSource(mType);
+		ccMatch.getCreateCorr().add(mTypeToTType);
+		return new Object[] { tType, mBodyToTAnnotation, mTypeToTType, mType, ccMatch };
 	}
 
 	public static final Object[] pattern_TypesOrphaned_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2702,9 +2699,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_27_1_matchtggpattern_black_nac_0B(MClass mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_952667 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_952667 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_952667)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_832225 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_832225 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_832225)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2713,9 +2710,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_27_1_matchtggpattern_black_nac_1B(MClass mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_86518 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_963817 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_86518 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_963817 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2723,8 +2720,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_27_1_matchtggpattern_black_nac_2B(MClass mType) {
-		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_482991 = mType.getPackage();
-		if (__DEC_mType_ownedElements_482991 != null) {
+		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_820310 = mType.getPackage();
+		if (__DEC_mType_ownedElements_820310 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2732,7 +2729,7 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_27_1_matchtggpattern_black_nac_3B(MClass mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_88311 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_711308 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -2765,7 +2762,7 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_28_1_matchtggpattern_black_nac_0B(TClass tType) {
-		for (TPackage __DEC_tType_classes_262651 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_580066 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
 			return new Object[] { tType };
 		}
@@ -2773,9 +2770,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_28_1_matchtggpattern_black_nac_1BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_383706 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_151313 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_383706)) {
+			if (!pg.equals(__DEC_tType_classes_151313)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2783,8 +2780,8 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_28_1_matchtggpattern_black_nac_2B(TClass tType) {
-		TPackage __DEC_tType_ownedTypes_378780 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_378780 != null) {
+		TPackage __DEC_tType_ownedTypes_162135 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_162135 != null) {
 			return new Object[] { tType };
 		}
 
@@ -2792,9 +2789,9 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_28_1_matchtggpattern_black_nac_3B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_960396 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_960396 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_960396)) {
+		TAbstractType __DEC_tType_innerTypes_760972 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_760972 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_760972)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2809,14 +2806,14 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		return null;
 	}
 
-	public static final Object[] pattern_TypesOrphaned_28_1_matchtggpattern_blackBB(TypeGraph pg, TClass tType) {
+	public static final Object[] pattern_TypesOrphaned_28_1_matchtggpattern_blackBB(TClass tType, TypeGraph pg) {
 		if (pg.getOwnedTypes().contains(tType)) {
 			if (pattern_TypesOrphaned_28_1_matchtggpattern_black_nac_0B(tType) == null) {
 				if (pattern_TypesOrphaned_28_1_matchtggpattern_black_nac_1BB(tType, pg) == null) {
 					if (pattern_TypesOrphaned_28_1_matchtggpattern_black_nac_2B(tType) == null) {
 						if (pattern_TypesOrphaned_28_1_matchtggpattern_black_nac_3B(tType) == null) {
 							if (pattern_TypesOrphaned_28_1_matchtggpattern_black_nac_4BB(pg, tType) == null) {
-								return new Object[] { pg, tType };
+								return new Object[] { tType, pg };
 							}
 						}
 					}
@@ -2905,13 +2902,13 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_29_3_solveCSP_bindingFBBBBBB(TypesOrphaned _this,
-			IsApplicableMatch isApplicableMatch, Model mModel, ModelToTypeGraph mModelToTypeGraph, TypeGraph pg,
+			IsApplicableMatch isApplicableMatch, Model mModel, TypeGraph pg, ModelToTypeGraph mModelToTypeGraph,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mModel, mModelToTypeGraph, pg,
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mModel, pg, mModelToTypeGraph,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mModel, mModelToTypeGraph, pg, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mModel, pg, mModelToTypeGraph, ruleResult };
 		}
 		return null;
 	}
@@ -2921,17 +2918,17 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 	}
 
 	public static final Object[] pattern_TypesOrphaned_29_3_solveCSP_bindingAndBlackFBBBBBB(TypesOrphaned _this,
-			IsApplicableMatch isApplicableMatch, Model mModel, ModelToTypeGraph mModelToTypeGraph, TypeGraph pg,
+			IsApplicableMatch isApplicableMatch, Model mModel, TypeGraph pg, ModelToTypeGraph mModelToTypeGraph,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_TypesOrphaned_29_3_solveCSP_binding = pattern_TypesOrphaned_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mModel, mModelToTypeGraph, pg, ruleResult);
+				_this, isApplicableMatch, mModel, pg, mModelToTypeGraph, ruleResult);
 		if (result_pattern_TypesOrphaned_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypesOrphaned_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_TypesOrphaned_29_3_solveCSP_black = pattern_TypesOrphaned_29_3_solveCSP_blackB(csp);
 			if (result_pattern_TypesOrphaned_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mModel, mModelToTypeGraph, pg, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mModel, pg, mModelToTypeGraph, ruleResult };
 			}
 		}
 		return null;
@@ -2943,44 +2940,44 @@ public class TypesOrphanedImpl extends AbstractRuleImpl implements TypesOrphaned
 		return _result;
 	}
 
-	public static final Object[] pattern_TypesOrphaned_29_5_checknacs_blackBBB(Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, TypeGraph pg) {
-		return new Object[] { mModel, mModelToTypeGraph, pg };
+	public static final Object[] pattern_TypesOrphaned_29_5_checknacs_blackBBB(Model mModel, TypeGraph pg,
+			ModelToTypeGraph mModelToTypeGraph) {
+		return new Object[] { mModel, pg, mModelToTypeGraph };
 	}
 
-	public static final Object[] pattern_TypesOrphaned_29_6_perform_blackBBBB(Model mModel,
-			ModelToTypeGraph mModelToTypeGraph, TypeGraph pg, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { mModel, mModelToTypeGraph, pg, ruleResult };
+	public static final Object[] pattern_TypesOrphaned_29_6_perform_blackBBBB(Model mModel, TypeGraph pg,
+			ModelToTypeGraph mModelToTypeGraph, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mModel, pg, mModelToTypeGraph, ruleResult };
 	}
 
-	public static final Object[] pattern_TypesOrphaned_29_6_perform_greenBFFBFFBB(Model mModel, TypeGraph pg,
+	public static final Object[] pattern_TypesOrphaned_29_6_perform_greenFBBFFFBB(Model mModel, TypeGraph pg,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
+		TClass tType = BasicFactory.eINSTANCE.createTClass();
+		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		MClass mType = ModiscoFactory.eINSTANCE.createMClass();
-		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		TClass tType = BasicFactory.eINSTANCE.createTClass();
-		Object _localVariable_0 = csp.getValue("mType", "proxy");
-		Object _localVariable_1 = csp.getValue("tType", "tLib");
+		Object _localVariable_0 = csp.getValue("tType", "tLib");
+		Object _localVariable_1 = csp.getValue("mType", "proxy");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
+		pg.getOwnedTypes().add(tType);
+		ruleResult.getTargetObjects().add(tType);
+		mBodyToTAnnotation.setTarget(tType);
+		ruleResult.getCorrObjects().add(mBodyToTAnnotation);
+		mTypeToTType.setTarget(tType);
 		ruleResult.getCorrObjects().add(mTypeToTType);
 		mModel.getOrphanTypes().add(mType);
 		mTypeToTType.setSource(mType);
-		ruleResult.getSourceObjects().add(mType);
 		mBodyToTAnnotation.setSource(mType);
-		ruleResult.getCorrObjects().add(mBodyToTAnnotation);
-		mBodyToTAnnotation.setTarget(tType);
-		mTypeToTType.setTarget(tType);
-		pg.getOwnedTypes().add(tType);
-		ruleResult.getTargetObjects().add(tType);
-		boolean mType_proxy_prime = (boolean) _localVariable_0;
-		boolean tType_tLib_prime = (boolean) _localVariable_1;
+		ruleResult.getSourceObjects().add(mType);
+		boolean tType_tLib_prime = (boolean) _localVariable_0;
+		boolean mType_proxy_prime = (boolean) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
-		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
 		tType.setTLib(Boolean.valueOf(tType_tLib_prime));
+		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mModel, mTypeToTType, mType, pg, mBodyToTAnnotation, tType, ruleResult, csp };
+		return new Object[] { tType, mModel, pg, mBodyToTAnnotation, mTypeToTType, mType, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_TypesOrphaned_29_7_expressionFB(

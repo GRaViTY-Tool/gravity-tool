@@ -116,9 +116,9 @@ public interface NestedClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eNestedType, EObject tNestedPackage,
-			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType,
-			EObject mNestedClassDeclarationToTNestedClass, EObject tOuterType, EObject eOuterTypeToTOuterInterface,
-			EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
+			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject mNestedClassDeclarationToTNestedClass,
+			EObject tNestedType, EObject tOuterType, EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation,
+			EObject eOuterType, EObject tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,9 +204,9 @@ public interface NestedClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eNestedType, EObject tNestedPackage,
-			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType,
-			EObject mNestedClassDeclarationToTNestedClass, EObject tOuterType, EObject eOuterTypeToTOuterInterface,
-			EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
+			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject mNestedClassDeclarationToTNestedClass,
+			EObject tNestedType, EObject tOuterType, EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation,
+			EObject eOuterType, EObject tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface NestedClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_109(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_36(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface NestedClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_111(EMoflonEdge _edge_abstractTypeDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_37(EMoflonEdge _edge_abstractTypeDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

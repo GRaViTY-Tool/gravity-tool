@@ -46,7 +46,7 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MMethodInvocation invocation, MMethodDefinition mMember);
+	boolean isAppropriate_FWD(Match match, MMethodDefinition mMember, MMethodInvocation invocation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MMethodInvocation invocation, MMethodDefinition mMember);
+	void registerObjectsToMatch_FWD(Match match, MMethodDefinition mMember, MMethodInvocation invocation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MMethodInvocation invocation, MMethodDefinition mMember);
+	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition mMember, MMethodInvocation invocation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,8 +94,8 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodInvocation invocation,
-			MMethodDefinition mMember, TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
+			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, MMethodInvocation invocation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,9 +111,9 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject invocation, EObject mMember,
-			EObject invocationToTAccess, EObject tMember, EObject mFlowElementToTFlowElement, EObject tAccess,
-			EObject mMemberToTMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMember, EObject tMember,
+			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMemberToTMember,
+			EObject invocation, EObject tAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,7 +178,7 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
-			TMethodDefinition tMember, TCall tAccess, MDefinitionToTMember mMemberToTMember);
+			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, TCall tAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,9 +194,9 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject invocation, EObject mMember,
-			EObject invocationToTAccess, EObject tMember, EObject mFlowElementToTFlowElement, EObject tAccess,
-			EObject mMemberToTMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMember, EObject tMember,
+			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMemberToTMember,
+			EObject invocation, EObject tAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_141(EMoflonEdge _edge_tAccessing);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_63(EMoflonEdge _edge_tAccessing);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_145(EMoflonEdge _edge_method);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_65(EMoflonEdge _edge_mMethodInvocations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +252,7 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MMethodInvocation invocation, MMethodDefinition mMember, TMethodDefinition tMember,
+	CSP isApplicable_solveCsp_CC(MMethodDefinition mMember, TMethodDefinition tMember, MMethodInvocation invocation,
 			TCall tAccess, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -269,7 +269,7 @@ public interface MethodInvocationRecursive extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MMethodInvocation invocation, MMethodDefinition mMember);
+	boolean checkDEC_FWD(MMethodDefinition mMember, MMethodInvocation invocation);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -163,14 +163,14 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result1_bindingAndBlack[0];
-		ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result1_bindingAndBlack[1];
-		MGravityModel eModel = (MGravityModel) result1_bindingAndBlack[2];
-		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[3];
+		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[1];
+		ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result1_bindingAndBlack[2];
+		MGravityModel eModel = (MGravityModel) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = TypeParameterImpl
-				.pattern_TypeParameter_1_1_performtransformation_greenBFFB(typeParameter, pg);
-		TClass tClass = (TClass) result1_green[1];
-		TypeToTAbstractType eAnonymousClassDeclarationToTClass = (TypeToTAbstractType) result1_green[2];
+				.pattern_TypeParameter_1_1_performtransformation_greenBBFF(typeParameter, pg);
+		TClass tClass = (TClass) result1_green[2];
+		TypeToTAbstractType eAnonymousClassDeclarationToTClass = (TypeToTAbstractType) result1_green[3];
 
 		Object[] result2_black = TypeParameterImpl.pattern_TypeParameter_1_2_collecttranslatedelements_blackBBB(
 				typeParameter, tClass, eAnonymousClassDeclarationToTClass);
@@ -184,26 +184,26 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypeParameterImpl.pattern_TypeParameter_1_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, typeParameter, eModelToPg, tClass, eAnonymousClassDeclarationToTClass, eModel, pg);
+				ruleresult, typeParameter, pg, eModelToPg, tClass, eAnonymousClassDeclarationToTClass, eModel);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[typeParameter] = " + typeParameter + ", " + "[eModelToPg] = " + eModelToPg + ", "
-					+ "[tClass] = " + tClass + ", " + "[eAnonymousClassDeclarationToTClass] = "
-					+ eAnonymousClassDeclarationToTClass + ", " + "[eModel] = " + eModel + ", " + "[pg] = " + pg + ".");
+					+ ", " + "[typeParameter] = " + typeParameter + ", " + "[pg] = " + pg + ", " + "[eModelToPg] = "
+					+ eModelToPg + ", " + "[tClass] = " + tClass + ", " + "[eAnonymousClassDeclarationToTClass] = "
+					+ eAnonymousClassDeclarationToTClass + ", " + "[eModel] = " + eModel + ".");
 		}
-		TypeParameterImpl.pattern_TypeParameter_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult, typeParameter,
-				tClass, eAnonymousClassDeclarationToTClass, eModel, pg);
-		//nothing EMoflonEdge eModel__typeParameter____typeParameters = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__typeParameter____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result3_green[11];
+		TypeParameterImpl.pattern_TypeParameter_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult, typeParameter, pg,
+				tClass, eAnonymousClassDeclarationToTClass, eModel);
+		//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__typeParameter____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge eModel__typeParameter____typeParameters = (EMoflonEdge) result3_green[11];
 
 		// 
 		// 
 		TypeParameterImpl.pattern_TypeParameter_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, typeParameter,
-				eModelToPg, tClass, eAnonymousClassDeclarationToTClass, eModel, pg);
+				pg, eModelToPg, tClass, eAnonymousClassDeclarationToTClass, eModel);
 		return TypeParameterImpl.pattern_TypeParameter_1_6_expressionFB(ruleresult);
 	}
 
@@ -233,28 +233,28 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		}
 		org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result2_binding[0];
 		MGravityModel eModel = (MGravityModel) result2_binding[1];
-		for (Object[] result2_black : TypeParameterImpl.pattern_TypeParameter_2_2_corematch_blackBFBFB(typeParameter,
+		for (Object[] result2_black : TypeParameterImpl.pattern_TypeParameter_2_2_corematch_blackBFFBB(typeParameter,
 				eModel, match)) {
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[1];
-			TypeGraph pg = (TypeGraph) result2_black[3];
+			TypeGraph pg = (TypeGraph) result2_black[1];
+			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : TypeParameterImpl
-					.pattern_TypeParameter_2_3_findcontext_blackBBBB(typeParameter, eModelToPg, eModel, pg)) {
+					.pattern_TypeParameter_2_3_findcontext_blackBBBB(typeParameter, pg, eModelToPg, eModel)) {
 				Object[] result3_green = TypeParameterImpl
-						.pattern_TypeParameter_2_3_findcontext_greenBBBBFFFF(typeParameter, eModelToPg, eModel, pg);
+						.pattern_TypeParameter_2_3_findcontext_greenBBBBFFFF(typeParameter, pg, eModelToPg, eModel);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge eModel__typeParameter____typeParameters = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge eModelToPg__eModel____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge eModelToPg__pg____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge eModelToPg__pg____target = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge eModel__typeParameter____typeParameters = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge eModelToPg__eModel____source = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = TypeParameterImpl
 						.pattern_TypeParameter_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								typeParameter, eModelToPg, eModel, pg);
+								typeParameter, pg, eModelToPg, eModel);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[typeParameter] = " + typeParameter
-							+ ", " + "[eModelToPg] = " + eModelToPg + ", " + "[eModel] = " + eModel + ", " + "[pg] = "
-							+ pg + ".");
+							+ ", " + "[pg] = " + pg + ", " + "[eModelToPg] = " + eModelToPg + ", " + "[eModel] = "
+							+ eModel + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -326,8 +326,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.TypeParameter typeParameter, ModelToTypeGraph eModelToPg, MGravityModel eModel,
-			TypeGraph pg) {// Create CSP
+			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, ModelToTypeGraph eModelToPg,
+			MGravityModel eModel) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -343,9 +343,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("typeParameter", typeParameter);
+		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
 		isApplicableMatch.registerObject("eModel", eModel);
-		isApplicableMatch.registerObject("pg", pg);
 		return csp;
 	}
 
@@ -363,14 +363,14 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject typeParameter, EObject eModelToPg,
-			EObject tClass, EObject eAnonymousClassDeclarationToTClass, EObject eModel, EObject pg) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject typeParameter, EObject pg, EObject eModelToPg,
+			EObject tClass, EObject eAnonymousClassDeclarationToTClass, EObject eModel) {
 		ruleresult.registerObject("typeParameter", typeParameter);
+		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("eModelToPg", eModelToPg);
 		ruleresult.registerObject("tClass", tClass);
 		ruleresult.registerObject("eAnonymousClassDeclarationToTClass", eAnonymousClassDeclarationToTClass);
 		ruleresult.registerObject("eModel", eModel);
-		ruleresult.registerObject("pg", pg);
 
 	}
 
@@ -389,46 +389,46 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TClass tClass, TypeGraph pg) {
+	public boolean isAppropriate_BWD(Match match, TypeGraph pg, TClass tClass) {
 
-		Object[] result1_black = TypeParameterImpl.pattern_TypeParameter_10_1_initialbindings_blackBBBB(this, match,
-				tClass, pg);
+		Object[] result1_black = TypeParameterImpl.pattern_TypeParameter_10_1_initialbindings_blackBBBB(this, match, pg,
+				tClass);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tClass] = " + tClass + ", " + "[pg] = " + pg + ".");
+					+ "[match] = " + match + ", " + "[pg] = " + pg + ", " + "[tClass] = " + tClass + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TypeParameterImpl
-				.pattern_TypeParameter_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tClass, pg);
+				.pattern_TypeParameter_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, pg, tClass);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tClass] = " + tClass + ", " + "[pg] = " + pg + ".");
+					+ "[match] = " + match + ", " + "[pg] = " + pg + ", " + "[tClass] = " + tClass + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (TypeParameterImpl.pattern_TypeParameter_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = TypeParameterImpl
-					.pattern_TypeParameter_10_4_collectelementstobetranslated_blackBBB(match, tClass, pg);
+					.pattern_TypeParameter_10_4_collectelementstobetranslated_blackBBB(match, pg, tClass);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tClass] = " + tClass + ", " + "[pg] = " + pg + ".");
+						+ "[pg] = " + pg + ", " + "[tClass] = " + tClass + ".");
 			}
-			TypeParameterImpl.pattern_TypeParameter_10_4_collectelementstobetranslated_greenBBBFFF(match, tClass, pg);
+			TypeParameterImpl.pattern_TypeParameter_10_4_collectelementstobetranslated_greenBBBFFF(match, pg, tClass);
 			//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result4_green[4];
 			//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result4_green[5];
 
 			Object[] result5_black = TypeParameterImpl.pattern_TypeParameter_10_5_collectcontextelements_blackBBB(match,
-					tClass, pg);
+					pg, tClass);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tClass] = " + tClass + ", " + "[pg] = " + pg + ".");
+						+ "[pg] = " + pg + ", " + "[tClass] = " + tClass + ".");
 			}
 			TypeParameterImpl.pattern_TypeParameter_10_5_collectcontextelements_greenBB(match, pg);
 
 			// 
-			TypeParameterImpl.pattern_TypeParameter_10_6_registerobjectstomatch_expressionBBBB(this, match, tClass, pg);
+			TypeParameterImpl.pattern_TypeParameter_10_6_registerobjectstomatch_expressionBBBB(this, match, pg, tClass);
 			return TypeParameterImpl.pattern_TypeParameter_10_7_expressionF();
 		} else {
 			return TypeParameterImpl.pattern_TypeParameter_10_8_expressionF();
@@ -449,10 +449,10 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result1_bindingAndBlack[0];
-		TClass tClass = (TClass) result1_bindingAndBlack[1];
-		MGravityModel eModel = (MGravityModel) result1_bindingAndBlack[2];
-		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[3];
+		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[0];
+		ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result1_bindingAndBlack[1];
+		TClass tClass = (TClass) result1_bindingAndBlack[2];
+		MGravityModel eModel = (MGravityModel) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = TypeParameterImpl.pattern_TypeParameter_11_1_performtransformation_greenFBFB(tClass,
 				eModel);
@@ -471,26 +471,26 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypeParameterImpl.pattern_TypeParameter_11_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, typeParameter, eModelToPg, tClass, eAnonymousClassDeclarationToTClass, eModel, pg);
+				ruleresult, typeParameter, pg, eModelToPg, tClass, eAnonymousClassDeclarationToTClass, eModel);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[typeParameter] = " + typeParameter + ", " + "[eModelToPg] = " + eModelToPg + ", "
-					+ "[tClass] = " + tClass + ", " + "[eAnonymousClassDeclarationToTClass] = "
-					+ eAnonymousClassDeclarationToTClass + ", " + "[eModel] = " + eModel + ", " + "[pg] = " + pg + ".");
+					+ ", " + "[typeParameter] = " + typeParameter + ", " + "[pg] = " + pg + ", " + "[eModelToPg] = "
+					+ eModelToPg + ", " + "[tClass] = " + tClass + ", " + "[eAnonymousClassDeclarationToTClass] = "
+					+ eAnonymousClassDeclarationToTClass + ", " + "[eModel] = " + eModel + ".");
 		}
 		TypeParameterImpl.pattern_TypeParameter_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult, typeParameter,
-				tClass, eAnonymousClassDeclarationToTClass, eModel, pg);
-		//nothing EMoflonEdge eModel__typeParameter____typeParameters = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__typeParameter____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result3_green[11];
+				pg, tClass, eAnonymousClassDeclarationToTClass, eModel);
+		//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__typeParameter____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge eModel__typeParameter____typeParameters = (EMoflonEdge) result3_green[11];
 
 		// 
 		// 
 		TypeParameterImpl.pattern_TypeParameter_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, typeParameter,
-				eModelToPg, tClass, eAnonymousClassDeclarationToTClass, eModel, pg);
+				pg, eModelToPg, tClass, eAnonymousClassDeclarationToTClass, eModel);
 		return TypeParameterImpl.pattern_TypeParameter_11_6_expressionFB(ruleresult);
 	}
 
@@ -518,32 +518,32 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TClass tClass = (TClass) result2_binding[0];
-		TypeGraph pg = (TypeGraph) result2_binding[1];
-		for (Object[] result2_black : TypeParameterImpl.pattern_TypeParameter_12_2_corematch_blackFBFBB(tClass, pg,
+		TypeGraph pg = (TypeGraph) result2_binding[0];
+		TClass tClass = (TClass) result2_binding[1];
+		for (Object[] result2_black : TypeParameterImpl.pattern_TypeParameter_12_2_corematch_blackBFBFB(pg, tClass,
 				match)) {
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[0];
-			MGravityModel eModel = (MGravityModel) result2_black[2];
+			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[1];
+			MGravityModel eModel = (MGravityModel) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : TypeParameterImpl.pattern_TypeParameter_12_3_findcontext_blackBBBB(eModelToPg,
-					tClass, eModel, pg)) {
-				Object[] result3_green = TypeParameterImpl
-						.pattern_TypeParameter_12_3_findcontext_greenBBBBFFFFFF(eModelToPg, tClass, eModel, pg);
+			for (Object[] result3_black : TypeParameterImpl.pattern_TypeParameter_12_3_findcontext_blackBBBB(pg,
+					eModelToPg, tClass, eModel)) {
+				Object[] result3_green = TypeParameterImpl.pattern_TypeParameter_12_3_findcontext_greenBBBBFFFFFF(pg,
+						eModelToPg, tClass, eModel);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge eModelToPg__eModel____source = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge eModelToPg__pg____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge eModelToPg__pg____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge eModelToPg__eModel____source = (EMoflonEdge) result3_green[9];
 
 				Object[] result4_bindingAndBlack = TypeParameterImpl
-						.pattern_TypeParameter_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, eModelToPg,
-								tClass, eModel, pg);
+						.pattern_TypeParameter_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, pg,
+								eModelToPg, tClass, eModel);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eModelToPg] = " + eModelToPg
-							+ ", " + "[tClass] = " + tClass + ", " + "[eModel] = " + eModel + ", " + "[pg] = " + pg
-							+ ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[pg] = " + pg + ", "
+							+ "[eModelToPg] = " + eModelToPg + ", " + "[tClass] = " + tClass + ", " + "[eModel] = "
+							+ eModel + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -572,9 +572,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TClass tClass, TypeGraph pg) {
-		match.registerObject("tClass", tClass);
+	public void registerObjectsToMatch_BWD(Match match, TypeGraph pg, TClass tClass) {
 		match.registerObject("pg", pg);
+		match.registerObject("tClass", tClass);
 
 	}
 
@@ -583,7 +583,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TClass tClass, TypeGraph pg) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph pg, TClass tClass) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -612,8 +612,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph eModelToPg,
-			TClass tClass, MGravityModel eModel, TypeGraph pg) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, ModelToTypeGraph eModelToPg,
+			TClass tClass, MGravityModel eModel) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -628,10 +628,10 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
 		isApplicableMatch.registerObject("tClass", tClass);
 		isApplicableMatch.registerObject("eModel", eModel);
-		isApplicableMatch.registerObject("pg", pg);
 		return csp;
 	}
 
@@ -649,14 +649,14 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject typeParameter, EObject eModelToPg,
-			EObject tClass, EObject eAnonymousClassDeclarationToTClass, EObject eModel, EObject pg) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject typeParameter, EObject pg, EObject eModelToPg,
+			EObject tClass, EObject eAnonymousClassDeclarationToTClass, EObject eModel) {
 		ruleresult.registerObject("typeParameter", typeParameter);
+		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("eModelToPg", eModelToPg);
 		ruleresult.registerObject("tClass", tClass);
 		ruleresult.registerObject("eAnonymousClassDeclarationToTClass", eAnonymousClassDeclarationToTClass);
 		ruleresult.registerObject("eModel", eModel);
-		ruleresult.registerObject("pg", pg);
 
 	}
 
@@ -675,7 +675,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_117(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_9(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = TypeParameterImpl
 				.pattern_TypeParameter_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -691,15 +691,15 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		// ForEach 
 		for (Object[] result2_black : TypeParameterImpl
 				.pattern_TypeParameter_20_2_testcorematchandDECs_blackFFB(_edge_classes)) {
-			TClass tClass = (TClass) result2_black[0];
-			TypeGraph pg = (TypeGraph) result2_black[1];
+			TypeGraph pg = (TypeGraph) result2_black[0];
+			TClass tClass = (TClass) result2_black[1];
 			Object[] result2_green = TypeParameterImpl
 					.pattern_TypeParameter_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (TypeParameterImpl.pattern_TypeParameter_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-					this, match, tClass, pg)) {
+					this, match, pg, tClass)) {
 				// 
 				if (TypeParameterImpl
 						.pattern_TypeParameter_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -731,7 +731,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_119(EMoflonEdge _edge_typeParameters) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_9(EMoflonEdge _edge_typeParameters) {
 
 		Object[] result1_bindingAndBlack = TypeParameterImpl
 				.pattern_TypeParameter_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -883,36 +883,36 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result2_bindingAndBlack[0];
-		TClass tClass = (TClass) result2_bindingAndBlack[1];
-		MGravityModel eModel = (MGravityModel) result2_bindingAndBlack[2];
-		TypeGraph pg = (TypeGraph) result2_bindingAndBlack[3];
+		TypeGraph pg = (TypeGraph) result2_bindingAndBlack[1];
+		TClass tClass = (TClass) result2_bindingAndBlack[2];
+		MGravityModel eModel = (MGravityModel) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = TypeParameterImpl
-				.pattern_TypeParameter_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, typeParameter, tClass, eModel, pg,
+				.pattern_TypeParameter_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, typeParameter, pg, tClass, eModel,
 						sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[typeParameter] = " + typeParameter + ", " + "[tClass] = " + tClass + ", " + "[eModel] = "
-					+ eModel + ", " + "[pg] = " + pg + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[typeParameter] = " + typeParameter + ", " + "[pg] = " + pg + ", " + "[tClass] = " + tClass
+					+ ", " + "[eModel] = " + eModel + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (TypeParameterImpl.pattern_TypeParameter_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : TypeParameterImpl
-					.pattern_TypeParameter_24_5_matchcorrcontext_blackFBBBB(eModel, pg, sourceMatch, targetMatch)) {
-				ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result5_black[0];
+			for (Object[] result5_black : TypeParameterImpl.pattern_TypeParameter_24_5_matchcorrcontext_blackBFBBB(pg,
+					eModel, sourceMatch, targetMatch)) {
+				ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result5_black[1];
 				Object[] result5_green = TypeParameterImpl
 						.pattern_TypeParameter_24_5_matchcorrcontext_greenBBBF(eModelToPg, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = TypeParameterImpl.pattern_TypeParameter_24_6_createcorrespondence_blackBBBBB(
-						typeParameter, tClass, eModel, pg, ccMatch);
+						typeParameter, pg, tClass, eModel, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[typeParameter] = "
-							+ typeParameter + ", " + "[tClass] = " + tClass + ", " + "[eModel] = " + eModel + ", "
-							+ "[pg] = " + pg + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ typeParameter + ", " + "[pg] = " + pg + ", " + "[tClass] = " + tClass + ", "
+							+ "[eModel] = " + eModel + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				TypeParameterImpl.pattern_TypeParameter_24_6_createcorrespondence_greenBBFB(typeParameter, tClass,
 						ccMatch);
@@ -938,8 +938,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.TypeParameter typeParameter, TClass tClass,
-			MGravityModel eModel, TypeGraph pg, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg,
+			TClass tClass, MGravityModel eModel, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -984,8 +984,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TClass tClass, TypeGraph pg) {// 
-		Object[] result1_black = TypeParameterImpl.pattern_TypeParameter_28_1_matchtggpattern_blackBB(tClass, pg);
+	public boolean checkDEC_BWD(TypeGraph pg, TClass tClass) {// 
+		Object[] result1_black = TypeParameterImpl.pattern_TypeParameter_28_1_matchtggpattern_blackBB(pg, tClass);
 		if (result1_black != null) {
 			TypeParameterImpl.pattern_TypeParameter_28_1_matchtggpattern_greenB(tClass);
 
@@ -1016,37 +1016,38 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		for (Object[] result2_black : TypeParameterImpl
 				.pattern_TypeParameter_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList eModelToPgList = (RuleEntryList) result2_black[0];
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[1];
-			MGravityModel eModel = (MGravityModel) result2_black[2];
-			TypeGraph pg = (TypeGraph) result2_black[3];
+			TypeGraph pg = (TypeGraph) result2_black[1];
+			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[2];
+			MGravityModel eModel = (MGravityModel) result2_black[3];
 
 			Object[] result3_bindingAndBlack = TypeParameterImpl
-					.pattern_TypeParameter_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, eModelToPg,
-							eModel, pg, ruleResult);
+					.pattern_TypeParameter_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, pg, eModelToPg,
+							eModel, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eModelToPg] = " + eModelToPg + ", "
-						+ "[eModel] = " + eModel + ", " + "[pg] = " + pg + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[pg] = " + pg + ", "
+						+ "[eModelToPg] = " + eModelToPg + ", " + "[eModel] = " + eModel + ", " + "[ruleResult] = "
+						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (TypeParameterImpl.pattern_TypeParameter_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = TypeParameterImpl.pattern_TypeParameter_29_5_checknacs_blackBBB(eModelToPg,
-						eModel, pg);
+				Object[] result5_black = TypeParameterImpl.pattern_TypeParameter_29_5_checknacs_blackBBB(pg, eModelToPg,
+						eModel);
 				if (result5_black != null) {
 
-					Object[] result6_black = TypeParameterImpl.pattern_TypeParameter_29_6_perform_blackBBBB(eModelToPg,
-							eModel, pg, ruleResult);
+					Object[] result6_black = TypeParameterImpl.pattern_TypeParameter_29_6_perform_blackBBBB(pg,
+							eModelToPg, eModel, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[eModelToPg] = "
-								+ eModelToPg + ", " + "[eModel] = " + eModel + ", " + "[pg] = " + pg + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[pg] = " + pg + ", "
+								+ "[eModelToPg] = " + eModelToPg + ", " + "[eModel] = " + eModel + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					TypeParameterImpl.pattern_TypeParameter_29_6_perform_greenFFFBBB(eModel, pg, ruleResult);
+					TypeParameterImpl.pattern_TypeParameter_29_6_perform_greenFBFFBB(pg, eModel, ruleResult);
 					//nothing org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result6_green[0];
-					//nothing TClass tClass = (TClass) result6_green[1];
-					//nothing TypeToTAbstractType eAnonymousClassDeclarationToTClass = (TypeToTAbstractType) result6_green[2];
+					//nothing TClass tClass = (TClass) result6_green[2];
+					//nothing TypeToTAbstractType eAnonymousClassDeclarationToTClass = (TypeToTAbstractType) result6_green[3];
 
 				} else {
 				}
@@ -1063,8 +1064,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph eModelToPg,
-			MGravityModel eModel, TypeGraph pg, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg,
+			ModelToTypeGraph eModelToPg, MGravityModel eModel, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1079,9 +1080,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
 		isApplicableMatch.registerObject("eModel", eModel);
-		isApplicableMatch.registerObject("pg", pg);
 		return csp;
 	}
 
@@ -1118,10 +1119,10 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 					(org.eclipse.modisco.java.TypeParameter) arguments.get(1), (MGravityModel) arguments.get(2));
 		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEPARAMETER_MODELTOTYPEGRAPH_MGRAVITYMODEL_TYPEGRAPH:
+		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEPARAMETER_TYPEGRAPH_MODELTOTYPEGRAPH_MGRAVITYMODEL:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.TypeParameter) arguments.get(1), (ModelToTypeGraph) arguments.get(2),
-					(MGravityModel) arguments.get(3), (TypeGraph) arguments.get(4));
+					(org.eclipse.modisco.java.TypeParameter) arguments.get(1), (TypeGraph) arguments.get(2),
+					(ModelToTypeGraph) arguments.get(3), (MGravityModel) arguments.get(4));
 		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1131,24 +1132,24 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			return null;
 		case RulesPackage.TYPE_PARAMETER___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_BWD__MATCH_TCLASS_TYPEGRAPH:
-			return isAppropriate_BWD((Match) arguments.get(0), (TClass) arguments.get(1), (TypeGraph) arguments.get(2));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_BWD__MATCH_TYPEGRAPH_TCLASS:
+			return isAppropriate_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1), (TClass) arguments.get(2));
 		case RulesPackage.TYPE_PARAMETER___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TCLASS_TYPEGRAPH:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
-					(TypeGraph) arguments.get(2));
+		case RulesPackage.TYPE_PARAMETER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPEGRAPH_TCLASS:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TClass) arguments.get(2));
 			return null;
-		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TCLASS_TYPEGRAPH:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
-					(TypeGraph) arguments.get(2));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPEGRAPH_TCLASS:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TClass) arguments.get(2));
 		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TCLASS_MGRAVITYMODEL_TYPEGRAPH:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(TClass) arguments.get(2), (MGravityModel) arguments.get(3), (TypeGraph) arguments.get(4));
+		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_MODELTOTYPEGRAPH_TCLASS_MGRAVITYMODEL:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
+					(ModelToTypeGraph) arguments.get(2), (TClass) arguments.get(3), (MGravityModel) arguments.get(4));
 		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1158,32 +1159,32 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			return null;
 		case RulesPackage.TYPE_PARAMETER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_117__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_117((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_119__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_119((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_9__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_9((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_9__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_9((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_SOLVE_CSP_CC__TYPEPARAMETER_TCLASS_MGRAVITYMODEL_TYPEGRAPH_MATCH_MATCH:
+		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_SOLVE_CSP_CC__TYPEPARAMETER_TYPEGRAPH_TCLASS_MGRAVITYMODEL_MATCH_MATCH:
 			return isApplicable_solveCsp_CC((org.eclipse.modisco.java.TypeParameter) arguments.get(0),
-					(TClass) arguments.get(1), (MGravityModel) arguments.get(2), (TypeGraph) arguments.get(3),
+					(TypeGraph) arguments.get(1), (TClass) arguments.get(2), (MGravityModel) arguments.get(3),
 					(Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER___CHECK_DEC_FWD__TYPEPARAMETER_MGRAVITYMODEL:
 			return checkDEC_FWD((org.eclipse.modisco.java.TypeParameter) arguments.get(0),
 					(MGravityModel) arguments.get(1));
-		case RulesPackage.TYPE_PARAMETER___CHECK_DEC_BWD__TCLASS_TYPEGRAPH:
-			return checkDEC_BWD((TClass) arguments.get(0), (TypeGraph) arguments.get(1));
+		case RulesPackage.TYPE_PARAMETER___CHECK_DEC_BWD__TYPEGRAPH_TCLASS:
+			return checkDEC_BWD((TypeGraph) arguments.get(0), (TClass) arguments.get(1));
 		case RulesPackage.TYPE_PARAMETER___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-		case RulesPackage.TYPE_PARAMETER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_MGRAVITYMODEL_TYPEGRAPH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(MGravityModel) arguments.get(2), (TypeGraph) arguments.get(3),
+		case RulesPackage.TYPE_PARAMETER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_MODELTOTYPEGRAPH_MGRAVITYMODEL_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
+					(ModelToTypeGraph) arguments.get(2), (MGravityModel) arguments.get(3),
 					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.TYPE_PARAMETER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1279,22 +1280,22 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	public static final Object[] pattern_TypeParameter_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("typeParameter");
-		EObject _localVariable_1 = isApplicableMatch.getObject("eModelToPg");
-		EObject _localVariable_2 = isApplicableMatch.getObject("eModel");
-		EObject _localVariable_3 = isApplicableMatch.getObject("pg");
+		EObject _localVariable_1 = isApplicableMatch.getObject("pg");
+		EObject _localVariable_2 = isApplicableMatch.getObject("eModelToPg");
+		EObject _localVariable_3 = isApplicableMatch.getObject("eModel");
 		EObject tmpTypeParameter = _localVariable_0;
-		EObject tmpEModelToPg = _localVariable_1;
-		EObject tmpEModel = _localVariable_2;
-		EObject tmpPg = _localVariable_3;
+		EObject tmpPg = _localVariable_1;
+		EObject tmpEModelToPg = _localVariable_2;
+		EObject tmpEModel = _localVariable_3;
 		if (tmpTypeParameter instanceof org.eclipse.modisco.java.TypeParameter) {
 			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) tmpTypeParameter;
-			if (tmpEModelToPg instanceof ModelToTypeGraph) {
-				ModelToTypeGraph eModelToPg = (ModelToTypeGraph) tmpEModelToPg;
-				if (tmpEModel instanceof MGravityModel) {
-					MGravityModel eModel = (MGravityModel) tmpEModel;
-					if (tmpPg instanceof TypeGraph) {
-						TypeGraph pg = (TypeGraph) tmpPg;
-						return new Object[] { typeParameter, eModelToPg, eModel, pg, isApplicableMatch };
+			if (tmpPg instanceof TypeGraph) {
+				TypeGraph pg = (TypeGraph) tmpPg;
+				if (tmpEModelToPg instanceof ModelToTypeGraph) {
+					ModelToTypeGraph eModelToPg = (ModelToTypeGraph) tmpEModelToPg;
+					if (tmpEModel instanceof MGravityModel) {
+						MGravityModel eModel = (MGravityModel) tmpEModel;
+						return new Object[] { typeParameter, pg, eModelToPg, eModel, isApplicableMatch };
 					}
 				}
 			}
@@ -1303,12 +1304,12 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_1_1_performtransformation_blackBBBBFBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, ModelToTypeGraph eModelToPg, MGravityModel eModel,
-			TypeGraph pg, TypeParameter _this, IsApplicableMatch isApplicableMatch) {
+			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, ModelToTypeGraph eModelToPg,
+			MGravityModel eModel, TypeParameter _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { typeParameter, eModelToPg, eModel, pg, csp, _this, isApplicableMatch };
+				return new Object[] { typeParameter, pg, eModelToPg, eModel, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1320,22 +1321,22 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 				isApplicableMatch);
 		if (result_pattern_TypeParameter_1_1_performtransformation_binding != null) {
 			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result_pattern_TypeParameter_1_1_performtransformation_binding[0];
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result_pattern_TypeParameter_1_1_performtransformation_binding[1];
-			MGravityModel eModel = (MGravityModel) result_pattern_TypeParameter_1_1_performtransformation_binding[2];
-			TypeGraph pg = (TypeGraph) result_pattern_TypeParameter_1_1_performtransformation_binding[3];
+			TypeGraph pg = (TypeGraph) result_pattern_TypeParameter_1_1_performtransformation_binding[1];
+			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result_pattern_TypeParameter_1_1_performtransformation_binding[2];
+			MGravityModel eModel = (MGravityModel) result_pattern_TypeParameter_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_TypeParameter_1_1_performtransformation_black = pattern_TypeParameter_1_1_performtransformation_blackBBBBFBB(
-					typeParameter, eModelToPg, eModel, pg, _this, isApplicableMatch);
+					typeParameter, pg, eModelToPg, eModel, _this, isApplicableMatch);
 			if (result_pattern_TypeParameter_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypeParameter_1_1_performtransformation_black[4];
 
-				return new Object[] { typeParameter, eModelToPg, eModel, pg, csp, _this, isApplicableMatch };
+				return new Object[] { typeParameter, pg, eModelToPg, eModel, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_1_1_performtransformation_greenBFFB(
+	public static final Object[] pattern_TypeParameter_1_1_performtransformation_greenBBFF(
 			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg) {
 		TClass tClass = BasicFactory.eINSTANCE.createTClass();
 		TypeToTAbstractType eAnonymousClassDeclarationToTClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
@@ -1343,11 +1344,11 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		String tClass_tName_prime = "T";
 		pg.getClasses().add(tClass);
 		pg.getOwnedTypes().add(tClass);
-		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		eAnonymousClassDeclarationToTClass.setSource(typeParameter);
+		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		tClass.setTLib(Boolean.valueOf(tClass_tLib_prime));
 		tClass.setTName(tClass_tName_prime);
-		return new Object[] { typeParameter, tClass, eAnonymousClassDeclarationToTClass, pg };
+		return new Object[] { typeParameter, pg, tClass, eAnonymousClassDeclarationToTClass };
 	}
 
 	public static final Object[] pattern_TypeParameter_1_2_collecttranslatedelements_blackBBB(
@@ -1367,27 +1368,27 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject typeParameter, EObject eModelToPg, EObject tClass,
-			EObject eAnonymousClassDeclarationToTClass, EObject eModel, EObject pg) {
-		if (!eModelToPg.equals(typeParameter)) {
-			if (!eModelToPg.equals(tClass)) {
-				if (!eModelToPg.equals(pg)) {
-					if (!tClass.equals(typeParameter)) {
-						if (!eAnonymousClassDeclarationToTClass.equals(typeParameter)) {
-							if (!eAnonymousClassDeclarationToTClass.equals(eModelToPg)) {
-								if (!eAnonymousClassDeclarationToTClass.equals(tClass)) {
-									if (!eAnonymousClassDeclarationToTClass.equals(eModel)) {
-										if (!eAnonymousClassDeclarationToTClass.equals(pg)) {
-											if (!eModel.equals(typeParameter)) {
-												if (!eModel.equals(eModelToPg)) {
-													if (!eModel.equals(tClass)) {
+			PerformRuleResult ruleresult, EObject typeParameter, EObject pg, EObject eModelToPg, EObject tClass,
+			EObject eAnonymousClassDeclarationToTClass, EObject eModel) {
+		if (!pg.equals(typeParameter)) {
+			if (!pg.equals(tClass)) {
+				if (!eModelToPg.equals(typeParameter)) {
+					if (!eModelToPg.equals(pg)) {
+						if (!eModelToPg.equals(tClass)) {
+							if (!tClass.equals(typeParameter)) {
+								if (!eAnonymousClassDeclarationToTClass.equals(typeParameter)) {
+									if (!eAnonymousClassDeclarationToTClass.equals(pg)) {
+										if (!eAnonymousClassDeclarationToTClass.equals(eModelToPg)) {
+											if (!eAnonymousClassDeclarationToTClass.equals(tClass)) {
+												if (!eAnonymousClassDeclarationToTClass.equals(eModel)) {
+													if (!eModel.equals(typeParameter)) {
 														if (!eModel.equals(pg)) {
-															if (!pg.equals(typeParameter)) {
-																if (!pg.equals(tClass)) {
-																	return new Object[] { ruleresult, typeParameter,
+															if (!eModel.equals(eModelToPg)) {
+																if (!eModel.equals(tClass)) {
+																	return new Object[] { ruleresult, typeParameter, pg,
 																			eModelToPg, tClass,
-																			eAnonymousClassDeclarationToTClass, eModel,
-																			pg };
+																			eAnonymousClassDeclarationToTClass,
+																			eModel };
 																}
 															}
 														}
@@ -1407,60 +1408,60 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject typeParameter, EObject tClass,
-			EObject eAnonymousClassDeclarationToTClass, EObject eModel, EObject pg) {
-		EMoflonEdge eModel__typeParameter____typeParameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject typeParameter, EObject pg, EObject tClass,
+			EObject eAnonymousClassDeclarationToTClass, EObject eModel) {
+		EMoflonEdge pg__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eAnonymousClassDeclarationToTClass__typeParameter____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge pg__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tClass____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eModel__typeParameter____typeParameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypeParameter";
-		String eModel__typeParameter____typeParameters_name_prime = "typeParameters";
-		String eAnonymousClassDeclarationToTClass__tClass____target_name_prime = "target";
-		String eAnonymousClassDeclarationToTClass__typeParameter____source_name_prime = "source";
 		String pg__tClass____classes_name_prime = "classes";
+		String eAnonymousClassDeclarationToTClass__typeParameter____source_name_prime = "source";
 		String pg__tClass____ownedTypes_name_prime = "ownedTypes";
 		String tClass__pg____pg_name_prime = "pg";
-		eModel__typeParameter____typeParameters.setSrc(eModel);
-		eModel__typeParameter____typeParameters.setTrg(typeParameter);
-		ruleresult.getTranslatedEdges().add(eModel__typeParameter____typeParameters);
-		eAnonymousClassDeclarationToTClass__tClass____target.setSrc(eAnonymousClassDeclarationToTClass);
-		eAnonymousClassDeclarationToTClass__tClass____target.setTrg(tClass);
-		ruleresult.getCreatedEdges().add(eAnonymousClassDeclarationToTClass__tClass____target);
-		eAnonymousClassDeclarationToTClass__typeParameter____source.setSrc(eAnonymousClassDeclarationToTClass);
-		eAnonymousClassDeclarationToTClass__typeParameter____source.setTrg(typeParameter);
-		ruleresult.getCreatedEdges().add(eAnonymousClassDeclarationToTClass__typeParameter____source);
+		String eAnonymousClassDeclarationToTClass__tClass____target_name_prime = "target";
+		String eModel__typeParameter____typeParameters_name_prime = "typeParameters";
 		pg__tClass____classes.setSrc(pg);
 		pg__tClass____classes.setTrg(tClass);
 		ruleresult.getCreatedEdges().add(pg__tClass____classes);
+		eAnonymousClassDeclarationToTClass__typeParameter____source.setSrc(eAnonymousClassDeclarationToTClass);
+		eAnonymousClassDeclarationToTClass__typeParameter____source.setTrg(typeParameter);
+		ruleresult.getCreatedEdges().add(eAnonymousClassDeclarationToTClass__typeParameter____source);
 		pg__tClass____ownedTypes.setSrc(pg);
 		pg__tClass____ownedTypes.setTrg(tClass);
 		ruleresult.getCreatedEdges().add(pg__tClass____ownedTypes);
 		tClass__pg____pg.setSrc(tClass);
 		tClass__pg____pg.setTrg(pg);
 		ruleresult.getCreatedEdges().add(tClass__pg____pg);
+		eAnonymousClassDeclarationToTClass__tClass____target.setSrc(eAnonymousClassDeclarationToTClass);
+		eAnonymousClassDeclarationToTClass__tClass____target.setTrg(tClass);
+		ruleresult.getCreatedEdges().add(eAnonymousClassDeclarationToTClass__tClass____target);
+		eModel__typeParameter____typeParameters.setSrc(eModel);
+		eModel__typeParameter____typeParameters.setTrg(typeParameter);
+		ruleresult.getTranslatedEdges().add(eModel__typeParameter____typeParameters);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		eModel__typeParameter____typeParameters.setName(eModel__typeParameter____typeParameters_name_prime);
-		eAnonymousClassDeclarationToTClass__tClass____target
-				.setName(eAnonymousClassDeclarationToTClass__tClass____target_name_prime);
+		pg__tClass____classes.setName(pg__tClass____classes_name_prime);
 		eAnonymousClassDeclarationToTClass__typeParameter____source
 				.setName(eAnonymousClassDeclarationToTClass__typeParameter____source_name_prime);
-		pg__tClass____classes.setName(pg__tClass____classes_name_prime);
 		pg__tClass____ownedTypes.setName(pg__tClass____ownedTypes_name_prime);
 		tClass__pg____pg.setName(tClass__pg____pg_name_prime);
-		return new Object[] { ruleresult, typeParameter, tClass, eAnonymousClassDeclarationToTClass, eModel, pg,
-				eModel__typeParameter____typeParameters, eAnonymousClassDeclarationToTClass__tClass____target,
-				eAnonymousClassDeclarationToTClass__typeParameter____source, pg__tClass____classes,
-				pg__tClass____ownedTypes, tClass__pg____pg };
+		eAnonymousClassDeclarationToTClass__tClass____target
+				.setName(eAnonymousClassDeclarationToTClass__tClass____target_name_prime);
+		eModel__typeParameter____typeParameters.setName(eModel__typeParameter____typeParameters_name_prime);
+		return new Object[] { ruleresult, typeParameter, pg, tClass, eAnonymousClassDeclarationToTClass, eModel,
+				pg__tClass____classes, eAnonymousClassDeclarationToTClass__typeParameter____source,
+				pg__tClass____ownedTypes, tClass__pg____pg, eAnonymousClassDeclarationToTClass__tClass____target,
+				eModel__typeParameter____typeParameters };
 	}
 
 	public static final void pattern_TypeParameter_1_5_registerobjects_expressionBBBBBBBB(TypeParameter _this,
-			PerformRuleResult ruleresult, EObject typeParameter, EObject eModelToPg, EObject tClass,
-			EObject eAnonymousClassDeclarationToTClass, EObject eModel, EObject pg) {
-		_this.registerObjects_FWD(ruleresult, typeParameter, eModelToPg, tClass, eAnonymousClassDeclarationToTClass,
-				eModel, pg);
+			PerformRuleResult ruleresult, EObject typeParameter, EObject pg, EObject eModelToPg, EObject tClass,
+			EObject eAnonymousClassDeclarationToTClass, EObject eModel) {
+		_this.registerObjects_FWD(ruleresult, typeParameter, pg, eModelToPg, tClass, eAnonymousClassDeclarationToTClass,
+				eModel);
 
 	}
 
@@ -1532,14 +1533,14 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeParameter_2_2_corematch_blackBFBFB(
+	public static final Iterable<Object[]> pattern_TypeParameter_2_2_corematch_blackBFFBB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel eModel, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(eModel,
 				ModelToTypeGraph.class, "source")) {
 			TypeGraph pg = eModelToPg.getTarget();
 			if (pg != null) {
-				_result.add(new Object[] { typeParameter, eModelToPg, eModel, pg, match });
+				_result.add(new Object[] { typeParameter, pg, eModelToPg, eModel, match });
 			}
 
 		}
@@ -1547,13 +1548,13 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Iterable<Object[]> pattern_TypeParameter_2_3_findcontext_blackBBBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, ModelToTypeGraph eModelToPg, MGravityModel eModel,
-			TypeGraph pg) {
+			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, ModelToTypeGraph eModelToPg,
+			MGravityModel eModel) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (eModel.getTypeParameters().contains(typeParameter)) {
-			if (eModel.equals(eModelToPg.getSource())) {
-				if (pg.equals(eModelToPg.getTarget())) {
-					_result.add(new Object[] { typeParameter, eModelToPg, eModel, pg });
+		if (pg.equals(eModelToPg.getTarget())) {
+			if (eModel.getTypeParameters().contains(typeParameter)) {
+				if (eModel.equals(eModelToPg.getSource())) {
+					_result.add(new Object[] { typeParameter, pg, eModelToPg, eModel });
 				}
 			}
 		}
@@ -1561,43 +1562,43 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_2_3_findcontext_greenBBBBFFFF(
-			org.eclipse.modisco.java.TypeParameter typeParameter, ModelToTypeGraph eModelToPg, MGravityModel eModel,
-			TypeGraph pg) {
+			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, ModelToTypeGraph eModelToPg,
+			MGravityModel eModel) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge eModelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eModel__typeParameter____typeParameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eModelToPg__eModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eModelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String eModelToPg__pg____target_name_prime = "target";
 		String eModel__typeParameter____typeParameters_name_prime = "typeParameters";
 		String eModelToPg__eModel____source_name_prime = "source";
-		String eModelToPg__pg____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(typeParameter);
+		isApplicableMatch.getAllContextElements().add(pg);
 		isApplicableMatch.getAllContextElements().add(eModelToPg);
 		isApplicableMatch.getAllContextElements().add(eModel);
-		isApplicableMatch.getAllContextElements().add(pg);
+		eModelToPg__pg____target.setSrc(eModelToPg);
+		eModelToPg__pg____target.setTrg(pg);
+		isApplicableMatch.getAllContextElements().add(eModelToPg__pg____target);
 		eModel__typeParameter____typeParameters.setSrc(eModel);
 		eModel__typeParameter____typeParameters.setTrg(typeParameter);
 		isApplicableMatch.getAllContextElements().add(eModel__typeParameter____typeParameters);
 		eModelToPg__eModel____source.setSrc(eModelToPg);
 		eModelToPg__eModel____source.setTrg(eModel);
 		isApplicableMatch.getAllContextElements().add(eModelToPg__eModel____source);
-		eModelToPg__pg____target.setSrc(eModelToPg);
-		eModelToPg__pg____target.setTrg(pg);
-		isApplicableMatch.getAllContextElements().add(eModelToPg__pg____target);
+		eModelToPg__pg____target.setName(eModelToPg__pg____target_name_prime);
 		eModel__typeParameter____typeParameters.setName(eModel__typeParameter____typeParameters_name_prime);
 		eModelToPg__eModel____source.setName(eModelToPg__eModel____source_name_prime);
-		eModelToPg__pg____target.setName(eModelToPg__pg____target_name_prime);
-		return new Object[] { typeParameter, eModelToPg, eModel, pg, isApplicableMatch,
-				eModel__typeParameter____typeParameters, eModelToPg__eModel____source, eModelToPg__pg____target };
+		return new Object[] { typeParameter, pg, eModelToPg, eModel, isApplicableMatch, eModelToPg__pg____target,
+				eModel__typeParameter____typeParameters, eModelToPg__eModel____source };
 	}
 
 	public static final Object[] pattern_TypeParameter_2_4_solveCSP_bindingFBBBBBB(TypeParameter _this,
-			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.TypeParameter typeParameter,
-			ModelToTypeGraph eModelToPg, MGravityModel eModel, TypeGraph pg) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, typeParameter, eModelToPg, eModel,
-				pg);
+			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg,
+			ModelToTypeGraph eModelToPg, MGravityModel eModel) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, typeParameter, pg, eModelToPg,
+				eModel);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, typeParameter, eModelToPg, eModel, pg };
+			return new Object[] { csp, _this, isApplicableMatch, typeParameter, pg, eModelToPg, eModel };
 		}
 		return null;
 	}
@@ -1607,17 +1608,17 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_2_4_solveCSP_bindingAndBlackFBBBBBB(TypeParameter _this,
-			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.TypeParameter typeParameter,
-			ModelToTypeGraph eModelToPg, MGravityModel eModel, TypeGraph pg) {
+			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg,
+			ModelToTypeGraph eModelToPg, MGravityModel eModel) {
 		Object[] result_pattern_TypeParameter_2_4_solveCSP_binding = pattern_TypeParameter_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, typeParameter, eModelToPg, eModel, pg);
+				_this, isApplicableMatch, typeParameter, pg, eModelToPg, eModel);
 		if (result_pattern_TypeParameter_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeParameter_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_TypeParameter_2_4_solveCSP_black = pattern_TypeParameter_2_4_solveCSP_blackB(csp);
 			if (result_pattern_TypeParameter_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, typeParameter, eModelToPg, eModel, pg };
+				return new Object[] { csp, _this, isApplicableMatch, typeParameter, pg, eModelToPg, eModel };
 			}
 		}
 		return null;
@@ -1651,16 +1652,16 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_10_1_initialbindings_blackBBBB(TypeParameter _this, Match match,
-			TClass tClass, TypeGraph pg) {
-		return new Object[] { _this, match, tClass, pg };
+			TypeGraph pg, TClass tClass) {
+		return new Object[] { _this, match, pg, tClass };
 	}
 
 	public static final Object[] pattern_TypeParameter_10_2_SolveCSP_bindingFBBBB(TypeParameter _this, Match match,
-			TClass tClass, TypeGraph pg) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tClass, pg);
+			TypeGraph pg, TClass tClass) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, pg, tClass);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tClass, pg };
+			return new Object[] { csp, _this, match, pg, tClass };
 		}
 		return null;
 	}
@@ -1670,16 +1671,16 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_10_2_SolveCSP_bindingAndBlackFBBBB(TypeParameter _this,
-			Match match, TClass tClass, TypeGraph pg) {
+			Match match, TypeGraph pg, TClass tClass) {
 		Object[] result_pattern_TypeParameter_10_2_SolveCSP_binding = pattern_TypeParameter_10_2_SolveCSP_bindingFBBBB(
-				_this, match, tClass, pg);
+				_this, match, pg, tClass);
 		if (result_pattern_TypeParameter_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeParameter_10_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_TypeParameter_10_2_SolveCSP_black = pattern_TypeParameter_10_2_SolveCSP_blackB(csp);
 			if (result_pattern_TypeParameter_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tClass, pg };
+				return new Object[] { csp, _this, match, pg, tClass };
 			}
 		}
 		return null;
@@ -1692,12 +1693,12 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_10_4_collectelementstobetranslated_blackBBB(Match match,
-			TClass tClass, TypeGraph pg) {
-		return new Object[] { match, tClass, pg };
+			TypeGraph pg, TClass tClass) {
+		return new Object[] { match, pg, tClass };
 	}
 
 	public static final Object[] pattern_TypeParameter_10_4_collectelementstobetranslated_greenBBBFFF(Match match,
-			TClass tClass, TypeGraph pg) {
+			TypeGraph pg, TClass tClass) {
 		EMoflonEdge pg__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tClass____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1717,12 +1718,12 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		pg__tClass____classes.setName(pg__tClass____classes_name_prime);
 		pg__tClass____ownedTypes.setName(pg__tClass____ownedTypes_name_prime);
 		tClass__pg____pg.setName(tClass__pg____pg_name_prime);
-		return new Object[] { match, tClass, pg, pg__tClass____classes, pg__tClass____ownedTypes, tClass__pg____pg };
+		return new Object[] { match, pg, tClass, pg__tClass____classes, pg__tClass____ownedTypes, tClass__pg____pg };
 	}
 
-	public static final Object[] pattern_TypeParameter_10_5_collectcontextelements_blackBBB(Match match, TClass tClass,
-			TypeGraph pg) {
-		return new Object[] { match, tClass, pg };
+	public static final Object[] pattern_TypeParameter_10_5_collectcontextelements_blackBBB(Match match, TypeGraph pg,
+			TClass tClass) {
+		return new Object[] { match, pg, tClass };
 	}
 
 	public static final Object[] pattern_TypeParameter_10_5_collectcontextelements_greenBB(Match match, TypeGraph pg) {
@@ -1731,8 +1732,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final void pattern_TypeParameter_10_6_registerobjectstomatch_expressionBBBB(TypeParameter _this,
-			Match match, TClass tClass, TypeGraph pg) {
-		_this.registerObjectsToMatch_BWD(match, tClass, pg);
+			Match match, TypeGraph pg, TClass tClass) {
+		_this.registerObjectsToMatch_BWD(match, pg, tClass);
 
 	}
 
@@ -1748,23 +1749,23 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("eModelToPg");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tClass");
-		EObject _localVariable_2 = isApplicableMatch.getObject("eModel");
-		EObject _localVariable_3 = isApplicableMatch.getObject("pg");
-		EObject tmpEModelToPg = _localVariable_0;
-		EObject tmpTClass = _localVariable_1;
-		EObject tmpEModel = _localVariable_2;
-		EObject tmpPg = _localVariable_3;
-		if (tmpEModelToPg instanceof ModelToTypeGraph) {
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) tmpEModelToPg;
-			if (tmpTClass instanceof TClass) {
-				TClass tClass = (TClass) tmpTClass;
-				if (tmpEModel instanceof MGravityModel) {
-					MGravityModel eModel = (MGravityModel) tmpEModel;
-					if (tmpPg instanceof TypeGraph) {
-						TypeGraph pg = (TypeGraph) tmpPg;
-						return new Object[] { eModelToPg, tClass, eModel, pg, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("pg");
+		EObject _localVariable_1 = isApplicableMatch.getObject("eModelToPg");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tClass");
+		EObject _localVariable_3 = isApplicableMatch.getObject("eModel");
+		EObject tmpPg = _localVariable_0;
+		EObject tmpEModelToPg = _localVariable_1;
+		EObject tmpTClass = _localVariable_2;
+		EObject tmpEModel = _localVariable_3;
+		if (tmpPg instanceof TypeGraph) {
+			TypeGraph pg = (TypeGraph) tmpPg;
+			if (tmpEModelToPg instanceof ModelToTypeGraph) {
+				ModelToTypeGraph eModelToPg = (ModelToTypeGraph) tmpEModelToPg;
+				if (tmpTClass instanceof TClass) {
+					TClass tClass = (TClass) tmpTClass;
+					if (tmpEModel instanceof MGravityModel) {
+						MGravityModel eModel = (MGravityModel) tmpEModel;
+						return new Object[] { pg, eModelToPg, tClass, eModel, isApplicableMatch };
 					}
 				}
 			}
@@ -1772,13 +1773,13 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_11_1_performtransformation_blackBBBBFBB(
-			ModelToTypeGraph eModelToPg, TClass tClass, MGravityModel eModel, TypeGraph pg, TypeParameter _this,
+	public static final Object[] pattern_TypeParameter_11_1_performtransformation_blackBBBBFBB(TypeGraph pg,
+			ModelToTypeGraph eModelToPg, TClass tClass, MGravityModel eModel, TypeParameter _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { eModelToPg, tClass, eModel, pg, csp, _this, isApplicableMatch };
+				return new Object[] { pg, eModelToPg, tClass, eModel, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1789,17 +1790,17 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		Object[] result_pattern_TypeParameter_11_1_performtransformation_binding = pattern_TypeParameter_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TypeParameter_11_1_performtransformation_binding != null) {
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result_pattern_TypeParameter_11_1_performtransformation_binding[0];
-			TClass tClass = (TClass) result_pattern_TypeParameter_11_1_performtransformation_binding[1];
-			MGravityModel eModel = (MGravityModel) result_pattern_TypeParameter_11_1_performtransformation_binding[2];
-			TypeGraph pg = (TypeGraph) result_pattern_TypeParameter_11_1_performtransformation_binding[3];
+			TypeGraph pg = (TypeGraph) result_pattern_TypeParameter_11_1_performtransformation_binding[0];
+			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result_pattern_TypeParameter_11_1_performtransformation_binding[1];
+			TClass tClass = (TClass) result_pattern_TypeParameter_11_1_performtransformation_binding[2];
+			MGravityModel eModel = (MGravityModel) result_pattern_TypeParameter_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_TypeParameter_11_1_performtransformation_black = pattern_TypeParameter_11_1_performtransformation_blackBBBBFBB(
-					eModelToPg, tClass, eModel, pg, _this, isApplicableMatch);
+					pg, eModelToPg, tClass, eModel, _this, isApplicableMatch);
 			if (result_pattern_TypeParameter_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypeParameter_11_1_performtransformation_black[4];
 
-				return new Object[] { eModelToPg, tClass, eModel, pg, csp, _this, isApplicableMatch };
+				return new Object[] { pg, eModelToPg, tClass, eModel, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1810,8 +1811,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		org.eclipse.modisco.java.TypeParameter typeParameter = JavaFactory.eINSTANCE.createTypeParameter();
 		TypeToTAbstractType eAnonymousClassDeclarationToTClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		eModel.getTypeParameters().add(typeParameter);
-		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		eAnonymousClassDeclarationToTClass.setSource(typeParameter);
+		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		return new Object[] { typeParameter, tClass, eAnonymousClassDeclarationToTClass, eModel };
 	}
 
@@ -1832,27 +1833,27 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject typeParameter, EObject eModelToPg, EObject tClass,
-			EObject eAnonymousClassDeclarationToTClass, EObject eModel, EObject pg) {
-		if (!eModelToPg.equals(typeParameter)) {
-			if (!eModelToPg.equals(tClass)) {
-				if (!eModelToPg.equals(pg)) {
-					if (!tClass.equals(typeParameter)) {
-						if (!eAnonymousClassDeclarationToTClass.equals(typeParameter)) {
-							if (!eAnonymousClassDeclarationToTClass.equals(eModelToPg)) {
-								if (!eAnonymousClassDeclarationToTClass.equals(tClass)) {
-									if (!eAnonymousClassDeclarationToTClass.equals(eModel)) {
-										if (!eAnonymousClassDeclarationToTClass.equals(pg)) {
-											if (!eModel.equals(typeParameter)) {
-												if (!eModel.equals(eModelToPg)) {
-													if (!eModel.equals(tClass)) {
+			PerformRuleResult ruleresult, EObject typeParameter, EObject pg, EObject eModelToPg, EObject tClass,
+			EObject eAnonymousClassDeclarationToTClass, EObject eModel) {
+		if (!pg.equals(typeParameter)) {
+			if (!pg.equals(tClass)) {
+				if (!eModelToPg.equals(typeParameter)) {
+					if (!eModelToPg.equals(pg)) {
+						if (!eModelToPg.equals(tClass)) {
+							if (!tClass.equals(typeParameter)) {
+								if (!eAnonymousClassDeclarationToTClass.equals(typeParameter)) {
+									if (!eAnonymousClassDeclarationToTClass.equals(pg)) {
+										if (!eAnonymousClassDeclarationToTClass.equals(eModelToPg)) {
+											if (!eAnonymousClassDeclarationToTClass.equals(tClass)) {
+												if (!eAnonymousClassDeclarationToTClass.equals(eModel)) {
+													if (!eModel.equals(typeParameter)) {
 														if (!eModel.equals(pg)) {
-															if (!pg.equals(typeParameter)) {
-																if (!pg.equals(tClass)) {
-																	return new Object[] { ruleresult, typeParameter,
+															if (!eModel.equals(eModelToPg)) {
+																if (!eModel.equals(tClass)) {
+																	return new Object[] { ruleresult, typeParameter, pg,
 																			eModelToPg, tClass,
-																			eAnonymousClassDeclarationToTClass, eModel,
-																			pg };
+																			eAnonymousClassDeclarationToTClass,
+																			eModel };
 																}
 															}
 														}
@@ -1872,60 +1873,60 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject typeParameter, EObject tClass,
-			EObject eAnonymousClassDeclarationToTClass, EObject eModel, EObject pg) {
-		EMoflonEdge eModel__typeParameter____typeParameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject typeParameter, EObject pg, EObject tClass,
+			EObject eAnonymousClassDeclarationToTClass, EObject eModel) {
+		EMoflonEdge pg__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eAnonymousClassDeclarationToTClass__typeParameter____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge pg__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tClass____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eModel__typeParameter____typeParameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypeParameter";
-		String eModel__typeParameter____typeParameters_name_prime = "typeParameters";
-		String eAnonymousClassDeclarationToTClass__tClass____target_name_prime = "target";
-		String eAnonymousClassDeclarationToTClass__typeParameter____source_name_prime = "source";
 		String pg__tClass____classes_name_prime = "classes";
+		String eAnonymousClassDeclarationToTClass__typeParameter____source_name_prime = "source";
 		String pg__tClass____ownedTypes_name_prime = "ownedTypes";
 		String tClass__pg____pg_name_prime = "pg";
-		eModel__typeParameter____typeParameters.setSrc(eModel);
-		eModel__typeParameter____typeParameters.setTrg(typeParameter);
-		ruleresult.getCreatedEdges().add(eModel__typeParameter____typeParameters);
-		eAnonymousClassDeclarationToTClass__tClass____target.setSrc(eAnonymousClassDeclarationToTClass);
-		eAnonymousClassDeclarationToTClass__tClass____target.setTrg(tClass);
-		ruleresult.getCreatedEdges().add(eAnonymousClassDeclarationToTClass__tClass____target);
-		eAnonymousClassDeclarationToTClass__typeParameter____source.setSrc(eAnonymousClassDeclarationToTClass);
-		eAnonymousClassDeclarationToTClass__typeParameter____source.setTrg(typeParameter);
-		ruleresult.getCreatedEdges().add(eAnonymousClassDeclarationToTClass__typeParameter____source);
+		String eAnonymousClassDeclarationToTClass__tClass____target_name_prime = "target";
+		String eModel__typeParameter____typeParameters_name_prime = "typeParameters";
 		pg__tClass____classes.setSrc(pg);
 		pg__tClass____classes.setTrg(tClass);
 		ruleresult.getTranslatedEdges().add(pg__tClass____classes);
+		eAnonymousClassDeclarationToTClass__typeParameter____source.setSrc(eAnonymousClassDeclarationToTClass);
+		eAnonymousClassDeclarationToTClass__typeParameter____source.setTrg(typeParameter);
+		ruleresult.getCreatedEdges().add(eAnonymousClassDeclarationToTClass__typeParameter____source);
 		pg__tClass____ownedTypes.setSrc(pg);
 		pg__tClass____ownedTypes.setTrg(tClass);
 		ruleresult.getTranslatedEdges().add(pg__tClass____ownedTypes);
 		tClass__pg____pg.setSrc(tClass);
 		tClass__pg____pg.setTrg(pg);
 		ruleresult.getTranslatedEdges().add(tClass__pg____pg);
+		eAnonymousClassDeclarationToTClass__tClass____target.setSrc(eAnonymousClassDeclarationToTClass);
+		eAnonymousClassDeclarationToTClass__tClass____target.setTrg(tClass);
+		ruleresult.getCreatedEdges().add(eAnonymousClassDeclarationToTClass__tClass____target);
+		eModel__typeParameter____typeParameters.setSrc(eModel);
+		eModel__typeParameter____typeParameters.setTrg(typeParameter);
+		ruleresult.getCreatedEdges().add(eModel__typeParameter____typeParameters);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		eModel__typeParameter____typeParameters.setName(eModel__typeParameter____typeParameters_name_prime);
-		eAnonymousClassDeclarationToTClass__tClass____target
-				.setName(eAnonymousClassDeclarationToTClass__tClass____target_name_prime);
+		pg__tClass____classes.setName(pg__tClass____classes_name_prime);
 		eAnonymousClassDeclarationToTClass__typeParameter____source
 				.setName(eAnonymousClassDeclarationToTClass__typeParameter____source_name_prime);
-		pg__tClass____classes.setName(pg__tClass____classes_name_prime);
 		pg__tClass____ownedTypes.setName(pg__tClass____ownedTypes_name_prime);
 		tClass__pg____pg.setName(tClass__pg____pg_name_prime);
-		return new Object[] { ruleresult, typeParameter, tClass, eAnonymousClassDeclarationToTClass, eModel, pg,
-				eModel__typeParameter____typeParameters, eAnonymousClassDeclarationToTClass__tClass____target,
-				eAnonymousClassDeclarationToTClass__typeParameter____source, pg__tClass____classes,
-				pg__tClass____ownedTypes, tClass__pg____pg };
+		eAnonymousClassDeclarationToTClass__tClass____target
+				.setName(eAnonymousClassDeclarationToTClass__tClass____target_name_prime);
+		eModel__typeParameter____typeParameters.setName(eModel__typeParameter____typeParameters_name_prime);
+		return new Object[] { ruleresult, typeParameter, pg, tClass, eAnonymousClassDeclarationToTClass, eModel,
+				pg__tClass____classes, eAnonymousClassDeclarationToTClass__typeParameter____source,
+				pg__tClass____ownedTypes, tClass__pg____pg, eAnonymousClassDeclarationToTClass__tClass____target,
+				eModel__typeParameter____typeParameters };
 	}
 
 	public static final void pattern_TypeParameter_11_5_registerobjects_expressionBBBBBBBB(TypeParameter _this,
-			PerformRuleResult ruleresult, EObject typeParameter, EObject eModelToPg, EObject tClass,
-			EObject eAnonymousClassDeclarationToTClass, EObject eModel, EObject pg) {
-		_this.registerObjects_BWD(ruleresult, typeParameter, eModelToPg, tClass, eAnonymousClassDeclarationToTClass,
-				eModel, pg);
+			PerformRuleResult ruleresult, EObject typeParameter, EObject pg, EObject eModelToPg, EObject tClass,
+			EObject eAnonymousClassDeclarationToTClass, EObject eModel) {
+		_this.registerObjects_BWD(ruleresult, typeParameter, pg, eModelToPg, tClass, eAnonymousClassDeclarationToTClass,
+				eModel);
 
 	}
 
@@ -1983,21 +1984,21 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tClass");
-		EObject _localVariable_1 = match.getObject("pg");
-		EObject tmpTClass = _localVariable_0;
-		EObject tmpPg = _localVariable_1;
-		if (tmpTClass instanceof TClass) {
-			TClass tClass = (TClass) tmpTClass;
-			if (tmpPg instanceof TypeGraph) {
-				TypeGraph pg = (TypeGraph) tmpPg;
-				return new Object[] { tClass, pg, match };
+		EObject _localVariable_0 = match.getObject("pg");
+		EObject _localVariable_1 = match.getObject("tClass");
+		EObject tmpPg = _localVariable_0;
+		EObject tmpTClass = _localVariable_1;
+		if (tmpPg instanceof TypeGraph) {
+			TypeGraph pg = (TypeGraph) tmpPg;
+			if (tmpTClass instanceof TClass) {
+				TClass tClass = (TClass) tmpTClass;
+				return new Object[] { pg, tClass, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeParameter_12_2_corematch_blackFBFBB(TClass tClass, TypeGraph pg,
+	public static final Iterable<Object[]> pattern_TypeParameter_12_2_corematch_blackBFBFB(TypeGraph pg, TClass tClass,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		boolean tClass_tLib = tClass.isTLib();
@@ -2009,7 +2010,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 					Model tmpEModel = eModelToPg.getSource();
 					if (tmpEModel instanceof MGravityModel) {
 						MGravityModel eModel = (MGravityModel) tmpEModel;
-						_result.add(new Object[] { eModelToPg, tClass, eModel, pg, match });
+						_result.add(new Object[] { pg, eModelToPg, tClass, eModel, match });
 					}
 
 				}
@@ -2020,18 +2021,18 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeParameter_12_3_findcontext_blackBBBB(ModelToTypeGraph eModelToPg,
-			TClass tClass, MGravityModel eModel, TypeGraph pg) {
+	public static final Iterable<Object[]> pattern_TypeParameter_12_3_findcontext_blackBBBB(TypeGraph pg,
+			ModelToTypeGraph eModelToPg, TClass tClass, MGravityModel eModel) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (eModel.equals(eModelToPg.getSource())) {
-			if (pg.equals(eModelToPg.getTarget())) {
-				if (pg.getClasses().contains(tClass)) {
-					if (pg.getOwnedTypes().contains(tClass)) {
+		if (pg.getClasses().contains(tClass)) {
+			if (pg.getOwnedTypes().contains(tClass)) {
+				if (pg.equals(eModelToPg.getTarget())) {
+					if (eModel.equals(eModelToPg.getSource())) {
 						boolean tClass_tLib = tClass.isTLib();
 						if (Boolean.valueOf(tClass_tLib).equals(Boolean.valueOf(false))) {
 							String tClass_tName = tClass.getTName();
 							if (tClass_tName.equals("T")) {
-								_result.add(new Object[] { eModelToPg, tClass, eModel, pg });
+								_result.add(new Object[] { pg, eModelToPg, tClass, eModel });
 							}
 
 						}
@@ -2043,29 +2044,23 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return _result;
 	}
 
-	public static final Object[] pattern_TypeParameter_12_3_findcontext_greenBBBBFFFFFF(ModelToTypeGraph eModelToPg,
-			TClass tClass, MGravityModel eModel, TypeGraph pg) {
+	public static final Object[] pattern_TypeParameter_12_3_findcontext_greenBBBBFFFFFF(TypeGraph pg,
+			ModelToTypeGraph eModelToPg, TClass tClass, MGravityModel eModel) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge eModelToPg__eModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eModelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tClass____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String eModelToPg__eModel____source_name_prime = "source";
-		String eModelToPg__pg____target_name_prime = "target";
+		EMoflonEdge eModelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eModelToPg__eModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String pg__tClass____classes_name_prime = "classes";
 		String pg__tClass____ownedTypes_name_prime = "ownedTypes";
 		String tClass__pg____pg_name_prime = "pg";
+		String eModelToPg__pg____target_name_prime = "target";
+		String eModelToPg__eModel____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(pg);
 		isApplicableMatch.getAllContextElements().add(eModelToPg);
 		isApplicableMatch.getAllContextElements().add(tClass);
 		isApplicableMatch.getAllContextElements().add(eModel);
-		isApplicableMatch.getAllContextElements().add(pg);
-		eModelToPg__eModel____source.setSrc(eModelToPg);
-		eModelToPg__eModel____source.setTrg(eModel);
-		isApplicableMatch.getAllContextElements().add(eModelToPg__eModel____source);
-		eModelToPg__pg____target.setSrc(eModelToPg);
-		eModelToPg__pg____target.setTrg(pg);
-		isApplicableMatch.getAllContextElements().add(eModelToPg__pg____target);
 		pg__tClass____classes.setSrc(pg);
 		pg__tClass____classes.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(pg__tClass____classes);
@@ -2075,22 +2070,28 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		tClass__pg____pg.setSrc(tClass);
 		tClass__pg____pg.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tClass__pg____pg);
-		eModelToPg__eModel____source.setName(eModelToPg__eModel____source_name_prime);
-		eModelToPg__pg____target.setName(eModelToPg__pg____target_name_prime);
+		eModelToPg__pg____target.setSrc(eModelToPg);
+		eModelToPg__pg____target.setTrg(pg);
+		isApplicableMatch.getAllContextElements().add(eModelToPg__pg____target);
+		eModelToPg__eModel____source.setSrc(eModelToPg);
+		eModelToPg__eModel____source.setTrg(eModel);
+		isApplicableMatch.getAllContextElements().add(eModelToPg__eModel____source);
 		pg__tClass____classes.setName(pg__tClass____classes_name_prime);
 		pg__tClass____ownedTypes.setName(pg__tClass____ownedTypes_name_prime);
 		tClass__pg____pg.setName(tClass__pg____pg_name_prime);
-		return new Object[] { eModelToPg, tClass, eModel, pg, isApplicableMatch, eModelToPg__eModel____source,
-				eModelToPg__pg____target, pg__tClass____classes, pg__tClass____ownedTypes, tClass__pg____pg };
+		eModelToPg__pg____target.setName(eModelToPg__pg____target_name_prime);
+		eModelToPg__eModel____source.setName(eModelToPg__eModel____source_name_prime);
+		return new Object[] { pg, eModelToPg, tClass, eModel, isApplicableMatch, pg__tClass____classes,
+				pg__tClass____ownedTypes, tClass__pg____pg, eModelToPg__pg____target, eModelToPg__eModel____source };
 	}
 
 	public static final Object[] pattern_TypeParameter_12_4_solveCSP_bindingFBBBBBB(TypeParameter _this,
-			IsApplicableMatch isApplicableMatch, ModelToTypeGraph eModelToPg, TClass tClass, MGravityModel eModel,
-			TypeGraph pg) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, eModelToPg, tClass, eModel, pg);
+			IsApplicableMatch isApplicableMatch, TypeGraph pg, ModelToTypeGraph eModelToPg, TClass tClass,
+			MGravityModel eModel) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, pg, eModelToPg, tClass, eModel);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, eModelToPg, tClass, eModel, pg };
+			return new Object[] { csp, _this, isApplicableMatch, pg, eModelToPg, tClass, eModel };
 		}
 		return null;
 	}
@@ -2100,17 +2101,17 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_12_4_solveCSP_bindingAndBlackFBBBBBB(TypeParameter _this,
-			IsApplicableMatch isApplicableMatch, ModelToTypeGraph eModelToPg, TClass tClass, MGravityModel eModel,
-			TypeGraph pg) {
+			IsApplicableMatch isApplicableMatch, TypeGraph pg, ModelToTypeGraph eModelToPg, TClass tClass,
+			MGravityModel eModel) {
 		Object[] result_pattern_TypeParameter_12_4_solveCSP_binding = pattern_TypeParameter_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, eModelToPg, tClass, eModel, pg);
+				_this, isApplicableMatch, pg, eModelToPg, tClass, eModel);
 		if (result_pattern_TypeParameter_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeParameter_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_TypeParameter_12_4_solveCSP_black = pattern_TypeParameter_12_4_solveCSP_blackB(csp);
 			if (result_pattern_TypeParameter_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, eModelToPg, tClass, eModel, pg };
+				return new Object[] { csp, _this, isApplicableMatch, pg, eModelToPg, tClass, eModel };
 			}
 		}
 		return null;
@@ -2197,7 +2198,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_20_2_testcorematchandDECs_black_nac_0B(TClass tClass) {
-		for (TPackage __DEC_tClass_classes_119141 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tClass_classes_837777 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TPackage.class, "classes")) {
 			return new Object[] { tClass };
 		}
@@ -2206,9 +2207,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_20_2_testcorematchandDECs_black_nac_1BB(TClass tClass,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tClass_classes_894358 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tClass_classes_79042 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tClass_classes_894358)) {
+			if (!pg.equals(__DEC_tClass_classes_79042)) {
 				return new Object[] { tClass, pg };
 			}
 		}
@@ -2216,8 +2217,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_20_2_testcorematchandDECs_black_nac_2B(TClass tClass) {
-		TPackage __DEC_tClass_ownedTypes_770183 = tClass.getPackage();
-		if (__DEC_tClass_ownedTypes_770183 != null) {
+		TPackage __DEC_tClass_ownedTypes_663050 = tClass.getPackage();
+		if (__DEC_tClass_ownedTypes_663050 != null) {
 			return new Object[] { tClass };
 		}
 
@@ -2225,9 +2226,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_20_2_testcorematchandDECs_black_nac_3B(TClass tClass) {
-		TAbstractType __DEC_tClass_innerTypes_756480 = tClass.getOuterType();
-		if (__DEC_tClass_innerTypes_756480 != null) {
-			if (!tClass.equals(__DEC_tClass_innerTypes_756480)) {
+		TAbstractType __DEC_tClass_innerTypes_502619 = tClass.getOuterType();
+		if (__DEC_tClass_innerTypes_502619 != null) {
+			if (!tClass.equals(__DEC_tClass_innerTypes_502619)) {
 				return new Object[] { tClass };
 			}
 		}
@@ -2257,7 +2258,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 												tClass) == null) {
 											if (pattern_TypeParameter_20_2_testcorematchandDECs_black_nac_3B(
 													tClass) == null) {
-												_result.add(new Object[] { tClass, pg, _edge_classes });
+												_result.add(new Object[] { pg, tClass, _edge_classes });
 											}
 										}
 									}
@@ -2285,8 +2286,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final boolean pattern_TypeParameter_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			TypeParameter _this, Match match, TClass tClass, TypeGraph pg) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tClass, pg);
+			TypeParameter _this, Match match, TypeGraph pg, TClass tClass) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, pg, tClass);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2374,9 +2375,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_21_2_testcorematchandDECs_black_nac_0BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel eModel) {
-		for (MGravityModel __DEC_typeParameter_typeParameters_202072 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MGravityModel __DEC_typeParameter_typeParameters_516939 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, MGravityModel.class, "typeParameters")) {
-			if (!eModel.equals(__DEC_typeParameter_typeParameters_202072)) {
+			if (!eModel.equals(__DEC_typeParameter_typeParameters_516939)) {
 				return new Object[] { typeParameter, eModel };
 			}
 		}
@@ -2385,9 +2386,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_21_2_testcorematchandDECs_black_nac_1BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel eModel) {
-		for (Model __DEC_typeParameter_orphanTypes_173311 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_typeParameter_orphanTypes_723512 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, Model.class, "orphanTypes")) {
-			if (!eModel.equals(__DEC_typeParameter_orphanTypes_173311)) {
+			if (!eModel.equals(__DEC_typeParameter_orphanTypes_723512)) {
 				return new Object[] { typeParameter, eModel };
 			}
 		}
@@ -2486,22 +2487,22 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	public static final Object[] pattern_TypeParameter_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("typeParameter");
-		EObject _localVariable_1 = targetMatch.getObject("tClass");
-		EObject _localVariable_2 = sourceMatch.getObject("eModel");
-		EObject _localVariable_3 = targetMatch.getObject("pg");
+		EObject _localVariable_1 = targetMatch.getObject("pg");
+		EObject _localVariable_2 = targetMatch.getObject("tClass");
+		EObject _localVariable_3 = sourceMatch.getObject("eModel");
 		EObject tmpTypeParameter = _localVariable_0;
-		EObject tmpTClass = _localVariable_1;
-		EObject tmpEModel = _localVariable_2;
-		EObject tmpPg = _localVariable_3;
+		EObject tmpPg = _localVariable_1;
+		EObject tmpTClass = _localVariable_2;
+		EObject tmpEModel = _localVariable_3;
 		if (tmpTypeParameter instanceof org.eclipse.modisco.java.TypeParameter) {
 			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) tmpTypeParameter;
-			if (tmpTClass instanceof TClass) {
-				TClass tClass = (TClass) tmpTClass;
-				if (tmpEModel instanceof MGravityModel) {
-					MGravityModel eModel = (MGravityModel) tmpEModel;
-					if (tmpPg instanceof TypeGraph) {
-						TypeGraph pg = (TypeGraph) tmpPg;
-						return new Object[] { typeParameter, tClass, eModel, pg, sourceMatch, targetMatch };
+			if (tmpPg instanceof TypeGraph) {
+				TypeGraph pg = (TypeGraph) tmpPg;
+				if (tmpTClass instanceof TClass) {
+					TClass tClass = (TClass) tmpTClass;
+					if (tmpEModel instanceof MGravityModel) {
+						MGravityModel eModel = (MGravityModel) tmpEModel;
+						return new Object[] { typeParameter, pg, tClass, eModel, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2510,14 +2511,14 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_24_2_matchsrctrgcontext_blackBBBBBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, TClass tClass, MGravityModel eModel, TypeGraph pg,
+			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, TClass tClass, MGravityModel eModel,
 			Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
 			boolean tClass_tLib = tClass.isTLib();
 			if (Boolean.valueOf(tClass_tLib).equals(Boolean.valueOf(false))) {
 				String tClass_tName = tClass.getTName();
 				if (tClass_tName.equals("T")) {
-					return new Object[] { typeParameter, tClass, eModel, pg, sourceMatch, targetMatch };
+					return new Object[] { typeParameter, pg, tClass, eModel, sourceMatch, targetMatch };
 				}
 
 			}
@@ -2532,28 +2533,28 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 				sourceMatch, targetMatch);
 		if (result_pattern_TypeParameter_24_2_matchsrctrgcontext_binding != null) {
 			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result_pattern_TypeParameter_24_2_matchsrctrgcontext_binding[0];
-			TClass tClass = (TClass) result_pattern_TypeParameter_24_2_matchsrctrgcontext_binding[1];
-			MGravityModel eModel = (MGravityModel) result_pattern_TypeParameter_24_2_matchsrctrgcontext_binding[2];
-			TypeGraph pg = (TypeGraph) result_pattern_TypeParameter_24_2_matchsrctrgcontext_binding[3];
+			TypeGraph pg = (TypeGraph) result_pattern_TypeParameter_24_2_matchsrctrgcontext_binding[1];
+			TClass tClass = (TClass) result_pattern_TypeParameter_24_2_matchsrctrgcontext_binding[2];
+			MGravityModel eModel = (MGravityModel) result_pattern_TypeParameter_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_TypeParameter_24_2_matchsrctrgcontext_black = pattern_TypeParameter_24_2_matchsrctrgcontext_blackBBBBBB(
-					typeParameter, tClass, eModel, pg, sourceMatch, targetMatch);
+					typeParameter, pg, tClass, eModel, sourceMatch, targetMatch);
 			if (result_pattern_TypeParameter_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { typeParameter, tClass, eModel, pg, sourceMatch, targetMatch };
+				return new Object[] { typeParameter, pg, tClass, eModel, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeParameter_24_3_solvecsp_bindingFBBBBBBB(TypeParameter _this,
-			org.eclipse.modisco.java.TypeParameter typeParameter, TClass tClass, MGravityModel eModel, TypeGraph pg,
+			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, TClass tClass, MGravityModel eModel,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(typeParameter, tClass, eModel, pg, sourceMatch,
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(typeParameter, pg, tClass, eModel, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, typeParameter, tClass, eModel, pg, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, typeParameter, pg, tClass, eModel, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2563,17 +2564,17 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_24_3_solvecsp_bindingAndBlackFBBBBBBB(TypeParameter _this,
-			org.eclipse.modisco.java.TypeParameter typeParameter, TClass tClass, MGravityModel eModel, TypeGraph pg,
+			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, TClass tClass, MGravityModel eModel,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_TypeParameter_24_3_solvecsp_binding = pattern_TypeParameter_24_3_solvecsp_bindingFBBBBBBB(
-				_this, typeParameter, tClass, eModel, pg, sourceMatch, targetMatch);
+				_this, typeParameter, pg, tClass, eModel, sourceMatch, targetMatch);
 		if (result_pattern_TypeParameter_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeParameter_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_TypeParameter_24_3_solvecsp_black = pattern_TypeParameter_24_3_solvecsp_blackB(csp);
 			if (result_pattern_TypeParameter_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, typeParameter, tClass, eModel, pg, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, typeParameter, pg, tClass, eModel, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2585,14 +2586,14 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeParameter_24_5_matchcorrcontext_blackFBBBB(MGravityModel eModel,
-			TypeGraph pg, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_TypeParameter_24_5_matchcorrcontext_blackBFBBB(TypeGraph pg,
+			MGravityModel eModel, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(eModel, ModelToTypeGraph.class, "source")) {
-				if (pg.equals(eModelToPg.getTarget())) {
-					_result.add(new Object[] { eModelToPg, eModel, pg, sourceMatch, targetMatch });
+			for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(pg,
+					ModelToTypeGraph.class, "target")) {
+				if (eModel.equals(eModelToPg.getSource())) {
+					_result.add(new Object[] { pg, eModelToPg, eModel, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2611,16 +2612,16 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_24_6_createcorrespondence_blackBBBBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, TClass tClass, MGravityModel eModel, TypeGraph pg,
+			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, TClass tClass, MGravityModel eModel,
 			CCMatch ccMatch) {
-		return new Object[] { typeParameter, tClass, eModel, pg, ccMatch };
+		return new Object[] { typeParameter, pg, tClass, eModel, ccMatch };
 	}
 
 	public static final Object[] pattern_TypeParameter_24_6_createcorrespondence_greenBBFB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, TClass tClass, CCMatch ccMatch) {
 		TypeToTAbstractType eAnonymousClassDeclarationToTClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
-		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		eAnonymousClassDeclarationToTClass.setSource(typeParameter);
+		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		ccMatch.getCreateCorr().add(eAnonymousClassDeclarationToTClass);
 		return new Object[] { typeParameter, tClass, eAnonymousClassDeclarationToTClass, ccMatch };
 	}
@@ -2647,9 +2648,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_27_1_matchtggpattern_black_nac_0BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel eModel) {
-		for (MGravityModel __DEC_typeParameter_typeParameters_88904 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MGravityModel __DEC_typeParameter_typeParameters_46136 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, MGravityModel.class, "typeParameters")) {
-			if (!eModel.equals(__DEC_typeParameter_typeParameters_88904)) {
+			if (!eModel.equals(__DEC_typeParameter_typeParameters_46136)) {
 				return new Object[] { typeParameter, eModel };
 			}
 		}
@@ -2658,9 +2659,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_27_1_matchtggpattern_black_nac_1BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel eModel) {
-		for (Model __DEC_typeParameter_orphanTypes_203876 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_typeParameter_orphanTypes_377972 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, Model.class, "orphanTypes")) {
-			if (!eModel.equals(__DEC_typeParameter_orphanTypes_203876)) {
+			if (!eModel.equals(__DEC_typeParameter_orphanTypes_377972)) {
 				return new Object[] { typeParameter, eModel };
 			}
 		}
@@ -2700,7 +2701,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_28_1_matchtggpattern_black_nac_0B(TClass tClass) {
-		for (TPackage __DEC_tClass_classes_158153 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tClass_classes_421275 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TPackage.class, "classes")) {
 			return new Object[] { tClass };
 		}
@@ -2708,9 +2709,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_28_1_matchtggpattern_black_nac_1BB(TClass tClass, TypeGraph pg) {
-		for (TypeGraph __DEC_tClass_classes_605843 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tClass_classes_206158 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tClass_classes_605843)) {
+			if (!pg.equals(__DEC_tClass_classes_206158)) {
 				return new Object[] { tClass, pg };
 			}
 		}
@@ -2718,8 +2719,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_28_1_matchtggpattern_black_nac_2B(TClass tClass) {
-		TPackage __DEC_tClass_ownedTypes_436858 = tClass.getPackage();
-		if (__DEC_tClass_ownedTypes_436858 != null) {
+		TPackage __DEC_tClass_ownedTypes_666672 = tClass.getPackage();
+		if (__DEC_tClass_ownedTypes_666672 != null) {
 			return new Object[] { tClass };
 		}
 
@@ -2727,9 +2728,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_28_1_matchtggpattern_black_nac_3B(TClass tClass) {
-		TAbstractType __DEC_tClass_innerTypes_640414 = tClass.getOuterType();
-		if (__DEC_tClass_innerTypes_640414 != null) {
-			if (!tClass.equals(__DEC_tClass_innerTypes_640414)) {
+		TAbstractType __DEC_tClass_innerTypes_442639 = tClass.getOuterType();
+		if (__DEC_tClass_innerTypes_442639 != null) {
+			if (!tClass.equals(__DEC_tClass_innerTypes_442639)) {
 				return new Object[] { tClass };
 			}
 		}
@@ -2737,14 +2738,14 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_28_1_matchtggpattern_blackBB(TClass tClass, TypeGraph pg) {
+	public static final Object[] pattern_TypeParameter_28_1_matchtggpattern_blackBB(TypeGraph pg, TClass tClass) {
 		if (pg.getClasses().contains(tClass)) {
 			if (pg.getOwnedTypes().contains(tClass)) {
 				if (pattern_TypeParameter_28_1_matchtggpattern_black_nac_0B(tClass) == null) {
 					if (pattern_TypeParameter_28_1_matchtggpattern_black_nac_1BB(tClass, pg) == null) {
 						if (pattern_TypeParameter_28_1_matchtggpattern_black_nac_2B(tClass) == null) {
 							if (pattern_TypeParameter_28_1_matchtggpattern_black_nac_3B(tClass) == null) {
-								return new Object[] { tClass, pg };
+								return new Object[] { pg, tClass };
 							}
 						}
 					}
@@ -2785,6 +2786,14 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_29_2_isapplicablecore_black_nac_0BB(
+			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
+		if (ruleResult.getTargetObjects().contains(pg)) {
+			return new Object[] { ruleResult, pg };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_TypeParameter_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, ModelToTypeGraph eModelToPg) {
 		if (ruleResult.getCorrObjects().contains(eModelToPg)) {
 			return new Object[] { ruleResult, eModelToPg };
@@ -2792,18 +2801,10 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_29_2_isapplicablecore_black_nac_1BB(
+	public static final Object[] pattern_TypeParameter_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, MGravityModel eModel) {
 		if (ruleResult.getSourceObjects().contains(eModel)) {
 			return new Object[] { ruleResult, eModel };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeParameter_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
-		if (ruleResult.getTargetObjects().contains(pg)) {
-			return new Object[] { ruleResult, pg };
 		}
 		return null;
 	}
@@ -2815,18 +2816,17 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			for (EObject tmpEModelToPg : eModelToPgList.getEntryObjects()) {
 				if (tmpEModelToPg instanceof ModelToTypeGraph) {
 					ModelToTypeGraph eModelToPg = (ModelToTypeGraph) tmpEModelToPg;
-					Model tmpEModel = eModelToPg.getSource();
-					if (tmpEModel instanceof MGravityModel) {
-						MGravityModel eModel = (MGravityModel) tmpEModel;
-						TypeGraph pg = eModelToPg.getTarget();
-						if (pg != null) {
-							if (pattern_TypeParameter_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+					TypeGraph pg = eModelToPg.getTarget();
+					if (pg != null) {
+						Model tmpEModel = eModelToPg.getSource();
+						if (tmpEModel instanceof MGravityModel) {
+							MGravityModel eModel = (MGravityModel) tmpEModel;
+							if (pattern_TypeParameter_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 									eModelToPg) == null) {
-								if (pattern_TypeParameter_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-										eModel) == null) {
+								if (pattern_TypeParameter_29_2_isapplicablecore_black_nac_0BB(ruleResult, pg) == null) {
 									if (pattern_TypeParameter_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											pg) == null) {
-										_result.add(new Object[] { eModelToPgList, eModelToPg, eModel, pg,
+											eModel) == null) {
+										_result.add(new Object[] { eModelToPgList, pg, eModelToPg, eModel,
 												ruleEntryContainer, ruleResult });
 									}
 								}
@@ -2842,12 +2842,12 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_29_3_solveCSP_bindingFBBBBBB(TypeParameter _this,
-			IsApplicableMatch isApplicableMatch, ModelToTypeGraph eModelToPg, MGravityModel eModel, TypeGraph pg,
+			IsApplicableMatch isApplicableMatch, TypeGraph pg, ModelToTypeGraph eModelToPg, MGravityModel eModel,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, eModelToPg, eModel, pg, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, pg, eModelToPg, eModel, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, eModelToPg, eModel, pg, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, pg, eModelToPg, eModel, ruleResult };
 		}
 		return null;
 	}
@@ -2857,17 +2857,17 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_29_3_solveCSP_bindingAndBlackFBBBBBB(TypeParameter _this,
-			IsApplicableMatch isApplicableMatch, ModelToTypeGraph eModelToPg, MGravityModel eModel, TypeGraph pg,
+			IsApplicableMatch isApplicableMatch, TypeGraph pg, ModelToTypeGraph eModelToPg, MGravityModel eModel,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_TypeParameter_29_3_solveCSP_binding = pattern_TypeParameter_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, eModelToPg, eModel, pg, ruleResult);
+				_this, isApplicableMatch, pg, eModelToPg, eModel, ruleResult);
 		if (result_pattern_TypeParameter_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeParameter_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_TypeParameter_29_3_solveCSP_black = pattern_TypeParameter_29_3_solveCSP_blackB(csp);
 			if (result_pattern_TypeParameter_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, eModelToPg, eModel, pg, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, pg, eModelToPg, eModel, ruleResult };
 			}
 		}
 		return null;
@@ -2879,17 +2879,17 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return _result;
 	}
 
-	public static final Object[] pattern_TypeParameter_29_5_checknacs_blackBBB(ModelToTypeGraph eModelToPg,
-			MGravityModel eModel, TypeGraph pg) {
-		return new Object[] { eModelToPg, eModel, pg };
+	public static final Object[] pattern_TypeParameter_29_5_checknacs_blackBBB(TypeGraph pg,
+			ModelToTypeGraph eModelToPg, MGravityModel eModel) {
+		return new Object[] { pg, eModelToPg, eModel };
 	}
 
-	public static final Object[] pattern_TypeParameter_29_6_perform_blackBBBB(ModelToTypeGraph eModelToPg,
-			MGravityModel eModel, TypeGraph pg, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { eModelToPg, eModel, pg, ruleResult };
+	public static final Object[] pattern_TypeParameter_29_6_perform_blackBBBB(TypeGraph pg, ModelToTypeGraph eModelToPg,
+			MGravityModel eModel, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { pg, eModelToPg, eModel, ruleResult };
 	}
 
-	public static final Object[] pattern_TypeParameter_29_6_perform_greenFFFBBB(MGravityModel eModel, TypeGraph pg,
+	public static final Object[] pattern_TypeParameter_29_6_perform_greenFBFFBB(TypeGraph pg, MGravityModel eModel,
 			ModelgeneratorRuleResult ruleResult) {
 		org.eclipse.modisco.java.TypeParameter typeParameter = JavaFactory.eINSTANCE.createTypeParameter();
 		TClass tClass = BasicFactory.eINSTANCE.createTClass();
@@ -2903,15 +2903,15 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		pg.getClasses().add(tClass);
 		pg.getOwnedTypes().add(tClass);
 		ruleResult.getTargetObjects().add(tClass);
-		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		eAnonymousClassDeclarationToTClass.setSource(typeParameter);
+		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		ruleResult.getCorrObjects().add(eAnonymousClassDeclarationToTClass);
 		tClass.setTLib(Boolean.valueOf(tClass_tLib_prime));
 		tClass.setTName(tClass_tName_prime);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { typeParameter, tClass, eAnonymousClassDeclarationToTClass, eModel, pg, ruleResult };
+		return new Object[] { typeParameter, pg, tClass, eAnonymousClassDeclarationToTClass, eModel, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_TypeParameter_29_7_expressionFB(
