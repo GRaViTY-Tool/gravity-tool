@@ -13,11 +13,13 @@ import java.io.Reader;
 import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -92,6 +94,8 @@ public class TransformationTest {
 	private static final boolean SERIALIZE = true;
 	private static final boolean JSON_CHECKS = false;
 
+	private static final List<String> SKIP = Arrays.asList("DF-AssignmentArgument", "ParamToParam");
+
 	/**
 	 * The logger of this class
 	 */
@@ -141,7 +145,8 @@ public class TransformationTest {
 	public static final Collection<Object[]> data() throws CoreException {
 		LOGGER.info("Collect test data");
 		final List<IProject> projects = EclipseProjectUtil
-				.importProjectsFromWorkspaceLocation(new NullProgressMonitor());
+				.importProjectsFromWorkspaceLocation(new NullProgressMonitor()).parallelStream()
+				.filter(project -> !SKIP.contains(project.getName())).collect(Collectors.toList());
 		LOGGER.info("Imported " + projects.size() + "projects into workspace.");
 		return TestHelper.prepareTestData(projects);
 	}
