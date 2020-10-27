@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spl" nsURI="http://www.gravity-tool.org/typegraph/spl" nsPrefix="org.gravity.typegraph.spl">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="TODO: Add documentation for spl. Hint: You may copy this element in the Ecore editor to add documentation to EClasses, EOperations, ..."/>
+    <details key="basePackage" value="org.gravity.typegraph"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="TPresenceCondition" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
