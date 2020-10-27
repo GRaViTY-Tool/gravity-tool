@@ -15,7 +15,7 @@ import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
-import org.gravity.tgg.modisco.MoDiscoTGGActivator;
+import org.gravity.tgg.modisco.pm.MoDiscoTGGActivator;
 import org.gravity.typegraph.basic.TypeGraph;
 
 public abstract class AbstractRefactoringTestCase {

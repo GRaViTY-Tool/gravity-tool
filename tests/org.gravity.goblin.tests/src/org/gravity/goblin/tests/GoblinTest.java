@@ -29,7 +29,7 @@ import org.eclipse.jdt.core.JavaCore;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.goblin.constraints.VisibilityConstraintCalculator;
-import org.gravity.tgg.modisco.MoDiscoTGGConverterFactory;
+import org.gravity.tgg.modisco.pm.MoDiscoTGGConverterFactory;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
