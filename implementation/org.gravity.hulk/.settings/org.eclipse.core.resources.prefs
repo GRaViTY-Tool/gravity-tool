@@ -5,4 +5,6 @@ encoding//rules/antipattern/blob.henshin=UTF-8
 encoding//rules/antipattern/blob.henshin_diagram=UTF-8
 encoding//rules/antipattern/god-class.henshin=UTF-8
 encoding//rules/antipattern/god-class.henshin_diagram=UTF-8
+encoding//rules/antipattern/spaghetti-code.henshin=UTF-8
+encoding//rules/antipattern/spaghetti-code.henshin_diagram=UTF-8
 encoding//src/org/gravity/hulk/messages.properties=ISO-8859-1

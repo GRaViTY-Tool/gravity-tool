@@ -146,17 +146,14 @@ public class HulkHenshin {
 		final String targetModel = "instances/Test.trg.xmi";
 		final Resource currentTargetModel = resourceSet.getResource(URI.createURI(targetModel), true);
 		
-
-		logAntiPattern(currentTargetModel);
-		
 		Map<EObject,Map<EObject, String>> pcToAPMap = logPresenceConditions(graph);
 		
 		pcToAPMap.forEach((key,value)->{
-			System.out.println("Anti-Pattern / Code Smell:" + key);
-			System.out.println("Presence Conditions:" + value);
+			System.out.println("Anti-Pattern / Code Smell: " + key);
+			System.out.println("Presence Conditions: " + value);
 			System.out.println("");
 		});
-
+		logAntiPattern(currentTargetModel);
 	}
 
 	public static String writeCNF(IFeatureModel featureModel) {
@@ -207,6 +204,7 @@ public class HulkHenshin {
 		Map<EObject, String> innerMap = new HashMap<>();
 
 		graph.getPCS().forEach((key, entry) -> {
+
 			if (key instanceof TAnnotation) {
 
 				outerMap.put(key, innerMap);
