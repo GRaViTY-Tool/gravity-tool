@@ -171,16 +171,21 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 			LOGGER.error(e.getLocalizedMessage(), e);
 		}
 		URI uri = getPlatformResourceURI(file);
-		
-		if(file != null && file.exists()) {
+
+		if (file != null && file.exists()) {
 			long javaTimestamp = getTimestampOfSourceFiles(javaProject);
-			if(file.getLocalTimeStamp() >= javaTimestamp) {
-				Resource resource = discoverer.getRS().getResource(uri, true);
-				Optional<EObject> model = resource.getContents().stream().filter(MGravityModel.class::isInstance).findAny();
-				if(model.isPresent()) {
-					return (MGravityModel) model.get();
+			if (file.getLocalTimeStamp() >= javaTimestamp) {
+				try {
+					Resource resource = discoverer.getRS().getResource(uri, true);
+					Optional<EObject> model = resource.getContents().stream().filter(MGravityModel.class::isInstance)
+							.findAny();
+					if (model.isPresent()) {
+						return (MGravityModel) model.get();
+					}
+					resource.unload();
+				} catch (Exception e) {
+					LOGGER.error(e);
 				}
-				resource.unload();
 			}
 		}
 
@@ -238,11 +243,11 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	private long getTimestampOfSourceFiles(IJavaProject javaProject) {
 		long javaTimestamp = 0;
 		try {
-			for(IPackageFragmentRoot root : javaProject.getPackageFragmentRoots()) {
+			for (IPackageFragmentRoot root : javaProject.getPackageFragmentRoots()) {
 				IResource resource = root.getCorrespondingResource();
-				if(resource != null) {
+				if (resource != null) {
 					long timestamp = resource.getModificationStamp();
-					if(timestamp > javaTimestamp) {
+					if (timestamp > javaTimestamp) {
 						javaTimestamp = timestamp;
 					}
 				}
@@ -254,7 +259,8 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	}
 
 	private URI getPlatformResourceURI(IFile file) {
-		File workspaceRelativeFile = new File(new File(file.getProject().getName()),file.getProjectRelativePath().toString());
+		File workspaceRelativeFile = new File(new File(file.getProject().getName()),
+				file.getProjectRelativePath().toString());
 		URI uri = URI.createPlatformResourceURI(workspaceRelativeFile.toString(), true);
 		return uri;
 	}
