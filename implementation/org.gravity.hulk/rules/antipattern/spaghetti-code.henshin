@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_2gsdQBiUEeu0M5Z7ULaNUg">
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_2gsdQBiUEeu0M5Z7ULaNUg">
   <imports href="../../../org.gravity.typegraph.basic/model/Basic.ecore#/"/>
   <imports href="../../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#/"/>
   <units xsi:type="henshin:Rule" xmi:id="__ivskBiUEeu0M5Z7ULaNUg" name="Spaghetticode">
     <annotations xmi:id="__jLxcBiUEeu0M5Z7ULaNUg" key="featureConstraint" value=""/>
+    <parameters xmi:id="_eOxYMBiZEeuOsopk2mAHYw" name="context" kind="VAR">
+      <type xsi:type="ecore:EClass" href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </parameters>
     <lhs xmi:id="__i42hBiUEeu0M5Z7ULaNUg" name="Lhs">
       <nodes xmi:id="_9VGB4BiXEeuKvMLpMr3VYw" outgoing="_PshFIBiYEeuKvMLpMr3VYw _QcWmoBiYEeuKvMLpMr3VYw _b-oXABiYEeuPmogIri4V_g">
         <annotations xmi:id="_9VK6YBiXEeuKvMLpMr3VYw" key="presenceCondition" value=""/>
@@ -127,6 +130,9 @@
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_BbYpMBiVEeu0M5Z7ULaNUg" name="NoInheritance">
     <annotations xmi:id="_BsSzABiVEeu0M5Z7ULaNUg" key="featureConstraint" value=""/>
+    <parameters xmi:id="_XxekoBiZEeuOsopk2mAHYw" name="context" kind="VAR">
+      <type xsi:type="ecore:EClass" href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </parameters>
     <lhs xmi:id="_BbYpNRiVEeu0M5Z7ULaNUg" name="Lhs">
       <nodes xmi:id="_cDnFABiVEeu0M5Z7ULaNUg" name="context">
         <annotations xmi:id="_cDnFBRiVEeu0M5Z7ULaNUg" key="presenceCondition" value=""/>
@@ -151,6 +157,9 @@
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_dYiQkBiVEeu0M5Z7ULaNUg" name="IntenseFieldUsage">
     <annotations xmi:id="_drdMkBiVEeu0M5Z7ULaNUg" key="featureConstraint" value=""/>
+    <parameters xmi:id="_ekJLQBiZEeuOsopk2mAHYw" name="context" kind="VAR">
+      <type xsi:type="ecore:EClass" href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </parameters>
     <lhs xmi:id="_dYiQlRiVEeu0M5Z7ULaNUg" name="Lhs">
       <nodes xmi:id="_Pfg10BiWEeu0M5Z7ULaNUg" name="context">
         <annotations xmi:id="_Pfg11RiWEeu0M5Z7ULaNUg" key="presenceCondition" value=""/>
@@ -175,6 +184,9 @@
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_giK7ABiVEeu0M5Z7ULaNUg" name="ManyParameters">
     <annotations xmi:id="_hR4gsBiVEeu0M5Z7ULaNUg" key="featureConstraint" value=""/>
+    <parameters xmi:id="_fBoYgBiZEeuOsopk2mAHYw" name="context" kind="VAR">
+      <type xsi:type="ecore:EClass" href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </parameters>
     <lhs xmi:id="_giK7BRiVEeu0M5Z7ULaNUg" name="Lhs">
       <nodes xmi:id="_TUimoBiWEeu0M5Z7ULaNUg" name="context">
         <annotations xmi:id="_TUimpRiWEeu0M5Z7ULaNUg" key="presenceCondition" value=""/>
@@ -199,6 +211,9 @@
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_LJIrcBiWEeu0M5Z7ULaNUg" name="LargeClass">
     <annotations xmi:id="_LlG1wBiWEeu0M5Z7ULaNUg" key="featureConstraint" value=""/>
+    <parameters xmi:id="_jFnLUBiZEeuOsopk2mAHYw" name="context" kind="VAR">
+      <type xsi:type="ecore:EClass" href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </parameters>
     <lhs xmi:id="_LJIrdRiWEeu0M5Z7ULaNUg" name="Lhs">
       <nodes xmi:id="_R5838BiWEeu0M5Z7ULaNUg" name="context">
         <annotations xmi:id="_R5839RiWEeu0M5Z7ULaNUg" key="presenceCondition" value=""/>
