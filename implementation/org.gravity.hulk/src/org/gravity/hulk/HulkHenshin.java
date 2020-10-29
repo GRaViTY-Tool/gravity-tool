@@ -18,7 +18,6 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -56,6 +55,7 @@ import org.eclipse.emf.henshin.variability.multi.MultiVarEngine;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphPackage;
 import org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage;
+import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.security.annotations.AnnotationsPackage;
 import org.gravity.typegraph.basic.BasicPackage;
@@ -91,9 +91,16 @@ public class HulkHenshin {
 		final HenshinResourceSet resourceHenshinSet = new HenshinResourceSet();
 		resourceHenshinSet.getPackageRegistry().put(AnnotationsPackage.eNS_URI, AnnotationsPackage.eINSTANCE);
 		resourceHenshinSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put(AntipatterngraphPackage.eNS_URI, AntipatterngraphPackage.eINSTANCE);
 		resourceHenshinSet.getPackageRegistry().put(AntipatternPackage.eNS_URI, AntipatternPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put(CodesmellsPackage.eNS_URI, CodesmellsPackage.eINSTANCE);
 		resourceHenshinSet.getPackageRegistry().put(SplPackage.eNS_URI, SplPackage.eINSTANCE);
-
+		
+		resourceHenshinSet.getPackageRegistry().put("platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore", BasicPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put("platform:/resource/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore",AntipatterngraphPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put("platform:/resource/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern",AntipatternPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put("platform:/resource/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells",CodesmellsPackage.eINSTANCE);
+		
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
@@ -104,23 +111,32 @@ public class HulkHenshin {
 		TreeIterator<EObject> tree = currentModel.getAllContents();
 		Map<EObject, String> pcs = new HashMap<>();
 
+
 		while (tree.hasNext()) {
 			EObject eObject = (EObject) tree.next();
 			EList<TAnnotation> pcEObjectList;
 			if (eObject instanceof TAnnotatable) {
 				pcEObjectList = ((TAnnotatable) eObject).getTAnnotation(SplPackage.eINSTANCE.getTPresenceCondition());
 				pcEObjectList.stream().forEach(pcEObject -> {
+					// ADDED COUNTER
+					int hSize;
 					final String pc = ((TPresenceCondition) pcEObject).getPc();
 					if (pcEObjectList.size() <= 1) {
 						if (pcEObjectList.size() != 0) {
+
 							pcs.put(eObject, pc);
+							// ADDED COUNTER
+							hSize = pcs.size();
+							//System.out.println(hSize);
 						}
 					} else {
 						throw new RuntimeException("More than one TPresenceCondition detected.");
 					}
+					
 				});
 			}
 		}
+
 		IFeatureModel fm = addFeatureModel();
 		String fmCNFString = "";
 		if (fm != null) {
@@ -136,7 +152,7 @@ public class HulkHenshin {
 		final HulkHenshin hulk = new HulkHenshin();
 		hulk.loadRules(resourceHenshinSet, new File("rules"));
 		hulk.execute(engine, graph, hulk.getRule(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern()));
-
+		
 		try (OutputStream outputStream = Files.newOutputStream(Paths.get(model.replace(".xmi", ".trg.xmi")))) {
 			graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
 		}
