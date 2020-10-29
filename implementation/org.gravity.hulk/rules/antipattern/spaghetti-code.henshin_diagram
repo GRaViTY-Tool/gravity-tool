@@ -68,7 +68,7 @@
       </children>
     </children>
     <element xmi:type="henshin:Rule" href="spaghetti-code.henshin#__ivskBiUEeu0M5Z7ULaNUg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__i42gRiUEeu0M5Z7ULaNUg" x="26" y="494" width="917" height="311"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__i42gRiUEeu0M5Z7ULaNUg" x="26" y="494" width="917" height="262"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_BbYpMRiVEeu0M5Z7ULaNUg" type="2001" fontName="Segoe UI" italic="true" lineColor="0">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cDnFAxiVEeu0M5Z7ULaNUg" source="defaultAction">
