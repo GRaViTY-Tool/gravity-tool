@@ -105,7 +105,7 @@ public class HulkHenshin {
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 
-		final String model = "instances/Test.xmi";
+		final String model = "instances/Gravity2/SPL_4.xmi";
 		final Resource currentModel = resourceSet.getResource(URI.createURI(model), true);
 
 		TreeIterator<EObject> tree = currentModel.getAllContents();
@@ -159,7 +159,7 @@ public class HulkHenshin {
 		LOGGER.info("done");
 
 		// Log Anti-Patterns and Code Smells
-		final String targetModel = "instances/Test.trg.xmi";
+		final String targetModel = "instances/Gravity2/SPL_4.trg.xmi";
 		final Resource currentTargetModel = resourceSet.getResource(URI.createURI(targetModel), true);
 		
 		Map<EObject,Map<EObject, String>> pcToAPMap = logPresenceConditions(graph);
@@ -175,11 +175,8 @@ public class HulkHenshin {
 	public static String writeCNF(IFeatureModel featureModel) {
 		final org.prop4j.Node nodes = Nodes.convert(CNFCreator.createNodes(featureModel));
 		final StringBuilder cnf = new StringBuilder();
-		// Textual Symbols:
-		cnf.append(nodes.toString(NodeWriter.textualSymbols));
 
-		// Short Symbols
-		// cnf.append(nodes.toString(NodeWriter.shortSymbols));
+		cnf.append(nodes.toString(NodeWriter.textualSymbols));
 		return cnf.toString();
 	}
 
@@ -249,18 +246,10 @@ public class HulkHenshin {
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
 	}
 
-	public static boolean ocl_FieldAccess(double oclLimit, EObject eObject) {
+	public static boolean ocl_Access(double oclLimit, EObject eObject) {
 
 		IFeatureModel fm = addFeatureModel();
-		final String ocl = "context TClass inv: self.defines->select(t:TFieldDefinition | t.accessedBy->size <> 0)->size() >="
-				+ oclLimit;
-		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
-	}
-
-	public static boolean ocl_MethodAccess(double oclLimit, EObject eObject) {
-
-		IFeatureModel fm = addFeatureModel();
-		final String ocl = "context TClass inv: self.defines->select(t:TMethodDefinition | t.accessedBy->size <> 0)->size() >= "
+		final String ocl = "context TClass inv: self.defines->select(t | t.accessedBy->size <> 0)->size() >= "
 				+ oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
 	}
@@ -273,24 +262,12 @@ public class HulkHenshin {
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
 	}
 
+	@Deprecated
 	public static boolean ocl_ChildClasses(double oclLimit, EObject eObject) {
 
 		IFeatureModel fm = addFeatureModel();
 		final String ocl = "context TClass inv: self.childClasses->size() >= " + oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
-	}
-
-	public static boolean ocl_DIT(double oclLimit, EObject eObject) {
-
-		// IOCLHelper helper = HelperUtil.createOCLHelper();
-		// helper.define("getChilds(c : TClass) : Set(TClass) =
-		// r.childs->collect(t|getChilds(t))->asSet()->union(r.childs) ");
-
-		// final String ocl = "context TClass inv:
-		// self.parentClass->closure(childClasses)->size() <= " + oclLimit;
-		// return new VerificationEngine(eObject).validateOCLWellFormednessRule(ocl,
-		// eObject);
-		return false;
 	}
 
 	private Rule getRule(EClass type) {
