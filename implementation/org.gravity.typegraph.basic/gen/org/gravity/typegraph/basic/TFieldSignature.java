@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TFieldSignature extends TSignature {
+public interface TFieldSignature extends TSignature, TAbstractMultiplicity {
 	/**
 	 * Returns the value of the '<em><b>Field</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TField#getSignatures <em>Signatures</em>}'.

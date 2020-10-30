@@ -642,13 +642,31 @@ public interface BasicPackage extends EPackage {
 	int TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 13;
 
 	/**
+	 * The operation id for the '<em>Get TField Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>Get TField Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 15;
+
+	/**
 	 * The number of operations of the '<em>TAbstract Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 14;
+	int TABSTRACT_TYPE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -883,6 +901,24 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TCLASS___GET_REAL_PACKAGE__TABSTRACTTYPE = TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE;
+
+	/**
+	 * The operation id for the '<em>Get TField Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCLASS___GET_TFIELD_SIGNATURE__STRING = TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get TField Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCLASS___GET_TFIELD_DEFINITION__STRING = TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Declared TMethod Definitions</em>' operation.
@@ -1461,13 +1497,31 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_SIGNATURE__DEFINITIONS = TSIGNATURE__DEFINITIONS;
 
 	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE__LOWER_BOUND = TSIGNATURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE__UPPER_BOUND = TSIGNATURE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Field</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE__FIELD = TSIGNATURE_FEATURE_COUNT + 0;
+	int TFIELD_SIGNATURE__FIELD = TSIGNATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1476,7 +1530,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE__TYPE = TSIGNATURE_FEATURE_COUNT + 1;
+	int TFIELD_SIGNATURE__TYPE = TSIGNATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>TField Signature</em>' class.
@@ -1485,7 +1539,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE_FEATURE_COUNT = TSIGNATURE_FEATURE_COUNT + 2;
+	int TFIELD_SIGNATURE_FEATURE_COUNT = TSIGNATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1497,13 +1551,22 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_SIGNATURE___GET_TANNOTATION__ECLASS = TSIGNATURE___GET_TANNOTATION__ECLASS;
 
 	/**
+	 * The operation id for the '<em>Is Array</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE___IS_ARRAY = TSIGNATURE_OPERATION_COUNT + 0;
+
+	/**
 	 * The operation id for the '<em>Get Signature String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE___GET_SIGNATURE_STRING = TSIGNATURE_OPERATION_COUNT + 0;
+	int TFIELD_SIGNATURE___GET_SIGNATURE_STRING = TSIGNATURE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get TDefinition</em>' operation.
@@ -1512,7 +1575,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE = TSIGNATURE_OPERATION_COUNT + 1;
+	int TFIELD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE = TSIGNATURE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Field Definitions</em>' operation.
@@ -1521,7 +1584,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE___GET_FIELD_DEFINITIONS = TSIGNATURE_OPERATION_COUNT + 2;
+	int TFIELD_SIGNATURE___GET_FIELD_DEFINITIONS = TSIGNATURE_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>TField Signature</em>' class.
@@ -1530,7 +1593,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 3;
+	int TFIELD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -1641,22 +1704,13 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_FEATURE_COUNT = TNAME_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMETHOD___GET_SIGNATURE__TABSTRACTTYPE_ELIST = TNAME_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>TMethod</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_OPERATION_COUNT = TNAME_OPERATION_COUNT + 1;
+	int TMETHOD_OPERATION_COUNT = TNAME_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -1740,13 +1794,31 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_DEFINITION__SIGNATURE = TMEMBER__SIGNATURE;
 
 	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION__LOWER_BOUND = TMEMBER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION__UPPER_BOUND = TMEMBER_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Overriding</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERRIDING = TMEMBER_FEATURE_COUNT + 0;
+	int TMETHOD_DEFINITION__OVERRIDING = TMEMBER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Overridden By</b></em>' reference list.
@@ -1755,7 +1827,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERRIDDEN_BY = TMEMBER_FEATURE_COUNT + 1;
+	int TMETHOD_DEFINITION__OVERRIDDEN_BY = TMEMBER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Overloading</b></em>' reference list.
@@ -1764,7 +1836,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERLOADING = TMEMBER_FEATURE_COUNT + 2;
+	int TMETHOD_DEFINITION__OVERLOADING = TMEMBER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Overloaded By</b></em>' reference list.
@@ -1773,7 +1845,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERLOADED_BY = TMEMBER_FEATURE_COUNT + 3;
+	int TMETHOD_DEFINITION__OVERLOADED_BY = TMEMBER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Return Type</b></em>' reference.
@@ -1782,7 +1854,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__RETURN_TYPE = TMEMBER_FEATURE_COUNT + 4;
+	int TMETHOD_DEFINITION__RETURN_TYPE = TMEMBER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Syntethic Methods</b></em>' reference list.
@@ -1791,7 +1863,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__SYNTETHIC_METHODS = TMEMBER_FEATURE_COUNT + 5;
+	int TMETHOD_DEFINITION__SYNTETHIC_METHODS = TMEMBER_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>TMethod Definition</em>' class.
@@ -1800,7 +1872,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 6;
+	int TMETHOD_DEFINITION_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1821,13 +1893,22 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_DEFINITION___GET_SIGNATURE_STRING = TMEMBER___GET_SIGNATURE_STRING;
 
 	/**
+	 * The operation id for the '<em>Is Array</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION___IS_ARRAY = TMEMBER_OPERATION_COUNT + 0;
+
+	/**
 	 * The operation id for the '<em>To String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION___TO_STRING = TMEMBER_OPERATION_COUNT + 0;
+	int TMETHOD_DEFINITION___TO_STRING = TMEMBER_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Signature</em>' operation.
@@ -1836,7 +1917,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION___GET_SIGNATURE = TMEMBER_OPERATION_COUNT + 1;
+	int TMETHOD_DEFINITION___GET_SIGNATURE = TMEMBER_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>TMethod Definition</em>' class.
@@ -1845,7 +1926,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 2;
+	int TMETHOD_DEFINITION_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -1893,13 +1974,31 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_SIGNATURE__DEFINITIONS = TSIGNATURE__DEFINITIONS;
 
 	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__LOWER_BOUND = TSIGNATURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__UPPER_BOUND = TSIGNATURE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Method</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE__METHOD = TSIGNATURE_FEATURE_COUNT + 0;
+	int TMETHOD_SIGNATURE__METHOD = TSIGNATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Return Type</b></em>' reference.
@@ -1908,7 +2007,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE__RETURN_TYPE = TSIGNATURE_FEATURE_COUNT + 1;
+	int TMETHOD_SIGNATURE__RETURN_TYPE = TSIGNATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -1917,7 +2016,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE__PARAMETERS = TSIGNATURE_FEATURE_COUNT + 2;
+	int TMETHOD_SIGNATURE__PARAMETERS = TSIGNATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>First Parameter</b></em>' reference.
@@ -1926,7 +2025,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE__FIRST_PARAMETER = TSIGNATURE_FEATURE_COUNT + 3;
+	int TMETHOD_SIGNATURE__FIRST_PARAMETER = TSIGNATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>TMethod Signature</em>' class.
@@ -1935,7 +2034,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE_FEATURE_COUNT = TSIGNATURE_FEATURE_COUNT + 4;
+	int TMETHOD_SIGNATURE_FEATURE_COUNT = TSIGNATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1947,13 +2046,22 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_SIGNATURE___GET_TANNOTATION__ECLASS = TSIGNATURE___GET_TANNOTATION__ECLASS;
 
 	/**
+	 * The operation id for the '<em>Is Array</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE___IS_ARRAY = TSIGNATURE_OPERATION_COUNT + 0;
+
+	/**
 	 * The operation id for the '<em>Get Signature String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE___GET_SIGNATURE_STRING = TSIGNATURE_OPERATION_COUNT + 0;
+	int TMETHOD_SIGNATURE___GET_SIGNATURE_STRING = TSIGNATURE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get TDefinition</em>' operation.
@@ -1962,7 +2070,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE = TSIGNATURE_OPERATION_COUNT + 1;
+	int TMETHOD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE = TSIGNATURE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -1971,16 +2079,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE___TO_STRING = TSIGNATURE_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Is This Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST = TSIGNATURE_OPERATION_COUNT + 3;
+	int TMETHOD_SIGNATURE___TO_STRING = TSIGNATURE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Method Definitions</em>' operation.
@@ -2181,13 +2280,31 @@ public interface BasicPackage extends EPackage {
 	int TPARAMETER__OUTGOING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPARAMETER__LOWER_BOUND = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPARAMETER__UPPER_BOUND = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Next</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER__NEXT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+	int TPARAMETER__NEXT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Previous</b></em>' reference.
@@ -2196,7 +2313,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER__PREVIOUS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
+	int TPARAMETER__PREVIOUS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -2205,7 +2322,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER__TYPE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
+	int TPARAMETER__TYPE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>TParameter</em>' class.
@@ -2214,7 +2331,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
+	int TPARAMETER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -2226,13 +2343,22 @@ public interface BasicPackage extends EPackage {
 	int TPARAMETER___GET_TANNOTATION__ECLASS = AnnotationsPackage.TANNOTATABLE___GET_TANNOTATION__ECLASS;
 
 	/**
+	 * The operation id for the '<em>Is Array</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPARAMETER___IS_ARRAY = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>TParameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 0;
+	int TPARAMETER_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2701,6 +2827,24 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TINTERFACE___GET_REAL_PACKAGE__TABSTRACTTYPE = TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE;
+
+	/**
+	 * The operation id for the '<em>Get TField Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TINTERFACE___GET_TFIELD_SIGNATURE__STRING = TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get TField Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TINTERFACE___GET_TFIELD_DEFINITION__STRING = TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING;
 
 	/**
 	 * The operation id for the '<em>Is Sub Type Of</em>' operation.
@@ -3313,6 +3457,24 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TUNRESOLVED_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = TCLASS___GET_REAL_PACKAGE__TABSTRACTTYPE;
+
+	/**
+	 * The operation id for the '<em>Get TField Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TUNRESOLVED_TYPE___GET_TFIELD_SIGNATURE__STRING = TCLASS___GET_TFIELD_SIGNATURE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get TField Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TUNRESOLVED_TYPE___GET_TFIELD_DEFINITION__STRING = TCLASS___GET_TFIELD_DEFINITION__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Declared TMethod Definitions</em>' operation.
@@ -3967,6 +4129,61 @@ public interface BasicPackage extends EPackage {
 	int TENUM_OPERATION_COUNT = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TAbstractMultiplicityImpl <em>TAbstract Multiplicity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TAbstractMultiplicityImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTAbstractMultiplicity()
+	 * @generated
+	 */
+	int TABSTRACT_MULTIPLICITY = 27;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_MULTIPLICITY__LOWER_BOUND = 0;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_MULTIPLICITY__UPPER_BOUND = 1;
+
+	/**
+	 * The number of structural features of the '<em>TAbstract Multiplicity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_MULTIPLICITY_FEATURE_COUNT = 2;
+
+	/**
+	 * The operation id for the '<em>Is Array</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_MULTIPLICITY___IS_ARRAY = 0;
+
+	/**
+	 * The number of operations of the '<em>TAbstract Multiplicity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_MULTIPLICITY_OPERATION_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3974,7 +4191,7 @@ public interface BasicPackage extends EPackage {
 	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTVisibility()
 	 * @generated
 	 */
-	int TVISIBILITY = 27;
+	int TVISIBILITY = 28;
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TAccess <em>TAccess</em>}'.
@@ -4426,16 +4643,6 @@ public interface BasicPackage extends EPackage {
 	EReference getTMethod_Pg();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethod#getSignature(org.gravity.typegraph.basic.TAbstractType, org.eclipse.emf.common.util.EList) <em>Get Signature</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Signature</em>' operation.
-	 * @see org.gravity.typegraph.basic.TMethod#getSignature(org.gravity.typegraph.basic.TAbstractType, org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getTMethod__GetSignature__TAbstractType_EList();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TMethodDefinition <em>TMethod Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4614,16 +4821,6 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTMethodSignature__ToString();
-
-	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethodSignature#isThisSignature(org.gravity.typegraph.basic.TAbstractType, org.eclipse.emf.common.util.EList) <em>Is This Signature</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is This Signature</em>' operation.
-	 * @see org.gravity.typegraph.basic.TMethodSignature#isThisSignature(org.gravity.typegraph.basic.TAbstractType, org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getTMethodSignature__IsThisSignature__TAbstractType_EList();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethodSignature#getMethodDefinitions() <em>Get Method Definitions</em>}' operation.
@@ -5418,6 +5615,26 @@ public interface BasicPackage extends EPackage {
 	EOperation getTAbstractType__GetRealPackage__TAbstractType();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TAbstractType#getTFieldSignature(java.lang.String) <em>Get TField Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get TField Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TAbstractType#getTFieldSignature(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTAbstractType__GetTFieldSignature__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TAbstractType#getTFieldDefinition(java.lang.String) <em>Get TField Definition</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get TField Definition</em>' operation.
+	 * @see org.gravity.typegraph.basic.TAbstractType#getTFieldDefinition(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTAbstractType__GetTFieldDefinition__String();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TRead <em>TRead</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5624,6 +5841,48 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTEnum();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TAbstractMultiplicity <em>TAbstract Multiplicity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TAbstract Multiplicity</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractMultiplicity
+	 * @generated
+	 */
+	EClass getTAbstractMultiplicity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.gravity.typegraph.basic.TAbstractMultiplicity#getLowerBound <em>Lower Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lower Bound</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractMultiplicity#getLowerBound()
+	 * @see #getTAbstractMultiplicity()
+	 * @generated
+	 */
+	EAttribute getTAbstractMultiplicity_LowerBound();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.gravity.typegraph.basic.TAbstractMultiplicity#getUpperBound <em>Upper Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Upper Bound</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractMultiplicity#getUpperBound()
+	 * @see #getTAbstractMultiplicity()
+	 * @generated
+	 */
+	EAttribute getTAbstractMultiplicity_UpperBound();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TAbstractMultiplicity#isArray() <em>Is Array</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Array</em>' operation.
+	 * @see org.gravity.typegraph.basic.TAbstractMultiplicity#isArray()
+	 * @generated
+	 */
+	EOperation getTAbstractMultiplicity__IsArray();
 
 	/**
 	 * Returns the meta object for enum '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}'.
@@ -6019,14 +6278,6 @@ public interface BasicPackage extends EPackage {
 		EReference TMETHOD__PG = eINSTANCE.getTMethod_Pg();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TMETHOD___GET_SIGNATURE__TABSTRACTTYPE_ELIST = eINSTANCE.getTMethod__GetSignature__TAbstractType_EList();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl <em>TMethod Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6165,14 +6416,6 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TMETHOD_SIGNATURE___TO_STRING = eINSTANCE.getTMethodSignature__ToString();
-
-		/**
-		 * The meta object literal for the '<em><b>Is This Signature</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST = eINSTANCE.getTMethodSignature__IsThisSignature__TAbstractType_EList();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Method Definitions</b></em>' operation.
@@ -6795,6 +7038,22 @@ public interface BasicPackage extends EPackage {
 		EOperation TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = eINSTANCE.getTAbstractType__GetRealPackage__TAbstractType();
 
 		/**
+		 * The meta object literal for the '<em><b>Get TField Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING = eINSTANCE.getTAbstractType__GetTFieldSignature__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get TField Definition</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING = eINSTANCE.getTAbstractType__GetTFieldDefinition__String();
+
+		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TReadImpl <em>TRead</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6975,6 +7234,40 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TENUM = eINSTANCE.getTEnum();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TAbstractMultiplicityImpl <em>TAbstract Multiplicity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TAbstractMultiplicityImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTAbstractMultiplicity()
+		 * @generated
+		 */
+		EClass TABSTRACT_MULTIPLICITY = eINSTANCE.getTAbstractMultiplicity();
+
+		/**
+		 * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TABSTRACT_MULTIPLICITY__LOWER_BOUND = eINSTANCE.getTAbstractMultiplicity_LowerBound();
+
+		/**
+		 * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TABSTRACT_MULTIPLICITY__UPPER_BOUND = eINSTANCE.getTAbstractMultiplicity_UpperBound();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Array</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TABSTRACT_MULTIPLICITY___IS_ARRAY = eINSTANCE.getTAbstractMultiplicity__IsArray();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}' enum.

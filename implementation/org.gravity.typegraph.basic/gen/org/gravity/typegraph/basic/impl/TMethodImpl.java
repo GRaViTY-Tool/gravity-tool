@@ -2,7 +2,6 @@
  */
 package org.gravity.typegraph.basic.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,7 +18,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -116,18 +114,6 @@ public class TMethodImpl extends TNameImpl implements TMethod {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD__PG, newPg, newPg));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public TMethodSignature getSignature(TAbstractType returnType, EList<TAbstractType> parameterTypes) {
-		return getSignatures().parallelStream()
-				.filter(signature -> signature.isThisSignature(returnType, parameterTypes))
-				.findAny().orElse(null);
 	}
 
 	/**
@@ -240,20 +226,6 @@ public class TMethodImpl extends TNameImpl implements TMethod {
 				return getPg() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BasicPackage.TMETHOD___GET_SIGNATURE__TABSTRACTTYPE_ELIST:
-				return getSignature((TAbstractType)arguments.get(0), (EList<TAbstractType>)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 	// <-- [user code injected with eMoflon]
 

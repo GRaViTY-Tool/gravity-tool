@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractFlowElement;
+import org.gravity.typegraph.basic.TAbstractMultiplicity;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TFlow;
 import org.gravity.typegraph.basic.TMethod;
@@ -46,6 +47,8 @@ import org.gravity.typegraph.basic.TMember;
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getIncomingFlows <em>Incoming Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getOutgoingFlows <em>Outgoing Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getDefinitions <em>Definitions</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getLowerBound <em>Lower Bound</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getUpperBound <em>Upper Bound</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getParameters <em>Parameters</em>}</li>
@@ -94,6 +97,46 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	 * @ordered
 	 */
 	protected EList<TMember> definitions;
+
+	/**
+	 * The default value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLowerBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LOWER_BOUND_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLowerBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int lowerBound = LOWER_BOUND_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int UPPER_BOUND_EDEFAULT = 1;
+
+	/**
+	 * The cached value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int upperBound = UPPER_BOUND_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' reference.
@@ -237,6 +280,52 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 			definitions = new EObjectContainmentWithInverseEList<TMember>(TMember.class, this, BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS, BasicPackage.TMEMBER__SIGNATURE);
 		}
 		return definitions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getLowerBound() {
+		return lowerBound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLowerBound(int newLowerBound) {
+		int oldLowerBound = lowerBound;
+		lowerBound = newLowerBound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD_SIGNATURE__LOWER_BOUND, oldLowerBound, lowerBound));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getUpperBound() {
+		return upperBound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUpperBound(int newUpperBound) {
+		int oldUpperBound = upperBound;
+		upperBound = newUpperBound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD_SIGNATURE__UPPER_BOUND, oldUpperBound, upperBound));
 	}
 
 	/**
@@ -458,6 +547,10 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return getOutgoingFlows();
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				return getDefinitions();
+			case BasicPackage.TMETHOD_SIGNATURE__LOWER_BOUND:
+				return getLowerBound();
+			case BasicPackage.TMETHOD_SIGNATURE__UPPER_BOUND:
+				return getUpperBound();
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				return getMethod();
 			case BasicPackage.TMETHOD_SIGNATURE__RETURN_TYPE:
@@ -497,6 +590,12 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				getDefinitions().clear();
 				getDefinitions().addAll((Collection<? extends TMember>)newValue);
 				return;
+			case BasicPackage.TMETHOD_SIGNATURE__LOWER_BOUND:
+				setLowerBound((Integer)newValue);
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__UPPER_BOUND:
+				setUpperBound((Integer)newValue);
+				return;
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				setMethod((TMethod)newValue);
 				return;
@@ -534,6 +633,12 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				getDefinitions().clear();
 				return;
+			case BasicPackage.TMETHOD_SIGNATURE__LOWER_BOUND:
+				setLowerBound(LOWER_BOUND_EDEFAULT);
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__UPPER_BOUND:
+				setUpperBound(UPPER_BOUND_EDEFAULT);
+				return;
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				setMethod((TMethod)null);
 				return;
@@ -566,6 +671,10 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return outgoingFlows != null && !outgoingFlows.isEmpty();
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				return definitions != null && !definitions.isEmpty();
+			case BasicPackage.TMETHOD_SIGNATURE__LOWER_BOUND:
+				return lowerBound != LOWER_BOUND_EDEFAULT;
+			case BasicPackage.TMETHOD_SIGNATURE__UPPER_BOUND:
+				return upperBound != UPPER_BOUND_EDEFAULT;
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				return getMethod() != null;
 			case BasicPackage.TMETHOD_SIGNATURE__RETURN_TYPE:
@@ -593,6 +702,13 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				default: return -1;
 			}
 		}
+		if (baseClass == TAbstractMultiplicity.class) {
+			switch (derivedFeatureID) {
+				case BasicPackage.TMETHOD_SIGNATURE__LOWER_BOUND: return BasicPackage.TABSTRACT_MULTIPLICITY__LOWER_BOUND;
+				case BasicPackage.TMETHOD_SIGNATURE__UPPER_BOUND: return BasicPackage.TABSTRACT_MULTIPLICITY__UPPER_BOUND;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -611,7 +727,35 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				default: return -1;
 			}
 		}
+		if (baseClass == TAbstractMultiplicity.class) {
+			switch (baseFeatureID) {
+				case BasicPackage.TABSTRACT_MULTIPLICITY__LOWER_BOUND: return BasicPackage.TMETHOD_SIGNATURE__LOWER_BOUND;
+				case BasicPackage.TABSTRACT_MULTIPLICITY__UPPER_BOUND: return BasicPackage.TMETHOD_SIGNATURE__UPPER_BOUND;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TAbstractFlowElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == TAbstractMultiplicity.class) {
+			switch (baseOperationID) {
+				case BasicPackage.TABSTRACT_MULTIPLICITY___IS_ARRAY: return BasicPackage.TMETHOD_SIGNATURE___IS_ARRAY;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
 	/**
@@ -629,10 +773,10 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return getTDefinition((TAbstractType)arguments.get(0));
 			case BasicPackage.TMETHOD_SIGNATURE___TO_STRING:
 				return toString();
-			case BasicPackage.TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST:
-				return isThisSignature((TAbstractType)arguments.get(0), (EList<TAbstractType>)arguments.get(1));
 			case BasicPackage.TMETHOD_SIGNATURE___GET_METHOD_DEFINITIONS:
 				return getMethodDefinitions();
+			case BasicPackage.TMETHOD_SIGNATURE___IS_ARRAY:
+				return isArray();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -681,6 +825,18 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	@Override
 	public EList<TMethodDefinition> getMethodDefinitions() {
 		return (EList<TMethodDefinition>) ((EList<? extends TMethodDefinition>) getDefinitions());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isArray() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	// [user code injected with eMoflon] -->

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TAbstractMultiplicity;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -32,6 +33,8 @@ import org.gravity.typegraph.basic.TSyntethicMethod;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl#getLowerBound <em>Lower Bound</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl#getUpperBound <em>Upper Bound</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl#getOverriding <em>Overriding</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl#getOverriddenBy <em>Overridden By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl#getOverloading <em>Overloading</em>}</li>
@@ -43,6 +46,46 @@ import org.gravity.typegraph.basic.TSyntethicMethod;
  * @generated
  */
 public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinition {
+	/**
+	 * The default value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLowerBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LOWER_BOUND_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLowerBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int lowerBound = LOWER_BOUND_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int UPPER_BOUND_EDEFAULT = 1;
+
+	/**
+	 * The cached value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int upperBound = UPPER_BOUND_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getOverriding() <em>Overriding</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -125,11 +168,69 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getLowerBound() {
+		return lowerBound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLowerBound(int newLowerBound) {
+		int oldLowerBound = lowerBound;
+		lowerBound = newLowerBound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD_DEFINITION__LOWER_BOUND, oldLowerBound, lowerBound));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getUpperBound() {
+		return upperBound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUpperBound(int newUpperBound) {
+		int oldUpperBound = upperBound;
+		upperBound = newUpperBound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD_DEFINITION__UPPER_BOUND, oldUpperBound, upperBound));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
 	public TMethodSignature getSignature() {
 		return (TMethodSignature) eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isArray() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -352,6 +453,10 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case BasicPackage.TMETHOD_DEFINITION__LOWER_BOUND:
+				return getLowerBound();
+			case BasicPackage.TMETHOD_DEFINITION__UPPER_BOUND:
+				return getUpperBound();
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
 				if (resolve) return getOverriding();
 				return basicGetOverriding();
@@ -379,6 +484,12 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case BasicPackage.TMETHOD_DEFINITION__LOWER_BOUND:
+				setLowerBound((Integer)newValue);
+				return;
+			case BasicPackage.TMETHOD_DEFINITION__UPPER_BOUND:
+				setUpperBound((Integer)newValue);
+				return;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
 				setOverriding((TMethodDefinition)newValue);
 				return;
@@ -413,6 +524,12 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case BasicPackage.TMETHOD_DEFINITION__LOWER_BOUND:
+				setLowerBound(LOWER_BOUND_EDEFAULT);
+				return;
+			case BasicPackage.TMETHOD_DEFINITION__UPPER_BOUND:
+				setUpperBound(UPPER_BOUND_EDEFAULT);
+				return;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
 				setOverriding((TMethodDefinition)null);
 				return;
@@ -443,6 +560,10 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case BasicPackage.TMETHOD_DEFINITION__LOWER_BOUND:
+				return lowerBound != LOWER_BOUND_EDEFAULT;
+			case BasicPackage.TMETHOD_DEFINITION__UPPER_BOUND:
+				return upperBound != UPPER_BOUND_EDEFAULT;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
 				return overriding != null;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY:
@@ -465,12 +586,64 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == TAbstractMultiplicity.class) {
+			switch (derivedFeatureID) {
+				case BasicPackage.TMETHOD_DEFINITION__LOWER_BOUND: return BasicPackage.TABSTRACT_MULTIPLICITY__LOWER_BOUND;
+				case BasicPackage.TMETHOD_DEFINITION__UPPER_BOUND: return BasicPackage.TABSTRACT_MULTIPLICITY__UPPER_BOUND;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == TAbstractMultiplicity.class) {
+			switch (baseFeatureID) {
+				case BasicPackage.TABSTRACT_MULTIPLICITY__LOWER_BOUND: return BasicPackage.TMETHOD_DEFINITION__LOWER_BOUND;
+				case BasicPackage.TABSTRACT_MULTIPLICITY__UPPER_BOUND: return BasicPackage.TMETHOD_DEFINITION__UPPER_BOUND;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TAbstractMultiplicity.class) {
+			switch (baseOperationID) {
+				case BasicPackage.TABSTRACT_MULTIPLICITY___IS_ARRAY: return BasicPackage.TMETHOD_DEFINITION___IS_ARRAY;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case BasicPackage.TMETHOD_DEFINITION___TO_STRING:
 				return toString();
 			case BasicPackage.TMETHOD_DEFINITION___GET_SIGNATURE:
 				return getSignature();
+			case BasicPackage.TMETHOD_DEFINITION___IS_ARRAY:
+				return isArray();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

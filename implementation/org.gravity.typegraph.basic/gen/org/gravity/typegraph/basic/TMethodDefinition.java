@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TMethodDefinition extends TMember {
+public interface TMethodDefinition extends TMember, TAbstractMultiplicity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <p>

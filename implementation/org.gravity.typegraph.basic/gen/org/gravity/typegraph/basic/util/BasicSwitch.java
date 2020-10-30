@@ -104,6 +104,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				TFieldSignature tFieldSignature = (TFieldSignature)theEObject;
 				T result = caseTFieldSignature(tFieldSignature);
 				if (result == null) result = caseTSignature(tFieldSignature);
+				if (result == null) result = caseTAbstractMultiplicity(tFieldSignature);
 				if (result == null) result = caseTAnnotatable(tFieldSignature);
 				if (result == null) result = caseTAbstractFlowElement(tFieldSignature);
 				if (result == null) result = defaultCase(theEObject);
@@ -136,6 +137,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				TMethodDefinition tMethodDefinition = (TMethodDefinition)theEObject;
 				T result = caseTMethodDefinition(tMethodDefinition);
 				if (result == null) result = caseTMember(tMethodDefinition);
+				if (result == null) result = caseTAbstractMultiplicity(tMethodDefinition);
 				if (result == null) result = caseTAnnotatable(tMethodDefinition);
 				if (result == null) result = caseTAbstractFlowElement(tMethodDefinition);
 				if (result == null) result = defaultCase(theEObject);
@@ -145,6 +147,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				TMethodSignature tMethodSignature = (TMethodSignature)theEObject;
 				T result = caseTMethodSignature(tMethodSignature);
 				if (result == null) result = caseTSignature(tMethodSignature);
+				if (result == null) result = caseTAbstractMultiplicity(tMethodSignature);
 				if (result == null) result = caseTAnnotatable(tMethodSignature);
 				if (result == null) result = caseTAbstractFlowElement(tMethodSignature);
 				if (result == null) result = defaultCase(theEObject);
@@ -162,6 +165,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTParameter(tParameter);
 				if (result == null) result = caseTAnnotatable(tParameter);
 				if (result == null) result = caseTAbstractFlowElement(tParameter);
+				if (result == null) result = caseTAbstractMultiplicity(tParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -274,6 +278,12 @@ public class BasicSwitch<T> extends Switch<T> {
 				TEnum tEnum = (TEnum)theEObject;
 				T result = caseTEnum(tEnum);
 				if (result == null) result = caseTAnnotation(tEnum);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicPackage.TABSTRACT_MULTIPLICITY: {
+				TAbstractMultiplicity tAbstractMultiplicity = (TAbstractMultiplicity)theEObject;
+				T result = caseTAbstractMultiplicity(tAbstractMultiplicity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -683,6 +693,21 @@ public class BasicSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTEnum(TEnum object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TAbstract Multiplicity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TAbstract Multiplicity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTAbstractMultiplicity(TAbstractMultiplicity object) {
 		return null;
 	}
 

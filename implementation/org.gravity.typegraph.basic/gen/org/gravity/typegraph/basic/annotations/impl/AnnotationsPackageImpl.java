@@ -525,7 +525,7 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 
 		initEClass(tAnnotationEClass, TAnnotation.class, "TAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTAnnotation_TAnnotated(), this.getTAnnotatable(), this.getTAnnotatable_TAnnotation(), "tAnnotated", null, 1, 1, TAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTAnnotation_Type(), this.getTAnnotationType(), this.getTAnnotationType_Annotations(), "type", null, 1, 1, TAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTAnnotation_Type(), this.getTAnnotationType(), this.getTAnnotationType_Annotations(), "type", null, 0, 1, TAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTAnnotation_TValues(), this.getTAnnotationValue(), null, "tValues", null, 0, -1, TAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTAnnotation_TValues().getEKeys().add(this.getTAnnotationValue_TKey());
 

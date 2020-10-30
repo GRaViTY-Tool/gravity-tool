@@ -8,7 +8,9 @@ Export-Package: org.gravity.typegraph.basic,
  org.gravity.typegraph.basic.util
 Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
-Require-Bundle: org.eclipse.emf.ecore.xmi
+Require-Bundle: org.eclipse.emf.ecore.xmi,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -24,6 +24,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -873,6 +875,10 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 				return isInnerType((TAbstractType)arguments.get(0));
 			case BasicPackage.TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE:
 				return getRealPackage((TAbstractType)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING:
+				return getTFieldSignature((String)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING:
+				return getTFieldDefinition((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -947,6 +953,30 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		} else {
 			return type.getPackage();
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TFieldSignature getTFieldSignature(String signature) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TFieldDefinition getTFieldDefinition(String signature) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	// [user code injected with eMoflon] -->

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractFlowElement;
+import org.gravity.typegraph.basic.TAbstractMultiplicity;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TFieldDefinition;
@@ -45,6 +46,8 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getIncomingFlows <em>Incoming Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getOutgoingFlows <em>Outgoing Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getDefinitions <em>Definitions</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getLowerBound <em>Lower Bound</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getUpperBound <em>Upper Bound</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getField <em>Field</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getType <em>Type</em>}</li>
  * </ul>
@@ -91,6 +94,46 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 	 * @ordered
 	 */
 	protected EList<TMember> definitions;
+
+	/**
+	 * The default value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLowerBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LOWER_BOUND_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLowerBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int lowerBound = LOWER_BOUND_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int UPPER_BOUND_EDEFAULT = 1;
+
+	/**
+	 * The cached value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int upperBound = UPPER_BOUND_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
@@ -171,6 +214,52 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 			definitions = new EObjectContainmentWithInverseEList<TMember>(TMember.class, this, BasicPackage.TFIELD_SIGNATURE__DEFINITIONS, BasicPackage.TMEMBER__SIGNATURE);
 		}
 		return definitions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getLowerBound() {
+		return lowerBound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLowerBound(int newLowerBound) {
+		int oldLowerBound = lowerBound;
+		lowerBound = newLowerBound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TFIELD_SIGNATURE__LOWER_BOUND, oldLowerBound, lowerBound));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getUpperBound() {
+		return upperBound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUpperBound(int newUpperBound) {
+		int oldUpperBound = upperBound;
+		upperBound = newUpperBound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TFIELD_SIGNATURE__UPPER_BOUND, oldUpperBound, upperBound));
 	}
 
 	/**
@@ -300,6 +389,18 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public boolean isArray() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -372,6 +473,10 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 				return getOutgoingFlows();
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				return getDefinitions();
+			case BasicPackage.TFIELD_SIGNATURE__LOWER_BOUND:
+				return getLowerBound();
+			case BasicPackage.TFIELD_SIGNATURE__UPPER_BOUND:
+				return getUpperBound();
 			case BasicPackage.TFIELD_SIGNATURE__FIELD:
 				return getField();
 			case BasicPackage.TFIELD_SIGNATURE__TYPE:
@@ -406,6 +511,12 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 				getDefinitions().clear();
 				getDefinitions().addAll((Collection<? extends TMember>)newValue);
 				return;
+			case BasicPackage.TFIELD_SIGNATURE__LOWER_BOUND:
+				setLowerBound((Integer)newValue);
+				return;
+			case BasicPackage.TFIELD_SIGNATURE__UPPER_BOUND:
+				setUpperBound((Integer)newValue);
+				return;
 			case BasicPackage.TFIELD_SIGNATURE__FIELD:
 				setField((TField)newValue);
 				return;
@@ -436,6 +547,12 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				getDefinitions().clear();
 				return;
+			case BasicPackage.TFIELD_SIGNATURE__LOWER_BOUND:
+				setLowerBound(LOWER_BOUND_EDEFAULT);
+				return;
+			case BasicPackage.TFIELD_SIGNATURE__UPPER_BOUND:
+				setUpperBound(UPPER_BOUND_EDEFAULT);
+				return;
 			case BasicPackage.TFIELD_SIGNATURE__FIELD:
 				setField((TField)null);
 				return;
@@ -462,6 +579,10 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 				return outgoingFlows != null && !outgoingFlows.isEmpty();
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				return definitions != null && !definitions.isEmpty();
+			case BasicPackage.TFIELD_SIGNATURE__LOWER_BOUND:
+				return lowerBound != LOWER_BOUND_EDEFAULT;
+			case BasicPackage.TFIELD_SIGNATURE__UPPER_BOUND:
+				return upperBound != UPPER_BOUND_EDEFAULT;
 			case BasicPackage.TFIELD_SIGNATURE__FIELD:
 				return getField() != null;
 			case BasicPackage.TFIELD_SIGNATURE__TYPE:
@@ -485,6 +606,13 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 				default: return -1;
 			}
 		}
+		if (baseClass == TAbstractMultiplicity.class) {
+			switch (derivedFeatureID) {
+				case BasicPackage.TFIELD_SIGNATURE__LOWER_BOUND: return BasicPackage.TABSTRACT_MULTIPLICITY__LOWER_BOUND;
+				case BasicPackage.TFIELD_SIGNATURE__UPPER_BOUND: return BasicPackage.TABSTRACT_MULTIPLICITY__UPPER_BOUND;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -503,7 +631,35 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 				default: return -1;
 			}
 		}
+		if (baseClass == TAbstractMultiplicity.class) {
+			switch (baseFeatureID) {
+				case BasicPackage.TABSTRACT_MULTIPLICITY__LOWER_BOUND: return BasicPackage.TFIELD_SIGNATURE__LOWER_BOUND;
+				case BasicPackage.TABSTRACT_MULTIPLICITY__UPPER_BOUND: return BasicPackage.TFIELD_SIGNATURE__UPPER_BOUND;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TAbstractFlowElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == TAbstractMultiplicity.class) {
+			switch (baseOperationID) {
+				case BasicPackage.TABSTRACT_MULTIPLICITY___IS_ARRAY: return BasicPackage.TFIELD_SIGNATURE___IS_ARRAY;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
 	/**
@@ -520,8 +676,28 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 				return getTDefinition((TAbstractType)arguments.get(0));
 			case BasicPackage.TFIELD_SIGNATURE___GET_FIELD_DEFINITIONS:
 				return getFieldDefinitions();
+			case BasicPackage.TFIELD_SIGNATURE___IS_ARRAY:
+				return isArray();
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (lowerBound: ");
+		result.append(lowerBound);
+		result.append(", upperBound: ");
+		result.append(upperBound);
+		result.append(')');
+		return result.toString();
 	}
 	// <-- [user code injected with eMoflon]
 
