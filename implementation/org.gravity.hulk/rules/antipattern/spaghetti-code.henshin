@@ -9,7 +9,7 @@
       <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     </parameters>
     <lhs xmi:id="__i42hBiUEeu0M5Z7ULaNUg" name="Lhs">
-      <nodes xmi:id="_9VGB4BiXEeuKvMLpMr3VYw" outgoing="_PshFIBiYEeuKvMLpMr3VYw _QcWmoBiYEeuKvMLpMr3VYw _b-oXABiYEeuPmogIri4V_g">
+      <nodes xmi:id="_9VGB4BiXEeuKvMLpMr3VYw" outgoing="_PshFIBiYEeuKvMLpMr3VYw _b-oXABiYEeuPmogIri4V_g">
         <annotations xmi:id="_9VK6YBiXEeuKvMLpMr3VYw" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
@@ -21,16 +21,8 @@
         <annotations xmi:id="_KbLHUBiYEeuKvMLpMr3VYw" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
       </nodes>
-      <nodes xmi:id="_L9o_oBiYEeuKvMLpMr3VYw" name="" incoming="_QcWmoBiYEeuKvMLpMr3VYw">
-        <annotations xmi:id="_L9qNwBiYEeuKvMLpMr3VYw" key="presenceCondition" value="NoInheritance"/>
-        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HNoInheritanceCodeSmell"/>
-      </nodes>
       <edges xmi:id="_PshFIBiYEeuKvMLpMr3VYw" source="_9VGB4BiXEeuKvMLpMr3VYw" target="_KbJSIBiYEeuKvMLpMr3VYw">
         <annotations xmi:id="_PsiTQBiYEeuKvMLpMr3VYw" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
-      </edges>
-      <edges xmi:id="_QcWmoBiYEeuKvMLpMr3VYw" source="_9VGB4BiXEeuKvMLpMr3VYw" target="_L9o_oBiYEeuKvMLpMr3VYw">
-        <annotations xmi:id="_QcZC4BiYEeuKvMLpMr3VYw" key="presenceCondition" value="NoInheritance"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
       <edges xmi:id="_b-oXABiYEeuPmogIri4V_g" source="_9VGB4BiXEeuKvMLpMr3VYw" target="_IloiABiYEeuKvMLpMr3VYw">
@@ -40,17 +32,13 @@
       <formula xsi:type="henshin:Not" xmi:id="_bEitUBiYEeuPmogIri4V_g">
         <child xsi:type="henshin:NestedCondition" xmi:id="_bEitURiYEeuPmogIri4V_g">
           <conclusion xmi:id="_bEitUhiYEeuPmogIri4V_g">
-            <nodes xmi:id="_bEjUYBiYEeuPmogIri4V_g" outgoing="_bEj7cBiYEeuPmogIri4V_g _bEj7dBiYEeuPmogIri4V_g _RLVzkBiYEeuKvMLpMr3VYw _b-oXAhiYEeuPmogIri4V_g">
+            <nodes xmi:id="_bEjUYBiYEeuPmogIri4V_g" outgoing="_bEj7cBiYEeuPmogIri4V_g _RLVzkBiYEeuKvMLpMr3VYw _b-oXAhiYEeuPmogIri4V_g">
               <annotations xmi:id="_bEjUYRiYEeuPmogIri4V_g" key="presenceCondition" value=""/>
               <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
             </nodes>
             <nodes xmi:id="_bEjUYxiYEeuPmogIri4V_g" incoming="_bEj7cBiYEeuPmogIri4V_g">
               <annotations xmi:id="_bEjUZBiYEeuPmogIri4V_g" key="presenceCondition" value=""/>
               <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
-            </nodes>
-            <nodes xmi:id="_bEj7cRiYEeuPmogIri4V_g" incoming="_bEj7dBiYEeuPmogIri4V_g">
-              <annotations xmi:id="_bEj7chiYEeuPmogIri4V_g" key="presenceCondition" value="NoInheritance"/>
-              <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HNoInheritanceCodeSmell"/>
             </nodes>
             <nodes xmi:id="_JboV4BiYEeuKvMLpMr3VYw" incoming="_RLVzkBiYEeuKvMLpMr3VYw">
               <annotations xmi:id="_JbpkABiYEeuKvMLpMr3VYw" key="presenceCondition" value=""/>
@@ -63,9 +51,6 @@
             <edges xmi:id="_bEj7cBiYEeuPmogIri4V_g" source="_bEjUYBiYEeuPmogIri4V_g" target="_bEjUYxiYEeuPmogIri4V_g">
               <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
             </edges>
-            <edges xmi:id="_bEj7dBiYEeuPmogIri4V_g" source="_bEjUYBiYEeuPmogIri4V_g" target="_bEj7cRiYEeuPmogIri4V_g">
-              <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
-            </edges>
             <edges xmi:id="_RLVzkBiYEeuKvMLpMr3VYw" source="_bEjUYBiYEeuPmogIri4V_g" target="_JboV4BiYEeuKvMLpMr3VYw">
               <annotations xmi:id="_RLZd8BiYEeuKvMLpMr3VYw" key="presenceCondition" value=""/>
               <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
@@ -76,16 +61,15 @@
           </conclusion>
           <mappings xmi:id="_bEjUYhiYEeuPmogIri4V_g" origin="_9VGB4BiXEeuKvMLpMr3VYw" image="_bEjUYBiYEeuPmogIri4V_g"/>
           <mappings xmi:id="_bEjUZRiYEeuPmogIri4V_g" origin="_KbJSIBiYEeuKvMLpMr3VYw" image="_bEjUYxiYEeuPmogIri4V_g"/>
-          <mappings xmi:id="_bEj7cxiYEeuPmogIri4V_g" origin="_L9o_oBiYEeuKvMLpMr3VYw" image="_bEj7cRiYEeuPmogIri4V_g"/>
           <mappings xmi:id="_bEkihBiYEeuPmogIri4V_g" origin="_IloiABiYEeuKvMLpMr3VYw" image="_bEkighiYEeuPmogIri4V_g"/>
         </child>
       </formula>
     </lhs>
     <rhs xmi:id="__i42hRiUEeu0M5Z7ULaNUg" name="Rhs">
-      <nodes xmi:id="_9VGo8BiXEeuKvMLpMr3VYw" outgoing="__JLOoBiXEeuKvMLpMr3VYw _PshFIRiYEeuKvMLpMr3VYw _QcWmoRiYEeuKvMLpMr3VYw _b-oXARiYEeuPmogIri4V_g">
+      <nodes xmi:id="_9VGo8BiXEeuKvMLpMr3VYw" outgoing="__JLOoBiXEeuKvMLpMr3VYw _PshFIRiYEeuKvMLpMr3VYw _b-oXARiYEeuPmogIri4V_g">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
-      <nodes xmi:id="_-itEgBiXEeuKvMLpMr3VYw" incoming="__JLOoBiXEeuKvMLpMr3VYw _cyXhEBiYEeuPmogIri4V_g _o14WQBiYEeuPmogIri4V_g _8QulYBiYEeuOsopk2mAHYw">
+      <nodes xmi:id="_-itEgBiXEeuKvMLpMr3VYw" incoming="__JLOoBiXEeuKvMLpMr3VYw _o14WQBiYEeuPmogIri4V_g _8QulYBiYEeuOsopk2mAHYw">
         <annotations xmi:id="_-ivgwBiXEeuKvMLpMr3VYw" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//antipattern/HSpaghettiCodeAntiPattern"/>
       </nodes>
@@ -95,9 +79,6 @@
       <nodes xmi:id="_KbJSIRiYEeuKvMLpMr3VYw" incoming="_PshFIRiYEeuKvMLpMr3VYw" outgoing="_8QulYBiYEeuOsopk2mAHYw">
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
       </nodes>
-      <nodes xmi:id="_L9o_oRiYEeuKvMLpMr3VYw" incoming="_QcWmoRiYEeuKvMLpMr3VYw" outgoing="_cyXhEBiYEeuPmogIri4V_g">
-        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HNoInheritanceCodeSmell"/>
-      </nodes>
       <edges xmi:id="__JLOoBiXEeuKvMLpMr3VYw" source="_9VGo8BiXEeuKvMLpMr3VYw" target="_-itEgBiXEeuKvMLpMr3VYw">
         <annotations xmi:id="__JMcwBiXEeuKvMLpMr3VYw" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
@@ -105,15 +86,8 @@
       <edges xmi:id="_PshFIRiYEeuKvMLpMr3VYw" source="_9VGo8BiXEeuKvMLpMr3VYw" target="_KbJSIRiYEeuKvMLpMr3VYw">
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
-      <edges xmi:id="_QcWmoRiYEeuKvMLpMr3VYw" source="_9VGo8BiXEeuKvMLpMr3VYw" target="_L9o_oRiYEeuKvMLpMr3VYw">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
-      </edges>
       <edges xmi:id="_b-oXARiYEeuPmogIri4V_g" source="_9VGo8BiXEeuKvMLpMr3VYw" target="_IloiARiYEeuKvMLpMr3VYw">
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
-      </edges>
-      <edges xmi:id="_cyXhEBiYEeuPmogIri4V_g" source="_L9o_oRiYEeuKvMLpMr3VYw" target="_-itEgBiXEeuKvMLpMr3VYw">
-        <annotations xmi:id="_cydnsBiYEeuPmogIri4V_g" key="presenceCondition" value="NoInheritance"/>
-        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//HAnnotation/partOf"/>
       </edges>
       <edges xmi:id="_o14WQBiYEeuPmogIri4V_g" source="_IloiARiYEeuKvMLpMr3VYw" target="_-itEgBiXEeuKvMLpMr3VYw">
         <annotations xmi:id="_o17ZkBiYEeuPmogIri4V_g" key="presenceCondition" value=""/>
@@ -127,7 +101,6 @@
     <mappings xmi:id="_9VGo8RiXEeuKvMLpMr3VYw" origin="_9VGB4BiXEeuKvMLpMr3VYw" image="_9VGo8BiXEeuKvMLpMr3VYw"/>
     <mappings xmi:id="_IloiAhiYEeuKvMLpMr3VYw" origin="_IloiABiYEeuKvMLpMr3VYw" image="_IloiARiYEeuKvMLpMr3VYw"/>
     <mappings xmi:id="_KbJSIhiYEeuKvMLpMr3VYw" origin="_KbJSIBiYEeuKvMLpMr3VYw" image="_KbJSIRiYEeuKvMLpMr3VYw"/>
-    <mappings xmi:id="_L9o_ohiYEeuKvMLpMr3VYw" origin="_L9o_oBiYEeuKvMLpMr3VYw" image="_L9o_oRiYEeuKvMLpMr3VYw"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_BbYpMBiVEeu0M5Z7ULaNUg" name="NoInheritance">
     <annotations xmi:id="_BsSzABiVEeu0M5Z7ULaNUg" key="featureConstraint" value=""/>
