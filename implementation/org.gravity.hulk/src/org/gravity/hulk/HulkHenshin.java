@@ -88,6 +88,8 @@ public class HulkHenshin {
 	}
 
 	public static void main(String[] args) throws Exception {
+		long startTime = System.currentTimeMillis();
+		
 		final HenshinResourceSet resourceHenshinSet = new HenshinResourceSet();
 		resourceHenshinSet.getPackageRegistry().put(AnnotationsPackage.eNS_URI, AnnotationsPackage.eINSTANCE);
 		resourceHenshinSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
@@ -159,13 +161,13 @@ public class HulkHenshin {
 		engine.getScriptEngine().put("HulkHenshin", new HulkHenshin());
 		final HulkHenshin hulk = new HulkHenshin();
 		hulk.loadRules(resourceHenshinSet, new File("rules"));
+		long oclStartTime = System.currentTimeMillis();
 		hulk.execute(engine, graph, hulk.getRule(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern()));
-
+		long oclEndTime = System.currentTimeMillis();
 		try (OutputStream outputStream = Files.newOutputStream(Paths.get(model.replace(".xmi", ".trg.xmi")))) {
 			graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
 		}
 		LOGGER.info("done");
-
 		// Log Anti-Patterns and Code Smells
 		final String targetModel = "instances/Gravity2/" + instance_name + ".trg.xmi";
 		final Resource currentTargetModel = resourceSet.getResource(URI.createURI(targetModel), true);
@@ -178,6 +180,10 @@ public class HulkHenshin {
 			System.out.println("");
 		});
 		logAntiPattern(currentTargetModel);
+		long endTime = System.currentTimeMillis();
+		
+		System.out.println("OCL Execution Time: " + (oclEndTime - oclStartTime) + " ms");
+		System.out.println("Total Execution Time: " + (endTime - startTime) + " ms");
 	}
 
 	public static String writeCNF(IFeatureModel featureModel) {
@@ -248,7 +254,6 @@ public class HulkHenshin {
 	}
 
 	public static boolean ocl_LargeClass(double oclLimit, EObject eObject) {
-
 		IFeatureModel fm = addFeatureModel();
 		final String ocl = "context TClass inv: self.defines->size() >= " + oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
