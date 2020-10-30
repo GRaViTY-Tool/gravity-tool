@@ -114,38 +114,37 @@ public class HulkHenshin {
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 
-		final String instance_name = "SPL_1";
+		final String instance_name = "SPL_2";
 
 		final String model = "instances/Gravity2/" + instance_name + ".xmi";
 		final Resource currentModel = resourceSet.getResource(URI.createURI(model), true);
 
 		TreeIterator<EObject> tree = currentModel.getAllContents();
 		Map<EObject, String> pcs = new HashMap<>();
+		//int treeSize = 0;
 
 		while (tree.hasNext()) {
+			//treeSize++;
 			EObject eObject = (EObject) tree.next();
 			EList<TAnnotation> pcEObjectList;
 			if (eObject instanceof TAnnotatable) {
 				pcEObjectList = ((TAnnotatable) eObject).getTAnnotation(SplPackage.eINSTANCE.getTPresenceCondition());
-				pcEObjectList.stream().forEach(pcEObject -> {
-					// ADDED COUNTER
-					int hSize;
+				pcEObjectList.stream().forEach((pcEObject) -> {
 					final String pc = ((TPresenceCondition) pcEObject).getPc();
 					if (pcEObjectList.size() <= 1) {
 						if (pcEObjectList.size() != 0) {
-
 							pcs.put(eObject, pc);
-							// ADDED COUNTER
-							hSize = pcs.size();
-							// System.out.println(hSize);
+							// Count Presence Condition Mappings
+							//System.out.println("PC count: " + pcs.size());
 						}
 					} else {
 						throw new RuntimeException("More than one TPresenceCondition detected.");
 					}
-
 				});
 			}
 		}
+		//Count Model elements from current Model
+		//System.out.println("Model elements count: " + treeSize);
 
 		IFeatureModel fm = addFeatureModel();
 		String fmCNFString = "";
