@@ -15,6 +15,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.Match;
@@ -89,7 +91,7 @@ public class HulkHenshin {
 
 	public static void main(String[] args) throws Exception {
 		long startTime = System.currentTimeMillis();
-		
+
 		final HenshinResourceSet resourceHenshinSet = new HenshinResourceSet();
 		resourceHenshinSet.getPackageRegistry().put(AnnotationsPackage.eNS_URI, AnnotationsPackage.eINSTANCE);
 		resourceHenshinSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
@@ -114,17 +116,17 @@ public class HulkHenshin {
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 
-		final String instance_name = "SPL_2";
+		final String instance_name = "SPL_1";
 
 		final String model = "instances/Gravity2/" + instance_name + ".xmi";
 		final Resource currentModel = resourceSet.getResource(URI.createURI(model), true);
 
 		TreeIterator<EObject> tree = currentModel.getAllContents();
 		Map<EObject, String> pcs = new HashMap<>();
-		//int treeSize = 0;
+		// int treeSize = 0;
 
 		while (tree.hasNext()) {
-			//treeSize++;
+			// treeSize++;
 			EObject eObject = (EObject) tree.next();
 			EList<TAnnotation> pcEObjectList;
 			if (eObject instanceof TAnnotatable) {
@@ -135,7 +137,7 @@ public class HulkHenshin {
 						if (pcEObjectList.size() != 0) {
 							pcs.put(eObject, pc);
 							// Count Presence Condition Mappings
-							//System.out.println("PC count: " + pcs.size());
+							// System.out.println("PC count: " + pcs.size());
 						}
 					} else {
 						throw new RuntimeException("More than one TPresenceCondition detected.");
@@ -143,8 +145,8 @@ public class HulkHenshin {
 				});
 			}
 		}
-		//Count Model elements from current Model
-		//System.out.println("Model elements count: " + treeSize);
+		// Count Model elements from current Model
+		// System.out.println("Model elements count: " + treeSize);
 
 		IFeatureModel fm = addFeatureModel();
 		String fmCNFString = "";
@@ -155,7 +157,6 @@ public class HulkHenshin {
 		}
 
 		final MultiVarEGraph graph = new MultiVarEGraph(currentModel.getContents(), pcs, fmCNFString);
-
 		final MultiVarEngine engine = new MultiVarEngine();
 		engine.getScriptEngine().put("HulkHenshin", new HulkHenshin());
 		final HulkHenshin hulk = new HulkHenshin();
@@ -171,18 +172,20 @@ public class HulkHenshin {
 		final String targetModel = "instances/Gravity2/" + instance_name + ".trg.xmi";
 		final Resource currentTargetModel = resourceSet.getResource(URI.createURI(targetModel), true);
 
-		Map<EObject, Map<EObject, String>> pcToAPMap = logPresenceConditions(graph);
-
-		pcToAPMap.forEach((key, value) -> {
-			System.out.println("Anti-Pattern / Code Smell: " + key);
-			System.out.println("Presence Conditions: " + value);
-			System.out.println("");
+		graph.getPCS().forEach((key, entry) -> {
+			if (key instanceof TAnnotation) {
+				System.out.println("Anti-Pattern / Code Smell: " + key);
+				System.out.println("Presence Condition: " + entry);
+				System.out.println("");
+			}
 		});
-		logAntiPattern(currentTargetModel);
-		long endTime = System.currentTimeMillis();
 		
-		System.out.println("OCL Execution Time: " + (oclEndTime - oclStartTime) + " ms");
-		System.out.println("Total Execution Time: " + (endTime - startTime) + " ms");
+		logAntiPattern(currentTargetModel);
+
+		long endTime = System.currentTimeMillis();
+
+		//System.out.println("OCL Execution Time: " + (oclEndTime - oclStartTime) + " ms");
+		//System.out.println("Total Execution Time: " + (endTime - startTime) + " ms");
 	}
 
 	public static String writeCNF(IFeatureModel featureModel) {
@@ -222,24 +225,6 @@ public class HulkHenshin {
 				}
 			}
 		}
-	}
-
-	public static Map<EObject, Map<EObject, String>> logPresenceConditions(MultiVarEGraph graph) {
-
-		Map<EObject, Map<EObject, String>> outerMap = new HashMap<>();
-		Map<EObject, String> innerMap = new HashMap<>();
-
-		graph.getPCS().forEach((key, entry) -> {
-
-			if (key instanceof TAnnotation) {
-
-				outerMap.put(key, innerMap);
-				innerMap.clear();
-				return;
-			}
-			innerMap.put(key, entry);
-		});
-		return outerMap;
 	}
 
 	public static IFeatureModel addFeatureModel() {
