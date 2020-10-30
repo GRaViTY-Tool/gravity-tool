@@ -102,33 +102,6 @@
     <mappings xmi:id="_IloiAhiYEeuKvMLpMr3VYw" origin="_IloiABiYEeuKvMLpMr3VYw" image="_IloiARiYEeuKvMLpMr3VYw"/>
     <mappings xmi:id="_KbJSIhiYEeuKvMLpMr3VYw" origin="_KbJSIBiYEeuKvMLpMr3VYw" image="_KbJSIRiYEeuKvMLpMr3VYw"/>
   </units>
-  <units xsi:type="henshin:Rule" xmi:id="_BbYpMBiVEeu0M5Z7ULaNUg" name="NoInheritance">
-    <annotations xmi:id="_BsSzABiVEeu0M5Z7ULaNUg" key="featureConstraint" value=""/>
-    <parameters xmi:id="_XxekoBiZEeuOsopk2mAHYw" name="context" kind="VAR">
-      <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-    </parameters>
-    <lhs xmi:id="_BbYpNRiVEeu0M5Z7ULaNUg" name="Lhs">
-      <nodes xmi:id="_cDnFABiVEeu0M5Z7ULaNUg" name="context">
-        <annotations xmi:id="_cDnFBRiVEeu0M5Z7ULaNUg" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-      </nodes>
-    </lhs>
-    <rhs xmi:id="_BbYpNhiVEeu0M5Z7ULaNUg" name="Rhs">
-      <nodes xmi:id="_cDnFARiVEeu0M5Z7ULaNUg" incoming="_IV1A4BiXEeuKvMLpMr3VYw">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-      </nodes>
-      <nodes xmi:id="_fo8XgBiWEeu0M5Z7ULaNUg" outgoing="_IV1A4BiXEeuKvMLpMr3VYw">
-        <annotations xmi:id="_fo8XgxiWEeu0M5Z7ULaNUg" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HNoInheritanceCodeSmell"/>
-      </nodes>
-      <edges xmi:id="_IV1A4BiXEeuKvMLpMr3VYw" source="_fo8XgBiWEeu0M5Z7ULaNUg" target="_cDnFARiVEeu0M5Z7ULaNUg">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
-      </edges>
-    </rhs>
-    <attributeConditions xmi:id="_Pc6YUBiXEeuKvMLpMr3VYw" name="NoInheritanceCondition" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_ChildClasses(1.0, context);"/>
-    <mappings xmi:id="_cDnFAhiVEeu0M5Z7ULaNUg" origin="_cDnFABiVEeu0M5Z7ULaNUg" image="_cDnFARiVEeu0M5Z7ULaNUg"/>
-    <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
-  </units>
   <units xsi:type="henshin:Rule" xmi:id="_dYiQkBiVEeu0M5Z7ULaNUg" name="IntenseFieldUsage">
     <annotations xmi:id="_drdMkBiVEeu0M5Z7ULaNUg" key="featureConstraint" value=""/>
     <parameters xmi:id="_ekJLQBiZEeuOsopk2mAHYw" name="context" kind="VAR">
@@ -152,7 +125,7 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
       </edges>
     </rhs>
-    <attributeConditions xmi:id="_QwkYkBiXEeuKvMLpMr3VYw" name="IntenseFieldUsageCondition" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_FieldAccess(2.0, context);"/>
+    <attributeConditions xmi:id="_QwkYkBiXEeuKvMLpMr3VYw" name="IntenseFieldUsageCondition" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_Access(2.0, context);"/>
     <mappings xmi:id="_Pfg10hiWEeu0M5Z7ULaNUg" origin="_Pfg10BiWEeu0M5Z7ULaNUg" image="_Pfg10RiWEeu0M5Z7ULaNUg"/>
     <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
   </units>
@@ -179,7 +152,7 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
       </edges>
     </rhs>
-    <attributeConditions xmi:id="_NcuCMBiXEeuKvMLpMr3VYw" name="ManyParametersCondition" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_AvgParam(10.0, context);"/>
+    <attributeConditions xmi:id="_NcuCMBiXEeuKvMLpMr3VYw" name="ManyParametersCondition" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_AvgParam(5.0, context);"/>
     <mappings xmi:id="_TUimohiWEeu0M5Z7ULaNUg" origin="_TUimoBiWEeu0M5Z7ULaNUg" image="_TUimoRiWEeu0M5Z7ULaNUg"/>
     <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
   </units>
