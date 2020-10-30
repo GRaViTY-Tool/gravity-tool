@@ -95,22 +95,30 @@ public class HulkHenshin {
 		resourceHenshinSet.getPackageRegistry().put(AntipatternPackage.eNS_URI, AntipatternPackage.eINSTANCE);
 		resourceHenshinSet.getPackageRegistry().put(CodesmellsPackage.eNS_URI, CodesmellsPackage.eINSTANCE);
 		resourceHenshinSet.getPackageRegistry().put(SplPackage.eNS_URI, SplPackage.eINSTANCE);
-		
-		resourceHenshinSet.getPackageRegistry().put("platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore", BasicPackage.eINSTANCE);
-		resourceHenshinSet.getPackageRegistry().put("platform:/resource/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore",AntipatterngraphPackage.eINSTANCE);
-		resourceHenshinSet.getPackageRegistry().put("platform:/resource/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern",AntipatternPackage.eINSTANCE);
-		resourceHenshinSet.getPackageRegistry().put("platform:/resource/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells",CodesmellsPackage.eINSTANCE);
-		
+
+		resourceHenshinSet.getPackageRegistry().put("platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore",
+				BasicPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put(
+				"platform:/resource/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore",
+				AntipatterngraphPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put(
+				"platform:/resource/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern",
+				AntipatternPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put(
+				"platform:/resource/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells",
+				CodesmellsPackage.eINSTANCE);
+
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 
-		final String model = "instances/Gravity2/SPL_4.xmi";
+		final String instance_name = "SPL_1";
+
+		final String model = "instances/Gravity2/" + instance_name + ".xmi";
 		final Resource currentModel = resourceSet.getResource(URI.createURI(model), true);
 
 		TreeIterator<EObject> tree = currentModel.getAllContents();
 		Map<EObject, String> pcs = new HashMap<>();
-
 
 		while (tree.hasNext()) {
 			EObject eObject = (EObject) tree.next();
@@ -127,12 +135,12 @@ public class HulkHenshin {
 							pcs.put(eObject, pc);
 							// ADDED COUNTER
 							hSize = pcs.size();
-							//System.out.println(hSize);
+							// System.out.println(hSize);
 						}
 					} else {
 						throw new RuntimeException("More than one TPresenceCondition detected.");
 					}
-					
+
 				});
 			}
 		}
@@ -152,19 +160,19 @@ public class HulkHenshin {
 		final HulkHenshin hulk = new HulkHenshin();
 		hulk.loadRules(resourceHenshinSet, new File("rules"));
 		hulk.execute(engine, graph, hulk.getRule(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern()));
-		
+
 		try (OutputStream outputStream = Files.newOutputStream(Paths.get(model.replace(".xmi", ".trg.xmi")))) {
 			graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
 		}
 		LOGGER.info("done");
 
 		// Log Anti-Patterns and Code Smells
-		final String targetModel = "instances/Gravity2/SPL_4.trg.xmi";
+		final String targetModel = "instances/Gravity2/" + instance_name + ".trg.xmi";
 		final Resource currentTargetModel = resourceSet.getResource(URI.createURI(targetModel), true);
-		
-		Map<EObject,Map<EObject, String>> pcToAPMap = logPresenceConditions(graph);
-		
-		pcToAPMap.forEach((key,value)->{
+
+		Map<EObject, Map<EObject, String>> pcToAPMap = logPresenceConditions(graph);
+
+		pcToAPMap.forEach((key, value) -> {
 			System.out.println("Anti-Pattern / Code Smell: " + key);
 			System.out.println("Presence Conditions: " + value);
 			System.out.println("");
@@ -211,7 +219,7 @@ public class HulkHenshin {
 		}
 	}
 
-	public static Map<EObject, Map<EObject,String>> logPresenceConditions(MultiVarEGraph graph) {
+	public static Map<EObject, Map<EObject, String>> logPresenceConditions(MultiVarEGraph graph) {
 
 		Map<EObject, Map<EObject, String>> outerMap = new HashMap<>();
 		Map<EObject, String> innerMap = new HashMap<>();
