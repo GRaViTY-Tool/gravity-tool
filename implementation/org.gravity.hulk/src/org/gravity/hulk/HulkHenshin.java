@@ -15,7 +15,6 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -39,7 +38,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.Match;
@@ -90,7 +88,7 @@ public class HulkHenshin {
 	}
 
 	public static void main(String[] args) throws Exception {
-		long startTime = System.currentTimeMillis();
+		//long startTime = System.currentTimeMillis();
 
 		final HenshinResourceSet resourceHenshinSet = new HenshinResourceSet();
 		resourceHenshinSet.getPackageRegistry().put(AnnotationsPackage.eNS_URI, AnnotationsPackage.eINSTANCE);
@@ -161,9 +159,9 @@ public class HulkHenshin {
 		engine.getScriptEngine().put("HulkHenshin", new HulkHenshin());
 		final HulkHenshin hulk = new HulkHenshin();
 		hulk.loadRules(resourceHenshinSet, new File("rules"));
-		long oclStartTime = System.currentTimeMillis();
+		//long oclStartTime = System.currentTimeMillis();
 		hulk.execute(engine, graph, hulk.getRule(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern()));
-		long oclEndTime = System.currentTimeMillis();
+		//long oclEndTime = System.currentTimeMillis();
 		try (OutputStream outputStream = Files.newOutputStream(Paths.get(model.replace(".xmi", ".trg.xmi")))) {
 			graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
 		}
@@ -182,7 +180,7 @@ public class HulkHenshin {
 		
 		logAntiPattern(currentTargetModel);
 
-		long endTime = System.currentTimeMillis();
+		//long endTime = System.currentTimeMillis();
 
 		//System.out.println("OCL Execution Time: " + (oclEndTime - oclStartTime) + " ms");
 		//System.out.println("Total Execution Time: " + (endTime - startTime) + " ms");
