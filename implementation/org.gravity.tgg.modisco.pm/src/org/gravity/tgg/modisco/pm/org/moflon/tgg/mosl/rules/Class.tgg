@@ -21,13 +21,6 @@
 	}
 }
 
-#correspondence {
-	++ mClassDeclarationToTClass :ClassDeclarationToTClass {
-		#src->mType
-		#trg->tType
-	}
-}
-
 #attributeConditions {
 	eq(mType.name, tType.tName)
 }

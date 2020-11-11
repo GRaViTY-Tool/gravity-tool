@@ -116,7 +116,7 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eNestedType, EObject tAnnotation,
-			EObject tNestedPackage, EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType,
+			EObject eNestedTypeToTNestedType, EObject tNestedPackage, EObject typeGraph, EObject tNestedType,
 			EObject tOuterType, EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType,
 			EObject tOuterPackage);
 
@@ -205,7 +205,7 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eNestedType, EObject tAnnotation,
-			EObject tNestedPackage, EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType,
+			EObject eNestedTypeToTNestedType, EObject tNestedPackage, EObject typeGraph, EObject tNestedType,
 			EObject tOuterType, EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType,
 			EObject tOuterPackage);
 
@@ -223,7 +223,7 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_80(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_676(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +231,7 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_83(EMoflonEdge _edge_abstractTypeDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_693(EMoflonEdge _edge_abstractTypeDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

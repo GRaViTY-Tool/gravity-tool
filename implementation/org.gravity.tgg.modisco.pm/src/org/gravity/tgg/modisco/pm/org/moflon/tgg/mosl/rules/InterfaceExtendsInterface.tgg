@@ -5,34 +5,37 @@
 #with org.gravity.tgg.modisco.pm
 
 #source {
-eSuperInterface : InterfaceDeclaration {
+	eSuperInterface:InterfaceDeclaration {
 }
-eInterfaceDeclaration : InterfaceDeclaration {
-	++  -superInterfaces -> eTypeAccess
-}
-++ eTypeAccess : TypeAccess {
-	++  -type -> eSuperInterface
-}
+
+	eInterfaceDeclaration:InterfaceDeclaration {
+		++  -superInterfaces -> eTypeAccess
+	}
+
+	++eTypeAccess:TypeAccess {
+		++  -type -> eSuperInterface
+	}
 }
 
 #target {
-tInterface : TInterface {
-	++  -parentInterfaces -> tSuperInterface
-}
-tSuperInterface : TInterface {
+	tInterface:TInterface {
+		++  -parentInterfaces -> tSuperInterface
+	}
+
+	tSuperInterface:TInterface {
 }
 }
 
 #correspondence {
-eInterfaceDeclarationToTInterface : InterfaceDeclarationToTInterface {
-	#src->eInterfaceDeclaration
-	#trg->tInterface
-}
-eSuperInterfaceToTSuperInterface : InterfaceDeclarationToTInterface {
-	#src->eSuperInterface
-	#trg->tSuperInterface
-}
+	eInterfaceDeclarationToTInterface :TypeToTAbstractType {
+		#src->eInterfaceDeclaration
+		#trg->tInterface
+	}
+
+	eSuperInterfaceToTSuperInterface :TypeToTAbstractType {
+		#src->eSuperInterface
+		#trg->tSuperInterface
+	}
 }
 
-#attributeConditions {
-}
+

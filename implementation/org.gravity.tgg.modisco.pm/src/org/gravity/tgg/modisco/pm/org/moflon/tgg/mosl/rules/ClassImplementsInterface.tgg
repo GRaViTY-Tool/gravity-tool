@@ -28,7 +28,7 @@
 		#src->eSuperInterface
 		#trg->tSuperInterface
 	}
-	eClassDeclarationToTClass : ClassDeclarationToTClass {
+	eClassDeclarationToTClass : TypeToTAbstractType {
 		#src->eClassDeclaration
 		#trg->tClass
 	}

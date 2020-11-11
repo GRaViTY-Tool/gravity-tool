@@ -94,9 +94,9 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, PackageToTPackage mParentPackageToTParent,
-			org.eclipse.modisco.java.Package mParentPackage, org.eclipse.modisco.java.Package mPackage,
-			TypeGraph typeGraph, TPackage tParent);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package mParentPackage,
+			org.eclipse.modisco.java.Package mPackage, PackageToTPackage mParentPackageToTParent, TPackage tParent,
+			TypeGraph typeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tSub, EObject mParentPackageToTParent,
-			EObject mParentPackage, EObject mPackageToTSub, EObject mPackage, EObject typeGraph, EObject tParent);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tSub, EObject mParentPackage, EObject mPackage,
+			EObject mPackageToTSub, EObject mParentPackageToTParent, EObject tParent, EObject typeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TPackage tSub, TypeGraph typeGraph, TPackage tParent);
+	boolean isAppropriate_BWD(Match match, TPackage tSub, TPackage tParent, TypeGraph typeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +153,7 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TPackage tSub, TypeGraph typeGraph, TPackage tParent);
+	void registerObjectsToMatch_BWD(Match match, TPackage tSub, TPackage tParent, TypeGraph typeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +161,7 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TPackage tSub, TypeGraph typeGraph, TPackage tParent);
+	CSP isAppropriate_solveCsp_BWD(Match match, TPackage tSub, TPackage tParent, TypeGraph typeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tSub,
-			PackageToTPackage mParentPackageToTParent, org.eclipse.modisco.java.Package mParentPackage,
-			TypeGraph typeGraph, TPackage tParent);
+			org.eclipse.modisco.java.Package mParentPackage, PackageToTPackage mParentPackageToTParent,
+			TPackage tParent, TypeGraph typeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tSub, EObject mParentPackageToTParent,
-			EObject mParentPackage, EObject mPackageToTSub, EObject mPackage, EObject typeGraph, EObject tParent);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tSub, EObject mParentPackage, EObject mPackage,
+			EObject mPackageToTSub, EObject mParentPackageToTParent, EObject tParent, EObject typeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_50(EMoflonEdge _edge_subpackage);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_713(EMoflonEdge _edge_typeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_51(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_733(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,7 +253,7 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(TPackage tSub, org.eclipse.modisco.java.Package mParentPackage,
-			org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph, TPackage tParent, Match sourceMatch,
+			org.eclipse.modisco.java.Package mPackage, TPackage tParent, TypeGraph typeGraph, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -278,7 +278,7 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TPackage tSub, TypeGraph typeGraph, TPackage tParent);
+	boolean checkDEC_BWD(TPackage tSub, TPackage tParent, TypeGraph typeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,8 +295,8 @@ public interface SubPackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PackageToTPackage mParentPackageToTParent,
-			org.eclipse.modisco.java.Package mParentPackage, TypeGraph typeGraph, TPackage tParent,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package mParentPackage,
+			PackageToTPackage mParentPackageToTParent, TPackage tParent, TypeGraph typeGraph,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

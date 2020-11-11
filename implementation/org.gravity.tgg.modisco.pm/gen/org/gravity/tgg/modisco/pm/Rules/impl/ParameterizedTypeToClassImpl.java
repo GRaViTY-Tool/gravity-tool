@@ -105,60 +105,60 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, TypeAccess eTypeAccess, Type eType, Model eModel,
-			ParameterizedType eParameterizedType) {
+	public boolean isAppropriate_FWD(Match match, ParameterizedType eParameterizedType, Type eType, Model eModel,
+			TypeAccess eTypeAccess) {
 
 		Object[] result1_black = ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_0_1_initialbindings_blackBBBBBB(this, match, eTypeAccess, eType,
-						eModel, eParameterizedType);
+				.pattern_ParameterizedTypeToClass_0_1_initialbindings_blackBBBBBB(this, match, eParameterizedType,
+						eType, eModel, eTypeAccess);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[eTypeAccess] = " + eTypeAccess + ", " + "[eType] = " + eType
-					+ ", " + "[eModel] = " + eModel + ", " + "[eParameterizedType] = " + eParameterizedType + ".");
+					+ "[match] = " + match + ", " + "[eParameterizedType] = " + eParameterizedType + ", " + "[eType] = "
+					+ eType + ", " + "[eModel] = " + eModel + ", " + "[eTypeAccess] = " + eTypeAccess + ".");
 		}
 
 		Object[] result2_bindingAndBlack = ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_0_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, eTypeAccess, eType,
-						eModel, eParameterizedType);
+				.pattern_ParameterizedTypeToClass_0_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, eParameterizedType,
+						eType, eModel, eTypeAccess);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[eTypeAccess] = " + eTypeAccess + ", " + "[eType] = " + eType
-					+ ", " + "[eModel] = " + eModel + ", " + "[eParameterizedType] = " + eParameterizedType + ".");
+					+ "[match] = " + match + ", " + "[eParameterizedType] = " + eParameterizedType + ", " + "[eType] = "
+					+ eType + ", " + "[eModel] = " + eModel + ", " + "[eTypeAccess] = " + eTypeAccess + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = ParameterizedTypeToClassImpl
-					.pattern_ParameterizedTypeToClass_0_4_collectelementstobetranslated_blackBBBBB(match, eTypeAccess,
-							eType, eModel, eParameterizedType);
+					.pattern_ParameterizedTypeToClass_0_4_collectelementstobetranslated_blackBBBBB(match,
+							eParameterizedType, eType, eModel, eTypeAccess);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[eTypeAccess] = " + eTypeAccess + ", " + "[eType] = " + eType + ", " + "[eModel] = " + eModel
-						+ ", " + "[eParameterizedType] = " + eParameterizedType + ".");
+						+ "[eParameterizedType] = " + eParameterizedType + ", " + "[eType] = " + eType + ", "
+						+ "[eModel] = " + eModel + ", " + "[eTypeAccess] = " + eTypeAccess + ".");
 			}
 			ParameterizedTypeToClassImpl
 					.pattern_ParameterizedTypeToClass_0_4_collectelementstobetranslated_greenBBBBBFFFF(match,
-							eTypeAccess, eType, eModel, eParameterizedType);
-			//nothing EMoflonEdge eTypeAccess__eType____type = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge eModel__eParameterizedType____orphanTypes = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge eParameterizedType__eTypeAccess____type = (EMoflonEdge) result4_green[8];
+							eParameterizedType, eType, eModel, eTypeAccess);
+			//nothing EMoflonEdge eParameterizedType__eTypeAccess____type = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge eModel__eParameterizedType____orphanTypes = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge eTypeAccess__eType____type = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[8];
 
 			Object[] result5_black = ParameterizedTypeToClassImpl
-					.pattern_ParameterizedTypeToClass_0_5_collectcontextelements_blackBBBBB(match, eTypeAccess, eType,
-							eModel, eParameterizedType);
+					.pattern_ParameterizedTypeToClass_0_5_collectcontextelements_blackBBBBB(match, eParameterizedType,
+							eType, eModel, eTypeAccess);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[eTypeAccess] = " + eTypeAccess + ", " + "[eType] = " + eType + ", " + "[eModel] = " + eModel
-						+ ", " + "[eParameterizedType] = " + eParameterizedType + ".");
+						+ "[eParameterizedType] = " + eParameterizedType + ", " + "[eType] = " + eType + ", "
+						+ "[eModel] = " + eModel + ", " + "[eTypeAccess] = " + eTypeAccess + ".");
 			}
 			ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_0_5_collectcontextelements_greenBBB(match,
 					eType, eModel);
 
 			// 
 			ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_0_6_registerobjectstomatch_expressionBBBBBB(
-					this, match, eTypeAccess, eType, eModel, eParameterizedType);
+					this, match, eParameterizedType, eType, eModel, eTypeAccess);
 			return ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_0_7_expressionF();
 		} else {
 			return ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_0_8_expressionF();
@@ -181,58 +181,58 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		TypeToTAbstractType eTypeToTAbstractType = (TypeToTAbstractType) result1_bindingAndBlack[0];
-		TAbstractType tAbstractType = (TAbstractType) result1_bindingAndBlack[1];
-		TypeAccess eTypeAccess = (TypeAccess) result1_bindingAndBlack[2];
-		ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result1_bindingAndBlack[3];
-		Type eType = (Type) result1_bindingAndBlack[4];
-		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[5];
+		ParameterizedType eParameterizedType = (ParameterizedType) result1_bindingAndBlack[1];
+		Type eType = (Type) result1_bindingAndBlack[2];
+		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[3];
+		ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result1_bindingAndBlack[4];
+		TAbstractType tAbstractType = (TAbstractType) result1_bindingAndBlack[5];
 		Model eModel = (Model) result1_bindingAndBlack[6];
-		ParameterizedType eParameterizedType = (ParameterizedType) result1_bindingAndBlack[7];
+		TypeAccess eTypeAccess = (TypeAccess) result1_bindingAndBlack[7];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[8];
 		Object[] result1_green = ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_1_1_performtransformation_greenFBB(tAbstractType, eParameterizedType);
-		TypeToTAbstractType eParameterizedTypeToTAbstractType = (TypeToTAbstractType) result1_green[0];
+				.pattern_ParameterizedTypeToClass_1_1_performtransformation_greenBBF(eParameterizedType, tAbstractType);
+		TypeToTAbstractType eParameterizedTypeToTAbstractType = (TypeToTAbstractType) result1_green[2];
 
 		Object[] result2_black = ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_1_2_collecttranslatedelements_blackBBB(
-						eParameterizedTypeToTAbstractType, eTypeAccess, eParameterizedType);
+				.pattern_ParameterizedTypeToClass_1_2_collecttranslatedelements_blackBBB(eParameterizedType,
+						eParameterizedTypeToTAbstractType, eTypeAccess);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: "
-					+ "[eParameterizedTypeToTAbstractType] = " + eParameterizedTypeToTAbstractType + ", "
-					+ "[eTypeAccess] = " + eTypeAccess + ", " + "[eParameterizedType] = " + eParameterizedType + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[eParameterizedType] = "
+					+ eParameterizedType + ", " + "[eParameterizedTypeToTAbstractType] = "
+					+ eParameterizedTypeToTAbstractType + ", " + "[eTypeAccess] = " + eTypeAccess + ".");
 		}
 		Object[] result2_green = ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_1_2_collecttranslatedelements_greenFBBB(
-						eParameterizedTypeToTAbstractType, eTypeAccess, eParameterizedType);
+				.pattern_ParameterizedTypeToClass_1_2_collecttranslatedelements_greenFBBB(eParameterizedType,
+						eParameterizedTypeToTAbstractType, eTypeAccess);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ParameterizedTypeToClassImpl
 				.pattern_ParameterizedTypeToClass_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult,
-						eTypeToTAbstractType, eParameterizedTypeToTAbstractType, tAbstractType, eTypeAccess, eModelToPg,
-						eType, pg, eModel, eParameterizedType);
+						eTypeToTAbstractType, eParameterizedType, eType, pg, eModelToPg, tAbstractType, eModel,
+						eParameterizedTypeToTAbstractType, eTypeAccess);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[eTypeToTAbstractType] = " + eTypeToTAbstractType + ", "
-					+ "[eParameterizedTypeToTAbstractType] = " + eParameterizedTypeToTAbstractType + ", "
-					+ "[tAbstractType] = " + tAbstractType + ", " + "[eTypeAccess] = " + eTypeAccess + ", "
-					+ "[eModelToPg] = " + eModelToPg + ", " + "[eType] = " + eType + ", " + "[pg] = " + pg + ", "
-					+ "[eModel] = " + eModel + ", " + "[eParameterizedType] = " + eParameterizedType + ".");
+					+ ", " + "[eTypeToTAbstractType] = " + eTypeToTAbstractType + ", " + "[eParameterizedType] = "
+					+ eParameterizedType + ", " + "[eType] = " + eType + ", " + "[pg] = " + pg + ", "
+					+ "[eModelToPg] = " + eModelToPg + ", " + "[tAbstractType] = " + tAbstractType + ", "
+					+ "[eModel] = " + eModel + ", " + "[eParameterizedTypeToTAbstractType] = "
+					+ eParameterizedTypeToTAbstractType + ", " + "[eTypeAccess] = " + eTypeAccess + ".");
 		}
 		ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-				ruleresult, eParameterizedTypeToTAbstractType, tAbstractType, eTypeAccess, eType, eModel,
-				eParameterizedType);
-		//nothing EMoflonEdge eParameterizedTypeToTAbstractType__tAbstractType____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge eTypeAccess__eType____type = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[9];
+				ruleresult, eParameterizedType, eType, tAbstractType, eModel, eParameterizedTypeToTAbstractType,
+				eTypeAccess);
+		//nothing EMoflonEdge eParameterizedType__eTypeAccess____type = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge eParameterizedTypeToTAbstractType__tAbstractType____target = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge eParameterizedTypeToTAbstractType__eParameterizedType____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge eModel__eParameterizedType____orphanTypes = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge eParameterizedTypeToTAbstractType__eParameterizedType____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge eParameterizedType__eTypeAccess____type = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge eTypeAccess__eType____type = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[12];
 
 		// 
 		// 
 		ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_1_5_registerobjects_expressionBBBBBBBBBBB(this,
-				ruleresult, eTypeToTAbstractType, eParameterizedTypeToTAbstractType, tAbstractType, eTypeAccess,
-				eModelToPg, eType, pg, eModel, eParameterizedType);
+				ruleresult, eTypeToTAbstractType, eParameterizedType, eType, pg, eModelToPg, tAbstractType, eModel,
+				eParameterizedTypeToTAbstractType, eTypeAccess);
 		return ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_1_6_expressionFB(ruleresult);
 	}
 
@@ -261,47 +261,47 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TypeAccess eTypeAccess = (TypeAccess) result2_binding[0];
+		ParameterizedType eParameterizedType = (ParameterizedType) result2_binding[0];
 		Type eType = (Type) result2_binding[1];
 		Model eModel = (Model) result2_binding[2];
-		ParameterizedType eParameterizedType = (ParameterizedType) result2_binding[3];
+		TypeAccess eTypeAccess = (TypeAccess) result2_binding[3];
 		for (Object[] result2_black : ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_2_2_corematch_blackFFBFBFBBB(eTypeAccess, eType, eModel,
-						eParameterizedType, match)) {
+				.pattern_ParameterizedTypeToClass_2_2_corematch_blackFBBFFFBBB(eParameterizedType, eType, eModel,
+						eTypeAccess, match)) {
 			TypeToTAbstractType eTypeToTAbstractType = (TypeToTAbstractType) result2_black[0];
-			TAbstractType tAbstractType = (TAbstractType) result2_black[1];
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[3];
-			TypeGraph pg = (TypeGraph) result2_black[5];
+			TypeGraph pg = (TypeGraph) result2_black[3];
+			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[4];
+			TAbstractType tAbstractType = (TAbstractType) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : ParameterizedTypeToClassImpl
-					.pattern_ParameterizedTypeToClass_2_3_findcontext_blackBBBBBBBB(eTypeToTAbstractType, tAbstractType,
-							eTypeAccess, eModelToPg, eType, pg, eModel, eParameterizedType)) {
+					.pattern_ParameterizedTypeToClass_2_3_findcontext_blackBBBBBBBB(eTypeToTAbstractType,
+							eParameterizedType, eType, pg, eModelToPg, tAbstractType, eModel, eTypeAccess)) {
 				Object[] result3_green = ParameterizedTypeToClassImpl
 						.pattern_ParameterizedTypeToClass_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(eTypeToTAbstractType,
-								tAbstractType, eTypeAccess, eModelToPg, eType, pg, eModel, eParameterizedType);
+								eParameterizedType, eType, pg, eModelToPg, tAbstractType, eModel, eTypeAccess);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[8];
-				//nothing EMoflonEdge eTypeAccess__eType____type = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge eTypeToTAbstractType__tAbstractType____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge eTypeToTAbstractType__eType____source = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge pg__tAbstractType____ownedTypes = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge tAbstractType__pg____pg = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge eModelToPg__eModel____source = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge pg__tAbstractType____ownedTypes = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tAbstractType__pg____pg = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge eParameterizedType__eTypeAccess____type = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge eModelToPg__pg____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge eTypeToTAbstractType__tAbstractType____target = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge eModelToPg__eModel____source = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge eTypeToTAbstractType__eType____source = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge eModel__eParameterizedType____orphanTypes = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge eModelToPg__pg____target = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge eParameterizedType__eTypeAccess____type = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge eTypeAccess__eType____type = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[18];
 
 				Object[] result4_bindingAndBlack = ParameterizedTypeToClassImpl
 						.pattern_ParameterizedTypeToClass_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this,
-								isApplicableMatch, eTypeToTAbstractType, tAbstractType, eTypeAccess, eModelToPg, eType,
-								pg, eModel, eParameterizedType);
+								isApplicableMatch, eTypeToTAbstractType, eParameterizedType, eType, pg, eModelToPg,
+								tAbstractType, eModel, eTypeAccess);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eTypeToTAbstractType] = "
-							+ eTypeToTAbstractType + ", " + "[tAbstractType] = " + tAbstractType + ", "
-							+ "[eTypeAccess] = " + eTypeAccess + ", " + "[eModelToPg] = " + eModelToPg + ", "
-							+ "[eType] = " + eType + ", " + "[pg] = " + pg + ", " + "[eModel] = " + eModel + ", "
-							+ "[eParameterizedType] = " + eParameterizedType + ".");
+							+ eTypeToTAbstractType + ", " + "[eParameterizedType] = " + eParameterizedType + ", "
+							+ "[eType] = " + eType + ", " + "[pg] = " + pg + ", " + "[eModelToPg] = " + eModelToPg
+							+ ", " + "[tAbstractType] = " + tAbstractType + ", " + "[eModel] = " + eModel + ", "
+							+ "[eTypeAccess] = " + eTypeAccess + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -332,12 +332,12 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, TypeAccess eTypeAccess, Type eType, Model eModel,
-			ParameterizedType eParameterizedType) {
-		match.registerObject("eTypeAccess", eTypeAccess);
+	public void registerObjectsToMatch_FWD(Match match, ParameterizedType eParameterizedType, Type eType, Model eModel,
+			TypeAccess eTypeAccess) {
+		match.registerObject("eParameterizedType", eParameterizedType);
 		match.registerObject("eType", eType);
 		match.registerObject("eModel", eModel);
-		match.registerObject("eParameterizedType", eParameterizedType);
+		match.registerObject("eTypeAccess", eTypeAccess);
 
 	}
 
@@ -346,8 +346,8 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess eTypeAccess, Type eType, Model eModel,
-			ParameterizedType eParameterizedType) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, ParameterizedType eParameterizedType, Type eType, Model eModel,
+			TypeAccess eTypeAccess) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -377,8 +377,8 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType eTypeToTAbstractType,
-			TAbstractType tAbstractType, TypeAccess eTypeAccess, ModelToTypeGraph eModelToPg, Type eType, TypeGraph pg,
-			Model eModel, ParameterizedType eParameterizedType) {// Create CSP
+			ParameterizedType eParameterizedType, Type eType, TypeGraph pg, ModelToTypeGraph eModelToPg,
+			TAbstractType tAbstractType, Model eModel, TypeAccess eTypeAccess) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -394,13 +394,13 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("eTypeToTAbstractType", eTypeToTAbstractType);
-		isApplicableMatch.registerObject("tAbstractType", tAbstractType);
-		isApplicableMatch.registerObject("eTypeAccess", eTypeAccess);
-		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
+		isApplicableMatch.registerObject("eParameterizedType", eParameterizedType);
 		isApplicableMatch.registerObject("eType", eType);
 		isApplicableMatch.registerObject("pg", pg);
+		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
+		isApplicableMatch.registerObject("tAbstractType", tAbstractType);
 		isApplicableMatch.registerObject("eModel", eModel);
-		isApplicableMatch.registerObject("eParameterizedType", eParameterizedType);
+		isApplicableMatch.registerObject("eTypeAccess", eTypeAccess);
 		return csp;
 	}
 
@@ -419,17 +419,17 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject eTypeToTAbstractType,
-			EObject eParameterizedTypeToTAbstractType, EObject tAbstractType, EObject eTypeAccess, EObject eModelToPg,
-			EObject eType, EObject pg, EObject eModel, EObject eParameterizedType) {
+			EObject eParameterizedType, EObject eType, EObject pg, EObject eModelToPg, EObject tAbstractType,
+			EObject eModel, EObject eParameterizedTypeToTAbstractType, EObject eTypeAccess) {
 		ruleresult.registerObject("eTypeToTAbstractType", eTypeToTAbstractType);
-		ruleresult.registerObject("eParameterizedTypeToTAbstractType", eParameterizedTypeToTAbstractType);
-		ruleresult.registerObject("tAbstractType", tAbstractType);
-		ruleresult.registerObject("eTypeAccess", eTypeAccess);
-		ruleresult.registerObject("eModelToPg", eModelToPg);
+		ruleresult.registerObject("eParameterizedType", eParameterizedType);
 		ruleresult.registerObject("eType", eType);
 		ruleresult.registerObject("pg", pg);
+		ruleresult.registerObject("eModelToPg", eModelToPg);
+		ruleresult.registerObject("tAbstractType", tAbstractType);
 		ruleresult.registerObject("eModel", eModel);
-		ruleresult.registerObject("eParameterizedType", eParameterizedType);
+		ruleresult.registerObject("eParameterizedTypeToTAbstractType", eParameterizedTypeToTAbstractType);
+		ruleresult.registerObject("eTypeAccess", eTypeAccess);
 
 	}
 
@@ -440,10 +440,10 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 */
 	public boolean checkTypes_FWD(Match match) {
 		return true
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("eTypeAccess").eClass())
-						.equals("java.TypeAccess.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("eParameterizedType").eClass())
-						.equals("java.ParameterizedType.");
+						.equals("java.ParameterizedType.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("eTypeAccess").eClass())
+						.equals("java.TypeAccess.");
 	}
 
 	/**
@@ -451,47 +451,47 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TAbstractType tAbstractType, TypeGraph pg) {
+	public boolean isAppropriate_BWD(Match match, TypeGraph pg, TAbstractType tAbstractType) {
 
 		Object[] result1_black = ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_10_1_initialbindings_blackBBBB(this, match, tAbstractType, pg);
+				.pattern_ParameterizedTypeToClass_10_1_initialbindings_blackBBBB(this, match, pg, tAbstractType);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tAbstractType] = " + tAbstractType + ", " + "[pg] = " + pg + ".");
+					+ "[match] = " + match + ", " + "[pg] = " + pg + ", " + "[tAbstractType] = " + tAbstractType + ".");
 		}
 
 		Object[] result2_bindingAndBlack = ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tAbstractType, pg);
+				.pattern_ParameterizedTypeToClass_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, pg, tAbstractType);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tAbstractType] = " + tAbstractType + ", " + "[pg] = " + pg + ".");
+					+ "[match] = " + match + ", " + "[pg] = " + pg + ", " + "[tAbstractType] = " + tAbstractType + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = ParameterizedTypeToClassImpl
-					.pattern_ParameterizedTypeToClass_10_4_collectelementstobetranslated_blackBBB(match, tAbstractType,
-							pg);
+					.pattern_ParameterizedTypeToClass_10_4_collectelementstobetranslated_blackBBB(match, pg,
+							tAbstractType);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tAbstractType] = " + tAbstractType + ", " + "[pg] = " + pg + ".");
+						+ "[pg] = " + pg + ", " + "[tAbstractType] = " + tAbstractType + ".");
 			}
 
 			Object[] result5_black = ParameterizedTypeToClassImpl
-					.pattern_ParameterizedTypeToClass_10_5_collectcontextelements_blackBBB(match, tAbstractType, pg);
+					.pattern_ParameterizedTypeToClass_10_5_collectcontextelements_blackBBB(match, pg, tAbstractType);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tAbstractType] = " + tAbstractType + ", " + "[pg] = " + pg + ".");
+						+ "[pg] = " + pg + ", " + "[tAbstractType] = " + tAbstractType + ".");
 			}
 			ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_10_5_collectcontextelements_greenBBBFF(match,
-					tAbstractType, pg);
+					pg, tAbstractType);
 			//nothing EMoflonEdge pg__tAbstractType____ownedTypes = (EMoflonEdge) result5_green[3];
 			//nothing EMoflonEdge tAbstractType__pg____pg = (EMoflonEdge) result5_green[4];
 
 			// 
 			ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_10_6_registerobjectstomatch_expressionBBBB(
-					this, match, tAbstractType, pg);
+					this, match, pg, tAbstractType);
 			return ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_10_7_expressionF();
 		} else {
 			return ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_10_8_expressionF();
@@ -528,9 +528,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TAbstractType tAbstractType, TypeGraph pg) {
-		match.registerObject("tAbstractType", tAbstractType);
+	public void registerObjectsToMatch_BWD(Match match, TypeGraph pg, TAbstractType tAbstractType) {
 		match.registerObject("pg", pg);
+		match.registerObject("tAbstractType", tAbstractType);
 
 	}
 
@@ -539,7 +539,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TAbstractType tAbstractType, TypeGraph pg) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph pg, TAbstractType tAbstractType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -577,7 +577,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_TAbstractType_0(TAbstractType tAbstractType) {
+	public EObjectContainer isAppropriate_BWD_TypeGraph_4(TypeGraph pg) {
 
 		Object[] result1_bindingAndBlack = ParameterizedTypeToClassImpl
 				.pattern_ParameterizedTypeToClass_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -593,8 +593,8 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 		// ForEach 
 		for (Object[] result2_black : ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_17_2_testcorematchandDECs_blackBF(tAbstractType)) {
-			TypeGraph pg = (TypeGraph) result2_black[1];
+				.pattern_ParameterizedTypeToClass_17_2_testcorematchandDECs_blackBF(pg)) {
+			TAbstractType tAbstractType = (TAbstractType) result2_black[1];
 			Object[] result2_green = ParameterizedTypeToClassImpl
 					.pattern_ParameterizedTypeToClass_17_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -602,7 +602,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 			// 
 			if (ParameterizedTypeToClassImpl
 					.pattern_ParameterizedTypeToClass_17_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, tAbstractType, pg)) {
+							this, match, pg, tAbstractType)) {
 				// 
 				if (ParameterizedTypeToClassImpl
 						.pattern_ParameterizedTypeToClass_17_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -634,7 +634,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_72(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_703(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = ParameterizedTypeToClassImpl
 				.pattern_ParameterizedTypeToClass_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -651,10 +651,10 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 		// ForEach 
 		for (Object[] result2_black : ParameterizedTypeToClassImpl
 				.pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_blackFFFFB(_edge_type)) {
-			TypeAccess eTypeAccess = (TypeAccess) result2_black[0];
+			ParameterizedType eParameterizedType = (ParameterizedType) result2_black[0];
 			Type eType = (Type) result2_black[1];
 			Model eModel = (Model) result2_black[2];
-			ParameterizedType eParameterizedType = (ParameterizedType) result2_black[3];
+			TypeAccess eTypeAccess = (TypeAccess) result2_black[3];
 			Object[] result2_green = ParameterizedTypeToClassImpl
 					.pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -662,7 +662,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 			// 
 			if (ParameterizedTypeToClassImpl
 					.pattern_ParameterizedTypeToClass_18_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-							this, match, eTypeAccess, eType, eModel, eParameterizedType)) {
+							this, match, eParameterizedType, eType, eModel, eTypeAccess)) {
 				// 
 				if (ParameterizedTypeToClassImpl
 						.pattern_ParameterizedTypeToClass_18_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -771,21 +771,21 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TAbstractType tAbstractType = (TAbstractType) result2_bindingAndBlack[0];
-		TypeAccess eTypeAccess = (TypeAccess) result2_bindingAndBlack[1];
-		Type eType = (Type) result2_bindingAndBlack[2];
-		TypeGraph pg = (TypeGraph) result2_bindingAndBlack[3];
+		ParameterizedType eParameterizedType = (ParameterizedType) result2_bindingAndBlack[0];
+		Type eType = (Type) result2_bindingAndBlack[1];
+		TypeGraph pg = (TypeGraph) result2_bindingAndBlack[2];
+		TAbstractType tAbstractType = (TAbstractType) result2_bindingAndBlack[3];
 		Model eModel = (Model) result2_bindingAndBlack[4];
-		ParameterizedType eParameterizedType = (ParameterizedType) result2_bindingAndBlack[5];
+		TypeAccess eTypeAccess = (TypeAccess) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_21_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, tAbstractType,
-						eTypeAccess, eType, pg, eModel, eParameterizedType, sourceMatch, targetMatch);
+				.pattern_ParameterizedTypeToClass_21_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, eParameterizedType,
+						eType, pg, tAbstractType, eModel, eTypeAccess, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tAbstractType] = " + tAbstractType + ", " + "[eTypeAccess] = " + eTypeAccess + ", "
-					+ "[eType] = " + eType + ", " + "[pg] = " + pg + ", " + "[eModel] = " + eModel + ", "
-					+ "[eParameterizedType] = " + eParameterizedType + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[eParameterizedType] = " + eParameterizedType + ", " + "[eType] = " + eType + ", " + "[pg] = "
+					+ pg + ", " + "[tAbstractType] = " + tAbstractType + ", " + "[eModel] = " + eModel + ", "
+					+ "[eTypeAccess] = " + eTypeAccess + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -793,27 +793,27 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 		if (ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_21_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : ParameterizedTypeToClassImpl
-					.pattern_ParameterizedTypeToClass_21_5_matchcorrcontext_blackFBFBBBBB(tAbstractType, eType, pg,
+					.pattern_ParameterizedTypeToClass_21_5_matchcorrcontext_blackFBBFBBBB(eType, pg, tAbstractType,
 							eModel, sourceMatch, targetMatch)) {
 				TypeToTAbstractType eTypeToTAbstractType = (TypeToTAbstractType) result5_black[0];
-				ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result5_black[2];
+				ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result5_black[3];
 				Object[] result5_green = ParameterizedTypeToClassImpl
 						.pattern_ParameterizedTypeToClass_21_5_matchcorrcontext_greenBBBBF(eTypeToTAbstractType,
 								eModelToPg, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = ParameterizedTypeToClassImpl
-						.pattern_ParameterizedTypeToClass_21_6_createcorrespondence_blackBBBBBBB(tAbstractType,
-								eTypeAccess, eType, pg, eModel, eParameterizedType, ccMatch);
+						.pattern_ParameterizedTypeToClass_21_6_createcorrespondence_blackBBBBBBB(eParameterizedType,
+								eType, pg, tAbstractType, eModel, eTypeAccess, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tAbstractType] = "
-							+ tAbstractType + ", " + "[eTypeAccess] = " + eTypeAccess + ", " + "[eType] = " + eType
-							+ ", " + "[pg] = " + pg + ", " + "[eModel] = " + eModel + ", " + "[eParameterizedType] = "
-							+ eParameterizedType + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[eParameterizedType] = "
+							+ eParameterizedType + ", " + "[eType] = " + eType + ", " + "[pg] = " + pg + ", "
+							+ "[tAbstractType] = " + tAbstractType + ", " + "[eModel] = " + eModel + ", "
+							+ "[eTypeAccess] = " + eTypeAccess + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_21_6_createcorrespondence_greenFBBB(
-						tAbstractType, eParameterizedType, ccMatch);
-				//nothing TypeToTAbstractType eParameterizedTypeToTAbstractType = (TypeToTAbstractType) result6_green[0];
+				ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_21_6_createcorrespondence_greenBBFB(
+						eParameterizedType, tAbstractType, ccMatch);
+				//nothing TypeToTAbstractType eParameterizedTypeToTAbstractType = (TypeToTAbstractType) result6_green[2];
 
 				Object[] result7_black = ParameterizedTypeToClassImpl
 						.pattern_ParameterizedTypeToClass_21_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -836,8 +836,8 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TAbstractType tAbstractType, TypeAccess eTypeAccess, Type eType, TypeGraph pg,
-			Model eModel, ParameterizedType eParameterizedType, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(ParameterizedType eParameterizedType, Type eType, TypeGraph pg,
+			TAbstractType tAbstractType, Model eModel, TypeAccess eTypeAccess, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -866,11 +866,11 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(TypeAccess eTypeAccess, Type eType, Model eModel,
-			ParameterizedType eParameterizedType) {// 
+	public boolean checkDEC_FWD(ParameterizedType eParameterizedType, Type eType, Model eModel,
+			TypeAccess eTypeAccess) {// 
 		Object[] result1_black = ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_24_1_matchtggpattern_blackBBBB(eTypeAccess, eType, eModel,
-						eParameterizedType);
+				.pattern_ParameterizedTypeToClass_24_1_matchtggpattern_blackBBBB(eParameterizedType, eType, eModel,
+						eTypeAccess);
 		if (result1_black != null) {
 			return ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_24_2_expressionF();
 		} else {
@@ -884,9 +884,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TAbstractType tAbstractType, TypeGraph pg) {// 
+	public boolean checkDEC_BWD(TypeGraph pg, TAbstractType tAbstractType) {// 
 		Object[] result1_black = ParameterizedTypeToClassImpl
-				.pattern_ParameterizedTypeToClass_25_1_matchtggpattern_blackBB(tAbstractType, pg);
+				.pattern_ParameterizedTypeToClass_25_1_matchtggpattern_blackBB(pg, tAbstractType);
 		if (result1_black != null) {
 			return ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_25_2_expressionF();
 		} else {
@@ -927,38 +927,38 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 			Object[] result3_bindingAndBlack = ParameterizedTypeToClassImpl
 					.pattern_ParameterizedTypeToClass_26_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							eTypeToTAbstractType, tAbstractType, eModelToPg, eType, pg, eModel, ruleResult);
+							eTypeToTAbstractType, eType, pg, eModelToPg, tAbstractType, eModel, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eTypeToTAbstractType] = "
-						+ eTypeToTAbstractType + ", " + "[tAbstractType] = " + tAbstractType + ", " + "[eModelToPg] = "
-						+ eModelToPg + ", " + "[eType] = " + eType + ", " + "[pg] = " + pg + ", " + "[eModel] = "
-						+ eModel + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ eTypeToTAbstractType + ", " + "[eType] = " + eType + ", " + "[pg] = " + pg + ", "
+						+ "[eModelToPg] = " + eModelToPg + ", " + "[tAbstractType] = " + tAbstractType + ", "
+						+ "[eModel] = " + eModel + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_26_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = ParameterizedTypeToClassImpl
-						.pattern_ParameterizedTypeToClass_26_5_checknacs_blackBBBBBB(eTypeToTAbstractType,
-								tAbstractType, eModelToPg, eType, pg, eModel);
+						.pattern_ParameterizedTypeToClass_26_5_checknacs_blackBBBBBB(eTypeToTAbstractType, eType, pg,
+								eModelToPg, tAbstractType, eModel);
 				if (result5_black != null) {
 
 					Object[] result6_black = ParameterizedTypeToClassImpl
-							.pattern_ParameterizedTypeToClass_26_6_perform_blackBBBBBBB(eTypeToTAbstractType,
-									tAbstractType, eModelToPg, eType, pg, eModel, ruleResult);
+							.pattern_ParameterizedTypeToClass_26_6_perform_blackBBBBBBB(eTypeToTAbstractType, eType, pg,
+									eModelToPg, tAbstractType, eModel, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: "
-								+ "[eTypeToTAbstractType] = " + eTypeToTAbstractType + ", " + "[tAbstractType] = "
-								+ tAbstractType + ", " + "[eModelToPg] = " + eModelToPg + ", " + "[eType] = " + eType
-								+ ", " + "[pg] = " + pg + ", " + "[eModel] = " + eModel + ", " + "[ruleResult] = "
-								+ ruleResult + ".");
+								+ "[eTypeToTAbstractType] = " + eTypeToTAbstractType + ", " + "[eType] = " + eType
+								+ ", " + "[pg] = " + pg + ", " + "[eModelToPg] = " + eModelToPg + ", "
+								+ "[tAbstractType] = " + tAbstractType + ", " + "[eModel] = " + eModel + ", "
+								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_26_6_perform_greenFBFBBFB(
-							tAbstractType, eType, eModel, ruleResult);
-					//nothing TypeToTAbstractType eParameterizedTypeToTAbstractType = (TypeToTAbstractType) result6_green[0];
-					//nothing TypeAccess eTypeAccess = (TypeAccess) result6_green[2];
-					//nothing ParameterizedType eParameterizedType = (ParameterizedType) result6_green[5];
+					ParameterizedTypeToClassImpl.pattern_ParameterizedTypeToClass_26_6_perform_greenFBBBFFB(eType,
+							tAbstractType, eModel, ruleResult);
+					//nothing ParameterizedType eParameterizedType = (ParameterizedType) result6_green[0];
+					//nothing TypeToTAbstractType eParameterizedTypeToTAbstractType = (TypeToTAbstractType) result6_green[4];
+					//nothing TypeAccess eTypeAccess = (TypeAccess) result6_green[5];
 
 				} else {
 				}
@@ -976,7 +976,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType eTypeToTAbstractType,
-			TAbstractType tAbstractType, ModelToTypeGraph eModelToPg, Type eType, TypeGraph pg, Model eModel,
+			Type eType, TypeGraph pg, ModelToTypeGraph eModelToPg, TAbstractType tAbstractType, Model eModel,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -993,10 +993,10 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("eTypeToTAbstractType", eTypeToTAbstractType);
-		isApplicableMatch.registerObject("tAbstractType", tAbstractType);
-		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
 		isApplicableMatch.registerObject("eType", eType);
 		isApplicableMatch.registerObject("pg", pg);
+		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
+		isApplicableMatch.registerObject("tAbstractType", tAbstractType);
 		isApplicableMatch.registerObject("eModel", eModel);
 		return csp;
 	}
@@ -1018,27 +1018,27 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_FWD__MATCH_TYPEACCESS_TYPE_MODEL_PARAMETERIZEDTYPE:
-			return isAppropriate_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1), (Type) arguments.get(2),
-					(Model) arguments.get(3), (ParameterizedType) arguments.get(4));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_FWD__MATCH_PARAMETERIZEDTYPE_TYPE_MODEL_TYPEACCESS:
+			return isAppropriate_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
+					(Type) arguments.get(2), (Model) arguments.get(3), (TypeAccess) arguments.get(4));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEACCESS_TYPE_MODEL_PARAMETERIZEDTYPE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1), (Type) arguments.get(2),
-					(Model) arguments.get(3), (ParameterizedType) arguments.get(4));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PARAMETERIZEDTYPE_TYPE_MODEL_TYPEACCESS:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
+					(Type) arguments.get(2), (Model) arguments.get(3), (TypeAccess) arguments.get(4));
 			return null;
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEACCESS_TYPE_MODEL_PARAMETERIZEDTYPE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(Type) arguments.get(2), (Model) arguments.get(3), (ParameterizedType) arguments.get(4));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PARAMETERIZEDTYPE_TYPE_MODEL_TYPEACCESS:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
+					(Type) arguments.get(2), (Model) arguments.get(3), (TypeAccess) arguments.get(4));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_TYPEACCESS_MODELTOTYPEGRAPH_TYPE_TYPEGRAPH_MODEL_PARAMETERIZEDTYPE:
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_PARAMETERIZEDTYPE_TYPE_TYPEGRAPH_MODELTOTYPEGRAPH_TABSTRACTTYPE_MODEL_TYPEACCESS:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (TAbstractType) arguments.get(2),
-					(TypeAccess) arguments.get(3), (ModelToTypeGraph) arguments.get(4), (Type) arguments.get(5),
-					(TypeGraph) arguments.get(6), (Model) arguments.get(7), (ParameterizedType) arguments.get(8));
+					(TypeToTAbstractType) arguments.get(1), (ParameterizedType) arguments.get(2),
+					(Type) arguments.get(3), (TypeGraph) arguments.get(4), (ModelToTypeGraph) arguments.get(5),
+					(TAbstractType) arguments.get(6), (Model) arguments.get(7), (TypeAccess) arguments.get(8));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1049,52 +1049,52 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 			return null;
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_BWD__MATCH_TABSTRACTTYPE_TYPEGRAPH:
-			return isAppropriate_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TypeGraph) arguments.get(2));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_BWD__MATCH_TYPEGRAPH_TABSTRACTTYPE:
+			return isAppropriate_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TAbstractType) arguments.get(2));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TABSTRACTTYPE_TYPEGRAPH:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TypeGraph) arguments.get(2));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPEGRAPH_TABSTRACTTYPE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TAbstractType) arguments.get(2));
 			return null;
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TABSTRACTTYPE_TYPEGRAPH:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TypeGraph) arguments.get(2));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPEGRAPH_TABSTRACTTYPE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TAbstractType) arguments.get(2));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_BWD_TABSTRACT_TYPE_0__TABSTRACTTYPE:
-			return isAppropriate_BWD_TAbstractType_0((TAbstractType) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_72__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_72((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_BWD_TYPE_GRAPH_4__TYPEGRAPH:
+			return isAppropriate_BWD_TypeGraph_4((TypeGraph) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_703__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_703((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__TABSTRACTTYPE_TYPEACCESS_TYPE_TYPEGRAPH_MODEL_PARAMETERIZEDTYPE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TAbstractType) arguments.get(0), (TypeAccess) arguments.get(1),
-					(Type) arguments.get(2), (TypeGraph) arguments.get(3), (Model) arguments.get(4),
-					(ParameterizedType) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__PARAMETERIZEDTYPE_TYPE_TYPEGRAPH_TABSTRACTTYPE_MODEL_TYPEACCESS_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((ParameterizedType) arguments.get(0), (Type) arguments.get(1),
+					(TypeGraph) arguments.get(2), (TAbstractType) arguments.get(3), (Model) arguments.get(4),
+					(TypeAccess) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___CHECK_DEC_FWD__TYPEACCESS_TYPE_MODEL_PARAMETERIZEDTYPE:
-			return checkDEC_FWD((TypeAccess) arguments.get(0), (Type) arguments.get(1), (Model) arguments.get(2),
-					(ParameterizedType) arguments.get(3));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___CHECK_DEC_BWD__TABSTRACTTYPE_TYPEGRAPH:
-			return checkDEC_BWD((TAbstractType) arguments.get(0), (TypeGraph) arguments.get(1));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___CHECK_DEC_FWD__PARAMETERIZEDTYPE_TYPE_MODEL_TYPEACCESS:
+			return checkDEC_FWD((ParameterizedType) arguments.get(0), (Type) arguments.get(1), (Model) arguments.get(2),
+					(TypeAccess) arguments.get(3));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___CHECK_DEC_BWD__TYPEGRAPH_TABSTRACTTYPE:
+			return checkDEC_BWD((TypeGraph) arguments.get(0), (TAbstractType) arguments.get(1));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_MODELTOTYPEGRAPH_TYPE_TYPEGRAPH_MODEL_MODELGENERATORRULERESULT:
+		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TYPE_TYPEGRAPH_MODELTOTYPEGRAPH_TABSTRACTTYPE_MODEL_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (TAbstractType) arguments.get(2),
-					(ModelToTypeGraph) arguments.get(3), (Type) arguments.get(4), (TypeGraph) arguments.get(5),
-					(Model) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+					(TypeToTAbstractType) arguments.get(1), (Type) arguments.get(2), (TypeGraph) arguments.get(3),
+					(ModelToTypeGraph) arguments.get(4), (TAbstractType) arguments.get(5), (Model) arguments.get(6),
+					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_CLASS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1102,21 +1102,21 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_0_1_initialbindings_blackBBBBBB(
-			ParameterizedTypeToClass _this, Match match, TypeAccess eTypeAccess, Type eType, Model eModel,
-			ParameterizedType eParameterizedType) {
+			ParameterizedTypeToClass _this, Match match, ParameterizedType eParameterizedType, Type eType, Model eModel,
+			TypeAccess eTypeAccess) {
 		if (!eParameterizedType.equals(eType)) {
-			return new Object[] { _this, match, eTypeAccess, eType, eModel, eParameterizedType };
+			return new Object[] { _this, match, eParameterizedType, eType, eModel, eTypeAccess };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_0_2_SolveCSP_bindingFBBBBBB(
-			ParameterizedTypeToClass _this, Match match, TypeAccess eTypeAccess, Type eType, Model eModel,
-			ParameterizedType eParameterizedType) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, eTypeAccess, eType, eModel, eParameterizedType);
+			ParameterizedTypeToClass _this, Match match, ParameterizedType eParameterizedType, Type eType, Model eModel,
+			TypeAccess eTypeAccess) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, eParameterizedType, eType, eModel, eTypeAccess);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, eTypeAccess, eType, eModel, eParameterizedType };
+			return new Object[] { csp, _this, match, eParameterizedType, eType, eModel, eTypeAccess };
 		}
 		return null;
 	}
@@ -1126,10 +1126,10 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_0_2_SolveCSP_bindingAndBlackFBBBBBB(
-			ParameterizedTypeToClass _this, Match match, TypeAccess eTypeAccess, Type eType, Model eModel,
-			ParameterizedType eParameterizedType) {
+			ParameterizedTypeToClass _this, Match match, ParameterizedType eParameterizedType, Type eType, Model eModel,
+			TypeAccess eTypeAccess) {
 		Object[] result_pattern_ParameterizedTypeToClass_0_2_SolveCSP_binding = pattern_ParameterizedTypeToClass_0_2_SolveCSP_bindingFBBBBBB(
-				_this, match, eTypeAccess, eType, eModel, eParameterizedType);
+				_this, match, eParameterizedType, eType, eModel, eTypeAccess);
 		if (result_pattern_ParameterizedTypeToClass_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ParameterizedTypeToClass_0_2_SolveCSP_binding[0];
 
@@ -1137,7 +1137,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 					csp);
 			if (result_pattern_ParameterizedTypeToClass_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, eTypeAccess, eType, eModel, eParameterizedType };
+				return new Object[] { csp, _this, match, eParameterizedType, eType, eModel, eTypeAccess };
 			}
 		}
 		return null;
@@ -1151,50 +1151,50 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_0_4_collectelementstobetranslated_blackBBBBB(
-			Match match, TypeAccess eTypeAccess, Type eType, Model eModel, ParameterizedType eParameterizedType) {
+			Match match, ParameterizedType eParameterizedType, Type eType, Model eModel, TypeAccess eTypeAccess) {
 		if (!eParameterizedType.equals(eType)) {
-			return new Object[] { match, eTypeAccess, eType, eModel, eParameterizedType };
+			return new Object[] { match, eParameterizedType, eType, eModel, eTypeAccess };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_0_4_collectelementstobetranslated_greenBBBBBFFFF(
-			Match match, TypeAccess eTypeAccess, Type eType, Model eModel, ParameterizedType eParameterizedType) {
+			Match match, ParameterizedType eParameterizedType, Type eType, Model eModel, TypeAccess eTypeAccess) {
+		EMoflonEdge eParameterizedType__eTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eModel__eParameterizedType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eTypeAccess__eType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eModel__eParameterizedType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eParameterizedType__eTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(eTypeAccess);
 		match.getToBeTranslatedNodes().add(eParameterizedType);
+		match.getToBeTranslatedNodes().add(eTypeAccess);
+		String eParameterizedType__eTypeAccess____type_name_prime = "type";
+		String eModel__eParameterizedType____orphanTypes_name_prime = "orphanTypes";
 		String eTypeAccess__eType____type_name_prime = "type";
 		String eType__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String eModel__eParameterizedType____orphanTypes_name_prime = "orphanTypes";
-		String eParameterizedType__eTypeAccess____type_name_prime = "type";
+		eParameterizedType__eTypeAccess____type.setSrc(eParameterizedType);
+		eParameterizedType__eTypeAccess____type.setTrg(eTypeAccess);
+		match.getToBeTranslatedEdges().add(eParameterizedType__eTypeAccess____type);
+		eModel__eParameterizedType____orphanTypes.setSrc(eModel);
+		eModel__eParameterizedType____orphanTypes.setTrg(eParameterizedType);
+		match.getToBeTranslatedEdges().add(eModel__eParameterizedType____orphanTypes);
 		eTypeAccess__eType____type.setSrc(eTypeAccess);
 		eTypeAccess__eType____type.setTrg(eType);
 		match.getToBeTranslatedEdges().add(eTypeAccess__eType____type);
 		eType__eTypeAccess____usagesInTypeAccess.setSrc(eType);
 		eType__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
 		match.getToBeTranslatedEdges().add(eType__eTypeAccess____usagesInTypeAccess);
-		eModel__eParameterizedType____orphanTypes.setSrc(eModel);
-		eModel__eParameterizedType____orphanTypes.setTrg(eParameterizedType);
-		match.getToBeTranslatedEdges().add(eModel__eParameterizedType____orphanTypes);
-		eParameterizedType__eTypeAccess____type.setSrc(eParameterizedType);
-		eParameterizedType__eTypeAccess____type.setTrg(eTypeAccess);
-		match.getToBeTranslatedEdges().add(eParameterizedType__eTypeAccess____type);
+		eParameterizedType__eTypeAccess____type.setName(eParameterizedType__eTypeAccess____type_name_prime);
+		eModel__eParameterizedType____orphanTypes.setName(eModel__eParameterizedType____orphanTypes_name_prime);
 		eTypeAccess__eType____type.setName(eTypeAccess__eType____type_name_prime);
 		eType__eTypeAccess____usagesInTypeAccess.setName(eType__eTypeAccess____usagesInTypeAccess_name_prime);
-		eModel__eParameterizedType____orphanTypes.setName(eModel__eParameterizedType____orphanTypes_name_prime);
-		eParameterizedType__eTypeAccess____type.setName(eParameterizedType__eTypeAccess____type_name_prime);
-		return new Object[] { match, eTypeAccess, eType, eModel, eParameterizedType, eTypeAccess__eType____type,
-				eType__eTypeAccess____usagesInTypeAccess, eModel__eParameterizedType____orphanTypes,
-				eParameterizedType__eTypeAccess____type };
+		return new Object[] { match, eParameterizedType, eType, eModel, eTypeAccess,
+				eParameterizedType__eTypeAccess____type, eModel__eParameterizedType____orphanTypes,
+				eTypeAccess__eType____type, eType__eTypeAccess____usagesInTypeAccess };
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_0_5_collectcontextelements_blackBBBBB(Match match,
-			TypeAccess eTypeAccess, Type eType, Model eModel, ParameterizedType eParameterizedType) {
+			ParameterizedType eParameterizedType, Type eType, Model eModel, TypeAccess eTypeAccess) {
 		if (!eParameterizedType.equals(eType)) {
-			return new Object[] { match, eTypeAccess, eType, eModel, eParameterizedType };
+			return new Object[] { match, eParameterizedType, eType, eModel, eTypeAccess };
 		}
 		return null;
 	}
@@ -1207,9 +1207,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final void pattern_ParameterizedTypeToClass_0_6_registerobjectstomatch_expressionBBBBBB(
-			ParameterizedTypeToClass _this, Match match, TypeAccess eTypeAccess, Type eType, Model eModel,
-			ParameterizedType eParameterizedType) {
-		_this.registerObjectsToMatch_FWD(match, eTypeAccess, eType, eModel, eParameterizedType);
+			ParameterizedTypeToClass _this, Match match, ParameterizedType eParameterizedType, Type eType, Model eModel,
+			TypeAccess eTypeAccess) {
+		_this.registerObjectsToMatch_FWD(match, eParameterizedType, eType, eModel, eTypeAccess);
 
 	}
 
@@ -1226,39 +1226,39 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	public static final Object[] pattern_ParameterizedTypeToClass_1_1_performtransformation_bindingFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("eTypeToTAbstractType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tAbstractType");
-		EObject _localVariable_2 = isApplicableMatch.getObject("eTypeAccess");
-		EObject _localVariable_3 = isApplicableMatch.getObject("eModelToPg");
-		EObject _localVariable_4 = isApplicableMatch.getObject("eType");
-		EObject _localVariable_5 = isApplicableMatch.getObject("pg");
+		EObject _localVariable_1 = isApplicableMatch.getObject("eParameterizedType");
+		EObject _localVariable_2 = isApplicableMatch.getObject("eType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("pg");
+		EObject _localVariable_4 = isApplicableMatch.getObject("eModelToPg");
+		EObject _localVariable_5 = isApplicableMatch.getObject("tAbstractType");
 		EObject _localVariable_6 = isApplicableMatch.getObject("eModel");
-		EObject _localVariable_7 = isApplicableMatch.getObject("eParameterizedType");
+		EObject _localVariable_7 = isApplicableMatch.getObject("eTypeAccess");
 		EObject tmpETypeToTAbstractType = _localVariable_0;
-		EObject tmpTAbstractType = _localVariable_1;
-		EObject tmpETypeAccess = _localVariable_2;
-		EObject tmpEModelToPg = _localVariable_3;
-		EObject tmpEType = _localVariable_4;
-		EObject tmpPg = _localVariable_5;
+		EObject tmpEParameterizedType = _localVariable_1;
+		EObject tmpEType = _localVariable_2;
+		EObject tmpPg = _localVariable_3;
+		EObject tmpEModelToPg = _localVariable_4;
+		EObject tmpTAbstractType = _localVariable_5;
 		EObject tmpEModel = _localVariable_6;
-		EObject tmpEParameterizedType = _localVariable_7;
+		EObject tmpETypeAccess = _localVariable_7;
 		if (tmpETypeToTAbstractType instanceof TypeToTAbstractType) {
 			TypeToTAbstractType eTypeToTAbstractType = (TypeToTAbstractType) tmpETypeToTAbstractType;
-			if (tmpTAbstractType instanceof TAbstractType) {
-				TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
-				if (tmpETypeAccess instanceof TypeAccess) {
-					TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
-					if (tmpEModelToPg instanceof ModelToTypeGraph) {
-						ModelToTypeGraph eModelToPg = (ModelToTypeGraph) tmpEModelToPg;
-						if (tmpEType instanceof Type) {
-							Type eType = (Type) tmpEType;
-							if (tmpPg instanceof TypeGraph) {
-								TypeGraph pg = (TypeGraph) tmpPg;
+			if (tmpEParameterizedType instanceof ParameterizedType) {
+				ParameterizedType eParameterizedType = (ParameterizedType) tmpEParameterizedType;
+				if (tmpEType instanceof Type) {
+					Type eType = (Type) tmpEType;
+					if (tmpPg instanceof TypeGraph) {
+						TypeGraph pg = (TypeGraph) tmpPg;
+						if (tmpEModelToPg instanceof ModelToTypeGraph) {
+							ModelToTypeGraph eModelToPg = (ModelToTypeGraph) tmpEModelToPg;
+							if (tmpTAbstractType instanceof TAbstractType) {
+								TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
 								if (tmpEModel instanceof Model) {
 									Model eModel = (Model) tmpEModel;
-									if (tmpEParameterizedType instanceof ParameterizedType) {
-										ParameterizedType eParameterizedType = (ParameterizedType) tmpEParameterizedType;
-										return new Object[] { eTypeToTAbstractType, tAbstractType, eTypeAccess,
-												eModelToPg, eType, pg, eModel, eParameterizedType, isApplicableMatch };
+									if (tmpETypeAccess instanceof TypeAccess) {
+										TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+										return new Object[] { eTypeToTAbstractType, eParameterizedType, eType, pg,
+												eModelToPg, tAbstractType, eModel, eTypeAccess, isApplicableMatch };
 									}
 								}
 							}
@@ -1271,15 +1271,15 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_1_1_performtransformation_blackBBBBBBBBFBB(
-			TypeToTAbstractType eTypeToTAbstractType, TAbstractType tAbstractType, TypeAccess eTypeAccess,
-			ModelToTypeGraph eModelToPg, Type eType, TypeGraph pg, Model eModel, ParameterizedType eParameterizedType,
+			TypeToTAbstractType eTypeToTAbstractType, ParameterizedType eParameterizedType, Type eType, TypeGraph pg,
+			ModelToTypeGraph eModelToPg, TAbstractType tAbstractType, Model eModel, TypeAccess eTypeAccess,
 			ParameterizedTypeToClass _this, IsApplicableMatch isApplicableMatch) {
 		if (!eParameterizedType.equals(eType)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { eTypeToTAbstractType, tAbstractType, eTypeAccess, eModelToPg, eType, pg,
-							eModel, eParameterizedType, csp, _this, isApplicableMatch };
+					return new Object[] { eTypeToTAbstractType, eParameterizedType, eType, pg, eModelToPg,
+							tAbstractType, eModel, eTypeAccess, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1292,117 +1292,120 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 				isApplicableMatch);
 		if (result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding != null) {
 			TypeToTAbstractType eTypeToTAbstractType = (TypeToTAbstractType) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[0];
-			TAbstractType tAbstractType = (TAbstractType) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[1];
-			TypeAccess eTypeAccess = (TypeAccess) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[2];
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[3];
-			Type eType = (Type) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[4];
-			TypeGraph pg = (TypeGraph) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[5];
+			ParameterizedType eParameterizedType = (ParameterizedType) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[1];
+			Type eType = (Type) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[2];
+			TypeGraph pg = (TypeGraph) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[3];
+			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[4];
+			TAbstractType tAbstractType = (TAbstractType) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[5];
 			Model eModel = (Model) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[6];
-			ParameterizedType eParameterizedType = (ParameterizedType) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[7];
+			TypeAccess eTypeAccess = (TypeAccess) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_binding[7];
 
 			Object[] result_pattern_ParameterizedTypeToClass_1_1_performtransformation_black = pattern_ParameterizedTypeToClass_1_1_performtransformation_blackBBBBBBBBFBB(
-					eTypeToTAbstractType, tAbstractType, eTypeAccess, eModelToPg, eType, pg, eModel, eParameterizedType,
+					eTypeToTAbstractType, eParameterizedType, eType, pg, eModelToPg, tAbstractType, eModel, eTypeAccess,
 					_this, isApplicableMatch);
 			if (result_pattern_ParameterizedTypeToClass_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_ParameterizedTypeToClass_1_1_performtransformation_black[8];
 
-				return new Object[] { eTypeToTAbstractType, tAbstractType, eTypeAccess, eModelToPg, eType, pg, eModel,
-						eParameterizedType, csp, _this, isApplicableMatch };
+				return new Object[] { eTypeToTAbstractType, eParameterizedType, eType, pg, eModelToPg, tAbstractType,
+						eModel, eTypeAccess, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ParameterizedTypeToClass_1_1_performtransformation_greenFBB(
-			TAbstractType tAbstractType, ParameterizedType eParameterizedType) {
+	public static final Object[] pattern_ParameterizedTypeToClass_1_1_performtransformation_greenBBF(
+			ParameterizedType eParameterizedType, TAbstractType tAbstractType) {
 		TypeToTAbstractType eParameterizedTypeToTAbstractType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		eParameterizedTypeToTAbstractType.setTarget(tAbstractType);
 		eParameterizedTypeToTAbstractType.setSource(eParameterizedType);
-		return new Object[] { eParameterizedTypeToTAbstractType, tAbstractType, eParameterizedType };
+		return new Object[] { eParameterizedType, tAbstractType, eParameterizedTypeToTAbstractType };
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_1_2_collecttranslatedelements_blackBBB(
-			TypeToTAbstractType eParameterizedTypeToTAbstractType, TypeAccess eTypeAccess,
-			ParameterizedType eParameterizedType) {
-		return new Object[] { eParameterizedTypeToTAbstractType, eTypeAccess, eParameterizedType };
+			ParameterizedType eParameterizedType, TypeToTAbstractType eParameterizedTypeToTAbstractType,
+			TypeAccess eTypeAccess) {
+		return new Object[] { eParameterizedType, eParameterizedTypeToTAbstractType, eTypeAccess };
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_1_2_collecttranslatedelements_greenFBBB(
-			TypeToTAbstractType eParameterizedTypeToTAbstractType, TypeAccess eTypeAccess,
-			ParameterizedType eParameterizedType) {
+			ParameterizedType eParameterizedType, TypeToTAbstractType eParameterizedTypeToTAbstractType,
+			TypeAccess eTypeAccess) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getTranslatedElements().add(eParameterizedType);
 		ruleresult.getCreatedLinkElements().add(eParameterizedTypeToTAbstractType);
 		ruleresult.getTranslatedElements().add(eTypeAccess);
-		ruleresult.getTranslatedElements().add(eParameterizedType);
-		return new Object[] { ruleresult, eParameterizedTypeToTAbstractType, eTypeAccess, eParameterizedType };
+		return new Object[] { ruleresult, eParameterizedType, eParameterizedTypeToTAbstractType, eTypeAccess };
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject eTypeToTAbstractType, EObject eParameterizedTypeToTAbstractType,
-			EObject tAbstractType, EObject eTypeAccess, EObject eModelToPg, EObject eType, EObject pg, EObject eModel,
-			EObject eParameterizedType) {
-		if (!eTypeToTAbstractType.equals(tAbstractType)) {
-			if (!eTypeToTAbstractType.equals(pg)) {
-				if (!eParameterizedTypeToTAbstractType.equals(eTypeToTAbstractType)) {
-					if (!eParameterizedTypeToTAbstractType.equals(tAbstractType)) {
-						if (!eParameterizedTypeToTAbstractType.equals(eTypeAccess)) {
-							if (!eParameterizedTypeToTAbstractType.equals(eType)) {
-								if (!eParameterizedTypeToTAbstractType.equals(pg)) {
-									if (!eTypeAccess.equals(eTypeToTAbstractType)) {
-										if (!eTypeAccess.equals(tAbstractType)) {
-											if (!eTypeAccess.equals(pg)) {
-												if (!eModelToPg.equals(eTypeToTAbstractType)) {
-													if (!eModelToPg.equals(eParameterizedTypeToTAbstractType)) {
-														if (!eModelToPg.equals(tAbstractType)) {
-															if (!eModelToPg.equals(eTypeAccess)) {
-																if (!eModelToPg.equals(eType)) {
-																	if (!eModelToPg.equals(pg)) {
-																		if (!eModelToPg.equals(eParameterizedType)) {
-																			if (!eType.equals(eTypeToTAbstractType)) {
-																				if (!eType.equals(tAbstractType)) {
-																					if (!eType.equals(eTypeAccess)) {
-																						if (!eType.equals(pg)) {
-																							if (!pg.equals(
-																									tAbstractType)) {
+			PerformRuleResult ruleresult, EObject eTypeToTAbstractType, EObject eParameterizedType, EObject eType,
+			EObject pg, EObject eModelToPg, EObject tAbstractType, EObject eModel,
+			EObject eParameterizedTypeToTAbstractType, EObject eTypeAccess) {
+		if (!eTypeToTAbstractType.equals(pg)) {
+			if (!eTypeToTAbstractType.equals(tAbstractType)) {
+				if (!eParameterizedType.equals(eTypeToTAbstractType)) {
+					if (!eParameterizedType.equals(eType)) {
+						if (!eParameterizedType.equals(pg)) {
+							if (!eParameterizedType.equals(tAbstractType)) {
+								if (!eParameterizedType.equals(eParameterizedTypeToTAbstractType)) {
+									if (!eParameterizedType.equals(eTypeAccess)) {
+										if (!eType.equals(eTypeToTAbstractType)) {
+											if (!eType.equals(pg)) {
+												if (!eType.equals(tAbstractType)) {
+													if (!eType.equals(eTypeAccess)) {
+														if (!pg.equals(tAbstractType)) {
+															if (!eModelToPg.equals(eTypeToTAbstractType)) {
+																if (!eModelToPg.equals(eParameterizedType)) {
+																	if (!eModelToPg.equals(eType)) {
+																		if (!eModelToPg.equals(pg)) {
+																			if (!eModelToPg.equals(tAbstractType)) {
+																				if (!eModelToPg.equals(
+																						eParameterizedTypeToTAbstractType)) {
+																					if (!eModelToPg
+																							.equals(eTypeAccess)) {
+																						if (!eModel.equals(
+																								eTypeToTAbstractType)) {
+																							if (!eModel.equals(
+																									eParameterizedType)) {
 																								if (!eModel.equals(
-																										eTypeToTAbstractType)) {
+																										eType)) {
 																									if (!eModel.equals(
-																											eParameterizedTypeToTAbstractType)) {
+																											pg)) {
 																										if (!eModel
-																												.equals(tAbstractType)) {
+																												.equals(eModelToPg)) {
 																											if (!eModel
-																													.equals(eTypeAccess)) {
+																													.equals(tAbstractType)) {
 																												if (!eModel
-																														.equals(eModelToPg)) {
+																														.equals(eParameterizedTypeToTAbstractType)) {
 																													if (!eModel
-																															.equals(eType)) {
-																														if (!eModel
-																																.equals(pg)) {
-																															if (!eModel
-																																	.equals(eParameterizedType)) {
-																																if (!eParameterizedType
-																																		.equals(eTypeToTAbstractType)) {
-																																	if (!eParameterizedType
-																																			.equals(eParameterizedTypeToTAbstractType)) {
-																																		if (!eParameterizedType
-																																				.equals(tAbstractType)) {
-																																			if (!eParameterizedType
-																																					.equals(eTypeAccess)) {
-																																				if (!eParameterizedType
-																																						.equals(eType)) {
-																																					if (!eParameterizedType
-																																							.equals(pg)) {
+																															.equals(eTypeAccess)) {
+																														if (!eParameterizedTypeToTAbstractType
+																																.equals(eTypeToTAbstractType)) {
+																															if (!eParameterizedTypeToTAbstractType
+																																	.equals(eType)) {
+																																if (!eParameterizedTypeToTAbstractType
+																																		.equals(pg)) {
+																																	if (!eParameterizedTypeToTAbstractType
+																																			.equals(tAbstractType)) {
+																																		if (!eParameterizedTypeToTAbstractType
+																																				.equals(eTypeAccess)) {
+																																			if (!eTypeAccess
+																																					.equals(eTypeToTAbstractType)) {
+																																				if (!eTypeAccess
+																																						.equals(pg)) {
+																																					if (!eTypeAccess
+																																							.equals(tAbstractType)) {
 																																						return new Object[] {
 																																								ruleresult,
 																																								eTypeToTAbstractType,
-																																								eParameterizedTypeToTAbstractType,
-																																								tAbstractType,
-																																								eTypeAccess,
-																																								eModelToPg,
+																																								eParameterizedType,
 																																								eType,
 																																								pg,
+																																								eModelToPg,
+																																								tAbstractType,
 																																								eModel,
-																																								eParameterizedType };
+																																								eParameterizedTypeToTAbstractType,
+																																								eTypeAccess };
 																																					}
 																																				}
 																																			}
@@ -1443,64 +1446,64 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject eParameterizedTypeToTAbstractType, EObject tAbstractType,
-			EObject eTypeAccess, EObject eType, EObject eModel, EObject eParameterizedType) {
+			PerformRuleResult ruleresult, EObject eParameterizedType, EObject eType, EObject tAbstractType,
+			EObject eModel, EObject eParameterizedTypeToTAbstractType, EObject eTypeAccess) {
+		EMoflonEdge eParameterizedType__eTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eParameterizedTypeToTAbstractType__tAbstractType____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge eTypeAccess__eType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eModel__eParameterizedType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eParameterizedTypeToTAbstractType__eParameterizedType____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge eParameterizedType__eTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eModel__eParameterizedType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eTypeAccess__eType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ParameterizedTypeToClass";
+		String eParameterizedType__eTypeAccess____type_name_prime = "type";
 		String eParameterizedTypeToTAbstractType__tAbstractType____target_name_prime = "target";
+		String eParameterizedTypeToTAbstractType__eParameterizedType____source_name_prime = "source";
+		String eModel__eParameterizedType____orphanTypes_name_prime = "orphanTypes";
 		String eTypeAccess__eType____type_name_prime = "type";
 		String eType__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String eModel__eParameterizedType____orphanTypes_name_prime = "orphanTypes";
-		String eParameterizedTypeToTAbstractType__eParameterizedType____source_name_prime = "source";
-		String eParameterizedType__eTypeAccess____type_name_prime = "type";
+		eParameterizedType__eTypeAccess____type.setSrc(eParameterizedType);
+		eParameterizedType__eTypeAccess____type.setTrg(eTypeAccess);
+		ruleresult.getTranslatedEdges().add(eParameterizedType__eTypeAccess____type);
 		eParameterizedTypeToTAbstractType__tAbstractType____target.setSrc(eParameterizedTypeToTAbstractType);
 		eParameterizedTypeToTAbstractType__tAbstractType____target.setTrg(tAbstractType);
 		ruleresult.getCreatedEdges().add(eParameterizedTypeToTAbstractType__tAbstractType____target);
+		eParameterizedTypeToTAbstractType__eParameterizedType____source.setSrc(eParameterizedTypeToTAbstractType);
+		eParameterizedTypeToTAbstractType__eParameterizedType____source.setTrg(eParameterizedType);
+		ruleresult.getCreatedEdges().add(eParameterizedTypeToTAbstractType__eParameterizedType____source);
+		eModel__eParameterizedType____orphanTypes.setSrc(eModel);
+		eModel__eParameterizedType____orphanTypes.setTrg(eParameterizedType);
+		ruleresult.getTranslatedEdges().add(eModel__eParameterizedType____orphanTypes);
 		eTypeAccess__eType____type.setSrc(eTypeAccess);
 		eTypeAccess__eType____type.setTrg(eType);
 		ruleresult.getTranslatedEdges().add(eTypeAccess__eType____type);
 		eType__eTypeAccess____usagesInTypeAccess.setSrc(eType);
 		eType__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
 		ruleresult.getTranslatedEdges().add(eType__eTypeAccess____usagesInTypeAccess);
-		eModel__eParameterizedType____orphanTypes.setSrc(eModel);
-		eModel__eParameterizedType____orphanTypes.setTrg(eParameterizedType);
-		ruleresult.getTranslatedEdges().add(eModel__eParameterizedType____orphanTypes);
-		eParameterizedTypeToTAbstractType__eParameterizedType____source.setSrc(eParameterizedTypeToTAbstractType);
-		eParameterizedTypeToTAbstractType__eParameterizedType____source.setTrg(eParameterizedType);
-		ruleresult.getCreatedEdges().add(eParameterizedTypeToTAbstractType__eParameterizedType____source);
-		eParameterizedType__eTypeAccess____type.setSrc(eParameterizedType);
-		eParameterizedType__eTypeAccess____type.setTrg(eTypeAccess);
-		ruleresult.getTranslatedEdges().add(eParameterizedType__eTypeAccess____type);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		eParameterizedType__eTypeAccess____type.setName(eParameterizedType__eTypeAccess____type_name_prime);
 		eParameterizedTypeToTAbstractType__tAbstractType____target
 				.setName(eParameterizedTypeToTAbstractType__tAbstractType____target_name_prime);
-		eTypeAccess__eType____type.setName(eTypeAccess__eType____type_name_prime);
-		eType__eTypeAccess____usagesInTypeAccess.setName(eType__eTypeAccess____usagesInTypeAccess_name_prime);
-		eModel__eParameterizedType____orphanTypes.setName(eModel__eParameterizedType____orphanTypes_name_prime);
 		eParameterizedTypeToTAbstractType__eParameterizedType____source
 				.setName(eParameterizedTypeToTAbstractType__eParameterizedType____source_name_prime);
-		eParameterizedType__eTypeAccess____type.setName(eParameterizedType__eTypeAccess____type_name_prime);
-		return new Object[] { ruleresult, eParameterizedTypeToTAbstractType, tAbstractType, eTypeAccess, eType, eModel,
-				eParameterizedType, eParameterizedTypeToTAbstractType__tAbstractType____target,
-				eTypeAccess__eType____type, eType__eTypeAccess____usagesInTypeAccess,
-				eModel__eParameterizedType____orphanTypes,
+		eModel__eParameterizedType____orphanTypes.setName(eModel__eParameterizedType____orphanTypes_name_prime);
+		eTypeAccess__eType____type.setName(eTypeAccess__eType____type_name_prime);
+		eType__eTypeAccess____usagesInTypeAccess.setName(eType__eTypeAccess____usagesInTypeAccess_name_prime);
+		return new Object[] { ruleresult, eParameterizedType, eType, tAbstractType, eModel,
+				eParameterizedTypeToTAbstractType, eTypeAccess, eParameterizedType__eTypeAccess____type,
+				eParameterizedTypeToTAbstractType__tAbstractType____target,
 				eParameterizedTypeToTAbstractType__eParameterizedType____source,
-				eParameterizedType__eTypeAccess____type };
+				eModel__eParameterizedType____orphanTypes, eTypeAccess__eType____type,
+				eType__eTypeAccess____usagesInTypeAccess };
 	}
 
 	public static final void pattern_ParameterizedTypeToClass_1_5_registerobjects_expressionBBBBBBBBBBB(
 			ParameterizedTypeToClass _this, PerformRuleResult ruleresult, EObject eTypeToTAbstractType,
-			EObject eParameterizedTypeToTAbstractType, EObject tAbstractType, EObject eTypeAccess, EObject eModelToPg,
-			EObject eType, EObject pg, EObject eModel, EObject eParameterizedType) {
-		_this.registerObjects_FWD(ruleresult, eTypeToTAbstractType, eParameterizedTypeToTAbstractType, tAbstractType,
-				eTypeAccess, eModelToPg, eType, pg, eModel, eParameterizedType);
+			EObject eParameterizedType, EObject eType, EObject pg, EObject eModelToPg, EObject tAbstractType,
+			EObject eModel, EObject eParameterizedTypeToTAbstractType, EObject eTypeAccess) {
+		_this.registerObjects_FWD(ruleresult, eTypeToTAbstractType, eParameterizedType, eType, pg, eModelToPg,
+				tAbstractType, eModel, eParameterizedTypeToTAbstractType, eTypeAccess);
 
 	}
 
@@ -1562,23 +1565,23 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_2_2_corematch_bindingFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("eTypeAccess");
+		EObject _localVariable_0 = match.getObject("eParameterizedType");
 		EObject _localVariable_1 = match.getObject("eType");
 		EObject _localVariable_2 = match.getObject("eModel");
-		EObject _localVariable_3 = match.getObject("eParameterizedType");
-		EObject tmpETypeAccess = _localVariable_0;
+		EObject _localVariable_3 = match.getObject("eTypeAccess");
+		EObject tmpEParameterizedType = _localVariable_0;
 		EObject tmpEType = _localVariable_1;
 		EObject tmpEModel = _localVariable_2;
-		EObject tmpEParameterizedType = _localVariable_3;
-		if (tmpETypeAccess instanceof TypeAccess) {
-			TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+		EObject tmpETypeAccess = _localVariable_3;
+		if (tmpEParameterizedType instanceof ParameterizedType) {
+			ParameterizedType eParameterizedType = (ParameterizedType) tmpEParameterizedType;
 			if (tmpEType instanceof Type) {
 				Type eType = (Type) tmpEType;
 				if (tmpEModel instanceof Model) {
 					Model eModel = (Model) tmpEModel;
-					if (tmpEParameterizedType instanceof ParameterizedType) {
-						ParameterizedType eParameterizedType = (ParameterizedType) tmpEParameterizedType;
-						return new Object[] { eTypeAccess, eType, eModel, eParameterizedType, match };
+					if (tmpETypeAccess instanceof TypeAccess) {
+						TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+						return new Object[] { eParameterizedType, eType, eModel, eTypeAccess, match };
 					}
 				}
 			}
@@ -1586,20 +1589,20 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_ParameterizedTypeToClass_2_2_corematch_blackFFBFBFBBB(
-			TypeAccess eTypeAccess, Type eType, Model eModel, ParameterizedType eParameterizedType, Match match) {
+	public static final Iterable<Object[]> pattern_ParameterizedTypeToClass_2_2_corematch_blackFBBFFFBBB(
+			ParameterizedType eParameterizedType, Type eType, Model eModel, TypeAccess eTypeAccess, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!eParameterizedType.equals(eType)) {
-			for (TypeToTAbstractType eTypeToTAbstractType : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(eType, TypeToTAbstractType.class, "source")) {
-				TAbstractType tAbstractType = eTypeToTAbstractType.getTarget();
-				if (tAbstractType != null) {
-					for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(eModel, ModelToTypeGraph.class, "source")) {
-						TypeGraph pg = eModelToPg.getTarget();
-						if (pg != null) {
-							_result.add(new Object[] { eTypeToTAbstractType, tAbstractType, eTypeAccess, eModelToPg,
-									eType, pg, eModel, eParameterizedType, match });
+			for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(eModel, ModelToTypeGraph.class, "source")) {
+				TypeGraph pg = eModelToPg.getTarget();
+				if (pg != null) {
+					for (TypeToTAbstractType eTypeToTAbstractType : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(eType, TypeToTAbstractType.class, "source")) {
+						TAbstractType tAbstractType = eTypeToTAbstractType.getTarget();
+						if (tAbstractType != null) {
+							_result.add(new Object[] { eTypeToTAbstractType, eParameterizedType, eType, pg, eModelToPg,
+									tAbstractType, eModel, eTypeAccess, match });
 						}
 
 					}
@@ -1611,20 +1614,20 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Iterable<Object[]> pattern_ParameterizedTypeToClass_2_3_findcontext_blackBBBBBBBB(
-			TypeToTAbstractType eTypeToTAbstractType, TAbstractType tAbstractType, TypeAccess eTypeAccess,
-			ModelToTypeGraph eModelToPg, Type eType, TypeGraph pg, Model eModel, ParameterizedType eParameterizedType) {
+			TypeToTAbstractType eTypeToTAbstractType, ParameterizedType eParameterizedType, Type eType, TypeGraph pg,
+			ModelToTypeGraph eModelToPg, TAbstractType tAbstractType, Model eModel, TypeAccess eTypeAccess) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!eParameterizedType.equals(eType)) {
-			if (eType.equals(eTypeAccess.getType())) {
-				if (tAbstractType.equals(eTypeToTAbstractType.getTarget())) {
-					if (eType.equals(eTypeToTAbstractType.getSource())) {
-						if (pg.getOwnedTypes().contains(tAbstractType)) {
+			if (pg.getOwnedTypes().contains(tAbstractType)) {
+				if (eTypeAccess.equals(eParameterizedType.getType())) {
+					if (pg.equals(eModelToPg.getTarget())) {
+						if (tAbstractType.equals(eTypeToTAbstractType.getTarget())) {
 							if (eModel.equals(eModelToPg.getSource())) {
-								if (eModel.getOrphanTypes().contains(eParameterizedType)) {
-									if (pg.equals(eModelToPg.getTarget())) {
-										if (eTypeAccess.equals(eParameterizedType.getType())) {
-											_result.add(new Object[] { eTypeToTAbstractType, tAbstractType, eTypeAccess,
-													eModelToPg, eType, pg, eModel, eParameterizedType });
+								if (eType.equals(eTypeToTAbstractType.getSource())) {
+									if (eModel.getOrphanTypes().contains(eParameterizedType)) {
+										if (eType.equals(eTypeAccess.getType())) {
+											_result.add(new Object[] { eTypeToTAbstractType, eParameterizedType, eType,
+													pg, eModelToPg, tAbstractType, eModel, eTypeAccess });
 										}
 									}
 								}
@@ -1638,95 +1641,95 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(
-			TypeToTAbstractType eTypeToTAbstractType, TAbstractType tAbstractType, TypeAccess eTypeAccess,
-			ModelToTypeGraph eModelToPg, Type eType, TypeGraph pg, Model eModel, ParameterizedType eParameterizedType) {
+			TypeToTAbstractType eTypeToTAbstractType, ParameterizedType eParameterizedType, Type eType, TypeGraph pg,
+			ModelToTypeGraph eModelToPg, TAbstractType tAbstractType, Model eModel, TypeAccess eTypeAccess) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge eTypeAccess__eType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eTypeToTAbstractType__tAbstractType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eTypeToTAbstractType__eType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tAbstractType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAbstractType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eModelToPg__eModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eModel__eParameterizedType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eModelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eParameterizedType__eTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String eTypeAccess__eType____type_name_prime = "type";
-		String eType__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String eTypeToTAbstractType__tAbstractType____target_name_prime = "target";
-		String eTypeToTAbstractType__eType____source_name_prime = "source";
+		EMoflonEdge eModelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eTypeToTAbstractType__tAbstractType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eModelToPg__eModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eTypeToTAbstractType__eType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eModel__eParameterizedType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eTypeAccess__eType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eType__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String pg__tAbstractType____ownedTypes_name_prime = "ownedTypes";
 		String tAbstractType__pg____pg_name_prime = "pg";
-		String eModelToPg__eModel____source_name_prime = "source";
-		String eModel__eParameterizedType____orphanTypes_name_prime = "orphanTypes";
-		String eModelToPg__pg____target_name_prime = "target";
 		String eParameterizedType__eTypeAccess____type_name_prime = "type";
+		String eModelToPg__pg____target_name_prime = "target";
+		String eTypeToTAbstractType__tAbstractType____target_name_prime = "target";
+		String eModelToPg__eModel____source_name_prime = "source";
+		String eTypeToTAbstractType__eType____source_name_prime = "source";
+		String eModel__eParameterizedType____orphanTypes_name_prime = "orphanTypes";
+		String eTypeAccess__eType____type_name_prime = "type";
+		String eType__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		isApplicableMatch.getAllContextElements().add(eTypeToTAbstractType);
-		isApplicableMatch.getAllContextElements().add(tAbstractType);
-		isApplicableMatch.getAllContextElements().add(eTypeAccess);
-		isApplicableMatch.getAllContextElements().add(eModelToPg);
+		isApplicableMatch.getAllContextElements().add(eParameterizedType);
 		isApplicableMatch.getAllContextElements().add(eType);
 		isApplicableMatch.getAllContextElements().add(pg);
+		isApplicableMatch.getAllContextElements().add(eModelToPg);
+		isApplicableMatch.getAllContextElements().add(tAbstractType);
 		isApplicableMatch.getAllContextElements().add(eModel);
-		isApplicableMatch.getAllContextElements().add(eParameterizedType);
-		eTypeAccess__eType____type.setSrc(eTypeAccess);
-		eTypeAccess__eType____type.setTrg(eType);
-		isApplicableMatch.getAllContextElements().add(eTypeAccess__eType____type);
-		eType__eTypeAccess____usagesInTypeAccess.setSrc(eType);
-		eType__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
-		isApplicableMatch.getAllContextElements().add(eType__eTypeAccess____usagesInTypeAccess);
-		eTypeToTAbstractType__tAbstractType____target.setSrc(eTypeToTAbstractType);
-		eTypeToTAbstractType__tAbstractType____target.setTrg(tAbstractType);
-		isApplicableMatch.getAllContextElements().add(eTypeToTAbstractType__tAbstractType____target);
-		eTypeToTAbstractType__eType____source.setSrc(eTypeToTAbstractType);
-		eTypeToTAbstractType__eType____source.setTrg(eType);
-		isApplicableMatch.getAllContextElements().add(eTypeToTAbstractType__eType____source);
+		isApplicableMatch.getAllContextElements().add(eTypeAccess);
 		pg__tAbstractType____ownedTypes.setSrc(pg);
 		pg__tAbstractType____ownedTypes.setTrg(tAbstractType);
 		isApplicableMatch.getAllContextElements().add(pg__tAbstractType____ownedTypes);
 		tAbstractType__pg____pg.setSrc(tAbstractType);
 		tAbstractType__pg____pg.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tAbstractType__pg____pg);
-		eModelToPg__eModel____source.setSrc(eModelToPg);
-		eModelToPg__eModel____source.setTrg(eModel);
-		isApplicableMatch.getAllContextElements().add(eModelToPg__eModel____source);
-		eModel__eParameterizedType____orphanTypes.setSrc(eModel);
-		eModel__eParameterizedType____orphanTypes.setTrg(eParameterizedType);
-		isApplicableMatch.getAllContextElements().add(eModel__eParameterizedType____orphanTypes);
-		eModelToPg__pg____target.setSrc(eModelToPg);
-		eModelToPg__pg____target.setTrg(pg);
-		isApplicableMatch.getAllContextElements().add(eModelToPg__pg____target);
 		eParameterizedType__eTypeAccess____type.setSrc(eParameterizedType);
 		eParameterizedType__eTypeAccess____type.setTrg(eTypeAccess);
 		isApplicableMatch.getAllContextElements().add(eParameterizedType__eTypeAccess____type);
-		eTypeAccess__eType____type.setName(eTypeAccess__eType____type_name_prime);
-		eType__eTypeAccess____usagesInTypeAccess.setName(eType__eTypeAccess____usagesInTypeAccess_name_prime);
-		eTypeToTAbstractType__tAbstractType____target.setName(eTypeToTAbstractType__tAbstractType____target_name_prime);
-		eTypeToTAbstractType__eType____source.setName(eTypeToTAbstractType__eType____source_name_prime);
+		eModelToPg__pg____target.setSrc(eModelToPg);
+		eModelToPg__pg____target.setTrg(pg);
+		isApplicableMatch.getAllContextElements().add(eModelToPg__pg____target);
+		eTypeToTAbstractType__tAbstractType____target.setSrc(eTypeToTAbstractType);
+		eTypeToTAbstractType__tAbstractType____target.setTrg(tAbstractType);
+		isApplicableMatch.getAllContextElements().add(eTypeToTAbstractType__tAbstractType____target);
+		eModelToPg__eModel____source.setSrc(eModelToPg);
+		eModelToPg__eModel____source.setTrg(eModel);
+		isApplicableMatch.getAllContextElements().add(eModelToPg__eModel____source);
+		eTypeToTAbstractType__eType____source.setSrc(eTypeToTAbstractType);
+		eTypeToTAbstractType__eType____source.setTrg(eType);
+		isApplicableMatch.getAllContextElements().add(eTypeToTAbstractType__eType____source);
+		eModel__eParameterizedType____orphanTypes.setSrc(eModel);
+		eModel__eParameterizedType____orphanTypes.setTrg(eParameterizedType);
+		isApplicableMatch.getAllContextElements().add(eModel__eParameterizedType____orphanTypes);
+		eTypeAccess__eType____type.setSrc(eTypeAccess);
+		eTypeAccess__eType____type.setTrg(eType);
+		isApplicableMatch.getAllContextElements().add(eTypeAccess__eType____type);
+		eType__eTypeAccess____usagesInTypeAccess.setSrc(eType);
+		eType__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
+		isApplicableMatch.getAllContextElements().add(eType__eTypeAccess____usagesInTypeAccess);
 		pg__tAbstractType____ownedTypes.setName(pg__tAbstractType____ownedTypes_name_prime);
 		tAbstractType__pg____pg.setName(tAbstractType__pg____pg_name_prime);
-		eModelToPg__eModel____source.setName(eModelToPg__eModel____source_name_prime);
-		eModel__eParameterizedType____orphanTypes.setName(eModel__eParameterizedType____orphanTypes_name_prime);
-		eModelToPg__pg____target.setName(eModelToPg__pg____target_name_prime);
 		eParameterizedType__eTypeAccess____type.setName(eParameterizedType__eTypeAccess____type_name_prime);
-		return new Object[] { eTypeToTAbstractType, tAbstractType, eTypeAccess, eModelToPg, eType, pg, eModel,
-				eParameterizedType, isApplicableMatch, eTypeAccess__eType____type,
-				eType__eTypeAccess____usagesInTypeAccess, eTypeToTAbstractType__tAbstractType____target,
-				eTypeToTAbstractType__eType____source, pg__tAbstractType____ownedTypes, tAbstractType__pg____pg,
-				eModelToPg__eModel____source, eModel__eParameterizedType____orphanTypes, eModelToPg__pg____target,
-				eParameterizedType__eTypeAccess____type };
+		eModelToPg__pg____target.setName(eModelToPg__pg____target_name_prime);
+		eTypeToTAbstractType__tAbstractType____target.setName(eTypeToTAbstractType__tAbstractType____target_name_prime);
+		eModelToPg__eModel____source.setName(eModelToPg__eModel____source_name_prime);
+		eTypeToTAbstractType__eType____source.setName(eTypeToTAbstractType__eType____source_name_prime);
+		eModel__eParameterizedType____orphanTypes.setName(eModel__eParameterizedType____orphanTypes_name_prime);
+		eTypeAccess__eType____type.setName(eTypeAccess__eType____type_name_prime);
+		eType__eTypeAccess____usagesInTypeAccess.setName(eType__eTypeAccess____usagesInTypeAccess_name_prime);
+		return new Object[] { eTypeToTAbstractType, eParameterizedType, eType, pg, eModelToPg, tAbstractType, eModel,
+				eTypeAccess, isApplicableMatch, pg__tAbstractType____ownedTypes, tAbstractType__pg____pg,
+				eParameterizedType__eTypeAccess____type, eModelToPg__pg____target,
+				eTypeToTAbstractType__tAbstractType____target, eModelToPg__eModel____source,
+				eTypeToTAbstractType__eType____source, eModel__eParameterizedType____orphanTypes,
+				eTypeAccess__eType____type, eType__eTypeAccess____usagesInTypeAccess };
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_2_4_solveCSP_bindingFBBBBBBBBBB(
 			ParameterizedTypeToClass _this, IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eTypeToTAbstractType, TAbstractType tAbstractType, TypeAccess eTypeAccess,
-			ModelToTypeGraph eModelToPg, Type eType, TypeGraph pg, Model eModel, ParameterizedType eParameterizedType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, eTypeToTAbstractType, tAbstractType,
-				eTypeAccess, eModelToPg, eType, pg, eModel, eParameterizedType);
+			TypeToTAbstractType eTypeToTAbstractType, ParameterizedType eParameterizedType, Type eType, TypeGraph pg,
+			ModelToTypeGraph eModelToPg, TAbstractType tAbstractType, Model eModel, TypeAccess eTypeAccess) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, eTypeToTAbstractType,
+				eParameterizedType, eType, pg, eModelToPg, tAbstractType, eModel, eTypeAccess);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, eTypeToTAbstractType, tAbstractType, eTypeAccess,
-					eModelToPg, eType, pg, eModel, eParameterizedType };
+			return new Object[] { csp, _this, isApplicableMatch, eTypeToTAbstractType, eParameterizedType, eType, pg,
+					eModelToPg, tAbstractType, eModel, eTypeAccess };
 		}
 		return null;
 	}
@@ -1737,11 +1740,11 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(
 			ParameterizedTypeToClass _this, IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eTypeToTAbstractType, TAbstractType tAbstractType, TypeAccess eTypeAccess,
-			ModelToTypeGraph eModelToPg, Type eType, TypeGraph pg, Model eModel, ParameterizedType eParameterizedType) {
+			TypeToTAbstractType eTypeToTAbstractType, ParameterizedType eParameterizedType, Type eType, TypeGraph pg,
+			ModelToTypeGraph eModelToPg, TAbstractType tAbstractType, Model eModel, TypeAccess eTypeAccess) {
 		Object[] result_pattern_ParameterizedTypeToClass_2_4_solveCSP_binding = pattern_ParameterizedTypeToClass_2_4_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, eTypeToTAbstractType, tAbstractType, eTypeAccess, eModelToPg, eType, pg,
-				eModel, eParameterizedType);
+				_this, isApplicableMatch, eTypeToTAbstractType, eParameterizedType, eType, pg, eModelToPg,
+				tAbstractType, eModel, eTypeAccess);
 		if (result_pattern_ParameterizedTypeToClass_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ParameterizedTypeToClass_2_4_solveCSP_binding[0];
 
@@ -1749,8 +1752,8 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 					csp);
 			if (result_pattern_ParameterizedTypeToClass_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, eTypeToTAbstractType, tAbstractType, eTypeAccess,
-						eModelToPg, eType, pg, eModel, eParameterizedType };
+				return new Object[] { csp, _this, isApplicableMatch, eTypeToTAbstractType, eParameterizedType, eType,
+						pg, eModelToPg, tAbstractType, eModel, eTypeAccess };
 			}
 		}
 		return null;
@@ -1785,16 +1788,16 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_10_1_initialbindings_blackBBBB(
-			ParameterizedTypeToClass _this, Match match, TAbstractType tAbstractType, TypeGraph pg) {
-		return new Object[] { _this, match, tAbstractType, pg };
+			ParameterizedTypeToClass _this, Match match, TypeGraph pg, TAbstractType tAbstractType) {
+		return new Object[] { _this, match, pg, tAbstractType };
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_10_2_SolveCSP_bindingFBBBB(
-			ParameterizedTypeToClass _this, Match match, TAbstractType tAbstractType, TypeGraph pg) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tAbstractType, pg);
+			ParameterizedTypeToClass _this, Match match, TypeGraph pg, TAbstractType tAbstractType) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, pg, tAbstractType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tAbstractType, pg };
+			return new Object[] { csp, _this, match, pg, tAbstractType };
 		}
 		return null;
 	}
@@ -1804,9 +1807,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_10_2_SolveCSP_bindingAndBlackFBBBB(
-			ParameterizedTypeToClass _this, Match match, TAbstractType tAbstractType, TypeGraph pg) {
+			ParameterizedTypeToClass _this, Match match, TypeGraph pg, TAbstractType tAbstractType) {
 		Object[] result_pattern_ParameterizedTypeToClass_10_2_SolveCSP_binding = pattern_ParameterizedTypeToClass_10_2_SolveCSP_bindingFBBBB(
-				_this, match, tAbstractType, pg);
+				_this, match, pg, tAbstractType);
 		if (result_pattern_ParameterizedTypeToClass_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ParameterizedTypeToClass_10_2_SolveCSP_binding[0];
 
@@ -1814,7 +1817,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 					csp);
 			if (result_pattern_ParameterizedTypeToClass_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tAbstractType, pg };
+				return new Object[] { csp, _this, match, pg, tAbstractType };
 			}
 		}
 		return null;
@@ -1828,21 +1831,21 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_10_4_collectelementstobetranslated_blackBBB(
-			Match match, TAbstractType tAbstractType, TypeGraph pg) {
-		return new Object[] { match, tAbstractType, pg };
+			Match match, TypeGraph pg, TAbstractType tAbstractType) {
+		return new Object[] { match, pg, tAbstractType };
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_10_5_collectcontextelements_blackBBB(Match match,
-			TAbstractType tAbstractType, TypeGraph pg) {
-		return new Object[] { match, tAbstractType, pg };
+			TypeGraph pg, TAbstractType tAbstractType) {
+		return new Object[] { match, pg, tAbstractType };
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_10_5_collectcontextelements_greenBBBFF(Match match,
-			TAbstractType tAbstractType, TypeGraph pg) {
+			TypeGraph pg, TAbstractType tAbstractType) {
 		EMoflonEdge pg__tAbstractType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAbstractType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(tAbstractType);
 		match.getContextNodes().add(pg);
+		match.getContextNodes().add(tAbstractType);
 		String pg__tAbstractType____ownedTypes_name_prime = "ownedTypes";
 		String tAbstractType__pg____pg_name_prime = "pg";
 		pg__tAbstractType____ownedTypes.setSrc(pg);
@@ -1853,12 +1856,12 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 		match.getContextEdges().add(tAbstractType__pg____pg);
 		pg__tAbstractType____ownedTypes.setName(pg__tAbstractType____ownedTypes_name_prime);
 		tAbstractType__pg____pg.setName(tAbstractType__pg____pg_name_prime);
-		return new Object[] { match, tAbstractType, pg, pg__tAbstractType____ownedTypes, tAbstractType__pg____pg };
+		return new Object[] { match, pg, tAbstractType, pg__tAbstractType____ownedTypes, tAbstractType__pg____pg };
 	}
 
 	public static final void pattern_ParameterizedTypeToClass_10_6_registerobjectstomatch_expressionBBBB(
-			ParameterizedTypeToClass _this, Match match, TAbstractType tAbstractType, TypeGraph pg) {
-		_this.registerObjectsToMatch_BWD(match, tAbstractType, pg);
+			ParameterizedTypeToClass _this, Match match, TypeGraph pg, TAbstractType tAbstractType) {
+		_this.registerObjectsToMatch_BWD(match, pg, tAbstractType);
 
 	}
 
@@ -1927,13 +1930,11 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Iterable<Object[]> pattern_ParameterizedTypeToClass_17_2_testcorematchandDECs_blackBF(
-			TAbstractType tAbstractType) {
+			TypeGraph pg) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		TypeGraph pg = tAbstractType.getPg();
-		if (pg != null) {
-			_result.add(new Object[] { tAbstractType, pg });
+		for (TAbstractType tAbstractType : pg.getOwnedTypes()) {
+			_result.add(new Object[] { pg, tAbstractType });
 		}
-
 		return _result;
 	}
 
@@ -1947,8 +1948,8 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final boolean pattern_ParameterizedTypeToClass_17_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			ParameterizedTypeToClass _this, Match match, TAbstractType tAbstractType, TypeGraph pg) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tAbstractType, pg);
+			ParameterizedTypeToClass _this, Match match, TypeGraph pg, TAbstractType tAbstractType) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, pg, tAbstractType);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2037,9 +2038,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_0BB(
 			TypeAccess eTypeAccess, Type eType) {
-		for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_33143 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_774988 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!eType.equals(__DEC_eTypeAccess_superInterfaces_33143)) {
+			if (!eType.equals(__DEC_eTypeAccess_superInterfaces_774988)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -2048,7 +2049,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess eTypeAccess) {
-		for (Annotation __DEC_eTypeAccess_type_960891 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_eTypeAccess_type_283480 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, Annotation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2057,9 +2058,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_2BB(
 			TypeAccess eTypeAccess, Type eType) {
-		for (ArrayType __DEC_eTypeAccess_elementType_585341 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_eTypeAccess_elementType_719923 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ArrayType.class, "elementType")) {
-			if (!eType.equals(__DEC_eTypeAccess_elementType_585341)) {
+			if (!eType.equals(__DEC_eTypeAccess_elementType_719923)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -2068,7 +2069,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess eTypeAccess) {
-		for (ClassInstanceCreation __DEC_eTypeAccess_type_523268 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_eTypeAccess_type_31946 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2077,9 +2078,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess eTypeAccess, Type eType) {
-		for (ClassDeclaration __DEC_eTypeAccess_superClass_68034 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_eTypeAccess_superClass_669490 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!eType.equals(__DEC_eTypeAccess_superClass_68034)) {
+			if (!eType.equals(__DEC_eTypeAccess_superClass_669490)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -2088,7 +2089,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess eTypeAccess) {
-		for (MethodDeclaration __DEC_eTypeAccess_returnType_706852 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_eTypeAccess_returnType_494235 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2097,7 +2098,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess eTypeAccess) {
-		for (TypeLiteral __DEC_eTypeAccess_type_185145 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_eTypeAccess_type_102453 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2106,7 +2107,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_110184 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_58646 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2116,37 +2117,37 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	public static final Iterable<Object[]> pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_blackFFFFB(
 			EMoflonEdge _edge_type) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpETypeAccess = _edge_type.getSrc();
-		if (tmpETypeAccess instanceof TypeAccess) {
-			TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
-			EObject tmpEType = _edge_type.getTrg();
-			if (tmpEType instanceof Type) {
-				Type eType = (Type) tmpEType;
-				if (eType.equals(eTypeAccess.getType())) {
-					if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_1B(eTypeAccess) == null) {
-						if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_3B(
-								eTypeAccess) == null) {
-							if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_5B(
+		EObject tmpEParameterizedType = _edge_type.getSrc();
+		if (tmpEParameterizedType instanceof ParameterizedType) {
+			ParameterizedType eParameterizedType = (ParameterizedType) tmpEParameterizedType;
+			EObject tmpETypeAccess = _edge_type.getTrg();
+			if (tmpETypeAccess instanceof TypeAccess) {
+				TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+				if (eTypeAccess.equals(eParameterizedType.getType())) {
+					Type eType = eTypeAccess.getType();
+					if (eType != null) {
+						if (!eParameterizedType.equals(eType)) {
+							if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_1B(
 									eTypeAccess) == null) {
-								if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_6B(
+								if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_3B(
 										eTypeAccess) == null) {
-									if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_7B(
+									if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_5B(
 											eTypeAccess) == null) {
-										if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_0BB(
-												eTypeAccess, eType) == null) {
-											if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_2BB(
-													eTypeAccess, eType) == null) {
-												if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_4BB(
+										if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_6B(
+												eTypeAccess) == null) {
+											if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_7B(
+													eTypeAccess) == null) {
+												if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_0BB(
 														eTypeAccess, eType) == null) {
-													for (ParameterizedType eParameterizedType : org.moflon.core.utilities.eMoflonEMFUtil
-															.getOppositeReferenceTyped(eTypeAccess,
-																	ParameterizedType.class, "type")) {
-														if (!eParameterizedType.equals(eType)) {
+													if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_2BB(
+															eTypeAccess, eType) == null) {
+														if (pattern_ParameterizedTypeToClass_18_2_testcorematchandDECs_black_nac_4BB(
+																eTypeAccess, eType) == null) {
 															for (Model eModel : org.moflon.core.utilities.eMoflonEMFUtil
 																	.getOppositeReferenceTyped(eParameterizedType,
 																			Model.class, "orphanTypes")) {
-																_result.add(new Object[] { eTypeAccess, eType, eModel,
-																		eParameterizedType, _edge_type });
+																_result.add(new Object[] { eParameterizedType, eType,
+																		eModel, eTypeAccess, _edge_type });
 															}
 														}
 													}
@@ -2158,6 +2159,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 							}
 						}
 					}
+
 				}
 			}
 
@@ -2176,9 +2178,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final boolean pattern_ParameterizedTypeToClass_18_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-			ParameterizedTypeToClass _this, Match match, TypeAccess eTypeAccess, Type eType, Model eModel,
-			ParameterizedType eParameterizedType) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, eTypeAccess, eType, eModel, eParameterizedType);
+			ParameterizedTypeToClass _this, Match match, ParameterizedType eParameterizedType, Type eType, Model eModel,
+			TypeAccess eTypeAccess) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, eParameterizedType, eType, eModel, eTypeAccess);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2221,33 +2223,33 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_bindingFFFFFFBB(
-			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("tAbstractType");
-		EObject _localVariable_1 = sourceMatch.getObject("eTypeAccess");
-		EObject _localVariable_2 = sourceMatch.getObject("eType");
-		EObject _localVariable_3 = targetMatch.getObject("pg");
+			Match sourceMatch, Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("eParameterizedType");
+		EObject _localVariable_1 = sourceMatch.getObject("eType");
+		EObject _localVariable_2 = targetMatch.getObject("pg");
+		EObject _localVariable_3 = targetMatch.getObject("tAbstractType");
 		EObject _localVariable_4 = sourceMatch.getObject("eModel");
-		EObject _localVariable_5 = sourceMatch.getObject("eParameterizedType");
-		EObject tmpTAbstractType = _localVariable_0;
-		EObject tmpETypeAccess = _localVariable_1;
-		EObject tmpEType = _localVariable_2;
-		EObject tmpPg = _localVariable_3;
+		EObject _localVariable_5 = sourceMatch.getObject("eTypeAccess");
+		EObject tmpEParameterizedType = _localVariable_0;
+		EObject tmpEType = _localVariable_1;
+		EObject tmpPg = _localVariable_2;
+		EObject tmpTAbstractType = _localVariable_3;
 		EObject tmpEModel = _localVariable_4;
-		EObject tmpEParameterizedType = _localVariable_5;
-		if (tmpTAbstractType instanceof TAbstractType) {
-			TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
-			if (tmpETypeAccess instanceof TypeAccess) {
-				TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
-				if (tmpEType instanceof Type) {
-					Type eType = (Type) tmpEType;
-					if (tmpPg instanceof TypeGraph) {
-						TypeGraph pg = (TypeGraph) tmpPg;
+		EObject tmpETypeAccess = _localVariable_5;
+		if (tmpEParameterizedType instanceof ParameterizedType) {
+			ParameterizedType eParameterizedType = (ParameterizedType) tmpEParameterizedType;
+			if (tmpEType instanceof Type) {
+				Type eType = (Type) tmpEType;
+				if (tmpPg instanceof TypeGraph) {
+					TypeGraph pg = (TypeGraph) tmpPg;
+					if (tmpTAbstractType instanceof TAbstractType) {
+						TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
 						if (tmpEModel instanceof Model) {
 							Model eModel = (Model) tmpEModel;
-							if (tmpEParameterizedType instanceof ParameterizedType) {
-								ParameterizedType eParameterizedType = (ParameterizedType) tmpEParameterizedType;
-								return new Object[] { tAbstractType, eTypeAccess, eType, pg, eModel, eParameterizedType,
-										targetMatch, sourceMatch };
+							if (tmpETypeAccess instanceof TypeAccess) {
+								TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+								return new Object[] { eParameterizedType, eType, pg, tAbstractType, eModel, eTypeAccess,
+										sourceMatch, targetMatch };
 							}
 						}
 					}
@@ -2258,11 +2260,11 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_blackBBBBBBBB(
-			TAbstractType tAbstractType, TypeAccess eTypeAccess, Type eType, TypeGraph pg, Model eModel,
-			ParameterizedType eParameterizedType, Match sourceMatch, Match targetMatch) {
+			ParameterizedType eParameterizedType, Type eType, TypeGraph pg, TAbstractType tAbstractType, Model eModel,
+			TypeAccess eTypeAccess, Match sourceMatch, Match targetMatch) {
 		if (!eParameterizedType.equals(eType)) {
 			if (!sourceMatch.equals(targetMatch)) {
-				return new Object[] { tAbstractType, eTypeAccess, eType, pg, eModel, eParameterizedType, sourceMatch,
+				return new Object[] { eParameterizedType, eType, pg, tAbstractType, eModel, eTypeAccess, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2272,20 +2274,20 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	public static final Object[] pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding = pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_bindingFFFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding != null) {
-			TAbstractType tAbstractType = (TAbstractType) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[0];
-			TypeAccess eTypeAccess = (TypeAccess) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[1];
-			Type eType = (Type) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[2];
-			TypeGraph pg = (TypeGraph) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[3];
+			ParameterizedType eParameterizedType = (ParameterizedType) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[0];
+			Type eType = (Type) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[1];
+			TypeGraph pg = (TypeGraph) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[2];
+			TAbstractType tAbstractType = (TAbstractType) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[3];
 			Model eModel = (Model) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[4];
-			ParameterizedType eParameterizedType = (ParameterizedType) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[5];
+			TypeAccess eTypeAccess = (TypeAccess) result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_black = pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_blackBBBBBBBB(
-					tAbstractType, eTypeAccess, eType, pg, eModel, eParameterizedType, sourceMatch, targetMatch);
+					eParameterizedType, eType, pg, tAbstractType, eModel, eTypeAccess, sourceMatch, targetMatch);
 			if (result_pattern_ParameterizedTypeToClass_21_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tAbstractType, eTypeAccess, eType, pg, eModel, eParameterizedType, sourceMatch,
+				return new Object[] { eParameterizedType, eType, pg, tAbstractType, eModel, eTypeAccess, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2293,13 +2295,13 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_21_3_solvecsp_bindingFBBBBBBBBB(
-			ParameterizedTypeToClass _this, TAbstractType tAbstractType, TypeAccess eTypeAccess, Type eType,
-			TypeGraph pg, Model eModel, ParameterizedType eParameterizedType, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(tAbstractType, eTypeAccess, eType, pg, eModel,
-				eParameterizedType, sourceMatch, targetMatch);
+			ParameterizedTypeToClass _this, ParameterizedType eParameterizedType, Type eType, TypeGraph pg,
+			TAbstractType tAbstractType, Model eModel, TypeAccess eTypeAccess, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(eParameterizedType, eType, pg, tAbstractType, eModel,
+				eTypeAccess, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, tAbstractType, eTypeAccess, eType, pg, eModel, eParameterizedType,
+			return new Object[] { csp, _this, eParameterizedType, eType, pg, tAbstractType, eModel, eTypeAccess,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -2310,10 +2312,10 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_21_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			ParameterizedTypeToClass _this, TAbstractType tAbstractType, TypeAccess eTypeAccess, Type eType,
-			TypeGraph pg, Model eModel, ParameterizedType eParameterizedType, Match sourceMatch, Match targetMatch) {
+			ParameterizedTypeToClass _this, ParameterizedType eParameterizedType, Type eType, TypeGraph pg,
+			TAbstractType tAbstractType, Model eModel, TypeAccess eTypeAccess, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_ParameterizedTypeToClass_21_3_solvecsp_binding = pattern_ParameterizedTypeToClass_21_3_solvecsp_bindingFBBBBBBBBB(
-				_this, tAbstractType, eTypeAccess, eType, pg, eModel, eParameterizedType, sourceMatch, targetMatch);
+				_this, eParameterizedType, eType, pg, tAbstractType, eModel, eTypeAccess, sourceMatch, targetMatch);
 		if (result_pattern_ParameterizedTypeToClass_21_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_ParameterizedTypeToClass_21_3_solvecsp_binding[0];
 
@@ -2321,7 +2323,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 					csp);
 			if (result_pattern_ParameterizedTypeToClass_21_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tAbstractType, eTypeAccess, eType, pg, eModel, eParameterizedType,
+				return new Object[] { csp, _this, eParameterizedType, eType, pg, tAbstractType, eModel, eTypeAccess,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -2334,17 +2336,17 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_ParameterizedTypeToClass_21_5_matchcorrcontext_blackFBFBBBBB(
-			TAbstractType tAbstractType, Type eType, TypeGraph pg, Model eModel, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_ParameterizedTypeToClass_21_5_matchcorrcontext_blackFBBFBBBB(
+			Type eType, TypeGraph pg, TAbstractType tAbstractType, Model eModel, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (TypeToTAbstractType eTypeToTAbstractType : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tAbstractType, TypeToTAbstractType.class, "target")) {
-				if (eType.equals(eTypeToTAbstractType.getSource())) {
-					for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(eModel, ModelToTypeGraph.class, "source")) {
-						if (pg.equals(eModelToPg.getTarget())) {
-							_result.add(new Object[] { eTypeToTAbstractType, tAbstractType, eModelToPg, eType, pg,
+			for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(pg,
+					ModelToTypeGraph.class, "target")) {
+				if (eModel.equals(eModelToPg.getSource())) {
+					for (TypeToTAbstractType eTypeToTAbstractType : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(tAbstractType, TypeToTAbstractType.class, "target")) {
+						if (eType.equals(eTypeToTAbstractType.getSource())) {
+							_result.add(new Object[] { eTypeToTAbstractType, eType, pg, eModelToPg, tAbstractType,
 									eModel, sourceMatch, targetMatch });
 						}
 					}
@@ -2368,21 +2370,21 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_21_6_createcorrespondence_blackBBBBBBB(
-			TAbstractType tAbstractType, TypeAccess eTypeAccess, Type eType, TypeGraph pg, Model eModel,
-			ParameterizedType eParameterizedType, CCMatch ccMatch) {
+			ParameterizedType eParameterizedType, Type eType, TypeGraph pg, TAbstractType tAbstractType, Model eModel,
+			TypeAccess eTypeAccess, CCMatch ccMatch) {
 		if (!eParameterizedType.equals(eType)) {
-			return new Object[] { tAbstractType, eTypeAccess, eType, pg, eModel, eParameterizedType, ccMatch };
+			return new Object[] { eParameterizedType, eType, pg, tAbstractType, eModel, eTypeAccess, ccMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ParameterizedTypeToClass_21_6_createcorrespondence_greenFBBB(
-			TAbstractType tAbstractType, ParameterizedType eParameterizedType, CCMatch ccMatch) {
+	public static final Object[] pattern_ParameterizedTypeToClass_21_6_createcorrespondence_greenBBFB(
+			ParameterizedType eParameterizedType, TAbstractType tAbstractType, CCMatch ccMatch) {
 		TypeToTAbstractType eParameterizedTypeToTAbstractType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		eParameterizedTypeToTAbstractType.setTarget(tAbstractType);
 		eParameterizedTypeToTAbstractType.setSource(eParameterizedType);
 		ccMatch.getCreateCorr().add(eParameterizedTypeToTAbstractType);
-		return new Object[] { eParameterizedTypeToTAbstractType, tAbstractType, eParameterizedType, ccMatch };
+		return new Object[] { eParameterizedType, tAbstractType, eParameterizedTypeToTAbstractType, ccMatch };
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_21_7_addtoreturnedresult_blackBB(
@@ -2408,9 +2410,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_0BB(
 			TypeAccess eTypeAccess, Type eType) {
-		for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_598336 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_361059 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!eType.equals(__DEC_eTypeAccess_superInterfaces_598336)) {
+			if (!eType.equals(__DEC_eTypeAccess_superInterfaces_361059)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -2419,7 +2421,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_1B(
 			TypeAccess eTypeAccess) {
-		for (Annotation __DEC_eTypeAccess_type_114260 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_eTypeAccess_type_528513 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, Annotation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2428,9 +2430,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_2BB(
 			TypeAccess eTypeAccess, Type eType) {
-		for (ArrayType __DEC_eTypeAccess_elementType_409797 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_eTypeAccess_elementType_197172 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ArrayType.class, "elementType")) {
-			if (!eType.equals(__DEC_eTypeAccess_elementType_409797)) {
+			if (!eType.equals(__DEC_eTypeAccess_elementType_197172)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -2439,7 +2441,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_3B(
 			TypeAccess eTypeAccess) {
-		for (ClassInstanceCreation __DEC_eTypeAccess_type_676065 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_eTypeAccess_type_618594 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2448,9 +2450,9 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_4BB(
 			TypeAccess eTypeAccess, Type eType) {
-		for (ClassDeclaration __DEC_eTypeAccess_superClass_250442 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_eTypeAccess_superClass_825409 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!eType.equals(__DEC_eTypeAccess_superClass_250442)) {
+			if (!eType.equals(__DEC_eTypeAccess_superClass_825409)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -2459,7 +2461,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_5B(
 			TypeAccess eTypeAccess) {
-		for (MethodDeclaration __DEC_eTypeAccess_returnType_613680 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_eTypeAccess_returnType_396985 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2468,7 +2470,7 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_6B(
 			TypeAccess eTypeAccess) {
-		for (TypeLiteral __DEC_eTypeAccess_type_792191 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_eTypeAccess_type_293679 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2477,19 +2479,19 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_7B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_315450 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_13156 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { eTypeAccess };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ParameterizedTypeToClass_24_1_matchtggpattern_blackBBBB(TypeAccess eTypeAccess,
-			Type eType, Model eModel, ParameterizedType eParameterizedType) {
+	public static final Object[] pattern_ParameterizedTypeToClass_24_1_matchtggpattern_blackBBBB(
+			ParameterizedType eParameterizedType, Type eType, Model eModel, TypeAccess eTypeAccess) {
 		if (!eParameterizedType.equals(eType)) {
-			if (eType.equals(eTypeAccess.getType())) {
+			if (eTypeAccess.equals(eParameterizedType.getType())) {
 				if (eModel.getOrphanTypes().contains(eParameterizedType)) {
-					if (eTypeAccess.equals(eParameterizedType.getType())) {
+					if (eType.equals(eTypeAccess.getType())) {
 						if (pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_0BB(eTypeAccess,
 								eType) == null) {
 							if (pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_1B(
@@ -2506,8 +2508,8 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 														eTypeAccess) == null) {
 													if (pattern_ParameterizedTypeToClass_24_1_matchtggpattern_black_nac_7B(
 															eTypeAccess) == null) {
-														return new Object[] { eTypeAccess, eType, eModel,
-																eParameterizedType };
+														return new Object[] { eParameterizedType, eType, eModel,
+																eTypeAccess };
 													}
 												}
 											}
@@ -2533,10 +2535,10 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 		return _result;
 	}
 
-	public static final Object[] pattern_ParameterizedTypeToClass_25_1_matchtggpattern_blackBB(
-			TAbstractType tAbstractType, TypeGraph pg) {
+	public static final Object[] pattern_ParameterizedTypeToClass_25_1_matchtggpattern_blackBB(TypeGraph pg,
+			TAbstractType tAbstractType) {
 		if (pg.getOwnedTypes().contains(tAbstractType)) {
-			return new Object[] { tAbstractType, pg };
+			return new Object[] { pg, tAbstractType };
 		}
 		return null;
 	}
@@ -2669,14 +2671,14 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_26_3_solveCSP_bindingFBBBBBBBBB(
 			ParameterizedTypeToClass _this, IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eTypeToTAbstractType, TAbstractType tAbstractType, ModelToTypeGraph eModelToPg,
-			Type eType, TypeGraph pg, Model eModel, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, eTypeToTAbstractType, tAbstractType,
-				eModelToPg, eType, pg, eModel, ruleResult);
+			TypeToTAbstractType eTypeToTAbstractType, Type eType, TypeGraph pg, ModelToTypeGraph eModelToPg,
+			TAbstractType tAbstractType, Model eModel, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, eTypeToTAbstractType, eType, pg,
+				eModelToPg, tAbstractType, eModel, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, eTypeToTAbstractType, tAbstractType, eModelToPg, eType,
-					pg, eModel, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, eTypeToTAbstractType, eType, pg, eModelToPg,
+					tAbstractType, eModel, ruleResult };
 		}
 		return null;
 	}
@@ -2687,10 +2689,10 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 
 	public static final Object[] pattern_ParameterizedTypeToClass_26_3_solveCSP_bindingAndBlackFBBBBBBBBB(
 			ParameterizedTypeToClass _this, IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eTypeToTAbstractType, TAbstractType tAbstractType, ModelToTypeGraph eModelToPg,
-			Type eType, TypeGraph pg, Model eModel, ModelgeneratorRuleResult ruleResult) {
+			TypeToTAbstractType eTypeToTAbstractType, Type eType, TypeGraph pg, ModelToTypeGraph eModelToPg,
+			TAbstractType tAbstractType, Model eModel, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_ParameterizedTypeToClass_26_3_solveCSP_binding = pattern_ParameterizedTypeToClass_26_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, eTypeToTAbstractType, tAbstractType, eModelToPg, eType, pg, eModel,
+				_this, isApplicableMatch, eTypeToTAbstractType, eType, pg, eModelToPg, tAbstractType, eModel,
 				ruleResult);
 		if (result_pattern_ParameterizedTypeToClass_26_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ParameterizedTypeToClass_26_3_solveCSP_binding[0];
@@ -2699,8 +2701,8 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 					csp);
 			if (result_pattern_ParameterizedTypeToClass_26_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, eTypeToTAbstractType, tAbstractType, eModelToPg,
-						eType, pg, eModel, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, eTypeToTAbstractType, eType, pg, eModelToPg,
+						tAbstractType, eModel, ruleResult };
 			}
 		}
 		return null;
@@ -2714,37 +2716,37 @@ public class ParameterizedTypeToClassImpl extends AbstractRuleImpl implements Pa
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_26_5_checknacs_blackBBBBBB(
-			TypeToTAbstractType eTypeToTAbstractType, TAbstractType tAbstractType, ModelToTypeGraph eModelToPg,
-			Type eType, TypeGraph pg, Model eModel) {
-		return new Object[] { eTypeToTAbstractType, tAbstractType, eModelToPg, eType, pg, eModel };
+			TypeToTAbstractType eTypeToTAbstractType, Type eType, TypeGraph pg, ModelToTypeGraph eModelToPg,
+			TAbstractType tAbstractType, Model eModel) {
+		return new Object[] { eTypeToTAbstractType, eType, pg, eModelToPg, tAbstractType, eModel };
 	}
 
 	public static final Object[] pattern_ParameterizedTypeToClass_26_6_perform_blackBBBBBBB(
-			TypeToTAbstractType eTypeToTAbstractType, TAbstractType tAbstractType, ModelToTypeGraph eModelToPg,
-			Type eType, TypeGraph pg, Model eModel, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { eTypeToTAbstractType, tAbstractType, eModelToPg, eType, pg, eModel, ruleResult };
+			TypeToTAbstractType eTypeToTAbstractType, Type eType, TypeGraph pg, ModelToTypeGraph eModelToPg,
+			TAbstractType tAbstractType, Model eModel, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { eTypeToTAbstractType, eType, pg, eModelToPg, tAbstractType, eModel, ruleResult };
 	}
 
-	public static final Object[] pattern_ParameterizedTypeToClass_26_6_perform_greenFBFBBFB(TAbstractType tAbstractType,
-			Type eType, Model eModel, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_ParameterizedTypeToClass_26_6_perform_greenFBBBFFB(Type eType,
+			TAbstractType tAbstractType, Model eModel, ModelgeneratorRuleResult ruleResult) {
+		ParameterizedType eParameterizedType = JavaFactory.eINSTANCE.createParameterizedType();
 		TypeToTAbstractType eParameterizedTypeToTAbstractType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		TypeAccess eTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
-		ParameterizedType eParameterizedType = JavaFactory.eINSTANCE.createParameterizedType();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
+		eModel.getOrphanTypes().add(eParameterizedType);
+		ruleResult.getSourceObjects().add(eParameterizedType);
 		eParameterizedTypeToTAbstractType.setTarget(tAbstractType);
+		eParameterizedTypeToTAbstractType.setSource(eParameterizedType);
 		ruleResult.getCorrObjects().add(eParameterizedTypeToTAbstractType);
+		eParameterizedType.setType(eTypeAccess);
 		eTypeAccess.setType(eType);
 		ruleResult.getSourceObjects().add(eTypeAccess);
-		eModel.getOrphanTypes().add(eParameterizedType);
-		eParameterizedTypeToTAbstractType.setSource(eParameterizedType);
-		eParameterizedType.setType(eTypeAccess);
-		ruleResult.getSourceObjects().add(eParameterizedType);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { eParameterizedTypeToTAbstractType, tAbstractType, eTypeAccess, eType, eModel,
-				eParameterizedType, ruleResult };
+		return new Object[] { eParameterizedType, eType, tAbstractType, eModel, eParameterizedTypeToTAbstractType,
+				eTypeAccess, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_ParameterizedTypeToClass_26_7_expressionFB(

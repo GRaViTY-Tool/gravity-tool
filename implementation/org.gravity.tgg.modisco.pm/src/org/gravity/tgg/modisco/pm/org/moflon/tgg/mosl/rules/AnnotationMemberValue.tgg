@@ -53,6 +53,7 @@
 	}
 }
 
+#using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
 #rule AnnotationMemberValueBoolean #extends AnnotationMemberValue #with org.gravity.tgg.modisco.pm
@@ -70,7 +71,7 @@
 }
 
 #correspondence {
-	++ mValueToTValue :org.gravity.tgg.modisco.pm.BooleanLiteralToTBoolNode {
+	++ mValueToTValue :LiteralToTNode {
 		#src->mValue
 		#trg->tValue
 	}
@@ -109,7 +110,7 @@
 }
 
 #correspondence {
-	++ mValueToTValue :ClassLiteralToClassNode {
+	++ mValueToTValue :LiteralToTNode {
 		#src->mValue
 		#trg->tValue
 	}
@@ -120,6 +121,7 @@
 	}
 }
 
+#using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
 #rule AnnotationMemberValueNumber #extends AnnotationMemberValue #with org.gravity.tgg.modisco.pm
@@ -137,7 +139,7 @@
 }
 
 #correspondence {
-	++ mTypeToTType :org.gravity.tgg.modisco.pm.NumberLiteralToTNumberNode {
+	++ mTypeToTType : LiteralToTNode {
 		#src->mValue
 		#trg->tValue
 	}
@@ -147,6 +149,7 @@
 	eq(mValue.tokenValue, tValue.tNumber)
 }
 
+#using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
 #rule AnnotationMemberValueString #extends AnnotationMemberValue #with org.gravity.tgg.modisco.pm
@@ -164,7 +167,7 @@
 }
 
 #correspondence {
-	++ mTypeToTType :org.gravity.tgg.modisco.pm.StringLiteralToTTextNode {
+	++ mTypeToTType :LiteralToTNode {
 		#src->mValue
 		#trg->tValue
 	}

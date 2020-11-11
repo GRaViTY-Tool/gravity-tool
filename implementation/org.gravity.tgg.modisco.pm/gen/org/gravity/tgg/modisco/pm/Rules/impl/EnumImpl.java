@@ -768,7 +768,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_59(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_758(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = EnumImpl.pattern_Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
 		if (result1_bindingAndBlack == null) {
@@ -821,7 +821,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_61(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_779(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = EnumImpl.pattern_Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
 		if (result1_bindingAndBlack == null) {
@@ -890,13 +890,13 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
 
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
-		var_tType_tLib.setType("boolean");
-
 		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
 		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
 		var_mType_proxy.setType("boolean");
+
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
+		var_tType_tLib.setType("boolean");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -954,13 +954,13 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
 
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
-		var_tType_tLib.setType("boolean");
-
 		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
 		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
 		var_mType_proxy.setType("boolean");
+
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
+		var_tType_tLib.setType("boolean");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1338,10 +1338,10 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 			return null;
 		case RulesPackage.ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_59__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_59((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_61__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_61((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_758__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_758((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_779__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_779((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2776,11 +2776,11 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 
 	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_0BBBB(TEnum tAnnotation,
 			TPackage tPackage, TClass tType, TypeGraph pg) {
-		TAnnotatable __DEC_tAnnotation_tAnnotated_628001 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotated_628001 != null) {
-			if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_628001)) {
-				if (!tType.equals(__DEC_tAnnotation_tAnnotated_628001)) {
-					if (!pg.equals(__DEC_tAnnotation_tAnnotated_628001)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotated_624026 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotated_624026 != null) {
+			if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_624026)) {
+				if (!tType.equals(__DEC_tAnnotation_tAnnotated_624026)) {
+					if (!pg.equals(__DEC_tAnnotation_tAnnotated_624026)) {
 						return new Object[] { tAnnotation, tPackage, tType, pg };
 					}
 				}
@@ -2791,9 +2791,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_1BB(TClass tType, TPackage tPackage) {
-		for (TPackage __DEC_tType_classes_441198 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_824488 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tType_classes_441198)) {
+			if (!tPackage.equals(__DEC_tType_classes_824488)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2801,9 +2801,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_2BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_724916 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_493366 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_724916)) {
+			if (!pg.equals(__DEC_tType_classes_493366)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2811,9 +2811,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_3BB(TClass tType, TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_296729 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_296729 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_296729)) {
+		TPackage __DEC_tType_ownedTypes_602185 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_602185 != null) {
+			if (!tPackage.equals(__DEC_tType_ownedTypes_602185)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2822,9 +2822,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_4B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_265076 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_265076 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_265076)) {
+		TAbstractType __DEC_tType_innerTypes_419862 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_419862 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_419862)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3001,9 +3001,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_21_2_testcorematchandDECs_black_nac_0B(EnumDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_860312 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_860312 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_860312)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_515886 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_515886 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_515886)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3012,9 +3012,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_21_2_testcorematchandDECs_black_nac_1B(EnumDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_125028 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_734474 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_125028 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_734474 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3022,7 +3022,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_21_2_testcorematchandDECs_black_nac_2B(EnumDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_463532 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_114305 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3030,7 +3030,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_21_2_testcorematchandDECs_black_nac_3B(EnumDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_800599 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_611345 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3294,9 +3294,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_27_1_matchtggpattern_black_nac_0B(EnumDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_717541 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_717541 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_717541)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_380032 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_380032 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_380032)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3305,9 +3305,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_27_1_matchtggpattern_black_nac_1B(EnumDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_88041 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_685099 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_88041 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_685099 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3315,7 +3315,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_27_1_matchtggpattern_black_nac_2B(EnumDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_305084 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_649577 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3323,7 +3323,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_27_1_matchtggpattern_black_nac_3B(EnumDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_548021 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_499801 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3358,11 +3358,11 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 
 	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_0BBBB(TEnum tAnnotation, TPackage tPackage,
 			TClass tType, TypeGraph pg) {
-		TAnnotatable __DEC_tAnnotation_tAnnotated_789758 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotated_789758 != null) {
-			if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_789758)) {
-				if (!tType.equals(__DEC_tAnnotation_tAnnotated_789758)) {
-					if (!pg.equals(__DEC_tAnnotation_tAnnotated_789758)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotated_757713 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotated_757713 != null) {
+			if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_757713)) {
+				if (!tType.equals(__DEC_tAnnotation_tAnnotated_757713)) {
+					if (!pg.equals(__DEC_tAnnotation_tAnnotated_757713)) {
 						return new Object[] { tAnnotation, tPackage, tType, pg };
 					}
 				}
@@ -3373,9 +3373,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_1BB(TClass tType, TPackage tPackage) {
-		for (TPackage __DEC_tType_classes_39189 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_786229 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tType_classes_39189)) {
+			if (!tPackage.equals(__DEC_tType_classes_786229)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3383,9 +3383,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_2BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_141689 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_456842 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_141689)) {
+			if (!pg.equals(__DEC_tType_classes_456842)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3393,9 +3393,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_3BB(TClass tType, TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_385261 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_385261 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_385261)) {
+		TPackage __DEC_tType_ownedTypes_446508 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_446508 != null) {
+			if (!tPackage.equals(__DEC_tType_ownedTypes_446508)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3404,9 +3404,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_4B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_777747 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_777747 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_777747)) {
+		TAbstractType __DEC_tType_innerTypes_541999 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_541999 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_541999)) {
 				return new Object[] { tType };
 			}
 		}

@@ -21,13 +21,6 @@
 	}
 }
 
-#correspondence {
-	++ mInterfaceDeclarationtoTInterface :InterfaceDeclarationToTInterface {
-		#src->eNestedType
-		#trg->tNestedType
-	}
-}
-
 #attributeConditions {
 	eq(eNestedType.name, tNestedType.tName)
 }

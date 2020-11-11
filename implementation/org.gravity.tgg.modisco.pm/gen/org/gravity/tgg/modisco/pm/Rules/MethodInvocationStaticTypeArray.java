@@ -52,7 +52,7 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	boolean isAppropriate_FWD(Match match, Type arrayType, MMethodInvocation invocation,
-			MAbstractMethodDefinition method, ArrayType mStaticType, TypeAccess typeAccess);
+			MAbstractMethodDefinition method, TypeAccess typeAccess, ArrayType mStaticType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,7 +77,7 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjectsToMatch_FWD(Match match, Type arrayType, MMethodInvocation invocation,
-			MAbstractMethodDefinition method, ArrayType mStaticType, TypeAccess typeAccess);
+			MAbstractMethodDefinition method, TypeAccess typeAccess, ArrayType mStaticType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,7 +86,7 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isAppropriate_solveCsp_FWD(Match match, Type arrayType, MMethodInvocation invocation,
-			MAbstractMethodDefinition method, ArrayType mStaticType, TypeAccess typeAccess);
+			MAbstractMethodDefinition method, TypeAccess typeAccess, ArrayType mStaticType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,8 +103,8 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Type arrayType, MMethodInvocation invocation,
-			TAbstractType tStaticType, MAbstractMethodDefinition method, TCall tAccess, ArrayType mStaticType,
-			TypeAccess typeAccess, TypeToTAbstractType mStaticTypeTotStaticType,
+			TAbstractType tStaticType, MAbstractMethodDefinition method, TCall tAccess, TypeAccess typeAccess,
+			ArrayType mStaticType, TypeToTAbstractType mStaticTypeTotStaticType,
 			AbstractMethodInvocationToTAccess invocationToTAccess);
 
 	/**
@@ -122,7 +122,7 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject arrayType, EObject invocation, EObject tStaticType,
-			EObject method, EObject tAccess, EObject mStaticType, EObject typeAccess, EObject mStaticTypeTotStaticType,
+			EObject method, EObject tAccess, EObject typeAccess, EObject mStaticType, EObject mStaticTypeTotStaticType,
 			EObject invocationToTAccess);
 
 	/**
@@ -188,8 +188,8 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type arrayType, MMethodInvocation invocation,
-			TAbstractType tStaticType, MAbstractMethodDefinition method, TCall tAccess, ArrayType mStaticType,
-			TypeAccess typeAccess, TypeToTAbstractType mStaticTypeTotStaticType,
+			TAbstractType tStaticType, MAbstractMethodDefinition method, TCall tAccess, TypeAccess typeAccess,
+			ArrayType mStaticType, TypeToTAbstractType mStaticTypeTotStaticType,
 			AbstractMethodInvocationToTAccess invocationToTAccess);
 
 	/**
@@ -207,7 +207,7 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject arrayType, EObject invocation, EObject tStaticType,
-			EObject method, EObject tAccess, EObject mStaticType, EObject typeAccess, EObject mStaticTypeTotStaticType,
+			EObject method, EObject tAccess, EObject typeAccess, EObject mStaticType, EObject mStaticTypeTotStaticType,
 			EObject invocationToTAccess);
 
 	/**
@@ -224,7 +224,7 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_43(EMoflonEdge _edge_staticType);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_703(EMoflonEdge _edge_staticType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,7 +232,7 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_44(EMoflonEdge _edge_mStaticType);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_722(EMoflonEdge _edge_mStaticType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -265,7 +265,7 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(Type arrayType, MMethodInvocation invocation, TAbstractType tStaticType,
-			MAbstractMethodDefinition method, TCall tAccess, ArrayType mStaticType, TypeAccess typeAccess,
+			MAbstractMethodDefinition method, TCall tAccess, TypeAccess typeAccess, ArrayType mStaticType,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -283,7 +283,7 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	boolean checkDEC_FWD(Type arrayType, MMethodInvocation invocation, MAbstractMethodDefinition method,
-			ArrayType mStaticType, TypeAccess typeAccess);
+			TypeAccess typeAccess, ArrayType mStaticType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -310,8 +310,8 @@ public interface MethodInvocationStaticTypeArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type arrayType, MMethodInvocation invocation,
-			TAbstractType tStaticType, MAbstractMethodDefinition method, TCall tAccess, ArrayType mStaticType,
-			TypeAccess typeAccess, TypeToTAbstractType mStaticTypeTotStaticType,
+			TAbstractType tStaticType, MAbstractMethodDefinition method, TCall tAccess, TypeAccess typeAccess,
+			ArrayType mStaticType, TypeToTAbstractType mStaticTypeTotStaticType,
 			AbstractMethodInvocationToTAccess invocationToTAccess, ModelgeneratorRuleResult ruleResult);
 
 	/**

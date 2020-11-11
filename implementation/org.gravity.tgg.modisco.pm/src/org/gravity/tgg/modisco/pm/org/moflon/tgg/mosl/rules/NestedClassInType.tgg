@@ -22,13 +22,6 @@
 	}
 }
 
-#correspondence {
-	++ mNestedClassDeclarationToTNestedClass :ClassDeclarationToTClass {
-		#src->eNestedType
-		#trg->tNestedType
-	}
-}
-
 #attributeConditions {
 	eq(eNestedType.name, tNestedType.tName)
 }

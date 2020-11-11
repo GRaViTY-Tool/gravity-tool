@@ -169,58 +169,59 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		MMethodDefinition mMember = (MMethodDefinition) result1_bindingAndBlack[0];
-		TMethodDefinition tMember = (TMethodDefinition) result1_bindingAndBlack[1];
-		MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result1_bindingAndBlack[2];
-		MMethodInvocation invocation = (MMethodInvocation) result1_bindingAndBlack[3];
+		MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result1_bindingAndBlack[1];
+		MMethodInvocation invocation = (MMethodInvocation) result1_bindingAndBlack[2];
+		TMethodDefinition tMember = (TMethodDefinition) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_1_1_performtransformation_greenBFFBF(tMember, invocation);
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[1];
-		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_green[2];
-		TCall tAccess = (TCall) result1_green[4];
+				.pattern_MethodInvocationRecursive_1_1_performtransformation_greenFBFFB(invocation, tMember);
+		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_green[0];
+		TCall tAccess = (TCall) result1_green[2];
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[3];
 
 		Object[] result2_black = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_1_2_collecttranslatedelements_blackBBBB(mFlowElementToTFlowElement,
-						invocationToTAccess, invocation, tAccess);
+				.pattern_MethodInvocationRecursive_1_2_collecttranslatedelements_blackBBBB(invocationToTAccess,
+						invocation, tAccess, mFlowElementToTFlowElement);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mFlowElementToTFlowElement] = "
-					+ mFlowElementToTFlowElement + ", " + "[invocationToTAccess] = " + invocationToTAccess + ", "
-					+ "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[invocationToTAccess] = "
+					+ invocationToTAccess + ", " + "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess
+					+ ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ".");
 		}
 		Object[] result2_green = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_1_2_collecttranslatedelements_greenFBBBB(mFlowElementToTFlowElement,
-						invocationToTAccess, invocation, tAccess);
+				.pattern_MethodInvocationRecursive_1_2_collecttranslatedelements_greenFBBBB(invocationToTAccess,
+						invocation, tAccess, mFlowElementToTFlowElement);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, mMember, tMember,
-						mFlowElementToTFlowElement, invocationToTAccess, mMemberToTMember, invocation, tAccess);
+				.pattern_MethodInvocationRecursive_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, mMember,
+						invocationToTAccess, mMemberToTMember, invocation, tAccess, mFlowElementToTFlowElement,
+						tMember);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mMember] = " + mMember + ", " + "[tMember] = " + tMember + ", "
-					+ "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", " + "[invocationToTAccess] = "
-					+ invocationToTAccess + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", " + "[invocation] = "
-					+ invocation + ", " + "[tAccess] = " + tAccess + ".");
+					+ ", " + "[mMember] = " + mMember + ", " + "[invocationToTAccess] = " + invocationToTAccess + ", "
+					+ "[mMemberToTMember] = " + mMemberToTMember + ", " + "[invocation] = " + invocation + ", "
+					+ "[tAccess] = " + tAccess + ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement
+					+ ", " + "[tMember] = " + tMember + ".");
 		}
 		MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFFFFFF(
-				ruleresult, mMember, tMember, mFlowElementToTFlowElement, invocationToTAccess, invocation, tAccess);
-		//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge invocation__mMember____method = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge mMember__invocation____usages = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge tAccess__tMember____tTarget = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge tMember__tAccess____accessedBy = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[17];
+				ruleresult, mMember, invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement, tMember);
+		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge invocation__mMember____method = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mMember__invocation____usages = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tAccess__tMember____tTarget = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tMember__tAccess____accessedBy = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result3_green[17];
 
 		// 
 		// 
 		MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_1_5_registerobjects_expressionBBBBBBBBB(this,
-				ruleresult, mMember, tMember, mFlowElementToTFlowElement, invocationToTAccess, mMemberToTMember,
-				invocation, tAccess);
+				ruleresult, mMember, invocationToTAccess, mMemberToTMember, invocation, tAccess,
+				mFlowElementToTFlowElement, tMember);
 		return MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_1_6_expressionFB(ruleresult);
 	}
 
@@ -252,31 +253,31 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 		MMethodDefinition mMember = (MMethodDefinition) result2_binding[0];
 		MMethodInvocation invocation = (MMethodInvocation) result2_binding[1];
 		for (Object[] result2_black : MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_2_2_corematch_blackBFFBB(mMember, invocation, match)) {
-			TMethodDefinition tMember = (TMethodDefinition) result2_black[1];
-			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[2];
+				.pattern_MethodInvocationRecursive_2_2_corematch_blackBFBFB(mMember, invocation, match)) {
+			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[1];
+			TMethodDefinition tMember = (TMethodDefinition) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : MethodInvocationRecursiveImpl
-					.pattern_MethodInvocationRecursive_2_3_findcontext_blackBBBB(mMember, tMember, mMemberToTMember,
-							invocation)) {
+					.pattern_MethodInvocationRecursive_2_3_findcontext_blackBBBB(mMember, mMemberToTMember, invocation,
+							tMember)) {
 				Object[] result3_green = MethodInvocationRecursiveImpl
-						.pattern_MethodInvocationRecursive_2_3_findcontext_greenBBBBFFFFFF(mMember, tMember,
-								mMemberToTMember, invocation);
+						.pattern_MethodInvocationRecursive_2_3_findcontext_greenBBBBFFFFFF(mMember, mMemberToTMember,
+								invocation, tMember);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge invocation__mMember____method = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mMember__invocation____usages = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge invocation__mMember____method = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mMember__invocation____usages = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[9];
 
 				Object[] result4_bindingAndBlack = MethodInvocationRecursiveImpl
 						.pattern_MethodInvocationRecursive_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								mMember, tMember, mMemberToTMember, invocation);
+								mMember, mMemberToTMember, invocation, tMember);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMember] = " + mMember + ", "
-							+ "[tMember] = " + tMember + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", "
-							+ "[invocation] = " + invocation + ".");
+							+ "[mMemberToTMember] = " + mMemberToTMember + ", " + "[invocation] = " + invocation + ", "
+							+ "[tMember] = " + tMember + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -348,7 +349,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, MMethodInvocation invocation) {// Create CSP
+			MDefinitionToTMember mMemberToTMember, MMethodInvocation invocation, TMethodDefinition tMember) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -364,9 +365,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mMember", mMember);
-		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
 		isApplicableMatch.registerObject("invocation", invocation);
+		isApplicableMatch.registerObject("tMember", tMember);
 		return csp;
 	}
 
@@ -384,16 +385,16 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMember, EObject tMember,
-			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMemberToTMember,
-			EObject invocation, EObject tAccess) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMember, EObject invocationToTAccess,
+			EObject mMemberToTMember, EObject invocation, EObject tAccess, EObject mFlowElementToTFlowElement,
+			EObject tMember) {
 		ruleresult.registerObject("mMember", mMember);
-		ruleresult.registerObject("tMember", tMember);
-		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
 		ruleresult.registerObject("invocationToTAccess", invocationToTAccess);
 		ruleresult.registerObject("mMemberToTMember", mMemberToTMember);
 		ruleresult.registerObject("invocation", invocation);
 		ruleresult.registerObject("tAccess", tAccess);
+		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
+		ruleresult.registerObject("tMember", tMember);
 
 	}
 
@@ -412,52 +413,52 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TMethodDefinition tMember, TCall tAccess) {
+	public boolean isAppropriate_BWD(Match match, TCall tAccess, TMethodDefinition tMember) {
 
 		Object[] result1_black = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_10_1_initialbindings_blackBBBB(this, match, tMember, tAccess);
+				.pattern_MethodInvocationRecursive_10_1_initialbindings_blackBBBB(this, match, tAccess, tMember);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ".");
+					+ "[match] = " + match + ", " + "[tAccess] = " + tAccess + ", " + "[tMember] = " + tMember + ".");
 		}
 
 		Object[] result2_bindingAndBlack = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tMember, tAccess);
+				.pattern_MethodInvocationRecursive_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tAccess, tMember);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ".");
+					+ "[match] = " + match + ", " + "[tAccess] = " + tAccess + ", " + "[tMember] = " + tMember + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = MethodInvocationRecursiveImpl
-					.pattern_MethodInvocationRecursive_10_4_collectelementstobetranslated_blackBBB(match, tMember,
-							tAccess);
+					.pattern_MethodInvocationRecursive_10_4_collectelementstobetranslated_blackBBB(match, tAccess,
+							tMember);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ".");
+						+ "[tAccess] = " + tAccess + ", " + "[tMember] = " + tMember + ".");
 			}
 			MethodInvocationRecursiveImpl
-					.pattern_MethodInvocationRecursive_10_4_collectelementstobetranslated_greenBBBFFFF(match, tMember,
-							tAccess);
-			//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result4_green[3];
-			//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge tAccess__tMember____tTarget = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge tMember__tAccess____accessedBy = (EMoflonEdge) result4_green[6];
+					.pattern_MethodInvocationRecursive_10_4_collectelementstobetranslated_greenBBBFFFF(match, tAccess,
+							tMember);
+			//nothing EMoflonEdge tAccess__tMember____tTarget = (EMoflonEdge) result4_green[3];
+			//nothing EMoflonEdge tMember__tAccess____accessedBy = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = MethodInvocationRecursiveImpl
-					.pattern_MethodInvocationRecursive_10_5_collectcontextelements_blackBBB(match, tMember, tAccess);
+					.pattern_MethodInvocationRecursive_10_5_collectcontextelements_blackBBB(match, tAccess, tMember);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ".");
+						+ "[tAccess] = " + tAccess + ", " + "[tMember] = " + tMember + ".");
 			}
 			MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_10_5_collectcontextelements_greenBB(match,
 					tMember);
 
 			// 
 			MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_10_6_registerobjectstomatch_expressionBBBB(
-					this, match, tMember, tAccess);
+					this, match, tAccess, tMember);
 			return MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_10_7_expressionF();
 		} else {
 			return MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_10_8_expressionF();
@@ -480,59 +481,60 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		MMethodDefinition mMember = (MMethodDefinition) result1_bindingAndBlack[0];
-		TMethodDefinition tMember = (TMethodDefinition) result1_bindingAndBlack[1];
-		MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result1_bindingAndBlack[2];
-		TCall tAccess = (TCall) result1_bindingAndBlack[3];
+		MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result1_bindingAndBlack[1];
+		TCall tAccess = (TCall) result1_bindingAndBlack[2];
+		TMethodDefinition tMember = (TMethodDefinition) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_11_1_performtransformation_greenBFFFB(mMember, tAccess);
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[1];
-		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_green[2];
-		MMethodInvocation invocation = (MMethodInvocation) result1_green[3];
+				.pattern_MethodInvocationRecursive_11_1_performtransformation_greenBFFBF(mMember, tAccess);
+		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_green[1];
+		MMethodInvocation invocation = (MMethodInvocation) result1_green[2];
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[4];
 
 		Object[] result2_black = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_11_2_collecttranslatedelements_blackBBBB(mFlowElementToTFlowElement,
-						invocationToTAccess, invocation, tAccess);
+				.pattern_MethodInvocationRecursive_11_2_collecttranslatedelements_blackBBBB(invocationToTAccess,
+						invocation, tAccess, mFlowElementToTFlowElement);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mFlowElementToTFlowElement] = "
-					+ mFlowElementToTFlowElement + ", " + "[invocationToTAccess] = " + invocationToTAccess + ", "
-					+ "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[invocationToTAccess] = "
+					+ invocationToTAccess + ", " + "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess
+					+ ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ".");
 		}
 		Object[] result2_green = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_11_2_collecttranslatedelements_greenFBBBB(mFlowElementToTFlowElement,
-						invocationToTAccess, invocation, tAccess);
+				.pattern_MethodInvocationRecursive_11_2_collecttranslatedelements_greenFBBBB(invocationToTAccess,
+						invocation, tAccess, mFlowElementToTFlowElement);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, mMember, tMember,
-						mFlowElementToTFlowElement, invocationToTAccess, mMemberToTMember, invocation, tAccess);
+				.pattern_MethodInvocationRecursive_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, mMember,
+						invocationToTAccess, mMemberToTMember, invocation, tAccess, mFlowElementToTFlowElement,
+						tMember);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mMember] = " + mMember + ", " + "[tMember] = " + tMember + ", "
-					+ "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", " + "[invocationToTAccess] = "
-					+ invocationToTAccess + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", " + "[invocation] = "
-					+ invocation + ", " + "[tAccess] = " + tAccess + ".");
+					+ ", " + "[mMember] = " + mMember + ", " + "[invocationToTAccess] = " + invocationToTAccess + ", "
+					+ "[mMemberToTMember] = " + mMemberToTMember + ", " + "[invocation] = " + invocation + ", "
+					+ "[tAccess] = " + tAccess + ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement
+					+ ", " + "[tMember] = " + tMember + ".");
 		}
 		MethodInvocationRecursiveImpl
 				.pattern_MethodInvocationRecursive_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFFFFFF(ruleresult, mMember,
-						tMember, mFlowElementToTFlowElement, invocationToTAccess, invocation, tAccess);
-		//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge invocation__mMember____method = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge mMember__invocation____usages = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge tAccess__tMember____tTarget = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge tMember__tAccess____accessedBy = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[17];
+						invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement, tMember);
+		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge invocation__mMember____method = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mMember__invocation____usages = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tAccess__tMember____tTarget = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tMember__tAccess____accessedBy = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result3_green[17];
 
 		// 
 		// 
 		MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_11_5_registerobjects_expressionBBBBBBBBB(this,
-				ruleresult, mMember, tMember, mFlowElementToTFlowElement, invocationToTAccess, mMemberToTMember,
-				invocation, tAccess);
+				ruleresult, mMember, invocationToTAccess, mMemberToTMember, invocation, tAccess,
+				mFlowElementToTFlowElement, tMember);
 		return MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_11_6_expressionFB(ruleresult);
 	}
 
@@ -561,35 +563,35 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TMethodDefinition tMember = (TMethodDefinition) result2_binding[0];
-		TCall tAccess = (TCall) result2_binding[1];
+		TCall tAccess = (TCall) result2_binding[0];
+		TMethodDefinition tMember = (TMethodDefinition) result2_binding[1];
 		for (Object[] result2_black : MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_12_2_corematch_blackFBFBB(tMember, tAccess, match)) {
+				.pattern_MethodInvocationRecursive_12_2_corematch_blackFFBBB(tAccess, tMember, match)) {
 			MMethodDefinition mMember = (MMethodDefinition) result2_black[0];
-			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[2];
+			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[1];
 			// ForEach 
 			for (Object[] result3_black : MethodInvocationRecursiveImpl
-					.pattern_MethodInvocationRecursive_12_3_findcontext_blackBBBB(mMember, tMember, mMemberToTMember,
-							tAccess)) {
+					.pattern_MethodInvocationRecursive_12_3_findcontext_blackBBBB(mMember, mMemberToTMember, tAccess,
+							tMember)) {
 				Object[] result3_green = MethodInvocationRecursiveImpl
-						.pattern_MethodInvocationRecursive_12_3_findcontext_greenBBBBFFFFFFF(mMember, tMember,
-								mMemberToTMember, tAccess);
+						.pattern_MethodInvocationRecursive_12_3_findcontext_greenBBBBFFFFFFF(mMember, mMemberToTMember,
+								tAccess, tMember);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tAccess__tMember____tTarget = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tMember__tAccess____accessedBy = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge tAccess__tMember____tTarget = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge tMember__tAccess____accessedBy = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[10];
 
 				Object[] result4_bindingAndBlack = MethodInvocationRecursiveImpl
 						.pattern_MethodInvocationRecursive_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								mMember, tMember, mMemberToTMember, tAccess);
+								mMember, mMemberToTMember, tAccess, tMember);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMember] = " + mMember + ", "
-							+ "[tMember] = " + tMember + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", "
-							+ "[tAccess] = " + tAccess + ".");
+							+ "[mMemberToTMember] = " + mMemberToTMember + ", " + "[tAccess] = " + tAccess + ", "
+							+ "[tMember] = " + tMember + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -620,9 +622,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TMethodDefinition tMember, TCall tAccess) {
-		match.registerObject("tMember", tMember);
+	public void registerObjectsToMatch_BWD(Match match, TCall tAccess, TMethodDefinition tMember) {
 		match.registerObject("tAccess", tAccess);
+		match.registerObject("tMember", tMember);
 
 	}
 
@@ -631,7 +633,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TMethodDefinition tMember, TCall tAccess) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TCall tAccess, TMethodDefinition tMember) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -661,7 +663,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, TCall tAccess) {// Create CSP
+			MDefinitionToTMember mMemberToTMember, TCall tAccess, TMethodDefinition tMember) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -677,9 +679,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mMember", mMember);
-		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
 		isApplicableMatch.registerObject("tAccess", tAccess);
+		isApplicableMatch.registerObject("tMember", tMember);
 		return csp;
 	}
 
@@ -697,16 +699,16 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMember, EObject tMember,
-			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMemberToTMember,
-			EObject invocation, EObject tAccess) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMember, EObject invocationToTAccess,
+			EObject mMemberToTMember, EObject invocation, EObject tAccess, EObject mFlowElementToTFlowElement,
+			EObject tMember) {
 		ruleresult.registerObject("mMember", mMember);
-		ruleresult.registerObject("tMember", tMember);
-		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
 		ruleresult.registerObject("invocationToTAccess", invocationToTAccess);
 		ruleresult.registerObject("mMemberToTMember", mMemberToTMember);
 		ruleresult.registerObject("invocation", invocation);
 		ruleresult.registerObject("tAccess", tAccess);
+		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
+		ruleresult.registerObject("tMember", tMember);
 
 	}
 
@@ -725,7 +727,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_63(EMoflonEdge _edge_tAccessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_720(EMoflonEdge _edge_tTarget) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationRecursiveImpl
 				.pattern_MethodInvocationRecursive_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -741,9 +743,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 		// ForEach 
 		for (Object[] result2_black : MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_20_2_testcorematchandDECs_blackFFB(_edge_tAccessing)) {
-			TMethodDefinition tMember = (TMethodDefinition) result2_black[0];
-			TCall tAccess = (TCall) result2_black[1];
+				.pattern_MethodInvocationRecursive_20_2_testcorematchandDECs_blackFFB(_edge_tTarget)) {
+			TCall tAccess = (TCall) result2_black[0];
+			TMethodDefinition tMember = (TMethodDefinition) result2_black[1];
 			Object[] result2_green = MethodInvocationRecursiveImpl
 					.pattern_MethodInvocationRecursive_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -751,7 +753,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 			// 
 			if (MethodInvocationRecursiveImpl
 					.pattern_MethodInvocationRecursive_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, tMember, tAccess)) {
+							this, match, tAccess, tMember)) {
 				// 
 				if (MethodInvocationRecursiveImpl
 						.pattern_MethodInvocationRecursive_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -783,7 +785,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_65(EMoflonEdge _edge_mMethodInvocations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_740(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationRecursiveImpl
 				.pattern_MethodInvocationRecursive_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -919,17 +921,17 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		MMethodDefinition mMember = (MMethodDefinition) result2_bindingAndBlack[0];
-		TMethodDefinition tMember = (TMethodDefinition) result2_bindingAndBlack[1];
-		MMethodInvocation invocation = (MMethodInvocation) result2_bindingAndBlack[2];
-		TCall tAccess = (TCall) result2_bindingAndBlack[3];
+		MMethodInvocation invocation = (MMethodInvocation) result2_bindingAndBlack[1];
+		TCall tAccess = (TCall) result2_bindingAndBlack[2];
+		TMethodDefinition tMember = (TMethodDefinition) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, mMember, tMember,
-						invocation, tAccess, sourceMatch, targetMatch);
+				.pattern_MethodInvocationRecursive_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, mMember, invocation,
+						tAccess, tMember, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mMember] = " + mMember + ", " + "[tMember] = " + tMember + ", " + "[invocation] = " + invocation
-					+ ", " + "[tAccess] = " + tAccess + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[mMember] = " + mMember + ", " + "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess
+					+ ", " + "[tMember] = " + tMember + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -937,26 +939,26 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 		if (MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : MethodInvocationRecursiveImpl
-					.pattern_MethodInvocationRecursive_24_5_matchcorrcontext_blackBBFBB(mMember, tMember, sourceMatch,
+					.pattern_MethodInvocationRecursive_24_5_matchcorrcontext_blackBFBBB(mMember, tMember, sourceMatch,
 							targetMatch)) {
-				MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result5_black[2];
+				MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result5_black[1];
 				Object[] result5_green = MethodInvocationRecursiveImpl
 						.pattern_MethodInvocationRecursive_24_5_matchcorrcontext_greenBBBF(mMemberToTMember,
 								sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = MethodInvocationRecursiveImpl
-						.pattern_MethodInvocationRecursive_24_6_createcorrespondence_blackBBBBB(mMember, tMember,
-								invocation, tAccess, ccMatch);
+						.pattern_MethodInvocationRecursive_24_6_createcorrespondence_blackBBBBB(mMember, invocation,
+								tAccess, tMember, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mMember] = " + mMember
-							+ ", " + "[tMember] = " + tMember + ", " + "[invocation] = " + invocation + ", "
-							+ "[tAccess] = " + tAccess + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ ", " + "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess + ", "
+							+ "[tMember] = " + tMember + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_24_6_createcorrespondence_greenFFBBB(
+				MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_24_6_createcorrespondence_greenFBBFB(
 						invocation, tAccess, ccMatch);
-				//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[0];
-				//nothing AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result6_green[1];
+				//nothing AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result6_green[0];
+				//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[3];
 
 				Object[] result7_black = MethodInvocationRecursiveImpl
 						.pattern_MethodInvocationRecursive_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -979,8 +981,8 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MMethodDefinition mMember, TMethodDefinition tMember,
-			MMethodInvocation invocation, TCall tAccess, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(MMethodDefinition mMember, MMethodInvocation invocation, TCall tAccess,
+			TMethodDefinition tMember, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1025,9 +1027,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TMethodDefinition tMember, TCall tAccess) {// 
+	public boolean checkDEC_BWD(TCall tAccess, TMethodDefinition tMember) {// 
 		Object[] result1_black = MethodInvocationRecursiveImpl
-				.pattern_MethodInvocationRecursive_28_1_matchtggpattern_blackBB(tMember, tAccess);
+				.pattern_MethodInvocationRecursive_28_1_matchtggpattern_blackBB(tAccess, tMember);
 		if (result1_black != null) {
 			return MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_28_2_expressionF();
 		} else {
@@ -1064,11 +1066,11 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 			Object[] result3_bindingAndBlack = MethodInvocationRecursiveImpl
 					.pattern_MethodInvocationRecursive_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-							mMember, tMember, mMemberToTMember, ruleResult);
+							mMember, mMemberToTMember, tMember, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMember] = " + mMember + ", "
-						+ "[tMember] = " + tMember + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", "
+						+ "[mMemberToTMember] = " + mMemberToTMember + ", " + "[tMember] = " + tMember + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1077,23 +1079,23 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 					csp)) {
 				// 
 				Object[] result5_black = MethodInvocationRecursiveImpl
-						.pattern_MethodInvocationRecursive_29_5_checknacs_blackBBB(mMember, tMember, mMemberToTMember);
+						.pattern_MethodInvocationRecursive_29_5_checknacs_blackBBB(mMember, mMemberToTMember, tMember);
 				if (result5_black != null) {
 
 					Object[] result6_black = MethodInvocationRecursiveImpl
-							.pattern_MethodInvocationRecursive_29_6_perform_blackBBBB(mMember, tMember,
-									mMemberToTMember, ruleResult);
+							.pattern_MethodInvocationRecursive_29_6_perform_blackBBBB(mMember, mMemberToTMember,
+									tMember, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mMember] = "
-								+ mMember + ", " + "[tMember] = " + tMember + ", " + "[mMemberToTMember] = "
-								+ mMemberToTMember + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ mMember + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", " + "[tMember] = "
+								+ tMember + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_29_6_perform_greenBBFFFFB(mMember,
+					MethodInvocationRecursiveImpl.pattern_MethodInvocationRecursive_29_6_perform_greenBFFFFBB(mMember,
 							tMember, ruleResult);
-					//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[2];
-					//nothing AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result6_green[3];
-					//nothing MMethodInvocation invocation = (MMethodInvocation) result6_green[4];
-					//nothing TCall tAccess = (TCall) result6_green[5];
+					//nothing AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result6_green[1];
+					//nothing MMethodInvocation invocation = (MMethodInvocation) result6_green[2];
+					//nothing TCall tAccess = (TCall) result6_green[3];
+					//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[4];
 
 				} else {
 				}
@@ -1111,7 +1113,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, ModelgeneratorRuleResult ruleResult) {// Create CSP
+			MDefinitionToTMember mMemberToTMember, TMethodDefinition tMember, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1127,8 +1129,8 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mMember", mMember);
-		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
+		isApplicableMatch.registerObject("tMember", tMember);
 		return csp;
 	}
 
@@ -1165,10 +1167,10 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 					(MMethodInvocation) arguments.get(2));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_TMETHODDEFINITION_MDEFINITIONTOTMEMBER_MMETHODINVOCATION:
+		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_MDEFINITIONTOTMEMBER_MMETHODINVOCATION_TMETHODDEFINITION:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MMethodDefinition) arguments.get(1),
-					(TMethodDefinition) arguments.get(2), (MDefinitionToTMember) arguments.get(3),
-					(MMethodInvocation) arguments.get(4));
+					(MDefinitionToTMember) arguments.get(2), (MMethodInvocation) arguments.get(3),
+					(TMethodDefinition) arguments.get(4));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1178,26 +1180,26 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 			return null;
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPROPRIATE_BWD__MATCH_TMETHODDEFINITION_TCALL:
-			return isAppropriate_BWD((Match) arguments.get(0), (TMethodDefinition) arguments.get(1),
-					(TCall) arguments.get(2));
+		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPROPRIATE_BWD__MATCH_TCALL_TMETHODDEFINITION:
+			return isAppropriate_BWD((Match) arguments.get(0), (TCall) arguments.get(1),
+					(TMethodDefinition) arguments.get(2));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_RECURSIVE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMETHODDEFINITION_TCALL:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMethodDefinition) arguments.get(1),
-					(TCall) arguments.get(2));
+		case RulesPackage.METHOD_INVOCATION_RECURSIVE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TCALL_TMETHODDEFINITION:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TCall) arguments.get(1),
+					(TMethodDefinition) arguments.get(2));
 			return null;
-		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMETHODDEFINITION_TCALL:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMethodDefinition) arguments.get(1),
-					(TCall) arguments.get(2));
+		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TCALL_TMETHODDEFINITION:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TCall) arguments.get(1),
+					(TMethodDefinition) arguments.get(2));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_TMETHODDEFINITION_MDEFINITIONTOTMEMBER_TCALL:
+		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_MDEFINITIONTOTMEMBER_TCALL_TMETHODDEFINITION:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MMethodDefinition) arguments.get(1),
-					(TMethodDefinition) arguments.get(2), (MDefinitionToTMember) arguments.get(3),
-					(TCall) arguments.get(4));
+					(MDefinitionToTMember) arguments.get(2), (TCall) arguments.get(3),
+					(TMethodDefinition) arguments.get(4));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1207,32 +1209,32 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 			return null;
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_63__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_63((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_65__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_65((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_720__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_720((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_740__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_740((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_SOLVE_CSP_CC__MMETHODDEFINITION_TMETHODDEFINITION_MMETHODINVOCATION_TCALL_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MMethodDefinition) arguments.get(0), (TMethodDefinition) arguments.get(1),
-					(MMethodInvocation) arguments.get(2), (TCall) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_SOLVE_CSP_CC__MMETHODDEFINITION_MMETHODINVOCATION_TCALL_TMETHODDEFINITION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((MMethodDefinition) arguments.get(0), (MMethodInvocation) arguments.get(1),
+					(TCall) arguments.get(2), (TMethodDefinition) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___CHECK_DEC_FWD__MMETHODDEFINITION_MMETHODINVOCATION:
 			return checkDEC_FWD((MMethodDefinition) arguments.get(0), (MMethodInvocation) arguments.get(1));
-		case RulesPackage.METHOD_INVOCATION_RECURSIVE___CHECK_DEC_BWD__TMETHODDEFINITION_TCALL:
-			return checkDEC_BWD((TMethodDefinition) arguments.get(0), (TCall) arguments.get(1));
+		case RulesPackage.METHOD_INVOCATION_RECURSIVE___CHECK_DEC_BWD__TCALL_TMETHODDEFINITION:
+			return checkDEC_BWD((TCall) arguments.get(0), (TMethodDefinition) arguments.get(1));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
 			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
-		case RulesPackage.METHOD_INVOCATION_RECURSIVE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_TMETHODDEFINITION_MDEFINITIONTOTMEMBER_MODELGENERATORRULERESULT:
+		case RulesPackage.METHOD_INVOCATION_RECURSIVE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_MDEFINITIONTOTMEMBER_TMETHODDEFINITION_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MMethodDefinition) arguments.get(1), (TMethodDefinition) arguments.get(2),
-					(MDefinitionToTMember) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+					(MMethodDefinition) arguments.get(1), (MDefinitionToTMember) arguments.get(2),
+					(TMethodDefinition) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.METHOD_INVOCATION_RECURSIVE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1342,22 +1344,22 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	public static final Object[] pattern_MethodInvocationRecursive_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mMember");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tMember");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mMemberToTMember");
-		EObject _localVariable_3 = isApplicableMatch.getObject("invocation");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mMemberToTMember");
+		EObject _localVariable_2 = isApplicableMatch.getObject("invocation");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tMember");
 		EObject tmpMMember = _localVariable_0;
-		EObject tmpTMember = _localVariable_1;
-		EObject tmpMMemberToTMember = _localVariable_2;
-		EObject tmpInvocation = _localVariable_3;
+		EObject tmpMMemberToTMember = _localVariable_1;
+		EObject tmpInvocation = _localVariable_2;
+		EObject tmpTMember = _localVariable_3;
 		if (tmpMMember instanceof MMethodDefinition) {
 			MMethodDefinition mMember = (MMethodDefinition) tmpMMember;
-			if (tmpTMember instanceof TMethodDefinition) {
-				TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
-				if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
-					MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
-					if (tmpInvocation instanceof MMethodInvocation) {
-						MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
-						return new Object[] { mMember, tMember, mMemberToTMember, invocation, isApplicableMatch };
+			if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
+				MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
+				if (tmpInvocation instanceof MMethodInvocation) {
+					MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
+					if (tmpTMember instanceof TMethodDefinition) {
+						TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
+						return new Object[] { mMember, mMemberToTMember, invocation, tMember, isApplicableMatch };
 					}
 				}
 			}
@@ -1366,12 +1368,12 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_1_1_performtransformation_blackBBBBFBB(
-			MMethodDefinition mMember, TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember,
-			MMethodInvocation invocation, MethodInvocationRecursive _this, IsApplicableMatch isApplicableMatch) {
+			MMethodDefinition mMember, MDefinitionToTMember mMemberToTMember, MMethodInvocation invocation,
+			TMethodDefinition tMember, MethodInvocationRecursive _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mMember, tMember, mMemberToTMember, invocation, csp, _this, isApplicableMatch };
+				return new Object[] { mMember, mMemberToTMember, invocation, tMember, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1383,89 +1385,89 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 				isApplicableMatch);
 		if (result_pattern_MethodInvocationRecursive_1_1_performtransformation_binding != null) {
 			MMethodDefinition mMember = (MMethodDefinition) result_pattern_MethodInvocationRecursive_1_1_performtransformation_binding[0];
-			TMethodDefinition tMember = (TMethodDefinition) result_pattern_MethodInvocationRecursive_1_1_performtransformation_binding[1];
-			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result_pattern_MethodInvocationRecursive_1_1_performtransformation_binding[2];
-			MMethodInvocation invocation = (MMethodInvocation) result_pattern_MethodInvocationRecursive_1_1_performtransformation_binding[3];
+			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result_pattern_MethodInvocationRecursive_1_1_performtransformation_binding[1];
+			MMethodInvocation invocation = (MMethodInvocation) result_pattern_MethodInvocationRecursive_1_1_performtransformation_binding[2];
+			TMethodDefinition tMember = (TMethodDefinition) result_pattern_MethodInvocationRecursive_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_MethodInvocationRecursive_1_1_performtransformation_black = pattern_MethodInvocationRecursive_1_1_performtransformation_blackBBBBFBB(
-					mMember, tMember, mMemberToTMember, invocation, _this, isApplicableMatch);
+					mMember, mMemberToTMember, invocation, tMember, _this, isApplicableMatch);
 			if (result_pattern_MethodInvocationRecursive_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodInvocationRecursive_1_1_performtransformation_black[4];
 
-				return new Object[] { mMember, tMember, mMemberToTMember, invocation, csp, _this, isApplicableMatch };
+				return new Object[] { mMember, mMemberToTMember, invocation, tMember, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodInvocationRecursive_1_1_performtransformation_greenBFFBF(
-			TMethodDefinition tMember, MMethodInvocation invocation) {
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
-				.createMAbstractFlowElementToTAbstractFlowElement();
+	public static final Object[] pattern_MethodInvocationRecursive_1_1_performtransformation_greenFBFFB(
+			MMethodInvocation invocation, TMethodDefinition tMember) {
 		AbstractMethodInvocationToTAccess invocationToTAccess = PmFactory.eINSTANCE
 				.createAbstractMethodInvocationToTAccess();
 		TCall tAccess = BasicFactory.eINSTANCE.createTCall();
-		mFlowElementToTFlowElement.setSource(invocation);
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
+				.createMAbstractFlowElementToTAbstractFlowElement();
 		invocationToTAccess.setSource(invocation);
-		tMember.getTAccessing().add(tAccess);
 		invocationToTAccess.setTarget(tAccess);
 		tAccess.setTTarget(tMember);
+		tMember.getTAccessing().add(tAccess);
+		mFlowElementToTFlowElement.setSource(invocation);
 		mFlowElementToTFlowElement.setTarget(tAccess);
-		return new Object[] { tMember, mFlowElementToTFlowElement, invocationToTAccess, invocation, tAccess };
+		return new Object[] { invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement, tMember };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_1_2_collecttranslatedelements_blackBBBB(
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MMethodInvocation invocation, TCall tAccess) {
-		return new Object[] { mFlowElementToTFlowElement, invocationToTAccess, invocation, tAccess };
+			AbstractMethodInvocationToTAccess invocationToTAccess, MMethodInvocation invocation, TCall tAccess,
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement) {
+		return new Object[] { invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_1_2_collecttranslatedelements_greenFBBBB(
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MMethodInvocation invocation, TCall tAccess) {
+			AbstractMethodInvocationToTAccess invocationToTAccess, MMethodInvocation invocation, TCall tAccess,
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
 		ruleresult.getCreatedLinkElements().add(invocationToTAccess);
 		ruleresult.getTranslatedElements().add(invocation);
 		ruleresult.getCreatedElements().add(tAccess);
-		return new Object[] { ruleresult, mFlowElementToTFlowElement, invocationToTAccess, invocation, tAccess };
+		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
+		return new Object[] { ruleresult, invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mMember, EObject tMember, EObject mFlowElementToTFlowElement,
-			EObject invocationToTAccess, EObject mMemberToTMember, EObject invocation, EObject tAccess) {
-		if (!mMember.equals(tMember)) {
-			if (!mMember.equals(mMemberToTMember)) {
-				if (!mMember.equals(tAccess)) {
-					if (!mFlowElementToTFlowElement.equals(mMember)) {
-						if (!mFlowElementToTFlowElement.equals(tMember)) {
-							if (!mFlowElementToTFlowElement.equals(mMemberToTMember)) {
-								if (!mFlowElementToTFlowElement.equals(tAccess)) {
-									if (!invocationToTAccess.equals(mMember)) {
-										if (!invocationToTAccess.equals(tMember)) {
-											if (!invocationToTAccess.equals(mFlowElementToTFlowElement)) {
-												if (!invocationToTAccess.equals(mMemberToTMember)) {
-													if (!invocationToTAccess.equals(tAccess)) {
-														if (!mMemberToTMember.equals(tMember)) {
-															if (!mMemberToTMember.equals(tAccess)) {
-																if (!invocation.equals(mMember)) {
+			PerformRuleResult ruleresult, EObject mMember, EObject invocationToTAccess, EObject mMemberToTMember,
+			EObject invocation, EObject tAccess, EObject mFlowElementToTFlowElement, EObject tMember) {
+		if (!mMember.equals(mMemberToTMember)) {
+			if (!mMember.equals(tAccess)) {
+				if (!mMember.equals(tMember)) {
+					if (!invocationToTAccess.equals(mMember)) {
+						if (!invocationToTAccess.equals(mMemberToTMember)) {
+							if (!invocationToTAccess.equals(tAccess)) {
+								if (!invocationToTAccess.equals(mFlowElementToTFlowElement)) {
+									if (!invocationToTAccess.equals(tMember)) {
+										if (!mMemberToTMember.equals(tAccess)) {
+											if (!mMemberToTMember.equals(tMember)) {
+												if (!invocation.equals(mMember)) {
+													if (!invocation.equals(invocationToTAccess)) {
+														if (!invocation.equals(mMemberToTMember)) {
+															if (!invocation.equals(tAccess)) {
+																if (!invocation.equals(mFlowElementToTFlowElement)) {
 																	if (!invocation.equals(tMember)) {
-																		if (!invocation
-																				.equals(mFlowElementToTFlowElement)) {
-																			if (!invocation
-																					.equals(invocationToTAccess)) {
-																				if (!invocation
+																		if (!tAccess.equals(tMember)) {
+																			if (!mFlowElementToTFlowElement
+																					.equals(mMember)) {
+																				if (!mFlowElementToTFlowElement
 																						.equals(mMemberToTMember)) {
-																					if (!invocation.equals(tAccess)) {
-																						if (!tAccess.equals(tMember)) {
+																					if (!mFlowElementToTFlowElement
+																							.equals(tAccess)) {
+																						if (!mFlowElementToTFlowElement
+																								.equals(tMember)) {
 																							return new Object[] {
 																									ruleresult, mMember,
-																									tMember,
-																									mFlowElementToTFlowElement,
 																									invocationToTAccess,
 																									mMemberToTMember,
-																									invocation,
-																									tAccess };
+																									invocation, tAccess,
+																									mFlowElementToTFlowElement,
+																									tMember };
 																						}
 																					}
 																				}
@@ -1491,43 +1493,34 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject mMember, EObject tMember, EObject mFlowElementToTFlowElement,
-			EObject invocationToTAccess, EObject invocation, EObject tAccess) {
-		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mMember, EObject invocationToTAccess, EObject invocation,
+			EObject tAccess, EObject mFlowElementToTFlowElement, EObject tMember) {
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocation__mMember____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMember____tTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodInvocationRecursive";
-		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
-		String tAccess__tMember____tSource_name_prime = "tSource";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
-		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
 		String invocationToTAccess__invocation____source_name_prime = "source";
 		String invocation__mMember____method_name_prime = "method";
 		String mMember__invocation____usages_name_prime = "usages";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String tAccess__tMember____tTarget_name_prime = "tTarget";
 		String tMember__tAccess____accessedBy_name_prime = "accessedBy";
+		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
 		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
-		tMember__tAccess____tAccessing.setSrc(tMember);
-		tMember__tAccess____tAccessing.setTrg(tAccess);
-		ruleresult.getCreatedEdges().add(tMember__tAccess____tAccessing);
-		tAccess__tMember____tSource.setSrc(tAccess);
-		tAccess__tMember____tSource.setTrg(tMember);
-		ruleresult.getCreatedEdges().add(tAccess__tMember____tSource);
+		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
+		String tAccess__tMember____tSource_name_prime = "tSource";
 		mMember__invocation____mMethodInvocations.setSrc(mMember);
 		mMember__invocation____mMethodInvocations.setTrg(invocation);
 		ruleresult.getTranslatedEdges().add(mMember__invocation____mMethodInvocations);
-		mFlowElementToTFlowElement__invocation____source.setSrc(mFlowElementToTFlowElement);
-		mFlowElementToTFlowElement__invocation____source.setTrg(invocation);
-		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__invocation____source);
 		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
 		invocationToTAccess__invocation____source.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
@@ -1546,36 +1539,45 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 		tMember__tAccess____accessedBy.setSrc(tMember);
 		tMember__tAccess____accessedBy.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(tMember__tAccess____accessedBy);
+		mFlowElementToTFlowElement__invocation____source.setSrc(mFlowElementToTFlowElement);
+		mFlowElementToTFlowElement__invocation____source.setTrg(invocation);
+		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__invocation____source);
 		mFlowElementToTFlowElement__tAccess____target.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tAccess____target);
+		tMember__tAccess____tAccessing.setSrc(tMember);
+		tMember__tAccess____tAccessing.setTrg(tAccess);
+		ruleresult.getCreatedEdges().add(tMember__tAccess____tAccessing);
+		tAccess__tMember____tSource.setSrc(tAccess);
+		tAccess__tMember____tSource.setTrg(tMember);
+		ruleresult.getCreatedEdges().add(tAccess__tMember____tSource);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
-		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
-		mFlowElementToTFlowElement__invocation____source
-				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
 		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		invocation__mMember____method.setName(invocation__mMember____method_name_prime);
 		mMember__invocation____usages.setName(mMember__invocation____usages_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		tAccess__tMember____tTarget.setName(tAccess__tMember____tTarget_name_prime);
 		tMember__tAccess____accessedBy.setName(tMember__tAccess____accessedBy_name_prime);
+		mFlowElementToTFlowElement__invocation____source
+				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
 		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
-		return new Object[] { ruleresult, mMember, tMember, mFlowElementToTFlowElement, invocationToTAccess, invocation,
-				tAccess, tMember__tAccess____tAccessing, tAccess__tMember____tSource,
-				mMember__invocation____mMethodInvocations, mFlowElementToTFlowElement__invocation____source,
-				invocationToTAccess__invocation____source, invocation__mMember____method, mMember__invocation____usages,
-				invocationToTAccess__tAccess____target, tAccess__tMember____tTarget, tMember__tAccess____accessedBy,
-				mFlowElementToTFlowElement__tAccess____target };
+		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
+		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
+		return new Object[] { ruleresult, mMember, invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement,
+				tMember, mMember__invocation____mMethodInvocations, invocationToTAccess__invocation____source,
+				invocation__mMember____method, mMember__invocation____usages, invocationToTAccess__tAccess____target,
+				tAccess__tMember____tTarget, tMember__tAccess____accessedBy,
+				mFlowElementToTFlowElement__invocation____source, mFlowElementToTFlowElement__tAccess____target,
+				tMember__tAccess____tAccessing, tAccess__tMember____tSource };
 	}
 
 	public static final void pattern_MethodInvocationRecursive_1_5_registerobjects_expressionBBBBBBBBB(
-			MethodInvocationRecursive _this, PerformRuleResult ruleresult, EObject mMember, EObject tMember,
-			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMemberToTMember,
-			EObject invocation, EObject tAccess) {
-		_this.registerObjects_FWD(ruleresult, mMember, tMember, mFlowElementToTFlowElement, invocationToTAccess,
-				mMemberToTMember, invocation, tAccess);
+			MethodInvocationRecursive _this, PerformRuleResult ruleresult, EObject mMember, EObject invocationToTAccess,
+			EObject mMemberToTMember, EObject invocation, EObject tAccess, EObject mFlowElementToTFlowElement,
+			EObject tMember) {
+		_this.registerObjects_FWD(ruleresult, mMember, invocationToTAccess, mMemberToTMember, invocation, tAccess,
+				mFlowElementToTFlowElement, tMember);
 
 	}
 
@@ -1651,7 +1653,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodInvocationRecursive_2_2_corematch_blackBFFBB(
+	public static final Iterable<Object[]> pattern_MethodInvocationRecursive_2_2_corematch_blackBFBFB(
 			MMethodDefinition mMember, MMethodInvocation invocation, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
@@ -1659,7 +1661,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 			TMember tmpTMember = mMemberToTMember.getTarget();
 			if (tmpTMember instanceof TMethodDefinition) {
 				TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
-				_result.add(new Object[] { mMember, tMember, mMemberToTMember, invocation, match });
+				_result.add(new Object[] { mMember, mMemberToTMember, invocation, tMember, match });
 			}
 
 		}
@@ -1667,14 +1669,14 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Iterable<Object[]> pattern_MethodInvocationRecursive_2_3_findcontext_blackBBBB(
-			MMethodDefinition mMember, TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember,
-			MMethodInvocation invocation) {
+			MMethodDefinition mMember, MDefinitionToTMember mMemberToTMember, MMethodInvocation invocation,
+			TMethodDefinition tMember) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mMember.getMMethodInvocations().contains(invocation)) {
-			if (tMember.equals(mMemberToTMember.getTarget())) {
-				if (mMember.equals(mMemberToTMember.getSource())) {
-					if (mMember.equals(invocation.getMethod())) {
-						_result.add(new Object[] { mMember, tMember, mMemberToTMember, invocation });
+		if (mMember.equals(mMemberToTMember.getSource())) {
+			if (mMember.getMMethodInvocations().contains(invocation)) {
+				if (mMember.equals(invocation.getMethod())) {
+					if (tMember.equals(mMemberToTMember.getTarget())) {
+						_result.add(new Object[] { mMember, mMemberToTMember, invocation, tMember });
 					}
 				}
 			}
@@ -1683,56 +1685,56 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_2_3_findcontext_greenBBBBFFFFFF(
-			MMethodDefinition mMember, TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember,
-			MMethodInvocation invocation) {
+			MMethodDefinition mMember, MDefinitionToTMember mMemberToTMember, MMethodInvocation invocation,
+			TMethodDefinition tMember) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMemberToTMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocation__mMember____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
-		String mMemberToTMember__tMember____target_name_prime = "target";
+		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mMemberToTMember__mMember____source_name_prime = "source";
+		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
 		String invocation__mMember____method_name_prime = "method";
 		String mMember__invocation____usages_name_prime = "usages";
+		String mMemberToTMember__tMember____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(mMember);
-		isApplicableMatch.getAllContextElements().add(tMember);
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember);
 		isApplicableMatch.getAllContextElements().add(invocation);
-		mMember__invocation____mMethodInvocations.setSrc(mMember);
-		mMember__invocation____mMethodInvocations.setTrg(invocation);
-		isApplicableMatch.getAllContextElements().add(mMember__invocation____mMethodInvocations);
-		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
-		mMemberToTMember__tMember____target.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
+		isApplicableMatch.getAllContextElements().add(tMember);
 		mMemberToTMember__mMember____source.setSrc(mMemberToTMember);
 		mMemberToTMember__mMember____source.setTrg(mMember);
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember__mMember____source);
+		mMember__invocation____mMethodInvocations.setSrc(mMember);
+		mMember__invocation____mMethodInvocations.setTrg(invocation);
+		isApplicableMatch.getAllContextElements().add(mMember__invocation____mMethodInvocations);
 		invocation__mMember____method.setSrc(invocation);
 		invocation__mMember____method.setTrg(mMember);
 		isApplicableMatch.getAllContextElements().add(invocation__mMember____method);
 		mMember__invocation____usages.setSrc(mMember);
 		mMember__invocation____usages.setTrg(invocation);
 		isApplicableMatch.getAllContextElements().add(mMember__invocation____usages);
-		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
-		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
+		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
+		mMemberToTMember__tMember____target.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
 		mMemberToTMember__mMember____source.setName(mMemberToTMember__mMember____source_name_prime);
+		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		invocation__mMember____method.setName(invocation__mMember____method_name_prime);
 		mMember__invocation____usages.setName(mMember__invocation____usages_name_prime);
-		return new Object[] { mMember, tMember, mMemberToTMember, invocation, isApplicableMatch,
-				mMember__invocation____mMethodInvocations, mMemberToTMember__tMember____target,
-				mMemberToTMember__mMember____source, invocation__mMember____method, mMember__invocation____usages };
+		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
+		return new Object[] { mMember, mMemberToTMember, invocation, tMember, isApplicableMatch,
+				mMemberToTMember__mMember____source, mMember__invocation____mMethodInvocations,
+				invocation__mMember____method, mMember__invocation____usages, mMemberToTMember__tMember____target };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_2_4_solveCSP_bindingFBBBBBB(
 			MethodInvocationRecursive _this, IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, MMethodInvocation invocation) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mMember, tMember, mMemberToTMember,
-				invocation);
+			MDefinitionToTMember mMemberToTMember, MMethodInvocation invocation, TMethodDefinition tMember) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mMember, mMemberToTMember, invocation,
+				tMember);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMember, tMember, mMemberToTMember, invocation };
+			return new Object[] { csp, _this, isApplicableMatch, mMember, mMemberToTMember, invocation, tMember };
 		}
 		return null;
 	}
@@ -1743,9 +1745,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodInvocationRecursive_2_4_solveCSP_bindingAndBlackFBBBBBB(
 			MethodInvocationRecursive _this, IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, MMethodInvocation invocation) {
+			MDefinitionToTMember mMemberToTMember, MMethodInvocation invocation, TMethodDefinition tMember) {
 		Object[] result_pattern_MethodInvocationRecursive_2_4_solveCSP_binding = pattern_MethodInvocationRecursive_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mMember, tMember, mMemberToTMember, invocation);
+				_this, isApplicableMatch, mMember, mMemberToTMember, invocation, tMember);
 		if (result_pattern_MethodInvocationRecursive_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationRecursive_2_4_solveCSP_binding[0];
 
@@ -1753,7 +1755,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 					csp);
 			if (result_pattern_MethodInvocationRecursive_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMember, tMember, mMemberToTMember, invocation };
+				return new Object[] { csp, _this, isApplicableMatch, mMember, mMemberToTMember, invocation, tMember };
 			}
 		}
 		return null;
@@ -1788,16 +1790,16 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_10_1_initialbindings_blackBBBB(
-			MethodInvocationRecursive _this, Match match, TMethodDefinition tMember, TCall tAccess) {
-		return new Object[] { _this, match, tMember, tAccess };
+			MethodInvocationRecursive _this, Match match, TCall tAccess, TMethodDefinition tMember) {
+		return new Object[] { _this, match, tAccess, tMember };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_10_2_SolveCSP_bindingFBBBB(
-			MethodInvocationRecursive _this, Match match, TMethodDefinition tMember, TCall tAccess) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tMember, tAccess);
+			MethodInvocationRecursive _this, Match match, TCall tAccess, TMethodDefinition tMember) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tAccess, tMember);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tMember, tAccess };
+			return new Object[] { csp, _this, match, tAccess, tMember };
 		}
 		return null;
 	}
@@ -1807,9 +1809,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_10_2_SolveCSP_bindingAndBlackFBBBB(
-			MethodInvocationRecursive _this, Match match, TMethodDefinition tMember, TCall tAccess) {
+			MethodInvocationRecursive _this, Match match, TCall tAccess, TMethodDefinition tMember) {
 		Object[] result_pattern_MethodInvocationRecursive_10_2_SolveCSP_binding = pattern_MethodInvocationRecursive_10_2_SolveCSP_bindingFBBBB(
-				_this, match, tMember, tAccess);
+				_this, match, tAccess, tMember);
 		if (result_pattern_MethodInvocationRecursive_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationRecursive_10_2_SolveCSP_binding[0];
 
@@ -1817,7 +1819,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 					csp);
 			if (result_pattern_MethodInvocationRecursive_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tMember, tAccess };
+				return new Object[] { csp, _this, match, tAccess, tMember };
 			}
 		}
 		return null;
@@ -1831,44 +1833,44 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_10_4_collectelementstobetranslated_blackBBB(
-			Match match, TMethodDefinition tMember, TCall tAccess) {
-		return new Object[] { match, tMember, tAccess };
+			Match match, TCall tAccess, TMethodDefinition tMember) {
+		return new Object[] { match, tAccess, tMember };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_10_4_collectelementstobetranslated_greenBBBFFFF(
-			Match match, TMethodDefinition tMember, TCall tAccess) {
-		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, TCall tAccess, TMethodDefinition tMember) {
 		EMoflonEdge tAccess__tMember____tTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tAccess);
-		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
-		String tAccess__tMember____tSource_name_prime = "tSource";
 		String tAccess__tMember____tTarget_name_prime = "tTarget";
 		String tMember__tAccess____accessedBy_name_prime = "accessedBy";
-		tMember__tAccess____tAccessing.setSrc(tMember);
-		tMember__tAccess____tAccessing.setTrg(tAccess);
-		match.getToBeTranslatedEdges().add(tMember__tAccess____tAccessing);
-		tAccess__tMember____tSource.setSrc(tAccess);
-		tAccess__tMember____tSource.setTrg(tMember);
-		match.getToBeTranslatedEdges().add(tAccess__tMember____tSource);
+		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
+		String tAccess__tMember____tSource_name_prime = "tSource";
 		tAccess__tMember____tTarget.setSrc(tAccess);
 		tAccess__tMember____tTarget.setTrg(tMember);
 		match.getToBeTranslatedEdges().add(tAccess__tMember____tTarget);
 		tMember__tAccess____accessedBy.setSrc(tMember);
 		tMember__tAccess____accessedBy.setTrg(tAccess);
 		match.getToBeTranslatedEdges().add(tMember__tAccess____accessedBy);
-		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
-		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
+		tMember__tAccess____tAccessing.setSrc(tMember);
+		tMember__tAccess____tAccessing.setTrg(tAccess);
+		match.getToBeTranslatedEdges().add(tMember__tAccess____tAccessing);
+		tAccess__tMember____tSource.setSrc(tAccess);
+		tAccess__tMember____tSource.setTrg(tMember);
+		match.getToBeTranslatedEdges().add(tAccess__tMember____tSource);
 		tAccess__tMember____tTarget.setName(tAccess__tMember____tTarget_name_prime);
 		tMember__tAccess____accessedBy.setName(tMember__tAccess____accessedBy_name_prime);
-		return new Object[] { match, tMember, tAccess, tMember__tAccess____tAccessing, tAccess__tMember____tSource,
-				tAccess__tMember____tTarget, tMember__tAccess____accessedBy };
+		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
+		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
+		return new Object[] { match, tAccess, tMember, tAccess__tMember____tTarget, tMember__tAccess____accessedBy,
+				tMember__tAccess____tAccessing, tAccess__tMember____tSource };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_10_5_collectcontextelements_blackBBB(Match match,
-			TMethodDefinition tMember, TCall tAccess) {
-		return new Object[] { match, tMember, tAccess };
+			TCall tAccess, TMethodDefinition tMember) {
+		return new Object[] { match, tAccess, tMember };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_10_5_collectcontextelements_greenBB(Match match,
@@ -1878,8 +1880,8 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final void pattern_MethodInvocationRecursive_10_6_registerobjectstomatch_expressionBBBB(
-			MethodInvocationRecursive _this, Match match, TMethodDefinition tMember, TCall tAccess) {
-		_this.registerObjectsToMatch_BWD(match, tMember, tAccess);
+			MethodInvocationRecursive _this, Match match, TCall tAccess, TMethodDefinition tMember) {
+		_this.registerObjectsToMatch_BWD(match, tAccess, tMember);
 
 	}
 
@@ -1896,22 +1898,22 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	public static final Object[] pattern_MethodInvocationRecursive_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mMember");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tMember");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mMemberToTMember");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tAccess");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mMemberToTMember");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tAccess");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tMember");
 		EObject tmpMMember = _localVariable_0;
-		EObject tmpTMember = _localVariable_1;
-		EObject tmpMMemberToTMember = _localVariable_2;
-		EObject tmpTAccess = _localVariable_3;
+		EObject tmpMMemberToTMember = _localVariable_1;
+		EObject tmpTAccess = _localVariable_2;
+		EObject tmpTMember = _localVariable_3;
 		if (tmpMMember instanceof MMethodDefinition) {
 			MMethodDefinition mMember = (MMethodDefinition) tmpMMember;
-			if (tmpTMember instanceof TMethodDefinition) {
-				TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
-				if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
-					MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
-					if (tmpTAccess instanceof TCall) {
-						TCall tAccess = (TCall) tmpTAccess;
-						return new Object[] { mMember, tMember, mMemberToTMember, tAccess, isApplicableMatch };
+			if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
+				MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
+				if (tmpTAccess instanceof TCall) {
+					TCall tAccess = (TCall) tmpTAccess;
+					if (tmpTMember instanceof TMethodDefinition) {
+						TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
+						return new Object[] { mMember, mMemberToTMember, tAccess, tMember, isApplicableMatch };
 					}
 				}
 			}
@@ -1920,12 +1922,12 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_11_1_performtransformation_blackBBBBFBB(
-			MMethodDefinition mMember, TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, TCall tAccess,
+			MMethodDefinition mMember, MDefinitionToTMember mMemberToTMember, TCall tAccess, TMethodDefinition tMember,
 			MethodInvocationRecursive _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mMember, tMember, mMemberToTMember, tAccess, csp, _this, isApplicableMatch };
+				return new Object[] { mMember, mMemberToTMember, tAccess, tMember, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1937,89 +1939,89 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 				isApplicableMatch);
 		if (result_pattern_MethodInvocationRecursive_11_1_performtransformation_binding != null) {
 			MMethodDefinition mMember = (MMethodDefinition) result_pattern_MethodInvocationRecursive_11_1_performtransformation_binding[0];
-			TMethodDefinition tMember = (TMethodDefinition) result_pattern_MethodInvocationRecursive_11_1_performtransformation_binding[1];
-			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result_pattern_MethodInvocationRecursive_11_1_performtransformation_binding[2];
-			TCall tAccess = (TCall) result_pattern_MethodInvocationRecursive_11_1_performtransformation_binding[3];
+			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result_pattern_MethodInvocationRecursive_11_1_performtransformation_binding[1];
+			TCall tAccess = (TCall) result_pattern_MethodInvocationRecursive_11_1_performtransformation_binding[2];
+			TMethodDefinition tMember = (TMethodDefinition) result_pattern_MethodInvocationRecursive_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_MethodInvocationRecursive_11_1_performtransformation_black = pattern_MethodInvocationRecursive_11_1_performtransformation_blackBBBBFBB(
-					mMember, tMember, mMemberToTMember, tAccess, _this, isApplicableMatch);
+					mMember, mMemberToTMember, tAccess, tMember, _this, isApplicableMatch);
 			if (result_pattern_MethodInvocationRecursive_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodInvocationRecursive_11_1_performtransformation_black[4];
 
-				return new Object[] { mMember, tMember, mMemberToTMember, tAccess, csp, _this, isApplicableMatch };
+				return new Object[] { mMember, mMemberToTMember, tAccess, tMember, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodInvocationRecursive_11_1_performtransformation_greenBFFFB(
+	public static final Object[] pattern_MethodInvocationRecursive_11_1_performtransformation_greenBFFBF(
 			MMethodDefinition mMember, TCall tAccess) {
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
-				.createMAbstractFlowElementToTAbstractFlowElement();
 		AbstractMethodInvocationToTAccess invocationToTAccess = PmFactory.eINSTANCE
 				.createAbstractMethodInvocationToTAccess();
 		MMethodInvocation invocation = ModiscoFactory.eINSTANCE.createMMethodInvocation();
-		mFlowElementToTFlowElement.setTarget(tAccess);
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
+				.createMAbstractFlowElementToTAbstractFlowElement();
 		invocationToTAccess.setTarget(tAccess);
 		mMember.getMMethodInvocations().add(invocation);
-		mFlowElementToTFlowElement.setSource(invocation);
 		invocationToTAccess.setSource(invocation);
 		invocation.setMethod(mMember);
-		return new Object[] { mMember, mFlowElementToTFlowElement, invocationToTAccess, invocation, tAccess };
+		mFlowElementToTFlowElement.setSource(invocation);
+		mFlowElementToTFlowElement.setTarget(tAccess);
+		return new Object[] { mMember, invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_11_2_collecttranslatedelements_blackBBBB(
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MMethodInvocation invocation, TCall tAccess) {
-		return new Object[] { mFlowElementToTFlowElement, invocationToTAccess, invocation, tAccess };
+			AbstractMethodInvocationToTAccess invocationToTAccess, MMethodInvocation invocation, TCall tAccess,
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement) {
+		return new Object[] { invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_11_2_collecttranslatedelements_greenFBBBB(
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MMethodInvocation invocation, TCall tAccess) {
+			AbstractMethodInvocationToTAccess invocationToTAccess, MMethodInvocation invocation, TCall tAccess,
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
 		ruleresult.getCreatedLinkElements().add(invocationToTAccess);
 		ruleresult.getCreatedElements().add(invocation);
 		ruleresult.getTranslatedElements().add(tAccess);
-		return new Object[] { ruleresult, mFlowElementToTFlowElement, invocationToTAccess, invocation, tAccess };
+		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
+		return new Object[] { ruleresult, invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mMember, EObject tMember, EObject mFlowElementToTFlowElement,
-			EObject invocationToTAccess, EObject mMemberToTMember, EObject invocation, EObject tAccess) {
-		if (!mMember.equals(tMember)) {
-			if (!mMember.equals(mMemberToTMember)) {
-				if (!mMember.equals(tAccess)) {
-					if (!mFlowElementToTFlowElement.equals(mMember)) {
-						if (!mFlowElementToTFlowElement.equals(tMember)) {
-							if (!mFlowElementToTFlowElement.equals(mMemberToTMember)) {
-								if (!mFlowElementToTFlowElement.equals(tAccess)) {
-									if (!invocationToTAccess.equals(mMember)) {
-										if (!invocationToTAccess.equals(tMember)) {
-											if (!invocationToTAccess.equals(mFlowElementToTFlowElement)) {
-												if (!invocationToTAccess.equals(mMemberToTMember)) {
-													if (!invocationToTAccess.equals(tAccess)) {
-														if (!mMemberToTMember.equals(tMember)) {
-															if (!mMemberToTMember.equals(tAccess)) {
-																if (!invocation.equals(mMember)) {
+			PerformRuleResult ruleresult, EObject mMember, EObject invocationToTAccess, EObject mMemberToTMember,
+			EObject invocation, EObject tAccess, EObject mFlowElementToTFlowElement, EObject tMember) {
+		if (!mMember.equals(mMemberToTMember)) {
+			if (!mMember.equals(tAccess)) {
+				if (!mMember.equals(tMember)) {
+					if (!invocationToTAccess.equals(mMember)) {
+						if (!invocationToTAccess.equals(mMemberToTMember)) {
+							if (!invocationToTAccess.equals(tAccess)) {
+								if (!invocationToTAccess.equals(mFlowElementToTFlowElement)) {
+									if (!invocationToTAccess.equals(tMember)) {
+										if (!mMemberToTMember.equals(tAccess)) {
+											if (!mMemberToTMember.equals(tMember)) {
+												if (!invocation.equals(mMember)) {
+													if (!invocation.equals(invocationToTAccess)) {
+														if (!invocation.equals(mMemberToTMember)) {
+															if (!invocation.equals(tAccess)) {
+																if (!invocation.equals(mFlowElementToTFlowElement)) {
 																	if (!invocation.equals(tMember)) {
-																		if (!invocation
-																				.equals(mFlowElementToTFlowElement)) {
-																			if (!invocation
-																					.equals(invocationToTAccess)) {
-																				if (!invocation
+																		if (!tAccess.equals(tMember)) {
+																			if (!mFlowElementToTFlowElement
+																					.equals(mMember)) {
+																				if (!mFlowElementToTFlowElement
 																						.equals(mMemberToTMember)) {
-																					if (!invocation.equals(tAccess)) {
-																						if (!tAccess.equals(tMember)) {
+																					if (!mFlowElementToTFlowElement
+																							.equals(tAccess)) {
+																						if (!mFlowElementToTFlowElement
+																								.equals(tMember)) {
 																							return new Object[] {
 																									ruleresult, mMember,
-																									tMember,
-																									mFlowElementToTFlowElement,
 																									invocationToTAccess,
 																									mMemberToTMember,
-																									invocation,
-																									tAccess };
+																									invocation, tAccess,
+																									mFlowElementToTFlowElement,
+																									tMember };
 																						}
 																					}
 																				}
@@ -2045,43 +2047,34 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject mMember, EObject tMember, EObject mFlowElementToTFlowElement,
-			EObject invocationToTAccess, EObject invocation, EObject tAccess) {
-		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mMember, EObject invocationToTAccess, EObject invocation,
+			EObject tAccess, EObject mFlowElementToTFlowElement, EObject tMember) {
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocation__mMember____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMember____tTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodInvocationRecursive";
-		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
-		String tAccess__tMember____tSource_name_prime = "tSource";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
-		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
 		String invocationToTAccess__invocation____source_name_prime = "source";
 		String invocation__mMember____method_name_prime = "method";
 		String mMember__invocation____usages_name_prime = "usages";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String tAccess__tMember____tTarget_name_prime = "tTarget";
 		String tMember__tAccess____accessedBy_name_prime = "accessedBy";
+		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
 		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
-		tMember__tAccess____tAccessing.setSrc(tMember);
-		tMember__tAccess____tAccessing.setTrg(tAccess);
-		ruleresult.getTranslatedEdges().add(tMember__tAccess____tAccessing);
-		tAccess__tMember____tSource.setSrc(tAccess);
-		tAccess__tMember____tSource.setTrg(tMember);
-		ruleresult.getTranslatedEdges().add(tAccess__tMember____tSource);
+		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
+		String tAccess__tMember____tSource_name_prime = "tSource";
 		mMember__invocation____mMethodInvocations.setSrc(mMember);
 		mMember__invocation____mMethodInvocations.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(mMember__invocation____mMethodInvocations);
-		mFlowElementToTFlowElement__invocation____source.setSrc(mFlowElementToTFlowElement);
-		mFlowElementToTFlowElement__invocation____source.setTrg(invocation);
-		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__invocation____source);
 		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
 		invocationToTAccess__invocation____source.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
@@ -2100,36 +2093,45 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 		tMember__tAccess____accessedBy.setSrc(tMember);
 		tMember__tAccess____accessedBy.setTrg(tAccess);
 		ruleresult.getTranslatedEdges().add(tMember__tAccess____accessedBy);
+		mFlowElementToTFlowElement__invocation____source.setSrc(mFlowElementToTFlowElement);
+		mFlowElementToTFlowElement__invocation____source.setTrg(invocation);
+		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__invocation____source);
 		mFlowElementToTFlowElement__tAccess____target.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tAccess____target);
+		tMember__tAccess____tAccessing.setSrc(tMember);
+		tMember__tAccess____tAccessing.setTrg(tAccess);
+		ruleresult.getTranslatedEdges().add(tMember__tAccess____tAccessing);
+		tAccess__tMember____tSource.setSrc(tAccess);
+		tAccess__tMember____tSource.setTrg(tMember);
+		ruleresult.getTranslatedEdges().add(tAccess__tMember____tSource);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
-		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
-		mFlowElementToTFlowElement__invocation____source
-				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
 		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		invocation__mMember____method.setName(invocation__mMember____method_name_prime);
 		mMember__invocation____usages.setName(mMember__invocation____usages_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		tAccess__tMember____tTarget.setName(tAccess__tMember____tTarget_name_prime);
 		tMember__tAccess____accessedBy.setName(tMember__tAccess____accessedBy_name_prime);
+		mFlowElementToTFlowElement__invocation____source
+				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
 		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
-		return new Object[] { ruleresult, mMember, tMember, mFlowElementToTFlowElement, invocationToTAccess, invocation,
-				tAccess, tMember__tAccess____tAccessing, tAccess__tMember____tSource,
-				mMember__invocation____mMethodInvocations, mFlowElementToTFlowElement__invocation____source,
-				invocationToTAccess__invocation____source, invocation__mMember____method, mMember__invocation____usages,
-				invocationToTAccess__tAccess____target, tAccess__tMember____tTarget, tMember__tAccess____accessedBy,
-				mFlowElementToTFlowElement__tAccess____target };
+		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
+		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
+		return new Object[] { ruleresult, mMember, invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement,
+				tMember, mMember__invocation____mMethodInvocations, invocationToTAccess__invocation____source,
+				invocation__mMember____method, mMember__invocation____usages, invocationToTAccess__tAccess____target,
+				tAccess__tMember____tTarget, tMember__tAccess____accessedBy,
+				mFlowElementToTFlowElement__invocation____source, mFlowElementToTFlowElement__tAccess____target,
+				tMember__tAccess____tAccessing, tAccess__tMember____tSource };
 	}
 
 	public static final void pattern_MethodInvocationRecursive_11_5_registerobjects_expressionBBBBBBBBB(
-			MethodInvocationRecursive _this, PerformRuleResult ruleresult, EObject mMember, EObject tMember,
-			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMemberToTMember,
-			EObject invocation, EObject tAccess) {
-		_this.registerObjects_BWD(ruleresult, mMember, tMember, mFlowElementToTFlowElement, invocationToTAccess,
-				mMemberToTMember, invocation, tAccess);
+			MethodInvocationRecursive _this, PerformRuleResult ruleresult, EObject mMember, EObject invocationToTAccess,
+			EObject mMemberToTMember, EObject invocation, EObject tAccess, EObject mFlowElementToTFlowElement,
+			EObject tMember) {
+		_this.registerObjects_BWD(ruleresult, mMember, invocationToTAccess, mMemberToTMember, invocation, tAccess,
+				mFlowElementToTFlowElement, tMember);
 
 	}
 
@@ -2191,29 +2193,29 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tMember");
-		EObject _localVariable_1 = match.getObject("tAccess");
-		EObject tmpTMember = _localVariable_0;
-		EObject tmpTAccess = _localVariable_1;
-		if (tmpTMember instanceof TMethodDefinition) {
-			TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
-			if (tmpTAccess instanceof TCall) {
-				TCall tAccess = (TCall) tmpTAccess;
-				return new Object[] { tMember, tAccess, match };
+		EObject _localVariable_0 = match.getObject("tAccess");
+		EObject _localVariable_1 = match.getObject("tMember");
+		EObject tmpTAccess = _localVariable_0;
+		EObject tmpTMember = _localVariable_1;
+		if (tmpTAccess instanceof TCall) {
+			TCall tAccess = (TCall) tmpTAccess;
+			if (tmpTMember instanceof TMethodDefinition) {
+				TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
+				return new Object[] { tAccess, tMember, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodInvocationRecursive_12_2_corematch_blackFBFBB(
-			TMethodDefinition tMember, TCall tAccess, Match match) {
+	public static final Iterable<Object[]> pattern_MethodInvocationRecursive_12_2_corematch_blackFFBBB(TCall tAccess,
+			TMethodDefinition tMember, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
 			BodyDeclaration tmpMMember = mMemberToTMember.getSource();
 			if (tmpMMember instanceof MMethodDefinition) {
 				MMethodDefinition mMember = (MMethodDefinition) tmpMMember;
-				_result.add(new Object[] { mMember, tMember, mMemberToTMember, tAccess, match });
+				_result.add(new Object[] { mMember, mMemberToTMember, tAccess, tMember, match });
 			}
 
 		}
@@ -2221,14 +2223,14 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Iterable<Object[]> pattern_MethodInvocationRecursive_12_3_findcontext_blackBBBB(
-			MMethodDefinition mMember, TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember,
-			TCall tAccess) {
+			MMethodDefinition mMember, MDefinitionToTMember mMemberToTMember, TCall tAccess,
+			TMethodDefinition tMember) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tMember.getTAccessing().contains(tAccess)) {
-			if (tMember.equals(mMemberToTMember.getTarget())) {
-				if (mMember.equals(mMemberToTMember.getSource())) {
-					if (tMember.equals(tAccess.getTTarget())) {
-						_result.add(new Object[] { mMember, tMember, mMemberToTMember, tAccess });
+		if (mMember.equals(mMemberToTMember.getSource())) {
+			if (tMember.equals(tAccess.getTTarget())) {
+				if (tMember.getTAccessing().contains(tAccess)) {
+					if (tMember.equals(mMemberToTMember.getTarget())) {
+						_result.add(new Object[] { mMember, mMemberToTMember, tAccess, tMember });
 					}
 				}
 			}
@@ -2237,34 +2239,25 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_12_3_findcontext_greenBBBBFFFFFFF(
-			MMethodDefinition mMember, TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember,
-			TCall tAccess) {
+			MMethodDefinition mMember, MDefinitionToTMember mMemberToTMember, TCall tAccess,
+			TMethodDefinition tMember) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMemberToTMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMember____tTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
-		String tAccess__tMember____tSource_name_prime = "tSource";
-		String mMemberToTMember__tMember____target_name_prime = "target";
+		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mMemberToTMember__mMember____source_name_prime = "source";
 		String tAccess__tMember____tTarget_name_prime = "tTarget";
 		String tMember__tAccess____accessedBy_name_prime = "accessedBy";
+		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
+		String tAccess__tMember____tSource_name_prime = "tSource";
+		String mMemberToTMember__tMember____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(mMember);
-		isApplicableMatch.getAllContextElements().add(tMember);
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember);
 		isApplicableMatch.getAllContextElements().add(tAccess);
-		tMember__tAccess____tAccessing.setSrc(tMember);
-		tMember__tAccess____tAccessing.setTrg(tAccess);
-		isApplicableMatch.getAllContextElements().add(tMember__tAccess____tAccessing);
-		tAccess__tMember____tSource.setSrc(tAccess);
-		tAccess__tMember____tSource.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(tAccess__tMember____tSource);
-		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
-		mMemberToTMember__tMember____target.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
+		isApplicableMatch.getAllContextElements().add(tMember);
 		mMemberToTMember__mMember____source.setSrc(mMemberToTMember);
 		mMemberToTMember__mMember____source.setTrg(mMember);
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember__mMember____source);
@@ -2274,25 +2267,34 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 		tMember__tAccess____accessedBy.setSrc(tMember);
 		tMember__tAccess____accessedBy.setTrg(tAccess);
 		isApplicableMatch.getAllContextElements().add(tMember__tAccess____accessedBy);
-		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
-		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
-		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
+		tMember__tAccess____tAccessing.setSrc(tMember);
+		tMember__tAccess____tAccessing.setTrg(tAccess);
+		isApplicableMatch.getAllContextElements().add(tMember__tAccess____tAccessing);
+		tAccess__tMember____tSource.setSrc(tAccess);
+		tAccess__tMember____tSource.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(tAccess__tMember____tSource);
+		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
+		mMemberToTMember__tMember____target.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
 		mMemberToTMember__mMember____source.setName(mMemberToTMember__mMember____source_name_prime);
 		tAccess__tMember____tTarget.setName(tAccess__tMember____tTarget_name_prime);
 		tMember__tAccess____accessedBy.setName(tMember__tAccess____accessedBy_name_prime);
-		return new Object[] { mMember, tMember, mMemberToTMember, tAccess, isApplicableMatch,
-				tMember__tAccess____tAccessing, tAccess__tMember____tSource, mMemberToTMember__tMember____target,
-				mMemberToTMember__mMember____source, tAccess__tMember____tTarget, tMember__tAccess____accessedBy };
+		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
+		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
+		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
+		return new Object[] { mMember, mMemberToTMember, tAccess, tMember, isApplicableMatch,
+				mMemberToTMember__mMember____source, tAccess__tMember____tTarget, tMember__tAccess____accessedBy,
+				tMember__tAccess____tAccessing, tAccess__tMember____tSource, mMemberToTMember__tMember____target };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_12_4_solveCSP_bindingFBBBBBB(
 			MethodInvocationRecursive _this, IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, TCall tAccess) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mMember, tMember, mMemberToTMember,
-				tAccess);
+			MDefinitionToTMember mMemberToTMember, TCall tAccess, TMethodDefinition tMember) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mMember, mMemberToTMember, tAccess,
+				tMember);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMember, tMember, mMemberToTMember, tAccess };
+			return new Object[] { csp, _this, isApplicableMatch, mMember, mMemberToTMember, tAccess, tMember };
 		}
 		return null;
 	}
@@ -2303,9 +2305,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodInvocationRecursive_12_4_solveCSP_bindingAndBlackFBBBBBB(
 			MethodInvocationRecursive _this, IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, TCall tAccess) {
+			MDefinitionToTMember mMemberToTMember, TCall tAccess, TMethodDefinition tMember) {
 		Object[] result_pattern_MethodInvocationRecursive_12_4_solveCSP_binding = pattern_MethodInvocationRecursive_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mMember, tMember, mMemberToTMember, tAccess);
+				_this, isApplicableMatch, mMember, mMemberToTMember, tAccess, tMember);
 		if (result_pattern_MethodInvocationRecursive_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationRecursive_12_4_solveCSP_binding[0];
 
@@ -2313,7 +2315,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 					csp);
 			if (result_pattern_MethodInvocationRecursive_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMember, tMember, mMemberToTMember, tAccess };
+				return new Object[] { csp, _this, isApplicableMatch, mMember, mMemberToTMember, tAccess, tMember };
 			}
 		}
 		return null;
@@ -2402,17 +2404,17 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Iterable<Object[]> pattern_MethodInvocationRecursive_20_2_testcorematchandDECs_blackFFB(
-			EMoflonEdge _edge_tAccessing) {
+			EMoflonEdge _edge_tTarget) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpTMember = _edge_tAccessing.getSrc();
-		if (tmpTMember instanceof TMethodDefinition) {
-			TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
-			EObject tmpTAccess = _edge_tAccessing.getTrg();
-			if (tmpTAccess instanceof TCall) {
-				TCall tAccess = (TCall) tmpTAccess;
-				if (tMember.getTAccessing().contains(tAccess)) {
-					if (tMember.equals(tAccess.getTTarget())) {
-						_result.add(new Object[] { tMember, tAccess, _edge_tAccessing });
+		EObject tmpTAccess = _edge_tTarget.getSrc();
+		if (tmpTAccess instanceof TCall) {
+			TCall tAccess = (TCall) tmpTAccess;
+			EObject tmpTMember = _edge_tTarget.getTrg();
+			if (tmpTMember instanceof TMethodDefinition) {
+				TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
+				if (tMember.equals(tAccess.getTTarget())) {
+					if (tMember.getTAccessing().contains(tAccess)) {
+						_result.add(new Object[] { tAccess, tMember, _edge_tTarget });
 					}
 				}
 			}
@@ -2432,8 +2434,8 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final boolean pattern_MethodInvocationRecursive_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			MethodInvocationRecursive _this, Match match, TMethodDefinition tMember, TCall tAccess) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tMember, tAccess);
+			MethodInvocationRecursive _this, Match match, TCall tAccess, TMethodDefinition tMember) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tAccess, tMember);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2523,7 +2525,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodInvocationRecursive_21_2_testcorematchandDECs_black_nac_0B(
 			MMethodInvocation invocation) {
-		for (AnnotationMemberValuePair __DEC_invocation_value_29067 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_invocation_value_520962 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { invocation };
 		}
@@ -2532,9 +2534,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodInvocationRecursive_21_2_testcorematchandDECs_black_nac_1BB(
 			MMethodInvocation invocation, MMethodDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_89385 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_413683 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_89385)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_413683)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2626,22 +2628,22 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	public static final Object[] pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_bindingFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("mMember");
-		EObject _localVariable_1 = targetMatch.getObject("tMember");
-		EObject _localVariable_2 = sourceMatch.getObject("invocation");
-		EObject _localVariable_3 = targetMatch.getObject("tAccess");
+		EObject _localVariable_1 = sourceMatch.getObject("invocation");
+		EObject _localVariable_2 = targetMatch.getObject("tAccess");
+		EObject _localVariable_3 = targetMatch.getObject("tMember");
 		EObject tmpMMember = _localVariable_0;
-		EObject tmpTMember = _localVariable_1;
-		EObject tmpInvocation = _localVariable_2;
-		EObject tmpTAccess = _localVariable_3;
+		EObject tmpInvocation = _localVariable_1;
+		EObject tmpTAccess = _localVariable_2;
+		EObject tmpTMember = _localVariable_3;
 		if (tmpMMember instanceof MMethodDefinition) {
 			MMethodDefinition mMember = (MMethodDefinition) tmpMMember;
-			if (tmpTMember instanceof TMethodDefinition) {
-				TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
-				if (tmpInvocation instanceof MMethodInvocation) {
-					MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
-					if (tmpTAccess instanceof TCall) {
-						TCall tAccess = (TCall) tmpTAccess;
-						return new Object[] { mMember, tMember, invocation, tAccess, sourceMatch, targetMatch };
+			if (tmpInvocation instanceof MMethodInvocation) {
+				MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
+				if (tmpTAccess instanceof TCall) {
+					TCall tAccess = (TCall) tmpTAccess;
+					if (tmpTMember instanceof TMethodDefinition) {
+						TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
+						return new Object[] { mMember, invocation, tAccess, tMember, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2650,10 +2652,10 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_blackBBBBBB(
-			MMethodDefinition mMember, TMethodDefinition tMember, MMethodInvocation invocation, TCall tAccess,
+			MMethodDefinition mMember, MMethodInvocation invocation, TCall tAccess, TMethodDefinition tMember,
 			Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { mMember, tMember, invocation, tAccess, sourceMatch, targetMatch };
+			return new Object[] { mMember, invocation, tAccess, tMember, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2664,28 +2666,28 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 				sourceMatch, targetMatch);
 		if (result_pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_binding != null) {
 			MMethodDefinition mMember = (MMethodDefinition) result_pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_binding[0];
-			TMethodDefinition tMember = (TMethodDefinition) result_pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_binding[1];
-			MMethodInvocation invocation = (MMethodInvocation) result_pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_binding[2];
-			TCall tAccess = (TCall) result_pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_binding[3];
+			MMethodInvocation invocation = (MMethodInvocation) result_pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_binding[1];
+			TCall tAccess = (TCall) result_pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_binding[2];
+			TMethodDefinition tMember = (TMethodDefinition) result_pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_black = pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_blackBBBBBB(
-					mMember, tMember, invocation, tAccess, sourceMatch, targetMatch);
+					mMember, invocation, tAccess, tMember, sourceMatch, targetMatch);
 			if (result_pattern_MethodInvocationRecursive_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mMember, tMember, invocation, tAccess, sourceMatch, targetMatch };
+				return new Object[] { mMember, invocation, tAccess, tMember, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_24_3_solvecsp_bindingFBBBBBBB(
-			MethodInvocationRecursive _this, MMethodDefinition mMember, TMethodDefinition tMember,
-			MMethodInvocation invocation, TCall tAccess, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mMember, tMember, invocation, tAccess, sourceMatch,
+			MethodInvocationRecursive _this, MMethodDefinition mMember, MMethodInvocation invocation, TCall tAccess,
+			TMethodDefinition tMember, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mMember, invocation, tAccess, tMember, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, mMember, tMember, invocation, tAccess, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mMember, invocation, tAccess, tMember, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2695,10 +2697,10 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			MethodInvocationRecursive _this, MMethodDefinition mMember, TMethodDefinition tMember,
-			MMethodInvocation invocation, TCall tAccess, Match sourceMatch, Match targetMatch) {
+			MethodInvocationRecursive _this, MMethodDefinition mMember, MMethodInvocation invocation, TCall tAccess,
+			TMethodDefinition tMember, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_MethodInvocationRecursive_24_3_solvecsp_binding = pattern_MethodInvocationRecursive_24_3_solvecsp_bindingFBBBBBBB(
-				_this, mMember, tMember, invocation, tAccess, sourceMatch, targetMatch);
+				_this, mMember, invocation, tAccess, tMember, sourceMatch, targetMatch);
 		if (result_pattern_MethodInvocationRecursive_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationRecursive_24_3_solvecsp_binding[0];
 
@@ -2706,7 +2708,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 					csp);
 			if (result_pattern_MethodInvocationRecursive_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mMember, tMember, invocation, tAccess, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, mMember, invocation, tAccess, tMember, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2718,14 +2720,14 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodInvocationRecursive_24_5_matchcorrcontext_blackBBFBB(
+	public static final Iterable<Object[]> pattern_MethodInvocationRecursive_24_5_matchcorrcontext_blackBFBBB(
 			MMethodDefinition mMember, TMethodDefinition tMember, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
-				if (mMember.equals(mMemberToTMember.getSource())) {
-					_result.add(new Object[] { mMember, tMember, mMemberToTMember, sourceMatch, targetMatch });
+					.getOppositeReferenceTyped(mMember, MDefinitionToTMember.class, "source")) {
+				if (tMember.equals(mMemberToTMember.getTarget())) {
+					_result.add(new Object[] { mMember, mMemberToTMember, tMember, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2744,24 +2746,24 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_24_6_createcorrespondence_blackBBBBB(
-			MMethodDefinition mMember, TMethodDefinition tMember, MMethodInvocation invocation, TCall tAccess,
+			MMethodDefinition mMember, MMethodInvocation invocation, TCall tAccess, TMethodDefinition tMember,
 			CCMatch ccMatch) {
-		return new Object[] { mMember, tMember, invocation, tAccess, ccMatch };
+		return new Object[] { mMember, invocation, tAccess, tMember, ccMatch };
 	}
 
-	public static final Object[] pattern_MethodInvocationRecursive_24_6_createcorrespondence_greenFFBBB(
+	public static final Object[] pattern_MethodInvocationRecursive_24_6_createcorrespondence_greenFBBFB(
 			MMethodInvocation invocation, TCall tAccess, CCMatch ccMatch) {
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
-				.createMAbstractFlowElementToTAbstractFlowElement();
 		AbstractMethodInvocationToTAccess invocationToTAccess = PmFactory.eINSTANCE
 				.createAbstractMethodInvocationToTAccess();
-		mFlowElementToTFlowElement.setSource(invocation);
-		mFlowElementToTFlowElement.setTarget(tAccess);
-		ccMatch.getCreateCorr().add(mFlowElementToTFlowElement);
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
+				.createMAbstractFlowElementToTAbstractFlowElement();
 		invocationToTAccess.setSource(invocation);
 		invocationToTAccess.setTarget(tAccess);
 		ccMatch.getCreateCorr().add(invocationToTAccess);
-		return new Object[] { mFlowElementToTFlowElement, invocationToTAccess, invocation, tAccess, ccMatch };
+		mFlowElementToTFlowElement.setSource(invocation);
+		mFlowElementToTFlowElement.setTarget(tAccess);
+		ccMatch.getCreateCorr().add(mFlowElementToTFlowElement);
+		return new Object[] { invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_24_7_addtoreturnedresult_blackBB(
@@ -2787,7 +2789,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodInvocationRecursive_27_1_matchtggpattern_black_nac_0B(
 			MMethodInvocation invocation) {
-		for (AnnotationMemberValuePair __DEC_invocation_value_33863 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_invocation_value_440918 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { invocation };
 		}
@@ -2796,9 +2798,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodInvocationRecursive_27_1_matchtggpattern_black_nac_1BB(
 			MMethodInvocation invocation, MMethodDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_665414 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_259961 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_665414)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_259961)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2830,11 +2832,11 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodInvocationRecursive_28_1_matchtggpattern_blackBB(
-			TMethodDefinition tMember, TCall tAccess) {
-		if (tMember.getTAccessing().contains(tAccess)) {
-			if (tMember.equals(tAccess.getTTarget())) {
-				return new Object[] { tMember, tAccess };
+	public static final Object[] pattern_MethodInvocationRecursive_28_1_matchtggpattern_blackBB(TCall tAccess,
+			TMethodDefinition tMember) {
+		if (tMember.equals(tAccess.getTTarget())) {
+			if (tMember.getTAccessing().contains(tAccess)) {
+				return new Object[] { tAccess, tMember };
 			}
 		}
 		return null;
@@ -2923,12 +2925,12 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodInvocationRecursive_29_3_solveCSP_bindingFBBBBBB(
 			MethodInvocationRecursive _this, IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mMember, tMember, mMemberToTMember,
+			MDefinitionToTMember mMemberToTMember, TMethodDefinition tMember, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mMember, mMemberToTMember, tMember,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMember, tMember, mMemberToTMember, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mMember, mMemberToTMember, tMember, ruleResult };
 		}
 		return null;
 	}
@@ -2939,9 +2941,9 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodInvocationRecursive_29_3_solveCSP_bindingAndBlackFBBBBBB(
 			MethodInvocationRecursive _this, IsApplicableMatch isApplicableMatch, MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, ModelgeneratorRuleResult ruleResult) {
+			MDefinitionToTMember mMemberToTMember, TMethodDefinition tMember, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_MethodInvocationRecursive_29_3_solveCSP_binding = pattern_MethodInvocationRecursive_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mMember, tMember, mMemberToTMember, ruleResult);
+				_this, isApplicableMatch, mMember, mMemberToTMember, tMember, ruleResult);
 		if (result_pattern_MethodInvocationRecursive_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationRecursive_29_3_solveCSP_binding[0];
 
@@ -2949,7 +2951,7 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 					csp);
 			if (result_pattern_MethodInvocationRecursive_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMember, tMember, mMemberToTMember, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mMember, mMemberToTMember, tMember, ruleResult };
 			}
 		}
 		return null;
@@ -2963,41 +2965,41 @@ public class MethodInvocationRecursiveImpl extends AbstractRuleImpl implements M
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_29_5_checknacs_blackBBB(MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember) {
-		return new Object[] { mMember, tMember, mMemberToTMember };
+			MDefinitionToTMember mMemberToTMember, TMethodDefinition tMember) {
+		return new Object[] { mMember, mMemberToTMember, tMember };
 	}
 
 	public static final Object[] pattern_MethodInvocationRecursive_29_6_perform_blackBBBB(MMethodDefinition mMember,
-			TMethodDefinition tMember, MDefinitionToTMember mMemberToTMember, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { mMember, tMember, mMemberToTMember, ruleResult };
+			MDefinitionToTMember mMemberToTMember, TMethodDefinition tMember, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mMember, mMemberToTMember, tMember, ruleResult };
 	}
 
-	public static final Object[] pattern_MethodInvocationRecursive_29_6_perform_greenBBFFFFB(MMethodDefinition mMember,
+	public static final Object[] pattern_MethodInvocationRecursive_29_6_perform_greenBFFFFBB(MMethodDefinition mMember,
 			TMethodDefinition tMember, ModelgeneratorRuleResult ruleResult) {
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
-				.createMAbstractFlowElementToTAbstractFlowElement();
 		AbstractMethodInvocationToTAccess invocationToTAccess = PmFactory.eINSTANCE
 				.createAbstractMethodInvocationToTAccess();
 		MMethodInvocation invocation = ModiscoFactory.eINSTANCE.createMMethodInvocation();
 		TCall tAccess = BasicFactory.eINSTANCE.createTCall();
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
+				.createMAbstractFlowElementToTAbstractFlowElement();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(mFlowElementToTFlowElement);
 		ruleResult.getCorrObjects().add(invocationToTAccess);
 		mMember.getMMethodInvocations().add(invocation);
-		mFlowElementToTFlowElement.setSource(invocation);
 		invocationToTAccess.setSource(invocation);
 		invocation.setMethod(mMember);
 		ruleResult.getSourceObjects().add(invocation);
-		tMember.getTAccessing().add(tAccess);
 		invocationToTAccess.setTarget(tAccess);
 		tAccess.setTTarget(tMember);
-		mFlowElementToTFlowElement.setTarget(tAccess);
+		tMember.getTAccessing().add(tAccess);
 		ruleResult.getTargetObjects().add(tAccess);
+		mFlowElementToTFlowElement.setSource(invocation);
+		mFlowElementToTFlowElement.setTarget(tAccess);
+		ruleResult.getCorrObjects().add(mFlowElementToTFlowElement);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mMember, tMember, mFlowElementToTFlowElement, invocationToTAccess, invocation, tAccess,
+		return new Object[] { mMember, invocationToTAccess, invocation, tAccess, mFlowElementToTFlowElement, tMember,
 				ruleResult };
 	}
 

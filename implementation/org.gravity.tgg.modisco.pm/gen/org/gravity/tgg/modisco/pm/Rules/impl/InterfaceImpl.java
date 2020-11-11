@@ -22,7 +22,6 @@ import org.eclipse.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.MAbstractMethodDefinition;
 
 import org.gravity.tgg.modisco.pm.ASTNodeToTAnnotatable;
-import org.gravity.tgg.modisco.pm.InterfaceDeclarationToTInterface;
 import org.gravity.tgg.modisco.pm.PackageToTPackage;
 import org.gravity.tgg.modisco.pm.PmFactory;
 
@@ -170,58 +169,51 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[3];
 		InterfaceDeclaration mType = (InterfaceDeclaration) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
-		Object[] result1_green = InterfaceImpl.pattern_Interface_1_1_performtransformation_greenBFFBFFBB(tPackage, pg,
+		Object[] result1_green = InterfaceImpl.pattern_Interface_1_1_performtransformation_greenBFFBFBB(tPackage, pg,
 				mType, csp);
 		TInterface tType = (TInterface) result1_green[1];
 		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_green[2];
 		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[4];
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = (InterfaceDeclarationToTInterface) result1_green[5];
 
-		Object[] result2_black = InterfaceImpl.pattern_Interface_1_2_collecttranslatedelements_blackBBBBB(tType,
-				mTypeToTType, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType);
+		Object[] result2_black = InterfaceImpl.pattern_Interface_1_2_collecttranslatedelements_blackBBBB(tType,
+				mTypeToTType, mBodyToTAnnotation, mType);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tType] = " + tType + ", "
 					+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
-					+ "[mInterfaceDeclarationtoTInterface] = " + mInterfaceDeclarationtoTInterface + ", " + "[mType] = "
-					+ mType + ".");
+					+ "[mType] = " + mType + ".");
 		}
-		Object[] result2_green = InterfaceImpl.pattern_Interface_1_2_collecttranslatedelements_greenFBBBBB(tType,
-				mTypeToTType, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType);
+		Object[] result2_green = InterfaceImpl.pattern_Interface_1_2_collecttranslatedelements_greenFBBBB(tType,
+				mTypeToTType, mBodyToTAnnotation, mType);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = InterfaceImpl.pattern_Interface_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult,
-				mPackageToTPackage, tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation,
-				mInterfaceDeclarationtoTInterface, mType);
+		Object[] result3_black = InterfaceImpl.pattern_Interface_1_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult,
+				mPackageToTPackage, tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[mPackageToTPackage] = " + mPackageToTPackage + ", " + "[tPackage] = " + tPackage + ", "
 					+ "[tType] = " + tType + ", " + "[mPackage] = " + mPackage + ", " + "[mTypeToTType] = "
 					+ mTypeToTType + ", " + "[pg] = " + pg + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation
-					+ ", " + "[mInterfaceDeclarationtoTInterface] = " + mInterfaceDeclarationtoTInterface + ", "
-					+ "[mType] = " + mType + ".");
+					+ ", " + "[mType] = " + mType + ".");
 		}
-		InterfaceImpl.pattern_Interface_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFFF(ruleresult, tPackage,
-				tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType);
-		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge pg__tType____interfaces = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tPackage__tType____interfaces = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge mInterfaceDeclarationtoTInterface__mType____source = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge mInterfaceDeclarationtoTInterface__tType____target = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[21];
-		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[22];
+		InterfaceImpl.pattern_Interface_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(ruleresult, tPackage, tType,
+				mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
+		//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge pg__tType____interfaces = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tPackage__tType____interfaces = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[19];
 
 		// 
 		// 
-		InterfaceImpl.pattern_Interface_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, mPackageToTPackage,
-				tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface,
-				mType);
+		InterfaceImpl.pattern_Interface_1_5_registerobjects_expressionBBBBBBBBBB(this, ruleresult, mPackageToTPackage,
+				tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
 		return InterfaceImpl.pattern_Interface_1_6_expressionFB(ruleresult);
 	}
 
@@ -261,10 +253,10 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 				Object[] result3_green = InterfaceImpl.pattern_Interface_2_3_findcontext_greenBBBBBFFFFFF(
 						mPackageToTPackage, tPackage, mPackage, pg, mType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
-				//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge tPackage__pg____typeGraph = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mPackageToTPackage__mPackage____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tPackage__pg____typeGraph = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mPackageToTPackage__mPackage____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge mPackageToTPackage__tPackage____target = (EMoflonEdge) result3_green[10];
 
 				Object[] result4_bindingAndBlack = InterfaceImpl.pattern_Interface_2_4_solveCSP_bindingAndBlackFBBBBBBB(
@@ -402,7 +394,7 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject tPackage,
 			EObject tType, EObject mPackage, EObject mTypeToTType, EObject pg, EObject mBodyToTAnnotation,
-			EObject mInterfaceDeclarationtoTInterface, EObject mType) {
+			EObject mType) {
 		ruleresult.registerObject("mPackageToTPackage", mPackageToTPackage);
 		ruleresult.registerObject("tPackage", tPackage);
 		ruleresult.registerObject("tType", tType);
@@ -410,7 +402,6 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
-		ruleresult.registerObject("mInterfaceDeclarationtoTInterface", mInterfaceDeclarationtoTInterface);
 		ruleresult.registerObject("mType", mType);
 
 	}
@@ -459,12 +450,12 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 			}
 			InterfaceImpl.pattern_Interface_10_4_collectelementstobetranslated_greenBBBBFFFFFF(match, tPackage, tType,
 					pg);
-			//nothing EMoflonEdge pg__tType____interfaces = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge tPackage__tType____interfaces = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result4_green[8];
-			//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result4_green[9];
+			//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge pg__tType____interfaces = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge tPackage__tType____interfaces = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result4_green[8];
+			//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result4_green[9];
 
 			Object[] result5_black = InterfaceImpl.pattern_Interface_10_5_collectcontextelements_blackBBBB(match,
 					tPackage, tType, pg);
@@ -504,58 +495,51 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[3];
 		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
-		Object[] result1_green = InterfaceImpl.pattern_Interface_11_1_performtransformation_greenBBFFFFB(tType,
-				mPackage, csp);
+		Object[] result1_green = InterfaceImpl.pattern_Interface_11_1_performtransformation_greenBBFFFB(tType, mPackage,
+				csp);
 		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_green[2];
 		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[3];
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = (InterfaceDeclarationToTInterface) result1_green[4];
-		InterfaceDeclaration mType = (InterfaceDeclaration) result1_green[5];
+		InterfaceDeclaration mType = (InterfaceDeclaration) result1_green[4];
 
-		Object[] result2_black = InterfaceImpl.pattern_Interface_11_2_collecttranslatedelements_blackBBBBB(tType,
-				mTypeToTType, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType);
+		Object[] result2_black = InterfaceImpl.pattern_Interface_11_2_collecttranslatedelements_blackBBBB(tType,
+				mTypeToTType, mBodyToTAnnotation, mType);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tType] = " + tType + ", "
 					+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
-					+ "[mInterfaceDeclarationtoTInterface] = " + mInterfaceDeclarationtoTInterface + ", " + "[mType] = "
-					+ mType + ".");
+					+ "[mType] = " + mType + ".");
 		}
-		Object[] result2_green = InterfaceImpl.pattern_Interface_11_2_collecttranslatedelements_greenFBBBBB(tType,
-				mTypeToTType, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType);
+		Object[] result2_green = InterfaceImpl.pattern_Interface_11_2_collecttranslatedelements_greenFBBBB(tType,
+				mTypeToTType, mBodyToTAnnotation, mType);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = InterfaceImpl.pattern_Interface_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult,
-				mPackageToTPackage, tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation,
-				mInterfaceDeclarationtoTInterface, mType);
+		Object[] result3_black = InterfaceImpl.pattern_Interface_11_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult,
+				mPackageToTPackage, tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[mPackageToTPackage] = " + mPackageToTPackage + ", " + "[tPackage] = " + tPackage + ", "
 					+ "[tType] = " + tType + ", " + "[mPackage] = " + mPackage + ", " + "[mTypeToTType] = "
 					+ mTypeToTType + ", " + "[pg] = " + pg + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation
-					+ ", " + "[mInterfaceDeclarationtoTInterface] = " + mInterfaceDeclarationtoTInterface + ", "
-					+ "[mType] = " + mType + ".");
+					+ ", " + "[mType] = " + mType + ".");
 		}
-		InterfaceImpl.pattern_Interface_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFFF(ruleresult, tPackage,
-				tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType);
-		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge pg__tType____interfaces = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tPackage__tType____interfaces = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge mInterfaceDeclarationtoTInterface__mType____source = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge mInterfaceDeclarationtoTInterface__tType____target = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[21];
-		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[22];
+		InterfaceImpl.pattern_Interface_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(ruleresult, tPackage, tType,
+				mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
+		//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge pg__tType____interfaces = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tPackage__tType____interfaces = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[19];
 
 		// 
 		// 
-		InterfaceImpl.pattern_Interface_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, mPackageToTPackage,
-				tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface,
-				mType);
+		InterfaceImpl.pattern_Interface_11_5_registerobjects_expressionBBBBBBBBBB(this, ruleresult, mPackageToTPackage,
+				tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
 		return InterfaceImpl.pattern_Interface_11_6_expressionFB(ruleresult);
 	}
 
@@ -595,14 +579,14 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 				Object[] result3_green = InterfaceImpl.pattern_Interface_12_3_findcontext_greenBBBBBFFFFFFFFFF(
 						mPackageToTPackage, tPackage, tType, mPackage, pg);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
-				//nothing EMoflonEdge pg__tType____interfaces = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge tPackage__tType____interfaces = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tPackage__pg____typeGraph = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mPackageToTPackage__mPackage____source = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge pg__tType____interfaces = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tPackage__pg____typeGraph = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mPackageToTPackage__mPackage____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tPackage__tType____interfaces = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tType__pg____pg = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge mPackageToTPackage__tPackage____target = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = InterfaceImpl
@@ -740,7 +724,7 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject tPackage,
 			EObject tType, EObject mPackage, EObject mTypeToTType, EObject pg, EObject mBodyToTAnnotation,
-			EObject mInterfaceDeclarationtoTInterface, EObject mType) {
+			EObject mType) {
 		ruleresult.registerObject("mPackageToTPackage", mPackageToTPackage);
 		ruleresult.registerObject("tPackage", tPackage);
 		ruleresult.registerObject("tType", tType);
@@ -748,7 +732,6 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
-		ruleresult.registerObject("mInterfaceDeclarationtoTInterface", mInterfaceDeclarationtoTInterface);
 		ruleresult.registerObject("mType", mType);
 
 	}
@@ -768,7 +751,7 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_67(EMoflonEdge _edge_interfaces) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_743(EMoflonEdge _edge_ownedTypes) {
 
 		Object[] result1_bindingAndBlack = InterfaceImpl
 				.pattern_Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -783,7 +766,7 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 
 		// ForEach 
 		for (Object[] result2_black : InterfaceImpl
-				.pattern_Interface_20_2_testcorematchandDECs_blackFFFB(_edge_interfaces)) {
+				.pattern_Interface_20_2_testcorematchandDECs_blackFFFB(_edge_ownedTypes)) {
 			TPackage tPackage = (TPackage) result2_black[0];
 			TInterface tType = (TInterface) result2_black[1];
 			TypeGraph pg = (TypeGraph) result2_black[2];
@@ -822,7 +805,7 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_69(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_763(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = InterfaceImpl
 				.pattern_Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -885,21 +868,21 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
-
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
 
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
-		var_tType_tLib.setType("boolean");
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
 
 		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
 		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
 		var_mType_proxy.setType("boolean");
+
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
+		var_tType_tLib.setType("boolean");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -949,21 +932,21 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
-
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
 
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
-		var_tType_tLib.setType("boolean");
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
 
 		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
 		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
 		var_mType_proxy.setType("boolean");
+
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
+		var_tType_tLib.setType("boolean");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1050,10 +1033,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 							+ ", " + "[tType] = " + tType + ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg
 							+ ", " + "[mType] = " + mType + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				InterfaceImpl.pattern_Interface_24_6_createcorrespondence_greenBFFFBB(tType, mType, ccMatch);
+				InterfaceImpl.pattern_Interface_24_6_createcorrespondence_greenBFFBB(tType, mType, ccMatch);
 				//nothing TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result6_green[1];
 				//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[2];
-				//nothing InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = (InterfaceDeclarationToTInterface) result6_green[3];
 
 				Object[] result7_black = InterfaceImpl.pattern_Interface_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -1200,13 +1182,12 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 								+ ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", " + "[ruleResult] = "
 								+ ruleResult + ".");
 					}
-					InterfaceImpl.pattern_Interface_29_6_perform_greenBFBFBFFFBB(tPackage, mPackage, pg, ruleResult,
+					InterfaceImpl.pattern_Interface_29_6_perform_greenBFBFBFFBB(tPackage, mPackage, pg, ruleResult,
 							csp);
 					//nothing TInterface tType = (TInterface) result6_green[1];
 					//nothing TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result6_green[3];
 					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[5];
-					//nothing InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = (InterfaceDeclarationToTInterface) result6_green[6];
-					//nothing InterfaceDeclaration mType = (InterfaceDeclaration) result6_green[7];
+					//nothing InterfaceDeclaration mType = (InterfaceDeclaration) result6_green[6];
 
 				} else {
 				}
@@ -1303,11 +1284,11 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 					(TypeGraph) arguments.get(4), (InterfaceDeclaration) arguments.get(5));
 		case RulesPackage.INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
 					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
 					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9));
+					(EObject) arguments.get(8));
 			return null;
 		case RulesPackage.INTERFACE___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
@@ -1333,18 +1314,18 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 					(org.eclipse.modisco.java.Package) arguments.get(4), (TypeGraph) arguments.get(5));
 		case RulesPackage.INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
 					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
 					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9));
+					(EObject) arguments.get(8));
 			return null;
 		case RulesPackage.INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_67__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_67((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_69__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_69((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_743__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_743((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_763__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_763((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1535,55 +1516,46 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		return null;
 	}
 
-	public static final Object[] pattern_Interface_1_1_performtransformation_greenBFFBFFBB(TPackage tPackage,
+	public static final Object[] pattern_Interface_1_1_performtransformation_greenBFFBFBB(TPackage tPackage,
 			TypeGraph pg, InterfaceDeclaration mType, CSP csp) {
 		TInterface tType = BasicFactory.eINSTANCE.createTInterface();
 		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = PmFactory.eINSTANCE
-				.createInterfaceDeclarationToTInterface();
 		Object _localVariable_0 = csp.getValue("tType", "tName");
 		Object _localVariable_1 = csp.getValue("tType", "tLib");
+		tPackage.getOwnedTypes().add(tType);
 		pg.getInterfaces().add(tType);
 		tPackage.getInterfaces().add(tType);
 		pg.getOwnedTypes().add(tType);
-		tPackage.getOwnedTypes().add(tType);
 		mTypeToTType.setTarget(tType);
 		mTypeToTType.setSource(mType);
 		mBodyToTAnnotation.setTarget(tType);
 		mBodyToTAnnotation.setSource(mType);
-		mInterfaceDeclarationtoTInterface.setSource(mType);
-		mInterfaceDeclarationtoTInterface.setTarget(tType);
 		String tType_tName_prime = (String) _localVariable_0;
 		boolean tType_tLib_prime = (boolean) _localVariable_1;
 		tType.setTName(tType_tName_prime);
 		tType.setTLib(Boolean.valueOf(tType_tLib_prime));
-		return new Object[] { tPackage, tType, mTypeToTType, pg, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface,
-				mType, csp };
+		return new Object[] { tPackage, tType, mTypeToTType, pg, mBodyToTAnnotation, mType, csp };
 	}
 
-	public static final Object[] pattern_Interface_1_2_collecttranslatedelements_blackBBBBB(TInterface tType,
-			TypeToTAbstractType mTypeToTType, ASTNodeToTAnnotatable mBodyToTAnnotation,
-			InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface, InterfaceDeclaration mType) {
-		return new Object[] { tType, mTypeToTType, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType };
+	public static final Object[] pattern_Interface_1_2_collecttranslatedelements_blackBBBB(TInterface tType,
+			TypeToTAbstractType mTypeToTType, ASTNodeToTAnnotatable mBodyToTAnnotation, InterfaceDeclaration mType) {
+		return new Object[] { tType, mTypeToTType, mBodyToTAnnotation, mType };
 	}
 
-	public static final Object[] pattern_Interface_1_2_collecttranslatedelements_greenFBBBBB(TInterface tType,
-			TypeToTAbstractType mTypeToTType, ASTNodeToTAnnotatable mBodyToTAnnotation,
-			InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface, InterfaceDeclaration mType) {
+	public static final Object[] pattern_Interface_1_2_collecttranslatedelements_greenFBBBB(TInterface tType,
+			TypeToTAbstractType mTypeToTType, ASTNodeToTAnnotatable mBodyToTAnnotation, InterfaceDeclaration mType) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(tType);
 		ruleresult.getCreatedLinkElements().add(mTypeToTType);
 		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
-		ruleresult.getCreatedLinkElements().add(mInterfaceDeclarationtoTInterface);
 		ruleresult.getTranslatedElements().add(mType);
-		return new Object[] { ruleresult, tType, mTypeToTType, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface,
-				mType };
+		return new Object[] { ruleresult, tType, mTypeToTType, mBodyToTAnnotation, mType };
 	}
 
-	public static final Object[] pattern_Interface_1_3_bookkeepingforedges_blackBBBBBBBBBB(PerformRuleResult ruleresult,
+	public static final Object[] pattern_Interface_1_3_bookkeepingforedges_blackBBBBBBBBB(PerformRuleResult ruleresult,
 			EObject mPackageToTPackage, EObject tPackage, EObject tType, EObject mPackage, EObject mTypeToTType,
-			EObject pg, EObject mBodyToTAnnotation, EObject mInterfaceDeclarationtoTInterface, EObject mType) {
+			EObject pg, EObject mBodyToTAnnotation, EObject mType) {
 		if (!mPackageToTPackage.equals(tPackage)) {
 			if (!mPackageToTPackage.equals(tType)) {
 				if (!mPackageToTPackage.equals(mTypeToTType)) {
@@ -1614,50 +1586,25 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 																								if (!mBodyToTAnnotation
 																										.equals(pg)) {
 																									if (!mBodyToTAnnotation
-																											.equals(mInterfaceDeclarationtoTInterface)) {
-																										if (!mBodyToTAnnotation
-																												.equals(mType)) {
-																											if (!mInterfaceDeclarationtoTInterface
-																													.equals(mPackageToTPackage)) {
-																												if (!mInterfaceDeclarationtoTInterface
-																														.equals(tPackage)) {
-																													if (!mInterfaceDeclarationtoTInterface
-																															.equals(tType)) {
-																														if (!mInterfaceDeclarationtoTInterface
-																																.equals(mPackage)) {
-																															if (!mInterfaceDeclarationtoTInterface
-																																	.equals(mTypeToTType)) {
-																																if (!mInterfaceDeclarationtoTInterface
-																																		.equals(pg)) {
-																																	if (!mInterfaceDeclarationtoTInterface
-																																			.equals(mType)) {
-																																		if (!mType
-																																				.equals(tPackage)) {
-																																			if (!mType
-																																					.equals(tType)) {
-																																				if (!mType
-																																						.equals(mTypeToTType)) {
-																																					if (!mType
-																																							.equals(pg)) {
-																																						return new Object[] {
-																																								ruleresult,
-																																								mPackageToTPackage,
-																																								tPackage,
-																																								tType,
-																																								mPackage,
-																																								mTypeToTType,
-																																								pg,
-																																								mBodyToTAnnotation,
-																																								mInterfaceDeclarationtoTInterface,
-																																								mType };
-																																					}
-																																				}
-																																			}
-																																		}
-																																	}
-																																}
-																															}
-																														}
+																											.equals(mType)) {
+																										if (!mType
+																												.equals(tPackage)) {
+																											if (!mType
+																													.equals(tType)) {
+																												if (!mType
+																														.equals(mTypeToTType)) {
+																													if (!mType
+																															.equals(pg)) {
+																														return new Object[] {
+																																ruleresult,
+																																mPackageToTPackage,
+																																tPackage,
+																																tType,
+																																mPackage,
+																																mTypeToTType,
+																																pg,
+																																mBodyToTAnnotation,
+																																mType };
 																													}
 																												}
 																											}
@@ -1689,38 +1636,40 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		return null;
 	}
 
-	public static final Object[] pattern_Interface_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFFF(
+	public static final Object[] pattern_Interface_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject tPackage, EObject tType, EObject mPackage, EObject mTypeToTType,
-			EObject pg, EObject mBodyToTAnnotation, EObject mInterfaceDeclarationtoTInterface, EObject mType) {
+			EObject pg, EObject mBodyToTAnnotation, EObject mType) {
+		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mBodyToTAnnotation__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mInterfaceDeclarationtoTInterface__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mInterfaceDeclarationtoTInterface__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Interface";
+		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
+		String tType__tPackage____package_name_prime = "package";
 		String mBodyToTAnnotation__tType____target_name_prime = "target";
 		String pg__tType____interfaces_name_prime = "interfaces";
 		String mBodyToTAnnotation__mType____source_name_prime = "source";
+		String mTypeToTType__tType____target_name_prime = "target";
 		String tPackage__tType____interfaces_name_prime = "interfaces";
+		String mTypeToTType__mType____source_name_prime = "source";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____pg_name_prime = "pg";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
 		String mType__mPackage____package_name_prime = "package";
-		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__tPackage____package_name_prime = "package";
-		String mInterfaceDeclarationtoTInterface__mType____source_name_prime = "source";
-		String mInterfaceDeclarationtoTInterface__tType____target_name_prime = "target";
-		String mTypeToTType__tType____target_name_prime = "target";
-		String mTypeToTType__mType____source_name_prime = "source";
+		tPackage__tType____ownedTypes.setSrc(tPackage);
+		tPackage__tType____ownedTypes.setTrg(tType);
+		ruleresult.getCreatedEdges().add(tPackage__tType____ownedTypes);
+		tType__tPackage____package.setSrc(tType);
+		tType__tPackage____package.setTrg(tPackage);
+		ruleresult.getCreatedEdges().add(tType__tPackage____package);
 		mBodyToTAnnotation__tType____target.setSrc(mBodyToTAnnotation);
 		mBodyToTAnnotation__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tType____target);
@@ -1730,9 +1679,15 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		mBodyToTAnnotation__mType____source.setSrc(mBodyToTAnnotation);
 		mBodyToTAnnotation__mType____source.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mType____source);
+		mTypeToTType__tType____target.setSrc(mTypeToTType);
+		mTypeToTType__tType____target.setTrg(tType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
 		tPackage__tType____interfaces.setSrc(tPackage);
 		tPackage__tType____interfaces.setTrg(tType);
 		ruleresult.getCreatedEdges().add(tPackage__tType____interfaces);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(pg__tType____ownedTypes);
@@ -1745,56 +1700,31 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		mType__mPackage____package.setSrc(mType);
 		mType__mPackage____package.setTrg(mPackage);
 		ruleresult.getTranslatedEdges().add(mType__mPackage____package);
-		tPackage__tType____ownedTypes.setSrc(tPackage);
-		tPackage__tType____ownedTypes.setTrg(tType);
-		ruleresult.getCreatedEdges().add(tPackage__tType____ownedTypes);
-		tType__tPackage____package.setSrc(tType);
-		tType__tPackage____package.setTrg(tPackage);
-		ruleresult.getCreatedEdges().add(tType__tPackage____package);
-		mInterfaceDeclarationtoTInterface__mType____source.setSrc(mInterfaceDeclarationtoTInterface);
-		mInterfaceDeclarationtoTInterface__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mInterfaceDeclarationtoTInterface__mType____source);
-		mInterfaceDeclarationtoTInterface__tType____target.setSrc(mInterfaceDeclarationtoTInterface);
-		mInterfaceDeclarationtoTInterface__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mInterfaceDeclarationtoTInterface__tType____target);
-		mTypeToTType__tType____target.setSrc(mTypeToTType);
-		mTypeToTType__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
+		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
 		mBodyToTAnnotation__tType____target.setName(mBodyToTAnnotation__tType____target_name_prime);
 		pg__tType____interfaces.setName(pg__tType____interfaces_name_prime);
 		mBodyToTAnnotation__mType____source.setName(mBodyToTAnnotation__mType____source_name_prime);
+		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
 		tPackage__tType____interfaces.setName(tPackage__tType____interfaces_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____pg.setName(tType__pg____pg_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
-		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
-		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
-		mInterfaceDeclarationtoTInterface__mType____source
-				.setName(mInterfaceDeclarationtoTInterface__mType____source_name_prime);
-		mInterfaceDeclarationtoTInterface__tType____target
-				.setName(mInterfaceDeclarationtoTInterface__tType____target_name_prime);
-		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
-		return new Object[] { ruleresult, tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation,
-				mInterfaceDeclarationtoTInterface, mType, mBodyToTAnnotation__tType____target, pg__tType____interfaces,
-				mBodyToTAnnotation__mType____source, tPackage__tType____interfaces, pg__tType____ownedTypes,
-				tType__pg____pg, mPackage__mType____ownedElements, mType__mPackage____package,
-				tPackage__tType____ownedTypes, tType__tPackage____package,
-				mInterfaceDeclarationtoTInterface__mType____source, mInterfaceDeclarationtoTInterface__tType____target,
-				mTypeToTType__tType____target, mTypeToTType__mType____source };
+		return new Object[] { ruleresult, tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType,
+				tPackage__tType____ownedTypes, tType__tPackage____package, mBodyToTAnnotation__tType____target,
+				pg__tType____interfaces, mBodyToTAnnotation__mType____source, mTypeToTType__tType____target,
+				tPackage__tType____interfaces, mTypeToTType__mType____source, pg__tType____ownedTypes, tType__pg____pg,
+				mPackage__mType____ownedElements, mType__mPackage____package };
 	}
 
-	public static final void pattern_Interface_1_5_registerobjects_expressionBBBBBBBBBBB(Interface _this,
+	public static final void pattern_Interface_1_5_registerobjects_expressionBBBBBBBBBB(Interface _this,
 			PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject tPackage, EObject tType, EObject mPackage,
-			EObject mTypeToTType, EObject pg, EObject mBodyToTAnnotation, EObject mInterfaceDeclarationtoTInterface,
-			EObject mType) {
+			EObject mTypeToTType, EObject pg, EObject mBodyToTAnnotation, EObject mType) {
 		_this.registerObjects_FWD(ruleresult, mPackageToTPackage, tPackage, tType, mPackage, mTypeToTType, pg,
-				mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType);
+				mBodyToTAnnotation, mType);
 
 	}
 
@@ -1883,8 +1813,8 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 			PackageToTPackage mPackageToTPackage, TPackage tPackage, org.eclipse.modisco.java.Package mPackage,
 			InterfaceDeclaration mType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mPackage.getOwnedElements().contains(mType)) {
-			if (mPackage.equals(mPackageToTPackage.getSource())) {
+		if (mPackage.equals(mPackageToTPackage.getSource())) {
+			if (mPackage.getOwnedElements().contains(mType)) {
 				if (tPackage.equals(mPackageToTPackage.getTarget())) {
 					TypeGraph pg = tPackage.getTypeGraph();
 					if (pg != null) {
@@ -1901,44 +1831,44 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 			PackageToTPackage mPackageToTPackage, TPackage tPackage, org.eclipse.modisco.java.Package mPackage,
 			TypeGraph pg, InterfaceDeclaration mType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__pg____typeGraph = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackageToTPackage__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackageToTPackage__tPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mPackage__mType____ownedElements_name_prime = "ownedElements";
-		String mType__mPackage____package_name_prime = "package";
 		String tPackage__pg____typeGraph_name_prime = "typeGraph";
 		String mPackageToTPackage__mPackage____source_name_prime = "source";
+		String mPackage__mType____ownedElements_name_prime = "ownedElements";
+		String mType__mPackage____package_name_prime = "package";
 		String mPackageToTPackage__tPackage____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(mPackageToTPackage);
 		isApplicableMatch.getAllContextElements().add(tPackage);
 		isApplicableMatch.getAllContextElements().add(mPackage);
 		isApplicableMatch.getAllContextElements().add(pg);
 		isApplicableMatch.getAllContextElements().add(mType);
-		mPackage__mType____ownedElements.setSrc(mPackage);
-		mPackage__mType____ownedElements.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(mPackage__mType____ownedElements);
-		mType__mPackage____package.setSrc(mType);
-		mType__mPackage____package.setTrg(mPackage);
-		isApplicableMatch.getAllContextElements().add(mType__mPackage____package);
 		tPackage__pg____typeGraph.setSrc(tPackage);
 		tPackage__pg____typeGraph.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tPackage__pg____typeGraph);
 		mPackageToTPackage__mPackage____source.setSrc(mPackageToTPackage);
 		mPackageToTPackage__mPackage____source.setTrg(mPackage);
 		isApplicableMatch.getAllContextElements().add(mPackageToTPackage__mPackage____source);
+		mPackage__mType____ownedElements.setSrc(mPackage);
+		mPackage__mType____ownedElements.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mPackage__mType____ownedElements);
+		mType__mPackage____package.setSrc(mType);
+		mType__mPackage____package.setTrg(mPackage);
+		isApplicableMatch.getAllContextElements().add(mType__mPackage____package);
 		mPackageToTPackage__tPackage____target.setSrc(mPackageToTPackage);
 		mPackageToTPackage__tPackage____target.setTrg(tPackage);
 		isApplicableMatch.getAllContextElements().add(mPackageToTPackage__tPackage____target);
-		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
-		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
 		tPackage__pg____typeGraph.setName(tPackage__pg____typeGraph_name_prime);
 		mPackageToTPackage__mPackage____source.setName(mPackageToTPackage__mPackage____source_name_prime);
+		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
+		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
 		mPackageToTPackage__tPackage____target.setName(mPackageToTPackage__tPackage____target_name_prime);
 		return new Object[] { mPackageToTPackage, tPackage, mPackage, pg, mType, isApplicableMatch,
-				mPackage__mType____ownedElements, mType__mPackage____package, tPackage__pg____typeGraph,
-				mPackageToTPackage__mPackage____source, mPackageToTPackage__tPackage____target };
+				tPackage__pg____typeGraph, mPackageToTPackage__mPackage____source, mPackage__mType____ownedElements,
+				mType__mPackage____package, mPackageToTPackage__tPackage____target };
 	}
 
 	public static final Object[] pattern_Interface_2_4_solveCSP_bindingFBBBBBBB(Interface _this,
@@ -2049,19 +1979,25 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 
 	public static final Object[] pattern_Interface_10_4_collectelementstobetranslated_greenBBBBFFFFFF(Match match,
 			TPackage tPackage, TInterface tType, TypeGraph pg) {
+		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tType);
+		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
+		String tType__tPackage____package_name_prime = "package";
 		String pg__tType____interfaces_name_prime = "interfaces";
 		String tPackage__tType____interfaces_name_prime = "interfaces";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____pg_name_prime = "pg";
-		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__tPackage____package_name_prime = "package";
+		tPackage__tType____ownedTypes.setSrc(tPackage);
+		tPackage__tType____ownedTypes.setTrg(tType);
+		match.getToBeTranslatedEdges().add(tPackage__tType____ownedTypes);
+		tType__tPackage____package.setSrc(tType);
+		tType__tPackage____package.setTrg(tPackage);
+		match.getToBeTranslatedEdges().add(tType__tPackage____package);
 		pg__tType____interfaces.setSrc(pg);
 		pg__tType____interfaces.setTrg(tType);
 		match.getToBeTranslatedEdges().add(pg__tType____interfaces);
@@ -2074,20 +2010,14 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		tType__pg____pg.setSrc(tType);
 		tType__pg____pg.setTrg(pg);
 		match.getToBeTranslatedEdges().add(tType__pg____pg);
-		tPackage__tType____ownedTypes.setSrc(tPackage);
-		tPackage__tType____ownedTypes.setTrg(tType);
-		match.getToBeTranslatedEdges().add(tPackage__tType____ownedTypes);
-		tType__tPackage____package.setSrc(tType);
-		tType__tPackage____package.setTrg(tPackage);
-		match.getToBeTranslatedEdges().add(tType__tPackage____package);
+		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
+		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
 		pg__tType____interfaces.setName(pg__tType____interfaces_name_prime);
 		tPackage__tType____interfaces.setName(tPackage__tType____interfaces_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____pg.setName(tType__pg____pg_name_prime);
-		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
-		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
-		return new Object[] { match, tPackage, tType, pg, pg__tType____interfaces, tPackage__tType____interfaces,
-				pg__tType____ownedTypes, tType__pg____pg, tPackage__tType____ownedTypes, tType__tPackage____package };
+		return new Object[] { match, tPackage, tType, pg, tPackage__tType____ownedTypes, tType__tPackage____package,
+				pg__tType____interfaces, tPackage__tType____interfaces, pg__tType____ownedTypes, tType__pg____pg };
 	}
 
 	public static final Object[] pattern_Interface_10_5_collectcontextelements_blackBBBB(Match match, TPackage tPackage,
@@ -2193,53 +2123,43 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		return null;
 	}
 
-	public static final Object[] pattern_Interface_11_1_performtransformation_greenBBFFFFB(TInterface tType,
+	public static final Object[] pattern_Interface_11_1_performtransformation_greenBBFFFB(TInterface tType,
 			org.eclipse.modisco.java.Package mPackage, CSP csp) {
 		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = PmFactory.eINSTANCE
-				.createInterfaceDeclarationToTInterface();
 		InterfaceDeclaration mType = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		Object _localVariable_0 = csp.getValue("mType", "name");
 		Object _localVariable_1 = csp.getValue("mType", "proxy");
 		mTypeToTType.setTarget(tType);
 		mBodyToTAnnotation.setTarget(tType);
-		mInterfaceDeclarationtoTInterface.setTarget(tType);
 		mBodyToTAnnotation.setSource(mType);
-		mPackage.getOwnedElements().add(mType);
-		mInterfaceDeclarationtoTInterface.setSource(mType);
 		mTypeToTType.setSource(mType);
+		mPackage.getOwnedElements().add(mType);
 		String mType_name_prime = (String) _localVariable_0;
 		boolean mType_proxy_prime = (boolean) _localVariable_1;
 		mType.setName(mType_name_prime);
 		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
-		return new Object[] { tType, mPackage, mTypeToTType, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface,
-				mType, csp };
+		return new Object[] { tType, mPackage, mTypeToTType, mBodyToTAnnotation, mType, csp };
 	}
 
-	public static final Object[] pattern_Interface_11_2_collecttranslatedelements_blackBBBBB(TInterface tType,
-			TypeToTAbstractType mTypeToTType, ASTNodeToTAnnotatable mBodyToTAnnotation,
-			InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface, InterfaceDeclaration mType) {
-		return new Object[] { tType, mTypeToTType, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType };
+	public static final Object[] pattern_Interface_11_2_collecttranslatedelements_blackBBBB(TInterface tType,
+			TypeToTAbstractType mTypeToTType, ASTNodeToTAnnotatable mBodyToTAnnotation, InterfaceDeclaration mType) {
+		return new Object[] { tType, mTypeToTType, mBodyToTAnnotation, mType };
 	}
 
-	public static final Object[] pattern_Interface_11_2_collecttranslatedelements_greenFBBBBB(TInterface tType,
-			TypeToTAbstractType mTypeToTType, ASTNodeToTAnnotatable mBodyToTAnnotation,
-			InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface, InterfaceDeclaration mType) {
+	public static final Object[] pattern_Interface_11_2_collecttranslatedelements_greenFBBBB(TInterface tType,
+			TypeToTAbstractType mTypeToTType, ASTNodeToTAnnotatable mBodyToTAnnotation, InterfaceDeclaration mType) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(tType);
 		ruleresult.getCreatedLinkElements().add(mTypeToTType);
 		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
-		ruleresult.getCreatedLinkElements().add(mInterfaceDeclarationtoTInterface);
 		ruleresult.getCreatedElements().add(mType);
-		return new Object[] { ruleresult, tType, mTypeToTType, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface,
-				mType };
+		return new Object[] { ruleresult, tType, mTypeToTType, mBodyToTAnnotation, mType };
 	}
 
-	public static final Object[] pattern_Interface_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject tPackage, EObject tType, EObject mPackage,
-			EObject mTypeToTType, EObject pg, EObject mBodyToTAnnotation, EObject mInterfaceDeclarationtoTInterface,
-			EObject mType) {
+	public static final Object[] pattern_Interface_11_3_bookkeepingforedges_blackBBBBBBBBB(PerformRuleResult ruleresult,
+			EObject mPackageToTPackage, EObject tPackage, EObject tType, EObject mPackage, EObject mTypeToTType,
+			EObject pg, EObject mBodyToTAnnotation, EObject mType) {
 		if (!mPackageToTPackage.equals(tPackage)) {
 			if (!mPackageToTPackage.equals(tType)) {
 				if (!mPackageToTPackage.equals(mTypeToTType)) {
@@ -2270,50 +2190,25 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 																								if (!mBodyToTAnnotation
 																										.equals(pg)) {
 																									if (!mBodyToTAnnotation
-																											.equals(mInterfaceDeclarationtoTInterface)) {
-																										if (!mBodyToTAnnotation
-																												.equals(mType)) {
-																											if (!mInterfaceDeclarationtoTInterface
-																													.equals(mPackageToTPackage)) {
-																												if (!mInterfaceDeclarationtoTInterface
-																														.equals(tPackage)) {
-																													if (!mInterfaceDeclarationtoTInterface
-																															.equals(tType)) {
-																														if (!mInterfaceDeclarationtoTInterface
-																																.equals(mPackage)) {
-																															if (!mInterfaceDeclarationtoTInterface
-																																	.equals(mTypeToTType)) {
-																																if (!mInterfaceDeclarationtoTInterface
-																																		.equals(pg)) {
-																																	if (!mInterfaceDeclarationtoTInterface
-																																			.equals(mType)) {
-																																		if (!mType
-																																				.equals(tPackage)) {
-																																			if (!mType
-																																					.equals(tType)) {
-																																				if (!mType
-																																						.equals(mTypeToTType)) {
-																																					if (!mType
-																																							.equals(pg)) {
-																																						return new Object[] {
-																																								ruleresult,
-																																								mPackageToTPackage,
-																																								tPackage,
-																																								tType,
-																																								mPackage,
-																																								mTypeToTType,
-																																								pg,
-																																								mBodyToTAnnotation,
-																																								mInterfaceDeclarationtoTInterface,
-																																								mType };
-																																					}
-																																				}
-																																			}
-																																		}
-																																	}
-																																}
-																															}
-																														}
+																											.equals(mType)) {
+																										if (!mType
+																												.equals(tPackage)) {
+																											if (!mType
+																													.equals(tType)) {
+																												if (!mType
+																														.equals(mTypeToTType)) {
+																													if (!mType
+																															.equals(pg)) {
+																														return new Object[] {
+																																ruleresult,
+																																mPackageToTPackage,
+																																tPackage,
+																																tType,
+																																mPackage,
+																																mTypeToTType,
+																																pg,
+																																mBodyToTAnnotation,
+																																mType };
 																													}
 																												}
 																											}
@@ -2345,38 +2240,40 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		return null;
 	}
 
-	public static final Object[] pattern_Interface_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFFF(
+	public static final Object[] pattern_Interface_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject tPackage, EObject tType, EObject mPackage, EObject mTypeToTType,
-			EObject pg, EObject mBodyToTAnnotation, EObject mInterfaceDeclarationtoTInterface, EObject mType) {
+			EObject pg, EObject mBodyToTAnnotation, EObject mType) {
+		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mBodyToTAnnotation__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mInterfaceDeclarationtoTInterface__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mInterfaceDeclarationtoTInterface__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Interface";
+		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
+		String tType__tPackage____package_name_prime = "package";
 		String mBodyToTAnnotation__tType____target_name_prime = "target";
 		String pg__tType____interfaces_name_prime = "interfaces";
 		String mBodyToTAnnotation__mType____source_name_prime = "source";
+		String mTypeToTType__tType____target_name_prime = "target";
 		String tPackage__tType____interfaces_name_prime = "interfaces";
+		String mTypeToTType__mType____source_name_prime = "source";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____pg_name_prime = "pg";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
 		String mType__mPackage____package_name_prime = "package";
-		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__tPackage____package_name_prime = "package";
-		String mInterfaceDeclarationtoTInterface__mType____source_name_prime = "source";
-		String mInterfaceDeclarationtoTInterface__tType____target_name_prime = "target";
-		String mTypeToTType__tType____target_name_prime = "target";
-		String mTypeToTType__mType____source_name_prime = "source";
+		tPackage__tType____ownedTypes.setSrc(tPackage);
+		tPackage__tType____ownedTypes.setTrg(tType);
+		ruleresult.getTranslatedEdges().add(tPackage__tType____ownedTypes);
+		tType__tPackage____package.setSrc(tType);
+		tType__tPackage____package.setTrg(tPackage);
+		ruleresult.getTranslatedEdges().add(tType__tPackage____package);
 		mBodyToTAnnotation__tType____target.setSrc(mBodyToTAnnotation);
 		mBodyToTAnnotation__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tType____target);
@@ -2386,9 +2283,15 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		mBodyToTAnnotation__mType____source.setSrc(mBodyToTAnnotation);
 		mBodyToTAnnotation__mType____source.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mType____source);
+		mTypeToTType__tType____target.setSrc(mTypeToTType);
+		mTypeToTType__tType____target.setTrg(tType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
 		tPackage__tType____interfaces.setSrc(tPackage);
 		tPackage__tType____interfaces.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(tPackage__tType____interfaces);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(pg__tType____ownedTypes);
@@ -2401,56 +2304,31 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		mType__mPackage____package.setSrc(mType);
 		mType__mPackage____package.setTrg(mPackage);
 		ruleresult.getCreatedEdges().add(mType__mPackage____package);
-		tPackage__tType____ownedTypes.setSrc(tPackage);
-		tPackage__tType____ownedTypes.setTrg(tType);
-		ruleresult.getTranslatedEdges().add(tPackage__tType____ownedTypes);
-		tType__tPackage____package.setSrc(tType);
-		tType__tPackage____package.setTrg(tPackage);
-		ruleresult.getTranslatedEdges().add(tType__tPackage____package);
-		mInterfaceDeclarationtoTInterface__mType____source.setSrc(mInterfaceDeclarationtoTInterface);
-		mInterfaceDeclarationtoTInterface__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mInterfaceDeclarationtoTInterface__mType____source);
-		mInterfaceDeclarationtoTInterface__tType____target.setSrc(mInterfaceDeclarationtoTInterface);
-		mInterfaceDeclarationtoTInterface__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mInterfaceDeclarationtoTInterface__tType____target);
-		mTypeToTType__tType____target.setSrc(mTypeToTType);
-		mTypeToTType__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
+		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
 		mBodyToTAnnotation__tType____target.setName(mBodyToTAnnotation__tType____target_name_prime);
 		pg__tType____interfaces.setName(pg__tType____interfaces_name_prime);
 		mBodyToTAnnotation__mType____source.setName(mBodyToTAnnotation__mType____source_name_prime);
+		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
 		tPackage__tType____interfaces.setName(tPackage__tType____interfaces_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____pg.setName(tType__pg____pg_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
-		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
-		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
-		mInterfaceDeclarationtoTInterface__mType____source
-				.setName(mInterfaceDeclarationtoTInterface__mType____source_name_prime);
-		mInterfaceDeclarationtoTInterface__tType____target
-				.setName(mInterfaceDeclarationtoTInterface__tType____target_name_prime);
-		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
-		return new Object[] { ruleresult, tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation,
-				mInterfaceDeclarationtoTInterface, mType, mBodyToTAnnotation__tType____target, pg__tType____interfaces,
-				mBodyToTAnnotation__mType____source, tPackage__tType____interfaces, pg__tType____ownedTypes,
-				tType__pg____pg, mPackage__mType____ownedElements, mType__mPackage____package,
-				tPackage__tType____ownedTypes, tType__tPackage____package,
-				mInterfaceDeclarationtoTInterface__mType____source, mInterfaceDeclarationtoTInterface__tType____target,
-				mTypeToTType__tType____target, mTypeToTType__mType____source };
+		return new Object[] { ruleresult, tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType,
+				tPackage__tType____ownedTypes, tType__tPackage____package, mBodyToTAnnotation__tType____target,
+				pg__tType____interfaces, mBodyToTAnnotation__mType____source, mTypeToTType__tType____target,
+				tPackage__tType____interfaces, mTypeToTType__mType____source, pg__tType____ownedTypes, tType__pg____pg,
+				mPackage__mType____ownedElements, mType__mPackage____package };
 	}
 
-	public static final void pattern_Interface_11_5_registerobjects_expressionBBBBBBBBBBB(Interface _this,
+	public static final void pattern_Interface_11_5_registerobjects_expressionBBBBBBBBBB(Interface _this,
 			PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject tPackage, EObject tType, EObject mPackage,
-			EObject mTypeToTType, EObject pg, EObject mBodyToTAnnotation, EObject mInterfaceDeclarationtoTInterface,
-			EObject mType) {
+			EObject mTypeToTType, EObject pg, EObject mBodyToTAnnotation, EObject mType) {
 		_this.registerObjects_BWD(ruleresult, mPackageToTPackage, tPackage, tType, mPackage, mTypeToTType, pg,
-				mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType);
+				mBodyToTAnnotation, mType);
 
 	}
 
@@ -2544,12 +2422,12 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 			PackageToTPackage mPackageToTPackage, TPackage tPackage, TInterface tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (pg.getInterfaces().contains(tType)) {
-			if (tPackage.getInterfaces().contains(tType)) {
-				if (pg.getOwnedTypes().contains(tType)) {
-					if (tPackage.getOwnedTypes().contains(tType)) {
-						if (pg.equals(tPackage.getTypeGraph())) {
-							if (mPackage.equals(mPackageToTPackage.getSource())) {
+		if (tPackage.getOwnedTypes().contains(tType)) {
+			if (pg.getInterfaces().contains(tType)) {
+				if (pg.equals(tPackage.getTypeGraph())) {
+					if (mPackage.equals(mPackageToTPackage.getSource())) {
+						if (tPackage.getInterfaces().contains(tType)) {
+							if (pg.getOwnedTypes().contains(tType)) {
 								if (tPackage.equals(mPackageToTPackage.getTarget())) {
 									_result.add(new Object[] { mPackageToTPackage, tPackage, tType, mPackage, pg });
 								}
@@ -2566,32 +2444,44 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 			PackageToTPackage mPackageToTPackage, TPackage tPackage, TInterface tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tPackage__pg____typeGraph = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mPackageToTPackage__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tPackage__pg____typeGraph = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mPackageToTPackage__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackageToTPackage__tPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
+		String tType__tPackage____package_name_prime = "package";
 		String pg__tType____interfaces_name_prime = "interfaces";
+		String tPackage__pg____typeGraph_name_prime = "typeGraph";
+		String mPackageToTPackage__mPackage____source_name_prime = "source";
 		String tPackage__tType____interfaces_name_prime = "interfaces";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____pg_name_prime = "pg";
-		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__tPackage____package_name_prime = "package";
-		String tPackage__pg____typeGraph_name_prime = "typeGraph";
-		String mPackageToTPackage__mPackage____source_name_prime = "source";
 		String mPackageToTPackage__tPackage____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(mPackageToTPackage);
 		isApplicableMatch.getAllContextElements().add(tPackage);
 		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(mPackage);
 		isApplicableMatch.getAllContextElements().add(pg);
+		tPackage__tType____ownedTypes.setSrc(tPackage);
+		tPackage__tType____ownedTypes.setTrg(tType);
+		isApplicableMatch.getAllContextElements().add(tPackage__tType____ownedTypes);
+		tType__tPackage____package.setSrc(tType);
+		tType__tPackage____package.setTrg(tPackage);
+		isApplicableMatch.getAllContextElements().add(tType__tPackage____package);
 		pg__tType____interfaces.setSrc(pg);
 		pg__tType____interfaces.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(pg__tType____interfaces);
+		tPackage__pg____typeGraph.setSrc(tPackage);
+		tPackage__pg____typeGraph.setTrg(pg);
+		isApplicableMatch.getAllContextElements().add(tPackage__pg____typeGraph);
+		mPackageToTPackage__mPackage____source.setSrc(mPackageToTPackage);
+		mPackageToTPackage__mPackage____source.setTrg(mPackage);
+		isApplicableMatch.getAllContextElements().add(mPackageToTPackage__mPackage____source);
 		tPackage__tType____interfaces.setSrc(tPackage);
 		tPackage__tType____interfaces.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(tPackage__tType____interfaces);
@@ -2601,34 +2491,22 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		tType__pg____pg.setSrc(tType);
 		tType__pg____pg.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tType__pg____pg);
-		tPackage__tType____ownedTypes.setSrc(tPackage);
-		tPackage__tType____ownedTypes.setTrg(tType);
-		isApplicableMatch.getAllContextElements().add(tPackage__tType____ownedTypes);
-		tType__tPackage____package.setSrc(tType);
-		tType__tPackage____package.setTrg(tPackage);
-		isApplicableMatch.getAllContextElements().add(tType__tPackage____package);
-		tPackage__pg____typeGraph.setSrc(tPackage);
-		tPackage__pg____typeGraph.setTrg(pg);
-		isApplicableMatch.getAllContextElements().add(tPackage__pg____typeGraph);
-		mPackageToTPackage__mPackage____source.setSrc(mPackageToTPackage);
-		mPackageToTPackage__mPackage____source.setTrg(mPackage);
-		isApplicableMatch.getAllContextElements().add(mPackageToTPackage__mPackage____source);
 		mPackageToTPackage__tPackage____target.setSrc(mPackageToTPackage);
 		mPackageToTPackage__tPackage____target.setTrg(tPackage);
 		isApplicableMatch.getAllContextElements().add(mPackageToTPackage__tPackage____target);
+		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
+		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
 		pg__tType____interfaces.setName(pg__tType____interfaces_name_prime);
+		tPackage__pg____typeGraph.setName(tPackage__pg____typeGraph_name_prime);
+		mPackageToTPackage__mPackage____source.setName(mPackageToTPackage__mPackage____source_name_prime);
 		tPackage__tType____interfaces.setName(tPackage__tType____interfaces_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____pg.setName(tType__pg____pg_name_prime);
-		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
-		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
-		tPackage__pg____typeGraph.setName(tPackage__pg____typeGraph_name_prime);
-		mPackageToTPackage__mPackage____source.setName(mPackageToTPackage__mPackage____source_name_prime);
 		mPackageToTPackage__tPackage____target.setName(mPackageToTPackage__tPackage____target_name_prime);
 		return new Object[] { mPackageToTPackage, tPackage, tType, mPackage, pg, isApplicableMatch,
-				pg__tType____interfaces, tPackage__tType____interfaces, pg__tType____ownedTypes, tType__pg____pg,
-				tPackage__tType____ownedTypes, tType__tPackage____package, tPackage__pg____typeGraph,
-				mPackageToTPackage__mPackage____source, mPackageToTPackage__tPackage____target };
+				tPackage__tType____ownedTypes, tType__tPackage____package, pg__tType____interfaces,
+				tPackage__pg____typeGraph, mPackageToTPackage__mPackage____source, tPackage__tType____interfaces,
+				pg__tType____ownedTypes, tType__pg____pg, mPackageToTPackage__tPackage____target };
 	}
 
 	public static final Object[] pattern_Interface_12_4_solveCSP_bindingFBBBBBBB(Interface _this,
@@ -2744,9 +2622,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 
 	public static final Object[] pattern_Interface_20_2_testcorematchandDECs_black_nac_0BB(TInterface tType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tType_interfaces_268780 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_interfaces_722722 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "interfaces")) {
-			if (!tPackage.equals(__DEC_tType_interfaces_268780)) {
+			if (!tPackage.equals(__DEC_tType_interfaces_722722)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2755,9 +2633,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 
 	public static final Object[] pattern_Interface_20_2_testcorematchandDECs_black_nac_1BB(TInterface tType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tType_interfaces_575802 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_interfaces_159608 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tType_interfaces_575802)) {
+			if (!pg.equals(__DEC_tType_interfaces_159608)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2766,9 +2644,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 
 	public static final Object[] pattern_Interface_20_2_testcorematchandDECs_black_nac_2BB(TInterface tType,
 			TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_47348 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_47348 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_47348)) {
+		TPackage __DEC_tType_ownedTypes_845099 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_845099 != null) {
+			if (!tPackage.equals(__DEC_tType_ownedTypes_845099)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2777,9 +2655,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_20_2_testcorematchandDECs_black_nac_3B(TInterface tType) {
-		TAbstractType __DEC_tType_innerTypes_689060 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_689060 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_689060)) {
+		TAbstractType __DEC_tType_innerTypes_140275 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_140275 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_140275)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2788,27 +2666,29 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Iterable<Object[]> pattern_Interface_20_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_interfaces) {
+			EMoflonEdge _edge_ownedTypes) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpPg = _edge_interfaces.getSrc();
-		if (tmpPg instanceof TypeGraph) {
-			TypeGraph pg = (TypeGraph) tmpPg;
-			EObject tmpTType = _edge_interfaces.getTrg();
+		EObject tmpTPackage = _edge_ownedTypes.getSrc();
+		if (tmpTPackage instanceof TPackage) {
+			TPackage tPackage = (TPackage) tmpTPackage;
+			EObject tmpTType = _edge_ownedTypes.getTrg();
 			if (tmpTType instanceof TInterface) {
 				TInterface tType = (TInterface) tmpTType;
-				if (pg.getInterfaces().contains(tType)) {
-					if (pg.getOwnedTypes().contains(tType)) {
-						TPackage tPackage = tType.getPackage();
-						if (tPackage != null) {
-							if (tPackage.getInterfaces().contains(tType)) {
-								if (pg.equals(tPackage.getTypeGraph())) {
-									if (pattern_Interface_20_2_testcorematchandDECs_black_nac_1BB(tType, pg) == null) {
-										if (pattern_Interface_20_2_testcorematchandDECs_black_nac_3B(tType) == null) {
-											if (pattern_Interface_20_2_testcorematchandDECs_black_nac_0BB(tType,
-													tPackage) == null) {
-												if (pattern_Interface_20_2_testcorematchandDECs_black_nac_2BB(tType,
-														tPackage) == null) {
-													_result.add(new Object[] { tPackage, tType, pg, _edge_interfaces });
+				if (tPackage.getOwnedTypes().contains(tType)) {
+					if (tPackage.getInterfaces().contains(tType)) {
+						TypeGraph pg = tPackage.getTypeGraph();
+						if (pg != null) {
+							if (pg.getInterfaces().contains(tType)) {
+								if (pg.getOwnedTypes().contains(tType)) {
+									if (pattern_Interface_20_2_testcorematchandDECs_black_nac_0BB(tType,
+											tPackage) == null) {
+										if (pattern_Interface_20_2_testcorematchandDECs_black_nac_2BB(tType,
+												tPackage) == null) {
+											if (pattern_Interface_20_2_testcorematchandDECs_black_nac_3B(
+													tType) == null) {
+												if (pattern_Interface_20_2_testcorematchandDECs_black_nac_1BB(tType,
+														pg) == null) {
+													_result.add(new Object[] { tPackage, tType, pg, _edge_ownedTypes });
 												}
 											}
 										}
@@ -2922,9 +2802,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_21_2_testcorematchandDECs_black_nac_0B(InterfaceDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_605409 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_605409 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_605409)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_891296 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_891296 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_891296)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2933,9 +2813,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_21_2_testcorematchandDECs_black_nac_1B(InterfaceDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_877658 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_461606 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_877658 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_461606 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2943,7 +2823,7 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_21_2_testcorematchandDECs_black_nac_2B(InterfaceDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_444655 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_32836 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -2951,7 +2831,7 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_21_2_testcorematchandDECs_black_nac_3B(InterfaceDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_403588 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_983905 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3169,23 +3049,17 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		return new Object[] { tPackage, tType, mPackage, pg, mType, ccMatch };
 	}
 
-	public static final Object[] pattern_Interface_24_6_createcorrespondence_greenBFFFBB(TInterface tType,
+	public static final Object[] pattern_Interface_24_6_createcorrespondence_greenBFFBB(TInterface tType,
 			InterfaceDeclaration mType, CCMatch ccMatch) {
 		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = PmFactory.eINSTANCE
-				.createInterfaceDeclarationToTInterface();
 		mTypeToTType.setTarget(tType);
 		mTypeToTType.setSource(mType);
 		ccMatch.getCreateCorr().add(mTypeToTType);
 		mBodyToTAnnotation.setTarget(tType);
 		mBodyToTAnnotation.setSource(mType);
 		ccMatch.getCreateCorr().add(mBodyToTAnnotation);
-		mInterfaceDeclarationtoTInterface.setSource(mType);
-		mInterfaceDeclarationtoTInterface.setTarget(tType);
-		ccMatch.getCreateCorr().add(mInterfaceDeclarationtoTInterface);
-		return new Object[] { tType, mTypeToTType, mBodyToTAnnotation, mInterfaceDeclarationtoTInterface, mType,
-				ccMatch };
+		return new Object[] { tType, mTypeToTType, mBodyToTAnnotation, mType, ccMatch };
 	}
 
 	public static final Object[] pattern_Interface_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -3209,9 +3083,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_27_1_matchtggpattern_black_nac_0B(InterfaceDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_789779 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_789779 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_789779)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_687293 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_687293 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_687293)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3220,9 +3094,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_27_1_matchtggpattern_black_nac_1B(InterfaceDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_550323 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_619810 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_550323 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_619810 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3230,7 +3104,7 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_27_1_matchtggpattern_black_nac_2B(InterfaceDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_680922 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_176726 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3238,7 +3112,7 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_27_1_matchtggpattern_black_nac_3B(InterfaceDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_630930 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_177139 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3273,9 +3147,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 
 	public static final Object[] pattern_Interface_28_1_matchtggpattern_black_nac_0BB(TInterface tType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tType_interfaces_999793 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_interfaces_493256 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "interfaces")) {
-			if (!tPackage.equals(__DEC_tType_interfaces_999793)) {
+			if (!tPackage.equals(__DEC_tType_interfaces_493256)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3283,9 +3157,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_28_1_matchtggpattern_black_nac_1BB(TInterface tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_interfaces_610858 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_interfaces_304791 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tType_interfaces_610858)) {
+			if (!pg.equals(__DEC_tType_interfaces_304791)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3294,9 +3168,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 
 	public static final Object[] pattern_Interface_28_1_matchtggpattern_black_nac_2BB(TInterface tType,
 			TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_588531 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_588531 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_588531)) {
+		TPackage __DEC_tType_ownedTypes_580946 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_580946 != null) {
+			if (!tPackage.equals(__DEC_tType_ownedTypes_580946)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3305,9 +3179,9 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 	}
 
 	public static final Object[] pattern_Interface_28_1_matchtggpattern_black_nac_3B(TInterface tType) {
-		TAbstractType __DEC_tType_innerTypes_788666 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_788666 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_788666)) {
+		TAbstractType __DEC_tType_innerTypes_502971 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_502971 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_502971)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3317,11 +3191,11 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 
 	public static final Object[] pattern_Interface_28_1_matchtggpattern_blackBBB(TPackage tPackage, TInterface tType,
 			TypeGraph pg) {
-		if (pg.getInterfaces().contains(tType)) {
-			if (tPackage.getInterfaces().contains(tType)) {
-				if (pg.getOwnedTypes().contains(tType)) {
-					if (tPackage.getOwnedTypes().contains(tType)) {
-						if (pg.equals(tPackage.getTypeGraph())) {
+		if (tPackage.getOwnedTypes().contains(tType)) {
+			if (pg.getInterfaces().contains(tType)) {
+				if (pg.equals(tPackage.getTypeGraph())) {
+					if (tPackage.getInterfaces().contains(tType)) {
+						if (pg.getOwnedTypes().contains(tType)) {
 							if (pattern_Interface_28_1_matchtggpattern_black_nac_0BB(tType, tPackage) == null) {
 								if (pattern_Interface_28_1_matchtggpattern_black_nac_1BB(tType, pg) == null) {
 									if (pattern_Interface_28_1_matchtggpattern_black_nac_2BB(tType, tPackage) == null) {
@@ -3484,13 +3358,11 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		return new Object[] { mPackageToTPackage, tPackage, mPackage, pg, ruleResult };
 	}
 
-	public static final Object[] pattern_Interface_29_6_perform_greenBFBFBFFFBB(TPackage tPackage,
+	public static final Object[] pattern_Interface_29_6_perform_greenBFBFBFFBB(TPackage tPackage,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, ModelgeneratorRuleResult ruleResult, CSP csp) {
 		TInterface tType = BasicFactory.eINSTANCE.createTInterface();
 		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = PmFactory.eINSTANCE
-				.createInterfaceDeclarationToTInterface();
 		InterfaceDeclaration mType = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		Object _localVariable_0 = csp.getValue("tType", "tName");
 		Object _localVariable_1 = csp.getValue("tType", "tLib");
@@ -3498,21 +3370,18 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		Object _localVariable_3 = csp.getValue("mType", "proxy");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
+		tPackage.getOwnedTypes().add(tType);
 		pg.getInterfaces().add(tType);
 		tPackage.getInterfaces().add(tType);
 		pg.getOwnedTypes().add(tType);
-		tPackage.getOwnedTypes().add(tType);
 		ruleResult.getTargetObjects().add(tType);
 		mTypeToTType.setTarget(tType);
 		ruleResult.getCorrObjects().add(mTypeToTType);
 		mBodyToTAnnotation.setTarget(tType);
 		ruleResult.getCorrObjects().add(mBodyToTAnnotation);
-		mInterfaceDeclarationtoTInterface.setTarget(tType);
-		ruleResult.getCorrObjects().add(mInterfaceDeclarationtoTInterface);
 		mBodyToTAnnotation.setSource(mType);
-		mPackage.getOwnedElements().add(mType);
-		mInterfaceDeclarationtoTInterface.setSource(mType);
 		mTypeToTType.setSource(mType);
+		mPackage.getOwnedElements().add(mType);
 		ruleResult.getSourceObjects().add(mType);
 		String tType_tName_prime = (String) _localVariable_0;
 		boolean tType_tLib_prime = (boolean) _localVariable_1;
@@ -3525,8 +3394,7 @@ public class InterfaceImpl extends AbstractRuleImpl implements Interface {
 		mType.setName(mType_name_prime);
 		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation,
-				mInterfaceDeclarationtoTInterface, mType, ruleResult, csp };
+		return new Object[] { tPackage, tType, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_Interface_29_7_expressionFB(

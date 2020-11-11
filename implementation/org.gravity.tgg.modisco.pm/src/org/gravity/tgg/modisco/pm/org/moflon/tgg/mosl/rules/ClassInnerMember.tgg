@@ -36,11 +36,6 @@
 }
 
 #correspondence {
-	++ tInnerClassToTInnerClass :ClassDeclarationToTClass {
-		#src->mInnerClass
-		#trg->tInnerClass
-	}
-
 	++ tInnerTypeToTInnerAbstractType :TypeToTAbstractType {
 		#src->mInnerClass
 		#trg->tInnerClass

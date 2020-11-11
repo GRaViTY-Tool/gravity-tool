@@ -33,7 +33,7 @@
 }
 
 #correspondence {
-	mClassDeclarationToTClass :ClassDeclarationToTClass {
+	mClassDeclarationToTClass :TypeToTAbstractType {
 		#src->mClass
 		#trg->tClass
 	}

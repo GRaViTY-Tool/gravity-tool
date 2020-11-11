@@ -219,7 +219,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_57(EMoflonEdge _edge_parentClass);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_694(EMoflonEdge _edge_parentClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +227,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_59(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_713(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

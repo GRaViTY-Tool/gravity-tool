@@ -25,12 +25,12 @@
 }
 
 #correspondence {
-	eClassDeclarationToTClass :ClassDeclarationToTClass {
+	eClassDeclarationToTClass :TypeToTAbstractType {
 		#src->eClassDeclaration
 		#trg->tClass
 	}
 
-	eExtendedClassToTExtendedClass :ClassDeclarationToTClass {
+	eExtendedClassToTExtendedClass :TypeToTAbstractType {
 		#src->eExtendedClass
 		#trg->tExtendedClass
 	}

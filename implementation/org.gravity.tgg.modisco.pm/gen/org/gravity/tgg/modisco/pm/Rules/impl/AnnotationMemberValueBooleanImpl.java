@@ -20,7 +20,7 @@ import org.eclipse.modisco.java.BooleanLiteral;
 import org.eclipse.modisco.java.emf.JavaFactory;
 
 import org.gravity.tgg.modisco.pm.AnnotationMemberValuePairToTAnnotationValue;
-import org.gravity.tgg.modisco.pm.BooleanLiteralToTBoolNode;
+import org.gravity.tgg.modisco.pm.LiteralToTNode;
 import org.gravity.tgg.modisco.pm.PmFactory;
 
 import org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueBoolean;
@@ -185,7 +185,7 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 				.pattern_AnnotationMemberValueBoolean_1_1_performtransformation_greenFFBBB(tAnnotationValue, mValue,
 						csp);
 		TBoolNode tValue = (TBoolNode) result1_green[0];
-		BooleanLiteralToTBoolNode mValueToTValue = (BooleanLiteralToTBoolNode) result1_green[1];
+		LiteralToTNode mValueToTValue = (LiteralToTNode) result1_green[1];
 
 		Object[] result2_black = AnnotationMemberValueBooleanImpl
 				.pattern_AnnotationMemberValueBoolean_1_2_collecttranslatedelements_blackBBB(tValue, mValueToTValue,
@@ -215,8 +215,8 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 				ruleresult, mAnnotationValue, tValue, mValueToTValue, tAnnotationValue, mValue);
 		//nothing EMoflonEdge mValueToTValue__mValue____source = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge mAnnotationValue__mValue____value = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mValueToTValue__tValue____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mValueToTValue__tValue____target = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
@@ -525,7 +525,7 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 		Object[] result1_green = AnnotationMemberValueBooleanImpl
 				.pattern_AnnotationMemberValueBoolean_11_1_performtransformation_greenBBFFB(mAnnotationValue, tValue,
 						csp);
-		BooleanLiteralToTBoolNode mValueToTValue = (BooleanLiteralToTBoolNode) result1_green[2];
+		LiteralToTNode mValueToTValue = (LiteralToTNode) result1_green[2];
 		BooleanLiteral mValue = (BooleanLiteral) result1_green[3];
 
 		Object[] result2_black = AnnotationMemberValueBooleanImpl
@@ -556,8 +556,8 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 				ruleresult, mAnnotationValue, tValue, mValueToTValue, tAnnotationValue, mValue);
 		//nothing EMoflonEdge mValueToTValue__mValue____source = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge mAnnotationValue__mValue____value = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mValueToTValue__tValue____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mValueToTValue__tValue____target = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
@@ -779,7 +779,7 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_54(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_677(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueBooleanImpl
 				.pattern_AnnotationMemberValueBoolean_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -838,7 +838,7 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_56(EMoflonEdge _edge_value) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_694(EMoflonEdge _edge_value) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueBooleanImpl
 				.pattern_AnnotationMemberValueBoolean_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -909,13 +909,13 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mValue_value = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
-		var_mValue_value.setValue(__helper.getValue("mValue", "value"));
-		var_mValue_value.setType("boolean");
-
 		Variable var_tValue_value = CSPFactoryHelper.eINSTANCE.createVariable("tValue", true, csp);
 		var_tValue_value.setValue(__helper.getValue("tValue", "value"));
 		var_tValue_value.setType("boolean");
+
+		Variable var_mValue_value = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
+		var_mValue_value.setValue(__helper.getValue("mValue", "value"));
+		var_mValue_value.setType("boolean");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -956,13 +956,13 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mValue_value = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
-		var_mValue_value.setValue(__helper.getValue("mValue", "value"));
-		var_mValue_value.setType("boolean");
-
 		Variable var_tValue_value = CSPFactoryHelper.eINSTANCE.createVariable("tValue", true, csp);
 		var_tValue_value.setValue(__helper.getValue("tValue", "value"));
 		var_tValue_value.setType("boolean");
+
+		Variable var_mValue_value = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
+		var_mValue_value.setValue(__helper.getValue("mValue", "value"));
+		var_mValue_value.setType("boolean");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1053,7 +1053,7 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 				AnnotationMemberValueBooleanImpl
 						.pattern_AnnotationMemberValueBoolean_24_6_createcorrespondence_greenBFBB(tValue, mValue,
 								ccMatch);
-				//nothing BooleanLiteralToTBoolNode mValueToTValue = (BooleanLiteralToTBoolNode) result6_green[1];
+				//nothing LiteralToTNode mValueToTValue = (LiteralToTNode) result6_green[1];
 
 				Object[] result7_black = AnnotationMemberValueBooleanImpl
 						.pattern_AnnotationMemberValueBoolean_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1213,7 +1213,7 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 					AnnotationMemberValueBooleanImpl.pattern_AnnotationMemberValueBoolean_29_6_perform_greenBFFBFBB(
 							mAnnotationValue, tAnnotationValue, ruleResult, csp);
 					//nothing TBoolNode tValue = (TBoolNode) result6_green[1];
-					//nothing BooleanLiteralToTBoolNode mValueToTValue = (BooleanLiteralToTBoolNode) result6_green[2];
+					//nothing LiteralToTNode mValueToTValue = (LiteralToTNode) result6_green[2];
 					//nothing BooleanLiteral mValue = (BooleanLiteral) result6_green[4];
 
 				} else {
@@ -1349,10 +1349,10 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_54__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_54((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_56__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_56((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_677__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_677((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_694__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_694((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1573,7 +1573,7 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 	public static final Object[] pattern_AnnotationMemberValueBoolean_1_1_performtransformation_greenFFBBB(
 			TAnnotationValue tAnnotationValue, BooleanLiteral mValue, CSP csp) {
 		TBoolNode tValue = AnnotationsFactory.eINSTANCE.createTBoolNode();
-		BooleanLiteralToTBoolNode mValueToTValue = PmFactory.eINSTANCE.createBooleanLiteralToTBoolNode();
+		LiteralToTNode mValueToTValue = PmFactory.eINSTANCE.createLiteralToTNode();
 		Object _localVariable_0 = csp.getValue("tValue", "value");
 		tAnnotationValue.getTValue().add(tValue);
 		mValueToTValue.setSource(mValue);
@@ -1584,12 +1584,12 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueBoolean_1_2_collecttranslatedelements_blackBBB(
-			TBoolNode tValue, BooleanLiteralToTBoolNode mValueToTValue, BooleanLiteral mValue) {
+			TBoolNode tValue, LiteralToTNode mValueToTValue, BooleanLiteral mValue) {
 		return new Object[] { tValue, mValueToTValue, mValue };
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueBoolean_1_2_collecttranslatedelements_greenFBBB(
-			TBoolNode tValue, BooleanLiteralToTBoolNode mValueToTValue, BooleanLiteral mValue) {
+			TBoolNode tValue, LiteralToTNode mValueToTValue, BooleanLiteral mValue) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(tValue);
 		ruleresult.getCreatedLinkElements().add(mValueToTValue);
@@ -1688,33 +1688,33 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 			EObject tAnnotationValue, EObject mValue) {
 		EMoflonEdge mValueToTValue__mValue____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnnotationValue__mValue____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mValueToTValue__tValue____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mValueToTValue__tValue____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationMemberValueBoolean";
 		String mValueToTValue__mValue____source_name_prime = "source";
 		String mAnnotationValue__mValue____value_name_prime = "value";
-		String mValueToTValue__tValue____target_name_prime = "target";
 		String tAnnotationValue__tValue____tValue_name_prime = "tValue";
+		String mValueToTValue__tValue____target_name_prime = "target";
 		mValueToTValue__mValue____source.setSrc(mValueToTValue);
 		mValueToTValue__mValue____source.setTrg(mValue);
 		ruleresult.getCreatedEdges().add(mValueToTValue__mValue____source);
 		mAnnotationValue__mValue____value.setSrc(mAnnotationValue);
 		mAnnotationValue__mValue____value.setTrg(mValue);
 		ruleresult.getTranslatedEdges().add(mAnnotationValue__mValue____value);
-		mValueToTValue__tValue____target.setSrc(mValueToTValue);
-		mValueToTValue__tValue____target.setTrg(tValue);
-		ruleresult.getCreatedEdges().add(mValueToTValue__tValue____target);
 		tAnnotationValue__tValue____tValue.setSrc(tAnnotationValue);
 		tAnnotationValue__tValue____tValue.setTrg(tValue);
 		ruleresult.getCreatedEdges().add(tAnnotationValue__tValue____tValue);
+		mValueToTValue__tValue____target.setSrc(mValueToTValue);
+		mValueToTValue__tValue____target.setTrg(tValue);
+		ruleresult.getCreatedEdges().add(mValueToTValue__tValue____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mValueToTValue__mValue____source.setName(mValueToTValue__mValue____source_name_prime);
 		mAnnotationValue__mValue____value.setName(mAnnotationValue__mValue____value_name_prime);
-		mValueToTValue__tValue____target.setName(mValueToTValue__tValue____target_name_prime);
 		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
+		mValueToTValue__tValue____target.setName(mValueToTValue__tValue____target_name_prime);
 		return new Object[] { ruleresult, mAnnotationValue, tValue, mValueToTValue, tAnnotationValue, mValue,
-				mValueToTValue__mValue____source, mAnnotationValue__mValue____value, mValueToTValue__tValue____target,
-				tAnnotationValue__tValue____tValue };
+				mValueToTValue__mValue____source, mAnnotationValue__mValue____value, tAnnotationValue__tValue____tValue,
+				mValueToTValue__tValue____target };
 	}
 
 	public static final void pattern_AnnotationMemberValueBoolean_1_5_registerobjects_expressionBBBBBBBBBB(
@@ -2141,7 +2141,7 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_AnnotationMemberValueBoolean_11_1_performtransformation_greenBBFFB(
 			AnnotationMemberValuePair mAnnotationValue, TBoolNode tValue, CSP csp) {
-		BooleanLiteralToTBoolNode mValueToTValue = PmFactory.eINSTANCE.createBooleanLiteralToTBoolNode();
+		LiteralToTNode mValueToTValue = PmFactory.eINSTANCE.createLiteralToTNode();
 		BooleanLiteral mValue = JavaFactory.eINSTANCE.createBooleanLiteral();
 		Object _localVariable_0 = csp.getValue("mValue", "value");
 		mValueToTValue.setTarget(tValue);
@@ -2153,12 +2153,12 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueBoolean_11_2_collecttranslatedelements_blackBBB(
-			TBoolNode tValue, BooleanLiteralToTBoolNode mValueToTValue, BooleanLiteral mValue) {
+			TBoolNode tValue, LiteralToTNode mValueToTValue, BooleanLiteral mValue) {
 		return new Object[] { tValue, mValueToTValue, mValue };
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueBoolean_11_2_collecttranslatedelements_greenFBBB(
-			TBoolNode tValue, BooleanLiteralToTBoolNode mValueToTValue, BooleanLiteral mValue) {
+			TBoolNode tValue, LiteralToTNode mValueToTValue, BooleanLiteral mValue) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(tValue);
 		ruleresult.getCreatedLinkElements().add(mValueToTValue);
@@ -2257,33 +2257,33 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 			EObject tAnnotationValue, EObject mValue) {
 		EMoflonEdge mValueToTValue__mValue____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnnotationValue__mValue____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mValueToTValue__tValue____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mValueToTValue__tValue____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationMemberValueBoolean";
 		String mValueToTValue__mValue____source_name_prime = "source";
 		String mAnnotationValue__mValue____value_name_prime = "value";
-		String mValueToTValue__tValue____target_name_prime = "target";
 		String tAnnotationValue__tValue____tValue_name_prime = "tValue";
+		String mValueToTValue__tValue____target_name_prime = "target";
 		mValueToTValue__mValue____source.setSrc(mValueToTValue);
 		mValueToTValue__mValue____source.setTrg(mValue);
 		ruleresult.getCreatedEdges().add(mValueToTValue__mValue____source);
 		mAnnotationValue__mValue____value.setSrc(mAnnotationValue);
 		mAnnotationValue__mValue____value.setTrg(mValue);
 		ruleresult.getCreatedEdges().add(mAnnotationValue__mValue____value);
-		mValueToTValue__tValue____target.setSrc(mValueToTValue);
-		mValueToTValue__tValue____target.setTrg(tValue);
-		ruleresult.getCreatedEdges().add(mValueToTValue__tValue____target);
 		tAnnotationValue__tValue____tValue.setSrc(tAnnotationValue);
 		tAnnotationValue__tValue____tValue.setTrg(tValue);
 		ruleresult.getTranslatedEdges().add(tAnnotationValue__tValue____tValue);
+		mValueToTValue__tValue____target.setSrc(mValueToTValue);
+		mValueToTValue__tValue____target.setTrg(tValue);
+		ruleresult.getCreatedEdges().add(mValueToTValue__tValue____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mValueToTValue__mValue____source.setName(mValueToTValue__mValue____source_name_prime);
 		mAnnotationValue__mValue____value.setName(mAnnotationValue__mValue____value_name_prime);
-		mValueToTValue__tValue____target.setName(mValueToTValue__tValue____target_name_prime);
 		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
+		mValueToTValue__tValue____target.setName(mValueToTValue__tValue____target_name_prime);
 		return new Object[] { ruleresult, mAnnotationValue, tValue, mValueToTValue, tAnnotationValue, mValue,
-				mValueToTValue__mValue____source, mAnnotationValue__mValue____value, mValueToTValue__tValue____target,
-				tAnnotationValue__tValue____tValue };
+				mValueToTValue__mValue____source, mAnnotationValue__mValue____value, tAnnotationValue__tValue____tValue,
+				mValueToTValue__tValue____target };
 	}
 
 	public static final void pattern_AnnotationMemberValueBoolean_11_5_registerobjects_expressionBBBBBBBBBB(
@@ -2939,7 +2939,7 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_AnnotationMemberValueBoolean_24_6_createcorrespondence_greenBFBB(
 			TBoolNode tValue, BooleanLiteral mValue, CCMatch ccMatch) {
-		BooleanLiteralToTBoolNode mValueToTValue = PmFactory.eINSTANCE.createBooleanLiteralToTBoolNode();
+		LiteralToTNode mValueToTValue = PmFactory.eINSTANCE.createLiteralToTNode();
 		mValueToTValue.setSource(mValue);
 		mValueToTValue.setTarget(tValue);
 		ccMatch.getCreateCorr().add(mValueToTValue);
@@ -3183,7 +3183,7 @@ public class AnnotationMemberValueBooleanImpl extends AbstractRuleImpl implement
 			AnnotationMemberValuePair mAnnotationValue, TAnnotationValue tAnnotationValue,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		TBoolNode tValue = AnnotationsFactory.eINSTANCE.createTBoolNode();
-		BooleanLiteralToTBoolNode mValueToTValue = PmFactory.eINSTANCE.createBooleanLiteralToTBoolNode();
+		LiteralToTNode mValueToTValue = PmFactory.eINSTANCE.createLiteralToTNode();
 		BooleanLiteral mValue = JavaFactory.eINSTANCE.createBooleanLiteral();
 		Object _localVariable_0 = csp.getValue("tValue", "value");
 		Object _localVariable_1 = csp.getValue("mValue", "value");

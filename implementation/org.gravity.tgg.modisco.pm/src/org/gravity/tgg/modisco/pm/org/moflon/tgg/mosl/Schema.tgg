@@ -18,29 +18,9 @@
 }
 
 #correspondence {
-	BooleanLiteralToTBoolNode {
-		#src->BooleanLiteral
-		#trg->TBoolNode
-	}
-
-	NumberLiteralToTNumberNode {
-		#src->NumberLiteral
-		#trg->TNumberNode
-	}
-
-	StringLiteralToTTextNode {
-		#src->StringLiteral
-		#trg->TTextNode
-	}
-
-	ClassLiteralToClassNode {
-		#src->TypeLiteral
-		#trg->TClassNode
-	}
-
-	ClassDeclarationToTClass {
-		#src->ClassDeclaration
-		#trg->TClass
+	LiteralToTNode {
+		#src->Expression
+		#trg->TAbstractNode
 	}
 
 	PackageToTPackage {
@@ -51,11 +31,6 @@
 	ModelToTypeGraph {
 		#src->Model
 		#trg->TypeGraph
-	}
-
-	InterfaceDeclarationToTInterface {
-		#src->InterfaceDeclaration
-		#trg->TInterface
 	}
 
 	MDefinitionToTMember {

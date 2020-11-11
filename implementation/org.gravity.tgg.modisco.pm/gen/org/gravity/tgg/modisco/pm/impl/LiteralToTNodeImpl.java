@@ -9,12 +9,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.modisco.java.InterfaceDeclaration;
+import org.eclipse.modisco.java.Expression;
 
-import org.gravity.tgg.modisco.pm.InterfaceDeclarationToTInterface;
+import org.gravity.tgg.modisco.pm.LiteralToTNode;
 import org.gravity.tgg.modisco.pm.PmPackage;
 
-import org.gravity.typegraph.basic.TInterface;
+import org.gravity.typegraph.basic.annotations.TAbstractNode;
 
 import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
 // <-- [user defined imports]
@@ -22,20 +22,19 @@ import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Interface Declaration To TInterface</b></em>'.
+ * An implementation of the model object '<em><b>Literal To TNode</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.gravity.tgg.modisco.pm.impl.InterfaceDeclarationToTInterfaceImpl#getSource <em>Source</em>}</li>
- *   <li>{@link org.gravity.tgg.modisco.pm.impl.InterfaceDeclarationToTInterfaceImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.gravity.tgg.modisco.pm.impl.LiteralToTNodeImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link org.gravity.tgg.modisco.pm.impl.LiteralToTNodeImpl#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondenceImpl
-		implements InterfaceDeclarationToTInterface {
+public class LiteralToTNodeImpl extends AbstractCorrespondenceImpl implements LiteralToTNode {
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -44,7 +43,7 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	 * @generated
 	 * @ordered
 	 */
-	protected InterfaceDeclaration source;
+	protected Expression source;
 
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -54,14 +53,14 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	 * @generated
 	 * @ordered
 	 */
-	protected TInterface target;
+	protected TAbstractNode target;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InterfaceDeclarationToTInterfaceImpl() {
+	protected LiteralToTNodeImpl() {
 		super();
 	}
 
@@ -72,7 +71,7 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PmPackage.Literals.INTERFACE_DECLARATION_TO_TINTERFACE;
+		return PmPackage.Literals.LITERAL_TO_TNODE;
 	}
 
 	/**
@@ -80,14 +79,14 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InterfaceDeclaration getSource() {
+	public Expression getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject) source;
-			source = (InterfaceDeclaration) eResolveProxy(oldSource);
+			source = (Expression) eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PmPackage.LITERAL_TO_TNODE__SOURCE,
+							oldSource, source));
 			}
 		}
 		return source;
@@ -98,7 +97,7 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InterfaceDeclaration basicGetSource() {
+	public Expression basicGetSource() {
 		return source;
 	}
 
@@ -107,12 +106,12 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(InterfaceDeclaration newSource) {
-		InterfaceDeclaration oldSource = source;
+	public void setSource(Expression newSource) {
+		Expression oldSource = source;
 		source = newSource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__SOURCE,
-					oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, PmPackage.LITERAL_TO_TNODE__SOURCE, oldSource,
+					source));
 	}
 
 	/**
@@ -120,14 +119,14 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TInterface getTarget() {
+	public TAbstractNode getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject) target;
-			target = (TInterface) eResolveProxy(oldTarget);
+			target = (TAbstractNode) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PmPackage.LITERAL_TO_TNODE__TARGET,
+							oldTarget, target));
 			}
 		}
 		return target;
@@ -138,7 +137,7 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TInterface basicGetTarget() {
+	public TAbstractNode basicGetTarget() {
 		return target;
 	}
 
@@ -147,12 +146,12 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(TInterface newTarget) {
-		TInterface oldTarget = target;
+	public void setTarget(TAbstractNode newTarget) {
+		TAbstractNode oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__TARGET,
-					oldTarget, target));
+			eNotify(new ENotificationImpl(this, Notification.SET, PmPackage.LITERAL_TO_TNODE__TARGET, oldTarget,
+					target));
 	}
 
 	/**
@@ -163,11 +162,11 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__SOURCE:
+		case PmPackage.LITERAL_TO_TNODE__SOURCE:
 			if (resolve)
 				return getSource();
 			return basicGetSource();
-		case PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__TARGET:
+		case PmPackage.LITERAL_TO_TNODE__TARGET:
 			if (resolve)
 				return getTarget();
 			return basicGetTarget();
@@ -183,11 +182,11 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__SOURCE:
-			setSource((InterfaceDeclaration) newValue);
+		case PmPackage.LITERAL_TO_TNODE__SOURCE:
+			setSource((Expression) newValue);
 			return;
-		case PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__TARGET:
-			setTarget((TInterface) newValue);
+		case PmPackage.LITERAL_TO_TNODE__TARGET:
+			setTarget((TAbstractNode) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,11 +200,11 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__SOURCE:
-			setSource((InterfaceDeclaration) null);
+		case PmPackage.LITERAL_TO_TNODE__SOURCE:
+			setSource((Expression) null);
 			return;
-		case PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__TARGET:
-			setTarget((TInterface) null);
+		case PmPackage.LITERAL_TO_TNODE__TARGET:
+			setTarget((TAbstractNode) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -219,9 +218,9 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__SOURCE:
+		case PmPackage.LITERAL_TO_TNODE__SOURCE:
 			return source != null;
-		case PmPackage.INTERFACE_DECLARATION_TO_TINTERFACE__TARGET:
+		case PmPackage.LITERAL_TO_TNODE__TARGET:
 			return target != null;
 		}
 		return super.eIsSet(featureID);
@@ -229,4 +228,4 @@ public class InterfaceDeclarationToTInterfaceImpl extends AbstractCorrespondence
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->
-} //InterfaceDeclarationToTInterfaceImpl
+} //LiteralToTNodeImpl

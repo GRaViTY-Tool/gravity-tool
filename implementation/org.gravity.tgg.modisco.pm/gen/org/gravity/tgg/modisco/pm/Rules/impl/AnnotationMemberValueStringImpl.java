@@ -20,12 +20,11 @@ import org.eclipse.modisco.java.StringLiteral;
 import org.eclipse.modisco.java.emf.JavaFactory;
 
 import org.gravity.tgg.modisco.pm.AnnotationMemberValuePairToTAnnotationValue;
+import org.gravity.tgg.modisco.pm.LiteralToTNode;
 import org.gravity.tgg.modisco.pm.PmFactory;
 
 import org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueString;
 import org.gravity.tgg.modisco.pm.Rules.RulesPackage;
-
-import org.gravity.tgg.modisco.pm.StringLiteralToTTextNode;
 
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
 import org.gravity.typegraph.basic.annotations.TAnnotationValue;
@@ -183,7 +182,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 		Object[] result1_green = AnnotationMemberValueStringImpl
 				.pattern_AnnotationMemberValueString_1_1_performtransformation_greenFFBBB(tAnnotationValue, mValue,
 						csp);
-		StringLiteralToTTextNode mTypeToTType = (StringLiteralToTTextNode) result1_green[0];
+		LiteralToTNode mTypeToTType = (LiteralToTNode) result1_green[0];
 		TTextNode tValue = (TTextNode) result1_green[1];
 
 		Object[] result2_black = AnnotationMemberValueStringImpl
@@ -523,7 +522,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 		Object[] result1_green = AnnotationMemberValueStringImpl
 				.pattern_AnnotationMemberValueString_11_1_performtransformation_greenBFBFB(mAnnotationValue, tValue,
 						csp);
-		StringLiteralToTTextNode mTypeToTType = (StringLiteralToTTextNode) result1_green[1];
+		LiteralToTNode mTypeToTType = (LiteralToTNode) result1_green[1];
 		StringLiteral mValue = (StringLiteral) result1_green[3];
 
 		Object[] result2_black = AnnotationMemberValueStringImpl
@@ -776,7 +775,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_5(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_674(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueStringImpl
 				.pattern_AnnotationMemberValueString_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -835,7 +834,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_5(EMoflonEdge _edge_value) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_691(EMoflonEdge _edge_value) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueStringImpl
 				.pattern_AnnotationMemberValueString_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1049,7 +1048,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 				}
 				AnnotationMemberValueStringImpl.pattern_AnnotationMemberValueString_24_6_createcorrespondence_greenFBBB(
 						tValue, mValue, ccMatch);
-				//nothing StringLiteralToTTextNode mTypeToTType = (StringLiteralToTTextNode) result6_green[0];
+				//nothing LiteralToTNode mTypeToTType = (LiteralToTNode) result6_green[0];
 
 				Object[] result7_black = AnnotationMemberValueStringImpl
 						.pattern_AnnotationMemberValueString_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1208,7 +1207,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 					}
 					AnnotationMemberValueStringImpl.pattern_AnnotationMemberValueString_29_6_perform_greenBFFBFBB(
 							mAnnotationValue, tAnnotationValue, ruleResult, csp);
-					//nothing StringLiteralToTTextNode mTypeToTType = (StringLiteralToTTextNode) result6_green[1];
+					//nothing LiteralToTNode mTypeToTType = (LiteralToTNode) result6_green[1];
 					//nothing TTextNode tValue = (TTextNode) result6_green[2];
 					//nothing StringLiteral mValue = (StringLiteral) result6_green[4];
 
@@ -1345,10 +1344,10 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___IS_APPROPRIATE_BWD_EMOFLON_EDGE_5__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_5((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___IS_APPROPRIATE_FWD_EMOFLON_EDGE_5__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_5((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___IS_APPROPRIATE_BWD_EMOFLON_EDGE_674__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_674((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___IS_APPROPRIATE_FWD_EMOFLON_EDGE_691__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_691((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1568,7 +1567,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueString_1_1_performtransformation_greenFFBBB(
 			TAnnotationValue tAnnotationValue, StringLiteral mValue, CSP csp) {
-		StringLiteralToTTextNode mTypeToTType = PmFactory.eINSTANCE.createStringLiteralToTTextNode();
+		LiteralToTNode mTypeToTType = PmFactory.eINSTANCE.createLiteralToTNode();
 		TTextNode tValue = AnnotationsFactory.eINSTANCE.createTTextNode();
 		Object _localVariable_0 = csp.getValue("tValue", "tText");
 		mTypeToTType.setSource(mValue);
@@ -1580,12 +1579,12 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueString_1_2_collecttranslatedelements_blackBBB(
-			StringLiteralToTTextNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
+			LiteralToTNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
 		return new Object[] { mTypeToTType, tValue, mValue };
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueString_1_2_collecttranslatedelements_greenFBBB(
-			StringLiteralToTTextNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
+			LiteralToTNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(mTypeToTType);
 		ruleresult.getCreatedElements().add(tValue);
@@ -2135,7 +2134,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueString_11_1_performtransformation_greenBFBFB(
 			AnnotationMemberValuePair mAnnotationValue, TTextNode tValue, CSP csp) {
-		StringLiteralToTTextNode mTypeToTType = PmFactory.eINSTANCE.createStringLiteralToTTextNode();
+		LiteralToTNode mTypeToTType = PmFactory.eINSTANCE.createLiteralToTNode();
 		StringLiteral mValue = JavaFactory.eINSTANCE.createStringLiteral();
 		Object _localVariable_0 = csp.getValue("mValue", "escapedValue");
 		mTypeToTType.setTarget(tValue);
@@ -2147,12 +2146,12 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueString_11_2_collecttranslatedelements_blackBBB(
-			StringLiteralToTTextNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
+			LiteralToTNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
 		return new Object[] { mTypeToTType, tValue, mValue };
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueString_11_2_collecttranslatedelements_greenFBBB(
-			StringLiteralToTTextNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
+			LiteralToTNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(mTypeToTType);
 		ruleresult.getTranslatedElements().add(tValue);
@@ -2932,7 +2931,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueString_24_6_createcorrespondence_greenFBBB(
 			TTextNode tValue, StringLiteral mValue, CCMatch ccMatch) {
-		StringLiteralToTTextNode mTypeToTType = PmFactory.eINSTANCE.createStringLiteralToTTextNode();
+		LiteralToTNode mTypeToTType = PmFactory.eINSTANCE.createLiteralToTNode();
 		mTypeToTType.setSource(mValue);
 		mTypeToTType.setTarget(tValue);
 		ccMatch.getCreateCorr().add(mTypeToTType);
@@ -3175,7 +3174,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_AnnotationMemberValueString_29_6_perform_greenBFFBFBB(
 			AnnotationMemberValuePair mAnnotationValue, TAnnotationValue tAnnotationValue,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
-		StringLiteralToTTextNode mTypeToTType = PmFactory.eINSTANCE.createStringLiteralToTTextNode();
+		LiteralToTNode mTypeToTType = PmFactory.eINSTANCE.createLiteralToTNode();
 		TTextNode tValue = AnnotationsFactory.eINSTANCE.createTTextNode();
 		StringLiteral mValue = JavaFactory.eINSTANCE.createStringLiteral();
 		Object _localVariable_0 = csp.getValue("tValue", "tText");

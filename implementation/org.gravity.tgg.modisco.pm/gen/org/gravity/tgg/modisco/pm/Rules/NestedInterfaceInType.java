@@ -116,8 +116,7 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eNestedType, EObject tNestedPackage,
 			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType, EObject tOuterType,
-			EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject mInterfaceDeclarationtoTInterface,
-			EObject eOuterType, EObject tOuterPackage);
+			EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,8 +203,7 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eNestedType, EObject tNestedPackage,
 			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType, EObject tOuterType,
-			EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject mInterfaceDeclarationtoTInterface,
-			EObject eOuterType, EObject tOuterPackage);
+			EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +219,7 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_51(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_686(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +227,7 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_52(EMoflonEdge _edge_abstractTypeDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_704(EMoflonEdge _edge_abstractTypeDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

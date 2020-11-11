@@ -52,9 +52,8 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AnonymousClassDeclaration mAnonymous,
-			org.eclipse.modisco.java.Package mPackage, ClassInstanceCreation mCreation, MDefinition mMebmber,
-			AbstractTypeDeclaration mType);
+	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package mPackage, MDefinition mMebmber,
+			AbstractTypeDeclaration mType, ClassInstanceCreation mCreation, AnonymousClassDeclaration mAnonymous);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,9 +77,8 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, AnonymousClassDeclaration mAnonymous,
-			org.eclipse.modisco.java.Package mPackage, ClassInstanceCreation mCreation, MDefinition mMebmber,
-			AbstractTypeDeclaration mType);
+	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package mPackage, MDefinition mMebmber,
+			AbstractTypeDeclaration mType, ClassInstanceCreation mCreation, AnonymousClassDeclaration mAnonymous);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,9 +86,8 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, AnonymousClassDeclaration mAnonymous,
-			org.eclipse.modisco.java.Package mPackage, ClassInstanceCreation mCreation, MDefinition mMebmber,
-			AbstractTypeDeclaration mType);
+	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package mPackage, MDefinition mMebmber,
+			AbstractTypeDeclaration mType, ClassInstanceCreation mCreation, AnonymousClassDeclaration mAnonymous);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,10 +103,10 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnonymous,
-			PackageToTPackage mPackageToTPackage, TPackage tPackage, TypeGraph pg,
-			org.eclipse.modisco.java.Package mPackage, ClassInstanceCreation mCreation, TAbstractType tType,
-			TypeToTAbstractType mTypeToTType, MDefinition mMebmber, AbstractTypeDeclaration mType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, TAbstractType tType,
+			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, MDefinition mMebmber,
+			AbstractTypeDeclaration mType, TypeToTAbstractType mTypeToTType, ClassInstanceCreation mCreation,
+			PackageToTPackage mPackageToTPackage, AnonymousClassDeclaration mAnonymous);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,10 +122,10 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAnonymous, EObject mPackageToTPackage,
-			EObject tNewPackage, EObject tPackage, EObject pg, EObject mPackage, EObject mCreation, EObject tType,
-			EObject mTypeToTType, EObject eAnonymousClassDeclarationToTClass, EObject mMebmber, EObject mType,
-			EObject tAnonymous);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eAnonymousClassDeclarationToTClass, EObject tPackage,
+			EObject tType, EObject mPackage, EObject pg, EObject mMebmber, EObject tNewPackage, EObject mType,
+			EObject mTypeToTType, EObject tAnonymous, EObject mCreation, EObject mPackageToTPackage,
+			EObject mAnonymous);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -144,7 +141,7 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TPackage tNewPackage, TPackage tPackage, TypeGraph pg, TAbstractType tType,
+	boolean isAppropriate_BWD(Match match, TPackage tPackage, TAbstractType tType, TypeGraph pg, TPackage tNewPackage,
 			TClass tAnonymous);
 
 	/**
@@ -169,8 +166,8 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TPackage tNewPackage, TPackage tPackage, TypeGraph pg,
-			TAbstractType tType, TClass tAnonymous);
+	void registerObjectsToMatch_BWD(Match match, TPackage tPackage, TAbstractType tType, TypeGraph pg,
+			TPackage tNewPackage, TClass tAnonymous);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +175,8 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TPackage tNewPackage, TPackage tPackage, TypeGraph pg,
-			TAbstractType tType, TClass tAnonymous);
+	CSP isAppropriate_solveCsp_BWD(Match match, TPackage tPackage, TAbstractType tType, TypeGraph pg,
+			TPackage tNewPackage, TClass tAnonymous);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,10 +192,10 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PackageToTPackage mPackageToTPackage,
-			TPackage tNewPackage, TPackage tPackage, TypeGraph pg, org.eclipse.modisco.java.Package mPackage,
-			ClassInstanceCreation mCreation, TAbstractType tType, TypeToTAbstractType mTypeToTType,
-			MDefinition mMebmber, AbstractTypeDeclaration mType, TClass tAnonymous);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, TAbstractType tType,
+			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, MDefinition mMebmber, TPackage tNewPackage,
+			AbstractTypeDeclaration mType, TypeToTAbstractType mTypeToTType, TClass tAnonymous,
+			ClassInstanceCreation mCreation, PackageToTPackage mPackageToTPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,10 +211,10 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mAnonymous, EObject mPackageToTPackage,
-			EObject tNewPackage, EObject tPackage, EObject pg, EObject mPackage, EObject mCreation, EObject tType,
-			EObject mTypeToTType, EObject eAnonymousClassDeclarationToTClass, EObject mMebmber, EObject mType,
-			EObject tAnonymous);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eAnonymousClassDeclarationToTClass, EObject tPackage,
+			EObject tType, EObject mPackage, EObject pg, EObject mMebmber, EObject tNewPackage, EObject mType,
+			EObject mTypeToTType, EObject tAnonymous, EObject mCreation, EObject mPackageToTPackage,
+			EObject mAnonymous);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,7 +230,7 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_52(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_736(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,7 +238,7 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_53(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_756(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,10 +270,10 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(AnonymousClassDeclaration mAnonymous, TPackage tNewPackage, TPackage tPackage,
-			TypeGraph pg, org.eclipse.modisco.java.Package mPackage, ClassInstanceCreation mCreation,
-			TAbstractType tType, MDefinition mMebmber, AbstractTypeDeclaration mType, TClass tAnonymous,
-			Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TPackage tPackage, TAbstractType tType, org.eclipse.modisco.java.Package mPackage,
+			TypeGraph pg, MDefinition mMebmber, TPackage tNewPackage, AbstractTypeDeclaration mType, TClass tAnonymous,
+			ClassInstanceCreation mCreation, AnonymousClassDeclaration mAnonymous, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -292,8 +289,8 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AnonymousClassDeclaration mAnonymous, org.eclipse.modisco.java.Package mPackage,
-			ClassInstanceCreation mCreation, MDefinition mMebmber, AbstractTypeDeclaration mType);
+	boolean checkDEC_FWD(org.eclipse.modisco.java.Package mPackage, MDefinition mMebmber, AbstractTypeDeclaration mType,
+			ClassInstanceCreation mCreation, AnonymousClassDeclaration mAnonymous);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -301,7 +298,7 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TPackage tNewPackage, TPackage tPackage, TypeGraph pg, TAbstractType tType, TClass tAnonymous);
+	boolean checkDEC_BWD(TPackage tPackage, TAbstractType tType, TypeGraph pg, TPackage tNewPackage, TClass tAnonymous);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -310,7 +307,7 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			PackageToTPackage mPackageToTPackageParameter);
+			TypeToTAbstractType mTypeToTTypeParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -318,10 +315,10 @@ public interface AnonymousClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PackageToTPackage mPackageToTPackage,
-			TPackage tPackage, TypeGraph pg, org.eclipse.modisco.java.Package mPackage, ClassInstanceCreation mCreation,
-			TAbstractType tType, TypeToTAbstractType mTypeToTType, MDefinition mMebmber, AbstractTypeDeclaration mType,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, TAbstractType tType,
+			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, MDefinition mMebmber,
+			AbstractTypeDeclaration mType, TypeToTAbstractType mTypeToTType, ClassInstanceCreation mCreation,
+			PackageToTPackage mPackageToTPackage, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -224,9 +224,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge tAccess__tMethod____tTarget = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge tMethod__tAccess____accessedBy = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge tAccess__tMethod____tTarget = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge tMethod__tAccess____accessedBy = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[19];
 
 		// 
 		// 
@@ -278,9 +278,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 						.pattern_SuperConstructorInvocation_2_3_findcontext_greenBBBBBBBFFFFFFFF(invocation,
 								mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember, mMethod);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge invocation__mMethod____method = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mMethod__invocation____usages = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mMethodToTMethod__tMethod____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mMethodToTMethod__tMethod____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge invocation__mMethod____method = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mMethod__invocation____usages = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge mMethodToTMethod__mMethod____source = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[13];
@@ -567,9 +567,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge tAccess__tMethod____tTarget = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge tMethod__tAccess____accessedBy = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge tAccess__tMethod____tTarget = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge tMethod__tAccess____accessedBy = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[19];
 
 		// 
 		// 
@@ -783,7 +783,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_15(EMoflonEdge _edge_tAccessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_699(EMoflonEdge _edge_tAccessing) {
 
 		Object[] result1_bindingAndBlack = SuperConstructorInvocationImpl
 				.pattern_SuperConstructorInvocation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -843,7 +843,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_16(EMoflonEdge _edge_method) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_718(EMoflonEdge _edge_method) {
 
 		Object[] result1_bindingAndBlack = SuperConstructorInvocationImpl
 				.pattern_SuperConstructorInvocation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1130,12 +1130,12 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 						ruleResult)) {
 			//nothing RuleEntryList mMemberToTMemberList = (RuleEntryList) result2_black[0];
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[1];
-			TMember tMember = (TMember) result2_black[2];
-			MDefinition mMember = (MDefinition) result2_black[3];
+			MDefinition mMember = (MDefinition) result2_black[2];
+			TMember tMember = (TMember) result2_black[3];
 			//nothing RuleEntryList mMethodToTMethodList = (RuleEntryList) result2_black[4];
 			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result2_black[5];
-			AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result2_black[6];
-			TMember tMethod = (TMember) result2_black[7];
+			TMember tMethod = (TMember) result2_black[6];
+			AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result2_black[7];
 
 			Object[] result3_bindingAndBlack = SuperConstructorInvocationImpl
 					.pattern_SuperConstructorInvocation_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
@@ -1293,10 +1293,10 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 			return null;
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_15__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_15((EMoflonEdge) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_16__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_16((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_699__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_699((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_718__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_718((EMoflonEdge) arguments.get(0));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1701,9 +1701,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMethod____tTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethod__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "SuperConstructorInvocation";
 		String invocation__mMethod____method_name_prime = "method";
 		String mMethod__invocation____usages_name_prime = "usages";
@@ -1713,9 +1713,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
-		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
 		String tAccess__tMethod____tTarget_name_prime = "tTarget";
 		String tMethod__tAccess____accessedBy_name_prime = "accessedBy";
+		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
 		invocation__mMethod____method.setSrc(invocation);
 		invocation__mMethod____method.setTrg(mMethod);
 		ruleresult.getTranslatedEdges().add(invocation__mMethod____method);
@@ -1740,15 +1740,15 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		mFlowElementToTFlowElement__invocation____source.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__invocation____source.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__invocation____source);
-		mMember__invocation____mMethodInvocations.setSrc(mMember);
-		mMember__invocation____mMethodInvocations.setTrg(invocation);
-		ruleresult.getTranslatedEdges().add(mMember__invocation____mMethodInvocations);
 		tAccess__tMethod____tTarget.setSrc(tAccess);
 		tAccess__tMethod____tTarget.setTrg(tMethod);
 		ruleresult.getCreatedEdges().add(tAccess__tMethod____tTarget);
 		tMethod__tAccess____accessedBy.setSrc(tMethod);
 		tMethod__tAccess____accessedBy.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(tMethod__tAccess____accessedBy);
+		mMember__invocation____mMethodInvocations.setSrc(mMember);
+		mMember__invocation____mMethodInvocations.setTrg(invocation);
+		ruleresult.getTranslatedEdges().add(mMember__invocation____mMethodInvocations);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		invocation__mMethod____method.setName(invocation__mMethod____method_name_prime);
 		mMethod__invocation____usages.setName(mMethod__invocation____usages_name_prime);
@@ -1759,15 +1759,15 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mFlowElementToTFlowElement__invocation____source
 				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
-		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		tAccess__tMethod____tTarget.setName(tAccess__tMethod____tTarget_name_prime);
 		tMethod__tAccess____accessedBy.setName(tMethod__tAccess____accessedBy_name_prime);
+		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		return new Object[] { ruleresult, invocation, tMember, tAccess, tMethod, mMember, mFlowElementToTFlowElement,
 				invocationToTAccess, mMethod, invocation__mMethod____method, mMethod__invocation____usages,
 				tMember__tAccess____tAccessing, tAccess__tMember____tSource, invocationToTAccess__invocation____source,
 				mFlowElementToTFlowElement__tAccess____target, invocationToTAccess__tAccess____target,
-				mFlowElementToTFlowElement__invocation____source, mMember__invocation____mMethodInvocations,
-				tAccess__tMethod____tTarget, tMethod__tAccess____accessedBy };
+				mFlowElementToTFlowElement__invocation____source, tAccess__tMethod____tTarget,
+				tMethod__tAccess____accessedBy, mMember__invocation____mMethodInvocations };
 	}
 
 	public static final void pattern_SuperConstructorInvocation_1_5_registerobjects_expressionBBBBBBBBBBBB(
@@ -1890,8 +1890,8 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mMemberToTMember.equals(mMethodToTMethod)) {
 			if (!tMember.equals(tMethod)) {
-				if (mMethod.equals(invocation.getMethod())) {
-					if (tMethod.equals(mMethodToTMethod.getTarget())) {
+				if (tMethod.equals(mMethodToTMethod.getTarget())) {
+					if (mMethod.equals(invocation.getMethod())) {
 						if (tMember.equals(mMemberToTMember.getTarget())) {
 							if (mMethod.equals(mMethodToTMethod.getSource())) {
 								if (mMember.equals(mMemberToTMember.getSource())) {
@@ -1914,16 +1914,16 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 			MDefinitionToTMember mMethodToTMethod, TMember tMethod, MDefinition mMember,
 			AbstractMethodDeclaration mMethod) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge mMethodToTMethod__tMethod____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocation__mMethod____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMethod__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMethodToTMethod__tMethod____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMethodToTMethod__mMethod____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMemberToTMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String mMethodToTMethod__tMethod____target_name_prime = "target";
 		String invocation__mMethod____method_name_prime = "method";
 		String mMethod__invocation____usages_name_prime = "usages";
-		String mMethodToTMethod__tMethod____target_name_prime = "target";
 		String mMemberToTMember__tMember____target_name_prime = "target";
 		String mMethodToTMethod__mMethod____source_name_prime = "source";
 		String mMemberToTMember__mMember____source_name_prime = "source";
@@ -1935,15 +1935,15 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		isApplicableMatch.getAllContextElements().add(tMethod);
 		isApplicableMatch.getAllContextElements().add(mMember);
 		isApplicableMatch.getAllContextElements().add(mMethod);
+		mMethodToTMethod__tMethod____target.setSrc(mMethodToTMethod);
+		mMethodToTMethod__tMethod____target.setTrg(tMethod);
+		isApplicableMatch.getAllContextElements().add(mMethodToTMethod__tMethod____target);
 		invocation__mMethod____method.setSrc(invocation);
 		invocation__mMethod____method.setTrg(mMethod);
 		isApplicableMatch.getAllContextElements().add(invocation__mMethod____method);
 		mMethod__invocation____usages.setSrc(mMethod);
 		mMethod__invocation____usages.setTrg(invocation);
 		isApplicableMatch.getAllContextElements().add(mMethod__invocation____usages);
-		mMethodToTMethod__tMethod____target.setSrc(mMethodToTMethod);
-		mMethodToTMethod__tMethod____target.setTrg(tMethod);
-		isApplicableMatch.getAllContextElements().add(mMethodToTMethod__tMethod____target);
 		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
 		mMemberToTMember__tMember____target.setTrg(tMember);
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
@@ -1956,18 +1956,17 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		mMember__invocation____mMethodInvocations.setSrc(mMember);
 		mMember__invocation____mMethodInvocations.setTrg(invocation);
 		isApplicableMatch.getAllContextElements().add(mMember__invocation____mMethodInvocations);
+		mMethodToTMethod__tMethod____target.setName(mMethodToTMethod__tMethod____target_name_prime);
 		invocation__mMethod____method.setName(invocation__mMethod____method_name_prime);
 		mMethod__invocation____usages.setName(mMethod__invocation____usages_name_prime);
-		mMethodToTMethod__tMethod____target.setName(mMethodToTMethod__tMethod____target_name_prime);
 		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
 		mMethodToTMethod__mMethod____source.setName(mMethodToTMethod__mMethod____source_name_prime);
 		mMemberToTMember__mMember____source.setName(mMemberToTMember__mMember____source_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		return new Object[] { invocation, mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember, mMethod,
-				isApplicableMatch, invocation__mMethod____method, mMethod__invocation____usages,
-				mMethodToTMethod__tMethod____target, mMemberToTMember__tMember____target,
-				mMethodToTMethod__mMethod____source, mMemberToTMember__mMember____source,
-				mMember__invocation____mMethodInvocations };
+				isApplicableMatch, mMethodToTMethod__tMethod____target, invocation__mMethod____method,
+				mMethod__invocation____usages, mMemberToTMember__tMember____target, mMethodToTMethod__mMethod____source,
+				mMemberToTMember__mMember____source, mMember__invocation____mMethodInvocations };
 	}
 
 	public static final Object[] pattern_SuperConstructorInvocation_2_4_solveCSP_bindingFBBBBBBBBB(
@@ -2421,9 +2420,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMethod____tTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethod__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "SuperConstructorInvocation";
 		String invocation__mMethod____method_name_prime = "method";
 		String mMethod__invocation____usages_name_prime = "usages";
@@ -2433,9 +2432,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
-		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
 		String tAccess__tMethod____tTarget_name_prime = "tTarget";
 		String tMethod__tAccess____accessedBy_name_prime = "accessedBy";
+		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
 		invocation__mMethod____method.setSrc(invocation);
 		invocation__mMethod____method.setTrg(mMethod);
 		ruleresult.getCreatedEdges().add(invocation__mMethod____method);
@@ -2460,15 +2459,15 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		mFlowElementToTFlowElement__invocation____source.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__invocation____source.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__invocation____source);
-		mMember__invocation____mMethodInvocations.setSrc(mMember);
-		mMember__invocation____mMethodInvocations.setTrg(invocation);
-		ruleresult.getCreatedEdges().add(mMember__invocation____mMethodInvocations);
 		tAccess__tMethod____tTarget.setSrc(tAccess);
 		tAccess__tMethod____tTarget.setTrg(tMethod);
 		ruleresult.getTranslatedEdges().add(tAccess__tMethod____tTarget);
 		tMethod__tAccess____accessedBy.setSrc(tMethod);
 		tMethod__tAccess____accessedBy.setTrg(tAccess);
 		ruleresult.getTranslatedEdges().add(tMethod__tAccess____accessedBy);
+		mMember__invocation____mMethodInvocations.setSrc(mMember);
+		mMember__invocation____mMethodInvocations.setTrg(invocation);
+		ruleresult.getCreatedEdges().add(mMember__invocation____mMethodInvocations);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		invocation__mMethod____method.setName(invocation__mMethod____method_name_prime);
 		mMethod__invocation____usages.setName(mMethod__invocation____usages_name_prime);
@@ -2479,15 +2478,15 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mFlowElementToTFlowElement__invocation____source
 				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
-		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		tAccess__tMethod____tTarget.setName(tAccess__tMethod____tTarget_name_prime);
 		tMethod__tAccess____accessedBy.setName(tMethod__tAccess____accessedBy_name_prime);
+		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		return new Object[] { ruleresult, invocation, tMember, tAccess, tMethod, mMember, mFlowElementToTFlowElement,
 				invocationToTAccess, mMethod, invocation__mMethod____method, mMethod__invocation____usages,
 				tMember__tAccess____tAccessing, tAccess__tMember____tSource, invocationToTAccess__invocation____source,
 				mFlowElementToTFlowElement__tAccess____target, invocationToTAccess__tAccess____target,
-				mFlowElementToTFlowElement__invocation____source, mMember__invocation____mMethodInvocations,
-				tAccess__tMethod____tTarget, tMethod__tAccess____accessedBy };
+				mFlowElementToTFlowElement__invocation____source, tAccess__tMethod____tTarget,
+				tMethod__tAccess____accessedBy, mMember__invocation____mMethodInvocations };
 	}
 
 	public static final void pattern_SuperConstructorInvocation_11_5_registerobjects_expressionBBBBBBBBBBBB(
@@ -2941,9 +2940,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_SuperConstructorInvocation_21_2_testcorematchandDECs_black_nac_0BB(
 			MSuperConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_7890 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_803149 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_7890)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_803149)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -3232,9 +3231,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_SuperConstructorInvocation_27_1_matchtggpattern_black_nac_0BB(
 			MSuperConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_527076 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_281296 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_527076)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_281296)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -3308,17 +3307,17 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, TMember tMember) {
-		if (ruleResult.getTargetObjects().contains(tMember)) {
-			return new Object[] { ruleResult, tMember };
+			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
+		if (ruleResult.getSourceObjects().contains(mMember)) {
+			return new Object[] { ruleResult, mMember };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
-		if (ruleResult.getSourceObjects().contains(mMember)) {
-			return new Object[] { ruleResult, mMember };
+			ModelgeneratorRuleResult ruleResult, TMember tMember) {
+		if (ruleResult.getTargetObjects().contains(tMember)) {
+			return new Object[] { ruleResult, tMember };
 		}
 		return null;
 	}
@@ -3332,17 +3331,17 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, AbstractMethodDeclaration mMethod) {
-		if (ruleResult.getSourceObjects().contains(mMethod)) {
-			return new Object[] { ruleResult, mMethod };
+			ModelgeneratorRuleResult ruleResult, TMember tMethod) {
+		if (ruleResult.getTargetObjects().contains(tMethod)) {
+			return new Object[] { ruleResult, tMethod };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, TMember tMethod) {
-		if (ruleResult.getTargetObjects().contains(tMethod)) {
-			return new Object[] { ruleResult, tMethod };
+			ModelgeneratorRuleResult ruleResult, AbstractMethodDeclaration mMethod) {
+		if (ruleResult.getSourceObjects().contains(mMethod)) {
+			return new Object[] { ruleResult, mMethod };
 		}
 		return null;
 	}
@@ -3356,48 +3355,49 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 					for (EObject tmpMMemberToTMember : mMemberToTMemberList.getEntryObjects()) {
 						if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
 							MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
-							TMember tMember = mMemberToTMember.getTarget();
-							if (tMember != null) {
-								BodyDeclaration tmpMMember = mMemberToTMember.getSource();
-								if (tmpMMember instanceof MDefinition) {
-									MDefinition mMember = (MDefinition) tmpMMember;
+							BodyDeclaration tmpMMember = mMemberToTMember.getSource();
+							if (tmpMMember instanceof MDefinition) {
+								MDefinition mMember = (MDefinition) tmpMMember;
+								TMember tMember = mMemberToTMember.getTarget();
+								if (tMember != null) {
 									if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_0BB(
 											ruleResult, mMemberToTMember) == null) {
 										if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_1BB(
-												ruleResult, tMember) == null) {
+												ruleResult, mMember) == null) {
 											if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, mMember) == null) {
+													ruleResult, tMember) == null) {
 												for (EObject tmpMMethodToTMethod : mMethodToTMethodList
 														.getEntryObjects()) {
 													if (tmpMMethodToTMethod instanceof MDefinitionToTMember) {
 														MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) tmpMMethodToTMethod;
 														if (!mMemberToTMember.equals(mMethodToTMethod)) {
-															BodyDeclaration tmpMMethod = mMethodToTMethod.getSource();
-															if (tmpMMethod instanceof AbstractMethodDeclaration) {
-																AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) tmpMMethod;
-																TMember tMethod = mMethodToTMethod.getTarget();
-																if (tMethod != null) {
-																	if (!tMember.equals(tMethod)) {
+															TMember tMethod = mMethodToTMethod.getTarget();
+															if (tMethod != null) {
+																if (!tMember.equals(tMethod)) {
+																	BodyDeclaration tmpMMethod = mMethodToTMethod
+																			.getSource();
+																	if (tmpMMethod instanceof AbstractMethodDeclaration) {
+																		AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) tmpMMethod;
 																		if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_3BB(
 																				ruleResult, mMethodToTMethod) == null) {
 																			if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_4BB(
-																					ruleResult, mMethod) == null) {
+																					ruleResult, tMethod) == null) {
 																				if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_5BB(
-																						ruleResult, tMethod) == null) {
+																						ruleResult, mMethod) == null) {
 																					_result.add(new Object[] {
 																							mMemberToTMemberList,
-																							mMemberToTMember, tMember,
-																							mMember,
+																							mMemberToTMember, mMember,
+																							tMember,
 																							mMethodToTMethodList,
-																							mMethodToTMethod, mMethod,
-																							tMethod, ruleEntryContainer,
+																							mMethodToTMethod, tMethod,
+																							mMethod, ruleEntryContainer,
 																							ruleResult });
 																				}
 																			}
 																		}
 																	}
-																}
 
+																}
 															}
 
 														}

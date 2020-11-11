@@ -23,7 +23,6 @@ import org.gravity.modisco.MAbstractMethodDefinition;
 
 import org.gravity.tgg.modisco.pm.ASTNodeToTAnnotatable;
 import org.gravity.tgg.modisco.pm.AnonymousClassDeclarationToTClass;
-import org.gravity.tgg.modisco.pm.InterfaceDeclarationToTInterface;
 import org.gravity.tgg.modisco.pm.PmFactory;
 
 import org.gravity.tgg.modisco.pm.Rules.InterfaceInAnonymous;
@@ -183,62 +182,56 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		AnonymousClassDeclaration eAnonymousClassDeclaration = (AnonymousClassDeclaration) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = InterfaceInAnonymousImpl
-				.pattern_InterfaceInAnonymous_1_1_performtransformation_greenBBBFFFFB(tClass, mNestedType, pg, csp);
+				.pattern_InterfaceInAnonymous_1_1_performtransformation_greenBBBFFFB(tClass, mNestedType, pg, csp);
 		ASTNodeToTAnnotatable mbodyToTAnnotatable = (ASTNodeToTAnnotatable) result1_green[3];
 		TInterface tNestedType = (TInterface) result1_green[4];
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = (InterfaceDeclarationToTInterface) result1_green[5];
-		TypeToTAbstractType mNestedTypeToTNestedType = (TypeToTAbstractType) result1_green[6];
+		TypeToTAbstractType mNestedTypeToTNestedType = (TypeToTAbstractType) result1_green[5];
 
 		Object[] result2_black = InterfaceInAnonymousImpl
-				.pattern_InterfaceInAnonymous_1_2_collecttranslatedelements_blackBBBBB(mNestedType, mbodyToTAnnotatable,
-						tNestedType, mInterfaceDeclarationtoTInterface, mNestedTypeToTNestedType);
+				.pattern_InterfaceInAnonymous_1_2_collecttranslatedelements_blackBBBB(mNestedType, mbodyToTAnnotatable,
+						tNestedType, mNestedTypeToTNestedType);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mNestedType] = " + mNestedType
 					+ ", " + "[mbodyToTAnnotatable] = " + mbodyToTAnnotatable + ", " + "[tNestedType] = " + tNestedType
-					+ ", " + "[mInterfaceDeclarationtoTInterface] = " + mInterfaceDeclarationtoTInterface + ", "
-					+ "[mNestedTypeToTNestedType] = " + mNestedTypeToTNestedType + ".");
+					+ ", " + "[mNestedTypeToTNestedType] = " + mNestedTypeToTNestedType + ".");
 		}
 		Object[] result2_green = InterfaceInAnonymousImpl
-				.pattern_InterfaceInAnonymous_1_2_collecttranslatedelements_greenFBBBBB(mNestedType,
-						mbodyToTAnnotatable, tNestedType, mInterfaceDeclarationtoTInterface, mNestedTypeToTNestedType);
+				.pattern_InterfaceInAnonymous_1_2_collecttranslatedelements_greenFBBBB(mNestedType, mbodyToTAnnotatable,
+						tNestedType, mNestedTypeToTNestedType);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceInAnonymousImpl
-				.pattern_InterfaceInAnonymous_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, tClass, mNestedType,
-						pg, mbodyToTAnnotatable, tNestedType, mInterfaceDeclarationtoTInterface,
-						eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration, mNestedTypeToTNestedType);
+				.pattern_InterfaceInAnonymous_1_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, tClass, mNestedType,
+						pg, mbodyToTAnnotatable, tNestedType, eAnonymousClassDeclarationToTClass,
+						eAnonymousClassDeclaration, mNestedTypeToTNestedType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[tClass] = " + tClass + ", " + "[mNestedType] = " + mNestedType + ", " + "[pg] = " + pg
 					+ ", " + "[mbodyToTAnnotatable] = " + mbodyToTAnnotatable + ", " + "[tNestedType] = " + tNestedType
-					+ ", " + "[mInterfaceDeclarationtoTInterface] = " + mInterfaceDeclarationtoTInterface + ", "
-					+ "[eAnonymousClassDeclarationToTClass] = " + eAnonymousClassDeclarationToTClass + ", "
+					+ ", " + "[eAnonymousClassDeclarationToTClass] = " + eAnonymousClassDeclarationToTClass + ", "
 					+ "[eAnonymousClassDeclaration] = " + eAnonymousClassDeclaration + ", "
 					+ "[mNestedTypeToTNestedType] = " + mNestedTypeToTNestedType + ".");
 		}
-		InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFF(
-				ruleresult, tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, eAnonymousClassDeclaration, mNestedTypeToTNestedType);
-		//nothing EMoflonEdge mbodyToTAnnotatable__mNestedType____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge pg__tNestedType____interfaces = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tClass__tNestedType____innerTypes = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tNestedType__tClass____outerType = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge mInterfaceDeclarationtoTInterface__tNestedType____target = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mInterfaceDeclarationtoTInterface__mNestedType____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mbodyToTAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge pg__tNestedType____ownedTypes = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge tNestedType__pg____pg = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = (EMoflonEdge) result3_green[21];
+		InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFF(
+				ruleresult, tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType, eAnonymousClassDeclaration,
+				mNestedTypeToTNestedType);
+		//nothing EMoflonEdge mbodyToTAnnotatable__mNestedType____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mbodyToTAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge pg__tNestedType____interfaces = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tClass__tNestedType____innerTypes = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tNestedType__tClass____outerType = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge pg__tNestedType____ownedTypes = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tNestedType__pg____pg = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = (EMoflonEdge) result3_green[18];
 
 		// 
 		// 
-		InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_1_5_registerobjects_expressionBBBBBBBBBBB(this,
-				ruleresult, tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration,
-				mNestedTypeToTNestedType);
+		InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_1_5_registerobjects_expressionBBBBBBBBBB(this, ruleresult,
+				tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType, eAnonymousClassDeclarationToTClass,
+				eAnonymousClassDeclaration, mNestedTypeToTNestedType);
 		return InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_1_6_expressionFB(ruleresult);
 	}
 
@@ -284,9 +277,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
 				//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = (EMoflonEdge) result3_green[12];
 
@@ -431,15 +424,13 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg,
-			EObject mbodyToTAnnotatable, EObject tNestedType, EObject mInterfaceDeclarationtoTInterface,
-			EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
-			EObject mNestedTypeToTNestedType) {
+			EObject mbodyToTAnnotatable, EObject tNestedType, EObject eAnonymousClassDeclarationToTClass,
+			EObject eAnonymousClassDeclaration, EObject mNestedTypeToTNestedType) {
 		ruleresult.registerObject("tClass", tClass);
 		ruleresult.registerObject("mNestedType", mNestedType);
 		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("mbodyToTAnnotatable", mbodyToTAnnotatable);
 		ruleresult.registerObject("tNestedType", tNestedType);
-		ruleresult.registerObject("mInterfaceDeclarationtoTInterface", mInterfaceDeclarationtoTInterface);
 		ruleresult.registerObject("eAnonymousClassDeclarationToTClass", eAnonymousClassDeclarationToTClass);
 		ruleresult.registerObject("eAnonymousClassDeclaration", eAnonymousClassDeclaration);
 		ruleresult.registerObject("mNestedTypeToTNestedType", mNestedTypeToTNestedType);
@@ -542,63 +533,57 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		AnonymousClassDeclaration eAnonymousClassDeclaration = (AnonymousClassDeclaration) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = InterfaceInAnonymousImpl
-				.pattern_InterfaceInAnonymous_11_1_performtransformation_greenFFBFBFB(tNestedType,
+				.pattern_InterfaceInAnonymous_11_1_performtransformation_greenFFBBFB(tNestedType,
 						eAnonymousClassDeclaration, csp);
 		InterfaceDeclaration mNestedType = (InterfaceDeclaration) result1_green[0];
 		ASTNodeToTAnnotatable mbodyToTAnnotatable = (ASTNodeToTAnnotatable) result1_green[1];
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = (InterfaceDeclarationToTInterface) result1_green[3];
-		TypeToTAbstractType mNestedTypeToTNestedType = (TypeToTAbstractType) result1_green[5];
+		TypeToTAbstractType mNestedTypeToTNestedType = (TypeToTAbstractType) result1_green[4];
 
 		Object[] result2_black = InterfaceInAnonymousImpl
-				.pattern_InterfaceInAnonymous_11_2_collecttranslatedelements_blackBBBBB(mNestedType,
-						mbodyToTAnnotatable, tNestedType, mInterfaceDeclarationtoTInterface, mNestedTypeToTNestedType);
+				.pattern_InterfaceInAnonymous_11_2_collecttranslatedelements_blackBBBB(mNestedType, mbodyToTAnnotatable,
+						tNestedType, mNestedTypeToTNestedType);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mNestedType] = " + mNestedType
 					+ ", " + "[mbodyToTAnnotatable] = " + mbodyToTAnnotatable + ", " + "[tNestedType] = " + tNestedType
-					+ ", " + "[mInterfaceDeclarationtoTInterface] = " + mInterfaceDeclarationtoTInterface + ", "
-					+ "[mNestedTypeToTNestedType] = " + mNestedTypeToTNestedType + ".");
+					+ ", " + "[mNestedTypeToTNestedType] = " + mNestedTypeToTNestedType + ".");
 		}
 		Object[] result2_green = InterfaceInAnonymousImpl
-				.pattern_InterfaceInAnonymous_11_2_collecttranslatedelements_greenFBBBBB(mNestedType,
-						mbodyToTAnnotatable, tNestedType, mInterfaceDeclarationtoTInterface, mNestedTypeToTNestedType);
+				.pattern_InterfaceInAnonymous_11_2_collecttranslatedelements_greenFBBBB(mNestedType,
+						mbodyToTAnnotatable, tNestedType, mNestedTypeToTNestedType);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceInAnonymousImpl
-				.pattern_InterfaceInAnonymous_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, tClass, mNestedType,
-						pg, mbodyToTAnnotatable, tNestedType, mInterfaceDeclarationtoTInterface,
-						eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration, mNestedTypeToTNestedType);
+				.pattern_InterfaceInAnonymous_11_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, tClass, mNestedType,
+						pg, mbodyToTAnnotatable, tNestedType, eAnonymousClassDeclarationToTClass,
+						eAnonymousClassDeclaration, mNestedTypeToTNestedType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[tClass] = " + tClass + ", " + "[mNestedType] = " + mNestedType + ", " + "[pg] = " + pg
 					+ ", " + "[mbodyToTAnnotatable] = " + mbodyToTAnnotatable + ", " + "[tNestedType] = " + tNestedType
-					+ ", " + "[mInterfaceDeclarationtoTInterface] = " + mInterfaceDeclarationtoTInterface + ", "
-					+ "[eAnonymousClassDeclarationToTClass] = " + eAnonymousClassDeclarationToTClass + ", "
+					+ ", " + "[eAnonymousClassDeclarationToTClass] = " + eAnonymousClassDeclarationToTClass + ", "
 					+ "[eAnonymousClassDeclaration] = " + eAnonymousClassDeclaration + ", "
 					+ "[mNestedTypeToTNestedType] = " + mNestedTypeToTNestedType + ".");
 		}
-		InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFF(
-				ruleresult, tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, eAnonymousClassDeclaration, mNestedTypeToTNestedType);
-		//nothing EMoflonEdge mbodyToTAnnotatable__mNestedType____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge pg__tNestedType____interfaces = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tClass__tNestedType____innerTypes = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tNestedType__tClass____outerType = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge mInterfaceDeclarationtoTInterface__tNestedType____target = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mInterfaceDeclarationtoTInterface__mNestedType____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mbodyToTAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge pg__tNestedType____ownedTypes = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge tNestedType__pg____pg = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = (EMoflonEdge) result3_green[21];
+		InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFF(
+				ruleresult, tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType, eAnonymousClassDeclaration,
+				mNestedTypeToTNestedType);
+		//nothing EMoflonEdge mbodyToTAnnotatable__mNestedType____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mbodyToTAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge pg__tNestedType____interfaces = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tClass__tNestedType____innerTypes = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tNestedType__tClass____outerType = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge pg__tNestedType____ownedTypes = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tNestedType__pg____pg = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = (EMoflonEdge) result3_green[18];
 
 		// 
 		// 
-		InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_11_5_registerobjects_expressionBBBBBBBBBBB(this,
+		InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_11_5_registerobjects_expressionBBBBBBBBBB(this,
 				ruleresult, tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration,
-				mNestedTypeToTNestedType);
+				eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration, mNestedTypeToTNestedType);
 		return InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_11_6_expressionFB(ruleresult);
 	}
 
@@ -645,11 +630,11 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 				//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge pg__tNestedType____interfaces = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tClass__tNestedType____innerTypes = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tNestedType__tClass____outerType = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge pg__tClass____ownedTypes = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tClass__pg____pg = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge tClass__tNestedType____innerTypes = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tNestedType__tClass____outerType = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge pg__tNestedType____ownedTypes = (EMoflonEdge) result3_green[14];
 				//nothing EMoflonEdge tNestedType__pg____pg = (EMoflonEdge) result3_green[15];
 
@@ -792,15 +777,13 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg,
-			EObject mbodyToTAnnotatable, EObject tNestedType, EObject mInterfaceDeclarationtoTInterface,
-			EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
-			EObject mNestedTypeToTNestedType) {
+			EObject mbodyToTAnnotatable, EObject tNestedType, EObject eAnonymousClassDeclarationToTClass,
+			EObject eAnonymousClassDeclaration, EObject mNestedTypeToTNestedType) {
 		ruleresult.registerObject("tClass", tClass);
 		ruleresult.registerObject("mNestedType", mNestedType);
 		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("mbodyToTAnnotatable", mbodyToTAnnotatable);
 		ruleresult.registerObject("tNestedType", tNestedType);
-		ruleresult.registerObject("mInterfaceDeclarationtoTInterface", mInterfaceDeclarationtoTInterface);
 		ruleresult.registerObject("eAnonymousClassDeclarationToTClass", eAnonymousClassDeclarationToTClass);
 		ruleresult.registerObject("eAnonymousClassDeclaration", eAnonymousClassDeclaration);
 		ruleresult.registerObject("mNestedTypeToTNestedType", mNestedTypeToTNestedType);
@@ -822,7 +805,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_22(EMoflonEdge _edge_interfaces) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_689(EMoflonEdge _edge_interfaces) {
 
 		Object[] result1_bindingAndBlack = InterfaceInAnonymousImpl
 				.pattern_InterfaceInAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -880,7 +863,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_23(EMoflonEdge _edge_anonymousClassDeclarationOwner) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_708(EMoflonEdge _edge_anonymousClassDeclarationOwner) {
 
 		Object[] result1_bindingAndBlack = InterfaceInAnonymousImpl
 				.pattern_InterfaceInAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -956,13 +939,13 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		var_tNestedType_tLib.setValue(__helper.getValue("tNestedType", "tLib"));
 		var_tNestedType_tLib.setType("boolean");
 
-		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
-		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
-		var_mNestedType_name.setType("String");
-
 		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
 		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
 		var_tNestedType_tName.setType("String");
+
+		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
+		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
+		var_mNestedType_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1020,13 +1003,13 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		var_tNestedType_tLib.setValue(__helper.getValue("tNestedType", "tLib"));
 		var_tNestedType_tLib.setType("boolean");
 
-		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
-		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
-		var_mNestedType_name.setType("String");
-
 		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
 		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
 		var_tNestedType_tName.setType("String");
+
+		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
+		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
+		var_mNestedType_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1119,11 +1102,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 							+ "[tNestedType] = " + tNestedType + ", " + "[eAnonymousClassDeclaration] = "
 							+ eAnonymousClassDeclaration + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_24_6_createcorrespondence_greenBFBFFB(mNestedType,
+				InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_24_6_createcorrespondence_greenBFBFB(mNestedType,
 						tNestedType, ccMatch);
 				//nothing ASTNodeToTAnnotatable mbodyToTAnnotatable = (ASTNodeToTAnnotatable) result6_green[1];
-				//nothing InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = (InterfaceDeclarationToTInterface) result6_green[3];
-				//nothing TypeToTAbstractType mNestedTypeToTNestedType = (TypeToTAbstractType) result6_green[4];
+				//nothing TypeToTAbstractType mNestedTypeToTNestedType = (TypeToTAbstractType) result6_green[3];
 
 				Object[] result7_black = InterfaceInAnonymousImpl
 						.pattern_InterfaceInAnonymous_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1277,13 +1259,12 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 								+ eAnonymousClassDeclarationToTClass + ", " + "[eAnonymousClassDeclaration] = "
 								+ eAnonymousClassDeclaration + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_29_6_perform_greenBFBFFFBFBB(tClass, pg,
+					InterfaceInAnonymousImpl.pattern_InterfaceInAnonymous_29_6_perform_greenBFBFFBFBB(tClass, pg,
 							eAnonymousClassDeclaration, ruleResult, csp);
 					//nothing InterfaceDeclaration mNestedType = (InterfaceDeclaration) result6_green[1];
 					//nothing ASTNodeToTAnnotatable mbodyToTAnnotatable = (ASTNodeToTAnnotatable) result6_green[3];
 					//nothing TInterface tNestedType = (TInterface) result6_green[4];
-					//nothing InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = (InterfaceDeclarationToTInterface) result6_green[5];
-					//nothing TypeToTAbstractType mNestedTypeToTNestedType = (TypeToTAbstractType) result6_green[7];
+					//nothing TypeToTAbstractType mNestedTypeToTNestedType = (TypeToTAbstractType) result6_green[6];
 
 				} else {
 				}
@@ -1380,11 +1361,11 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 					(AnonymousClassDeclarationToTClass) arguments.get(4), (AnonymousClassDeclaration) arguments.get(5));
 		case RulesPackage.INTERFACE_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_IN_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.INTERFACE_IN_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
 					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
 					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9));
+					(EObject) arguments.get(8));
 			return null;
 		case RulesPackage.INTERFACE_IN_ANONYMOUS___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
@@ -1410,18 +1391,18 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 					(AnonymousClassDeclarationToTClass) arguments.get(4), (AnonymousClassDeclaration) arguments.get(5));
 		case RulesPackage.INTERFACE_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_IN_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.INTERFACE_IN_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
 					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
 					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9));
+					(EObject) arguments.get(8));
 			return null;
 		case RulesPackage.INTERFACE_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_22__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_22((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INTERFACE_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_23__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_23((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_689__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_689((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_708__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_708((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INTERFACE_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1623,58 +1604,49 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_1_1_performtransformation_greenBBBFFFFB(TClass tClass,
+	public static final Object[] pattern_InterfaceInAnonymous_1_1_performtransformation_greenBBBFFFB(TClass tClass,
 			InterfaceDeclaration mNestedType, TypeGraph pg, CSP csp) {
 		ASTNodeToTAnnotatable mbodyToTAnnotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TInterface tNestedType = BasicFactory.eINSTANCE.createTInterface();
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = PmFactory.eINSTANCE
-				.createInterfaceDeclarationToTInterface();
 		TypeToTAbstractType mNestedTypeToTNestedType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		Object _localVariable_0 = csp.getValue("tNestedType", "tLib");
 		Object _localVariable_1 = csp.getValue("tNestedType", "tName");
 		mbodyToTAnnotatable.setSource(mNestedType);
+		mbodyToTAnnotatable.setTarget(tNestedType);
 		pg.getInterfaces().add(tNestedType);
 		tClass.getInnerTypes().add(tNestedType);
-		mbodyToTAnnotatable.setTarget(tNestedType);
 		pg.getOwnedTypes().add(tNestedType);
-		mInterfaceDeclarationtoTInterface.setTarget(tNestedType);
-		mInterfaceDeclarationtoTInterface.setSource(mNestedType);
-		mNestedTypeToTNestedType.setSource(mNestedType);
 		mNestedTypeToTNestedType.setTarget(tNestedType);
+		mNestedTypeToTNestedType.setSource(mNestedType);
 		boolean tNestedType_tLib_prime = (boolean) _localVariable_0;
 		String tNestedType_tName_prime = (String) _localVariable_1;
 		tNestedType.setTLib(Boolean.valueOf(tNestedType_tLib_prime));
 		tNestedType.setTName(tNestedType_tName_prime);
-		return new Object[] { tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, mNestedTypeToTNestedType, csp };
+		return new Object[] { tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType, mNestedTypeToTNestedType,
+				csp };
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_1_2_collecttranslatedelements_blackBBBBB(
+	public static final Object[] pattern_InterfaceInAnonymous_1_2_collecttranslatedelements_blackBBBB(
 			InterfaceDeclaration mNestedType, ASTNodeToTAnnotatable mbodyToTAnnotatable, TInterface tNestedType,
-			InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface,
 			TypeToTAbstractType mNestedTypeToTNestedType) {
-		return new Object[] { mNestedType, mbodyToTAnnotatable, tNestedType, mInterfaceDeclarationtoTInterface,
-				mNestedTypeToTNestedType };
+		return new Object[] { mNestedType, mbodyToTAnnotatable, tNestedType, mNestedTypeToTNestedType };
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_1_2_collecttranslatedelements_greenFBBBBB(
+	public static final Object[] pattern_InterfaceInAnonymous_1_2_collecttranslatedelements_greenFBBBB(
 			InterfaceDeclaration mNestedType, ASTNodeToTAnnotatable mbodyToTAnnotatable, TInterface tNestedType,
-			InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface,
 			TypeToTAbstractType mNestedTypeToTNestedType) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(mNestedType);
 		ruleresult.getCreatedLinkElements().add(mbodyToTAnnotatable);
 		ruleresult.getCreatedElements().add(tNestedType);
-		ruleresult.getCreatedLinkElements().add(mInterfaceDeclarationtoTInterface);
 		ruleresult.getCreatedLinkElements().add(mNestedTypeToTNestedType);
-		return new Object[] { ruleresult, mNestedType, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, mNestedTypeToTNestedType };
+		return new Object[] { ruleresult, mNestedType, mbodyToTAnnotatable, tNestedType, mNestedTypeToTNestedType };
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_1_3_bookkeepingforedges_blackBBBBBBBBBB(
+	public static final Object[] pattern_InterfaceInAnonymous_1_3_bookkeepingforedges_blackBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg, EObject mbodyToTAnnotatable,
-			EObject tNestedType, EObject mInterfaceDeclarationtoTInterface, EObject eAnonymousClassDeclarationToTClass,
-			EObject eAnonymousClassDeclaration, EObject mNestedTypeToTNestedType) {
+			EObject tNestedType, EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
+			EObject mNestedTypeToTNestedType) {
 		if (!tClass.equals(tNestedType)) {
 			if (!mNestedType.equals(tClass)) {
 				if (!mNestedType.equals(pg)) {
@@ -1686,72 +1658,47 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 										if (!mbodyToTAnnotatable.equals(tClass)) {
 											if (!mbodyToTAnnotatable.equals(pg)) {
 												if (!mbodyToTAnnotatable.equals(tNestedType)) {
-													if (!mInterfaceDeclarationtoTInterface.equals(tClass)) {
-														if (!mInterfaceDeclarationtoTInterface.equals(mNestedType)) {
-															if (!mInterfaceDeclarationtoTInterface.equals(pg)) {
-																if (!mInterfaceDeclarationtoTInterface
+													if (!eAnonymousClassDeclarationToTClass.equals(tClass)) {
+														if (!eAnonymousClassDeclarationToTClass.equals(mNestedType)) {
+															if (!eAnonymousClassDeclarationToTClass.equals(pg)) {
+																if (!eAnonymousClassDeclarationToTClass
 																		.equals(mbodyToTAnnotatable)) {
-																	if (!mInterfaceDeclarationtoTInterface
+																	if (!eAnonymousClassDeclarationToTClass
 																			.equals(tNestedType)) {
-																		if (!mInterfaceDeclarationtoTInterface
+																		if (!eAnonymousClassDeclarationToTClass
 																				.equals(mNestedTypeToTNestedType)) {
-																			if (!eAnonymousClassDeclarationToTClass
+																			if (!eAnonymousClassDeclaration
 																					.equals(tClass)) {
-																				if (!eAnonymousClassDeclarationToTClass
+																				if (!eAnonymousClassDeclaration
 																						.equals(mNestedType)) {
-																					if (!eAnonymousClassDeclarationToTClass
+																					if (!eAnonymousClassDeclaration
 																							.equals(pg)) {
-																						if (!eAnonymousClassDeclarationToTClass
+																						if (!eAnonymousClassDeclaration
 																								.equals(mbodyToTAnnotatable)) {
-																							if (!eAnonymousClassDeclarationToTClass
+																							if (!eAnonymousClassDeclaration
 																									.equals(tNestedType)) {
-																								if (!eAnonymousClassDeclarationToTClass
-																										.equals(mInterfaceDeclarationtoTInterface)) {
-																									if (!eAnonymousClassDeclarationToTClass
+																								if (!eAnonymousClassDeclaration
+																										.equals(eAnonymousClassDeclarationToTClass)) {
+																									if (!eAnonymousClassDeclaration
 																											.equals(mNestedTypeToTNestedType)) {
-																										if (!eAnonymousClassDeclaration
+																										if (!mNestedTypeToTNestedType
 																												.equals(tClass)) {
-																											if (!eAnonymousClassDeclaration
-																													.equals(mNestedType)) {
-																												if (!eAnonymousClassDeclaration
-																														.equals(pg)) {
-																													if (!eAnonymousClassDeclaration
-																															.equals(mbodyToTAnnotatable)) {
-																														if (!eAnonymousClassDeclaration
-																																.equals(tNestedType)) {
-																															if (!eAnonymousClassDeclaration
-																																	.equals(mInterfaceDeclarationtoTInterface)) {
-																																if (!eAnonymousClassDeclaration
-																																		.equals(eAnonymousClassDeclarationToTClass)) {
-																																	if (!eAnonymousClassDeclaration
-																																			.equals(mNestedTypeToTNestedType)) {
-																																		if (!mNestedTypeToTNestedType
-																																				.equals(tClass)) {
-																																			if (!mNestedTypeToTNestedType
-																																					.equals(pg)) {
-																																				if (!mNestedTypeToTNestedType
-																																						.equals(mbodyToTAnnotatable)) {
-																																					if (!mNestedTypeToTNestedType
-																																							.equals(tNestedType)) {
-																																						return new Object[] {
-																																								ruleresult,
-																																								tClass,
-																																								mNestedType,
-																																								pg,
-																																								mbodyToTAnnotatable,
-																																								tNestedType,
-																																								mInterfaceDeclarationtoTInterface,
-																																								eAnonymousClassDeclarationToTClass,
-																																								eAnonymousClassDeclaration,
-																																								mNestedTypeToTNestedType };
-																																					}
-																																				}
-																																			}
-																																		}
-																																	}
-																																}
-																															}
-																														}
+																											if (!mNestedTypeToTNestedType
+																													.equals(pg)) {
+																												if (!mNestedTypeToTNestedType
+																														.equals(mbodyToTAnnotatable)) {
+																													if (!mNestedTypeToTNestedType
+																															.equals(tNestedType)) {
+																														return new Object[] {
+																																ruleresult,
+																																tClass,
+																																mNestedType,
+																																pg,
+																																mbodyToTAnnotatable,
+																																tNestedType,
+																																eAnonymousClassDeclarationToTClass,
+																																eAnonymousClassDeclaration,
+																																mNestedTypeToTNestedType };
 																													}
 																												}
 																											}
@@ -1783,44 +1730,43 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFF(
+	public static final Object[] pattern_InterfaceInAnonymous_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg, EObject mbodyToTAnnotatable,
-			EObject tNestedType, EObject mInterfaceDeclarationtoTInterface, EObject eAnonymousClassDeclaration,
-			EObject mNestedTypeToTNestedType) {
+			EObject tNestedType, EObject eAnonymousClassDeclaration, EObject mNestedTypeToTNestedType) {
 		EMoflonEdge mbodyToTAnnotatable__mNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mbodyToTAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tNestedType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tClass____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mInterfaceDeclarationtoTInterface__tNestedType____target = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
-		EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mInterfaceDeclarationtoTInterface__mNestedType____source = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
-		EMoflonEdge mbodyToTAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
+		EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceInAnonymous";
 		String mbodyToTAnnotatable__mNestedType____source_name_prime = "source";
+		String mbodyToTAnnotatable__tNestedType____target_name_prime = "target";
+		String mNestedTypeToTNestedType__tNestedType____target_name_prime = "target";
 		String pg__tNestedType____interfaces_name_prime = "interfaces";
 		String tClass__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tClass____outerType_name_prime = "outerType";
-		String mInterfaceDeclarationtoTInterface__tNestedType____target_name_prime = "target";
-		String mNestedTypeToTNestedType__mNestedType____source_name_prime = "source";
-		String mInterfaceDeclarationtoTInterface__mNestedType____source_name_prime = "source";
-		String mbodyToTAnnotatable__tNestedType____target_name_prime = "target";
-		String mNestedTypeToTNestedType__tNestedType____target_name_prime = "target";
 		String pg__tNestedType____ownedTypes_name_prime = "ownedTypes";
 		String tNestedType__pg____pg_name_prime = "pg";
 		String mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
 		String eAnonymousClassDeclaration__mNestedType____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mNestedTypeToTNestedType__mNestedType____source_name_prime = "source";
 		mbodyToTAnnotatable__mNestedType____source.setSrc(mbodyToTAnnotatable);
 		mbodyToTAnnotatable__mNestedType____source.setTrg(mNestedType);
 		ruleresult.getCreatedEdges().add(mbodyToTAnnotatable__mNestedType____source);
+		mbodyToTAnnotatable__tNestedType____target.setSrc(mbodyToTAnnotatable);
+		mbodyToTAnnotatable__tNestedType____target.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(mbodyToTAnnotatable__tNestedType____target);
+		mNestedTypeToTNestedType__tNestedType____target.setSrc(mNestedTypeToTNestedType);
+		mNestedTypeToTNestedType__tNestedType____target.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__tNestedType____target);
 		pg__tNestedType____interfaces.setSrc(pg);
 		pg__tNestedType____interfaces.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(pg__tNestedType____interfaces);
@@ -1830,21 +1776,6 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		tNestedType__tClass____outerType.setSrc(tNestedType);
 		tNestedType__tClass____outerType.setTrg(tClass);
 		ruleresult.getCreatedEdges().add(tNestedType__tClass____outerType);
-		mInterfaceDeclarationtoTInterface__tNestedType____target.setSrc(mInterfaceDeclarationtoTInterface);
-		mInterfaceDeclarationtoTInterface__tNestedType____target.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(mInterfaceDeclarationtoTInterface__tNestedType____target);
-		mNestedTypeToTNestedType__mNestedType____source.setSrc(mNestedTypeToTNestedType);
-		mNestedTypeToTNestedType__mNestedType____source.setTrg(mNestedType);
-		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__mNestedType____source);
-		mInterfaceDeclarationtoTInterface__mNestedType____source.setSrc(mInterfaceDeclarationtoTInterface);
-		mInterfaceDeclarationtoTInterface__mNestedType____source.setTrg(mNestedType);
-		ruleresult.getCreatedEdges().add(mInterfaceDeclarationtoTInterface__mNestedType____source);
-		mbodyToTAnnotatable__tNestedType____target.setSrc(mbodyToTAnnotatable);
-		mbodyToTAnnotatable__tNestedType____target.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(mbodyToTAnnotatable__tNestedType____target);
-		mNestedTypeToTNestedType__tNestedType____target.setSrc(mNestedTypeToTNestedType);
-		mNestedTypeToTNestedType__tNestedType____target.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__tNestedType____target);
 		pg__tNestedType____ownedTypes.setSrc(pg);
 		pg__tNestedType____ownedTypes.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(pg__tNestedType____ownedTypes);
@@ -1857,46 +1788,41 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		eAnonymousClassDeclaration__mNestedType____bodyDeclarations.setSrc(eAnonymousClassDeclaration);
 		eAnonymousClassDeclaration__mNestedType____bodyDeclarations.setTrg(mNestedType);
 		ruleresult.getTranslatedEdges().add(eAnonymousClassDeclaration__mNestedType____bodyDeclarations);
+		mNestedTypeToTNestedType__mNestedType____source.setSrc(mNestedTypeToTNestedType);
+		mNestedTypeToTNestedType__mNestedType____source.setTrg(mNestedType);
+		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__mNestedType____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mbodyToTAnnotatable__mNestedType____source.setName(mbodyToTAnnotatable__mNestedType____source_name_prime);
-		pg__tNestedType____interfaces.setName(pg__tNestedType____interfaces_name_prime);
-		tClass__tNestedType____innerTypes.setName(tClass__tNestedType____innerTypes_name_prime);
-		tNestedType__tClass____outerType.setName(tNestedType__tClass____outerType_name_prime);
-		mInterfaceDeclarationtoTInterface__tNestedType____target
-				.setName(mInterfaceDeclarationtoTInterface__tNestedType____target_name_prime);
-		mNestedTypeToTNestedType__mNestedType____source
-				.setName(mNestedTypeToTNestedType__mNestedType____source_name_prime);
-		mInterfaceDeclarationtoTInterface__mNestedType____source
-				.setName(mInterfaceDeclarationtoTInterface__mNestedType____source_name_prime);
 		mbodyToTAnnotatable__tNestedType____target.setName(mbodyToTAnnotatable__tNestedType____target_name_prime);
 		mNestedTypeToTNestedType__tNestedType____target
 				.setName(mNestedTypeToTNestedType__tNestedType____target_name_prime);
+		pg__tNestedType____interfaces.setName(pg__tNestedType____interfaces_name_prime);
+		tClass__tNestedType____innerTypes.setName(tClass__tNestedType____innerTypes_name_prime);
+		tNestedType__tClass____outerType.setName(tNestedType__tClass____outerType_name_prime);
 		pg__tNestedType____ownedTypes.setName(pg__tNestedType____ownedTypes_name_prime);
 		tNestedType__pg____pg.setName(tNestedType__pg____pg_name_prime);
 		mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner
 				.setName(mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner_name_prime);
 		eAnonymousClassDeclaration__mNestedType____bodyDeclarations
 				.setName(eAnonymousClassDeclaration__mNestedType____bodyDeclarations_name_prime);
+		mNestedTypeToTNestedType__mNestedType____source
+				.setName(mNestedTypeToTNestedType__mNestedType____source_name_prime);
 		return new Object[] { ruleresult, tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, eAnonymousClassDeclaration, mNestedTypeToTNestedType,
-				mbodyToTAnnotatable__mNestedType____source, pg__tNestedType____interfaces,
-				tClass__tNestedType____innerTypes, tNestedType__tClass____outerType,
-				mInterfaceDeclarationtoTInterface__tNestedType____target,
-				mNestedTypeToTNestedType__mNestedType____source,
-				mInterfaceDeclarationtoTInterface__mNestedType____source, mbodyToTAnnotatable__tNestedType____target,
-				mNestedTypeToTNestedType__tNestedType____target, pg__tNestedType____ownedTypes, tNestedType__pg____pg,
+				eAnonymousClassDeclaration, mNestedTypeToTNestedType, mbodyToTAnnotatable__mNestedType____source,
+				mbodyToTAnnotatable__tNestedType____target, mNestedTypeToTNestedType__tNestedType____target,
+				pg__tNestedType____interfaces, tClass__tNestedType____innerTypes, tNestedType__tClass____outerType,
+				pg__tNestedType____ownedTypes, tNestedType__pg____pg,
 				mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner,
-				eAnonymousClassDeclaration__mNestedType____bodyDeclarations };
+				eAnonymousClassDeclaration__mNestedType____bodyDeclarations,
+				mNestedTypeToTNestedType__mNestedType____source };
 	}
 
-	public static final void pattern_InterfaceInAnonymous_1_5_registerobjects_expressionBBBBBBBBBBB(
+	public static final void pattern_InterfaceInAnonymous_1_5_registerobjects_expressionBBBBBBBBBB(
 			InterfaceInAnonymous _this, PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg,
-			EObject mbodyToTAnnotatable, EObject tNestedType, EObject mInterfaceDeclarationtoTInterface,
-			EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
-			EObject mNestedTypeToTNestedType) {
+			EObject mbodyToTAnnotatable, EObject tNestedType, EObject eAnonymousClassDeclarationToTClass,
+			EObject eAnonymousClassDeclaration, EObject mNestedTypeToTNestedType) {
 		_this.registerObjects_FWD(ruleresult, tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration,
-				mNestedTypeToTNestedType);
+				eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration, mNestedTypeToTNestedType);
 
 	}
 
@@ -2015,19 +1941,19 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge pg__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
 		EMoflonEdge pg__tClass____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
 		EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		String pg__tClass____classes_name_prime = "classes";
 		String eAnonymousClassDeclarationToTClass__tClass____target_name_prime = "target";
-		String eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source_name_prime = "source";
 		String pg__tClass____ownedTypes_name_prime = "ownedTypes";
 		String tClass__pg____pg_name_prime = "pg";
+		String eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source_name_prime = "source";
 		String mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
 		String eAnonymousClassDeclaration__mNestedType____bodyDeclarations_name_prime = "bodyDeclarations";
 		isApplicableMatch.getAllContextElements().add(tClass);
@@ -2041,17 +1967,17 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		eAnonymousClassDeclarationToTClass__tClass____target.setSrc(eAnonymousClassDeclarationToTClass);
 		eAnonymousClassDeclarationToTClass__tClass____target.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(eAnonymousClassDeclarationToTClass__tClass____target);
-		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source
-				.setSrc(eAnonymousClassDeclarationToTClass);
-		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source.setTrg(eAnonymousClassDeclaration);
-		isApplicableMatch.getAllContextElements()
-				.add(eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source);
 		pg__tClass____ownedTypes.setSrc(pg);
 		pg__tClass____ownedTypes.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(pg__tClass____ownedTypes);
 		tClass__pg____pg.setSrc(tClass);
 		tClass__pg____pg.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tClass__pg____pg);
+		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source
+				.setSrc(eAnonymousClassDeclarationToTClass);
+		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source.setTrg(eAnonymousClassDeclaration);
+		isApplicableMatch.getAllContextElements()
+				.add(eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source);
 		mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner.setSrc(mNestedType);
 		mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner.setTrg(eAnonymousClassDeclaration);
 		isApplicableMatch.getAllContextElements()
@@ -2062,18 +1988,19 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		pg__tClass____classes.setName(pg__tClass____classes_name_prime);
 		eAnonymousClassDeclarationToTClass__tClass____target
 				.setName(eAnonymousClassDeclarationToTClass__tClass____target_name_prime);
-		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source
-				.setName(eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source_name_prime);
 		pg__tClass____ownedTypes.setName(pg__tClass____ownedTypes_name_prime);
 		tClass__pg____pg.setName(tClass__pg____pg_name_prime);
+		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source
+				.setName(eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source_name_prime);
 		mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner
 				.setName(mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner_name_prime);
 		eAnonymousClassDeclaration__mNestedType____bodyDeclarations
 				.setName(eAnonymousClassDeclaration__mNestedType____bodyDeclarations_name_prime);
 		return new Object[] { tClass, mNestedType, pg, eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration,
 				isApplicableMatch, pg__tClass____classes, eAnonymousClassDeclarationToTClass__tClass____target,
-				eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source, pg__tClass____ownedTypes,
-				tClass__pg____pg, mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner,
+				pg__tClass____ownedTypes, tClass__pg____pg,
+				eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source,
+				mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner,
 				eAnonymousClassDeclaration__mNestedType____bodyDeclarations };
 	}
 
@@ -2347,56 +2274,47 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_11_1_performtransformation_greenFFBFBFB(
+	public static final Object[] pattern_InterfaceInAnonymous_11_1_performtransformation_greenFFBBFB(
 			TInterface tNestedType, AnonymousClassDeclaration eAnonymousClassDeclaration, CSP csp) {
 		InterfaceDeclaration mNestedType = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		ASTNodeToTAnnotatable mbodyToTAnnotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = PmFactory.eINSTANCE
-				.createInterfaceDeclarationToTInterface();
 		TypeToTAbstractType mNestedTypeToTNestedType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		Object _localVariable_0 = csp.getValue("mNestedType", "proxy");
 		Object _localVariable_1 = csp.getValue("mNestedType", "name");
 		mNestedType.setAnonymousClassDeclarationOwner(eAnonymousClassDeclaration);
 		mbodyToTAnnotatable.setSource(mNestedType);
 		mbodyToTAnnotatable.setTarget(tNestedType);
-		mInterfaceDeclarationtoTInterface.setTarget(tNestedType);
-		mInterfaceDeclarationtoTInterface.setSource(mNestedType);
-		mNestedTypeToTNestedType.setSource(mNestedType);
 		mNestedTypeToTNestedType.setTarget(tNestedType);
+		mNestedTypeToTNestedType.setSource(mNestedType);
 		boolean mNestedType_proxy_prime = (boolean) _localVariable_0;
 		String mNestedType_name_prime = (String) _localVariable_1;
 		mNestedType.setProxy(Boolean.valueOf(mNestedType_proxy_prime));
 		mNestedType.setName(mNestedType_name_prime);
-		return new Object[] { mNestedType, mbodyToTAnnotatable, tNestedType, mInterfaceDeclarationtoTInterface,
-				eAnonymousClassDeclaration, mNestedTypeToTNestedType, csp };
+		return new Object[] { mNestedType, mbodyToTAnnotatable, tNestedType, eAnonymousClassDeclaration,
+				mNestedTypeToTNestedType, csp };
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_11_2_collecttranslatedelements_blackBBBBB(
+	public static final Object[] pattern_InterfaceInAnonymous_11_2_collecttranslatedelements_blackBBBB(
 			InterfaceDeclaration mNestedType, ASTNodeToTAnnotatable mbodyToTAnnotatable, TInterface tNestedType,
-			InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface,
 			TypeToTAbstractType mNestedTypeToTNestedType) {
-		return new Object[] { mNestedType, mbodyToTAnnotatable, tNestedType, mInterfaceDeclarationtoTInterface,
-				mNestedTypeToTNestedType };
+		return new Object[] { mNestedType, mbodyToTAnnotatable, tNestedType, mNestedTypeToTNestedType };
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_11_2_collecttranslatedelements_greenFBBBBB(
+	public static final Object[] pattern_InterfaceInAnonymous_11_2_collecttranslatedelements_greenFBBBB(
 			InterfaceDeclaration mNestedType, ASTNodeToTAnnotatable mbodyToTAnnotatable, TInterface tNestedType,
-			InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface,
 			TypeToTAbstractType mNestedTypeToTNestedType) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(mNestedType);
 		ruleresult.getCreatedLinkElements().add(mbodyToTAnnotatable);
 		ruleresult.getTranslatedElements().add(tNestedType);
-		ruleresult.getCreatedLinkElements().add(mInterfaceDeclarationtoTInterface);
 		ruleresult.getCreatedLinkElements().add(mNestedTypeToTNestedType);
-		return new Object[] { ruleresult, mNestedType, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, mNestedTypeToTNestedType };
+		return new Object[] { ruleresult, mNestedType, mbodyToTAnnotatable, tNestedType, mNestedTypeToTNestedType };
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_11_3_bookkeepingforedges_blackBBBBBBBBBB(
+	public static final Object[] pattern_InterfaceInAnonymous_11_3_bookkeepingforedges_blackBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg, EObject mbodyToTAnnotatable,
-			EObject tNestedType, EObject mInterfaceDeclarationtoTInterface, EObject eAnonymousClassDeclarationToTClass,
-			EObject eAnonymousClassDeclaration, EObject mNestedTypeToTNestedType) {
+			EObject tNestedType, EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
+			EObject mNestedTypeToTNestedType) {
 		if (!tClass.equals(tNestedType)) {
 			if (!mNestedType.equals(tClass)) {
 				if (!mNestedType.equals(pg)) {
@@ -2408,72 +2326,47 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 										if (!mbodyToTAnnotatable.equals(tClass)) {
 											if (!mbodyToTAnnotatable.equals(pg)) {
 												if (!mbodyToTAnnotatable.equals(tNestedType)) {
-													if (!mInterfaceDeclarationtoTInterface.equals(tClass)) {
-														if (!mInterfaceDeclarationtoTInterface.equals(mNestedType)) {
-															if (!mInterfaceDeclarationtoTInterface.equals(pg)) {
-																if (!mInterfaceDeclarationtoTInterface
+													if (!eAnonymousClassDeclarationToTClass.equals(tClass)) {
+														if (!eAnonymousClassDeclarationToTClass.equals(mNestedType)) {
+															if (!eAnonymousClassDeclarationToTClass.equals(pg)) {
+																if (!eAnonymousClassDeclarationToTClass
 																		.equals(mbodyToTAnnotatable)) {
-																	if (!mInterfaceDeclarationtoTInterface
+																	if (!eAnonymousClassDeclarationToTClass
 																			.equals(tNestedType)) {
-																		if (!mInterfaceDeclarationtoTInterface
+																		if (!eAnonymousClassDeclarationToTClass
 																				.equals(mNestedTypeToTNestedType)) {
-																			if (!eAnonymousClassDeclarationToTClass
+																			if (!eAnonymousClassDeclaration
 																					.equals(tClass)) {
-																				if (!eAnonymousClassDeclarationToTClass
+																				if (!eAnonymousClassDeclaration
 																						.equals(mNestedType)) {
-																					if (!eAnonymousClassDeclarationToTClass
+																					if (!eAnonymousClassDeclaration
 																							.equals(pg)) {
-																						if (!eAnonymousClassDeclarationToTClass
+																						if (!eAnonymousClassDeclaration
 																								.equals(mbodyToTAnnotatable)) {
-																							if (!eAnonymousClassDeclarationToTClass
+																							if (!eAnonymousClassDeclaration
 																									.equals(tNestedType)) {
-																								if (!eAnonymousClassDeclarationToTClass
-																										.equals(mInterfaceDeclarationtoTInterface)) {
-																									if (!eAnonymousClassDeclarationToTClass
+																								if (!eAnonymousClassDeclaration
+																										.equals(eAnonymousClassDeclarationToTClass)) {
+																									if (!eAnonymousClassDeclaration
 																											.equals(mNestedTypeToTNestedType)) {
-																										if (!eAnonymousClassDeclaration
+																										if (!mNestedTypeToTNestedType
 																												.equals(tClass)) {
-																											if (!eAnonymousClassDeclaration
-																													.equals(mNestedType)) {
-																												if (!eAnonymousClassDeclaration
-																														.equals(pg)) {
-																													if (!eAnonymousClassDeclaration
-																															.equals(mbodyToTAnnotatable)) {
-																														if (!eAnonymousClassDeclaration
-																																.equals(tNestedType)) {
-																															if (!eAnonymousClassDeclaration
-																																	.equals(mInterfaceDeclarationtoTInterface)) {
-																																if (!eAnonymousClassDeclaration
-																																		.equals(eAnonymousClassDeclarationToTClass)) {
-																																	if (!eAnonymousClassDeclaration
-																																			.equals(mNestedTypeToTNestedType)) {
-																																		if (!mNestedTypeToTNestedType
-																																				.equals(tClass)) {
-																																			if (!mNestedTypeToTNestedType
-																																					.equals(pg)) {
-																																				if (!mNestedTypeToTNestedType
-																																						.equals(mbodyToTAnnotatable)) {
-																																					if (!mNestedTypeToTNestedType
-																																							.equals(tNestedType)) {
-																																						return new Object[] {
-																																								ruleresult,
-																																								tClass,
-																																								mNestedType,
-																																								pg,
-																																								mbodyToTAnnotatable,
-																																								tNestedType,
-																																								mInterfaceDeclarationtoTInterface,
-																																								eAnonymousClassDeclarationToTClass,
-																																								eAnonymousClassDeclaration,
-																																								mNestedTypeToTNestedType };
-																																					}
-																																				}
-																																			}
-																																		}
-																																	}
-																																}
-																															}
-																														}
+																											if (!mNestedTypeToTNestedType
+																													.equals(pg)) {
+																												if (!mNestedTypeToTNestedType
+																														.equals(mbodyToTAnnotatable)) {
+																													if (!mNestedTypeToTNestedType
+																															.equals(tNestedType)) {
+																														return new Object[] {
+																																ruleresult,
+																																tClass,
+																																mNestedType,
+																																pg,
+																																mbodyToTAnnotatable,
+																																tNestedType,
+																																eAnonymousClassDeclarationToTClass,
+																																eAnonymousClassDeclaration,
+																																mNestedTypeToTNestedType };
 																													}
 																												}
 																											}
@@ -2505,44 +2398,43 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFF(
+	public static final Object[] pattern_InterfaceInAnonymous_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg, EObject mbodyToTAnnotatable,
-			EObject tNestedType, EObject mInterfaceDeclarationtoTInterface, EObject eAnonymousClassDeclaration,
-			EObject mNestedTypeToTNestedType) {
+			EObject tNestedType, EObject eAnonymousClassDeclaration, EObject mNestedTypeToTNestedType) {
 		EMoflonEdge mbodyToTAnnotatable__mNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mbodyToTAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tNestedType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tClass____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mInterfaceDeclarationtoTInterface__tNestedType____target = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
-		EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mInterfaceDeclarationtoTInterface__mNestedType____source = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
-		EMoflonEdge mbodyToTAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
+		EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceInAnonymous";
 		String mbodyToTAnnotatable__mNestedType____source_name_prime = "source";
+		String mbodyToTAnnotatable__tNestedType____target_name_prime = "target";
+		String mNestedTypeToTNestedType__tNestedType____target_name_prime = "target";
 		String pg__tNestedType____interfaces_name_prime = "interfaces";
 		String tClass__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tClass____outerType_name_prime = "outerType";
-		String mInterfaceDeclarationtoTInterface__tNestedType____target_name_prime = "target";
-		String mNestedTypeToTNestedType__mNestedType____source_name_prime = "source";
-		String mInterfaceDeclarationtoTInterface__mNestedType____source_name_prime = "source";
-		String mbodyToTAnnotatable__tNestedType____target_name_prime = "target";
-		String mNestedTypeToTNestedType__tNestedType____target_name_prime = "target";
 		String pg__tNestedType____ownedTypes_name_prime = "ownedTypes";
 		String tNestedType__pg____pg_name_prime = "pg";
 		String mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
 		String eAnonymousClassDeclaration__mNestedType____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mNestedTypeToTNestedType__mNestedType____source_name_prime = "source";
 		mbodyToTAnnotatable__mNestedType____source.setSrc(mbodyToTAnnotatable);
 		mbodyToTAnnotatable__mNestedType____source.setTrg(mNestedType);
 		ruleresult.getCreatedEdges().add(mbodyToTAnnotatable__mNestedType____source);
+		mbodyToTAnnotatable__tNestedType____target.setSrc(mbodyToTAnnotatable);
+		mbodyToTAnnotatable__tNestedType____target.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(mbodyToTAnnotatable__tNestedType____target);
+		mNestedTypeToTNestedType__tNestedType____target.setSrc(mNestedTypeToTNestedType);
+		mNestedTypeToTNestedType__tNestedType____target.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__tNestedType____target);
 		pg__tNestedType____interfaces.setSrc(pg);
 		pg__tNestedType____interfaces.setTrg(tNestedType);
 		ruleresult.getTranslatedEdges().add(pg__tNestedType____interfaces);
@@ -2552,21 +2444,6 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		tNestedType__tClass____outerType.setSrc(tNestedType);
 		tNestedType__tClass____outerType.setTrg(tClass);
 		ruleresult.getTranslatedEdges().add(tNestedType__tClass____outerType);
-		mInterfaceDeclarationtoTInterface__tNestedType____target.setSrc(mInterfaceDeclarationtoTInterface);
-		mInterfaceDeclarationtoTInterface__tNestedType____target.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(mInterfaceDeclarationtoTInterface__tNestedType____target);
-		mNestedTypeToTNestedType__mNestedType____source.setSrc(mNestedTypeToTNestedType);
-		mNestedTypeToTNestedType__mNestedType____source.setTrg(mNestedType);
-		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__mNestedType____source);
-		mInterfaceDeclarationtoTInterface__mNestedType____source.setSrc(mInterfaceDeclarationtoTInterface);
-		mInterfaceDeclarationtoTInterface__mNestedType____source.setTrg(mNestedType);
-		ruleresult.getCreatedEdges().add(mInterfaceDeclarationtoTInterface__mNestedType____source);
-		mbodyToTAnnotatable__tNestedType____target.setSrc(mbodyToTAnnotatable);
-		mbodyToTAnnotatable__tNestedType____target.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(mbodyToTAnnotatable__tNestedType____target);
-		mNestedTypeToTNestedType__tNestedType____target.setSrc(mNestedTypeToTNestedType);
-		mNestedTypeToTNestedType__tNestedType____target.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__tNestedType____target);
 		pg__tNestedType____ownedTypes.setSrc(pg);
 		pg__tNestedType____ownedTypes.setTrg(tNestedType);
 		ruleresult.getTranslatedEdges().add(pg__tNestedType____ownedTypes);
@@ -2579,46 +2456,41 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		eAnonymousClassDeclaration__mNestedType____bodyDeclarations.setSrc(eAnonymousClassDeclaration);
 		eAnonymousClassDeclaration__mNestedType____bodyDeclarations.setTrg(mNestedType);
 		ruleresult.getCreatedEdges().add(eAnonymousClassDeclaration__mNestedType____bodyDeclarations);
+		mNestedTypeToTNestedType__mNestedType____source.setSrc(mNestedTypeToTNestedType);
+		mNestedTypeToTNestedType__mNestedType____source.setTrg(mNestedType);
+		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__mNestedType____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mbodyToTAnnotatable__mNestedType____source.setName(mbodyToTAnnotatable__mNestedType____source_name_prime);
-		pg__tNestedType____interfaces.setName(pg__tNestedType____interfaces_name_prime);
-		tClass__tNestedType____innerTypes.setName(tClass__tNestedType____innerTypes_name_prime);
-		tNestedType__tClass____outerType.setName(tNestedType__tClass____outerType_name_prime);
-		mInterfaceDeclarationtoTInterface__tNestedType____target
-				.setName(mInterfaceDeclarationtoTInterface__tNestedType____target_name_prime);
-		mNestedTypeToTNestedType__mNestedType____source
-				.setName(mNestedTypeToTNestedType__mNestedType____source_name_prime);
-		mInterfaceDeclarationtoTInterface__mNestedType____source
-				.setName(mInterfaceDeclarationtoTInterface__mNestedType____source_name_prime);
 		mbodyToTAnnotatable__tNestedType____target.setName(mbodyToTAnnotatable__tNestedType____target_name_prime);
 		mNestedTypeToTNestedType__tNestedType____target
 				.setName(mNestedTypeToTNestedType__tNestedType____target_name_prime);
+		pg__tNestedType____interfaces.setName(pg__tNestedType____interfaces_name_prime);
+		tClass__tNestedType____innerTypes.setName(tClass__tNestedType____innerTypes_name_prime);
+		tNestedType__tClass____outerType.setName(tNestedType__tClass____outerType_name_prime);
 		pg__tNestedType____ownedTypes.setName(pg__tNestedType____ownedTypes_name_prime);
 		tNestedType__pg____pg.setName(tNestedType__pg____pg_name_prime);
 		mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner
 				.setName(mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner_name_prime);
 		eAnonymousClassDeclaration__mNestedType____bodyDeclarations
 				.setName(eAnonymousClassDeclaration__mNestedType____bodyDeclarations_name_prime);
+		mNestedTypeToTNestedType__mNestedType____source
+				.setName(mNestedTypeToTNestedType__mNestedType____source_name_prime);
 		return new Object[] { ruleresult, tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, eAnonymousClassDeclaration, mNestedTypeToTNestedType,
-				mbodyToTAnnotatable__mNestedType____source, pg__tNestedType____interfaces,
-				tClass__tNestedType____innerTypes, tNestedType__tClass____outerType,
-				mInterfaceDeclarationtoTInterface__tNestedType____target,
-				mNestedTypeToTNestedType__mNestedType____source,
-				mInterfaceDeclarationtoTInterface__mNestedType____source, mbodyToTAnnotatable__tNestedType____target,
-				mNestedTypeToTNestedType__tNestedType____target, pg__tNestedType____ownedTypes, tNestedType__pg____pg,
+				eAnonymousClassDeclaration, mNestedTypeToTNestedType, mbodyToTAnnotatable__mNestedType____source,
+				mbodyToTAnnotatable__tNestedType____target, mNestedTypeToTNestedType__tNestedType____target,
+				pg__tNestedType____interfaces, tClass__tNestedType____innerTypes, tNestedType__tClass____outerType,
+				pg__tNestedType____ownedTypes, tNestedType__pg____pg,
 				mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner,
-				eAnonymousClassDeclaration__mNestedType____bodyDeclarations };
+				eAnonymousClassDeclaration__mNestedType____bodyDeclarations,
+				mNestedTypeToTNestedType__mNestedType____source };
 	}
 
-	public static final void pattern_InterfaceInAnonymous_11_5_registerobjects_expressionBBBBBBBBBBB(
+	public static final void pattern_InterfaceInAnonymous_11_5_registerobjects_expressionBBBBBBBBBB(
 			InterfaceInAnonymous _this, PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg,
-			EObject mbodyToTAnnotatable, EObject tNestedType, EObject mInterfaceDeclarationtoTInterface,
-			EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
-			EObject mNestedTypeToTNestedType) {
+			EObject mbodyToTAnnotatable, EObject tNestedType, EObject eAnonymousClassDeclarationToTClass,
+			EObject eAnonymousClassDeclaration, EObject mNestedTypeToTNestedType) {
 		_this.registerObjects_BWD(ruleresult, tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration,
-				mNestedTypeToTNestedType);
+				eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration, mNestedTypeToTNestedType);
 
 	}
 
@@ -2720,9 +2592,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		if (pg.getClasses().contains(tClass)) {
 			if (tClass.equals(eAnonymousClassDeclarationToTClass.getTarget())) {
 				if (pg.getInterfaces().contains(tNestedType)) {
-					if (eAnonymousClassDeclaration.equals(eAnonymousClassDeclarationToTClass.getSource())) {
-						if (tClass.getInnerTypes().contains(tNestedType)) {
-							if (pg.getOwnedTypes().contains(tClass)) {
+					if (pg.getOwnedTypes().contains(tClass)) {
+						if (eAnonymousClassDeclaration.equals(eAnonymousClassDeclarationToTClass.getSource())) {
+							if (tClass.getInnerTypes().contains(tNestedType)) {
 								if (pg.getOwnedTypes().contains(tNestedType)) {
 									_result.add(new Object[] { tClass, pg, tNestedType,
 											eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration });
@@ -2743,22 +2615,22 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		EMoflonEdge pg__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tNestedType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pg__tClass____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tClass__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge tClass__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tClass____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pg__tClass____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tClass__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__pg____pg = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String pg__tClass____classes_name_prime = "classes";
 		String eAnonymousClassDeclarationToTClass__tClass____target_name_prime = "target";
 		String pg__tNestedType____interfaces_name_prime = "interfaces";
+		String pg__tClass____ownedTypes_name_prime = "ownedTypes";
+		String tClass__pg____pg_name_prime = "pg";
 		String eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source_name_prime = "source";
 		String tClass__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tClass____outerType_name_prime = "outerType";
-		String pg__tClass____ownedTypes_name_prime = "ownedTypes";
-		String tClass__pg____pg_name_prime = "pg";
 		String pg__tNestedType____ownedTypes_name_prime = "ownedTypes";
 		String tNestedType__pg____pg_name_prime = "pg";
 		isApplicableMatch.getAllContextElements().add(tClass);
@@ -2775,6 +2647,12 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		pg__tNestedType____interfaces.setSrc(pg);
 		pg__tNestedType____interfaces.setTrg(tNestedType);
 		isApplicableMatch.getAllContextElements().add(pg__tNestedType____interfaces);
+		pg__tClass____ownedTypes.setSrc(pg);
+		pg__tClass____ownedTypes.setTrg(tClass);
+		isApplicableMatch.getAllContextElements().add(pg__tClass____ownedTypes);
+		tClass__pg____pg.setSrc(tClass);
+		tClass__pg____pg.setTrg(pg);
+		isApplicableMatch.getAllContextElements().add(tClass__pg____pg);
 		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source
 				.setSrc(eAnonymousClassDeclarationToTClass);
 		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source.setTrg(eAnonymousClassDeclaration);
@@ -2786,12 +2664,6 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		tNestedType__tClass____outerType.setSrc(tNestedType);
 		tNestedType__tClass____outerType.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(tNestedType__tClass____outerType);
-		pg__tClass____ownedTypes.setSrc(pg);
-		pg__tClass____ownedTypes.setTrg(tClass);
-		isApplicableMatch.getAllContextElements().add(pg__tClass____ownedTypes);
-		tClass__pg____pg.setSrc(tClass);
-		tClass__pg____pg.setTrg(pg);
-		isApplicableMatch.getAllContextElements().add(tClass__pg____pg);
 		pg__tNestedType____ownedTypes.setSrc(pg);
 		pg__tNestedType____ownedTypes.setTrg(tNestedType);
 		isApplicableMatch.getAllContextElements().add(pg__tNestedType____ownedTypes);
@@ -2802,19 +2674,20 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		eAnonymousClassDeclarationToTClass__tClass____target
 				.setName(eAnonymousClassDeclarationToTClass__tClass____target_name_prime);
 		pg__tNestedType____interfaces.setName(pg__tNestedType____interfaces_name_prime);
+		pg__tClass____ownedTypes.setName(pg__tClass____ownedTypes_name_prime);
+		tClass__pg____pg.setName(tClass__pg____pg_name_prime);
 		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source
 				.setName(eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source_name_prime);
 		tClass__tNestedType____innerTypes.setName(tClass__tNestedType____innerTypes_name_prime);
 		tNestedType__tClass____outerType.setName(tNestedType__tClass____outerType_name_prime);
-		pg__tClass____ownedTypes.setName(pg__tClass____ownedTypes_name_prime);
-		tClass__pg____pg.setName(tClass__pg____pg_name_prime);
 		pg__tNestedType____ownedTypes.setName(pg__tNestedType____ownedTypes_name_prime);
 		tNestedType__pg____pg.setName(tNestedType__pg____pg_name_prime);
 		return new Object[] { tClass, pg, tNestedType, eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration,
 				isApplicableMatch, pg__tClass____classes, eAnonymousClassDeclarationToTClass__tClass____target,
-				pg__tNestedType____interfaces, eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source,
-				tClass__tNestedType____innerTypes, tNestedType__tClass____outerType, pg__tClass____ownedTypes,
-				tClass__pg____pg, pg__tNestedType____ownedTypes, tNestedType__pg____pg };
+				pg__tNestedType____interfaces, pg__tClass____ownedTypes, tClass__pg____pg,
+				eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source,
+				tClass__tNestedType____innerTypes, tNestedType__tClass____outerType, pg__tNestedType____ownedTypes,
+				tNestedType__pg____pg };
 	}
 
 	public static final Object[] pattern_InterfaceInAnonymous_12_4_solveCSP_bindingFBBBBBBB(InterfaceInAnonymous _this,
@@ -2940,7 +2813,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_20_2_testcorematchandDECs_black_nac_0B(
 			TInterface tNestedType) {
-		for (TPackage __DEC_tNestedType_interfaces_782779 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tNestedType_interfaces_604568 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TPackage.class, "interfaces")) {
 			return new Object[] { tNestedType };
 		}
@@ -2949,9 +2822,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_20_2_testcorematchandDECs_black_nac_1BB(
 			TInterface tNestedType, TypeGraph pg) {
-		for (TypeGraph __DEC_tNestedType_interfaces_303301 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_interfaces_825014 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tNestedType_interfaces_303301)) {
+			if (!pg.equals(__DEC_tNestedType_interfaces_825014)) {
 				return new Object[] { tNestedType, pg };
 			}
 		}
@@ -2960,8 +2833,8 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_20_2_testcorematchandDECs_black_nac_2B(
 			TInterface tNestedType) {
-		TPackage __DEC_tNestedType_ownedTypes_684903 = tNestedType.getPackage();
-		if (__DEC_tNestedType_ownedTypes_684903 != null) {
+		TPackage __DEC_tNestedType_ownedTypes_469731 = tNestedType.getPackage();
+		if (__DEC_tNestedType_ownedTypes_469731 != null) {
 			return new Object[] { tNestedType };
 		}
 
@@ -2970,10 +2843,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_20_2_testcorematchandDECs_black_nac_3BB(
 			TInterface tNestedType, TClass tClass) {
-		TAbstractType __DEC_tNestedType_innerTypes_496078 = tNestedType.getOuterType();
-		if (__DEC_tNestedType_innerTypes_496078 != null) {
-			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_496078)) {
-				if (!tClass.equals(__DEC_tNestedType_innerTypes_496078)) {
+		TAbstractType __DEC_tNestedType_innerTypes_993056 = tNestedType.getOuterType();
+		if (__DEC_tNestedType_innerTypes_993056 != null) {
+			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_993056)) {
+				if (!tClass.equals(__DEC_tNestedType_innerTypes_993056)) {
 					return new Object[] { tNestedType, tClass };
 				}
 			}
@@ -3125,10 +2998,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration mNestedType) {
-		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_478691 = mNestedType
+		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_805672 = mNestedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_mNestedType_abstractTypeDeclaration_478691 != null) {
-			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_478691)) {
+		if (__DEC_mNestedType_abstractTypeDeclaration_805672 != null) {
+			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_805672)) {
 				return new Object[] { mNestedType };
 			}
 		}
@@ -3138,7 +3011,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_21_2_testcorematchandDECs_black_nac_1B(
 			InterfaceDeclaration mNestedType) {
-		for (Model __DEC_mNestedType_orphanTypes_371329 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mNestedType_orphanTypes_748240 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3147,8 +3020,8 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_21_2_testcorematchandDECs_black_nac_2B(
 			InterfaceDeclaration mNestedType) {
-		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_588375 = mNestedType.getPackage();
-		if (__DEC_mNestedType_ownedElements_588375 != null) {
+		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_47461 = mNestedType.getPackage();
+		if (__DEC_mNestedType_ownedElements_47461 != null) {
 			return new Object[] { mNestedType };
 		}
 
@@ -3157,7 +3030,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_21_2_testcorematchandDECs_black_nac_3B(
 			InterfaceDeclaration mNestedType) {
-		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_640605 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_292620 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3388,23 +3261,17 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		return new Object[] { tClass, mNestedType, pg, tNestedType, eAnonymousClassDeclaration, ccMatch };
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_24_6_createcorrespondence_greenBFBFFB(
+	public static final Object[] pattern_InterfaceInAnonymous_24_6_createcorrespondence_greenBFBFB(
 			InterfaceDeclaration mNestedType, TInterface tNestedType, CCMatch ccMatch) {
 		ASTNodeToTAnnotatable mbodyToTAnnotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = PmFactory.eINSTANCE
-				.createInterfaceDeclarationToTInterface();
 		TypeToTAbstractType mNestedTypeToTNestedType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		mbodyToTAnnotatable.setSource(mNestedType);
 		mbodyToTAnnotatable.setTarget(tNestedType);
 		ccMatch.getCreateCorr().add(mbodyToTAnnotatable);
-		mInterfaceDeclarationtoTInterface.setTarget(tNestedType);
-		mInterfaceDeclarationtoTInterface.setSource(mNestedType);
-		ccMatch.getCreateCorr().add(mInterfaceDeclarationtoTInterface);
-		mNestedTypeToTNestedType.setSource(mNestedType);
 		mNestedTypeToTNestedType.setTarget(tNestedType);
+		mNestedTypeToTNestedType.setSource(mNestedType);
 		ccMatch.getCreateCorr().add(mNestedTypeToTNestedType);
-		return new Object[] { mNestedType, mbodyToTAnnotatable, tNestedType, mInterfaceDeclarationtoTInterface,
-				mNestedTypeToTNestedType, ccMatch };
+		return new Object[] { mNestedType, mbodyToTAnnotatable, tNestedType, mNestedTypeToTNestedType, ccMatch };
 	}
 
 	public static final Object[] pattern_InterfaceInAnonymous_24_7_addtoreturnedresult_blackBB(
@@ -3430,10 +3297,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration mNestedType) {
-		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_200491 = mNestedType
+		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_107975 = mNestedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_mNestedType_abstractTypeDeclaration_200491 != null) {
-			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_200491)) {
+		if (__DEC_mNestedType_abstractTypeDeclaration_107975 != null) {
+			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_107975)) {
 				return new Object[] { mNestedType };
 			}
 		}
@@ -3443,7 +3310,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_27_1_matchtggpattern_black_nac_1B(
 			InterfaceDeclaration mNestedType) {
-		for (Model __DEC_mNestedType_orphanTypes_428647 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mNestedType_orphanTypes_183183 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3452,8 +3319,8 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_27_1_matchtggpattern_black_nac_2B(
 			InterfaceDeclaration mNestedType) {
-		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_819386 = mNestedType.getPackage();
-		if (__DEC_mNestedType_ownedElements_819386 != null) {
+		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_731810 = mNestedType.getPackage();
+		if (__DEC_mNestedType_ownedElements_731810 != null) {
 			return new Object[] { mNestedType };
 		}
 
@@ -3462,7 +3329,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_27_1_matchtggpattern_black_nac_3B(
 			InterfaceDeclaration mNestedType) {
-		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_38604 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_884794 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3497,7 +3364,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_28_1_matchtggpattern_black_nac_0B(
 			TInterface tNestedType) {
-		for (TPackage __DEC_tNestedType_interfaces_447509 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tNestedType_interfaces_110061 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TPackage.class, "interfaces")) {
 			return new Object[] { tNestedType };
 		}
@@ -3506,9 +3373,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_28_1_matchtggpattern_black_nac_1BB(TInterface tNestedType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tNestedType_interfaces_628636 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_interfaces_323003 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tNestedType_interfaces_628636)) {
+			if (!pg.equals(__DEC_tNestedType_interfaces_323003)) {
 				return new Object[] { tNestedType, pg };
 			}
 		}
@@ -3517,8 +3384,8 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_28_1_matchtggpattern_black_nac_2B(
 			TInterface tNestedType) {
-		TPackage __DEC_tNestedType_ownedTypes_258376 = tNestedType.getPackage();
-		if (__DEC_tNestedType_ownedTypes_258376 != null) {
+		TPackage __DEC_tNestedType_ownedTypes_488333 = tNestedType.getPackage();
+		if (__DEC_tNestedType_ownedTypes_488333 != null) {
 			return new Object[] { tNestedType };
 		}
 
@@ -3527,10 +3394,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_28_1_matchtggpattern_black_nac_3BB(TInterface tNestedType,
 			TClass tClass) {
-		TAbstractType __DEC_tNestedType_innerTypes_770966 = tNestedType.getOuterType();
-		if (__DEC_tNestedType_innerTypes_770966 != null) {
-			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_770966)) {
-				if (!tClass.equals(__DEC_tNestedType_innerTypes_770966)) {
+		TAbstractType __DEC_tNestedType_innerTypes_119310 = tNestedType.getOuterType();
+		if (__DEC_tNestedType_innerTypes_119310 != null) {
+			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_119310)) {
+				if (!tClass.equals(__DEC_tNestedType_innerTypes_119310)) {
 					return new Object[] { tNestedType, tClass };
 				}
 			}
@@ -3543,8 +3410,8 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 			TInterface tNestedType) {
 		if (pg.getClasses().contains(tClass)) {
 			if (pg.getInterfaces().contains(tNestedType)) {
-				if (tClass.getInnerTypes().contains(tNestedType)) {
-					if (pg.getOwnedTypes().contains(tClass)) {
+				if (pg.getOwnedTypes().contains(tClass)) {
+					if (tClass.getInnerTypes().contains(tNestedType)) {
 						if (pg.getOwnedTypes().contains(tNestedType)) {
 							if (pattern_InterfaceInAnonymous_28_1_matchtggpattern_black_nac_0B(tNestedType) == null) {
 								if (pattern_InterfaceInAnonymous_28_1_matchtggpattern_black_nac_1BB(tNestedType,
@@ -3723,13 +3590,11 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		return new Object[] { tClass, pg, eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration, ruleResult };
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_29_6_perform_greenBFBFFFBFBB(TClass tClass, TypeGraph pg,
+	public static final Object[] pattern_InterfaceInAnonymous_29_6_perform_greenBFBFFBFBB(TClass tClass, TypeGraph pg,
 			AnonymousClassDeclaration eAnonymousClassDeclaration, ModelgeneratorRuleResult ruleResult, CSP csp) {
 		InterfaceDeclaration mNestedType = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		ASTNodeToTAnnotatable mbodyToTAnnotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TInterface tNestedType = BasicFactory.eINSTANCE.createTInterface();
-		InterfaceDeclarationToTInterface mInterfaceDeclarationtoTInterface = PmFactory.eINSTANCE
-				.createInterfaceDeclarationToTInterface();
 		TypeToTAbstractType mNestedTypeToTNestedType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		Object _localVariable_0 = csp.getValue("mNestedType", "proxy");
 		Object _localVariable_1 = csp.getValue("mNestedType", "name");
@@ -3741,16 +3606,13 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		ruleResult.getSourceObjects().add(mNestedType);
 		mbodyToTAnnotatable.setSource(mNestedType);
 		ruleResult.getCorrObjects().add(mbodyToTAnnotatable);
+		mbodyToTAnnotatable.setTarget(tNestedType);
 		pg.getInterfaces().add(tNestedType);
 		tClass.getInnerTypes().add(tNestedType);
-		mbodyToTAnnotatable.setTarget(tNestedType);
 		pg.getOwnedTypes().add(tNestedType);
 		ruleResult.getTargetObjects().add(tNestedType);
-		mInterfaceDeclarationtoTInterface.setTarget(tNestedType);
-		mInterfaceDeclarationtoTInterface.setSource(mNestedType);
-		ruleResult.getCorrObjects().add(mInterfaceDeclarationtoTInterface);
-		mNestedTypeToTNestedType.setSource(mNestedType);
 		mNestedTypeToTNestedType.setTarget(tNestedType);
+		mNestedTypeToTNestedType.setSource(mNestedType);
 		ruleResult.getCorrObjects().add(mNestedTypeToTNestedType);
 		boolean mNestedType_proxy_prime = (boolean) _localVariable_0;
 		String mNestedType_name_prime = (String) _localVariable_1;
@@ -3763,9 +3625,8 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		tNestedType.setTLib(Boolean.valueOf(tNestedType_tLib_prime));
 		tNestedType.setTName(tNestedType_tName_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType,
-				mInterfaceDeclarationtoTInterface, eAnonymousClassDeclaration, mNestedTypeToTNestedType, ruleResult,
-				csp };
+		return new Object[] { tClass, mNestedType, pg, mbodyToTAnnotatable, tNestedType, eAnonymousClassDeclaration,
+				mNestedTypeToTNestedType, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_InterfaceInAnonymous_29_7_expressionFB(

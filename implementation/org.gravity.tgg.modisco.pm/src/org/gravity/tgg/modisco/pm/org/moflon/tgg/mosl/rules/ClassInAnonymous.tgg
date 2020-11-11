@@ -16,10 +16,3 @@
 
 	++tNestedType:TClass
 }
-
-#correspondence {
-	++ mClassDeclarationToTClass :ClassDeclarationToTClass {
-		#src->mNestedType
-		#trg->tNestedType
-	}
-}
