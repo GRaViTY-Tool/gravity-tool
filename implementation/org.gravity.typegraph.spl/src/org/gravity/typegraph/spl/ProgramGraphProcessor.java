@@ -9,7 +9,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.gravity.eclipse.GravityActivator;
-import org.gravity.tgg.modisco.processing.pg.IProgramGraphProcessor;
+import org.gravity.tgg.modisco.pm.processing.pg.IProgramGraphProcessor;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TypeGraph;
 
