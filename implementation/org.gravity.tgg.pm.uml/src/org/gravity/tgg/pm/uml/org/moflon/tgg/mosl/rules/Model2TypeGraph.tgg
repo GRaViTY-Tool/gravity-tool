@@ -19,7 +19,7 @@
 }
 
 #attributeConditions {
-	eq(model.name, pm.tName)
+	eq(model.name,pm.tName)
 }
 
 
