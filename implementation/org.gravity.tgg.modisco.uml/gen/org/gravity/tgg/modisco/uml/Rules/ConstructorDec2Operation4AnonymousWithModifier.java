@@ -4,14 +4,14 @@ package org.gravity.tgg.modisco.uml.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.MethodDeclaration;
-import org.eclipse.modisco.java.Type;
-import org.eclipse.modisco.java.TypeAccess;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.Modifier;
 
-import org.eclipse.uml2.uml.Parameter;
+import org.eclipse.uml2.uml.Operation;
 
-import org.gravity.tgg.modisco.uml.NamedElement2NamedElement;
-import org.gravity.tgg.modisco.uml.TypeAccess2Parameter;
+import org.gravity.modisco.MConstructorDefinition;
+
+import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
 import org.moflon.tgg.language.csp.CSP;
 
@@ -32,22 +32,23 @@ import org.moflon.tgg.runtime.TripleMatch;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Type Access Type2 Parameter Type Return</b></em>'.
+ * A representation of the model object '<em><b>Constructor Dec2 Operation4 Anonymous With Modifier</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.gravity.tgg.modisco.uml.Rules.RulesPackage#getTypeAccessType2ParameterType_Return()
+ * @see org.gravity.tgg.modisco.uml.Rules.RulesPackage#getConstructorDec2Operation4AnonymousWithModifier()
  * @model
  * @generated
  */
-public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRule {
+public interface ConstructorDec2Operation4AnonymousWithModifier extends EObject, AbstractRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MethodDeclaration method, Type jType, TypeAccess typeAccess);
+	boolean isAppropriate_FWD(Match match, MConstructorDefinition bodyDeclaration, Modifier modifier,
+			AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +72,8 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MethodDeclaration method, Type jType, TypeAccess typeAccess);
+	void registerObjectsToMatch_FWD(Match match, MConstructorDefinition bodyDeclaration, Modifier modifier,
+			AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +81,8 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MethodDeclaration method, Type jType, TypeAccess typeAccess);
+	CSP isAppropriate_solveCsp_FWD(Match match, MConstructorDefinition bodyDeclaration, Modifier modifier,
+			AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,9 +98,9 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MethodDeclaration method, Parameter param,
-			org.eclipse.uml2.uml.Type uType, Type jType, TypeAccess typeAccess, TypeAccess2Parameter ta2p,
-			NamedElement2NamedElement ne2ne);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MConstructorDefinition bodyDeclaration,
+			Modifier modifier, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element cd2c,
+			AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +116,8 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject method, EObject param, EObject uType, EObject jType,
-			EObject typeAccess, EObject ta2p, EObject ne2ne);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +133,7 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Parameter param, org.eclipse.uml2.uml.Type uType);
+	boolean isAppropriate_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +157,7 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Parameter param, org.eclipse.uml2.uml.Type uType);
+	void registerObjectsToMatch_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +165,7 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Parameter param, org.eclipse.uml2.uml.Type uType);
+	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,9 +181,8 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MethodDeclaration method, Parameter param,
-			org.eclipse.uml2.uml.Type uType, Type jType, TypeAccess typeAccess, TypeAccess2Parameter ta2p,
-			NamedElement2NamedElement ne2ne);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element cd2c, AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +198,8 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject method, EObject param, EObject uType, EObject jType,
-			EObject typeAccess, EObject ta2p, EObject ne2ne);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +215,7 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_34(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_978(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +223,7 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_34(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1001(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,8 +255,9 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MethodDeclaration method, Parameter param, org.eclipse.uml2.uml.Type uType, Type jType,
-			TypeAccess typeAccess, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Operation feature, MConstructorDefinition bodyDeclaration, Modifier modifier,
+			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,7 +273,7 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MethodDeclaration method, Type jType, TypeAccess typeAccess);
+	boolean checkDEC_FWD(MConstructorDefinition bodyDeclaration, Modifier modifier, AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,7 +281,7 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Parameter param, org.eclipse.uml2.uml.Type uType);
+	boolean checkDEC_BWD(Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,8 +289,7 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, TypeAccess2Parameter ta2pParameter,
-			NamedElement2NamedElement ne2neParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element cd2cParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,9 +297,8 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MethodDeclaration method, Parameter param,
-			org.eclipse.uml2.uml.Type uType, Type jType, TypeAccess typeAccess, TypeAccess2Parameter ta2p,
-			NamedElement2NamedElement ne2ne, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class umlClass,
+			ASTNode2Element cd2c, AnonymousClassDeclaration classDec, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -309,4 +310,4 @@ public interface TypeAccessType2ParameterType_Return extends EObject, AbstractRu
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->
-} // TypeAccessType2ParameterType_Return
+} // ConstructorDec2Operation4AnonymousWithModifier

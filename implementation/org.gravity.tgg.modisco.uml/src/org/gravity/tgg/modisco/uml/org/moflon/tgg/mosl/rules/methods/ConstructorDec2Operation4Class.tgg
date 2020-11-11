@@ -3,28 +3,20 @@
 
 #rule ConstructorDec2Operation4Class #extends ConstructorDec2Operation_Abstract #with org.gravity.tgg.modisco.uml
 
-#source { 
-
-	classDec : AbstractTypeDeclaration {
+#source {
+	classDec:ClassDeclaration {
+		++ -bodyDeclarations -> bodyDeclaration
 	}
-	
+
+	++bodyDeclaration:MConstructorDefinition
 }
 
 #target {
-	umlClass : Class {
-		++ -ownedOperation->feature
-	}
-	
-	++ feature : Operation{
-
+	umlClass:Class {
+		++ -ownedOperation -> feature
 	}
 
+	++feature:Operation
 }
 
-#correspondence {
-	cd2c : NamedElement2NamedElement {
-		#src->classDec
-		#trg->umlClass
-	}
 
-}

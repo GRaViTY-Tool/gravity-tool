@@ -8,7 +8,11 @@
 		++-returnType -> typeAccess
 	}
 
-	++typeAccess:TypeAccess
+	++typeAccess:TypeAccess{
+		++-type -> jType
+	}
+
+	jType:Type
 }
 
 #target {
@@ -16,7 +20,11 @@
 		++-ownedParameter -> returnParam
 	}
 
-	++returnParam:Parameter
+	++returnParam:Parameter{
+		++-type -> uType
+	}
+
+	uType:Type
 }
 
 #correspondence {
@@ -28,6 +36,11 @@
 	++ta2p:TypeAccess2Parameter {
 		#src->typeAccess
 		#trg->returnParam
+	}
+
+	ne2ne:NamedElement2NamedElement {
+		#src->jType
+		#trg->uType
 	}
 }
 

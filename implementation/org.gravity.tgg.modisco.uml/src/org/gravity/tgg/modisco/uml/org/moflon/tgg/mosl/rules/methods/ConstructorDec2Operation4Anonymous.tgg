@@ -1,0 +1,20 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule ConstructorDec2Operation4Anonymous #extends ConstructorDec2Operation_Abstract #with org.gravity.tgg.modisco.uml
+
+#source {
+	classDec:AnonymousClassDeclaration {
+		++ -bodyDeclarations -> bodyDeclaration
+	}
+
+	++bodyDeclaration:MConstructorDefinition
+}
+
+#target {
+	umlClass:Class {
+		++ -ownedOperation -> feature
+	}
+
+	++feature:Operation
+}

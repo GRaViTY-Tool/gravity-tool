@@ -47,7 +47,7 @@ public interface InnerClassDeclaration2InnerClass_InInterface_WithModifier exten
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, MClass bodyDeclaration,
+	boolean isAppropriate_FWD(Match match, MClass bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -72,7 +72,7 @@ public interface InnerClassDeclaration2InnerClass_InInterface_WithModifier exten
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, MClass bodyDeclaration,
+	void registerObjectsToMatch_FWD(Match match, MClass bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -81,7 +81,7 @@ public interface InnerClassDeclaration2InnerClass_InInterface_WithModifier exten
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, MClass bodyDeclaration,
+	CSP isAppropriate_solveCsp_FWD(Match match, MClass bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -98,7 +98,7 @@ public interface InnerClassDeclaration2InnerClass_InInterface_WithModifier exten
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier, MClass bodyDeclaration,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MClass bodyDeclaration, Modifier modifier,
 			Interface uContainer, AbstractTypeDeclaration jContainer, NamedElement2NamedElement ne2ne);
 
 	/**
@@ -115,8 +115,8 @@ public interface InnerClassDeclaration2InnerClass_InInterface_WithModifier exten
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,8 +197,8 @@ public interface InnerClassDeclaration2InnerClass_InInterface_WithModifier exten
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface InnerClassDeclaration2InnerClass_InInterface_WithModifier exten
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_70(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_949(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface InnerClassDeclaration2InnerClass_InInterface_WithModifier exten
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_71(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_972(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,7 +254,7 @@ public interface InnerClassDeclaration2InnerClass_InInterface_WithModifier exten
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, Modifier modifier, MClass bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, Modifier modifier,
 			Interface uContainer, AbstractTypeDeclaration jContainer, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -271,7 +271,7 @@ public interface InnerClassDeclaration2InnerClass_InInterface_WithModifier exten
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, MClass bodyDeclaration, AbstractTypeDeclaration jContainer);
+	boolean checkDEC_FWD(MClass bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer);
 
 	/**
 	 * <!-- begin-user-doc -->

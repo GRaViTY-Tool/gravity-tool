@@ -46,7 +46,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier e
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	boolean isAppropriate_FWD(Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -71,7 +71,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier e
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	void registerObjectsToMatch_FWD(Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -80,7 +80,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier e
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	CSP isAppropriate_solveCsp_FWD(Match match, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -97,9 +97,9 @@ public interface InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier e
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			InterfaceDeclaration bodyDeclaration, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer, NamedElement2NamedElement ne2ne);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration bodyDeclaration,
+			Modifier modifier, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
+			NamedElement2NamedElement ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,8 +115,8 @@ public interface InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier e
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,8 +197,8 @@ public interface InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier e
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier e
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_60(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_995(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier e
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_61(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1019(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,7 +254,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier e
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Interface feature, Modifier modifier, InterfaceDeclaration bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Interface feature, InterfaceDeclaration bodyDeclaration, Modifier modifier,
 			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer, Match sourceMatch,
 			Match targetMatch);
 
@@ -272,7 +272,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier e
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, InterfaceDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer);
+	boolean checkDEC_FWD(InterfaceDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer);
 
 	/**
 	 * <!-- begin-user-doc -->

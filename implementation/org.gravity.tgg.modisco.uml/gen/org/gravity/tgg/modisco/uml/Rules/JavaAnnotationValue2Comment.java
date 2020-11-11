@@ -46,8 +46,8 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Annotation annotation, AnnotationMemberValuePair value,
-			ArrayInitializer array);
+	boolean isAppropriate_FWD(Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,8 +71,8 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Annotation annotation, AnnotationMemberValuePair value,
-			ArrayInitializer array);
+	void registerObjectsToMatch_FWD(Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,8 +80,8 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Annotation annotation, AnnotationMemberValuePair value,
-			ArrayInitializer array);
+	CSP isAppropriate_solveCsp_FWD(Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,8 +97,8 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation, ASTNode2Element a2c,
-			AnnotationMemberValuePair value, Comment comment, ArrayInitializer array);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Comment comment, ArrayInitializer array,
+			AnnotationMemberValuePair value, Annotation annotation, ASTNode2Element a2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,8 +114,8 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject a2c, EObject value,
-			EObject comment, EObject tag, EObject c2c, EObject array);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject comment, EObject array, EObject tag, EObject value,
+			EObject annotation, EObject c2c, EObject a2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,8 +179,8 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation, ASTNode2Element a2c,
-			Comment comment, Comment tag);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Comment comment, Comment tag,
+			Annotation annotation, ASTNode2Element a2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +196,8 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject a2c, EObject value,
-			EObject comment, EObject tag, EObject c2c, EObject array);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject comment, EObject array, EObject tag, EObject value,
+			EObject annotation, EObject c2c, EObject a2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_62(EMoflonEdge _edge_ownedComment);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_932(EMoflonEdge _edge_annotatedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_63(EMoflonEdge _edge_value);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_954(EMoflonEdge _edge_value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,8 +253,8 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Annotation annotation, AnnotationMemberValuePair value, Comment comment, Comment tag,
-			ArrayInitializer array, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Comment comment, ArrayInitializer array, Comment tag, AnnotationMemberValuePair value,
+			Annotation annotation, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,7 +270,7 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Annotation annotation, AnnotationMemberValuePair value, ArrayInitializer array);
+	boolean checkDEC_FWD(ArrayInitializer array, AnnotationMemberValuePair value, Annotation annotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,8 +294,8 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation, ASTNode2Element a2c,
-			Comment comment, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Comment comment, Annotation annotation,
+			ASTNode2Element a2c, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -114,8 +114,8 @@ public interface InterfaceDecWithModifier2Interface extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject b2e, EObject bd2ne,
-			EObject feature, EObject jPackage, EObject bodyDeclaration, EObject modifier, EObject jp2up);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject feature,
+			EObject bd2ne, EObject b2e, EObject jPackage, EObject bodyDeclaration, EObject modifier, EObject jp2up);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +196,8 @@ public interface InterfaceDecWithModifier2Interface extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject b2e, EObject bd2ne,
-			EObject feature, EObject jPackage, EObject bodyDeclaration, EObject modifier, EObject jp2up);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject feature,
+			EObject bd2ne, EObject b2e, EObject jPackage, EObject bodyDeclaration, EObject modifier, EObject jp2up);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface InterfaceDecWithModifier2Interface extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_66(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_948(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface InterfaceDecWithModifier2Interface extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_67(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_971(EMoflonEdge _edge_ownedElements);
 
 	/**
 	 * <!-- begin-user-doc -->

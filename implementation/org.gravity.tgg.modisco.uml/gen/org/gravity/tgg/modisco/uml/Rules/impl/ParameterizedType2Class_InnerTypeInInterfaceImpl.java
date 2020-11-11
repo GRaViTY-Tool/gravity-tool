@@ -109,27 +109,27 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 * @generated
 	 */
 	public boolean isAppropriate_FWD(Match match, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess) {
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess) {
 
 		Object[] result1_black = ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_0_1_initialbindings_blackBBBBBBB(this, match,
-						jContainer, nonParamType, nonParamPackage, parameterizedType, typeTypeAccess);
+						jContainer, nonParamType, parameterizedType, nonParamPackage, typeTypeAccess);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[match] = " + match + ", " + "[jContainer] = " + jContainer + ", " + "[nonParamType] = "
-					+ nonParamType + ", " + "[nonParamPackage] = " + nonParamPackage + ", " + "[parameterizedType] = "
-					+ parameterizedType + ", " + "[typeTypeAccess] = " + typeTypeAccess + ".");
+					+ nonParamType + ", " + "[parameterizedType] = " + parameterizedType + ", " + "[nonParamPackage] = "
+					+ nonParamPackage + ", " + "[typeTypeAccess] = " + typeTypeAccess + ".");
 		}
 
 		Object[] result2_bindingAndBlack = ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_0_2_SolveCSP_bindingAndBlackFBBBBBBB(this, match,
-						jContainer, nonParamType, nonParamPackage, parameterizedType, typeTypeAccess);
+						jContainer, nonParamType, parameterizedType, nonParamPackage, typeTypeAccess);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[match] = " + match + ", " + "[jContainer] = " + jContainer + ", " + "[nonParamType] = "
-					+ nonParamType + ", " + "[nonParamPackage] = " + nonParamPackage + ", " + "[parameterizedType] = "
-					+ parameterizedType + ", " + "[typeTypeAccess] = " + typeTypeAccess + ".");
+					+ nonParamType + ", " + "[parameterizedType] = " + parameterizedType + ", " + "[nonParamPackage] = "
+					+ nonParamPackage + ", " + "[typeTypeAccess] = " + typeTypeAccess + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -138,11 +138,11 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 			Object[] result4_black = ParameterizedType2Class_InnerTypeInInterfaceImpl
 					.pattern_ParameterizedType2Class_InnerTypeInInterface_0_4_collectelementstobetranslated_blackBBBBBB(
-							match, jContainer, nonParamType, nonParamPackage, parameterizedType, typeTypeAccess);
+							match, jContainer, nonParamType, parameterizedType, nonParamPackage, typeTypeAccess);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
 						+ "[jContainer] = " + jContainer + ", " + "[nonParamType] = " + nonParamType + ", "
-						+ "[nonParamPackage] = " + nonParamPackage + ", " + "[parameterizedType] = " + parameterizedType
+						+ "[parameterizedType] = " + parameterizedType + ", " + "[nonParamPackage] = " + nonParamPackage
 						+ ", " + "[typeTypeAccess] = " + typeTypeAccess + ".");
 			}
 			ParameterizedType2Class_InnerTypeInInterfaceImpl
@@ -154,11 +154,11 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 			Object[] result5_black = ParameterizedType2Class_InnerTypeInInterfaceImpl
 					.pattern_ParameterizedType2Class_InnerTypeInInterface_0_5_collectcontextelements_blackBBBBBB(match,
-							jContainer, nonParamType, nonParamPackage, parameterizedType, typeTypeAccess);
+							jContainer, nonParamType, parameterizedType, nonParamPackage, typeTypeAccess);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
 						+ "[jContainer] = " + jContainer + ", " + "[nonParamType] = " + nonParamType + ", "
-						+ "[nonParamPackage] = " + nonParamPackage + ", " + "[parameterizedType] = " + parameterizedType
+						+ "[parameterizedType] = " + parameterizedType + ", " + "[nonParamPackage] = " + nonParamPackage
 						+ ", " + "[typeTypeAccess] = " + typeTypeAccess + ".");
 			}
 			ParameterizedType2Class_InnerTypeInInterfaceImpl
@@ -172,7 +172,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			// 
 			ParameterizedType2Class_InnerTypeInInterfaceImpl
 					.pattern_ParameterizedType2Class_InnerTypeInInterface_0_6_registerobjectstomatch_expressionBBBBBBB(
-							this, match, jContainer, nonParamType, nonParamPackage, parameterizedType, typeTypeAccess);
+							this, match, jContainer, nonParamType, parameterizedType, nonParamPackage, typeTypeAccess);
 			return ParameterizedType2Class_InnerTypeInInterfaceImpl
 					.pattern_ParameterizedType2Class_InnerTypeInInterface_0_7_expressionF();
 		} else {
@@ -201,8 +201,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		Interface uContainer = (Interface) result1_bindingAndBlack[2];
 		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result1_bindingAndBlack[3];
 		AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) result1_bindingAndBlack[4];
-		org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[5];
-		ParameterizedType parameterizedType = (ParameterizedType) result1_bindingAndBlack[6];
+		ParameterizedType parameterizedType = (ParameterizedType) result1_bindingAndBlack[5];
+		org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[6];
 		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[7];
 		TypeAccess typeTypeAccess = (TypeAccess) result1_bindingAndBlack[8];
 		org.eclipse.uml2.uml.Class nonParamElement = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[9];
@@ -229,14 +229,14 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 		Object[] result3_black = ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(
-						ruleresult, umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, nonParamPackage,
-						parameterizedType, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c, parameterizedClassifier);
+						ruleresult, umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, parameterizedType,
+						nonParamPackage, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c, parameterizedClassifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[umlPackage] = " + umlPackage + ", " + "[ne2neNonParam] = " + ne2neNonParam + ", "
 					+ "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ", "
-					+ "[nonParamType] = " + nonParamType + ", " + "[nonParamPackage] = " + nonParamPackage + ", "
-					+ "[parameterizedType] = " + parameterizedType + ", " + "[jp2up] = " + jp2up + ", " + "[ne2ne] = "
+					+ "[nonParamType] = " + nonParamType + ", " + "[parameterizedType] = " + parameterizedType + ", "
+					+ "[nonParamPackage] = " + nonParamPackage + ", " + "[jp2up] = " + jp2up + ", " + "[ne2ne] = "
 					+ ne2ne + ", " + "[typeTypeAccess] = " + typeTypeAccess + ", " + "[nonParamElement] = "
 					+ nonParamElement + ", " + "[c2c] = " + c2c + ", " + "[parameterizedClassifier] = "
 					+ parameterizedClassifier + ".");
@@ -245,8 +245,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
 						ruleresult, umlPackage, nonParamType, parameterizedType, ne2ne, typeTypeAccess,
 						parameterizedClassifier);
-		//nothing EMoflonEdge parameterizedType__typeTypeAccess____type = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge ne2ne__parameterizedType____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge ne2ne__parameterizedType____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge parameterizedType__typeTypeAccess____type = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge ne2ne__parameterizedClassifier____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge typeTypeAccess__nonParamType____type = (EMoflonEdge) result3_green[11];
@@ -257,7 +257,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_1_5_registerobjects_expressionBBBBBBBBBBBBBBB(
 						this, ruleresult, umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType,
-						nonParamPackage, parameterizedType, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c,
+						parameterizedType, nonParamPackage, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c,
 						parameterizedClassifier);
 		return ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_1_6_expressionFB(ruleresult);
@@ -290,12 +290,12 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		}
 		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_binding[0];
 		AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) result2_binding[1];
-		org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result2_binding[2];
-		ParameterizedType parameterizedType = (ParameterizedType) result2_binding[3];
+		ParameterizedType parameterizedType = (ParameterizedType) result2_binding[2];
+		org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result2_binding[3];
 		TypeAccess typeTypeAccess = (TypeAccess) result2_binding[4];
 		for (Object[] result2_black : ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_2_2_corematch_blackFFFBBBBFBFFB(jContainer,
-						nonParamType, nonParamPackage, parameterizedType, typeTypeAccess, match)) {
+						nonParamType, parameterizedType, nonParamPackage, typeTypeAccess, match)) {
 			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_black[0];
 			NamedElement2NamedElement ne2neNonParam = (NamedElement2NamedElement) result2_black[1];
 			Interface uContainer = (Interface) result2_black[2];
@@ -305,12 +305,12 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			// ForEach 
 			for (Object[] result3_black : ParameterizedType2Class_InnerTypeInInterfaceImpl
 					.pattern_ParameterizedType2Class_InnerTypeInInterface_2_3_findcontext_blackBBBBBBBBBBB(umlPackage,
-							ne2neNonParam, uContainer, jContainer, nonParamType, nonParamPackage, parameterizedType,
+							ne2neNonParam, uContainer, jContainer, nonParamType, parameterizedType, nonParamPackage,
 							jp2up, typeTypeAccess, nonParamElement, c2c)) {
 				Object[] result3_green = ParameterizedType2Class_InnerTypeInInterfaceImpl
 						.pattern_ParameterizedType2Class_InnerTypeInInterface_2_3_findcontext_greenBBBBBBBBBBBFFFFFFFFFFFFFFFF(
-								umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, nonParamPackage,
-								parameterizedType, jp2up, typeTypeAccess, nonParamElement, c2c);
+								umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, parameterizedType,
+								nonParamPackage, jp2up, typeTypeAccess, nonParamElement, c2c);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[11];
 				//nothing EMoflonEdge ne2neNonParam__nonParamType____source = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge nonParamPackage__jContainer____ownedElements = (EMoflonEdge) result3_green[13];
@@ -319,9 +319,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[16];
 				//nothing EMoflonEdge uContainer__nonParamElement____nestedClassifier = (EMoflonEdge) result3_green[17];
 				//nothing EMoflonEdge umlPackage__uContainer____packagedElement = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge c2c__uContainer____target = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge jContainer__nonParamType____bodyDeclarations = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge nonParamType__jContainer____abstractTypeDeclaration = (EMoflonEdge) result3_green[21];
+				//nothing EMoflonEdge jContainer__nonParamType____bodyDeclarations = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge nonParamType__jContainer____abstractTypeDeclaration = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge c2c__uContainer____target = (EMoflonEdge) result3_green[21];
 				//nothing EMoflonEdge ne2neNonParam__nonParamElement____target = (EMoflonEdge) result3_green[22];
 				//nothing EMoflonEdge c2c__jContainer____source = (EMoflonEdge) result3_green[23];
 				//nothing EMoflonEdge jp2up__nonParamPackage____source = (EMoflonEdge) result3_green[24];
@@ -331,15 +331,15 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 				Object[] result4_bindingAndBlack = ParameterizedType2Class_InnerTypeInInterfaceImpl
 						.pattern_ParameterizedType2Class_InnerTypeInInterface_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBBBB(
 								this, isApplicableMatch, umlPackage, ne2neNonParam, uContainer, jContainer,
-								nonParamType, nonParamPackage, parameterizedType, jp2up, typeTypeAccess,
+								nonParamType, parameterizedType, nonParamPackage, jp2up, typeTypeAccess,
 								nonParamElement, c2c);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[umlPackage] = " + umlPackage
 							+ ", " + "[ne2neNonParam] = " + ne2neNonParam + ", " + "[uContainer] = " + uContainer + ", "
 							+ "[jContainer] = " + jContainer + ", " + "[nonParamType] = " + nonParamType + ", "
-							+ "[nonParamPackage] = " + nonParamPackage + ", " + "[parameterizedType] = "
-							+ parameterizedType + ", " + "[jp2up] = " + jp2up + ", " + "[typeTypeAccess] = "
+							+ "[parameterizedType] = " + parameterizedType + ", " + "[nonParamPackage] = "
+							+ nonParamPackage + ", " + "[jp2up] = " + jp2up + ", " + "[typeTypeAccess] = "
 							+ typeTypeAccess + ", " + "[nonParamElement] = " + nonParamElement + ", " + "[c2c] = " + c2c
 							+ ".");
 				}
@@ -375,12 +375,12 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 * @generated
 	 */
 	public void registerObjectsToMatch_FWD(Match match, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess) {
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess) {
 		match.registerObject("jContainer", jContainer);
 		match.registerObject("nonParamType", nonParamType);
-		match.registerObject("nonParamPackage", nonParamPackage);
 		match.registerObject("parameterizedType", parameterizedType);
+		match.registerObject("nonParamPackage", nonParamPackage);
 		match.registerObject("typeTypeAccess", typeTypeAccess);
 
 	}
@@ -391,8 +391,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 * @generated
 	 */
 	public CSP isAppropriate_solveCsp_FWD(Match match, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess) {// Create CSP
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -423,8 +423,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package umlPackage,
 			NamedElement2NamedElement ne2neNonParam, Interface uContainer, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, JavaPackage2UmlPackage jp2up, TypeAccess typeTypeAccess,
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, JavaPackage2UmlPackage jp2up, TypeAccess typeTypeAccess,
 			org.eclipse.uml2.uml.Class nonParamElement, NamedElement2NamedElement c2c) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -465,8 +465,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		isApplicableMatch.registerObject("uContainer", uContainer);
 		isApplicableMatch.registerObject("jContainer", jContainer);
 		isApplicableMatch.registerObject("nonParamType", nonParamType);
-		isApplicableMatch.registerObject("nonParamPackage", nonParamPackage);
 		isApplicableMatch.registerObject("parameterizedType", parameterizedType);
+		isApplicableMatch.registerObject("nonParamPackage", nonParamPackage);
 		isApplicableMatch.registerObject("jp2up", jp2up);
 		isApplicableMatch.registerObject("typeTypeAccess", typeTypeAccess);
 		isApplicableMatch.registerObject("nonParamElement", nonParamElement);
@@ -489,16 +489,16 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject umlPackage, EObject ne2neNonParam,
-			EObject uContainer, EObject jContainer, EObject nonParamType, EObject nonParamPackage,
-			EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess, EObject nonParamElement,
+			EObject uContainer, EObject jContainer, EObject nonParamType, EObject parameterizedType,
+			EObject nonParamPackage, EObject jp2up, EObject ne2ne, EObject typeTypeAccess, EObject nonParamElement,
 			EObject c2c, EObject parameterizedClassifier) {
 		ruleresult.registerObject("umlPackage", umlPackage);
 		ruleresult.registerObject("ne2neNonParam", ne2neNonParam);
 		ruleresult.registerObject("uContainer", uContainer);
 		ruleresult.registerObject("jContainer", jContainer);
 		ruleresult.registerObject("nonParamType", nonParamType);
-		ruleresult.registerObject("nonParamPackage", nonParamPackage);
 		ruleresult.registerObject("parameterizedType", parameterizedType);
+		ruleresult.registerObject("nonParamPackage", nonParamPackage);
 		ruleresult.registerObject("jp2up", jp2up);
 		ruleresult.registerObject("ne2ne", ne2ne);
 		ruleresult.registerObject("typeTypeAccess", typeTypeAccess);
@@ -642,14 +642,14 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 		Object[] result3_black = ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(
-						ruleresult, umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, nonParamPackage,
-						parameterizedType, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c, parameterizedClassifier);
+						ruleresult, umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, parameterizedType,
+						nonParamPackage, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c, parameterizedClassifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[umlPackage] = " + umlPackage + ", " + "[ne2neNonParam] = " + ne2neNonParam + ", "
 					+ "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ", "
-					+ "[nonParamType] = " + nonParamType + ", " + "[nonParamPackage] = " + nonParamPackage + ", "
-					+ "[parameterizedType] = " + parameterizedType + ", " + "[jp2up] = " + jp2up + ", " + "[ne2ne] = "
+					+ "[nonParamType] = " + nonParamType + ", " + "[parameterizedType] = " + parameterizedType + ", "
+					+ "[nonParamPackage] = " + nonParamPackage + ", " + "[jp2up] = " + jp2up + ", " + "[ne2ne] = "
 					+ ne2ne + ", " + "[typeTypeAccess] = " + typeTypeAccess + ", " + "[nonParamElement] = "
 					+ nonParamElement + ", " + "[c2c] = " + c2c + ", " + "[parameterizedClassifier] = "
 					+ parameterizedClassifier + ".");
@@ -658,8 +658,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
 						ruleresult, umlPackage, nonParamType, parameterizedType, ne2ne, typeTypeAccess,
 						parameterizedClassifier);
-		//nothing EMoflonEdge parameterizedType__typeTypeAccess____type = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge ne2ne__parameterizedType____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge ne2ne__parameterizedType____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge parameterizedType__typeTypeAccess____type = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge ne2ne__parameterizedClassifier____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge typeTypeAccess__nonParamType____type = (EMoflonEdge) result3_green[11];
@@ -670,7 +670,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_11_5_registerobjects_expressionBBBBBBBBBBBBBBB(
 						this, ruleresult, umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType,
-						nonParamPackage, parameterizedType, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c,
+						parameterizedType, nonParamPackage, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c,
 						parameterizedClassifier);
 		return ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_11_6_expressionFB(ruleresult);
@@ -731,9 +731,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 				//nothing EMoflonEdge uContainer__nonParamElement____nestedClassifier = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = (EMoflonEdge) result3_green[16];
 				//nothing EMoflonEdge umlPackage__uContainer____packagedElement = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge c2c__uContainer____target = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge jContainer__nonParamType____bodyDeclarations = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge nonParamType__jContainer____abstractTypeDeclaration = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge jContainer__nonParamType____bodyDeclarations = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge nonParamType__jContainer____abstractTypeDeclaration = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge c2c__uContainer____target = (EMoflonEdge) result3_green[20];
 				//nothing EMoflonEdge ne2neNonParam__nonParamElement____target = (EMoflonEdge) result3_green[21];
 				//nothing EMoflonEdge c2c__jContainer____source = (EMoflonEdge) result3_green[22];
 				//nothing EMoflonEdge jp2up__nonParamPackage____source = (EMoflonEdge) result3_green[23];
@@ -897,16 +897,16 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject umlPackage, EObject ne2neNonParam,
-			EObject uContainer, EObject jContainer, EObject nonParamType, EObject nonParamPackage,
-			EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess, EObject nonParamElement,
+			EObject uContainer, EObject jContainer, EObject nonParamType, EObject parameterizedType,
+			EObject nonParamPackage, EObject jp2up, EObject ne2ne, EObject typeTypeAccess, EObject nonParamElement,
 			EObject c2c, EObject parameterizedClassifier) {
 		ruleresult.registerObject("umlPackage", umlPackage);
 		ruleresult.registerObject("ne2neNonParam", ne2neNonParam);
 		ruleresult.registerObject("uContainer", uContainer);
 		ruleresult.registerObject("jContainer", jContainer);
 		ruleresult.registerObject("nonParamType", nonParamType);
-		ruleresult.registerObject("nonParamPackage", nonParamPackage);
 		ruleresult.registerObject("parameterizedType", parameterizedType);
+		ruleresult.registerObject("nonParamPackage", nonParamPackage);
 		ruleresult.registerObject("jp2up", jp2up);
 		ruleresult.registerObject("ne2ne", ne2ne);
 		ruleresult.registerObject("typeTypeAccess", typeTypeAccess);
@@ -931,7 +931,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_56(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_933(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -994,7 +994,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_57(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_955(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1014,8 +1014,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 						_edge_type)) {
 			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[0];
 			AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) result2_black[1];
-			org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result2_black[2];
-			ParameterizedType parameterizedType = (ParameterizedType) result2_black[3];
+			ParameterizedType parameterizedType = (ParameterizedType) result2_black[2];
+			org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result2_black[3];
 			TypeAccess typeTypeAccess = (TypeAccess) result2_black[4];
 			Object[] result2_green = ParameterizedType2Class_InnerTypeInInterfaceImpl
 					.pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_greenFB(__eClass);
@@ -1024,7 +1024,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			// 
 			if (ParameterizedType2Class_InnerTypeInInterfaceImpl
 					.pattern_ParameterizedType2Class_InnerTypeInInterface_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-							this, match, jContainer, nonParamType, nonParamPackage, parameterizedType,
+							this, match, jContainer, nonParamType, parameterizedType, nonParamPackage,
 							typeTypeAccess)) {
 				// 
 				if (ParameterizedType2Class_InnerTypeInInterfaceImpl
@@ -1069,14 +1069,14 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		Variable var_parameterizedType_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedType", true, csp);
+		var_parameterizedType_name.setValue(__helper.getValue("parameterizedType", "name"));
+		var_parameterizedType_name.setType("String");
+
 		Variable var_parameterizedClassifier_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedClassifier",
 				true, csp);
 		var_parameterizedClassifier_name.setValue(__helper.getValue("parameterizedClassifier", "name"));
 		var_parameterizedClassifier_name.setType("String");
-
-		Variable var_parameterizedType_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedType", true, csp);
-		var_parameterizedType_name.setValue(__helper.getValue("parameterizedType", "name"));
-		var_parameterizedType_name.setType("String");
 
 		Variable var_nonParamElement_name = CSPFactoryHelper.eINSTANCE.createVariable("nonParamElement", true, csp);
 		var_nonParamElement_name.setValue(__helper.getValue("nonParamElement", "name"));
@@ -1131,14 +1131,14 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		Variable var_parameterizedType_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedType", true, csp);
+		var_parameterizedType_name.setValue(__helper.getValue("parameterizedType", "name"));
+		var_parameterizedType_name.setType("String");
+
 		Variable var_parameterizedClassifier_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedClassifier",
 				true, csp);
 		var_parameterizedClassifier_name.setValue(__helper.getValue("parameterizedClassifier", "name"));
 		var_parameterizedClassifier_name.setType("String");
-
-		Variable var_parameterizedType_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedType", true, csp);
-		var_parameterizedType_name.setValue(__helper.getValue("parameterizedType", "name"));
-		var_parameterizedType_name.setType("String");
 
 		Variable var_nonParamElement_name = CSPFactoryHelper.eINSTANCE.createVariable("nonParamElement", true, csp);
 		var_nonParamElement_name.setValue(__helper.getValue("nonParamElement", "name"));
@@ -1203,22 +1203,22 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		Interface uContainer = (Interface) result2_bindingAndBlack[1];
 		AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_bindingAndBlack[2];
 		AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) result2_bindingAndBlack[3];
-		org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[4];
-		ParameterizedType parameterizedType = (ParameterizedType) result2_bindingAndBlack[5];
+		ParameterizedType parameterizedType = (ParameterizedType) result2_bindingAndBlack[4];
+		org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[5];
 		TypeAccess typeTypeAccess = (TypeAccess) result2_bindingAndBlack[6];
 		org.eclipse.uml2.uml.Class nonParamElement = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[7];
 		org.eclipse.uml2.uml.Class parameterizedClassifier = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[8];
 
 		Object[] result3_bindingAndBlack = ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBBB(this,
-						umlPackage, uContainer, jContainer, nonParamType, nonParamPackage, parameterizedType,
+						umlPackage, uContainer, jContainer, nonParamType, parameterizedType, nonParamPackage,
 						typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[umlPackage] = " + umlPackage + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = "
-					+ jContainer + ", " + "[nonParamType] = " + nonParamType + ", " + "[nonParamPackage] = "
-					+ nonParamPackage + ", " + "[parameterizedType] = " + parameterizedType + ", "
-					+ "[typeTypeAccess] = " + typeTypeAccess + ", " + "[nonParamElement] = " + nonParamElement + ", "
+					+ jContainer + ", " + "[nonParamType] = " + nonParamType + ", " + "[parameterizedType] = "
+					+ parameterizedType + ", " + "[nonParamPackage] = " + nonParamPackage + ", " + "[typeTypeAccess] = "
+					+ typeTypeAccess + ", " + "[nonParamElement] = " + nonParamElement + ", "
 					+ "[parameterizedClassifier] = " + parameterizedClassifier + ", " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
@@ -1241,13 +1241,13 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 				Object[] result6_black = ParameterizedType2Class_InnerTypeInInterfaceImpl
 						.pattern_ParameterizedType2Class_InnerTypeInInterface_24_6_createcorrespondence_blackBBBBBBBBBB(
-								umlPackage, uContainer, jContainer, nonParamType, nonParamPackage, parameterizedType,
+								umlPackage, uContainer, jContainer, nonParamType, parameterizedType, nonParamPackage,
 								typeTypeAccess, nonParamElement, parameterizedClassifier, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[umlPackage] = "
 							+ umlPackage + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer
-							+ ", " + "[nonParamType] = " + nonParamType + ", " + "[nonParamPackage] = "
-							+ nonParamPackage + ", " + "[parameterizedType] = " + parameterizedType + ", "
+							+ ", " + "[nonParamType] = " + nonParamType + ", " + "[parameterizedType] = "
+							+ parameterizedType + ", " + "[nonParamPackage] = " + nonParamPackage + ", "
 							+ "[typeTypeAccess] = " + typeTypeAccess + ", " + "[nonParamElement] = " + nonParamElement
 							+ ", " + "[parameterizedClassifier] = " + parameterizedClassifier + ", " + "[ccMatch] = "
 							+ ccMatch + ".");
@@ -1283,7 +1283,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 */
 	public CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package umlPackage, Interface uContainer,
 			AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
 			org.eclipse.uml2.uml.Class parameterizedClassifier, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
@@ -1336,11 +1336,11 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 * @generated
 	 */
 	public boolean checkDEC_FWD(AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess) {// 
 		Object[] result1_black = ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_blackBBBBB(jContainer,
-						nonParamType, nonParamPackage, parameterizedType, typeTypeAccess);
+						nonParamType, parameterizedType, nonParamPackage, typeTypeAccess);
 		if (result1_black != null) {
 			return ParameterizedType2Class_InnerTypeInInterfaceImpl
 					.pattern_ParameterizedType2Class_InnerTypeInInterface_27_2_expressionF();
@@ -1400,9 +1400,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			NamedElement2NamedElement ne2neNonParam = (NamedElement2NamedElement) result2_black[4];
 			AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) result2_black[5];
 			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[6];
-			NamedElement2NamedElement c2c = (NamedElement2NamedElement) result2_black[7];
-			org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result2_black[8];
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[9];
+			org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result2_black[7];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[8];
+			NamedElement2NamedElement c2c = (NamedElement2NamedElement) result2_black[9];
 
 			Object[] result3_bindingAndBlack = ParameterizedType2Class_InnerTypeInInterfaceImpl
 					.pattern_ParameterizedType2Class_InnerTypeInInterface_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
@@ -1530,31 +1530,31 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_FWD__MATCH_ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PACKAGE_PARAMETERIZEDTYPE_TYPEACCESS:
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_FWD__MATCH_ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PARAMETERIZEDTYPE_PACKAGE_TYPEACCESS:
 			return isAppropriate_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
-					(ParameterizedType) arguments.get(4), (TypeAccess) arguments.get(5));
+					(AbstractTypeDeclaration) arguments.get(2), (ParameterizedType) arguments.get(3),
+					(org.eclipse.modisco.java.Package) arguments.get(4), (TypeAccess) arguments.get(5));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PACKAGE_PARAMETERIZEDTYPE_TYPEACCESS:
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PARAMETERIZEDTYPE_PACKAGE_TYPEACCESS:
 			registerObjectsToMatch_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
-					(ParameterizedType) arguments.get(4), (TypeAccess) arguments.get(5));
+					(AbstractTypeDeclaration) arguments.get(2), (ParameterizedType) arguments.get(3),
+					(org.eclipse.modisco.java.Package) arguments.get(4), (TypeAccess) arguments.get(5));
 			return null;
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PACKAGE_PARAMETERIZEDTYPE_TYPEACCESS:
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PARAMETERIZEDTYPE_PACKAGE_TYPEACCESS:
 			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
-					(ParameterizedType) arguments.get(4), (TypeAccess) arguments.get(5));
+					(AbstractTypeDeclaration) arguments.get(2), (ParameterizedType) arguments.get(3),
+					(org.eclipse.modisco.java.Package) arguments.get(4), (TypeAccess) arguments.get(5));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGE_NAMEDELEMENT2NAMEDELEMENT_INTERFACE_ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PACKAGE_PARAMETERIZEDTYPE_JAVAPACKAGE2UMLPACKAGE_TYPEACCESS_CLASS_NAMEDELEMENT2NAMEDELEMENT:
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGE_NAMEDELEMENT2NAMEDELEMENT_INTERFACE_ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PARAMETERIZEDTYPE_PACKAGE_JAVAPACKAGE2UMLPACKAGE_TYPEACCESS_CLASS_NAMEDELEMENT2NAMEDELEMENT:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
 					(org.eclipse.uml2.uml.Package) arguments.get(1), (NamedElement2NamedElement) arguments.get(2),
 					(Interface) arguments.get(3), (AbstractTypeDeclaration) arguments.get(4),
-					(AbstractTypeDeclaration) arguments.get(5), (org.eclipse.modisco.java.Package) arguments.get(6),
-					(ParameterizedType) arguments.get(7), (JavaPackage2UmlPackage) arguments.get(8),
+					(AbstractTypeDeclaration) arguments.get(5), (ParameterizedType) arguments.get(6),
+					(org.eclipse.modisco.java.Package) arguments.get(7), (JavaPackage2UmlPackage) arguments.get(8),
 					(TypeAccess) arguments.get(9), (org.eclipse.uml2.uml.Class) arguments.get(10),
 					(NamedElement2NamedElement) arguments.get(11));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
@@ -1605,28 +1605,28 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			return null;
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_56__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_56((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_57__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_57((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_933__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_933((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_955__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_955((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__PACKAGE_INTERFACE_ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PACKAGE_PARAMETERIZEDTYPE_TYPEACCESS_CLASS_CLASS_MATCH_MATCH:
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__PACKAGE_INTERFACE_ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PARAMETERIZEDTYPE_PACKAGE_TYPEACCESS_CLASS_CLASS_MATCH_MATCH:
 			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Package) arguments.get(0),
 					(Interface) arguments.get(1), (AbstractTypeDeclaration) arguments.get(2),
-					(AbstractTypeDeclaration) arguments.get(3), (org.eclipse.modisco.java.Package) arguments.get(4),
-					(ParameterizedType) arguments.get(5), (TypeAccess) arguments.get(6),
+					(AbstractTypeDeclaration) arguments.get(3), (ParameterizedType) arguments.get(4),
+					(org.eclipse.modisco.java.Package) arguments.get(5), (TypeAccess) arguments.get(6),
 					(org.eclipse.uml2.uml.Class) arguments.get(7), (org.eclipse.uml2.uml.Class) arguments.get(8),
 					(Match) arguments.get(9), (Match) arguments.get(10));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___CHECK_DEC_FWD__ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PACKAGE_PARAMETERIZEDTYPE_TYPEACCESS:
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___CHECK_DEC_FWD__ABSTRACTTYPEDECLARATION_ABSTRACTTYPEDECLARATION_PARAMETERIZEDTYPE_PACKAGE_TYPEACCESS:
 			return checkDEC_FWD((AbstractTypeDeclaration) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
-					(org.eclipse.modisco.java.Package) arguments.get(2), (ParameterizedType) arguments.get(3),
+					(ParameterizedType) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
 					(TypeAccess) arguments.get(4));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___CHECK_DEC_BWD__PACKAGE_INTERFACE_CLASS_CLASS:
 			return checkDEC_BWD((org.eclipse.uml2.uml.Package) arguments.get(0), (Interface) arguments.get(1),
@@ -1648,10 +1648,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_0_1_initialbindings_blackBBBBBBB(
 			ParameterizedType2Class_InnerTypeInInterface _this, Match match, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess) {
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess) {
 		if (!jContainer.equals(nonParamType)) {
-			return new Object[] { _this, match, jContainer, nonParamType, nonParamPackage, parameterizedType,
+			return new Object[] { _this, match, jContainer, nonParamType, parameterizedType, nonParamPackage,
 					typeTypeAccess };
 		}
 		return null;
@@ -1659,13 +1659,13 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_0_2_SolveCSP_bindingFBBBBBBB(
 			ParameterizedType2Class_InnerTypeInInterface _this, Match match, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, jContainer, nonParamType, nonParamPackage,
-				parameterizedType, typeTypeAccess);
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, jContainer, nonParamType, parameterizedType,
+				nonParamPackage, typeTypeAccess);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, jContainer, nonParamType, nonParamPackage, parameterizedType,
+			return new Object[] { csp, _this, match, jContainer, nonParamType, parameterizedType, nonParamPackage,
 					typeTypeAccess };
 		}
 		return null;
@@ -1677,10 +1677,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_0_2_SolveCSP_bindingAndBlackFBBBBBBB(
 			ParameterizedType2Class_InnerTypeInInterface _this, Match match, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess) {
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess) {
 		Object[] result_pattern_ParameterizedType2Class_InnerTypeInInterface_0_2_SolveCSP_binding = pattern_ParameterizedType2Class_InnerTypeInInterface_0_2_SolveCSP_bindingFBBBBBBB(
-				_this, match, jContainer, nonParamType, nonParamPackage, parameterizedType, typeTypeAccess);
+				_this, match, jContainer, nonParamType, parameterizedType, nonParamPackage, typeTypeAccess);
 		if (result_pattern_ParameterizedType2Class_InnerTypeInInterface_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ParameterizedType2Class_InnerTypeInInterface_0_2_SolveCSP_binding[0];
 
@@ -1688,7 +1688,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 					csp);
 			if (result_pattern_ParameterizedType2Class_InnerTypeInInterface_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, jContainer, nonParamType, nonParamPackage, parameterizedType,
+				return new Object[] { csp, _this, match, jContainer, nonParamType, parameterizedType, nonParamPackage,
 						typeTypeAccess };
 			}
 		}
@@ -1704,10 +1704,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_0_4_collectelementstobetranslated_blackBBBBBB(
 			Match match, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess) {
 		if (!jContainer.equals(nonParamType)) {
-			return new Object[] { match, jContainer, nonParamType, nonParamPackage, parameterizedType, typeTypeAccess };
+			return new Object[] { match, jContainer, nonParamType, parameterizedType, nonParamPackage, typeTypeAccess };
 		}
 		return null;
 	}
@@ -1743,10 +1743,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_0_5_collectcontextelements_blackBBBBBB(
 			Match match, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess) {
 		if (!jContainer.equals(nonParamType)) {
-			return new Object[] { match, jContainer, nonParamType, nonParamPackage, parameterizedType, typeTypeAccess };
+			return new Object[] { match, jContainer, nonParamType, parameterizedType, nonParamPackage, typeTypeAccess };
 		}
 		return null;
 	}
@@ -1789,9 +1789,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final void pattern_ParameterizedType2Class_InnerTypeInInterface_0_6_registerobjectstomatch_expressionBBBBBBB(
 			ParameterizedType2Class_InnerTypeInInterface _this, Match match, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess) {
-		_this.registerObjectsToMatch_FWD(match, jContainer, nonParamType, nonParamPackage, parameterizedType,
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess) {
+		_this.registerObjectsToMatch_FWD(match, jContainer, nonParamType, parameterizedType, nonParamPackage,
 				typeTypeAccess);
 
 	}
@@ -1813,8 +1813,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		EObject _localVariable_2 = isApplicableMatch.getObject("uContainer");
 		EObject _localVariable_3 = isApplicableMatch.getObject("jContainer");
 		EObject _localVariable_4 = isApplicableMatch.getObject("nonParamType");
-		EObject _localVariable_5 = isApplicableMatch.getObject("nonParamPackage");
-		EObject _localVariable_6 = isApplicableMatch.getObject("parameterizedType");
+		EObject _localVariable_5 = isApplicableMatch.getObject("parameterizedType");
+		EObject _localVariable_6 = isApplicableMatch.getObject("nonParamPackage");
 		EObject _localVariable_7 = isApplicableMatch.getObject("jp2up");
 		EObject _localVariable_8 = isApplicableMatch.getObject("typeTypeAccess");
 		EObject _localVariable_9 = isApplicableMatch.getObject("nonParamElement");
@@ -1824,8 +1824,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		EObject tmpUContainer = _localVariable_2;
 		EObject tmpJContainer = _localVariable_3;
 		EObject tmpNonParamType = _localVariable_4;
-		EObject tmpNonParamPackage = _localVariable_5;
-		EObject tmpParameterizedType = _localVariable_6;
+		EObject tmpParameterizedType = _localVariable_5;
+		EObject tmpNonParamPackage = _localVariable_6;
 		EObject tmpJp2up = _localVariable_7;
 		EObject tmpTypeTypeAccess = _localVariable_8;
 		EObject tmpNonParamElement = _localVariable_9;
@@ -1840,10 +1840,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 						AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
 						if (tmpNonParamType instanceof AbstractTypeDeclaration) {
 							AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) tmpNonParamType;
-							if (tmpNonParamPackage instanceof org.eclipse.modisco.java.Package) {
-								org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) tmpNonParamPackage;
-								if (tmpParameterizedType instanceof ParameterizedType) {
-									ParameterizedType parameterizedType = (ParameterizedType) tmpParameterizedType;
+							if (tmpParameterizedType instanceof ParameterizedType) {
+								ParameterizedType parameterizedType = (ParameterizedType) tmpParameterizedType;
+								if (tmpNonParamPackage instanceof org.eclipse.modisco.java.Package) {
+									org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) tmpNonParamPackage;
 									if (tmpJp2up instanceof JavaPackage2UmlPackage) {
 										JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
 										if (tmpTypeTypeAccess instanceof TypeAccess) {
@@ -1853,8 +1853,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 												if (tmpC2c instanceof NamedElement2NamedElement) {
 													NamedElement2NamedElement c2c = (NamedElement2NamedElement) tmpC2c;
 													return new Object[] { umlPackage, ne2neNonParam, uContainer,
-															jContainer, nonParamType, nonParamPackage,
-															parameterizedType, jp2up, typeTypeAccess, nonParamElement,
+															jContainer, nonParamType, parameterizedType,
+															nonParamPackage, jp2up, typeTypeAccess, nonParamElement,
 															c2c, isApplicableMatch };
 												}
 											}
@@ -1873,7 +1873,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_blackBBBBBBBBBBBFBB(
 			org.eclipse.uml2.uml.Package umlPackage, NamedElement2NamedElement ne2neNonParam, Interface uContainer,
 			AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			JavaPackage2UmlPackage jp2up, TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
 			NamedElement2NamedElement c2c, ParameterizedType2Class_InnerTypeInInterface _this,
 			IsApplicableMatch isApplicableMatch) {
@@ -1883,7 +1883,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 					if (tmpCsp instanceof CSP) {
 						CSP csp = (CSP) tmpCsp;
 						return new Object[] { umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType,
-								nonParamPackage, parameterizedType, jp2up, typeTypeAccess, nonParamElement, c2c, csp,
+								parameterizedType, nonParamPackage, jp2up, typeTypeAccess, nonParamElement, c2c, csp,
 								_this, isApplicableMatch };
 					}
 				}
@@ -1902,21 +1902,22 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			Interface uContainer = (Interface) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[2];
 			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[3];
 			AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[4];
-			org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[5];
-			ParameterizedType parameterizedType = (ParameterizedType) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[6];
+			ParameterizedType parameterizedType = (ParameterizedType) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[5];
+			org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[6];
 			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[7];
 			TypeAccess typeTypeAccess = (TypeAccess) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[8];
 			org.eclipse.uml2.uml.Class nonParamElement = (org.eclipse.uml2.uml.Class) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[9];
 			NamedElement2NamedElement c2c = (NamedElement2NamedElement) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_binding[10];
 
 			Object[] result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_black = pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_blackBBBBBBBBBBBFBB(
-					umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, nonParamPackage, parameterizedType,
+					umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, parameterizedType, nonParamPackage,
 					jp2up, typeTypeAccess, nonParamElement, c2c, _this, isApplicableMatch);
 			if (result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_ParameterizedType2Class_InnerTypeInInterface_1_1_performtransformation_black[11];
 
-				return new Object[] { umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, nonParamPackage,
-						parameterizedType, jp2up, typeTypeAccess, nonParamElement, c2c, csp, _this, isApplicableMatch };
+				return new Object[] { umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType,
+						parameterizedType, nonParamPackage, jp2up, typeTypeAccess, nonParamElement, c2c, csp, _this,
+						isApplicableMatch };
 			}
 		}
 		return null;
@@ -1954,14 +1955,14 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject umlPackage, EObject ne2neNonParam, EObject uContainer,
-			EObject jContainer, EObject nonParamType, EObject nonParamPackage, EObject parameterizedType, EObject jp2up,
+			EObject jContainer, EObject nonParamType, EObject parameterizedType, EObject nonParamPackage, EObject jp2up,
 			EObject ne2ne, EObject typeTypeAccess, EObject nonParamElement, EObject c2c,
 			EObject parameterizedClassifier) {
 		if (!ne2neNonParam.equals(umlPackage)) {
 			if (!ne2neNonParam.equals(uContainer)) {
 				if (!ne2neNonParam.equals(nonParamType)) {
-					if (!ne2neNonParam.equals(nonParamPackage)) {
-						if (!ne2neNonParam.equals(parameterizedType)) {
+					if (!ne2neNonParam.equals(parameterizedType)) {
+						if (!ne2neNonParam.equals(nonParamPackage)) {
 							if (!ne2neNonParam.equals(typeTypeAccess)) {
 								if (!ne2neNonParam.equals(nonParamElement)) {
 									if (!ne2neNonParam.equals(parameterizedClassifier)) {
@@ -1970,8 +1971,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 												if (!jContainer.equals(ne2neNonParam)) {
 													if (!jContainer.equals(uContainer)) {
 														if (!jContainer.equals(nonParamType)) {
-															if (!jContainer.equals(nonParamPackage)) {
-																if (!jContainer.equals(parameterizedType)) {
+															if (!jContainer.equals(parameterizedType)) {
+																if (!jContainer.equals(nonParamPackage)) {
 																	if (!jContainer.equals(jp2up)) {
 																		if (!jContainer.equals(ne2ne)) {
 																			if (!jContainer.equals(typeTypeAccess)) {
@@ -1989,24 +1990,24 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																											.equals(typeTypeAccess)) {
 																										if (!nonParamType
 																												.equals(parameterizedClassifier)) {
-																											if (!nonParamPackage
+																											if (!parameterizedType
 																													.equals(umlPackage)) {
-																												if (!nonParamPackage
+																												if (!parameterizedType
 																														.equals(uContainer)) {
-																													if (!nonParamPackage
-																															.equals(nonParamType)) {
+																													if (!parameterizedType
+																															.equals(typeTypeAccess)) {
 																														if (!nonParamPackage
-																																.equals(parameterizedType)) {
+																																.equals(umlPackage)) {
 																															if (!nonParamPackage
-																																	.equals(typeTypeAccess)) {
+																																	.equals(uContainer)) {
 																																if (!nonParamPackage
-																																		.equals(parameterizedClassifier)) {
-																																	if (!parameterizedType
-																																			.equals(umlPackage)) {
-																																		if (!parameterizedType
-																																				.equals(uContainer)) {
-																																			if (!parameterizedType
-																																					.equals(typeTypeAccess)) {
+																																		.equals(nonParamType)) {
+																																	if (!nonParamPackage
+																																			.equals(parameterizedType)) {
+																																		if (!nonParamPackage
+																																				.equals(typeTypeAccess)) {
+																																			if (!nonParamPackage
+																																					.equals(parameterizedClassifier)) {
 																																				if (!jp2up
 																																						.equals(umlPackage)) {
 																																					if (!jp2up
@@ -2016,9 +2017,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																																							if (!jp2up
 																																									.equals(nonParamType)) {
 																																								if (!jp2up
-																																										.equals(nonParamPackage)) {
+																																										.equals(parameterizedType)) {
 																																									if (!jp2up
-																																											.equals(parameterizedType)) {
+																																											.equals(nonParamPackage)) {
 																																										if (!jp2up
 																																												.equals(ne2ne)) {
 																																											if (!jp2up
@@ -2036,9 +2037,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																																																	if (!ne2ne
 																																																			.equals(nonParamType)) {
 																																																		if (!ne2ne
-																																																				.equals(nonParamPackage)) {
+																																																				.equals(parameterizedType)) {
 																																																			if (!ne2ne
-																																																					.equals(parameterizedType)) {
+																																																					.equals(nonParamPackage)) {
 																																																				if (!ne2ne
 																																																						.equals(typeTypeAccess)) {
 																																																					if (!ne2ne
@@ -2056,9 +2057,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																																																											if (!nonParamElement
 																																																													.equals(nonParamType)) {
 																																																												if (!nonParamElement
-																																																														.equals(nonParamPackage)) {
+																																																														.equals(parameterizedType)) {
 																																																													if (!nonParamElement
-																																																															.equals(parameterizedType)) {
+																																																															.equals(nonParamPackage)) {
 																																																														if (!nonParamElement
 																																																																.equals(typeTypeAccess)) {
 																																																															if (!nonParamElement
@@ -2074,9 +2075,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																																																																				if (!c2c.equals(
 																																																																						nonParamType)) {
 																																																																					if (!c2c.equals(
-																																																																							nonParamPackage)) {
+																																																																							parameterizedType)) {
 																																																																						if (!c2c.equals(
-																																																																								parameterizedType)) {
+																																																																								nonParamPackage)) {
 																																																																							if (!c2c.equals(
 																																																																									jp2up)) {
 																																																																								if (!c2c.equals(
@@ -2102,8 +2103,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																																																																																		uContainer,
 																																																																																		jContainer,
 																																																																																		nonParamType,
-																																																																																		nonParamPackage,
 																																																																																		parameterizedType,
+																																																																																		nonParamPackage,
 																																																																																		jp2up,
 																																																																																		ne2ne,
 																																																																																		typeTypeAccess,
@@ -2194,26 +2195,26 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
 			PerformRuleResult ruleresult, EObject umlPackage, EObject nonParamType, EObject parameterizedType,
 			EObject ne2ne, EObject typeTypeAccess, EObject parameterizedClassifier) {
-		EMoflonEdge parameterizedType__typeTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__parameterizedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge parameterizedType__typeTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge ne2ne__parameterizedClassifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeTypeAccess__nonParamType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nonParamType__typeTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ParameterizedType2Class_InnerTypeInInterface";
-		String parameterizedType__typeTypeAccess____type_name_prime = "type";
 		String ne2ne__parameterizedType____source_name_prime = "source";
+		String parameterizedType__typeTypeAccess____type_name_prime = "type";
 		String umlPackage__parameterizedClassifier____packagedElement_name_prime = "packagedElement";
 		String ne2ne__parameterizedClassifier____target_name_prime = "target";
 		String typeTypeAccess__nonParamType____type_name_prime = "type";
 		String nonParamType__typeTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		parameterizedType__typeTypeAccess____type.setSrc(parameterizedType);
-		parameterizedType__typeTypeAccess____type.setTrg(typeTypeAccess);
-		ruleresult.getTranslatedEdges().add(parameterizedType__typeTypeAccess____type);
 		ne2ne__parameterizedType____source.setSrc(ne2ne);
 		ne2ne__parameterizedType____source.setTrg(parameterizedType);
 		ruleresult.getCreatedEdges().add(ne2ne__parameterizedType____source);
+		parameterizedType__typeTypeAccess____type.setSrc(parameterizedType);
+		parameterizedType__typeTypeAccess____type.setTrg(typeTypeAccess);
+		ruleresult.getTranslatedEdges().add(parameterizedType__typeTypeAccess____type);
 		umlPackage__parameterizedClassifier____packagedElement.setSrc(umlPackage);
 		umlPackage__parameterizedClassifier____packagedElement.setTrg(parameterizedClassifier);
 		ruleresult.getCreatedEdges().add(umlPackage__parameterizedClassifier____packagedElement);
@@ -2227,8 +2228,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		nonParamType__typeTypeAccess____usagesInTypeAccess.setTrg(typeTypeAccess);
 		ruleresult.getTranslatedEdges().add(nonParamType__typeTypeAccess____usagesInTypeAccess);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		parameterizedType__typeTypeAccess____type.setName(parameterizedType__typeTypeAccess____type_name_prime);
 		ne2ne__parameterizedType____source.setName(ne2ne__parameterizedType____source_name_prime);
+		parameterizedType__typeTypeAccess____type.setName(parameterizedType__typeTypeAccess____type_name_prime);
 		umlPackage__parameterizedClassifier____packagedElement
 				.setName(umlPackage__parameterizedClassifier____packagedElement_name_prime);
 		ne2ne__parameterizedClassifier____target.setName(ne2ne__parameterizedClassifier____target_name_prime);
@@ -2236,7 +2237,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		nonParamType__typeTypeAccess____usagesInTypeAccess
 				.setName(nonParamType__typeTypeAccess____usagesInTypeAccess_name_prime);
 		return new Object[] { ruleresult, umlPackage, nonParamType, parameterizedType, ne2ne, typeTypeAccess,
-				parameterizedClassifier, parameterizedType__typeTypeAccess____type, ne2ne__parameterizedType____source,
+				parameterizedClassifier, ne2ne__parameterizedType____source, parameterizedType__typeTypeAccess____type,
 				umlPackage__parameterizedClassifier____packagedElement, ne2ne__parameterizedClassifier____target,
 				typeTypeAccess__nonParamType____type, nonParamType__typeTypeAccess____usagesInTypeAccess };
 	}
@@ -2244,10 +2245,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final void pattern_ParameterizedType2Class_InnerTypeInInterface_1_5_registerobjects_expressionBBBBBBBBBBBBBBB(
 			ParameterizedType2Class_InnerTypeInInterface _this, PerformRuleResult ruleresult, EObject umlPackage,
 			EObject ne2neNonParam, EObject uContainer, EObject jContainer, EObject nonParamType,
-			EObject nonParamPackage, EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess,
+			EObject parameterizedType, EObject nonParamPackage, EObject jp2up, EObject ne2ne, EObject typeTypeAccess,
 			EObject nonParamElement, EObject c2c, EObject parameterizedClassifier) {
 		_this.registerObjects_FWD(ruleresult, umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType,
-				nonParamPackage, parameterizedType, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c,
+				parameterizedType, nonParamPackage, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c,
 				parameterizedClassifier);
 
 	}
@@ -2313,25 +2314,25 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			Match match) {
 		EObject _localVariable_0 = match.getObject("jContainer");
 		EObject _localVariable_1 = match.getObject("nonParamType");
-		EObject _localVariable_2 = match.getObject("nonParamPackage");
-		EObject _localVariable_3 = match.getObject("parameterizedType");
+		EObject _localVariable_2 = match.getObject("parameterizedType");
+		EObject _localVariable_3 = match.getObject("nonParamPackage");
 		EObject _localVariable_4 = match.getObject("typeTypeAccess");
 		EObject tmpJContainer = _localVariable_0;
 		EObject tmpNonParamType = _localVariable_1;
-		EObject tmpNonParamPackage = _localVariable_2;
-		EObject tmpParameterizedType = _localVariable_3;
+		EObject tmpParameterizedType = _localVariable_2;
+		EObject tmpNonParamPackage = _localVariable_3;
 		EObject tmpTypeTypeAccess = _localVariable_4;
 		if (tmpJContainer instanceof AbstractTypeDeclaration) {
 			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
 			if (tmpNonParamType instanceof AbstractTypeDeclaration) {
 				AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) tmpNonParamType;
-				if (tmpNonParamPackage instanceof org.eclipse.modisco.java.Package) {
-					org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) tmpNonParamPackage;
-					if (tmpParameterizedType instanceof ParameterizedType) {
-						ParameterizedType parameterizedType = (ParameterizedType) tmpParameterizedType;
+				if (tmpParameterizedType instanceof ParameterizedType) {
+					ParameterizedType parameterizedType = (ParameterizedType) tmpParameterizedType;
+					if (tmpNonParamPackage instanceof org.eclipse.modisco.java.Package) {
+						org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) tmpNonParamPackage;
 						if (tmpTypeTypeAccess instanceof TypeAccess) {
 							TypeAccess typeTypeAccess = (TypeAccess) tmpTypeTypeAccess;
-							return new Object[] { jContainer, nonParamType, nonParamPackage, parameterizedType,
+							return new Object[] { jContainer, nonParamType, parameterizedType, nonParamPackage,
 									typeTypeAccess, match };
 						}
 					}
@@ -2343,7 +2344,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Iterable<Object[]> pattern_ParameterizedType2Class_InnerTypeInInterface_2_2_corematch_blackFFFBBBBFBFFB(
 			AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!jContainer.equals(nonParamType)) {
@@ -2364,7 +2365,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 									org.eclipse.uml2.uml.Package umlPackage = jp2up.getTarget();
 									if (umlPackage != null) {
 										_result.add(new Object[] { umlPackage, ne2neNonParam, uContainer, jContainer,
-												nonParamType, nonParamPackage, parameterizedType, jp2up, typeTypeAccess,
+												nonParamType, parameterizedType, nonParamPackage, jp2up, typeTypeAccess,
 												nonParamElement, c2c, match });
 									}
 
@@ -2383,7 +2384,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Iterable<Object[]> pattern_ParameterizedType2Class_InnerTypeInInterface_2_3_findcontext_blackBBBBBBBBBBB(
 			org.eclipse.uml2.uml.Package umlPackage, NamedElement2NamedElement ne2neNonParam, Interface uContainer,
 			AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			JavaPackage2UmlPackage jp2up, TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
 			NamedElement2NamedElement c2c) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -2395,15 +2396,15 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 							if (umlPackage.equals(jp2up.getTarget())) {
 								if (uContainer.getNestedClassifiers().contains(nonParamElement)) {
 									if (umlPackage.getPackagedElements().contains(uContainer)) {
-										if (uContainer.equals(c2c.getTarget())) {
-											if (jContainer.getBodyDeclarations().contains(nonParamType)) {
+										if (jContainer.getBodyDeclarations().contains(nonParamType)) {
+											if (uContainer.equals(c2c.getTarget())) {
 												if (nonParamElement.equals(ne2neNonParam.getTarget())) {
 													if (jContainer.equals(c2c.getSource())) {
 														if (nonParamPackage.equals(jp2up.getSource())) {
 															if (nonParamType.equals(typeTypeAccess.getType())) {
 																_result.add(new Object[] { umlPackage, ne2neNonParam,
 																		uContainer, jContainer, nonParamType,
-																		nonParamPackage, parameterizedType, jp2up,
+																		parameterizedType, nonParamPackage, jp2up,
 																		typeTypeAccess, nonParamElement, c2c });
 															}
 														}
@@ -2425,7 +2426,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_2_3_findcontext_greenBBBBBBBBBBBFFFFFFFFFFFFFFFF(
 			org.eclipse.uml2.uml.Package umlPackage, NamedElement2NamedElement ne2neNonParam, Interface uContainer,
 			AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			JavaPackage2UmlPackage jp2up, TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
 			NamedElement2NamedElement c2c) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
@@ -2436,9 +2437,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uContainer__nonParamElement____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlPackage__uContainer____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2c__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__nonParamType____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nonParamType__jContainer____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2c__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2neNonParam__nonParamElement____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2c__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__nonParamPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2451,9 +2452,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		String jp2up__umlPackage____target_name_prime = "target";
 		String uContainer__nonParamElement____nestedClassifier_name_prime = "nestedClassifier";
 		String umlPackage__uContainer____packagedElement_name_prime = "packagedElement";
-		String c2c__uContainer____target_name_prime = "target";
 		String jContainer__nonParamType____bodyDeclarations_name_prime = "bodyDeclarations";
 		String nonParamType__jContainer____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String c2c__uContainer____target_name_prime = "target";
 		String ne2neNonParam__nonParamElement____target_name_prime = "target";
 		String c2c__jContainer____source_name_prime = "source";
 		String jp2up__nonParamPackage____source_name_prime = "source";
@@ -2464,8 +2465,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		isApplicableMatch.getAllContextElements().add(uContainer);
 		isApplicableMatch.getAllContextElements().add(jContainer);
 		isApplicableMatch.getAllContextElements().add(nonParamType);
-		isApplicableMatch.getAllContextElements().add(nonParamPackage);
 		isApplicableMatch.getAllContextElements().add(parameterizedType);
+		isApplicableMatch.getAllContextElements().add(nonParamPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up);
 		isApplicableMatch.getAllContextElements().add(typeTypeAccess);
 		isApplicableMatch.getAllContextElements().add(nonParamElement);
@@ -2491,15 +2492,15 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		umlPackage__uContainer____packagedElement.setSrc(umlPackage);
 		umlPackage__uContainer____packagedElement.setTrg(uContainer);
 		isApplicableMatch.getAllContextElements().add(umlPackage__uContainer____packagedElement);
-		c2c__uContainer____target.setSrc(c2c);
-		c2c__uContainer____target.setTrg(uContainer);
-		isApplicableMatch.getAllContextElements().add(c2c__uContainer____target);
 		jContainer__nonParamType____bodyDeclarations.setSrc(jContainer);
 		jContainer__nonParamType____bodyDeclarations.setTrg(nonParamType);
 		isApplicableMatch.getAllContextElements().add(jContainer__nonParamType____bodyDeclarations);
 		nonParamType__jContainer____abstractTypeDeclaration.setSrc(nonParamType);
 		nonParamType__jContainer____abstractTypeDeclaration.setTrg(jContainer);
 		isApplicableMatch.getAllContextElements().add(nonParamType__jContainer____abstractTypeDeclaration);
+		c2c__uContainer____target.setSrc(c2c);
+		c2c__uContainer____target.setTrg(uContainer);
+		isApplicableMatch.getAllContextElements().add(c2c__uContainer____target);
 		ne2neNonParam__nonParamElement____target.setSrc(ne2neNonParam);
 		ne2neNonParam__nonParamElement____target.setTrg(nonParamElement);
 		isApplicableMatch.getAllContextElements().add(ne2neNonParam__nonParamElement____target);
@@ -2523,23 +2524,23 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		uContainer__nonParamElement____nestedClassifier
 				.setName(uContainer__nonParamElement____nestedClassifier_name_prime);
 		umlPackage__uContainer____packagedElement.setName(umlPackage__uContainer____packagedElement_name_prime);
-		c2c__uContainer____target.setName(c2c__uContainer____target_name_prime);
 		jContainer__nonParamType____bodyDeclarations.setName(jContainer__nonParamType____bodyDeclarations_name_prime);
 		nonParamType__jContainer____abstractTypeDeclaration
 				.setName(nonParamType__jContainer____abstractTypeDeclaration_name_prime);
+		c2c__uContainer____target.setName(c2c__uContainer____target_name_prime);
 		ne2neNonParam__nonParamElement____target.setName(ne2neNonParam__nonParamElement____target_name_prime);
 		c2c__jContainer____source.setName(c2c__jContainer____source_name_prime);
 		jp2up__nonParamPackage____source.setName(jp2up__nonParamPackage____source_name_prime);
 		typeTypeAccess__nonParamType____type.setName(typeTypeAccess__nonParamType____type_name_prime);
 		nonParamType__typeTypeAccess____usagesInTypeAccess
 				.setName(nonParamType__typeTypeAccess____usagesInTypeAccess_name_prime);
-		return new Object[] { umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, nonParamPackage,
-				parameterizedType, jp2up, typeTypeAccess, nonParamElement, c2c, isApplicableMatch,
+		return new Object[] { umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType, parameterizedType,
+				nonParamPackage, jp2up, typeTypeAccess, nonParamElement, c2c, isApplicableMatch,
 				ne2neNonParam__nonParamType____source, nonParamPackage__jContainer____ownedElements,
 				jContainer__nonParamPackage____package, parameterizedType__typeTypeAccess____type,
 				jp2up__umlPackage____target, uContainer__nonParamElement____nestedClassifier,
-				umlPackage__uContainer____packagedElement, c2c__uContainer____target,
-				jContainer__nonParamType____bodyDeclarations, nonParamType__jContainer____abstractTypeDeclaration,
+				umlPackage__uContainer____packagedElement, jContainer__nonParamType____bodyDeclarations,
+				nonParamType__jContainer____abstractTypeDeclaration, c2c__uContainer____target,
 				ne2neNonParam__nonParamElement____target, c2c__jContainer____source, jp2up__nonParamPackage____source,
 				typeTypeAccess__nonParamType____type, nonParamType__typeTypeAccess____usagesInTypeAccess };
 	}
@@ -2548,16 +2549,16 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			ParameterizedType2Class_InnerTypeInInterface _this, IsApplicableMatch isApplicableMatch,
 			org.eclipse.uml2.uml.Package umlPackage, NamedElement2NamedElement ne2neNonParam, Interface uContainer,
 			AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			JavaPackage2UmlPackage jp2up, TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
 			NamedElement2NamedElement c2c) {
 		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, umlPackage, ne2neNonParam, uContainer,
-				jContainer, nonParamType, nonParamPackage, parameterizedType, jp2up, typeTypeAccess, nonParamElement,
+				jContainer, nonParamType, parameterizedType, nonParamPackage, jp2up, typeTypeAccess, nonParamElement,
 				c2c);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
 			return new Object[] { csp, _this, isApplicableMatch, umlPackage, ne2neNonParam, uContainer, jContainer,
-					nonParamType, nonParamPackage, parameterizedType, jp2up, typeTypeAccess, nonParamElement, c2c };
+					nonParamType, parameterizedType, nonParamPackage, jp2up, typeTypeAccess, nonParamElement, c2c };
 		}
 		return null;
 	}
@@ -2570,12 +2571,12 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			ParameterizedType2Class_InnerTypeInInterface _this, IsApplicableMatch isApplicableMatch,
 			org.eclipse.uml2.uml.Package umlPackage, NamedElement2NamedElement ne2neNonParam, Interface uContainer,
 			AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			JavaPackage2UmlPackage jp2up, TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
 			NamedElement2NamedElement c2c) {
 		Object[] result_pattern_ParameterizedType2Class_InnerTypeInInterface_2_4_solveCSP_binding = pattern_ParameterizedType2Class_InnerTypeInInterface_2_4_solveCSP_bindingFBBBBBBBBBBBBB(
 				_this, isApplicableMatch, umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType,
-				nonParamPackage, parameterizedType, jp2up, typeTypeAccess, nonParamElement, c2c);
+				parameterizedType, nonParamPackage, jp2up, typeTypeAccess, nonParamElement, c2c);
 		if (result_pattern_ParameterizedType2Class_InnerTypeInInterface_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ParameterizedType2Class_InnerTypeInInterface_2_4_solveCSP_binding[0];
 
@@ -2584,7 +2585,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			if (result_pattern_ParameterizedType2Class_InnerTypeInInterface_2_4_solveCSP_black != null) {
 
 				return new Object[] { csp, _this, isApplicableMatch, umlPackage, ne2neNonParam, uContainer, jContainer,
-						nonParamType, nonParamPackage, parameterizedType, jp2up, typeTypeAccess, nonParamElement, c2c };
+						nonParamType, parameterizedType, nonParamPackage, jp2up, typeTypeAccess, nonParamElement, c2c };
 			}
 		}
 		return null;
@@ -2891,14 +2892,14 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject umlPackage, EObject ne2neNonParam, EObject uContainer,
-			EObject jContainer, EObject nonParamType, EObject nonParamPackage, EObject parameterizedType, EObject jp2up,
+			EObject jContainer, EObject nonParamType, EObject parameterizedType, EObject nonParamPackage, EObject jp2up,
 			EObject ne2ne, EObject typeTypeAccess, EObject nonParamElement, EObject c2c,
 			EObject parameterizedClassifier) {
 		if (!ne2neNonParam.equals(umlPackage)) {
 			if (!ne2neNonParam.equals(uContainer)) {
 				if (!ne2neNonParam.equals(nonParamType)) {
-					if (!ne2neNonParam.equals(nonParamPackage)) {
-						if (!ne2neNonParam.equals(parameterizedType)) {
+					if (!ne2neNonParam.equals(parameterizedType)) {
+						if (!ne2neNonParam.equals(nonParamPackage)) {
 							if (!ne2neNonParam.equals(typeTypeAccess)) {
 								if (!ne2neNonParam.equals(nonParamElement)) {
 									if (!ne2neNonParam.equals(parameterizedClassifier)) {
@@ -2907,8 +2908,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 												if (!jContainer.equals(ne2neNonParam)) {
 													if (!jContainer.equals(uContainer)) {
 														if (!jContainer.equals(nonParamType)) {
-															if (!jContainer.equals(nonParamPackage)) {
-																if (!jContainer.equals(parameterizedType)) {
+															if (!jContainer.equals(parameterizedType)) {
+																if (!jContainer.equals(nonParamPackage)) {
 																	if (!jContainer.equals(jp2up)) {
 																		if (!jContainer.equals(ne2ne)) {
 																			if (!jContainer.equals(typeTypeAccess)) {
@@ -2926,24 +2927,24 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																											.equals(typeTypeAccess)) {
 																										if (!nonParamType
 																												.equals(parameterizedClassifier)) {
-																											if (!nonParamPackage
+																											if (!parameterizedType
 																													.equals(umlPackage)) {
-																												if (!nonParamPackage
+																												if (!parameterizedType
 																														.equals(uContainer)) {
-																													if (!nonParamPackage
-																															.equals(nonParamType)) {
+																													if (!parameterizedType
+																															.equals(typeTypeAccess)) {
 																														if (!nonParamPackage
-																																.equals(parameterizedType)) {
+																																.equals(umlPackage)) {
 																															if (!nonParamPackage
-																																	.equals(typeTypeAccess)) {
+																																	.equals(uContainer)) {
 																																if (!nonParamPackage
-																																		.equals(parameterizedClassifier)) {
-																																	if (!parameterizedType
-																																			.equals(umlPackage)) {
-																																		if (!parameterizedType
-																																				.equals(uContainer)) {
-																																			if (!parameterizedType
-																																					.equals(typeTypeAccess)) {
+																																		.equals(nonParamType)) {
+																																	if (!nonParamPackage
+																																			.equals(parameterizedType)) {
+																																		if (!nonParamPackage
+																																				.equals(typeTypeAccess)) {
+																																			if (!nonParamPackage
+																																					.equals(parameterizedClassifier)) {
 																																				if (!jp2up
 																																						.equals(umlPackage)) {
 																																					if (!jp2up
@@ -2953,9 +2954,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																																							if (!jp2up
 																																									.equals(nonParamType)) {
 																																								if (!jp2up
-																																										.equals(nonParamPackage)) {
+																																										.equals(parameterizedType)) {
 																																									if (!jp2up
-																																											.equals(parameterizedType)) {
+																																											.equals(nonParamPackage)) {
 																																										if (!jp2up
 																																												.equals(ne2ne)) {
 																																											if (!jp2up
@@ -2973,9 +2974,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																																																	if (!ne2ne
 																																																			.equals(nonParamType)) {
 																																																		if (!ne2ne
-																																																				.equals(nonParamPackage)) {
+																																																				.equals(parameterizedType)) {
 																																																			if (!ne2ne
-																																																					.equals(parameterizedType)) {
+																																																					.equals(nonParamPackage)) {
 																																																				if (!ne2ne
 																																																						.equals(typeTypeAccess)) {
 																																																					if (!ne2ne
@@ -2993,9 +2994,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																																																											if (!nonParamElement
 																																																													.equals(nonParamType)) {
 																																																												if (!nonParamElement
-																																																														.equals(nonParamPackage)) {
+																																																														.equals(parameterizedType)) {
 																																																													if (!nonParamElement
-																																																															.equals(parameterizedType)) {
+																																																															.equals(nonParamPackage)) {
 																																																														if (!nonParamElement
 																																																																.equals(typeTypeAccess)) {
 																																																															if (!nonParamElement
@@ -3011,9 +3012,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																																																																				if (!c2c.equals(
 																																																																						nonParamType)) {
 																																																																					if (!c2c.equals(
-																																																																							nonParamPackage)) {
+																																																																							parameterizedType)) {
 																																																																						if (!c2c.equals(
-																																																																								parameterizedType)) {
+																																																																								nonParamPackage)) {
 																																																																							if (!c2c.equals(
 																																																																									jp2up)) {
 																																																																								if (!c2c.equals(
@@ -3039,8 +3040,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																																																																																		uContainer,
 																																																																																		jContainer,
 																																																																																		nonParamType,
-																																																																																		nonParamPackage,
 																																																																																		parameterizedType,
+																																																																																		nonParamPackage,
 																																																																																		jp2up,
 																																																																																		ne2ne,
 																																																																																		typeTypeAccess,
@@ -3131,26 +3132,26 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
 			PerformRuleResult ruleresult, EObject umlPackage, EObject nonParamType, EObject parameterizedType,
 			EObject ne2ne, EObject typeTypeAccess, EObject parameterizedClassifier) {
-		EMoflonEdge parameterizedType__typeTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__parameterizedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge parameterizedType__typeTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge ne2ne__parameterizedClassifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeTypeAccess__nonParamType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nonParamType__typeTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ParameterizedType2Class_InnerTypeInInterface";
-		String parameterizedType__typeTypeAccess____type_name_prime = "type";
 		String ne2ne__parameterizedType____source_name_prime = "source";
+		String parameterizedType__typeTypeAccess____type_name_prime = "type";
 		String umlPackage__parameterizedClassifier____packagedElement_name_prime = "packagedElement";
 		String ne2ne__parameterizedClassifier____target_name_prime = "target";
 		String typeTypeAccess__nonParamType____type_name_prime = "type";
 		String nonParamType__typeTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		parameterizedType__typeTypeAccess____type.setSrc(parameterizedType);
-		parameterizedType__typeTypeAccess____type.setTrg(typeTypeAccess);
-		ruleresult.getCreatedEdges().add(parameterizedType__typeTypeAccess____type);
 		ne2ne__parameterizedType____source.setSrc(ne2ne);
 		ne2ne__parameterizedType____source.setTrg(parameterizedType);
 		ruleresult.getCreatedEdges().add(ne2ne__parameterizedType____source);
+		parameterizedType__typeTypeAccess____type.setSrc(parameterizedType);
+		parameterizedType__typeTypeAccess____type.setTrg(typeTypeAccess);
+		ruleresult.getCreatedEdges().add(parameterizedType__typeTypeAccess____type);
 		umlPackage__parameterizedClassifier____packagedElement.setSrc(umlPackage);
 		umlPackage__parameterizedClassifier____packagedElement.setTrg(parameterizedClassifier);
 		ruleresult.getTranslatedEdges().add(umlPackage__parameterizedClassifier____packagedElement);
@@ -3164,8 +3165,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		nonParamType__typeTypeAccess____usagesInTypeAccess.setTrg(typeTypeAccess);
 		ruleresult.getCreatedEdges().add(nonParamType__typeTypeAccess____usagesInTypeAccess);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		parameterizedType__typeTypeAccess____type.setName(parameterizedType__typeTypeAccess____type_name_prime);
 		ne2ne__parameterizedType____source.setName(ne2ne__parameterizedType____source_name_prime);
+		parameterizedType__typeTypeAccess____type.setName(parameterizedType__typeTypeAccess____type_name_prime);
 		umlPackage__parameterizedClassifier____packagedElement
 				.setName(umlPackage__parameterizedClassifier____packagedElement_name_prime);
 		ne2ne__parameterizedClassifier____target.setName(ne2ne__parameterizedClassifier____target_name_prime);
@@ -3173,7 +3174,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		nonParamType__typeTypeAccess____usagesInTypeAccess
 				.setName(nonParamType__typeTypeAccess____usagesInTypeAccess_name_prime);
 		return new Object[] { ruleresult, umlPackage, nonParamType, parameterizedType, ne2ne, typeTypeAccess,
-				parameterizedClassifier, parameterizedType__typeTypeAccess____type, ne2ne__parameterizedType____source,
+				parameterizedClassifier, ne2ne__parameterizedType____source, parameterizedType__typeTypeAccess____type,
 				umlPackage__parameterizedClassifier____packagedElement, ne2ne__parameterizedClassifier____target,
 				typeTypeAccess__nonParamType____type, nonParamType__typeTypeAccess____usagesInTypeAccess };
 	}
@@ -3181,10 +3182,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final void pattern_ParameterizedType2Class_InnerTypeInInterface_11_5_registerobjects_expressionBBBBBBBBBBBBBBB(
 			ParameterizedType2Class_InnerTypeInInterface _this, PerformRuleResult ruleresult, EObject umlPackage,
 			EObject ne2neNonParam, EObject uContainer, EObject jContainer, EObject nonParamType,
-			EObject nonParamPackage, EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess,
+			EObject parameterizedType, EObject nonParamPackage, EObject jp2up, EObject ne2ne, EObject typeTypeAccess,
 			EObject nonParamElement, EObject c2c, EObject parameterizedClassifier) {
 		_this.registerObjects_BWD(ruleresult, umlPackage, ne2neNonParam, uContainer, jContainer, nonParamType,
-				nonParamPackage, parameterizedType, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c,
+				parameterizedType, nonParamPackage, jp2up, ne2ne, typeTypeAccess, nonParamElement, c2c,
 				parameterizedClassifier);
 
 	}
@@ -3328,8 +3329,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 								if (uContainer.getNestedClassifiers().contains(nonParamElement)) {
 									if (umlPackage.getPackagedElements().contains(parameterizedClassifier)) {
 										if (umlPackage.getPackagedElements().contains(uContainer)) {
-											if (uContainer.equals(c2c.getTarget())) {
-												if (jContainer.getBodyDeclarations().contains(nonParamType)) {
+											if (jContainer.getBodyDeclarations().contains(nonParamType)) {
+												if (uContainer.equals(c2c.getTarget())) {
 													if (nonParamElement.equals(ne2neNonParam.getTarget())) {
 														if (jContainer.equals(c2c.getSource())) {
 															if (nonParamPackage.equals(jp2up.getSource())) {
@@ -3369,9 +3370,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge umlPackage__uContainer____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2c__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__nonParamType____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nonParamType__jContainer____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2c__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2neNonParam__nonParamElement____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2c__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__nonParamPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -3382,9 +3383,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		String uContainer__nonParamElement____nestedClassifier_name_prime = "nestedClassifier";
 		String umlPackage__parameterizedClassifier____packagedElement_name_prime = "packagedElement";
 		String umlPackage__uContainer____packagedElement_name_prime = "packagedElement";
-		String c2c__uContainer____target_name_prime = "target";
 		String jContainer__nonParamType____bodyDeclarations_name_prime = "bodyDeclarations";
 		String nonParamType__jContainer____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String c2c__uContainer____target_name_prime = "target";
 		String ne2neNonParam__nonParamElement____target_name_prime = "target";
 		String c2c__jContainer____source_name_prime = "source";
 		String jp2up__nonParamPackage____source_name_prime = "source";
@@ -3419,15 +3420,15 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		umlPackage__uContainer____packagedElement.setSrc(umlPackage);
 		umlPackage__uContainer____packagedElement.setTrg(uContainer);
 		isApplicableMatch.getAllContextElements().add(umlPackage__uContainer____packagedElement);
-		c2c__uContainer____target.setSrc(c2c);
-		c2c__uContainer____target.setTrg(uContainer);
-		isApplicableMatch.getAllContextElements().add(c2c__uContainer____target);
 		jContainer__nonParamType____bodyDeclarations.setSrc(jContainer);
 		jContainer__nonParamType____bodyDeclarations.setTrg(nonParamType);
 		isApplicableMatch.getAllContextElements().add(jContainer__nonParamType____bodyDeclarations);
 		nonParamType__jContainer____abstractTypeDeclaration.setSrc(nonParamType);
 		nonParamType__jContainer____abstractTypeDeclaration.setTrg(jContainer);
 		isApplicableMatch.getAllContextElements().add(nonParamType__jContainer____abstractTypeDeclaration);
+		c2c__uContainer____target.setSrc(c2c);
+		c2c__uContainer____target.setTrg(uContainer);
+		isApplicableMatch.getAllContextElements().add(c2c__uContainer____target);
 		ne2neNonParam__nonParamElement____target.setSrc(ne2neNonParam);
 		ne2neNonParam__nonParamElement____target.setTrg(nonParamElement);
 		isApplicableMatch.getAllContextElements().add(ne2neNonParam__nonParamElement____target);
@@ -3446,10 +3447,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		umlPackage__parameterizedClassifier____packagedElement
 				.setName(umlPackage__parameterizedClassifier____packagedElement_name_prime);
 		umlPackage__uContainer____packagedElement.setName(umlPackage__uContainer____packagedElement_name_prime);
-		c2c__uContainer____target.setName(c2c__uContainer____target_name_prime);
 		jContainer__nonParamType____bodyDeclarations.setName(jContainer__nonParamType____bodyDeclarations_name_prime);
 		nonParamType__jContainer____abstractTypeDeclaration
 				.setName(nonParamType__jContainer____abstractTypeDeclaration_name_prime);
+		c2c__uContainer____target.setName(c2c__uContainer____target_name_prime);
 		ne2neNonParam__nonParamElement____target.setName(ne2neNonParam__nonParamElement____target_name_prime);
 		c2c__jContainer____source.setName(c2c__jContainer____source_name_prime);
 		jp2up__nonParamPackage____source.setName(jp2up__nonParamPackage____source_name_prime);
@@ -3458,9 +3459,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 				nonParamPackage__jContainer____ownedElements, jContainer__nonParamPackage____package,
 				jp2up__umlPackage____target, uContainer__nonParamElement____nestedClassifier,
 				umlPackage__parameterizedClassifier____packagedElement, umlPackage__uContainer____packagedElement,
-				c2c__uContainer____target, jContainer__nonParamType____bodyDeclarations,
-				nonParamType__jContainer____abstractTypeDeclaration, ne2neNonParam__nonParamElement____target,
-				c2c__jContainer____source, jp2up__nonParamPackage____source };
+				jContainer__nonParamType____bodyDeclarations, nonParamType__jContainer____abstractTypeDeclaration,
+				c2c__uContainer____target, ne2neNonParam__nonParamElement____target, c2c__jContainer____source,
+				jp2up__nonParamPackage____source };
 	}
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_12_4_solveCSP_bindingFBBBBBBBBBBBB(
@@ -3593,11 +3594,11 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_20_2_testcorematchandDECs_black_nac_0BB(
 			org.eclipse.uml2.uml.Class parameterizedClassifier, org.eclipse.uml2.uml.Class nonParamElement) {
 		if (!nonParamElement.equals(parameterizedClassifier)) {
-			for (org.eclipse.uml2.uml.Class __DEC_parameterizedClassifier_nestedClassifier_385954 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (org.eclipse.uml2.uml.Class __DEC_parameterizedClassifier_nestedClassifier_987844 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(parameterizedClassifier, org.eclipse.uml2.uml.Class.class,
 							"nestedClassifier")) {
-				if (!parameterizedClassifier.equals(__DEC_parameterizedClassifier_nestedClassifier_385954)) {
-					if (!nonParamElement.equals(__DEC_parameterizedClassifier_nestedClassifier_385954)) {
+				if (!parameterizedClassifier.equals(__DEC_parameterizedClassifier_nestedClassifier_987844)) {
+					if (!nonParamElement.equals(__DEC_parameterizedClassifier_nestedClassifier_987844)) {
 						return new Object[] { parameterizedClassifier, nonParamElement };
 					}
 				}
@@ -3608,9 +3609,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_20_2_testcorematchandDECs_black_nac_1BB(
 			org.eclipse.uml2.uml.Class parameterizedClassifier, Interface uContainer) {
-		for (Interface __DEC_parameterizedClassifier_nestedClassifier_167414 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_parameterizedClassifier_nestedClassifier_944215 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(parameterizedClassifier, Interface.class, "nestedClassifier")) {
-			if (!uContainer.equals(__DEC_parameterizedClassifier_nestedClassifier_167414)) {
+			if (!uContainer.equals(__DEC_parameterizedClassifier_nestedClassifier_944215)) {
 				return new Object[] { parameterizedClassifier, uContainer };
 			}
 		}
@@ -3784,10 +3785,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_0BBB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType) {
 		if (!jContainer.equals(nonParamType)) {
-			for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_956538 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_216502 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(typeTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!jContainer.equals(__DEC_typeTypeAccess_superInterfaces_956538)) {
-					if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_956538)) {
+				if (!jContainer.equals(__DEC_typeTypeAccess_superInterfaces_216502)) {
+					if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_216502)) {
 						return new Object[] { typeTypeAccess, jContainer, nonParamType };
 					}
 				}
@@ -3798,7 +3799,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeTypeAccess) {
-		for (Annotation __DEC_typeTypeAccess_type_956375 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeTypeAccess_type_724270 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, Annotation.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3807,7 +3808,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayType __DEC_typeTypeAccess_elementType_388355 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeTypeAccess_elementType_131047 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3817,10 +3818,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_3BBB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType) {
 		if (!jContainer.equals(nonParamType)) {
-			for (ClassDeclaration __DEC_typeTypeAccess_superClass_462741 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (ClassDeclaration __DEC_typeTypeAccess_superClass_886232 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(typeTypeAccess, ClassDeclaration.class, "superClass")) {
-				if (!jContainer.equals(__DEC_typeTypeAccess_superClass_462741)) {
-					if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_462741)) {
+				if (!jContainer.equals(__DEC_typeTypeAccess_superClass_886232)) {
+					if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_886232)) {
 						return new Object[] { typeTypeAccess, jContainer, nonParamType };
 					}
 				}
@@ -3831,7 +3832,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess typeTypeAccess) {
-		for (MethodDeclaration __DEC_typeTypeAccess_returnType_729909 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeTypeAccess_returnType_975340 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3840,7 +3841,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess typeTypeAccess) {
-		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_411910 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_644173 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3849,7 +3850,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_643546 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_892662 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3858,7 +3859,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayInitializer __DEC_typeTypeAccess_expressions_578401 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayInitializer __DEC_typeTypeAccess_expressions_618789 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayInitializer.class, "expressions")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3922,8 +3923,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																		if (pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_8BB(
 																				jContainer, typeTypeAccess) == null) {
 																			_result.add(new Object[] { jContainer,
-																					nonParamType, nonParamPackage,
-																					parameterizedType, typeTypeAccess,
+																					nonParamType, parameterizedType,
+																					nonParamPackage, typeTypeAccess,
 																					_edge_type });
 																		}
 																	}
@@ -3962,10 +3963,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final boolean pattern_ParameterizedType2Class_InnerTypeInInterface_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
 			ParameterizedType2Class_InnerTypeInInterface _this, Match match, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, jContainer, nonParamType, nonParamPackage,
-				parameterizedType, typeTypeAccess);
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, jContainer, nonParamType, parameterizedType,
+				nonParamPackage, typeTypeAccess);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -4015,8 +4016,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		EObject _localVariable_1 = targetMatch.getObject("uContainer");
 		EObject _localVariable_2 = sourceMatch.getObject("jContainer");
 		EObject _localVariable_3 = sourceMatch.getObject("nonParamType");
-		EObject _localVariable_4 = sourceMatch.getObject("nonParamPackage");
-		EObject _localVariable_5 = sourceMatch.getObject("parameterizedType");
+		EObject _localVariable_4 = sourceMatch.getObject("parameterizedType");
+		EObject _localVariable_5 = sourceMatch.getObject("nonParamPackage");
 		EObject _localVariable_6 = sourceMatch.getObject("typeTypeAccess");
 		EObject _localVariable_7 = targetMatch.getObject("nonParamElement");
 		EObject _localVariable_8 = targetMatch.getObject("parameterizedClassifier");
@@ -4024,8 +4025,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		EObject tmpUContainer = _localVariable_1;
 		EObject tmpJContainer = _localVariable_2;
 		EObject tmpNonParamType = _localVariable_3;
-		EObject tmpNonParamPackage = _localVariable_4;
-		EObject tmpParameterizedType = _localVariable_5;
+		EObject tmpParameterizedType = _localVariable_4;
+		EObject tmpNonParamPackage = _localVariable_5;
 		EObject tmpTypeTypeAccess = _localVariable_6;
 		EObject tmpNonParamElement = _localVariable_7;
 		EObject tmpParameterizedClassifier = _localVariable_8;
@@ -4037,10 +4038,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 					AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) tmpJContainer;
 					if (tmpNonParamType instanceof AbstractTypeDeclaration) {
 						AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) tmpNonParamType;
-						if (tmpNonParamPackage instanceof org.eclipse.modisco.java.Package) {
-							org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) tmpNonParamPackage;
-							if (tmpParameterizedType instanceof ParameterizedType) {
-								ParameterizedType parameterizedType = (ParameterizedType) tmpParameterizedType;
+						if (tmpParameterizedType instanceof ParameterizedType) {
+							ParameterizedType parameterizedType = (ParameterizedType) tmpParameterizedType;
+							if (tmpNonParamPackage instanceof org.eclipse.modisco.java.Package) {
+								org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) tmpNonParamPackage;
 								if (tmpTypeTypeAccess instanceof TypeAccess) {
 									TypeAccess typeTypeAccess = (TypeAccess) tmpTypeTypeAccess;
 									if (tmpNonParamElement instanceof org.eclipse.uml2.uml.Class) {
@@ -4048,7 +4049,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 										if (tmpParameterizedClassifier instanceof org.eclipse.uml2.uml.Class) {
 											org.eclipse.uml2.uml.Class parameterizedClassifier = (org.eclipse.uml2.uml.Class) tmpParameterizedClassifier;
 											return new Object[] { umlPackage, uContainer, jContainer, nonParamType,
-													nonParamPackage, parameterizedType, typeTypeAccess, nonParamElement,
+													parameterizedType, nonParamPackage, typeTypeAccess, nonParamElement,
 													parameterizedClassifier, targetMatch, sourceMatch };
 										}
 									}
@@ -4064,14 +4065,15 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_blackBBBBBBBBBBB(
 			org.eclipse.uml2.uml.Package umlPackage, Interface uContainer, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
-			org.eclipse.uml2.uml.Class parameterizedClassifier, Match sourceMatch, Match targetMatch) {
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess,
+			org.eclipse.uml2.uml.Class nonParamElement, org.eclipse.uml2.uml.Class parameterizedClassifier,
+			Match sourceMatch, Match targetMatch) {
 		if (!jContainer.equals(nonParamType)) {
 			if (!nonParamElement.equals(parameterizedClassifier)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { umlPackage, uContainer, jContainer, nonParamType, nonParamPackage,
-							parameterizedType, typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch,
+					return new Object[] { umlPackage, uContainer, jContainer, nonParamType, parameterizedType,
+							nonParamPackage, typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch,
 							targetMatch };
 				}
 			}
@@ -4088,19 +4090,19 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			Interface uContainer = (Interface) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_binding[1];
 			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_binding[2];
 			AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_binding[3];
-			org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_binding[4];
-			ParameterizedType parameterizedType = (ParameterizedType) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_binding[5];
+			ParameterizedType parameterizedType = (ParameterizedType) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_binding[4];
+			org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_binding[5];
 			TypeAccess typeTypeAccess = (TypeAccess) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_binding[6];
 			org.eclipse.uml2.uml.Class nonParamElement = (org.eclipse.uml2.uml.Class) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_binding[7];
 			org.eclipse.uml2.uml.Class parameterizedClassifier = (org.eclipse.uml2.uml.Class) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_binding[8];
 
 			Object[] result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_black = pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_blackBBBBBBBBBBB(
-					umlPackage, uContainer, jContainer, nonParamType, nonParamPackage, parameterizedType,
+					umlPackage, uContainer, jContainer, nonParamType, parameterizedType, nonParamPackage,
 					typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch, targetMatch);
 			if (result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { umlPackage, uContainer, jContainer, nonParamType, nonParamPackage,
-						parameterizedType, typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch,
+				return new Object[] { umlPackage, uContainer, jContainer, nonParamType, parameterizedType,
+						nonParamPackage, typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -4110,16 +4112,16 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_24_3_solvecsp_bindingFBBBBBBBBBBBB(
 			ParameterizedType2Class_InnerTypeInInterface _this, org.eclipse.uml2.uml.Package umlPackage,
 			Interface uContainer, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
 			org.eclipse.uml2.uml.Class parameterizedClassifier, Match sourceMatch, Match targetMatch) {
 		CSP _localVariable_9 = _this.isApplicable_solveCsp_CC(umlPackage, uContainer, jContainer, nonParamType,
-				nonParamPackage, parameterizedType, typeTypeAccess, nonParamElement, parameterizedClassifier,
+				parameterizedType, nonParamPackage, typeTypeAccess, nonParamElement, parameterizedClassifier,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_9;
 		if (csp != null) {
-			return new Object[] { csp, _this, umlPackage, uContainer, jContainer, nonParamType, nonParamPackage,
-					parameterizedType, typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch,
+			return new Object[] { csp, _this, umlPackage, uContainer, jContainer, nonParamType, parameterizedType,
+					nonParamPackage, typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -4132,11 +4134,11 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBBB(
 			ParameterizedType2Class_InnerTypeInInterface _this, org.eclipse.uml2.uml.Package umlPackage,
 			Interface uContainer, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
 			org.eclipse.uml2.uml.Class parameterizedClassifier, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_3_solvecsp_binding = pattern_ParameterizedType2Class_InnerTypeInInterface_24_3_solvecsp_bindingFBBBBBBBBBBBB(
-				_this, umlPackage, uContainer, jContainer, nonParamType, nonParamPackage, parameterizedType,
+				_this, umlPackage, uContainer, jContainer, nonParamType, parameterizedType, nonParamPackage,
 				typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch, targetMatch);
 		if (result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_3_solvecsp_binding[0];
@@ -4145,8 +4147,8 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 					csp);
 			if (result_pattern_ParameterizedType2Class_InnerTypeInInterface_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, umlPackage, uContainer, jContainer, nonParamType, nonParamPackage,
-						parameterizedType, typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch,
+				return new Object[] { csp, _this, umlPackage, uContainer, jContainer, nonParamType, parameterizedType,
+						nonParamPackage, typeTypeAccess, nonParamElement, parameterizedClassifier, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -4209,13 +4211,14 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_24_6_createcorrespondence_blackBBBBBBBBBB(
 			org.eclipse.uml2.uml.Package umlPackage, Interface uContainer, AbstractTypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
-			org.eclipse.uml2.uml.Class parameterizedClassifier, CCMatch ccMatch) {
+			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess,
+			org.eclipse.uml2.uml.Class nonParamElement, org.eclipse.uml2.uml.Class parameterizedClassifier,
+			CCMatch ccMatch) {
 		if (!jContainer.equals(nonParamType)) {
 			if (!nonParamElement.equals(parameterizedClassifier)) {
-				return new Object[] { umlPackage, uContainer, jContainer, nonParamType, nonParamPackage,
-						parameterizedType, typeTypeAccess, nonParamElement, parameterizedClassifier, ccMatch };
+				return new Object[] { umlPackage, uContainer, jContainer, nonParamType, parameterizedType,
+						nonParamPackage, typeTypeAccess, nonParamElement, parameterizedClassifier, ccMatch };
 			}
 		}
 		return null;
@@ -4254,10 +4257,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_0BBB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType) {
 		if (!jContainer.equals(nonParamType)) {
-			for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_525310 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_209469 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(typeTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!jContainer.equals(__DEC_typeTypeAccess_superInterfaces_525310)) {
-					if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_525310)) {
+				if (!jContainer.equals(__DEC_typeTypeAccess_superInterfaces_209469)) {
+					if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_209469)) {
 						return new Object[] { typeTypeAccess, jContainer, nonParamType };
 					}
 				}
@@ -4268,7 +4271,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeTypeAccess) {
-		for (Annotation __DEC_typeTypeAccess_type_219284 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeTypeAccess_type_23953 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, Annotation.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4277,7 +4280,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayType __DEC_typeTypeAccess_elementType_22233 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeTypeAccess_elementType_745463 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4287,10 +4290,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_3BBB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType) {
 		if (!jContainer.equals(nonParamType)) {
-			for (ClassDeclaration __DEC_typeTypeAccess_superClass_275496 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (ClassDeclaration __DEC_typeTypeAccess_superClass_717179 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(typeTypeAccess, ClassDeclaration.class, "superClass")) {
-				if (!jContainer.equals(__DEC_typeTypeAccess_superClass_275496)) {
-					if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_275496)) {
+				if (!jContainer.equals(__DEC_typeTypeAccess_superClass_717179)) {
+					if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_717179)) {
 						return new Object[] { typeTypeAccess, jContainer, nonParamType };
 					}
 				}
@@ -4301,7 +4304,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess typeTypeAccess) {
-		for (MethodDeclaration __DEC_typeTypeAccess_returnType_966295 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeTypeAccess_returnType_182983 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4310,7 +4313,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess typeTypeAccess) {
-		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_622270 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_870543 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4319,7 +4322,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_613059 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_864292 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4328,7 +4331,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_7B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayInitializer __DEC_typeTypeAccess_expressions_103532 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayInitializer __DEC_typeTypeAccess_expressions_686576 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayInitializer.class, "expressions")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4353,7 +4356,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_blackBBBBB(
 			AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess) {
 		if (!jContainer.equals(nonParamType)) {
 			if (nonParamPackage.getOwnedElements().contains(jContainer)) {
@@ -4381,7 +4384,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																if (pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_9BB(
 																		nonParamType, typeTypeAccess) == null) {
 																	return new Object[] { jContainer, nonParamType,
-																			nonParamPackage, parameterizedType,
+																			parameterizedType, nonParamPackage,
 																			typeTypeAccess };
 																}
 															}
@@ -4414,11 +4417,11 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_28_1_matchtggpattern_black_nac_0BB(
 			org.eclipse.uml2.uml.Class parameterizedClassifier, org.eclipse.uml2.uml.Class nonParamElement) {
 		if (!nonParamElement.equals(parameterizedClassifier)) {
-			for (org.eclipse.uml2.uml.Class __DEC_parameterizedClassifier_nestedClassifier_668635 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (org.eclipse.uml2.uml.Class __DEC_parameterizedClassifier_nestedClassifier_575299 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(parameterizedClassifier, org.eclipse.uml2.uml.Class.class,
 							"nestedClassifier")) {
-				if (!parameterizedClassifier.equals(__DEC_parameterizedClassifier_nestedClassifier_668635)) {
-					if (!nonParamElement.equals(__DEC_parameterizedClassifier_nestedClassifier_668635)) {
+				if (!parameterizedClassifier.equals(__DEC_parameterizedClassifier_nestedClassifier_575299)) {
+					if (!nonParamElement.equals(__DEC_parameterizedClassifier_nestedClassifier_575299)) {
 						return new Object[] { parameterizedClassifier, nonParamElement };
 					}
 				}
@@ -4429,9 +4432,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_28_1_matchtggpattern_black_nac_1BB(
 			org.eclipse.uml2.uml.Class parameterizedClassifier, Interface uContainer) {
-		for (Interface __DEC_parameterizedClassifier_nestedClassifier_129224 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_parameterizedClassifier_nestedClassifier_129348 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(parameterizedClassifier, Interface.class, "nestedClassifier")) {
-			if (!uContainer.equals(__DEC_parameterizedClassifier_nestedClassifier_129224)) {
+			if (!uContainer.equals(__DEC_parameterizedClassifier_nestedClassifier_129348)) {
 				return new Object[] { parameterizedClassifier, uContainer };
 			}
 		}
@@ -4554,14 +4557,6 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_6BB(
-			ModelgeneratorRuleResult ruleResult, NamedElement2NamedElement c2c) {
-		if (ruleResult.getCorrObjects().contains(c2c)) {
-			return new Object[] { ruleResult, c2c };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_7BB(
 			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package nonParamPackage) {
 		if (ruleResult.getSourceObjects().contains(nonParamPackage)) {
 			return new Object[] { ruleResult, nonParamPackage };
@@ -4569,10 +4564,18 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		return null;
 	}
 
-	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_8BB(
+	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_7BB(
 			ModelgeneratorRuleResult ruleResult, JavaPackage2UmlPackage jp2up) {
 		if (ruleResult.getCorrObjects().contains(jp2up)) {
 			return new Object[] { ruleResult, jp2up };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_8BB(
+			ModelgeneratorRuleResult ruleResult, NamedElement2NamedElement c2c) {
+		if (ruleResult.getCorrObjects().contains(c2c)) {
+			return new Object[] { ruleResult, c2c };
 		}
 		return null;
 	}
@@ -4603,7 +4606,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 														ruleResult, nonParamType) == null) {
 													if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_5BB(
 															ruleResult, jContainer) == null) {
-														if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_7BB(
+														if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_6BB(
 																ruleResult, nonParamPackage) == null) {
 															for (Interface uContainer : org.moflon.core.utilities.eMoflonEMFUtil
 																	.getOppositeReferenceTyped(nonParamElement,
@@ -4616,7 +4619,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																					"source")) {
 																		if (!c2c.equals(ne2neNonParam)) {
 																			if (uContainer.equals(c2c.getTarget())) {
-																				if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_6BB(
+																				if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_8BB(
 																						ruleResult, c2c) == null) {
 																					for (JavaPackage2UmlPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil
 																							.getOppositeReferenceTyped(
@@ -4630,7 +4633,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																									.getPackagedElements()
 																									.contains(
 																											uContainer)) {
-																								if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_8BB(
+																								if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_7BB(
 																										ruleResult,
 																										jp2up) == null) {
 																									if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_0BB(
@@ -4645,9 +4648,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																														ne2neNonParam,
 																														nonParamType,
 																														jContainer,
-																														c2c,
 																														nonParamPackage,
 																														jp2up,
+																														c2c,
 																														ruleEntryContainer,
 																														ruleResult });
 																									}

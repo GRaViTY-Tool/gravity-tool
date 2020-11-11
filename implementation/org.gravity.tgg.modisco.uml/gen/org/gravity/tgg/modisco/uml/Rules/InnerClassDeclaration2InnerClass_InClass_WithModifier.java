@@ -214,7 +214,7 @@ public interface InnerClassDeclaration2InnerClass_InClass_WithModifier extends E
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_24(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_937(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface InnerClassDeclaration2InnerClass_InClass_WithModifier extends E
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_24(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_959(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

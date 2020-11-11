@@ -5,10 +5,11 @@ package org.gravity.tgg.modisco.uml.Rules;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.Modifier;
 
 import org.eclipse.uml2.uml.Operation;
 
-import org.gravity.modisco.MConstructorDefinition;
+import org.gravity.modisco.MMethodDefinition;
 
 import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
@@ -31,22 +32,23 @@ import org.moflon.tgg.runtime.TripleMatch;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Constructor Dec2 Operation Anonymous</b></em>'.
+ * A representation of the model object '<em><b>Method Dec2 Operation4 Anonymous With Modifier</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.gravity.tgg.modisco.uml.Rules.RulesPackage#getConstructorDec2OperationAnonymous()
+ * @see org.gravity.tgg.modisco.uml.Rules.RulesPackage#getMethodDec2Operation4AnonymousWithModifier()
  * @model
  * @generated
  */
-public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule {
+public interface MethodDec2Operation4AnonymousWithModifier extends EObject, AbstractRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AnonymousClassDeclaration mAnon, MConstructorDefinition bodyDeclaration);
+	boolean isAppropriate_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
+			AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,8 +72,8 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, AnonymousClassDeclaration mAnon,
-			MConstructorDefinition bodyDeclaration);
+	void registerObjectsToMatch_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
+			AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,8 +81,8 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, AnonymousClassDeclaration mAnon,
-			MConstructorDefinition bodyDeclaration);
+	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
+			AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,8 +98,9 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnon,
-			MConstructorDefinition bodyDeclaration, ASTNode2Element ba2na, org.eclipse.uml2.uml.Class uAnon);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition bodyDeclaration,
+			Modifier modifier, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element cd2c,
+			AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +116,8 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bd2ne, EObject feature, EObject b2e, EObject mAnon,
-			EObject bodyDeclaration, EObject ba2na, EObject uAnon);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +133,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class uAnon);
+	boolean isAppropriate_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +157,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class uAnon);
+	void registerObjectsToMatch_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +165,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class uAnon);
+	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,7 +182,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
-			AnonymousClassDeclaration mAnon, ASTNode2Element ba2na, org.eclipse.uml2.uml.Class uAnon);
+			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element cd2c, AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +198,8 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bd2ne, EObject feature, EObject b2e, EObject mAnon,
-			EObject bodyDeclaration, EObject ba2na, EObject uAnon);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +215,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_81(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_955(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +223,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_82(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_978(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,8 +255,8 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Operation feature, AnonymousClassDeclaration mAnon,
-			MConstructorDefinition bodyDeclaration, org.eclipse.uml2.uml.Class uAnon, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(Operation feature, MMethodDefinition bodyDeclaration, Modifier modifier,
+			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -270,7 +273,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AnonymousClassDeclaration mAnon, MConstructorDefinition bodyDeclaration);
+	boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, Modifier modifier, AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,7 +281,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Operation feature, org.eclipse.uml2.uml.Class uAnon);
+	boolean checkDEC_BWD(Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,7 +289,7 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element ba2naParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element cd2cParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,8 +297,8 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnon,
-			ASTNode2Element ba2na, org.eclipse.uml2.uml.Class uAnon, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class umlClass,
+			ASTNode2Element cd2c, AnonymousClassDeclaration classDec, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -307,4 +310,4 @@ public interface ConstructorDec2OperationAnonymous extends EObject, AbstractRule
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->
-} // ConstructorDec2OperationAnonymous
+} // MethodDec2Operation4AnonymousWithModifier

@@ -214,7 +214,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_69(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_987(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifi
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_70(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1010(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

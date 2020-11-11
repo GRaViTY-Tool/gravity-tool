@@ -699,7 +699,7 @@ public class TypeParameter2Object_InInterfaceImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_75(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_985(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = TypeParameter2Object_InInterfaceImpl
 				.pattern_TypeParameter2Object_InInterface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -759,7 +759,7 @@ public class TypeParameter2Object_InInterfaceImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_76(EMoflonEdge _edge_typeParameters) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1008(EMoflonEdge _edge_typeParameters) {
 
 		Object[] result1_bindingAndBlack = TypeParameter2Object_InInterfaceImpl
 				.pattern_TypeParameter2Object_InInterface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1203,10 +1203,10 @@ public class TypeParameter2Object_InInterfaceImpl extends AbstractRuleImpl imple
 			return null;
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_75__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_75((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_76__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_76((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_985__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_985((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1008__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_1008((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2189,7 +2189,7 @@ public class TypeParameter2Object_InInterfaceImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_TypeParameter2Object_InInterface_20_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.uml2.uml.Class uparam) {
-		for (org.eclipse.uml2.uml.Package __DEC_uparam_packagedElement_474861 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_uparam_packagedElement_585671 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(uparam, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { uparam };
 		}
@@ -2198,9 +2198,9 @@ public class TypeParameter2Object_InInterfaceImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_TypeParameter2Object_InInterface_20_2_testcorematchandDECs_black_nac_1B(
 			org.eclipse.uml2.uml.Class uparam) {
-		for (org.eclipse.uml2.uml.Class __DEC_uparam_nestedClassifier_313263 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_uparam_nestedClassifier_348065 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(uparam, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
-			if (!uparam.equals(__DEC_uparam_nestedClassifier_313263)) {
+			if (!uparam.equals(__DEC_uparam_nestedClassifier_348065)) {
 				return new Object[] { uparam };
 			}
 		}
@@ -2338,7 +2338,7 @@ public class TypeParameter2Object_InInterfaceImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_TypeParameter2Object_InInterface_21_2_testcorematchandDECs_black_nac_0B(
 			TypeParameter mparam) {
-		for (AbstractMethodDeclaration __DEC_mparam_typeParameters_218166 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractMethodDeclaration __DEC_mparam_typeParameters_499374 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mparam, AbstractMethodDeclaration.class, "typeParameters")) {
 			return new Object[] { mparam };
 		}
@@ -2584,7 +2584,7 @@ public class TypeParameter2Object_InInterfaceImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_TypeParameter2Object_InInterface_27_1_matchtggpattern_black_nac_0B(
 			TypeParameter mparam) {
-		for (AbstractMethodDeclaration __DEC_mparam_typeParameters_773289 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractMethodDeclaration __DEC_mparam_typeParameters_538484 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mparam, AbstractMethodDeclaration.class, "typeParameters")) {
 			return new Object[] { mparam };
 		}
@@ -2613,7 +2613,7 @@ public class TypeParameter2Object_InInterfaceImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_TypeParameter2Object_InInterface_28_1_matchtggpattern_black_nac_0B(
 			org.eclipse.uml2.uml.Class uparam) {
-		for (org.eclipse.uml2.uml.Package __DEC_uparam_packagedElement_367030 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_uparam_packagedElement_738822 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(uparam, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { uparam };
 		}
@@ -2622,9 +2622,9 @@ public class TypeParameter2Object_InInterfaceImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_TypeParameter2Object_InInterface_28_1_matchtggpattern_black_nac_1B(
 			org.eclipse.uml2.uml.Class uparam) {
-		for (org.eclipse.uml2.uml.Class __DEC_uparam_nestedClassifier_465056 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_uparam_nestedClassifier_735846 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(uparam, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
-			if (!uparam.equals(__DEC_uparam_nestedClassifier_465056)) {
+			if (!uparam.equals(__DEC_uparam_nestedClassifier_735846)) {
 				return new Object[] { uparam };
 			}
 		}

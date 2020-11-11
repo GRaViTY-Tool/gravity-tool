@@ -47,7 +47,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier 
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, EnumDeclaration bodyDeclaration,
+	boolean isAppropriate_FWD(Match match, EnumDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -72,7 +72,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier 
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, EnumDeclaration bodyDeclaration,
+	void registerObjectsToMatch_FWD(Match match, EnumDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -81,7 +81,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier 
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, EnumDeclaration bodyDeclaration,
+	CSP isAppropriate_solveCsp_FWD(Match match, EnumDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -98,8 +98,8 @@ public interface InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier 
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			EnumDeclaration bodyDeclaration, Interface uContainer, AbstractTypeDeclaration jContainer,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, EnumDeclaration bodyDeclaration,
+			Modifier modifier, Interface uContainer, AbstractTypeDeclaration jContainer,
 			NamedElement2NamedElement ne2ne);
 
 	/**
@@ -116,8 +116,8 @@ public interface InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier 
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,8 +198,8 @@ public interface InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier 
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_42(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_965(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_43(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_988(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,7 +255,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier 
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Enumeration feature, Modifier modifier, EnumDeclaration bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Enumeration feature, EnumDeclaration bodyDeclaration, Modifier modifier,
 			Interface uContainer, AbstractTypeDeclaration jContainer, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -272,7 +272,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier 
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, EnumDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer);
+	boolean checkDEC_FWD(EnumDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer);
 
 	/**
 	 * <!-- begin-user-doc -->

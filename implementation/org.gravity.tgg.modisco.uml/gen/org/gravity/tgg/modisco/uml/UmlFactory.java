@@ -31,6 +31,15 @@ public interface UmlFactory extends EFactory {
 	ParameterizedType2RedefinableTemplateSignature createParameterizedType2RedefinableTemplateSignature();
 
 	/**
+	 * Returns a new object of class '<em>Modifier2 Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Modifier2 Named Element</em>'.
+	 * @generated
+	 */
+	Modifier2NamedElement createModifier2NamedElement();
+
+	/**
 	 * Returns a new object of class '<em>Type Access2 Generalization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -40,13 +49,13 @@ public interface UmlFactory extends EFactory {
 	TypeAccess2Generalization createTypeAccess2Generalization();
 
 	/**
-	 * Returns a new object of class '<em>Java Package2 Uml Package</em>'.
+	 * Returns a new object of class '<em>Type Access2 Template Binding</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Java Package2 Uml Package</em>'.
+	 * @return a new object of class '<em>Type Access2 Template Binding</em>'.
 	 * @generated
 	 */
-	JavaPackage2UmlPackage createJavaPackage2UmlPackage();
+	TypeAccess2TemplateBinding createTypeAccess2TemplateBinding();
 
 	/**
 	 * Returns a new object of class '<em>Variable Dec2 Parameter</em>'.
@@ -56,15 +65,6 @@ public interface UmlFactory extends EFactory {
 	 * @generated
 	 */
 	VariableDec2Parameter createVariableDec2Parameter();
-
-	/**
-	 * Returns a new object of class '<em>Type Access2 Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type Access2 Property</em>'.
-	 * @generated
-	 */
-	TypeAccess2Property createTypeAccess2Property();
 
 	/**
 	 * Returns a new object of class '<em>Type Access2 Parameter</em>'.
@@ -85,31 +85,22 @@ public interface UmlFactory extends EFactory {
 	TypeAccess2InterfaceRealization createTypeAccess2InterfaceRealization();
 
 	/**
-	 * Returns a new object of class '<em>AST Node2 Element</em>'.
+	 * Returns a new object of class '<em>Java Package2 Uml Package</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>AST Node2 Element</em>'.
+	 * @return a new object of class '<em>Java Package2 Uml Package</em>'.
 	 * @generated
 	 */
-	ASTNode2Element createASTNode2Element();
+	JavaPackage2UmlPackage createJavaPackage2UmlPackage();
 
 	/**
-	 * Returns a new object of class '<em>Named Element2 Named Element</em>'.
+	 * Returns a new object of class '<em>Type Access2 Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Named Element2 Named Element</em>'.
+	 * @return a new object of class '<em>Type Access2 Property</em>'.
 	 * @generated
 	 */
-	NamedElement2NamedElement createNamedElement2NamedElement();
-
-	/**
-	 * Returns a new object of class '<em>Expression2 Comment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Expression2 Comment</em>'.
-	 * @generated
-	 */
-	Expression2Comment createExpression2Comment();
+	TypeAccess2Property createTypeAccess2Property();
 
 	/**
 	 * Returns a new object of class '<em>Compilation Unit2 Artifact</em>'.
@@ -121,22 +112,13 @@ public interface UmlFactory extends EFactory {
 	CompilationUnit2Artifact createCompilationUnit2Artifact();
 
 	/**
-	 * Returns a new object of class '<em>Modifier2 Named Element</em>'.
+	 * Returns a new object of class '<em>Named Element2 Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Modifier2 Named Element</em>'.
+	 * @return a new object of class '<em>Named Element2 Named Element</em>'.
 	 * @generated
 	 */
-	Modifier2NamedElement createModifier2NamedElement();
-
-	/**
-	 * Returns a new object of class '<em>Type Access2 Template Binding</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type Access2 Template Binding</em>'.
-	 * @generated
-	 */
-	TypeAccess2TemplateBinding createTypeAccess2TemplateBinding();
+	NamedElement2NamedElement createNamedElement2NamedElement();
 
 	/**
 	 * Returns a new object of class '<em>Java Model2 UML Package</em>'.
@@ -146,6 +128,24 @@ public interface UmlFactory extends EFactory {
 	 * @generated
 	 */
 	JavaModel2UMLPackage createJavaModel2UMLPackage();
+
+	/**
+	 * Returns a new object of class '<em>Expression2 Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Expression2 Comment</em>'.
+	 * @generated
+	 */
+	Expression2Comment createExpression2Comment();
+
+	/**
+	 * Returns a new object of class '<em>AST Node2 Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>AST Node2 Element</em>'.
+	 * @generated
+	 */
+	ASTNode2Element createASTNode2Element();
 
 	/**
 	 * Returns the package supported by this factory.

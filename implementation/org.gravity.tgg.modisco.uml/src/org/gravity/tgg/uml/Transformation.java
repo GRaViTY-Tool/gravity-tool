@@ -187,10 +187,10 @@ public final class Transformation extends SynchronizationHelper {
 
 		subMonitor.setTaskName("Postprocess UML Model");
 		subMonitor.setWorkRemaining(15);
-		final Model model = (Model) getTrg();
-		if (model == null) {
+		if (!(trg instanceof Model)) {
 			throw new TransformationFailedException("Reverseengineering of a UML model failed.");
 		}
+		final Model model = (Model) trg;
 
 		try {
 			new UmlSecProcessor(model).processFwd();

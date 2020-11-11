@@ -4,13 +4,13 @@ package org.gravity.tgg.modisco.uml.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.ClassDeclaration;
 
 import org.eclipse.uml2.uml.Operation;
 
 import org.gravity.modisco.MMethodDefinition;
 
-import org.gravity.tgg.modisco.uml.NamedElement2NamedElement;
+import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
 import org.moflon.tgg.language.csp.CSP;
 
@@ -46,7 +46,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MMethodDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
+	boolean isAppropriate_FWD(Match match, MMethodDefinition bodyDeclaration, ClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MMethodDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
+	void registerObjectsToMatch_FWD(Match match, MMethodDefinition bodyDeclaration, ClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
+	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition bodyDeclaration, ClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,7 +95,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class umlClass, NamedElement2NamedElement cd2c, AbstractTypeDeclaration classDec);
+			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element cd2c, ClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,7 +111,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject b2e,
 			EObject bodyDeclaration, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
@@ -177,7 +177,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
-			org.eclipse.uml2.uml.Class umlClass, NamedElement2NamedElement cd2c, AbstractTypeDeclaration classDec);
+			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element cd2c, ClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,7 +193,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject b2e,
 			EObject bodyDeclaration, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
@@ -210,7 +210,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1005(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1029(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,8 +251,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(Operation feature, MMethodDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class umlClass, AbstractTypeDeclaration classDec, Match sourceMatch,
-			Match targetMatch);
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,7 +267,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
+	boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, ClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,8 +283,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			NamedElement2NamedElement cd2cParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element cd2cParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,7 +292,7 @@ public interface MethodDec2Operation4Class extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class umlClass,
-			NamedElement2NamedElement cd2c, AbstractTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult);
+			ASTNode2Element cd2c, ClassDeclaration classDec, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

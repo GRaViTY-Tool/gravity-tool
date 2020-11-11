@@ -3,28 +3,18 @@
 
 #rule ConstructorDec2Operation4Enum #extends ConstructorDec2Operation_Abstract #with org.gravity.tgg.modisco.uml
 
-#source { 
-
-	classDec : AbstractTypeDeclaration {
+#source {
+	classDec:EnumDeclaration {
+		++ -bodyDeclarations -> bodyDeclaration
 	}
-	
+
+	++bodyDeclaration:MConstructorDefinition
 }
 
 #target {
-	umlClass : Enumeration {
-		++ -ownedOperation->feature
-	}
-	
-	++ feature : Operation{
-
+	umlClass:Enumeration {
+		++ -ownedOperation -> feature
 	}
 
-}
-
-#correspondence {
-	cd2c : NamedElement2NamedElement {
-		#src->classDec
-		#trg->umlClass
-	}
-
+	++feature:Operation
 }

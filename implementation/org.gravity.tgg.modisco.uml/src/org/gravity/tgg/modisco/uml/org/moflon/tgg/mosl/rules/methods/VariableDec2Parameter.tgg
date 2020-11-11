@@ -1,53 +1,65 @@
 #using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#rule VariableDec2Parameter #with org.gravity.tgg.modisco.uml
+#rule VariableDec2Parameter4 #with org.gravity.tgg.modisco.uml
 
-#source { 
-	owner : AbstractTypeDeclaration {
-		-bodyDeclarations->method
+#source {
+	method:AbstractMethodDeclaration {
+		++ -parameters -> variableDec
 	}
-	method : AbstractMethodDeclaration {
-		++ -parameters->variableDec
+
+	++variableDec:MSingleVariableDeclaration{
+		++ -type -> typeAccess
 	}
-	
-	++ variableDec : MSingleVariableDeclaration{
-		++ -type->typeAccess
+
+	++typeAccess:TypeAccess {
+		++-type -> jType
 	}
-	
-	++ typeAccess : TypeAccess
+
+	jType:Type
 }
 
 #target {
-	operation : Operation {
-		++ -ownedParameter->param
+	operation:Operation {
+		++ -ownedParameter -> param
 	}
-	++ param : Parameter
+
+	++param:Parameter{
+		++-type -> uType
+	}
+
+	uType:Type
 }
 
-#correspondence {	
-	md2o : NamedElement2NamedElement {
+#correspondence {
+	md2o :NamedElement2NamedElement {
 		#src->method
 		#trg->operation
 	}
-	
-	++ n2n : NamedElement2NamedElement {
+
+	++ n2n :NamedElement2NamedElement {
 		#src->variableDec
 		#trg->param
 	}
-	
-	++ vd2p : VariableDec2Parameter {
+
+	++ vd2p :VariableDec2Parameter {
 		#src->variableDec
 		#trg->param
 	}
-	
+
 	++ty2p:TypeAccess2Parameter {
 		#src->typeAccess
 		#trg->param
+	}
+
+	ne2ne:NamedElement2NamedElement {
+		#src->jType
+		#trg->uType
 	}
 }
 
 #attributeConditions {
 	eq(variableDec.name, param.name)
+
 	isInParameter(param.direction)
 }

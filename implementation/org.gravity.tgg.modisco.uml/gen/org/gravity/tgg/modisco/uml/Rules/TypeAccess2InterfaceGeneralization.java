@@ -97,9 +97,9 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Interface superInterface,
-			NamedElement2NamedElement cd2c, TypeAccess typeAcc, NamedElement2NamedElement cd2c2,
-			InterfaceDeclaration superInterfaceDec, InterfaceDeclaration classDec, Interface childInterface);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement cd2c,
+			Interface childInterface, TypeAccess typeAcc, InterfaceDeclaration superInterfaceDec,
+			NamedElement2NamedElement cd2c2, InterfaceDeclaration classDec, Interface superInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,9 +115,9 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject superInterface, EObject cd2c,
-			EObject interfaceGeneralization, EObject typeAcc, EObject cd2c2, EObject superInterfaceDec,
-			EObject classDec, EObject childInterface, EObject ta2g);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject interfaceGeneralization, EObject cd2c,
+			EObject childInterface, EObject typeAcc, EObject superInterfaceDec, EObject cd2c2, EObject classDec,
+			EObject ta2g, EObject superInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,8 +133,8 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Interface superInterface, Generalization interfaceGeneralization,
-			Interface childInterface);
+	boolean isAppropriate_BWD(Match match, Generalization interfaceGeneralization, Interface childInterface,
+			Interface superInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,8 +158,8 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Interface superInterface, Generalization interfaceGeneralization,
-			Interface childInterface);
+	void registerObjectsToMatch_BWD(Match match, Generalization interfaceGeneralization, Interface childInterface,
+			Interface superInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,8 +167,8 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Interface superInterface, Generalization interfaceGeneralization,
-			Interface childInterface);
+	CSP isAppropriate_solveCsp_BWD(Match match, Generalization interfaceGeneralization, Interface childInterface,
+			Interface superInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,9 +184,9 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface superInterface,
-			NamedElement2NamedElement cd2c, Generalization interfaceGeneralization, NamedElement2NamedElement cd2c2,
-			InterfaceDeclaration superInterfaceDec, InterfaceDeclaration classDec, Interface childInterface);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Generalization interfaceGeneralization,
+			NamedElement2NamedElement cd2c, Interface childInterface, InterfaceDeclaration superInterfaceDec,
+			NamedElement2NamedElement cd2c2, InterfaceDeclaration classDec, Interface superInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,9 +202,9 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject superInterface, EObject cd2c,
-			EObject interfaceGeneralization, EObject typeAcc, EObject cd2c2, EObject superInterfaceDec,
-			EObject classDec, EObject childInterface, EObject ta2g);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject interfaceGeneralization, EObject cd2c,
+			EObject childInterface, EObject typeAcc, EObject superInterfaceDec, EObject cd2c2, EObject classDec,
+			EObject ta2g, EObject superInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_72(EMoflonEdge _edge_generalization);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_969(EMoflonEdge _edge_general);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +228,7 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_73(EMoflonEdge _edge_superInterfaces);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_992(EMoflonEdge _edge_superInterfaces);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,8 +260,8 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Interface superInterface, Generalization interfaceGeneralization, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec, InterfaceDeclaration classDec, Interface childInterface,
+	CSP isApplicable_solveCsp_CC(Generalization interfaceGeneralization, Interface childInterface, TypeAccess typeAcc,
+			InterfaceDeclaration superInterfaceDec, InterfaceDeclaration classDec, Interface superInterface,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -286,7 +286,7 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Interface superInterface, Generalization interfaceGeneralization, Interface childInterface);
+	boolean checkDEC_BWD(Generalization interfaceGeneralization, Interface childInterface, Interface superInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,7 +295,7 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			NamedElement2NamedElement cd2c2Parameter, NamedElement2NamedElement cd2cParameter);
+			NamedElement2NamedElement cd2cParameter, NamedElement2NamedElement cd2c2Parameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,9 +303,9 @@ public interface TypeAccess2InterfaceGeneralization extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface superInterface,
-			NamedElement2NamedElement cd2c, NamedElement2NamedElement cd2c2, InterfaceDeclaration superInterfaceDec,
-			InterfaceDeclaration classDec, Interface childInterface, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement cd2c,
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, NamedElement2NamedElement cd2c2,
+			InterfaceDeclaration classDec, Interface superInterface, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

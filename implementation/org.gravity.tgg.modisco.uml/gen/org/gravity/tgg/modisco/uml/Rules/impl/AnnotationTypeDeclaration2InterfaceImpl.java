@@ -101,25 +101,25 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage) {
+	public boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
+			AnnotationTypeDeclaration bodyDeclaration) {
 
 		Object[] result1_black = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_0_1_initialbindings_blackBBBB(this, match, bodyDeclaration,
-						jPackage);
+				.pattern_AnnotationTypeDeclaration2Interface_0_1_initialbindings_blackBBBB(this, match, jPackage,
+						bodyDeclaration);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = "
-					+ jPackage + ".");
+					+ "[match] = " + match + ", " + "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ".");
 		}
 
 		Object[] result2_bindingAndBlack = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_0_2_SolveCSP_bindingAndBlackFBBBB(this, match,
-						bodyDeclaration, jPackage);
+				.pattern_AnnotationTypeDeclaration2Interface_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, jPackage,
+						bodyDeclaration);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = "
-					+ jPackage + ".");
+					+ "[match] = " + match + ", " + "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -128,23 +128,23 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 			Object[] result4_black = AnnotationTypeDeclaration2InterfaceImpl
 					.pattern_AnnotationTypeDeclaration2Interface_0_4_collectelementstobetranslated_blackBBB(match,
-							bodyDeclaration, jPackage);
+							jPackage, bodyDeclaration);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = " + jPackage + ".");
+						+ "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
 			}
 			AnnotationTypeDeclaration2InterfaceImpl
 					.pattern_AnnotationTypeDeclaration2Interface_0_4_collectelementstobetranslated_greenBBBFF(match,
-							bodyDeclaration, jPackage);
+							jPackage, bodyDeclaration);
 			//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = AnnotationTypeDeclaration2InterfaceImpl
-					.pattern_AnnotationTypeDeclaration2Interface_0_5_collectcontextelements_blackBBB(match,
-							bodyDeclaration, jPackage);
+					.pattern_AnnotationTypeDeclaration2Interface_0_5_collectcontextelements_blackBBB(match, jPackage,
+							bodyDeclaration);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = " + jPackage + ".");
+						+ "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
 			}
 			AnnotationTypeDeclaration2InterfaceImpl
 					.pattern_AnnotationTypeDeclaration2Interface_0_5_collectcontextelements_greenBB(match, jPackage);
@@ -152,7 +152,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 			// 
 			AnnotationTypeDeclaration2InterfaceImpl
 					.pattern_AnnotationTypeDeclaration2Interface_0_6_registerobjectstomatch_expressionBBBB(this, match,
-							bodyDeclaration, jPackage);
+							jPackage, bodyDeclaration);
 			return AnnotationTypeDeclaration2InterfaceImpl
 					.pattern_AnnotationTypeDeclaration2Interface_0_7_expressionF();
 		} else {
@@ -176,56 +176,56 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[0];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[0];
 		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[1];
-		AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result1_bindingAndBlack[2];
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[3];
+		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[2];
+		AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_greenFFBFBB(uPackage,
+				.pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_greenFBBFFB(uPackage,
 						bodyDeclaration, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[1];
-		Interface feature = (Interface) result1_green[3];
+		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[0];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[3];
+		Interface feature = (Interface) result1_green[4];
 
 		Object[] result2_black = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_1_2_collecttranslatedelements_blackBBBB(b2e, bd2ne,
-						feature, bodyDeclaration);
+				.pattern_AnnotationTypeDeclaration2Interface_1_2_collecttranslatedelements_blackBBBB(bd2ne,
+						bodyDeclaration, b2e, feature);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", " + "[bd2ne] = " + bd2ne + ", "
-							+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					"Pattern matching failed." + " Variables: " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ".");
 		}
 		Object[] result2_green = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_1_2_collecttranslatedelements_greenFBBBB(b2e, bd2ne,
-						feature, bodyDeclaration);
+				.pattern_AnnotationTypeDeclaration2Interface_1_2_collecttranslatedelements_greenFBBBB(bd2ne,
+						bodyDeclaration, b2e, feature);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, b2e,
-						bd2ne, jp2up, uPackage, feature, bodyDeclaration, jPackage);
+				.pattern_AnnotationTypeDeclaration2Interface_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, bd2ne,
+						jPackage, uPackage, jp2up, bodyDeclaration, b2e, feature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[bd2ne] = " + bd2ne + ", " + "[jp2up] = " + jp2up + ", "
-					+ "[uPackage] = " + uPackage + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[jPackage] = " + jPackage + ".");
+					+ ", " + "[bd2ne] = " + bd2ne + ", " + "[jPackage] = " + jPackage + ", " + "[uPackage] = "
+					+ uPackage + ", " + "[jp2up] = " + jp2up + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[b2e] = " + b2e + ", " + "[feature] = " + feature + ".");
 		}
 		AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult,
-						b2e, bd2ne, uPackage, feature, bodyDeclaration, jPackage);
-		//nothing EMoflonEdge uPackage__feature____packagedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[13];
+						bd2ne, jPackage, uPackage, bodyDeclaration, b2e, feature);
+		//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge uPackage__feature____packagedElement = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
 		AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
-						b2e, bd2ne, jp2up, uPackage, feature, bodyDeclaration, jPackage);
+						bd2ne, jPackage, uPackage, jp2up, bodyDeclaration, b2e, feature);
 		return AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_1_6_expressionFB(ruleresult);
 	}
@@ -255,34 +255,34 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result2_binding[0];
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_binding[1];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_binding[0];
+		AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result2_binding[1];
 		for (Object[] result2_black : AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_2_2_corematch_blackFFBBB(bodyDeclaration, jPackage,
+				.pattern_AnnotationTypeDeclaration2Interface_2_2_corematch_blackBFFBB(jPackage, bodyDeclaration,
 						match)) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[0];
 			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[1];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : AnnotationTypeDeclaration2InterfaceImpl
-					.pattern_AnnotationTypeDeclaration2Interface_2_3_findcontext_blackBBBB(jp2up, uPackage,
-							bodyDeclaration, jPackage)) {
+					.pattern_AnnotationTypeDeclaration2Interface_2_3_findcontext_blackBBBB(jPackage, uPackage, jp2up,
+							bodyDeclaration)) {
 				Object[] result3_green = AnnotationTypeDeclaration2InterfaceImpl
-						.pattern_AnnotationTypeDeclaration2Interface_2_3_findcontext_greenBBBBFFFFF(jp2up, uPackage,
-								bodyDeclaration, jPackage);
+						.pattern_AnnotationTypeDeclaration2Interface_2_3_findcontext_greenBBBBFFFFF(jPackage, uPackage,
+								jp2up, bodyDeclaration);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge jp2up__uPackage____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge jp2up__uPackage____target = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = AnnotationTypeDeclaration2InterfaceImpl
 						.pattern_AnnotationTypeDeclaration2Interface_2_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, jp2up, uPackage, bodyDeclaration, jPackage);
+								isApplicableMatch, jPackage, uPackage, jp2up, bodyDeclaration);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jp2up] = " + jp2up + ", "
-							+ "[uPackage] = " + uPackage + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-							+ "[jPackage] = " + jPackage + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jPackage] = " + jPackage + ", "
+							+ "[uPackage] = " + uPackage + ", " + "[jp2up] = " + jp2up + ", " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -315,10 +315,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage) {
-		match.registerObject("bodyDeclaration", bodyDeclaration);
+	public void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
+			AnnotationTypeDeclaration bodyDeclaration) {
 		match.registerObject("jPackage", jPackage);
+		match.registerObject("bodyDeclaration", bodyDeclaration);
 
 	}
 
@@ -327,8 +327,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
+			AnnotationTypeDeclaration bodyDeclaration) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -357,9 +357,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
-			org.eclipse.uml2.uml.Package uPackage, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
+			org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage jp2up,
+			AnnotationTypeDeclaration bodyDeclaration) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -389,10 +389,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		nonParameterizedName.solve(var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jp2up", jp2up);
-		isApplicableMatch.registerObject("uPackage", uPackage);
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("jPackage", jPackage);
+		isApplicableMatch.registerObject("uPackage", uPackage);
+		isApplicableMatch.registerObject("jp2up", jp2up);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		return csp;
 	}
 
@@ -410,15 +410,15 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject bd2ne, EObject jp2up,
-			EObject uPackage, EObject feature, EObject bodyDeclaration, EObject jPackage) {
-		ruleresult.registerObject("b2e", b2e);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject bd2ne, EObject jPackage, EObject uPackage,
+			EObject jp2up, EObject bodyDeclaration, EObject b2e, EObject feature) {
 		ruleresult.registerObject("bd2ne", bd2ne);
-		ruleresult.registerObject("jp2up", jp2up);
-		ruleresult.registerObject("uPackage", uPackage);
-		ruleresult.registerObject("feature", feature);
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("jPackage", jPackage);
+		ruleresult.registerObject("uPackage", uPackage);
+		ruleresult.registerObject("jp2up", jp2up);
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("feature", feature);
 
 	}
 
@@ -508,56 +508,56 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[0];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[0];
 		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[1];
-		Interface feature = (Interface) result1_bindingAndBlack[2];
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[3];
+		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[2];
+		Interface feature = (Interface) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_greenFFBFBB(feature, jPackage,
+				.pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_greenFBFFBB(jPackage, feature,
 						csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[1];
-		AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result1_green[3];
+		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[0];
+		AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result1_green[2];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[3];
 
 		Object[] result2_black = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_11_2_collecttranslatedelements_blackBBBB(b2e, bd2ne,
-						feature, bodyDeclaration);
+				.pattern_AnnotationTypeDeclaration2Interface_11_2_collecttranslatedelements_blackBBBB(bd2ne,
+						bodyDeclaration, b2e, feature);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", " + "[bd2ne] = " + bd2ne + ", "
-							+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					"Pattern matching failed." + " Variables: " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ".");
 		}
 		Object[] result2_green = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_11_2_collecttranslatedelements_greenFBBBB(b2e, bd2ne,
-						feature, bodyDeclaration);
+				.pattern_AnnotationTypeDeclaration2Interface_11_2_collecttranslatedelements_greenFBBBB(bd2ne,
+						bodyDeclaration, b2e, feature);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, b2e,
-						bd2ne, jp2up, uPackage, feature, bodyDeclaration, jPackage);
+				.pattern_AnnotationTypeDeclaration2Interface_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, bd2ne,
+						jPackage, uPackage, jp2up, bodyDeclaration, b2e, feature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[bd2ne] = " + bd2ne + ", " + "[jp2up] = " + jp2up + ", "
-					+ "[uPackage] = " + uPackage + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[jPackage] = " + jPackage + ".");
+					+ ", " + "[bd2ne] = " + bd2ne + ", " + "[jPackage] = " + jPackage + ", " + "[uPackage] = "
+					+ uPackage + ", " + "[jp2up] = " + jp2up + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[b2e] = " + b2e + ", " + "[feature] = " + feature + ".");
 		}
 		AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult,
-						b2e, bd2ne, uPackage, feature, bodyDeclaration, jPackage);
-		//nothing EMoflonEdge uPackage__feature____packagedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[13];
+						bd2ne, jPackage, uPackage, bodyDeclaration, b2e, feature);
+		//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge uPackage__feature____packagedElement = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
 		AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
-						b2e, bd2ne, jp2up, uPackage, feature, bodyDeclaration, jPackage);
+						bd2ne, jPackage, uPackage, jp2up, bodyDeclaration, b2e, feature);
 		return AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_11_6_expressionFB(ruleresult);
 	}
@@ -590,29 +590,29 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_binding[0];
 		Interface feature = (Interface) result2_binding[1];
 		for (Object[] result2_black : AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_12_2_corematch_blackFBBFB(uPackage, feature, match)) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[0];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[3];
+				.pattern_AnnotationTypeDeclaration2Interface_12_2_corematch_blackFBFBB(uPackage, feature, match)) {
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[0];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : AnnotationTypeDeclaration2InterfaceImpl
-					.pattern_AnnotationTypeDeclaration2Interface_12_3_findcontext_blackBBBB(jp2up, uPackage, feature,
-							jPackage)) {
+					.pattern_AnnotationTypeDeclaration2Interface_12_3_findcontext_blackBBBB(jPackage, uPackage, jp2up,
+							feature)) {
 				Object[] result3_green = AnnotationTypeDeclaration2InterfaceImpl
-						.pattern_AnnotationTypeDeclaration2Interface_12_3_findcontext_greenBBBBFFFF(jp2up, uPackage,
-								feature, jPackage);
+						.pattern_AnnotationTypeDeclaration2Interface_12_3_findcontext_greenBBBBFFFF(jPackage, uPackage,
+								jp2up, feature);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge jp2up__uPackage____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge uPackage__feature____packagedElement = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge uPackage__feature____packagedElement = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge jp2up__uPackage____target = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = AnnotationTypeDeclaration2InterfaceImpl
 						.pattern_AnnotationTypeDeclaration2Interface_12_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, jp2up, uPackage, feature, jPackage);
+								isApplicableMatch, jPackage, uPackage, jp2up, feature);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jp2up] = " + jp2up + ", "
-							+ "[uPackage] = " + uPackage + ", " + "[feature] = " + feature + ", " + "[jPackage] = "
-							+ jPackage + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jPackage] = " + jPackage + ", "
+							+ "[uPackage] = " + uPackage + ", " + "[jp2up] = " + jp2up + ", " + "[feature] = " + feature
+							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -693,8 +693,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
-			org.eclipse.uml2.uml.Package uPackage, Interface feature, org.eclipse.modisco.java.Package jPackage) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
+			org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage jp2up, Interface feature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -719,10 +719,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jp2up", jp2up);
-		isApplicableMatch.registerObject("uPackage", uPackage);
-		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("jPackage", jPackage);
+		isApplicableMatch.registerObject("uPackage", uPackage);
+		isApplicableMatch.registerObject("jp2up", jp2up);
+		isApplicableMatch.registerObject("feature", feature);
 		return csp;
 	}
 
@@ -740,15 +740,15 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject bd2ne, EObject jp2up,
-			EObject uPackage, EObject feature, EObject bodyDeclaration, EObject jPackage) {
-		ruleresult.registerObject("b2e", b2e);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject bd2ne, EObject jPackage, EObject uPackage,
+			EObject jp2up, EObject bodyDeclaration, EObject b2e, EObject feature) {
 		ruleresult.registerObject("bd2ne", bd2ne);
-		ruleresult.registerObject("jp2up", jp2up);
-		ruleresult.registerObject("uPackage", uPackage);
-		ruleresult.registerObject("feature", feature);
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("jPackage", jPackage);
+		ruleresult.registerObject("uPackage", uPackage);
+		ruleresult.registerObject("jp2up", jp2up);
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("feature", feature);
 
 	}
 
@@ -767,7 +767,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_54(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_964(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -828,7 +828,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_55(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_987(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -845,8 +845,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		// ForEach 
 		for (Object[] result2_black : AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_21_2_testcorematchandDECs_blackFFB(_edge_ownedElements)) {
-			AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result2_black[0];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[1];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[0];
+			AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result2_black[1];
 			Object[] result2_green = AnnotationTypeDeclaration2InterfaceImpl
 					.pattern_AnnotationTypeDeclaration2Interface_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -854,7 +854,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 			// 
 			if (AnnotationTypeDeclaration2InterfaceImpl
 					.pattern_AnnotationTypeDeclaration2Interface_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, bodyDeclaration, jPackage)) {
+							this, match, jPackage, bodyDeclaration)) {
 				// 
 				if (AnnotationTypeDeclaration2InterfaceImpl
 						.pattern_AnnotationTypeDeclaration2Interface_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -898,13 +898,13 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -954,13 +954,13 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
 		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
 		csp.getConstraints().add(nonParameterizedName0);
@@ -1016,19 +1016,19 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[0];
-		Interface feature = (Interface) result2_bindingAndBlack[1];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[0];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[1];
 		AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result2_bindingAndBlack[2];
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[3];
+		Interface feature = (Interface) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, uPackage,
-						feature, bodyDeclaration, jPackage, sourceMatch, targetMatch);
+				.pattern_AnnotationTypeDeclaration2Interface_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, jPackage,
+						uPackage, bodyDeclaration, feature, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[uPackage] = " + uPackage + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[jPackage] = " + jPackage + ", " + "[sourceMatch] = " + sourceMatch
-					+ ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[jPackage] = " + jPackage + ", " + "[uPackage] = " + uPackage + ", " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ", " + "[feature] = " + feature + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
@@ -1036,27 +1036,27 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 				.pattern_AnnotationTypeDeclaration2Interface_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : AnnotationTypeDeclaration2InterfaceImpl
-					.pattern_AnnotationTypeDeclaration2Interface_24_5_matchcorrcontext_blackFBBBB(uPackage, jPackage,
+					.pattern_AnnotationTypeDeclaration2Interface_24_5_matchcorrcontext_blackBBFBB(jPackage, uPackage,
 							sourceMatch, targetMatch)) {
-				JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result5_black[0];
+				JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result5_black[2];
 				Object[] result5_green = AnnotationTypeDeclaration2InterfaceImpl
 						.pattern_AnnotationTypeDeclaration2Interface_24_5_matchcorrcontext_greenBBBF(jp2up, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = AnnotationTypeDeclaration2InterfaceImpl
-						.pattern_AnnotationTypeDeclaration2Interface_24_6_createcorrespondence_blackBBBBB(uPackage,
-								feature, bodyDeclaration, jPackage, ccMatch);
+						.pattern_AnnotationTypeDeclaration2Interface_24_6_createcorrespondence_blackBBBBB(jPackage,
+								uPackage, bodyDeclaration, feature, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uPackage] = " + uPackage
-							+ ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-							+ "[jPackage] = " + jPackage + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jPackage] = " + jPackage
+							+ ", " + "[uPackage] = " + uPackage + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+							+ "[feature] = " + feature + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				AnnotationTypeDeclaration2InterfaceImpl
-						.pattern_AnnotationTypeDeclaration2Interface_24_6_createcorrespondence_greenFFBBB(feature,
-								bodyDeclaration, ccMatch);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
-				//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[1];
+						.pattern_AnnotationTypeDeclaration2Interface_24_6_createcorrespondence_greenFBFBB(
+								bodyDeclaration, feature, ccMatch);
+				//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[0];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 
 				Object[] result7_black = AnnotationTypeDeclaration2InterfaceImpl
 						.pattern_AnnotationTypeDeclaration2Interface_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1080,9 +1080,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package uPackage, Interface feature,
-			AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage, Match sourceMatch,
-			Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.Package jPackage,
+			org.eclipse.uml2.uml.Package uPackage, AnnotationTypeDeclaration bodyDeclaration, Interface feature,
+			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1127,9 +1127,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {// 
+	public boolean checkDEC_FWD(org.eclipse.modisco.java.Package jPackage, AnnotationTypeDeclaration bodyDeclaration) {// 
 		Object[] result1_black = AnnotationTypeDeclaration2InterfaceImpl
-				.pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_blackBB(bodyDeclaration, jPackage);
+				.pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_blackBB(jPackage, bodyDeclaration);
 		if (result1_black != null) {
 			return AnnotationTypeDeclaration2InterfaceImpl
 					.pattern_AnnotationTypeDeclaration2Interface_27_2_expressionF();
@@ -1181,17 +1181,17 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 				.pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList jp2upList = (RuleEntryList) result2_black[0];
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[1];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[2];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[3];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[1];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[2];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[3];
 
 			Object[] result3_bindingAndBlack = AnnotationTypeDeclaration2InterfaceImpl
 					.pattern_AnnotationTypeDeclaration2Interface_29_3_solveCSP_bindingAndBlackFBBBBBB(this,
-							isApplicableMatch, jp2up, uPackage, jPackage, ruleResult);
+							isApplicableMatch, jPackage, uPackage, jp2up, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jp2up] = " + jp2up + ", "
-						+ "[uPackage] = " + uPackage + ", " + "[jPackage] = " + jPackage + ", " + "[ruleResult] = "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jPackage] = " + jPackage + ", "
+						+ "[uPackage] = " + uPackage + ", " + "[jp2up] = " + jp2up + ", " + "[ruleResult] = "
 						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1200,24 +1200,24 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 					.pattern_AnnotationTypeDeclaration2Interface_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = AnnotationTypeDeclaration2InterfaceImpl
-						.pattern_AnnotationTypeDeclaration2Interface_29_5_checknacs_blackBBB(jp2up, uPackage, jPackage);
+						.pattern_AnnotationTypeDeclaration2Interface_29_5_checknacs_blackBBB(jPackage, uPackage, jp2up);
 				if (result5_black != null) {
 
 					Object[] result6_black = AnnotationTypeDeclaration2InterfaceImpl
-							.pattern_AnnotationTypeDeclaration2Interface_29_6_perform_blackBBBB(jp2up, uPackage,
-									jPackage, ruleResult);
+							.pattern_AnnotationTypeDeclaration2Interface_29_6_perform_blackBBBB(jPackage, uPackage,
+									jp2up, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jp2up] = " + jp2up
-								+ ", " + "[uPackage] = " + uPackage + ", " + "[jPackage] = " + jPackage + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jPackage] = "
+								+ jPackage + ", " + "[uPackage] = " + uPackage + ", " + "[jp2up] = " + jp2up + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
 					AnnotationTypeDeclaration2InterfaceImpl
-							.pattern_AnnotationTypeDeclaration2Interface_29_6_perform_greenFFBFFBBB(uPackage, jPackage,
+							.pattern_AnnotationTypeDeclaration2Interface_29_6_perform_greenFBBFFFBB(jPackage, uPackage,
 									ruleResult, csp);
-					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
-					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[1];
-					//nothing Interface feature = (Interface) result6_green[3];
-					//nothing AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result6_green[4];
+					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[0];
+					//nothing AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result6_green[3];
+					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[4];
+					//nothing Interface feature = (Interface) result6_green[5];
 
 				} else {
 				}
@@ -1235,9 +1235,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
-			ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1265,9 +1265,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jp2up", jp2up);
-		isApplicableMatch.registerObject("uPackage", uPackage);
 		isApplicableMatch.registerObject("jPackage", jPackage);
+		isApplicableMatch.registerObject("uPackage", uPackage);
+		isApplicableMatch.registerObject("jp2up", jp2up);
 		return csp;
 	}
 
@@ -1288,26 +1288,27 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_FWD__MATCH_ANNOTATIONTYPEDECLARATION_PACKAGE:
-			return isAppropriate_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(org.eclipse.modisco.java.Package) arguments.get(2));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_FWD__MATCH_PACKAGE_ANNOTATIONTYPEDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
+					(AnnotationTypeDeclaration) arguments.get(2));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATIONTYPEDECLARATION_PACKAGE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(org.eclipse.modisco.java.Package) arguments.get(2));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_ANNOTATIONTYPEDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
+					(AnnotationTypeDeclaration) arguments.get(2));
 			return null;
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATIONTYPEDECLARATION_PACKAGE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(org.eclipse.modisco.java.Package) arguments.get(2));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_ANNOTATIONTYPEDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+					(org.eclipse.modisco.java.Package) arguments.get(1), (AnnotationTypeDeclaration) arguments.get(2));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_JAVAPACKAGE2UMLPACKAGE_PACKAGE_ANNOTATIONTYPEDECLARATION_PACKAGE:
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGE_PACKAGE_JAVAPACKAGE2UMLPACKAGE_ANNOTATIONTYPEDECLARATION:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(JavaPackage2UmlPackage) arguments.get(1), (org.eclipse.uml2.uml.Package) arguments.get(2),
-					(AnnotationTypeDeclaration) arguments.get(3), (org.eclipse.modisco.java.Package) arguments.get(4));
+					(org.eclipse.modisco.java.Package) arguments.get(1),
+					(org.eclipse.uml2.uml.Package) arguments.get(2), (JavaPackage2UmlPackage) arguments.get(3),
+					(AnnotationTypeDeclaration) arguments.get(4));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1333,10 +1334,11 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 					(Interface) arguments.get(2));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAPACKAGE2UMLPACKAGE_PACKAGE_INTERFACE_PACKAGE:
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_PACKAGE_JAVAPACKAGE2UMLPACKAGE_INTERFACE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(JavaPackage2UmlPackage) arguments.get(1), (org.eclipse.uml2.uml.Package) arguments.get(2),
-					(Interface) arguments.get(3), (org.eclipse.modisco.java.Package) arguments.get(4));
+					(org.eclipse.modisco.java.Package) arguments.get(1),
+					(org.eclipse.uml2.uml.Package) arguments.get(2), (JavaPackage2UmlPackage) arguments.get(3),
+					(Interface) arguments.get(4));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1346,34 +1348,34 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_54__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_54((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_55__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_55((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_964__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_964((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_987__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_987((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__PACKAGE_INTERFACE_ANNOTATIONTYPEDECLARATION_PACKAGE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Package) arguments.get(0),
-					(Interface) arguments.get(1), (AnnotationTypeDeclaration) arguments.get(2),
-					(org.eclipse.modisco.java.Package) arguments.get(3), (Match) arguments.get(4),
-					(Match) arguments.get(5));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__PACKAGE_PACKAGE_ANNOTATIONTYPEDECLARATION_INTERFACE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((org.eclipse.modisco.java.Package) arguments.get(0),
+					(org.eclipse.uml2.uml.Package) arguments.get(1), (AnnotationTypeDeclaration) arguments.get(2),
+					(Interface) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___CHECK_DEC_FWD__ANNOTATIONTYPEDECLARATION_PACKAGE:
-			return checkDEC_FWD((AnnotationTypeDeclaration) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___CHECK_DEC_FWD__PACKAGE_ANNOTATIONTYPEDECLARATION:
+			return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0),
+					(AnnotationTypeDeclaration) arguments.get(1));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___CHECK_DEC_BWD__PACKAGE_INTERFACE:
 			return checkDEC_BWD((org.eclipse.uml2.uml.Package) arguments.get(0), (Interface) arguments.get(1));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___GENERATE_MODEL__RULEENTRYCONTAINER_JAVAPACKAGE2UMLPACKAGE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (JavaPackage2UmlPackage) arguments.get(1));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAPACKAGE2UMLPACKAGE_PACKAGE_PACKAGE_MODELGENERATORRULERESULT:
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_PACKAGE_JAVAPACKAGE2UMLPACKAGE_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(JavaPackage2UmlPackage) arguments.get(1), (org.eclipse.uml2.uml.Package) arguments.get(2),
-					(org.eclipse.modisco.java.Package) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+					(org.eclipse.modisco.java.Package) arguments.get(1),
+					(org.eclipse.uml2.uml.Package) arguments.get(2), (JavaPackage2UmlPackage) arguments.get(3),
+					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1381,18 +1383,18 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_0_1_initialbindings_blackBBBB(
-			AnnotationTypeDeclaration2Interface _this, Match match, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage) {
-		return new Object[] { _this, match, bodyDeclaration, jPackage };
+			AnnotationTypeDeclaration2Interface _this, Match match, org.eclipse.modisco.java.Package jPackage,
+			AnnotationTypeDeclaration bodyDeclaration) {
+		return new Object[] { _this, match, jPackage, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_0_2_SolveCSP_bindingFBBBB(
-			AnnotationTypeDeclaration2Interface _this, Match match, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, bodyDeclaration, jPackage);
+			AnnotationTypeDeclaration2Interface _this, Match match, org.eclipse.modisco.java.Package jPackage,
+			AnnotationTypeDeclaration bodyDeclaration) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, jPackage, bodyDeclaration);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, bodyDeclaration, jPackage };
+			return new Object[] { csp, _this, match, jPackage, bodyDeclaration };
 		}
 		return null;
 	}
@@ -1402,10 +1404,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_0_2_SolveCSP_bindingAndBlackFBBBB(
-			AnnotationTypeDeclaration2Interface _this, Match match, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage) {
+			AnnotationTypeDeclaration2Interface _this, Match match, org.eclipse.modisco.java.Package jPackage,
+			AnnotationTypeDeclaration bodyDeclaration) {
 		Object[] result_pattern_AnnotationTypeDeclaration2Interface_0_2_SolveCSP_binding = pattern_AnnotationTypeDeclaration2Interface_0_2_SolveCSP_bindingFBBBB(
-				_this, match, bodyDeclaration, jPackage);
+				_this, match, jPackage, bodyDeclaration);
 		if (result_pattern_AnnotationTypeDeclaration2Interface_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeDeclaration2Interface_0_2_SolveCSP_binding[0];
 
@@ -1413,7 +1415,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_AnnotationTypeDeclaration2Interface_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, bodyDeclaration, jPackage };
+				return new Object[] { csp, _this, match, jPackage, bodyDeclaration };
 			}
 		}
 		return null;
@@ -1427,12 +1429,12 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_0_4_collectelementstobetranslated_blackBBB(
-			Match match, AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
-		return new Object[] { match, bodyDeclaration, jPackage };
+			Match match, org.eclipse.modisco.java.Package jPackage, AnnotationTypeDeclaration bodyDeclaration) {
+		return new Object[] { match, jPackage, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_0_4_collectelementstobetranslated_greenBBBFF(
-			Match match, AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
+			Match match, org.eclipse.modisco.java.Package jPackage, AnnotationTypeDeclaration bodyDeclaration) {
 		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(bodyDeclaration);
@@ -1446,13 +1448,13 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		match.getToBeTranslatedEdges().add(bodyDeclaration__jPackage____package);
 		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
 		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
-		return new Object[] { match, bodyDeclaration, jPackage, jPackage__bodyDeclaration____ownedElements,
+		return new Object[] { match, jPackage, bodyDeclaration, jPackage__bodyDeclaration____ownedElements,
 				bodyDeclaration__jPackage____package };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_0_5_collectcontextelements_blackBBB(
-			Match match, AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
-		return new Object[] { match, bodyDeclaration, jPackage };
+			Match match, org.eclipse.modisco.java.Package jPackage, AnnotationTypeDeclaration bodyDeclaration) {
+		return new Object[] { match, jPackage, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_0_5_collectcontextelements_greenBB(
@@ -1462,9 +1464,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final void pattern_AnnotationTypeDeclaration2Interface_0_6_registerobjectstomatch_expressionBBBB(
-			AnnotationTypeDeclaration2Interface _this, Match match, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage) {
-		_this.registerObjectsToMatch_FWD(match, bodyDeclaration, jPackage);
+			AnnotationTypeDeclaration2Interface _this, Match match, org.eclipse.modisco.java.Package jPackage,
+			AnnotationTypeDeclaration bodyDeclaration) {
+		_this.registerObjectsToMatch_FWD(match, jPackage, bodyDeclaration);
 
 	}
 
@@ -1480,23 +1482,23 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jp2up");
+		EObject _localVariable_0 = isApplicableMatch.getObject("jPackage");
 		EObject _localVariable_1 = isApplicableMatch.getObject("uPackage");
-		EObject _localVariable_2 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_3 = isApplicableMatch.getObject("jPackage");
-		EObject tmpJp2up = _localVariable_0;
+		EObject _localVariable_2 = isApplicableMatch.getObject("jp2up");
+		EObject _localVariable_3 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject tmpJPackage = _localVariable_0;
 		EObject tmpUPackage = _localVariable_1;
-		EObject tmpBodyDeclaration = _localVariable_2;
-		EObject tmpJPackage = _localVariable_3;
-		if (tmpJp2up instanceof JavaPackage2UmlPackage) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
+		EObject tmpJp2up = _localVariable_2;
+		EObject tmpBodyDeclaration = _localVariable_3;
+		if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
 			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
 				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-				if (tmpBodyDeclaration instanceof AnnotationTypeDeclaration) {
-					AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) tmpBodyDeclaration;
-					if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-						org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-						return new Object[] { jp2up, uPackage, bodyDeclaration, jPackage, isApplicableMatch };
+				if (tmpJp2up instanceof JavaPackage2UmlPackage) {
+					JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
+					if (tmpBodyDeclaration instanceof AnnotationTypeDeclaration) {
+						AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) tmpBodyDeclaration;
+						return new Object[] { jPackage, uPackage, jp2up, bodyDeclaration, isApplicableMatch };
 					}
 				}
 			}
@@ -1505,13 +1507,13 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_blackBBBBFBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage,
-			AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage,
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, AnnotationTypeDeclaration bodyDeclaration,
 			AnnotationTypeDeclaration2Interface _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jp2up, uPackage, bodyDeclaration, jPackage, csp, _this, isApplicableMatch };
+				return new Object[] { jPackage, uPackage, jp2up, bodyDeclaration, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1522,86 +1524,85 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		Object[] result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_binding = pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_binding != null) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_binding[0];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_binding[0];
 			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_binding[1];
-			AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_binding[2];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_binding[3];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_binding[2];
+			AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_black = pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_blackBBBBFBB(
-					jp2up, uPackage, bodyDeclaration, jPackage, _this, isApplicableMatch);
+					jPackage, uPackage, jp2up, bodyDeclaration, _this, isApplicableMatch);
 			if (result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_black[4];
 
-				return new Object[] { jp2up, uPackage, bodyDeclaration, jPackage, csp, _this, isApplicableMatch };
+				return new Object[] { jPackage, uPackage, jp2up, bodyDeclaration, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_greenFFBFBB(
+	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_1_1_performtransformation_greenFBBFFB(
 			org.eclipse.uml2.uml.Package uPackage, AnnotationTypeDeclaration bodyDeclaration, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Interface feature = UMLFactory.eINSTANCE.createInterface();
 		Object _localVariable_0 = csp.getValue("feature", "name");
-		b2e.setSource(bodyDeclaration);
 		bd2ne.setSource(bodyDeclaration);
+		b2e.setSource(bodyDeclaration);
 		uPackage.getPackagedElements().add(feature);
-		bd2ne.setTarget(feature);
 		b2e.setTarget(feature);
+		bd2ne.setTarget(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
-		return new Object[] { b2e, bd2ne, uPackage, feature, bodyDeclaration, csp };
+		return new Object[] { bd2ne, uPackage, bodyDeclaration, b2e, feature, csp };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_1_2_collecttranslatedelements_blackBBBB(
-			ASTNode2Element b2e, NamedElement2NamedElement bd2ne, Interface feature,
-			AnnotationTypeDeclaration bodyDeclaration) {
-		return new Object[] { b2e, bd2ne, feature, bodyDeclaration };
+			NamedElement2NamedElement bd2ne, AnnotationTypeDeclaration bodyDeclaration, ASTNode2Element b2e,
+			Interface feature) {
+		return new Object[] { bd2ne, bodyDeclaration, b2e, feature };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_1_2_collecttranslatedelements_greenFBBBB(
-			ASTNode2Element b2e, NamedElement2NamedElement bd2ne, Interface feature,
-			AnnotationTypeDeclaration bodyDeclaration) {
+			NamedElement2NamedElement bd2ne, AnnotationTypeDeclaration bodyDeclaration, ASTNode2Element b2e,
+			Interface feature) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedLinkElements().add(bd2ne);
-		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, b2e, bd2ne, feature, bodyDeclaration };
+		ruleresult.getCreatedLinkElements().add(b2e);
+		ruleresult.getCreatedElements().add(feature);
+		return new Object[] { ruleresult, bd2ne, bodyDeclaration, b2e, feature };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject b2e, EObject bd2ne, EObject jp2up, EObject uPackage, EObject feature,
-			EObject bodyDeclaration, EObject jPackage) {
-		if (!b2e.equals(bd2ne)) {
-			if (!b2e.equals(jp2up)) {
-				if (!b2e.equals(uPackage)) {
-					if (!b2e.equals(feature)) {
-						if (!b2e.equals(bodyDeclaration)) {
-							if (!b2e.equals(jPackage)) {
-								if (!bd2ne.equals(jp2up)) {
-									if (!bd2ne.equals(uPackage)) {
-										if (!bd2ne.equals(feature)) {
-											if (!bd2ne.equals(bodyDeclaration)) {
-												if (!bd2ne.equals(jPackage)) {
-													if (!jp2up.equals(uPackage)) {
-														if (!feature.equals(jp2up)) {
-															if (!feature.equals(uPackage)) {
-																if (!feature.equals(jPackage)) {
-																	if (!bodyDeclaration.equals(jp2up)) {
-																		if (!bodyDeclaration.equals(uPackage)) {
-																			if (!bodyDeclaration.equals(feature)) {
-																				if (!bodyDeclaration.equals(jPackage)) {
-																					if (!jPackage.equals(jp2up)) {
-																						if (!jPackage
-																								.equals(uPackage)) {
+			PerformRuleResult ruleresult, EObject bd2ne, EObject jPackage, EObject uPackage, EObject jp2up,
+			EObject bodyDeclaration, EObject b2e, EObject feature) {
+		if (!bd2ne.equals(jPackage)) {
+			if (!bd2ne.equals(uPackage)) {
+				if (!bd2ne.equals(jp2up)) {
+					if (!bd2ne.equals(bodyDeclaration)) {
+						if (!bd2ne.equals(feature)) {
+							if (!jPackage.equals(uPackage)) {
+								if (!jPackage.equals(jp2up)) {
+									if (!jp2up.equals(uPackage)) {
+										if (!bodyDeclaration.equals(jPackage)) {
+											if (!bodyDeclaration.equals(uPackage)) {
+												if (!bodyDeclaration.equals(jp2up)) {
+													if (!bodyDeclaration.equals(feature)) {
+														if (!b2e.equals(bd2ne)) {
+															if (!b2e.equals(jPackage)) {
+																if (!b2e.equals(uPackage)) {
+																	if (!b2e.equals(jp2up)) {
+																		if (!b2e.equals(bodyDeclaration)) {
+																			if (!b2e.equals(feature)) {
+																				if (!feature.equals(jPackage)) {
+																					if (!feature.equals(uPackage)) {
+																						if (!feature.equals(jp2up)) {
 																							return new Object[] {
-																									ruleresult, b2e,
-																									bd2ne, jp2up,
-																									uPackage, feature,
+																									ruleresult, bd2ne,
+																									jPackage, uPackage,
+																									jp2up,
 																									bodyDeclaration,
-																									jPackage };
+																									b2e, feature };
 																						}
 																					}
 																				}
@@ -1627,62 +1628,62 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject bd2ne, EObject uPackage, EObject feature,
-			EObject bodyDeclaration, EObject jPackage) {
-		EMoflonEdge uPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject bd2ne, EObject jPackage, EObject uPackage, EObject bodyDeclaration,
+			EObject b2e, EObject feature) {
 		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationTypeDeclaration2Interface";
-		String uPackage__feature____packagedElement_name_prime = "packagedElement";
-		String bd2ne__feature____target_name_prime = "target";
-		String b2e__feature____target_name_prime = "target";
-		String b2e__bodyDeclaration____source_name_prime = "source";
-		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
 		String bodyDeclaration__jPackage____package_name_prime = "package";
-		uPackage__feature____packagedElement.setSrc(uPackage);
-		uPackage__feature____packagedElement.setTrg(feature);
-		ruleresult.getCreatedEdges().add(uPackage__feature____packagedElement);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
-		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
-		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
+		String uPackage__feature____packagedElement_name_prime = "packagedElement";
+		String bd2ne__bodyDeclaration____source_name_prime = "source";
+		String b2e__bodyDeclaration____source_name_prime = "source";
+		String b2e__feature____target_name_prime = "target";
+		String bd2ne__feature____target_name_prime = "target";
 		jPackage__bodyDeclaration____ownedElements.setSrc(jPackage);
 		jPackage__bodyDeclaration____ownedElements.setTrg(bodyDeclaration);
 		ruleresult.getTranslatedEdges().add(jPackage__bodyDeclaration____ownedElements);
 		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
 		bodyDeclaration__jPackage____package.setTrg(jPackage);
 		ruleresult.getTranslatedEdges().add(bodyDeclaration__jPackage____package);
+		uPackage__feature____packagedElement.setSrc(uPackage);
+		uPackage__feature____packagedElement.setTrg(feature);
+		ruleresult.getCreatedEdges().add(uPackage__feature____packagedElement);
+		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
+		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		uPackage__feature____packagedElement.setName(uPackage__feature____packagedElement_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
 		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
-		return new Object[] { ruleresult, b2e, bd2ne, uPackage, feature, bodyDeclaration, jPackage,
-				uPackage__feature____packagedElement, bd2ne__feature____target, b2e__feature____target,
-				b2e__bodyDeclaration____source, bd2ne__bodyDeclaration____source,
-				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package };
+		uPackage__feature____packagedElement.setName(uPackage__feature____packagedElement_name_prime);
+		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		return new Object[] { ruleresult, bd2ne, jPackage, uPackage, bodyDeclaration, b2e, feature,
+				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package,
+				uPackage__feature____packagedElement, bd2ne__bodyDeclaration____source, b2e__bodyDeclaration____source,
+				b2e__feature____target, bd2ne__feature____target };
 	}
 
 	public static final void pattern_AnnotationTypeDeclaration2Interface_1_5_registerobjects_expressionBBBBBBBBB(
-			AnnotationTypeDeclaration2Interface _this, PerformRuleResult ruleresult, EObject b2e, EObject bd2ne,
-			EObject jp2up, EObject uPackage, EObject feature, EObject bodyDeclaration, EObject jPackage) {
-		_this.registerObjects_FWD(ruleresult, b2e, bd2ne, jp2up, uPackage, feature, bodyDeclaration, jPackage);
+			AnnotationTypeDeclaration2Interface _this, PerformRuleResult ruleresult, EObject bd2ne, EObject jPackage,
+			EObject uPackage, EObject jp2up, EObject bodyDeclaration, EObject b2e, EObject feature) {
+		_this.registerObjects_FWD(ruleresult, bd2ne, jPackage, uPackage, jp2up, bodyDeclaration, b2e, feature);
 
 	}
 
@@ -1744,28 +1745,28 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("bodyDeclaration");
-		EObject _localVariable_1 = match.getObject("jPackage");
-		EObject tmpBodyDeclaration = _localVariable_0;
-		EObject tmpJPackage = _localVariable_1;
-		if (tmpBodyDeclaration instanceof AnnotationTypeDeclaration) {
-			AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) tmpBodyDeclaration;
-			if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-				org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-				return new Object[] { bodyDeclaration, jPackage, match };
+		EObject _localVariable_0 = match.getObject("jPackage");
+		EObject _localVariable_1 = match.getObject("bodyDeclaration");
+		EObject tmpJPackage = _localVariable_0;
+		EObject tmpBodyDeclaration = _localVariable_1;
+		if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
+			if (tmpBodyDeclaration instanceof AnnotationTypeDeclaration) {
+				AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) tmpBodyDeclaration;
+				return new Object[] { jPackage, bodyDeclaration, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationTypeDeclaration2Interface_2_2_corematch_blackFFBBB(
-			AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage, Match match) {
+	public static final Iterable<Object[]> pattern_AnnotationTypeDeclaration2Interface_2_2_corematch_blackBFFBB(
+			org.eclipse.modisco.java.Package jPackage, AnnotationTypeDeclaration bodyDeclaration, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (JavaPackage2UmlPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jPackage,
 				JavaPackage2UmlPackage.class, "source")) {
 			org.eclipse.uml2.uml.Package uPackage = jp2up.getTarget();
 			if (uPackage != null) {
-				_result.add(new Object[] { jp2up, uPackage, bodyDeclaration, jPackage, match });
+				_result.add(new Object[] { jPackage, uPackage, jp2up, bodyDeclaration, match });
 			}
 
 		}
@@ -1773,13 +1774,13 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_AnnotationTypeDeclaration2Interface_2_3_findcontext_blackBBBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage,
-			AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, AnnotationTypeDeclaration bodyDeclaration) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (uPackage.equals(jp2up.getTarget())) {
+		if (jPackage.getOwnedElements().contains(bodyDeclaration)) {
 			if (jPackage.equals(jp2up.getSource())) {
-				if (jPackage.getOwnedElements().contains(bodyDeclaration)) {
-					_result.add(new Object[] { jp2up, uPackage, bodyDeclaration, jPackage });
+				if (uPackage.equals(jp2up.getTarget())) {
+					_result.add(new Object[] { jPackage, uPackage, jp2up, bodyDeclaration });
 				}
 			}
 		}
@@ -1787,51 +1788,51 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_2_3_findcontext_greenBBBBFFFFF(
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage,
-			AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, AnnotationTypeDeclaration bodyDeclaration) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge jp2up__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String jp2up__uPackage____target_name_prime = "target";
-		String jp2up__jPackage____source_name_prime = "source";
+		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jp2up__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
 		String bodyDeclaration__jPackage____package_name_prime = "package";
-		isApplicableMatch.getAllContextElements().add(jp2up);
-		isApplicableMatch.getAllContextElements().add(uPackage);
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		String jp2up__jPackage____source_name_prime = "source";
+		String jp2up__uPackage____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(jPackage);
-		jp2up__uPackage____target.setSrc(jp2up);
-		jp2up__uPackage____target.setTrg(uPackage);
-		isApplicableMatch.getAllContextElements().add(jp2up__uPackage____target);
-		jp2up__jPackage____source.setSrc(jp2up);
-		jp2up__jPackage____source.setTrg(jPackage);
-		isApplicableMatch.getAllContextElements().add(jp2up__jPackage____source);
+		isApplicableMatch.getAllContextElements().add(uPackage);
+		isApplicableMatch.getAllContextElements().add(jp2up);
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		jPackage__bodyDeclaration____ownedElements.setSrc(jPackage);
 		jPackage__bodyDeclaration____ownedElements.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jPackage__bodyDeclaration____ownedElements);
 		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
 		bodyDeclaration__jPackage____package.setTrg(jPackage);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration__jPackage____package);
-		jp2up__uPackage____target.setName(jp2up__uPackage____target_name_prime);
-		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
+		jp2up__jPackage____source.setSrc(jp2up);
+		jp2up__jPackage____source.setTrg(jPackage);
+		isApplicableMatch.getAllContextElements().add(jp2up__jPackage____source);
+		jp2up__uPackage____target.setSrc(jp2up);
+		jp2up__uPackage____target.setTrg(uPackage);
+		isApplicableMatch.getAllContextElements().add(jp2up__uPackage____target);
 		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
 		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
-		return new Object[] { jp2up, uPackage, bodyDeclaration, jPackage, isApplicableMatch, jp2up__uPackage____target,
-				jp2up__jPackage____source, jPackage__bodyDeclaration____ownedElements,
-				bodyDeclaration__jPackage____package };
+		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
+		jp2up__uPackage____target.setName(jp2up__uPackage____target_name_prime);
+		return new Object[] { jPackage, uPackage, jp2up, bodyDeclaration, isApplicableMatch,
+				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package,
+				jp2up__jPackage____source, jp2up__uPackage____target };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_2_4_solveCSP_bindingFBBBBBB(
 			AnnotationTypeDeclaration2Interface _this, IsApplicableMatch isApplicableMatch,
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage,
-			AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jp2up, uPackage, bodyDeclaration,
-				jPackage);
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, AnnotationTypeDeclaration bodyDeclaration) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jPackage, uPackage, jp2up,
+				bodyDeclaration);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jp2up, uPackage, bodyDeclaration, jPackage };
+			return new Object[] { csp, _this, isApplicableMatch, jPackage, uPackage, jp2up, bodyDeclaration };
 		}
 		return null;
 	}
@@ -1842,10 +1843,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_2_4_solveCSP_bindingAndBlackFBBBBBB(
 			AnnotationTypeDeclaration2Interface _this, IsApplicableMatch isApplicableMatch,
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage,
-			AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, AnnotationTypeDeclaration bodyDeclaration) {
 		Object[] result_pattern_AnnotationTypeDeclaration2Interface_2_4_solveCSP_binding = pattern_AnnotationTypeDeclaration2Interface_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jp2up, uPackage, bodyDeclaration, jPackage);
+				_this, isApplicableMatch, jPackage, uPackage, jp2up, bodyDeclaration);
 		if (result_pattern_AnnotationTypeDeclaration2Interface_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeDeclaration2Interface_2_4_solveCSP_binding[0];
 
@@ -1853,7 +1854,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_AnnotationTypeDeclaration2Interface_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jp2up, uPackage, bodyDeclaration, jPackage };
+				return new Object[] { csp, _this, isApplicableMatch, jPackage, uPackage, jp2up, bodyDeclaration };
 			}
 		}
 		return null;
@@ -1980,23 +1981,23 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jp2up");
+		EObject _localVariable_0 = isApplicableMatch.getObject("jPackage");
 		EObject _localVariable_1 = isApplicableMatch.getObject("uPackage");
-		EObject _localVariable_2 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_3 = isApplicableMatch.getObject("jPackage");
-		EObject tmpJp2up = _localVariable_0;
+		EObject _localVariable_2 = isApplicableMatch.getObject("jp2up");
+		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
+		EObject tmpJPackage = _localVariable_0;
 		EObject tmpUPackage = _localVariable_1;
-		EObject tmpFeature = _localVariable_2;
-		EObject tmpJPackage = _localVariable_3;
-		if (tmpJp2up instanceof JavaPackage2UmlPackage) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
+		EObject tmpJp2up = _localVariable_2;
+		EObject tmpFeature = _localVariable_3;
+		if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
 			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
 				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-				if (tmpFeature instanceof Interface) {
-					Interface feature = (Interface) tmpFeature;
-					if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-						org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-						return new Object[] { jp2up, uPackage, feature, jPackage, isApplicableMatch };
+				if (tmpJp2up instanceof JavaPackage2UmlPackage) {
+					JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
+					if (tmpFeature instanceof Interface) {
+						Interface feature = (Interface) tmpFeature;
+						return new Object[] { jPackage, uPackage, jp2up, feature, isApplicableMatch };
 					}
 				}
 			}
@@ -2005,13 +2006,13 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_blackBBBBFBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage, Interface feature,
-			org.eclipse.modisco.java.Package jPackage, AnnotationTypeDeclaration2Interface _this,
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, Interface feature, AnnotationTypeDeclaration2Interface _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jp2up, uPackage, feature, jPackage, csp, _this, isApplicableMatch };
+				return new Object[] { jPackage, uPackage, jp2up, feature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -2022,86 +2023,85 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		Object[] result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_binding = pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_binding != null) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_binding[0];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_binding[0];
 			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_binding[1];
-			Interface feature = (Interface) result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_binding[2];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_binding[3];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_binding[2];
+			Interface feature = (Interface) result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_black = pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_blackBBBBFBB(
-					jp2up, uPackage, feature, jPackage, _this, isApplicableMatch);
+					jPackage, uPackage, jp2up, feature, _this, isApplicableMatch);
 			if (result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_black[4];
 
-				return new Object[] { jp2up, uPackage, feature, jPackage, csp, _this, isApplicableMatch };
+				return new Object[] { jPackage, uPackage, jp2up, feature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_greenFFBFBB(
-			Interface feature, org.eclipse.modisco.java.Package jPackage, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_11_1_performtransformation_greenFBFFBB(
+			org.eclipse.modisco.java.Package jPackage, Interface feature, CSP csp) {
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		AnnotationTypeDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createAnnotationTypeDeclaration();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
-		b2e.setTarget(feature);
 		bd2ne.setTarget(feature);
-		b2e.setSource(bodyDeclaration);
-		bd2ne.setSource(bodyDeclaration);
 		jPackage.getOwnedElements().add(bodyDeclaration);
+		bd2ne.setSource(bodyDeclaration);
+		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { b2e, bd2ne, feature, bodyDeclaration, jPackage, csp };
+		return new Object[] { bd2ne, jPackage, bodyDeclaration, b2e, feature, csp };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_11_2_collecttranslatedelements_blackBBBB(
-			ASTNode2Element b2e, NamedElement2NamedElement bd2ne, Interface feature,
-			AnnotationTypeDeclaration bodyDeclaration) {
-		return new Object[] { b2e, bd2ne, feature, bodyDeclaration };
+			NamedElement2NamedElement bd2ne, AnnotationTypeDeclaration bodyDeclaration, ASTNode2Element b2e,
+			Interface feature) {
+		return new Object[] { bd2ne, bodyDeclaration, b2e, feature };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_11_2_collecttranslatedelements_greenFBBBB(
-			ASTNode2Element b2e, NamedElement2NamedElement bd2ne, Interface feature,
-			AnnotationTypeDeclaration bodyDeclaration) {
+			NamedElement2NamedElement bd2ne, AnnotationTypeDeclaration bodyDeclaration, ASTNode2Element b2e,
+			Interface feature) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedLinkElements().add(bd2ne);
-		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, b2e, bd2ne, feature, bodyDeclaration };
+		ruleresult.getCreatedLinkElements().add(b2e);
+		ruleresult.getTranslatedElements().add(feature);
+		return new Object[] { ruleresult, bd2ne, bodyDeclaration, b2e, feature };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject b2e, EObject bd2ne, EObject jp2up, EObject uPackage, EObject feature,
-			EObject bodyDeclaration, EObject jPackage) {
-		if (!b2e.equals(bd2ne)) {
-			if (!b2e.equals(jp2up)) {
-				if (!b2e.equals(uPackage)) {
-					if (!b2e.equals(feature)) {
-						if (!b2e.equals(bodyDeclaration)) {
-							if (!b2e.equals(jPackage)) {
-								if (!bd2ne.equals(jp2up)) {
-									if (!bd2ne.equals(uPackage)) {
-										if (!bd2ne.equals(feature)) {
-											if (!bd2ne.equals(bodyDeclaration)) {
-												if (!bd2ne.equals(jPackage)) {
-													if (!jp2up.equals(uPackage)) {
-														if (!feature.equals(jp2up)) {
-															if (!feature.equals(uPackage)) {
-																if (!feature.equals(jPackage)) {
-																	if (!bodyDeclaration.equals(jp2up)) {
-																		if (!bodyDeclaration.equals(uPackage)) {
-																			if (!bodyDeclaration.equals(feature)) {
-																				if (!bodyDeclaration.equals(jPackage)) {
-																					if (!jPackage.equals(jp2up)) {
-																						if (!jPackage
-																								.equals(uPackage)) {
+			PerformRuleResult ruleresult, EObject bd2ne, EObject jPackage, EObject uPackage, EObject jp2up,
+			EObject bodyDeclaration, EObject b2e, EObject feature) {
+		if (!bd2ne.equals(jPackage)) {
+			if (!bd2ne.equals(uPackage)) {
+				if (!bd2ne.equals(jp2up)) {
+					if (!bd2ne.equals(bodyDeclaration)) {
+						if (!bd2ne.equals(feature)) {
+							if (!jPackage.equals(uPackage)) {
+								if (!jPackage.equals(jp2up)) {
+									if (!jp2up.equals(uPackage)) {
+										if (!bodyDeclaration.equals(jPackage)) {
+											if (!bodyDeclaration.equals(uPackage)) {
+												if (!bodyDeclaration.equals(jp2up)) {
+													if (!bodyDeclaration.equals(feature)) {
+														if (!b2e.equals(bd2ne)) {
+															if (!b2e.equals(jPackage)) {
+																if (!b2e.equals(uPackage)) {
+																	if (!b2e.equals(jp2up)) {
+																		if (!b2e.equals(bodyDeclaration)) {
+																			if (!b2e.equals(feature)) {
+																				if (!feature.equals(jPackage)) {
+																					if (!feature.equals(uPackage)) {
+																						if (!feature.equals(jp2up)) {
 																							return new Object[] {
-																									ruleresult, b2e,
-																									bd2ne, jp2up,
-																									uPackage, feature,
+																									ruleresult, bd2ne,
+																									jPackage, uPackage,
+																									jp2up,
 																									bodyDeclaration,
-																									jPackage };
+																									b2e, feature };
 																						}
 																					}
 																				}
@@ -2127,62 +2127,62 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject bd2ne, EObject uPackage, EObject feature,
-			EObject bodyDeclaration, EObject jPackage) {
-		EMoflonEdge uPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject bd2ne, EObject jPackage, EObject uPackage, EObject bodyDeclaration,
+			EObject b2e, EObject feature) {
 		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationTypeDeclaration2Interface";
-		String uPackage__feature____packagedElement_name_prime = "packagedElement";
-		String bd2ne__feature____target_name_prime = "target";
-		String b2e__feature____target_name_prime = "target";
-		String b2e__bodyDeclaration____source_name_prime = "source";
-		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
 		String bodyDeclaration__jPackage____package_name_prime = "package";
-		uPackage__feature____packagedElement.setSrc(uPackage);
-		uPackage__feature____packagedElement.setTrg(feature);
-		ruleresult.getTranslatedEdges().add(uPackage__feature____packagedElement);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
-		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
-		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
+		String uPackage__feature____packagedElement_name_prime = "packagedElement";
+		String bd2ne__bodyDeclaration____source_name_prime = "source";
+		String b2e__bodyDeclaration____source_name_prime = "source";
+		String b2e__feature____target_name_prime = "target";
+		String bd2ne__feature____target_name_prime = "target";
 		jPackage__bodyDeclaration____ownedElements.setSrc(jPackage);
 		jPackage__bodyDeclaration____ownedElements.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(jPackage__bodyDeclaration____ownedElements);
 		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
 		bodyDeclaration__jPackage____package.setTrg(jPackage);
 		ruleresult.getCreatedEdges().add(bodyDeclaration__jPackage____package);
+		uPackage__feature____packagedElement.setSrc(uPackage);
+		uPackage__feature____packagedElement.setTrg(feature);
+		ruleresult.getTranslatedEdges().add(uPackage__feature____packagedElement);
+		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
+		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		uPackage__feature____packagedElement.setName(uPackage__feature____packagedElement_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
 		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
-		return new Object[] { ruleresult, b2e, bd2ne, uPackage, feature, bodyDeclaration, jPackage,
-				uPackage__feature____packagedElement, bd2ne__feature____target, b2e__feature____target,
-				b2e__bodyDeclaration____source, bd2ne__bodyDeclaration____source,
-				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package };
+		uPackage__feature____packagedElement.setName(uPackage__feature____packagedElement_name_prime);
+		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		return new Object[] { ruleresult, bd2ne, jPackage, uPackage, bodyDeclaration, b2e, feature,
+				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package,
+				uPackage__feature____packagedElement, bd2ne__bodyDeclaration____source, b2e__bodyDeclaration____source,
+				b2e__feature____target, bd2ne__feature____target };
 	}
 
 	public static final void pattern_AnnotationTypeDeclaration2Interface_11_5_registerobjects_expressionBBBBBBBBB(
-			AnnotationTypeDeclaration2Interface _this, PerformRuleResult ruleresult, EObject b2e, EObject bd2ne,
-			EObject jp2up, EObject uPackage, EObject feature, EObject bodyDeclaration, EObject jPackage) {
-		_this.registerObjects_BWD(ruleresult, b2e, bd2ne, jp2up, uPackage, feature, bodyDeclaration, jPackage);
+			AnnotationTypeDeclaration2Interface _this, PerformRuleResult ruleresult, EObject bd2ne, EObject jPackage,
+			EObject uPackage, EObject jp2up, EObject bodyDeclaration, EObject b2e, EObject feature) {
+		_this.registerObjects_BWD(ruleresult, bd2ne, jPackage, uPackage, jp2up, bodyDeclaration, b2e, feature);
 
 	}
 
@@ -2258,14 +2258,14 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationTypeDeclaration2Interface_12_2_corematch_blackFBBFB(
+	public static final Iterable<Object[]> pattern_AnnotationTypeDeclaration2Interface_12_2_corematch_blackFBFBB(
 			org.eclipse.uml2.uml.Package uPackage, Interface feature, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (JavaPackage2UmlPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uPackage,
 				JavaPackage2UmlPackage.class, "target")) {
 			org.eclipse.modisco.java.Package jPackage = jp2up.getSource();
 			if (jPackage != null) {
-				_result.add(new Object[] { jp2up, uPackage, feature, jPackage, match });
+				_result.add(new Object[] { jPackage, uPackage, jp2up, feature, match });
 			}
 
 		}
@@ -2273,13 +2273,13 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_AnnotationTypeDeclaration2Interface_12_3_findcontext_blackBBBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage, Interface feature,
-			org.eclipse.modisco.java.Package jPackage) {
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, Interface feature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (uPackage.equals(jp2up.getTarget())) {
-			if (uPackage.getPackagedElements().contains(feature)) {
-				if (jPackage.equals(jp2up.getSource())) {
-					_result.add(new Object[] { jp2up, uPackage, feature, jPackage });
+		if (uPackage.getPackagedElements().contains(feature)) {
+			if (jPackage.equals(jp2up.getSource())) {
+				if (uPackage.equals(jp2up.getTarget())) {
+					_result.add(new Object[] { jPackage, uPackage, jp2up, feature });
 				}
 			}
 		}
@@ -2287,43 +2287,43 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_12_3_findcontext_greenBBBBFFFF(
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage, Interface feature,
-			org.eclipse.modisco.java.Package jPackage) {
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, Interface feature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge jp2up__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String jp2up__uPackage____target_name_prime = "target";
+		EMoflonEdge jp2up__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String uPackage__feature____packagedElement_name_prime = "packagedElement";
 		String jp2up__jPackage____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(jp2up);
-		isApplicableMatch.getAllContextElements().add(uPackage);
-		isApplicableMatch.getAllContextElements().add(feature);
+		String jp2up__uPackage____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(jPackage);
-		jp2up__uPackage____target.setSrc(jp2up);
-		jp2up__uPackage____target.setTrg(uPackage);
-		isApplicableMatch.getAllContextElements().add(jp2up__uPackage____target);
+		isApplicableMatch.getAllContextElements().add(uPackage);
+		isApplicableMatch.getAllContextElements().add(jp2up);
+		isApplicableMatch.getAllContextElements().add(feature);
 		uPackage__feature____packagedElement.setSrc(uPackage);
 		uPackage__feature____packagedElement.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(uPackage__feature____packagedElement);
 		jp2up__jPackage____source.setSrc(jp2up);
 		jp2up__jPackage____source.setTrg(jPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up__jPackage____source);
-		jp2up__uPackage____target.setName(jp2up__uPackage____target_name_prime);
+		jp2up__uPackage____target.setSrc(jp2up);
+		jp2up__uPackage____target.setTrg(uPackage);
+		isApplicableMatch.getAllContextElements().add(jp2up__uPackage____target);
 		uPackage__feature____packagedElement.setName(uPackage__feature____packagedElement_name_prime);
 		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
-		return new Object[] { jp2up, uPackage, feature, jPackage, isApplicableMatch, jp2up__uPackage____target,
-				uPackage__feature____packagedElement, jp2up__jPackage____source };
+		jp2up__uPackage____target.setName(jp2up__uPackage____target_name_prime);
+		return new Object[] { jPackage, uPackage, jp2up, feature, isApplicableMatch,
+				uPackage__feature____packagedElement, jp2up__jPackage____source, jp2up__uPackage____target };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_12_4_solveCSP_bindingFBBBBBB(
 			AnnotationTypeDeclaration2Interface _this, IsApplicableMatch isApplicableMatch,
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage, Interface feature,
-			org.eclipse.modisco.java.Package jPackage) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jp2up, uPackage, feature, jPackage);
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, Interface feature) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jPackage, uPackage, jp2up, feature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jp2up, uPackage, feature, jPackage };
+			return new Object[] { csp, _this, isApplicableMatch, jPackage, uPackage, jp2up, feature };
 		}
 		return null;
 	}
@@ -2334,10 +2334,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_12_4_solveCSP_bindingAndBlackFBBBBBB(
 			AnnotationTypeDeclaration2Interface _this, IsApplicableMatch isApplicableMatch,
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage, Interface feature,
-			org.eclipse.modisco.java.Package jPackage) {
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, Interface feature) {
 		Object[] result_pattern_AnnotationTypeDeclaration2Interface_12_4_solveCSP_binding = pattern_AnnotationTypeDeclaration2Interface_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jp2up, uPackage, feature, jPackage);
+				_this, isApplicableMatch, jPackage, uPackage, jp2up, feature);
 		if (result_pattern_AnnotationTypeDeclaration2Interface_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeDeclaration2Interface_12_4_solveCSP_binding[0];
 
@@ -2345,7 +2345,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_AnnotationTypeDeclaration2Interface_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jp2up, uPackage, feature, jPackage };
+				return new Object[] { csp, _this, isApplicableMatch, jPackage, uPackage, jp2up, feature };
 			}
 		}
 		return null;
@@ -2435,7 +2435,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_20_2_testcorematchandDECs_black_nac_0B(
 			Interface feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_653385 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_310082 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2444,9 +2444,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_20_2_testcorematchandDECs_black_nac_1B(
 			Interface feature) {
-		for (Interface __DEC_feature_nestedClassifier_726702 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_325275 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
-			if (!feature.equals(__DEC_feature_nestedClassifier_726702)) {
+			if (!feature.equals(__DEC_feature_nestedClassifier_325275)) {
 				return new Object[] { feature };
 			}
 		}
@@ -2581,8 +2581,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_21_2_testcorematchandDECs_black_nac_0B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_95465 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_95465 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_66098 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_66098 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2591,10 +2591,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_21_2_testcorematchandDECs_black_nac_1B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_231201 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_959640 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_231201 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_231201)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_959640 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_959640)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -2604,9 +2604,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_21_2_testcorematchandDECs_black_nac_2B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_93201 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_836558 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_93201 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_836558 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2615,7 +2615,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_21_2_testcorematchandDECs_black_nac_3B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_462918 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_960097 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -2640,7 +2640,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 									bodyDeclaration) == null) {
 								if (pattern_AnnotationTypeDeclaration2Interface_21_2_testcorematchandDECs_black_nac_3B(
 										bodyDeclaration) == null) {
-									_result.add(new Object[] { bodyDeclaration, jPackage, _edge_ownedElements });
+									_result.add(new Object[] { jPackage, bodyDeclaration, _edge_ownedElements });
 								}
 							}
 						}
@@ -2664,9 +2664,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final boolean pattern_AnnotationTypeDeclaration2Interface_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			AnnotationTypeDeclaration2Interface _this, Match match, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, bodyDeclaration, jPackage);
+			AnnotationTypeDeclaration2Interface _this, Match match, org.eclipse.modisco.java.Package jPackage,
+			AnnotationTypeDeclaration bodyDeclaration) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, jPackage, bodyDeclaration);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2711,24 +2711,24 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_bindingFFFFBB(
-			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("uPackage");
-		EObject _localVariable_1 = targetMatch.getObject("feature");
+			Match sourceMatch, Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("jPackage");
+		EObject _localVariable_1 = targetMatch.getObject("uPackage");
 		EObject _localVariable_2 = sourceMatch.getObject("bodyDeclaration");
-		EObject _localVariable_3 = sourceMatch.getObject("jPackage");
-		EObject tmpUPackage = _localVariable_0;
-		EObject tmpFeature = _localVariable_1;
+		EObject _localVariable_3 = targetMatch.getObject("feature");
+		EObject tmpJPackage = _localVariable_0;
+		EObject tmpUPackage = _localVariable_1;
 		EObject tmpBodyDeclaration = _localVariable_2;
-		EObject tmpJPackage = _localVariable_3;
-		if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-			if (tmpFeature instanceof Interface) {
-				Interface feature = (Interface) tmpFeature;
+		EObject tmpFeature = _localVariable_3;
+		if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
+			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
 				if (tmpBodyDeclaration instanceof AnnotationTypeDeclaration) {
 					AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) tmpBodyDeclaration;
-					if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-						org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-						return new Object[] { uPackage, feature, bodyDeclaration, jPackage, targetMatch, sourceMatch };
+					if (tmpFeature instanceof Interface) {
+						Interface feature = (Interface) tmpFeature;
+						return new Object[] { jPackage, uPackage, bodyDeclaration, feature, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2737,10 +2737,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_blackBBBBBB(
-			org.eclipse.uml2.uml.Package uPackage, Interface feature, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage, Match sourceMatch, Match targetMatch) {
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			AnnotationTypeDeclaration bodyDeclaration, Interface feature, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { uPackage, feature, bodyDeclaration, jPackage, sourceMatch, targetMatch };
+			return new Object[] { jPackage, uPackage, bodyDeclaration, feature, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2748,32 +2748,32 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_binding = pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_bindingFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_binding != null) {
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_binding[0];
-			Interface feature = (Interface) result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_binding[1];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_binding[0];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_binding[1];
 			AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_binding[2];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_binding[3];
+			Interface feature = (Interface) result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_black = pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_blackBBBBBB(
-					uPackage, feature, bodyDeclaration, jPackage, sourceMatch, targetMatch);
+					jPackage, uPackage, bodyDeclaration, feature, sourceMatch, targetMatch);
 			if (result_pattern_AnnotationTypeDeclaration2Interface_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { uPackage, feature, bodyDeclaration, jPackage, sourceMatch, targetMatch };
+				return new Object[] { jPackage, uPackage, bodyDeclaration, feature, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_24_3_solvecsp_bindingFBBBBBBB(
-			AnnotationTypeDeclaration2Interface _this, org.eclipse.uml2.uml.Package uPackage, Interface feature,
-			AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage, Match sourceMatch,
-			Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(uPackage, feature, bodyDeclaration, jPackage, sourceMatch,
+			AnnotationTypeDeclaration2Interface _this, org.eclipse.modisco.java.Package jPackage,
+			org.eclipse.uml2.uml.Package uPackage, AnnotationTypeDeclaration bodyDeclaration, Interface feature,
+			Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(jPackage, uPackage, bodyDeclaration, feature, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, uPackage, feature, bodyDeclaration, jPackage, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, jPackage, uPackage, bodyDeclaration, feature, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2783,11 +2783,11 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			AnnotationTypeDeclaration2Interface _this, org.eclipse.uml2.uml.Package uPackage, Interface feature,
-			AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage, Match sourceMatch,
-			Match targetMatch) {
+			AnnotationTypeDeclaration2Interface _this, org.eclipse.modisco.java.Package jPackage,
+			org.eclipse.uml2.uml.Package uPackage, AnnotationTypeDeclaration bodyDeclaration, Interface feature,
+			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_AnnotationTypeDeclaration2Interface_24_3_solvecsp_binding = pattern_AnnotationTypeDeclaration2Interface_24_3_solvecsp_bindingFBBBBBBB(
-				_this, uPackage, feature, bodyDeclaration, jPackage, sourceMatch, targetMatch);
+				_this, jPackage, uPackage, bodyDeclaration, feature, sourceMatch, targetMatch);
 		if (result_pattern_AnnotationTypeDeclaration2Interface_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeDeclaration2Interface_24_3_solvecsp_binding[0];
 
@@ -2795,7 +2795,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_AnnotationTypeDeclaration2Interface_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, uPackage, feature, bodyDeclaration, jPackage, sourceMatch,
+				return new Object[] { csp, _this, jPackage, uPackage, bodyDeclaration, feature, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2808,15 +2808,15 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationTypeDeclaration2Interface_24_5_matchcorrcontext_blackFBBBB(
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage, Match sourceMatch,
+	public static final Iterable<Object[]> pattern_AnnotationTypeDeclaration2Interface_24_5_matchcorrcontext_blackBBFBB(
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage, Match sourceMatch,
 			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (JavaPackage2UmlPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(uPackage, JavaPackage2UmlPackage.class, "target")) {
-				if (jPackage.equals(jp2up.getSource())) {
-					_result.add(new Object[] { jp2up, uPackage, jPackage, sourceMatch, targetMatch });
+					.getOppositeReferenceTyped(jPackage, JavaPackage2UmlPackage.class, "source")) {
+				if (uPackage.equals(jp2up.getTarget())) {
+					_result.add(new Object[] { jPackage, uPackage, jp2up, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2835,22 +2835,22 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_24_6_createcorrespondence_blackBBBBB(
-			org.eclipse.uml2.uml.Package uPackage, Interface feature, AnnotationTypeDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage, CCMatch ccMatch) {
-		return new Object[] { uPackage, feature, bodyDeclaration, jPackage, ccMatch };
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			AnnotationTypeDeclaration bodyDeclaration, Interface feature, CCMatch ccMatch) {
+		return new Object[] { jPackage, uPackage, bodyDeclaration, feature, ccMatch };
 	}
 
-	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_24_6_createcorrespondence_greenFFBBB(
-			Interface feature, AnnotationTypeDeclaration bodyDeclaration, CCMatch ccMatch) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_24_6_createcorrespondence_greenFBFBB(
+			AnnotationTypeDeclaration bodyDeclaration, Interface feature, CCMatch ccMatch) {
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
-		b2e.setTarget(feature);
-		b2e.setSource(bodyDeclaration);
-		ccMatch.getCreateCorr().add(b2e);
-		bd2ne.setTarget(feature);
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		bd2ne.setSource(bodyDeclaration);
+		bd2ne.setTarget(feature);
 		ccMatch.getCreateCorr().add(bd2ne);
-		return new Object[] { b2e, bd2ne, feature, bodyDeclaration, ccMatch };
+		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
+		ccMatch.getCreateCorr().add(b2e);
+		return new Object[] { bd2ne, bodyDeclaration, b2e, feature, ccMatch };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_24_7_addtoreturnedresult_blackBB(
@@ -2876,8 +2876,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_black_nac_0B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_810034 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_810034 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_507190 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_507190 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2886,10 +2886,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_black_nac_1B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_127166 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_635036 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_127166 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_127166)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_635036 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_635036)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -2899,9 +2899,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_black_nac_2B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_481339 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_329168 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_481339 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_329168 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2910,7 +2910,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_black_nac_3B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_751372 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_784989 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -2918,7 +2918,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_blackBB(
-			AnnotationTypeDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
+			org.eclipse.modisco.java.Package jPackage, AnnotationTypeDeclaration bodyDeclaration) {
 		if (jPackage.getOwnedElements().contains(bodyDeclaration)) {
 			if (pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_black_nac_0B(
 					bodyDeclaration) == null) {
@@ -2928,7 +2928,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 							bodyDeclaration) == null) {
 						if (pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_black_nac_3B(
 								bodyDeclaration) == null) {
-							return new Object[] { bodyDeclaration, jPackage };
+							return new Object[] { jPackage, bodyDeclaration };
 						}
 					}
 				}
@@ -2949,7 +2949,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_28_1_matchtggpattern_black_nac_0B(
 			Interface feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_674100 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_504971 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2958,9 +2958,9 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_28_1_matchtggpattern_black_nac_1B(
 			Interface feature) {
-		for (Interface __DEC_feature_nestedClassifier_566397 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_759451 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
-			if (!feature.equals(__DEC_feature_nestedClassifier_566397)) {
+			if (!feature.equals(__DEC_feature_nestedClassifier_759451)) {
 				return new Object[] { feature };
 			}
 		}
@@ -3003,6 +3003,14 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_black_nac_0BB(
+			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package jPackage) {
+		if (ruleResult.getSourceObjects().contains(jPackage)) {
+			return new Object[] { ruleResult, jPackage };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, JavaPackage2UmlPackage jp2up) {
 		if (ruleResult.getCorrObjects().contains(jp2up)) {
 			return new Object[] { ruleResult, jp2up };
@@ -3010,18 +3018,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_black_nac_1BB(
+	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Package uPackage) {
 		if (ruleResult.getTargetObjects().contains(uPackage)) {
 			return new Object[] { ruleResult, uPackage };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package jPackage) {
-		if (ruleResult.getSourceObjects().contains(jPackage)) {
-			return new Object[] { ruleResult, jPackage };
 		}
 		return null;
 	}
@@ -3033,17 +3033,17 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 			for (EObject tmpJp2up : jp2upList.getEntryObjects()) {
 				if (tmpJp2up instanceof JavaPackage2UmlPackage) {
 					JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
-					org.eclipse.uml2.uml.Package uPackage = jp2up.getTarget();
-					if (uPackage != null) {
-						org.eclipse.modisco.java.Package jPackage = jp2up.getSource();
-						if (jPackage != null) {
-							if (pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_black_nac_0BB(
+					org.eclipse.modisco.java.Package jPackage = jp2up.getSource();
+					if (jPackage != null) {
+						org.eclipse.uml2.uml.Package uPackage = jp2up.getTarget();
+						if (uPackage != null) {
+							if (pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_black_nac_1BB(
 									ruleResult, jp2up) == null) {
-								if (pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_black_nac_1BB(
-										ruleResult, uPackage) == null) {
+								if (pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_black_nac_0BB(
+										ruleResult, jPackage) == null) {
 									if (pattern_AnnotationTypeDeclaration2Interface_29_2_isapplicablecore_black_nac_2BB(
-											ruleResult, jPackage) == null) {
-										_result.add(new Object[] { jp2upList, jp2up, uPackage, jPackage,
+											ruleResult, uPackage) == null) {
+										_result.add(new Object[] { jp2upList, jPackage, jp2up, uPackage,
 												ruleEntryContainer, ruleResult });
 									}
 								}
@@ -3060,13 +3060,13 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_3_solveCSP_bindingFBBBBBB(
 			AnnotationTypeDeclaration2Interface _this, IsApplicableMatch isApplicableMatch,
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jp2up, uPackage, jPackage,
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jPackage, uPackage, jp2up,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jp2up, uPackage, jPackage, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, jPackage, uPackage, jp2up, ruleResult };
 		}
 		return null;
 	}
@@ -3077,10 +3077,10 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_3_solveCSP_bindingAndBlackFBBBBBB(
 			AnnotationTypeDeclaration2Interface _this, IsApplicableMatch isApplicableMatch,
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, ModelgeneratorRuleResult ruleResult) {
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_AnnotationTypeDeclaration2Interface_29_3_solveCSP_binding = pattern_AnnotationTypeDeclaration2Interface_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jp2up, uPackage, jPackage, ruleResult);
+				_this, isApplicableMatch, jPackage, uPackage, jp2up, ruleResult);
 		if (result_pattern_AnnotationTypeDeclaration2Interface_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeDeclaration2Interface_29_3_solveCSP_binding[0];
 
@@ -3088,7 +3088,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_AnnotationTypeDeclaration2Interface_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jp2up, uPackage, jPackage, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, jPackage, uPackage, jp2up, ruleResult };
 			}
 		}
 		return null;
@@ -3102,46 +3102,46 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_5_checknacs_blackBBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage) {
-		return new Object[] { jp2up, uPackage, jPackage };
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up) {
+		return new Object[] { jPackage, uPackage, jp2up };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_6_perform_blackBBBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { jp2up, uPackage, jPackage, ruleResult };
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage jp2up, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { jPackage, uPackage, jp2up, ruleResult };
 	}
 
-	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_6_perform_greenFFBFFBBB(
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
+	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_29_6_perform_greenFBBFFFBB(
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
-		Interface feature = UMLFactory.eINSTANCE.createInterface();
 		AnnotationTypeDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createAnnotationTypeDeclaration();
-		Object _localVariable_0 = csp.getValue("feature", "name");
-		Object _localVariable_1 = csp.getValue("bodyDeclaration", "name");
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		Interface feature = UMLFactory.eINSTANCE.createInterface();
+		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
+		Object _localVariable_1 = csp.getValue("feature", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(b2e);
 		ruleResult.getCorrObjects().add(bd2ne);
-		uPackage.getPackagedElements().add(feature);
-		bd2ne.setTarget(feature);
-		b2e.setTarget(feature);
-		ruleResult.getTargetObjects().add(feature);
-		b2e.setSource(bodyDeclaration);
-		bd2ne.setSource(bodyDeclaration);
 		jPackage.getOwnedElements().add(bodyDeclaration);
+		bd2ne.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
-		String feature_name_prime = (String) _localVariable_0;
-		String bodyDeclaration_name_prime = (String) _localVariable_1;
+		b2e.setSource(bodyDeclaration);
+		ruleResult.getCorrObjects().add(b2e);
+		uPackage.getPackagedElements().add(feature);
+		b2e.setTarget(feature);
+		bd2ne.setTarget(feature);
+		ruleResult.getTargetObjects().add(feature);
+		String bodyDeclaration_name_prime = (String) _localVariable_0;
+		String feature_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
-		feature.setName(feature_name_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
+		feature.setName(feature_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { b2e, bd2ne, uPackage, feature, bodyDeclaration, jPackage, ruleResult, csp };
+		return new Object[] { bd2ne, jPackage, uPackage, bodyDeclaration, b2e, feature, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_AnnotationTypeDeclaration2Interface_29_7_expressionFB(

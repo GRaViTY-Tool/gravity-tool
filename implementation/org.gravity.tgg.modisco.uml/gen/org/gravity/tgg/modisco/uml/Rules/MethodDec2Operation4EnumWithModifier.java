@@ -4,7 +4,7 @@ package org.gravity.tgg.modisco.uml.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.EnumDeclaration;
 import org.eclipse.modisco.java.Modifier;
 
 import org.eclipse.uml2.uml.Enumeration;
@@ -12,7 +12,7 @@ import org.eclipse.uml2.uml.Operation;
 
 import org.gravity.modisco.MMethodDefinition;
 
-import org.gravity.tgg.modisco.uml.NamedElement2NamedElement;
+import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
 import org.moflon.tgg.language.csp.CSP;
 
@@ -49,7 +49,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @generated
 	 */
 	boolean isAppropriate_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
-			AbstractTypeDeclaration classDec);
+			EnumDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @generated
 	 */
 	void registerObjectsToMatch_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
-			AbstractTypeDeclaration classDec);
+			EnumDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,7 +83,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
-			AbstractTypeDeclaration classDec);
+			EnumDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +100,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition bodyDeclaration,
-			Modifier modifier, Enumeration umlClass, NamedElement2NamedElement cd2c, AbstractTypeDeclaration classDec);
+			Modifier modifier, Enumeration umlClass, ASTNode2Element cd2c, EnumDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,7 +116,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
 			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
@@ -182,7 +182,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, Enumeration umlClass,
-			NamedElement2NamedElement cd2c, AbstractTypeDeclaration classDec);
+			ASTNode2Element cd2c, EnumDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,7 +198,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
 			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
@@ -215,7 +215,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_64(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_938(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_65(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_961(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,7 +256,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(Operation feature, MMethodDefinition bodyDeclaration, Modifier modifier,
-			Enumeration umlClass, AbstractTypeDeclaration classDec, Match sourceMatch, Match targetMatch);
+			Enumeration umlClass, EnumDeclaration classDec, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,7 +272,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, Modifier modifier, AbstractTypeDeclaration classDec);
+	boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, Modifier modifier, EnumDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,8 +288,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			NamedElement2NamedElement cd2cParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element cd2cParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -297,8 +296,8 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Enumeration umlClass,
-			NamedElement2NamedElement cd2c, AbstractTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Enumeration umlClass, ASTNode2Element cd2c,
+			EnumDeclaration classDec, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

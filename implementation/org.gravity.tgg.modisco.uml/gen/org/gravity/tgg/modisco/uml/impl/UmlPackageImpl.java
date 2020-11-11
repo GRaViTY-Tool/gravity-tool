@@ -69,6 +69,13 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass modifier2NamedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass typeAccess2GeneralizationEClass = null;
 
 	/**
@@ -76,7 +83,7 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass javaPackage2UmlPackageEClass = null;
+	private EClass typeAccess2TemplateBindingEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,13 +91,6 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	private EClass variableDec2ParameterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass typeAccess2PropertyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,21 +111,14 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass astNode2ElementEClass = null;
+	private EClass javaPackage2UmlPackageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass namedElement2NamedElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass expression2CommentEClass = null;
+	private EClass typeAccess2PropertyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,14 +132,7 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modifier2NamedElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass typeAccess2TemplateBindingEClass = null;
+	private EClass namedElement2NamedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,6 +140,20 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	private EClass javaModel2UMLPackageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass expression2CommentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass astNode2ElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -274,10 +274,44 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getModifier2NamedElement() {
+		if (modifier2NamedElementEClass == null) {
+			modifier2NamedElementEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
+					.getEClassifiers().get(1);
+		}
+		return modifier2NamedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getModifier2NamedElement_Source() {
+		return (EReference) getModifier2NamedElement().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getModifier2NamedElement_Target() {
+		return (EReference) getModifier2NamedElement().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTypeAccess2Generalization() {
 		if (typeAccess2GeneralizationEClass == null) {
 			typeAccess2GeneralizationEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
-					.getEClassifiers().get(1);
+					.getEClassifiers().get(2);
 		}
 		return typeAccess2GeneralizationEClass;
 	}
@@ -308,12 +342,12 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getJavaPackage2UmlPackage() {
-		if (javaPackage2UmlPackageEClass == null) {
-			javaPackage2UmlPackageEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
-					.getEClassifiers().get(2);
+	public EClass getTypeAccess2TemplateBinding() {
+		if (typeAccess2TemplateBindingEClass == null) {
+			typeAccess2TemplateBindingEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
+					.getEClassifiers().get(3);
 		}
-		return javaPackage2UmlPackageEClass;
+		return typeAccess2TemplateBindingEClass;
 	}
 
 	/**
@@ -322,8 +356,8 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getJavaPackage2UmlPackage_Source() {
-		return (EReference) getJavaPackage2UmlPackage().getEStructuralFeatures().get(0);
+	public EReference getTypeAccess2TemplateBinding_Source() {
+		return (EReference) getTypeAccess2TemplateBinding().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -332,8 +366,8 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getJavaPackage2UmlPackage_Target() {
-		return (EReference) getJavaPackage2UmlPackage().getEStructuralFeatures().get(1);
+	public EReference getTypeAccess2TemplateBinding_Target() {
+		return (EReference) getTypeAccess2TemplateBinding().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -345,7 +379,7 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	public EClass getVariableDec2Parameter() {
 		if (variableDec2ParameterEClass == null) {
 			variableDec2ParameterEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
-					.getEClassifiers().get(3);
+					.getEClassifiers().get(4);
 		}
 		return variableDec2ParameterEClass;
 	}
@@ -368,40 +402,6 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	@Override
 	public EReference getVariableDec2Parameter_Target() {
 		return (EReference) getVariableDec2Parameter().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getTypeAccess2Property() {
-		if (typeAccess2PropertyEClass == null) {
-			typeAccess2PropertyEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
-					.getEClassifiers().get(4);
-		}
-		return typeAccess2PropertyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTypeAccess2Property_Source() {
-		return (EReference) getTypeAccess2Property().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTypeAccess2Property_Target() {
-		return (EReference) getTypeAccess2Property().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -478,12 +478,12 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getASTNode2Element() {
-		if (astNode2ElementEClass == null) {
-			astNode2ElementEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
+	public EClass getJavaPackage2UmlPackage() {
+		if (javaPackage2UmlPackageEClass == null) {
+			javaPackage2UmlPackageEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
 					.getEClassifiers().get(7);
 		}
-		return astNode2ElementEClass;
+		return javaPackage2UmlPackageEClass;
 	}
 
 	/**
@@ -492,8 +492,8 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getASTNode2Element_Source() {
-		return (EReference) getASTNode2Element().getEStructuralFeatures().get(0);
+	public EReference getJavaPackage2UmlPackage_Source() {
+		return (EReference) getJavaPackage2UmlPackage().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -502,8 +502,8 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getASTNode2Element_Target() {
-		return (EReference) getASTNode2Element().getEStructuralFeatures().get(1);
+	public EReference getJavaPackage2UmlPackage_Target() {
+		return (EReference) getJavaPackage2UmlPackage().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -512,12 +512,12 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getNamedElement2NamedElement() {
-		if (namedElement2NamedElementEClass == null) {
-			namedElement2NamedElementEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
+	public EClass getTypeAccess2Property() {
+		if (typeAccess2PropertyEClass == null) {
+			typeAccess2PropertyEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
 					.getEClassifiers().get(8);
 		}
-		return namedElement2NamedElementEClass;
+		return typeAccess2PropertyEClass;
 	}
 
 	/**
@@ -526,8 +526,8 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNamedElement2NamedElement_Source() {
-		return (EReference) getNamedElement2NamedElement().getEStructuralFeatures().get(0);
+	public EReference getTypeAccess2Property_Source() {
+		return (EReference) getTypeAccess2Property().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -536,42 +536,8 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNamedElement2NamedElement_Target() {
-		return (EReference) getNamedElement2NamedElement().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getExpression2Comment() {
-		if (expression2CommentEClass == null) {
-			expression2CommentEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
-					.getEClassifiers().get(9);
-		}
-		return expression2CommentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getExpression2Comment_Source() {
-		return (EReference) getExpression2Comment().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getExpression2Comment_Target() {
-		return (EReference) getExpression2Comment().getEStructuralFeatures().get(1);
+	public EReference getTypeAccess2Property_Target() {
+		return (EReference) getTypeAccess2Property().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -583,7 +549,7 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	public EClass getCompilationUnit2Artifact() {
 		if (compilationUnit2ArtifactEClass == null) {
 			compilationUnit2ArtifactEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
-					.getEClassifiers().get(10);
+					.getEClassifiers().get(9);
 		}
 		return compilationUnit2ArtifactEClass;
 	}
@@ -614,12 +580,12 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getModifier2NamedElement() {
-		if (modifier2NamedElementEClass == null) {
-			modifier2NamedElementEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
-					.getEClassifiers().get(11);
+	public EClass getNamedElement2NamedElement() {
+		if (namedElement2NamedElementEClass == null) {
+			namedElement2NamedElementEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
+					.getEClassifiers().get(10);
 		}
-		return modifier2NamedElementEClass;
+		return namedElement2NamedElementEClass;
 	}
 
 	/**
@@ -628,8 +594,8 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModifier2NamedElement_Source() {
-		return (EReference) getModifier2NamedElement().getEStructuralFeatures().get(0);
+	public EReference getNamedElement2NamedElement_Source() {
+		return (EReference) getNamedElement2NamedElement().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -638,42 +604,8 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModifier2NamedElement_Target() {
-		return (EReference) getModifier2NamedElement().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getTypeAccess2TemplateBinding() {
-		if (typeAccess2TemplateBindingEClass == null) {
-			typeAccess2TemplateBindingEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
-					.getEClassifiers().get(12);
-		}
-		return typeAccess2TemplateBindingEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTypeAccess2TemplateBinding_Source() {
-		return (EReference) getTypeAccess2TemplateBinding().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTypeAccess2TemplateBinding_Target() {
-		return (EReference) getTypeAccess2TemplateBinding().getEStructuralFeatures().get(1);
+	public EReference getNamedElement2NamedElement_Target() {
+		return (EReference) getNamedElement2NamedElement().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -685,7 +617,7 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	public EClass getJavaModel2UMLPackage() {
 		if (javaModel2UMLPackageEClass == null) {
 			javaModel2UMLPackageEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
-					.getEClassifiers().get(13);
+					.getEClassifiers().get(11);
 		}
 		return javaModel2UMLPackageEClass;
 	}
@@ -708,6 +640,74 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	@Override
 	public EReference getJavaModel2UMLPackage_Target() {
 		return (EReference) getJavaModel2UMLPackage().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getExpression2Comment() {
+		if (expression2CommentEClass == null) {
+			expression2CommentEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
+					.getEClassifiers().get(12);
+		}
+		return expression2CommentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getExpression2Comment_Source() {
+		return (EReference) getExpression2Comment().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getExpression2Comment_Target() {
+		return (EReference) getExpression2Comment().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getASTNode2Element() {
+		if (astNode2ElementEClass == null) {
+			astNode2ElementEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI)
+					.getEClassifiers().get(13);
+		}
+		return astNode2ElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getASTNode2Element_Source() {
+		return (EReference) getASTNode2Element().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getASTNode2Element_Target() {
+		return (EReference) getASTNode2Element().getEStructuralFeatures().get(1);
 	}
 
 	/**

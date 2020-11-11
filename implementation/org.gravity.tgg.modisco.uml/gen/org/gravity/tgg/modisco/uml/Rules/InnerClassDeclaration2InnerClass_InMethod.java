@@ -4,14 +4,12 @@ package org.gravity.tgg.modisco.uml.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.AbstractTypeDeclaration;
-
 import org.eclipse.uml2.uml.Operation;
 
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MClass;
 
-import org.gravity.tgg.modisco.uml.NamedElement2NamedElement;
+import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
 import org.moflon.tgg.language.csp.CSP;
 
@@ -47,8 +45,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MAbstractMethodDefinition method, MClass bodyDeclaration,
-			AbstractTypeDeclaration jContainer);
+	boolean isAppropriate_FWD(Match match, MAbstractMethodDefinition method, MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,8 +69,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MAbstractMethodDefinition method, MClass bodyDeclaration,
-			AbstractTypeDeclaration jContainer);
+	void registerObjectsToMatch_FWD(Match match, MAbstractMethodDefinition method, MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,8 +77,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MAbstractMethodDefinition method, MClass bodyDeclaration,
-			AbstractTypeDeclaration jContainer);
+	CSP isAppropriate_solveCsp_FWD(Match match, MAbstractMethodDefinition method, MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,8 +94,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition method,
-			NamedElement2NamedElement me2op, MClass bodyDeclaration, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer, Operation operation, NamedElement2NamedElement ne2ne);
+			ASTNode2Element me2op, MClass bodyDeclaration, org.eclipse.uml2.uml.Class uContainer, Operation operation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,9 +110,8 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject method, EObject b2e, EObject bd2ne,
-			EObject me2op, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject operation,
-			EObject ne2ne);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject method, EObject bd2ne, EObject b2e,
+			EObject me2op, EObject bodyDeclaration, EObject uContainer, EObject operation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,8 +179,8 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class feature,
-			MAbstractMethodDefinition method, NamedElement2NamedElement me2op, org.eclipse.uml2.uml.Class uContainer,
-			AbstractTypeDeclaration jContainer, Operation operation, NamedElement2NamedElement ne2ne);
+			MAbstractMethodDefinition method, ASTNode2Element me2op, org.eclipse.uml2.uml.Class uContainer,
+			Operation operation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,9 +196,8 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject method, EObject b2e, EObject bd2ne,
-			EObject me2op, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject operation,
-			EObject ne2ne);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject method, EObject bd2ne, EObject b2e,
+			EObject me2op, EObject bodyDeclaration, EObject uContainer, EObject operation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +213,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_57(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_945(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +221,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_58(EMoflonEdge _edge_mInnerTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_968(EMoflonEdge _edge_mInnerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,8 +254,8 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, MAbstractMethodDefinition method,
-			MClass bodyDeclaration, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
-			Operation operation, Match sourceMatch, Match targetMatch);
+			MClass bodyDeclaration, org.eclipse.uml2.uml.Class uContainer, Operation operation, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,7 +271,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MAbstractMethodDefinition method, MClass bodyDeclaration, AbstractTypeDeclaration jContainer);
+	boolean checkDEC_FWD(MAbstractMethodDefinition method, MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,8 +288,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			NamedElement2NamedElement me2opParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element me2opParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,8 +297,8 @@ public interface InnerClassDeclaration2InnerClass_InMethod extends EObject, Abst
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition method,
-			NamedElement2NamedElement me2op, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
-			Operation operation, NamedElement2NamedElement ne2ne, ModelgeneratorRuleResult ruleResult);
+			ASTNode2Element me2op, org.eclipse.uml2.uml.Class uContainer, Operation operation,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -23,6 +23,7 @@ import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 
 import org.gravity.modisco.MFieldDefinition;
@@ -753,7 +754,7 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_65(EMoflonEdge _edge_ownedAttribute) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_951(EMoflonEdge _edge_ownedAttribute) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4ClassImpl
 				.pattern_FieldDec2Property4Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -811,7 +812,7 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_66(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_974(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4ClassImpl
 				.pattern_FieldDec2Property4Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -880,13 +881,13 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
-		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
-		var_vdf_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
+		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
+		var_vdf_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -927,13 +928,13 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
-		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
-		var_vdf_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
+		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
+		var_vdf_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1295,10 +1296,10 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 			return null;
 		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_65__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_65((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_66__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_66((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_951__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_951((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_974__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_974((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2521,11 +2522,13 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 		return new Object[] { __result };
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_0B(
-			Property feature) {
-		DataType __DEC_feature_ownedAttribute_932086 = feature.getDatatype();
-		if (__DEC_feature_ownedAttribute_932086 != null) {
-			return new Object[] { feature };
+	public static final Object[] pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_0BB(
+			Property feature, org.eclipse.uml2.uml.Class uOwnerType) {
+		Type __DEC_feature_type_202230 = feature.getType();
+		if (__DEC_feature_type_202230 != null) {
+			if (!uOwnerType.equals(__DEC_feature_type_202230)) {
+				return new Object[] { feature, uOwnerType };
+			}
 		}
 
 		return null;
@@ -2533,11 +2536,29 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_1B(
 			Property feature) {
-		Interface __DEC_feature_ownedAttribute_509391 = feature.getInterface();
-		if (__DEC_feature_ownedAttribute_509391 != null) {
+		DataType __DEC_feature_ownedAttribute_81810 = feature.getDatatype();
+		if (__DEC_feature_ownedAttribute_81810 != null) {
 			return new Object[] { feature };
 		}
 
+		return null;
+	}
+
+	public static final Object[] pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_2B(
+			Property feature) {
+		Interface __DEC_feature_ownedAttribute_870110 = feature.getInterface();
+		if (__DEC_feature_ownedAttribute_870110 != null) {
+			return new Object[] { feature };
+		}
+
+		return null;
+	}
+
+	public static final Object[] pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_3BB(
+			Property feature, org.eclipse.uml2.uml.Class uOwnerType) {
+		if (uOwnerType.equals(feature.getType())) {
+			return new Object[] { feature, uOwnerType };
+		}
 		return null;
 	}
 
@@ -2551,9 +2572,16 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 			if (tmpFeature instanceof Property) {
 				Property feature = (Property) tmpFeature;
 				if (uOwnerType.getOwnedAttributes().contains(feature)) {
-					if (pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_0B(feature) == null) {
+					if (pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_0BB(feature,
+							uOwnerType) == null) {
 						if (pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_1B(feature) == null) {
-							_result.add(new Object[] { feature, uOwnerType, _edge_ownedAttribute });
+							if (pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_2B(
+									feature) == null) {
+								if (pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_3BB(feature,
+										uOwnerType) == null) {
+									_result.add(new Object[] { feature, uOwnerType, _edge_ownedAttribute });
+								}
+							}
 						}
 					}
 				}
@@ -2664,8 +2692,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_21_2_testcorematchandDECs_black_nac_0B(
 			MFieldDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_120335 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_120335 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_138298 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_138298 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2674,8 +2702,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_21_2_testcorematchandDECs_black_nac_1BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_500431 : bodyDeclaration.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_fragments_500431)) {
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_323661 : bodyDeclaration.getFragments()) {
+			if (!vdf.equals(__DEC_bodyDeclaration_fragments_323661)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -2684,9 +2712,9 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_21_2_testcorematchandDECs_black_nac_2B(
 			MFieldDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_248104 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_882371 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_248104 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_882371 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2952,8 +2980,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_27_1_matchtggpattern_black_nac_0B(
 			MFieldDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_859175 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_859175 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_597185 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_597185 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2962,8 +2990,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_27_1_matchtggpattern_black_nac_1BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_583982 : bodyDeclaration.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_fragments_583982)) {
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_60683 : bodyDeclaration.getFragments()) {
+			if (!vdf.equals(__DEC_bodyDeclaration_fragments_60683)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -2972,9 +3000,9 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_27_1_matchtggpattern_black_nac_2B(
 			MFieldDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_635054 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_60082 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_635054 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_60082 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3009,30 +3037,55 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_0B(Property feature) {
-		DataType __DEC_feature_ownedAttribute_168695 = feature.getDatatype();
-		if (__DEC_feature_ownedAttribute_168695 != null) {
-			return new Object[] { feature };
+	public static final Object[] pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_0BB(Property feature,
+			org.eclipse.uml2.uml.Class uOwnerType) {
+		Type __DEC_feature_type_270865 = feature.getType();
+		if (__DEC_feature_type_270865 != null) {
+			if (!uOwnerType.equals(__DEC_feature_type_270865)) {
+				return new Object[] { feature, uOwnerType };
+			}
 		}
 
 		return null;
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_1B(Property feature) {
-		Interface __DEC_feature_ownedAttribute_599396 = feature.getInterface();
-		if (__DEC_feature_ownedAttribute_599396 != null) {
+		DataType __DEC_feature_ownedAttribute_45002 = feature.getDatatype();
+		if (__DEC_feature_ownedAttribute_45002 != null) {
 			return new Object[] { feature };
 		}
 
 		return null;
 	}
 
+	public static final Object[] pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_2B(Property feature) {
+		Interface __DEC_feature_ownedAttribute_329589 = feature.getInterface();
+		if (__DEC_feature_ownedAttribute_329589 != null) {
+			return new Object[] { feature };
+		}
+
+		return null;
+	}
+
+	public static final Object[] pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_3BB(Property feature,
+			org.eclipse.uml2.uml.Class uOwnerType) {
+		if (uOwnerType.equals(feature.getType())) {
+			return new Object[] { feature, uOwnerType };
+		}
+		return null;
+	}
+
 	public static final Object[] pattern_FieldDec2Property4Class_28_1_matchtggpattern_blackBB(Property feature,
 			org.eclipse.uml2.uml.Class uOwnerType) {
 		if (uOwnerType.getOwnedAttributes().contains(feature)) {
-			if (pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_0B(feature) == null) {
+			if (pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_0BB(feature, uOwnerType) == null) {
 				if (pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_1B(feature) == null) {
-					return new Object[] { feature, uOwnerType };
+					if (pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_2B(feature) == null) {
+						if (pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_3BB(feature,
+								uOwnerType) == null) {
+							return new Object[] { feature, uOwnerType };
+						}
+					}
 				}
 			}
 		}

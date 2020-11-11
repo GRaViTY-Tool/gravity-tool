@@ -49,7 +49,7 @@ public interface FieldDec2Property4Interface_WithModifier extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MFieldDefinition bodyDeclaration, Modifier modifier,
+	boolean isAppropriate_FWD(Match match, Modifier modifier, MFieldDefinition bodyDeclaration,
 			VariableDeclarationFragment vdf, AbstractTypeDeclaration jOwnerType);
 
 	/**
@@ -74,7 +74,7 @@ public interface FieldDec2Property4Interface_WithModifier extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MFieldDefinition bodyDeclaration, Modifier modifier,
+	void registerObjectsToMatch_FWD(Match match, Modifier modifier, MFieldDefinition bodyDeclaration,
 			VariableDeclarationFragment vdf, AbstractTypeDeclaration jOwnerType);
 
 	/**
@@ -83,7 +83,7 @@ public interface FieldDec2Property4Interface_WithModifier extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MFieldDefinition bodyDeclaration, Modifier modifier,
+	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, MFieldDefinition bodyDeclaration,
 			VariableDeclarationFragment vdf, AbstractTypeDeclaration jOwnerType);
 
 	/**
@@ -100,8 +100,8 @@ public interface FieldDec2Property4Interface_WithModifier extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
-			Modifier modifier, Interface uOwnerType, VariableDeclarationFragment vdf,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
+			MFieldDefinition bodyDeclaration, Interface uOwnerType, VariableDeclarationFragment vdf,
 			AbstractTypeDeclaration jOwnerType, NamedElement2NamedElement jo2uo);
 
 	/**
@@ -118,8 +118,8 @@ public interface FieldDec2Property4Interface_WithModifier extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
-			EObject bodyDeclaration, EObject modifier, EObject uOwnerType, EObject vdf, EObject jOwnerType,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject modifier, EObject bodyDeclaration, EObject uOwnerType, EObject vdf, EObject jOwnerType,
 			EObject jo2uo);
 
 	/**
@@ -201,8 +201,8 @@ public interface FieldDec2Property4Interface_WithModifier extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
-			EObject bodyDeclaration, EObject modifier, EObject uOwnerType, EObject vdf, EObject jOwnerType,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+			EObject modifier, EObject bodyDeclaration, EObject uOwnerType, EObject vdf, EObject jOwnerType,
 			EObject jo2uo);
 
 	/**
@@ -219,7 +219,7 @@ public interface FieldDec2Property4Interface_WithModifier extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_44(EMoflonEdge _edge_ownedAttribute);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_999(EMoflonEdge _edge_ownedAttribute);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +227,7 @@ public interface FieldDec2Property4Interface_WithModifier extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_45(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1023(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,7 +259,7 @@ public interface FieldDec2Property4Interface_WithModifier extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Property feature, MFieldDefinition bodyDeclaration, Modifier modifier,
+	CSP isApplicable_solveCsp_CC(Property feature, Modifier modifier, MFieldDefinition bodyDeclaration,
 			Interface uOwnerType, VariableDeclarationFragment vdf, AbstractTypeDeclaration jOwnerType,
 			Match sourceMatch, Match targetMatch);
 
@@ -277,7 +277,7 @@ public interface FieldDec2Property4Interface_WithModifier extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MFieldDefinition bodyDeclaration, Modifier modifier, VariableDeclarationFragment vdf,
+	boolean checkDEC_FWD(Modifier modifier, MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf,
 			AbstractTypeDeclaration jOwnerType);
 
 	/**

@@ -10,11 +10,3 @@
 #target {
 	++feature:Class
 }
-
-#correspondence {
-
-}
-
-#attributeConditions {
-
-}

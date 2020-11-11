@@ -672,7 +672,7 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_8(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_974(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeVoidImpl
 				.pattern_PrimitiveTypeVoid_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -729,7 +729,7 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_8(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_997(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeVoidImpl
 				.pattern_PrimitiveTypeVoid_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -801,13 +801,13 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 			return ruleResult;
 		}
 
-		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
-		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
-		var_umpt_name.setType("String");
-
 		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
 		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
 		var_jpt_name.setType("String");
+
+		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
+		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
+		var_umpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -853,13 +853,13 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 			return ruleResult;
 		}
 
-		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
-		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
-		var_umpt_name.setType("String");
-
 		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
 		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
 		var_jpt_name.setType("String");
+
+		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
+		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
+		var_umpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1199,10 +1199,10 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_BWD_EMOFLON_EDGE_8__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_8((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_FWD_EMOFLON_EDGE_8__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_8((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_BWD_EMOFLON_EDGE_974__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_974((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_FWD_EMOFLON_EDGE_997__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_997((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2175,7 +2175,7 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 	}
 
 	public static final Object[] pattern_PrimitiveTypeVoid_20_2_testcorematchandDECs_black_nac_0B(PrimitiveType umpt) {
-		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_229766 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_954791 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}
@@ -2183,7 +2183,7 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 	}
 
 	public static final Object[] pattern_PrimitiveTypeVoid_20_2_testcorematchandDECs_black_nac_1B(PrimitiveType umpt) {
-		for (Interface __DEC_umpt_nestedClassifier_77181 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_umpt_nestedClassifier_486092 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, Interface.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}
@@ -2568,7 +2568,7 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 	}
 
 	public static final Object[] pattern_PrimitiveTypeVoid_28_1_matchtggpattern_black_nac_0B(PrimitiveType umpt) {
-		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_360969 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_123756 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}
@@ -2576,7 +2576,7 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 	}
 
 	public static final Object[] pattern_PrimitiveTypeVoid_28_1_matchtggpattern_black_nac_1B(PrimitiveType umpt) {
-		for (Interface __DEC_umpt_nestedClassifier_25470 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_umpt_nestedClassifier_771309 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, Interface.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}

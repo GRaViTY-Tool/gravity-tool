@@ -389,32 +389,32 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		// Create literals
 
 		// Create attribute variables
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
+		var_modifier_visibility.setValue(modifier.getVisibility());
+		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
 				csp);
 		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
 		var_bodyDeclaration_name.setType("String");
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
-		var_modifier_visibility.setValue(modifier.getVisibility());
-		var_modifier_visibility.setType("java.VisibilityKind");
 
 		// Create unbound variables
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
-		var_feature_name.setType("String");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
 		var_feature_visibility.setType("uml.VisibilityKind");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
+		var_feature_name.setType("String");
 
 		// Create constraints
-		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
@@ -746,31 +746,31 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		// Create literals
 
 		// Create attribute variables
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
-		var_feature_name.setValue(feature.getName());
-		var_feature_name.setType("String");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
 		var_feature_visibility.setValue(feature.getVisibility());
 		var_feature_visibility.setType("uml.VisibilityKind");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
+		var_feature_name.setValue(feature.getName());
+		var_feature_name.setType("String");
 
 		// Create unbound variables
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
-		var_bodyDeclaration_name.setType("String");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
 		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
+		var_bodyDeclaration_name.setType("String");
 
 		// Create constraints
-		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("feature", feature);
@@ -823,7 +823,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_24(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_937(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerClassDeclaration2InnerClass_InClass_WithModifierImpl
 				.pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -886,7 +886,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_24(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_959(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = InnerClassDeclaration2InnerClass_InClass_WithModifierImpl
 				.pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -960,6 +960,14 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
+
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
@@ -968,38 +976,30 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
+		JVisibility2umlVisibility jVisibility2umlVisibility0 = new JVisibility2umlVisibility();
+		csp.getConstraints().add(jVisibility2umlVisibility0);
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
 
-		Eq eq0 = new Eq();
-		csp.getConstraints().add(eq0);
+		jVisibility2umlVisibility0.setRuleName("InnerClassDeclaration2InnerClass_InClass_WithModifier");
+		jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
 
-		JVisibility2umlVisibility jVisibility2umlVisibility1 = new JVisibility2umlVisibility();
-		csp.getConstraints().add(jVisibility2umlVisibility1);
-
-		eq0.setRuleName("InnerClassDeclaration2InnerClass_InClass_WithModifier");
-		eq0.solve(var_bodyDeclaration_name, var_feature_name);
-
-		jVisibility2umlVisibility1.setRuleName("InnerClassDeclaration2InnerClass_InClass_WithModifier");
-		jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+		eq1.setRuleName("InnerClassDeclaration2InnerClass_InClass_WithModifier");
+		eq1.solve(var_bodyDeclaration_name, var_feature_name);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_feature_name.setBound(false);
 			var_feature_visibility.setBound(false);
-			eq0.solve(var_bodyDeclaration_name, var_feature_name);
-			jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+			var_feature_name.setBound(false);
+			jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
+			eq1.solve(var_bodyDeclaration_name, var_feature_name);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("feature", "name", var_feature_name.getValue());
 				__helper.setValue("feature", "visibility", var_feature_visibility.getValue());
+				__helper.setValue("feature", "name", var_feature_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1024,6 +1024,14 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
+
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
@@ -1032,38 +1040,30 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
+		JVisibility2umlVisibility jVisibility2umlVisibility0 = new JVisibility2umlVisibility();
+		csp.getConstraints().add(jVisibility2umlVisibility0);
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
 
-		Eq eq0 = new Eq();
-		csp.getConstraints().add(eq0);
+		jVisibility2umlVisibility0.setRuleName("InnerClassDeclaration2InnerClass_InClass_WithModifier");
+		jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
 
-		JVisibility2umlVisibility jVisibility2umlVisibility1 = new JVisibility2umlVisibility();
-		csp.getConstraints().add(jVisibility2umlVisibility1);
-
-		eq0.setRuleName("InnerClassDeclaration2InnerClass_InClass_WithModifier");
-		eq0.solve(var_bodyDeclaration_name, var_feature_name);
-
-		jVisibility2umlVisibility1.setRuleName("InnerClassDeclaration2InnerClass_InClass_WithModifier");
-		jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+		eq1.setRuleName("InnerClassDeclaration2InnerClass_InClass_WithModifier");
+		eq1.solve(var_bodyDeclaration_name, var_feature_name);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_bodyDeclaration_name.setBound(false);
 			var_modifier_visibility.setBound(false);
-			eq0.solve(var_bodyDeclaration_name, var_feature_name);
-			jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+			var_bodyDeclaration_name.setBound(false);
+			jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
+			eq1.solve(var_bodyDeclaration_name, var_feature_name);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("bodyDeclaration", "name", var_bodyDeclaration_name.getValue());
 				__helper.setValue("modifier", "visibility", var_modifier_visibility.getValue());
+				__helper.setValue("bodyDeclaration", "name", var_bodyDeclaration_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1174,6 +1174,12 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		// Create literals
 
 		// Create attribute variables
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
+		var_modifier_visibility.setValue(modifier.getVisibility());
+		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
+		var_feature_visibility.setValue(feature.getVisibility());
+		var_feature_visibility.setType("uml.VisibilityKind");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
 				csp);
 		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
@@ -1181,27 +1187,21 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
 		var_feature_name.setValue(feature.getName());
 		var_feature_name.setType("String");
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
-		var_modifier_visibility.setValue(modifier.getVisibility());
-		var_modifier_visibility.setType("java.VisibilityKind");
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
-		var_feature_visibility.setValue(feature.getVisibility());
-		var_feature_visibility.setType("uml.VisibilityKind");
 
 		// Create unbound variables
 
 		// Create constraints
-		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		return csp;
 	}
 
@@ -1343,27 +1343,27 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
-		var_bodyDeclaration_name.setType("String");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
-		var_feature_name.setType("String");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
 		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
 		var_feature_visibility.setType("uml.VisibilityKind");
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
+		var_bodyDeclaration_name.setType("String");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
+		var_feature_name.setType("String");
 
 		// Create constraints
-		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("uContainer", uContainer);
@@ -1449,10 +1449,10 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 			return null;
 		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_24__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_24((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_24__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_24((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_937__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_937((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_959__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_959((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_CLASS_DECLARATION2_INNER_CLASS_IN_CLASS_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1685,8 +1685,8 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		org.eclipse.uml2.uml.Class feature = UMLFactory.eINSTANCE.createClass();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Object _localVariable_0 = csp.getValue("feature", "name");
-		Object _localVariable_1 = csp.getValue("feature", "visibility");
+		Object _localVariable_0 = csp.getValue("feature", "visibility");
+		Object _localVariable_1 = csp.getValue("feature", "name");
 		m2f.setSource(modifier);
 		m2f.setTarget(feature);
 		uContainer.getNestedClassifiers().add(feature);
@@ -1694,10 +1694,10 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		bd2ne.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
-		String feature_name_prime = (String) _localVariable_0;
-		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
-		feature.setName(feature_name_prime);
+		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_0;
+		String feature_name_prime = (String) _localVariable_1;
 		feature.setVisibility(feature_visibility_prime);
+		feature.setName(feature_name_prime);
 		return new Object[] { m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, uContainer, csp };
 	}
 
@@ -2807,7 +2807,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_212672 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_987635 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -2816,7 +2816,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_20_2_testcorematchandDECs_black_nac_1B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (Interface __DEC_feature_nestedClassifier_835867 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_986292 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2953,9 +2953,9 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_21_2_testcorematchandDECs_black_nac_0B(
 			MClass bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_734366 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_841280 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_734366 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_841280 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2964,8 +2964,8 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_21_2_testcorematchandDECs_black_nac_1B(
 			MClass bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_363875 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_363875 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_440192 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_440192 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2974,7 +2974,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_21_2_testcorematchandDECs_black_nac_2B(
 			MClass bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_951346 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_438237 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3265,9 +3265,9 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_27_1_matchtggpattern_black_nac_0B(
 			MClass bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_572649 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_402249 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_572649 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_402249 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3276,8 +3276,8 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_27_1_matchtggpattern_black_nac_1B(
 			MClass bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_159883 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_159883 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_281909 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_281909 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3286,7 +3286,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_27_1_matchtggpattern_black_nac_2B(
 			MClass bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_928250 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_987616 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3326,7 +3326,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_28_1_matchtggpattern_black_nac_0B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_393835 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_25773 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -3335,7 +3335,7 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 
 	public static final Object[] pattern_InnerClassDeclaration2InnerClass_InClass_WithModifier_28_1_matchtggpattern_black_nac_1B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (Interface __DEC_feature_nestedClassifier_16120 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_692257 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -3504,8 +3504,8 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		MClass bodyDeclaration = ModiscoFactory.eINSTANCE.createMClass();
 		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
-		Object _localVariable_0 = csp.getValue("feature", "name");
-		Object _localVariable_1 = csp.getValue("feature", "visibility");
+		Object _localVariable_0 = csp.getValue("feature", "visibility");
+		Object _localVariable_1 = csp.getValue("feature", "name");
 		Object _localVariable_2 = csp.getValue("bodyDeclaration", "name");
 		Object _localVariable_3 = csp.getValue("modifier", "visibility");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
@@ -3525,14 +3525,14 @@ public class InnerClassDeclaration2InnerClass_InClass_WithModifierImpl extends A
 		bodyDeclaration.setModifier(modifier);
 		m2f.setSource(modifier);
 		ruleResult.getSourceObjects().add(modifier);
-		String feature_name_prime = (String) _localVariable_0;
-		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
+		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_0;
+		String feature_name_prime = (String) _localVariable_1;
 		String bodyDeclaration_name_prime = (String) _localVariable_2;
 		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		feature.setName(feature_name_prime);
 		feature.setVisibility(feature_visibility_prime);
+		feature.setName(feature_name_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		modifier.setVisibility(modifier_visibility_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
