@@ -74,6 +74,22 @@
     <genClasses ecoreClass="Basic.ecore#//TMethod">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethod/signatures"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TMethod/pg"/>
+      <genOperations ecoreOperation="Basic.ecore#//TMethod/getMethodSignature">
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/getMethodSignature/returnType"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/getMethodSignature/returnLowerBound"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/getMethodSignature/returnUpperBound"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/getMethodSignature/parameters"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/getMethodSignature/parameterLowerBounds"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/getMethodSignature/parameterUpperBounds"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TMethod/createMethodSignature">
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/createMethodSignature/returnType"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/createMethodSignature/returnLowerBound"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/createMethodSignature/returnUpperBound"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/createMethodSignature/parameters"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/createMethodSignature/parameterLowerBounds"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/createMethodSignature/parameterUpperBounds"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TMethodDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/overriding"/>
@@ -110,6 +126,11 @@
       <genOperations ecoreOperation="Basic.ecore#//TPackage/getAllOwnedTypes"/>
       <genOperations ecoreOperation="Basic.ecore#//TPackage/getAllOwnedClasses"/>
       <genOperations ecoreOperation="Basic.ecore#//TPackage/getBasePackage"/>
+      <genOperations ecoreOperation="Basic.ecore#//TPackage/createTClass">
+        <genParameters ecoreParameter="Basic.ecore#//TPackage/createTClass/name"/>
+        <genParameters ecoreParameter="Basic.ecore#//TPackage/createTClass/lib"/>
+        <genParameters ecoreParameter="Basic.ecore#//TPackage/createTClass/visibility"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TParameter">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameter/next"/>
@@ -236,6 +257,25 @@
       </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TAbstractType/getTFieldDefinition">
         <genParameters ecoreParameter="Basic.ecore#//TAbstractType/getTFieldDefinition/signature"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TAbstractType/createMethodDefinition">
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createMethodDefinition/name"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createMethodDefinition/returnType"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createMethodDefinition/returnLowerBound"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createMethodDefinition/returnUpperBound"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createMethodDefinition/parameters"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createMethodDefinition/parameterLowerBounds"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createMethodDefinition/parameterUpperBounds"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createMethodDefinition/static"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createMethodDefinition/visibility"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TAbstractType/createFieldDefinition">
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createFieldDefinition/name"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createFieldDefinition/type"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createFieldDefinition/lowerBound"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createFieldDefinition/upperBound"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createFieldDefinition/static"/>
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/createFieldDefinition/visibility"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TRead"/>

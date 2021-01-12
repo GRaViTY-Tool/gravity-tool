@@ -660,13 +660,31 @@ public interface BasicPackage extends EPackage {
 	int TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 15;
 
 	/**
+	 * The operation id for the '<em>Create Method Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 16;
+
+	/**
+	 * The operation id for the '<em>Create Field Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 17;
+
+	/**
 	 * The number of operations of the '<em>TAbstract Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 16;
+	int TABSTRACT_TYPE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -919,6 +937,24 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TCLASS___GET_TFIELD_DEFINITION__STRING = TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING;
+
+	/**
+	 * The operation id for the '<em>Create Method Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCLASS___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY = TABSTRACT_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY;
+
+	/**
+	 * The operation id for the '<em>Create Field Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCLASS___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY = TABSTRACT_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY;
 
 	/**
 	 * The operation id for the '<em>Get Declared TMethod Definitions</em>' operation.
@@ -1704,13 +1740,31 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_FEATURE_COUNT = TNAME_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Method Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD___GET_METHOD_SIGNATURE__TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST = TNAME_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Create Method Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD___CREATE_METHOD_SIGNATURE__TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST = TNAME_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>TMethod</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_OPERATION_COUNT = TNAME_OPERATION_COUNT + 0;
+	int TMETHOD_OPERATION_COUNT = TNAME_OPERATION_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2235,13 +2289,22 @@ public interface BasicPackage extends EPackage {
 	int TPACKAGE___GET_BASE_PACKAGE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Create TClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPACKAGE___CREATE_TCLASS__STRING_BOOLEAN_TVISIBILITY = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 4;
+
+	/**
 	 * The number of operations of the '<em>TPackage</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 4;
+	int TPACKAGE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2845,6 +2908,24 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TINTERFACE___GET_TFIELD_DEFINITION__STRING = TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING;
+
+	/**
+	 * The operation id for the '<em>Create Method Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TINTERFACE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY = TABSTRACT_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY;
+
+	/**
+	 * The operation id for the '<em>Create Field Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TINTERFACE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY = TABSTRACT_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY;
 
 	/**
 	 * The operation id for the '<em>Is Sub Type Of</em>' operation.
@@ -3475,6 +3556,24 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TUNRESOLVED_TYPE___GET_TFIELD_DEFINITION__STRING = TCLASS___GET_TFIELD_DEFINITION__STRING;
+
+	/**
+	 * The operation id for the '<em>Create Method Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TUNRESOLVED_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY = TCLASS___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY;
+
+	/**
+	 * The operation id for the '<em>Create Field Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TUNRESOLVED_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY = TCLASS___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY;
 
 	/**
 	 * The operation id for the '<em>Get Declared TMethod Definitions</em>' operation.
@@ -4643,6 +4742,26 @@ public interface BasicPackage extends EPackage {
 	EReference getTMethod_Pg();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethod#getMethodSignature(org.gravity.typegraph.basic.TAbstractType, int, int, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList) <em>Get Method Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Method Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TMethod#getMethodSignature(org.gravity.typegraph.basic.TAbstractType, int, int, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getTMethod__GetMethodSignature__TAbstractType_int_int_EList_EList_EList();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethod#createMethodSignature(org.gravity.typegraph.basic.TAbstractType, int, int, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList) <em>Create Method Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Method Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TMethod#createMethodSignature(org.gravity.typegraph.basic.TAbstractType, int, int, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getTMethod__CreateMethodSignature__TAbstractType_int_int_EList_EList_EList();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TMethodDefinition <em>TMethod Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4969,6 +5088,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTPackage__GetBasePackage();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TPackage#createTClass(java.lang.String, boolean, org.gravity.typegraph.basic.TVisibility) <em>Create TClass</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create TClass</em>' operation.
+	 * @see org.gravity.typegraph.basic.TPackage#createTClass(java.lang.String, boolean, org.gravity.typegraph.basic.TVisibility)
+	 * @generated
+	 */
+	EOperation getTPackage__CreateTClass__String_boolean_TVisibility();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TParameter <em>TParameter</em>}'.
@@ -5635,6 +5764,26 @@ public interface BasicPackage extends EPackage {
 	EOperation getTAbstractType__GetTFieldDefinition__String();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TAbstractType#createMethodDefinition(java.lang.String, org.gravity.typegraph.basic.TAbstractType, int, int, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, boolean, org.gravity.typegraph.basic.TVisibility) <em>Create Method Definition</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Method Definition</em>' operation.
+	 * @see org.gravity.typegraph.basic.TAbstractType#createMethodDefinition(java.lang.String, org.gravity.typegraph.basic.TAbstractType, int, int, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, boolean, org.gravity.typegraph.basic.TVisibility)
+	 * @generated
+	 */
+	EOperation getTAbstractType__CreateMethodDefinition__String_TAbstractType_int_int_EList_EList_EList_boolean_TVisibility();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TAbstractType#createFieldDefinition(java.lang.String, org.gravity.typegraph.basic.TAbstractType, int, int, boolean, org.gravity.typegraph.basic.TVisibility) <em>Create Field Definition</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Field Definition</em>' operation.
+	 * @see org.gravity.typegraph.basic.TAbstractType#createFieldDefinition(java.lang.String, org.gravity.typegraph.basic.TAbstractType, int, int, boolean, org.gravity.typegraph.basic.TVisibility)
+	 * @generated
+	 */
+	EOperation getTAbstractType__CreateFieldDefinition__String_TAbstractType_int_int_boolean_TVisibility();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TRead <em>TRead</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6278,6 +6427,22 @@ public interface BasicPackage extends EPackage {
 		EReference TMETHOD__PG = eINSTANCE.getTMethod_Pg();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Method Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TMETHOD___GET_METHOD_SIGNATURE__TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST = eINSTANCE.getTMethod__GetMethodSignature__TAbstractType_int_int_EList_EList_EList();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Method Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TMETHOD___CREATE_METHOD_SIGNATURE__TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST = eINSTANCE.getTMethod__CreateMethodSignature__TAbstractType_int_int_EList_EList_EList();
+
+		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl <em>TMethod Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6530,6 +6695,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TPACKAGE___GET_BASE_PACKAGE = eINSTANCE.getTPackage__GetBasePackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Create TClass</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TPACKAGE___CREATE_TCLASS__STRING_BOOLEAN_TVISIBILITY = eINSTANCE.getTPackage__CreateTClass__String_boolean_TVisibility();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TParameterImpl <em>TParameter</em>}' class.
@@ -7052,6 +7225,22 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING = eINSTANCE.getTAbstractType__GetTFieldDefinition__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Method Definition</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TABSTRACT_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY = eINSTANCE.getTAbstractType__CreateMethodDefinition__String_TAbstractType_int_int_EList_EList_EList_boolean_TVisibility();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Field Definition</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TABSTRACT_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY = eINSTANCE.getTAbstractType__CreateFieldDefinition__String_TAbstractType_int_int_boolean_TVisibility();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TReadImpl <em>TRead</em>}' class.

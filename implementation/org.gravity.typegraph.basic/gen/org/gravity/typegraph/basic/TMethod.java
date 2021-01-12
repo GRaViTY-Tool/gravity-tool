@@ -69,5 +69,16 @@ public interface TMethod extends TName {
 	void setPg(TypeGraph value);
 	// <-- [user code injected with eMoflon]
 
+	TMethodSignature getMethodSignature(TAbstractType returnType, int returnLowerBound, int returnUpperBound,
+			EList<TAbstractType> parameters, EList<Integer> parameterLowerBounds, EList<Integer> parameterUpperBounds);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model parametersMany="true" parameterLowerBoundsMany="true" parameterUpperBoundsMany="true"
+	 * @generated
+	 */
+	TMethodSignature createMethodSignature(TAbstractType returnType, int returnLowerBound, int returnUpperBound, EList<TAbstractType> parameters, EList<Integer> parameterLowerBounds, EList<Integer> parameterUpperBounds);
+
 	// [user code injected with eMoflon] -->
 } // TMethod

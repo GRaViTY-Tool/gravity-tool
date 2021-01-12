@@ -812,6 +812,24 @@ public interface AnnotationsPackage extends EPackage {
 	int TANNOTATION_TYPE___GET_TFIELD_DEFINITION__STRING = BasicPackage.TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING;
 
 	/**
+	 * The operation id for the '<em>Create Method Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TANNOTATION_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY = BasicPackage.TABSTRACT_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY;
+
+	/**
+	 * The operation id for the '<em>Create Field Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TANNOTATION_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY = BasicPackage.TABSTRACT_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY;
+
+	/**
 	 * The operation id for the '<em>Is Sub Type Of</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

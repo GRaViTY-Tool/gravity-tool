@@ -373,6 +373,22 @@ public interface TAbstractType extends TAnnotatable {
 	 * @generated
 	 */
 	TFieldDefinition getTFieldDefinition(String signature);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model parametersMany="true" parameterLowerBoundsMany="true" parameterUpperBoundsMany="true"
+	 * @generated
+	 */
+	TMethodDefinition createMethodDefinition(String name, TAbstractType returnType, int returnLowerBound, int returnUpperBound, EList<TAbstractType> parameters, EList<Integer> parameterLowerBounds, EList<Integer> parameterUpperBounds, boolean static_, TVisibility visibility);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	TFieldDefinition createFieldDefinition(String name, TAbstractType type, int lowerBound, int upperBound, boolean static_, TVisibility visibility);
 	// <-- [user code injected with eMoflon]
 
 
