@@ -112,7 +112,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface extends EO
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject b2e,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne,
 			EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
@@ -194,7 +194,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface extends EO
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject b2e,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne,
 			EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
@@ -211,7 +211,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface extends EO
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_959(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_392(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InInterface extends EO
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_982(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_403(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->

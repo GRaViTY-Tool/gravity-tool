@@ -4,7 +4,7 @@ package org.gravity.tgg.modisco.uml.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.InterfaceDeclaration;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
 
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Operation;
@@ -47,7 +47,7 @@ public interface MethodDec2Operation4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MMethodDefinition bodyDeclaration, InterfaceDeclaration classDec);
+	boolean isAppropriate_FWD(Match match, MMethodDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public interface MethodDec2Operation4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MMethodDefinition bodyDeclaration, InterfaceDeclaration classDec);
+	void registerObjectsToMatch_FWD(Match match, MMethodDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public interface MethodDec2Operation4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition bodyDeclaration, InterfaceDeclaration classDec);
+	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,7 +96,7 @@ public interface MethodDec2Operation4Interface extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition bodyDeclaration,
-			Interface umlClass, ASTNode2Element cd2c, InterfaceDeclaration classDec);
+			Interface umlClass, ASTNode2Element cd2c, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,7 +178,7 @@ public interface MethodDec2Operation4Interface extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, Interface umlClass,
-			ASTNode2Element cd2c, InterfaceDeclaration classDec);
+			ASTNode2Element cd2c, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,7 +211,7 @@ public interface MethodDec2Operation4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_993(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_359(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface MethodDec2Operation4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1017(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_369(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +252,7 @@ public interface MethodDec2Operation4Interface extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(Operation feature, MMethodDefinition bodyDeclaration, Interface umlClass,
-			InterfaceDeclaration classDec, Match sourceMatch, Match targetMatch);
+			AbstractTypeDeclaration classDec, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,7 +268,7 @@ public interface MethodDec2Operation4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, InterfaceDeclaration classDec);
+	boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +293,7 @@ public interface MethodDec2Operation4Interface extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface umlClass, ASTNode2Element cd2c,
-			InterfaceDeclaration classDec, ModelgeneratorRuleResult ruleResult);
+			AbstractTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

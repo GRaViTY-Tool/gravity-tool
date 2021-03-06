@@ -122,7 +122,7 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject umlPackage, EObject nonParamElement,
 			EObject ne2neNonParam, EObject parameterizedClassifier, EObject nonParamType, EObject nonParamPackage,
-			EObject parameterizedType, EObject ne2ne, EObject jp2up, EObject typeTypeAccess);
+			EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject umlPackage, EObject nonParamElement,
 			EObject ne2neNonParam, EObject parameterizedClassifier, EObject nonParamType, EObject nonParamPackage,
-			EObject parameterizedType, EObject ne2ne, EObject jp2up, EObject typeTypeAccess);
+			EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_934(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_377(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,7 +234,7 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_956(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_388(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

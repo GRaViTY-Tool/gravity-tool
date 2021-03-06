@@ -859,7 +859,7 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_999(EMoflonEdge _edge_ownedAttribute) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_409(EMoflonEdge _edge_ownedAttribute) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4Interface_WithModifierImpl
 				.pattern_FieldDec2Property4Interface_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -920,7 +920,7 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1023(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_420(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4Interface_WithModifierImpl
 				.pattern_FieldDec2Property4Interface_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1001,21 +1001,21 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
 		var_feature_isStatic.setType("boolean");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
 		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
 		var_vdf_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1082,21 +1082,21 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
 		var_feature_isStatic.setType("boolean");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
 		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
 		var_vdf_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1538,10 +1538,10 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 			return null;
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_999__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_999((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1023__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_1023((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_409__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_409((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_420__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_420((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3017,9 +3017,9 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 
 	public static final Object[] pattern_FieldDec2Property4Interface_WithModifier_20_2_testcorematchandDECs_black_nac_0BB(
 			Property feature, Interface uOwnerType) {
-		Type __DEC_feature_type_322517 = feature.getType();
-		if (__DEC_feature_type_322517 != null) {
-			if (!uOwnerType.equals(__DEC_feature_type_322517)) {
+		Type __DEC_feature_type_752610 = feature.getType();
+		if (__DEC_feature_type_752610 != null) {
+			if (!uOwnerType.equals(__DEC_feature_type_752610)) {
 				return new Object[] { feature, uOwnerType };
 			}
 		}
@@ -3029,8 +3029,8 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 
 	public static final Object[] pattern_FieldDec2Property4Interface_WithModifier_20_2_testcorematchandDECs_black_nac_1B(
 			Property feature) {
-		DataType __DEC_feature_ownedAttribute_203587 = feature.getDatatype();
-		if (__DEC_feature_ownedAttribute_203587 != null) {
+		DataType __DEC_feature_ownedAttribute_571401 = feature.getDatatype();
+		if (__DEC_feature_ownedAttribute_571401 != null) {
 			return new Object[] { feature };
 		}
 
@@ -3039,7 +3039,7 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 
 	public static final Object[] pattern_FieldDec2Property4Interface_WithModifier_20_2_testcorematchandDECs_black_nac_2B(
 			Property feature) {
-		for (StructuredClassifier __DEC_feature_ownedAttribute_131038 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (StructuredClassifier __DEC_feature_ownedAttribute_983985 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, StructuredClassifier.class, "ownedAttribute")) {
 			return new Object[] { feature };
 		}
@@ -3187,8 +3187,8 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 
 	public static final Object[] pattern_FieldDec2Property4Interface_WithModifier_21_2_testcorematchandDECs_black_nac_0BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_14518 : bodyDeclaration.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_fragments_14518)) {
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_139624 : bodyDeclaration.getFragments()) {
+			if (!vdf.equals(__DEC_bodyDeclaration_fragments_139624)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -3197,9 +3197,9 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 
 	public static final Object[] pattern_FieldDec2Property4Interface_WithModifier_21_2_testcorematchandDECs_black_nac_1B(
 			MFieldDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_327224 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_832012 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_327224 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_832012 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3480,8 +3480,8 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 
 	public static final Object[] pattern_FieldDec2Property4Interface_WithModifier_27_1_matchtggpattern_black_nac_0BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_765091 : bodyDeclaration.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_fragments_765091)) {
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_30405 : bodyDeclaration.getFragments()) {
+			if (!vdf.equals(__DEC_bodyDeclaration_fragments_30405)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -3490,9 +3490,9 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 
 	public static final Object[] pattern_FieldDec2Property4Interface_WithModifier_27_1_matchtggpattern_black_nac_1B(
 			MFieldDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_988412 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_27204 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_988412 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_27204 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3530,9 +3530,9 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 
 	public static final Object[] pattern_FieldDec2Property4Interface_WithModifier_28_1_matchtggpattern_black_nac_0BB(
 			Property feature, Interface uOwnerType) {
-		Type __DEC_feature_type_610687 = feature.getType();
-		if (__DEC_feature_type_610687 != null) {
-			if (!uOwnerType.equals(__DEC_feature_type_610687)) {
+		Type __DEC_feature_type_564257 = feature.getType();
+		if (__DEC_feature_type_564257 != null) {
+			if (!uOwnerType.equals(__DEC_feature_type_564257)) {
 				return new Object[] { feature, uOwnerType };
 			}
 		}
@@ -3542,8 +3542,8 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 
 	public static final Object[] pattern_FieldDec2Property4Interface_WithModifier_28_1_matchtggpattern_black_nac_1B(
 			Property feature) {
-		DataType __DEC_feature_ownedAttribute_847217 = feature.getDatatype();
-		if (__DEC_feature_ownedAttribute_847217 != null) {
+		DataType __DEC_feature_ownedAttribute_878589 = feature.getDatatype();
+		if (__DEC_feature_ownedAttribute_878589 != null) {
 			return new Object[] { feature };
 		}
 
@@ -3552,7 +3552,7 @@ public class FieldDec2Property4Interface_WithModifierImpl extends AbstractRuleIm
 
 	public static final Object[] pattern_FieldDec2Property4Interface_WithModifier_28_1_matchtggpattern_black_nac_2B(
 			Property feature) {
-		for (StructuredClassifier __DEC_feature_ownedAttribute_656190 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (StructuredClassifier __DEC_feature_ownedAttribute_285593 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, StructuredClassifier.class, "ownedAttribute")) {
 			return new Object[] { feature };
 		}

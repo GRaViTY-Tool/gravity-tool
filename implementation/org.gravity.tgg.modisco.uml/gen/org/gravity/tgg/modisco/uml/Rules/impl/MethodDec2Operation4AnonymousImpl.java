@@ -214,8 +214,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 		//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge feature__umlClass____class = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge bodyDeclaration__classDec____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[14];
@@ -535,8 +535,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 		//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge feature__umlClass____class = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge bodyDeclaration__classDec____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[14];
@@ -746,7 +746,7 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_939(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_366(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = MethodDec2Operation4AnonymousImpl
 				.pattern_MethodDec2Operation4Anonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -805,7 +805,7 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_962(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_376(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = MethodDec2Operation4AnonymousImpl
 				.pattern_MethodDec2Operation4Anonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1289,10 +1289,10 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 			return null;
 		case RulesPackage.METHOD_DEC2_OPERATION4_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_939__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_939((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_962__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_962((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_366__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_366((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_376__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_376((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION4_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION4_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1575,8 +1575,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__umlClass____class = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__classDec____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
@@ -1585,8 +1585,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 		String umlClass__feature____ownedOperation_name_prime = "ownedOperation";
 		String feature__umlClass____class_name_prime = "class";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
-		String bd2ne__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
+		String bd2ne__feature____target_name_prime = "target";
 		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__classDec____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
 		String b2e__feature____target_name_prime = "target";
@@ -1599,12 +1599,12 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
 		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		ruleresult.getTranslatedEdges().add(classDec__bodyDeclaration____bodyDeclarations);
@@ -1618,15 +1618,15 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
 		feature__umlClass____class.setName(feature__umlClass____class_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__classDec____anonymousClassDeclarationOwner_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		return new Object[] { ruleresult, feature, bd2ne, b2e, bodyDeclaration, umlClass, classDec,
 				umlClass__feature____ownedOperation, feature__umlClass____class, bd2ne__bodyDeclaration____source,
-				bd2ne__feature____target, b2e__bodyDeclaration____source, classDec__bodyDeclaration____bodyDeclarations,
+				b2e__bodyDeclaration____source, bd2ne__feature____target, classDec__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__classDec____anonymousClassDeclarationOwner, b2e__feature____target };
 	}
 
@@ -2087,8 +2087,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__umlClass____class = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__classDec____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
@@ -2097,8 +2097,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 		String umlClass__feature____ownedOperation_name_prime = "ownedOperation";
 		String feature__umlClass____class_name_prime = "class";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
-		String bd2ne__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
+		String bd2ne__feature____target_name_prime = "target";
 		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__classDec____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
 		String b2e__feature____target_name_prime = "target";
@@ -2111,12 +2111,12 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
 		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(classDec__bodyDeclaration____bodyDeclarations);
@@ -2130,15 +2130,15 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
 		feature__umlClass____class.setName(feature__umlClass____class_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__classDec____anonymousClassDeclarationOwner_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		return new Object[] { ruleresult, feature, bd2ne, b2e, bodyDeclaration, umlClass, classDec,
 				umlClass__feature____ownedOperation, feature__umlClass____class, bd2ne__bodyDeclaration____source,
-				bd2ne__feature____target, b2e__bodyDeclaration____source, classDec__bodyDeclaration____bodyDeclarations,
+				b2e__bodyDeclaration____source, bd2ne__feature____target, classDec__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__classDec____anonymousClassDeclarationOwner, b2e__feature____target };
 	}
 
@@ -2403,8 +2403,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 
 	public static final Object[] pattern_MethodDec2Operation4Anonymous_20_2_testcorematchandDECs_black_nac_0B(
 			Operation feature) {
-		DataType __DEC_feature_ownedOperation_899980 = feature.getDatatype();
-		if (__DEC_feature_ownedOperation_899980 != null) {
+		DataType __DEC_feature_ownedOperation_530312 = feature.getDatatype();
+		if (__DEC_feature_ownedOperation_530312 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2413,8 +2413,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 
 	public static final Object[] pattern_MethodDec2Operation4Anonymous_20_2_testcorematchandDECs_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_849451 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_849451 != null) {
+		Interface __DEC_feature_ownedOperation_100054 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_100054 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2547,8 +2547,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 
 	public static final Object[] pattern_MethodDec2Operation4Anonymous_21_2_testcorematchandDECs_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_118317 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_118317 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_939125 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_939125 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2557,9 +2557,9 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 
 	public static final Object[] pattern_MethodDec2Operation4Anonymous_21_2_testcorematchandDECs_black_nac_1B(
 			MMethodDefinition bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_617958 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_479377 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_617958 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_479377 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2814,8 +2814,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 
 	public static final Object[] pattern_MethodDec2Operation4Anonymous_27_1_matchtggpattern_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_249968 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_249968 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_291170 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_291170 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2824,9 +2824,9 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 
 	public static final Object[] pattern_MethodDec2Operation4Anonymous_27_1_matchtggpattern_black_nac_1B(
 			MMethodDefinition bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_195262 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_490220 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_195262 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_490220 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2857,8 +2857,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 
 	public static final Object[] pattern_MethodDec2Operation4Anonymous_28_1_matchtggpattern_black_nac_0B(
 			Operation feature) {
-		DataType __DEC_feature_ownedOperation_578254 = feature.getDatatype();
-		if (__DEC_feature_ownedOperation_578254 != null) {
+		DataType __DEC_feature_ownedOperation_1889 = feature.getDatatype();
+		if (__DEC_feature_ownedOperation_1889 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2867,8 +2867,8 @@ public class MethodDec2Operation4AnonymousImpl extends AbstractRuleImpl implemen
 
 	public static final Object[] pattern_MethodDec2Operation4Anonymous_28_1_matchtggpattern_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_446838 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_446838 != null) {
+		Interface __DEC_feature_ownedOperation_668125 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_668125 != null) {
 			return new Object[] { feature };
 		}
 

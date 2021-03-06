@@ -215,7 +215,7 @@ public interface MethodDec2Operation4AnonymousWithModifier extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_955(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_372(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface MethodDec2Operation4AnonymousWithModifier extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_978(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_383(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

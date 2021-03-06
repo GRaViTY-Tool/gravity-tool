@@ -115,7 +115,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
 			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
@@ -197,7 +197,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
 			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
@@ -214,7 +214,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_988(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_360(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1012(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_370(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

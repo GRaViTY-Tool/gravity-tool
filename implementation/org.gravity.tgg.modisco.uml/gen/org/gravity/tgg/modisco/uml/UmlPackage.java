@@ -58,6 +58,282 @@ public interface UmlPackage extends EPackage {
 	UmlPackage eINSTANCE = org.gravity.tgg.modisco.uml.impl.UmlPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2PropertyImpl <em>Type Access2 Property</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2PropertyImpl
+	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2Property()
+	 * @generated
+	 */
+	int TYPE_ACCESS2_PROPERTY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_PROPERTY__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_PROPERTY__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Type Access2 Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_PROPERTY_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Type Access2 Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_PROPERTY_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2TemplateBindingImpl <em>Type Access2 Template Binding</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2TemplateBindingImpl
+	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2TemplateBinding()
+	 * @generated
+	 */
+	int TYPE_ACCESS2_TEMPLATE_BINDING = 1;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_TEMPLATE_BINDING__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Type Access2 Template Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_TEMPLATE_BINDING_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Type Access2 Template Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_TEMPLATE_BINDING_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.JavaModel2UMLPackageImpl <em>Java Model2 UML Package</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.modisco.uml.impl.JavaModel2UMLPackageImpl
+	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getJavaModel2UMLPackage()
+	 * @generated
+	 */
+	int JAVA_MODEL2_UML_PACKAGE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_MODEL2_UML_PACKAGE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_MODEL2_UML_PACKAGE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Java Model2 UML Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_MODEL2_UML_PACKAGE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Java Model2 UML Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_MODEL2_UML_PACKAGE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.CompilationUnit2ArtifactImpl <em>Compilation Unit2 Artifact</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.modisco.uml.impl.CompilationUnit2ArtifactImpl
+	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getCompilationUnit2Artifact()
+	 * @generated
+	 */
+	int COMPILATION_UNIT2_ARTIFACT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPILATION_UNIT2_ARTIFACT__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPILATION_UNIT2_ARTIFACT__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Compilation Unit2 Artifact</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPILATION_UNIT2_ARTIFACT_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Compilation Unit2 Artifact</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPILATION_UNIT2_ARTIFACT_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.Expression2CommentImpl <em>Expression2 Comment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.modisco.uml.impl.Expression2CommentImpl
+	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getExpression2Comment()
+	 * @generated
+	 */
+	int EXPRESSION2_COMMENT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION2_COMMENT__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION2_COMMENT__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Expression2 Comment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION2_COMMENT_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Expression2 Comment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION2_COMMENT_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.VariableDec2ParameterImpl <em>Variable Dec2 Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.modisco.uml.impl.VariableDec2ParameterImpl
+	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getVariableDec2Parameter()
+	 * @generated
+	 */
+	int VARIABLE_DEC2_PARAMETER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_DEC2_PARAMETER__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_DEC2_PARAMETER__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Variable Dec2 Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_DEC2_PARAMETER_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Variable Dec2 Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_DEC2_PARAMETER_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.ParameterizedType2RedefinableTemplateSignatureImpl <em>Parameterized Type2 Redefinable Template Signature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +341,7 @@ public interface UmlPackage extends EPackage {
 	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getParameterizedType2RedefinableTemplateSignature()
 	 * @generated
 	 */
-	int PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE = 0;
+	int PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -108,190 +384,6 @@ public interface UmlPackage extends EPackage {
 			+ 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.Modifier2NamedElementImpl <em>Modifier2 Named Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.modisco.uml.impl.Modifier2NamedElementImpl
-	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getModifier2NamedElement()
-	 * @generated
-	 */
-	int MODIFIER2_NAMED_ELEMENT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODIFIER2_NAMED_ELEMENT__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODIFIER2_NAMED_ELEMENT__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Modifier2 Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODIFIER2_NAMED_ELEMENT_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Modifier2 Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODIFIER2_NAMED_ELEMENT_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2GeneralizationImpl <em>Type Access2 Generalization</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2GeneralizationImpl
-	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2Generalization()
-	 * @generated
-	 */
-	int TYPE_ACCESS2_GENERALIZATION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_GENERALIZATION__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_GENERALIZATION__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Type Access2 Generalization</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_GENERALIZATION_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Type Access2 Generalization</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_GENERALIZATION_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2TemplateBindingImpl <em>Type Access2 Template Binding</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2TemplateBindingImpl
-	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2TemplateBinding()
-	 * @generated
-	 */
-	int TYPE_ACCESS2_TEMPLATE_BINDING = 3;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_TEMPLATE_BINDING__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Type Access2 Template Binding</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_TEMPLATE_BINDING_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Type Access2 Template Binding</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_TEMPLATE_BINDING_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.VariableDec2ParameterImpl <em>Variable Dec2 Parameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.modisco.uml.impl.VariableDec2ParameterImpl
-	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getVariableDec2Parameter()
-	 * @generated
-	 */
-	int VARIABLE_DEC2_PARAMETER = 4;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_DEC2_PARAMETER__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_DEC2_PARAMETER__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Variable Dec2 Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_DEC2_PARAMETER_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Variable Dec2 Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_DEC2_PARAMETER_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2ParameterImpl <em>Type Access2 Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -299,7 +391,7 @@ public interface UmlPackage extends EPackage {
 	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2Parameter()
 	 * @generated
 	 */
-	int TYPE_ACCESS2_PARAMETER = 5;
+	int TYPE_ACCESS2_PARAMETER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -338,6 +430,98 @@ public interface UmlPackage extends EPackage {
 	int TYPE_ACCESS2_PARAMETER_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2GeneralizationImpl <em>Type Access2 Generalization</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2GeneralizationImpl
+	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2Generalization()
+	 * @generated
+	 */
+	int TYPE_ACCESS2_GENERALIZATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_GENERALIZATION__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_GENERALIZATION__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Type Access2 Generalization</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_GENERALIZATION_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Type Access2 Generalization</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_ACCESS2_GENERALIZATION_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.Modifier2NamedElementImpl <em>Modifier2 Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.modisco.uml.impl.Modifier2NamedElementImpl
+	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getModifier2NamedElement()
+	 * @generated
+	 */
+	int MODIFIER2_NAMED_ELEMENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFIER2_NAMED_ELEMENT__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFIER2_NAMED_ELEMENT__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Modifier2 Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFIER2_NAMED_ELEMENT_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Modifier2 Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFIER2_NAMED_ELEMENT_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2InterfaceRealizationImpl <em>Type Access2 Interface Realization</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -345,7 +529,7 @@ public interface UmlPackage extends EPackage {
 	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2InterfaceRealization()
 	 * @generated
 	 */
-	int TYPE_ACCESS2_INTERFACE_REALIZATION = 6;
+	int TYPE_ACCESS2_INTERFACE_REALIZATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -391,7 +575,7 @@ public interface UmlPackage extends EPackage {
 	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getJavaPackage2UmlPackage()
 	 * @generated
 	 */
-	int JAVA_PACKAGE2_UML_PACKAGE = 7;
+	int JAVA_PACKAGE2_UML_PACKAGE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -430,98 +614,6 @@ public interface UmlPackage extends EPackage {
 	int JAVA_PACKAGE2_UML_PACKAGE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2PropertyImpl <em>Type Access2 Property</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2PropertyImpl
-	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2Property()
-	 * @generated
-	 */
-	int TYPE_ACCESS2_PROPERTY = 8;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_PROPERTY__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_PROPERTY__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Type Access2 Property</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_PROPERTY_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Type Access2 Property</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ACCESS2_PROPERTY_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.CompilationUnit2ArtifactImpl <em>Compilation Unit2 Artifact</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.modisco.uml.impl.CompilationUnit2ArtifactImpl
-	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getCompilationUnit2Artifact()
-	 * @generated
-	 */
-	int COMPILATION_UNIT2_ARTIFACT = 9;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPILATION_UNIT2_ARTIFACT__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPILATION_UNIT2_ARTIFACT__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Compilation Unit2 Artifact</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPILATION_UNIT2_ARTIFACT_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Compilation Unit2 Artifact</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPILATION_UNIT2_ARTIFACT_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.NamedElement2NamedElementImpl <em>Named Element2 Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -529,7 +621,7 @@ public interface UmlPackage extends EPackage {
 	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getNamedElement2NamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT2_NAMED_ELEMENT = 10;
+	int NAMED_ELEMENT2_NAMED_ELEMENT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -566,98 +658,6 @@ public interface UmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMED_ELEMENT2_NAMED_ELEMENT_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.JavaModel2UMLPackageImpl <em>Java Model2 UML Package</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.modisco.uml.impl.JavaModel2UMLPackageImpl
-	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getJavaModel2UMLPackage()
-	 * @generated
-	 */
-	int JAVA_MODEL2_UML_PACKAGE = 11;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_MODEL2_UML_PACKAGE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_MODEL2_UML_PACKAGE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Java Model2 UML Package</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_MODEL2_UML_PACKAGE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Java Model2 UML Package</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_MODEL2_UML_PACKAGE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.Expression2CommentImpl <em>Expression2 Comment</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.modisco.uml.impl.Expression2CommentImpl
-	 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getExpression2Comment()
-	 * @generated
-	 */
-	int EXPRESSION2_COMMENT = 12;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION2_COMMENT__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION2_COMMENT__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Expression2 Comment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION2_COMMENT_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Expression2 Comment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION2_COMMENT_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.tgg.modisco.uml.impl.ASTNode2ElementImpl <em>AST Node2 Element</em>}' class.
@@ -706,100 +706,36 @@ public interface UmlPackage extends EPackage {
 	int AST_NODE2_ELEMENT_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature <em>Parameterized Type2 Redefinable Template Signature</em>}'.
+	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Property <em>Type Access2 Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Parameterized Type2 Redefinable Template Signature</em>'.
-	 * @see org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature
+	 * @return the meta object for class '<em>Type Access2 Property</em>'.
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Property
 	 * @generated
 	 */
-	EClass getParameterizedType2RedefinableTemplateSignature();
+	EClass getTypeAccess2Property();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.TypeAccess2Property#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature#getSource()
-	 * @see #getParameterizedType2RedefinableTemplateSignature()
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Property#getSource()
+	 * @see #getTypeAccess2Property()
 	 * @generated
 	 */
-	EReference getParameterizedType2RedefinableTemplateSignature_Source();
+	EReference getTypeAccess2Property_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.TypeAccess2Property#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature#getTarget()
-	 * @see #getParameterizedType2RedefinableTemplateSignature()
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Property#getTarget()
+	 * @see #getTypeAccess2Property()
 	 * @generated
 	 */
-	EReference getParameterizedType2RedefinableTemplateSignature_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.Modifier2NamedElement <em>Modifier2 Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Modifier2 Named Element</em>'.
-	 * @see org.gravity.tgg.modisco.uml.Modifier2NamedElement
-	 * @generated
-	 */
-	EClass getModifier2NamedElement();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.Modifier2NamedElement#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.modisco.uml.Modifier2NamedElement#getSource()
-	 * @see #getModifier2NamedElement()
-	 * @generated
-	 */
-	EReference getModifier2NamedElement_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.Modifier2NamedElement#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.modisco.uml.Modifier2NamedElement#getTarget()
-	 * @see #getModifier2NamedElement()
-	 * @generated
-	 */
-	EReference getModifier2NamedElement_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Generalization <em>Type Access2 Generalization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Type Access2 Generalization</em>'.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Generalization
-	 * @generated
-	 */
-	EClass getTypeAccess2Generalization();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.TypeAccess2Generalization#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Generalization#getSource()
-	 * @see #getTypeAccess2Generalization()
-	 * @generated
-	 */
-	EReference getTypeAccess2Generalization_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.TypeAccess2Generalization#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Generalization#getTarget()
-	 * @see #getTypeAccess2Generalization()
-	 * @generated
-	 */
-	EReference getTypeAccess2Generalization_Target();
+	EReference getTypeAccess2Property_Target();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.TypeAccess2TemplateBinding <em>Type Access2 Template Binding</em>}'.
@@ -834,6 +770,102 @@ public interface UmlPackage extends EPackage {
 	EReference getTypeAccess2TemplateBinding_Target();
 
 	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.JavaModel2UMLPackage <em>Java Model2 UML Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Java Model2 UML Package</em>'.
+	 * @see org.gravity.tgg.modisco.uml.JavaModel2UMLPackage
+	 * @generated
+	 */
+	EClass getJavaModel2UMLPackage();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.JavaModel2UMLPackage#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.modisco.uml.JavaModel2UMLPackage#getSource()
+	 * @see #getJavaModel2UMLPackage()
+	 * @generated
+	 */
+	EReference getJavaModel2UMLPackage_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.JavaModel2UMLPackage#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.modisco.uml.JavaModel2UMLPackage#getTarget()
+	 * @see #getJavaModel2UMLPackage()
+	 * @generated
+	 */
+	EReference getJavaModel2UMLPackage_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.CompilationUnit2Artifact <em>Compilation Unit2 Artifact</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Compilation Unit2 Artifact</em>'.
+	 * @see org.gravity.tgg.modisco.uml.CompilationUnit2Artifact
+	 * @generated
+	 */
+	EClass getCompilationUnit2Artifact();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.CompilationUnit2Artifact#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.modisco.uml.CompilationUnit2Artifact#getSource()
+	 * @see #getCompilationUnit2Artifact()
+	 * @generated
+	 */
+	EReference getCompilationUnit2Artifact_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.CompilationUnit2Artifact#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.modisco.uml.CompilationUnit2Artifact#getTarget()
+	 * @see #getCompilationUnit2Artifact()
+	 * @generated
+	 */
+	EReference getCompilationUnit2Artifact_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.Expression2Comment <em>Expression2 Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Expression2 Comment</em>'.
+	 * @see org.gravity.tgg.modisco.uml.Expression2Comment
+	 * @generated
+	 */
+	EClass getExpression2Comment();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.Expression2Comment#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.modisco.uml.Expression2Comment#getSource()
+	 * @see #getExpression2Comment()
+	 * @generated
+	 */
+	EReference getExpression2Comment_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.Expression2Comment#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.modisco.uml.Expression2Comment#getTarget()
+	 * @see #getExpression2Comment()
+	 * @generated
+	 */
+	EReference getExpression2Comment_Target();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.VariableDec2Parameter <em>Variable Dec2 Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -866,6 +898,38 @@ public interface UmlPackage extends EPackage {
 	EReference getVariableDec2Parameter_Target();
 
 	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature <em>Parameterized Type2 Redefinable Template Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameterized Type2 Redefinable Template Signature</em>'.
+	 * @see org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature
+	 * @generated
+	 */
+	EClass getParameterizedType2RedefinableTemplateSignature();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature#getSource()
+	 * @see #getParameterizedType2RedefinableTemplateSignature()
+	 * @generated
+	 */
+	EReference getParameterizedType2RedefinableTemplateSignature_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature#getTarget()
+	 * @see #getParameterizedType2RedefinableTemplateSignature()
+	 * @generated
+	 */
+	EReference getParameterizedType2RedefinableTemplateSignature_Target();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Parameter <em>Type Access2 Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -896,6 +960,70 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTypeAccess2Parameter_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Generalization <em>Type Access2 Generalization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Type Access2 Generalization</em>'.
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Generalization
+	 * @generated
+	 */
+	EClass getTypeAccess2Generalization();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.TypeAccess2Generalization#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Generalization#getSource()
+	 * @see #getTypeAccess2Generalization()
+	 * @generated
+	 */
+	EReference getTypeAccess2Generalization_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.TypeAccess2Generalization#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Generalization#getTarget()
+	 * @see #getTypeAccess2Generalization()
+	 * @generated
+	 */
+	EReference getTypeAccess2Generalization_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.Modifier2NamedElement <em>Modifier2 Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Modifier2 Named Element</em>'.
+	 * @see org.gravity.tgg.modisco.uml.Modifier2NamedElement
+	 * @generated
+	 */
+	EClass getModifier2NamedElement();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.Modifier2NamedElement#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.modisco.uml.Modifier2NamedElement#getSource()
+	 * @see #getModifier2NamedElement()
+	 * @generated
+	 */
+	EReference getModifier2NamedElement_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.Modifier2NamedElement#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.modisco.uml.Modifier2NamedElement#getTarget()
+	 * @see #getModifier2NamedElement()
+	 * @generated
+	 */
+	EReference getModifier2NamedElement_Target();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.TypeAccess2InterfaceRealization <em>Type Access2 Interface Realization</em>}'.
@@ -962,70 +1090,6 @@ public interface UmlPackage extends EPackage {
 	EReference getJavaPackage2UmlPackage_Target();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Property <em>Type Access2 Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Type Access2 Property</em>'.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Property
-	 * @generated
-	 */
-	EClass getTypeAccess2Property();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.TypeAccess2Property#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Property#getSource()
-	 * @see #getTypeAccess2Property()
-	 * @generated
-	 */
-	EReference getTypeAccess2Property_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.TypeAccess2Property#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Property#getTarget()
-	 * @see #getTypeAccess2Property()
-	 * @generated
-	 */
-	EReference getTypeAccess2Property_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.CompilationUnit2Artifact <em>Compilation Unit2 Artifact</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Compilation Unit2 Artifact</em>'.
-	 * @see org.gravity.tgg.modisco.uml.CompilationUnit2Artifact
-	 * @generated
-	 */
-	EClass getCompilationUnit2Artifact();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.CompilationUnit2Artifact#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.modisco.uml.CompilationUnit2Artifact#getSource()
-	 * @see #getCompilationUnit2Artifact()
-	 * @generated
-	 */
-	EReference getCompilationUnit2Artifact_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.CompilationUnit2Artifact#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.modisco.uml.CompilationUnit2Artifact#getTarget()
-	 * @see #getCompilationUnit2Artifact()
-	 * @generated
-	 */
-	EReference getCompilationUnit2Artifact_Target();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.NamedElement2NamedElement <em>Named Element2 Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1056,70 +1120,6 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getNamedElement2NamedElement_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.JavaModel2UMLPackage <em>Java Model2 UML Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Java Model2 UML Package</em>'.
-	 * @see org.gravity.tgg.modisco.uml.JavaModel2UMLPackage
-	 * @generated
-	 */
-	EClass getJavaModel2UMLPackage();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.JavaModel2UMLPackage#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.modisco.uml.JavaModel2UMLPackage#getSource()
-	 * @see #getJavaModel2UMLPackage()
-	 * @generated
-	 */
-	EReference getJavaModel2UMLPackage_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.JavaModel2UMLPackage#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.modisco.uml.JavaModel2UMLPackage#getTarget()
-	 * @see #getJavaModel2UMLPackage()
-	 * @generated
-	 */
-	EReference getJavaModel2UMLPackage_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.Expression2Comment <em>Expression2 Comment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Expression2 Comment</em>'.
-	 * @see org.gravity.tgg.modisco.uml.Expression2Comment
-	 * @generated
-	 */
-	EClass getExpression2Comment();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.Expression2Comment#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.modisco.uml.Expression2Comment#getSource()
-	 * @see #getExpression2Comment()
-	 * @generated
-	 */
-	EReference getExpression2Comment_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.modisco.uml.Expression2Comment#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.modisco.uml.Expression2Comment#getTarget()
-	 * @see #getExpression2Comment()
-	 * @generated
-	 */
-	EReference getExpression2Comment_Target();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.modisco.uml.ASTNode2Element <em>AST Node2 Element</em>}'.
@@ -1177,6 +1177,162 @@ public interface UmlPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2PropertyImpl <em>Type Access2 Property</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2PropertyImpl
+		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2Property()
+		 * @generated
+		 */
+		EClass TYPE_ACCESS2_PROPERTY = eINSTANCE.getTypeAccess2Property();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE_ACCESS2_PROPERTY__SOURCE = eINSTANCE.getTypeAccess2Property_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE_ACCESS2_PROPERTY__TARGET = eINSTANCE.getTypeAccess2Property_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2TemplateBindingImpl <em>Type Access2 Template Binding</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2TemplateBindingImpl
+		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2TemplateBinding()
+		 * @generated
+		 */
+		EClass TYPE_ACCESS2_TEMPLATE_BINDING = eINSTANCE.getTypeAccess2TemplateBinding();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE = eINSTANCE.getTypeAccess2TemplateBinding_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE_ACCESS2_TEMPLATE_BINDING__TARGET = eINSTANCE.getTypeAccess2TemplateBinding_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.JavaModel2UMLPackageImpl <em>Java Model2 UML Package</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.modisco.uml.impl.JavaModel2UMLPackageImpl
+		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getJavaModel2UMLPackage()
+		 * @generated
+		 */
+		EClass JAVA_MODEL2_UML_PACKAGE = eINSTANCE.getJavaModel2UMLPackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JAVA_MODEL2_UML_PACKAGE__SOURCE = eINSTANCE.getJavaModel2UMLPackage_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JAVA_MODEL2_UML_PACKAGE__TARGET = eINSTANCE.getJavaModel2UMLPackage_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.CompilationUnit2ArtifactImpl <em>Compilation Unit2 Artifact</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.modisco.uml.impl.CompilationUnit2ArtifactImpl
+		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getCompilationUnit2Artifact()
+		 * @generated
+		 */
+		EClass COMPILATION_UNIT2_ARTIFACT = eINSTANCE.getCompilationUnit2Artifact();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPILATION_UNIT2_ARTIFACT__SOURCE = eINSTANCE.getCompilationUnit2Artifact_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPILATION_UNIT2_ARTIFACT__TARGET = eINSTANCE.getCompilationUnit2Artifact_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.Expression2CommentImpl <em>Expression2 Comment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.modisco.uml.impl.Expression2CommentImpl
+		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getExpression2Comment()
+		 * @generated
+		 */
+		EClass EXPRESSION2_COMMENT = eINSTANCE.getExpression2Comment();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPRESSION2_COMMENT__SOURCE = eINSTANCE.getExpression2Comment_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPRESSION2_COMMENT__TARGET = eINSTANCE.getExpression2Comment_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.VariableDec2ParameterImpl <em>Variable Dec2 Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.modisco.uml.impl.VariableDec2ParameterImpl
+		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getVariableDec2Parameter()
+		 * @generated
+		 */
+		EClass VARIABLE_DEC2_PARAMETER = eINSTANCE.getVariableDec2Parameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABLE_DEC2_PARAMETER__SOURCE = eINSTANCE.getVariableDec2Parameter_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABLE_DEC2_PARAMETER__TARGET = eINSTANCE.getVariableDec2Parameter_Target();
+
+		/**
 		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.ParameterizedType2RedefinableTemplateSignatureImpl <em>Parameterized Type2 Redefinable Template Signature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1206,14 +1362,14 @@ public interface UmlPackage extends EPackage {
 				.getParameterizedType2RedefinableTemplateSignature_Target();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.Modifier2NamedElementImpl <em>Modifier2 Named Element</em>}' class.
+		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2ParameterImpl <em>Type Access2 Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.modisco.uml.impl.Modifier2NamedElementImpl
-		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getModifier2NamedElement()
+		 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2ParameterImpl
+		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2Parameter()
 		 * @generated
 		 */
-		EClass MODIFIER2_NAMED_ELEMENT = eINSTANCE.getModifier2NamedElement();
+		EClass TYPE_ACCESS2_PARAMETER = eINSTANCE.getTypeAccess2Parameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -1221,7 +1377,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODIFIER2_NAMED_ELEMENT__SOURCE = eINSTANCE.getModifier2NamedElement_Source();
+		EReference TYPE_ACCESS2_PARAMETER__SOURCE = eINSTANCE.getTypeAccess2Parameter_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -1229,7 +1385,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODIFIER2_NAMED_ELEMENT__TARGET = eINSTANCE.getModifier2NamedElement_Target();
+		EReference TYPE_ACCESS2_PARAMETER__TARGET = eINSTANCE.getTypeAccess2Parameter_Target();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2GeneralizationImpl <em>Type Access2 Generalization</em>}' class.
@@ -1258,14 +1414,14 @@ public interface UmlPackage extends EPackage {
 		EReference TYPE_ACCESS2_GENERALIZATION__TARGET = eINSTANCE.getTypeAccess2Generalization_Target();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2TemplateBindingImpl <em>Type Access2 Template Binding</em>}' class.
+		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.Modifier2NamedElementImpl <em>Modifier2 Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2TemplateBindingImpl
-		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2TemplateBinding()
+		 * @see org.gravity.tgg.modisco.uml.impl.Modifier2NamedElementImpl
+		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getModifier2NamedElement()
 		 * @generated
 		 */
-		EClass TYPE_ACCESS2_TEMPLATE_BINDING = eINSTANCE.getTypeAccess2TemplateBinding();
+		EClass MODIFIER2_NAMED_ELEMENT = eINSTANCE.getModifier2NamedElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -1273,7 +1429,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE = eINSTANCE.getTypeAccess2TemplateBinding_Source();
+		EReference MODIFIER2_NAMED_ELEMENT__SOURCE = eINSTANCE.getModifier2NamedElement_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -1281,59 +1437,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPE_ACCESS2_TEMPLATE_BINDING__TARGET = eINSTANCE.getTypeAccess2TemplateBinding_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.VariableDec2ParameterImpl <em>Variable Dec2 Parameter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.modisco.uml.impl.VariableDec2ParameterImpl
-		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getVariableDec2Parameter()
-		 * @generated
-		 */
-		EClass VARIABLE_DEC2_PARAMETER = eINSTANCE.getVariableDec2Parameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VARIABLE_DEC2_PARAMETER__SOURCE = eINSTANCE.getVariableDec2Parameter_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VARIABLE_DEC2_PARAMETER__TARGET = eINSTANCE.getVariableDec2Parameter_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2ParameterImpl <em>Type Access2 Parameter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2ParameterImpl
-		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2Parameter()
-		 * @generated
-		 */
-		EClass TYPE_ACCESS2_PARAMETER = eINSTANCE.getTypeAccess2Parameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TYPE_ACCESS2_PARAMETER__SOURCE = eINSTANCE.getTypeAccess2Parameter_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TYPE_ACCESS2_PARAMETER__TARGET = eINSTANCE.getTypeAccess2Parameter_Target();
+		EReference MODIFIER2_NAMED_ELEMENT__TARGET = eINSTANCE.getModifier2NamedElement_Target();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2InterfaceRealizationImpl <em>Type Access2 Interface Realization</em>}' class.
@@ -1388,58 +1492,6 @@ public interface UmlPackage extends EPackage {
 		EReference JAVA_PACKAGE2_UML_PACKAGE__TARGET = eINSTANCE.getJavaPackage2UmlPackage_Target();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.TypeAccess2PropertyImpl <em>Type Access2 Property</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.modisco.uml.impl.TypeAccess2PropertyImpl
-		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getTypeAccess2Property()
-		 * @generated
-		 */
-		EClass TYPE_ACCESS2_PROPERTY = eINSTANCE.getTypeAccess2Property();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TYPE_ACCESS2_PROPERTY__SOURCE = eINSTANCE.getTypeAccess2Property_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TYPE_ACCESS2_PROPERTY__TARGET = eINSTANCE.getTypeAccess2Property_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.CompilationUnit2ArtifactImpl <em>Compilation Unit2 Artifact</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.modisco.uml.impl.CompilationUnit2ArtifactImpl
-		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getCompilationUnit2Artifact()
-		 * @generated
-		 */
-		EClass COMPILATION_UNIT2_ARTIFACT = eINSTANCE.getCompilationUnit2Artifact();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPILATION_UNIT2_ARTIFACT__SOURCE = eINSTANCE.getCompilationUnit2Artifact_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPILATION_UNIT2_ARTIFACT__TARGET = eINSTANCE.getCompilationUnit2Artifact_Target();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.NamedElement2NamedElementImpl <em>Named Element2 Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1464,58 +1516,6 @@ public interface UmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NAMED_ELEMENT2_NAMED_ELEMENT__TARGET = eINSTANCE.getNamedElement2NamedElement_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.JavaModel2UMLPackageImpl <em>Java Model2 UML Package</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.modisco.uml.impl.JavaModel2UMLPackageImpl
-		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getJavaModel2UMLPackage()
-		 * @generated
-		 */
-		EClass JAVA_MODEL2_UML_PACKAGE = eINSTANCE.getJavaModel2UMLPackage();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference JAVA_MODEL2_UML_PACKAGE__SOURCE = eINSTANCE.getJavaModel2UMLPackage_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference JAVA_MODEL2_UML_PACKAGE__TARGET = eINSTANCE.getJavaModel2UMLPackage_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.Expression2CommentImpl <em>Expression2 Comment</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.modisco.uml.impl.Expression2CommentImpl
-		 * @see org.gravity.tgg.modisco.uml.impl.UmlPackageImpl#getExpression2Comment()
-		 * @generated
-		 */
-		EClass EXPRESSION2_COMMENT = eINSTANCE.getExpression2Comment();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXPRESSION2_COMMENT__SOURCE = eINSTANCE.getExpression2Comment_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXPRESSION2_COMMENT__TARGET = eINSTANCE.getExpression2Comment_Target();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.tgg.modisco.uml.impl.ASTNode2ElementImpl <em>AST Node2 Element</em>}' class.

@@ -55,32 +55,32 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE:
-			return createParameterizedType2RedefinableTemplateSignature();
-		case UmlPackage.MODIFIER2_NAMED_ELEMENT:
-			return createModifier2NamedElement();
-		case UmlPackage.TYPE_ACCESS2_GENERALIZATION:
-			return createTypeAccess2Generalization();
+		case UmlPackage.TYPE_ACCESS2_PROPERTY:
+			return createTypeAccess2Property();
 		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING:
 			return createTypeAccess2TemplateBinding();
+		case UmlPackage.JAVA_MODEL2_UML_PACKAGE:
+			return createJavaModel2UMLPackage();
+		case UmlPackage.COMPILATION_UNIT2_ARTIFACT:
+			return createCompilationUnit2Artifact();
+		case UmlPackage.EXPRESSION2_COMMENT:
+			return createExpression2Comment();
 		case UmlPackage.VARIABLE_DEC2_PARAMETER:
 			return createVariableDec2Parameter();
+		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE:
+			return createParameterizedType2RedefinableTemplateSignature();
 		case UmlPackage.TYPE_ACCESS2_PARAMETER:
 			return createTypeAccess2Parameter();
+		case UmlPackage.TYPE_ACCESS2_GENERALIZATION:
+			return createTypeAccess2Generalization();
+		case UmlPackage.MODIFIER2_NAMED_ELEMENT:
+			return createModifier2NamedElement();
 		case UmlPackage.TYPE_ACCESS2_INTERFACE_REALIZATION:
 			return createTypeAccess2InterfaceRealization();
 		case UmlPackage.JAVA_PACKAGE2_UML_PACKAGE:
 			return createJavaPackage2UmlPackage();
-		case UmlPackage.TYPE_ACCESS2_PROPERTY:
-			return createTypeAccess2Property();
-		case UmlPackage.COMPILATION_UNIT2_ARTIFACT:
-			return createCompilationUnit2Artifact();
 		case UmlPackage.NAMED_ELEMENT2_NAMED_ELEMENT:
 			return createNamedElement2NamedElement();
-		case UmlPackage.JAVA_MODEL2_UML_PACKAGE:
-			return createJavaModel2UMLPackage();
-		case UmlPackage.EXPRESSION2_COMMENT:
-			return createExpression2Comment();
 		case UmlPackage.AST_NODE2_ELEMENT:
 			return createASTNode2Element();
 		default:
@@ -94,31 +94,9 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public ParameterizedType2RedefinableTemplateSignature createParameterizedType2RedefinableTemplateSignature() {
-		ParameterizedType2RedefinableTemplateSignatureImpl parameterizedType2RedefinableTemplateSignature = new ParameterizedType2RedefinableTemplateSignatureImpl();
-		return parameterizedType2RedefinableTemplateSignature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Modifier2NamedElement createModifier2NamedElement() {
-		Modifier2NamedElementImpl modifier2NamedElement = new Modifier2NamedElementImpl();
-		return modifier2NamedElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TypeAccess2Generalization createTypeAccess2Generalization() {
-		TypeAccess2GeneralizationImpl typeAccess2Generalization = new TypeAccess2GeneralizationImpl();
-		return typeAccess2Generalization;
+	public TypeAccess2Property createTypeAccess2Property() {
+		TypeAccess2PropertyImpl typeAccess2Property = new TypeAccess2PropertyImpl();
+		return typeAccess2Property;
 	}
 
 	/**
@@ -138,6 +116,39 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
+	public JavaModel2UMLPackage createJavaModel2UMLPackage() {
+		JavaModel2UMLPackageImpl javaModel2UMLPackage = new JavaModel2UMLPackageImpl();
+		return javaModel2UMLPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CompilationUnit2Artifact createCompilationUnit2Artifact() {
+		CompilationUnit2ArtifactImpl compilationUnit2Artifact = new CompilationUnit2ArtifactImpl();
+		return compilationUnit2Artifact;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Expression2Comment createExpression2Comment() {
+		Expression2CommentImpl expression2Comment = new Expression2CommentImpl();
+		return expression2Comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public VariableDec2Parameter createVariableDec2Parameter() {
 		VariableDec2ParameterImpl variableDec2Parameter = new VariableDec2ParameterImpl();
 		return variableDec2Parameter;
@@ -149,9 +160,42 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
+	public ParameterizedType2RedefinableTemplateSignature createParameterizedType2RedefinableTemplateSignature() {
+		ParameterizedType2RedefinableTemplateSignatureImpl parameterizedType2RedefinableTemplateSignature = new ParameterizedType2RedefinableTemplateSignatureImpl();
+		return parameterizedType2RedefinableTemplateSignature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public TypeAccess2Parameter createTypeAccess2Parameter() {
 		TypeAccess2ParameterImpl typeAccess2Parameter = new TypeAccess2ParameterImpl();
 		return typeAccess2Parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TypeAccess2Generalization createTypeAccess2Generalization() {
+		TypeAccess2GeneralizationImpl typeAccess2Generalization = new TypeAccess2GeneralizationImpl();
+		return typeAccess2Generalization;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Modifier2NamedElement createModifier2NamedElement() {
+		Modifier2NamedElementImpl modifier2NamedElement = new Modifier2NamedElementImpl();
+		return modifier2NamedElement;
 	}
 
 	/**
@@ -182,53 +226,9 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public TypeAccess2Property createTypeAccess2Property() {
-		TypeAccess2PropertyImpl typeAccess2Property = new TypeAccess2PropertyImpl();
-		return typeAccess2Property;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public CompilationUnit2Artifact createCompilationUnit2Artifact() {
-		CompilationUnit2ArtifactImpl compilationUnit2Artifact = new CompilationUnit2ArtifactImpl();
-		return compilationUnit2Artifact;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NamedElement2NamedElement createNamedElement2NamedElement() {
 		NamedElement2NamedElementImpl namedElement2NamedElement = new NamedElement2NamedElementImpl();
 		return namedElement2NamedElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public JavaModel2UMLPackage createJavaModel2UMLPackage() {
-		JavaModel2UMLPackageImpl javaModel2UMLPackage = new JavaModel2UMLPackageImpl();
-		return javaModel2UMLPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Expression2Comment createExpression2Comment() {
-		Expression2CommentImpl expression2Comment = new Expression2CommentImpl();
-		return expression2Comment;
 	}
 
 	/**

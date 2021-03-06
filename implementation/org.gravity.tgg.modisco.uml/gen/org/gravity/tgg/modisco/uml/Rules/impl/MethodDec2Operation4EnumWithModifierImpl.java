@@ -232,8 +232,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge m2f__modifier____source = (EMoflonEdge) result3_green[19];
@@ -595,8 +595,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge m2f__modifier____source = (EMoflonEdge) result3_green[19];
@@ -829,7 +829,7 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_938(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_380(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = MethodDec2Operation4EnumWithModifierImpl
 				.pattern_MethodDec2Operation4EnumWithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -890,7 +890,7 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_961(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_391(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = MethodDec2Operation4EnumWithModifierImpl
 				.pattern_MethodDec2Operation4EnumWithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -977,13 +977,13 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
 		var_feature_isStatic.setType("boolean");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1058,13 +1058,13 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
 		var_feature_isStatic.setType("boolean");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1495,10 +1495,10 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_938__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_938((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_961__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_961((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_380__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_380((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_391__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_391((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1867,8 +1867,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__modifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1880,8 +1880,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
 		String m2f__feature____target_name_prime = "target";
-		String bd2ne__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
+		String bd2ne__feature____target_name_prime = "target";
 		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__classDec____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String m2f__modifier____source_name_prime = "source";
@@ -1904,12 +1904,12 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		m2f__feature____target.setSrc(m2f);
 		m2f__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(m2f__feature____target);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
 		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		ruleresult.getTranslatedEdges().add(classDec__bodyDeclaration____bodyDeclarations);
@@ -1929,8 +1929,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
 		m2f__feature____target.setName(m2f__feature____target_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____abstractTypeDeclaration
 				.setName(bodyDeclaration__classDec____abstractTypeDeclaration_name_prime);
@@ -1939,7 +1939,7 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, umlClass, classDec,
 				umlClass__feature____ownedOperation, feature__umlClass____datatype, bd2ne__bodyDeclaration____source,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
-				m2f__feature____target, bd2ne__feature____target, b2e__bodyDeclaration____source,
+				m2f__feature____target, b2e__bodyDeclaration____source, bd2ne__feature____target,
 				classDec__bodyDeclaration____bodyDeclarations, bodyDeclaration__classDec____abstractTypeDeclaration,
 				m2f__modifier____source, b2e__feature____target };
 	}
@@ -2491,8 +2491,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__modifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2504,8 +2504,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
 		String m2f__feature____target_name_prime = "target";
-		String bd2ne__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
+		String bd2ne__feature____target_name_prime = "target";
 		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__classDec____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String m2f__modifier____source_name_prime = "source";
@@ -2528,12 +2528,12 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		m2f__feature____target.setSrc(m2f);
 		m2f__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(m2f__feature____target);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
 		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
 		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(classDec__bodyDeclaration____bodyDeclarations);
@@ -2553,8 +2553,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
 		m2f__feature____target.setName(m2f__feature____target_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____abstractTypeDeclaration
 				.setName(bodyDeclaration__classDec____abstractTypeDeclaration_name_prime);
@@ -2563,7 +2563,7 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, bodyDeclaration, modifier, umlClass, classDec,
 				umlClass__feature____ownedOperation, feature__umlClass____datatype, bd2ne__bodyDeclaration____source,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
-				m2f__feature____target, bd2ne__feature____target, b2e__bodyDeclaration____source,
+				m2f__feature____target, b2e__bodyDeclaration____source, bd2ne__feature____target,
 				classDec__bodyDeclaration____bodyDeclarations, bodyDeclaration__classDec____abstractTypeDeclaration,
 				m2f__modifier____source, b2e__feature____target };
 	}
@@ -2829,8 +2829,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_MethodDec2Operation4EnumWithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			Operation feature) {
-		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_144182 = feature.getClass_();
-		if (__DEC_feature_ownedOperation_144182 != null) {
+		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_718545 = feature.getClass_();
+		if (__DEC_feature_ownedOperation_718545 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2839,8 +2839,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_MethodDec2Operation4EnumWithModifier_20_2_testcorematchandDECs_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_672672 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_672672 != null) {
+		Interface __DEC_feature_ownedOperation_689405 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_689405 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2974,9 +2974,9 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_MethodDec2Operation4EnumWithModifier_21_2_testcorematchandDECs_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_706224 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_599786 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_706224 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_599786 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3243,9 +3243,9 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_MethodDec2Operation4EnumWithModifier_27_1_matchtggpattern_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_554164 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_134927 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_554164 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_134927 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3277,8 +3277,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_MethodDec2Operation4EnumWithModifier_28_1_matchtggpattern_black_nac_0B(
 			Operation feature) {
-		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_10295 = feature.getClass_();
-		if (__DEC_feature_ownedOperation_10295 != null) {
+		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_262686 = feature.getClass_();
+		if (__DEC_feature_ownedOperation_262686 != null) {
 			return new Object[] { feature };
 		}
 
@@ -3287,8 +3287,8 @@ public class MethodDec2Operation4EnumWithModifierImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_MethodDec2Operation4EnumWithModifier_28_1_matchtggpattern_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_630542 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_630542 != null) {
+		Interface __DEC_feature_ownedOperation_319975 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_319975 != null) {
 			return new Object[] { feature };
 		}
 

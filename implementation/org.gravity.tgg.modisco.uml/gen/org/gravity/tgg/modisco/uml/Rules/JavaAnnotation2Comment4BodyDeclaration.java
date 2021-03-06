@@ -119,7 +119,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject a2c, EObject access, EObject b2e,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject access, EObject a2c, EObject b2e,
 			EObject comment, EObject interf, EObject body, EObject type, EObject type2Interface, EObject element);
 
 	/**
@@ -202,7 +202,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject a2c, EObject access, EObject b2e,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject access, EObject a2c, EObject b2e,
 			EObject comment, EObject interf, EObject body, EObject type, EObject type2Interface, EObject element);
 
 	/**
@@ -219,7 +219,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_958(EMoflonEdge _edge_ownedComment);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_347(EMoflonEdge _edge_ownedComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +227,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_981(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_356(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

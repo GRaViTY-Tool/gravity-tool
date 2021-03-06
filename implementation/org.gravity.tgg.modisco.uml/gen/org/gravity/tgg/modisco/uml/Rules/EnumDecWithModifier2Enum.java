@@ -45,8 +45,8 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jPackage, EnumDeclaration bodyDeclaration,
-			Modifier modifier);
+	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jPackage, Modifier modifier,
+			EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,8 +70,8 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
-			EnumDeclaration bodyDeclaration, Modifier modifier);
+	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jPackage, Modifier modifier,
+			EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,8 +79,8 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
-			EnumDeclaration bodyDeclaration, Modifier modifier);
+	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jPackage, Modifier modifier,
+			EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,7 +97,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package umlPackage,
-			org.eclipse.modisco.java.Package jPackage, EnumDeclaration bodyDeclaration, Modifier modifier,
+			org.eclipse.modisco.java.Package jPackage, Modifier modifier, EnumDeclaration bodyDeclaration,
 			JavaPackage2UmlPackage jp2up);
 
 	/**
@@ -114,8 +114,8 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject b2e, EObject bd2ne,
-			EObject feature, EObject jPackage, EObject bodyDeclaration, EObject modifier, EObject jp2up);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject feature,
+			EObject bd2ne, EObject b2e, EObject jPackage, EObject modifier, EObject bodyDeclaration, EObject jp2up);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +196,8 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject b2e, EObject bd2ne,
-			EObject feature, EObject jPackage, EObject bodyDeclaration, EObject modifier, EObject jp2up);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject feature,
+			EObject bd2ne, EObject b2e, EObject jPackage, EObject modifier, EObject bodyDeclaration, EObject jp2up);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_963(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_356(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_986(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_366(EMoflonEdge _edge_ownedElements);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,7 +254,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package umlPackage, Enumeration feature,
-			org.eclipse.modisco.java.Package jPackage, EnumDeclaration bodyDeclaration, Modifier modifier,
+			org.eclipse.modisco.java.Package jPackage, Modifier modifier, EnumDeclaration bodyDeclaration,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -271,7 +271,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(org.eclipse.modisco.java.Package jPackage, EnumDeclaration bodyDeclaration, Modifier modifier);
+	boolean checkDEC_FWD(org.eclipse.modisco.java.Package jPackage, Modifier modifier, EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

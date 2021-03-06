@@ -205,17 +205,17 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 		Object[] result3_black = InnerEnumDeclaration2InnerEnum_InMethodImpl
 				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_1_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult,
-						feature, method, bd2ne, b2e, me2op, bodyDeclaration, uContainer, operation);
+						feature, bd2ne, method, b2e, me2op, bodyDeclaration, uContainer, operation);
 		if (result3_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[feature] = "
-							+ feature + ", " + "[method] = " + method + ", " + "[bd2ne] = " + bd2ne + ", " + "[b2e] = "
+							+ feature + ", " + "[bd2ne] = " + bd2ne + ", " + "[method] = " + method + ", " + "[b2e] = "
 							+ b2e + ", " + "[me2op] = " + me2op + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
 							+ "[uContainer] = " + uContainer + ", " + "[operation] = " + operation + ".");
 		}
 		InnerEnumDeclaration2InnerEnum_InMethodImpl
 				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(ruleresult,
-						feature, method, bd2ne, b2e, bodyDeclaration, uContainer);
+						feature, bd2ne, method, b2e, bodyDeclaration, uContainer);
 		//nothing EMoflonEdge method__bodyDeclaration____mInnerTypes = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[9];
@@ -227,7 +227,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 		// 
 		InnerEnumDeclaration2InnerEnum_InMethodImpl
 				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_1_5_registerobjects_expressionBBBBBBBBBB(this,
-						ruleresult, feature, method, bd2ne, b2e, me2op, bodyDeclaration, uContainer, operation);
+						ruleresult, feature, bd2ne, method, b2e, me2op, bodyDeclaration, uContainer, operation);
 		return InnerEnumDeclaration2InnerEnum_InMethodImpl
 				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_1_6_expressionFB(ruleresult);
 	}
@@ -411,11 +411,11 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject method, EObject bd2ne,
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject method,
 			EObject b2e, EObject me2op, EObject bodyDeclaration, EObject uContainer, EObject operation) {
 		ruleresult.registerObject("feature", feature);
-		ruleresult.registerObject("method", method);
 		ruleresult.registerObject("bd2ne", bd2ne);
+		ruleresult.registerObject("method", method);
 		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("me2op", me2op);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
@@ -525,9 +525,9 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 		Operation operation = (Operation) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = InnerEnumDeclaration2InnerEnum_InMethodImpl
-				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_1_performtransformation_greenBBFFFB(feature, method,
+				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_1_performtransformation_greenBFBFFB(feature, method,
 						csp);
-		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[2];
+		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[1];
 		ASTNode2Element b2e = (ASTNode2Element) result1_green[3];
 		EnumDeclaration bodyDeclaration = (EnumDeclaration) result1_green[4];
 
@@ -546,17 +546,17 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 		Object[] result3_black = InnerEnumDeclaration2InnerEnum_InMethodImpl
 				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult,
-						feature, method, bd2ne, b2e, me2op, bodyDeclaration, uContainer, operation);
+						feature, bd2ne, method, b2e, me2op, bodyDeclaration, uContainer, operation);
 		if (result3_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[feature] = "
-							+ feature + ", " + "[method] = " + method + ", " + "[bd2ne] = " + bd2ne + ", " + "[b2e] = "
+							+ feature + ", " + "[bd2ne] = " + bd2ne + ", " + "[method] = " + method + ", " + "[b2e] = "
 							+ b2e + ", " + "[me2op] = " + me2op + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
 							+ "[uContainer] = " + uContainer + ", " + "[operation] = " + operation + ".");
 		}
 		InnerEnumDeclaration2InnerEnum_InMethodImpl
 				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(ruleresult,
-						feature, method, bd2ne, b2e, bodyDeclaration, uContainer);
+						feature, bd2ne, method, b2e, bodyDeclaration, uContainer);
 		//nothing EMoflonEdge method__bodyDeclaration____mInnerTypes = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[9];
@@ -568,7 +568,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 		// 
 		InnerEnumDeclaration2InnerEnum_InMethodImpl
 				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_5_registerobjects_expressionBBBBBBBBBB(this,
-						ruleresult, feature, method, bd2ne, b2e, me2op, bodyDeclaration, uContainer, operation);
+						ruleresult, feature, bd2ne, method, b2e, me2op, bodyDeclaration, uContainer, operation);
 		return InnerEnumDeclaration2InnerEnum_InMethodImpl
 				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_6_expressionFB(ruleresult);
 	}
@@ -752,11 +752,11 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject method, EObject bd2ne,
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject method,
 			EObject b2e, EObject me2op, EObject bodyDeclaration, EObject uContainer, EObject operation) {
 		ruleresult.registerObject("feature", feature);
-		ruleresult.registerObject("method", method);
 		ruleresult.registerObject("bd2ne", bd2ne);
+		ruleresult.registerObject("method", method);
 		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("me2op", me2op);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
@@ -780,7 +780,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1006(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_364(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerEnumDeclaration2InnerEnum_InMethodImpl
 				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -842,7 +842,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1030(EMoflonEdge _edge_mInnerTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_374(EMoflonEdge _edge_mInnerTypes) {
 
 		Object[] result1_bindingAndBlack = InnerEnumDeclaration2InnerEnum_InMethodImpl
 				.pattern_InnerEnumDeclaration2InnerEnum_InMethod_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -913,13 +913,13 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -960,13 +960,13 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1214,10 +1214,10 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 								+ "[operation] = " + operation + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					InnerEnumDeclaration2InnerEnum_InMethodImpl
-							.pattern_InnerEnumDeclaration2InnerEnum_InMethod_29_6_perform_greenFBFFFBBB(method,
+							.pattern_InnerEnumDeclaration2InnerEnum_InMethod_29_6_perform_greenFFBFFBBB(method,
 									uContainer, ruleResult, csp);
 					//nothing Enumeration feature = (Enumeration) result6_green[0];
-					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[2];
+					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[1];
 					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[3];
 					//nothing EnumDeclaration bodyDeclaration = (EnumDeclaration) result6_green[4];
 
@@ -1348,10 +1348,10 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 			return null;
 		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUM_IN_METHOD___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUM_IN_METHOD___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1006__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_1006((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUM_IN_METHOD___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1030__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_1030((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUM_IN_METHOD___IS_APPROPRIATE_BWD_EMOFLON_EDGE_364__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_364((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUM_IN_METHOD___IS_APPROPRIATE_FWD_EMOFLON_EDGE_374__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_374((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUM_IN_METHOD___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUM_IN_METHOD___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1577,23 +1577,23 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_1_3_bookkeepingforedges_blackBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject feature, EObject method, EObject bd2ne, EObject b2e, EObject me2op,
+			PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject method, EObject b2e, EObject me2op,
 			EObject bodyDeclaration, EObject uContainer, EObject operation) {
 		if (!feature.equals(method)) {
 			if (!feature.equals(me2op)) {
 				if (!feature.equals(uContainer)) {
 					if (!feature.equals(operation)) {
-						if (!method.equals(uContainer)) {
-							if (!method.equals(operation)) {
-								if (!bd2ne.equals(feature)) {
-									if (!bd2ne.equals(method)) {
-										if (!bd2ne.equals(me2op)) {
-											if (!bd2ne.equals(bodyDeclaration)) {
-												if (!bd2ne.equals(uContainer)) {
-													if (!bd2ne.equals(operation)) {
+						if (!bd2ne.equals(feature)) {
+							if (!bd2ne.equals(method)) {
+								if (!bd2ne.equals(me2op)) {
+									if (!bd2ne.equals(bodyDeclaration)) {
+										if (!bd2ne.equals(uContainer)) {
+											if (!bd2ne.equals(operation)) {
+												if (!method.equals(uContainer)) {
+													if (!method.equals(operation)) {
 														if (!b2e.equals(feature)) {
-															if (!b2e.equals(method)) {
-																if (!b2e.equals(bd2ne)) {
+															if (!b2e.equals(bd2ne)) {
+																if (!b2e.equals(method)) {
 																	if (!b2e.equals(me2op)) {
 																		if (!b2e.equals(bodyDeclaration)) {
 																			if (!b2e.equals(uContainer)) {
@@ -1617,8 +1617,8 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 																														return new Object[] {
 																																ruleresult,
 																																feature,
-																																method,
 																																bd2ne,
+																																method,
 																																b2e,
 																																me2op,
 																																bodyDeclaration,
@@ -1656,7 +1656,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject feature, EObject method, EObject bd2ne, EObject b2e,
+			PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject method, EObject b2e,
 			EObject bodyDeclaration, EObject uContainer) {
 		EMoflonEdge method__bodyDeclaration____mInnerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1696,16 +1696,16 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, feature, method, bd2ne, b2e, bodyDeclaration, uContainer,
+		return new Object[] { ruleresult, feature, bd2ne, method, b2e, bodyDeclaration, uContainer,
 				method__bodyDeclaration____mInnerTypes, bd2ne__bodyDeclaration____source, bd2ne__feature____target,
 				b2e__bodyDeclaration____source, uContainer__feature____nestedClassifier, b2e__feature____target };
 	}
 
 	public static final void pattern_InnerEnumDeclaration2InnerEnum_InMethod_1_5_registerobjects_expressionBBBBBBBBBB(
-			InnerEnumDeclaration2InnerEnum_InMethod _this, PerformRuleResult ruleresult, EObject feature,
-			EObject method, EObject bd2ne, EObject b2e, EObject me2op, EObject bodyDeclaration, EObject uContainer,
+			InnerEnumDeclaration2InnerEnum_InMethod _this, PerformRuleResult ruleresult, EObject feature, EObject bd2ne,
+			EObject method, EObject b2e, EObject me2op, EObject bodyDeclaration, EObject uContainer,
 			EObject operation) {
-		_this.registerObjects_FWD(ruleresult, feature, method, bd2ne, b2e, me2op, bodyDeclaration, uContainer,
+		_this.registerObjects_FWD(ruleresult, feature, bd2ne, method, b2e, me2op, bodyDeclaration, uContainer,
 				operation);
 
 	}
@@ -2096,7 +2096,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 		return null;
 	}
 
-	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_1_performtransformation_greenBBFFFB(
+	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_1_performtransformation_greenBFBFFB(
 			Enumeration feature, MAbstractMethodDefinition method, CSP csp) {
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -2109,7 +2109,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 		b2e.setSource(bodyDeclaration);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { feature, method, bd2ne, b2e, bodyDeclaration, csp };
+		return new Object[] { feature, bd2ne, method, b2e, bodyDeclaration, csp };
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_2_collecttranslatedelements_blackBBBB(
@@ -2130,23 +2130,23 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_3_bookkeepingforedges_blackBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject feature, EObject method, EObject bd2ne, EObject b2e, EObject me2op,
+			PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject method, EObject b2e, EObject me2op,
 			EObject bodyDeclaration, EObject uContainer, EObject operation) {
 		if (!feature.equals(method)) {
 			if (!feature.equals(me2op)) {
 				if (!feature.equals(uContainer)) {
 					if (!feature.equals(operation)) {
-						if (!method.equals(uContainer)) {
-							if (!method.equals(operation)) {
-								if (!bd2ne.equals(feature)) {
-									if (!bd2ne.equals(method)) {
-										if (!bd2ne.equals(me2op)) {
-											if (!bd2ne.equals(bodyDeclaration)) {
-												if (!bd2ne.equals(uContainer)) {
-													if (!bd2ne.equals(operation)) {
+						if (!bd2ne.equals(feature)) {
+							if (!bd2ne.equals(method)) {
+								if (!bd2ne.equals(me2op)) {
+									if (!bd2ne.equals(bodyDeclaration)) {
+										if (!bd2ne.equals(uContainer)) {
+											if (!bd2ne.equals(operation)) {
+												if (!method.equals(uContainer)) {
+													if (!method.equals(operation)) {
 														if (!b2e.equals(feature)) {
-															if (!b2e.equals(method)) {
-																if (!b2e.equals(bd2ne)) {
+															if (!b2e.equals(bd2ne)) {
+																if (!b2e.equals(method)) {
 																	if (!b2e.equals(me2op)) {
 																		if (!b2e.equals(bodyDeclaration)) {
 																			if (!b2e.equals(uContainer)) {
@@ -2170,8 +2170,8 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 																														return new Object[] {
 																																ruleresult,
 																																feature,
-																																method,
 																																bd2ne,
+																																method,
 																																b2e,
 																																me2op,
 																																bodyDeclaration,
@@ -2209,7 +2209,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject feature, EObject method, EObject bd2ne, EObject b2e,
+			PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject method, EObject b2e,
 			EObject bodyDeclaration, EObject uContainer) {
 		EMoflonEdge method__bodyDeclaration____mInnerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2249,16 +2249,16 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, feature, method, bd2ne, b2e, bodyDeclaration, uContainer,
+		return new Object[] { ruleresult, feature, bd2ne, method, b2e, bodyDeclaration, uContainer,
 				method__bodyDeclaration____mInnerTypes, bd2ne__bodyDeclaration____source, bd2ne__feature____target,
 				b2e__bodyDeclaration____source, uContainer__feature____nestedClassifier, b2e__feature____target };
 	}
 
 	public static final void pattern_InnerEnumDeclaration2InnerEnum_InMethod_11_5_registerobjects_expressionBBBBBBBBBB(
-			InnerEnumDeclaration2InnerEnum_InMethod _this, PerformRuleResult ruleresult, EObject feature,
-			EObject method, EObject bd2ne, EObject b2e, EObject me2op, EObject bodyDeclaration, EObject uContainer,
+			InnerEnumDeclaration2InnerEnum_InMethod _this, PerformRuleResult ruleresult, EObject feature, EObject bd2ne,
+			EObject method, EObject b2e, EObject me2op, EObject bodyDeclaration, EObject uContainer,
 			EObject operation) {
-		_this.registerObjects_BWD(ruleresult, feature, method, bd2ne, b2e, me2op, bodyDeclaration, uContainer,
+		_this.registerObjects_BWD(ruleresult, feature, bd2ne, method, b2e, me2op, bodyDeclaration, uContainer,
 				operation);
 
 	}
@@ -2536,7 +2536,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_20_2_testcorematchandDECs_black_nac_0B(
 			Enumeration feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_403194 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_570146 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -2545,7 +2545,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_20_2_testcorematchandDECs_black_nac_1B(
 			Enumeration feature) {
-		for (Interface __DEC_feature_nestedClassifier_165736 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_356959 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2682,8 +2682,8 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_21_2_testcorematchandDECs_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_161209 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_161209 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_598599 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_598599 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2692,10 +2692,10 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_21_2_testcorematchandDECs_black_nac_1B(
 			EnumDeclaration bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_684630 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_299089 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_684630 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_684630)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_299089 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_299089)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -2705,9 +2705,9 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_21_2_testcorematchandDECs_black_nac_2B(
 			EnumDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_923813 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_545689 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_923813 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_545689 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2716,8 +2716,8 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_21_2_testcorematchandDECs_black_nac_3B(
 			EnumDeclaration bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_471882 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_471882 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_815568 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_815568 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2726,9 +2726,9 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_21_2_testcorematchandDECs_black_nac_4BB(
 			EnumDeclaration bodyDeclaration, MAbstractMethodDefinition method) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_371509 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_37107 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
-			if (!method.equals(__DEC_bodyDeclaration_mInnerTypes_371509)) {
+			if (!method.equals(__DEC_bodyDeclaration_mInnerTypes_37107)) {
 				return new Object[] { bodyDeclaration, method };
 			}
 		}
@@ -3000,8 +3000,8 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_27_1_matchtggpattern_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_31374 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_31374 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_555004 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_555004 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3010,10 +3010,10 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_27_1_matchtggpattern_black_nac_1B(
 			EnumDeclaration bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_300918 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_743565 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_300918 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_300918)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_743565 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_743565)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -3023,9 +3023,9 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_27_1_matchtggpattern_black_nac_2B(
 			EnumDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_572422 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_261617 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_572422 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_261617 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3034,8 +3034,8 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_27_1_matchtggpattern_black_nac_3B(
 			EnumDeclaration bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_187006 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_187006 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_638357 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_638357 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3044,9 +3044,9 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_27_1_matchtggpattern_black_nac_4BB(
 			EnumDeclaration bodyDeclaration, MAbstractMethodDefinition method) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_567810 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_30933 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
-			if (!method.equals(__DEC_bodyDeclaration_mInnerTypes_567810)) {
+			if (!method.equals(__DEC_bodyDeclaration_mInnerTypes_30933)) {
 				return new Object[] { bodyDeclaration, method };
 			}
 		}
@@ -3088,7 +3088,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_28_1_matchtggpattern_black_nac_0B(
 			Enumeration feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_349806 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_917415 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -3097,7 +3097,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_28_1_matchtggpattern_black_nac_1B(
 			Enumeration feature) {
-		for (Interface __DEC_feature_nestedClassifier_559149 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_153860 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -3271,7 +3271,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 		return new Object[] { method, me2op, uContainer, operation, ruleResult };
 	}
 
-	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_29_6_perform_greenFBFFFBBB(
+	public static final Object[] pattern_InnerEnumDeclaration2InnerEnum_InMethod_29_6_perform_greenFFBFFBBB(
 			MAbstractMethodDefinition method, org.eclipse.uml2.uml.Class uContainer,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
@@ -3299,7 +3299,7 @@ public class InnerEnumDeclaration2InnerEnum_InMethodImpl extends AbstractRuleImp
 		feature.setName(feature_name_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { feature, method, bd2ne, b2e, bodyDeclaration, uContainer, ruleResult, csp };
+		return new Object[] { feature, bd2ne, method, b2e, bodyDeclaration, uContainer, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_InnerEnumDeclaration2InnerEnum_InMethod_29_7_expressionFB(

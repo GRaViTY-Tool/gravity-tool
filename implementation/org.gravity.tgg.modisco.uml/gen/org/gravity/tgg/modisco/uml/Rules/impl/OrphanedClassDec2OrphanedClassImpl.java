@@ -100,24 +100,24 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, Model jPackage, MClass bodyDeclaration) {
+	public boolean isAppropriate_FWD(Match match, MClass bodyDeclaration, Model jPackage) {
 
 		Object[] result1_black = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_0_1_initialbindings_blackBBBB(this, match, jPackage,
-						bodyDeclaration);
+				.pattern_OrphanedClassDec2OrphanedClass_0_1_initialbindings_blackBBBB(this, match, bodyDeclaration,
+						jPackage);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = "
+					+ jPackage + ".");
 		}
 
 		Object[] result2_bindingAndBlack = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, jPackage,
-						bodyDeclaration);
+				.pattern_OrphanedClassDec2OrphanedClass_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, bodyDeclaration,
+						jPackage);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = "
+					+ jPackage + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -125,23 +125,23 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 				csp)) {
 
 			Object[] result4_black = OrphanedClassDec2OrphanedClassImpl
-					.pattern_OrphanedClassDec2OrphanedClass_0_4_collectelementstobetranslated_blackBBB(match, jPackage,
-							bodyDeclaration);
+					.pattern_OrphanedClassDec2OrphanedClass_0_4_collectelementstobetranslated_blackBBB(match,
+							bodyDeclaration, jPackage);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = " + jPackage + ".");
 			}
 			OrphanedClassDec2OrphanedClassImpl
-					.pattern_OrphanedClassDec2OrphanedClass_0_4_collectelementstobetranslated_greenBBBF(match, jPackage,
-							bodyDeclaration);
+					.pattern_OrphanedClassDec2OrphanedClass_0_4_collectelementstobetranslated_greenBBBF(match,
+							bodyDeclaration, jPackage);
 			//nothing EMoflonEdge jPackage__bodyDeclaration____orphanTypes = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = OrphanedClassDec2OrphanedClassImpl
-					.pattern_OrphanedClassDec2OrphanedClass_0_5_collectcontextelements_blackBBB(match, jPackage,
-							bodyDeclaration);
+					.pattern_OrphanedClassDec2OrphanedClass_0_5_collectcontextelements_blackBBB(match, bodyDeclaration,
+							jPackage);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = " + jPackage + ".");
 			}
 			OrphanedClassDec2OrphanedClassImpl
 					.pattern_OrphanedClassDec2OrphanedClass_0_5_collectcontextelements_greenBB(match, jPackage);
@@ -149,7 +149,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 			// 
 			OrphanedClassDec2OrphanedClassImpl
 					.pattern_OrphanedClassDec2OrphanedClass_0_6_registerobjectstomatch_expressionBBBB(this, match,
-							jPackage, bodyDeclaration);
+							bodyDeclaration, jPackage);
 			return OrphanedClassDec2OrphanedClassImpl.pattern_OrphanedClassDec2OrphanedClass_0_7_expressionF();
 		} else {
 			return OrphanedClassDec2OrphanedClassImpl.pattern_OrphanedClassDec2OrphanedClass_0_8_expressionF();
@@ -172,54 +172,54 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[0];
-		Model jPackage = (Model) result1_bindingAndBlack[1];
-		JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result1_bindingAndBlack[2];
-		MClass bodyDeclaration = (MClass) result1_bindingAndBlack[3];
+		MClass bodyDeclaration = (MClass) result1_bindingAndBlack[1];
+		Model jPackage = (Model) result1_bindingAndBlack[2];
+		JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_greenBFFBFB(umlPackage,
+				.pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_greenFBFFBB(umlPackage,
 						bodyDeclaration, csp);
-		NamedElement2NamedElement md2o = (NamedElement2NamedElement) result1_green[1];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
-		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result1_green[4];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
+		NamedElement2NamedElement md2o = (NamedElement2NamedElement) result1_green[2];
+		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result1_green[3];
 
 		Object[] result2_black = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_1_2_collecttranslatedelements_blackBBBB(md2o, b2e,
-						bodyDeclaration, feature);
+				.pattern_OrphanedClassDec2OrphanedClass_1_2_collecttranslatedelements_blackBBBB(b2e, md2o, feature,
+						bodyDeclaration);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[md2o] = " + md2o + ", " + "[b2e] = " + b2e + ", "
-							+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature + ".");
+					"Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", " + "[md2o] = " + md2o + ", "
+							+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
 		}
 		Object[] result2_green = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_1_2_collecttranslatedelements_greenFBBBB(md2o, b2e,
-						bodyDeclaration, feature);
+				.pattern_OrphanedClassDec2OrphanedClass_1_2_collecttranslatedelements_greenFBBBB(b2e, md2o, feature,
+						bodyDeclaration);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, umlPackage,
-						md2o, jPackage, b2e, jp2up, bodyDeclaration, feature);
+				.pattern_OrphanedClassDec2OrphanedClass_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, b2e,
+						umlPackage, md2o, feature, bodyDeclaration, jPackage, jp2up);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[umlPackage] = " + umlPackage + ", " + "[md2o] = " + md2o + ", " + "[jPackage] = "
-					+ jPackage + ", " + "[b2e] = " + b2e + ", " + "[jp2up] = " + jp2up + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[feature] = " + feature + ".");
+					+ ", " + "[b2e] = " + b2e + ", " + "[umlPackage] = " + umlPackage + ", " + "[md2o] = " + md2o + ", "
+					+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[jPackage] = " + jPackage + ", " + "[jp2up] = " + jp2up + ".");
 		}
 		OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(ruleresult,
-						umlPackage, md2o, jPackage, b2e, bodyDeclaration, feature);
-		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge md2o__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
+				.pattern_OrphanedClassDec2OrphanedClass_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(ruleresult, b2e,
+						umlPackage, md2o, feature, bodyDeclaration, jPackage);
+		//nothing EMoflonEdge md2o__feature____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge md2o__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge jPackage__bodyDeclaration____orphanTypes = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge md2o__feature____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
 
 		// 
 		// 
 		OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
-						umlPackage, md2o, jPackage, b2e, jp2up, bodyDeclaration, feature);
+				.pattern_OrphanedClassDec2OrphanedClass_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, b2e,
+						umlPackage, md2o, feature, bodyDeclaration, jPackage, jp2up);
 		return OrphanedClassDec2OrphanedClassImpl.pattern_OrphanedClassDec2OrphanedClass_1_6_expressionFB(ruleresult);
 	}
 
@@ -248,32 +248,32 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Model jPackage = (Model) result2_binding[0];
-		MClass bodyDeclaration = (MClass) result2_binding[1];
+		MClass bodyDeclaration = (MClass) result2_binding[0];
+		Model jPackage = (Model) result2_binding[1];
 		for (Object[] result2_black : OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_2_2_corematch_blackFBFBB(jPackage, bodyDeclaration, match)) {
+				.pattern_OrphanedClassDec2OrphanedClass_2_2_corematch_blackFBBFB(bodyDeclaration, jPackage, match)) {
 			org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) result2_black[0];
-			JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result2_black[2];
+			JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : OrphanedClassDec2OrphanedClassImpl
-					.pattern_OrphanedClassDec2OrphanedClass_2_3_findcontext_blackBBBB(umlPackage, jPackage, jp2up,
-							bodyDeclaration)) {
+					.pattern_OrphanedClassDec2OrphanedClass_2_3_findcontext_blackBBBB(umlPackage, bodyDeclaration,
+							jPackage, jp2up)) {
 				Object[] result3_green = OrphanedClassDec2OrphanedClassImpl
-						.pattern_OrphanedClassDec2OrphanedClass_2_3_findcontext_greenBBBBFFFF(umlPackage, jPackage,
-								jp2up, bodyDeclaration);
+						.pattern_OrphanedClassDec2OrphanedClass_2_3_findcontext_greenBBBBFFFF(umlPackage,
+								bodyDeclaration, jPackage, jp2up);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge jPackage__bodyDeclaration____orphanTypes = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge jPackage__bodyDeclaration____orphanTypes = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = OrphanedClassDec2OrphanedClassImpl
 						.pattern_OrphanedClassDec2OrphanedClass_2_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, umlPackage, jPackage, jp2up, bodyDeclaration);
+								isApplicableMatch, umlPackage, bodyDeclaration, jPackage, jp2up);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[umlPackage] = " + umlPackage
-							+ ", " + "[jPackage] = " + jPackage + ", " + "[jp2up] = " + jp2up + ", "
-							+ "[bodyDeclaration] = " + bodyDeclaration + ".");
+							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = " + jPackage + ", "
+							+ "[jp2up] = " + jp2up + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -305,9 +305,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, Model jPackage, MClass bodyDeclaration) {
-		match.registerObject("jPackage", jPackage);
+	public void registerObjectsToMatch_FWD(Match match, MClass bodyDeclaration, Model jPackage) {
 		match.registerObject("bodyDeclaration", bodyDeclaration);
+		match.registerObject("jPackage", jPackage);
 
 	}
 
@@ -316,7 +316,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, Model jPackage, MClass bodyDeclaration) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, MClass bodyDeclaration, Model jPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -346,7 +346,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Model umlPackage,
-			Model jPackage, JavaModel2UMLPackage jp2up, MClass bodyDeclaration) {// Create CSP
+			MClass bodyDeclaration, Model jPackage, JavaModel2UMLPackage jp2up) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -373,9 +373,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("umlPackage", umlPackage);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("jPackage", jPackage);
 		isApplicableMatch.registerObject("jp2up", jp2up);
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		return csp;
 	}
 
@@ -393,15 +393,15 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject umlPackage, EObject md2o, EObject jPackage,
-			EObject b2e, EObject jp2up, EObject bodyDeclaration, EObject feature) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject umlPackage, EObject md2o,
+			EObject feature, EObject bodyDeclaration, EObject jPackage, EObject jp2up) {
+		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("umlPackage", umlPackage);
 		ruleresult.registerObject("md2o", md2o);
-		ruleresult.registerObject("jPackage", jPackage);
-		ruleresult.registerObject("b2e", b2e);
-		ruleresult.registerObject("jp2up", jp2up);
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("jPackage", jPackage);
+		ruleresult.registerObject("jp2up", jp2up);
 
 	}
 
@@ -493,53 +493,53 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[0];
-		Model jPackage = (Model) result1_bindingAndBlack[1];
-		JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result1_bindingAndBlack[2];
-		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[3];
+		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[1];
+		Model jPackage = (Model) result1_bindingAndBlack[2];
+		JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_greenFBFFBB(jPackage, feature, csp);
-		NamedElement2NamedElement md2o = (NamedElement2NamedElement) result1_green[0];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
+				.pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_greenFFBFBB(feature, jPackage, csp);
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
+		NamedElement2NamedElement md2o = (NamedElement2NamedElement) result1_green[1];
 		MClass bodyDeclaration = (MClass) result1_green[3];
 
 		Object[] result2_black = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_11_2_collecttranslatedelements_blackBBBB(md2o, b2e,
-						bodyDeclaration, feature);
+				.pattern_OrphanedClassDec2OrphanedClass_11_2_collecttranslatedelements_blackBBBB(b2e, md2o, feature,
+						bodyDeclaration);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[md2o] = " + md2o + ", " + "[b2e] = " + b2e + ", "
-							+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature + ".");
+					"Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", " + "[md2o] = " + md2o + ", "
+							+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
 		}
 		Object[] result2_green = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_11_2_collecttranslatedelements_greenFBBBB(md2o, b2e,
-						bodyDeclaration, feature);
+				.pattern_OrphanedClassDec2OrphanedClass_11_2_collecttranslatedelements_greenFBBBB(b2e, md2o, feature,
+						bodyDeclaration);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, umlPackage,
-						md2o, jPackage, b2e, jp2up, bodyDeclaration, feature);
+				.pattern_OrphanedClassDec2OrphanedClass_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, b2e,
+						umlPackage, md2o, feature, bodyDeclaration, jPackage, jp2up);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[umlPackage] = " + umlPackage + ", " + "[md2o] = " + md2o + ", " + "[jPackage] = "
-					+ jPackage + ", " + "[b2e] = " + b2e + ", " + "[jp2up] = " + jp2up + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[feature] = " + feature + ".");
+					+ ", " + "[b2e] = " + b2e + ", " + "[umlPackage] = " + umlPackage + ", " + "[md2o] = " + md2o + ", "
+					+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[jPackage] = " + jPackage + ", " + "[jp2up] = " + jp2up + ".");
 		}
 		OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(ruleresult,
-						umlPackage, md2o, jPackage, b2e, bodyDeclaration, feature);
-		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge md2o__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
+				.pattern_OrphanedClassDec2OrphanedClass_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(ruleresult, b2e,
+						umlPackage, md2o, feature, bodyDeclaration, jPackage);
+		//nothing EMoflonEdge md2o__feature____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge md2o__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge jPackage__bodyDeclaration____orphanTypes = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge md2o__feature____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
 
 		// 
 		// 
 		OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
-						umlPackage, md2o, jPackage, b2e, jp2up, bodyDeclaration, feature);
+				.pattern_OrphanedClassDec2OrphanedClass_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, b2e,
+						umlPackage, md2o, feature, bodyDeclaration, jPackage, jp2up);
 		return OrphanedClassDec2OrphanedClassImpl.pattern_OrphanedClassDec2OrphanedClass_11_6_expressionFB(ruleresult);
 	}
 
@@ -571,16 +571,16 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 		org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) result2_binding[0];
 		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result2_binding[1];
 		for (Object[] result2_black : OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_12_2_corematch_blackBFFBB(umlPackage, feature, match)) {
-			Model jPackage = (Model) result2_black[1];
-			JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result2_black[2];
+				.pattern_OrphanedClassDec2OrphanedClass_12_2_corematch_blackBBFFB(umlPackage, feature, match)) {
+			Model jPackage = (Model) result2_black[2];
+			JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : OrphanedClassDec2OrphanedClassImpl
-					.pattern_OrphanedClassDec2OrphanedClass_12_3_findcontext_blackBBBB(umlPackage, jPackage, jp2up,
-							feature)) {
+					.pattern_OrphanedClassDec2OrphanedClass_12_3_findcontext_blackBBBB(umlPackage, feature, jPackage,
+							jp2up)) {
 				Object[] result3_green = OrphanedClassDec2OrphanedClassImpl
-						.pattern_OrphanedClassDec2OrphanedClass_12_3_findcontext_greenBBBBFFFF(umlPackage, jPackage,
-								jp2up, feature);
+						.pattern_OrphanedClassDec2OrphanedClass_12_3_findcontext_greenBBBBFFFF(umlPackage, feature,
+								jPackage, jp2up);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
 				//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[6];
@@ -588,12 +588,12 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 				Object[] result4_bindingAndBlack = OrphanedClassDec2OrphanedClassImpl
 						.pattern_OrphanedClassDec2OrphanedClass_12_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, umlPackage, jPackage, jp2up, feature);
+								isApplicableMatch, umlPackage, feature, jPackage, jp2up);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[umlPackage] = " + umlPackage
-							+ ", " + "[jPackage] = " + jPackage + ", " + "[jp2up] = " + jp2up + ", " + "[feature] = "
-							+ feature + ".");
+							+ ", " + "[feature] = " + feature + ", " + "[jPackage] = " + jPackage + ", " + "[jp2up] = "
+							+ jp2up + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -668,7 +668,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Model umlPackage,
-			Model jPackage, JavaModel2UMLPackage jp2up, org.eclipse.uml2.uml.Class feature) {// Create CSP
+			org.eclipse.uml2.uml.Class feature, Model jPackage, JavaModel2UMLPackage jp2up) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -694,9 +694,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("umlPackage", umlPackage);
+		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("jPackage", jPackage);
 		isApplicableMatch.registerObject("jp2up", jp2up);
-		isApplicableMatch.registerObject("feature", feature);
 		return csp;
 	}
 
@@ -714,15 +714,15 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject umlPackage, EObject md2o, EObject jPackage,
-			EObject b2e, EObject jp2up, EObject bodyDeclaration, EObject feature) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject umlPackage, EObject md2o,
+			EObject feature, EObject bodyDeclaration, EObject jPackage, EObject jp2up) {
+		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("umlPackage", umlPackage);
 		ruleresult.registerObject("md2o", md2o);
-		ruleresult.registerObject("jPackage", jPackage);
-		ruleresult.registerObject("b2e", b2e);
-		ruleresult.registerObject("jp2up", jp2up);
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("jPackage", jPackage);
+		ruleresult.registerObject("jp2up", jp2up);
 
 	}
 
@@ -740,7 +740,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_929(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_373(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = OrphanedClassDec2OrphanedClassImpl
 				.pattern_OrphanedClassDec2OrphanedClass_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -799,7 +799,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_951(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_384(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = OrphanedClassDec2OrphanedClassImpl
 				.pattern_OrphanedClassDec2OrphanedClass_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -816,8 +816,8 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 		// ForEach 
 		for (Object[] result2_black : OrphanedClassDec2OrphanedClassImpl
 				.pattern_OrphanedClassDec2OrphanedClass_21_2_testcorematchandDECs_blackFFB(_edge_orphanTypes)) {
-			Model jPackage = (Model) result2_black[0];
-			MClass bodyDeclaration = (MClass) result2_black[1];
+			MClass bodyDeclaration = (MClass) result2_black[0];
+			Model jPackage = (Model) result2_black[1];
 			Object[] result2_green = OrphanedClassDec2OrphanedClassImpl
 					.pattern_OrphanedClassDec2OrphanedClass_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -825,7 +825,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 			// 
 			if (OrphanedClassDec2OrphanedClassImpl
 					.pattern_OrphanedClassDec2OrphanedClass_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, jPackage, bodyDeclaration)) {
+							this, match, bodyDeclaration, jPackage)) {
 				// 
 				if (OrphanedClassDec2OrphanedClassImpl
 						.pattern_OrphanedClassDec2OrphanedClass_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -971,18 +971,18 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) result2_bindingAndBlack[0];
-		Model jPackage = (Model) result2_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[1];
 		MClass bodyDeclaration = (MClass) result2_bindingAndBlack[2];
-		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[3];
+		Model jPackage = (Model) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, umlPackage,
-						jPackage, bodyDeclaration, feature, sourceMatch, targetMatch);
+				.pattern_OrphanedClassDec2OrphanedClass_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, umlPackage, feature,
+						bodyDeclaration, jPackage, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[umlPackage] = " + umlPackage + ", " + "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[feature] = " + feature + ", " + "[sourceMatch] = " + sourceMatch + ", "
-					+ "[targetMatch] = " + targetMatch + ".");
+					+ "[umlPackage] = " + umlPackage + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ", " + "[jPackage] = " + jPackage + ", " + "[sourceMatch] = " + sourceMatch
+					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
@@ -999,18 +999,18 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 				Object[] result6_black = OrphanedClassDec2OrphanedClassImpl
 						.pattern_OrphanedClassDec2OrphanedClass_24_6_createcorrespondence_blackBBBBB(umlPackage,
-								jPackage, bodyDeclaration, feature, ccMatch);
+								feature, bodyDeclaration, jPackage, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException(
 							"Pattern matching failed." + " Variables: " + "[umlPackage] = " + umlPackage + ", "
-									+ "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = " + bodyDeclaration
-									+ ", " + "[feature] = " + feature + ", " + "[ccMatch] = " + ccMatch + ".");
+									+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+									+ "[jPackage] = " + jPackage + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				OrphanedClassDec2OrphanedClassImpl
-						.pattern_OrphanedClassDec2OrphanedClass_24_6_createcorrespondence_greenFFBBB(bodyDeclaration,
-								feature, ccMatch);
-				//nothing NamedElement2NamedElement md2o = (NamedElement2NamedElement) result6_green[0];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
+						.pattern_OrphanedClassDec2OrphanedClass_24_6_createcorrespondence_greenFFBBB(feature,
+								bodyDeclaration, ccMatch);
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
+				//nothing NamedElement2NamedElement md2o = (NamedElement2NamedElement) result6_green[1];
 
 				Object[] result7_black = OrphanedClassDec2OrphanedClassImpl
 						.pattern_OrphanedClassDec2OrphanedClass_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1033,8 +1033,8 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Model umlPackage, Model jPackage, MClass bodyDeclaration,
-			org.eclipse.uml2.uml.Class feature, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature,
+			MClass bodyDeclaration, Model jPackage, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1075,9 +1075,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Model jPackage, MClass bodyDeclaration) {// 
+	public boolean checkDEC_FWD(MClass bodyDeclaration, Model jPackage) {// 
 		Object[] result1_black = OrphanedClassDec2OrphanedClassImpl
-				.pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_blackBB(jPackage, bodyDeclaration);
+				.pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_blackBB(bodyDeclaration, jPackage);
 		if (result1_black != null) {
 			return OrphanedClassDec2OrphanedClassImpl.pattern_OrphanedClassDec2OrphanedClass_27_2_expressionF();
 		} else {
@@ -1156,12 +1156,12 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
 					OrphanedClassDec2OrphanedClassImpl
-							.pattern_OrphanedClassDec2OrphanedClass_29_6_perform_greenBFBFFFBB(umlPackage, jPackage,
+							.pattern_OrphanedClassDec2OrphanedClass_29_6_perform_greenFBFFFBBB(umlPackage, jPackage,
 									ruleResult, csp);
-					//nothing NamedElement2NamedElement md2o = (NamedElement2NamedElement) result6_green[1];
-					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[3];
+					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
+					//nothing NamedElement2NamedElement md2o = (NamedElement2NamedElement) result6_green[2];
+					//nothing org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result6_green[3];
 					//nothing MClass bodyDeclaration = (MClass) result6_green[4];
-					//nothing org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result6_green[5];
 
 				} else {
 				}
@@ -1226,24 +1226,24 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_FWD__MATCH_MODEL_MCLASS:
-			return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1), (MClass) arguments.get(2));
+		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_FWD__MATCH_MCLASS_MODEL:
+			return isAppropriate_FWD((Match) arguments.get(0), (MClass) arguments.get(1), (Model) arguments.get(2));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_MCLASS:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1), (MClass) arguments.get(2));
+		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASS_MODEL:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (MClass) arguments.get(1), (Model) arguments.get(2));
 			return null;
-		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_MCLASS:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(MClass) arguments.get(2));
+		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASS_MODEL:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
+					(Model) arguments.get(2));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_MODEL_JAVAMODEL2UMLPACKAGE_MCLASS:
+		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_MCLASS_MODEL_JAVAMODEL2UMLPACKAGE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Model) arguments.get(1), (Model) arguments.get(2),
-					(JavaModel2UMLPackage) arguments.get(3), (MClass) arguments.get(4));
+					(org.eclipse.uml2.uml.Model) arguments.get(1), (MClass) arguments.get(2), (Model) arguments.get(3),
+					(JavaModel2UMLPackage) arguments.get(4));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1269,10 +1269,10 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 					(org.eclipse.uml2.uml.Class) arguments.get(2));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL_JAVAMODEL2UMLPACKAGE_CLASS:
+		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_CLASS_MODEL_JAVAMODEL2UMLPACKAGE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Model) arguments.get(1), (Model) arguments.get(2),
-					(JavaModel2UMLPackage) arguments.get(3), (org.eclipse.uml2.uml.Class) arguments.get(4));
+					(org.eclipse.uml2.uml.Model) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
+					(Model) arguments.get(3), (JavaModel2UMLPackage) arguments.get(4));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1282,24 +1282,24 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 			return null;
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_929__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_929((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_951__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_951((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_373__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_373((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_384__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_384((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MODEL_MCLASS_CLASS_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Model) arguments.get(0), (Model) arguments.get(1),
-					(MClass) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3), (Match) arguments.get(4),
-					(Match) arguments.get(5));
+		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_CLASS_MCLASS_MODEL_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Model) arguments.get(0),
+					(org.eclipse.uml2.uml.Class) arguments.get(1), (MClass) arguments.get(2), (Model) arguments.get(3),
+					(Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___CHECK_DEC_FWD__MODEL_MCLASS:
-			return checkDEC_FWD((Model) arguments.get(0), (MClass) arguments.get(1));
+		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___CHECK_DEC_FWD__MCLASS_MODEL:
+			return checkDEC_FWD((MClass) arguments.get(0), (Model) arguments.get(1));
 		case RulesPackage.ORPHANED_CLASS_DEC2_ORPHANED_CLASS___CHECK_DEC_BWD__MODEL_CLASS:
 			return checkDEC_BWD((org.eclipse.uml2.uml.Model) arguments.get(0),
 					(org.eclipse.uml2.uml.Class) arguments.get(1));
@@ -1316,16 +1316,16 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_0_1_initialbindings_blackBBBB(
-			OrphanedClassDec2OrphanedClass _this, Match match, Model jPackage, MClass bodyDeclaration) {
-		return new Object[] { _this, match, jPackage, bodyDeclaration };
+			OrphanedClassDec2OrphanedClass _this, Match match, MClass bodyDeclaration, Model jPackage) {
+		return new Object[] { _this, match, bodyDeclaration, jPackage };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_0_2_SolveCSP_bindingFBBBB(
-			OrphanedClassDec2OrphanedClass _this, Match match, Model jPackage, MClass bodyDeclaration) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, jPackage, bodyDeclaration);
+			OrphanedClassDec2OrphanedClass _this, Match match, MClass bodyDeclaration, Model jPackage) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, bodyDeclaration, jPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, jPackage, bodyDeclaration };
+			return new Object[] { csp, _this, match, bodyDeclaration, jPackage };
 		}
 		return null;
 	}
@@ -1335,9 +1335,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_0_2_SolveCSP_bindingAndBlackFBBBB(
-			OrphanedClassDec2OrphanedClass _this, Match match, Model jPackage, MClass bodyDeclaration) {
+			OrphanedClassDec2OrphanedClass _this, Match match, MClass bodyDeclaration, Model jPackage) {
 		Object[] result_pattern_OrphanedClassDec2OrphanedClass_0_2_SolveCSP_binding = pattern_OrphanedClassDec2OrphanedClass_0_2_SolveCSP_bindingFBBBB(
-				_this, match, jPackage, bodyDeclaration);
+				_this, match, bodyDeclaration, jPackage);
 		if (result_pattern_OrphanedClassDec2OrphanedClass_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OrphanedClassDec2OrphanedClass_0_2_SolveCSP_binding[0];
 
@@ -1345,7 +1345,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_OrphanedClassDec2OrphanedClass_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, jPackage, bodyDeclaration };
+				return new Object[] { csp, _this, match, bodyDeclaration, jPackage };
 			}
 		}
 		return null;
@@ -1359,12 +1359,12 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_0_4_collectelementstobetranslated_blackBBB(
-			Match match, Model jPackage, MClass bodyDeclaration) {
-		return new Object[] { match, jPackage, bodyDeclaration };
+			Match match, MClass bodyDeclaration, Model jPackage) {
+		return new Object[] { match, bodyDeclaration, jPackage };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_0_4_collectelementstobetranslated_greenBBBF(
-			Match match, Model jPackage, MClass bodyDeclaration) {
+			Match match, MClass bodyDeclaration, Model jPackage) {
 		EMoflonEdge jPackage__bodyDeclaration____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(bodyDeclaration);
 		String jPackage__bodyDeclaration____orphanTypes_name_prime = "orphanTypes";
@@ -1372,12 +1372,12 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 		jPackage__bodyDeclaration____orphanTypes.setTrg(bodyDeclaration);
 		match.getToBeTranslatedEdges().add(jPackage__bodyDeclaration____orphanTypes);
 		jPackage__bodyDeclaration____orphanTypes.setName(jPackage__bodyDeclaration____orphanTypes_name_prime);
-		return new Object[] { match, jPackage, bodyDeclaration, jPackage__bodyDeclaration____orphanTypes };
+		return new Object[] { match, bodyDeclaration, jPackage, jPackage__bodyDeclaration____orphanTypes };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_0_5_collectcontextelements_blackBBB(Match match,
-			Model jPackage, MClass bodyDeclaration) {
-		return new Object[] { match, jPackage, bodyDeclaration };
+			MClass bodyDeclaration, Model jPackage) {
+		return new Object[] { match, bodyDeclaration, jPackage };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_0_5_collectcontextelements_greenBB(Match match,
@@ -1387,8 +1387,8 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final void pattern_OrphanedClassDec2OrphanedClass_0_6_registerobjectstomatch_expressionBBBB(
-			OrphanedClassDec2OrphanedClass _this, Match match, Model jPackage, MClass bodyDeclaration) {
-		_this.registerObjectsToMatch_FWD(match, jPackage, bodyDeclaration);
+			OrphanedClassDec2OrphanedClass _this, Match match, MClass bodyDeclaration, Model jPackage) {
+		_this.registerObjectsToMatch_FWD(match, bodyDeclaration, jPackage);
 
 	}
 
@@ -1405,22 +1405,22 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("umlPackage");
-		EObject _localVariable_1 = isApplicableMatch.getObject("jPackage");
-		EObject _localVariable_2 = isApplicableMatch.getObject("jp2up");
-		EObject _localVariable_3 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_1 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_2 = isApplicableMatch.getObject("jPackage");
+		EObject _localVariable_3 = isApplicableMatch.getObject("jp2up");
 		EObject tmpUmlPackage = _localVariable_0;
-		EObject tmpJPackage = _localVariable_1;
-		EObject tmpJp2up = _localVariable_2;
-		EObject tmpBodyDeclaration = _localVariable_3;
+		EObject tmpBodyDeclaration = _localVariable_1;
+		EObject tmpJPackage = _localVariable_2;
+		EObject tmpJp2up = _localVariable_3;
 		if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Model) {
 			org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) tmpUmlPackage;
-			if (tmpJPackage instanceof Model) {
-				Model jPackage = (Model) tmpJPackage;
-				if (tmpJp2up instanceof JavaModel2UMLPackage) {
-					JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) tmpJp2up;
-					if (tmpBodyDeclaration instanceof MClass) {
-						MClass bodyDeclaration = (MClass) tmpBodyDeclaration;
-						return new Object[] { umlPackage, jPackage, jp2up, bodyDeclaration, isApplicableMatch };
+			if (tmpBodyDeclaration instanceof MClass) {
+				MClass bodyDeclaration = (MClass) tmpBodyDeclaration;
+				if (tmpJPackage instanceof Model) {
+					Model jPackage = (Model) tmpJPackage;
+					if (tmpJp2up instanceof JavaModel2UMLPackage) {
+						JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) tmpJp2up;
+						return new Object[] { umlPackage, bodyDeclaration, jPackage, jp2up, isApplicableMatch };
 					}
 				}
 			}
@@ -1429,12 +1429,12 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_blackBBBBFBB(
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, JavaModel2UMLPackage jp2up, MClass bodyDeclaration,
+			org.eclipse.uml2.uml.Model umlPackage, MClass bodyDeclaration, Model jPackage, JavaModel2UMLPackage jp2up,
 			OrphanedClassDec2OrphanedClass _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { umlPackage, jPackage, jp2up, bodyDeclaration, csp, _this, isApplicableMatch };
+				return new Object[] { umlPackage, bodyDeclaration, jPackage, jp2up, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1446,85 +1446,84 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 				isApplicableMatch);
 		if (result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_binding != null) {
 			org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_binding[0];
-			Model jPackage = (Model) result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_binding[1];
-			JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_binding[2];
-			MClass bodyDeclaration = (MClass) result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_binding[3];
+			MClass bodyDeclaration = (MClass) result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_binding[1];
+			Model jPackage = (Model) result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_binding[2];
+			JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_black = pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_blackBBBBFBB(
-					umlPackage, jPackage, jp2up, bodyDeclaration, _this, isApplicableMatch);
+					umlPackage, bodyDeclaration, jPackage, jp2up, _this, isApplicableMatch);
 			if (result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_black[4];
 
-				return new Object[] { umlPackage, jPackage, jp2up, bodyDeclaration, csp, _this, isApplicableMatch };
+				return new Object[] { umlPackage, bodyDeclaration, jPackage, jp2up, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_greenBFFBFB(
+	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_1_1_performtransformation_greenFBFFBB(
 			org.eclipse.uml2.uml.Model umlPackage, MClass bodyDeclaration, CSP csp) {
-		NamedElement2NamedElement md2o = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		NamedElement2NamedElement md2o = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		org.eclipse.uml2.uml.Class feature = UMLFactory.eINSTANCE.createClass();
 		Object _localVariable_0 = csp.getValue("feature", "name");
-		md2o.setSource(bodyDeclaration);
 		b2e.setSource(bodyDeclaration);
-		umlPackage.getPackagedElements().add(feature);
-		b2e.setTarget(feature);
+		md2o.setSource(bodyDeclaration);
 		md2o.setTarget(feature);
+		b2e.setTarget(feature);
+		umlPackage.getPackagedElements().add(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
-		return new Object[] { umlPackage, md2o, b2e, bodyDeclaration, feature, csp };
+		return new Object[] { b2e, umlPackage, md2o, feature, bodyDeclaration, csp };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_1_2_collecttranslatedelements_blackBBBB(
-			NamedElement2NamedElement md2o, ASTNode2Element b2e, MClass bodyDeclaration,
-			org.eclipse.uml2.uml.Class feature) {
-		return new Object[] { md2o, b2e, bodyDeclaration, feature };
+			ASTNode2Element b2e, NamedElement2NamedElement md2o, org.eclipse.uml2.uml.Class feature,
+			MClass bodyDeclaration) {
+		return new Object[] { b2e, md2o, feature, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_1_2_collecttranslatedelements_greenFBBBB(
-			NamedElement2NamedElement md2o, ASTNode2Element b2e, MClass bodyDeclaration,
-			org.eclipse.uml2.uml.Class feature) {
+			ASTNode2Element b2e, NamedElement2NamedElement md2o, org.eclipse.uml2.uml.Class feature,
+			MClass bodyDeclaration) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(md2o);
 		ruleresult.getCreatedLinkElements().add(b2e);
-		ruleresult.getTranslatedElements().add(bodyDeclaration);
+		ruleresult.getCreatedLinkElements().add(md2o);
 		ruleresult.getCreatedElements().add(feature);
-		return new Object[] { ruleresult, md2o, b2e, bodyDeclaration, feature };
+		ruleresult.getTranslatedElements().add(bodyDeclaration);
+		return new Object[] { ruleresult, b2e, md2o, feature, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject umlPackage, EObject md2o, EObject jPackage, EObject b2e,
-			EObject jp2up, EObject bodyDeclaration, EObject feature) {
-		if (!md2o.equals(umlPackage)) {
-			if (!jPackage.equals(umlPackage)) {
-				if (!jPackage.equals(md2o)) {
-					if (!jPackage.equals(jp2up)) {
-						if (!b2e.equals(umlPackage)) {
-							if (!b2e.equals(md2o)) {
-								if (!b2e.equals(jPackage)) {
-									if (!b2e.equals(jp2up)) {
-										if (!b2e.equals(bodyDeclaration)) {
-											if (!b2e.equals(feature)) {
-												if (!jp2up.equals(umlPackage)) {
-													if (!jp2up.equals(md2o)) {
-														if (!bodyDeclaration.equals(umlPackage)) {
-															if (!bodyDeclaration.equals(md2o)) {
+			PerformRuleResult ruleresult, EObject b2e, EObject umlPackage, EObject md2o, EObject feature,
+			EObject bodyDeclaration, EObject jPackage, EObject jp2up) {
+		if (!b2e.equals(umlPackage)) {
+			if (!b2e.equals(md2o)) {
+				if (!b2e.equals(feature)) {
+					if (!b2e.equals(bodyDeclaration)) {
+						if (!b2e.equals(jPackage)) {
+							if (!b2e.equals(jp2up)) {
+								if (!md2o.equals(umlPackage)) {
+									if (!feature.equals(umlPackage)) {
+										if (!feature.equals(md2o)) {
+											if (!feature.equals(jPackage)) {
+												if (!feature.equals(jp2up)) {
+													if (!bodyDeclaration.equals(umlPackage)) {
+														if (!bodyDeclaration.equals(md2o)) {
+															if (!bodyDeclaration.equals(feature)) {
 																if (!bodyDeclaration.equals(jPackage)) {
 																	if (!bodyDeclaration.equals(jp2up)) {
-																		if (!bodyDeclaration.equals(feature)) {
-																			if (!feature.equals(umlPackage)) {
-																				if (!feature.equals(md2o)) {
-																					if (!feature.equals(jPackage)) {
-																						if (!feature.equals(jp2up)) {
+																		if (!jPackage.equals(umlPackage)) {
+																			if (!jPackage.equals(md2o)) {
+																				if (!jPackage.equals(jp2up)) {
+																					if (!jp2up.equals(umlPackage)) {
+																						if (!jp2up.equals(md2o)) {
 																							return new Object[] {
-																									ruleresult,
+																									ruleresult, b2e,
 																									umlPackage, md2o,
-																									jPackage, b2e,
-																									jp2up,
+																									feature,
 																									bodyDeclaration,
-																									feature };
+																									jPackage, jp2up };
 																						}
 																					}
 																				}
@@ -1550,55 +1549,56 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject umlPackage, EObject md2o, EObject jPackage, EObject b2e,
-			EObject bodyDeclaration, EObject feature) {
-		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge md2o__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jPackage__bodyDeclaration____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject b2e, EObject umlPackage, EObject md2o, EObject feature,
+			EObject bodyDeclaration, EObject jPackage) {
 		EMoflonEdge md2o__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge md2o__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jPackage__bodyDeclaration____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "OrphanedClassDec2OrphanedClass";
-		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
-		String md2o__bodyDeclaration____source_name_prime = "source";
-		String b2e__bodyDeclaration____source_name_prime = "source";
-		String jPackage__bodyDeclaration____orphanTypes_name_prime = "orphanTypes";
-		String b2e__feature____target_name_prime = "target";
 		String md2o__feature____target_name_prime = "target";
-		umlPackage__feature____packagedElement.setSrc(umlPackage);
-		umlPackage__feature____packagedElement.setTrg(feature);
-		ruleresult.getCreatedEdges().add(umlPackage__feature____packagedElement);
-		md2o__bodyDeclaration____source.setSrc(md2o);
-		md2o__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(md2o__bodyDeclaration____source);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
-		jPackage__bodyDeclaration____orphanTypes.setSrc(jPackage);
-		jPackage__bodyDeclaration____orphanTypes.setTrg(bodyDeclaration);
-		ruleresult.getTranslatedEdges().add(jPackage__bodyDeclaration____orphanTypes);
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		String b2e__feature____target_name_prime = "target";
+		String md2o__bodyDeclaration____source_name_prime = "source";
+		String jPackage__bodyDeclaration____orphanTypes_name_prime = "orphanTypes";
+		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		md2o__feature____target.setSrc(md2o);
 		md2o__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(md2o__feature____target);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		md2o__bodyDeclaration____source.setSrc(md2o);
+		md2o__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(md2o__bodyDeclaration____source);
+		jPackage__bodyDeclaration____orphanTypes.setSrc(jPackage);
+		jPackage__bodyDeclaration____orphanTypes.setTrg(bodyDeclaration);
+		ruleresult.getTranslatedEdges().add(jPackage__bodyDeclaration____orphanTypes);
+		umlPackage__feature____packagedElement.setSrc(umlPackage);
+		umlPackage__feature____packagedElement.setTrg(feature);
+		ruleresult.getCreatedEdges().add(umlPackage__feature____packagedElement);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
-		md2o__bodyDeclaration____source.setName(md2o__bodyDeclaration____source_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		jPackage__bodyDeclaration____orphanTypes.setName(jPackage__bodyDeclaration____orphanTypes_name_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		md2o__feature____target.setName(md2o__feature____target_name_prime);
-		return new Object[] { ruleresult, umlPackage, md2o, jPackage, b2e, bodyDeclaration, feature,
-				umlPackage__feature____packagedElement, md2o__bodyDeclaration____source, b2e__bodyDeclaration____source,
-				jPackage__bodyDeclaration____orphanTypes, b2e__feature____target, md2o__feature____target };
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		md2o__bodyDeclaration____source.setName(md2o__bodyDeclaration____source_name_prime);
+		jPackage__bodyDeclaration____orphanTypes.setName(jPackage__bodyDeclaration____orphanTypes_name_prime);
+		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		return new Object[] { ruleresult, b2e, umlPackage, md2o, feature, bodyDeclaration, jPackage,
+				md2o__feature____target, b2e__feature____target, md2o__bodyDeclaration____source,
+				jPackage__bodyDeclaration____orphanTypes, umlPackage__feature____packagedElement,
+				b2e__bodyDeclaration____source };
 	}
 
 	public static final void pattern_OrphanedClassDec2OrphanedClass_1_5_registerobjects_expressionBBBBBBBBB(
-			OrphanedClassDec2OrphanedClass _this, PerformRuleResult ruleresult, EObject umlPackage, EObject md2o,
-			EObject jPackage, EObject b2e, EObject jp2up, EObject bodyDeclaration, EObject feature) {
-		_this.registerObjects_FWD(ruleresult, umlPackage, md2o, jPackage, b2e, jp2up, bodyDeclaration, feature);
+			OrphanedClassDec2OrphanedClass _this, PerformRuleResult ruleresult, EObject b2e, EObject umlPackage,
+			EObject md2o, EObject feature, EObject bodyDeclaration, EObject jPackage, EObject jp2up) {
+		_this.registerObjects_FWD(ruleresult, b2e, umlPackage, md2o, feature, bodyDeclaration, jPackage, jp2up);
 
 	}
 
@@ -1660,29 +1660,29 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("jPackage");
-		EObject _localVariable_1 = match.getObject("bodyDeclaration");
-		EObject tmpJPackage = _localVariable_0;
-		EObject tmpBodyDeclaration = _localVariable_1;
-		if (tmpJPackage instanceof Model) {
-			Model jPackage = (Model) tmpJPackage;
-			if (tmpBodyDeclaration instanceof MClass) {
-				MClass bodyDeclaration = (MClass) tmpBodyDeclaration;
-				return new Object[] { jPackage, bodyDeclaration, match };
+		EObject _localVariable_0 = match.getObject("bodyDeclaration");
+		EObject _localVariable_1 = match.getObject("jPackage");
+		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpJPackage = _localVariable_1;
+		if (tmpBodyDeclaration instanceof MClass) {
+			MClass bodyDeclaration = (MClass) tmpBodyDeclaration;
+			if (tmpJPackage instanceof Model) {
+				Model jPackage = (Model) tmpJPackage;
+				return new Object[] { bodyDeclaration, jPackage, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_OrphanedClassDec2OrphanedClass_2_2_corematch_blackFBFBB(
-			Model jPackage, MClass bodyDeclaration, Match match) {
+	public static final Iterable<Object[]> pattern_OrphanedClassDec2OrphanedClass_2_2_corematch_blackFBBFB(
+			MClass bodyDeclaration, Model jPackage, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (JavaModel2UMLPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jPackage,
 				JavaModel2UMLPackage.class, "source")) {
 			org.eclipse.uml2.uml.Package tmpUmlPackage = jp2up.getTarget();
 			if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Model) {
 				org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) tmpUmlPackage;
-				_result.add(new Object[] { umlPackage, jPackage, jp2up, bodyDeclaration, match });
+				_result.add(new Object[] { umlPackage, bodyDeclaration, jPackage, jp2up, match });
 			}
 
 		}
@@ -1690,12 +1690,12 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Iterable<Object[]> pattern_OrphanedClassDec2OrphanedClass_2_3_findcontext_blackBBBB(
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, JavaModel2UMLPackage jp2up, MClass bodyDeclaration) {
+			org.eclipse.uml2.uml.Model umlPackage, MClass bodyDeclaration, Model jPackage, JavaModel2UMLPackage jp2up) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (umlPackage.equals(jp2up.getTarget())) {
-			if (jPackage.equals(jp2up.getSource())) {
-				if (jPackage.getOrphanTypes().contains(bodyDeclaration)) {
-					_result.add(new Object[] { umlPackage, jPackage, jp2up, bodyDeclaration });
+		if (jPackage.getOrphanTypes().contains(bodyDeclaration)) {
+			if (umlPackage.equals(jp2up.getTarget())) {
+				if (jPackage.equals(jp2up.getSource())) {
+					_result.add(new Object[] { umlPackage, bodyDeclaration, jPackage, jp2up });
 				}
 			}
 		}
@@ -1703,42 +1703,42 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_2_3_findcontext_greenBBBBFFFF(
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, JavaModel2UMLPackage jp2up, MClass bodyDeclaration) {
+			org.eclipse.uml2.uml.Model umlPackage, MClass bodyDeclaration, Model jPackage, JavaModel2UMLPackage jp2up) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge jPackage__bodyDeclaration____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jPackage__bodyDeclaration____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String jPackage__bodyDeclaration____orphanTypes_name_prime = "orphanTypes";
 		String jp2up__umlPackage____target_name_prime = "target";
 		String jp2up__jPackage____source_name_prime = "source";
-		String jPackage__bodyDeclaration____orphanTypes_name_prime = "orphanTypes";
 		isApplicableMatch.getAllContextElements().add(umlPackage);
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up);
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		jPackage__bodyDeclaration____orphanTypes.setSrc(jPackage);
+		jPackage__bodyDeclaration____orphanTypes.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(jPackage__bodyDeclaration____orphanTypes);
 		jp2up__umlPackage____target.setSrc(jp2up);
 		jp2up__umlPackage____target.setTrg(umlPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up__umlPackage____target);
 		jp2up__jPackage____source.setSrc(jp2up);
 		jp2up__jPackage____source.setTrg(jPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up__jPackage____source);
-		jPackage__bodyDeclaration____orphanTypes.setSrc(jPackage);
-		jPackage__bodyDeclaration____orphanTypes.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(jPackage__bodyDeclaration____orphanTypes);
+		jPackage__bodyDeclaration____orphanTypes.setName(jPackage__bodyDeclaration____orphanTypes_name_prime);
 		jp2up__umlPackage____target.setName(jp2up__umlPackage____target_name_prime);
 		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
-		jPackage__bodyDeclaration____orphanTypes.setName(jPackage__bodyDeclaration____orphanTypes_name_prime);
-		return new Object[] { umlPackage, jPackage, jp2up, bodyDeclaration, isApplicableMatch,
-				jp2up__umlPackage____target, jp2up__jPackage____source, jPackage__bodyDeclaration____orphanTypes };
+		return new Object[] { umlPackage, bodyDeclaration, jPackage, jp2up, isApplicableMatch,
+				jPackage__bodyDeclaration____orphanTypes, jp2up__umlPackage____target, jp2up__jPackage____source };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_2_4_solveCSP_bindingFBBBBBB(
 			OrphanedClassDec2OrphanedClass _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, JavaModel2UMLPackage jp2up, MClass bodyDeclaration) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, umlPackage, jPackage, jp2up,
-				bodyDeclaration);
+			org.eclipse.uml2.uml.Model umlPackage, MClass bodyDeclaration, Model jPackage, JavaModel2UMLPackage jp2up) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, umlPackage, bodyDeclaration, jPackage,
+				jp2up);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, umlPackage, jPackage, jp2up, bodyDeclaration };
+			return new Object[] { csp, _this, isApplicableMatch, umlPackage, bodyDeclaration, jPackage, jp2up };
 		}
 		return null;
 	}
@@ -1749,9 +1749,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_2_4_solveCSP_bindingAndBlackFBBBBBB(
 			OrphanedClassDec2OrphanedClass _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, JavaModel2UMLPackage jp2up, MClass bodyDeclaration) {
+			org.eclipse.uml2.uml.Model umlPackage, MClass bodyDeclaration, Model jPackage, JavaModel2UMLPackage jp2up) {
 		Object[] result_pattern_OrphanedClassDec2OrphanedClass_2_4_solveCSP_binding = pattern_OrphanedClassDec2OrphanedClass_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, umlPackage, jPackage, jp2up, bodyDeclaration);
+				_this, isApplicableMatch, umlPackage, bodyDeclaration, jPackage, jp2up);
 		if (result_pattern_OrphanedClassDec2OrphanedClass_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OrphanedClassDec2OrphanedClass_2_4_solveCSP_binding[0];
 
@@ -1759,7 +1759,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_OrphanedClassDec2OrphanedClass_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, umlPackage, jPackage, jp2up, bodyDeclaration };
+				return new Object[] { csp, _this, isApplicableMatch, umlPackage, bodyDeclaration, jPackage, jp2up };
 			}
 		}
 		return null;
@@ -1887,22 +1887,22 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("umlPackage");
-		EObject _localVariable_1 = isApplicableMatch.getObject("jPackage");
-		EObject _localVariable_2 = isApplicableMatch.getObject("jp2up");
-		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_1 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_2 = isApplicableMatch.getObject("jPackage");
+		EObject _localVariable_3 = isApplicableMatch.getObject("jp2up");
 		EObject tmpUmlPackage = _localVariable_0;
-		EObject tmpJPackage = _localVariable_1;
-		EObject tmpJp2up = _localVariable_2;
-		EObject tmpFeature = _localVariable_3;
+		EObject tmpFeature = _localVariable_1;
+		EObject tmpJPackage = _localVariable_2;
+		EObject tmpJp2up = _localVariable_3;
 		if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Model) {
 			org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) tmpUmlPackage;
-			if (tmpJPackage instanceof Model) {
-				Model jPackage = (Model) tmpJPackage;
-				if (tmpJp2up instanceof JavaModel2UMLPackage) {
-					JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) tmpJp2up;
-					if (tmpFeature instanceof org.eclipse.uml2.uml.Class) {
-						org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) tmpFeature;
-						return new Object[] { umlPackage, jPackage, jp2up, feature, isApplicableMatch };
+			if (tmpFeature instanceof org.eclipse.uml2.uml.Class) {
+				org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) tmpFeature;
+				if (tmpJPackage instanceof Model) {
+					Model jPackage = (Model) tmpJPackage;
+					if (tmpJp2up instanceof JavaModel2UMLPackage) {
+						JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) tmpJp2up;
+						return new Object[] { umlPackage, feature, jPackage, jp2up, isApplicableMatch };
 					}
 				}
 			}
@@ -1911,13 +1911,12 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_blackBBBBFBB(
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, JavaModel2UMLPackage jp2up,
-			org.eclipse.uml2.uml.Class feature, OrphanedClassDec2OrphanedClass _this,
-			IsApplicableMatch isApplicableMatch) {
+			org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature, Model jPackage,
+			JavaModel2UMLPackage jp2up, OrphanedClassDec2OrphanedClass _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { umlPackage, jPackage, jp2up, feature, csp, _this, isApplicableMatch };
+				return new Object[] { umlPackage, feature, jPackage, jp2up, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1929,85 +1928,84 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 				isApplicableMatch);
 		if (result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_binding != null) {
 			org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_binding[0];
-			Model jPackage = (Model) result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_binding[1];
-			JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_binding[2];
-			org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_binding[3];
+			org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_binding[1];
+			Model jPackage = (Model) result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_binding[2];
+			JavaModel2UMLPackage jp2up = (JavaModel2UMLPackage) result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_black = pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_blackBBBBFBB(
-					umlPackage, jPackage, jp2up, feature, _this, isApplicableMatch);
+					umlPackage, feature, jPackage, jp2up, _this, isApplicableMatch);
 			if (result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_black[4];
 
-				return new Object[] { umlPackage, jPackage, jp2up, feature, csp, _this, isApplicableMatch };
+				return new Object[] { umlPackage, feature, jPackage, jp2up, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_greenFBFFBB(
-			Model jPackage, org.eclipse.uml2.uml.Class feature, CSP csp) {
-		NamedElement2NamedElement md2o = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_11_1_performtransformation_greenFFBFBB(
+			org.eclipse.uml2.uml.Class feature, Model jPackage, CSP csp) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		NamedElement2NamedElement md2o = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		MClass bodyDeclaration = ModiscoFactory.eINSTANCE.createMClass();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
-		md2o.setTarget(feature);
 		b2e.setTarget(feature);
+		md2o.setTarget(feature);
 		md2o.setSource(bodyDeclaration);
-		b2e.setSource(bodyDeclaration);
 		jPackage.getOrphanTypes().add(bodyDeclaration);
+		b2e.setSource(bodyDeclaration);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { md2o, jPackage, b2e, bodyDeclaration, feature, csp };
+		return new Object[] { b2e, md2o, feature, bodyDeclaration, jPackage, csp };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_11_2_collecttranslatedelements_blackBBBB(
-			NamedElement2NamedElement md2o, ASTNode2Element b2e, MClass bodyDeclaration,
-			org.eclipse.uml2.uml.Class feature) {
-		return new Object[] { md2o, b2e, bodyDeclaration, feature };
+			ASTNode2Element b2e, NamedElement2NamedElement md2o, org.eclipse.uml2.uml.Class feature,
+			MClass bodyDeclaration) {
+		return new Object[] { b2e, md2o, feature, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_11_2_collecttranslatedelements_greenFBBBB(
-			NamedElement2NamedElement md2o, ASTNode2Element b2e, MClass bodyDeclaration,
-			org.eclipse.uml2.uml.Class feature) {
+			ASTNode2Element b2e, NamedElement2NamedElement md2o, org.eclipse.uml2.uml.Class feature,
+			MClass bodyDeclaration) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(md2o);
 		ruleresult.getCreatedLinkElements().add(b2e);
-		ruleresult.getCreatedElements().add(bodyDeclaration);
+		ruleresult.getCreatedLinkElements().add(md2o);
 		ruleresult.getTranslatedElements().add(feature);
-		return new Object[] { ruleresult, md2o, b2e, bodyDeclaration, feature };
+		ruleresult.getCreatedElements().add(bodyDeclaration);
+		return new Object[] { ruleresult, b2e, md2o, feature, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject umlPackage, EObject md2o, EObject jPackage, EObject b2e,
-			EObject jp2up, EObject bodyDeclaration, EObject feature) {
-		if (!md2o.equals(umlPackage)) {
-			if (!jPackage.equals(umlPackage)) {
-				if (!jPackage.equals(md2o)) {
-					if (!jPackage.equals(jp2up)) {
-						if (!b2e.equals(umlPackage)) {
-							if (!b2e.equals(md2o)) {
-								if (!b2e.equals(jPackage)) {
-									if (!b2e.equals(jp2up)) {
-										if (!b2e.equals(bodyDeclaration)) {
-											if (!b2e.equals(feature)) {
-												if (!jp2up.equals(umlPackage)) {
-													if (!jp2up.equals(md2o)) {
-														if (!bodyDeclaration.equals(umlPackage)) {
-															if (!bodyDeclaration.equals(md2o)) {
+			PerformRuleResult ruleresult, EObject b2e, EObject umlPackage, EObject md2o, EObject feature,
+			EObject bodyDeclaration, EObject jPackage, EObject jp2up) {
+		if (!b2e.equals(umlPackage)) {
+			if (!b2e.equals(md2o)) {
+				if (!b2e.equals(feature)) {
+					if (!b2e.equals(bodyDeclaration)) {
+						if (!b2e.equals(jPackage)) {
+							if (!b2e.equals(jp2up)) {
+								if (!md2o.equals(umlPackage)) {
+									if (!feature.equals(umlPackage)) {
+										if (!feature.equals(md2o)) {
+											if (!feature.equals(jPackage)) {
+												if (!feature.equals(jp2up)) {
+													if (!bodyDeclaration.equals(umlPackage)) {
+														if (!bodyDeclaration.equals(md2o)) {
+															if (!bodyDeclaration.equals(feature)) {
 																if (!bodyDeclaration.equals(jPackage)) {
 																	if (!bodyDeclaration.equals(jp2up)) {
-																		if (!bodyDeclaration.equals(feature)) {
-																			if (!feature.equals(umlPackage)) {
-																				if (!feature.equals(md2o)) {
-																					if (!feature.equals(jPackage)) {
-																						if (!feature.equals(jp2up)) {
+																		if (!jPackage.equals(umlPackage)) {
+																			if (!jPackage.equals(md2o)) {
+																				if (!jPackage.equals(jp2up)) {
+																					if (!jp2up.equals(umlPackage)) {
+																						if (!jp2up.equals(md2o)) {
 																							return new Object[] {
-																									ruleresult,
+																									ruleresult, b2e,
 																									umlPackage, md2o,
-																									jPackage, b2e,
-																									jp2up,
+																									feature,
 																									bodyDeclaration,
-																									feature };
+																									jPackage, jp2up };
 																						}
 																					}
 																				}
@@ -2033,55 +2031,56 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject umlPackage, EObject md2o, EObject jPackage, EObject b2e,
-			EObject bodyDeclaration, EObject feature) {
-		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge md2o__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jPackage__bodyDeclaration____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject b2e, EObject umlPackage, EObject md2o, EObject feature,
+			EObject bodyDeclaration, EObject jPackage) {
 		EMoflonEdge md2o__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge md2o__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jPackage__bodyDeclaration____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "OrphanedClassDec2OrphanedClass";
-		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
-		String md2o__bodyDeclaration____source_name_prime = "source";
-		String b2e__bodyDeclaration____source_name_prime = "source";
-		String jPackage__bodyDeclaration____orphanTypes_name_prime = "orphanTypes";
-		String b2e__feature____target_name_prime = "target";
 		String md2o__feature____target_name_prime = "target";
-		umlPackage__feature____packagedElement.setSrc(umlPackage);
-		umlPackage__feature____packagedElement.setTrg(feature);
-		ruleresult.getTranslatedEdges().add(umlPackage__feature____packagedElement);
-		md2o__bodyDeclaration____source.setSrc(md2o);
-		md2o__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(md2o__bodyDeclaration____source);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
-		jPackage__bodyDeclaration____orphanTypes.setSrc(jPackage);
-		jPackage__bodyDeclaration____orphanTypes.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(jPackage__bodyDeclaration____orphanTypes);
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		String b2e__feature____target_name_prime = "target";
+		String md2o__bodyDeclaration____source_name_prime = "source";
+		String jPackage__bodyDeclaration____orphanTypes_name_prime = "orphanTypes";
+		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		md2o__feature____target.setSrc(md2o);
 		md2o__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(md2o__feature____target);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		md2o__bodyDeclaration____source.setSrc(md2o);
+		md2o__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(md2o__bodyDeclaration____source);
+		jPackage__bodyDeclaration____orphanTypes.setSrc(jPackage);
+		jPackage__bodyDeclaration____orphanTypes.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(jPackage__bodyDeclaration____orphanTypes);
+		umlPackage__feature____packagedElement.setSrc(umlPackage);
+		umlPackage__feature____packagedElement.setTrg(feature);
+		ruleresult.getTranslatedEdges().add(umlPackage__feature____packagedElement);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
-		md2o__bodyDeclaration____source.setName(md2o__bodyDeclaration____source_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		jPackage__bodyDeclaration____orphanTypes.setName(jPackage__bodyDeclaration____orphanTypes_name_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		md2o__feature____target.setName(md2o__feature____target_name_prime);
-		return new Object[] { ruleresult, umlPackage, md2o, jPackage, b2e, bodyDeclaration, feature,
-				umlPackage__feature____packagedElement, md2o__bodyDeclaration____source, b2e__bodyDeclaration____source,
-				jPackage__bodyDeclaration____orphanTypes, b2e__feature____target, md2o__feature____target };
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		md2o__bodyDeclaration____source.setName(md2o__bodyDeclaration____source_name_prime);
+		jPackage__bodyDeclaration____orphanTypes.setName(jPackage__bodyDeclaration____orphanTypes_name_prime);
+		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		return new Object[] { ruleresult, b2e, umlPackage, md2o, feature, bodyDeclaration, jPackage,
+				md2o__feature____target, b2e__feature____target, md2o__bodyDeclaration____source,
+				jPackage__bodyDeclaration____orphanTypes, umlPackage__feature____packagedElement,
+				b2e__bodyDeclaration____source };
 	}
 
 	public static final void pattern_OrphanedClassDec2OrphanedClass_11_5_registerobjects_expressionBBBBBBBBB(
-			OrphanedClassDec2OrphanedClass _this, PerformRuleResult ruleresult, EObject umlPackage, EObject md2o,
-			EObject jPackage, EObject b2e, EObject jp2up, EObject bodyDeclaration, EObject feature) {
-		_this.registerObjects_BWD(ruleresult, umlPackage, md2o, jPackage, b2e, jp2up, bodyDeclaration, feature);
+			OrphanedClassDec2OrphanedClass _this, PerformRuleResult ruleresult, EObject b2e, EObject umlPackage,
+			EObject md2o, EObject feature, EObject bodyDeclaration, EObject jPackage, EObject jp2up) {
+		_this.registerObjects_BWD(ruleresult, b2e, umlPackage, md2o, feature, bodyDeclaration, jPackage, jp2up);
 
 	}
 
@@ -2157,14 +2156,14 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_OrphanedClassDec2OrphanedClass_12_2_corematch_blackBFFBB(
+	public static final Iterable<Object[]> pattern_OrphanedClassDec2OrphanedClass_12_2_corematch_blackBBFFB(
 			org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (JavaModel2UMLPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(umlPackage,
 				JavaModel2UMLPackage.class, "target")) {
 			Model jPackage = jp2up.getSource();
 			if (jPackage != null) {
-				_result.add(new Object[] { umlPackage, jPackage, jp2up, feature, match });
+				_result.add(new Object[] { umlPackage, feature, jPackage, jp2up, match });
 			}
 
 		}
@@ -2172,13 +2171,13 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Iterable<Object[]> pattern_OrphanedClassDec2OrphanedClass_12_3_findcontext_blackBBBB(
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, JavaModel2UMLPackage jp2up,
-			org.eclipse.uml2.uml.Class feature) {
+			org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature, Model jPackage,
+			JavaModel2UMLPackage jp2up) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (umlPackage.getPackagedElements().contains(feature)) {
 			if (umlPackage.equals(jp2up.getTarget())) {
 				if (jPackage.equals(jp2up.getSource())) {
-					_result.add(new Object[] { umlPackage, jPackage, jp2up, feature });
+					_result.add(new Object[] { umlPackage, feature, jPackage, jp2up });
 				}
 			}
 		}
@@ -2186,8 +2185,8 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_12_3_findcontext_greenBBBBFFFF(
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, JavaModel2UMLPackage jp2up,
-			org.eclipse.uml2.uml.Class feature) {
+			org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature, Model jPackage,
+			JavaModel2UMLPackage jp2up) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2196,9 +2195,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 		String jp2up__umlPackage____target_name_prime = "target";
 		String jp2up__jPackage____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(umlPackage);
+		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(jPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up);
-		isApplicableMatch.getAllContextElements().add(feature);
 		umlPackage__feature____packagedElement.setSrc(umlPackage);
 		umlPackage__feature____packagedElement.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(umlPackage__feature____packagedElement);
@@ -2211,18 +2210,18 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
 		jp2up__umlPackage____target.setName(jp2up__umlPackage____target_name_prime);
 		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
-		return new Object[] { umlPackage, jPackage, jp2up, feature, isApplicableMatch,
+		return new Object[] { umlPackage, feature, jPackage, jp2up, isApplicableMatch,
 				umlPackage__feature____packagedElement, jp2up__umlPackage____target, jp2up__jPackage____source };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_12_4_solveCSP_bindingFBBBBBB(
 			OrphanedClassDec2OrphanedClass _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, JavaModel2UMLPackage jp2up,
-			org.eclipse.uml2.uml.Class feature) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, umlPackage, jPackage, jp2up, feature);
+			org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature, Model jPackage,
+			JavaModel2UMLPackage jp2up) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, umlPackage, feature, jPackage, jp2up);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, umlPackage, jPackage, jp2up, feature };
+			return new Object[] { csp, _this, isApplicableMatch, umlPackage, feature, jPackage, jp2up };
 		}
 		return null;
 	}
@@ -2233,10 +2232,10 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_12_4_solveCSP_bindingAndBlackFBBBBBB(
 			OrphanedClassDec2OrphanedClass _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, JavaModel2UMLPackage jp2up,
-			org.eclipse.uml2.uml.Class feature) {
+			org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature, Model jPackage,
+			JavaModel2UMLPackage jp2up) {
 		Object[] result_pattern_OrphanedClassDec2OrphanedClass_12_4_solveCSP_binding = pattern_OrphanedClassDec2OrphanedClass_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, umlPackage, jPackage, jp2up, feature);
+				_this, isApplicableMatch, umlPackage, feature, jPackage, jp2up);
 		if (result_pattern_OrphanedClassDec2OrphanedClass_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OrphanedClassDec2OrphanedClass_12_4_solveCSP_binding[0];
 
@@ -2244,7 +2243,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_OrphanedClassDec2OrphanedClass_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, umlPackage, jPackage, jp2up, feature };
+				return new Object[] { csp, _this, isApplicableMatch, umlPackage, feature, jPackage, jp2up };
 			}
 		}
 		return null;
@@ -2334,9 +2333,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_20_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_312158 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_783320 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
-			if (!feature.equals(__DEC_feature_nestedClassifier_312158)) {
+			if (!feature.equals(__DEC_feature_nestedClassifier_783320)) {
 				return new Object[] { feature };
 			}
 		}
@@ -2345,7 +2344,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_20_2_testcorematchandDECs_black_nac_1B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (Interface __DEC_feature_nestedClassifier_553434 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_586986 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2480,8 +2479,8 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_21_2_testcorematchandDECs_black_nac_0B(
 			MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_917367 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_917367 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_352909 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_352909 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2490,10 +2489,10 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_21_2_testcorematchandDECs_black_nac_1B(
 			MClass bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_954209 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_330685 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_954209 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_954209)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_330685 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_330685)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -2503,9 +2502,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_21_2_testcorematchandDECs_black_nac_2B(
 			MClass bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_71753 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_714620 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_71753 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_714620 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2514,8 +2513,8 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_21_2_testcorematchandDECs_black_nac_3B(
 			MClass bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_699981 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_699981 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_327046 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_327046 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2524,7 +2523,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_21_2_testcorematchandDECs_black_nac_4B(
 			MClass bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_874535 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_267555 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -2551,7 +2550,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 										bodyDeclaration) == null) {
 									if (pattern_OrphanedClassDec2OrphanedClass_21_2_testcorematchandDECs_black_nac_4B(
 											bodyDeclaration) == null) {
-										_result.add(new Object[] { jPackage, bodyDeclaration, _edge_orphanTypes });
+										_result.add(new Object[] { bodyDeclaration, jPackage, _edge_orphanTypes });
 									}
 								}
 							}
@@ -2576,8 +2575,8 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final boolean pattern_OrphanedClassDec2OrphanedClass_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			OrphanedClassDec2OrphanedClass _this, Match match, Model jPackage, MClass bodyDeclaration) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, jPackage, bodyDeclaration);
+			OrphanedClassDec2OrphanedClass _this, Match match, MClass bodyDeclaration, Model jPackage) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, bodyDeclaration, jPackage);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2624,22 +2623,22 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_bindingFFFFBB(
 			Match targetMatch, Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("umlPackage");
-		EObject _localVariable_1 = sourceMatch.getObject("jPackage");
+		EObject _localVariable_1 = targetMatch.getObject("feature");
 		EObject _localVariable_2 = sourceMatch.getObject("bodyDeclaration");
-		EObject _localVariable_3 = targetMatch.getObject("feature");
+		EObject _localVariable_3 = sourceMatch.getObject("jPackage");
 		EObject tmpUmlPackage = _localVariable_0;
-		EObject tmpJPackage = _localVariable_1;
+		EObject tmpFeature = _localVariable_1;
 		EObject tmpBodyDeclaration = _localVariable_2;
-		EObject tmpFeature = _localVariable_3;
+		EObject tmpJPackage = _localVariable_3;
 		if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Model) {
 			org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) tmpUmlPackage;
-			if (tmpJPackage instanceof Model) {
-				Model jPackage = (Model) tmpJPackage;
+			if (tmpFeature instanceof org.eclipse.uml2.uml.Class) {
+				org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) tmpFeature;
 				if (tmpBodyDeclaration instanceof MClass) {
 					MClass bodyDeclaration = (MClass) tmpBodyDeclaration;
-					if (tmpFeature instanceof org.eclipse.uml2.uml.Class) {
-						org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) tmpFeature;
-						return new Object[] { umlPackage, jPackage, bodyDeclaration, feature, targetMatch,
+					if (tmpJPackage instanceof Model) {
+						Model jPackage = (Model) tmpJPackage;
+						return new Object[] { umlPackage, feature, bodyDeclaration, jPackage, targetMatch,
 								sourceMatch };
 					}
 				}
@@ -2649,10 +2648,10 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_blackBBBBBB(
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, MClass bodyDeclaration,
-			org.eclipse.uml2.uml.Class feature, Match sourceMatch, Match targetMatch) {
+			org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration,
+			Model jPackage, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { umlPackage, jPackage, bodyDeclaration, feature, sourceMatch, targetMatch };
+			return new Object[] { umlPackage, feature, bodyDeclaration, jPackage, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2663,28 +2662,29 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 				targetMatch, sourceMatch);
 		if (result_pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_binding != null) {
 			org.eclipse.uml2.uml.Model umlPackage = (org.eclipse.uml2.uml.Model) result_pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_binding[0];
-			Model jPackage = (Model) result_pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_binding[1];
+			org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result_pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_binding[1];
 			MClass bodyDeclaration = (MClass) result_pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_binding[2];
-			org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result_pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_binding[3];
+			Model jPackage = (Model) result_pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_black = pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_blackBBBBBB(
-					umlPackage, jPackage, bodyDeclaration, feature, sourceMatch, targetMatch);
+					umlPackage, feature, bodyDeclaration, jPackage, sourceMatch, targetMatch);
 			if (result_pattern_OrphanedClassDec2OrphanedClass_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { umlPackage, jPackage, bodyDeclaration, feature, sourceMatch, targetMatch };
+				return new Object[] { umlPackage, feature, bodyDeclaration, jPackage, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_24_3_solvecsp_bindingFBBBBBBB(
-			OrphanedClassDec2OrphanedClass _this, org.eclipse.uml2.uml.Model umlPackage, Model jPackage,
-			MClass bodyDeclaration, org.eclipse.uml2.uml.Class feature, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(umlPackage, jPackage, bodyDeclaration, feature,
+			OrphanedClassDec2OrphanedClass _this, org.eclipse.uml2.uml.Model umlPackage,
+			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, Model jPackage, Match sourceMatch,
+			Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(umlPackage, feature, bodyDeclaration, jPackage,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, umlPackage, jPackage, bodyDeclaration, feature, sourceMatch,
+			return new Object[] { csp, _this, umlPackage, feature, bodyDeclaration, jPackage, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2695,10 +2695,11 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			OrphanedClassDec2OrphanedClass _this, org.eclipse.uml2.uml.Model umlPackage, Model jPackage,
-			MClass bodyDeclaration, org.eclipse.uml2.uml.Class feature, Match sourceMatch, Match targetMatch) {
+			OrphanedClassDec2OrphanedClass _this, org.eclipse.uml2.uml.Model umlPackage,
+			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, Model jPackage, Match sourceMatch,
+			Match targetMatch) {
 		Object[] result_pattern_OrphanedClassDec2OrphanedClass_24_3_solvecsp_binding = pattern_OrphanedClassDec2OrphanedClass_24_3_solvecsp_bindingFBBBBBBB(
-				_this, umlPackage, jPackage, bodyDeclaration, feature, sourceMatch, targetMatch);
+				_this, umlPackage, feature, bodyDeclaration, jPackage, sourceMatch, targetMatch);
 		if (result_pattern_OrphanedClassDec2OrphanedClass_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_OrphanedClassDec2OrphanedClass_24_3_solvecsp_binding[0];
 
@@ -2706,7 +2707,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_OrphanedClassDec2OrphanedClass_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, umlPackage, jPackage, bodyDeclaration, feature, sourceMatch,
+				return new Object[] { csp, _this, umlPackage, feature, bodyDeclaration, jPackage, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2745,22 +2746,22 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_24_6_createcorrespondence_blackBBBBB(
-			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, MClass bodyDeclaration,
-			org.eclipse.uml2.uml.Class feature, CCMatch ccMatch) {
-		return new Object[] { umlPackage, jPackage, bodyDeclaration, feature, ccMatch };
+			org.eclipse.uml2.uml.Model umlPackage, org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration,
+			Model jPackage, CCMatch ccMatch) {
+		return new Object[] { umlPackage, feature, bodyDeclaration, jPackage, ccMatch };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_24_6_createcorrespondence_greenFFBBB(
-			MClass bodyDeclaration, org.eclipse.uml2.uml.Class feature, CCMatch ccMatch) {
-		NamedElement2NamedElement md2o = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, CCMatch ccMatch) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		md2o.setSource(bodyDeclaration);
-		md2o.setTarget(feature);
-		ccMatch.getCreateCorr().add(md2o);
-		b2e.setSource(bodyDeclaration);
+		NamedElement2NamedElement md2o = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		b2e.setTarget(feature);
+		b2e.setSource(bodyDeclaration);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { md2o, b2e, bodyDeclaration, feature, ccMatch };
+		md2o.setTarget(feature);
+		md2o.setSource(bodyDeclaration);
+		ccMatch.getCreateCorr().add(md2o);
+		return new Object[] { b2e, md2o, feature, bodyDeclaration, ccMatch };
 	}
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_24_7_addtoreturnedresult_blackBB(
@@ -2786,8 +2787,8 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_black_nac_0B(
 			MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_4297 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_4297 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_144897 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_144897 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2796,10 +2797,10 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_black_nac_1B(
 			MClass bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_788325 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_686865 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_788325 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_788325)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_686865 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_686865)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -2809,9 +2810,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_black_nac_2B(
 			MClass bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_818844 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_29420 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_818844 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_29420 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2820,8 +2821,8 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_black_nac_3B(
 			MClass bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_181689 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_181689 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_927932 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_927932 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2830,15 +2831,15 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_black_nac_4B(
 			MClass bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_598591 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_226138 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_blackBB(Model jPackage,
-			MClass bodyDeclaration) {
+	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_blackBB(
+			MClass bodyDeclaration, Model jPackage) {
 		if (jPackage.getOrphanTypes().contains(bodyDeclaration)) {
 			if (pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_black_nac_0B(bodyDeclaration) == null) {
 				if (pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_black_nac_1B(bodyDeclaration) == null) {
@@ -2848,7 +2849,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 								bodyDeclaration) == null) {
 							if (pattern_OrphanedClassDec2OrphanedClass_27_1_matchtggpattern_black_nac_4B(
 									bodyDeclaration) == null) {
-								return new Object[] { jPackage, bodyDeclaration };
+								return new Object[] { bodyDeclaration, jPackage };
 							}
 						}
 					}
@@ -2870,9 +2871,9 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_28_1_matchtggpattern_black_nac_0B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_341033 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_31508 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
-			if (!feature.equals(__DEC_feature_nestedClassifier_341033)) {
+			if (!feature.equals(__DEC_feature_nestedClassifier_31508)) {
 				return new Object[] { feature };
 			}
 		}
@@ -2881,7 +2882,7 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_28_1_matchtggpattern_black_nac_1B(
 			org.eclipse.uml2.uml.Class feature) {
-		for (Interface __DEC_feature_nestedClassifier_584479 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_606628 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -3034,34 +3035,34 @@ public class OrphanedClassDec2OrphanedClassImpl extends AbstractRuleImpl impleme
 		return new Object[] { umlPackage, jPackage, jp2up, ruleResult };
 	}
 
-	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_29_6_perform_greenBFBFFFBB(
+	public static final Object[] pattern_OrphanedClassDec2OrphanedClass_29_6_perform_greenFBFFFBBB(
 			org.eclipse.uml2.uml.Model umlPackage, Model jPackage, ModelgeneratorRuleResult ruleResult, CSP csp) {
-		NamedElement2NamedElement md2o = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		MClass bodyDeclaration = ModiscoFactory.eINSTANCE.createMClass();
+		NamedElement2NamedElement md2o = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		org.eclipse.uml2.uml.Class feature = UMLFactory.eINSTANCE.createClass();
-		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
-		Object _localVariable_1 = csp.getValue("feature", "name");
+		MClass bodyDeclaration = ModiscoFactory.eINSTANCE.createMClass();
+		Object _localVariable_0 = csp.getValue("feature", "name");
+		Object _localVariable_1 = csp.getValue("bodyDeclaration", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(md2o);
 		ruleResult.getCorrObjects().add(b2e);
-		md2o.setSource(bodyDeclaration);
-		b2e.setSource(bodyDeclaration);
-		jPackage.getOrphanTypes().add(bodyDeclaration);
-		ruleResult.getSourceObjects().add(bodyDeclaration);
-		umlPackage.getPackagedElements().add(feature);
-		b2e.setTarget(feature);
+		ruleResult.getCorrObjects().add(md2o);
 		md2o.setTarget(feature);
+		b2e.setTarget(feature);
+		umlPackage.getPackagedElements().add(feature);
 		ruleResult.getTargetObjects().add(feature);
-		String bodyDeclaration_name_prime = (String) _localVariable_0;
-		String feature_name_prime = (String) _localVariable_1;
+		md2o.setSource(bodyDeclaration);
+		jPackage.getOrphanTypes().add(bodyDeclaration);
+		b2e.setSource(bodyDeclaration);
+		ruleResult.getSourceObjects().add(bodyDeclaration);
+		String feature_name_prime = (String) _localVariable_0;
+		String bodyDeclaration_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
-		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		feature.setName(feature_name_prime);
+		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { umlPackage, md2o, jPackage, b2e, bodyDeclaration, feature, ruleResult, csp };
+		return new Object[] { b2e, umlPackage, md2o, feature, bodyDeclaration, jPackage, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_OrphanedClassDec2OrphanedClass_29_7_expressionFB(

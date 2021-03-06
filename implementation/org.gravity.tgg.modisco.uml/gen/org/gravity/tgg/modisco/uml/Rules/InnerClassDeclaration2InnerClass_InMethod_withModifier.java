@@ -115,7 +115,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod_withModifier extends 
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject method, EObject bd2ne,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject method,
 			EObject b2e, EObject me2op, EObject bodyDeclaration, EObject modifier, EObject uContainer,
 			EObject operation);
 
@@ -202,7 +202,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod_withModifier extends 
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject method, EObject bd2ne,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject method,
 			EObject b2e, EObject me2op, EObject bodyDeclaration, EObject modifier, EObject uContainer,
 			EObject operation);
 
@@ -220,7 +220,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod_withModifier extends 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_954(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_397(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +228,7 @@ public interface InnerClassDeclaration2InnerClass_InMethod_withModifier extends 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_977(EMoflonEdge _edge_mInnerTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_408(EMoflonEdge _edge_mInnerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#rule TypeAccess2ReturnParam #with org.gravity.tgg.modisco.uml
+#rule AbstractTypeAccess2ReturnParam #with org.gravity.tgg.modisco.uml
 
 #source {
 	method:MethodDeclaration{
@@ -47,5 +47,3 @@
 #attributeConditions {
 	isReturn(returnParam.direction)
 }
-
-

@@ -215,7 +215,7 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_942(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_382(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface MethodDec2Operation4ClassWithModifier extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_965(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_393(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -12,29 +12,29 @@ import org.gravity.eclipse.util.JavaProjectUtil;
 
 public class TransformationFactory {
 
-	private Map<IProject, Transformation> map;
+	private final Map<IProject, Transformation> map;
 
 	TransformationFactory() {
-		map = new HashMap<>();
+		this.map = new HashMap<>();
 	}
 
-	public Transformation getTransformation(IProject project) throws IOException, CoreException {
-		if (map.containsKey(project)) {
-			return  map.get(project);
+	public Transformation getTransformation(final IProject project) throws IOException, CoreException {
+		if (this.map.containsKey(project)) {
+			return  this.map.get(project);
 		}
-		IJavaProject javaProject = JavaProjectUtil.getJavaProject(project);
+		final IJavaProject javaProject = JavaProjectUtil.getJavaProject(project);
 		if (javaProject == null) {
 			return null;
 		}
-		Transformation trafo = new Transformation(javaProject, null);
+		final Transformation trafo = new Transformation(javaProject, null);
 		registerTransformation(trafo);
 		return trafo;
 	}
 
-	public Transformation getTransformation(IJavaProject javaProject, UMLResource targetResource)
+	public Transformation getTransformation(final IJavaProject javaProject, final UMLResource targetResource)
 			throws IOException, CoreException {
-		IProject project = javaProject.getProject();
-		Transformation trafo = map.get(project);
+		final IProject project = javaProject.getProject();
+		Transformation trafo = this.map.get(project);
 		if (trafo == null) {
 			trafo = new Transformation(javaProject, targetResource);
 			registerTransformation(trafo);
@@ -44,18 +44,27 @@ public class TransformationFactory {
 
 	/**
 	 * Registers a transformation at this factory
-	 * 
+	 *
 	 * @param trafo The transformation
 	 */
-	private void registerTransformation(Transformation trafo) {
-		IProject project = trafo.getProject().getProject();
-		Transformation existingTrafo = map.get(project);
+	private void registerTransformation(final Transformation trafo) {
+		final IProject project = trafo.getProject().getProject();
+		final Transformation existingTrafo = this.map.get(project);
 		if (existingTrafo != null) {
 			if (!trafo.equals(existingTrafo)) {
 				throw new IllegalStateException();
 			}
 		} else {
-			map.put(project, trafo);
+			this.map.put(project, trafo);
 		}
+	}
+
+	/**
+	 * Drops the factory for the project
+	 *
+	 * @param project
+	 */
+	public void drop(final IProject project) {
+		this.map.remove(project);
 	}
 }

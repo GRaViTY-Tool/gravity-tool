@@ -4,7 +4,7 @@ package org.gravity.tgg.modisco.uml.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.InterfaceDeclaration;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.Modifier;
 
 import org.eclipse.uml2.uml.Interface;
@@ -48,8 +48,8 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration,
-			InterfaceDeclaration classDec);
+	boolean isAppropriate_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
+			AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,8 +73,8 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration,
-			InterfaceDeclaration classDec);
+	void registerObjectsToMatch_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
+			AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,8 +82,8 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration,
-			InterfaceDeclaration classDec);
+	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
+			AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,8 +99,8 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			MMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element cd2c, InterfaceDeclaration classDec);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition bodyDeclaration,
+			Modifier modifier, Interface umlClass, ASTNode2Element cd2c, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,7 +117,7 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject umlClass, EObject cd2c, EObject classDec);
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +182,7 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, Interface umlClass,
-			ASTNode2Element cd2c, InterfaceDeclaration classDec);
+			ASTNode2Element cd2c, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,7 +199,7 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject umlClass, EObject cd2c, EObject classDec);
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_935(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_368(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_957(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_379(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,8 +255,8 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Operation feature, Modifier modifier, MMethodDefinition bodyDeclaration,
-			Interface umlClass, InterfaceDeclaration classDec, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Operation feature, MMethodDefinition bodyDeclaration, Modifier modifier,
+			Interface umlClass, AbstractTypeDeclaration classDec, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,7 +272,7 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, MMethodDefinition bodyDeclaration, InterfaceDeclaration classDec);
+	boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, Modifier modifier, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -297,7 +297,7 @@ public interface MethodDec2Operation4InterfaceWithModifier extends EObject, Abst
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface umlClass, ASTNode2Element cd2c,
-			InterfaceDeclaration classDec, ModelgeneratorRuleResult ruleResult);
+			AbstractTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->
