@@ -61,6 +61,7 @@ public class MConstructorDefinitionImpl extends MAbstractMethodDefinitionImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MGravityModel getModel() {
 		if (model != null && model.eIsProxy()) {
 			InternalEObject oldModel = (InternalEObject)model;
@@ -87,6 +88,7 @@ public class MConstructorDefinitionImpl extends MAbstractMethodDefinitionImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModel(MGravityModel newModel) {
 		MGravityModel oldModel = model;
 		model = newModel;

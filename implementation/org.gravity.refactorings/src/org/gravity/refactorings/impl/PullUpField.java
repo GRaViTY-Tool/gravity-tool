@@ -76,7 +76,7 @@ public class PullUpField implements Refactoring {
 			classContainer.add(child);
 
 			for (final TAccess currentAccess : fieldChildDefinition.getAccessedBy()) {
-				currentAccess.setTTarget(fieldParentDefinition);
+				currentAccess.setTarget(fieldParentDefinition);
 			}
 			fieldChildDefinition.setDefinedBy(null);
 			child.getSignature().remove(field);

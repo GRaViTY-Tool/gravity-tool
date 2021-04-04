@@ -22,11 +22,11 @@
 
 #target {
 	tMember:TMember {
-		++  -tAccessing -> tAccess
+		++  -accessing -> tAccess
 	}
 
 	++tAccess:TAccess {
-		++-tTarget -> tField
+		++-target -> tField
 	}
 
 	tField:TFieldDefinition

@@ -20,7 +20,7 @@
 }
 
 #target {
-	operation:Operation {
+	operation:uml.Operation {
 		++ -ownedParameter -> param
 	}
 
@@ -32,17 +32,12 @@
 }
 
 #correspondence {
-	md2o :NamedElement2NamedElement {
+	md2o :ASTNode2Element {
 		#src->method
 		#trg->operation
 	}
 
-	++ n2n :NamedElement2NamedElement {
-		#src->variableDec
-		#trg->param
-	}
-
-	++ vd2p :VariableDec2Parameter {
+	++ vd2p :ASTNode2Element {
 		#src->variableDec
 		#trg->param
 	}
@@ -52,7 +47,7 @@
 		#trg->param
 	}
 
-	ne2ne:NamedElement2NamedElement {
+	ne2ne:ASTNode2Element {
 		#src->jType
 		#trg->uType
 	}

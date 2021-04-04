@@ -33,7 +33,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  * </p>
  * <ul>
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldImpl#getSignatures <em>Signatures</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TFieldImpl#getPg <em>Pg</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TFieldImpl#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,8 +87,8 @@ public class TFieldImpl extends TNameImpl implements TField {
 	 * @generated
 	 */
 	@Override
-	public TypeGraph getPg() {
-		if (eContainerFeatureID() != BasicPackage.TFIELD__PG) return null;
+	public TypeGraph getModel() {
+		if (eContainerFeatureID() != BasicPackage.TFIELD__MODEL) return null;
 		return (TypeGraph)eInternalContainer();
 	}
 
@@ -97,8 +97,8 @@ public class TFieldImpl extends TNameImpl implements TField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPg(TypeGraph newPg, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPg, BasicPackage.TFIELD__PG, msgs);
+	public NotificationChain basicSetModel(TypeGraph newModel, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newModel, BasicPackage.TFIELD__MODEL, msgs);
 		return msgs;
 	}
 
@@ -108,20 +108,20 @@ public class TFieldImpl extends TNameImpl implements TField {
 	 * @generated
 	 */
 	@Override
-	public void setPg(TypeGraph newPg) {
-		if (newPg != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TFIELD__PG && newPg != null)) {
-			if (EcoreUtil.isAncestor(this, newPg))
+	public void setModel(TypeGraph newModel) {
+		if (newModel != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TFIELD__MODEL && newModel != null)) {
+			if (EcoreUtil.isAncestor(this, newModel))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newPg != null)
-				msgs = ((InternalEObject)newPg).eInverseAdd(this, BasicPackage.TYPE_GRAPH__FIELDS, TypeGraph.class, msgs);
-			msgs = basicSetPg(newPg, msgs);
+			if (newModel != null)
+				msgs = ((InternalEObject)newModel).eInverseAdd(this, BasicPackage.TYPE_GRAPH__FIELDS, TypeGraph.class, msgs);
+			msgs = basicSetModel(newModel, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TFIELD__PG, newPg, newPg));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TFIELD__MODEL, newModel, newModel));
 	}
 
 	/**
@@ -135,10 +135,10 @@ public class TFieldImpl extends TNameImpl implements TField {
 		switch (featureID) {
 			case BasicPackage.TFIELD__SIGNATURES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSignatures()).basicAdd(otherEnd, msgs);
-			case BasicPackage.TFIELD__PG:
+			case BasicPackage.TFIELD__MODEL:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetPg((TypeGraph)otherEnd, msgs);
+				return basicSetModel((TypeGraph)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -153,8 +153,8 @@ public class TFieldImpl extends TNameImpl implements TField {
 		switch (featureID) {
 			case BasicPackage.TFIELD__SIGNATURES:
 				return ((InternalEList<?>)getSignatures()).basicRemove(otherEnd, msgs);
-			case BasicPackage.TFIELD__PG:
-				return basicSetPg(null, msgs);
+			case BasicPackage.TFIELD__MODEL:
+				return basicSetModel(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -167,7 +167,7 @@ public class TFieldImpl extends TNameImpl implements TField {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case BasicPackage.TFIELD__PG:
+			case BasicPackage.TFIELD__MODEL:
 				return eInternalContainer().eInverseRemove(this, BasicPackage.TYPE_GRAPH__FIELDS, TypeGraph.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -183,8 +183,8 @@ public class TFieldImpl extends TNameImpl implements TField {
 		switch (featureID) {
 			case BasicPackage.TFIELD__SIGNATURES:
 				return getSignatures();
-			case BasicPackage.TFIELD__PG:
-				return getPg();
+			case BasicPackage.TFIELD__MODEL:
+				return getModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,8 +202,8 @@ public class TFieldImpl extends TNameImpl implements TField {
 				getSignatures().clear();
 				getSignatures().addAll((Collection<? extends TFieldSignature>)newValue);
 				return;
-			case BasicPackage.TFIELD__PG:
-				setPg((TypeGraph)newValue);
+			case BasicPackage.TFIELD__MODEL:
+				setModel((TypeGraph)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -220,8 +220,8 @@ public class TFieldImpl extends TNameImpl implements TField {
 			case BasicPackage.TFIELD__SIGNATURES:
 				getSignatures().clear();
 				return;
-			case BasicPackage.TFIELD__PG:
-				setPg((TypeGraph)null);
+			case BasicPackage.TFIELD__MODEL:
+				setModel((TypeGraph)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -237,8 +237,8 @@ public class TFieldImpl extends TNameImpl implements TField {
 		switch (featureID) {
 			case BasicPackage.TFIELD__SIGNATURES:
 				return signatures != null && !signatures.isEmpty();
-			case BasicPackage.TFIELD__PG:
-				return getPg() != null;
+			case BasicPackage.TFIELD__MODEL:
+				return getModel() != null;
 		}
 		return super.eIsSet(featureID);
 	}

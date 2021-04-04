@@ -39,7 +39,8 @@ public interface TMethodDefinition extends TMember, TAbstractMultiplicity {
 	TMethodSignature getSignature();
 
 	/**
-	 * Returns the value of the '<em><b>Overriding</b></em>' reference.
+	 * Returns the value of the '<em><b>Overriding</b></em>' reference list.
+	 * The list contents are of type {@link org.gravity.typegraph.basic.TMethodDefinition}.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMethodDefinition#getOverriddenBy <em>Overridden By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -47,24 +48,13 @@ public interface TMethodDefinition extends TMember, TAbstractMultiplicity {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Overriding</em>' reference.
-	 * @see #setOverriding(TMethodDefinition)
+	 * @return the value of the '<em>Overriding</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodDefinition_Overriding()
 	 * @see org.gravity.typegraph.basic.TMethodDefinition#getOverriddenBy
 	 * @model opposite="overriddenBy"
 	 * @generated
 	 */
-	TMethodDefinition getOverriding();
-
-	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TMethodDefinition#getOverriding <em>Overriding</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Overriding</em>' reference.
-	 * @see #getOverriding()
-	 * @generated
-	 */
-	void setOverriding(TMethodDefinition value);
+	EList<TMethodDefinition> getOverriding();
 
 	/**
 	 * Returns the value of the '<em><b>Overridden By</b></em>' reference list.

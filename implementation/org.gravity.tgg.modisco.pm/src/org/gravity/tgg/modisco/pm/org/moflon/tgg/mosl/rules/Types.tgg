@@ -14,7 +14,7 @@
 
 #target {
 	tPackage:TPackage {
-		-typeGraph -> pg
+		-model -> pg
 		++  -ownedTypes -> tType
 	}
 

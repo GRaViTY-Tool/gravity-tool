@@ -1,0 +1,32 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule FieldDec2Property4_Anonymous #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jOwnerType : AnonymousClassDeclaration {
+		++-bodyDeclarations->bodyDeclaration
+	}
+	
+	bodyDeclaration : MFieldDefinition
+}
+
+#target {
+	uOwnerType : uml.Class {
+		++-ownedAttribute->feature
+	}
+		
+	feature : uml.Property
+}
+
+#correspondence {
+	jo2uo : ASTNode2Element {
+		#src->jOwnerType
+		#trg->uOwnerType
+	}
+	
+	nd2ne : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}

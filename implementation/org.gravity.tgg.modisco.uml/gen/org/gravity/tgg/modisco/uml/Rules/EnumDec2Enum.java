@@ -8,15 +8,12 @@ import org.eclipse.modisco.java.EnumDeclaration;
 
 import org.eclipse.uml2.uml.Enumeration;
 
-import org.gravity.tgg.modisco.uml.JavaPackage2UmlPackage;
-
 import org.moflon.tgg.language.csp.CSP;
 
 import org.moflon.tgg.language.modelgenerator.RuleEntryContainer;
 
 import org.moflon.tgg.runtime.AbstractRule;
 import org.moflon.tgg.runtime.AttributeConstraintsRuleResult;
-import org.moflon.tgg.runtime.EMoflonEdge;
 import org.moflon.tgg.runtime.EObjectContainer;
 import org.moflon.tgg.runtime.IsApplicableMatch;
 import org.moflon.tgg.runtime.IsApplicableRuleResult;
@@ -44,7 +41,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jPackage, EnumDeclaration bodyDeclaration);
+	boolean isAppropriate_FWD(Match match, EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,8 +65,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
-			EnumDeclaration bodyDeclaration);
+	void registerObjectsToMatch_FWD(Match match, EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,8 +73,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
-			EnumDeclaration bodyDeclaration);
+	CSP isAppropriate_solveCsp_FWD(Match match, EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,8 +89,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, org.eclipse.modisco.java.Package jPackage, EnumDeclaration bodyDeclaration);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,8 +105,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject umlPackage, EObject jp2up,
-			EObject jPackage, EObject b2e, EObject bd2ne, EObject bodyDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +121,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage);
+	boolean isAppropriate_BWD(Match match, Enumeration feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,7 +145,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage);
+	void registerObjectsToMatch_BWD(Match match, Enumeration feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,7 +153,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage);
+	CSP isAppropriate_solveCsp_BWD(Match match, Enumeration feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,9 +169,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Enumeration feature,
-			org.eclipse.uml2.uml.Package umlPackage, JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Enumeration feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,8 +185,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject umlPackage, EObject jp2up,
-			EObject jPackage, EObject b2e, EObject bd2ne, EObject bodyDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,7 +201,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_421(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_Enumeration_3(Enumeration feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +209,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_432(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EnumDeclaration_1(EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,8 +241,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Enumeration feature, org.eclipse.uml2.uml.Package umlPackage,
-			org.eclipse.modisco.java.Package jPackage, EnumDeclaration bodyDeclaration, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(EnumDeclaration bodyDeclaration, Enumeration feature, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -269,7 +258,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(org.eclipse.modisco.java.Package jPackage, EnumDeclaration bodyDeclaration);
+	boolean checkDEC_FWD(EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,7 +266,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Enumeration feature, org.eclipse.uml2.uml.Package umlPackage);
+	boolean checkDEC_BWD(Enumeration feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,8 +274,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			JavaPackage2UmlPackage jp2upParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,9 +282,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, org.eclipse.modisco.java.Package jPackage,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

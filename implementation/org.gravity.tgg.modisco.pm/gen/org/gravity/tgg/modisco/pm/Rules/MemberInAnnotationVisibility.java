@@ -51,8 +51,8 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AnnotationTypeDeclaration Annotation, MDefinition mDefinition,
-			Modifier mModifier);
+	boolean isAppropriate_FWD(Match match, Modifier mModifier, AnnotationTypeDeclaration Annotation,
+			MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,8 +76,8 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, AnnotationTypeDeclaration Annotation, MDefinition mDefinition,
-			Modifier mModifier);
+	void registerObjectsToMatch_FWD(Match match, Modifier mModifier, AnnotationTypeDeclaration Annotation,
+			MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,8 +85,8 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, AnnotationTypeDeclaration Annotation, MDefinition mDefinition,
-			Modifier mModifier);
+	CSP isAppropriate_solveCsp_FWD(Match match, Modifier mModifier, AnnotationTypeDeclaration Annotation,
+			MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,9 +102,9 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration Annotation,
-			MDefinitionToTMember defToMember, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
-			Modifier mModifier, TAnnotationType tAnnotation, TMember tMember);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMember tMember, Modifier mModifier,
+			MDefinitionToTMember defToMember, AnnotationTypeDeclaration Annotation, MDefinition mDefinition,
+			TypeToTAbstractType mTypeToTType, TAnnotationType tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,9 +120,9 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject Annotation,
-			EObject defToMember, EObject mTypeToTType, EObject mDefinition, EObject tModifier, EObject mModifier,
-			EObject tAnnotation, EObject tMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tMember, EObject mModifier, EObject defToMember,
+			EObject Annotation, EObject mDefinition, EObject mModifierToTModifier, EObject mTypeToTType,
+			EObject tAnnotation, EObject tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +138,7 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TModifier tModifier, TAnnotationType tAnnotation, TMember tMember);
+	boolean isAppropriate_BWD(Match match, TMember tMember, TAnnotationType tAnnotation, TModifier tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +162,7 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TModifier tModifier, TAnnotationType tAnnotation, TMember tMember);
+	void registerObjectsToMatch_BWD(Match match, TMember tMember, TAnnotationType tAnnotation, TModifier tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,7 +170,7 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TModifier tModifier, TAnnotationType tAnnotation, TMember tMember);
+	CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TAnnotationType tAnnotation, TModifier tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,9 +186,9 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration Annotation,
-			MDefinitionToTMember defToMember, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
-			TModifier tModifier, TAnnotationType tAnnotation, TMember tMember);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tMember,
+			MDefinitionToTMember defToMember, AnnotationTypeDeclaration Annotation, MDefinition mDefinition,
+			TypeToTAbstractType mTypeToTType, TAnnotationType tAnnotation, TModifier tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,9 +204,9 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject Annotation,
-			EObject defToMember, EObject mTypeToTType, EObject mDefinition, EObject tModifier, EObject mModifier,
-			EObject tAnnotation, EObject tMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tMember, EObject mModifier, EObject defToMember,
+			EObject Annotation, EObject mDefinition, EObject mModifierToTModifier, EObject mTypeToTType,
+			EObject tAnnotation, EObject tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_740(EMoflonEdge _edge_tModifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_56(EMoflonEdge _edge_tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_760(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_58(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,8 +262,9 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(AnnotationTypeDeclaration Annotation, MDefinition mDefinition, TModifier tModifier,
-			Modifier mModifier, TAnnotationType tAnnotation, TMember tMember, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TMember tMember, Modifier mModifier, AnnotationTypeDeclaration Annotation,
+			MDefinition mDefinition, TAnnotationType tAnnotation, TModifier tModifier, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,7 +280,7 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AnnotationTypeDeclaration Annotation, MDefinition mDefinition, Modifier mModifier);
+	boolean checkDEC_FWD(Modifier mModifier, AnnotationTypeDeclaration Annotation, MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -287,7 +288,7 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TModifier tModifier, TAnnotationType tAnnotation, TMember tMember);
+	boolean checkDEC_BWD(TMember tMember, TAnnotationType tAnnotation, TModifier tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,9 +305,9 @@ public interface MemberInAnnotationVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration Annotation,
-			MDefinitionToTMember defToMember, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
-			TAnnotationType tAnnotation, TMember tMember, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tMember,
+			MDefinitionToTMember defToMember, AnnotationTypeDeclaration Annotation, MDefinition mDefinition,
+			TypeToTAbstractType mTypeToTType, TAnnotationType tAnnotation, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

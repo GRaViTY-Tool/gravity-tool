@@ -25,11 +25,11 @@
 		++ -general->superClass
 	}
 	
-	superClass : Class
+	superClass : uml.Class
 }
 
 #correspondence {
-	cd2c : NamedElement2NamedElement {
+	cd2c : ASTNode2Element {
 		#src->classDec
 		#trg->umlClassifier
 	}
@@ -39,7 +39,7 @@
 		#trg->generalization
 	}
 	
-	cd2c2 : NamedElement2NamedElement {
+	cd2c2 : ASTNode2Element {
 		#src->superClassDec
 		#trg->superClass
 	}

@@ -12,10 +12,10 @@
 }
 
 #target {
-	uowner : Class {
+	uowner : uml.Class {
 		++-nestedClassifier->uparam
 	}
-	++ uparam : Class {
+	++ uparam : uml.Class {
 		name := "T"
 	}
 }

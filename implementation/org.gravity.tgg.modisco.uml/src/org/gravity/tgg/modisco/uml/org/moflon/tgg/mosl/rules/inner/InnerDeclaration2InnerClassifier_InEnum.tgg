@@ -1,0 +1,36 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule InnerDeclaration2InnerClassifier_InEnum #extends InnerDeclaration2InnerClassifier_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jPackage: Package {
+		-ownedElements->jContainer
+	}
+	
+	jContainer:EnumDeclaration
+}
+
+#target {
+	
+	uContainer:uml.Enumeration {
+		-package->uPackage
+	}
+	
+	uPackage : Package
+	
+	feature:uml.Classifier {
+		++-package->uPackage
+	}
+}
+
+#correspondence {
+	p2p:JavaPackage2UmlPackage {
+		#src->jPackage
+		#trg->uPackage
+	}
+}
+
+#attributeConditions {
+	
+}

@@ -1,8 +1,13 @@
 package org.gravity.eclipse;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
@@ -13,7 +18,8 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
@@ -46,14 +52,11 @@ public class GravityActivator extends Plugin {
 	/** The shared instance. */
 	private static GravityActivator plugin;
 
-	/** All known source models with project name as key. */
-	private final HashMap<String, EObject> sources;
-
-	/** All target models (PGs) with project name as key. */
-	private final HashMap<String, EObject> targets;
-
 	/** All converted projects with project name as key */
 	private final Map<String, IProject> project;
+
+	/** All resource sets of converted projects with project name as key */
+	private final Map<String, ResourceSet> resourceSets;
 
 	/** The verbose state (not only for this plugin). */
 	private boolean verbose;
@@ -71,15 +74,20 @@ public class GravityActivator extends Plugin {
 	/** A listener for changes in java files */
 	private IResourceChangeListener listener;
 
+	public static final boolean MEASURE_PERFORMANCE = true;
+
+	private static final String MEASURE_LOCATION = "/home/speldszus/workspace/DataPreparator/in/RuntimedataUML.txt";
+
+	private static final Logger LOGGER = Logger.getLogger(GravityActivator.class);
+
 	/**
 	 * At startup all tables will be initialized empty. Currently no old states are
 	 * loaded.
 	 */
 	public GravityActivator() {
-		this.sources = new HashMap<>();
-		this.targets = new HashMap<>();
 		this.project = new HashMap<>();
 		this.converters = new HashMap<>();
+		this.resourceSets = new HashMap<>();
 	}
 
 	/**
@@ -89,15 +97,15 @@ public class GravityActivator extends Plugin {
 	 *      extension point "org.gravity.eclipse.converters".
 	 */
 	@Override
-	public void start(BundleContext context) throws Exception {
+	public void start(final BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
 
 		this.listener = event -> {
 			final IResource resource = event.getResource();
-			if (resource != null && resource.getType() == IResource.PROJECT
+			if ((resource != null) && (resource.getType() == IResource.PROJECT)
 					&& GravityActivator.this.converters.containsKey(resource.getName())
-					&& event.getType() == IResourceChangeEvent.PRE_DELETE) {
+					&& (event.getType() == IResourceChangeEvent.PRE_DELETE)) {
 				GravityActivator.this.converters.remove(resource.getName());
 
 			}
@@ -133,7 +141,7 @@ public class GravityActivator extends Plugin {
 	 *      Additionally change listeners are removed
 	 */
 	@Override
-	public void stop(BundleContext context) throws Exception {
+	public void stop(final BundleContext context) throws Exception {
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(this.listener);
 		plugin = null;
 		super.stop(context);
@@ -146,46 +154,6 @@ public class GravityActivator extends Plugin {
 	 */
 	public static GravityActivator getDefault() {
 		return plugin;
-	}
-
-	/**
-	 * Adds the source model of an translated project to the table.
-	 *
-	 * @param projectName the projects name
-	 * @param srcModel    the source model
-	 */
-	public void addSrc(String projectName, EObject srcModel) {
-		this.sources.put(projectName, srcModel);
-	}
-
-	/**
-	 * Gets the source model of an java project.
-	 *
-	 * @param projectName the projects name
-	 * @return the source model
-	 */
-	public EObject getSrc(String projectName) {
-		return this.sources.get(projectName);
-	}
-
-	/**
-	 * Adds the target model (PG) of an java project to the table.
-	 *
-	 * @param projectName the projects name
-	 * @param trgModel    the target model
-	 */
-	public void addTrg(String projectName, EObject trgModel) {
-		this.targets.put(projectName, trgModel);
-	}
-
-	/**
-	 * Gets the target model (PG) of an java project.
-	 *
-	 * @param projectName the projects name
-	 * @return the target model (PG)
-	 */
-	public EObject getTrg(String projectName) {
-		return this.targets.get(projectName);
 	}
 
 	/**
@@ -202,7 +170,7 @@ public class GravityActivator extends Plugin {
 	 *
 	 * @param verbose the new verbose state
 	 */
-	public void setVerbose(boolean verbose) {
+	public void setVerbose(final boolean verbose) {
 		this.verbose = verbose;
 		for (final IPGConverter converter : this.converters.values()) {
 			converter.setDebug(verbose);
@@ -220,7 +188,7 @@ public class GravityActivator extends Plugin {
 	 * @throws CoreException                  If the extension point couldn't be
 	 *                                        read
 	 */
-	public IPGConverter getConverter(IProject project) throws NoConverterRegisteredException, CoreException {
+	public IPGConverter getConverter(final IProject project) throws NoConverterRegisteredException, CoreException {
 		final String name = project.getName();
 		if (this.converters.containsKey(name)) {
 			final IPGConverter converter = this.converters.get(name);
@@ -240,10 +208,10 @@ public class GravityActivator extends Plugin {
 	 * @param project The project for which an converter has been created
 	 * @return true iff the converter has been discarded
 	 */
-	public boolean discardConverter(IProject project) {
+	public boolean discardConverter(final IProject project) {
 		if (this.converters.containsKey(project.getName())) {
 			final IPGConverter converter = this.converters.remove(project.getName());
-			return converter != null && converter.discard();
+			return (converter != null) && converter.discard();
 		}
 		return false;
 	}
@@ -259,7 +227,7 @@ public class GravityActivator extends Plugin {
 	 * @throws CoreException                  If the extension point couldn't be
 	 *                                        read
 	 */
-	public IPGConverter getNewConverter(IProject project) throws NoConverterRegisteredException, CoreException {
+	public IPGConverter getNewConverter(final IProject project) throws NoConverterRegisteredException, CoreException {
 		final IPGConverter converter = getSelectedConverterFactory().createConverter(project);
 		converter.setDebug(isVerbose());
 		this.converters.put(project.getName(), converter);
@@ -271,7 +239,7 @@ public class GravityActivator extends Plugin {
 	 *
 	 * @param selectedConverterFactory the new selected converter factory
 	 */
-	public void setSelectedConverterFactory(IPGConverterFactory selectedConverterFactory) {
+	public void setSelectedConverterFactory(final IPGConverterFactory selectedConverterFactory) {
 		this.selectedConverterFactory = selectedConverterFactory;
 	}
 
@@ -299,7 +267,7 @@ public class GravityActivator extends Plugin {
 	 * @param tName The name of the project
 	 * @return the according eclipse project
 	 */
-	public IProject getProject(String tName) {
+	public IProject getProject(final String tName) {
 		return this.project.get(tName);
 	}
 
@@ -308,8 +276,27 @@ public class GravityActivator extends Plugin {
 	 *
 	 * @param project the eclipse projecte
 	 */
-	public void addProject(IProject project) {
+	public void addProject(final IProject project) {
 		this.project.put(project.getName(), project);
+	}
+
+	public ResourceSet getResourceSet(final IProject project) {
+		final String name = project.getName();
+		ResourceSet set = this.resourceSets.get(name);
+		if(set == null) {
+			set = new ResourceSetImpl();
+			this.resourceSets.put(name, set);
+		}
+		return set;
+	}
+
+	public static void record(final String string) {
+		System.out.println(string);
+		try {
+			Files.write(Paths.get(MEASURE_LOCATION), (string+'\n').getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+		} catch (final IOException e) {
+			LOGGER.error(e);
+		}
 	}
 
 }

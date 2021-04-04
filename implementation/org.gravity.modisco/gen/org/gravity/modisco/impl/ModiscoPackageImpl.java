@@ -29,6 +29,7 @@ import org.gravity.modisco.MFieldName;
 import org.gravity.modisco.MFieldSignature;
 import org.gravity.modisco.MFlow;
 import org.gravity.modisco.MGravityModel;
+import org.gravity.modisco.MInitializer;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodInvocation;
 import org.gravity.modisco.MMethodName;
@@ -260,6 +261,13 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass mInitializerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum accessKindEEnum = null;
 
 	/**
@@ -331,6 +339,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMAbstractMethodDefinition() {
 		return mAbstractMethodDefinitionEClass;
 	}
@@ -340,6 +349,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMAbstractMethodDefinition_MInnerTypes() {
 		return (EReference)mAbstractMethodDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -349,6 +359,17 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EReference getMAbstractMethodDefinition_DefinedBy() {
+		return (EReference)mAbstractMethodDefinitionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getMAccess() {
 		return mAccessEClass;
 	}
@@ -358,6 +379,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMConstructorDefinition() {
 		return mConstructorDefinitionEClass;
 	}
@@ -367,6 +389,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMConstructorDefinition_Model() {
 		return (EReference)mConstructorDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -376,6 +399,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMDefinition() {
 		return mDefinitionEClass;
 	}
@@ -385,6 +409,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMDefinition_InvocationStaticTypes() {
 		return (EReference)mDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -394,6 +419,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMDefinition_MMethodInvocations() {
 		return (EReference)mDefinitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -403,6 +429,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMDefinition_MAbstractFieldAccess() {
 		return (EReference)mDefinitionEClass.getEStructuralFeatures().get(2);
 	}
@@ -412,6 +439,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMDefinition_MSignature() {
 		return (EReference)mDefinitionEClass.getEStructuralFeatures().get(3);
 	}
@@ -421,6 +449,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMParameterList() {
 		return mParameterListEClass;
 	}
@@ -430,6 +459,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMParameterList_MFirstEntry() {
 		return (EReference)mParameterListEClass.getEStructuralFeatures().get(0);
 	}
@@ -439,6 +469,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMParameterList_MEntrys() {
 		return (EReference)mParameterListEClass.getEStructuralFeatures().get(1);
 	}
@@ -448,6 +479,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMMethodName() {
 		return mMethodNameEClass;
 	}
@@ -457,6 +489,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMMethodSignature() {
 		return mMethodSignatureEClass;
 	}
@@ -466,6 +499,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMMethodSignature_ReturnType() {
 		return (EReference)mMethodSignatureEClass.getEStructuralFeatures().get(0);
 	}
@@ -475,6 +509,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMMethodDefinition() {
 		return mMethodDefinitionEClass;
 	}
@@ -484,6 +519,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMMethodDefinition_SyntheticMethodDefinitions() {
 		return (EReference)mMethodDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -493,6 +529,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMName() {
 		return mNameEClass;
 	}
@@ -502,6 +539,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMName_MName() {
 		return (EAttribute)mNameEClass.getEStructuralFeatures().get(0);
 	}
@@ -511,6 +549,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMName_MSignatures() {
 		return (EReference)mNameEClass.getEStructuralFeatures().get(1);
 	}
@@ -520,6 +559,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMName_MDefinitions() {
 		return (EReference)mNameEClass.getEStructuralFeatures().get(2);
 	}
@@ -529,6 +569,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMFieldName() {
 		return mFieldNameEClass;
 	}
@@ -538,6 +579,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMFieldSignature() {
 		return mFieldSignatureEClass;
 	}
@@ -547,6 +589,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMFieldSignature_Type() {
 		return (EReference)mFieldSignatureEClass.getEStructuralFeatures().get(0);
 	}
@@ -556,6 +599,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMFieldDefinition() {
 		return mFieldDefinitionEClass;
 	}
@@ -565,6 +609,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMSignature() {
 		return mSignatureEClass;
 	}
@@ -574,6 +619,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMSignature_MDefinitions() {
 		return (EReference)mSignatureEClass.getEStructuralFeatures().get(0);
 	}
@@ -583,6 +629,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMEntry() {
 		return mEntryEClass;
 	}
@@ -592,6 +639,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMEntry_MNext() {
 		return (EReference)mEntryEClass.getEStructuralFeatures().get(0);
 	}
@@ -601,6 +649,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMEntry_MPrevious() {
 		return (EReference)mEntryEClass.getEStructuralFeatures().get(1);
 	}
@@ -610,6 +659,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMEntry_Type() {
 		return (EReference)mEntryEClass.getEStructuralFeatures().get(2);
 	}
@@ -619,6 +669,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMEntry_Parameters() {
 		return (EReference)mEntryEClass.getEStructuralFeatures().get(3);
 	}
@@ -628,6 +679,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMGravityModel() {
 		return mGravityModelEClass;
 	}
@@ -637,6 +689,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMGravityModel_MFieldDefinitions() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -646,6 +699,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMGravityModel_AnonymousClassDeclarations() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -655,6 +709,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMGravityModel_MMethodNames() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(2);
 	}
@@ -664,6 +719,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMGravityModel_MFieldNames() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(3);
 	}
@@ -673,6 +729,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMGravityModel_MAbstractMethodDefinitions() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(4);
 	}
@@ -682,6 +739,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMGravityModel_TypeParameters() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(5);
 	}
@@ -691,6 +749,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMGravityModel_MExtensions() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(6);
 	}
@@ -700,6 +759,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMethodInvocationStaticType() {
 		return methodInvocationStaticTypeEClass;
 	}
@@ -709,6 +769,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMethodInvocationStaticType_MethodInvoc() {
 		return (EReference)methodInvocationStaticTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -718,6 +779,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMethodInvocationStaticType_Type() {
 		return (EReference)methodInvocationStaticTypeEClass.getEStructuralFeatures().get(1);
 	}
@@ -727,6 +789,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMSyntheticMethodDefinition() {
 		return mSyntheticMethodDefinitionEClass;
 	}
@@ -736,6 +799,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMSyntheticMethodDefinition_OriginalMethodDefinition() {
 		return (EReference)mSyntheticMethodDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -745,6 +809,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMClass() {
 		return mClassEClass;
 	}
@@ -754,6 +819,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMClass_Dependencies() {
 		return (EReference)mClassEClass.getEStructuralFeatures().get(0);
 	}
@@ -763,6 +829,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMExtension() {
 		return mExtensionEClass;
 	}
@@ -772,6 +839,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMFlow() {
 		return mFlowEClass;
 	}
@@ -781,6 +849,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMFlow_FlowSource() {
 		return (EReference)mFlowEClass.getEStructuralFeatures().get(0);
 	}
@@ -790,6 +859,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMFlow_FlowTarget() {
 		return (EReference)mFlowEClass.getEStructuralFeatures().get(1);
 	}
@@ -799,6 +869,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMFlow_FlowOwner() {
 		return (EReference)mFlowEClass.getEStructuralFeatures().get(2);
 	}
@@ -808,6 +879,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMAbstractFlowElement() {
 		return mAbstractFlowElementEClass;
 	}
@@ -817,6 +889,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMAbstractFlowElement_OwnedFlows() {
 		return (EReference)mAbstractFlowElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -826,6 +899,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMAbstractFlowElement_IncomingFlows() {
 		return (EReference)mAbstractFlowElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -835,6 +909,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMAbstractFlowElement_OutgoingFlows() {
 		return (EReference)mAbstractFlowElementEClass.getEStructuralFeatures().get(2);
 	}
@@ -844,6 +919,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMSingleVariableAccess() {
 		return mSingleVariableAccessEClass;
 	}
@@ -853,6 +929,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMSingleVariableAccess_AccessKind() {
 		return (EAttribute)mSingleVariableAccessEClass.getEStructuralFeatures().get(0);
 	}
@@ -862,6 +939,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMMethodInvocation() {
 		return mMethodInvocationEClass;
 	}
@@ -871,6 +949,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMMethodInvocation_MStaticType() {
 		return (EReference)mMethodInvocationEClass.getEStructuralFeatures().get(0);
 	}
@@ -880,6 +959,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMConstructorInvocation() {
 		return mConstructorInvocationEClass;
 	}
@@ -889,6 +969,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMSingleVariableDeclaration() {
 		return mSingleVariableDeclarationEClass;
 	}
@@ -898,6 +979,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMSingleVariableDeclaration_MEntry() {
 		return (EReference)mSingleVariableDeclarationEClass.getEStructuralFeatures().get(0);
 	}
@@ -907,6 +989,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMAbstractMethodInvocation() {
 		return mAbstractMethodInvocationEClass;
 	}
@@ -916,6 +999,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMSuperMethodInvocation() {
 		return mSuperMethodInvocationEClass;
 	}
@@ -925,6 +1009,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMClassInstanceCreation() {
 		return mClassInstanceCreationEClass;
 	}
@@ -934,6 +1019,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMSuperConstructorInvocation() {
 		return mSuperConstructorInvocationEClass;
 	}
@@ -943,6 +1029,17 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EClass getMInitializer() {
+		return mInitializerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAccessKind() {
 		return accessKindEEnum;
 	}
@@ -952,6 +1049,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ModiscoFactory getModiscoFactory() {
 		return (ModiscoFactory)getEFactoryInstance();
 	}
@@ -977,6 +1075,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		// Create classes and their features
 		mAbstractMethodDefinitionEClass = createEClass(MABSTRACT_METHOD_DEFINITION);
 		createEReference(mAbstractMethodDefinitionEClass, MABSTRACT_METHOD_DEFINITION__MINNER_TYPES);
+		createEReference(mAbstractMethodDefinitionEClass, MABSTRACT_METHOD_DEFINITION__DEFINED_BY);
 
 		mAccessEClass = createEClass(MACCESS);
 
@@ -1072,6 +1171,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 
 		mSuperConstructorInvocationEClass = createEClass(MSUPER_CONSTRUCTOR_INVOCATION);
 
+		mInitializerEClass = createEClass(MINITIALIZER);
+
 		// Create enums
 		accessKindEEnum = createEEnum(ACCESS_KIND);
 	}
@@ -1146,10 +1247,13 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mClassInstanceCreationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
 		mSuperConstructorInvocationEClass.getESuperTypes().add(theJavaPackage.getSuperConstructorInvocation());
 		mSuperConstructorInvocationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
+		mInitializerEClass.getESuperTypes().add(this.getMDefinition());
+		mInitializerEClass.getESuperTypes().add(theJavaPackage.getInitializer());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(mAbstractMethodDefinitionEClass, MAbstractMethodDefinition.class, "MAbstractMethodDefinition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMAbstractMethodDefinition_MInnerTypes(), theJavaPackage.getAbstractTypeDeclaration(), null, "mInnerTypes", null, 0, -1, MAbstractMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAbstractMethodDefinition_DefinedBy(), theJavaPackage.getASTNode(), null, "definedBy", null, 0, 1, MAbstractMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(mAccessEClass, MAccess.class, "MAccess", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1244,6 +1348,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEClass(mClassInstanceCreationEClass, MClassInstanceCreation.class, "MClassInstanceCreation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(mSuperConstructorInvocationEClass, MSuperConstructorInvocation.class, "MSuperConstructorInvocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(mInitializerEClass, MInitializer.class, "MInitializer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(accessKindEEnum, AccessKind.class, "AccessKind");

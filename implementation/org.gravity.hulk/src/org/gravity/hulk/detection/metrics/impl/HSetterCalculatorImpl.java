@@ -5,24 +5,15 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
-import org.gravity.hulk.antipatterngraph.metrics.HSetterMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HSetterCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
 import org.gravity.typegraph.basic.TClass;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethod;
-import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 // [user defined imports] -->
 
@@ -37,16 +28,15 @@ import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl implements HSetterCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HSetterCalculatorImpl() {
-		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -56,11 +46,12 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		HSetterMetric metric = MetricsFactory.eINSTANCE.createHSetterMetric();
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		final var metric = MetricsFactory.eINSTANCE.createHSetterMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -69,39 +60,42 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		if (tClass == null || tClass.isTLib()) {
+		if ((tClass == null) || tClass.isTLib()) {
 			return 0;
 		}
 
-		int i = 0;
-		for (TMember m : tClass.getDefines()) {
+		var i = 0;
+		for (final TMember m : tClass.getDefines()) {
 			if (m instanceof TMethodDefinitionImpl) {
-				TMethodSignature sig = ((TMethodDefinitionImpl) m).getSignature();
+				final var sig = ((TMethodDefinitionImpl) m).getSignature();
 				if (sig == null) {
 					// System.out.println("Method within Class " + tClass.getTName() + " does not
 					// have a signature");
 					continue;
 				}
-				TMethod method = sig.getMethod();
+				final var method = sig.getMethod();
 				if (method == null) {
 					// System.out.println(
 					// "MethodSignature of a Method in Class " + tClass.getTName() + " does not have
 					// a TMethod");
 					continue;
 				}
-				String name = method.getTName();
+				final var name = method.getTName();
 				if (name.toLowerCase().startsWith("set")) {
 					i++;
 				}
 			}
 		}
-		i += calculateValue(tClass.getParentClass());
+		for(final TClass parent : tClass.getParentClasses()) {
+			i += calculateValue(parent);
+		}
 
 		return i;
 
@@ -109,11 +103,11 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HSETTER_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));
@@ -125,6 +119,7 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 
 	// <-- [user code injected with eMoflon]
 
+	@Override
 	public String getGuiName() {
 		return "Number of setter Methods";
 	}

@@ -13,6 +13,7 @@
 
 #target {
 	um:Model{
+		name == "source references"
 		++ -packagedElement -> artifact
 	}
 

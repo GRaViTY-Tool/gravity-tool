@@ -77,6 +77,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 			case ModiscoPackage.MSUPER_METHOD_INVOCATION: return createMSuperMethodInvocation();
 			case ModiscoPackage.MCLASS_INSTANCE_CREATION: return createMClassInstanceCreation();
 			case ModiscoPackage.MSUPER_CONSTRUCTOR_INVOCATION: return createMSuperConstructorInvocation();
+			case ModiscoPackage.MINITIALIZER: return createMInitializer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -117,6 +118,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MConstructorDefinition createMConstructorDefinition() {
 		MConstructorDefinitionImpl mConstructorDefinition = new MConstructorDefinitionImpl();
 		return mConstructorDefinition;
@@ -127,6 +129,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MMethodName createMMethodName() {
 		MMethodNameImpl mMethodName = new MMethodNameImpl();
 		return mMethodName;
@@ -137,6 +140,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MMethodSignature createMMethodSignature() {
 		MMethodSignatureImpl mMethodSignature = new MMethodSignatureImpl();
 		return mMethodSignature;
@@ -147,6 +151,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MMethodDefinition createMMethodDefinition() {
 		MMethodDefinitionImpl mMethodDefinition = new MMethodDefinitionImpl();
 		return mMethodDefinition;
@@ -157,6 +162,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MFieldName createMFieldName() {
 		MFieldNameImpl mFieldName = new MFieldNameImpl();
 		return mFieldName;
@@ -167,6 +173,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MFieldSignature createMFieldSignature() {
 		MFieldSignatureImpl mFieldSignature = new MFieldSignatureImpl();
 		return mFieldSignature;
@@ -177,6 +184,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MFieldDefinition createMFieldDefinition() {
 		MFieldDefinitionImpl mFieldDefinition = new MFieldDefinitionImpl();
 		return mFieldDefinition;
@@ -187,6 +195,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MEntry createMEntry() {
 		MEntryImpl mEntry = new MEntryImpl();
 		return mEntry;
@@ -197,6 +206,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MGravityModel createMGravityModel() {
 		MGravityModelImpl mGravityModel = new MGravityModelImpl();
 		return mGravityModel;
@@ -207,6 +217,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MethodInvocationStaticType createMethodInvocationStaticType() {
 		MethodInvocationStaticTypeImpl methodInvocationStaticType = new MethodInvocationStaticTypeImpl();
 		return methodInvocationStaticType;
@@ -217,6 +228,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MSyntheticMethodDefinition createMSyntheticMethodDefinition() {
 		MSyntheticMethodDefinitionImpl mSyntheticMethodDefinition = new MSyntheticMethodDefinitionImpl();
 		return mSyntheticMethodDefinition;
@@ -227,6 +239,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MClass createMClass() {
 		MClassImpl mClass = new MClassImpl();
 		return mClass;
@@ -237,6 +250,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MFlow createMFlow() {
 		MFlowImpl mFlow = new MFlowImpl();
 		return mFlow;
@@ -247,6 +261,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MSingleVariableAccess createMSingleVariableAccess() {
 		MSingleVariableAccessImpl mSingleVariableAccess = new MSingleVariableAccessImpl();
 		return mSingleVariableAccess;
@@ -257,6 +272,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MMethodInvocation createMMethodInvocation() {
 		MMethodInvocationImpl mMethodInvocation = new MMethodInvocationImpl();
 		return mMethodInvocation;
@@ -267,6 +283,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MConstructorInvocation createMConstructorInvocation() {
 		MConstructorInvocationImpl mConstructorInvocation = new MConstructorInvocationImpl();
 		return mConstructorInvocation;
@@ -277,6 +294,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MSingleVariableDeclaration createMSingleVariableDeclaration() {
 		MSingleVariableDeclarationImpl mSingleVariableDeclaration = new MSingleVariableDeclarationImpl();
 		return mSingleVariableDeclaration;
@@ -287,6 +305,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MSuperMethodInvocation createMSuperMethodInvocation() {
 		MSuperMethodInvocationImpl mSuperMethodInvocation = new MSuperMethodInvocationImpl();
 		return mSuperMethodInvocation;
@@ -297,6 +316,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MClassInstanceCreation createMClassInstanceCreation() {
 		MClassInstanceCreationImpl mClassInstanceCreation = new MClassInstanceCreationImpl();
 		return mClassInstanceCreation;
@@ -307,9 +327,21 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MSuperConstructorInvocation createMSuperConstructorInvocation() {
 		MSuperConstructorInvocationImpl mSuperConstructorInvocation = new MSuperConstructorInvocationImpl();
 		return mSuperConstructorInvocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MInitializer createMInitializer() {
+		MInitializerImpl mInitializer = new MInitializerImpl();
+		return mInitializer;
 	}
 
 	/**
@@ -337,6 +369,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ModiscoPackage getModiscoPackage() {
 		return (ModiscoPackage)getEPackage();
 	}

@@ -4,28 +4,15 @@
 #abstract #rule PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
-	jm : Model{
-		++-orphanTypes->jpt
-	}
-	
 	++jpt : PrimitiveType
 }
 
 #target {
-	up : Package{
-		name == "Common Java datatypes"
-		++-packagedElement->umpt
-	}
-	
 	++ umpt : PrimitiveType
 }
 
 #correspondence {
-	jm2up:JavaModel2UMLPackage{
-		#src->jm
-		#trg->up
-	}
-	++jpt2upt2:NamedElement2NamedElement{
+	++a2a:ASTNode2Element {
 		#src->jpt
 		#trg->umpt
 	}

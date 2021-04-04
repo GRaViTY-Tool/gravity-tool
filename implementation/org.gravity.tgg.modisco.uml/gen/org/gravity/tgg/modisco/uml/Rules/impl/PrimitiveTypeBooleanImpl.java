@@ -12,16 +12,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 
-import org.eclipse.modisco.java.Model;
-
 import org.eclipse.modisco.java.emf.JavaFactory;
 
-import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.UMLFactory;
 
-import org.gravity.tgg.modisco.uml.JavaModel2UMLPackage;
-import org.gravity.tgg.modisco.uml.NamedElement2NamedElement;
+import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
 import org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeBoolean;
 import org.gravity.tgg.modisco.uml.Rules.RulesPackage;
@@ -31,7 +27,6 @@ import org.gravity.tgg.modisco.uml.UmlFactory;
 import org.moflon.tgg.language.csp.CSP;
 
 import org.moflon.tgg.language.modelgenerator.RuleEntryContainer;
-import org.moflon.tgg.language.modelgenerator.RuleEntryList;
 
 import org.moflon.tgg.runtime.AttributeConstraintsRuleResult;
 import org.moflon.tgg.runtime.CCMatch;
@@ -95,46 +90,42 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+	public boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
 
 		Object[] result1_black = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_0_1_initialbindings_blackBBBB(this, match, jm, jpt);
+				.pattern_PrimitiveTypeBoolean_0_1_initialbindings_blackBBB(this, match, jpt);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[jm] = " + jm + ", " + "[jpt] = " + jpt + ".");
+					+ "[match] = " + match + ", " + "[jpt] = " + jpt + ".");
 		}
 
 		Object[] result2_bindingAndBlack = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, jm, jpt);
+				.pattern_PrimitiveTypeBoolean_0_2_SolveCSP_bindingAndBlackFBBB(this, match, jpt);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[jm] = " + jm + ", " + "[jpt] = " + jpt + ".");
+					+ "[match] = " + match + ", " + "[jpt] = " + jpt + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = PrimitiveTypeBooleanImpl
-					.pattern_PrimitiveTypeBoolean_0_4_collectelementstobetranslated_blackBBB(match, jm, jpt);
+					.pattern_PrimitiveTypeBoolean_0_4_collectelementstobetranslated_blackBB(match, jpt);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[jm] = " + jm + ", " + "[jpt] = " + jpt + ".");
+						+ "[jpt] = " + jpt + ".");
 			}
-			PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_0_4_collectelementstobetranslated_greenBBBF(match, jm,
-					jpt);
-			//nothing EMoflonEdge jm__jpt____orphanTypes = (EMoflonEdge) result4_green[3];
+			PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_0_4_collectelementstobetranslated_greenBB(match, jpt);
 
 			Object[] result5_black = PrimitiveTypeBooleanImpl
-					.pattern_PrimitiveTypeBoolean_0_5_collectcontextelements_blackBBB(match, jm, jpt);
+					.pattern_PrimitiveTypeBoolean_0_5_collectcontextelements_blackBB(match, jpt);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[jm] = " + jm + ", " + "[jpt] = " + jpt + ".");
+						+ "[jpt] = " + jpt + ".");
 			}
-			PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_0_5_collectcontextelements_greenBB(match, jm);
-
 			// 
-			PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_0_6_registerobjectstomatch_expressionBBBB(this, match,
-					jm, jpt);
+			PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_0_6_registerobjectstomatch_expressionBBB(this, match,
+					jpt);
 			return PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_0_7_expressionF();
 		} else {
 			return PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_0_8_expressionF();
@@ -150,50 +141,43 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	public PerformRuleResult perform_FWD(IsApplicableMatch isApplicableMatch) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_1_1_performtransformation_bindingAndBlackFFFFFBB(this, isApplicableMatch);
+				.pattern_PrimitiveTypeBoolean_1_1_performtransformation_bindingAndBlackFFBB(this, isApplicableMatch);
 		if (result1_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) result1_bindingAndBlack[0];
-		Model jm = (Model) result1_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[2];
-		org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result1_bindingAndBlack[3];
-		CSP csp = (CSP) result1_bindingAndBlack[4];
+		org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result1_bindingAndBlack[0];
+		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_1_1_performtransformation_greenFBFBB(up, jpt, csp);
-		PrimitiveType umpt = (PrimitiveType) result1_green[0];
-		NamedElement2NamedElement jpt2upt2 = (NamedElement2NamedElement) result1_green[2];
+				.pattern_PrimitiveTypeBoolean_1_1_performtransformation_greenFFBB(jpt, csp);
+		ASTNode2Element a2a = (ASTNode2Element) result1_green[0];
+		PrimitiveType umpt = (PrimitiveType) result1_green[1];
 
 		Object[] result2_black = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_1_2_collecttranslatedelements_blackBBB(umpt, jpt2upt2, jpt);
+				.pattern_PrimitiveTypeBoolean_1_2_collecttranslatedelements_blackBBB(a2a, umpt, jpt);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[umpt] = " + umpt + ", "
-					+ "[jpt2upt2] = " + jpt2upt2 + ", " + "[jpt] = " + jpt + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[a2a] = " + a2a + ", "
+					+ "[umpt] = " + umpt + ", " + "[jpt] = " + jpt + ".");
 		}
 		Object[] result2_green = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_1_2_collecttranslatedelements_greenFBBB(umpt, jpt2upt2, jpt);
+				.pattern_PrimitiveTypeBoolean_1_2_collecttranslatedelements_greenFBBB(a2a, umpt, jpt);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jm2up, jm, umpt, up,
-						jpt2upt2, jpt);
+				.pattern_PrimitiveTypeBoolean_1_3_bookkeepingforedges_blackBBBB(ruleresult, a2a, umpt, jpt);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[jm2up] = " + jm2up + ", " + "[jm] = " + jm + ", " + "[umpt] = " + umpt + ", " + "[up] = "
-					+ up + ", " + "[jpt2upt2] = " + jpt2upt2 + ", " + "[jpt] = " + jpt + ".");
+					+ ", " + "[a2a] = " + a2a + ", " + "[umpt] = " + umpt + ", " + "[jpt] = " + jpt + ".");
 		}
-		PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, jm,
-				umpt, up, jpt2upt2, jpt);
-		//nothing EMoflonEdge up__umpt____packagedElement = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge jm__jpt____orphanTypes = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge jpt2upt2__jpt____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge jpt2upt2__umpt____target = (EMoflonEdge) result3_green[9];
+		PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, a2a, umpt,
+				jpt);
+		//nothing EMoflonEdge a2a__jpt____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge a2a__umpt____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-				jm2up, jm, umpt, up, jpt2upt2, jpt);
+		PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_1_5_registerobjects_expressionBBBBB(this, ruleresult, a2a,
+				umpt, jpt);
 		return PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_1_6_expressionFB(ruleresult);
 	}
 
@@ -216,35 +200,26 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		IsApplicableRuleResult ruleresult = (IsApplicableRuleResult) result1_green[1];
 
 		// ForEach 
-		Object[] result2_binding = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_2_2_corematch_bindingFFB(match);
+		Object[] result2_binding = PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_2_2_corematch_bindingFB(match);
 		if (result2_binding == null) {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Model jm = (Model) result2_binding[0];
-		org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result2_binding[1];
-		for (Object[] result2_black : PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_2_2_corematch_blackFBFBB(jm,
-				jpt, match)) {
-			JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) result2_black[0];
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_black[2];
+		org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result2_binding[0];
+		for (Object[] result2_black : PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_2_2_corematch_blackBB(jpt,
+				match)) {
 			// ForEach 
 			for (Object[] result3_black : PrimitiveTypeBooleanImpl
-					.pattern_PrimitiveTypeBoolean_2_3_findcontext_blackBBBB(jm2up, jm, up, jpt)) {
+					.pattern_PrimitiveTypeBoolean_2_3_findcontext_blackB(jpt)) {
 				Object[] result3_green = PrimitiveTypeBooleanImpl
-						.pattern_PrimitiveTypeBoolean_2_3_findcontext_greenBBBBFFFF(jm2up, jm, up, jpt);
-				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge jm__jpt____orphanTypes = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge jm2up__up____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge jm2up__jm____source = (EMoflonEdge) result3_green[7];
+						.pattern_PrimitiveTypeBoolean_2_3_findcontext_greenBF(jpt);
+				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[1];
 
 				Object[] result4_bindingAndBlack = PrimitiveTypeBooleanImpl
-						.pattern_PrimitiveTypeBoolean_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								jm2up, jm, up, jpt);
+						.pattern_PrimitiveTypeBoolean_2_4_solveCSP_bindingAndBlackFBBB(this, isApplicableMatch, jpt);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm2up] = " + jm2up + ", "
-							+ "[jm] = " + jm + ", " + "[up] = " + up + ", " + "[jpt] = " + jpt + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jpt] = " + jpt + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -274,8 +249,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		match.registerObject("jm", jm);
+	public void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
 		match.registerObject("jpt", jpt);
 
 	}
@@ -285,7 +259,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -314,8 +288,8 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm,
-			org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -340,9 +314,6 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		eq.solve(var_jpt_name, var_umpt_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jm2up", jm2up);
-		isApplicableMatch.registerObject("jm", jm);
-		isApplicableMatch.registerObject("up", up);
 		isApplicableMatch.registerObject("jpt", jpt);
 		return csp;
 	}
@@ -361,13 +332,9 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject jm2up, EObject jm, EObject umpt, EObject up,
-			EObject jpt2upt2, EObject jpt) {
-		ruleresult.registerObject("jm2up", jm2up);
-		ruleresult.registerObject("jm", jm);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2a, EObject umpt, EObject jpt) {
+		ruleresult.registerObject("a2a", a2a);
 		ruleresult.registerObject("umpt", umpt);
-		ruleresult.registerObject("up", up);
-		ruleresult.registerObject("jpt2upt2", jpt2upt2);
 		ruleresult.registerObject("jpt", jpt);
 
 	}
@@ -387,46 +354,43 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
+	public boolean isAppropriate_BWD(Match match, PrimitiveType umpt) {
 
 		Object[] result1_black = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_10_1_initialbindings_blackBBBB(this, match, umpt, up);
+				.pattern_PrimitiveTypeBoolean_10_1_initialbindings_blackBBB(this, match, umpt);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[umpt] = " + umpt + ", " + "[up] = " + up + ".");
+					+ "[match] = " + match + ", " + "[umpt] = " + umpt + ".");
 		}
 
 		Object[] result2_bindingAndBlack = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, umpt, up);
+				.pattern_PrimitiveTypeBoolean_10_2_SolveCSP_bindingAndBlackFBBB(this, match, umpt);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[umpt] = " + umpt + ", " + "[up] = " + up + ".");
+					+ "[match] = " + match + ", " + "[umpt] = " + umpt + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = PrimitiveTypeBooleanImpl
-					.pattern_PrimitiveTypeBoolean_10_4_collectelementstobetranslated_blackBBB(match, umpt, up);
+					.pattern_PrimitiveTypeBoolean_10_4_collectelementstobetranslated_blackBB(match, umpt);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[umpt] = " + umpt + ", " + "[up] = " + up + ".");
+						+ "[umpt] = " + umpt + ".");
 			}
-			PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_10_4_collectelementstobetranslated_greenBBBF(match,
-					umpt, up);
-			//nothing EMoflonEdge up__umpt____packagedElement = (EMoflonEdge) result4_green[3];
+			PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_10_4_collectelementstobetranslated_greenBB(match,
+					umpt);
 
 			Object[] result5_black = PrimitiveTypeBooleanImpl
-					.pattern_PrimitiveTypeBoolean_10_5_collectcontextelements_blackBBB(match, umpt, up);
+					.pattern_PrimitiveTypeBoolean_10_5_collectcontextelements_blackBB(match, umpt);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[umpt] = " + umpt + ", " + "[up] = " + up + ".");
+						+ "[umpt] = " + umpt + ".");
 			}
-			PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_10_5_collectcontextelements_greenBB(match, up);
-
 			// 
-			PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_10_6_registerobjectstomatch_expressionBBBB(this,
-					match, umpt, up);
+			PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_10_6_registerobjectstomatch_expressionBBB(this, match,
+					umpt);
 			return PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_10_7_expressionF();
 		} else {
 			return PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_10_8_expressionF();
@@ -442,51 +406,43 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	public PerformRuleResult perform_BWD(IsApplicableMatch isApplicableMatch) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_11_1_performtransformation_bindingAndBlackFFFFFBB(this,
-						isApplicableMatch);
+				.pattern_PrimitiveTypeBoolean_11_1_performtransformation_bindingAndBlackFFBB(this, isApplicableMatch);
 		if (result1_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) result1_bindingAndBlack[0];
-		Model jm = (Model) result1_bindingAndBlack[1];
-		PrimitiveType umpt = (PrimitiveType) result1_bindingAndBlack[2];
-		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[3];
-		CSP csp = (CSP) result1_bindingAndBlack[4];
+		PrimitiveType umpt = (PrimitiveType) result1_bindingAndBlack[0];
+		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_11_1_performtransformation_greenBBFFB(jm, umpt, csp);
-		NamedElement2NamedElement jpt2upt2 = (NamedElement2NamedElement) result1_green[2];
-		org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result1_green[3];
+				.pattern_PrimitiveTypeBoolean_11_1_performtransformation_greenFBFB(umpt, csp);
+		ASTNode2Element a2a = (ASTNode2Element) result1_green[0];
+		org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result1_green[2];
 
 		Object[] result2_black = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_11_2_collecttranslatedelements_blackBBB(umpt, jpt2upt2, jpt);
+				.pattern_PrimitiveTypeBoolean_11_2_collecttranslatedelements_blackBBB(a2a, umpt, jpt);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[umpt] = " + umpt + ", "
-					+ "[jpt2upt2] = " + jpt2upt2 + ", " + "[jpt] = " + jpt + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[a2a] = " + a2a + ", "
+					+ "[umpt] = " + umpt + ", " + "[jpt] = " + jpt + ".");
 		}
 		Object[] result2_green = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_11_2_collecttranslatedelements_greenFBBB(umpt, jpt2upt2, jpt);
+				.pattern_PrimitiveTypeBoolean_11_2_collecttranslatedelements_greenFBBB(a2a, umpt, jpt);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jm2up, jm, umpt, up,
-						jpt2upt2, jpt);
+				.pattern_PrimitiveTypeBoolean_11_3_bookkeepingforedges_blackBBBB(ruleresult, a2a, umpt, jpt);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[jm2up] = " + jm2up + ", " + "[jm] = " + jm + ", " + "[umpt] = " + umpt + ", " + "[up] = "
-					+ up + ", " + "[jpt2upt2] = " + jpt2upt2 + ", " + "[jpt] = " + jpt + ".");
+					+ ", " + "[a2a] = " + a2a + ", " + "[umpt] = " + umpt + ", " + "[jpt] = " + jpt + ".");
 		}
-		PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, jm,
-				umpt, up, jpt2upt2, jpt);
-		//nothing EMoflonEdge up__umpt____packagedElement = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge jm__jpt____orphanTypes = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge jpt2upt2__jpt____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge jpt2upt2__umpt____target = (EMoflonEdge) result3_green[9];
+		PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, a2a,
+				umpt, jpt);
+		//nothing EMoflonEdge a2a__jpt____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge a2a__umpt____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-				jm2up, jm, umpt, up, jpt2upt2, jpt);
+		PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_11_5_registerobjects_expressionBBBBB(this, ruleresult,
+				a2a, umpt, jpt);
 		return PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_11_6_expressionFB(ruleresult);
 	}
 
@@ -510,34 +466,26 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 
 		// ForEach 
 		Object[] result2_binding = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_12_2_corematch_bindingFFB(match);
+				.pattern_PrimitiveTypeBoolean_12_2_corematch_bindingFB(match);
 		if (result2_binding == null) {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
 		PrimitiveType umpt = (PrimitiveType) result2_binding[0];
-		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_binding[1];
-		for (Object[] result2_black : PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_12_2_corematch_blackFFBBB(umpt, up, match)) {
-			JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) result2_black[0];
-			Model jm = (Model) result2_black[1];
+		for (Object[] result2_black : PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_12_2_corematch_blackBB(umpt,
+				match)) {
 			// ForEach 
 			for (Object[] result3_black : PrimitiveTypeBooleanImpl
-					.pattern_PrimitiveTypeBoolean_12_3_findcontext_blackBBBB(jm2up, jm, umpt, up)) {
+					.pattern_PrimitiveTypeBoolean_12_3_findcontext_blackB(umpt)) {
 				Object[] result3_green = PrimitiveTypeBooleanImpl
-						.pattern_PrimitiveTypeBoolean_12_3_findcontext_greenBBBBFFFF(jm2up, jm, umpt, up);
-				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge up__umpt____packagedElement = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge jm2up__up____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge jm2up__jm____source = (EMoflonEdge) result3_green[7];
+						.pattern_PrimitiveTypeBoolean_12_3_findcontext_greenBF(umpt);
+				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[1];
 
 				Object[] result4_bindingAndBlack = PrimitiveTypeBooleanImpl
-						.pattern_PrimitiveTypeBoolean_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								jm2up, jm, umpt, up);
+						.pattern_PrimitiveTypeBoolean_12_4_solveCSP_bindingAndBlackFBBB(this, isApplicableMatch, umpt);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm2up] = " + jm2up + ", "
-							+ "[jm] = " + jm + ", " + "[umpt] = " + umpt + ", " + "[up] = " + up + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[umpt] = " + umpt + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -567,9 +515,8 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
+	public void registerObjectsToMatch_BWD(Match match, PrimitiveType umpt) {
 		match.registerObject("umpt", umpt);
-		match.registerObject("up", up);
 
 	}
 
@@ -578,7 +525,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, PrimitiveType umpt) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -607,8 +554,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm,
-			PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PrimitiveType umpt) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -633,10 +579,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		eq.solve(var_jpt_name, var_umpt_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jm2up", jm2up);
-		isApplicableMatch.registerObject("jm", jm);
 		isApplicableMatch.registerObject("umpt", umpt);
-		isApplicableMatch.registerObject("up", up);
 		return csp;
 	}
 
@@ -654,13 +597,9 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject jm2up, EObject jm, EObject umpt, EObject up,
-			EObject jpt2upt2, EObject jpt) {
-		ruleresult.registerObject("jm2up", jm2up);
-		ruleresult.registerObject("jm", jm);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2a, EObject umpt, EObject jpt) {
+		ruleresult.registerObject("a2a", a2a);
 		ruleresult.registerObject("umpt", umpt);
-		ruleresult.registerObject("up", up);
-		ruleresult.registerObject("jpt2upt2", jpt2upt2);
 		ruleresult.registerObject("jpt", jpt);
 
 	}
@@ -680,7 +619,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_350(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_PrimitiveType_9(PrimitiveType umpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeBooleanImpl
 				.pattern_PrimitiveTypeBoolean_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -695,17 +634,15 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 
 		// ForEach 
 		for (Object[] result2_black : PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_20_2_testcorematchandDECs_blackFFB(_edge_packagedElement)) {
-			PrimitiveType umpt = (PrimitiveType) result2_black[0];
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_black[1];
+				.pattern_PrimitiveTypeBoolean_20_2_testcorematchandDECs_blackB(umpt)) {
 			Object[] result2_green = PrimitiveTypeBooleanImpl
 					.pattern_PrimitiveTypeBoolean_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (PrimitiveTypeBooleanImpl
-					.pattern_PrimitiveTypeBoolean_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-							match, umpt, up)) {
+					.pattern_PrimitiveTypeBoolean_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBB(this,
+							match, umpt)) {
 				// 
 				if (PrimitiveTypeBooleanImpl
 						.pattern_PrimitiveTypeBoolean_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -737,7 +674,8 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_359(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_PrimitiveTypeBoolean_1(
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeBooleanImpl
 				.pattern_PrimitiveTypeBoolean_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -752,17 +690,15 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 
 		// ForEach 
 		for (Object[] result2_black : PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_21_2_testcorematchandDECs_blackFFB(_edge_orphanTypes)) {
-			Model jm = (Model) result2_black[0];
-			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result2_black[1];
+				.pattern_PrimitiveTypeBoolean_21_2_testcorematchandDECs_blackB(jpt)) {
 			Object[] result2_green = PrimitiveTypeBooleanImpl
 					.pattern_PrimitiveTypeBoolean_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (PrimitiveTypeBooleanImpl
-					.pattern_PrimitiveTypeBoolean_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-							match, jm, jpt)) {
+					.pattern_PrimitiveTypeBoolean_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBB(this,
+							match, jpt)) {
 				// 
 				if (PrimitiveTypeBooleanImpl
 						.pattern_PrimitiveTypeBoolean_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -804,18 +740,13 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("up", "name", "Common Java datatypes", ComparingOperator.EQUAL)) {
-			ruleResult.setSuccess(false);
-			return ruleResult;
-		}
+		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
+		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
+		var_jpt_name.setType("String");
 
 		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
 		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
 		var_umpt_name.setType("String");
-
-		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
-		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
-		var_jpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -856,18 +787,13 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("up", "name", "Common Java datatypes", ComparingOperator.EQUAL)) {
-			ruleResult.setSuccess(false);
-			return ruleResult;
-		}
+		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
+		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
+		var_jpt_name.setType("String");
 
 		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
 		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
 		var_umpt_name.setType("String");
-
-		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
-		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
-		var_jpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -908,45 +834,41 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[0];
 
 		Object[] result2_bindingAndBlack = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(sourceMatch, targetMatch);
+				.pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_bindingAndBlackFFBB(sourceMatch, targetMatch);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Model jm = (Model) result2_bindingAndBlack[0];
-		PrimitiveType umpt = (PrimitiveType) result2_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[2];
-		org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result2_bindingAndBlack[3];
+		PrimitiveType umpt = (PrimitiveType) result2_bindingAndBlack[0];
+		org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result2_bindingAndBlack[1];
 
 		Object[] result3_bindingAndBlack = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, jm, umpt, up, jpt,
-						sourceMatch, targetMatch);
+				.pattern_PrimitiveTypeBoolean_24_3_solvecsp_bindingAndBlackFBBBBB(this, umpt, jpt, sourceMatch,
+						targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[jm] = " + jm + ", " + "[umpt] = " + umpt + ", " + "[up] = " + up + ", " + "[jpt] = " + jpt
-					+ ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[umpt] = " + umpt + ", " + "[jpt] = " + jpt + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : PrimitiveTypeBooleanImpl
-					.pattern_PrimitiveTypeBoolean_24_5_matchcorrcontext_blackFBBBB(jm, up, sourceMatch, targetMatch)) {
-				JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) result5_black[0];
+					.pattern_PrimitiveTypeBoolean_24_5_matchcorrcontext_blackBB(sourceMatch, targetMatch)) {
 				Object[] result5_green = PrimitiveTypeBooleanImpl
-						.pattern_PrimitiveTypeBoolean_24_5_matchcorrcontext_greenBBBF(jm2up, sourceMatch, targetMatch);
-				CCMatch ccMatch = (CCMatch) result5_green[3];
+						.pattern_PrimitiveTypeBoolean_24_5_matchcorrcontext_greenBBF(sourceMatch, targetMatch);
+				CCMatch ccMatch = (CCMatch) result5_green[2];
 
 				Object[] result6_black = PrimitiveTypeBooleanImpl
-						.pattern_PrimitiveTypeBoolean_24_6_createcorrespondence_blackBBBBB(jm, umpt, up, jpt, ccMatch);
+						.pattern_PrimitiveTypeBoolean_24_6_createcorrespondence_blackBBB(umpt, jpt, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jm] = " + jm + ", "
-							+ "[umpt] = " + umpt + ", " + "[up] = " + up + ", " + "[jpt] = " + jpt + ", "
-							+ "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[umpt] = " + umpt + ", "
+							+ "[jpt] = " + jpt + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_24_6_createcorrespondence_greenBFBB(umpt, jpt,
+				PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_24_6_createcorrespondence_greenFBBB(umpt, jpt,
 						ccMatch);
-				//nothing NamedElement2NamedElement jpt2upt2 = (NamedElement2NamedElement) result6_green[1];
+				//nothing ASTNode2Element a2a = (ASTNode2Element) result6_green[0];
 
 				Object[] result7_black = PrimitiveTypeBooleanImpl
 						.pattern_PrimitiveTypeBoolean_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -968,8 +890,8 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Model jm, PrimitiveType umpt, org.eclipse.uml2.uml.Package up,
-			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(PrimitiveType umpt, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt,
+			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1009,9 +931,8 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {// 
-		Object[] result1_black = PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_27_1_matchtggpattern_blackBB(jm,
-				jpt);
+	public boolean checkDEC_FWD(org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {// 
+		Object[] result1_black = PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_27_1_matchtggpattern_blackB(jpt);
 		if (result1_black != null) {
 			return PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_27_2_expressionF();
 		} else {
@@ -1025,9 +946,9 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {// 
+	public boolean checkDEC_BWD(PrimitiveType umpt) {// 
 		Object[] result1_black = PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_28_1_matchtggpattern_blackBB(umpt, up);
+				.pattern_PrimitiveTypeBoolean_28_1_matchtggpattern_blackB(umpt);
 		if (result1_black != null) {
 			return PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_28_2_expressionF();
 		} else {
@@ -1041,8 +962,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			JavaModel2UMLPackage jm2upParameter) {
+	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer) {
 
 		Object[] result1_black = PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_29_1_createresult_blackB(this);
 		if (result1_black == null) {
@@ -1052,49 +972,38 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result1_green[0];
 		ModelgeneratorRuleResult ruleResult = (ModelgeneratorRuleResult) result1_green[1];
 
-		// ForEach 
-		for (Object[] result2_black : PrimitiveTypeBooleanImpl
-				.pattern_PrimitiveTypeBoolean_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList jm2upList = (RuleEntryList) result2_black[0];
-			JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) result2_black[1];
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_black[2];
-			Model jm = (Model) result2_black[3];
+		// 
+		Object[] result2_black = PrimitiveTypeBooleanImpl
+				.pattern_PrimitiveTypeBoolean_29_2_isapplicablecore_blackB(this);
+		if (result2_black != null) {
 
 			Object[] result3_bindingAndBlack = PrimitiveTypeBooleanImpl
-					.pattern_PrimitiveTypeBoolean_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, jm2up,
-							jm, up, ruleResult);
+					.pattern_PrimitiveTypeBoolean_29_3_solveCSP_bindingAndBlackFBBB(this, isApplicableMatch,
+							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm2up] = " + jm2up + ", " + "[jm] = "
-						+ jm + ", " + "[up] = " + up + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = PrimitiveTypeBooleanImpl
-						.pattern_PrimitiveTypeBoolean_29_5_checknacs_blackBBB(jm2up, jm, up);
-				if (result5_black != null) {
 
-					Object[] result6_black = PrimitiveTypeBooleanImpl
-							.pattern_PrimitiveTypeBoolean_29_6_perform_blackBBBB(jm2up, jm, up, ruleResult);
-					if (result6_black == null) {
-						throw new RuntimeException(
-								"Pattern matching failed." + " Variables: " + "[jm2up] = " + jm2up + ", " + "[jm] = "
-										+ jm + ", " + "[up] = " + up + ", " + "[ruleResult] = " + ruleResult + ".");
-					}
-					PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_29_6_perform_greenBFBFFBB(jm, up, ruleResult,
-							csp);
-					//nothing PrimitiveType umpt = (PrimitiveType) result6_green[1];
-					//nothing NamedElement2NamedElement jpt2upt2 = (NamedElement2NamedElement) result6_green[3];
-					//nothing org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result6_green[4];
-
-				} else {
+				Object[] result6_black = PrimitiveTypeBooleanImpl
+						.pattern_PrimitiveTypeBoolean_29_6_perform_blackB(ruleResult);
+				if (result6_black == null) {
+					throw new RuntimeException(
+							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
+				PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_29_6_perform_greenFFFBB(ruleResult, csp);
+				//nothing ASTNode2Element a2a = (ASTNode2Element) result6_green[0];
+				//nothing PrimitiveType umpt = (PrimitiveType) result6_green[1];
+				//nothing org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result6_green[2];
 
 			} else {
 			}
 
+		} else {
 		}
 		return PrimitiveTypeBooleanImpl.pattern_PrimitiveTypeBoolean_29_7_expressionFB(ruleResult);
 	}
@@ -1104,8 +1013,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm,
-			org.eclipse.uml2.uml.Package up, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1129,9 +1037,6 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		eq.solve(var_jpt_name, var_umpt_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jm2up", jm2up);
-		isApplicableMatch.registerObject("jm", jm);
-		isApplicableMatch.registerObject("up", up);
 		return csp;
 	}
 
@@ -1152,110 +1057,99 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_FWD__MATCH_MODEL_PRIMITIVETYPEBOOLEAN:
-			return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(2));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_FWD__MATCH_PRIMITIVETYPEBOOLEAN:
+			return isAppropriate_FWD((Match) arguments.get(0),
+					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(1));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_PRIMITIVETYPEBOOLEAN:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(2));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PRIMITIVETYPEBOOLEAN:
+			registerObjectsToMatch_FWD((Match) arguments.get(0),
+					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(1));
 			return null;
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_PRIMITIVETYPEBOOLEAN:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(2));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PRIMITIVETYPEBOOLEAN:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(1));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_JAVAMODEL2UMLPACKAGE_MODEL_PACKAGE_PRIMITIVETYPEBOOLEAN:
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PRIMITIVETYPEBOOLEAN:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(JavaModel2UMLPackage) arguments.get(1), (Model) arguments.get(2),
-					(org.eclipse.uml2.uml.Package) arguments.get(3),
-					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(4));
+					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(1));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
+					(EObject) arguments.get(2), (EObject) arguments.get(3));
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_BWD__MATCH_PRIMITIVETYPE_PACKAGE:
-			return isAppropriate_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_BWD__MATCH_PRIMITIVETYPE:
+			return isAppropriate_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PRIMITIVETYPE_PACKAGE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PRIMITIVETYPE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1));
 			return null;
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PRIMITIVETYPE_PACKAGE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PRIMITIVETYPE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAMODEL2UMLPACKAGE_MODEL_PRIMITIVETYPE_PACKAGE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(JavaModel2UMLPackage) arguments.get(1), (Model) arguments.get(2), (PrimitiveType) arguments.get(3),
-					(org.eclipse.uml2.uml.Package) arguments.get(4));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PRIMITIVETYPE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (PrimitiveType) arguments.get(1));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
+					(EObject) arguments.get(2), (EObject) arguments.get(3));
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_350__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_350((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_359__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_359((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_9__PRIMITIVETYPE:
+			return isAppropriate_BWD_PrimitiveType_9((PrimitiveType) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_BOOLEAN_1__PRIMITIVETYPEBOOLEAN:
+			return isAppropriate_FWD_PrimitiveTypeBoolean_1(
+					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_PRIMITIVETYPE_PACKAGE_PRIMITIVETYPEBOOLEAN_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Model) arguments.get(0), (PrimitiveType) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2),
-					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(3), (Match) arguments.get(4),
-					(Match) arguments.get(5));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_SOLVE_CSP_CC__PRIMITIVETYPE_PRIMITIVETYPEBOOLEAN_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((PrimitiveType) arguments.get(0),
+					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(1), (Match) arguments.get(2),
+					(Match) arguments.get(3));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___CHECK_DEC_FWD__MODEL_PRIMITIVETYPEBOOLEAN:
-			return checkDEC_FWD((Model) arguments.get(0),
-					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___CHECK_DEC_BWD__PRIMITIVETYPE_PACKAGE:
-			return checkDEC_BWD((PrimitiveType) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___GENERATE_MODEL__RULEENTRYCONTAINER_JAVAMODEL2UMLPACKAGE:
-			return generateModel((RuleEntryContainer) arguments.get(0), (JavaModel2UMLPackage) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAMODEL2UMLPACKAGE_MODEL_PACKAGE_MODELGENERATORRULERESULT:
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___CHECK_DEC_FWD__PRIMITIVETYPEBOOLEAN:
+			return checkDEC_FWD((org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___CHECK_DEC_BWD__PRIMITIVETYPE:
+			return checkDEC_BWD((PrimitiveType) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___GENERATE_MODEL__RULEENTRYCONTAINER:
+			return generateModel((RuleEntryContainer) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(JavaModel2UMLPackage) arguments.get(1), (Model) arguments.get(2),
-					(org.eclipse.uml2.uml.Package) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+					(ModelgeneratorRuleResult) arguments.get(1));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_0_1_initialbindings_blackBBBB(PrimitiveTypeBoolean _this,
-			Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		return new Object[] { _this, match, jm, jpt };
+	public static final Object[] pattern_PrimitiveTypeBoolean_0_1_initialbindings_blackBBB(PrimitiveTypeBoolean _this,
+			Match match, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		return new Object[] { _this, match, jpt };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_0_2_SolveCSP_bindingFBBBB(PrimitiveTypeBoolean _this,
-			Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, jm, jpt);
+	public static final Object[] pattern_PrimitiveTypeBoolean_0_2_SolveCSP_bindingFBBB(PrimitiveTypeBoolean _this,
+			Match match, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, jpt);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, jm, jpt };
+			return new Object[] { csp, _this, match, jpt };
 		}
 		return null;
 	}
@@ -1264,10 +1158,10 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_0_2_SolveCSP_bindingAndBlackFBBBB(
-			PrimitiveTypeBoolean _this, Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		Object[] result_pattern_PrimitiveTypeBoolean_0_2_SolveCSP_binding = pattern_PrimitiveTypeBoolean_0_2_SolveCSP_bindingFBBBB(
-				_this, match, jm, jpt);
+	public static final Object[] pattern_PrimitiveTypeBoolean_0_2_SolveCSP_bindingAndBlackFBBB(
+			PrimitiveTypeBoolean _this, Match match, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		Object[] result_pattern_PrimitiveTypeBoolean_0_2_SolveCSP_binding = pattern_PrimitiveTypeBoolean_0_2_SolveCSP_bindingFBBB(
+				_this, match, jpt);
 		if (result_pattern_PrimitiveTypeBoolean_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_PrimitiveTypeBoolean_0_2_SolveCSP_binding[0];
 
@@ -1275,7 +1169,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 					csp);
 			if (result_pattern_PrimitiveTypeBoolean_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, jm, jpt };
+				return new Object[] { csp, _this, match, jpt };
 			}
 		}
 		return null;
@@ -1288,37 +1182,25 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_0_4_collectelementstobetranslated_blackBBB(Match match,
-			Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		return new Object[] { match, jm, jpt };
-	}
-
-	public static final Object[] pattern_PrimitiveTypeBoolean_0_4_collectelementstobetranslated_greenBBBF(Match match,
-			Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		EMoflonEdge jm__jpt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(jpt);
-		String jm__jpt____orphanTypes_name_prime = "orphanTypes";
-		jm__jpt____orphanTypes.setSrc(jm);
-		jm__jpt____orphanTypes.setTrg(jpt);
-		match.getToBeTranslatedEdges().add(jm__jpt____orphanTypes);
-		jm__jpt____orphanTypes.setName(jm__jpt____orphanTypes_name_prime);
-		return new Object[] { match, jm, jpt, jm__jpt____orphanTypes };
-	}
-
-	public static final Object[] pattern_PrimitiveTypeBoolean_0_5_collectcontextelements_blackBBB(Match match, Model jm,
+	public static final Object[] pattern_PrimitiveTypeBoolean_0_4_collectelementstobetranslated_blackBB(Match match,
 			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		return new Object[] { match, jm, jpt };
+		return new Object[] { match, jpt };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_0_5_collectcontextelements_greenBB(Match match,
-			Model jm) {
-		match.getContextNodes().add(jm);
-		return new Object[] { match, jm };
+	public static final Object[] pattern_PrimitiveTypeBoolean_0_4_collectelementstobetranslated_greenBB(Match match,
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		match.getToBeTranslatedNodes().add(jpt);
+		return new Object[] { match, jpt };
 	}
 
-	public static final void pattern_PrimitiveTypeBoolean_0_6_registerobjectstomatch_expressionBBBB(
-			PrimitiveTypeBoolean _this, Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		_this.registerObjectsToMatch_FWD(match, jm, jpt);
+	public static final Object[] pattern_PrimitiveTypeBoolean_0_5_collectcontextelements_blackBB(Match match,
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		return new Object[] { match, jpt };
+	}
+
+	public static final void pattern_PrimitiveTypeBoolean_0_6_registerobjectstomatch_expressionBBB(
+			PrimitiveTypeBoolean _this, Match match, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		_this.registerObjectsToMatch_FWD(match, jpt);
 
 	}
 
@@ -1332,167 +1214,107 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_1_1_performtransformation_bindingFFFFB(
+	public static final Object[] pattern_PrimitiveTypeBoolean_1_1_performtransformation_bindingFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jm2up");
-		EObject _localVariable_1 = isApplicableMatch.getObject("jm");
-		EObject _localVariable_2 = isApplicableMatch.getObject("up");
-		EObject _localVariable_3 = isApplicableMatch.getObject("jpt");
-		EObject tmpJm2up = _localVariable_0;
-		EObject tmpJm = _localVariable_1;
-		EObject tmpUp = _localVariable_2;
-		EObject tmpJpt = _localVariable_3;
-		if (tmpJm2up instanceof JavaModel2UMLPackage) {
-			JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) tmpJm2up;
-			if (tmpJm instanceof Model) {
-				Model jm = (Model) tmpJm;
-				if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
-					org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
-					if (tmpJpt instanceof org.eclipse.modisco.java.PrimitiveTypeBoolean) {
-						org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) tmpJpt;
-						return new Object[] { jm2up, jm, up, jpt, isApplicableMatch };
-					}
-				}
-			}
+		EObject _localVariable_0 = isApplicableMatch.getObject("jpt");
+		EObject tmpJpt = _localVariable_0;
+		if (tmpJpt instanceof org.eclipse.modisco.java.PrimitiveTypeBoolean) {
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) tmpJpt;
+			return new Object[] { jpt, isApplicableMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_1_1_performtransformation_blackBBBBFBB(
-			JavaModel2UMLPackage jm2up, Model jm, org.eclipse.uml2.uml.Package up,
+	public static final Object[] pattern_PrimitiveTypeBoolean_1_1_performtransformation_blackBFBB(
 			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, PrimitiveTypeBoolean _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jm2up, jm, up, jpt, csp, _this, isApplicableMatch };
+				return new Object[] { jpt, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_1_1_performtransformation_bindingAndBlackFFFFFBB(
+	public static final Object[] pattern_PrimitiveTypeBoolean_1_1_performtransformation_bindingAndBlackFFBB(
 			PrimitiveTypeBoolean _this, IsApplicableMatch isApplicableMatch) {
-		Object[] result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_binding = pattern_PrimitiveTypeBoolean_1_1_performtransformation_bindingFFFFB(
+		Object[] result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_binding = pattern_PrimitiveTypeBoolean_1_1_performtransformation_bindingFB(
 				isApplicableMatch);
 		if (result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_binding != null) {
-			JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_binding[0];
-			Model jm = (Model) result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_binding[1];
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_binding[2];
-			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_binding[3];
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_binding[0];
 
-			Object[] result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_black = pattern_PrimitiveTypeBoolean_1_1_performtransformation_blackBBBBFBB(
-					jm2up, jm, up, jpt, _this, isApplicableMatch);
+			Object[] result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_black = pattern_PrimitiveTypeBoolean_1_1_performtransformation_blackBFBB(
+					jpt, _this, isApplicableMatch);
 			if (result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_black != null) {
-				CSP csp = (CSP) result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_black[4];
+				CSP csp = (CSP) result_pattern_PrimitiveTypeBoolean_1_1_performtransformation_black[1];
 
-				return new Object[] { jm2up, jm, up, jpt, csp, _this, isApplicableMatch };
+				return new Object[] { jpt, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_1_1_performtransformation_greenFBFBB(
-			org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, CSP csp) {
+	public static final Object[] pattern_PrimitiveTypeBoolean_1_1_performtransformation_greenFFBB(
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, CSP csp) {
+		ASTNode2Element a2a = UmlFactory.eINSTANCE.createASTNode2Element();
 		PrimitiveType umpt = UMLFactory.eINSTANCE.createPrimitiveType();
-		NamedElement2NamedElement jpt2upt2 = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		Object _localVariable_0 = csp.getValue("umpt", "name");
-		up.getPackagedElements().add(umpt);
-		jpt2upt2.setSource(jpt);
-		jpt2upt2.setTarget(umpt);
+		a2a.setSource(jpt);
+		a2a.setTarget(umpt);
 		String umpt_name_prime = (String) _localVariable_0;
 		umpt.setName(umpt_name_prime);
-		return new Object[] { umpt, up, jpt2upt2, jpt, csp };
+		return new Object[] { a2a, umpt, jpt, csp };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_1_2_collecttranslatedelements_blackBBB(PrimitiveType umpt,
-			NamedElement2NamedElement jpt2upt2, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		return new Object[] { umpt, jpt2upt2, jpt };
+	public static final Object[] pattern_PrimitiveTypeBoolean_1_2_collecttranslatedelements_blackBBB(
+			ASTNode2Element a2a, PrimitiveType umpt, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		return new Object[] { a2a, umpt, jpt };
 	}
 
 	public static final Object[] pattern_PrimitiveTypeBoolean_1_2_collecttranslatedelements_greenFBBB(
-			PrimitiveType umpt, NamedElement2NamedElement jpt2upt2, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+			ASTNode2Element a2a, PrimitiveType umpt, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(a2a);
 		ruleresult.getCreatedElements().add(umpt);
-		ruleresult.getCreatedLinkElements().add(jpt2upt2);
 		ruleresult.getTranslatedElements().add(jpt);
-		return new Object[] { ruleresult, umpt, jpt2upt2, jpt };
+		return new Object[] { ruleresult, a2a, umpt, jpt };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject jm2up, EObject jm, EObject umpt, EObject up, EObject jpt2upt2,
-			EObject jpt) {
-		if (!jm2up.equals(umpt)) {
-			if (!jm2up.equals(up)) {
-				if (!jm2up.equals(jpt2upt2)) {
-					if (!jm2up.equals(jpt)) {
-						if (!jm.equals(jm2up)) {
-							if (!jm.equals(umpt)) {
-								if (!jm.equals(up)) {
-									if (!jm.equals(jpt2upt2)) {
-										if (!jm.equals(jpt)) {
-											if (!umpt.equals(up)) {
-												if (!jpt2upt2.equals(umpt)) {
-													if (!jpt2upt2.equals(up)) {
-														if (!jpt.equals(umpt)) {
-															if (!jpt.equals(up)) {
-																if (!jpt.equals(jpt2upt2)) {
-																	return new Object[] { ruleresult, jm2up, jm, umpt,
-																			up, jpt2upt2, jpt };
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
+	public static final Object[] pattern_PrimitiveTypeBoolean_1_3_bookkeepingforedges_blackBBBB(
+			PerformRuleResult ruleresult, EObject a2a, EObject umpt, EObject jpt) {
+		if (!a2a.equals(umpt)) {
+			if (!a2a.equals(jpt)) {
+				if (!jpt.equals(umpt)) {
+					return new Object[] { ruleresult, a2a, umpt, jpt };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_1_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject jm, EObject umpt, EObject up, EObject jpt2upt2, EObject jpt) {
-		EMoflonEdge up__umpt____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm__jpt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jpt2upt2__jpt____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jpt2upt2__umpt____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+	public static final Object[] pattern_PrimitiveTypeBoolean_1_3_bookkeepingforedges_greenBBBBFF(
+			PerformRuleResult ruleresult, EObject a2a, EObject umpt, EObject jpt) {
+		EMoflonEdge a2a__jpt____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2a__umpt____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "PrimitiveTypeBoolean";
-		String up__umpt____packagedElement_name_prime = "packagedElement";
-		String jm__jpt____orphanTypes_name_prime = "orphanTypes";
-		String jpt2upt2__jpt____source_name_prime = "source";
-		String jpt2upt2__umpt____target_name_prime = "target";
-		up__umpt____packagedElement.setSrc(up);
-		up__umpt____packagedElement.setTrg(umpt);
-		ruleresult.getCreatedEdges().add(up__umpt____packagedElement);
-		jm__jpt____orphanTypes.setSrc(jm);
-		jm__jpt____orphanTypes.setTrg(jpt);
-		ruleresult.getTranslatedEdges().add(jm__jpt____orphanTypes);
-		jpt2upt2__jpt____source.setSrc(jpt2upt2);
-		jpt2upt2__jpt____source.setTrg(jpt);
-		ruleresult.getCreatedEdges().add(jpt2upt2__jpt____source);
-		jpt2upt2__umpt____target.setSrc(jpt2upt2);
-		jpt2upt2__umpt____target.setTrg(umpt);
-		ruleresult.getCreatedEdges().add(jpt2upt2__umpt____target);
+		String a2a__jpt____source_name_prime = "source";
+		String a2a__umpt____target_name_prime = "target";
+		a2a__jpt____source.setSrc(a2a);
+		a2a__jpt____source.setTrg(jpt);
+		ruleresult.getCreatedEdges().add(a2a__jpt____source);
+		a2a__umpt____target.setSrc(a2a);
+		a2a__umpt____target.setTrg(umpt);
+		ruleresult.getCreatedEdges().add(a2a__umpt____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		up__umpt____packagedElement.setName(up__umpt____packagedElement_name_prime);
-		jm__jpt____orphanTypes.setName(jm__jpt____orphanTypes_name_prime);
-		jpt2upt2__jpt____source.setName(jpt2upt2__jpt____source_name_prime);
-		jpt2upt2__umpt____target.setName(jpt2upt2__umpt____target_name_prime);
-		return new Object[] { ruleresult, jm, umpt, up, jpt2upt2, jpt, up__umpt____packagedElement,
-				jm__jpt____orphanTypes, jpt2upt2__jpt____source, jpt2upt2__umpt____target };
+		a2a__jpt____source.setName(a2a__jpt____source_name_prime);
+		a2a__umpt____target.setName(a2a__umpt____target_name_prime);
+		return new Object[] { ruleresult, a2a, umpt, jpt, a2a__jpt____source, a2a__umpt____target };
 	}
 
-	public static final void pattern_PrimitiveTypeBoolean_1_5_registerobjects_expressionBBBBBBBB(
-			PrimitiveTypeBoolean _this, PerformRuleResult ruleresult, EObject jm2up, EObject jm, EObject umpt,
-			EObject up, EObject jpt2upt2, EObject jpt) {
-		_this.registerObjects_FWD(ruleresult, jm2up, jm, umpt, up, jpt2upt2, jpt);
+	public static final void pattern_PrimitiveTypeBoolean_1_5_registerobjects_expressionBBBBB(
+			PrimitiveTypeBoolean _this, PerformRuleResult ruleresult, EObject a2a, EObject umpt, EObject jpt) {
+		_this.registerObjects_FWD(ruleresult, a2a, umpt, jpt);
 
 	}
 
@@ -1552,93 +1374,43 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { performOperation, ruleresult };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("jm");
-		EObject _localVariable_1 = match.getObject("jpt");
-		EObject tmpJm = _localVariable_0;
-		EObject tmpJpt = _localVariable_1;
-		if (tmpJm instanceof Model) {
-			Model jm = (Model) tmpJm;
-			if (tmpJpt instanceof org.eclipse.modisco.java.PrimitiveTypeBoolean) {
-				org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) tmpJpt;
-				return new Object[] { jm, jpt, match };
-			}
+	public static final Object[] pattern_PrimitiveTypeBoolean_2_2_corematch_bindingFB(Match match) {
+		EObject _localVariable_0 = match.getObject("jpt");
+		EObject tmpJpt = _localVariable_0;
+		if (tmpJpt instanceof org.eclipse.modisco.java.PrimitiveTypeBoolean) {
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) tmpJpt;
+			return new Object[] { jpt, match };
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_2_2_corematch_blackFBFBB(Model jm,
+	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_2_2_corematch_blackBB(
 			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (JavaModel2UMLPackage jm2up : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jm,
-				JavaModel2UMLPackage.class, "source")) {
-			org.eclipse.uml2.uml.Package up = jm2up.getTarget();
-			if (up != null) {
-				String up_name = up.getName();
-				if (up_name.equals("Common Java datatypes")) {
-					_result.add(new Object[] { jm2up, jm, up, jpt, match });
-				}
-
-			}
-
-		}
+		_result.add(new Object[] { jpt, match });
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_2_3_findcontext_blackBBBB(
-			JavaModel2UMLPackage jm2up, Model jm, org.eclipse.uml2.uml.Package up,
+	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_2_3_findcontext_blackB(
 			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (jm.getOrphanTypes().contains(jpt)) {
-			if (up.equals(jm2up.getTarget())) {
-				if (jm.equals(jm2up.getSource())) {
-					String up_name = up.getName();
-					if (up_name.equals("Common Java datatypes")) {
-						_result.add(new Object[] { jm2up, jm, up, jpt });
-					}
-
-				}
-			}
-		}
+		_result.add(new Object[] { jpt });
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_2_3_findcontext_greenBBBBFFFF(JavaModel2UMLPackage jm2up,
-			Model jm, org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+	public static final Object[] pattern_PrimitiveTypeBoolean_2_3_findcontext_greenBF(
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge jm__jpt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2up__up____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2up__jm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String jm__jpt____orphanTypes_name_prime = "orphanTypes";
-		String jm2up__up____target_name_prime = "target";
-		String jm2up__jm____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(jm2up);
-		isApplicableMatch.getAllContextElements().add(jm);
-		isApplicableMatch.getAllContextElements().add(up);
 		isApplicableMatch.getAllContextElements().add(jpt);
-		jm__jpt____orphanTypes.setSrc(jm);
-		jm__jpt____orphanTypes.setTrg(jpt);
-		isApplicableMatch.getAllContextElements().add(jm__jpt____orphanTypes);
-		jm2up__up____target.setSrc(jm2up);
-		jm2up__up____target.setTrg(up);
-		isApplicableMatch.getAllContextElements().add(jm2up__up____target);
-		jm2up__jm____source.setSrc(jm2up);
-		jm2up__jm____source.setTrg(jm);
-		isApplicableMatch.getAllContextElements().add(jm2up__jm____source);
-		jm__jpt____orphanTypes.setName(jm__jpt____orphanTypes_name_prime);
-		jm2up__up____target.setName(jm2up__up____target_name_prime);
-		jm2up__jm____source.setName(jm2up__jm____source_name_prime);
-		return new Object[] { jm2up, jm, up, jpt, isApplicableMatch, jm__jpt____orphanTypes, jm2up__up____target,
-				jm2up__jm____source };
+		return new Object[] { jpt, isApplicableMatch };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_2_4_solveCSP_bindingFBBBBBB(PrimitiveTypeBoolean _this,
-			IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm, org.eclipse.uml2.uml.Package up,
-			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jm2up, jm, up, jpt);
+	public static final Object[] pattern_PrimitiveTypeBoolean_2_4_solveCSP_bindingFBBB(PrimitiveTypeBoolean _this,
+			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jpt);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jm2up, jm, up, jpt };
+			return new Object[] { csp, _this, isApplicableMatch, jpt };
 		}
 		return null;
 	}
@@ -1647,11 +1419,11 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_2_4_solveCSP_bindingAndBlackFBBBBBB(
-			PrimitiveTypeBoolean _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm,
-			org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		Object[] result_pattern_PrimitiveTypeBoolean_2_4_solveCSP_binding = pattern_PrimitiveTypeBoolean_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jm2up, jm, up, jpt);
+	public static final Object[] pattern_PrimitiveTypeBoolean_2_4_solveCSP_bindingAndBlackFBBB(
+			PrimitiveTypeBoolean _this, IsApplicableMatch isApplicableMatch,
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		Object[] result_pattern_PrimitiveTypeBoolean_2_4_solveCSP_binding = pattern_PrimitiveTypeBoolean_2_4_solveCSP_bindingFBBB(
+				_this, isApplicableMatch, jpt);
 		if (result_pattern_PrimitiveTypeBoolean_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_PrimitiveTypeBoolean_2_4_solveCSP_binding[0];
 
@@ -1659,7 +1431,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 					csp);
 			if (result_pattern_PrimitiveTypeBoolean_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jm2up, jm, up, jpt };
+				return new Object[] { csp, _this, isApplicableMatch, jpt };
 			}
 		}
 		return null;
@@ -1693,17 +1465,17 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_10_1_initialbindings_blackBBBB(PrimitiveTypeBoolean _this,
-			Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
-		return new Object[] { _this, match, umpt, up };
+	public static final Object[] pattern_PrimitiveTypeBoolean_10_1_initialbindings_blackBBB(PrimitiveTypeBoolean _this,
+			Match match, PrimitiveType umpt) {
+		return new Object[] { _this, match, umpt };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_10_2_SolveCSP_bindingFBBBB(PrimitiveTypeBoolean _this,
-			Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, umpt, up);
+	public static final Object[] pattern_PrimitiveTypeBoolean_10_2_SolveCSP_bindingFBBB(PrimitiveTypeBoolean _this,
+			Match match, PrimitiveType umpt) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, umpt);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, umpt, up };
+			return new Object[] { csp, _this, match, umpt };
 		}
 		return null;
 	}
@@ -1712,10 +1484,10 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_10_2_SolveCSP_bindingAndBlackFBBBB(
-			PrimitiveTypeBoolean _this, Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
-		Object[] result_pattern_PrimitiveTypeBoolean_10_2_SolveCSP_binding = pattern_PrimitiveTypeBoolean_10_2_SolveCSP_bindingFBBBB(
-				_this, match, umpt, up);
+	public static final Object[] pattern_PrimitiveTypeBoolean_10_2_SolveCSP_bindingAndBlackFBBB(
+			PrimitiveTypeBoolean _this, Match match, PrimitiveType umpt) {
+		Object[] result_pattern_PrimitiveTypeBoolean_10_2_SolveCSP_binding = pattern_PrimitiveTypeBoolean_10_2_SolveCSP_bindingFBBB(
+				_this, match, umpt);
 		if (result_pattern_PrimitiveTypeBoolean_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_PrimitiveTypeBoolean_10_2_SolveCSP_binding[0];
 
@@ -1723,7 +1495,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 					csp);
 			if (result_pattern_PrimitiveTypeBoolean_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, umpt, up };
+				return new Object[] { csp, _this, match, umpt };
 			}
 		}
 		return null;
@@ -1736,37 +1508,25 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_10_4_collectelementstobetranslated_blackBBB(Match match,
-			PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
-		return new Object[] { match, umpt, up };
+	public static final Object[] pattern_PrimitiveTypeBoolean_10_4_collectelementstobetranslated_blackBB(Match match,
+			PrimitiveType umpt) {
+		return new Object[] { match, umpt };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_10_4_collectelementstobetranslated_greenBBBF(Match match,
-			PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
-		EMoflonEdge up__umpt____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+	public static final Object[] pattern_PrimitiveTypeBoolean_10_4_collectelementstobetranslated_greenBB(Match match,
+			PrimitiveType umpt) {
 		match.getToBeTranslatedNodes().add(umpt);
-		String up__umpt____packagedElement_name_prime = "packagedElement";
-		up__umpt____packagedElement.setSrc(up);
-		up__umpt____packagedElement.setTrg(umpt);
-		match.getToBeTranslatedEdges().add(up__umpt____packagedElement);
-		up__umpt____packagedElement.setName(up__umpt____packagedElement_name_prime);
-		return new Object[] { match, umpt, up, up__umpt____packagedElement };
+		return new Object[] { match, umpt };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_10_5_collectcontextelements_blackBBB(Match match,
-			PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
-		return new Object[] { match, umpt, up };
+	public static final Object[] pattern_PrimitiveTypeBoolean_10_5_collectcontextelements_blackBB(Match match,
+			PrimitiveType umpt) {
+		return new Object[] { match, umpt };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_10_5_collectcontextelements_greenBB(Match match,
-			org.eclipse.uml2.uml.Package up) {
-		match.getContextNodes().add(up);
-		return new Object[] { match, up };
-	}
-
-	public static final void pattern_PrimitiveTypeBoolean_10_6_registerobjectstomatch_expressionBBBB(
-			PrimitiveTypeBoolean _this, Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
-		_this.registerObjectsToMatch_BWD(match, umpt, up);
+	public static final void pattern_PrimitiveTypeBoolean_10_6_registerobjectstomatch_expressionBBB(
+			PrimitiveTypeBoolean _this, Match match, PrimitiveType umpt) {
+		_this.registerObjectsToMatch_BWD(match, umpt);
 
 	}
 
@@ -1780,166 +1540,106 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_11_1_performtransformation_bindingFFFFB(
+	public static final Object[] pattern_PrimitiveTypeBoolean_11_1_performtransformation_bindingFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jm2up");
-		EObject _localVariable_1 = isApplicableMatch.getObject("jm");
-		EObject _localVariable_2 = isApplicableMatch.getObject("umpt");
-		EObject _localVariable_3 = isApplicableMatch.getObject("up");
-		EObject tmpJm2up = _localVariable_0;
-		EObject tmpJm = _localVariable_1;
-		EObject tmpUmpt = _localVariable_2;
-		EObject tmpUp = _localVariable_3;
-		if (tmpJm2up instanceof JavaModel2UMLPackage) {
-			JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) tmpJm2up;
-			if (tmpJm instanceof Model) {
-				Model jm = (Model) tmpJm;
-				if (tmpUmpt instanceof PrimitiveType) {
-					PrimitiveType umpt = (PrimitiveType) tmpUmpt;
-					if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
-						org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
-						return new Object[] { jm2up, jm, umpt, up, isApplicableMatch };
-					}
-				}
-			}
+		EObject _localVariable_0 = isApplicableMatch.getObject("umpt");
+		EObject tmpUmpt = _localVariable_0;
+		if (tmpUmpt instanceof PrimitiveType) {
+			PrimitiveType umpt = (PrimitiveType) tmpUmpt;
+			return new Object[] { umpt, isApplicableMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_11_1_performtransformation_blackBBBBFBB(
-			JavaModel2UMLPackage jm2up, Model jm, PrimitiveType umpt, org.eclipse.uml2.uml.Package up,
+	public static final Object[] pattern_PrimitiveTypeBoolean_11_1_performtransformation_blackBFBB(PrimitiveType umpt,
 			PrimitiveTypeBoolean _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jm2up, jm, umpt, up, csp, _this, isApplicableMatch };
+				return new Object[] { umpt, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_11_1_performtransformation_bindingAndBlackFFFFFBB(
+	public static final Object[] pattern_PrimitiveTypeBoolean_11_1_performtransformation_bindingAndBlackFFBB(
 			PrimitiveTypeBoolean _this, IsApplicableMatch isApplicableMatch) {
-		Object[] result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_binding = pattern_PrimitiveTypeBoolean_11_1_performtransformation_bindingFFFFB(
+		Object[] result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_binding = pattern_PrimitiveTypeBoolean_11_1_performtransformation_bindingFB(
 				isApplicableMatch);
 		if (result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_binding != null) {
-			JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_binding[0];
-			Model jm = (Model) result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_binding[1];
-			PrimitiveType umpt = (PrimitiveType) result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_binding[2];
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_binding[3];
+			PrimitiveType umpt = (PrimitiveType) result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_binding[0];
 
-			Object[] result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_black = pattern_PrimitiveTypeBoolean_11_1_performtransformation_blackBBBBFBB(
-					jm2up, jm, umpt, up, _this, isApplicableMatch);
+			Object[] result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_black = pattern_PrimitiveTypeBoolean_11_1_performtransformation_blackBFBB(
+					umpt, _this, isApplicableMatch);
 			if (result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_black != null) {
-				CSP csp = (CSP) result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_black[4];
+				CSP csp = (CSP) result_pattern_PrimitiveTypeBoolean_11_1_performtransformation_black[1];
 
-				return new Object[] { jm2up, jm, umpt, up, csp, _this, isApplicableMatch };
+				return new Object[] { umpt, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_11_1_performtransformation_greenBBFFB(Model jm,
-			PrimitiveType umpt, CSP csp) {
-		NamedElement2NamedElement jpt2upt2 = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+	public static final Object[] pattern_PrimitiveTypeBoolean_11_1_performtransformation_greenFBFB(PrimitiveType umpt,
+			CSP csp) {
+		ASTNode2Element a2a = UmlFactory.eINSTANCE.createASTNode2Element();
 		org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = JavaFactory.eINSTANCE.createPrimitiveTypeBoolean();
 		Object _localVariable_0 = csp.getValue("jpt", "name");
-		jpt2upt2.setTarget(umpt);
-		jm.getOrphanTypes().add(jpt);
-		jpt2upt2.setSource(jpt);
+		a2a.setTarget(umpt);
+		a2a.setSource(jpt);
 		String jpt_name_prime = (String) _localVariable_0;
 		jpt.setName(jpt_name_prime);
-		return new Object[] { jm, umpt, jpt2upt2, jpt, csp };
+		return new Object[] { a2a, umpt, jpt, csp };
 	}
 
 	public static final Object[] pattern_PrimitiveTypeBoolean_11_2_collecttranslatedelements_blackBBB(
-			PrimitiveType umpt, NamedElement2NamedElement jpt2upt2, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		return new Object[] { umpt, jpt2upt2, jpt };
+			ASTNode2Element a2a, PrimitiveType umpt, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		return new Object[] { a2a, umpt, jpt };
 	}
 
 	public static final Object[] pattern_PrimitiveTypeBoolean_11_2_collecttranslatedelements_greenFBBB(
-			PrimitiveType umpt, NamedElement2NamedElement jpt2upt2, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+			ASTNode2Element a2a, PrimitiveType umpt, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(a2a);
 		ruleresult.getTranslatedElements().add(umpt);
-		ruleresult.getCreatedLinkElements().add(jpt2upt2);
 		ruleresult.getCreatedElements().add(jpt);
-		return new Object[] { ruleresult, umpt, jpt2upt2, jpt };
+		return new Object[] { ruleresult, a2a, umpt, jpt };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject jm2up, EObject jm, EObject umpt, EObject up, EObject jpt2upt2,
-			EObject jpt) {
-		if (!jm2up.equals(umpt)) {
-			if (!jm2up.equals(up)) {
-				if (!jm2up.equals(jpt2upt2)) {
-					if (!jm2up.equals(jpt)) {
-						if (!jm.equals(jm2up)) {
-							if (!jm.equals(umpt)) {
-								if (!jm.equals(up)) {
-									if (!jm.equals(jpt2upt2)) {
-										if (!jm.equals(jpt)) {
-											if (!umpt.equals(up)) {
-												if (!jpt2upt2.equals(umpt)) {
-													if (!jpt2upt2.equals(up)) {
-														if (!jpt.equals(umpt)) {
-															if (!jpt.equals(up)) {
-																if (!jpt.equals(jpt2upt2)) {
-																	return new Object[] { ruleresult, jm2up, jm, umpt,
-																			up, jpt2upt2, jpt };
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
+	public static final Object[] pattern_PrimitiveTypeBoolean_11_3_bookkeepingforedges_blackBBBB(
+			PerformRuleResult ruleresult, EObject a2a, EObject umpt, EObject jpt) {
+		if (!a2a.equals(umpt)) {
+			if (!a2a.equals(jpt)) {
+				if (!jpt.equals(umpt)) {
+					return new Object[] { ruleresult, a2a, umpt, jpt };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_11_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject jm, EObject umpt, EObject up, EObject jpt2upt2, EObject jpt) {
-		EMoflonEdge up__umpt____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm__jpt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jpt2upt2__jpt____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jpt2upt2__umpt____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+	public static final Object[] pattern_PrimitiveTypeBoolean_11_3_bookkeepingforedges_greenBBBBFF(
+			PerformRuleResult ruleresult, EObject a2a, EObject umpt, EObject jpt) {
+		EMoflonEdge a2a__jpt____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2a__umpt____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "PrimitiveTypeBoolean";
-		String up__umpt____packagedElement_name_prime = "packagedElement";
-		String jm__jpt____orphanTypes_name_prime = "orphanTypes";
-		String jpt2upt2__jpt____source_name_prime = "source";
-		String jpt2upt2__umpt____target_name_prime = "target";
-		up__umpt____packagedElement.setSrc(up);
-		up__umpt____packagedElement.setTrg(umpt);
-		ruleresult.getTranslatedEdges().add(up__umpt____packagedElement);
-		jm__jpt____orphanTypes.setSrc(jm);
-		jm__jpt____orphanTypes.setTrg(jpt);
-		ruleresult.getCreatedEdges().add(jm__jpt____orphanTypes);
-		jpt2upt2__jpt____source.setSrc(jpt2upt2);
-		jpt2upt2__jpt____source.setTrg(jpt);
-		ruleresult.getCreatedEdges().add(jpt2upt2__jpt____source);
-		jpt2upt2__umpt____target.setSrc(jpt2upt2);
-		jpt2upt2__umpt____target.setTrg(umpt);
-		ruleresult.getCreatedEdges().add(jpt2upt2__umpt____target);
+		String a2a__jpt____source_name_prime = "source";
+		String a2a__umpt____target_name_prime = "target";
+		a2a__jpt____source.setSrc(a2a);
+		a2a__jpt____source.setTrg(jpt);
+		ruleresult.getCreatedEdges().add(a2a__jpt____source);
+		a2a__umpt____target.setSrc(a2a);
+		a2a__umpt____target.setTrg(umpt);
+		ruleresult.getCreatedEdges().add(a2a__umpt____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		up__umpt____packagedElement.setName(up__umpt____packagedElement_name_prime);
-		jm__jpt____orphanTypes.setName(jm__jpt____orphanTypes_name_prime);
-		jpt2upt2__jpt____source.setName(jpt2upt2__jpt____source_name_prime);
-		jpt2upt2__umpt____target.setName(jpt2upt2__umpt____target_name_prime);
-		return new Object[] { ruleresult, jm, umpt, up, jpt2upt2, jpt, up__umpt____packagedElement,
-				jm__jpt____orphanTypes, jpt2upt2__jpt____source, jpt2upt2__umpt____target };
+		a2a__jpt____source.setName(a2a__jpt____source_name_prime);
+		a2a__umpt____target.setName(a2a__umpt____target_name_prime);
+		return new Object[] { ruleresult, a2a, umpt, jpt, a2a__jpt____source, a2a__umpt____target };
 	}
 
-	public static final void pattern_PrimitiveTypeBoolean_11_5_registerobjects_expressionBBBBBBBB(
-			PrimitiveTypeBoolean _this, PerformRuleResult ruleresult, EObject jm2up, EObject jm, EObject umpt,
-			EObject up, EObject jpt2upt2, EObject jpt) {
-		_this.registerObjects_BWD(ruleresult, jm2up, jm, umpt, up, jpt2upt2, jpt);
+	public static final void pattern_PrimitiveTypeBoolean_11_5_registerobjects_expressionBBBBB(
+			PrimitiveTypeBoolean _this, PerformRuleResult ruleresult, EObject a2a, EObject umpt, EObject jpt) {
+		_this.registerObjects_BWD(ruleresult, a2a, umpt, jpt);
 
 	}
 
@@ -1999,92 +1699,41 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { performOperation, ruleresult };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_12_2_corematch_bindingFFB(Match match) {
+	public static final Object[] pattern_PrimitiveTypeBoolean_12_2_corematch_bindingFB(Match match) {
 		EObject _localVariable_0 = match.getObject("umpt");
-		EObject _localVariable_1 = match.getObject("up");
 		EObject tmpUmpt = _localVariable_0;
-		EObject tmpUp = _localVariable_1;
 		if (tmpUmpt instanceof PrimitiveType) {
 			PrimitiveType umpt = (PrimitiveType) tmpUmpt;
-			if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
-				return new Object[] { umpt, up, match };
-			}
+			return new Object[] { umpt, match };
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_12_2_corematch_blackFFBBB(PrimitiveType umpt,
-			org.eclipse.uml2.uml.Package up, Match match) {
+	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_12_2_corematch_blackBB(PrimitiveType umpt,
+			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		String up_name = up.getName();
-		if (up_name.equals("Common Java datatypes")) {
-			for (JavaModel2UMLPackage jm2up : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(up,
-					JavaModel2UMLPackage.class, "target")) {
-				Model jm = jm2up.getSource();
-				if (jm != null) {
-					_result.add(new Object[] { jm2up, jm, umpt, up, match });
-				}
-
-			}
-		}
-
+		_result.add(new Object[] { umpt, match });
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_12_3_findcontext_blackBBBB(
-			JavaModel2UMLPackage jm2up, Model jm, PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
+	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_12_3_findcontext_blackB(PrimitiveType umpt) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (up.getPackagedElements().contains(umpt)) {
-			if (up.equals(jm2up.getTarget())) {
-				if (jm.equals(jm2up.getSource())) {
-					String up_name = up.getName();
-					if (up_name.equals("Common Java datatypes")) {
-						_result.add(new Object[] { jm2up, jm, umpt, up });
-					}
-
-				}
-			}
-		}
+		_result.add(new Object[] { umpt });
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_12_3_findcontext_greenBBBBFFFF(JavaModel2UMLPackage jm2up,
-			Model jm, PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
+	public static final Object[] pattern_PrimitiveTypeBoolean_12_3_findcontext_greenBF(PrimitiveType umpt) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge up__umpt____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2up__up____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2up__jm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String up__umpt____packagedElement_name_prime = "packagedElement";
-		String jm2up__up____target_name_prime = "target";
-		String jm2up__jm____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(jm2up);
-		isApplicableMatch.getAllContextElements().add(jm);
 		isApplicableMatch.getAllContextElements().add(umpt);
-		isApplicableMatch.getAllContextElements().add(up);
-		up__umpt____packagedElement.setSrc(up);
-		up__umpt____packagedElement.setTrg(umpt);
-		isApplicableMatch.getAllContextElements().add(up__umpt____packagedElement);
-		jm2up__up____target.setSrc(jm2up);
-		jm2up__up____target.setTrg(up);
-		isApplicableMatch.getAllContextElements().add(jm2up__up____target);
-		jm2up__jm____source.setSrc(jm2up);
-		jm2up__jm____source.setTrg(jm);
-		isApplicableMatch.getAllContextElements().add(jm2up__jm____source);
-		up__umpt____packagedElement.setName(up__umpt____packagedElement_name_prime);
-		jm2up__up____target.setName(jm2up__up____target_name_prime);
-		jm2up__jm____source.setName(jm2up__jm____source_name_prime);
-		return new Object[] { jm2up, jm, umpt, up, isApplicableMatch, up__umpt____packagedElement, jm2up__up____target,
-				jm2up__jm____source };
+		return new Object[] { umpt, isApplicableMatch };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_12_4_solveCSP_bindingFBBBBBB(PrimitiveTypeBoolean _this,
-			IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm, PrimitiveType umpt,
-			org.eclipse.uml2.uml.Package up) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jm2up, jm, umpt, up);
+	public static final Object[] pattern_PrimitiveTypeBoolean_12_4_solveCSP_bindingFBBB(PrimitiveTypeBoolean _this,
+			IsApplicableMatch isApplicableMatch, PrimitiveType umpt) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, umpt);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jm2up, jm, umpt, up };
+			return new Object[] { csp, _this, isApplicableMatch, umpt };
 		}
 		return null;
 	}
@@ -2093,11 +1742,10 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_12_4_solveCSP_bindingAndBlackFBBBBBB(
-			PrimitiveTypeBoolean _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm,
-			PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
-		Object[] result_pattern_PrimitiveTypeBoolean_12_4_solveCSP_binding = pattern_PrimitiveTypeBoolean_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jm2up, jm, umpt, up);
+	public static final Object[] pattern_PrimitiveTypeBoolean_12_4_solveCSP_bindingAndBlackFBBB(
+			PrimitiveTypeBoolean _this, IsApplicableMatch isApplicableMatch, PrimitiveType umpt) {
+		Object[] result_pattern_PrimitiveTypeBoolean_12_4_solveCSP_binding = pattern_PrimitiveTypeBoolean_12_4_solveCSP_bindingFBBB(
+				_this, isApplicableMatch, umpt);
 		if (result_pattern_PrimitiveTypeBoolean_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_PrimitiveTypeBoolean_12_4_solveCSP_binding[0];
 
@@ -2105,7 +1753,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 					csp);
 			if (result_pattern_PrimitiveTypeBoolean_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jm2up, jm, umpt, up };
+				return new Object[] { csp, _this, isApplicableMatch, umpt };
 			}
 		}
 		return null;
@@ -2193,48 +1841,10 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { __result };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_20_2_testcorematchandDECs_black_nac_0B(
+	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_20_2_testcorematchandDECs_blackB(
 			PrimitiveType umpt) {
-		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_139818 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(umpt, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
-			return new Object[] { umpt };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_PrimitiveTypeBoolean_20_2_testcorematchandDECs_black_nac_1B(
-			PrimitiveType umpt) {
-		for (Interface __DEC_umpt_nestedClassifier_462811 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(umpt, Interface.class, "nestedClassifier")) {
-			return new Object[] { umpt };
-		}
-		return null;
-	}
-
-	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_20_2_testcorematchandDECs_blackFFB(
-			EMoflonEdge _edge_packagedElement) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpUp = _edge_packagedElement.getSrc();
-		if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
-			EObject tmpUmpt = _edge_packagedElement.getTrg();
-			if (tmpUmpt instanceof PrimitiveType) {
-				PrimitiveType umpt = (PrimitiveType) tmpUmpt;
-				if (up.getPackagedElements().contains(umpt)) {
-					String up_name = up.getName();
-					if (up_name.equals("Common Java datatypes")) {
-						if (pattern_PrimitiveTypeBoolean_20_2_testcorematchandDECs_black_nac_0B(umpt) == null) {
-							if (pattern_PrimitiveTypeBoolean_20_2_testcorematchandDECs_black_nac_1B(umpt) == null) {
-								_result.add(new Object[] { umpt, up, _edge_packagedElement });
-							}
-						}
-					}
-
-				}
-			}
-
-		}
-
+		_result.add(new Object[] { umpt });
 		return _result;
 	}
 
@@ -2247,9 +1857,9 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 
 	}
 
-	public static final boolean pattern_PrimitiveTypeBoolean_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			PrimitiveTypeBoolean _this, Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, umpt, up);
+	public static final boolean pattern_PrimitiveTypeBoolean_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBB(
+			PrimitiveTypeBoolean _this, Match match, PrimitiveType umpt) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, umpt);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2336,22 +1946,10 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { __result };
 	}
 
-	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_21_2_testcorematchandDECs_blackFFB(
-			EMoflonEdge _edge_orphanTypes) {
+	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_21_2_testcorematchandDECs_blackB(
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpJm = _edge_orphanTypes.getSrc();
-		if (tmpJm instanceof Model) {
-			Model jm = (Model) tmpJm;
-			EObject tmpJpt = _edge_orphanTypes.getTrg();
-			if (tmpJpt instanceof org.eclipse.modisco.java.PrimitiveTypeBoolean) {
-				org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) tmpJpt;
-				if (jm.getOrphanTypes().contains(jpt)) {
-					_result.add(new Object[] { jm, jpt, _edge_orphanTypes });
-				}
-			}
-
-		}
-
+		_result.add(new Object[] { jpt });
 		return _result;
 	}
 
@@ -2364,9 +1962,9 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 
 	}
 
-	public static final boolean pattern_PrimitiveTypeBoolean_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			PrimitiveTypeBoolean _this, Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, jm, jpt);
+	public static final boolean pattern_PrimitiveTypeBoolean_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBB(
+			PrimitiveTypeBoolean _this, Match match, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, jpt);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2408,72 +2006,55 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
-			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("jm");
-		EObject _localVariable_1 = targetMatch.getObject("umpt");
-		EObject _localVariable_2 = targetMatch.getObject("up");
-		EObject _localVariable_3 = sourceMatch.getObject("jpt");
-		EObject tmpJm = _localVariable_0;
-		EObject tmpUmpt = _localVariable_1;
-		EObject tmpUp = _localVariable_2;
-		EObject tmpJpt = _localVariable_3;
-		if (tmpJm instanceof Model) {
-			Model jm = (Model) tmpJm;
-			if (tmpUmpt instanceof PrimitiveType) {
-				PrimitiveType umpt = (PrimitiveType) tmpUmpt;
-				if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
-					org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
-					if (tmpJpt instanceof org.eclipse.modisco.java.PrimitiveTypeBoolean) {
-						org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) tmpJpt;
-						return new Object[] { jm, umpt, up, jpt, sourceMatch, targetMatch };
-					}
-				}
+	public static final Object[] pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_bindingFFBB(Match targetMatch,
+			Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("umpt");
+		EObject _localVariable_1 = sourceMatch.getObject("jpt");
+		EObject tmpUmpt = _localVariable_0;
+		EObject tmpJpt = _localVariable_1;
+		if (tmpUmpt instanceof PrimitiveType) {
+			PrimitiveType umpt = (PrimitiveType) tmpUmpt;
+			if (tmpJpt instanceof org.eclipse.modisco.java.PrimitiveTypeBoolean) {
+				org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) tmpJpt;
+				return new Object[] { umpt, jpt, targetMatch, sourceMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_blackBBBBBB(Model jm,
-			PrimitiveType umpt, org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt,
-			Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_blackBBBB(PrimitiveType umpt,
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			String up_name = up.getName();
-			if (up_name.equals("Common Java datatypes")) {
-				return new Object[] { jm, umpt, up, jpt, sourceMatch, targetMatch };
-			}
-
+			return new Object[] { umpt, jpt, sourceMatch, targetMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(
+	public static final Object[] pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_bindingAndBlackFFBB(
 			Match sourceMatch, Match targetMatch) {
-		Object[] result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_binding = pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_bindingFFFFBB(
-				sourceMatch, targetMatch);
+		Object[] result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_binding = pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_bindingFFBB(
+				targetMatch, sourceMatch);
 		if (result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_binding != null) {
-			Model jm = (Model) result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_binding[0];
-			PrimitiveType umpt = (PrimitiveType) result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_binding[1];
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_binding[2];
-			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_binding[3];
+			PrimitiveType umpt = (PrimitiveType) result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_binding[0];
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = (org.eclipse.modisco.java.PrimitiveTypeBoolean) result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_binding[1];
 
-			Object[] result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_black = pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_blackBBBBBB(
-					jm, umpt, up, jpt, sourceMatch, targetMatch);
+			Object[] result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_black = pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_blackBBBB(
+					umpt, jpt, sourceMatch, targetMatch);
 			if (result_pattern_PrimitiveTypeBoolean_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { jm, umpt, up, jpt, sourceMatch, targetMatch };
+				return new Object[] { umpt, jpt, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_24_3_solvecsp_bindingFBBBBBBB(PrimitiveTypeBoolean _this,
-			Model jm, PrimitiveType umpt, org.eclipse.uml2.uml.Package up,
-			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(jm, umpt, up, jpt, sourceMatch, targetMatch);
-		CSP csp = _localVariable_4;
+	public static final Object[] pattern_PrimitiveTypeBoolean_24_3_solvecsp_bindingFBBBBB(PrimitiveTypeBoolean _this,
+			PrimitiveType umpt, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, Match sourceMatch,
+			Match targetMatch) {
+		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(umpt, jpt, sourceMatch, targetMatch);
+		CSP csp = _localVariable_2;
 		if (csp != null) {
-			return new Object[] { csp, _this, jm, umpt, up, jpt, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, umpt, jpt, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2482,11 +2063,11 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			PrimitiveTypeBoolean _this, Model jm, PrimitiveType umpt, org.eclipse.uml2.uml.Package up,
-			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, Match sourceMatch, Match targetMatch) {
-		Object[] result_pattern_PrimitiveTypeBoolean_24_3_solvecsp_binding = pattern_PrimitiveTypeBoolean_24_3_solvecsp_bindingFBBBBBBB(
-				_this, jm, umpt, up, jpt, sourceMatch, targetMatch);
+	public static final Object[] pattern_PrimitiveTypeBoolean_24_3_solvecsp_bindingAndBlackFBBBBB(
+			PrimitiveTypeBoolean _this, PrimitiveType umpt, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt,
+			Match sourceMatch, Match targetMatch) {
+		Object[] result_pattern_PrimitiveTypeBoolean_24_3_solvecsp_binding = pattern_PrimitiveTypeBoolean_24_3_solvecsp_bindingFBBBBB(
+				_this, umpt, jpt, sourceMatch, targetMatch);
 		if (result_pattern_PrimitiveTypeBoolean_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_PrimitiveTypeBoolean_24_3_solvecsp_binding[0];
 
@@ -2494,7 +2075,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 					csp);
 			if (result_pattern_PrimitiveTypeBoolean_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, jm, umpt, up, jpt, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, umpt, jpt, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2506,48 +2087,37 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_24_5_matchcorrcontext_blackFBBBB(Model jm,
-			org.eclipse.uml2.uml.Package up, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_24_5_matchcorrcontext_blackBB(Match sourceMatch,
+			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			String up_name = up.getName();
-			if (up_name.equals("Common Java datatypes")) {
-				for (JavaModel2UMLPackage jm2up : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(up,
-						JavaModel2UMLPackage.class, "target")) {
-					if (jm.equals(jm2up.getSource())) {
-						_result.add(new Object[] { jm2up, jm, up, sourceMatch, targetMatch });
-					}
-				}
-			}
-
+			_result.add(new Object[] { sourceMatch, targetMatch });
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_24_5_matchcorrcontext_greenBBBF(
-			JavaModel2UMLPackage jm2up, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_PrimitiveTypeBoolean_24_5_matchcorrcontext_greenBBF(Match sourceMatch,
+			Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "PrimitiveTypeBoolean";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(jm2up);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { jm2up, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_24_6_createcorrespondence_blackBBBBB(Model jm,
-			PrimitiveType umpt, org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.PrimitiveTypeBoolean jpt,
-			CCMatch ccMatch) {
-		return new Object[] { jm, umpt, up, jpt, ccMatch };
-	}
-
-	public static final Object[] pattern_PrimitiveTypeBoolean_24_6_createcorrespondence_greenBFBB(PrimitiveType umpt,
+	public static final Object[] pattern_PrimitiveTypeBoolean_24_6_createcorrespondence_blackBBB(PrimitiveType umpt,
 			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, CCMatch ccMatch) {
-		NamedElement2NamedElement jpt2upt2 = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
-		jpt2upt2.setSource(jpt);
-		jpt2upt2.setTarget(umpt);
-		ccMatch.getCreateCorr().add(jpt2upt2);
-		return new Object[] { umpt, jpt2upt2, jpt, ccMatch };
+		return new Object[] { umpt, jpt, ccMatch };
+	}
+
+	public static final Object[] pattern_PrimitiveTypeBoolean_24_6_createcorrespondence_greenFBBB(PrimitiveType umpt,
+			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt, CCMatch ccMatch) {
+		ASTNode2Element a2a = UmlFactory.eINSTANCE.createASTNode2Element();
+		a2a.setSource(jpt);
+		a2a.setTarget(umpt);
+		ccMatch.getCreateCorr().add(a2a);
+		return new Object[] { a2a, umpt, jpt, ccMatch };
 	}
 
 	public static final Object[] pattern_PrimitiveTypeBoolean_24_7_addtoreturnedresult_blackBB(
@@ -2571,12 +2141,9 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_27_1_matchtggpattern_blackBB(Model jm,
+	public static final Object[] pattern_PrimitiveTypeBoolean_27_1_matchtggpattern_blackB(
 			org.eclipse.modisco.java.PrimitiveTypeBoolean jpt) {
-		if (jm.getOrphanTypes().contains(jpt)) {
-			return new Object[] { jm, jpt };
-		}
-		return null;
+		return new Object[] { jpt };
 	}
 
 	public static final boolean pattern_PrimitiveTypeBoolean_27_2_expressionF() {
@@ -2589,36 +2156,8 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_28_1_matchtggpattern_black_nac_0B(PrimitiveType umpt) {
-		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_481029 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(umpt, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
-			return new Object[] { umpt };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_PrimitiveTypeBoolean_28_1_matchtggpattern_black_nac_1B(PrimitiveType umpt) {
-		for (Interface __DEC_umpt_nestedClassifier_676796 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(umpt, Interface.class, "nestedClassifier")) {
-			return new Object[] { umpt };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_PrimitiveTypeBoolean_28_1_matchtggpattern_blackBB(PrimitiveType umpt,
-			org.eclipse.uml2.uml.Package up) {
-		if (up.getPackagedElements().contains(umpt)) {
-			String up_name = up.getName();
-			if (up_name.equals("Common Java datatypes")) {
-				if (pattern_PrimitiveTypeBoolean_28_1_matchtggpattern_black_nac_0B(umpt) == null) {
-					if (pattern_PrimitiveTypeBoolean_28_1_matchtggpattern_black_nac_1B(umpt) == null) {
-						return new Object[] { umpt, up };
-					}
-				}
-			}
-
-		}
-		return null;
+	public static final Object[] pattern_PrimitiveTypeBoolean_28_1_matchtggpattern_blackB(PrimitiveType umpt) {
+		return new Object[] { umpt };
 	}
 
 	public static final boolean pattern_PrimitiveTypeBoolean_28_2_expressionF() {
@@ -2643,73 +2182,16 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { isApplicableMatch, ruleResult };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, JavaModel2UMLPackage jm2up) {
-		if (ruleResult.getCorrObjects().contains(jm2up)) {
-			return new Object[] { ruleResult, jm2up };
-		}
-		return null;
+	public static final Object[] pattern_PrimitiveTypeBoolean_29_2_isapplicablecore_blackB(PrimitiveTypeBoolean _this) {
+		return new Object[] { _this };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Package up) {
-		if (ruleResult.getTargetObjects().contains(up)) {
-			return new Object[] { ruleResult, up };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_PrimitiveTypeBoolean_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Model jm) {
-		if (ruleResult.getSourceObjects().contains(jm)) {
-			return new Object[] { ruleResult, jm };
-		}
-		return null;
-	}
-
-	public static final Iterable<Object[]> pattern_PrimitiveTypeBoolean_29_2_isapplicablecore_blackFFFFBB(
-			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList jm2upList : ruleEntryContainer.getRuleEntryList()) {
-			for (EObject tmpJm2up : jm2upList.getEntryObjects()) {
-				if (tmpJm2up instanceof JavaModel2UMLPackage) {
-					JavaModel2UMLPackage jm2up = (JavaModel2UMLPackage) tmpJm2up;
-					org.eclipse.uml2.uml.Package up = jm2up.getTarget();
-					if (up != null) {
-						Model jm = jm2up.getSource();
-						if (jm != null) {
-							String up_name = up.getName();
-							if (up_name.equals("Common Java datatypes")) {
-								if (pattern_PrimitiveTypeBoolean_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-										jm2up) == null) {
-									if (pattern_PrimitiveTypeBoolean_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-											up) == null) {
-										if (pattern_PrimitiveTypeBoolean_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-												jm) == null) {
-											_result.add(new Object[] { jm2upList, jm2up, up, jm, ruleEntryContainer,
-													ruleResult });
-										}
-									}
-								}
-							}
-
-						}
-
-					}
-
-				}
-			}
-		}
-		return _result;
-	}
-
-	public static final Object[] pattern_PrimitiveTypeBoolean_29_3_solveCSP_bindingFBBBBBB(PrimitiveTypeBoolean _this,
-			IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm, org.eclipse.uml2.uml.Package up,
-			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jm2up, jm, up, ruleResult);
+	public static final Object[] pattern_PrimitiveTypeBoolean_29_3_solveCSP_bindingFBBB(PrimitiveTypeBoolean _this,
+			IsApplicableMatch isApplicableMatch, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jm2up, jm, up, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, ruleResult };
 		}
 		return null;
 	}
@@ -2718,11 +2200,10 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_29_3_solveCSP_bindingAndBlackFBBBBBB(
-			PrimitiveTypeBoolean _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm,
-			org.eclipse.uml2.uml.Package up, ModelgeneratorRuleResult ruleResult) {
-		Object[] result_pattern_PrimitiveTypeBoolean_29_3_solveCSP_binding = pattern_PrimitiveTypeBoolean_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jm2up, jm, up, ruleResult);
+	public static final Object[] pattern_PrimitiveTypeBoolean_29_3_solveCSP_bindingAndBlackFBBB(
+			PrimitiveTypeBoolean _this, IsApplicableMatch isApplicableMatch, ModelgeneratorRuleResult ruleResult) {
+		Object[] result_pattern_PrimitiveTypeBoolean_29_3_solveCSP_binding = pattern_PrimitiveTypeBoolean_29_3_solveCSP_bindingFBBB(
+				_this, isApplicableMatch, ruleResult);
 		if (result_pattern_PrimitiveTypeBoolean_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_PrimitiveTypeBoolean_29_3_solveCSP_binding[0];
 
@@ -2730,7 +2211,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 					csp);
 			if (result_pattern_PrimitiveTypeBoolean_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jm2up, jm, up, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, ruleResult };
 			}
 		}
 		return null;
@@ -2743,41 +2224,23 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		return _result;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_29_5_checknacs_blackBBB(JavaModel2UMLPackage jm2up,
-			Model jm, org.eclipse.uml2.uml.Package up) {
-		String up_name = up.getName();
-		if (up_name.equals("Common Java datatypes")) {
-			return new Object[] { jm2up, jm, up };
-		}
-
-		return null;
+	public static final Object[] pattern_PrimitiveTypeBoolean_29_6_perform_blackB(ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { ruleResult };
 	}
 
-	public static final Object[] pattern_PrimitiveTypeBoolean_29_6_perform_blackBBBB(JavaModel2UMLPackage jm2up,
-			Model jm, org.eclipse.uml2.uml.Package up, ModelgeneratorRuleResult ruleResult) {
-		String up_name = up.getName();
-		if (up_name.equals("Common Java datatypes")) {
-			return new Object[] { jm2up, jm, up, ruleResult };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_PrimitiveTypeBoolean_29_6_perform_greenBFBFFBB(Model jm,
-			org.eclipse.uml2.uml.Package up, ModelgeneratorRuleResult ruleResult, CSP csp) {
+	public static final Object[] pattern_PrimitiveTypeBoolean_29_6_perform_greenFFFBB(
+			ModelgeneratorRuleResult ruleResult, CSP csp) {
+		ASTNode2Element a2a = UmlFactory.eINSTANCE.createASTNode2Element();
 		PrimitiveType umpt = UMLFactory.eINSTANCE.createPrimitiveType();
-		NamedElement2NamedElement jpt2upt2 = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		org.eclipse.modisco.java.PrimitiveTypeBoolean jpt = JavaFactory.eINSTANCE.createPrimitiveTypeBoolean();
 		Object _localVariable_0 = csp.getValue("umpt", "name");
 		Object _localVariable_1 = csp.getValue("jpt", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		up.getPackagedElements().add(umpt);
+		ruleResult.getCorrObjects().add(a2a);
+		a2a.setTarget(umpt);
 		ruleResult.getTargetObjects().add(umpt);
-		jpt2upt2.setTarget(umpt);
-		ruleResult.getCorrObjects().add(jpt2upt2);
-		jm.getOrphanTypes().add(jpt);
-		jpt2upt2.setSource(jpt);
+		a2a.setSource(jpt);
 		ruleResult.getSourceObjects().add(jpt);
 		String umpt_name_prime = (String) _localVariable_0;
 		String jpt_name_prime = (String) _localVariable_1;
@@ -2786,7 +2249,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 		umpt.setName(umpt_name_prime);
 		jpt.setName(jpt_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { jm, umpt, up, jpt2upt2, jpt, ruleResult, csp };
+		return new Object[] { a2a, umpt, jpt, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_PrimitiveTypeBoolean_29_7_expressionFB(

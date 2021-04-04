@@ -5,6 +5,8 @@ package org.gravity.refactorings.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
@@ -30,7 +32,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 public class MoveMethod extends MoveMember {
 
 	@Override
-	public boolean isApplicable(RefactoringConfiguration configuration) {
+	public boolean isApplicable(final RefactoringConfiguration configuration) {
 		if (getRefactoringID() != configuration.getRefactoringID()) {
 			return false;
 		}
@@ -64,7 +66,7 @@ public class MoveMethod extends MoveMember {
 	}
 
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) {
+	public Collection<TClass> perform(final RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			final MoveMethodConfiguration mm = (MoveMethodConfiguration) configuration;
 			final EList<TMember> definitions = mm.getSignature().getDefinitions();
@@ -79,17 +81,19 @@ public class MoveMethod extends MoveMember {
 		return Collections.emptyList();
 	}
 
-	public static boolean getterSetterPrecondition(TMethodSignature methodSig) {
+	public static boolean getterSetterPrecondition(final TMethodSignature methodSig) {
 		final String signature = methodSig.getMethod().getTName().toLowerCase();
 		return !signature.startsWith("set") && !signature.startsWith("get");
 	}
 
-	public static boolean interfacePrecondition(TMethodSignature methodSig, TClass sourceClass) {
+	public static boolean interfacePrecondition(final TMethodSignature methodSig, final TClass sourceClass) {
 		final List<TInterface> interfaces = new ArrayList<>();
-		TClass parent = sourceClass;
-		while (parent != null) {
+		final Deque<TClass> stack = new LinkedList<>();
+		stack.add(sourceClass);
+		while (!stack.isEmpty()) {
+			final TClass parent = stack.pop();
 			interfaces.addAll(parent.getImplements());
-			parent = parent.getParentClass();
+			stack.addAll(parent.getParentClasses());
 		}
 
 		for (final TInterface tInterface : interfaces) {
@@ -103,11 +107,11 @@ public class MoveMethod extends MoveMember {
 		return true;
 	}
 
-	public static boolean overridePrecondition(TMethodSignature methodSig, TClass sourceClass) {
+	public static boolean overridePrecondition(final TMethodSignature methodSig, final TClass sourceClass) {
 		for (final TMember member : sourceClass.getDefines()) {
 			if (member.getSignature() == methodSig) {
 				for (final TAnnotation annotation : member.getTAnnotation()) {
-					if (annotation.getType() != null && annotation.getType().getTName().equalsIgnoreCase("override")) {
+					if ((annotation.getType() != null) && annotation.getType().getTName().equalsIgnoreCase("override")) {
 						return false;
 					}
 				}

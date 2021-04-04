@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 
+import org.eclipse.modisco.java.ASTNode;
 import org.eclipse.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.BodyDeclaration;
@@ -21,11 +22,10 @@ import org.eclipse.modisco.java.TypeParameter;
 
 import org.eclipse.modisco.java.emf.JavaFactory;
 
-import org.eclipse.uml2.uml.Interface;
-import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.UMLFactory;
 
-import org.gravity.tgg.modisco.uml.NamedElement2NamedElement;
+import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
 import org.gravity.tgg.modisco.uml.Rules.RulesPackage;
 import org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InClass;
@@ -183,12 +183,12 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 		AbstractMethodDeclaration mmethod = (AbstractMethodDeclaration) result1_bindingAndBlack[1];
 		org.eclipse.uml2.uml.Class uowner = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[2];
 		TypeParameter mparam = (TypeParameter) result1_bindingAndBlack[3];
-		NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) result1_bindingAndBlack[4];
+		ASTNode2Element interface2interface = (ASTNode2Element) result1_bindingAndBlack[4];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = TypeParameter2Object_InMethod_InClassImpl
 				.pattern_TypeParameter2Object_InMethod_InClass_1_1_performtransformation_greenBFFB(uowner, mparam);
 		org.eclipse.uml2.uml.Class uparam = (org.eclipse.uml2.uml.Class) result1_green[1];
-		NamedElement2NamedElement param2param = (NamedElement2NamedElement) result1_green[2];
+		ASTNode2Element param2param = (ASTNode2Element) result1_green[2];
 
 		Object[] result2_black = TypeParameter2Object_InMethod_InClassImpl
 				.pattern_TypeParameter2Object_InMethod_InClass_1_2_collecttranslatedelements_blackBBB(uparam,
@@ -260,7 +260,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 				.pattern_TypeParameter2Object_InMethod_InClass_2_2_corematch_blackBBFBFB(mowner, mmethod, mparam,
 						match)) {
 			org.eclipse.uml2.uml.Class uowner = (org.eclipse.uml2.uml.Class) result2_black[2];
-			NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) result2_black[4];
+			ASTNode2Element interface2interface = (ASTNode2Element) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : TypeParameter2Object_InMethod_InClassImpl
 					.pattern_TypeParameter2Object_InMethod_InClass_2_3_findcontext_blackBBBBB(mowner, mmethod, uowner,
@@ -360,7 +360,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mowner,
 			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner, TypeParameter mparam,
-			NamedElement2NamedElement interface2interface) {// Create CSP
+			ASTNode2Element interface2interface) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -500,11 +500,11 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 		AbstractMethodDeclaration mmethod = (AbstractMethodDeclaration) result1_bindingAndBlack[1];
 		org.eclipse.uml2.uml.Class uowner = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[2];
 		org.eclipse.uml2.uml.Class uparam = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[3];
-		NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) result1_bindingAndBlack[4];
+		ASTNode2Element interface2interface = (ASTNode2Element) result1_bindingAndBlack[4];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = TypeParameter2Object_InMethod_InClassImpl
 				.pattern_TypeParameter2Object_InMethod_InClass_11_1_performtransformation_greenBBFF(mmethod, uparam);
-		NamedElement2NamedElement param2param = (NamedElement2NamedElement) result1_green[2];
+		ASTNode2Element param2param = (ASTNode2Element) result1_green[2];
 		TypeParameter mparam = (TypeParameter) result1_green[3];
 
 		Object[] result2_black = TypeParameter2Object_InMethod_InClassImpl
@@ -575,7 +575,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 		for (Object[] result2_black : TypeParameter2Object_InMethod_InClassImpl
 				.pattern_TypeParameter2Object_InMethod_InClass_12_2_corematch_blackFBBFB(uowner, uparam, match)) {
 			ClassDeclaration mowner = (ClassDeclaration) result2_black[0];
-			NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) result2_black[3];
+			ASTNode2Element interface2interface = (ASTNode2Element) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : TypeParameter2Object_InMethod_InClassImpl
 					.pattern_TypeParameter2Object_InMethod_InClass_12_3_findcontext_blackBFBBB(mowner, uowner, uparam,
@@ -675,7 +675,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mowner,
 			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner, org.eclipse.uml2.uml.Class uparam,
-			NamedElement2NamedElement interface2interface) {// Create CSP
+			ASTNode2Element interface2interface) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -738,7 +738,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_417(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_57(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = TypeParameter2Object_InMethod_InClassImpl
 				.pattern_TypeParameter2Object_InMethod_InClass_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -799,7 +799,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_428(EMoflonEdge _edge_typeParameters) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_67(EMoflonEdge _edge_typeParameters) {
 
 		Object[] result1_bindingAndBlack = TypeParameter2Object_InMethod_InClassImpl
 				.pattern_TypeParameter2Object_InMethod_InClass_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -972,7 +972,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 			for (Object[] result5_black : TypeParameter2Object_InMethod_InClassImpl
 					.pattern_TypeParameter2Object_InMethod_InClass_24_5_matchcorrcontext_blackBBFBB(mowner, uowner,
 							sourceMatch, targetMatch)) {
-				NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) result5_black[2];
+				ASTNode2Element interface2interface = (ASTNode2Element) result5_black[2];
 				Object[] result5_green = TypeParameter2Object_InMethod_InClassImpl
 						.pattern_TypeParameter2Object_InMethod_InClass_24_5_matchcorrcontext_greenBBBF(
 								interface2interface, sourceMatch, targetMatch);
@@ -989,7 +989,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 				TypeParameter2Object_InMethod_InClassImpl
 						.pattern_TypeParameter2Object_InMethod_InClass_24_6_createcorrespondence_greenBFBB(uparam,
 								mparam, ccMatch);
-				//nothing NamedElement2NamedElement param2param = (NamedElement2NamedElement) result6_green[1];
+				//nothing ASTNode2Element param2param = (ASTNode2Element) result6_green[1];
 
 				Object[] result7_black = TypeParameter2Object_InMethod_InClassImpl
 						.pattern_TypeParameter2Object_InMethod_InClass_24_7_addtoreturnedresult_blackBB(result,
@@ -1086,7 +1086,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	 * @generated
 	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			NamedElement2NamedElement interface2interfaceParameter) {
+			ASTNode2Element interface2interfaceParameter) {
 
 		Object[] result1_black = TypeParameter2Object_InMethod_InClassImpl
 				.pattern_TypeParameter2Object_InMethod_InClass_29_1_createresult_blackB(this);
@@ -1105,7 +1105,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 			//nothing RuleEntryList interface2interfaceList = (RuleEntryList) result2_black[0];
 			ClassDeclaration mowner = (ClassDeclaration) result2_black[1];
 			AbstractMethodDeclaration mmethod = (AbstractMethodDeclaration) result2_black[2];
-			NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) result2_black[3];
+			ASTNode2Element interface2interface = (ASTNode2Element) result2_black[3];
 			org.eclipse.uml2.uml.Class uowner = (org.eclipse.uml2.uml.Class) result2_black[4];
 
 			Object[] result3_bindingAndBlack = TypeParameter2Object_InMethod_InClassImpl
@@ -1140,7 +1140,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 							.pattern_TypeParameter2Object_InMethod_InClass_29_6_perform_greenBBFFFB(mmethod, uowner,
 									ruleResult);
 					//nothing org.eclipse.uml2.uml.Class uparam = (org.eclipse.uml2.uml.Class) result6_green[2];
-					//nothing NamedElement2NamedElement param2param = (NamedElement2NamedElement) result6_green[3];
+					//nothing ASTNode2Element param2param = (ASTNode2Element) result6_green[3];
 					//nothing TypeParameter mparam = (TypeParameter) result6_green[4];
 
 				} else {
@@ -1160,8 +1160,8 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mowner,
-			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner,
-			NamedElement2NamedElement interface2interface, ModelgeneratorRuleResult ruleResult) {// Create CSP
+			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner, ASTNode2Element interface2interface,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1216,10 +1216,10 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 					(AbstractMethodDeclaration) arguments.get(2), (TypeParameter) arguments.get(3));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSDECLARATION_ABSTRACTMETHODDECLARATION_CLASS_TYPEPARAMETER_NAMEDELEMENT2NAMEDELEMENT:
+		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSDECLARATION_ABSTRACTMETHODDECLARATION_CLASS_TYPEPARAMETER_ASTNODE2ELEMENT:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ClassDeclaration) arguments.get(1),
 					(AbstractMethodDeclaration) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-					(TypeParameter) arguments.get(4), (NamedElement2NamedElement) arguments.get(5));
+					(TypeParameter) arguments.get(4), (ASTNode2Element) arguments.get(5));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1245,10 +1245,10 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 					(org.eclipse.uml2.uml.Class) arguments.get(2));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSDECLARATION_ABSTRACTMETHODDECLARATION_CLASS_CLASS_NAMEDELEMENT2NAMEDELEMENT:
+		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSDECLARATION_ABSTRACTMETHODDECLARATION_CLASS_CLASS_ASTNODE2ELEMENT:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassDeclaration) arguments.get(1),
 					(AbstractMethodDeclaration) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-					(org.eclipse.uml2.uml.Class) arguments.get(4), (NamedElement2NamedElement) arguments.get(5));
+					(org.eclipse.uml2.uml.Class) arguments.get(4), (ASTNode2Element) arguments.get(5));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1258,10 +1258,10 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_417__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_417((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_428__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_428((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_57__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_57((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_67__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_67((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1281,12 +1281,12 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___CHECK_DEC_BWD__CLASS_CLASS:
 			return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0),
 					(org.eclipse.uml2.uml.Class) arguments.get(1));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___GENERATE_MODEL__RULEENTRYCONTAINER_NAMEDELEMENT2NAMEDELEMENT:
-			return generateModel((RuleEntryContainer) arguments.get(0), (NamedElement2NamedElement) arguments.get(1));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSDECLARATION_ABSTRACTMETHODDECLARATION_CLASS_NAMEDELEMENT2NAMEDELEMENT_MODELGENERATORRULERESULT:
+		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1));
+		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSDECLARATION_ABSTRACTMETHODDECLARATION_CLASS_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassDeclaration) arguments.get(1),
 					(AbstractMethodDeclaration) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-					(NamedElement2NamedElement) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
+					(ASTNode2Element) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
 		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1418,8 +1418,8 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 					org.eclipse.uml2.uml.Class uowner = (org.eclipse.uml2.uml.Class) tmpUowner;
 					if (tmpMparam instanceof TypeParameter) {
 						TypeParameter mparam = (TypeParameter) tmpMparam;
-						if (tmpInterface2interface instanceof NamedElement2NamedElement) {
-							NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) tmpInterface2interface;
+						if (tmpInterface2interface instanceof ASTNode2Element) {
+							ASTNode2Element interface2interface = (ASTNode2Element) tmpInterface2interface;
 							return new Object[] { mowner, mmethod, uowner, mparam, interface2interface,
 									isApplicableMatch };
 						}
@@ -1432,8 +1432,8 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_1_1_performtransformation_blackBBBBBFBB(
 			ClassDeclaration mowner, AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner,
-			TypeParameter mparam, NamedElement2NamedElement interface2interface,
-			TypeParameter2Object_InMethod_InClass _this, IsApplicableMatch isApplicableMatch) {
+			TypeParameter mparam, ASTNode2Element interface2interface, TypeParameter2Object_InMethod_InClass _this,
+			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
@@ -1453,7 +1453,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 			AbstractMethodDeclaration mmethod = (AbstractMethodDeclaration) result_pattern_TypeParameter2Object_InMethod_InClass_1_1_performtransformation_binding[1];
 			org.eclipse.uml2.uml.Class uowner = (org.eclipse.uml2.uml.Class) result_pattern_TypeParameter2Object_InMethod_InClass_1_1_performtransformation_binding[2];
 			TypeParameter mparam = (TypeParameter) result_pattern_TypeParameter2Object_InMethod_InClass_1_1_performtransformation_binding[3];
-			NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) result_pattern_TypeParameter2Object_InMethod_InClass_1_1_performtransformation_binding[4];
+			ASTNode2Element interface2interface = (ASTNode2Element) result_pattern_TypeParameter2Object_InMethod_InClass_1_1_performtransformation_binding[4];
 
 			Object[] result_pattern_TypeParameter2Object_InMethod_InClass_1_1_performtransformation_black = pattern_TypeParameter2Object_InMethod_InClass_1_1_performtransformation_blackBBBBBFBB(
 					mowner, mmethod, uowner, mparam, interface2interface, _this, isApplicableMatch);
@@ -1470,7 +1470,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_1_1_performtransformation_greenBFFB(
 			org.eclipse.uml2.uml.Class uowner, TypeParameter mparam) {
 		org.eclipse.uml2.uml.Class uparam = UMLFactory.eINSTANCE.createClass();
-		NamedElement2NamedElement param2param = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		ASTNode2Element param2param = UmlFactory.eINSTANCE.createASTNode2Element();
 		String uparam_name_prime = "T";
 		uowner.getNestedClassifiers().add(uparam);
 		param2param.setTarget(uparam);
@@ -1480,12 +1480,12 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_1_2_collecttranslatedelements_blackBBB(
-			org.eclipse.uml2.uml.Class uparam, NamedElement2NamedElement param2param, TypeParameter mparam) {
+			org.eclipse.uml2.uml.Class uparam, ASTNode2Element param2param, TypeParameter mparam) {
 		return new Object[] { uparam, param2param, mparam };
 	}
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_1_2_collecttranslatedelements_greenFBBB(
-			org.eclipse.uml2.uml.Class uparam, NamedElement2NamedElement param2param, TypeParameter mparam) {
+			org.eclipse.uml2.uml.Class uparam, ASTNode2Element param2param, TypeParameter mparam) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(uparam);
 		ruleresult.getCreatedLinkElements().add(param2param);
@@ -1671,9 +1671,9 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	public static final Iterable<Object[]> pattern_TypeParameter2Object_InMethod_InClass_2_2_corematch_blackBBFBFB(
 			ClassDeclaration mowner, AbstractMethodDeclaration mmethod, TypeParameter mparam, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (NamedElement2NamedElement interface2interface : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(mowner, NamedElement2NamedElement.class, "source")) {
-			NamedElement tmpUowner = interface2interface.getTarget();
+		for (ASTNode2Element interface2interface : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(mowner, ASTNode2Element.class, "source")) {
+			Element tmpUowner = interface2interface.getTarget();
 			if (tmpUowner instanceof org.eclipse.uml2.uml.Class) {
 				org.eclipse.uml2.uml.Class uowner = (org.eclipse.uml2.uml.Class) tmpUowner;
 				_result.add(new Object[] { mowner, mmethod, uowner, mparam, interface2interface, match });
@@ -1685,7 +1685,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Iterable<Object[]> pattern_TypeParameter2Object_InMethod_InClass_2_3_findcontext_blackBBBBB(
 			ClassDeclaration mowner, AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner,
-			TypeParameter mparam, NamedElement2NamedElement interface2interface) {
+			TypeParameter mparam, ASTNode2Element interface2interface) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (uowner.equals(interface2interface.getTarget())) {
 			if (mowner.equals(interface2interface.getSource())) {
@@ -1701,7 +1701,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_2_3_findcontext_greenBBBBBFFFFFF(
 			ClassDeclaration mowner, AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner,
-			TypeParameter mparam, NamedElement2NamedElement interface2interface) {
+			TypeParameter mparam, ASTNode2Element interface2interface) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge interface2interface__uowner____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge interface2interface__mowner____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1747,7 +1747,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_2_4_solveCSP_bindingFBBBBBBB(
 			TypeParameter2Object_InMethod_InClass _this, IsApplicableMatch isApplicableMatch, ClassDeclaration mowner,
 			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner, TypeParameter mparam,
-			NamedElement2NamedElement interface2interface) {
+			ASTNode2Element interface2interface) {
 		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mowner, mmethod, uowner, mparam,
 				interface2interface);
 		CSP csp = _localVariable_0;
@@ -1764,7 +1764,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_2_4_solveCSP_bindingAndBlackFBBBBBBB(
 			TypeParameter2Object_InMethod_InClass _this, IsApplicableMatch isApplicableMatch, ClassDeclaration mowner,
 			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner, TypeParameter mparam,
-			NamedElement2NamedElement interface2interface) {
+			ASTNode2Element interface2interface) {
 		Object[] result_pattern_TypeParameter2Object_InMethod_InClass_2_4_solveCSP_binding = pattern_TypeParameter2Object_InMethod_InClass_2_4_solveCSP_bindingFBBBBBBB(
 				_this, isApplicableMatch, mowner, mmethod, uowner, mparam, interface2interface);
 		if (result_pattern_TypeParameter2Object_InMethod_InClass_2_4_solveCSP_binding != null) {
@@ -1929,8 +1929,8 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 					org.eclipse.uml2.uml.Class uowner = (org.eclipse.uml2.uml.Class) tmpUowner;
 					if (tmpUparam instanceof org.eclipse.uml2.uml.Class) {
 						org.eclipse.uml2.uml.Class uparam = (org.eclipse.uml2.uml.Class) tmpUparam;
-						if (tmpInterface2interface instanceof NamedElement2NamedElement) {
-							NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) tmpInterface2interface;
+						if (tmpInterface2interface instanceof ASTNode2Element) {
+							ASTNode2Element interface2interface = (ASTNode2Element) tmpInterface2interface;
 							return new Object[] { mowner, mmethod, uowner, uparam, interface2interface,
 									isApplicableMatch };
 						}
@@ -1943,7 +1943,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_11_1_performtransformation_blackBBBBBFBB(
 			ClassDeclaration mowner, AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner,
-			org.eclipse.uml2.uml.Class uparam, NamedElement2NamedElement interface2interface,
+			org.eclipse.uml2.uml.Class uparam, ASTNode2Element interface2interface,
 			TypeParameter2Object_InMethod_InClass _this, IsApplicableMatch isApplicableMatch) {
 		if (!uowner.equals(uparam)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
@@ -1966,7 +1966,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 			AbstractMethodDeclaration mmethod = (AbstractMethodDeclaration) result_pattern_TypeParameter2Object_InMethod_InClass_11_1_performtransformation_binding[1];
 			org.eclipse.uml2.uml.Class uowner = (org.eclipse.uml2.uml.Class) result_pattern_TypeParameter2Object_InMethod_InClass_11_1_performtransformation_binding[2];
 			org.eclipse.uml2.uml.Class uparam = (org.eclipse.uml2.uml.Class) result_pattern_TypeParameter2Object_InMethod_InClass_11_1_performtransformation_binding[3];
-			NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) result_pattern_TypeParameter2Object_InMethod_InClass_11_1_performtransformation_binding[4];
+			ASTNode2Element interface2interface = (ASTNode2Element) result_pattern_TypeParameter2Object_InMethod_InClass_11_1_performtransformation_binding[4];
 
 			Object[] result_pattern_TypeParameter2Object_InMethod_InClass_11_1_performtransformation_black = pattern_TypeParameter2Object_InMethod_InClass_11_1_performtransformation_blackBBBBBFBB(
 					mowner, mmethod, uowner, uparam, interface2interface, _this, isApplicableMatch);
@@ -1982,7 +1982,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_11_1_performtransformation_greenBBFF(
 			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uparam) {
-		NamedElement2NamedElement param2param = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		ASTNode2Element param2param = UmlFactory.eINSTANCE.createASTNode2Element();
 		TypeParameter mparam = JavaFactory.eINSTANCE.createTypeParameter();
 		param2param.setTarget(uparam);
 		mmethod.getTypeParameters().add(mparam);
@@ -1991,12 +1991,12 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_11_2_collecttranslatedelements_blackBBB(
-			org.eclipse.uml2.uml.Class uparam, NamedElement2NamedElement param2param, TypeParameter mparam) {
+			org.eclipse.uml2.uml.Class uparam, ASTNode2Element param2param, TypeParameter mparam) {
 		return new Object[] { uparam, param2param, mparam };
 	}
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_11_2_collecttranslatedelements_greenFBBB(
-			org.eclipse.uml2.uml.Class uparam, NamedElement2NamedElement param2param, TypeParameter mparam) {
+			org.eclipse.uml2.uml.Class uparam, ASTNode2Element param2param, TypeParameter mparam) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(uparam);
 		ruleresult.getCreatedLinkElements().add(param2param);
@@ -2180,9 +2180,9 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 		if (!uowner.equals(uparam)) {
 			String uparam_name = uparam.getName();
 			if (uparam_name.equals("T")) {
-				for (NamedElement2NamedElement interface2interface : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(uowner, NamedElement2NamedElement.class, "target")) {
-					org.eclipse.modisco.java.NamedElement tmpMowner = interface2interface.getSource();
+				for (ASTNode2Element interface2interface : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(uowner, ASTNode2Element.class, "target")) {
+					ASTNode tmpMowner = interface2interface.getSource();
 					if (tmpMowner instanceof ClassDeclaration) {
 						ClassDeclaration mowner = (ClassDeclaration) tmpMowner;
 						_result.add(new Object[] { mowner, uowner, uparam, interface2interface, match });
@@ -2197,7 +2197,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Iterable<Object[]> pattern_TypeParameter2Object_InMethod_InClass_12_3_findcontext_blackBFBBB(
 			ClassDeclaration mowner, org.eclipse.uml2.uml.Class uowner, org.eclipse.uml2.uml.Class uparam,
-			NamedElement2NamedElement interface2interface) {
+			ASTNode2Element interface2interface) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!uowner.equals(uparam)) {
 			if (uowner.equals(interface2interface.getTarget())) {
@@ -2222,7 +2222,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_12_3_findcontext_greenBBBBBFFFFFF(
 			ClassDeclaration mowner, AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner,
-			org.eclipse.uml2.uml.Class uparam, NamedElement2NamedElement interface2interface) {
+			org.eclipse.uml2.uml.Class uparam, ASTNode2Element interface2interface) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge interface2interface__uowner____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge interface2interface__mowner____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2268,7 +2268,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_12_4_solveCSP_bindingFBBBBBBB(
 			TypeParameter2Object_InMethod_InClass _this, IsApplicableMatch isApplicableMatch, ClassDeclaration mowner,
 			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner, org.eclipse.uml2.uml.Class uparam,
-			NamedElement2NamedElement interface2interface) {
+			ASTNode2Element interface2interface) {
 		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mowner, mmethod, uowner, uparam,
 				interface2interface);
 		CSP csp = _localVariable_0;
@@ -2285,7 +2285,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_12_4_solveCSP_bindingAndBlackFBBBBBBB(
 			TypeParameter2Object_InMethod_InClass _this, IsApplicableMatch isApplicableMatch, ClassDeclaration mowner,
 			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner, org.eclipse.uml2.uml.Class uparam,
-			NamedElement2NamedElement interface2interface) {
+			ASTNode2Element interface2interface) {
 		Object[] result_pattern_TypeParameter2Object_InMethod_InClass_12_4_solveCSP_binding = pattern_TypeParameter2Object_InMethod_InClass_12_4_solveCSP_bindingFBBBBBBB(
 				_this, isApplicableMatch, mowner, mmethod, uowner, uparam, interface2interface);
 		if (result_pattern_TypeParameter2Object_InMethod_InClass_12_4_solveCSP_binding != null) {
@@ -2384,24 +2384,6 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 		return new Object[] { __result };
 	}
 
-	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_20_2_testcorematchandDECs_black_nac_0B(
-			org.eclipse.uml2.uml.Class uparam) {
-		for (org.eclipse.uml2.uml.Package __DEC_uparam_packagedElement_167485 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(uparam, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
-			return new Object[] { uparam };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_20_2_testcorematchandDECs_black_nac_1B(
-			org.eclipse.uml2.uml.Class uparam) {
-		for (Interface __DEC_uparam_nestedClassifier_111319 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(uparam, Interface.class, "nestedClassifier")) {
-			return new Object[] { uparam };
-		}
-		return null;
-	}
-
 	public static final Iterable<Object[]> pattern_TypeParameter2Object_InMethod_InClass_20_2_testcorematchandDECs_blackFFB(
 			EMoflonEdge _edge_nestedClassifier) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -2415,13 +2397,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 					if (uowner.getNestedClassifiers().contains(uparam)) {
 						String uparam_name = uparam.getName();
 						if (uparam_name.equals("T")) {
-							if (pattern_TypeParameter2Object_InMethod_InClass_20_2_testcorematchandDECs_black_nac_0B(
-									uparam) == null) {
-								if (pattern_TypeParameter2Object_InMethod_InClass_20_2_testcorematchandDECs_black_nac_1B(
-										uparam) == null) {
-									_result.add(new Object[] { uowner, uparam, _edge_nestedClassifier });
-								}
-							}
+							_result.add(new Object[] { uowner, uparam, _edge_nestedClassifier });
 						}
 
 					}
@@ -2536,9 +2512,9 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_21_2_testcorematchandDECs_black_nac_0BB(
 			TypeParameter mparam, ClassDeclaration mowner) {
-		for (TypeDeclaration __DEC_mparam_typeParameters_545159 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeDeclaration __DEC_mparam_typeParameters_757492 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mparam, TypeDeclaration.class, "typeParameters")) {
-			if (!mowner.equals(__DEC_mparam_typeParameters_545159)) {
+			if (!mowner.equals(__DEC_mparam_typeParameters_757492)) {
 				return new Object[] { mparam, mowner };
 			}
 		}
@@ -2753,8 +2729,8 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 			ClassDeclaration mowner, org.eclipse.uml2.uml.Class uowner, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (NamedElement2NamedElement interface2interface : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(uowner, NamedElement2NamedElement.class, "target")) {
+			for (ASTNode2Element interface2interface : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(uowner, ASTNode2Element.class, "target")) {
 				if (mowner.equals(interface2interface.getSource())) {
 					_result.add(new Object[] { mowner, uowner, interface2interface, sourceMatch, targetMatch });
 				}
@@ -2764,7 +2740,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_24_5_matchcorrcontext_greenBBBF(
-			NamedElement2NamedElement interface2interface, Match sourceMatch, Match targetMatch) {
+			ASTNode2Element interface2interface, Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "TypeParameter2Object_InMethod_InClass";
 		ccMatch.setSourceMatch(sourceMatch);
@@ -2785,7 +2761,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_24_6_createcorrespondence_greenBFBB(
 			org.eclipse.uml2.uml.Class uparam, TypeParameter mparam, CCMatch ccMatch) {
-		NamedElement2NamedElement param2param = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		ASTNode2Element param2param = UmlFactory.eINSTANCE.createASTNode2Element();
 		param2param.setTarget(uparam);
 		param2param.setSource(mparam);
 		ccMatch.getCreateCorr().add(param2param);
@@ -2815,9 +2791,9 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_27_1_matchtggpattern_black_nac_0BB(
 			TypeParameter mparam, ClassDeclaration mowner) {
-		for (TypeDeclaration __DEC_mparam_typeParameters_840177 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeDeclaration __DEC_mparam_typeParameters_499383 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mparam, TypeDeclaration.class, "typeParameters")) {
-			if (!mowner.equals(__DEC_mparam_typeParameters_840177)) {
+			if (!mowner.equals(__DEC_mparam_typeParameters_499383)) {
 				return new Object[] { mparam, mowner };
 			}
 		}
@@ -2858,34 +2834,11 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 		return _result;
 	}
 
-	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_28_1_matchtggpattern_black_nac_0B(
-			org.eclipse.uml2.uml.Class uparam) {
-		for (org.eclipse.uml2.uml.Package __DEC_uparam_packagedElement_388368 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(uparam, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
-			return new Object[] { uparam };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_28_1_matchtggpattern_black_nac_1B(
-			org.eclipse.uml2.uml.Class uparam) {
-		for (Interface __DEC_uparam_nestedClassifier_766428 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(uparam, Interface.class, "nestedClassifier")) {
-			return new Object[] { uparam };
-		}
-		return null;
-	}
-
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_28_1_matchtggpattern_blackBB(
 			org.eclipse.uml2.uml.Class uowner, org.eclipse.uml2.uml.Class uparam) {
 		if (!uowner.equals(uparam)) {
 			if (uowner.getNestedClassifiers().contains(uparam)) {
-				if (pattern_TypeParameter2Object_InMethod_InClass_28_1_matchtggpattern_black_nac_0B(uparam) == null) {
-					if (pattern_TypeParameter2Object_InMethod_InClass_28_1_matchtggpattern_black_nac_1B(
-							uparam) == null) {
-						return new Object[] { uowner, uparam };
-					}
-				}
+				return new Object[] { uowner, uparam };
 			}
 		}
 		return null;
@@ -2938,7 +2891,7 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, NamedElement2NamedElement interface2interface) {
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element interface2interface) {
 		if (ruleResult.getCorrObjects().contains(interface2interface)) {
 			return new Object[] { ruleResult, interface2interface };
 		}
@@ -2958,12 +2911,12 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (RuleEntryList interface2interfaceList : ruleEntryContainer.getRuleEntryList()) {
 			for (EObject tmpInterface2interface : interface2interfaceList.getEntryObjects()) {
-				if (tmpInterface2interface instanceof NamedElement2NamedElement) {
-					NamedElement2NamedElement interface2interface = (NamedElement2NamedElement) tmpInterface2interface;
-					org.eclipse.modisco.java.NamedElement tmpMowner = interface2interface.getSource();
+				if (tmpInterface2interface instanceof ASTNode2Element) {
+					ASTNode2Element interface2interface = (ASTNode2Element) tmpInterface2interface;
+					ASTNode tmpMowner = interface2interface.getSource();
 					if (tmpMowner instanceof ClassDeclaration) {
 						ClassDeclaration mowner = (ClassDeclaration) tmpMowner;
-						NamedElement tmpUowner = interface2interface.getTarget();
+						Element tmpUowner = interface2interface.getTarget();
 						if (tmpUowner instanceof org.eclipse.uml2.uml.Class) {
 							org.eclipse.uml2.uml.Class uowner = (org.eclipse.uml2.uml.Class) tmpUowner;
 							if (pattern_TypeParameter2Object_InMethod_InClass_29_2_isapplicablecore_black_nac_2BB(
@@ -2998,8 +2951,8 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_29_3_solveCSP_bindingFBBBBBBB(
 			TypeParameter2Object_InMethod_InClass _this, IsApplicableMatch isApplicableMatch, ClassDeclaration mowner,
-			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner,
-			NamedElement2NamedElement interface2interface, ModelgeneratorRuleResult ruleResult) {
+			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner, ASTNode2Element interface2interface,
+			ModelgeneratorRuleResult ruleResult) {
 		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mowner, mmethod, uowner,
 				interface2interface, ruleResult);
 		CSP csp = _localVariable_0;
@@ -3016,8 +2969,8 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_29_3_solveCSP_bindingAndBlackFBBBBBBB(
 			TypeParameter2Object_InMethod_InClass _this, IsApplicableMatch isApplicableMatch, ClassDeclaration mowner,
-			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner,
-			NamedElement2NamedElement interface2interface, ModelgeneratorRuleResult ruleResult) {
+			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner, ASTNode2Element interface2interface,
+			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_TypeParameter2Object_InMethod_InClass_29_3_solveCSP_binding = pattern_TypeParameter2Object_InMethod_InClass_29_3_solveCSP_bindingFBBBBBBB(
 				_this, isApplicableMatch, mowner, mmethod, uowner, interface2interface, ruleResult);
 		if (result_pattern_TypeParameter2Object_InMethod_InClass_29_3_solveCSP_binding != null) {
@@ -3043,20 +2996,20 @@ public class TypeParameter2Object_InMethod_InClassImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_29_5_checknacs_blackBBBB(
 			ClassDeclaration mowner, AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner,
-			NamedElement2NamedElement interface2interface) {
+			ASTNode2Element interface2interface) {
 		return new Object[] { mowner, mmethod, uowner, interface2interface };
 	}
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_29_6_perform_blackBBBBB(
 			ClassDeclaration mowner, AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner,
-			NamedElement2NamedElement interface2interface, ModelgeneratorRuleResult ruleResult) {
+			ASTNode2Element interface2interface, ModelgeneratorRuleResult ruleResult) {
 		return new Object[] { mowner, mmethod, uowner, interface2interface, ruleResult };
 	}
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InClass_29_6_perform_greenBBFFFB(
 			AbstractMethodDeclaration mmethod, org.eclipse.uml2.uml.Class uowner, ModelgeneratorRuleResult ruleResult) {
 		org.eclipse.uml2.uml.Class uparam = UMLFactory.eINSTANCE.createClass();
-		NamedElement2NamedElement param2param = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		ASTNode2Element param2param = UmlFactory.eINSTANCE.createASTNode2Element();
 		TypeParameter mparam = JavaFactory.eINSTANCE.createTypeParameter();
 		String uparam_name_prime = "T";
 		boolean ruleResult_success_prime = Boolean.valueOf(true);

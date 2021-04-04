@@ -18,7 +18,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  * <ul>
  *   <li>{@link org.gravity.typegraph.basic.TMember#getDefinedBy <em>Defined By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMember#getAccessedBy <em>Accessed By</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.TMember#getTAccessing <em>TAccessing</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TMember#getAccessing <em>Accessing</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMember#getTModifier <em>TModifier</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMember#getSignature <em>Signature</em>}</li>
  * </ul>
@@ -59,7 +59,7 @@ public interface TMember extends TAnnotatable, TAbstractFlowElement {
 	/**
 	 * Returns the value of the '<em><b>Accessed By</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TAccess}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAccess#getTTarget <em>TTarget</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAccess#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Accessed By</em>' reference list isn't clear,
@@ -68,29 +68,25 @@ public interface TMember extends TAnnotatable, TAbstractFlowElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Accessed By</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMember_AccessedBy()
-	 * @see org.gravity.typegraph.basic.TAccess#getTTarget
-	 * @model opposite="tTarget" ordered="false"
+	 * @see org.gravity.typegraph.basic.TAccess#getTarget
+	 * @model opposite="target" ordered="false"
 	 * @generated
 	 */
 	EList<TAccess> getAccessedBy();
 
 	/**
-	 * Returns the value of the '<em><b>TAccessing</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Accessing</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TAccess}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAccess#getTSource <em>TSource</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAccess#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>TAccessing</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>TAccessing</em>' containment reference list.
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTMember_TAccessing()
-	 * @see org.gravity.typegraph.basic.TAccess#getTSource
-	 * @model opposite="tSource" containment="true"
+	 * @return the value of the '<em>Accessing</em>' containment reference list.
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTMember_Accessing()
+	 * @see org.gravity.typegraph.basic.TAccess#getSource
+	 * @model opposite="source" containment="true"
 	 * @generated
 	 */
-	EList<TAccess> getTAccessing();
+	EList<TAccess> getAccessing();
 
 	/**
 	 * Returns the value of the '<em><b>TModifier</b></em>' containment reference.

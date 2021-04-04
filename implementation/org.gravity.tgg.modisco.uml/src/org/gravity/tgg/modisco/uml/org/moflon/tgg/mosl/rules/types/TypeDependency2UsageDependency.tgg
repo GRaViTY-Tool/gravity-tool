@@ -20,7 +20,7 @@
 		-ownedElement-> uSrcType
 		++ -packagedElement-> uUsage
 	}
-	uSrcType : Class {
+	uSrcType : uml.Class {
 	}
 	++ uUsage : Usage {
 		++ -client-> uSrcType
@@ -35,11 +35,11 @@
 		#src->mPackage
 		#trg->uPackage
 	}
-	src2Src : NamedElement2NamedElement {
+	src2Src : ASTNode2Element {
 		#src-> mSrcType
 		#trg-> uSrcType
 	}
-	trg2Trg : NamedElement2NamedElement {
+	trg2Trg : ASTNode2Element {
 		#src-> mTrgType
 		#trg-> uTrgType
 	}

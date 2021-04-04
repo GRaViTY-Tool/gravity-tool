@@ -1,0 +1,16 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule OrphandedPrimitive2PrimitiveType #extends OrphanedTypeDec2OrphanedType_Abstract #with org.gravity.tgg.modisco.uml
+
+#source{
+	bodyDeclaration : PrimitiveType
+}
+
+#target {
+	umlPackage : Package {
+		name == "Common Java datatypes"
+	}
+	
+	feature : PrimitiveType
+}

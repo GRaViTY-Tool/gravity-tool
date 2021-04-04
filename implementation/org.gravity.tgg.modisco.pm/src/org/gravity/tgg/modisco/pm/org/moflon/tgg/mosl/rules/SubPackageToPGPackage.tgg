@@ -16,12 +16,12 @@
 	typeGraph:TypeGraph
 
 	++tSub:TPackage {
-		++  -typeGraph -> typeGraph
+		++  -model -> typeGraph
 	}
 
 	tParent:TPackage {
-		++  -subpackage -> tSub
-		-typeGraph -> typeGraph
+		++  -subpackages -> tSub
+		-model -> typeGraph
 	}
 }
 

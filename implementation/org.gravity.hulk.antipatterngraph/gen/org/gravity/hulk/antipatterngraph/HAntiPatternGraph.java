@@ -19,7 +19,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getPg <em>Pg</em>}</li>
+ *   <li>{@link org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getModel <em>Pg</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getHAnnotations <em>HAnnotations</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getCurrentID <em>Current ID</em>}</li>
  * </ul>
@@ -43,14 +43,14 @@ public interface HAntiPatternGraph extends EObject {
 	 * @model required="true"
 	 * @generated
 	 */
-	TypeGraph getPg();
+	TypeGraph getModel();
 
 	/**
-	 * Sets the value of the '{@link org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getPg <em>Pg</em>}' reference.
+	 * Sets the value of the '{@link org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getModel <em>Pg</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Pg</em>' reference.
-	 * @see #getPg()
+	 * @see #getModel()
 	 * @generated
 	 */
 	void setPg(TypeGraph value);

@@ -36,7 +36,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HAntiPatternGraphImpl#getPg <em>Pg</em>}</li>
+ *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HAntiPatternGraphImpl#getModel <em>Pg</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HAntiPatternGraphImpl#getHAnnotations <em>HAnnotations</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HAntiPatternGraphImpl#getCurrentID <em>Current ID</em>}</li>
  * </ul>
@@ -45,10 +45,10 @@ import org.gravity.typegraph.basic.TypeGraph;
  */
 public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGraph {
 	/**
-	 * The cached value of the '{@link #getPg() <em>Pg</em>}' reference.
+	 * The cached value of the '{@link #getModel() <em>Pg</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPg()
+	 * @see #getModel()
 	 * @generated
 	 * @ordered
 	 */
@@ -109,7 +109,7 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 	 * @generated
 	 */
 	@Override
-	public TypeGraph getPg() {
+	public TypeGraph getModel() {
 		if (pg != null && pg.eIsProxy()) {
 			InternalEObject oldPg = (InternalEObject) pg;
 			pg = (TypeGraph) eResolveProxy(oldPg);
@@ -233,7 +233,7 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 		switch (featureID) {
 		case AntipatterngraphPackage.HANTI_PATTERN_GRAPH__PG:
 			if (resolve)
-				return getPg();
+				return getModel();
 			return basicGetPg();
 		case AntipatterngraphPackage.HANTI_PATTERN_GRAPH__HANNOTATIONS:
 			return getHAnnotations();

@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.gravity.refactorings.Refactoring;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
@@ -50,7 +51,7 @@ public class CreateSuperclass implements Refactoring {
 		if (child.isEmpty()) {
 			throw new RefactoringFailedException("The list of child classes is empty!");
 		}
-		final TypeGraph pg = child.get(0).getPg();
+		final TypeGraph pg = child.get(0).getModel();
 		final List<TClass> container = new LinkedList<>();
 
 		container.add(newParent);
@@ -59,15 +60,17 @@ public class CreateSuperclass implements Refactoring {
 
 		PGAdditionHelper.linkClass(pg, newParent);
 
-		final TClass oldParent = child.get(0).getParentClass();
-		if (oldParent != null) {
-			newParent.setParentClass(oldParent);
-			container.add(oldParent);
+		final EList<TClass> oldParents = child.get(0).getParentClasses();
+		if (!oldParents.isEmpty()) {
+			newParent.getParentClasses().addAll(oldParents);
+			container.addAll(oldParents);
 
 		}
 
 		for (final TClass tChildClass : child) {
-			tChildClass.setParentClass(newParent);
+			final EList<TClass> parentClasses = tChildClass.getParentClasses();
+			parentClasses.clear();
+			parentClasses.add(newParent);
 			container.add(tChildClass);
 		}
 		return container;
@@ -92,26 +95,26 @@ public class CreateSuperclass implements Refactoring {
 
 		final TClass firstChild = child.get(0);
 		// There is not already a class with this name
-		final TypeGraph programModel = firstChild.getPg();
+		final TypeGraph programModel = firstChild.getModel();
 		if (programModel.getType(newParentName) != null) {
 			return false;
 		}
 
 		// All child need the same base package and parent
 		final TPackage basePackage = firstChild.getBasePackage();
-		final TClass parent = firstChild.getParentClass();
+		final EList<TClass> parents = firstChild.getParentClasses();
 		final TClass object = programModel.getClass("java.lang.Object");
 		for (int i = 1; i < child.size(); i++) {
 			final TClass nextChild = child.get(i);
 			if (!basePackage.equals(nextChild.getBasePackage())) {
 				return false;
 			}
-			final TClass parentClass = nextChild.getParentClass();
-			if (parent == null) {
-				if (parentClass != null && !parentClass.equals(object)) {
+			final List<TClass> parentClasses = nextChild.getParentClasses();
+			if ((parents == null) || parents.isEmpty()) {
+				if ((parentClasses.size() > 1) || ((parentClasses != null) && !parentClasses.contains(object))) {
 					return false;
 				}
-			} else if (!parent.equals(parentClass)) {
+			} else if ((parents.size() != parentClasses.size()) && !parents.containsAll(parentClasses)) {
 				return false;
 			}
 		}

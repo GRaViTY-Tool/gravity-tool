@@ -6,4 +6,5 @@ Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: org.gravity.eclipse.java.spl
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.gravity.eclipse.java.spl
-Require-Bundle: org.gravity.eclipse
+Require-Bundle: org.gravity.eclipse,
+ org.gravity.typegraph.basic

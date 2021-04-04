@@ -33,7 +33,7 @@ import org.gravity.typegraph.basic.TMethodSignature;
 public class PullUpMethod implements Refactoring {
 
 	@Override
-	public boolean isApplicable(RefactoringConfiguration configuration) {
+	public boolean isApplicable(final RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			final PullUpMethodConfiguration esc = (PullUpMethodConfiguration) configuration;
 			return isApplicable(esc.getSignature(), esc.getTargetClass());
@@ -42,7 +42,7 @@ public class PullUpMethod implements Refactoring {
 	}
 
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) throws RefactoringFailedException {
+	public Collection<TClass> perform(final RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			final PullUpMethodConfiguration esc = (PullUpMethodConfiguration) configuration;
 			return perform(esc.getSignature(), esc.getTargetClass());
@@ -57,7 +57,7 @@ public class PullUpMethod implements Refactoring {
 	 *
 	 * @generated
 	 */
-	public List<TClass> perform(TMethodSignature method, TClass parent) {
+	public List<TClass> perform(final TMethodSignature method, final TClass parent) {
 		final List<TClass> container = new LinkedList<>();
 		final TMethodDefinition tMethodDefinition = PullUpMethod.selectRandomDefinitionOfChild(parent, method);
 		if (tMethodDefinition != null) {
@@ -72,7 +72,7 @@ public class PullUpMethod implements Refactoring {
 				final TAbstractType tmpTChild = childsDefinition.getDefinedBy();
 				if (tmpTChild instanceof TClass) {
 					final TClass tChild = (TClass) tmpTChild;
-					if (!parent.equals(tmpChild) && parent.equals(tChild.getParentClass())
+					if (!parent.equals(tmpChild) && parent.equals(tChild.getParentClasses().get(0))
 							&& tChild.getSignature().contains(method)) {
 						container.add(tChild);
 						delete.add(childsDefinition);
@@ -92,9 +92,9 @@ public class PullUpMethod implements Refactoring {
 	 * @param newTarget The new target of the accesses
 	 * @param oldTarget The old target of the accesses
 	 */
-	private void updateAccesses(TMember newTarget, final TMember oldTarget) {
+	private void updateAccesses(final TMember newTarget, final TMember oldTarget) {
 		final List<TAccess> accesses = oldTarget.getAccessedBy().parallelStream()
-				.filter(access -> !access.getTSource().equals(oldTarget)).collect(Collectors.toList());
+				.filter(access -> !access.getSource().equals(oldTarget)).collect(Collectors.toList());
 		newTarget.getAccessedBy().addAll(accesses);
 	}
 
@@ -103,7 +103,7 @@ public class PullUpMethod implements Refactoring {
 	 *
 	 * @generated
 	 */
-	public boolean isApplicable(TMethodSignature tMethodSignatureToPullUp, TClass tParentClass) {
+	public boolean isApplicable(final TMethodSignature tMethodSignatureToPullUp, final TClass tParentClass) {
 		if (tParentClass.isTLib()) {
 			return false;
 		}
@@ -146,8 +146,8 @@ public class PullUpMethod implements Refactoring {
 					final TClass childClass = (TClass) tmpActiveClass;
 
 					// ForEach
-					for (final TAccess tAccess : tMethodDefinition.getTAccessing()) {
-						final TMember accessed = tAccess.getTTarget();
+					for (final TAccess tAccess : tMethodDefinition.getAccessing()) {
+						final TMember accessed = tAccess.getTarget();
 						final TAbstractType definingClass = accessed.getDefinedBy();
 						if (!accessed.equals(tMethodDefinition)) {
 							accessedMembers.add(accessed);
@@ -170,7 +170,7 @@ public class PullUpMethod implements Refactoring {
 
 	}
 
-	private static final TMethodDefinition selectRandomDefinitionOfChild(TClass parent, TMethodSignature method) {
+	private static final TMethodDefinition selectRandomDefinitionOfChild(final TClass parent, final TMethodSignature method) {
 		for (final TClass tmpChild : parent.getChildClasses()) {
 			if (!parent.equals(tmpChild) && tmpChild.getSignature().contains(method)) {
 				for (final TMethodDefinition tMethodDefinition : method.getMethodDefinitions()) {

@@ -105,7 +105,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model2PM, EObject model, EObject pm);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model2PM, EObject pm, EObject model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject model2PM, EObject model, EObject pm);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject model2PM, EObject pm, EObject model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,7 +241,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Model model, TypeGraph pm, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TypeGraph pm, Model model, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->

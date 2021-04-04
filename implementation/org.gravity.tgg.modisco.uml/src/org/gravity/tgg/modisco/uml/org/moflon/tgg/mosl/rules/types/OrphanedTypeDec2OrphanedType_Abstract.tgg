@@ -1,0 +1,32 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule OrphanedTypeDec2OrphanedType_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jPackage : Model {
+		++ -orphanTypes->bodyDeclaration
+	}
+	
+	bodyDeclaration : Type
+}
+
+#target {
+	umlPackage : Package {
+		++ -packagedElement->feature
+	}
+	
+	feature : Classifier
+}
+
+#correspondence {
+	jp2up : JavaModel2UMLPackage {
+		#src->jPackage
+		#trg->umlPackage
+	}
+	
+	md2o : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}

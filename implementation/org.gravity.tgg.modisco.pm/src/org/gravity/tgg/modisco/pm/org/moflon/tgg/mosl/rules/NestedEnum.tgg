@@ -20,11 +20,6 @@
 	}
 
 	++tAnnotation:TEnum
-
-	++tNestedPackage:TPackage {
-		++  -ownedTypes -> tNestedType
-		++  -classes -> tNestedType
-	}
 }
 
 #correspondence {

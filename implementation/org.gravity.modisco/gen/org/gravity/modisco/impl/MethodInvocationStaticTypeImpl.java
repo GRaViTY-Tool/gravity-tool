@@ -75,6 +75,7 @@ public class MethodInvocationStaticTypeImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractMethodInvocation getMethodInvoc() {
 		if (methodInvoc != null && methodInvoc.eIsProxy()) {
 			InternalEObject oldMethodInvoc = (InternalEObject)methodInvoc;
@@ -101,6 +102,7 @@ public class MethodInvocationStaticTypeImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMethodInvoc(AbstractMethodInvocation newMethodInvoc) {
 		AbstractMethodInvocation oldMethodInvoc = methodInvoc;
 		methodInvoc = newMethodInvoc;
@@ -113,6 +115,7 @@ public class MethodInvocationStaticTypeImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Type getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
@@ -139,6 +142,7 @@ public class MethodInvocationStaticTypeImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(Type newType) {
 		Type oldType = type;
 		type = newType;

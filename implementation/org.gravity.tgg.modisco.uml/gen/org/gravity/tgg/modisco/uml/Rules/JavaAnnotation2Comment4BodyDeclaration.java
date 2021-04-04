@@ -14,7 +14,6 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interface;
 
 import org.gravity.tgg.modisco.uml.ASTNode2Element;
-import org.gravity.tgg.modisco.uml.NamedElement2NamedElement;
 
 import org.moflon.tgg.language.csp.CSP;
 
@@ -103,7 +102,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation, TypeAccess access,
 			ASTNode2Element b2e, Interface interf, BodyDeclaration body, AnnotationTypeDeclaration type,
-			NamedElement2NamedElement type2Interface, Element element);
+			ASTNode2Element type2Interface, Element element);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,7 +118,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject access, EObject a2c, EObject b2e,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject a2c, EObject access, EObject b2e,
 			EObject comment, EObject interf, EObject body, EObject type, EObject type2Interface, EObject element);
 
 	/**
@@ -185,8 +184,8 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element b2e, Comment comment,
-			Interface interf, BodyDeclaration body, AnnotationTypeDeclaration type,
-			NamedElement2NamedElement type2Interface, Element element);
+			Interface interf, BodyDeclaration body, AnnotationTypeDeclaration type, ASTNode2Element type2Interface,
+			Element element);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,7 +201,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject access, EObject a2c, EObject b2e,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject a2c, EObject access, EObject b2e,
 			EObject comment, EObject interf, EObject body, EObject type, EObject type2Interface, EObject element);
 
 	/**
@@ -219,7 +218,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_347(EMoflonEdge _edge_ownedComment);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_85(EMoflonEdge _edge_ownedComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +226,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_356(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_104(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,7 +294,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element b2eParameter,
-			NamedElement2NamedElement type2InterfaceParameter);
+			ASTNode2Element type2InterfaceParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,8 +303,8 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element b2e, Interface interf,
-			BodyDeclaration body, AnnotationTypeDeclaration type, NamedElement2NamedElement type2Interface,
-			Element element, ModelgeneratorRuleResult ruleResult);
+			BodyDeclaration body, AnnotationTypeDeclaration type, ASTNode2Element type2Interface, Element element,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

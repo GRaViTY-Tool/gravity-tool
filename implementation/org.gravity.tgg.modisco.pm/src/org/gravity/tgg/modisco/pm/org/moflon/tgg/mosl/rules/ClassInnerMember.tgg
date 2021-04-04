@@ -13,26 +13,23 @@
 }
 
 #target {
-	++tInnerPackage:TPackage {
-		++  -parent -> tOuterPackage
-		++  -classes -> tInnerClass
-		++  -ownedTypes -> tInnerClass
-	}
-
 	typeGraph:TypeGraph {
 		++  -ownedTypes -> tInnerClass
 		++  -classes -> tInnerClass
-		-ownedTypes -> tOuterClass
+	}
+	
+	tPackage:TPackage {
+		++-ownedTypes->tInnerClass
+		++-classes->tInnerClass
 	}
 
 	tOuterClass:TAbstractType {
+		-model->typeGraph
+		-package->tPackage
 		++ -innerTypes -> tInnerClass
-		-package -> tOuterPackage
 	}
 
 	++tInnerClass:TClass
-
-	tOuterPackage:TPackage
 }
 
 #correspondence {
@@ -43,9 +40,7 @@
 }
 
 #attributeConditions {
-	eq(mInnerClass.name, tInnerClass.tName)
-
-	addSuffix(tOuterClass.tName, "$1", tInnerPackage.tName)
+	concat(tOuterClass.tName, "$", mInnerClass.name, tInnerClass.tName)
 }
 
 #using org.gravity.tgg.modisco.pm.*

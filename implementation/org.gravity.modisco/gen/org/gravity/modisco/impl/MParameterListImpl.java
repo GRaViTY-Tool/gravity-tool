@@ -81,6 +81,7 @@ public abstract class MParameterListImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MEntry getMFirstEntry() {
 		if (mFirstEntry != null && mFirstEntry.eIsProxy()) {
 			InternalEObject oldMFirstEntry = (InternalEObject)mFirstEntry;
@@ -107,6 +108,7 @@ public abstract class MParameterListImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMFirstEntry(MEntry newMFirstEntry) {
 		MEntry oldMFirstEntry = mFirstEntry;
 		mFirstEntry = newMFirstEntry;
@@ -119,6 +121,7 @@ public abstract class MParameterListImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MEntry> getMEntrys() {
 		if (mEntrys == null) {
 			mEntrys = new EObjectContainmentEList<MEntry>(MEntry.class, this, ModiscoPackage.MPARAMETER_LIST__MENTRYS);

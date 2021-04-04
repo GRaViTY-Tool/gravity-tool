@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.gravity.modisco.codegen;
 
@@ -12,6 +12,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
@@ -19,6 +20,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IJavaProject;
@@ -30,9 +32,9 @@ import org.eclipse.modisco.java.AnnotationTypeMemberDeclaration;
 import org.eclipse.modisco.java.ArrayInitializer;
 import org.eclipse.modisco.java.ArrayType;
 import org.eclipse.modisco.java.Block;
-import org.eclipse.modisco.java.CompilationUnit;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.Comment;
+import org.eclipse.modisco.java.CompilationUnit;
 import org.eclipse.modisco.java.Expression;
 import org.eclipse.modisco.java.ImportDeclaration;
 import org.eclipse.modisco.java.NamedElement;
@@ -55,19 +57,22 @@ public class GravityModiscoCodeGenerator {
 
 	/**
 	 * Generates Java code from the MoDisco model
-	 * 
+	 *
 	 * @param project the project into which the code should be generated
 	 * @param model   the MoDisco model from which the code should be generated
 	 * @param monitor A progress monitor
 	 */
-	public static void generateCode(IJavaProject project, MGravityModel model, final IProgressMonitor monitor) {
+	public static void generateCode(final IJavaProject project, final MGravityModel model, IProgressMonitor monitor) {
+		if(monitor == null) {
+			monitor = new NullProgressMonitor();
+		}
 		postprocessAdditionsBwd(model);
 
-		IProject iproject = project.getProject();
+		final IProject iproject = project.getProject();
 		try {
 			final IFolder outFile = iproject.getFolder("src");
 			new GenerateJavaExtended(model, outFile.getLocation().toFile(), Collections.emptyList())
-					.doGenerate(new BasicMonitor.EclipseSubProgress(monitor, 1));
+			.doGenerate(new BasicMonitor.EclipseSubProgress(monitor, 1));
 		} catch (final IOException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
@@ -81,35 +86,34 @@ public class GravityModiscoCodeGenerator {
 
 	/**
 	 * Postprocesses the transformation
-	 * 
+	 *
 	 * @param model The model to be postprocessed
 	 */
-	private static void postprocessAdditionsBwd(MGravityModel model) {
+	private static void postprocessAdditionsBwd(final MGravityModel model) {
 		addTypesToCompilationUnit(model);
 
 		addMissingBlocks(model);
 
-//		postprocessAddedAnnoatations(model, new LinkedList<>());
+		//		postprocessAddedAnnoatations(model, new LinkedList<>());
 	}
 
 	/**
 	 * @param model
 	 */
-	private static void addMissingBlocks(MGravityModel model) {
-		Deque<Package> packages = new LinkedList<>();
-		packages.addAll(model.getOwnedElements());
+	private static void addMissingBlocks(final MGravityModel model) {
+		final Deque<Package> packages = new LinkedList<>(model.getOwnedElements());
 		while (!packages.isEmpty()) {
-			Package p = packages.pop();
+			final Package p = packages.pop();
 			packages.addAll(p.getOwnedPackages());
-			for (Object method : p.getOwnedElements().parallelStream()
+			for (final Object method : p.getOwnedElements().parallelStream()
 					.filter(type -> !type.isProxy() && (type instanceof ClassDeclaration))
 					.flatMap(type -> type.getBodyDeclarations().parallelStream())
 					.filter(body -> (body instanceof AbstractMethodDeclaration))
 					.map(body -> (AbstractMethodDeclaration) body).filter(method -> method.getBody() == null)
 					.toArray()) {
-				Block block = JavaFactory.eINSTANCE.createBlock();
+				final Block block = JavaFactory.eINSTANCE.createBlock();
 				((AbstractMethodDeclaration) method).setBody(block);
-				Comment comment = JavaFactory.eINSTANCE.createLineComment();
+				final Comment comment = JavaFactory.eINSTANCE.createLineComment();
 				comment.setContent("//TODO: Implement this operation");
 				block.getComments().add(comment);
 			}
@@ -120,7 +124,7 @@ public class GravityModiscoCodeGenerator {
 	 * @param model
 	 * @param additions
 	 */
-	private static void postprocessAddedAnnoatations(MGravityModel model, Collection<EObject> additions) {
+	private static void postprocessAddedAnnoatations(final MGravityModel model, final Collection<EObject> additions) {
 		final Type string = MoDiscoUtil.getOrCreateJavaLangString(model);
 		ArrayType array = null;
 		for (final Type orphan : model.getOrphanTypes()) {
@@ -134,9 +138,9 @@ public class GravityModiscoCodeGenerator {
 		}
 
 		final Map<CompilationUnit, HashSet<NamedElement>> imports = new HashMap<>();
-		for (EObject eObject : additions) {
+		for (final EObject eObject : additions) {
 			if (eObject instanceof Annotation) {
-				Annotation annotation = (Annotation) eObject;
+				final Annotation annotation = (Annotation) eObject;
 				CompilationUnit cu = annotation.getOriginalCompilationUnit();
 				if (cu == null) {
 					EObject current = eObject.eContainer();
@@ -153,35 +157,35 @@ public class GravityModiscoCodeGenerator {
 					importedTypes = imports.get(cu);
 				} else {
 					importedTypes = new HashSet<>();
-					for (ImportDeclaration imp : cu.getImports()) {
+					for (final ImportDeclaration imp : cu.getImports()) {
 						importedTypes.add(imp.getImportedElement());
 					}
 					imports.put(cu, importedTypes);
 				}
 
-				Type type = annotation.getType().getType();
+				final Type type = annotation.getType().getType();
 				if (!importedTypes.contains(type)) {
 					importedTypes.add(type);
-					ImportDeclaration imp = JavaFactory.eINSTANCE.createImportDeclaration();
+					final ImportDeclaration imp = JavaFactory.eINSTANCE.createImportDeclaration();
 					imp.setImportedElement(type);
 					cu.getImports().add(imp);
 				}
 			} else if (eObject instanceof AnnotationMemberValuePair) {
-				AnnotationMemberValuePair pair = (AnnotationMemberValuePair) eObject;
+				final AnnotationMemberValuePair pair = (AnnotationMemberValuePair) eObject;
 				if (pair.getMember() == null) {
-					AnnotationTypeMemberDeclaration decl = JavaFactory.eINSTANCE
+					final AnnotationTypeMemberDeclaration decl = JavaFactory.eINSTANCE
 							.createAnnotationTypeMemberDeclaration();
 					decl.setName(pair.getName());
 					pair.setMember(decl);
-					TypeAccess decl2Array = JavaFactory.eINSTANCE.createTypeAccess();
+					final TypeAccess decl2Array = JavaFactory.eINSTANCE.createTypeAccess();
 					decl.setType(decl2Array);
 					decl2Array.setType(array);
 				}
-				Expression value = pair.getValue();
+				final Expression value = pair.getValue();
 				if (value instanceof ArrayInitializer) {
-					for (Expression entry : ((ArrayInitializer) value).getExpressions()) {
+					for (final Expression entry : ((ArrayInitializer) value).getExpressions()) {
 						if (entry instanceof StringLiteral) {
-							StringLiteral stringLiteral = (StringLiteral) entry;
+							final StringLiteral stringLiteral = (StringLiteral) entry;
 							if (!stringLiteral.getEscapedValue().matches("\".*\"")) {
 								stringLiteral.setEscapedValue('\"' + stringLiteral.getEscapedValue() + '\"');
 							}
@@ -194,18 +198,18 @@ public class GravityModiscoCodeGenerator {
 		}
 	}
 
-	private static void addTypesToCompilationUnit(MGravityModel model) {
-		List<CompilationUnit> cus = new LinkedList<>();
-		Deque<Package> packages = new LinkedList<>();
-		packages.addAll(model.getOwnedElements());
+	private static void addTypesToCompilationUnit(final MGravityModel model) {
+		final List<CompilationUnit> cus = new LinkedList<>();
+		final Deque<Package> packages = new LinkedList<>(model.getOwnedElements());
 		while (!packages.isEmpty()) {
-			Package p = packages.pop();
+			final Package p = packages.pop();
 			packages.addAll(p.getOwnedPackages());
-			for (AbstractTypeDeclaration type : p.getOwnedElements()) {
-				if (type.getOriginalCompilationUnit() == null) {
-					CompilationUnit cu = JavaFactory.eINSTANCE.createCompilationUnit();
+			for (final AbstractTypeDeclaration type : p.getOwnedElements()) {
+				if ((type.getOriginalCompilationUnit() == null) && !type.isProxy()) {
+					final CompilationUnit cu = JavaFactory.eINSTANCE.createCompilationUnit();
 					cu.setName(type.getName() + ".java");
 					cu.getTypes().add(type);
+					cu.setPackage(type.getPackage());
 					cus.add(cu);
 				}
 			}

@@ -29,7 +29,7 @@
 		-packagedElement->uContainer
 	}
 	
-	uContainer:Class {
+	uContainer:uml.Class {
 		-nestedClassifier->nonParamElement
 	}
 	
@@ -47,17 +47,17 @@
 		#trg->umlPackage
 	}
 	
-	ne2neNonParam: NamedElement2NamedElement {
+	ne2neNonParam: ASTNode2Element {
 		#src->nonParamType
 		#trg->nonParamElement
 	}
 	
-	c2c: NamedElement2NamedElement {
+	c2c: ASTNode2Element {
 		#src->jContainer
 		#trg->uContainer
 	}
 	
-	++ne2ne: NamedElement2NamedElement {
+	++ne2ne: ASTNode2Element {
 		#src->parameterizedType
 		#trg->parameterizedClassifier
 	}

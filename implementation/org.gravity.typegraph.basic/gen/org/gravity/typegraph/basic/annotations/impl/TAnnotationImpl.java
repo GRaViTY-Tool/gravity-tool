@@ -62,7 +62,6 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	protected TAnnotationImpl() {
-		super();
 	}
 
 	/**
@@ -80,7 +79,9 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 */
 	@Override
 	public TAnnotatable getTAnnotated() {
-		if (eContainerFeatureID() != AnnotationsPackage.TANNOTATION__TANNOTATED) return null;
+		if (eContainerFeatureID() != AnnotationsPackage.TANNOTATION__TANNOTATED) {
+			return null;
+		}
 		return (TAnnotatable)eInternalContainer();
 	}
 
@@ -88,7 +89,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTAnnotated(TAnnotatable newTAnnotated, NotificationChain msgs) {
+	public NotificationChain basicSetTAnnotated(final TAnnotatable newTAnnotated, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newTAnnotated, AnnotationsPackage.TANNOTATION__TANNOTATED, msgs);
 		return msgs;
 	}
@@ -98,20 +99,26 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	@Override
-	public void setTAnnotated(TAnnotatable newTAnnotated) {
-		if (newTAnnotated != eInternalContainer() || (eContainerFeatureID() != AnnotationsPackage.TANNOTATION__TANNOTATED && newTAnnotated != null)) {
-			if (EcoreUtil.isAncestor(this, newTAnnotated))
+	public void setTAnnotated(final TAnnotatable newTAnnotated) {
+		if ((newTAnnotated != eInternalContainer()) || ((eContainerFeatureID() != AnnotationsPackage.TANNOTATION__TANNOTATED) && (newTAnnotated != null))) {
+			if (EcoreUtil.isAncestor(this, newTAnnotated)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newTAnnotated != null)
+			}
+			if (newTAnnotated != null) {
 				msgs = ((InternalEObject)newTAnnotated).eInverseAdd(this, AnnotationsPackage.TANNOTATABLE__TANNOTATION, TAnnotatable.class, msgs);
+			}
 			msgs = basicSetTAnnotated(newTAnnotated, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AnnotationsPackage.TANNOTATION__TANNOTATED, newTAnnotated, newTAnnotated));
+		}
 	}
 
 	/**
@@ -120,15 +127,14 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 */
 	@Override
 	public TAnnotationType getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (TAnnotationType)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AnnotationsPackage.TANNOTATION__TYPE, oldType, type));
+		if ((this.type != null) && this.type.eIsProxy()) {
+			final InternalEObject oldType = (InternalEObject)this.type;
+			this.type = (TAnnotationType)eResolveProxy(oldType);
+			if ((this.type != oldType) && eNotificationRequired()) {
+				eNotify(new ENotificationImpl(this, Notification.RESOLVE, AnnotationsPackage.TANNOTATION__TYPE, oldType, this.type));
 			}
 		}
-		return type;
+		return this.type;
 	}
 
 	/**
@@ -136,19 +142,23 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	public TAnnotationType basicGetType() {
-		return type;
+		return this.type;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetType(TAnnotationType newType, NotificationChain msgs) {
-		TAnnotationType oldType = type;
-		type = newType;
+	public NotificationChain basicSetType(final TAnnotationType newType, NotificationChain msgs) {
+		final TAnnotationType oldType = this.type;
+		this.type = newType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AnnotationsPackage.TANNOTATION__TYPE, oldType, newType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AnnotationsPackage.TANNOTATION__TYPE, oldType, newType);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -158,18 +168,23 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	@Override
-	public void setType(TAnnotationType newType) {
-		if (newType != type) {
+	public void setType(final TAnnotationType newType) {
+		if (newType != this.type) {
 			NotificationChain msgs = null;
-			if (type != null)
-				msgs = ((InternalEObject)type).eInverseRemove(this, AnnotationsPackage.TANNOTATION_TYPE__ANNOTATIONS, TAnnotationType.class, msgs);
-			if (newType != null)
+			if (this.type != null) {
+				msgs = ((InternalEObject)this.type).eInverseRemove(this, AnnotationsPackage.TANNOTATION_TYPE__ANNOTATIONS, TAnnotationType.class, msgs);
+			}
+			if (newType != null) {
 				msgs = ((InternalEObject)newType).eInverseAdd(this, AnnotationsPackage.TANNOTATION_TYPE__ANNOTATIONS, TAnnotationType.class, msgs);
+			}
 			msgs = basicSetType(newType, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AnnotationsPackage.TANNOTATION__TYPE, newType, newType));
+		}
 	}
 
 	/**
@@ -178,10 +193,10 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 */
 	@Override
 	public EList<TAnnotationValue> getTValues() {
-		if (tValues == null) {
-			tValues = new EObjectContainmentEList<TAnnotationValue>(TAnnotationValue.class, this, AnnotationsPackage.TANNOTATION__TVALUES);
+		if (this.tValues == null) {
+			this.tValues = new EObjectContainmentEList<>(TAnnotationValue.class, this, AnnotationsPackage.TANNOTATION__TVALUES);
 		}
-		return tValues;
+		return this.tValues;
 	}
 
 	/**
@@ -190,7 +205,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated NOT
 	 */
 	@Override
-	public TAnnotationValue getValue(String key) {
+	public TAnnotationValue getValue(final String key) {
 		return getTValues().parallelStream().filter(value -> value.getTKey().equals(key)).findAny().orElse(null);
 	}
 
@@ -199,16 +214,18 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AnnotationsPackage.TANNOTATION__TANNOTATED:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetTAnnotated((TAnnotatable)otherEnd, msgs);
-			case AnnotationsPackage.TANNOTATION__TYPE:
-				if (type != null)
-					msgs = ((InternalEObject)type).eInverseRemove(this, AnnotationsPackage.TANNOTATION_TYPE__ANNOTATIONS, TAnnotationType.class, msgs);
-				return basicSetType((TAnnotationType)otherEnd, msgs);
+		case AnnotationsPackage.TANNOTATION__TANNOTATED:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetTAnnotated((TAnnotatable)otherEnd, msgs);
+		case AnnotationsPackage.TANNOTATION__TYPE:
+			if (this.type != null) {
+				msgs = ((InternalEObject)this.type).eInverseRemove(this, AnnotationsPackage.TANNOTATION_TYPE__ANNOTATIONS, TAnnotationType.class, msgs);
+			}
+			return basicSetType((TAnnotationType)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -218,14 +235,14 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
-			case AnnotationsPackage.TANNOTATION__TANNOTATED:
-				return basicSetTAnnotated(null, msgs);
-			case AnnotationsPackage.TANNOTATION__TYPE:
-				return basicSetType(null, msgs);
-			case AnnotationsPackage.TANNOTATION__TVALUES:
-				return ((InternalEList<?>)getTValues()).basicRemove(otherEnd, msgs);
+		case AnnotationsPackage.TANNOTATION__TANNOTATED:
+			return basicSetTAnnotated(null, msgs);
+		case AnnotationsPackage.TANNOTATION__TYPE:
+			return basicSetType(null, msgs);
+		case AnnotationsPackage.TANNOTATION__TVALUES:
+			return ((InternalEList<?>)getTValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -235,10 +252,10 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case AnnotationsPackage.TANNOTATION__TANNOTATED:
-				return eInternalContainer().eInverseRemove(this, AnnotationsPackage.TANNOTATABLE__TANNOTATION, TAnnotatable.class, msgs);
+		case AnnotationsPackage.TANNOTATION__TANNOTATED:
+			return eInternalContainer().eInverseRemove(this, AnnotationsPackage.TANNOTATABLE__TANNOTATION, TAnnotatable.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -248,15 +265,17 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
-			case AnnotationsPackage.TANNOTATION__TANNOTATED:
-				return getTAnnotated();
-			case AnnotationsPackage.TANNOTATION__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
-			case AnnotationsPackage.TANNOTATION__TVALUES:
-				return getTValues();
+		case AnnotationsPackage.TANNOTATION__TANNOTATED:
+			return getTAnnotated();
+		case AnnotationsPackage.TANNOTATION__TYPE:
+			if (resolve) {
+				return getType();
+			}
+			return basicGetType();
+		case AnnotationsPackage.TANNOTATION__TVALUES:
+			return getTValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -267,18 +286,18 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
-			case AnnotationsPackage.TANNOTATION__TANNOTATED:
-				setTAnnotated((TAnnotatable)newValue);
-				return;
-			case AnnotationsPackage.TANNOTATION__TYPE:
-				setType((TAnnotationType)newValue);
-				return;
-			case AnnotationsPackage.TANNOTATION__TVALUES:
-				getTValues().clear();
-				getTValues().addAll((Collection<? extends TAnnotationValue>)newValue);
-				return;
+		case AnnotationsPackage.TANNOTATION__TANNOTATED:
+			setTAnnotated((TAnnotatable)newValue);
+			return;
+		case AnnotationsPackage.TANNOTATION__TYPE:
+			setType((TAnnotationType)newValue);
+			return;
+		case AnnotationsPackage.TANNOTATION__TVALUES:
+			getTValues().clear();
+			getTValues().addAll((Collection<? extends TAnnotationValue>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -288,17 +307,17 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
-			case AnnotationsPackage.TANNOTATION__TANNOTATED:
-				setTAnnotated((TAnnotatable)null);
-				return;
-			case AnnotationsPackage.TANNOTATION__TYPE:
-				setType((TAnnotationType)null);
-				return;
-			case AnnotationsPackage.TANNOTATION__TVALUES:
-				getTValues().clear();
-				return;
+		case AnnotationsPackage.TANNOTATION__TANNOTATED:
+			setTAnnotated((TAnnotatable)null);
+			return;
+		case AnnotationsPackage.TANNOTATION__TYPE:
+			setType((TAnnotationType)null);
+			return;
+		case AnnotationsPackage.TANNOTATION__TVALUES:
+			getTValues().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -308,14 +327,14 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
-			case AnnotationsPackage.TANNOTATION__TANNOTATED:
-				return getTAnnotated() != null;
-			case AnnotationsPackage.TANNOTATION__TYPE:
-				return type != null;
-			case AnnotationsPackage.TANNOTATION__TVALUES:
-				return tValues != null && !tValues.isEmpty();
+		case AnnotationsPackage.TANNOTATION__TANNOTATED:
+			return getTAnnotated() != null;
+		case AnnotationsPackage.TANNOTATION__TYPE:
+			return this.type != null;
+		case AnnotationsPackage.TANNOTATION__TVALUES:
+			return (this.tValues != null) && !this.tValues.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -325,14 +344,16 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case AnnotationsPackage.TANNOTATION___GET_VALUE__STRING:
-				return getValue((String)arguments.get(0));
+		case AnnotationsPackage.TANNOTATION___GET_VALUE__STRING:
+			return getValue((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
-	// <-- [user code injected with eMoflon]
 
-	// [user code injected with eMoflon] -->
+	@Override
+	public String toString() {
+		return super.toString()+ "(type = "+getType()+") on "+getTAnnotated();
+	}
 } // TAnnotationImpl

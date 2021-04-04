@@ -402,7 +402,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModel2TypeGraph__IsApplicable_solveCsp_CC__Model_TypeGraph_Match_Match() {
+	public EOperation getModel2TypeGraph__IsApplicable_solveCsp_CC__TypeGraph_Model_Match_Match() {
 		return model2TypeGraphEClass.getEOperations().get(25);
 	}
 
@@ -642,7 +642,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModelNested2TypeGraph__IsApplicable_solveCsp_BWD__IsApplicableMatch_Model2TypeGraph_TypeGraph_Model() {
+	public EOperation getModelNested2TypeGraph__IsApplicable_solveCsp_BWD__IsApplicableMatch_Model2TypeGraph_Model_TypeGraph() {
 		return modelNested2TypeGraphEClass.getEOperations().get(16);
 	}
 
@@ -692,7 +692,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_177__EMoflonEdge() {
+	public EOperation getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_176__EMoflonEdge() {
 		return modelNested2TypeGraphEClass.getEOperations().get(21);
 	}
 
@@ -732,7 +732,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModelNested2TypeGraph__IsApplicable_solveCsp_CC__TypeGraph_Model_Model_Match_Match() {
+	public EOperation getModelNested2TypeGraph__IsApplicable_solveCsp_CC__Model_Model_TypeGraph_Match_Match() {
 		return modelNested2TypeGraphEClass.getEOperations().get(25);
 	}
 
@@ -857,7 +857,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH);
 		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___IS_APPLICABLE_CC__MATCH_MATCH);
 		createEOperation(model2TypeGraphEClass,
-				MODEL2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_TYPEGRAPH_MATCH_MATCH);
+				MODEL2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__TYPEGRAPH_MODEL_MATCH_MATCH);
 		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___IS_APPLICABLE_CHECK_CSP_CC__CSP);
 		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___CHECK_DEC_FWD__MODEL);
 		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___CHECK_DEC_BWD__TYPEGRAPH);
@@ -890,7 +890,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPEGRAPH);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_CHECK_CSP_BWD__CSP);
 		createEOperation(modelNested2TypeGraphEClass,
-				MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL2TYPEGRAPH_TYPEGRAPH_MODEL);
+				MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL2TYPEGRAPH_MODEL_TYPEGRAPH);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CHECK_CSP_BWD__CSP);
 		createEOperation(modelNested2TypeGraphEClass,
 				MODEL_NESTED2_TYPE_GRAPH___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
@@ -898,12 +898,12 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		createEOperation(modelNested2TypeGraphEClass,
 				MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_6__TYPEGRAPH);
 		createEOperation(modelNested2TypeGraphEClass,
-				MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_177__EMOFLONEDGE);
+				MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_176__EMOFLONEDGE);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CC__MATCH_MATCH);
 		createEOperation(modelNested2TypeGraphEClass,
-				MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__TYPEGRAPH_MODEL_MODEL_MATCH_MATCH);
+				MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MODEL_TYPEGRAPH_MATCH_MATCH);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CHECK_CSP_CC__CSP);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___CHECK_DEC_FWD__MODEL_MODEL);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___CHECK_DEC_BWD__TYPEGRAPH);
@@ -1000,8 +1000,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				"registerObjects_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "model2PM", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "model", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "model", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getModel2TypeGraph__CheckTypes_FWD__Match(), ecorePackage.getEBoolean(), "checkTypes_FWD",
 				0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1047,8 +1047,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				"registerObjects_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "model2PM", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "model", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "model", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getModel2TypeGraph__CheckTypes_BWD__Match(), ecorePackage.getEBoolean(), "checkTypes_BWD",
 				0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1077,10 +1077,10 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getModel2TypeGraph__IsApplicable_solveCsp_CC__Model_TypeGraph_Match_Match(),
+		op = initEOperation(getModel2TypeGraph__IsApplicable_solveCsp_CC__TypeGraph_Model_Match_Match(),
 				theCspPackage.getCSP(), "isApplicable_solveCsp_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUMLPackage.getModel(), "model", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasicPackage.getTypeGraph(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theUMLPackage.getModel(), "model", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1160,11 +1160,11 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				getModelNested2TypeGraph__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject(),
 				null, "registerObjects_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "model2PM", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "outerModel2PM", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "model", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "outerModel", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "model2PM", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getModelNested2TypeGraph__CheckTypes_FWD__Match(), ecorePackage.getEBoolean(),
 				"checkTypes_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1198,12 +1198,12 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(
-				getModelNested2TypeGraph__IsApplicable_solveCsp_BWD__IsApplicableMatch_Model2TypeGraph_TypeGraph_Model(),
+				getModelNested2TypeGraph__IsApplicable_solveCsp_BWD__IsApplicableMatch_Model2TypeGraph_Model_TypeGraph(),
 				theCspPackage.getCSP(), "isApplicable_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUmlPackage.getModel2TypeGraph(), "outerModel2PM", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBasicPackage.getTypeGraph(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUMLPackage.getModel(), "outerModel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasicPackage.getTypeGraph(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getModelNested2TypeGraph__IsApplicable_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
 				"isApplicable_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1213,11 +1213,11 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				getModelNested2TypeGraph__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject(),
 				null, "registerObjects_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "model2PM", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "outerModel2PM", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "model", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "outerModel", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "model2PM", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getModelNested2TypeGraph__CheckTypes_BWD__Match(), ecorePackage.getEBoolean(),
 				"checkTypes_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1227,8 +1227,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_TypeGraph_6", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasicPackage.getTypeGraph(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_177__EMoflonEdge(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_EMoflonEdge_177", 0, 1, IS_UNIQUE,
+		op = initEOperation(getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_176__EMoflonEdge(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_EMoflonEdge_176", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_nestedPackage", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1247,11 +1247,11 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getModelNested2TypeGraph__IsApplicable_solveCsp_CC__TypeGraph_Model_Model_Match_Match(),
+		op = initEOperation(getModelNested2TypeGraph__IsApplicable_solveCsp_CC__Model_Model_TypeGraph_Match_Match(),
 				theCspPackage.getCSP(), "isApplicable_solveCsp_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBasicPackage.getTypeGraph(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUMLPackage.getModel(), "model", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUMLPackage.getModel(), "outerModel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBasicPackage.getTypeGraph(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 

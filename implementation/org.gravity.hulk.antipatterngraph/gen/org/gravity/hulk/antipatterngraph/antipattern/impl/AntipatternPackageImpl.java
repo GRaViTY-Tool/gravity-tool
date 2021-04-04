@@ -207,7 +207,7 @@ public class AntipatternPackageImpl extends EPackageImpl implements AntipatternP
 	 * @generated
 	 */
 	@Override
-	public EReference getHGodClassAntiPattern_HLargeClassLowCohesionSmell() {
+	public EReference getHGodClassAntiPattern_HLargeClassLowCohesionSmells() {
 		return (EReference) hGodClassAntiPatternEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -356,7 +356,7 @@ public class AntipatternPackageImpl extends EPackageImpl implements AntipatternP
 		createEReference(hBlobAntiPatternEClass, HBLOB_ANTI_PATTERN__HGOD_CLASS_ANTI_PATTERN);
 
 		hGodClassAntiPatternEClass = createEClass(HGOD_CLASS_ANTI_PATTERN);
-		createEReference(hGodClassAntiPatternEClass, HGOD_CLASS_ANTI_PATTERN__HLARGE_CLASS_LOW_COHESION_SMELL);
+		createEReference(hGodClassAntiPatternEClass, HGOD_CLASS_ANTI_PATTERN__HLARGE_CLASS_LOW_COHESION_SMELLS);
 		createEReference(hGodClassAntiPatternEClass, HGOD_CLASS_ANTI_PATTERN__HCONTROLLER_CLASS_SMELL);
 
 		hSwissArmyKnifeAntiPatternEClass = createEClass(HSWISS_ARMY_KNIFE_ANTI_PATTERN);
@@ -430,8 +430,8 @@ public class AntipatternPackageImpl extends EPackageImpl implements AntipatternP
 
 		initEClass(hGodClassAntiPatternEClass, HGodClassAntiPattern.class, "HGodClassAntiPattern", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHGodClassAntiPattern_HLargeClassLowCohesionSmell(),
-				theCodesmellsPackage.getHLargeClassLowCohesionSmell(), null, "hLargeClassLowCohesionSmell", null, 0, 1,
+		initEReference(getHGodClassAntiPattern_HLargeClassLowCohesionSmells(),
+				theAntipatterngraphPackage.getHCodeSmell(), null, "hLargeClassLowCohesionSmells", null, 0, -1,
 				HGodClassAntiPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHGodClassAntiPattern_HControllerClassSmell(), theCodesmellsPackage.getHControllerClassSmell(),

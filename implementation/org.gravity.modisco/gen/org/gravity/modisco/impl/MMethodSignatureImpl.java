@@ -94,6 +94,7 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MEntry getMFirstEntry() {
 		if (mFirstEntry != null && mFirstEntry.eIsProxy()) {
 			InternalEObject oldMFirstEntry = (InternalEObject)mFirstEntry;
@@ -120,6 +121,7 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMFirstEntry(MEntry newMFirstEntry) {
 		MEntry oldMFirstEntry = mFirstEntry;
 		mFirstEntry = newMFirstEntry;
@@ -132,6 +134,7 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MEntry> getMEntrys() {
 		if (mEntrys == null) {
 			mEntrys = new EObjectContainmentEList<MEntry>(MEntry.class, this, ModiscoPackage.MMETHOD_SIGNATURE__MENTRYS);
@@ -144,6 +147,7 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Type getReturnType() {
 		if (returnType != null && returnType.eIsProxy()) {
 			InternalEObject oldReturnType = (InternalEObject)returnType;
@@ -170,6 +174,7 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReturnType(Type newReturnType) {
 		Type oldReturnType = returnType;
 		returnType = newReturnType;

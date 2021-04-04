@@ -24,8 +24,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="high" upperBound="-1"
           eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TSignature"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TAnnotationWithCounterMeasure" abstract="true"
-        eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation">
+    <eClassifiers xsi:type="ecore:EClass" name="TAnnotationWithCounterMeasure" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation">
       <eStructuralFeatures xsi:type="ecore:EReference" name="countermeasure" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
     </eClassifiers>
   </eSubpackages>

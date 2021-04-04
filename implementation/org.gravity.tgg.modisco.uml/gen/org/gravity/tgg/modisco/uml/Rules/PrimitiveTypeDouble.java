@@ -4,11 +4,7 @@ package org.gravity.tgg.modisco.uml.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.Model;
-
 import org.eclipse.uml2.uml.PrimitiveType;
-
-import org.gravity.tgg.modisco.uml.JavaModel2UMLPackage;
 
 import org.moflon.tgg.language.csp.CSP;
 
@@ -16,7 +12,6 @@ import org.moflon.tgg.language.modelgenerator.RuleEntryContainer;
 
 import org.moflon.tgg.runtime.AbstractRule;
 import org.moflon.tgg.runtime.AttributeConstraintsRuleResult;
-import org.moflon.tgg.runtime.EMoflonEdge;
 import org.moflon.tgg.runtime.EObjectContainer;
 import org.moflon.tgg.runtime.IsApplicableMatch;
 import org.moflon.tgg.runtime.IsApplicableRuleResult;
@@ -44,7 +39,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
+	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,7 +63,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
+	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,7 +71,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Model jm, org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
+	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,8 +87,8 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm,
-			org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
+			org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,8 +104,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jm2up, EObject jm, EObject umpt, EObject up,
-			EObject jpt2upt2, EObject jpt);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2a, EObject umpt, EObject jpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,7 +120,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up);
+	boolean isAppropriate_BWD(Match match, PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,7 +144,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up);
+	void registerObjectsToMatch_BWD(Match match, PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,7 +152,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, PrimitiveType umpt, org.eclipse.uml2.uml.Package up);
+	CSP isAppropriate_solveCsp_BWD(Match match, PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,8 +168,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm,
-			PrimitiveType umpt, org.eclipse.uml2.uml.Package up);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +184,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jm2up, EObject jm, EObject umpt, EObject up,
-			EObject jpt2upt2, EObject jpt);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2a, EObject umpt, EObject jpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +200,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_352(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_PrimitiveType_13(PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +208,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_361(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_PrimitiveTypeDouble_1(org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,8 +240,8 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Model jm, PrimitiveType umpt, org.eclipse.uml2.uml.Package up,
-			org.eclipse.modisco.java.PrimitiveTypeDouble jpt, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(PrimitiveType umpt, org.eclipse.modisco.java.PrimitiveTypeDouble jpt,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -265,7 +257,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Model jm, org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
+	boolean checkDEC_FWD(org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,7 +265,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(PrimitiveType umpt, org.eclipse.uml2.uml.Package up);
+	boolean checkDEC_BWD(PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,7 +273,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, JavaModel2UMLPackage jm2upParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,8 +281,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2up, Model jm,
-			org.eclipse.uml2.uml.Package up, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -114,8 +114,8 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mDefinitionToTMember,
-			EObject mSignatureToTMethodSignature, EObject tMethodSignature, EObject tDefinition, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject mFlowElementToTFlowElement, EObject mSignature);
+			EObject mSignatureToTMethodSignature, EObject tMethodSignature, EObject mDefinition, EObject tDefinition,
+			EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation, EObject mSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,8 +201,8 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mDefinitionToTMember,
-			EObject mSignatureToTMethodSignature, EObject tMethodSignature, EObject tDefinition, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject mFlowElementToTFlowElement, EObject mSignature);
+			EObject mSignatureToTMethodSignature, EObject tMethodSignature, EObject mDefinition, EObject tDefinition,
+			EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation, EObject mSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_729(EMoflonEdge _edge_definitions);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_78(EMoflonEdge _edge_definitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_749(EMoflonEdge _edge_mDefinitions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_82(EMoflonEdge _edge_mDefinitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,7 +259,7 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(TConstructor tAnnotation, TMethodSignature tMethodSignature,
-			TMethodDefinition tDefinition, MConstructorDefinition mDefinition, MMethodSignature mSignature,
+			MConstructorDefinition mDefinition, TMethodDefinition tDefinition, MMethodSignature mSignature,
 			Match sourceMatch, Match targetMatch);
 
 	/**

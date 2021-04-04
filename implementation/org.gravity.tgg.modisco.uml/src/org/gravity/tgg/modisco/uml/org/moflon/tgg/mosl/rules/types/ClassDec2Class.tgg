@@ -1,0 +1,24 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule ClassDec2Class #with org.gravity.tgg.modisco.uml
+
+#source { 
+	++ bodyDeclaration : MClass
+}
+
+#target {
+	++ feature : uml.Class
+}
+
+#correspondence {
+	++ b2e : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq(bodyDeclaration.name, feature.name)
+	nonParameterizedName(feature.name)
+}

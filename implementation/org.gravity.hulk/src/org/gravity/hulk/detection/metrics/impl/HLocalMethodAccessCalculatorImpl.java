@@ -65,8 +65,8 @@ implements HLocalMethodAccessCalculator {
 			final TMethodDefinition m0 = methods.get(i);
 			for (int j = i + 1; j < methods.size(); j++) {
 				final TMethodDefinition m1 = methods.get(j);
-				value += m0.getTAccessing().parallelStream().filter(access -> access.getTTarget().equals(m1)).count();
-				value += m0.getAccessedBy().parallelStream().filter(access -> access.getTSource().equals(m1)).count();
+				value += m0.getAccessing().parallelStream().filter(access -> access.getTarget().equals(m1)).count();
+				value += m0.getAccessedBy().parallelStream().filter(access -> access.getSource().equals(m1)).count();
 			}
 		}
 		metric.setValue(value);
@@ -84,8 +84,8 @@ implements HLocalMethodAccessCalculator {
 
 		int i = 0;
 		for (final TMember m : tClass.getDefines()) {
-			for (final TAccess t : m.getTAccessing()) {
-				final TMember tTarget = t.getTTarget();
+			for (final TAccess t : m.getAccessing()) {
+				final TMember tTarget = t.getTarget();
 				if (tTarget instanceof TMethodDefinition && tTarget.getDefinedBy().equals(tClass)) {
 					i++;
 				}

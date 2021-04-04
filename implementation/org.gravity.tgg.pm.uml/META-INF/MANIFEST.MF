@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.gravity.tgg.pm.uml;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: 
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
  org.moflon.core.utilities,
@@ -29,3 +29,4 @@ Export-Package: org.gravity.tgg.pm.uml,
  org.gravity.tgg.pm.uml.Rules.impl,
  org.gravity.tgg.pm.uml.util,
  org.gravity.tgg.pm.uml.Rules
+Automatic-Module-Name: org.gravity.tgg.pm.uml

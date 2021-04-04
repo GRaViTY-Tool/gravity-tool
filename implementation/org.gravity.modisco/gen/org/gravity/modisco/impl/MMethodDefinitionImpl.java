@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.modisco.java.ASTNode;
 import org.eclipse.modisco.java.AbstractMethodInvocation;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
-
 import org.eclipse.modisco.java.emf.impl.MethodDeclarationImpl;
 
 import org.gravity.modisco.MAbstractFlowElement;
@@ -51,6 +51,7 @@ import org.gravity.modisco.ModiscoPackage;
  *   <li>{@link org.gravity.modisco.impl.MMethodDefinitionImpl#getMAbstractFieldAccess <em>MAbstract Field Access</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MMethodDefinitionImpl#getMSignature <em>MSignature</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MMethodDefinitionImpl#getMInnerTypes <em>MInner Types</em>}</li>
+ *   <li>{@link org.gravity.modisco.impl.MMethodDefinitionImpl#getDefinedBy <em>Defined By</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MMethodDefinitionImpl#getSyntheticMethodDefinitions <em>Synthetic Method Definitions</em>}</li>
  * </ul>
  *
@@ -75,7 +76,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MAbstractFlowElement> incomingFlows;
+	protected EList<MFlow> incomingFlows;
 
 	/**
 	 * The cached value of the '{@link #getOutgoingFlows() <em>Outgoing Flows</em>}' reference list.
@@ -85,7 +86,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MAbstractFlowElement> outgoingFlows;
+	protected EList<MFlow> outgoingFlows;
 
 	/**
 	 * The cached value of the '{@link #getInvocationStaticTypes() <em>Invocation Static Types</em>}' reference list.
@@ -138,6 +139,16 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	protected EList<AbstractTypeDeclaration> mInnerTypes;
 
 	/**
+	 * The cached value of the '{@link #getDefinedBy() <em>Defined By</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefinedBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected ASTNode definedBy;
+
+	/**
 	 * The cached value of the '{@link #getSyntheticMethodDefinitions() <em>Synthetic Method Definitions</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -171,6 +182,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MFlow> getOwnedFlows() {
 		if (ownedFlows == null) {
 			ownedFlows = new EObjectContainmentWithInverseEList<MFlow>(MFlow.class, this, ModiscoPackage.MMETHOD_DEFINITION__OWNED_FLOWS, ModiscoPackage.MFLOW__FLOW_OWNER);
@@ -183,9 +195,10 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MAbstractFlowElement> getIncomingFlows() {
+	@Override
+	public EList<MFlow> getIncomingFlows() {
 		if (incomingFlows == null) {
-			incomingFlows = new EObjectWithInverseResolvingEList.ManyInverse<MAbstractFlowElement>(MAbstractFlowElement.class, this, ModiscoPackage.MMETHOD_DEFINITION__INCOMING_FLOWS, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS);
+			incomingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MMETHOD_DEFINITION__INCOMING_FLOWS, ModiscoPackage.MFLOW__FLOW_TARGET);
 		}
 		return incomingFlows;
 	}
@@ -195,9 +208,10 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MAbstractFlowElement> getOutgoingFlows() {
+	@Override
+	public EList<MFlow> getOutgoingFlows() {
 		if (outgoingFlows == null) {
-			outgoingFlows = new EObjectWithInverseResolvingEList.ManyInverse<MAbstractFlowElement>(MAbstractFlowElement.class, this, ModiscoPackage.MMETHOD_DEFINITION__OUTGOING_FLOWS, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS);
+			outgoingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MMETHOD_DEFINITION__OUTGOING_FLOWS, ModiscoPackage.MFLOW__FLOW_SOURCE);
 		}
 		return outgoingFlows;
 	}
@@ -207,6 +221,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MethodInvocationStaticType> getInvocationStaticTypes() {
 		if (invocationStaticTypes == null) {
 			invocationStaticTypes = new EObjectResolvingEList<MethodInvocationStaticType>(MethodInvocationStaticType.class, this, ModiscoPackage.MMETHOD_DEFINITION__INVOCATION_STATIC_TYPES);
@@ -219,6 +234,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractMethodInvocation> getMMethodInvocations() {
 		if (mMethodInvocations == null) {
 			mMethodInvocations = new EObjectResolvingEList<AbstractMethodInvocation>(AbstractMethodInvocation.class, this, ModiscoPackage.MMETHOD_DEFINITION__MMETHOD_INVOCATIONS);
@@ -231,6 +247,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MSingleVariableAccess> getMAbstractFieldAccess() {
 		if (mAbstractFieldAccess == null) {
 			mAbstractFieldAccess = new EObjectResolvingEList<MSingleVariableAccess>(MSingleVariableAccess.class, this, ModiscoPackage.MMETHOD_DEFINITION__MABSTRACT_FIELD_ACCESS);
@@ -243,6 +260,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MSignature getMSignature() {
 		if (mSignature != null && mSignature.eIsProxy()) {
 			InternalEObject oldMSignature = (InternalEObject)mSignature;
@@ -284,6 +302,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMSignature(MSignature newMSignature) {
 		if (newMSignature != mSignature) {
 			NotificationChain msgs = null;
@@ -303,6 +322,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractTypeDeclaration> getMInnerTypes() {
 		if (mInnerTypes == null) {
 			mInnerTypes = new EObjectResolvingEList<AbstractTypeDeclaration>(AbstractTypeDeclaration.class, this, ModiscoPackage.MMETHOD_DEFINITION__MINNER_TYPES);
@@ -315,6 +335,47 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public ASTNode getDefinedBy() {
+		if (definedBy != null && definedBy.eIsProxy()) {
+			InternalEObject oldDefinedBy = (InternalEObject)definedBy;
+			definedBy = (ASTNode)eResolveProxy(oldDefinedBy);
+			if (definedBy != oldDefinedBy) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModiscoPackage.MMETHOD_DEFINITION__DEFINED_BY, oldDefinedBy, definedBy));
+			}
+		}
+		return definedBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ASTNode basicGetDefinedBy() {
+		return definedBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDefinedBy(ASTNode newDefinedBy) {
+		ASTNode oldDefinedBy = definedBy;
+		definedBy = newDefinedBy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MMETHOD_DEFINITION__DEFINED_BY, oldDefinedBy, definedBy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<MSyntheticMethodDefinition> getSyntheticMethodDefinitions() {
 		if (syntheticMethodDefinitions == null) {
 			syntheticMethodDefinitions = new EObjectWithInverseResolvingEList<MSyntheticMethodDefinition>(MSyntheticMethodDefinition.class, this, ModiscoPackage.MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS, ModiscoPackage.MSYNTHETIC_METHOD_DEFINITION__ORIGINAL_METHOD_DEFINITION);
@@ -394,6 +455,9 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 				return basicGetMSignature();
 			case ModiscoPackage.MMETHOD_DEFINITION__MINNER_TYPES:
 				return getMInnerTypes();
+			case ModiscoPackage.MMETHOD_DEFINITION__DEFINED_BY:
+				if (resolve) return getDefinedBy();
+				return basicGetDefinedBy();
 			case ModiscoPackage.MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS:
 				return getSyntheticMethodDefinitions();
 		}
@@ -415,11 +479,11 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 				return;
 			case ModiscoPackage.MMETHOD_DEFINITION__INCOMING_FLOWS:
 				getIncomingFlows().clear();
-				getIncomingFlows().addAll((Collection<? extends MAbstractFlowElement>)newValue);
+				getIncomingFlows().addAll((Collection<? extends MFlow>)newValue);
 				return;
 			case ModiscoPackage.MMETHOD_DEFINITION__OUTGOING_FLOWS:
 				getOutgoingFlows().clear();
-				getOutgoingFlows().addAll((Collection<? extends MAbstractFlowElement>)newValue);
+				getOutgoingFlows().addAll((Collection<? extends MFlow>)newValue);
 				return;
 			case ModiscoPackage.MMETHOD_DEFINITION__INVOCATION_STATIC_TYPES:
 				getInvocationStaticTypes().clear();
@@ -439,6 +503,9 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 			case ModiscoPackage.MMETHOD_DEFINITION__MINNER_TYPES:
 				getMInnerTypes().clear();
 				getMInnerTypes().addAll((Collection<? extends AbstractTypeDeclaration>)newValue);
+				return;
+			case ModiscoPackage.MMETHOD_DEFINITION__DEFINED_BY:
+				setDefinedBy((ASTNode)newValue);
 				return;
 			case ModiscoPackage.MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS:
 				getSyntheticMethodDefinitions().clear();
@@ -480,6 +547,9 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 			case ModiscoPackage.MMETHOD_DEFINITION__MINNER_TYPES:
 				getMInnerTypes().clear();
 				return;
+			case ModiscoPackage.MMETHOD_DEFINITION__DEFINED_BY:
+				setDefinedBy((ASTNode)null);
+				return;
 			case ModiscoPackage.MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS:
 				getSyntheticMethodDefinitions().clear();
 				return;
@@ -511,6 +581,8 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 				return mSignature != null;
 			case ModiscoPackage.MMETHOD_DEFINITION__MINNER_TYPES:
 				return mInnerTypes != null && !mInnerTypes.isEmpty();
+			case ModiscoPackage.MMETHOD_DEFINITION__DEFINED_BY:
+				return definedBy != null;
 			case ModiscoPackage.MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS:
 				return syntheticMethodDefinitions != null && !syntheticMethodDefinitions.isEmpty();
 		}
@@ -544,6 +616,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 		if (baseClass == MAbstractMethodDefinition.class) {
 			switch (derivedFeatureID) {
 				case ModiscoPackage.MMETHOD_DEFINITION__MINNER_TYPES: return ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES;
+				case ModiscoPackage.MMETHOD_DEFINITION__DEFINED_BY: return ModiscoPackage.MABSTRACT_METHOD_DEFINITION__DEFINED_BY;
 				default: return -1;
 			}
 		}
@@ -577,6 +650,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 		if (baseClass == MAbstractMethodDefinition.class) {
 			switch (baseFeatureID) {
 				case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES: return ModiscoPackage.MMETHOD_DEFINITION__MINNER_TYPES;
+				case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__DEFINED_BY: return ModiscoPackage.MMETHOD_DEFINITION__DEFINED_BY;
 				default: return -1;
 			}
 		}

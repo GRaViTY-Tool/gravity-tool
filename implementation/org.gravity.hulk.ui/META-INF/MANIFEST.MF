@@ -12,8 +12,9 @@ Require-Bundle: org.gravity.eclipse,
  org.gravity.hulk.antipatterngraph,
  org.gravity.hulk.annotations,
  org.gravity.typegraph.basic,
- org.eclipse.emf.ecore
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+ org.eclipse.emf.ecore,
+ org.gravity.hulk.resolve
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.hulk.ui,
  org.gravity.hulk.ui.dialogs,

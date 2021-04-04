@@ -47,7 +47,7 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getOutgoingFlows <em>Outgoing Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getDefinedBy <em>Defined By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getAccessedBy <em>Accessed By</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getTAccessing <em>TAccessing</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getAccessing <em>Accessing</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getTModifier <em>TModifier</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getSignature <em>Signature</em>}</li>
  * </ul>
@@ -106,14 +106,14 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	protected EList<TAccess> accessedBy;
 
 	/**
-	 * The cached value of the '{@link #getTAccessing() <em>TAccessing</em>}' containment reference list.
+	 * The cached value of the '{@link #getAccessing() <em>Accessing</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTAccessing()
+	 * @see #getAccessing()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TAccess> tAccessing;
+	protected EList<TAccess> accessing;
 
 	/**
 	 * The cached value of the '{@link #getTModifier() <em>TModifier</em>}' containment reference.
@@ -253,7 +253,7 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	@Override
 	public EList<TAccess> getAccessedBy() {
 		if (accessedBy == null) {
-			accessedBy = new EObjectWithInverseResolvingEList<TAccess>(TAccess.class, this, BasicPackage.TMEMBER__ACCESSED_BY, BasicPackage.TACCESS__TTARGET);
+			accessedBy = new EObjectWithInverseResolvingEList<TAccess>(TAccess.class, this, BasicPackage.TMEMBER__ACCESSED_BY, BasicPackage.TACCESS__TARGET);
 		}
 		return accessedBy;
 	}
@@ -264,11 +264,11 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	 * @generated
 	 */
 	@Override
-	public EList<TAccess> getTAccessing() {
-		if (tAccessing == null) {
-			tAccessing = new EObjectContainmentWithInverseEList<TAccess>(TAccess.class, this, BasicPackage.TMEMBER__TACCESSING, BasicPackage.TACCESS__TSOURCE);
+	public EList<TAccess> getAccessing() {
+		if (accessing == null) {
+			accessing = new EObjectContainmentWithInverseEList<TAccess>(TAccess.class, this, BasicPackage.TMEMBER__ACCESSING, BasicPackage.TACCESS__SOURCE);
 		}
-		return tAccessing;
+		return accessing;
 	}
 
 	/**
@@ -383,8 +383,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return basicSetDefinedBy((TAbstractType)otherEnd, msgs);
 			case BasicPackage.TMEMBER__ACCESSED_BY:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAccessedBy()).basicAdd(otherEnd, msgs);
-			case BasicPackage.TMEMBER__TACCESSING:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTAccessing()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TMEMBER__ACCESSING:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAccessing()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TMEMBER__SIGNATURE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -411,8 +411,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return basicSetDefinedBy(null, msgs);
 			case BasicPackage.TMEMBER__ACCESSED_BY:
 				return ((InternalEList<?>)getAccessedBy()).basicRemove(otherEnd, msgs);
-			case BasicPackage.TMEMBER__TACCESSING:
-				return ((InternalEList<?>)getTAccessing()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TMEMBER__ACCESSING:
+				return ((InternalEList<?>)getAccessing()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TMEMBER__TMODIFIER:
 				return basicSetTModifier(null, msgs);
 			case BasicPackage.TMEMBER__SIGNATURE:
@@ -454,8 +454,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return basicGetDefinedBy();
 			case BasicPackage.TMEMBER__ACCESSED_BY:
 				return getAccessedBy();
-			case BasicPackage.TMEMBER__TACCESSING:
-				return getTAccessing();
+			case BasicPackage.TMEMBER__ACCESSING:
+				return getAccessing();
 			case BasicPackage.TMEMBER__TMODIFIER:
 				return getTModifier();
 			case BasicPackage.TMEMBER__SIGNATURE:
@@ -492,9 +492,9 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				getAccessedBy().clear();
 				getAccessedBy().addAll((Collection<? extends TAccess>)newValue);
 				return;
-			case BasicPackage.TMEMBER__TACCESSING:
-				getTAccessing().clear();
-				getTAccessing().addAll((Collection<? extends TAccess>)newValue);
+			case BasicPackage.TMEMBER__ACCESSING:
+				getAccessing().clear();
+				getAccessing().addAll((Collection<? extends TAccess>)newValue);
 				return;
 			case BasicPackage.TMEMBER__TMODIFIER:
 				setTModifier((TModifier)newValue);
@@ -529,8 +529,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 			case BasicPackage.TMEMBER__ACCESSED_BY:
 				getAccessedBy().clear();
 				return;
-			case BasicPackage.TMEMBER__TACCESSING:
-				getTAccessing().clear();
+			case BasicPackage.TMEMBER__ACCESSING:
+				getAccessing().clear();
 				return;
 			case BasicPackage.TMEMBER__TMODIFIER:
 				setTModifier((TModifier)null);
@@ -560,8 +560,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return definedBy != null;
 			case BasicPackage.TMEMBER__ACCESSED_BY:
 				return accessedBy != null && !accessedBy.isEmpty();
-			case BasicPackage.TMEMBER__TACCESSING:
-				return tAccessing != null && !tAccessing.isEmpty();
+			case BasicPackage.TMEMBER__ACCESSING:
+				return accessing != null && !accessing.isEmpty();
 			case BasicPackage.TMEMBER__TMODIFIER:
 				return tModifier != null;
 			case BasicPackage.TMEMBER__SIGNATURE:

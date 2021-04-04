@@ -27,8 +27,7 @@ import org.gravity.hulk.help.HSort;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.gravity.hulk.antipatterngraph.impl.HMetricImpl#getValue
- * <em>Value</em>}</li>
+ *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HMetricImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,7 +55,6 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected HMetricImpl() {
@@ -65,7 +63,6 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -75,7 +72,6 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -85,7 +81,6 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -157,7 +152,6 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,7 +165,6 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -186,7 +179,6 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -201,7 +193,6 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -215,7 +206,6 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -231,7 +221,6 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

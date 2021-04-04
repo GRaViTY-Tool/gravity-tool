@@ -1,5 +1,8 @@
 package org.gravity.goblin.preconditions;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 import org.apache.log4j.Logger;
 import org.eclipse.osgi.util.NLS;
 import org.gravity.goblin.Messages;
@@ -72,7 +75,7 @@ public final class ChangeVisibilityPreConditions {
 				return false;
 			}
 			if (interfaceMember.getTModifier().isIsStatic()
-					&& interfaceMember.getSignature() == tMember.getSignature()) {
+					&& (interfaceMember.getSignature() == tMember.getSignature())) {
 				final String name = interfaceMember.getDefinedBy().getFullyQualifiedName() + '.'
 						+ interfaceMember.getSignatureString();
 				LOGGER.warn(NLS.bind(Messages.cannotMove, name, "INH2-2")); //$NON-NLS-1$
@@ -86,15 +89,16 @@ public final class ChangeVisibilityPreConditions {
 	// visibility as this may introduce a new dynamic binding
 	private static boolean checkDynPreconditions(final TClass sourceClass, final TMember member) {
 
-		TClass parent = sourceClass.getParentClass();
+		final Deque<TClass> stack = new LinkedList<>(sourceClass.getParentClasses());
 		final TSignature sig = member.getSignature();
-		while (parent != null) {
+		while (!stack.isEmpty()) {
+			final TClass parent = stack.pop();
 			if (parent.getSignature().contains(sig)) {
 				final String name = member.getDefinedBy().getFullyQualifiedName() + '.' + member.getSignatureString();
 				LOGGER.warn(NLS.bind(Messages.cannotMove, name, "Dyn")); //$NON-NLS-1$
 				return false;
 			}
-			parent = parent.getParentClass();
+			stack.addAll(parent.getParentClasses());
 		}
 
 		for (final TClass child : sourceClass.getAllChildren()) {

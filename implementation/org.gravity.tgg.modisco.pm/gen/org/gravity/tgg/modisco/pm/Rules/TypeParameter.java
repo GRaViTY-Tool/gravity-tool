@@ -114,7 +114,7 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject typeParameter, EObject eModel, EObject tClass,
-			EObject eAnonymousClassDeclarationToTClass, EObject pg, EObject eModelToPg);
+			EObject pg, EObject eModelToPg, EObject eAnonymousClassDeclarationToTClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,7 +196,7 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject typeParameter, EObject eModel, EObject tClass,
-			EObject eAnonymousClassDeclarationToTClass, EObject pg, EObject eModelToPg);
+			EObject pg, EObject eModelToPg, EObject eAnonymousClassDeclarationToTClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_709(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_87(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_728(EMoflonEdge _edge_typeParameters);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_91(EMoflonEdge _edge_typeParameters);
 
 	/**
 	 * <!-- begin-user-doc -->

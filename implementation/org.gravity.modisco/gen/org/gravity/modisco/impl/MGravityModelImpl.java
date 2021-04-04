@@ -142,6 +142,7 @@ public class MGravityModelImpl extends ModelImpl implements MGravityModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MFieldDefinition> getMFieldDefinitions() {
 		if (mFieldDefinitions == null) {
 			mFieldDefinitions = new EObjectResolvingEList<MFieldDefinition>(MFieldDefinition.class, this, ModiscoPackage.MGRAVITY_MODEL__MFIELD_DEFINITIONS);
@@ -154,6 +155,7 @@ public class MGravityModelImpl extends ModelImpl implements MGravityModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AnonymousClassDeclaration> getAnonymousClassDeclarations() {
 		if (anonymousClassDeclarations == null) {
 			anonymousClassDeclarations = new EObjectResolvingEList<AnonymousClassDeclaration>(AnonymousClassDeclaration.class, this, ModiscoPackage.MGRAVITY_MODEL__ANONYMOUS_CLASS_DECLARATIONS);
@@ -166,6 +168,7 @@ public class MGravityModelImpl extends ModelImpl implements MGravityModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MMethodName> getMMethodNames() {
 		if (mMethodNames == null) {
 			mMethodNames = new EObjectContainmentEList<MMethodName>(MMethodName.class, this, ModiscoPackage.MGRAVITY_MODEL__MMETHOD_NAMES);
@@ -178,6 +181,7 @@ public class MGravityModelImpl extends ModelImpl implements MGravityModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MFieldName> getMFieldNames() {
 		if (mFieldNames == null) {
 			mFieldNames = new EObjectContainmentEList<MFieldName>(MFieldName.class, this, ModiscoPackage.MGRAVITY_MODEL__MFIELD_NAMES);
@@ -190,6 +194,7 @@ public class MGravityModelImpl extends ModelImpl implements MGravityModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MAbstractMethodDefinition> getMAbstractMethodDefinitions() {
 		if (mAbstractMethodDefinitions == null) {
 			mAbstractMethodDefinitions = new EObjectResolvingEList<MAbstractMethodDefinition>(MAbstractMethodDefinition.class, this, ModiscoPackage.MGRAVITY_MODEL__MABSTRACT_METHOD_DEFINITIONS);
@@ -202,6 +207,7 @@ public class MGravityModelImpl extends ModelImpl implements MGravityModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TypeParameter> getTypeParameters() {
 		if (typeParameters == null) {
 			typeParameters = new EObjectResolvingEList<TypeParameter>(TypeParameter.class, this, ModiscoPackage.MGRAVITY_MODEL__TYPE_PARAMETERS);
@@ -214,6 +220,7 @@ public class MGravityModelImpl extends ModelImpl implements MGravityModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MExtension> getMExtensions() {
 		if (mExtensions == null) {
 			mExtensions = new EObjectContainmentEList<MExtension>(MExtension.class, this, ModiscoPackage.MGRAVITY_MODEL__MEXTENSIONS);

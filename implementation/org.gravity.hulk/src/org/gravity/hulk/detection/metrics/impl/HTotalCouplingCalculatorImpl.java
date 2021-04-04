@@ -79,13 +79,13 @@ public class HTotalCouplingCalculatorImpl extends HClassBasedMetricCalculatorImp
 
 		for (TMember m : tClass.getDefines()) {
 			for (TAccess access : m.getAccessedBy()) {
-				if (access.getTSource().getDefinedBy() != tClass) {
+				if (access.getSource().getDefinedBy() != tClass) {
 					coupling++;
 				}
 			}
 
-			for (TAccess access : m.getTAccessing()) {
-				TAbstractType target = access.getTTarget().getDefinedBy();
+			for (TAccess access : m.getAccessing()) {
+				TAbstractType target = access.getTarget().getDefinedBy();
 				if (!target.isTLib() && target != tClass && !target.getTName().equals("T")) {
 					coupling++;
 				}

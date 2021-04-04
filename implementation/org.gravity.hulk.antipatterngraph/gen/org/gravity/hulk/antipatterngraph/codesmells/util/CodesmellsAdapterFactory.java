@@ -93,11 +93,6 @@ public class CodesmellsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseHLargeClassLowCohesionSmell(HLargeClassLowCohesionSmell object) {
-			return createHLargeClassLowCohesionSmellAdapter();
-		}
-
-		@Override
 		public Adapter caseHLargeClassSmell(HLargeClassSmell object) {
 			return createHLargeClassSmellAdapter();
 		}
@@ -219,20 +214,6 @@ public class CodesmellsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createHGetterSetterSmellAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell <em>HLarge Class Low Cohesion Smell</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell
-	 * @generated
-	 */
-	public Adapter createHLargeClassLowCohesionSmellAdapter() {
 		return null;
 	}
 

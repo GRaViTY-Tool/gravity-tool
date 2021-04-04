@@ -12,17 +12,17 @@
 #target {
 	uowner : Classifier
 	
-	++ uparam : Class {
+	++ uparam : uml.Class {
 		name := "T"
 	}
 }
 
 #correspondence {
-	interface2interface : NamedElement2NamedElement {
+	interface2interface : ASTNode2Element {
 		#src->mowner
 		#trg->uowner
 	}
-	++ param2param : NamedElement2NamedElement {
+	++ param2param : ASTNode2Element {
 		#src->mparam
 		#trg->uparam
 	}

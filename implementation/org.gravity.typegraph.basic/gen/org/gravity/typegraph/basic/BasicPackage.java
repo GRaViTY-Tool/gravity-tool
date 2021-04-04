@@ -363,22 +363,22 @@ public interface BasicPackage extends EPackage {
 	int TACCESS__OUTGOING_FLOWS = TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
 
 	/**
-	 * The feature id for the '<em><b>TTarget</b></em>' reference.
+	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS__TTARGET = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
+	int TACCESS__TARGET = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>TSource</b></em>' container reference.
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS__TSOURCE = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
+	int TACCESS__SOURCE = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Static Type</b></em>' reference.
@@ -417,13 +417,13 @@ public interface BasicPackage extends EPackage {
 	int TABSTRACT_TYPE__TANNOTATION = AnnotationsPackage.TANNOTATABLE__TANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Pg</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE__PG = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+	int TABSTRACT_TYPE__MODEL = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Package</b></em>' reference.
@@ -696,13 +696,13 @@ public interface BasicPackage extends EPackage {
 	int TCLASS__TANNOTATION = TABSTRACT_TYPE__TANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Pg</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS__PG = TABSTRACT_TYPE__PG;
+	int TCLASS__MODEL = TABSTRACT_TYPE__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Package</b></em>' reference.
@@ -777,13 +777,13 @@ public interface BasicPackage extends EPackage {
 	int TCLASS__OUTER_TYPE = TABSTRACT_TYPE__OUTER_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Parent Class</b></em>' reference.
+	 * The feature id for the '<em><b>Parent Classes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS__PARENT_CLASS = TABSTRACT_TYPE_FEATURE_COUNT + 0;
+	int TCLASS__PARENT_CLASSES = TABSTRACT_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Child Classes</b></em>' reference list.
@@ -1110,13 +1110,13 @@ public interface BasicPackage extends EPackage {
 	int TFIELD__SIGNATURES = TNAME_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Pg</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD__PG = TNAME_FEATURE_COUNT + 1;
+	int TFIELD__MODEL = TNAME_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>TField</em>' class.
@@ -1191,13 +1191,13 @@ public interface BasicPackage extends EPackage {
 	int TMEMBER__ACCESSED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>TAccessing</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Accessing</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__TACCESSING = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
+	int TMEMBER__ACCESSING = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>TModifier</b></em>' containment reference.
@@ -1308,13 +1308,13 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_DEFINITION__ACCESSED_BY = TMEMBER__ACCESSED_BY;
 
 	/**
-	 * The feature id for the '<em><b>TAccessing</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Accessing</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION__TACCESSING = TMEMBER__TACCESSING;
+	int TFIELD_DEFINITION__ACCESSING = TMEMBER__ACCESSING;
 
 	/**
 	 * The feature id for the '<em><b>TModifier</b></em>' containment reference.
@@ -1659,22 +1659,22 @@ public interface BasicPackage extends EPackage {
 	int TCALL__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
-	 * The feature id for the '<em><b>TTarget</b></em>' reference.
+	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCALL__TTARGET = TACCESS__TTARGET;
+	int TCALL__TARGET = TACCESS__TARGET;
 
 	/**
-	 * The feature id for the '<em><b>TSource</b></em>' container reference.
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCALL__TSOURCE = TACCESS__TSOURCE;
+	int TCALL__SOURCE = TACCESS__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Static Type</b></em>' reference.
@@ -1722,13 +1722,13 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD__SIGNATURES = TNAME_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Pg</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD__PG = TNAME_FEATURE_COUNT + 1;
+	int TMETHOD__MODEL = TNAME_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>TMethod</em>' class.
@@ -1821,13 +1821,13 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_DEFINITION__ACCESSED_BY = TMEMBER__ACCESSED_BY;
 
 	/**
-	 * The feature id for the '<em><b>TAccessing</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Accessing</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__TACCESSING = TMEMBER__TACCESSING;
+	int TMETHOD_DEFINITION__ACCESSING = TMEMBER__ACCESSING;
 
 	/**
 	 * The feature id for the '<em><b>TModifier</b></em>' containment reference.
@@ -1866,7 +1866,7 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_DEFINITION__UPPER_BOUND = TMEMBER_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Overriding</b></em>' reference.
+	 * The feature id for the '<em><b>Overriding</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2163,22 +2163,13 @@ public interface BasicPackage extends EPackage {
 	int TPACKAGE__TANNOTATION = AnnotationsPackage.TANNOTATABLE__TANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Pg</b></em>' container reference.
+	 * The feature id for the '<em><b>Subpackages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE__PG = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Subpackage</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TPACKAGE__SUBPACKAGE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+	int TPACKAGE__SUBPACKAGES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -2187,7 +2178,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE__PARENT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+	int TPACKAGE__PARENT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Classes</b></em>' reference list.
@@ -2196,7 +2187,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE__CLASSES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+	int TPACKAGE__CLASSES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Interfaces</b></em>' reference list.
@@ -2205,7 +2196,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE__INTERFACES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
+	int TPACKAGE__INTERFACES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Owned Types</b></em>' reference list.
@@ -2214,16 +2205,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE__OWNED_TYPES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
+	int TPACKAGE__OWNED_TYPES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Type Graph</b></em>' reference.
+	 * The feature id for the '<em><b>Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE__TYPE_GRAPH = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
+	int TPACKAGE__MODEL = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>TName</b></em>' attribute.
@@ -2232,7 +2223,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE__TNAME = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
+	int TPACKAGE__TNAME = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>TPackage</em>' class.
@@ -2241,7 +2232,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
+	int TPACKAGE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -2649,13 +2640,22 @@ public interface BasicPackage extends EPackage {
 	int TYPE_GRAPH___GET_METHOD_DEFINITION__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 13;
 
 	/**
+	 * The operation id for the '<em>Create Package</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___CREATE_PACKAGE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 14;
+
+	/**
 	 * The number of operations of the '<em>Type Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 14;
+	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2667,13 +2667,13 @@ public interface BasicPackage extends EPackage {
 	int TINTERFACE__TANNOTATION = TABSTRACT_TYPE__TANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Pg</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TINTERFACE__PG = TABSTRACT_TYPE__PG;
+	int TINTERFACE__MODEL = TABSTRACT_TYPE__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Package</b></em>' reference.
@@ -2991,22 +2991,22 @@ public interface BasicPackage extends EPackage {
 	int TREAD__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
-	 * The feature id for the '<em><b>TTarget</b></em>' reference.
+	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TREAD__TTARGET = TACCESS__TTARGET;
+	int TREAD__TARGET = TACCESS__TARGET;
 
 	/**
-	 * The feature id for the '<em><b>TSource</b></em>' container reference.
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TREAD__TSOURCE = TACCESS__TSOURCE;
+	int TREAD__SOURCE = TACCESS__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Static Type</b></em>' reference.
@@ -3063,22 +3063,22 @@ public interface BasicPackage extends EPackage {
 	int TWRITE__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
-	 * The feature id for the '<em><b>TTarget</b></em>' reference.
+	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TWRITE__TTARGET = TACCESS__TTARGET;
+	int TWRITE__TARGET = TACCESS__TARGET;
 
 	/**
-	 * The feature id for the '<em><b>TSource</b></em>' container reference.
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TWRITE__TSOURCE = TACCESS__TSOURCE;
+	int TWRITE__SOURCE = TACCESS__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Static Type</b></em>' reference.
@@ -3198,13 +3198,13 @@ public interface BasicPackage extends EPackage {
 	int TSYNTETHIC_METHOD__ACCESSED_BY = TMEMBER__ACCESSED_BY;
 
 	/**
-	 * The feature id for the '<em><b>TAccessing</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Accessing</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TSYNTETHIC_METHOD__TACCESSING = TMEMBER__TACCESSING;
+	int TSYNTETHIC_METHOD__ACCESSING = TMEMBER__ACCESSING;
 
 	/**
 	 * The feature id for the '<em><b>TModifier</b></em>' containment reference.
@@ -3288,13 +3288,13 @@ public interface BasicPackage extends EPackage {
 	int TUNRESOLVED_TYPE__TANNOTATION = TCLASS__TANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Pg</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TUNRESOLVED_TYPE__PG = TCLASS__PG;
+	int TUNRESOLVED_TYPE__MODEL = TCLASS__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Package</b></em>' reference.
@@ -3369,13 +3369,13 @@ public interface BasicPackage extends EPackage {
 	int TUNRESOLVED_TYPE__OUTER_TYPE = TCLASS__OUTER_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Parent Class</b></em>' reference.
+	 * The feature id for the '<em><b>Parent Classes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TUNRESOLVED_TYPE__PARENT_CLASS = TCLASS__PARENT_CLASS;
+	int TUNRESOLVED_TYPE__PARENT_CLASSES = TCLASS__PARENT_CLASSES;
 
 	/**
 	 * The feature id for the '<em><b>Child Classes</b></em>' reference list.
@@ -3785,22 +3785,22 @@ public interface BasicPackage extends EPackage {
 	int TREAD_WRITE__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
-	 * The feature id for the '<em><b>TTarget</b></em>' reference.
+	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TREAD_WRITE__TTARGET = TACCESS__TTARGET;
+	int TREAD_WRITE__TARGET = TACCESS__TARGET;
 
 	/**
-	 * The feature id for the '<em><b>TSource</b></em>' container reference.
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TREAD_WRITE__TSOURCE = TACCESS__TSOURCE;
+	int TREAD_WRITE__SOURCE = TACCESS__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Static Type</b></em>' reference.
@@ -4303,26 +4303,26 @@ public interface BasicPackage extends EPackage {
 	EClass getTAccess();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TAccess#getTTarget <em>TTarget</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TAccess#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>TTarget</em>'.
-	 * @see org.gravity.typegraph.basic.TAccess#getTTarget()
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.typegraph.basic.TAccess#getTarget()
 	 * @see #getTAccess()
 	 * @generated
 	 */
-	EReference getTAccess_TTarget();
+	EReference getTAccess_Target();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TAccess#getTSource <em>TSource</em>}'.
+	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TAccess#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>TSource</em>'.
-	 * @see org.gravity.typegraph.basic.TAccess#getTSource()
+	 * @return the meta object for the container reference '<em>Source</em>'.
+	 * @see org.gravity.typegraph.basic.TAccess#getSource()
 	 * @see #getTAccess()
 	 * @generated
 	 */
-	EReference getTAccess_TSource();
+	EReference getTAccess_Source();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TAccess#getStaticType <em>Static Type</em>}'.
@@ -4346,15 +4346,15 @@ public interface BasicPackage extends EPackage {
 	EClass getTClass();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TClass#getParentClass <em>Parent Class</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TClass#getParentClasses <em>Parent Classes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parent Class</em>'.
-	 * @see org.gravity.typegraph.basic.TClass#getParentClass()
+	 * @return the meta object for the reference list '<em>Parent Classes</em>'.
+	 * @see org.gravity.typegraph.basic.TClass#getParentClasses()
 	 * @see #getTClass()
 	 * @generated
 	 */
-	EReference getTClass_ParentClass();
+	EReference getTClass_ParentClasses();
 
 	/**
 	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TClass#getChildClasses <em>Child Classes</em>}'.
@@ -4510,15 +4510,15 @@ public interface BasicPackage extends EPackage {
 	EReference getTField_Signatures();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TField#getPg <em>Pg</em>}'.
+	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TField#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Pg</em>'.
-	 * @see org.gravity.typegraph.basic.TField#getPg()
+	 * @return the meta object for the container reference '<em>Model</em>'.
+	 * @see org.gravity.typegraph.basic.TField#getModel()
 	 * @see #getTField()
 	 * @generated
 	 */
-	EReference getTField_Pg();
+	EReference getTField_Model();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TFieldDefinition <em>TField Definition</em>}'.
@@ -4667,15 +4667,15 @@ public interface BasicPackage extends EPackage {
 	EReference getTMember_AccessedBy();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TMember#getTAccessing <em>TAccessing</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TMember#getAccessing <em>Accessing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>TAccessing</em>'.
-	 * @see org.gravity.typegraph.basic.TMember#getTAccessing()
+	 * @return the meta object for the containment reference list '<em>Accessing</em>'.
+	 * @see org.gravity.typegraph.basic.TMember#getAccessing()
 	 * @see #getTMember()
 	 * @generated
 	 */
-	EReference getTMember_TAccessing();
+	EReference getTMember_Accessing();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.gravity.typegraph.basic.TMember#getTModifier <em>TModifier</em>}'.
@@ -4731,15 +4731,15 @@ public interface BasicPackage extends EPackage {
 	EReference getTMethod_Signatures();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TMethod#getPg <em>Pg</em>}'.
+	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TMethod#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Pg</em>'.
-	 * @see org.gravity.typegraph.basic.TMethod#getPg()
+	 * @return the meta object for the container reference '<em>Model</em>'.
+	 * @see org.gravity.typegraph.basic.TMethod#getModel()
 	 * @see #getTMethod()
 	 * @generated
 	 */
-	EReference getTMethod_Pg();
+	EReference getTMethod_Model();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethod#getMethodSignature(org.gravity.typegraph.basic.TAbstractType, int, int, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList) <em>Get Method Signature</em>}' operation.
@@ -4772,10 +4772,10 @@ public interface BasicPackage extends EPackage {
 	EClass getTMethodDefinition();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TMethodDefinition#getOverriding <em>Overriding</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TMethodDefinition#getOverriding <em>Overriding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Overriding</em>'.
+	 * @return the meta object for the reference list '<em>Overriding</em>'.
 	 * @see org.gravity.typegraph.basic.TMethodDefinition#getOverriding()
 	 * @see #getTMethodDefinition()
 	 * @generated
@@ -4962,26 +4962,15 @@ public interface BasicPackage extends EPackage {
 	EClass getTPackage();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TPackage#getPg <em>Pg</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TPackage#getSubpackages <em>Subpackages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Pg</em>'.
-	 * @see org.gravity.typegraph.basic.TPackage#getPg()
+	 * @return the meta object for the containment reference list '<em>Subpackages</em>'.
+	 * @see org.gravity.typegraph.basic.TPackage#getSubpackages()
 	 * @see #getTPackage()
 	 * @generated
 	 */
-	EReference getTPackage_Pg();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TPackage#getSubpackage <em>Subpackage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Subpackage</em>'.
-	 * @see org.gravity.typegraph.basic.TPackage#getSubpackage()
-	 * @see #getTPackage()
-	 * @generated
-	 */
-	EReference getTPackage_Subpackage();
+	EReference getTPackage_Subpackages();
 
 	/**
 	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TPackage#getParent <em>Parent</em>}'.
@@ -5028,15 +5017,15 @@ public interface BasicPackage extends EPackage {
 	EReference getTPackage_OwnedTypes();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TPackage#getTypeGraph <em>Type Graph</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TPackage#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type Graph</em>'.
-	 * @see org.gravity.typegraph.basic.TPackage#getTypeGraph()
+	 * @return the meta object for the reference '<em>Model</em>'.
+	 * @see org.gravity.typegraph.basic.TPackage#getModel()
 	 * @see #getTPackage()
 	 * @generated
 	 */
-	EReference getTPackage_TypeGraph();
+	EReference getTPackage_Model();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.gravity.typegraph.basic.TPackage#getTName <em>TName</em>}'.
@@ -5422,6 +5411,16 @@ public interface BasicPackage extends EPackage {
 	EOperation getTypeGraph__GetMethodDefinition__String();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#createPackage(java.lang.String) <em>Create Package</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Package</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#createPackage(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__CreatePackage__String();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TInterface <em>TInterface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5505,15 +5504,15 @@ public interface BasicPackage extends EPackage {
 	EClass getTAbstractType();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TAbstractType#getPg <em>Pg</em>}'.
+	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TAbstractType#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Pg</em>'.
-	 * @see org.gravity.typegraph.basic.TAbstractType#getPg()
+	 * @return the meta object for the container reference '<em>Model</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractType#getModel()
 	 * @see #getTAbstractType()
 	 * @generated
 	 */
-	EReference getTAbstractType_Pg();
+	EReference getTAbstractType_Model();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TAbstractType#getPackage <em>Package</em>}'.
@@ -6077,20 +6076,20 @@ public interface BasicPackage extends EPackage {
 		EClass TACCESS = eINSTANCE.getTAccess();
 
 		/**
-		 * The meta object literal for the '<em><b>TTarget</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TACCESS__TTARGET = eINSTANCE.getTAccess_TTarget();
+		EReference TACCESS__TARGET = eINSTANCE.getTAccess_Target();
 
 		/**
-		 * The meta object literal for the '<em><b>TSource</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TACCESS__TSOURCE = eINSTANCE.getTAccess_TSource();
+		EReference TACCESS__SOURCE = eINSTANCE.getTAccess_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Static Type</b></em>' reference feature.
@@ -6111,12 +6110,12 @@ public interface BasicPackage extends EPackage {
 		EClass TCLASS = eINSTANCE.getTClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Class</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Parent Classes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TCLASS__PARENT_CLASS = eINSTANCE.getTClass_ParentClass();
+		EReference TCLASS__PARENT_CLASSES = eINSTANCE.getTClass_ParentClasses();
 
 		/**
 		 * The meta object literal for the '<em><b>Child Classes</b></em>' reference list feature.
@@ -6241,12 +6240,12 @@ public interface BasicPackage extends EPackage {
 		EReference TFIELD__SIGNATURES = eINSTANCE.getTField_Signatures();
 
 		/**
-		 * The meta object literal for the '<em><b>Pg</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TFIELD__PG = eINSTANCE.getTField_Pg();
+		EReference TFIELD__MODEL = eINSTANCE.getTField_Model();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TFieldDefinitionImpl <em>TField Definition</em>}' class.
@@ -6369,12 +6368,12 @@ public interface BasicPackage extends EPackage {
 		EReference TMEMBER__ACCESSED_BY = eINSTANCE.getTMember_AccessedBy();
 
 		/**
-		 * The meta object literal for the '<em><b>TAccessing</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Accessing</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TMEMBER__TACCESSING = eINSTANCE.getTMember_TAccessing();
+		EReference TMEMBER__ACCESSING = eINSTANCE.getTMember_Accessing();
 
 		/**
 		 * The meta object literal for the '<em><b>TModifier</b></em>' containment reference feature.
@@ -6419,12 +6418,12 @@ public interface BasicPackage extends EPackage {
 		EReference TMETHOD__SIGNATURES = eINSTANCE.getTMethod_Signatures();
 
 		/**
-		 * The meta object literal for the '<em><b>Pg</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TMETHOD__PG = eINSTANCE.getTMethod_Pg();
+		EReference TMETHOD__MODEL = eINSTANCE.getTMethod_Model();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Method Signature</b></em>' operation.
@@ -6453,7 +6452,7 @@ public interface BasicPackage extends EPackage {
 		EClass TMETHOD_DEFINITION = eINSTANCE.getTMethodDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Overriding</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Overriding</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -6601,20 +6600,12 @@ public interface BasicPackage extends EPackage {
 		EClass TPACKAGE = eINSTANCE.getTPackage();
 
 		/**
-		 * The meta object literal for the '<em><b>Pg</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Subpackages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TPACKAGE__PG = eINSTANCE.getTPackage_Pg();
-
-		/**
-		 * The meta object literal for the '<em><b>Subpackage</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TPACKAGE__SUBPACKAGE = eINSTANCE.getTPackage_Subpackage();
+		EReference TPACKAGE__SUBPACKAGES = eINSTANCE.getTPackage_Subpackages();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
@@ -6649,12 +6640,12 @@ public interface BasicPackage extends EPackage {
 		EReference TPACKAGE__OWNED_TYPES = eINSTANCE.getTPackage_OwnedTypes();
 
 		/**
-		 * The meta object literal for the '<em><b>Type Graph</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TPACKAGE__TYPE_GRAPH = eINSTANCE.getTPackage_TypeGraph();
+		EReference TPACKAGE__MODEL = eINSTANCE.getTPackage_Model();
 
 		/**
 		 * The meta object literal for the '<em><b>TName</b></em>' attribute feature.
@@ -6959,6 +6950,14 @@ public interface BasicPackage extends EPackage {
 		EOperation TYPE_GRAPH___GET_METHOD_DEFINITION__STRING = eINSTANCE.getTypeGraph__GetMethodDefinition__String();
 
 		/**
+		 * The meta object literal for the '<em><b>Create Package</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___CREATE_PACKAGE__STRING = eINSTANCE.getTypeGraph__CreatePackage__String();
+
+		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TInterfaceImpl <em>TInterface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7027,12 +7026,12 @@ public interface BasicPackage extends EPackage {
 		EClass TABSTRACT_TYPE = eINSTANCE.getTAbstractType();
 
 		/**
-		 * The meta object literal for the '<em><b>Pg</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TABSTRACT_TYPE__PG = eINSTANCE.getTAbstractType_Pg();
+		EReference TABSTRACT_TYPE__MODEL = eINSTANCE.getTAbstractType_Model();
 
 		/**
 		 * The meta object literal for the '<em><b>Package</b></em>' reference feature.

@@ -38,8 +38,8 @@
           eType="#//antipattern/HGodClassAntiPattern"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HGodClassAntiPattern" eSuperTypes="#//HAntiPattern">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="hLargeClassLowCohesionSmell"
-          eType="#//codesmells/HLargeClassLowCohesionSmell"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hLargeClassLowCohesionSmells"
+          upperBound="-1" eType="#//HCodeSmell"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hControllerClassSmell"
           eType="#//codesmells/HControllerClassSmell"/>
     </eClassifiers>
@@ -76,10 +76,6 @@
     <eClassifiers xsi:type="ecore:EClass" name="HEmptyClassSmell" eSuperTypes="#//HCodeSmell"/>
     <eClassifiers xsi:type="ecore:EClass" name="HGetterSetterSmell" eSuperTypes="#//HCodeSmell">
       <eStructuralFeatures xsi:type="ecore:EReference" name="tFieldDefinition" eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HLargeClassLowCohesionSmell" eSuperTypes="#//HCodeSmell">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="hLowCohesionSmell" eType="#//codesmells/HLowCohesionSmell"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="hLargeClassSmell" eType="#//codesmells/HLargeClassSmell"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HLargeClassSmell" eSuperTypes="#//HCodeSmell">
       <eStructuralFeatures xsi:type="ecore:EReference" name="hNumberOfMembers" eType="#//metrics/HNumberOfMembersMetric"/>

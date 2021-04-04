@@ -339,7 +339,7 @@ public abstract class HulkHandler extends AbstractHandler {
 					final IFile apgXmi = hulkFolder.getFile(HulkActivator.ANTI_PATTERN_XMI_NAME);
 					final IFile pmXmi = hulkFolder.getFile(HulkHandler.this.project.getProject().getName() + ".xmi");
 					if (!ModelSaver.saveModel(HulkHandler.this.hulk.getApg(), apgXmi, monitor)
-							|| !ModelSaver.saveModel(HulkHandler.this.hulk.getApg().getPg(), pmXmi, monitor)) {
+							|| !ModelSaver.saveModel(HulkHandler.this.hulk.getApg().getModel(), pmXmi, monitor)) {
 						return new Status(IStatus.WARNING, HulkUiActivator.PLUGIN_ID, Messages.saveAPsFailed);
 					}
 

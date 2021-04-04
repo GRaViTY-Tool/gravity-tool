@@ -1,53 +1,33 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.hulk;singleton:=true
-Export-Package: com.apporiented.algorithm.clustering,
- com.apporiented.algorithm.clustering.visualization,
- org.gravity.hulk,
+Export-Package: org.gravity.hulk,
  org.gravity.hulk.detection,
  org.gravity.hulk.detection.antipattern,
  org.gravity.hulk.detection.antipattern.impl,
- org.gravity.hulk.detection.antipattern.util,
  org.gravity.hulk.detection.codesmells,
  org.gravity.hulk.detection.codesmells.impl,
- org.gravity.hulk.detection.codesmells.util,
  org.gravity.hulk.detection.impl,
  org.gravity.hulk.detection.metrics,
  org.gravity.hulk.detection.metrics.impl,
- org.gravity.hulk.detection.metrics.util,
- org.gravity.hulk.detection.util,
  org.gravity.hulk.exceptions,
  org.gravity.hulk.impl,
- org.gravity.hulk.resolve,
- org.gravity.hulk.resolve.antipattern,
- org.gravity.hulk.resolve.antipattern.impl,
- org.gravity.hulk.resolve.antipattern.util,
- org.gravity.hulk.resolve.calculators,
- org.gravity.hulk.resolve.calculators.impl,
- org.gravity.hulk.resolve.calculators.util,
- org.gravity.hulk.resolve.impl,
- org.gravity.hulk.resolve.util,
- org.gravity.hulk.util,
- org.moflon.core.dfs,
- org.moflon.core.dfs.impl,
- org.moflon.core.dfs.util
+ org.moflon.core.dfs
 Bundle-Name: Hulk
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .,
- lib/org.moflon.core.dfs_2.0.0.201811071039.jar,
- lib/hierarchical-clustering.jar
+ lib/org.moflon.core.dfs_2.0.0.201811071039.jar
 Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.gravity.hulk.annotations,
- org.gravity.hulk.refactoringgraph;visibility:=reexport,
  org.gravity.eclipse,
  org.eclipse.jdt.core,
  org.eclipse.core.resources,
  org.eclipse.emf.henshin.interpreter,
  org.gravity.typegraph.basic;visibility:=reexport,
  org.gravity.security.annotations,
- org.gravity.refactorings
+ org.gravity.hulk.antipatterngraph;visibility:=reexport
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Activator: org.gravity.hulk.HulkActivator
 Bundle-Vendor: TU Darmstadt
 Automatic-Module-Name: org.gravity.hulk

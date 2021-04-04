@@ -18,7 +18,7 @@
 
 #target {
 	tClass:TClass {
-		++  -parentClass -> tExtendedClass
+		++  -parentClasses -> tExtendedClass
 	}
 
 	tExtendedClass:TClass

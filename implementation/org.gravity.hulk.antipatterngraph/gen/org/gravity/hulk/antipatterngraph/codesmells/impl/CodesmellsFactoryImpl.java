@@ -64,8 +64,6 @@ public class CodesmellsFactoryImpl extends EFactoryImpl implements CodesmellsFac
 			return createHEmptyClassSmell();
 		case CodesmellsPackage.HGETTER_SETTER_SMELL:
 			return createHGetterSetterSmell();
-		case CodesmellsPackage.HLARGE_CLASS_LOW_COHESION_SMELL:
-			return createHLargeClassLowCohesionSmell();
 		case CodesmellsPackage.HLARGE_CLASS_SMELL:
 			return createHLargeClassSmell();
 		case CodesmellsPackage.HLOW_COHESION_SMELL:
@@ -125,17 +123,6 @@ public class CodesmellsFactoryImpl extends EFactoryImpl implements CodesmellsFac
 	public HGetterSetterSmell createHGetterSetterSmell() {
 		HGetterSetterSmellImpl hGetterSetterSmell = new HGetterSetterSmellImpl();
 		return hGetterSetterSmell;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public HLargeClassLowCohesionSmell createHLargeClassLowCohesionSmell() {
-		HLargeClassLowCohesionSmellImpl hLargeClassLowCohesionSmell = new HLargeClassLowCohesionSmellImpl();
-		return hLargeClassLowCohesionSmell;
 	}
 
 	/**

@@ -7,7 +7,6 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HLocalFieldAccessesMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
 import org.gravity.hulk.detection.metrics.HLocalFieldsAccessCalculator;
@@ -33,7 +32,6 @@ implements HLocalFieldsAccessCalculator {
 	 * @generated
 	 */
 	protected HLocalFieldsAccessCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -53,7 +51,7 @@ implements HLocalFieldsAccessCalculator {
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
-		final HLocalFieldAccessesMetric metric = MetricsFactory.eINSTANCE.createHLocalFieldAccessesMetric();
+		final var metric = MetricsFactory.eINSTANCE.createHLocalFieldAccessesMetric();
 		metric.setTAnnotated(tClass);
 		getHAnnotation().add(metric);
 		metric.setValue(0);
@@ -61,7 +59,7 @@ implements HLocalFieldsAccessCalculator {
 		for (final TMember tMember : tClass.getDefines()) {
 			for (final TMember tAnyAccessedField : tClass.getDefines()) {
 				if (tAnyAccessedField instanceof TFieldDefinition) {
-					for (final TAccess tAnyAccess : tMember.getTAccessing()) {
+					for (final TAccess tAnyAccess : tMember.getAccessing()) {
 						if (tAnyAccessedField.getAccessedBy().contains(tAnyAccess)) {
 							metric.increment();
 						}
@@ -81,11 +79,11 @@ implements HLocalFieldsAccessCalculator {
 	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		int i = 0;
+		var i = 0;
 		for (final TMember m : tClass.getDefines()) {
-			for (final TAccess t : m.getTAccessing()) {
-				final TMember tTarget = t.getTTarget();
-				if (tTarget instanceof TFieldDefinition && tTarget.getDefinedBy().equals(tClass)) {
+			for (final TAccess t : m.getAccessing()) {
+				final var tTarget = t.getTarget();
+				if ((tTarget instanceof TFieldDefinition) && tTarget.getDefinedBy().equals(tClass)) {
 					i++;
 				}
 			}

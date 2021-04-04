@@ -123,7 +123,7 @@ public interface MethodDefinitionReturnSingle extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType,
 			EObject mDefinitionToTMember, EObject mSignatureToTMethodSignature, EObject tMethodSignature,
-			EObject tDefinition, EObject mDefinition, EObject mBodyToTAnnotation, EObject mFlowElementToTFlowElement,
+			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
 			EObject mTypeAccess, EObject mType, EObject mSignature);
 
 	/**
@@ -211,7 +211,7 @@ public interface MethodDefinitionReturnSingle extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType,
 			EObject mDefinitionToTMember, EObject mSignatureToTMethodSignature, EObject tMethodSignature,
-			EObject tDefinition, EObject mDefinition, EObject mBodyToTAnnotation, EObject mFlowElementToTFlowElement,
+			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
 			EObject mTypeAccess, EObject mType, EObject mSignature);
 
 	/**
@@ -228,7 +228,7 @@ public interface MethodDefinitionReturnSingle extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_715(EMoflonEdge _edge_definitions);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_17(EMoflonEdge _edge_definitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,7 +236,7 @@ public interface MethodDefinitionReturnSingle extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_735(EMoflonEdge _edge_returnType);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_19(EMoflonEdge _edge_returnType);
 
 	/**
 	 * <!-- begin-user-doc -->

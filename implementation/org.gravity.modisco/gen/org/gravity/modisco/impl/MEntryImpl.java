@@ -104,6 +104,7 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MEntry getMNext() {
 		if (mNext != null && mNext.eIsProxy()) {
 			InternalEObject oldMNext = (InternalEObject)mNext;
@@ -145,6 +146,7 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMNext(MEntry newMNext) {
 		if (newMNext != mNext) {
 			NotificationChain msgs = null;
@@ -164,6 +166,7 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MEntry getMPrevious() {
 		if (mPrevious != null && mPrevious.eIsProxy()) {
 			InternalEObject oldMPrevious = (InternalEObject)mPrevious;
@@ -205,6 +208,7 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMPrevious(MEntry newMPrevious) {
 		if (newMPrevious != mPrevious) {
 			NotificationChain msgs = null;
@@ -224,6 +228,7 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Type getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
@@ -250,6 +255,7 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(Type newType) {
 		Type oldType = type;
 		type = newType;
@@ -262,6 +268,7 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MSingleVariableDeclaration> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectWithInverseResolvingEList<MSingleVariableDeclaration>(MSingleVariableDeclaration.class, this, ModiscoPackage.MENTRY__PARAMETERS, ModiscoPackage.MSINGLE_VARIABLE_DECLARATION__MENTRY);

@@ -1,0 +1,32 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule InnerDeclaration2InnerClassifier_InAnonymous #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jContainer:AnonymousClassDeclaration{
+		++-bodyDeclarations->bodyDeclaration
+	}
+	
+	bodyDeclaration:AbstractTypeDeclaration
+}
+
+#target {
+	uContainer:uml.Class {
+		++-nestedClassifier->feature
+	}
+	
+	feature:uml.Classifier
+}
+
+#correspondence {
+	ne2ne:ASTNode2Element {
+		#src->jContainer
+		#trg->uContainer
+	}
+	
+	b2e : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}

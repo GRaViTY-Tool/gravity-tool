@@ -8,7 +8,6 @@ public enum Flaws {
 	H_INVOCATIONRELATION_METRIC("HInvocationRelationMetric"),
 	H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC("HNumberOfIncommingInvocationsMetric"),
 	H_NUMBER_OF_OUTGOING_INVOCATIONS_METRIC("HNumberOfOutgoingInvocationsMetric"),
-	H_LARGE_CLASS_LOW_COHESION_SMELL("HLargeClassLowCohesionSmell"),
 	H_LOW_COHESION_SMELL("HLowCohesionSmell"),
 	H_LCOM5_METRIC("HLCOM5Metric"),
 	H_LARGE_CLASS_SMELL("HLargeClassSmell"),

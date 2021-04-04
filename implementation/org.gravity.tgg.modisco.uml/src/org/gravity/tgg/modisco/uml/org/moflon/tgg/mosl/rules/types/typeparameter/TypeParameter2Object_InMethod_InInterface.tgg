@@ -11,7 +11,7 @@
 	uowner : Interface {
 		++-nestedClassifier->uparam
 	}
-	++ uparam : Class {
+	++ uparam : uml.Class {
 		name := "T"
 	}
 }

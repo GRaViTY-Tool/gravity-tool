@@ -95,11 +95,6 @@ public class CodesmellsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseHLargeClassLowCohesionDetector(HLargeClassLowCohesionDetector object) {
-			return createHLargeClassLowCohesionDetectorAdapter();
-		}
-
-		@Override
 		public Adapter caseHLargeClassDetector(HLargeClassDetector object) {
 			return createHLargeClassDetectorAdapter();
 		}

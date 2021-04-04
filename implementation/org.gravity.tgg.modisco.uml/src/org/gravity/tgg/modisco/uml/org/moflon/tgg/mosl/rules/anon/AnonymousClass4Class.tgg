@@ -1,0 +1,20 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule AnonymousClass4Class #extends AnonymousClass4_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jContainer:MClass {
+		-bodyDeclarations->mMember
+	}
+	
+	mMember : MDefinition
+}
+
+#target {
+	uContainer:Class {
+		++ -nestedClassifier->feature
+	}
+	
+	++feature:Class
+}

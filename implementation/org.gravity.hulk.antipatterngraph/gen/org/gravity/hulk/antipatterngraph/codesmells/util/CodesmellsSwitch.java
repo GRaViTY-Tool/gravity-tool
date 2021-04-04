@@ -124,19 +124,6 @@ public class CodesmellsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case CodesmellsPackage.HLARGE_CLASS_LOW_COHESION_SMELL: {
-			HLargeClassLowCohesionSmell hLargeClassLowCohesionSmell = (HLargeClassLowCohesionSmell) theEObject;
-			T result = caseHLargeClassLowCohesionSmell(hLargeClassLowCohesionSmell);
-			if (result == null)
-				result = caseHCodeSmell(hLargeClassLowCohesionSmell);
-			if (result == null)
-				result = caseHAnnotation(hLargeClassLowCohesionSmell);
-			if (result == null)
-				result = caseTAnnotation(hLargeClassLowCohesionSmell);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case CodesmellsPackage.HLARGE_CLASS_SMELL: {
 			HLargeClassSmell hLargeClassSmell = (HLargeClassSmell) theEObject;
 			T result = caseHLargeClassSmell(hLargeClassSmell);
@@ -279,21 +266,6 @@ public class CodesmellsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseHGetterSetterSmell(HGetterSetterSmell object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>HLarge Class Low Cohesion Smell</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>HLarge Class Low Cohesion Smell</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHLargeClassLowCohesionSmell(HLargeClassLowCohesionSmell object) {
 		return null;
 	}
 

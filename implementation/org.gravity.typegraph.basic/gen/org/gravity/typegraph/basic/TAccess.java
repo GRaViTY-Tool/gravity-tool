@@ -11,8 +11,8 @@ package org.gravity.typegraph.basic;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.TAccess#getTTarget <em>TTarget</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.TAccess#getTSource <em>TSource</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TAccess#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TAccess#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TAccess#getStaticType <em>Static Type</em>}</li>
  * </ul>
  *
@@ -22,60 +22,52 @@ package org.gravity.typegraph.basic;
  */
 public interface TAccess extends TAbstractFlowElement {
 	/**
-	 * Returns the value of the '<em><b>TTarget</b></em>' reference.
+	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMember#getAccessedBy <em>Accessed By</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>TTarget</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>TTarget</em>' reference.
-	 * @see #setTTarget(TMember)
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTAccess_TTarget()
+	 * @return the value of the '<em>Target</em>' reference.
+	 * @see #setTarget(TMember)
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTAccess_Target()
 	 * @see org.gravity.typegraph.basic.TMember#getAccessedBy
 	 * @model opposite="accessedBy" required="true"
 	 * @generated
 	 */
-	TMember getTTarget();
+	TMember getTarget();
 
 	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TAccess#getTTarget <em>TTarget</em>}' reference.
+	 * Sets the value of the '{@link org.gravity.typegraph.basic.TAccess#getTarget <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>TTarget</em>' reference.
-	 * @see #getTTarget()
+	 * @param value the new value of the '<em>Target</em>' reference.
+	 * @see #getTarget()
 	 * @generated
 	 */
-	void setTTarget(TMember value);
+	void setTarget(TMember value);
 
 	/**
-	 * Returns the value of the '<em><b>TSource</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMember#getTAccessing <em>TAccessing</em>}'.
+	 * Returns the value of the '<em><b>Source</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMember#getAccessing <em>Accessing</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>TSource</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>TSource</em>' container reference.
-	 * @see #setTSource(TMember)
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTAccess_TSource()
-	 * @see org.gravity.typegraph.basic.TMember#getTAccessing
-	 * @model opposite="tAccessing" required="true" transient="false"
+	 * @return the value of the '<em>Source</em>' container reference.
+	 * @see #setSource(TMember)
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTAccess_Source()
+	 * @see org.gravity.typegraph.basic.TMember#getAccessing
+	 * @model opposite="accessing" required="true" transient="false"
 	 * @generated
 	 */
-	TMember getTSource();
+	TMember getSource();
 
 	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TAccess#getTSource <em>TSource</em>}' container reference.
+	 * Sets the value of the '{@link org.gravity.typegraph.basic.TAccess#getSource <em>Source</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>TSource</em>' container reference.
-	 * @see #getTSource()
+	 * @param value the new value of the '<em>Source</em>' container reference.
+	 * @see #getSource()
 	 * @generated
 	 */
-	void setTSource(TMember value);
+	void setSource(TMember value);
 
 	/**
 	 * Returns the value of the '<em><b>Static Type</b></em>' reference.

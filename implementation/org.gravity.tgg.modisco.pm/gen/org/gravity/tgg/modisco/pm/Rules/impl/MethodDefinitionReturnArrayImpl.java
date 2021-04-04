@@ -258,8 +258,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		//nothing EMoflonEdge mFlowElementToTFlowElement__mDefinition____source = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__tDefinition____target = (EMoflonEdge) result3_green[19];
 		//nothing EMoflonEdge tDefinition__tType____returnType = (EMoflonEdge) result3_green[20];
 		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[21];
@@ -647,8 +647,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		//nothing EMoflonEdge mFlowElementToTFlowElement__mDefinition____source = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__tDefinition____target = (EMoflonEdge) result3_green[19];
 		//nothing EMoflonEdge tDefinition__tType____returnType = (EMoflonEdge) result3_green[20];
 		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[21];
@@ -890,7 +890,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_732(EMoflonEdge _edge_definitions) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_29(EMoflonEdge _edge_definitions) {
 
 		Object[] result1_bindingAndBlack = MethodDefinitionReturnArrayImpl
 				.pattern_MethodDefinitionReturnArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -950,7 +950,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_752(EMoflonEdge _edge_returnType) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_31(EMoflonEdge _edge_returnType) {
 
 		Object[] result1_bindingAndBlack = MethodDefinitionReturnArrayImpl
 				.pattern_MethodDefinitionReturnArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1023,12 +1023,12 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("tDefinition", "lowerBound", 0, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tDefinition", "upperBound", -1, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
 
-		if (!__helper.hasExpectedValue("tDefinition", "upperBound", -1, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tDefinition", "lowerBound", 0, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
@@ -1063,12 +1063,12 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("tDefinition", "lowerBound", 0, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tDefinition", "upperBound", -1, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
 
-		if (!__helper.hasExpectedValue("tDefinition", "upperBound", -1, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tDefinition", "lowerBound", 0, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
@@ -1463,10 +1463,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_732__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_732((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_752__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_752((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_29__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_29((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_31__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_31((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1787,8 +1787,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 				.createMAbstractFlowElementToTAbstractFlowElement();
 		TMethodDefinition tDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		int tDefinition_lowerBound_prime = Integer.valueOf(0);
 		int tDefinition_upperBound_prime = Integer.valueOf(-1);
+		int tDefinition_lowerBound_prime = Integer.valueOf(0);
 		mDefinitionToTMember.setSource(mDefinition);
 		mFlowElementToTFlowElement.setSource(mDefinition);
 		tMethodSignature.getDefinitions().add(tDefinition);
@@ -1797,8 +1797,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		tDefinition.setReturnType(tType);
 		mBodyToTAnnotation.setSource(mDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
-		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
 		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
+		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
 		return new Object[] { tType, mDefinitionToTMember, tMethodSignature, mFlowElementToTFlowElement, tDefinition,
 				mDefinition, mBodyToTAnnotation };
 	}
@@ -2117,8 +2117,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		EMoflonEdge mFlowElementToTFlowElement__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeAccess__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2132,8 +2132,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		String mFlowElementToTFlowElement__mDefinition____source_name_prime = "source";
 		String mTypeAccess__mType____type_name_prime = "type";
 		String mType__mTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
 		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
+		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
 		String mFlowElementToTFlowElement__tDefinition____target_name_prime = "target";
 		String tDefinition__tType____returnType_name_prime = "returnType";
 		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
@@ -2158,12 +2158,12 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		mType__mTypeAccess____usagesInTypeAccess.setSrc(mType);
 		mType__mTypeAccess____usagesInTypeAccess.setTrg(mTypeAccess);
 		ruleresult.getTranslatedEdges().add(mType__mTypeAccess____usagesInTypeAccess);
-		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
 		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
 		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
+		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
 		mFlowElementToTFlowElement__tDefinition____target.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__tDefinition____target.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tDefinition____target);
@@ -2190,8 +2190,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 				.setName(mFlowElementToTFlowElement__mDefinition____source_name_prime);
 		mTypeAccess__mType____type.setName(mTypeAccess__mType____type_name_prime);
 		mType__mTypeAccess____usagesInTypeAccess.setName(mType__mTypeAccess____usagesInTypeAccess_name_prime);
-		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
 		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
+		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
 		mFlowElementToTFlowElement__tDefinition____target
 				.setName(mFlowElementToTFlowElement__tDefinition____target_name_prime);
 		tDefinition__tType____returnType.setName(tDefinition__tType____returnType_name_prime);
@@ -2204,7 +2204,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 				tMethodSignature__tDefinition____definitions, tDefinition__tMethodSignature____signature,
 				mDefinition__mTypeAccess____returnType, mFlowElementToTFlowElement__mDefinition____source,
 				mTypeAccess__mType____type, mType__mTypeAccess____usagesInTypeAccess,
-				mDefinitionToTMember__tDefinition____target, mBodyToTAnnotation__mDefinition____source,
+				mBodyToTAnnotation__mDefinition____source, mDefinitionToTMember__tDefinition____target,
 				mFlowElementToTFlowElement__tDefinition____target, tDefinition__tType____returnType,
 				mDefinitionToTMember__mDefinition____source, mBodyToTAnnotation__tDefinition____target,
 				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature };
@@ -3091,8 +3091,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		EMoflonEdge mFlowElementToTFlowElement__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeAccess__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -3106,8 +3106,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		String mFlowElementToTFlowElement__mDefinition____source_name_prime = "source";
 		String mTypeAccess__mType____type_name_prime = "type";
 		String mType__mTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
 		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
+		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
 		String mFlowElementToTFlowElement__tDefinition____target_name_prime = "target";
 		String tDefinition__tType____returnType_name_prime = "returnType";
 		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
@@ -3132,12 +3132,12 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		mType__mTypeAccess____usagesInTypeAccess.setSrc(mType);
 		mType__mTypeAccess____usagesInTypeAccess.setTrg(mTypeAccess);
 		ruleresult.getCreatedEdges().add(mType__mTypeAccess____usagesInTypeAccess);
-		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
 		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
 		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
+		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
 		mFlowElementToTFlowElement__tDefinition____target.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__tDefinition____target.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tDefinition____target);
@@ -3164,8 +3164,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 				.setName(mFlowElementToTFlowElement__mDefinition____source_name_prime);
 		mTypeAccess__mType____type.setName(mTypeAccess__mType____type_name_prime);
 		mType__mTypeAccess____usagesInTypeAccess.setName(mType__mTypeAccess____usagesInTypeAccess_name_prime);
-		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
 		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
+		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
 		mFlowElementToTFlowElement__tDefinition____target
 				.setName(mFlowElementToTFlowElement__tDefinition____target_name_prime);
 		tDefinition__tType____returnType.setName(tDefinition__tType____returnType_name_prime);
@@ -3178,7 +3178,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 				tMethodSignature__tDefinition____definitions, tDefinition__tMethodSignature____signature,
 				mDefinition__mTypeAccess____returnType, mFlowElementToTFlowElement__mDefinition____source,
 				mTypeAccess__mType____type, mType__mTypeAccess____usagesInTypeAccess,
-				mDefinitionToTMember__tDefinition____target, mBodyToTAnnotation__mDefinition____source,
+				mBodyToTAnnotation__mDefinition____source, mDefinitionToTMember__tDefinition____target,
 				mFlowElementToTFlowElement__tDefinition____target, tDefinition__tType____returnType,
 				mDefinitionToTMember__mDefinition____source, mBodyToTAnnotation__tDefinition____target,
 				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature };
@@ -3276,10 +3276,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_12_2_corematch_blackBFBFFBFB(
 			TAbstractType tType, TMethodSignature tMethodSignature, TMethodDefinition tDefinition, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		int tDefinition_lowerBound = tDefinition.getLowerBound();
-		if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
-			int tDefinition_upperBound = tDefinition.getUpperBound();
-			if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
+		int tDefinition_upperBound = tDefinition.getUpperBound();
+		if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
+			int tDefinition_lowerBound = tDefinition.getLowerBound();
+			if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
 				for (MSignatureToTSignature mSignatureToTMethodSignature : org.moflon.core.utilities.eMoflonEMFUtil
 						.getOppositeReferenceTyped(tMethodSignature, MSignatureToTSignature.class, "target")) {
 					MSignature tmpMSignature = mSignatureToTMethodSignature.getSource();
@@ -3315,10 +3315,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 					if (mTypeOfArray.equals(mTypeToTType.getSource())) {
 						if (tType.equals(mTypeToTType.getTarget())) {
 							if (mSignature.equals(mSignatureToTMethodSignature.getSource())) {
-								int tDefinition_lowerBound = tDefinition.getLowerBound();
-								if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
-									int tDefinition_upperBound = tDefinition.getUpperBound();
-									if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
+								int tDefinition_upperBound = tDefinition.getUpperBound();
+								if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
+									int tDefinition_lowerBound = tDefinition.getLowerBound();
+									if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
 										for (TypeAccess mArrayTypeAccess : mTypeOfArray.getUsagesInTypeAccess()) {
 											for (ArrayType mType : org.moflon.core.utilities.eMoflonEMFUtil
 													.getOppositeReferenceTyped(mArrayTypeAccess, ArrayType.class,
@@ -3556,9 +3556,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_20_2_testcorematchandDECs_black_nac_0BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_146088 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_146088 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_146088)) {
+		TSignature __DEC_tDefinition_signature_967103 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_967103 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_967103)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -3578,10 +3578,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 				if (tMethodSignature.getDefinitions().contains(tDefinition)) {
 					TAbstractType tType = tDefinition.getReturnType();
 					if (tType != null) {
-						int tDefinition_lowerBound = tDefinition.getLowerBound();
-						if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
-							int tDefinition_upperBound = tDefinition.getUpperBound();
-							if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
+						int tDefinition_upperBound = tDefinition.getUpperBound();
+						if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
+							int tDefinition_lowerBound = tDefinition.getLowerBound();
+							if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
 								if (pattern_MethodDefinitionReturnArray_20_2_testcorematchandDECs_black_nac_0BB(
 										tDefinition, tMethodSignature) == null) {
 									_result.add(
@@ -3704,9 +3704,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_0BB(
 			MMethodDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_465231 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_465231 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_465231)) {
+		MSignature __DEC_mDefinition_mDefinitions_319146 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_319146 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_319146)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -3716,9 +3716,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_1BB(
 			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_686240 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_958002 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superInterfaces_686240)) {
+			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superInterfaces_958002)) {
 				return new Object[] { mTypeAccess, mTypeOfArray };
 			}
 		}
@@ -3727,7 +3727,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_905672 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_403574 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3737,10 +3737,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_3BBB(
 			TypeAccess mTypeAccess, ArrayType mType, Type mTypeOfArray) {
 		if (!mType.equals(mTypeOfArray)) {
-			for (ArrayType __DEC_mTypeAccess_elementType_942117 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (ArrayType __DEC_mTypeAccess_elementType_861529 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mTypeAccess, ArrayType.class, "elementType")) {
-				if (!mType.equals(__DEC_mTypeAccess_elementType_942117)) {
-					if (!mTypeOfArray.equals(__DEC_mTypeAccess_elementType_942117)) {
+				if (!mType.equals(__DEC_mTypeAccess_elementType_861529)) {
+					if (!mTypeOfArray.equals(__DEC_mTypeAccess_elementType_861529)) {
 						return new Object[] { mTypeAccess, mType, mTypeOfArray };
 					}
 				}
@@ -3751,7 +3751,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_911662 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_85551 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3760,9 +3760,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_5BB(
 			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_496898 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_601037 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superClass_496898)) {
+			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superClass_601037)) {
 				return new Object[] { mTypeAccess, mTypeOfArray };
 			}
 		}
@@ -3771,9 +3771,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_6BB(
 			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (ParameterizedType __DEC_mTypeAccess_type_427135 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mTypeAccess_type_959346 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_type_427135)) {
+			if (!mTypeOfArray.equals(__DEC_mTypeAccess_type_959346)) {
 				return new Object[] { mTypeAccess, mTypeOfArray };
 			}
 		}
@@ -3782,7 +3782,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_960544 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_682512 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3791,7 +3791,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_156440 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_4041 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -4002,10 +4002,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		if (!mArrayTypeAccess.equals(mTypeAccess)) {
 			if (!mType.equals(mTypeOfArray)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					int tDefinition_lowerBound = tDefinition.getLowerBound();
-					if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
-						int tDefinition_upperBound = tDefinition.getUpperBound();
-						if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
+					int tDefinition_upperBound = tDefinition.getUpperBound();
+					if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
+						int tDefinition_lowerBound = tDefinition.getLowerBound();
+						if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
 							return new Object[] { tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
 									tDefinition, mDefinition, mTypeAccess, mSignature, sourceMatch, targetMatch };
 						}
@@ -4181,9 +4181,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_0BB(
 			MMethodDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_450127 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_450127 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_450127)) {
+		MSignature __DEC_mDefinition_mDefinitions_814214 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_814214 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_814214)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -4193,9 +4193,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_1BB(
 			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_699984 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_470585 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superInterfaces_699984)) {
+			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superInterfaces_470585)) {
 				return new Object[] { mTypeAccess, mTypeOfArray };
 			}
 		}
@@ -4204,7 +4204,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_535625 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_153631 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -4214,10 +4214,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_3BBB(
 			TypeAccess mTypeAccess, ArrayType mType, Type mTypeOfArray) {
 		if (!mType.equals(mTypeOfArray)) {
-			for (ArrayType __DEC_mTypeAccess_elementType_991694 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (ArrayType __DEC_mTypeAccess_elementType_857270 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mTypeAccess, ArrayType.class, "elementType")) {
-				if (!mType.equals(__DEC_mTypeAccess_elementType_991694)) {
-					if (!mTypeOfArray.equals(__DEC_mTypeAccess_elementType_991694)) {
+				if (!mType.equals(__DEC_mTypeAccess_elementType_857270)) {
+					if (!mTypeOfArray.equals(__DEC_mTypeAccess_elementType_857270)) {
 						return new Object[] { mTypeAccess, mType, mTypeOfArray };
 					}
 				}
@@ -4228,7 +4228,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_415305 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_220638 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -4237,9 +4237,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_5BB(
 			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_223485 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_351474 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superClass_223485)) {
+			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superClass_351474)) {
 				return new Object[] { mTypeAccess, mTypeOfArray };
 			}
 		}
@@ -4248,9 +4248,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_6BB(
 			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (ParameterizedType __DEC_mTypeAccess_type_36629 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mTypeAccess_type_82309 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_type_36629)) {
+			if (!mTypeOfArray.equals(__DEC_mTypeAccess_type_82309)) {
 				return new Object[] { mTypeAccess, mTypeOfArray };
 			}
 		}
@@ -4259,7 +4259,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_7B(
 			TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_314234 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_285296 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -4268,7 +4268,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_8B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_340123 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_388366 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -4348,9 +4348,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_28_1_matchtggpattern_black_nac_0BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_366481 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_366481 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_366481)) {
+		TSignature __DEC_tDefinition_signature_777643 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_777643 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_777643)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -4373,10 +4373,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_28_1_matchtggpattern_greenB(
 			TMethodDefinition tDefinition) {
-		int tDefinition_lowerBound_prime = Integer.valueOf(0);
 		int tDefinition_upperBound_prime = Integer.valueOf(-1);
-		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
+		int tDefinition_lowerBound_prime = Integer.valueOf(0);
 		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
+		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
 		return new Object[] { tDefinition };
 	}
 
@@ -4644,8 +4644,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		MMethodDefinition mDefinition = ModiscoFactory.eINSTANCE.createMMethodDefinition();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TypeAccess mTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
-		int tDefinition_lowerBound_prime = Integer.valueOf(0);
 		int tDefinition_upperBound_prime = Integer.valueOf(-1);
+		int tDefinition_lowerBound_prime = Integer.valueOf(0);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(mDefinitionToTMember);
@@ -4665,8 +4665,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		mDefinition.setReturnType(mTypeAccess);
 		mTypeAccess.setType(mType);
 		ruleResult.getSourceObjects().add(mTypeAccess);
-		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
 		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
+		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));

@@ -1,0 +1,24 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule InnerDeclaration2InnerClassifier_InAnnotationType #extends InnerDeclaration2InnerClassifier_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jContainer:AnnotationTypeDeclaration
+}
+
+#target {
+	uContainer:Interface {
+		++-nestedClassifier->feature
+	}
+	
+	feature:Classifier
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

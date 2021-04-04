@@ -60,7 +60,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	private Map<EObject, MDefinition> cache;
 
 	@Override
-	public boolean process(final MGravityModel model, final Collection<MAccess> elements, IFolder debug,
+	public boolean process(final MGravityModel model, final Collection<MAccess> elements, final IFolder debug,
 			final IProgressMonitor monitor) {
 		this.fieldAccesses = new HashMap<>();
 		this.methodAccesses = new HashMap<>();
@@ -102,7 +102,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 		}
 
 		final VariableDeclaration variable = access.getVariable();
-		if (variable == null || !(variable.eContainer() instanceof FieldDeclaration)) {
+		if ((variable == null) || !(variable.eContainer() instanceof FieldDeclaration)) {
 			return;
 		}
 		this.fieldAccesses.computeIfAbsent(definition, f -> new LinkedList<>()).add(access);
@@ -132,7 +132,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 		final List<EObject> seen = new LinkedList<>();
 		seen.add(access);
 		EObject container = access;
-		while (container != null && !(container instanceof MDefinition)) {
+		while ((container != null) && !(container instanceof MDefinition)) {
 			container = container.eContainer();
 			if (this.cache.containsKey(container)) {
 				container = this.cache.get(container);
@@ -207,7 +207,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 						LOGGER.warn(NLS.bind(Messages.skippedUnresolvedMethod, method.getName()));
 					}
 				} else {
-					LOGGER.error(NLS.bind(Messages.skippedUnresolvedMethod, method.getName()));
+					LOGGER.warn(NLS.bind(Messages.skippedUnresolvedMethod, method.getName()));
 				}
 
 			} else if (LOGGER.isEnabledFor(Level.WARN)) {

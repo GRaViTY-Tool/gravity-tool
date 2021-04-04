@@ -16,7 +16,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.TAbstractType#getPg <em>Pg</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TAbstractType#getModel <em>Model</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TAbstractType#getPackage <em>Package</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TAbstractType#getSignature <em>Signature</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TAbstractType#getDefines <em>Defines</em>}</li>
@@ -33,32 +33,28 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  */
 public interface TAbstractType extends TAnnotatable {
 	/**
-	 * Returns the value of the '<em><b>Pg</b></em>' container reference.
+	 * Returns the value of the '<em><b>Model</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TypeGraph#getOwnedTypes <em>Owned Types</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Pg</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pg</em>' container reference.
-	 * @see #setPg(TypeGraph)
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractType_Pg()
+	 * @return the value of the '<em>Model</em>' container reference.
+	 * @see #setModel(TypeGraph)
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractType_Model()
 	 * @see org.gravity.typegraph.basic.TypeGraph#getOwnedTypes
 	 * @model opposite="ownedTypes" required="true" transient="false"
 	 * @generated
 	 */
-	TypeGraph getPg();
+	TypeGraph getModel();
 
 	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TAbstractType#getPg <em>Pg</em>}' container reference.
+	 * Sets the value of the '{@link org.gravity.typegraph.basic.TAbstractType#getModel <em>Model</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pg</em>' container reference.
-	 * @see #getPg()
+	 * @param value the new value of the '<em>Model</em>' container reference.
+	 * @see #getModel()
 	 * @generated
 	 */
-	void setPg(TypeGraph value);
+	void setModel(TypeGraph value);
 
 	/**
 	 * Returns the value of the '<em><b>Package</b></em>' reference.

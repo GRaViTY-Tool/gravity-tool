@@ -45,7 +45,7 @@ public class ExtractClass implements Refactoring {
 	 * @return true, iff the refactoring is applicable
 	 */
 	@Override
-	public boolean isApplicable(RefactoringConfiguration tRefactoringConfiguration) {
+	public boolean isApplicable(final RefactoringConfiguration tRefactoringConfiguration) {
 		if (tRefactoringConfiguration instanceof ExtractClassConfiguration) {
 			final ExtractClassConfiguration configuration = (ExtractClassConfiguration) tRefactoringConfiguration;
 
@@ -78,18 +78,18 @@ public class ExtractClass implements Refactoring {
 	 * @param tMember The member
 	 * @return true, iff the member can be extracted
 	 */
-	private boolean checkMember(TMember tMember) {
+	private boolean checkMember(final TMember tMember) {
 		if (tMember instanceof TMethodDefinition) {
 			final TMethodDefinition mDef = (TMethodDefinition) tMember;
 			if (TConstructor.isConstructor(mDef)) {
 				return false;
 			}
-			if (mDef.getOverriding() != null || !mDef.getOverriddenBy().isEmpty()) {
+			if ((mDef.getOverriding() != null) || !mDef.getOverriddenBy().isEmpty()) {
 				return false;
 			}
 		} else if (tMember instanceof TFieldDefinition) {
 			final TFieldDefinition fDef = (TFieldDefinition) tMember;
-			if (fDef.getHiding() != null || !fDef.getHiddenBy().isEmpty()) {
+			if ((fDef.getHiding() != null) || !fDef.getHiddenBy().isEmpty()) {
 				return false;
 			}
 		} else {
@@ -105,7 +105,7 @@ public class ExtractClass implements Refactoring {
 	 * @param configuration The refactoring configuration
 	 * @return true, iff the owner allows the refactoring
 	 */
-	private boolean checkTypes(ExtractClassConfiguration configuration) {
+	private boolean checkTypes(final ExtractClassConfiguration configuration) {
 		TAbstractType owner = null;
 		for (final TMember tMember : configuration.getTMembers()) {
 			final TAbstractType tmp = tMember.getDefinedBy();
@@ -119,7 +119,7 @@ public class ExtractClass implements Refactoring {
 				return false;
 			}
 		}
-		if (owner == null || owner.isTLib()) {
+		if ((owner == null) || owner.isTLib()) {
 			return false;
 		}
 
@@ -141,7 +141,7 @@ public class ExtractClass implements Refactoring {
 	 * @generated NOT
 	 */
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration tRefactoringConfiguration)
+	public Collection<TClass> perform(final RefactoringConfiguration tRefactoringConfiguration)
 			throws RefactoringFailedException {
 
 		if (tRefactoringConfiguration instanceof ExtractClassConfiguration) {
@@ -154,7 +154,7 @@ public class ExtractClass implements Refactoring {
 			for (final TMember tSomeMember : tExtractConfiguration.getTMembers()) {
 				final TAbstractType tmpTClass = tSomeMember.getDefinedBy();
 				if (tmpTClass instanceof TClass) {
-					tPG = tmpTClass.getPg();
+					tPG = tmpTClass.getModel();
 					if (tPG != null) {
 						tPackage = tmpTClass.getPackage();
 						if (tPackage != null) {
@@ -181,7 +181,7 @@ public class ExtractClass implements Refactoring {
 			// ForEach
 			for (final TMember tMember : tExtractConfiguration.getTMembers()) {
 				final TSignature tSignature = tMember.getSignature();
-				if (tSignature != null && !tClass.equals(tNewClass) && tClass.equals(tMember.getDefinedBy())
+				if ((tSignature != null) && !tClass.equals(tNewClass) && tClass.equals(tMember.getDefinedBy())
 						&& tClass.getSignature().contains(tSignature)) {
 					tMember.setDefinedBy(null);
 					tMember.setDefinedBy(tNewClass);
@@ -200,7 +200,7 @@ public class ExtractClass implements Refactoring {
 
 	}
 
-	private TClass createNewTClass(ExtractClassConfiguration tExtractConfiguration, TPackage tPackage, TypeGraph tPG) {
+	private TClass createNewTClass(final ExtractClassConfiguration tExtractConfiguration, final TPackage tPackage, final TypeGraph tPG) {
 		final TClass tNewClass = BasicFactory.eINSTANCE.createTClass();
 		tNewClass.setTName(tExtractConfiguration.getTNewClassName());
 		tPG.getOwnedTypes().add(tNewClass);

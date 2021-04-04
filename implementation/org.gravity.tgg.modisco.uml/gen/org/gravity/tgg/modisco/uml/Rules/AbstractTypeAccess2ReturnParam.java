@@ -11,7 +11,7 @@ import org.eclipse.modisco.java.TypeAccess;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
 
-import org.gravity.tgg.modisco.uml.NamedElement2NamedElement;
+import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
 import org.moflon.tgg.language.csp.CSP;
 
@@ -47,7 +47,7 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MethodDeclaration method, Type jType, TypeAccess typeAccess);
+	boolean isAppropriate_FWD(Match match, Type jType, TypeAccess typeAccess, MethodDeclaration method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MethodDeclaration method, Type jType, TypeAccess typeAccess);
+	void registerObjectsToMatch_FWD(Match match, Type jType, TypeAccess typeAccess, MethodDeclaration method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MethodDeclaration method, Type jType, TypeAccess typeAccess);
+	CSP isAppropriate_solveCsp_FWD(Match match, Type jType, TypeAccess typeAccess, MethodDeclaration method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,9 +95,9 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement ne2ne,
-			NamedElement2NamedElement m2o, MethodDeclaration method, Type jType, Operation operation,
-			TypeAccess typeAccess, org.eclipse.uml2.uml.Type uType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element m2o, Type jType,
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Operation operation, MethodDeclaration method,
+			ASTNode2Element ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +113,8 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject ne2ne, EObject m2o, EObject method, EObject jType,
-			EObject returnParam, EObject operation, EObject ta2p, EObject typeAccess, EObject uType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2o, EObject ta2p, EObject jType, EObject uType,
+			EObject typeAccess, EObject operation, EObject returnParam, EObject method, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +130,7 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Parameter returnParam, Operation operation, org.eclipse.uml2.uml.Type uType);
+	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Type uType, Operation operation, Parameter returnParam);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,8 +154,8 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Parameter returnParam, Operation operation,
-			org.eclipse.uml2.uml.Type uType);
+	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Type uType, Operation operation,
+			Parameter returnParam);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,8 +163,8 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Parameter returnParam, Operation operation,
-			org.eclipse.uml2.uml.Type uType);
+	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Type uType, Operation operation,
+			Parameter returnParam);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,9 +180,9 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement ne2ne,
-			NamedElement2NamedElement m2o, MethodDeclaration method, Type jType, Parameter returnParam,
-			Operation operation, org.eclipse.uml2.uml.Type uType);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element m2o, Type jType,
+			org.eclipse.uml2.uml.Type uType, Operation operation, Parameter returnParam, MethodDeclaration method,
+			ASTNode2Element ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,8 +198,8 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject ne2ne, EObject m2o, EObject method, EObject jType,
-			EObject returnParam, EObject operation, EObject ta2p, EObject typeAccess, EObject uType);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2o, EObject ta2p, EObject jType, EObject uType,
+			EObject typeAccess, EObject operation, EObject returnParam, EObject method, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_348(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_86(EMoflonEdge _edge_ownedParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_357(EMoflonEdge _edge_returnType);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_105(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,8 +255,8 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MethodDeclaration method, Type jType, Parameter returnParam, Operation operation,
-			TypeAccess typeAccess, org.eclipse.uml2.uml.Type uType, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Type jType, org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess,
+			Operation operation, Parameter returnParam, MethodDeclaration method, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,7 +272,7 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MethodDeclaration method, Type jType, TypeAccess typeAccess);
+	boolean checkDEC_FWD(Type jType, TypeAccess typeAccess, MethodDeclaration method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,7 +280,7 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Parameter returnParam, Operation operation, org.eclipse.uml2.uml.Type uType);
+	boolean checkDEC_BWD(org.eclipse.uml2.uml.Type uType, Operation operation, Parameter returnParam);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,8 +288,8 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			NamedElement2NamedElement ne2neParameter, NamedElement2NamedElement m2oParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element m2oParameter,
+			ASTNode2Element ne2neParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -297,9 +297,9 @@ public interface AbstractTypeAccess2ReturnParam extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement ne2ne,
-			NamedElement2NamedElement m2o, MethodDeclaration method, Type jType, Operation operation,
-			org.eclipse.uml2.uml.Type uType, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element m2o, Type jType,
+			org.eclipse.uml2.uml.Type uType, Operation operation, MethodDeclaration method, ASTNode2Element ne2ne,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

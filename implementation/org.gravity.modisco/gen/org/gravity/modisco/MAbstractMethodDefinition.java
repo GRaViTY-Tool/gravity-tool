@@ -3,7 +3,7 @@
 package org.gravity.modisco;
 
 import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.modisco.java.ASTNode;
 import org.eclipse.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 
@@ -17,6 +17,7 @@ import org.eclipse.modisco.java.AbstractTypeDeclaration;
  * </p>
  * <ul>
  *   <li>{@link org.gravity.modisco.MAbstractMethodDefinition#getMInnerTypes <em>MInner Types</em>}</li>
+ *   <li>{@link org.gravity.modisco.MAbstractMethodDefinition#getDefinedBy <em>Defined By</em>}</li>
  * </ul>
  *
  * @see org.gravity.modisco.ModiscoPackage#getMAbstractMethodDefinition()
@@ -35,5 +36,27 @@ public interface MAbstractMethodDefinition extends MDefinition, AbstractMethodDe
 	 * @generated
 	 */
 	EList<AbstractTypeDeclaration> getMInnerTypes();
+
+	/**
+	 * Returns the value of the '<em><b>Defined By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Defined By</em>' reference.
+	 * @see #setDefinedBy(ASTNode)
+	 * @see org.gravity.modisco.ModiscoPackage#getMAbstractMethodDefinition_DefinedBy()
+	 * @model derived="true"
+	 * @generated
+	 */
+	ASTNode getDefinedBy();
+
+	/**
+	 * Sets the value of the '{@link org.gravity.modisco.MAbstractMethodDefinition#getDefinedBy <em>Defined By</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Defined By</em>' reference.
+	 * @see #getDefinedBy()
+	 * @generated
+	 */
+	void setDefinedBy(ASTNode value);
 
 } // MAbstractMethodDefinition

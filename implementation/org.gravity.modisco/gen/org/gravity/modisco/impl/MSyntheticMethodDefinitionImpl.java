@@ -64,6 +64,7 @@ public class MSyntheticMethodDefinitionImpl extends BodyDeclarationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MMethodDefinition getOriginalMethodDefinition() {
 		if (originalMethodDefinition != null && originalMethodDefinition.eIsProxy()) {
 			InternalEObject oldOriginalMethodDefinition = (InternalEObject)originalMethodDefinition;
@@ -105,6 +106,7 @@ public class MSyntheticMethodDefinitionImpl extends BodyDeclarationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOriginalMethodDefinition(MMethodDefinition newOriginalMethodDefinition) {
 		if (newOriginalMethodDefinition != originalMethodDefinition) {
 			NotificationChain msgs = null;

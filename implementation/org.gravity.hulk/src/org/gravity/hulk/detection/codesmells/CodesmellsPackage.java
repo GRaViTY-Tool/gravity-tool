@@ -607,126 +607,6 @@ public interface CodesmellsPackage extends EPackage {
 	int HGETTER_SETTER_DETECTOR_OPERATION_COUNT = DetectionPackage.HCODE_SMELL_DETECTOR_OPERATION_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.hulk.detection.codesmells.impl.HLargeClassLowCohesionDetectorImpl <em>HLarge Class Low Cohesion Detector</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.hulk.detection.codesmells.impl.HLargeClassLowCohesionDetectorImpl
-	 * @see org.gravity.hulk.detection.codesmells.impl.CodesmellsPackageImpl#getHLargeClassLowCohesionDetector()
-	 * @generated
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR = 4;
-
-	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR__INCOMING = DetectionPackage.HCLASS_BASED_CALCULATOR__INCOMING;
-
-	/**
-	 * The feature id for the '<em><b>Graph</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR__GRAPH = DetectionPackage.HCLASS_BASED_CALCULATOR__GRAPH;
-
-	/**
-	 * The feature id for the '<em><b>Origin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR__ORIGIN = DetectionPackage.HCLASS_BASED_CALCULATOR__ORIGIN;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR__OUTGOING = DetectionPackage.HCLASS_BASED_CALCULATOR__OUTGOING;
-
-	/**
-	 * The feature id for the '<em><b>Post Traversal</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR__POST_TRAVERSAL = DetectionPackage.HCLASS_BASED_CALCULATOR__POST_TRAVERSAL;
-
-	/**
-	 * The feature id for the '<em><b>Pre Traversal</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR__PRE_TRAVERSAL = DetectionPackage.HCLASS_BASED_CALCULATOR__PRE_TRAVERSAL;
-
-	/**
-	 * The feature id for the '<em><b>HAnnotation</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR__HANNOTATION = DetectionPackage.HCLASS_BASED_CALCULATOR__HANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>HAnti Pattern Handling</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR__HANTI_PATTERN_HANDLING = DetectionPackage.HCLASS_BASED_CALCULATOR__HANTI_PATTERN_HANDLING;
-
-	/**
-	 * The number of structural features of the '<em>HLarge Class Low Cohesion Detector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR_FEATURE_COUNT = DetectionPackage.HCLASS_BASED_CALCULATOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Detect</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR___DETECT__HANTIPATTERNGRAPH = DetectionPackage.HCLASS_BASED_CALCULATOR___DETECT__HANTIPATTERNGRAPH;
-
-	/**
-	 * The operation id for the '<em>Calculate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR___CALCULATE__TCLASS = DetectionPackage.HCLASS_BASED_CALCULATOR_OPERATION_COUNT
-			+ 0;
-
-	/**
-	 * The number of operations of the '<em>HLarge Class Low Cohesion Detector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HLARGE_CLASS_LOW_COHESION_DETECTOR_OPERATION_COUNT = DetectionPackage.HCLASS_BASED_CALCULATOR_OPERATION_COUNT
-			+ 1;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.hulk.detection.codesmells.impl.HLargeClassDetectorImpl <em>HLarge Class Detector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1699,26 +1579,6 @@ public interface CodesmellsPackage extends EPackage {
 	EOperation getHGetterSetterDetector__Calculate__TClass();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.hulk.detection.codesmells.HLargeClassLowCohesionDetector <em>HLarge Class Low Cohesion Detector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>HLarge Class Low Cohesion Detector</em>'.
-	 * @see org.gravity.hulk.detection.codesmells.HLargeClassLowCohesionDetector
-	 * @generated
-	 */
-	EClass getHLargeClassLowCohesionDetector();
-
-	/**
-	 * Returns the meta object for the '{@link org.gravity.hulk.detection.codesmells.HLargeClassLowCohesionDetector#calculate(org.gravity.typegraph.basic.TClass) <em>Calculate</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Calculate</em>' operation.
-	 * @see org.gravity.hulk.detection.codesmells.HLargeClassLowCohesionDetector#calculate(org.gravity.typegraph.basic.TClass)
-	 * @generated
-	 */
-	EOperation getHLargeClassLowCohesionDetector__Calculate__TClass();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.hulk.detection.codesmells.HLargeClassDetector <em>HLarge Class Detector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2020,25 +1880,6 @@ public interface CodesmellsPackage extends EPackage {
 		 */
 		EOperation HGETTER_SETTER_DETECTOR___CALCULATE__TCLASS = eINSTANCE
 				.getHGetterSetterDetector__Calculate__TClass();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.hulk.detection.codesmells.impl.HLargeClassLowCohesionDetectorImpl <em>HLarge Class Low Cohesion Detector</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.hulk.detection.codesmells.impl.HLargeClassLowCohesionDetectorImpl
-		 * @see org.gravity.hulk.detection.codesmells.impl.CodesmellsPackageImpl#getHLargeClassLowCohesionDetector()
-		 * @generated
-		 */
-		EClass HLARGE_CLASS_LOW_COHESION_DETECTOR = eINSTANCE.getHLargeClassLowCohesionDetector();
-
-		/**
-		 * The meta object literal for the '<em><b>Calculate</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation HLARGE_CLASS_LOW_COHESION_DETECTOR___CALCULATE__TCLASS = eINSTANCE
-				.getHLargeClassLowCohesionDetector__Calculate__TClass();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.hulk.detection.codesmells.impl.HLargeClassDetectorImpl <em>HLarge Class Detector</em>}' class.

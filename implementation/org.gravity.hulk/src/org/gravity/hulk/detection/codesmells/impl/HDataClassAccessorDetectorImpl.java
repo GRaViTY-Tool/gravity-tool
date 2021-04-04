@@ -71,7 +71,7 @@ public class HDataClassAccessorDetectorImpl extends HCodeSmellDetectorImpl imple
 	 * @generated
 	 */
 	public HAnnotation calculate(TClass tClass) {
-		TypeGraph pg = tClass.getPg();
+		TypeGraph pg = tClass.getModel();
 		if (pg == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ".");
 		}
@@ -86,8 +86,8 @@ public class HDataClassAccessorDetectorImpl extends HCodeSmellDetectorImpl imple
 
 			// ForEach
 			for (TMember tAccessing : tClass.getDefines()) {
-				for (TAccess access : tAccessing.getTAccessing()) {
-					TAbstractType dataClass = access.getTTarget().getDefinedBy();
+				for (TAccess access : tAccessing.getAccessing()) {
+					TAbstractType dataClass = access.getTarget().getDefinedBy();
 					if (dataClass instanceof TClass && !dataClass.equals(tClass)) {
 						for (TAnnotation smell : dataClass.getTAnnotation()) {
 							if (smell instanceof HDataClassSmell) {
@@ -170,8 +170,8 @@ public class HDataClassAccessorDetectorImpl extends HCodeSmellDetectorImpl imple
 
 	public static final boolean accessesDataClass(TClass tClass) {
 		for (TMember tAnyAccessing : tClass.getDefines()) {
-			for (TAccess anyAccess : tAnyAccessing.getTAccessing()) {
-				TMember tAnyAccessed = anyAccess.getTTarget();
+			for (TAccess anyAccess : tAnyAccessing.getAccessing()) {
+				TMember tAnyAccessed = anyAccess.getTarget();
 				if (tAnyAccessed != null) {
 					if (!tAnyAccessed.equals(tAnyAccessing)) {
 						TAbstractType tmpTAnyDataClass = tAnyAccessed.getDefinedBy();

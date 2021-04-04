@@ -35,7 +35,6 @@ public interface TypeGraph extends TAnnotatable {
 	/**
 	 * Returns the value of the '<em><b>Packages</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TPackage}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TPackage#getPg <em>Pg</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Packages</em>' containment reference list isn't clear,
@@ -44,8 +43,7 @@ public interface TypeGraph extends TAnnotatable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Packages</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_Packages()
-	 * @see org.gravity.typegraph.basic.TPackage#getPg
-	 * @model opposite="pg" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TPackage> getPackages();
@@ -53,7 +51,7 @@ public interface TypeGraph extends TAnnotatable {
 	/**
 	 * Returns the value of the '<em><b>Methods</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TMethod}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMethod#getPg <em>Pg</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMethod#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Methods</em>' containment reference list isn't clear,
@@ -62,8 +60,8 @@ public interface TypeGraph extends TAnnotatable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Methods</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_Methods()
-	 * @see org.gravity.typegraph.basic.TMethod#getPg
-	 * @model opposite="pg" containment="true" ordered="false"
+	 * @see org.gravity.typegraph.basic.TMethod#getModel
+	 * @model opposite="model" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TMethod> getMethods();
@@ -71,7 +69,7 @@ public interface TypeGraph extends TAnnotatable {
 	/**
 	 * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TField}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TField#getPg <em>Pg</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TField#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fields</em>' containment reference list isn't clear,
@@ -80,8 +78,8 @@ public interface TypeGraph extends TAnnotatable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_Fields()
-	 * @see org.gravity.typegraph.basic.TField#getPg
-	 * @model opposite="pg" containment="true" ordered="false"
+	 * @see org.gravity.typegraph.basic.TField#getModel
+	 * @model opposite="model" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TField> getFields();
@@ -121,7 +119,7 @@ public interface TypeGraph extends TAnnotatable {
 	/**
 	 * Returns the value of the '<em><b>Owned Types</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TAbstractType}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAbstractType#getPg <em>Pg</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAbstractType#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned Types</em>' containment reference list isn't clear,
@@ -130,8 +128,8 @@ public interface TypeGraph extends TAnnotatable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Types</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_OwnedTypes()
-	 * @see org.gravity.typegraph.basic.TAbstractType#getPg
-	 * @model opposite="pg" containment="true" ordered="false"
+	 * @see org.gravity.typegraph.basic.TAbstractType#getModel
+	 * @model opposite="model" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TAbstractType> getOwnedTypes();
@@ -274,6 +272,14 @@ public interface TypeGraph extends TAnnotatable {
 	 * @generated
 	 */
 	TMethodDefinition getMethodDefinition(String signature);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	TPackage createPackage(String namespace);
 
 	public TAbstractType getType(String fullyQualifiedName);
 

@@ -91,7 +91,7 @@ public class HSwissArmyKnifeDetectorImpl extends HAntiPatternDetectorImpl implem
 			HSwissArmyKnifeAntiPattern pattern = createAntiPattern(tClass, large, invoc, over);
 
 			//
-			TAnnotationType type = getAnnotationType(tClass.getPg(), "SwissArmyKnife");
+			TAnnotationType type = getAnnotationType(tClass.getModel(), "SwissArmyKnife");
 			if (type != null) {
 				TAnnotation tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
 				tAnnotation.setTAnnotated(tClass);

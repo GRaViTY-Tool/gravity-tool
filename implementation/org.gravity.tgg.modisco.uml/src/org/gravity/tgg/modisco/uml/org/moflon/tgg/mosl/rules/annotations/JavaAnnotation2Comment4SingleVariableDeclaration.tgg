@@ -12,12 +12,11 @@
 }
 
 #target {
-	element : Parameter {
-	}
+	element : Parameter
 }
 
 #correspondence {
-	v2p : NamedElement2NamedElement {
+	v2p : ASTNode2Element {
 		#src->variable
 		#trg->element
 	}

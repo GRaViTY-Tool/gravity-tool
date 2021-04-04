@@ -29,7 +29,6 @@ import org.gravity.hulk.detection.codesmells.HEmptyClassDetector;
 import org.gravity.hulk.detection.codesmells.HGetterSetterDetector;
 import org.gravity.hulk.detection.codesmells.HIntenseFieldUsageDetector;
 import org.gravity.hulk.detection.codesmells.HLargeClassDetector;
-import org.gravity.hulk.detection.codesmells.HLargeClassLowCohesionDetector;
 import org.gravity.hulk.detection.codesmells.HLowCohesionDetector;
 import org.gravity.hulk.detection.codesmells.HManyParametersDetector;
 import org.gravity.hulk.detection.codesmells.HMuchOverloadingDetector;
@@ -41,16 +40,6 @@ import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.hulk.detection.metrics.impl.MetricsPackageImpl;
 
 import org.gravity.hulk.impl.HulkPackageImpl;
-
-import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
-
-import org.gravity.hulk.resolve.ResolvePackage;
-
-import org.gravity.hulk.resolve.calculators.CalculatorsPackage;
-
-import org.gravity.hulk.resolve.calculators.impl.CalculatorsPackageImpl;
-
-import org.gravity.hulk.resolve.impl.ResolvePackageImpl;
 
 import org.gravity.typegraph.basic.BasicPackage;
 
@@ -90,13 +79,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 	 * @generated
 	 */
 	private EClass hGetterSetterDetectorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass hLargeClassLowCohesionDetectorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,7 +176,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		DfsPackage.eINSTANCE.eClass();
 		AntipatterngraphPackage.eINSTANCE.eClass();
 		BasicPackage.eINSTANCE.eClass();
-		RefactoringgraphPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(HulkPackage.eNS_URI);
@@ -213,19 +194,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		MetricsPackageImpl theMetricsPackage = (MetricsPackageImpl) (registeredPackage instanceof MetricsPackageImpl
 				? registeredPackage
 				: MetricsPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResolvePackage.eNS_URI);
-		ResolvePackageImpl theResolvePackage = (ResolvePackageImpl) (registeredPackage instanceof ResolvePackageImpl
-				? registeredPackage
-				: ResolvePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CalculatorsPackage.eNS_URI);
-		CalculatorsPackageImpl theCalculatorsPackage = (CalculatorsPackageImpl) (registeredPackage instanceof CalculatorsPackageImpl
-				? registeredPackage
-				: CalculatorsPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE
-				.getEPackage(org.gravity.hulk.resolve.antipattern.AntipatternPackage.eNS_URI);
-		org.gravity.hulk.resolve.antipattern.impl.AntipatternPackageImpl theAntipatternPackage_1 = (org.gravity.hulk.resolve.antipattern.impl.AntipatternPackageImpl) (registeredPackage instanceof org.gravity.hulk.resolve.antipattern.impl.AntipatternPackageImpl
-				? registeredPackage
-				: org.gravity.hulk.resolve.antipattern.AntipatternPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCodesmellsPackage.createPackageContents();
@@ -233,9 +201,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		theDetectionPackage.createPackageContents();
 		theAntipatternPackage.createPackageContents();
 		theMetricsPackage.createPackageContents();
-		theResolvePackage.createPackageContents();
-		theCalculatorsPackage.createPackageContents();
-		theAntipatternPackage_1.createPackageContents();
 
 		// Initialize created meta-data
 		theCodesmellsPackage.initializePackageContents();
@@ -243,9 +208,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		theDetectionPackage.initializePackageContents();
 		theAntipatternPackage.initializePackageContents();
 		theMetricsPackage.initializePackageContents();
-		theResolvePackage.initializePackageContents();
-		theCalculatorsPackage.initializePackageContents();
-		theAntipatternPackage_1.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCodesmellsPackage.freeze();
@@ -361,24 +323,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 	 */
 	public EOperation getHGetterSetterDetector__Calculate__TClass() {
 		return hGetterSetterDetectorEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getHLargeClassLowCohesionDetector() {
-		return hLargeClassLowCohesionDetectorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getHLargeClassLowCohesionDetector__Calculate__TClass() {
-		return hLargeClassLowCohesionDetectorEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -581,9 +525,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		createEOperation(hGetterSetterDetectorEClass, HGETTER_SETTER_DETECTOR___IS_GETTER_SETTER__TMETHODDEFINITION);
 		createEOperation(hGetterSetterDetectorEClass, HGETTER_SETTER_DETECTOR___CALCULATE__TCLASS);
 
-		hLargeClassLowCohesionDetectorEClass = createEClass(HLARGE_CLASS_LOW_COHESION_DETECTOR);
-		createEOperation(hLargeClassLowCohesionDetectorEClass, HLARGE_CLASS_LOW_COHESION_DETECTOR___CALCULATE__TCLASS);
-
 		hLargeClassDetectorEClass = createEClass(HLARGE_CLASS_DETECTOR);
 		createEOperation(hLargeClassDetectorEClass, HLARGE_CLASS_DETECTOR___CALCULATE__TCLASS);
 		createEOperation(hLargeClassDetectorEClass,
@@ -662,8 +603,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		hEmptyClassDetectorEClass.getESuperTypes().add(theDetectionPackage.getHCodeSmellDetector());
 		hGetterSetterDetectorEClass.getESuperTypes().add(theDetectionPackage.getHCodeSmellDetector());
 		hGetterSetterDetectorEClass.getESuperTypes().add(theDetectionPackage.getHClassBasedCalculator());
-		hLargeClassLowCohesionDetectorEClass.getESuperTypes().add(theDetectionPackage.getHClassBasedCalculator());
-		hLargeClassLowCohesionDetectorEClass.getESuperTypes().add(theDetectionPackage.getHCodeSmellDetector());
 		hLargeClassDetectorEClass.getESuperTypes().add(theDetectionPackage.getHClassBasedCalculator());
 		hLargeClassDetectorEClass.getESuperTypes().add(theDetectionPackage.getHCodeSmellDetector());
 		hLargeClassDetectorEClass.getESuperTypes().add(theDetectionPackage.getHRelativeDetector());
@@ -726,13 +665,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 
 		op = initEOperation(getHGetterSetterDetector__Calculate__TClass(), theAntipatterngraphPackage.getHAnnotation(),
 				"calculate", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBasicPackage.getTClass(), "tClass", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(hLargeClassLowCohesionDetectorEClass, HLargeClassLowCohesionDetector.class,
-				"HLargeClassLowCohesionDetector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getHLargeClassLowCohesionDetector__Calculate__TClass(),
-				theAntipatterngraphPackage.getHAnnotation(), "calculate", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasicPackage.getTClass(), "tClass", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(hLargeClassDetectorEClass, HLargeClassDetector.class, "HLargeClassDetector", !IS_ABSTRACT,

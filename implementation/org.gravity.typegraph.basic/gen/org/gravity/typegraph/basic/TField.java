@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.gravity.typegraph.basic.TField#getSignatures <em>Signatures</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.TField#getPg <em>Pg</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TField#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @see org.gravity.typegraph.basic.BasicPackage#getTField()
@@ -41,32 +41,28 @@ public interface TField extends TName {
 	EList<TFieldSignature> getSignatures();
 
 	/**
-	 * Returns the value of the '<em><b>Pg</b></em>' container reference.
+	 * Returns the value of the '<em><b>Model</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TypeGraph#getFields <em>Fields</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Pg</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pg</em>' container reference.
-	 * @see #setPg(TypeGraph)
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTField_Pg()
+	 * @return the value of the '<em>Model</em>' container reference.
+	 * @see #setModel(TypeGraph)
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTField_Model()
 	 * @see org.gravity.typegraph.basic.TypeGraph#getFields
 	 * @model opposite="fields" required="true" transient="false"
 	 * @generated
 	 */
-	TypeGraph getPg();
+	TypeGraph getModel();
 
 	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TField#getPg <em>Pg</em>}' container reference.
+	 * Sets the value of the '{@link org.gravity.typegraph.basic.TField#getModel <em>Model</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pg</em>' container reference.
-	 * @see #getPg()
+	 * @param value the new value of the '<em>Model</em>' container reference.
+	 * @see #getModel()
 	 * @generated
 	 */
-	void setPg(TypeGraph value);
+	void setModel(TypeGraph value);
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->

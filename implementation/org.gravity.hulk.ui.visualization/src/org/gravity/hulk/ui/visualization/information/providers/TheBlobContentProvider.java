@@ -14,7 +14,7 @@ import org.eclipse.zest.layouts.algorithms.TreeLayoutAlgorithm;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.hulk.ui.visualization.Activator;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
-import org.gravity.hulk.ui.visualization.detection.TheBlobPreprocessor;
+import org.gravity.hulk.ui.visualization.detection.preprocessNACCMetric;
 import org.gravity.hulk.ui.visualization.util.Flaws;
 
 public class TheBlobContentProvider extends InformationViewContentProvider {
@@ -77,8 +77,6 @@ public class TheBlobContentProvider extends InformationViewContentProvider {
 				Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC, SWT.COLOR_DARK_MAGENTA, SWT.COLOR_WHITE);
 		GraphNode hNumberOfOutgoingInvocationsMetric = createNode(graphComposite, graph,
 				Flaws.H_NUMBER_OF_OUTGOING_INVOCATIONS_METRIC, SWT.COLOR_DARK_MAGENTA, SWT.COLOR_WHITE);
-		GraphNode hLargeClassLowCohesionSmell = createNode(graphComposite, graph,
-				Flaws.H_LARGE_CLASS_LOW_COHESION_SMELL, SWT.COLOR_YELLOW, SWT.COLOR_BLACK);
 		GraphNode hLowCohesionSmell = createNode(graphComposite, graph, Flaws.H_LOW_COHESION_SMELL, SWT.COLOR_YELLOW,
 				SWT.COLOR_BLACK);
 		GraphNode hLCOM5Metric = createNode(graphComposite, graph, Flaws.H_LCOM5_METRIC, SWT.COLOR_DARK_MAGENTA,
@@ -101,7 +99,9 @@ public class TheBlobContentProvider extends InformationViewContentProvider {
 		createEdge(graphComposite, graph, theBlob, hDataClassSmell, AT_LEAST_ONE, SWT.COLOR_CYAN);
 		// GodClassConnections
 		createEdge(graphComposite, graph, hGodClassAntiPattern, hControllerClassSmell, EXISTS, SWT.COLOR_CYAN);
-		createEdge(graphComposite, graph, hGodClassAntiPattern, hLargeClassLowCohesionSmell, EXISTS, SWT.COLOR_CYAN);
+		createEdge(graphComposite, graph, hGodClassAntiPattern, or1, "", SWT.COLOR_CYAN);
+		createEdge(graphComposite, graph, or1, hLargeClassSmell, EXISTS, SWT.COLOR_CYAN);
+		createEdge(graphComposite, graph, or1, hLowCohesionSmell, EXISTS, SWT.COLOR_CYAN);
 		// HControllerClassSmellConnections
 		createEdge(graphComposite, graph, hControllerClassSmell, hInvocationRelationMetric, MEDIUM, SWT.COLOR_YELLOW);
 		// HInvocationRelationConnections
@@ -109,10 +109,6 @@ public class TheBlobContentProvider extends InformationViewContentProvider {
 				SWT.COLOR_CYAN);
 		createEdge(graphComposite, graph, hInvocationRelationMetric, hNumberOfOutgoingInvocationsMetric, CALCULATE,
 				SWT.COLOR_CYAN);
-		// HLargeClassLowCohesionConnection
-		createEdge(graphComposite, graph, hLargeClassLowCohesionSmell, or1, "", SWT.COLOR_CYAN);
-		createEdge(graphComposite, graph, or1, hLargeClassSmell, EXISTS, SWT.COLOR_CYAN);
-		createEdge(graphComposite, graph, or1, hLowCohesionSmell, EXISTS, SWT.COLOR_CYAN);
 		// HLargeClassConnections
 		createEdge(graphComposite, graph, hLargeClassSmell, hNumberOfMembersMetric, HIGH, SWT.COLOR_MAGENTA);
 		// HLowCohesionConnections
@@ -137,7 +133,7 @@ public class TheBlobContentProvider extends InformationViewContentProvider {
 
 	@Override
 	protected DetectionPreprocessor setUpDetectionPreprocesser() {
-		return new TheBlobPreprocessor();
+		return new preprocessNACCMetric();
 	}
 
 }

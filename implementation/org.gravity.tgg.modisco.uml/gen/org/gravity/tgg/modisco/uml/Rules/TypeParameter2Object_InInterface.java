@@ -9,7 +9,7 @@ import org.eclipse.modisco.java.TypeParameter;
 
 import org.eclipse.uml2.uml.Interface;
 
-import org.gravity.tgg.modisco.uml.NamedElement2NamedElement;
+import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
 import org.moflon.tgg.language.csp.CSP;
 
@@ -94,7 +94,7 @@ public interface TypeParameter2Object_InInterface extends EObject, AbstractRule 
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration mowner, Interface uowner,
-			TypeParameter mparam, NamedElement2NamedElement interface2interface);
+			TypeParameter mparam, ASTNode2Element interface2interface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,7 +176,7 @@ public interface TypeParameter2Object_InInterface extends EObject, AbstractRule 
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration mowner, Interface uowner,
-			org.eclipse.uml2.uml.Class uparam, NamedElement2NamedElement interface2interface);
+			org.eclipse.uml2.uml.Class uparam, ASTNode2Element interface2interface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface TypeParameter2Object_InInterface extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_416(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_87(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,7 +217,7 @@ public interface TypeParameter2Object_InInterface extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_427(EMoflonEdge _edge_typeParameters);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_106(EMoflonEdge _edge_typeParameters);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -283,7 +283,7 @@ public interface TypeParameter2Object_InInterface extends EObject, AbstractRule 
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			NamedElement2NamedElement interface2interfaceParameter);
+			ASTNode2Element interface2interfaceParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -292,7 +292,7 @@ public interface TypeParameter2Object_InInterface extends EObject, AbstractRule 
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration mowner, Interface uowner,
-			NamedElement2NamedElement interface2interface, ModelgeneratorRuleResult ruleResult);
+			ASTNode2Element interface2interface, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

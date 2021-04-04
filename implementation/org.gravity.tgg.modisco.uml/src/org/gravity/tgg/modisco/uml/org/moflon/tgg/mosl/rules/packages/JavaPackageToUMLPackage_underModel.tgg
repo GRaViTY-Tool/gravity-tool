@@ -3,35 +3,36 @@
 
 #rule JavaPackageToUMLPackage_underModel #with org.gravity.tgg.modisco.uml
 
-#source { 
-	jm : Model{
-		++ -ownedElements->jp
+#source {
+	jm:Model{
+		++ -ownedElements -> jp
 	}
-	++ jp : Package
+
+	++jp:Package
 }
 
 #target {
-	
-	um : Model{
-		++ -packagedElement->up
+	um:Model{
+		++ -packagedElement -> up
 	}
-	
-	++ up : Package
+
+	++up:Package
 }
 
 #correspondence {
-	
-	jm2um : JavaModel2UMLPackage{
+	jm2um :JavaModel2UMLPackage{
 		#src->jm
 		#trg->um
 	}
-	
-	++ jp2up : JavaPackage2UmlPackage{
+
+	++ jp2up :JavaPackage2UmlPackage{
 		#src->jp
 		#trg->up
 	}
 }
 
 #attributeConditions {
-	eq(up.name,jp.name)
+	eq(up.name, jp.name)
 }
+
+

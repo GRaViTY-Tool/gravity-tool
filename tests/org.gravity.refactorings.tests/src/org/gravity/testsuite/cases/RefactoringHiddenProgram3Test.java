@@ -33,47 +33,47 @@ public class RefactoringHiddenProgram3Test extends AbstractRefactoringTestCase {
 	 */
 	@Test
 	public void testCSC31a() {
-		TypeGraph pm = getProgramModel();
+		final TypeGraph pm = getProgramModel();
 
-		TClass child1 = pm.getClass("hidden.program.three.ChildClass1");
-		TClass child2 = pm.getClass("hidden.program.three.ChildClass2");
-		
-		CreateSuperClassConfiguration pum = new CreateSuperClassConfiguration("hidden.program.three", "NewParent",
+		final TClass child1 = pm.getClass("hidden.program.three.ChildClass1");
+		final TClass child2 = pm.getClass("hidden.program.three.ChildClass2");
+
+		final CreateSuperClassConfiguration pum = new CreateSuperClassConfiguration("hidden.program.three", "NewParent",
 				Arrays.asList(child1, child2));
-		RefactoringTool tool = new RefactoringTool(pm, false);
+		final RefactoringTool tool = new RefactoringTool(pm, false);
 		try {
 			boolean applicible = tool.applyRefactoring(pum);
 			assertTrue(applicible);
 
-			TClass parent = pm.getClass("hidden.program.one.NewParent");
+			final TClass parent = pm.getClass("hidden.program.one.NewParent");
 			assertNotNull(parent);
-			assertEquals(parent, child1.getParentClass());
-			assertEquals(parent, child2.getParentClass());
-			
-			TMethodSignature m = pm.getMethodSignature("method():void");
-			
+			assertEquals(parent, child1.getParentClasses().get(0));
+			assertEquals(parent, child2.getParentClasses().get(0));
+
+			final TMethodSignature m = pm.getMethodSignature("method():void");
+
 			assertTrue(child1.getSignature().contains(m));
 			assertNotNull(m.getTDefinition(child1));
 			assertTrue(child2.getSignature().contains(m));
 			assertNotNull(m.getTDefinition(child2));
 			assertFalse(parent.getSignature().contains(m));
 			assertNull(m.getTDefinition(parent));
-			
+
 			applicible = tool.applyRefactoring(new PullUpMethodConfiguration(m, parent));
 			assertTrue(applicible);
 
-			assertEquals(parent, child1.getParentClass());
-			assertEquals(parent, child2.getParentClass());
-			
-			
+			assertEquals(parent, child1.getParentClasses().get(0));
+			assertEquals(parent, child2.getParentClasses().get(0));
+
+
 			assertFalse(child1.getSignature().contains(m));
 			assertNull(m.getTDefinition(child1));
 			assertFalse(child2.getSignature().contains(m));
 			assertNull(m.getTDefinition(child2));
 			assertTrue(parent.getSignature().contains(m));
 			assertNotNull(m.getTDefinition(parent));
-			
-		} catch (RefactoringFailedException e) {
+
+		} catch (final RefactoringFailedException e) {
 			throw new AssertionError(e.getMessage(), e);
 		}
 	}

@@ -115,10 +115,9 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eNestedType, EObject tAnnotation,
-			EObject eNestedTypeToTNestedType, EObject tNestedPackage, EObject typeGraph, EObject tNestedType,
-			EObject tOuterType, EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType,
-			EObject tOuterPackage);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject eNestedType,
+			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType, EObject tOuterType,
+			EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,8 +133,8 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TEnum tAnnotation, TPackage tNestedPackage, TypeGraph typeGraph,
-			TClass tNestedType, TAbstractType tOuterType, TPackage tOuterPackage);
+	boolean isAppropriate_BWD(Match match, TEnum tAnnotation, TypeGraph typeGraph, TClass tNestedType,
+			TAbstractType tOuterType, TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,8 +158,8 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TEnum tAnnotation, TPackage tNestedPackage, TypeGraph typeGraph,
-			TClass tNestedType, TAbstractType tOuterType, TPackage tOuterPackage);
+	void registerObjectsToMatch_BWD(Match match, TEnum tAnnotation, TypeGraph typeGraph, TClass tNestedType,
+			TAbstractType tOuterType, TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,8 +167,8 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TEnum tAnnotation, TPackage tNestedPackage, TypeGraph typeGraph,
-			TClass tNestedType, TAbstractType tOuterType, TPackage tOuterPackage);
+	CSP isAppropriate_solveCsp_BWD(Match match, TEnum tAnnotation, TypeGraph typeGraph, TClass tNestedType,
+			TAbstractType tOuterType, TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,10 +184,9 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TEnum tAnnotation, TPackage tNestedPackage,
-			TypeGraph typeGraph, TClass tNestedType, TAbstractType tOuterType,
-			TypeToTAbstractType eOuterTypeToTOuterInterface, AbstractTypeDeclaration eOuterType,
-			TPackage tOuterPackage);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TEnum tAnnotation, TypeGraph typeGraph,
+			TClass tNestedType, TAbstractType tOuterType, TypeToTAbstractType eOuterTypeToTOuterInterface,
+			AbstractTypeDeclaration eOuterType, TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,10 +202,9 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eNestedType, EObject tAnnotation,
-			EObject eNestedTypeToTNestedType, EObject tNestedPackage, EObject typeGraph, EObject tNestedType,
-			EObject tOuterType, EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType,
-			EObject tOuterPackage);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject eNestedType,
+			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType, EObject tOuterType,
+			EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +220,7 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_676(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_62(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +228,7 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_693(EMoflonEdge _edge_abstractTypeDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_65(EMoflonEdge _edge_abstractTypeDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,9 +260,9 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(EnumDeclaration eNestedType, TEnum tAnnotation, TPackage tNestedPackage,
-			TypeGraph typeGraph, TClass tNestedType, TAbstractType tOuterType, AbstractTypeDeclaration eOuterType,
-			TPackage tOuterPackage, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TEnum tAnnotation, EnumDeclaration eNestedType, TypeGraph typeGraph,
+			TClass tNestedType, TAbstractType tOuterType, AbstractTypeDeclaration eOuterType, TPackage tOuterPackage,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,8 +286,8 @@ public interface NestedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TEnum tAnnotation, TPackage tNestedPackage, TypeGraph typeGraph, TClass tNestedType,
-			TAbstractType tOuterType, TPackage tOuterPackage);
+	boolean checkDEC_BWD(TEnum tAnnotation, TypeGraph typeGraph, TClass tNestedType, TAbstractType tOuterType,
+			TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->

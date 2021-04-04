@@ -113,8 +113,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject tText, EObject mMember,
-			EObject mCommentToTText, EObject mComment, EObject tMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tText, EObject mMemberToTMember,
+			EObject mCommentToTText, EObject mMember, EObject mComment, EObject tMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			TTextAnnotation tText, MDefinition mMember, TMember tMember);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TTextAnnotation tText,
+			MDefinitionToTMember mMemberToTMember, MDefinition mMember, TMember tMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject tText, EObject mMember,
-			EObject mCommentToTText, EObject mComment, EObject tMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tText, EObject mMemberToTMember,
+			EObject mCommentToTText, EObject mMember, EObject mComment, EObject tMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_705(EMoflonEdge _edge_tAnnotated);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_44(EMoflonEdge _edge_tAnnotated);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_724(EMoflonEdge _edge_comments);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_46(EMoflonEdge _edge_comments);
 
 	/**
 	 * <!-- begin-user-doc -->

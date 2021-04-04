@@ -39,12 +39,12 @@
 		#trg->umlPackage
 	}
 	
-	ne2neNonParam: NamedElement2NamedElement {
+	ne2neNonParam: ASTNode2Element {
 		#src->nonParamType
 		#trg->nonParamElement
 	}
 	
-	++ne2ne: NamedElement2NamedElement {
+	++ne2ne: ASTNode2Element {
 		#src->parameterizedType
 		#trg->parameterizedClassifier
 	}

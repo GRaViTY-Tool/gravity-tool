@@ -1,8 +1,8 @@
 package org.gravity.modisco;
 
 import org.eclipse.modisco.java.Annotation;
-import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
+import org.eclipse.modisco.java.Initializer;
 import org.eclipse.modisco.java.MethodInvocation;
 import org.eclipse.modisco.java.Model;
 import org.eclipse.modisco.java.emf.impl.JavaFactoryImpl;
@@ -40,6 +40,11 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 	@Override
 	public MMethodDefinition createMethodDeclaration() {
 		return ModiscoFactory.eINSTANCE.createMMethodDefinition();
+	}
+
+	@Override
+	public Initializer createInitializer() {
+		return ModiscoFactory.eINSTANCE.createMInitializer();
 	}
 
 	@Override

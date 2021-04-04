@@ -7,7 +7,6 @@ import org.gravity.hulk.antipatterngraph.codesmells.HControllerClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassAccessor;
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HGetterSetterSmell;
-import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HLowCohesionSmell;
 import org.gravity.hulk.antipatterngraph.metrics.HIncommingInvocationMetric;
@@ -43,8 +42,6 @@ public class TheBlobInformationStringProvider implements InformationStringProvid
 			return buildGetterSetterString(annotation, printHeader);
 		case H_INVOCATIONRELATION_METRIC:
 			return buildInvocationRelationString(annotation, printHeader);
-		case H_LARGE_CLASS_LOW_COHESION_SMELL:
-			return buildLargeClassLowCohesionString(annotation, printHeader);
 		case H_LARGE_CLASS_SMELL:
 			return buildLargeClassString(annotation, printHeader);
 		case H_LCOM5_METRIC:
@@ -201,24 +198,6 @@ public class TheBlobInformationStringProvider implements InformationStringProvid
 				.append(invocationRelation.getRelativeAmount().getValue().toString()).append(EOL).append(EOL);
 
 		return invocationRelationInfo.toString();
-	}
-
-	private String buildLargeClassLowCohesionString(HAnnotation annotation, boolean printHeader) {
-		final HLargeClassLowCohesionSmell largeClassLowCohesionSmell = (HLargeClassLowCohesionSmell) annotation;
-
-		StringBuilder largeClassLowCohesionInfo = new StringBuilder();
-
-		final TClass tClass = (TClass) largeClassLowCohesionSmell.getTAnnotated();
-
-		if (printHeader) {
-			largeClassLowCohesionInfo = largeClassLowCohesionInfo.append("HLargeClassLowCohesionSmell").append(EOL)
-					.append("Thresholds: ").append(EOL).append(" none").append(EOL).append(EOL);
-		}
-
-		largeClassLowCohesionInfo = largeClassLowCohesionInfo.append("Detected in: ").append(tClass.getTName())
-				.append(EOL).append(EOL);
-
-		return largeClassLowCohesionInfo.toString();
 	}
 
 	private String buildLargeClassString(HAnnotation annotation, boolean printHeader) {

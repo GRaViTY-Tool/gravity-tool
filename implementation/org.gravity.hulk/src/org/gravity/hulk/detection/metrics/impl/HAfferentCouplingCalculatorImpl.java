@@ -10,7 +10,6 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HAfferentCouplingMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
 import org.gravity.hulk.detection.metrics.HAfferentCouplingCalculator;
@@ -40,7 +39,6 @@ implements HAfferentCouplingCalculator {
 	 * @generated
 	 */
 	protected HAfferentCouplingCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -60,7 +58,7 @@ implements HAfferentCouplingCalculator {
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
-		final HAfferentCouplingMetric metric = MetricsFactory.eINSTANCE.createHAfferentCouplingMetric();
+		final var metric = MetricsFactory.eINSTANCE.createHAfferentCouplingMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -76,16 +74,16 @@ implements HAfferentCouplingCalculator {
 	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		final ArrayList<TAbstractType> accessingClasses = new ArrayList<>();
+		final var accessingClasses = new ArrayList<TAbstractType>();
 		for (final TMember m : tClass.getDefines()) {
 			for (final TAccess t : m.getAccessedBy()) {
-				final TMember tSource = t.getTSource();
+				final var tSource = t.getSource();
 				if (tSource == null) {
 					LOGGER.warn(
 							"Member within Class " + tClass.getTName() + " was accessed without an TAccess Source");
 					continue;
 				}
-				final TAbstractType definingClass = tSource.getDefinedBy();
+				final var definingClass = tSource.getDefinedBy();
 				if (definingClass == null) {
 					LOGGER.warn("Member within Class " + tClass.getTName()
 					+ " was accessed by a Source without defining Class");

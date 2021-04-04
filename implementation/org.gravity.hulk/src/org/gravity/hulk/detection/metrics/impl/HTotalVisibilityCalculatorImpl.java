@@ -61,7 +61,7 @@ public class HTotalVisibilityCalculatorImpl extends HMetricCalculatorImpl implem
 	public boolean detect(HAntiPatternGraph apg) {
 		// [user code injected with eMoflon]
 		int totalValue = 0;
-		TypeGraph pg = apg.getPg();
+		TypeGraph pg = apg.getModel();
 		for (TClass tClass : pg.getClasses()) {
 			if (!tClass.isTLib()) {
 				int value = 0;

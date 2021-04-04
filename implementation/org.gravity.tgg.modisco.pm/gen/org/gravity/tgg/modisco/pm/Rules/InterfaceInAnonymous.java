@@ -118,7 +118,7 @@ public interface InterfaceInAnonymous extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg,
 			EObject mbodyToTAnnotatable, EObject tNestedType, EObject eAnonymousClassDeclarationToTClass,
-			EObject eAnonymousClassDeclaration, EObject mNestedTypeToTNestedType);
+			EObject mNestedTypeToTNestedType, EObject eAnonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,7 +202,7 @@ public interface InterfaceInAnonymous extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg,
 			EObject mbodyToTAnnotatable, EObject tNestedType, EObject eAnonymousClassDeclarationToTClass,
-			EObject eAnonymousClassDeclaration, EObject mNestedTypeToTNestedType);
+			EObject mNestedTypeToTNestedType, EObject eAnonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface InterfaceInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_689(EMoflonEdge _edge_interfaces);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_80(EMoflonEdge _edge_interfaces);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface InterfaceInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_708(EMoflonEdge _edge_anonymousClassDeclarationOwner);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_84(EMoflonEdge _edge_anonymousClassDeclarationOwner);
 
 	/**
 	 * <!-- begin-user-doc -->

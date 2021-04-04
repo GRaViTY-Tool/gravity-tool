@@ -1,0 +1,36 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule LinkTypeToPackage #with org.gravity.tgg.modisco.uml
+
+#source {
+	mPackage : Package 
+	
+	mType: AbstractTypeDeclaration {
+		++-package->mPackage
+	}
+}
+
+#target {
+	uPackage : Package
+	
+	uType : Classifier {
+		++-package->uPackage
+	}
+}
+
+#correspondence {
+	p2p : JavaPackage2UmlPackage {
+		#src->mPackage
+		#trg->uPackage
+	}
+	
+	t2t : ASTNode2Element {
+		#src->mType
+		#trg->uType
+	}
+}
+
+#attributeConditions {
+
+}

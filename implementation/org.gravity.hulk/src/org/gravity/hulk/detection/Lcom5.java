@@ -42,7 +42,7 @@ public class Lcom5 {
 
 		double value = 0;
 		for (TFieldDefinition field : fields) {
-			value += field.getAccessedBy().parallelStream().map(access -> access.getTSource()).distinct()
+			value += field.getAccessedBy().parallelStream().map(access -> access.getSource()).distinct()
 					.filter(member -> METHOD_DEFINITION.equals(member.eClass()))
 					.filter(member -> tClass.equals(member.getDefinedBy())).count();
 		}

@@ -1,0 +1,17 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule MethodDec2OperationWithModifier #extends MethodDec2Operation,Modifier2Feature_Abstract #with org.gravity.tgg.modisco.uml
+
+#source {
+}
+
+#target {
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+	
+}

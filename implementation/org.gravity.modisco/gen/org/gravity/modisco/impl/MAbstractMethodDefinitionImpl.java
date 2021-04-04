@@ -6,31 +6,26 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
+import org.eclipse.modisco.java.ASTNode;
 import org.eclipse.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.modisco.java.AbstractMethodInvocation;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.Block;
 import org.eclipse.modisco.java.MethodRef;
 import org.eclipse.modisco.java.SingleVariableDeclaration;
 import org.eclipse.modisco.java.TypeAccess;
 import org.eclipse.modisco.java.TypeParameter;
-
 import org.eclipse.modisco.java.emf.JavaPackage;
-
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.ModiscoPackage;
 
@@ -49,6 +44,7 @@ import org.gravity.modisco.ModiscoPackage;
  *   <li>{@link org.gravity.modisco.impl.MAbstractMethodDefinitionImpl#getUsagesInDocComments <em>Usages In Doc Comments</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MAbstractMethodDefinitionImpl#getUsages <em>Usages</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MAbstractMethodDefinitionImpl#getMInnerTypes <em>MInner Types</em>}</li>
+ *   <li>{@link org.gravity.modisco.impl.MAbstractMethodDefinitionImpl#getDefinedBy <em>Defined By</em>}</li>
  * </ul>
  *
  * @generated
@@ -125,6 +121,16 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	protected EList<AbstractTypeDeclaration> mInnerTypes;
 
 	/**
+	 * The cached value of the '{@link #getDefinedBy() <em>Defined By</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefinedBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected ASTNode definedBy;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -148,6 +154,7 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Block getBody() {
 		return body;
 	}
@@ -172,6 +179,7 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBody(Block newBody) {
 		if (newBody != body) {
 			NotificationChain msgs = null;
@@ -191,6 +199,7 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SingleVariableDeclaration> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentWithInverseEList<SingleVariableDeclaration>(SingleVariableDeclaration.class, this, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__PARAMETERS, JavaPackage.SINGLE_VARIABLE_DECLARATION__METHOD_DECLARATION);
@@ -203,6 +212,7 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TypeAccess> getThrownExceptions() {
 		if (thrownExceptions == null) {
 			thrownExceptions = new EObjectContainmentEList<TypeAccess>(TypeAccess.class, this, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__THROWN_EXCEPTIONS);
@@ -215,6 +225,7 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TypeParameter> getTypeParameters() {
 		if (typeParameters == null) {
 			typeParameters = new EObjectContainmentEList<TypeParameter>(TypeParameter.class, this, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__TYPE_PARAMETERS);
@@ -227,6 +238,7 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MethodRef> getUsagesInDocComments() {
 		if (usagesInDocComments == null) {
 			usagesInDocComments = new EObjectWithInverseResolvingEList<MethodRef>(MethodRef.class, this, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__USAGES_IN_DOC_COMMENTS, JavaPackage.METHOD_REF__METHOD);
@@ -239,6 +251,7 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractMethodInvocation> getUsages() {
 		if (usages == null) {
 			usages = new EObjectWithInverseResolvingEList<AbstractMethodInvocation>(AbstractMethodInvocation.class, this, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__USAGES, JavaPackage.ABSTRACT_METHOD_INVOCATION__METHOD);
@@ -251,11 +264,51 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractTypeDeclaration> getMInnerTypes() {
 		if (mInnerTypes == null) {
 			mInnerTypes = new EObjectResolvingEList<AbstractTypeDeclaration>(AbstractTypeDeclaration.class, this, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES);
 		}
 		return mInnerTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public ASTNode getDefinedBy() {
+		ASTNode type = getAbstractTypeDeclaration();
+		if(type == null) {
+			type = getAnonymousClassDeclarationOwner();
+		}
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ASTNode basicGetDefinedBy() {
+		return definedBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public void setDefinedBy(final ASTNode newDefinedBy) {
+		if (newDefinedBy instanceof AnonymousClassDeclaration) {
+			setAnonymousClassDeclarationOwner((AnonymousClassDeclaration) newDefinedBy);
+		}
+		else if(newDefinedBy instanceof AbstractTypeDeclaration) {
+			setAbstractTypeDeclaration((AbstractTypeDeclaration) newDefinedBy);
+		}
+		throw new IllegalArgumentException();
 	}
 
 	/**
@@ -323,6 +376,9 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 				return getUsages();
 			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES:
 				return getMInnerTypes();
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__DEFINED_BY:
+				if (resolve) return getDefinedBy();
+				return basicGetDefinedBy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,6 +419,9 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 				getMInnerTypes().clear();
 				getMInnerTypes().addAll((Collection<? extends AbstractTypeDeclaration>)newValue);
 				return;
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__DEFINED_BY:
+				setDefinedBy((ASTNode)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -396,6 +455,9 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES:
 				getMInnerTypes().clear();
 				return;
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__DEFINED_BY:
+				setDefinedBy((ASTNode)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -422,6 +484,8 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 				return usages != null && !usages.isEmpty();
 			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES:
 				return mInnerTypes != null && !mInnerTypes.isEmpty();
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__DEFINED_BY:
+				return definedBy != null;
 		}
 		return super.eIsSet(featureID);
 	}

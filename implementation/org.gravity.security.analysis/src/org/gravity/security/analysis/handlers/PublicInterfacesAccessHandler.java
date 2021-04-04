@@ -32,7 +32,7 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 	static final Logger LOGGER = Logger.getLogger(PublicInterfacesAccessHandler.class.getName());
 
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
+	public Object execute(final ExecutionEvent event) throws ExecutionException {
 		final IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		final ISelectionService service = window.getSelectionService();
 		final IStructuredSelection structured = (IStructuredSelection) service.getSelection();
@@ -55,10 +55,10 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 		return true;
 	}
 
-	static void dfs(TMember member, Set<TAnnotationType> allowed, Set<String> names, Set<TMember> visited) {
+	static void dfs(final TMember member, final Set<TAnnotationType> allowed, final Set<String> names, final Set<TMember> visited) {
 		final Set<TMember> accessing = new HashSet<>();
 		for (final TAccess access : member.getAccessedBy()) {
-			final TMember tSource = access.getTSource();
+			final TMember tSource = access.getSource();
 			if (!visited.contains(tSource)) {
 				accessing.add(tSource);
 			}

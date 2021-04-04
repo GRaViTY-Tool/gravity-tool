@@ -22,6 +22,7 @@ import org.eclipse.modisco.java.ConstructorDeclaration;
 import org.eclipse.modisco.java.ConstructorInvocation;
 import org.eclipse.modisco.java.Expression;
 import org.eclipse.modisco.java.FieldDeclaration;
+import org.eclipse.modisco.java.Initializer;
 import org.eclipse.modisco.java.MethodDeclaration;
 import org.eclipse.modisco.java.MethodInvocation;
 import org.eclipse.modisco.java.Model;
@@ -210,6 +211,10 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createMSuperConstructorInvocationAdapter();
 			}
 			@Override
+			public Adapter caseMInitializer(MInitializer object) {
+				return createMInitializerAdapter();
+			}
+			@Override
 			public Adapter caseASTNode(ASTNode object) {
 				return createASTNodeAdapter();
 			}
@@ -308,6 +313,10 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSuperConstructorInvocation(SuperConstructorInvocation object) {
 				return createSuperConstructorInvocationAdapter();
+			}
+			@Override
+			public Adapter caseInitializer(Initializer object) {
+				return createInitializerAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -736,6 +745,20 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MInitializer <em>MInitializer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MInitializer
+	 * @generated
+	 */
+	public Adapter createMInitializerAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.ASTNode <em>AST Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1082,6 +1105,20 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSuperConstructorInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.Initializer <em>Initializer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.Initializer
+	 * @generated
+	 */
+	public Adapter createInitializerAdapter() {
 		return null;
 	}
 

@@ -22,7 +22,6 @@ import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HEmptyClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HGetterSetterSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HIntenseFieldUsageCodeSmell;
-import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HLowCohesionSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HManyParametersCodeSmell;
@@ -74,13 +73,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 	 * @generated
 	 */
 	private EClass hGetterSetterSmellEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass hLargeClassLowCohesionSmellEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,36 +295,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 	 * @generated
 	 */
 	@Override
-	public EClass getHLargeClassLowCohesionSmell() {
-		return hLargeClassLowCohesionSmellEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getHLargeClassLowCohesionSmell_HLowCohesionSmell() {
-		return (EReference) hLargeClassLowCohesionSmellEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getHLargeClassLowCohesionSmell_HLargeClassSmell() {
-		return (EReference) hLargeClassLowCohesionSmellEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getHLargeClassSmell() {
 		return hLargeClassSmellEClass;
 	}
@@ -489,10 +451,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		hGetterSetterSmellEClass = createEClass(HGETTER_SETTER_SMELL);
 		createEReference(hGetterSetterSmellEClass, HGETTER_SETTER_SMELL__TFIELD_DEFINITION);
 
-		hLargeClassLowCohesionSmellEClass = createEClass(HLARGE_CLASS_LOW_COHESION_SMELL);
-		createEReference(hLargeClassLowCohesionSmellEClass, HLARGE_CLASS_LOW_COHESION_SMELL__HLOW_COHESION_SMELL);
-		createEReference(hLargeClassLowCohesionSmellEClass, HLARGE_CLASS_LOW_COHESION_SMELL__HLARGE_CLASS_SMELL);
-
 		hLargeClassSmellEClass = createEClass(HLARGE_CLASS_SMELL);
 		createEReference(hLargeClassSmellEClass, HLARGE_CLASS_SMELL__HNUMBER_OF_MEMBERS);
 
@@ -554,7 +512,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		hDataClassSmellEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
 		hEmptyClassSmellEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
 		hGetterSetterSmellEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
-		hLargeClassLowCohesionSmellEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
 		hLargeClassSmellEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
 		hLowCohesionSmellEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
 		hDataClassAccessorEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
@@ -587,15 +544,6 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		initEReference(getHGetterSetterSmell_TFieldDefinition(), theBasicPackage.getTFieldDefinition(), null,
 				"tFieldDefinition", null, 0, 1, HGetterSetterSmell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(hLargeClassLowCohesionSmellEClass, HLargeClassLowCohesionSmell.class, "HLargeClassLowCohesionSmell",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHLargeClassLowCohesionSmell_HLowCohesionSmell(), this.getHLowCohesionSmell(), null,
-				"hLowCohesionSmell", null, 0, 1, HLargeClassLowCohesionSmell.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHLargeClassLowCohesionSmell_HLargeClassSmell(), this.getHLargeClassSmell(), null,
-				"hLargeClassSmell", null, 0, 1, HLargeClassLowCohesionSmell.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hLargeClassSmellEClass, HLargeClassSmell.class, "HLargeClassSmell", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

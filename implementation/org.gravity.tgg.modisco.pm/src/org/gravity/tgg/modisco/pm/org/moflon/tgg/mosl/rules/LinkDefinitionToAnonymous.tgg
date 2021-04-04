@@ -5,44 +5,49 @@
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	mType:AnonymousClassDeclaration {
-		++  -bodyDeclarations -> mDefinition
-	}
-
 	mSignature:MSignature {
 		-mDefinitions -> mDefinition
 	}
-
+	
 	mDefinition:MDefinition
+
+	mAnonymous:AnonymousClassDeclaration {
+		++  -bodyDeclarations -> mDefinition
+	}
+	
+	mInstance : ClassInstanceCreation {
+		-anonymousClassDeclaration->mAnonymous
+	}
+
 }
 
 #target {
-	tType:TClass {
-		++-defines -> tDefinition
-		++-signature -> tSignature
+	tSignature:TSignature {
+		-definitions -> tDefinition
 	}
-	
-	tSignature:TSignature
 
-	tDefinition:TMember {
-		-signature -> tSignature
+	tDefinition:TMember
+
+	tAnonymous:TClass {
+		++-signature->tSignature
+		++-defines -> tDefinition
 	}
 }
 
 #correspondence {
-	mTypeToTType :AnonymousClassDeclarationToTClass {
-		#src->mType
-		#trg->tType
-	}
-
-	mDefinitionToTMember :MDefinitionToTMember {
-		#src->mDefinition
-		#trg->tDefinition
+	mAnonymousToTAnonymous :AnonymousClassDeclarationToTClass {
+		#src->mAnonymous
+		#trg->tAnonymous
 	}
 
 	mSignatureToTSignature :MSignatureToTSignature {
 		#src->mSignature
 		#trg->tSignature
+	}
+
+	mDefinitionToTMember :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
 	}
 }
 

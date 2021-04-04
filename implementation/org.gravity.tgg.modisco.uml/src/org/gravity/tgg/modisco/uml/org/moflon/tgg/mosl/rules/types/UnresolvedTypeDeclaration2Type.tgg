@@ -1,0 +1,38 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule UnresolvedTypeDeclaration2Type #with org.gravity.tgg.modisco.uml
+
+#source {
+	model : Model {
+		++-unresolvedItems->mType
+	}
+	
+   ++ mType : UnresolvedTypeDeclaration
+}
+
+#target {
+	externals: Model {
+		name=="externals"
+	}
+	
+	++ uClass : Class {
+		++-package->externals
+	}
+}
+
+#correspondence {
+	m2m:JavaModel2UMLPackage{
+		#src->model
+		#trg->externals
+	}
+	
+	++u2c : ASTNode2Element {
+		#src->mType
+		#trg->uClass
+	}
+}
+
+#attributeConditions {
+	eq(mType.name, uClass.name)
+}

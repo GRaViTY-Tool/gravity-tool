@@ -32,11 +32,11 @@ public final class EGraphUtil {
 		}
 
 		if (root instanceof HAntiPatternGraph) {
-			pg = ((HAntiPatternGraph) root).getPg();
+			pg = ((HAntiPatternGraph) root).getModel();
 		}
 
 		if (root instanceof HAntiPatternHandling) {
-			pg = ((HAntiPatternDetection) root).getApg().getPg();
+			pg = ((HAntiPatternDetection) root).getApg().getModel();
 		}
 		return pg;
 	}

@@ -8,6 +8,8 @@
       eSuperTypes="#//MDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mInnerTypes" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definedBy" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode"
+        derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MAccess" abstract="true" eSuperTypes="#//MAbstractFlowElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinition" eSuperTypes="#//MAbstractMethodDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration">
@@ -129,4 +131,5 @@
     <eLiterals name="WRITE" value="1"/>
     <eLiterals name="READWRITE" value="2"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MInitializer" eSuperTypes="#//MDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Initializer"/>
 </ecore:EPackage>

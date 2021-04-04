@@ -149,6 +149,150 @@ public interface AntipatternPackage extends EPackage {
 	int HBLOB_ANTI_PATTERN_FEATURE_COUNT = AntipatterngraphPackage.HANTI_PATTERN_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___ECLASS = AntipatterngraphPackage.HANTI_PATTERN___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___EIS_PROXY = AntipatterngraphPackage.HANTI_PATTERN___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___ERESOURCE = AntipatterngraphPackage.HANTI_PATTERN___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___ECONTAINER = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___ECONTAINING_FEATURE = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___ECONTENTS = AntipatterngraphPackage.HANTI_PATTERN___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___EALL_CONTENTS = AntipatterngraphPackage.HANTI_PATTERN___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___ECROSS_REFERENCES = AntipatterngraphPackage.HANTI_PATTERN___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HANTI_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HANTI_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HANTI_PATTERN___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HBLOB_ANTI_PATTERN___GET_VALUE__STRING = AntipatterngraphPackage.HANTI_PATTERN___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>HBlob Anti Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,13 +366,13 @@ public interface AntipatternPackage extends EPackage {
 	int HGOD_CLASS_ANTI_PATTERN__CHANGED = AntipatterngraphPackage.HANTI_PATTERN__CHANGED;
 
 	/**
-	 * The feature id for the '<em><b>HLarge Class Low Cohesion Smell</b></em>' reference.
+	 * The feature id for the '<em><b>HLarge Class Low Cohesion Smells</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HGOD_CLASS_ANTI_PATTERN__HLARGE_CLASS_LOW_COHESION_SMELL = AntipatterngraphPackage.HANTI_PATTERN_FEATURE_COUNT
+	int HGOD_CLASS_ANTI_PATTERN__HLARGE_CLASS_LOW_COHESION_SMELLS = AntipatterngraphPackage.HANTI_PATTERN_FEATURE_COUNT
 			+ 0;
 
 	/**
@@ -248,6 +392,150 @@ public interface AntipatternPackage extends EPackage {
 	 * @ordered
 	 */
 	int HGOD_CLASS_ANTI_PATTERN_FEATURE_COUNT = AntipatterngraphPackage.HANTI_PATTERN_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___ECLASS = AntipatterngraphPackage.HANTI_PATTERN___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___EIS_PROXY = AntipatterngraphPackage.HANTI_PATTERN___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___ERESOURCE = AntipatterngraphPackage.HANTI_PATTERN___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___ECONTAINER = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___ECONTAINING_FEATURE = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___ECONTENTS = AntipatterngraphPackage.HANTI_PATTERN___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___EALL_CONTENTS = AntipatterngraphPackage.HANTI_PATTERN___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___ECROSS_REFERENCES = AntipatterngraphPackage.HANTI_PATTERN___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HANTI_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HANTI_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HANTI_PATTERN___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGOD_CLASS_ANTI_PATTERN___GET_VALUE__STRING = AntipatterngraphPackage.HANTI_PATTERN___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>HGod Class Anti Pattern</em>' class.
@@ -359,6 +647,150 @@ public interface AntipatternPackage extends EPackage {
 	 * @ordered
 	 */
 	int HSWISS_ARMY_KNIFE_ANTI_PATTERN_FEATURE_COUNT = AntipatterngraphPackage.HANTI_PATTERN_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___ECLASS = AntipatterngraphPackage.HANTI_PATTERN___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___EIS_PROXY = AntipatterngraphPackage.HANTI_PATTERN___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___ERESOURCE = AntipatterngraphPackage.HANTI_PATTERN___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___ECONTAINER = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___ECONTAINING_FEATURE = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___ECONTENTS = AntipatterngraphPackage.HANTI_PATTERN___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___EALL_CONTENTS = AntipatterngraphPackage.HANTI_PATTERN___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___ECROSS_REFERENCES = AntipatterngraphPackage.HANTI_PATTERN___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HANTI_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HANTI_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HANTI_PATTERN___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSWISS_ARMY_KNIFE_ANTI_PATTERN___GET_VALUE__STRING = AntipatterngraphPackage.HANTI_PATTERN___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>HSwiss Army Knife Anti Pattern</em>' class.
@@ -492,6 +924,150 @@ public interface AntipatternPackage extends EPackage {
 	int HSPAGHETTI_CODE_ANTI_PATTERN_FEATURE_COUNT = AntipatterngraphPackage.HANTI_PATTERN_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___ECLASS = AntipatterngraphPackage.HANTI_PATTERN___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___EIS_PROXY = AntipatterngraphPackage.HANTI_PATTERN___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___ERESOURCE = AntipatterngraphPackage.HANTI_PATTERN___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___ECONTAINER = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___ECONTAINING_FEATURE = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HANTI_PATTERN___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___ECONTENTS = AntipatterngraphPackage.HANTI_PATTERN___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___EALL_CONTENTS = AntipatterngraphPackage.HANTI_PATTERN___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___ECROSS_REFERENCES = AntipatterngraphPackage.HANTI_PATTERN___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HANTI_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HANTI_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HANTI_PATTERN___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HANTI_PATTERN___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HSPAGHETTI_CODE_ANTI_PATTERN___GET_VALUE__STRING = AntipatterngraphPackage.HANTI_PATTERN___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>HSpaghetti Code Anti Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -543,15 +1119,15 @@ public interface AntipatternPackage extends EPackage {
 	EClass getHGodClassAntiPattern();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHLargeClassLowCohesionSmell <em>HLarge Class Low Cohesion Smell</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHLargeClassLowCohesionSmells <em>HLarge Class Low Cohesion Smells</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>HLarge Class Low Cohesion Smell</em>'.
-	 * @see org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHLargeClassLowCohesionSmell()
+	 * @return the meta object for the reference list '<em>HLarge Class Low Cohesion Smells</em>'.
+	 * @see org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHLargeClassLowCohesionSmells()
 	 * @see #getHGodClassAntiPattern()
 	 * @generated
 	 */
-	EReference getHGodClassAntiPattern_HLargeClassLowCohesionSmell();
+	EReference getHGodClassAntiPattern_HLargeClassLowCohesionSmells();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHControllerClassSmell <em>HController Class Smell</em>}'.
@@ -732,13 +1308,13 @@ public interface AntipatternPackage extends EPackage {
 		EClass HGOD_CLASS_ANTI_PATTERN = eINSTANCE.getHGodClassAntiPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>HLarge Class Low Cohesion Smell</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>HLarge Class Low Cohesion Smells</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HGOD_CLASS_ANTI_PATTERN__HLARGE_CLASS_LOW_COHESION_SMELL = eINSTANCE
-				.getHGodClassAntiPattern_HLargeClassLowCohesionSmell();
+		EReference HGOD_CLASS_ANTI_PATTERN__HLARGE_CLASS_LOW_COHESION_SMELLS = eINSTANCE
+				.getHGodClassAntiPattern_HLargeClassLowCohesionSmells();
 
 		/**
 		 * The meta object literal for the '<em><b>HController Class Smell</b></em>' reference feature.

@@ -458,13 +458,22 @@ public interface ModiscoPackage extends EPackage {
 	int MABSTRACT_METHOD_DEFINITION__MINNER_TYPES = MDEFINITION_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Defined By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MABSTRACT_METHOD_DEFINITION__DEFINED_BY = MDEFINITION_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>MAbstract Method Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT = MDEFINITION_FEATURE_COUNT + 7;
+	int MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT = MDEFINITION_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MAbstractFlowElementImpl <em>MAbstract Flow Element</em>}' class.
@@ -783,6 +792,15 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MCONSTRUCTOR_DEFINITION__MINNER_TYPES = MABSTRACT_METHOD_DEFINITION__MINNER_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Defined By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONSTRUCTOR_DEFINITION__DEFINED_BY = MABSTRACT_METHOD_DEFINITION__DEFINED_BY;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' reference.
@@ -1331,13 +1349,22 @@ public interface ModiscoPackage extends EPackage {
 	int MMETHOD_DEFINITION__MINNER_TYPES = JavaPackage.METHOD_DECLARATION_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Defined By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MMETHOD_DEFINITION__DEFINED_BY = JavaPackage.METHOD_DECLARATION_FEATURE_COUNT + 8;
+
+	/**
 	 * The feature id for the '<em><b>Synthetic Method Definitions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS = JavaPackage.METHOD_DECLARATION_FEATURE_COUNT + 8;
+	int MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS = JavaPackage.METHOD_DECLARATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>MMethod Definition</em>' class.
@@ -1346,7 +1373,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MMETHOD_DEFINITION_FEATURE_COUNT = JavaPackage.METHOD_DECLARATION_FEATURE_COUNT + 9;
+	int MMETHOD_DEFINITION_FEATURE_COUNT = JavaPackage.METHOD_DECLARATION_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MFieldNameImpl <em>MField Name</em>}' class.
@@ -3248,6 +3275,187 @@ public interface ModiscoPackage extends EPackage {
 	int MSUPER_CONSTRUCTOR_INVOCATION_FEATURE_COUNT = JavaPackage.SUPER_CONSTRUCTOR_INVOCATION_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MInitializerImpl <em>MInitializer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MInitializerImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMInitializer()
+	 * @generated
+	 */
+	int MINITIALIZER = 29;
+
+	/**
+	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__COMMENTS = MDEFINITION__COMMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Original Compilation Unit</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__ORIGINAL_COMPILATION_UNIT = MDEFINITION__ORIGINAL_COMPILATION_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Original Class File</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__ORIGINAL_CLASS_FILE = MDEFINITION__ORIGINAL_CLASS_FILE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__NAME = MDEFINITION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Proxy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__PROXY = MDEFINITION__PROXY;
+
+	/**
+	 * The feature id for the '<em><b>Usages In Imports</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__USAGES_IN_IMPORTS = MDEFINITION__USAGES_IN_IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Type Declaration</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__ABSTRACT_TYPE_DECLARATION = MDEFINITION__ABSTRACT_TYPE_DECLARATION;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__ANNOTATIONS = MDEFINITION__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Anonymous Class Declaration Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__ANONYMOUS_CLASS_DECLARATION_OWNER = MDEFINITION__ANONYMOUS_CLASS_DECLARATION_OWNER;
+
+	/**
+	 * The feature id for the '<em><b>Modifier</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__MODIFIER = MDEFINITION__MODIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__OWNED_FLOWS = MDEFINITION__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__INCOMING_FLOWS = MDEFINITION__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__OUTGOING_FLOWS = MDEFINITION__OUTGOING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Invocation Static Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__INVOCATION_STATIC_TYPES = MDEFINITION__INVOCATION_STATIC_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>MMethod Invocations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__MMETHOD_INVOCATIONS = MDEFINITION__MMETHOD_INVOCATIONS;
+
+	/**
+	 * The feature id for the '<em><b>MAbstract Field Access</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__MABSTRACT_FIELD_ACCESS = MDEFINITION__MABSTRACT_FIELD_ACCESS;
+
+	/**
+	 * The feature id for the '<em><b>MSignature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__MSIGNATURE = MDEFINITION__MSIGNATURE;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER__BODY = MDEFINITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>MInitializer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MINITIALIZER_FEATURE_COUNT = MDEFINITION_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3255,7 +3463,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getAccessKind()
 	 * @generated
 	 */
-	int ACCESS_KIND = 29;
+	int ACCESS_KIND = 30;
 
 
 	/**
@@ -3278,6 +3486,17 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMAbstractMethodDefinition_MInnerTypes();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.modisco.MAbstractMethodDefinition#getDefinedBy <em>Defined By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Defined By</em>'.
+	 * @see org.gravity.modisco.MAbstractMethodDefinition#getDefinedBy()
+	 * @see #getMAbstractMethodDefinition()
+	 * @generated
+	 */
+	EReference getMAbstractMethodDefinition_DefinedBy();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MAccess <em>MAccess</em>}'.
@@ -3978,6 +4197,16 @@ public interface ModiscoPackage extends EPackage {
 	EClass getMSuperConstructorInvocation();
 
 	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MInitializer <em>MInitializer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MInitializer</em>'.
+	 * @see org.gravity.modisco.MInitializer
+	 * @generated
+	 */
+	EClass getMInitializer();
+
+	/**
 	 * Returns the meta object for enum '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4027,6 +4256,14 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MABSTRACT_METHOD_DEFINITION__MINNER_TYPES = eINSTANCE.getMAbstractMethodDefinition_MInnerTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Defined By</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MABSTRACT_METHOD_DEFINITION__DEFINED_BY = eINSTANCE.getMAbstractMethodDefinition_DefinedBy();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MAccessImpl <em>MAccess</em>}' class.
@@ -4611,6 +4848,16 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MSUPER_CONSTRUCTOR_INVOCATION = eINSTANCE.getMSuperConstructorInvocation();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MInitializerImpl <em>MInitializer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MInitializerImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMInitializer()
+		 * @generated
+		 */
+		EClass MINITIALIZER = eINSTANCE.getMInitializer();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}' enum.

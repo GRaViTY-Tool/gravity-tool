@@ -109,8 +109,8 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject outerModel2PM, EObject pm, EObject model,
-			EObject outerModel, EObject model2PM);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model2PM, EObject outerModel2PM, EObject model,
+			EObject outerModel, EObject pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,8 +174,8 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model2TypeGraph outerModel2PM, TypeGraph pm,
-			Model outerModel);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model2TypeGraph outerModel2PM, Model outerModel,
+			TypeGraph pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +191,8 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject outerModel2PM, EObject pm, EObject model,
-			EObject outerModel, EObject model2PM);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject model2PM, EObject outerModel2PM, EObject model,
+			EObject outerModel, EObject pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_177(EMoflonEdge _edge_nestedPackage);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_176(EMoflonEdge _edge_nestedPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +248,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TypeGraph pm, Model model, Model outerModel, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Model model, Model outerModel, TypeGraph pm, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->

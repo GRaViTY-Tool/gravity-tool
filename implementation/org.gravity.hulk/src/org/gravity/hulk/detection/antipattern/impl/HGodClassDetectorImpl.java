@@ -18,8 +18,8 @@ import org.gravity.hulk.antipatterngraph.antipattern.AntipatternFactory;
 import org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern;
 
 import org.gravity.hulk.antipatterngraph.codesmells.HControllerClassSmell;
-import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell;
-
+import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
+import org.gravity.hulk.antipatterngraph.codesmells.HLowCohesionSmell;
 import org.gravity.hulk.detection.DetectionPackage;
 import org.gravity.hulk.detection.HClassBasedCalculator;
 
@@ -68,21 +68,24 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 	 * @generated
 	 */
 	public HAnnotation calculate(TClass tClass) {//
-		HLargeClassLowCohesionSmell lclc = null;
 		HControllerClassSmell controller = null;
+		HLargeClassSmell largeClass = null;
+		HLowCohesionSmell lowCohesion = null;
 		for (TAnnotation tmpLclc : tClass.getTAnnotation()) {
-			if (tmpLclc instanceof HLargeClassLowCohesionSmell) {
-				lclc = (HLargeClassLowCohesionSmell) tmpLclc;
+			if (tmpLclc instanceof HLargeClassSmell) {
+				largeClass = (HLargeClassSmell) tmpLclc;
+			} else if (tmpLclc instanceof HLowCohesionSmell) {
+				lowCohesion = (HLowCohesionSmell) tmpLclc;
 			} else if (tmpLclc instanceof HControllerClassSmell) {
 				controller = (HControllerClassSmell) tmpLclc;
 			}
 		}
-		if (lclc != null && controller != null) {
+		if ((largeClass != null || lowCohesion != null) && controller != null) {
 			//
-			HGodClassAntiPattern mc = createAntiPattern(controller, lclc, tClass);
+			HGodClassAntiPattern mc = createAntiPattern(controller, largeClass, lowCohesion, tClass);
 
 			//
-			TAnnotationType tAnnotationType = getAnnotationType(tClass.getPg(), "GodClass");
+			TAnnotationType tAnnotationType = getAnnotationType(tClass.getModel(), "GodClass");
 			if (tAnnotationType != null) {
 				TAnnotation annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
 				annotation.setTAnnotated(tClass);
@@ -157,14 +160,20 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 	}
 
 	public final HGodClassAntiPattern createAntiPattern(HControllerClassSmell controller,
-			HLargeClassLowCohesionSmell lclc, TClass tClass) {
+			HLargeClassSmell largeClass, HLowCohesionSmell lowCohesion, TClass tClass) {
 		HGodClassAntiPattern mc = AntipatternFactory.eINSTANCE.createHGodClassAntiPattern();
 		mc.setTAnnotated(tClass);
-		mc.setHLargeClassLowCohesionSmell(lclc);
+		if(largeClass != null) {
+			largeClass.getPartOf().add(mc);
+			mc.getHLargeClassLowCohesionSmells().add(largeClass);
+		}
+		if(lowCohesion != null) {
+			lowCohesion.getPartOf().add(mc);
+			mc.getHLargeClassLowCohesionSmells().add(lowCohesion);
+		}
 		mc.setHControllerClassSmell(controller);
 		getHAnnotation().add(mc);
 		controller.getPartOf().add(mc);
-		lclc.getPartOf().add(mc);
 		return mc;
 	}
 

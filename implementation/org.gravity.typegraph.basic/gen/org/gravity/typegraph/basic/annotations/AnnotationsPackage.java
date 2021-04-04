@@ -578,13 +578,13 @@ public interface AnnotationsPackage extends EPackage {
 	int TANNOTATION_TYPE__TANNOTATION = BasicPackage.TABSTRACT_TYPE__TANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Pg</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TANNOTATION_TYPE__PG = BasicPackage.TABSTRACT_TYPE__PG;
+	int TANNOTATION_TYPE__MODEL = BasicPackage.TABSTRACT_TYPE__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Package</b></em>' reference.

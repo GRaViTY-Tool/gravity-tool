@@ -53,16 +53,6 @@ import org.gravity.hulk.detection.metrics.MetricsPackage;
 
 import org.gravity.hulk.impl.HulkPackageImpl;
 
-import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
-
-import org.gravity.hulk.resolve.ResolvePackage;
-
-import org.gravity.hulk.resolve.calculators.CalculatorsPackage;
-
-import org.gravity.hulk.resolve.calculators.impl.CalculatorsPackageImpl;
-
-import org.gravity.hulk.resolve.impl.ResolvePackageImpl;
-
 import org.gravity.typegraph.basic.BasicPackage;
 
 import org.moflon.core.dfs.DfsPackage;
@@ -296,7 +286,6 @@ public class MetricsPackageImpl extends EPackageImpl implements MetricsPackage {
 		DfsPackage.eINSTANCE.eClass();
 		AntipatterngraphPackage.eINSTANCE.eClass();
 		BasicPackage.eINSTANCE.eClass();
-		RefactoringgraphPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(HulkPackage.eNS_URI);
@@ -315,19 +304,6 @@ public class MetricsPackageImpl extends EPackageImpl implements MetricsPackage {
 		CodesmellsPackageImpl theCodesmellsPackage = (CodesmellsPackageImpl) (registeredPackage instanceof CodesmellsPackageImpl
 				? registeredPackage
 				: CodesmellsPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResolvePackage.eNS_URI);
-		ResolvePackageImpl theResolvePackage = (ResolvePackageImpl) (registeredPackage instanceof ResolvePackageImpl
-				? registeredPackage
-				: ResolvePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CalculatorsPackage.eNS_URI);
-		CalculatorsPackageImpl theCalculatorsPackage = (CalculatorsPackageImpl) (registeredPackage instanceof CalculatorsPackageImpl
-				? registeredPackage
-				: CalculatorsPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE
-				.getEPackage(org.gravity.hulk.resolve.antipattern.AntipatternPackage.eNS_URI);
-		org.gravity.hulk.resolve.antipattern.impl.AntipatternPackageImpl theAntipatternPackage_1 = (org.gravity.hulk.resolve.antipattern.impl.AntipatternPackageImpl) (registeredPackage instanceof org.gravity.hulk.resolve.antipattern.impl.AntipatternPackageImpl
-				? registeredPackage
-				: org.gravity.hulk.resolve.antipattern.AntipatternPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMetricsPackage.createPackageContents();
@@ -335,9 +311,6 @@ public class MetricsPackageImpl extends EPackageImpl implements MetricsPackage {
 		theDetectionPackage.createPackageContents();
 		theAntipatternPackage.createPackageContents();
 		theCodesmellsPackage.createPackageContents();
-		theResolvePackage.createPackageContents();
-		theCalculatorsPackage.createPackageContents();
-		theAntipatternPackage_1.createPackageContents();
 
 		// Initialize created meta-data
 		theMetricsPackage.initializePackageContents();
@@ -345,9 +318,6 @@ public class MetricsPackageImpl extends EPackageImpl implements MetricsPackage {
 		theDetectionPackage.initializePackageContents();
 		theAntipatternPackage.initializePackageContents();
 		theCodesmellsPackage.initializePackageContents();
-		theResolvePackage.initializePackageContents();
-		theCalculatorsPackage.initializePackageContents();
-		theAntipatternPackage_1.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theMetricsPackage.freeze();

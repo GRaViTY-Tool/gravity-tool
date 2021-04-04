@@ -4,8 +4,6 @@ package org.gravity.tgg.modisco.pm.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.AbstractMethodDeclaration;
-
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MSuperConstructorInvocation;
 
@@ -48,8 +46,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod);
+	boolean isAppropriate_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,8 +70,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod);
+	void registerObjectsToMatch_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,8 +78,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod);
+	CSP isAppropriate_solveCsp_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,8 +95,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MSuperConstructorInvocation invocation,
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod);
+			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,8 +112,8 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject invocation, EObject mMemberToTMember,
-			EObject tMember, EObject mMethodToTMethod, EObject tAccess, EObject tMethod, EObject mMember,
-			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMethod);
+			EObject tMember, EObject tAccess, EObject mMember, EObject mFlowElementToTFlowElement,
+			EObject invocationToTAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,7 +129,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TMember tMember, TCall tAccess, TMember tMethod);
+	boolean isAppropriate_BWD(Match match, TMember tMember, TCall tAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,7 +153,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TMember tMember, TCall tAccess, TMember tMethod);
+	void registerObjectsToMatch_BWD(Match match, TMember tMember, TCall tAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,7 +161,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TCall tAccess, TMember tMethod);
+	CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TCall tAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,8 +178,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			TMember tMember, MDefinitionToTMember mMethodToTMethod, TCall tAccess, TMember tMethod, MDefinition mMember,
-			AbstractMethodDeclaration mMethod);
+			TMember tMember, TCall tAccess, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,8 +195,8 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject invocation, EObject mMemberToTMember,
-			EObject tMember, EObject mMethodToTMethod, EObject tAccess, EObject tMethod, EObject mMember,
-			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMethod);
+			EObject tMember, EObject tAccess, EObject mMember, EObject mFlowElementToTFlowElement,
+			EObject invocationToTAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +212,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_699(EMoflonEdge _edge_tAccessing);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_22(EMoflonEdge _edge_accessing);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +220,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_718(EMoflonEdge _edge_method);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_24(EMoflonEdge _edge_mMethodInvocations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,8 +253,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(MSuperConstructorInvocation invocation, TMember tMember, TCall tAccess,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod, Match sourceMatch,
-			Match targetMatch);
+			MDefinition mMember, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,8 +269,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod);
+	boolean checkDEC_FWD(MSuperConstructorInvocation invocation, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,7 +277,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TMember tMember, TCall tAccess, TMember tMethod);
+	boolean checkDEC_BWD(TMember tMember, TCall tAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,7 +286,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			MDefinitionToTMember mMemberToTMemberParameter, MDefinitionToTMember mMethodToTMethodParameter);
+			MDefinitionToTMember mMemberToTMemberParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,8 +295,7 @@ public interface SuperConstructorInvocation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			TMember tMember, MDefinitionToTMember mMethodToTMethod, TMember tMethod, MDefinition mMember,
-			AbstractMethodDeclaration mMethod, ModelgeneratorRuleResult ruleResult);
+			TMember tMember, MDefinition mMember, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

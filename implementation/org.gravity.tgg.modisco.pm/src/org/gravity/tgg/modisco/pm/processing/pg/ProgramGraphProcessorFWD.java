@@ -28,12 +28,12 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 			"toString():String", "wait():void", "wait(long):void", "wait(long,int):void");
 
 	@Override
-	public boolean process(TypeGraph pg, IProgressMonitor monitor) {
+	public boolean process(final TypeGraph pg, final IProgressMonitor monitor) {
 		createMissingOverrideEdges(pg);
 		return true;
 	}
 
-	private static void createMissingOverrideEdges(TypeGraph pg) {
+	private static void createMissingOverrideEdges(final TypeGraph pg) {
 		for (final TClass tClass : pg.getClasses()) {
 			final Map<String, TMethodDefinition> signatures = new HashMap<>();
 			for (final TMethodDefinition tMethodDefinition : tClass.getDeclaredTMethodDefinitions()) {
@@ -71,7 +71,7 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 					if (tObjectMethodDefinition == null) {
 						tObjectMethodDefinition = cloneAndAddDefintion(tObject, tMethodDefinition);
 					}
-					tMethodDefinition.setOverriding(tObjectMethodDefinition);
+					tMethodDefinition.getOverriding().add(tObjectMethodDefinition);
 				}
 			}
 
@@ -83,14 +83,10 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 				for (final TMethodDefinition tMethodDefinition : values) {
 					for (final TAnnotation tAnnotation : tMethodDefinition.getTAnnotation()) {
 						final TAnnotationType tAnnotatiopnType = tAnnotation.getType();
-						if (tAnnotatiopnType != null && "Override".equals(tAnnotatiopnType.getTName())) {
-							TAbstractType parent = tClass.getParentClass();
-							if (parent == null || parent.equals(tObject)) {
-								parent = tClass.getImplements().get(0);
-							}
+						if ((tAnnotatiopnType != null) && "Override".equals(tAnnotatiopnType.getTName())) {
 							final TMethodDefinition tObjectMethodDefinition = cloneAndAddDefintion(tObject,
 									tMethodDefinition);
-							tMethodDefinition.setOverriding(tObjectMethodDefinition);
+							tMethodDefinition.getOverriding().add(tObjectMethodDefinition);
 						}
 					}
 				}
@@ -98,7 +94,8 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 		}
 	}
 
-	private static TMethodDefinition cloneAndAddDefintion(TAbstractType tType, TMethodDefinition tMethodDefinition) {
+	private static TMethodDefinition cloneAndAddDefintion(final TAbstractType tType,
+			final TMethodDefinition tMethodDefinition) {
 		final TMethodDefinition tObjectMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
 		tMethodDefinition.getSignature().getDefinitions().add(tObjectMethodDefinition);
 		tObjectMethodDefinition.setDefinedBy(tType);
@@ -115,13 +112,10 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 		return tObjectMethodDefinition;
 	}
 
-	private static void addParentsToStack(TAbstractType child, Deque<TAbstractType> stack) {
+	private static void addParentsToStack(final TAbstractType child, final Deque<TAbstractType> stack) {
 		if (child instanceof TClass) {
 			final TClass tClass = (TClass) child;
-			final TClass tParentClass = tClass.getParentClass();
-			if (tParentClass != null) {
-				stack.add(tParentClass);
-			}
+			stack.addAll(tClass.getParentClasses());
 			stack.addAll(tClass.getImplements());
 
 		} else if (child instanceof TInterface) {

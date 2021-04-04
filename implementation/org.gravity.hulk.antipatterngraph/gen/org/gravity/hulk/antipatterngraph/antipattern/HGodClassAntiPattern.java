@@ -2,10 +2,11 @@
  */
 package org.gravity.hulk.antipatterngraph.antipattern;
 
+import org.eclipse.emf.common.util.EList;
 import org.gravity.hulk.antipatterngraph.HAntiPattern;
 
+import org.gravity.hulk.antipatterngraph.HCodeSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HControllerClassSmell;
-import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell;
 // <-- [user defined imports]
 // [user defined imports] -->
 
@@ -18,7 +19,7 @@ import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHLargeClassLowCohesionSmell <em>HLarge Class Low Cohesion Smell</em>}</li>
+ *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHLargeClassLowCohesionSmells <em>HLarge Class Low Cohesion Smells</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHControllerClassSmell <em>HController Class Smell</em>}</li>
  * </ul>
  *
@@ -28,30 +29,16 @@ import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell;
  */
 public interface HGodClassAntiPattern extends HAntiPattern {
 	/**
-	 * Returns the value of the '<em><b>HLarge Class Low Cohesion Smell</b></em>' reference.
+	 * Returns the value of the '<em><b>HLarge Class Low Cohesion Smells</b></em>' reference list.
+	 * The list contents are of type {@link org.gravity.hulk.antipatterngraph.HCodeSmell}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>HLarge Class Low Cohesion Smell</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>HLarge Class Low Cohesion Smell</em>' reference.
-	 * @see #setHLargeClassLowCohesionSmell(HLargeClassLowCohesionSmell)
-	 * @see org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage#getHGodClassAntiPattern_HLargeClassLowCohesionSmell()
+	 * @return the value of the '<em>HLarge Class Low Cohesion Smells</em>' reference list.
+	 * @see org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage#getHGodClassAntiPattern_HLargeClassLowCohesionSmells()
 	 * @model
 	 * @generated
 	 */
-	HLargeClassLowCohesionSmell getHLargeClassLowCohesionSmell();
-
-	/**
-	 * Sets the value of the '{@link org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHLargeClassLowCohesionSmell <em>HLarge Class Low Cohesion Smell</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>HLarge Class Low Cohesion Smell</em>' reference.
-	 * @see #getHLargeClassLowCohesionSmell()
-	 * @generated
-	 */
-	void setHLargeClassLowCohesionSmell(HLargeClassLowCohesionSmell value);
+	EList<HCodeSmell> getHLargeClassLowCohesionSmells();
 
 	/**
 	 * Returns the value of the '<em><b>HController Class Smell</b></em>' reference.

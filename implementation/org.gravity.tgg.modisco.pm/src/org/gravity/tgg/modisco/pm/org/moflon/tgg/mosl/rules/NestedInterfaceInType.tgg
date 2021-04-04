@@ -15,10 +15,6 @@
 	typeGraph:TypeGraph {
 		++  -interfaces -> tNestedType
 	}
-
-	++tNestedPackage:TPackage {
-		++  -interfaces -> tNestedType
-	}
 }
 
 #attributeConditions {

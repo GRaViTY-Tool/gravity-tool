@@ -18,4 +18,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gravity.tgg.modisco.pm,
  org.eclipse.jdt.core,
  org.eclipse.core.resources,
- org.gravity.eclipse.java.spl
+ org.gravity.eclipse.java.spl,
+ org.eclipse.emf.henshin.variability.multi,
+ de.ovgu.featureide.fm.core,
+ carisma.profile.umlsec.variability,
+ org.eclipse.emf.henshin.model

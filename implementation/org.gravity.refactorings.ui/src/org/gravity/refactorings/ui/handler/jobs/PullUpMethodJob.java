@@ -65,7 +65,7 @@ public final class PullUpMethodJob extends WorkspaceJob {
 			if(!(tChild instanceof TClass)) {
 				asyncPrintError(this.shell, Messages.refactoringNotPossible, Messages.pullUpMethodNotPossible);
 			}
-			final TClass tParent = ((TClass) tChild).getParentClass();
+			final TClass tParent = ((TClass) tChild).getParentClasses().get(0);
 			final TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(this.method, pg);
 
 			final PullUpMethod refactoring = new PullUpMethod();

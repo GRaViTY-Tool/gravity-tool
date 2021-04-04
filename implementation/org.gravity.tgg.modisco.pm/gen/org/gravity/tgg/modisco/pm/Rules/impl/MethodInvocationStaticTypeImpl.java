@@ -260,9 +260,9 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 				//nothing EMoflonEdge invocation__mStaticType____mStaticType = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge invocation__method____method = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge method__invocation____usages = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge invocation__method____method = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge method__invocation____usages = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = MethodInvocationStaticTypeImpl
@@ -572,9 +572,9 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
 				//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge invocation__method____method = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge method__invocation____usages = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge invocation__method____method = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge method__invocation____usages = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge tAccess__tStaticType____staticType = (EMoflonEdge) result3_green[14];
 
@@ -727,7 +727,7 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_738(EMoflonEdge _edge_staticType) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_16(EMoflonEdge _edge_staticType) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationStaticTypeImpl
 				.pattern_MethodInvocationStaticType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -786,7 +786,7 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_758(EMoflonEdge _edge_mStaticType) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_18(EMoflonEdge _edge_mStaticType) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationStaticTypeImpl
 				.pattern_MethodInvocationStaticType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1231,10 +1231,10 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 			return null;
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_738__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_738((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_758__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_758((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_16__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_16((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_18__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_18((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1663,8 +1663,8 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		if (mStaticType.equals(invocation.getMStaticType())) {
 			if (invocation.equals(invocationToTAccess.getSource())) {
 				if (tStaticType.equals(mStaticTypeTotStaticType.getTarget())) {
-					if (method.equals(invocation.getMethod())) {
-						if (tAccess.equals(invocationToTAccess.getTarget())) {
+					if (tAccess.equals(invocationToTAccess.getTarget())) {
+						if (method.equals(invocation.getMethod())) {
 							if (mStaticType.equals(mStaticTypeTotStaticType.getSource())) {
 								_result.add(new Object[] { invocation, tStaticType, method, tAccess, mStaticType,
 										mStaticTypeTotStaticType, invocationToTAccess });
@@ -1685,16 +1685,16 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		EMoflonEdge invocation__mStaticType____mStaticType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocation__method____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String invocation__mStaticType____mStaticType_name_prime = "mStaticType";
 		String invocationToTAccess__invocation____source_name_prime = "source";
 		String mStaticTypeTotStaticType__tStaticType____target_name_prime = "target";
+		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String invocation__method____method_name_prime = "method";
 		String method__invocation____usages_name_prime = "usages";
-		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mStaticTypeTotStaticType__mStaticType____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(invocation);
 		isApplicableMatch.getAllContextElements().add(tStaticType);
@@ -1712,15 +1712,15 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		mStaticTypeTotStaticType__tStaticType____target.setSrc(mStaticTypeTotStaticType);
 		mStaticTypeTotStaticType__tStaticType____target.setTrg(tStaticType);
 		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__tStaticType____target);
+		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
+		invocationToTAccess__tAccess____target.setTrg(tAccess);
+		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
 		invocation__method____method.setSrc(invocation);
 		invocation__method____method.setTrg(method);
 		isApplicableMatch.getAllContextElements().add(invocation__method____method);
 		method__invocation____usages.setSrc(method);
 		method__invocation____usages.setTrg(invocation);
 		isApplicableMatch.getAllContextElements().add(method__invocation____usages);
-		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
-		invocationToTAccess__tAccess____target.setTrg(tAccess);
-		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
 		mStaticTypeTotStaticType__mStaticType____source.setSrc(mStaticTypeTotStaticType);
 		mStaticTypeTotStaticType__mStaticType____source.setTrg(mStaticType);
 		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__mStaticType____source);
@@ -1728,15 +1728,15 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		mStaticTypeTotStaticType__tStaticType____target
 				.setName(mStaticTypeTotStaticType__tStaticType____target_name_prime);
+		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		invocation__method____method.setName(invocation__method____method_name_prime);
 		method__invocation____usages.setName(method__invocation____usages_name_prime);
-		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mStaticTypeTotStaticType__mStaticType____source
 				.setName(mStaticTypeTotStaticType__mStaticType____source_name_prime);
 		return new Object[] { invocation, tStaticType, method, tAccess, mStaticType, mStaticTypeTotStaticType,
 				invocationToTAccess, isApplicableMatch, invocation__mStaticType____mStaticType,
 				invocationToTAccess__invocation____source, mStaticTypeTotStaticType__tStaticType____target,
-				invocation__method____method, method__invocation____usages, invocationToTAccess__tAccess____target,
+				invocationToTAccess__tAccess____target, invocation__method____method, method__invocation____usages,
 				mStaticTypeTotStaticType__mStaticType____source };
 	}
 
@@ -2203,16 +2203,16 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocation__method____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tStaticType____staticType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String invocationToTAccess__invocation____source_name_prime = "source";
 		String mStaticTypeTotStaticType__tStaticType____target_name_prime = "target";
+		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String invocation__method____method_name_prime = "method";
 		String method__invocation____usages_name_prime = "usages";
-		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mStaticTypeTotStaticType__mStaticType____source_name_prime = "source";
 		String tAccess__tStaticType____staticType_name_prime = "staticType";
 		isApplicableMatch.getAllContextElements().add(invocation);
@@ -2228,15 +2228,15 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		mStaticTypeTotStaticType__tStaticType____target.setSrc(mStaticTypeTotStaticType);
 		mStaticTypeTotStaticType__tStaticType____target.setTrg(tStaticType);
 		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__tStaticType____target);
+		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
+		invocationToTAccess__tAccess____target.setTrg(tAccess);
+		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
 		invocation__method____method.setSrc(invocation);
 		invocation__method____method.setTrg(method);
 		isApplicableMatch.getAllContextElements().add(invocation__method____method);
 		method__invocation____usages.setSrc(method);
 		method__invocation____usages.setTrg(invocation);
 		isApplicableMatch.getAllContextElements().add(method__invocation____usages);
-		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
-		invocationToTAccess__tAccess____target.setTrg(tAccess);
-		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
 		mStaticTypeTotStaticType__mStaticType____source.setSrc(mStaticTypeTotStaticType);
 		mStaticTypeTotStaticType__mStaticType____source.setTrg(mStaticType);
 		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__mStaticType____source);
@@ -2246,16 +2246,16 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		mStaticTypeTotStaticType__tStaticType____target
 				.setName(mStaticTypeTotStaticType__tStaticType____target_name_prime);
+		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		invocation__method____method.setName(invocation__method____method_name_prime);
 		method__invocation____usages.setName(method__invocation____usages_name_prime);
-		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mStaticTypeTotStaticType__mStaticType____source
 				.setName(mStaticTypeTotStaticType__mStaticType____source_name_prime);
 		tAccess__tStaticType____staticType.setName(tAccess__tStaticType____staticType_name_prime);
 		return new Object[] { invocation, tStaticType, method, tAccess, mStaticType, mStaticTypeTotStaticType,
 				invocationToTAccess, isApplicableMatch, invocationToTAccess__invocation____source,
-				mStaticTypeTotStaticType__tStaticType____target, invocation__method____method,
-				method__invocation____usages, invocationToTAccess__tAccess____target,
+				mStaticTypeTotStaticType__tStaticType____target, invocationToTAccess__tAccess____target,
+				invocation__method____method, method__invocation____usages,
 				mStaticTypeTotStaticType__mStaticType____source, tAccess__tStaticType____staticType };
 	}
 

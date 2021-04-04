@@ -3,6 +3,7 @@ package org.gravity.hulk.ui.handlers.scan;
 import org.eclipse.swt.widgets.Display;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkFactory;
+import org.gravity.hulk.resolve.ResolveFactory;
 import org.gravity.hulk.resolve.ResolvePackage;
 import org.gravity.hulk.resolve.antipattern.HBlobResolver;
 import org.gravity.hulk.ui.dialogs.ResultDialog;
@@ -21,7 +22,7 @@ public class HulkResolveHandler extends HulkHandler {
 
 	@Override
 	protected void setHulk() {
-		this.hulk = HulkFactory.eINSTANCE.createHAntiPatternResolving();
+		this.hulk = ResolveFactory.eINSTANCE.createHAntiPatternResolving();
 	}
 
 	@Override

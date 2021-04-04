@@ -34,7 +34,7 @@
       </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HGodClassAntiPattern">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HGodClassAntiPattern/hLargeClassLowCohesionSmell"/>
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HGodClassAntiPattern/hLargeClassLowCohesionSmells"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HGodClassAntiPattern/hControllerClassSmell"/>
       </genClasses>
@@ -74,12 +74,6 @@
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HGetterSetterSmell">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HGetterSetterSmell/tFieldDefinition"/>
-      </genClasses>
-      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLargeClassLowCohesionSmell">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLargeClassLowCohesionSmell/hLowCohesionSmell"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLargeClassLowCohesionSmell/hLargeClassSmell"/>
       </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLargeClassSmell">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

@@ -64,6 +64,7 @@ public class MSingleVariableDeclarationImpl extends SingleVariableDeclarationImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MEntry getMEntry() {
 		if (mEntry != null && mEntry.eIsProxy()) {
 			InternalEObject oldMEntry = (InternalEObject)mEntry;
@@ -105,6 +106,7 @@ public class MSingleVariableDeclarationImpl extends SingleVariableDeclarationImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMEntry(MEntry newMEntry) {
 		if (newMEntry != mEntry) {
 			NotificationChain msgs = null;

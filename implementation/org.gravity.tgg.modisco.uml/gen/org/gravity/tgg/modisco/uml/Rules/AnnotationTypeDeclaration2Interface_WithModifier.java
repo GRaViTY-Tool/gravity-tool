@@ -9,8 +9,6 @@ import org.eclipse.modisco.java.Modifier;
 
 import org.eclipse.uml2.uml.Interface;
 
-import org.gravity.tgg.modisco.uml.JavaPackage2UmlPackage;
-
 import org.moflon.tgg.language.csp.CSP;
 
 import org.moflon.tgg.language.modelgenerator.RuleEntryContainer;
@@ -45,8 +43,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jPackage, Modifier modifier,
-			AnnotationTypeDeclaration bodyDeclaration);
+	boolean isAppropriate_FWD(Match match, Modifier modifier, AnnotationTypeDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,8 +67,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jPackage, Modifier modifier,
-			AnnotationTypeDeclaration bodyDeclaration);
+	void registerObjectsToMatch_FWD(Match match, Modifier modifier, AnnotationTypeDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,8 +75,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jPackage, Modifier modifier,
-			AnnotationTypeDeclaration bodyDeclaration);
+	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, AnnotationTypeDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,9 +91,8 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, Modifier modifier, AnnotationTypeDeclaration bodyDeclaration,
-			JavaPackage2UmlPackage jp2up);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
+			AnnotationTypeDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,8 +108,8 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject uPackage, EObject jPackage, EObject modifier, EObject bodyDeclaration, EObject jp2up);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
+			EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,7 +125,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Interface feature, org.eclipse.uml2.uml.Package uPackage);
+	boolean isAppropriate_BWD(Match match, Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,7 +149,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Interface feature, org.eclipse.uml2.uml.Package uPackage);
+	void registerObjectsToMatch_BWD(Match match, Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,7 +157,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Interface feature, org.eclipse.uml2.uml.Package uPackage);
+	CSP isAppropriate_solveCsp_BWD(Match match, Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,9 +173,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface feature,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
-			JavaPackage2UmlPackage jp2up);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,8 +189,8 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject uPackage, EObject jPackage, EObject modifier, EObject bodyDeclaration, EObject jp2up);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
+			EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +206,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_418(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_Interface_4(Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +214,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_429(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_75(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,8 +246,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Interface feature, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, Modifier modifier, AnnotationTypeDeclaration bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Interface feature, Modifier modifier, AnnotationTypeDeclaration bodyDeclaration,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -272,8 +263,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(org.eclipse.modisco.java.Package jPackage, Modifier modifier,
-			AnnotationTypeDeclaration bodyDeclaration);
+	boolean checkDEC_FWD(Modifier modifier, AnnotationTypeDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,7 +271,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Interface feature, org.eclipse.uml2.uml.Package uPackage);
+	boolean checkDEC_BWD(Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,8 +279,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			JavaPackage2UmlPackage jp2upParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -298,9 +287,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -69,7 +69,7 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MAbstractFlowElement> incomingFlows;
+	protected EList<MFlow> incomingFlows;
 
 	/**
 	 * The cached value of the '{@link #getOutgoingFlows() <em>Outgoing Flows</em>}' reference list.
@@ -79,7 +79,7 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MAbstractFlowElement> outgoingFlows;
+	protected EList<MFlow> outgoingFlows;
 
 	/**
 	 * The cached value of the '{@link #getInvocationStaticTypes() <em>Invocation Static Types</em>}' reference list.
@@ -145,6 +145,7 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MFlow> getOwnedFlows() {
 		if (ownedFlows == null) {
 			ownedFlows = new EObjectContainmentWithInverseEList<MFlow>(MFlow.class, this, ModiscoPackage.MDEFINITION__OWNED_FLOWS, ModiscoPackage.MFLOW__FLOW_OWNER);
@@ -157,9 +158,10 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MAbstractFlowElement> getIncomingFlows() {
+	@Override
+	public EList<MFlow> getIncomingFlows() {
 		if (incomingFlows == null) {
-			incomingFlows = new EObjectWithInverseResolvingEList.ManyInverse<MAbstractFlowElement>(MAbstractFlowElement.class, this, ModiscoPackage.MDEFINITION__INCOMING_FLOWS, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS);
+			incomingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MDEFINITION__INCOMING_FLOWS, ModiscoPackage.MFLOW__FLOW_TARGET);
 		}
 		return incomingFlows;
 	}
@@ -169,9 +171,10 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MAbstractFlowElement> getOutgoingFlows() {
+	@Override
+	public EList<MFlow> getOutgoingFlows() {
 		if (outgoingFlows == null) {
-			outgoingFlows = new EObjectWithInverseResolvingEList.ManyInverse<MAbstractFlowElement>(MAbstractFlowElement.class, this, ModiscoPackage.MDEFINITION__OUTGOING_FLOWS, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS);
+			outgoingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MDEFINITION__OUTGOING_FLOWS, ModiscoPackage.MFLOW__FLOW_SOURCE);
 		}
 		return outgoingFlows;
 	}
@@ -181,6 +184,7 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MethodInvocationStaticType> getInvocationStaticTypes() {
 		if (invocationStaticTypes == null) {
 			invocationStaticTypes = new EObjectResolvingEList<MethodInvocationStaticType>(MethodInvocationStaticType.class, this, ModiscoPackage.MDEFINITION__INVOCATION_STATIC_TYPES);
@@ -193,6 +197,7 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractMethodInvocation> getMMethodInvocations() {
 		if (mMethodInvocations == null) {
 			mMethodInvocations = new EObjectResolvingEList<AbstractMethodInvocation>(AbstractMethodInvocation.class, this, ModiscoPackage.MDEFINITION__MMETHOD_INVOCATIONS);
@@ -205,6 +210,7 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MSingleVariableAccess> getMAbstractFieldAccess() {
 		if (mAbstractFieldAccess == null) {
 			mAbstractFieldAccess = new EObjectResolvingEList<MSingleVariableAccess>(MSingleVariableAccess.class, this, ModiscoPackage.MDEFINITION__MABSTRACT_FIELD_ACCESS);
@@ -217,6 +223,7 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MSignature getMSignature() {
 		if (mSignature != null && mSignature.eIsProxy()) {
 			InternalEObject oldMSignature = (InternalEObject)mSignature;
@@ -258,6 +265,7 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMSignature(MSignature newMSignature) {
 		if (newMSignature != mSignature) {
 			NotificationChain msgs = null;
@@ -357,11 +365,11 @@ public abstract class MDefinitionImpl extends BodyDeclarationImpl implements MDe
 				return;
 			case ModiscoPackage.MDEFINITION__INCOMING_FLOWS:
 				getIncomingFlows().clear();
-				getIncomingFlows().addAll((Collection<? extends MAbstractFlowElement>)newValue);
+				getIncomingFlows().addAll((Collection<? extends MFlow>)newValue);
 				return;
 			case ModiscoPackage.MDEFINITION__OUTGOING_FLOWS:
 				getOutgoingFlows().clear();
-				getOutgoingFlows().addAll((Collection<? extends MAbstractFlowElement>)newValue);
+				getOutgoingFlows().addAll((Collection<? extends MFlow>)newValue);
 				return;
 			case ModiscoPackage.MDEFINITION__INVOCATION_STATIC_TYPES:
 				getInvocationStaticTypes().clear();

@@ -59,7 +59,6 @@ public class SearchTypeGraph {
 
 	private static final Logger LOGGER = Logger.getLogger(SearchTypeGraph.class);
 
-
 	protected List<FitnessFunction> fitnessFunctions;
 	private List<FitnessFunction> constraints;
 
@@ -68,11 +67,9 @@ public class SearchTypeGraph {
 	/*
 	 * protected final String[] unitsToRemove = new String[] {
 	 * "MoveMethod::rules::libCheck", "MoveMethod::rules::MoveMethod",
-	 * "MoveMethod::rules::checkPreconditions",
-	 * "MoveMethod::rules::dyn1MoveMethod",
+	 * "MoveMethod::rules::checkPreconditions", "MoveMethod::rules::dyn1MoveMethod",
 	 * "MoveMethod::rules::MoveMethodWithoutPreconstraints" ,
-	 * "MoveMethod::rules::changeVisibility",
-	 * "MoveMethod::rules::dyn2MoveMethod" //
+	 * "MoveMethod::rules::changeVisibility", "MoveMethod::rules::dyn2MoveMethod" //
 	 * ,"MoveMethod::rules::MoveMethodMain" };
 	 */
 
@@ -110,12 +107,15 @@ public class SearchTypeGraph {
 		this.fitnessFunctions = new ArrayList<>();
 		this.fitnessFunctions.add(new FitnessFunction("Coupling", FunctionType.Minimum, new CouplingCalculator()));
 		this.fitnessFunctions.add(new FitnessFunction("LCOM", FunctionType.Minimum, new CohesionCalculator()));
-		this.fitnessFunctions.add(new FitnessFunction("Number of Blobs", FunctionType.Minimum, new AntiPatternCalculator()));
+		this.fitnessFunctions
+				.add(new FitnessFunction("Number of Blobs", FunctionType.Minimum, new AntiPatternCalculator()));
 		this.fitnessFunctions.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityCalculator()));
-		//exclude repairs, not needed anymore because of visibility
-		/*if (SearchParameters.useRepair) {
-			fitnessFunctions.add(new FitnessFunction("Number Repairs", FunctionType.Minimum, new RepairMetricCalculator()));
-		}*/
+		// exclude repairs, not needed anymore because of visibility
+		/*
+		 * if (SearchParameters.useRepair) { fitnessFunctions.add(new
+		 * FitnessFunction("Number Repairs", FunctionType.Minimum, new
+		 * RepairMetricCalculator())); }
+		 */
 
 	}
 
@@ -123,7 +123,7 @@ public class SearchTypeGraph {
 		this.constraints = new ArrayList<>();
 		if (SearchParameters.useConstraints) {
 			this.constraints
-			.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityConstraintCalculator()));
+					.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityConstraintCalculator()));
 		}
 	}
 
@@ -131,9 +131,9 @@ public class SearchTypeGraph {
 			EvolutionaryAlgorithmFactory<TransformationSolution> moea) {
 
 		TournamentSelection ts = null;
-		if(SearchParameters.useCustomDominanceComperator) {
+		if (SearchParameters.useCustomDominanceComperator) {
 			ts = new TournamentSelection(2, new CustomDominanceComperator(this.fitnessFunctions));
-		}else {
+		} else {
 			ts = new TournamentSelection(2);
 		}
 
@@ -151,21 +151,23 @@ public class SearchTypeGraph {
 	}
 
 	protected ModuleManager createModuleManager() {
-		final Bundle bundle = Platform.getBundle(GoblinActivator.PLUGIN_ID);
 		final ModuleManager manager = new ModuleManager();
-		for (final String module : SearchParameters.modules) {
-			if(bundle == null) {
-				manager.addModule(module);
-			}else {
-				final URL entry = bundle.getEntry(module);
-				try {
-					final String substring = entry.getFile().substring(entry.getFile().lastIndexOf('/') + 1);
-					final Path temp = Files.createTempDirectory("goblin");
-					final File file = new File(temp.toFile(), substring);
-					Files.copy(entry.openStream(), file.toPath());
-					manager.addModule(file.getAbsolutePath());
-				} catch (final IOException e) {
-					LOGGER.warn(e.getMessage(), e);
+		if (Platform.isRunning()) {
+			final Bundle bundle = Platform.getBundle(GoblinActivator.PLUGIN_ID);
+			for (final String module : SearchParameters.modules) {
+				if (bundle == null) {
+					manager.addModule(module);
+				} else {
+					final URL entry = bundle.getEntry(module);
+					try {
+						final String substring = entry.getFile().substring(entry.getFile().lastIndexOf('/') + 1);
+						final Path temp = Files.createTempDirectory("goblin");
+						final File file = new File(temp.toFile(), substring);
+						Files.copy(entry.openStream(), file.toPath());
+						manager.addModule(file.getAbsolutePath());
+					} catch (final IOException e) {
+						LOGGER.warn(e.getMessage(), e);
+					}
 				}
 			}
 		}
@@ -195,7 +197,7 @@ public class SearchTypeGraph {
 		if (SearchParameters.useRepair) {
 			function.setSolutionRepairer(new VisibilityRepairer());
 		}
-		if(SearchParameters.useOptimizationRepair){
+		if (SearchParameters.useOptimizationRepair) {
 			function.setOptimizationRepairer(new VisibilityReducer());
 		}
 
@@ -223,8 +225,8 @@ public class SearchTypeGraph {
 
 	protected SearchExperiment<TransformationSolution> createExperiment(
 			final TransformationSearchOrchestration orchestration) {
-		final SearchExperiment<TransformationSolution> experiment = new SearchExperiment<>(
-				orchestration, SearchParameters.maxEvaluations);
+		final SearchExperiment<TransformationSolution> experiment = new SearchExperiment<>(orchestration,
+				SearchParameters.maxEvaluations);
 		experiment.setNumberOfRuns(SearchParameters.nrRuns);
 		experiment.addProgressListener(new SeedRuntimePrintListener());
 		return experiment;
@@ -233,7 +235,7 @@ public class SearchTypeGraph {
 	/**
 	 * Performs the search on the given model saving at the current location
 	 *
-	 * @param initialGraph The path of the given model
+	 * @param initialGraph   The path of the given model
 	 * @param solutionLength The desired solution length
 	 * @return A manager for accessing the search solution
 	 */
@@ -244,9 +246,9 @@ public class SearchTypeGraph {
 	/**
 	 * Performs the search on the given model
 	 *
-	 * @param initialGraph The path of the given model
+	 * @param initialGraph   The path of the given model
 	 * @param solutionLength The desired solution length
-	 * @param folder The output location
+	 * @param folder         The output location
 	 * @return A manager for accessing the search solution
 	 */
 	public TransformationResultManager performSearch(final String initialGraph, final int solutionLength, File folder) {
@@ -256,7 +258,7 @@ public class SearchTypeGraph {
 		final SearchExperiment<TransformationSolution> experiment = createExperiment(orchestration);
 		final long start = System.currentTimeMillis();
 		experiment.run();
-		final long duration = System.currentTimeMillis() -start;
+		final long duration = System.currentTimeMillis() - start;
 		try {
 			Files.write(new File(folder, "durationGoblinInMs.txt").toPath(), Long.toString(duration).getBytes());
 		} catch (final IOException e) {
@@ -272,7 +274,7 @@ public class SearchTypeGraph {
 		try {
 			jCommander.parse(args);
 		} catch (final ParameterException ex) {
-			LOGGER.log( Level.INFO, ex.getMessage());
+			LOGGER.log(Level.INFO, ex.getMessage());
 			jCommander.usage();
 			System.exit(-1);
 		}
@@ -287,19 +289,20 @@ public class SearchTypeGraph {
 	/**
 	 * The main method to execute an optimization
 	 *
-	 * @param args For the param have a look at the class @see org.gravity.goblin.SearchParameters
+	 * @param args For the param have a look at the class @see
+	 *             org.gravity.goblin.SearchParameters
 	 */
 	public static void main(final String... args) {
 		final SearchTypeGraph search = new SearchTypeGraph();
-		if(!search.handleInput(args)) {
+		if (!search.handleInput(args)) {
 			return;
 		}
 		BasicPackage.eINSTANCE.eClass();
-		LOGGER.log( Level.INFO, "Search started.");
+		LOGGER.log(Level.INFO, "Search started.");
 
 		search.initializeFitnessFunctions();
 		search.initializeConstraints();
 		search.performSearch(SearchParameters.initialModel, SearchParameters.solutiionLength);
-		LOGGER.log( Level.INFO, "Search finished.");
+		LOGGER.log(Level.INFO, "Search finished.");
 	}
 }

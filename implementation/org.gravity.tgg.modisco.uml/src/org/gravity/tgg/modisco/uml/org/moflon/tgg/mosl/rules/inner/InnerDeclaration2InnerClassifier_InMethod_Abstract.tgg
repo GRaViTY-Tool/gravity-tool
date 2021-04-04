@@ -1,0 +1,32 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule InnerDeclaration2InnerClassifier_InMethod_Abstract #with org.gravity.tgg.modisco.uml
+
+#source {
+	owner : ASTNode
+	
+	method : MAbstractMethodDefinition {
+		++-mInnerTypes->bodyDeclaration
+	}
+	
+	bodyDeclaration:AbstractTypeDeclaration
+}
+
+#target {	
+	uContainer:Classifier 
+	
+	feature:Classifier
+}
+
+#correspondence {
+	o2c : ASTNode2Element {
+		#src->owner
+		#trg->uContainer
+	}
+	
+	bd2ne:ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}

@@ -20,12 +20,12 @@
 }
 
 #correspondence {
-	ne2ne1:NamedElement2NamedElement {
+	ne2ne1:ASTNode2Element {
 		#src->jType
 		#trg->uType
 	}
 	
-	++ne2ne2:NamedElement2NamedElement{
+	++ne2ne2:ASTNode2Element{
 		#src->arrayType
 		#trg->uType
 	}

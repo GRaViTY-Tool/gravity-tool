@@ -31,19 +31,16 @@ import org.gravity.typegraph.basic.TypeGraph;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.gravity.typegraph.basic.impl.TMethodImpl#getSignatures
- * <em>Signatures</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TMethodImpl#getPg
- * <em>Pg</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodImpl#getSignatures <em>Signatures</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodImpl#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TMethodImpl extends TNameImpl implements TMethod {
 	/**
-	 * The cached value of the '{@link #getSignatures() <em>Signatures</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getSignatures() <em>Signatures</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSignatures()
 	 * @generated
 	 * @ordered
@@ -52,15 +49,14 @@ public class TMethodImpl extends TNameImpl implements TMethod {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected TMethodImpl() {
+		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -70,208 +66,183 @@ public class TMethodImpl extends TNameImpl implements TMethod {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TMethodSignature> getSignatures() {
-		if (this.signatures == null) {
-			this.signatures = new EObjectContainmentWithInverseEList<>(TMethodSignature.class, this,
-					BasicPackage.TMETHOD__SIGNATURES, BasicPackage.TMETHOD_SIGNATURE__METHOD);
+		if (signatures == null) {
+			signatures = new EObjectContainmentWithInverseEList<TMethodSignature>(TMethodSignature.class, this, BasicPackage.TMETHOD__SIGNATURES, BasicPackage.TMETHOD_SIGNATURE__METHOD);
 		}
-		return this.signatures;
+		return signatures;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public TypeGraph getPg() {
-		if (eContainerFeatureID() != BasicPackage.TMETHOD__PG) {
-			return null;
-		}
-		return (TypeGraph) eInternalContainer();
+	public TypeGraph getModel() {
+		if (eContainerFeatureID() != BasicPackage.TMETHOD__MODEL) return null;
+		return (TypeGraph)eInternalContainer();
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPg(final TypeGraph newPg, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newPg, BasicPackage.TMETHOD__PG, msgs);
+	public NotificationChain basicSetModel(TypeGraph newModel, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newModel, BasicPackage.TMETHOD__MODEL, msgs);
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public void setPg(final TypeGraph newPg) {
-		if ((newPg != eInternalContainer())
-				|| ((eContainerFeatureID() != BasicPackage.TMETHOD__PG) && (newPg != null))) {
-			if (EcoreUtil.isAncestor(this, newPg)) {
+	public void setModel(TypeGraph newModel) {
+		if (newModel != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TMETHOD__MODEL && newModel != null)) {
+			if (EcoreUtil.isAncestor(this, newModel))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null) {
+			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			if (newPg != null) {
-				msgs = ((InternalEObject) newPg).eInverseAdd(this, BasicPackage.TYPE_GRAPH__METHODS, TypeGraph.class,
-						msgs);
-			}
-			msgs = basicSetPg(newPg, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD__PG, newPg, newPg));
+			if (newModel != null)
+				msgs = ((InternalEObject)newModel).eInverseAdd(this, BasicPackage.TYPE_GRAPH__METHODS, TypeGraph.class, msgs);
+			msgs = basicSetModel(newModel, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD__MODEL, newModel, newModel));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TMETHOD__SIGNATURES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSignatures()).basicAdd(otherEnd, msgs);
-		case BasicPackage.TMETHOD__PG:
-			if (eInternalContainer() != null) {
-				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			return basicSetPg((TypeGraph) otherEnd, msgs);
+			case BasicPackage.TMETHOD__SIGNATURES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSignatures()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TMETHOD__MODEL:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetModel((TypeGraph)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-			final NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TMETHOD__SIGNATURES:
-			return ((InternalEList<?>) getSignatures()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TMETHOD__PG:
-			return basicSetPg(null, msgs);
+			case BasicPackage.TMETHOD__SIGNATURES:
+				return ((InternalEList<?>)getSignatures()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TMETHOD__MODEL:
+				return basicSetModel(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case BasicPackage.TMETHOD__PG:
-			return eInternalContainer().eInverseRemove(this, BasicPackage.TYPE_GRAPH__METHODS, TypeGraph.class, msgs);
+			case BasicPackage.TMETHOD__MODEL:
+				return eInternalContainer().eInverseRemove(this, BasicPackage.TYPE_GRAPH__METHODS, TypeGraph.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BasicPackage.TMETHOD__SIGNATURES:
-			return getSignatures();
-		case BasicPackage.TMETHOD__PG:
-			return getPg();
+			case BasicPackage.TMETHOD__SIGNATURES:
+				return getSignatures();
+			case BasicPackage.TMETHOD__MODEL:
+				return getModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue) {
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case BasicPackage.TMETHOD__SIGNATURES:
-			getSignatures().clear();
-			getSignatures().addAll((Collection<? extends TMethodSignature>) newValue);
-			return;
-		case BasicPackage.TMETHOD__PG:
-			setPg((TypeGraph) newValue);
-			return;
+			case BasicPackage.TMETHOD__SIGNATURES:
+				getSignatures().clear();
+				getSignatures().addAll((Collection<? extends TMethodSignature>)newValue);
+				return;
+			case BasicPackage.TMETHOD__MODEL:
+				setModel((TypeGraph)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID) {
+	public void eUnset(int featureID) {
 		switch (featureID) {
-		case BasicPackage.TMETHOD__SIGNATURES:
-			getSignatures().clear();
-			return;
-		case BasicPackage.TMETHOD__PG:
-			setPg((TypeGraph) null);
-			return;
+			case BasicPackage.TMETHOD__SIGNATURES:
+				getSignatures().clear();
+				return;
+			case BasicPackage.TMETHOD__MODEL:
+				setModel((TypeGraph)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID) {
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BasicPackage.TMETHOD__SIGNATURES:
-			return (this.signatures != null) && !this.signatures.isEmpty();
-		case BasicPackage.TMETHOD__PG:
-			return getPg() != null;
+			case BasicPackage.TMETHOD__SIGNATURES:
+				return signatures != null && !signatures.isEmpty();
+			case BasicPackage.TMETHOD__MODEL:
+				return getModel() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case BasicPackage.TMETHOD___GET_METHOD_SIGNATURE__TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST:
-			return getMethodSignature((TAbstractType) arguments.get(0), (Integer) arguments.get(1),
-					(Integer) arguments.get(2), (EList<TAbstractType>) arguments.get(3),
-					(EList<Integer>) arguments.get(4), (EList<Integer>) arguments.get(5));
-		case BasicPackage.TMETHOD___CREATE_METHOD_SIGNATURE__TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST:
-			return createMethodSignature((TAbstractType) arguments.get(0), (Integer) arguments.get(1),
-					(Integer) arguments.get(2), (EList<TAbstractType>) arguments.get(3),
-					(EList<Integer>) arguments.get(4), (EList<Integer>) arguments.get(5));
+			case BasicPackage.TMETHOD___GET_METHOD_SIGNATURE__TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST:
+				return getMethodSignature((TAbstractType)arguments.get(0), (Integer)arguments.get(1), (Integer)arguments.get(2), (EList<TAbstractType>)arguments.get(3), (EList<Integer>)arguments.get(4), (EList<Integer>)arguments.get(5));
+			case BasicPackage.TMETHOD___CREATE_METHOD_SIGNATURE__TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST:
+				return createMethodSignature((TAbstractType)arguments.get(0), (Integer)arguments.get(1), (Integer)arguments.get(2), (EList<TAbstractType>)arguments.get(3), (EList<Integer>)arguments.get(4), (EList<Integer>)arguments.get(5));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

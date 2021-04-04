@@ -101,57 +101,57 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass) {
+	public boolean isAppropriate_FWD(Match match, ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration,
+			TypeAccess eTypeAccess) {
 
 		Object[] result1_black = ClassExtendsClassImpl.pattern_ClassExtendsClass_0_1_initialbindings_blackBBBBB(this,
-				match, eTypeAccess, eClassDeclaration, eExtendedClass);
+				match, eExtendedClass, eClassDeclaration, eTypeAccess);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[eTypeAccess] = " + eTypeAccess + ", " + "[eClassDeclaration] = "
-					+ eClassDeclaration + ", " + "[eExtendedClass] = " + eExtendedClass + ".");
+					+ "[match] = " + match + ", " + "[eExtendedClass] = " + eExtendedClass + ", "
+					+ "[eClassDeclaration] = " + eClassDeclaration + ", " + "[eTypeAccess] = " + eTypeAccess + ".");
 		}
 
 		Object[] result2_bindingAndBlack = ClassExtendsClassImpl
-				.pattern_ClassExtendsClass_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, eTypeAccess,
-						eClassDeclaration, eExtendedClass);
+				.pattern_ClassExtendsClass_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, eExtendedClass,
+						eClassDeclaration, eTypeAccess);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[eTypeAccess] = " + eTypeAccess + ", " + "[eClassDeclaration] = "
-					+ eClassDeclaration + ", " + "[eExtendedClass] = " + eExtendedClass + ".");
+					+ "[match] = " + match + ", " + "[eExtendedClass] = " + eExtendedClass + ", "
+					+ "[eClassDeclaration] = " + eClassDeclaration + ", " + "[eTypeAccess] = " + eTypeAccess + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (ClassExtendsClassImpl.pattern_ClassExtendsClass_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = ClassExtendsClassImpl
-					.pattern_ClassExtendsClass_0_4_collectelementstobetranslated_blackBBBB(match, eTypeAccess,
-							eClassDeclaration, eExtendedClass);
+					.pattern_ClassExtendsClass_0_4_collectelementstobetranslated_blackBBBB(match, eExtendedClass,
+							eClassDeclaration, eTypeAccess);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[eTypeAccess] = " + eTypeAccess + ", " + "[eClassDeclaration] = " + eClassDeclaration + ", "
-						+ "[eExtendedClass] = " + eExtendedClass + ".");
+						+ "[eExtendedClass] = " + eExtendedClass + ", " + "[eClassDeclaration] = " + eClassDeclaration
+						+ ", " + "[eTypeAccess] = " + eTypeAccess + ".");
 			}
 			ClassExtendsClassImpl.pattern_ClassExtendsClass_0_4_collectelementstobetranslated_greenBBBBFFF(match,
-					eTypeAccess, eClassDeclaration, eExtendedClass);
-			//nothing EMoflonEdge eTypeAccess__eExtendedClass____type = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge eClassDeclaration__eTypeAccess____superClass = (EMoflonEdge) result4_green[6];
+					eExtendedClass, eClassDeclaration, eTypeAccess);
+			//nothing EMoflonEdge eClassDeclaration__eTypeAccess____superClass = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge eTypeAccess__eExtendedClass____type = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = ClassExtendsClassImpl
-					.pattern_ClassExtendsClass_0_5_collectcontextelements_blackBBBB(match, eTypeAccess,
-							eClassDeclaration, eExtendedClass);
+					.pattern_ClassExtendsClass_0_5_collectcontextelements_blackBBBB(match, eExtendedClass,
+							eClassDeclaration, eTypeAccess);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[eTypeAccess] = " + eTypeAccess + ", " + "[eClassDeclaration] = " + eClassDeclaration + ", "
-						+ "[eExtendedClass] = " + eExtendedClass + ".");
+						+ "[eExtendedClass] = " + eExtendedClass + ", " + "[eClassDeclaration] = " + eClassDeclaration
+						+ ", " + "[eTypeAccess] = " + eTypeAccess + ".");
 			}
-			ClassExtendsClassImpl.pattern_ClassExtendsClass_0_5_collectcontextelements_greenBBB(match,
-					eClassDeclaration, eExtendedClass);
+			ClassExtendsClassImpl.pattern_ClassExtendsClass_0_5_collectcontextelements_greenBBB(match, eExtendedClass,
+					eClassDeclaration);
 
 			// 
 			ClassExtendsClassImpl.pattern_ClassExtendsClass_0_6_registerobjectstomatch_expressionBBBBB(this, match,
-					eTypeAccess, eClassDeclaration, eExtendedClass);
+					eExtendedClass, eClassDeclaration, eTypeAccess);
 			return ClassExtendsClassImpl.pattern_ClassExtendsClass_0_7_expressionF();
 		} else {
 			return ClassExtendsClassImpl.pattern_ClassExtendsClass_0_8_expressionF();
@@ -172,15 +172,15 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeAccess eTypeAccess = (TypeAccess) result1_bindingAndBlack[0];
+		TClass tExtendedClass = (TClass) result1_bindingAndBlack[0];
 		TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result1_bindingAndBlack[1];
-		TClass tClass = (TClass) result1_bindingAndBlack[2];
-		TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		ClassDeclaration eExtendedClass = (ClassDeclaration) result1_bindingAndBlack[2];
+		TClass tClass = (TClass) result1_bindingAndBlack[3];
 		ClassDeclaration eClassDeclaration = (ClassDeclaration) result1_bindingAndBlack[4];
-		TClass tExtendedClass = (TClass) result1_bindingAndBlack[5];
-		ClassDeclaration eExtendedClass = (ClassDeclaration) result1_bindingAndBlack[6];
+		TypeAccess eTypeAccess = (TypeAccess) result1_bindingAndBlack[5];
+		TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
-		ClassExtendsClassImpl.pattern_ClassExtendsClass_1_1_performtransformation_greenBB(tClass, tExtendedClass);
+		ClassExtendsClassImpl.pattern_ClassExtendsClass_1_1_performtransformation_greenBB(tExtendedClass, tClass);
 
 		Object[] result2_black = ClassExtendsClassImpl
 				.pattern_ClassExtendsClass_1_2_collecttranslatedelements_blackB(eTypeAccess);
@@ -193,29 +193,29 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ClassExtendsClassImpl.pattern_ClassExtendsClass_1_3_bookkeepingforedges_blackBBBBBBBB(
-				ruleresult, eTypeAccess, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-				eClassDeclaration, tExtendedClass, eExtendedClass);
+				ruleresult, tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+				eTypeAccess, eExtendedClassToTExtendedClass);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[eTypeAccess] = " + eTypeAccess + ", " + "[eClassDeclarationToTClass] = "
-					+ eClassDeclarationToTClass + ", " + "[tClass] = " + tClass + ", "
-					+ "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass + ", "
-					+ "[eClassDeclaration] = " + eClassDeclaration + ", " + "[tExtendedClass] = " + tExtendedClass
-					+ ", " + "[eExtendedClass] = " + eExtendedClass + ".");
+					+ ", " + "[tExtendedClass] = " + tExtendedClass + ", " + "[eClassDeclarationToTClass] = "
+					+ eClassDeclarationToTClass + ", " + "[eExtendedClass] = " + eExtendedClass + ", " + "[tClass] = "
+					+ tClass + ", " + "[eClassDeclaration] = " + eClassDeclaration + ", " + "[eTypeAccess] = "
+					+ eTypeAccess + ", " + "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass
+					+ ".");
 		}
 		ClassExtendsClassImpl.pattern_ClassExtendsClass_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult,
-				eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass);
-		//nothing EMoflonEdge eTypeAccess__eExtendedClass____type = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[7];
+				tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess);
+		//nothing EMoflonEdge tClass__tExtendedClass____parentClasses = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge tExtendedClass__tClass____childClasses = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge eClassDeclaration__eTypeAccess____superClass = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tClass__tExtendedClass____parentClass = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tExtendedClass__tClass____childClasses = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge eTypeAccess__eExtendedClass____type = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		ClassExtendsClassImpl.pattern_ClassExtendsClass_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
-				eTypeAccess, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-				tExtendedClass, eExtendedClass);
+				tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
+				eExtendedClassToTExtendedClass);
 		return ClassExtendsClassImpl.pattern_ClassExtendsClass_1_6_expressionFB(ruleresult);
 	}
 
@@ -243,43 +243,43 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TypeAccess eTypeAccess = (TypeAccess) result2_binding[0];
+		ClassDeclaration eExtendedClass = (ClassDeclaration) result2_binding[0];
 		ClassDeclaration eClassDeclaration = (ClassDeclaration) result2_binding[1];
-		ClassDeclaration eExtendedClass = (ClassDeclaration) result2_binding[2];
-		for (Object[] result2_black : ClassExtendsClassImpl.pattern_ClassExtendsClass_2_2_corematch_blackBFFFBFBB(
-				eTypeAccess, eClassDeclaration, eExtendedClass, match)) {
+		TypeAccess eTypeAccess = (TypeAccess) result2_binding[2];
+		for (Object[] result2_black : ClassExtendsClassImpl.pattern_ClassExtendsClass_2_2_corematch_blackFFBFBBFB(
+				eExtendedClass, eClassDeclaration, eTypeAccess, match)) {
+			TClass tExtendedClass = (TClass) result2_black[0];
 			TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result2_black[1];
-			TClass tClass = (TClass) result2_black[2];
-			TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result2_black[3];
-			TClass tExtendedClass = (TClass) result2_black[5];
+			TClass tClass = (TClass) result2_black[3];
+			TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : ClassExtendsClassImpl.pattern_ClassExtendsClass_2_3_findcontext_blackBBBBBBB(
-					eTypeAccess, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-					tExtendedClass, eExtendedClass)) {
+					tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
+					eExtendedClassToTExtendedClass)) {
 				Object[] result3_green = ClassExtendsClassImpl
-						.pattern_ClassExtendsClass_2_3_findcontext_greenBBBBBBBFFFFFFFF(eTypeAccess,
-								eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-								tExtendedClass, eExtendedClass);
+						.pattern_ClassExtendsClass_2_3_findcontext_greenBBBBBBBFFFFFFFF(tExtendedClass,
+								eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
+								eExtendedClassToTExtendedClass);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge eTypeAccess__eExtendedClass____type = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge eClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge eClassDeclaration__eTypeAccess____superClass = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge eExtendedClassToTExtendedClass__tExtendedClass____target = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge eExtendedClassToTExtendedClass__eExtendedClass____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge eClassDeclarationToTClass__eClassDeclaration____source = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge eClassDeclarationToTClass__eClassDeclaration____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge eClassDeclaration__eTypeAccess____superClass = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge eTypeAccess__eExtendedClass____type = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge eClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge eExtendedClassToTExtendedClass__tExtendedClass____target = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge eExtendedClassToTExtendedClass__eExtendedClass____source = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = ClassExtendsClassImpl
 						.pattern_ClassExtendsClass_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-								eTypeAccess, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-								eClassDeclaration, tExtendedClass, eExtendedClass);
+								tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+								eTypeAccess, eExtendedClassToTExtendedClass);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eTypeAccess] = " + eTypeAccess
-							+ ", " + "[eClassDeclarationToTClass] = " + eClassDeclarationToTClass + ", " + "[tClass] = "
-							+ tClass + ", " + "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass
-							+ ", " + "[eClassDeclaration] = " + eClassDeclaration + ", " + "[tExtendedClass] = "
-							+ tExtendedClass + ", " + "[eExtendedClass] = " + eExtendedClass + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tExtendedClass] = "
+							+ tExtendedClass + ", " + "[eClassDeclarationToTClass] = " + eClassDeclarationToTClass
+							+ ", " + "[eExtendedClass] = " + eExtendedClass + ", " + "[tClass] = " + tClass + ", "
+							+ "[eClassDeclaration] = " + eClassDeclaration + ", " + "[eTypeAccess] = " + eTypeAccess
+							+ ", " + "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -308,11 +308,11 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass) {
-		match.registerObject("eTypeAccess", eTypeAccess);
-		match.registerObject("eClassDeclaration", eClassDeclaration);
+	public void registerObjectsToMatch_FWD(Match match, ClassDeclaration eExtendedClass,
+			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
 		match.registerObject("eExtendedClass", eExtendedClass);
+		match.registerObject("eClassDeclaration", eClassDeclaration);
+		match.registerObject("eTypeAccess", eTypeAccess);
 
 	}
 
@@ -321,8 +321,8 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, ClassDeclaration eExtendedClass,
+			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -351,10 +351,10 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeAccess eTypeAccess,
-			TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
+			TypeToTAbstractType eExtendedClassToTExtendedClass) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -369,13 +369,13 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("eTypeAccess", eTypeAccess);
-		isApplicableMatch.registerObject("eClassDeclarationToTClass", eClassDeclarationToTClass);
-		isApplicableMatch.registerObject("tClass", tClass);
-		isApplicableMatch.registerObject("eExtendedClassToTExtendedClass", eExtendedClassToTExtendedClass);
-		isApplicableMatch.registerObject("eClassDeclaration", eClassDeclaration);
 		isApplicableMatch.registerObject("tExtendedClass", tExtendedClass);
+		isApplicableMatch.registerObject("eClassDeclarationToTClass", eClassDeclarationToTClass);
 		isApplicableMatch.registerObject("eExtendedClass", eExtendedClass);
+		isApplicableMatch.registerObject("tClass", tClass);
+		isApplicableMatch.registerObject("eClassDeclaration", eClassDeclaration);
+		isApplicableMatch.registerObject("eTypeAccess", eTypeAccess);
+		isApplicableMatch.registerObject("eExtendedClassToTExtendedClass", eExtendedClassToTExtendedClass);
 		return csp;
 	}
 
@@ -393,16 +393,16 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject eTypeAccess,
-			EObject eClassDeclarationToTClass, EObject tClass, EObject eExtendedClassToTExtendedClass,
-			EObject eClassDeclaration, EObject tExtendedClass, EObject eExtendedClass) {
-		ruleresult.registerObject("eTypeAccess", eTypeAccess);
-		ruleresult.registerObject("eClassDeclarationToTClass", eClassDeclarationToTClass);
-		ruleresult.registerObject("tClass", tClass);
-		ruleresult.registerObject("eExtendedClassToTExtendedClass", eExtendedClassToTExtendedClass);
-		ruleresult.registerObject("eClassDeclaration", eClassDeclaration);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tExtendedClass,
+			EObject eClassDeclarationToTClass, EObject eExtendedClass, EObject tClass, EObject eClassDeclaration,
+			EObject eTypeAccess, EObject eExtendedClassToTExtendedClass) {
 		ruleresult.registerObject("tExtendedClass", tExtendedClass);
+		ruleresult.registerObject("eClassDeclarationToTClass", eClassDeclarationToTClass);
 		ruleresult.registerObject("eExtendedClass", eExtendedClass);
+		ruleresult.registerObject("tClass", tClass);
+		ruleresult.registerObject("eClassDeclaration", eClassDeclaration);
+		ruleresult.registerObject("eTypeAccess", eTypeAccess);
+		ruleresult.registerObject("eExtendedClassToTExtendedClass", eExtendedClassToTExtendedClass);
 
 	}
 
@@ -421,51 +421,51 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TClass tClass, TClass tExtendedClass) {
+	public boolean isAppropriate_BWD(Match match, TClass tExtendedClass, TClass tClass) {
 
 		Object[] result1_black = ClassExtendsClassImpl.pattern_ClassExtendsClass_10_1_initialbindings_blackBBBB(this,
-				match, tClass, tExtendedClass);
+				match, tExtendedClass, tClass);
 		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
-							+ ", " + "[tClass] = " + tClass + ", " + "[tExtendedClass] = " + tExtendedClass + ".");
+							+ ", " + "[tExtendedClass] = " + tExtendedClass + ", " + "[tClass] = " + tClass + ".");
 		}
 
 		Object[] result2_bindingAndBlack = ClassExtendsClassImpl
-				.pattern_ClassExtendsClass_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tClass, tExtendedClass);
+				.pattern_ClassExtendsClass_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tExtendedClass, tClass);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
-							+ ", " + "[tClass] = " + tClass + ", " + "[tExtendedClass] = " + tExtendedClass + ".");
+							+ ", " + "[tExtendedClass] = " + tExtendedClass + ", " + "[tClass] = " + tClass + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (ClassExtendsClassImpl.pattern_ClassExtendsClass_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = ClassExtendsClassImpl
-					.pattern_ClassExtendsClass_10_4_collectelementstobetranslated_blackBBB(match, tClass,
-							tExtendedClass);
+					.pattern_ClassExtendsClass_10_4_collectelementstobetranslated_blackBBB(match, tExtendedClass,
+							tClass);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tClass] = " + tClass + ", " + "[tExtendedClass] = " + tExtendedClass + ".");
+						+ "[tExtendedClass] = " + tExtendedClass + ", " + "[tClass] = " + tClass + ".");
 			}
-			ClassExtendsClassImpl.pattern_ClassExtendsClass_10_4_collectelementstobetranslated_greenBBBFF(match, tClass,
-					tExtendedClass);
-			//nothing EMoflonEdge tClass__tExtendedClass____parentClass = (EMoflonEdge) result4_green[3];
+			ClassExtendsClassImpl.pattern_ClassExtendsClass_10_4_collectelementstobetranslated_greenBBBFF(match,
+					tExtendedClass, tClass);
+			//nothing EMoflonEdge tClass__tExtendedClass____parentClasses = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge tExtendedClass__tClass____childClasses = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = ClassExtendsClassImpl
-					.pattern_ClassExtendsClass_10_5_collectcontextelements_blackBBB(match, tClass, tExtendedClass);
+					.pattern_ClassExtendsClass_10_5_collectcontextelements_blackBBB(match, tExtendedClass, tClass);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tClass] = " + tClass + ", " + "[tExtendedClass] = " + tExtendedClass + ".");
+						+ "[tExtendedClass] = " + tExtendedClass + ", " + "[tClass] = " + tClass + ".");
 			}
-			ClassExtendsClassImpl.pattern_ClassExtendsClass_10_5_collectcontextelements_greenBBB(match, tClass,
-					tExtendedClass);
+			ClassExtendsClassImpl.pattern_ClassExtendsClass_10_5_collectcontextelements_greenBBB(match, tExtendedClass,
+					tClass);
 
 			// 
 			ClassExtendsClassImpl.pattern_ClassExtendsClass_10_6_registerobjectstomatch_expressionBBBB(this, match,
-					tClass, tExtendedClass);
+					tExtendedClass, tClass);
 			return ClassExtendsClassImpl.pattern_ClassExtendsClass_10_7_expressionF();
 		} else {
 			return ClassExtendsClassImpl.pattern_ClassExtendsClass_10_8_expressionF();
@@ -486,16 +486,16 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result1_bindingAndBlack[0];
-		TClass tClass = (TClass) result1_bindingAndBlack[1];
-		TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result1_bindingAndBlack[2];
-		ClassDeclaration eClassDeclaration = (ClassDeclaration) result1_bindingAndBlack[3];
-		TClass tExtendedClass = (TClass) result1_bindingAndBlack[4];
-		ClassDeclaration eExtendedClass = (ClassDeclaration) result1_bindingAndBlack[5];
+		TClass tExtendedClass = (TClass) result1_bindingAndBlack[0];
+		TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result1_bindingAndBlack[1];
+		ClassDeclaration eExtendedClass = (ClassDeclaration) result1_bindingAndBlack[2];
+		TClass tClass = (TClass) result1_bindingAndBlack[3];
+		ClassDeclaration eClassDeclaration = (ClassDeclaration) result1_bindingAndBlack[4];
+		TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		Object[] result1_green = ClassExtendsClassImpl
-				.pattern_ClassExtendsClass_11_1_performtransformation_greenFBB(eClassDeclaration, eExtendedClass);
-		TypeAccess eTypeAccess = (TypeAccess) result1_green[0];
+				.pattern_ClassExtendsClass_11_1_performtransformation_greenBBF(eExtendedClass, eClassDeclaration);
+		TypeAccess eTypeAccess = (TypeAccess) result1_green[2];
 
 		Object[] result2_black = ClassExtendsClassImpl
 				.pattern_ClassExtendsClass_11_2_collecttranslatedelements_blackB(eTypeAccess);
@@ -508,29 +508,29 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ClassExtendsClassImpl.pattern_ClassExtendsClass_11_3_bookkeepingforedges_blackBBBBBBBB(
-				ruleresult, eTypeAccess, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-				eClassDeclaration, tExtendedClass, eExtendedClass);
+				ruleresult, tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+				eTypeAccess, eExtendedClassToTExtendedClass);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[eTypeAccess] = " + eTypeAccess + ", " + "[eClassDeclarationToTClass] = "
-					+ eClassDeclarationToTClass + ", " + "[tClass] = " + tClass + ", "
-					+ "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass + ", "
-					+ "[eClassDeclaration] = " + eClassDeclaration + ", " + "[tExtendedClass] = " + tExtendedClass
-					+ ", " + "[eExtendedClass] = " + eExtendedClass + ".");
+					+ ", " + "[tExtendedClass] = " + tExtendedClass + ", " + "[eClassDeclarationToTClass] = "
+					+ eClassDeclarationToTClass + ", " + "[eExtendedClass] = " + eExtendedClass + ", " + "[tClass] = "
+					+ tClass + ", " + "[eClassDeclaration] = " + eClassDeclaration + ", " + "[eTypeAccess] = "
+					+ eTypeAccess + ", " + "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass
+					+ ".");
 		}
 		ClassExtendsClassImpl.pattern_ClassExtendsClass_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult,
-				eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass);
-		//nothing EMoflonEdge eTypeAccess__eExtendedClass____type = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[7];
+				tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess);
+		//nothing EMoflonEdge tClass__tExtendedClass____parentClasses = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge tExtendedClass__tClass____childClasses = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge eClassDeclaration__eTypeAccess____superClass = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tClass__tExtendedClass____parentClass = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tExtendedClass__tClass____childClasses = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge eTypeAccess__eExtendedClass____type = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		ClassExtendsClassImpl.pattern_ClassExtendsClass_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
-				eTypeAccess, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-				tExtendedClass, eExtendedClass);
+				tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
+				eExtendedClassToTExtendedClass);
 		return ClassExtendsClassImpl.pattern_ClassExtendsClass_11_6_expressionFB(ruleresult);
 	}
 
@@ -558,41 +558,41 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TClass tClass = (TClass) result2_binding[0];
-		TClass tExtendedClass = (TClass) result2_binding[1];
+		TClass tExtendedClass = (TClass) result2_binding[0];
+		TClass tClass = (TClass) result2_binding[1];
 		for (Object[] result2_black : ClassExtendsClassImpl
-				.pattern_ClassExtendsClass_12_2_corematch_blackFBFFBFB(tClass, tExtendedClass, match)) {
-			TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result2_black[0];
-			TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result2_black[2];
-			ClassDeclaration eClassDeclaration = (ClassDeclaration) result2_black[3];
-			ClassDeclaration eExtendedClass = (ClassDeclaration) result2_black[5];
+				.pattern_ClassExtendsClass_12_2_corematch_blackBFFBFFB(tExtendedClass, tClass, match)) {
+			TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result2_black[1];
+			ClassDeclaration eExtendedClass = (ClassDeclaration) result2_black[2];
+			ClassDeclaration eClassDeclaration = (ClassDeclaration) result2_black[4];
+			TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : ClassExtendsClassImpl.pattern_ClassExtendsClass_12_3_findcontext_blackBBBBBB(
-					eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-					tExtendedClass, eExtendedClass)) {
+					tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+					eExtendedClassToTExtendedClass)) {
 				Object[] result3_green = ClassExtendsClassImpl
-						.pattern_ClassExtendsClass_12_3_findcontext_greenBBBBBBFFFFFFF(eClassDeclarationToTClass,
-								tClass, eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass,
-								eExtendedClass);
+						.pattern_ClassExtendsClass_12_3_findcontext_greenBBBBBBFFFFFFF(tExtendedClass,
+								eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+								eExtendedClassToTExtendedClass);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge eClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge eExtendedClassToTExtendedClass__tExtendedClass____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tClass__tExtendedClass____parentClass = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tExtendedClass__tClass____childClasses = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge eExtendedClassToTExtendedClass__eExtendedClass____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge eClassDeclarationToTClass__eClassDeclaration____source = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tClass__tExtendedClass____parentClasses = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge tExtendedClass__tClass____childClasses = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge eClassDeclarationToTClass__eClassDeclaration____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge eClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge eExtendedClassToTExtendedClass__tExtendedClass____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge eExtendedClassToTExtendedClass__eExtendedClass____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = ClassExtendsClassImpl
 						.pattern_ClassExtendsClass_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-								tExtendedClass, eExtendedClass);
+								tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+								eExtendedClassToTExtendedClass);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eClassDeclarationToTClass] = "
-							+ eClassDeclarationToTClass + ", " + "[tClass] = " + tClass + ", "
-							+ "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass + ", "
-							+ "[eClassDeclaration] = " + eClassDeclaration + ", " + "[tExtendedClass] = "
-							+ tExtendedClass + ", " + "[eExtendedClass] = " + eExtendedClass + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tExtendedClass] = "
+							+ tExtendedClass + ", " + "[eClassDeclarationToTClass] = " + eClassDeclarationToTClass
+							+ ", " + "[eExtendedClass] = " + eExtendedClass + ", " + "[tClass] = " + tClass + ", "
+							+ "[eClassDeclaration] = " + eClassDeclaration + ", "
+							+ "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -621,9 +621,9 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TClass tClass, TClass tExtendedClass) {
-		match.registerObject("tClass", tClass);
+	public void registerObjectsToMatch_BWD(Match match, TClass tExtendedClass, TClass tClass) {
 		match.registerObject("tExtendedClass", tExtendedClass);
+		match.registerObject("tClass", tClass);
 
 	}
 
@@ -632,7 +632,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TClass tClass, TClass tExtendedClass) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TClass tExtendedClass, TClass tClass) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -661,10 +661,9 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeToTAbstractType eExtendedClassToTExtendedClass) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -679,12 +678,12 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("eClassDeclarationToTClass", eClassDeclarationToTClass);
-		isApplicableMatch.registerObject("tClass", tClass);
-		isApplicableMatch.registerObject("eExtendedClassToTExtendedClass", eExtendedClassToTExtendedClass);
-		isApplicableMatch.registerObject("eClassDeclaration", eClassDeclaration);
 		isApplicableMatch.registerObject("tExtendedClass", tExtendedClass);
+		isApplicableMatch.registerObject("eClassDeclarationToTClass", eClassDeclarationToTClass);
 		isApplicableMatch.registerObject("eExtendedClass", eExtendedClass);
+		isApplicableMatch.registerObject("tClass", tClass);
+		isApplicableMatch.registerObject("eClassDeclaration", eClassDeclaration);
+		isApplicableMatch.registerObject("eExtendedClassToTExtendedClass", eExtendedClassToTExtendedClass);
 		return csp;
 	}
 
@@ -702,16 +701,16 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject eTypeAccess,
-			EObject eClassDeclarationToTClass, EObject tClass, EObject eExtendedClassToTExtendedClass,
-			EObject eClassDeclaration, EObject tExtendedClass, EObject eExtendedClass) {
-		ruleresult.registerObject("eTypeAccess", eTypeAccess);
-		ruleresult.registerObject("eClassDeclarationToTClass", eClassDeclarationToTClass);
-		ruleresult.registerObject("tClass", tClass);
-		ruleresult.registerObject("eExtendedClassToTExtendedClass", eExtendedClassToTExtendedClass);
-		ruleresult.registerObject("eClassDeclaration", eClassDeclaration);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tExtendedClass,
+			EObject eClassDeclarationToTClass, EObject eExtendedClass, EObject tClass, EObject eClassDeclaration,
+			EObject eTypeAccess, EObject eExtendedClassToTExtendedClass) {
 		ruleresult.registerObject("tExtendedClass", tExtendedClass);
+		ruleresult.registerObject("eClassDeclarationToTClass", eClassDeclarationToTClass);
 		ruleresult.registerObject("eExtendedClass", eExtendedClass);
+		ruleresult.registerObject("tClass", tClass);
+		ruleresult.registerObject("eClassDeclaration", eClassDeclaration);
+		ruleresult.registerObject("eTypeAccess", eTypeAccess);
+		ruleresult.registerObject("eExtendedClassToTExtendedClass", eExtendedClassToTExtendedClass);
 
 	}
 
@@ -729,7 +728,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_695(EMoflonEdge _edge_parentClass) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_10(EMoflonEdge _edge_parentClasses) {
 
 		Object[] result1_bindingAndBlack = ClassExtendsClassImpl
 				.pattern_ClassExtendsClass_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -744,9 +743,9 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 		// ForEach 
 		for (Object[] result2_black : ClassExtendsClassImpl
-				.pattern_ClassExtendsClass_20_2_testcorematchandDECs_blackFFB(_edge_parentClass)) {
-			TClass tClass = (TClass) result2_black[0];
-			TClass tExtendedClass = (TClass) result2_black[1];
+				.pattern_ClassExtendsClass_20_2_testcorematchandDECs_blackFFB(_edge_parentClasses)) {
+			TClass tExtendedClass = (TClass) result2_black[0];
+			TClass tClass = (TClass) result2_black[1];
 			Object[] result2_green = ClassExtendsClassImpl
 					.pattern_ClassExtendsClass_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -754,7 +753,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 			// 
 			if (ClassExtendsClassImpl
 					.pattern_ClassExtendsClass_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-							match, tClass, tExtendedClass)) {
+							match, tExtendedClass, tClass)) {
 				// 
 				if (ClassExtendsClassImpl
 						.pattern_ClassExtendsClass_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -786,7 +785,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_714(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_10(EMoflonEdge _edge_superClass) {
 
 		Object[] result1_bindingAndBlack = ClassExtendsClassImpl
 				.pattern_ClassExtendsClass_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -801,10 +800,10 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 		// ForEach 
 		for (Object[] result2_black : ClassExtendsClassImpl
-				.pattern_ClassExtendsClass_21_2_testcorematchandDECs_blackFFFB(_edge_type)) {
-			TypeAccess eTypeAccess = (TypeAccess) result2_black[0];
+				.pattern_ClassExtendsClass_21_2_testcorematchandDECs_blackFFFB(_edge_superClass)) {
+			ClassDeclaration eExtendedClass = (ClassDeclaration) result2_black[0];
 			ClassDeclaration eClassDeclaration = (ClassDeclaration) result2_black[1];
-			ClassDeclaration eExtendedClass = (ClassDeclaration) result2_black[2];
+			TypeAccess eTypeAccess = (TypeAccess) result2_black[2];
 			Object[] result2_green = ClassExtendsClassImpl
 					.pattern_ClassExtendsClass_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -812,7 +811,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 			// 
 			if (ClassExtendsClassImpl
 					.pattern_ClassExtendsClass_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(this,
-							match, eTypeAccess, eClassDeclaration, eExtendedClass)) {
+							match, eExtendedClass, eClassDeclaration, eTypeAccess)) {
 				// 
 				if (ClassExtendsClassImpl
 						.pattern_ClassExtendsClass_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -919,44 +918,44 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TypeAccess eTypeAccess = (TypeAccess) result2_bindingAndBlack[0];
-		TClass tClass = (TClass) result2_bindingAndBlack[1];
-		ClassDeclaration eClassDeclaration = (ClassDeclaration) result2_bindingAndBlack[2];
-		TClass tExtendedClass = (TClass) result2_bindingAndBlack[3];
-		ClassDeclaration eExtendedClass = (ClassDeclaration) result2_bindingAndBlack[4];
+		TClass tExtendedClass = (TClass) result2_bindingAndBlack[0];
+		ClassDeclaration eExtendedClass = (ClassDeclaration) result2_bindingAndBlack[1];
+		TClass tClass = (TClass) result2_bindingAndBlack[2];
+		ClassDeclaration eClassDeclaration = (ClassDeclaration) result2_bindingAndBlack[3];
+		TypeAccess eTypeAccess = (TypeAccess) result2_bindingAndBlack[4];
 
 		Object[] result3_bindingAndBlack = ClassExtendsClassImpl
-				.pattern_ClassExtendsClass_24_3_solvecsp_bindingAndBlackFBBBBBBBB(this, eTypeAccess, tClass,
-						eClassDeclaration, tExtendedClass, eExtendedClass, sourceMatch, targetMatch);
+				.pattern_ClassExtendsClass_24_3_solvecsp_bindingAndBlackFBBBBBBBB(this, tExtendedClass, eExtendedClass,
+						tClass, eClassDeclaration, eTypeAccess, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[eTypeAccess] = " + eTypeAccess + ", " + "[tClass] = " + tClass + ", " + "[eClassDeclaration] = "
-					+ eClassDeclaration + ", " + "[tExtendedClass] = " + tExtendedClass + ", " + "[eExtendedClass] = "
-					+ eExtendedClass + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch
-					+ ".");
+					+ "[tExtendedClass] = " + tExtendedClass + ", " + "[eExtendedClass] = " + eExtendedClass + ", "
+					+ "[tClass] = " + tClass + ", " + "[eClassDeclaration] = " + eClassDeclaration + ", "
+					+ "[eTypeAccess] = " + eTypeAccess + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (ClassExtendsClassImpl.pattern_ClassExtendsClass_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : ClassExtendsClassImpl
-					.pattern_ClassExtendsClass_24_5_matchcorrcontext_blackFBFBBBBB(tClass, eClassDeclaration,
-							tExtendedClass, eExtendedClass, sourceMatch, targetMatch)) {
-				TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result5_black[0];
-				TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result5_black[2];
+					.pattern_ClassExtendsClass_24_5_matchcorrcontext_blackBFBBBFBB(tExtendedClass, eExtendedClass,
+							tClass, eClassDeclaration, sourceMatch, targetMatch)) {
+				TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result5_black[1];
+				TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result5_black[5];
 				Object[] result5_green = ClassExtendsClassImpl
 						.pattern_ClassExtendsClass_24_5_matchcorrcontext_greenBBBBF(eClassDeclarationToTClass,
 								eExtendedClassToTExtendedClass, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = ClassExtendsClassImpl
-						.pattern_ClassExtendsClass_24_6_createcorrespondence_blackBBBBBB(eTypeAccess, tClass,
-								eClassDeclaration, tExtendedClass, eExtendedClass, ccMatch);
+						.pattern_ClassExtendsClass_24_6_createcorrespondence_blackBBBBBB(tExtendedClass, eExtendedClass,
+								tClass, eClassDeclaration, eTypeAccess, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[eTypeAccess] = "
-							+ eTypeAccess + ", " + "[tClass] = " + tClass + ", " + "[eClassDeclaration] = "
-							+ eClassDeclaration + ", " + "[tExtendedClass] = " + tExtendedClass + ", "
-							+ "[eExtendedClass] = " + eExtendedClass + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tExtendedClass] = "
+							+ tExtendedClass + ", " + "[eExtendedClass] = " + eExtendedClass + ", " + "[tClass] = "
+							+ tClass + ", " + "[eClassDeclaration] = " + eClassDeclaration + ", " + "[eTypeAccess] = "
+							+ eTypeAccess + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = ClassExtendsClassImpl
@@ -979,8 +978,8 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TypeAccess eTypeAccess, TClass tClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TClass tExtendedClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1009,10 +1008,10 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass) {// 
+	public boolean checkDEC_FWD(ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration,
+			TypeAccess eTypeAccess) {// 
 		Object[] result1_black = ClassExtendsClassImpl.pattern_ClassExtendsClass_27_1_matchtggpattern_blackBBB(
-				eTypeAccess, eClassDeclaration, eExtendedClass);
+				eExtendedClass, eClassDeclaration, eTypeAccess);
 		if (result1_black != null) {
 			return ClassExtendsClassImpl.pattern_ClassExtendsClass_27_2_expressionF();
 		} else {
@@ -1026,9 +1025,9 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TClass tClass, TClass tExtendedClass) {// 
-		Object[] result1_black = ClassExtendsClassImpl.pattern_ClassExtendsClass_28_1_matchtggpattern_blackBB(tClass,
-				tExtendedClass);
+	public boolean checkDEC_BWD(TClass tExtendedClass, TClass tClass) {// 
+		Object[] result1_black = ClassExtendsClassImpl
+				.pattern_ClassExtendsClass_28_1_matchtggpattern_blackBB(tExtendedClass, tClass);
 		if (result1_black != null) {
 			return ClassExtendsClassImpl.pattern_ClassExtendsClass_28_2_expressionF();
 		} else {
@@ -1043,8 +1042,8 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * @generated
 	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			TypeToTAbstractType eClassDeclarationToTClassParameter,
-			TypeToTAbstractType eExtendedClassToTExtendedClassParameter) {
+			TypeToTAbstractType eExtendedClassToTExtendedClassParameter,
+			TypeToTAbstractType eClassDeclarationToTClassParameter) {
 
 		Object[] result1_black = ClassExtendsClassImpl.pattern_ClassExtendsClass_29_1_createresult_blackB(this);
 		if (result1_black == null) {
@@ -1057,50 +1056,50 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		// ForEach 
 		for (Object[] result2_black : ClassExtendsClassImpl
 				.pattern_ClassExtendsClass_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList eClassDeclarationToTClassList = (RuleEntryList) result2_black[0];
-			TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result2_black[1];
-			TClass tClass = (TClass) result2_black[2];
-			ClassDeclaration eClassDeclaration = (ClassDeclaration) result2_black[3];
-			//nothing RuleEntryList eExtendedClassToTExtendedClassList = (RuleEntryList) result2_black[4];
-			TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result2_black[5];
-			TClass tExtendedClass = (TClass) result2_black[6];
-			ClassDeclaration eExtendedClass = (ClassDeclaration) result2_black[7];
+			//nothing RuleEntryList eExtendedClassToTExtendedClassList = (RuleEntryList) result2_black[0];
+			TClass tExtendedClass = (TClass) result2_black[1];
+			TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result2_black[2];
+			ClassDeclaration eExtendedClass = (ClassDeclaration) result2_black[3];
+			//nothing RuleEntryList eClassDeclarationToTClassList = (RuleEntryList) result2_black[4];
+			TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result2_black[5];
+			ClassDeclaration eClassDeclaration = (ClassDeclaration) result2_black[6];
+			TClass tClass = (TClass) result2_black[7];
 
 			Object[] result3_bindingAndBlack = ClassExtendsClassImpl
 					.pattern_ClassExtendsClass_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-							tExtendedClass, eExtendedClass, ruleResult);
+							tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+							eExtendedClassToTExtendedClass, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eClassDeclarationToTClass] = "
-						+ eClassDeclarationToTClass + ", " + "[tClass] = " + tClass + ", "
-						+ "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass + ", "
-						+ "[eClassDeclaration] = " + eClassDeclaration + ", " + "[tExtendedClass] = " + tExtendedClass
-						+ ", " + "[eExtendedClass] = " + eExtendedClass + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tExtendedClass] = " + tExtendedClass
+						+ ", " + "[eClassDeclarationToTClass] = " + eClassDeclarationToTClass + ", "
+						+ "[eExtendedClass] = " + eExtendedClass + ", " + "[tClass] = " + tClass + ", "
+						+ "[eClassDeclaration] = " + eClassDeclaration + ", " + "[eExtendedClassToTExtendedClass] = "
+						+ eExtendedClassToTExtendedClass + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (ClassExtendsClassImpl.pattern_ClassExtendsClass_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = ClassExtendsClassImpl.pattern_ClassExtendsClass_29_5_checknacs_blackBBBBBB(
-						eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-						tExtendedClass, eExtendedClass);
+						tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+						eExtendedClassToTExtendedClass);
 				if (result5_black != null) {
 
 					Object[] result6_black = ClassExtendsClassImpl.pattern_ClassExtendsClass_29_6_perform_blackBBBBBBB(
-							eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-							tExtendedClass, eExtendedClass, ruleResult);
+							tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+							eExtendedClassToTExtendedClass, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: "
-								+ "[eClassDeclarationToTClass] = " + eClassDeclarationToTClass + ", " + "[tClass] = "
-								+ tClass + ", " + "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass
-								+ ", " + "[eClassDeclaration] = " + eClassDeclaration + ", " + "[tExtendedClass] = "
-								+ tExtendedClass + ", " + "[eExtendedClass] = " + eExtendedClass + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tExtendedClass] = "
+								+ tExtendedClass + ", " + "[eClassDeclarationToTClass] = " + eClassDeclarationToTClass
+								+ ", " + "[eExtendedClass] = " + eExtendedClass + ", " + "[tClass] = " + tClass + ", "
+								+ "[eClassDeclaration] = " + eClassDeclaration + ", "
+								+ "[eExtendedClassToTExtendedClass] = " + eExtendedClassToTExtendedClass + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					ClassExtendsClassImpl.pattern_ClassExtendsClass_29_6_perform_greenFBBBBB(tClass, eClassDeclaration,
-							tExtendedClass, eExtendedClass, ruleResult);
-					//nothing TypeAccess eTypeAccess = (TypeAccess) result6_green[0];
+					ClassExtendsClassImpl.pattern_ClassExtendsClass_29_6_perform_greenBBBBFB(tExtendedClass,
+							eExtendedClass, tClass, eClassDeclaration, ruleResult);
+					//nothing TypeAccess eTypeAccess = (TypeAccess) result6_green[4];
 
 				} else {
 				}
@@ -1117,10 +1116,10 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeToTAbstractType eExtendedClassToTExtendedClass,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1135,12 +1134,12 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("eClassDeclarationToTClass", eClassDeclarationToTClass);
-		isApplicableMatch.registerObject("tClass", tClass);
-		isApplicableMatch.registerObject("eExtendedClassToTExtendedClass", eExtendedClassToTExtendedClass);
-		isApplicableMatch.registerObject("eClassDeclaration", eClassDeclaration);
 		isApplicableMatch.registerObject("tExtendedClass", tExtendedClass);
+		isApplicableMatch.registerObject("eClassDeclarationToTClass", eClassDeclarationToTClass);
 		isApplicableMatch.registerObject("eExtendedClass", eExtendedClass);
+		isApplicableMatch.registerObject("tClass", tClass);
+		isApplicableMatch.registerObject("eClassDeclaration", eClassDeclaration);
+		isApplicableMatch.registerObject("eExtendedClassToTExtendedClass", eExtendedClassToTExtendedClass);
 		return csp;
 	}
 
@@ -1161,27 +1160,27 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPROPRIATE_FWD__MATCH_TYPEACCESS_CLASSDECLARATION_CLASSDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(ClassDeclaration) arguments.get(2), (ClassDeclaration) arguments.get(3));
+		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPROPRIATE_FWD__MATCH_CLASSDECLARATION_CLASSDECLARATION_TYPEACCESS:
+			return isAppropriate_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(ClassDeclaration) arguments.get(2), (TypeAccess) arguments.get(3));
 		case RulesPackage.CLASS_EXTENDS_CLASS___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_EXTENDS_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEACCESS_CLASSDECLARATION_CLASSDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(ClassDeclaration) arguments.get(2), (ClassDeclaration) arguments.get(3));
+		case RulesPackage.CLASS_EXTENDS_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSDECLARATION_CLASSDECLARATION_TYPEACCESS:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(ClassDeclaration) arguments.get(2), (TypeAccess) arguments.get(3));
 			return null;
-		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEACCESS_CLASSDECLARATION_CLASSDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(ClassDeclaration) arguments.get(2), (ClassDeclaration) arguments.get(3));
+		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSDECLARATION_CLASSDECLARATION_TYPEACCESS:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(ClassDeclaration) arguments.get(2), (TypeAccess) arguments.get(3));
 		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEACCESS_TYPETOTABSTRACTTYPE_TCLASS_TYPETOTABSTRACTTYPE_CLASSDECLARATION_TCLASS_CLASSDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TypeAccess) arguments.get(1),
-					(TypeToTAbstractType) arguments.get(2), (TClass) arguments.get(3),
-					(TypeToTAbstractType) arguments.get(4), (ClassDeclaration) arguments.get(5),
-					(TClass) arguments.get(6), (ClassDeclaration) arguments.get(7));
+		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TCLASS_TYPETOTABSTRACTTYPE_CLASSDECLARATION_TCLASS_CLASSDECLARATION_TYPEACCESS_TYPETOTABSTRACTTYPE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TClass) arguments.get(1),
+					(TypeToTAbstractType) arguments.get(2), (ClassDeclaration) arguments.get(3),
+					(TClass) arguments.get(4), (ClassDeclaration) arguments.get(5), (TypeAccess) arguments.get(6),
+					(TypeToTAbstractType) arguments.get(7));
 		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.CLASS_EXTENDS_CLASS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1205,11 +1204,11 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 					(TClass) arguments.get(2));
 		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TCLASS_TYPETOTABSTRACTTYPE_CLASSDECLARATION_TCLASS_CLASSDECLARATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (TClass) arguments.get(2),
-					(TypeToTAbstractType) arguments.get(3), (ClassDeclaration) arguments.get(4),
-					(TClass) arguments.get(5), (ClassDeclaration) arguments.get(6));
+		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TCLASS_TYPETOTABSTRACTTYPE_CLASSDECLARATION_TCLASS_CLASSDECLARATION_TYPETOTABSTRACTTYPE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TClass) arguments.get(1),
+					(TypeToTAbstractType) arguments.get(2), (ClassDeclaration) arguments.get(3),
+					(TClass) arguments.get(4), (ClassDeclaration) arguments.get(5),
+					(TypeToTAbstractType) arguments.get(6));
 		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.CLASS_EXTENDS_CLASS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1219,36 +1218,35 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 			return null;
 		case RulesPackage.CLASS_EXTENDS_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_695__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_695((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_714__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_714((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_10__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_10((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_10__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_10((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_EXTENDS_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_EXTENDS_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__TYPEACCESS_TCLASS_CLASSDECLARATION_TCLASS_CLASSDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TypeAccess) arguments.get(0), (TClass) arguments.get(1),
-					(ClassDeclaration) arguments.get(2), (TClass) arguments.get(3), (ClassDeclaration) arguments.get(4),
+		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__TCLASS_CLASSDECLARATION_TCLASS_CLASSDECLARATION_TYPEACCESS_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TClass) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(TClass) arguments.get(2), (ClassDeclaration) arguments.get(3), (TypeAccess) arguments.get(4),
 					(Match) arguments.get(5), (Match) arguments.get(6));
 		case RulesPackage.CLASS_EXTENDS_CLASS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.CLASS_EXTENDS_CLASS___CHECK_DEC_FWD__TYPEACCESS_CLASSDECLARATION_CLASSDECLARATION:
-			return checkDEC_FWD((TypeAccess) arguments.get(0), (ClassDeclaration) arguments.get(1),
-					(ClassDeclaration) arguments.get(2));
+		case RulesPackage.CLASS_EXTENDS_CLASS___CHECK_DEC_FWD__CLASSDECLARATION_CLASSDECLARATION_TYPEACCESS:
+			return checkDEC_FWD((ClassDeclaration) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(TypeAccess) arguments.get(2));
 		case RulesPackage.CLASS_EXTENDS_CLASS___CHECK_DEC_BWD__TCLASS_TCLASS:
 			return checkDEC_BWD((TClass) arguments.get(0), (TClass) arguments.get(1));
 		case RulesPackage.CLASS_EXTENDS_CLASS___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE_TYPETOTABSTRACTTYPE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1),
 					(TypeToTAbstractType) arguments.get(2));
-		case RulesPackage.CLASS_EXTENDS_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TCLASS_TYPETOTABSTRACTTYPE_CLASSDECLARATION_TCLASS_CLASSDECLARATION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (TClass) arguments.get(2),
-					(TypeToTAbstractType) arguments.get(3), (ClassDeclaration) arguments.get(4),
-					(TClass) arguments.get(5), (ClassDeclaration) arguments.get(6),
-					(ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.CLASS_EXTENDS_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TCLASS_TYPETOTABSTRACTTYPE_CLASSDECLARATION_TCLASS_CLASSDECLARATION_TYPETOTABSTRACTTYPE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TClass) arguments.get(1),
+					(TypeToTAbstractType) arguments.get(2), (ClassDeclaration) arguments.get(3),
+					(TClass) arguments.get(4), (ClassDeclaration) arguments.get(5),
+					(TypeToTAbstractType) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.CLASS_EXTENDS_CLASS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1256,19 +1254,19 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_0_1_initialbindings_blackBBBBB(ClassExtendsClass _this,
-			Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
+			Match match, ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
 		if (!eClassDeclaration.equals(eExtendedClass)) {
-			return new Object[] { _this, match, eTypeAccess, eClassDeclaration, eExtendedClass };
+			return new Object[] { _this, match, eExtendedClass, eClassDeclaration, eTypeAccess };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_0_2_SolveCSP_bindingFBBBBB(ClassExtendsClass _this,
-			Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, eTypeAccess, eClassDeclaration, eExtendedClass);
+			Match match, ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, eExtendedClass, eClassDeclaration, eTypeAccess);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, eTypeAccess, eClassDeclaration, eExtendedClass };
+			return new Object[] { csp, _this, match, eExtendedClass, eClassDeclaration, eTypeAccess };
 		}
 		return null;
 	}
@@ -1278,9 +1276,9 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_0_2_SolveCSP_bindingAndBlackFBBBBB(ClassExtendsClass _this,
-			Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
+			Match match, ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
 		Object[] result_pattern_ClassExtendsClass_0_2_SolveCSP_binding = pattern_ClassExtendsClass_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, eTypeAccess, eClassDeclaration, eExtendedClass);
+				_this, match, eExtendedClass, eClassDeclaration, eTypeAccess);
 		if (result_pattern_ClassExtendsClass_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ClassExtendsClass_0_2_SolveCSP_binding[0];
 
@@ -1288,7 +1286,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 					csp);
 			if (result_pattern_ClassExtendsClass_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, eTypeAccess, eClassDeclaration, eExtendedClass };
+				return new Object[] { csp, _this, match, eExtendedClass, eClassDeclaration, eTypeAccess };
 			}
 		}
 		return null;
@@ -1301,59 +1299,59 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_0_4_collectelementstobetranslated_blackBBBB(Match match,
-			TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
+			ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
 		if (!eClassDeclaration.equals(eExtendedClass)) {
-			return new Object[] { match, eTypeAccess, eClassDeclaration, eExtendedClass };
+			return new Object[] { match, eExtendedClass, eClassDeclaration, eTypeAccess };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_0_4_collectelementstobetranslated_greenBBBBFFF(Match match,
-			TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
+			ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
+		EMoflonEdge eClassDeclaration__eTypeAccess____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eTypeAccess__eExtendedClass____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eClassDeclaration__eTypeAccess____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(eTypeAccess);
+		String eClassDeclaration__eTypeAccess____superClass_name_prime = "superClass";
 		String eTypeAccess__eExtendedClass____type_name_prime = "type";
 		String eExtendedClass__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String eClassDeclaration__eTypeAccess____superClass_name_prime = "superClass";
+		eClassDeclaration__eTypeAccess____superClass.setSrc(eClassDeclaration);
+		eClassDeclaration__eTypeAccess____superClass.setTrg(eTypeAccess);
+		match.getToBeTranslatedEdges().add(eClassDeclaration__eTypeAccess____superClass);
 		eTypeAccess__eExtendedClass____type.setSrc(eTypeAccess);
 		eTypeAccess__eExtendedClass____type.setTrg(eExtendedClass);
 		match.getToBeTranslatedEdges().add(eTypeAccess__eExtendedClass____type);
 		eExtendedClass__eTypeAccess____usagesInTypeAccess.setSrc(eExtendedClass);
 		eExtendedClass__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
 		match.getToBeTranslatedEdges().add(eExtendedClass__eTypeAccess____usagesInTypeAccess);
-		eClassDeclaration__eTypeAccess____superClass.setSrc(eClassDeclaration);
-		eClassDeclaration__eTypeAccess____superClass.setTrg(eTypeAccess);
-		match.getToBeTranslatedEdges().add(eClassDeclaration__eTypeAccess____superClass);
+		eClassDeclaration__eTypeAccess____superClass.setName(eClassDeclaration__eTypeAccess____superClass_name_prime);
 		eTypeAccess__eExtendedClass____type.setName(eTypeAccess__eExtendedClass____type_name_prime);
 		eExtendedClass__eTypeAccess____usagesInTypeAccess
 				.setName(eExtendedClass__eTypeAccess____usagesInTypeAccess_name_prime);
-		eClassDeclaration__eTypeAccess____superClass.setName(eClassDeclaration__eTypeAccess____superClass_name_prime);
-		return new Object[] { match, eTypeAccess, eClassDeclaration, eExtendedClass,
-				eTypeAccess__eExtendedClass____type, eExtendedClass__eTypeAccess____usagesInTypeAccess,
-				eClassDeclaration__eTypeAccess____superClass };
+		return new Object[] { match, eExtendedClass, eClassDeclaration, eTypeAccess,
+				eClassDeclaration__eTypeAccess____superClass, eTypeAccess__eExtendedClass____type,
+				eExtendedClass__eTypeAccess____usagesInTypeAccess };
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_0_5_collectcontextelements_blackBBBB(Match match,
-			TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
+			ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
 		if (!eClassDeclaration.equals(eExtendedClass)) {
-			return new Object[] { match, eTypeAccess, eClassDeclaration, eExtendedClass };
+			return new Object[] { match, eExtendedClass, eClassDeclaration, eTypeAccess };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_0_5_collectcontextelements_greenBBB(Match match,
-			ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
-		match.getContextNodes().add(eClassDeclaration);
+			ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration) {
 		match.getContextNodes().add(eExtendedClass);
-		return new Object[] { match, eClassDeclaration, eExtendedClass };
+		match.getContextNodes().add(eClassDeclaration);
+		return new Object[] { match, eExtendedClass, eClassDeclaration };
 	}
 
 	public static final void pattern_ClassExtendsClass_0_6_registerobjectstomatch_expressionBBBBB(
-			ClassExtendsClass _this, Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass) {
-		_this.registerObjectsToMatch_FWD(match, eTypeAccess, eClassDeclaration, eExtendedClass);
+			ClassExtendsClass _this, Match match, ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration,
+			TypeAccess eTypeAccess) {
+		_this.registerObjectsToMatch_FWD(match, eExtendedClass, eClassDeclaration, eTypeAccess);
 
 	}
 
@@ -1369,37 +1367,37 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 	public static final Object[] pattern_ClassExtendsClass_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("eTypeAccess");
+		EObject _localVariable_0 = isApplicableMatch.getObject("tExtendedClass");
 		EObject _localVariable_1 = isApplicableMatch.getObject("eClassDeclarationToTClass");
-		EObject _localVariable_2 = isApplicableMatch.getObject("tClass");
-		EObject _localVariable_3 = isApplicableMatch.getObject("eExtendedClassToTExtendedClass");
+		EObject _localVariable_2 = isApplicableMatch.getObject("eExtendedClass");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tClass");
 		EObject _localVariable_4 = isApplicableMatch.getObject("eClassDeclaration");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tExtendedClass");
-		EObject _localVariable_6 = isApplicableMatch.getObject("eExtendedClass");
-		EObject tmpETypeAccess = _localVariable_0;
+		EObject _localVariable_5 = isApplicableMatch.getObject("eTypeAccess");
+		EObject _localVariable_6 = isApplicableMatch.getObject("eExtendedClassToTExtendedClass");
+		EObject tmpTExtendedClass = _localVariable_0;
 		EObject tmpEClassDeclarationToTClass = _localVariable_1;
-		EObject tmpTClass = _localVariable_2;
-		EObject tmpEExtendedClassToTExtendedClass = _localVariable_3;
+		EObject tmpEExtendedClass = _localVariable_2;
+		EObject tmpTClass = _localVariable_3;
 		EObject tmpEClassDeclaration = _localVariable_4;
-		EObject tmpTExtendedClass = _localVariable_5;
-		EObject tmpEExtendedClass = _localVariable_6;
-		if (tmpETypeAccess instanceof TypeAccess) {
-			TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+		EObject tmpETypeAccess = _localVariable_5;
+		EObject tmpEExtendedClassToTExtendedClass = _localVariable_6;
+		if (tmpTExtendedClass instanceof TClass) {
+			TClass tExtendedClass = (TClass) tmpTExtendedClass;
 			if (tmpEClassDeclarationToTClass instanceof TypeToTAbstractType) {
 				TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) tmpEClassDeclarationToTClass;
-				if (tmpTClass instanceof TClass) {
-					TClass tClass = (TClass) tmpTClass;
-					if (tmpEExtendedClassToTExtendedClass instanceof TypeToTAbstractType) {
-						TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) tmpEExtendedClassToTExtendedClass;
+				if (tmpEExtendedClass instanceof ClassDeclaration) {
+					ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
+					if (tmpTClass instanceof TClass) {
+						TClass tClass = (TClass) tmpTClass;
 						if (tmpEClassDeclaration instanceof ClassDeclaration) {
 							ClassDeclaration eClassDeclaration = (ClassDeclaration) tmpEClassDeclaration;
-							if (tmpTExtendedClass instanceof TClass) {
-								TClass tExtendedClass = (TClass) tmpTExtendedClass;
-								if (tmpEExtendedClass instanceof ClassDeclaration) {
-									ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
-									return new Object[] { eTypeAccess, eClassDeclarationToTClass, tClass,
-											eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass,
-											eExtendedClass, isApplicableMatch };
+							if (tmpETypeAccess instanceof TypeAccess) {
+								TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+								if (tmpEExtendedClassToTExtendedClass instanceof TypeToTAbstractType) {
+									TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) tmpEExtendedClassToTExtendedClass;
+									return new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass,
+											tClass, eClassDeclaration, eTypeAccess, eExtendedClassToTExtendedClass,
+											isApplicableMatch };
 								}
 							}
 						}
@@ -1411,9 +1409,9 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_1_1_performtransformation_blackBBBBBBBFBB(
-			TypeAccess eTypeAccess, TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass, ClassExtendsClass _this,
+			TClass tExtendedClass, TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass,
+			TClass tClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
+			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassExtendsClass _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)) {
 			if (!tClass.equals(tExtendedClass)) {
@@ -1421,9 +1419,9 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { eTypeAccess, eClassDeclarationToTClass, tClass,
-									eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass,
-									csp, _this, isApplicableMatch };
+							return new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+									eClassDeclaration, eTypeAccess, eExtendedClassToTExtendedClass, csp, _this,
+									isApplicableMatch };
 						}
 					}
 				}
@@ -1437,31 +1435,31 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		Object[] result_pattern_ClassExtendsClass_1_1_performtransformation_binding = pattern_ClassExtendsClass_1_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_ClassExtendsClass_1_1_performtransformation_binding != null) {
-			TypeAccess eTypeAccess = (TypeAccess) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[0];
+			TClass tExtendedClass = (TClass) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[0];
 			TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[1];
-			TClass tClass = (TClass) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[2];
-			TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[3];
+			ClassDeclaration eExtendedClass = (ClassDeclaration) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[2];
+			TClass tClass = (TClass) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[3];
 			ClassDeclaration eClassDeclaration = (ClassDeclaration) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[4];
-			TClass tExtendedClass = (TClass) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[5];
-			ClassDeclaration eExtendedClass = (ClassDeclaration) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[6];
+			TypeAccess eTypeAccess = (TypeAccess) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[5];
+			TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result_pattern_ClassExtendsClass_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_ClassExtendsClass_1_1_performtransformation_black = pattern_ClassExtendsClass_1_1_performtransformation_blackBBBBBBBFBB(
-					eTypeAccess, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-					tExtendedClass, eExtendedClass, _this, isApplicableMatch);
+					tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
+					eExtendedClassToTExtendedClass, _this, isApplicableMatch);
 			if (result_pattern_ClassExtendsClass_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_ClassExtendsClass_1_1_performtransformation_black[7];
 
-				return new Object[] { eTypeAccess, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-						eClassDeclaration, tExtendedClass, eExtendedClass, csp, _this, isApplicableMatch };
+				return new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+						eClassDeclaration, eTypeAccess, eExtendedClassToTExtendedClass, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_1_1_performtransformation_greenBB(TClass tClass,
-			TClass tExtendedClass) {
-		tClass.setParentClass(tExtendedClass);
-		return new Object[] { tClass, tExtendedClass };
+	public static final Object[] pattern_ClassExtendsClass_1_1_performtransformation_greenBB(TClass tExtendedClass,
+			TClass tClass) {
+		tClass.getParentClasses().add(tExtendedClass);
+		return new Object[] { tExtendedClass, tClass };
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_1_2_collecttranslatedelements_blackB(
@@ -1477,42 +1475,43 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject eTypeAccess, EObject eClassDeclarationToTClass, EObject tClass,
-			EObject eExtendedClassToTExtendedClass, EObject eClassDeclaration, EObject tExtendedClass,
-			EObject eExtendedClass) {
-		if (!eTypeAccess.equals(tClass)) {
-			if (!eTypeAccess.equals(tExtendedClass)) {
-				if (!eClassDeclarationToTClass.equals(eTypeAccess)) {
-					if (!eClassDeclarationToTClass.equals(tClass)) {
+			PerformRuleResult ruleresult, EObject tExtendedClass, EObject eClassDeclarationToTClass,
+			EObject eExtendedClass, EObject tClass, EObject eClassDeclaration, EObject eTypeAccess,
+			EObject eExtendedClassToTExtendedClass) {
+		if (!eClassDeclarationToTClass.equals(tExtendedClass)) {
+			if (!eClassDeclarationToTClass.equals(eExtendedClass)) {
+				if (!eClassDeclarationToTClass.equals(tClass)) {
+					if (!eClassDeclarationToTClass.equals(eTypeAccess)) {
 						if (!eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)) {
-							if (!eClassDeclarationToTClass.equals(tExtendedClass)) {
-								if (!eClassDeclarationToTClass.equals(eExtendedClass)) {
-									if (!tClass.equals(tExtendedClass)) {
-										if (!eExtendedClassToTExtendedClass.equals(eTypeAccess)) {
-											if (!eExtendedClassToTExtendedClass.equals(tClass)) {
-												if (!eExtendedClassToTExtendedClass.equals(tExtendedClass)) {
-													if (!eClassDeclaration.equals(eTypeAccess)) {
-														if (!eClassDeclaration.equals(eClassDeclarationToTClass)) {
+							if (!eExtendedClass.equals(tExtendedClass)) {
+								if (!eExtendedClass.equals(tClass)) {
+									if (!eExtendedClass.equals(eTypeAccess)) {
+										if (!eExtendedClass.equals(eExtendedClassToTExtendedClass)) {
+											if (!tClass.equals(tExtendedClass)) {
+												if (!eClassDeclaration.equals(tExtendedClass)) {
+													if (!eClassDeclaration.equals(eClassDeclarationToTClass)) {
+														if (!eClassDeclaration.equals(eExtendedClass)) {
 															if (!eClassDeclaration.equals(tClass)) {
-																if (!eClassDeclaration
-																		.equals(eExtendedClassToTExtendedClass)) {
-																	if (!eClassDeclaration.equals(tExtendedClass)) {
-																		if (!eClassDeclaration.equals(eExtendedClass)) {
-																			if (!eExtendedClass.equals(eTypeAccess)) {
-																				if (!eExtendedClass.equals(tClass)) {
-																					if (!eExtendedClass.equals(
-																							eExtendedClassToTExtendedClass)) {
-																						if (!eExtendedClass.equals(
-																								tExtendedClass)) {
+																if (!eClassDeclaration.equals(eTypeAccess)) {
+																	if (!eClassDeclaration
+																			.equals(eExtendedClassToTExtendedClass)) {
+																		if (!eTypeAccess.equals(tExtendedClass)) {
+																			if (!eTypeAccess.equals(tClass)) {
+																				if (!eExtendedClassToTExtendedClass
+																						.equals(tExtendedClass)) {
+																					if (!eExtendedClassToTExtendedClass
+																							.equals(tClass)) {
+																						if (!eExtendedClassToTExtendedClass
+																								.equals(eTypeAccess)) {
 																							return new Object[] {
 																									ruleresult,
-																									eTypeAccess,
-																									eClassDeclarationToTClass,
-																									tClass,
-																									eExtendedClassToTExtendedClass,
-																									eClassDeclaration,
 																									tExtendedClass,
-																									eExtendedClass };
+																									eClassDeclarationToTClass,
+																									eExtendedClass,
+																									tClass,
+																									eClassDeclaration,
+																									eTypeAccess,
+																									eExtendedClassToTExtendedClass };
 																						}
 																					}
 																				}
@@ -1538,53 +1537,53 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject eTypeAccess, EObject tClass, EObject eClassDeclaration,
-			EObject tExtendedClass, EObject eExtendedClass) {
+			PerformRuleResult ruleresult, EObject tExtendedClass, EObject eExtendedClass, EObject tClass,
+			EObject eClassDeclaration, EObject eTypeAccess) {
+		EMoflonEdge tClass__tExtendedClass____parentClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tExtendedClass__tClass____childClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eClassDeclaration__eTypeAccess____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eTypeAccess__eExtendedClass____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eClassDeclaration__eTypeAccess____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tClass__tExtendedClass____parentClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tExtendedClass__tClass____childClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ClassExtendsClass";
+		String tClass__tExtendedClass____parentClasses_name_prime = "parentClasses";
+		String tExtendedClass__tClass____childClasses_name_prime = "childClasses";
+		String eClassDeclaration__eTypeAccess____superClass_name_prime = "superClass";
 		String eTypeAccess__eExtendedClass____type_name_prime = "type";
 		String eExtendedClass__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String eClassDeclaration__eTypeAccess____superClass_name_prime = "superClass";
-		String tClass__tExtendedClass____parentClass_name_prime = "parentClass";
-		String tExtendedClass__tClass____childClasses_name_prime = "childClasses";
+		tClass__tExtendedClass____parentClasses.setSrc(tClass);
+		tClass__tExtendedClass____parentClasses.setTrg(tExtendedClass);
+		ruleresult.getCreatedEdges().add(tClass__tExtendedClass____parentClasses);
+		tExtendedClass__tClass____childClasses.setSrc(tExtendedClass);
+		tExtendedClass__tClass____childClasses.setTrg(tClass);
+		ruleresult.getCreatedEdges().add(tExtendedClass__tClass____childClasses);
+		eClassDeclaration__eTypeAccess____superClass.setSrc(eClassDeclaration);
+		eClassDeclaration__eTypeAccess____superClass.setTrg(eTypeAccess);
+		ruleresult.getTranslatedEdges().add(eClassDeclaration__eTypeAccess____superClass);
 		eTypeAccess__eExtendedClass____type.setSrc(eTypeAccess);
 		eTypeAccess__eExtendedClass____type.setTrg(eExtendedClass);
 		ruleresult.getTranslatedEdges().add(eTypeAccess__eExtendedClass____type);
 		eExtendedClass__eTypeAccess____usagesInTypeAccess.setSrc(eExtendedClass);
 		eExtendedClass__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
 		ruleresult.getTranslatedEdges().add(eExtendedClass__eTypeAccess____usagesInTypeAccess);
-		eClassDeclaration__eTypeAccess____superClass.setSrc(eClassDeclaration);
-		eClassDeclaration__eTypeAccess____superClass.setTrg(eTypeAccess);
-		ruleresult.getTranslatedEdges().add(eClassDeclaration__eTypeAccess____superClass);
-		tClass__tExtendedClass____parentClass.setSrc(tClass);
-		tClass__tExtendedClass____parentClass.setTrg(tExtendedClass);
-		ruleresult.getCreatedEdges().add(tClass__tExtendedClass____parentClass);
-		tExtendedClass__tClass____childClasses.setSrc(tExtendedClass);
-		tExtendedClass__tClass____childClasses.setTrg(tClass);
-		ruleresult.getCreatedEdges().add(tExtendedClass__tClass____childClasses);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		tClass__tExtendedClass____parentClasses.setName(tClass__tExtendedClass____parentClasses_name_prime);
+		tExtendedClass__tClass____childClasses.setName(tExtendedClass__tClass____childClasses_name_prime);
+		eClassDeclaration__eTypeAccess____superClass.setName(eClassDeclaration__eTypeAccess____superClass_name_prime);
 		eTypeAccess__eExtendedClass____type.setName(eTypeAccess__eExtendedClass____type_name_prime);
 		eExtendedClass__eTypeAccess____usagesInTypeAccess
 				.setName(eExtendedClass__eTypeAccess____usagesInTypeAccess_name_prime);
-		eClassDeclaration__eTypeAccess____superClass.setName(eClassDeclaration__eTypeAccess____superClass_name_prime);
-		tClass__tExtendedClass____parentClass.setName(tClass__tExtendedClass____parentClass_name_prime);
-		tExtendedClass__tClass____childClasses.setName(tExtendedClass__tClass____childClasses_name_prime);
-		return new Object[] { ruleresult, eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass,
-				eTypeAccess__eExtendedClass____type, eExtendedClass__eTypeAccess____usagesInTypeAccess,
-				eClassDeclaration__eTypeAccess____superClass, tClass__tExtendedClass____parentClass,
-				tExtendedClass__tClass____childClasses };
+		return new Object[] { ruleresult, tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
+				tClass__tExtendedClass____parentClasses, tExtendedClass__tClass____childClasses,
+				eClassDeclaration__eTypeAccess____superClass, eTypeAccess__eExtendedClass____type,
+				eExtendedClass__eTypeAccess____usagesInTypeAccess };
 	}
 
 	public static final void pattern_ClassExtendsClass_1_5_registerobjects_expressionBBBBBBBBB(ClassExtendsClass _this,
-			PerformRuleResult ruleresult, EObject eTypeAccess, EObject eClassDeclarationToTClass, EObject tClass,
-			EObject eExtendedClassToTExtendedClass, EObject eClassDeclaration, EObject tExtendedClass,
-			EObject eExtendedClass) {
-		_this.registerObjects_FWD(ruleresult, eTypeAccess, eClassDeclarationToTClass, tClass,
-				eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass);
+			PerformRuleResult ruleresult, EObject tExtendedClass, EObject eClassDeclarationToTClass,
+			EObject eExtendedClass, EObject tClass, EObject eClassDeclaration, EObject eTypeAccess,
+			EObject eExtendedClassToTExtendedClass) {
+		_this.registerObjects_FWD(ruleresult, tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+				eClassDeclaration, eTypeAccess, eExtendedClassToTExtendedClass);
 
 	}
 
@@ -1643,44 +1642,44 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_2_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("eTypeAccess");
+		EObject _localVariable_0 = match.getObject("eExtendedClass");
 		EObject _localVariable_1 = match.getObject("eClassDeclaration");
-		EObject _localVariable_2 = match.getObject("eExtendedClass");
-		EObject tmpETypeAccess = _localVariable_0;
+		EObject _localVariable_2 = match.getObject("eTypeAccess");
+		EObject tmpEExtendedClass = _localVariable_0;
 		EObject tmpEClassDeclaration = _localVariable_1;
-		EObject tmpEExtendedClass = _localVariable_2;
-		if (tmpETypeAccess instanceof TypeAccess) {
-			TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+		EObject tmpETypeAccess = _localVariable_2;
+		if (tmpEExtendedClass instanceof ClassDeclaration) {
+			ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
 			if (tmpEClassDeclaration instanceof ClassDeclaration) {
 				ClassDeclaration eClassDeclaration = (ClassDeclaration) tmpEClassDeclaration;
-				if (tmpEExtendedClass instanceof ClassDeclaration) {
-					ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
-					return new Object[] { eTypeAccess, eClassDeclaration, eExtendedClass, match };
+				if (tmpETypeAccess instanceof TypeAccess) {
+					TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+					return new Object[] { eExtendedClass, eClassDeclaration, eTypeAccess, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_ClassExtendsClass_2_2_corematch_blackBFFFBFBB(TypeAccess eTypeAccess,
-			ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass, Match match) {
+	public static final Iterable<Object[]> pattern_ClassExtendsClass_2_2_corematch_blackFFBFBBFB(
+			ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!eClassDeclaration.equals(eExtendedClass)) {
-			for (TypeToTAbstractType eExtendedClassToTExtendedClass : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(eExtendedClass, TypeToTAbstractType.class, "source")) {
-				TAbstractType tmpTExtendedClass = eExtendedClassToTExtendedClass.getTarget();
-				if (tmpTExtendedClass instanceof TClass) {
-					TClass tExtendedClass = (TClass) tmpTExtendedClass;
-					for (TypeToTAbstractType eClassDeclarationToTClass : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(eClassDeclaration, TypeToTAbstractType.class, "source")) {
+			for (TypeToTAbstractType eClassDeclarationToTClass : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(eClassDeclaration, TypeToTAbstractType.class, "source")) {
+				TAbstractType tmpTClass = eClassDeclarationToTClass.getTarget();
+				if (tmpTClass instanceof TClass) {
+					TClass tClass = (TClass) tmpTClass;
+					for (TypeToTAbstractType eExtendedClassToTExtendedClass : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(eExtendedClass, TypeToTAbstractType.class, "source")) {
 						if (!eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)) {
-							TAbstractType tmpTClass = eClassDeclarationToTClass.getTarget();
-							if (tmpTClass instanceof TClass) {
-								TClass tClass = (TClass) tmpTClass;
+							TAbstractType tmpTExtendedClass = eExtendedClassToTExtendedClass.getTarget();
+							if (tmpTExtendedClass instanceof TClass) {
+								TClass tExtendedClass = (TClass) tmpTExtendedClass;
 								if (!tClass.equals(tExtendedClass)) {
-									_result.add(new Object[] { eTypeAccess, eClassDeclarationToTClass, tClass,
-											eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass,
-											eExtendedClass, match });
+									_result.add(new Object[] { tExtendedClass, eClassDeclarationToTClass,
+											eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
+											eExtendedClassToTExtendedClass, match });
 								}
 							}
 
@@ -1693,23 +1692,23 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_ClassExtendsClass_2_3_findcontext_blackBBBBBBB(
-			TypeAccess eTypeAccess, TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {
+	public static final Iterable<Object[]> pattern_ClassExtendsClass_2_3_findcontext_blackBBBBBBB(TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
+			TypeToTAbstractType eExtendedClassToTExtendedClass) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)) {
 			if (!tClass.equals(tExtendedClass)) {
 				if (!eClassDeclaration.equals(eExtendedClass)) {
-					if (eExtendedClass.equals(eTypeAccess.getType())) {
-						if (tClass.equals(eClassDeclarationToTClass.getTarget())) {
-							if (eTypeAccess.equals(eClassDeclaration.getSuperClass())) {
-								if (tExtendedClass.equals(eExtendedClassToTExtendedClass.getTarget())) {
-									if (eExtendedClass.equals(eExtendedClassToTExtendedClass.getSource())) {
-										if (eClassDeclaration.equals(eClassDeclarationToTClass.getSource())) {
-											_result.add(new Object[] { eTypeAccess, eClassDeclarationToTClass, tClass,
-													eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass,
-													eExtendedClass });
+					if (eClassDeclaration.equals(eClassDeclarationToTClass.getSource())) {
+						if (eTypeAccess.equals(eClassDeclaration.getSuperClass())) {
+							if (eExtendedClass.equals(eTypeAccess.getType())) {
+								if (tClass.equals(eClassDeclarationToTClass.getTarget())) {
+									if (tExtendedClass.equals(eExtendedClassToTExtendedClass.getTarget())) {
+										if (eExtendedClass.equals(eExtendedClassToTExtendedClass.getSource())) {
+											_result.add(new Object[] { tExtendedClass, eClassDeclarationToTClass,
+													eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
+													eExtendedClassToTExtendedClass });
 										}
 									}
 								}
@@ -1722,35 +1721,41 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return _result;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_2_3_findcontext_greenBBBBBBBFFFFFFFF(TypeAccess eTypeAccess,
-			TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {
+	public static final Object[] pattern_ClassExtendsClass_2_3_findcontext_greenBBBBBBBFFFFFFFF(TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
+			TypeToTAbstractType eExtendedClassToTExtendedClass) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge eClassDeclarationToTClass__eClassDeclaration____source = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
+		EMoflonEdge eClassDeclaration__eTypeAccess____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eTypeAccess__eExtendedClass____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eClassDeclaration__eTypeAccess____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eExtendedClassToTExtendedClass__tExtendedClass____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge eExtendedClassToTExtendedClass__eExtendedClass____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge eClassDeclarationToTClass__eClassDeclaration____source = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
+		String eClassDeclarationToTClass__eClassDeclaration____source_name_prime = "source";
+		String eClassDeclaration__eTypeAccess____superClass_name_prime = "superClass";
 		String eTypeAccess__eExtendedClass____type_name_prime = "type";
 		String eExtendedClass__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String eClassDeclarationToTClass__tClass____target_name_prime = "target";
-		String eClassDeclaration__eTypeAccess____superClass_name_prime = "superClass";
 		String eExtendedClassToTExtendedClass__tExtendedClass____target_name_prime = "target";
 		String eExtendedClassToTExtendedClass__eExtendedClass____source_name_prime = "source";
-		String eClassDeclarationToTClass__eClassDeclaration____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(eTypeAccess);
-		isApplicableMatch.getAllContextElements().add(eClassDeclarationToTClass);
-		isApplicableMatch.getAllContextElements().add(tClass);
-		isApplicableMatch.getAllContextElements().add(eExtendedClassToTExtendedClass);
-		isApplicableMatch.getAllContextElements().add(eClassDeclaration);
 		isApplicableMatch.getAllContextElements().add(tExtendedClass);
+		isApplicableMatch.getAllContextElements().add(eClassDeclarationToTClass);
 		isApplicableMatch.getAllContextElements().add(eExtendedClass);
+		isApplicableMatch.getAllContextElements().add(tClass);
+		isApplicableMatch.getAllContextElements().add(eClassDeclaration);
+		isApplicableMatch.getAllContextElements().add(eTypeAccess);
+		isApplicableMatch.getAllContextElements().add(eExtendedClassToTExtendedClass);
+		eClassDeclarationToTClass__eClassDeclaration____source.setSrc(eClassDeclarationToTClass);
+		eClassDeclarationToTClass__eClassDeclaration____source.setTrg(eClassDeclaration);
+		isApplicableMatch.getAllContextElements().add(eClassDeclarationToTClass__eClassDeclaration____source);
+		eClassDeclaration__eTypeAccess____superClass.setSrc(eClassDeclaration);
+		eClassDeclaration__eTypeAccess____superClass.setTrg(eTypeAccess);
+		isApplicableMatch.getAllContextElements().add(eClassDeclaration__eTypeAccess____superClass);
 		eTypeAccess__eExtendedClass____type.setSrc(eTypeAccess);
 		eTypeAccess__eExtendedClass____type.setTrg(eExtendedClass);
 		isApplicableMatch.getAllContextElements().add(eTypeAccess__eExtendedClass____type);
@@ -1760,49 +1765,42 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		eClassDeclarationToTClass__tClass____target.setSrc(eClassDeclarationToTClass);
 		eClassDeclarationToTClass__tClass____target.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(eClassDeclarationToTClass__tClass____target);
-		eClassDeclaration__eTypeAccess____superClass.setSrc(eClassDeclaration);
-		eClassDeclaration__eTypeAccess____superClass.setTrg(eTypeAccess);
-		isApplicableMatch.getAllContextElements().add(eClassDeclaration__eTypeAccess____superClass);
 		eExtendedClassToTExtendedClass__tExtendedClass____target.setSrc(eExtendedClassToTExtendedClass);
 		eExtendedClassToTExtendedClass__tExtendedClass____target.setTrg(tExtendedClass);
 		isApplicableMatch.getAllContextElements().add(eExtendedClassToTExtendedClass__tExtendedClass____target);
 		eExtendedClassToTExtendedClass__eExtendedClass____source.setSrc(eExtendedClassToTExtendedClass);
 		eExtendedClassToTExtendedClass__eExtendedClass____source.setTrg(eExtendedClass);
 		isApplicableMatch.getAllContextElements().add(eExtendedClassToTExtendedClass__eExtendedClass____source);
-		eClassDeclarationToTClass__eClassDeclaration____source.setSrc(eClassDeclarationToTClass);
-		eClassDeclarationToTClass__eClassDeclaration____source.setTrg(eClassDeclaration);
-		isApplicableMatch.getAllContextElements().add(eClassDeclarationToTClass__eClassDeclaration____source);
+		eClassDeclarationToTClass__eClassDeclaration____source
+				.setName(eClassDeclarationToTClass__eClassDeclaration____source_name_prime);
+		eClassDeclaration__eTypeAccess____superClass.setName(eClassDeclaration__eTypeAccess____superClass_name_prime);
 		eTypeAccess__eExtendedClass____type.setName(eTypeAccess__eExtendedClass____type_name_prime);
 		eExtendedClass__eTypeAccess____usagesInTypeAccess
 				.setName(eExtendedClass__eTypeAccess____usagesInTypeAccess_name_prime);
 		eClassDeclarationToTClass__tClass____target.setName(eClassDeclarationToTClass__tClass____target_name_prime);
-		eClassDeclaration__eTypeAccess____superClass.setName(eClassDeclaration__eTypeAccess____superClass_name_prime);
 		eExtendedClassToTExtendedClass__tExtendedClass____target
 				.setName(eExtendedClassToTExtendedClass__tExtendedClass____target_name_prime);
 		eExtendedClassToTExtendedClass__eExtendedClass____source
 				.setName(eExtendedClassToTExtendedClass__eExtendedClass____source_name_prime);
-		eClassDeclarationToTClass__eClassDeclaration____source
-				.setName(eClassDeclarationToTClass__eClassDeclaration____source_name_prime);
-		return new Object[] { eTypeAccess, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-				eClassDeclaration, tExtendedClass, eExtendedClass, isApplicableMatch,
+		return new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+				eTypeAccess, eExtendedClassToTExtendedClass, isApplicableMatch,
+				eClassDeclarationToTClass__eClassDeclaration____source, eClassDeclaration__eTypeAccess____superClass,
 				eTypeAccess__eExtendedClass____type, eExtendedClass__eTypeAccess____usagesInTypeAccess,
-				eClassDeclarationToTClass__tClass____target, eClassDeclaration__eTypeAccess____superClass,
-				eExtendedClassToTExtendedClass__tExtendedClass____target,
-				eExtendedClassToTExtendedClass__eExtendedClass____source,
-				eClassDeclarationToTClass__eClassDeclaration____source };
+				eClassDeclarationToTClass__tClass____target, eExtendedClassToTExtendedClass__tExtendedClass____target,
+				eExtendedClassToTExtendedClass__eExtendedClass____source };
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_2_4_solveCSP_bindingFBBBBBBBBB(ClassExtendsClass _this,
-			IsApplicableMatch isApplicableMatch, TypeAccess eTypeAccess, TypeToTAbstractType eClassDeclarationToTClass,
-			TClass tClass, TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, eTypeAccess,
-				eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass,
-				eExtendedClass);
+			IsApplicableMatch isApplicableMatch, TClass tExtendedClass, TypeToTAbstractType eClassDeclarationToTClass,
+			ClassDeclaration eExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
+			TypeToTAbstractType eExtendedClassToTExtendedClass) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tExtendedClass,
+				eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
+				eExtendedClassToTExtendedClass);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, eTypeAccess, eClassDeclarationToTClass, tClass,
-					eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass };
+			return new Object[] { csp, _this, isApplicableMatch, tExtendedClass, eClassDeclarationToTClass,
+					eExtendedClass, tClass, eClassDeclaration, eTypeAccess, eExtendedClassToTExtendedClass };
 		}
 		return null;
 	}
@@ -1812,13 +1810,13 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			ClassExtendsClass _this, IsApplicableMatch isApplicableMatch, TypeAccess eTypeAccess,
-			TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {
+			ClassExtendsClass _this, IsApplicableMatch isApplicableMatch, TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
+			TypeToTAbstractType eExtendedClassToTExtendedClass) {
 		Object[] result_pattern_ClassExtendsClass_2_4_solveCSP_binding = pattern_ClassExtendsClass_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, eTypeAccess, eClassDeclarationToTClass, tClass,
-				eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass);
+				_this, isApplicableMatch, tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+				eClassDeclaration, eTypeAccess, eExtendedClassToTExtendedClass);
 		if (result_pattern_ClassExtendsClass_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ClassExtendsClass_2_4_solveCSP_binding[0];
 
@@ -1826,8 +1824,8 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 					csp);
 			if (result_pattern_ClassExtendsClass_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, eTypeAccess, eClassDeclarationToTClass, tClass,
-						eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass };
+				return new Object[] { csp, _this, isApplicableMatch, tExtendedClass, eClassDeclarationToTClass,
+						eExtendedClass, tClass, eClassDeclaration, eTypeAccess, eExtendedClassToTExtendedClass };
 			}
 		}
 		return null;
@@ -1861,19 +1859,19 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_10_1_initialbindings_blackBBBB(ClassExtendsClass _this,
-			Match match, TClass tClass, TClass tExtendedClass) {
+			Match match, TClass tExtendedClass, TClass tClass) {
 		if (!tClass.equals(tExtendedClass)) {
-			return new Object[] { _this, match, tClass, tExtendedClass };
+			return new Object[] { _this, match, tExtendedClass, tClass };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_10_2_SolveCSP_bindingFBBBB(ClassExtendsClass _this,
-			Match match, TClass tClass, TClass tExtendedClass) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tClass, tExtendedClass);
+			Match match, TClass tExtendedClass, TClass tClass) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tExtendedClass, tClass);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tClass, tExtendedClass };
+			return new Object[] { csp, _this, match, tExtendedClass, tClass };
 		}
 		return null;
 	}
@@ -1883,9 +1881,9 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_10_2_SolveCSP_bindingAndBlackFBBBB(ClassExtendsClass _this,
-			Match match, TClass tClass, TClass tExtendedClass) {
+			Match match, TClass tExtendedClass, TClass tClass) {
 		Object[] result_pattern_ClassExtendsClass_10_2_SolveCSP_binding = pattern_ClassExtendsClass_10_2_SolveCSP_bindingFBBBB(
-				_this, match, tClass, tExtendedClass);
+				_this, match, tExtendedClass, tClass);
 		if (result_pattern_ClassExtendsClass_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ClassExtendsClass_10_2_SolveCSP_binding[0];
 
@@ -1893,7 +1891,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 					csp);
 			if (result_pattern_ClassExtendsClass_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tClass, tExtendedClass };
+				return new Object[] { csp, _this, match, tExtendedClass, tClass };
 			}
 		}
 		return null;
@@ -1907,49 +1905,49 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_10_4_collectelementstobetranslated_blackBBB(Match match,
-			TClass tClass, TClass tExtendedClass) {
+			TClass tExtendedClass, TClass tClass) {
 		if (!tClass.equals(tExtendedClass)) {
-			return new Object[] { match, tClass, tExtendedClass };
+			return new Object[] { match, tExtendedClass, tClass };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_10_4_collectelementstobetranslated_greenBBBFF(Match match,
-			TClass tClass, TClass tExtendedClass) {
-		EMoflonEdge tClass__tExtendedClass____parentClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			TClass tExtendedClass, TClass tClass) {
+		EMoflonEdge tClass__tExtendedClass____parentClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tExtendedClass__tClass____childClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String tClass__tExtendedClass____parentClass_name_prime = "parentClass";
+		String tClass__tExtendedClass____parentClasses_name_prime = "parentClasses";
 		String tExtendedClass__tClass____childClasses_name_prime = "childClasses";
-		tClass__tExtendedClass____parentClass.setSrc(tClass);
-		tClass__tExtendedClass____parentClass.setTrg(tExtendedClass);
-		match.getToBeTranslatedEdges().add(tClass__tExtendedClass____parentClass);
+		tClass__tExtendedClass____parentClasses.setSrc(tClass);
+		tClass__tExtendedClass____parentClasses.setTrg(tExtendedClass);
+		match.getToBeTranslatedEdges().add(tClass__tExtendedClass____parentClasses);
 		tExtendedClass__tClass____childClasses.setSrc(tExtendedClass);
 		tExtendedClass__tClass____childClasses.setTrg(tClass);
 		match.getToBeTranslatedEdges().add(tExtendedClass__tClass____childClasses);
-		tClass__tExtendedClass____parentClass.setName(tClass__tExtendedClass____parentClass_name_prime);
+		tClass__tExtendedClass____parentClasses.setName(tClass__tExtendedClass____parentClasses_name_prime);
 		tExtendedClass__tClass____childClasses.setName(tExtendedClass__tClass____childClasses_name_prime);
-		return new Object[] { match, tClass, tExtendedClass, tClass__tExtendedClass____parentClass,
+		return new Object[] { match, tExtendedClass, tClass, tClass__tExtendedClass____parentClasses,
 				tExtendedClass__tClass____childClasses };
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_10_5_collectcontextelements_blackBBB(Match match,
-			TClass tClass, TClass tExtendedClass) {
+			TClass tExtendedClass, TClass tClass) {
 		if (!tClass.equals(tExtendedClass)) {
-			return new Object[] { match, tClass, tExtendedClass };
+			return new Object[] { match, tExtendedClass, tClass };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_10_5_collectcontextelements_greenBBB(Match match,
-			TClass tClass, TClass tExtendedClass) {
-		match.getContextNodes().add(tClass);
+			TClass tExtendedClass, TClass tClass) {
 		match.getContextNodes().add(tExtendedClass);
-		return new Object[] { match, tClass, tExtendedClass };
+		match.getContextNodes().add(tClass);
+		return new Object[] { match, tExtendedClass, tClass };
 	}
 
 	public static final void pattern_ClassExtendsClass_10_6_registerobjectstomatch_expressionBBBB(
-			ClassExtendsClass _this, Match match, TClass tClass, TClass tExtendedClass) {
-		_this.registerObjectsToMatch_BWD(match, tClass, tExtendedClass);
+			ClassExtendsClass _this, Match match, TClass tExtendedClass, TClass tClass) {
+		_this.registerObjectsToMatch_BWD(match, tExtendedClass, tClass);
 
 	}
 
@@ -1965,32 +1963,32 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 	public static final Object[] pattern_ClassExtendsClass_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("eClassDeclarationToTClass");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tClass");
-		EObject _localVariable_2 = isApplicableMatch.getObject("eExtendedClassToTExtendedClass");
-		EObject _localVariable_3 = isApplicableMatch.getObject("eClassDeclaration");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tExtendedClass");
-		EObject _localVariable_5 = isApplicableMatch.getObject("eExtendedClass");
-		EObject tmpEClassDeclarationToTClass = _localVariable_0;
-		EObject tmpTClass = _localVariable_1;
-		EObject tmpEExtendedClassToTExtendedClass = _localVariable_2;
-		EObject tmpEClassDeclaration = _localVariable_3;
-		EObject tmpTExtendedClass = _localVariable_4;
-		EObject tmpEExtendedClass = _localVariable_5;
-		if (tmpEClassDeclarationToTClass instanceof TypeToTAbstractType) {
-			TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) tmpEClassDeclarationToTClass;
-			if (tmpTClass instanceof TClass) {
-				TClass tClass = (TClass) tmpTClass;
-				if (tmpEExtendedClassToTExtendedClass instanceof TypeToTAbstractType) {
-					TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) tmpEExtendedClassToTExtendedClass;
-					if (tmpEClassDeclaration instanceof ClassDeclaration) {
-						ClassDeclaration eClassDeclaration = (ClassDeclaration) tmpEClassDeclaration;
-						if (tmpTExtendedClass instanceof TClass) {
-							TClass tExtendedClass = (TClass) tmpTExtendedClass;
-							if (tmpEExtendedClass instanceof ClassDeclaration) {
-								ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
-								return new Object[] { eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-										eClassDeclaration, tExtendedClass, eExtendedClass, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("tExtendedClass");
+		EObject _localVariable_1 = isApplicableMatch.getObject("eClassDeclarationToTClass");
+		EObject _localVariable_2 = isApplicableMatch.getObject("eExtendedClass");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tClass");
+		EObject _localVariable_4 = isApplicableMatch.getObject("eClassDeclaration");
+		EObject _localVariable_5 = isApplicableMatch.getObject("eExtendedClassToTExtendedClass");
+		EObject tmpTExtendedClass = _localVariable_0;
+		EObject tmpEClassDeclarationToTClass = _localVariable_1;
+		EObject tmpEExtendedClass = _localVariable_2;
+		EObject tmpTClass = _localVariable_3;
+		EObject tmpEClassDeclaration = _localVariable_4;
+		EObject tmpEExtendedClassToTExtendedClass = _localVariable_5;
+		if (tmpTExtendedClass instanceof TClass) {
+			TClass tExtendedClass = (TClass) tmpTExtendedClass;
+			if (tmpEClassDeclarationToTClass instanceof TypeToTAbstractType) {
+				TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) tmpEClassDeclarationToTClass;
+				if (tmpEExtendedClass instanceof ClassDeclaration) {
+					ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
+					if (tmpTClass instanceof TClass) {
+						TClass tClass = (TClass) tmpTClass;
+						if (tmpEClassDeclaration instanceof ClassDeclaration) {
+							ClassDeclaration eClassDeclaration = (ClassDeclaration) tmpEClassDeclaration;
+							if (tmpEExtendedClassToTExtendedClass instanceof TypeToTAbstractType) {
+								TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) tmpEExtendedClassToTExtendedClass;
+								return new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+										eClassDeclaration, eExtendedClassToTExtendedClass, isApplicableMatch };
 							}
 						}
 					}
@@ -2001,18 +1999,17 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_11_1_performtransformation_blackBBBBBBFBB(
-			TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass, ClassExtendsClass _this,
-			IsApplicableMatch isApplicableMatch) {
+			TClass tExtendedClass, TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass,
+			TClass tClass, ClassDeclaration eClassDeclaration, TypeToTAbstractType eExtendedClassToTExtendedClass,
+			ClassExtendsClass _this, IsApplicableMatch isApplicableMatch) {
 		if (!eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)) {
 			if (!tClass.equals(tExtendedClass)) {
 				if (!eClassDeclaration.equals(eExtendedClass)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-									eClassDeclaration, tExtendedClass, eExtendedClass, csp, _this, isApplicableMatch };
+							return new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+									eClassDeclaration, eExtendedClassToTExtendedClass, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -2026,32 +2023,32 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		Object[] result_pattern_ClassExtendsClass_11_1_performtransformation_binding = pattern_ClassExtendsClass_11_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_ClassExtendsClass_11_1_performtransformation_binding != null) {
-			TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[0];
-			TClass tClass = (TClass) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[1];
-			TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[2];
-			ClassDeclaration eClassDeclaration = (ClassDeclaration) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[3];
-			TClass tExtendedClass = (TClass) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[4];
-			ClassDeclaration eExtendedClass = (ClassDeclaration) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[5];
+			TClass tExtendedClass = (TClass) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[0];
+			TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[1];
+			ClassDeclaration eExtendedClass = (ClassDeclaration) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[2];
+			TClass tClass = (TClass) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[3];
+			ClassDeclaration eClassDeclaration = (ClassDeclaration) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[4];
+			TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) result_pattern_ClassExtendsClass_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_ClassExtendsClass_11_1_performtransformation_black = pattern_ClassExtendsClass_11_1_performtransformation_blackBBBBBBFBB(
-					eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-					tExtendedClass, eExtendedClass, _this, isApplicableMatch);
+					tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+					eExtendedClassToTExtendedClass, _this, isApplicableMatch);
 			if (result_pattern_ClassExtendsClass_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_ClassExtendsClass_11_1_performtransformation_black[6];
 
-				return new Object[] { eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-						eClassDeclaration, tExtendedClass, eExtendedClass, csp, _this, isApplicableMatch };
+				return new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+						eClassDeclaration, eExtendedClassToTExtendedClass, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_11_1_performtransformation_greenFBB(
-			ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
+	public static final Object[] pattern_ClassExtendsClass_11_1_performtransformation_greenBBF(
+			ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration) {
 		TypeAccess eTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
-		eTypeAccess.setType(eExtendedClass);
 		eClassDeclaration.setSuperClass(eTypeAccess);
-		return new Object[] { eTypeAccess, eClassDeclaration, eExtendedClass };
+		eTypeAccess.setType(eExtendedClass);
+		return new Object[] { eExtendedClass, eClassDeclaration, eTypeAccess };
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_11_2_collecttranslatedelements_blackB(
@@ -2067,42 +2064,43 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject eTypeAccess, EObject eClassDeclarationToTClass, EObject tClass,
-			EObject eExtendedClassToTExtendedClass, EObject eClassDeclaration, EObject tExtendedClass,
-			EObject eExtendedClass) {
-		if (!eTypeAccess.equals(tClass)) {
-			if (!eTypeAccess.equals(tExtendedClass)) {
-				if (!eClassDeclarationToTClass.equals(eTypeAccess)) {
-					if (!eClassDeclarationToTClass.equals(tClass)) {
+			PerformRuleResult ruleresult, EObject tExtendedClass, EObject eClassDeclarationToTClass,
+			EObject eExtendedClass, EObject tClass, EObject eClassDeclaration, EObject eTypeAccess,
+			EObject eExtendedClassToTExtendedClass) {
+		if (!eClassDeclarationToTClass.equals(tExtendedClass)) {
+			if (!eClassDeclarationToTClass.equals(eExtendedClass)) {
+				if (!eClassDeclarationToTClass.equals(tClass)) {
+					if (!eClassDeclarationToTClass.equals(eTypeAccess)) {
 						if (!eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)) {
-							if (!eClassDeclarationToTClass.equals(tExtendedClass)) {
-								if (!eClassDeclarationToTClass.equals(eExtendedClass)) {
-									if (!tClass.equals(tExtendedClass)) {
-										if (!eExtendedClassToTExtendedClass.equals(eTypeAccess)) {
-											if (!eExtendedClassToTExtendedClass.equals(tClass)) {
-												if (!eExtendedClassToTExtendedClass.equals(tExtendedClass)) {
-													if (!eClassDeclaration.equals(eTypeAccess)) {
-														if (!eClassDeclaration.equals(eClassDeclarationToTClass)) {
+							if (!eExtendedClass.equals(tExtendedClass)) {
+								if (!eExtendedClass.equals(tClass)) {
+									if (!eExtendedClass.equals(eTypeAccess)) {
+										if (!eExtendedClass.equals(eExtendedClassToTExtendedClass)) {
+											if (!tClass.equals(tExtendedClass)) {
+												if (!eClassDeclaration.equals(tExtendedClass)) {
+													if (!eClassDeclaration.equals(eClassDeclarationToTClass)) {
+														if (!eClassDeclaration.equals(eExtendedClass)) {
 															if (!eClassDeclaration.equals(tClass)) {
-																if (!eClassDeclaration
-																		.equals(eExtendedClassToTExtendedClass)) {
-																	if (!eClassDeclaration.equals(tExtendedClass)) {
-																		if (!eClassDeclaration.equals(eExtendedClass)) {
-																			if (!eExtendedClass.equals(eTypeAccess)) {
-																				if (!eExtendedClass.equals(tClass)) {
-																					if (!eExtendedClass.equals(
-																							eExtendedClassToTExtendedClass)) {
-																						if (!eExtendedClass.equals(
-																								tExtendedClass)) {
+																if (!eClassDeclaration.equals(eTypeAccess)) {
+																	if (!eClassDeclaration
+																			.equals(eExtendedClassToTExtendedClass)) {
+																		if (!eTypeAccess.equals(tExtendedClass)) {
+																			if (!eTypeAccess.equals(tClass)) {
+																				if (!eExtendedClassToTExtendedClass
+																						.equals(tExtendedClass)) {
+																					if (!eExtendedClassToTExtendedClass
+																							.equals(tClass)) {
+																						if (!eExtendedClassToTExtendedClass
+																								.equals(eTypeAccess)) {
 																							return new Object[] {
 																									ruleresult,
-																									eTypeAccess,
-																									eClassDeclarationToTClass,
-																									tClass,
-																									eExtendedClassToTExtendedClass,
-																									eClassDeclaration,
 																									tExtendedClass,
-																									eExtendedClass };
+																									eClassDeclarationToTClass,
+																									eExtendedClass,
+																									tClass,
+																									eClassDeclaration,
+																									eTypeAccess,
+																									eExtendedClassToTExtendedClass };
 																						}
 																					}
 																				}
@@ -2128,53 +2126,53 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject eTypeAccess, EObject tClass, EObject eClassDeclaration,
-			EObject tExtendedClass, EObject eExtendedClass) {
+			PerformRuleResult ruleresult, EObject tExtendedClass, EObject eExtendedClass, EObject tClass,
+			EObject eClassDeclaration, EObject eTypeAccess) {
+		EMoflonEdge tClass__tExtendedClass____parentClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tExtendedClass__tClass____childClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eClassDeclaration__eTypeAccess____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eTypeAccess__eExtendedClass____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eExtendedClass__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eClassDeclaration__eTypeAccess____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tClass__tExtendedClass____parentClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tExtendedClass__tClass____childClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ClassExtendsClass";
+		String tClass__tExtendedClass____parentClasses_name_prime = "parentClasses";
+		String tExtendedClass__tClass____childClasses_name_prime = "childClasses";
+		String eClassDeclaration__eTypeAccess____superClass_name_prime = "superClass";
 		String eTypeAccess__eExtendedClass____type_name_prime = "type";
 		String eExtendedClass__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String eClassDeclaration__eTypeAccess____superClass_name_prime = "superClass";
-		String tClass__tExtendedClass____parentClass_name_prime = "parentClass";
-		String tExtendedClass__tClass____childClasses_name_prime = "childClasses";
+		tClass__tExtendedClass____parentClasses.setSrc(tClass);
+		tClass__tExtendedClass____parentClasses.setTrg(tExtendedClass);
+		ruleresult.getTranslatedEdges().add(tClass__tExtendedClass____parentClasses);
+		tExtendedClass__tClass____childClasses.setSrc(tExtendedClass);
+		tExtendedClass__tClass____childClasses.setTrg(tClass);
+		ruleresult.getTranslatedEdges().add(tExtendedClass__tClass____childClasses);
+		eClassDeclaration__eTypeAccess____superClass.setSrc(eClassDeclaration);
+		eClassDeclaration__eTypeAccess____superClass.setTrg(eTypeAccess);
+		ruleresult.getCreatedEdges().add(eClassDeclaration__eTypeAccess____superClass);
 		eTypeAccess__eExtendedClass____type.setSrc(eTypeAccess);
 		eTypeAccess__eExtendedClass____type.setTrg(eExtendedClass);
 		ruleresult.getCreatedEdges().add(eTypeAccess__eExtendedClass____type);
 		eExtendedClass__eTypeAccess____usagesInTypeAccess.setSrc(eExtendedClass);
 		eExtendedClass__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
 		ruleresult.getCreatedEdges().add(eExtendedClass__eTypeAccess____usagesInTypeAccess);
-		eClassDeclaration__eTypeAccess____superClass.setSrc(eClassDeclaration);
-		eClassDeclaration__eTypeAccess____superClass.setTrg(eTypeAccess);
-		ruleresult.getCreatedEdges().add(eClassDeclaration__eTypeAccess____superClass);
-		tClass__tExtendedClass____parentClass.setSrc(tClass);
-		tClass__tExtendedClass____parentClass.setTrg(tExtendedClass);
-		ruleresult.getTranslatedEdges().add(tClass__tExtendedClass____parentClass);
-		tExtendedClass__tClass____childClasses.setSrc(tExtendedClass);
-		tExtendedClass__tClass____childClasses.setTrg(tClass);
-		ruleresult.getTranslatedEdges().add(tExtendedClass__tClass____childClasses);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		tClass__tExtendedClass____parentClasses.setName(tClass__tExtendedClass____parentClasses_name_prime);
+		tExtendedClass__tClass____childClasses.setName(tExtendedClass__tClass____childClasses_name_prime);
+		eClassDeclaration__eTypeAccess____superClass.setName(eClassDeclaration__eTypeAccess____superClass_name_prime);
 		eTypeAccess__eExtendedClass____type.setName(eTypeAccess__eExtendedClass____type_name_prime);
 		eExtendedClass__eTypeAccess____usagesInTypeAccess
 				.setName(eExtendedClass__eTypeAccess____usagesInTypeAccess_name_prime);
-		eClassDeclaration__eTypeAccess____superClass.setName(eClassDeclaration__eTypeAccess____superClass_name_prime);
-		tClass__tExtendedClass____parentClass.setName(tClass__tExtendedClass____parentClass_name_prime);
-		tExtendedClass__tClass____childClasses.setName(tExtendedClass__tClass____childClasses_name_prime);
-		return new Object[] { ruleresult, eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass,
-				eTypeAccess__eExtendedClass____type, eExtendedClass__eTypeAccess____usagesInTypeAccess,
-				eClassDeclaration__eTypeAccess____superClass, tClass__tExtendedClass____parentClass,
-				tExtendedClass__tClass____childClasses };
+		return new Object[] { ruleresult, tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
+				tClass__tExtendedClass____parentClasses, tExtendedClass__tClass____childClasses,
+				eClassDeclaration__eTypeAccess____superClass, eTypeAccess__eExtendedClass____type,
+				eExtendedClass__eTypeAccess____usagesInTypeAccess };
 	}
 
 	public static final void pattern_ClassExtendsClass_11_5_registerobjects_expressionBBBBBBBBB(ClassExtendsClass _this,
-			PerformRuleResult ruleresult, EObject eTypeAccess, EObject eClassDeclarationToTClass, EObject tClass,
-			EObject eExtendedClassToTExtendedClass, EObject eClassDeclaration, EObject tExtendedClass,
-			EObject eExtendedClass) {
-		_this.registerObjects_BWD(ruleresult, eTypeAccess, eClassDeclarationToTClass, tClass,
-				eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass);
+			PerformRuleResult ruleresult, EObject tExtendedClass, EObject eClassDeclarationToTClass,
+			EObject eExtendedClass, EObject tClass, EObject eClassDeclaration, EObject eTypeAccess,
+			EObject eExtendedClassToTExtendedClass) {
+		_this.registerObjects_BWD(ruleresult, tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+				eClassDeclaration, eTypeAccess, eExtendedClassToTExtendedClass);
 
 	}
 
@@ -2234,22 +2232,22 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tClass");
-		EObject _localVariable_1 = match.getObject("tExtendedClass");
-		EObject tmpTClass = _localVariable_0;
-		EObject tmpTExtendedClass = _localVariable_1;
-		if (tmpTClass instanceof TClass) {
-			TClass tClass = (TClass) tmpTClass;
-			if (tmpTExtendedClass instanceof TClass) {
-				TClass tExtendedClass = (TClass) tmpTExtendedClass;
-				return new Object[] { tClass, tExtendedClass, match };
+		EObject _localVariable_0 = match.getObject("tExtendedClass");
+		EObject _localVariable_1 = match.getObject("tClass");
+		EObject tmpTExtendedClass = _localVariable_0;
+		EObject tmpTClass = _localVariable_1;
+		if (tmpTExtendedClass instanceof TClass) {
+			TClass tExtendedClass = (TClass) tmpTExtendedClass;
+			if (tmpTClass instanceof TClass) {
+				TClass tClass = (TClass) tmpTClass;
+				return new Object[] { tExtendedClass, tClass, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_ClassExtendsClass_12_2_corematch_blackFBFFBFB(TClass tClass,
-			TClass tExtendedClass, Match match) {
+	public static final Iterable<Object[]> pattern_ClassExtendsClass_12_2_corematch_blackBFFBFFB(TClass tExtendedClass,
+			TClass tClass, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tClass.equals(tExtendedClass)) {
 			for (TypeToTAbstractType eClassDeclarationToTClass : org.moflon.core.utilities.eMoflonEMFUtil
@@ -2264,9 +2262,9 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 							if (tmpEExtendedClass instanceof ClassDeclaration) {
 								ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
 								if (!eClassDeclaration.equals(eExtendedClass)) {
-									_result.add(new Object[] { eClassDeclarationToTClass, tClass,
-											eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass,
-											eExtendedClass, match });
+									_result.add(
+											new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass,
+													tClass, eClassDeclaration, eExtendedClassToTExtendedClass, match });
 								}
 							}
 
@@ -2279,22 +2277,21 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_ClassExtendsClass_12_3_findcontext_blackBBBBBB(
-			TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {
+	public static final Iterable<Object[]> pattern_ClassExtendsClass_12_3_findcontext_blackBBBBBB(TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeToTAbstractType eExtendedClassToTExtendedClass) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)) {
 			if (!tClass.equals(tExtendedClass)) {
 				if (!eClassDeclaration.equals(eExtendedClass)) {
-					if (tClass.equals(eClassDeclarationToTClass.getTarget())) {
-						if (tExtendedClass.equals(eExtendedClassToTExtendedClass.getTarget())) {
-							if (tExtendedClass.equals(tClass.getParentClass())) {
-								if (eExtendedClass.equals(eExtendedClassToTExtendedClass.getSource())) {
-									if (eClassDeclaration.equals(eClassDeclarationToTClass.getSource())) {
-										_result.add(new Object[] { eClassDeclarationToTClass, tClass,
-												eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass,
-												eExtendedClass });
+					if (tClass.getParentClasses().contains(tExtendedClass)) {
+						if (eClassDeclaration.equals(eClassDeclarationToTClass.getSource())) {
+							if (tClass.equals(eClassDeclarationToTClass.getTarget())) {
+								if (tExtendedClass.equals(eExtendedClassToTExtendedClass.getTarget())) {
+									if (eExtendedClass.equals(eExtendedClassToTExtendedClass.getSource())) {
+										_result.add(new Object[] { tExtendedClass, eClassDeclarationToTClass,
+												eExtendedClass, tClass, eClassDeclaration,
+												eExtendedClassToTExtendedClass });
 									}
 								}
 							}
@@ -2306,76 +2303,75 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return _result;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_12_3_findcontext_greenBBBBBBFFFFFFF(
-			TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {
+	public static final Object[] pattern_ClassExtendsClass_12_3_findcontext_greenBBBBBBFFFFFFF(TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeToTAbstractType eExtendedClassToTExtendedClass) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge tClass__tExtendedClass____parentClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tExtendedClass__tClass____childClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eClassDeclarationToTClass__eClassDeclaration____source = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
 		EMoflonEdge eClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eExtendedClassToTExtendedClass__tExtendedClass____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge tClass__tExtendedClass____parentClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tExtendedClass__tClass____childClasses = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eExtendedClassToTExtendedClass__eExtendedClass____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge eClassDeclarationToTClass__eClassDeclaration____source = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
+		String tClass__tExtendedClass____parentClasses_name_prime = "parentClasses";
+		String tExtendedClass__tClass____childClasses_name_prime = "childClasses";
+		String eClassDeclarationToTClass__eClassDeclaration____source_name_prime = "source";
 		String eClassDeclarationToTClass__tClass____target_name_prime = "target";
 		String eExtendedClassToTExtendedClass__tExtendedClass____target_name_prime = "target";
-		String tClass__tExtendedClass____parentClass_name_prime = "parentClass";
-		String tExtendedClass__tClass____childClasses_name_prime = "childClasses";
 		String eExtendedClassToTExtendedClass__eExtendedClass____source_name_prime = "source";
-		String eClassDeclarationToTClass__eClassDeclaration____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(eClassDeclarationToTClass);
-		isApplicableMatch.getAllContextElements().add(tClass);
-		isApplicableMatch.getAllContextElements().add(eExtendedClassToTExtendedClass);
-		isApplicableMatch.getAllContextElements().add(eClassDeclaration);
 		isApplicableMatch.getAllContextElements().add(tExtendedClass);
+		isApplicableMatch.getAllContextElements().add(eClassDeclarationToTClass);
 		isApplicableMatch.getAllContextElements().add(eExtendedClass);
+		isApplicableMatch.getAllContextElements().add(tClass);
+		isApplicableMatch.getAllContextElements().add(eClassDeclaration);
+		isApplicableMatch.getAllContextElements().add(eExtendedClassToTExtendedClass);
+		tClass__tExtendedClass____parentClasses.setSrc(tClass);
+		tClass__tExtendedClass____parentClasses.setTrg(tExtendedClass);
+		isApplicableMatch.getAllContextElements().add(tClass__tExtendedClass____parentClasses);
+		tExtendedClass__tClass____childClasses.setSrc(tExtendedClass);
+		tExtendedClass__tClass____childClasses.setTrg(tClass);
+		isApplicableMatch.getAllContextElements().add(tExtendedClass__tClass____childClasses);
+		eClassDeclarationToTClass__eClassDeclaration____source.setSrc(eClassDeclarationToTClass);
+		eClassDeclarationToTClass__eClassDeclaration____source.setTrg(eClassDeclaration);
+		isApplicableMatch.getAllContextElements().add(eClassDeclarationToTClass__eClassDeclaration____source);
 		eClassDeclarationToTClass__tClass____target.setSrc(eClassDeclarationToTClass);
 		eClassDeclarationToTClass__tClass____target.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(eClassDeclarationToTClass__tClass____target);
 		eExtendedClassToTExtendedClass__tExtendedClass____target.setSrc(eExtendedClassToTExtendedClass);
 		eExtendedClassToTExtendedClass__tExtendedClass____target.setTrg(tExtendedClass);
 		isApplicableMatch.getAllContextElements().add(eExtendedClassToTExtendedClass__tExtendedClass____target);
-		tClass__tExtendedClass____parentClass.setSrc(tClass);
-		tClass__tExtendedClass____parentClass.setTrg(tExtendedClass);
-		isApplicableMatch.getAllContextElements().add(tClass__tExtendedClass____parentClass);
-		tExtendedClass__tClass____childClasses.setSrc(tExtendedClass);
-		tExtendedClass__tClass____childClasses.setTrg(tClass);
-		isApplicableMatch.getAllContextElements().add(tExtendedClass__tClass____childClasses);
 		eExtendedClassToTExtendedClass__eExtendedClass____source.setSrc(eExtendedClassToTExtendedClass);
 		eExtendedClassToTExtendedClass__eExtendedClass____source.setTrg(eExtendedClass);
 		isApplicableMatch.getAllContextElements().add(eExtendedClassToTExtendedClass__eExtendedClass____source);
-		eClassDeclarationToTClass__eClassDeclaration____source.setSrc(eClassDeclarationToTClass);
-		eClassDeclarationToTClass__eClassDeclaration____source.setTrg(eClassDeclaration);
-		isApplicableMatch.getAllContextElements().add(eClassDeclarationToTClass__eClassDeclaration____source);
+		tClass__tExtendedClass____parentClasses.setName(tClass__tExtendedClass____parentClasses_name_prime);
+		tExtendedClass__tClass____childClasses.setName(tExtendedClass__tClass____childClasses_name_prime);
+		eClassDeclarationToTClass__eClassDeclaration____source
+				.setName(eClassDeclarationToTClass__eClassDeclaration____source_name_prime);
 		eClassDeclarationToTClass__tClass____target.setName(eClassDeclarationToTClass__tClass____target_name_prime);
 		eExtendedClassToTExtendedClass__tExtendedClass____target
 				.setName(eExtendedClassToTExtendedClass__tExtendedClass____target_name_prime);
-		tClass__tExtendedClass____parentClass.setName(tClass__tExtendedClass____parentClass_name_prime);
-		tExtendedClass__tClass____childClasses.setName(tExtendedClass__tClass____childClasses_name_prime);
 		eExtendedClassToTExtendedClass__eExtendedClass____source
 				.setName(eExtendedClassToTExtendedClass__eExtendedClass____source_name_prime);
-		eClassDeclarationToTClass__eClassDeclaration____source
-				.setName(eClassDeclarationToTClass__eClassDeclaration____source_name_prime);
-		return new Object[] { eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass, eClassDeclaration,
-				tExtendedClass, eExtendedClass, isApplicableMatch, eClassDeclarationToTClass__tClass____target,
-				eExtendedClassToTExtendedClass__tExtendedClass____target, tClass__tExtendedClass____parentClass,
-				tExtendedClass__tClass____childClasses, eExtendedClassToTExtendedClass__eExtendedClass____source,
-				eClassDeclarationToTClass__eClassDeclaration____source };
+		return new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration,
+				eExtendedClassToTExtendedClass, isApplicableMatch, tClass__tExtendedClass____parentClasses,
+				tExtendedClass__tClass____childClasses, eClassDeclarationToTClass__eClassDeclaration____source,
+				eClassDeclarationToTClass__tClass____target, eExtendedClassToTExtendedClass__tExtendedClass____target,
+				eExtendedClassToTExtendedClass__eExtendedClass____source };
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_12_4_solveCSP_bindingFBBBBBBBB(ClassExtendsClass _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, eClassDeclarationToTClass, tClass,
-				eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass);
+			IsApplicableMatch isApplicableMatch, TClass tExtendedClass, TypeToTAbstractType eClassDeclarationToTClass,
+			ClassDeclaration eExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration,
+			TypeToTAbstractType eExtendedClassToTExtendedClass) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tExtendedClass,
+				eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration, eExtendedClassToTExtendedClass);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, eClassDeclarationToTClass, tClass,
-					eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass };
+			return new Object[] { csp, _this, isApplicableMatch, tExtendedClass, eClassDeclarationToTClass,
+					eExtendedClass, tClass, eClassDeclaration, eExtendedClassToTExtendedClass };
 		}
 		return null;
 	}
@@ -2385,12 +2381,12 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			ClassExtendsClass _this, IsApplicableMatch isApplicableMatch, TypeToTAbstractType eClassDeclarationToTClass,
-			TClass tClass, TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {
+			ClassExtendsClass _this, IsApplicableMatch isApplicableMatch, TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeToTAbstractType eExtendedClassToTExtendedClass) {
 		Object[] result_pattern_ClassExtendsClass_12_4_solveCSP_binding = pattern_ClassExtendsClass_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-				eClassDeclaration, tExtendedClass, eExtendedClass);
+				_this, isApplicableMatch, tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+				eClassDeclaration, eExtendedClassToTExtendedClass);
 		if (result_pattern_ClassExtendsClass_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ClassExtendsClass_12_4_solveCSP_binding[0];
 
@@ -2398,8 +2394,8 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 					csp);
 			if (result_pattern_ClassExtendsClass_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, eClassDeclarationToTClass, tClass,
-						eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass };
+				return new Object[] { csp, _this, isApplicableMatch, tExtendedClass, eClassDeclarationToTClass,
+						eExtendedClass, tClass, eClassDeclaration, eExtendedClassToTExtendedClass };
 			}
 		}
 		return null;
@@ -2487,17 +2483,17 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Iterable<Object[]> pattern_ClassExtendsClass_20_2_testcorematchandDECs_blackFFB(
-			EMoflonEdge _edge_parentClass) {
+			EMoflonEdge _edge_parentClasses) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpTClass = _edge_parentClass.getSrc();
+		EObject tmpTClass = _edge_parentClasses.getSrc();
 		if (tmpTClass instanceof TClass) {
 			TClass tClass = (TClass) tmpTClass;
-			EObject tmpTExtendedClass = _edge_parentClass.getTrg();
+			EObject tmpTExtendedClass = _edge_parentClasses.getTrg();
 			if (tmpTExtendedClass instanceof TClass) {
 				TClass tExtendedClass = (TClass) tmpTExtendedClass;
 				if (!tClass.equals(tExtendedClass)) {
-					if (tExtendedClass.equals(tClass.getParentClass())) {
-						_result.add(new Object[] { tClass, tExtendedClass, _edge_parentClass });
+					if (tClass.getParentClasses().contains(tExtendedClass)) {
+						_result.add(new Object[] { tExtendedClass, tClass, _edge_parentClasses });
 					}
 				}
 			}
@@ -2517,8 +2513,8 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final boolean pattern_ClassExtendsClass_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			ClassExtendsClass _this, Match match, TClass tClass, TClass tExtendedClass) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tClass, tExtendedClass);
+			ClassExtendsClass _this, Match match, TClass tExtendedClass, TClass tClass) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tExtendedClass, tClass);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2605,13 +2601,13 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_0BBB(
-			TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
+			TypeAccess eTypeAccess, ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration) {
 		if (!eClassDeclaration.equals(eExtendedClass)) {
-			for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_848620 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_461965 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(eTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!eClassDeclaration.equals(__DEC_eTypeAccess_superInterfaces_848620)) {
-					if (!eExtendedClass.equals(__DEC_eTypeAccess_superInterfaces_848620)) {
-						return new Object[] { eTypeAccess, eClassDeclaration, eExtendedClass };
+				if (!eExtendedClass.equals(__DEC_eTypeAccess_superInterfaces_461965)) {
+					if (!eClassDeclaration.equals(__DEC_eTypeAccess_superInterfaces_461965)) {
+						return new Object[] { eTypeAccess, eExtendedClass, eClassDeclaration };
 					}
 				}
 			}
@@ -2621,7 +2617,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess eTypeAccess) {
-		for (Annotation __DEC_eTypeAccess_type_195341 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_eTypeAccess_type_672731 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, Annotation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2630,7 +2626,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess eTypeAccess) {
-		for (ArrayType __DEC_eTypeAccess_elementType_863919 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_eTypeAccess_elementType_265146 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2639,7 +2635,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess eTypeAccess) {
-		for (ClassInstanceCreation __DEC_eTypeAccess_type_214207 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_eTypeAccess_type_417795 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2648,7 +2644,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess eTypeAccess) {
-		for (MethodDeclaration __DEC_eTypeAccess_returnType_101341 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_eTypeAccess_returnType_642058 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2657,7 +2653,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess eTypeAccess) {
-		for (ParameterizedType __DEC_eTypeAccess_type_753475 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_eTypeAccess_type_567285 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ParameterizedType.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2666,7 +2662,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess eTypeAccess) {
-		for (TypeLiteral __DEC_eTypeAccess_type_468575 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_eTypeAccess_type_620972 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2675,7 +2671,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 
 	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_951239 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_837863 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2683,14 +2679,6 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_8BB(
-			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
-		if (eClassDeclaration.getSuperInterfaces().contains(eTypeAccess)) {
-			return new Object[] { eClassDeclaration, eTypeAccess };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_9BB(
 			ClassDeclaration eExtendedClass, TypeAccess eTypeAccess) {
 		if (eExtendedClass.getSuperInterfaces().contains(eTypeAccess)) {
 			return new Object[] { eExtendedClass, eTypeAccess };
@@ -2698,41 +2686,51 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return null;
 	}
 
+	public static final Object[] pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_9BB(
+			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
+		if (eClassDeclaration.getSuperInterfaces().contains(eTypeAccess)) {
+			return new Object[] { eClassDeclaration, eTypeAccess };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_ClassExtendsClass_21_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_type) {
+			EMoflonEdge _edge_superClass) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpETypeAccess = _edge_type.getSrc();
-		if (tmpETypeAccess instanceof TypeAccess) {
-			TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
-			EObject tmpEExtendedClass = _edge_type.getTrg();
-			if (tmpEExtendedClass instanceof ClassDeclaration) {
-				ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
-				if (eExtendedClass.equals(eTypeAccess.getType())) {
-					if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_1B(eTypeAccess) == null) {
-						if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_2B(eTypeAccess) == null) {
-							if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_3B(eTypeAccess) == null) {
-								if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_4B(
+		EObject tmpEClassDeclaration = _edge_superClass.getSrc();
+		if (tmpEClassDeclaration instanceof ClassDeclaration) {
+			ClassDeclaration eClassDeclaration = (ClassDeclaration) tmpEClassDeclaration;
+			EObject tmpETypeAccess = _edge_superClass.getTrg();
+			if (tmpETypeAccess instanceof TypeAccess) {
+				TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+				if (eTypeAccess.equals(eClassDeclaration.getSuperClass())) {
+					Type tmpEExtendedClass = eTypeAccess.getType();
+					if (tmpEExtendedClass instanceof ClassDeclaration) {
+						ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
+						if (!eClassDeclaration.equals(eExtendedClass)) {
+							if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_1B(eTypeAccess) == null) {
+								if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_2B(
 										eTypeAccess) == null) {
-									if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_5B(
+									if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_3B(
 											eTypeAccess) == null) {
-										if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_6B(
+										if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_4B(
 												eTypeAccess) == null) {
-											if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_7B(
+											if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_5B(
 													eTypeAccess) == null) {
-												if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_9BB(
-														eExtendedClass, eTypeAccess) == null) {
-													for (ClassDeclaration eClassDeclaration : org.moflon.core.utilities.eMoflonEMFUtil
-															.getOppositeReferenceTyped(eTypeAccess,
-																	ClassDeclaration.class, "superClass")) {
-														if (!eClassDeclaration.equals(eExtendedClass)) {
+												if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_6B(
+														eTypeAccess) == null) {
+													if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_7B(
+															eTypeAccess) == null) {
+														if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_9BB(
+																eClassDeclaration, eTypeAccess) == null) {
 															if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_0BBB(
-																	eTypeAccess, eClassDeclaration,
-																	eExtendedClass) == null) {
+																	eTypeAccess, eExtendedClass,
+																	eClassDeclaration) == null) {
 																if (pattern_ClassExtendsClass_21_2_testcorematchandDECs_black_nac_8BB(
-																		eClassDeclaration, eTypeAccess) == null) {
-																	_result.add(new Object[] { eTypeAccess,
-																			eClassDeclaration, eExtendedClass,
-																			_edge_type });
+																		eExtendedClass, eTypeAccess) == null) {
+																	_result.add(new Object[] { eExtendedClass,
+																			eClassDeclaration, eTypeAccess,
+																			_edge_superClass });
 																}
 															}
 														}
@@ -2745,6 +2743,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 							}
 						}
 					}
+
 				}
 			}
 
@@ -2763,9 +2762,9 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final boolean pattern_ClassExtendsClass_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			ClassExtendsClass _this, Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, eTypeAccess, eClassDeclaration, eExtendedClass);
+			ClassExtendsClass _this, Match match, ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration,
+			TypeAccess eTypeAccess) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, eExtendedClass, eClassDeclaration, eTypeAccess);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2807,30 +2806,30 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_24_2_matchsrctrgcontext_bindingFFFFFBB(Match sourceMatch,
-			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("eTypeAccess");
-		EObject _localVariable_1 = targetMatch.getObject("tClass");
-		EObject _localVariable_2 = sourceMatch.getObject("eClassDeclaration");
-		EObject _localVariable_3 = targetMatch.getObject("tExtendedClass");
-		EObject _localVariable_4 = sourceMatch.getObject("eExtendedClass");
-		EObject tmpETypeAccess = _localVariable_0;
-		EObject tmpTClass = _localVariable_1;
-		EObject tmpEClassDeclaration = _localVariable_2;
-		EObject tmpTExtendedClass = _localVariable_3;
-		EObject tmpEExtendedClass = _localVariable_4;
-		if (tmpETypeAccess instanceof TypeAccess) {
-			TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
-			if (tmpTClass instanceof TClass) {
-				TClass tClass = (TClass) tmpTClass;
-				if (tmpEClassDeclaration instanceof ClassDeclaration) {
-					ClassDeclaration eClassDeclaration = (ClassDeclaration) tmpEClassDeclaration;
-					if (tmpTExtendedClass instanceof TClass) {
-						TClass tExtendedClass = (TClass) tmpTExtendedClass;
-						if (tmpEExtendedClass instanceof ClassDeclaration) {
-							ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
-							return new Object[] { eTypeAccess, tClass, eClassDeclaration, tExtendedClass,
-									eExtendedClass, sourceMatch, targetMatch };
+	public static final Object[] pattern_ClassExtendsClass_24_2_matchsrctrgcontext_bindingFFFFFBB(Match targetMatch,
+			Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("tExtendedClass");
+		EObject _localVariable_1 = sourceMatch.getObject("eExtendedClass");
+		EObject _localVariable_2 = targetMatch.getObject("tClass");
+		EObject _localVariable_3 = sourceMatch.getObject("eClassDeclaration");
+		EObject _localVariable_4 = sourceMatch.getObject("eTypeAccess");
+		EObject tmpTExtendedClass = _localVariable_0;
+		EObject tmpEExtendedClass = _localVariable_1;
+		EObject tmpTClass = _localVariable_2;
+		EObject tmpEClassDeclaration = _localVariable_3;
+		EObject tmpETypeAccess = _localVariable_4;
+		if (tmpTExtendedClass instanceof TClass) {
+			TClass tExtendedClass = (TClass) tmpTExtendedClass;
+			if (tmpEExtendedClass instanceof ClassDeclaration) {
+				ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
+				if (tmpTClass instanceof TClass) {
+					TClass tClass = (TClass) tmpTClass;
+					if (tmpEClassDeclaration instanceof ClassDeclaration) {
+						ClassDeclaration eClassDeclaration = (ClassDeclaration) tmpEClassDeclaration;
+						if (tmpETypeAccess instanceof TypeAccess) {
+							TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+							return new Object[] { tExtendedClass, eExtendedClass, tClass, eClassDeclaration,
+									eTypeAccess, targetMatch, sourceMatch };
 						}
 					}
 				}
@@ -2839,13 +2838,13 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return null;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_24_2_matchsrctrgcontext_blackBBBBBBB(TypeAccess eTypeAccess,
-			TClass tClass, ClassDeclaration eClassDeclaration, TClass tExtendedClass, ClassDeclaration eExtendedClass,
+	public static final Object[] pattern_ClassExtendsClass_24_2_matchsrctrgcontext_blackBBBBBBB(TClass tExtendedClass,
+			ClassDeclaration eExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
 			Match sourceMatch, Match targetMatch) {
 		if (!tClass.equals(tExtendedClass)) {
 			if (!eClassDeclaration.equals(eExtendedClass)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass,
+					return new Object[] { tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
 							sourceMatch, targetMatch };
 				}
 			}
@@ -2856,19 +2855,19 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	public static final Object[] pattern_ClassExtendsClass_24_2_matchsrctrgcontext_bindingAndBlackFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding = pattern_ClassExtendsClass_24_2_matchsrctrgcontext_bindingFFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding != null) {
-			TypeAccess eTypeAccess = (TypeAccess) result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding[0];
-			TClass tClass = (TClass) result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding[1];
-			ClassDeclaration eClassDeclaration = (ClassDeclaration) result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding[2];
-			TClass tExtendedClass = (TClass) result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding[3];
-			ClassDeclaration eExtendedClass = (ClassDeclaration) result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding[4];
+			TClass tExtendedClass = (TClass) result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding[0];
+			ClassDeclaration eExtendedClass = (ClassDeclaration) result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding[1];
+			TClass tClass = (TClass) result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding[2];
+			ClassDeclaration eClassDeclaration = (ClassDeclaration) result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding[3];
+			TypeAccess eTypeAccess = (TypeAccess) result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_binding[4];
 
 			Object[] result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_black = pattern_ClassExtendsClass_24_2_matchsrctrgcontext_blackBBBBBBB(
-					eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass, sourceMatch, targetMatch);
+					tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess, sourceMatch, targetMatch);
 			if (result_pattern_ClassExtendsClass_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass,
+				return new Object[] { tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -2876,13 +2875,13 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_24_3_solvecsp_bindingFBBBBBBBB(ClassExtendsClass _this,
-			TypeAccess eTypeAccess, TClass tClass, ClassDeclaration eClassDeclaration, TClass tExtendedClass,
-			ClassDeclaration eExtendedClass, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(eTypeAccess, tClass, eClassDeclaration, tExtendedClass,
-				eExtendedClass, sourceMatch, targetMatch);
+			TClass tExtendedClass, ClassDeclaration eExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration,
+			TypeAccess eTypeAccess, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(tExtendedClass, eExtendedClass, tClass, eClassDeclaration,
+				eTypeAccess, sourceMatch, targetMatch);
 		CSP csp = _localVariable_5;
 		if (csp != null) {
-			return new Object[] { csp, _this, eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass,
+			return new Object[] { csp, _this, tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -2893,10 +2892,10 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_24_3_solvecsp_bindingAndBlackFBBBBBBBB(
-			ClassExtendsClass _this, TypeAccess eTypeAccess, TClass tClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass, Match sourceMatch, Match targetMatch) {
+			ClassExtendsClass _this, TClass tExtendedClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_ClassExtendsClass_24_3_solvecsp_binding = pattern_ClassExtendsClass_24_3_solvecsp_bindingFBBBBBBBB(
-				_this, eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass, sourceMatch,
+				_this, tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess, sourceMatch,
 				targetMatch);
 		if (result_pattern_ClassExtendsClass_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_ClassExtendsClass_24_3_solvecsp_binding[0];
@@ -2905,8 +2904,8 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 					csp);
 			if (result_pattern_ClassExtendsClass_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, eTypeAccess, tClass, eClassDeclaration, tExtendedClass,
-						eExtendedClass, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, tExtendedClass, eExtendedClass, tClass, eClassDeclaration,
+						eTypeAccess, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2918,23 +2917,23 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_ClassExtendsClass_24_5_matchcorrcontext_blackFBFBBBBB(TClass tClass,
-			ClassDeclaration eClassDeclaration, TClass tExtendedClass, ClassDeclaration eExtendedClass,
+	public static final Iterable<Object[]> pattern_ClassExtendsClass_24_5_matchcorrcontext_blackBFBBBFBB(
+			TClass tExtendedClass, ClassDeclaration eExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tClass.equals(tExtendedClass)) {
 			if (!eClassDeclaration.equals(eExtendedClass)) {
 				if (!sourceMatch.equals(targetMatch)) {
 					for (TypeToTAbstractType eClassDeclarationToTClass : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(tClass, TypeToTAbstractType.class, "target")) {
-						if (eClassDeclaration.equals(eClassDeclarationToTClass.getSource())) {
+							.getOppositeReferenceTyped(eClassDeclaration, TypeToTAbstractType.class, "source")) {
+						if (tClass.equals(eClassDeclarationToTClass.getTarget())) {
 							for (TypeToTAbstractType eExtendedClassToTExtendedClass : org.moflon.core.utilities.eMoflonEMFUtil
 									.getOppositeReferenceTyped(tExtendedClass, TypeToTAbstractType.class, "target")) {
 								if (!eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)) {
 									if (eExtendedClass.equals(eExtendedClassToTExtendedClass.getSource())) {
-										_result.add(new Object[] { eClassDeclarationToTClass, tClass,
-												eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass,
-												eExtendedClass, sourceMatch, targetMatch });
+										_result.add(new Object[] { tExtendedClass, eClassDeclarationToTClass,
+												eExtendedClass, tClass, eClassDeclaration,
+												eExtendedClassToTExtendedClass, sourceMatch, targetMatch });
 									}
 								}
 							}
@@ -2960,12 +2959,12 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 				ccMatch };
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_24_6_createcorrespondence_blackBBBBBB(TypeAccess eTypeAccess,
-			TClass tClass, ClassDeclaration eClassDeclaration, TClass tExtendedClass, ClassDeclaration eExtendedClass,
+	public static final Object[] pattern_ClassExtendsClass_24_6_createcorrespondence_blackBBBBBB(TClass tExtendedClass,
+			ClassDeclaration eExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
 			CCMatch ccMatch) {
 		if (!tClass.equals(tExtendedClass)) {
 			if (!eClassDeclaration.equals(eExtendedClass)) {
-				return new Object[] { eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass, ccMatch };
+				return new Object[] { tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess, ccMatch };
 			}
 		}
 		return null;
@@ -2993,13 +2992,13 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_0BBB(TypeAccess eTypeAccess,
-			ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
+			ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration) {
 		if (!eClassDeclaration.equals(eExtendedClass)) {
-			for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_553773 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_732362 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(eTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!eClassDeclaration.equals(__DEC_eTypeAccess_superInterfaces_553773)) {
-					if (!eExtendedClass.equals(__DEC_eTypeAccess_superInterfaces_553773)) {
-						return new Object[] { eTypeAccess, eClassDeclaration, eExtendedClass };
+				if (!eExtendedClass.equals(__DEC_eTypeAccess_superInterfaces_732362)) {
+					if (!eClassDeclaration.equals(__DEC_eTypeAccess_superInterfaces_732362)) {
+						return new Object[] { eTypeAccess, eExtendedClass, eClassDeclaration };
 					}
 				}
 			}
@@ -3008,7 +3007,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_1B(TypeAccess eTypeAccess) {
-		for (Annotation __DEC_eTypeAccess_type_89825 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_eTypeAccess_type_86697 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, Annotation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3016,7 +3015,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_2B(TypeAccess eTypeAccess) {
-		for (ArrayType __DEC_eTypeAccess_elementType_111469 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_eTypeAccess_elementType_64972 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3024,7 +3023,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_3B(TypeAccess eTypeAccess) {
-		for (ClassInstanceCreation __DEC_eTypeAccess_type_842448 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_eTypeAccess_type_137324 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3032,7 +3031,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_4B(TypeAccess eTypeAccess) {
-		for (MethodDeclaration __DEC_eTypeAccess_returnType_409045 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_eTypeAccess_returnType_374778 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3040,7 +3039,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_5B(TypeAccess eTypeAccess) {
-		for (ParameterizedType __DEC_eTypeAccess_type_921006 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_eTypeAccess_type_364519 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ParameterizedType.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3048,7 +3047,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_6B(TypeAccess eTypeAccess) {
-		for (TypeLiteral __DEC_eTypeAccess_type_11811 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_eTypeAccess_type_358115 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3056,7 +3055,7 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_7B(TypeAccess eTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_847036 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_933063 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3064,14 +3063,6 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_8BB(
-			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
-		if (eClassDeclaration.getSuperInterfaces().contains(eTypeAccess)) {
-			return new Object[] { eClassDeclaration, eTypeAccess };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_9BB(
 			ClassDeclaration eExtendedClass, TypeAccess eTypeAccess) {
 		if (eExtendedClass.getSuperInterfaces().contains(eTypeAccess)) {
 			return new Object[] { eExtendedClass, eTypeAccess };
@@ -3079,13 +3070,21 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return null;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_blackBBB(TypeAccess eTypeAccess,
-			ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass) {
+	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_9BB(
+			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
+		if (eClassDeclaration.getSuperInterfaces().contains(eTypeAccess)) {
+			return new Object[] { eClassDeclaration, eTypeAccess };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ClassExtendsClass_27_1_matchtggpattern_blackBBB(
+			ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess) {
 		if (!eClassDeclaration.equals(eExtendedClass)) {
-			if (eExtendedClass.equals(eTypeAccess.getType())) {
-				if (eTypeAccess.equals(eClassDeclaration.getSuperClass())) {
-					if (pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_0BBB(eTypeAccess, eClassDeclaration,
-							eExtendedClass) == null) {
+			if (eTypeAccess.equals(eClassDeclaration.getSuperClass())) {
+				if (eExtendedClass.equals(eTypeAccess.getType())) {
+					if (pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_0BBB(eTypeAccess, eExtendedClass,
+							eClassDeclaration) == null) {
 						if (pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_1B(eTypeAccess) == null) {
 							if (pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_2B(eTypeAccess) == null) {
 								if (pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_3B(eTypeAccess) == null) {
@@ -3098,11 +3097,11 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 												if (pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_7B(
 														eTypeAccess) == null) {
 													if (pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_8BB(
-															eClassDeclaration, eTypeAccess) == null) {
+															eExtendedClass, eTypeAccess) == null) {
 														if (pattern_ClassExtendsClass_27_1_matchtggpattern_black_nac_9BB(
-																eExtendedClass, eTypeAccess) == null) {
-															return new Object[] { eTypeAccess, eClassDeclaration,
-																	eExtendedClass };
+																eClassDeclaration, eTypeAccess) == null) {
+															return new Object[] { eExtendedClass, eClassDeclaration,
+																	eTypeAccess };
 														}
 													}
 												}
@@ -3129,11 +3128,11 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return _result;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_28_1_matchtggpattern_blackBB(TClass tClass,
-			TClass tExtendedClass) {
+	public static final Object[] pattern_ClassExtendsClass_28_1_matchtggpattern_blackBB(TClass tExtendedClass,
+			TClass tClass) {
 		if (!tClass.equals(tExtendedClass)) {
-			if (tExtendedClass.equals(tClass.getParentClass())) {
-				return new Object[] { tClass, tExtendedClass };
+			if (tClass.getParentClasses().contains(tExtendedClass)) {
+				return new Object[] { tExtendedClass, tClass };
 			}
 		}
 		return null;
@@ -3162,38 +3161,6 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType eClassDeclarationToTClass) {
-		if (ruleResult.getCorrObjects().contains(eClassDeclarationToTClass)) {
-			return new Object[] { ruleResult, eClassDeclarationToTClass };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, TClass tClass) {
-		if (ruleResult.getTargetObjects().contains(tClass)) {
-			return new Object[] { ruleResult, tClass };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, ClassDeclaration eClassDeclaration) {
-		if (ruleResult.getSourceObjects().contains(eClassDeclaration)) {
-			return new Object[] { ruleResult, eClassDeclaration };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType eExtendedClassToTExtendedClass) {
-		if (ruleResult.getCorrObjects().contains(eExtendedClassToTExtendedClass)) {
-			return new Object[] { ruleResult, eExtendedClassToTExtendedClass };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_4BB(
 			ModelgeneratorRuleResult ruleResult, TClass tExtendedClass) {
 		if (ruleResult.getTargetObjects().contains(tExtendedClass)) {
 			return new Object[] { ruleResult, tExtendedClass };
@@ -3201,7 +3168,15 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return null;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_5BB(
+	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType eExtendedClassToTExtendedClass) {
+		if (ruleResult.getCorrObjects().contains(eExtendedClassToTExtendedClass)) {
+			return new Object[] { ruleResult, eExtendedClassToTExtendedClass };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, ClassDeclaration eExtendedClass) {
 		if (ruleResult.getSourceObjects().contains(eExtendedClass)) {
 			return new Object[] { ruleResult, eExtendedClass };
@@ -3209,61 +3184,86 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return null;
 	}
 
+	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType eClassDeclarationToTClass) {
+		if (ruleResult.getCorrObjects().contains(eClassDeclarationToTClass)) {
+			return new Object[] { ruleResult, eClassDeclarationToTClass };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, ClassDeclaration eClassDeclaration) {
+		if (ruleResult.getSourceObjects().contains(eClassDeclaration)) {
+			return new Object[] { ruleResult, eClassDeclaration };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, TClass tClass) {
+		if (ruleResult.getTargetObjects().contains(tClass)) {
+			return new Object[] { ruleResult, tClass };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_ClassExtendsClass_29_2_isapplicablecore_blackFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList eClassDeclarationToTClassList : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList eExtendedClassToTExtendedClassList : ruleEntryContainer.getRuleEntryList()) {
+		for (RuleEntryList eExtendedClassToTExtendedClassList : ruleEntryContainer.getRuleEntryList()) {
+			for (RuleEntryList eClassDeclarationToTClassList : ruleEntryContainer.getRuleEntryList()) {
 				if (!eClassDeclarationToTClassList.equals(eExtendedClassToTExtendedClassList)) {
-					for (EObject tmpEClassDeclarationToTClass : eClassDeclarationToTClassList.getEntryObjects()) {
-						if (tmpEClassDeclarationToTClass instanceof TypeToTAbstractType) {
-							TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) tmpEClassDeclarationToTClass;
-							TAbstractType tmpTClass = eClassDeclarationToTClass.getTarget();
-							if (tmpTClass instanceof TClass) {
-								TClass tClass = (TClass) tmpTClass;
-								Type tmpEClassDeclaration = eClassDeclarationToTClass.getSource();
-								if (tmpEClassDeclaration instanceof ClassDeclaration) {
-									ClassDeclaration eClassDeclaration = (ClassDeclaration) tmpEClassDeclaration;
-									if (pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-											eClassDeclarationToTClass) == null) {
-										if (pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-												tClass) == null) {
+					for (EObject tmpEExtendedClassToTExtendedClass : eExtendedClassToTExtendedClassList
+							.getEntryObjects()) {
+						if (tmpEExtendedClassToTExtendedClass instanceof TypeToTAbstractType) {
+							TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) tmpEExtendedClassToTExtendedClass;
+							TAbstractType tmpTExtendedClass = eExtendedClassToTExtendedClass.getTarget();
+							if (tmpTExtendedClass instanceof TClass) {
+								TClass tExtendedClass = (TClass) tmpTExtendedClass;
+								Type tmpEExtendedClass = eExtendedClassToTExtendedClass.getSource();
+								if (tmpEExtendedClass instanceof ClassDeclaration) {
+									ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
+									if (pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+											eExtendedClassToTExtendedClass) == null) {
+										if (pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+												tExtendedClass) == null) {
 											if (pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, eClassDeclaration) == null) {
-												for (EObject tmpEExtendedClassToTExtendedClass : eExtendedClassToTExtendedClassList
+													ruleResult, eExtendedClass) == null) {
+												for (EObject tmpEClassDeclarationToTClass : eClassDeclarationToTClassList
 														.getEntryObjects()) {
-													if (tmpEExtendedClassToTExtendedClass instanceof TypeToTAbstractType) {
-														TypeToTAbstractType eExtendedClassToTExtendedClass = (TypeToTAbstractType) tmpEExtendedClassToTExtendedClass;
+													if (tmpEClassDeclarationToTClass instanceof TypeToTAbstractType) {
+														TypeToTAbstractType eClassDeclarationToTClass = (TypeToTAbstractType) tmpEClassDeclarationToTClass;
 														if (!eClassDeclarationToTClass
 																.equals(eExtendedClassToTExtendedClass)) {
-															TAbstractType tmpTExtendedClass = eExtendedClassToTExtendedClass
-																	.getTarget();
-															if (tmpTExtendedClass instanceof TClass) {
-																TClass tExtendedClass = (TClass) tmpTExtendedClass;
-																if (!tClass.equals(tExtendedClass)) {
-																	Type tmpEExtendedClass = eExtendedClassToTExtendedClass
-																			.getSource();
-																	if (tmpEExtendedClass instanceof ClassDeclaration) {
-																		ClassDeclaration eExtendedClass = (ClassDeclaration) tmpEExtendedClass;
-																		if (!eClassDeclaration.equals(eExtendedClass)) {
+															Type tmpEClassDeclaration = eClassDeclarationToTClass
+																	.getSource();
+															if (tmpEClassDeclaration instanceof ClassDeclaration) {
+																ClassDeclaration eClassDeclaration = (ClassDeclaration) tmpEClassDeclaration;
+																if (!eClassDeclaration.equals(eExtendedClass)) {
+																	TAbstractType tmpTClass = eClassDeclarationToTClass
+																			.getTarget();
+																	if (tmpTClass instanceof TClass) {
+																		TClass tClass = (TClass) tmpTClass;
+																		if (!tClass.equals(tExtendedClass)) {
 																			if (pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_3BB(
 																					ruleResult,
-																					eExtendedClassToTExtendedClass) == null) {
+																					eClassDeclarationToTClass) == null) {
 																				if (pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_4BB(
 																						ruleResult,
-																						tExtendedClass) == null) {
+																						eClassDeclaration) == null) {
 																					if (pattern_ClassExtendsClass_29_2_isapplicablecore_black_nac_5BB(
 																							ruleResult,
-																							eExtendedClass) == null) {
+																							tClass) == null) {
 																						_result.add(new Object[] {
+																								eExtendedClassToTExtendedClassList,
+																								tExtendedClass,
+																								eExtendedClassToTExtendedClass,
+																								eExtendedClass,
 																								eClassDeclarationToTClassList,
 																								eClassDeclarationToTClass,
-																								tClass,
 																								eClassDeclaration,
-																								eExtendedClassToTExtendedClassList,
-																								eExtendedClassToTExtendedClass,
-																								tExtendedClass,
-																								eExtendedClass,
+																								tClass,
 																								ruleEntryContainer,
 																								ruleResult });
 																					}
@@ -3294,15 +3294,16 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_29_3_solveCSP_bindingFBBBBBBBBB(ClassExtendsClass _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, eClassDeclarationToTClass, tClass,
-				eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass, ruleResult);
+			IsApplicableMatch isApplicableMatch, TClass tExtendedClass, TypeToTAbstractType eClassDeclarationToTClass,
+			ClassDeclaration eExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration,
+			TypeToTAbstractType eExtendedClassToTExtendedClass, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tExtendedClass,
+				eClassDeclarationToTClass, eExtendedClass, tClass, eClassDeclaration, eExtendedClassToTExtendedClass,
+				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, eClassDeclarationToTClass, tClass,
-					eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, tExtendedClass, eClassDeclarationToTClass,
+					eExtendedClass, tClass, eClassDeclaration, eExtendedClassToTExtendedClass, ruleResult };
 		}
 		return null;
 	}
@@ -3312,12 +3313,13 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 	}
 
 	public static final Object[] pattern_ClassExtendsClass_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			ClassExtendsClass _this, IsApplicableMatch isApplicableMatch, TypeToTAbstractType eClassDeclarationToTClass,
-			TClass tClass, TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass, ModelgeneratorRuleResult ruleResult) {
+			ClassExtendsClass _this, IsApplicableMatch isApplicableMatch, TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeToTAbstractType eExtendedClassToTExtendedClass,
+			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_ClassExtendsClass_29_3_solveCSP_binding = pattern_ClassExtendsClass_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-				eClassDeclaration, tExtendedClass, eExtendedClass, ruleResult);
+				_this, isApplicableMatch, tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+				eClassDeclaration, eExtendedClassToTExtendedClass, ruleResult);
 		if (result_pattern_ClassExtendsClass_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ClassExtendsClass_29_3_solveCSP_binding[0];
 
@@ -3325,8 +3327,8 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 					csp);
 			if (result_pattern_ClassExtendsClass_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, eClassDeclarationToTClass, tClass,
-						eExtendedClassToTExtendedClass, eClassDeclaration, tExtendedClass, eExtendedClass, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, tExtendedClass, eClassDeclarationToTClass,
+						eExtendedClass, tClass, eClassDeclaration, eExtendedClassToTExtendedClass, ruleResult };
 			}
 		}
 		return null;
@@ -3339,50 +3341,49 @@ public class ClassExtendsClassImpl extends AbstractRuleImpl implements ClassExte
 		return _result;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_29_5_checknacs_blackBBBBBB(
-			TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass) {
+	public static final Object[] pattern_ClassExtendsClass_29_5_checknacs_blackBBBBBB(TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeToTAbstractType eExtendedClassToTExtendedClass) {
 		if (!eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)) {
 			if (!tClass.equals(tExtendedClass)) {
 				if (!eClassDeclaration.equals(eExtendedClass)) {
-					return new Object[] { eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-							eClassDeclaration, tExtendedClass, eExtendedClass };
+					return new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+							eClassDeclaration, eExtendedClassToTExtendedClass };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_29_6_perform_blackBBBBBBB(
-			TypeToTAbstractType eClassDeclarationToTClass, TClass tClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, ClassDeclaration eClassDeclaration,
-			TClass tExtendedClass, ClassDeclaration eExtendedClass, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_ClassExtendsClass_29_6_perform_blackBBBBBBB(TClass tExtendedClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass, TClass tClass,
+			ClassDeclaration eClassDeclaration, TypeToTAbstractType eExtendedClassToTExtendedClass,
+			ModelgeneratorRuleResult ruleResult) {
 		if (!eClassDeclarationToTClass.equals(eExtendedClassToTExtendedClass)) {
 			if (!tClass.equals(tExtendedClass)) {
 				if (!eClassDeclaration.equals(eExtendedClass)) {
-					return new Object[] { eClassDeclarationToTClass, tClass, eExtendedClassToTExtendedClass,
-							eClassDeclaration, tExtendedClass, eExtendedClass, ruleResult };
+					return new Object[] { tExtendedClass, eClassDeclarationToTClass, eExtendedClass, tClass,
+							eClassDeclaration, eExtendedClassToTExtendedClass, ruleResult };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ClassExtendsClass_29_6_perform_greenFBBBBB(TClass tClass,
-			ClassDeclaration eClassDeclaration, TClass tExtendedClass, ClassDeclaration eExtendedClass,
+	public static final Object[] pattern_ClassExtendsClass_29_6_perform_greenBBBBFB(TClass tExtendedClass,
+			ClassDeclaration eExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration,
 			ModelgeneratorRuleResult ruleResult) {
 		TypeAccess eTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
-		tClass.setParentClass(tExtendedClass);
+		tClass.getParentClasses().add(tExtendedClass);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		eTypeAccess.setType(eExtendedClass);
 		eClassDeclaration.setSuperClass(eTypeAccess);
+		eTypeAccess.setType(eExtendedClass);
 		ruleResult.getSourceObjects().add(eTypeAccess);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { eTypeAccess, tClass, eClassDeclaration, tExtendedClass, eExtendedClass, ruleResult };
+		return new Object[] { tExtendedClass, eExtendedClass, tClass, eClassDeclaration, eTypeAccess, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_ClassExtendsClass_29_7_expressionFB(

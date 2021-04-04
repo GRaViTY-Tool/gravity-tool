@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -50,7 +51,7 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public boolean process(TypeGraph programModel, IProgressMonitor monitor) {
+	public boolean process(final TypeGraph programModel, final IProgressMonitor monitor) {
 		this.rs = programModel.eResource().getResourceSet();
 		for (final TAnnotationType tAnnotationType : programModel.getTAnnotationTypes()) {
 			final String tFullyQualifiedName = tAnnotationType.getFullyQualifiedName();
@@ -82,7 +83,7 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 		return true;
 	}
 
-	private void addReferences(Collection<? extends TCritical> replacements, TypeGraph model) {
+	private void addReferences(final Collection<? extends TCritical> replacements, final TypeGraph model) {
 		for (final TCritical critical : replacements) {
 			critical.getSecrecy().addAll(
 					getSignatures(critical, RequirementsPackage.eINSTANCE.getTCritical_Secrecy().getName(), model));
@@ -101,7 +102,7 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	 * @param model    The model in which the signatures should be searched
 	 * @return The signatures
 	 */
-	private Set<TSignature> getSignatures(TCritical critical, final String key, TypeGraph model) {
+	private Set<TSignature> getSignatures(final TCritical critical, final String key, final TypeGraph model) {
 		final TAnnotationValue values = critical.getValue(key);
 		if (values == null) {
 			return Collections.emptySet();
@@ -109,11 +110,12 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 		return values.getTValue().parallelStream().map(signature -> {
 			String string = ((TTextNode) signature).getTText();
 			string = unescape(string);
-			return model.getSignature(string);
-		}).collect(Collectors.toSet());
+			TSignature match = model.getSignature(string);
+			return match;
+		}).filter(Objects::nonNull).collect(Collectors.toSet());
 	}
 
-	private void addCounterMeasures(Collection<? extends TAnnotationWithCounterMeasure> replacements) {
+	private void addCounterMeasures(final Collection<? extends TAnnotationWithCounterMeasure> replacements) {
 		for (final TAnnotationWithCounterMeasure annotation : replacements) {
 			final TAnnotationValue earlyReturn = annotation.getValue("earlyReturn");
 			if (earlyReturn != null) {
@@ -132,7 +134,7 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	 * @param text Sompe text
 	 * @return The unescaped text
 	 */
-	private String unescape(String text) {
+	private String unescape(final String text) {
 		if(text.startsWith("\"") && text.endsWith("\"")) {
 			return text.substring(1, text.length() -1);
 		}
@@ -146,7 +148,7 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	 * @param eClass      A EClass that is a child of TAnnoation
 	 * @return The collection of replacements
 	 */
-	private Collection<TAnnotation> replaceAll(final Collection<TAnnotation> annotations, EClass eClass) {
+	private Collection<TAnnotation> replaceAll(final Collection<TAnnotation> annotations, final EClass eClass) {
 		final EFactory factory = eClass.getEPackage().getEFactoryInstance();
 		return annotations.stream().map(tAnnotation -> {
 			if (!eClass.isInstance(tAnnotation)) {
@@ -163,7 +165,7 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	 * @param replacement the replacement
 	 * @return Returns the replacement
 	 */
-	private TAnnotation replace(TAnnotation tAnnotation, TAnnotation replacement) {
+	private TAnnotation replace(final TAnnotation tAnnotation, final TAnnotation replacement) {
 		final EList<TAnnotationValue> values = tAnnotation.getTValues();
 		EcoreUtil.replace(tAnnotation, replacement);
 		for (final Setting setting : EcoreUtil.UsageCrossReferencer.find(tAnnotation, this.rs)) {

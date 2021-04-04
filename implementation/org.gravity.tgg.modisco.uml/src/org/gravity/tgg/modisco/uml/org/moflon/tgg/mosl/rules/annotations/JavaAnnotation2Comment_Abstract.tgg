@@ -29,7 +29,7 @@
 }
 
 #correspondence {
-	type2Interface : NamedElement2NamedElement {
+	type2Interface : ASTNode2Element {
 		#src->type
 		#trg->interf
 	}

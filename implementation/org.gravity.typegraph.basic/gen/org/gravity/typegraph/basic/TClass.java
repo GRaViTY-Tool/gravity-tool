@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.TClass#getParentClass <em>Parent Class</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TClass#getParentClasses <em>Parent Classes</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TClass#getChildClasses <em>Child Classes</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TClass#getImplements <em>Implements</em>}</li>
  * </ul>
@@ -24,37 +24,23 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface TClass extends TAbstractType {
 	/**
-	 * Returns the value of the '<em><b>Parent Class</b></em>' reference.
+	 * Returns the value of the '<em><b>Parent Classes</b></em>' reference list.
+	 * The list contents are of type {@link org.gravity.typegraph.basic.TClass}.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TClass#getChildClasses <em>Child Classes</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parent Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Class</em>' reference.
-	 * @see #setParentClass(TClass)
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTClass_ParentClass()
+	 * @return the value of the '<em>Parent Classes</em>' reference list.
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTClass_ParentClasses()
 	 * @see org.gravity.typegraph.basic.TClass#getChildClasses
 	 * @model opposite="childClasses"
 	 * @generated
 	 */
-	TClass getParentClass();
-
-	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TClass#getParentClass <em>Parent Class</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Class</em>' reference.
-	 * @see #getParentClass()
-	 * @generated
-	 */
-	void setParentClass(TClass value);
+	EList<TClass> getParentClasses();
 
 	/**
 	 * Returns the value of the '<em><b>Child Classes</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TClass}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TClass#getParentClass <em>Parent Class</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TClass#getParentClasses <em>Parent Classes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Child Classes</em>' reference list isn't clear,
@@ -63,8 +49,8 @@ public interface TClass extends TAbstractType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Child Classes</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTClass_ChildClasses()
-	 * @see org.gravity.typegraph.basic.TClass#getParentClass
-	 * @model opposite="parentClass" ordered="false"
+	 * @see org.gravity.typegraph.basic.TClass#getParentClasses
+	 * @model opposite="parentClasses" ordered="false"
 	 * @generated
 	 */
 	EList<TClass> getChildClasses();
@@ -117,6 +103,7 @@ public interface TClass extends TAbstractType {
 	 * @model
 	 * @generated
 	 */
+	@Override
 	boolean isSubTypeOf(TAbstractType tType);
 
 	/**
@@ -125,6 +112,7 @@ public interface TClass extends TAbstractType {
 	 * @model
 	 * @generated
 	 */
+	@Override
 	boolean isSuperTypeOf(TAbstractType tType);
 
 	/**
@@ -146,17 +134,10 @@ public interface TClass extends TAbstractType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	TClass getResolvedParentClass();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
+	@Override
 	String toString();
 
 	/**
@@ -173,6 +154,7 @@ public interface TClass extends TAbstractType {
 	 * @model
 	 * @generated
 	 */
+	@Override
 	boolean hasCommonSuperType(TAbstractType tType);
 	// <-- [user code injected with eMoflon]
 

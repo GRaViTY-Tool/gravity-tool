@@ -16,7 +16,7 @@
 }
 
 #target {
-	operation:Operation{
+	operation:uml.Operation{
 		++-ownedParameter -> returnParam
 	}
 
@@ -28,7 +28,7 @@
 }
 
 #correspondence {
-	m2o :NamedElement2NamedElement{
+	m2o :ASTNode2Element{
 		#src->method
 		#trg->operation
 	}
@@ -38,7 +38,7 @@
 		#trg->returnParam
 	}
 
-	ne2ne:NamedElement2NamedElement {
+	ne2ne:ASTNode2Element {
 		#src->jType
 		#trg->uType
 	}

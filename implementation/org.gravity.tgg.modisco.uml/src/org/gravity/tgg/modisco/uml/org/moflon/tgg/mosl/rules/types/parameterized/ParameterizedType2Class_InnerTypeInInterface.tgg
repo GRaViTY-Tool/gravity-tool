@@ -8,8 +8,8 @@
 }
 
 #target {
-	nonParamElement:Class
-	++parameterizedClassifier:Class
+	nonParamElement:uml.Class
+	++parameterizedClassifier:uml.Class
 }
 
 #correspondence {

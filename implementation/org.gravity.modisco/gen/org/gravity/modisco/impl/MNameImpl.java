@@ -104,6 +104,7 @@ public abstract class MNameImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getMName() {
 		return mName;
 	}
@@ -113,6 +114,7 @@ public abstract class MNameImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMName(String newMName) {
 		String oldMName = mName;
 		mName = newMName;
@@ -125,6 +127,7 @@ public abstract class MNameImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MSignature> getMSignatures() {
 		if (mSignatures == null) {
 			mSignatures = new EObjectContainmentEList<MSignature>(MSignature.class, this, ModiscoPackage.MNAME__MSIGNATURES);
@@ -137,6 +140,7 @@ public abstract class MNameImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MDefinition> getMDefinitions() {
 		if (mDefinitions == null) {
 			mDefinitions = new EObjectResolvingEList<MDefinition>(MDefinition.class, this, ModiscoPackage.MNAME__MDEFINITIONS);

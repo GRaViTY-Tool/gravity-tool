@@ -1,0 +1,33 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule OperationInInterface #with org.gravity.tgg.modisco.uml
+
+#source {
+	classDec:InterfaceDeclaration {
+		++ -bodyDeclarations -> bodyDeclaration
+	}
+
+	bodyDeclaration:MAbstractMethodDefinition 
+}
+
+#target {
+	umlClass:Interface {
+		++ -ownedOperation -> feature
+	}
+
+	feature:uml.Operation
+}
+
+
+#correspondence {	
+	c2c:ASTNode2Element {
+		#src->classDec
+		#trg->umlClass
+	}
+
+	bd2ne :ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}

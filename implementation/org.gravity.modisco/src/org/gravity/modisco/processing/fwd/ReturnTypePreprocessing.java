@@ -58,12 +58,12 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	private static final Logger LOGGER = Logger.getLogger(ReturnTypePreprocessing.class);
 
 	@Override
-	public boolean process(final MGravityModel model, final Collection<MMethodDefinition> elements, IFolder debug,
+	public boolean process(final MGravityModel model, final Collection<MMethodDefinition> elements, final IFolder debug,
 			final IProgressMonitor monitor) {
 		return elements.parallelStream().filter(method -> {
 			final TypeAccess returnType = method.getReturnType();
-			return returnType == null || returnType.getType() == null;
-		}).allMatch(method -> fixReturnType(method, model));
+			return (returnType == null) || (returnType.getType() == null);
+		}).sequential().allMatch(method -> fixReturnType(method, model));
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 		for (final AbstractMethodInvocation invocation : method.getUsages()) {
 			try {
 				final Type tmpType = guessReturnTypeOfCall(model, invocation);
-				if (tmpType != null && (type == null || MoDiscoUtil.isSuperType(tmpType, type))) {
+				if ((tmpType != null) && ((type == null) || MoDiscoUtil.isSuperType(tmpType, type))) {
 					type = tmpType;
 				}
 			} catch (final IllegalStateException e) {
@@ -178,17 +178,15 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 		// expressions!
 		if (index >= 0) {
 			return container.getMethod().getParameters().get(index).getType().getType();
-		} else {
-			if (container instanceof MethodInvocation) {
-				final Expression expression = ((MethodInvocation) container).getExpression();
-				if (expression.equals(invocation)) {// Some subtypes of AbstractMethodInvocation are expressions!
-					return container.getMethod().getAbstractTypeDeclaration();
-				} else {
-					throw new IllegalStateException(NLS.bind(Messages.unknownType, invocation.eClass().getName()));
-				}
+		} else if (container instanceof MethodInvocation) {
+			final Expression expression = ((MethodInvocation) container).getExpression();
+			if (expression.equals(invocation)) {// Some subtypes of AbstractMethodInvocation are expressions!
+				return container.getMethod().getAbstractTypeDeclaration();
 			} else {
 				throw new IllegalStateException(NLS.bind(Messages.unknownType, invocation.eClass().getName()));
 			}
+		} else {
+			throw new IllegalStateException(NLS.bind(Messages.unknownType, invocation.eClass().getName()));
 		}
 	}
 
@@ -221,7 +219,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 			} else {
 				throw new IllegalStateException(NLS.bind(Messages.unknownMethodDef, statement.eClass().getName()));
 			}
-		} else if (statement instanceof IfStatement || statement instanceof WhileStatement) {
+		} else if ((statement instanceof IfStatement) || (statement instanceof WhileStatement)) {
 			return pg.getOrphanTypes().parallelStream().filter(t -> t instanceof PrimitiveTypeBoolean).findAny()
 					.orElse(null);
 		} else if (statement instanceof ThrowStatement) {
@@ -244,8 +242,8 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 */
 	private static Type guessReturnTypeOfCall(final MGravityModel pg, final AbstractMethodInvocation invocation,
 			final Expression expression) {
-		if (expression instanceof ParenthesizedExpression || expression instanceof PrefixExpression
-				|| expression instanceof InfixExpression) {
+		if ((expression instanceof ParenthesizedExpression) || (expression instanceof PrefixExpression)
+				|| (expression instanceof InfixExpression)) {
 			return MoDiscoUtil.getJavaLangObject(pg);
 		} else if (expression instanceof Assignment) {
 			return getAssignmentType(pg, (Assignment) expression);
@@ -353,7 +351,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 */
 	private static MDefinition getContainingMethod(final EObject statement) {
 		EObject eContainer = statement;
-		while (eContainer != null && !(eContainer instanceof MDefinition)) {
+		while ((eContainer != null) && !(eContainer instanceof MDefinition)) {
 			eContainer = eContainer.eContainer();
 		}
 		return (MDefinition) eContainer;

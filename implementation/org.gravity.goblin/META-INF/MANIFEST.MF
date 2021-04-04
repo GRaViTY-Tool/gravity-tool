@@ -8,7 +8,7 @@ Bundle-ClassPath: .,
  libs/jcommander-1.27.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  at.ac.tuwien.big.momot.core,

@@ -55,7 +55,7 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MAbstractFlowElement> incomingFlows;
+	protected EList<MFlow> incomingFlows;
 
 	/**
 	 * The cached value of the '{@link #getOutgoingFlows() <em>Outgoing Flows</em>}' reference list.
@@ -65,7 +65,7 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MAbstractFlowElement> outgoingFlows;
+	protected EList<MFlow> outgoingFlows;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,6 +91,7 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MFlow> getOwnedFlows() {
 		if (ownedFlows == null) {
 			ownedFlows = new EObjectContainmentWithInverseEList<MFlow>(MFlow.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS, ModiscoPackage.MFLOW__FLOW_OWNER);
@@ -103,9 +104,10 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MAbstractFlowElement> getIncomingFlows() {
+	@Override
+	public EList<MFlow> getIncomingFlows() {
 		if (incomingFlows == null) {
-			incomingFlows = new EObjectWithInverseResolvingEList.ManyInverse<MAbstractFlowElement>(MAbstractFlowElement.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS);
+			incomingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS, ModiscoPackage.MFLOW__FLOW_TARGET);
 		}
 		return incomingFlows;
 	}
@@ -115,9 +117,10 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MAbstractFlowElement> getOutgoingFlows() {
+	@Override
+	public EList<MFlow> getOutgoingFlows() {
 		if (outgoingFlows == null) {
-			outgoingFlows = new EObjectWithInverseResolvingEList.ManyInverse<MAbstractFlowElement>(MAbstractFlowElement.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS);
+			outgoingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS, ModiscoPackage.MFLOW__FLOW_SOURCE);
 		}
 		return outgoingFlows;
 	}
@@ -192,11 +195,11 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 				return;
 			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
 				getIncomingFlows().clear();
-				getIncomingFlows().addAll((Collection<? extends MAbstractFlowElement>)newValue);
+				getIncomingFlows().addAll((Collection<? extends MFlow>)newValue);
 				return;
 			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
 				getOutgoingFlows().clear();
-				getOutgoingFlows().addAll((Collection<? extends MAbstractFlowElement>)newValue);
+				getOutgoingFlows().addAll((Collection<? extends MFlow>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

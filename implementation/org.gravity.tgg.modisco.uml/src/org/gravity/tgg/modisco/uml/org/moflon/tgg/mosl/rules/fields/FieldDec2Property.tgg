@@ -1,0 +1,29 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule FieldDec2Property #with org.gravity.tgg.modisco.uml
+
+#source {
+	++vdf:VariableDeclarationFragment {
+		++-variablesContainer->bodyDeclaration
+	}
+	
+	++bodyDeclaration:MFieldDefinition
+}
+
+#target {
+	++feature:Property
+}
+
+#correspondence {
+	++ b2e :ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq(vdf.name, feature.name)
+}
+
+

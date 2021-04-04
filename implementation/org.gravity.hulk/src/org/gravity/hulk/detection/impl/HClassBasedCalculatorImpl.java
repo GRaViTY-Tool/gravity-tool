@@ -86,7 +86,7 @@ public abstract class HClassBasedCalculatorImpl extends HDetectorImpl implements
 
 	public static final Iterable<TClass> getClassesToVisit(HAntiPatternGraph apg, HDetector detector) {
 		List<TClass> result = new LinkedList<>();
-		TypeGraph pm = apg.getPg();
+		TypeGraph pm = apg.getModel();
 		if (pm != null) {
 			for (TClass tClass : pm.getClasses()) {
 				if (!tClass.isTLib() && !"Anonymous".equals(tClass.getTName()) && !"T".equals(tClass.getTName())

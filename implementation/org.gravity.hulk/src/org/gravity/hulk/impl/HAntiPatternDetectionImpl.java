@@ -22,7 +22,6 @@ import org.gravity.hulk.detection.codesmells.HEmptyClassDetector;
 import org.gravity.hulk.detection.codesmells.HGetterSetterDetector;
 import org.gravity.hulk.detection.codesmells.HIntenseFieldUsageDetector;
 import org.gravity.hulk.detection.codesmells.HLargeClassDetector;
-import org.gravity.hulk.detection.codesmells.HLargeClassLowCohesionDetector;
 import org.gravity.hulk.detection.codesmells.HLowCohesionDetector;
 import org.gravity.hulk.detection.codesmells.HManyParametersDetector;
 import org.gravity.hulk.detection.codesmells.HMuchOverloadingDetector;
@@ -177,15 +176,13 @@ public class HAntiPatternDetectionImpl extends HAntiPatternHandlingImpl implemen
 
 		createDataClassAccessorDetector(graph, dataclassDetector);
 
-		final HLowCohesionDetector low = createLowCohesionCalculator(graph, lcom);
+		final HLowCohesionDetector lowCohesionDetector = createLowCohesionCalculator(graph, lcom);
 
 		final HLargeClassDetector largeClassDetector = createLargeClassDetector(graph, nmd);
 
-		final HLargeClassLowCohesionDetector lclc = createLargeClassLowCohesionDetector(graph, largeClassDetector, low);
-
 		final HContollerClassDetector controller = createControllerClassDetector(inc, graph);
 
-		createGodClassDetector(controller, graph, lclc);
+		createGodClassDetector(controller, graph, largeClassDetector, lowCohesionDetector);
 
 		createManyParametersDetector(graph, paramMetric);
 
@@ -431,22 +428,6 @@ public class HAntiPatternDetectionImpl extends HAntiPatternHandlingImpl implemen
 		return largeClassDetector;
 	}
 
-	private final HLargeClassLowCohesionDetector createLargeClassLowCohesionDetector(final DFSGraph graph,
-			final HLargeClassDetector largeClassDetector, final HLowCohesionDetector low) {
-		final Edge edge4 = DfsFactory.eINSTANCE.createEdge();
-		final Edge edge5 = DfsFactory.eINSTANCE.createEdge();
-		final HLargeClassLowCohesionDetector lclc = CodesmellsFactory.eINSTANCE.createHLargeClassLowCohesionDetector();
-		largeClassDetector.getIncoming().add(edge4);
-		edge4.setGraph(graph);
-		low.getIncoming().add(edge5);
-		edge5.setGraph(graph);
-		lclc.getOutgoing().add(edge5);
-		lclc.setGraph(graph);
-		lclc.getOutgoing().add(edge4);
-		lclc.setHAntiPatternHandling(this);
-		return lclc;
-	}
-
 	private final HContollerClassDetector createControllerClassDetector(final HInvocationRelationCalculator inc,
 			final DFSGraph graph) {
 		final HContollerClassDetector controller = CodesmellsFactory.eINSTANCE.createHContollerClassDetector();
@@ -460,17 +441,21 @@ public class HAntiPatternDetectionImpl extends HAntiPatternHandlingImpl implemen
 	}
 
 	private final HGodClassDetector createGodClassDetector(final HContollerClassDetector controller,
-			final DFSGraph graph, final HLargeClassLowCohesionDetector lclc) {
+			final DFSGraph graph, final HLargeClassDetector largeClass, final HLowCohesionDetector lowCohesion) {
 		final Edge edge6 = DfsFactory.eINSTANCE.createEdge();
 		final Edge edge7 = DfsFactory.eINSTANCE.createEdge();
+		final Edge edge8 = DfsFactory.eINSTANCE.createEdge();
 		final HGodClassDetector god = AntipatternFactory.eINSTANCE.createHGodClassDetector();
 		controller.getIncoming().add(edge6);
 		edge6.setGraph(graph);
-		lclc.getIncoming().add(edge7);
+		largeClass.getIncoming().add(edge7);
 		edge7.setGraph(graph);
+		lowCohesion.getIncoming().add(edge8);
+		edge8.setGraph(graph);
 		god.setGraph(graph);
 		god.getOutgoing().add(edge6);
 		god.getOutgoing().add(edge7);
+		god.getOutgoing().add(edge8);
 		god.setHAntiPatternHandling(this);
 		return god;
 	}

@@ -1,0 +1,103 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule Initializer #with org.gravity.tgg.modisco.pm
+
+#source {
+	++mDefinition:MInitializer
+}
+
+#target {
+	tPM:TypeGraph
+
+	tType:TAbstractType {
+		-model -> tPM
+		++  -defines -> tDefinition
+	}
+
+	++tDefinition:TMethodDefinition {
+		++-signature -> tSignature
+		++-tModifier -> tModifier
+	}
+
+	++tSignature:TMethodSignature {
+		++-method -> tName
+	}
+
+	++tName:TMethod {
+		++-model -> tPM
+	}
+
+	++tModifier:TModifier {
+		isStatic:=true
+	}
+}
+
+#correspondence {
+
+	++ mDefinitionToTMember :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+}
+
+#attributeConditions {
+	addSuffix(tType.tName, ".initializer", tName.tName)
+// eq(tModifier.tVisibility,enum::TVisibility::TPrivate)
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule InitializerInType #extends Initializer #with org.gravity.tgg.modisco.pm
+
+#source {
+	mType:AbstractTypeDeclaration {
+		++-bodyDeclarations -> mDefinition
+	}
+
+	++mDefinition:MInitializer
+}
+
+#target {
+	tType:TAbstractType
+}
+
+
+#correspondence {
+	mTypeToTTYpe :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule InitializerInAnonymous #extends Initializer #with org.gravity.tgg.modisco.pm
+
+#source {
+	mType:AnonymousClassDeclaration {
+		++-bodyDeclarations -> mDefinition
+	}
+
+	++mDefinition:MInitializer
+}
+
+#target {
+	tType:TClass
+}
+
+
+#correspondence {
+	mTypeToTTYpe :AnonymousClassDeclarationToTClass {
+		#src->mType
+		#trg->tType
+	}
+}

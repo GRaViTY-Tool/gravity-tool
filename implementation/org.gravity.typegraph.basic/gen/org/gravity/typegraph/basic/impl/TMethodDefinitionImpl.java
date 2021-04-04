@@ -87,14 +87,14 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	protected int upperBound = UPPER_BOUND_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOverriding() <em>Overriding</em>}' reference.
+	 * The cached value of the '{@link #getOverriding() <em>Overriding</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOverriding()
 	 * @generated
 	 * @ordered
 	 */
-	protected TMethodDefinition overriding;
+	protected EList<TMethodDefinition> overriding;
 
 	/**
 	 * The cached value of the '{@link #getOverriddenBy() <em>Overridden By</em>}' reference list.
@@ -237,60 +237,11 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * @generated
 	 */
 	@Override
-	public TMethodDefinition getOverriding() {
-		if (overriding != null && overriding.eIsProxy()) {
-			InternalEObject oldOverriding = (InternalEObject)overriding;
-			overriding = (TMethodDefinition)eResolveProxy(oldOverriding);
-			if (overriding != oldOverriding) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TMETHOD_DEFINITION__OVERRIDING, oldOverriding, overriding));
-			}
+	public EList<TMethodDefinition> getOverriding() {
+		if (overriding == null) {
+			overriding = new EObjectWithInverseResolvingEList.ManyInverse<TMethodDefinition>(TMethodDefinition.class, this, BasicPackage.TMETHOD_DEFINITION__OVERRIDING, BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY);
 		}
 		return overriding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TMethodDefinition basicGetOverriding() {
-		return overriding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOverriding(TMethodDefinition newOverriding, NotificationChain msgs) {
-		TMethodDefinition oldOverriding = overriding;
-		overriding = newOverriding;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD_DEFINITION__OVERRIDING, oldOverriding, newOverriding);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOverriding(TMethodDefinition newOverriding) {
-		if (newOverriding != overriding) {
-			NotificationChain msgs = null;
-			if (overriding != null)
-				msgs = ((InternalEObject)overriding).eInverseRemove(this, BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY, TMethodDefinition.class, msgs);
-			if (newOverriding != null)
-				msgs = ((InternalEObject)newOverriding).eInverseAdd(this, BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY, TMethodDefinition.class, msgs);
-			msgs = basicSetOverriding(newOverriding, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD_DEFINITION__OVERRIDING, newOverriding, newOverriding));
 	}
 
 	/**
@@ -301,7 +252,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public EList<TMethodDefinition> getOverriddenBy() {
 		if (overriddenBy == null) {
-			overriddenBy = new EObjectWithInverseResolvingEList<TMethodDefinition>(TMethodDefinition.class, this, BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY, BasicPackage.TMETHOD_DEFINITION__OVERRIDING);
+			overriddenBy = new EObjectWithInverseResolvingEList.ManyInverse<TMethodDefinition>(TMethodDefinition.class, this, BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY, BasicPackage.TMETHOD_DEFINITION__OVERRIDING);
 		}
 		return overriddenBy;
 	}
@@ -406,9 +357,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
-				if (overriding != null)
-					msgs = ((InternalEObject)overriding).eInverseRemove(this, BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY, TMethodDefinition.class, msgs);
-				return basicSetOverriding((TMethodDefinition)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOverriding()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOverriddenBy()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TMETHOD_DEFINITION__OVERLOADING:
@@ -430,7 +379,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
-				return basicSetOverriding(null, msgs);
+				return ((InternalEList<?>)getOverriding()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY:
 				return ((InternalEList<?>)getOverriddenBy()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TMETHOD_DEFINITION__OVERLOADING:
@@ -456,8 +405,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 			case BasicPackage.TMETHOD_DEFINITION__UPPER_BOUND:
 				return getUpperBound();
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
-				if (resolve) return getOverriding();
-				return basicGetOverriding();
+				return getOverriding();
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY:
 				return getOverriddenBy();
 			case BasicPackage.TMETHOD_DEFINITION__OVERLOADING:
@@ -489,7 +437,8 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 				setUpperBound((Integer)newValue);
 				return;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
-				setOverriding((TMethodDefinition)newValue);
+				getOverriding().clear();
+				getOverriding().addAll((Collection<? extends TMethodDefinition>)newValue);
 				return;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY:
 				getOverriddenBy().clear();
@@ -529,7 +478,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 				setUpperBound(UPPER_BOUND_EDEFAULT);
 				return;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
-				setOverriding((TMethodDefinition)null);
+				getOverriding().clear();
 				return;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY:
 				getOverriddenBy().clear();
@@ -563,7 +512,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 			case BasicPackage.TMETHOD_DEFINITION__UPPER_BOUND:
 				return upperBound != UPPER_BOUND_EDEFAULT;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
-				return overriding != null;
+				return overriding != null && !overriding.isEmpty();
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY:
 				return overriddenBy != null && !overriddenBy.isEmpty();
 			case BasicPackage.TMETHOD_DEFINITION__OVERLOADING:

@@ -114,9 +114,9 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eNestedType, EObject tNestedPackage,
-			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType, EObject tOuterType,
-			EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eNestedType, EObject eNestedTypeToTNestedType,
+			EObject typeGraph, EObject tNestedType, EObject tOuterType, EObject eOuterTypeToTOuterInterface,
+			EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,8 +132,8 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TPackage tNestedPackage, TypeGraph typeGraph, TInterface tNestedType,
-			TAbstractType tOuterType, TPackage tOuterPackage);
+	boolean isAppropriate_BWD(Match match, TypeGraph typeGraph, TInterface tNestedType, TAbstractType tOuterType,
+			TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,8 +157,8 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TPackage tNestedPackage, TypeGraph typeGraph, TInterface tNestedType,
-			TAbstractType tOuterType, TPackage tOuterPackage);
+	void registerObjectsToMatch_BWD(Match match, TypeGraph typeGraph, TInterface tNestedType, TAbstractType tOuterType,
+			TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,8 +166,8 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TPackage tNestedPackage, TypeGraph typeGraph, TInterface tNestedType,
-			TAbstractType tOuterType, TPackage tOuterPackage);
+	CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph typeGraph, TInterface tNestedType, TAbstractType tOuterType,
+			TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,8 +183,8 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tNestedPackage, TypeGraph typeGraph,
-			TInterface tNestedType, TAbstractType tOuterType, TypeToTAbstractType eOuterTypeToTOuterInterface,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, TInterface tNestedType,
+			TAbstractType tOuterType, TypeToTAbstractType eOuterTypeToTOuterInterface,
 			AbstractTypeDeclaration eOuterType, TPackage tOuterPackage);
 
 	/**
@@ -201,9 +201,9 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eNestedType, EObject tNestedPackage,
-			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType, EObject tOuterType,
-			EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eNestedType, EObject eNestedTypeToTNestedType,
+			EObject typeGraph, EObject tNestedType, EObject tOuterType, EObject eOuterTypeToTOuterInterface,
+			EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_686(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_63(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +227,7 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_704(EMoflonEdge _edge_abstractTypeDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_66(EMoflonEdge _edge_abstractTypeDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,9 +259,9 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(InterfaceDeclaration eNestedType, TPackage tNestedPackage, TypeGraph typeGraph,
-			TInterface tNestedType, TAbstractType tOuterType, AbstractTypeDeclaration eOuterType,
-			TPackage tOuterPackage, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(InterfaceDeclaration eNestedType, TypeGraph typeGraph, TInterface tNestedType,
+			TAbstractType tOuterType, AbstractTypeDeclaration eOuterType, TPackage tOuterPackage, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,8 +285,7 @@ public interface NestedInterfaceInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TPackage tNestedPackage, TypeGraph typeGraph, TInterface tNestedType, TAbstractType tOuterType,
-			TPackage tOuterPackage);
+	boolean checkDEC_BWD(TypeGraph typeGraph, TInterface tNestedType, TAbstractType tOuterType, TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->

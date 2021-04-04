@@ -57,14 +57,6 @@ public interface CodesmellsFactory extends EFactory {
 	 */
 	HGetterSetterDetector createHGetterSetterDetector();
 
-	/**
-	 * Returns a new object of class '<em>HLarge Class Low Cohesion Detector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>HLarge Class Low Cohesion Detector</em>'.
-	 * @generated
-	 */
-	HLargeClassLowCohesionDetector createHLargeClassLowCohesionDetector();
 
 	/**
 	 * Returns a new object of class '<em>HLarge Class Detector</em>'.

@@ -33,17 +33,15 @@ import org.gravity.typegraph.basic.TParameterList;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HGetterSetterSmellImpl#getTFieldDefinition
- * <em>TField Definition</em>}</li>
+ *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HGetterSetterSmellImpl#getTFieldDefinition <em>TField Definition</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSetterSmell {
 	/**
-	 * The cached value of the '{@link #getTFieldDefinition() <em>TField
-	 * Definition</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getTFieldDefinition() <em>TField Definition</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTFieldDefinition()
 	 * @generated
 	 * @ordered
@@ -52,7 +50,6 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected HGetterSetterSmellImpl() {
@@ -61,7 +58,6 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,7 +67,6 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -91,7 +86,6 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public TFieldDefinition basicGetTFieldDefinition() {
@@ -100,7 +94,6 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -114,7 +107,6 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,7 +122,6 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -145,7 +136,6 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -160,7 +150,6 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

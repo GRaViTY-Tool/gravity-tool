@@ -13,7 +13,7 @@ import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Parameter;
 
-import org.gravity.tgg.modisco.uml.NamedElement2NamedElement;
+import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
 import org.moflon.tgg.language.csp.CSP;
 
@@ -101,8 +101,8 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation, TypeAccess access,
-			NamedElement2NamedElement v2p, SingleVariableDeclaration variable, Interface interf,
-			AnnotationTypeDeclaration type, NamedElement2NamedElement type2Interface, Parameter element);
+			ASTNode2Element v2p, SingleVariableDeclaration variable, Interface interf, AnnotationTypeDeclaration type,
+			ASTNode2Element type2Interface, Parameter element);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,7 +118,7 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject access, EObject a2c, EObject v2p,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject a2c, EObject access, EObject v2p,
 			EObject variable, EObject comment, EObject interf, EObject type, EObject type2Interface, EObject element);
 
 	/**
@@ -183,9 +183,9 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement v2p,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element v2p,
 			SingleVariableDeclaration variable, Comment comment, Interface interf, AnnotationTypeDeclaration type,
-			NamedElement2NamedElement type2Interface, Parameter element);
+			ASTNode2Element type2Interface, Parameter element);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject access, EObject a2c, EObject v2p,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject a2c, EObject access, EObject v2p,
 			EObject variable, EObject comment, EObject interf, EObject type, EObject type2Interface, EObject element);
 
 	/**
@@ -218,7 +218,7 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_394(EMoflonEdge _edge_ownedComment);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_95(EMoflonEdge _edge_ownedComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_405(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_115(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,8 +293,8 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			NamedElement2NamedElement v2pParameter, NamedElement2NamedElement type2InterfaceParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element v2pParameter,
+			ASTNode2Element type2InterfaceParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,9 +302,9 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement v2p,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element v2p,
 			SingleVariableDeclaration variable, Interface interf, AnnotationTypeDeclaration type,
-			NamedElement2NamedElement type2Interface, Parameter element, ModelgeneratorRuleResult ruleResult);
+			ASTNode2Element type2Interface, Parameter element, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

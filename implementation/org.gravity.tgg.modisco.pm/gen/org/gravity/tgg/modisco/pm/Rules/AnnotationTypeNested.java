@@ -118,8 +118,8 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eNestedType, EObject eNestedTypeToTNestedType,
-			EObject tNestedPackage, EObject typeGraph, EObject tNestedType, EObject tOuterType,
-			EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
+			EObject typeGraph, EObject tNestedType, EObject tOuterType, EObject eOuterTypeToTOuterInterface,
+			EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,8 +135,8 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TPackage tNestedPackage, TypeGraph typeGraph, TAnnotationType tNestedType,
-			TAbstractType tOuterType, TPackage tOuterPackage);
+	boolean isAppropriate_BWD(Match match, TypeGraph typeGraph, TAnnotationType tNestedType, TAbstractType tOuterType,
+			TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,8 +160,8 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TPackage tNestedPackage, TypeGraph typeGraph,
-			TAnnotationType tNestedType, TAbstractType tOuterType, TPackage tOuterPackage);
+	void registerObjectsToMatch_BWD(Match match, TypeGraph typeGraph, TAnnotationType tNestedType,
+			TAbstractType tOuterType, TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,8 +169,8 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TPackage tNestedPackage, TypeGraph typeGraph,
-			TAnnotationType tNestedType, TAbstractType tOuterType, TPackage tOuterPackage);
+	CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph typeGraph, TAnnotationType tNestedType,
+			TAbstractType tOuterType, TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,8 +186,8 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tNestedPackage, TypeGraph typeGraph,
-			TAnnotationType tNestedType, TAbstractType tOuterType, TypeToTAbstractType eOuterTypeToTOuterInterface,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, TAnnotationType tNestedType,
+			TAbstractType tOuterType, TypeToTAbstractType eOuterTypeToTOuterInterface,
 			AbstractTypeDeclaration eOuterType, TPackage tOuterPackage);
 
 	/**
@@ -205,8 +205,8 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eNestedType, EObject eNestedTypeToTNestedType,
-			EObject tNestedPackage, EObject typeGraph, EObject tNestedType, EObject tOuterType,
-			EObject eOuterTypeToTOuterInterface, EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
+			EObject typeGraph, EObject tNestedType, EObject tOuterType, EObject eOuterTypeToTOuterInterface,
+			EObject mBodyToTAnnotation, EObject eOuterType, EObject tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_733(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_75(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_753(EMoflonEdge _edge_abstractTypeDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_79(EMoflonEdge _edge_abstractTypeDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,7 +262,7 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(AnnotationTypeDeclaration eNestedType, TPackage tNestedPackage, TypeGraph typeGraph,
+	CSP isApplicable_solveCsp_CC(AnnotationTypeDeclaration eNestedType, TypeGraph typeGraph,
 			TAnnotationType tNestedType, TAbstractType tOuterType, AbstractTypeDeclaration eOuterType,
 			TPackage tOuterPackage, Match sourceMatch, Match targetMatch);
 
@@ -288,8 +288,8 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TPackage tNestedPackage, TypeGraph typeGraph, TAnnotationType tNestedType,
-			TAbstractType tOuterType, TPackage tOuterPackage);
+	boolean checkDEC_BWD(TypeGraph typeGraph, TAnnotationType tNestedType, TAbstractType tOuterType,
+			TPackage tOuterPackage);
 
 	/**
 	 * <!-- begin-user-doc -->

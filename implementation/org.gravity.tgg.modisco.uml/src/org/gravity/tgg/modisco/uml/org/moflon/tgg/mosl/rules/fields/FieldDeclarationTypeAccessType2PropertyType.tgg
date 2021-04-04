@@ -24,7 +24,7 @@
 }
 
 #correspondence {
-	ne2ne:NamedElement2NamedElement {
+	ne2ne:ASTNode2Element {
 		#src->fieldDeclaration
 		#trg->property
 	}
@@ -34,7 +34,7 @@
 		#trg->property
 	}
 	
-	jt2ut : NamedElement2NamedElement{
+	jt2ut : ASTNode2Element{
 		#src->jType
 		#trg->uType
 	}

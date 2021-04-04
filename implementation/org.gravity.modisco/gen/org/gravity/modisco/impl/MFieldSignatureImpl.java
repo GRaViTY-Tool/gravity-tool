@@ -62,6 +62,7 @@ public class MFieldSignatureImpl extends MSignatureImpl implements MFieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Type getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
@@ -88,6 +89,7 @@ public class MFieldSignatureImpl extends MSignatureImpl implements MFieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(Type newType) {
 		Type oldType = type;
 		type = newType;

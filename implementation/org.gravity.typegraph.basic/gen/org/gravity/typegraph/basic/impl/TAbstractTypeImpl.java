@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Deque;
 // [user defined imports] -->
 // <-- [user defined imports]
 import java.util.LinkedList;
@@ -48,8 +49,8 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getPg
- * <em>Pg</em>}</li>
+ * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getModel
+ * <em>Model</em>}</li>
  * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getPackage
  * <em>Package</em>}</li>
  * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getSignature
@@ -195,8 +196,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public TypeGraph getPg() {
-		if (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__PG) {
+	public TypeGraph getModel() {
+		if (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__MODEL) {
 			return null;
 		}
 		return (TypeGraph) eInternalContainer();
@@ -207,8 +208,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetPg(final TypeGraph newPg, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newPg, BasicPackage.TABSTRACT_TYPE__PG, msgs);
+	public NotificationChain basicSetModel(final TypeGraph newModel, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newModel, BasicPackage.TABSTRACT_TYPE__MODEL, msgs);
 		return msgs;
 	}
 
@@ -218,26 +219,27 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public void setPg(final TypeGraph newPg) {
-		if ((newPg != eInternalContainer())
-				|| ((eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__PG) && (newPg != null))) {
-			if (EcoreUtil.isAncestor(this, newPg)) {
+	public void setModel(final TypeGraph newModel) {
+		if ((newModel != eInternalContainer())
+				|| ((eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__MODEL) && (newModel != null))) {
+			if (EcoreUtil.isAncestor(this, newModel)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			}
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
 			}
-			if (newPg != null) {
-				msgs = ((InternalEObject) newPg).eInverseAdd(this, BasicPackage.TYPE_GRAPH__OWNED_TYPES,
+			if (newModel != null) {
+				msgs = ((InternalEObject) newModel).eInverseAdd(this, BasicPackage.TYPE_GRAPH__OWNED_TYPES,
 						TypeGraph.class, msgs);
 			}
-			msgs = basicSetPg(newPg, msgs);
+			msgs = basicSetModel(newModel, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__PG, newPg, newPg));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__MODEL, newModel,
+					newModel));
 		}
 	}
 
@@ -363,8 +365,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		final boolean oldTLib = this.tLib;
 		this.tLib = newTLib;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TLIB, oldTLib,
-					this.tLib));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TLIB, oldTLib, this.tLib));
 		}
 	}
 
@@ -388,8 +389,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		final String oldTName = this.tName;
 		this.tName = newTName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TNAME, oldTName,
-					this.tName));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TNAME, oldTName, this.tName));
 		}
 	}
 
@@ -568,7 +568,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		if (getTName().equals("T")) {
 			return false;
 		}
-		if (getTName().equals("Anonymous")) {
+		if (getTName().endsWith("$Anonymous")) {
 			return false;
 		}
 		return !isTLib();
@@ -738,11 +738,11 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	@Override
 	public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__PG:
+		case BasicPackage.TABSTRACT_TYPE__MODEL:
 			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
 			}
-			return basicSetPg((TypeGraph) otherEnd, msgs);
+			return basicSetModel((TypeGraph) otherEnd, msgs);
 		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
 			if (this.package_ != null) {
 				msgs = ((InternalEObject) this.package_).eInverseRemove(this, BasicPackage.TPACKAGE__OWNED_TYPES,
@@ -769,11 +769,10 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-			final NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__PG:
-			return basicSetPg(null, msgs);
+		case BasicPackage.TABSTRACT_TYPE__MODEL:
+			return basicSetModel(null, msgs);
 		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
 			return basicSetPackage(null, msgs);
 		case BasicPackage.TABSTRACT_TYPE__DEFINES:
@@ -796,7 +795,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case BasicPackage.TABSTRACT_TYPE__PG:
+		case BasicPackage.TABSTRACT_TYPE__MODEL:
 			return eInternalContainer().eInverseRemove(this, BasicPackage.TYPE_GRAPH__OWNED_TYPES, TypeGraph.class,
 					msgs);
 		}
@@ -811,8 +810,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	@Override
 	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__PG:
-			return getPg();
+		case BasicPackage.TABSTRACT_TYPE__MODEL:
+			return getModel();
 		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
 			if (resolve) {
 				return getPackage();
@@ -848,8 +847,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	@Override
 	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__PG:
-			setPg((TypeGraph) newValue);
+		case BasicPackage.TABSTRACT_TYPE__MODEL:
+			setModel((TypeGraph) newValue);
 			return;
 		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
 			setPackage((TPackage) newValue);
@@ -890,8 +889,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	@Override
 	public void eUnset(final int featureID) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__PG:
-			setPg((TypeGraph) null);
+		case BasicPackage.TABSTRACT_TYPE__MODEL:
+			setModel((TypeGraph) null);
 			return;
 		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
 			setPackage((TPackage) null);
@@ -929,8 +928,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	@Override
 	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__PG:
-			return getPg() != null;
+		case BasicPackage.TABSTRACT_TYPE__MODEL:
+			return getModel() != null;
 		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
 			return this.package_ != null;
 		case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
@@ -1139,12 +1138,12 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 			final int returnLowerBound, final int returnUpperBound, final EList<TAbstractType> parameters,
 			final EList<Integer> parameterLowerBounds, final EList<Integer> parameterUpperBounds, final boolean static_,
 			final TVisibility visibility) {
-		final TypeGraph pm = getPg();
+		final TypeGraph pm = getModel();
 		TMethod method = pm.getMethod(name);
 		if (method == null) {
 			method = BasicFactory.eINSTANCE.createTMethod();
 			method.setTName(name);
-			method.setPg(pm);
+			method.setModel(pm);
 		}
 		TMethodSignature signature = method.getMethodSignature(returnType, returnLowerBound, returnUpperBound,
 				parameters, parameterLowerBounds, parameterUpperBounds);
@@ -1159,16 +1158,16 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 			definition = BasicFactory.eINSTANCE.createTMethodDefinition();
 			if (this instanceof TClass) {
 				final EList<TMethodDefinition> otherMethodDefinitions = signature.getMethodDefinitions();
-				TClass parent = ((TClass) this).getParentClass();
-				while (parent != null) {
-					final TClass parentCopy = parent;
+				Deque<TClass> parent = new LinkedList<>(((TClass) this).getParentClasses());
+				while (!parent.isEmpty()) {
+					final TClass parentCopy = parent.pop();
 					final Optional<TMethodDefinition> match = otherMethodDefinitions.parallelStream()
 							.filter(def -> parentCopy.equals(def.getDefinedBy())).findAny();
 					if (match.isPresent()) {
-						definition.setOverriding(match.get());
+						definition.getOverriding().add(match.get());
 						parent = null;
 					} else {
-						parent = parent.getParentClass();
+						parent.addAll(parentCopy.getParentClasses());
 					}
 				}
 			}
@@ -1194,12 +1193,12 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	@Override
 	public TFieldDefinition createFieldDefinition(final String name, final TAbstractType type, final int lowerBound,
 			final int upperBound, final boolean static_, final TVisibility visibility) {
-		final TypeGraph pm = getPg();
+		final TypeGraph pm = getModel();
 		TField field = pm.getField(name);
 		if (field == null) {
 			field = BasicFactory.eINSTANCE.createTField();
 			field.setTName(name);
-			field.setPg(pm);
+			field.setModel(pm);
 		}
 		TFieldSignature signature = null;
 		for (final TFieldSignature candidate : field.getSignatures()) {
@@ -1229,16 +1228,21 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 			definition = BasicFactory.eINSTANCE.createTFieldDefinition();
 			definition.setSignature(signature);
 			definition.setDefinedBy(this);
-			TAbstractType parent = null;
-			do {
-				if (this instanceof TClass) {
-					parent = ((TClass) this).getParentClass();
-					if((parent != null) && parent.getSignature().contains(signature)) {
-						definition.setHiding(signature.getTDefinition(parent));
-						break;
+			if (this instanceof TClass) {
+				final Deque<TAbstractType> parents = new LinkedList<>();
+				parents.addAll(((TClass) this).getParentClasses());
+				while (!parents.isEmpty()) {
+					final TAbstractType parent = parents.pop();
+					if (parent instanceof TClass) {
+
+						parents.addAll(((TClass) parent).getParentClasses());
+						if ((parent != null) && parent.getSignature().contains(signature)) {
+							definition.setHiding(signature.getTDefinition(parent));
+							break;
+						}
 					}
 				}
-			}while(parent != null);
+			}
 		}
 		return definition;
 	}

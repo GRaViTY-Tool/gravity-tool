@@ -117,7 +117,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tSignature, EObject mTypeToTType, EObject tType,
-			EObject mFieldName, EObject eFieldDeclarationToTField, EObject mFlowElementToTFlowElement, EObject tField,
+			EObject mFieldName, EObject eFieldDeclarationToTField, EObject tField, EObject mFlowElementToTFlowElement,
 			EObject mSignatureToTSignature, EObject mType, EObject mSignature);
 
 	/**
@@ -201,7 +201,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tSignature, EObject mTypeToTType, EObject tType,
-			EObject mFieldName, EObject eFieldDeclarationToTField, EObject mFlowElementToTFlowElement, EObject tField,
+			EObject mFieldName, EObject eFieldDeclarationToTField, EObject tField, EObject mFlowElementToTFlowElement,
 			EObject mSignatureToTSignature, EObject mType, EObject mSignature);
 
 	/**
@@ -218,7 +218,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_746(EMoflonEdge _edge_signatures);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_36(EMoflonEdge _edge_signatures);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_766(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_38(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

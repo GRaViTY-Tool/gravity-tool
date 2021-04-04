@@ -13,9 +13,7 @@
 	array : ArrayInitializer {
 		++ -expressions-> expr
 	}
-	++ expr : StringLiteral {
-		
-	}
+	++ expr : StringLiteral
 }
 
 #target {

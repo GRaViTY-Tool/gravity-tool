@@ -38,15 +38,15 @@ public class PGAdditionHelper {
 			pg.getPackages().add(next);
 			setPG4Package(next, pg);
 		} else {
-			List<TPackage> packages = match.getSubpackage();
+			List<TPackage> packages = match.getSubpackages();
 			while (!packages.isEmpty()) {
-				final List<TPackage> nextChild = next.getSubpackage();
+				final List<TPackage> nextChild = next.getSubpackages();
 				if (!nextChild.isEmpty()) {
 					next = nextChild.get(0);
 					boolean success = false;
 					for (final TPackage p : packages) {
 						if (p.getTName().compareTo(next.getTName()) == 0) {
-							packages = p.getSubpackage();
+							packages = p.getSubpackages();
 							match = p;
 							success = true;
 							break;
@@ -61,9 +61,9 @@ public class PGAdditionHelper {
 					return;
 				}
 			}
-			final EList<TPackage> nextChild = next.getSubpackage();
+			final EList<TPackage> nextChild = next.getSubpackages();
 			if (!nextChild.isEmpty()) {
-				match.getSubpackage().add(nextChild.get(0));
+				match.getSubpackages().add(nextChild.get(0));
 				setPG4Package(nextChild.get(0), pg);
 			} else {
 				match.getOwnedTypes().add(tClass);
@@ -79,9 +79,9 @@ public class PGAdditionHelper {
 
 		while (!tPackages.isEmpty()) {
 			final TPackage p = tPackages.pop();
-			p.setPg(tTypeGraph);
-			p.setTypeGraph(tTypeGraph);
-			tPackages.addAll(p.getSubpackage());
+			p.setModel(tTypeGraph);
+			tTypeGraph.getPackages().add(p);
+			tPackages.addAll(p.getSubpackages());
 		}
 	}
 }

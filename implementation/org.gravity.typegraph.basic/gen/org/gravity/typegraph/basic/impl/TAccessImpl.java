@@ -26,8 +26,8 @@ import org.gravity.typegraph.basic.TMember;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAccessImpl#getTTarget <em>TTarget</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAccessImpl#getTSource <em>TSource</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TAccessImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TAccessImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TAccessImpl#getStaticType <em>Static Type</em>}</li>
  * </ul>
  *
@@ -35,14 +35,14 @@ import org.gravity.typegraph.basic.TMember;
  */
 public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TAccess {
 	/**
-	 * The cached value of the '{@link #getTTarget() <em>TTarget</em>}' reference.
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTTarget()
+	 * @see #getTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected TMember tTarget;
+	protected TMember target;
 
 	/**
 	 * The cached value of the '{@link #getStaticType() <em>Static Type</em>}' reference.
@@ -79,16 +79,16 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	 * @generated
 	 */
 	@Override
-	public TMember getTTarget() {
-		if (tTarget != null && tTarget.eIsProxy()) {
-			InternalEObject oldTTarget = (InternalEObject)tTarget;
-			tTarget = (TMember)eResolveProxy(oldTTarget);
-			if (tTarget != oldTTarget) {
+	public TMember getTarget() {
+		if (target != null && target.eIsProxy()) {
+			InternalEObject oldTarget = (InternalEObject)target;
+			target = (TMember)eResolveProxy(oldTarget);
+			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TACCESS__TTARGET, oldTTarget, tTarget));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TACCESS__TARGET, oldTarget, target));
 			}
 		}
-		return tTarget;
+		return target;
 	}
 
 	/**
@@ -96,8 +96,8 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TMember basicGetTTarget() {
-		return tTarget;
+	public TMember basicGetTarget() {
+		return target;
 	}
 
 	/**
@@ -105,11 +105,11 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTTarget(TMember newTTarget, NotificationChain msgs) {
-		TMember oldTTarget = tTarget;
-		tTarget = newTTarget;
+	public NotificationChain basicSetTarget(TMember newTarget, NotificationChain msgs) {
+		TMember oldTarget = target;
+		target = newTarget;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TACCESS__TTARGET, oldTTarget, newTTarget);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TACCESS__TARGET, oldTarget, newTarget);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -121,18 +121,18 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	 * @generated
 	 */
 	@Override
-	public void setTTarget(TMember newTTarget) {
-		if (newTTarget != tTarget) {
+	public void setTarget(TMember newTarget) {
+		if (newTarget != target) {
 			NotificationChain msgs = null;
-			if (tTarget != null)
-				msgs = ((InternalEObject)tTarget).eInverseRemove(this, BasicPackage.TMEMBER__ACCESSED_BY, TMember.class, msgs);
-			if (newTTarget != null)
-				msgs = ((InternalEObject)newTTarget).eInverseAdd(this, BasicPackage.TMEMBER__ACCESSED_BY, TMember.class, msgs);
-			msgs = basicSetTTarget(newTTarget, msgs);
+			if (target != null)
+				msgs = ((InternalEObject)target).eInverseRemove(this, BasicPackage.TMEMBER__ACCESSED_BY, TMember.class, msgs);
+			if (newTarget != null)
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, BasicPackage.TMEMBER__ACCESSED_BY, TMember.class, msgs);
+			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TACCESS__TTARGET, newTTarget, newTTarget));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TACCESS__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -141,8 +141,8 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	 * @generated
 	 */
 	@Override
-	public TMember getTSource() {
-		if (eContainerFeatureID() != BasicPackage.TACCESS__TSOURCE) return null;
+	public TMember getSource() {
+		if (eContainerFeatureID() != BasicPackage.TACCESS__SOURCE) return null;
 		return (TMember)eInternalContainer();
 	}
 
@@ -151,8 +151,8 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTSource(TMember newTSource, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newTSource, BasicPackage.TACCESS__TSOURCE, msgs);
+	public NotificationChain basicSetSource(TMember newSource, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newSource, BasicPackage.TACCESS__SOURCE, msgs);
 		return msgs;
 	}
 
@@ -162,20 +162,20 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	 * @generated
 	 */
 	@Override
-	public void setTSource(TMember newTSource) {
-		if (newTSource != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TACCESS__TSOURCE && newTSource != null)) {
-			if (EcoreUtil.isAncestor(this, newTSource))
+	public void setSource(TMember newSource) {
+		if (newSource != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TACCESS__SOURCE && newSource != null)) {
+			if (EcoreUtil.isAncestor(this, newSource))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newTSource != null)
-				msgs = ((InternalEObject)newTSource).eInverseAdd(this, BasicPackage.TMEMBER__TACCESSING, TMember.class, msgs);
-			msgs = basicSetTSource(newTSource, msgs);
+			if (newSource != null)
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, BasicPackage.TMEMBER__ACCESSING, TMember.class, msgs);
+			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TACCESS__TSOURCE, newTSource, newTSource));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TACCESS__SOURCE, newSource, newSource));
 	}
 
 	/**
@@ -226,14 +226,14 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TACCESS__TTARGET:
-				if (tTarget != null)
-					msgs = ((InternalEObject)tTarget).eInverseRemove(this, BasicPackage.TMEMBER__ACCESSED_BY, TMember.class, msgs);
-				return basicSetTTarget((TMember)otherEnd, msgs);
-			case BasicPackage.TACCESS__TSOURCE:
+			case BasicPackage.TACCESS__TARGET:
+				if (target != null)
+					msgs = ((InternalEObject)target).eInverseRemove(this, BasicPackage.TMEMBER__ACCESSED_BY, TMember.class, msgs);
+				return basicSetTarget((TMember)otherEnd, msgs);
+			case BasicPackage.TACCESS__SOURCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetTSource((TMember)otherEnd, msgs);
+				return basicSetSource((TMember)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -246,10 +246,10 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TACCESS__TTARGET:
-				return basicSetTTarget(null, msgs);
-			case BasicPackage.TACCESS__TSOURCE:
-				return basicSetTSource(null, msgs);
+			case BasicPackage.TACCESS__TARGET:
+				return basicSetTarget(null, msgs);
+			case BasicPackage.TACCESS__SOURCE:
+				return basicSetSource(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -262,8 +262,8 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case BasicPackage.TACCESS__TSOURCE:
-				return eInternalContainer().eInverseRemove(this, BasicPackage.TMEMBER__TACCESSING, TMember.class, msgs);
+			case BasicPackage.TACCESS__SOURCE:
+				return eInternalContainer().eInverseRemove(this, BasicPackage.TMEMBER__ACCESSING, TMember.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -276,11 +276,11 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasicPackage.TACCESS__TTARGET:
-				if (resolve) return getTTarget();
-				return basicGetTTarget();
-			case BasicPackage.TACCESS__TSOURCE:
-				return getTSource();
+			case BasicPackage.TACCESS__TARGET:
+				if (resolve) return getTarget();
+				return basicGetTarget();
+			case BasicPackage.TACCESS__SOURCE:
+				return getSource();
 			case BasicPackage.TACCESS__STATIC_TYPE:
 				if (resolve) return getStaticType();
 				return basicGetStaticType();
@@ -296,11 +296,11 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasicPackage.TACCESS__TTARGET:
-				setTTarget((TMember)newValue);
+			case BasicPackage.TACCESS__TARGET:
+				setTarget((TMember)newValue);
 				return;
-			case BasicPackage.TACCESS__TSOURCE:
-				setTSource((TMember)newValue);
+			case BasicPackage.TACCESS__SOURCE:
+				setSource((TMember)newValue);
 				return;
 			case BasicPackage.TACCESS__STATIC_TYPE:
 				setStaticType((TAbstractType)newValue);
@@ -317,11 +317,11 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasicPackage.TACCESS__TTARGET:
-				setTTarget((TMember)null);
+			case BasicPackage.TACCESS__TARGET:
+				setTarget((TMember)null);
 				return;
-			case BasicPackage.TACCESS__TSOURCE:
-				setTSource((TMember)null);
+			case BasicPackage.TACCESS__SOURCE:
+				setSource((TMember)null);
 				return;
 			case BasicPackage.TACCESS__STATIC_TYPE:
 				setStaticType((TAbstractType)null);
@@ -338,10 +338,10 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasicPackage.TACCESS__TTARGET:
-				return tTarget != null;
-			case BasicPackage.TACCESS__TSOURCE:
-				return getTSource() != null;
+			case BasicPackage.TACCESS__TARGET:
+				return target != null;
+			case BasicPackage.TACCESS__SOURCE:
+				return getSource() != null;
 			case BasicPackage.TACCESS__STATIC_TYPE:
 				return staticType != null;
 		}

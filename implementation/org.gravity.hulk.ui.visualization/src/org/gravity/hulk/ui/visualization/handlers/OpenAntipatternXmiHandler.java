@@ -33,7 +33,7 @@ import org.gravity.hulk.HulkActivator;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.ui.visualization.detection.SpaghettiCodePreprocessor;
 import org.gravity.hulk.ui.visualization.detection.SwissArmyKnifePreprocessor;
-import org.gravity.hulk.ui.visualization.detection.TheBlobPreprocessor;
+import org.gravity.hulk.ui.visualization.detection.preprocessNACCMetric;
 import org.gravity.hulk.ui.visualization.information.providers.InformationViewContentProvider;
 import org.gravity.hulk.ui.visualization.marker.AntipatternMarkerManager;
 
@@ -97,7 +97,7 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 			return;
 		}
 		
-		AntipatternMarkerManager theBlobManager = new AntipatternMarkerManager(apg, new TheBlobPreprocessor(), javaProject);
+		AntipatternMarkerManager theBlobManager = new AntipatternMarkerManager(apg, new preprocessNACCMetric(), javaProject);
 		AntipatternMarkerManager swissArmyKnifeManager = new AntipatternMarkerManager(apg,
 				new SwissArmyKnifePreprocessor(), javaProject);
 		AntipatternMarkerManager spaghettiCodeManager = new AntipatternMarkerManager(apg,

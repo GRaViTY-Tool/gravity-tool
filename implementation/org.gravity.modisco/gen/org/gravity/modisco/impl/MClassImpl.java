@@ -65,6 +65,7 @@ public class MClassImpl extends ClassDeclarationImpl implements MClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Type> getDependencies() {
 		if (dependencies == null) {
 			dependencies = new EObjectResolvingEList<Type>(Type.class, this, ModiscoPackage.MCLASS__DEPENDENCIES);

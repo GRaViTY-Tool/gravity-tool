@@ -1,0 +1,20 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule InnerDeclaration2InnerClassifier_InMethod4Class #extends InnerDeclaration2InnerClassifier_InMethod_Abstract #with org.gravity.tgg.modisco.uml
+
+#source {
+	owner : ClassDeclaration {
+		-bodyDeclarations->method
+	}
+	
+	method : MDefinition
+}
+
+#target {
+	uContainer:uml.Class{
+		++-nestedClassifier->feature
+	} 
+	
+	feature:uml.Classifier
+}

@@ -5,33 +5,37 @@
 #with org.gravity.tgg.modisco.pm
 
 #source {
-mModel : Model {
-}
-++ mPackage : Package {
-	++  -model -> mModel
-}
+	mModel:Model
+
+	++mPackage:Package {
+		++  -model -> mModel
+	}
 }
 
 #target {
-typeGraph : TypeGraph {
-	++  -packages -> tPackage
-}
-++ tPackage : TPackage {
-	++  -typeGraph -> typeGraph
-}
+	typeGraph:TypeGraph {
+		++  -packages -> tPackage
+	}
+
+	++tPackage:TPackage {
+		++  -model -> typeGraph
+	}
 }
 
 #correspondence {
-mModelToTypeGraph : ModelToTypeGraph {
-	#src->mModel
-	#trg->typeGraph
-}
-++ mPackageToTPackage : PackageToTPackage {
-	#src->mPackage
-	#trg->tPackage
-}
+	mModelToTypeGraph :ModelToTypeGraph {
+		#src->mModel
+		#trg->typeGraph
+	}
+
+	++ mPackageToTPackage :PackageToTPackage {
+		#src->mPackage
+		#trg->tPackage
+	}
 }
 
 #attributeConditions {
 	eq(mPackage.name, tPackage.tName)
 }
+
+

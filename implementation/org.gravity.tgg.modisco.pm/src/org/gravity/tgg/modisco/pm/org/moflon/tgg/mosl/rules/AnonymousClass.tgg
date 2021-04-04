@@ -1,64 +1,111 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#rule AnonymousClass
+#abstract #rule AnonymousClass
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	++ mAnonymous : AnonymousClassDeclaration
-	mCreation : ClassInstanceCreation {
-		++-anonymousClassDeclaration->mAnonymous
+	mMember:MDefinition {
+		-mMethodInvocations -> mCreation
 	}
-	
-	mMebmber : MDefinition {
-		-mMethodInvocations->mCreation
+
+	mCreation:ClassInstanceCreation {
+		++-anonymousClassDeclaration -> mAnonymous
 	}
-	
-	mType : AbstractTypeDeclaration {
-		-bodyDeclarations->mMebmber
-	}
-	
-	mPackage : Package {
-		-ownedElements->mType
-	} 
+
+	++mAnonymous:AnonymousClassDeclaration
 }
 
 #target {
-	tPackage : TPackage 
-	tType : TAbstractType {
-		-package->tPackage
-		-pg->pg
-		++-innerTypes->tAnonymous
-	}
-	++ tNewPackage : TPackage {
+	tPackage:TPackage {
+		++-classes->tAnonymous
 		++-ownedTypes->tAnonymous
-		++-parent->tPackage
+		-model -> pg
 	}
-	++ tAnonymous : TClass {
-		tLib := false
-		tName := "Anonymous"
+
+	tType:TAbstractType {
+		-package -> tPackage
+		-defines -> tMember
+		++-innerTypes -> tAnonymous
 	}
-	pg : TypeGraph {
+
+	tMember:TMember
+
+	++tAnonymous:TClass
+
+	pg:TypeGraph {
 		++  -classes -> tAnonymous
 		++  -ownedTypes -> tAnonymous
 	}
 }
 
 #correspondence {
-	++ eAnonymousClassDeclarationToTClass : AnonymousClassDeclarationToTClass {
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+
+	++ eAnonymousClassDeclarationToTClass :AnonymousClassDeclarationToTClass {
 		#src->mAnonymous
 		#trg->tAnonymous
-	}
-	mTypeToTType : TypeToTAbstractType {
-		#src->mType
-		#trg->tType
-	}
-	mPackageToTPackage : PackageToTPackage {
-		#src->mPackage
-		#trg->tPackage
 	}
 }
 
 #attributeConditions {
-	addSuffix(tType.tName, "$1", tNewPackage.tName)
+	addSuffix(tType.tName, "$Anonymous", tAnonymous.tName)
+	eq(tType.tLib, tAnonymous.tLib)
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule AnonymousClassInType #extends AnonymousClass #with org.gravity.tgg.modisco.pm
+
+#source {
+	mType:AbstractTypeDeclaration {
+		-bodyDeclarations -> mMember
+	}
+
+	mMember:MDefinition
+}
+
+#target {
+	++tAnonymous:TClass
+	
+	tType:TAbstractType
+}
+
+
+#correspondence {
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule AnonymousClassInAnonymous #extends AnonymousClass #with org.gravity.tgg.modisco.pm
+
+#source {
+	mType:AnonymousClassDeclaration {
+		-bodyDeclarations -> mMember
+	}
+
+	mMember:MDefinition
+}
+
+#target {
+	++tAnonymous:TClass
+	
+	tType:TClass
+}
+
+
+#correspondence {
+	mTypeToTType :AnonymousClassDeclarationToTClass {
+		#src->mType
+		#trg->tType
+	}
 }

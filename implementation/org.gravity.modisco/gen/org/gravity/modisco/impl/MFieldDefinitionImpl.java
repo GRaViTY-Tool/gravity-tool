@@ -86,6 +86,7 @@ public class MFieldDefinitionImpl extends MDefinitionImpl implements MFieldDefin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypeAccess getType() {
 		return type;
 	}
@@ -110,6 +111,7 @@ public class MFieldDefinitionImpl extends MDefinitionImpl implements MFieldDefin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(TypeAccess newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
@@ -129,6 +131,7 @@ public class MFieldDefinitionImpl extends MDefinitionImpl implements MFieldDefin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<VariableDeclarationFragment> getFragments() {
 		if (fragments == null) {
 			fragments = new EObjectContainmentWithInverseEList<VariableDeclarationFragment>(VariableDeclarationFragment.class, this, ModiscoPackage.MFIELD_DEFINITION__FRAGMENTS, JavaPackage.VARIABLE_DECLARATION_FRAGMENT__VARIABLES_CONTAINER);

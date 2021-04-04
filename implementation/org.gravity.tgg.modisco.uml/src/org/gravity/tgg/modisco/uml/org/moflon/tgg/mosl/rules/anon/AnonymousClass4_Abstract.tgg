@@ -1,0 +1,38 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule AnonymousClass4_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jContainer:ASTNode 
+	
+	mMember : MDefinition {
+		++-mMethodInvocations->mConstructor
+	}
+	
+	++mConstructor: MClassInstanceCreation  {
+		++-anonymousClassDeclaration->mAnon
+	}
+	
+	++mAnon:AnonymousClassDeclaration
+}
+
+#target {
+	uContainer:Classifier
+	
+	++feature:Class {
+		name := "Anonymous"
+	}
+}
+
+#correspondence {
+	ne2ne:ASTNode2Element {
+		#src->jContainer
+		#trg->uContainer
+	}
+
+	++a2a:ASTNode2Element{
+		#src->mAnon
+		#trg->feature
+	}
+}

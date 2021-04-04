@@ -20,6 +20,7 @@ import org.eclipse.modisco.java.ConstructorDeclaration;
 import org.eclipse.modisco.java.ConstructorInvocation;
 import org.eclipse.modisco.java.Expression;
 import org.eclipse.modisco.java.FieldDeclaration;
+import org.eclipse.modisco.java.Initializer;
 import org.eclipse.modisco.java.MethodDeclaration;
 import org.eclipse.modisco.java.MethodInvocation;
 import org.eclipse.modisco.java.Model;
@@ -384,6 +385,18 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseMAccess(mSuperConstructorInvocation);
 				if (result == null) result = caseASTNode(mSuperConstructorInvocation);
 				if (result == null) result = caseMAbstractFlowElement(mSuperConstructorInvocation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModiscoPackage.MINITIALIZER: {
+				MInitializer mInitializer = (MInitializer)theEObject;
+				T result = caseMInitializer(mInitializer);
+				if (result == null) result = caseMDefinition(mInitializer);
+				if (result == null) result = caseInitializer(mInitializer);
+				if (result == null) result = caseBodyDeclaration(mInitializer);
+				if (result == null) result = caseMAbstractFlowElement(mInitializer);
+				if (result == null) result = caseNamedElement(mInitializer);
+				if (result == null) result = caseASTNode(mInitializer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -827,6 +840,21 @@ public class ModiscoSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MInitializer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MInitializer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMInitializer(MInitializer object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>AST Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1198,6 +1226,21 @@ public class ModiscoSwitch<T> {
 	 * @generated
 	 */
 	public T caseSuperConstructorInvocation(SuperConstructorInvocation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Initializer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Initializer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInitializer(Initializer object) {
 		return null;
 	}
 

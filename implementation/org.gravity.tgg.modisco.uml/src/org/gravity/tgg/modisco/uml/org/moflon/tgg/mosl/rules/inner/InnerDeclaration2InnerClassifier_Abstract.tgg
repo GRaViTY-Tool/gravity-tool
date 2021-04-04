@@ -1,0 +1,30 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule InnerDeclaration2InnerClassifier_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jContainer:AbstractTypeDeclaration {
+		++-bodyDeclarations->bodyDeclaration
+	}
+	
+	bodyDeclaration:AbstractTypeDeclaration
+}
+
+#target {
+	uContainer:Classifier
+	
+	feature:Classifier
+}
+
+#correspondence {
+	ne2ne:ASTNode2Element {
+		#src->jContainer
+		#trg->uContainer
+	}
+	
+	b2e : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}

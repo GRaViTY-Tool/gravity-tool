@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 
-import org.eclipse.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.modisco.java.BodyDeclaration;
 
 import org.gravity.modisco.MDefinition;
@@ -98,60 +97,51 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
+	public boolean isAppropriate_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember) {
 
 		Object[] result1_black = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_0_1_initialbindings_blackBBBBB(this, match, invocation, mMember,
-						mMethod);
+				.pattern_SuperConstructorInvocation_0_1_initialbindings_blackBBBB(this, match, invocation, mMember);
 		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[invocation] = " + invocation + ", " + "[mMember] = " + mMember
-					+ ", " + "[mMethod] = " + mMethod + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
+							+ ", " + "[invocation] = " + invocation + ", " + "[mMember] = " + mMember + ".");
 		}
 
 		Object[] result2_bindingAndBlack = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, invocation, mMember,
-						mMethod);
+				.pattern_SuperConstructorInvocation_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, invocation, mMember);
 		if (result2_bindingAndBlack == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[invocation] = " + invocation + ", " + "[mMember] = " + mMember
-					+ ", " + "[mMethod] = " + mMethod + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
+							+ ", " + "[invocation] = " + invocation + ", " + "[mMember] = " + mMember + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_0_4_collectelementstobetranslated_blackBBBB(match, invocation,
-							mMember, mMethod);
+					.pattern_SuperConstructorInvocation_0_4_collectelementstobetranslated_blackBBB(match, invocation,
+							mMember);
 			if (result4_black == null) {
-				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[invocation] = "
-								+ invocation + ", " + "[mMember] = " + mMember + ", " + "[mMethod] = " + mMethod + ".");
+				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
+						+ "[invocation] = " + invocation + ", " + "[mMember] = " + mMember + ".");
 			}
 			SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_0_4_collectelementstobetranslated_greenBBBBFFF(match,
-							invocation, mMember, mMethod);
-			//nothing EMoflonEdge invocation__mMethod____method = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge mMethod__invocation____usages = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result4_green[6];
+					.pattern_SuperConstructorInvocation_0_4_collectelementstobetranslated_greenBBBF(match, invocation,
+							mMember);
+			//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_0_5_collectcontextelements_blackBBBB(match, invocation, mMember,
-							mMethod);
+					.pattern_SuperConstructorInvocation_0_5_collectcontextelements_blackBBB(match, invocation, mMember);
 			if (result5_black == null) {
-				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[invocation] = "
-								+ invocation + ", " + "[mMember] = " + mMember + ", " + "[mMethod] = " + mMethod + ".");
+				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
+						+ "[invocation] = " + invocation + ", " + "[mMember] = " + mMember + ".");
 			}
-			SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_0_5_collectcontextelements_greenBBB(match,
-					mMember, mMethod);
+			SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_0_5_collectcontextelements_greenBB(match,
+					mMember);
 
 			// 
-			SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_0_6_registerobjectstomatch_expressionBBBBB(this, match,
-							invocation, mMember, mMethod);
+			SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_0_6_registerobjectstomatch_expressionBBBB(
+					this, match, invocation, mMember);
 			return SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_0_7_expressionF();
 		} else {
 			return SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_0_8_expressionF();
@@ -167,7 +157,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	public PerformRuleResult perform_FWD(IsApplicableMatch isApplicableMatch) {
 
 		Object[] result1_bindingAndBlack = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_1_1_performtransformation_bindingAndBlackFFFFFFFFBB(this,
+				.pattern_SuperConstructorInvocation_1_1_performtransformation_bindingAndBlackFFFFFBB(this,
 						isApplicableMatch);
 		if (result1_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
@@ -176,16 +166,13 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) result1_bindingAndBlack[0];
 		MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result1_bindingAndBlack[1];
 		TMember tMember = (TMember) result1_bindingAndBlack[2];
-		MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result1_bindingAndBlack[3];
-		TMember tMethod = (TMember) result1_bindingAndBlack[4];
-		MDefinition mMember = (MDefinition) result1_bindingAndBlack[5];
-		AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result1_bindingAndBlack[6];
-		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
+		MDefinition mMember = (MDefinition) result1_bindingAndBlack[3];
+		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_1_1_performtransformation_greenBBFBFF(invocation, tMember, tMethod);
+				.pattern_SuperConstructorInvocation_1_1_performtransformation_greenBBFFF(invocation, tMember);
 		TCall tAccess = (TCall) result1_green[2];
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[4];
-		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_green[5];
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[3];
+		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_green[4];
 
 		Object[] result2_black = SuperConstructorInvocationImpl
 				.pattern_SuperConstructorInvocation_1_2_collecttranslatedelements_blackBBBB(invocation, tAccess,
@@ -201,38 +188,30 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_1_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, invocation,
-						mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod, mMember,
-						mFlowElementToTFlowElement, invocationToTAccess, mMethod);
+				.pattern_SuperConstructorInvocation_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, invocation,
+						mMemberToTMember, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[invocation] = " + invocation + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", "
-					+ "[tMember] = " + tMember + ", " + "[mMethodToTMethod] = " + mMethodToTMethod + ", "
-					+ "[tAccess] = " + tAccess + ", " + "[tMethod] = " + tMethod + ", " + "[mMember] = " + mMember
+					+ "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ", " + "[mMember] = " + mMember
 					+ ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", "
-					+ "[invocationToTAccess] = " + invocationToTAccess + ", " + "[mMethod] = " + mMethod + ".");
+					+ "[invocationToTAccess] = " + invocationToTAccess + ".");
 		}
-		SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(ruleresult,
-						invocation, tMember, tAccess, tMethod, mMember, mFlowElementToTFlowElement, invocationToTAccess,
-						mMethod);
-		//nothing EMoflonEdge invocation__mMethod____method = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mMethod__invocation____usages = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge tAccess__tMethod____tTarget = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge tMethod__tAccess____accessedBy = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[19];
+		SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
+				ruleresult, invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess);
+		//nothing EMoflonEdge tMember__tAccess____accessing = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tAccess__tMember____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
-		SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_1_5_registerobjects_expressionBBBBBBBBBBBB(
-				this, ruleresult, invocation, mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod, mMember,
-				mFlowElementToTFlowElement, invocationToTAccess, mMethod);
+		SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_1_5_registerobjects_expressionBBBBBBBBB(this,
+				ruleresult, invocation, mMemberToTMember, tMember, tAccess, mMember, mFlowElementToTFlowElement,
+				invocationToTAccess);
 		return SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_1_6_expressionFB(ruleresult);
 	}
 
@@ -256,46 +235,37 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 		// ForEach 
 		Object[] result2_binding = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_2_2_corematch_bindingFFFB(match);
+				.pattern_SuperConstructorInvocation_2_2_corematch_bindingFFB(match);
 		if (result2_binding == null) {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
 		MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) result2_binding[0];
 		MDefinition mMember = (MDefinition) result2_binding[1];
-		AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result2_binding[2];
 		for (Object[] result2_black : SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_2_2_corematch_blackBFFFFBBB(invocation, mMember, mMethod, match)) {
+				.pattern_SuperConstructorInvocation_2_2_corematch_blackBFFBB(invocation, mMember, match)) {
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[1];
 			TMember tMember = (TMember) result2_black[2];
-			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result2_black[3];
-			TMember tMethod = (TMember) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_2_3_findcontext_blackBBBBBBB(invocation, mMemberToTMember,
-							tMember, mMethodToTMethod, tMethod, mMember, mMethod)) {
+					.pattern_SuperConstructorInvocation_2_3_findcontext_blackBBBB(invocation, mMemberToTMember, tMember,
+							mMember)) {
 				Object[] result3_green = SuperConstructorInvocationImpl
-						.pattern_SuperConstructorInvocation_2_3_findcontext_greenBBBBBBBFFFFFFFF(invocation,
-								mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember, mMethod);
-				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge mMethodToTMethod__tMethod____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge invocation__mMethod____method = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mMethod__invocation____usages = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mMethodToTMethod__mMethod____source = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[14];
+						.pattern_SuperConstructorInvocation_2_3_findcontext_greenBBBBFFFF(invocation, mMemberToTMember,
+								tMember, mMember);
+				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
+				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = SuperConstructorInvocationImpl
-						.pattern_SuperConstructorInvocation_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, invocation, mMemberToTMember, tMember, mMethodToTMethod, tMethod,
-								mMember, mMethod);
+						.pattern_SuperConstructorInvocation_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
+								invocation, mMemberToTMember, tMember, mMember);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[invocation] = " + invocation
 							+ ", " + "[mMemberToTMember] = " + mMemberToTMember + ", " + "[tMember] = " + tMember + ", "
-							+ "[mMethodToTMethod] = " + mMethodToTMethod + ", " + "[tMethod] = " + tMethod + ", "
-							+ "[mMember] = " + mMember + ", " + "[mMethod] = " + mMethod + ".");
+							+ "[mMember] = " + mMember + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -326,11 +296,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
+	public void registerObjectsToMatch_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember) {
 		match.registerObject("invocation", invocation);
 		match.registerObject("mMember", mMember);
-		match.registerObject("mMethod", mMethod);
 
 	}
 
@@ -339,8 +307,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, MSuperConstructorInvocation invocation, MDefinition mMember) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -370,8 +337,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MSuperConstructorInvocation invocation,
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod) {// Create CSP
+			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinition mMember) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -389,10 +355,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		isApplicableMatch.registerObject("invocation", invocation);
 		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
 		isApplicableMatch.registerObject("tMember", tMember);
-		isApplicableMatch.registerObject("mMethodToTMethod", mMethodToTMethod);
-		isApplicableMatch.registerObject("tMethod", tMethod);
 		isApplicableMatch.registerObject("mMember", mMember);
-		isApplicableMatch.registerObject("mMethod", mMethod);
 		return csp;
 	}
 
@@ -411,18 +374,15 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject invocation, EObject mMemberToTMember,
-			EObject tMember, EObject mMethodToTMethod, EObject tAccess, EObject tMethod, EObject mMember,
-			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMethod) {
+			EObject tMember, EObject tAccess, EObject mMember, EObject mFlowElementToTFlowElement,
+			EObject invocationToTAccess) {
 		ruleresult.registerObject("invocation", invocation);
 		ruleresult.registerObject("mMemberToTMember", mMemberToTMember);
 		ruleresult.registerObject("tMember", tMember);
-		ruleresult.registerObject("mMethodToTMethod", mMethodToTMethod);
 		ruleresult.registerObject("tAccess", tAccess);
-		ruleresult.registerObject("tMethod", tMethod);
 		ruleresult.registerObject("mMember", mMember);
 		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
 		ruleresult.registerObject("invocationToTAccess", invocationToTAccess);
-		ruleresult.registerObject("mMethod", mMethod);
 
 	}
 
@@ -441,60 +401,51 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TMember tMember, TCall tAccess, TMember tMethod) {
+	public boolean isAppropriate_BWD(Match match, TMember tMember, TCall tAccess) {
 
 		Object[] result1_black = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_10_1_initialbindings_blackBBBBB(this, match, tMember, tAccess,
-						tMethod);
+				.pattern_SuperConstructorInvocation_10_1_initialbindings_blackBBBB(this, match, tMember, tAccess);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ", "
-					+ "[tMethod] = " + tMethod + ".");
+					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ".");
 		}
 
 		Object[] result2_bindingAndBlack = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tMember, tAccess,
-						tMethod);
+				.pattern_SuperConstructorInvocation_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tMember, tAccess);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ", "
-					+ "[tMethod] = " + tMethod + ".");
+					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_10_4_collectelementstobetranslated_blackBBBB(match, tMember,
-							tAccess, tMethod);
+					.pattern_SuperConstructorInvocation_10_4_collectelementstobetranslated_blackBBB(match, tMember,
+							tAccess);
 			if (result4_black == null) {
-				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[tMember] = "
-								+ tMember + ", " + "[tAccess] = " + tAccess + ", " + "[tMethod] = " + tMethod + ".");
+				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
+						+ "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ".");
 			}
 			SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_10_4_collectelementstobetranslated_greenBBBBFFFF(match, tMember,
-							tAccess, tMethod);
-			//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge tAccess__tMethod____tTarget = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge tMethod__tAccess____accessedBy = (EMoflonEdge) result4_green[7];
+					.pattern_SuperConstructorInvocation_10_4_collectelementstobetranslated_greenBBBFF(match, tMember,
+							tAccess);
+			//nothing EMoflonEdge tMember__tAccess____accessing = (EMoflonEdge) result4_green[3];
+			//nothing EMoflonEdge tAccess__tMember____source = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_10_5_collectcontextelements_blackBBBB(match, tMember, tAccess,
-							tMethod);
+					.pattern_SuperConstructorInvocation_10_5_collectcontextelements_blackBBB(match, tMember, tAccess);
 			if (result5_black == null) {
-				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[tMember] = "
-								+ tMember + ", " + "[tAccess] = " + tAccess + ", " + "[tMethod] = " + tMethod + ".");
+				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
+						+ "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ".");
 			}
-			SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_10_5_collectcontextelements_greenBBB(match, tMember, tMethod);
+			SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_10_5_collectcontextelements_greenBB(match,
+					tMember);
 
 			// 
 			SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_10_6_registerobjectstomatch_expressionBBBBB(this, match,
-							tMember, tAccess, tMethod);
+					.pattern_SuperConstructorInvocation_10_6_registerobjectstomatch_expressionBBBB(this, match, tMember,
+							tAccess);
 			return SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_10_7_expressionF();
 		} else {
 			return SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_10_8_expressionF();
@@ -510,7 +461,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	public PerformRuleResult perform_BWD(IsApplicableMatch isApplicableMatch) {
 
 		Object[] result1_bindingAndBlack = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_11_1_performtransformation_bindingAndBlackFFFFFFFFBB(this,
+				.pattern_SuperConstructorInvocation_11_1_performtransformation_bindingAndBlackFFFFFBB(this,
 						isApplicableMatch);
 		if (result1_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
@@ -518,14 +469,11 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		}
 		MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result1_bindingAndBlack[0];
 		TMember tMember = (TMember) result1_bindingAndBlack[1];
-		MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result1_bindingAndBlack[2];
-		TCall tAccess = (TCall) result1_bindingAndBlack[3];
-		TMember tMethod = (TMember) result1_bindingAndBlack[4];
-		MDefinition mMember = (MDefinition) result1_bindingAndBlack[5];
-		AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result1_bindingAndBlack[6];
-		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
+		TCall tAccess = (TCall) result1_bindingAndBlack[2];
+		MDefinition mMember = (MDefinition) result1_bindingAndBlack[3];
+		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_11_1_performtransformation_greenFBBFFB(tAccess, mMember, mMethod);
+				.pattern_SuperConstructorInvocation_11_1_performtransformation_greenFBBFF(tAccess, mMember);
 		MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) result1_green[0];
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[3];
 		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_green[4];
@@ -544,38 +492,30 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_11_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, invocation,
-						mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod, mMember,
-						mFlowElementToTFlowElement, invocationToTAccess, mMethod);
+				.pattern_SuperConstructorInvocation_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, invocation,
+						mMemberToTMember, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[invocation] = " + invocation + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", "
-					+ "[tMember] = " + tMember + ", " + "[mMethodToTMethod] = " + mMethodToTMethod + ", "
-					+ "[tAccess] = " + tAccess + ", " + "[tMethod] = " + tMethod + ", " + "[mMember] = " + mMember
+					+ "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ", " + "[mMember] = " + mMember
 					+ ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", "
-					+ "[invocationToTAccess] = " + invocationToTAccess + ", " + "[mMethod] = " + mMethod + ".");
+					+ "[invocationToTAccess] = " + invocationToTAccess + ".");
 		}
-		SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(ruleresult,
-						invocation, tMember, tAccess, tMethod, mMember, mFlowElementToTFlowElement, invocationToTAccess,
-						mMethod);
-		//nothing EMoflonEdge invocation__mMethod____method = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mMethod__invocation____usages = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge tAccess__tMethod____tTarget = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge tMethod__tAccess____accessedBy = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[19];
+		SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
+				ruleresult, invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess);
+		//nothing EMoflonEdge tMember__tAccess____accessing = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tAccess__tMember____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
-		SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_11_5_registerobjects_expressionBBBBBBBBBBBB(
-				this, ruleresult, invocation, mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod, mMember,
-				mFlowElementToTFlowElement, invocationToTAccess, mMethod);
+		SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_11_5_registerobjects_expressionBBBBBBBBB(this,
+				ruleresult, invocation, mMemberToTMember, tMember, tAccess, mMember, mFlowElementToTFlowElement,
+				invocationToTAccess);
 		return SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_11_6_expressionFB(ruleresult);
 	}
 
@@ -599,47 +539,38 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 		// ForEach 
 		Object[] result2_binding = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_12_2_corematch_bindingFFFB(match);
+				.pattern_SuperConstructorInvocation_12_2_corematch_bindingFFB(match);
 		if (result2_binding == null) {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
 		TMember tMember = (TMember) result2_binding[0];
 		TCall tAccess = (TCall) result2_binding[1];
-		TMember tMethod = (TMember) result2_binding[2];
 		for (Object[] result2_black : SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_12_2_corematch_blackFBFBBFFB(tMember, tAccess, tMethod, match)) {
+				.pattern_SuperConstructorInvocation_12_2_corematch_blackFBBFB(tMember, tAccess, match)) {
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[0];
-			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result2_black[2];
-			MDefinition mMember = (MDefinition) result2_black[5];
-			AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result2_black[6];
+			MDefinition mMember = (MDefinition) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_12_3_findcontext_blackBBBBBBB(mMemberToTMember, tMember,
-							mMethodToTMethod, tAccess, tMethod, mMember, mMethod)) {
+					.pattern_SuperConstructorInvocation_12_3_findcontext_blackBBBB(mMemberToTMember, tMember, tAccess,
+							mMember)) {
 				Object[] result3_green = SuperConstructorInvocationImpl
-						.pattern_SuperConstructorInvocation_12_3_findcontext_greenBBBBBBBFFFFFFFFF(mMemberToTMember,
-								tMember, mMethodToTMethod, tAccess, tMethod, mMember, mMethod);
-				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge mMethodToTMethod__tMethod____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tMember__tAccess____tAccessing = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tAccess__tMember____tSource = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mMethodToTMethod__mMethod____source = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge tAccess__tMethod____tTarget = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge tMethod__tAccess____accessedBy = (EMoflonEdge) result3_green[15];
+						.pattern_SuperConstructorInvocation_12_3_findcontext_greenBBBBFFFFF(mMemberToTMember, tMember,
+								tAccess, mMember);
+				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
+				//nothing EMoflonEdge tMember__tAccess____accessing = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge tAccess__tMember____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = SuperConstructorInvocationImpl
-						.pattern_SuperConstructorInvocation_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod,
-								mMember, mMethod);
+						.pattern_SuperConstructorInvocation_12_4_solveCSP_bindingAndBlackFBBBBBB(this,
+								isApplicableMatch, mMemberToTMember, tMember, tAccess, mMember);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMemberToTMember] = "
-							+ mMemberToTMember + ", " + "[tMember] = " + tMember + ", " + "[mMethodToTMethod] = "
-							+ mMethodToTMethod + ", " + "[tAccess] = " + tAccess + ", " + "[tMethod] = " + tMethod
-							+ ", " + "[mMember] = " + mMember + ", " + "[mMethod] = " + mMethod + ".");
+							+ mMemberToTMember + ", " + "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess
+							+ ", " + "[mMember] = " + mMember + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -670,10 +601,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TMember tMember, TCall tAccess, TMember tMethod) {
+	public void registerObjectsToMatch_BWD(Match match, TMember tMember, TCall tAccess) {
 		match.registerObject("tMember", tMember);
 		match.registerObject("tAccess", tAccess);
-		match.registerObject("tMethod", tMethod);
 
 	}
 
@@ -682,7 +612,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TCall tAccess, TMember tMethod) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TCall tAccess) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -712,8 +642,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			TMember tMember, MDefinitionToTMember mMethodToTMethod, TCall tAccess, TMember tMethod, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {// Create CSP
+			TMember tMember, TCall tAccess, MDefinition mMember) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -730,11 +659,8 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
 		isApplicableMatch.registerObject("tMember", tMember);
-		isApplicableMatch.registerObject("mMethodToTMethod", mMethodToTMethod);
 		isApplicableMatch.registerObject("tAccess", tAccess);
-		isApplicableMatch.registerObject("tMethod", tMethod);
 		isApplicableMatch.registerObject("mMember", mMember);
-		isApplicableMatch.registerObject("mMethod", mMethod);
 		return csp;
 	}
 
@@ -753,18 +679,15 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject invocation, EObject mMemberToTMember,
-			EObject tMember, EObject mMethodToTMethod, EObject tAccess, EObject tMethod, EObject mMember,
-			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMethod) {
+			EObject tMember, EObject tAccess, EObject mMember, EObject mFlowElementToTFlowElement,
+			EObject invocationToTAccess) {
 		ruleresult.registerObject("invocation", invocation);
 		ruleresult.registerObject("mMemberToTMember", mMemberToTMember);
 		ruleresult.registerObject("tMember", tMember);
-		ruleresult.registerObject("mMethodToTMethod", mMethodToTMethod);
 		ruleresult.registerObject("tAccess", tAccess);
-		ruleresult.registerObject("tMethod", tMethod);
 		ruleresult.registerObject("mMember", mMember);
 		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
 		ruleresult.registerObject("invocationToTAccess", invocationToTAccess);
-		ruleresult.registerObject("mMethod", mMethod);
 
 	}
 
@@ -783,7 +706,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_699(EMoflonEdge _edge_tAccessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_22(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = SuperConstructorInvocationImpl
 				.pattern_SuperConstructorInvocation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -799,18 +722,17 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 		// ForEach 
 		for (Object[] result2_black : SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_20_2_testcorematchandDECs_blackFFFB(_edge_tAccessing)) {
+				.pattern_SuperConstructorInvocation_20_2_testcorematchandDECs_blackFFB(_edge_accessing)) {
 			TMember tMember = (TMember) result2_black[0];
 			TCall tAccess = (TCall) result2_black[1];
-			TMember tMethod = (TMember) result2_black[2];
 			Object[] result2_green = SuperConstructorInvocationImpl
 					.pattern_SuperConstructorInvocation_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, tMember, tAccess, tMethod)) {
+					.pattern_SuperConstructorInvocation_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
+							this, match, tMember, tAccess)) {
 				// 
 				if (SuperConstructorInvocationImpl
 						.pattern_SuperConstructorInvocation_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -843,7 +765,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_718(EMoflonEdge _edge_method) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_24(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = SuperConstructorInvocationImpl
 				.pattern_SuperConstructorInvocation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -859,18 +781,17 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 		// ForEach 
 		for (Object[] result2_black : SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_21_2_testcorematchandDECs_blackFFFB(_edge_method)) {
+				.pattern_SuperConstructorInvocation_21_2_testcorematchandDECs_blackFFB(_edge_mMethodInvocations)) {
 			MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) result2_black[0];
 			MDefinition mMember = (MDefinition) result2_black[1];
-			AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result2_black[2];
 			Object[] result2_green = SuperConstructorInvocationImpl
 					.pattern_SuperConstructorInvocation_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, invocation, mMember, mMethod)) {
+					.pattern_SuperConstructorInvocation_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
+							this, match, invocation, mMember)) {
 				// 
 				if (SuperConstructorInvocationImpl
 						.pattern_SuperConstructorInvocation_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -975,7 +896,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[0];
 
 		Object[] result2_bindingAndBlack = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(sourceMatch,
+				.pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(sourceMatch,
 						targetMatch);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
@@ -984,42 +905,37 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) result2_bindingAndBlack[0];
 		TMember tMember = (TMember) result2_bindingAndBlack[1];
 		TCall tAccess = (TCall) result2_bindingAndBlack[2];
-		TMember tMethod = (TMember) result2_bindingAndBlack[3];
-		MDefinition mMember = (MDefinition) result2_bindingAndBlack[4];
-		AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result2_bindingAndBlack[5];
+		MDefinition mMember = (MDefinition) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, invocation, tMember,
-						tAccess, tMethod, mMember, mMethod, sourceMatch, targetMatch);
+				.pattern_SuperConstructorInvocation_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, invocation, tMember,
+						tAccess, mMember, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[invocation] = " + invocation + ", " + "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess
-					+ ", " + "[tMethod] = " + tMethod + ", " + "[mMember] = " + mMember + ", " + "[mMethod] = "
-					+ mMethod + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch
-					+ ".");
+					+ ", " + "[mMember] = " + mMember + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_24_5_matchcorrcontext_blackFBFBBBBB(tMember, tMethod, mMember,
-							mMethod, sourceMatch, targetMatch)) {
+					.pattern_SuperConstructorInvocation_24_5_matchcorrcontext_blackFBBBB(tMember, mMember, sourceMatch,
+							targetMatch)) {
 				MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result5_black[0];
-				MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result5_black[2];
 				Object[] result5_green = SuperConstructorInvocationImpl
-						.pattern_SuperConstructorInvocation_24_5_matchcorrcontext_greenBBBBF(mMemberToTMember,
-								mMethodToTMethod, sourceMatch, targetMatch);
-				CCMatch ccMatch = (CCMatch) result5_green[4];
+						.pattern_SuperConstructorInvocation_24_5_matchcorrcontext_greenBBBF(mMemberToTMember,
+								sourceMatch, targetMatch);
+				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = SuperConstructorInvocationImpl
-						.pattern_SuperConstructorInvocation_24_6_createcorrespondence_blackBBBBBBB(invocation, tMember,
-								tAccess, tMethod, mMember, mMethod, ccMatch);
+						.pattern_SuperConstructorInvocation_24_6_createcorrespondence_blackBBBBB(invocation, tMember,
+								tAccess, mMember, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[invocation] = "
 							+ invocation + ", " + "[tMember] = " + tMember + ", " + "[tAccess] = " + tAccess + ", "
-							+ "[tMethod] = " + tMethod + ", " + "[mMember] = " + mMember + ", " + "[mMethod] = "
-							+ mMethod + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ "[mMember] = " + mMember + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_24_6_createcorrespondence_greenBBFFB(
 						invocation, tAccess, ccMatch);
@@ -1048,8 +964,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_CC(MSuperConstructorInvocation invocation, TMember tMember, TCall tAccess,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod, Match sourceMatch,
-			Match targetMatch) {// Create CSP
+			MDefinition mMember, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1078,10 +993,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {// 
+	public boolean checkDEC_FWD(MSuperConstructorInvocation invocation, MDefinition mMember) {// 
 		Object[] result1_black = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_27_1_matchtggpattern_blackBBB(invocation, mMember, mMethod);
+				.pattern_SuperConstructorInvocation_27_1_matchtggpattern_blackBB(invocation, mMember);
 		if (result1_black != null) {
 			return SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_27_2_expressionF();
 		} else {
@@ -1095,9 +1009,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TMember tMember, TCall tAccess, TMember tMethod) {// 
+	public boolean checkDEC_BWD(TMember tMember, TCall tAccess) {// 
 		Object[] result1_black = SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_28_1_matchtggpattern_blackBBB(tMember, tAccess, tMethod);
+				.pattern_SuperConstructorInvocation_28_1_matchtggpattern_blackBB(tMember, tAccess);
 		if (result1_black != null) {
 			return SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_28_2_expressionF();
 		} else {
@@ -1112,7 +1026,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * @generated
 	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			MDefinitionToTMember mMemberToTMemberParameter, MDefinitionToTMember mMethodToTMethodParameter) {
+			MDefinitionToTMember mMemberToTMemberParameter) {
 
 		Object[] result1_black = SuperConstructorInvocationImpl
 				.pattern_SuperConstructorInvocation_29_1_createresult_blackB(this);
@@ -1126,26 +1040,20 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 		// ForEach 
 		for (Object[] result2_black : SuperConstructorInvocationImpl
-				.pattern_SuperConstructorInvocation_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
-						ruleResult)) {
+				.pattern_SuperConstructorInvocation_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mMemberToTMemberList = (RuleEntryList) result2_black[0];
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[1];
 			MDefinition mMember = (MDefinition) result2_black[2];
 			TMember tMember = (TMember) result2_black[3];
-			//nothing RuleEntryList mMethodToTMethodList = (RuleEntryList) result2_black[4];
-			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result2_black[5];
-			TMember tMethod = (TMember) result2_black[6];
-			AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result2_black[7];
 
 			Object[] result3_bindingAndBlack = SuperConstructorInvocationImpl
-					.pattern_SuperConstructorInvocation_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember, mMethod, ruleResult);
+					.pattern_SuperConstructorInvocation_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
+							mMemberToTMember, tMember, mMember, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMemberToTMember] = "
-						+ mMemberToTMember + ", " + "[tMember] = " + tMember + ", " + "[mMethodToTMethod] = "
-						+ mMethodToTMethod + ", " + "[tMethod] = " + tMethod + ", " + "[mMember] = " + mMember + ", "
-						+ "[mMethod] = " + mMethod + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ mMemberToTMember + ", " + "[tMember] = " + tMember + ", " + "[mMember] = " + mMember + ", "
+						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1153,25 +1061,23 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 					csp)) {
 				// 
 				Object[] result5_black = SuperConstructorInvocationImpl
-						.pattern_SuperConstructorInvocation_29_5_checknacs_blackBBBBBB(mMemberToTMember, tMember,
-								mMethodToTMethod, tMethod, mMember, mMethod);
+						.pattern_SuperConstructorInvocation_29_5_checknacs_blackBBB(mMemberToTMember, tMember, mMember);
 				if (result5_black != null) {
 
 					Object[] result6_black = SuperConstructorInvocationImpl
-							.pattern_SuperConstructorInvocation_29_6_perform_blackBBBBBBB(mMemberToTMember, tMember,
-									mMethodToTMethod, tMethod, mMember, mMethod, ruleResult);
+							.pattern_SuperConstructorInvocation_29_6_perform_blackBBBB(mMemberToTMember, tMember,
+									mMember, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mMemberToTMember] = "
-								+ mMemberToTMember + ", " + "[tMember] = " + tMember + ", " + "[mMethodToTMethod] = "
-								+ mMethodToTMethod + ", " + "[tMethod] = " + tMethod + ", " + "[mMember] = " + mMember
-								+ ", " + "[mMethod] = " + mMethod + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ mMemberToTMember + ", " + "[tMember] = " + tMember + ", " + "[mMember] = " + mMember
+								+ ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_29_6_perform_greenFBFBBFFBB(
-							tMember, tMethod, mMember, mMethod, ruleResult);
+					SuperConstructorInvocationImpl.pattern_SuperConstructorInvocation_29_6_perform_greenFBFBFFB(tMember,
+							mMember, ruleResult);
 					//nothing MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) result6_green[0];
 					//nothing TCall tAccess = (TCall) result6_green[2];
-					//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[5];
-					//nothing AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result6_green[6];
+					//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[4];
+					//nothing AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result6_green[5];
 
 				} else {
 				}
@@ -1189,8 +1095,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			TMember tMember, MDefinitionToTMember mMethodToTMethod, TMember tMethod, MDefinition mMember,
-			AbstractMethodDeclaration mMethod, ModelgeneratorRuleResult ruleResult) {// Create CSP
+			TMember tMember, MDefinition mMember, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1207,10 +1112,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
 		isApplicableMatch.registerObject("tMember", tMember);
-		isApplicableMatch.registerObject("mMethodToTMethod", mMethodToTMethod);
-		isApplicableMatch.registerObject("tMethod", tMethod);
 		isApplicableMatch.registerObject("mMember", mMember);
-		isApplicableMatch.registerObject("mMethod", mMethod);
 		return csp;
 	}
 
@@ -1231,116 +1133,107 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD__MATCH_MSUPERCONSTRUCTORINVOCATION_MDEFINITION_ABSTRACTMETHODDECLARATION:
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD__MATCH_MSUPERCONSTRUCTORINVOCATION_MDEFINITION:
 			return isAppropriate_FWD((Match) arguments.get(0), (MSuperConstructorInvocation) arguments.get(1),
-					(MDefinition) arguments.get(2), (AbstractMethodDeclaration) arguments.get(3));
+					(MDefinition) arguments.get(2));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MSUPERCONSTRUCTORINVOCATION_MDEFINITION_ABSTRACTMETHODDECLARATION:
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MSUPERCONSTRUCTORINVOCATION_MDEFINITION:
 			registerObjectsToMatch_FWD((Match) arguments.get(0), (MSuperConstructorInvocation) arguments.get(1),
-					(MDefinition) arguments.get(2), (AbstractMethodDeclaration) arguments.get(3));
+					(MDefinition) arguments.get(2));
 			return null;
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MSUPERCONSTRUCTORINVOCATION_MDEFINITION_ABSTRACTMETHODDECLARATION:
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MSUPERCONSTRUCTORINVOCATION_MDEFINITION:
 			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MSuperConstructorInvocation) arguments.get(1),
-					(MDefinition) arguments.get(2), (AbstractMethodDeclaration) arguments.get(3));
+					(MDefinition) arguments.get(2));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MSUPERCONSTRUCTORINVOCATION_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITION_ABSTRACTMETHODDECLARATION:
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MSUPERCONSTRUCTORINVOCATION_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITION:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
 					(MSuperConstructorInvocation) arguments.get(1), (MDefinitionToTMember) arguments.get(2),
-					(TMember) arguments.get(3), (MDefinitionToTMember) arguments.get(4), (TMember) arguments.get(5),
-					(MDefinition) arguments.get(6), (AbstractMethodDeclaration) arguments.get(7));
+					(TMember) arguments.get(3), (MDefinition) arguments.get(4));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
 					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
 			return null;
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TCALL_TMEMBER:
-			return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TCall) arguments.get(2),
-					(TMember) arguments.get(3));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TCALL:
+			return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TCall) arguments.get(2));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TCALL_TMEMBER:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TCall) arguments.get(2),
-					(TMember) arguments.get(3));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TCALL:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TCall) arguments.get(2));
 			return null;
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TCALL_TMEMBER:
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TCALL:
 			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
-					(TCall) arguments.get(2), (TMember) arguments.get(3));
+					(TCall) arguments.get(2));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITIONTOTMEMBER_TCALL_TMEMBER_MDEFINITION_ABSTRACTMETHODDECLARATION:
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_TMEMBER_TCALL_MDEFINITION:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MDefinitionToTMember) arguments.get(1), (TMember) arguments.get(2),
-					(MDefinitionToTMember) arguments.get(3), (TCall) arguments.get(4), (TMember) arguments.get(5),
-					(MDefinition) arguments.get(6), (AbstractMethodDeclaration) arguments.get(7));
+					(MDefinitionToTMember) arguments.get(1), (TMember) arguments.get(2), (TCall) arguments.get(3),
+					(MDefinition) arguments.get(4));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
 					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
 			return null;
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_699__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_699((EMoflonEdge) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_718__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_718((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_22__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_22((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_24__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_24((EMoflonEdge) arguments.get(0));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_CC__MSUPERCONSTRUCTORINVOCATION_TMEMBER_TCALL_TMEMBER_MDEFINITION_ABSTRACTMETHODDECLARATION_MATCH_MATCH:
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_CC__MSUPERCONSTRUCTORINVOCATION_TMEMBER_TCALL_MDEFINITION_MATCH_MATCH:
 			return isApplicable_solveCsp_CC((MSuperConstructorInvocation) arguments.get(0), (TMember) arguments.get(1),
-					(TCall) arguments.get(2), (TMember) arguments.get(3), (MDefinition) arguments.get(4),
-					(AbstractMethodDeclaration) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
+					(TCall) arguments.get(2), (MDefinition) arguments.get(3), (Match) arguments.get(4),
+					(Match) arguments.get(5));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_DEC_FWD__MSUPERCONSTRUCTORINVOCATION_MDEFINITION_ABSTRACTMETHODDECLARATION:
-			return checkDEC_FWD((MSuperConstructorInvocation) arguments.get(0), (MDefinition) arguments.get(1),
-					(AbstractMethodDeclaration) arguments.get(2));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_DEC_BWD__TMEMBER_TCALL_TMEMBER:
-			return checkDEC_BWD((TMember) arguments.get(0), (TCall) arguments.get(1), (TMember) arguments.get(2));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER_MDEFINITIONTOTMEMBER:
-			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1),
-					(MDefinitionToTMember) arguments.get(2));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITION_ABSTRACTMETHODDECLARATION_MODELGENERATORRULERESULT:
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_DEC_FWD__MSUPERCONSTRUCTORINVOCATION_MDEFINITION:
+			return checkDEC_FWD((MSuperConstructorInvocation) arguments.get(0), (MDefinition) arguments.get(1));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_DEC_BWD__TMEMBER_TCALL:
+			return checkDEC_BWD((TMember) arguments.get(0), (TCall) arguments.get(1));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
+			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITION_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MDefinitionToTMember) arguments.get(1), (TMember) arguments.get(2),
-					(MDefinitionToTMember) arguments.get(3), (TMember) arguments.get(4), (MDefinition) arguments.get(5),
-					(AbstractMethodDeclaration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+					(MDefinitionToTMember) arguments.get(1), (TMember) arguments.get(2), (MDefinition) arguments.get(3),
+					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_0_1_initialbindings_blackBBBBB(
-			SuperConstructorInvocation _this, Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
-		return new Object[] { _this, match, invocation, mMember, mMethod };
+	public static final Object[] pattern_SuperConstructorInvocation_0_1_initialbindings_blackBBBB(
+			SuperConstructorInvocation _this, Match match, MSuperConstructorInvocation invocation,
+			MDefinition mMember) {
+		return new Object[] { _this, match, invocation, mMember };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_0_2_SolveCSP_bindingFBBBBB(
-			SuperConstructorInvocation _this, Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, invocation, mMember, mMethod);
+	public static final Object[] pattern_SuperConstructorInvocation_0_2_SolveCSP_bindingFBBBB(
+			SuperConstructorInvocation _this, Match match, MSuperConstructorInvocation invocation,
+			MDefinition mMember) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, invocation, mMember);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, invocation, mMember, mMethod };
+			return new Object[] { csp, _this, match, invocation, mMember };
 		}
 		return null;
 	}
@@ -1349,11 +1242,11 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_0_2_SolveCSP_bindingAndBlackFBBBBB(
-			SuperConstructorInvocation _this, Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
-		Object[] result_pattern_SuperConstructorInvocation_0_2_SolveCSP_binding = pattern_SuperConstructorInvocation_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, invocation, mMember, mMethod);
+	public static final Object[] pattern_SuperConstructorInvocation_0_2_SolveCSP_bindingAndBlackFBBBB(
+			SuperConstructorInvocation _this, Match match, MSuperConstructorInvocation invocation,
+			MDefinition mMember) {
+		Object[] result_pattern_SuperConstructorInvocation_0_2_SolveCSP_binding = pattern_SuperConstructorInvocation_0_2_SolveCSP_bindingFBBBB(
+				_this, match, invocation, mMember);
 		if (result_pattern_SuperConstructorInvocation_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_SuperConstructorInvocation_0_2_SolveCSP_binding[0];
 
@@ -1361,7 +1254,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 					csp);
 			if (result_pattern_SuperConstructorInvocation_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, invocation, mMember, mMethod };
+				return new Object[] { csp, _this, match, invocation, mMember };
 			}
 		}
 		return null;
@@ -1374,54 +1267,38 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_0_4_collectelementstobetranslated_blackBBBB(
-			Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
-		return new Object[] { match, invocation, mMember, mMethod };
+	public static final Object[] pattern_SuperConstructorInvocation_0_4_collectelementstobetranslated_blackBBB(
+			Match match, MSuperConstructorInvocation invocation, MDefinition mMember) {
+		return new Object[] { match, invocation, mMember };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_0_4_collectelementstobetranslated_greenBBBBFFF(
-			Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
-		EMoflonEdge invocation__mMethod____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMethod__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+	public static final Object[] pattern_SuperConstructorInvocation_0_4_collectelementstobetranslated_greenBBBF(
+			Match match, MSuperConstructorInvocation invocation, MDefinition mMember) {
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(invocation);
-		String invocation__mMethod____method_name_prime = "method";
-		String mMethod__invocation____usages_name_prime = "usages";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
-		invocation__mMethod____method.setSrc(invocation);
-		invocation__mMethod____method.setTrg(mMethod);
-		match.getToBeTranslatedEdges().add(invocation__mMethod____method);
-		mMethod__invocation____usages.setSrc(mMethod);
-		mMethod__invocation____usages.setTrg(invocation);
-		match.getToBeTranslatedEdges().add(mMethod__invocation____usages);
 		mMember__invocation____mMethodInvocations.setSrc(mMember);
 		mMember__invocation____mMethodInvocations.setTrg(invocation);
 		match.getToBeTranslatedEdges().add(mMember__invocation____mMethodInvocations);
-		invocation__mMethod____method.setName(invocation__mMethod____method_name_prime);
-		mMethod__invocation____usages.setName(mMethod__invocation____usages_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
-		return new Object[] { match, invocation, mMember, mMethod, invocation__mMethod____method,
-				mMethod__invocation____usages, mMember__invocation____mMethodInvocations };
+		return new Object[] { match, invocation, mMember, mMember__invocation____mMethodInvocations };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_0_5_collectcontextelements_blackBBBB(Match match,
-			MSuperConstructorInvocation invocation, MDefinition mMember, AbstractMethodDeclaration mMethod) {
-		return new Object[] { match, invocation, mMember, mMethod };
+	public static final Object[] pattern_SuperConstructorInvocation_0_5_collectcontextelements_blackBBB(Match match,
+			MSuperConstructorInvocation invocation, MDefinition mMember) {
+		return new Object[] { match, invocation, mMember };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_0_5_collectcontextelements_greenBBB(Match match,
-			MDefinition mMember, AbstractMethodDeclaration mMethod) {
+	public static final Object[] pattern_SuperConstructorInvocation_0_5_collectcontextelements_greenBB(Match match,
+			MDefinition mMember) {
 		match.getContextNodes().add(mMember);
-		match.getContextNodes().add(mMethod);
-		return new Object[] { match, mMember, mMethod };
+		return new Object[] { match, mMember };
 	}
 
-	public static final void pattern_SuperConstructorInvocation_0_6_registerobjectstomatch_expressionBBBBB(
-			SuperConstructorInvocation _this, Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
-		_this.registerObjectsToMatch_FWD(match, invocation, mMember, mMethod);
+	public static final void pattern_SuperConstructorInvocation_0_6_registerobjectstomatch_expressionBBBB(
+			SuperConstructorInvocation _this, Match match, MSuperConstructorInvocation invocation,
+			MDefinition mMember) {
+		_this.registerObjectsToMatch_FWD(match, invocation, mMember);
 
 	}
 
@@ -1435,41 +1312,25 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_1_1_performtransformation_bindingFFFFFFFB(
+	public static final Object[] pattern_SuperConstructorInvocation_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("invocation");
 		EObject _localVariable_1 = isApplicableMatch.getObject("mMemberToTMember");
 		EObject _localVariable_2 = isApplicableMatch.getObject("tMember");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mMethodToTMethod");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tMethod");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mMember");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mMethod");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mMember");
 		EObject tmpInvocation = _localVariable_0;
 		EObject tmpMMemberToTMember = _localVariable_1;
 		EObject tmpTMember = _localVariable_2;
-		EObject tmpMMethodToTMethod = _localVariable_3;
-		EObject tmpTMethod = _localVariable_4;
-		EObject tmpMMember = _localVariable_5;
-		EObject tmpMMethod = _localVariable_6;
+		EObject tmpMMember = _localVariable_3;
 		if (tmpInvocation instanceof MSuperConstructorInvocation) {
 			MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) tmpInvocation;
 			if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
 				MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
 				if (tmpTMember instanceof TMember) {
 					TMember tMember = (TMember) tmpTMember;
-					if (tmpMMethodToTMethod instanceof MDefinitionToTMember) {
-						MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) tmpMMethodToTMethod;
-						if (tmpTMethod instanceof TMember) {
-							TMember tMethod = (TMember) tmpTMethod;
-							if (tmpMMember instanceof MDefinition) {
-								MDefinition mMember = (MDefinition) tmpMMember;
-								if (tmpMMethod instanceof AbstractMethodDeclaration) {
-									AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) tmpMMethod;
-									return new Object[] { invocation, mMemberToTMember, tMember, mMethodToTMethod,
-											tMethod, mMember, mMethod, isApplicableMatch };
-								}
-							}
-						}
+					if (tmpMMember instanceof MDefinition) {
+						MDefinition mMember = (MDefinition) tmpMMember;
+						return new Object[] { invocation, mMemberToTMember, tMember, mMember, isApplicableMatch };
 					}
 				}
 			}
@@ -1477,64 +1338,52 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_1_1_performtransformation_blackBBBBBBBFBB(
+	public static final Object[] pattern_SuperConstructorInvocation_1_1_performtransformation_blackBBBBFBB(
 			MSuperConstructorInvocation invocation, MDefinitionToTMember mMemberToTMember, TMember tMember,
-			MDefinitionToTMember mMethodToTMethod, TMember tMethod, MDefinition mMember,
-			AbstractMethodDeclaration mMethod, SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch) {
-		if (!mMemberToTMember.equals(mMethodToTMethod)) {
-			if (!tMember.equals(tMethod)) {
-				for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
-					if (tmpCsp instanceof CSP) {
-						CSP csp = (CSP) tmpCsp;
-						return new Object[] { invocation, mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember,
-								mMethod, csp, _this, isApplicableMatch };
-					}
-				}
+			MDefinition mMember, SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch) {
+		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
+			if (tmpCsp instanceof CSP) {
+				CSP csp = (CSP) tmpCsp;
+				return new Object[] { invocation, mMemberToTMember, tMember, mMember, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_1_1_performtransformation_bindingAndBlackFFFFFFFFBB(
+	public static final Object[] pattern_SuperConstructorInvocation_1_1_performtransformation_bindingAndBlackFFFFFBB(
 			SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch) {
-		Object[] result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding = pattern_SuperConstructorInvocation_1_1_performtransformation_bindingFFFFFFFB(
+		Object[] result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding = pattern_SuperConstructorInvocation_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding != null) {
 			MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding[0];
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding[1];
 			TMember tMember = (TMember) result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding[2];
-			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding[3];
-			TMember tMethod = (TMember) result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding[4];
-			MDefinition mMember = (MDefinition) result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding[5];
-			AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding[6];
+			MDefinition mMember = (MDefinition) result_pattern_SuperConstructorInvocation_1_1_performtransformation_binding[3];
 
-			Object[] result_pattern_SuperConstructorInvocation_1_1_performtransformation_black = pattern_SuperConstructorInvocation_1_1_performtransformation_blackBBBBBBBFBB(
-					invocation, mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember, mMethod, _this,
-					isApplicableMatch);
+			Object[] result_pattern_SuperConstructorInvocation_1_1_performtransformation_black = pattern_SuperConstructorInvocation_1_1_performtransformation_blackBBBBFBB(
+					invocation, mMemberToTMember, tMember, mMember, _this, isApplicableMatch);
 			if (result_pattern_SuperConstructorInvocation_1_1_performtransformation_black != null) {
-				CSP csp = (CSP) result_pattern_SuperConstructorInvocation_1_1_performtransformation_black[7];
+				CSP csp = (CSP) result_pattern_SuperConstructorInvocation_1_1_performtransformation_black[4];
 
-				return new Object[] { invocation, mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember,
-						mMethod, csp, _this, isApplicableMatch };
+				return new Object[] { invocation, mMemberToTMember, tMember, mMember, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_1_1_performtransformation_greenBBFBFF(
-			MSuperConstructorInvocation invocation, TMember tMember, TMember tMethod) {
+	public static final Object[] pattern_SuperConstructorInvocation_1_1_performtransformation_greenBBFFF(
+			MSuperConstructorInvocation invocation, TMember tMember) {
 		TCall tAccess = BasicFactory.eINSTANCE.createTCall();
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
 		AbstractMethodInvocationToTAccess invocationToTAccess = PmFactory.eINSTANCE
 				.createAbstractMethodInvocationToTAccess();
-		tMember.getTAccessing().add(tAccess);
-		tAccess.setTTarget(tMethod);
+		tMember.getAccessing().add(tAccess);
 		mFlowElementToTFlowElement.setTarget(tAccess);
 		mFlowElementToTFlowElement.setSource(invocation);
 		invocationToTAccess.setSource(invocation);
 		invocationToTAccess.setTarget(tAccess);
-		return new Object[] { invocation, tMember, tAccess, tMethod, mFlowElementToTFlowElement, invocationToTAccess };
+		return new Object[] { invocation, tMember, tAccess, mFlowElementToTFlowElement, invocationToTAccess };
 	}
 
 	public static final Object[] pattern_SuperConstructorInvocation_1_2_collecttranslatedelements_blackBBBB(
@@ -1556,116 +1405,42 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { ruleresult, invocation, tAccess, mFlowElementToTFlowElement, invocationToTAccess };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
+	public static final Object[] pattern_SuperConstructorInvocation_1_3_bookkeepingforedges_blackBBBBBBBB(
 			PerformRuleResult ruleresult, EObject invocation, EObject mMemberToTMember, EObject tMember,
-			EObject mMethodToTMethod, EObject tAccess, EObject tMethod, EObject mMember,
-			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMethod) {
+			EObject tAccess, EObject mMember, EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
 		if (!invocation.equals(mMemberToTMember)) {
 			if (!invocation.equals(tMember)) {
-				if (!invocation.equals(mMethodToTMethod)) {
-					if (!invocation.equals(tAccess)) {
-						if (!invocation.equals(tMethod)) {
-							if (!invocation.equals(mMember)) {
-								if (!invocation.equals(mFlowElementToTFlowElement)) {
-									if (!invocation.equals(invocationToTAccess)) {
-										if (!invocation.equals(mMethod)) {
-											if (!mMemberToTMember.equals(tMember)) {
-												if (!mMemberToTMember.equals(mMethodToTMethod)) {
-													if (!mMemberToTMember.equals(tAccess)) {
-														if (!mMemberToTMember.equals(tMethod)) {
-															if (!mMemberToTMember.equals(mMethod)) {
-																if (!tMember.equals(tMethod)) {
-																	if (!mMethodToTMethod.equals(tMember)) {
-																		if (!mMethodToTMethod.equals(tAccess)) {
-																			if (!mMethodToTMethod.equals(tMethod)) {
-																				if (!tAccess.equals(tMember)) {
-																					if (!tAccess.equals(tMethod)) {
-																						if (!mMember.equals(
-																								mMemberToTMember)) {
-																							if (!mMember
-																									.equals(tMember)) {
-																								if (!mMember.equals(
-																										mMethodToTMethod)) {
-																									if (!mMember.equals(
-																											tAccess)) {
-																										if (!mMember
-																												.equals(tMethod)) {
-																											if (!mMember
-																													.equals(mMethod)) {
-																												if (!mFlowElementToTFlowElement
-																														.equals(mMemberToTMember)) {
-																													if (!mFlowElementToTFlowElement
-																															.equals(tMember)) {
-																														if (!mFlowElementToTFlowElement
-																																.equals(mMethodToTMethod)) {
-																															if (!mFlowElementToTFlowElement
-																																	.equals(tAccess)) {
-																																if (!mFlowElementToTFlowElement
-																																		.equals(tMethod)) {
-																																	if (!mFlowElementToTFlowElement
-																																			.equals(mMember)) {
-																																		if (!mFlowElementToTFlowElement
-																																				.equals(mMethod)) {
-																																			if (!invocationToTAccess
-																																					.equals(mMemberToTMember)) {
-																																				if (!invocationToTAccess
-																																						.equals(tMember)) {
-																																					if (!invocationToTAccess
-																																							.equals(mMethodToTMethod)) {
-																																						if (!invocationToTAccess
-																																								.equals(tAccess)) {
-																																							if (!invocationToTAccess
-																																									.equals(tMethod)) {
-																																								if (!invocationToTAccess
-																																										.equals(mMember)) {
-																																									if (!invocationToTAccess
-																																											.equals(mFlowElementToTFlowElement)) {
-																																										if (!invocationToTAccess
-																																												.equals(mMethod)) {
-																																											if (!mMethod
-																																													.equals(tMember)) {
-																																												if (!mMethod
-																																														.equals(mMethodToTMethod)) {
-																																													if (!mMethod
-																																															.equals(tAccess)) {
-																																														if (!mMethod
-																																																.equals(tMethod)) {
-																																															return new Object[] {
-																																																	ruleresult,
-																																																	invocation,
-																																																	mMemberToTMember,
-																																																	tMember,
-																																																	mMethodToTMethod,
-																																																	tAccess,
-																																																	tMethod,
-																																																	mMember,
-																																																	mFlowElementToTFlowElement,
-																																																	invocationToTAccess,
-																																																	mMethod };
-																																														}
-																																													}
-																																												}
-																																											}
-																																										}
-																																									}
-																																								}
-																																							}
-																																						}
-																																					}
-																																				}
-																																			}
-																																		}
-																																	}
-																																}
-																															}
-																														}
-																													}
-																												}
-																											}
-																										}
-																									}
-																								}
-																							}
+				if (!invocation.equals(tAccess)) {
+					if (!invocation.equals(mMember)) {
+						if (!invocation.equals(mFlowElementToTFlowElement)) {
+							if (!invocation.equals(invocationToTAccess)) {
+								if (!mMemberToTMember.equals(tMember)) {
+									if (!mMemberToTMember.equals(tAccess)) {
+										if (!tAccess.equals(tMember)) {
+											if (!mMember.equals(mMemberToTMember)) {
+												if (!mMember.equals(tMember)) {
+													if (!mMember.equals(tAccess)) {
+														if (!mFlowElementToTFlowElement.equals(mMemberToTMember)) {
+															if (!mFlowElementToTFlowElement.equals(tMember)) {
+																if (!mFlowElementToTFlowElement.equals(tAccess)) {
+																	if (!mFlowElementToTFlowElement.equals(mMember)) {
+																		if (!invocationToTAccess
+																				.equals(mMemberToTMember)) {
+																			if (!invocationToTAccess.equals(tMember)) {
+																				if (!invocationToTAccess
+																						.equals(tAccess)) {
+																					if (!invocationToTAccess
+																							.equals(mMember)) {
+																						if (!invocationToTAccess.equals(
+																								mFlowElementToTFlowElement)) {
+																							return new Object[] {
+																									ruleresult,
+																									invocation,
+																									mMemberToTMember,
+																									tMember, tAccess,
+																									mMember,
+																									mFlowElementToTFlowElement,
+																									invocationToTAccess };
 																						}
 																					}
 																				}
@@ -1690,44 +1465,30 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject invocation, EObject tMember, EObject tAccess, EObject tMethod,
-			EObject mMember, EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMethod) {
-		EMoflonEdge invocation__mMethod____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMethod__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+	public static final Object[] pattern_SuperConstructorInvocation_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
+			PerformRuleResult ruleresult, EObject invocation, EObject tMember, EObject tAccess, EObject mMember,
+			EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
+		EMoflonEdge tMember__tAccess____accessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAccess__tMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMethod____tTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethod__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "SuperConstructorInvocation";
-		String invocation__mMethod____method_name_prime = "method";
-		String mMethod__invocation____usages_name_prime = "usages";
-		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
-		String tAccess__tMember____tSource_name_prime = "tSource";
+		String tMember__tAccess____accessing_name_prime = "accessing";
+		String tAccess__tMember____source_name_prime = "source";
 		String invocationToTAccess__invocation____source_name_prime = "source";
 		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
-		String tAccess__tMethod____tTarget_name_prime = "tTarget";
-		String tMethod__tAccess____accessedBy_name_prime = "accessedBy";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
-		invocation__mMethod____method.setSrc(invocation);
-		invocation__mMethod____method.setTrg(mMethod);
-		ruleresult.getTranslatedEdges().add(invocation__mMethod____method);
-		mMethod__invocation____usages.setSrc(mMethod);
-		mMethod__invocation____usages.setTrg(invocation);
-		ruleresult.getTranslatedEdges().add(mMethod__invocation____usages);
-		tMember__tAccess____tAccessing.setSrc(tMember);
-		tMember__tAccess____tAccessing.setTrg(tAccess);
-		ruleresult.getCreatedEdges().add(tMember__tAccess____tAccessing);
-		tAccess__tMember____tSource.setSrc(tAccess);
-		tAccess__tMember____tSource.setTrg(tMember);
-		ruleresult.getCreatedEdges().add(tAccess__tMember____tSource);
+		tMember__tAccess____accessing.setSrc(tMember);
+		tMember__tAccess____accessing.setTrg(tAccess);
+		ruleresult.getCreatedEdges().add(tMember__tAccess____accessing);
+		tAccess__tMember____source.setSrc(tAccess);
+		tAccess__tMember____source.setTrg(tMember);
+		ruleresult.getCreatedEdges().add(tAccess__tMember____source);
 		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
 		invocationToTAccess__invocation____source.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
@@ -1740,42 +1501,31 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		mFlowElementToTFlowElement__invocation____source.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__invocation____source.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__invocation____source);
-		tAccess__tMethod____tTarget.setSrc(tAccess);
-		tAccess__tMethod____tTarget.setTrg(tMethod);
-		ruleresult.getCreatedEdges().add(tAccess__tMethod____tTarget);
-		tMethod__tAccess____accessedBy.setSrc(tMethod);
-		tMethod__tAccess____accessedBy.setTrg(tAccess);
-		ruleresult.getCreatedEdges().add(tMethod__tAccess____accessedBy);
 		mMember__invocation____mMethodInvocations.setSrc(mMember);
 		mMember__invocation____mMethodInvocations.setTrg(invocation);
 		ruleresult.getTranslatedEdges().add(mMember__invocation____mMethodInvocations);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		invocation__mMethod____method.setName(invocation__mMethod____method_name_prime);
-		mMethod__invocation____usages.setName(mMethod__invocation____usages_name_prime);
-		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
-		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
+		tMember__tAccess____accessing.setName(tMember__tAccess____accessing_name_prime);
+		tAccess__tMember____source.setName(tAccess__tMember____source_name_prime);
 		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mFlowElementToTFlowElement__invocation____source
 				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
-		tAccess__tMethod____tTarget.setName(tAccess__tMethod____tTarget_name_prime);
-		tMethod__tAccess____accessedBy.setName(tMethod__tAccess____accessedBy_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
-		return new Object[] { ruleresult, invocation, tMember, tAccess, tMethod, mMember, mFlowElementToTFlowElement,
-				invocationToTAccess, mMethod, invocation__mMethod____method, mMethod__invocation____usages,
-				tMember__tAccess____tAccessing, tAccess__tMember____tSource, invocationToTAccess__invocation____source,
-				mFlowElementToTFlowElement__tAccess____target, invocationToTAccess__tAccess____target,
-				mFlowElementToTFlowElement__invocation____source, tAccess__tMethod____tTarget,
-				tMethod__tAccess____accessedBy, mMember__invocation____mMethodInvocations };
+		return new Object[] { ruleresult, invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement,
+				invocationToTAccess, tMember__tAccess____accessing, tAccess__tMember____source,
+				invocationToTAccess__invocation____source, mFlowElementToTFlowElement__tAccess____target,
+				invocationToTAccess__tAccess____target, mFlowElementToTFlowElement__invocation____source,
+				mMember__invocation____mMethodInvocations };
 	}
 
-	public static final void pattern_SuperConstructorInvocation_1_5_registerobjects_expressionBBBBBBBBBBBB(
+	public static final void pattern_SuperConstructorInvocation_1_5_registerobjects_expressionBBBBBBBBB(
 			SuperConstructorInvocation _this, PerformRuleResult ruleresult, EObject invocation,
-			EObject mMemberToTMember, EObject tMember, EObject mMethodToTMethod, EObject tAccess, EObject tMethod,
-			EObject mMember, EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMethod) {
-		_this.registerObjects_FWD(ruleresult, invocation, mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod,
-				mMember, mFlowElementToTFlowElement, invocationToTAccess, mMethod);
+			EObject mMemberToTMember, EObject tMember, EObject tAccess, EObject mMember,
+			EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
+		_this.registerObjects_FWD(ruleresult, invocation, mMemberToTMember, tMember, tAccess, mMember,
+				mFlowElementToTFlowElement, invocationToTAccess);
 
 	}
 
@@ -1836,150 +1586,89 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { performOperation, ruleresult };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_2_2_corematch_bindingFFFB(Match match) {
+	public static final Object[] pattern_SuperConstructorInvocation_2_2_corematch_bindingFFB(Match match) {
 		EObject _localVariable_0 = match.getObject("invocation");
 		EObject _localVariable_1 = match.getObject("mMember");
-		EObject _localVariable_2 = match.getObject("mMethod");
 		EObject tmpInvocation = _localVariable_0;
 		EObject tmpMMember = _localVariable_1;
-		EObject tmpMMethod = _localVariable_2;
 		if (tmpInvocation instanceof MSuperConstructorInvocation) {
 			MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) tmpInvocation;
 			if (tmpMMember instanceof MDefinition) {
 				MDefinition mMember = (MDefinition) tmpMMember;
-				if (tmpMMethod instanceof AbstractMethodDeclaration) {
-					AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) tmpMMethod;
-					return new Object[] { invocation, mMember, mMethod, match };
-				}
+				return new Object[] { invocation, mMember, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_2_2_corematch_blackBFFFFBBB(
-			MSuperConstructorInvocation invocation, MDefinition mMember, AbstractMethodDeclaration mMethod,
-			Match match) {
+	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_2_2_corematch_blackBFFBB(
+			MSuperConstructorInvocation invocation, MDefinition mMember, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (MDefinitionToTMember mMethodToTMethod : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(mMethod, MDefinitionToTMember.class, "source")) {
-			TMember tMethod = mMethodToTMethod.getTarget();
-			if (tMethod != null) {
-				for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(mMember, MDefinitionToTMember.class, "source")) {
-					if (!mMemberToTMember.equals(mMethodToTMethod)) {
-						TMember tMember = mMemberToTMember.getTarget();
-						if (tMember != null) {
-							if (!tMember.equals(tMethod)) {
-								_result.add(new Object[] { invocation, mMemberToTMember, tMember, mMethodToTMethod,
-										tMethod, mMember, mMethod, match });
-							}
-						}
-
-					}
-				}
+		for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(mMember, MDefinitionToTMember.class, "source")) {
+			TMember tMember = mMemberToTMember.getTarget();
+			if (tMember != null) {
+				_result.add(new Object[] { invocation, mMemberToTMember, tMember, mMember, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_2_3_findcontext_blackBBBBBBB(
+	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_2_3_findcontext_blackBBBB(
 			MSuperConstructorInvocation invocation, MDefinitionToTMember mMemberToTMember, TMember tMember,
-			MDefinitionToTMember mMethodToTMethod, TMember tMethod, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
+			MDefinition mMember) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!mMemberToTMember.equals(mMethodToTMethod)) {
-			if (!tMember.equals(tMethod)) {
-				if (tMethod.equals(mMethodToTMethod.getTarget())) {
-					if (mMethod.equals(invocation.getMethod())) {
-						if (tMember.equals(mMemberToTMember.getTarget())) {
-							if (mMethod.equals(mMethodToTMethod.getSource())) {
-								if (mMember.equals(mMemberToTMember.getSource())) {
-									if (mMember.getMMethodInvocations().contains(invocation)) {
-										_result.add(new Object[] { invocation, mMemberToTMember, tMember,
-												mMethodToTMethod, tMethod, mMember, mMethod });
-									}
-								}
-							}
-						}
-					}
+		if (tMember.equals(mMemberToTMember.getTarget())) {
+			if (mMember.equals(mMemberToTMember.getSource())) {
+				if (mMember.getMMethodInvocations().contains(invocation)) {
+					_result.add(new Object[] { invocation, mMemberToTMember, tMember, mMember });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_2_3_findcontext_greenBBBBBBBFFFFFFFF(
+	public static final Object[] pattern_SuperConstructorInvocation_2_3_findcontext_greenBBBBFFFF(
 			MSuperConstructorInvocation invocation, MDefinitionToTMember mMemberToTMember, TMember tMember,
-			MDefinitionToTMember mMethodToTMethod, TMember tMethod, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
+			MDefinition mMember) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mMethodToTMethod__tMethod____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge invocation__mMethod____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMethod__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMethodToTMethod__mMethod____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMemberToTMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mMethodToTMethod__tMethod____target_name_prime = "target";
-		String invocation__mMethod____method_name_prime = "method";
-		String mMethod__invocation____usages_name_prime = "usages";
 		String mMemberToTMember__tMember____target_name_prime = "target";
-		String mMethodToTMethod__mMethod____source_name_prime = "source";
 		String mMemberToTMember__mMember____source_name_prime = "source";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
 		isApplicableMatch.getAllContextElements().add(invocation);
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember);
 		isApplicableMatch.getAllContextElements().add(tMember);
-		isApplicableMatch.getAllContextElements().add(mMethodToTMethod);
-		isApplicableMatch.getAllContextElements().add(tMethod);
 		isApplicableMatch.getAllContextElements().add(mMember);
-		isApplicableMatch.getAllContextElements().add(mMethod);
-		mMethodToTMethod__tMethod____target.setSrc(mMethodToTMethod);
-		mMethodToTMethod__tMethod____target.setTrg(tMethod);
-		isApplicableMatch.getAllContextElements().add(mMethodToTMethod__tMethod____target);
-		invocation__mMethod____method.setSrc(invocation);
-		invocation__mMethod____method.setTrg(mMethod);
-		isApplicableMatch.getAllContextElements().add(invocation__mMethod____method);
-		mMethod__invocation____usages.setSrc(mMethod);
-		mMethod__invocation____usages.setTrg(invocation);
-		isApplicableMatch.getAllContextElements().add(mMethod__invocation____usages);
 		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
 		mMemberToTMember__tMember____target.setTrg(tMember);
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
-		mMethodToTMethod__mMethod____source.setSrc(mMethodToTMethod);
-		mMethodToTMethod__mMethod____source.setTrg(mMethod);
-		isApplicableMatch.getAllContextElements().add(mMethodToTMethod__mMethod____source);
 		mMemberToTMember__mMember____source.setSrc(mMemberToTMember);
 		mMemberToTMember__mMember____source.setTrg(mMember);
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember__mMember____source);
 		mMember__invocation____mMethodInvocations.setSrc(mMember);
 		mMember__invocation____mMethodInvocations.setTrg(invocation);
 		isApplicableMatch.getAllContextElements().add(mMember__invocation____mMethodInvocations);
-		mMethodToTMethod__tMethod____target.setName(mMethodToTMethod__tMethod____target_name_prime);
-		invocation__mMethod____method.setName(invocation__mMethod____method_name_prime);
-		mMethod__invocation____usages.setName(mMethod__invocation____usages_name_prime);
 		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
-		mMethodToTMethod__mMethod____source.setName(mMethodToTMethod__mMethod____source_name_prime);
 		mMemberToTMember__mMember____source.setName(mMemberToTMember__mMember____source_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
-		return new Object[] { invocation, mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember, mMethod,
-				isApplicableMatch, mMethodToTMethod__tMethod____target, invocation__mMethod____method,
-				mMethod__invocation____usages, mMemberToTMember__tMember____target, mMethodToTMethod__mMethod____source,
-				mMemberToTMember__mMember____source, mMember__invocation____mMethodInvocations };
+		return new Object[] { invocation, mMemberToTMember, tMember, mMember, isApplicableMatch,
+				mMemberToTMember__tMember____target, mMemberToTMember__mMember____source,
+				mMember__invocation____mMethodInvocations };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_2_4_solveCSP_bindingFBBBBBBBBB(
+	public static final Object[] pattern_SuperConstructorInvocation_2_4_solveCSP_bindingFBBBBBB(
 			SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch,
 			MSuperConstructorInvocation invocation, MDefinitionToTMember mMemberToTMember, TMember tMember,
-			MDefinitionToTMember mMethodToTMethod, TMember tMethod, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
+			MDefinition mMember) {
 		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, invocation, mMemberToTMember, tMember,
-				mMethodToTMethod, tMethod, mMember, mMethod);
+				mMember);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, invocation, mMemberToTMember, tMember,
-					mMethodToTMethod, tMethod, mMember, mMethod };
+			return new Object[] { csp, _this, isApplicableMatch, invocation, mMemberToTMember, tMember, mMember };
 		}
 		return null;
 	}
@@ -1988,14 +1677,12 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(
+	public static final Object[] pattern_SuperConstructorInvocation_2_4_solveCSP_bindingAndBlackFBBBBBB(
 			SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch,
 			MSuperConstructorInvocation invocation, MDefinitionToTMember mMemberToTMember, TMember tMember,
-			MDefinitionToTMember mMethodToTMethod, TMember tMethod, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
-		Object[] result_pattern_SuperConstructorInvocation_2_4_solveCSP_binding = pattern_SuperConstructorInvocation_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, invocation, mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember,
-				mMethod);
+			MDefinition mMember) {
+		Object[] result_pattern_SuperConstructorInvocation_2_4_solveCSP_binding = pattern_SuperConstructorInvocation_2_4_solveCSP_bindingFBBBBBB(
+				_this, isApplicableMatch, invocation, mMemberToTMember, tMember, mMember);
 		if (result_pattern_SuperConstructorInvocation_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_SuperConstructorInvocation_2_4_solveCSP_binding[0];
 
@@ -2003,8 +1690,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 					csp);
 			if (result_pattern_SuperConstructorInvocation_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, invocation, mMemberToTMember, tMember,
-						mMethodToTMethod, tMethod, mMember, mMethod };
+				return new Object[] { csp, _this, isApplicableMatch, invocation, mMemberToTMember, tMember, mMember };
 			}
 		}
 		return null;
@@ -2038,20 +1724,17 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_10_1_initialbindings_blackBBBBB(
-			SuperConstructorInvocation _this, Match match, TMember tMember, TCall tAccess, TMember tMethod) {
-		if (!tMember.equals(tMethod)) {
-			return new Object[] { _this, match, tMember, tAccess, tMethod };
-		}
-		return null;
+	public static final Object[] pattern_SuperConstructorInvocation_10_1_initialbindings_blackBBBB(
+			SuperConstructorInvocation _this, Match match, TMember tMember, TCall tAccess) {
+		return new Object[] { _this, match, tMember, tAccess };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_10_2_SolveCSP_bindingFBBBBB(
-			SuperConstructorInvocation _this, Match match, TMember tMember, TCall tAccess, TMember tMethod) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tMember, tAccess, tMethod);
+	public static final Object[] pattern_SuperConstructorInvocation_10_2_SolveCSP_bindingFBBBB(
+			SuperConstructorInvocation _this, Match match, TMember tMember, TCall tAccess) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tMember, tAccess);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tMember, tAccess, tMethod };
+			return new Object[] { csp, _this, match, tMember, tAccess };
 		}
 		return null;
 	}
@@ -2060,10 +1743,10 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_10_2_SolveCSP_bindingAndBlackFBBBBB(
-			SuperConstructorInvocation _this, Match match, TMember tMember, TCall tAccess, TMember tMethod) {
-		Object[] result_pattern_SuperConstructorInvocation_10_2_SolveCSP_binding = pattern_SuperConstructorInvocation_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, tMember, tAccess, tMethod);
+	public static final Object[] pattern_SuperConstructorInvocation_10_2_SolveCSP_bindingAndBlackFBBBB(
+			SuperConstructorInvocation _this, Match match, TMember tMember, TCall tAccess) {
+		Object[] result_pattern_SuperConstructorInvocation_10_2_SolveCSP_binding = pattern_SuperConstructorInvocation_10_2_SolveCSP_bindingFBBBB(
+				_this, match, tMember, tAccess);
 		if (result_pattern_SuperConstructorInvocation_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_SuperConstructorInvocation_10_2_SolveCSP_binding[0];
 
@@ -2071,7 +1754,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 					csp);
 			if (result_pattern_SuperConstructorInvocation_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tMember, tAccess, tMethod };
+				return new Object[] { csp, _this, match, tMember, tAccess };
 			}
 		}
 		return null;
@@ -2084,63 +1767,43 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_10_4_collectelementstobetranslated_blackBBBB(
-			Match match, TMember tMember, TCall tAccess, TMember tMethod) {
-		if (!tMember.equals(tMethod)) {
-			return new Object[] { match, tMember, tAccess, tMethod };
-		}
-		return null;
+	public static final Object[] pattern_SuperConstructorInvocation_10_4_collectelementstobetranslated_blackBBB(
+			Match match, TMember tMember, TCall tAccess) {
+		return new Object[] { match, tMember, tAccess };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_10_4_collectelementstobetranslated_greenBBBBFFFF(
-			Match match, TMember tMember, TCall tAccess, TMember tMethod) {
-		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMethod____tTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethod__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+	public static final Object[] pattern_SuperConstructorInvocation_10_4_collectelementstobetranslated_greenBBBFF(
+			Match match, TMember tMember, TCall tAccess) {
+		EMoflonEdge tMember__tAccess____accessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAccess__tMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tAccess);
-		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
-		String tAccess__tMember____tSource_name_prime = "tSource";
-		String tAccess__tMethod____tTarget_name_prime = "tTarget";
-		String tMethod__tAccess____accessedBy_name_prime = "accessedBy";
-		tMember__tAccess____tAccessing.setSrc(tMember);
-		tMember__tAccess____tAccessing.setTrg(tAccess);
-		match.getToBeTranslatedEdges().add(tMember__tAccess____tAccessing);
-		tAccess__tMember____tSource.setSrc(tAccess);
-		tAccess__tMember____tSource.setTrg(tMember);
-		match.getToBeTranslatedEdges().add(tAccess__tMember____tSource);
-		tAccess__tMethod____tTarget.setSrc(tAccess);
-		tAccess__tMethod____tTarget.setTrg(tMethod);
-		match.getToBeTranslatedEdges().add(tAccess__tMethod____tTarget);
-		tMethod__tAccess____accessedBy.setSrc(tMethod);
-		tMethod__tAccess____accessedBy.setTrg(tAccess);
-		match.getToBeTranslatedEdges().add(tMethod__tAccess____accessedBy);
-		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
-		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
-		tAccess__tMethod____tTarget.setName(tAccess__tMethod____tTarget_name_prime);
-		tMethod__tAccess____accessedBy.setName(tMethod__tAccess____accessedBy_name_prime);
-		return new Object[] { match, tMember, tAccess, tMethod, tMember__tAccess____tAccessing,
-				tAccess__tMember____tSource, tAccess__tMethod____tTarget, tMethod__tAccess____accessedBy };
+		String tMember__tAccess____accessing_name_prime = "accessing";
+		String tAccess__tMember____source_name_prime = "source";
+		tMember__tAccess____accessing.setSrc(tMember);
+		tMember__tAccess____accessing.setTrg(tAccess);
+		match.getToBeTranslatedEdges().add(tMember__tAccess____accessing);
+		tAccess__tMember____source.setSrc(tAccess);
+		tAccess__tMember____source.setTrg(tMember);
+		match.getToBeTranslatedEdges().add(tAccess__tMember____source);
+		tMember__tAccess____accessing.setName(tMember__tAccess____accessing_name_prime);
+		tAccess__tMember____source.setName(tAccess__tMember____source_name_prime);
+		return new Object[] { match, tMember, tAccess, tMember__tAccess____accessing, tAccess__tMember____source };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_10_5_collectcontextelements_blackBBBB(Match match,
-			TMember tMember, TCall tAccess, TMember tMethod) {
-		if (!tMember.equals(tMethod)) {
-			return new Object[] { match, tMember, tAccess, tMethod };
-		}
-		return null;
+	public static final Object[] pattern_SuperConstructorInvocation_10_5_collectcontextelements_blackBBB(Match match,
+			TMember tMember, TCall tAccess) {
+		return new Object[] { match, tMember, tAccess };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_10_5_collectcontextelements_greenBBB(Match match,
-			TMember tMember, TMember tMethod) {
+	public static final Object[] pattern_SuperConstructorInvocation_10_5_collectcontextelements_greenBB(Match match,
+			TMember tMember) {
 		match.getContextNodes().add(tMember);
-		match.getContextNodes().add(tMethod);
-		return new Object[] { match, tMember, tMethod };
+		return new Object[] { match, tMember };
 	}
 
-	public static final void pattern_SuperConstructorInvocation_10_6_registerobjectstomatch_expressionBBBBB(
-			SuperConstructorInvocation _this, Match match, TMember tMember, TCall tAccess, TMember tMethod) {
-		_this.registerObjectsToMatch_BWD(match, tMember, tAccess, tMethod);
+	public static final void pattern_SuperConstructorInvocation_10_6_registerobjectstomatch_expressionBBBB(
+			SuperConstructorInvocation _this, Match match, TMember tMember, TCall tAccess) {
+		_this.registerObjectsToMatch_BWD(match, tMember, tAccess);
 
 	}
 
@@ -2154,41 +1817,25 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_11_1_performtransformation_bindingFFFFFFFB(
+	public static final Object[] pattern_SuperConstructorInvocation_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mMemberToTMember");
 		EObject _localVariable_1 = isApplicableMatch.getObject("tMember");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mMethodToTMethod");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tAccess");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tMethod");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mMember");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mMethod");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tAccess");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mMember");
 		EObject tmpMMemberToTMember = _localVariable_0;
 		EObject tmpTMember = _localVariable_1;
-		EObject tmpMMethodToTMethod = _localVariable_2;
-		EObject tmpTAccess = _localVariable_3;
-		EObject tmpTMethod = _localVariable_4;
-		EObject tmpMMember = _localVariable_5;
-		EObject tmpMMethod = _localVariable_6;
+		EObject tmpTAccess = _localVariable_2;
+		EObject tmpMMember = _localVariable_3;
 		if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
 			if (tmpTMember instanceof TMember) {
 				TMember tMember = (TMember) tmpTMember;
-				if (tmpMMethodToTMethod instanceof MDefinitionToTMember) {
-					MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) tmpMMethodToTMethod;
-					if (tmpTAccess instanceof TCall) {
-						TCall tAccess = (TCall) tmpTAccess;
-						if (tmpTMethod instanceof TMember) {
-							TMember tMethod = (TMember) tmpTMethod;
-							if (tmpMMember instanceof MDefinition) {
-								MDefinition mMember = (MDefinition) tmpMMember;
-								if (tmpMMethod instanceof AbstractMethodDeclaration) {
-									AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) tmpMMethod;
-									return new Object[] { mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod,
-											mMember, mMethod, isApplicableMatch };
-								}
-							}
-						}
+				if (tmpTAccess instanceof TCall) {
+					TCall tAccess = (TCall) tmpTAccess;
+					if (tmpMMember instanceof MDefinition) {
+						MDefinition mMember = (MDefinition) tmpMMember;
+						return new Object[] { mMemberToTMember, tMember, tAccess, mMember, isApplicableMatch };
 					}
 				}
 			}
@@ -2196,64 +1843,52 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_11_1_performtransformation_blackBBBBBBBFBB(
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TCall tAccess, TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod,
+	public static final Object[] pattern_SuperConstructorInvocation_11_1_performtransformation_blackBBBBFBB(
+			MDefinitionToTMember mMemberToTMember, TMember tMember, TCall tAccess, MDefinition mMember,
 			SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch) {
-		if (!mMemberToTMember.equals(mMethodToTMethod)) {
-			if (!tMember.equals(tMethod)) {
-				for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
-					if (tmpCsp instanceof CSP) {
-						CSP csp = (CSP) tmpCsp;
-						return new Object[] { mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod, mMember,
-								mMethod, csp, _this, isApplicableMatch };
-					}
-				}
+		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
+			if (tmpCsp instanceof CSP) {
+				CSP csp = (CSP) tmpCsp;
+				return new Object[] { mMemberToTMember, tMember, tAccess, mMember, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_11_1_performtransformation_bindingAndBlackFFFFFFFFBB(
+	public static final Object[] pattern_SuperConstructorInvocation_11_1_performtransformation_bindingAndBlackFFFFFBB(
 			SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch) {
-		Object[] result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding = pattern_SuperConstructorInvocation_11_1_performtransformation_bindingFFFFFFFB(
+		Object[] result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding = pattern_SuperConstructorInvocation_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding != null) {
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding[0];
 			TMember tMember = (TMember) result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding[1];
-			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding[2];
-			TCall tAccess = (TCall) result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding[3];
-			TMember tMethod = (TMember) result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding[4];
-			MDefinition mMember = (MDefinition) result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding[5];
-			AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding[6];
+			TCall tAccess = (TCall) result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding[2];
+			MDefinition mMember = (MDefinition) result_pattern_SuperConstructorInvocation_11_1_performtransformation_binding[3];
 
-			Object[] result_pattern_SuperConstructorInvocation_11_1_performtransformation_black = pattern_SuperConstructorInvocation_11_1_performtransformation_blackBBBBBBBFBB(
-					mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod, mMember, mMethod, _this,
-					isApplicableMatch);
+			Object[] result_pattern_SuperConstructorInvocation_11_1_performtransformation_black = pattern_SuperConstructorInvocation_11_1_performtransformation_blackBBBBFBB(
+					mMemberToTMember, tMember, tAccess, mMember, _this, isApplicableMatch);
 			if (result_pattern_SuperConstructorInvocation_11_1_performtransformation_black != null) {
-				CSP csp = (CSP) result_pattern_SuperConstructorInvocation_11_1_performtransformation_black[7];
+				CSP csp = (CSP) result_pattern_SuperConstructorInvocation_11_1_performtransformation_black[4];
 
-				return new Object[] { mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod, mMember, mMethod,
-						csp, _this, isApplicableMatch };
+				return new Object[] { mMemberToTMember, tMember, tAccess, mMember, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_11_1_performtransformation_greenFBBFFB(
-			TCall tAccess, MDefinition mMember, AbstractMethodDeclaration mMethod) {
+	public static final Object[] pattern_SuperConstructorInvocation_11_1_performtransformation_greenFBBFF(TCall tAccess,
+			MDefinition mMember) {
 		MSuperConstructorInvocation invocation = ModiscoFactory.eINSTANCE.createMSuperConstructorInvocation();
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
 		AbstractMethodInvocationToTAccess invocationToTAccess = PmFactory.eINSTANCE
 				.createAbstractMethodInvocationToTAccess();
-		invocation.setMethod(mMethod);
 		mMember.getMMethodInvocations().add(invocation);
 		mFlowElementToTFlowElement.setTarget(tAccess);
 		mFlowElementToTFlowElement.setSource(invocation);
 		invocationToTAccess.setSource(invocation);
 		invocationToTAccess.setTarget(tAccess);
-		return new Object[] { invocation, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess, mMethod };
+		return new Object[] { invocation, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess };
 	}
 
 	public static final Object[] pattern_SuperConstructorInvocation_11_2_collecttranslatedelements_blackBBBB(
@@ -2275,116 +1910,42 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { ruleresult, invocation, tAccess, mFlowElementToTFlowElement, invocationToTAccess };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
+	public static final Object[] pattern_SuperConstructorInvocation_11_3_bookkeepingforedges_blackBBBBBBBB(
 			PerformRuleResult ruleresult, EObject invocation, EObject mMemberToTMember, EObject tMember,
-			EObject mMethodToTMethod, EObject tAccess, EObject tMethod, EObject mMember,
-			EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMethod) {
+			EObject tAccess, EObject mMember, EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
 		if (!invocation.equals(mMemberToTMember)) {
 			if (!invocation.equals(tMember)) {
-				if (!invocation.equals(mMethodToTMethod)) {
-					if (!invocation.equals(tAccess)) {
-						if (!invocation.equals(tMethod)) {
-							if (!invocation.equals(mMember)) {
-								if (!invocation.equals(mFlowElementToTFlowElement)) {
-									if (!invocation.equals(invocationToTAccess)) {
-										if (!invocation.equals(mMethod)) {
-											if (!mMemberToTMember.equals(tMember)) {
-												if (!mMemberToTMember.equals(mMethodToTMethod)) {
-													if (!mMemberToTMember.equals(tAccess)) {
-														if (!mMemberToTMember.equals(tMethod)) {
-															if (!mMemberToTMember.equals(mMethod)) {
-																if (!tMember.equals(tMethod)) {
-																	if (!mMethodToTMethod.equals(tMember)) {
-																		if (!mMethodToTMethod.equals(tAccess)) {
-																			if (!mMethodToTMethod.equals(tMethod)) {
-																				if (!tAccess.equals(tMember)) {
-																					if (!tAccess.equals(tMethod)) {
-																						if (!mMember.equals(
-																								mMemberToTMember)) {
-																							if (!mMember
-																									.equals(tMember)) {
-																								if (!mMember.equals(
-																										mMethodToTMethod)) {
-																									if (!mMember.equals(
-																											tAccess)) {
-																										if (!mMember
-																												.equals(tMethod)) {
-																											if (!mMember
-																													.equals(mMethod)) {
-																												if (!mFlowElementToTFlowElement
-																														.equals(mMemberToTMember)) {
-																													if (!mFlowElementToTFlowElement
-																															.equals(tMember)) {
-																														if (!mFlowElementToTFlowElement
-																																.equals(mMethodToTMethod)) {
-																															if (!mFlowElementToTFlowElement
-																																	.equals(tAccess)) {
-																																if (!mFlowElementToTFlowElement
-																																		.equals(tMethod)) {
-																																	if (!mFlowElementToTFlowElement
-																																			.equals(mMember)) {
-																																		if (!mFlowElementToTFlowElement
-																																				.equals(mMethod)) {
-																																			if (!invocationToTAccess
-																																					.equals(mMemberToTMember)) {
-																																				if (!invocationToTAccess
-																																						.equals(tMember)) {
-																																					if (!invocationToTAccess
-																																							.equals(mMethodToTMethod)) {
-																																						if (!invocationToTAccess
-																																								.equals(tAccess)) {
-																																							if (!invocationToTAccess
-																																									.equals(tMethod)) {
-																																								if (!invocationToTAccess
-																																										.equals(mMember)) {
-																																									if (!invocationToTAccess
-																																											.equals(mFlowElementToTFlowElement)) {
-																																										if (!invocationToTAccess
-																																												.equals(mMethod)) {
-																																											if (!mMethod
-																																													.equals(tMember)) {
-																																												if (!mMethod
-																																														.equals(mMethodToTMethod)) {
-																																													if (!mMethod
-																																															.equals(tAccess)) {
-																																														if (!mMethod
-																																																.equals(tMethod)) {
-																																															return new Object[] {
-																																																	ruleresult,
-																																																	invocation,
-																																																	mMemberToTMember,
-																																																	tMember,
-																																																	mMethodToTMethod,
-																																																	tAccess,
-																																																	tMethod,
-																																																	mMember,
-																																																	mFlowElementToTFlowElement,
-																																																	invocationToTAccess,
-																																																	mMethod };
-																																														}
-																																													}
-																																												}
-																																											}
-																																										}
-																																									}
-																																								}
-																																							}
-																																						}
-																																					}
-																																				}
-																																			}
-																																		}
-																																	}
-																																}
-																															}
-																														}
-																													}
-																												}
-																											}
-																										}
-																									}
-																								}
-																							}
+				if (!invocation.equals(tAccess)) {
+					if (!invocation.equals(mMember)) {
+						if (!invocation.equals(mFlowElementToTFlowElement)) {
+							if (!invocation.equals(invocationToTAccess)) {
+								if (!mMemberToTMember.equals(tMember)) {
+									if (!mMemberToTMember.equals(tAccess)) {
+										if (!tAccess.equals(tMember)) {
+											if (!mMember.equals(mMemberToTMember)) {
+												if (!mMember.equals(tMember)) {
+													if (!mMember.equals(tAccess)) {
+														if (!mFlowElementToTFlowElement.equals(mMemberToTMember)) {
+															if (!mFlowElementToTFlowElement.equals(tMember)) {
+																if (!mFlowElementToTFlowElement.equals(tAccess)) {
+																	if (!mFlowElementToTFlowElement.equals(mMember)) {
+																		if (!invocationToTAccess
+																				.equals(mMemberToTMember)) {
+																			if (!invocationToTAccess.equals(tMember)) {
+																				if (!invocationToTAccess
+																						.equals(tAccess)) {
+																					if (!invocationToTAccess
+																							.equals(mMember)) {
+																						if (!invocationToTAccess.equals(
+																								mFlowElementToTFlowElement)) {
+																							return new Object[] {
+																									ruleresult,
+																									invocation,
+																									mMemberToTMember,
+																									tMember, tAccess,
+																									mMember,
+																									mFlowElementToTFlowElement,
+																									invocationToTAccess };
 																						}
 																					}
 																				}
@@ -2409,44 +1970,30 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject invocation, EObject tMember, EObject tAccess, EObject tMethod,
-			EObject mMember, EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMethod) {
-		EMoflonEdge invocation__mMethod____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMethod__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+	public static final Object[] pattern_SuperConstructorInvocation_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
+			PerformRuleResult ruleresult, EObject invocation, EObject tMember, EObject tAccess, EObject mMember,
+			EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
+		EMoflonEdge tMember__tAccess____accessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAccess__tMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMethod____tTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethod__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "SuperConstructorInvocation";
-		String invocation__mMethod____method_name_prime = "method";
-		String mMethod__invocation____usages_name_prime = "usages";
-		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
-		String tAccess__tMember____tSource_name_prime = "tSource";
+		String tMember__tAccess____accessing_name_prime = "accessing";
+		String tAccess__tMember____source_name_prime = "source";
 		String invocationToTAccess__invocation____source_name_prime = "source";
 		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
-		String tAccess__tMethod____tTarget_name_prime = "tTarget";
-		String tMethod__tAccess____accessedBy_name_prime = "accessedBy";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
-		invocation__mMethod____method.setSrc(invocation);
-		invocation__mMethod____method.setTrg(mMethod);
-		ruleresult.getCreatedEdges().add(invocation__mMethod____method);
-		mMethod__invocation____usages.setSrc(mMethod);
-		mMethod__invocation____usages.setTrg(invocation);
-		ruleresult.getCreatedEdges().add(mMethod__invocation____usages);
-		tMember__tAccess____tAccessing.setSrc(tMember);
-		tMember__tAccess____tAccessing.setTrg(tAccess);
-		ruleresult.getTranslatedEdges().add(tMember__tAccess____tAccessing);
-		tAccess__tMember____tSource.setSrc(tAccess);
-		tAccess__tMember____tSource.setTrg(tMember);
-		ruleresult.getTranslatedEdges().add(tAccess__tMember____tSource);
+		tMember__tAccess____accessing.setSrc(tMember);
+		tMember__tAccess____accessing.setTrg(tAccess);
+		ruleresult.getTranslatedEdges().add(tMember__tAccess____accessing);
+		tAccess__tMember____source.setSrc(tAccess);
+		tAccess__tMember____source.setTrg(tMember);
+		ruleresult.getTranslatedEdges().add(tAccess__tMember____source);
 		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
 		invocationToTAccess__invocation____source.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
@@ -2459,42 +2006,31 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		mFlowElementToTFlowElement__invocation____source.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__invocation____source.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__invocation____source);
-		tAccess__tMethod____tTarget.setSrc(tAccess);
-		tAccess__tMethod____tTarget.setTrg(tMethod);
-		ruleresult.getTranslatedEdges().add(tAccess__tMethod____tTarget);
-		tMethod__tAccess____accessedBy.setSrc(tMethod);
-		tMethod__tAccess____accessedBy.setTrg(tAccess);
-		ruleresult.getTranslatedEdges().add(tMethod__tAccess____accessedBy);
 		mMember__invocation____mMethodInvocations.setSrc(mMember);
 		mMember__invocation____mMethodInvocations.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(mMember__invocation____mMethodInvocations);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		invocation__mMethod____method.setName(invocation__mMethod____method_name_prime);
-		mMethod__invocation____usages.setName(mMethod__invocation____usages_name_prime);
-		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
-		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
+		tMember__tAccess____accessing.setName(tMember__tAccess____accessing_name_prime);
+		tAccess__tMember____source.setName(tAccess__tMember____source_name_prime);
 		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mFlowElementToTFlowElement__invocation____source
 				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
-		tAccess__tMethod____tTarget.setName(tAccess__tMethod____tTarget_name_prime);
-		tMethod__tAccess____accessedBy.setName(tMethod__tAccess____accessedBy_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
-		return new Object[] { ruleresult, invocation, tMember, tAccess, tMethod, mMember, mFlowElementToTFlowElement,
-				invocationToTAccess, mMethod, invocation__mMethod____method, mMethod__invocation____usages,
-				tMember__tAccess____tAccessing, tAccess__tMember____tSource, invocationToTAccess__invocation____source,
-				mFlowElementToTFlowElement__tAccess____target, invocationToTAccess__tAccess____target,
-				mFlowElementToTFlowElement__invocation____source, tAccess__tMethod____tTarget,
-				tMethod__tAccess____accessedBy, mMember__invocation____mMethodInvocations };
+		return new Object[] { ruleresult, invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement,
+				invocationToTAccess, tMember__tAccess____accessing, tAccess__tMember____source,
+				invocationToTAccess__invocation____source, mFlowElementToTFlowElement__tAccess____target,
+				invocationToTAccess__tAccess____target, mFlowElementToTFlowElement__invocation____source,
+				mMember__invocation____mMethodInvocations };
 	}
 
-	public static final void pattern_SuperConstructorInvocation_11_5_registerobjects_expressionBBBBBBBBBBBB(
+	public static final void pattern_SuperConstructorInvocation_11_5_registerobjects_expressionBBBBBBBBB(
 			SuperConstructorInvocation _this, PerformRuleResult ruleresult, EObject invocation,
-			EObject mMemberToTMember, EObject tMember, EObject mMethodToTMethod, EObject tAccess, EObject tMethod,
-			EObject mMember, EObject mFlowElementToTFlowElement, EObject invocationToTAccess, EObject mMethod) {
-		_this.registerObjects_BWD(ruleresult, invocation, mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod,
-				mMember, mFlowElementToTFlowElement, invocationToTAccess, mMethod);
+			EObject mMemberToTMember, EObject tMember, EObject tAccess, EObject mMember,
+			EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
+		_this.registerObjects_BWD(ruleresult, invocation, mMemberToTMember, tMember, tAccess, mMember,
+				mFlowElementToTFlowElement, invocationToTAccess);
 
 	}
 
@@ -2555,154 +2091,93 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { performOperation, ruleresult };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_12_2_corematch_bindingFFFB(Match match) {
+	public static final Object[] pattern_SuperConstructorInvocation_12_2_corematch_bindingFFB(Match match) {
 		EObject _localVariable_0 = match.getObject("tMember");
 		EObject _localVariable_1 = match.getObject("tAccess");
-		EObject _localVariable_2 = match.getObject("tMethod");
 		EObject tmpTMember = _localVariable_0;
 		EObject tmpTAccess = _localVariable_1;
-		EObject tmpTMethod = _localVariable_2;
 		if (tmpTMember instanceof TMember) {
 			TMember tMember = (TMember) tmpTMember;
 			if (tmpTAccess instanceof TCall) {
 				TCall tAccess = (TCall) tmpTAccess;
-				if (tmpTMethod instanceof TMember) {
-					TMember tMethod = (TMember) tmpTMethod;
-					return new Object[] { tMember, tAccess, tMethod, match };
-				}
+				return new Object[] { tMember, tAccess, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_12_2_corematch_blackFBFBBFFB(
-			TMember tMember, TCall tAccess, TMember tMethod, Match match) {
+	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_12_2_corematch_blackFBBFB(TMember tMember,
+			TCall tAccess, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!tMember.equals(tMethod)) {
-			for (MDefinitionToTMember mMethodToTMethod : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tMethod, MDefinitionToTMember.class, "target")) {
-				BodyDeclaration tmpMMethod = mMethodToTMethod.getSource();
-				if (tmpMMethod instanceof AbstractMethodDeclaration) {
-					AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) tmpMMethod;
-					for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
-						if (!mMemberToTMember.equals(mMethodToTMethod)) {
-							BodyDeclaration tmpMMember = mMemberToTMember.getSource();
-							if (tmpMMember instanceof MDefinition) {
-								MDefinition mMember = (MDefinition) tmpMMember;
-								_result.add(new Object[] { mMemberToTMember, tMember, mMethodToTMethod, tAccess,
-										tMethod, mMember, mMethod, match });
-							}
-
-						}
-					}
-				}
-
+		for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
+			BodyDeclaration tmpMMember = mMemberToTMember.getSource();
+			if (tmpMMember instanceof MDefinition) {
+				MDefinition mMember = (MDefinition) tmpMMember;
+				_result.add(new Object[] { mMemberToTMember, tMember, tAccess, mMember, match });
 			}
+
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_12_3_findcontext_blackBBBBBBB(
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TCall tAccess, TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod) {
+	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_12_3_findcontext_blackBBBB(
+			MDefinitionToTMember mMemberToTMember, TMember tMember, TCall tAccess, MDefinition mMember) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!mMemberToTMember.equals(mMethodToTMethod)) {
-			if (!tMember.equals(tMethod)) {
-				if (tMethod.equals(mMethodToTMethod.getTarget())) {
-					if (tMember.getTAccessing().contains(tAccess)) {
-						if (tMember.equals(mMemberToTMember.getTarget())) {
-							if (mMethod.equals(mMethodToTMethod.getSource())) {
-								if (mMember.equals(mMemberToTMember.getSource())) {
-									if (tMethod.equals(tAccess.getTTarget())) {
-										_result.add(new Object[] { mMemberToTMember, tMember, mMethodToTMethod, tAccess,
-												tMethod, mMember, mMethod });
-									}
-								}
-							}
-						}
-					}
+		if (tMember.getAccessing().contains(tAccess)) {
+			if (tMember.equals(mMemberToTMember.getTarget())) {
+				if (mMember.equals(mMemberToTMember.getSource())) {
+					_result.add(new Object[] { mMemberToTMember, tMember, tAccess, mMember });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_12_3_findcontext_greenBBBBBBBFFFFFFFFF(
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TCall tAccess, TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod) {
+	public static final Object[] pattern_SuperConstructorInvocation_12_3_findcontext_greenBBBBFFFFF(
+			MDefinitionToTMember mMemberToTMember, TMember tMember, TCall tAccess, MDefinition mMember) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mMethodToTMethod__tMethod____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMember__tAccess____tAccessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMember____tSource = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tAccess____accessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAccess__tMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMethodToTMethod__mMethod____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMemberToTMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAccess__tMethod____tTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethod__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mMethodToTMethod__tMethod____target_name_prime = "target";
-		String tMember__tAccess____tAccessing_name_prime = "tAccessing";
-		String tAccess__tMember____tSource_name_prime = "tSource";
+		String tMember__tAccess____accessing_name_prime = "accessing";
+		String tAccess__tMember____source_name_prime = "source";
 		String mMemberToTMember__tMember____target_name_prime = "target";
-		String mMethodToTMethod__mMethod____source_name_prime = "source";
 		String mMemberToTMember__mMember____source_name_prime = "source";
-		String tAccess__tMethod____tTarget_name_prime = "tTarget";
-		String tMethod__tAccess____accessedBy_name_prime = "accessedBy";
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember);
 		isApplicableMatch.getAllContextElements().add(tMember);
-		isApplicableMatch.getAllContextElements().add(mMethodToTMethod);
 		isApplicableMatch.getAllContextElements().add(tAccess);
-		isApplicableMatch.getAllContextElements().add(tMethod);
 		isApplicableMatch.getAllContextElements().add(mMember);
-		isApplicableMatch.getAllContextElements().add(mMethod);
-		mMethodToTMethod__tMethod____target.setSrc(mMethodToTMethod);
-		mMethodToTMethod__tMethod____target.setTrg(tMethod);
-		isApplicableMatch.getAllContextElements().add(mMethodToTMethod__tMethod____target);
-		tMember__tAccess____tAccessing.setSrc(tMember);
-		tMember__tAccess____tAccessing.setTrg(tAccess);
-		isApplicableMatch.getAllContextElements().add(tMember__tAccess____tAccessing);
-		tAccess__tMember____tSource.setSrc(tAccess);
-		tAccess__tMember____tSource.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(tAccess__tMember____tSource);
+		tMember__tAccess____accessing.setSrc(tMember);
+		tMember__tAccess____accessing.setTrg(tAccess);
+		isApplicableMatch.getAllContextElements().add(tMember__tAccess____accessing);
+		tAccess__tMember____source.setSrc(tAccess);
+		tAccess__tMember____source.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(tAccess__tMember____source);
 		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
 		mMemberToTMember__tMember____target.setTrg(tMember);
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
-		mMethodToTMethod__mMethod____source.setSrc(mMethodToTMethod);
-		mMethodToTMethod__mMethod____source.setTrg(mMethod);
-		isApplicableMatch.getAllContextElements().add(mMethodToTMethod__mMethod____source);
 		mMemberToTMember__mMember____source.setSrc(mMemberToTMember);
 		mMemberToTMember__mMember____source.setTrg(mMember);
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember__mMember____source);
-		tAccess__tMethod____tTarget.setSrc(tAccess);
-		tAccess__tMethod____tTarget.setTrg(tMethod);
-		isApplicableMatch.getAllContextElements().add(tAccess__tMethod____tTarget);
-		tMethod__tAccess____accessedBy.setSrc(tMethod);
-		tMethod__tAccess____accessedBy.setTrg(tAccess);
-		isApplicableMatch.getAllContextElements().add(tMethod__tAccess____accessedBy);
-		mMethodToTMethod__tMethod____target.setName(mMethodToTMethod__tMethod____target_name_prime);
-		tMember__tAccess____tAccessing.setName(tMember__tAccess____tAccessing_name_prime);
-		tAccess__tMember____tSource.setName(tAccess__tMember____tSource_name_prime);
+		tMember__tAccess____accessing.setName(tMember__tAccess____accessing_name_prime);
+		tAccess__tMember____source.setName(tAccess__tMember____source_name_prime);
 		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
-		mMethodToTMethod__mMethod____source.setName(mMethodToTMethod__mMethod____source_name_prime);
 		mMemberToTMember__mMember____source.setName(mMemberToTMember__mMember____source_name_prime);
-		tAccess__tMethod____tTarget.setName(tAccess__tMethod____tTarget_name_prime);
-		tMethod__tAccess____accessedBy.setName(tMethod__tAccess____accessedBy_name_prime);
-		return new Object[] { mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod, mMember, mMethod,
-				isApplicableMatch, mMethodToTMethod__tMethod____target, tMember__tAccess____tAccessing,
-				tAccess__tMember____tSource, mMemberToTMember__tMember____target, mMethodToTMethod__mMethod____source,
-				mMemberToTMember__mMember____source, tAccess__tMethod____tTarget, tMethod__tAccess____accessedBy };
+		return new Object[] { mMemberToTMember, tMember, tAccess, mMember, isApplicableMatch,
+				tMember__tAccess____accessing, tAccess__tMember____source, mMemberToTMember__tMember____target,
+				mMemberToTMember__mMember____source };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_12_4_solveCSP_bindingFBBBBBBBBB(
+	public static final Object[] pattern_SuperConstructorInvocation_12_4_solveCSP_bindingFBBBBBB(
 			SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch,
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TCall tAccess, TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mMemberToTMember, tMember,
-				mMethodToTMethod, tAccess, tMethod, mMember, mMethod);
+			MDefinitionToTMember mMemberToTMember, TMember tMember, TCall tAccess, MDefinition mMember) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mMemberToTMember, tMember, tAccess,
+				mMember);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, tMember, mMethodToTMethod, tAccess,
-					tMethod, mMember, mMethod };
+			return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, tMember, tAccess, mMember };
 		}
 		return null;
 	}
@@ -2711,13 +2186,11 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(
+	public static final Object[] pattern_SuperConstructorInvocation_12_4_solveCSP_bindingAndBlackFBBBBBB(
 			SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch,
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TCall tAccess, TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod) {
-		Object[] result_pattern_SuperConstructorInvocation_12_4_solveCSP_binding = pattern_SuperConstructorInvocation_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, mMemberToTMember, tMember, mMethodToTMethod, tAccess, tMethod, mMember,
-				mMethod);
+			MDefinitionToTMember mMemberToTMember, TMember tMember, TCall tAccess, MDefinition mMember) {
+		Object[] result_pattern_SuperConstructorInvocation_12_4_solveCSP_binding = pattern_SuperConstructorInvocation_12_4_solveCSP_bindingFBBBBBB(
+				_this, isApplicableMatch, mMemberToTMember, tMember, tAccess, mMember);
 		if (result_pattern_SuperConstructorInvocation_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_SuperConstructorInvocation_12_4_solveCSP_binding[0];
 
@@ -2725,8 +2198,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 					csp);
 			if (result_pattern_SuperConstructorInvocation_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, tMember, mMethodToTMethod,
-						tAccess, tMethod, mMember, mMethod };
+				return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, tMember, tAccess, mMember };
 			}
 		}
 		return null;
@@ -2814,23 +2286,17 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { __result };
 	}
 
-	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_20_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_tAccessing) {
+	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_20_2_testcorematchandDECs_blackFFB(
+			EMoflonEdge _edge_accessing) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpTMember = _edge_tAccessing.getSrc();
+		EObject tmpTMember = _edge_accessing.getSrc();
 		if (tmpTMember instanceof TMember) {
 			TMember tMember = (TMember) tmpTMember;
-			EObject tmpTAccess = _edge_tAccessing.getTrg();
+			EObject tmpTAccess = _edge_accessing.getTrg();
 			if (tmpTAccess instanceof TCall) {
 				TCall tAccess = (TCall) tmpTAccess;
-				if (tMember.getTAccessing().contains(tAccess)) {
-					TMember tMethod = tAccess.getTTarget();
-					if (tMethod != null) {
-						if (!tMember.equals(tMethod)) {
-							_result.add(new Object[] { tMember, tAccess, tMethod, _edge_tAccessing });
-						}
-					}
-
+				if (tMember.getAccessing().contains(tAccess)) {
+					_result.add(new Object[] { tMember, tAccess, _edge_accessing });
 				}
 			}
 
@@ -2848,9 +2314,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 	}
 
-	public static final boolean pattern_SuperConstructorInvocation_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			SuperConstructorInvocation _this, Match match, TMember tMember, TCall tAccess, TMember tMethod) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tMember, tAccess, tMethod);
+	public static final boolean pattern_SuperConstructorInvocation_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
+			SuperConstructorInvocation _this, Match match, TMember tMember, TCall tAccess) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tMember, tAccess);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2940,31 +2406,28 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_SuperConstructorInvocation_21_2_testcorematchandDECs_black_nac_0BB(
 			MSuperConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_803149 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_475306 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_803149)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_475306)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_21_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_method) {
+	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_21_2_testcorematchandDECs_blackFFB(
+			EMoflonEdge _edge_mMethodInvocations) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpInvocation = _edge_method.getSrc();
-		if (tmpInvocation instanceof MSuperConstructorInvocation) {
-			MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) tmpInvocation;
-			EObject tmpMMethod = _edge_method.getTrg();
-			if (tmpMMethod instanceof AbstractMethodDeclaration) {
-				AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) tmpMMethod;
-				if (mMethod.equals(invocation.getMethod())) {
-					for (MDefinition mMember : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-						if (pattern_SuperConstructorInvocation_21_2_testcorematchandDECs_black_nac_0BB(invocation,
-								mMember) == null) {
-							_result.add(new Object[] { invocation, mMember, mMethod, _edge_method });
-						}
+		EObject tmpMMember = _edge_mMethodInvocations.getSrc();
+		if (tmpMMember instanceof MDefinition) {
+			MDefinition mMember = (MDefinition) tmpMMember;
+			EObject tmpInvocation = _edge_mMethodInvocations.getTrg();
+			if (tmpInvocation instanceof MSuperConstructorInvocation) {
+				MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) tmpInvocation;
+				if (mMember.getMMethodInvocations().contains(invocation)) {
+					if (pattern_SuperConstructorInvocation_21_2_testcorematchandDECs_black_nac_0BB(invocation,
+							mMember) == null) {
+						_result.add(new Object[] { invocation, mMember, _edge_mMethodInvocations });
 					}
 				}
 			}
@@ -2983,10 +2446,10 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 	}
 
-	public static final boolean pattern_SuperConstructorInvocation_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			SuperConstructorInvocation _this, Match match, MSuperConstructorInvocation invocation, MDefinition mMember,
-			AbstractMethodDeclaration mMethod) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, invocation, mMember, mMethod);
+	public static final boolean pattern_SuperConstructorInvocation_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
+			SuperConstructorInvocation _this, Match match, MSuperConstructorInvocation invocation,
+			MDefinition mMember) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, invocation, mMember);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3030,36 +2493,25 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_bindingFFFFFFBB(
+	public static final Object[] pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_bindingFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("invocation");
 		EObject _localVariable_1 = targetMatch.getObject("tMember");
 		EObject _localVariable_2 = targetMatch.getObject("tAccess");
-		EObject _localVariable_3 = targetMatch.getObject("tMethod");
-		EObject _localVariable_4 = sourceMatch.getObject("mMember");
-		EObject _localVariable_5 = sourceMatch.getObject("mMethod");
+		EObject _localVariable_3 = sourceMatch.getObject("mMember");
 		EObject tmpInvocation = _localVariable_0;
 		EObject tmpTMember = _localVariable_1;
 		EObject tmpTAccess = _localVariable_2;
-		EObject tmpTMethod = _localVariable_3;
-		EObject tmpMMember = _localVariable_4;
-		EObject tmpMMethod = _localVariable_5;
+		EObject tmpMMember = _localVariable_3;
 		if (tmpInvocation instanceof MSuperConstructorInvocation) {
 			MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) tmpInvocation;
 			if (tmpTMember instanceof TMember) {
 				TMember tMember = (TMember) tmpTMember;
 				if (tmpTAccess instanceof TCall) {
 					TCall tAccess = (TCall) tmpTAccess;
-					if (tmpTMethod instanceof TMember) {
-						TMember tMethod = (TMember) tmpTMethod;
-						if (tmpMMember instanceof MDefinition) {
-							MDefinition mMember = (MDefinition) tmpMMember;
-							if (tmpMMethod instanceof AbstractMethodDeclaration) {
-								AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) tmpMMethod;
-								return new Object[] { invocation, tMember, tAccess, tMethod, mMember, mMethod,
-										sourceMatch, targetMatch };
-							}
-						}
+					if (tmpMMember instanceof MDefinition) {
+						MDefinition mMember = (MDefinition) tmpMMember;
+						return new Object[] { invocation, tMember, tAccess, mMember, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -3067,51 +2519,43 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_blackBBBBBBBB(
-			MSuperConstructorInvocation invocation, TMember tMember, TCall tAccess, TMember tMethod,
-			MDefinition mMember, AbstractMethodDeclaration mMethod, Match sourceMatch, Match targetMatch) {
-		if (!tMember.equals(tMethod)) {
-			if (!sourceMatch.equals(targetMatch)) {
-				return new Object[] { invocation, tMember, tAccess, tMethod, mMember, mMethod, sourceMatch,
-						targetMatch };
-			}
+	public static final Object[] pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_blackBBBBBB(
+			MSuperConstructorInvocation invocation, TMember tMember, TCall tAccess, MDefinition mMember,
+			Match sourceMatch, Match targetMatch) {
+		if (!sourceMatch.equals(targetMatch)) {
+			return new Object[] { invocation, tMember, tAccess, mMember, sourceMatch, targetMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(
+	public static final Object[] pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(
 			Match sourceMatch, Match targetMatch) {
-		Object[] result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_binding = pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_bindingFFFFFFBB(
+		Object[] result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_binding = pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_bindingFFFFBB(
 				sourceMatch, targetMatch);
 		if (result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_binding != null) {
 			MSuperConstructorInvocation invocation = (MSuperConstructorInvocation) result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_binding[0];
 			TMember tMember = (TMember) result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_binding[1];
 			TCall tAccess = (TCall) result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_binding[2];
-			TMember tMethod = (TMember) result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_binding[3];
-			MDefinition mMember = (MDefinition) result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_binding[4];
-			AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_binding[5];
+			MDefinition mMember = (MDefinition) result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_binding[3];
 
-			Object[] result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_black = pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					invocation, tMember, tAccess, tMethod, mMember, mMethod, sourceMatch, targetMatch);
+			Object[] result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_black = pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_blackBBBBBB(
+					invocation, tMember, tAccess, mMember, sourceMatch, targetMatch);
 			if (result_pattern_SuperConstructorInvocation_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { invocation, tMember, tAccess, tMethod, mMember, mMethod, sourceMatch,
-						targetMatch };
+				return new Object[] { invocation, tMember, tAccess, mMember, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_24_3_solvecsp_bindingFBBBBBBBBB(
+	public static final Object[] pattern_SuperConstructorInvocation_24_3_solvecsp_bindingFBBBBBBB(
 			SuperConstructorInvocation _this, MSuperConstructorInvocation invocation, TMember tMember, TCall tAccess,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod, Match sourceMatch,
-			Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(invocation, tMember, tAccess, tMethod, mMember, mMethod,
-				sourceMatch, targetMatch);
-		CSP csp = _localVariable_6;
+			MDefinition mMember, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(invocation, tMember, tAccess, mMember, sourceMatch,
+				targetMatch);
+		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, invocation, tMember, tAccess, tMethod, mMember, mMethod, sourceMatch,
-					targetMatch };
+			return new Object[] { csp, _this, invocation, tMember, tAccess, mMember, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -3120,12 +2564,11 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
+	public static final Object[] pattern_SuperConstructorInvocation_24_3_solvecsp_bindingAndBlackFBBBBBBB(
 			SuperConstructorInvocation _this, MSuperConstructorInvocation invocation, TMember tMember, TCall tAccess,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod, Match sourceMatch,
-			Match targetMatch) {
-		Object[] result_pattern_SuperConstructorInvocation_24_3_solvecsp_binding = pattern_SuperConstructorInvocation_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, invocation, tMember, tAccess, tMethod, mMember, mMethod, sourceMatch, targetMatch);
+			MDefinition mMember, Match sourceMatch, Match targetMatch) {
+		Object[] result_pattern_SuperConstructorInvocation_24_3_solvecsp_binding = pattern_SuperConstructorInvocation_24_3_solvecsp_bindingFBBBBBBB(
+				_this, invocation, tMember, tAccess, mMember, sourceMatch, targetMatch);
 		if (result_pattern_SuperConstructorInvocation_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_SuperConstructorInvocation_24_3_solvecsp_binding[0];
 
@@ -3133,8 +2576,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 					csp);
 			if (result_pattern_SuperConstructorInvocation_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, invocation, tMember, tAccess, tMethod, mMember, mMethod, sourceMatch,
-						targetMatch };
+				return new Object[] { csp, _this, invocation, tMember, tAccess, mMember, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -3146,51 +2588,35 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_24_5_matchcorrcontext_blackFBFBBBBB(
-			TMember tMember, TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod, Match sourceMatch,
-			Match targetMatch) {
+	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_24_5_matchcorrcontext_blackFBBBB(
+			TMember tMember, MDefinition mMember, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!tMember.equals(tMethod)) {
-			if (!sourceMatch.equals(targetMatch)) {
-				for (MDefinitionToTMember mMethodToTMethod : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(tMethod, MDefinitionToTMember.class, "target")) {
-					if (mMethod.equals(mMethodToTMethod.getSource())) {
-						for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
-								.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
-							if (!mMemberToTMember.equals(mMethodToTMethod)) {
-								if (mMember.equals(mMemberToTMember.getSource())) {
-									_result.add(new Object[] { mMemberToTMember, tMember, mMethodToTMethod, tMethod,
-											mMember, mMethod, sourceMatch, targetMatch });
-								}
-							}
-						}
-					}
+		if (!sourceMatch.equals(targetMatch)) {
+			for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
+				if (mMember.equals(mMemberToTMember.getSource())) {
+					_result.add(new Object[] { mMemberToTMember, tMember, mMember, sourceMatch, targetMatch });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_24_5_matchcorrcontext_greenBBBBF(
-			MDefinitionToTMember mMemberToTMember, MDefinitionToTMember mMethodToTMethod, Match sourceMatch,
-			Match targetMatch) {
+	public static final Object[] pattern_SuperConstructorInvocation_24_5_matchcorrcontext_greenBBBF(
+			MDefinitionToTMember mMemberToTMember, Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "SuperConstructorInvocation";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
 		ccMatch.getAllContextElements().add(mMemberToTMember);
-		ccMatch.getAllContextElements().add(mMethodToTMethod);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { mMemberToTMember, mMethodToTMethod, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { mMemberToTMember, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_24_6_createcorrespondence_blackBBBBBBB(
-			MSuperConstructorInvocation invocation, TMember tMember, TCall tAccess, TMember tMethod,
-			MDefinition mMember, AbstractMethodDeclaration mMethod, CCMatch ccMatch) {
-		if (!tMember.equals(tMethod)) {
-			return new Object[] { invocation, tMember, tAccess, tMethod, mMember, mMethod, ccMatch };
-		}
-		return null;
+	public static final Object[] pattern_SuperConstructorInvocation_24_6_createcorrespondence_blackBBBBB(
+			MSuperConstructorInvocation invocation, TMember tMember, TCall tAccess, MDefinition mMember,
+			CCMatch ccMatch) {
+		return new Object[] { invocation, tMember, tAccess, mMember, ccMatch };
 	}
 
 	public static final Object[] pattern_SuperConstructorInvocation_24_6_createcorrespondence_greenBBFFB(
@@ -3231,23 +2657,20 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_SuperConstructorInvocation_27_1_matchtggpattern_black_nac_0BB(
 			MSuperConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_281296 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_744151 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_281296)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_744151)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_27_1_matchtggpattern_blackBBB(
-			MSuperConstructorInvocation invocation, MDefinition mMember, AbstractMethodDeclaration mMethod) {
-		if (mMethod.equals(invocation.getMethod())) {
-			if (mMember.getMMethodInvocations().contains(invocation)) {
-				if (pattern_SuperConstructorInvocation_27_1_matchtggpattern_black_nac_0BB(invocation,
-						mMember) == null) {
-					return new Object[] { invocation, mMember, mMethod };
-				}
+	public static final Object[] pattern_SuperConstructorInvocation_27_1_matchtggpattern_blackBB(
+			MSuperConstructorInvocation invocation, MDefinition mMember) {
+		if (mMember.getMMethodInvocations().contains(invocation)) {
+			if (pattern_SuperConstructorInvocation_27_1_matchtggpattern_black_nac_0BB(invocation, mMember) == null) {
+				return new Object[] { invocation, mMember };
 			}
 		}
 		return null;
@@ -3263,14 +2686,10 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_28_1_matchtggpattern_blackBBB(TMember tMember,
-			TCall tAccess, TMember tMethod) {
-		if (!tMember.equals(tMethod)) {
-			if (tMember.getTAccessing().contains(tAccess)) {
-				if (tMethod.equals(tAccess.getTTarget())) {
-					return new Object[] { tMember, tAccess, tMethod };
-				}
-			}
+	public static final Object[] pattern_SuperConstructorInvocation_28_1_matchtggpattern_blackBB(TMember tMember,
+			TCall tAccess) {
+		if (tMember.getAccessing().contains(tAccess)) {
+			return new Object[] { tMember, tAccess };
 		}
 		return null;
 	}
@@ -3322,113 +2741,48 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return null;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, MDefinitionToTMember mMethodToTMethod) {
-		if (ruleResult.getCorrObjects().contains(mMethodToTMethod)) {
-			return new Object[] { ruleResult, mMethodToTMethod };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, TMember tMethod) {
-		if (ruleResult.getTargetObjects().contains(tMethod)) {
-			return new Object[] { ruleResult, tMethod };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, AbstractMethodDeclaration mMethod) {
-		if (ruleResult.getSourceObjects().contains(mMethod)) {
-			return new Object[] { ruleResult, mMethod };
-		}
-		return null;
-	}
-
-	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_29_2_isapplicablecore_blackFFFFFFFFBB(
+	public static final Iterable<Object[]> pattern_SuperConstructorInvocation_29_2_isapplicablecore_blackFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (RuleEntryList mMemberToTMemberList : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList mMethodToTMethodList : ruleEntryContainer.getRuleEntryList()) {
-				if (!mMemberToTMemberList.equals(mMethodToTMethodList)) {
-					for (EObject tmpMMemberToTMember : mMemberToTMemberList.getEntryObjects()) {
-						if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
-							MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
-							BodyDeclaration tmpMMember = mMemberToTMember.getSource();
-							if (tmpMMember instanceof MDefinition) {
-								MDefinition mMember = (MDefinition) tmpMMember;
-								TMember tMember = mMemberToTMember.getTarget();
-								if (tMember != null) {
-									if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_0BB(
-											ruleResult, mMemberToTMember) == null) {
-										if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_1BB(
-												ruleResult, mMember) == null) {
-											if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, tMember) == null) {
-												for (EObject tmpMMethodToTMethod : mMethodToTMethodList
-														.getEntryObjects()) {
-													if (tmpMMethodToTMethod instanceof MDefinitionToTMember) {
-														MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) tmpMMethodToTMethod;
-														if (!mMemberToTMember.equals(mMethodToTMethod)) {
-															TMember tMethod = mMethodToTMethod.getTarget();
-															if (tMethod != null) {
-																if (!tMember.equals(tMethod)) {
-																	BodyDeclaration tmpMMethod = mMethodToTMethod
-																			.getSource();
-																	if (tmpMMethod instanceof AbstractMethodDeclaration) {
-																		AbstractMethodDeclaration mMethod = (AbstractMethodDeclaration) tmpMMethod;
-																		if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_3BB(
-																				ruleResult, mMethodToTMethod) == null) {
-																			if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_4BB(
-																					ruleResult, tMethod) == null) {
-																				if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_5BB(
-																						ruleResult, mMethod) == null) {
-																					_result.add(new Object[] {
-																							mMemberToTMemberList,
-																							mMemberToTMember, mMember,
-																							tMember,
-																							mMethodToTMethodList,
-																							mMethodToTMethod, tMethod,
-																							mMethod, ruleEntryContainer,
-																							ruleResult });
-																				}
-																			}
-																		}
-																	}
-
-																}
-															}
-
-														}
-													}
-												}
-											}
-										}
+			for (EObject tmpMMemberToTMember : mMemberToTMemberList.getEntryObjects()) {
+				if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
+					MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
+					BodyDeclaration tmpMMember = mMemberToTMember.getSource();
+					if (tmpMMember instanceof MDefinition) {
+						MDefinition mMember = (MDefinition) tmpMMember;
+						TMember tMember = mMemberToTMember.getTarget();
+						if (tMember != null) {
+							if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+									mMemberToTMember) == null) {
+								if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+										mMember) == null) {
+									if (pattern_SuperConstructorInvocation_29_2_isapplicablecore_black_nac_2BB(
+											ruleResult, tMember) == null) {
+										_result.add(new Object[] { mMemberToTMemberList, mMemberToTMember, mMember,
+												tMember, ruleEntryContainer, ruleResult });
 									}
 								}
-
 							}
-
 						}
+
 					}
+
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_29_3_solveCSP_bindingFBBBBBBBBB(
+	public static final Object[] pattern_SuperConstructorInvocation_29_3_solveCSP_bindingFBBBBBB(
 			SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch,
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod,
+			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinition mMember,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mMemberToTMember, tMember,
-				mMethodToTMethod, tMethod, mMember, mMethod, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mMemberToTMember, tMember, mMember,
+				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, tMember, mMethodToTMethod, tMethod,
-					mMember, mMethod, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, tMember, mMember, ruleResult };
 		}
 		return null;
 	}
@@ -3437,14 +2791,12 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
+	public static final Object[] pattern_SuperConstructorInvocation_29_3_solveCSP_bindingAndBlackFBBBBBB(
 			SuperConstructorInvocation _this, IsApplicableMatch isApplicableMatch,
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod,
+			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinition mMember,
 			ModelgeneratorRuleResult ruleResult) {
-		Object[] result_pattern_SuperConstructorInvocation_29_3_solveCSP_binding = pattern_SuperConstructorInvocation_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember, mMethod,
-				ruleResult);
+		Object[] result_pattern_SuperConstructorInvocation_29_3_solveCSP_binding = pattern_SuperConstructorInvocation_29_3_solveCSP_bindingFBBBBBB(
+				_this, isApplicableMatch, mMemberToTMember, tMember, mMember, ruleResult);
 		if (result_pattern_SuperConstructorInvocation_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_SuperConstructorInvocation_29_3_solveCSP_binding[0];
 
@@ -3452,8 +2804,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 					csp);
 			if (result_pattern_SuperConstructorInvocation_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, tMember, mMethodToTMethod,
-						tMethod, mMember, mMethod, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, tMember, mMember, ruleResult };
 			}
 		}
 		return null;
@@ -3466,33 +2817,19 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_29_5_checknacs_blackBBBBBB(
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod) {
-		if (!mMemberToTMember.equals(mMethodToTMethod)) {
-			if (!tMember.equals(tMethod)) {
-				return new Object[] { mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember, mMethod };
-			}
-		}
-		return null;
+	public static final Object[] pattern_SuperConstructorInvocation_29_5_checknacs_blackBBB(
+			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinition mMember) {
+		return new Object[] { mMemberToTMember, tMember, mMember };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_29_6_perform_blackBBBBBBB(
-			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinitionToTMember mMethodToTMethod,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod,
+	public static final Object[] pattern_SuperConstructorInvocation_29_6_perform_blackBBBB(
+			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinition mMember,
 			ModelgeneratorRuleResult ruleResult) {
-		if (!mMemberToTMember.equals(mMethodToTMethod)) {
-			if (!tMember.equals(tMethod)) {
-				return new Object[] { mMemberToTMember, tMember, mMethodToTMethod, tMethod, mMember, mMethod,
-						ruleResult };
-			}
-		}
-		return null;
+		return new Object[] { mMemberToTMember, tMember, mMember, ruleResult };
 	}
 
-	public static final Object[] pattern_SuperConstructorInvocation_29_6_perform_greenFBFBBFFBB(TMember tMember,
-			TMember tMethod, MDefinition mMember, AbstractMethodDeclaration mMethod,
-			ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_SuperConstructorInvocation_29_6_perform_greenFBFBFFB(TMember tMember,
+			MDefinition mMember, ModelgeneratorRuleResult ruleResult) {
 		MSuperConstructorInvocation invocation = ModiscoFactory.eINSTANCE.createMSuperConstructorInvocation();
 		TCall tAccess = BasicFactory.eINSTANCE.createTCall();
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
@@ -3501,11 +2838,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 				.createAbstractMethodInvocationToTAccess();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		invocation.setMethod(mMethod);
 		mMember.getMMethodInvocations().add(invocation);
 		ruleResult.getSourceObjects().add(invocation);
-		tMember.getTAccessing().add(tAccess);
-		tAccess.setTTarget(tMethod);
+		tMember.getAccessing().add(tAccess);
 		ruleResult.getTargetObjects().add(tAccess);
 		mFlowElementToTFlowElement.setTarget(tAccess);
 		mFlowElementToTFlowElement.setSource(invocation);
@@ -3516,8 +2851,8 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { invocation, tMember, tAccess, tMethod, mMember, mFlowElementToTFlowElement,
-				invocationToTAccess, mMethod, ruleResult };
+		return new Object[] { invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess,
+				ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_SuperConstructorInvocation_29_7_expressionFB(

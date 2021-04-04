@@ -3,29 +3,20 @@
 package org.gravity.hulk.detection.metrics.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.gravity.hulk.antipatterngraph.HMetric;
-
-import org.gravity.hulk.antipatterngraph.metrics.HIncommingInvocationMetric;
-import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
-import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
-import org.gravity.hulk.detection.metrics.HIncommingInvocationCalculator;
-import org.gravity.hulk.detection.metrics.MetricsPackage;
-
-import org.gravity.typegraph.basic.TClass;
-// <-- [user defined imports]
-import org.gravity.typegraph.basic.TAbstractType;
-import org.gravity.typegraph.basic.TAccess;
-import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 import java.util.ArrayList;
 // [user defined imports] -->
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.gravity.hulk.antipatterngraph.HMetric;
+import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
+import org.gravity.hulk.detection.metrics.HIncommingInvocationCalculator;
+import org.gravity.hulk.detection.metrics.MetricsPackage;
+import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,14 +28,13 @@ import java.util.ArrayList;
  * @generated
  */
 public class HIncommingInvocationCalculatorImpl extends HClassBasedMetricCalculatorImpl
-		implements HIncommingInvocationCalculator {
+implements HIncommingInvocationCalculator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected HIncommingInvocationCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -62,8 +52,9 @@ public class HIncommingInvocationCalculatorImpl extends HClassBasedMetricCalcula
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		HIncommingInvocationMetric metric = MetricsFactory.eINSTANCE.createHIncommingInvocationMetric();
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		final var metric = MetricsFactory.eINSTANCE.createHIncommingInvocationMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -75,21 +66,22 @@ public class HIncommingInvocationCalculatorImpl extends HClassBasedMetricCalcula
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		int invoc = 0;
-		ArrayList<TMember> invocingMethods = new ArrayList<TMember>();
-		for (TMember m : tClass.getDefines()) {
+		var invoc = 0;
+		final var invocingMethods = new ArrayList<TMember>();
+		for (final TMember m : tClass.getDefines()) {
 			if (m instanceof TMethodDefinitionImpl) {
-				for (TAccess t : m.getAccessedBy()) {
-					TMember tSource = t.getTSource();
+				for (final TAccess t : m.getAccessedBy()) {
+					final var tSource = t.getSource();
 					if (tSource == null) {
 						//System.out.println(
 						//"Method within Class " + tClass.getTName() + " was accessed without an Access Source");
 						continue;
 					}
-					TAbstractType definingClass = tSource.getDefinedBy();
+					final var definingClass = tSource.getDefinedBy();
 					if (definingClass == null) {
 						//System.out.println("Method within Class " + tClass.getTName()
 						//+ " was accessed by a Source without defining Class");
@@ -114,7 +106,7 @@ public class HIncommingInvocationCalculatorImpl extends HClassBasedMetricCalcula
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HINCOMMING_INVOCATION_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));

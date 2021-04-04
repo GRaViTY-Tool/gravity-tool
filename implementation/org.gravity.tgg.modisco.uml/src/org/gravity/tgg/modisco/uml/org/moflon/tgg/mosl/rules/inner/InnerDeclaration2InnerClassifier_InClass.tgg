@@ -1,0 +1,24 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule InnerDeclaration2InnerClassifier_InClass #extends InnerDeclaration2InnerClassifier_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jContainer:ClassDeclaration
+}
+
+#target {
+	uContainer:uml.Class {
+		++-nestedClassifier->feature
+	}
+	
+	feature:uml.Classifier
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

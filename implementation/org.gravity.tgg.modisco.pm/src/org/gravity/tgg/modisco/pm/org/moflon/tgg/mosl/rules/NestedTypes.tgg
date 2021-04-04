@@ -19,20 +19,15 @@
 	}
 
 	tOuterType:TAbstractType {
+		-package->tOuterPackage
 		++ -innerTypes -> tNestedType
 	}
 
 	++tNestedType:TAbstractType
 
 	tOuterPackage:TPackage {
-		++  -subpackage -> tNestedPackage
-		-typeGraph -> typeGraph
-		-ownedTypes -> tOuterType
-	}
-
-	++tNestedPackage:TPackage {
-		++  -typeGraph -> typeGraph
-		++  -ownedTypes -> tNestedType
+		-model -> typeGraph
+		++-ownedTypes->tNestedType
 	}
 }
 
@@ -54,8 +49,6 @@
 }
 
 #attributeConditions {
-	addSuffix(eOuterType.name, "$", tNestedPackage.tName)
-
 	eq(eNestedType.proxy, tNestedType.tLib)
 }
 

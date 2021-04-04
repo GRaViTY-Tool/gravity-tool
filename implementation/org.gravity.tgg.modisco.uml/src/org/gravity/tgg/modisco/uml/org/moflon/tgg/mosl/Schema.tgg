@@ -32,11 +32,6 @@
 		#trg->NamedElement
 	}
 
-	NamedElement2NamedElement {
-		#src->NamedElement
-		#trg->NamedElement
-	}
-
 	JavaPackage2UmlPackage {
 		#src->java.Package
 		#trg->uml.Package
@@ -45,11 +40,6 @@
 	JavaModel2UMLPackage {
 		#src->java.Model
 		#trg->uml.Package
-	}
-
-	VariableDec2Parameter {
-		#src->VariableDeclaration
-		#trg->Parameter
 	}
 
 	TypeAccess2Generalization {

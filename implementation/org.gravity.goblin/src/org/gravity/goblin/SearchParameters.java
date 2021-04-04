@@ -15,7 +15,7 @@ public class SearchParameters {
 	 * Initial Model that will be optimized
 	 */
 	@Parameter(names = { "-im", "--initial_model" }, description = "Initial Model that will be optimized")
-	public static String initialModel = "input/SecureMailApp.xmi";
+	public static String initialModel = "input/notepad.xmi";
 
 	/**
 	 * Displays help information
@@ -99,7 +99,7 @@ public class SearchParameters {
 	 * Units that will be used as transformation rules
 	 */
 	@Parameter(names = { "-u", "--units" }, description = "units that will be used as transformation rules")
-	public static List<String> units = Arrays.asList("MoveMethod::rules::MoveMethodMain",
+	public static List<String> units = Arrays.asList("MoveMethod::rules::MoveMethod",
 			"MoveMethod::rules::changeMethodVisibility", "MoveMethod::rules::changeFieldVisibility");
 
 	/**

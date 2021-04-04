@@ -16,13 +16,12 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.TPackage#getPg <em>Pg</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.TPackage#getSubpackage <em>Subpackage</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TPackage#getSubpackages <em>Subpackages</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TPackage#getParent <em>Parent</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TPackage#getClasses <em>Classes</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TPackage#getInterfaces <em>Interfaces</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TPackage#getOwnedTypes <em>Owned Types</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.TPackage#getTypeGraph <em>Type Graph</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TPackage#getModel <em>Model</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TPackage#getTName <em>TName</em>}</li>
  * </ul>
  *
@@ -32,54 +31,22 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  */
 public interface TPackage extends TAnnotatable {
 	/**
-	 * Returns the value of the '<em><b>Pg</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TypeGraph#getPackages <em>Packages</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Pg</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pg</em>' container reference.
-	 * @see #setPg(TypeGraph)
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_Pg()
-	 * @see org.gravity.typegraph.basic.TypeGraph#getPackages
-	 * @model opposite="packages" transient="false"
-	 * @generated
-	 */
-	TypeGraph getPg();
-
-	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TPackage#getPg <em>Pg</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pg</em>' container reference.
-	 * @see #getPg()
-	 * @generated
-	 */
-	void setPg(TypeGraph value);
-
-	/**
-	 * Returns the value of the '<em><b>Subpackage</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Subpackages</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TPackage}.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TPackage#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Subpackage</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subpackage</em>' containment reference list.
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_Subpackage()
+	 * @return the value of the '<em>Subpackages</em>' containment reference list.
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_Subpackages()
 	 * @see org.gravity.typegraph.basic.TPackage#getParent
 	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
-	EList<TPackage> getSubpackage();
+	EList<TPackage> getSubpackages();
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TPackage#getSubpackage <em>Subpackage</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TPackage#getSubpackages <em>Subpackages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent</em>' container reference isn't clear,
@@ -89,8 +56,8 @@ public interface TPackage extends TAnnotatable {
 	 * @return the value of the '<em>Parent</em>' container reference.
 	 * @see #setParent(TPackage)
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_Parent()
-	 * @see org.gravity.typegraph.basic.TPackage#getSubpackage
-	 * @model opposite="subpackage" transient="false"
+	 * @see org.gravity.typegraph.basic.TPackage#getSubpackages
+	 * @model opposite="subpackages" transient="false"
 	 * @generated
 	 */
 	TPackage getParent();
@@ -156,30 +123,26 @@ public interface TPackage extends TAnnotatable {
 	EList<TAbstractType> getOwnedTypes();
 
 	/**
-	 * Returns the value of the '<em><b>Type Graph</b></em>' reference.
+	 * Returns the value of the '<em><b>Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type Graph</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type Graph</em>' reference.
-	 * @see #setTypeGraph(TypeGraph)
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_TypeGraph()
+	 * @return the value of the '<em>Model</em>' reference.
+	 * @see #setModel(TypeGraph)
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_Model()
 	 * @model required="true"
 	 * @generated
 	 */
-	TypeGraph getTypeGraph();
+	TypeGraph getModel();
 
 	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TPackage#getTypeGraph <em>Type Graph</em>}' reference.
+	 * Sets the value of the '{@link org.gravity.typegraph.basic.TPackage#getModel <em>Model</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type Graph</em>' reference.
-	 * @see #getTypeGraph()
+	 * @param value the new value of the '<em>Model</em>' reference.
+	 * @see #getModel()
 	 * @generated
 	 */
-	void setTypeGraph(TypeGraph value);
+	void setModel(TypeGraph value);
 
 	/**
 	 * Returns the value of the '<em><b>TName</b></em>' attribute.

@@ -202,6 +202,15 @@ public interface ModiscoFactory extends EFactory {
 	MSuperConstructorInvocation createMSuperConstructorInvocation();
 
 	/**
+	 * Returns a new object of class '<em>MInitializer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MInitializer</em>'.
+	 * @generated
+	 */
+	MInitializer createMInitializer();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

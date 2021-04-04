@@ -48,7 +48,7 @@ public final class HelpersImpl {
 	 *
 	 * @generated
 	 */
-	public static boolean mountAccesses(TClass child, TClass parent, TSignature tSignature)
+	public static boolean mountAccesses(final TClass child, final TClass parent, final TSignature tSignature)
 			throws RefactoringFailedException {
 
 		if (tSignature instanceof TFieldSignature) {
@@ -60,7 +60,7 @@ public final class HelpersImpl {
 
 	}
 
-	private static boolean mountAccesses(TClass child, TClass parent, TMethodSignature tMethodSignature)
+	private static boolean mountAccesses(final TClass child, final TClass parent, final TMethodSignature tMethodSignature)
 			throws RefactoringFailedException {
 		for (final TMember tMethodDefinition : child.getDefines()) {
 			if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
@@ -80,8 +80,8 @@ public final class HelpersImpl {
 		}
 		for (final TMember tMethodDefinition : child.getDefines()) {
 			if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
-				for (TAccess tMethodAccess : tMethodDefinition.getTAccessing()) {
-					final TMember tMethodAccessTarget = tMethodAccess.getTTarget();
+				for (TAccess tMethodAccess : tMethodDefinition.getAccessing()) {
+					final TMember tMethodAccessTarget = tMethodAccess.getTarget();
 					if (!tMethodAccessTarget.equals(tMethodDefinition)) {
 
 						if (tMethodAccessTarget.getAccessedBy().contains(tMethodAccess)) {
@@ -113,16 +113,16 @@ public final class HelpersImpl {
 		return true;
 	}
 
-	private static boolean mountAccesses(TClass child, TClass parent, TFieldSignature tFieldSignature)
+	private static boolean mountAccesses(final TClass child, final TClass parent, final TFieldSignature tFieldSignature)
 			throws RefactoringFailedException {
 		for (final TMember tmpTFieldDefinition : child.getDefines()) {
-			if (tmpTFieldDefinition instanceof TFieldDefinition
+			if ((tmpTFieldDefinition instanceof TFieldDefinition)
 					&& tFieldSignature.getDefinitions().contains(tmpTFieldDefinition)) {
 				for (final TAccess tFieldAccess : tmpTFieldDefinition.getAccessedBy()) {
 					TFieldDefinition tFieldParentDefinition = null;
 					if (tmpTFieldDefinition.getAccessedBy().contains(tFieldAccess)) {
 						for (final TMember tmpTFieldParentDefinition : parent.getDefines()) {
-							if (tmpTFieldParentDefinition instanceof TFieldDefinition
+							if ((tmpTFieldParentDefinition instanceof TFieldDefinition)
 									&& !tmpTFieldDefinition.equals(tmpTFieldParentDefinition)
 									&& tFieldSignature.getDefinitions().contains(tmpTFieldParentDefinition)) {
 								tFieldParentDefinition = (TFieldDefinition) tmpTFieldParentDefinition;
@@ -145,10 +145,10 @@ public final class HelpersImpl {
 		}
 
 		for (final TMember tmpTFieldDefinition : child.getDefines()) {
-			if (tmpTFieldDefinition instanceof TFieldDefinition
+			if ((tmpTFieldDefinition instanceof TFieldDefinition)
 					&& tFieldSignature.getDefinitions().contains(tmpTFieldDefinition)) {
-				for (final TAccess tFieldAccess : tmpTFieldDefinition.getTAccessing()) {
-					final TMember tFieldAccessTarget = tFieldAccess.getTTarget();
+				for (final TAccess tFieldAccess : tmpTFieldDefinition.getAccessing()) {
+					final TMember tFieldAccessTarget = tFieldAccess.getTarget();
 					if (!tFieldAccessTarget.equals(tmpTFieldDefinition)) {
 						tFieldAccessTarget.getAccessedBy().remove(tFieldAccess);
 						EcoreUtil.delete(tFieldAccess);
@@ -190,7 +190,7 @@ public final class HelpersImpl {
 	 *                    searched
 	 * @return The best implementation within the pool
 	 */
-	public static TMember getBestTMember(List<TClass> tMemberPool, TSignature signature) {
+	public static TMember getBestTMember(final List<TClass> tMemberPool, final TSignature signature) {
 		TMember returnMember = null;
 		int bestTMemberWeight = Integer.MIN_VALUE;
 		for (final TClass tClass : tMemberPool) {
@@ -233,11 +233,11 @@ public final class HelpersImpl {
 	 * @param member The member with outgoing accesses
 	 * @return the amount of accesses
 	 */
-	private static int getInternalAccesses(TClass type, TMember member) {
+	private static int getInternalAccesses(final TClass type, final TMember member) {
 		int internalAccesses = 0;
-		for (final TAccess tAccess : member.getTAccessing()) {
-			final TMember accessedTMember = tAccess.getTTarget();
-			if (accessedTMember != null && !accessedTMember.equals(member)
+		for (final TAccess tAccess : member.getAccessing()) {
+			final TMember accessedTMember = tAccess.getTarget();
+			if ((accessedTMember != null) && !accessedTMember.equals(member)
 					&& (type.hasTMember(accessedTMember) || type.hasAParentThisTMember(accessedTMember))) {
 				internalAccesses++;
 			}
@@ -252,7 +252,7 @@ public final class HelpersImpl {
 	 * @param member The member with outgoing accesses
 	 * @return the amount of accesses
 	 */
-	private static int getExternalAcesses(TClass type, TMember member) {
+	private static int getExternalAcesses(final TClass type, final TMember member) {
 		int externalAccesses = 0;
 		for (final TMember accessedTMember : HelpersImpl.getAccessedMembers(member)) {
 			if (!type.hasTMember(accessedTMember) && !type.hasAParentThisTMember(accessedTMember)) {
@@ -262,11 +262,11 @@ public final class HelpersImpl {
 		return externalAccesses;
 	}
 
-	private static final Iterable<TMember> getAccessedMembers(TMember tMember) {
+	private static Iterable<TMember> getAccessedMembers(final TMember tMember) {
 		final LinkedList<TMember> result = new LinkedList<>();
-		for (final TAccess tAccess : tMember.getTAccessing()) {
-			final TMember accessedTMember = tAccess.getTTarget();
-			if (accessedTMember != null && !accessedTMember.equals(tMember)) {
+		for (final TAccess tAccess : tMember.getAccessing()) {
+			final TMember accessedTMember = tAccess.getTarget();
+			if ((accessedTMember != null) && !accessedTMember.equals(tMember)) {
 				result.add(accessedTMember);
 			}
 		}

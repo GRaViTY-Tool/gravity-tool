@@ -171,7 +171,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 		connect(anti);
 		//
 
-		final TAnnotationType tType = getAnnotationType(tClass.getPg(), "SpaghettiCode");
+		final TAnnotationType tType = getAnnotationType(tClass.getModel(), "SpaghettiCode");
 		if (tType != null) {
 			final TAnnotation tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
 			tAnnotation.setTAnnotated(tClass);

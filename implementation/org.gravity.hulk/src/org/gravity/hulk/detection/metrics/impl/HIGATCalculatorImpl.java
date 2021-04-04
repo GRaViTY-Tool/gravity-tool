@@ -13,20 +13,16 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.antipatterngraph.metrics.HIGATMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 import org.gravity.hulk.detection.impl.HMetricCalculatorImpl;
 import org.gravity.hulk.detection.metrics.HIGATCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
-import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TVisibility;
-import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
 // [user defined imports] -->
 
@@ -46,7 +42,6 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 	 * @generated
 	 */
 	protected HIGATCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -65,15 +60,15 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 	 * @generated
 	 */
 	@Override
-	public boolean detect(HAntiPatternGraph apg) {
+	public boolean detect(final HAntiPatternGraph apg) {
 		// [user code injected with eMoflon]
 
-		final TypeGraph pg = apg.getPg();
-		TVisibility requiredTVisibility = TVisibility.TPRIVATE;
+		final var pg = apg.getModel();
+		var requiredTVisibility = TVisibility.TPRIVATE;
 		final List<Double> methods = new LinkedList<>();
 		for (final TPackage tPackage : pg.getPackages()) {
 			if (tPackage.getParent() == null) {
-				final TVisibility tVisibility = process(apg, tPackage, methods);
+				final var tVisibility = process(apg, tPackage, methods);
 				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 					requiredTVisibility = tVisibility;
 				}
@@ -92,7 +87,7 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HIGAT_CALCULATOR___DETECT__HANTIPATTERNGRAPH:
 			return detect((HAntiPatternGraph) arguments.get(0));
@@ -103,44 +98,44 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 	private static final Logger LOGGER =  Logger.getLogger(HIGATCalculatorImpl.class);
 
 
-	private TVisibility process(HAntiPatternGraph apg, TPackage tPackage, List<Double> methods) {
-		final int start = methods.size();
-		TVisibility requiredTVisibility = TVisibility.TPRIVATE;
-		for (final TPackage tSubPackage : tPackage.getSubpackage()) {
-			final TVisibility tVisibility = process(apg, tSubPackage, methods);
+	private TVisibility process(final HAntiPatternGraph apg, final TPackage tPackage, final List<Double> methods) {
+		final var start = methods.size();
+		var requiredTVisibility = TVisibility.TPRIVATE;
+		for (final TPackage tSubPackage : tPackage.getSubpackages()) {
+			final var tVisibility = process(apg, tSubPackage, methods);
 			if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 				requiredTVisibility = tVisibility;
 			}
 		}
 		for (final TAbstractType tType : tPackage.getOwnedTypes()) {
 			if (tType.isDeclared()) {
-				final TVisibility tVisibility = process(apg, tType, methods);
+				final var tVisibility = process(apg, tType, methods);
 				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 					requiredTVisibility = tVisibility;
 				}
 			}
 		}
-		if (methods.size() > 0 && methods.size() > start) {
+		if ((methods.size() > 0) && (methods.size() > start)) {
 			createMetric(apg, tPackage, getAverage(methods, start, methods.size()), requiredTVisibility);
 		}
 		return requiredTVisibility;
 	}
 
-	private TVisibility process(HAntiPatternGraph apg, TAbstractType tType, List<Double> methods) {
-		TVisibility tMinVis = TVisibility.TPUBLIC;
-		final TModifier tModifier = tType.getTModifier();
+	private TVisibility process(final HAntiPatternGraph apg, final TAbstractType tType, final List<Double> methods) {
+		var tMinVis = TVisibility.TPUBLIC;
+		final var tModifier = tType.getTModifier();
 		if(tModifier == null) {
 			LOGGER.error("Type has no modifier: "+tType.getFullyQualifiedName());
 			return tMinVis;
 		}
-		final TVisibility tCurVis = tModifier.getTVisibility();
+		final var tCurVis = tModifier.getTVisibility();
 
-		if (!(tType instanceof TInterface) || tType.getOuterType() != null) {
+		if (!(tType instanceof TInterface) || (tType.getOuterType() != null)) {
 
 			final Set<TAbstractType> accessedBy = new HashSet<>();
 			for (final TMember tMember : tType.getDefines()) {
 				for (final TAccess tAccess : tMember.getAccessedBy()) {
-					final TAbstractType definedBy = tAccess.getTSource().getDefinedBy();
+					final var definedBy = tAccess.getSource().getDefinedBy();
 					if (!tType.equals(definedBy) && !tType.getInnerTypes().contains(definedBy)
 							&& !definedBy.equals(tType.getOuterType())) {
 						accessedBy.add(definedBy);
@@ -149,31 +144,23 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 			}
 			tMinVis = TVisibility.TPRIVATE;
 
-			if (accessedBy.size() > 0) {
-				boolean onlySubClasses = true;
-				final TPackage tPackage = tType.getPackage();
+			if (!accessedBy.isEmpty()) {
+				var onlySubClasses = true;
+				final var tPackage = tType.getPackage();
 				final Set<TPackage> otherPackages = new HashSet<>();
 				for (final TAbstractType tAccessingType : accessedBy) {
-					final TPackage tOtherPackage = tAccessingType.getPackage();
+					final var tOtherPackage = tAccessingType.getPackage();
 					if (!tPackage.equals(tOtherPackage)) {
 						otherPackages.add(tOtherPackage);
 					}
-					if (tAccessingType instanceof TClass) {
-						final TClass tClass = (TClass) tAccessingType;
-						onlySubClasses &= tType.equals(tClass.getParentClass())
-								|| tClass.getImplements().contains(tType);
-					} else if (tAccessingType instanceof TInterface) {
-						onlySubClasses &= ((TInterface) tAccessingType).getParentInterfaces().contains(tType);
-					}
+					onlySubClasses &= tAccessingType.isSubTypeOf(tType);
 				}
 				if (otherPackages.isEmpty()) {
 					tMinVis = TVisibility.TPACKAGE;
+				} else if (onlySubClasses) {
+					tMinVis = TVisibility.TPROTECTED;
 				} else {
-					if (onlySubClasses) {
-						tMinVis = TVisibility.TPROTECTED;
-					} else {
-						tMinVis = TVisibility.TPUBLIC;
-					}
+					tMinVis = TVisibility.TPUBLIC;
 				}
 			}
 		}
@@ -187,16 +174,16 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 		return tMinVis;
 	}
 
-	private double getAverage(List<Double> values, int start, int end) {
-		double avg = 0;
-		for (int i = start; i < end; i++) {
+	private double getAverage(final List<Double> values, final int start, final int end) {
+		var avg = 0D;
+		for (var i = start; i < end; i++) {
 			avg += values.get(i);
 		}
 		return avg / (end - start);
 	}
 
-	private void createMetric(HAntiPatternGraph apg, TAnnotatable annotatable, double igam, TVisibility minVis) {
-		final HIGATMetric metric = MetricsFactory.eINSTANCE.createHIGATMetric();
+	private void createMetric(final HAntiPatternGraph apg, final TAnnotatable annotatable, final double igam, final TVisibility minVis) {
+		final var metric = MetricsFactory.eINSTANCE.createHIGATMetric();
 		metric.setTAnnotated(annotatable);
 		metric.setValue(igam);
 		metric.setApg(apg);

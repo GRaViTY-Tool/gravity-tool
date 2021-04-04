@@ -78,8 +78,8 @@ public class HLocalFieldUniqueAccessCalculatorImpl extends HClassBasedMetricCalc
 		int i = 0;
 		for (TMember m : tClass.getDefines()) {
 			ArrayList<TMember> accessedMembers = new ArrayList<TMember>();
-			for (TAccess t : m.getTAccessing()) {
-				TMember tTarget = t.getTTarget();
+			for (TAccess t : m.getAccessing()) {
+				TMember tTarget = t.getTarget();
 				if (tTarget instanceof TFieldDefinition && tClass.equals(tTarget.getDefinedBy())
 						&& !accessedMembers.contains(tTarget)) {
 					i++;

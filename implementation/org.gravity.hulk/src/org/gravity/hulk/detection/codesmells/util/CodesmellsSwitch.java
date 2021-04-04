@@ -138,21 +138,6 @@ public class CodesmellsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case CodesmellsPackage.HLARGE_CLASS_LOW_COHESION_DETECTOR: {
-			HLargeClassLowCohesionDetector hLargeClassLowCohesionDetector = (HLargeClassLowCohesionDetector) theEObject;
-			T result = caseHLargeClassLowCohesionDetector(hLargeClassLowCohesionDetector);
-			if (result == null)
-				result = caseHClassBasedCalculator(hLargeClassLowCohesionDetector);
-			if (result == null)
-				result = caseHCodeSmellDetector(hLargeClassLowCohesionDetector);
-			if (result == null)
-				result = caseHDetector(hLargeClassLowCohesionDetector);
-			if (result == null)
-				result = caseNode(hLargeClassLowCohesionDetector);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case CodesmellsPackage.HLARGE_CLASS_DETECTOR: {
 			HLargeClassDetector hLargeClassDetector = (HLargeClassDetector) theEObject;
 			T result = caseHLargeClassDetector(hLargeClassDetector);
@@ -317,22 +302,7 @@ public class CodesmellsSwitch<T> extends Switch<T> {
 	public T caseHGetterSetterDetector(HGetterSetterDetector object) {
 		return null;
 	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>HLarge Class Low Cohesion Detector</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>HLarge Class Low Cohesion Detector</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHLargeClassLowCohesionDetector(HLargeClassLowCohesionDetector object) {
-		return null;
-	}
-
+	
 	/**
 	 * Returns the result of interpreting the object as an instance of '<em>HLarge Class Detector</em>'.
 	 * <!-- begin-user-doc -->

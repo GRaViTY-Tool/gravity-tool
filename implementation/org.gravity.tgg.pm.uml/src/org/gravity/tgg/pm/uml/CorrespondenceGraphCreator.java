@@ -9,18 +9,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.gravity.modisco.ModiscoPackage;
-import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
 import org.moflon.tgg.runtime.AbstractCorrespondence;
 import org.moflon.tgg.runtime.CorrespondenceModel;
 import org.moflon.tgg.runtime.RuntimeFactory;
@@ -37,21 +32,21 @@ public class CorrespondenceGraphCreator {
 
 	private final ResourceSet set;
 
-	public CorrespondenceGraphCreator(CorrespondenceModel umlCorr, CorrespondenceModel pmCorr) {
-		ResourceSet umlSet = umlCorr.eResource().getResourceSet();
-		ResourceSet pmSet = pmCorr.eResource().getResourceSet();
+	public CorrespondenceGraphCreator(final CorrespondenceModel umlCorr, final CorrespondenceModel pmCorr) {
+		final ResourceSet umlSet = umlCorr.eResource().getResourceSet();
+		final ResourceSet pmSet = pmCorr.eResource().getResourceSet();
 		if (umlSet != pmSet) {
 			throw new IllegalArgumentException("The correspondence models are not in the same resource set!");
 		}
-		set = umlSet;
+		this.set = umlSet;
 
-		for (EObject entry : pmCorr.getCorrespondences()) {
+		for (final EObject entry : pmCorr.getCorrespondences()) {
 			if (entry instanceof AbstractCorrespondence) {
 				try {
-					AbstractCorrespondence correspondence = (AbstractCorrespondence) entry;
-					modiscoObject2PMCorrs.computeIfAbsent(getSource(correspondence), l -> new LinkedList<>())
-							.add(correspondence);
-					pmCorr2PMObject.put(correspondence, getTarget(correspondence));
+					final AbstractCorrespondence correspondence = (AbstractCorrespondence) entry;
+					this.modiscoObject2PMCorrs.computeIfAbsent(getSource(correspondence), l -> new LinkedList<>())
+					.add(correspondence);
+					this.pmCorr2PMObject.put(correspondence, getTarget(correspondence));
 				} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException
 						| InvocationTargetException | NoSuchMethodException e) {
 					LOGGER.error(e.getLocalizedMessage(), e);
@@ -60,12 +55,12 @@ public class CorrespondenceGraphCreator {
 				LOGGER.error("Unknown entry type in UML correspondences: " + entry.getClass().getSimpleName());
 			}
 		}
-		for (EObject entry : umlCorr.getCorrespondences()) {
+		for (final EObject entry : umlCorr.getCorrespondences()) {
 			if (entry instanceof AbstractCorrespondence) {
 				try {
-					AbstractCorrespondence correspondence = (AbstractCorrespondence) entry;
-					umlCorr2ModiscoObject.put(correspondence, getSource(correspondence));
-					umlCorr2UMLObject.put(correspondence, getTarget(correspondence));
+					final AbstractCorrespondence correspondence = (AbstractCorrespondence) entry;
+					this.umlCorr2ModiscoObject.put(correspondence, getSource(correspondence));
+					this.umlCorr2UMLObject.put(correspondence, getTarget(correspondence));
 				} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException
 						| InvocationTargetException | NoSuchMethodException e) {
 					LOGGER.error(e);
@@ -76,49 +71,41 @@ public class CorrespondenceGraphCreator {
 		}
 	}
 
-	public CorrespondenceModel createCorrespondenceGraph(URI uri) throws InvocationTargetException {
-		Resource resource = set.createResource(uri);
+	public CorrespondenceModel createCorrespondenceGraph(final URI uri) throws InvocationTargetException {
+		final Resource resource = this.set.createResource(uri);
 
-		List<AbstractCorrespondence> correspondences = new LinkedList<>();
-		for (Entry<AbstractCorrespondence, EObject> entry : umlCorr2ModiscoObject.entrySet()) {
-			EObject umlObject = umlCorr2UMLObject.get(entry.getKey());
-			List<AbstractCorrespondence> pmCorrs = modiscoObject2PMCorrs.get(entry.getValue());
-			if (pmCorrs == null || pmCorrs.isEmpty()) {
+		final List<AbstractCorrespondence> correspondences = new LinkedList<>();
+		for (final Entry<AbstractCorrespondence, EObject> entry : this.umlCorr2ModiscoObject.entrySet()) {
+			final EObject umlObject = this.umlCorr2UMLObject.get(entry.getKey());
+			final List<AbstractCorrespondence> pmCorrs = this.modiscoObject2PMCorrs.get(entry.getValue());
+			if ((pmCorrs == null) || pmCorrs.isEmpty()) {
 				LOGGER.error("No pm correspondence found for: " + umlObject);
 			} else {
-				for (AbstractCorrespondence pmCorrespondence : pmCorrs) {
-					EObject pmObject = pmCorr2PMObject.get(pmCorrespondence);
+				for (final AbstractCorrespondence pmCorrespondence : pmCorrs) {
+					final EObject pmObject = this.pmCorr2PMObject.get(pmCorrespondence);
 					correspondences.addAll(createCorrespondences(umlObject, pmObject));
 				}
 			}
 		}
-		CorrespondenceModel corr = RuntimeFactory.eINSTANCE.createCorrespondenceModel();
+		final CorrespondenceModel corr = RuntimeFactory.eINSTANCE.createCorrespondenceModel();
 		corr.getCorrespondences().addAll(correspondences);
 		resource.getContents().add(corr);
 		return corr;
 	}
 
-	private Collection<? extends AbstractCorrespondence> createCorrespondences(EObject umlObject, EObject pmObject)
+	private Collection<? extends AbstractCorrespondence> createCorrespondences(final EObject umlObject, final EObject pmObject)
 			throws InvocationTargetException {
-		EClass abstractCorrespondence = RuntimePackage.eINSTANCE.getAbstractCorrespondence();
-		List<AbstractCorrespondence> correspondences = new LinkedList<>();
-		for (EClassifier corrType : UmlPackage.eINSTANCE.getEClassifiers()) {
+		final EClass abstractCorrespondence = RuntimePackage.eINSTANCE.getAbstractCorrespondence();
+		final List<AbstractCorrespondence> correspondences = new LinkedList<>();
+		for (final EClassifier corrType : UmlPackage.eINSTANCE.getEClassifiers()) {
 			if (corrType instanceof EClass) {
-				EClass eClass = ((EClass) corrType);
+				final EClass eClass = ((EClass) corrType);
 				if (abstractCorrespondence.isSuperTypeOf(eClass)
 						&& isSuitableCorrespondenceType(eClass, umlObject, pmObject)) {
-					AbstractCorrespondence correspondence = (AbstractCorrespondence) UmlFactory.eINSTANCE
+					final AbstractCorrespondence correspondence = (AbstractCorrespondence) UmlFactory.eINSTANCE
 							.create(eClass);
-					for (EOperation operation : eClass.getEOperations()) {
-						String name = operation.getName();
-						if ("setSource".equals(name)) {
-							correspondence.eInvoke(operation,
-									new BasicEList.UnmodifiableEList<>(1, new EObject[] { umlObject }));
-						} else if ("setTarget".equals(name)) {
-							correspondence.eInvoke(operation,
-									new BasicEList.UnmodifiableEList<>(1, new EObject[] { pmObject }));
-						}
-					}
+					correspondence.eSet(eClass.getEStructuralFeature("source"), umlObject);
+					correspondence.eSet(eClass.getEStructuralFeature("target"), pmObject);
 					correspondences.add(correspondence);
 				}
 			}
@@ -126,36 +113,34 @@ public class CorrespondenceGraphCreator {
 		return correspondences;
 	}
 
-	private boolean isSuitableCorrespondenceType(EClass corrEClass, EObject umlObject, EObject pmObject) {
-		for (EReference reference : corrEClass.getEReferences()) {
-			String name = reference.getName();
+	private boolean isSuitableCorrespondenceType(final EClass corrEClass, final EObject umlObject, final EObject pmObject) {
+		for (final EReference reference : corrEClass.getEReferences()) {
+			final String name = reference.getName();
 			if ("source".equals(name)) {
 				if (!reference.getEType().isInstance(umlObject)) {
 					return false;
 				}
-			} else if ("target".equals(name)) {
-				if (!reference.getEType().isInstance(pmObject)) {
-					return false;
-				}
+			} else if ("target".equals(name) && !reference.getEType().isInstance(pmObject)) {
+				return false;
 			}
 		}
 		return true;
 	}
 
-	private static EObject getSource(AbstractCorrespondence correspondence)
-			throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException,
+	private static EObject getSource(final AbstractCorrespondence correspondence)
+			throws IllegalAccessException, NoSuchFieldException,
 			InvocationTargetException, NoSuchMethodException {
 		return getSourceOrTarget(correspondence, "getSource");
 	}
 
-	private static EObject getTarget(AbstractCorrespondence correspondence)
-			throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException,
+	private static EObject getTarget(final AbstractCorrespondence correspondence)
+			throws IllegalAccessException, NoSuchFieldException,
 			InvocationTargetException, NoSuchMethodException {
 		return getSourceOrTarget(correspondence, "getTarget");
 	}
 
-	private static EObject getSourceOrTarget(AbstractCorrespondence correspondence, String side)
-			throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException,
+	private static EObject getSourceOrTarget(final AbstractCorrespondence correspondence, final String side)
+			throws IllegalAccessException, NoSuchFieldException,
 			InvocationTargetException, NoSuchMethodException {
 		return (EObject) correspondence.getClass().getDeclaredMethod(side).invoke(correspondence);
 	}

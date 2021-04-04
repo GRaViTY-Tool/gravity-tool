@@ -8,9 +8,7 @@
 		++-types -> type
 	}
 
-	type:AbstractTypeDeclaration {
-		++ -originalCompilationUnit -> compilationUnit
-	}
+	type:AbstractTypeDeclaration 
 }
 
 #target {

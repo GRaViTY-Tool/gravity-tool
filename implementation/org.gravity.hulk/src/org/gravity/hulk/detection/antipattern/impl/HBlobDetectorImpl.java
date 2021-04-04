@@ -86,7 +86,7 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 					blob.getHDataClassSmells().add(dc);
 				}
 				//
-				final TAnnotationType tAnnotationType = getAnnotationType(tClass.getPg(), "Blob");
+				final TAnnotationType tAnnotationType = getAnnotationType(tClass.getModel(), "Blob");
 				if (tAnnotationType != null) {
 					final TAnnotation annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
 					annotation.setTAnnotated(tClass);

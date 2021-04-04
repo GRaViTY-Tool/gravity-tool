@@ -58,15 +58,6 @@ public interface CodesmellsFactory extends EFactory {
 	HGetterSetterSmell createHGetterSetterSmell();
 
 	/**
-	 * Returns a new object of class '<em>HLarge Class Low Cohesion Smell</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>HLarge Class Low Cohesion Smell</em>'.
-	 * @generated
-	 */
-	HLargeClassLowCohesionSmell createHLargeClassLowCohesionSmell();
-
-	/**
 	 * Returns a new object of class '<em>HLarge Class Smell</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

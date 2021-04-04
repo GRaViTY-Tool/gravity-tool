@@ -31,15 +31,6 @@ public interface HulkFactory extends EFactory {
 	HAntiPatternDetection createHAntiPatternDetection();
 
 	/**
-	 * Returns a new object of class '<em>HAnti Pattern Resolving</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>HAnti Pattern Resolving</em>'.
-	 * @generated
-	 */
-	HAntiPatternResolving createHAntiPatternResolving();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -64,8 +64,6 @@ public class CodesmellsFactoryImpl extends EFactoryImpl implements CodesmellsFac
 			return createHEmptyClassDetector();
 		case CodesmellsPackage.HGETTER_SETTER_DETECTOR:
 			return createHGetterSetterDetector();
-		case CodesmellsPackage.HLARGE_CLASS_LOW_COHESION_DETECTOR:
-			return createHLargeClassLowCohesionDetector();
 		case CodesmellsPackage.HLARGE_CLASS_DETECTOR:
 			return createHLargeClassDetector();
 		case CodesmellsPackage.HLOW_COHESION_DETECTOR:
@@ -121,16 +119,6 @@ public class CodesmellsFactoryImpl extends EFactoryImpl implements CodesmellsFac
 	public HGetterSetterDetector createHGetterSetterDetector() {
 		HGetterSetterDetectorImpl hGetterSetterDetector = new HGetterSetterDetectorImpl();
 		return hGetterSetterDetector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HLargeClassLowCohesionDetector createHLargeClassLowCohesionDetector() {
-		HLargeClassLowCohesionDetectorImpl hLargeClassLowCohesionDetector = new HLargeClassLowCohesionDetectorImpl();
-		return hLargeClassLowCohesionDetector;
 	}
 
 	/**

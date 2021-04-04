@@ -66,6 +66,7 @@ public abstract class MSignatureImpl extends MAbstractFlowElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MDefinition> getMDefinitions() {
 		if (mDefinitions == null) {
 			mDefinitions = new EObjectWithInverseResolvingEList<MDefinition>(MDefinition.class, this, ModiscoPackage.MSIGNATURE__MDEFINITIONS, ModiscoPackage.MDEFINITION__MSIGNATURE);

@@ -18,9 +18,8 @@
 }
 
 #target {
-	tClass : TClass {
-		tName == "Anonymous"
-	}
+	tClass : TClass
+	
 	tParent : TAbstractType
 }
 
@@ -44,7 +43,6 @@
 
 #target {
 	tClass : TClass {
-		tName == "Anonymous"
 		++-implements->tParent
 		
 	}
@@ -60,8 +58,7 @@
 
 #target {
 	tClass : TClass {
-		tName == "Anonymous"
-		++-parentClass->tParent
+		++-parentClasses->tParent
 		
 	}
 	tParent : TClass

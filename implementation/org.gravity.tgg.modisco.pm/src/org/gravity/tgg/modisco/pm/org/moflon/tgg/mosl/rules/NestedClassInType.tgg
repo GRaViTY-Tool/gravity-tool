@@ -10,10 +10,9 @@
 }
 
 #target {
-	++tNestedType:TClass {
-}
+	++tNestedType:TClass 
 
-	++tNestedPackage:TPackage {
+	tOuterPackage:TPackage {
 		++  -classes -> tNestedType
 	}
 

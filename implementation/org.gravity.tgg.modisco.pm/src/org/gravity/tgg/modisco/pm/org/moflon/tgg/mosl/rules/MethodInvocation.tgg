@@ -1,0 +1,156 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule AbstractMethodInvocation
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mMember:MDefinition {
+		++  -mMethodInvocations -> invocation
+	}
+
+	++invocation:MAbstractMethodInvocation 
+}
+
+#target {
+	tMember:TMember {
+		++  -accessing -> tAccess
+	}
+
+	++tAccess:TCall
+}
+
+#correspondence {
+	++ invocationToTAccess :AbstractMethodInvocationToTAccess {
+		#src->invocation
+		#trg->tAccess
+	}
+
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->invocation
+		#trg->tAccess
+	}
+
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+}
+
+#rule MethodInvocation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++invocation:MMethodInvocation
+}
+
+#rule SuperMethodInvocation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++invocation:MSuperMethodInvocation
+}
+
+#rule ConstructorInvocation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++invocation:MConstructorInvocation
+}
+
+#rule ClassInstanceCreation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++invocation:MClassInstanceCreation
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule MethodInvocationTarget
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mMember:MDefinition {
+		-mMethodInvocations->invocation
+	} 
+
+	invocation:AbstractMethodInvocation {
+		++  -method -> mInvokedMember
+	}
+	
+	mInvokedMember:AbstractMethodDeclaration
+	
+}
+
+#target {
+	tMember:TMember {
+		-accessing->tAccess
+	}
+
+	tAccess:TCall {
+		++-target -> tInvokedMember
+	}
+	
+	tInvokedMember : TMethodDefinition
+}
+
+#correspondence {
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+	
+	invocationToTAccess :AbstractMethodInvocationToTAccess {
+		#src->invocation
+		#trg->tAccess
+	}
+
+	mInvokedMemberToTInvokedMember :MDefinitionToTMember {
+		#src->mInvokedMember
+		#trg->tInvokedMember
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule MethodInvocationTargetRecursive
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mMember:MAbstractMethodDefinition {
+		-mMethodInvocations->invocation
+	} 
+
+	invocation:AbstractMethodInvocation {
+		++  -method -> mMember
+	}
+}
+
+#target {
+	tMember:TMember {
+		-accessing->tAccess
+	}
+
+	tAccess:TCall {
+		++-target -> tMember
+	}
+}
+
+#correspondence {
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+	
+	invocationToTAccess :AbstractMethodInvocationToTAccess {
+		#src->invocation
+		#trg->tAccess
+	}
+}

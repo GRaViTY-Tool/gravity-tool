@@ -101,8 +101,8 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			BooleanLiteral mValue);
+			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, BooleanLiteral mValue,
+			TAnnotationValue tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,7 +120,7 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation,
 			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject tValue,
-			EObject mOwner, EObject mValueToTValue, EObject tAnnotationValue, EObject mValue);
+			EObject mOwner, EObject mValueToTValue, EObject mValue, EObject tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,7 +205,7 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation,
 			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject tValue,
-			EObject mOwner, EObject mValueToTValue, EObject tAnnotationValue, EObject mValue);
+			EObject mOwner, EObject mValueToTValue, EObject mValue, EObject tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_677(EMoflonEdge _edge_tValue);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_89(EMoflonEdge _edge_tValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +229,7 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_694(EMoflonEdge _edge_value);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_93(EMoflonEdge _edge_value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,7 +262,7 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TBoolNode tValue,
-			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, BooleanLiteral mValue, Match sourceMatch,
+			BodyDeclaration mOwner, BooleanLiteral mValue, TAnnotationValue tAnnotationValue, Match sourceMatch,
 			Match targetMatch);
 
 	/**

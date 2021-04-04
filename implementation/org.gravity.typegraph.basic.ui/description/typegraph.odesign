@@ -70,7 +70,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="tAccess" label="access" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tCall']" targetFinderExpression="feature:tAccessing">
+        <edgeMappings name="tAccess" label="access" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tCall']" targetFinderExpression="feature:accessing">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -94,10 +94,18 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="tAccessTarget" label="target" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tCall']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition']" targetFinderExpression="feature:tTarget">
+        <edgeMappings name="tAccessTarget" label="target" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tCall']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition']" targetFinderExpression="feature:target">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="overriding" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition']" targetFinderExpression="feature:overriding">
+          <style lineStyle="dash" sourceArrow="InputArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" labelExpression="overriding">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>

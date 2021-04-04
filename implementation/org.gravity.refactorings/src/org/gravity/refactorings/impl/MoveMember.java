@@ -25,7 +25,7 @@ public class MoveMember implements Refactoring {
 	private static final Logger LOGGER = Logger.getLogger(MoveMember.class.getName());
 
 	@Override
-	public boolean isApplicable(RefactoringConfiguration configuration) {
+	public boolean isApplicable(final RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			final MoveMemberConfiguration esc = (MoveMemberConfiguration) configuration;
 			return isApplicable(esc.getSignature(), esc.getSourceClass(), esc.getTargetClass());
@@ -34,7 +34,7 @@ public class MoveMember implements Refactoring {
 	}
 
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) throws RefactoringFailedException {
+	public Collection<TClass> perform(final RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			final MoveMemberConfiguration esc = (MoveMemberConfiguration) configuration;
 			return perform(esc.getSignature(), esc.getSourceClass(), esc.getTargetClass());
@@ -42,7 +42,7 @@ public class MoveMember implements Refactoring {
 		return Collections.emptyList();
 	}
 
-	public boolean isApplicable(TSignature signature, TClass tTargetClass, TClass tSourceClass) {
+	public boolean isApplicable(final TSignature signature, final TClass tTargetClass, final TClass tSourceClass) {
 		if (signature instanceof TMethodSignature) {
 			final TMethodSignature method = (TMethodSignature) signature;
 			final MoveMethod move = new MoveMethod();
@@ -58,7 +58,7 @@ public class MoveMember implements Refactoring {
 
 	}
 
-	public Collection<TClass> perform(TSignature signature, TClass tTargetClass, TClass tSourceClass)
+	public Collection<TClass> perform(final TSignature signature, final TClass tTargetClass, final TClass tSourceClass)
 			throws RefactoringFailedException {
 		if (signature instanceof TMethodSignature) {
 			final TMethodSignature method = (TMethodSignature) signature;
@@ -74,11 +74,11 @@ public class MoveMember implements Refactoring {
 		throw new RefactoringFailedException(message);
 	}
 
-	public boolean noCallToAnyChildMember(TMember member, TClass clazz) {
+	public boolean noCallToAnyChildMember(final TMember member, final TClass clazz) {
 
 		for (final TClass child : clazz.getAllChildren()) {
 			for (final TMember childMember : child.getDefines()) {
-				for (final TAccess tAccess : member.getTAccessing()) {
+				for (final TAccess tAccess : member.getAccessing()) {
 					if (childMember.getAccessedBy().contains(tAccess)) {
 						return false;
 					}

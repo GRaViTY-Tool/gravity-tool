@@ -40,8 +40,8 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	private static final Logger LOGGER = Logger.getLogger(SuperInterfacePreprocessing.class);
 
 	@Override
-	public boolean process(final MGravityModel model, final Collection<AbstractTypeDeclaration> elements, IFolder debug,
-			final IProgressMonitor monitor) {
+	public boolean process(final MGravityModel model, final Collection<AbstractTypeDeclaration> elements,
+			final IFolder debug, final IProgressMonitor monitor) {
 		final Set<TypeAccess> brokenTypeAccesses = elements.parallelStream()
 				.flatMap(type -> getAccessedClassDeclarations(type.getSuperInterfaces()).parallelStream())
 				.collect(Collectors.toSet());
@@ -65,7 +65,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 * @param model
 	 * @param replacements
 	 */
-	private void replace(final MGravityModel model, Map<ClassDeclaration, InterfaceDeclaration> replacements) {
+	private void replace(final MGravityModel model, final Map<ClassDeclaration, InterfaceDeclaration> replacements) {
 		for (final Entry<EObject, Collection<Setting>> entry : EcoreUtil.UsageCrossReferencer
 				.findAll(replacements.keySet(), model.eResource().getResourceSet()).entrySet()) {
 			final EObject key = entry.getKey();
@@ -115,8 +115,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	/**
 	 * Searches all types which are class declarations
 	 *
-	 * @param accesses
-	 *            A collection of accesses
+	 * @param accesses A collection of accesses
 	 * @return A set of accessed class declarations
 	 */
 	private Set<TypeAccess> getAccessedClassDeclarations(final Collection<TypeAccess> accesses) {
@@ -128,8 +127,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	/**
 	 * Replaces the class with an new interface
 	 *
-	 * @param clazz
-	 *            The class
+	 * @param clazz The class
 	 * @return the interface
 	 */
 	private InterfaceDeclaration replaceWithInterface(final ClassDeclaration clazz) {

@@ -57,8 +57,6 @@ public class HulkFactoryImpl extends EFactoryImpl implements HulkFactory {
 		switch (eClass.getClassifierID()) {
 		case HulkPackage.HANTI_PATTERN_DETECTION:
 			return createHAntiPatternDetection();
-		case HulkPackage.HANTI_PATTERN_RESOLVING:
-			return createHAntiPatternResolving();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -72,16 +70,6 @@ public class HulkFactoryImpl extends EFactoryImpl implements HulkFactory {
 	public HAntiPatternDetection createHAntiPatternDetection() {
 		HAntiPatternDetectionImpl hAntiPatternDetection = new HAntiPatternDetectionImpl();
 		return hAntiPatternDetection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HAntiPatternResolving createHAntiPatternResolving() {
-		HAntiPatternResolvingImpl hAntiPatternResolving = new HAntiPatternResolvingImpl();
-		return hAntiPatternResolving;
 	}
 
 	/**

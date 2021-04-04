@@ -80,8 +80,8 @@ public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculat
 		int invoc = 0;
 		ArrayList<TMember> invocedMethods = new ArrayList<TMember>();
 		for (TMember m : tClass.getDefines()) {
-			for (TAccess t : m.getTAccessing()) {
-				TMember tTarget = t.getTTarget();
+			for (TAccess t : m.getAccessing()) {
+				TMember tTarget = t.getTarget();
 				if (tTarget instanceof TMethodDefinitionImpl) {
 					TMethodDefinitionImpl targetMethod = (TMethodDefinitionImpl) tTarget;
 					TAbstractType definingClass = targetMethod.getDefinedBy();

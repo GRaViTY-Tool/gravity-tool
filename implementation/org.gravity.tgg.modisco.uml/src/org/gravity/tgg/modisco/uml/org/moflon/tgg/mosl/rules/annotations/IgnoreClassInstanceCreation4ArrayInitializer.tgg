@@ -1,0 +1,11 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule IgnoreClassInstanceCreation4ArrayInitializer #with org.gravity.tgg.modisco.uml
+
+#source {
+	array : ArrayInitializer {
+		++-expressions->create
+	}
+	create:ClassInstanceCreation
+} 
