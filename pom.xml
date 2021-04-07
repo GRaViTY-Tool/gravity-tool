@@ -41,6 +41,7 @@
     <module>implementation/org.gravity.hulk.annotations</module>
     <module>implementation/org.gravity.hulk.antipatterngraph</module>
     <module>implementation/org.gravity.hulk.refactoringgraph</module>
+    <module>implementation/org.gravity.hulk.resolve</module>
     <module>implementation/org.gravity.hulk.ui</module>
     <module>implementation/org.gravity.hulk.ui.visualization</module>
     <module>implementation/org.gravity.metrics.sourcemeter</module>
