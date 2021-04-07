@@ -6,6 +6,7 @@ package org.gravity.modisco.util;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -53,7 +54,7 @@ public final class MoDiscoUtil {
 		// This class shouldn't be instantiated
 	}
 
-	public static ClassDeclaration getSuperClass(ClassDeclaration mClass) {
+	public static ClassDeclaration getSuperClass(final ClassDeclaration mClass) {
 		final TypeAccess superAccess = mClass.getSuperClass();
 		if (superAccess != null) {
 			final Type superType = superAccess.getType();
@@ -400,7 +401,7 @@ public final class MoDiscoUtil {
 			boolean contains = false;
 			for (final Package tPackage : next) {
 				if (name.equals(tPackage.getName())) {
-					if (i == namespace.length - 1) {
+					if (i == (namespace.length - 1)) {
 						return tPackage;
 					}
 					next = tPackage.getOwnedPackages();
@@ -446,5 +447,41 @@ public final class MoDiscoUtil {
 		javaLangPackage.getOwnedElements().add(object);
 		return object;
 
+	}
+
+	public static String getQualifiedName(final AbstractTypeDeclaration type) {
+		return getNameSpace(type.getPackage())+'.'+type.getName();
+	}
+
+	public static String getNameSpace(final Package packageDecl) {
+		final List<String> names = new LinkedList<>();
+		Package p = packageDecl;
+		while(p != null) {
+			names.add(0, p.getName());
+			p = p.getPackage();
+		}
+		return String.join(".", names);
+	}
+
+	public static String getSignature(final MethodDeclaration m) {
+		final StringBuilder value = new StringBuilder(m.getName());
+		value.append('(');
+		final EList<SingleVariableDeclaration> parameters = m.getParameters();
+		if(!parameters.isEmpty()) {
+			value.append(parameters.get(0).getType().getType().getName());
+			for(int i = 1 ; i < parameters.size(); i++) {
+				value.append(',');
+				value.append(parameters.get(i).getType().getType().getName());
+			}
+		}
+		value.append("):");
+		final Type ret =m.getReturnType().getType();
+		if(ret!=null) {
+			value.append(ret.getName());
+		}
+		else {
+			value.append("void");
+		}
+		return value.toString();
 	}
 }
