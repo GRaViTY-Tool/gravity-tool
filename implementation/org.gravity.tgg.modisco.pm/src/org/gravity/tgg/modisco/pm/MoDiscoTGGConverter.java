@@ -517,9 +517,13 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	@Override
 	public TypeGraph getPG() {
-		return (TypeGraph) getTrg();
+		return getTrg();
 	}
 
+	@Override
+	public TypeGraph getTrg() {
+		return (TypeGraph) super.getTrg();
+	}
 	/**
 	 * Resets the converter to initial values
 	 */
@@ -560,6 +564,11 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	@Override
 	public void setDebug(final boolean debug) {
 		this.debug = debug;
+	}
+
+	@Override
+	public MGravityModel getSrc() {
+		return (MGravityModel) super.getSrc();
 	}
 
 	public static IFile getPMFile(final IProject project, final IProgressMonitor monitor) throws IOException {
