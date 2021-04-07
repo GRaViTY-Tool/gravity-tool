@@ -2,6 +2,7 @@ package org.gravity.eclipse;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
@@ -76,7 +77,7 @@ public class GravityActivator extends Plugin {
 
 	public static final boolean MEASURE_PERFORMANCE = true;
 
-	private static final String MEASURE_LOCATION = "/home/speldszus/workspace/DataPreparator/in/RuntimedataUML.txt";
+	private static final String MEASURE_LOCATION = "/home/speldszus/workspace/DataPreparator/in/";
 
 	private static final Logger LOGGER = Logger.getLogger(GravityActivator.class);
 
@@ -290,13 +291,23 @@ public class GravityActivator extends Plugin {
 		return set;
 	}
 
+	private static String key;
+
 	public static void record(final String string) {
 		System.out.println(string);
 		try {
-			Files.write(Paths.get(MEASURE_LOCATION), (string+'\n').getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+			final Path path = Paths.get(MEASURE_LOCATION, key, "data.txt");
+			final java.io.File file = path.getParent().toFile();
+			if(!file.exists() && !file.mkdirs()){
+				throw new IOException("Couldn't create folder: "+path.getParent());
+			}
+			Files.write(path, (string+'\n').getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
 		} catch (final IOException e) {
 			LOGGER.error(e);
 		}
 	}
 
+	public static void setRecordKey(final String key) {
+		GravityActivator.key = key;
+	}
 }
