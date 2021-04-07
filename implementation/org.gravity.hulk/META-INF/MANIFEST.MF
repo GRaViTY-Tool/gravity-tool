@@ -10,12 +10,10 @@ Export-Package: org.gravity.hulk,
  org.gravity.hulk.detection.metrics,
  org.gravity.hulk.detection.metrics.impl,
  org.gravity.hulk.exceptions,
- org.gravity.hulk.impl,
- org.moflon.core.dfs
+ org.gravity.hulk.impl
 Bundle-Name: Hulk
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .,
- lib/org.moflon.core.dfs_2.0.0.201811071039.jar
+Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.gravity.hulk.annotations,
  org.gravity.eclipse,
@@ -24,7 +22,8 @@ Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.eclipse.emf.henshin.interpreter,
  org.gravity.typegraph.basic;visibility:=reexport,
  org.gravity.security.annotations,
- org.gravity.hulk.antipatterngraph;visibility:=reexport
+ org.gravity.hulk.antipatterngraph;visibility:=reexport,
+ org.moflon.core.dfs;visibility:=reexport
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11

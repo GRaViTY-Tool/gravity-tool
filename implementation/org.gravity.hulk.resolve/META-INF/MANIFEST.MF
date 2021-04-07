@@ -9,13 +9,10 @@ Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.gravity.hulk.resolve,
  org.gravity.hulk.resolve.antipattern,
  org.gravity.hulk.resolve.calculators
-Require-Bundle: org.eclipse.emf.common,
- org.eclipse.emf.ecore,
- org.gravity.hulk,
+Require-Bundle: org.gravity.hulk,
  org.apache.log4j,
  org.gravity.hulk.annotations,
  org.gravity.refactorings,
- org.gravity.hulk.antipatterngraph,
  org.gravity.hulk.refactoringgraph
 Bundle-ClassPath: .,
  lib/hierarchical-clustering.jar
