@@ -486,28 +486,30 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	@Override
 	public void saveSynchronizationProtocol(final String path) {
-		final org.moflon.tgg.runtime.PrecedenceStructure ps = this.protocol.save();
-		final URI uri = URI.createPlatformResourceURI(path, false);
-		final Resource resource;
-		if (path.endsWith(".xmi")) {
-			resource = this.set.createResource(uri);
-		} else {
-			resource = new BinaryResourceImpl(uri);
-			this.set.getResources().add(resource);
+		if (this.protocol != null) {
+			final org.moflon.tgg.runtime.PrecedenceStructure ps = this.protocol.save();
+			final URI uri = URI.createPlatformResourceURI(path, false);
+			final Resource resource;
+			if (path.endsWith(".xmi")) {
+				resource = this.set.createResource(uri);
+			} else {
+				resource = new BinaryResourceImpl(uri);
+				this.set.getResources().add(resource);
+			}
+			resource.getContents().add(ps);
+			final Map<Object, Object> saveOptions = new HashMap<>();
+			if (ps.getTripleMatches().size() > 100000) {
+				saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_FILE_BUFFER);
+			} else {
+				saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED,
+						Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+			}
+			try {
+				resource.save(saveOptions);
+			} catch (final IOException e) {
+				LOGGER.error(e);
+			}
 		}
-		resource.getContents().add(ps);
-		final Map<Object, Object> saveOptions = new HashMap<>();
-		if (ps.getTripleMatches().size() > 100000) {
-			saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_FILE_BUFFER);
-		} else {
-			saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
-		}
-		try {
-			resource.save(saveOptions);
-		} catch (final IOException e) {
-			LOGGER.error(e);
-		}
-
 	}
 
 	@Override
@@ -524,6 +526,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	public TypeGraph getTrg() {
 		return (TypeGraph) super.getTrg();
 	}
+
 	/**
 	 * Resets the converter to initial values
 	 */
