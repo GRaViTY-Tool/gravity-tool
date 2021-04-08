@@ -77,8 +77,6 @@ public class GravityActivator extends Plugin {
 
 	public static final boolean MEASURE_PERFORMANCE = true;
 
-	private static final String MEASURE_LOCATION = "/home/speldszus/workspace/DataPreparator/in/";
-
 	private static final Logger LOGGER = Logger.getLogger(GravityActivator.class);
 
 	/**
@@ -291,12 +289,17 @@ public class GravityActivator extends Plugin {
 		return set;
 	}
 
-	private static String key;
+	private static String measureRecordsKey;
+	private static String measureLocation = "../measurements";
 
 	public static void record(final String string) {
+		if(measureRecordsKey == null) {
+			LOGGER.error("No key for recording set");
+			return;
+		}
 		System.out.println(string);
 		try {
-			final Path path = Paths.get(MEASURE_LOCATION, key, "data.txt");
+			final Path path = Paths.get(measureLocation, measureRecordsKey, "data.txt");
 			final java.io.File file = path.getParent().toFile();
 			if(!file.exists() && !file.mkdirs()){
 				throw new IOException("Couldn't create folder: "+path.getParent());
@@ -308,6 +311,10 @@ public class GravityActivator extends Plugin {
 	}
 
 	public static void setRecordKey(final String key) {
-		GravityActivator.key = key;
+		GravityActivator.measureRecordsKey = key;
+	}
+
+	public static void setMeasurementsLocation(final String path) {
+		measureRecordsKey = path;
 	}
 }
