@@ -1,11 +1,8 @@
 Manifest-Version: 1.0
 Automatic-Module-Name: org.gravity.tgg.modisco.pm
 Bundle-SymbolicName: org.gravity.tgg.modisco.pm;singleton:=true
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.xmi;visibility:=reexport,
+Require-Bundle: org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.gravity.typegraph.basic;visibility:=reexport,
- org.eclipse.modisco.java;visibility:=reexport,
  org.eclipse.modisco.java.discoverer,
  org.gravity.eclipse;visibility:=reexport,
  org.eclipse.core.resources,
@@ -18,7 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.moflon.tgg.runtime;visibility:=reexport,
  MocaTree
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Export-Package: org.gravity.tgg.modisco.pm,

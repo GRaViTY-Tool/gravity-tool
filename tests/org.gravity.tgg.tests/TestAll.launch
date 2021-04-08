@@ -53,11 +53,6 @@
         <setEntry value="org.eclipse.emf.henshin.variability.validation"/>
         <setEntry value="org.eclipse.emf.henshin.variability.validation.tests"/>
         <setEntry value="org.eclipse.emf.henshin.wrap"/>
-        <setEntry value="org.gravity.goblin"/>
-        <setEntry value="org.gravity.goblin.tests"/>
-        <setEntry value="org.gravity.hulk.tests"/>
-        <setEntry value="org.gravity.hulk.ui"/>
-        <setEntry value="org.gravity.hulk.ui.visualization"/>
         <setEntry value="org.gravity.refactorings.tests"/>
         <setEntry value="org.gravity.refactorings.ui"/>
         <setEntry value="org.gravity.requirements"/>
@@ -588,7 +583,6 @@
         <setEntry value="org.eclipse.emf.henshin.interpreter@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.model@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.trace@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.variability.multi.eval.refactorings@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.variability.multi@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.variability@default:default"/>
         <setEntry value="org.gravity.eclipse.java.spl@default:default"/>
@@ -596,11 +590,6 @@
         <setEntry value="org.gravity.eclipse.ui@default:default"/>
         <setEntry value="org.gravity.eclipse@default:default"/>
         <setEntry value="org.gravity.eval.runtime.tgg.modisco@default:default"/>
-        <setEntry value="org.gravity.hulk.annotations@default:default"/>
-        <setEntry value="org.gravity.hulk.antipatterngraph@default:default"/>
-        <setEntry value="org.gravity.hulk.refactoringgraph@default:default"/>
-        <setEntry value="org.gravity.hulk.resolve@default:default"/>
-        <setEntry value="org.gravity.hulk@default:default"/>
         <setEntry value="org.gravity.modisco@default:default"/>
         <setEntry value="org.gravity.pm.umlsec@default:default"/>
         <setEntry value="org.gravity.refactorings@default:default"/>
