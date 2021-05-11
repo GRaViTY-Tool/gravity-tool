@@ -6,3 +6,10 @@
 	path = evaluation
 	url = https://github.com/GRaViTY-Tool/gravity-evaluation.git
 	branch = master
+[submodule "implementation/org.gravity.secdfd"]
+	path = implementation/org.gravity.secdfd
+	url = git@github.com:SvenPeldszus/GRaViTY-SecDFD-Mapping.git
+[submodule "implementation/org.gravity.umlsecrt"]
+	path = implementation/org.gravity.umlsecrt
+	url = git@github.com:CARiSMA-Tool/umlsecrt.git
+
