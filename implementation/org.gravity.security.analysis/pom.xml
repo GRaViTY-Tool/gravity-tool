@@ -9,7 +9,7 @@
     <relativePath>../../</relativePath>
   </parent>
   <groupId>org.gravity</groupId>
-  <artifactId>org.gravity.security.analysis</artifactId>
+  <artifactId>org.gravity.security.metrics</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>

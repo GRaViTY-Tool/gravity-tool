@@ -237,6 +237,15 @@ public interface AnnotationsPackage extends EPackage {
 	int TCOUNTER_MEASURE___EINVOKE__EOPERATION_ELIST = org.gravity.typegraph.basic.annotations.AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
 
 	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCOUNTER_MEASURE___GET_VALUE__STRING = org.gravity.typegraph.basic.annotations.AnnotationsPackage.TANNOTATION___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>TCounter Measure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -427,6 +436,15 @@ public interface AnnotationsPackage extends EPackage {
 	 * @ordered
 	 */
 	int TTAINTED___EINVOKE__EOPERATION_ELIST = org.gravity.typegraph.basic.annotations.AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTAINTED___GET_VALUE__STRING = org.gravity.typegraph.basic.annotations.AnnotationsPackage.TANNOTATION___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>TTainted</em>' class.

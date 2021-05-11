@@ -238,6 +238,15 @@ public interface AccessPackage extends EPackage {
 	int TAPI___EINVOKE__EOPERATION_ELIST = AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
 
 	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAPI___GET_VALUE__STRING = AnnotationsPackage.TANNOTATION___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>TApi</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

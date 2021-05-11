@@ -74,6 +74,8 @@ public class RequirementsSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseTAnnotationWithCounterMeasure(tSecrecy);
 			if (result == null)
+				result = caseTAbstractCriticalElement(tSecrecy);
+			if (result == null)
 				result = caseTAnnotation(tSecrecy);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -84,6 +86,8 @@ public class RequirementsSwitch<T> extends Switch<T> {
 			T result = caseTIntegrity(tIntegrity);
 			if (result == null)
 				result = caseTAnnotationWithCounterMeasure(tIntegrity);
+			if (result == null)
+				result = caseTAbstractCriticalElement(tIntegrity);
 			if (result == null)
 				result = caseTAnnotation(tIntegrity);
 			if (result == null)
@@ -105,6 +109,8 @@ public class RequirementsSwitch<T> extends Switch<T> {
 			TCritical tCritical = (TCritical) theEObject;
 			T result = caseTCritical(tCritical);
 			if (result == null)
+				result = caseTAbstractCriticalElement(tCritical);
+			if (result == null)
 				result = caseTAnnotation(tCritical);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -115,6 +121,15 @@ public class RequirementsSwitch<T> extends Switch<T> {
 			T result = caseTAnnotationWithCounterMeasure(tAnnotationWithCounterMeasure);
 			if (result == null)
 				result = caseTAnnotation(tAnnotationWithCounterMeasure);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RequirementsPackage.TABSTRACT_CRITICAL_ELEMENT: {
+			TAbstractCriticalElement tAbstractCriticalElement = (TAbstractCriticalElement) theEObject;
+			T result = caseTAbstractCriticalElement(tAbstractCriticalElement);
+			if (result == null)
+				result = caseTAnnotation(tAbstractCriticalElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -196,6 +211,21 @@ public class RequirementsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTAnnotationWithCounterMeasure(TAnnotationWithCounterMeasure object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TAbstract Critical Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TAbstract Critical Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTAbstractCriticalElement(TAbstractCriticalElement object) {
 		return null;
 	}
 

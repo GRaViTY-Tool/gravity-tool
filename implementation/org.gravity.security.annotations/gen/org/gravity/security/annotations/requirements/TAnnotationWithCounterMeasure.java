@@ -19,7 +19,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  * </ul>
  *
  * @see org.gravity.security.annotations.requirements.RequirementsPackage#getTAnnotationWithCounterMeasure()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface TAnnotationWithCounterMeasure extends TAnnotation {

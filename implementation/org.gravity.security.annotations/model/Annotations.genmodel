@@ -28,6 +28,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#//requirements/TAnnotationWithCounterMeasure/countermeasure"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#//requirements/TAbstractCriticalElement"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Actions" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#//actions">
       <genClasses ecoreClass="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#//actions/TSanitizing"/>

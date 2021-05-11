@@ -22,6 +22,7 @@ import org.gravity.security.annotations.impl.AnnotationsPackageImpl;
 
 import org.gravity.security.annotations.requirements.RequirementsFactory;
 import org.gravity.security.annotations.requirements.RequirementsPackage;
+import org.gravity.security.annotations.requirements.TAbstractCriticalElement;
 import org.gravity.security.annotations.requirements.TAnnotationWithCounterMeasure;
 import org.gravity.security.annotations.requirements.TCritical;
 import org.gravity.security.annotations.requirements.THigh;
@@ -71,6 +72,13 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	private EClass tAnnotationWithCounterMeasureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tAbstractCriticalElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -255,6 +263,16 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	@Override
+	public EClass getTAbstractCriticalElement() {
+		return tAbstractCriticalElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public RequirementsFactory getRequirementsFactory() {
 		return (RequirementsFactory) getEFactoryInstance();
 	}
@@ -292,6 +310,8 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 
 		tAnnotationWithCounterMeasureEClass = createEClass(TANNOTATION_WITH_COUNTER_MEASURE);
 		createEReference(tAnnotationWithCounterMeasureEClass, TANNOTATION_WITH_COUNTER_MEASURE__COUNTERMEASURE);
+
+		tAbstractCriticalElementEClass = createEClass(TABSTRACT_CRITICAL_ELEMENT);
 	}
 
 	/**
@@ -319,9 +339,9 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		BasicPackage theBasicPackage = (BasicPackage) EPackage.Registry.INSTANCE.getEPackage(BasicPackage.eNS_URI);
 		org.gravity.typegraph.basic.annotations.AnnotationsPackage theAnnotationsPackage_1 = (org.gravity.typegraph.basic.annotations.AnnotationsPackage) EPackage.Registry.INSTANCE
 				.getEPackage(org.gravity.typegraph.basic.annotations.AnnotationsPackage.eNS_URI);
-		BasicPackage theBasicPackage = (BasicPackage) EPackage.Registry.INSTANCE.getEPackage(BasicPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -329,10 +349,13 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 
 		// Add supertypes to classes
 		tSecrecyEClass.getESuperTypes().add(this.getTAnnotationWithCounterMeasure());
+		tSecrecyEClass.getESuperTypes().add(this.getTAbstractCriticalElement());
 		tIntegrityEClass.getESuperTypes().add(this.getTAnnotationWithCounterMeasure());
+		tIntegrityEClass.getESuperTypes().add(this.getTAbstractCriticalElement());
 		tHighEClass.getESuperTypes().add(this.getTAnnotationWithCounterMeasure());
-		tCriticalEClass.getESuperTypes().add(theAnnotationsPackage_1.getTAnnotation());
+		tCriticalEClass.getESuperTypes().add(this.getTAbstractCriticalElement());
 		tAnnotationWithCounterMeasureEClass.getESuperTypes().add(theAnnotationsPackage_1.getTAnnotation());
+		tAbstractCriticalElementEClass.getESuperTypes().add(theAnnotationsPackage_1.getTAnnotation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(tSecrecyEClass, TSecrecy.class, "TSecrecy", !IS_ABSTRACT, !IS_INTERFACE,
@@ -356,10 +379,13 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tAnnotationWithCounterMeasureEClass, TAnnotationWithCounterMeasure.class,
-				"TAnnotationWithCounterMeasure", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+				"TAnnotationWithCounterMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTAnnotationWithCounterMeasure_Countermeasure(), theBasicPackage.getTMethodDefinition(), null,
 				"countermeasure", null, 0, 1, TAnnotationWithCounterMeasure.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tAbstractCriticalElementEClass, TAbstractCriticalElement.class, "TAbstractCriticalElement",
+				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //RequirementsPackageImpl

@@ -29,8 +29,7 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotationImpl;
  *
  * @generated
  */
-public abstract class TAnnotationWithCounterMeasureImpl extends TAnnotationImpl
-		implements TAnnotationWithCounterMeasure {
+public class TAnnotationWithCounterMeasureImpl extends TAnnotationImpl implements TAnnotationWithCounterMeasure {
 	/**
 	 * The cached value of the '{@link #getCountermeasure() <em>Countermeasure</em>}' reference.
 	 * <!-- begin-user-doc -->

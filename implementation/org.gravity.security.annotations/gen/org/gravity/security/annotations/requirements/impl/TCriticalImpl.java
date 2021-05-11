@@ -32,7 +32,7 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotationImpl;
  *
  * @generated
  */
-public class TCriticalImpl extends TAnnotationImpl implements TCritical {
+public class TCriticalImpl extends TAbstractCriticalElementImpl implements TCritical {
 	/**
 	 * The cached value of the '{@link #getSecrecy() <em>Secrecy</em>}' reference list.
 	 * <!-- begin-user-doc -->

@@ -12,5 +12,5 @@ package org.gravity.security.annotations.requirements;
  * @model
  * @generated
  */
-public interface TIntegrity extends TAnnotationWithCounterMeasure {
+public interface TIntegrity extends TAnnotationWithCounterMeasure, TAbstractCriticalElement {
 } // TIntegrity

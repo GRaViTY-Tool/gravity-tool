@@ -248,6 +248,15 @@ public interface RequirementsPackage extends EPackage {
 	int TANNOTATION_WITH_COUNTER_MEASURE___EINVOKE__EOPERATION_ELIST = AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
 
 	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TANNOTATION_WITH_COUNTER_MEASURE___GET_VALUE__STRING = AnnotationsPackage.TANNOTATION___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>TAnnotation With Counter Measure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -445,6 +454,15 @@ public interface RequirementsPackage extends EPackage {
 	 * @ordered
 	 */
 	int TSECRECY___EINVOKE__EOPERATION_ELIST = TANNOTATION_WITH_COUNTER_MEASURE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSECRECY___GET_VALUE__STRING = TANNOTATION_WITH_COUNTER_MEASURE___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>TSecrecy</em>' class.
@@ -646,6 +664,15 @@ public interface RequirementsPackage extends EPackage {
 	int TINTEGRITY___EINVOKE__EOPERATION_ELIST = TANNOTATION_WITH_COUNTER_MEASURE___EINVOKE__EOPERATION_ELIST;
 
 	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TINTEGRITY___GET_VALUE__STRING = TANNOTATION_WITH_COUNTER_MEASURE___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>TIntegrity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -845,6 +872,15 @@ public interface RequirementsPackage extends EPackage {
 	int THIGH___EINVOKE__EOPERATION_ELIST = TANNOTATION_WITH_COUNTER_MEASURE___EINVOKE__EOPERATION_ELIST;
 
 	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THIGH___GET_VALUE__STRING = TANNOTATION_WITH_COUNTER_MEASURE___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>THigh</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -864,13 +900,23 @@ public interface RequirementsPackage extends EPackage {
 	int TCRITICAL = 3;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.security.annotations.requirements.impl.TAbstractCriticalElementImpl <em>TAbstract Critical Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.security.annotations.requirements.impl.TAbstractCriticalElementImpl
+	 * @see org.gravity.security.annotations.requirements.impl.RequirementsPackageImpl#getTAbstractCriticalElement()
+	 * @generated
+	 */
+	int TABSTRACT_CRITICAL_ELEMENT = 5;
+
+	/**
 	 * The feature id for the '<em><b>TAnnotated</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL__TANNOTATED = AnnotationsPackage.TANNOTATION__TANNOTATED;
+	int TABSTRACT_CRITICAL_ELEMENT__TANNOTATED = AnnotationsPackage.TANNOTATION__TANNOTATED;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -879,7 +925,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL__TYPE = AnnotationsPackage.TANNOTATION__TYPE;
+	int TABSTRACT_CRITICAL_ELEMENT__TYPE = AnnotationsPackage.TANNOTATION__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>TValues</b></em>' containment reference list.
@@ -888,43 +934,16 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL__TVALUES = AnnotationsPackage.TANNOTATION__TVALUES;
+	int TABSTRACT_CRITICAL_ELEMENT__TVALUES = AnnotationsPackage.TANNOTATION__TVALUES;
 
 	/**
-	 * The feature id for the '<em><b>Secrecy</b></em>' reference list.
+	 * The number of structural features of the '<em>TAbstract Critical Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL__SECRECY = AnnotationsPackage.TANNOTATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Integrity</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCRITICAL__INTEGRITY = AnnotationsPackage.TANNOTATION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>High</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCRITICAL__HIGH = AnnotationsPackage.TANNOTATION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>TCritical</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCRITICAL_FEATURE_COUNT = AnnotationsPackage.TANNOTATION_FEATURE_COUNT + 3;
+	int TABSTRACT_CRITICAL_ELEMENT_FEATURE_COUNT = AnnotationsPackage.TANNOTATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -933,7 +952,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___ECLASS = AnnotationsPackage.TANNOTATION___ECLASS;
+	int TABSTRACT_CRITICAL_ELEMENT___ECLASS = AnnotationsPackage.TANNOTATION___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -942,7 +961,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___EIS_PROXY = AnnotationsPackage.TANNOTATION___EIS_PROXY;
+	int TABSTRACT_CRITICAL_ELEMENT___EIS_PROXY = AnnotationsPackage.TANNOTATION___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -951,7 +970,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___ERESOURCE = AnnotationsPackage.TANNOTATION___ERESOURCE;
+	int TABSTRACT_CRITICAL_ELEMENT___ERESOURCE = AnnotationsPackage.TANNOTATION___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -960,7 +979,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___ECONTAINER = AnnotationsPackage.TANNOTATION___ECONTAINER;
+	int TABSTRACT_CRITICAL_ELEMENT___ECONTAINER = AnnotationsPackage.TANNOTATION___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -969,7 +988,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___ECONTAINING_FEATURE = AnnotationsPackage.TANNOTATION___ECONTAINING_FEATURE;
+	int TABSTRACT_CRITICAL_ELEMENT___ECONTAINING_FEATURE = AnnotationsPackage.TANNOTATION___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -978,7 +997,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___ECONTAINMENT_FEATURE = AnnotationsPackage.TANNOTATION___ECONTAINMENT_FEATURE;
+	int TABSTRACT_CRITICAL_ELEMENT___ECONTAINMENT_FEATURE = AnnotationsPackage.TANNOTATION___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -987,7 +1006,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___ECONTENTS = AnnotationsPackage.TANNOTATION___ECONTENTS;
+	int TABSTRACT_CRITICAL_ELEMENT___ECONTENTS = AnnotationsPackage.TANNOTATION___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -996,7 +1015,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___EALL_CONTENTS = AnnotationsPackage.TANNOTATION___EALL_CONTENTS;
+	int TABSTRACT_CRITICAL_ELEMENT___EALL_CONTENTS = AnnotationsPackage.TANNOTATION___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -1005,7 +1024,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___ECROSS_REFERENCES = AnnotationsPackage.TANNOTATION___ECROSS_REFERENCES;
+	int TABSTRACT_CRITICAL_ELEMENT___ECROSS_REFERENCES = AnnotationsPackage.TANNOTATION___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1014,7 +1033,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___EGET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EGET__ESTRUCTURALFEATURE;
+	int TABSTRACT_CRITICAL_ELEMENT___EGET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1023,7 +1042,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AnnotationsPackage.TANNOTATION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int TABSTRACT_CRITICAL_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = AnnotationsPackage.TANNOTATION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1032,7 +1051,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___ESET__ESTRUCTURALFEATURE_OBJECT = AnnotationsPackage.TANNOTATION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int TABSTRACT_CRITICAL_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT = AnnotationsPackage.TANNOTATION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1041,7 +1060,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___EIS_SET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EIS_SET__ESTRUCTURALFEATURE;
+	int TABSTRACT_CRITICAL_ELEMENT___EIS_SET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1050,7 +1069,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___EUNSET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EUNSET__ESTRUCTURALFEATURE;
+	int TABSTRACT_CRITICAL_ELEMENT___EUNSET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1059,7 +1078,232 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL___EINVOKE__EOPERATION_ELIST = AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
+	int TABSTRACT_CRITICAL_ELEMENT___EINVOKE__EOPERATION_ELIST = AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_CRITICAL_ELEMENT___GET_VALUE__STRING = AnnotationsPackage.TANNOTATION___GET_VALUE__STRING;
+
+	/**
+	 * The number of operations of the '<em>TAbstract Critical Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_CRITICAL_ELEMENT_OPERATION_COUNT = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>TAnnotated</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL__TANNOTATED = TABSTRACT_CRITICAL_ELEMENT__TANNOTATED;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL__TYPE = TABSTRACT_CRITICAL_ELEMENT__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>TValues</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL__TVALUES = TABSTRACT_CRITICAL_ELEMENT__TVALUES;
+
+	/**
+	 * The feature id for the '<em><b>Secrecy</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL__SECRECY = TABSTRACT_CRITICAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Integrity</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL__INTEGRITY = TABSTRACT_CRITICAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>High</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL__HIGH = TABSTRACT_CRITICAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>TCritical</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL_FEATURE_COUNT = TABSTRACT_CRITICAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___ECLASS = TABSTRACT_CRITICAL_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___EIS_PROXY = TABSTRACT_CRITICAL_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___ERESOURCE = TABSTRACT_CRITICAL_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___ECONTAINER = TABSTRACT_CRITICAL_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___ECONTAINING_FEATURE = TABSTRACT_CRITICAL_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___ECONTAINMENT_FEATURE = TABSTRACT_CRITICAL_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___ECONTENTS = TABSTRACT_CRITICAL_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___EALL_CONTENTS = TABSTRACT_CRITICAL_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___ECROSS_REFERENCES = TABSTRACT_CRITICAL_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___EGET__ESTRUCTURALFEATURE = TABSTRACT_CRITICAL_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___EGET__ESTRUCTURALFEATURE_BOOLEAN = TABSTRACT_CRITICAL_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___ESET__ESTRUCTURALFEATURE_OBJECT = TABSTRACT_CRITICAL_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___EIS_SET__ESTRUCTURALFEATURE = TABSTRACT_CRITICAL_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___EUNSET__ESTRUCTURALFEATURE = TABSTRACT_CRITICAL_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___EINVOKE__EOPERATION_ELIST = TABSTRACT_CRITICAL_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCRITICAL___GET_VALUE__STRING = TABSTRACT_CRITICAL_ELEMENT___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>TCritical</em>' class.
@@ -1068,7 +1312,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCRITICAL_OPERATION_COUNT = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 0;
+	int TCRITICAL_OPERATION_COUNT = TABSTRACT_CRITICAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.security.annotations.requirements.TSecrecy <em>TSecrecy</em>}'.
@@ -1163,6 +1407,16 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTAnnotationWithCounterMeasure_Countermeasure();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.security.annotations.requirements.TAbstractCriticalElement <em>TAbstract Critical Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TAbstract Critical Element</em>'.
+	 * @see org.gravity.security.annotations.requirements.TAbstractCriticalElement
+	 * @generated
+	 */
+	EClass getTAbstractCriticalElement();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1269,6 +1523,16 @@ public interface RequirementsPackage extends EPackage {
 		 */
 		EReference TANNOTATION_WITH_COUNTER_MEASURE__COUNTERMEASURE = eINSTANCE
 				.getTAnnotationWithCounterMeasure_Countermeasure();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.security.annotations.requirements.impl.TAbstractCriticalElementImpl <em>TAbstract Critical Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.security.annotations.requirements.impl.TAbstractCriticalElementImpl
+		 * @see org.gravity.security.annotations.requirements.impl.RequirementsPackageImpl#getTAbstractCriticalElement()
+		 * @generated
+		 */
+		EClass TABSTRACT_CRITICAL_ELEMENT = eINSTANCE.getTAbstractCriticalElement();
 
 	}
 

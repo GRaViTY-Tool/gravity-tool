@@ -94,6 +94,11 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseTAbstractCriticalElement(TAbstractCriticalElement object) {
+			return createTAbstractCriticalElementAdapter();
+		}
+
+		@Override
 		public Adapter caseTAnnotation(TAnnotation object) {
 			return createTAnnotationAdapter();
 		}
@@ -184,6 +189,20 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTAnnotationWithCounterMeasureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.security.annotations.requirements.TAbstractCriticalElement <em>TAbstract Critical Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.security.annotations.requirements.TAbstractCriticalElement
+	 * @generated
+	 */
+	public Adapter createTAbstractCriticalElementAdapter() {
 		return null;
 	}
 

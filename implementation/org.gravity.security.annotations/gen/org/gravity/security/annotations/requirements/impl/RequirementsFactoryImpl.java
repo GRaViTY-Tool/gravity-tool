@@ -64,6 +64,8 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 			return createTHigh();
 		case RequirementsPackage.TCRITICAL:
 			return createTCritical();
+		case RequirementsPackage.TANNOTATION_WITH_COUNTER_MEASURE:
+			return createTAnnotationWithCounterMeasure();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -111,6 +113,17 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	public TCritical createTCritical() {
 		TCriticalImpl tCritical = new TCriticalImpl();
 		return tCritical;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TAnnotationWithCounterMeasure createTAnnotationWithCounterMeasure() {
+		TAnnotationWithCounterMeasureImpl tAnnotationWithCounterMeasure = new TAnnotationWithCounterMeasureImpl();
+		return tAnnotationWithCounterMeasure;
 	}
 
 	/**

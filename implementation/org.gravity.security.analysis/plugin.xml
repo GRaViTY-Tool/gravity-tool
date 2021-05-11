@@ -32,4 +32,12 @@
       </security>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SecurityMetrics -->
+      <package
+            uri="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/security"
+            class="org.gravity.hulk.antipatterngraph.metrics.security.SecurityPackage"
+            genModel="model/SecurityMetrics.genmodel"/>
+   </extension>
+
 </plugin>

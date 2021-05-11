@@ -58,6 +58,15 @@ public interface RequirementsFactory extends EFactory {
 	TCritical createTCritical();
 
 	/**
+	 * Returns a new object of class '<em>TAnnotation With Counter Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>TAnnotation With Counter Measure</em>'.
+	 * @generated
+	 */
+	TAnnotationWithCounterMeasure createTAnnotationWithCounterMeasure();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

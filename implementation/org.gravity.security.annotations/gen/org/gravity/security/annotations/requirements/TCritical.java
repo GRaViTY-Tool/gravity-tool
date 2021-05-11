@@ -26,7 +26,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  * @model
  * @generated
  */
-public interface TCritical extends TAnnotation {
+public interface TCritical extends TAbstractCriticalElement {
 	/**
 	 * Returns the value of the '<em><b>Secrecy</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TSignature}.

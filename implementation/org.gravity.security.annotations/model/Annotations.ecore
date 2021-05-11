@@ -13,10 +13,10 @@
   </eSubpackages>
   <eSubpackages name="requirements" nsURI="http://gravity-tool.org/typegraph/annotations/security#/requirements"
       nsPrefix="org.gravity.security.annotations.requirements">
-    <eClassifiers xsi:type="ecore:EClass" name="TSecrecy" eSuperTypes="#//requirements/TAnnotationWithCounterMeasure"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TIntegrity" eSuperTypes="#//requirements/TAnnotationWithCounterMeasure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TSecrecy" eSuperTypes="#//requirements/TAnnotationWithCounterMeasure #//requirements/TAbstractCriticalElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TIntegrity" eSuperTypes="#//requirements/TAnnotationWithCounterMeasure #//requirements/TAbstractCriticalElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="THigh" eSuperTypes="#//requirements/TAnnotationWithCounterMeasure"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TCritical" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation">
+    <eClassifiers xsi:type="ecore:EClass" name="TCritical" eSuperTypes="#//requirements/TAbstractCriticalElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="secrecy" upperBound="-1"
           eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TSignature"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="integrity" upperBound="-1"
@@ -27,6 +27,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="TAnnotationWithCounterMeasure" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation">
       <eStructuralFeatures xsi:type="ecore:EReference" name="countermeasure" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TAbstractCriticalElement" abstract="true"
+        eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
   </eSubpackages>
   <eSubpackages name="actions" nsURI="http://gravity-tool.org/typegraph/annotations/security#/actions"
       nsPrefix="org.gravity.security.annotations.actions">
