@@ -15,7 +15,7 @@ public class SearchParameters {
 	 * Initial Model that will be optimized
 	 */
 	@Parameter(names = { "-im", "--initial_model" }, description = "Initial Model that will be optimized")
-	public static String initialModel = "input/notepad.xmi";
+	public static String initialModel = "input/solitaire.xmi";
 
 	/**
 	 * Displays help information
@@ -93,14 +93,20 @@ public class SearchParameters {
 	 * Modules containing transformation rules
 	 */
 	@Parameter(names = { "-mod", "--modules" }, description = "modules containing transformation rules")
-	public static List<String> modules = Arrays.asList("transformations/MoveMethod.henshin");
+	public static List<String> modules = Arrays.asList("transformations/MoveMethod.henshin",
+			"transformations/ChangeVisibilities.henshin", "transformations/CreateSuperClass.henshin",
+			"transformations/PullUpMethod.henshin");
 
 	/**
 	 * Units that will be used as transformation rules
 	 */
 	@Parameter(names = { "-u", "--units" }, description = "units that will be used as transformation rules")
-	public static List<String> units = Arrays.asList("MoveMethod::rules::MoveMethod",
-			"MoveMethod::rules::changeMethodVisibility", "MoveMethod::rules::changeFieldVisibility");
+	public static List<String> units = Arrays.asList("MoveMethod::rules::MoveMethod-static",
+			"MoveMethod::rules::MoveMethod-param", "MoveMethod::rules::MoveMethod-field",
+			"ChangeVisibilities::rules::changeMethodVisibility", "MoveMethod::rules::changeFieldVisibility",
+			"CreateSuperClass::CreateSuperClass-SameParent",
+			"CreateSuperClass::CreateSuperClass-NoParent",
+			"PullUpMethod::pullUpMethod");
 
 	/**
 	 * Flag to toggle usage of custom DominanceComperator
@@ -120,7 +126,7 @@ public class SearchParameters {
 	 * Weights used for dominance comparation
 	 */
 	@Parameter(names = { "-w", "--weight" }, description = "weights used for dominance comparation")
-	public static List<Double> weight = Arrays.asList(1.0, 1.0, 1.0, 1.0, 1.0);
+	public static List<Double> weight = Arrays.asList(1.0, 1.0, 1.0, 1.0, 1.0, 1.0);
 
 	/**
 	 * Value for public access modifier used in metric calculation
@@ -140,7 +146,7 @@ public class SearchParameters {
 	 * Value for public access modifier used in metric calculation
 	 */
 	@Parameter(names = { "-pav",
-	"--package_value" }, description = "Value for public access modifier used in metric calculation")
+	"--package_value" }, description = "Value for package access modifier used in metric calculation")
 	public static int packageValue = 1;
 
 	/**
@@ -150,4 +156,11 @@ public class SearchParameters {
 	"--private_value" }, description = "Value for private access modifier used in metric calculation")
 	public static int privateValue = 0;
 
+	@Parameter(names = { "-ov",
+	"--opt-visibility" }, description = "If visibilities should be considered as optimization objective")
+	public static boolean optimizeVisibility = false;
+
+	@Parameter(names = { "-os",
+	"--opt-security" }, description = "If security metrics should be considered as optimization objective")
+	public static boolean optimizeSecurity = false;
 }

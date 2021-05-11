@@ -3,7 +3,6 @@ package org.gravity.goblin.orchestration;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -17,7 +16,6 @@ import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.goblin.EGraphUtil;
 import org.gravity.goblin.preconditions.MoveMethodPreConditions;
-import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -27,8 +25,6 @@ import org.gravity.typegraph.basic.TSignature;
 import at.ac.tuwien.big.moea.util.CollectionUtil;
 import at.ac.tuwien.big.momot.TransformationSearchOrchestration;
 import at.ac.tuwien.big.momot.problem.solution.variable.ITransformationVariable;
-import at.ac.tuwien.big.momot.problem.solution.variable.RuleApplicationVariable;
-import at.ac.tuwien.big.momot.problem.solution.variable.UnitApplicationVariable;
 import at.ac.tuwien.big.momot.search.solution.executor.SearchHelper;
 
 /**
@@ -50,7 +46,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 
 	private final MoveMethodTransformationSearchOrchestration orchestration;
 
-	public MoveMethodSearchHelper(MoveMethodTransformationSearchOrchestration orchestration) {
+	public MoveMethodSearchHelper(final MoveMethodTransformationSearchOrchestration orchestration) {
 		this.orchestration = orchestration;
 		this.engine = orchestration.getEngine();
 	}
@@ -66,7 +62,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		throw new UnsupportedOperationException();
 	}
 
-	private TClass getDifferentRandomClass(EGraph graph, TClass otherTClass) {
+	private TClass getDifferentRandomClass(final EGraph graph, final TClass otherTClass) {
 		final List<TClass> classes = EGraphUtil.getPG(graph).getDeclaredTClasses();
 		classes.remove(otherTClass);
 		if (classes.isEmpty()) {
@@ -75,15 +71,15 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		if (classes.size() == 1) {
 			return classes.get(0);
 		}
-		final int index = getRandom().nextInt(classes.size());
+		final var index = getRandom().nextInt(classes.size());
 		return classes.get(index);
 	}
 
-	private TMethodSignature getRandomMethodSig(TClass sourceClass) {
+	private TMethodSignature getRandomMethodSig(final TClass sourceClass) {
 		final List<TMethodSignature> methodSigs = new ArrayList<>();
 		for (final TSignature sig : sourceClass.getSignature()) {
 			if (sig instanceof TMethodSignature) {
-				final TMethodSignature tMethodSignature = (TMethodSignature) sig;
+				final var tMethodSignature = (TMethodSignature) sig;
 				if (MoveMethodPreConditions.methodPreconditions(tMethodSignature, sourceClass)) {
 					methodSigs.add(tMethodSignature);
 				}
@@ -96,27 +92,27 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		if (methodSigs.size() == 1) {
 			return methodSigs.get(0);
 		}
-		final int index = getRandom().nextInt(methodSigs.size());
+		final var index = getRandom().nextInt(methodSigs.size());
 		return methodSigs.get(index);
 	}
 
-	private ITransformationVariable moveMethodTransformationVariable(EGraph graph, int maxTries, Unit chosenUnit) {
+	private ITransformationVariable moveMethodTransformationVariable(final EGraph graph, final int maxTries, final Unit chosenUnit) {
 
 		final Assignment assignment = new AssignmentImpl(chosenUnit);
-		final Parameter sourceClassParam = chosenUnit.getParameter("sourceClass");
-		final Parameter targetClassParam = chosenUnit.getParameter("targetClass");
-		final Parameter methodSigParam = chosenUnit.getParameter("methodSig");
+		final var sourceClassParam = chosenUnit.getParameter("sourceClass");
+		final var targetClassParam = chosenUnit.getParameter("targetClass");
+		final var methodSigParam = chosenUnit.getParameter("methodSig");
 
 		return getMove(graph, maxTries, assignment, sourceClassParam, targetClassParam, methodSigParam);
 	}
 
-	private ITransformationVariable getMove(EGraph graph, int maxTries, Assignment assignment,
-			Parameter sourceClassParam, Parameter targetClassParam, Parameter methodSigParam) {
-		for (int i = 0; i < 10 * maxTries; i++) {
-			final TClass sourceClass = getDifferentRandomClass(graph, null);
+	private ITransformationVariable getMove(final EGraph graph, final int maxTries, final Assignment assignment,
+			final Parameter sourceClassParam, final Parameter targetClassParam, final Parameter methodSigParam) {
+		for (var i = 0; i < (10 * maxTries); i++) {
+			final var sourceClass = getDifferentRandomClass(graph, null);
 			assignment.setParameterValue(sourceClassParam, sourceClass);
 
-			final TMethodSignature methodSig = getRandomMethodSig(sourceClass);
+			final var methodSig = getRandomMethodSig(sourceClass);
 			if (methodSig == null) {
 				continue;
 			}
@@ -124,15 +120,15 @@ public class MoveMethodSearchHelper extends SearchHelper {
 
 			final Set<TClass> possibleTargets = new HashSet<>();
 			for (final TParameter tParam : methodSig.getParameters()) {
-				final TAbstractType tType = tParam.getType();
-				if (tType instanceof TClass && !tType.getSignature().contains(methodSig)) {
+				final var tType = tParam.getType();
+				if ((tType instanceof TClass) && !tType.getSignature().contains(methodSig)) {
 					possibleTargets.add((TClass) tType);
 				}
 			}
 			for (final TSignature tSig : sourceClass.getSignature()) {
 				if (tSig instanceof TFieldSignature) {
-					final TAbstractType tType = ((TFieldSignature) tSig).getType();
-					if (tType instanceof TClass && !tType.getSignature().contains(methodSig)) {
+					final var tType = ((TFieldSignature) tSig).getType();
+					if ((tType instanceof TClass) && !tType.getSignature().contains(methodSig)) {
 						possibleTargets.add(((TClass) tType));
 
 					}
@@ -142,10 +138,10 @@ public class MoveMethodSearchHelper extends SearchHelper {
 				continue;
 			}
 
-			final TClass targetClass = (TClass) possibleTargets.toArray()[this.random.nextInt(possibleTargets.size())];
+			final var targetClass = (TClass) possibleTargets.toArray()[this.random.nextInt(possibleTargets.size())];
 			assignment.setParameterValue(targetClassParam, targetClass);
 
-			final UnitApplicationVariable application = createApplication(graph, assignment);
+			final var application = createApplication(graph, assignment);
 
 			if (application.execute(getMonitor())) {
 				application.setAssignment(application.getResultAssignment());
@@ -163,7 +159,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		final List<? extends Unit> units = new ArrayList<>(getUnits());
 		final Unit chosenUnit = CollectionUtil.getRandomElement(units);
 
-		if (chosenUnit.getName().equals("MoveMethodMain")) {
+		if (chosenUnit.getName().equals("MoveMethod")) {
 			return moveMethodTransformationVariable(graph, maxTries, chosenUnit);
 		} else {
 			return findUnitApplication(graph, maxTries, units, chosenUnit);
@@ -171,24 +167,24 @@ public class MoveMethodSearchHelper extends SearchHelper {
 
 	}
 
-	private ITransformationVariable findUnitApplication(EGraph graph, int maxTries, List<? extends Unit> units,
+	private ITransformationVariable findUnitApplication(final EGraph graph, final int maxTries, final List<? extends Unit> units,
 			Unit chosenUnit) {
 		// try to apply rule until match is found or maxRuleTries is reached
-		int nrUnitTries = maxTries;
+		var nrUnitTries = maxTries;
 
 		while (chosenUnit != null) {
 			// create assignment with user-defined parameter values
-			final Assignment partialMatch = createPartialAssignment(chosenUnit);
+			final var partialMatch = createPartialAssignment(chosenUnit);
 
 			if (chosenUnit instanceof Rule) {
 				// find matches
-				final Iterator<Match> foundMatches = getEngine()
+				final var foundMatches = getEngine()
 						.findMatches((Rule) chosenUnit, graph, (Match) partialMatch).iterator();
 
-				if (foundMatches != null && foundMatches.hasNext()) {
+				if ((foundMatches != null) && foundMatches.hasNext()) {
 					// match found - break loop, return match
-					final Match match = foundMatches.next();
-					final RuleApplicationVariable application = createApplication(graph, match);
+					final var match = foundMatches.next();
+					final var application = createApplication(graph, match);
 					if (application.execute(getMonitor())) {
 						for (final Parameter param : chosenUnit.getParameters()) {
 							application.setParameterValue(param, application.getResultParameterValue(param));
@@ -199,7 +195,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 					}
 				}
 			} else {
-				final UnitApplicationVariable application = createApplication(graph, partialMatch);
+				final var application = createApplication(graph, partialMatch);
 				if (application.execute(getMonitor())) {
 					application.setAssignment(application.getResultAssignment());
 					return cleanVariable(application);

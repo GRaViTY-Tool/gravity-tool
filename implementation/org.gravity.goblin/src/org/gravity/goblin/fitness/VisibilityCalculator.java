@@ -1,15 +1,16 @@
 package org.gravity.goblin.fitness;
 
-import org.eclipse.emf.common.util.EList;
+import org.gravity.hulk.HulkAPI;
+import org.gravity.hulk.HulkAPI.AntiPatternNames;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsPackage;
+import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
-import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 /**
- * 
+ *
  * A calculator for a simple visibility metric
- * 
+ *
  * @author sruland
  * @author speldszus
  *
@@ -17,16 +18,20 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 public class VisibilityCalculator extends MetricCalculator {
 
 	@Override
-	public double calculate(TypeGraph pg) {
+	public double calculate(final TypeGraph pg) {
 		if (pg == null) {
 			throw new IllegalStateException("PG not found!");
 		}
-
-		EList<TAnnotation> metrics = pg.getTAnnotation(MetricsPackage.eINSTANCE.getHTotalVisibilityMetric());
+		try {
+			HulkAPI.detect(pg, "", AntiPatternNames.TOTAL_METHOD_VISIBILITY);
+		} catch (final DetectionFailedException e) {
+			return -1;
+		}
+		final var metrics = pg.getTAnnotation(MetricsPackage.eINSTANCE.getHTotalVisibilityMetric());
 		if(metrics.size() != 1) {
 			throw new IllegalStateException("Unexpected number of metrics");
 		}
-		
+
 		return ((HMetric) metrics.get(0)).getValue();
 	}
 

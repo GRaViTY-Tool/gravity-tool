@@ -1,19 +1,16 @@
 package org.gravity.goblin.repair;
 
 import java.util.List;
-import org.apache.log4j.Logger;
 
-import org.eclipse.emf.henshin.interpreter.EGraph;
+import org.apache.log4j.Logger;
 import org.gravity.goblin.EGraphUtil;
 import org.gravity.goblin.preconditions.ChangeVisibilityPreConditions;
 import org.gravity.hulk.antipatterngraph.metrics.HIGAMMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TConstructor;
+import org.gravity.typegraph.basic.TEnum;
 import org.gravity.typegraph.basic.TMethodDefinition;
-import org.gravity.typegraph.basic.TModifier;
-import org.gravity.typegraph.basic.TVisibility;
-import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
@@ -21,7 +18,7 @@ import at.ac.tuwien.big.momot.search.solution.repair.AbstractTransformationSolut
 
 /**
  * Repairs broken visibilities after the application of refactorings
- * 
+ *
  * @author speldszus
  *
  */
@@ -30,11 +27,11 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer {
 	private static final Logger LOGGER = Logger.getLogger(VisibilityRepairer.class.getName());
 
 	@Override
-	public TransformationSolution repair(TransformationSolution solution) {
-		EGraph graph = solution.getResultGraph();
-		TypeGraph pg = EGraphUtil.getPG(graph);
+	public TransformationSolution repair(final TransformationSolution solution) {
+		final var graph = solution.getResultGraph();
+		final var pg = EGraphUtil.getPG(graph);
 
-		for (TClass tClass : pg.getDeclaredTClasses()) {
+		for (final TClass tClass : pg.getDeclaredTClasses()) {
 			repair(tClass);
 		}
 		return solution;
@@ -42,25 +39,34 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer {
 
 	/**
 	 * Repair the visibilities of the members of the given class
-	 * 
+	 *
 	 * @param tClass The class whose members visibility should be repaired
 	 */
-	private void repair(TClass tClass) {
-		for (TMethodDefinition tDef : tClass.getDeclaredTMethodDefinitions()) {
-			List<TAnnotation> metrics = tDef.getTAnnotation(MetricsPackage.eINSTANCE.getHIGAMMetric());
+	private void repair(final TClass tClass) {
+		final var isEnum = TEnum.isEnum(tClass);
+		for (final TMethodDefinition definition : tClass.getDeclaredTMethodDefinitions()) {
+			final var name = definition.getSignature().getMethod().getTName();
+			if("toString".equals(name)) {
+				continue;
+			}
+			if ((isEnum && ("values".equals(name) || "valueOf".equals(name))) || "initializer".equals(name)) {
+				continue;
+			}
+			final List<TAnnotation> metrics = definition.getTAnnotation(MetricsPackage.eINSTANCE.getHIGAMMetric());
 			if (metrics.size() != 1) {
-				if (TConstructor.isConstructor(tDef)) {
-					LOGGER.warn("Unexpected amount of metrics for \"" + tClass.getFullyQualifiedName()
-							+ "->" + tDef.getSignatureString() + "\".");
+				if (TConstructor.isConstructor(definition)) {
+					LOGGER.warn("Unexpected amount of metrics for \"" + tClass.getFullyQualifiedName() + "->"
+							+ definition.getSignatureString() + "\".");
 				} else {
-					throw new IllegalStateException("Unexpected amount of metrics for \""
-							+ tClass.getFullyQualifiedName() + "->" + tDef.getSignatureString() + "\".");
+					LOGGER.error("Unexpected amount of metrics ("+metrics.size()
+					+ ") for \""
+					+ tClass.getFullyQualifiedName() + "->" + definition.getSignatureString() + "\".");
 				}
 			} else {
-				TModifier tModifier = tDef.getTModifier();
-				TVisibility hMinVis = ((HIGAMMetric) metrics.get(0)).getHMinVis();
-				if (hMinVis.ordinal() > tModifier.getTVisibility().ordinal()
-						&& ChangeVisibilityPreConditions.checkPreconditions(tDef, tClass)) {
+				final var tModifier = definition.getTModifier();
+				final var hMinVis = ((HIGAMMetric) metrics.get(0)).getHMinVis();
+				if ((hMinVis.ordinal() > tModifier.getTVisibility().ordinal())
+						&& ChangeVisibilityPreConditions.checkPreconditions(definition, tClass)) {
 					tModifier.setTVisibility(hMinVis);
 				}
 			}

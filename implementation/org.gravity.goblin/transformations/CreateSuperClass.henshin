@@ -2,14 +2,11 @@
 <henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_K_pGkLWfEeiHxtaJPOhGLA">
   <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_Mh6xoLWfEeiHxtaJPOhGLA" name="CreateSuperClass-SameParent">
-    <annotations xmi:id="_MJpJpfg-EeqiOuiwEWYNqQ" key="featureConstraint" value=""/>
-    <annotations xmi:id="_MJpJpvg-EeqiOuiwEWYNqQ" key="injectiveMatchingPresenceCondition" value=""/>
-    <annotations xmi:id="_MJpJp_g-EeqiOuiwEWYNqQ" key="features" value=""/>
-    <parameters xmi:id="_zPO5YLczEeiYLM5pT2OaBA" name="parentVis">
+    <parameters xmi:id="_zPO5YLczEeiYLM5pT2OaBA" name="parentVis" kind="VAR">
       <type xsi:type="ecore:EEnum" href="http://www.gravity-tool.org/typegraph/basic#//TVisibility"/>
     </parameters>
     <lhs xmi:id="_MiOToLWfEeiHxtaJPOhGLA" name="Lhs">
-      <nodes xmi:id="_PtNB4LWfEeiHxtaJPOhGLA" name="" incoming="_VwI0sLWfEeiHxtaJPOhGLA _WUVG4LWfEeiHxtaJPOhGLA" outgoing="_tP0rALaLEeilKuzrEwthbQ _KcSd0LaPEei_2LPeSk39dA">
+      <nodes xmi:id="_PtNB4LWfEeiHxtaJPOhGLA" name="" incoming="_WUVG4LWfEeiHxtaJPOhGLA _VwI0sLWfEeiHxtaJPOhGLA" outgoing="_tP0rALaLEeilKuzrEwthbQ _KcSd0LaPEei_2LPeSk39dA">
         <annotations xmi:id="_MJk4MPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
       </nodes>
@@ -18,14 +15,6 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="_-SjEsLWlEeiHxtaJPOhGLA" value="false">
           <annotations xmi:id="_MJnUcfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        </attributes>
-      </nodes>
-      <nodes xmi:id="_RiGuALWfEeiHxtaJPOhGLA" incoming="_6MIzgLWmEeiV3ZR7k4DLVQ" outgoing="_VwI0sLWfEeiHxtaJPOhGLA">
-        <annotations xmi:id="_MJnUcvg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_9WRCoLWlEeiHxtaJPOhGLA" value="false">
-          <annotations xmi:id="_MJnUc_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
@@ -45,20 +34,20 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TModifier/tVisibility"/>
         </attributes>
       </nodes>
-      <edges xmi:id="_VwI0sLWfEeiHxtaJPOhGLA" source="_RiGuALWfEeiHxtaJPOhGLA" target="_PtNB4LWfEeiHxtaJPOhGLA">
-        <annotations xmi:id="_MJn7hPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
-      </edges>
+      <nodes xmi:id="_RiGuALWfEeiHxtaJPOhGLA" incoming="_6MIzgLWmEeiV3ZR7k4DLVQ" outgoing="_VwI0sLWfEeiHxtaJPOhGLA">
+        <annotations xmi:id="_MJnUcvg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_9WRCoLWlEeiHxtaJPOhGLA" value="false">
+          <annotations xmi:id="_MJnUc_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
       <edges xmi:id="_WUVG4LWfEeiHxtaJPOhGLA" source="_Q_cs4LWfEeiHxtaJPOhGLA" target="_PtNB4LWfEeiHxtaJPOhGLA">
         <annotations xmi:id="_MJn7hfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>
       </edges>
       <edges xmi:id="_5J3eMLWmEeiV3ZR7k4DLVQ" source="_1ibdcLWmEeiV3ZR7k4DLVQ" target="_Q_cs4LWfEeiHxtaJPOhGLA">
         <annotations xmi:id="_MJn7hvg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-      </edges>
-      <edges xmi:id="_6MIzgLWmEeiV3ZR7k4DLVQ" source="_1ibdcLWmEeiV3ZR7k4DLVQ" target="_RiGuALWfEeiHxtaJPOhGLA">
-        <annotations xmi:id="_MJn7h_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </edges>
       <edges xmi:id="_tP0rALaLEeilKuzrEwthbQ" source="_PtNB4LWfEeiHxtaJPOhGLA" target="_PiVucLaLEeilKuzrEwthbQ">
@@ -68,6 +57,14 @@
       <edges xmi:id="_KcSd0LaPEei_2LPeSk39dA" source="_PtNB4LWfEeiHxtaJPOhGLA" target="_HLQx8LaPEei_2LPeSk39dA">
         <annotations xmi:id="_MJn7ifg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tModifier"/>
+      </edges>
+      <edges xmi:id="_6MIzgLWmEeiV3ZR7k4DLVQ" source="_1ibdcLWmEeiV3ZR7k4DLVQ" target="_RiGuALWfEeiHxtaJPOhGLA">
+        <annotations xmi:id="_MJn7h_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_VwI0sLWfEeiHxtaJPOhGLA" source="_RiGuALWfEeiHxtaJPOhGLA" target="_PtNB4LWfEeiHxtaJPOhGLA">
+        <annotations xmi:id="_MJn7hPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>
       </edges>
     </lhs>
     <rhs xmi:id="_MiOTobWfEeiHxtaJPOhGLA" name="Rhs">
@@ -83,15 +80,7 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_RiHVELWfEeiHxtaJPOhGLA" incoming="_6MIzgbWmEeiV3ZR7k4DLVQ" outgoing="_fHxScLWfEeiHxtaJPOhGLA">
-        <annotations xmi:id="_MJn7jfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_9WaMkLWlEeiHxtaJPOhGLA" value="false">
-          <annotations xmi:id="_MJn7jvg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        </attributes>
-      </nodes>
-      <nodes xmi:id="_dZOtALWfEeiHxtaJPOhGLA" incoming="_fHxScLWfEeiHxtaJPOhGLA _hueO8LWfEeiHxtaJPOhGLA _6mMSQLWmEeiV3ZR7k4DLVQ _67qzALWmEeiV3ZR7k4DLVQ _TtAYELaLEeilKuzrEwthbQ _sN7JILaLEeilKuzrEwthbQ" outgoing="_mNCsALWfEeiHxtaJPOhGLA _A4SYALaPEei_2LPeSk39dA">
+      <nodes xmi:id="_dZOtALWfEeiHxtaJPOhGLA" incoming="_hueO8LWfEeiHxtaJPOhGLA _6mMSQLWmEeiV3ZR7k4DLVQ _67qzALWmEeiV3ZR7k4DLVQ _TtAYELaLEeilKuzrEwthbQ _sN7JILaLEeilKuzrEwthbQ _fHxScLWfEeiHxtaJPOhGLA" outgoing="_mNCsALWfEeiHxtaJPOhGLA _A4SYALaPEei_2LPeSk39dA">
         <annotations xmi:id="_MJoikPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="_AvavwLWmEeiHxtaJPOhGLA" value="&quot;NewSuperClass&quot;">
@@ -99,7 +88,7 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_2eUd8LWmEeiV3ZR7k4DLVQ" outgoing="_5J4FQLWmEeiV3ZR7k4DLVQ _6MIzgbWmEeiV3ZR7k4DLVQ _6mMSQLWmEeiV3ZR7k4DLVQ _67qzALWmEeiV3ZR7k4DLVQ">
+      <nodes xmi:id="_2eUd8LWmEeiV3ZR7k4DLVQ" outgoing="_5J4FQLWmEeiV3ZR7k4DLVQ _6mMSQLWmEeiV3ZR7k4DLVQ _67qzALWmEeiV3ZR7k4DLVQ _6MIzgbWmEeiV3ZR7k4DLVQ">
         <annotations xmi:id="_MJoikvg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       </nodes>
@@ -127,24 +116,24 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TModifier/tVisibility"/>
         </attributes>
       </nodes>
-      <edges xmi:id="_fHxScLWfEeiHxtaJPOhGLA" source="_RiHVELWfEeiHxtaJPOhGLA" target="_dZOtALWfEeiHxtaJPOhGLA">
-        <annotations xmi:id="_MJoimfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
-      </edges>
+      <nodes xmi:id="_RiHVELWfEeiHxtaJPOhGLA" incoming="_6MIzgbWmEeiV3ZR7k4DLVQ" outgoing="_fHxScLWfEeiHxtaJPOhGLA">
+        <annotations xmi:id="_MJn7jfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_9WaMkLWlEeiHxtaJPOhGLA" value="false">
+          <annotations xmi:id="_MJn7jvg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
       <edges xmi:id="_hueO8LWfEeiHxtaJPOhGLA" source="_Q_dT8LWfEeiHxtaJPOhGLA" target="_dZOtALWfEeiHxtaJPOhGLA">
         <annotations xmi:id="_MJoimvg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>
       </edges>
       <edges xmi:id="_mNCsALWfEeiHxtaJPOhGLA" source="_dZOtALWfEeiHxtaJPOhGLA" target="_PtNB4bWfEeiHxtaJPOhGLA">
         <annotations xmi:id="_MJoim_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>
       </edges>
       <edges xmi:id="_5J4FQLWmEeiV3ZR7k4DLVQ" source="_2eUd8LWmEeiV3ZR7k4DLVQ" target="_Q_dT8LWfEeiHxtaJPOhGLA">
         <annotations xmi:id="_MJoinPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-      </edges>
-      <edges xmi:id="_6MIzgbWmEeiV3ZR7k4DLVQ" source="_2eUd8LWmEeiV3ZR7k4DLVQ" target="_RiHVELWfEeiHxtaJPOhGLA">
-        <annotations xmi:id="_MJoinfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </edges>
       <edges xmi:id="_6mMSQLWmEeiV3ZR7k4DLVQ" source="_2eUd8LWmEeiV3ZR7k4DLVQ" target="_dZOtALWfEeiHxtaJPOhGLA">
@@ -175,13 +164,21 @@
         <annotations xmi:id="_MJpJpPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tModifier"/>
       </edges>
+      <edges xmi:id="_6MIzgbWmEeiV3ZR7k4DLVQ" source="_2eUd8LWmEeiV3ZR7k4DLVQ" target="_RiHVELWfEeiHxtaJPOhGLA">
+        <annotations xmi:id="_MJoinfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_fHxScLWfEeiHxtaJPOhGLA" source="_RiHVELWfEeiHxtaJPOhGLA" target="_dZOtALWfEeiHxtaJPOhGLA">
+        <annotations xmi:id="_MJoimfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>
+      </edges>
     </rhs>
     <mappings xmi:id="_PtNB4rWfEeiHxtaJPOhGLA" origin="_PtNB4LWfEeiHxtaJPOhGLA" image="_PtNB4bWfEeiHxtaJPOhGLA"/>
     <mappings xmi:id="_Q_d7ALWfEeiHxtaJPOhGLA" origin="_Q_cs4LWfEeiHxtaJPOhGLA" image="_Q_dT8LWfEeiHxtaJPOhGLA"/>
-    <mappings xmi:id="_RiHVEbWfEeiHxtaJPOhGLA" origin="_RiGuALWfEeiHxtaJPOhGLA" image="_RiHVELWfEeiHxtaJPOhGLA"/>
     <mappings xmi:id="_2eVFALWmEeiV3ZR7k4DLVQ" origin="_1ibdcLWmEeiV3ZR7k4DLVQ" image="_2eUd8LWmEeiV3ZR7k4DLVQ"/>
     <mappings xmi:id="_PiVucraLEeilKuzrEwthbQ" origin="_PiVucLaLEeilKuzrEwthbQ" image="_PiVucbaLEeilKuzrEwthbQ"/>
     <mappings xmi:id="_HLRZAbaPEei_2LPeSk39dA" origin="_HLQx8LaPEei_2LPeSk39dA" image="_HLRZALaPEei_2LPeSk39dA"/>
+    <mappings xmi:id="_RiHVEbWfEeiHxtaJPOhGLA" origin="_RiGuALWfEeiHxtaJPOhGLA" image="_RiHVELWfEeiHxtaJPOhGLA"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_zB3CULWfEeiHxtaJPOhGLA" name="CreateSuperClass-NoParent">
     <annotations xmi:id="_jLFE9Pg-EeqiOuiwEWYNqQ" key="featureConstraint" value=""/>
@@ -196,7 +193,7 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_zB3CVLWfEeiHxtaJPOhGLA" name="child1" incoming="_yHxUcLWmEeiV3ZR7k4DLVQ" outgoing="_zB3CVbWfEeiHxtaJPOhGLA">
+      <nodes xmi:id="_zB3CVLWfEeiHxtaJPOhGLA" name="child1" incoming="_yHxUcLWmEeiV3ZR7k4DLVQ" outgoing="_zB3CVbWfEeiHxtaJPOhGLA _35hpUKEIEeu0y68bEye6ag">
         <annotations xmi:id="_jLCosPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="__D3M4LWlEeiHxtaJPOhGLA" value="false">
@@ -204,11 +201,11 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_uMPTALWmEeiV3ZR7k4DLVQ" outgoing="_xhA2cLWmEeiV3ZR7k4DLVQ _yHxUcLWmEeiV3ZR7k4DLVQ _RUawELaLEeilKuzrEwthbQ">
+      <nodes xmi:id="_uMPTALWmEeiV3ZR7k4DLVQ" outgoing="_xhA2cLWmEeiV3ZR7k4DLVQ _yHxUcLWmEeiV3ZR7k4DLVQ">
         <annotations xmi:id="_jLCosfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       </nodes>
-      <nodes xmi:id="_O810sLaLEeilKuzrEwthbQ" incoming="_RUawELaLEeilKuzrEwthbQ">
+      <nodes xmi:id="_O810sLaLEeilKuzrEwthbQ" incoming="_35hpUKEIEeu0y68bEye6ag">
         <annotations xmi:id="_jLCosvg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
       </nodes>
@@ -219,6 +216,9 @@
           <annotations xmi:id="_8z_EtPgxEeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
+        <attributes xmi:id="_1T2nkKEIEeu0y68bEye6ag" value="true">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        </attributes>
       </nodes>
       <edges xmi:id="_xhA2cLWmEeiV3ZR7k4DLVQ" source="_uMPTALWmEeiV3ZR7k4DLVQ" target="_zB3CU7WfEeiHxtaJPOhGLA">
         <annotations xmi:id="_jLCotPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
@@ -228,92 +228,20 @@
         <annotations xmi:id="_jLCotfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </edges>
-      <edges xmi:id="_RUawELaLEeilKuzrEwthbQ" source="_uMPTALWmEeiV3ZR7k4DLVQ" target="_O810sLaLEeilKuzrEwthbQ">
-        <annotations xmi:id="_jLDPwPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/packages"/>
-      </edges>
       <edges xmi:id="_zB3CVbWfEeiHxtaJPOhGLA" source="_zB3CVLWfEeiHxtaJPOhGLA" target="_zB3CUrWfEeiHxtaJPOhGLA">
         <annotations xmi:id="_jLDPwfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>
       </edges>
       <edges xmi:id="_zB3CVrWfEeiHxtaJPOhGLA" source="_zB3CU7WfEeiHxtaJPOhGLA" target="_zB3CUrWfEeiHxtaJPOhGLA">
         <annotations xmi:id="_jLDPwvg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>
       </edges>
-      <formula xsi:type="henshin:Not" xmi:id="_rIyX0Pg9EeqiOuiwEWYNqQ">
-        <child xsi:type="henshin:NestedCondition" xmi:id="_rIyX0fg9EeqiOuiwEWYNqQ">
-          <annotations xmi:id="_jLDPw_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-          <conclusion xmi:id="_rIyX0vg9EeqiOuiwEWYNqQ">
-            <nodes xmi:id="_rIyX0_g9EeqiOuiwEWYNqQ" name="child1" incoming="_rIyX3Pg9EeqiOuiwEWYNqQ" outgoing="_rIy-5fg9EeqiOuiwEWYNqQ">
-              <annotations xmi:id="_jLDPxPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-              <attributes xmi:id="_rIyX1fg9EeqiOuiwEWYNqQ" value="false">
-                <annotations xmi:id="_rIyX1vg9EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-                <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-              </attributes>
-              <attributes xmi:id="_9kGckPg9EeqiOuiwEWYNqQ" value="&quot;T&quot;">
-                <annotations xmi:id="_DXhMsPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-                <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
-              </attributes>
-              <attributes xmi:id="_AxzHoPg-EeqiOuiwEWYNqQ" value="&quot;Anonymous&quot;">
-                <annotations xmi:id="_DXhzwPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-                <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
-              </attributes>
-            </nodes>
-            <nodes xmi:id="_rIyX2fg9EeqiOuiwEWYNqQ" outgoing="_rIyX3Pg9EeqiOuiwEWYNqQ _HlJqx_g-EeqiOuiwEWYNqQ">
-              <annotations xmi:id="_jLDPxfg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
-            </nodes>
-            <nodes xmi:id="_rIy-4Pg9EeqiOuiwEWYNqQ" incoming="_rIy-5fg9EeqiOuiwEWYNqQ _HlKR0Pg-EeqiOuiwEWYNqQ">
-              <annotations xmi:id="_jLDPxvg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
-              <attributes xmi:id="_rIy-4vg9EeqiOuiwEWYNqQ" value="&quot;Object&quot;">
-                <annotations xmi:id="_rIy-4_g9EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-                <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
-              </attributes>
-            </nodes>
-            <nodes xmi:id="_HlJqwPg-EeqiOuiwEWYNqQ" name="child2" incoming="_HlJqx_g-EeqiOuiwEWYNqQ" outgoing="_HlKR0Pg-EeqiOuiwEWYNqQ">
-              <annotations xmi:id="_jLDPx_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-              <attributes xmi:id="_HlJqwvg-EeqiOuiwEWYNqQ" value="false">
-                <annotations xmi:id="_HlJqw_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-                <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-              </attributes>
-              <attributes xmi:id="_bBY_4Lc0EeiYLM5pT2OaBA" value="&quot;T&quot;">
-                <annotations xmi:id="_8z-doPgxEeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-                <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
-              </attributes>
-              <attributes xmi:id="_JOwF0Pg-EeqiOuiwEWYNqQ" value="&quot;Anonymous&quot;">
-                <annotations xmi:id="_K1eMAPg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-                <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
-              </attributes>
-            </nodes>
-            <edges xmi:id="_rIyX3Pg9EeqiOuiwEWYNqQ" source="_rIyX2fg9EeqiOuiwEWYNqQ" target="_rIyX0_g9EeqiOuiwEWYNqQ">
-              <annotations xmi:id="_jLD20Pg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-            </edges>
-            <edges xmi:id="_rIy-5fg9EeqiOuiwEWYNqQ" source="_rIyX0_g9EeqiOuiwEWYNqQ" target="_rIy-4Pg9EeqiOuiwEWYNqQ">
-              <annotations xmi:id="_jLD20fg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
-            </edges>
-            <edges xmi:id="_HlJqx_g-EeqiOuiwEWYNqQ" source="_rIyX2fg9EeqiOuiwEWYNqQ" target="_HlJqwPg-EeqiOuiwEWYNqQ">
-              <annotations xmi:id="_jLD20vg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-            </edges>
-            <edges xmi:id="_HlKR0Pg-EeqiOuiwEWYNqQ" source="_HlJqwPg-EeqiOuiwEWYNqQ" target="_rIy-4Pg9EeqiOuiwEWYNqQ">
-              <annotations xmi:id="_jLD20_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
-            </edges>
-          </conclusion>
-          <mappings xmi:id="_rIyX2Pg9EeqiOuiwEWYNqQ" origin="_zB3CVLWfEeiHxtaJPOhGLA" image="_rIyX0_g9EeqiOuiwEWYNqQ"/>
-          <mappings xmi:id="_rIyX2_g9EeqiOuiwEWYNqQ" origin="_uMPTALWmEeiV3ZR7k4DLVQ" image="_rIyX2fg9EeqiOuiwEWYNqQ"/>
-          <mappings xmi:id="_rIy-5Pg9EeqiOuiwEWYNqQ" origin="_zB3CUrWfEeiHxtaJPOhGLA" image="_rIy-4Pg9EeqiOuiwEWYNqQ"/>
-          <mappings xmi:id="_HlJqxvg-EeqiOuiwEWYNqQ" origin="_zB3CU7WfEeiHxtaJPOhGLA" image="_HlJqwPg-EeqiOuiwEWYNqQ"/>
-        </child>
-      </formula>
+      <edges xmi:id="_35hpUKEIEeu0y68bEye6ag" source="_zB3CVLWfEeiHxtaJPOhGLA" target="_O810sLaLEeilKuzrEwthbQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/package"/>
+      </edges>
     </lhs>
     <rhs xmi:id="_zB3CV7WfEeiHxtaJPOhGLA" name="Rhs">
-      <nodes xmi:id="_zB3CWbWfEeiHxtaJPOhGLA" incoming="_xhDSsLWmEeiV3ZR7k4DLVQ" outgoing="_zB3CXbWfEeiHxtaJPOhGLA _cDOlMkzCEemYW_KBiJlMkw">
+      <nodes xmi:id="_zB3CWbWfEeiHxtaJPOhGLA" incoming="_xhDSsLWmEeiV3ZR7k4DLVQ" outgoing="_zB3CXbWfEeiHxtaJPOhGLA">
         <annotations xmi:id="_jLD21Pg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="__qgWIbWlEeiHxtaJPOhGLA" value="false">
@@ -321,7 +249,7 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_zB3CWrWfEeiHxtaJPOhGLA" incoming="_yHxUcbWmEeiV3ZR7k4DLVQ" outgoing="_zB3CXLWfEeiHxtaJPOhGLA _cDOlMUzCEemYW_KBiJlMkw">
+      <nodes xmi:id="_zB3CWrWfEeiHxtaJPOhGLA" incoming="_yHxUcbWmEeiV3ZR7k4DLVQ" outgoing="_zB3CXLWfEeiHxtaJPOhGLA _35hpUaEIEeu0y68bEye6ag">
         <annotations xmi:id="_jLD21fg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="__D3z8LWlEeiHxtaJPOhGLA" value="false">
@@ -337,11 +265,11 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_uMP6ELWmEeiV3ZR7k4DLVQ" outgoing="_xhDSsLWmEeiV3ZR7k4DLVQ _yHxUcbWmEeiV3ZR7k4DLVQ _ysNeQLWmEeiV3ZR7k4DLVQ _zDZ2QLWmEeiV3ZR7k4DLVQ _RUbXILaLEeilKuzrEwthbQ">
+      <nodes xmi:id="_uMP6ELWmEeiV3ZR7k4DLVQ" outgoing="_xhDSsLWmEeiV3ZR7k4DLVQ _yHxUcbWmEeiV3ZR7k4DLVQ _ysNeQLWmEeiV3ZR7k4DLVQ _zDZ2QLWmEeiV3ZR7k4DLVQ">
         <annotations xmi:id="_jLD21_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       </nodes>
-      <nodes xmi:id="_O83C0LaLEeilKuzrEwthbQ" incoming="_RUbXILaLEeilKuzrEwthbQ" outgoing="_Se_s0LaLEeilKuzrEwthbQ _S_nGkLaLEeilKuzrEwthbQ">
+      <nodes xmi:id="_O83C0LaLEeilKuzrEwthbQ" incoming="_35hpUaEIEeu0y68bEye6ag" outgoing="_Se_s0LaLEeilKuzrEwthbQ _S_nGkLaLEeilKuzrEwthbQ">
         <annotations xmi:id="_jLD22Pg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
       </nodes>
@@ -357,21 +285,24 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TModifier/tVisibility"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_cDN-IEzCEemYW_KBiJlMkw" incoming="_cDOlMUzCEemYW_KBiJlMkw _cDOlMkzCEemYW_KBiJlMkw">
+      <nodes xmi:id="_cDN-IEzCEemYW_KBiJlMkw">
         <annotations xmi:id="_jLEd4fg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
         <attributes xmi:id="_eL_ogUzCEemYW_KBiJlMkw" value="&quot;Object&quot;">
           <annotations xmi:id="_80Bg8_gxEeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
+        <attributes xmi:id="_1T8uMKEIEeu0y68bEye6ag" value="true">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        </attributes>
       </nodes>
       <edges xmi:id="_zB3CXLWfEeiHxtaJPOhGLA" source="_zB3CWrWfEeiHxtaJPOhGLA" target="_zB3CW7WfEeiHxtaJPOhGLA">
         <annotations xmi:id="_jLEd4vg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>
       </edges>
       <edges xmi:id="_zB3CXbWfEeiHxtaJPOhGLA" source="_zB3CWbWfEeiHxtaJPOhGLA" target="_zB3CW7WfEeiHxtaJPOhGLA">
         <annotations xmi:id="_jLEd4_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>
       </edges>
       <edges xmi:id="_xhDSsLWmEeiV3ZR7k4DLVQ" source="_uMP6ELWmEeiV3ZR7k4DLVQ" target="_zB3CWbWfEeiHxtaJPOhGLA">
         <annotations xmi:id="_jLEd5Pg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
@@ -389,10 +320,6 @@
         <annotations xmi:id="_jLEd5_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </edges>
-      <edges xmi:id="_RUbXILaLEeilKuzrEwthbQ" source="_uMP6ELWmEeiV3ZR7k4DLVQ" target="_O83C0LaLEeilKuzrEwthbQ">
-        <annotations xmi:id="_jLEd6Pg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/packages"/>
-      </edges>
       <edges xmi:id="_Se_s0LaLEeilKuzrEwthbQ" source="_O83C0LaLEeilKuzrEwthbQ" target="_zB3CW7WfEeiHxtaJPOhGLA">
         <annotations xmi:id="_jLEd6fg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
@@ -405,13 +332,8 @@
         <annotations xmi:id="_jLFE8fg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tModifier"/>
       </edges>
-      <edges xmi:id="_cDOlMUzCEemYW_KBiJlMkw" source="_zB3CWrWfEeiHxtaJPOhGLA" target="_cDN-IEzCEemYW_KBiJlMkw">
-        <annotations xmi:id="_jLFE8vg-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
-      </edges>
-      <edges xmi:id="_cDOlMkzCEemYW_KBiJlMkw" source="_zB3CWbWfEeiHxtaJPOhGLA" target="_cDN-IEzCEemYW_KBiJlMkw">
-        <annotations xmi:id="_jLFE8_g-EeqiOuiwEWYNqQ" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+      <edges xmi:id="_35hpUaEIEeu0y68bEye6ag" source="_zB3CWrWfEeiHxtaJPOhGLA" target="_O83C0LaLEeilKuzrEwthbQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/package"/>
       </edges>
     </rhs>
     <mappings xmi:id="_zB3CYLWfEeiHxtaJPOhGLA" origin="_zB3CU7WfEeiHxtaJPOhGLA" image="_zB3CWbWfEeiHxtaJPOhGLA"/>

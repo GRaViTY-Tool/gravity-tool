@@ -1,27 +1,25 @@
 package org.gravity.goblin.fitness;
 
-import java.security.InvalidParameterException;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.gravity.hulk.antipatterngraph.AntipatterngraphPackage;
+import org.gravity.hulk.HulkAPI;
+import org.gravity.hulk.HulkAPI.AntiPatternNames;
+import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HMetric;
-import org.gravity.typegraph.basic.TClass;
+import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
-import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 public abstract class MetricCalculator implements IFitnessCalculator {
 
-	public double calculate(EClass metricClass, TypeGraph graph) {
-		if(!metricClass.getEAllSuperTypes().contains(AntipatterngraphPackage.eINSTANCE.getHMetric())) {
-			throw new InvalidParameterException();
-		}
-		double value = 0;
-		for (TClass tDeclaredClass : graph.getDeclaredTClasses()) {
-			EList<TAnnotation> tAnnotation = tDeclaredClass.getTAnnotation(metricClass);
-			if (tAnnotation != null) {
-				value += ((HMetric) tAnnotation.get(0)).getValue();
+	public double calculate(final AntiPatternNames id, final TypeGraph graph) {
+		try {
+			final var metrics = HulkAPI.detect(graph, "", id);
+
+			var value = 0D;
+			for (final HAnnotation annotation : metrics) {
+				value += ((HMetric) annotation).getValue();
 			}
+			return value;
+		} catch (final DetectionFailedException e) {
+			return -1;
 		}
-		return value;
 	}
 }

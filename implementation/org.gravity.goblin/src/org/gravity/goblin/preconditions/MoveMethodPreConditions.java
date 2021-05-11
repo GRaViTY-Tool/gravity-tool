@@ -10,7 +10,6 @@ import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
-import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 /**
  * Checks for the preconditions of a move method refactoring
@@ -29,20 +28,19 @@ public final class MoveMethodPreConditions {
 		// This class shouldn't be instantiated
 	}
 
-	private static boolean securityPrecondition(TMethodSignature methodSig, TClass sourceClass) {
-		final List<TAnnotation> annotations = new ArrayList<>();
-		annotations.addAll(methodSig.getTAnnotation());
+	private static boolean securityPrecondition(final TMethodSignature methodSig, final TClass sourceClass) {
+		final List<TAnnotation> annotations = new ArrayList<>(methodSig.getTAnnotation());
 		for (final TMethodDefinition methodDef : methodSig.getMethodDefinitions()) {
 			if (methodDef.getDefinedBy() == sourceClass) {
 				annotations.addAll(methodDef.getTAnnotation());
 			}
 		}
 		for (final TAnnotation annotation : annotations) {
-			final TAnnotationType type = annotation.getType();
+			final var type = annotation.getType();
 			if (type == null) {
 				continue;
 			}
-			final String tName = annotation.getType().getTName();
+			final var tName = annotation.getType().getTName();
 			if (tName.equals("High") || tName.equals("Critical") || tName.equals("Secrecy")
 					|| tName.equals("Integrity")) {
 				LOGGER.warn("Can't move " + sourceClass.getFullyQualifiedName() + "."
@@ -54,13 +52,13 @@ public final class MoveMethodPreConditions {
 	}
 
 	/**
-	 * Checks is the mehtod with the given signature can be moved from the source class to an other class
+	 * Checks is the method with the given signature can be moved from the source class to an other class
 	 *
 	 * @param tMethodSignature The signature of the method
 	 * @param sourceClass The class defining the method
 	 * @return true, iff the method can be moved to another class
 	 */
-	public static boolean methodPreconditions(TMethodSignature tMethodSignature, TClass sourceClass) {
+	public static boolean methodPreconditions(final TMethodSignature tMethodSignature, final TClass sourceClass) {
 
 		if (SearchParameters.useSecurity && !securityPrecondition(tMethodSignature, sourceClass)) {
 			return false;

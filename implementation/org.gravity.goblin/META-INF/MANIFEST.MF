@@ -10,24 +10,17 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore,
  at.ac.tuwien.big.momot.core,
- org.eclipse.ocl,
  org.eclipse.ocl.ecore,
- org.eclipse.xtend.lib,
- org.gravity.typegraph.basic,
- org.gravity.hulk.antipatterngraph,
  org.gravity.refactorings,
  org.gravity.hulk.refactoringgraph,
  org.gravity.tgg.modisco.pm,
- org.gravity.eclipse,
- org.eclipse.jdt.core,
- org.eclipse.core.resources,
- org.gravity.hulk.annotations,
  org.gravity.hulk,
+ org.gravity.security.annotations,
  org.eclipse.emf.henshin.interpreter,
- org.eclipse.emf.henshin.interpreter.ui,
- org.gravity.security.annotations
+ org.gravity.security.metrics,
+ org.apache.log4j,
+ org.gravity.typegraph.spl
 Bundle-ActivationPolicy: lazy
 Export-Package: com.beust.jcommander;uses:="com.beust.jcommander.internal",
  com.beust.jcommander.converters,

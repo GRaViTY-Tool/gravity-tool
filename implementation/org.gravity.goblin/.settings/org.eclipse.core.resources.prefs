@@ -2,7 +2,5 @@ eclipse.preferences.version=1
 encoding//src/org/gravity/goblin/messages.properties=ISO-8859-1
 encoding//transformations/CreateSuperClass.henshin=UTF-8
 encoding//transformations/CreateSuperClass.henshin_diagram=UTF-8
-encoding//transformations/MoveMethod.henshin=UTF-8
-encoding//transformations/MoveMethod.henshin_diagram=UTF-8
 encoding//transformations/PullUpMethod.henshin=UTF-8
 encoding//transformations/PullUpMethod.henshin_diagram=UTF-8

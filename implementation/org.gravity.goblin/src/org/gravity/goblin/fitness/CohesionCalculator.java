@@ -1,13 +1,13 @@
 package org.gravity.goblin.fitness;
 
-import org.gravity.hulk.antipatterngraph.metrics.MetricsPackage;
+import org.gravity.hulk.HulkAPI.AntiPatternNames;
 import org.gravity.typegraph.basic.TypeGraph;
 
 public class CohesionCalculator extends MetricCalculator{
 
 	@Override
-	public double calculate(TypeGraph graph) {
-		return calculate(MetricsPackage.eINSTANCE.getHLCOM5Metric(), graph);
+	public double calculate(final TypeGraph graph) {
+		return calculate(AntiPatternNames.LCOM5, graph);
 	}
 
 }

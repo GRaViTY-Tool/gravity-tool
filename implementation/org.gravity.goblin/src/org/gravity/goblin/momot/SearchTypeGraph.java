@@ -2,16 +2,14 @@ package org.gravity.goblin.momot;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
+import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.goblin.EGraphUtil;
 import org.gravity.goblin.GoblinActivator;
@@ -20,6 +18,7 @@ import org.gravity.goblin.constraints.VisibilityConstraintCalculator;
 import org.gravity.goblin.fitness.AntiPatternCalculator;
 import org.gravity.goblin.fitness.CohesionCalculator;
 import org.gravity.goblin.fitness.CouplingCalculator;
+import org.gravity.goblin.fitness.CriticalClassRatioCalculator;
 import org.gravity.goblin.fitness.IFitnessCalculator;
 import org.gravity.goblin.fitness.VisibilityCalculator;
 import org.gravity.goblin.orchestration.MoveMethodTransformationSearchOrchestration;
@@ -27,10 +26,11 @@ import org.gravity.goblin.repair.PostProcessRepairMultiDimensionalFitnessFunctio
 import org.gravity.goblin.repair.VisibilityReducer;
 import org.gravity.goblin.repair.VisibilityRepairer;
 import org.gravity.goblin.typegraph.equality.EqualityHelper;
+import org.gravity.security.annotations.requirements.RequirementsPackage;
 import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.spl.SplPackage;
 import org.moeaframework.core.operator.OnePointCrossover;
 import org.moeaframework.core.operator.TournamentSelection;
-import org.osgi.framework.Bundle;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.ParameterException;
@@ -78,7 +78,7 @@ public class SearchTypeGraph {
 		private final FunctionType type;
 		private final IFitnessCalculator calculator;
 
-		public FitnessFunction(String name, FunctionType type, IFitnessCalculator calc) {
+		public FitnessFunction(final String name, final FunctionType type, final IFitnessCalculator calc) {
 			this.name = name;
 			this.type = type;
 			this.calculator = calc;
@@ -96,7 +96,7 @@ public class SearchTypeGraph {
 		public IFitnessDimension<TransformationSolution> createFitnessDimension() {
 			return new AbstractEGraphFitnessDimension(this.name, this.type) {
 				@Override
-				protected double internalEvaluate(TransformationSolution solution) {
+				protected double internalEvaluate(final TransformationSolution solution) {
 					return getCalculator().calculate(EGraphUtil.getPG(solution.getResultGraph()));
 				}
 			};
@@ -108,27 +108,33 @@ public class SearchTypeGraph {
 		this.fitnessFunctions.add(new FitnessFunction("Coupling", FunctionType.Minimum, new CouplingCalculator()));
 		this.fitnessFunctions.add(new FitnessFunction("LCOM", FunctionType.Minimum, new CohesionCalculator()));
 		this.fitnessFunctions
-				.add(new FitnessFunction("Number of Blobs", FunctionType.Minimum, new AntiPatternCalculator()));
-		this.fitnessFunctions.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityCalculator()));
+		.add(new FitnessFunction("Number of Blobs", FunctionType.Minimum, new AntiPatternCalculator()));
+		if (SearchParameters.optimizeVisibility) {
+			this.fitnessFunctions
+			.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityCalculator()));
+		}
+		if (SearchParameters.optimizeSecurity) {
+			this.fitnessFunctions
+			.add(new FitnessFunction("Criticality", FunctionType.Minimum, new CriticalClassRatioCalculator()));
+		}
 		// exclude repairs, not needed anymore because of visibility
 		/*
 		 * if (SearchParameters.useRepair) { fitnessFunctions.add(new
 		 * FitnessFunction("Number Repairs", FunctionType.Minimum, new
 		 * RepairMetricCalculator())); }
 		 */
-
 	}
 
 	public void initializeConstraints() {
 		this.constraints = new ArrayList<>();
 		if (SearchParameters.useConstraints) {
 			this.constraints
-					.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityConstraintCalculator()));
+			.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityConstraintCalculator()));
 		}
 	}
 
-	private void initializeAlgorithms(TransformationSearchOrchestration orchestration,
-			EvolutionaryAlgorithmFactory<TransformationSolution> moea) {
+	private void initializeAlgorithms(final TransformationSearchOrchestration orchestration,
+			final EvolutionaryAlgorithmFactory<TransformationSolution> moea) {
 
 		TournamentSelection ts = null;
 		if (SearchParameters.useCustomDominanceComperator) {
@@ -151,22 +157,35 @@ public class SearchTypeGraph {
 	}
 
 	protected ModuleManager createModuleManager() {
-		final ModuleManager manager = new ModuleManager();
+		final var manager = new ModuleManager();
 		if (Platform.isRunning()) {
-			final Bundle bundle = Platform.getBundle(GoblinActivator.PLUGIN_ID);
+			final var bundle = Platform.getBundle(GoblinActivator.PLUGIN_ID);
 			for (final String module : SearchParameters.modules) {
 				if (bundle == null) {
 					manager.addModule(module);
 				} else {
-					final URL entry = bundle.getEntry(module);
-					try {
-						final String substring = entry.getFile().substring(entry.getFile().lastIndexOf('/') + 1);
-						final Path temp = Files.createTempDirectory("goblin");
-						final File file = new File(temp.toFile(), substring);
-						Files.copy(entry.openStream(), file.toPath());
-						manager.addModule(file.getAbsolutePath());
+					final var entry = bundle.getEntry(module);
+					try (var stream = entry.openStream()) {
+						loadModuleFromStream(manager, module, stream);
 					} catch (final IOException e) {
 						LOGGER.warn(e.getMessage(), e);
+					}
+				}
+			}
+		} else {
+			for (final String module : SearchParameters.modules) {
+				final var file = new File(module);
+				if (file.exists()) {
+					manager.addModule(file.getAbsolutePath());
+				} else {
+					try (var stream = ClassLoader.getSystemClassLoader().getResourceAsStream(module)) {
+						if (stream == null) {
+							LOGGER.error("Cannot find \"" + module + "\"");
+							continue;
+						}
+						loadModuleFromStream(manager, module, stream);
+					} catch (final IOException e) {
+						LOGGER.error(e);
 					}
 				}
 			}
@@ -182,8 +201,23 @@ public class SearchTypeGraph {
 		return manager;
 	}
 
+	/**
+	 * @param manager
+	 * @param module
+	 * @param stream
+	 * @throws IOException
+	 */
+	public void loadModuleFromStream(final ModuleManager manager, final String module, final InputStream stream)
+			throws IOException {
+		final var index = module.lastIndexOf('/');
+		final var substring = index == -1 ? module : module.substring(index + 1);
+		final var file = Files.createTempFile(substring, "goblin");
+		Files.copy(stream, file);
+		manager.addModule(file.toAbsolutePath().toString());
+	}
+
 	protected IEGraphMultiDimensionalFitnessFunction createFitnessFunction() {
-		final PostProcessRepairMultiDimensionalFitnessFunction function = new PostProcessRepairMultiDimensionalFitnessFunction();
+		final var function = new PostProcessRepairMultiDimensionalFitnessFunction();
 		// IEGraphMultiDimensionalFitnessFunction function = new
 		// EGraphMultiDimensionalFitnessFunction();
 		function.addObjective(createSolutionLengthFitness());
@@ -206,18 +240,17 @@ public class SearchTypeGraph {
 
 	protected TransformationSearchOrchestration createOrchestration(final String initialGraph,
 			final int solutionLength) {
-		final MoveMethodTransformationSearchOrchestration orchestration = new MoveMethodTransformationSearchOrchestration();
+		final var orchestration = new MoveMethodTransformationSearchOrchestration();
 
-		final ModuleManager moduleManager = createModuleManager();
-		final EGraph graph = moduleManager.loadGraph(initialGraph);
+		final var moduleManager = createModuleManager();
+		final var graph = moduleManager.loadGraph(initialGraph);
 		orchestration.setModuleManager(moduleManager);
 		orchestration.setProblemGraph(graph);
 		orchestration.setSolutionLength(solutionLength);
 		orchestration.setFitnessFunction(createFitnessFunction());
 		orchestration.setEqualityHelper(new EqualityHelper());
 
-		final EvolutionaryAlgorithmFactory<TransformationSolution> moea = orchestration
-				.createEvolutionaryAlgorithmFactory(SearchParameters.populationSize);
+		final var moea = orchestration.createEvolutionaryAlgorithmFactory(SearchParameters.populationSize);
 
 		initializeAlgorithms(orchestration, moea);
 		return orchestration;
@@ -225,8 +258,7 @@ public class SearchTypeGraph {
 
 	protected SearchExperiment<TransformationSolution> createExperiment(
 			final TransformationSearchOrchestration orchestration) {
-		final SearchExperiment<TransformationSolution> experiment = new SearchExperiment<>(orchestration,
-				SearchParameters.maxEvaluations);
+		final var experiment = new SearchExperiment<>(orchestration, SearchParameters.maxEvaluations);
 		experiment.setNumberOfRuns(SearchParameters.nrRuns);
 		experiment.addProgressListener(new SeedRuntimePrintListener());
 		return experiment;
@@ -239,7 +271,7 @@ public class SearchTypeGraph {
 	 * @param solutionLength The desired solution length
 	 * @return A manager for accessing the search solution
 	 */
-	public TransformationResultManager performSearch(String initialGraph, int solutionLength) {
+	public TransformationResultManager performSearch(final String initialGraph, final int solutionLength) {
 		return performSearch(initialGraph, solutionLength, new File("./"));
 	}
 
@@ -251,14 +283,15 @@ public class SearchTypeGraph {
 	 * @param folder         The output location
 	 * @return A manager for accessing the search solution
 	 */
-	public TransformationResultManager performSearch(final String initialGraph, final int solutionLength, File folder) {
-		final TransformationSearchOrchestration orchestration = createOrchestration(initialGraph, solutionLength);
-		final SearchPrinter printer = new SearchPrinter(orchestration);
+	public TransformationResultManager performSearch(final String initialGraph, final int solutionLength,
+			final File folder) {
+		final var orchestration = createOrchestration(initialGraph, solutionLength);
+		final var printer = new SearchPrinter(orchestration);
 		printer.logSearchInfo();
-		final SearchExperiment<TransformationSolution> experiment = createExperiment(orchestration);
-		final long start = System.currentTimeMillis();
+		final var experiment = createExperiment(orchestration);
+		final var start = System.currentTimeMillis();
 		experiment.run();
-		final long duration = System.currentTimeMillis() - start;
+		final var duration = System.currentTimeMillis() - start;
 		try {
 			Files.write(new File(folder, "durationGoblinInMs.txt").toPath(), Long.toString(duration).getBytes());
 		} catch (final IOException e) {
@@ -267,8 +300,8 @@ public class SearchTypeGraph {
 		return printer.printResults(experiment, folder);
 	}
 
-	private boolean handleInput(String[] args) {
-		final JCommander jCommander = new JCommander(new SearchParameters());
+	private boolean handleInput(final String[] args) {
+		final var jCommander = new JCommander(new SearchParameters());
 		jCommander.setProgramName("Search Type Graph");
 
 		try {
@@ -293,11 +326,13 @@ public class SearchTypeGraph {
 	 *             org.gravity.goblin.SearchParameters
 	 */
 	public static void main(final String... args) {
-		final SearchTypeGraph search = new SearchTypeGraph();
+		final var search = new SearchTypeGraph();
 		if (!search.handleInput(args)) {
 			return;
 		}
 		BasicPackage.eINSTANCE.eClass();
+		RequirementsPackage.eINSTANCE.eClass();
+		SplPackage.eINSTANCE.eClass();
 		LOGGER.log(Level.INFO, "Search started.");
 
 		search.initializeFitnessFunctions();
