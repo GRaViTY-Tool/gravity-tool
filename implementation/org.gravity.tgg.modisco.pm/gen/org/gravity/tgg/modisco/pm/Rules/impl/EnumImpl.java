@@ -169,11 +169,11 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[3];
 		EnumDeclaration mType = (EnumDeclaration) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
-		Object[] result1_green = EnumImpl.pattern_Enum_1_1_performtransformation_greenFFFBBFBB(tPackage, pg, mType,
+		Object[] result1_green = EnumImpl.pattern_Enum_1_1_performtransformation_greenFFBFBFBB(tPackage, pg, mType,
 				csp);
 		TEnum tAnnotation = (TEnum) result1_green[0];
 		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_green[1];
-		TClass tType = (TClass) result1_green[2];
+		TClass tType = (TClass) result1_green[3];
 		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[5];
 
 		Object[] result2_black = EnumImpl.pattern_Enum_1_2_collecttranslatedelements_blackBBBBB(tAnnotation,
@@ -188,16 +188,16 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = EnumImpl.pattern_Enum_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, tAnnotation,
-				mPackageToTPackage, mTypeToTType, tType, tPackage, mPackage, pg, mBodyToTAnnotation, mType);
+				mPackageToTPackage, mTypeToTType, tPackage, tType, mPackage, pg, mBodyToTAnnotation, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[tAnnotation] = " + tAnnotation + ", " + "[mPackageToTPackage] = " + mPackageToTPackage
-					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = " + tType + ", " + "[tPackage] = "
-					+ tPackage + ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", "
+					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tPackage] = " + tPackage + ", "
+					+ "[tType] = " + tType + ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", "
 					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mType] = " + mType + ".");
 		}
 		EnumImpl.pattern_Enum_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFFF(ruleresult, tAnnotation,
-				mTypeToTType, tType, tPackage, mPackage, pg, mBodyToTAnnotation, mType);
+				mTypeToTType, tPackage, tType, mPackage, pg, mBodyToTAnnotation, mType);
 		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[11];
@@ -216,7 +216,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		// 
 		// 
 		EnumImpl.pattern_Enum_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, tAnnotation,
-				mPackageToTPackage, mTypeToTType, tType, tPackage, mPackage, pg, mBodyToTAnnotation, mType);
+				mPackageToTPackage, mTypeToTType, tPackage, tType, mPackage, pg, mBodyToTAnnotation, mType);
 		return EnumImpl.pattern_Enum_1_6_expressionFB(ruleresult);
 	}
 
@@ -394,13 +394,13 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mPackageToTPackage,
-			EObject mTypeToTType, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
+			EObject mTypeToTType, EObject tPackage, EObject tType, EObject mPackage, EObject pg,
 			EObject mBodyToTAnnotation, EObject mType) {
 		ruleresult.registerObject("tAnnotation", tAnnotation);
 		ruleresult.registerObject("mPackageToTPackage", mPackageToTPackage);
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
-		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("tPackage", tPackage);
+		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mPackage", mPackage);
 		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
@@ -423,36 +423,36 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TEnum tAnnotation, TClass tType, TPackage tPackage, TypeGraph pg) {
+	public boolean isAppropriate_BWD(Match match, TEnum tAnnotation, TPackage tPackage, TClass tType, TypeGraph pg) {
 
-		Object[] result1_black = EnumImpl.pattern_Enum_10_1_initialbindings_blackBBBBBB(this, match, tAnnotation, tType,
-				tPackage, pg);
+		Object[] result1_black = EnumImpl.pattern_Enum_10_1_initialbindings_blackBBBBBB(this, match, tAnnotation,
+				tPackage, tType, pg);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[tType] = " + tType
-					+ ", " + "[tPackage] = " + tPackage + ", " + "[pg] = " + pg + ".");
+					+ "[match] = " + match + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[tPackage] = " + tPackage
+					+ ", " + "[tType] = " + tType + ", " + "[pg] = " + pg + ".");
 		}
 
 		Object[] result2_bindingAndBlack = EnumImpl.pattern_Enum_10_2_SolveCSP_bindingAndBlackFBBBBBB(this, match,
-				tAnnotation, tType, tPackage, pg);
+				tAnnotation, tPackage, tType, pg);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[tType] = " + tType
-					+ ", " + "[tPackage] = " + tPackage + ", " + "[pg] = " + pg + ".");
+					+ "[match] = " + match + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[tPackage] = " + tPackage
+					+ ", " + "[tType] = " + tType + ", " + "[pg] = " + pg + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (EnumImpl.pattern_Enum_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = EnumImpl.pattern_Enum_10_4_collectelementstobetranslated_blackBBBBB(match,
-					tAnnotation, tType, tPackage, pg);
+					tAnnotation, tPackage, tType, pg);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tAnnotation] = " + tAnnotation + ", " + "[tType] = " + tType + ", " + "[tPackage] = "
-						+ tPackage + ", " + "[pg] = " + pg + ".");
+						+ "[tAnnotation] = " + tAnnotation + ", " + "[tPackage] = " + tPackage + ", " + "[tType] = "
+						+ tType + ", " + "[pg] = " + pg + ".");
 			}
-			EnumImpl.pattern_Enum_10_4_collectelementstobetranslated_greenBBBBBFFFFFFFF(match, tAnnotation, tType,
-					tPackage, pg);
+			EnumImpl.pattern_Enum_10_4_collectelementstobetranslated_greenBBBBBFFFFFFFF(match, tAnnotation, tPackage,
+					tType, pg);
 			//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result4_green[5];
 			//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result4_green[6];
 			//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result4_green[7];
@@ -463,18 +463,18 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 			//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result4_green[12];
 
 			Object[] result5_black = EnumImpl.pattern_Enum_10_5_collectcontextelements_blackBBBBB(match, tAnnotation,
-					tType, tPackage, pg);
+					tPackage, tType, pg);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tAnnotation] = " + tAnnotation + ", " + "[tType] = " + tType + ", " + "[tPackage] = "
-						+ tPackage + ", " + "[pg] = " + pg + ".");
+						+ "[tAnnotation] = " + tAnnotation + ", " + "[tPackage] = " + tPackage + ", " + "[tType] = "
+						+ tType + ", " + "[pg] = " + pg + ".");
 			}
 			EnumImpl.pattern_Enum_10_5_collectcontextelements_greenBBBF(match, tPackage, pg);
 			//nothing EMoflonEdge tPackage__pg____model = (EMoflonEdge) result5_green[3];
 
 			// 
-			EnumImpl.pattern_Enum_10_6_registerobjectstomatch_expressionBBBBBB(this, match, tAnnotation, tType,
-					tPackage, pg);
+			EnumImpl.pattern_Enum_10_6_registerobjectstomatch_expressionBBBBBB(this, match, tAnnotation, tPackage,
+					tType, pg);
 			return EnumImpl.pattern_Enum_10_7_expressionF();
 		} else {
 			return EnumImpl.pattern_Enum_10_8_expressionF();
@@ -497,8 +497,8 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		}
 		TEnum tAnnotation = (TEnum) result1_bindingAndBlack[0];
 		PackageToTPackage mPackageToTPackage = (PackageToTPackage) result1_bindingAndBlack[1];
-		TClass tType = (TClass) result1_bindingAndBlack[2];
-		TPackage tPackage = (TPackage) result1_bindingAndBlack[3];
+		TPackage tPackage = (TPackage) result1_bindingAndBlack[2];
+		TClass tType = (TClass) result1_bindingAndBlack[3];
 		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[4];
 		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[5];
 		CSP csp = (CSP) result1_bindingAndBlack[6];
@@ -519,16 +519,16 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = EnumImpl.pattern_Enum_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, tAnnotation,
-				mPackageToTPackage, mTypeToTType, tType, tPackage, mPackage, pg, mBodyToTAnnotation, mType);
+				mPackageToTPackage, mTypeToTType, tPackage, tType, mPackage, pg, mBodyToTAnnotation, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[tAnnotation] = " + tAnnotation + ", " + "[mPackageToTPackage] = " + mPackageToTPackage
-					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = " + tType + ", " + "[tPackage] = "
-					+ tPackage + ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", "
+					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tPackage] = " + tPackage + ", "
+					+ "[tType] = " + tType + ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", "
 					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mType] = " + mType + ".");
 		}
 		EnumImpl.pattern_Enum_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFFF(ruleresult, tAnnotation,
-				mTypeToTType, tType, tPackage, mPackage, pg, mBodyToTAnnotation, mType);
+				mTypeToTType, tPackage, tType, mPackage, pg, mBodyToTAnnotation, mType);
 		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[11];
@@ -547,7 +547,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		// 
 		// 
 		EnumImpl.pattern_Enum_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, tAnnotation,
-				mPackageToTPackage, mTypeToTType, tType, tPackage, mPackage, pg, mBodyToTAnnotation, mType);
+				mPackageToTPackage, mTypeToTType, tPackage, tType, mPackage, pg, mBodyToTAnnotation, mType);
 		return EnumImpl.pattern_Enum_11_6_expressionFB(ruleresult);
 	}
 
@@ -574,18 +574,18 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
 		TEnum tAnnotation = (TEnum) result2_binding[0];
-		TClass tType = (TClass) result2_binding[1];
-		TPackage tPackage = (TPackage) result2_binding[2];
+		TPackage tPackage = (TPackage) result2_binding[1];
+		TClass tType = (TClass) result2_binding[2];
 		TypeGraph pg = (TypeGraph) result2_binding[3];
-		for (Object[] result2_black : EnumImpl.pattern_Enum_12_2_corematch_blackBFBBFBB(tAnnotation, tType, tPackage,
+		for (Object[] result2_black : EnumImpl.pattern_Enum_12_2_corematch_blackBFBBFBB(tAnnotation, tPackage, tType,
 				pg, match)) {
 			PackageToTPackage mPackageToTPackage = (PackageToTPackage) result2_black[1];
 			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : EnumImpl.pattern_Enum_12_3_findcontext_blackBBBBBB(tAnnotation,
-					mPackageToTPackage, tType, tPackage, mPackage, pg)) {
+					mPackageToTPackage, tPackage, tType, mPackage, pg)) {
 				Object[] result3_green = EnumImpl.pattern_Enum_12_3_findcontext_greenBBBBBBFFFFFFFFFFFF(tAnnotation,
-						mPackageToTPackage, tType, tPackage, mPackage, pg);
+						mPackageToTPackage, tPackage, tType, mPackage, pg);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[8];
@@ -600,12 +600,12 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 				//nothing EMoflonEdge mPackageToTPackage__tPackage____target = (EMoflonEdge) result3_green[17];
 
 				Object[] result4_bindingAndBlack = EnumImpl.pattern_Enum_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-						isApplicableMatch, tAnnotation, mPackageToTPackage, tType, tPackage, mPackage, pg);
+						isApplicableMatch, tAnnotation, mPackageToTPackage, tPackage, tType, mPackage, pg);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tAnnotation] = " + tAnnotation
-							+ ", " + "[mPackageToTPackage] = " + mPackageToTPackage + ", " + "[tType] = " + tType + ", "
-							+ "[tPackage] = " + tPackage + ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg
+							+ ", " + "[mPackageToTPackage] = " + mPackageToTPackage + ", " + "[tPackage] = " + tPackage
+							+ ", " + "[tType] = " + tType + ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -634,11 +634,11 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TEnum tAnnotation, TClass tType, TPackage tPackage,
+	public void registerObjectsToMatch_BWD(Match match, TEnum tAnnotation, TPackage tPackage, TClass tType,
 			TypeGraph pg) {
 		match.registerObject("tAnnotation", tAnnotation);
-		match.registerObject("tType", tType);
 		match.registerObject("tPackage", tPackage);
+		match.registerObject("tType", tType);
 		match.registerObject("pg", pg);
 
 	}
@@ -648,7 +648,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TEnum tAnnotation, TClass tType, TPackage tPackage,
+	public CSP isAppropriate_solveCsp_BWD(Match match, TEnum tAnnotation, TPackage tPackage, TClass tType,
 			TypeGraph pg) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -679,7 +679,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TEnum tAnnotation,
-			PackageToTPackage mPackageToTPackage, TClass tType, TPackage tPackage,
+			PackageToTPackage mPackageToTPackage, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -716,8 +716,8 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		isApplicableMatch.registerObject("mPackageToTPackage", mPackageToTPackage);
-		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("tPackage", tPackage);
+		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mPackage", mPackage);
 		isApplicableMatch.registerObject("pg", pg);
 		return csp;
@@ -738,13 +738,13 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mPackageToTPackage,
-			EObject mTypeToTType, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
+			EObject mTypeToTType, EObject tPackage, EObject tType, EObject mPackage, EObject pg,
 			EObject mBodyToTAnnotation, EObject mType) {
 		ruleresult.registerObject("tAnnotation", tAnnotation);
 		ruleresult.registerObject("mPackageToTPackage", mPackageToTPackage);
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
-		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("tPackage", tPackage);
+		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mPackage", mPackage);
 		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
@@ -768,7 +768,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_64(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_74(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = EnumImpl.pattern_Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
 		if (result1_bindingAndBlack == null) {
@@ -783,15 +783,15 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		// ForEach 
 		for (Object[] result2_black : EnumImpl.pattern_Enum_20_2_testcorematchandDECs_blackFFFFB(_edge_classes)) {
 			TEnum tAnnotation = (TEnum) result2_black[0];
-			TClass tType = (TClass) result2_black[1];
-			TPackage tPackage = (TPackage) result2_black[2];
+			TPackage tPackage = (TPackage) result2_black[1];
+			TClass tType = (TClass) result2_black[2];
 			TypeGraph pg = (TypeGraph) result2_black[3];
 			Object[] result2_green = EnumImpl.pattern_Enum_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (EnumImpl.pattern_Enum_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(this, match,
-					tAnnotation, tType, tPackage, pg)) {
+					tAnnotation, tPackage, tType, pg)) {
 				// 
 				if (EnumImpl.pattern_Enum_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
 						match)) {
@@ -821,7 +821,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_67(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_77(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = EnumImpl.pattern_Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
 		if (result1_bindingAndBlack == null) {
@@ -1016,17 +1016,17 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		TEnum tAnnotation = (TEnum) result2_bindingAndBlack[0];
-		TClass tType = (TClass) result2_bindingAndBlack[1];
-		TPackage tPackage = (TPackage) result2_bindingAndBlack[2];
+		TPackage tPackage = (TPackage) result2_bindingAndBlack[1];
+		TClass tType = (TClass) result2_bindingAndBlack[2];
 		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[3];
 		TypeGraph pg = (TypeGraph) result2_bindingAndBlack[4];
 		EnumDeclaration mType = (EnumDeclaration) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = EnumImpl.pattern_Enum_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this,
-				tAnnotation, tType, tPackage, mPackage, pg, mType, sourceMatch, targetMatch);
+				tAnnotation, tPackage, tType, mPackage, pg, mType, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tAnnotation] = " + tAnnotation + ", " + "[tType] = " + tType + ", " + "[tPackage] = " + tPackage
+					+ "[tAnnotation] = " + tAnnotation + ", " + "[tPackage] = " + tPackage + ", " + "[tType] = " + tType
 					+ ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", " + "[mType] = " + mType + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
@@ -1042,10 +1042,10 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = EnumImpl.pattern_Enum_24_6_createcorrespondence_blackBBBBBBB(tAnnotation,
-						tType, tPackage, mPackage, pg, mType, ccMatch);
+						tPackage, tType, mPackage, pg, mType, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tAnnotation] = "
-							+ tAnnotation + ", " + "[tType] = " + tType + ", " + "[tPackage] = " + tPackage + ", "
+							+ tAnnotation + ", " + "[tPackage] = " + tPackage + ", " + "[tType] = " + tType + ", "
 							+ "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", " + "[mType] = " + mType + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
@@ -1072,7 +1072,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TEnum tAnnotation, TClass tType, TPackage tPackage,
+	public CSP isApplicable_solveCsp_CC(TEnum tAnnotation, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, EnumDeclaration mType, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
@@ -1139,8 +1139,8 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TEnum tAnnotation, TClass tType, TPackage tPackage, TypeGraph pg) {// 
-		Object[] result1_black = EnumImpl.pattern_Enum_28_1_matchtggpattern_blackBBBB(tAnnotation, tType, tPackage, pg);
+	public boolean checkDEC_BWD(TEnum tAnnotation, TPackage tPackage, TClass tType, TypeGraph pg) {// 
+		Object[] result1_black = EnumImpl.pattern_Enum_28_1_matchtggpattern_blackBBBB(tAnnotation, tPackage, tType, pg);
 		if (result1_black != null) {
 			return EnumImpl.pattern_Enum_28_2_expressionF();
 		} else {
@@ -1198,10 +1198,10 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 								+ ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", " + "[ruleResult] = "
 								+ ruleResult + ".");
 					}
-					EnumImpl.pattern_Enum_29_6_perform_greenFFFBBBFFBB(tPackage, mPackage, pg, ruleResult, csp);
+					EnumImpl.pattern_Enum_29_6_perform_greenFFBFBBFFBB(tPackage, mPackage, pg, ruleResult, csp);
 					//nothing TEnum tAnnotation = (TEnum) result6_green[0];
 					//nothing TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result6_green[1];
-					//nothing TClass tType = (TClass) result6_green[2];
+					//nothing TClass tType = (TClass) result6_green[3];
 					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[6];
 					//nothing EnumDeclaration mType = (EnumDeclaration) result6_green[7];
 
@@ -1308,25 +1308,25 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 			return null;
 		case RulesPackage.ENUM___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.ENUM___IS_APPROPRIATE_BWD__MATCH_TENUM_TCLASS_TPACKAGE_TYPEGRAPH:
-			return isAppropriate_BWD((Match) arguments.get(0), (TEnum) arguments.get(1), (TClass) arguments.get(2),
-					(TPackage) arguments.get(3), (TypeGraph) arguments.get(4));
+		case RulesPackage.ENUM___IS_APPROPRIATE_BWD__MATCH_TENUM_TPACKAGE_TCLASS_TYPEGRAPH:
+			return isAppropriate_BWD((Match) arguments.get(0), (TEnum) arguments.get(1), (TPackage) arguments.get(2),
+					(TClass) arguments.get(3), (TypeGraph) arguments.get(4));
 		case RulesPackage.ENUM___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.ENUM___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TENUM_TCLASS_TPACKAGE_TYPEGRAPH:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TEnum) arguments.get(1), (TClass) arguments.get(2),
-					(TPackage) arguments.get(3), (TypeGraph) arguments.get(4));
+		case RulesPackage.ENUM___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TENUM_TPACKAGE_TCLASS_TYPEGRAPH:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TEnum) arguments.get(1), (TPackage) arguments.get(2),
+					(TClass) arguments.get(3), (TypeGraph) arguments.get(4));
 			return null;
-		case RulesPackage.ENUM___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TENUM_TCLASS_TPACKAGE_TYPEGRAPH:
+		case RulesPackage.ENUM___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TENUM_TPACKAGE_TCLASS_TYPEGRAPH:
 			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TEnum) arguments.get(1),
-					(TClass) arguments.get(2), (TPackage) arguments.get(3), (TypeGraph) arguments.get(4));
+					(TPackage) arguments.get(2), (TClass) arguments.get(3), (TypeGraph) arguments.get(4));
 		case RulesPackage.ENUM___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ENUM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TENUM_PACKAGETOTPACKAGE_TCLASS_TPACKAGE_PACKAGE_TYPEGRAPH:
+		case RulesPackage.ENUM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TENUM_PACKAGETOTPACKAGE_TPACKAGE_TCLASS_PACKAGE_TYPEGRAPH:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TEnum) arguments.get(1),
-					(PackageToTPackage) arguments.get(2), (TClass) arguments.get(3), (TPackage) arguments.get(4),
+					(PackageToTPackage) arguments.get(2), (TPackage) arguments.get(3), (TClass) arguments.get(4),
 					(org.eclipse.modisco.java.Package) arguments.get(5), (TypeGraph) arguments.get(6));
 		case RulesPackage.ENUM___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
@@ -1338,19 +1338,19 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 			return null;
 		case RulesPackage.ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_64__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_64((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_67__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_67((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_74__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_74((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_77__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_77((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ENUM___IS_APPLICABLE_SOLVE_CSP_CC__TENUM_TCLASS_TPACKAGE_PACKAGE_TYPEGRAPH_ENUMDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TEnum) arguments.get(0), (TClass) arguments.get(1),
-					(TPackage) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
+		case RulesPackage.ENUM___IS_APPLICABLE_SOLVE_CSP_CC__TENUM_TPACKAGE_TCLASS_PACKAGE_TYPEGRAPH_ENUMDECLARATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TEnum) arguments.get(0), (TPackage) arguments.get(1),
+					(TClass) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
 					(TypeGraph) arguments.get(4), (EnumDeclaration) arguments.get(5), (Match) arguments.get(6),
 					(Match) arguments.get(7));
 		case RulesPackage.ENUM___IS_APPLICABLE_CHECK_CSP_CC__CSP:
@@ -1358,8 +1358,8 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		case RulesPackage.ENUM___CHECK_DEC_FWD__PACKAGE_ENUMDECLARATION:
 			return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0),
 					(EnumDeclaration) arguments.get(1));
-		case RulesPackage.ENUM___CHECK_DEC_BWD__TENUM_TCLASS_TPACKAGE_TYPEGRAPH:
-			return checkDEC_BWD((TEnum) arguments.get(0), (TClass) arguments.get(1), (TPackage) arguments.get(2),
+		case RulesPackage.ENUM___CHECK_DEC_BWD__TENUM_TPACKAGE_TCLASS_TYPEGRAPH:
+			return checkDEC_BWD((TEnum) arguments.get(0), (TPackage) arguments.get(1), (TClass) arguments.get(2),
 					(TypeGraph) arguments.get(3));
 		case RulesPackage.ENUM___GENERATE_MODEL__RULEENTRYCONTAINER_PACKAGETOTPACKAGE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (PackageToTPackage) arguments.get(1));
@@ -1537,7 +1537,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		return null;
 	}
 
-	public static final Object[] pattern_Enum_1_1_performtransformation_greenFFFBBFBB(TPackage tPackage, TypeGraph pg,
+	public static final Object[] pattern_Enum_1_1_performtransformation_greenFFBFBFBB(TPackage tPackage, TypeGraph pg,
 			EnumDeclaration mType, CSP csp) {
 		TEnum tAnnotation = BasicFactory.eINSTANCE.createTEnum();
 		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
@@ -1558,7 +1558,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		boolean tType_tLib_prime = (boolean) _localVariable_1;
 		tType.setTName(tType_tName_prime);
 		tType.setTLib(Boolean.valueOf(tType_tLib_prime));
-		return new Object[] { tAnnotation, mTypeToTType, tType, tPackage, pg, mBodyToTAnnotation, mType, csp };
+		return new Object[] { tAnnotation, mTypeToTType, tPackage, tType, pg, mBodyToTAnnotation, mType, csp };
 	}
 
 	public static final Object[] pattern_Enum_1_2_collecttranslatedelements_blackBBBBB(TEnum tAnnotation,
@@ -1580,32 +1580,31 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_1_3_bookkeepingforedges_blackBBBBBBBBBB(PerformRuleResult ruleresult,
-			EObject tAnnotation, EObject mPackageToTPackage, EObject mTypeToTType, EObject tType, EObject tPackage,
+			EObject tAnnotation, EObject mPackageToTPackage, EObject mTypeToTType, EObject tPackage, EObject tType,
 			EObject mPackage, EObject pg, EObject mBodyToTAnnotation, EObject mType) {
-		if (!tAnnotation.equals(tType)) {
-			if (!tAnnotation.equals(tPackage)) {
+		if (!tAnnotation.equals(tPackage)) {
+			if (!tAnnotation.equals(tType)) {
 				if (!mPackageToTPackage.equals(tAnnotation)) {
 					if (!mPackageToTPackage.equals(mTypeToTType)) {
-						if (!mPackageToTPackage.equals(tType)) {
-							if (!mPackageToTPackage.equals(tPackage)) {
+						if (!mPackageToTPackage.equals(tPackage)) {
+							if (!mPackageToTPackage.equals(tType)) {
 								if (!mPackageToTPackage.equals(pg)) {
 									if (!mPackageToTPackage.equals(mType)) {
 										if (!mTypeToTType.equals(tAnnotation)) {
-											if (!mTypeToTType.equals(tType)) {
-												if (!mTypeToTType.equals(tPackage)) {
+											if (!mTypeToTType.equals(tPackage)) {
+												if (!mTypeToTType.equals(tType)) {
 													if (!mTypeToTType.equals(pg)) {
 														if (!tPackage.equals(tType)) {
 															if (!mPackage.equals(tAnnotation)) {
 																if (!mPackage.equals(mPackageToTPackage)) {
 																	if (!mPackage.equals(mTypeToTType)) {
-																		if (!mPackage.equals(tType)) {
-																			if (!mPackage.equals(tPackage)) {
+																		if (!mPackage.equals(tPackage)) {
+																			if (!mPackage.equals(tType)) {
 																				if (!mPackage.equals(pg)) {
 																					if (!mPackage.equals(mType)) {
 																						if (!pg.equals(tAnnotation)) {
-																							if (!pg.equals(tType)) {
-																								if (!pg.equals(
-																										tPackage)) {
+																							if (!pg.equals(tPackage)) {
+																								if (!pg.equals(tType)) {
 																									if (!mBodyToTAnnotation
 																											.equals(tAnnotation)) {
 																										if (!mBodyToTAnnotation
@@ -1613,9 +1612,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 																											if (!mBodyToTAnnotation
 																													.equals(mTypeToTType)) {
 																												if (!mBodyToTAnnotation
-																														.equals(tType)) {
+																														.equals(tPackage)) {
 																													if (!mBodyToTAnnotation
-																															.equals(tPackage)) {
+																															.equals(tType)) {
 																														if (!mBodyToTAnnotation
 																																.equals(mPackage)) {
 																															if (!mBodyToTAnnotation
@@ -1627,9 +1626,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 																																		if (!mType
 																																				.equals(mTypeToTType)) {
 																																			if (!mType
-																																					.equals(tType)) {
+																																					.equals(tPackage)) {
 																																				if (!mType
-																																						.equals(tPackage)) {
+																																						.equals(tType)) {
 																																					if (!mType
 																																							.equals(pg)) {
 																																						return new Object[] {
@@ -1637,8 +1636,8 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 																																								tAnnotation,
 																																								mPackageToTPackage,
 																																								mTypeToTType,
-																																								tType,
 																																								tPackage,
+																																								tType,
 																																								mPackage,
 																																								pg,
 																																								mBodyToTAnnotation,
@@ -1683,7 +1682,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tAnnotation, EObject mTypeToTType, EObject tType, EObject tPackage,
+			PerformRuleResult ruleresult, EObject tAnnotation, EObject mTypeToTType, EObject tPackage, EObject tType,
 			EObject mPackage, EObject pg, EObject mBodyToTAnnotation, EObject mType) {
 		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1771,7 +1770,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
 		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
-		return new Object[] { ruleresult, tAnnotation, mTypeToTType, tType, tPackage, mPackage, pg, mBodyToTAnnotation,
+		return new Object[] { ruleresult, tAnnotation, mTypeToTType, tPackage, tType, mPackage, pg, mBodyToTAnnotation,
 				mType, mBodyToTAnnotation__tType____target, tPackage__tType____classes,
 				mBodyToTAnnotation__mType____source, pg__tType____ownedTypes, tType__pg____model,
 				mPackage__mType____ownedElements, mType__mPackage____package, tPackage__tType____ownedTypes,
@@ -1781,9 +1780,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 
 	public static final void pattern_Enum_1_5_registerobjects_expressionBBBBBBBBBBB(
 			org.gravity.tgg.modisco.pm.Rules.Enum _this, PerformRuleResult ruleresult, EObject tAnnotation,
-			EObject mPackageToTPackage, EObject mTypeToTType, EObject tType, EObject tPackage, EObject mPackage,
+			EObject mPackageToTPackage, EObject mTypeToTType, EObject tPackage, EObject tType, EObject mPackage,
 			EObject pg, EObject mBodyToTAnnotation, EObject mType) {
-		_this.registerObjects_FWD(ruleresult, tAnnotation, mPackageToTPackage, mTypeToTType, tType, tPackage, mPackage,
+		_this.registerObjects_FWD(ruleresult, tAnnotation, mPackageToTPackage, mTypeToTType, tPackage, tType, mPackage,
 				pg, mBodyToTAnnotation, mType);
 
 	}
@@ -1995,17 +1994,17 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_10_1_initialbindings_blackBBBBBB(
-			org.gravity.tgg.modisco.pm.Rules.Enum _this, Match match, TEnum tAnnotation, TClass tType,
-			TPackage tPackage, TypeGraph pg) {
-		return new Object[] { _this, match, tAnnotation, tType, tPackage, pg };
+			org.gravity.tgg.modisco.pm.Rules.Enum _this, Match match, TEnum tAnnotation, TPackage tPackage,
+			TClass tType, TypeGraph pg) {
+		return new Object[] { _this, match, tAnnotation, tPackage, tType, pg };
 	}
 
 	public static final Object[] pattern_Enum_10_2_SolveCSP_bindingFBBBBBB(org.gravity.tgg.modisco.pm.Rules.Enum _this,
-			Match match, TEnum tAnnotation, TClass tType, TPackage tPackage, TypeGraph pg) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tAnnotation, tType, tPackage, pg);
+			Match match, TEnum tAnnotation, TPackage tPackage, TClass tType, TypeGraph pg) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tAnnotation, tPackage, tType, pg);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tAnnotation, tType, tPackage, pg };
+			return new Object[] { csp, _this, match, tAnnotation, tPackage, tType, pg };
 		}
 		return null;
 	}
@@ -2015,17 +2014,17 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_10_2_SolveCSP_bindingAndBlackFBBBBBB(
-			org.gravity.tgg.modisco.pm.Rules.Enum _this, Match match, TEnum tAnnotation, TClass tType,
-			TPackage tPackage, TypeGraph pg) {
+			org.gravity.tgg.modisco.pm.Rules.Enum _this, Match match, TEnum tAnnotation, TPackage tPackage,
+			TClass tType, TypeGraph pg) {
 		Object[] result_pattern_Enum_10_2_SolveCSP_binding = pattern_Enum_10_2_SolveCSP_bindingFBBBBBB(_this, match,
-				tAnnotation, tType, tPackage, pg);
+				tAnnotation, tPackage, tType, pg);
 		if (result_pattern_Enum_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_Enum_10_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_Enum_10_2_SolveCSP_black = pattern_Enum_10_2_SolveCSP_blackB(csp);
 			if (result_pattern_Enum_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tAnnotation, tType, tPackage, pg };
+				return new Object[] { csp, _this, match, tAnnotation, tPackage, tType, pg };
 			}
 		}
 		return null;
@@ -2039,12 +2038,12 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_10_4_collectelementstobetranslated_blackBBBBB(Match match,
-			TEnum tAnnotation, TClass tType, TPackage tPackage, TypeGraph pg) {
-		return new Object[] { match, tAnnotation, tType, tPackage, pg };
+			TEnum tAnnotation, TPackage tPackage, TClass tType, TypeGraph pg) {
+		return new Object[] { match, tAnnotation, tPackage, tType, pg };
 	}
 
 	public static final Object[] pattern_Enum_10_4_collectelementstobetranslated_greenBBBBBFFFFFFFF(Match match,
-			TEnum tAnnotation, TClass tType, TPackage tPackage, TypeGraph pg) {
+			TEnum tAnnotation, TPackage tPackage, TClass tType, TypeGraph pg) {
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2095,14 +2094,14 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		tType__tAnnotation____tAnnotation.setName(tType__tAnnotation____tAnnotation_name_prime);
 		tAnnotation__tType____tAnnotated.setName(tAnnotation__tType____tAnnotated_name_prime);
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
-		return new Object[] { match, tAnnotation, tType, tPackage, pg, tPackage__tType____classes,
+		return new Object[] { match, tAnnotation, tPackage, tType, pg, tPackage__tType____classes,
 				pg__tType____ownedTypes, tType__pg____model, tPackage__tType____ownedTypes, tType__tPackage____package,
 				tType__tAnnotation____tAnnotation, tAnnotation__tType____tAnnotated, pg__tType____classes };
 	}
 
 	public static final Object[] pattern_Enum_10_5_collectcontextelements_blackBBBBB(Match match, TEnum tAnnotation,
-			TClass tType, TPackage tPackage, TypeGraph pg) {
-		return new Object[] { match, tAnnotation, tType, tPackage, pg };
+			TPackage tPackage, TClass tType, TypeGraph pg) {
+		return new Object[] { match, tAnnotation, tPackage, tType, pg };
 	}
 
 	public static final Object[] pattern_Enum_10_5_collectcontextelements_greenBBBF(Match match, TPackage tPackage,
@@ -2119,9 +2118,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final void pattern_Enum_10_6_registerobjectstomatch_expressionBBBBBB(
-			org.gravity.tgg.modisco.pm.Rules.Enum _this, Match match, TEnum tAnnotation, TClass tType,
-			TPackage tPackage, TypeGraph pg) {
-		_this.registerObjectsToMatch_BWD(match, tAnnotation, tType, tPackage, pg);
+			org.gravity.tgg.modisco.pm.Rules.Enum _this, Match match, TEnum tAnnotation, TPackage tPackage,
+			TClass tType, TypeGraph pg) {
+		_this.registerObjectsToMatch_BWD(match, tAnnotation, tPackage, tType, pg);
 
 	}
 
@@ -2139,29 +2138,29 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("tAnnotation");
 		EObject _localVariable_1 = isApplicableMatch.getObject("mPackageToTPackage");
-		EObject _localVariable_2 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tPackage");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tPackage");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tType");
 		EObject _localVariable_4 = isApplicableMatch.getObject("mPackage");
 		EObject _localVariable_5 = isApplicableMatch.getObject("pg");
 		EObject tmpTAnnotation = _localVariable_0;
 		EObject tmpMPackageToTPackage = _localVariable_1;
-		EObject tmpTType = _localVariable_2;
-		EObject tmpTPackage = _localVariable_3;
+		EObject tmpTPackage = _localVariable_2;
+		EObject tmpTType = _localVariable_3;
 		EObject tmpMPackage = _localVariable_4;
 		EObject tmpPg = _localVariable_5;
 		if (tmpTAnnotation instanceof TEnum) {
 			TEnum tAnnotation = (TEnum) tmpTAnnotation;
 			if (tmpMPackageToTPackage instanceof PackageToTPackage) {
 				PackageToTPackage mPackageToTPackage = (PackageToTPackage) tmpMPackageToTPackage;
-				if (tmpTType instanceof TClass) {
-					TClass tType = (TClass) tmpTType;
-					if (tmpTPackage instanceof TPackage) {
-						TPackage tPackage = (TPackage) tmpTPackage;
+				if (tmpTPackage instanceof TPackage) {
+					TPackage tPackage = (TPackage) tmpTPackage;
+					if (tmpTType instanceof TClass) {
+						TClass tType = (TClass) tmpTType;
 						if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
 							org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
 							if (tmpPg instanceof TypeGraph) {
 								TypeGraph pg = (TypeGraph) tmpPg;
-								return new Object[] { tAnnotation, mPackageToTPackage, tType, tPackage, mPackage, pg,
+								return new Object[] { tAnnotation, mPackageToTPackage, tPackage, tType, mPackage, pg,
 										isApplicableMatch };
 							}
 						}
@@ -2173,13 +2172,13 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_11_1_performtransformation_blackBBBBBBFBB(TEnum tAnnotation,
-			PackageToTPackage mPackageToTPackage, TClass tType, TPackage tPackage,
+			PackageToTPackage mPackageToTPackage, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, org.gravity.tgg.modisco.pm.Rules.Enum _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tAnnotation, mPackageToTPackage, tType, tPackage, mPackage, pg, csp, _this,
+				return new Object[] { tAnnotation, mPackageToTPackage, tPackage, tType, mPackage, pg, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -2193,17 +2192,17 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		if (result_pattern_Enum_11_1_performtransformation_binding != null) {
 			TEnum tAnnotation = (TEnum) result_pattern_Enum_11_1_performtransformation_binding[0];
 			PackageToTPackage mPackageToTPackage = (PackageToTPackage) result_pattern_Enum_11_1_performtransformation_binding[1];
-			TClass tType = (TClass) result_pattern_Enum_11_1_performtransformation_binding[2];
-			TPackage tPackage = (TPackage) result_pattern_Enum_11_1_performtransformation_binding[3];
+			TPackage tPackage = (TPackage) result_pattern_Enum_11_1_performtransformation_binding[2];
+			TClass tType = (TClass) result_pattern_Enum_11_1_performtransformation_binding[3];
 			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_Enum_11_1_performtransformation_binding[4];
 			TypeGraph pg = (TypeGraph) result_pattern_Enum_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_Enum_11_1_performtransformation_black = pattern_Enum_11_1_performtransformation_blackBBBBBBFBB(
-					tAnnotation, mPackageToTPackage, tType, tPackage, mPackage, pg, _this, isApplicableMatch);
+					tAnnotation, mPackageToTPackage, tPackage, tType, mPackage, pg, _this, isApplicableMatch);
 			if (result_pattern_Enum_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_Enum_11_1_performtransformation_black[6];
 
-				return new Object[] { tAnnotation, mPackageToTPackage, tType, tPackage, mPackage, pg, csp, _this,
+				return new Object[] { tAnnotation, mPackageToTPackage, tPackage, tType, mPackage, pg, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -2248,32 +2247,31 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_11_3_bookkeepingforedges_blackBBBBBBBBBB(PerformRuleResult ruleresult,
-			EObject tAnnotation, EObject mPackageToTPackage, EObject mTypeToTType, EObject tType, EObject tPackage,
+			EObject tAnnotation, EObject mPackageToTPackage, EObject mTypeToTType, EObject tPackage, EObject tType,
 			EObject mPackage, EObject pg, EObject mBodyToTAnnotation, EObject mType) {
-		if (!tAnnotation.equals(tType)) {
-			if (!tAnnotation.equals(tPackage)) {
+		if (!tAnnotation.equals(tPackage)) {
+			if (!tAnnotation.equals(tType)) {
 				if (!mPackageToTPackage.equals(tAnnotation)) {
 					if (!mPackageToTPackage.equals(mTypeToTType)) {
-						if (!mPackageToTPackage.equals(tType)) {
-							if (!mPackageToTPackage.equals(tPackage)) {
+						if (!mPackageToTPackage.equals(tPackage)) {
+							if (!mPackageToTPackage.equals(tType)) {
 								if (!mPackageToTPackage.equals(pg)) {
 									if (!mPackageToTPackage.equals(mType)) {
 										if (!mTypeToTType.equals(tAnnotation)) {
-											if (!mTypeToTType.equals(tType)) {
-												if (!mTypeToTType.equals(tPackage)) {
+											if (!mTypeToTType.equals(tPackage)) {
+												if (!mTypeToTType.equals(tType)) {
 													if (!mTypeToTType.equals(pg)) {
 														if (!tPackage.equals(tType)) {
 															if (!mPackage.equals(tAnnotation)) {
 																if (!mPackage.equals(mPackageToTPackage)) {
 																	if (!mPackage.equals(mTypeToTType)) {
-																		if (!mPackage.equals(tType)) {
-																			if (!mPackage.equals(tPackage)) {
+																		if (!mPackage.equals(tPackage)) {
+																			if (!mPackage.equals(tType)) {
 																				if (!mPackage.equals(pg)) {
 																					if (!mPackage.equals(mType)) {
 																						if (!pg.equals(tAnnotation)) {
-																							if (!pg.equals(tType)) {
-																								if (!pg.equals(
-																										tPackage)) {
+																							if (!pg.equals(tPackage)) {
+																								if (!pg.equals(tType)) {
 																									if (!mBodyToTAnnotation
 																											.equals(tAnnotation)) {
 																										if (!mBodyToTAnnotation
@@ -2281,9 +2279,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 																											if (!mBodyToTAnnotation
 																													.equals(mTypeToTType)) {
 																												if (!mBodyToTAnnotation
-																														.equals(tType)) {
+																														.equals(tPackage)) {
 																													if (!mBodyToTAnnotation
-																															.equals(tPackage)) {
+																															.equals(tType)) {
 																														if (!mBodyToTAnnotation
 																																.equals(mPackage)) {
 																															if (!mBodyToTAnnotation
@@ -2295,9 +2293,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 																																		if (!mType
 																																				.equals(mTypeToTType)) {
 																																			if (!mType
-																																					.equals(tType)) {
+																																					.equals(tPackage)) {
 																																				if (!mType
-																																						.equals(tPackage)) {
+																																						.equals(tType)) {
 																																					if (!mType
 																																							.equals(pg)) {
 																																						return new Object[] {
@@ -2305,8 +2303,8 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 																																								tAnnotation,
 																																								mPackageToTPackage,
 																																								mTypeToTType,
-																																								tType,
 																																								tPackage,
+																																								tType,
 																																								mPackage,
 																																								pg,
 																																								mBodyToTAnnotation,
@@ -2351,7 +2349,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tAnnotation, EObject mTypeToTType, EObject tType, EObject tPackage,
+			PerformRuleResult ruleresult, EObject tAnnotation, EObject mTypeToTType, EObject tPackage, EObject tType,
 			EObject mPackage, EObject pg, EObject mBodyToTAnnotation, EObject mType) {
 		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2439,7 +2437,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
 		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
-		return new Object[] { ruleresult, tAnnotation, mTypeToTType, tType, tPackage, mPackage, pg, mBodyToTAnnotation,
+		return new Object[] { ruleresult, tAnnotation, mTypeToTType, tPackage, tType, mPackage, pg, mBodyToTAnnotation,
 				mType, mBodyToTAnnotation__tType____target, tPackage__tType____classes,
 				mBodyToTAnnotation__mType____source, pg__tType____ownedTypes, tType__pg____model,
 				mPackage__mType____ownedElements, mType__mPackage____package, tPackage__tType____ownedTypes,
@@ -2449,9 +2447,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 
 	public static final void pattern_Enum_11_5_registerobjects_expressionBBBBBBBBBBB(
 			org.gravity.tgg.modisco.pm.Rules.Enum _this, PerformRuleResult ruleresult, EObject tAnnotation,
-			EObject mPackageToTPackage, EObject mTypeToTType, EObject tType, EObject tPackage, EObject mPackage,
+			EObject mPackageToTPackage, EObject mTypeToTType, EObject tPackage, EObject tType, EObject mPackage,
 			EObject pg, EObject mBodyToTAnnotation, EObject mType) {
-		_this.registerObjects_BWD(ruleresult, tAnnotation, mPackageToTPackage, mTypeToTType, tType, tPackage, mPackage,
+		_this.registerObjects_BWD(ruleresult, tAnnotation, mPackageToTPackage, mTypeToTType, tPackage, tType, mPackage,
 				pg, mBodyToTAnnotation, mType);
 
 	}
@@ -2513,22 +2511,22 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 
 	public static final Object[] pattern_Enum_12_2_corematch_bindingFFFFB(Match match) {
 		EObject _localVariable_0 = match.getObject("tAnnotation");
-		EObject _localVariable_1 = match.getObject("tType");
-		EObject _localVariable_2 = match.getObject("tPackage");
+		EObject _localVariable_1 = match.getObject("tPackage");
+		EObject _localVariable_2 = match.getObject("tType");
 		EObject _localVariable_3 = match.getObject("pg");
 		EObject tmpTAnnotation = _localVariable_0;
-		EObject tmpTType = _localVariable_1;
-		EObject tmpTPackage = _localVariable_2;
+		EObject tmpTPackage = _localVariable_1;
+		EObject tmpTType = _localVariable_2;
 		EObject tmpPg = _localVariable_3;
 		if (tmpTAnnotation instanceof TEnum) {
 			TEnum tAnnotation = (TEnum) tmpTAnnotation;
-			if (tmpTType instanceof TClass) {
-				TClass tType = (TClass) tmpTType;
-				if (tmpTPackage instanceof TPackage) {
-					TPackage tPackage = (TPackage) tmpTPackage;
+			if (tmpTPackage instanceof TPackage) {
+				TPackage tPackage = (TPackage) tmpTPackage;
+				if (tmpTType instanceof TClass) {
+					TClass tType = (TClass) tmpTType;
 					if (tmpPg instanceof TypeGraph) {
 						TypeGraph pg = (TypeGraph) tmpPg;
-						return new Object[] { tAnnotation, tType, tPackage, pg, match };
+						return new Object[] { tAnnotation, tPackage, tType, pg, match };
 					}
 				}
 			}
@@ -2536,14 +2534,14 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_Enum_12_2_corematch_blackBFBBFBB(TEnum tAnnotation, TClass tType,
-			TPackage tPackage, TypeGraph pg, Match match) {
+	public static final Iterable<Object[]> pattern_Enum_12_2_corematch_blackBFBBFBB(TEnum tAnnotation,
+			TPackage tPackage, TClass tType, TypeGraph pg, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (PackageToTPackage mPackageToTPackage : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPackage, PackageToTPackage.class, "target")) {
 			org.eclipse.modisco.java.Package mPackage = mPackageToTPackage.getSource();
 			if (mPackage != null) {
-				_result.add(new Object[] { tAnnotation, mPackageToTPackage, tType, tPackage, mPackage, pg, match });
+				_result.add(new Object[] { tAnnotation, mPackageToTPackage, tPackage, tType, mPackage, pg, match });
 			}
 
 		}
@@ -2551,7 +2549,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Iterable<Object[]> pattern_Enum_12_3_findcontext_blackBBBBBB(TEnum tAnnotation,
-			PackageToTPackage mPackageToTPackage, TClass tType, TPackage tPackage,
+			PackageToTPackage mPackageToTPackage, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (tPackage.getClasses().contains(tType)) {
@@ -2562,7 +2560,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 							if (tType.getTAnnotation().contains(tAnnotation)) {
 								if (pg.getClasses().contains(tType)) {
 									if (tPackage.equals(mPackageToTPackage.getTarget())) {
-										_result.add(new Object[] { tAnnotation, mPackageToTPackage, tType, tPackage,
+										_result.add(new Object[] { tAnnotation, mPackageToTPackage, tPackage, tType,
 												mPackage, pg });
 									}
 								}
@@ -2576,7 +2574,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_12_3_findcontext_greenBBBBBBFFFFFFFFFFFF(TEnum tAnnotation,
-			PackageToTPackage mPackageToTPackage, TClass tType, TPackage tPackage,
+			PackageToTPackage mPackageToTPackage, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2603,8 +2601,8 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		String mPackageToTPackage__tPackage____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(tAnnotation);
 		isApplicableMatch.getAllContextElements().add(mPackageToTPackage);
-		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(tPackage);
+		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(mPackage);
 		isApplicableMatch.getAllContextElements().add(pg);
 		tPackage__tType____classes.setSrc(tPackage);
@@ -2651,7 +2649,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		tAnnotation__tType____tAnnotated.setName(tAnnotation__tType____tAnnotated_name_prime);
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
 		mPackageToTPackage__tPackage____target.setName(mPackageToTPackage__tPackage____target_name_prime);
-		return new Object[] { tAnnotation, mPackageToTPackage, tType, tPackage, mPackage, pg, isApplicableMatch,
+		return new Object[] { tAnnotation, mPackageToTPackage, tPackage, tType, mPackage, pg, isApplicableMatch,
 				tPackage__tType____classes, pg__tType____ownedTypes, tType__pg____model, tPackage__tType____ownedTypes,
 				tType__tPackage____package, tPackage__pg____model, mPackageToTPackage__mPackage____source,
 				tType__tAnnotation____tAnnotation, tAnnotation__tType____tAnnotated, pg__tType____classes,
@@ -2660,13 +2658,13 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 
 	public static final Object[] pattern_Enum_12_4_solveCSP_bindingFBBBBBBBB(
 			org.gravity.tgg.modisco.pm.Rules.Enum _this, IsApplicableMatch isApplicableMatch, TEnum tAnnotation,
-			PackageToTPackage mPackageToTPackage, TClass tType, TPackage tPackage,
+			PackageToTPackage mPackageToTPackage, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg) {
 		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tAnnotation, mPackageToTPackage,
-				tType, tPackage, mPackage, pg);
+				tPackage, tType, mPackage, pg);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tAnnotation, mPackageToTPackage, tType, tPackage,
+			return new Object[] { csp, _this, isApplicableMatch, tAnnotation, mPackageToTPackage, tPackage, tType,
 					mPackage, pg };
 		}
 		return null;
@@ -2678,17 +2676,17 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 
 	public static final Object[] pattern_Enum_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			org.gravity.tgg.modisco.pm.Rules.Enum _this, IsApplicableMatch isApplicableMatch, TEnum tAnnotation,
-			PackageToTPackage mPackageToTPackage, TClass tType, TPackage tPackage,
+			PackageToTPackage mPackageToTPackage, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg) {
 		Object[] result_pattern_Enum_12_4_solveCSP_binding = pattern_Enum_12_4_solveCSP_bindingFBBBBBBBB(_this,
-				isApplicableMatch, tAnnotation, mPackageToTPackage, tType, tPackage, mPackage, pg);
+				isApplicableMatch, tAnnotation, mPackageToTPackage, tPackage, tType, mPackage, pg);
 		if (result_pattern_Enum_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_Enum_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_Enum_12_4_solveCSP_black = pattern_Enum_12_4_solveCSP_blackB(csp);
 			if (result_pattern_Enum_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tAnnotation, mPackageToTPackage, tType, tPackage,
+				return new Object[] { csp, _this, isApplicableMatch, tAnnotation, mPackageToTPackage, tPackage, tType,
 						mPackage, pg };
 			}
 		}
@@ -2776,14 +2774,14 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		return new Object[] { __result };
 	}
 
-	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_0BBBB(TEnum tAnnotation, TClass tType,
-			TPackage tPackage, TypeGraph pg) {
-		TAnnotatable __DEC_tAnnotation_tAnnotated_540408 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotated_540408 != null) {
-			if (!tType.equals(__DEC_tAnnotation_tAnnotated_540408)) {
-				if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_540408)) {
-					if (!pg.equals(__DEC_tAnnotation_tAnnotated_540408)) {
-						return new Object[] { tAnnotation, tType, tPackage, pg };
+	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_0BBBB(TEnum tAnnotation,
+			TPackage tPackage, TClass tType, TypeGraph pg) {
+		TAnnotatable __DEC_tAnnotation_tAnnotated_886187 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotated_886187 != null) {
+			if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_886187)) {
+				if (!tType.equals(__DEC_tAnnotation_tAnnotated_886187)) {
+					if (!pg.equals(__DEC_tAnnotation_tAnnotated_886187)) {
+						return new Object[] { tAnnotation, tPackage, tType, pg };
 					}
 				}
 			}
@@ -2793,9 +2791,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_1BB(TClass tType, TPackage tPackage) {
-		for (TPackage __DEC_tType_classes_312870 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_676861 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tType_classes_312870)) {
+			if (!tPackage.equals(__DEC_tType_classes_676861)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2803,9 +2801,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_2BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_784753 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_236223 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_784753)) {
+			if (!pg.equals(__DEC_tType_classes_236223)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2813,9 +2811,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_3BB(TClass tType, TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_756785 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_756785 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_756785)) {
+		TPackage __DEC_tType_ownedTypes_879645 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_879645 != null) {
+			if (!tPackage.equals(__DEC_tType_ownedTypes_879645)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2824,9 +2822,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_20_2_testcorematchandDECs_black_nac_4B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_942740 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_942740 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_942740)) {
+		TAbstractType __DEC_tType_innerTypes_953704 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_953704 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_953704)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2874,13 +2872,13 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 														if (tmpTAnnotation instanceof TEnum) {
 															TEnum tAnnotation = (TEnum) tmpTAnnotation;
 															if (pattern_Enum_20_2_testcorematchandDECs_black_nac_0BBBB(
-																	tAnnotation, tType, tPackage, pg) == null) {
+																	tAnnotation, tPackage, tType, pg) == null) {
 																if (pattern_Enum_20_2_testcorematchandDECs_black_nac_5BB(
 																		tAnnotation, tPackage) == null) {
 																	if (pattern_Enum_20_2_testcorematchandDECs_black_nac_6BB(
 																			tAnnotation, pg) == null) {
-																		_result.add(new Object[] { tAnnotation, tType,
-																				tPackage, pg, _edge_classes });
+																		_result.add(new Object[] { tAnnotation,
+																				tPackage, tType, pg, _edge_classes });
 																	}
 																}
 															}
@@ -2913,9 +2911,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final boolean pattern_Enum_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-			org.gravity.tgg.modisco.pm.Rules.Enum _this, Match match, TEnum tAnnotation, TClass tType,
-			TPackage tPackage, TypeGraph pg) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tAnnotation, tType, tPackage, pg);
+			org.gravity.tgg.modisco.pm.Rules.Enum _this, Match match, TEnum tAnnotation, TPackage tPackage,
+			TClass tType, TypeGraph pg) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tAnnotation, tPackage, tType, pg);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3003,9 +3001,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_21_2_testcorematchandDECs_black_nac_0B(EnumDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_261853 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_261853 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_261853)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_351775 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_351775 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_351775)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3014,9 +3012,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_21_2_testcorematchandDECs_black_nac_1B(EnumDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_7843 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_730974 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_7843 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_730974 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3024,7 +3022,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_21_2_testcorematchandDECs_black_nac_2B(EnumDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_920665 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_448452 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3032,7 +3030,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_21_2_testcorematchandDECs_black_nac_3B(EnumDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_559875 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_627330 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3123,30 +3121,30 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	public static final Object[] pattern_Enum_24_2_matchsrctrgcontext_bindingFFFFFFBB(Match targetMatch,
 			Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("tAnnotation");
-		EObject _localVariable_1 = targetMatch.getObject("tType");
-		EObject _localVariable_2 = targetMatch.getObject("tPackage");
+		EObject _localVariable_1 = targetMatch.getObject("tPackage");
+		EObject _localVariable_2 = targetMatch.getObject("tType");
 		EObject _localVariable_3 = sourceMatch.getObject("mPackage");
 		EObject _localVariable_4 = targetMatch.getObject("pg");
 		EObject _localVariable_5 = sourceMatch.getObject("mType");
 		EObject tmpTAnnotation = _localVariable_0;
-		EObject tmpTType = _localVariable_1;
-		EObject tmpTPackage = _localVariable_2;
+		EObject tmpTPackage = _localVariable_1;
+		EObject tmpTType = _localVariable_2;
 		EObject tmpMPackage = _localVariable_3;
 		EObject tmpPg = _localVariable_4;
 		EObject tmpMType = _localVariable_5;
 		if (tmpTAnnotation instanceof TEnum) {
 			TEnum tAnnotation = (TEnum) tmpTAnnotation;
-			if (tmpTType instanceof TClass) {
-				TClass tType = (TClass) tmpTType;
-				if (tmpTPackage instanceof TPackage) {
-					TPackage tPackage = (TPackage) tmpTPackage;
+			if (tmpTPackage instanceof TPackage) {
+				TPackage tPackage = (TPackage) tmpTPackage;
+				if (tmpTType instanceof TClass) {
+					TClass tType = (TClass) tmpTType;
 					if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
 						org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
 						if (tmpPg instanceof TypeGraph) {
 							TypeGraph pg = (TypeGraph) tmpPg;
 							if (tmpMType instanceof EnumDeclaration) {
 								EnumDeclaration mType = (EnumDeclaration) tmpMType;
-								return new Object[] { tAnnotation, tType, tPackage, mPackage, pg, mType, targetMatch,
+								return new Object[] { tAnnotation, tPackage, tType, mPackage, pg, mType, targetMatch,
 										sourceMatch };
 							}
 						}
@@ -3157,11 +3155,11 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		return null;
 	}
 
-	public static final Object[] pattern_Enum_24_2_matchsrctrgcontext_blackBBBBBBBB(TEnum tAnnotation, TClass tType,
-			TPackage tPackage, org.eclipse.modisco.java.Package mPackage, TypeGraph pg, EnumDeclaration mType,
-			Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_Enum_24_2_matchsrctrgcontext_blackBBBBBBBB(TEnum tAnnotation,
+			TPackage tPackage, TClass tType, org.eclipse.modisco.java.Package mPackage, TypeGraph pg,
+			EnumDeclaration mType, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tAnnotation, tType, tPackage, mPackage, pg, mType, sourceMatch, targetMatch };
+			return new Object[] { tAnnotation, tPackage, tType, mPackage, pg, mType, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -3172,31 +3170,31 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 				targetMatch, sourceMatch);
 		if (result_pattern_Enum_24_2_matchsrctrgcontext_binding != null) {
 			TEnum tAnnotation = (TEnum) result_pattern_Enum_24_2_matchsrctrgcontext_binding[0];
-			TClass tType = (TClass) result_pattern_Enum_24_2_matchsrctrgcontext_binding[1];
-			TPackage tPackage = (TPackage) result_pattern_Enum_24_2_matchsrctrgcontext_binding[2];
+			TPackage tPackage = (TPackage) result_pattern_Enum_24_2_matchsrctrgcontext_binding[1];
+			TClass tType = (TClass) result_pattern_Enum_24_2_matchsrctrgcontext_binding[2];
 			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_Enum_24_2_matchsrctrgcontext_binding[3];
 			TypeGraph pg = (TypeGraph) result_pattern_Enum_24_2_matchsrctrgcontext_binding[4];
 			EnumDeclaration mType = (EnumDeclaration) result_pattern_Enum_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_Enum_24_2_matchsrctrgcontext_black = pattern_Enum_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					tAnnotation, tType, tPackage, mPackage, pg, mType, sourceMatch, targetMatch);
+					tAnnotation, tPackage, tType, mPackage, pg, mType, sourceMatch, targetMatch);
 			if (result_pattern_Enum_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tAnnotation, tType, tPackage, mPackage, pg, mType, sourceMatch, targetMatch };
+				return new Object[] { tAnnotation, tPackage, tType, mPackage, pg, mType, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_Enum_24_3_solvecsp_bindingFBBBBBBBBB(
-			org.gravity.tgg.modisco.pm.Rules.Enum _this, TEnum tAnnotation, TClass tType, TPackage tPackage,
+			org.gravity.tgg.modisco.pm.Rules.Enum _this, TEnum tAnnotation, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, EnumDeclaration mType, Match sourceMatch,
 			Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(tAnnotation, tType, tPackage, mPackage, pg, mType,
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(tAnnotation, tPackage, tType, mPackage, pg, mType,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, tAnnotation, tType, tPackage, mPackage, pg, mType, sourceMatch,
+			return new Object[] { csp, _this, tAnnotation, tPackage, tType, mPackage, pg, mType, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -3207,18 +3205,18 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			org.gravity.tgg.modisco.pm.Rules.Enum _this, TEnum tAnnotation, TClass tType, TPackage tPackage,
+			org.gravity.tgg.modisco.pm.Rules.Enum _this, TEnum tAnnotation, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, EnumDeclaration mType, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_Enum_24_3_solvecsp_binding = pattern_Enum_24_3_solvecsp_bindingFBBBBBBBBB(_this,
-				tAnnotation, tType, tPackage, mPackage, pg, mType, sourceMatch, targetMatch);
+				tAnnotation, tPackage, tType, mPackage, pg, mType, sourceMatch, targetMatch);
 		if (result_pattern_Enum_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_Enum_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_Enum_24_3_solvecsp_black = pattern_Enum_24_3_solvecsp_blackB(csp);
 			if (result_pattern_Enum_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tAnnotation, tType, tPackage, mPackage, pg, mType, sourceMatch,
+				return new Object[] { csp, _this, tAnnotation, tPackage, tType, mPackage, pg, mType, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3256,10 +3254,10 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		return new Object[] { mPackageToTPackage, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_Enum_24_6_createcorrespondence_blackBBBBBBB(TEnum tAnnotation, TClass tType,
-			TPackage tPackage, org.eclipse.modisco.java.Package mPackage, TypeGraph pg, EnumDeclaration mType,
-			CCMatch ccMatch) {
-		return new Object[] { tAnnotation, tType, tPackage, mPackage, pg, mType, ccMatch };
+	public static final Object[] pattern_Enum_24_6_createcorrespondence_blackBBBBBBB(TEnum tAnnotation,
+			TPackage tPackage, TClass tType, org.eclipse.modisco.java.Package mPackage, TypeGraph pg,
+			EnumDeclaration mType, CCMatch ccMatch) {
+		return new Object[] { tAnnotation, tPackage, tType, mPackage, pg, mType, ccMatch };
 	}
 
 	public static final Object[] pattern_Enum_24_6_createcorrespondence_greenFBFBB(TClass tType, EnumDeclaration mType,
@@ -3296,9 +3294,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_27_1_matchtggpattern_black_nac_0B(EnumDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_784159 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_784159 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_784159)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_651602 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_651602 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_651602)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3307,9 +3305,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_27_1_matchtggpattern_black_nac_1B(EnumDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_589406 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_335966 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_589406 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_335966 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3317,7 +3315,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_27_1_matchtggpattern_black_nac_2B(EnumDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_188788 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_479292 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3325,7 +3323,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_27_1_matchtggpattern_black_nac_3B(EnumDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_702214 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_696953 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3358,14 +3356,14 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		return _result;
 	}
 
-	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_0BBBB(TEnum tAnnotation, TClass tType,
-			TPackage tPackage, TypeGraph pg) {
-		TAnnotatable __DEC_tAnnotation_tAnnotated_724429 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotated_724429 != null) {
-			if (!tType.equals(__DEC_tAnnotation_tAnnotated_724429)) {
-				if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_724429)) {
-					if (!pg.equals(__DEC_tAnnotation_tAnnotated_724429)) {
-						return new Object[] { tAnnotation, tType, tPackage, pg };
+	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_0BBBB(TEnum tAnnotation, TPackage tPackage,
+			TClass tType, TypeGraph pg) {
+		TAnnotatable __DEC_tAnnotation_tAnnotated_449181 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotated_449181 != null) {
+			if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_449181)) {
+				if (!tType.equals(__DEC_tAnnotation_tAnnotated_449181)) {
+					if (!pg.equals(__DEC_tAnnotation_tAnnotated_449181)) {
+						return new Object[] { tAnnotation, tPackage, tType, pg };
 					}
 				}
 			}
@@ -3375,9 +3373,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_1BB(TClass tType, TPackage tPackage) {
-		for (TPackage __DEC_tType_classes_301147 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_740021 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tType_classes_301147)) {
+			if (!tPackage.equals(__DEC_tType_classes_740021)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3385,9 +3383,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_2BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_619978 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_723301 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_619978)) {
+			if (!pg.equals(__DEC_tType_classes_723301)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3395,9 +3393,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_3BB(TClass tType, TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_870618 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_870618 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_870618)) {
+		TPackage __DEC_tType_ownedTypes_586 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_586 != null) {
+			if (!tPackage.equals(__DEC_tType_ownedTypes_586)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3406,9 +3404,9 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 	}
 
 	public static final Object[] pattern_Enum_28_1_matchtggpattern_black_nac_4B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_450919 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_450919 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_450919)) {
+		TAbstractType __DEC_tType_innerTypes_299874 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_299874 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_299874)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3430,15 +3428,15 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		return null;
 	}
 
-	public static final Object[] pattern_Enum_28_1_matchtggpattern_blackBBBB(TEnum tAnnotation, TClass tType,
-			TPackage tPackage, TypeGraph pg) {
+	public static final Object[] pattern_Enum_28_1_matchtggpattern_blackBBBB(TEnum tAnnotation, TPackage tPackage,
+			TClass tType, TypeGraph pg) {
 		if (tPackage.getClasses().contains(tType)) {
 			if (pg.getOwnedTypes().contains(tType)) {
 				if (tPackage.getOwnedTypes().contains(tType)) {
 					if (pg.equals(tPackage.getModel())) {
 						if (tType.getTAnnotation().contains(tAnnotation)) {
 							if (pg.getClasses().contains(tType)) {
-								if (pattern_Enum_28_1_matchtggpattern_black_nac_0BBBB(tAnnotation, tType, tPackage,
+								if (pattern_Enum_28_1_matchtggpattern_black_nac_0BBBB(tAnnotation, tPackage, tType,
 										pg) == null) {
 									if (pattern_Enum_28_1_matchtggpattern_black_nac_1BB(tType, tPackage) == null) {
 										if (pattern_Enum_28_1_matchtggpattern_black_nac_2BB(tType, pg) == null) {
@@ -3449,7 +3447,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 															tPackage) == null) {
 														if (pattern_Enum_28_1_matchtggpattern_black_nac_6BB(tAnnotation,
 																pg) == null) {
-															return new Object[] { tAnnotation, tType, tPackage, pg };
+															return new Object[] { tAnnotation, tPackage, tType, pg };
 														}
 													}
 												}
@@ -3613,7 +3611,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		return new Object[] { mPackageToTPackage, tPackage, mPackage, pg, ruleResult };
 	}
 
-	public static final Object[] pattern_Enum_29_6_perform_greenFFFBBBFFBB(TPackage tPackage,
+	public static final Object[] pattern_Enum_29_6_perform_greenFFBFBBFFBB(TPackage tPackage,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, ModelgeneratorRuleResult ruleResult, CSP csp) {
 		TEnum tAnnotation = BasicFactory.eINSTANCE.createTEnum();
 		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
@@ -3652,7 +3650,7 @@ public class EnumImpl extends AbstractRuleImpl implements org.gravity.tgg.modisc
 		mType.setName(mType_name_prime);
 		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tAnnotation, mTypeToTType, tType, tPackage, mPackage, pg, mBodyToTAnnotation, mType,
+		return new Object[] { tAnnotation, mTypeToTType, tPackage, tType, mPackage, pg, mBodyToTAnnotation, mType,
 				ruleResult, csp };
 	}
 

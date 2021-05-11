@@ -188,12 +188,12 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	 * @return true, iff no error occurred
 	 */
 	private boolean createFieldSignatureNodes(final MGravityModel model) {
-		model.getMFieldNames().parallelStream().forEach(name -> {
+		for(final MFieldName name : model.getMFieldNames()){
 			for (final MDefinition mfDefinition : name.getMDefinitions()) {
 				final MFieldSignature mSig = getMFieldSignature(model, name, (MFieldDefinition) mfDefinition);
 				mSig.getMDefinitions().add(mfDefinition);
 			}
-		});
+		}
 		return true;
 	}
 

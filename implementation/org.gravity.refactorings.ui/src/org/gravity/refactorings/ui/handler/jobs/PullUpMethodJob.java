@@ -56,6 +56,7 @@ public final class PullUpMethodJob extends WorkspaceJob {
 		}
 		if (!converter.convertProject(monitor)) {
 			asyncPrintError(this.shell, Messages.refactoringError, Messages.createPMFailed);
+			return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, Messages.createPMFailed);
 
 		}
 		final TypeGraph pg = converter.getPG();

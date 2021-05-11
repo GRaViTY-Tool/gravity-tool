@@ -3,29 +3,20 @@
 package org.gravity.hulk.detection.metrics.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.gravity.hulk.antipatterngraph.HMetric;
-
-import org.gravity.hulk.antipatterngraph.metrics.HOutgoingInvocationMetric;
-import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
-import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
-import org.gravity.hulk.detection.metrics.HOutgoingInvocationCalculator;
-import org.gravity.hulk.detection.metrics.MetricsPackage;
-
-import org.gravity.typegraph.basic.TClass;
-// <-- [user defined imports]
-import org.gravity.typegraph.basic.TAbstractType;
-import org.gravity.typegraph.basic.TAccess;
-import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 import java.util.ArrayList;
 // [user defined imports] -->
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.gravity.hulk.antipatterngraph.HMetric;
+import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
+import org.gravity.hulk.detection.metrics.HOutgoingInvocationCalculator;
+import org.gravity.hulk.detection.metrics.MetricsPackage;
+import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -36,19 +27,18 @@ import java.util.ArrayList;
  * @generated
  */
 public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculatorImpl
-		implements HOutgoingInvocationCalculator {
+implements HOutgoingInvocationCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HOutgoingInvocationCalculatorImpl() {
-		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -58,11 +48,14 @@ public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		HOutgoingInvocationMetric metric = MetricsFactory.eINSTANCE.createHOutgoingInvocationMetric();
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
+		final var metric = MetricsFactory.eINSTANCE.createHOutgoingInvocationMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -71,20 +64,21 @@ public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		int invoc = 0;
-		ArrayList<TMember> invocedMethods = new ArrayList<TMember>();
-		for (TMember m : tClass.getDefines()) {
-			for (TAccess t : m.getAccessing()) {
-				TMember tTarget = t.getTarget();
+		var invoc = 0;
+		final var invocedMethods = new ArrayList<TMember>();
+		for (final TMember m : tClass.getDefines()) {
+			for (final TAccess t : m.getAccessing()) {
+				final var tTarget = t.getTarget();
 				if (tTarget instanceof TMethodDefinitionImpl) {
-					TMethodDefinitionImpl targetMethod = (TMethodDefinitionImpl) tTarget;
-					TAbstractType definingClass = targetMethod.getDefinedBy();
+					final var targetMethod = (TMethodDefinitionImpl) tTarget;
+					final var definingClass = targetMethod.getDefinedBy();
 
 					if (definingClass == null) {
 						System.out.println(
@@ -109,11 +103,11 @@ public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HOUTGOING_INVOCATION_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));
@@ -128,6 +122,11 @@ public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculat
 	@Override
 	public String getGuiName() {
 		return "Number of outgoing invocations";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHOutgoingInvocationMetric();
 	}
 
 	// [user code injected with eMoflon] -->

@@ -1,24 +1,17 @@
 package org.gravity.eclipse.ui;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityActivator;
-import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
-import org.gravity.eclipse.util.EclipseProjectUtil;
 
 /**
  * An implementation of java.lang.Job for creating a model from a selection in
@@ -42,14 +35,14 @@ public abstract class ModelCreatorJob extends Job {
 	 * @param fileExtension The file extension of the file into which the model will
 	 *                      be stored
 	 */
-	protected ModelCreatorJob(List<?> selection, String modelKind) {
+	protected ModelCreatorJob(final List<?> selection, final String modelKind) {
 		super("GRaViTY Create " + modelKind);
 		this.modelKind = modelKind;
 		this.selection = selection;
 	}
 
 	@Override
-	protected IStatus run(IProgressMonitor monitor) {
+	protected IStatus run(final IProgressMonitor monitor) {
 		final ArrayList<String> fails = new ArrayList<>();
 		for (final Object entry : this.selection) {
 			if (monitor.isCanceled()) {

@@ -138,27 +138,20 @@ public class PullUpMethod implements Refactoring {
 
 			}
 
-			final List<TMember> accessedMembers = new LinkedList<>();
 			// ForEach
 			for (final TMethodDefinition tMethodDefinition : tDefinitions) {
-				final TAbstractType tmpActiveClass = tMethodDefinition.getDefinedBy();
-				if (tmpActiveClass instanceof TClass) {
-					final TClass childClass = (TClass) tmpActiveClass;
-
-					// ForEach
-					for (final TAccess tAccess : tMethodDefinition.getAccessing()) {
-						final TMember accessed = tAccess.getTarget();
-						final TAbstractType definingClass = accessed.getDefinedBy();
-						if (!accessed.equals(tMethodDefinition)) {
-							accessedMembers.add(accessed);
-							if (definingClass.equals(childClass)) {
-								return false;
-							}
-							if (!definingClass.equals(tParentClass)
-									&& definingClass.isSubTypeOf(tParentClass)
-									&& !definingClass.isSubTypeOf(childClass)) {
-								return false;
-							}
+				final TAbstractType childClass = tMethodDefinition.getDefinedBy();
+				// ForEach
+				for (final TAccess tAccess : tMethodDefinition.getAccessing()) {
+					final TMember accessed = tAccess.getTarget();
+					final TAbstractType definingClass = accessed.getDefinedBy();
+					if (!accessed.equals(tMethodDefinition)) {
+						if (definingClass.equals(childClass)) {
+							return false;
+						}
+						if (!definingClass.equals(tParentClass) && definingClass.isSubTypeOf(tParentClass)
+								&& !definingClass.isSubTypeOf(childClass)) {
+							return false;
 						}
 					}
 				}
@@ -170,7 +163,8 @@ public class PullUpMethod implements Refactoring {
 
 	}
 
-	private static final TMethodDefinition selectRandomDefinitionOfChild(final TClass parent, final TMethodSignature method) {
+	private static final TMethodDefinition selectRandomDefinitionOfChild(final TClass parent,
+			final TMethodSignature method) {
 		for (final TClass tmpChild : parent.getChildClasses()) {
 			if (!parent.equals(tmpChild) && tmpChild.getSignature().contains(method)) {
 				for (final TMethodDefinition tMethodDefinition : method.getMethodDefinitions()) {

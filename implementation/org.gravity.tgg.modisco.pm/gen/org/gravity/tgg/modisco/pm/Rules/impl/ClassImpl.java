@@ -183,33 +183,33 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ClassImpl.pattern_Class_1_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult,
-				mPackageToTPackage, tType, tPackage, mTypeToTType, mPackage, pg, mBodyToTAnnotation, mType);
+				mPackageToTPackage, tType, tPackage, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[mPackageToTPackage] = " + mPackageToTPackage + ", " + "[tType] = " + tType + ", "
-					+ "[tPackage] = " + tPackage + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mPackage] = "
-					+ mPackage + ", " + "[pg] = " + pg + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
-					+ "[mType] = " + mType + ".");
+					+ "[tPackage] = " + tPackage + ", " + "[mPackage] = " + mPackage + ", " + "[mTypeToTType] = "
+					+ mTypeToTType + ", " + "[pg] = " + pg + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation
+					+ ", " + "[mType] = " + mType + ".");
 		}
-		ClassImpl.pattern_Class_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(ruleresult, tType, tPackage,
-				mTypeToTType, mPackage, pg, mBodyToTAnnotation, mType);
-		//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[10];
+		ClassImpl.pattern_Class_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(ruleresult, tType, tPackage, mPackage,
+				mTypeToTType, pg, mBodyToTAnnotation, mType);
+		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[19];
 
 		// 
 		// 
 		ClassImpl.pattern_Class_1_5_registerobjects_expressionBBBBBBBBBB(this, ruleresult, mPackageToTPackage, tType,
-				tPackage, mTypeToTType, mPackage, pg, mBodyToTAnnotation, mType);
+				tPackage, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
 		return ClassImpl.pattern_Class_1_6_expressionFB(ruleresult);
 	}
 
@@ -385,13 +385,13 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject tType,
-			EObject tPackage, EObject mTypeToTType, EObject mPackage, EObject pg, EObject mBodyToTAnnotation,
+			EObject tPackage, EObject mPackage, EObject mTypeToTType, EObject pg, EObject mBodyToTAnnotation,
 			EObject mType) {
 		ruleresult.registerObject("mPackageToTPackage", mPackageToTPackage);
 		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("tPackage", tPackage);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("mPackage", mPackage);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
 		ruleresult.registerObject("mType", mType);
@@ -485,8 +485,8 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[3];
 		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
-		Object[] result1_green = ClassImpl.pattern_Class_11_1_performtransformation_greenBFBFFB(tType, mPackage, csp);
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_green[1];
+		Object[] result1_green = ClassImpl.pattern_Class_11_1_performtransformation_greenBBFFFB(tType, mPackage, csp);
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_green[2];
 		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[3];
 		MClass mType = (MClass) result1_green[4];
 
@@ -502,33 +502,33 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ClassImpl.pattern_Class_11_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult,
-				mPackageToTPackage, tType, tPackage, mTypeToTType, mPackage, pg, mBodyToTAnnotation, mType);
+				mPackageToTPackage, tType, tPackage, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[mPackageToTPackage] = " + mPackageToTPackage + ", " + "[tType] = " + tType + ", "
-					+ "[tPackage] = " + tPackage + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mPackage] = "
-					+ mPackage + ", " + "[pg] = " + pg + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
-					+ "[mType] = " + mType + ".");
+					+ "[tPackage] = " + tPackage + ", " + "[mPackage] = " + mPackage + ", " + "[mTypeToTType] = "
+					+ mTypeToTType + ", " + "[pg] = " + pg + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation
+					+ ", " + "[mType] = " + mType + ".");
 		}
 		ClassImpl.pattern_Class_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(ruleresult, tType, tPackage,
-				mTypeToTType, mPackage, pg, mBodyToTAnnotation, mType);
-		//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[10];
+				mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
+		//nothing EMoflonEdge mBodyToTAnnotation__tType____target = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mBodyToTAnnotation__mType____source = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[19];
 
 		// 
 		// 
 		ClassImpl.pattern_Class_11_5_registerobjects_expressionBBBBBBBBBB(this, ruleresult, mPackageToTPackage, tType,
-				tPackage, mTypeToTType, mPackage, pg, mBodyToTAnnotation, mType);
+				tPackage, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType);
 		return ClassImpl.pattern_Class_11_6_expressionFB(ruleresult);
 	}
 
@@ -709,13 +709,13 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject tType,
-			EObject tPackage, EObject mTypeToTType, EObject mPackage, EObject pg, EObject mBodyToTAnnotation,
+			EObject tPackage, EObject mPackage, EObject mTypeToTType, EObject pg, EObject mBodyToTAnnotation,
 			EObject mType) {
 		ruleresult.registerObject("mPackageToTPackage", mPackageToTPackage);
 		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("tPackage", tPackage);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("mPackage", mPackage);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
 		ruleresult.registerObject("mType", mType);
@@ -736,7 +736,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_35(EMoflonEdge _edge_ownedTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_5(EMoflonEdge _edge_ownedTypes) {
 
 		Object[] result1_bindingAndBlack = ClassImpl.pattern_Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
 		if (result1_bindingAndBlack == null) {
@@ -788,7 +788,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_37(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_5(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = ClassImpl.pattern_Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
 		if (result1_bindingAndBlack == null) {
@@ -849,13 +849,13 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
-		var_tType_tName.setType("String");
-
 		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
 		var_mType_name.setValue(__helper.getValue("mType", "name"));
 		var_mType_name.setType("String");
+
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
+		var_tType_tName.setType("String");
 
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
@@ -913,13 +913,13 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
-		var_tType_tName.setType("String");
-
 		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
 		var_mType_name.setValue(__helper.getValue("mType", "name"));
 		var_mType_name.setType("String");
+
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
+		var_tType_tName.setType("String");
 
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
@@ -1162,9 +1162,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 								+ ", " + "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", " + "[ruleResult] = "
 								+ ruleResult + ".");
 					}
-					ClassImpl.pattern_Class_29_6_perform_greenFBFBBFFBB(tPackage, mPackage, pg, ruleResult, csp);
+					ClassImpl.pattern_Class_29_6_perform_greenFBBFBFFBB(tPackage, mPackage, pg, ruleResult, csp);
 					//nothing TClass tType = (TClass) result6_green[0];
-					//nothing TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result6_green[2];
+					//nothing TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result6_green[3];
 					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[5];
 					//nothing MClass mType = (MClass) result6_green[6];
 
@@ -1301,10 +1301,10 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 			return null;
 		case RulesPackage.CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_35__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_35((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_37__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_37((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_5__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_5((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_5__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_5((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1536,7 +1536,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_1_3_bookkeepingforedges_blackBBBBBBBBB(PerformRuleResult ruleresult,
-			EObject mPackageToTPackage, EObject tType, EObject tPackage, EObject mTypeToTType, EObject mPackage,
+			EObject mPackageToTPackage, EObject tType, EObject tPackage, EObject mPackage, EObject mTypeToTType,
 			EObject pg, EObject mBodyToTAnnotation, EObject mType) {
 		if (!mPackageToTPackage.equals(tType)) {
 			if (!mPackageToTPackage.equals(tPackage)) {
@@ -1544,15 +1544,15 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 					if (!mPackageToTPackage.equals(pg)) {
 						if (!mPackageToTPackage.equals(mType)) {
 							if (!tPackage.equals(tType)) {
-								if (!mTypeToTType.equals(tType)) {
-									if (!mTypeToTType.equals(tPackage)) {
-										if (!mTypeToTType.equals(pg)) {
-											if (!mPackage.equals(mPackageToTPackage)) {
-												if (!mPackage.equals(tType)) {
-													if (!mPackage.equals(tPackage)) {
-														if (!mPackage.equals(mTypeToTType)) {
-															if (!mPackage.equals(pg)) {
-																if (!mPackage.equals(mType)) {
+								if (!mPackage.equals(mPackageToTPackage)) {
+									if (!mPackage.equals(tType)) {
+										if (!mPackage.equals(tPackage)) {
+											if (!mPackage.equals(mTypeToTType)) {
+												if (!mPackage.equals(pg)) {
+													if (!mPackage.equals(mType)) {
+														if (!mTypeToTType.equals(tType)) {
+															if (!mTypeToTType.equals(tPackage)) {
+																if (!mTypeToTType.equals(pg)) {
 																	if (!pg.equals(tType)) {
 																		if (!pg.equals(tPackage)) {
 																			if (!mBodyToTAnnotation
@@ -1561,9 +1561,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 																					if (!mBodyToTAnnotation
 																							.equals(tPackage)) {
 																						if (!mBodyToTAnnotation
-																								.equals(mTypeToTType)) {
+																								.equals(mPackage)) {
 																							if (!mBodyToTAnnotation
-																									.equals(mPackage)) {
+																									.equals(mTypeToTType)) {
 																								if (!mBodyToTAnnotation
 																										.equals(pg)) {
 																									if (!mBodyToTAnnotation
@@ -1581,8 +1581,8 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 																																mPackageToTPackage,
 																																tType,
 																																tPackage,
-																																mTypeToTType,
 																																mPackage,
+																																mTypeToTType,
 																																pg,
 																																mBodyToTAnnotation,
 																																mType };
@@ -1618,42 +1618,42 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tType, EObject tPackage, EObject mTypeToTType, EObject mPackage,
+			PerformRuleResult ruleresult, EObject tType, EObject tPackage, EObject mPackage, EObject mTypeToTType,
 			EObject pg, EObject mBodyToTAnnotation, EObject mType) {
+		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mBodyToTAnnotation__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Class";
+		String mBodyToTAnnotation__tType____target_name_prime = "target";
 		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__tPackage____package_name_prime = "package";
-		String mBodyToTAnnotation__tType____target_name_prime = "target";
 		String tPackage__tType____classes_name_prime = "classes";
 		String mBodyToTAnnotation__mType____source_name_prime = "source";
 		String mTypeToTType__tType____target_name_prime = "target";
 		String pg__tType____classes_name_prime = "classes";
-		String mTypeToTType__mType____source_name_prime = "source";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____model_name_prime = "model";
+		String mTypeToTType__mType____source_name_prime = "source";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
 		String mType__mPackage____package_name_prime = "package";
+		mBodyToTAnnotation__tType____target.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__tType____target.setTrg(tType);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tType____target);
 		tPackage__tType____ownedTypes.setSrc(tPackage);
 		tPackage__tType____ownedTypes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(tPackage__tType____ownedTypes);
 		tType__tPackage____package.setSrc(tType);
 		tType__tPackage____package.setTrg(tPackage);
 		ruleresult.getCreatedEdges().add(tType__tPackage____package);
-		mBodyToTAnnotation__tType____target.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tType____target);
 		tPackage__tType____classes.setSrc(tPackage);
 		tPackage__tType____classes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(tPackage__tType____classes);
@@ -1666,15 +1666,15 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		pg__tType____classes.setSrc(pg);
 		pg__tType____classes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(pg__tType____classes);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(pg__tType____ownedTypes);
 		tType__pg____model.setSrc(tType);
 		tType__pg____model.setTrg(pg);
 		ruleresult.getCreatedEdges().add(tType__pg____model);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		mPackage__mType____ownedElements.setSrc(mPackage);
 		mPackage__mType____ownedElements.setTrg(mType);
 		ruleresult.getTranslatedEdges().add(mPackage__mType____ownedElements);
@@ -1682,30 +1682,30 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		mType__mPackage____package.setTrg(mPackage);
 		ruleresult.getTranslatedEdges().add(mType__mPackage____package);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		mBodyToTAnnotation__tType____target.setName(mBodyToTAnnotation__tType____target_name_prime);
 		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
 		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
-		mBodyToTAnnotation__tType____target.setName(mBodyToTAnnotation__tType____target_name_prime);
 		tPackage__tType____classes.setName(tPackage__tType____classes_name_prime);
 		mBodyToTAnnotation__mType____source.setName(mBodyToTAnnotation__mType____source_name_prime);
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____model.setName(tType__pg____model_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
-		return new Object[] { ruleresult, tType, tPackage, mTypeToTType, mPackage, pg, mBodyToTAnnotation, mType,
-				tPackage__tType____ownedTypes, tType__tPackage____package, mBodyToTAnnotation__tType____target,
+		return new Object[] { ruleresult, tType, tPackage, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType,
+				mBodyToTAnnotation__tType____target, tPackage__tType____ownedTypes, tType__tPackage____package,
 				tPackage__tType____classes, mBodyToTAnnotation__mType____source, mTypeToTType__tType____target,
-				pg__tType____classes, mTypeToTType__mType____source, pg__tType____ownedTypes, tType__pg____model,
+				pg__tType____classes, pg__tType____ownedTypes, tType__pg____model, mTypeToTType__mType____source,
 				mPackage__mType____ownedElements, mType__mPackage____package };
 	}
 
 	public static final void pattern_Class_1_5_registerobjects_expressionBBBBBBBBBB(
 			org.gravity.tgg.modisco.pm.Rules.Class _this, PerformRuleResult ruleresult, EObject mPackageToTPackage,
-			EObject tType, EObject tPackage, EObject mTypeToTType, EObject mPackage, EObject pg,
+			EObject tType, EObject tPackage, EObject mPackage, EObject mTypeToTType, EObject pg,
 			EObject mBodyToTAnnotation, EObject mType) {
-		_this.registerObjects_FWD(ruleresult, mPackageToTPackage, tType, tPackage, mTypeToTType, mPackage, pg,
+		_this.registerObjects_FWD(ruleresult, mPackageToTPackage, tType, tPackage, mPackage, mTypeToTType, pg,
 				mBodyToTAnnotation, mType);
 
 	}
@@ -2111,7 +2111,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		return null;
 	}
 
-	public static final Object[] pattern_Class_11_1_performtransformation_greenBFBFFB(TClass tType,
+	public static final Object[] pattern_Class_11_1_performtransformation_greenBBFFFB(TClass tType,
 			org.eclipse.modisco.java.Package mPackage, CSP csp) {
 		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
@@ -2127,7 +2127,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		boolean mType_proxy_prime = (boolean) _localVariable_1;
 		mType.setName(mType_name_prime);
 		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
-		return new Object[] { tType, mTypeToTType, mPackage, mBodyToTAnnotation, mType, csp };
+		return new Object[] { tType, mPackage, mTypeToTType, mBodyToTAnnotation, mType, csp };
 	}
 
 	public static final Object[] pattern_Class_11_2_collecttranslatedelements_blackBBBB(TClass tType,
@@ -2146,7 +2146,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_11_3_bookkeepingforedges_blackBBBBBBBBB(PerformRuleResult ruleresult,
-			EObject mPackageToTPackage, EObject tType, EObject tPackage, EObject mTypeToTType, EObject mPackage,
+			EObject mPackageToTPackage, EObject tType, EObject tPackage, EObject mPackage, EObject mTypeToTType,
 			EObject pg, EObject mBodyToTAnnotation, EObject mType) {
 		if (!mPackageToTPackage.equals(tType)) {
 			if (!mPackageToTPackage.equals(tPackage)) {
@@ -2154,15 +2154,15 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 					if (!mPackageToTPackage.equals(pg)) {
 						if (!mPackageToTPackage.equals(mType)) {
 							if (!tPackage.equals(tType)) {
-								if (!mTypeToTType.equals(tType)) {
-									if (!mTypeToTType.equals(tPackage)) {
-										if (!mTypeToTType.equals(pg)) {
-											if (!mPackage.equals(mPackageToTPackage)) {
-												if (!mPackage.equals(tType)) {
-													if (!mPackage.equals(tPackage)) {
-														if (!mPackage.equals(mTypeToTType)) {
-															if (!mPackage.equals(pg)) {
-																if (!mPackage.equals(mType)) {
+								if (!mPackage.equals(mPackageToTPackage)) {
+									if (!mPackage.equals(tType)) {
+										if (!mPackage.equals(tPackage)) {
+											if (!mPackage.equals(mTypeToTType)) {
+												if (!mPackage.equals(pg)) {
+													if (!mPackage.equals(mType)) {
+														if (!mTypeToTType.equals(tType)) {
+															if (!mTypeToTType.equals(tPackage)) {
+																if (!mTypeToTType.equals(pg)) {
 																	if (!pg.equals(tType)) {
 																		if (!pg.equals(tPackage)) {
 																			if (!mBodyToTAnnotation
@@ -2171,9 +2171,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 																					if (!mBodyToTAnnotation
 																							.equals(tPackage)) {
 																						if (!mBodyToTAnnotation
-																								.equals(mTypeToTType)) {
+																								.equals(mPackage)) {
 																							if (!mBodyToTAnnotation
-																									.equals(mPackage)) {
+																									.equals(mTypeToTType)) {
 																								if (!mBodyToTAnnotation
 																										.equals(pg)) {
 																									if (!mBodyToTAnnotation
@@ -2191,8 +2191,8 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 																																mPackageToTPackage,
 																																tType,
 																																tPackage,
-																																mTypeToTType,
 																																mPackage,
+																																mTypeToTType,
 																																pg,
 																																mBodyToTAnnotation,
 																																mType };
@@ -2228,42 +2228,42 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tType, EObject tPackage, EObject mTypeToTType, EObject mPackage,
+			PerformRuleResult ruleresult, EObject tType, EObject tPackage, EObject mPackage, EObject mTypeToTType,
 			EObject pg, EObject mBodyToTAnnotation, EObject mType) {
+		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mBodyToTAnnotation__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Class";
+		String mBodyToTAnnotation__tType____target_name_prime = "target";
 		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__tPackage____package_name_prime = "package";
-		String mBodyToTAnnotation__tType____target_name_prime = "target";
 		String tPackage__tType____classes_name_prime = "classes";
 		String mBodyToTAnnotation__mType____source_name_prime = "source";
 		String mTypeToTType__tType____target_name_prime = "target";
 		String pg__tType____classes_name_prime = "classes";
-		String mTypeToTType__mType____source_name_prime = "source";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____model_name_prime = "model";
+		String mTypeToTType__mType____source_name_prime = "source";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
 		String mType__mPackage____package_name_prime = "package";
+		mBodyToTAnnotation__tType____target.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__tType____target.setTrg(tType);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tType____target);
 		tPackage__tType____ownedTypes.setSrc(tPackage);
 		tPackage__tType____ownedTypes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(tPackage__tType____ownedTypes);
 		tType__tPackage____package.setSrc(tType);
 		tType__tPackage____package.setTrg(tPackage);
 		ruleresult.getTranslatedEdges().add(tType__tPackage____package);
-		mBodyToTAnnotation__tType____target.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tType____target);
 		tPackage__tType____classes.setSrc(tPackage);
 		tPackage__tType____classes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(tPackage__tType____classes);
@@ -2276,15 +2276,15 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		pg__tType____classes.setSrc(pg);
 		pg__tType____classes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(pg__tType____classes);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(pg__tType____ownedTypes);
 		tType__pg____model.setSrc(tType);
 		tType__pg____model.setTrg(pg);
 		ruleresult.getTranslatedEdges().add(tType__pg____model);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		mPackage__mType____ownedElements.setSrc(mPackage);
 		mPackage__mType____ownedElements.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mPackage__mType____ownedElements);
@@ -2292,30 +2292,30 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		mType__mPackage____package.setTrg(mPackage);
 		ruleresult.getCreatedEdges().add(mType__mPackage____package);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		mBodyToTAnnotation__tType____target.setName(mBodyToTAnnotation__tType____target_name_prime);
 		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
 		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
-		mBodyToTAnnotation__tType____target.setName(mBodyToTAnnotation__tType____target_name_prime);
 		tPackage__tType____classes.setName(tPackage__tType____classes_name_prime);
 		mBodyToTAnnotation__mType____source.setName(mBodyToTAnnotation__mType____source_name_prime);
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____model.setName(tType__pg____model_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
-		return new Object[] { ruleresult, tType, tPackage, mTypeToTType, mPackage, pg, mBodyToTAnnotation, mType,
-				tPackage__tType____ownedTypes, tType__tPackage____package, mBodyToTAnnotation__tType____target,
+		return new Object[] { ruleresult, tType, tPackage, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType,
+				mBodyToTAnnotation__tType____target, tPackage__tType____ownedTypes, tType__tPackage____package,
 				tPackage__tType____classes, mBodyToTAnnotation__mType____source, mTypeToTType__tType____target,
-				pg__tType____classes, mTypeToTType__mType____source, pg__tType____ownedTypes, tType__pg____model,
+				pg__tType____classes, pg__tType____ownedTypes, tType__pg____model, mTypeToTType__mType____source,
 				mPackage__mType____ownedElements, mType__mPackage____package };
 	}
 
 	public static final void pattern_Class_11_5_registerobjects_expressionBBBBBBBBBB(
 			org.gravity.tgg.modisco.pm.Rules.Class _this, PerformRuleResult ruleresult, EObject mPackageToTPackage,
-			EObject tType, EObject tPackage, EObject mTypeToTType, EObject mPackage, EObject pg,
+			EObject tType, EObject tPackage, EObject mPackage, EObject mTypeToTType, EObject pg,
 			EObject mBodyToTAnnotation, EObject mType) {
-		_this.registerObjects_BWD(ruleresult, mPackageToTPackage, tType, tPackage, mTypeToTType, mPackage, pg,
+		_this.registerObjects_BWD(ruleresult, mPackageToTPackage, tType, tPackage, mPackage, mTypeToTType, pg,
 				mBodyToTAnnotation, mType);
 
 	}
@@ -2619,9 +2619,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 
 	public static final Object[] pattern_Class_20_2_testcorematchandDECs_black_nac_0BB(TClass tType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tType_classes_343750 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_699176 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tType_classes_343750)) {
+			if (!tPackage.equals(__DEC_tType_classes_699176)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2629,9 +2629,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_20_2_testcorematchandDECs_black_nac_1BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_797792 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_324486 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_797792)) {
+			if (!pg.equals(__DEC_tType_classes_324486)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2640,9 +2640,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 
 	public static final Object[] pattern_Class_20_2_testcorematchandDECs_black_nac_2BB(TClass tType,
 			TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_530920 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_530920 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_530920)) {
+		TPackage __DEC_tType_ownedTypes_8653 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_8653 != null) {
+			if (!tPackage.equals(__DEC_tType_ownedTypes_8653)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2651,9 +2651,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_20_2_testcorematchandDECs_black_nac_3B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_207470 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_207470 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_207470)) {
+		TAbstractType __DEC_tType_innerTypes_980560 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_980560 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_980560)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2800,9 +2800,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_21_2_testcorematchandDECs_black_nac_0B(MClass mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_661252 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_661252 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_661252)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_132345 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_132345 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_132345)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2811,9 +2811,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_21_2_testcorematchandDECs_black_nac_1B(MClass mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_659909 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_602442 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_659909 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_602442 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2821,7 +2821,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_21_2_testcorematchandDECs_black_nac_2B(MClass mType) {
-		for (Model __DEC_mType_orphanTypes_563956 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_198171 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -2829,7 +2829,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_21_2_testcorematchandDECs_black_nac_3B(MClass mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_747167 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_991095 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3083,9 +3083,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_27_1_matchtggpattern_black_nac_0B(MClass mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_713291 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_713291 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_713291)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_864811 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_864811 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_864811)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3094,9 +3094,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_27_1_matchtggpattern_black_nac_1B(MClass mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_909194 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_894747 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_909194 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_894747 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3104,7 +3104,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_27_1_matchtggpattern_black_nac_2B(MClass mType) {
-		for (Model __DEC_mType_orphanTypes_747012 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_381829 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3112,7 +3112,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_27_1_matchtggpattern_black_nac_3B(MClass mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_5601 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_678083 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3146,9 +3146,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_28_1_matchtggpattern_black_nac_0BB(TClass tType, TPackage tPackage) {
-		for (TPackage __DEC_tType_classes_647159 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_896141 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tType_classes_647159)) {
+			if (!tPackage.equals(__DEC_tType_classes_896141)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3156,9 +3156,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_28_1_matchtggpattern_black_nac_1BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_361781 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_426160 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_361781)) {
+			if (!pg.equals(__DEC_tType_classes_426160)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3166,9 +3166,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_28_1_matchtggpattern_black_nac_2BB(TClass tType, TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_297509 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_297509 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_297509)) {
+		TPackage __DEC_tType_ownedTypes_671187 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_671187 != null) {
+			if (!tPackage.equals(__DEC_tType_ownedTypes_671187)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3177,9 +3177,9 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 	}
 
 	public static final Object[] pattern_Class_28_1_matchtggpattern_black_nac_3B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_22103 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_22103 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_22103)) {
+		TAbstractType __DEC_tType_innerTypes_78345 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_78345 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_78345)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3359,7 +3359,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		return new Object[] { mPackageToTPackage, tPackage, mPackage, pg, ruleResult };
 	}
 
-	public static final Object[] pattern_Class_29_6_perform_greenFBFBBFFBB(TPackage tPackage,
+	public static final Object[] pattern_Class_29_6_perform_greenFBBFBFFBB(TPackage tPackage,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, ModelgeneratorRuleResult ruleResult, CSP csp) {
 		TClass tType = BasicFactory.eINSTANCE.createTClass();
 		TypeToTAbstractType mTypeToTType = PmFactory.eINSTANCE.createTypeToTAbstractType();
@@ -3395,7 +3395,7 @@ public class ClassImpl extends AbstractRuleImpl implements org.gravity.tgg.modis
 		mType.setName(mType_name_prime);
 		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tType, tPackage, mTypeToTType, mPackage, pg, mBodyToTAnnotation, mType, ruleResult, csp };
+		return new Object[] { tType, tPackage, mPackage, mTypeToTType, pg, mBodyToTAnnotation, mType, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_Class_29_7_expressionFB(ModelgeneratorRuleResult ruleResult) {

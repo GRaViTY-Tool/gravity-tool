@@ -112,8 +112,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject ePrimitiveType, EObject eModelToTypeGraph,
-			EObject typeGraph, EObject ePrimitiveTypeToTPrimitiveClass, EObject typeToTAbstractType,
-			EObject tPrimitiveClass, EObject eModel);
+			EObject typeGraph, EObject typeToTAbstractType, EObject tPrimitiveClass, EObject eModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +194,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject ePrimitiveType, EObject eModelToTypeGraph,
-			EObject typeGraph, EObject ePrimitiveTypeToTPrimitiveClass, EObject typeToTAbstractType,
-			EObject tPrimitiveClass, EObject eModel);
+			EObject typeGraph, EObject typeToTAbstractType, EObject tPrimitiveClass, EObject eModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +210,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_76(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_33(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +218,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_80(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_34(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->

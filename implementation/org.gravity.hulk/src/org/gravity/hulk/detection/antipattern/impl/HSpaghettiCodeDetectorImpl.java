@@ -19,7 +19,6 @@ import org.gravity.hulk.antipatterngraph.metrics.HAverageOverloadingInClassMetri
 import org.gravity.hulk.antipatterngraph.metrics.HAverageParametersMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HDepthOfInheritanceMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfChildMetric;
-import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.detection.antipattern.AntipatternPackage;
 import org.gravity.hulk.detection.antipattern.HSpaghettiCodeDetector;
@@ -28,7 +27,6 @@ import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
-import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -45,7 +43,6 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	 * @generated
 	 */
 	protected HSpaghettiCodeDetectorImpl() {
-		super();
 	}
 
 	/**
@@ -66,7 +63,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	@Override
 	public boolean detect(final HAntiPatternGraph pg) {// ForEach
 		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final HAnnotation metric = calculate(tClass);
+			final var metric = calculate(tClass);
 			if (metric != null) {
 				metric.setTAnnotated(tClass);
 				pg.getHAnnotations().add(metric);
@@ -84,6 +81,8 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	 */
 	@Override
 	public HAnnotation calculate(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		HIntenseFieldUsageCodeSmell intenseFieldUsage = null;
 		HAverageParametersMetric averageParams = null;
 		HDepthOfInheritanceMetric depthOfInheritance = null;
@@ -102,8 +101,8 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 				averageOverloading = (HAverageOverloadingInClassMetric) annotation;
 			}
 		}
-		if (intenseFieldUsage == null || averageParams == null || depthOfInheritance == null || numberOfChild == null
-				|| averageOverloading == null) {
+		if ((intenseFieldUsage == null) || (averageParams == null) || (depthOfInheritance == null) || (numberOfChild == null)
+				|| (averageOverloading == null)) {
 			return null;
 		}
 
@@ -119,34 +118,34 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 			return null;
 		}
 
-		final HRelativeValue iRelative = depthOfInheritance.getRelativeAmount();
-		if (iRelative != null && HRelativeValueConstants.VERY_LOW.equals(iRelative.getValue())) {
+		final var iRelative = depthOfInheritance.getRelativeAmount();
+		if ((iRelative != null) && HRelativeValueConstants.VERY_LOW.equals(iRelative.getValue())) {
 			collect(depthOfInheritance);
 			//
-			final HRelativeValue cRelative = numberOfChild.getRelativeAmount();
-			if (cRelative != null && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
+			final var cRelative = numberOfChild.getRelativeAmount();
+			if ((cRelative != null) && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
 				collect(numberOfChild);
 
 			}
 			//
-			final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
-			if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
+			final var oRelative = averageOverloading.getRelativeAmount();
+			if ((oRelative != null) && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
 				collect(averageOverloading);
 			}
 
 		} else {
-			final HRelativeValue cRelative = numberOfChild.getRelativeAmount();
-			if (cRelative != null && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
+			final var cRelative = numberOfChild.getRelativeAmount();
+			if ((cRelative != null) && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
 				collect(numberOfChild);
 				//
-				final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
-				if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
+				final var oRelative = averageOverloading.getRelativeAmount();
+				if ((oRelative != null) && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
 					collect(averageOverloading);
 				}
 
 			} else {
-				final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
-				if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
+				final var oRelative = averageOverloading.getRelativeAmount();
+				if ((oRelative != null) && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
 					collect(averageOverloading);
 				} else {
 					return null;
@@ -164,16 +163,16 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	 * @return
 	 */
 	private HAnnotation createSpaghettiCodeAnnotation(final TClass tClass) {
-		final HSpaghettiCodeAntiPattern anti = AntipatternFactory.eINSTANCE.createHSpaghettiCodeAntiPattern();
+		final var anti = AntipatternFactory.eINSTANCE.createHSpaghettiCodeAntiPattern();
 		anti.setTAnnotated(tClass);
 		getHAnnotation().add(anti);
 		//
 		connect(anti);
 		//
 
-		final TAnnotationType tType = getAnnotationType(tClass.getModel(), "SpaghettiCode");
+		final var tType = getAnnotationType(tClass.getModel(), "SpaghettiCode");
 		if (tType != null) {
-			final TAnnotation tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
+			final var tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
 			tAnnotation.setTAnnotated(tClass);
 			tType.getAnnotations().add(tAnnotation);
 		}
@@ -254,6 +253,11 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	@Override
 	public String getGuiName() {
 		return "Spaghetti Code [Anti-Pattern]";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern();
 	}
 
 	// [user code injected with eMoflon] -->

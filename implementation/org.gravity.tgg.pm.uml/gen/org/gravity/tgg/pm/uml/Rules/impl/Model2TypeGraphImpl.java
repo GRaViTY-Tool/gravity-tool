@@ -129,36 +129,36 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		}
 		final Model model = (Model) result1_bindingAndBlack[0];
 		final CSP csp = (CSP) result1_bindingAndBlack[1];
-		final Object[] result1_green = Model2TypeGraphImpl.pattern_Model2TypeGraph_1_1_performtransformation_greenFFBB(model,
+		final Object[] result1_green = Model2TypeGraphImpl.pattern_Model2TypeGraph_1_1_performtransformation_greenBFFB(model,
 				csp);
-		final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = (org.gravity.tgg.pm.uml.Model2TypeGraph) result1_green[0];
-		final TypeGraph pm = (TypeGraph) result1_green[1];
+		final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = (org.gravity.tgg.pm.uml.Model2TypeGraph) result1_green[1];
+		final TypeGraph pm = (TypeGraph) result1_green[2];
 
 		final Object[] result2_black = Model2TypeGraphImpl
-				.pattern_Model2TypeGraph_1_2_collecttranslatedelements_blackBBB(model2PM, pm, model);
+				.pattern_Model2TypeGraph_1_2_collecttranslatedelements_blackBBB(model, model2PM, pm);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model2PM] = " + model2PM + ", "
-					+ "[pm] = " + pm + ", " + "[model] = " + model + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model] = " + model + ", "
+					+ "[model2PM] = " + model2PM + ", " + "[pm] = " + pm + ".");
 		}
 		final Object[] result2_green = Model2TypeGraphImpl
-				.pattern_Model2TypeGraph_1_2_collecttranslatedelements_greenFBBB(model2PM, pm, model);
+				.pattern_Model2TypeGraph_1_2_collecttranslatedelements_greenFBBB(model, model2PM, pm);
 		final PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		final Object[] result3_black = Model2TypeGraphImpl
-				.pattern_Model2TypeGraph_1_3_bookkeepingforedges_blackBBBB(ruleresult, model2PM, pm, model);
+				.pattern_Model2TypeGraph_1_3_bookkeepingforedges_blackBBBB(ruleresult, model, model2PM, pm);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[model2PM] = " + model2PM + ", " + "[pm] = " + pm + ", " + "[model] = " + model + ".");
+					+ ", " + "[model] = " + model + ", " + "[model2PM] = " + model2PM + ", " + "[pm] = " + pm + ".");
 		}
-		Model2TypeGraphImpl.pattern_Model2TypeGraph_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, model2PM, pm,
-				model);
-		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[5];
+		Model2TypeGraphImpl.pattern_Model2TypeGraph_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, model, model2PM,
+				pm);
+		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[5];
 
 		//
 		//
-		Model2TypeGraphImpl.pattern_Model2TypeGraph_1_5_registerobjects_expressionBBBBB(this, ruleresult, model2PM, pm,
-				model);
+		Model2TypeGraphImpl.pattern_Model2TypeGraph_1_5_registerobjects_expressionBBBBB(this, ruleresult, model,
+				model2PM, pm);
 		return Model2TypeGraphImpl.pattern_Model2TypeGraph_1_6_expressionFB(ruleresult);
 	}
 
@@ -315,10 +315,10 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 	 * @generated
 	 */
 	@Override
-	public void registerObjects_FWD(final PerformRuleResult ruleresult, final EObject model2PM, final EObject pm, final EObject model) {
+	public void registerObjects_FWD(final PerformRuleResult ruleresult, final EObject model, final EObject model2PM, final EObject pm) {
+		ruleresult.registerObject("model", model);
 		ruleresult.registerObject("model2PM", model2PM);
 		ruleresult.registerObject("pm", pm);
-		ruleresult.registerObject("model", model);
 
 	}
 
@@ -396,36 +396,36 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		}
 		final TypeGraph pm = (TypeGraph) result1_bindingAndBlack[0];
 		final CSP csp = (CSP) result1_bindingAndBlack[1];
-		final Object[] result1_green = Model2TypeGraphImpl.pattern_Model2TypeGraph_11_1_performtransformation_greenFBFB(pm,
+		final Object[] result1_green = Model2TypeGraphImpl.pattern_Model2TypeGraph_11_1_performtransformation_greenFFBB(pm,
 				csp);
-		final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = (org.gravity.tgg.pm.uml.Model2TypeGraph) result1_green[0];
-		final Model model = (Model) result1_green[2];
+		final Model model = (Model) result1_green[0];
+		final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = (org.gravity.tgg.pm.uml.Model2TypeGraph) result1_green[1];
 
 		final Object[] result2_black = Model2TypeGraphImpl
-				.pattern_Model2TypeGraph_11_2_collecttranslatedelements_blackBBB(model2PM, pm, model);
+				.pattern_Model2TypeGraph_11_2_collecttranslatedelements_blackBBB(model, model2PM, pm);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model2PM] = " + model2PM + ", "
-					+ "[pm] = " + pm + ", " + "[model] = " + model + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model] = " + model + ", "
+					+ "[model2PM] = " + model2PM + ", " + "[pm] = " + pm + ".");
 		}
 		final Object[] result2_green = Model2TypeGraphImpl
-				.pattern_Model2TypeGraph_11_2_collecttranslatedelements_greenFBBB(model2PM, pm, model);
+				.pattern_Model2TypeGraph_11_2_collecttranslatedelements_greenFBBB(model, model2PM, pm);
 		final PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		final Object[] result3_black = Model2TypeGraphImpl
-				.pattern_Model2TypeGraph_11_3_bookkeepingforedges_blackBBBB(ruleresult, model2PM, pm, model);
+				.pattern_Model2TypeGraph_11_3_bookkeepingforedges_blackBBBB(ruleresult, model, model2PM, pm);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[model2PM] = " + model2PM + ", " + "[pm] = " + pm + ", " + "[model] = " + model + ".");
+					+ ", " + "[model] = " + model + ", " + "[model2PM] = " + model2PM + ", " + "[pm] = " + pm + ".");
 		}
-		Model2TypeGraphImpl.pattern_Model2TypeGraph_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, model2PM, pm,
-				model);
-		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[5];
+		Model2TypeGraphImpl.pattern_Model2TypeGraph_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, model, model2PM,
+				pm);
+		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[5];
 
 		//
 		//
-		Model2TypeGraphImpl.pattern_Model2TypeGraph_11_5_registerobjects_expressionBBBBB(this, ruleresult, model2PM, pm,
-				model);
+		Model2TypeGraphImpl.pattern_Model2TypeGraph_11_5_registerobjects_expressionBBBBB(this, ruleresult, model,
+				model2PM, pm);
 		return Model2TypeGraphImpl.pattern_Model2TypeGraph_11_6_expressionFB(ruleresult);
 	}
 
@@ -582,10 +582,10 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 	 * @generated
 	 */
 	@Override
-	public void registerObjects_BWD(final PerformRuleResult ruleresult, final EObject model2PM, final EObject pm, final EObject model) {
+	public void registerObjects_BWD(final PerformRuleResult ruleresult, final EObject model, final EObject model2PM, final EObject pm) {
+		ruleresult.registerObject("model", model);
 		ruleresult.registerObject("model2PM", model2PM);
 		ruleresult.registerObject("pm", pm);
-		ruleresult.registerObject("model", model);
 
 	}
 
@@ -605,7 +605,7 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 	 * @generated
 	 */
 	@Override
-	public EObjectContainer isAppropriate_BWD_TypeGraph_5(final TypeGraph pm) {
+	public EObjectContainer isAppropriate_BWD_TypeGraph_4(final TypeGraph pm) {
 
 		final Object[] result1_bindingAndBlack = Model2TypeGraphImpl
 				.pattern_Model2TypeGraph_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -828,14 +828,14 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		final TypeGraph pm = (TypeGraph) result2_bindingAndBlack[0];
-		final Model model = (Model) result2_bindingAndBlack[1];
+		final Model model = (Model) result2_bindingAndBlack[0];
+		final TypeGraph pm = (TypeGraph) result2_bindingAndBlack[1];
 
 		final Object[] result3_bindingAndBlack = Model2TypeGraphImpl
-				.pattern_Model2TypeGraph_24_3_solvecsp_bindingAndBlackFBBBBB(this, pm, model, sourceMatch, targetMatch);
+				.pattern_Model2TypeGraph_24_3_solvecsp_bindingAndBlackFBBBBB(this, model, pm, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[pm] = " + pm + ", " + "[model] = " + model + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[model] = " + model + ", " + "[pm] = " + pm + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		final CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -849,13 +849,13 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 				final CCMatch ccMatch = (CCMatch) result5_green[2];
 
 				final Object[] result6_black = Model2TypeGraphImpl
-						.pattern_Model2TypeGraph_24_6_createcorrespondence_blackBBB(pm, model, ccMatch);
+						.pattern_Model2TypeGraph_24_6_createcorrespondence_blackBBB(model, pm, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[pm] = " + pm + ", "
-							+ "[model] = " + model + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model] = " + model + ", "
+							+ "[pm] = " + pm + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				Model2TypeGraphImpl.pattern_Model2TypeGraph_24_6_createcorrespondence_greenFBBB(pm, model, ccMatch);
-				//nothing org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = (org.gravity.tgg.pm.uml.Model2TypeGraph) result6_green[0];
+				Model2TypeGraphImpl.pattern_Model2TypeGraph_24_6_createcorrespondence_greenBFBB(model, pm, ccMatch);
+				//nothing org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = (org.gravity.tgg.pm.uml.Model2TypeGraph) result6_green[1];
 
 				final Object[] result7_black = Model2TypeGraphImpl
 						.pattern_Model2TypeGraph_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -878,7 +878,7 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 	 * @generated
 	 */
 	@Override
-	public CSP isApplicable_solveCsp_CC(final TypeGraph pm, final Model model, final Match sourceMatch, final Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(final Model model, final TypeGraph pm, final Match sourceMatch, final Match targetMatch) {// Create CSP
 		final CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -983,9 +983,9 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
 				Model2TypeGraphImpl.pattern_Model2TypeGraph_29_6_perform_greenFFFBB(ruleResult, csp);
-				//nothing org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = (org.gravity.tgg.pm.uml.Model2TypeGraph) result6_green[0];
-				//nothing TypeGraph pm = (TypeGraph) result6_green[1];
-				//nothing Model model = (Model) result6_green[2];
+				//nothing Model model = (Model) result6_green[0];
+				//nothing org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = (org.gravity.tgg.pm.uml.Model2TypeGraph) result6_green[1];
+				//nothing TypeGraph pm = (TypeGraph) result6_green[2];
 
 			} else {
 			}
@@ -1092,8 +1092,8 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 			return null;
 		case RulesPackage.MODEL2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_5__TYPEGRAPH:
-			return isAppropriate_BWD_TypeGraph_5((TypeGraph) arguments.get(0));
+		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_4__TYPEGRAPH:
+			return isAppropriate_BWD_TypeGraph_4((TypeGraph) arguments.get(0));
 		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPROPRIATE_FWD_MODEL_1__MODEL:
 			return isAppropriate_FWD_Model_1((Model) arguments.get(0));
 		case RulesPackage.MODEL2_TYPE_GRAPH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
@@ -1102,8 +1102,8 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__TYPEGRAPH_MODEL_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TypeGraph) arguments.get(0), (Model) arguments.get(1),
+		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_TYPEGRAPH_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Model) arguments.get(0), (TypeGraph) arguments.get(1),
 					(Match) arguments.get(2), (Match) arguments.get(3));
 		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1235,7 +1235,7 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		return null;
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_1_1_performtransformation_greenFFBB(final Model model, final CSP csp) {
+	public static final Object[] pattern_Model2TypeGraph_1_1_performtransformation_greenBFFB(final Model model, final CSP csp) {
 		final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
 		final TypeGraph pm = BasicFactory.eINSTANCE.createTypeGraph();
 		final Object _localVariable_0 = csp.getValue("pm", "tName");
@@ -1243,55 +1243,55 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		model2PM.setTarget(pm);
 		final String pm_tName_prime = (String) _localVariable_0;
 		pm.setTName(pm_tName_prime);
-		return new Object[] { model2PM, pm, model, csp };
+		return new Object[] { model, model2PM, pm, csp };
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_1_2_collecttranslatedelements_blackBBB(
-			final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM, final TypeGraph pm, final Model model) {
-		return new Object[] { model2PM, pm, model };
+	public static final Object[] pattern_Model2TypeGraph_1_2_collecttranslatedelements_blackBBB(final Model model,
+			final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM, final TypeGraph pm) {
+		return new Object[] { model, model2PM, pm };
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_1_2_collecttranslatedelements_greenFBBB(
-			final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM, final TypeGraph pm, final Model model) {
+	public static final Object[] pattern_Model2TypeGraph_1_2_collecttranslatedelements_greenFBBB(final Model model,
+			final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM, final TypeGraph pm) {
 		final PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getTranslatedElements().add(model);
 		ruleresult.getCreatedLinkElements().add(model2PM);
 		ruleresult.getCreatedElements().add(pm);
-		ruleresult.getTranslatedElements().add(model);
-		return new Object[] { ruleresult, model2PM, pm, model };
+		return new Object[] { ruleresult, model, model2PM, pm };
 	}
 
 	public static final Object[] pattern_Model2TypeGraph_1_3_bookkeepingforedges_blackBBBB(final PerformRuleResult ruleresult,
-			final EObject model2PM, final EObject pm, final EObject model) {
-		if (!model2PM.equals(pm) && !model.equals(model2PM)) {
-			if (!model.equals(pm)) {
-				return new Object[] { ruleresult, model2PM, pm, model };
+			final EObject model, final EObject model2PM, final EObject pm) {
+		if (!model.equals(model2PM) && !model.equals(pm)) {
+			if (!model2PM.equals(pm)) {
+				return new Object[] { ruleresult, model, model2PM, pm };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_Model2TypeGraph_1_3_bookkeepingforedges_greenBBBBFF(
-			final PerformRuleResult ruleresult, final EObject model2PM, final EObject pm, final EObject model) {
-		final EMoflonEdge model2PM__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			final PerformRuleResult ruleresult, final EObject model, final EObject model2PM, final EObject pm) {
 		final EMoflonEdge model2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		final EMoflonEdge model2PM__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		final String ruleresult_ruleName_prime = "Model2TypeGraph";
-		final String model2PM__model____source_name_prime = "source";
 		final String model2PM__pm____target_name_prime = "target";
-		model2PM__model____source.setSrc(model2PM);
-		model2PM__model____source.setTrg(model);
-		ruleresult.getCreatedEdges().add(model2PM__model____source);
+		final String model2PM__model____source_name_prime = "source";
 		model2PM__pm____target.setSrc(model2PM);
 		model2PM__pm____target.setTrg(pm);
 		ruleresult.getCreatedEdges().add(model2PM__pm____target);
+		model2PM__model____source.setSrc(model2PM);
+		model2PM__model____source.setTrg(model);
+		ruleresult.getCreatedEdges().add(model2PM__model____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		model2PM__model____source.setName(model2PM__model____source_name_prime);
 		model2PM__pm____target.setName(model2PM__pm____target_name_prime);
-		return new Object[] { ruleresult, model2PM, pm, model, model2PM__model____source, model2PM__pm____target };
+		model2PM__model____source.setName(model2PM__model____source_name_prime);
+		return new Object[] { ruleresult, model, model2PM, pm, model2PM__pm____target, model2PM__model____source };
 	}
 
 	public static final void pattern_Model2TypeGraph_1_5_registerobjects_expressionBBBBB(final Model2TypeGraph _this,
-			final PerformRuleResult ruleresult, final EObject model2PM, final EObject pm, final EObject model) {
-		_this.registerObjects_FWD(ruleresult, model2PM, pm, model);
+			final PerformRuleResult ruleresult, final EObject model, final EObject model2PM, final EObject pm) {
+		_this.registerObjects_FWD(ruleresult, model, model2PM, pm);
 
 	}
 
@@ -1549,63 +1549,63 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		return null;
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_11_1_performtransformation_greenFBFB(final TypeGraph pm, final CSP csp) {
-		final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
+	public static final Object[] pattern_Model2TypeGraph_11_1_performtransformation_greenFFBB(final TypeGraph pm, final CSP csp) {
 		final Model model = UMLFactory.eINSTANCE.createModel();
+		final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
 		final Object _localVariable_0 = csp.getValue("model", "name");
 		model2PM.setTarget(pm);
 		model2PM.setSource(model);
 		final String model_name_prime = (String) _localVariable_0;
 		model.setName(model_name_prime);
-		return new Object[] { model2PM, pm, model, csp };
+		return new Object[] { model, model2PM, pm, csp };
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_11_2_collecttranslatedelements_blackBBB(
-			final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM, final TypeGraph pm, final Model model) {
-		return new Object[] { model2PM, pm, model };
+	public static final Object[] pattern_Model2TypeGraph_11_2_collecttranslatedelements_blackBBB(final Model model,
+			final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM, final TypeGraph pm) {
+		return new Object[] { model, model2PM, pm };
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_11_2_collecttranslatedelements_greenFBBB(
-			final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM, final TypeGraph pm, final Model model) {
+	public static final Object[] pattern_Model2TypeGraph_11_2_collecttranslatedelements_greenFBBB(final Model model,
+			final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM, final TypeGraph pm) {
 		final PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedElements().add(model);
 		ruleresult.getCreatedLinkElements().add(model2PM);
 		ruleresult.getTranslatedElements().add(pm);
-		ruleresult.getCreatedElements().add(model);
-		return new Object[] { ruleresult, model2PM, pm, model };
+		return new Object[] { ruleresult, model, model2PM, pm };
 	}
 
 	public static final Object[] pattern_Model2TypeGraph_11_3_bookkeepingforedges_blackBBBB(
-			final PerformRuleResult ruleresult, final EObject model2PM, final EObject pm, final EObject model) {
-		if (!model2PM.equals(pm) && !model.equals(model2PM)) {
-			if (!model.equals(pm)) {
-				return new Object[] { ruleresult, model2PM, pm, model };
+			final PerformRuleResult ruleresult, final EObject model, final EObject model2PM, final EObject pm) {
+		if (!model.equals(model2PM) && !model.equals(pm)) {
+			if (!model2PM.equals(pm)) {
+				return new Object[] { ruleresult, model, model2PM, pm };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_Model2TypeGraph_11_3_bookkeepingforedges_greenBBBBFF(
-			final PerformRuleResult ruleresult, final EObject model2PM, final EObject pm, final EObject model) {
-		final EMoflonEdge model2PM__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			final PerformRuleResult ruleresult, final EObject model, final EObject model2PM, final EObject pm) {
 		final EMoflonEdge model2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		final EMoflonEdge model2PM__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		final String ruleresult_ruleName_prime = "Model2TypeGraph";
-		final String model2PM__model____source_name_prime = "source";
 		final String model2PM__pm____target_name_prime = "target";
-		model2PM__model____source.setSrc(model2PM);
-		model2PM__model____source.setTrg(model);
-		ruleresult.getCreatedEdges().add(model2PM__model____source);
+		final String model2PM__model____source_name_prime = "source";
 		model2PM__pm____target.setSrc(model2PM);
 		model2PM__pm____target.setTrg(pm);
 		ruleresult.getCreatedEdges().add(model2PM__pm____target);
+		model2PM__model____source.setSrc(model2PM);
+		model2PM__model____source.setTrg(model);
+		ruleresult.getCreatedEdges().add(model2PM__model____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		model2PM__model____source.setName(model2PM__model____source_name_prime);
 		model2PM__pm____target.setName(model2PM__pm____target_name_prime);
-		return new Object[] { ruleresult, model2PM, pm, model, model2PM__model____source, model2PM__pm____target };
+		model2PM__model____source.setName(model2PM__model____source_name_prime);
+		return new Object[] { ruleresult, model, model2PM, pm, model2PM__pm____target, model2PM__model____source };
 	}
 
 	public static final void pattern_Model2TypeGraph_11_5_registerobjects_expressionBBBBB(final Model2TypeGraph _this,
-			final PerformRuleResult ruleresult, final EObject model2PM, final EObject pm, final EObject model) {
-		_this.registerObjects_BWD(ruleresult, model2PM, pm, model);
+			final PerformRuleResult ruleresult, final EObject model, final EObject model2PM, final EObject pm) {
+		_this.registerObjects_BWD(ruleresult, model, model2PM, pm);
 
 	}
 
@@ -1964,26 +1964,26 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_24_2_matchsrctrgcontext_bindingFFBB(final Match targetMatch,
-			final Match sourceMatch) {
-		final EObject _localVariable_0 = targetMatch.getObject("pm");
-		final EObject _localVariable_1 = sourceMatch.getObject("model");
-		final EObject tmpPm = _localVariable_0;
-		final EObject tmpModel = _localVariable_1;
-		if (tmpPm instanceof TypeGraph) {
-			final TypeGraph pm = (TypeGraph) tmpPm;
-			if (tmpModel instanceof Model) {
-				final Model model = (Model) tmpModel;
-				return new Object[] { pm, model, targetMatch, sourceMatch };
+	public static final Object[] pattern_Model2TypeGraph_24_2_matchsrctrgcontext_bindingFFBB(final Match sourceMatch,
+			final Match targetMatch) {
+		final EObject _localVariable_0 = sourceMatch.getObject("model");
+		final EObject _localVariable_1 = targetMatch.getObject("pm");
+		final EObject tmpModel = _localVariable_0;
+		final EObject tmpPm = _localVariable_1;
+		if (tmpModel instanceof Model) {
+			final Model model = (Model) tmpModel;
+			if (tmpPm instanceof TypeGraph) {
+				final TypeGraph pm = (TypeGraph) tmpPm;
+				return new Object[] { model, pm, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_24_2_matchsrctrgcontext_blackBBBB(final TypeGraph pm, final Model model,
+	public static final Object[] pattern_Model2TypeGraph_24_2_matchsrctrgcontext_blackBBBB(final Model model, final TypeGraph pm,
 			final Match sourceMatch, final Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { pm, model, sourceMatch, targetMatch };
+			return new Object[] { model, pm, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1991,27 +1991,27 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 	public static final Object[] pattern_Model2TypeGraph_24_2_matchsrctrgcontext_bindingAndBlackFFBB(final Match sourceMatch,
 			final Match targetMatch) {
 		final Object[] result_pattern_Model2TypeGraph_24_2_matchsrctrgcontext_binding = pattern_Model2TypeGraph_24_2_matchsrctrgcontext_bindingFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_Model2TypeGraph_24_2_matchsrctrgcontext_binding != null) {
-			final TypeGraph pm = (TypeGraph) result_pattern_Model2TypeGraph_24_2_matchsrctrgcontext_binding[0];
-			final Model model = (Model) result_pattern_Model2TypeGraph_24_2_matchsrctrgcontext_binding[1];
+			final Model model = (Model) result_pattern_Model2TypeGraph_24_2_matchsrctrgcontext_binding[0];
+			final TypeGraph pm = (TypeGraph) result_pattern_Model2TypeGraph_24_2_matchsrctrgcontext_binding[1];
 
 			final Object[] result_pattern_Model2TypeGraph_24_2_matchsrctrgcontext_black = pattern_Model2TypeGraph_24_2_matchsrctrgcontext_blackBBBB(
-					pm, model, sourceMatch, targetMatch);
+					model, pm, sourceMatch, targetMatch);
 			if (result_pattern_Model2TypeGraph_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { pm, model, sourceMatch, targetMatch };
+				return new Object[] { model, pm, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_24_3_solvecsp_bindingFBBBBB(final Model2TypeGraph _this,
-			final TypeGraph pm, final Model model, final Match sourceMatch, final Match targetMatch) {
-		final CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(pm, model, sourceMatch, targetMatch);
+	public static final Object[] pattern_Model2TypeGraph_24_3_solvecsp_bindingFBBBBB(final Model2TypeGraph _this, final Model model,
+			final TypeGraph pm, final Match sourceMatch, final Match targetMatch) {
+		final CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(model, pm, sourceMatch, targetMatch);
 		final CSP csp = _localVariable_2;
 		if (csp != null) {
-			return new Object[] { csp, _this, pm, model, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, model, pm, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2021,9 +2021,9 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 	}
 
 	public static final Object[] pattern_Model2TypeGraph_24_3_solvecsp_bindingAndBlackFBBBBB(final Model2TypeGraph _this,
-			final TypeGraph pm, final Model model, final Match sourceMatch, final Match targetMatch) {
+			final Model model, final TypeGraph pm, final Match sourceMatch, final Match targetMatch) {
 		final Object[] result_pattern_Model2TypeGraph_24_3_solvecsp_binding = pattern_Model2TypeGraph_24_3_solvecsp_bindingFBBBBB(
-				_this, pm, model, sourceMatch, targetMatch);
+				_this, model, pm, sourceMatch, targetMatch);
 		if (result_pattern_Model2TypeGraph_24_3_solvecsp_binding != null) {
 			final CSP csp = (CSP) result_pattern_Model2TypeGraph_24_3_solvecsp_binding[0];
 
@@ -2031,7 +2031,7 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 					csp);
 			if (result_pattern_Model2TypeGraph_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, pm, model, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, model, pm, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2062,18 +2062,18 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		return new Object[] { sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_24_6_createcorrespondence_blackBBB(final TypeGraph pm, final Model model,
+	public static final Object[] pattern_Model2TypeGraph_24_6_createcorrespondence_blackBBB(final Model model, final TypeGraph pm,
 			final CCMatch ccMatch) {
-		return new Object[] { pm, model, ccMatch };
+		return new Object[] { model, pm, ccMatch };
 	}
 
-	public static final Object[] pattern_Model2TypeGraph_24_6_createcorrespondence_greenFBBB(final TypeGraph pm, final Model model,
+	public static final Object[] pattern_Model2TypeGraph_24_6_createcorrespondence_greenBFBB(final Model model, final TypeGraph pm,
 			final CCMatch ccMatch) {
 		final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
-		model2PM.setSource(model);
 		model2PM.setTarget(pm);
+		model2PM.setSource(model);
 		ccMatch.getCreateCorr().add(model2PM);
-		return new Object[] { model2PM, pm, model, ccMatch };
+		return new Object[] { model, model2PM, pm, ccMatch };
 	}
 
 	public static final Object[] pattern_Model2TypeGraph_24_7_addtoreturnedresult_blackBB(final IsApplicableRuleResult result,
@@ -2184,26 +2184,26 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 
 	public static final Object[] pattern_Model2TypeGraph_29_6_perform_greenFFFBB(final ModelgeneratorRuleResult ruleResult,
 			final CSP csp) {
+		final Model model = UMLFactory.eINSTANCE.createModel();
 		final org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
 		final TypeGraph pm = BasicFactory.eINSTANCE.createTypeGraph();
-		final Model model = UMLFactory.eINSTANCE.createModel();
-		final Object _localVariable_0 = csp.getValue("pm", "tName");
-		final Object _localVariable_1 = csp.getValue("model", "name");
+		final Object _localVariable_0 = csp.getValue("model", "name");
+		final Object _localVariable_1 = csp.getValue("pm", "tName");
 		final boolean ruleResult_success_prime = true;
 		final int _localVariable_2 = ruleResult.getIncrementedPerformCount();
+		ruleResult.getSourceObjects().add(model);
+		model2PM.setSource(model);
 		ruleResult.getCorrObjects().add(model2PM);
 		model2PM.setTarget(pm);
 		ruleResult.getTargetObjects().add(pm);
-		model2PM.setSource(model);
-		ruleResult.getSourceObjects().add(model);
-		final String pm_tName_prime = (String) _localVariable_0;
-		final String model_name_prime = (String) _localVariable_1;
+		final String model_name_prime = (String) _localVariable_0;
+		final String pm_tName_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(ruleResult_success_prime);
 		final int ruleResult_performCount_prime = _localVariable_2;
-		pm.setTName(pm_tName_prime);
 		model.setName(model_name_prime);
+		pm.setTName(pm_tName_prime);
 		ruleResult.setPerformCount(ruleResult_performCount_prime);
-		return new Object[] { model2PM, pm, model, ruleResult, csp };
+		return new Object[] { model, model2PM, pm, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_Model2TypeGraph_29_7_expressionFB(

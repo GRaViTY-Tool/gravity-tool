@@ -7,7 +7,6 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HLocalMethodAccessesMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
 import org.gravity.hulk.detection.metrics.HLocalMethodAccessCalculator;
@@ -35,7 +34,6 @@ implements HLocalMethodAccessCalculator {
 	 * @generated
 	 */
 	protected HLocalMethodAccessCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -55,16 +53,18 @@ implements HLocalMethodAccessCalculator {
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
-		final HLocalMethodAccessesMetric metric = MetricsFactory.eINSTANCE.createHLocalMethodAccessesMetric();
+		removeAnnotations(tClass);
+
+		final var metric = MetricsFactory.eINSTANCE.createHLocalMethodAccessesMetric();
 		metric.setTAnnotated(tClass);
 		getHAnnotation().add(metric);
 
-		long value = 0;
-		final EList<TMethodDefinition> methods = tClass.getDeclaredTMethodDefinitions();
-		for (int i = 0; i < methods.size(); i++) {
-			final TMethodDefinition m0 = methods.get(i);
-			for (int j = i + 1; j < methods.size(); j++) {
-				final TMethodDefinition m1 = methods.get(j);
+		var value = 0L;
+		final var methods = tClass.getDeclaredTMethodDefinitions();
+		for (var i = 0; i < methods.size(); i++) {
+			final var m0 = methods.get(i);
+			for (var j = i + 1; j < methods.size(); j++) {
+				final var m1 = methods.get(j);
 				value += m0.getAccessing().parallelStream().filter(access -> access.getTarget().equals(m1)).count();
 				value += m0.getAccessedBy().parallelStream().filter(access -> access.getSource().equals(m1)).count();
 			}
@@ -82,11 +82,11 @@ implements HLocalMethodAccessCalculator {
 	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		int i = 0;
+		var i = 0;
 		for (final TMember m : tClass.getDefines()) {
 			for (final TAccess t : m.getAccessing()) {
-				final TMember tTarget = t.getTarget();
-				if (tTarget instanceof TMethodDefinition && tTarget.getDefinedBy().equals(tClass)) {
+				final var tTarget = t.getTarget();
+				if ((tTarget instanceof TMethodDefinition) && tTarget.getDefinedBy().equals(tClass)) {
 					i++;
 				}
 			}
@@ -116,6 +116,11 @@ implements HLocalMethodAccessCalculator {
 	@Override
 	public String getGuiName() {
 		return "Number of in Class Methodcalls";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHLocalMethodAccessesMetric();
 	}
 
 	// [user code injected with eMoflon] -->

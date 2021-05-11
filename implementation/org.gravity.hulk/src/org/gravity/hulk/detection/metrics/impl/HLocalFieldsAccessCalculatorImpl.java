@@ -51,6 +51,8 @@ implements HLocalFieldsAccessCalculator {
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		final var metric = MetricsFactory.eINSTANCE.createHLocalFieldAccessesMetric();
 		metric.setTAnnotated(tClass);
 		getHAnnotation().add(metric);
@@ -113,6 +115,11 @@ implements HLocalFieldsAccessCalculator {
 	@Override
 	public String getGuiName() {
 		return "Number of in Class Fieldaccesses";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHLocalFieldAccessesMetric();
 	}
 
 	// [user code injected with eMoflon] -->

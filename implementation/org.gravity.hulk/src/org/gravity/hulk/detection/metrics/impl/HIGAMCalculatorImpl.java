@@ -62,6 +62,7 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 		// [user code injected with eMoflon]
 
 		final var pg = apg.getModel();
+		removeAnnotations(pg);
 
 		var requiredTVisibility = TVisibility.TPRIVATE;
 		final List<Double> methods = new LinkedList<>();
@@ -96,6 +97,8 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	// <-- [user code injected with eMoflon]
 
 	private TVisibility process(final HAntiPatternGraph apg, final TPackage tPackage, final List<Double> methods) {
+		removeAnnotations(tPackage);
+
 		var requiredTVisibility = TVisibility.TPRIVATE;
 		final var start = methods.size();
 		for (final TPackage tSubPackage : tPackage.getSubpackages()) {
@@ -119,6 +122,8 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	private TVisibility process(final HAntiPatternGraph apg, final TClass tType, final List<Double> methods) {
+		removeAnnotations(tType);
+
 		var requiredTVisibility = TVisibility.TPRIVATE;
 		final var start = methods.size();
 		for (final TMember tMember : tType.getDefines()) {
@@ -136,6 +141,8 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	private TVisibility process(final HAntiPatternGraph apg, final TMember tMember, final List<Double> methods) {
+		removeAnnotations(tMember);
+
 		final var tModifier = tMember.getTModifier();
 		final var tType = tMember.getDefinedBy();
 		if (tModifier == null) {
@@ -313,6 +320,11 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 			}
 		}
 		return TVisibility.TPRIVATE;
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHIGAMMetric();
 	}
 
 	// [user code injected with eMoflon] -->

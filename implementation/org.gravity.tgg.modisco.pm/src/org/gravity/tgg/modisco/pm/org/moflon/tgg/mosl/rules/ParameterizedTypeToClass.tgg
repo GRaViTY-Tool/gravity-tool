@@ -11,19 +11,17 @@
 	++ eParameterizedType : ParameterizedType {
 		++  -type -> eTypeAccess
 	}
-	eType : Type {
-	}
 	++ eTypeAccess : TypeAccess {
 		++  -type -> eType
 	}
+	eType : Type
 }
 
 #target {
 	pg : TypeGraph {
 		 -ownedTypes -> tAbstractType
 	}
-	tAbstractType : TAbstractType {
-	}
+	tAbstractType : TAbstractType
 }
 
 #correspondence {

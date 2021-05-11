@@ -73,6 +73,7 @@ implements HAfferentCouplingCalculator {
 	@Override
 	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
+		removeAnnotations(tClass);
 
 		final var accessingClasses = new ArrayList<TAbstractType>();
 		for (final TMember m : tClass.getDefines()) {
@@ -120,6 +121,12 @@ implements HAfferentCouplingCalculator {
 	@Override
 	public String getGuiName() {
 		return "Afferent Coupling";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHAfferentCouplingMetric();
+
 	}
 
 	// [user code injected with eMoflon] -->

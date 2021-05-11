@@ -11,10 +11,8 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
@@ -24,7 +22,6 @@ import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.detection.HulkDetector;
 import org.gravity.hulk.detection.antipattern.AntipatternPackage;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
@@ -59,23 +56,23 @@ public final class HulkAPI {
 	 */
 	public static List<HAnnotation> detect(final IJavaProject project, final IProgressMonitor monitor, final AntiPatternNames... aps)
 			throws DetectionFailedException {
-		final IProject iproject = project.getProject();
+		final var iproject = project.getProject();
 		IPGConverter converter;
 		try {
 			converter = GravityActivator.getDefault().getNewConverter(iproject);
 		} catch (NoConverterRegisteredException | CoreException e) {
 			throw new DetectionFailedException(e);
 		}
-		final boolean success = converter.convertProject(Collections.emptySet(), monitor);
-		final TypeGraph pg = converter.getPG();
-		GravityActivator.getDefault().discardConverter(iproject);
-		if (!success || pg == null) {
+		final var success = converter.convertProject(Collections.emptySet(), monitor);
+		final var pg = converter.getPG();
+		converter.discard();
+		if (!success || (pg == null)) {
 			throw new DetectionFailedException(new TransformationFailedException(
 					"Creating PG from project failed: " + project.getProject().getName()));
 		}
-		final String programLocation = project.getProject().getLocation().toString();
+		final var programLocation = project.getProject().getLocation().toString();
 
-		final List<HAnnotation> results = detect(pg, programLocation, aps);
+		final var results = detect(pg, programLocation, aps);
 
 		clean(iproject, pg);
 
@@ -95,7 +92,7 @@ public final class HulkAPI {
 	public static List<HAnnotation> detect(final TypeGraph pm, final String programLocation, final AntiPatternNames... aps)
 			throws DetectionFailedException {
 		ResourceSet rs;
-		Resource pgResource = pm.eResource();
+		var pgResource = pm.eResource();
 		if (pgResource == null) {
 			rs = new ResourceSetImpl();
 			pgResource = rs.createResource(URI.createURI(pm.getTName() + ".xmi"));
@@ -104,17 +101,17 @@ public final class HulkAPI {
 			rs = pgResource.getResourceSet();
 		}
 
-		final HAntiPatternDetection hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
-		final Resource apgResource = rs.createResource(URI.createURI("Hulk.xmi"));
+		final var hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
+		final var apgResource = rs.createResource(URI.createURI("Hulk.xmi"));
 		apgResource.getContents().add(hulk); // $NON-NLS-1$
 		hulk.setProgramlocation(programLocation);
 
-		final HAntiPatternGraph apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
+		final var apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
 		hulk.setApg(apg);
 		apg.setPg(pm);
 
-		final Set<EClass> detectors = getDetecors(aps);
-		final HashSet<HDetector> detectorResults = new HashSet<>();
+		final var detectors = getDetecors(aps);
+		final var detectorResults = new HashSet<HDetector>();
 		if (!new HulkDetector(hulk, HulkDetector.getDefaultThresholds()).detectSelectedAntiPattern(detectors,
 				detectorResults, new HashSet<>())) {
 			throw new DetectionFailedException("Anti-pattern detection failed.");
@@ -122,9 +119,7 @@ public final class HulkAPI {
 
 		final List<HAnnotation> results = new ArrayList<>();
 		for (final HDetector detector : detectorResults) {
-			for (final HAnnotation annotation : detector.getHAnnotation()) {
-				results.add(annotation);
-			}
+			results.addAll(detector.getHAnnotation());
 		}
 
 		return results;
@@ -152,10 +147,10 @@ public final class HulkAPI {
 	 * @return true, iff the cleanup was successful
 	 */
 	private static boolean clean(final IProject iproject, final TypeGraph pg) {
-		final Resource keep = pg.eResource();
-		final EList<Resource> resources = keep.getResourceSet().getResources();
+		final var keep = pg.eResource();
+		final var resources = keep.getResourceSet().getResources();
 		while (!resources.isEmpty()) {
-			final Resource resource = resources.remove(0);
+			final var resource = resources.remove(0);
 			if (resource != keep) {
 				try {
 					resource.delete(Collections.emptyMap());
@@ -189,7 +184,7 @@ public final class HulkAPI {
 
 		private final EClass eClass;
 
-		private AntiPatternNames(final EClass eClass) {
+		AntiPatternNames(final EClass eClass) {
 			this.eClass = eClass;
 		}
 

@@ -5,19 +5,12 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
-import org.gravity.hulk.antipatterngraph.metrics.HNumberOfFieldsMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HFieldNumberCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
 import org.gravity.typegraph.basic.TClass;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.TFieldDefinition;
@@ -40,7 +33,6 @@ public class HFieldNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl 
 	 * @generated
 	 */
 	protected HFieldNumberCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -58,8 +50,11 @@ public class HFieldNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl 
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		HNumberOfFieldsMetric metric = MetricsFactory.eINSTANCE.createHNumberOfFieldsMetric();
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
+		final var metric = MetricsFactory.eINSTANCE.createHNumberOfFieldsMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -71,11 +66,12 @@ public class HFieldNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl 
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		int i = 0;
-		for (TMember m : tClass.getDefines()) {
+		var i = 0;
+		for (final TMember m : tClass.getDefines()) {
 			if (m instanceof TFieldDefinition) {
 				i++;
 			}
@@ -90,7 +86,7 @@ public class HFieldNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl 
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HFIELD_NUMBER_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));
@@ -105,6 +101,11 @@ public class HFieldNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl 
 	@Override
 	public String getGuiName() {
 		return "Number of fields";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHNumberOfFieldsMetric();
 	}
 
 	// [user code injected with eMoflon] -->

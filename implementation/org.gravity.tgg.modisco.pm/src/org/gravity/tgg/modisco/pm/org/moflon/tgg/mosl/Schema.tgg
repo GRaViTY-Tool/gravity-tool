@@ -43,11 +43,6 @@
 		#trg->TAccess
 	}
 
-	PrimitiveTypeToTClass {
-		#src->PrimitiveType
-		#trg->TClass
-	}
-
 	AnonymousClassDeclarationToTClass {
 		#src->AnonymousClassDeclaration
 		#trg->TClass

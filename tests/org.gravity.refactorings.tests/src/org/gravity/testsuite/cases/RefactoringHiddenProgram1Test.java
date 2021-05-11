@@ -21,6 +21,7 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runners.model.InitializationError;
 
 public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 
@@ -31,14 +32,21 @@ public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 
 	/**
 	 * description "Have a look on inheritance relations."
+	 * @throws InitializationError
 	 */
 	@Test
-	public void testCSC11() {
+	public void testCSC11() throws InitializationError {
 		final TypeGraph pm = getProgramModel();
 
 		final TClass child1 = pm.getClass("hidden.program.one.ChildClass1");
 		final TClass child2 = pm.getClass("hidden.program.one.ChildClass2");
 		final TClass oldParent = pm.getClass("hidden.program.one.ParentClass");
+
+		if((child1 == null) || (child2 == null) || (oldParent == null)) {
+			throw new InitializationError("Didn't find all classes:\n child1="+child1
+					+ "\nchild2="+child2
+					+ "\noldPArent="+oldParent);
+		}
 
 		final CreateSuperClassConfiguration pum = new CreateSuperClassConfiguration("hidden.program.one", "NewParent",
 				Arrays.asList(child1, child2));
@@ -62,13 +70,18 @@ public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 
 	/**
 	 * description "Check which elements already exist."
+	 * @throws InitializationError
 	 */
 	@Test
-	public void testCSC12() {
+	public void testCSC12() throws InitializationError {
 		final TypeGraph pm = getProgramModel();
 
 		final TClass child1 = pm.getClass("hidden.program.one.ChildClass1");
 		final TClass child2 = pm.getClass("hidden.program.one.ChildClass2");
+
+		if((child1 == null) || (child2 == null)) {
+			throw new InitializationError("Didn't find all child classes:\nchild1="+child1+"\nchild2="+child2);
+		}
 
 		final CreateSuperClassConfiguration pum = new CreateSuperClassConfiguration("hidden.program.one", "ExistingClass",
 				Arrays.asList(child1, child2));

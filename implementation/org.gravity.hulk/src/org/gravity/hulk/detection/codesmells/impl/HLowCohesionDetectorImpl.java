@@ -5,34 +5,21 @@ package org.gravity.hulk.detection.codesmells.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
-import org.gravity.hulk.antipatterngraph.codesmells.HLowCohesionSmell;
-
 import org.gravity.hulk.antipatterngraph.metrics.HLCOM5Metric;
-
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-
 import org.gravity.hulk.detection.DetectionPackage;
 import org.gravity.hulk.detection.HClassBasedCalculator;
 import org.gravity.hulk.detection.HCodeSmellDetector;
 import org.gravity.hulk.detection.HRelativeDetector;
-
 import org.gravity.hulk.detection.codesmells.CodesmellsPackage;
 import org.gravity.hulk.detection.codesmells.HLowCohesionDetector;
-
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
-
 import org.gravity.typegraph.basic.TClass;
-
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -56,7 +43,7 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	/**
 	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -66,7 +53,7 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	/**
 	 * The cached value of the '{@link #isRelative() <em>Relative</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -76,7 +63,7 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	/**
 	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -86,7 +73,7 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	/**
 	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -95,16 +82,15 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HLowCohesionDetectorImpl() {
-		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,67 +100,76 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isRelative() {
-		return relative;
+		return this.relative;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setRelative(boolean newRelative) {
-		boolean oldRelative = relative;
-		relative = newRelative;
-		if (eNotificationRequired())
+	@Override
+	public void setRelative(final boolean newRelative) {
+		final var oldRelative = this.relative;
+		this.relative = newRelative;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CodesmellsPackage.HLOW_COHESION_DETECTOR__RELATIVE,
-					oldRelative, relative));
+					oldRelative, this.relative));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getThreshold() {
-		return threshold;
+		return this.threshold;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setThreshold(double newThreshold) {
-		double oldThreshold = threshold;
-		threshold = newThreshold;
-		if (eNotificationRequired())
+	@Override
+	public void setThreshold(final double newThreshold) {
+		final var oldThreshold = this.threshold;
+		this.threshold = newThreshold;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CodesmellsPackage.HLOW_COHESION_DETECTOR__THRESHOLD,
-					oldThreshold, threshold));
+					oldThreshold, this.threshold));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public HAnnotation calculate(TClass tClass) {//
+	@Override
+	public HAnnotation calculate(final TClass tClass) {//
+		removeAnnotations(tClass);
+
 		if (tClass.isTLib()) {
 			return null;
 		}
-		for (TAnnotation tmpLcom : tClass.getTAnnotation()) {
+		for (final TAnnotation tmpLcom : tClass.getTAnnotation()) {
 			if (tmpLcom instanceof HLCOM5Metric) {
-				HLCOM5Metric lcom = (HLCOM5Metric) tmpLcom;
+				final var lcom = (HLCOM5Metric) tmpLcom;
 
 				setRelative(true);
 				setThreshold(calculateRelativeThreshold(HRelativeValueConstants.HIGH));
 				//
 				if (Double.valueOf(getThreshold()).compareTo(lcom.getValue()) < 0) {
 					//
-					HLowCohesionSmell smell = CodesmellsFactory.eINSTANCE.createHLowCohesionSmell();
+					final var smell = CodesmellsFactory.eINSTANCE.createHLowCohesionSmell();
 					smell.setTAnnotated(tClass);
 					smell.setHLCOM5CustomMetric(lcom);
 					lcom.getPartOf().add(smell);
@@ -190,10 +185,11 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public double calculateRelativeThreshold(HRelativeValueConstants level) {
+	@Override
+	public double calculateRelativeThreshold(final HRelativeValueConstants level) {
 		// [user code injected with eMoflon]
 
 		return calculateRelativeThreshold(level, HLCOM5Metric.class);
@@ -202,11 +198,11 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
 		case CodesmellsPackage.HLOW_COHESION_DETECTOR__RELATIVE:
 			return isRelative();
@@ -218,11 +214,11 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case CodesmellsPackage.HLOW_COHESION_DETECTOR__RELATIVE:
 			setRelative((Boolean) newValue);
@@ -236,11 +232,11 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case CodesmellsPackage.HLOW_COHESION_DETECTOR__RELATIVE:
 			setRelative(RELATIVE_EDEFAULT);
@@ -254,27 +250,27 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case CodesmellsPackage.HLOW_COHESION_DETECTOR__RELATIVE:
-			return relative != RELATIVE_EDEFAULT;
+			return this.relative != RELATIVE_EDEFAULT;
 		case CodesmellsPackage.HLOW_COHESION_DETECTOR__THRESHOLD:
-			return threshold != THRESHOLD_EDEFAULT;
+			return this.threshold != THRESHOLD_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+	public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
 		if (baseClass == HCodeSmellDetector.class) {
 			switch (derivedFeatureID) {
 			default:
@@ -296,11 +292,11 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+	public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
 		if (baseClass == HCodeSmellDetector.class) {
 			switch (baseFeatureID) {
 			default:
@@ -322,11 +318,11 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+	public int eDerivedOperationID(final int baseOperationID, final Class<?> baseClass) {
 		if (baseClass == HClassBasedCalculator.class) {
 			switch (baseOperationID) {
 			case DetectionPackage.HCLASS_BASED_CALCULATOR___CALCULATE__TCLASS:
@@ -354,11 +350,11 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case CodesmellsPackage.HLOW_COHESION_DETECTOR___CALCULATE__TCLASS:
 			return calculate((TClass) arguments.get(0));
@@ -370,19 +366,20 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final var result = new StringBuffer(super.toString());
 		result.append(" (relative: ");
-		result.append(relative);
+		result.append(this.relative);
 		result.append(", threshold: ");
-		result.append(threshold);
+		result.append(this.threshold);
 		result.append(')');
 		return result.toString();
 	}
@@ -392,6 +389,11 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	@Override
 	public String getGuiName() {
 		return "Low Cohesion Smell";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage.eINSTANCE.getHLowCohesionSmell();
 	}
 
 	// [user code injected with eMoflon] -->

@@ -8,7 +8,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HGetterMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HNACCMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMethodsMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HSetterMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
@@ -36,7 +35,6 @@ implements HGetterSetterMethodRelationCalculator {
 	 * @generated
 	 */
 	protected HGetterSetterMethodRelationCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -56,6 +54,8 @@ implements HGetterSetterMethodRelationCalculator {
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		HSetterMetric setter = null;
 		HGetterMetric getter = null;
 		HNumberOfMethodsMetric methods = null;
@@ -69,11 +69,11 @@ implements HGetterSetterMethodRelationCalculator {
 				methods = (HNumberOfMethodsMetric) annotation;
 			}
 		}
-		if (methods == null || setter == null || getter == null) {
+		if ((methods == null) || (setter == null) || (getter == null)) {
 			throw new IllegalStateException();
 		}
 
-		final HNACCMetric metric = MetricsFactory.eINSTANCE.createHNACCMetric();
+		final var metric = MetricsFactory.eINSTANCE.createHNACCMetric();
 		metric.setTAnnotated(tClass);
 		metric.setHSetterCustomMetric(setter);
 		metric.setHGetterCustomMetric(getter);
@@ -96,7 +96,7 @@ implements HGetterSetterMethodRelationCalculator {
 	public double calculateValue(final HSetterMetric setter, final HGetterMetric getter, final HNumberOfMethodsMetric methods) {
 		// [user code injected with eMoflon]
 
-		final double methods_value = methods.getValue();
+		final var methods_value = methods.getValue();
 		if (methods_value == 0) {
 			return 0;
 		}
@@ -151,6 +151,11 @@ implements HGetterSetterMethodRelationCalculator {
 	@Override
 	public String getGuiName() {
 		return "Relation between Methods and Getters/Setters";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHNACCMetric();
 	}
 
 	// [user code injected with eMoflon] -->

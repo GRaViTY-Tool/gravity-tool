@@ -64,6 +64,8 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 		// [user code injected with eMoflon]
 
 		final var pg = apg.getModel();
+		removeAnnotations(pg);
+
 		var requiredTVisibility = TVisibility.TPRIVATE;
 		final List<Double> methods = new LinkedList<>();
 		for (final TPackage tPackage : pg.getPackages()) {
@@ -99,6 +101,8 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 
 
 	private TVisibility process(final HAntiPatternGraph apg, final TPackage tPackage, final List<Double> methods) {
+		removeAnnotations(tPackage);
+
 		final var start = methods.size();
 		var requiredTVisibility = TVisibility.TPRIVATE;
 		for (final TPackage tSubPackage : tPackage.getSubpackages()) {
@@ -122,6 +126,8 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 	}
 
 	private TVisibility process(final HAntiPatternGraph apg, final TAbstractType tType, final List<Double> methods) {
+		removeAnnotations(tType);
+
 		var tMinVis = TVisibility.TPUBLIC;
 		final var tModifier = tType.getTModifier();
 		if(tModifier == null) {
@@ -196,6 +202,11 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 	@Override
 	public String getGuiName() {
 		return "Inappropriate Generosity with Accessibility of Types";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHIGATMetric();
 	}
 
 	// [user code injected with eMoflon] -->

@@ -5,8 +5,8 @@
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	eSuperInterface : Type {
-	}
+	eSuperInterface : InterfaceDeclaration
+	
 	++ eTypeAccess : TypeAccess {
 		++  -type -> eSuperInterface
 	}
@@ -19,8 +19,7 @@
 	tSuperInterface : TInterface {
 		++  -implementedBy -> tClass
 	}
-	tClass : TClass {
-	}
+	tClass : TClass 
 }
 
 #correspondence {

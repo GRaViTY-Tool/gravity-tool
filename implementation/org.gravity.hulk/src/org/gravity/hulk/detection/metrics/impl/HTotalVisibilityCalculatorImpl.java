@@ -5,24 +5,14 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
 import org.gravity.hulk.detection.impl.HMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HTotalVisibilityCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.hulk.antipatterngraph.metrics.HTotalVisibilityMetric;
-import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TModifier;
-import org.gravity.typegraph.basic.TVisibility;
-import org.gravity.typegraph.basic.TypeGraph;
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -34,13 +24,14 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @generated
  */
 public class HTotalVisibilityCalculatorImpl extends HMetricCalculatorImpl implements HTotalVisibilityCalculator {
+	private static final EClass METRIC_TYPE = org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHTotalVisibilityMetric();
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected HTotalVisibilityCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -58,50 +49,44 @@ public class HTotalVisibilityCalculatorImpl extends HMetricCalculatorImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean detect(HAntiPatternGraph apg) {
+	@Override
+	public boolean detect(final HAntiPatternGraph apg) {
 		// [user code injected with eMoflon]
-		int totalValue = 0;
-		TypeGraph pg = apg.getModel();
-		for (TClass tClass : pg.getClasses()) {
+		var totalValue = 0;
+		final var pg = apg.getModel();
+		for (final TClass tClass : pg.getClasses()) {
 			if (!tClass.isTLib()) {
-				int value = 0;
-				for (TMember tMember : tClass.getDefines()) {
-					TModifier tModifier = tMember.getTModifier();
+				var value = 0;
+				for (final TMember tMember : tClass.getDefines()) {
+					final var tModifier = tMember.getTModifier();
 					if (tModifier == null) {
 						//System.err.println("The member \"" + tMember.getSignatureString() + "\" in the  class \""
 						//		+ tClass.getFullyQualifiedName() + "\" has no modifier.");
 					} else {
-						TVisibility tVisibility = tModifier.getTVisibility();
+						final var tVisibility = tModifier.getTVisibility();
 						if (tVisibility != null) {
 							switch (tVisibility) {
 							case TPUBLIC:
-								value += publicValue;
+								value += this.publicValue;
 								break;
 							case TPROTECTED:
-								value += protectedValue;
+								value += this.protectedValue;
 								break;
 							case TPACKAGE:
-								value += packageValue;
+								value += this.packageValue;
 								break;
 							case TPRIVATE:
-								value += privateValue;
+								value += this.privateValue;
 								break;
 							}
 						}
 					}
 				}
 				totalValue += value;
-				HTotalVisibilityMetric metric = MetricsFactory.eINSTANCE.createHTotalVisibilityMetric();
-				metric.setValue(value);
-				metric.setTAnnotated(tClass);
-				getHAnnotation().add(metric);
+				addMetric(tClass, METRIC_TYPE, value);
 			}
 		}
-		HTotalVisibilityMetric metric = MetricsFactory.eINSTANCE.createHTotalVisibilityMetric();
-		metric.setTAnnotated(pg);
-		metric.setValue(totalValue);
-		getHAnnotation().add(metric);
-
+		addMetric(pg, METRIC_TYPE, totalValue);
 		return true;
 	}
 
@@ -111,7 +96,7 @@ public class HTotalVisibilityCalculatorImpl extends HMetricCalculatorImpl implem
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HTOTAL_VISIBILITY_CALCULATOR___DETECT__HANTIPATTERNGRAPH:
 			return detect((HAntiPatternGraph) arguments.get(0));
@@ -121,14 +106,19 @@ public class HTotalVisibilityCalculatorImpl extends HMetricCalculatorImpl implem
 	// <-- [user code injected with eMoflon]
 
 	//TODO: make values changeable
-	private int privateValue = 0; //SearchParameters.privateValue;
-	private int packageValue = 1; //SearchParameters.packageValue;
-	private int protectedValue = 2; //SearchParameters.protectedValue;
-	private int publicValue = 3; //SearchParameters.publicValue;
+	private final int privateValue = 0; //SearchParameters.privateValue;
+	private final int packageValue = 1; //SearchParameters.packageValue;
+	private final int protectedValue = 2; //SearchParameters.protectedValue;
+	private final int publicValue = 3; //SearchParameters.publicValue;
 
 	@Override
 	public String getGuiName() {
 		return "TotalMethodVisibility";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHTotalVisibilityMetric();
 	}
 
 	// [user code injected with eMoflon] -->

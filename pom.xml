@@ -8,8 +8,8 @@
   <packaging>pom</packaging>
   
   <properties>
-    <tycho-version>1.5.1</tycho-version>
-    <jacoco.version>0.8.5</jacoco.version>
+    <tycho-version>2.3.0</tycho-version>
+    <jacoco.version>0.8.7</jacoco.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     
@@ -35,6 +35,7 @@
     <module>build/org.gravity.features.uml</module>
     <module>build/org.gravity.license.epl</module>
     <module>implementation/org.gravity.eclipse</module>
+    <module>implementation/org.gravity.eclipse.java.spl</module>
     <module>implementation/org.gravity.eclipse.ui</module>
     <module>implementation/org.gravity.goblin</module>
     <module>implementation/org.gravity.hulk</module>
@@ -55,6 +56,7 @@
     <module>implementation/org.gravity.tgg.modisco.uml</module>
     <module>implementation/org.gravity.tgg.pm.uml/</module>
     <module>implementation/org.gravity.typegraph.basic</module>
+    <module>implementation/org.gravity.typegraph.spl</module>
     <module>tests/org.gravity.eclipse.tests</module>
     <module>tests/org.gravity.goblin.tests</module>
     <module>tests/org.gravity.hulk.tests</module>
@@ -138,32 +140,42 @@
     <repository>
       <id>Eclipse Latest</id>
       <layout>p2</layout>
-      <url>http://download.eclipse.org/releases/latest</url>
+      <url>https://download.eclipse.org/releases/latest</url>
     </repository>
     <repository>
       <id>eMoflon TIE</id>
       <layout>p2</layout>
-      <url>http://gravity-tool.org/emoflon-tie/updatesite</url>
+      <url>https://gravity-tool.org/emoflon-tie/updatesite</url>
     </repository>
     <repository>
       <id>Henshin</id>
       <layout>p2</layout>
-      <url>http://download.eclipse.org/modeling/emft/henshin/updates/nightly</url>
+      <url>https://download.eclipse.org/modeling/emft/henshin/updates/nightly</url>
+    </repository>
+    <repository>
+      <id>Henshin MultiVar</id>
+      <layout>p2</layout>
+      <url>https://gravity-tool.org/henshin-multivar/updatesite</url>
     </repository>
     <repository>
       <id>MoMOT</id>
       <layout>p2</layout>
-      <url>http://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
+      <url>https://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
     </repository>
     <repository>
       <id>plantuml</id>
       <layout>p2</layout>
-      <url>http://hallvard.github.io/plantuml</url>
+      <url>https://hallvard.github.io/plantuml</url>
     </repository>
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
       <url>http://carisma.umlsec.de/beta-updatesite</url>
+    </repository>
+    <repository>
+      <id>FeatureIDE</id>
+      <layout>p2</layout>
+      <url>http://featureide.cs.ovgu.de/update/v3/</url>
     </repository>
   </repositories>
 </project>

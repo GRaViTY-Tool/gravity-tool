@@ -3,9 +3,8 @@
 package org.gravity.hulk;
 
 import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.typegraph.basic.TClass;
@@ -46,6 +45,8 @@ public interface HDetector extends EObject, Node {
 	 * @generated
 	 */
 	EList<HAnnotation> getHAnnotation();
+
+	EClass getHAnnotationType();
 
 	/**
 	 * Returns the value of the '<em><b>HAnti Pattern Handling</b></em>' reference.

@@ -5,25 +5,16 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
-import org.gravity.hulk.antipatterngraph.metrics.HTotalCouplingMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HTotalCouplingCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
-import org.gravity.typegraph.basic.TClass;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TAbstractType;
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +32,6 @@ public class HTotalCouplingCalculatorImpl extends HClassBasedMetricCalculatorImp
 	 * @generated
 	 */
 	protected HTotalCouplingCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -59,8 +49,11 @@ public class HTotalCouplingCalculatorImpl extends HClassBasedMetricCalculatorImp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		HTotalCouplingMetric metric = MetricsFactory.eINSTANCE.createHTotalCouplingMetric();
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
+		final var metric = MetricsFactory.eINSTANCE.createHTotalCouplingMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -72,21 +65,22 @@ public class HTotalCouplingCalculatorImpl extends HClassBasedMetricCalculatorImp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		double coupling = 0;
+		var coupling = 0D;
 
-		for (TMember m : tClass.getDefines()) {
-			for (TAccess access : m.getAccessedBy()) {
+		for (final TMember m : tClass.getDefines()) {
+			for (final TAccess access : m.getAccessedBy()) {
 				if (access.getSource().getDefinedBy() != tClass) {
 					coupling++;
 				}
 			}
 
-			for (TAccess access : m.getAccessing()) {
-				TAbstractType target = access.getTarget().getDefinedBy();
-				if (!target.isTLib() && target != tClass && !target.getTName().equals("T")) {
+			for (final TAccess access : m.getAccessing()) {
+				final var target = access.getTarget().getDefinedBy();
+				if (!target.isTLib() && (target != tClass) && !target.getTName().equals("T")) {
 					coupling++;
 				}
 			}
@@ -101,7 +95,7 @@ public class HTotalCouplingCalculatorImpl extends HClassBasedMetricCalculatorImp
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HTOTAL_COUPLING_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));
@@ -116,6 +110,11 @@ public class HTotalCouplingCalculatorImpl extends HClassBasedMetricCalculatorImp
 	@Override
 	public String getGuiName() {
 		return "Total Coupling";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHTotalCouplingMetric();
 	}
 
 	// [user code injected with eMoflon] -->

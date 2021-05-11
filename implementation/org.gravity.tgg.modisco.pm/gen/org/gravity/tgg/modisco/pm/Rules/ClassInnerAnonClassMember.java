@@ -101,8 +101,8 @@ public interface ClassInnerAnonClassMember extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, TypeGraph typeGraph,
-			MClass mInnerClass, AnonymousClassDeclaration eOuterClass, TClass tOuterClass,
-			MAbstractMethodDefinition mDefinition, AnonymousClassDeclarationToTClass eOuterClassToTOuterClass);
+			MClass mInnerClass, AnonymousClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition,
+			TClass tOuterClass, AnonymousClassDeclarationToTClass eOuterClassToTOuterClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,7 +119,7 @@ public interface ClassInnerAnonClassMember extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tInnerTypeToTInnerAbstractType, EObject tPackage,
-			EObject typeGraph, EObject mInnerClass, EObject eOuterClass, EObject tOuterClass, EObject mDefinition,
+			EObject typeGraph, EObject mInnerClass, EObject eOuterClass, EObject mDefinition, EObject tOuterClass,
 			EObject tInnerClass, EObject eOuterClassToTOuterClass);
 
 	/**
@@ -188,7 +188,7 @@ public interface ClassInnerAnonClassMember extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, TypeGraph typeGraph,
-			AnonymousClassDeclaration eOuterClass, TClass tOuterClass, MAbstractMethodDefinition mDefinition,
+			AnonymousClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass,
 			TClass tInnerClass, AnonymousClassDeclarationToTClass eOuterClassToTOuterClass);
 
 	/**
@@ -206,7 +206,7 @@ public interface ClassInnerAnonClassMember extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tInnerTypeToTInnerAbstractType, EObject tPackage,
-			EObject typeGraph, EObject mInnerClass, EObject eOuterClass, EObject tOuterClass, EObject mDefinition,
+			EObject typeGraph, EObject mInnerClass, EObject eOuterClass, EObject mDefinition, EObject tOuterClass,
 			EObject tInnerClass, EObject eOuterClassToTOuterClass);
 
 	/**
@@ -223,7 +223,7 @@ public interface ClassInnerAnonClassMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_66(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_52(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +231,7 @@ public interface ClassInnerAnonClassMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_69(EMoflonEdge _edge_mInnerTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_55(EMoflonEdge _edge_mInnerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,7 +264,7 @@ public interface ClassInnerAnonClassMember extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(TPackage tPackage, TypeGraph typeGraph, MClass mInnerClass,
-			AnonymousClassDeclaration eOuterClass, TClass tOuterClass, MAbstractMethodDefinition mDefinition,
+			AnonymousClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass,
 			TClass tInnerClass, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -308,7 +308,7 @@ public interface ClassInnerAnonClassMember extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, TypeGraph typeGraph,
-			AnonymousClassDeclaration eOuterClass, TClass tOuterClass, MAbstractMethodDefinition mDefinition,
+			AnonymousClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass,
 			AnonymousClassDeclarationToTClass eOuterClassToTOuterClass, ModelgeneratorRuleResult ruleResult);
 
 	/**

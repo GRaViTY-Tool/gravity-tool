@@ -3,18 +3,14 @@
 package org.gravity.hulk.detection.metrics.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+// [user defined imports] -->
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
-import org.gravity.hulk.antipatterngraph.metrics.HLocalFieldUniqueAccessMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HLocalFieldUniqueAccessCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
 // <-- [user defined imports]
@@ -22,8 +18,6 @@ import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMember;
-import java.util.ArrayList;
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -35,14 +29,13 @@ import java.util.ArrayList;
  * @generated
  */
 public class HLocalFieldUniqueAccessCalculatorImpl extends HClassBasedMetricCalculatorImpl
-		implements HLocalFieldUniqueAccessCalculator {
+implements HLocalFieldUniqueAccessCalculator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected HLocalFieldUniqueAccessCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -60,8 +53,11 @@ public class HLocalFieldUniqueAccessCalculatorImpl extends HClassBasedMetricCalc
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		HLocalFieldUniqueAccessMetric metric = MetricsFactory.eINSTANCE.createHLocalFieldUniqueAccessMetric();
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
+		final var metric = MetricsFactory.eINSTANCE.createHLocalFieldUniqueAccessMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -73,14 +69,15 @@ public class HLocalFieldUniqueAccessCalculatorImpl extends HClassBasedMetricCalc
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
-		int i = 0;
-		for (TMember m : tClass.getDefines()) {
-			ArrayList<TMember> accessedMembers = new ArrayList<TMember>();
-			for (TAccess t : m.getAccessing()) {
-				TMember tTarget = t.getTarget();
-				if (tTarget instanceof TFieldDefinition && tClass.equals(tTarget.getDefinedBy())
+		var i = 0;
+		for (final TMember m : tClass.getDefines()) {
+			final var accessedMembers = new ArrayList<TMember>();
+			for (final TAccess t : m.getAccessing()) {
+				final var tTarget = t.getTarget();
+				if ((tTarget instanceof TFieldDefinition) && tClass.equals(tTarget.getDefinedBy())
 						&& !accessedMembers.contains(tTarget)) {
 					i++;
 					accessedMembers.add(tTarget);
@@ -96,7 +93,7 @@ public class HLocalFieldUniqueAccessCalculatorImpl extends HClassBasedMetricCalc
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HLOCAL_FIELD_UNIQUE_ACCESS_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));
@@ -111,6 +108,11 @@ public class HLocalFieldUniqueAccessCalculatorImpl extends HClassBasedMetricCalc
 	@Override
 	public String getGuiName() {
 		return "Number of distinct fields accessed by each method";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHLocalFieldUniqueAccessMetric();
 	}
 
 	// [user code injected with eMoflon] -->

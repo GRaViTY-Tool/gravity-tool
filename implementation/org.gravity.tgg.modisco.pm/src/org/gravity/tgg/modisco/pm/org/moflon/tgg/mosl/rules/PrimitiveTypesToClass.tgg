@@ -29,11 +29,6 @@
 		#trg->tPrimitiveClass
 	}
 
-	++ ePrimitiveTypeToTPrimitiveClass :PrimitiveTypeToTClass {
-		#src->ePrimitiveType
-		#trg->tPrimitiveClass
-	}
-
 	eModelToTypeGraph :ModelToTypeGraph {
 		#src->eModel
 		#trg->typeGraph

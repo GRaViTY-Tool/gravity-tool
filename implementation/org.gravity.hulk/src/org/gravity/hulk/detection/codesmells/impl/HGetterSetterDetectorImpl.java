@@ -11,7 +11,6 @@ import org.gravity.hulk.HulkPackage;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
-import org.gravity.hulk.antipatterngraph.codesmells.HGetterSetterSmell;
 import org.gravity.hulk.antipatterngraph.metrics.HNACCMetric;
 import org.gravity.hulk.detection.DetectionPackage;
 import org.gravity.hulk.detection.HClassBasedCalculator;
@@ -41,7 +40,6 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	 * @generated
 	 */
 	protected HGetterSetterDetectorImpl() {
-		super();
 	}
 
 	/**
@@ -60,10 +58,10 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	 * @generated
 	 */
 	@Override
-	public boolean isGetterSetter(TMethodDefinition method) {
+	public boolean isGetterSetter(final TMethodDefinition method) {
 		// [user code injected with eMoflon]
 
-		final String tName = method.getSignature().getMethod().getTName();
+		final var tName = method.getSignature().getMethod().getTName();
 		return tName.startsWith("get") || tName.startsWith("set");
 
 	}
@@ -74,7 +72,9 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	 * @generated
 	 */
 	@Override
-	public HAnnotation calculate(TClass tClass) {
+	public HAnnotation calculate(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		HNACCMetric nacc = null;
 		for (final TAnnotation tmpNacc : tClass.getTAnnotation()) {
 			if (tmpNacc instanceof HNACCMetric) {
@@ -89,10 +89,10 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 		// ForEach
 		for (final TMember tmpTMember : tClass.getDefines()) {
 			if (tmpTMember instanceof TMethodDefinition) {
-				final TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
+				final var tMember = (TMethodDefinition) tmpTMember;
 				//
 				if (isGetterSetter(tMember)) {
-					final HGetterSetterSmell gs = CodesmellsFactory.eINSTANCE.createHGetterSetterSmell();
+					final var gs = CodesmellsFactory.eINSTANCE.createHGetterSetterSmell();
 					gs.setTAnnotated(tMember);
 					gs.getPartOf().add(nacc);
 					nacc.getHGetterSetterSmells().add(gs);
@@ -109,9 +109,9 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	 * @generated NOT
 	 */
 	@Override
-	public boolean detect(HAntiPatternGraph pg) {// ForEach
+	public boolean detect(final HAntiPatternGraph pg) {// ForEach
 		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final HAnnotation metric = calculate(tClass);
+			final var metric = calculate(tClass);
 			if (metric != null) {
 				metric.setTAnnotated(tClass);
 				pg.getHAnnotations().add(metric);
@@ -128,7 +128,7 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	 * @generated
 	 */
 	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+	public int eDerivedOperationID(final int baseOperationID, final Class<?> baseClass) {
 		if (baseClass == HDetector.class) {
 			switch (baseOperationID) {
 			case HulkPackage.HDETECTOR___DETECT__HANTIPATTERNGRAPH:
@@ -156,7 +156,7 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case CodesmellsPackage.HGETTER_SETTER_DETECTOR___IS_GETTER_SETTER__TMETHODDEFINITION:
 			return isGetterSetter((TMethodDefinition) arguments.get(0));
@@ -173,6 +173,11 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	@Override
 	public String getGuiName() {
 		return "Getter/Setter Smell";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage.eINSTANCE.getHGetterSetterSmell();
 	}
 
 	// [user code injected with eMoflon] -->

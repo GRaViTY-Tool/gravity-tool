@@ -55,6 +55,8 @@ implements HEfferentCouplingCalculator {
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		final var metric = MetricsFactory.eINSTANCE.createHEfferentCouplingMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
@@ -116,6 +118,11 @@ implements HEfferentCouplingCalculator {
 	@Override
 	public String getGuiName() {
 		return "Efferent Coupling";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHEfferentCouplingMetric();
 	}
 
 	// [user code injected with eMoflon] -->

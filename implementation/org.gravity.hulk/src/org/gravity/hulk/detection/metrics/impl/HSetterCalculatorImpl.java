@@ -51,6 +51,8 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		final var metric = MetricsFactory.eINSTANCE.createHSetterMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
@@ -122,6 +124,11 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 	@Override
 	public String getGuiName() {
 		return "Number of setter Methods";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHSetterMetric();
 	}
 
 	// [user code injected with eMoflon] -->

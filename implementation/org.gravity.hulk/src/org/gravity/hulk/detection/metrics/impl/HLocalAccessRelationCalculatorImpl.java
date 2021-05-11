@@ -5,23 +5,15 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
-import org.gravity.hulk.antipatterngraph.metrics.HLocalAccessRelationMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HLocalFieldAccessesMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HLocalMethodAccessesMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HLocalAccessRelationCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
 import org.gravity.typegraph.basic.TClass;
-
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -35,19 +27,18 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  * @generated
  */
 public class HLocalAccessRelationCalculatorImpl extends HClassBasedMetricCalculatorImpl
-		implements HLocalAccessRelationCalculator {
+implements HLocalAccessRelationCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HLocalAccessRelationCalculatorImpl() {
-		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -57,25 +48,28 @@ public class HLocalAccessRelationCalculatorImpl extends HClassBasedMetricCalcula
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public HMetric calculateMetric(TClass tClass) {
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		HLocalFieldAccessesMetric hField = null;
 		HLocalMethodAccessesMetric hMethod = null;
-		for (TAnnotation tmpHField : tClass.getTAnnotation()) {
+		for (final TAnnotation tmpHField : tClass.getTAnnotation()) {
 			if (tmpHField instanceof HLocalFieldAccessesMetric) {
 				hField = (HLocalFieldAccessesMetric) tmpHField;
 			} else if (tmpHField instanceof HLocalMethodAccessesMetric) {
 				hMethod = (HLocalMethodAccessesMetric) tmpHField;
 			}
 		}
-		if (hField == null || hMethod == null) {
+		if ((hField == null) || (hMethod == null)) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
 					+ "[this] = " + this + ".");
 		}
 
-		HLocalAccessRelationMetric metric = MetricsFactory.eINSTANCE.createHLocalAccessRelationMetric();
+		final var metric = MetricsFactory.eINSTANCE.createHLocalAccessRelationMetric();
 		metric.setTAnnotated(tClass);
 		metric.setHLocalMethodAccesses(hMethod);
 		metric.setHLocalFieldAccesses(hField);
@@ -89,10 +83,11 @@ public class HLocalAccessRelationCalculatorImpl extends HClassBasedMetricCalcula
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public double calculateValue(HLocalFieldAccessesMetric fa, HLocalMethodAccessesMetric ma) {
+	@Override
+	public double calculateValue(final HLocalFieldAccessesMetric fa, final HLocalMethodAccessesMetric ma) {
 		// [user code injected with eMoflon]
 
 		return fa.getValue() / (ma.getValue() + 1);
@@ -101,20 +96,21 @@ public class HLocalAccessRelationCalculatorImpl extends HClassBasedMetricCalcula
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		HLocalFieldAccessesMetric hField = null;
 		HLocalMethodAccessesMetric hMethod = null;
-		for (TAnnotation tmpHField : tClass.getTAnnotation()) {
+		for (final TAnnotation tmpHField : tClass.getTAnnotation()) {
 			if (tmpHField instanceof HLocalFieldAccessesMetric) {
 				hField = (HLocalFieldAccessesMetric) tmpHField;
 			} else if (tmpHField instanceof HLocalMethodAccessesMetric) {
 				hMethod = (HLocalMethodAccessesMetric) tmpHField;
 			}
 		}
-		if (hField == null || hMethod == null) {
+		if ((hField == null) || (hMethod == null)) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[tClass] = " + tClass + ".");
 		}
@@ -123,11 +119,11 @@ public class HLocalAccessRelationCalculatorImpl extends HClassBasedMetricCalcula
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HLOCAL_ACCESS_RELATION_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));
@@ -145,6 +141,11 @@ public class HLocalAccessRelationCalculatorImpl extends HClassBasedMetricCalcula
 	@Override
 	public String getGuiName() {
 		return "Relation beteen in Class Methodcalls and Fieldaccesses";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHLocalAccessRelationMetric();
 	}
 
 	// [user code injected with eMoflon] -->

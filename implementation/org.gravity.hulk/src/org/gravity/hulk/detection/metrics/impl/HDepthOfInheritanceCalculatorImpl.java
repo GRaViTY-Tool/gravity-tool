@@ -57,6 +57,8 @@ implements HDepthOfInheritanceCalculator {
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		final var metric = MetricsFactory.eINSTANCE.createHDepthOfInheritanceMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
@@ -87,7 +89,7 @@ implements HDepthOfInheritanceCalculator {
 					var dist = parent.getChildClasses().parallelStream().mapToInt(distances::get)
 							.filter(Objects::nonNull).min().getAsInt();
 					if (parent.isTLib() || parent.getParents().isEmpty()) {
-						if("java.lang.Object".equals(parent.getFullyQualifiedName())) {
+						if ("java.lang.Object".equals(parent.getFullyQualifiedName())) {
 							dist -= 1;
 						}
 						if (minDist > dist) {
@@ -126,6 +128,11 @@ implements HDepthOfInheritanceCalculator {
 	@Override
 	public String getGuiName() {
 		return "Depth of Inheritance";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHDepthOfInheritanceMetric();
 	}
 
 	// [user code injected with eMoflon] -->

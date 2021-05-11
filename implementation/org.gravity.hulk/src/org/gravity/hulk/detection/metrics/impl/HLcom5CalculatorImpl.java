@@ -5,24 +5,17 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
 import org.gravity.hulk.antipatterngraph.metrics.HLCOM5Metric;
 import org.gravity.hulk.antipatterngraph.metrics.HLocalFieldUniqueAccessMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfFieldsMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMethodsMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HLcom5Calculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
 import org.gravity.typegraph.basic.TClass;
-
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -38,16 +31,15 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implements HLcom5Calculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HLcom5CalculatorImpl() {
-		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -57,54 +49,58 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public HMetric calculateMetric(TClass tClass) {
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
 
-		Object[] result1_black = HLcom5CalculatorImpl.pattern_HLcom5Calculator_0_1_ActivityNode19_blackFBFFB(this,
+		final var result1_black = HLcom5CalculatorImpl.pattern_HLcom5Calculator_0_1_ActivityNode19_blackFBFFB(this,
 				tClass);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[tClass] = " + tClass + ".");
 		}
-		HLocalFieldUniqueAccessMetric lfau = (HLocalFieldUniqueAccessMetric) result1_black[0];
-		HNumberOfFieldsMetric nof = (HNumberOfFieldsMetric) result1_black[2];
-		HNumberOfMethodsMetric nom = (HNumberOfMethodsMetric) result1_black[3];
+		final var lfau = (HLocalFieldUniqueAccessMetric) result1_black[0];
+		final var nof = (HNumberOfFieldsMetric) result1_black[2];
+		final var nom = (HNumberOfMethodsMetric) result1_black[3];
 		return createMetric(lfau, nof, nom, tClass);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 
-		Object[] result1_black = HLcom5CalculatorImpl.pattern_HLcom5Calculator_1_1_ActivityNode20_blackBBFFF(this,
+		final var result1_black = HLcom5CalculatorImpl.pattern_HLcom5Calculator_1_1_ActivityNode20_blackBBFFF(this,
 				tClass);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[tClass] = " + tClass + ".");
 		}
-		HNumberOfFieldsMetric nof = (HNumberOfFieldsMetric) result1_black[2];
-		HNumberOfMethodsMetric nom = (HNumberOfMethodsMetric) result1_black[3];
-		HLocalFieldUniqueAccessMetric lfa = (HLocalFieldUniqueAccessMetric) result1_black[4];
+		final var nof = (HNumberOfFieldsMetric) result1_black[2];
+		final var nom = (HNumberOfMethodsMetric) result1_black[3];
+		final var lfa = (HLocalFieldUniqueAccessMetric) result1_black[4];
 		return calculateLcom5Value(nof, nom, lfa);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public double calculateLcom5Value(HNumberOfFieldsMetric nof, HNumberOfMethodsMetric nom,
-			HLocalFieldUniqueAccessMetric lfa) {
+	@Override
+	public double calculateLcom5Value(final HNumberOfFieldsMetric nof, final HNumberOfMethodsMetric nom,
+			final HLocalFieldUniqueAccessMetric lfa) {
 		// [user code injected with eMoflon]
 
-		double nomTimesNof = nom.getValue() * nof.getValue();
-		double dividend = lfa.getValue() - (nomTimesNof);
-		double divisor = nof.getValue() - (nomTimesNof);
+		final var nomTimesNof = nom.getValue() * nof.getValue();
+		final var dividend = lfa.getValue() - (nomTimesNof);
+		final var divisor = nof.getValue() - (nomTimesNof);
 
 		if (divisor == 0) {
 			return 0;
@@ -116,11 +112,11 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HLCOM5_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));
@@ -133,17 +129,17 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_HLcom5Calculator_0_1_ActivityNode19_blackFBFFB(HLcom5Calculator _this,
-			TClass tClass) {
-		for (TAnnotation tmpLfau : tClass.getTAnnotation()) {
+	public static final Object[] pattern_HLcom5Calculator_0_1_ActivityNode19_blackFBFFB(final HLcom5Calculator _this,
+			final TClass tClass) {
+		for (final TAnnotation tmpLfau : tClass.getTAnnotation()) {
 			if (tmpLfau instanceof HLocalFieldUniqueAccessMetric) {
-				HLocalFieldUniqueAccessMetric lfau = (HLocalFieldUniqueAccessMetric) tmpLfau;
-				for (TAnnotation tmpNof : tClass.getTAnnotation()) {
+				final var lfau = (HLocalFieldUniqueAccessMetric) tmpLfau;
+				for (final TAnnotation tmpNof : tClass.getTAnnotation()) {
 					if (tmpNof instanceof HNumberOfFieldsMetric) {
-						HNumberOfFieldsMetric nof = (HNumberOfFieldsMetric) tmpNof;
-						for (TAnnotation tmpNom : tClass.getTAnnotation()) {
+						final var nof = (HNumberOfFieldsMetric) tmpNof;
+						for (final TAnnotation tmpNom : tClass.getTAnnotation()) {
 							if (tmpNom instanceof HNumberOfMethodsMetric) {
-								HNumberOfMethodsMetric nom = (HNumberOfMethodsMetric) tmpNom;
+								final var nom = (HNumberOfMethodsMetric) tmpNom;
 								return new Object[] { lfau, _this, nof, nom, tClass };
 							}
 						}
@@ -154,9 +150,9 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 		return null;
 	}
 
-	public final HLCOM5Metric createMetric(HLocalFieldUniqueAccessMetric lfau, HNumberOfFieldsMetric nof,
-			HNumberOfMethodsMetric nom, TClass tClass) {
-		HLCOM5Metric metric = MetricsFactory.eINSTANCE.createHLCOM5Metric();
+	public final HLCOM5Metric createMetric(final HLocalFieldUniqueAccessMetric lfau, final HNumberOfFieldsMetric nof,
+			final HNumberOfMethodsMetric nom, final TClass tClass) {
+		final var metric = MetricsFactory.eINSTANCE.createHLCOM5Metric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateLcom5Value(nof, nom, lfau));
 		metric.setHLocalFieldUniqueAccessMetric(lfau);
@@ -169,17 +165,17 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 		return metric;
 	}
 
-	public static final Object[] pattern_HLcom5Calculator_1_1_ActivityNode20_blackBBFFF(HLcom5Calculator _this,
-			TClass tClass) {
-		for (TAnnotation tmpNof : tClass.getTAnnotation()) {
+	public static final Object[] pattern_HLcom5Calculator_1_1_ActivityNode20_blackBBFFF(final HLcom5Calculator _this,
+			final TClass tClass) {
+		for (final TAnnotation tmpNof : tClass.getTAnnotation()) {
 			if (tmpNof instanceof HNumberOfFieldsMetric) {
-				HNumberOfFieldsMetric nof = (HNumberOfFieldsMetric) tmpNof;
-				for (TAnnotation tmpNom : tClass.getTAnnotation()) {
+				final var nof = (HNumberOfFieldsMetric) tmpNof;
+				for (final TAnnotation tmpNom : tClass.getTAnnotation()) {
 					if (tmpNom instanceof HNumberOfMethodsMetric) {
-						HNumberOfMethodsMetric nom = (HNumberOfMethodsMetric) tmpNom;
-						for (TAnnotation tmpLfa : tClass.getTAnnotation()) {
+						final var nom = (HNumberOfMethodsMetric) tmpNom;
+						for (final TAnnotation tmpLfa : tClass.getTAnnotation()) {
 							if (tmpLfa instanceof HLocalFieldUniqueAccessMetric) {
-								HLocalFieldUniqueAccessMetric lfa = (HLocalFieldUniqueAccessMetric) tmpLfa;
+								final var lfa = (HLocalFieldUniqueAccessMetric) tmpLfa;
 								return new Object[] { _this, tClass, nof, nom, lfa };
 							}
 						}
@@ -196,6 +192,11 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 	public String getGuiName() {
 
 		return "Calculate LCOM5 on PG";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHLCOM5Metric();
 	}
 
 	// [user code injected with eMoflon] -->

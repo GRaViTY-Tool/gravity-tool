@@ -615,7 +615,7 @@ public class PrimitiveTypeFloatImpl extends AbstractRuleImpl implements Primitiv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_PrimitiveType_10(PrimitiveType umpt) {
+	public EObjectContainer isAppropriate_BWD_PrimitiveType_0(PrimitiveType umpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeFloatImpl
 				.pattern_PrimitiveTypeFloat_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -670,7 +670,7 @@ public class PrimitiveTypeFloatImpl extends AbstractRuleImpl implements Primitiv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_PrimitiveTypeFloat_1(org.eclipse.modisco.java.PrimitiveTypeFloat jpt) {
+	public EObjectContainer isAppropriate_FWD_PrimitiveTypeFloat_0(org.eclipse.modisco.java.PrimitiveTypeFloat jpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeFloatImpl
 				.pattern_PrimitiveTypeFloat_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -735,13 +735,13 @@ public class PrimitiveTypeFloatImpl extends AbstractRuleImpl implements Primitiv
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
-		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
-		var_jpt_name.setType("String");
-
 		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
 		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
 		var_umpt_name.setType("String");
+
+		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
+		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
+		var_jpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -782,13 +782,13 @@ public class PrimitiveTypeFloatImpl extends AbstractRuleImpl implements Primitiv
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
-		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
-		var_jpt_name.setType("String");
-
 		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
 		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
 		var_umpt_name.setType("String");
+
+		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
+		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
+		var_jpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1099,10 +1099,10 @@ public class PrimitiveTypeFloatImpl extends AbstractRuleImpl implements Primitiv
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_FLOAT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_10__PRIMITIVETYPE:
-			return isAppropriate_BWD_PrimitiveType_10((PrimitiveType) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_FLOAT_1__PRIMITIVETYPEFLOAT:
-			return isAppropriate_FWD_PrimitiveTypeFloat_1(
+		case RulesPackage.PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_0__PRIMITIVETYPE:
+			return isAppropriate_BWD_PrimitiveType_0((PrimitiveType) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_FLOAT_0__PRIMITIVETYPEFLOAT:
+			return isAppropriate_FWD_PrimitiveTypeFloat_0(
 					(org.eclipse.modisco.java.PrimitiveTypeFloat) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_FLOAT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));

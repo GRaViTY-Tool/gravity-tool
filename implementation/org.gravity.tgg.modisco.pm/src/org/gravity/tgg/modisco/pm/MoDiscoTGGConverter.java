@@ -180,8 +180,17 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	@Override
 	public boolean discard() {
-		clearChanges();
-		reset();
+		if (this.src != null) {
+			this.src.eResource().unload();
+			this.src = null;
+		}
+		if (this.corr != null) {
+			this.corr.eResource().unload();
+			this.corr = null;
+		}
+		this.changeSrc = null;
+		this.changeTrg = null;
+		this.protocol = null;
 		return true;
 	}
 

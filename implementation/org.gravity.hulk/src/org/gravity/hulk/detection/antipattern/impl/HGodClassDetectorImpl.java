@@ -5,34 +5,25 @@ package org.gravity.hulk.detection.antipattern.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
-
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
 import org.gravity.hulk.antipatterngraph.antipattern.AntipatternFactory;
 import org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern;
-
 import org.gravity.hulk.antipatterngraph.codesmells.HControllerClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HLowCohesionSmell;
 import org.gravity.hulk.detection.DetectionPackage;
 import org.gravity.hulk.detection.HClassBasedCalculator;
-
 import org.gravity.hulk.detection.antipattern.AntipatternPackage;
 import org.gravity.hulk.detection.antipattern.HGodClassDetector;
-
 import org.gravity.hulk.detection.impl.HAntiPatternDetectorImpl;
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
-
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
-import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>HGod
@@ -45,16 +36,15 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
 public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements HGodClassDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HGodClassDetectorImpl() {
-		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,14 +54,17 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public HAnnotation calculate(TClass tClass) {//
+	@Override
+	public HAnnotation calculate(final TClass tClass) {//
+		removeAnnotations(tClass);
+
 		HControllerClassSmell controller = null;
 		HLargeClassSmell largeClass = null;
 		HLowCohesionSmell lowCohesion = null;
-		for (TAnnotation tmpLclc : tClass.getTAnnotation()) {
+		for (final TAnnotation tmpLclc : tClass.getTAnnotation()) {
 			if (tmpLclc instanceof HLargeClassSmell) {
 				largeClass = (HLargeClassSmell) tmpLclc;
 			} else if (tmpLclc instanceof HLowCohesionSmell) {
@@ -80,14 +73,14 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 				controller = (HControllerClassSmell) tmpLclc;
 			}
 		}
-		if ((largeClass != null || lowCohesion != null) && controller != null) {
+		if (((largeClass != null) || (lowCohesion != null)) && (controller != null)) {
 			//
-			HGodClassAntiPattern mc = createAntiPattern(controller, largeClass, lowCohesion, tClass);
+			final var mc = createAntiPattern(controller, largeClass, lowCohesion, tClass);
 
 			//
-			TAnnotationType tAnnotationType = getAnnotationType(tClass.getModel(), "GodClass");
+			final var tAnnotationType = getAnnotationType(tClass.getModel(), "GodClass");
 			if (tAnnotationType != null) {
-				TAnnotation annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
+				final var annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
 				annotation.setTAnnotated(tClass);
 				tAnnotationType.getAnnotations().add(annotation);
 			}
@@ -99,12 +92,13 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach
-		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			HAnnotation metric = calculate(tClass);
+	@Override
+	public boolean detect(final HAntiPatternGraph pg) {// ForEach
+		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			final var metric = calculate(tClass);
 			if (metric != null) {
 				metric.setTAnnotated(tClass);
 				pg.getHAnnotations().add(metric);
@@ -117,11 +111,11 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+	public int eDerivedOperationID(final int baseOperationID, final Class<?> baseClass) {
 		if (baseClass == HDetector.class) {
 			switch (baseOperationID) {
 			case HulkPackage.HDETECTOR___DETECT__HANTIPATTERNGRAPH:
@@ -145,11 +139,11 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case AntipatternPackage.HGOD_CLASS_DETECTOR___CALCULATE__TCLASS:
 			return calculate((TClass) arguments.get(0));
@@ -159,9 +153,9 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public final HGodClassAntiPattern createAntiPattern(HControllerClassSmell controller,
-			HLargeClassSmell largeClass, HLowCohesionSmell lowCohesion, TClass tClass) {
-		HGodClassAntiPattern mc = AntipatternFactory.eINSTANCE.createHGodClassAntiPattern();
+	public final HGodClassAntiPattern createAntiPattern(final HControllerClassSmell controller,
+			final HLargeClassSmell largeClass, final HLowCohesionSmell lowCohesion, final TClass tClass) {
+		final var mc = AntipatternFactory.eINSTANCE.createHGodClassAntiPattern();
 		mc.setTAnnotated(tClass);
 		if(largeClass != null) {
 			largeClass.getPartOf().add(mc);
@@ -182,6 +176,11 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 	@Override
 	public String getGuiName() {
 		return "God Class [Anti-Pattern]";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage.eINSTANCE.getHGodClassAntiPattern();
 	}
 
 	// [user code injected with eMoflon] -->

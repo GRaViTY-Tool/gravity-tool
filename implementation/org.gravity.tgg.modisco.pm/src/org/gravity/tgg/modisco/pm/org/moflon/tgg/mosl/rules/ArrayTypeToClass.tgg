@@ -34,6 +34,11 @@
 		#trg->typeGraph
 	}
 
+	++ arrayTypeToTArrayClass :TypeToTAbstractType {
+		#src->eArrayType
+		#trg->tArrayClass
+	}
+
 	eTypeToTArrayClass :TypeToTAbstractType {
 		#src->eType
 		#trg->tArrayClass

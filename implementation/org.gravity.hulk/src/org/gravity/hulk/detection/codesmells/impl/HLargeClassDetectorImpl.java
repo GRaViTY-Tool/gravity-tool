@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
-import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMembersMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.detection.DetectionPackage;
@@ -87,7 +86,6 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 * @generated
 	 */
 	protected HLargeClassDetectorImpl() {
-		super();
 	}
 
 	/**
@@ -117,7 +115,7 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 */
 	@Override
 	public void setRelative(final boolean newRelative) {
-		final boolean oldRelative = this.relative;
+		final var oldRelative = this.relative;
 		this.relative = newRelative;
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CodesmellsPackage.HLARGE_CLASS_DETECTOR__RELATIVE,
@@ -142,7 +140,7 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 */
 	@Override
 	public void setThreshold(final double newThreshold) {
-		final double oldThreshold = this.threshold;
+		final var oldThreshold = this.threshold;
 		this.threshold = newThreshold;
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CodesmellsPackage.HLARGE_CLASS_DETECTOR__THRESHOLD,
@@ -157,15 +155,16 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 */
 	@Override
 	public HAnnotation calculate(final TClass tClass) {//
-		final HNumberOfMembersMetric nm = HLargeClassDetectorImpl
-				.getHNumberOfMembersMetric(tClass);
+		removeAnnotations(tClass);
+
+		final var nm = HLargeClassDetectorImpl.getHNumberOfMembersMetric(tClass);
 		if (nm != null) {
 			if (isRelative()) {
 				setThreshold(calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH));
 			}
 			if (Double.valueOf(getThreshold()).compareTo(nm.getValue()) < 0) {
 
-				final HLargeClassSmell largeClassSmell = CodesmellsFactory.eINSTANCE.createHLargeClassSmell();
+				final var largeClassSmell = CodesmellsFactory.eINSTANCE.createHLargeClassSmell();
 				largeClassSmell.setTAnnotated(tClass);
 				largeClassSmell.setHNumberOfMembers(nm);
 				nm.getPartOf().add(largeClassSmell);
@@ -370,7 +369,7 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 			return super.toString();
 		}
 
-		final StringBuilder result = new StringBuilder(super.toString());
+		final var result = new StringBuilder(super.toString());
 		result.append(" (relative: ");
 		result.append(this.relative);
 		result.append(", threshold: ");
@@ -396,6 +395,11 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	@Override
 	public String getGuiName() {
 		return "Large Class Smell";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage.eINSTANCE.getHLargeClassSmell();
 	}
 
 	// [user code injected with eMoflon] -->

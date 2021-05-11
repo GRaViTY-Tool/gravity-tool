@@ -45,8 +45,8 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType,
-			MGravityModel eModel);
+	boolean isAppropriate_FWD(Match match, MGravityModel eModel,
+			org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,8 +70,8 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType,
-			MGravityModel eModel);
+	void registerObjectsToMatch_FWD(Match match, MGravityModel eModel,
+			org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,8 +79,8 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType,
-			MGravityModel eModel);
+	CSP isAppropriate_solveCsp_FWD(Match match, MGravityModel eModel,
+			org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,9 +96,8 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType, ModelToTypeGraph eModelToPg,
-			MGravityModel eModel, TypeGraph pg);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph eModelToPg,
+			MGravityModel eModel, TypeGraph pg, org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,8 +113,8 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject unresolvedType,
-			EObject eAnonymousClassDeclarationToTClass, EObject eModelToPg, EObject eModel, EObject pg, EObject tClass);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eModelToPg, EObject eModel, EObject pg,
+			EObject tClass, EObject unresolvedType, EObject eAnonymousClassDeclarationToTClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +195,8 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject unresolvedType,
-			EObject eAnonymousClassDeclarationToTClass, EObject eModelToPg, EObject eModel, EObject pg, EObject tClass);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eModelToPg, EObject eModel, EObject pg,
+			EObject tClass, EObject unresolvedType, EObject eAnonymousClassDeclarationToTClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +212,7 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_25(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_81(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +220,7 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_27(EMoflonEdge _edge_unresolvedItems);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_84(EMoflonEdge _edge_unresolvedItems);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,8 +252,8 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType,
-			MGravityModel eModel, TypeGraph pg, TUnresolvedType tClass, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(MGravityModel eModel, TypeGraph pg, TUnresolvedType tClass,
+			org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,7 +269,7 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType, MGravityModel eModel);
+	boolean checkDEC_FWD(MGravityModel eModel, org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType);
 
 	/**
 	 * <!-- begin-user-doc -->

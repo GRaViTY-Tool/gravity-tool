@@ -11,8 +11,13 @@
     <booleanAttribute key="clearws" value="true"/>
     <booleanAttribute key="clearwslog" value="false"/>
     <stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/pde-junit"/>
-    <booleanAttribute key="default" value="false"/>
+    <booleanAttribute key="default" value="true"/>
     <setAttribute key="deselected_workspace_bundles">
+        <setEntry value="carisma.rt.eval.security"/>
+        <setEntry value="carisma.rt.models"/>
+        <setEntry value="carisma.ui.console"/>
+        <setEntry value="carisma.ui.eclipse"/>
+        <setEntry value="carisma.ui.eclipse.descriptor"/>
         <setEntry value="org.gravity.tgg.modisco.ui"/>
         <setEntry value="org.gravity.tgg.modisco.uml.tests"/>
     </setAttribute>
@@ -645,8 +650,16 @@
         <setEntry value="org.w3c.dom.svg@default:default"/>
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
+        <setEntry value="ARTESources@default:default"/>
         <setEntry value="GraphConstraint@default:default"/>
         <setEntry value="Symmetric@default:default"/>
+        <setEntry value="TestInterface@default:default"/>
+        <setEntry value="at.ac.tuwien.big.moea@default:default"/>
+        <setEntry value="at.ac.tuwien.big.momot.core@default:default"/>
+        <setEntry value="at.ac.tuwien.big.momot.examples.wizards@default:default"/>
+        <setEntry value="at.ac.tuwien.big.momot.lang.ui@default:default"/>
+        <setEntry value="at.ac.tuwien.big.momot.lang@default:default"/>
+        <setEntry value="at.ac.tuwien.big.momot.ui.popup@default:default"/>
         <setEntry value="carisma.check.dummy@default:default"/>
         <setEntry value="carisma.check.staticcheck@default:default"/>
         <setEntry value="carisma.check.template@default:default"/>
@@ -660,9 +673,7 @@
         <setEntry value="carisma.profile.umlsec.variability.henshin@default:default"/>
         <setEntry value="carisma.profile.umlsec.variability@default:default"/>
         <setEntry value="carisma.profile.umlsec@default:default"/>
-        <setEntry value="carisma.ui.console@default:default"/>
-        <setEntry value="carisma.ui.eclipse.descriptor@default:false"/>
-        <setEntry value="carisma.ui.eclipse@default:default"/>
+        <setEntry value="carisma.rt.editor@default:default"/>
         <setEntry value="carisma.variability.editor@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.adapters.xtext@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.diagram@default:default"/>
@@ -696,6 +707,7 @@
         <setEntry value="org.eclipse.emf.henshin.variability.mergein.refactoring@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.variability.mergein.ui@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.variability.mergein@default:default"/>
+        <setEntry value="org.eclipse.emf.henshin.variability.multi.eval.refactorings@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.variability.multi.eval@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.variability.multi.tests@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.variability.multi@default:default"/>
@@ -704,11 +716,14 @@
         <setEntry value="org.eclipse.emf.henshin.variability.validation@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.variability@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.wrap@default:default"/>
+        <setEntry value="org.gravity.arte@default:default"/>
         <setEntry value="org.gravity.eclipse.java.spl@default:default"/>
         <setEntry value="org.gravity.eclipse.tests@default:default"/>
         <setEntry value="org.gravity.eclipse.ui@default:default"/>
         <setEntry value="org.gravity.eclipse@default:default"/>
         <setEntry value="org.gravity.eval.runtime.tgg.modisco@default:default"/>
+        <setEntry value="org.gravity.goblin.tests@default:default"/>
+        <setEntry value="org.gravity.goblin@default:default"/>
         <setEntry value="org.gravity.hulk.annotations@default:default"/>
         <setEntry value="org.gravity.hulk.antipatterngraph@default:default"/>
         <setEntry value="org.gravity.hulk.refactoringgraph@default:default"/>
@@ -717,6 +732,9 @@
         <setEntry value="org.gravity.hulk.ui.visualization@default:default"/>
         <setEntry value="org.gravity.hulk.ui@default:default"/>
         <setEntry value="org.gravity.hulk@default:default"/>
+        <setEntry value="org.gravity.mapping.secdfd.eval@default:default"/>
+        <setEntry value="org.gravity.mapping.secdfd.tests@default:default"/>
+        <setEntry value="org.gravity.mapping.secdfd@default:default"/>
         <setEntry value="org.gravity.modisco@default:default"/>
         <setEntry value="org.gravity.pm.umlsec@default:default"/>
         <setEntry value="org.gravity.refactorings.tests@default:default"/>
@@ -736,8 +754,18 @@
         <setEntry value="org.gravity.typegraph.sonarlint@default:default"/>
         <setEntry value="org.gravity.typegraph.spl@default:default"/>
         <setEntry value="org.gravity.uml.mapping@default:default"/>
+        <setEntry value="org.secdfd.dsl.ide@default:default"/>
+        <setEntry value="org.secdfd.dsl.tests@default:default"/>
+        <setEntry value="org.secdfd.dsl.ui.tests@default:default"/>
+        <setEntry value="org.secdfd.dsl.ui@default:default"/>
+        <setEntry value="org.secdfd.dsl@default:default"/>
+        <setEntry value="org.secdfd.model.edit@default:default"/>
+        <setEntry value="org.secdfd.model.editor@default:default"/>
+        <setEntry value="org.secdfd.model.tests@default:default"/>
+        <setEntry value="org.secdfd.model@default:default"/>
         <setEntry value="org.tracesec.prioritization@default:default"/>
         <setEntry value="org.tracesec.qualitymodel@default:default"/>
+        <setEntry value="ttc.testdsl@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>
     <stringAttribute key="templateConfig" value="${target_home}/configuration/config.ini"/>

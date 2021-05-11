@@ -6,11 +6,13 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.junit,
  org.eclipse.core.resources,
+ org.eclipse.core.runtime,
  org.eclipse.jdt.core,
  org.gravity.hulk,
  org.gravity.hulk.antipatterngraph,
  org.gravity.typegraph.basic,
- org.gravity.tgg.modisco.pm
+ org.gravity.tgg.modisco.pm,
+ org.apache.log4j
 Automatic-Module-Name: org.gravity.hulk.tests
 Export-Package: org.gravity.hulk.tests.api,
  org.gravity.hulk.tests.metics

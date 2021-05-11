@@ -4,15 +4,15 @@ Bundle-Name: Gravity
 Bundle-SymbolicName: org.gravity.eclipse;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.gravity.eclipse.GravityActivator
-Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
- org.eclipse.core.resources,
- org.eclipse.jdt.core,
- org.gravity.typegraph.basic,
- org.eclipse.emf.ecore.xmi,
+Require-Bundle: org.eclipse.core.resources;visibility:=reexport,
+ org.eclipse.core.runtime;visibility:=reexport,
+ org.eclipse.jdt.core;visibility:=reexport,
  org.eclipse.jdt.launching,
- org.apache.log4j;visibility:=reexport,
- org.eclipse.jgit
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+ org.eclipse.jgit,
+ org.apache.log4j,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.gravity.typegraph.basic;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.eclipse,
  org.gravity.eclipse.converter,

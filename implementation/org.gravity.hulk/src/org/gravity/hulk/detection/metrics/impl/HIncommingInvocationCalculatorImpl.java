@@ -54,6 +54,8 @@ implements HIncommingInvocationCalculator {
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		final var metric = MetricsFactory.eINSTANCE.createHIncommingInvocationMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
@@ -121,6 +123,11 @@ implements HIncommingInvocationCalculator {
 	@Override
 	public String getGuiName() {
 		return "Incomming Invocation custom";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHIncommingInvocationMetric();
 	}
 
 	// [user code injected with eMoflon] -->

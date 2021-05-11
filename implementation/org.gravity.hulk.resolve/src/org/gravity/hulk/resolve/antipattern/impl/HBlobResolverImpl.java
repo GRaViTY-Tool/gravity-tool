@@ -24,13 +24,13 @@ import org.gravity.hulk.annotations.resolve.Hulk_DontTouch;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
-import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.detection.impl.HAntiPatternDetectorImpl;
 import org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation;
 import org.gravity.hulk.refactoringgraph.HInBlobAccess;
 import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
+import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
 import org.gravity.hulk.refactoringgraph.refactorings.HExtractClass;
 import org.gravity.hulk.refactoringgraph.refactorings.HMoveMember;
 import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
@@ -49,7 +49,6 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
-import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>HBlob
@@ -111,7 +110,6 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 */
 	protected HBlobResolverImpl() {
-		super();
 	}
 
 	/**
@@ -145,14 +143,12 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 */
 	@Override
 	public HAntiPatternGraph getOriginal_apg() {
-		if (this.original_apg != null && this.original_apg.eIsProxy()) {
-			final InternalEObject oldOriginal_apg = (InternalEObject) this.original_apg;
+		if ((this.original_apg != null) && this.original_apg.eIsProxy()) {
+			final var oldOriginal_apg = (InternalEObject) this.original_apg;
 			this.original_apg = (HAntiPatternGraph) eResolveProxy(oldOriginal_apg);
-			if (this.original_apg != oldOriginal_apg) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG, oldOriginal_apg, this.original_apg));
-				}
+			if ((this.original_apg != oldOriginal_apg) && eNotificationRequired()) {
+				eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+						AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG, oldOriginal_apg, this.original_apg));
 			}
 		}
 		return this.original_apg;
@@ -174,7 +170,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 */
 	@Override
 	public void setOriginal_apg(final HAntiPatternGraph newOriginal_apg) {
-		final HAntiPatternGraph oldOriginal_apg = this.original_apg;
+		final var oldOriginal_apg = this.original_apg;
 		this.original_apg = newOriginal_apg;
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG,
@@ -198,10 +194,10 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 */
 	public NotificationChain basicSetCopy_apg(final HAntiPatternGraph newCopy_apg, NotificationChain msgs) {
-		final HAntiPatternGraph oldCopy_apg = this.copyApg;
+		final var oldCopy_apg = this.copyApg;
 		this.copyApg = newCopy_apg;
 		if (eNotificationRequired()) {
-			final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+			final var notification = new ENotificationImpl(this, Notification.SET,
 					AntipatternPackage.HBLOB_RESOLVER__COPY_APG, oldCopy_apg, newCopy_apg);
 			if (msgs == null) {
 				msgs = notification;
@@ -246,14 +242,14 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 */
 	@Override
 	public boolean detect(final HAntiPatternGraph apg) {
-		final HAntiPatternGraph newApg = init(apg);
+		final var newApg = init(apg);
 		if (newApg == null) {
 			throw new IllegalStateException("Couldn't initialize APG.");
 		}
 		// ForEach
 		for (final HBlobAntiPattern blob : pattern_HBlobResolver_0_3_ActivityNode1_blackBFBF(newApg)) {
-			final TClass tClass = (TClass) blob.getTAnnotated();
-			final HBlobResolveAnnotation annotation = getResolveBlobAnnotation(newApg, blob, tClass);
+			final var tClass = (TClass) blob.getTAnnotated();
+			final var annotation = getResolveBlobAnnotation(newApg, blob, tClass);
 
 			//
 			if (allowedToTouch(tClass)) {
@@ -277,10 +273,10 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 		for (final TMember tDefinition : tClass.getDefines()) {
 			if (allowedToTouch(tDefinition)) {
 				//
-				final HInBlobAccess iba = HBlobResolverImpl.searchInBlobAccess(tDefinition);
+				final var iba = HBlobResolverImpl.searchInBlobAccess(tDefinition);
 				if (iba != null) {
 
-					final HRelativeValue ibaRelative = iba.getRelativeAmount();
+					final var ibaRelative = iba.getRelativeAmount();
 					if (!ibaRelative.getValue().equals(HRelativeValueConstants.VERY_LOW)
 							&& !ibaRelative.getValue().equals(HRelativeValueConstants.LOW)) {
 						continue;
@@ -289,25 +285,25 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 					// ForEach
 					for (final TAnnotation tmpM2dc : tDefinition.getTAnnotation()) {
 						if (tmpM2dc instanceof HMethodToDataClassAccess) {
-							final HMethodToDataClassAccess m2dc = (HMethodToDataClassAccess) tmpM2dc;
+							final var m2dc = (HMethodToDataClassAccess) tmpM2dc;
 							//
-							final HRelativeValue m2dcRelative = m2dc.getRelativeAmount();
-							if (m2dcRelative != null
+							final var m2dcRelative = m2dc.getRelativeAmount();
+							if ((m2dcRelative != null)
 									&& m2dcRelative.getValue().equals(HRelativeValueConstants.VERY_HIGH)) {
 
-								final TClass tTargetClass = m2dc.getHDataClass();
+								final var tTargetClass = m2dc.getHDataClass();
 								final EList<TMember> tContainer = new BasicEList<>();
 								tContainer.add(tDefinition);
 
 								//
-								final HMoveMembers hMoves = createMove(tContainer, tClass, tTargetClass, annotation);
+								final var hMoves = createMove(tContainer, tClass, tTargetClass, annotation);
 								if (hMoves != null) {
 									continue;
 								}
 
 							}
 
-							final HExtractClass extract = createExtractClassAnnotation(tDefinition, annotation, apg,
+							final var extract = createExtractClassAnnotation(tDefinition, annotation, apg,
 									iba);
 
 							//
@@ -337,9 +333,9 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	public boolean isRefactoringPossible(final HRefactoring refactoring) {
 		// [user code injected with eMoflon]
 		if (refactoring instanceof HMoveMethod) {
-			final HMoveMethod r = (HMoveMethod) refactoring;
-			final TClass tTargetClass = r.getTargetClass();
-			final TClass tSourceClass = r.getSourceClass();
+			final var r = (HMoveMethod) refactoring;
+			final var tTargetClass = r.getTargetClass();
+			final var tSourceClass = r.getSourceClass();
 
 			for (final TSignature s : r.getTSignature()) {
 				if (s.getSignatureString().startsWith("get") || s.getSignatureString().startsWith("set")) {
@@ -351,10 +347,10 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 			}
 			return true;
 		} else if (refactoring instanceof HExtractClass) {
-			final HExtractClass extractClass = (HExtractClass) refactoring;
-			final ExtractClassConfiguration config = new ExtractClassConfiguration(extractClass.getTMembers(),
+			final var extractClass = (HExtractClass) refactoring;
+			final var config = new ExtractClassConfiguration(extractClass.getTMembers(),
 					"ExtractedClass" + System.currentTimeMillis());
-			final ExtractClass r = new ExtractClass();
+			final var r = new ExtractClass();
 			return r.isApplicable(config);
 		} else {
 			LOGGER.error("HBlobResolverImpl: Unkown refactoring type: " + refactoring);
@@ -410,9 +406,9 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 				}
 			}
 		}
-		final RefactoringsFactory refactoringFactory = RefactoringsFactory.eINSTANCE;
+		final var refactoringFactory = RefactoringsFactory.eINSTANCE;
 		if (!allMoves.isEmpty()) {
-			final HMoveMembers hMoves = refactoringFactory.createHMoveMembers();
+			final var hMoves = refactoringFactory.createHMoveMembers();
 			hMoves.getHMoveMembers().addAll(allMoves);
 			hMoves.setSourceClass(source);
 			hMoves.setTargetClass(target);
@@ -431,18 +427,15 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	@Override
 	public boolean allowedToTouch(final TAnnotatable element) {
 		// [user code injected with eMoflon]
-		final Set<TAnnotation> annotations = new HashSet<>();
-		annotations.addAll(element.getTAnnotation());
+		final Set<TAnnotation> annotations = new HashSet<>(element.getTAnnotation());
 		if (element instanceof TMember) {
-			final TMember member = (TMember) element;
+			final var member = (TMember) element;
 			annotations.addAll(member.getDefinedBy().getTAnnotation());
 		}
 		for (final TAnnotation annotation : annotations) {
-			final TAnnotationType type = annotation.getType();
-			if (type != null) {
-				if (type.getTName().equalsIgnoreCase(Hulk_DontTouch.class.getName())) {
-					return false;
-				}
+			final var type = annotation.getType();
+			if ((type != null) && type.getTName().equalsIgnoreCase(Hulk_DontTouch.class.getName())) {
+				return false;
 			}
 		}
 		return true;
@@ -553,7 +546,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case AntipatternPackage.HBLOB_RESOLVER__EXECUTED_MOVES:
-			return this.executedMoves != null && !this.executedMoves.isEmpty();
+			return (this.executedMoves != null) && !this.executedMoves.isEmpty();
 		case AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG:
 			return this.original_apg != null;
 		case AntipatternPackage.HBLOB_RESOLVER__COPY_APG:
@@ -587,11 +580,11 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 
 	public final Iterable<HBlobAntiPattern> pattern_HBlobResolver_0_3_ActivityNode1_blackBFBF(
 			final HAntiPatternGraph newApg) {
-		final LinkedList<HBlobAntiPattern> result = new LinkedList<>();
+		final var result = new LinkedList<HBlobAntiPattern>();
 		for (final HAnnotation tmpBlob : newApg.getHAnnotations()) {
 			if (tmpBlob instanceof HBlobAntiPattern) {
-				final HBlobAntiPattern blob = (HBlobAntiPattern) tmpBlob;
-				final TAnnotatable tmpTClass = blob.getTAnnotated();
+				final var blob = (HBlobAntiPattern) tmpBlob;
+				final var tmpTClass = blob.getTAnnotated();
 				if (tmpTClass instanceof TClass) {
 					result.add(blob);
 				}
@@ -603,9 +596,9 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 
 	public final HBlobResolveAnnotation getResolveBlobAnnotation(final HAntiPatternGraph newApg,
 			final HBlobAntiPattern blob, final TClass tClass) {
-		final HBlobResolveAnnotation annotation = RefactoringgraphFactory.eINSTANCE.createHBlobResolveAnnotation();
+		final var annotation = RefactoringgraphFactory.eINSTANCE.createHBlobResolveAnnotation();
 		blob.getPartOf().add(annotation);
-		this.getHAnnotation().add(annotation);
+		getHAnnotation().add(annotation);
 		newApg.getHAnnotations().add(annotation);
 		annotation.setHBlobAntiPattern(blob);
 		annotation.setTAnnotated(tClass);
@@ -623,7 +616,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 
 	private final HExtractClass createExtractClassAnnotation(final TMember tDefinition,
 			final HBlobResolveAnnotation annotation, final HAntiPatternGraph apg, final HInBlobAccess iba) {
-		final HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
+		final var extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
 		extract.getTMembers().add(tDefinition);
 		extract.setTAnnotated(tDefinition);
 		extract.getPartOf().add(annotation);
@@ -641,6 +634,11 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	@Override
 	public String getGuiName() {
 		return "Resolve Blob [Anti-Pattern]";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return RefactoringgraphPackage.eINSTANCE.getHBlobResolveAnnotation();
 	}
 
 	// [user code injected with eMoflon] -->

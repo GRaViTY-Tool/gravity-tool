@@ -7,7 +7,6 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HAverageParametersMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
 import org.gravity.hulk.detection.metrics.HAverageParametersCalculator;
@@ -35,7 +34,6 @@ implements HAverageParametersCalculator {
 	 * @generated
 	 */
 	protected HAverageParametersCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -55,7 +53,9 @@ implements HAverageParametersCalculator {
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
-		final HAverageParametersMetric metric = MetricsFactory.eINSTANCE.createHAverageParametersMetric();
+		removeAnnotations(tClass);
+
+		final var metric = MetricsFactory.eINSTANCE.createHAverageParametersMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -71,11 +71,11 @@ implements HAverageParametersCalculator {
 	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		double sum = 0;
-		int amount = 0;
+		var sum = 0D;
+		var amount = 0;
 		for (final TSignature sig : tClass.getSignature()) {
 			if (sig instanceof TMethodSignature) {
-				final TMethodSignature methodSig = (TMethodSignature) sig;
+				final var methodSig = (TMethodSignature) sig;
 				sum += methodSig.getParameters().size();
 				amount++;
 			}
@@ -111,6 +111,11 @@ implements HAverageParametersCalculator {
 	@Override
 	public String getGuiName() {
 		return "Average amount of parameters in classes";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHAverageParametersMetric();
 	}
 
 	// [user code injected with eMoflon] -->

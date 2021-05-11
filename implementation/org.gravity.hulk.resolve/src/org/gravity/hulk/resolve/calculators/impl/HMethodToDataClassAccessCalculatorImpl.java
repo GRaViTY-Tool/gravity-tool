@@ -22,6 +22,7 @@ import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
 import org.gravity.hulk.detection.impl.HMetricCalculatorImpl;
 import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
+import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
 import org.gravity.hulk.resolve.calculators.CalculatorsPackage;
 import org.gravity.hulk.resolve.calculators.HMethodToDataClassAccessCalculator;
 import org.gravity.typegraph.basic.TAccess;
@@ -398,6 +399,11 @@ implements HMethodToDataClassAccessCalculator {
 	@Override
 	public String getGuiName() {
 		return "Calculate the Method accesses from Blob to DataClass";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return RefactoringgraphPackage.eINSTANCE.getHMethodToDataClassAccess();
 	}
 
 	// [user code injected with eMoflon] -->

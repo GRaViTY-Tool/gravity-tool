@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
@@ -27,6 +28,7 @@ import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.detection.HulkDetector;
 // [user defined imports] -->
 import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.moflon.core.dfs.impl.NodeImpl;
 
@@ -340,6 +342,18 @@ public abstract class HDetectorImpl extends NodeImpl implements HDetector {
 			return keys.get((size * 5) / 6);
 		}
 		throw new RuntimeException();
+	}
+
+
+	public void removeAnnotations(final TAnnotatable annotated) {
+		final var annotations = annotated.getTAnnotation();
+		final List<TAnnotation> delete = new LinkedList<>();
+		for(var i = annotations.size() -1; i >= 0; i--) {
+			if( getHAnnotationType().isInstance(annotations.get(i))) {
+				delete.add(annotations.remove(i));
+			}
+		}
+		EcoreUtil.deleteAll(delete, true);
 	}
 
 	// [user code injected with eMoflon] -->

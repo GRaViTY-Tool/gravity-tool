@@ -5,48 +5,36 @@ package org.gravity.hulk.detection.codesmells.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
-
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
-import org.gravity.hulk.antipatterngraph.codesmells.HIntenseFieldUsageCodeSmell;
-
 import org.gravity.hulk.antipatterngraph.metrics.HLocalAccessRelationMetric;
-
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-
 import org.gravity.hulk.detection.DetectionPackage;
 import org.gravity.hulk.detection.HClassBasedCalculator;
 import org.gravity.hulk.detection.HRelativeDetector;
-
 import org.gravity.hulk.detection.codesmells.CodesmellsPackage;
 import org.gravity.hulk.detection.codesmells.HIntenseFieldUsageDetector;
-
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 import org.gravity.hulk.detection.impl.HCodeSmellDetectorImpl;
-
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HIntense Field Usage Detector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>HIntense Field Usage Detector</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.gravity.hulk.detection.codesmells.impl.HIntenseFieldUsageDetectorImpl#isRelative <em>Relative</em>}</li>
- *   <li>{@link org.gravity.hulk.detection.codesmells.impl.HIntenseFieldUsageDetectorImpl#getThreshold <em>Threshold</em>}</li>
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HIntenseFieldUsageDetectorImpl#isRelative
+ * <em>Relative</em>}</li>
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HIntenseFieldUsageDetectorImpl#getThreshold
+ * <em>Threshold</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,8 +43,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl implements HIntenseFieldUsageDetector {
 	/**
 	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -65,8 +53,8 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 
 	/**
 	 * The cached value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -74,9 +62,9 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	protected boolean relative = RELATIVE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -84,9 +72,9 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	protected static final double THRESHOLD_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -94,17 +82,16 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	protected double threshold = THRESHOLD_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HIntenseFieldUsageDetectorImpl() {
-		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,88 +100,98 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isRelative() {
-		return relative;
+		return this.relative;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
-	public void setRelative(boolean newRelative) {
-		boolean oldRelative = relative;
-		relative = newRelative;
-		if (eNotificationRequired())
+	@Override
+	public void setRelative(final boolean newRelative) {
+		final var oldRelative = this.relative;
+		this.relative = newRelative;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					CodesmellsPackage.HINTENSE_FIELD_USAGE_DETECTOR__RELATIVE, oldRelative, relative));
+					CodesmellsPackage.HINTENSE_FIELD_USAGE_DETECTOR__RELATIVE, oldRelative, this.relative));
+		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getThreshold() {
-		return threshold;
+		return this.threshold;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
-	public void setThreshold(double newThreshold) {
-		double oldThreshold = threshold;
-		threshold = newThreshold;
-		if (eNotificationRequired())
+	@Override
+	public void setThreshold(final double newThreshold) {
+		final var oldThreshold = this.threshold;
+		this.threshold = newThreshold;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					CodesmellsPackage.HINTENSE_FIELD_USAGE_DETECTOR__THRESHOLD, oldThreshold, threshold));
+					CodesmellsPackage.HINTENSE_FIELD_USAGE_DETECTOR__THRESHOLD, oldThreshold, this.threshold));
+		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
-	public HAnnotation calculate(TClass tClass) {
+	@Override
+	public HAnnotation calculate(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		HLocalAccessRelationMetric hMetric = null;
-		for (TAnnotation tmpHMetric : tClass.getTAnnotation()) {
+		for (final TAnnotation tmpHMetric : tClass.getTAnnotation()) {
 			if (tmpHMetric instanceof HLocalAccessRelationMetric) {
-				 hMetric = (HLocalAccessRelationMetric) tmpHMetric;
+				hMetric = (HLocalAccessRelationMetric) tmpHMetric;
 			}
 		}
 		if (hMetric == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ".");
 		}
-		// 
+		//
 		if (isRelative()) {
 			setThreshold(calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH));
-		} 
-		// 
-		if (Double.valueOf(getThreshold()).compareTo(Double.valueOf(hMetric.getValue())) < 0) {
-			
-			HIntenseFieldUsageCodeSmell smell = CodesmellsFactory.eINSTANCE.createHIntenseFieldUsageCodeSmell();
+		}
+		//
+		if (Double.valueOf(getThreshold()).compareTo(hMetric.getValue()) < 0) {
+
+			final var smell = CodesmellsFactory.eINSTANCE.createHIntenseFieldUsageCodeSmell();
 			smell.setTAnnotated(tClass);
 			smell.setHLocalAccessRelationMetric(hMetric);
 			getHAnnotation().add(smell);
 			hMetric.getPartOf().add(smell);
-			
+
 			return smell;
-		} 
+		}
 		return null;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
-	public double calculateRelativeThreshold(HRelativeValueConstants level) {
+	@Override
+	public double calculateRelativeThreshold(final HRelativeValueConstants level) {
 		// [user code injected with eMoflon]
 
 		return calculateRelativeThreshold(level, HLocalAccessRelationMetric.class);
@@ -203,12 +200,13 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach
-		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			HAnnotation metric = calculate(tClass);
+	@Override
+	public boolean detect(final HAntiPatternGraph pg) {// ForEach
+		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			final var metric = calculate(tClass);
 			if (metric != null) {
 				metric.setTAnnotated(tClass);
 				pg.getHAnnotations().add(metric);
@@ -220,12 +218,12 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
 		case CodesmellsPackage.HINTENSE_FIELD_USAGE_DETECTOR__RELATIVE:
 			return isRelative();
@@ -236,12 +234,12 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case CodesmellsPackage.HINTENSE_FIELD_USAGE_DETECTOR__RELATIVE:
 			setRelative((Boolean) newValue);
@@ -254,12 +252,12 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case CodesmellsPackage.HINTENSE_FIELD_USAGE_DETECTOR__RELATIVE:
 			setRelative(RELATIVE_EDEFAULT);
@@ -272,28 +270,28 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case CodesmellsPackage.HINTENSE_FIELD_USAGE_DETECTOR__RELATIVE:
-			return relative != RELATIVE_EDEFAULT;
+			return this.relative != RELATIVE_EDEFAULT;
 		case CodesmellsPackage.HINTENSE_FIELD_USAGE_DETECTOR__THRESHOLD:
-			return threshold != THRESHOLD_EDEFAULT;
+			return this.threshold != THRESHOLD_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+	public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
 		if (baseClass == HClassBasedCalculator.class) {
 			switch (derivedFeatureID) {
 			default:
@@ -314,12 +312,12 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+	public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
 		if (baseClass == HClassBasedCalculator.class) {
 			switch (baseFeatureID) {
 			default:
@@ -340,12 +338,12 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+	public int eDerivedOperationID(final int baseOperationID, final Class<?> baseClass) {
 		if (baseClass == HDetector.class) {
 			switch (baseOperationID) {
 			case HulkPackage.HDETECTOR___DETECT__HANTIPATTERNGRAPH:
@@ -376,12 +374,12 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case CodesmellsPackage.HINTENSE_FIELD_USAGE_DETECTOR___CALCULATE__TCLASS:
 			return calculate((TClass) arguments.get(0));
@@ -394,20 +392,21 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final var result = new StringBuffer(super.toString());
 		result.append(" (relative: ");
-		result.append(relative);
+		result.append(this.relative);
 		result.append(", threshold: ");
-		result.append(threshold);
+		result.append(this.threshold);
 		result.append(')');
 		return result.toString();
 	}
@@ -419,5 +418,10 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 		return "Intense usage of local fields";
 	}
 
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage.eINSTANCE.getHIntenseFieldUsageCodeSmell();
+	}
+
 	// [user code injected with eMoflon] -->
-} //HIntenseFieldUsageDetectorImpl
+} // HIntenseFieldUsageDetectorImpl

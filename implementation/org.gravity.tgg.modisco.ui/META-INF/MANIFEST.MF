@@ -3,13 +3,11 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MoDisco TGG UI
 Bundle-SymbolicName: org.gravity.tgg.modisco.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.core.runtime,
- org.gravity.modisco,
  org.eclipse.ui,
  org.gravity.tgg.modisco.pm,
  org.apache.log4j
-Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.gravity.tgg.modisco.ui
 Export-Package: org.gravity.tgg.modisco.ui.selection
 Bundle-ClassPath: .

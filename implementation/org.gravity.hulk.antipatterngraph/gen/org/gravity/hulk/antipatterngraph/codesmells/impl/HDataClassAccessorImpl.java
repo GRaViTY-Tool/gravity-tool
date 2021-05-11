@@ -3,11 +3,11 @@
 package org.gravity.hulk.antipatterngraph.codesmells.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 // <-- [user defined imports]
 import java.util.SortedSet;
 import java.util.TreeSet;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -44,7 +44,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 * @generated
 	 */
 	protected HDataClassAccessorImpl() {
-		super();
 	}
 
 	/**
@@ -93,7 +92,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 */
 	@Override
 	public double getValue() {
-		return value;
+		return this.value;
 	}
 
 	/**
@@ -101,12 +100,13 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 * @generated
 	 */
 	@Override
-	public void setValue(double newValue) {
-		double oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
+	public void setValue(final double newValue) {
+		final double oldValue = this.value;
+		this.value = newValue;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CodesmellsPackage.HDATA_CLASS_ACCESSOR__VALUE,
-					oldValue, value));
+					oldValue, this.value));
+		}
 	}
 
 	/**
@@ -115,11 +115,11 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 */
 	@Override
 	public EList<HDataClassSmell> getHDataClassSmells() {
-		if (hDataClassSmells == null) {
-			hDataClassSmells = new EObjectResolvingEList<HDataClassSmell>(HDataClassSmell.class, this,
+		if (this.hDataClassSmells == null) {
+			this.hDataClassSmells = new EObjectResolvingEList<>(HDataClassSmell.class, this,
 					CodesmellsPackage.HDATA_CLASS_ACCESSOR__HDATA_CLASS_SMELLS);
 		}
-		return hDataClassSmells;
+		return this.hDataClassSmells;
 	}
 
 	/**
@@ -131,26 +131,26 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	public HRelativeValue getRelativeAmount() {
 		// [user code injected with eMoflon]
 
-		EList<HAnnotation> annotations = getApg().getHAnnotations();
+		final EList<HAnnotation> annotations = getApg().getHAnnotations();
 
-		SortedSet<Double> keys = new TreeSet<>();
+		final SortedSet<Double> keys = new TreeSet<>();
 
-		for (HAnnotation a : annotations) {
+		for (final HAnnotation a : annotations) {
 			if (this.getClass().equals(a.getClass())) {
-				double key = ((HMetric) a).getValue();
+				final double key = ((HMetric) a).getValue();
 				keys.add(key);
 			}
 		}
 
-		double index = keys.headSet(this.getValue()).size();
+		final double index = keys.headSet(this.getValue()).size();
 
 		if (index == -1) {
 			throw new RuntimeException();
 		}
 
-		HRelativeValue value = ValuesFactory.eINSTANCE.createHRelativeValue();
+		final HRelativeValue value = ValuesFactory.eINSTANCE.createHRelativeValue();
 
-		double q = (index + 1) / keys.size();
+		final double q = (index + 1) / keys.size();
 
 		if (q < 0.2) {
 			value.setValue(HRelativeValueConstants.VERY_LOW);
@@ -184,7 +184,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
 		case CodesmellsPackage.HDATA_CLASS_ACCESSOR__VALUE:
 			return getValue();
@@ -200,7 +200,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case CodesmellsPackage.HDATA_CLASS_ACCESSOR__VALUE:
 			setValue((Double) newValue);
@@ -218,7 +218,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case CodesmellsPackage.HDATA_CLASS_ACCESSOR__VALUE:
 			setValue(VALUE_EDEFAULT);
@@ -235,12 +235,12 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case CodesmellsPackage.HDATA_CLASS_ACCESSOR__VALUE:
-			return value != VALUE_EDEFAULT;
+			return this.value != VALUE_EDEFAULT;
 		case CodesmellsPackage.HDATA_CLASS_ACCESSOR__HDATA_CLASS_SMELLS:
-			return hDataClassSmells != null && !hDataClassSmells.isEmpty();
+			return (this.hDataClassSmells != null) && !this.hDataClassSmells.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -250,7 +250,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+	public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
 		if (baseClass == HMetric.class) {
 			switch (derivedFeatureID) {
 			case CodesmellsPackage.HDATA_CLASS_ACCESSOR__VALUE:
@@ -267,7 +267,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 * @generated
 	 */
 	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+	public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
 		if (baseClass == HMetric.class) {
 			switch (baseFeatureID) {
 			case AntipatterngraphPackage.HMETRIC__VALUE:
@@ -284,7 +284,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 * @generated
 	 */
 	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+	public int eDerivedOperationID(final int baseOperationID, final Class<?> baseClass) {
 		if (baseClass == HMetric.class) {
 			switch (baseOperationID) {
 			case AntipatterngraphPackage.HMETRIC___GET_RELATIVE_AMOUNT:
@@ -303,7 +303,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case CodesmellsPackage.HDATA_CLASS_ACCESSOR___GET_RELATIVE_AMOUNT:
 			return getRelativeAmount();
@@ -316,27 +316,28 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuilder result = new StringBuilder(super.toString());
+		final StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (value: ");
-		result.append(value);
+		result.append(this.value);
 		result.append(')');
 		return result.toString();
 	}
 	// <-- [user code injected with eMoflon]
 
 	@Override
-	public TreeItem createItemContents(TreeItem item, int style) {
+	public TreeItem createItemContents(final TreeItem item, final int style) {
 		item.setText("NumberOfAccessedDataClass(" + ((TClass) getTAnnotated()).getTName() + ")=" + getValue());
-		for (HDataClassSmell data : getHDataClassSmells()) {
-			TreeItem item_data = new TreeItem(item, style);
+		for (final HDataClassSmell data : getHDataClassSmells()) {
+			final TreeItem item_data = new TreeItem(item, style);
 			data.getTreeItem(item_data, style);
 		}
 		return item;

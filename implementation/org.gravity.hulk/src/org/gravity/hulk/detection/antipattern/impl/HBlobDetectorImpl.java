@@ -14,8 +14,6 @@ import org.gravity.hulk.antipatterngraph.antipattern.AntipatternFactory;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
 import org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern;
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassAccessor;
-import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
-import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.detection.DetectionPackage;
 import org.gravity.hulk.detection.HClassBasedCalculator;
@@ -26,9 +24,6 @@ import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
-import org.gravity.typegraph.basic.annotations.TAnnotationType;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>HBlob
@@ -45,7 +40,6 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 */
 	protected HBlobDetectorImpl() {
-		super();
 	}
 
 	/**
@@ -64,7 +58,9 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 */
 	@Override
-	public HAnnotation calculate(TClass tClass) {//
+	public HAnnotation calculate(final TClass tClass) {//
+		removeAnnotations(tClass);
+
 		HGodClassAntiPattern mainClass = null;
 		HDataClassAccessor nad = null;
 		for (final TAnnotation annotation : tClass.getTAnnotation()) {
@@ -74,21 +70,19 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 				nad = (HDataClassAccessor) annotation;
 			}
 		}
-		if (mainClass != null && nad != null) {
+		if ((mainClass != null) && (nad != null)) {
 			//
-			final HRelativeValue relative = nad.getRelativeAmount();
-			if (relative != null && !HRelativeValueConstants.VERY_LOW.equals(relative.getValue())
+			final var relative = nad.getRelativeAmount();
+			if ((relative != null) && !HRelativeValueConstants.VERY_LOW.equals(relative.getValue())
 					&& !HRelativeValueConstants.LOW.equals(relative.getValue())) {
-				final HBlobAntiPattern blob = createAntiPattern(tClass, mainClass, nad);
+				final var blob = createAntiPattern(tClass, mainClass, nad);
 
 				// ForEach
-				for (final HDataClassSmell dc : nad.getHDataClassSmells()) {
-					blob.getHDataClassSmells().add(dc);
-				}
+				blob.getHDataClassSmells().addAll(nad.getHDataClassSmells());
 				//
-				final TAnnotationType tAnnotationType = getAnnotationType(tClass.getModel(), "Blob");
+				final var tAnnotationType = getAnnotationType(tClass.getModel(), "Blob");
 				if (tAnnotationType != null) {
-					final TAnnotation annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
+					final var annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
 					annotation.setTAnnotated(tClass);
 					tAnnotationType.getAnnotations().add(annotation);
 				}
@@ -104,9 +98,9 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated NOT
 	 */
 	@Override
-	public boolean detect(HAntiPatternGraph pg) {// ForEach
+	public boolean detect(final HAntiPatternGraph pg) {// ForEach
 		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final HAnnotation metric = calculate(tClass);
+			final var metric = calculate(tClass);
 			if (metric != null) {
 				metric.setTAnnotated(tClass);
 				pg.getHAnnotations().add(metric);
@@ -123,7 +117,7 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 */
 	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+	public int eDerivedOperationID(final int baseOperationID, final Class<?> baseClass) {
 		if (baseClass == HDetector.class) {
 			switch (baseOperationID) {
 			case HulkPackage.HDETECTOR___DETECT__HANTIPATTERNGRAPH:
@@ -151,7 +145,7 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case AntipatternPackage.HBLOB_DETECTOR___CALCULATE__TCLASS:
 			return calculate((TClass) arguments.get(0));
@@ -161,9 +155,9 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public final HBlobAntiPattern createAntiPattern(TClass tClass, HGodClassAntiPattern mainClassS,
-			HDataClassAccessor nad) {
-		final HBlobAntiPattern blob = AntipatternFactory.eINSTANCE.createHBlobAntiPattern();
+	public final HBlobAntiPattern createAntiPattern(final TClass tClass, final HGodClassAntiPattern mainClassS,
+			final HDataClassAccessor nad) {
+		final var blob = AntipatternFactory.eINSTANCE.createHBlobAntiPattern();
 		blob.setTAnnotated(tClass);
 		blob.setHGodClassAntiPattern(mainClassS);
 		mainClassS.getPartOf().add(blob);
@@ -177,6 +171,11 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 	@Override
 	public String getGuiName() {
 		return "The Blob [Anti-Pattern]";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage.eINSTANCE.getHBlobAntiPattern();
 	}
 
 	// [user code injected with eMoflon] -->

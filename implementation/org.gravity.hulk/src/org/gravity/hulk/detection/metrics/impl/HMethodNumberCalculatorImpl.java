@@ -7,7 +7,6 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMethodsMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
 import org.gravity.hulk.detection.metrics.HMethodNumberCalculator;
@@ -30,7 +29,6 @@ public class HMethodNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl
 	 * @generated
 	 */
 	protected HMethodNumberCalculatorImpl() {
-		super();
 	}
 
 	/**
@@ -50,10 +48,12 @@ public class HMethodNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl
 	 */
 	@Override
 	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
+
 		if(tClass.isTLib()) {
 			throw new IllegalArgumentException("Class is defined in a library " + tClass.getFullyQualifiedName() + ".");
 		}
-		final HNumberOfMethodsMetric nm = MetricsFactory.eINSTANCE.createHNumberOfMethodsMetric();
+		final var nm = MetricsFactory.eINSTANCE.createHNumberOfMethodsMetric();
 		nm.setTAnnotated(tClass);
 		getHAnnotation().add(nm);
 		nm.setValue(calculateValue(tClass));
@@ -91,6 +91,11 @@ public class HMethodNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl
 	@Override
 	public String getGuiName() {
 		return "Number of Methods";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHNumberOfMethodsMetric();
 	}
 
 	// [user code injected with eMoflon] -->

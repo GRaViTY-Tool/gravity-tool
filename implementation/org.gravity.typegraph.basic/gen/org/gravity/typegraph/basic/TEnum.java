@@ -15,4 +15,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  * @generated
  */
 public interface TEnum extends TAnnotation {
+
+	static boolean isEnum(final TClass tClass) {
+		return !tClass.getTAnnotation(BasicPackage.eINSTANCE.getTEnum()).isEmpty();
+	}
 } // TEnum

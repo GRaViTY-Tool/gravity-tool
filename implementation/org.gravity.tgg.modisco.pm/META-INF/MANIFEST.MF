@@ -2,11 +2,10 @@ Manifest-Version: 1.0
 Automatic-Module-Name: org.gravity.tgg.modisco.pm
 Bundle-SymbolicName: org.gravity.tgg.modisco.pm;singleton:=true
 Require-Bundle: org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.gravity.typegraph.basic;visibility:=reexport,
  org.eclipse.modisco.java.discoverer,
  org.gravity.eclipse;visibility:=reexport,
  org.eclipse.core.resources,
- org.eclipse.jdt.core,
+ org.eclipse.core.runtime,
  org.gravity.modisco;visibility:=reexport,
  org.eclipse.modisco.java.generation,
  org.moflon.core.utilities,
@@ -19,11 +18,18 @@ Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Export-Package: org.gravity.tgg.modisco.pm,
- org.gravity.tgg.modisco.pm.processing.pg,
+ org.gravity.tgg.modisco.pm.Rules,
  org.gravity.tgg.modisco.pm.Rules.impl,
  org.gravity.tgg.modisco.pm.Rules.util,
+ org.gravity.tgg.modisco.pm.csp.constraints,
  org.gravity.tgg.modisco.pm.impl,
- org.gravity.tgg.modisco.pm.Rules,
+ org.gravity.tgg.modisco.pm.org.moflon.tgg.mosl,
+ org.gravity.tgg.modisco.pm.org.moflon.tgg.mosl.csp.constraints,
+ org.gravity.tgg.modisco.pm.org.moflon.tgg.mosl.csp.lib,
+ org.gravity.tgg.modisco.pm.org.moflon.tgg.mosl.rules,
+ org.gravity.tgg.modisco.pm.org.moflon.tie,
+ org.gravity.tgg.modisco.pm.processing.modisco,
+ org.gravity.tgg.modisco.pm.processing.pg,
  org.gravity.tgg.modisco.pm.util
 Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier

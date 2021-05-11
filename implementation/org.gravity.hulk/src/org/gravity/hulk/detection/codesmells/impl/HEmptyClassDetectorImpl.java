@@ -8,7 +8,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
-import org.gravity.hulk.antipatterngraph.codesmells.HEmptyClassSmell;
 import org.gravity.hulk.detection.codesmells.CodesmellsPackage;
 import org.gravity.hulk.detection.codesmells.HEmptyClassDetector;
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
@@ -30,7 +29,6 @@ public class HEmptyClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 * @generated
 	 */
 	protected HEmptyClassDetectorImpl() {
-		super();
 	}
 
 	/**
@@ -50,8 +48,10 @@ public class HEmptyClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 */
 	@Override
 	public HAnnotation calculate(final TClass tClass) {//
+		removeAnnotations(tClass);
+
 		if (!tClass.isTLib()&& tClass.getDefines().isEmpty()) {
-			final HEmptyClassSmell smell = CodesmellsFactory.eINSTANCE.createHEmptyClassSmell();
+			final var smell = CodesmellsFactory.eINSTANCE.createHEmptyClassSmell();
 			smell.setTAnnotated(tClass);
 			getHAnnotation().add(smell);
 			return smell;
@@ -77,6 +77,11 @@ public class HEmptyClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	@Override
 	public String getGuiName() {
 		return "Empty Class Smell";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage.eINSTANCE.getHEmptyClassSmell();
 	}
 
 	// [user code injected with eMoflon] -->

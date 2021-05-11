@@ -3,52 +3,44 @@
 package org.gravity.hulk.detection.metrics.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+// [user defined imports] -->
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
-import org.gravity.hulk.antipatterngraph.metrics.HAverageOverloadingInClassMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HAverageOverloadingInClassCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
 import org.gravity.typegraph.basic.TClass;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSignature;
-import java.util.HashMap;
-// [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HAverage Overloading In Class Calculator</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>HAverage Overloading In Class Calculator</b></em>'. <!-- end-user-doc
+ * -->
  * <p>
  * </p>
  *
  * @generated
  */
 public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricCalculatorImpl
-		implements HAverageOverloadingInClassCalculator {
+implements HAverageOverloadingInClassCalculator {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HAverageOverloadingInClassCalculatorImpl() {
-		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -57,12 +49,13 @@ public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricC
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		HAverageOverloadingInClassMetric metric = MetricsFactory.eINSTANCE.createHAverageOverloadingInClassMetric();
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		final var metric = MetricsFactory.eINSTANCE.createHAverageOverloadingInClassMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -70,19 +63,19 @@ public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricC
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
-	public double calculateValue(TClass tClass) {
-		// [user code injected with eMoflon]
+	@Override
+	public double calculateValue(final TClass tClass) {
+		removeAnnotations(tClass);
 
-		HashMap<TMethod, Integer> methods = new HashMap<TMethod, Integer>();
-		EList<TSignature> signatures = tClass.getSignature();
-		for (TSignature sig : signatures) {
+		final var methods = new HashMap<TMethod, Integer>();
+		final var signatures = tClass.getSignature();
+		for (final TSignature sig : signatures) {
 			if (sig instanceof TMethodSignature) {
-				TMethodSignature new_name = (TMethodSignature) sig;
-				TMethod method = ((TMethodSignature) sig).getMethod();
+				final var method = ((TMethodSignature) sig).getMethod();
 				if (methods.containsKey(method)) {
 					methods.put(method, methods.get(method) + 1);
 				} else {
@@ -93,8 +86,8 @@ public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricC
 		if (methods.isEmpty()) {
 			return 0;
 		}
-		double sum = 0;
-		for (double value : methods.values()) {
+		var sum = 0D;
+		for (final double value : methods.values()) {
 			sum += value;
 		}
 		return sum / methods.size();
@@ -102,12 +95,12 @@ public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricC
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HAVERAGE_OVERLOADING_IN_CLASS_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));
@@ -124,5 +117,10 @@ public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricC
 		return "Average Overloading";
 	}
 
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHAverageOverloadingInClassMetric();
+	}
+
 	// [user code injected with eMoflon] -->
-} //HAverageOverloadingInClassCalculatorImpl
+} // HAverageOverloadingInClassCalculatorImpl

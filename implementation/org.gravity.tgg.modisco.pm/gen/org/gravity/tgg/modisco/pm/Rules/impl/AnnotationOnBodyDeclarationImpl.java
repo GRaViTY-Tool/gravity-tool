@@ -706,7 +706,7 @@ public class AnnotationOnBodyDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_37(EMoflonEdge _edge_tAnnotated) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_30(EMoflonEdge _edge_tAnnotated) {
 
 		Object[] result1_bindingAndBlack = AnnotationOnBodyDeclarationImpl
 				.pattern_AnnotationOnBodyDeclaration_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -765,7 +765,7 @@ public class AnnotationOnBodyDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_39(EMoflonEdge _edge_annotations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_31(EMoflonEdge _edge_annotations) {
 
 		Object[] result1_bindingAndBlack = AnnotationOnBodyDeclarationImpl
 				.pattern_AnnotationOnBodyDeclaration_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1191,10 +1191,10 @@ public class AnnotationOnBodyDeclarationImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.ANNOTATION_ON_BODY_DECLARATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_ON_BODY_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_37__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_37((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_ON_BODY_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_39__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_39((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_ON_BODY_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_30__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_30((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_ON_BODY_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_31__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_31((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_ON_BODY_DECLARATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_ON_BODY_DECLARATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2208,9 +2208,9 @@ public class AnnotationOnBodyDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationOnBodyDeclaration_20_2_testcorematchandDECs_black_nac_0BB(
 			TAnnotation tAnnotation, TAnnotatable tAnnotable) {
-		TAnnotatable __DEC_tAnnotation_tAnnotation_571512 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotation_571512 != null) {
-			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_571512)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotation_342608 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotation_342608 != null) {
+			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_342608)) {
 				return new Object[] { tAnnotation, tAnnotable };
 			}
 		}
@@ -2342,7 +2342,7 @@ public class AnnotationOnBodyDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationOnBodyDeclaration_21_2_testcorematchandDECs_black_nac_0B(
 			Annotation annotation) {
-		for (AnnotationMemberValuePair __DEC_Annotation_value_282504 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_Annotation_value_632922 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { annotation };
 		}
@@ -2586,7 +2586,7 @@ public class AnnotationOnBodyDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationOnBodyDeclaration_27_1_matchtggpattern_black_nac_0B(
 			Annotation annotation) {
-		for (AnnotationMemberValuePair __DEC_Annotation_value_535052 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_Annotation_value_517788 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { annotation };
 		}
@@ -2615,9 +2615,9 @@ public class AnnotationOnBodyDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationOnBodyDeclaration_28_1_matchtggpattern_black_nac_0BB(
 			TAnnotation tAnnotation, TAnnotatable tAnnotable) {
-		TAnnotatable __DEC_tAnnotation_tAnnotation_241767 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotation_241767 != null) {
-			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_241767)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotation_635891 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotation_635891 != null) {
+			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_635891)) {
 				return new Object[] { tAnnotation, tAnnotable };
 			}
 		}

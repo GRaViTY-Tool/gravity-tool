@@ -1,38 +1,49 @@
 Manifest-Version: 1.0
 Automatic-Module-Name: org.gravity.tgg.modisco.uml
 Bundle-SymbolicName: org.gravity.tgg.modisco.uml;singleton:=true
-Require-Bundle: org.eclipse.jdt.core,
- org.eclipse.emf.compare,
+Require-Bundle: org.eclipse.emf.compare,
  carisma.profile.umlsec,
  org.eclipse.modisco.java.discoverer,
  org.eclipse.core.resources,
  org.eclipse.core.runtime,
  org.gravity.eclipse;visibility:=reexport,
- org.eclipse.modisco.java.generation,
  org.gravity.modisco,
  org.gravity.security.annotations,
  org.gravity.eclipse.ui,
  org.eclipse.ui.workbench,
- org.eclipse.core.commands,
  org.eclipse.jface,
  org.moflon.core.utilities,
  org.moflon.tgg.language;visibility:=reexport,
  org.moflon.tgg.runtime;visibility:=reexport,
  SDMLanguage,
- MocaTree,
- org.eclipse.uml2.uml
+ MocaTree
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau
-Export-Package: org.gravity.tgg.uml,
- org.gravity.tgg.uml.ui,
- org.gravity.tgg.modisco.uml,
+Export-Package: org.gravity.tgg.modisco.uml,
+ org.gravity.tgg.modisco.uml.Rules,
  org.gravity.tgg.modisco.uml.Rules.impl,
  org.gravity.tgg.modisco.uml.Rules.util,
- org.gravity.tgg.modisco.uml.util,
+ org.gravity.tgg.modisco.uml.csp.constraints,
  org.gravity.tgg.modisco.uml.impl,
- org.gravity.tgg.modisco.uml.Rules
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.csp.lib,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.annotations,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.anon,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.compilationUnit,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.fields,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.inner,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.methods,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.modifiers,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.packages,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.types,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.types.parameterized,
+ org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.types.typeparameter,
+ org.gravity.tgg.modisco.uml.org.moflon.tie,
+ org.gravity.tgg.modisco.uml.util,
+ org.gravity.tgg.uml,
+ org.gravity.tgg.uml.ui
 Bundle-Name: MoDiscoTGG
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .

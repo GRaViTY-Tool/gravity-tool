@@ -15,7 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gravity.refactorings,
  org.gravity.tgg.modisco.pm,
  org.gravity.eclipse.tests
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.gravity.refactoring.test
 Export-Package: org.gravity.testsuite,

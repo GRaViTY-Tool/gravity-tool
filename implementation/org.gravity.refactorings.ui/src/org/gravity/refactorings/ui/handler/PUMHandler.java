@@ -9,6 +9,7 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.NodeFinder;
+import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -21,29 +22,32 @@ import org.gravity.refactorings.ui.handler.jobs.PullUpMethodJob;
 
 /**
  * A handler for applying pull-up method refactorings
- * 
+ *
  * @author speldszus
  *
  */
 public class PUMHandler extends RefactoringHandler {
 
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		ITextEditor editor = (ITextEditor) HandlerUtil.getActiveEditor(event);
-		ITextSelection sel = (ITextSelection) editor.getSelectionProvider().getSelection();
-		ITypeRoot typeRoot = JavaUI.getEditorInputTypeRoot(editor.getEditorInput());
-		ICompilationUnit icu = typeRoot.getAdapter(ICompilationUnit.class);
-		CompilationUnit cu = parse(icu);
-		NodeFinder finder = new NodeFinder(cu, sel.getOffset(), sel.getLength());
+	public Object execute(final ExecutionEvent event) throws ExecutionException {
+		final ITextEditor editor = (ITextEditor) HandlerUtil.getActiveEditor(event);
+		final ITextSelection sel = (ITextSelection) editor.getSelectionProvider().getSelection();
+		final ITypeRoot typeRoot = JavaUI.getEditorInputTypeRoot(editor.getEditorInput());
+		final ICompilationUnit icu = typeRoot.getAdapter(ICompilationUnit.class);
+		final CompilationUnit cu = parse(icu);
+		final NodeFinder finder = new NodeFinder(cu, sel.getOffset(), sel.getLength());
 		ASTNode node = finder.getCoveringNode();
 
-		Shell shell = editor.getSite().getShell();
+		final Shell shell = editor.getSite().getShell();
+		if(node instanceof SimpleName) {
+			node = ((SimpleName) node).getParent();
+		}
 		if (node instanceof MethodDeclaration) {
-			MethodDeclaration method = (MethodDeclaration) node;
-			ASTNode tmpASTNode1 = method.getParent();
+			final MethodDeclaration method = (MethodDeclaration) node;
+			final ASTNode tmpASTNode1 = method.getParent();
 			if (tmpASTNode1 instanceof TypeDeclaration) {
-				TypeDeclaration childType = (TypeDeclaration) tmpASTNode1;
-				WorkspaceJob job = new PullUpMethodJob(method, childType, icu, shell);
+				final TypeDeclaration childType = (TypeDeclaration) tmpASTNode1;
+				final WorkspaceJob job = new PullUpMethodJob(method, childType, icu, shell);
 				job.setUser(false);
 				job.schedule();
 
@@ -56,6 +60,6 @@ public class PUMHandler extends RefactoringHandler {
 		return null;
 	}
 
-	
+
 
 }

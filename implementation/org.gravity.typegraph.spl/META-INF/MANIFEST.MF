@@ -4,22 +4,21 @@ Export-Package: org.gravity.typegraph.spl.util,
  org.gravity.typegraph.spl.impl,
  org.gravity.typegraph.spl
 Bundle-Name: %pluginName
-Bundle-Version: 0.0.1.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Automatic-Module-Name: org.gravity.typegraph.spl
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.gravity.typegraph.basic;visibility:=reexport,
  org.gravity.tgg.modisco.pm,
  org.eclipse.jdt.core,
  org.eclipse.core.resources,
  org.gravity.eclipse.java.spl,
  org.eclipse.emf.henshin.variability.multi,
  de.ovgu.featureide.fm.core,
- carisma.profile.umlsec.variability,
- org.eclipse.emf.henshin.model
+ org.eclipse.emf.henshin.model,
+ org.apache.log4j

@@ -5,23 +5,16 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
 import org.gravity.hulk.antipatterngraph.metrics.HIncommingInvocationMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HInvocationRelation;
 import org.gravity.hulk.antipatterngraph.metrics.HOutgoingInvocationMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HInvocationRelationCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
 import org.gravity.typegraph.basic.TClass;
-
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -35,19 +28,18 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  * @generated
  */
 public class HInvocationRelationCalculatorImpl extends HClassBasedMetricCalculatorImpl
-		implements HInvocationRelationCalculator {
+implements HInvocationRelationCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HInvocationRelationCalculatorImpl() {
-		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -57,29 +49,32 @@ public class HInvocationRelationCalculatorImpl extends HClassBasedMetricCalculat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public HMetric calculateMetric(TClass tClass) {
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		removeAnnotations(tClass);
 
-		Object[] result1_black = HInvocationRelationCalculatorImpl
+		final var result1_black = HInvocationRelationCalculatorImpl
 				.pattern_HInvocationRelationCalculator_0_1_ActivityNode6_blackBBFF(this, tClass);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[tClass] = " + tClass + ".");
 		}
-		HIncommingInvocationMetric nii = (HIncommingInvocationMetric) result1_black[2];
-		HOutgoingInvocationMetric noi = (HOutgoingInvocationMetric) result1_black[3];
+		final var nii = (HIncommingInvocationMetric) result1_black[2];
+		final var noi = (HOutgoingInvocationMetric) result1_black[3];
 
 		return createMetric(tClass, nii, noi);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public double calculateInvocValue(HIncommingInvocationMetric nii, HOutgoingInvocationMetric noi) {
+	@Override
+	public double calculateInvocValue(final HIncommingInvocationMetric nii, final HOutgoingInvocationMetric noi) {
 		// [user code injected with eMoflon]
 
 		return (noi.getValue()) / (nii.getValue() + 1);
@@ -88,28 +83,29 @@ public class HInvocationRelationCalculatorImpl extends HClassBasedMetricCalculat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 
-		Object[] result1_black = HInvocationRelationCalculatorImpl.getMetrics(this, tClass);
+		final var result1_black = HInvocationRelationCalculatorImpl.getMetrics(this, tClass);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[tClass] = " + tClass + ".");
 		}
-		HIncommingInvocationMetric nii = (HIncommingInvocationMetric) result1_black[0];
-		HOutgoingInvocationMetric noi = (HOutgoingInvocationMetric) result1_black[1];
+		final var nii = (HIncommingInvocationMetric) result1_black[0];
+		final var noi = (HOutgoingInvocationMetric) result1_black[1];
 		return calculateInvocValue(nii, noi);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HINVOCATION_RELATION_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));
@@ -123,13 +119,13 @@ public class HInvocationRelationCalculatorImpl extends HClassBasedMetricCalculat
 	}
 
 	public static final Object[] pattern_HInvocationRelationCalculator_0_1_ActivityNode6_blackBBFF(
-			HInvocationRelationCalculator _this, TClass tClass) {
-		for (TAnnotation tmpNii : tClass.getTAnnotation()) {
+			final HInvocationRelationCalculator _this, final TClass tClass) {
+		for (final TAnnotation tmpNii : tClass.getTAnnotation()) {
 			if (tmpNii instanceof HIncommingInvocationMetric) {
-				HIncommingInvocationMetric nii = (HIncommingInvocationMetric) tmpNii;
-				for (TAnnotation tmpNoi : tClass.getTAnnotation()) {
+				final var nii = (HIncommingInvocationMetric) tmpNii;
+				for (final TAnnotation tmpNoi : tClass.getTAnnotation()) {
 					if (tmpNoi instanceof HOutgoingInvocationMetric) {
-						HOutgoingInvocationMetric noi = (HOutgoingInvocationMetric) tmpNoi;
+						final var noi = (HOutgoingInvocationMetric) tmpNoi;
 						return new Object[] { _this, tClass, nii, noi };
 					}
 				}
@@ -138,9 +134,9 @@ public class HInvocationRelationCalculatorImpl extends HClassBasedMetricCalculat
 		return null;
 	}
 
-	public final HInvocationRelation createMetric(TClass tClass, HIncommingInvocationMetric nii,
-			HOutgoingInvocationMetric noi) {
-		HInvocationRelation metric = MetricsFactory.eINSTANCE.createHInvocationRelation();
+	public final HInvocationRelation createMetric(final TClass tClass, final HIncommingInvocationMetric nii,
+			final HOutgoingInvocationMetric noi) {
+		final var metric = MetricsFactory.eINSTANCE.createHInvocationRelation();
 		metric.setTAnnotated(tClass);
 		metric.setHOutgoingInvocationCustomMetric(noi);
 		metric.setHIncommingInvocationCustomMetric(nii);
@@ -151,13 +147,13 @@ public class HInvocationRelationCalculatorImpl extends HClassBasedMetricCalculat
 		return metric;
 	}
 
-	private static final Object[] getMetrics(HInvocationRelationCalculator _this, TClass tClass) {
-		for (TAnnotation tmpNii : tClass.getTAnnotation()) {
+	private static final Object[] getMetrics(final HInvocationRelationCalculator _this, final TClass tClass) {
+		for (final TAnnotation tmpNii : tClass.getTAnnotation()) {
 			if (tmpNii instanceof HIncommingInvocationMetric) {
-				HIncommingInvocationMetric nii = (HIncommingInvocationMetric) tmpNii;
-				for (TAnnotation tmpNoi : tClass.getTAnnotation()) {
+				final var nii = (HIncommingInvocationMetric) tmpNii;
+				for (final TAnnotation tmpNoi : tClass.getTAnnotation()) {
 					if (tmpNoi instanceof HOutgoingInvocationMetric) {
-						HOutgoingInvocationMetric noi = (HOutgoingInvocationMetric) tmpNoi;
+						final var noi = (HOutgoingInvocationMetric) tmpNoi;
 						return new Object[] { nii, noi };
 					}
 				}
@@ -171,6 +167,11 @@ public class HInvocationRelationCalculatorImpl extends HClassBasedMetricCalculat
 	@Override
 	public String getGuiName() {
 		return "Relation between Incoming and Outgoing Invocations";
+	}
+
+	@Override
+	public EClass getHAnnotationType() {
+		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHInvocationRelation();
 	}
 
 	// [user code injected with eMoflon] -->
