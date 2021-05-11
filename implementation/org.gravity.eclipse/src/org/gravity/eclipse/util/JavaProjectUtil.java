@@ -1,6 +1,7 @@
 package org.gravity.eclipse.util;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -65,7 +66,7 @@ public final class JavaProjectUtil {
 	 * @param monitor a progress monitor
 	 * @throws JavaModelException
 	 */
-	public static void addToClassPath(IJavaProject project, List<IClasspathEntry> entries, IProgressMonitor monitor)
+	public static void addToClassPath(final IJavaProject project, final List<IClasspathEntry> entries, final IProgressMonitor monitor)
 			throws JavaModelException {
 		final IClasspathEntry[] oldEntries = project.getRawClasspath();
 		int i = oldEntries.length;
@@ -85,7 +86,7 @@ public final class JavaProjectUtil {
 	 * @param nameOfCopy The name of the copy
 	 * @return The copy
 	 */
-	public static IJavaProject copyJavaProject(IJavaProject project, String nameOfCopy) {
+	public static IJavaProject copyJavaProject(final IJavaProject project, final String nameOfCopy) {
 		final IProject tmp = EclipseProjectUtil.copyProject(project.getProject(), nameOfCopy);
 		return getJavaProject(tmp);
 	}
@@ -97,7 +98,7 @@ public final class JavaProjectUtil {
 	 * @param project The eclipse project
 	 * @return a java project or null if the conversion failed
 	 */
-	public static IJavaProject getJavaProject(IProject project) {
+	public static IJavaProject getJavaProject(final IProject project) {
 		try {
 			if (project.hasNature(JavaCore.NATURE_ID)) {
 				return JavaCore.create(project);
@@ -119,7 +120,7 @@ public final class JavaProjectUtil {
 	 *                                       name
 	 * @throws CoreException                 If the creation fails
 	 */
-	public static IJavaProject createJavaProject(String name, Set<String> sourceFolderNames, IProgressMonitor monitor)
+	public static IJavaProject createJavaProject(final String name, final Set<String> sourceFolderNames, final IProgressMonitor monitor)
 			throws DuplicateProjectNameException, CoreException {
 		// Create new project with given name
 		final IProject project = EclipseProjectUtil.createProject(name, monitor);
@@ -136,8 +137,8 @@ public final class JavaProjectUtil {
 	 * @return The java project
 	 * @throws CoreException If the conversion fails
 	 */
-	public static IJavaProject convertToJavaProject(Set<String> sourceFolderNames, final IProject project,
-			IProgressMonitor monitor) throws CoreException {
+	public static IJavaProject convertToJavaProject(final Set<String> sourceFolderNames, final IProject project,
+			final IProgressMonitor monitor) throws CoreException {
 		// Add Java-Nature
 		if (project.hasNature(JavaCore.NATURE_ID)) {
 			return JavaCore.create(project);
@@ -184,8 +185,8 @@ public final class JavaProjectUtil {
 	 * @throws CoreException
 	 * @throws IOException
 	 */
-	public static void addJavaSourceFilesToRoot(Collection<Path> javaSourceFiles, IPackageFragmentRoot root,
-			boolean link, IProgressMonitor monitor) throws CoreException, IOException {
+	public static void addJavaSourceFilesToRoot(final Collection<Path> javaSourceFiles, final IPackageFragmentRoot root,
+			final boolean link, final IProgressMonitor monitor) throws CoreException, IOException {
 		final Map<String, List<Path>> packages = getPackagesOfJavaFiles(javaSourceFiles);
 
 		for (final Entry<String, List<Path>> entry : packages.entrySet()) {
@@ -205,8 +206,8 @@ public final class JavaProjectUtil {
 	 * @throws IOException   If a file cannot be found or is a duplicate
 	 * @throws CoreException If a class file cannot be linked on the project
 	 */
-	public static void addJavaClassesToPackageFragment(IPackageFragment packeFragment, List<Path> javaClasses,
-			boolean link, IProgressMonitor monitor) throws IOException, CoreException {
+	public static void addJavaClassesToPackageFragment(final IPackageFragment packeFragment, final List<Path> javaClasses,
+			final boolean link, final IProgressMonitor monitor) throws IOException, CoreException {
 		for (final Path javaFile : javaClasses) {
 			final String fileName = javaFile.getFileName().toFile().getName();
 			final IPath location = new org.eclipse.core.runtime.Path(javaFile.toFile().getAbsolutePath());
@@ -239,7 +240,7 @@ public final class JavaProjectUtil {
 	 * @return A mapping from packages to java source files
 	 * @throws IOException If a source file cannot be read
 	 */
-	public static Map<String, List<Path>> getPackagesOfJavaFiles(Collection<Path> javaSourceFiles) throws IOException {
+	public static Map<String, List<Path>> getPackagesOfJavaFiles(final Collection<Path> javaSourceFiles) throws IOException {
 		final HashMap<String, List<Path>> packages = new HashMap<>();
 
 		final Pattern packagePattern = Pattern.compile("((package)\\s+)((\\w|(\\.\\s*))+)((\\s*);)");
@@ -248,7 +249,7 @@ public final class JavaProjectUtil {
 			try (BufferedReader reader = Files.newBufferedReader(path)) {
 				String line;
 				String packageName = null;
-				while ((line = reader.readLine()) != null && packageName == null) {
+				while (((line = reader.readLine()) != null) && (packageName == null)) {
 					final Matcher m = packagePattern.matcher(line);
 					if (m.find()) {
 						packageName = m.group(3);
@@ -276,7 +277,7 @@ public final class JavaProjectUtil {
 	 * @return A new java project
 	 * @throws CoreException
 	 */
-	public static IJavaProject createJavaProjectWithUniqueName(String name, IProgressMonitor monitor)
+	public static IJavaProject createJavaProjectWithUniqueName(final String name, final IProgressMonitor monitor)
 			throws CoreException {
 		int appendix = 0;
 		IJavaProject project = null;
@@ -302,7 +303,7 @@ public final class JavaProjectUtil {
 	 * @param binaries The files
 	 * @return A stream containing the classpath entries
 	 */
-	public static Stream<IClasspathEntry> getClasspathEntries(List<IFile> binaries) {
+	public static Stream<IClasspathEntry> getClasspathEntries(final List<IFile> binaries) {
 		return getClasspathEntries(binaries.parallelStream());
 
 	}
@@ -322,5 +323,18 @@ public final class JavaProjectUtil {
 						false, // exported
 						ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to combine
 						ClasspathEntry.NO_EXTRA_ATTRIBUTES));
+	}
+
+	public static IJavaProject importSourceFolderAsProject(final File sourceFolder, final String name, final IProgressMonitor monitor) throws DuplicateProjectNameException, CoreException {
+		final String sourceFolderName = sourceFolder.getName();
+		final IProject old = EclipseProjectUtil.getProjectByName(name);
+		if(old.exists()) {
+			old.delete(true, true, monitor);
+		}
+		final IJavaProject project = createJavaProject(name, Collections.singleton(sourceFolderName), monitor);
+		final IFolder folder = project.getProject().getFolder(sourceFolderName);
+		folder.delete(true, monitor);
+		folder.createLink(sourceFolder.toURI(), IResource.DEPTH_INFINITE, monitor);
+		return project;
 	}
 }
