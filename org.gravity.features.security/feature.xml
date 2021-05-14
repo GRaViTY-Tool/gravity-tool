@@ -20,15 +20,45 @@
 
    <requires>
       <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.gravity.typegraph.basic"/>
       <import plugin="org.gravity.tgg.modisco.pm"/>
-      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.gravity.typegraph.basic"/>
       <import feature="org.gravity.features.modisco" version="1.0.0.qualifier"/>
       <import feature="org.gravity.features.typegraph.basic" version="1.0.0.qualifier"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.gravity.eclipse"/>
+      <import plugin="org.gravity.eclipse.ui"/>
+      <import plugin="org.gravity.hulk" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.gravity.security.annotations" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="carisma.profile.umlsec"/>
+      <import plugin="org.eclipse.emf.henshin.interpreter" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="org.gravity.tgg.pm.uml"/>
+      <import plugin="org.moflon.tgg.runtime"/>
+      <import plugin="org.junit"/>
+      <import plugin="carisma.check.staticcheck" version="1.0.4" match="greaterOrEqual"/>
+      <import plugin="carisma.core"/>
+      <import feature="feature.carisma.uml2" version="1.1.8.qualifier"/>
+      <import feature="org.eclipse.emf.henshin.sdk" version="1.7.0.qualifier"/>
+      <import feature="org.gravity.features.hulk" version="1.0.0.qualifier"/>
    </requires>
 
    <plugin
          id="org.gravity.security.annotations"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gravity.security.metrics"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gravity.security.violation.patterns"
          download-size="0"
          install-size="0"
          version="0.0.0"
