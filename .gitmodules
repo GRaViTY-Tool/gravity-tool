@@ -13,3 +13,6 @@
 	path = implementation/org.gravity.umlsecrt
 	url = git@github.com:CARiSMA-Tool/umlsecrt.git
 
+[submodule "implementation/org.gravity.variability.secpl"]
+	path = implementation/org.gravity.variability.secpl
+	url = git@github.com:SvenPeldszus/SecPL.git

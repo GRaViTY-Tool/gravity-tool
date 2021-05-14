@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 
@@ -48,7 +49,7 @@ public final class GradleAndroid {
 	 * @throws IOException If there was an error at reading one o the build.gradle
 	 *                     files
 	 */
-	static Set<Path> getRClasses(Set<Path> buildDotGradleFiles) throws IOException {
+	static Set<Path> getRClasses(final Set<Path> buildDotGradleFiles) throws IOException {
 		final Set<Path> classes = new HashSet<>();
 		for (final Path buildDotGradle : buildDotGradleFiles) {
 			final File manifestFile = new File(buildDotGradle.getParent().toFile(), "src/main/AndroidManifest.xml");
@@ -69,8 +70,11 @@ public final class GradleAndroid {
 		return classes;
 	}
 
-	private static File searchRClassInAdroidMainfest(File manifestFile, File gradleRoot) throws IOException {
+	private static File searchRClassInAdroidMainfest(final File manifestFile, final File gradleRoot)
+			throws IOException {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+		factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
 		try {
 			factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 			final Document document = factory.newDocumentBuilder().parse(manifestFile);
@@ -103,7 +107,7 @@ public final class GradleAndroid {
 	 * @param gradleContent The content of the gradle build file
 	 * @return The SDK version information
 	 */
-	static SdkVersion getAndroidSdkVersion(String gradleContent) {
+	static SdkVersion getAndroidSdkVersion(final String gradleContent) {
 		final SdkVersion sdkVersion = new SdkVersion();
 		final Matcher matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(gradleContent);
 		while (matcherSdk.find()) {
@@ -111,13 +115,13 @@ public final class GradleAndroid {
 			if ("minSdkVersion".equals(group)) {
 				final int value = Integer.parseInt(matcherSdk.group(6));
 				final double minSdk = sdkVersion.getMinSdk();
-				if (Double.isNaN(minSdk) || minSdk > value) {
+				if (Double.isNaN(minSdk) || (minSdk > value)) {
 					sdkVersion.setMinSdk(value);
 				}
 			} else if ("targetSdkVersion".equals(group)) {
 				final int value = Integer.parseInt(matcherSdk.group(6));
 				final double targetSdk = sdkVersion.getTargetSdk();
-				if (Double.isNaN(targetSdk) || targetSdk < value) {
+				if (Double.isNaN(targetSdk) || (targetSdk < value)) {
 					sdkVersion.setTargetSdk(value);
 				}
 			}
@@ -159,11 +163,10 @@ public final class GradleAndroid {
 	 * @throws GradleImportException If the search for the libraries in the Android
 	 *                               SDK location failed
 	 */
-	static HashMap<String, Path> getAndroidLibs(GradleDependencies dependencies)
-			throws GradleImportException {
+	static Map<String, Path> getAndroidLibs(final GradleDependencies dependencies) throws GradleImportException {
 		final SdkVersion sdkVersion = dependencies.getSdkVersion();
 		final HashMap<String, Path> pathsToLibs = new HashMap<>();
-		if (sdkVersion == null || Double.isNaN(sdkVersion.getTargetSdk()) || Double.isNaN(sdkVersion.getMinSdk())) {
+		if ((sdkVersion == null) || Double.isNaN(sdkVersion.getTargetSdk()) || Double.isNaN(sdkVersion.getMinSdk())) {
 			throw new GradleImportException("Couldn't determine the SDK version information");
 		}
 
@@ -176,18 +179,8 @@ public final class GradleAndroid {
 			final File androidPlatform = new File(platforms, android);
 			final File androidJar = new File(androidPlatform, "android.jar");
 			if (androidJar.exists()) {
-				compAndroidSdk = true;
-				pathsToLibs.put(android, androidJar.toPath());
-
-				final File optional = new File(androidPlatform, "optional");
-				for (final String use : dependencies.getUseDependencies()) {
-					final File lib = new File(optional, use + '.'+GravityActivator.FILE_EXTENSION_JAR);
-					if (lib.exists()) {
-						pathsToLibs.put(use, lib.toPath());
-					} else {
-						LOGGER.warn("UseLib dependency not resolved: " + use);
-					}
-				}
+				compAndroidSdk = addAndroidJarAndOptionalDependencies(dependencies, pathsToLibs, android,
+						androidPlatform, androidJar);
 				break;
 			}
 		}
@@ -202,6 +195,19 @@ public final class GradleAndroid {
 				}
 			}
 		}
+		return recursivelyAddCompileDependencies(dependencies, androidHome, pathsToLibs);
+	}
+
+	/**
+	 * @param dependencies
+	 * @param androidHome
+	 * @param pathsToLibs
+	 * @return
+	 * @throws IllegalAccessError
+	 * @throws GradleImportException
+	 */
+	public static Map<String, Path> recursivelyAddCompileDependencies(final GradleDependencies dependencies, final File androidHome,
+			final Map<String, Path> pathsToLibs) throws IllegalAccessError, GradleImportException {
 		boolean newLibs = false;
 		do {
 			final Set<String> compileLibs = dependencies.getCompileDependencies();
@@ -217,8 +223,34 @@ public final class GradleAndroid {
 				}
 			}
 		} while (newLibs);
-
 		return pathsToLibs;
+	}
+
+	/**
+	 * @param dependencies
+	 * @param pathsToLibs
+	 * @param android
+	 * @param androidPlatform
+	 * @param androidJar
+	 * @return
+	 */
+	public static boolean addAndroidJarAndOptionalDependencies(final GradleDependencies dependencies,
+			final Map<String, Path> pathsToLibs, final String android, final File androidPlatform,
+			final File androidJar) {
+		boolean compAndroidSdk;
+		compAndroidSdk = true;
+		pathsToLibs.put(android, androidJar.toPath());
+
+		final File optional = new File(androidPlatform, "optional");
+		for (final String use : dependencies.getUseDependencies()) {
+			final File lib = new File(optional, use + '.' + GravityActivator.FILE_EXTENSION_JAR);
+			if (lib.exists()) {
+				pathsToLibs.put(use, lib.toPath());
+			} else {
+				LOGGER.warn("UseLib dependency not resolved: " + use);
+			}
+		}
+		return compAndroidSdk;
 	}
 
 }

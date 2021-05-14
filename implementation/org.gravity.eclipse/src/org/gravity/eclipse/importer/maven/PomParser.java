@@ -46,7 +46,7 @@ public class PomParser {
 	 * @param results   A mapping between libs and their locations
 	 * @param newLibs   The set of newly discovered libs
 	 */
-	public static void parsePomFile(File pom, File cacheFile, Map<String, Path> results, Set<String> newLibs) {
+	public static void parsePomFile(final File pom, final File cacheFile, final Map<String, Path> results, final Set<String> newLibs) {
 		try {
 			final DocumentBuilder factory = createDocumentBuilder();
 			final Document document = factory.parse(pom);
@@ -59,19 +59,21 @@ public class PomParser {
 
 	/**
 	 * Creates a new document builder for parsing pom files
-	 * 
+	 *
 	 * @return the builder
 	 * @throws ParserConfigurationException
 	 */
 	public static DocumentBuilder createDocumentBuilder() throws ParserConfigurationException {
 		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+		factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
 		factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 		return factory.newDocumentBuilder();
 	}
 
 	/**
 	 * Discovers new libs from the given pom file
-	 * 
+	 *
 	 * @param pom       The pom file
 	 * @param cacheFile A cache of already discovered libs
 	 * @param results   A mapping between libs and their locations
@@ -79,9 +81,9 @@ public class PomParser {
 	 * @throws IOException
 	 * @throws IllegalAccessError
 	 */
-	static Set<String> getDependencies(final Document pom, File cacheFile, Map<String, Path> results)
+	static Set<String> getDependencies(final Document pom, final File cacheFile, final Map<String, Path> results)
 			throws IOException, IllegalAccessError {
-		Set<String> newLibs = new HashSet<>();
+		final Set<String> newLibs = new HashSet<>();
 		final NodeList deps = pom.getElementsByTagName("dependency");
 		for (int i = 0; i < deps.getLength(); i++) {
 			final Set<String> libs = new HashSet<>();
@@ -105,7 +107,7 @@ public class PomParser {
 	 * @param dependency The dependency node
 	 * @return The string representation
 	 */
-	private static String getDependency(Node dependency) {
+	private static String getDependency(final Node dependency) {
 		String group = null;
 		String artifact = null;
 		String version = null;
@@ -135,7 +137,7 @@ public class PomParser {
 	 * @throws IllegalAccessError If a library string doesn't has the expected
 	 *                            amount of segments
 	 */
-	public static Map<String, Path> searchInCache(Set<String> libs, File cacheFile)
+	public static Map<String, Path> searchInCache(final Set<String> libs, final File cacheFile)
 			throws IOException, IllegalAccessError {
 		final Map<String, Path> results = new ConcurrentHashMap<>();
 		final HashSet<String> newLibs = new HashSet<>();
@@ -172,9 +174,9 @@ public class PomParser {
 	 * @param cache The cache in which the lib should be searched
 	 * @return The lib
 	 */
-	private static Library searchLibInCache(String lib, File cache) {
+	private static Library searchLibInCache(final String lib, final File cache) {
 		final String[] segments = lib.split(":");
-		File libFile = null;
+		File libFile;
 		String version = null;
 		String name = null;
 		libFile = createNextFileSegment(cache, segments[0]);
@@ -185,7 +187,7 @@ public class PomParser {
 			libFile = createNextFileSegment(libFile, segments[1]);
 			if (segments.length > 2) {
 				version = segments[2];
-				if (segments.length > 3 && LOGGER.isEnabledFor(Level.WARN)) {
+				if ((segments.length > 3) && LOGGER.isEnabledFor(Level.WARN)) {
 					LOGGER.warn("Unhandeled segments: " + lib);
 				}
 			}
@@ -201,7 +203,7 @@ public class PomParser {
 	 * @param files   The available files
 	 * @return The selected file
 	 */
-	private static Path getBestFit(String name, String version, List<Path> files) {
+	private static Path getBestFit(final String name, final String version, final List<Path> files) {
 		Path libJar = null;
 		for (final Path p : files) {
 			final String string = p.getFileName().toString();
@@ -224,7 +226,7 @@ public class PomParser {
 	 * @param next The next segment
 	 * @return The resulting location
 	 */
-	private static File createNextFileSegment(File file, String next) {
+	private static File createNextFileSegment(File file, final String next) {
 		final File tmpLibFile = new File(file, next);
 		if (tmpLibFile.exists()) {
 			file = tmpLibFile;
@@ -253,7 +255,7 @@ public class PomParser {
 		 * @param version The version of the lib
 		 * @param file    The file containing the lib
 		 */
-		Library(String name, String version, File file) {
+		Library(final String name, final String version, final File file) {
 			this.name = name;
 			this.version = version;
 			this.file = file;

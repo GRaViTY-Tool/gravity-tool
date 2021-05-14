@@ -2,6 +2,7 @@ package org.gravity.eclipse.io;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -43,7 +44,7 @@ public final class ZipUtil {
 	 *                       org.eclipse.core.resources.IFile.create(InputStream
 	 *                       source, boolean force, IProgressMonitor monitor)
 	 */
-	public static IFile extractZipEntry(ZipInputStream stream, IFile destination, IProgressMonitor monitor)
+	public static IFile extractZipEntry(final ZipInputStream stream, final IFile destination, final IProgressMonitor monitor)
 			throws CoreException {
 		destination.create(new BufferedInputStream(stream) {
 			@Override
@@ -73,14 +74,15 @@ public final class ZipUtil {
 		try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(Paths.get(zipFilePath)))) {
 			ZipEntry entry;
 			while ((entry = zipInputStream.getNextEntry()) != null) {
-				final Path filePath = Paths.get(unzipLocation, entry.getName());
-				if(!filePath.normalize().startsWith(destination)) {
+
+				final File filePath = new File(destination.toFile(), entry.getName());
+				if(!filePath.getCanonicalPath().startsWith(unzipLocation)){
 					throw new SecurityException("Entry is trying to leave the target dir: " + entry.getName());
 				}
 				if (!entry.isDirectory()) {
-					unzipFiles(zipInputStream, filePath);
+					unzipFiles(zipInputStream, filePath.toPath());
 				} else {
-					Files.createDirectories(filePath);
+					Files.createDirectories(filePath.toPath());
 				}
 				zipInputStream.closeEntry();
 			}

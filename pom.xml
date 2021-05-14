@@ -49,14 +49,18 @@
     <module>implementation/org.gravity.modisco</module>
     <module>implementation/org.gravity.refactorings</module>
     <module>implementation/org.gravity.refactorings.ui</module>
-    <module>implementation/org.gravity.security.analysis</module>
+    <module>implementation/org.gravity.secdfd</module>
+    <module>implementation/org.gravity.security.metrics</module>
     <module>implementation/org.gravity.security.annotations</module>
+    <module>implementation/org.gravity.security.violation.patterns</module>
     <module>implementation/org.gravity.tgg.modisco.pm</module>
     <module>implementation/org.gravity.tgg.modisco.ui</module>
     <module>implementation/org.gravity.tgg.modisco.uml</module>
     <module>implementation/org.gravity.tgg.pm.uml/</module>
     <module>implementation/org.gravity.typegraph.basic</module>
     <module>implementation/org.gravity.typegraph.spl</module>
+    <module>implementation/org.gravity.umlsecrt</module>
+    <module>implementation/org.gravity.variability.secpl</module>
     <module>tests/org.gravity.eclipse.tests</module>
     <module>tests/org.gravity.goblin.tests</module>
     <module>tests/org.gravity.hulk.tests</module>
