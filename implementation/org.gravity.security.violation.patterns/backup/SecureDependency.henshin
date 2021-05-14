@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_m2xZ0A_HEeudadBB8ldcmg">
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <imports href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#/"/>
+  <imports href="http://www.umlsec.de/profiles/UMLsec#/"/>
+  <imports href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_oO31MA_HEeudadBB8ldcmg" name="SecureDependency">
+    <parameters xmi:id="_pYHK8B0JEeuO7Y24MIpqMA" name="clientCritical" kind="VAR"/>
+    <parameters xmi:id="_sPYTAB0JEeuO7Y24MIpqMA" name="supplierCritical" kind="VAR"/>
+    <parameters xmi:id="_jWMEwB0JEeuO7Y24MIpqMA" name="member" kind="VAR"/>
+    <lhs xmi:id="_oQrMAA_HEeudadBB8ldcmg" name="Lhs">
+      <nodes xmi:id="_ruQtMA_HEeudadBB8ldcmg" outgoing="_utISEA_HEeudadBB8ldcmg">
+        <type href="http://www.umlsec.de/profiles/UMLsec#//critical"/>
+        <attributes xmi:id="_TprIkB0JEeuO7Y24MIpqMA" value="supplierCritical">
+          <type href="http://www.umlsec.de/profiles/UMLsec#//critical/secrecy"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_s7qUcA_HEeudadBB8ldcmg" name="supplierClass" incoming="_utISEA_HEeudadBB8ldcmg _eGKYcA_KEeudadBB8ldcmg" outgoing="_1Hu-AA_HEeudadBB8ldcmg">
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+      </nodes>
+      <nodes xmi:id="_yokz8A_HEeudadBB8ldcmg" name="member" incoming="_1Hu-AA_HEeudadBB8ldcmg _efL8cA_KEeudadBB8ldcmg">
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Feature"/>
+        <attributes xmi:id="_hxVm0B0JEeuO7Y24MIpqMA" value="member">
+          <type href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_URKCMA_KEeudadBB8ldcmg" outgoing="_fGsBUA_KEeudadBB8ldcmg _fhdRwA_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType"/>
+      </nodes>
+      <nodes xmi:id="_VgNPQA_KEeudadBB8ldcmg" outgoing="_efL8cA_KEeudadBB8ldcmg _es_H4A_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember"/>
+      </nodes>
+      <nodes xmi:id="_X531UA_KEeudadBB8ldcmg" name="clientClass" incoming="_fGsBUA_KEeudadBB8ldcmg">
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+      </nodes>
+      <nodes xmi:id="_aV82MA_KEeudadBB8ldcmg" incoming="_d1-nYA_KEeudadBB8ldcmg" outgoing="_mAyssA_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
+      </nodes>
+      <nodes xmi:id="_acSuwA_KEeudadBB8ldcmg" incoming="_fhdRwA_KEeudadBB8ldcmg" outgoing="_odpJoA_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
+      </nodes>
+      <nodes xmi:id="_a5JC0A_KEeudadBB8ldcmg" incoming="_ni0gIA_KEeudadBB8ldcmg" outgoing="_oDeWIA_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
+      </nodes>
+      <nodes xmi:id="_cBi1UA_KEeudadBB8ldcmg" incoming="_es_H4A_KEeudadBB8ldcmg _mAyssA_KEeudadBB8ldcmg _oDeWIA_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+      </nodes>
+      <nodes xmi:id="_cHRC0A_KEeudadBB8ldcmg" incoming="_odpJoA_KEeudadBB8ldcmg" outgoing="_ni0gIA_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+      </nodes>
+      <edges xmi:id="_utISEA_HEeudadBB8ldcmg" source="_ruQtMA_HEeudadBB8ldcmg" target="_s7qUcA_HEeudadBB8ldcmg">
+        <type href="http://www.umlsec.de/profiles/UMLsec#//critical/base_Classifier"/>
+      </edges>
+      <edges xmi:id="_1Hu-AA_HEeudadBB8ldcmg" source="_s7qUcA_HEeudadBB8ldcmg" target="_yokz8A_HEeudadBB8ldcmg">
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/member"/>
+      </edges>
+      <edges xmi:id="_efL8cA_KEeudadBB8ldcmg" source="_VgNPQA_KEeudadBB8ldcmg" target="_yokz8A_HEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/source"/>
+      </edges>
+      <edges xmi:id="_es_H4A_KEeudadBB8ldcmg" source="_VgNPQA_KEeudadBB8ldcmg" target="_cBi1UA_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/target"/>
+      </edges>
+      <edges xmi:id="_fGsBUA_KEeudadBB8ldcmg" source="_URKCMA_KEeudadBB8ldcmg" target="_X531UA_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
+      </edges>
+      <edges xmi:id="_fhdRwA_KEeudadBB8ldcmg" source="_URKCMA_KEeudadBB8ldcmg" target="_acSuwA_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
+      </edges>
+      <edges xmi:id="_mAyssA_KEeudadBB8ldcmg" source="_aV82MA_KEeudadBB8ldcmg" target="_cBi1UA_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_ni0gIA_KEeudadBB8ldcmg" source="_cHRC0A_KEeudadBB8ldcmg" target="_a5JC0A_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
+      </edges>
+      <edges xmi:id="_oDeWIA_KEeudadBB8ldcmg" source="_a5JC0A_KEeudadBB8ldcmg" target="_cBi1UA_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/target"/>
+      </edges>
+      <edges xmi:id="_odpJoA_KEeudadBB8ldcmg" source="_acSuwA_KEeudadBB8ldcmg" target="_cHRC0A_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_1MtdQA_KEeudadBB8ldcmg">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_1MtdQQ_KEeudadBB8ldcmg">
+          <conclusion xmi:id="_1MtdQg_KEeudadBB8ldcmg">
+            <nodes xmi:id="_whwKAA_KEeudadBB8ldcmg" outgoing="_yIF1sA_KEeudadBB8ldcmg">
+              <type href="http://www.umlsec.de/profiles/UMLsec#//critical"/>
+              <attributes xmi:id="_tSkOUB0JEeuO7Y24MIpqMA" value="clientCritical">
+                <type href="http://www.umlsec.de/profiles/UMLsec#//critical/secrecy"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_1MuEUg_KEeudadBB8ldcmg" incoming="_yIF1sA_KEeudadBB8ldcmg _3fxFCA_KEeudadBB8ldcmg">
+              <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+            </nodes>
+            <nodes xmi:id="_3fv24A_KEeudadBB8ldcmg" outgoing="_3fv25A_KEeudadBB8ldcmg">
+              <type href="http://www.umlsec.de/profiles/UMLsec#//critical"/>
+              <attributes xmi:id="_Tps9wR0JEeuO7Y24MIpqMA" value="supplierCritical">
+                <type href="http://www.umlsec.de/profiles/UMLsec#//critical/secrecy"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_3fv24g_KEeudadBB8ldcmg" incoming="_3fv25A_KEeudadBB8ldcmg _3fwd8g_KEeudadBB8ldcmg" outgoing="_3fwd9Q_KEeudadBB8ldcmg">
+              <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+            </nodes>
+            <nodes xmi:id="_3fwd8w_KEeudadBB8ldcmg" incoming="_3fwd9Q_KEeudadBB8ldcmg _3fwd-A_KEeudadBB8ldcmg">
+              <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Feature"/>
+              <attributes xmi:id="_hxWN4R0JEeuO7Y24MIpqMA" value="member">
+                <type href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_3fwd9g_KEeudadBB8ldcmg" outgoing="_3fwd-A_KEeudadBB8ldcmg _3fxsFQ_KEeudadBB8ldcmg">
+              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember"/>
+            </nodes>
+            <nodes xmi:id="_3fxFAw_KEeudadBB8ldcmg" incoming="_3fxFBQ_KEeudadBB8ldcmg" outgoing="_3fxsFw_KEeudadBB8ldcmg">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
+            </nodes>
+            <nodes xmi:id="_3fxFBg_KEeudadBB8ldcmg" outgoing="_3fxFCA_KEeudadBB8ldcmg _3fxsEg_KEeudadBB8ldcmg">
+              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType"/>
+            </nodes>
+            <nodes xmi:id="_3fxsEA_KEeudadBB8ldcmg" incoming="_3fxsEg_KEeudadBB8ldcmg" outgoing="_3fyTIg_KEeudadBB8ldcmg">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
+            </nodes>
+            <nodes xmi:id="_3fxsEw_KEeudadBB8ldcmg" incoming="_3fxsFQ_KEeudadBB8ldcmg _3fxsFw_KEeudadBB8ldcmg _3fyTJg_KEeudadBB8ldcmg">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+            </nodes>
+            <nodes xmi:id="_3fyTIA_KEeudadBB8ldcmg" incoming="_3fyTIg_KEeudadBB8ldcmg" outgoing="_3fyTJQ_KEeudadBB8ldcmg">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+            </nodes>
+            <nodes xmi:id="_3fyTIw_KEeudadBB8ldcmg" incoming="_3fyTJQ_KEeudadBB8ldcmg" outgoing="_3fyTJg_KEeudadBB8ldcmg">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
+            </nodes>
+            <edges xmi:id="_yIF1sA_KEeudadBB8ldcmg" source="_whwKAA_KEeudadBB8ldcmg" target="_1MuEUg_KEeudadBB8ldcmg">
+              <type href="http://www.umlsec.de/profiles/UMLsec#//critical/base_Classifier"/>
+            </edges>
+            <edges xmi:id="_3fv25A_KEeudadBB8ldcmg" source="_3fv24A_KEeudadBB8ldcmg" target="_3fv24g_KEeudadBB8ldcmg">
+              <type href="http://www.umlsec.de/profiles/UMLsec#//critical/base_Classifier"/>
+            </edges>
+            <edges xmi:id="_3fwd9Q_KEeudadBB8ldcmg" source="_3fv24g_KEeudadBB8ldcmg" target="_3fwd8w_KEeudadBB8ldcmg">
+              <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/member"/>
+            </edges>
+            <edges xmi:id="_3fwd-A_KEeudadBB8ldcmg" source="_3fwd9g_KEeudadBB8ldcmg" target="_3fwd8w_KEeudadBB8ldcmg">
+              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/source"/>
+            </edges>
+            <edges xmi:id="_3fxFCA_KEeudadBB8ldcmg" source="_3fxFBg_KEeudadBB8ldcmg" target="_1MuEUg_KEeudadBB8ldcmg">
+              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
+            </edges>
+            <edges xmi:id="_3fxsEg_KEeudadBB8ldcmg" source="_3fxFBg_KEeudadBB8ldcmg" target="_3fxsEA_KEeudadBB8ldcmg">
+              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
+            </edges>
+            <edges xmi:id="_3fxsFQ_KEeudadBB8ldcmg" source="_3fwd9g_KEeudadBB8ldcmg" target="_3fxsEw_KEeudadBB8ldcmg">
+              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/target"/>
+            </edges>
+            <edges xmi:id="_3fxsFw_KEeudadBB8ldcmg" source="_3fxFAw_KEeudadBB8ldcmg" target="_3fxsEw_KEeudadBB8ldcmg">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+            </edges>
+            <edges xmi:id="_3fyTIg_KEeudadBB8ldcmg" source="_3fxsEA_KEeudadBB8ldcmg" target="_3fyTIA_KEeudadBB8ldcmg">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+            </edges>
+            <edges xmi:id="_3fyTJQ_KEeudadBB8ldcmg" source="_3fyTIA_KEeudadBB8ldcmg" target="_3fyTIw_KEeudadBB8ldcmg">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
+            </edges>
+            <edges xmi:id="_3fyTJg_KEeudadBB8ldcmg" source="_3fyTIw_KEeudadBB8ldcmg" target="_3fxsEw_KEeudadBB8ldcmg">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/target"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_1MuEUw_KEeudadBB8ldcmg" origin="_X531UA_KEeudadBB8ldcmg" image="_1MuEUg_KEeudadBB8ldcmg"/>
+          <mappings xmi:id="_3fv24Q_KEeudadBB8ldcmg" origin="_ruQtMA_HEeudadBB8ldcmg" image="_3fv24A_KEeudadBB8ldcmg"/>
+          <mappings xmi:id="_3fv24w_KEeudadBB8ldcmg" origin="_s7qUcA_HEeudadBB8ldcmg" image="_3fv24g_KEeudadBB8ldcmg"/>
+          <mappings xmi:id="_3fwd9A_KEeudadBB8ldcmg" origin="_yokz8A_HEeudadBB8ldcmg" image="_3fwd8w_KEeudadBB8ldcmg"/>
+          <mappings xmi:id="_3fwd9w_KEeudadBB8ldcmg" origin="_VgNPQA_KEeudadBB8ldcmg" image="_3fwd9g_KEeudadBB8ldcmg"/>
+          <mappings xmi:id="_3fxFBA_KEeudadBB8ldcmg" origin="_aV82MA_KEeudadBB8ldcmg" image="_3fxFAw_KEeudadBB8ldcmg"/>
+          <mappings xmi:id="_3fxFBw_KEeudadBB8ldcmg" origin="_URKCMA_KEeudadBB8ldcmg" image="_3fxFBg_KEeudadBB8ldcmg"/>
+          <mappings xmi:id="_3fxsEQ_KEeudadBB8ldcmg" origin="_acSuwA_KEeudadBB8ldcmg" image="_3fxsEA_KEeudadBB8ldcmg"/>
+          <mappings xmi:id="_3fxsFA_KEeudadBB8ldcmg" origin="_cBi1UA_KEeudadBB8ldcmg" image="_3fxsEw_KEeudadBB8ldcmg"/>
+          <mappings xmi:id="_3fyTIQ_KEeudadBB8ldcmg" origin="_cHRC0A_KEeudadBB8ldcmg" image="_3fyTIA_KEeudadBB8ldcmg"/>
+          <mappings xmi:id="_3fyTJA_KEeudadBB8ldcmg" origin="_a5JC0A_KEeudadBB8ldcmg" image="_3fyTIw_KEeudadBB8ldcmg"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_oQrMAQ_HEeudadBB8ldcmg" name="Rhs">
+      <nodes xmi:id="_ruQtMQ_HEeudadBB8ldcmg" outgoing="_utISEQ_HEeudadBB8ldcmg">
+        <type href="http://www.umlsec.de/profiles/UMLsec#//critical"/>
+        <attributes xmi:id="_Tps9wB0JEeuO7Y24MIpqMA" value="supplierCritical">
+          <type href="http://www.umlsec.de/profiles/UMLsec#//critical/secrecy"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_s7qUcQ_HEeudadBB8ldcmg" name="supplierClass" incoming="_utISEQ_HEeudadBB8ldcmg _eGKYcQ_KEeudadBB8ldcmg" outgoing="_1HvlEA_HEeudadBB8ldcmg">
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+      </nodes>
+      <nodes xmi:id="_yokz8Q_HEeudadBB8ldcmg" name="member" incoming="_1HvlEA_HEeudadBB8ldcmg _efL8cQ_KEeudadBB8ldcmg">
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Feature"/>
+        <attributes xmi:id="_hxWN4B0JEeuO7Y24MIpqMA" value="member">
+          <type href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_UEk-wA_KEeudadBB8ldcmg" outgoing="_d1-nYQ_KEeudadBB8ldcmg _eGKYcQ_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType"/>
+      </nodes>
+      <nodes xmi:id="_URKCMQ_KEeudadBB8ldcmg" outgoing="_fGsBUQ_KEeudadBB8ldcmg _fhd40A_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType"/>
+      </nodes>
+      <nodes xmi:id="_VgNPQQ_KEeudadBB8ldcmg" outgoing="_efL8cQ_KEeudadBB8ldcmg _es_H4Q_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember"/>
+      </nodes>
+      <nodes xmi:id="_X531UQ_KEeudadBB8ldcmg" name="clientClass" incoming="_fGsBUQ_KEeudadBB8ldcmg">
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+      </nodes>
+      <nodes xmi:id="_aV82MQ_KEeudadBB8ldcmg" incoming="_d1-nYQ_KEeudadBB8ldcmg" outgoing="_mAzTwA_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
+      </nodes>
+      <nodes xmi:id="_acSuwQ_KEeudadBB8ldcmg" incoming="_fhd40A_KEeudadBB8ldcmg" outgoing="_odpJoQ_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
+      </nodes>
+      <nodes xmi:id="_a5Jp4A_KEeudadBB8ldcmg" incoming="_ni0gIQ_KEeudadBB8ldcmg" outgoing="_oDeWIQ_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
+      </nodes>
+      <nodes xmi:id="_cBi1UQ_KEeudadBB8ldcmg" incoming="_es_H4Q_KEeudadBB8ldcmg _mAzTwA_KEeudadBB8ldcmg _oDeWIQ_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+      </nodes>
+      <nodes xmi:id="_cHRC0Q_KEeudadBB8ldcmg" incoming="_odpJoQ_KEeudadBB8ldcmg" outgoing="_ni0gIQ_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+      </nodes>
+      <edges xmi:id="_utISEQ_HEeudadBB8ldcmg" source="_ruQtMQ_HEeudadBB8ldcmg" target="_s7qUcQ_HEeudadBB8ldcmg">
+        <type href="http://www.umlsec.de/profiles/UMLsec#//critical/base_Classifier"/>
+      </edges>
+      <edges xmi:id="_1HvlEA_HEeudadBB8ldcmg" source="_s7qUcQ_HEeudadBB8ldcmg" target="_yokz8Q_HEeudadBB8ldcmg">
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/member"/>
+      </edges>
+      <edges xmi:id="_d1-nYQ_KEeudadBB8ldcmg" source="_UEk-wA_KEeudadBB8ldcmg" target="_aV82MQ_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
+      </edges>
+      <edges xmi:id="_eGKYcQ_KEeudadBB8ldcmg" source="_UEk-wA_KEeudadBB8ldcmg" target="_s7qUcQ_HEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
+      </edges>
+      <edges xmi:id="_efL8cQ_KEeudadBB8ldcmg" source="_VgNPQQ_KEeudadBB8ldcmg" target="_yokz8Q_HEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/source"/>
+      </edges>
+      <edges xmi:id="_es_H4Q_KEeudadBB8ldcmg" source="_VgNPQQ_KEeudadBB8ldcmg" target="_cBi1UQ_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/target"/>
+      </edges>
+      <edges xmi:id="_fGsBUQ_KEeudadBB8ldcmg" source="_URKCMQ_KEeudadBB8ldcmg" target="_X531UQ_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
+      </edges>
+      <edges xmi:id="_fhd40A_KEeudadBB8ldcmg" source="_URKCMQ_KEeudadBB8ldcmg" target="_acSuwQ_KEeudadBB8ldcmg">
+        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
+      </edges>
+      <edges xmi:id="_mAzTwA_KEeudadBB8ldcmg" source="_aV82MQ_KEeudadBB8ldcmg" target="_cBi1UQ_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_ni0gIQ_KEeudadBB8ldcmg" source="_cHRC0Q_KEeudadBB8ldcmg" target="_a5Jp4A_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
+      </edges>
+      <edges xmi:id="_oDeWIQ_KEeudadBB8ldcmg" source="_a5Jp4A_KEeudadBB8ldcmg" target="_cBi1UQ_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/target"/>
+      </edges>
+      <edges xmi:id="_odpJoQ_KEeudadBB8ldcmg" source="_acSuwQ_KEeudadBB8ldcmg" target="_cHRC0Q_KEeudadBB8ldcmg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_FUC68A_QEeudadBB8ldcmg" name="Check if supplier specifies member as critical" conditionText="supplierCritical.contains(member)"/>
+    <attributeConditions xmi:id="_Im-O0A_REeudadBB8ldcmg" name="Check if client specified member as critical" conditionText="clientCritical.contains(member)"/>
+    <mappings xmi:id="_ruR7UA_HEeudadBB8ldcmg" origin="_ruQtMA_HEeudadBB8ldcmg" image="_ruQtMQ_HEeudadBB8ldcmg"/>
+    <mappings xmi:id="_s7qUcg_HEeudadBB8ldcmg" origin="_s7qUcA_HEeudadBB8ldcmg" image="_s7qUcQ_HEeudadBB8ldcmg"/>
+    <mappings xmi:id="_yokz8g_HEeudadBB8ldcmg" origin="_yokz8A_HEeudadBB8ldcmg" image="_yokz8Q_HEeudadBB8ldcmg"/>
+    <mappings xmi:id="_UEk-wQ_KEeudadBB8ldcmg" origin="_UEkXsA_KEeudadBB8ldcmg" image="_UEk-wA_KEeudadBB8ldcmg"/>
+    <mappings xmi:id="_URKCMg_KEeudadBB8ldcmg" origin="_URKCMA_KEeudadBB8ldcmg" image="_URKCMQ_KEeudadBB8ldcmg"/>
+    <mappings xmi:id="_VgNPQg_KEeudadBB8ldcmg" origin="_VgNPQA_KEeudadBB8ldcmg" image="_VgNPQQ_KEeudadBB8ldcmg"/>
+    <mappings xmi:id="_X531Ug_KEeudadBB8ldcmg" origin="_X531UA_KEeudadBB8ldcmg" image="_X531UQ_KEeudadBB8ldcmg"/>
+    <mappings xmi:id="_aV82Mg_KEeudadBB8ldcmg" origin="_aV82MA_KEeudadBB8ldcmg" image="_aV82MQ_KEeudadBB8ldcmg"/>
+    <mappings xmi:id="_acSuwg_KEeudadBB8ldcmg" origin="_acSuwA_KEeudadBB8ldcmg" image="_acSuwQ_KEeudadBB8ldcmg"/>
+    <mappings xmi:id="_a5Jp4Q_KEeudadBB8ldcmg" origin="_a5JC0A_KEeudadBB8ldcmg" image="_a5Jp4A_KEeudadBB8ldcmg"/>
+    <mappings xmi:id="_cBjcYA_KEeudadBB8ldcmg" origin="_cBi1UA_KEeudadBB8ldcmg" image="_cBi1UQ_KEeudadBB8ldcmg"/>
+    <mappings xmi:id="_cHRC0g_KEeudadBB8ldcmg" origin="_cHRC0A_KEeudadBB8ldcmg" image="_cHRC0Q_KEeudadBB8ldcmg"/>
+    <javaImports>org.gravity.pm.umlsec</javaImports>
+  </units>
+</henshin:Module>

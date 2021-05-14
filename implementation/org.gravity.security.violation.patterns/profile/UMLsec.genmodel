@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
+    modelDirectory="/carisma.profile.umlsec/gen-src" modelPluginID="carisma.profile.umlsec"
+    modelName="UMLsec" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    operationReflection="true" importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="NON_API_INVARIANTS" value="IGNORE"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="OPERATION_BODIES" value="IGNORE"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNTYPED_PROPERTIES" value="REPORT"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="INVOCATION_DELEGATES" value="IGNORE"/>
+    <details key="VALIDATION_DELEGATES" value="IGNORE"/>
+  </genAnnotations>
+  <foreignModel>UMLsec.profile.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Umlsec" basePackage="carisma.profile"
+      disposableProviderFactory="true" ecorePackage="UMLsec.ecore#/">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//protectedaction">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//protectedaction/permission"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//protectedaction/base_Action"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//protectedaction/base_State"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//rbac">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//rbac/protectedactions"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//rbac/role"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//rbac/right"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//rbac/base_Package"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//SAPTransaction">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//SAPTransaction/id"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//SAPTransaction/base_Action"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//allowedusers">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//allowedusers/base_Action"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//allowedusers/users"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//seperationofduty">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//seperationofduty/base_Action"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//seperationofduty/activity"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//usedby">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//usedby/user"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//usedby/base_Action"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//usedby/base_State"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//identifiable">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//identifiable/id"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//identifiable/base_Element"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//securedependency">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//securedependency/base_Package"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//call">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//call/base_Dependency"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//send">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//send/base_Dependency"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//secrecy">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//secrecy/base_Dependency"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//secrecy/base_Connector"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//integrity">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//integrity/base_Dependency"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//integrity/base_Connector"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//high">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//high/base_Dependency"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//high/base_Connector"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//encrypted">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//encrypted/base_CommunicationPath"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//wire">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//wire/base_CommunicationPath"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//Internet">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//Internet/base_CommunicationPath"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//LAN">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//LAN/base_CommunicationPath"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//LAN/base_Node"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//smartcard">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//smartcard/base_Node"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//POSdevice">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//POSdevice/base_Node"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//issuernode">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//issuernode/base_Node"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//critical">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//critical/secrecy"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//critical/integrity"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//critical/high"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//critical/base_Class"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//critical/base_Component"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//critical/fresh"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//critical/authenticity"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//critical/base_InstanceSpecification"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//critical/base_Classifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//critical/privacy"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//datasecurity">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//datasecurity/adversary"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//datasecurity/base_Package"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//datasecurity/authenticity"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//datasecurity/integrity"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//securelinks">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//securelinks/adversary"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//securelinks/base_Package"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//fairexchange">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//fairexchange/start"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//fairexchange/stop"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//fairexchange/adversary"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//fairexchange/base_Package"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//provable">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//provable/action"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//provable/adversary"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//provable/cert"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//provable/base_Package"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//nodownflow">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//nodownflow/base_Package"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//noupflow">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//noupflow/base_Package"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//guardedaccess">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//guardedaccess/base_Package"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//guarded">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//guarded/base_Classifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//guarded/base_InstanceSpecification"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//guarded/guard"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//authorizedstatus">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLsec.ecore#//authorizedstatus/permission"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//authorizedstatus/base_State"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//lockedstatus">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//lockedstatus/base_State"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//requires">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//requires/base_Action"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//requires/actions"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLsec.ecore#//privacy">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//privacy/base_Dependency"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLsec.ecore#//privacy/base_Connector"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

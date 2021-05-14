@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GRaViTY UMLsec at Code
+Bundle-SymbolicName: org.gravity.security.violation.patterns;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: University of Koblenz-Landau
+Automatic-Module-Name: org.gravity.pm.umlsec
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: carisma.profile.umlsec,
+ org.gravity.typegraph.basic,
+ org.eclipse.emf.henshin.interpreter;bundle-version="1.7.0",
+ org.gravity.tgg.pm.uml,
+ org.moflon.tgg.runtime,
+ org.junit,
+ org.gravity.security.annotations,
+ carisma.check.staticcheck;bundle-version="1.0.4",
+ carisma.core,
+ org.apache.log4j
+Export-Package: org.gravity.pm.umlsec
+Bundle-ActivationPolicy: lazy

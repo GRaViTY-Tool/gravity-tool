@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLsec="http://www.umlsec.de/profiles/UMLsec" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_oRbFAIA4EeuMr9T3bpd3Og" name="compliant">
+    <packagedElement xmi:type="uml:Package" xmi:id="_oRhysIA4EeuMr9T3bpd3Og" name="compliant">
+      <packagedElement xmi:type="uml:Class" xmi:id="_oRmEIIA4EeuMr9T3bpd3Og" name="Supplier">
+        <ownedOperation xmi:id="_oSJdwIA4EeuMr9T3bpd3Og" name="method"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_oSL6AIA4EeuMr9T3bpd3Og" name="Client">
+        <ownedOperation xmi:id="_oSMhEIA4EeuMr9T3bpd3Og" name="caller"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_oSO9UIA4EeuMr9T3bpd3Og" client="_oSL6AIA4EeuMr9T3bpd3Og" supplier="_oRmEIIA4EeuMr9T3bpd3Og"/>
+    </packagedElement>
+    <profileApplication xmi:id="_oSRZkIA4EeuMr9T3bpd3Og">
+      <eAnnotations xmi:id="_oST10IA4EeuMr9T3bpd3Og" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.umlsec.de/profiles/UMLsec#/"/>
+      </eAnnotations>
+      <appliedProfile href="file:/home/speldszus/Documents/git/carisma-tool/plugins/carisma.profile.umlsec/profile/UMLsec.profile.uml#_kGQWQDnkEeCyb9nmG-9Lpw"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLsec:critical xmi:id="_oSZ8cIA4EeuMr9T3bpd3Og" base_Class="_oRmEIIA4EeuMr9T3bpd3Og" base_Classifier="_oRmEIIA4EeuMr9T3bpd3Og">
+    <secrecy>method</secrecy>
+  </UMLsec:critical>
+  <UMLsec:critical xmi:id="_oSajgIA4EeuMr9T3bpd3Og" base_Class="_oSL6AIA4EeuMr9T3bpd3Og" base_Classifier="_oSL6AIA4EeuMr9T3bpd3Og">
+    <secrecy>method</secrecy>
+  </UMLsec:critical>
+</xmi:XMI>
