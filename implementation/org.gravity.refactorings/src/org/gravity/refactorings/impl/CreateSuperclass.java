@@ -100,26 +100,38 @@ public class CreateSuperclass implements Refactoring {
 			return false;
 		}
 
-		// All child need the same base package and parent
-		final TPackage basePackage = firstChild.getBasePackage();
-		final EList<TClass> parents = firstChild.getParentClasses();
 		final TClass object = programModel.getClass("java.lang.Object");
+
+		// All child need the same base package and parent
+		final TPackage expectedBasePackage = firstChild.getBasePackage();
+		final List<TClass> expectedParents = firstChild.getParentClasses();
 		for (int i = 1; i < child.size(); i++) {
 			final TClass nextChild = child.get(i);
-			if (!basePackage.equals(nextChild.getBasePackage())) {
+			if (!expectedBasePackage.equals(nextChild.getBasePackage())) {
 				return false;
 			}
 			final List<TClass> parentClasses = nextChild.getParentClasses();
-			if ((parents == null) || parents.isEmpty()) {
-				if ((parentClasses.size() > 1) || ((parentClasses != null) && !parentClasses.contains(object))) {
+
+			// Check that the next child has all parent classes the first one has
+			for (final TAbstractType expectedParent : expectedParents) {
+				if (!expectedParent.equals(object) && !parentClasses.contains(expectedParent)) {
 					return false;
 				}
-			} else if ((parents.size() != parentClasses.size()) && !parents.containsAll(parentClasses)) {
-				return false;
+			}
+			// Check that the next child has no additional parents
+			for (final TAbstractType parent : parentClasses) {
+				if (!parent.equals(object) && !expectedParents.contains(parent)) {
+					return false;
+				}
 			}
 		}
 
 		return true;
+	}
+
+	private boolean hasOnlyObjectAsParent(final TClass object, final TClass child) {
+		final List<TClass> parents = child.getParents();
+		return parents.isEmpty() || ((parents.size() == 1) && parents.contains(object));
 	}
 
 	@Override
