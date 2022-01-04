@@ -61,18 +61,18 @@ public class PullUpMethod implements Refactoring {
 		final List<TClass> container = new LinkedList<>();
 		final TMethodDefinition tMethodDefinition = PullUpMethod.selectRandomDefinitionOfChild(parent, method);
 		if (tMethodDefinition != null) {
-			final TClass tmpChild = (TClass) tMethodDefinition.getDefinedBy();
-			tmpChild.getSignature().remove(method);
+			final TClass oldImplementingClass = (TClass) tMethodDefinition.getDefinedBy();
+			oldImplementingClass.getSignature().remove(method);
 			parent.getSignature().add(method);
 			tMethodDefinition.setDefinedBy(parent);
-			container.add(tmpChild);
+			container.add(oldImplementingClass);
 
 			final List<EObject> delete = new LinkedList<>();
 			for (final TMethodDefinition childsDefinition : method.getMethodDefinitions()) {
 				final TAbstractType tmpTChild = childsDefinition.getDefinedBy();
 				if (tmpTChild instanceof TClass) {
 					final TClass tChild = (TClass) tmpTChild;
-					if (!parent.equals(tmpChild) && parent.equals(tChild.getParentClasses().get(0))
+					if (!parent.equals(tChild) && tChild.getParentClasses().contains(parent)
 							&& tChild.getSignature().contains(method)) {
 						container.add(tChild);
 						delete.add(childsDefinition);
