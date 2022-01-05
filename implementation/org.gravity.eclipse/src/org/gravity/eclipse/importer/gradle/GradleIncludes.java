@@ -1,6 +1,5 @@
 package org.gravity.eclipse.importer.gradle;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -20,7 +19,7 @@ public final class GradleIncludes {
 	private final Set<Path> includes;
 	private final Set<Path> buildDotGradleFiles;
 
-	public GradleIncludes(File rootDir) throws NoRootFolderException, IOException {
+	public GradleIncludes(final File rootDir) throws NoRootFolderException, IOException {
 		this.includes = new HashSet<>();
 		if (new File(rootDir, "src").exists()) {
 			getIncludes().add(rootDir.toPath());
@@ -35,39 +34,56 @@ public final class GradleIncludes {
 
 	/**
 	 * Searches if the included sub project and all its sub projects in the root
-	 * @param include              The the include specification
-	 * @param rootDir              The root of the project
-	 * @param buildDotGradleFiles  All included build.gradle files
-	 * @throws IOException  If a settings file cannot be read
+	 *
+	 * @param contentString             The the include specification
+	 * @param rootDir             The root of the project
+	 * @param buildDotGradleFiles All included build.gradle files
+	 * @throws IOException If a settings file cannot be read
 	 */
-	public void searchSingleInclude(String include, File rootDir, Set<Path> buildDotGradleFiles) throws IOException {
-		final Matcher mEntry = GradleRegexPatterns.INCLUDE_ENTRY.matcher(include);
-		while (mEntry.find()) {
-			final String includeMatch = mEntry.group(4);
-			final String subProject = includeMatch.replace(':', File.separatorChar);
-			final File nextRoot = FileUtils.findRecursive(rootDir, subProject);
-			if (nextRoot != null) {
-				if (this.includes.add(nextRoot.toPath())) {
-					try {
-						buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
-					} catch (final NoRootFolderException e) {
-						GradleImport.LOGGER.log(Level.WARN,
-								"The subroot \"" + nextRoot + "\" has no build.gradle file!");
-					}
-				}
-			} else {
-				GradleImport.LOGGER.log(Level.ERROR, "Include not found: " + includeMatch);
+	public void searchSingleInclude(final String contentString, final File rootDir, final Set<Path> buildDotGradleFiles)
+			throws IOException {
+		final Matcher includeMatcher = GradleRegexPatterns.INCLUDE.matcher(contentString);
+		while (includeMatcher.find()) {
+			final String match = includeMatcher.group(1);
+			for (final String includeMatch : match.split(",")) {
+				addInclude(includeMatch.trim(), rootDir, buildDotGradleFiles);
 			}
 		}
 	}
 
 	/**
+	 * @param include The name of the include
+	 * @param rootDir The root of the project
+	 * @param buildDotGradleFiles All included build.gradle files
+	 * @throws IOException If a settings file cannot be read
+	 */
+	private void addInclude(final String include, final File rootDir, final Set<Path> buildDotGradleFiles)
+			throws IOException {
+		final String subProject = include.replace("'", "").replace("\"", "").replace(':',
+				File.separatorChar);
+		final File nextRoot = FileUtils.findRecursive(rootDir, subProject);
+		if (nextRoot != null) {
+			if (this.includes.add(nextRoot.toPath())) {
+				try {
+					buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
+				} catch (final NoRootFolderException e) {
+					GradleImport.LOGGER.log(Level.WARN,
+							"The subroot \"" + nextRoot + "\" has no build.gradle file!");
+				}
+			}
+		} else {
+			GradleImport.LOGGER.log(Level.ERROR, "Include not found: " + include);
+		}
+	}
+
+	/**
 	 * Searches all java source files of the gradle project
-	 * @param buildDotGradle  The path to the build.gradle file
-	 * @return  All java source files of the build
+	 *
+	 * @param buildDotGradle The path to the build.gradle file
+	 * @return All java source files of the build
 	 * @throws IOException
 	 */
-	public Set<Path> getJavaSourceFiles(Path buildDotGradle) throws IOException {
+	public Set<Path> getJavaSourceFiles(final Path buildDotGradle) throws IOException {
 		Set<Path> javaSourceFiles = null;
 		try {
 			javaSourceFiles = new GradleJavaFiles(buildDotGradle).getJavaFiles();
@@ -76,7 +92,7 @@ public final class GradleIncludes {
 		} catch (final GradleImportException e) {
 			GradleImport.LOGGER.log(Level.INFO, e.getMessage(), e);
 		}
-		if (javaSourceFiles == null || javaSourceFiles.isEmpty()) {
+		if ((javaSourceFiles == null) || javaSourceFiles.isEmpty()) {
 			GradleImport.LOGGER.warn("Falling back to manual analysis of build.gradle files!");
 			javaSourceFiles = new HashSet<>();
 			for (final Path root : this.includes) {
@@ -86,7 +102,7 @@ public final class GradleIncludes {
 		return javaSourceFiles;
 	}
 
-	public final Set<Path> scanDirectoryForSubRoots(File rootDir) throws IOException, NoRootFolderException {
+	public Set<Path> scanDirectoryForSubRoots(final File rootDir) throws IOException, NoRootFolderException {
 		final Set<Path> subRoots = new HashSet<>();
 		final File buildFile = new File(rootDir, "build.gradle");
 		if (buildFile.exists()) {
@@ -113,30 +129,26 @@ public final class GradleIncludes {
 	}
 
 	/**
-	 * Searches for includes in the settings file and adds those build.gradle files to the set of build.gradle files
-	 * @param contentString  The content of the settings file
-	 * @param rootDir        The gradle root dir
-	 * @param defs           A table of defined vars
+	 * Searches for includes in the settings file and adds those build.gradle files
+	 * to the set of build.gradle files
+	 *
+	 * @param contentString The content of the settings file
+	 * @param rootDir       The gradle root dir
+	 * @param defs          A table of defined vars
 	 * @throws IOException
 	 */
-	public final Set<Path> searchIncludes(String contentString, File rootDir, Map<String, String> defs)
+	public Set<Path> searchIncludes(final String contentString, final File rootDir, final Map<String, String> defs)
 			throws IOException {
 		final Set<Path> includedFiles = new HashSet<>();
-		final Matcher includeMatcher = GradleRegexPatterns.INCLUDE.matcher(contentString);
-		while (includeMatcher.find()) {
-			String match = includeMatcher.group(4);
-			if (match != null) {
-				final String var = includeMatcher.group(15);
-				if (var != null) {
-					match = defs.get(var);
-				}
-			}
-			searchSingleInclude(match, rootDir, includedFiles);
+		searchSingleInclude(contentString, rootDir, includedFiles);
+		final Matcher matcher = GradleRegexPatterns.INCLUDE_VAR.matcher(contentString);
+		while(matcher.find()) {
+			addInclude(matcher.group(2), rootDir, includedFiles);
 		}
 		return includedFiles;
 	}
 
-	public void scanRootForSourceFiles(File rootDir, Set<Path> javaSourceFiles) throws IOException {
+	public void scanRootForSourceFiles(final File rootDir, final Set<Path> javaSourceFiles) throws IOException {
 		final File srcFolder = new File(rootDir, "src");
 		if (srcFolder.exists()) {
 			for (final String name : new String[] { "main", "java" }) {
