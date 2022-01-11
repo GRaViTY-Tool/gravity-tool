@@ -2,6 +2,8 @@
  */
 package org.gravity.typegraph.basic;
 
+import org.gravity.typegraph.basic.annotations.TAnnotatable;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>TAccess</b></em>'.
@@ -20,7 +22,7 @@ package org.gravity.typegraph.basic;
  * @model abstract="true"
  * @generated
  */
-public interface TAccess extends TAbstractFlowElement {
+public interface TAccess extends TAbstractFlowElement, TAnnotatable {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMember#getAccessedBy <em>Accessed By</em>}'.

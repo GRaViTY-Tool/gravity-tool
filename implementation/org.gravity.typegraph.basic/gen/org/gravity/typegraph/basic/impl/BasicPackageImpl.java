@@ -480,7 +480,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTClass__GetResolvedParentClass() {
+	public EOperation getTClass__ToString() {
 		return tClassEClass.getEOperations().get(7);
 	}
 
@@ -490,7 +490,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTClass__ToString() {
+	public EOperation getTClass__GetParents() {
 		return tClassEClass.getEOperations().get(8);
 	}
 
@@ -500,18 +500,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTClass__GetParents() {
-		return tClassEClass.getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EOperation getTClass__HasCommonSuperType__TAbstractType() {
-		return tClassEClass.getEOperations().get(10);
+		return tClassEClass.getEOperations().get(9);
 	}
 
 	/**
@@ -2049,7 +2039,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(tClassEClass, TCLASS___IS_SUPER_TYPE_OF__TABSTRACTTYPE);
 		createEOperation(tClassEClass, TCLASS___GET_ALL_OUTGOING_ACCESSES__TSIGNATURE);
 		createEOperation(tClassEClass, TCLASS___HAS_APARENT_THIS_TMEMBER__TMEMBER);
-		createEOperation(tClassEClass, TCLASS___GET_RESOLVED_PARENT_CLASS);
 		createEOperation(tClassEClass, TCLASS___TO_STRING);
 		createEOperation(tClassEClass, TCLASS___GET_PARENTS);
 		createEOperation(tClassEClass, TCLASS___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE);
@@ -2267,6 +2256,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 
 		// Add supertypes to classes
 		tAccessEClass.getESuperTypes().add(this.getTAbstractFlowElement());
+		tAccessEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
 		tClassEClass.getESuperTypes().add(this.getTAbstractType());
 		tFieldEClass.getESuperTypes().add(this.getTName());
 		tFieldDefinitionEClass.getESuperTypes().add(this.getTMember());
@@ -2327,8 +2317,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 
 		op = initEOperation(getTClass__HasAParentThisTMember__TMember(), ecorePackage.getEBoolean(), "hasAParentThisTMember", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTMember(), "member", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getTClass__GetResolvedParentClass(), this.getTClass(), "getResolvedParentClass", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getTClass__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 

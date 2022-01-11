@@ -38,29 +38,21 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getSubpackages
- * <em>Subpackages</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getParent
- * <em>Parent</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getClasses
- * <em>Classes</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getInterfaces
- * <em>Interfaces</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getOwnedTypes
- * <em>Owned Types</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getModel
- * <em>Model</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getTName
- * <em>TName</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getSubpackages <em>Subpackages</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getParent <em>Parent</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getClasses <em>Classes</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getInterfaces <em>Interfaces</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getOwnedTypes <em>Owned Types</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getModel <em>Model</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TPackageImpl#getTName <em>TName</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	/**
-	 * The cached value of the '{@link #getSubpackages() <em>Subpackages</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getSubpackages() <em>Subpackages</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSubpackages()
 	 * @generated
 	 * @ordered
@@ -68,9 +60,8 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	protected EList<TPackage> subpackages;
 
 	/**
-	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getClasses()
 	 * @generated
 	 * @ordered
@@ -78,9 +69,8 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	protected EList<TClass> classes;
 
 	/**
-	 * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}'
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getInterfaces()
 	 * @generated
 	 * @ordered
@@ -88,9 +78,8 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	protected EList<TInterface> interfaces;
 
 	/**
-	 * The cached value of the '{@link #getOwnedTypes() <em>Owned Types</em>}'
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getOwnedTypes() <em>Owned Types</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOwnedTypes()
 	 * @generated
 	 * @ordered
@@ -129,15 +118,14 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected TPackageImpl() {
+		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -147,173 +135,148 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TPackage> getSubpackages() {
-		if (this.subpackages == null) {
-			this.subpackages = new EObjectContainmentWithInverseEList<>(TPackage.class, this,
-					BasicPackage.TPACKAGE__SUBPACKAGES, BasicPackage.TPACKAGE__PARENT);
+		if (subpackages == null) {
+			subpackages = new EObjectContainmentWithInverseEList<TPackage>(TPackage.class, this, BasicPackage.TPACKAGE__SUBPACKAGES, BasicPackage.TPACKAGE__PARENT);
 		}
-		return this.subpackages;
+		return subpackages;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public TPackage getParent() {
-		if (eContainerFeatureID() != BasicPackage.TPACKAGE__PARENT) {
-			return null;
-		}
-		return (TPackage) eInternalContainer();
+		if (eContainerFeatureID() != BasicPackage.TPACKAGE__PARENT) return null;
+		return (TPackage)eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetParent(final TPackage newParent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newParent, BasicPackage.TPACKAGE__PARENT, msgs);
+	public NotificationChain basicSetParent(TPackage newParent, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParent, BasicPackage.TPACKAGE__PARENT, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public void setParent(final TPackage newParent) {
-		if ((newParent != eInternalContainer())
-				|| ((eContainerFeatureID() != BasicPackage.TPACKAGE__PARENT) && (newParent != null))) {
-			if (EcoreUtil.isAncestor(this, newParent)) {
+	public void setParent(TPackage newParent) {
+		if (newParent != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TPACKAGE__PARENT && newParent != null)) {
+			if (EcoreUtil.isAncestor(this, newParent))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null) {
+			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			if (newParent != null) {
-				msgs = ((InternalEObject) newParent).eInverseAdd(this, BasicPackage.TPACKAGE__SUBPACKAGES,
-						TPackage.class, msgs);
-			}
+			if (newParent != null)
+				msgs = ((InternalEObject)newParent).eInverseAdd(this, BasicPackage.TPACKAGE__SUBPACKAGES, TPackage.class, msgs);
 			msgs = basicSetParent(newParent, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__PARENT, newParent, newParent));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__PARENT, newParent, newParent));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TClass> getClasses() {
-		if (this.classes == null) {
-			this.classes = new EObjectResolvingEList<>(TClass.class, this, BasicPackage.TPACKAGE__CLASSES);
+		if (classes == null) {
+			classes = new EObjectResolvingEList<TClass>(TClass.class, this, BasicPackage.TPACKAGE__CLASSES);
 		}
-		return this.classes;
+		return classes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TInterface> getInterfaces() {
-		if (this.interfaces == null) {
-			this.interfaces = new EObjectResolvingEList<>(TInterface.class, this, BasicPackage.TPACKAGE__INTERFACES);
+		if (interfaces == null) {
+			interfaces = new EObjectResolvingEList<TInterface>(TInterface.class, this, BasicPackage.TPACKAGE__INTERFACES);
 		}
-		return this.interfaces;
+		return interfaces;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TAbstractType> getOwnedTypes() {
-		if (this.ownedTypes == null) {
-			this.ownedTypes = new EObjectWithInverseResolvingEList<>(TAbstractType.class, this,
-					BasicPackage.TPACKAGE__OWNED_TYPES, BasicPackage.TABSTRACT_TYPE__PACKAGE);
+		if (ownedTypes == null) {
+			ownedTypes = new EObjectWithInverseResolvingEList<TAbstractType>(TAbstractType.class, this, BasicPackage.TPACKAGE__OWNED_TYPES, BasicPackage.TABSTRACT_TYPE__PACKAGE);
 		}
-		return this.ownedTypes;
+		return ownedTypes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public TypeGraph getModel() {
-		if ((this.model != null) && this.model.eIsProxy()) {
-			final InternalEObject oldModel = (InternalEObject) this.model;
-			this.model = (TypeGraph) eResolveProxy(oldModel);
-			if ((this.model != oldModel) && eNotificationRequired()) {
-				eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TPACKAGE__MODEL, oldModel,
-						this.model));
+		if (model != null && model.eIsProxy()) {
+			InternalEObject oldModel = (InternalEObject)model;
+			model = (TypeGraph)eResolveProxy(oldModel);
+			if (model != oldModel) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TPACKAGE__MODEL, oldModel, model));
 			}
 		}
-		return this.model;
+		return model;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public TypeGraph basicGetModel() {
-		return this.model;
+		return model;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public void setModel(final TypeGraph newModel) {
-		final TypeGraph oldModel = this.model;
-		this.model = newModel;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__MODEL, oldModel, this.model));
-		}
+	public void setModel(TypeGraph newModel) {
+		TypeGraph oldModel = model;
+		model = newModel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__MODEL, oldModel, model));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String getTName() {
-		return this.tName;
+		return tName;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public void setTName(final String newTName) {
-		final String oldTName = this.tName;
-		this.tName = newTName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__TNAME, oldTName, this.tName));
-		}
+	public void setTName(String newTName) {
+		String oldTName = tName;
+		tName = newTName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__TNAME, oldTName, tName));
 	}
 
 	/**
@@ -416,221 +379,206 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TPACKAGE__SUBPACKAGES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSubpackages()).basicAdd(otherEnd, msgs);
-		case BasicPackage.TPACKAGE__PARENT:
-			if (eInternalContainer() != null) {
-				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			return basicSetParent((TPackage) otherEnd, msgs);
-		case BasicPackage.TPACKAGE__OWNED_TYPES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedTypes()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TPACKAGE__SUBPACKAGES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubpackages()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TPACKAGE__PARENT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParent((TPackage)otherEnd, msgs);
+			case BasicPackage.TPACKAGE__OWNED_TYPES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedTypes()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-			final NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TPACKAGE__SUBPACKAGES:
-			return ((InternalEList<?>) getSubpackages()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TPACKAGE__PARENT:
-			return basicSetParent(null, msgs);
-		case BasicPackage.TPACKAGE__OWNED_TYPES:
-			return ((InternalEList<?>) getOwnedTypes()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TPACKAGE__SUBPACKAGES:
+				return ((InternalEList<?>)getSubpackages()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TPACKAGE__PARENT:
+				return basicSetParent(null, msgs);
+			case BasicPackage.TPACKAGE__OWNED_TYPES:
+				return ((InternalEList<?>)getOwnedTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case BasicPackage.TPACKAGE__PARENT:
-			return eInternalContainer().eInverseRemove(this, BasicPackage.TPACKAGE__SUBPACKAGES, TPackage.class, msgs);
+			case BasicPackage.TPACKAGE__PARENT:
+				return eInternalContainer().eInverseRemove(this, BasicPackage.TPACKAGE__SUBPACKAGES, TPackage.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BasicPackage.TPACKAGE__SUBPACKAGES:
-			return getSubpackages();
-		case BasicPackage.TPACKAGE__PARENT:
-			return getParent();
-		case BasicPackage.TPACKAGE__CLASSES:
-			return getClasses();
-		case BasicPackage.TPACKAGE__INTERFACES:
-			return getInterfaces();
-		case BasicPackage.TPACKAGE__OWNED_TYPES:
-			return getOwnedTypes();
-		case BasicPackage.TPACKAGE__MODEL:
-			if (resolve) {
-				return getModel();
-			}
-			return basicGetModel();
-		case BasicPackage.TPACKAGE__TNAME:
-			return getTName();
+			case BasicPackage.TPACKAGE__SUBPACKAGES:
+				return getSubpackages();
+			case BasicPackage.TPACKAGE__PARENT:
+				return getParent();
+			case BasicPackage.TPACKAGE__CLASSES:
+				return getClasses();
+			case BasicPackage.TPACKAGE__INTERFACES:
+				return getInterfaces();
+			case BasicPackage.TPACKAGE__OWNED_TYPES:
+				return getOwnedTypes();
+			case BasicPackage.TPACKAGE__MODEL:
+				if (resolve) return getModel();
+				return basicGetModel();
+			case BasicPackage.TPACKAGE__TNAME:
+				return getTName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue) {
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case BasicPackage.TPACKAGE__SUBPACKAGES:
-			getSubpackages().clear();
-			getSubpackages().addAll((Collection<? extends TPackage>) newValue);
-			return;
-		case BasicPackage.TPACKAGE__PARENT:
-			setParent((TPackage) newValue);
-			return;
-		case BasicPackage.TPACKAGE__CLASSES:
-			getClasses().clear();
-			getClasses().addAll((Collection<? extends TClass>) newValue);
-			return;
-		case BasicPackage.TPACKAGE__INTERFACES:
-			getInterfaces().clear();
-			getInterfaces().addAll((Collection<? extends TInterface>) newValue);
-			return;
-		case BasicPackage.TPACKAGE__OWNED_TYPES:
-			getOwnedTypes().clear();
-			getOwnedTypes().addAll((Collection<? extends TAbstractType>) newValue);
-			return;
-		case BasicPackage.TPACKAGE__MODEL:
-			setModel((TypeGraph) newValue);
-			return;
-		case BasicPackage.TPACKAGE__TNAME:
-			setTName((String) newValue);
-			return;
+			case BasicPackage.TPACKAGE__SUBPACKAGES:
+				getSubpackages().clear();
+				getSubpackages().addAll((Collection<? extends TPackage>)newValue);
+				return;
+			case BasicPackage.TPACKAGE__PARENT:
+				setParent((TPackage)newValue);
+				return;
+			case BasicPackage.TPACKAGE__CLASSES:
+				getClasses().clear();
+				getClasses().addAll((Collection<? extends TClass>)newValue);
+				return;
+			case BasicPackage.TPACKAGE__INTERFACES:
+				getInterfaces().clear();
+				getInterfaces().addAll((Collection<? extends TInterface>)newValue);
+				return;
+			case BasicPackage.TPACKAGE__OWNED_TYPES:
+				getOwnedTypes().clear();
+				getOwnedTypes().addAll((Collection<? extends TAbstractType>)newValue);
+				return;
+			case BasicPackage.TPACKAGE__MODEL:
+				setModel((TypeGraph)newValue);
+				return;
+			case BasicPackage.TPACKAGE__TNAME:
+				setTName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID) {
+	public void eUnset(int featureID) {
 		switch (featureID) {
-		case BasicPackage.TPACKAGE__SUBPACKAGES:
-			getSubpackages().clear();
-			return;
-		case BasicPackage.TPACKAGE__PARENT:
-			setParent((TPackage) null);
-			return;
-		case BasicPackage.TPACKAGE__CLASSES:
-			getClasses().clear();
-			return;
-		case BasicPackage.TPACKAGE__INTERFACES:
-			getInterfaces().clear();
-			return;
-		case BasicPackage.TPACKAGE__OWNED_TYPES:
-			getOwnedTypes().clear();
-			return;
-		case BasicPackage.TPACKAGE__MODEL:
-			setModel((TypeGraph) null);
-			return;
-		case BasicPackage.TPACKAGE__TNAME:
-			setTName(TNAME_EDEFAULT);
-			return;
+			case BasicPackage.TPACKAGE__SUBPACKAGES:
+				getSubpackages().clear();
+				return;
+			case BasicPackage.TPACKAGE__PARENT:
+				setParent((TPackage)null);
+				return;
+			case BasicPackage.TPACKAGE__CLASSES:
+				getClasses().clear();
+				return;
+			case BasicPackage.TPACKAGE__INTERFACES:
+				getInterfaces().clear();
+				return;
+			case BasicPackage.TPACKAGE__OWNED_TYPES:
+				getOwnedTypes().clear();
+				return;
+			case BasicPackage.TPACKAGE__MODEL:
+				setModel((TypeGraph)null);
+				return;
+			case BasicPackage.TPACKAGE__TNAME:
+				setTName(TNAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID) {
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BasicPackage.TPACKAGE__SUBPACKAGES:
-			return (this.subpackages != null) && !this.subpackages.isEmpty();
-		case BasicPackage.TPACKAGE__PARENT:
-			return getParent() != null;
-		case BasicPackage.TPACKAGE__CLASSES:
-			return (this.classes != null) && !this.classes.isEmpty();
-		case BasicPackage.TPACKAGE__INTERFACES:
-			return (this.interfaces != null) && !this.interfaces.isEmpty();
-		case BasicPackage.TPACKAGE__OWNED_TYPES:
-			return (this.ownedTypes != null) && !this.ownedTypes.isEmpty();
-		case BasicPackage.TPACKAGE__MODEL:
-			return this.model != null;
-		case BasicPackage.TPACKAGE__TNAME:
-			return TNAME_EDEFAULT == null ? this.tName != null : !TNAME_EDEFAULT.equals(this.tName);
+			case BasicPackage.TPACKAGE__SUBPACKAGES:
+				return subpackages != null && !subpackages.isEmpty();
+			case BasicPackage.TPACKAGE__PARENT:
+				return getParent() != null;
+			case BasicPackage.TPACKAGE__CLASSES:
+				return classes != null && !classes.isEmpty();
+			case BasicPackage.TPACKAGE__INTERFACES:
+				return interfaces != null && !interfaces.isEmpty();
+			case BasicPackage.TPACKAGE__OWNED_TYPES:
+				return ownedTypes != null && !ownedTypes.isEmpty();
+			case BasicPackage.TPACKAGE__MODEL:
+				return model != null;
+			case BasicPackage.TPACKAGE__TNAME:
+				return TNAME_EDEFAULT == null ? tName != null : !TNAME_EDEFAULT.equals(tName);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case BasicPackage.TPACKAGE___GET_FULLY_QUALIFIED_NAME:
-			return getFullyQualifiedName();
-		case BasicPackage.TPACKAGE___GET_ALL_OWNED_TYPES:
-			return getAllOwnedTypes();
-		case BasicPackage.TPACKAGE___GET_ALL_OWNED_CLASSES:
-			return getAllOwnedClasses();
-		case BasicPackage.TPACKAGE___GET_BASE_PACKAGE:
-			return getBasePackage();
-		case BasicPackage.TPACKAGE___CREATE_TCLASS__STRING_BOOLEAN_TVISIBILITY:
-			return createTClass((String) arguments.get(0), (Boolean) arguments.get(1), (TVisibility) arguments.get(2));
+			case BasicPackage.TPACKAGE___GET_FULLY_QUALIFIED_NAME:
+				return getFullyQualifiedName();
+			case BasicPackage.TPACKAGE___GET_ALL_OWNED_TYPES:
+				return getAllOwnedTypes();
+			case BasicPackage.TPACKAGE___GET_ALL_OWNED_CLASSES:
+				return getAllOwnedClasses();
+			case BasicPackage.TPACKAGE___GET_BASE_PACKAGE:
+				return getBasePackage();
+			case BasicPackage.TPACKAGE___CREATE_TCLASS__STRING_BOOLEAN_TVISIBILITY:
+				return createTClass((String)arguments.get(0), (Boolean)arguments.get(1), (TVisibility)arguments.get(2));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuilder result = new StringBuilder(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (tName: ");
-		result.append(this.tName);
+		result.append(tName);
 		result.append(')');
 		return result.toString();
 	}

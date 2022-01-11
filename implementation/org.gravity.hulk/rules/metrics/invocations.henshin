@@ -127,7 +127,7 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
         </edges>
         <edges xmi:id="_SeAqp44BEemIvZtjswelKQ" source="_SeAqpI4BEemIvZtjswelKQ" target="_SeAqo44BEemIvZtjswelKQ">
-          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
         </edges>
       </lhs>
       <rhs xmi:id="_SeAqqY4BEemIvZtjswelKQ" name="Rhs">
@@ -147,7 +147,7 @@
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
         </edges>
         <edges xmi:id="_SeAqsY4BEemIvZtjswelKQ" source="_SeAqrI4BEemIvZtjswelKQ" target="_SeAqq44BEemIvZtjswelKQ">
-          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
         </edges>
         <edges xmi:id="_SeAqs44BEemIvZtjswelKQ" source="_SeAqrY4BEemIvZtjswelKQ" target="_SeAqro4BEemIvZtjswelKQ">
           <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>

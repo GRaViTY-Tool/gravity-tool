@@ -145,34 +145,34 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 		}
 		MGravityModel mModel = (MGravityModel) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
-		Object[] result1_green = ModelToPgImpl.pattern_ModelToPg_1_1_performtransformation_greenFBFB(mModel, csp);
-		ModelToTypeGraph mModelToTPG = (ModelToTypeGraph) result1_green[0];
-		TypeGraph tPG = (TypeGraph) result1_green[2];
+		Object[] result1_green = ModelToPgImpl.pattern_ModelToPg_1_1_performtransformation_greenFFBB(mModel, csp);
+		TypeGraph tPG = (TypeGraph) result1_green[0];
+		ModelToTypeGraph mModelToTPG = (ModelToTypeGraph) result1_green[1];
 
-		Object[] result2_black = ModelToPgImpl.pattern_ModelToPg_1_2_collecttranslatedelements_blackBBB(mModelToTPG,
-				mModel, tPG);
+		Object[] result2_black = ModelToPgImpl.pattern_ModelToPg_1_2_collecttranslatedelements_blackBBB(tPG,
+				mModelToTPG, mModel);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mModelToTPG] = " + mModelToTPG
-					+ ", " + "[mModel] = " + mModel + ", " + "[tPG] = " + tPG + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tPG] = " + tPG + ", "
+					+ "[mModelToTPG] = " + mModelToTPG + ", " + "[mModel] = " + mModel + ".");
 		}
-		Object[] result2_green = ModelToPgImpl.pattern_ModelToPg_1_2_collecttranslatedelements_greenFBBB(mModelToTPG,
-				mModel, tPG);
+		Object[] result2_green = ModelToPgImpl.pattern_ModelToPg_1_2_collecttranslatedelements_greenFBBB(tPG,
+				mModelToTPG, mModel);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = ModelToPgImpl.pattern_ModelToPg_1_3_bookkeepingforedges_blackBBBB(ruleresult,
-				mModelToTPG, mModel, tPG);
+		Object[] result3_black = ModelToPgImpl.pattern_ModelToPg_1_3_bookkeepingforedges_blackBBBB(ruleresult, tPG,
+				mModelToTPG, mModel);
 		if (result3_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mModelToTPG] = " + mModelToTPG + ", " + "[mModel] = " + mModel + ", " + "[tPG] = " + tPG
-					+ ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[tPG] = "
+							+ tPG + ", " + "[mModelToTPG] = " + mModelToTPG + ", " + "[mModel] = " + mModel + ".");
 		}
-		ModelToPgImpl.pattern_ModelToPg_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, mModelToTPG, mModel, tPG);
-		//nothing EMoflonEdge mModelToTPG__mModel____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge mModelToTPG__tPG____target = (EMoflonEdge) result3_green[5];
+		ModelToPgImpl.pattern_ModelToPg_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, tPG, mModelToTPG, mModel);
+		//nothing EMoflonEdge mModelToTPG__tPG____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge mModelToTPG__mModel____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		ModelToPgImpl.pattern_ModelToPg_1_5_registerobjects_expressionBBBBB(this, ruleresult, mModelToTPG, mModel, tPG);
+		ModelToPgImpl.pattern_ModelToPg_1_5_registerobjects_expressionBBBBB(this, ruleresult, tPG, mModelToTPG, mModel);
 		return ModelToPgImpl.pattern_ModelToPg_1_6_expressionFB(ruleresult);
 	}
 
@@ -320,10 +320,10 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModelToTPG, EObject mModel, EObject tPG) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPG, EObject mModelToTPG, EObject mModel) {
+		ruleresult.registerObject("tPG", tPG);
 		ruleresult.registerObject("mModelToTPG", mModelToTPG);
 		ruleresult.registerObject("mModel", mModel);
-		ruleresult.registerObject("tPG", tPG);
 
 	}
 
@@ -397,35 +397,35 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 		}
 		TypeGraph tPG = (TypeGraph) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
-		Object[] result1_green = ModelToPgImpl.pattern_ModelToPg_11_1_performtransformation_greenFFBB(tPG, csp);
-		ModelToTypeGraph mModelToTPG = (ModelToTypeGraph) result1_green[0];
-		MGravityModel mModel = (MGravityModel) result1_green[1];
+		Object[] result1_green = ModelToPgImpl.pattern_ModelToPg_11_1_performtransformation_greenBFFB(tPG, csp);
+		ModelToTypeGraph mModelToTPG = (ModelToTypeGraph) result1_green[1];
+		MGravityModel mModel = (MGravityModel) result1_green[2];
 
-		Object[] result2_black = ModelToPgImpl.pattern_ModelToPg_11_2_collecttranslatedelements_blackBBB(mModelToTPG,
-				mModel, tPG);
+		Object[] result2_black = ModelToPgImpl.pattern_ModelToPg_11_2_collecttranslatedelements_blackBBB(tPG,
+				mModelToTPG, mModel);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mModelToTPG] = " + mModelToTPG
-					+ ", " + "[mModel] = " + mModel + ", " + "[tPG] = " + tPG + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tPG] = " + tPG + ", "
+					+ "[mModelToTPG] = " + mModelToTPG + ", " + "[mModel] = " + mModel + ".");
 		}
-		Object[] result2_green = ModelToPgImpl.pattern_ModelToPg_11_2_collecttranslatedelements_greenFBBB(mModelToTPG,
-				mModel, tPG);
+		Object[] result2_green = ModelToPgImpl.pattern_ModelToPg_11_2_collecttranslatedelements_greenFBBB(tPG,
+				mModelToTPG, mModel);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = ModelToPgImpl.pattern_ModelToPg_11_3_bookkeepingforedges_blackBBBB(ruleresult,
-				mModelToTPG, mModel, tPG);
+		Object[] result3_black = ModelToPgImpl.pattern_ModelToPg_11_3_bookkeepingforedges_blackBBBB(ruleresult, tPG,
+				mModelToTPG, mModel);
 		if (result3_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mModelToTPG] = " + mModelToTPG + ", " + "[mModel] = " + mModel + ", " + "[tPG] = " + tPG
-					+ ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[tPG] = "
+							+ tPG + ", " + "[mModelToTPG] = " + mModelToTPG + ", " + "[mModel] = " + mModel + ".");
 		}
-		ModelToPgImpl.pattern_ModelToPg_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, mModelToTPG, mModel, tPG);
-		//nothing EMoflonEdge mModelToTPG__mModel____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge mModelToTPG__tPG____target = (EMoflonEdge) result3_green[5];
+		ModelToPgImpl.pattern_ModelToPg_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, tPG, mModelToTPG, mModel);
+		//nothing EMoflonEdge mModelToTPG__tPG____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge mModelToTPG__mModel____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		ModelToPgImpl.pattern_ModelToPg_11_5_registerobjects_expressionBBBBB(this, ruleresult, mModelToTPG, mModel,
-				tPG);
+		ModelToPgImpl.pattern_ModelToPg_11_5_registerobjects_expressionBBBBB(this, ruleresult, tPG, mModelToTPG,
+				mModel);
 		return ModelToPgImpl.pattern_ModelToPg_11_6_expressionFB(ruleresult);
 	}
 
@@ -573,10 +573,10 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModelToTPG, EObject mModel, EObject tPG) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPG, EObject mModelToTPG, EObject mModel) {
+		ruleresult.registerObject("tPG", tPG);
 		ruleresult.registerObject("mModelToTPG", mModelToTPG);
 		ruleresult.registerObject("mModel", mModel);
-		ruleresult.registerObject("tPG", tPG);
 
 	}
 
@@ -705,13 +705,13 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mModel_name = CSPFactoryHelper.eINSTANCE.createVariable("mModel", true, csp);
-		var_mModel_name.setValue(__helper.getValue("mModel", "name"));
-		var_mModel_name.setType("String");
-
 		Variable var_tPG_tName = CSPFactoryHelper.eINSTANCE.createVariable("tPG", true, csp);
 		var_tPG_tName.setValue(__helper.getValue("tPG", "tName"));
 		var_tPG_tName.setType("String");
+
+		Variable var_mModel_name = CSPFactoryHelper.eINSTANCE.createVariable("mModel", true, csp);
+		var_mModel_name.setValue(__helper.getValue("mModel", "name"));
+		var_mModel_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -752,13 +752,13 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mModel_name = CSPFactoryHelper.eINSTANCE.createVariable("mModel", true, csp);
-		var_mModel_name.setValue(__helper.getValue("mModel", "name"));
-		var_mModel_name.setType("String");
-
 		Variable var_tPG_tName = CSPFactoryHelper.eINSTANCE.createVariable("tPG", true, csp);
 		var_tPG_tName.setValue(__helper.getValue("tPG", "tName"));
 		var_tPG_tName.setType("String");
+
+		Variable var_mModel_name = CSPFactoryHelper.eINSTANCE.createVariable("mModel", true, csp);
+		var_mModel_name.setValue(__helper.getValue("mModel", "name"));
+		var_mModel_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -804,14 +804,14 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		MGravityModel mModel = (MGravityModel) result2_bindingAndBlack[0];
-		TypeGraph tPG = (TypeGraph) result2_bindingAndBlack[1];
+		TypeGraph tPG = (TypeGraph) result2_bindingAndBlack[0];
+		MGravityModel mModel = (MGravityModel) result2_bindingAndBlack[1];
 
 		Object[] result3_bindingAndBlack = ModelToPgImpl.pattern_ModelToPg_24_3_solvecsp_bindingAndBlackFBBBBB(this,
-				mModel, tPG, sourceMatch, targetMatch);
+				tPG, mModel, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mModel] = " + mModel + ", " + "[tPG] = " + tPG + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[tPG] = " + tPG + ", " + "[mModel] = " + mModel + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -824,14 +824,14 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 						targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[2];
 
-				Object[] result6_black = ModelToPgImpl.pattern_ModelToPg_24_6_createcorrespondence_blackBBB(mModel, tPG,
+				Object[] result6_black = ModelToPgImpl.pattern_ModelToPg_24_6_createcorrespondence_blackBBB(tPG, mModel,
 						ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mModel] = " + mModel
-							+ ", " + "[tPG] = " + tPG + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tPG] = " + tPG + ", "
+							+ "[mModel] = " + mModel + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				ModelToPgImpl.pattern_ModelToPg_24_6_createcorrespondence_greenFBBB(mModel, tPG, ccMatch);
-				//nothing ModelToTypeGraph mModelToTPG = (ModelToTypeGraph) result6_green[0];
+				ModelToPgImpl.pattern_ModelToPg_24_6_createcorrespondence_greenBFBB(tPG, mModel, ccMatch);
+				//nothing ModelToTypeGraph mModelToTPG = (ModelToTypeGraph) result6_green[1];
 
 				Object[] result7_black = ModelToPgImpl.pattern_ModelToPg_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -853,7 +853,7 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MGravityModel mModel, TypeGraph tPG, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TypeGraph tPG, MGravityModel mModel, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -954,9 +954,9 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
 				ModelToPgImpl.pattern_ModelToPg_29_6_perform_greenFFFBB(ruleResult, csp);
-				//nothing ModelToTypeGraph mModelToTPG = (ModelToTypeGraph) result6_green[0];
-				//nothing MGravityModel mModel = (MGravityModel) result6_green[1];
-				//nothing TypeGraph tPG = (TypeGraph) result6_green[2];
+				//nothing TypeGraph tPG = (TypeGraph) result6_green[0];
+				//nothing ModelToTypeGraph mModelToTPG = (ModelToTypeGraph) result6_green[1];
+				//nothing MGravityModel mModel = (MGravityModel) result6_green[2];
 
 			} else {
 			}
@@ -1071,8 +1071,8 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MODEL_TO_PG___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.MODEL_TO_PG___IS_APPLICABLE_SOLVE_CSP_CC__MGRAVITYMODEL_TYPEGRAPH_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MGravityModel) arguments.get(0), (TypeGraph) arguments.get(1),
+		case RulesPackage.MODEL_TO_PG___IS_APPLICABLE_SOLVE_CSP_CC__TYPEGRAPH_MGRAVITYMODEL_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TypeGraph) arguments.get(0), (MGravityModel) arguments.get(1),
 					(Match) arguments.get(2), (Match) arguments.get(3));
 		case RulesPackage.MODEL_TO_PG___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1204,37 +1204,37 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 		return null;
 	}
 
-	public static final Object[] pattern_ModelToPg_1_1_performtransformation_greenFBFB(MGravityModel mModel, CSP csp) {
-		ModelToTypeGraph mModelToTPG = PmFactory.eINSTANCE.createModelToTypeGraph();
+	public static final Object[] pattern_ModelToPg_1_1_performtransformation_greenFFBB(MGravityModel mModel, CSP csp) {
 		TypeGraph tPG = BasicFactory.eINSTANCE.createTypeGraph();
+		ModelToTypeGraph mModelToTPG = PmFactory.eINSTANCE.createModelToTypeGraph();
 		Object _localVariable_0 = csp.getValue("tPG", "tName");
-		mModelToTPG.setSource(mModel);
 		mModelToTPG.setTarget(tPG);
+		mModelToTPG.setSource(mModel);
 		String tPG_tName_prime = (String) _localVariable_0;
 		tPG.setTName(tPG_tName_prime);
-		return new Object[] { mModelToTPG, mModel, tPG, csp };
+		return new Object[] { tPG, mModelToTPG, mModel, csp };
 	}
 
-	public static final Object[] pattern_ModelToPg_1_2_collecttranslatedelements_blackBBB(ModelToTypeGraph mModelToTPG,
-			MGravityModel mModel, TypeGraph tPG) {
-		return new Object[] { mModelToTPG, mModel, tPG };
+	public static final Object[] pattern_ModelToPg_1_2_collecttranslatedelements_blackBBB(TypeGraph tPG,
+			ModelToTypeGraph mModelToTPG, MGravityModel mModel) {
+		return new Object[] { tPG, mModelToTPG, mModel };
 	}
 
-	public static final Object[] pattern_ModelToPg_1_2_collecttranslatedelements_greenFBBB(ModelToTypeGraph mModelToTPG,
-			MGravityModel mModel, TypeGraph tPG) {
+	public static final Object[] pattern_ModelToPg_1_2_collecttranslatedelements_greenFBBB(TypeGraph tPG,
+			ModelToTypeGraph mModelToTPG, MGravityModel mModel) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedElements().add(tPG);
 		ruleresult.getCreatedLinkElements().add(mModelToTPG);
 		ruleresult.getTranslatedElements().add(mModel);
-		ruleresult.getCreatedElements().add(tPG);
-		return new Object[] { ruleresult, mModelToTPG, mModel, tPG };
+		return new Object[] { ruleresult, tPG, mModelToTPG, mModel };
 	}
 
 	public static final Object[] pattern_ModelToPg_1_3_bookkeepingforedges_blackBBBB(PerformRuleResult ruleresult,
-			EObject mModelToTPG, EObject mModel, EObject tPG) {
+			EObject tPG, EObject mModelToTPG, EObject mModel) {
 		if (!mModelToTPG.equals(tPG)) {
-			if (!mModel.equals(mModelToTPG)) {
-				if (!mModel.equals(tPG)) {
-					return new Object[] { ruleresult, mModelToTPG, mModel, tPG };
+			if (!mModel.equals(tPG)) {
+				if (!mModel.equals(mModelToTPG)) {
+					return new Object[] { ruleresult, tPG, mModelToTPG, mModel };
 				}
 			}
 		}
@@ -1242,28 +1242,28 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 	}
 
 	public static final Object[] pattern_ModelToPg_1_3_bookkeepingforedges_greenBBBBFF(PerformRuleResult ruleresult,
-			EObject mModelToTPG, EObject mModel, EObject tPG) {
-		EMoflonEdge mModelToTPG__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			EObject tPG, EObject mModelToTPG, EObject mModel) {
 		EMoflonEdge mModelToTPG__tPG____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModelToTPG__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ModelToPg";
-		String mModelToTPG__mModel____source_name_prime = "source";
 		String mModelToTPG__tPG____target_name_prime = "target";
-		mModelToTPG__mModel____source.setSrc(mModelToTPG);
-		mModelToTPG__mModel____source.setTrg(mModel);
-		ruleresult.getCreatedEdges().add(mModelToTPG__mModel____source);
+		String mModelToTPG__mModel____source_name_prime = "source";
 		mModelToTPG__tPG____target.setSrc(mModelToTPG);
 		mModelToTPG__tPG____target.setTrg(tPG);
 		ruleresult.getCreatedEdges().add(mModelToTPG__tPG____target);
+		mModelToTPG__mModel____source.setSrc(mModelToTPG);
+		mModelToTPG__mModel____source.setTrg(mModel);
+		ruleresult.getCreatedEdges().add(mModelToTPG__mModel____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mModelToTPG__mModel____source.setName(mModelToTPG__mModel____source_name_prime);
 		mModelToTPG__tPG____target.setName(mModelToTPG__tPG____target_name_prime);
-		return new Object[] { ruleresult, mModelToTPG, mModel, tPG, mModelToTPG__mModel____source,
-				mModelToTPG__tPG____target };
+		mModelToTPG__mModel____source.setName(mModelToTPG__mModel____source_name_prime);
+		return new Object[] { ruleresult, tPG, mModelToTPG, mModel, mModelToTPG__tPG____target,
+				mModelToTPG__mModel____source };
 	}
 
 	public static final void pattern_ModelToPg_1_5_registerobjects_expressionBBBBB(ModelToPg _this,
-			PerformRuleResult ruleresult, EObject mModelToTPG, EObject mModel, EObject tPG) {
-		_this.registerObjects_FWD(ruleresult, mModelToTPG, mModel, tPG);
+			PerformRuleResult ruleresult, EObject tPG, EObject mModelToTPG, EObject mModel) {
+		_this.registerObjects_FWD(ruleresult, tPG, mModelToTPG, mModel);
 
 	}
 
@@ -1515,7 +1515,7 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 		return null;
 	}
 
-	public static final Object[] pattern_ModelToPg_11_1_performtransformation_greenFFBB(TypeGraph tPG, CSP csp) {
+	public static final Object[] pattern_ModelToPg_11_1_performtransformation_greenBFFB(TypeGraph tPG, CSP csp) {
 		ModelToTypeGraph mModelToTPG = PmFactory.eINSTANCE.createModelToTypeGraph();
 		MGravityModel mModel = ModiscoFactory.eINSTANCE.createMGravityModel();
 		Object _localVariable_0 = csp.getValue("mModel", "name");
@@ -1523,29 +1523,29 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 		mModelToTPG.setSource(mModel);
 		String mModel_name_prime = (String) _localVariable_0;
 		mModel.setName(mModel_name_prime);
-		return new Object[] { mModelToTPG, mModel, tPG, csp };
+		return new Object[] { tPG, mModelToTPG, mModel, csp };
 	}
 
-	public static final Object[] pattern_ModelToPg_11_2_collecttranslatedelements_blackBBB(ModelToTypeGraph mModelToTPG,
-			MGravityModel mModel, TypeGraph tPG) {
-		return new Object[] { mModelToTPG, mModel, tPG };
+	public static final Object[] pattern_ModelToPg_11_2_collecttranslatedelements_blackBBB(TypeGraph tPG,
+			ModelToTypeGraph mModelToTPG, MGravityModel mModel) {
+		return new Object[] { tPG, mModelToTPG, mModel };
 	}
 
-	public static final Object[] pattern_ModelToPg_11_2_collecttranslatedelements_greenFBBB(
-			ModelToTypeGraph mModelToTPG, MGravityModel mModel, TypeGraph tPG) {
+	public static final Object[] pattern_ModelToPg_11_2_collecttranslatedelements_greenFBBB(TypeGraph tPG,
+			ModelToTypeGraph mModelToTPG, MGravityModel mModel) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getTranslatedElements().add(tPG);
 		ruleresult.getCreatedLinkElements().add(mModelToTPG);
 		ruleresult.getCreatedElements().add(mModel);
-		ruleresult.getTranslatedElements().add(tPG);
-		return new Object[] { ruleresult, mModelToTPG, mModel, tPG };
+		return new Object[] { ruleresult, tPG, mModelToTPG, mModel };
 	}
 
 	public static final Object[] pattern_ModelToPg_11_3_bookkeepingforedges_blackBBBB(PerformRuleResult ruleresult,
-			EObject mModelToTPG, EObject mModel, EObject tPG) {
+			EObject tPG, EObject mModelToTPG, EObject mModel) {
 		if (!mModelToTPG.equals(tPG)) {
-			if (!mModel.equals(mModelToTPG)) {
-				if (!mModel.equals(tPG)) {
-					return new Object[] { ruleresult, mModelToTPG, mModel, tPG };
+			if (!mModel.equals(tPG)) {
+				if (!mModel.equals(mModelToTPG)) {
+					return new Object[] { ruleresult, tPG, mModelToTPG, mModel };
 				}
 			}
 		}
@@ -1553,28 +1553,28 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 	}
 
 	public static final Object[] pattern_ModelToPg_11_3_bookkeepingforedges_greenBBBBFF(PerformRuleResult ruleresult,
-			EObject mModelToTPG, EObject mModel, EObject tPG) {
-		EMoflonEdge mModelToTPG__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			EObject tPG, EObject mModelToTPG, EObject mModel) {
 		EMoflonEdge mModelToTPG__tPG____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModelToTPG__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ModelToPg";
-		String mModelToTPG__mModel____source_name_prime = "source";
 		String mModelToTPG__tPG____target_name_prime = "target";
-		mModelToTPG__mModel____source.setSrc(mModelToTPG);
-		mModelToTPG__mModel____source.setTrg(mModel);
-		ruleresult.getCreatedEdges().add(mModelToTPG__mModel____source);
+		String mModelToTPG__mModel____source_name_prime = "source";
 		mModelToTPG__tPG____target.setSrc(mModelToTPG);
 		mModelToTPG__tPG____target.setTrg(tPG);
 		ruleresult.getCreatedEdges().add(mModelToTPG__tPG____target);
+		mModelToTPG__mModel____source.setSrc(mModelToTPG);
+		mModelToTPG__mModel____source.setTrg(mModel);
+		ruleresult.getCreatedEdges().add(mModelToTPG__mModel____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mModelToTPG__mModel____source.setName(mModelToTPG__mModel____source_name_prime);
 		mModelToTPG__tPG____target.setName(mModelToTPG__tPG____target_name_prime);
-		return new Object[] { ruleresult, mModelToTPG, mModel, tPG, mModelToTPG__mModel____source,
-				mModelToTPG__tPG____target };
+		mModelToTPG__mModel____source.setName(mModelToTPG__mModel____source_name_prime);
+		return new Object[] { ruleresult, tPG, mModelToTPG, mModel, mModelToTPG__tPG____target,
+				mModelToTPG__mModel____source };
 	}
 
 	public static final void pattern_ModelToPg_11_5_registerobjects_expressionBBBBB(ModelToPg _this,
-			PerformRuleResult ruleresult, EObject mModelToTPG, EObject mModel, EObject tPG) {
-		_this.registerObjects_BWD(ruleresult, mModelToTPG, mModel, tPG);
+			PerformRuleResult ruleresult, EObject tPG, EObject mModelToTPG, EObject mModel) {
+		_this.registerObjects_BWD(ruleresult, tPG, mModelToTPG, mModel);
 
 	}
 
@@ -1925,26 +1925,26 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_ModelToPg_24_2_matchsrctrgcontext_bindingFFBB(Match sourceMatch,
-			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("mModel");
-		EObject _localVariable_1 = targetMatch.getObject("tPG");
-		EObject tmpMModel = _localVariable_0;
-		EObject tmpTPG = _localVariable_1;
-		if (tmpMModel instanceof MGravityModel) {
-			MGravityModel mModel = (MGravityModel) tmpMModel;
-			if (tmpTPG instanceof TypeGraph) {
-				TypeGraph tPG = (TypeGraph) tmpTPG;
-				return new Object[] { mModel, tPG, sourceMatch, targetMatch };
+	public static final Object[] pattern_ModelToPg_24_2_matchsrctrgcontext_bindingFFBB(Match targetMatch,
+			Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("tPG");
+		EObject _localVariable_1 = sourceMatch.getObject("mModel");
+		EObject tmpTPG = _localVariable_0;
+		EObject tmpMModel = _localVariable_1;
+		if (tmpTPG instanceof TypeGraph) {
+			TypeGraph tPG = (TypeGraph) tmpTPG;
+			if (tmpMModel instanceof MGravityModel) {
+				MGravityModel mModel = (MGravityModel) tmpMModel;
+				return new Object[] { tPG, mModel, targetMatch, sourceMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ModelToPg_24_2_matchsrctrgcontext_blackBBBB(MGravityModel mModel,
-			TypeGraph tPG, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_ModelToPg_24_2_matchsrctrgcontext_blackBBBB(TypeGraph tPG,
+			MGravityModel mModel, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { mModel, tPG, sourceMatch, targetMatch };
+			return new Object[] { tPG, mModel, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1952,27 +1952,27 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 	public static final Object[] pattern_ModelToPg_24_2_matchsrctrgcontext_bindingAndBlackFFBB(Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_ModelToPg_24_2_matchsrctrgcontext_binding = pattern_ModelToPg_24_2_matchsrctrgcontext_bindingFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_ModelToPg_24_2_matchsrctrgcontext_binding != null) {
-			MGravityModel mModel = (MGravityModel) result_pattern_ModelToPg_24_2_matchsrctrgcontext_binding[0];
-			TypeGraph tPG = (TypeGraph) result_pattern_ModelToPg_24_2_matchsrctrgcontext_binding[1];
+			TypeGraph tPG = (TypeGraph) result_pattern_ModelToPg_24_2_matchsrctrgcontext_binding[0];
+			MGravityModel mModel = (MGravityModel) result_pattern_ModelToPg_24_2_matchsrctrgcontext_binding[1];
 
 			Object[] result_pattern_ModelToPg_24_2_matchsrctrgcontext_black = pattern_ModelToPg_24_2_matchsrctrgcontext_blackBBBB(
-					mModel, tPG, sourceMatch, targetMatch);
+					tPG, mModel, sourceMatch, targetMatch);
 			if (result_pattern_ModelToPg_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mModel, tPG, sourceMatch, targetMatch };
+				return new Object[] { tPG, mModel, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ModelToPg_24_3_solvecsp_bindingFBBBBB(ModelToPg _this, MGravityModel mModel,
-			TypeGraph tPG, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(mModel, tPG, sourceMatch, targetMatch);
+	public static final Object[] pattern_ModelToPg_24_3_solvecsp_bindingFBBBBB(ModelToPg _this, TypeGraph tPG,
+			MGravityModel mModel, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(tPG, mModel, sourceMatch, targetMatch);
 		CSP csp = _localVariable_2;
 		if (csp != null) {
-			return new Object[] { csp, _this, mModel, tPG, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, tPG, mModel, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1981,17 +1981,17 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_ModelToPg_24_3_solvecsp_bindingAndBlackFBBBBB(ModelToPg _this,
-			MGravityModel mModel, TypeGraph tPG, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_ModelToPg_24_3_solvecsp_bindingAndBlackFBBBBB(ModelToPg _this, TypeGraph tPG,
+			MGravityModel mModel, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_ModelToPg_24_3_solvecsp_binding = pattern_ModelToPg_24_3_solvecsp_bindingFBBBBB(_this,
-				mModel, tPG, sourceMatch, targetMatch);
+				tPG, mModel, sourceMatch, targetMatch);
 		if (result_pattern_ModelToPg_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_ModelToPg_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_ModelToPg_24_3_solvecsp_black = pattern_ModelToPg_24_3_solvecsp_blackB(csp);
 			if (result_pattern_ModelToPg_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mModel, tPG, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, tPG, mModel, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2022,18 +2022,18 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 		return new Object[] { sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_ModelToPg_24_6_createcorrespondence_blackBBB(MGravityModel mModel,
-			TypeGraph tPG, CCMatch ccMatch) {
-		return new Object[] { mModel, tPG, ccMatch };
+	public static final Object[] pattern_ModelToPg_24_6_createcorrespondence_blackBBB(TypeGraph tPG,
+			MGravityModel mModel, CCMatch ccMatch) {
+		return new Object[] { tPG, mModel, ccMatch };
 	}
 
-	public static final Object[] pattern_ModelToPg_24_6_createcorrespondence_greenFBBB(MGravityModel mModel,
-			TypeGraph tPG, CCMatch ccMatch) {
+	public static final Object[] pattern_ModelToPg_24_6_createcorrespondence_greenBFBB(TypeGraph tPG,
+			MGravityModel mModel, CCMatch ccMatch) {
 		ModelToTypeGraph mModelToTPG = PmFactory.eINSTANCE.createModelToTypeGraph();
-		mModelToTPG.setSource(mModel);
 		mModelToTPG.setTarget(tPG);
+		mModelToTPG.setSource(mModel);
 		ccMatch.getCreateCorr().add(mModelToTPG);
-		return new Object[] { mModelToTPG, mModel, tPG, ccMatch };
+		return new Object[] { tPG, mModelToTPG, mModel, ccMatch };
 	}
 
 	public static final Object[] pattern_ModelToPg_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2142,26 +2142,26 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 
 	public static final Object[] pattern_ModelToPg_29_6_perform_greenFFFBB(ModelgeneratorRuleResult ruleResult,
 			CSP csp) {
+		TypeGraph tPG = BasicFactory.eINSTANCE.createTypeGraph();
 		ModelToTypeGraph mModelToTPG = PmFactory.eINSTANCE.createModelToTypeGraph();
 		MGravityModel mModel = ModiscoFactory.eINSTANCE.createMGravityModel();
-		TypeGraph tPG = BasicFactory.eINSTANCE.createTypeGraph();
-		Object _localVariable_0 = csp.getValue("mModel", "name");
-		Object _localVariable_1 = csp.getValue("tPG", "tName");
+		Object _localVariable_0 = csp.getValue("tPG", "tName");
+		Object _localVariable_1 = csp.getValue("mModel", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
+		ruleResult.getTargetObjects().add(tPG);
+		mModelToTPG.setTarget(tPG);
 		ruleResult.getCorrObjects().add(mModelToTPG);
 		mModelToTPG.setSource(mModel);
 		ruleResult.getSourceObjects().add(mModel);
-		mModelToTPG.setTarget(tPG);
-		ruleResult.getTargetObjects().add(tPG);
-		String mModel_name_prime = (String) _localVariable_0;
-		String tPG_tName_prime = (String) _localVariable_1;
+		String tPG_tName_prime = (String) _localVariable_0;
+		String mModel_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
-		mModel.setName(mModel_name_prime);
 		tPG.setTName(tPG_tName_prime);
+		mModel.setName(mModel_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mModelToTPG, mModel, tPG, ruleResult, csp };
+		return new Object[] { tPG, mModelToTPG, mModel, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_ModelToPg_29_7_expressionFB(

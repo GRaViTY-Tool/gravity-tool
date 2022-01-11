@@ -3456,6 +3456,223 @@ public interface ModiscoPackage extends EPackage {
 	int MINITIALIZER_FEATURE_COUNT = MDEFINITION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MEnumConstantDeclarationImpl <em>MEnum Constant Declaration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MEnumConstantDeclarationImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMEnumConstantDeclaration()
+	 * @generated
+	 */
+	int MENUM_CONSTANT_DECLARATION = 30;
+
+	/**
+	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__COMMENTS = JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Original Compilation Unit</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__ORIGINAL_COMPILATION_UNIT = JavaPackage.ENUM_CONSTANT_DECLARATION__ORIGINAL_COMPILATION_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Original Class File</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__ORIGINAL_CLASS_FILE = JavaPackage.ENUM_CONSTANT_DECLARATION__ORIGINAL_CLASS_FILE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__NAME = JavaPackage.ENUM_CONSTANT_DECLARATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Proxy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__PROXY = JavaPackage.ENUM_CONSTANT_DECLARATION__PROXY;
+
+	/**
+	 * The feature id for the '<em><b>Usages In Imports</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__USAGES_IN_IMPORTS = JavaPackage.ENUM_CONSTANT_DECLARATION__USAGES_IN_IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Type Declaration</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__ABSTRACT_TYPE_DECLARATION = JavaPackage.ENUM_CONSTANT_DECLARATION__ABSTRACT_TYPE_DECLARATION;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__ANNOTATIONS = JavaPackage.ENUM_CONSTANT_DECLARATION__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Anonymous Class Declaration Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__ANONYMOUS_CLASS_DECLARATION_OWNER = JavaPackage.ENUM_CONSTANT_DECLARATION__ANONYMOUS_CLASS_DECLARATION_OWNER;
+
+	/**
+	 * The feature id for the '<em><b>Modifier</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__MODIFIER = JavaPackage.ENUM_CONSTANT_DECLARATION__MODIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Extra Array Dimensions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__EXTRA_ARRAY_DIMENSIONS = JavaPackage.ENUM_CONSTANT_DECLARATION__EXTRA_ARRAY_DIMENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Initializer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__INITIALIZER = JavaPackage.ENUM_CONSTANT_DECLARATION__INITIALIZER;
+
+	/**
+	 * The feature id for the '<em><b>Usage In Variable Access</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__USAGE_IN_VARIABLE_ACCESS = JavaPackage.ENUM_CONSTANT_DECLARATION__USAGE_IN_VARIABLE_ACCESS;
+
+	/**
+	 * The feature id for the '<em><b>Anonymous Class Declaration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__ANONYMOUS_CLASS_DECLARATION = JavaPackage.ENUM_CONSTANT_DECLARATION__ANONYMOUS_CLASS_DECLARATION;
+
+	/**
+	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__ARGUMENTS = JavaPackage.ENUM_CONSTANT_DECLARATION__ARGUMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__OWNED_FLOWS = JavaPackage.ENUM_CONSTANT_DECLARATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__INCOMING_FLOWS = JavaPackage.ENUM_CONSTANT_DECLARATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__OUTGOING_FLOWS = JavaPackage.ENUM_CONSTANT_DECLARATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Invocation Static Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__INVOCATION_STATIC_TYPES = JavaPackage.ENUM_CONSTANT_DECLARATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>MMethod Invocations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__MMETHOD_INVOCATIONS = JavaPackage.ENUM_CONSTANT_DECLARATION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>MAbstract Field Access</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__MABSTRACT_FIELD_ACCESS = JavaPackage.ENUM_CONSTANT_DECLARATION_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>MSignature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION__MSIGNATURE = JavaPackage.ENUM_CONSTANT_DECLARATION_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of structural features of the '<em>MEnum Constant Declaration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENUM_CONSTANT_DECLARATION_FEATURE_COUNT = JavaPackage.ENUM_CONSTANT_DECLARATION_FEATURE_COUNT + 7;
+
+	/**
 	 * The meta object id for the '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3463,7 +3680,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getAccessKind()
 	 * @generated
 	 */
-	int ACCESS_KIND = 30;
+	int ACCESS_KIND = 31;
 
 
 	/**
@@ -4207,6 +4424,16 @@ public interface ModiscoPackage extends EPackage {
 	EClass getMInitializer();
 
 	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MEnumConstantDeclaration <em>MEnum Constant Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MEnum Constant Declaration</em>'.
+	 * @see org.gravity.modisco.MEnumConstantDeclaration
+	 * @generated
+	 */
+	EClass getMEnumConstantDeclaration();
+
+	/**
 	 * Returns the meta object for enum '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4858,6 +5085,16 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MINITIALIZER = eINSTANCE.getMInitializer();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MEnumConstantDeclarationImpl <em>MEnum Constant Declaration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MEnumConstantDeclarationImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMEnumConstantDeclaration()
+		 * @generated
+		 */
+		EClass MENUM_CONSTANT_DECLARATION = eINSTANCE.getMEnumConstantDeclaration();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}' enum.

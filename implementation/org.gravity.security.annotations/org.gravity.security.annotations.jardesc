@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="org.gravity.security.annotations/org.gravity.annotations.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/org.gravity.security.annotations/org.gravity.security.annotations.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/requirements/Integrity.class"/>
+        <javaElement handleIdentifier="=org.gravity.security.annotations/annotations"/>
+        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/Tainted.class"/>
+        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/access/Api.class"/>
+        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/requirements/High.class"/>
+        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/CounterMeasure.class"/>
+        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/requirements/Critical.class"/>
+        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/requirements/Secrecy.class"/>
+    </selectedElements>
+</jardesc>

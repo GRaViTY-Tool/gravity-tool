@@ -3,10 +3,10 @@ package org.gravity.security.annotations;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.Collection;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -15,9 +15,9 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 
-
 /**
  * The Activator of the org.gravity.security.annotations plugin
+ *
  * @author speldszus
  *
  */
@@ -35,7 +35,7 @@ public class AnnotationsActivator extends Plugin {
 	 * @param monitor A progress monitor
 	 * @throws IOException If the annotations can not be saved
 	 */
-	public static void storeAnnotationsToFile(IFile file, IProgressMonitor monitor) throws IOException {
+	public static void storeAnnotationsToFile(final IFile file, final IProgressMonitor monitor) throws IOException {
 		try (InputStream annotations = new URL(
 				"platform:/plugin/org.gravity.security.annotations/org.gravity.annotations.jar") //$NON-NLS-1$
 				.openConnection().getInputStream()) {
@@ -54,30 +54,38 @@ public class AnnotationsActivator extends Plugin {
 	 * @throws CoreException
 	 * @throws IOException
 	 */
-	public static Collection<IPath> applyUMLsecLib(IJavaProject project, IProgressMonitor monitor)
+	public static IPath applyUMLsecLib(final IJavaProject project, final IProgressMonitor monitor)
 			throws CoreException, IOException {
-		Collection<IPath> libs;
 		monitor.setTaskName("Prepare Java Project");
 
-		IClasspathEntry relativeLibraryEntry = null;
 		final IFile annotationsFile = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor)
 				.getFile("org.gravity.annotations.jar");
 		if (!annotationsFile.exists()) {
 			storeAnnotationsToFile(annotationsFile, monitor);
-			relativeLibraryEntry = EclipseProjectUtil.addLibToClasspath(project, annotationsFile);
+			return EclipseProjectUtil.addLibToClasspath(project, annotationsFile).getPath();
+		}
 
-		} else {
-			for (final IClasspathEntry entry : project.getRawClasspath()) {
-				if (entry.getPath().makeAbsolute().equals(annotationsFile.getLocation())) {
-					relativeLibraryEntry = entry;
+		// If the file exists already, check if it is on the classpath
+		final IWorkspaceRoot ws = project.getProject().getWorkspace().getRoot();
+		for (final IClasspathEntry entry : project.getRawClasspath()) {
+			if (entry.getEntryKind() == IClasspathEntry.CPE_LIBRARY) {
+				IPath path = entry.getPath();
+				if (path.isAbsolute()) {
+					final IProject containingProject = ws.getProject(path.segment(0));
+					if (containingProject.getLocation() != null) {
+						path = containingProject.getLocation().append(path.removeFirstSegments(1));
+					}
+				}
+				else {
+					path = project.getProject().getFile(path).getLocation();
+				}
+				if (path.equals(annotationsFile.getLocation())) {
+					return entry.getPath();
 				}
 			}
-			if (relativeLibraryEntry == null) {
-				relativeLibraryEntry = EclipseProjectUtil.addLibToClasspath(project, annotationsFile);
-			}
 		}
-		libs = Arrays.asList(relativeLibraryEntry.getPath());
-		return libs;
+		return EclipseProjectUtil.addLibToClasspath(project, annotationsFile).getPath();
+
 	}
 
 }

@@ -46,7 +46,7 @@
         </attributes>
       </nodes>
       <nodes xmi:id="_Nhf7kNVCEemCHfEtuHnNkQ" incoming="_Pvwi4NVCEemCHfEtuHnNkQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
         <attributes xmi:id="_R8rtcNVCEemCHfEtuHnNkQ" value="&quot;String&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
@@ -138,7 +138,7 @@
         </attributes>
       </nodes>
       <nodes xmi:id="_NhgioNVCEemCHfEtuHnNkQ" incoming="_Pvwi4dVCEemCHfEtuHnNkQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
         <attributes xmi:id="_R8sUgNVCEemCHfEtuHnNkQ" value="&quot;String&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>

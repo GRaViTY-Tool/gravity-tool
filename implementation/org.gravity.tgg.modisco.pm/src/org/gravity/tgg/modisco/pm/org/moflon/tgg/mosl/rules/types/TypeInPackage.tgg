@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule Types
+#abstract #rule TypeInPackage_Abstract
 #with org.gravity.tgg.modisco.pm
 
 #source {
@@ -22,7 +22,7 @@
 		++  -ownedTypes -> tType
 	}
 
-	++tType:TAbstractType
+	++tType:TAbstractType 
 }
 
 #correspondence {
@@ -30,13 +30,12 @@
 		#src->mPackage
 		#trg->tPackage
 	}
-
-	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
+	++ type2Type:TypeToTAbstractType {
 		#src->mType
 		#trg->tType
 	}
-
-	++ mTypeToTType :TypeToTAbstractType {
+	
+	++ annotatable2Annotatable : ASTNodeToTAnnotatable {
 		#src->mType
 		#trg->tType
 	}
@@ -44,6 +43,97 @@
 
 #attributeConditions {
 	eq(mType.proxy, tType.tLib)
+	eq(mType.name, tType.tName)
 }
 
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
 
+#rule ClassInPackage
+#extends TypeInPackage_Abstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++mType:MClass
+}
+
+#target {
+	++tType:TClass
+
+	tPackage:TPackage {
+		++  -classes -> tType
+	}
+
+	pg:TypeGraph {
+		++  -classes -> tType
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule InterfaceInPackage
+#extends TypeInPackage_Abstract
+#with org.gravity.tgg.modisco.pm
+
+
+#source {
+	++mType:InterfaceDeclaration
+}
+
+#target {
+	++tType:TInterface
+
+	pg:TypeGraph {
+		++  -interfaces -> tType
+	}
+
+	tPackage:TPackage {
+		++  -interfaces -> tType
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule EnumInPackage
+#extends TypeInPackage_Abstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++mType:EnumDeclaration
+}
+
+#target {
+	tPackage:TPackage {
+		-model -> pg
+		++  -classes -> tType
+	}
+
+	++tType:TClass {
+		++-tAnnotation -> tAnnotation
+	}
+
+	++tAnnotation:TEnum
+
+	pg:TypeGraph {
+		++  -classes -> tType
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationTypeInPackage #extends TypeInPackage_Abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	++mType:AnnotationTypeDeclaration
+}
+
+#target {
+	++tType:TAnnotationType
+
+	pg:TypeGraph {
+		++  -tAnnotationTypes -> tType
+	}
+}

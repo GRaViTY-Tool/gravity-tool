@@ -20,6 +20,7 @@ import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.ClassInstanceCreation;
 import org.eclipse.modisco.java.ConstructorDeclaration;
 import org.eclipse.modisco.java.ConstructorInvocation;
+import org.eclipse.modisco.java.EnumConstantDeclaration;
 import org.eclipse.modisco.java.Expression;
 import org.eclipse.modisco.java.FieldDeclaration;
 import org.eclipse.modisco.java.Initializer;
@@ -215,6 +216,10 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createMInitializerAdapter();
 			}
 			@Override
+			public Adapter caseMEnumConstantDeclaration(MEnumConstantDeclaration object) {
+				return createMEnumConstantDeclarationAdapter();
+			}
+			@Override
 			public Adapter caseASTNode(ASTNode object) {
 				return createASTNodeAdapter();
 			}
@@ -317,6 +322,10 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseInitializer(Initializer object) {
 				return createInitializerAdapter();
+			}
+			@Override
+			public Adapter caseEnumConstantDeclaration(EnumConstantDeclaration object) {
+				return createEnumConstantDeclarationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -759,6 +768,20 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MEnumConstantDeclaration <em>MEnum Constant Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MEnumConstantDeclaration
+	 * @generated
+	 */
+	public Adapter createMEnumConstantDeclarationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.ASTNode <em>AST Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1119,6 +1142,20 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInitializerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.EnumConstantDeclaration <em>Enum Constant Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.EnumConstantDeclaration
+	 * @generated
+	 */
+	public Adapter createEnumConstantDeclarationAdapter() {
 		return null;
 	}
 

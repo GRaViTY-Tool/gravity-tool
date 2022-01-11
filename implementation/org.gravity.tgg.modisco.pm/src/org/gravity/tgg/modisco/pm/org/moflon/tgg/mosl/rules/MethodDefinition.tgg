@@ -41,6 +41,8 @@
 	}
 }
 
+#using org.gravity.tgg.modisco.pm.*
+
 #abstract #rule MethodDefinition #extends AbstractMethodDefinition
 #with org.gravity.tgg.modisco.pm
 
@@ -62,27 +64,22 @@
 	tType:TAbstractType
 }
 
+#correspondence{
+	mTypeToTType : TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
 #using org.gravity.tgg.modisco.pm.*
 
 #rule MethodDefinitionReturnSingle #extends MethodDefinition
 #with org.gravity.tgg.modisco.pm
-#source{
-	mType : Type
-}
 
 #target {
-	tType : TAbstractType
-
 	++tDefinition: TMethodDefinition {
 		lowerBound:=0
 		upperBound:=1
-	}
-}
-
-#correspondence {
-	mTypeToTType : TypeToTAbstractType {
-		#src->mType
-		#trg->tType
 	}
 }
 
@@ -92,29 +89,13 @@
 #with org.gravity.tgg.modisco.pm
 
 #source{
-	mType:ArrayType {
-		-elementType->mArrayTypeAccess
-	}
-	
-	mArrayTypeAccess:TypeAccess {
-		-type->mTypeOfArray
-	}
-	mTypeOfArray : Type
+	mType:ArrayType
 }
 
 #target {
 	++tDefinition: TMethodDefinition {
 		lowerBound:=0
 		upperBound:=-1
-	}
-	
-	tType : TAbstractType
-}
-
-#correspondence {
-	mTypeToTType : TypeToTAbstractType {
-		#src->mTypeOfArray
-		#trg->tType
 	}
 }
 

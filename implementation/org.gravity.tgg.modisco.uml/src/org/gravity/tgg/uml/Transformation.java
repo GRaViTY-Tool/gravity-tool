@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -23,6 +24,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -30,6 +32,7 @@ import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Profile;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
@@ -43,9 +46,13 @@ import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.security.annotations.AnnotationsActivator;
 import org.gravity.tgg.modisco.uml.UmlPackage;
 import org.moflon.tgg.algorithm.datastructures.SynchronizationProtocol;
+import org.moflon.tgg.algorithm.delta.Delta;
+import org.moflon.tgg.algorithm.delta.OnlineChangeDetector;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.moflon.tgg.language.analysis.StaticAnalysis;
 import org.moflon.tgg.runtime.CorrespondenceModel;
+
+import carisma.profile.umlsec.UMLsecActivator;
 
 /**
  * This class provides the API for transforming Java projects into UML models
@@ -106,12 +113,11 @@ public final class Transformation extends SynchronizationHelper {
 		loadRulesFromProject();
 
 		if (load) {
-			final CorrespondenceModel correspondenceModel = getCorrespondenceModel(javaProject.getProject(), this.set);
-			if (correspondenceModel != null) {
-				final SynchronizationProtocol synchonizationProtocol = getProtocol(javaProject, this.set);
-				if (synchonizationProtocol == null) {
-					correspondenceModel.eResource().unload();
-				} else {
+			final SynchronizationProtocol synchonizationProtocol = getProtocol(javaProject, this.set);
+			if (synchonizationProtocol != null) {
+				final CorrespondenceModel correspondenceModel = getCorrespondenceModel(javaProject.getProject(),
+						this.set);
+				if (correspondenceModel != null) {
 					setCorr(correspondenceModel);
 					setSrc(correspondenceModel.getSource());
 					setTrg(correspondenceModel.getTarget());
@@ -162,12 +168,10 @@ public final class Transformation extends SynchronizationHelper {
 
 		final SubMonitor subMonitor = SubMonitor.convert(monitor, 100);
 
-		Collection<IPath> libs;
-		if (!addUMLsec) {
-			libs = new ArrayList<>();
-		} else {
+		final Collection<IPath> libs  = new ArrayList<>();
+		if (addUMLsec) {
 			try {
-				libs = AnnotationsActivator.applyUMLsecLib(this.project, subMonitor);
+				libs.add(AnnotationsActivator.applyUMLsecLib(this.project, subMonitor));
 			} catch (CoreException | IOException e) {
 				throw new TransformationFailedException(e);
 			}
@@ -196,6 +200,9 @@ public final class Transformation extends SynchronizationHelper {
 			final Model model = modiscoToModel(mGravityModel, subMonitor);
 			if (GravityActivator.MEASURE_PERFORMANCE) {
 				GravityActivator.record("All:" + (System.currentTimeMillis() - start) + "ms");
+			}
+			if (addUMLsec) {
+				postprocessUMLsec(model);
 			}
 			return model;
 		} catch (final TransformationFailedException e) {
@@ -243,14 +250,11 @@ public final class Transformation extends SynchronizationHelper {
 			}
 			throw new TransformationFailedException("Reverseengineering of a UML model failed.");
 		}
-		final Model model = (Model) this.trg;
-
-		postprocess(model);
 
 		if (this.autosave) {
 			save(this.outputFolder, subMonitor);
 		}
-		return model;
+		return (Model) this.trg;
 	}
 
 	/**
@@ -259,17 +263,19 @@ public final class Transformation extends SynchronizationHelper {
 	 * @param model The model
 	 * @throws TransformationFailedException
 	 */
-	public void postprocess(final Model model) throws TransformationFailedException {
+	public void postprocessUMLsec(final Model model) throws TransformationFailedException {
 		try {
 			long start;
 			if (GravityActivator.MEASURE_PERFORMANCE) {
 				start = System.currentTimeMillis();
 			}
+			final Profile profile = UMLsecActivator.loadUMLsecProfile(this.set);
+			model.applyProfile(profile);
 			new UmlSecProcessor(model).processFwd();
 			if (GravityActivator.MEASURE_PERFORMANCE) {
 				GravityActivator.record("Postpocessing: " + (System.currentTimeMillis() - start) + "ms");
 			}
-		} catch (final ProcessingException e) {
+		} catch (final ProcessingException | IOException e) {
 			throw new TransformationFailedException(e);
 		}
 	}
@@ -318,7 +324,7 @@ public final class Transformation extends SynchronizationHelper {
 
 		save(this.outputFolder, monitor);
 
-		GravityModiscoCodeGenerator.generateCode(this.project, (MGravityModel) getSrc(), monitor);
+		GravityModiscoCodeGenerator.generateCode(this.project.getProject(), (MGravityModel) getSrc(), null, monitor);
 	}
 
 	public IFile getTrgFile() {
@@ -430,9 +436,14 @@ public final class Transformation extends SynchronizationHelper {
 		if (!corrFile.exists()) {
 			return null;
 		}
-		final Resource resource = set
-				.getResource(URI.createPlatformResourceURI(corrFile.getFullPath().toString(), true), true);
-		return (CorrespondenceModel) resource.getContents().get(0);
+		try {
+			final Resource resource = set
+					.getResource(URI.createPlatformResourceURI(corrFile.getFullPath().toString(), true), true);
+			return (CorrespondenceModel) resource.getContents().get(0);
+		} catch (final WrappedException e) {
+			LOGGER.error("Stored correspondence model is not valid", e);
+			return null;
+		}
 	}
 
 	public static IFile getUMLFile(final IProject project, final IProgressMonitor monitor) throws IOException {
@@ -445,5 +456,45 @@ public final class Transformation extends SynchronizationHelper {
 
 	public void enableAutosave() {
 		this.autosave = true;
+	}
+
+	public void applyChangeAndGenerateCode(final Consumer<EObject> changeTrg, final IProgressMonitor monitor)
+			throws IOException {
+
+		final MGravityModel model = (MGravityModel) getSrc();
+
+		setChangeTrg(changeTrg.andThen(x -> {
+			try {
+				new UmlSecProcessor((Model) getTrg()).processBwd();
+			} catch (final ProcessingException e) {
+				LOGGER.error(e);
+			}
+		}));
+		final Delta delta = integrateBackwardAndRecordDelta();
+
+		GravityModiscoCodeGenerator.generateCode(this.project.getProject(), model, delta, monitor);
+
+	}
+
+	/**
+	 * @return
+	 */
+	public Delta integrateBackwardAndRecordDelta() {
+		return applyChangeAndRecordDelta(x -> integrateBackward(), getSrc());
+	}
+
+	/**
+	 * Applies a change to a model and records the changes as delta
+	 *
+	 * @param change The change
+	 * @param model  The model the change should be applied to
+	 * @return The recorded delta
+	 */
+	private Delta applyChangeAndRecordDelta(final Consumer<EObject> change, final EObject model) {
+		final Delta delta = new Delta();
+		new OnlineChangeDetector(delta, model);
+		change.accept(model);
+		OnlineChangeDetector.removeDeltaListeners(model);
+		return delta;
 	}
 }

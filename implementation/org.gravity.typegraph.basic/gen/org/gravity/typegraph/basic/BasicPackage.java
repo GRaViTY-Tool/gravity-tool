@@ -363,13 +363,22 @@ public interface BasicPackage extends EPackage {
 	int TACCESS__OUTGOING_FLOWS = TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
 
 	/**
+	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TACCESS__TANNOTATION = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS__TARGET = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
+	int TACCESS__TARGET = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' container reference.
@@ -378,7 +387,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS__SOURCE = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
+	int TACCESS__SOURCE = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Static Type</b></em>' reference.
@@ -387,7 +396,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS__STATIC_TYPE = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 2;
+	int TACCESS__STATIC_TYPE = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>TAccess</em>' class.
@@ -396,7 +405,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS_FEATURE_COUNT = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 3;
+	int TACCESS_FEATURE_COUNT = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get TAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TACCESS___GET_TANNOTATION__ECLASS = TABSTRACT_FLOW_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>TAccess</em>' class.
@@ -405,7 +423,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS_OPERATION_COUNT = TABSTRACT_FLOW_ELEMENT_OPERATION_COUNT + 0;
+	int TACCESS_OPERATION_COUNT = TABSTRACT_FLOW_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -1020,22 +1038,13 @@ public interface BasicPackage extends EPackage {
 	int TCLASS___HAS_APARENT_THIS_TMEMBER__TMEMBER = TABSTRACT_TYPE_OPERATION_COUNT + 6;
 
 	/**
-	 * The operation id for the '<em>Get Resolved Parent Class</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCLASS___GET_RESOLVED_PARENT_CLASS = TABSTRACT_TYPE_OPERATION_COUNT + 7;
-
-	/**
 	 * The operation id for the '<em>To String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___TO_STRING = TABSTRACT_TYPE_OPERATION_COUNT + 8;
+	int TCLASS___TO_STRING = TABSTRACT_TYPE_OPERATION_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get Parents</em>' operation.
@@ -1044,7 +1053,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_PARENTS = TABSTRACT_TYPE_OPERATION_COUNT + 9;
+	int TCLASS___GET_PARENTS = TABSTRACT_TYPE_OPERATION_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Has Common Super Type</em>' operation.
@@ -1053,7 +1062,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 10;
+	int TCLASS___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>TClass</em>' class.
@@ -1062,7 +1071,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS_OPERATION_COUNT = TABSTRACT_TYPE_OPERATION_COUNT + 11;
+	int TCLASS_OPERATION_COUNT = TABSTRACT_TYPE_OPERATION_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>TName</b></em>' attribute.
@@ -1659,6 +1668,15 @@ public interface BasicPackage extends EPackage {
 	int TCALL__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
+	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCALL__TANNOTATION = TACCESS__TANNOTATION;
+
+	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1693,6 +1711,15 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TCALL_FEATURE_COUNT = TACCESS_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get TAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCALL___GET_TANNOTATION__ECLASS = TACCESS___GET_TANNOTATION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>TCall</em>' class.
@@ -2991,6 +3018,15 @@ public interface BasicPackage extends EPackage {
 	int TREAD__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
+	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD__TANNOTATION = TACCESS__TANNOTATION;
+
+	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3025,6 +3061,15 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TREAD_FEATURE_COUNT = TACCESS_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get TAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD___GET_TANNOTATION__ECLASS = TACCESS___GET_TANNOTATION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>TRead</em>' class.
@@ -3063,6 +3108,15 @@ public interface BasicPackage extends EPackage {
 	int TWRITE__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
+	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWRITE__TANNOTATION = TACCESS__TANNOTATION;
+
+	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3097,6 +3151,15 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TWRITE_FEATURE_COUNT = TACCESS_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get TAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWRITE___GET_TANNOTATION__ECLASS = TACCESS___GET_TANNOTATION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>TWrite</em>' class.
@@ -3621,15 +3684,6 @@ public interface BasicPackage extends EPackage {
 	int TUNRESOLVED_TYPE___HAS_APARENT_THIS_TMEMBER__TMEMBER = TCLASS___HAS_APARENT_THIS_TMEMBER__TMEMBER;
 
 	/**
-	 * The operation id for the '<em>Get Resolved Parent Class</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TUNRESOLVED_TYPE___GET_RESOLVED_PARENT_CLASS = TCLASS___GET_RESOLVED_PARENT_CLASS;
-
-	/**
 	 * The operation id for the '<em>To String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3785,6 +3839,15 @@ public interface BasicPackage extends EPackage {
 	int TREAD_WRITE__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
+	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__TANNOTATION = TACCESS__TANNOTATION;
+
+	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3819,6 +3882,15 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TREAD_WRITE_FEATURE_COUNT = TACCESS_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get TAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE___GET_TANNOTATION__ECLASS = TACCESS___GET_TANNOTATION__ECLASS;
 
 	/**
 	 * The number of operations of the '<em>TRead Write</em>' class.
@@ -4447,16 +4519,6 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTClass__HasAParentThisTMember__TMember();
-
-	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TClass#getResolvedParentClass() <em>Get Resolved Parent Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Resolved Parent Class</em>' operation.
-	 * @see org.gravity.typegraph.basic.TClass#getResolvedParentClass()
-	 * @generated
-	 */
-	EOperation getTClass__GetResolvedParentClass();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TClass#toString() <em>To String</em>}' operation.
@@ -6188,14 +6250,6 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TCLASS___HAS_APARENT_THIS_TMEMBER__TMEMBER = eINSTANCE.getTClass__HasAParentThisTMember__TMember();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Resolved Parent Class</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TCLASS___GET_RESOLVED_PARENT_CLASS = eINSTANCE.getTClass__GetResolvedParentClass();
 
 		/**
 		 * The meta object literal for the '<em><b>To String</b></em>' operation.

@@ -2,6 +2,7 @@ package org.gravity.modisco;
 
 import org.eclipse.modisco.java.Annotation;
 import org.eclipse.modisco.java.ClassDeclaration;
+import org.eclipse.modisco.java.EnumConstantDeclaration;
 import org.eclipse.modisco.java.Initializer;
 import org.eclipse.modisco.java.MethodInvocation;
 import org.eclipse.modisco.java.Model;
@@ -85,5 +86,10 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 	@Override
 	public MSuperConstructorInvocation createSuperConstructorInvocation() {
 		return ModiscoFactory.eINSTANCE.createMSuperConstructorInvocation();
+	}
+
+	@Override
+	public EnumConstantDeclaration createEnumConstantDeclaration() {
+		return ModiscoFactory.eINSTANCE.createMEnumConstantDeclaration();
 	}
 }

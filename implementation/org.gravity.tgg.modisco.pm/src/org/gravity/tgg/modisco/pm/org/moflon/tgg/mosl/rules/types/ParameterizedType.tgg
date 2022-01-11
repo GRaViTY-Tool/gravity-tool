@@ -1,43 +1,39 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#rule ParameterizedTypeToClass
+#rule ParameterizedTypeToType
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	eModel : Model {
-		++  -orphanTypes -> eParameterizedType
+	model:Model {
+		++-orphanTypes->eParameterizedType
 	}
-	++ eParameterizedType : ParameterizedType {
+	
+	++eParameterizedType:ParameterizedType {
 		++  -type -> eTypeAccess
 	}
-	++ eTypeAccess : TypeAccess {
+
+	++eTypeAccess:TypeAccess {
 		++  -type -> eType
 	}
-	eType : Type
+
+	eType:AbstractTypeDeclaration
 }
 
 #target {
-	pg : TypeGraph {
-		 -ownedTypes -> tAbstractType
-	}
-	tAbstractType : TAbstractType
+	tAbstractType:TAbstractType
 }
 
-#correspondence {
-	++ eParameterizedTypeToTAbstractType : TypeToTAbstractType {
+#correspondence {	
+	++ eParameterizedTypeToTAbstractType :TypeToTAbstractType {
 		#src->eParameterizedType
 		#trg->tAbstractType
 	}
-	eTypeToTAbstractType : TypeToTAbstractType {
+
+	eTypeToTAbstractType :TypeToTAbstractType {
 		#src->eType
 		#trg->tAbstractType
 	}
-	eModelToPg : ModelToTypeGraph {
-		#src->eModel
-		#trg->pg
-	}
 }
 
-#attributeConditions {
-}
+

@@ -15,6 +15,7 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runners.model.InitializationError;
 
 public class RefactoringPaperExample02Test extends AbstractRefactoringTestCase {
 
@@ -24,25 +25,35 @@ public class RefactoringPaperExample02Test extends AbstractRefactoringTestCase {
 	}
 
 	/**
-	 * description "PUM-NEG: (paper2) Pull-up of two classes into a parent class, which already has a method with the signature." 
+	 * description "PUM-NEG: (paper2) Pull-up of two classes into a parent class, which already has a method with the signature."
 	 * program "paper-example02"
+	 * @throws InitializationError
 	 */
 	@Test
-	public void test21() {
-		TypeGraph pm = getProgramModel();
+	public void test21_Forbid_ParentImplementsSignature() throws InitializationError {
+		final TypeGraph pm = getProgramModel();
 
-		TClass parent = pm.getClass("example01.ParentClass");
-		TClass child1 = pm.getClass("example01.ChildClass1");
-		TClass child2 = pm.getClass("example01.ChildClass2");
-		TMethodSignature signature = pm.getMethodSignature("method():void");
-		TMethodDefinition definition0 = signature.getTDefinition(parent);
-		TMethodDefinition definition1 = signature.getTDefinition(child1);
-		TMethodDefinition definition2 = signature.getTDefinition(child2);
-		
-		PullUpMethodConfiguration pum = new PullUpMethodConfiguration(signature, parent);
-		RefactoringTool tool = new RefactoringTool(pm, false);
+		final TClass parent = pm.getClass("example01.ParentClass");
+		final TClass child1 = pm.getClass("example01.ChildClass1");
+		final TClass child2 = pm.getClass("example01.ChildClass2");
+		final TMethodSignature signature = pm.getMethodSignature("method():void");
+
+		if((child1 == null) || (child2== null) || (signature == null)) {
+			throw new InitializationError("Couldn't find all elements in program model.");
+		}
+
+		final TMethodDefinition definition0 = signature.getTDefinition(parent);
+		final TMethodDefinition definition1 = signature.getTDefinition(child1);
+		final TMethodDefinition definition2 = signature.getTDefinition(child2);
+
+		if((definition0 == null) || (definition1== null) || (definition2 == null)) {
+			throw new InitializationError("Couldn't find all elements in program model.");
+		}
+
+		final PullUpMethodConfiguration pum = new PullUpMethodConfiguration(signature, parent);
+		final RefactoringTool tool = new RefactoringTool(pm, false);
 		try {
-			boolean applicible = tool.applyRefactoring(pum);
+			final boolean applicible = tool.applyRefactoring(pum);
 			assertFalse(applicible);
 
 			// Check if the parent implements the signature and the child not
@@ -54,7 +65,7 @@ public class RefactoringPaperExample02Test extends AbstractRefactoringTestCase {
 			assertTrue(parent.getDeclaredTMethodDefinitions().contains(definition0));
 			assertTrue(child1.getDeclaredTMethodDefinitions().contains(definition1));
 			assertTrue(child2.getDeclaredTMethodDefinitions().contains(definition2));
-		} catch (RefactoringFailedException e) {
+		} catch (final RefactoringFailedException e) {
 			throw new AssertionError(e.getMessage(), e);
 		}
 	}

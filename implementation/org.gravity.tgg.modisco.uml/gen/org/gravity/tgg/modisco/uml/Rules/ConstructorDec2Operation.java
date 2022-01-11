@@ -4,6 +4,7 @@ package org.gravity.tgg.modisco.uml.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Operation;
 
 import org.gravity.modisco.MConstructorDefinition;
@@ -14,6 +15,7 @@ import org.moflon.tgg.language.modelgenerator.RuleEntryContainer;
 
 import org.moflon.tgg.runtime.AbstractRule;
 import org.moflon.tgg.runtime.AttributeConstraintsRuleResult;
+import org.moflon.tgg.runtime.EMoflonEdge;
 import org.moflon.tgg.runtime.EObjectContainer;
 import org.moflon.tgg.runtime.IsApplicableMatch;
 import org.moflon.tgg.runtime.IsApplicableRuleResult;
@@ -105,7 +107,8 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject comment,
+			EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,7 +124,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Operation feature);
+	boolean isAppropriate_BWD(Match match, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,7 +148,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Operation feature);
+	void registerObjectsToMatch_BWD(Match match, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +156,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature);
+	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,7 +172,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +188,8 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject comment,
+			EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +205,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Operation_2(Operation feature);
+	EObjectContainer isAppropriate_FWD_MConstructorDefinition_0(MConstructorDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +213,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MConstructorDefinition_0(MConstructorDefinition bodyDeclaration);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_140(EMoflonEdge _edge_ownedComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,8 +245,8 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MConstructorDefinition bodyDeclaration, Operation feature, Match sourceMatch,
-			Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Operation feature, Comment comment, MConstructorDefinition bodyDeclaration,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -266,7 +270,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Operation feature);
+	boolean checkDEC_BWD(Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->

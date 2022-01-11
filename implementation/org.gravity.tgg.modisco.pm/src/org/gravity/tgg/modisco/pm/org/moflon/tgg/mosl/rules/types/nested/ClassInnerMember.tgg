@@ -33,14 +33,19 @@
 }
 
 #correspondence {
-	++ tInnerTypeToTInnerAbstractType :TypeToTAbstractType {
+	++tInnerTypeToTInnerAbstractType :TypeToTAbstractType {
+		#src->mInnerClass
+		#trg->tInnerClass
+	}
+	++astNodeToAnnotatable :ASTNodeToTAnnotatable {
 		#src->mInnerClass
 		#trg->tInnerClass
 	}
 }
 
 #attributeConditions {
-	concat(tOuterClass.tName, "$", mInnerClass.name, tInnerClass.tName)
+	eq(mInnerClass.proxy, tInnerClass.tLib)
+	concat("$", tOuterClass.tName, mInnerClass.name, tInnerClass.tName)
 }
 
 #using org.gravity.tgg.modisco.pm.*

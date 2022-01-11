@@ -1,8 +1,6 @@
 package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -69,17 +67,16 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	private MGravityModel model;
 
 	@Override
-	public boolean process(MGravityModel model, Collection<MAbstractMethodDefinition> elements, IFolder debug,
-			IProgressMonitor monitor) {
+	public boolean process(final MGravityModel model, final Collection<MAbstractMethodDefinition> elements, final IFolder debug,
+			final IProgressMonitor monitor) {
 		this.model = model;
-		final List<MAbstractMethodDefinition> failed = elements.parallelStream()
-				.filter(definition -> !addStaticTypeAccesses(definition)).collect(Collectors.toList());
-		if (failed.isEmpty()) {
-			return true;
+		for (final MAbstractMethodDefinition definition : elements) {
+			if (!addStaticTypeAccesses(definition)) {
+				LOGGER.error(NLS.bind(Messages.errorStaticTypeFailed, definition.getName()));
+				return false;
+			}
 		}
-		failed.forEach(definition -> LOGGER
-				.error(NLS.bind(Messages.errorStaticTypeFailed, definition.getName())));
-		return false;
+		return true;
 	}
 
 	@Override
@@ -93,7 +90,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @param method The method
 	 * @return if the method has been processed sucessfully
 	 */
-	private boolean addStaticTypeAccesses(MAbstractMethodDefinition method) {
+	private boolean addStaticTypeAccesses(final MAbstractMethodDefinition method) {
 		for (final AbstractMethodInvocation methodInvoc : method.getMMethodInvocations()) {
 			if (!(methodInvoc instanceof MMethodInvocation)) {
 				continue;
@@ -105,7 +102,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 				LOGGER.error(e.getMessage(), e);
 				return false;
 			}
-			if (type == null && !methodInvoc.getMethod().isProxy()) {
+			if ((type == null) && !methodInvoc.getMethod().isProxy()) {
 				return false;
 			}
 			((MMethodInvocation) methodInvoc).setMStaticType(type);
@@ -122,14 +119,16 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The static type of the object on which the invoked method is called
 	 * @throws ProcessingException
 	 */
-	private Type getStaticType(AbstractMethodInvocation methodInvoc, MAbstractMethodDefinition method)
+	private Type getStaticType(final AbstractMethodInvocation methodInvoc, final MAbstractMethodDefinition method)
 			throws ProcessingException {
 		Type type = null;
 		if (methodInvoc instanceof MethodInvocation) {
 			type = getStaticType(((MethodInvocation) methodInvoc).getExpression(), method);
 			if (type == null) {
 				if (LOGGER.isEnabledFor(Level.WARN)) {
-					LOGGER.warn(NLS.bind(Messages.errorFindStaticType, new String[] {NameUtil.getFullyQualifiedName(methodInvoc.getMethod()), NameUtil.getFullyQualifiedName(method)}));
+					LOGGER.warn(NLS.bind(Messages.errorFindStaticType,
+							new String[] { NameUtil.getFullyQualifiedName(methodInvoc.getMethod()),
+									NameUtil.getFullyQualifiedName(method) }));
 				}
 				// If we cannot find the static type assume the declaring type
 				type = getDeclaringType(methodInvoc.getMethod());
@@ -148,8 +147,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			type = method.getAbstractTypeDeclaration();
 		} else if (methodInvoc instanceof SuperConstructorInvocation) {
 			// seems to never happen?..
-			LOGGER.log(Level.ERROR,
-					Messages.unsupportedSuperConstructorInvocation);
+			LOGGER.log(Level.ERROR, Messages.unsupportedSuperConstructorInvocation);
 			throw new ProcessingException(methodInvoc);
 		} else {
 			LOGGER.error(NLS.bind(Messages.unknownInvocationType, methodInvoc.getClass().getName()));
@@ -166,7 +164,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The static type
 	 * @throws ProcessingException
 	 */
-	private Type getStaticType(SingleVariableAccess expression, MAbstractMethodDefinition method)
+	private Type getStaticType(final SingleVariableAccess expression, final MAbstractMethodDefinition method)
 			throws ProcessingException {
 		final VariableDeclaration var = expression.getVariable();
 		if (var == null) {
@@ -205,7 +203,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @param initializer The expression used as initializer
 	 * @return The possible static type of the variable
 	 */
-	private Type getStaticTypeFromInitializer(Expression initializer) {
+	private Type getStaticTypeFromInitializer(final Expression initializer) {
 		if (initializer != null) {
 			if (initializer instanceof MethodInvocation) {
 				final AbstractMethodDeclaration targetMethod = ((MethodInvocation) initializer).getMethod();
@@ -232,7 +230,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The static type
 	 * @throws ProcessingException
 	 */
-	private Type getStaticType(Expression expression, MAbstractMethodDefinition method) throws ProcessingException {
+	private Type getStaticType(final Expression expression, final MAbstractMethodDefinition method) throws ProcessingException {
 		if (expression == null) {
 			// If the access is not contained in an expression the access is to a direct
 			// member of the type declaring the method
@@ -298,8 +296,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 				return ((ConstructorDeclaration) calledOn).getAbstractTypeDeclaration();
 			}
 		}
-		LOGGER.error(NLS.bind(Messages.unsupportedStaticTypeFromExpressionKind,
-				expression.getClass().getSimpleName()));
+		LOGGER.error(NLS.bind(Messages.unsupportedStaticTypeFromExpressionKind, expression.getClass().getSimpleName()));
 		return null;
 	}
 
@@ -310,7 +307,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @param method     The method containing the access
 	 * @return The static type
 	 */
-	private Type getStaticType(UnresolvedItemAccess expression, MAbstractMethodDefinition method) {
+	private Type getStaticType(final UnresolvedItemAccess expression, final MAbstractMethodDefinition method) {
 		final String nameOfAccessedElement = expression.getElement().getName();
 		// Check if the item is a parameter
 		for (final SingleVariableDeclaration parameter : method.getParameters()) {
@@ -339,7 +336,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @param type The type containing the field
 	 * @return The type of the field or null if there is no field with this name
 	 */
-	private Type searchTypeOfFieldWithName(String name, AbstractTypeDeclaration type) {
+	private Type searchTypeOfFieldWithName(final String name, final AbstractTypeDeclaration type) {
 		return type.getBodyDeclarations().parallelStream().filter(body -> body instanceof FieldDeclaration)
 				.map(body -> (FieldDeclaration) body)
 				.filter(field -> field.getFragments().stream().anyMatch(fragment -> fragment.getName().equals(name)))
@@ -354,7 +351,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The static type
 	 * @throws ProcessingException
 	 */
-	private Type getStaticType(final InfixExpression expression, MAbstractMethodDefinition method)
+	private Type getStaticType(final InfixExpression expression, final MAbstractMethodDefinition method)
 			throws ProcessingException {
 		Type type = getStaticType(expression.getLeftOperand(), method);
 		if (type == null) {
@@ -371,7 +368,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The static type
 	 * @throws ProcessingException If the expression is not supported
 	 */
-	private Type getStaticType(AbstractTypeQualifiedExpression expression, MAbstractMethodDefinition method)
+	private Type getStaticType(final AbstractTypeQualifiedExpression expression, final MAbstractMethodDefinition method)
 			throws ProcessingException {
 		final TypeAccess qualifier = expression.getQualifier();
 		if (qualifier == null) {
@@ -386,7 +383,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 				return (Type) ((MDefinition) ((SuperFieldAccess) expression).getField().getVariable().eContainer())
 						.eContainer();
 			}
-			throw new ProcessingException(NLS.bind(Messages.unsupportedExpression, expression.eClass().getName()) );
+			throw new ProcessingException(NLS.bind(Messages.unsupportedExpression, expression.eClass().getName()));
 		}
 		return qualifier.getType();
 	}
@@ -397,7 +394,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @param body The method definition
 	 * @return the declaring type
 	 */
-	private Type getDeclaringType(BodyDeclaration body) {
+	private Type getDeclaringType(final BodyDeclaration body) {
 		Type type = body.getAbstractTypeDeclaration();
 		if (type == null) {
 			final EObject container = body.eContainer();
@@ -418,7 +415,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @param anon The anonymous class
 	 * @return the declaring type
 	 */
-	private Type getDeclaringType(AnonymousClassDeclaration anon) {
+	private Type getDeclaringType(final AnonymousClassDeclaration anon) {
 		final EObject container = anon.eContainer();
 		if (container instanceof ClassInstanceCreation) {
 			final ClassInstanceCreation classInstanceCreation = (ClassInstanceCreation) container;

@@ -13,7 +13,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -120,7 +119,7 @@ public final class JavaProjectUtil {
 	 *                                       name
 	 * @throws CoreException                 If the creation fails
 	 */
-	public static IJavaProject createJavaProject(final String name, final Set<String> sourceFolderNames, final IProgressMonitor monitor)
+	public static IJavaProject createJavaProject(final String name, final Collection<String> sourceFolderNames, final IProgressMonitor monitor)
 			throws DuplicateProjectNameException, CoreException {
 		// Create new project with given name
 		final IProject project = EclipseProjectUtil.createProject(name, monitor);
@@ -137,7 +136,7 @@ public final class JavaProjectUtil {
 	 * @return The java project
 	 * @throws CoreException If the conversion fails
 	 */
-	public static IJavaProject convertToJavaProject(final Set<String> sourceFolderNames, final IProject project,
+	public static IJavaProject convertToJavaProject(final Collection<String> sourceFolderNames, final IProject project,
 			final IProgressMonitor monitor) throws CoreException {
 		// Add Java-Nature
 		if (project.hasNature(JavaCore.NATURE_ID)) {

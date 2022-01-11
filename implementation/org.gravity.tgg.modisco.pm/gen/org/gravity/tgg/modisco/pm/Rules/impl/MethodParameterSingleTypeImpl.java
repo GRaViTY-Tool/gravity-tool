@@ -224,8 +224,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		//nothing EMoflonEdge mEntryToTParameter__mEntry____source = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mEntryToTParameter__tParameter____target = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge tSiganture__tParameter____parameters = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tParameter____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge tParameter__tAbstractType____type = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge tParameter__tAbstractType____type = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tParameter____target = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mSignature__mEntry____mEntrys = (EMoflonEdge) result3_green[16];
 
 		// 
@@ -562,8 +562,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		//nothing EMoflonEdge mEntryToTParameter__mEntry____source = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mEntryToTParameter__tParameter____target = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge tSiganture__tParameter____parameters = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tParameter____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge tParameter__tAbstractType____type = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge tParameter__tAbstractType____type = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tParameter____target = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mSignature__mEntry____mEntrys = (EMoflonEdge) result3_green[16];
 
 		// 
@@ -782,7 +782,7 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_22(EMoflonEdge _edge_parameters) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_28(EMoflonEdge _edge_parameters) {
 
 		Object[] result1_bindingAndBlack = MethodParameterSingleTypeImpl
 				.pattern_MethodParameterSingleType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -841,7 +841,7 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_22(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_28(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = MethodParameterSingleTypeImpl
 				.pattern_MethodParameterSingleType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -910,6 +910,16 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		if (!__helper.hasExpectedValue("tParameter", "lowerBound", 0, ComparingOperator.EQUAL)) {
+			ruleResult.setSuccess(false);
+			return ruleResult;
+		}
+
+		if (!__helper.hasExpectedValue("tParameter", "upperBound", 1, ComparingOperator.EQUAL)) {
+			ruleResult.setSuccess(false);
+			return ruleResult;
+		}
+
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
@@ -939,6 +949,16 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
+
+		if (!__helper.hasExpectedValue("tParameter", "lowerBound", 0, ComparingOperator.EQUAL)) {
+			ruleResult.setSuccess(false);
+			return ruleResult;
+		}
+
+		if (!__helper.hasExpectedValue("tParameter", "upperBound", 1, ComparingOperator.EQUAL)) {
+			ruleResult.setSuccess(false);
+			return ruleResult;
+		}
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
@@ -1093,6 +1113,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		Object[] result1_black = MethodParameterSingleTypeImpl
 				.pattern_MethodParameterSingleType_28_1_matchtggpattern_blackBBB(tSiganture, tAbstractType, tParameter);
 		if (result1_black != null) {
+			MethodParameterSingleTypeImpl.pattern_MethodParameterSingleType_28_1_matchtggpattern_greenB(tParameter);
+
 			return MethodParameterSingleTypeImpl.pattern_MethodParameterSingleType_28_2_expressionF();
 		} else {
 			return MethodParameterSingleTypeImpl.pattern_MethodParameterSingleType_28_3_expressionF();
@@ -1291,10 +1313,10 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 			return null;
 		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_22__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_22((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_22__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_22((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_28__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_28((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_28__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_28((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_SINGLE_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1509,12 +1531,16 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
 		TParameter tParameter = BasicFactory.eINSTANCE.createTParameter();
+		int tParameter_lowerBound_prime = Integer.valueOf(0);
+		int tParameter_upperBound_prime = Integer.valueOf(1);
 		mEntryToTParameter.setSource(mEntry);
 		mFlowElementToTFlowElement.setSource(mEntry);
 		mEntryToTParameter.setTarget(tParameter);
 		tSiganture.getParameters().add(tParameter);
-		mFlowElementToTFlowElement.setTarget(tParameter);
 		tParameter.setType(tAbstractType);
+		mFlowElementToTFlowElement.setTarget(tParameter);
+		tParameter.setLowerBound(Integer.valueOf(tParameter_lowerBound_prime));
+		tParameter.setUpperBound(Integer.valueOf(tParameter_upperBound_prime));
 		return new Object[] { tSiganture, tAbstractType, mEntry, mEntryToTParameter, mFlowElementToTFlowElement,
 				tParameter };
 	}
@@ -1683,8 +1709,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		EMoflonEdge mEntryToTParameter__mEntry____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mEntryToTParameter__tParameter____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSiganture__tParameter____parameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowElementToTFlowElement__tParameter____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tParameter__tAbstractType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mFlowElementToTFlowElement__tParameter____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mEntry____mEntrys = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodParameterSingleType";
 		String mEntry__mType____type_name_prime = "type";
@@ -1692,8 +1718,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		String mEntryToTParameter__mEntry____source_name_prime = "source";
 		String mEntryToTParameter__tParameter____target_name_prime = "target";
 		String tSiganture__tParameter____parameters_name_prime = "parameters";
-		String mFlowElementToTFlowElement__tParameter____target_name_prime = "target";
 		String tParameter__tAbstractType____type_name_prime = "type";
+		String mFlowElementToTFlowElement__tParameter____target_name_prime = "target";
 		String mSignature__mEntry____mEntrys_name_prime = "mEntrys";
 		mEntry__mType____type.setSrc(mEntry);
 		mEntry__mType____type.setTrg(mType);
@@ -1710,12 +1736,12 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		tSiganture__tParameter____parameters.setSrc(tSiganture);
 		tSiganture__tParameter____parameters.setTrg(tParameter);
 		ruleresult.getCreatedEdges().add(tSiganture__tParameter____parameters);
-		mFlowElementToTFlowElement__tParameter____target.setSrc(mFlowElementToTFlowElement);
-		mFlowElementToTFlowElement__tParameter____target.setTrg(tParameter);
-		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tParameter____target);
 		tParameter__tAbstractType____type.setSrc(tParameter);
 		tParameter__tAbstractType____type.setTrg(tAbstractType);
 		ruleresult.getCreatedEdges().add(tParameter__tAbstractType____type);
+		mFlowElementToTFlowElement__tParameter____target.setSrc(mFlowElementToTFlowElement);
+		mFlowElementToTFlowElement__tParameter____target.setTrg(tParameter);
+		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tParameter____target);
 		mSignature__mEntry____mEntrys.setSrc(mSignature);
 		mSignature__mEntry____mEntrys.setTrg(mEntry);
 		ruleresult.getTranslatedEdges().add(mSignature__mEntry____mEntrys);
@@ -1725,15 +1751,15 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		mEntryToTParameter__mEntry____source.setName(mEntryToTParameter__mEntry____source_name_prime);
 		mEntryToTParameter__tParameter____target.setName(mEntryToTParameter__tParameter____target_name_prime);
 		tSiganture__tParameter____parameters.setName(tSiganture__tParameter____parameters_name_prime);
+		tParameter__tAbstractType____type.setName(tParameter__tAbstractType____type_name_prime);
 		mFlowElementToTFlowElement__tParameter____target
 				.setName(mFlowElementToTFlowElement__tParameter____target_name_prime);
-		tParameter__tAbstractType____type.setName(tParameter__tAbstractType____type_name_prime);
 		mSignature__mEntry____mEntrys.setName(mSignature__mEntry____mEntrys_name_prime);
 		return new Object[] { ruleresult, tSiganture, tAbstractType, mEntry, mEntryToTParameter,
 				mFlowElementToTFlowElement, tParameter, mType, mSignature, mEntry__mType____type,
 				mFlowElementToTFlowElement__mEntry____source, mEntryToTParameter__mEntry____source,
 				mEntryToTParameter__tParameter____target, tSiganture__tParameter____parameters,
-				mFlowElementToTFlowElement__tParameter____target, tParameter__tAbstractType____type,
+				tParameter__tAbstractType____type, mFlowElementToTFlowElement__tParameter____target,
 				mSignature__mEntry____mEntrys };
 	}
 
@@ -2348,8 +2374,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		EMoflonEdge mEntryToTParameter__mEntry____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mEntryToTParameter__tParameter____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSiganture__tParameter____parameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowElementToTFlowElement__tParameter____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tParameter__tAbstractType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mFlowElementToTFlowElement__tParameter____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mEntry____mEntrys = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodParameterSingleType";
 		String mEntry__mType____type_name_prime = "type";
@@ -2357,8 +2383,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		String mEntryToTParameter__mEntry____source_name_prime = "source";
 		String mEntryToTParameter__tParameter____target_name_prime = "target";
 		String tSiganture__tParameter____parameters_name_prime = "parameters";
-		String mFlowElementToTFlowElement__tParameter____target_name_prime = "target";
 		String tParameter__tAbstractType____type_name_prime = "type";
+		String mFlowElementToTFlowElement__tParameter____target_name_prime = "target";
 		String mSignature__mEntry____mEntrys_name_prime = "mEntrys";
 		mEntry__mType____type.setSrc(mEntry);
 		mEntry__mType____type.setTrg(mType);
@@ -2375,12 +2401,12 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		tSiganture__tParameter____parameters.setSrc(tSiganture);
 		tSiganture__tParameter____parameters.setTrg(tParameter);
 		ruleresult.getTranslatedEdges().add(tSiganture__tParameter____parameters);
-		mFlowElementToTFlowElement__tParameter____target.setSrc(mFlowElementToTFlowElement);
-		mFlowElementToTFlowElement__tParameter____target.setTrg(tParameter);
-		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tParameter____target);
 		tParameter__tAbstractType____type.setSrc(tParameter);
 		tParameter__tAbstractType____type.setTrg(tAbstractType);
 		ruleresult.getTranslatedEdges().add(tParameter__tAbstractType____type);
+		mFlowElementToTFlowElement__tParameter____target.setSrc(mFlowElementToTFlowElement);
+		mFlowElementToTFlowElement__tParameter____target.setTrg(tParameter);
+		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tParameter____target);
 		mSignature__mEntry____mEntrys.setSrc(mSignature);
 		mSignature__mEntry____mEntrys.setTrg(mEntry);
 		ruleresult.getCreatedEdges().add(mSignature__mEntry____mEntrys);
@@ -2390,15 +2416,15 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		mEntryToTParameter__mEntry____source.setName(mEntryToTParameter__mEntry____source_name_prime);
 		mEntryToTParameter__tParameter____target.setName(mEntryToTParameter__tParameter____target_name_prime);
 		tSiganture__tParameter____parameters.setName(tSiganture__tParameter____parameters_name_prime);
+		tParameter__tAbstractType____type.setName(tParameter__tAbstractType____type_name_prime);
 		mFlowElementToTFlowElement__tParameter____target
 				.setName(mFlowElementToTFlowElement__tParameter____target_name_prime);
-		tParameter__tAbstractType____type.setName(tParameter__tAbstractType____type_name_prime);
 		mSignature__mEntry____mEntrys.setName(mSignature__mEntry____mEntrys_name_prime);
 		return new Object[] { ruleresult, tSiganture, tAbstractType, mEntry, mEntryToTParameter,
 				mFlowElementToTFlowElement, tParameter, mType, mSignature, mEntry__mType____type,
 				mFlowElementToTFlowElement__mEntry____source, mEntryToTParameter__mEntry____source,
 				mEntryToTParameter__tParameter____target, tSiganture__tParameter____parameters,
-				mFlowElementToTFlowElement__tParameter____target, tParameter__tAbstractType____type,
+				tParameter__tAbstractType____type, mFlowElementToTFlowElement__tParameter____target,
 				mSignature__mEntry____mEntrys };
 	}
 
@@ -2492,23 +2518,31 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 	public static final Iterable<Object[]> pattern_MethodParameterSingleType_12_2_corematch_blackBBFBFFFB(
 			TMethodSignature tSiganture, TAbstractType tAbstractType, TParameter tParameter, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(tSiganture, MSignatureToTSignature.class, "target")) {
-			MSignature tmpMSignature = mSignatureToTSignature.getSource();
-			if (tmpMSignature instanceof MMethodSignature) {
-				MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
-				for (TypeToTAbstractType mTypeToTAbstractType : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(tAbstractType, TypeToTAbstractType.class, "target")) {
-					Type mType = mTypeToTAbstractType.getSource();
-					if (mType != null) {
-						_result.add(new Object[] { tSiganture, tAbstractType, mTypeToTAbstractType, tParameter,
-								mSignatureToTSignature, mType, mSignature, match });
+		int tParameter_lowerBound = tParameter.getLowerBound();
+		if (Integer.valueOf(tParameter_lowerBound).equals(Integer.valueOf(0))) {
+			int tParameter_upperBound = tParameter.getUpperBound();
+			if (Integer.valueOf(tParameter_upperBound).equals(Integer.valueOf(1))) {
+				for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(tSiganture, MSignatureToTSignature.class, "target")) {
+					MSignature tmpMSignature = mSignatureToTSignature.getSource();
+					if (tmpMSignature instanceof MMethodSignature) {
+						MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
+						for (TypeToTAbstractType mTypeToTAbstractType : org.moflon.core.utilities.eMoflonEMFUtil
+								.getOppositeReferenceTyped(tAbstractType, TypeToTAbstractType.class, "target")) {
+							Type mType = mTypeToTAbstractType.getSource();
+							if (mType != null) {
+								_result.add(new Object[] { tSiganture, tAbstractType, mTypeToTAbstractType, tParameter,
+										mSignatureToTSignature, mType, mSignature, match });
+							}
+
+						}
 					}
 
 				}
 			}
 
 		}
+
 		return _result;
 	}
 
@@ -2523,8 +2557,16 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 					if (tSiganture.getParameters().contains(tParameter)) {
 						if (tAbstractType.equals(tParameter.getType())) {
 							if (mType.equals(mTypeToTAbstractType.getSource())) {
-								_result.add(new Object[] { tSiganture, tAbstractType, mTypeToTAbstractType, tParameter,
-										mSignatureToTSignature, mType, mSignature });
+								int tParameter_lowerBound = tParameter.getLowerBound();
+								if (Integer.valueOf(tParameter_lowerBound).equals(Integer.valueOf(0))) {
+									int tParameter_upperBound = tParameter.getUpperBound();
+									if (Integer.valueOf(tParameter_upperBound).equals(Integer.valueOf(1))) {
+										_result.add(new Object[] { tSiganture, tAbstractType, mTypeToTAbstractType,
+												tParameter, mSignatureToTSignature, mType, mSignature });
+									}
+
+								}
+
 							}
 						}
 					}
@@ -2722,7 +2764,15 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 				if (tSiganture.getParameters().contains(tParameter)) {
 					TAbstractType tAbstractType = tParameter.getType();
 					if (tAbstractType != null) {
-						_result.add(new Object[] { tSiganture, tAbstractType, tParameter, _edge_parameters });
+						int tParameter_lowerBound = tParameter.getLowerBound();
+						if (Integer.valueOf(tParameter_lowerBound).equals(Integer.valueOf(0))) {
+							int tParameter_upperBound = tParameter.getUpperBound();
+							if (Integer.valueOf(tParameter_upperBound).equals(Integer.valueOf(1))) {
+								_result.add(new Object[] { tSiganture, tAbstractType, tParameter, _edge_parameters });
+							}
+
+						}
+
 					}
 
 				}
@@ -2954,8 +3004,16 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 			TMethodSignature tSiganture, TAbstractType tAbstractType, MEntry mEntry, TParameter tParameter, Type mType,
 			MMethodSignature mSignature, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tSiganture, tAbstractType, mEntry, tParameter, mType, mSignature, sourceMatch,
-					targetMatch };
+			int tParameter_lowerBound = tParameter.getLowerBound();
+			if (Integer.valueOf(tParameter_lowerBound).equals(Integer.valueOf(0))) {
+				int tParameter_upperBound = tParameter.getUpperBound();
+				if (Integer.valueOf(tParameter_upperBound).equals(Integer.valueOf(1))) {
+					return new Object[] { tSiganture, tAbstractType, mEntry, tParameter, mType, mSignature, sourceMatch,
+							targetMatch };
+				}
+
+			}
+
 		}
 		return null;
 	}
@@ -3128,6 +3186,14 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 			}
 		}
 		return null;
+	}
+
+	public static final Object[] pattern_MethodParameterSingleType_28_1_matchtggpattern_greenB(TParameter tParameter) {
+		int tParameter_lowerBound_prime = Integer.valueOf(0);
+		int tParameter_upperBound_prime = Integer.valueOf(1);
+		tParameter.setLowerBound(Integer.valueOf(tParameter_lowerBound_prime));
+		tParameter.setUpperBound(Integer.valueOf(tParameter_upperBound_prime));
+		return new Object[] { tParameter };
 	}
 
 	public static final boolean pattern_MethodParameterSingleType_28_2_expressionF() {
@@ -3339,6 +3405,8 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
 		TParameter tParameter = BasicFactory.eINSTANCE.createTParameter();
+		int tParameter_lowerBound_prime = Integer.valueOf(0);
+		int tParameter_upperBound_prime = Integer.valueOf(1);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		mEntry.setType(mType);
@@ -3350,9 +3418,11 @@ public class MethodParameterSingleTypeImpl extends AbstractRuleImpl implements M
 		ruleResult.getCorrObjects().add(mFlowElementToTFlowElement);
 		mEntryToTParameter.setTarget(tParameter);
 		tSiganture.getParameters().add(tParameter);
-		mFlowElementToTFlowElement.setTarget(tParameter);
 		tParameter.setType(tAbstractType);
+		mFlowElementToTFlowElement.setTarget(tParameter);
 		ruleResult.getTargetObjects().add(tParameter);
+		tParameter.setLowerBound(Integer.valueOf(tParameter_lowerBound_prime));
+		tParameter.setUpperBound(Integer.valueOf(tParameter_upperBound_prime));
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));

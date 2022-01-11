@@ -5,22 +5,22 @@
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	++mPackage:Package {
-		++  -package -> mParentPackage
-	}
+	++mSubPackage:Package
 
-	mParentPackage:Package
+	mParentPackage:Package {
+		++-ownedPackages -> mSubPackage
+	}
 }
 
 #target {
 	typeGraph:TypeGraph
 
-	++tSub:TPackage {
+	++tSubPackage:TPackage {
 		++  -model -> typeGraph
 	}
 
-	tParent:TPackage {
-		++  -subpackages -> tSub
+	tParentPackage:TPackage {
+		++  -subpackages -> tSubPackage
 		-model -> typeGraph
 	}
 }
@@ -28,17 +28,17 @@
 #correspondence {
 	mParentPackageToTParent :PackageToTPackage {
 		#src->mParentPackage
-		#trg->tParent
+		#trg->tParentPackage
 	}
 
 	++ mPackageToTSub :PackageToTPackage {
-		#src->mPackage
-		#trg->tSub
+		#src->mSubPackage
+		#trg->tSubPackage
 	}
 }
 
 #attributeConditions {
-	eq(mPackage.name, tSub.tName)
+	eq(mSubPackage.name, tSubPackage.tName)
 }
 
 

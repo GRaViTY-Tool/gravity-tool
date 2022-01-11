@@ -1,0 +1,59 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule EnumConstant
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	mEnum:java.EnumDeclaration {
+		++-enumConstants -> mDefinition
+	}
+
+	++mDefinition:MEnumConstantDeclaration
+}
+
+#target {
+	tEnum:TClass {
+		++-defines -> tDefinition
+		++-signature -> tSignature
+		-model -> model
+	}
+
+	++tDefinition:TFieldDefinition {
+		++-signature -> tSignature
+	}
+
+	++tSignature:TFieldSignature {
+		++-field -> tName
+		++-type -> tEnum
+	}
+
+	++tName:TField
+
+	model:TypeGraph {
+		++-fields -> tName
+	}
+}
+
+#correspondence {
+	mEnumToTEnum:TypeToTAbstractType {
+		#src->mEnum
+		#trg->tEnum
+	}
+
+	++ mDefinitionToTMember :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+}
+
+#attributeConditions {
+	eq(mDefinition.name, tName.tName)
+}
+
+

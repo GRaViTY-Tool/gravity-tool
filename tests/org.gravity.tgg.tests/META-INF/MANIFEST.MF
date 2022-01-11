@@ -17,13 +17,12 @@ Require-Bundle: org.gravity.tgg.modisco.pm,
  org.gravity.eclipse.tests,
  org.eclipse.emf.henshin.interpreter,
  org.gravity.security.annotations,
- org.apache.log4j
+ org.apache.log4j,
+ carisma.profile.umlsec
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau
 Bundle-Activator: org.gravity.tgg.test.activator.MoDiscoTestActivator
 Automatic-Module-Name: org.gravity.tgg.modisco.test
-Export-Package: org.gravity.tgg.test.activator,
- org.gravity.tgg.test.complete
 Bundle-ClassPath: .
 

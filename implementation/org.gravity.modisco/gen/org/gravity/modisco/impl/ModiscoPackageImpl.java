@@ -23,6 +23,7 @@ import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MConstructorInvocation;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
+import org.gravity.modisco.MEnumConstantDeclaration;
 import org.gravity.modisco.MExtension;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MFieldName;
@@ -262,6 +263,13 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	private EClass mInitializerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mEnumConstantDeclarationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1040,6 +1048,16 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getMEnumConstantDeclaration() {
+		return mEnumConstantDeclarationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAccessKind() {
 		return accessKindEEnum;
 	}
@@ -1173,6 +1191,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 
 		mInitializerEClass = createEClass(MINITIALIZER);
 
+		mEnumConstantDeclarationEClass = createEClass(MENUM_CONSTANT_DECLARATION);
+
 		// Create enums
 		accessKindEEnum = createEEnum(ACCESS_KIND);
 	}
@@ -1249,6 +1269,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mSuperConstructorInvocationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
 		mInitializerEClass.getESuperTypes().add(this.getMDefinition());
 		mInitializerEClass.getESuperTypes().add(theJavaPackage.getInitializer());
+		mEnumConstantDeclarationEClass.getESuperTypes().add(theJavaPackage.getEnumConstantDeclaration());
+		mEnumConstantDeclarationEClass.getESuperTypes().add(this.getMDefinition());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(mAbstractMethodDefinitionEClass, MAbstractMethodDefinition.class, "MAbstractMethodDefinition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1350,6 +1372,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEClass(mSuperConstructorInvocationEClass, MSuperConstructorInvocation.class, "MSuperConstructorInvocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(mInitializerEClass, MInitializer.class, "MInitializer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(mEnumConstantDeclarationEClass, MEnumConstantDeclaration.class, "MEnumConstantDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(accessKindEEnum, AccessKind.class, "AccessKind");

@@ -17,30 +17,33 @@ final class GradleRegexPatterns {
 	/**
 	 * Plugin applications
 	 */
-	protected static final Pattern PLUGIN = Pattern.compile("(apply\\W+plugin:\\W*')(.+)(')");
+	protected static final Pattern PLUGIN = Pattern.compile("(apply\\W+plugin:\\W*['\"])(.+)['\"]");
 
 	/**
 	 * Defintions
 	 */
-	protected static final Pattern DEFINITION = Pattern.compile("def\\s+(\\w+)\\s+=\\s+\\[(.|\\n)+?\\]");
+	protected static final Pattern DEFINITION = Pattern.compile("def\\s+(\\w+)\\s+=\\s+\\[[^\\]]((?s).)+\\]");
 
 	/**
 	 * The single entries of an include
 	 */
-	protected static final Pattern INCLUDE_ENTRY = Pattern.compile("(('|\")(:)?)([\\w-_:]+)('|\")");
+	protected static final Pattern INCLUDE_ENTRY = Pattern.compile("(['\"](:)?)([\\w\\-_:]+)['\"]");
 
 	/**
 	 * inclusions
 	 */
-	protected static final Pattern INCLUDE = Pattern.compile(
-			"(include)(\\s*)(\\(?)(((((('|\")(:)?)([\\w-_:]+)('|\"))(\\s*,\\s+)?)+)|\\((\\w+)\\s+as\\s+((\\w|\\[|\\]|_)+)\\))(\\)?)");
+	protected static final Pattern INCLUDE = Pattern.compile("include\\s*\\(?(((\\s*?,\\s*?)?(['\"]([\\w\\-:]+)['\"])+)+)\\)?");
+
+	/**
+	 * inclusion of variable
+	 */
+	protected static final Pattern INCLUDE_VAR = Pattern.compile("include\\s*\\(?(([\\w\\-:]+)\\s+as\\s+[\\w\\-:\\[\\]]+)\\)?");
 
 	/**
 	 * Dependencies
 	 */
-	protected static final Pattern SINGLE_DEPENDENCY = Pattern.compile("(compile|useLibrary)(\\s+)('|\")(.+)('|\")");
-	//	static final Pattern MULTIPLE_DEPENDENCIES = Pattern.compile("(?:dependencies\\s*)\\{(?:.|\\s)+?\\}");
-	protected static final Pattern MULTIPLE_DEPENDENCIES_ENTRY = Pattern.compile("classpath\\s+('|\")(.+)('|\")");
+	protected static final Pattern SINGLE_DEPENDENCY = Pattern.compile("(compile|useLibrary)(\\s+)['\"](.+)['\"]");
+	protected static final Pattern MULTIPLE_DEPENDENCIES_ENTRY = Pattern.compile("classpath\\s+['\"](.+)['\"]");
 
 	/**
 	 * The min and max Android SDK version

@@ -102,5 +102,6 @@
     <genClasses ecoreClass="Modisco.ecore#//MClassInstanceCreation"/>
     <genClasses ecoreClass="Modisco.ecore#//MSuperConstructorInvocation"/>
     <genClasses ecoreClass="Modisco.ecore#//MInitializer"/>
+    <genClasses ecoreClass="Modisco.ecore#//MEnumConstantDeclaration"/>
   </genPackages>
 </genmodel:GenModel>

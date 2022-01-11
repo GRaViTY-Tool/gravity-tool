@@ -3,32 +3,27 @@
 package org.gravity.typegraph.basic.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractMultiplicity;
 import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSyntethicMethod;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>TMethod Definition</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>TMethod
+ * Definition</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -48,8 +43,7 @@ import org.gravity.typegraph.basic.TSyntethicMethod;
 public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinition {
 	/**
 	 * The default value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLowerBound()
 	 * @generated
 	 * @ordered
@@ -58,8 +52,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 
 	/**
 	 * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLowerBound()
 	 * @generated
 	 * @ordered
@@ -68,8 +61,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 
 	/**
 	 * The default value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getUpperBound()
 	 * @generated
 	 * @ordered
@@ -78,8 +70,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 
 	/**
 	 * The cached value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getUpperBound()
 	 * @generated
 	 * @ordered
@@ -88,8 +79,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 
 	/**
 	 * The cached value of the '{@link #getOverriding() <em>Overriding</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOverriding()
 	 * @generated
 	 * @ordered
@@ -98,8 +88,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 
 	/**
 	 * The cached value of the '{@link #getOverriddenBy() <em>Overridden By</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOverriddenBy()
 	 * @generated
 	 * @ordered
@@ -108,8 +97,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 
 	/**
 	 * The cached value of the '{@link #getOverloading() <em>Overloading</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOverloading()
 	 * @generated
 	 * @ordered
@@ -118,8 +106,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 
 	/**
 	 * The cached value of the '{@link #getOverloadedBy() <em>Overloaded By</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOverloadedBy()
 	 * @generated
 	 * @ordered
@@ -128,8 +115,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 
 	/**
 	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getReturnType()
 	 * @generated
 	 * @ordered
@@ -138,8 +124,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 
 	/**
 	 * The cached value of the '{@link #getSyntethicMethods() <em>Syntethic Methods</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSyntethicMethods()
 	 * @generated
 	 * @ordered
@@ -147,8 +132,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	protected EList<TSyntethicMethod> syntethicMethods;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TMethodDefinitionImpl() {
@@ -156,8 +140,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -166,8 +149,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -176,8 +158,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -189,8 +170,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -199,8 +179,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -212,8 +191,8 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -222,8 +201,8 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -232,8 +211,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -245,8 +223,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -258,8 +235,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -271,8 +247,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -284,8 +259,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -302,8 +276,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TAbstractType basicGetReturnType() {
@@ -311,8 +284,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -324,8 +296,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -337,10 +308,11 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public String getSignatureString() {
 		// [user code injected with eMoflon]
 
@@ -348,8 +320,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -371,8 +342,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -393,8 +363,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -422,8 +391,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -464,8 +432,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -500,8 +467,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -528,8 +494,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -545,8 +510,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -562,8 +526,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -578,8 +541,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -599,10 +561,19 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 
 	@Override
 	public String toString() {
-		String string = super.toString();
-		String name = getSignature().getMethod().getTName();
-		return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
+		final String string = super.toString();
+		final TMethodSignature signature = getSignature();
+		if (signature != null) {
+			final TMethod method = signature.getMethod();
+			if (method != null) {
+				final String name = method.getTName();
+				if(name != null) {
+					return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
+				}
+			}
+		}
+		return string;
 	}
 
 	// [user code injected with eMoflon] -->
-} //TMethodDefinitionImpl
+} // TMethodDefinitionImpl

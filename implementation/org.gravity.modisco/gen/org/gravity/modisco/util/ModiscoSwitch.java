@@ -18,6 +18,7 @@ import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.ClassInstanceCreation;
 import org.eclipse.modisco.java.ConstructorDeclaration;
 import org.eclipse.modisco.java.ConstructorInvocation;
+import org.eclipse.modisco.java.EnumConstantDeclaration;
 import org.eclipse.modisco.java.Expression;
 import org.eclipse.modisco.java.FieldDeclaration;
 import org.eclipse.modisco.java.Initializer;
@@ -397,6 +398,19 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseMAbstractFlowElement(mInitializer);
 				if (result == null) result = caseNamedElement(mInitializer);
 				if (result == null) result = caseASTNode(mInitializer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModiscoPackage.MENUM_CONSTANT_DECLARATION: {
+				MEnumConstantDeclaration mEnumConstantDeclaration = (MEnumConstantDeclaration)theEObject;
+				T result = caseMEnumConstantDeclaration(mEnumConstantDeclaration);
+				if (result == null) result = caseEnumConstantDeclaration(mEnumConstantDeclaration);
+				if (result == null) result = caseMDefinition(mEnumConstantDeclaration);
+				if (result == null) result = caseBodyDeclaration(mEnumConstantDeclaration);
+				if (result == null) result = caseVariableDeclaration(mEnumConstantDeclaration);
+				if (result == null) result = caseMAbstractFlowElement(mEnumConstantDeclaration);
+				if (result == null) result = caseNamedElement(mEnumConstantDeclaration);
+				if (result == null) result = caseASTNode(mEnumConstantDeclaration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -855,6 +869,21 @@ public class ModiscoSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MEnum Constant Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MEnum Constant Declaration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMEnumConstantDeclaration(MEnumConstantDeclaration object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>AST Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1241,6 +1270,21 @@ public class ModiscoSwitch<T> {
 	 * @generated
 	 */
 	public T caseInitializer(Initializer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enum Constant Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enum Constant Declaration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumConstantDeclaration(EnumConstantDeclaration object) {
 		return null;
 	}
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="violations" nsURI="http://www.gravity-tool.org/security.violation.pattern/violations"
+    nsPrefix="org.gravity.security.violation.pattern">
+  <eClassifiers xsi:type="ecore:EClass" name="SecureDependencyViolation" eSuperTypes="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAnnotation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="ecore:EClass ../../carisma.profile.umlsec/profile/UMLsec.ecore#//critical"/>
+  </eClassifiers>
+</ecore:EPackage>

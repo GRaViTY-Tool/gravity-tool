@@ -11,6 +11,7 @@ import org.gravity.tgg.modisco.pm.AnonymousClassDeclarationToTClass;
 
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TEnum;
+import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 
 import org.moflon.tgg.language.csp.CSP;
@@ -99,7 +100,7 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TClass tClass, EnumDeclaration mNestedType,
-			TypeGraph pg, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
+			TPackage tPackage, TypeGraph pg, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
 			AnonymousClassDeclaration eAnonymousClassDeclaration);
 
 	/**
@@ -116,9 +117,10 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tClass, EObject tAnnotation, EObject mNestedType,
-			EObject pg, EObject mbodyToTAnnotatable, EObject tNestedType, EObject eAnonymousClassDeclarationToTClass,
-			EObject mNestedTypeToTNestedType, EObject eAnonymousClassDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType,
+			EObject mASTNodeToAnnotatable, EObject tPackage, EObject tEnum, EObject pg, EObject tNestedType,
+			EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
+			EObject mNestedTypeToTNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,7 +136,8 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TClass tClass, TEnum tAnnotation, TypeGraph pg, TClass tNestedType);
+	boolean isAppropriate_BWD(Match match, TClass tClass, TPackage tPackage, TEnum tEnum, TypeGraph pg,
+			TClass tNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,7 +161,8 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TClass tClass, TEnum tAnnotation, TypeGraph pg, TClass tNestedType);
+	void registerObjectsToMatch_BWD(Match match, TClass tClass, TPackage tPackage, TEnum tEnum, TypeGraph pg,
+			TClass tNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,7 +170,8 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TClass tClass, TEnum tAnnotation, TypeGraph pg, TClass tNestedType);
+	CSP isAppropriate_solveCsp_BWD(Match match, TClass tClass, TPackage tPackage, TEnum tEnum, TypeGraph pg,
+			TClass tNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,8 +187,8 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, TEnum tAnnotation, TypeGraph pg,
-			TClass tNestedType, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, TPackage tPackage, TEnum tEnum,
+			TypeGraph pg, TClass tNestedType, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
 			AnonymousClassDeclaration eAnonymousClassDeclaration);
 
 	/**
@@ -200,9 +205,10 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tClass, EObject tAnnotation, EObject mNestedType,
-			EObject pg, EObject mbodyToTAnnotatable, EObject tNestedType, EObject eAnonymousClassDeclarationToTClass,
-			EObject mNestedTypeToTNestedType, EObject eAnonymousClassDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType,
+			EObject mASTNodeToAnnotatable, EObject tPackage, EObject tEnum, EObject pg, EObject tNestedType,
+			EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
+			EObject mNestedTypeToTNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +224,7 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_68(EMoflonEdge _edge_tAnnotation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_43(EMoflonEdge _edge_innerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +232,7 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_71(EMoflonEdge _edge_anonymousClassDeclarationOwner);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_44(EMoflonEdge _edge_anonymousClassDeclarationOwner);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,8 +264,8 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TClass tClass, TEnum tAnnotation, EnumDeclaration mNestedType, TypeGraph pg,
-			TClass tNestedType, AnonymousClassDeclaration eAnonymousClassDeclaration, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(TClass tClass, EnumDeclaration mNestedType, TPackage tPackage, TEnum tEnum,
+			TypeGraph pg, TClass tNestedType, AnonymousClassDeclaration eAnonymousClassDeclaration, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -284,7 +290,7 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TClass tClass, TEnum tAnnotation, TypeGraph pg, TClass tNestedType);
+	boolean checkDEC_BWD(TClass tClass, TPackage tPackage, TEnum tEnum, TypeGraph pg, TClass tNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -301,7 +307,7 @@ public interface EnumInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, TypeGraph pg,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, TPackage tPackage, TypeGraph pg,
 			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
 			AnonymousClassDeclaration eAnonymousClassDeclaration, ModelgeneratorRuleResult ruleResult);
 

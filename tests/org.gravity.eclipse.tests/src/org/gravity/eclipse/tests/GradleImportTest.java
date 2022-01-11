@@ -11,9 +11,9 @@ import org.gravity.eclipse.importer.gradle.GradleImport;
 import org.junit.runners.Parameterized.Parameters;
 
 public class GradleImportTest extends ImportTest {
-	
-	public GradleImportTest(String name, File projectLocation, Map<String, String> expected) throws IOException, ImportException {
-		super(new GradleImport(projectLocation, false), name, projectLocation, expected);
+
+	public GradleImportTest(final String name, final File projectLocation, final Map<String, String> expected) throws IOException, ImportException {
+		super(new GradleImport(projectLocation, true), name, projectLocation, expected);
 	}
 
 	@Parameters(name = "{0}")

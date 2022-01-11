@@ -114,44 +114,41 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, TypeAccess mArrayTypeAccess, ArrayType mType, Type mTypeOfArray,
-			MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature) {
+	public boolean isAppropriate_FWD(Match match, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+			ArrayType mType, MMethodSignature mSignature) {
 
 		Object[] result1_black = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_0_1_initialbindings_blackBBBBBBBB(this, match, mArrayTypeAccess,
-						mType, mTypeOfArray, mDefinition, mTypeAccess, mSignature);
+				.pattern_MethodDefinitionReturnArray_0_1_initialbindings_blackBBBBBB(this, match, mDefinition,
+						mTypeAccess, mType, mSignature);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mArrayTypeAccess] = " + mArrayTypeAccess + ", " + "[mType] = "
-					+ mType + ", " + "[mTypeOfArray] = " + mTypeOfArray + ", " + "[mDefinition] = " + mDefinition + ", "
-					+ "[mTypeAccess] = " + mTypeAccess + ", " + "[mSignature] = " + mSignature + ".");
+					+ "[match] = " + match + ", " + "[mDefinition] = " + mDefinition + ", " + "[mTypeAccess] = "
+					+ mTypeAccess + ", " + "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ".");
 		}
 
 		Object[] result2_bindingAndBlack = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_0_2_SolveCSP_bindingAndBlackFBBBBBBBB(this, match,
-						mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess, mSignature);
+				.pattern_MethodDefinitionReturnArray_0_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, mDefinition,
+						mTypeAccess, mType, mSignature);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mArrayTypeAccess] = " + mArrayTypeAccess + ", " + "[mType] = "
-					+ mType + ", " + "[mTypeOfArray] = " + mTypeOfArray + ", " + "[mDefinition] = " + mDefinition + ", "
-					+ "[mTypeAccess] = " + mTypeAccess + ", " + "[mSignature] = " + mSignature + ".");
+					+ "[match] = " + match + ", " + "[mDefinition] = " + mDefinition + ", " + "[mTypeAccess] = "
+					+ mTypeAccess + ", " + "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (MethodDefinitionReturnArrayImpl.pattern_MethodDefinitionReturnArray_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = MethodDefinitionReturnArrayImpl
-					.pattern_MethodDefinitionReturnArray_0_4_collectelementstobetranslated_blackBBBBBBB(match,
-							mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess, mSignature);
+					.pattern_MethodDefinitionReturnArray_0_4_collectelementstobetranslated_blackBBBBB(match,
+							mDefinition, mTypeAccess, mType, mSignature);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mArrayTypeAccess] = " + mArrayTypeAccess + ", " + "[mType] = " + mType + ", "
-						+ "[mTypeOfArray] = " + mTypeOfArray + ", " + "[mDefinition] = " + mDefinition + ", "
-						+ "[mTypeAccess] = " + mTypeAccess + ", " + "[mSignature] = " + mSignature + ".");
+						+ "[mDefinition] = " + mDefinition + ", " + "[mTypeAccess] = " + mTypeAccess + ", "
+						+ "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ".");
 			}
 			MethodDefinitionReturnArrayImpl
-					.pattern_MethodDefinitionReturnArray_0_4_collectelementstobetranslated_greenBBBBBFFFFF(match, mType,
-							mDefinition, mTypeAccess, mSignature);
+					.pattern_MethodDefinitionReturnArray_0_4_collectelementstobetranslated_greenBBBBBFFFFF(match,
+							mDefinition, mTypeAccess, mType, mSignature);
 			//nothing EMoflonEdge mDefinition__mTypeAccess____returnType = (EMoflonEdge) result4_green[5];
 			//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result4_green[6];
 			//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[7];
@@ -159,25 +156,20 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 			//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result4_green[9];
 
 			Object[] result5_black = MethodDefinitionReturnArrayImpl
-					.pattern_MethodDefinitionReturnArray_0_5_collectcontextelements_blackBBBBBBB(match,
-							mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess, mSignature);
+					.pattern_MethodDefinitionReturnArray_0_5_collectcontextelements_blackBBBBB(match, mDefinition,
+							mTypeAccess, mType, mSignature);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mArrayTypeAccess] = " + mArrayTypeAccess + ", " + "[mType] = " + mType + ", "
-						+ "[mTypeOfArray] = " + mTypeOfArray + ", " + "[mDefinition] = " + mDefinition + ", "
-						+ "[mTypeAccess] = " + mTypeAccess + ", " + "[mSignature] = " + mSignature + ".");
+						+ "[mDefinition] = " + mDefinition + ", " + "[mTypeAccess] = " + mTypeAccess + ", "
+						+ "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ".");
 			}
 			MethodDefinitionReturnArrayImpl
-					.pattern_MethodDefinitionReturnArray_0_5_collectcontextelements_greenBBBBBFFF(match,
-							mArrayTypeAccess, mType, mTypeOfArray, mSignature);
-			//nothing EMoflonEdge mArrayTypeAccess__mTypeOfArray____type = (EMoflonEdge) result5_green[5];
-			//nothing EMoflonEdge mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess = (EMoflonEdge) result5_green[6];
-			//nothing EMoflonEdge mType__mArrayTypeAccess____elementType = (EMoflonEdge) result5_green[7];
+					.pattern_MethodDefinitionReturnArray_0_5_collectcontextelements_greenBBB(match, mType, mSignature);
 
 			// 
 			MethodDefinitionReturnArrayImpl
-					.pattern_MethodDefinitionReturnArray_0_6_registerobjectstomatch_expressionBBBBBBBB(this, match,
-							mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess, mSignature);
+					.pattern_MethodDefinitionReturnArray_0_6_registerobjectstomatch_expressionBBBBBB(this, match,
+							mDefinition, mTypeAccess, mType, mSignature);
 			return MethodDefinitionReturnArrayImpl.pattern_MethodDefinitionReturnArray_0_7_expressionF();
 		} else {
 			return MethodDefinitionReturnArrayImpl.pattern_MethodDefinitionReturnArray_0_8_expressionF();
@@ -193,7 +185,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	public PerformRuleResult perform_FWD(IsApplicableMatch isApplicableMatch) {
 
 		Object[] result1_bindingAndBlack = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_1_1_performtransformation_bindingAndBlackFFFFFFFFFFFBB(this,
+				.pattern_MethodDefinitionReturnArray_1_1_performtransformation_bindingAndBlackFFFFFFFFFBB(this,
 						isApplicableMatch);
 		if (result1_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
@@ -201,57 +193,54 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		}
 		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[0];
 		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[1];
-		TypeAccess mArrayTypeAccess = (TypeAccess) result1_bindingAndBlack[2];
+		MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result1_bindingAndBlack[2];
 		TMethodSignature tMethodSignature = (TMethodSignature) result1_bindingAndBlack[3];
-		ArrayType mType = (ArrayType) result1_bindingAndBlack[4];
-		Type mTypeOfArray = (Type) result1_bindingAndBlack[5];
-		MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result1_bindingAndBlack[6];
-		MMethodDefinition mDefinition = (MMethodDefinition) result1_bindingAndBlack[7];
-		TypeAccess mTypeAccess = (TypeAccess) result1_bindingAndBlack[8];
-		MMethodSignature mSignature = (MMethodSignature) result1_bindingAndBlack[9];
-		//nothing CSP csp = (CSP) result1_bindingAndBlack[10];
+		MMethodDefinition mDefinition = (MMethodDefinition) result1_bindingAndBlack[4];
+		TypeAccess mTypeAccess = (TypeAccess) result1_bindingAndBlack[5];
+		ArrayType mType = (ArrayType) result1_bindingAndBlack[6];
+		MMethodSignature mSignature = (MMethodSignature) result1_bindingAndBlack[7];
+		//nothing CSP csp = (CSP) result1_bindingAndBlack[8];
 		Object[] result1_green = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_1_1_performtransformation_greenBFBFFBF(tType, tMethodSignature,
+				.pattern_MethodDefinitionReturnArray_1_1_performtransformation_greenBFBFBFF(tType, tMethodSignature,
 						mDefinition);
 		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[1];
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[3];
-		TMethodDefinition tDefinition = (TMethodDefinition) result1_green[4];
+		TMethodDefinition tDefinition = (TMethodDefinition) result1_green[3];
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[5];
 		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[6];
 
 		Object[] result2_black = MethodDefinitionReturnArrayImpl
 				.pattern_MethodDefinitionReturnArray_1_2_collecttranslatedelements_blackBBBBBB(mDefinitionToTMember,
-						mFlowElementToTFlowElement, tDefinition, mDefinition, mBodyToTAnnotation, mTypeAccess);
+						tDefinition, mDefinition, mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mDefinitionToTMember] = "
-					+ mDefinitionToTMember + ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement
-					+ ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = " + mDefinition + ", "
+					+ mDefinitionToTMember + ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = "
+					+ mDefinition + ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", "
 					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mTypeAccess] = " + mTypeAccess + ".");
 		}
 		Object[] result2_green = MethodDefinitionReturnArrayImpl
 				.pattern_MethodDefinitionReturnArray_1_2_collecttranslatedelements_greenFBBBBBB(mDefinitionToTMember,
-						mFlowElementToTFlowElement, tDefinition, mDefinition, mBodyToTAnnotation, mTypeAccess);
+						tDefinition, mDefinition, mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(ruleresult,
-						mTypeToTType, tType, mDefinitionToTMember, mArrayTypeAccess, tMethodSignature,
-						mFlowElementToTFlowElement, mType, mTypeOfArray, mSignatureToTMethodSignature, tDefinition,
-						mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature);
+				.pattern_MethodDefinitionReturnArray_1_3_bookkeepingforedges_blackBBBBBBBBBBBBB(ruleresult,
+						mTypeToTType, tType, mDefinitionToTMember, mSignatureToTMethodSignature, tMethodSignature,
+						tDefinition, mDefinition, mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess, mType,
+						mSignature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = " + tType + ", "
-					+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mArrayTypeAccess] = "
-					+ mArrayTypeAccess + ", " + "[tMethodSignature] = " + tMethodSignature + ", "
-					+ "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", " + "[mType] = " + mType
-					+ ", " + "[mTypeOfArray] = " + mTypeOfArray + ", " + "[mSignatureToTMethodSignature] = "
-					+ mSignatureToTMethodSignature + ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = "
-					+ mDefinition + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mTypeAccess] = "
-					+ mTypeAccess + ", " + "[mSignature] = " + mSignature + ".");
+					+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mSignatureToTMethodSignature] = "
+					+ mSignatureToTMethodSignature + ", " + "[tMethodSignature] = " + tMethodSignature + ", "
+					+ "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = " + mDefinition + ", "
+					+ "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", " + "[mBodyToTAnnotation] = "
+					+ mBodyToTAnnotation + ", " + "[mTypeAccess] = " + mTypeAccess + ", " + "[mType] = " + mType + ", "
+					+ "[mSignature] = " + mSignature + ".");
 		}
 		MethodDefinitionReturnArrayImpl
 				.pattern_MethodDefinitionReturnArray_1_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFFFF(ruleresult,
-						tType, mDefinitionToTMember, tMethodSignature, mFlowElementToTFlowElement, mType, tDefinition,
-						mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature);
+						tType, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
+						mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess, mType, mSignature);
 		//nothing EMoflonEdge tMethodSignature__tDefinition____definitions = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge tDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mDefinition__mTypeAccess____returnType = (EMoflonEdge) result3_green[13];
@@ -270,10 +259,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		// 
 		// 
 		MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_1_5_registerobjects_expressionBBBBBBBBBBBBBBBB(this, ruleresult,
-						mTypeToTType, tType, mDefinitionToTMember, mArrayTypeAccess, tMethodSignature,
-						mFlowElementToTFlowElement, mType, mTypeOfArray, mSignatureToTMethodSignature, tDefinition,
-						mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature);
+				.pattern_MethodDefinitionReturnArray_1_5_registerobjects_expressionBBBBBBBBBBBBBB(this, ruleresult,
+						mTypeToTType, tType, mDefinitionToTMember, mSignatureToTMethodSignature, tMethodSignature,
+						tDefinition, mDefinition, mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess, mType,
+						mSignature);
 		return MethodDefinitionReturnArrayImpl.pattern_MethodDefinitionReturnArray_1_6_expressionFB(ruleresult);
 	}
 
@@ -297,59 +286,53 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 		// ForEach 
 		Object[] result2_binding = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_2_2_corematch_bindingFFFFFFB(match);
+				.pattern_MethodDefinitionReturnArray_2_2_corematch_bindingFFFFB(match);
 		if (result2_binding == null) {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TypeAccess mArrayTypeAccess = (TypeAccess) result2_binding[0];
-		ArrayType mType = (ArrayType) result2_binding[1];
-		Type mTypeOfArray = (Type) result2_binding[2];
-		MMethodDefinition mDefinition = (MMethodDefinition) result2_binding[3];
-		TypeAccess mTypeAccess = (TypeAccess) result2_binding[4];
-		MMethodSignature mSignature = (MMethodSignature) result2_binding[5];
+		MMethodDefinition mDefinition = (MMethodDefinition) result2_binding[0];
+		TypeAccess mTypeAccess = (TypeAccess) result2_binding[1];
+		ArrayType mType = (ArrayType) result2_binding[2];
+		MMethodSignature mSignature = (MMethodSignature) result2_binding[3];
 		for (Object[] result2_black : MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_2_2_corematch_blackFFBFBBFBBBB(mArrayTypeAccess, mType,
-						mTypeOfArray, mDefinition, mTypeAccess, mSignature, match)) {
+				.pattern_MethodDefinitionReturnArray_2_2_corematch_blackFFFFBBBBB(mDefinition, mTypeAccess, mType,
+						mSignature, match)) {
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[0];
 			TAbstractType tType = (TAbstractType) result2_black[1];
+			MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result2_black[2];
 			TMethodSignature tMethodSignature = (TMethodSignature) result2_black[3];
-			MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : MethodDefinitionReturnArrayImpl
-					.pattern_MethodDefinitionReturnArray_2_3_findcontext_blackBBBBBBBBBB(mTypeToTType, tType,
-							mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature,
-							mDefinition, mTypeAccess, mSignature)) {
+					.pattern_MethodDefinitionReturnArray_2_3_findcontext_blackBBBBBBBB(mTypeToTType, tType,
+							mSignatureToTMethodSignature, tMethodSignature, mDefinition, mTypeAccess, mType,
+							mSignature)) {
 				Object[] result3_green = MethodDefinitionReturnArrayImpl
-						.pattern_MethodDefinitionReturnArray_2_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFF(mTypeToTType,
-								tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-								mSignatureToTMethodSignature, mDefinition, mTypeAccess, mSignature);
-				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[10];
-				//nothing EMoflonEdge mArrayTypeAccess__mTypeOfArray____type = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mDefinition__mTypeAccess____returnType = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge mSignatureToTMethodSignature__tMethodSignature____target = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge mType__mArrayTypeAccess____elementType = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge mTypeToTType__mTypeOfArray____source = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[21];
-				//nothing EMoflonEdge mSignatureToTMethodSignature__mSignature____source = (EMoflonEdge) result3_green[22];
+						.pattern_MethodDefinitionReturnArray_2_3_findcontext_greenBBBBBBBBFFFFFFFFFF(mTypeToTType,
+								tType, mSignatureToTMethodSignature, tMethodSignature, mDefinition, mTypeAccess, mType,
+								mSignature);
+				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[8];
+				//nothing EMoflonEdge mDefinition__mTypeAccess____returnType = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mSignatureToTMethodSignature__tMethodSignature____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge mSignatureToTMethodSignature__mSignature____source = (EMoflonEdge) result3_green[17];
 
 				Object[] result4_bindingAndBlack = MethodDefinitionReturnArrayImpl
-						.pattern_MethodDefinitionReturnArray_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(this,
-								isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType,
-								mTypeOfArray, mSignatureToTMethodSignature, mDefinition, mTypeAccess, mSignature);
+						.pattern_MethodDefinitionReturnArray_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this,
+								isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature,
+								mDefinition, mTypeAccess, mType, mSignature);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mTypeToTType] = " + mTypeToTType
-							+ ", " + "[tType] = " + tType + ", " + "[mArrayTypeAccess] = " + mArrayTypeAccess + ", "
-							+ "[tMethodSignature] = " + tMethodSignature + ", " + "[mType] = " + mType + ", "
-							+ "[mTypeOfArray] = " + mTypeOfArray + ", " + "[mSignatureToTMethodSignature] = "
-							+ mSignatureToTMethodSignature + ", " + "[mDefinition] = " + mDefinition + ", "
-							+ "[mTypeAccess] = " + mTypeAccess + ", " + "[mSignature] = " + mSignature + ".");
+							+ ", " + "[tType] = " + tType + ", " + "[mSignatureToTMethodSignature] = "
+							+ mSignatureToTMethodSignature + ", " + "[tMethodSignature] = " + tMethodSignature + ", "
+							+ "[mDefinition] = " + mDefinition + ", " + "[mTypeAccess] = " + mTypeAccess + ", "
+							+ "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -381,13 +364,11 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, TypeAccess mArrayTypeAccess, ArrayType mType, Type mTypeOfArray,
-			MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		match.registerObject("mArrayTypeAccess", mArrayTypeAccess);
-		match.registerObject("mType", mType);
-		match.registerObject("mTypeOfArray", mTypeOfArray);
+	public void registerObjectsToMatch_FWD(Match match, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+			ArrayType mType, MMethodSignature mSignature) {
 		match.registerObject("mDefinition", mDefinition);
 		match.registerObject("mTypeAccess", mTypeAccess);
+		match.registerObject("mType", mType);
 		match.registerObject("mSignature", mSignature);
 
 	}
@@ -397,8 +378,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess mArrayTypeAccess, ArrayType mType, Type mTypeOfArray,
-			MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+			ArrayType mType, MMethodSignature mSignature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -428,9 +409,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, MSignatureToTSignature mSignatureToTMethodSignature, MMethodDefinition mDefinition,
-			TypeAccess mTypeAccess, MMethodSignature mSignature) {// Create CSP
+			TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature, TMethodSignature tMethodSignature,
+			MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType, MMethodSignature mSignature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -447,13 +427,11 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("tType", tType);
-		isApplicableMatch.registerObject("mArrayTypeAccess", mArrayTypeAccess);
-		isApplicableMatch.registerObject("tMethodSignature", tMethodSignature);
-		isApplicableMatch.registerObject("mType", mType);
-		isApplicableMatch.registerObject("mTypeOfArray", mTypeOfArray);
 		isApplicableMatch.registerObject("mSignatureToTMethodSignature", mSignatureToTMethodSignature);
+		isApplicableMatch.registerObject("tMethodSignature", tMethodSignature);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("mTypeAccess", mTypeAccess);
+		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("mSignature", mSignature);
 		return csp;
 	}
@@ -473,23 +451,20 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mTypeToTType, EObject tType,
-			EObject mDefinitionToTMember, EObject mArrayTypeAccess, EObject tMethodSignature,
-			EObject mFlowElementToTFlowElement, EObject mType, EObject mTypeOfArray,
-			EObject mSignatureToTMethodSignature, EObject tDefinition, EObject mDefinition, EObject mBodyToTAnnotation,
-			EObject mTypeAccess, EObject mSignature) {
+			EObject mDefinitionToTMember, EObject mSignatureToTMethodSignature, EObject tMethodSignature,
+			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
+			EObject mTypeAccess, EObject mType, EObject mSignature) {
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
-		ruleresult.registerObject("mArrayTypeAccess", mArrayTypeAccess);
-		ruleresult.registerObject("tMethodSignature", tMethodSignature);
-		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
-		ruleresult.registerObject("mType", mType);
-		ruleresult.registerObject("mTypeOfArray", mTypeOfArray);
 		ruleresult.registerObject("mSignatureToTMethodSignature", mSignatureToTMethodSignature);
+		ruleresult.registerObject("tMethodSignature", tMethodSignature);
 		ruleresult.registerObject("tDefinition", tDefinition);
 		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
 		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
 		ruleresult.registerObject("mTypeAccess", mTypeAccess);
+		ruleresult.registerObject("mType", mType);
 		ruleresult.registerObject("mSignature", mSignature);
 
 	}
@@ -582,7 +557,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	public PerformRuleResult perform_BWD(IsApplicableMatch isApplicableMatch) {
 
 		Object[] result1_bindingAndBlack = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_11_1_performtransformation_bindingAndBlackFFFFFFFFFFBB(this,
+				.pattern_MethodDefinitionReturnArray_11_1_performtransformation_bindingAndBlackFFFFFFFFBB(this,
 						isApplicableMatch);
 		if (result1_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
@@ -590,57 +565,54 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		}
 		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[0];
 		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[1];
-		TypeAccess mArrayTypeAccess = (TypeAccess) result1_bindingAndBlack[2];
+		MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result1_bindingAndBlack[2];
 		TMethodSignature tMethodSignature = (TMethodSignature) result1_bindingAndBlack[3];
-		ArrayType mType = (ArrayType) result1_bindingAndBlack[4];
-		Type mTypeOfArray = (Type) result1_bindingAndBlack[5];
-		MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result1_bindingAndBlack[6];
-		TMethodDefinition tDefinition = (TMethodDefinition) result1_bindingAndBlack[7];
-		MMethodSignature mSignature = (MMethodSignature) result1_bindingAndBlack[8];
-		//nothing CSP csp = (CSP) result1_bindingAndBlack[9];
+		TMethodDefinition tDefinition = (TMethodDefinition) result1_bindingAndBlack[4];
+		ArrayType mType = (ArrayType) result1_bindingAndBlack[5];
+		MMethodSignature mSignature = (MMethodSignature) result1_bindingAndBlack[6];
+		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_11_1_performtransformation_greenFFBBFFFB(mType, tDefinition,
+				.pattern_MethodDefinitionReturnArray_11_1_performtransformation_greenFBFFFFBB(tDefinition, mType,
 						mSignature);
 		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[0];
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[1];
-		MMethodDefinition mDefinition = (MMethodDefinition) result1_green[4];
-		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[5];
-		TypeAccess mTypeAccess = (TypeAccess) result1_green[6];
+		MMethodDefinition mDefinition = (MMethodDefinition) result1_green[2];
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[3];
+		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[4];
+		TypeAccess mTypeAccess = (TypeAccess) result1_green[5];
 
 		Object[] result2_black = MethodDefinitionReturnArrayImpl
 				.pattern_MethodDefinitionReturnArray_11_2_collecttranslatedelements_blackBBBBBB(mDefinitionToTMember,
-						mFlowElementToTFlowElement, tDefinition, mDefinition, mBodyToTAnnotation, mTypeAccess);
+						tDefinition, mDefinition, mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mDefinitionToTMember] = "
-					+ mDefinitionToTMember + ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement
-					+ ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = " + mDefinition + ", "
+					+ mDefinitionToTMember + ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = "
+					+ mDefinition + ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", "
 					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mTypeAccess] = " + mTypeAccess + ".");
 		}
 		Object[] result2_green = MethodDefinitionReturnArrayImpl
 				.pattern_MethodDefinitionReturnArray_11_2_collecttranslatedelements_greenFBBBBBB(mDefinitionToTMember,
-						mFlowElementToTFlowElement, tDefinition, mDefinition, mBodyToTAnnotation, mTypeAccess);
+						tDefinition, mDefinition, mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(ruleresult,
-						mTypeToTType, tType, mDefinitionToTMember, mArrayTypeAccess, tMethodSignature,
-						mFlowElementToTFlowElement, mType, mTypeOfArray, mSignatureToTMethodSignature, tDefinition,
-						mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature);
+				.pattern_MethodDefinitionReturnArray_11_3_bookkeepingforedges_blackBBBBBBBBBBBBB(ruleresult,
+						mTypeToTType, tType, mDefinitionToTMember, mSignatureToTMethodSignature, tMethodSignature,
+						tDefinition, mDefinition, mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess, mType,
+						mSignature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = " + tType + ", "
-					+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mArrayTypeAccess] = "
-					+ mArrayTypeAccess + ", " + "[tMethodSignature] = " + tMethodSignature + ", "
-					+ "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", " + "[mType] = " + mType
-					+ ", " + "[mTypeOfArray] = " + mTypeOfArray + ", " + "[mSignatureToTMethodSignature] = "
-					+ mSignatureToTMethodSignature + ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = "
-					+ mDefinition + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mTypeAccess] = "
-					+ mTypeAccess + ", " + "[mSignature] = " + mSignature + ".");
+					+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mSignatureToTMethodSignature] = "
+					+ mSignatureToTMethodSignature + ", " + "[tMethodSignature] = " + tMethodSignature + ", "
+					+ "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = " + mDefinition + ", "
+					+ "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", " + "[mBodyToTAnnotation] = "
+					+ mBodyToTAnnotation + ", " + "[mTypeAccess] = " + mTypeAccess + ", " + "[mType] = " + mType + ", "
+					+ "[mSignature] = " + mSignature + ".");
 		}
 		MethodDefinitionReturnArrayImpl
 				.pattern_MethodDefinitionReturnArray_11_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFFFF(ruleresult,
-						tType, mDefinitionToTMember, tMethodSignature, mFlowElementToTFlowElement, mType, tDefinition,
-						mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature);
+						tType, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
+						mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess, mType, mSignature);
 		//nothing EMoflonEdge tMethodSignature__tDefinition____definitions = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge tDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mDefinition__mTypeAccess____returnType = (EMoflonEdge) result3_green[13];
@@ -659,10 +631,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		// 
 		// 
 		MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_11_5_registerobjects_expressionBBBBBBBBBBBBBBBB(this, ruleresult,
-						mTypeToTType, tType, mDefinitionToTMember, mArrayTypeAccess, tMethodSignature,
-						mFlowElementToTFlowElement, mType, mTypeOfArray, mSignatureToTMethodSignature, tDefinition,
-						mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature);
+				.pattern_MethodDefinitionReturnArray_11_5_registerobjects_expressionBBBBBBBBBBBBBB(this, ruleresult,
+						mTypeToTType, tType, mDefinitionToTMember, mSignatureToTMethodSignature, tMethodSignature,
+						tDefinition, mDefinition, mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess, mType,
+						mSignature);
 		return MethodDefinitionReturnArrayImpl.pattern_MethodDefinitionReturnArray_11_6_expressionFB(ruleresult);
 	}
 
@@ -695,46 +667,39 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		TMethodSignature tMethodSignature = (TMethodSignature) result2_binding[1];
 		TMethodDefinition tDefinition = (TMethodDefinition) result2_binding[2];
 		for (Object[] result2_black : MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_12_2_corematch_blackFBBFFBFB(tType, tMethodSignature, tDefinition,
+				.pattern_MethodDefinitionReturnArray_12_2_corematch_blackFBFBBFFB(tType, tMethodSignature, tDefinition,
 						match)) {
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[0];
-			Type mTypeOfArray = (Type) result2_black[3];
-			MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result2_black[4];
+			MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result2_black[2];
+			ArrayType mType = (ArrayType) result2_black[5];
 			MMethodSignature mSignature = (MMethodSignature) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : MethodDefinitionReturnArrayImpl
-					.pattern_MethodDefinitionReturnArray_12_3_findcontext_blackBBFBFBBBB(mTypeToTType, tType,
-							tMethodSignature, mTypeOfArray, mSignatureToTMethodSignature, tDefinition, mSignature)) {
-				TypeAccess mArrayTypeAccess = (TypeAccess) result3_black[2];
-				ArrayType mType = (ArrayType) result3_black[4];
+					.pattern_MethodDefinitionReturnArray_12_3_findcontext_blackBBBBBBB(mTypeToTType, tType,
+							mSignatureToTMethodSignature, tMethodSignature, tDefinition, mType, mSignature)) {
 				Object[] result3_green = MethodDefinitionReturnArrayImpl
-						.pattern_MethodDefinitionReturnArray_12_3_findcontext_greenBBBBBBBBBFFFFFFFFFFF(mTypeToTType,
-								tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-								mSignatureToTMethodSignature, tDefinition, mSignature);
-				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[9];
-				//nothing EMoflonEdge mArrayTypeAccess__mTypeOfArray____type = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tMethodSignature__tDefinition____definitions = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge tDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mSignatureToTMethodSignature__tMethodSignature____target = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge mType__mArrayTypeAccess____elementType = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge tDefinition__tType____returnType = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge mTypeToTType__mTypeOfArray____source = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge mSignatureToTMethodSignature__mSignature____source = (EMoflonEdge) result3_green[19];
+						.pattern_MethodDefinitionReturnArray_12_3_findcontext_greenBBBBBBBFFFFFFFF(mTypeToTType, tType,
+								mSignatureToTMethodSignature, tMethodSignature, tDefinition, mType, mSignature);
+				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
+				//nothing EMoflonEdge tMethodSignature__tDefinition____definitions = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mSignatureToTMethodSignature__tMethodSignature____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tDefinition__tType____returnType = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mSignatureToTMethodSignature__mSignature____source = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = MethodDefinitionReturnArrayImpl
-						.pattern_MethodDefinitionReturnArray_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
-								isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType,
-								mTypeOfArray, mSignatureToTMethodSignature, tDefinition, mSignature);
+						.pattern_MethodDefinitionReturnArray_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
+								isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature,
+								tDefinition, mType, mSignature);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mTypeToTType] = " + mTypeToTType
-							+ ", " + "[tType] = " + tType + ", " + "[mArrayTypeAccess] = " + mArrayTypeAccess + ", "
-							+ "[tMethodSignature] = " + tMethodSignature + ", " + "[mType] = " + mType + ", "
-							+ "[mTypeOfArray] = " + mTypeOfArray + ", " + "[mSignatureToTMethodSignature] = "
-							+ mSignatureToTMethodSignature + ", " + "[tDefinition] = " + tDefinition + ", "
-							+ "[mSignature] = " + mSignature + ".");
+							+ ", " + "[tType] = " + tType + ", " + "[mSignatureToTMethodSignature] = "
+							+ mSignatureToTMethodSignature + ", " + "[tMethodSignature] = " + tMethodSignature + ", "
+							+ "[tDefinition] = " + tDefinition + ", " + "[mType] = " + mType + ", " + "[mSignature] = "
+							+ mSignature + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -810,9 +775,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, MSignatureToTSignature mSignatureToTMethodSignature, TMethodDefinition tDefinition,
-			MMethodSignature mSignature) {// Create CSP
+			TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature, TMethodSignature tMethodSignature,
+			TMethodDefinition tDefinition, ArrayType mType, MMethodSignature mSignature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -829,12 +793,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("tType", tType);
-		isApplicableMatch.registerObject("mArrayTypeAccess", mArrayTypeAccess);
-		isApplicableMatch.registerObject("tMethodSignature", tMethodSignature);
-		isApplicableMatch.registerObject("mType", mType);
-		isApplicableMatch.registerObject("mTypeOfArray", mTypeOfArray);
 		isApplicableMatch.registerObject("mSignatureToTMethodSignature", mSignatureToTMethodSignature);
+		isApplicableMatch.registerObject("tMethodSignature", tMethodSignature);
 		isApplicableMatch.registerObject("tDefinition", tDefinition);
+		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("mSignature", mSignature);
 		return csp;
 	}
@@ -854,23 +816,20 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mTypeToTType, EObject tType,
-			EObject mDefinitionToTMember, EObject mArrayTypeAccess, EObject tMethodSignature,
-			EObject mFlowElementToTFlowElement, EObject mType, EObject mTypeOfArray,
-			EObject mSignatureToTMethodSignature, EObject tDefinition, EObject mDefinition, EObject mBodyToTAnnotation,
-			EObject mTypeAccess, EObject mSignature) {
+			EObject mDefinitionToTMember, EObject mSignatureToTMethodSignature, EObject tMethodSignature,
+			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
+			EObject mTypeAccess, EObject mType, EObject mSignature) {
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
-		ruleresult.registerObject("mArrayTypeAccess", mArrayTypeAccess);
-		ruleresult.registerObject("tMethodSignature", tMethodSignature);
-		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
-		ruleresult.registerObject("mType", mType);
-		ruleresult.registerObject("mTypeOfArray", mTypeOfArray);
 		ruleresult.registerObject("mSignatureToTMethodSignature", mSignatureToTMethodSignature);
+		ruleresult.registerObject("tMethodSignature", tMethodSignature);
 		ruleresult.registerObject("tDefinition", tDefinition);
 		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
 		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
 		ruleresult.registerObject("mTypeAccess", mTypeAccess);
+		ruleresult.registerObject("mType", mType);
 		ruleresult.registerObject("mSignature", mSignature);
 
 	}
@@ -890,7 +849,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_73(EMoflonEdge _edge_definitions) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_60(EMoflonEdge _edge_definitions) {
 
 		Object[] result1_bindingAndBlack = MethodDefinitionReturnArrayImpl
 				.pattern_MethodDefinitionReturnArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -950,7 +909,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_76(EMoflonEdge _edge_returnType) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_62(EMoflonEdge _edge_returnType) {
 
 		Object[] result1_bindingAndBlack = MethodDefinitionReturnArrayImpl
 				.pattern_MethodDefinitionReturnArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -966,21 +925,19 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 		// ForEach 
 		for (Object[] result2_black : MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_blackFFFFFFB(_edge_returnType)) {
-			TypeAccess mArrayTypeAccess = (TypeAccess) result2_black[0];
-			ArrayType mType = (ArrayType) result2_black[1];
-			Type mTypeOfArray = (Type) result2_black[2];
-			MMethodDefinition mDefinition = (MMethodDefinition) result2_black[3];
-			TypeAccess mTypeAccess = (TypeAccess) result2_black[4];
-			MMethodSignature mSignature = (MMethodSignature) result2_black[5];
+				.pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_blackFFFFB(_edge_returnType)) {
+			MMethodDefinition mDefinition = (MMethodDefinition) result2_black[0];
+			TypeAccess mTypeAccess = (TypeAccess) result2_black[1];
+			ArrayType mType = (ArrayType) result2_black[2];
+			MMethodSignature mSignature = (MMethodSignature) result2_black[3];
 			Object[] result2_green = MethodDefinitionReturnArrayImpl
 					.pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (MethodDefinitionReturnArrayImpl
-					.pattern_MethodDefinitionReturnArray_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBBB(
-							this, match, mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess, mSignature)) {
+					.pattern_MethodDefinitionReturnArray_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
+							this, match, mDefinition, mTypeAccess, mType, mSignature)) {
 				// 
 				if (MethodDefinitionReturnArrayImpl
 						.pattern_MethodDefinitionReturnArray_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -1105,33 +1062,30 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[0];
 
 		Object[] result2_bindingAndBlack = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFFFBB(sourceMatch,
+				.pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFBB(sourceMatch,
 						targetMatch);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		TAbstractType tType = (TAbstractType) result2_bindingAndBlack[0];
-		TypeAccess mArrayTypeAccess = (TypeAccess) result2_bindingAndBlack[1];
-		TMethodSignature tMethodSignature = (TMethodSignature) result2_bindingAndBlack[2];
-		ArrayType mType = (ArrayType) result2_bindingAndBlack[3];
-		Type mTypeOfArray = (Type) result2_bindingAndBlack[4];
-		TMethodDefinition tDefinition = (TMethodDefinition) result2_bindingAndBlack[5];
-		MMethodDefinition mDefinition = (MMethodDefinition) result2_bindingAndBlack[6];
-		TypeAccess mTypeAccess = (TypeAccess) result2_bindingAndBlack[7];
-		MMethodSignature mSignature = (MMethodSignature) result2_bindingAndBlack[8];
+		TMethodSignature tMethodSignature = (TMethodSignature) result2_bindingAndBlack[1];
+		TMethodDefinition tDefinition = (TMethodDefinition) result2_bindingAndBlack[2];
+		MMethodDefinition mDefinition = (MMethodDefinition) result2_bindingAndBlack[3];
+		TypeAccess mTypeAccess = (TypeAccess) result2_bindingAndBlack[4];
+		ArrayType mType = (ArrayType) result2_bindingAndBlack[5];
+		MMethodSignature mSignature = (MMethodSignature) result2_bindingAndBlack[6];
 
 		Object[] result3_bindingAndBlack = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBBB(this, tType,
-						mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray, tDefinition, mDefinition, mTypeAccess,
-						mSignature, sourceMatch, targetMatch);
+				.pattern_MethodDefinitionReturnArray_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, tType,
+						tMethodSignature, tDefinition, mDefinition, mTypeAccess, mType, mSignature, sourceMatch,
+						targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[tType] = " + tType
-							+ ", " + "[mArrayTypeAccess] = " + mArrayTypeAccess + ", " + "[tMethodSignature] = "
-							+ tMethodSignature + ", " + "[mType] = " + mType + ", " + "[mTypeOfArray] = " + mTypeOfArray
-							+ ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = " + mDefinition + ", "
-							+ "[mTypeAccess] = " + mTypeAccess + ", " + "[mSignature] = " + mSignature + ", "
+							+ ", " + "[tMethodSignature] = " + tMethodSignature + ", " + "[tDefinition] = "
+							+ tDefinition + ", " + "[mDefinition] = " + mDefinition + ", " + "[mTypeAccess] = "
+							+ mTypeAccess + ", " + "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", "
 							+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1139,32 +1093,30 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		if (MethodDefinitionReturnArrayImpl.pattern_MethodDefinitionReturnArray_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : MethodDefinitionReturnArrayImpl
-					.pattern_MethodDefinitionReturnArray_24_5_matchcorrcontext_blackFBBBFBBB(tType, tMethodSignature,
-							mTypeOfArray, mSignature, sourceMatch, targetMatch)) {
+					.pattern_MethodDefinitionReturnArray_24_5_matchcorrcontext_blackFBFBBBBB(tType, tMethodSignature,
+							mType, mSignature, sourceMatch, targetMatch)) {
 				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[0];
-				MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result5_black[4];
+				MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result5_black[2];
 				Object[] result5_green = MethodDefinitionReturnArrayImpl
 						.pattern_MethodDefinitionReturnArray_24_5_matchcorrcontext_greenBBBBF(mTypeToTType,
 								mSignatureToTMethodSignature, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = MethodDefinitionReturnArrayImpl
-						.pattern_MethodDefinitionReturnArray_24_6_createcorrespondence_blackBBBBBBBBBB(tType,
-								mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray, tDefinition, mDefinition,
-								mTypeAccess, mSignature, ccMatch);
+						.pattern_MethodDefinitionReturnArray_24_6_createcorrespondence_blackBBBBBBBB(tType,
+								tMethodSignature, tDefinition, mDefinition, mTypeAccess, mType, mSignature, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tType] = " + tType + ", "
-							+ "[mArrayTypeAccess] = " + mArrayTypeAccess + ", " + "[tMethodSignature] = "
-							+ tMethodSignature + ", " + "[mType] = " + mType + ", " + "[mTypeOfArray] = " + mTypeOfArray
-							+ ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = " + mDefinition + ", "
-							+ "[mTypeAccess] = " + mTypeAccess + ", " + "[mSignature] = " + mSignature + ", "
-							+ "[ccMatch] = " + ccMatch + ".");
+							+ "[tMethodSignature] = " + tMethodSignature + ", " + "[tDefinition] = " + tDefinition
+							+ ", " + "[mDefinition] = " + mDefinition + ", " + "[mTypeAccess] = " + mTypeAccess + ", "
+							+ "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", " + "[ccMatch] = "
+							+ ccMatch + ".");
 				}
 				MethodDefinitionReturnArrayImpl
-						.pattern_MethodDefinitionReturnArray_24_6_createcorrespondence_greenFFBBFB(tDefinition,
+						.pattern_MethodDefinitionReturnArray_24_6_createcorrespondence_greenFBBFFB(tDefinition,
 								mDefinition, ccMatch);
 				//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[0];
-				//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[1];
+				//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[3];
 				//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[4];
 
 				Object[] result7_black = MethodDefinitionReturnArrayImpl
@@ -1188,10 +1140,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TAbstractType tType, TypeAccess mArrayTypeAccess,
-			TMethodSignature tMethodSignature, ArrayType mType, Type mTypeOfArray, TMethodDefinition tDefinition,
-			MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature, Match sourceMatch,
-			Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TAbstractType tType, TMethodSignature tMethodSignature,
+			TMethodDefinition tDefinition, MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType,
+			MMethodSignature mSignature, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1220,11 +1171,11 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(TypeAccess mArrayTypeAccess, ArrayType mType, Type mTypeOfArray,
-			MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature) {// 
+	public boolean checkDEC_FWD(MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType,
+			MMethodSignature mSignature) {// 
 		Object[] result1_black = MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_blackBBBBBB(mArrayTypeAccess, mType,
-						mTypeOfArray, mDefinition, mTypeAccess, mSignature);
+				.pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_blackBBBB(mDefinition, mTypeAccess, mType,
+						mSignature);
 		if (result1_black != null) {
 			return MethodDefinitionReturnArrayImpl.pattern_MethodDefinitionReturnArray_27_2_expressionF();
 		} else {
@@ -1273,31 +1224,28 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 		// ForEach 
 		for (Object[] result2_black : MethodDefinitionReturnArrayImpl
-				.pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_blackFFFFFFFFFFBB(ruleEntryContainer,
+				.pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList mTypeToTTypeList = (RuleEntryList) result2_black[0];
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[1];
-			Type mTypeOfArray = (Type) result2_black[2];
-			TypeAccess mArrayTypeAccess = (TypeAccess) result2_black[3];
-			ArrayType mType = (ArrayType) result2_black[4];
-			TAbstractType tType = (TAbstractType) result2_black[5];
-			//nothing RuleEntryList mSignatureToTMethodSignatureList = (RuleEntryList) result2_black[6];
-			TMethodSignature tMethodSignature = (TMethodSignature) result2_black[7];
-			MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result2_black[8];
-			MMethodSignature mSignature = (MMethodSignature) result2_black[9];
+			TAbstractType tType = (TAbstractType) result2_black[2];
+			ArrayType mType = (ArrayType) result2_black[3];
+			//nothing RuleEntryList mSignatureToTMethodSignatureList = (RuleEntryList) result2_black[4];
+			MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result2_black[5];
+			TMethodSignature tMethodSignature = (TMethodSignature) result2_black[6];
+			MMethodSignature mSignature = (MMethodSignature) result2_black[7];
 
 			Object[] result3_bindingAndBlack = MethodDefinitionReturnArrayImpl
-					.pattern_MethodDefinitionReturnArray_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
-							isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType,
-							mTypeOfArray, mSignatureToTMethodSignature, mSignature, ruleResult);
+					.pattern_MethodDefinitionReturnArray_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this,
+							isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature,
+							mType, mSignature, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mTypeToTType] = " + mTypeToTType
-						+ ", " + "[tType] = " + tType + ", " + "[mArrayTypeAccess] = " + mArrayTypeAccess + ", "
-						+ "[tMethodSignature] = " + tMethodSignature + ", " + "[mType] = " + mType + ", "
-						+ "[mTypeOfArray] = " + mTypeOfArray + ", " + "[mSignatureToTMethodSignature] = "
-						+ mSignatureToTMethodSignature + ", " + "[mSignature] = " + mSignature + ", "
-						+ "[ruleResult] = " + ruleResult + ".");
+						+ ", " + "[tType] = " + tType + ", " + "[mSignatureToTMethodSignature] = "
+						+ mSignatureToTMethodSignature + ", " + "[tMethodSignature] = " + tMethodSignature + ", "
+						+ "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", " + "[ruleResult] = "
+						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1305,31 +1253,28 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 					csp)) {
 				// 
 				Object[] result5_black = MethodDefinitionReturnArrayImpl
-						.pattern_MethodDefinitionReturnArray_29_5_checknacs_blackBBBBBBBB(mTypeToTType, tType,
-								mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature,
-								mSignature);
+						.pattern_MethodDefinitionReturnArray_29_5_checknacs_blackBBBBBB(mTypeToTType, tType,
+								mSignatureToTMethodSignature, tMethodSignature, mType, mSignature);
 				if (result5_black != null) {
 
 					Object[] result6_black = MethodDefinitionReturnArrayImpl
-							.pattern_MethodDefinitionReturnArray_29_6_perform_blackBBBBBBBBB(mTypeToTType, tType,
-									mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-									mSignatureToTMethodSignature, mSignature, ruleResult);
+							.pattern_MethodDefinitionReturnArray_29_6_perform_blackBBBBBBB(mTypeToTType, tType,
+									mSignatureToTMethodSignature, tMethodSignature, mType, mSignature, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mTypeToTType] = "
-								+ mTypeToTType + ", " + "[tType] = " + tType + ", " + "[mArrayTypeAccess] = "
-								+ mArrayTypeAccess + ", " + "[tMethodSignature] = " + tMethodSignature + ", "
-								+ "[mType] = " + mType + ", " + "[mTypeOfArray] = " + mTypeOfArray + ", "
+								+ mTypeToTType + ", " + "[tType] = " + tType + ", "
 								+ "[mSignatureToTMethodSignature] = " + mSignatureToTMethodSignature + ", "
+								+ "[tMethodSignature] = " + tMethodSignature + ", " + "[mType] = " + mType + ", "
 								+ "[mSignature] = " + mSignature + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					MethodDefinitionReturnArrayImpl.pattern_MethodDefinitionReturnArray_29_6_perform_greenBFBFBFFFFBB(
+					MethodDefinitionReturnArrayImpl.pattern_MethodDefinitionReturnArray_29_6_perform_greenBFBFFFFFBBB(
 							tType, tMethodSignature, mType, mSignature, ruleResult);
 					//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[1];
-					//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[3];
-					//nothing TMethodDefinition tDefinition = (TMethodDefinition) result6_green[5];
-					//nothing MMethodDefinition mDefinition = (MMethodDefinition) result6_green[6];
-					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[7];
-					//nothing TypeAccess mTypeAccess = (TypeAccess) result6_green[8];
+					//nothing TMethodDefinition tDefinition = (TMethodDefinition) result6_green[3];
+					//nothing MMethodDefinition mDefinition = (MMethodDefinition) result6_green[4];
+					//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[5];
+					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[6];
+					//nothing TypeAccess mTypeAccess = (TypeAccess) result6_green[7];
 
 				} else {
 				}
@@ -1347,9 +1292,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, MSignatureToTSignature mSignatureToTMethodSignature, MMethodSignature mSignature,
-			ModelgeneratorRuleResult ruleResult) {// Create CSP
+			TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature, TMethodSignature tMethodSignature,
+			ArrayType mType, MMethodSignature mSignature, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1366,11 +1310,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("tType", tType);
-		isApplicableMatch.registerObject("mArrayTypeAccess", mArrayTypeAccess);
+		isApplicableMatch.registerObject("mSignatureToTMethodSignature", mSignatureToTMethodSignature);
 		isApplicableMatch.registerObject("tMethodSignature", tMethodSignature);
 		isApplicableMatch.registerObject("mType", mType);
-		isApplicableMatch.registerObject("mTypeOfArray", mTypeOfArray);
-		isApplicableMatch.registerObject("mSignatureToTMethodSignature", mSignatureToTMethodSignature);
 		isApplicableMatch.registerObject("mSignature", mSignature);
 		return csp;
 	}
@@ -1392,41 +1334,36 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_FWD__MATCH_TYPEACCESS_ARRAYTYPE_TYPE_MMETHODDEFINITION_TYPEACCESS_MMETHODSIGNATURE:
-			return isAppropriate_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(ArrayType) arguments.get(2), (Type) arguments.get(3), (MMethodDefinition) arguments.get(4),
-					(TypeAccess) arguments.get(5), (MMethodSignature) arguments.get(6));
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_FWD__MATCH_MMETHODDEFINITION_TYPEACCESS_ARRAYTYPE_MMETHODSIGNATURE:
+			return isAppropriate_FWD((Match) arguments.get(0), (MMethodDefinition) arguments.get(1),
+					(TypeAccess) arguments.get(2), (ArrayType) arguments.get(3), (MMethodSignature) arguments.get(4));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEACCESS_ARRAYTYPE_TYPE_MMETHODDEFINITION_TYPEACCESS_MMETHODSIGNATURE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(ArrayType) arguments.get(2), (Type) arguments.get(3), (MMethodDefinition) arguments.get(4),
-					(TypeAccess) arguments.get(5), (MMethodSignature) arguments.get(6));
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MMETHODDEFINITION_TYPEACCESS_ARRAYTYPE_MMETHODSIGNATURE:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (MMethodDefinition) arguments.get(1),
+					(TypeAccess) arguments.get(2), (ArrayType) arguments.get(3), (MMethodSignature) arguments.get(4));
 			return null;
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEACCESS_ARRAYTYPE_TYPE_MMETHODDEFINITION_TYPEACCESS_MMETHODSIGNATURE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(ArrayType) arguments.get(2), (Type) arguments.get(3), (MMethodDefinition) arguments.get(4),
-					(TypeAccess) arguments.get(5), (MMethodSignature) arguments.get(6));
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MMETHODDEFINITION_TYPEACCESS_ARRAYTYPE_MMETHODSIGNATURE:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MMethodDefinition) arguments.get(1),
+					(TypeAccess) arguments.get(2), (ArrayType) arguments.get(3), (MMethodSignature) arguments.get(4));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_TYPEACCESS_TMETHODSIGNATURE_ARRAYTYPE_TYPE_MSIGNATURETOTSIGNATURE_MMETHODDEFINITION_TYPEACCESS_MMETHODSIGNATURE:
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_MSIGNATURETOTSIGNATURE_TMETHODSIGNATURE_MMETHODDEFINITION_TYPEACCESS_ARRAYTYPE_MMETHODSIGNATURE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
 					(TypeToTAbstractType) arguments.get(1), (TAbstractType) arguments.get(2),
-					(TypeAccess) arguments.get(3), (TMethodSignature) arguments.get(4), (ArrayType) arguments.get(5),
-					(Type) arguments.get(6), (MSignatureToTSignature) arguments.get(7),
-					(MMethodDefinition) arguments.get(8), (TypeAccess) arguments.get(9),
-					(MMethodSignature) arguments.get(10));
+					(MSignatureToTSignature) arguments.get(3), (TMethodSignature) arguments.get(4),
+					(MMethodDefinition) arguments.get(5), (TypeAccess) arguments.get(6), (ArrayType) arguments.get(7),
+					(MMethodSignature) arguments.get(8));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
 					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
 					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
 					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
-					(EObject) arguments.get(11), (EObject) arguments.get(12), (EObject) arguments.get(13),
-					(EObject) arguments.get(14));
+					(EObject) arguments.get(11), (EObject) arguments.get(12));
 			return null;
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
@@ -1446,85 +1383,74 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 					(TMethodSignature) arguments.get(2), (TMethodDefinition) arguments.get(3));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_TYPEACCESS_TMETHODSIGNATURE_ARRAYTYPE_TYPE_MSIGNATURETOTSIGNATURE_TMETHODDEFINITION_MMETHODSIGNATURE:
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_MSIGNATURETOTSIGNATURE_TMETHODSIGNATURE_TMETHODDEFINITION_ARRAYTYPE_MMETHODSIGNATURE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
 					(TypeToTAbstractType) arguments.get(1), (TAbstractType) arguments.get(2),
-					(TypeAccess) arguments.get(3), (TMethodSignature) arguments.get(4), (ArrayType) arguments.get(5),
-					(Type) arguments.get(6), (MSignatureToTSignature) arguments.get(7),
-					(TMethodDefinition) arguments.get(8), (MMethodSignature) arguments.get(9));
+					(MSignatureToTSignature) arguments.get(3), (TMethodSignature) arguments.get(4),
+					(TMethodDefinition) arguments.get(5), (ArrayType) arguments.get(6),
+					(MMethodSignature) arguments.get(7));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
 					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
 					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
 					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
-					(EObject) arguments.get(11), (EObject) arguments.get(12), (EObject) arguments.get(13),
-					(EObject) arguments.get(14));
+					(EObject) arguments.get(11), (EObject) arguments.get(12));
 			return null;
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_73__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_73((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_76__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_76((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_60__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_60((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_62__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_62((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_SOLVE_CSP_CC__TABSTRACTTYPE_TYPEACCESS_TMETHODSIGNATURE_ARRAYTYPE_TYPE_TMETHODDEFINITION_MMETHODDEFINITION_TYPEACCESS_MMETHODSIGNATURE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TAbstractType) arguments.get(0), (TypeAccess) arguments.get(1),
-					(TMethodSignature) arguments.get(2), (ArrayType) arguments.get(3), (Type) arguments.get(4),
-					(TMethodDefinition) arguments.get(5), (MMethodDefinition) arguments.get(6),
-					(TypeAccess) arguments.get(7), (MMethodSignature) arguments.get(8), (Match) arguments.get(9),
-					(Match) arguments.get(10));
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_SOLVE_CSP_CC__TABSTRACTTYPE_TMETHODSIGNATURE_TMETHODDEFINITION_MMETHODDEFINITION_TYPEACCESS_ARRAYTYPE_MMETHODSIGNATURE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TAbstractType) arguments.get(0), (TMethodSignature) arguments.get(1),
+					(TMethodDefinition) arguments.get(2), (MMethodDefinition) arguments.get(3),
+					(TypeAccess) arguments.get(4), (ArrayType) arguments.get(5), (MMethodSignature) arguments.get(6),
+					(Match) arguments.get(7), (Match) arguments.get(8));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___CHECK_DEC_FWD__TYPEACCESS_ARRAYTYPE_TYPE_MMETHODDEFINITION_TYPEACCESS_MMETHODSIGNATURE:
-			return checkDEC_FWD((TypeAccess) arguments.get(0), (ArrayType) arguments.get(1), (Type) arguments.get(2),
-					(MMethodDefinition) arguments.get(3), (TypeAccess) arguments.get(4),
-					(MMethodSignature) arguments.get(5));
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___CHECK_DEC_FWD__MMETHODDEFINITION_TYPEACCESS_ARRAYTYPE_MMETHODSIGNATURE:
+			return checkDEC_FWD((MMethodDefinition) arguments.get(0), (TypeAccess) arguments.get(1),
+					(ArrayType) arguments.get(2), (MMethodSignature) arguments.get(3));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___CHECK_DEC_BWD__TABSTRACTTYPE_TMETHODSIGNATURE_TMETHODDEFINITION:
 			return checkDEC_BWD((TAbstractType) arguments.get(0), (TMethodSignature) arguments.get(1),
 					(TMethodDefinition) arguments.get(2));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE_MSIGNATURETOTSIGNATURE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1),
 					(MSignatureToTSignature) arguments.get(2));
-		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_TYPEACCESS_TMETHODSIGNATURE_ARRAYTYPE_TYPE_MSIGNATURETOTSIGNATURE_MMETHODSIGNATURE_MODELGENERATORRULERESULT:
+		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_MSIGNATURETOTSIGNATURE_TMETHODSIGNATURE_ARRAYTYPE_MMETHODSIGNATURE_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
 					(TypeToTAbstractType) arguments.get(1), (TAbstractType) arguments.get(2),
-					(TypeAccess) arguments.get(3), (TMethodSignature) arguments.get(4), (ArrayType) arguments.get(5),
-					(Type) arguments.get(6), (MSignatureToTSignature) arguments.get(7),
-					(MMethodSignature) arguments.get(8), (ModelgeneratorRuleResult) arguments.get(9));
+					(MSignatureToTSignature) arguments.get(3), (TMethodSignature) arguments.get(4),
+					(ArrayType) arguments.get(5), (MMethodSignature) arguments.get(6),
+					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.METHOD_DEFINITION_RETURN_ARRAY___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_0_1_initialbindings_blackBBBBBBBB(
-			MethodDefinitionReturnArray _this, Match match, TypeAccess mArrayTypeAccess, ArrayType mType,
-			Type mTypeOfArray, MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		if (!mArrayTypeAccess.equals(mTypeAccess)) {
-			if (!mType.equals(mTypeOfArray)) {
-				return new Object[] { _this, match, mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess,
-						mSignature };
-			}
-		}
-		return null;
+	public static final Object[] pattern_MethodDefinitionReturnArray_0_1_initialbindings_blackBBBBBB(
+			MethodDefinitionReturnArray _this, Match match, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+			ArrayType mType, MMethodSignature mSignature) {
+		return new Object[] { _this, match, mDefinition, mTypeAccess, mType, mSignature };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_0_2_SolveCSP_bindingFBBBBBBBB(
-			MethodDefinitionReturnArray _this, Match match, TypeAccess mArrayTypeAccess, ArrayType mType,
-			Type mTypeOfArray, MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mArrayTypeAccess, mType, mTypeOfArray,
-				mDefinition, mTypeAccess, mSignature);
+	public static final Object[] pattern_MethodDefinitionReturnArray_0_2_SolveCSP_bindingFBBBBBB(
+			MethodDefinitionReturnArray _this, Match match, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+			ArrayType mType, MMethodSignature mSignature) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mDefinition, mTypeAccess, mType, mSignature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess,
-					mSignature };
+			return new Object[] { csp, _this, match, mDefinition, mTypeAccess, mType, mSignature };
 		}
 		return null;
 	}
@@ -1533,11 +1459,11 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_0_2_SolveCSP_bindingAndBlackFBBBBBBBB(
-			MethodDefinitionReturnArray _this, Match match, TypeAccess mArrayTypeAccess, ArrayType mType,
-			Type mTypeOfArray, MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		Object[] result_pattern_MethodDefinitionReturnArray_0_2_SolveCSP_binding = pattern_MethodDefinitionReturnArray_0_2_SolveCSP_bindingFBBBBBBBB(
-				_this, match, mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess, mSignature);
+	public static final Object[] pattern_MethodDefinitionReturnArray_0_2_SolveCSP_bindingAndBlackFBBBBBB(
+			MethodDefinitionReturnArray _this, Match match, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+			ArrayType mType, MMethodSignature mSignature) {
+		Object[] result_pattern_MethodDefinitionReturnArray_0_2_SolveCSP_binding = pattern_MethodDefinitionReturnArray_0_2_SolveCSP_bindingFBBBBBB(
+				_this, match, mDefinition, mTypeAccess, mType, mSignature);
 		if (result_pattern_MethodDefinitionReturnArray_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodDefinitionReturnArray_0_2_SolveCSP_binding[0];
 
@@ -1545,8 +1471,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_MethodDefinitionReturnArray_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mArrayTypeAccess, mType, mTypeOfArray, mDefinition,
-						mTypeAccess, mSignature };
+				return new Object[] { csp, _this, match, mDefinition, mTypeAccess, mType, mSignature };
 			}
 		}
 		return null;
@@ -1559,20 +1484,14 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_0_4_collectelementstobetranslated_blackBBBBBBB(
-			Match match, TypeAccess mArrayTypeAccess, ArrayType mType, Type mTypeOfArray, MMethodDefinition mDefinition,
-			TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		if (!mArrayTypeAccess.equals(mTypeAccess)) {
-			if (!mType.equals(mTypeOfArray)) {
-				return new Object[] { match, mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess,
-						mSignature };
-			}
-		}
-		return null;
+	public static final Object[] pattern_MethodDefinitionReturnArray_0_4_collectelementstobetranslated_blackBBBBB(
+			Match match, MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType,
+			MMethodSignature mSignature) {
+		return new Object[] { match, mDefinition, mTypeAccess, mType, mSignature };
 	}
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_0_4_collectelementstobetranslated_greenBBBBBFFFFF(
-			Match match, ArrayType mType, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+			Match match, MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType,
 			MMethodSignature mSignature) {
 		EMoflonEdge mDefinition__mTypeAccess____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeAccess__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1606,59 +1525,28 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		mType__mTypeAccess____usagesInTypeAccess.setName(mType__mTypeAccess____usagesInTypeAccess_name_prime);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		return new Object[] { match, mType, mDefinition, mTypeAccess, mSignature,
+		return new Object[] { match, mDefinition, mTypeAccess, mType, mSignature,
 				mDefinition__mTypeAccess____returnType, mTypeAccess__mType____type,
 				mType__mTypeAccess____usagesInTypeAccess, mSignature__mDefinition____mDefinitions,
 				mDefinition__mSignature____mSignature };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_0_5_collectcontextelements_blackBBBBBBB(
-			Match match, TypeAccess mArrayTypeAccess, ArrayType mType, Type mTypeOfArray, MMethodDefinition mDefinition,
-			TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		if (!mArrayTypeAccess.equals(mTypeAccess)) {
-			if (!mType.equals(mTypeOfArray)) {
-				return new Object[] { match, mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess,
-						mSignature };
-			}
-		}
-		return null;
+	public static final Object[] pattern_MethodDefinitionReturnArray_0_5_collectcontextelements_blackBBBBB(Match match,
+			MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType, MMethodSignature mSignature) {
+		return new Object[] { match, mDefinition, mTypeAccess, mType, mSignature };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_0_5_collectcontextelements_greenBBBBBFFF(
-			Match match, TypeAccess mArrayTypeAccess, ArrayType mType, Type mTypeOfArray, MMethodSignature mSignature) {
-		EMoflonEdge mArrayTypeAccess__mTypeOfArray____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mType__mArrayTypeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(mArrayTypeAccess);
+	public static final Object[] pattern_MethodDefinitionReturnArray_0_5_collectcontextelements_greenBBB(Match match,
+			ArrayType mType, MMethodSignature mSignature) {
 		match.getContextNodes().add(mType);
-		match.getContextNodes().add(mTypeOfArray);
 		match.getContextNodes().add(mSignature);
-		String mArrayTypeAccess__mTypeOfArray____type_name_prime = "type";
-		String mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String mType__mArrayTypeAccess____elementType_name_prime = "elementType";
-		mArrayTypeAccess__mTypeOfArray____type.setSrc(mArrayTypeAccess);
-		mArrayTypeAccess__mTypeOfArray____type.setTrg(mTypeOfArray);
-		match.getContextEdges().add(mArrayTypeAccess__mTypeOfArray____type);
-		mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess.setSrc(mTypeOfArray);
-		mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess.setTrg(mArrayTypeAccess);
-		match.getContextEdges().add(mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess);
-		mType__mArrayTypeAccess____elementType.setSrc(mType);
-		mType__mArrayTypeAccess____elementType.setTrg(mArrayTypeAccess);
-		match.getContextEdges().add(mType__mArrayTypeAccess____elementType);
-		mArrayTypeAccess__mTypeOfArray____type.setName(mArrayTypeAccess__mTypeOfArray____type_name_prime);
-		mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess
-				.setName(mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess_name_prime);
-		mType__mArrayTypeAccess____elementType.setName(mType__mArrayTypeAccess____elementType_name_prime);
-		return new Object[] { match, mArrayTypeAccess, mType, mTypeOfArray, mSignature,
-				mArrayTypeAccess__mTypeOfArray____type, mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess,
-				mType__mArrayTypeAccess____elementType };
+		return new Object[] { match, mType, mSignature };
 	}
 
-	public static final void pattern_MethodDefinitionReturnArray_0_6_registerobjectstomatch_expressionBBBBBBBB(
-			MethodDefinitionReturnArray _this, Match match, TypeAccess mArrayTypeAccess, ArrayType mType,
-			Type mTypeOfArray, MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		_this.registerObjectsToMatch_FWD(match, mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess,
-				mSignature);
+	public static final void pattern_MethodDefinitionReturnArray_0_6_registerobjectstomatch_expressionBBBBBB(
+			MethodDefinitionReturnArray _this, Match match, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+			ArrayType mType, MMethodSignature mSignature) {
+		_this.registerObjectsToMatch_FWD(match, mDefinition, mTypeAccess, mType, mSignature);
 
 	}
 
@@ -1672,54 +1560,43 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_1_1_performtransformation_bindingFFFFFFFFFFB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_1_1_performtransformation_bindingFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mTypeToTType");
 		EObject _localVariable_1 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mArrayTypeAccess");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mSignatureToTMethodSignature");
 		EObject _localVariable_3 = isApplicableMatch.getObject("tMethodSignature");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mType");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mTypeOfArray");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mSignatureToTMethodSignature");
-		EObject _localVariable_7 = isApplicableMatch.getObject("mDefinition");
-		EObject _localVariable_8 = isApplicableMatch.getObject("mTypeAccess");
-		EObject _localVariable_9 = isApplicableMatch.getObject("mSignature");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mTypeAccess");
+		EObject _localVariable_6 = isApplicableMatch.getObject("mType");
+		EObject _localVariable_7 = isApplicableMatch.getObject("mSignature");
 		EObject tmpMTypeToTType = _localVariable_0;
 		EObject tmpTType = _localVariable_1;
-		EObject tmpMArrayTypeAccess = _localVariable_2;
+		EObject tmpMSignatureToTMethodSignature = _localVariable_2;
 		EObject tmpTMethodSignature = _localVariable_3;
-		EObject tmpMType = _localVariable_4;
-		EObject tmpMTypeOfArray = _localVariable_5;
-		EObject tmpMSignatureToTMethodSignature = _localVariable_6;
-		EObject tmpMDefinition = _localVariable_7;
-		EObject tmpMTypeAccess = _localVariable_8;
-		EObject tmpMSignature = _localVariable_9;
+		EObject tmpMDefinition = _localVariable_4;
+		EObject tmpMTypeAccess = _localVariable_5;
+		EObject tmpMType = _localVariable_6;
+		EObject tmpMSignature = _localVariable_7;
 		if (tmpMTypeToTType instanceof TypeToTAbstractType) {
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
 			if (tmpTType instanceof TAbstractType) {
 				TAbstractType tType = (TAbstractType) tmpTType;
-				if (tmpMArrayTypeAccess instanceof TypeAccess) {
-					TypeAccess mArrayTypeAccess = (TypeAccess) tmpMArrayTypeAccess;
+				if (tmpMSignatureToTMethodSignature instanceof MSignatureToTSignature) {
+					MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) tmpMSignatureToTMethodSignature;
 					if (tmpTMethodSignature instanceof TMethodSignature) {
 						TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
-						if (tmpMType instanceof ArrayType) {
-							ArrayType mType = (ArrayType) tmpMType;
-							if (tmpMTypeOfArray instanceof Type) {
-								Type mTypeOfArray = (Type) tmpMTypeOfArray;
-								if (tmpMSignatureToTMethodSignature instanceof MSignatureToTSignature) {
-									MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) tmpMSignatureToTMethodSignature;
-									if (tmpMDefinition instanceof MMethodDefinition) {
-										MMethodDefinition mDefinition = (MMethodDefinition) tmpMDefinition;
-										if (tmpMTypeAccess instanceof TypeAccess) {
-											TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
-											if (tmpMSignature instanceof MMethodSignature) {
-												MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
-												return new Object[] { mTypeToTType, tType, mArrayTypeAccess,
-														tMethodSignature, mType, mTypeOfArray,
-														mSignatureToTMethodSignature, mDefinition, mTypeAccess,
-														mSignature, isApplicableMatch };
-											}
-										}
+						if (tmpMDefinition instanceof MMethodDefinition) {
+							MMethodDefinition mDefinition = (MMethodDefinition) tmpMDefinition;
+							if (tmpMTypeAccess instanceof TypeAccess) {
+								TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
+								if (tmpMType instanceof ArrayType) {
+									ArrayType mType = (ArrayType) tmpMType;
+									if (tmpMSignature instanceof MMethodSignature) {
+										MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
+										return new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature,
+												tMethodSignature, mDefinition, mTypeAccess, mType, mSignature,
+												isApplicableMatch };
 									}
 								}
 							}
@@ -1731,314 +1608,228 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_1_1_performtransformation_blackBBBBBBBBBBFBB(
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, TypeAccess mArrayTypeAccess,
-			TMethodSignature tMethodSignature, ArrayType mType, Type mTypeOfArray,
-			MSignatureToTSignature mSignatureToTMethodSignature, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+	public static final Object[] pattern_MethodDefinitionReturnArray_1_1_performtransformation_blackBBBBBBBBFBB(
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature,
+			TMethodSignature tMethodSignature, MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType,
 			MMethodSignature mSignature, MethodDefinitionReturnArray _this, IsApplicableMatch isApplicableMatch) {
-		if (!mArrayTypeAccess.equals(mTypeAccess)) {
-			if (!mType.equals(mTypeOfArray)) {
-				for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
-					if (tmpCsp instanceof CSP) {
-						CSP csp = (CSP) tmpCsp;
-						return new Object[] { mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType,
-								mTypeOfArray, mSignatureToTMethodSignature, mDefinition, mTypeAccess, mSignature, csp,
-								_this, isApplicableMatch };
-					}
-				}
+		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
+			if (tmpCsp instanceof CSP) {
+				CSP csp = (CSP) tmpCsp;
+				return new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, mDefinition,
+						mTypeAccess, mType, mSignature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_1_1_performtransformation_bindingAndBlackFFFFFFFFFFFBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_1_1_performtransformation_bindingAndBlackFFFFFFFFFBB(
 			MethodDefinitionReturnArray _this, IsApplicableMatch isApplicableMatch) {
-		Object[] result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding = pattern_MethodDefinitionReturnArray_1_1_performtransformation_bindingFFFFFFFFFFB(
+		Object[] result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding = pattern_MethodDefinitionReturnArray_1_1_performtransformation_bindingFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding != null) {
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[0];
 			TAbstractType tType = (TAbstractType) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[1];
-			TypeAccess mArrayTypeAccess = (TypeAccess) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[2];
+			MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[2];
 			TMethodSignature tMethodSignature = (TMethodSignature) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[3];
-			ArrayType mType = (ArrayType) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[4];
-			Type mTypeOfArray = (Type) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[5];
-			MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[6];
-			MMethodDefinition mDefinition = (MMethodDefinition) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[7];
-			TypeAccess mTypeAccess = (TypeAccess) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[8];
-			MMethodSignature mSignature = (MMethodSignature) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[9];
+			MMethodDefinition mDefinition = (MMethodDefinition) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[4];
+			TypeAccess mTypeAccess = (TypeAccess) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[5];
+			ArrayType mType = (ArrayType) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[6];
+			MMethodSignature mSignature = (MMethodSignature) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_binding[7];
 
-			Object[] result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_black = pattern_MethodDefinitionReturnArray_1_1_performtransformation_blackBBBBBBBBBBFBB(
-					mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-					mSignatureToTMethodSignature, mDefinition, mTypeAccess, mSignature, _this, isApplicableMatch);
+			Object[] result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_black = pattern_MethodDefinitionReturnArray_1_1_performtransformation_blackBBBBBBBBFBB(
+					mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, mDefinition, mTypeAccess,
+					mType, mSignature, _this, isApplicableMatch);
 			if (result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_black != null) {
-				CSP csp = (CSP) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_black[10];
+				CSP csp = (CSP) result_pattern_MethodDefinitionReturnArray_1_1_performtransformation_black[8];
 
-				return new Object[] { mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-						mSignatureToTMethodSignature, mDefinition, mTypeAccess, mSignature, csp, _this,
-						isApplicableMatch };
+				return new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, mDefinition,
+						mTypeAccess, mType, mSignature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_1_1_performtransformation_greenBFBFFBF(
+	public static final Object[] pattern_MethodDefinitionReturnArray_1_1_performtransformation_greenBFBFBFF(
 			TAbstractType tType, TMethodSignature tMethodSignature, MMethodDefinition mDefinition) {
 		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
+		TMethodDefinition tDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
-		TMethodDefinition tDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		int tDefinition_lowerBound_prime = Integer.valueOf(0);
 		int tDefinition_upperBound_prime = Integer.valueOf(-1);
 		mDefinitionToTMember.setSource(mDefinition);
-		mFlowElementToTFlowElement.setSource(mDefinition);
 		tMethodSignature.getDefinitions().add(tDefinition);
 		mDefinitionToTMember.setTarget(tDefinition);
-		mFlowElementToTFlowElement.setTarget(tDefinition);
 		tDefinition.setReturnType(tType);
+		mFlowElementToTFlowElement.setSource(mDefinition);
+		mFlowElementToTFlowElement.setTarget(tDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
 		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
 		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
-		return new Object[] { tType, mDefinitionToTMember, tMethodSignature, mFlowElementToTFlowElement, tDefinition,
-				mDefinition, mBodyToTAnnotation };
+		return new Object[] { tType, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
+				mFlowElementToTFlowElement, mBodyToTAnnotation };
 	}
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_1_2_collecttranslatedelements_blackBBBBBB(
-			MDefinitionToTMember mDefinitionToTMember,
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement, TMethodDefinition tDefinition,
-			MMethodDefinition mDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, TypeAccess mTypeAccess) {
-		return new Object[] { mDefinitionToTMember, mFlowElementToTFlowElement, tDefinition, mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TMethodDefinition tDefinition, MMethodDefinition mDefinition,
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TypeAccess mTypeAccess) {
+		return new Object[] { mDefinitionToTMember, tDefinition, mDefinition, mFlowElementToTFlowElement,
 				mBodyToTAnnotation, mTypeAccess };
 	}
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_1_2_collecttranslatedelements_greenFBBBBBB(
-			MDefinitionToTMember mDefinitionToTMember,
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement, TMethodDefinition tDefinition,
-			MMethodDefinition mDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, TypeAccess mTypeAccess) {
+			MDefinitionToTMember mDefinitionToTMember, TMethodDefinition tDefinition, MMethodDefinition mDefinition,
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TypeAccess mTypeAccess) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(mDefinitionToTMember);
-		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
 		ruleresult.getCreatedElements().add(tDefinition);
 		ruleresult.getTranslatedElements().add(mDefinition);
+		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
 		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
 		ruleresult.getTranslatedElements().add(mTypeAccess);
-		return new Object[] { ruleresult, mDefinitionToTMember, mFlowElementToTFlowElement, tDefinition, mDefinition,
+		return new Object[] { ruleresult, mDefinitionToTMember, tDefinition, mDefinition, mFlowElementToTFlowElement,
 				mBodyToTAnnotation, mTypeAccess };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_1_3_bookkeepingforedges_blackBBBBBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject mTypeToTType, EObject tType, EObject mDefinitionToTMember,
-			EObject mArrayTypeAccess, EObject tMethodSignature, EObject mFlowElementToTFlowElement, EObject mType,
-			EObject mTypeOfArray, EObject mSignatureToTMethodSignature, EObject tDefinition, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject mTypeAccess, EObject mSignature) {
+			EObject mSignatureToTMethodSignature, EObject tMethodSignature, EObject tDefinition, EObject mDefinition,
+			EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation, EObject mTypeAccess, EObject mType,
+			EObject mSignature) {
 		if (!mTypeToTType.equals(tType)) {
 			if (!mTypeToTType.equals(tMethodSignature)) {
 				if (!mTypeToTType.equals(tDefinition)) {
 					if (!mDefinitionToTMember.equals(mTypeToTType)) {
 						if (!mDefinitionToTMember.equals(tType)) {
-							if (!mDefinitionToTMember.equals(tMethodSignature)) {
-								if (!mDefinitionToTMember.equals(mFlowElementToTFlowElement)) {
-									if (!mDefinitionToTMember.equals(mType)) {
-										if (!mDefinitionToTMember.equals(mTypeOfArray)) {
-											if (!mDefinitionToTMember.equals(mSignatureToTMethodSignature)) {
-												if (!mDefinitionToTMember.equals(tDefinition)) {
-													if (!mDefinitionToTMember.equals(mTypeAccess)) {
-														if (!mDefinitionToTMember.equals(mSignature)) {
-															if (!mArrayTypeAccess.equals(mTypeToTType)) {
-																if (!mArrayTypeAccess.equals(tType)) {
-																	if (!mArrayTypeAccess
-																			.equals(mDefinitionToTMember)) {
-																		if (!mArrayTypeAccess
-																				.equals(tMethodSignature)) {
-																			if (!mArrayTypeAccess.equals(
-																					mFlowElementToTFlowElement)) {
-																				if (!mArrayTypeAccess.equals(mType)) {
-																					if (!mArrayTypeAccess
-																							.equals(mTypeOfArray)) {
-																						if (!mArrayTypeAccess.equals(
-																								mSignatureToTMethodSignature)) {
-																							if (!mArrayTypeAccess
-																									.equals(tDefinition)) {
-																								if (!mArrayTypeAccess
-																										.equals(mDefinition)) {
-																									if (!mArrayTypeAccess
-																											.equals(mBodyToTAnnotation)) {
-																										if (!mArrayTypeAccess
-																												.equals(mTypeAccess)) {
-																											if (!mArrayTypeAccess
-																													.equals(mSignature)) {
-																												if (!tMethodSignature
-																														.equals(tType)) {
-																													if (!mFlowElementToTFlowElement
-																															.equals(mTypeToTType)) {
-																														if (!mFlowElementToTFlowElement
-																																.equals(tType)) {
-																															if (!mFlowElementToTFlowElement
-																																	.equals(tMethodSignature)) {
-																																if (!mFlowElementToTFlowElement
-																																		.equals(mType)) {
+							if (!mDefinitionToTMember.equals(mSignatureToTMethodSignature)) {
+								if (!mDefinitionToTMember.equals(tMethodSignature)) {
+									if (!mDefinitionToTMember.equals(tDefinition)) {
+										if (!mDefinitionToTMember.equals(mFlowElementToTFlowElement)) {
+											if (!mDefinitionToTMember.equals(mTypeAccess)) {
+												if (!mDefinitionToTMember.equals(mType)) {
+													if (!mDefinitionToTMember.equals(mSignature)) {
+														if (!mSignatureToTMethodSignature.equals(mTypeToTType)) {
+															if (!mSignatureToTMethodSignature.equals(tType)) {
+																if (!mSignatureToTMethodSignature
+																		.equals(tMethodSignature)) {
+																	if (!mSignatureToTMethodSignature
+																			.equals(tDefinition)) {
+																		if (!mSignatureToTMethodSignature
+																				.equals(mTypeAccess)) {
+																			if (!mSignatureToTMethodSignature
+																					.equals(mType)) {
+																				if (!tMethodSignature.equals(tType)) {
+																					if (!tDefinition.equals(tType)) {
+																						if (!tDefinition.equals(
+																								tMethodSignature)) {
+																							if (!mDefinition.equals(
+																									mTypeToTType)) {
+																								if (!mDefinition.equals(
+																										tType)) {
+																									if (!mDefinition
+																											.equals(mDefinitionToTMember)) {
+																										if (!mDefinition
+																												.equals(mSignatureToTMethodSignature)) {
+																											if (!mDefinition
+																													.equals(tMethodSignature)) {
+																												if (!mDefinition
+																														.equals(tDefinition)) {
+																													if (!mDefinition
+																															.equals(mFlowElementToTFlowElement)) {
+																														if (!mDefinition
+																																.equals(mTypeAccess)) {
+																															if (!mDefinition
+																																	.equals(mType)) {
+																																if (!mDefinition
+																																		.equals(mSignature)) {
 																																	if (!mFlowElementToTFlowElement
-																																			.equals(mTypeOfArray)) {
+																																			.equals(mTypeToTType)) {
 																																		if (!mFlowElementToTFlowElement
-																																				.equals(mSignatureToTMethodSignature)) {
+																																				.equals(tType)) {
 																																			if (!mFlowElementToTFlowElement
-																																					.equals(tDefinition)) {
+																																					.equals(mSignatureToTMethodSignature)) {
 																																				if (!mFlowElementToTFlowElement
-																																						.equals(mTypeAccess)) {
+																																						.equals(tMethodSignature)) {
 																																					if (!mFlowElementToTFlowElement
-																																							.equals(mSignature)) {
-																																						if (!mType
-																																								.equals(mTypeToTType)) {
-																																							if (!mType
-																																									.equals(tType)) {
-																																								if (!mType
-																																										.equals(tMethodSignature)) {
-																																									if (!mType
-																																											.equals(mTypeOfArray)) {
-																																										if (!mType
-																																												.equals(tDefinition)) {
-																																											if (!mType
-																																													.equals(mTypeAccess)) {
-																																												if (!mTypeOfArray
-																																														.equals(mTypeToTType)) {
-																																													if (!mTypeOfArray
-																																															.equals(tType)) {
-																																														if (!mTypeOfArray
-																																																.equals(tMethodSignature)) {
-																																															if (!mTypeOfArray
-																																																	.equals(tDefinition)) {
-																																																if (!mSignatureToTMethodSignature
-																																																		.equals(mTypeToTType)) {
-																																																	if (!mSignatureToTMethodSignature
-																																																			.equals(tType)) {
-																																																		if (!mSignatureToTMethodSignature
-																																																				.equals(tMethodSignature)) {
-																																																			if (!mSignatureToTMethodSignature
-																																																					.equals(mType)) {
-																																																				if (!mSignatureToTMethodSignature
-																																																						.equals(mTypeOfArray)) {
-																																																					if (!mSignatureToTMethodSignature
-																																																							.equals(tDefinition)) {
-																																																						if (!mSignatureToTMethodSignature
-																																																								.equals(mTypeAccess)) {
-																																																							if (!tDefinition
-																																																									.equals(tType)) {
-																																																								if (!tDefinition
-																																																										.equals(tMethodSignature)) {
-																																																									if (!mDefinition
-																																																											.equals(mTypeToTType)) {
-																																																										if (!mDefinition
-																																																												.equals(tType)) {
-																																																											if (!mDefinition
-																																																													.equals(mDefinitionToTMember)) {
-																																																												if (!mDefinition
-																																																														.equals(tMethodSignature)) {
-																																																													if (!mDefinition
-																																																															.equals(mFlowElementToTFlowElement)) {
-																																																														if (!mDefinition
-																																																																.equals(mType)) {
-																																																															if (!mDefinition
-																																																																	.equals(mTypeOfArray)) {
-																																																																if (!mDefinition
-																																																																		.equals(mSignatureToTMethodSignature)) {
-																																																																	if (!mDefinition
+																																							.equals(tDefinition)) {
+																																						if (!mFlowElementToTFlowElement
+																																								.equals(mTypeAccess)) {
+																																							if (!mFlowElementToTFlowElement
+																																									.equals(mType)) {
+																																								if (!mFlowElementToTFlowElement
+																																										.equals(mSignature)) {
+																																									if (!mBodyToTAnnotation
+																																											.equals(mTypeToTType)) {
+																																										if (!mBodyToTAnnotation
+																																												.equals(tType)) {
+																																											if (!mBodyToTAnnotation
+																																													.equals(mDefinitionToTMember)) {
+																																												if (!mBodyToTAnnotation
+																																														.equals(mSignatureToTMethodSignature)) {
+																																													if (!mBodyToTAnnotation
+																																															.equals(tMethodSignature)) {
+																																														if (!mBodyToTAnnotation
+																																																.equals(tDefinition)) {
+																																															if (!mBodyToTAnnotation
+																																																	.equals(mDefinition)) {
+																																																if (!mBodyToTAnnotation
+																																																		.equals(mFlowElementToTFlowElement)) {
+																																																	if (!mBodyToTAnnotation
+																																																			.equals(mTypeAccess)) {
+																																																		if (!mBodyToTAnnotation
+																																																				.equals(mType)) {
+																																																			if (!mBodyToTAnnotation
+																																																					.equals(mSignature)) {
+																																																				if (!mTypeAccess
+																																																						.equals(mTypeToTType)) {
+																																																					if (!mTypeAccess
+																																																							.equals(tType)) {
+																																																						if (!mTypeAccess
+																																																								.equals(tMethodSignature)) {
+																																																							if (!mTypeAccess
+																																																									.equals(tDefinition)) {
+																																																								if (!mType
+																																																										.equals(mTypeToTType)) {
+																																																									if (!mType
+																																																											.equals(tType)) {
+																																																										if (!mType
+																																																												.equals(tMethodSignature)) {
+																																																											if (!mType
+																																																													.equals(tDefinition)) {
+																																																												if (!mType
+																																																														.equals(mTypeAccess)) {
+																																																													if (!mSignature
+																																																															.equals(mTypeToTType)) {
+																																																														if (!mSignature
+																																																																.equals(tType)) {
+																																																															if (!mSignature
+																																																																	.equals(mSignatureToTMethodSignature)) {
+																																																																if (!mSignature
+																																																																		.equals(tMethodSignature)) {
+																																																																	if (!mSignature
 																																																																			.equals(tDefinition)) {
-																																																																		if (!mDefinition
+																																																																		if (!mSignature
 																																																																				.equals(mTypeAccess)) {
-																																																																			if (!mDefinition
-																																																																					.equals(mSignature)) {
-																																																																				if (!mBodyToTAnnotation
-																																																																						.equals(mTypeToTType)) {
-																																																																					if (!mBodyToTAnnotation
-																																																																							.equals(tType)) {
-																																																																						if (!mBodyToTAnnotation
-																																																																								.equals(mDefinitionToTMember)) {
-																																																																							if (!mBodyToTAnnotation
-																																																																									.equals(tMethodSignature)) {
-																																																																								if (!mBodyToTAnnotation
-																																																																										.equals(mFlowElementToTFlowElement)) {
-																																																																									if (!mBodyToTAnnotation
-																																																																											.equals(mType)) {
-																																																																										if (!mBodyToTAnnotation
-																																																																												.equals(mTypeOfArray)) {
-																																																																											if (!mBodyToTAnnotation
-																																																																													.equals(mSignatureToTMethodSignature)) {
-																																																																												if (!mBodyToTAnnotation
-																																																																														.equals(tDefinition)) {
-																																																																													if (!mBodyToTAnnotation
-																																																																															.equals(mDefinition)) {
-																																																																														if (!mBodyToTAnnotation
-																																																																																.equals(mTypeAccess)) {
-																																																																															if (!mBodyToTAnnotation
-																																																																																	.equals(mSignature)) {
-																																																																																if (!mTypeAccess
-																																																																																		.equals(mTypeToTType)) {
-																																																																																	if (!mTypeAccess
-																																																																																			.equals(tType)) {
-																																																																																		if (!mTypeAccess
-																																																																																				.equals(tMethodSignature)) {
-																																																																																			if (!mTypeAccess
-																																																																																					.equals(mTypeOfArray)) {
-																																																																																				if (!mTypeAccess
-																																																																																						.equals(tDefinition)) {
-																																																																																					if (!mSignature
-																																																																																							.equals(mTypeToTType)) {
-																																																																																						if (!mSignature
-																																																																																								.equals(tType)) {
-																																																																																							if (!mSignature
-																																																																																									.equals(tMethodSignature)) {
-																																																																																								if (!mSignature
-																																																																																										.equals(mType)) {
-																																																																																									if (!mSignature
-																																																																																											.equals(mTypeOfArray)) {
-																																																																																										if (!mSignature
-																																																																																												.equals(mSignatureToTMethodSignature)) {
-																																																																																											if (!mSignature
-																																																																																													.equals(tDefinition)) {
-																																																																																												if (!mSignature
-																																																																																														.equals(mTypeAccess)) {
-																																																																																													return new Object[] {
-																																																																																															ruleresult,
-																																																																																															mTypeToTType,
-																																																																																															tType,
-																																																																																															mDefinitionToTMember,
-																																																																																															mArrayTypeAccess,
-																																																																																															tMethodSignature,
-																																																																																															mFlowElementToTFlowElement,
-																																																																																															mType,
-																																																																																															mTypeOfArray,
-																																																																																															mSignatureToTMethodSignature,
-																																																																																															tDefinition,
-																																																																																															mDefinition,
-																																																																																															mBodyToTAnnotation,
-																																																																																															mTypeAccess,
-																																																																																															mSignature };
-																																																																																												}
-																																																																																											}
-																																																																																										}
-																																																																																									}
-																																																																																								}
-																																																																																							}
-																																																																																						}
-																																																																																					}
-																																																																																				}
-																																																																																			}
-																																																																																		}
-																																																																																	}
-																																																																																}
-																																																																															}
-																																																																														}
-																																																																													}
-																																																																												}
-																																																																											}
-																																																																										}
-																																																																									}
-																																																																								}
-																																																																							}
-																																																																						}
-																																																																					}
-																																																																				}
+																																																																			if (!mSignature
+																																																																					.equals(mType)) {
+																																																																				return new Object[] {
+																																																																						ruleresult,
+																																																																						mTypeToTType,
+																																																																						tType,
+																																																																						mDefinitionToTMember,
+																																																																						mSignatureToTMethodSignature,
+																																																																						tMethodSignature,
+																																																																						tDefinition,
+																																																																						mDefinition,
+																																																																						mFlowElementToTFlowElement,
+																																																																						mBodyToTAnnotation,
+																																																																						mTypeAccess,
+																																																																						mType,
+																																																																						mSignature };
 																																																																			}
 																																																																		}
 																																																																	}
@@ -2110,8 +1901,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_1_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject tType, EObject mDefinitionToTMember, EObject tMethodSignature,
-			EObject mFlowElementToTFlowElement, EObject mType, EObject tDefinition, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject mTypeAccess, EObject mSignature) {
+			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
+			EObject mTypeAccess, EObject mType, EObject mSignature) {
 		EMoflonEdge tMethodSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mTypeAccess____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2200,8 +1991,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		return new Object[] { ruleresult, tType, mDefinitionToTMember, tMethodSignature, mFlowElementToTFlowElement,
-				mType, tDefinition, mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature,
+		return new Object[] { ruleresult, tType, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
+				mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess, mType, mSignature,
 				tMethodSignature__tDefinition____definitions, tDefinition__tMethodSignature____signature,
 				mDefinition__mTypeAccess____returnType, mFlowElementToTFlowElement__mDefinition____source,
 				mTypeAccess__mType____type, mType__mTypeAccess____usagesInTypeAccess,
@@ -2211,15 +2002,14 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature };
 	}
 
-	public static final void pattern_MethodDefinitionReturnArray_1_5_registerobjects_expressionBBBBBBBBBBBBBBBB(
+	public static final void pattern_MethodDefinitionReturnArray_1_5_registerobjects_expressionBBBBBBBBBBBBBB(
 			MethodDefinitionReturnArray _this, PerformRuleResult ruleresult, EObject mTypeToTType, EObject tType,
-			EObject mDefinitionToTMember, EObject mArrayTypeAccess, EObject tMethodSignature,
-			EObject mFlowElementToTFlowElement, EObject mType, EObject mTypeOfArray,
-			EObject mSignatureToTMethodSignature, EObject tDefinition, EObject mDefinition, EObject mBodyToTAnnotation,
-			EObject mTypeAccess, EObject mSignature) {
-		_this.registerObjects_FWD(ruleresult, mTypeToTType, tType, mDefinitionToTMember, mArrayTypeAccess,
-				tMethodSignature, mFlowElementToTFlowElement, mType, mTypeOfArray, mSignatureToTMethodSignature,
-				tDefinition, mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature);
+			EObject mDefinitionToTMember, EObject mSignatureToTMethodSignature, EObject tMethodSignature,
+			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
+			EObject mTypeAccess, EObject mType, EObject mSignature) {
+		_this.registerObjects_FWD(ruleresult, mTypeToTType, tType, mDefinitionToTMember, mSignatureToTMethodSignature,
+				tMethodSignature, tDefinition, mDefinition, mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess,
+				mType, mSignature);
 
 	}
 
@@ -2280,35 +2070,24 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return new Object[] { performOperation, ruleresult };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_2_2_corematch_bindingFFFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mArrayTypeAccess");
-		EObject _localVariable_1 = match.getObject("mType");
-		EObject _localVariable_2 = match.getObject("mTypeOfArray");
-		EObject _localVariable_3 = match.getObject("mDefinition");
-		EObject _localVariable_4 = match.getObject("mTypeAccess");
-		EObject _localVariable_5 = match.getObject("mSignature");
-		EObject tmpMArrayTypeAccess = _localVariable_0;
-		EObject tmpMType = _localVariable_1;
-		EObject tmpMTypeOfArray = _localVariable_2;
-		EObject tmpMDefinition = _localVariable_3;
-		EObject tmpMTypeAccess = _localVariable_4;
-		EObject tmpMSignature = _localVariable_5;
-		if (tmpMArrayTypeAccess instanceof TypeAccess) {
-			TypeAccess mArrayTypeAccess = (TypeAccess) tmpMArrayTypeAccess;
-			if (tmpMType instanceof ArrayType) {
-				ArrayType mType = (ArrayType) tmpMType;
-				if (tmpMTypeOfArray instanceof Type) {
-					Type mTypeOfArray = (Type) tmpMTypeOfArray;
-					if (tmpMDefinition instanceof MMethodDefinition) {
-						MMethodDefinition mDefinition = (MMethodDefinition) tmpMDefinition;
-						if (tmpMTypeAccess instanceof TypeAccess) {
-							TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
-							if (tmpMSignature instanceof MMethodSignature) {
-								MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
-								return new Object[] { mArrayTypeAccess, mType, mTypeOfArray, mDefinition, mTypeAccess,
-										mSignature, match };
-							}
-						}
+	public static final Object[] pattern_MethodDefinitionReturnArray_2_2_corematch_bindingFFFFB(Match match) {
+		EObject _localVariable_0 = match.getObject("mDefinition");
+		EObject _localVariable_1 = match.getObject("mTypeAccess");
+		EObject _localVariable_2 = match.getObject("mType");
+		EObject _localVariable_3 = match.getObject("mSignature");
+		EObject tmpMDefinition = _localVariable_0;
+		EObject tmpMTypeAccess = _localVariable_1;
+		EObject tmpMType = _localVariable_2;
+		EObject tmpMSignature = _localVariable_3;
+		if (tmpMDefinition instanceof MMethodDefinition) {
+			MMethodDefinition mDefinition = (MMethodDefinition) tmpMDefinition;
+			if (tmpMTypeAccess instanceof TypeAccess) {
+				TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
+				if (tmpMType instanceof ArrayType) {
+					ArrayType mType = (ArrayType) tmpMType;
+					if (tmpMSignature instanceof MMethodSignature) {
+						MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
+						return new Object[] { mDefinition, mTypeAccess, mType, mSignature, match };
 					}
 				}
 			}
@@ -2316,60 +2095,44 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_2_2_corematch_blackFFBFBBFBBBB(
-			TypeAccess mArrayTypeAccess, ArrayType mType, Type mTypeOfArray, MMethodDefinition mDefinition,
-			TypeAccess mTypeAccess, MMethodSignature mSignature, Match match) {
+	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_2_2_corematch_blackFFFFBBBBB(
+			MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType, MMethodSignature mSignature,
+			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!mArrayTypeAccess.equals(mTypeAccess)) {
-			if (!mType.equals(mTypeOfArray)) {
-				for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(mTypeOfArray, TypeToTAbstractType.class, "source")) {
-					TAbstractType tType = mTypeToTType.getTarget();
-					if (tType != null) {
-						for (MSignatureToTSignature mSignatureToTMethodSignature : org.moflon.core.utilities.eMoflonEMFUtil
-								.getOppositeReferenceTyped(mSignature, MSignatureToTSignature.class, "source")) {
-							TSignature tmpTMethodSignature = mSignatureToTMethodSignature.getTarget();
-							if (tmpTMethodSignature instanceof TMethodSignature) {
-								TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
-								_result.add(new Object[] { mTypeToTType, tType, mArrayTypeAccess, tMethodSignature,
-										mType, mTypeOfArray, mSignatureToTMethodSignature, mDefinition, mTypeAccess,
-										mSignature, match });
-							}
-
-						}
+		for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
+			TAbstractType tType = mTypeToTType.getTarget();
+			if (tType != null) {
+				for (MSignatureToTSignature mSignatureToTMethodSignature : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(mSignature, MSignatureToTSignature.class, "source")) {
+					TSignature tmpTMethodSignature = mSignatureToTMethodSignature.getTarget();
+					if (tmpTMethodSignature instanceof TMethodSignature) {
+						TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
+						_result.add(new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature,
+								mDefinition, mTypeAccess, mType, mSignature, match });
 					}
 
 				}
 			}
+
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_2_3_findcontext_blackBBBBBBBBBB(
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, TypeAccess mArrayTypeAccess,
-			TMethodSignature tMethodSignature, ArrayType mType, Type mTypeOfArray,
-			MSignatureToTSignature mSignatureToTMethodSignature, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_2_3_findcontext_blackBBBBBBBB(
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature,
+			TMethodSignature tMethodSignature, MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType,
 			MMethodSignature mSignature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!mArrayTypeAccess.equals(mTypeAccess)) {
-			if (!mType.equals(mTypeOfArray)) {
-				if (mTypeOfArray.equals(mArrayTypeAccess.getType())) {
-					if (mTypeAccess.equals(mDefinition.getReturnType())) {
-						if (mType.equals(mTypeAccess.getType())) {
-							if (tMethodSignature.equals(mSignatureToTMethodSignature.getTarget())) {
-								if (mArrayTypeAccess.equals(mType.getElementType())) {
-									if (mTypeOfArray.equals(mTypeToTType.getSource())) {
-										if (mSignature.getMDefinitions().contains(mDefinition)) {
-											if (tType.equals(mTypeToTType.getTarget())) {
-												if (mSignature.equals(mSignatureToTMethodSignature.getSource())) {
-													_result.add(new Object[] { mTypeToTType, tType, mArrayTypeAccess,
-															tMethodSignature, mType, mTypeOfArray,
-															mSignatureToTMethodSignature, mDefinition, mTypeAccess,
-															mSignature });
-												}
-											}
-										}
-									}
+		if (mTypeAccess.equals(mDefinition.getReturnType())) {
+			if (mType.equals(mTypeAccess.getType())) {
+				if (tMethodSignature.equals(mSignatureToTMethodSignature.getTarget())) {
+					if (mSignature.getMDefinitions().contains(mDefinition)) {
+						if (tType.equals(mTypeToTType.getTarget())) {
+							if (mType.equals(mTypeToTType.getSource())) {
+								if (mSignature.equals(mSignatureToTMethodSignature.getSource())) {
+									_result.add(new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature,
+											tMethodSignature, mDefinition, mTypeAccess, mType, mSignature });
 								}
 							}
 						}
@@ -2380,53 +2143,38 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_2_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFF(
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, TypeAccess mArrayTypeAccess,
-			TMethodSignature tMethodSignature, ArrayType mType, Type mTypeOfArray,
-			MSignatureToTSignature mSignatureToTMethodSignature, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+	public static final Object[] pattern_MethodDefinitionReturnArray_2_3_findcontext_greenBBBBBBBBFFFFFFFFFF(
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature,
+			TMethodSignature tMethodSignature, MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType,
 			MMethodSignature mSignature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mArrayTypeAccess__mTypeOfArray____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mTypeAccess____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeAccess__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignatureToTMethodSignature__tMethodSignature____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge mType__mArrayTypeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mTypeOfArray____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignatureToTMethodSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mArrayTypeAccess__mTypeOfArray____type_name_prime = "type";
-		String mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String mDefinition__mTypeAccess____returnType_name_prime = "returnType";
 		String mTypeAccess__mType____type_name_prime = "type";
 		String mType__mTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String mSignatureToTMethodSignature__tMethodSignature____target_name_prime = "target";
-		String mType__mArrayTypeAccess____elementType_name_prime = "elementType";
-		String mTypeToTType__mTypeOfArray____source_name_prime = "source";
 		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
 		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
 		String mTypeToTType__tType____target_name_prime = "target";
+		String mTypeToTType__mType____source_name_prime = "source";
 		String mSignatureToTMethodSignature__mSignature____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mTypeToTType);
 		isApplicableMatch.getAllContextElements().add(tType);
-		isApplicableMatch.getAllContextElements().add(mArrayTypeAccess);
-		isApplicableMatch.getAllContextElements().add(tMethodSignature);
-		isApplicableMatch.getAllContextElements().add(mType);
-		isApplicableMatch.getAllContextElements().add(mTypeOfArray);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTMethodSignature);
+		isApplicableMatch.getAllContextElements().add(tMethodSignature);
 		isApplicableMatch.getAllContextElements().add(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mTypeAccess);
+		isApplicableMatch.getAllContextElements().add(mType);
 		isApplicableMatch.getAllContextElements().add(mSignature);
-		mArrayTypeAccess__mTypeOfArray____type.setSrc(mArrayTypeAccess);
-		mArrayTypeAccess__mTypeOfArray____type.setTrg(mTypeOfArray);
-		isApplicableMatch.getAllContextElements().add(mArrayTypeAccess__mTypeOfArray____type);
-		mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess.setSrc(mTypeOfArray);
-		mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess.setTrg(mArrayTypeAccess);
-		isApplicableMatch.getAllContextElements().add(mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess);
 		mDefinition__mTypeAccess____returnType.setSrc(mDefinition);
 		mDefinition__mTypeAccess____returnType.setTrg(mTypeAccess);
 		isApplicableMatch.getAllContextElements().add(mDefinition__mTypeAccess____returnType);
@@ -2439,12 +2187,6 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		mSignatureToTMethodSignature__tMethodSignature____target.setSrc(mSignatureToTMethodSignature);
 		mSignatureToTMethodSignature__tMethodSignature____target.setTrg(tMethodSignature);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTMethodSignature__tMethodSignature____target);
-		mType__mArrayTypeAccess____elementType.setSrc(mType);
-		mType__mArrayTypeAccess____elementType.setTrg(mArrayTypeAccess);
-		isApplicableMatch.getAllContextElements().add(mType__mArrayTypeAccess____elementType);
-		mTypeToTType__mTypeOfArray____source.setSrc(mTypeToTType);
-		mTypeToTType__mTypeOfArray____source.setTrg(mTypeOfArray);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__mTypeOfArray____source);
 		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
 		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mSignature__mDefinition____mDefinitions);
@@ -2454,47 +2196,41 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		mTypeToTType__tType____target.setSrc(mTypeToTType);
 		mTypeToTType__tType____target.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__tType____target);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
 		mSignatureToTMethodSignature__mSignature____source.setSrc(mSignatureToTMethodSignature);
 		mSignatureToTMethodSignature__mSignature____source.setTrg(mSignature);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTMethodSignature__mSignature____source);
-		mArrayTypeAccess__mTypeOfArray____type.setName(mArrayTypeAccess__mTypeOfArray____type_name_prime);
-		mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess
-				.setName(mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess_name_prime);
 		mDefinition__mTypeAccess____returnType.setName(mDefinition__mTypeAccess____returnType_name_prime);
 		mTypeAccess__mType____type.setName(mTypeAccess__mType____type_name_prime);
 		mType__mTypeAccess____usagesInTypeAccess.setName(mType__mTypeAccess____usagesInTypeAccess_name_prime);
 		mSignatureToTMethodSignature__tMethodSignature____target
 				.setName(mSignatureToTMethodSignature__tMethodSignature____target_name_prime);
-		mType__mArrayTypeAccess____elementType.setName(mType__mArrayTypeAccess____elementType_name_prime);
-		mTypeToTType__mTypeOfArray____source.setName(mTypeToTType__mTypeOfArray____source_name_prime);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mSignatureToTMethodSignature__mSignature____source
 				.setName(mSignatureToTMethodSignature__mSignature____source_name_prime);
-		return new Object[] { mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-				mSignatureToTMethodSignature, mDefinition, mTypeAccess, mSignature, isApplicableMatch,
-				mArrayTypeAccess__mTypeOfArray____type, mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess,
-				mDefinition__mTypeAccess____returnType, mTypeAccess__mType____type,
-				mType__mTypeAccess____usagesInTypeAccess, mSignatureToTMethodSignature__tMethodSignature____target,
-				mType__mArrayTypeAccess____elementType, mTypeToTType__mTypeOfArray____source,
-				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature,
-				mTypeToTType__tType____target, mSignatureToTMethodSignature__mSignature____source };
+		return new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, mDefinition,
+				mTypeAccess, mType, mSignature, isApplicableMatch, mDefinition__mTypeAccess____returnType,
+				mTypeAccess__mType____type, mType__mTypeAccess____usagesInTypeAccess,
+				mSignatureToTMethodSignature__tMethodSignature____target, mSignature__mDefinition____mDefinitions,
+				mDefinition__mSignature____mSignature, mTypeToTType__tType____target, mTypeToTType__mType____source,
+				mSignatureToTMethodSignature__mSignature____source };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_2_4_solveCSP_bindingFBBBBBBBBBBBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_2_4_solveCSP_bindingFBBBBBBBBBB(
 			MethodDefinitionReturnArray _this, IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, MSignatureToTSignature mSignatureToTMethodSignature, MMethodDefinition mDefinition,
-			TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess,
-				tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature, mDefinition, mTypeAccess,
-				mSignature);
+			TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature, TMethodSignature tMethodSignature,
+			MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType, MMethodSignature mSignature) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mTypeToTType, tType,
+				mSignatureToTMethodSignature, tMethodSignature, mDefinition, mTypeAccess, mType, mSignature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess,
-					tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature, mDefinition, mTypeAccess,
-					mSignature };
+			return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature,
+					tMethodSignature, mDefinition, mTypeAccess, mType, mSignature };
 		}
 		return null;
 	}
@@ -2503,14 +2239,13 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(
 			MethodDefinitionReturnArray _this, IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, MSignatureToTSignature mSignatureToTMethodSignature, MMethodDefinition mDefinition,
-			TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		Object[] result_pattern_MethodDefinitionReturnArray_2_4_solveCSP_binding = pattern_MethodDefinitionReturnArray_2_4_solveCSP_bindingFBBBBBBBBBBBB(
-				_this, isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-				mSignatureToTMethodSignature, mDefinition, mTypeAccess, mSignature);
+			TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature, TMethodSignature tMethodSignature,
+			MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType, MMethodSignature mSignature) {
+		Object[] result_pattern_MethodDefinitionReturnArray_2_4_solveCSP_binding = pattern_MethodDefinitionReturnArray_2_4_solveCSP_bindingFBBBBBBBBBB(
+				_this, isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature,
+				mDefinition, mTypeAccess, mType, mSignature);
 		if (result_pattern_MethodDefinitionReturnArray_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodDefinitionReturnArray_2_4_solveCSP_binding[0];
 
@@ -2518,9 +2253,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_MethodDefinitionReturnArray_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess,
-						tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature, mDefinition, mTypeAccess,
-						mSignature };
+				return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature,
+						tMethodSignature, mDefinition, mTypeAccess, mType, mSignature };
 			}
 		}
 		return null;
@@ -2659,49 +2393,38 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_11_1_performtransformation_bindingFFFFFFFFFB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mTypeToTType");
 		EObject _localVariable_1 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mArrayTypeAccess");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mSignatureToTMethodSignature");
 		EObject _localVariable_3 = isApplicableMatch.getObject("tMethodSignature");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mType");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mTypeOfArray");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mSignatureToTMethodSignature");
-		EObject _localVariable_7 = isApplicableMatch.getObject("tDefinition");
-		EObject _localVariable_8 = isApplicableMatch.getObject("mSignature");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tDefinition");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mType");
+		EObject _localVariable_6 = isApplicableMatch.getObject("mSignature");
 		EObject tmpMTypeToTType = _localVariable_0;
 		EObject tmpTType = _localVariable_1;
-		EObject tmpMArrayTypeAccess = _localVariable_2;
+		EObject tmpMSignatureToTMethodSignature = _localVariable_2;
 		EObject tmpTMethodSignature = _localVariable_3;
-		EObject tmpMType = _localVariable_4;
-		EObject tmpMTypeOfArray = _localVariable_5;
-		EObject tmpMSignatureToTMethodSignature = _localVariable_6;
-		EObject tmpTDefinition = _localVariable_7;
-		EObject tmpMSignature = _localVariable_8;
+		EObject tmpTDefinition = _localVariable_4;
+		EObject tmpMType = _localVariable_5;
+		EObject tmpMSignature = _localVariable_6;
 		if (tmpMTypeToTType instanceof TypeToTAbstractType) {
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
 			if (tmpTType instanceof TAbstractType) {
 				TAbstractType tType = (TAbstractType) tmpTType;
-				if (tmpMArrayTypeAccess instanceof TypeAccess) {
-					TypeAccess mArrayTypeAccess = (TypeAccess) tmpMArrayTypeAccess;
+				if (tmpMSignatureToTMethodSignature instanceof MSignatureToTSignature) {
+					MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) tmpMSignatureToTMethodSignature;
 					if (tmpTMethodSignature instanceof TMethodSignature) {
 						TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
-						if (tmpMType instanceof ArrayType) {
-							ArrayType mType = (ArrayType) tmpMType;
-							if (tmpMTypeOfArray instanceof Type) {
-								Type mTypeOfArray = (Type) tmpMTypeOfArray;
-								if (tmpMSignatureToTMethodSignature instanceof MSignatureToTSignature) {
-									MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) tmpMSignatureToTMethodSignature;
-									if (tmpTDefinition instanceof TMethodDefinition) {
-										TMethodDefinition tDefinition = (TMethodDefinition) tmpTDefinition;
-										if (tmpMSignature instanceof MMethodSignature) {
-											MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
-											return new Object[] { mTypeToTType, tType, mArrayTypeAccess,
-													tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature,
-													tDefinition, mSignature, isApplicableMatch };
-										}
-									}
+						if (tmpTDefinition instanceof TMethodDefinition) {
+							TMethodDefinition tDefinition = (TMethodDefinition) tmpTDefinition;
+							if (tmpMType instanceof ArrayType) {
+								ArrayType mType = (ArrayType) tmpMType;
+								if (tmpMSignature instanceof MMethodSignature) {
+									MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
+									return new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature,
+											tMethodSignature, tDefinition, mType, mSignature, isApplicableMatch };
 								}
 							}
 						}
@@ -2712,307 +2435,225 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_11_1_performtransformation_blackBBBBBBBBBFBB(
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, TypeAccess mArrayTypeAccess,
-			TMethodSignature tMethodSignature, ArrayType mType, Type mTypeOfArray,
-			MSignatureToTSignature mSignatureToTMethodSignature, TMethodDefinition tDefinition,
+	public static final Object[] pattern_MethodDefinitionReturnArray_11_1_performtransformation_blackBBBBBBBFBB(
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature,
+			TMethodSignature tMethodSignature, TMethodDefinition tDefinition, ArrayType mType,
 			MMethodSignature mSignature, MethodDefinitionReturnArray _this, IsApplicableMatch isApplicableMatch) {
-		if (!mType.equals(mTypeOfArray)) {
-			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
-				if (tmpCsp instanceof CSP) {
-					CSP csp = (CSP) tmpCsp;
-					return new Object[] { mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-							mSignatureToTMethodSignature, tDefinition, mSignature, csp, _this, isApplicableMatch };
-				}
+		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
+			if (tmpCsp instanceof CSP) {
+				CSP csp = (CSP) tmpCsp;
+				return new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, tDefinition,
+						mType, mSignature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_11_1_performtransformation_bindingAndBlackFFFFFFFFFFBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_11_1_performtransformation_bindingAndBlackFFFFFFFFBB(
 			MethodDefinitionReturnArray _this, IsApplicableMatch isApplicableMatch) {
-		Object[] result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding = pattern_MethodDefinitionReturnArray_11_1_performtransformation_bindingFFFFFFFFFB(
+		Object[] result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding = pattern_MethodDefinitionReturnArray_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding != null) {
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[0];
 			TAbstractType tType = (TAbstractType) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[1];
-			TypeAccess mArrayTypeAccess = (TypeAccess) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[2];
+			MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[2];
 			TMethodSignature tMethodSignature = (TMethodSignature) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[3];
-			ArrayType mType = (ArrayType) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[4];
-			Type mTypeOfArray = (Type) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[5];
-			MSignatureToTSignature mSignatureToTMethodSignature = (MSignatureToTSignature) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[6];
-			TMethodDefinition tDefinition = (TMethodDefinition) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[7];
-			MMethodSignature mSignature = (MMethodSignature) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[8];
+			TMethodDefinition tDefinition = (TMethodDefinition) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[4];
+			ArrayType mType = (ArrayType) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[5];
+			MMethodSignature mSignature = (MMethodSignature) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_binding[6];
 
-			Object[] result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_black = pattern_MethodDefinitionReturnArray_11_1_performtransformation_blackBBBBBBBBBFBB(
-					mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-					mSignatureToTMethodSignature, tDefinition, mSignature, _this, isApplicableMatch);
+			Object[] result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_black = pattern_MethodDefinitionReturnArray_11_1_performtransformation_blackBBBBBBBFBB(
+					mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, tDefinition, mType, mSignature,
+					_this, isApplicableMatch);
 			if (result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_black != null) {
-				CSP csp = (CSP) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_black[9];
+				CSP csp = (CSP) result_pattern_MethodDefinitionReturnArray_11_1_performtransformation_black[7];
 
-				return new Object[] { mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-						mSignatureToTMethodSignature, tDefinition, mSignature, csp, _this, isApplicableMatch };
+				return new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, tDefinition,
+						mType, mSignature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_11_1_performtransformation_greenFFBBFFFB(
-			ArrayType mType, TMethodDefinition tDefinition, MMethodSignature mSignature) {
+	public static final Object[] pattern_MethodDefinitionReturnArray_11_1_performtransformation_greenFBFFFFBB(
+			TMethodDefinition tDefinition, ArrayType mType, MMethodSignature mSignature) {
 		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
+		MMethodDefinition mDefinition = ModiscoFactory.eINSTANCE.createMMethodDefinition();
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
-		MMethodDefinition mDefinition = ModiscoFactory.eINSTANCE.createMMethodDefinition();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TypeAccess mTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 		mDefinitionToTMember.setTarget(tDefinition);
-		mFlowElementToTFlowElement.setTarget(tDefinition);
-		mFlowElementToTFlowElement.setSource(mDefinition);
 		mDefinitionToTMember.setSource(mDefinition);
 		mSignature.getMDefinitions().add(mDefinition);
+		mFlowElementToTFlowElement.setSource(mDefinition);
+		mFlowElementToTFlowElement.setTarget(tDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
 		mDefinition.setReturnType(mTypeAccess);
 		mTypeAccess.setType(mType);
-		return new Object[] { mDefinitionToTMember, mFlowElementToTFlowElement, mType, tDefinition, mDefinition,
-				mBodyToTAnnotation, mTypeAccess, mSignature };
+		return new Object[] { mDefinitionToTMember, tDefinition, mDefinition, mFlowElementToTFlowElement,
+				mBodyToTAnnotation, mTypeAccess, mType, mSignature };
 	}
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_11_2_collecttranslatedelements_blackBBBBBB(
-			MDefinitionToTMember mDefinitionToTMember,
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement, TMethodDefinition tDefinition,
-			MMethodDefinition mDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, TypeAccess mTypeAccess) {
-		return new Object[] { mDefinitionToTMember, mFlowElementToTFlowElement, tDefinition, mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TMethodDefinition tDefinition, MMethodDefinition mDefinition,
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TypeAccess mTypeAccess) {
+		return new Object[] { mDefinitionToTMember, tDefinition, mDefinition, mFlowElementToTFlowElement,
 				mBodyToTAnnotation, mTypeAccess };
 	}
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_11_2_collecttranslatedelements_greenFBBBBBB(
-			MDefinitionToTMember mDefinitionToTMember,
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement, TMethodDefinition tDefinition,
-			MMethodDefinition mDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, TypeAccess mTypeAccess) {
+			MDefinitionToTMember mDefinitionToTMember, TMethodDefinition tDefinition, MMethodDefinition mDefinition,
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TypeAccess mTypeAccess) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(mDefinitionToTMember);
-		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
 		ruleresult.getTranslatedElements().add(tDefinition);
 		ruleresult.getCreatedElements().add(mDefinition);
+		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
 		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
 		ruleresult.getCreatedElements().add(mTypeAccess);
-		return new Object[] { ruleresult, mDefinitionToTMember, mFlowElementToTFlowElement, tDefinition, mDefinition,
+		return new Object[] { ruleresult, mDefinitionToTMember, tDefinition, mDefinition, mFlowElementToTFlowElement,
 				mBodyToTAnnotation, mTypeAccess };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_11_3_bookkeepingforedges_blackBBBBBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject mTypeToTType, EObject tType, EObject mDefinitionToTMember,
-			EObject mArrayTypeAccess, EObject tMethodSignature, EObject mFlowElementToTFlowElement, EObject mType,
-			EObject mTypeOfArray, EObject mSignatureToTMethodSignature, EObject tDefinition, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject mTypeAccess, EObject mSignature) {
+			EObject mSignatureToTMethodSignature, EObject tMethodSignature, EObject tDefinition, EObject mDefinition,
+			EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation, EObject mTypeAccess, EObject mType,
+			EObject mSignature) {
 		if (!mTypeToTType.equals(tType)) {
 			if (!mTypeToTType.equals(tMethodSignature)) {
 				if (!mTypeToTType.equals(tDefinition)) {
 					if (!mDefinitionToTMember.equals(mTypeToTType)) {
 						if (!mDefinitionToTMember.equals(tType)) {
-							if (!mDefinitionToTMember.equals(tMethodSignature)) {
-								if (!mDefinitionToTMember.equals(mFlowElementToTFlowElement)) {
-									if (!mDefinitionToTMember.equals(mType)) {
-										if (!mDefinitionToTMember.equals(mTypeOfArray)) {
-											if (!mDefinitionToTMember.equals(mSignatureToTMethodSignature)) {
-												if (!mDefinitionToTMember.equals(tDefinition)) {
-													if (!mDefinitionToTMember.equals(mTypeAccess)) {
-														if (!mDefinitionToTMember.equals(mSignature)) {
-															if (!mArrayTypeAccess.equals(mTypeToTType)) {
-																if (!mArrayTypeAccess.equals(tType)) {
-																	if (!mArrayTypeAccess
-																			.equals(mDefinitionToTMember)) {
-																		if (!mArrayTypeAccess
-																				.equals(tMethodSignature)) {
-																			if (!mArrayTypeAccess.equals(
-																					mFlowElementToTFlowElement)) {
-																				if (!mArrayTypeAccess.equals(mType)) {
-																					if (!mArrayTypeAccess
-																							.equals(mTypeOfArray)) {
-																						if (!mArrayTypeAccess.equals(
-																								mSignatureToTMethodSignature)) {
-																							if (!mArrayTypeAccess
-																									.equals(tDefinition)) {
-																								if (!mArrayTypeAccess
-																										.equals(mDefinition)) {
-																									if (!mArrayTypeAccess
-																											.equals(mBodyToTAnnotation)) {
-																										if (!mArrayTypeAccess
-																												.equals(mTypeAccess)) {
-																											if (!mArrayTypeAccess
-																													.equals(mSignature)) {
-																												if (!tMethodSignature
-																														.equals(tType)) {
-																													if (!mFlowElementToTFlowElement
-																															.equals(mTypeToTType)) {
-																														if (!mFlowElementToTFlowElement
-																																.equals(tType)) {
-																															if (!mFlowElementToTFlowElement
-																																	.equals(tMethodSignature)) {
-																																if (!mFlowElementToTFlowElement
-																																		.equals(mType)) {
+							if (!mDefinitionToTMember.equals(mSignatureToTMethodSignature)) {
+								if (!mDefinitionToTMember.equals(tMethodSignature)) {
+									if (!mDefinitionToTMember.equals(tDefinition)) {
+										if (!mDefinitionToTMember.equals(mFlowElementToTFlowElement)) {
+											if (!mDefinitionToTMember.equals(mTypeAccess)) {
+												if (!mDefinitionToTMember.equals(mType)) {
+													if (!mDefinitionToTMember.equals(mSignature)) {
+														if (!mSignatureToTMethodSignature.equals(mTypeToTType)) {
+															if (!mSignatureToTMethodSignature.equals(tType)) {
+																if (!mSignatureToTMethodSignature
+																		.equals(tMethodSignature)) {
+																	if (!mSignatureToTMethodSignature
+																			.equals(tDefinition)) {
+																		if (!mSignatureToTMethodSignature
+																				.equals(mTypeAccess)) {
+																			if (!mSignatureToTMethodSignature
+																					.equals(mType)) {
+																				if (!tMethodSignature.equals(tType)) {
+																					if (!tDefinition.equals(tType)) {
+																						if (!tDefinition.equals(
+																								tMethodSignature)) {
+																							if (!mDefinition.equals(
+																									mTypeToTType)) {
+																								if (!mDefinition.equals(
+																										tType)) {
+																									if (!mDefinition
+																											.equals(mDefinitionToTMember)) {
+																										if (!mDefinition
+																												.equals(mSignatureToTMethodSignature)) {
+																											if (!mDefinition
+																													.equals(tMethodSignature)) {
+																												if (!mDefinition
+																														.equals(tDefinition)) {
+																													if (!mDefinition
+																															.equals(mFlowElementToTFlowElement)) {
+																														if (!mDefinition
+																																.equals(mTypeAccess)) {
+																															if (!mDefinition
+																																	.equals(mType)) {
+																																if (!mDefinition
+																																		.equals(mSignature)) {
 																																	if (!mFlowElementToTFlowElement
-																																			.equals(mTypeOfArray)) {
+																																			.equals(mTypeToTType)) {
 																																		if (!mFlowElementToTFlowElement
-																																				.equals(mSignatureToTMethodSignature)) {
+																																				.equals(tType)) {
 																																			if (!mFlowElementToTFlowElement
-																																					.equals(tDefinition)) {
+																																					.equals(mSignatureToTMethodSignature)) {
 																																				if (!mFlowElementToTFlowElement
-																																						.equals(mTypeAccess)) {
+																																						.equals(tMethodSignature)) {
 																																					if (!mFlowElementToTFlowElement
-																																							.equals(mSignature)) {
-																																						if (!mType
-																																								.equals(mTypeToTType)) {
-																																							if (!mType
-																																									.equals(tType)) {
-																																								if (!mType
-																																										.equals(tMethodSignature)) {
-																																									if (!mType
-																																											.equals(mTypeOfArray)) {
-																																										if (!mType
-																																												.equals(tDefinition)) {
-																																											if (!mType
-																																													.equals(mTypeAccess)) {
-																																												if (!mTypeOfArray
-																																														.equals(mTypeToTType)) {
-																																													if (!mTypeOfArray
-																																															.equals(tType)) {
-																																														if (!mTypeOfArray
-																																																.equals(tMethodSignature)) {
-																																															if (!mTypeOfArray
-																																																	.equals(tDefinition)) {
-																																																if (!mSignatureToTMethodSignature
-																																																		.equals(mTypeToTType)) {
-																																																	if (!mSignatureToTMethodSignature
-																																																			.equals(tType)) {
-																																																		if (!mSignatureToTMethodSignature
-																																																				.equals(tMethodSignature)) {
-																																																			if (!mSignatureToTMethodSignature
-																																																					.equals(mType)) {
-																																																				if (!mSignatureToTMethodSignature
-																																																						.equals(mTypeOfArray)) {
-																																																					if (!mSignatureToTMethodSignature
-																																																							.equals(tDefinition)) {
-																																																						if (!mSignatureToTMethodSignature
-																																																								.equals(mTypeAccess)) {
-																																																							if (!tDefinition
-																																																									.equals(tType)) {
-																																																								if (!tDefinition
-																																																										.equals(tMethodSignature)) {
-																																																									if (!mDefinition
-																																																											.equals(mTypeToTType)) {
-																																																										if (!mDefinition
-																																																												.equals(tType)) {
-																																																											if (!mDefinition
-																																																													.equals(mDefinitionToTMember)) {
-																																																												if (!mDefinition
-																																																														.equals(tMethodSignature)) {
-																																																													if (!mDefinition
-																																																															.equals(mFlowElementToTFlowElement)) {
-																																																														if (!mDefinition
-																																																																.equals(mType)) {
-																																																															if (!mDefinition
-																																																																	.equals(mTypeOfArray)) {
-																																																																if (!mDefinition
-																																																																		.equals(mSignatureToTMethodSignature)) {
-																																																																	if (!mDefinition
+																																							.equals(tDefinition)) {
+																																						if (!mFlowElementToTFlowElement
+																																								.equals(mTypeAccess)) {
+																																							if (!mFlowElementToTFlowElement
+																																									.equals(mType)) {
+																																								if (!mFlowElementToTFlowElement
+																																										.equals(mSignature)) {
+																																									if (!mBodyToTAnnotation
+																																											.equals(mTypeToTType)) {
+																																										if (!mBodyToTAnnotation
+																																												.equals(tType)) {
+																																											if (!mBodyToTAnnotation
+																																													.equals(mDefinitionToTMember)) {
+																																												if (!mBodyToTAnnotation
+																																														.equals(mSignatureToTMethodSignature)) {
+																																													if (!mBodyToTAnnotation
+																																															.equals(tMethodSignature)) {
+																																														if (!mBodyToTAnnotation
+																																																.equals(tDefinition)) {
+																																															if (!mBodyToTAnnotation
+																																																	.equals(mDefinition)) {
+																																																if (!mBodyToTAnnotation
+																																																		.equals(mFlowElementToTFlowElement)) {
+																																																	if (!mBodyToTAnnotation
+																																																			.equals(mTypeAccess)) {
+																																																		if (!mBodyToTAnnotation
+																																																				.equals(mType)) {
+																																																			if (!mBodyToTAnnotation
+																																																					.equals(mSignature)) {
+																																																				if (!mTypeAccess
+																																																						.equals(mTypeToTType)) {
+																																																					if (!mTypeAccess
+																																																							.equals(tType)) {
+																																																						if (!mTypeAccess
+																																																								.equals(tMethodSignature)) {
+																																																							if (!mTypeAccess
+																																																									.equals(tDefinition)) {
+																																																								if (!mType
+																																																										.equals(mTypeToTType)) {
+																																																									if (!mType
+																																																											.equals(tType)) {
+																																																										if (!mType
+																																																												.equals(tMethodSignature)) {
+																																																											if (!mType
+																																																													.equals(tDefinition)) {
+																																																												if (!mType
+																																																														.equals(mTypeAccess)) {
+																																																													if (!mSignature
+																																																															.equals(mTypeToTType)) {
+																																																														if (!mSignature
+																																																																.equals(tType)) {
+																																																															if (!mSignature
+																																																																	.equals(mSignatureToTMethodSignature)) {
+																																																																if (!mSignature
+																																																																		.equals(tMethodSignature)) {
+																																																																	if (!mSignature
 																																																																			.equals(tDefinition)) {
-																																																																		if (!mDefinition
+																																																																		if (!mSignature
 																																																																				.equals(mTypeAccess)) {
-																																																																			if (!mDefinition
-																																																																					.equals(mSignature)) {
-																																																																				if (!mBodyToTAnnotation
-																																																																						.equals(mTypeToTType)) {
-																																																																					if (!mBodyToTAnnotation
-																																																																							.equals(tType)) {
-																																																																						if (!mBodyToTAnnotation
-																																																																								.equals(mDefinitionToTMember)) {
-																																																																							if (!mBodyToTAnnotation
-																																																																									.equals(tMethodSignature)) {
-																																																																								if (!mBodyToTAnnotation
-																																																																										.equals(mFlowElementToTFlowElement)) {
-																																																																									if (!mBodyToTAnnotation
-																																																																											.equals(mType)) {
-																																																																										if (!mBodyToTAnnotation
-																																																																												.equals(mTypeOfArray)) {
-																																																																											if (!mBodyToTAnnotation
-																																																																													.equals(mSignatureToTMethodSignature)) {
-																																																																												if (!mBodyToTAnnotation
-																																																																														.equals(tDefinition)) {
-																																																																													if (!mBodyToTAnnotation
-																																																																															.equals(mDefinition)) {
-																																																																														if (!mBodyToTAnnotation
-																																																																																.equals(mTypeAccess)) {
-																																																																															if (!mBodyToTAnnotation
-																																																																																	.equals(mSignature)) {
-																																																																																if (!mTypeAccess
-																																																																																		.equals(mTypeToTType)) {
-																																																																																	if (!mTypeAccess
-																																																																																			.equals(tType)) {
-																																																																																		if (!mTypeAccess
-																																																																																				.equals(tMethodSignature)) {
-																																																																																			if (!mTypeAccess
-																																																																																					.equals(mTypeOfArray)) {
-																																																																																				if (!mTypeAccess
-																																																																																						.equals(tDefinition)) {
-																																																																																					if (!mSignature
-																																																																																							.equals(mTypeToTType)) {
-																																																																																						if (!mSignature
-																																																																																								.equals(tType)) {
-																																																																																							if (!mSignature
-																																																																																									.equals(tMethodSignature)) {
-																																																																																								if (!mSignature
-																																																																																										.equals(mType)) {
-																																																																																									if (!mSignature
-																																																																																											.equals(mTypeOfArray)) {
-																																																																																										if (!mSignature
-																																																																																												.equals(mSignatureToTMethodSignature)) {
-																																																																																											if (!mSignature
-																																																																																													.equals(tDefinition)) {
-																																																																																												if (!mSignature
-																																																																																														.equals(mTypeAccess)) {
-																																																																																													return new Object[] {
-																																																																																															ruleresult,
-																																																																																															mTypeToTType,
-																																																																																															tType,
-																																																																																															mDefinitionToTMember,
-																																																																																															mArrayTypeAccess,
-																																																																																															tMethodSignature,
-																																																																																															mFlowElementToTFlowElement,
-																																																																																															mType,
-																																																																																															mTypeOfArray,
-																																																																																															mSignatureToTMethodSignature,
-																																																																																															tDefinition,
-																																																																																															mDefinition,
-																																																																																															mBodyToTAnnotation,
-																																																																																															mTypeAccess,
-																																																																																															mSignature };
-																																																																																												}
-																																																																																											}
-																																																																																										}
-																																																																																									}
-																																																																																								}
-																																																																																							}
-																																																																																						}
-																																																																																					}
-																																																																																				}
-																																																																																			}
-																																																																																		}
-																																																																																	}
-																																																																																}
-																																																																															}
-																																																																														}
-																																																																													}
-																																																																												}
-																																																																											}
-																																																																										}
-																																																																									}
-																																																																								}
-																																																																							}
-																																																																						}
-																																																																					}
-																																																																				}
+																																																																			if (!mSignature
+																																																																					.equals(mType)) {
+																																																																				return new Object[] {
+																																																																						ruleresult,
+																																																																						mTypeToTType,
+																																																																						tType,
+																																																																						mDefinitionToTMember,
+																																																																						mSignatureToTMethodSignature,
+																																																																						tMethodSignature,
+																																																																						tDefinition,
+																																																																						mDefinition,
+																																																																						mFlowElementToTFlowElement,
+																																																																						mBodyToTAnnotation,
+																																																																						mTypeAccess,
+																																																																						mType,
+																																																																						mSignature };
 																																																																			}
 																																																																		}
 																																																																	}
@@ -3084,8 +2725,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_11_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject tType, EObject mDefinitionToTMember, EObject tMethodSignature,
-			EObject mFlowElementToTFlowElement, EObject mType, EObject tDefinition, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject mTypeAccess, EObject mSignature) {
+			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
+			EObject mTypeAccess, EObject mType, EObject mSignature) {
 		EMoflonEdge tMethodSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mTypeAccess____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -3174,8 +2815,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		return new Object[] { ruleresult, tType, mDefinitionToTMember, tMethodSignature, mFlowElementToTFlowElement,
-				mType, tDefinition, mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature,
+		return new Object[] { ruleresult, tType, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
+				mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess, mType, mSignature,
 				tMethodSignature__tDefinition____definitions, tDefinition__tMethodSignature____signature,
 				mDefinition__mTypeAccess____returnType, mFlowElementToTFlowElement__mDefinition____source,
 				mTypeAccess__mType____type, mType__mTypeAccess____usagesInTypeAccess,
@@ -3185,15 +2826,14 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature };
 	}
 
-	public static final void pattern_MethodDefinitionReturnArray_11_5_registerobjects_expressionBBBBBBBBBBBBBBBB(
+	public static final void pattern_MethodDefinitionReturnArray_11_5_registerobjects_expressionBBBBBBBBBBBBBB(
 			MethodDefinitionReturnArray _this, PerformRuleResult ruleresult, EObject mTypeToTType, EObject tType,
-			EObject mDefinitionToTMember, EObject mArrayTypeAccess, EObject tMethodSignature,
-			EObject mFlowElementToTFlowElement, EObject mType, EObject mTypeOfArray,
-			EObject mSignatureToTMethodSignature, EObject tDefinition, EObject mDefinition, EObject mBodyToTAnnotation,
-			EObject mTypeAccess, EObject mSignature) {
-		_this.registerObjects_BWD(ruleresult, mTypeToTType, tType, mDefinitionToTMember, mArrayTypeAccess,
-				tMethodSignature, mFlowElementToTFlowElement, mType, mTypeOfArray, mSignatureToTMethodSignature,
-				tDefinition, mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature);
+			EObject mDefinitionToTMember, EObject mSignatureToTMethodSignature, EObject tMethodSignature,
+			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
+			EObject mTypeAccess, EObject mType, EObject mSignature) {
+		_this.registerObjects_BWD(ruleresult, mTypeToTType, tType, mDefinitionToTMember, mSignatureToTMethodSignature,
+				tMethodSignature, tDefinition, mDefinition, mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess,
+				mType, mSignature);
 
 	}
 
@@ -3274,7 +2914,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_12_2_corematch_blackFBBFFBFB(
+	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_12_2_corematch_blackFBFBBFFB(
 			TAbstractType tType, TMethodSignature tMethodSignature, TMethodDefinition tDefinition, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		int tDefinition_lowerBound = tDefinition.getLowerBound();
@@ -3288,10 +2928,11 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 						MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
 						for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
 								.getOppositeReferenceTyped(tType, TypeToTAbstractType.class, "target")) {
-							Type mTypeOfArray = mTypeToTType.getSource();
-							if (mTypeOfArray != null) {
-								_result.add(new Object[] { mTypeToTType, tType, tMethodSignature, mTypeOfArray,
-										mSignatureToTMethodSignature, tDefinition, mSignature, match });
+							Type tmpMType = mTypeToTType.getSource();
+							if (tmpMType instanceof ArrayType) {
+								ArrayType mType = (ArrayType) tmpMType;
+								_result.add(new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature,
+										tMethodSignature, tDefinition, mType, mSignature, match });
 							}
 
 						}
@@ -3305,32 +2946,23 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_12_3_findcontext_blackBBFBFBBBB(
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, TMethodSignature tMethodSignature, Type mTypeOfArray,
-			MSignatureToTSignature mSignatureToTMethodSignature, TMethodDefinition tDefinition,
+	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_12_3_findcontext_blackBBBBBBB(
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature,
+			TMethodSignature tMethodSignature, TMethodDefinition tDefinition, ArrayType mType,
 			MMethodSignature mSignature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (tMethodSignature.getDefinitions().contains(tDefinition)) {
 			if (tMethodSignature.equals(mSignatureToTMethodSignature.getTarget())) {
 				if (tType.equals(tDefinition.getReturnType())) {
-					if (mTypeOfArray.equals(mTypeToTType.getSource())) {
-						if (tType.equals(mTypeToTType.getTarget())) {
+					if (tType.equals(mTypeToTType.getTarget())) {
+						if (mType.equals(mTypeToTType.getSource())) {
 							if (mSignature.equals(mSignatureToTMethodSignature.getSource())) {
 								int tDefinition_lowerBound = tDefinition.getLowerBound();
 								if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
 									int tDefinition_upperBound = tDefinition.getUpperBound();
 									if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
-										for (TypeAccess mArrayTypeAccess : mTypeOfArray.getUsagesInTypeAccess()) {
-											for (ArrayType mType : org.moflon.core.utilities.eMoflonEMFUtil
-													.getOppositeReferenceTyped(mArrayTypeAccess, ArrayType.class,
-															"elementType")) {
-												if (!mType.equals(mTypeOfArray)) {
-													_result.add(new Object[] { mTypeToTType, tType, mArrayTypeAccess,
-															tMethodSignature, mType, mTypeOfArray,
-															mSignatureToTMethodSignature, tDefinition, mSignature });
-												}
-											}
-										}
+										_result.add(new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature,
+												tMethodSignature, tDefinition, mType, mSignature });
 									}
 
 								}
@@ -3344,48 +2976,33 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_12_3_findcontext_greenBBBBBBBBBFFFFFFFFFFF(
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, TypeAccess mArrayTypeAccess,
-			TMethodSignature tMethodSignature, ArrayType mType, Type mTypeOfArray,
-			MSignatureToTSignature mSignatureToTMethodSignature, TMethodDefinition tDefinition,
+	public static final Object[] pattern_MethodDefinitionReturnArray_12_3_findcontext_greenBBBBBBBFFFFFFFF(
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature,
+			TMethodSignature tMethodSignature, TMethodDefinition tDefinition, ArrayType mType,
 			MMethodSignature mSignature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mArrayTypeAccess__mTypeOfArray____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignatureToTMethodSignature__tMethodSignature____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge mType__mArrayTypeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mTypeOfArray____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignatureToTMethodSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mArrayTypeAccess__mTypeOfArray____type_name_prime = "type";
-		String mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String tMethodSignature__tDefinition____definitions_name_prime = "definitions";
 		String tDefinition__tMethodSignature____signature_name_prime = "signature";
 		String mSignatureToTMethodSignature__tMethodSignature____target_name_prime = "target";
-		String mType__mArrayTypeAccess____elementType_name_prime = "elementType";
 		String tDefinition__tType____returnType_name_prime = "returnType";
-		String mTypeToTType__mTypeOfArray____source_name_prime = "source";
 		String mTypeToTType__tType____target_name_prime = "target";
+		String mTypeToTType__mType____source_name_prime = "source";
 		String mSignatureToTMethodSignature__mSignature____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mTypeToTType);
 		isApplicableMatch.getAllContextElements().add(tType);
-		isApplicableMatch.getAllContextElements().add(mArrayTypeAccess);
-		isApplicableMatch.getAllContextElements().add(tMethodSignature);
-		isApplicableMatch.getAllContextElements().add(mType);
-		isApplicableMatch.getAllContextElements().add(mTypeOfArray);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTMethodSignature);
+		isApplicableMatch.getAllContextElements().add(tMethodSignature);
 		isApplicableMatch.getAllContextElements().add(tDefinition);
+		isApplicableMatch.getAllContextElements().add(mType);
 		isApplicableMatch.getAllContextElements().add(mSignature);
-		mArrayTypeAccess__mTypeOfArray____type.setSrc(mArrayTypeAccess);
-		mArrayTypeAccess__mTypeOfArray____type.setTrg(mTypeOfArray);
-		isApplicableMatch.getAllContextElements().add(mArrayTypeAccess__mTypeOfArray____type);
-		mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess.setSrc(mTypeOfArray);
-		mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess.setTrg(mArrayTypeAccess);
-		isApplicableMatch.getAllContextElements().add(mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess);
 		tMethodSignature__tDefinition____definitions.setSrc(tMethodSignature);
 		tMethodSignature__tDefinition____definitions.setTrg(tDefinition);
 		isApplicableMatch.getAllContextElements().add(tMethodSignature__tDefinition____definitions);
@@ -3395,54 +3012,44 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		mSignatureToTMethodSignature__tMethodSignature____target.setSrc(mSignatureToTMethodSignature);
 		mSignatureToTMethodSignature__tMethodSignature____target.setTrg(tMethodSignature);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTMethodSignature__tMethodSignature____target);
-		mType__mArrayTypeAccess____elementType.setSrc(mType);
-		mType__mArrayTypeAccess____elementType.setTrg(mArrayTypeAccess);
-		isApplicableMatch.getAllContextElements().add(mType__mArrayTypeAccess____elementType);
 		tDefinition__tType____returnType.setSrc(tDefinition);
 		tDefinition__tType____returnType.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(tDefinition__tType____returnType);
-		mTypeToTType__mTypeOfArray____source.setSrc(mTypeToTType);
-		mTypeToTType__mTypeOfArray____source.setTrg(mTypeOfArray);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__mTypeOfArray____source);
 		mTypeToTType__tType____target.setSrc(mTypeToTType);
 		mTypeToTType__tType____target.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__tType____target);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
 		mSignatureToTMethodSignature__mSignature____source.setSrc(mSignatureToTMethodSignature);
 		mSignatureToTMethodSignature__mSignature____source.setTrg(mSignature);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTMethodSignature__mSignature____source);
-		mArrayTypeAccess__mTypeOfArray____type.setName(mArrayTypeAccess__mTypeOfArray____type_name_prime);
-		mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess
-				.setName(mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess_name_prime);
 		tMethodSignature__tDefinition____definitions.setName(tMethodSignature__tDefinition____definitions_name_prime);
 		tDefinition__tMethodSignature____signature.setName(tDefinition__tMethodSignature____signature_name_prime);
 		mSignatureToTMethodSignature__tMethodSignature____target
 				.setName(mSignatureToTMethodSignature__tMethodSignature____target_name_prime);
-		mType__mArrayTypeAccess____elementType.setName(mType__mArrayTypeAccess____elementType_name_prime);
 		tDefinition__tType____returnType.setName(tDefinition__tType____returnType_name_prime);
-		mTypeToTType__mTypeOfArray____source.setName(mTypeToTType__mTypeOfArray____source_name_prime);
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mSignatureToTMethodSignature__mSignature____source
 				.setName(mSignatureToTMethodSignature__mSignature____source_name_prime);
-		return new Object[] { mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-				mSignatureToTMethodSignature, tDefinition, mSignature, isApplicableMatch,
-				mArrayTypeAccess__mTypeOfArray____type, mTypeOfArray__mArrayTypeAccess____usagesInTypeAccess,
-				tMethodSignature__tDefinition____definitions, tDefinition__tMethodSignature____signature,
-				mSignatureToTMethodSignature__tMethodSignature____target, mType__mArrayTypeAccess____elementType,
-				tDefinition__tType____returnType, mTypeToTType__mTypeOfArray____source, mTypeToTType__tType____target,
+		return new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, tDefinition, mType,
+				mSignature, isApplicableMatch, tMethodSignature__tDefinition____definitions,
+				tDefinition__tMethodSignature____signature, mSignatureToTMethodSignature__tMethodSignature____target,
+				tDefinition__tType____returnType, mTypeToTType__tType____target, mTypeToTType__mType____source,
 				mSignatureToTMethodSignature__mSignature____source };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_12_4_solveCSP_bindingFBBBBBBBBBBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_12_4_solveCSP_bindingFBBBBBBBBB(
 			MethodDefinitionReturnArray _this, IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, MSignatureToTSignature mSignatureToTMethodSignature, TMethodDefinition tDefinition,
-			MMethodSignature mSignature) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess,
-				tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature, tDefinition, mSignature);
+			TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature, TMethodSignature tMethodSignature,
+			TMethodDefinition tDefinition, ArrayType mType, MMethodSignature mSignature) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mTypeToTType, tType,
+				mSignatureToTMethodSignature, tMethodSignature, tDefinition, mType, mSignature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess,
-					tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature, tDefinition, mSignature };
+			return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature,
+					tMethodSignature, tDefinition, mType, mSignature };
 		}
 		return null;
 	}
@@ -3451,14 +3058,13 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(
 			MethodDefinitionReturnArray _this, IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, MSignatureToTSignature mSignatureToTMethodSignature, TMethodDefinition tDefinition,
-			MMethodSignature mSignature) {
-		Object[] result_pattern_MethodDefinitionReturnArray_12_4_solveCSP_binding = pattern_MethodDefinitionReturnArray_12_4_solveCSP_bindingFBBBBBBBBBBB(
-				_this, isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-				mSignatureToTMethodSignature, tDefinition, mSignature);
+			TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature, TMethodSignature tMethodSignature,
+			TMethodDefinition tDefinition, ArrayType mType, MMethodSignature mSignature) {
+		Object[] result_pattern_MethodDefinitionReturnArray_12_4_solveCSP_binding = pattern_MethodDefinitionReturnArray_12_4_solveCSP_bindingFBBBBBBBBB(
+				_this, isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature,
+				tDefinition, mType, mSignature);
 		if (result_pattern_MethodDefinitionReturnArray_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodDefinitionReturnArray_12_4_solveCSP_binding[0];
 
@@ -3466,8 +3072,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_MethodDefinitionReturnArray_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess,
-						tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature, tDefinition, mSignature };
+				return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature,
+						tMethodSignature, tDefinition, mType, mSignature };
 			}
 		}
 		return null;
@@ -3557,9 +3163,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_20_2_testcorematchandDECs_black_nac_0BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_973238 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_973238 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_973238)) {
+		TSignature __DEC_tDefinition_signature_126287 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_126287 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_126287)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -3705,9 +3311,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_0BB(
 			MMethodDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_699326 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_699326 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_699326)) {
+		MSignature __DEC_mDefinition_mDefinitions_462546 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_462546 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_462546)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -3715,36 +3321,30 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_1BB(
-			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_963377 : org.moflon.core.utilities.eMoflonEMFUtil
+	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_1B(
+			TypeAccess mTypeAccess) {
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_468915 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superInterfaces_963377)) {
-				return new Object[] { mTypeAccess, mTypeOfArray };
-			}
+			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_321837 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_262588 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_3BBB(
-			TypeAccess mTypeAccess, ArrayType mType, Type mTypeOfArray) {
-		if (!mType.equals(mTypeOfArray)) {
-			for (ArrayType __DEC_mTypeAccess_elementType_411306 : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(mTypeAccess, ArrayType.class, "elementType")) {
-				if (!mType.equals(__DEC_mTypeAccess_elementType_411306)) {
-					if (!mTypeOfArray.equals(__DEC_mTypeAccess_elementType_411306)) {
-						return new Object[] { mTypeAccess, mType, mTypeOfArray };
-					}
-				}
+	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_3BB(
+			TypeAccess mTypeAccess, ArrayType mType) {
+		for (ArrayType __DEC_mTypeAccess_elementType_942734 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(mTypeAccess, ArrayType.class, "elementType")) {
+			if (!mType.equals(__DEC_mTypeAccess_elementType_942734)) {
+				return new Object[] { mTypeAccess, mType };
 			}
 		}
 		return null;
@@ -3752,38 +3352,34 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_526728 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_292912 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_5BB(
-			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_385388 : org.moflon.core.utilities.eMoflonEMFUtil
+	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_5B(
+			TypeAccess mTypeAccess) {
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_858794 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superClass_385388)) {
-				return new Object[] { mTypeAccess, mTypeOfArray };
-			}
+			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_6BB(
-			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (ParameterizedType __DEC_mTypeAccess_type_838654 : org.moflon.core.utilities.eMoflonEMFUtil
+	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_6B(
+			TypeAccess mTypeAccess) {
+		for (ParameterizedType __DEC_mTypeAccess_type_699923 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_type_838654)) {
-				return new Object[] { mTypeAccess, mTypeOfArray };
-			}
+			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_144203 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_308972 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3792,7 +3388,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_562513 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_79644 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3807,7 +3403,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_blackFFFFFFB(
+	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_blackFFFFB(
 			EMoflonEdge _edge_returnType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		EObject tmpMDefinition = _edge_returnType.getSrc();
@@ -3823,44 +3419,28 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 						Type tmpMType = mTypeAccess.getType();
 						if (tmpMType instanceof ArrayType) {
 							ArrayType mType = (ArrayType) tmpMType;
-							TypeAccess mArrayTypeAccess = mType.getElementType();
-							if (mArrayTypeAccess != null) {
-								if (!mArrayTypeAccess.equals(mTypeAccess)) {
-									Type mTypeOfArray = mArrayTypeAccess.getType();
-									if (mTypeOfArray != null) {
-										if (!mType.equals(mTypeOfArray)) {
-											if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_2B(
+							if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_1B(
+									mTypeAccess) == null) {
+								if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_2B(
+										mTypeAccess) == null) {
+									if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_4B(
+											mTypeAccess) == null) {
+										if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_5B(
+												mTypeAccess) == null) {
+											if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_6B(
 													mTypeAccess) == null) {
-												if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_4B(
+												if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_7B(
 														mTypeAccess) == null) {
-													if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_7B(
+													if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_8B(
 															mTypeAccess) == null) {
-														if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_8B(
-																mTypeAccess) == null) {
-															if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_0BB(
-																	mDefinition, mSignature) == null) {
+														if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_0BB(
+																mDefinition, mSignature) == null) {
+															if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_3BB(
+																	mTypeAccess, mType) == null) {
 																if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_9BB(
 																		mType, mTypeAccess) == null) {
-																	if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_1BB(
-																			mTypeAccess, mTypeOfArray) == null) {
-																		if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_3BBB(
-																				mTypeAccess, mType,
-																				mTypeOfArray) == null) {
-																			if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_5BB(
-																					mTypeAccess,
-																					mTypeOfArray) == null) {
-																				if (pattern_MethodDefinitionReturnArray_21_2_testcorematchandDECs_black_nac_6BB(
-																						mTypeAccess,
-																						mTypeOfArray) == null) {
-																					_result.add(new Object[] {
-																							mArrayTypeAccess, mType,
-																							mTypeOfArray, mDefinition,
-																							mTypeAccess, mSignature,
-																							_edge_returnType });
-																				}
-																			}
-																		}
-																	}
+																	_result.add(new Object[] { mDefinition, mTypeAccess,
+																			mType, mSignature, _edge_returnType });
 																}
 															}
 														}
@@ -3869,10 +3449,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 											}
 										}
 									}
-
 								}
 							}
-
 						}
 
 					}
@@ -3895,11 +3473,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	}
 
-	public static final boolean pattern_MethodDefinitionReturnArray_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBBB(
-			MethodDefinitionReturnArray _this, Match match, TypeAccess mArrayTypeAccess, ArrayType mType,
-			Type mTypeOfArray, MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mArrayTypeAccess, mType, mTypeOfArray, mDefinition,
-				mTypeAccess, mSignature);
+	public static final boolean pattern_MethodDefinitionReturnArray_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
+			MethodDefinitionReturnArray _this, Match match, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
+			ArrayType mType, MMethodSignature mSignature) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mDefinition, mTypeAccess, mType, mSignature);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3943,49 +3520,38 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_bindingFFFFFFFFFBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
 			Match targetMatch, Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("tType");
-		EObject _localVariable_1 = sourceMatch.getObject("mArrayTypeAccess");
-		EObject _localVariable_2 = targetMatch.getObject("tMethodSignature");
-		EObject _localVariable_3 = sourceMatch.getObject("mType");
-		EObject _localVariable_4 = sourceMatch.getObject("mTypeOfArray");
-		EObject _localVariable_5 = targetMatch.getObject("tDefinition");
-		EObject _localVariable_6 = sourceMatch.getObject("mDefinition");
-		EObject _localVariable_7 = sourceMatch.getObject("mTypeAccess");
-		EObject _localVariable_8 = sourceMatch.getObject("mSignature");
+		EObject _localVariable_1 = targetMatch.getObject("tMethodSignature");
+		EObject _localVariable_2 = targetMatch.getObject("tDefinition");
+		EObject _localVariable_3 = sourceMatch.getObject("mDefinition");
+		EObject _localVariable_4 = sourceMatch.getObject("mTypeAccess");
+		EObject _localVariable_5 = sourceMatch.getObject("mType");
+		EObject _localVariable_6 = sourceMatch.getObject("mSignature");
 		EObject tmpTType = _localVariable_0;
-		EObject tmpMArrayTypeAccess = _localVariable_1;
-		EObject tmpTMethodSignature = _localVariable_2;
-		EObject tmpMType = _localVariable_3;
-		EObject tmpMTypeOfArray = _localVariable_4;
-		EObject tmpTDefinition = _localVariable_5;
-		EObject tmpMDefinition = _localVariable_6;
-		EObject tmpMTypeAccess = _localVariable_7;
-		EObject tmpMSignature = _localVariable_8;
+		EObject tmpTMethodSignature = _localVariable_1;
+		EObject tmpTDefinition = _localVariable_2;
+		EObject tmpMDefinition = _localVariable_3;
+		EObject tmpMTypeAccess = _localVariable_4;
+		EObject tmpMType = _localVariable_5;
+		EObject tmpMSignature = _localVariable_6;
 		if (tmpTType instanceof TAbstractType) {
 			TAbstractType tType = (TAbstractType) tmpTType;
-			if (tmpMArrayTypeAccess instanceof TypeAccess) {
-				TypeAccess mArrayTypeAccess = (TypeAccess) tmpMArrayTypeAccess;
-				if (tmpTMethodSignature instanceof TMethodSignature) {
-					TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
-					if (tmpMType instanceof ArrayType) {
-						ArrayType mType = (ArrayType) tmpMType;
-						if (tmpMTypeOfArray instanceof Type) {
-							Type mTypeOfArray = (Type) tmpMTypeOfArray;
-							if (tmpTDefinition instanceof TMethodDefinition) {
-								TMethodDefinition tDefinition = (TMethodDefinition) tmpTDefinition;
-								if (tmpMDefinition instanceof MMethodDefinition) {
-									MMethodDefinition mDefinition = (MMethodDefinition) tmpMDefinition;
-									if (tmpMTypeAccess instanceof TypeAccess) {
-										TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
-										if (tmpMSignature instanceof MMethodSignature) {
-											MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
-											return new Object[] { tType, mArrayTypeAccess, tMethodSignature, mType,
-													mTypeOfArray, tDefinition, mDefinition, mTypeAccess, mSignature,
-													targetMatch, sourceMatch };
-										}
-									}
+			if (tmpTMethodSignature instanceof TMethodSignature) {
+				TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
+				if (tmpTDefinition instanceof TMethodDefinition) {
+					TMethodDefinition tDefinition = (TMethodDefinition) tmpTDefinition;
+					if (tmpMDefinition instanceof MMethodDefinition) {
+						MMethodDefinition mDefinition = (MMethodDefinition) tmpMDefinition;
+						if (tmpMTypeAccess instanceof TypeAccess) {
+							TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
+							if (tmpMType instanceof ArrayType) {
+								ArrayType mType = (ArrayType) tmpMType;
+								if (tmpMSignature instanceof MMethodSignature) {
+									MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
+									return new Object[] { tType, tMethodSignature, tDefinition, mDefinition,
+											mTypeAccess, mType, mSignature, targetMatch, sourceMatch };
 								}
 							}
 						}
@@ -3996,67 +3562,60 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_blackBBBBBBBBBBB(
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, TMethodDefinition tDefinition, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
-			MMethodSignature mSignature, Match sourceMatch, Match targetMatch) {
-		if (!mArrayTypeAccess.equals(mTypeAccess)) {
-			if (!mType.equals(mTypeOfArray)) {
-				if (!sourceMatch.equals(targetMatch)) {
-					int tDefinition_lowerBound = tDefinition.getLowerBound();
-					if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
-						int tDefinition_upperBound = tDefinition.getUpperBound();
-						if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
-							return new Object[] { tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-									tDefinition, mDefinition, mTypeAccess, mSignature, sourceMatch, targetMatch };
-						}
-
-					}
-
+	public static final Object[] pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_blackBBBBBBBBB(
+			TAbstractType tType, TMethodSignature tMethodSignature, TMethodDefinition tDefinition,
+			MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType, MMethodSignature mSignature,
+			Match sourceMatch, Match targetMatch) {
+		if (!sourceMatch.equals(targetMatch)) {
+			int tDefinition_lowerBound = tDefinition.getLowerBound();
+			if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
+				int tDefinition_upperBound = tDefinition.getUpperBound();
+				if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(-1))) {
+					return new Object[] { tType, tMethodSignature, tDefinition, mDefinition, mTypeAccess, mType,
+							mSignature, sourceMatch, targetMatch };
 				}
+
 			}
+
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFFFBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
-		Object[] result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding = pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_bindingFFFFFFFFFBB(
+		Object[] result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding = pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
 				targetMatch, sourceMatch);
 		if (result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding != null) {
 			TAbstractType tType = (TAbstractType) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[0];
-			TypeAccess mArrayTypeAccess = (TypeAccess) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[1];
-			TMethodSignature tMethodSignature = (TMethodSignature) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[2];
-			ArrayType mType = (ArrayType) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[3];
-			Type mTypeOfArray = (Type) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[4];
-			TMethodDefinition tDefinition = (TMethodDefinition) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[5];
-			MMethodDefinition mDefinition = (MMethodDefinition) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[6];
-			TypeAccess mTypeAccess = (TypeAccess) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[7];
-			MMethodSignature mSignature = (MMethodSignature) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[8];
+			TMethodSignature tMethodSignature = (TMethodSignature) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[1];
+			TMethodDefinition tDefinition = (TMethodDefinition) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[2];
+			MMethodDefinition mDefinition = (MMethodDefinition) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[3];
+			TypeAccess mTypeAccess = (TypeAccess) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[4];
+			ArrayType mType = (ArrayType) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[5];
+			MMethodSignature mSignature = (MMethodSignature) result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_binding[6];
 
-			Object[] result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_black = pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_blackBBBBBBBBBBB(
-					tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray, tDefinition, mDefinition,
-					mTypeAccess, mSignature, sourceMatch, targetMatch);
+			Object[] result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_black = pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_blackBBBBBBBBB(
+					tType, tMethodSignature, tDefinition, mDefinition, mTypeAccess, mType, mSignature, sourceMatch,
+					targetMatch);
 			if (result_pattern_MethodDefinitionReturnArray_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray, tDefinition,
-						mDefinition, mTypeAccess, mSignature, sourceMatch, targetMatch };
+				return new Object[] { tType, tMethodSignature, tDefinition, mDefinition, mTypeAccess, mType, mSignature,
+						sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_24_3_solvecsp_bindingFBBBBBBBBBBBB(
-			MethodDefinitionReturnArray _this, TAbstractType tType, TypeAccess mArrayTypeAccess,
-			TMethodSignature tMethodSignature, ArrayType mType, Type mTypeOfArray, TMethodDefinition tDefinition,
-			MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature, Match sourceMatch,
-			Match targetMatch) {
-		CSP _localVariable_9 = _this.isApplicable_solveCsp_CC(tType, mArrayTypeAccess, tMethodSignature, mType,
-				mTypeOfArray, tDefinition, mDefinition, mTypeAccess, mSignature, sourceMatch, targetMatch);
-		CSP csp = _localVariable_9;
+	public static final Object[] pattern_MethodDefinitionReturnArray_24_3_solvecsp_bindingFBBBBBBBBBB(
+			MethodDefinitionReturnArray _this, TAbstractType tType, TMethodSignature tMethodSignature,
+			TMethodDefinition tDefinition, MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType,
+			MMethodSignature mSignature, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(tType, tMethodSignature, tDefinition, mDefinition,
+				mTypeAccess, mType, mSignature, sourceMatch, targetMatch);
+		CSP csp = _localVariable_7;
 		if (csp != null) {
-			return new Object[] { csp, _this, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-					tDefinition, mDefinition, mTypeAccess, mSignature, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, tType, tMethodSignature, tDefinition, mDefinition, mTypeAccess, mType,
+					mSignature, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -4065,14 +3624,13 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBBB(
-			MethodDefinitionReturnArray _this, TAbstractType tType, TypeAccess mArrayTypeAccess,
-			TMethodSignature tMethodSignature, ArrayType mType, Type mTypeOfArray, TMethodDefinition tDefinition,
-			MMethodDefinition mDefinition, TypeAccess mTypeAccess, MMethodSignature mSignature, Match sourceMatch,
-			Match targetMatch) {
-		Object[] result_pattern_MethodDefinitionReturnArray_24_3_solvecsp_binding = pattern_MethodDefinitionReturnArray_24_3_solvecsp_bindingFBBBBBBBBBBBB(
-				_this, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray, tDefinition, mDefinition,
-				mTypeAccess, mSignature, sourceMatch, targetMatch);
+	public static final Object[] pattern_MethodDefinitionReturnArray_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(
+			MethodDefinitionReturnArray _this, TAbstractType tType, TMethodSignature tMethodSignature,
+			TMethodDefinition tDefinition, MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType,
+			MMethodSignature mSignature, Match sourceMatch, Match targetMatch) {
+		Object[] result_pattern_MethodDefinitionReturnArray_24_3_solvecsp_binding = pattern_MethodDefinitionReturnArray_24_3_solvecsp_bindingFBBBBBBBBBB(
+				_this, tType, tMethodSignature, tDefinition, mDefinition, mTypeAccess, mType, mSignature, sourceMatch,
+				targetMatch);
 		if (result_pattern_MethodDefinitionReturnArray_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodDefinitionReturnArray_24_3_solvecsp_binding[0];
 
@@ -4080,8 +3638,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_MethodDefinitionReturnArray_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-						tDefinition, mDefinition, mTypeAccess, mSignature, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, tType, tMethodSignature, tDefinition, mDefinition, mTypeAccess, mType,
+						mSignature, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -4093,8 +3651,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_24_5_matchcorrcontext_blackFBBBFBBB(
-			TAbstractType tType, TMethodSignature tMethodSignature, Type mTypeOfArray, MMethodSignature mSignature,
+	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_24_5_matchcorrcontext_blackFBFBBBBB(
+			TAbstractType tType, TMethodSignature tMethodSignature, ArrayType mType, MMethodSignature mSignature,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
@@ -4102,10 +3660,10 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 					.getOppositeReferenceTyped(tMethodSignature, MSignatureToTSignature.class, "target")) {
 				if (mSignature.equals(mSignatureToTMethodSignature.getSource())) {
 					for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mTypeOfArray, TypeToTAbstractType.class, "source")) {
-						if (tType.equals(mTypeToTType.getTarget())) {
-							_result.add(new Object[] { mTypeToTType, tType, tMethodSignature, mTypeOfArray,
-									mSignatureToTMethodSignature, mSignature, sourceMatch, targetMatch });
+							.getOppositeReferenceTyped(tType, TypeToTAbstractType.class, "target")) {
+						if (mType.equals(mTypeToTType.getSource())) {
+							_result.add(new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature,
+									tMethodSignature, mType, mSignature, sourceMatch, targetMatch });
 						}
 					}
 				}
@@ -4127,20 +3685,15 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return new Object[] { mTypeToTType, mSignatureToTMethodSignature, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_24_6_createcorrespondence_blackBBBBBBBBBB(
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, TMethodDefinition tDefinition, MMethodDefinition mDefinition, TypeAccess mTypeAccess,
-			MMethodSignature mSignature, CCMatch ccMatch) {
-		if (!mArrayTypeAccess.equals(mTypeAccess)) {
-			if (!mType.equals(mTypeOfArray)) {
-				return new Object[] { tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray, tDefinition,
-						mDefinition, mTypeAccess, mSignature, ccMatch };
-			}
-		}
-		return null;
+	public static final Object[] pattern_MethodDefinitionReturnArray_24_6_createcorrespondence_blackBBBBBBBB(
+			TAbstractType tType, TMethodSignature tMethodSignature, TMethodDefinition tDefinition,
+			MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType, MMethodSignature mSignature,
+			CCMatch ccMatch) {
+		return new Object[] { tType, tMethodSignature, tDefinition, mDefinition, mTypeAccess, mType, mSignature,
+				ccMatch };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_24_6_createcorrespondence_greenFFBBFB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_24_6_createcorrespondence_greenFBBFFB(
 			TMethodDefinition tDefinition, MMethodDefinition mDefinition, CCMatch ccMatch) {
 		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
@@ -4155,7 +3708,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		mBodyToTAnnotation.setSource(mDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
 		ccMatch.getCreateCorr().add(mBodyToTAnnotation);
-		return new Object[] { mDefinitionToTMember, mFlowElementToTFlowElement, tDefinition, mDefinition,
+		return new Object[] { mDefinitionToTMember, tDefinition, mDefinition, mFlowElementToTFlowElement,
 				mBodyToTAnnotation, ccMatch };
 	}
 
@@ -4182,9 +3735,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_0BB(
 			MMethodDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_270520 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_270520 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_270520)) {
+		MSignature __DEC_mDefinition_mDefinitions_479786 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_479786 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_479786)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -4192,36 +3745,30 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_1BB(
-			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_37160 : org.moflon.core.utilities.eMoflonEMFUtil
+	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_1B(
+			TypeAccess mTypeAccess) {
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_737488 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superInterfaces_37160)) {
-				return new Object[] { mTypeAccess, mTypeOfArray };
-			}
+			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_794041 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_238544 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_3BBB(
-			TypeAccess mTypeAccess, ArrayType mType, Type mTypeOfArray) {
-		if (!mType.equals(mTypeOfArray)) {
-			for (ArrayType __DEC_mTypeAccess_elementType_41133 : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(mTypeAccess, ArrayType.class, "elementType")) {
-				if (!mType.equals(__DEC_mTypeAccess_elementType_41133)) {
-					if (!mTypeOfArray.equals(__DEC_mTypeAccess_elementType_41133)) {
-						return new Object[] { mTypeAccess, mType, mTypeOfArray };
-					}
-				}
+	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_3BB(
+			TypeAccess mTypeAccess, ArrayType mType) {
+		for (ArrayType __DEC_mTypeAccess_elementType_439657 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(mTypeAccess, ArrayType.class, "elementType")) {
+			if (!mType.equals(__DEC_mTypeAccess_elementType_439657)) {
+				return new Object[] { mTypeAccess, mType };
 			}
 		}
 		return null;
@@ -4229,38 +3776,34 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_772131 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_627117 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_5BB(
-			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_563752 : org.moflon.core.utilities.eMoflonEMFUtil
+	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_5B(
+			TypeAccess mTypeAccess) {
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_282878 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_superClass_563752)) {
-				return new Object[] { mTypeAccess, mTypeOfArray };
-			}
+			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_6BB(
-			TypeAccess mTypeAccess, Type mTypeOfArray) {
-		for (ParameterizedType __DEC_mTypeAccess_type_379172 : org.moflon.core.utilities.eMoflonEMFUtil
+	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_6B(
+			TypeAccess mTypeAccess) {
+		for (ParameterizedType __DEC_mTypeAccess_type_197684 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mTypeOfArray.equals(__DEC_mTypeAccess_type_379172)) {
-				return new Object[] { mTypeAccess, mTypeOfArray };
-			}
+			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_7B(
 			TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_346202 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_212437 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -4269,7 +3812,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_8B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_777618 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_622016 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -4284,43 +3827,33 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_blackBBBBBB(
-			TypeAccess mArrayTypeAccess, ArrayType mType, Type mTypeOfArray, MMethodDefinition mDefinition,
-			TypeAccess mTypeAccess, MMethodSignature mSignature) {
-		if (!mArrayTypeAccess.equals(mTypeAccess)) {
-			if (!mType.equals(mTypeOfArray)) {
-				if (mTypeOfArray.equals(mArrayTypeAccess.getType())) {
-					if (mTypeAccess.equals(mDefinition.getReturnType())) {
-						if (mType.equals(mTypeAccess.getType())) {
-							if (mArrayTypeAccess.equals(mType.getElementType())) {
-								if (mSignature.getMDefinitions().contains(mDefinition)) {
-									if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_0BB(
-											mDefinition, mSignature) == null) {
-										if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_1BB(
-												mTypeAccess, mTypeOfArray) == null) {
-											if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_2B(
+	public static final Object[] pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_blackBBBB(
+			MMethodDefinition mDefinition, TypeAccess mTypeAccess, ArrayType mType, MMethodSignature mSignature) {
+		if (mTypeAccess.equals(mDefinition.getReturnType())) {
+			if (mType.equals(mTypeAccess.getType())) {
+				if (mSignature.getMDefinitions().contains(mDefinition)) {
+					if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_0BB(mDefinition,
+							mSignature) == null) {
+						if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_1B(
+								mTypeAccess) == null) {
+							if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_2B(
+									mTypeAccess) == null) {
+								if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_3BB(mTypeAccess,
+										mType) == null) {
+									if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_4B(
+											mTypeAccess) == null) {
+										if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_5B(
+												mTypeAccess) == null) {
+											if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_6B(
 													mTypeAccess) == null) {
-												if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_3BBB(
-														mTypeAccess, mType, mTypeOfArray) == null) {
-													if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_4B(
+												if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_7B(
+														mTypeAccess) == null) {
+													if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_8B(
 															mTypeAccess) == null) {
-														if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_5BB(
-																mTypeAccess, mTypeOfArray) == null) {
-															if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_6BB(
-																	mTypeAccess, mTypeOfArray) == null) {
-																if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_7B(
-																		mTypeAccess) == null) {
-																	if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_8B(
-																			mTypeAccess) == null) {
-																		if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_9BB(
-																				mType, mTypeAccess) == null) {
-																			return new Object[] { mArrayTypeAccess,
-																					mType, mTypeOfArray, mDefinition,
-																					mTypeAccess, mSignature };
-																		}
-																	}
-																}
-															}
+														if (pattern_MethodDefinitionReturnArray_27_1_matchtggpattern_black_nac_9BB(
+																mType, mTypeAccess) == null) {
+															return new Object[] { mDefinition, mTypeAccess, mType,
+																	mSignature };
 														}
 													}
 												}
@@ -4349,9 +3882,9 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_28_1_matchtggpattern_black_nac_0BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_331349 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_331349 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_331349)) {
+		TSignature __DEC_tDefinition_signature_537662 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_537662 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_537662)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -4413,30 +3946,6 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, Type mTypeOfArray) {
-		if (ruleResult.getSourceObjects().contains(mTypeOfArray)) {
-			return new Object[] { ruleResult, mTypeOfArray };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TypeAccess mArrayTypeAccess) {
-		if (ruleResult.getSourceObjects().contains(mArrayTypeAccess)) {
-			return new Object[] { ruleResult, mArrayTypeAccess };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, ArrayType mType) {
-		if (ruleResult.getSourceObjects().contains(mType)) {
-			return new Object[] { ruleResult, mType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_4BB(
 			ModelgeneratorRuleResult ruleResult, TAbstractType tType) {
 		if (ruleResult.getTargetObjects().contains(tType)) {
 			return new Object[] { ruleResult, tType };
@@ -4444,15 +3953,15 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, TMethodSignature tMethodSignature) {
-		if (ruleResult.getTargetObjects().contains(tMethodSignature)) {
-			return new Object[] { ruleResult, tMethodSignature };
+	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, ArrayType mType) {
+		if (ruleResult.getSourceObjects().contains(mType)) {
+			return new Object[] { ruleResult, mType };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_6BB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, MSignatureToTSignature mSignatureToTMethodSignature) {
 		if (ruleResult.getCorrObjects().contains(mSignatureToTMethodSignature)) {
 			return new Object[] { ruleResult, mSignatureToTMethodSignature };
@@ -4460,7 +3969,15 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_7BB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, TMethodSignature tMethodSignature) {
+		if (ruleResult.getTargetObjects().contains(tMethodSignature)) {
+			return new Object[] { ruleResult, tMethodSignature };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_5BB(
 			ModelgeneratorRuleResult ruleResult, MMethodSignature mSignature) {
 		if (ruleResult.getSourceObjects().contains(mSignature)) {
 			return new Object[] { ruleResult, mSignature };
@@ -4468,7 +3985,7 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_blackFFFFFFFFFFBB(
+	public static final Iterable<Object[]> pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_blackFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (RuleEntryList mTypeToTTypeList : ruleEntryContainer.getRuleEntryList()) {
@@ -4477,16 +3994,17 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 					for (EObject tmpMTypeToTType : mTypeToTTypeList.getEntryObjects()) {
 						if (tmpMTypeToTType instanceof TypeToTAbstractType) {
 							TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-							Type mTypeOfArray = mTypeToTType.getSource();
-							if (mTypeOfArray != null) {
-								TAbstractType tType = mTypeToTType.getTarget();
-								if (tType != null) {
+							TAbstractType tType = mTypeToTType.getTarget();
+							if (tType != null) {
+								Type tmpMType = mTypeToTType.getSource();
+								if (tmpMType instanceof ArrayType) {
+									ArrayType mType = (ArrayType) tmpMType;
 									if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_0BB(
 											ruleResult, mTypeToTType) == null) {
 										if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_1BB(
-												ruleResult, mTypeOfArray) == null) {
-											if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_4BB(
-													ruleResult, tType) == null) {
+												ruleResult, tType) == null) {
+											if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_2BB(
+													ruleResult, mType) == null) {
 												for (EObject tmpMSignatureToTMethodSignature : mSignatureToTMethodSignatureList
 														.getEntryObjects()) {
 													if (tmpMSignatureToTMethodSignature instanceof MSignatureToTSignature) {
@@ -4499,47 +4017,19 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 																	.getSource();
 															if (tmpMSignature instanceof MMethodSignature) {
 																MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
-																if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_6BB(
+																if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_3BB(
 																		ruleResult,
 																		mSignatureToTMethodSignature) == null) {
-																	if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_5BB(
+																	if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_4BB(
 																			ruleResult, tMethodSignature) == null) {
-																		if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_7BB(
+																		if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_5BB(
 																				ruleResult, mSignature) == null) {
-																			for (TypeAccess mArrayTypeAccess : mTypeOfArray
-																					.getUsagesInTypeAccess()) {
-																				if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_2BB(
-																						ruleResult,
-																						mArrayTypeAccess) == null) {
-																					for (ArrayType mType : org.moflon.core.utilities.eMoflonEMFUtil
-																							.getOppositeReferenceTyped(
-																									mArrayTypeAccess,
-																									ArrayType.class,
-																									"elementType")) {
-																						if (!mType
-																								.equals(mTypeOfArray)) {
-																							if (pattern_MethodDefinitionReturnArray_29_2_isapplicablecore_black_nac_3BB(
-																									ruleResult,
-																									mType) == null) {
-																								_result.add(
-																										new Object[] {
-																												mTypeToTTypeList,
-																												mTypeToTType,
-																												mTypeOfArray,
-																												mArrayTypeAccess,
-																												mType,
-																												tType,
-																												mSignatureToTMethodSignatureList,
-																												tMethodSignature,
-																												mSignatureToTMethodSignature,
-																												mSignature,
-																												ruleEntryContainer,
-																												ruleResult });
-																							}
-																						}
-																					}
-																				}
-																			}
+																			_result.add(new Object[] { mTypeToTTypeList,
+																					mTypeToTType, tType, mType,
+																					mSignatureToTMethodSignatureList,
+																					mSignatureToTMethodSignature,
+																					tMethodSignature, mSignature,
+																					ruleEntryContainer, ruleResult });
 																		}
 																	}
 																}
@@ -4564,18 +4054,16 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_3_solveCSP_bindingFBBBBBBBBBBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_29_3_solveCSP_bindingFBBBBBBBBB(
 			MethodDefinitionReturnArray _this, IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, MSignatureToTSignature mSignatureToTMethodSignature, MMethodSignature mSignature,
-			ModelgeneratorRuleResult ruleResult) {
+			TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature, TMethodSignature tMethodSignature,
+			ArrayType mType, MMethodSignature mSignature, ModelgeneratorRuleResult ruleResult) {
 		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mTypeToTType, tType,
-				mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature, mSignature,
-				ruleResult);
+				mSignatureToTMethodSignature, tMethodSignature, mType, mSignature, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess,
-					tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature, mSignature, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature,
+					tMethodSignature, mType, mSignature, ruleResult };
 		}
 		return null;
 	}
@@ -4584,14 +4072,13 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBB(
+	public static final Object[] pattern_MethodDefinitionReturnArray_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
 			MethodDefinitionReturnArray _this, IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tType, TypeAccess mArrayTypeAccess, TMethodSignature tMethodSignature, ArrayType mType,
-			Type mTypeOfArray, MSignatureToTSignature mSignatureToTMethodSignature, MMethodSignature mSignature,
-			ModelgeneratorRuleResult ruleResult) {
-		Object[] result_pattern_MethodDefinitionReturnArray_29_3_solveCSP_binding = pattern_MethodDefinitionReturnArray_29_3_solveCSP_bindingFBBBBBBBBBBB(
-				_this, isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-				mSignatureToTMethodSignature, mSignature, ruleResult);
+			TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature, TMethodSignature tMethodSignature,
+			ArrayType mType, MMethodSignature mSignature, ModelgeneratorRuleResult ruleResult) {
+		Object[] result_pattern_MethodDefinitionReturnArray_29_3_solveCSP_binding = pattern_MethodDefinitionReturnArray_29_3_solveCSP_bindingFBBBBBBBBB(
+				_this, isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, mType,
+				mSignature, ruleResult);
 		if (result_pattern_MethodDefinitionReturnArray_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodDefinitionReturnArray_29_3_solveCSP_binding[0];
 
@@ -4599,8 +4086,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_MethodDefinitionReturnArray_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mArrayTypeAccess,
-						tMethodSignature, mType, mTypeOfArray, mSignatureToTMethodSignature, mSignature, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tType, mSignatureToTMethodSignature,
+						tMethodSignature, mType, mSignature, ruleResult };
 			}
 		}
 		return null;
@@ -4613,37 +4100,28 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_5_checknacs_blackBBBBBBBB(
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, TypeAccess mArrayTypeAccess,
-			TMethodSignature tMethodSignature, ArrayType mType, Type mTypeOfArray,
-			MSignatureToTSignature mSignatureToTMethodSignature, MMethodSignature mSignature) {
-		if (!mType.equals(mTypeOfArray)) {
-			return new Object[] { mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-					mSignatureToTMethodSignature, mSignature };
-		}
-		return null;
+	public static final Object[] pattern_MethodDefinitionReturnArray_29_5_checknacs_blackBBBBBB(
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature,
+			TMethodSignature tMethodSignature, ArrayType mType, MMethodSignature mSignature) {
+		return new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, mType, mSignature };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_6_perform_blackBBBBBBBBB(
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, TypeAccess mArrayTypeAccess,
-			TMethodSignature tMethodSignature, ArrayType mType, Type mTypeOfArray,
-			MSignatureToTSignature mSignatureToTMethodSignature, MMethodSignature mSignature,
+	public static final Object[] pattern_MethodDefinitionReturnArray_29_6_perform_blackBBBBBBB(
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, MSignatureToTSignature mSignatureToTMethodSignature,
+			TMethodSignature tMethodSignature, ArrayType mType, MMethodSignature mSignature,
 			ModelgeneratorRuleResult ruleResult) {
-		if (!mType.equals(mTypeOfArray)) {
-			return new Object[] { mTypeToTType, tType, mArrayTypeAccess, tMethodSignature, mType, mTypeOfArray,
-					mSignatureToTMethodSignature, mSignature, ruleResult };
-		}
-		return null;
+		return new Object[] { mTypeToTType, tType, mSignatureToTMethodSignature, tMethodSignature, mType, mSignature,
+				ruleResult };
 	}
 
-	public static final Object[] pattern_MethodDefinitionReturnArray_29_6_perform_greenBFBFBFFFFBB(TAbstractType tType,
+	public static final Object[] pattern_MethodDefinitionReturnArray_29_6_perform_greenBFBFFFFFBBB(TAbstractType tType,
 			TMethodSignature tMethodSignature, ArrayType mType, MMethodSignature mSignature,
 			ModelgeneratorRuleResult ruleResult) {
 		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
-				.createMAbstractFlowElementToTAbstractFlowElement();
 		TMethodDefinition tDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
 		MMethodDefinition mDefinition = ModiscoFactory.eINSTANCE.createMMethodDefinition();
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
+				.createMAbstractFlowElementToTAbstractFlowElement();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TypeAccess mTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 		int tDefinition_lowerBound_prime = Integer.valueOf(0);
@@ -4651,16 +4129,16 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(mDefinitionToTMember);
-		ruleResult.getCorrObjects().add(mFlowElementToTFlowElement);
 		tMethodSignature.getDefinitions().add(tDefinition);
 		mDefinitionToTMember.setTarget(tDefinition);
-		mFlowElementToTFlowElement.setTarget(tDefinition);
 		tDefinition.setReturnType(tType);
 		ruleResult.getTargetObjects().add(tDefinition);
-		mFlowElementToTFlowElement.setSource(mDefinition);
 		mDefinitionToTMember.setSource(mDefinition);
 		mSignature.getMDefinitions().add(mDefinition);
 		ruleResult.getSourceObjects().add(mDefinition);
+		mFlowElementToTFlowElement.setSource(mDefinition);
+		mFlowElementToTFlowElement.setTarget(tDefinition);
+		ruleResult.getCorrObjects().add(mFlowElementToTFlowElement);
 		mBodyToTAnnotation.setSource(mDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
 		ruleResult.getCorrObjects().add(mBodyToTAnnotation);
@@ -4672,8 +4150,8 @@ public class MethodDefinitionReturnArrayImpl extends AbstractRuleImpl implements
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tType, mDefinitionToTMember, tMethodSignature, mFlowElementToTFlowElement, mType,
-				tDefinition, mDefinition, mBodyToTAnnotation, mTypeAccess, mSignature, ruleResult };
+		return new Object[] { tType, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
+				mFlowElementToTFlowElement, mBodyToTAnnotation, mTypeAccess, mType, mSignature, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_MethodDefinitionReturnArray_29_7_expressionFB(

@@ -7,8 +7,12 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Property;
 
 public class SignatureHelper {
-	
-	public static String getSignature(Feature member) {
+
+	private SignatureHelper() {
+		// This class only provides static methods and should't be instantiated
+	}
+
+	public static String getSignature(final Feature member) {
 		if (member instanceof Operation) {
 			return  carisma.profile.umlsec.SignatureHelper.getSignature((Operation) member);
 
@@ -18,8 +22,8 @@ public class SignatureHelper {
 		}
 		return null;
 	}
-	
-	public static List<String> check(Feature feature, List<String> signatures) {
+
+	public static List<String> check(final Feature feature, final List<String> signatures) {
 		if(signatures.contains(getSignature(feature))) {
 			return signatures;
 		}

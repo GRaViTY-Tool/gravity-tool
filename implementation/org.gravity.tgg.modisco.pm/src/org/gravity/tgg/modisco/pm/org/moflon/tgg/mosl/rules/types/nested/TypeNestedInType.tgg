@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule NestedTypes
+#abstract #rule TypeNestedInType_Abstract
 #with org.gravity.tgg.modisco.pm
 
 #source {
@@ -19,7 +19,7 @@
 	}
 
 	tOuterType:TAbstractType {
-		-package->tOuterPackage
+		-package -> tOuterPackage
 		++ -innerTypes -> tNestedType
 	}
 
@@ -27,29 +27,125 @@
 
 	tOuterPackage:TPackage {
 		-model -> typeGraph
-		++-ownedTypes->tNestedType
+		++-ownedTypes -> tNestedType
 	}
 }
 
 #correspondence {
-	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
-		#src->eNestedType
-		#trg->tNestedType
-	}
-
 	eOuterTypeToTOuterInterface :TypeToTAbstractType {
 		#src->eOuterType
 		#trg->tOuterType
 	}
 
-	++ eNestedTypeToTNestedType :TypeToTAbstractType {
+	++eNestedTypeToTNestedType :TypeToTAbstractType {
+		#src->eNestedType
+		#trg->tNestedType
+	}
+
+	++astNodeToAnnotatable :ASTNodeToTAnnotatable {
 		#src->eNestedType
 		#trg->tNestedType
 	}
 }
 
 #attributeConditions {
-	eq(eNestedType.proxy, tNestedType.tLib)
+	concat("$", tOuterType.tName, eNestedType.name, tNestedType.tName)
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule NestedClassInType
+#extends TypeNestedInType_Abstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++eNestedType:MClass
+}
+
+#target {
+	++tNestedType:TClass
+
+	tOuterPackage:TPackage {
+		++  -classes -> tNestedType
+	}
+
+	typeGraph:TypeGraph {
+		++  -classes -> tNestedType
+	}
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule NestedInterfaceInType
+#extends TypeNestedInType_Abstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++eNestedType:InterfaceDeclaration
+}
+
+#target {
+	++tNestedType:TInterface
+
+	typeGraph:TypeGraph {
+		++  -interfaces -> tNestedType
+	}
+
+	tOuterPackage:TPackage {
+		++  -interfaces -> tNestedType
+	}
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule NestedEnumInType
+#extends TypeNestedInType_Abstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++eNestedType:EnumDeclaration
+}
+
+#target {
+	typeGraph:TypeGraph {
+		++  -classes -> tNestedType
+	}
+
+	tOuterPackage:TPackage {
+		++  -classes -> tNestedType
+	}
+
+	++tNestedType:TClass {
+		++-tAnnotation -> tEnum
+	}
+
+	++tEnum:TEnum
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationTypeNested
+#extends TypeNestedInType_Abstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++eNestedType:AnnotationTypeDeclaration
+}
+
+#target {
+	typeGraph:TypeGraph {
+		++  -tAnnotationTypes -> tNestedType
+	}
+
+	++tNestedType:TAnnotationType
 }
 
 

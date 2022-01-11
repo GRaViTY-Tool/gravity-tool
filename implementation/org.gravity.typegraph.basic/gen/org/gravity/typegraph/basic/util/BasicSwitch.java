@@ -73,6 +73,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				TAccess tAccess = (TAccess)theEObject;
 				T result = caseTAccess(tAccess);
 				if (result == null) result = caseTAbstractFlowElement(tAccess);
+				if (result == null) result = caseTAnnotatable(tAccess);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,6 +116,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTCall(tCall);
 				if (result == null) result = caseTAccess(tCall);
 				if (result == null) result = caseTAbstractFlowElement(tCall);
+				if (result == null) result = caseTAnnotatable(tCall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -204,6 +206,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTRead(tRead);
 				if (result == null) result = caseTAccess(tRead);
 				if (result == null) result = caseTAbstractFlowElement(tRead);
+				if (result == null) result = caseTAnnotatable(tRead);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -212,6 +215,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTWrite(tWrite);
 				if (result == null) result = caseTAccess(tWrite);
 				if (result == null) result = caseTAbstractFlowElement(tWrite);
+				if (result == null) result = caseTAnnotatable(tWrite);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -264,6 +268,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTReadWrite(tReadWrite);
 				if (result == null) result = caseTAccess(tReadWrite);
 				if (result == null) result = caseTAbstractFlowElement(tReadWrite);
+				if (result == null) result = caseTAnnotatable(tReadWrite);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

@@ -79,10 +79,10 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_ni0gIA_KEeudadBB8ldcmg" source="_cHRC0A_KEeudadBB8ldcmg" target="_a5JC0A_KEeudadBB8ldcmg">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
       </edges>
       <edges xmi:id="_oDeWIA_KEeudadBB8ldcmg" source="_a5JC0A_KEeudadBB8ldcmg" target="_cBi1UA_KEeudadBB8ldcmg">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/tTarget"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/target"/>
       </edges>
       <edges xmi:id="_odpJoA_KEeudadBB8ldcmg" source="_acSuwA_KEeudadBB8ldcmg" target="_cHRC0A_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
@@ -172,10 +172,10 @@
               <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
             </edges>
             <edges xmi:id="_3fyTJQ_KEeudadBB8ldcmg" source="_3fyTIA_KEeudadBB8ldcmg" target="_3fyTIw_KEeudadBB8ldcmg">
-              <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
             </edges>
             <edges xmi:id="_3fyTJg_KEeudadBB8ldcmg" source="_3fyTIw_KEeudadBB8ldcmg" target="_3fxsEw_KEeudadBB8ldcmg">
-              <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/tTarget"/>
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/target"/>
             </edges>
           </conclusion>
           <mappings xmi:id="_1MuEUw_KEeudadBB8ldcmg" origin="_X531UA_KEeudadBB8ldcmg" image="_1MuEUg_KEeudadBB8ldcmg"/>
@@ -264,10 +264,10 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_ni0gIQ_KEeudadBB8ldcmg" source="_cHRC0Q_KEeudadBB8ldcmg" target="_a5Jp4A_KEeudadBB8ldcmg">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
       </edges>
       <edges xmi:id="_oDeWIQ_KEeudadBB8ldcmg" source="_a5Jp4A_KEeudadBB8ldcmg" target="_cBi1UQ_KEeudadBB8ldcmg">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/tTarget"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/target"/>
       </edges>
       <edges xmi:id="_odpJoQ_KEeudadBB8ldcmg" source="_acSuwQ_KEeudadBB8ldcmg" target="_cHRC0Q_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>

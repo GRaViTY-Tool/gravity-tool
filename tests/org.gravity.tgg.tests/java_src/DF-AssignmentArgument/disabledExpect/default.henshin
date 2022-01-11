@@ -103,19 +103,19 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature/firstParameter"/>
       </edges>
       <edges xmi:id="_XdqD8KGsEeq9YZ8OqzY0Ww" source="_BwVb4KGsEeq9YZ8OqzY0Ww" target="_8hCFcKGrEeq9YZ8OqzY0Ww">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
       </edges>
       <edges xmi:id="_YMNMAKGsEeq9YZ8OqzY0Ww" source="_8hCFcKGrEeq9YZ8OqzY0Ww" target="_-Jl-sKGrEeq9YZ8OqzY0Ww">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/tTarget"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/target"/>
       </edges>
       <edges xmi:id="_bK4joKGsEeq9YZ8OqzY0Ww" source="__7EjYKGrEeq9YZ8OqzY0Ww" target="_DcHBMKGsEeq9YZ8OqzY0Ww">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature/firstParameter"/>
       </edges>
       <edges xmi:id="_dOD8UKGsEeq9YZ8OqzY0Ww" source="_-Jl-sKGrEeq9YZ8OqzY0Ww" target="_ck3OUKGsEeq9YZ8OqzY0Ww">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
       </edges>
       <edges xmi:id="_d1H8UKGsEeq9YZ8OqzY0Ww" source="_ck3OUKGsEeq9YZ8OqzY0Ww" target="_-ObbYKGrEeq9YZ8OqzY0Ww">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/tTarget"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/target"/>
       </edges>
       <edges xmi:id="_iZBlUKGsEeq9YZ8OqzY0Ww" source="_9RFCUKGrEeq9YZ8OqzY0Ww" target="_Dmg6YKGsEeq9YZ8OqzY0Ww">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement/outgoingFlows"/>
@@ -246,19 +246,19 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature/firstParameter"/>
       </edges>
       <edges xmi:id="_XdqD8aGsEeq9YZ8OqzY0Ww" source="_BwVb4aGsEeq9YZ8OqzY0Ww" target="_8hCsgKGrEeq9YZ8OqzY0Ww">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
       </edges>
       <edges xmi:id="_YMNMAaGsEeq9YZ8OqzY0Ww" source="_8hCsgKGrEeq9YZ8OqzY0Ww" target="_-Jnz4KGrEeq9YZ8OqzY0Ww">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/tTarget"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/target"/>
       </edges>
       <edges xmi:id="_bK4joaGsEeq9YZ8OqzY0Ww" source="__7EjYaGrEeq9YZ8OqzY0Ww" target="_DcHBMaGsEeq9YZ8OqzY0Ww">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature/firstParameter"/>
       </edges>
       <edges xmi:id="_dOEjYKGsEeq9YZ8OqzY0Ww" source="_-Jnz4KGrEeq9YZ8OqzY0Ww" target="_ck3OUaGsEeq9YZ8OqzY0Ww">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
       </edges>
       <edges xmi:id="_d1H8UaGsEeq9YZ8OqzY0Ww" source="_ck3OUaGsEeq9YZ8OqzY0Ww" target="_-ObbYaGrEeq9YZ8OqzY0Ww">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/tTarget"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/target"/>
       </edges>
       <edges xmi:id="_iZBlUaGsEeq9YZ8OqzY0Ww" source="_9RFpYKGrEeq9YZ8OqzY0Ww" target="_Dmg6YaGsEeq9YZ8OqzY0Ww">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement/outgoingFlows"/>

@@ -132,4 +132,5 @@
     <eLiterals name="READWRITE" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MInitializer" eSuperTypes="#//MDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Initializer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MEnumConstantDeclaration" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//EnumConstantDeclaration #//MDefinition"/>
 </ecore:EPackage>

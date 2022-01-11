@@ -113,7 +113,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_d9ugcVvBEeup173OY004Hw" fontName="Ubuntu"/>
     <element xmi:type="henshin:Edge" href="expect.henshin#_d9srQFvBEeup173OY004Hw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_d9ugclvBEeup173OY004Hw" points="[-17, -10, 68, 98]$[-85, -108, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d9zY8FvBEeup173OY004Hw" id="(0.7410714285714286,0.2222222222222222)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d9zY8FvBEeup173OY004Hw" id="(0.631578947368421,0.022222222222222223)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_d90AAFvBEeup173OY004Hw" id="(0.7844827586206896,0.4666666666666667)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Dk_nQFvDEeusLa39wZCfig" type="4001" source="_tIokYFvBEeup173OY004Hw" target="_vODEEG50Eeqj_LkwUcB67w">
@@ -138,7 +138,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_EIeu0VvDEeusLa39wZCfig" fontName="Ubuntu"/>
     <element xmi:type="henshin:Edge" href="expect.henshin#_EIZ2UFvDEeusLa39wZCfig"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EIeu0lvDEeusLa39wZCfig" points="[0, 10, 121, -20]$[0, 36, 121, 6]$[-110, 36, 11, 6]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EIeu0lvDEeusLa39wZCfig" points="[0, 10, 85, -20]$[0, 30, 85, 0]$[-70, 30, 15, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EImqoFvDEeusLa39wZCfig" id="(0.18181818181818182,0.75)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EImqoVvDEeusLa39wZCfig" id="(0.9017857142857143,0.4666666666666667)"/>
   </edges>
@@ -151,7 +151,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_Ezs2EVvDEeusLa39wZCfig" fontName="Ubuntu"/>
     <element xmi:type="henshin:Edge" href="expect.henshin#_EzrA4FvDEeusLa39wZCfig"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ezs2ElvDEeusLa39wZCfig" points="[6, 20, 161, -36]$[17, 56, 172, 0]$[-131, 56, 24, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ezs2ElvDEeusLa39wZCfig" points="[6, 14, 148, -36]$[6, 57, 148, 7]$[-109, 57, 33, 7]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GWhTsFvDEeusLa39wZCfig" id="(0.7727272727272727,0.65)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ez0K0FvDEeusLa39wZCfig" id="(0.7857142857142857,0.8222222222222222)"/>
   </edges>
@@ -177,7 +177,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_Q-W6MY-6EeuVXpn9yc3Afg" fontName="Ubuntu"/>
     <element xmi:type="henshin:Edge" href="expect.henshin#_Q-VFAI-6EeuVXpn9yc3Afg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Q-W6Mo-6EeuVXpn9yc3Afg" points="[-4, 0, -75, -177]$[-73, 0, -144, -177]$[-73, 171, -144, -6]$[-15, 171, -86, -6]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Q-W6Mo-6EeuVXpn9yc3Afg" points="[-4, 0, -105, -177]$[-63, 0, -164, -177]$[-63, 169, -164, -8]$[-15, 169, -116, -8]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_U89dwI-6EeuVXpn9yc3Afg" id="(0.044444444444444446,0.7777777777777778)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Q-dA0I-6EeuVXpn9yc3Afg" id="(0.7678571428571429,0.28888888888888886)"/>
   </edges>

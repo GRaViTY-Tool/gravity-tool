@@ -1,37 +1,67 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#rule ClassImplementsInterface
+#abstract #rule ClassImplementsInterface_Abstract
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	eSuperInterface : InterfaceDeclaration
-	
-	++ eTypeAccess : TypeAccess {
-		++  -type -> eSuperInterface
-	}
-	eClassDeclaration : ClassDeclaration {
+	eClassDeclaration:ClassDeclaration {
 		++  -superInterfaces -> eTypeAccess
 	}
+
+	++eTypeAccess:TypeAccess
+
+	eSuperInterface:Type
 }
 
 #target {
-	tSuperInterface : TInterface {
-		++  -implementedBy -> tClass
+	tClass:TClass {
+		++-implements -> tSuperInterface
 	}
-	tClass : TClass 
+
+	tSuperInterface:TInterface
 }
 
 #correspondence {
-	eSuperInterfaceToTSuperInterface : TypeToTAbstractType {
+	eSuperInterfaceToTSuperInterface :TypeToTAbstractType {
 		#src->eSuperInterface
 		#trg->tSuperInterface
 	}
-	eClassDeclarationToTClass : TypeToTAbstractType {
+
+	eClassDeclarationToTClass :TypeToTAbstractType {
 		#src->eClassDeclaration
 		#trg->tClass
 	}
 }
 
-#attributeConditions {
+#rule ClassImplementsInterface #extends ClassImplementsInterface_Abstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++eTypeAccess:TypeAccess {
+		++  -type -> eSuperInterface
+	}
+	
+	eSuperInterface:AbstractTypeDeclaration
 }
+
+#rule ClassImplementsPatrameterizedInterface #extends ClassImplementsInterface_Abstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++eTypeAccess:TypeAccess {
+		++  -type -> eType
+	}
+	
+	eType:ParameterizedType {
+		-type -> eParameterTypeAccess
+	}
+
+	eParameterTypeAccess:TypeAccess {
+		-type -> eSuperInterface
+	}
+
+	eSuperInterface:AbstractTypeDeclaration
+}
+
+

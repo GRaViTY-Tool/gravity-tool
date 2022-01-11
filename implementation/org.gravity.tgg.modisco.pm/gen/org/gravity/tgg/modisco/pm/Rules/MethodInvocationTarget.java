@@ -7,13 +7,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.modisco.java.AbstractMethodInvocation;
 
-import org.gravity.modisco.MDefinition;
-
 import org.gravity.tgg.modisco.pm.AbstractMethodInvocationToTAccess;
 import org.gravity.tgg.modisco.pm.MDefinitionToTMember;
 
-import org.gravity.typegraph.basic.TCall;
-import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TMethodDefinition;
 
 import org.moflon.tgg.language.csp.CSP;
@@ -50,8 +47,8 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AbstractMethodInvocation invocation,
-			AbstractMethodDeclaration mInvokedMember, MDefinition mMember);
+	boolean isAppropriate_FWD(Match match, AbstractMethodDeclaration mInvokedMember,
+			AbstractMethodInvocation invocation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,8 +72,8 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, AbstractMethodInvocation invocation,
-			AbstractMethodDeclaration mInvokedMember, MDefinition mMember);
+	void registerObjectsToMatch_FWD(Match match, AbstractMethodDeclaration mInvokedMember,
+			AbstractMethodInvocation invocation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,8 +81,8 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, AbstractMethodInvocation invocation,
-			AbstractMethodDeclaration mInvokedMember, MDefinition mMember);
+	CSP isAppropriate_solveCsp_FWD(Match match, AbstractMethodDeclaration mInvokedMember,
+			AbstractMethodInvocation invocation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,10 +98,10 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TCall tAccess, TMethodDefinition tInvokedMember,
-			TMember tMember, AbstractMethodInvocation invocation, AbstractMethodDeclaration mInvokedMember,
-			MDefinition mMember, MDefinitionToTMember mMemberToTMember,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AbstractMethodDeclaration mInvokedMember,
+			TAccess tAccess, AbstractMethodInvocationToTAccess invocationToTAccess,
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodInvocation invocation,
+			TMethodDefinition tInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,9 +117,9 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAccess, EObject tInvokedMember, EObject tMember,
-			EObject invocation, EObject mInvokedMember, EObject mMember, EObject mMemberToTMember,
-			EObject invocationToTAccess, EObject mInvokedMemberToTInvokedMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mInvokedMember, EObject tAccess,
+			EObject invocationToTAccess, EObject mInvokedMemberToTInvokedMember, EObject invocation,
+			EObject tInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +135,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TCall tAccess, TMethodDefinition tInvokedMember, TMember tMember);
+	boolean isAppropriate_BWD(Match match, TAccess tAccess, TMethodDefinition tInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +159,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TCall tAccess, TMethodDefinition tInvokedMember, TMember tMember);
+	void registerObjectsToMatch_BWD(Match match, TAccess tAccess, TMethodDefinition tInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,7 +167,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TCall tAccess, TMethodDefinition tInvokedMember, TMember tMember);
+	CSP isAppropriate_solveCsp_BWD(Match match, TAccess tAccess, TMethodDefinition tInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,10 +183,10 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TCall tAccess, TMethodDefinition tInvokedMember,
-			TMember tMember, AbstractMethodInvocation invocation, AbstractMethodDeclaration mInvokedMember,
-			MDefinition mMember, MDefinitionToTMember mMemberToTMember,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractMethodDeclaration mInvokedMember,
+			TAccess tAccess, AbstractMethodInvocationToTAccess invocationToTAccess,
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodInvocation invocation,
+			TMethodDefinition tInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,9 +202,9 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAccess, EObject tInvokedMember, EObject tMember,
-			EObject invocation, EObject mInvokedMember, EObject mMember, EObject mMemberToTMember,
-			EObject invocationToTAccess, EObject mInvokedMemberToTInvokedMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mInvokedMember, EObject tAccess,
+			EObject invocationToTAccess, EObject mInvokedMemberToTInvokedMember, EObject invocation,
+			EObject tInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +220,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_2(EMoflonEdge _edge_target);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_26(EMoflonEdge _edge_target);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +228,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_method);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_26(EMoflonEdge _edge_method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,9 +260,9 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TCall tAccess, TMethodDefinition tInvokedMember, TMember tMember,
-			AbstractMethodInvocation invocation, AbstractMethodDeclaration mInvokedMember, MDefinition mMember,
-			Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(AbstractMethodDeclaration mInvokedMember, TAccess tAccess,
+			AbstractMethodInvocation invocation, TMethodDefinition tInvokedMember, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,8 +278,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AbstractMethodInvocation invocation, AbstractMethodDeclaration mInvokedMember,
-			MDefinition mMember);
+	boolean checkDEC_FWD(AbstractMethodDeclaration mInvokedMember, AbstractMethodInvocation invocation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -290,7 +286,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TCall tAccess, TMethodDefinition tInvokedMember, TMember tMember);
+	boolean checkDEC_BWD(TAccess tAccess, TMethodDefinition tInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -299,8 +295,8 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			MDefinitionToTMember mMemberToTMemberParameter,
-			MDefinitionToTMember mInvokedMemberToTInvokedMemberParameter);
+			MDefinitionToTMember mInvokedMemberToTInvokedMemberParameter,
+			AbstractMethodInvocationToTAccess invocationToTAccessParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -308,11 +304,10 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TCall tAccess, TMethodDefinition tInvokedMember,
-			TMember tMember, AbstractMethodInvocation invocation, AbstractMethodDeclaration mInvokedMember,
-			MDefinition mMember, MDefinitionToTMember mMemberToTMember,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractMethodDeclaration mInvokedMember,
+			TAccess tAccess, AbstractMethodInvocationToTAccess invocationToTAccess,
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodInvocation invocation,
+			TMethodDefinition tInvokedMember, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

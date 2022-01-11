@@ -43,11 +43,11 @@ public final class ModelSaver {
 	 * @param monitor A progress monitor
 	 * @return true, iff the model has been saved successfully
 	 */
-	public static boolean saveModel(EObject model, IFile file, IProgressMonitor monitor) {
+	public static boolean saveModel(final EObject model, final IFile file, final IProgressMonitor monitor) {
 		if (model == null) {
 			return false;
 		}
-		URI uri = URI.createPlatformResourceURI(new File(new File(file.getProject().getName()),file.getProjectRelativePath().toString()).toString(), true);
+		final URI uri = URI.createPlatformResourceURI(new File(new File(file.getProject().getName()),file.getProjectRelativePath().toString()).toString(), true);
 		Resource resource = model.eResource();
 		if (resource == null) {
 			resource = new ResourceSetImpl().createResource(uri);
@@ -67,7 +67,7 @@ public final class ModelSaver {
 	 * @param monitor  A progress monitor
 	 * @return true, iff the model has been saved successfully
 	 */
-	public static boolean saveModel(Resource resource, IFile file, IProgressMonitor monitor) {
+	public static boolean saveModel(final Resource resource, final IFile file, final IProgressMonitor monitor) {
 		if (resource == null) {
 			return false;
 		}
@@ -97,7 +97,7 @@ public final class ModelSaver {
 	 * @param monitor  A progress monitor
 	 * @return true, iff the model has been saved successfully
 	 */
-	public static boolean saveModelUsingPipedStream(Resource resource, IFile file, IProgressMonitor monitor) {
+	public static boolean saveModelUsingPipedStream(final Resource resource, final IFile file, final IProgressMonitor monitor) {
 		if (resource == null) {
 			return false;
 		}

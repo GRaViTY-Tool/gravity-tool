@@ -93,53 +93,53 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
+	public boolean isAppropriate_FWD(Match match, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
 
 		Object[] result1_black = FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_0_1_initialbindings_blackBBBB(this, match, jOwnerType, bodyDeclaration);
+				.pattern_FieldDec2Property4Enum_0_1_initialbindings_blackBBBB(this, match, bodyDeclaration, jOwnerType);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jOwnerType] = "
+					+ jOwnerType + ".");
 		}
 
 		Object[] result2_bindingAndBlack = FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, jOwnerType,
-						bodyDeclaration);
+				.pattern_FieldDec2Property4Enum_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, bodyDeclaration,
+						jOwnerType);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jOwnerType] = "
+					+ jOwnerType + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = FieldDec2Property4EnumImpl
-					.pattern_FieldDec2Property4Enum_0_4_collectelementstobetranslated_blackBBB(match, jOwnerType,
-							bodyDeclaration);
+					.pattern_FieldDec2Property4Enum_0_4_collectelementstobetranslated_blackBBB(match, bodyDeclaration,
+							jOwnerType);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[jOwnerType] = " + jOwnerType + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jOwnerType] = " + jOwnerType + ".");
 			}
 			FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_0_4_collectelementstobetranslated_greenBBBFF(
-					match, jOwnerType, bodyDeclaration);
+					match, bodyDeclaration, jOwnerType);
 			//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = FieldDec2Property4EnumImpl
-					.pattern_FieldDec2Property4Enum_0_5_collectcontextelements_blackBBB(match, jOwnerType,
-							bodyDeclaration);
+					.pattern_FieldDec2Property4Enum_0_5_collectcontextelements_blackBBB(match, bodyDeclaration,
+							jOwnerType);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[jOwnerType] = " + jOwnerType + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jOwnerType] = " + jOwnerType + ".");
 			}
 			FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_0_5_collectcontextelements_greenBBB(match,
-					jOwnerType, bodyDeclaration);
+					bodyDeclaration, jOwnerType);
 
 			// 
 			FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_0_6_registerobjectstomatch_expressionBBBB(this,
-					match, jOwnerType, bodyDeclaration);
+					match, bodyDeclaration, jOwnerType);
 			return FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_0_7_expressionF();
 		} else {
 			return FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_0_8_expressionF();
@@ -161,15 +161,15 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Property feature = (Property) result1_bindingAndBlack[0];
+		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[0];
 		EnumDeclaration jOwnerType = (EnumDeclaration) result1_bindingAndBlack[1];
 		ASTNode2Element jo2uo = (ASTNode2Element) result1_bindingAndBlack[2];
-		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[3];
-		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[4];
-		Enumeration uOwnerType = (Enumeration) result1_bindingAndBlack[5];
+		Enumeration uOwnerType = (Enumeration) result1_bindingAndBlack[3];
+		Property feature = (Property) result1_bindingAndBlack[4];
+		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
-		FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_1_1_performtransformation_greenBB(feature,
-				uOwnerType);
+		FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_1_1_performtransformation_greenBB(uOwnerType,
+				feature);
 
 		Object[] result2_green = FieldDec2Property4EnumImpl
 				.pattern_FieldDec2Property4Enum_1_2_collecttranslatedelements_greenF();
@@ -179,16 +179,16 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, feature, jOwnerType,
-						jo2uo, nd2ne, bodyDeclaration, uOwnerType);
+				.pattern_FieldDec2Property4Enum_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, bodyDeclaration,
+						jOwnerType, jo2uo, uOwnerType, feature, nd2ne);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[feature] = " + feature + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = "
-					+ jo2uo + ", " + "[nd2ne] = " + nd2ne + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-					+ "[uOwnerType] = " + uOwnerType + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jOwnerType] = " + jOwnerType + ", "
+					+ "[jo2uo] = " + jo2uo + ", " + "[uOwnerType] = " + uOwnerType + ", " + "[feature] = " + feature
+					+ ", " + "[nd2ne] = " + nd2ne + ".");
 		}
 		FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
-				feature, jOwnerType, bodyDeclaration, uOwnerType);
+				bodyDeclaration, jOwnerType, uOwnerType, feature);
 		//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[7];
@@ -197,7 +197,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		// 
 		// 
 		FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_1_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType);
+				ruleresult, bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne);
 		return FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_1_6_expressionFB(ruleresult);
 	}
 
@@ -226,38 +226,38 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		EnumDeclaration jOwnerType = (EnumDeclaration) result2_binding[0];
-		MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_binding[1];
+		MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_binding[0];
+		EnumDeclaration jOwnerType = (EnumDeclaration) result2_binding[1];
 		for (Object[] result2_black : FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_2_2_corematch_blackFBFFBFB(jOwnerType, bodyDeclaration, match)) {
-			Property feature = (Property) result2_black[0];
+				.pattern_FieldDec2Property4Enum_2_2_corematch_blackBBFFFFB(bodyDeclaration, jOwnerType, match)) {
 			ASTNode2Element jo2uo = (ASTNode2Element) result2_black[2];
-			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[3];
-			Enumeration uOwnerType = (Enumeration) result2_black[5];
+			Enumeration uOwnerType = (Enumeration) result2_black[3];
+			Property feature = (Property) result2_black[4];
+			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : FieldDec2Property4EnumImpl
-					.pattern_FieldDec2Property4Enum_2_3_findcontext_blackBBBBBB(feature, jOwnerType, jo2uo, nd2ne,
-							bodyDeclaration, uOwnerType)) {
+					.pattern_FieldDec2Property4Enum_2_3_findcontext_blackBBBBBB(bodyDeclaration, jOwnerType, jo2uo,
+							uOwnerType, feature, nd2ne)) {
 				Object[] result3_green = FieldDec2Property4EnumImpl
-						.pattern_FieldDec2Property4Enum_2_3_findcontext_greenBBBBBBFFFFFFF(feature, jOwnerType, jo2uo,
-								nd2ne, bodyDeclaration, uOwnerType);
+						.pattern_FieldDec2Property4Enum_2_3_findcontext_greenBBBBBBFFFFFFF(bodyDeclaration, jOwnerType,
+								jo2uo, uOwnerType, feature, nd2ne);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = FieldDec2Property4EnumImpl
 						.pattern_FieldDec2Property4Enum_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType);
+								bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-							+ "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = " + jo2uo + ", " + "[nd2ne] = " + nd2ne
-							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[uOwnerType] = " + uOwnerType
-							+ ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = " + jo2uo
+							+ ", " + "[uOwnerType] = " + uOwnerType + ", " + "[feature] = " + feature + ", "
+							+ "[nd2ne] = " + nd2ne + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -287,9 +287,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
-		match.registerObject("jOwnerType", jOwnerType);
+	public void registerObjectsToMatch_FWD(Match match, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
 		match.registerObject("bodyDeclaration", bodyDeclaration);
+		match.registerObject("jOwnerType", jOwnerType);
 
 	}
 
@@ -298,7 +298,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -327,9 +327,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType, Property feature,
+			ASTNode2Element nd2ne) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -344,12 +344,12 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
 		isApplicableMatch.registerObject("jo2uo", jo2uo);
-		isApplicableMatch.registerObject("nd2ne", nd2ne);
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
+		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("nd2ne", nd2ne);
 		return csp;
 	}
 
@@ -367,14 +367,14 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject jOwnerType, EObject jo2uo,
-			EObject nd2ne, EObject bodyDeclaration, EObject uOwnerType) {
-		ruleresult.registerObject("feature", feature);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject jOwnerType,
+			EObject jo2uo, EObject uOwnerType, EObject feature, EObject nd2ne) {
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("jOwnerType", jOwnerType);
 		ruleresult.registerObject("jo2uo", jo2uo);
-		ruleresult.registerObject("nd2ne", nd2ne);
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("uOwnerType", uOwnerType);
+		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("nd2ne", nd2ne);
 
 	}
 
@@ -392,51 +392,51 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Property feature, Enumeration uOwnerType) {
+	public boolean isAppropriate_BWD(Match match, Enumeration uOwnerType, Property feature) {
 
 		Object[] result1_black = FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_10_1_initialbindings_blackBBBB(this, match, feature, uOwnerType);
+				.pattern_FieldDec2Property4Enum_10_1_initialbindings_blackBBBB(this, match, uOwnerType, feature);
 		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
-							+ ", " + "[feature] = " + feature + ", " + "[uOwnerType] = " + uOwnerType + ".");
+							+ ", " + "[uOwnerType] = " + uOwnerType + ", " + "[feature] = " + feature + ".");
 		}
 
 		Object[] result2_bindingAndBlack = FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, feature, uOwnerType);
+				.pattern_FieldDec2Property4Enum_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, uOwnerType, feature);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
-							+ ", " + "[feature] = " + feature + ", " + "[uOwnerType] = " + uOwnerType + ".");
+							+ ", " + "[uOwnerType] = " + uOwnerType + ", " + "[feature] = " + feature + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = FieldDec2Property4EnumImpl
-					.pattern_FieldDec2Property4Enum_10_4_collectelementstobetranslated_blackBBB(match, feature,
-							uOwnerType);
+					.pattern_FieldDec2Property4Enum_10_4_collectelementstobetranslated_blackBBB(match, uOwnerType,
+							feature);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[feature] = " + feature + ", " + "[uOwnerType] = " + uOwnerType + ".");
+						+ "[uOwnerType] = " + uOwnerType + ", " + "[feature] = " + feature + ".");
 			}
 			FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_10_4_collectelementstobetranslated_greenBBBFF(
-					match, feature, uOwnerType);
+					match, uOwnerType, feature);
 			//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge feature__uOwnerType____datatype = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = FieldDec2Property4EnumImpl
-					.pattern_FieldDec2Property4Enum_10_5_collectcontextelements_blackBBB(match, feature, uOwnerType);
+					.pattern_FieldDec2Property4Enum_10_5_collectcontextelements_blackBBB(match, uOwnerType, feature);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[feature] = " + feature + ", " + "[uOwnerType] = " + uOwnerType + ".");
+						+ "[uOwnerType] = " + uOwnerType + ", " + "[feature] = " + feature + ".");
 			}
 			FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_10_5_collectcontextelements_greenBBB(match,
-					feature, uOwnerType);
+					uOwnerType, feature);
 
 			// 
 			FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_10_6_registerobjectstomatch_expressionBBBB(this,
-					match, feature, uOwnerType);
+					match, uOwnerType, feature);
 			return FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_10_7_expressionF();
 		} else {
 			return FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_10_8_expressionF();
@@ -458,15 +458,15 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Property feature = (Property) result1_bindingAndBlack[0];
+		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[0];
 		EnumDeclaration jOwnerType = (EnumDeclaration) result1_bindingAndBlack[1];
 		ASTNode2Element jo2uo = (ASTNode2Element) result1_bindingAndBlack[2];
-		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[3];
-		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[4];
-		Enumeration uOwnerType = (Enumeration) result1_bindingAndBlack[5];
+		Enumeration uOwnerType = (Enumeration) result1_bindingAndBlack[3];
+		Property feature = (Property) result1_bindingAndBlack[4];
+		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
-		FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_11_1_performtransformation_greenBB(jOwnerType,
-				bodyDeclaration);
+		FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_11_1_performtransformation_greenBB(bodyDeclaration,
+				jOwnerType);
 
 		Object[] result2_green = FieldDec2Property4EnumImpl
 				.pattern_FieldDec2Property4Enum_11_2_collecttranslatedelements_greenF();
@@ -476,16 +476,16 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, feature, jOwnerType,
-						jo2uo, nd2ne, bodyDeclaration, uOwnerType);
+				.pattern_FieldDec2Property4Enum_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, bodyDeclaration,
+						jOwnerType, jo2uo, uOwnerType, feature, nd2ne);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[feature] = " + feature + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = "
-					+ jo2uo + ", " + "[nd2ne] = " + nd2ne + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-					+ "[uOwnerType] = " + uOwnerType + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jOwnerType] = " + jOwnerType + ", "
+					+ "[jo2uo] = " + jo2uo + ", " + "[uOwnerType] = " + uOwnerType + ", " + "[feature] = " + feature
+					+ ", " + "[nd2ne] = " + nd2ne + ".");
 		}
 		FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_11_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
-				feature, jOwnerType, bodyDeclaration, uOwnerType);
+				bodyDeclaration, jOwnerType, uOwnerType, feature);
 		//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[7];
@@ -494,7 +494,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		// 
 		// 
 		FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_11_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType);
+				ruleresult, bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne);
 		return FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_11_6_expressionFB(ruleresult);
 	}
 
@@ -523,38 +523,38 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Property feature = (Property) result2_binding[0];
-		Enumeration uOwnerType = (Enumeration) result2_binding[1];
+		Enumeration uOwnerType = (Enumeration) result2_binding[0];
+		Property feature = (Property) result2_binding[1];
 		for (Object[] result2_black : FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_12_2_corematch_blackBFFFFBB(feature, uOwnerType, match)) {
+				.pattern_FieldDec2Property4Enum_12_2_corematch_blackFFFBBFB(uOwnerType, feature, match)) {
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[0];
 			EnumDeclaration jOwnerType = (EnumDeclaration) result2_black[1];
 			ASTNode2Element jo2uo = (ASTNode2Element) result2_black[2];
-			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[3];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[4];
+			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : FieldDec2Property4EnumImpl
-					.pattern_FieldDec2Property4Enum_12_3_findcontext_blackBBBBBB(feature, jOwnerType, jo2uo, nd2ne,
-							bodyDeclaration, uOwnerType)) {
+					.pattern_FieldDec2Property4Enum_12_3_findcontext_blackBBBBBB(bodyDeclaration, jOwnerType, jo2uo,
+							uOwnerType, feature, nd2ne)) {
 				Object[] result3_green = FieldDec2Property4EnumImpl
-						.pattern_FieldDec2Property4Enum_12_3_findcontext_greenBBBBBBFFFFFFF(feature, jOwnerType, jo2uo,
-								nd2ne, bodyDeclaration, uOwnerType);
+						.pattern_FieldDec2Property4Enum_12_3_findcontext_greenBBBBBBFFFFFFF(bodyDeclaration, jOwnerType,
+								jo2uo, uOwnerType, feature, nd2ne);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge feature__uOwnerType____datatype = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge feature__uOwnerType____datatype = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = FieldDec2Property4EnumImpl
 						.pattern_FieldDec2Property4Enum_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType);
+								bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-							+ "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = " + jo2uo + ", " + "[nd2ne] = " + nd2ne
-							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[uOwnerType] = " + uOwnerType
-							+ ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = " + jo2uo
+							+ ", " + "[uOwnerType] = " + uOwnerType + ", " + "[feature] = " + feature + ", "
+							+ "[nd2ne] = " + nd2ne + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -584,9 +584,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Property feature, Enumeration uOwnerType) {
-		match.registerObject("feature", feature);
+	public void registerObjectsToMatch_BWD(Match match, Enumeration uOwnerType, Property feature) {
 		match.registerObject("uOwnerType", uOwnerType);
+		match.registerObject("feature", feature);
 
 	}
 
@@ -595,7 +595,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Property feature, Enumeration uOwnerType) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Enumeration uOwnerType, Property feature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -624,9 +624,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType, Property feature,
+			ASTNode2Element nd2ne) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -641,12 +641,12 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
 		isApplicableMatch.registerObject("jo2uo", jo2uo);
-		isApplicableMatch.registerObject("nd2ne", nd2ne);
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
+		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("nd2ne", nd2ne);
 		return csp;
 	}
 
@@ -664,14 +664,14 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject jOwnerType, EObject jo2uo,
-			EObject nd2ne, EObject bodyDeclaration, EObject uOwnerType) {
-		ruleresult.registerObject("feature", feature);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject jOwnerType,
+			EObject jo2uo, EObject uOwnerType, EObject feature, EObject nd2ne) {
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("jOwnerType", jOwnerType);
 		ruleresult.registerObject("jo2uo", jo2uo);
-		ruleresult.registerObject("nd2ne", nd2ne);
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("uOwnerType", uOwnerType);
+		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("nd2ne", nd2ne);
 
 	}
 
@@ -689,7 +689,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_91(EMoflonEdge _edge_ownedAttribute) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_98(EMoflonEdge _edge_ownedAttribute) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4EnumImpl
 				.pattern_FieldDec2Property4Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -706,8 +706,8 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		// ForEach 
 		for (Object[] result2_black : FieldDec2Property4EnumImpl
 				.pattern_FieldDec2Property4Enum_20_2_testcorematchandDECs_blackFFB(_edge_ownedAttribute)) {
-			Property feature = (Property) result2_black[0];
-			Enumeration uOwnerType = (Enumeration) result2_black[1];
+			Enumeration uOwnerType = (Enumeration) result2_black[0];
+			Property feature = (Property) result2_black[1];
 			Object[] result2_green = FieldDec2Property4EnumImpl
 					.pattern_FieldDec2Property4Enum_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -715,7 +715,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			// 
 			if (FieldDec2Property4EnumImpl
 					.pattern_FieldDec2Property4Enum_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-							match, feature, uOwnerType)) {
+							match, uOwnerType, feature)) {
 				// 
 				if (FieldDec2Property4EnumImpl
 						.pattern_FieldDec2Property4Enum_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -747,7 +747,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_97(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_102(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4EnumImpl
 				.pattern_FieldDec2Property4Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -764,8 +764,8 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		// ForEach 
 		for (Object[] result2_black : FieldDec2Property4EnumImpl
 				.pattern_FieldDec2Property4Enum_21_2_testcorematchandDECs_blackFFB(_edge_bodyDeclarations)) {
-			EnumDeclaration jOwnerType = (EnumDeclaration) result2_black[0];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[1];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[0];
+			EnumDeclaration jOwnerType = (EnumDeclaration) result2_black[1];
 			Object[] result2_green = FieldDec2Property4EnumImpl
 					.pattern_FieldDec2Property4Enum_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -773,7 +773,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			// 
 			if (FieldDec2Property4EnumImpl
 					.pattern_FieldDec2Property4Enum_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-							match, jOwnerType, bodyDeclaration)) {
+							match, bodyDeclaration, jOwnerType)) {
 				// 
 				if (FieldDec2Property4EnumImpl
 						.pattern_FieldDec2Property4Enum_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -880,41 +880,41 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Property feature = (Property) result2_bindingAndBlack[0];
+		MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_bindingAndBlack[0];
 		EnumDeclaration jOwnerType = (EnumDeclaration) result2_bindingAndBlack[1];
-		MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_bindingAndBlack[2];
-		Enumeration uOwnerType = (Enumeration) result2_bindingAndBlack[3];
+		Enumeration uOwnerType = (Enumeration) result2_bindingAndBlack[2];
+		Property feature = (Property) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, feature, jOwnerType,
-						bodyDeclaration, uOwnerType, sourceMatch, targetMatch);
+				.pattern_FieldDec2Property4Enum_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, bodyDeclaration, jOwnerType,
+						uOwnerType, feature, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[feature] = " + feature + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[uOwnerType] = " + uOwnerType + ", " + "[sourceMatch] = " + sourceMatch
-					+ ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jOwnerType] = " + jOwnerType + ", "
+					+ "[uOwnerType] = " + uOwnerType + ", " + "[feature] = " + feature + ", " + "[sourceMatch] = "
+					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : FieldDec2Property4EnumImpl
-					.pattern_FieldDec2Property4Enum_24_5_matchcorrcontext_blackBBFFBBBB(feature, jOwnerType,
-							bodyDeclaration, uOwnerType, sourceMatch, targetMatch)) {
+					.pattern_FieldDec2Property4Enum_24_5_matchcorrcontext_blackBBFBBFBB(bodyDeclaration, jOwnerType,
+							uOwnerType, feature, sourceMatch, targetMatch)) {
 				ASTNode2Element jo2uo = (ASTNode2Element) result5_black[2];
-				ASTNode2Element nd2ne = (ASTNode2Element) result5_black[3];
+				ASTNode2Element nd2ne = (ASTNode2Element) result5_black[5];
 				Object[] result5_green = FieldDec2Property4EnumImpl
 						.pattern_FieldDec2Property4Enum_24_5_matchcorrcontext_greenBBBBF(jo2uo, nd2ne, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = FieldDec2Property4EnumImpl
-						.pattern_FieldDec2Property4Enum_24_6_createcorrespondence_blackBBBBB(feature, jOwnerType,
-								bodyDeclaration, uOwnerType, ccMatch);
+						.pattern_FieldDec2Property4Enum_24_6_createcorrespondence_blackBBBBB(bodyDeclaration,
+								jOwnerType, uOwnerType, feature, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature
-							+ ", " + "[jOwnerType] = " + jOwnerType + ", " + "[bodyDeclaration] = " + bodyDeclaration
-							+ ", " + "[uOwnerType] = " + uOwnerType + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[uOwnerType] = "
+							+ uOwnerType + ", " + "[feature] = " + feature + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = FieldDec2Property4EnumImpl
@@ -938,8 +938,8 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Property feature, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType,
+			Enumeration uOwnerType, Property feature, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -968,9 +968,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {// 
+	public boolean checkDEC_FWD(MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {// 
 		Object[] result1_black = FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_27_1_matchtggpattern_blackBB(jOwnerType, bodyDeclaration);
+				.pattern_FieldDec2Property4Enum_27_1_matchtggpattern_blackBB(bodyDeclaration, jOwnerType);
 		if (result1_black != null) {
 			return FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_27_2_expressionF();
 		} else {
@@ -984,9 +984,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Property feature, Enumeration uOwnerType) {// 
+	public boolean checkDEC_BWD(Enumeration uOwnerType, Property feature) {// 
 		Object[] result1_black = FieldDec2Property4EnumImpl
-				.pattern_FieldDec2Property4Enum_28_1_matchtggpattern_blackBB(feature, uOwnerType);
+				.pattern_FieldDec2Property4Enum_28_1_matchtggpattern_blackBB(uOwnerType, feature);
 		if (result1_black != null) {
 			return FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_28_2_expressionF();
 		} else {
@@ -1016,9 +1016,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		for (Object[] result2_black : FieldDec2Property4EnumImpl
 				.pattern_FieldDec2Property4Enum_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList nd2neList = (RuleEntryList) result2_black[0];
-			Property feature = (Property) result2_black[1];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[1];
 			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[2];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[3];
+			Property feature = (Property) result2_black[3];
 			//nothing RuleEntryList jo2uoList = (RuleEntryList) result2_black[4];
 			EnumDeclaration jOwnerType = (EnumDeclaration) result2_black[5];
 			ASTNode2Element jo2uo = (ASTNode2Element) result2_black[6];
@@ -1026,12 +1026,12 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 
 			Object[] result3_bindingAndBlack = FieldDec2Property4EnumImpl
 					.pattern_FieldDec2Property4Enum_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, ruleResult);
+							bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-						+ "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = " + jo2uo + ", " + "[nd2ne] = " + nd2ne
-						+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[uOwnerType] = " + uOwnerType + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = " + bodyDeclaration
+						+ ", " + "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = " + jo2uo + ", " + "[uOwnerType] = "
+						+ uOwnerType + ", " + "[feature] = " + feature + ", " + "[nd2ne] = " + nd2ne + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1039,21 +1039,21 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			if (FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = FieldDec2Property4EnumImpl
-						.pattern_FieldDec2Property4Enum_29_5_checknacs_blackBBBBBB(feature, jOwnerType, jo2uo, nd2ne,
-								bodyDeclaration, uOwnerType);
+						.pattern_FieldDec2Property4Enum_29_5_checknacs_blackBBBBBB(bodyDeclaration, jOwnerType, jo2uo,
+								uOwnerType, feature, nd2ne);
 				if (result5_black != null) {
 
 					Object[] result6_black = FieldDec2Property4EnumImpl
-							.pattern_FieldDec2Property4Enum_29_6_perform_blackBBBBBBB(feature, jOwnerType, jo2uo, nd2ne,
-									bodyDeclaration, uOwnerType, ruleResult);
+							.pattern_FieldDec2Property4Enum_29_6_perform_blackBBBBBBB(bodyDeclaration, jOwnerType,
+									jo2uo, uOwnerType, feature, nd2ne, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = "
-								+ feature + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = " + jo2uo + ", "
-								+ "[nd2ne] = " + nd2ne + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-								+ "[uOwnerType] = " + uOwnerType + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
+								+ bodyDeclaration + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = " + jo2uo
+								+ ", " + "[uOwnerType] = " + uOwnerType + ", " + "[feature] = " + feature + ", "
+								+ "[nd2ne] = " + nd2ne + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_29_6_perform_greenBBBBB(feature,
-							jOwnerType, bodyDeclaration, uOwnerType, ruleResult);
+					FieldDec2Property4EnumImpl.pattern_FieldDec2Property4Enum_29_6_perform_greenBBBBB(bodyDeclaration,
+							jOwnerType, uOwnerType, feature, ruleResult);
 
 				} else {
 				}
@@ -1070,9 +1070,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType, Property feature,
+			ASTNode2Element nd2ne, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1087,12 +1087,12 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
 		isApplicableMatch.registerObject("jo2uo", jo2uo);
-		isApplicableMatch.registerObject("nd2ne", nd2ne);
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
+		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("nd2ne", nd2ne);
 		return csp;
 	}
 
@@ -1113,27 +1113,26 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_FWD__MATCH_ENUMDECLARATION_MFIELDDEFINITION:
-			return isAppropriate_FWD((Match) arguments.get(0), (EnumDeclaration) arguments.get(1),
-					(MFieldDefinition) arguments.get(2));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_FWD__MATCH_MFIELDDEFINITION_ENUMDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
+					(EnumDeclaration) arguments.get(2));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ENUMDECLARATION_MFIELDDEFINITION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (EnumDeclaration) arguments.get(1),
-					(MFieldDefinition) arguments.get(2));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MFIELDDEFINITION_ENUMDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
+					(EnumDeclaration) arguments.get(2));
 			return null;
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ENUMDECLARATION_MFIELDDEFINITION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (EnumDeclaration) arguments.get(1),
-					(MFieldDefinition) arguments.get(2));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MFIELDDEFINITION_ENUMDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
+					(EnumDeclaration) arguments.get(2));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PROPERTY_ENUMDECLARATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MFIELDDEFINITION_ENUMERATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Property) arguments.get(1),
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MFIELDDEFINITION_ENUMDECLARATION_ASTNODE2ELEMENT_ENUMERATION_PROPERTY_ASTNODE2ELEMENT:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MFieldDefinition) arguments.get(1),
 					(EnumDeclaration) arguments.get(2), (ASTNode2Element) arguments.get(3),
-					(ASTNode2Element) arguments.get(4), (MFieldDefinition) arguments.get(5),
-					(Enumeration) arguments.get(6));
+					(Enumeration) arguments.get(4), (Property) arguments.get(5), (ASTNode2Element) arguments.get(6));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1143,27 +1142,26 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			return null;
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_BWD__MATCH_PROPERTY_ENUMERATION:
-			return isAppropriate_BWD((Match) arguments.get(0), (Property) arguments.get(1),
-					(Enumeration) arguments.get(2));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_BWD__MATCH_ENUMERATION_PROPERTY:
+			return isAppropriate_BWD((Match) arguments.get(0), (Enumeration) arguments.get(1),
+					(Property) arguments.get(2));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PROPERTY_ENUMERATION:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Property) arguments.get(1),
-					(Enumeration) arguments.get(2));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_ENUMERATION_PROPERTY:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Enumeration) arguments.get(1),
+					(Property) arguments.get(2));
 			return null;
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PROPERTY_ENUMERATION:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Property) arguments.get(1),
-					(Enumeration) arguments.get(2));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_ENUMERATION_PROPERTY:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Enumeration) arguments.get(1),
+					(Property) arguments.get(2));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PROPERTY_ENUMDECLARATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MFIELDDEFINITION_ENUMERATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Property) arguments.get(1),
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MFIELDDEFINITION_ENUMDECLARATION_ASTNODE2ELEMENT_ENUMERATION_PROPERTY_ASTNODE2ELEMENT:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MFieldDefinition) arguments.get(1),
 					(EnumDeclaration) arguments.get(2), (ASTNode2Element) arguments.get(3),
-					(ASTNode2Element) arguments.get(4), (MFieldDefinition) arguments.get(5),
-					(Enumeration) arguments.get(6));
+					(Enumeration) arguments.get(4), (Property) arguments.get(5), (ASTNode2Element) arguments.get(6));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1173,34 +1171,34 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			return null;
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_91__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_91((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_97__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_97((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_98__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_98((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_102__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_102((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_SOLVE_CSP_CC__PROPERTY_ENUMDECLARATION_MFIELDDEFINITION_ENUMERATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Property) arguments.get(0), (EnumDeclaration) arguments.get(1),
-					(MFieldDefinition) arguments.get(2), (Enumeration) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_SOLVE_CSP_CC__MFIELDDEFINITION_ENUMDECLARATION_ENUMERATION_PROPERTY_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((MFieldDefinition) arguments.get(0), (EnumDeclaration) arguments.get(1),
+					(Enumeration) arguments.get(2), (Property) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___CHECK_DEC_FWD__ENUMDECLARATION_MFIELDDEFINITION:
-			return checkDEC_FWD((EnumDeclaration) arguments.get(0), (MFieldDefinition) arguments.get(1));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___CHECK_DEC_BWD__PROPERTY_ENUMERATION:
-			return checkDEC_BWD((Property) arguments.get(0), (Enumeration) arguments.get(1));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___CHECK_DEC_FWD__MFIELDDEFINITION_ENUMDECLARATION:
+			return checkDEC_FWD((MFieldDefinition) arguments.get(0), (EnumDeclaration) arguments.get(1));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___CHECK_DEC_BWD__ENUMERATION_PROPERTY:
+			return checkDEC_BWD((Enumeration) arguments.get(0), (Property) arguments.get(1));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
 					(ASTNode2Element) arguments.get(2));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PROPERTY_ENUMDECLARATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MFIELDDEFINITION_ENUMERATION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Property) arguments.get(1),
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MFIELDDEFINITION_ENUMDECLARATION_ASTNODE2ELEMENT_ENUMERATION_PROPERTY_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MFieldDefinition) arguments.get(1),
 					(EnumDeclaration) arguments.get(2), (ASTNode2Element) arguments.get(3),
-					(ASTNode2Element) arguments.get(4), (MFieldDefinition) arguments.get(5),
-					(Enumeration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+					(Enumeration) arguments.get(4), (Property) arguments.get(5), (ASTNode2Element) arguments.get(6),
+					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ENUM___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1208,16 +1206,16 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_0_1_initialbindings_blackBBBB(
-			FieldDec2Property4Enum _this, Match match, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
-		return new Object[] { _this, match, jOwnerType, bodyDeclaration };
+			FieldDec2Property4Enum _this, Match match, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
+		return new Object[] { _this, match, bodyDeclaration, jOwnerType };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_0_2_SolveCSP_bindingFBBBB(FieldDec2Property4Enum _this,
-			Match match, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, jOwnerType, bodyDeclaration);
+			Match match, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, bodyDeclaration, jOwnerType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, jOwnerType, bodyDeclaration };
+			return new Object[] { csp, _this, match, bodyDeclaration, jOwnerType };
 		}
 		return null;
 	}
@@ -1227,9 +1225,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_0_2_SolveCSP_bindingAndBlackFBBBB(
-			FieldDec2Property4Enum _this, Match match, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
+			FieldDec2Property4Enum _this, Match match, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
 		Object[] result_pattern_FieldDec2Property4Enum_0_2_SolveCSP_binding = pattern_FieldDec2Property4Enum_0_2_SolveCSP_bindingFBBBB(
-				_this, match, jOwnerType, bodyDeclaration);
+				_this, match, bodyDeclaration, jOwnerType);
 		if (result_pattern_FieldDec2Property4Enum_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4Enum_0_2_SolveCSP_binding[0];
 
@@ -1237,7 +1235,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 					csp);
 			if (result_pattern_FieldDec2Property4Enum_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, jOwnerType, bodyDeclaration };
+				return new Object[] { csp, _this, match, bodyDeclaration, jOwnerType };
 			}
 		}
 		return null;
@@ -1251,12 +1249,12 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_0_4_collectelementstobetranslated_blackBBB(Match match,
-			EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
-		return new Object[] { match, jOwnerType, bodyDeclaration };
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
+		return new Object[] { match, bodyDeclaration, jOwnerType };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_0_4_collectelementstobetranslated_greenBBBFF(
-			Match match, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
+			Match match, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
 		EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
@@ -1272,25 +1270,25 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 				.setName(jOwnerType__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jOwnerType____abstractTypeDeclaration
 				.setName(bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime);
-		return new Object[] { match, jOwnerType, bodyDeclaration, jOwnerType__bodyDeclaration____bodyDeclarations,
+		return new Object[] { match, bodyDeclaration, jOwnerType, jOwnerType__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jOwnerType____abstractTypeDeclaration };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_0_5_collectcontextelements_blackBBB(Match match,
-			EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
-		return new Object[] { match, jOwnerType, bodyDeclaration };
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
+		return new Object[] { match, bodyDeclaration, jOwnerType };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_0_5_collectcontextelements_greenBBB(Match match,
-			EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
-		match.getContextNodes().add(jOwnerType);
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
 		match.getContextNodes().add(bodyDeclaration);
-		return new Object[] { match, jOwnerType, bodyDeclaration };
+		match.getContextNodes().add(jOwnerType);
+		return new Object[] { match, bodyDeclaration, jOwnerType };
 	}
 
 	public static final void pattern_FieldDec2Property4Enum_0_6_registerobjectstomatch_expressionBBBB(
-			FieldDec2Property4Enum _this, Match match, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
-		_this.registerObjectsToMatch_FWD(match, jOwnerType, bodyDeclaration);
+			FieldDec2Property4Enum _this, Match match, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
+		_this.registerObjectsToMatch_FWD(match, bodyDeclaration, jOwnerType);
 
 	}
 
@@ -1306,31 +1304,31 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 
 	public static final Object[] pattern_FieldDec2Property4Enum_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_0 = isApplicableMatch.getObject("bodyDeclaration");
 		EObject _localVariable_1 = isApplicableMatch.getObject("jOwnerType");
 		EObject _localVariable_2 = isApplicableMatch.getObject("jo2uo");
-		EObject _localVariable_3 = isApplicableMatch.getObject("nd2ne");
-		EObject _localVariable_4 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_5 = isApplicableMatch.getObject("uOwnerType");
-		EObject tmpFeature = _localVariable_0;
+		EObject _localVariable_3 = isApplicableMatch.getObject("uOwnerType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_5 = isApplicableMatch.getObject("nd2ne");
+		EObject tmpBodyDeclaration = _localVariable_0;
 		EObject tmpJOwnerType = _localVariable_1;
 		EObject tmpJo2uo = _localVariable_2;
-		EObject tmpNd2ne = _localVariable_3;
-		EObject tmpBodyDeclaration = _localVariable_4;
-		EObject tmpUOwnerType = _localVariable_5;
-		if (tmpFeature instanceof Property) {
-			Property feature = (Property) tmpFeature;
+		EObject tmpUOwnerType = _localVariable_3;
+		EObject tmpFeature = _localVariable_4;
+		EObject tmpNd2ne = _localVariable_5;
+		if (tmpBodyDeclaration instanceof MFieldDefinition) {
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
 			if (tmpJOwnerType instanceof EnumDeclaration) {
 				EnumDeclaration jOwnerType = (EnumDeclaration) tmpJOwnerType;
 				if (tmpJo2uo instanceof ASTNode2Element) {
 					ASTNode2Element jo2uo = (ASTNode2Element) tmpJo2uo;
-					if (tmpNd2ne instanceof ASTNode2Element) {
-						ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
-						if (tmpBodyDeclaration instanceof MFieldDefinition) {
-							MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-							if (tmpUOwnerType instanceof Enumeration) {
-								Enumeration uOwnerType = (Enumeration) tmpUOwnerType;
-								return new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType,
+					if (tmpUOwnerType instanceof Enumeration) {
+						Enumeration uOwnerType = (Enumeration) tmpUOwnerType;
+						if (tmpFeature instanceof Property) {
+							Property feature = (Property) tmpFeature;
+							if (tmpNd2ne instanceof ASTNode2Element) {
+								ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
+								return new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne,
 										isApplicableMatch };
 							}
 						}
@@ -1342,14 +1340,14 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_1_1_performtransformation_blackBBBBBBFBB(
-			Property feature, EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne,
-			MFieldDefinition bodyDeclaration, Enumeration uOwnerType, FieldDec2Property4Enum _this,
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			Property feature, ASTNode2Element nd2ne, FieldDec2Property4Enum _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!jo2uo.equals(nd2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, csp, _this,
+					return new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1362,29 +1360,29 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		Object[] result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding = pattern_FieldDec2Property4Enum_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding != null) {
-			Property feature = (Property) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding[0];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding[0];
 			EnumDeclaration jOwnerType = (EnumDeclaration) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding[1];
 			ASTNode2Element jo2uo = (ASTNode2Element) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding[2];
-			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding[3];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding[4];
-			Enumeration uOwnerType = (Enumeration) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding[5];
+			Enumeration uOwnerType = (Enumeration) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding[3];
+			Property feature = (Property) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding[4];
+			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_FieldDec2Property4Enum_1_1_performtransformation_black = pattern_FieldDec2Property4Enum_1_1_performtransformation_blackBBBBBBFBB(
-					feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, _this, isApplicableMatch);
+					bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, _this, isApplicableMatch);
 			if (result_pattern_FieldDec2Property4Enum_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FieldDec2Property4Enum_1_1_performtransformation_black[6];
 
-				return new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, csp, _this,
+				return new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_1_1_performtransformation_greenBB(Property feature,
-			Enumeration uOwnerType) {
+	public static final Object[] pattern_FieldDec2Property4Enum_1_1_performtransformation_greenBB(
+			Enumeration uOwnerType, Property feature) {
 		uOwnerType.getOwnedAttributes().add(feature);
-		return new Object[] { feature, uOwnerType };
+		return new Object[] { uOwnerType, feature };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_1_2_collecttranslatedelements_greenF() {
@@ -1393,26 +1391,26 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject feature, EObject jOwnerType, EObject jo2uo, EObject nd2ne,
-			EObject bodyDeclaration, EObject uOwnerType) {
-		if (!feature.equals(jOwnerType)) {
-			if (!feature.equals(jo2uo)) {
-				if (!feature.equals(nd2ne)) {
-					if (!feature.equals(uOwnerType)) {
-						if (!jOwnerType.equals(jo2uo)) {
-							if (!jOwnerType.equals(nd2ne)) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject jOwnerType, EObject jo2uo,
+			EObject uOwnerType, EObject feature, EObject nd2ne) {
+		if (!bodyDeclaration.equals(jOwnerType)) {
+			if (!bodyDeclaration.equals(jo2uo)) {
+				if (!bodyDeclaration.equals(uOwnerType)) {
+					if (!bodyDeclaration.equals(feature)) {
+						if (!bodyDeclaration.equals(nd2ne)) {
+							if (!jOwnerType.equals(jo2uo)) {
 								if (!jOwnerType.equals(uOwnerType)) {
-									if (!jo2uo.equals(nd2ne)) {
+									if (!jOwnerType.equals(nd2ne)) {
 										if (!jo2uo.equals(uOwnerType)) {
-											if (!nd2ne.equals(uOwnerType)) {
-												if (!bodyDeclaration.equals(feature)) {
-													if (!bodyDeclaration.equals(jOwnerType)) {
-														if (!bodyDeclaration.equals(jo2uo)) {
-															if (!bodyDeclaration.equals(nd2ne)) {
-																if (!bodyDeclaration.equals(uOwnerType)) {
-																	return new Object[] { ruleresult, feature,
-																			jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-																			uOwnerType };
+											if (!jo2uo.equals(nd2ne)) {
+												if (!feature.equals(jOwnerType)) {
+													if (!feature.equals(jo2uo)) {
+														if (!feature.equals(uOwnerType)) {
+															if (!feature.equals(nd2ne)) {
+																if (!nd2ne.equals(uOwnerType)) {
+																	return new Object[] { ruleresult, bodyDeclaration,
+																			jOwnerType, jo2uo, uOwnerType, feature,
+																			nd2ne };
 																}
 															}
 														}
@@ -1432,8 +1430,8 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject feature, EObject jOwnerType, EObject bodyDeclaration,
-			EObject uOwnerType) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject jOwnerType, EObject uOwnerType,
+			EObject feature) {
 		EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
@@ -1463,15 +1461,15 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 				.setName(bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime);
 		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
 		feature__uOwnerType____datatype.setName(feature__uOwnerType____datatype_name_prime);
-		return new Object[] { ruleresult, feature, jOwnerType, bodyDeclaration, uOwnerType,
+		return new Object[] { ruleresult, bodyDeclaration, jOwnerType, uOwnerType, feature,
 				jOwnerType__bodyDeclaration____bodyDeclarations, bodyDeclaration__jOwnerType____abstractTypeDeclaration,
 				uOwnerType__feature____ownedAttribute, feature__uOwnerType____datatype };
 	}
 
 	public static final void pattern_FieldDec2Property4Enum_1_5_registerobjects_expressionBBBBBBBB(
-			FieldDec2Property4Enum _this, PerformRuleResult ruleresult, EObject feature, EObject jOwnerType,
-			EObject jo2uo, EObject nd2ne, EObject bodyDeclaration, EObject uOwnerType) {
-		_this.registerObjects_FWD(ruleresult, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType);
+			FieldDec2Property4Enum _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject jOwnerType,
+			EObject jo2uo, EObject uOwnerType, EObject feature, EObject nd2ne) {
+		_this.registerObjects_FWD(ruleresult, bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne);
 
 	}
 
@@ -1533,35 +1531,35 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("jOwnerType");
-		EObject _localVariable_1 = match.getObject("bodyDeclaration");
-		EObject tmpJOwnerType = _localVariable_0;
-		EObject tmpBodyDeclaration = _localVariable_1;
-		if (tmpJOwnerType instanceof EnumDeclaration) {
-			EnumDeclaration jOwnerType = (EnumDeclaration) tmpJOwnerType;
-			if (tmpBodyDeclaration instanceof MFieldDefinition) {
-				MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-				return new Object[] { jOwnerType, bodyDeclaration, match };
+		EObject _localVariable_0 = match.getObject("bodyDeclaration");
+		EObject _localVariable_1 = match.getObject("jOwnerType");
+		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpJOwnerType = _localVariable_1;
+		if (tmpBodyDeclaration instanceof MFieldDefinition) {
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+			if (tmpJOwnerType instanceof EnumDeclaration) {
+				EnumDeclaration jOwnerType = (EnumDeclaration) tmpJOwnerType;
+				return new Object[] { bodyDeclaration, jOwnerType, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4Enum_2_2_corematch_blackFBFFBFB(
-			EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Match match) {
+	public static final Iterable<Object[]> pattern_FieldDec2Property4Enum_2_2_corematch_blackBBFFFFB(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(bodyDeclaration,
+		for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jOwnerType,
 				ASTNode2Element.class, "source")) {
-			Element tmpFeature = nd2ne.getTarget();
-			if (tmpFeature instanceof Property) {
-				Property feature = (Property) tmpFeature;
-				for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(jOwnerType, ASTNode2Element.class, "source")) {
+			Element tmpUOwnerType = jo2uo.getTarget();
+			if (tmpUOwnerType instanceof Enumeration) {
+				Enumeration uOwnerType = (Enumeration) tmpUOwnerType;
+				for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(bodyDeclaration, ASTNode2Element.class, "source")) {
 					if (!jo2uo.equals(nd2ne)) {
-						Element tmpUOwnerType = jo2uo.getTarget();
-						if (tmpUOwnerType instanceof Enumeration) {
-							Enumeration uOwnerType = (Enumeration) tmpUOwnerType;
-							_result.add(new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType,
+						Element tmpFeature = nd2ne.getTarget();
+						if (tmpFeature instanceof Property) {
+							Property feature = (Property) tmpFeature;
+							_result.add(new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne,
 									match });
 						}
 
@@ -1573,18 +1571,18 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4Enum_2_3_findcontext_blackBBBBBB(Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {
+	public static final Iterable<Object[]> pattern_FieldDec2Property4Enum_2_3_findcontext_blackBBBBBB(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			Property feature, ASTNode2Element nd2ne) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!jo2uo.equals(nd2ne)) {
 			if (jOwnerType.getBodyDeclarations().contains(bodyDeclaration)) {
-				if (feature.equals(nd2ne.getTarget())) {
-					if (bodyDeclaration.equals(nd2ne.getSource())) {
-						if (jOwnerType.equals(jo2uo.getSource())) {
-							if (uOwnerType.equals(jo2uo.getTarget())) {
-								_result.add(new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-										uOwnerType });
+				if (uOwnerType.equals(jo2uo.getTarget())) {
+					if (jOwnerType.equals(jo2uo.getSource())) {
+						if (bodyDeclaration.equals(nd2ne.getSource())) {
+							if (feature.equals(nd2ne.getTarget())) {
+								_result.add(new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature,
+										nd2ne });
 							}
 						}
 					}
@@ -1594,71 +1592,71 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_2_3_findcontext_greenBBBBBBFFFFFFF(Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {
+	public static final Object[] pattern_FieldDec2Property4Enum_2_3_findcontext_greenBBBBBBFFFFFFF(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			Property feature, ASTNode2Element nd2ne) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge nd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge nd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jo2uo__uOwnerType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge nd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge nd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String jOwnerType__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		String nd2ne__feature____target_name_prime = "target";
-		String nd2ne__bodyDeclaration____source_name_prime = "source";
-		String jo2uo__jOwnerType____source_name_prime = "source";
 		String jo2uo__uOwnerType____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(feature);
+		String jo2uo__jOwnerType____source_name_prime = "source";
+		String nd2ne__bodyDeclaration____source_name_prime = "source";
+		String nd2ne__feature____target_name_prime = "target";
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jOwnerType);
 		isApplicableMatch.getAllContextElements().add(jo2uo);
-		isApplicableMatch.getAllContextElements().add(nd2ne);
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(uOwnerType);
+		isApplicableMatch.getAllContextElements().add(feature);
+		isApplicableMatch.getAllContextElements().add(nd2ne);
 		jOwnerType__bodyDeclaration____bodyDeclarations.setSrc(jOwnerType);
 		jOwnerType__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jOwnerType__bodyDeclaration____bodyDeclarations);
 		bodyDeclaration__jOwnerType____abstractTypeDeclaration.setSrc(bodyDeclaration);
 		bodyDeclaration__jOwnerType____abstractTypeDeclaration.setTrg(jOwnerType);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration__jOwnerType____abstractTypeDeclaration);
-		nd2ne__feature____target.setSrc(nd2ne);
-		nd2ne__feature____target.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(nd2ne__feature____target);
-		nd2ne__bodyDeclaration____source.setSrc(nd2ne);
-		nd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(nd2ne__bodyDeclaration____source);
-		jo2uo__jOwnerType____source.setSrc(jo2uo);
-		jo2uo__jOwnerType____source.setTrg(jOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
 		jo2uo__uOwnerType____target.setSrc(jo2uo);
 		jo2uo__uOwnerType____target.setTrg(uOwnerType);
 		isApplicableMatch.getAllContextElements().add(jo2uo__uOwnerType____target);
+		jo2uo__jOwnerType____source.setSrc(jo2uo);
+		jo2uo__jOwnerType____source.setTrg(jOwnerType);
+		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
+		nd2ne__bodyDeclaration____source.setSrc(nd2ne);
+		nd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(nd2ne__bodyDeclaration____source);
+		nd2ne__feature____target.setSrc(nd2ne);
+		nd2ne__feature____target.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(nd2ne__feature____target);
 		jOwnerType__bodyDeclaration____bodyDeclarations
 				.setName(jOwnerType__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jOwnerType____abstractTypeDeclaration
 				.setName(bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime);
-		nd2ne__feature____target.setName(nd2ne__feature____target_name_prime);
-		nd2ne__bodyDeclaration____source.setName(nd2ne__bodyDeclaration____source_name_prime);
-		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
 		jo2uo__uOwnerType____target.setName(jo2uo__uOwnerType____target_name_prime);
-		return new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, isApplicableMatch,
+		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
+		nd2ne__bodyDeclaration____source.setName(nd2ne__bodyDeclaration____source_name_prime);
+		nd2ne__feature____target.setName(nd2ne__feature____target_name_prime);
+		return new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, isApplicableMatch,
 				jOwnerType__bodyDeclaration____bodyDeclarations, bodyDeclaration__jOwnerType____abstractTypeDeclaration,
-				nd2ne__feature____target, nd2ne__bodyDeclaration____source, jo2uo__jOwnerType____source,
-				jo2uo__uOwnerType____target };
+				jo2uo__uOwnerType____target, jo2uo__jOwnerType____source, nd2ne__bodyDeclaration____source,
+				nd2ne__feature____target };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_2_4_solveCSP_bindingFBBBBBBBB(
-			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne,
-				bodyDeclaration, uOwnerType);
+			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType, Property feature,
+			ASTNode2Element nd2ne) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo,
+				uOwnerType, feature, nd2ne);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-					uOwnerType };
+			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo, uOwnerType,
+					feature, nd2ne };
 		}
 		return null;
 	}
@@ -1668,11 +1666,11 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {
+			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType, Property feature,
+			ASTNode2Element nd2ne) {
 		Object[] result_pattern_FieldDec2Property4Enum_2_4_solveCSP_binding = pattern_FieldDec2Property4Enum_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType);
+				_this, isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne);
 		if (result_pattern_FieldDec2Property4Enum_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4Enum_2_4_solveCSP_binding[0];
 
@@ -1680,8 +1678,8 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 					csp);
 			if (result_pattern_FieldDec2Property4Enum_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-						uOwnerType };
+				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo, uOwnerType,
+						feature, nd2ne };
 			}
 		}
 		return null;
@@ -1716,16 +1714,16 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_10_1_initialbindings_blackBBBB(
-			FieldDec2Property4Enum _this, Match match, Property feature, Enumeration uOwnerType) {
-		return new Object[] { _this, match, feature, uOwnerType };
+			FieldDec2Property4Enum _this, Match match, Enumeration uOwnerType, Property feature) {
+		return new Object[] { _this, match, uOwnerType, feature };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_10_2_SolveCSP_bindingFBBBB(FieldDec2Property4Enum _this,
-			Match match, Property feature, Enumeration uOwnerType) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, feature, uOwnerType);
+			Match match, Enumeration uOwnerType, Property feature) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, uOwnerType, feature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, feature, uOwnerType };
+			return new Object[] { csp, _this, match, uOwnerType, feature };
 		}
 		return null;
 	}
@@ -1735,9 +1733,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_10_2_SolveCSP_bindingAndBlackFBBBB(
-			FieldDec2Property4Enum _this, Match match, Property feature, Enumeration uOwnerType) {
+			FieldDec2Property4Enum _this, Match match, Enumeration uOwnerType, Property feature) {
 		Object[] result_pattern_FieldDec2Property4Enum_10_2_SolveCSP_binding = pattern_FieldDec2Property4Enum_10_2_SolveCSP_bindingFBBBB(
-				_this, match, feature, uOwnerType);
+				_this, match, uOwnerType, feature);
 		if (result_pattern_FieldDec2Property4Enum_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4Enum_10_2_SolveCSP_binding[0];
 
@@ -1745,7 +1743,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 					csp);
 			if (result_pattern_FieldDec2Property4Enum_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, feature, uOwnerType };
+				return new Object[] { csp, _this, match, uOwnerType, feature };
 			}
 		}
 		return null;
@@ -1759,12 +1757,12 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_10_4_collectelementstobetranslated_blackBBB(Match match,
-			Property feature, Enumeration uOwnerType) {
-		return new Object[] { match, feature, uOwnerType };
+			Enumeration uOwnerType, Property feature) {
+		return new Object[] { match, uOwnerType, feature };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_10_4_collectelementstobetranslated_greenBBBFF(
-			Match match, Property feature, Enumeration uOwnerType) {
+			Match match, Enumeration uOwnerType, Property feature) {
 		EMoflonEdge uOwnerType__feature____ownedAttribute = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__uOwnerType____datatype = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String uOwnerType__feature____ownedAttribute_name_prime = "ownedAttribute";
@@ -1777,25 +1775,25 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		match.getToBeTranslatedEdges().add(feature__uOwnerType____datatype);
 		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
 		feature__uOwnerType____datatype.setName(feature__uOwnerType____datatype_name_prime);
-		return new Object[] { match, feature, uOwnerType, uOwnerType__feature____ownedAttribute,
+		return new Object[] { match, uOwnerType, feature, uOwnerType__feature____ownedAttribute,
 				feature__uOwnerType____datatype };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_10_5_collectcontextelements_blackBBB(Match match,
-			Property feature, Enumeration uOwnerType) {
-		return new Object[] { match, feature, uOwnerType };
+			Enumeration uOwnerType, Property feature) {
+		return new Object[] { match, uOwnerType, feature };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_10_5_collectcontextelements_greenBBB(Match match,
-			Property feature, Enumeration uOwnerType) {
-		match.getContextNodes().add(feature);
+			Enumeration uOwnerType, Property feature) {
 		match.getContextNodes().add(uOwnerType);
-		return new Object[] { match, feature, uOwnerType };
+		match.getContextNodes().add(feature);
+		return new Object[] { match, uOwnerType, feature };
 	}
 
 	public static final void pattern_FieldDec2Property4Enum_10_6_registerobjectstomatch_expressionBBBB(
-			FieldDec2Property4Enum _this, Match match, Property feature, Enumeration uOwnerType) {
-		_this.registerObjectsToMatch_BWD(match, feature, uOwnerType);
+			FieldDec2Property4Enum _this, Match match, Enumeration uOwnerType, Property feature) {
+		_this.registerObjectsToMatch_BWD(match, uOwnerType, feature);
 
 	}
 
@@ -1811,31 +1809,31 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 
 	public static final Object[] pattern_FieldDec2Property4Enum_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_0 = isApplicableMatch.getObject("bodyDeclaration");
 		EObject _localVariable_1 = isApplicableMatch.getObject("jOwnerType");
 		EObject _localVariable_2 = isApplicableMatch.getObject("jo2uo");
-		EObject _localVariable_3 = isApplicableMatch.getObject("nd2ne");
-		EObject _localVariable_4 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_5 = isApplicableMatch.getObject("uOwnerType");
-		EObject tmpFeature = _localVariable_0;
+		EObject _localVariable_3 = isApplicableMatch.getObject("uOwnerType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_5 = isApplicableMatch.getObject("nd2ne");
+		EObject tmpBodyDeclaration = _localVariable_0;
 		EObject tmpJOwnerType = _localVariable_1;
 		EObject tmpJo2uo = _localVariable_2;
-		EObject tmpNd2ne = _localVariable_3;
-		EObject tmpBodyDeclaration = _localVariable_4;
-		EObject tmpUOwnerType = _localVariable_5;
-		if (tmpFeature instanceof Property) {
-			Property feature = (Property) tmpFeature;
+		EObject tmpUOwnerType = _localVariable_3;
+		EObject tmpFeature = _localVariable_4;
+		EObject tmpNd2ne = _localVariable_5;
+		if (tmpBodyDeclaration instanceof MFieldDefinition) {
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
 			if (tmpJOwnerType instanceof EnumDeclaration) {
 				EnumDeclaration jOwnerType = (EnumDeclaration) tmpJOwnerType;
 				if (tmpJo2uo instanceof ASTNode2Element) {
 					ASTNode2Element jo2uo = (ASTNode2Element) tmpJo2uo;
-					if (tmpNd2ne instanceof ASTNode2Element) {
-						ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
-						if (tmpBodyDeclaration instanceof MFieldDefinition) {
-							MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-							if (tmpUOwnerType instanceof Enumeration) {
-								Enumeration uOwnerType = (Enumeration) tmpUOwnerType;
-								return new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType,
+					if (tmpUOwnerType instanceof Enumeration) {
+						Enumeration uOwnerType = (Enumeration) tmpUOwnerType;
+						if (tmpFeature instanceof Property) {
+							Property feature = (Property) tmpFeature;
+							if (tmpNd2ne instanceof ASTNode2Element) {
+								ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
+								return new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne,
 										isApplicableMatch };
 							}
 						}
@@ -1847,14 +1845,14 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_11_1_performtransformation_blackBBBBBBFBB(
-			Property feature, EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne,
-			MFieldDefinition bodyDeclaration, Enumeration uOwnerType, FieldDec2Property4Enum _this,
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			Property feature, ASTNode2Element nd2ne, FieldDec2Property4Enum _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!jo2uo.equals(nd2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, csp, _this,
+					return new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1867,19 +1865,19 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		Object[] result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding = pattern_FieldDec2Property4Enum_11_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding != null) {
-			Property feature = (Property) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding[0];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding[0];
 			EnumDeclaration jOwnerType = (EnumDeclaration) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding[1];
 			ASTNode2Element jo2uo = (ASTNode2Element) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding[2];
-			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding[3];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding[4];
-			Enumeration uOwnerType = (Enumeration) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding[5];
+			Enumeration uOwnerType = (Enumeration) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding[3];
+			Property feature = (Property) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding[4];
+			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_FieldDec2Property4Enum_11_1_performtransformation_black = pattern_FieldDec2Property4Enum_11_1_performtransformation_blackBBBBBBFBB(
-					feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, _this, isApplicableMatch);
+					bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, _this, isApplicableMatch);
 			if (result_pattern_FieldDec2Property4Enum_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FieldDec2Property4Enum_11_1_performtransformation_black[6];
 
-				return new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, csp, _this,
+				return new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1887,9 +1885,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_11_1_performtransformation_greenBB(
-			EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
 		jOwnerType.getBodyDeclarations().add(bodyDeclaration);
-		return new Object[] { jOwnerType, bodyDeclaration };
+		return new Object[] { bodyDeclaration, jOwnerType };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_11_2_collecttranslatedelements_greenF() {
@@ -1898,26 +1896,26 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject feature, EObject jOwnerType, EObject jo2uo, EObject nd2ne,
-			EObject bodyDeclaration, EObject uOwnerType) {
-		if (!feature.equals(jOwnerType)) {
-			if (!feature.equals(jo2uo)) {
-				if (!feature.equals(nd2ne)) {
-					if (!feature.equals(uOwnerType)) {
-						if (!jOwnerType.equals(jo2uo)) {
-							if (!jOwnerType.equals(nd2ne)) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject jOwnerType, EObject jo2uo,
+			EObject uOwnerType, EObject feature, EObject nd2ne) {
+		if (!bodyDeclaration.equals(jOwnerType)) {
+			if (!bodyDeclaration.equals(jo2uo)) {
+				if (!bodyDeclaration.equals(uOwnerType)) {
+					if (!bodyDeclaration.equals(feature)) {
+						if (!bodyDeclaration.equals(nd2ne)) {
+							if (!jOwnerType.equals(jo2uo)) {
 								if (!jOwnerType.equals(uOwnerType)) {
-									if (!jo2uo.equals(nd2ne)) {
+									if (!jOwnerType.equals(nd2ne)) {
 										if (!jo2uo.equals(uOwnerType)) {
-											if (!nd2ne.equals(uOwnerType)) {
-												if (!bodyDeclaration.equals(feature)) {
-													if (!bodyDeclaration.equals(jOwnerType)) {
-														if (!bodyDeclaration.equals(jo2uo)) {
-															if (!bodyDeclaration.equals(nd2ne)) {
-																if (!bodyDeclaration.equals(uOwnerType)) {
-																	return new Object[] { ruleresult, feature,
-																			jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-																			uOwnerType };
+											if (!jo2uo.equals(nd2ne)) {
+												if (!feature.equals(jOwnerType)) {
+													if (!feature.equals(jo2uo)) {
+														if (!feature.equals(uOwnerType)) {
+															if (!feature.equals(nd2ne)) {
+																if (!nd2ne.equals(uOwnerType)) {
+																	return new Object[] { ruleresult, bodyDeclaration,
+																			jOwnerType, jo2uo, uOwnerType, feature,
+																			nd2ne };
 																}
 															}
 														}
@@ -1937,8 +1935,8 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_11_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject feature, EObject jOwnerType, EObject bodyDeclaration,
-			EObject uOwnerType) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject jOwnerType, EObject uOwnerType,
+			EObject feature) {
 		EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
@@ -1968,15 +1966,15 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 				.setName(bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime);
 		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
 		feature__uOwnerType____datatype.setName(feature__uOwnerType____datatype_name_prime);
-		return new Object[] { ruleresult, feature, jOwnerType, bodyDeclaration, uOwnerType,
+		return new Object[] { ruleresult, bodyDeclaration, jOwnerType, uOwnerType, feature,
 				jOwnerType__bodyDeclaration____bodyDeclarations, bodyDeclaration__jOwnerType____abstractTypeDeclaration,
 				uOwnerType__feature____ownedAttribute, feature__uOwnerType____datatype };
 	}
 
 	public static final void pattern_FieldDec2Property4Enum_11_5_registerobjects_expressionBBBBBBBB(
-			FieldDec2Property4Enum _this, PerformRuleResult ruleresult, EObject feature, EObject jOwnerType,
-			EObject jo2uo, EObject nd2ne, EObject bodyDeclaration, EObject uOwnerType) {
-		_this.registerObjects_BWD(ruleresult, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType);
+			FieldDec2Property4Enum _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject jOwnerType,
+			EObject jo2uo, EObject uOwnerType, EObject feature, EObject nd2ne) {
+		_this.registerObjects_BWD(ruleresult, bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne);
 
 	}
 
@@ -2038,35 +2036,35 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("feature");
-		EObject _localVariable_1 = match.getObject("uOwnerType");
-		EObject tmpFeature = _localVariable_0;
-		EObject tmpUOwnerType = _localVariable_1;
-		if (tmpFeature instanceof Property) {
-			Property feature = (Property) tmpFeature;
-			if (tmpUOwnerType instanceof Enumeration) {
-				Enumeration uOwnerType = (Enumeration) tmpUOwnerType;
-				return new Object[] { feature, uOwnerType, match };
+		EObject _localVariable_0 = match.getObject("uOwnerType");
+		EObject _localVariable_1 = match.getObject("feature");
+		EObject tmpUOwnerType = _localVariable_0;
+		EObject tmpFeature = _localVariable_1;
+		if (tmpUOwnerType instanceof Enumeration) {
+			Enumeration uOwnerType = (Enumeration) tmpUOwnerType;
+			if (tmpFeature instanceof Property) {
+				Property feature = (Property) tmpFeature;
+				return new Object[] { uOwnerType, feature, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4Enum_12_2_corematch_blackBFFFFBB(Property feature,
-			Enumeration uOwnerType, Match match) {
+	public static final Iterable<Object[]> pattern_FieldDec2Property4Enum_12_2_corematch_blackFFFBBFB(
+			Enumeration uOwnerType, Property feature, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(feature,
+		for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uOwnerType,
 				ASTNode2Element.class, "target")) {
-			ASTNode tmpBodyDeclaration = nd2ne.getSource();
-			if (tmpBodyDeclaration instanceof MFieldDefinition) {
-				MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-				for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(uOwnerType, ASTNode2Element.class, "target")) {
+			ASTNode tmpJOwnerType = jo2uo.getSource();
+			if (tmpJOwnerType instanceof EnumDeclaration) {
+				EnumDeclaration jOwnerType = (EnumDeclaration) tmpJOwnerType;
+				for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(feature,
+						ASTNode2Element.class, "target")) {
 					if (!jo2uo.equals(nd2ne)) {
-						ASTNode tmpJOwnerType = jo2uo.getSource();
-						if (tmpJOwnerType instanceof EnumDeclaration) {
-							EnumDeclaration jOwnerType = (EnumDeclaration) tmpJOwnerType;
-							_result.add(new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType,
+						ASTNode tmpBodyDeclaration = nd2ne.getSource();
+						if (tmpBodyDeclaration instanceof MFieldDefinition) {
+							MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+							_result.add(new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne,
 									match });
 						}
 
@@ -2078,18 +2076,18 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4Enum_12_3_findcontext_blackBBBBBB(Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {
+	public static final Iterable<Object[]> pattern_FieldDec2Property4Enum_12_3_findcontext_blackBBBBBB(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			Property feature, ASTNode2Element nd2ne) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!jo2uo.equals(nd2ne)) {
-			if (feature.equals(nd2ne.getTarget())) {
-				if (bodyDeclaration.equals(nd2ne.getSource())) {
-					if (jOwnerType.equals(jo2uo.getSource())) {
-						if (uOwnerType.getOwnedAttributes().contains(feature)) {
-							if (uOwnerType.equals(jo2uo.getTarget())) {
-								_result.add(new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-										uOwnerType });
+			if (uOwnerType.equals(jo2uo.getTarget())) {
+				if (jOwnerType.equals(jo2uo.getSource())) {
+					if (uOwnerType.getOwnedAttributes().contains(feature)) {
+						if (bodyDeclaration.equals(nd2ne.getSource())) {
+							if (feature.equals(nd2ne.getTarget())) {
+								_result.add(new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature,
+										nd2ne });
 							}
 						}
 					}
@@ -2099,34 +2097,31 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_12_3_findcontext_greenBBBBBBFFFFFFF(Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {
+	public static final Object[] pattern_FieldDec2Property4Enum_12_3_findcontext_greenBBBBBBFFFFFFF(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			Property feature, ASTNode2Element nd2ne) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge nd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge nd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jo2uo__uOwnerType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uOwnerType__feature____ownedAttribute = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__uOwnerType____datatype = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jo2uo__uOwnerType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String nd2ne__feature____target_name_prime = "target";
-		String nd2ne__bodyDeclaration____source_name_prime = "source";
+		EMoflonEdge nd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge nd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String jo2uo__uOwnerType____target_name_prime = "target";
 		String jo2uo__jOwnerType____source_name_prime = "source";
 		String uOwnerType__feature____ownedAttribute_name_prime = "ownedAttribute";
 		String feature__uOwnerType____datatype_name_prime = "datatype";
-		String jo2uo__uOwnerType____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(feature);
+		String nd2ne__bodyDeclaration____source_name_prime = "source";
+		String nd2ne__feature____target_name_prime = "target";
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jOwnerType);
 		isApplicableMatch.getAllContextElements().add(jo2uo);
-		isApplicableMatch.getAllContextElements().add(nd2ne);
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(uOwnerType);
-		nd2ne__feature____target.setSrc(nd2ne);
-		nd2ne__feature____target.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(nd2ne__feature____target);
-		nd2ne__bodyDeclaration____source.setSrc(nd2ne);
-		nd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(nd2ne__bodyDeclaration____source);
+		isApplicableMatch.getAllContextElements().add(feature);
+		isApplicableMatch.getAllContextElements().add(nd2ne);
+		jo2uo__uOwnerType____target.setSrc(jo2uo);
+		jo2uo__uOwnerType____target.setTrg(uOwnerType);
+		isApplicableMatch.getAllContextElements().add(jo2uo__uOwnerType____target);
 		jo2uo__jOwnerType____source.setSrc(jo2uo);
 		jo2uo__jOwnerType____source.setTrg(jOwnerType);
 		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
@@ -2136,30 +2131,33 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		feature__uOwnerType____datatype.setSrc(feature);
 		feature__uOwnerType____datatype.setTrg(uOwnerType);
 		isApplicableMatch.getAllContextElements().add(feature__uOwnerType____datatype);
-		jo2uo__uOwnerType____target.setSrc(jo2uo);
-		jo2uo__uOwnerType____target.setTrg(uOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo__uOwnerType____target);
-		nd2ne__feature____target.setName(nd2ne__feature____target_name_prime);
-		nd2ne__bodyDeclaration____source.setName(nd2ne__bodyDeclaration____source_name_prime);
+		nd2ne__bodyDeclaration____source.setSrc(nd2ne);
+		nd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(nd2ne__bodyDeclaration____source);
+		nd2ne__feature____target.setSrc(nd2ne);
+		nd2ne__feature____target.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(nd2ne__feature____target);
+		jo2uo__uOwnerType____target.setName(jo2uo__uOwnerType____target_name_prime);
 		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
 		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
 		feature__uOwnerType____datatype.setName(feature__uOwnerType____datatype_name_prime);
-		jo2uo__uOwnerType____target.setName(jo2uo__uOwnerType____target_name_prime);
-		return new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, isApplicableMatch,
-				nd2ne__feature____target, nd2ne__bodyDeclaration____source, jo2uo__jOwnerType____source,
-				uOwnerType__feature____ownedAttribute, feature__uOwnerType____datatype, jo2uo__uOwnerType____target };
+		nd2ne__bodyDeclaration____source.setName(nd2ne__bodyDeclaration____source_name_prime);
+		nd2ne__feature____target.setName(nd2ne__feature____target_name_prime);
+		return new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, isApplicableMatch,
+				jo2uo__uOwnerType____target, jo2uo__jOwnerType____source, uOwnerType__feature____ownedAttribute,
+				feature__uOwnerType____datatype, nd2ne__bodyDeclaration____source, nd2ne__feature____target };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_12_4_solveCSP_bindingFBBBBBBBB(
-			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne,
-				bodyDeclaration, uOwnerType);
+			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType, Property feature,
+			ASTNode2Element nd2ne) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo,
+				uOwnerType, feature, nd2ne);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-					uOwnerType };
+			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo, uOwnerType,
+					feature, nd2ne };
 		}
 		return null;
 	}
@@ -2169,11 +2167,11 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {
+			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType, Property feature,
+			ASTNode2Element nd2ne) {
 		Object[] result_pattern_FieldDec2Property4Enum_12_4_solveCSP_binding = pattern_FieldDec2Property4Enum_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType);
+				_this, isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne);
 		if (result_pattern_FieldDec2Property4Enum_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4Enum_12_4_solveCSP_binding[0];
 
@@ -2181,8 +2179,8 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 					csp);
 			if (result_pattern_FieldDec2Property4Enum_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-						uOwnerType };
+				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo, uOwnerType,
+						feature, nd2ne };
 			}
 		}
 		return null;
@@ -2280,7 +2278,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			if (tmpFeature instanceof Property) {
 				Property feature = (Property) tmpFeature;
 				if (uOwnerType.getOwnedAttributes().contains(feature)) {
-					_result.add(new Object[] { feature, uOwnerType, _edge_ownedAttribute });
+					_result.add(new Object[] { uOwnerType, feature, _edge_ownedAttribute });
 				}
 			}
 
@@ -2299,8 +2297,8 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final boolean pattern_FieldDec2Property4Enum_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			FieldDec2Property4Enum _this, Match match, Property feature, Enumeration uOwnerType) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, feature, uOwnerType);
+			FieldDec2Property4Enum _this, Match match, Enumeration uOwnerType, Property feature) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, uOwnerType, feature);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2397,7 +2395,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 			if (tmpBodyDeclaration instanceof MFieldDefinition) {
 				MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
 				if (jOwnerType.getBodyDeclarations().contains(bodyDeclaration)) {
-					_result.add(new Object[] { jOwnerType, bodyDeclaration, _edge_bodyDeclarations });
+					_result.add(new Object[] { bodyDeclaration, jOwnerType, _edge_bodyDeclarations });
 				}
 			}
 
@@ -2416,8 +2414,8 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final boolean pattern_FieldDec2Property4Enum_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			FieldDec2Property4Enum _this, Match match, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, jOwnerType, bodyDeclaration);
+			FieldDec2Property4Enum _this, Match match, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, bodyDeclaration, jOwnerType);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2459,26 +2457,26 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
-			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("feature");
+	public static final Object[] pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
+			Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("bodyDeclaration");
 		EObject _localVariable_1 = sourceMatch.getObject("jOwnerType");
-		EObject _localVariable_2 = sourceMatch.getObject("bodyDeclaration");
-		EObject _localVariable_3 = targetMatch.getObject("uOwnerType");
-		EObject tmpFeature = _localVariable_0;
+		EObject _localVariable_2 = targetMatch.getObject("uOwnerType");
+		EObject _localVariable_3 = targetMatch.getObject("feature");
+		EObject tmpBodyDeclaration = _localVariable_0;
 		EObject tmpJOwnerType = _localVariable_1;
-		EObject tmpBodyDeclaration = _localVariable_2;
-		EObject tmpUOwnerType = _localVariable_3;
-		if (tmpFeature instanceof Property) {
-			Property feature = (Property) tmpFeature;
+		EObject tmpUOwnerType = _localVariable_2;
+		EObject tmpFeature = _localVariable_3;
+		if (tmpBodyDeclaration instanceof MFieldDefinition) {
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
 			if (tmpJOwnerType instanceof EnumDeclaration) {
 				EnumDeclaration jOwnerType = (EnumDeclaration) tmpJOwnerType;
-				if (tmpBodyDeclaration instanceof MFieldDefinition) {
-					MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-					if (tmpUOwnerType instanceof Enumeration) {
-						Enumeration uOwnerType = (Enumeration) tmpUOwnerType;
-						return new Object[] { feature, jOwnerType, bodyDeclaration, uOwnerType, targetMatch,
-								sourceMatch };
+				if (tmpUOwnerType instanceof Enumeration) {
+					Enumeration uOwnerType = (Enumeration) tmpUOwnerType;
+					if (tmpFeature instanceof Property) {
+						Property feature = (Property) tmpFeature;
+						return new Object[] { bodyDeclaration, jOwnerType, uOwnerType, feature, sourceMatch,
+								targetMatch };
 					}
 				}
 			}
@@ -2486,11 +2484,11 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return null;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_blackBBBBBB(Property feature,
-			EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Enumeration uOwnerType, Match sourceMatch,
-			Match targetMatch) {
+	public static final Object[] pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_blackBBBBBB(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, Enumeration uOwnerType, Property feature,
+			Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { feature, jOwnerType, bodyDeclaration, uOwnerType, sourceMatch, targetMatch };
+			return new Object[] { bodyDeclaration, jOwnerType, uOwnerType, feature, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2498,31 +2496,31 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	public static final Object[] pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_binding = pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_bindingFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_binding != null) {
-			Property feature = (Property) result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_binding[0];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_binding[0];
 			EnumDeclaration jOwnerType = (EnumDeclaration) result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_binding[1];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_binding[2];
-			Enumeration uOwnerType = (Enumeration) result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_binding[3];
+			Enumeration uOwnerType = (Enumeration) result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_binding[2];
+			Property feature = (Property) result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_black = pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_blackBBBBBB(
-					feature, jOwnerType, bodyDeclaration, uOwnerType, sourceMatch, targetMatch);
+					bodyDeclaration, jOwnerType, uOwnerType, feature, sourceMatch, targetMatch);
 			if (result_pattern_FieldDec2Property4Enum_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { feature, jOwnerType, bodyDeclaration, uOwnerType, sourceMatch, targetMatch };
+				return new Object[] { bodyDeclaration, jOwnerType, uOwnerType, feature, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_24_3_solvecsp_bindingFBBBBBBB(
-			FieldDec2Property4Enum _this, Property feature, EnumDeclaration jOwnerType,
-			MFieldDefinition bodyDeclaration, Enumeration uOwnerType, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(feature, jOwnerType, bodyDeclaration, uOwnerType,
+			FieldDec2Property4Enum _this, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType,
+			Enumeration uOwnerType, Property feature, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(bodyDeclaration, jOwnerType, uOwnerType, feature,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, feature, jOwnerType, bodyDeclaration, uOwnerType, sourceMatch,
+			return new Object[] { csp, _this, bodyDeclaration, jOwnerType, uOwnerType, feature, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2533,10 +2531,10 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			FieldDec2Property4Enum _this, Property feature, EnumDeclaration jOwnerType,
-			MFieldDefinition bodyDeclaration, Enumeration uOwnerType, Match sourceMatch, Match targetMatch) {
+			FieldDec2Property4Enum _this, MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType,
+			Enumeration uOwnerType, Property feature, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_FieldDec2Property4Enum_24_3_solvecsp_binding = pattern_FieldDec2Property4Enum_24_3_solvecsp_bindingFBBBBBBB(
-				_this, feature, jOwnerType, bodyDeclaration, uOwnerType, sourceMatch, targetMatch);
+				_this, bodyDeclaration, jOwnerType, uOwnerType, feature, sourceMatch, targetMatch);
 		if (result_pattern_FieldDec2Property4Enum_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4Enum_24_3_solvecsp_binding[0];
 
@@ -2544,7 +2542,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 					csp);
 			if (result_pattern_FieldDec2Property4Enum_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, feature, jOwnerType, bodyDeclaration, uOwnerType, sourceMatch,
+				return new Object[] { csp, _this, bodyDeclaration, jOwnerType, uOwnerType, feature, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2557,20 +2555,20 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4Enum_24_5_matchcorrcontext_blackBBFFBBBB(
-			Property feature, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Enumeration uOwnerType,
+	public static final Iterable<Object[]> pattern_FieldDec2Property4Enum_24_5_matchcorrcontext_blackBBFBBFBB(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, Enumeration uOwnerType, Property feature,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(feature,
+			for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uOwnerType,
 					ASTNode2Element.class, "target")) {
-				if (bodyDeclaration.equals(nd2ne.getSource())) {
-					for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(jOwnerType, ASTNode2Element.class, "source")) {
+				if (jOwnerType.equals(jo2uo.getSource())) {
+					for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(bodyDeclaration, ASTNode2Element.class, "source")) {
 						if (!jo2uo.equals(nd2ne)) {
-							if (uOwnerType.equals(jo2uo.getTarget())) {
-								_result.add(new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-										uOwnerType, sourceMatch, targetMatch });
+							if (feature.equals(nd2ne.getTarget())) {
+								_result.add(new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature,
+										nd2ne, sourceMatch, targetMatch });
 							}
 						}
 					}
@@ -2592,9 +2590,10 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return new Object[] { jo2uo, nd2ne, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_24_6_createcorrespondence_blackBBBBB(Property feature,
-			EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Enumeration uOwnerType, CCMatch ccMatch) {
-		return new Object[] { feature, jOwnerType, bodyDeclaration, uOwnerType, ccMatch };
+	public static final Object[] pattern_FieldDec2Property4Enum_24_6_createcorrespondence_blackBBBBB(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, Enumeration uOwnerType, Property feature,
+			CCMatch ccMatch) {
+		return new Object[] { bodyDeclaration, jOwnerType, uOwnerType, feature, ccMatch };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_24_7_addtoreturnedresult_blackBB(
@@ -2618,10 +2617,10 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_27_1_matchtggpattern_blackBB(EnumDeclaration jOwnerType,
-			MFieldDefinition bodyDeclaration) {
+	public static final Object[] pattern_FieldDec2Property4Enum_27_1_matchtggpattern_blackBB(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType) {
 		if (jOwnerType.getBodyDeclarations().contains(bodyDeclaration)) {
-			return new Object[] { jOwnerType, bodyDeclaration };
+			return new Object[] { bodyDeclaration, jOwnerType };
 		}
 		return null;
 	}
@@ -2636,10 +2635,10 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_28_1_matchtggpattern_blackBB(Property feature,
-			Enumeration uOwnerType) {
+	public static final Object[] pattern_FieldDec2Property4Enum_28_1_matchtggpattern_blackBB(Enumeration uOwnerType,
+			Property feature) {
 		if (uOwnerType.getOwnedAttributes().contains(feature)) {
-			return new Object[] { feature, uOwnerType };
+			return new Object[] { uOwnerType, feature };
 		}
 		return null;
 	}
@@ -2667,9 +2666,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Property feature) {
-		if (ruleResult.getTargetObjects().contains(feature)) {
-			return new Object[] { ruleResult, feature };
+			ModelgeneratorRuleResult ruleResult, MFieldDefinition bodyDeclaration) {
+		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
+			return new Object[] { ruleResult, bodyDeclaration };
 		}
 		return null;
 	}
@@ -2683,9 +2682,9 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, MFieldDefinition bodyDeclaration) {
-		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
-			return new Object[] { ruleResult, bodyDeclaration };
+			ModelgeneratorRuleResult ruleResult, Property feature) {
+		if (ruleResult.getTargetObjects().contains(feature)) {
+			return new Object[] { ruleResult, feature };
 		}
 		return null;
 	}
@@ -2723,18 +2722,18 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 					for (EObject tmpNd2ne : nd2neList.getEntryObjects()) {
 						if (tmpNd2ne instanceof ASTNode2Element) {
 							ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
-							Element tmpFeature = nd2ne.getTarget();
-							if (tmpFeature instanceof Property) {
-								Property feature = (Property) tmpFeature;
-								ASTNode tmpBodyDeclaration = nd2ne.getSource();
-								if (tmpBodyDeclaration instanceof MFieldDefinition) {
-									MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+							ASTNode tmpBodyDeclaration = nd2ne.getSource();
+							if (tmpBodyDeclaration instanceof MFieldDefinition) {
+								MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+								Element tmpFeature = nd2ne.getTarget();
+								if (tmpFeature instanceof Property) {
+									Property feature = (Property) tmpFeature;
 									if (pattern_FieldDec2Property4Enum_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 											nd2ne) == null) {
 										if (pattern_FieldDec2Property4Enum_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, feature) == null) {
+												ruleResult, bodyDeclaration) == null) {
 											if (pattern_FieldDec2Property4Enum_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, bodyDeclaration) == null) {
+													ruleResult, feature) == null) {
 												for (EObject tmpJo2uo : jo2uoList.getEntryObjects()) {
 													if (tmpJo2uo instanceof ASTNode2Element) {
 														ASTNode2Element jo2uo = (ASTNode2Element) tmpJo2uo;
@@ -2752,7 +2751,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 																			if (pattern_FieldDec2Property4Enum_29_2_isapplicablecore_black_nac_5BB(
 																					ruleResult, uOwnerType) == null) {
 																				_result.add(new Object[] { nd2neList,
-																						feature, nd2ne, bodyDeclaration,
+																						bodyDeclaration, nd2ne, feature,
 																						jo2uoList, jOwnerType, jo2uo,
 																						uOwnerType, ruleEntryContainer,
 																						ruleResult });
@@ -2782,15 +2781,15 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_29_3_solveCSP_bindingFBBBBBBBBB(
-			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne,
-				bodyDeclaration, uOwnerType, ruleResult);
+			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType, Property feature,
+			ASTNode2Element nd2ne, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo,
+				uOwnerType, feature, nd2ne, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-					uOwnerType, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo, uOwnerType,
+					feature, nd2ne, ruleResult };
 		}
 		return null;
 	}
@@ -2800,11 +2799,11 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Enum_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType, ModelgeneratorRuleResult ruleResult) {
+			FieldDec2Property4Enum _this, IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType, Property feature,
+			ASTNode2Element nd2ne, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_FieldDec2Property4Enum_29_3_solveCSP_binding = pattern_FieldDec2Property4Enum_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, ruleResult);
+				_this, isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, ruleResult);
 		if (result_pattern_FieldDec2Property4Enum_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4Enum_29_3_solveCSP_binding[0];
 
@@ -2812,8 +2811,8 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 					csp);
 			if (result_pattern_FieldDec2Property4Enum_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration,
-						uOwnerType, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, jOwnerType, jo2uo, uOwnerType,
+						feature, nd2ne, ruleResult };
 			}
 		}
 		return null;
@@ -2826,26 +2825,26 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_29_5_checknacs_blackBBBBBB(Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType) {
+	public static final Object[] pattern_FieldDec2Property4Enum_29_5_checknacs_blackBBBBBB(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			Property feature, ASTNode2Element nd2ne) {
 		if (!jo2uo.equals(nd2ne)) {
-			return new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType };
+			return new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_29_6_perform_blackBBBBBBB(Property feature,
-			EnumDeclaration jOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne, MFieldDefinition bodyDeclaration,
-			Enumeration uOwnerType, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_FieldDec2Property4Enum_29_6_perform_blackBBBBBBB(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			Property feature, ASTNode2Element nd2ne, ModelgeneratorRuleResult ruleResult) {
 		if (!jo2uo.equals(nd2ne)) {
-			return new Object[] { feature, jOwnerType, jo2uo, nd2ne, bodyDeclaration, uOwnerType, ruleResult };
+			return new Object[] { bodyDeclaration, jOwnerType, jo2uo, uOwnerType, feature, nd2ne, ruleResult };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Enum_29_6_perform_greenBBBBB(Property feature,
-			EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Enumeration uOwnerType,
+	public static final Object[] pattern_FieldDec2Property4Enum_29_6_perform_greenBBBBB(
+			MFieldDefinition bodyDeclaration, EnumDeclaration jOwnerType, Enumeration uOwnerType, Property feature,
 			ModelgeneratorRuleResult ruleResult) {
 		jOwnerType.getBodyDeclarations().add(bodyDeclaration);
 		uOwnerType.getOwnedAttributes().add(feature);
@@ -2854,7 +2853,7 @@ public class FieldDec2Property4EnumImpl extends AbstractRuleImpl implements Fiel
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { feature, jOwnerType, bodyDeclaration, uOwnerType, ruleResult };
+		return new Object[] { bodyDeclaration, jOwnerType, uOwnerType, feature, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_FieldDec2Property4Enum_29_7_expressionFB(

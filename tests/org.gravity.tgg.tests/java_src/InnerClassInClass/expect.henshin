@@ -5,7 +5,7 @@
     <lhs xmi:id="_nMA8sNVoEemhBNF7RBO6rA" name="Lhs">
       <nodes xmi:id="_vHDEMG50Eeqj_LkwUcB67w" incoming="_dWtjwFvBEeup173OY004Hw _EIZ2UFvDEeusLa39wZCfig _EzrA4FvDEeusLa39wZCfig _QUYJEI-6EeuVXpn9yc3Afg _Q-VFAI-6EeuVXpn9yc3Afg" outgoing="_d9srQFvBEeup173OY004Hw">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_vy9H8G50Eeqj_LkwUcB67w" value="&quot;Inner&quot;">
+        <attributes xmi:id="_vy9H8G50Eeqj_LkwUcB67w" value="&quot;Outer$Inner&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
@@ -55,7 +55,7 @@
     <rhs xmi:id="_nMA8sdVoEemhBNF7RBO6rA" name="Rhs">
       <nodes xmi:id="_vHDEMW50Eeqj_LkwUcB67w" incoming="_dWtjwVvBEeup173OY004Hw _EIbrgFvDEeusLa39wZCfig _Ezrn8FvDEeusLa39wZCfig _QUYwII-6EeuVXpn9yc3Afg _Q-VFAY-6EeuVXpn9yc3Afg" outgoing="_d9srQVvBEeup173OY004Hw">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_vy9H8W50Eeqj_LkwUcB67w" value="&quot;Inner&quot;">
+        <attributes xmi:id="_vy9H8W50Eeqj_LkwUcB67w" value="&quot;Outer$Inner&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>

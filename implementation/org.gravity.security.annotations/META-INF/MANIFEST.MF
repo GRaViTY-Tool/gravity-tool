@@ -22,3 +22,4 @@ Bundle-ManifestVersion: 2
 Bundle-Activator: org.gravity.security.annotations.AnnotationsActivator
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .

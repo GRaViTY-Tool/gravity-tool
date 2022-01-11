@@ -679,7 +679,7 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Interface_1(Interface feature) {
+	public EObjectContainer isAppropriate_BWD_Interface_2(Interface feature) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1214,8 +1214,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_1__INTERFACE:
-			return isAppropriate_BWD_Interface_1((Interface) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_2__INTERFACE:
+			return isAppropriate_BWD_Interface_2((Interface) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_FWD_ANNOTATION_TYPE_DECLARATION_0__ANNOTATIONTYPEDECLARATION:
 			return isAppropriate_FWD_AnnotationTypeDeclaration_0((AnnotationTypeDeclaration) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
@@ -2064,8 +2064,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_21_2_testcorematchandDECs_black_nac_0B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_265273 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_265273 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_706031 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_706031 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2275,8 +2275,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_black_nac_0B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_35237 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_35237 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_586272 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_586272 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

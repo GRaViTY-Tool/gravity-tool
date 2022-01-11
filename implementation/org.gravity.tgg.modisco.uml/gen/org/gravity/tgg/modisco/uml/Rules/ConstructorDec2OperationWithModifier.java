@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.modisco.java.Modifier;
 
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Operation;
 
 import org.gravity.modisco.MConstructorDefinition;
@@ -110,7 +111,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
-			EObject bodyDeclaration);
+			EObject bodyDeclaration, EObject comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,7 +127,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Operation feature);
+	boolean isAppropriate_BWD(Match match, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,7 +151,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Operation feature);
+	void registerObjectsToMatch_BWD(Match match, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,7 +159,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature);
+	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,7 +175,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,7 +192,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
-			EObject bodyDeclaration);
+			EObject bodyDeclaration, EObject comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,7 +208,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Operation_3(Operation feature);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_109(EMoflonEdge _edge_ownedComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +216,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_132(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_114(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +249,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(Operation feature, Modifier modifier, MConstructorDefinition bodyDeclaration,
-			Match sourceMatch, Match targetMatch);
+			Comment comment, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,7 +273,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Operation feature);
+	boolean checkDEC_BWD(Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->

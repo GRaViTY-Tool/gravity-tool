@@ -211,6 +211,15 @@ public interface ModiscoFactory extends EFactory {
 	MInitializer createMInitializer();
 
 	/**
+	 * Returns a new object of class '<em>MEnum Constant Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MEnum Constant Declaration</em>'.
+	 * @generated
+	 */
+	MEnumConstantDeclaration createMEnumConstantDeclaration();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

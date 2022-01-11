@@ -4,18 +4,18 @@
   <methods tName="m">
     <signatures returnType="//@ownedTypes.7">
       <paramList/>
-      <definitions incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" definedBy="//@ownedTypes.2" returnType="//@ownedTypes.7">
-        <tAccessing xsi:type="org.gravity.typegraph.basic:TRead" incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" tTarget="//@fields.0/@signatures.0/@definitions.0">
-          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0" flowTarget="//@methods.0/@signatures.0/@definitions.0"/>
-          <ownedFlows flowSource="//@fields.0/@signatures.0" flowTarget="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0"/>
-        </tAccessing>
+      <definitions incomingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.0" definedBy="//@ownedTypes.2" returnType="//@ownedTypes.7">
+        <accessing xsi:type="org.gravity.typegraph.basic:TRead" incomingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.1" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.0" target="//@fields.0/@signatures.0/@definitions.0">
+          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@accessing.0" flowTarget="//@methods.0/@signatures.0/@definitions.0"/>
+          <ownedFlows flowSource="//@fields.0/@signatures.0" flowTarget="//@methods.0/@signatures.0/@definitions.0/@accessing.0"/>
+        </accessing>
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
   <fields tName="a">
-    <signatures outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" type="//@ownedTypes.7">
-      <definitions definedBy="//@ownedTypes.2" accessedBy="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0">
+    <signatures outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.1" type="//@ownedTypes.7">
+      <definitions definedBy="//@ownedTypes.2" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.0">
         <tAnnotation xsi:type="annotations:TTextAnnotation" text="// Secrecy"/>
         <tModifier tVisibility="TPackage"/>
       </definitions>

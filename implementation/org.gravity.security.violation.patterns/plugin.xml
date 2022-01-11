@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SecurityViolationPattern -->
+      <package
+            uri="http://www.gravity-tool.org/security.violation.pattern/violations"
+            class="org.gravity.security.violation.patterns.violations.ViolationsPackage"
+            genModel="model/SecurityViolationPattern.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SecurityViolationPattern -->
+      <parser
+            type="violations"
+            class="org.gravity.security.violation.patterns.violations.util.ViolationsResourceFactoryImpl"/>
+   </extension>
+   <extension
+         point="carisma.carismacheck">
+      <check
+            description="Checks the implementation for compliance reagarding the specified secure dependency requirements."
+            id="org.gravity.security.violation.patterns.securedependency"
+            implementingClass="org.gravity.pm.umlsec.SecurityViolationPattern"
+            name="Secure Dependency ImplementationCompliance"
+            publisher="University of Koblenz-Landau"
+            targetModelType="UML2">
+      </check>
+   </extension>
+
+</plugin>

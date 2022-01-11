@@ -47,31 +47,22 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getPackages
- * <em>Packages</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getMethods
- * <em>Methods</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getFields
- * <em>Fields</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getClasses
- * <em>Classes</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getInterfaces
- * <em>Interfaces</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getOwnedTypes
- * <em>Owned Types</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getTAnnotationTypes
- * <em>TAnnotation Types</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getTName
- * <em>TName</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getPackages <em>Packages</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getMethods <em>Methods</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getClasses <em>Classes</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getInterfaces <em>Interfaces</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getOwnedTypes <em>Owned Types</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getTAnnotationTypes <em>TAnnotation Types</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getTName <em>TName</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
-	 * The cached value of the '{@link #getPackages() <em>Packages</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getPackages() <em>Packages</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPackages()
 	 * @generated
 	 * @ordered
@@ -79,9 +70,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TPackage> packages;
 
 	/**
-	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMethods()
 	 * @generated
 	 * @ordered
@@ -89,9 +79,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TMethod> methods;
 
 	/**
-	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -99,9 +88,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TField> fields;
 
 	/**
-	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getClasses()
 	 * @generated
 	 * @ordered
@@ -109,9 +97,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TClass> classes;
 
 	/**
-	 * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}'
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getInterfaces()
 	 * @generated
 	 * @ordered
@@ -119,9 +106,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TInterface> interfaces;
 
 	/**
-	 * The cached value of the '{@link #getOwnedTypes() <em>Owned Types</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getOwnedTypes() <em>Owned Types</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOwnedTypes()
 	 * @generated
 	 * @ordered
@@ -129,9 +115,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TAbstractType> ownedTypes;
 
 	/**
-	 * The cached value of the '{@link #getTAnnotationTypes() <em>TAnnotation
-	 * Types</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getTAnnotationTypes() <em>TAnnotation Types</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTAnnotationTypes()
 	 * @generated
 	 * @ordered
@@ -160,15 +145,14 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected TypeGraphImpl() {
+		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -178,122 +162,107 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TPackage> getPackages() {
-		if (this.packages == null) {
-			this.packages = new EObjectContainmentEList<>(TPackage.class, this, BasicPackage.TYPE_GRAPH__PACKAGES);
+		if (packages == null) {
+			packages = new EObjectContainmentEList<TPackage>(TPackage.class, this, BasicPackage.TYPE_GRAPH__PACKAGES);
 		}
-		return this.packages;
+		return packages;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TMethod> getMethods() {
-		if (this.methods == null) {
-			this.methods = new EObjectContainmentWithInverseEList<>(TMethod.class, this,
-					BasicPackage.TYPE_GRAPH__METHODS, BasicPackage.TMETHOD__MODEL);
+		if (methods == null) {
+			methods = new EObjectContainmentWithInverseEList<TMethod>(TMethod.class, this, BasicPackage.TYPE_GRAPH__METHODS, BasicPackage.TMETHOD__MODEL);
 		}
-		return this.methods;
+		return methods;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TField> getFields() {
-		if (this.fields == null) {
-			this.fields = new EObjectContainmentWithInverseEList<>(TField.class, this, BasicPackage.TYPE_GRAPH__FIELDS,
-					BasicPackage.TFIELD__MODEL);
+		if (fields == null) {
+			fields = new EObjectContainmentWithInverseEList<TField>(TField.class, this, BasicPackage.TYPE_GRAPH__FIELDS, BasicPackage.TFIELD__MODEL);
 		}
-		return this.fields;
+		return fields;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TClass> getClasses() {
-		if (this.classes == null) {
-			this.classes = new EObjectResolvingEList<>(TClass.class, this, BasicPackage.TYPE_GRAPH__CLASSES);
+		if (classes == null) {
+			classes = new EObjectResolvingEList<TClass>(TClass.class, this, BasicPackage.TYPE_GRAPH__CLASSES);
 		}
-		return this.classes;
+		return classes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TInterface> getInterfaces() {
-		if (this.interfaces == null) {
-			this.interfaces = new EObjectResolvingEList<>(TInterface.class, this, BasicPackage.TYPE_GRAPH__INTERFACES);
+		if (interfaces == null) {
+			interfaces = new EObjectResolvingEList<TInterface>(TInterface.class, this, BasicPackage.TYPE_GRAPH__INTERFACES);
 		}
-		return this.interfaces;
+		return interfaces;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TAbstractType> getOwnedTypes() {
-		if (this.ownedTypes == null) {
-			this.ownedTypes = new EObjectContainmentWithInverseEList<>(TAbstractType.class, this,
-					BasicPackage.TYPE_GRAPH__OWNED_TYPES, BasicPackage.TABSTRACT_TYPE__MODEL);
+		if (ownedTypes == null) {
+			ownedTypes = new EObjectContainmentWithInverseEList<TAbstractType>(TAbstractType.class, this, BasicPackage.TYPE_GRAPH__OWNED_TYPES, BasicPackage.TABSTRACT_TYPE__MODEL);
 		}
-		return this.ownedTypes;
+		return ownedTypes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TAnnotationType> getTAnnotationTypes() {
-		if (this.tAnnotationTypes == null) {
-			this.tAnnotationTypes = new EObjectResolvingEList<>(TAnnotationType.class, this,
-					BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES);
+		if (tAnnotationTypes == null) {
+			tAnnotationTypes = new EObjectResolvingEList<TAnnotationType>(TAnnotationType.class, this, BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES);
 		}
-		return this.tAnnotationTypes;
+		return tAnnotationTypes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String getTName() {
-		return this.tName;
+		return tName;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public void setTName(final String newTName) {
-		final String oldTName = this.tName;
-		this.tName = newTName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TYPE_GRAPH__TNAME, oldTName,
-					this.tName));
-		}
+	public void setTName(String newTName) {
+		String oldTName = tName;
+		tName = newTName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TYPE_GRAPH__TNAME, oldTName, tName));
 	}
 
 	/**
@@ -326,220 +295,211 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
-			final NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMethods()).basicAdd(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFields()).basicAdd(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedTypes()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMethods()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFields()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedTypes()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-			final NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			return ((InternalEList<?>) getPackages()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			return ((InternalEList<?>) getMethods()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
-			return ((InternalEList<?>) getOwnedTypes()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__PACKAGES:
+				return ((InternalEList<?>)getPackages()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
+				return ((InternalEList<?>)getOwnedTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			return getPackages();
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			return getMethods();
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			return getFields();
-		case BasicPackage.TYPE_GRAPH__CLASSES:
-			return getClasses();
-		case BasicPackage.TYPE_GRAPH__INTERFACES:
-			return getInterfaces();
-		case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
-			return getOwnedTypes();
-		case BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES:
-			return getTAnnotationTypes();
-		case BasicPackage.TYPE_GRAPH__TNAME:
-			return getTName();
+			case BasicPackage.TYPE_GRAPH__PACKAGES:
+				return getPackages();
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				return getMethods();
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				return getFields();
+			case BasicPackage.TYPE_GRAPH__CLASSES:
+				return getClasses();
+			case BasicPackage.TYPE_GRAPH__INTERFACES:
+				return getInterfaces();
+			case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
+				return getOwnedTypes();
+			case BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES:
+				return getTAnnotationTypes();
+			case BasicPackage.TYPE_GRAPH__TNAME:
+				return getTName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue) {
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			getPackages().clear();
-			getPackages().addAll((Collection<? extends TPackage>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			getMethods().clear();
-			getMethods().addAll((Collection<? extends TMethod>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			getFields().clear();
-			getFields().addAll((Collection<? extends TField>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__CLASSES:
-			getClasses().clear();
-			getClasses().addAll((Collection<? extends TClass>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__INTERFACES:
-			getInterfaces().clear();
-			getInterfaces().addAll((Collection<? extends TInterface>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
-			getOwnedTypes().clear();
-			getOwnedTypes().addAll((Collection<? extends TAbstractType>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES:
-			getTAnnotationTypes().clear();
-			getTAnnotationTypes().addAll((Collection<? extends TAnnotationType>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__TNAME:
-			setTName((String) newValue);
-			return;
+			case BasicPackage.TYPE_GRAPH__PACKAGES:
+				getPackages().clear();
+				getPackages().addAll((Collection<? extends TPackage>)newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				getMethods().clear();
+				getMethods().addAll((Collection<? extends TMethod>)newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				getFields().clear();
+				getFields().addAll((Collection<? extends TField>)newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__CLASSES:
+				getClasses().clear();
+				getClasses().addAll((Collection<? extends TClass>)newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__INTERFACES:
+				getInterfaces().clear();
+				getInterfaces().addAll((Collection<? extends TInterface>)newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
+				getOwnedTypes().clear();
+				getOwnedTypes().addAll((Collection<? extends TAbstractType>)newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES:
+				getTAnnotationTypes().clear();
+				getTAnnotationTypes().addAll((Collection<? extends TAnnotationType>)newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__TNAME:
+				setTName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID) {
+	public void eUnset(int featureID) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			getPackages().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			getMethods().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			getFields().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__CLASSES:
-			getClasses().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__INTERFACES:
-			getInterfaces().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
-			getOwnedTypes().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES:
-			getTAnnotationTypes().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__TNAME:
-			setTName(TNAME_EDEFAULT);
-			return;
+			case BasicPackage.TYPE_GRAPH__PACKAGES:
+				getPackages().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				getMethods().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				getFields().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__CLASSES:
+				getClasses().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__INTERFACES:
+				getInterfaces().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
+				getOwnedTypes().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES:
+				getTAnnotationTypes().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__TNAME:
+				setTName(TNAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID) {
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			return (this.packages != null) && !this.packages.isEmpty();
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			return (this.methods != null) && !this.methods.isEmpty();
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			return (this.fields != null) && !this.fields.isEmpty();
-		case BasicPackage.TYPE_GRAPH__CLASSES:
-			return (this.classes != null) && !this.classes.isEmpty();
-		case BasicPackage.TYPE_GRAPH__INTERFACES:
-			return (this.interfaces != null) && !this.interfaces.isEmpty();
-		case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
-			return (this.ownedTypes != null) && !this.ownedTypes.isEmpty();
-		case BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES:
-			return (this.tAnnotationTypes != null) && !this.tAnnotationTypes.isEmpty();
-		case BasicPackage.TYPE_GRAPH__TNAME:
-			return TNAME_EDEFAULT == null ? this.tName != null : !TNAME_EDEFAULT.equals(this.tName);
+			case BasicPackage.TYPE_GRAPH__PACKAGES:
+				return packages != null && !packages.isEmpty();
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				return methods != null && !methods.isEmpty();
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				return fields != null && !fields.isEmpty();
+			case BasicPackage.TYPE_GRAPH__CLASSES:
+				return classes != null && !classes.isEmpty();
+			case BasicPackage.TYPE_GRAPH__INTERFACES:
+				return interfaces != null && !interfaces.isEmpty();
+			case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
+				return ownedTypes != null && !ownedTypes.isEmpty();
+			case BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES:
+				return tAnnotationTypes != null && !tAnnotationTypes.isEmpty();
+			case BasicPackage.TYPE_GRAPH__TNAME:
+				return TNAME_EDEFAULT == null ? tName != null : !TNAME_EDEFAULT.equals(tName);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case BasicPackage.TYPE_GRAPH___GET_DECLARED_TCLASSES:
-			return getDeclaredTClasses();
-		case BasicPackage.TYPE_GRAPH___TO_STRING:
-			return toString();
-		case BasicPackage.TYPE_GRAPH___GET_PACKAGE__STRING:
-			return getPackage((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_PACKAGE__ELIST:
-			return getPackage((EList<String>) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_CLASS__STRING:
-			return getClass((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_INTERFACE__STRING:
-			return getInterface((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_METHOD__STRING:
-			return getMethod((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_FIELD__STRING:
-			return getField((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_SIGNATURE__STRING:
-			return getSignature((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_FIELD_SIGNATURE__STRING:
-			return getFieldSignature((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_METHOD_SIGNATURE__STRING:
-			return getMethodSignature((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_DEFINITION__STRING:
-			return getDefinition((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_FIELD_DEFINITION__STRING:
-			return getFieldDefinition((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_METHOD_DEFINITION__STRING:
-			return getMethodDefinition((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___CREATE_PACKAGE__STRING:
-			return createPackage((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_DECLARED_TCLASSES:
+				return getDeclaredTClasses();
+			case BasicPackage.TYPE_GRAPH___TO_STRING:
+				return toString();
+			case BasicPackage.TYPE_GRAPH___GET_PACKAGE__STRING:
+				return getPackage((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_PACKAGE__ELIST:
+				return getPackage((EList<String>)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_CLASS__STRING:
+				return getClass((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_INTERFACE__STRING:
+				return getInterface((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_METHOD__STRING:
+				return getMethod((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_FIELD__STRING:
+				return getField((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_SIGNATURE__STRING:
+				return getSignature((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_FIELD_SIGNATURE__STRING:
+				return getFieldSignature((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_METHOD_SIGNATURE__STRING:
+				return getMethodSignature((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_DEFINITION__STRING:
+				return getDefinition((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_FIELD_DEFINITION__STRING:
+				return getFieldDefinition((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_METHOD_DEFINITION__STRING:
+				return getMethodDefinition((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___CREATE_PACKAGE__STRING:
+				return createPackage((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

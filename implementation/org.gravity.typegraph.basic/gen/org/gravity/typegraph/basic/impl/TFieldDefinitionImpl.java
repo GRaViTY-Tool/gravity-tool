@@ -7,27 +7,22 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
 // <-- [user defined imports]
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>TField Definition</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>TField
+ * Definition</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -41,8 +36,7 @@ import org.gravity.typegraph.basic.TFieldSignature;
 public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinition {
 	/**
 	 * The cached value of the '{@link #getHiding() <em>Hiding</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getHiding()
 	 * @generated
 	 * @ordered
@@ -51,8 +45,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 
 	/**
 	 * The cached value of the '{@link #getHiddenBy() <em>Hidden By</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getHiddenBy()
 	 * @generated
 	 * @ordered
@@ -60,8 +53,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	protected EList<TFieldDefinition> hiddenBy;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TFieldDefinitionImpl() {
@@ -69,8 +61,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -79,8 +70,8 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -89,8 +80,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -107,8 +97,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TFieldDefinition basicGetHiding() {
@@ -116,8 +105,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetHiding(TFieldDefinition newHiding, NotificationChain msgs) {
@@ -131,8 +119,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -151,8 +138,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -164,10 +150,11 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public String getSignatureString() {
 		// [user code injected with eMoflon]
 
@@ -176,8 +163,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -195,8 +181,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -211,8 +196,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -228,8 +212,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -248,8 +231,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -266,8 +248,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -282,8 +263,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -299,10 +279,17 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 
 	@Override
 	public String toString() {
-		String string = super.toString();
-		String name = getSignature().getField().getTName();
-		return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
+		final String string = super.toString();
+		final TFieldSignature signature = getSignature();
+		if (signature != null) {
+			final TField field = signature.getField();
+			if (field != null) {
+				final String name = field.getTName();
+				return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
+			}
+		}
+		return string;
 	}
 
 	// [user code injected with eMoflon] -->
-} //TFieldDefinitionImpl
+} // TFieldDefinitionImpl

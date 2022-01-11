@@ -11,7 +11,7 @@
       </nodes>
       <nodes xmi:id="_LyMuMNPvEem1sfMQQxK1rw" incoming="_Y6AR8NPvEem1sfMQQxK1rw _pszgwNPvEem1sfMQQxK1rw _HN8qcNPwEem1sfMQQxK1rw _SJWBANPwEem1sfMQQxK1rw _SeLBgNPwEem1sfMQQxK1rw" outgoing="_SzbVQNPvEem1sfMQQxK1rw">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_P-WlkNPvEem1sfMQQxK1rw" value="&quot;EBar&quot;">
+        <attributes xmi:id="_P-WlkNPvEem1sfMQQxK1rw" value="&quot;Bar$EBar&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
@@ -100,7 +100,7 @@
       </nodes>
       <nodes xmi:id="_LyNVQNPvEem1sfMQQxK1rw" incoming="_Y6A5ANPvEem1sfMQQxK1rw _ps0H0NPvEem1sfMQQxK1rw _HN9RgNPwEem1sfMQQxK1rw _SJWoENPwEem1sfMQQxK1rw _SeLokNPwEem1sfMQQxK1rw" outgoing="_SzbVQdPvEem1sfMQQxK1rw">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_P-XMoNPvEem1sfMQQxK1rw" value="&quot;EBar&quot;">
+        <attributes xmi:id="_P-XMoNPvEem1sfMQQxK1rw" value="&quot;Bar$EBar&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>

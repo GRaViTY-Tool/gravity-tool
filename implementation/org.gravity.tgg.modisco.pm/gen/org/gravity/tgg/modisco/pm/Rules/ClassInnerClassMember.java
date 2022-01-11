@@ -100,9 +100,9 @@ public interface ClassInnerClassMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, TypeGraph typeGraph,
-			MClass mInnerClass, ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass,
-			TypeToTAbstractType eOuterClassToTOuterClass);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, MClass mInnerClass,
+			TypeGraph typeGraph, ClassDeclaration eOuterClass, TClass tOuterClass,
+			MAbstractMethodDefinition mDefinition, TypeToTAbstractType eOuterClassToTOuterClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,9 +118,10 @@ public interface ClassInnerClassMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tInnerTypeToTInnerAbstractType, EObject tPackage,
-			EObject typeGraph, EObject mInnerClass, EObject eOuterClass, EObject mDefinition, EObject tOuterClass,
-			EObject tInnerClass, EObject eOuterClassToTOuterClass);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject astNodeToAnnotatable,
+			EObject tInnerTypeToTInnerAbstractType, EObject tPackage, EObject mInnerClass, EObject typeGraph,
+			EObject eOuterClass, EObject tOuterClass, EObject mDefinition, EObject tInnerClass,
+			EObject eOuterClassToTOuterClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,7 +189,7 @@ public interface ClassInnerClassMember extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, TypeGraph typeGraph,
-			ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass, TClass tInnerClass,
+			ClassDeclaration eOuterClass, TClass tOuterClass, MAbstractMethodDefinition mDefinition, TClass tInnerClass,
 			TypeToTAbstractType eOuterClassToTOuterClass);
 
 	/**
@@ -205,9 +206,10 @@ public interface ClassInnerClassMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tInnerTypeToTInnerAbstractType, EObject tPackage,
-			EObject typeGraph, EObject mInnerClass, EObject eOuterClass, EObject mDefinition, EObject tOuterClass,
-			EObject tInnerClass, EObject eOuterClassToTOuterClass);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject astNodeToAnnotatable,
+			EObject tInnerTypeToTInnerAbstractType, EObject tPackage, EObject mInnerClass, EObject typeGraph,
+			EObject eOuterClass, EObject tOuterClass, EObject mDefinition, EObject tInnerClass,
+			EObject eOuterClassToTOuterClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +225,7 @@ public interface ClassInnerClassMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_58(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_55(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +233,7 @@ public interface ClassInnerClassMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_61(EMoflonEdge _edge_mInnerTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_57(EMoflonEdge _edge_mInnerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,8 +265,8 @@ public interface ClassInnerClassMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TPackage tPackage, TypeGraph typeGraph, MClass mInnerClass,
-			ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass, TClass tInnerClass,
+	CSP isApplicable_solveCsp_CC(TPackage tPackage, MClass mInnerClass, TypeGraph typeGraph,
+			ClassDeclaration eOuterClass, TClass tOuterClass, MAbstractMethodDefinition mDefinition, TClass tInnerClass,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -307,7 +309,7 @@ public interface ClassInnerClassMember extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, TypeGraph typeGraph,
-			ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass,
+			ClassDeclaration eOuterClass, TClass tOuterClass, MAbstractMethodDefinition mDefinition,
 			TypeToTAbstractType eOuterClassToTOuterClass, ModelgeneratorRuleResult ruleResult);
 
 	/**

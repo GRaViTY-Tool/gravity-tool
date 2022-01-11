@@ -35,7 +35,7 @@ public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 	 * @throws InitializationError
 	 */
 	@Test
-	public void testCSC11() throws InitializationError {
+	public void testCSC11_Success_ExistingParent() throws InitializationError {
 		final TypeGraph pm = getProgramModel();
 
 		final TClass child1 = pm.getClass("hidden.program.one.ChildClass1");
@@ -48,11 +48,11 @@ public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 					+ "\noldPArent="+oldParent);
 		}
 
-		final CreateSuperClassConfiguration pum = new CreateSuperClassConfiguration("hidden.program.one", "NewParent",
+		final CreateSuperClassConfiguration create = new CreateSuperClassConfiguration("hidden.program.one", "NewParent",
 				Arrays.asList(child1, child2));
 		final RefactoringTool tool = new RefactoringTool(pm, false);
 		try {
-			final boolean applicible = tool.applyRefactoring(pum);
+			final boolean applicible = tool.applyRefactoring(create);
 			assertTrue(applicible);
 
 			// Check if the parent implements the signature and the child not
@@ -73,13 +73,14 @@ public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 	 * @throws InitializationError
 	 */
 	@Test
-	public void testCSC12() throws InitializationError {
+	public void testCSC12_Forbid_ParentAlreadyExists() throws InitializationError {
 		final TypeGraph pm = getProgramModel();
 
 		final TClass child1 = pm.getClass("hidden.program.one.ChildClass1");
 		final TClass child2 = pm.getClass("hidden.program.one.ChildClass2");
+		final TClass existing = pm.getClass("hidden.program.one.ExistingClass");
 
-		if((child1 == null) || (child2 == null)) {
+		if((child1 == null) || (child2 == null) || (existing == null)) {
 			throw new InitializationError("Didn't find all child classes:\nchild1="+child1+"\nchild2="+child2);
 		}
 
@@ -90,10 +91,9 @@ public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 			final boolean applicible = tool.applyRefactoring(pum);
 			assertFalse(applicible);
 
-			final TClass existing = pm.getClass("hidden.program.one.ExistingClass");
 			// Check if the parent implements the signature and the child not
-			assertFalse(existing.equals(child1.getParentClasses()));
-			assertFalse(existing.equals(child2.getParentClasses()));
+			assertFalse(child1.getParentClasses().contains(existing));
+			assertFalse(child2.getParentClasses().contains(existing));
 		} catch (final RefactoringFailedException e) {
 			throw new AssertionError(e.getMessage(), e);
 		}
@@ -101,13 +101,18 @@ public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 
 	/**
 	 * description "Have you considered all access relations?."
+	 * @throws InitializationError
 	 */
 	@Test
-	public void testPUM11() {
+	public void testPUM11_Forbid_PreventingAccess() throws InitializationError {
 		final TypeGraph pm = getProgramModel();
 
 		final TClass parent = pm.getClass("hidden.program.one.ParentClass");
 		final TMethodSignature signature = pm.getMethodSignature("method():void");
+
+		if((parent == null) || (signature == null)) {
+			throw new InitializationError("Didn't find all child classes:\nparent="+parent+"\nsignature="+signature);
+		}
 
 		final PullUpMethodConfiguration pum = new PullUpMethodConfiguration(signature, parent);
 		final RefactoringTool tool = new RefactoringTool(pm, false);
@@ -129,12 +134,18 @@ public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 
 	/**
 	 * description "Is every element really existent?"
+	 * @throws InitializationError
 	 */
 	@Test
-	public void testPUM12() {
+	public void testPUM12_Forbid_MethodNotExistent() throws InitializationError {
 		final TypeGraph pm = getProgramModel();
 
 		final TClass parent = pm.getClass("hidden.program.one.ParentClass");
+
+		if(parent == null) {
+			throw new InitializationError("Parent class not found in program model!");
+		}
+
 		final TMethod name = BasicFactory.eINSTANCE.createTMethod();
 		name.setTName("iDontExist");
 		final TMethodSignature signature = BasicFactory.eINSTANCE.createTMethodSignature();

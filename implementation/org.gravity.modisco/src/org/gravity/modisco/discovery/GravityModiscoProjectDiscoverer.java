@@ -247,7 +247,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 				} catch (final IOException e) {
 					LOGGER.error(e);
 				}
-			});
+			}).schedule();
 		} else {
 			throw new DiscoveryException("Discovered modisco model is not of type MGravityModel");
 		}
@@ -394,8 +394,13 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 
 		if (this.discoverer.isApplicableTo(javaProject)) {
 
-			final ElementsToAnalyze analyze = getElementsToAnalyze(javaProject, libs);
-
+			ElementsToAnalyze analyze;
+			try {
+				analyze = getElementsToAnalyze(javaProject, libs);
+			} catch (final JavaModelException e) {
+				throw new DiscoveryException(e);
+			}
+			this.discoverer.setDeepAnalysis(true);
 			this.discoverer.setElementsToAnalyze(analyze);
 
 			this.discoverer.discoverElement(javaProject, monitor);
@@ -424,27 +429,30 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	 * @param project The project to analyze
 	 * @param libs    Additional libraries to consider
 	 * @return The elements to analyze
+	 * @throws JavaModelException
 	 */
-	private ElementsToAnalyze getElementsToAnalyze(final IJavaProject project, final Collection<IPath> libs) {
+	private ElementsToAnalyze getElementsToAnalyze(final IJavaProject project, final Collection<IPath> libs) throws JavaModelException {
 		final ElementsToAnalyze analyze = new ElementsToAnalyze(project);
 		final List<Object> discoverableElements = AbstractDiscoverJavaModelFromProject
 				.computeDiscoverableElements(project);
 
 		for (final Object discoverableObject : discoverableElements) {
-			IPath path;
-			if (discoverableObject instanceof IJavaProject) {
-				final IJavaProject proj = (IJavaProject) discoverableObject;
-				path = proj.getProject().getLocation();
-			} else if (discoverableObject instanceof IPackageFragmentRoot) {
-				final IPackageFragmentRoot root = (IPackageFragmentRoot) discoverableObject;
-				path = root.getPath();
+			IPackageFragmentRoot root;
+			IResource resource;
+			if (discoverableObject instanceof IPackageFragmentRoot) {
+				root = (IPackageFragmentRoot) discoverableObject;
 			} else {
 				continue;
 			}
-
-			for (final IPath libPath : libs) {
-				if (libPath.isPrefixOf(path)) {
-					analyze.addElementToDiscover(discoverableObject);
+			resource = root.getResource();
+			if (resource != null) {
+				for (final IPath libPath : libs) {
+					if (libPath.isAbsolute() ? libPath.equals(resource.getLocation()) : libPath.equals(resource.getProjectRelativePath())) {
+						analyze.addElementToDiscover(discoverableObject);
+						if(root.getSourceAttachmentPath() != null) {
+							analyze.getDiscoveryOptions(discoverableObject).put("USE_SOURCES", true);
+						}
+					}
 				}
 			}
 		}

@@ -1,27 +1,19 @@
 package org.gravity.pm.umlsec;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.emf.henshin.interpreter.EGraph;
-import org.eclipse.emf.henshin.interpreter.Engine;
-import org.eclipse.emf.henshin.interpreter.Match;
-import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
-import org.eclipse.emf.henshin.interpreter.impl.EngineImpl;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Model;
@@ -47,6 +39,7 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TypeGraph;
+import org.junit.Test;
 import org.moflon.tgg.runtime.CorrespondenceModel;
 import org.moflon.tgg.runtime.RuntimeFactory;
 
@@ -64,43 +57,35 @@ public class PatternTest {
 	private CorrespondenceModel corr;
 	private Profile umlsec;
 
-	public static void main(final String[] args) throws IOException {
-		final var execution = new PatternTest();
-		generateCompliantModel(execution);
-		execution.detect();
-
-		generateViolatingModel(execution);
-		execution.detect();
-
+	/**
+	 * Generates a compliant model and tests if no violation is detected
+	 * @throws IOException
+	 */
+	@Test
+	public void testCompliantModel() throws IOException {
+		generateCompliantModel();
+		final var matches = new SecurityViolationPattern(this.corr).detect();
+		assertTrue(matches.isEmpty());
 	}
 
-	private List<Match> detect() {
-		final List<EObject> umlContents = this.uml.eResource().getContents();
-		final List<EObject> roots = new ArrayList<>(umlContents.size() + 2);
-		roots.add(this.pm);
-		roots.add(this.corr);
-		roots.addAll(umlContents);
-		final EGraph graph = new EGraphImpl(roots);
-		final var module = set.getModule(new File("SecureDependency.henshin").getAbsolutePath());
-		final var rule = module.getAllRules().get(0);
-
-		rule.getLhs().getNodes().forEach(n -> assertFalse(n.getType().eIsProxy()));
-
-		final Engine engine = new EngineImpl("org.gravity.pm.umlsec.SignatureHelper");
-		final List<Match> matches = new LinkedList<>();
-		for (final Match m : engine.findMatches(rule, graph, null)) {
-			System.out.println(m);
-			matches.add(m);
-		}
-		return matches;
+	/**
+	 * Generates a violating model and tests if the violation is detected
+	 * @throws IOException
+	 */
+	@Test
+	public void testViolatingModel() throws IOException {
+		generateViolatingModel();
+		final var matches =  new SecurityViolationPattern(this.corr).detect();
+		assertFalse(matches.isEmpty());
 	}
-	private static void generateViolatingModel(final PatternTest execution) throws IOException {
+
+	private void generateViolatingModel() throws IOException {
 		final var id = "violating";
-		execution.createBaseModel(id);
+		createBaseModel(id);
 
-		final var critical = execution.umlsec.getOwnedStereotype("critical");
+		final var critical = this.umlsec.getOwnedStereotype("critical");
 
-		final var root = execution.uml.getNestedPackage(id);
+		final var root = this.uml.getNestedPackage(id);
 		final var supplier = (Class) root.getOwnedType("Supplier");
 		final var client = (Class) root.getOwnedType("Client");
 
@@ -110,15 +95,15 @@ public class PatternTest {
 		((critical) supplier.applyStereotype(critical)).getSecrecy().add(name);
 		//		((critical) client.applyStereotype(critical)).getSecrecy().add(signature);
 
-		execution.save();
+		save();
 	}
-	private static void generateCompliantModel(final PatternTest execution) throws IOException {
+	private void generateCompliantModel() throws IOException {
 		final var id = "compliant";
-		execution.createBaseModel(id);
+		createBaseModel(id);
 
-		final var critical = execution.umlsec.getOwnedStereotype("critical");
+		final var critical = this.umlsec.getOwnedStereotype("critical");
 
-		final var root = execution.uml.getNestedPackage(id);
+		final var root = this.uml.getNestedPackage(id);
 		final var supplier = (Class) root.getOwnedType("Supplier");
 		final var client = (Class) root.getOwnedType("Client");
 
@@ -128,7 +113,7 @@ public class PatternTest {
 		((critical) supplier.applyStereotype(critical)).getSecrecy().add(name);
 		((critical) client.applyStereotype(critical)).getSecrecy().add(name);
 
-		execution.save();
+		save();
 	}
 
 	private void createBaseModel(final String id) {

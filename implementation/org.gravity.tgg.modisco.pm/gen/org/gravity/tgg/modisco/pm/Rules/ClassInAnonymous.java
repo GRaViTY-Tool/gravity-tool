@@ -11,6 +11,7 @@ import org.gravity.modisco.MClass;
 import org.gravity.tgg.modisco.pm.AnonymousClassDeclarationToTClass;
 
 import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 
 import org.moflon.tgg.language.csp.CSP;
@@ -97,8 +98,8 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TClass tClass, MClass mNestedType, TypeGraph pg,
-			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TClass tClass, MClass mNestedType,
+			TPackage tPackage, TypeGraph pg, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
 			AnonymousClassDeclaration eAnonymousClassDeclaration);
 
 	/**
@@ -115,9 +116,10 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg,
-			EObject mbodyToTAnnotatable, EObject tNestedType, EObject eAnonymousClassDeclarationToTClass,
-			EObject mNestedTypeToTNestedType, EObject eAnonymousClassDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType,
+			EObject mASTNodeToAnnotatable, EObject tPackage, EObject pg, EObject tNestedType,
+			EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
+			EObject mNestedTypeToTNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,7 +135,7 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TClass tClass, TypeGraph pg, TClass tNestedType);
+	boolean isAppropriate_BWD(Match match, TClass tClass, TPackage tPackage, TypeGraph pg, TClass tNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,7 +159,7 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TClass tClass, TypeGraph pg, TClass tNestedType);
+	void registerObjectsToMatch_BWD(Match match, TClass tClass, TPackage tPackage, TypeGraph pg, TClass tNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,7 +167,7 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TClass tClass, TypeGraph pg, TClass tNestedType);
+	CSP isAppropriate_solveCsp_BWD(Match match, TClass tClass, TPackage tPackage, TypeGraph pg, TClass tNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,8 +183,8 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, TypeGraph pg, TClass tNestedType,
-			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, TPackage tPackage, TypeGraph pg,
+			TClass tNestedType, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
 			AnonymousClassDeclaration eAnonymousClassDeclaration);
 
 	/**
@@ -199,9 +201,10 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType, EObject pg,
-			EObject mbodyToTAnnotatable, EObject tNestedType, EObject eAnonymousClassDeclarationToTClass,
-			EObject mNestedTypeToTNestedType, EObject eAnonymousClassDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType,
+			EObject mASTNodeToAnnotatable, EObject tPackage, EObject pg, EObject tNestedType,
+			EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
+			EObject mNestedTypeToTNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,7 +220,7 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_35(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_83(EMoflonEdge _edge_innerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +228,7 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_37(EMoflonEdge _edge_anonymousClassDeclarationOwner);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_86(EMoflonEdge _edge_anonymousClassDeclarationOwner);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +260,7 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TClass tClass, MClass mNestedType, TypeGraph pg, TClass tNestedType,
+	CSP isApplicable_solveCsp_CC(TClass tClass, MClass mNestedType, TPackage tPackage, TypeGraph pg, TClass tNestedType,
 			AnonymousClassDeclaration eAnonymousClassDeclaration, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -282,7 +285,7 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TClass tClass, TypeGraph pg, TClass tNestedType);
+	boolean checkDEC_BWD(TClass tClass, TPackage tPackage, TypeGraph pg, TClass tNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -299,7 +302,7 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, TypeGraph pg,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, TPackage tPackage, TypeGraph pg,
 			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
 			AnonymousClassDeclaration eAnonymousClassDeclaration, ModelgeneratorRuleResult ruleResult);
 

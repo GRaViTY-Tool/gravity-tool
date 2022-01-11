@@ -173,10 +173,10 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result1_bindingAndBlack[0];
-		TypeAccess typeAccess = (TypeAccess) result1_bindingAndBlack[1];
-		Type jType = (Type) result1_bindingAndBlack[2];
-		ASTNode2Element ne2ne1 = (ASTNode2Element) result1_bindingAndBlack[3];
+		ASTNode2Element ne2ne1 = (ASTNode2Element) result1_bindingAndBlack[0];
+		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result1_bindingAndBlack[1];
+		TypeAccess typeAccess = (TypeAccess) result1_bindingAndBlack[2];
+		Type jType = (Type) result1_bindingAndBlack[3];
 		ArrayType arrayType = (ArrayType) result1_bindingAndBlack[4];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = ArrayType2NonArrayTypeImpl
@@ -184,36 +184,36 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		ASTNode2Element ne2ne2 = (ASTNode2Element) result1_green[1];
 
 		Object[] result2_black = ArrayType2NonArrayTypeImpl
-				.pattern_ArrayType2NonArrayType_1_2_collecttranslatedelements_blackBBB(ne2ne2, typeAccess, arrayType);
+				.pattern_ArrayType2NonArrayType_1_2_collecttranslatedelements_blackBBB(typeAccess, ne2ne2, arrayType);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ne2ne2] = " + ne2ne2 + ", "
-					+ "[typeAccess] = " + typeAccess + ", " + "[arrayType] = " + arrayType + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[typeAccess] = " + typeAccess
+					+ ", " + "[ne2ne2] = " + ne2ne2 + ", " + "[arrayType] = " + arrayType + ".");
 		}
 		Object[] result2_green = ArrayType2NonArrayTypeImpl
-				.pattern_ArrayType2NonArrayType_1_2_collecttranslatedelements_greenFBBB(ne2ne2, typeAccess, arrayType);
+				.pattern_ArrayType2NonArrayType_1_2_collecttranslatedelements_greenFBBB(typeAccess, ne2ne2, arrayType);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ArrayType2NonArrayTypeImpl
-				.pattern_ArrayType2NonArrayType_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, uType, ne2ne2,
-						typeAccess, jType, ne2ne1, arrayType);
+				.pattern_ArrayType2NonArrayType_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, ne2ne1, uType,
+						typeAccess, ne2ne2, jType, arrayType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[uType] = " + uType + ", " + "[ne2ne2] = " + ne2ne2 + ", " + "[typeAccess] = "
-					+ typeAccess + ", " + "[jType] = " + jType + ", " + "[ne2ne1] = " + ne2ne1 + ", " + "[arrayType] = "
+					+ ", " + "[ne2ne1] = " + ne2ne1 + ", " + "[uType] = " + uType + ", " + "[typeAccess] = "
+					+ typeAccess + ", " + "[ne2ne2] = " + ne2ne2 + ", " + "[jType] = " + jType + ", " + "[arrayType] = "
 					+ arrayType + ".");
 		}
 		ArrayType2NonArrayTypeImpl.pattern_ArrayType2NonArrayType_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult,
-				uType, ne2ne2, typeAccess, jType, arrayType);
-		//nothing EMoflonEdge ne2ne2__uType____target = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge ne2ne2__arrayType____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[9];
+				uType, typeAccess, ne2ne2, jType, arrayType);
+		//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge ne2ne2__uType____target = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge ne2ne2__arrayType____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge arrayType__typeAccess____elementType = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		ArrayType2NonArrayTypeImpl.pattern_ArrayType2NonArrayType_1_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, uType, ne2ne2, typeAccess, jType, ne2ne1, arrayType);
+				ruleresult, ne2ne1, uType, typeAccess, ne2ne2, jType, arrayType);
 		return ArrayType2NonArrayTypeImpl.pattern_ArrayType2NonArrayType_1_6_expressionFB(ruleresult);
 	}
 
@@ -246,31 +246,31 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		Type jType = (Type) result2_binding[1];
 		ArrayType arrayType = (ArrayType) result2_binding[2];
 		for (Object[] result2_black : ArrayType2NonArrayTypeImpl
-				.pattern_ArrayType2NonArrayType_2_2_corematch_blackFBBFBB(typeAccess, jType, arrayType, match)) {
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[0];
-			ASTNode2Element ne2ne1 = (ASTNode2Element) result2_black[3];
+				.pattern_ArrayType2NonArrayType_2_2_corematch_blackFFBBBB(typeAccess, jType, arrayType, match)) {
+			ASTNode2Element ne2ne1 = (ASTNode2Element) result2_black[0];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[1];
 			// ForEach 
 			for (Object[] result3_black : ArrayType2NonArrayTypeImpl
-					.pattern_ArrayType2NonArrayType_2_3_findcontext_blackBBBBB(uType, typeAccess, jType, ne2ne1,
+					.pattern_ArrayType2NonArrayType_2_3_findcontext_blackBBBBB(ne2ne1, uType, typeAccess, jType,
 							arrayType)) {
 				Object[] result3_green = ArrayType2NonArrayTypeImpl
-						.pattern_ArrayType2NonArrayType_2_3_findcontext_greenBBBBBFFFFFF(uType, typeAccess, jType,
-								ne2ne1, arrayType);
+						.pattern_ArrayType2NonArrayType_2_3_findcontext_greenBBBBBFFFFFF(ne2ne1, uType, typeAccess,
+								jType, arrayType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
-				//nothing EMoflonEdge ne2ne1__uType____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge ne2ne1__jType____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge ne2ne1__uType____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge ne2ne1__jType____source = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge arrayType__typeAccess____elementType = (EMoflonEdge) result3_green[10];
 
 				Object[] result4_bindingAndBlack = ArrayType2NonArrayTypeImpl
 						.pattern_ArrayType2NonArrayType_2_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
-								uType, typeAccess, jType, ne2ne1, arrayType);
+								ne2ne1, uType, typeAccess, jType, arrayType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uType] = " + uType + ", "
-							+ "[typeAccess] = " + typeAccess + ", " + "[jType] = " + jType + ", " + "[ne2ne1] = "
-							+ ne2ne1 + ", " + "[arrayType] = " + arrayType + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[ne2ne1] = " + ne2ne1 + ", "
+							+ "[uType] = " + uType + ", " + "[typeAccess] = " + typeAccess + ", " + "[jType] = " + jType
+							+ ", " + "[arrayType] = " + arrayType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -341,8 +341,8 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			TypeAccess typeAccess, Type jType, ASTNode2Element ne2ne1, ArrayType arrayType) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType, ArrayType arrayType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -357,10 +357,10 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("ne2ne1", ne2ne1);
 		isApplicableMatch.registerObject("uType", uType);
 		isApplicableMatch.registerObject("typeAccess", typeAccess);
 		isApplicableMatch.registerObject("jType", jType);
-		isApplicableMatch.registerObject("ne2ne1", ne2ne1);
 		isApplicableMatch.registerObject("arrayType", arrayType);
 		return csp;
 	}
@@ -379,13 +379,13 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject uType, EObject ne2ne2, EObject typeAccess,
-			EObject jType, EObject ne2ne1, EObject arrayType) {
-		ruleresult.registerObject("uType", uType);
-		ruleresult.registerObject("ne2ne2", ne2ne2);
-		ruleresult.registerObject("typeAccess", typeAccess);
-		ruleresult.registerObject("jType", jType);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject ne2ne1, EObject uType, EObject typeAccess,
+			EObject ne2ne2, EObject jType, EObject arrayType) {
 		ruleresult.registerObject("ne2ne1", ne2ne1);
+		ruleresult.registerObject("uType", uType);
+		ruleresult.registerObject("typeAccess", typeAccess);
+		ruleresult.registerObject("ne2ne2", ne2ne2);
+		ruleresult.registerObject("jType", jType);
 		ruleresult.registerObject("arrayType", arrayType);
 
 	}
@@ -585,7 +585,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_140(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_134(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = ArrayType2NonArrayTypeImpl
 				.pattern_ArrayType2NonArrayType_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -738,9 +738,9 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		if (ArrayType2NonArrayTypeImpl.pattern_ArrayType2NonArrayType_21_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : ArrayType2NonArrayTypeImpl
-					.pattern_ArrayType2NonArrayType_21_5_matchcorrcontext_blackBBFBB(uType, jType, sourceMatch,
+					.pattern_ArrayType2NonArrayType_21_5_matchcorrcontext_blackFBBBB(uType, jType, sourceMatch,
 							targetMatch)) {
-				ASTNode2Element ne2ne1 = (ASTNode2Element) result5_black[2];
+				ASTNode2Element ne2ne1 = (ASTNode2Element) result5_black[0];
 				Object[] result5_green = ArrayType2NonArrayTypeImpl
 						.pattern_ArrayType2NonArrayType_21_5_matchcorrcontext_greenBBBF(ne2ne1, sourceMatch,
 								targetMatch);
@@ -857,17 +857,17 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		for (Object[] result2_black : ArrayType2NonArrayTypeImpl
 				.pattern_ArrayType2NonArrayType_26_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList ne2ne1List = (RuleEntryList) result2_black[0];
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[1];
-			ASTNode2Element ne2ne1 = (ASTNode2Element) result2_black[2];
+			ASTNode2Element ne2ne1 = (ASTNode2Element) result2_black[1];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[2];
 			Type jType = (Type) result2_black[3];
 
 			Object[] result3_bindingAndBlack = ArrayType2NonArrayTypeImpl
-					.pattern_ArrayType2NonArrayType_26_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, uType,
-							jType, ne2ne1, ruleResult);
+					.pattern_ArrayType2NonArrayType_26_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
+							ne2ne1, uType, jType, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uType] = " + uType + ", "
-						+ "[jType] = " + jType + ", " + "[ne2ne1] = " + ne2ne1 + ", " + "[ruleResult] = " + ruleResult
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[ne2ne1] = " + ne2ne1 + ", "
+						+ "[uType] = " + uType + ", " + "[jType] = " + jType + ", " + "[ruleResult] = " + ruleResult
 						+ ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -875,20 +875,20 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 			if (ArrayType2NonArrayTypeImpl.pattern_ArrayType2NonArrayType_26_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = ArrayType2NonArrayTypeImpl
-						.pattern_ArrayType2NonArrayType_26_5_checknacs_blackBBB(uType, jType, ne2ne1);
+						.pattern_ArrayType2NonArrayType_26_5_checknacs_blackBBB(ne2ne1, uType, jType);
 				if (result5_black != null) {
 
 					Object[] result6_black = ArrayType2NonArrayTypeImpl
-							.pattern_ArrayType2NonArrayType_26_6_perform_blackBBBB(uType, jType, ne2ne1, ruleResult);
+							.pattern_ArrayType2NonArrayType_26_6_perform_blackBBBB(ne2ne1, uType, jType, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uType] = " + uType
-								+ ", " + "[jType] = " + jType + ", " + "[ne2ne1] = " + ne2ne1 + ", " + "[ruleResult] = "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ne2ne1] = " + ne2ne1
+								+ ", " + "[uType] = " + uType + ", " + "[jType] = " + jType + ", " + "[ruleResult] = "
 								+ ruleResult + ".");
 					}
 					ArrayType2NonArrayTypeImpl.pattern_ArrayType2NonArrayType_26_6_perform_greenBFFBFB(uType, jType,
 							ruleResult);
-					//nothing ASTNode2Element ne2ne2 = (ASTNode2Element) result6_green[1];
-					//nothing TypeAccess typeAccess = (TypeAccess) result6_green[2];
+					//nothing TypeAccess typeAccess = (TypeAccess) result6_green[1];
+					//nothing ASTNode2Element ne2ne2 = (ASTNode2Element) result6_green[2];
 					//nothing ArrayType arrayType = (ArrayType) result6_green[4];
 
 				} else {
@@ -906,8 +906,8 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			Type jType, ASTNode2Element ne2ne1, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, Type jType, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -922,9 +922,9 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("ne2ne1", ne2ne1);
 		isApplicableMatch.registerObject("uType", uType);
 		isApplicableMatch.registerObject("jType", jType);
-		isApplicableMatch.registerObject("ne2ne1", ne2ne1);
 		return csp;
 	}
 
@@ -961,10 +961,10 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 					(Type) arguments.get(2), (ArrayType) arguments.get(3));
 		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPE_TYPEACCESS_TYPE_ASTNODE2ELEMENT_ARRAYTYPE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Type) arguments.get(1), (TypeAccess) arguments.get(2),
-					(Type) arguments.get(3), (ASTNode2Element) arguments.get(4), (ArrayType) arguments.get(5));
+		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_TYPE_TYPEACCESS_TYPE_ARRAYTYPE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(org.eclipse.uml2.uml.Type) arguments.get(2), (TypeAccess) arguments.get(3),
+					(Type) arguments.get(4), (ArrayType) arguments.get(5));
 		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -991,8 +991,8 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 			return checkTypes_BWD((Match) arguments.get(0));
 		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPROPRIATE_BWD_TYPE_0__TYPE:
 			return isAppropriate_BWD_Type_0((org.eclipse.uml2.uml.Type) arguments.get(0));
-		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_140__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_140((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_134__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_134((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1011,10 +1011,10 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 			return checkDEC_BWD((org.eclipse.uml2.uml.Type) arguments.get(0));
 		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1));
-		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPE_TYPE_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Type) arguments.get(1), (Type) arguments.get(2),
-					(ASTNode2Element) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_TYPE_TYPE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(org.eclipse.uml2.uml.Type) arguments.get(2), (Type) arguments.get(3),
+					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.ARRAY_TYPE2_NON_ARRAY_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1133,27 +1133,27 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_1_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("uType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("typeAccess");
-		EObject _localVariable_2 = isApplicableMatch.getObject("jType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("ne2ne1");
+		EObject _localVariable_0 = isApplicableMatch.getObject("ne2ne1");
+		EObject _localVariable_1 = isApplicableMatch.getObject("uType");
+		EObject _localVariable_2 = isApplicableMatch.getObject("typeAccess");
+		EObject _localVariable_3 = isApplicableMatch.getObject("jType");
 		EObject _localVariable_4 = isApplicableMatch.getObject("arrayType");
-		EObject tmpUType = _localVariable_0;
-		EObject tmpTypeAccess = _localVariable_1;
-		EObject tmpJType = _localVariable_2;
-		EObject tmpNe2ne1 = _localVariable_3;
+		EObject tmpNe2ne1 = _localVariable_0;
+		EObject tmpUType = _localVariable_1;
+		EObject tmpTypeAccess = _localVariable_2;
+		EObject tmpJType = _localVariable_3;
 		EObject tmpArrayType = _localVariable_4;
-		if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-			if (tmpTypeAccess instanceof TypeAccess) {
-				TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
-				if (tmpJType instanceof Type) {
-					Type jType = (Type) tmpJType;
-					if (tmpNe2ne1 instanceof ASTNode2Element) {
-						ASTNode2Element ne2ne1 = (ASTNode2Element) tmpNe2ne1;
+		if (tmpNe2ne1 instanceof ASTNode2Element) {
+			ASTNode2Element ne2ne1 = (ASTNode2Element) tmpNe2ne1;
+			if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+				org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
+				if (tmpTypeAccess instanceof TypeAccess) {
+					TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
+					if (tmpJType instanceof Type) {
+						Type jType = (Type) tmpJType;
 						if (tmpArrayType instanceof ArrayType) {
 							ArrayType arrayType = (ArrayType) tmpArrayType;
-							return new Object[] { uType, typeAccess, jType, ne2ne1, arrayType, isApplicableMatch };
+							return new Object[] { ne2ne1, uType, typeAccess, jType, arrayType, isApplicableMatch };
 						}
 					}
 				}
@@ -1163,13 +1163,13 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_1_1_performtransformation_blackBBBBBFBB(
-			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType, ASTNode2Element ne2ne1,
+			ASTNode2Element ne2ne1, org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType,
 			ArrayType arrayType, ArrayType2NonArrayType _this, IsApplicableMatch isApplicableMatch) {
 		if (!arrayType.equals(jType)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { uType, typeAccess, jType, ne2ne1, arrayType, csp, _this, isApplicableMatch };
+					return new Object[] { ne2ne1, uType, typeAccess, jType, arrayType, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1181,18 +1181,18 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		Object[] result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding = pattern_ArrayType2NonArrayType_1_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding != null) {
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding[0];
-			TypeAccess typeAccess = (TypeAccess) result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding[1];
-			Type jType = (Type) result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding[2];
-			ASTNode2Element ne2ne1 = (ASTNode2Element) result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding[3];
+			ASTNode2Element ne2ne1 = (ASTNode2Element) result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding[0];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding[1];
+			TypeAccess typeAccess = (TypeAccess) result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding[2];
+			Type jType = (Type) result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding[3];
 			ArrayType arrayType = (ArrayType) result_pattern_ArrayType2NonArrayType_1_1_performtransformation_binding[4];
 
 			Object[] result_pattern_ArrayType2NonArrayType_1_1_performtransformation_black = pattern_ArrayType2NonArrayType_1_1_performtransformation_blackBBBBBFBB(
-					uType, typeAccess, jType, ne2ne1, arrayType, _this, isApplicableMatch);
+					ne2ne1, uType, typeAccess, jType, arrayType, _this, isApplicableMatch);
 			if (result_pattern_ArrayType2NonArrayType_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_ArrayType2NonArrayType_1_1_performtransformation_black[5];
 
-				return new Object[] { uType, typeAccess, jType, ne2ne1, arrayType, csp, _this, isApplicableMatch };
+				return new Object[] { ne2ne1, uType, typeAccess, jType, arrayType, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1207,39 +1207,39 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_1_2_collecttranslatedelements_blackBBB(
-			ASTNode2Element ne2ne2, TypeAccess typeAccess, ArrayType arrayType) {
-		return new Object[] { ne2ne2, typeAccess, arrayType };
+			TypeAccess typeAccess, ASTNode2Element ne2ne2, ArrayType arrayType) {
+		return new Object[] { typeAccess, ne2ne2, arrayType };
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_1_2_collecttranslatedelements_greenFBBB(
-			ASTNode2Element ne2ne2, TypeAccess typeAccess, ArrayType arrayType) {
+			TypeAccess typeAccess, ASTNode2Element ne2ne2, ArrayType arrayType) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(ne2ne2);
 		ruleresult.getTranslatedElements().add(typeAccess);
+		ruleresult.getCreatedLinkElements().add(ne2ne2);
 		ruleresult.getTranslatedElements().add(arrayType);
-		return new Object[] { ruleresult, ne2ne2, typeAccess, arrayType };
+		return new Object[] { ruleresult, typeAccess, ne2ne2, arrayType };
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject uType, EObject ne2ne2, EObject typeAccess, EObject jType,
-			EObject ne2ne1, EObject arrayType) {
-		if (!ne2ne2.equals(uType)) {
-			if (!ne2ne2.equals(typeAccess)) {
-				if (!typeAccess.equals(uType)) {
-					if (!jType.equals(uType)) {
-						if (!jType.equals(ne2ne2)) {
-							if (!jType.equals(typeAccess)) {
+			PerformRuleResult ruleresult, EObject ne2ne1, EObject uType, EObject typeAccess, EObject ne2ne2,
+			EObject jType, EObject arrayType) {
+		if (!ne2ne1.equals(uType)) {
+			if (!ne2ne1.equals(typeAccess)) {
+				if (!ne2ne1.equals(ne2ne2)) {
+					if (!typeAccess.equals(uType)) {
+						if (!ne2ne2.equals(uType)) {
+							if (!ne2ne2.equals(typeAccess)) {
 								if (!jType.equals(ne2ne1)) {
-									if (!ne2ne1.equals(uType)) {
-										if (!ne2ne1.equals(ne2ne2)) {
-											if (!ne2ne1.equals(typeAccess)) {
-												if (!arrayType.equals(uType)) {
-													if (!arrayType.equals(ne2ne2)) {
+									if (!jType.equals(uType)) {
+										if (!jType.equals(typeAccess)) {
+											if (!jType.equals(ne2ne2)) {
+												if (!arrayType.equals(ne2ne1)) {
+													if (!arrayType.equals(uType)) {
 														if (!arrayType.equals(typeAccess)) {
-															if (!arrayType.equals(jType)) {
-																if (!arrayType.equals(ne2ne1)) {
-																	return new Object[] { ruleresult, uType, ne2ne2,
-																			typeAccess, jType, ne2ne1, arrayType };
+															if (!arrayType.equals(ne2ne2)) {
+																if (!arrayType.equals(jType)) {
+																	return new Object[] { ruleresult, ne2ne1, uType,
+																			typeAccess, ne2ne2, jType, arrayType };
 																}
 															}
 														}
@@ -1259,49 +1259,49 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject uType, EObject ne2ne2, EObject typeAccess, EObject jType,
+			PerformRuleResult ruleresult, EObject uType, EObject typeAccess, EObject ne2ne2, EObject jType,
 			EObject arrayType) {
-		EMoflonEdge ne2ne2__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ne2ne2__arrayType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne2__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne2__arrayType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge arrayType__typeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ArrayType2NonArrayType";
-		String ne2ne2__uType____target_name_prime = "target";
-		String ne2ne2__arrayType____source_name_prime = "source";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String ne2ne2__uType____target_name_prime = "target";
+		String ne2ne2__arrayType____source_name_prime = "source";
 		String arrayType__typeAccess____elementType_name_prime = "elementType";
-		ne2ne2__uType____target.setSrc(ne2ne2);
-		ne2ne2__uType____target.setTrg(uType);
-		ruleresult.getCreatedEdges().add(ne2ne2__uType____target);
-		ne2ne2__arrayType____source.setSrc(ne2ne2);
-		ne2ne2__arrayType____source.setTrg(arrayType);
-		ruleresult.getCreatedEdges().add(ne2ne2__arrayType____source);
 		typeAccess__jType____type.setSrc(typeAccess);
 		typeAccess__jType____type.setTrg(jType);
 		ruleresult.getTranslatedEdges().add(typeAccess__jType____type);
 		jType__typeAccess____usagesInTypeAccess.setSrc(jType);
 		jType__typeAccess____usagesInTypeAccess.setTrg(typeAccess);
 		ruleresult.getTranslatedEdges().add(jType__typeAccess____usagesInTypeAccess);
+		ne2ne2__uType____target.setSrc(ne2ne2);
+		ne2ne2__uType____target.setTrg(uType);
+		ruleresult.getCreatedEdges().add(ne2ne2__uType____target);
+		ne2ne2__arrayType____source.setSrc(ne2ne2);
+		ne2ne2__arrayType____source.setTrg(arrayType);
+		ruleresult.getCreatedEdges().add(ne2ne2__arrayType____source);
 		arrayType__typeAccess____elementType.setSrc(arrayType);
 		arrayType__typeAccess____elementType.setTrg(typeAccess);
 		ruleresult.getTranslatedEdges().add(arrayType__typeAccess____elementType);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		ne2ne2__uType____target.setName(ne2ne2__uType____target_name_prime);
-		ne2ne2__arrayType____source.setName(ne2ne2__arrayType____source_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
+		ne2ne2__uType____target.setName(ne2ne2__uType____target_name_prime);
+		ne2ne2__arrayType____source.setName(ne2ne2__arrayType____source_name_prime);
 		arrayType__typeAccess____elementType.setName(arrayType__typeAccess____elementType_name_prime);
-		return new Object[] { ruleresult, uType, ne2ne2, typeAccess, jType, arrayType, ne2ne2__uType____target,
-				ne2ne2__arrayType____source, typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess,
+		return new Object[] { ruleresult, uType, typeAccess, ne2ne2, jType, arrayType, typeAccess__jType____type,
+				jType__typeAccess____usagesInTypeAccess, ne2ne2__uType____target, ne2ne2__arrayType____source,
 				arrayType__typeAccess____elementType };
 	}
 
 	public static final void pattern_ArrayType2NonArrayType_1_5_registerobjects_expressionBBBBBBBB(
-			ArrayType2NonArrayType _this, PerformRuleResult ruleresult, EObject uType, EObject ne2ne2,
-			EObject typeAccess, EObject jType, EObject ne2ne1, EObject arrayType) {
-		_this.registerObjects_FWD(ruleresult, uType, ne2ne2, typeAccess, jType, ne2ne1, arrayType);
+			ArrayType2NonArrayType _this, PerformRuleResult ruleresult, EObject ne2ne1, EObject uType,
+			EObject typeAccess, EObject ne2ne2, EObject jType, EObject arrayType) {
+		_this.registerObjects_FWD(ruleresult, ne2ne1, uType, typeAccess, ne2ne2, jType, arrayType);
 
 	}
 
@@ -1382,7 +1382,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_ArrayType2NonArrayType_2_2_corematch_blackFBBFBB(
+	public static final Iterable<Object[]> pattern_ArrayType2NonArrayType_2_2_corematch_blackFFBBBB(
 			TypeAccess typeAccess, Type jType, ArrayType arrayType, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!arrayType.equals(jType)) {
@@ -1391,7 +1391,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 				Element tmpUType = ne2ne1.getTarget();
 				if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
 					org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-					_result.add(new Object[] { uType, typeAccess, jType, ne2ne1, arrayType, match });
+					_result.add(new Object[] { ne2ne1, uType, typeAccess, jType, arrayType, match });
 				}
 
 			}
@@ -1400,15 +1400,15 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	}
 
 	public static final Iterable<Object[]> pattern_ArrayType2NonArrayType_2_3_findcontext_blackBBBBB(
-			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType, ASTNode2Element ne2ne1,
+			ASTNode2Element ne2ne1, org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType,
 			ArrayType arrayType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!arrayType.equals(jType)) {
-			if (uType.equals(ne2ne1.getTarget())) {
-				if (jType.equals(ne2ne1.getSource())) {
-					if (jType.equals(typeAccess.getType())) {
+			if (jType.equals(typeAccess.getType())) {
+				if (uType.equals(ne2ne1.getTarget())) {
+					if (jType.equals(ne2ne1.getSource())) {
 						if (typeAccess.equals(arrayType.getElementType())) {
-							_result.add(new Object[] { uType, typeAccess, jType, ne2ne1, arrayType });
+							_result.add(new Object[] { ne2ne1, uType, typeAccess, jType, arrayType });
 						}
 					}
 				}
@@ -1417,58 +1417,57 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		return _result;
 	}
 
-	public static final Object[] pattern_ArrayType2NonArrayType_2_3_findcontext_greenBBBBBFFFFFF(
-			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType, ASTNode2Element ne2ne1,
-			ArrayType arrayType) {
+	public static final Object[] pattern_ArrayType2NonArrayType_2_3_findcontext_greenBBBBBFFFFFF(ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType, ArrayType arrayType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge ne2ne1__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ne2ne1__jType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne1__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne1__jType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge arrayType__typeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String ne2ne1__uType____target_name_prime = "target";
-		String ne2ne1__jType____source_name_prime = "source";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String ne2ne1__uType____target_name_prime = "target";
+		String ne2ne1__jType____source_name_prime = "source";
 		String arrayType__typeAccess____elementType_name_prime = "elementType";
+		isApplicableMatch.getAllContextElements().add(ne2ne1);
 		isApplicableMatch.getAllContextElements().add(uType);
 		isApplicableMatch.getAllContextElements().add(typeAccess);
 		isApplicableMatch.getAllContextElements().add(jType);
-		isApplicableMatch.getAllContextElements().add(ne2ne1);
 		isApplicableMatch.getAllContextElements().add(arrayType);
-		ne2ne1__uType____target.setSrc(ne2ne1);
-		ne2ne1__uType____target.setTrg(uType);
-		isApplicableMatch.getAllContextElements().add(ne2ne1__uType____target);
-		ne2ne1__jType____source.setSrc(ne2ne1);
-		ne2ne1__jType____source.setTrg(jType);
-		isApplicableMatch.getAllContextElements().add(ne2ne1__jType____source);
 		typeAccess__jType____type.setSrc(typeAccess);
 		typeAccess__jType____type.setTrg(jType);
 		isApplicableMatch.getAllContextElements().add(typeAccess__jType____type);
 		jType__typeAccess____usagesInTypeAccess.setSrc(jType);
 		jType__typeAccess____usagesInTypeAccess.setTrg(typeAccess);
 		isApplicableMatch.getAllContextElements().add(jType__typeAccess____usagesInTypeAccess);
+		ne2ne1__uType____target.setSrc(ne2ne1);
+		ne2ne1__uType____target.setTrg(uType);
+		isApplicableMatch.getAllContextElements().add(ne2ne1__uType____target);
+		ne2ne1__jType____source.setSrc(ne2ne1);
+		ne2ne1__jType____source.setTrg(jType);
+		isApplicableMatch.getAllContextElements().add(ne2ne1__jType____source);
 		arrayType__typeAccess____elementType.setSrc(arrayType);
 		arrayType__typeAccess____elementType.setTrg(typeAccess);
 		isApplicableMatch.getAllContextElements().add(arrayType__typeAccess____elementType);
-		ne2ne1__uType____target.setName(ne2ne1__uType____target_name_prime);
-		ne2ne1__jType____source.setName(ne2ne1__jType____source_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
+		ne2ne1__uType____target.setName(ne2ne1__uType____target_name_prime);
+		ne2ne1__jType____source.setName(ne2ne1__jType____source_name_prime);
 		arrayType__typeAccess____elementType.setName(arrayType__typeAccess____elementType_name_prime);
-		return new Object[] { uType, typeAccess, jType, ne2ne1, arrayType, isApplicableMatch, ne2ne1__uType____target,
-				ne2ne1__jType____source, typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess,
+		return new Object[] { ne2ne1, uType, typeAccess, jType, arrayType, isApplicableMatch, typeAccess__jType____type,
+				jType__typeAccess____usagesInTypeAccess, ne2ne1__uType____target, ne2ne1__jType____source,
 				arrayType__typeAccess____elementType };
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_2_4_solveCSP_bindingFBBBBBBB(
-			ArrayType2NonArrayType _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			TypeAccess typeAccess, Type jType, ASTNode2Element ne2ne1, ArrayType arrayType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, uType, typeAccess, jType, ne2ne1,
+			ArrayType2NonArrayType _this, IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType, ArrayType arrayType) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, ne2ne1, uType, typeAccess, jType,
 				arrayType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, uType, typeAccess, jType, ne2ne1, arrayType };
+			return new Object[] { csp, _this, isApplicableMatch, ne2ne1, uType, typeAccess, jType, arrayType };
 		}
 		return null;
 	}
@@ -1478,10 +1477,10 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_2_4_solveCSP_bindingAndBlackFBBBBBBB(
-			ArrayType2NonArrayType _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			TypeAccess typeAccess, Type jType, ASTNode2Element ne2ne1, ArrayType arrayType) {
+			ArrayType2NonArrayType _this, IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType, ArrayType arrayType) {
 		Object[] result_pattern_ArrayType2NonArrayType_2_4_solveCSP_binding = pattern_ArrayType2NonArrayType_2_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, uType, typeAccess, jType, ne2ne1, arrayType);
+				_this, isApplicableMatch, ne2ne1, uType, typeAccess, jType, arrayType);
 		if (result_pattern_ArrayType2NonArrayType_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ArrayType2NonArrayType_2_4_solveCSP_binding[0];
 
@@ -1489,7 +1488,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 					csp);
 			if (result_pattern_ArrayType2NonArrayType_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, uType, typeAccess, jType, ne2ne1, arrayType };
+				return new Object[] { csp, _this, isApplicableMatch, ne2ne1, uType, typeAccess, jType, arrayType };
 			}
 		}
 		return null;
@@ -1759,9 +1758,9 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_18_2_testcorematchandDECs_black_nac_0BB(
 			TypeAccess typeAccess, Type jType) {
-		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_778415 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_880796 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!jType.equals(__DEC_typeAccess_superInterfaces_778415)) {
+			if (!jType.equals(__DEC_typeAccess_superInterfaces_880796)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -1770,7 +1769,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_18_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeAccess) {
-		for (Annotation __DEC_typeAccess_type_821308 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAccess_type_403588 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, Annotation.class, "type")) {
 			return new Object[] { typeAccess };
 		}
@@ -1779,9 +1778,9 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_18_2_testcorematchandDECs_black_nac_2BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ClassDeclaration __DEC_typeAccess_superClass_222839 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeAccess_superClass_571818 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ClassDeclaration.class, "superClass")) {
-			if (!jType.equals(__DEC_typeAccess_superClass_222839)) {
+			if (!jType.equals(__DEC_typeAccess_superClass_571818)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -1790,7 +1789,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_18_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess typeAccess) {
-		for (MethodDeclaration __DEC_typeAccess_returnType_335159 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeAccess_returnType_585990 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeAccess };
 		}
@@ -1799,9 +1798,9 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_18_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ParameterizedType __DEC_typeAccess_type_404734 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAccess_type_405885 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ParameterizedType.class, "type")) {
-			if (!jType.equals(__DEC_typeAccess_type_404734)) {
+			if (!jType.equals(__DEC_typeAccess_type_405885)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -1810,7 +1809,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_18_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess typeAccess) {
-		for (SingleVariableDeclaration __DEC_typeAccess_type_559800 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeAccess_type_802438 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeAccess };
 		}
@@ -1819,7 +1818,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_18_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeAccess_value_636604 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAccess_value_201873 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAccess };
 		}
@@ -2021,14 +2020,14 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_ArrayType2NonArrayType_21_5_matchcorrcontext_blackBBFBB(
+	public static final Iterable<Object[]> pattern_ArrayType2NonArrayType_21_5_matchcorrcontext_blackFBBBB(
 			org.eclipse.uml2.uml.Type uType, Type jType, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (ASTNode2Element ne2ne1 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uType,
 					ASTNode2Element.class, "target")) {
 				if (jType.equals(ne2ne1.getSource())) {
-					_result.add(new Object[] { uType, jType, ne2ne1, sourceMatch, targetMatch });
+					_result.add(new Object[] { ne2ne1, uType, jType, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2086,9 +2085,9 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_24_1_matchtggpattern_black_nac_0BB(
 			TypeAccess typeAccess, Type jType) {
-		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_4716 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_255391 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!jType.equals(__DEC_typeAccess_superInterfaces_4716)) {
+			if (!jType.equals(__DEC_typeAccess_superInterfaces_255391)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -2097,7 +2096,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_24_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeAccess) {
-		for (Annotation __DEC_typeAccess_type_726467 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAccess_type_42212 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, Annotation.class, "type")) {
 			return new Object[] { typeAccess };
 		}
@@ -2106,9 +2105,9 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_24_1_matchtggpattern_black_nac_2BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ClassDeclaration __DEC_typeAccess_superClass_106427 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeAccess_superClass_567009 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ClassDeclaration.class, "superClass")) {
-			if (!jType.equals(__DEC_typeAccess_superClass_106427)) {
+			if (!jType.equals(__DEC_typeAccess_superClass_567009)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -2117,7 +2116,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_24_1_matchtggpattern_black_nac_3B(
 			TypeAccess typeAccess) {
-		for (MethodDeclaration __DEC_typeAccess_returnType_402193 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeAccess_returnType_408087 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeAccess };
 		}
@@ -2126,9 +2125,9 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_24_1_matchtggpattern_black_nac_4BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ParameterizedType __DEC_typeAccess_type_801535 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAccess_type_123867 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ParameterizedType.class, "type")) {
-			if (!jType.equals(__DEC_typeAccess_type_801535)) {
+			if (!jType.equals(__DEC_typeAccess_type_123867)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -2137,7 +2136,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_24_1_matchtggpattern_black_nac_5B(
 			TypeAccess typeAccess) {
-		for (SingleVariableDeclaration __DEC_typeAccess_type_764079 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeAccess_type_451906 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeAccess };
 		}
@@ -2146,7 +2145,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 
 	public static final Object[] pattern_ArrayType2NonArrayType_24_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeAccess_value_123971 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAccess_value_26783 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAccess };
 		}
@@ -2222,17 +2221,17 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_26_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Type uType) {
-		if (ruleResult.getTargetObjects().contains(uType)) {
-			return new Object[] { ruleResult, uType };
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne1) {
+		if (ruleResult.getCorrObjects().contains(ne2ne1)) {
+			return new Object[] { ruleResult, ne2ne1 };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_26_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne1) {
-		if (ruleResult.getCorrObjects().contains(ne2ne1)) {
-			return new Object[] { ruleResult, ne2ne1 };
+			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Type uType) {
+		if (ruleResult.getTargetObjects().contains(uType)) {
+			return new Object[] { ruleResult, uType };
 		}
 		return null;
 	}
@@ -2258,13 +2257,13 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 						ASTNode tmpJType = ne2ne1.getSource();
 						if (tmpJType instanceof Type) {
 							Type jType = (Type) tmpJType;
-							if (pattern_ArrayType2NonArrayType_26_2_isapplicablecore_black_nac_1BB(ruleResult,
+							if (pattern_ArrayType2NonArrayType_26_2_isapplicablecore_black_nac_0BB(ruleResult,
 									ne2ne1) == null) {
-								if (pattern_ArrayType2NonArrayType_26_2_isapplicablecore_black_nac_0BB(ruleResult,
+								if (pattern_ArrayType2NonArrayType_26_2_isapplicablecore_black_nac_1BB(ruleResult,
 										uType) == null) {
 									if (pattern_ArrayType2NonArrayType_26_2_isapplicablecore_black_nac_2BB(ruleResult,
 											jType) == null) {
-										_result.add(new Object[] { ne2ne1List, uType, ne2ne1, jType, ruleEntryContainer,
+										_result.add(new Object[] { ne2ne1List, ne2ne1, uType, jType, ruleEntryContainer,
 												ruleResult });
 									}
 								}
@@ -2280,12 +2279,12 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_26_3_solveCSP_bindingFBBBBBB(
-			ArrayType2NonArrayType _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			Type jType, ASTNode2Element ne2ne1, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, uType, jType, ne2ne1, ruleResult);
+			ArrayType2NonArrayType _this, IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, Type jType, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, ne2ne1, uType, jType, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, uType, jType, ne2ne1, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, ne2ne1, uType, jType, ruleResult };
 		}
 		return null;
 	}
@@ -2295,10 +2294,10 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_26_3_solveCSP_bindingAndBlackFBBBBBB(
-			ArrayType2NonArrayType _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			Type jType, ASTNode2Element ne2ne1, ModelgeneratorRuleResult ruleResult) {
+			ArrayType2NonArrayType _this, IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, Type jType, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_ArrayType2NonArrayType_26_3_solveCSP_binding = pattern_ArrayType2NonArrayType_26_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, uType, jType, ne2ne1, ruleResult);
+				_this, isApplicableMatch, ne2ne1, uType, jType, ruleResult);
 		if (result_pattern_ArrayType2NonArrayType_26_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ArrayType2NonArrayType_26_3_solveCSP_binding[0];
 
@@ -2306,7 +2305,7 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 					csp);
 			if (result_pattern_ArrayType2NonArrayType_26_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, uType, jType, ne2ne1, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, ne2ne1, uType, jType, ruleResult };
 			}
 		}
 		return null;
@@ -2319,34 +2318,34 @@ public class ArrayType2NonArrayTypeImpl extends AbstractRuleImpl implements Arra
 		return _result;
 	}
 
-	public static final Object[] pattern_ArrayType2NonArrayType_26_5_checknacs_blackBBB(org.eclipse.uml2.uml.Type uType,
-			Type jType, ASTNode2Element ne2ne1) {
-		return new Object[] { uType, jType, ne2ne1 };
+	public static final Object[] pattern_ArrayType2NonArrayType_26_5_checknacs_blackBBB(ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, Type jType) {
+		return new Object[] { ne2ne1, uType, jType };
 	}
 
-	public static final Object[] pattern_ArrayType2NonArrayType_26_6_perform_blackBBBB(org.eclipse.uml2.uml.Type uType,
-			Type jType, ASTNode2Element ne2ne1, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { uType, jType, ne2ne1, ruleResult };
+	public static final Object[] pattern_ArrayType2NonArrayType_26_6_perform_blackBBBB(ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, Type jType, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { ne2ne1, uType, jType, ruleResult };
 	}
 
 	public static final Object[] pattern_ArrayType2NonArrayType_26_6_perform_greenBFFBFB(
 			org.eclipse.uml2.uml.Type uType, Type jType, ModelgeneratorRuleResult ruleResult) {
-		ASTNode2Element ne2ne2 = UmlFactory.eINSTANCE.createASTNode2Element();
 		TypeAccess typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
+		ASTNode2Element ne2ne2 = UmlFactory.eINSTANCE.createASTNode2Element();
 		ArrayType arrayType = JavaFactory.eINSTANCE.createArrayType();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		ne2ne2.setTarget(uType);
-		ruleResult.getCorrObjects().add(ne2ne2);
 		typeAccess.setType(jType);
 		ruleResult.getSourceObjects().add(typeAccess);
+		ne2ne2.setTarget(uType);
+		ruleResult.getCorrObjects().add(ne2ne2);
 		ne2ne2.setSource(arrayType);
 		arrayType.setElementType(typeAccess);
 		ruleResult.getSourceObjects().add(arrayType);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { uType, ne2ne2, typeAccess, jType, arrayType, ruleResult };
+		return new Object[] { uType, typeAccess, ne2ne2, jType, arrayType, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_ArrayType2NonArrayType_26_7_expressionFB(

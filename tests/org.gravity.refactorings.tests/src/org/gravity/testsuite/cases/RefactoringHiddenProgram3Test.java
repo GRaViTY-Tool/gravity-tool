@@ -20,6 +20,7 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runners.model.InitializationError;
 
 public class RefactoringHiddenProgram3Test extends AbstractRefactoringTestCase {
 
@@ -30,13 +31,18 @@ public class RefactoringHiddenProgram3Test extends AbstractRefactoringTestCase {
 
 	/**
 	 * description "Is the PG after a refactoring still consistent?."
+	 * @throws InitializationError
 	 */
 	@Test
-	public void testCSC31a() {
+	public void testCSC31a_Success_UntouchedElements() throws InitializationError {
 		final TypeGraph pm = getProgramModel();
 
 		final TClass child1 = pm.getClass("hidden.program.three.ChildClass1");
 		final TClass child2 = pm.getClass("hidden.program.three.ChildClass2");
+
+		if((child1 == null) || (child2== null)) {
+			throw new InitializationError("Couldn't find all elements in program model.");
+		}
 
 		final CreateSuperClassConfiguration pum = new CreateSuperClassConfiguration("hidden.program.three", "NewParent",
 				Arrays.asList(child1, child2));

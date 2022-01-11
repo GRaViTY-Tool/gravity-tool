@@ -8,27 +8,27 @@
   <methods tName="m">
     <signatures returnType="//@ownedTypes.0">
       <paramList first="//@methods.0/@signatures.0/@paramList/@entries.0">
-        <entries outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" type="//@ownedTypes.19"/>
+        <entries outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.1" type="//@ownedTypes.19"/>
       </paramList>
-      <definitions definedBy="//@ownedTypes.10" accessedBy="//@methods.2/@signatures.0/@definitions.0/@tAccessing.0" returnType="//@ownedTypes.0">
-        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0 //@methods.0/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.0" tTarget="//@methods.1/@signatures.0/@definitions.0" staticType="//@ownedTypes.21">
-          <ownedFlows flowSource="//@methods.1/@signatures.0" flowTarget="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0"/>
+      <definitions definedBy="//@ownedTypes.10" accessedBy="//@methods.2/@signatures.0/@definitions.0/@accessing.0" returnType="//@ownedTypes.0">
+        <accessing xsi:type="org.gravity.typegraph.basic:TCall" incomingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.0 //@methods.0/@signatures.0/@definitions.0/@accessing.1/@ownedFlows.0" target="//@methods.1/@signatures.0/@definitions.0" staticType="//@ownedTypes.21">
+          <ownedFlows flowSource="//@methods.1/@signatures.0" flowTarget="//@methods.0/@signatures.0/@definitions.0/@accessing.0"/>
           <ownedFlows flowSource="//@methods.0/@signatures.0/@paramList/@entries.0" flowTarget="//@methods.1/@signatures.0/@paramList/@entries.0"/>
-        </tAccessing>
-        <tAccessing xsi:type="org.gravity.typegraph.basic:TRead" incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.1" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.0" tTarget="//@fields.0/@signatures.0/@definitions.0">
-          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@tAccessing.1" flowTarget="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0"/>
-          <ownedFlows flowSource="//@fields.0/@signatures.0" flowTarget="//@methods.0/@signatures.0/@definitions.0/@tAccessing.1"/>
-        </tAccessing>
+        </accessing>
+        <accessing xsi:type="org.gravity.typegraph.basic:TRead" incomingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.1/@ownedFlows.1" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.1/@ownedFlows.0" target="//@fields.0/@signatures.0/@definitions.0">
+          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@accessing.1" flowTarget="//@methods.0/@signatures.0/@definitions.0/@accessing.0"/>
+          <ownedFlows flowSource="//@fields.0/@signatures.0" flowTarget="//@methods.0/@signatures.0/@definitions.0/@accessing.1"/>
+        </accessing>
         <tModifier isStatic="true"/>
       </definitions>
     </signatures>
   </methods>
   <methods tName="println">
-    <signatures outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" returnType="//@ownedTypes.21">
+    <signatures outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.0" returnType="//@ownedTypes.21">
       <paramList first="//@methods.1/@signatures.0/@paramList/@entries.0">
-        <entries incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" type="//@ownedTypes.19"/>
+        <entries incomingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.1" type="//@ownedTypes.19"/>
       </paramList>
-      <definitions definedBy="//@ownedTypes.11" accessedBy="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0" returnType="//@ownedTypes.21"/>
+      <definitions definedBy="//@ownedTypes.11" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.0" returnType="//@ownedTypes.21"/>
     </signatures>
   </methods>
   <methods tName="main">
@@ -37,14 +37,14 @@
         <entries type="//@ownedTypes.14"/>
       </paramList>
       <definitions definedBy="//@ownedTypes.10" returnType="//@ownedTypes.0">
-        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.0/@signatures.0/@definitions.0" staticType="//@ownedTypes.10"/>
+        <accessing xsi:type="org.gravity.typegraph.basic:TCall" target="//@methods.0/@signatures.0/@definitions.0" staticType="//@ownedTypes.10"/>
         <tModifier tVisibility="TPublic" isStatic="true"/>
       </definitions>
     </signatures>
   </methods>
   <fields tName="out">
-    <signatures outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.1" type="//@ownedTypes.21">
-      <definitions definedBy="//@ownedTypes.17" accessedBy="//@methods.0/@signatures.0/@definitions.0/@tAccessing.1"/>
+    <signatures outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.1/@ownedFlows.1" type="//@ownedTypes.21">
+      <definitions definedBy="//@ownedTypes.17" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.1"/>
     </signatures>
   </fields>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>

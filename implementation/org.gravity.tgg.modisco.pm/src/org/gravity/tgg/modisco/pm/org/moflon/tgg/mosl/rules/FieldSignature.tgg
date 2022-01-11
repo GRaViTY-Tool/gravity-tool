@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule FieldSignatureAbstract
+#abstract #rule FieldSignature_Abstract
 #with org.gravity.tgg.modisco.pm
 
 #source {
@@ -9,22 +9,20 @@
 		++-mSignatures -> mSignature
 	}
 
-	++mSignature:MFieldSignature{
-		++  -type -> mType
-	}
+	++mSignature:MFieldSignature
 
 	mType:Type
 }
 
 #target {
 	tField:TField {
-		++-signatures->tSignature
+		++-signatures -> tSignature
 	}
 
 	++tSignature:TFieldSignature {
 		++  -type -> tType
 	}
-	
+
 	tType:TAbstractType
 }
 
@@ -43,57 +41,90 @@
 		#src->mSignature
 		#trg->tSignature
 	}
-}
 
-#using org.gravity.tgg.modisco.pm.*
-
-#rule FieldSignature #extends FieldSignatureAbstract
-#with org.gravity.tgg.modisco.pm
-
-#source{
-	mType : Type
-}
-
-#target {
-	tType : TAbstractType
-}
-
-
-#correspondence {
-	mTypeToTType : TypeToTAbstractType {
+	mTypeToTType :TypeToTAbstractType {
 		#src->mType
 		#trg->tType
 	}
 }
 
+
 #using org.gravity.tgg.modisco.pm.*
 
-#rule FieldSignatureArrayType #extends FieldSignatureAbstract
+#rule FieldSignature #extends FieldSignature_Abstract
 #with org.gravity.tgg.modisco.pm
 
-#source {
-	mType : ArrayType {
-		-elementType->mTypeAccess
+#source{
+	++mSignature:MFieldSignature{
+		++  -type -> mType
 	}
-	
-	mTypeAccess : TypeAccess {
-		-type->mArrayType
-	}
-	
-	mArrayType : Type
+
+	mType:Type
 }
 
 #target {
-	tType : TAbstractType
-	
-	++ tSignature : TFieldSignature {
-		upperBound := -1
-	} 
-}
-
-#correspondence {	
-	mTypeToTType : TypeToTAbstractType {
-		#src->mArrayType
-		#trg->tType
+	++tSignature:TFieldSignature {
+		lowerBound := 0
+		upperBound := 1
 	}
 }
+
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule FieldSignatureParameterizedType #extends FieldSignature_Abstract
+#with org.gravity.tgg.modisco.pm
+
+#source{
+	++mSignature:MFieldSignature{
+		++  -type -> mParameterizedType
+	}
+
+	mParameterizedType:ParameterizedType {
+		-type -> mTypeAccess
+	}
+
+	mTypeAccess:TypeAccess {
+		-type -> mType
+	}
+
+	mType:Type
+}
+
+#target {
+	++tSignature:TFieldSignature {
+		lowerBound := 0
+		upperBound := 1
+	}
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule FieldSignatureArrayType #extends FieldSignature_Abstract
+#with org.gravity.tgg.modisco.pm
+
+#source {
+	++mSignature:MFieldSignature{
+		++  -type -> mArrayType
+	}
+
+	mArrayType:ArrayType {
+		-elementType -> mTypeAccess
+	}
+
+	mTypeAccess:TypeAccess {
+		-type -> mType
+	}
+
+	mType:Type
+}
+
+#target {
+	++tSignature:TFieldSignature {
+		lowerBound := 0
+		upperBound := -1
+	}
+}
+
+

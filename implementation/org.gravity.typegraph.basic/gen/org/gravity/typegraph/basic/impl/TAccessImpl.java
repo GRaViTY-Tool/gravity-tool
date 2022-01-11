@@ -2,19 +2,27 @@
  */
 package org.gravity.typegraph.basic.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
+import org.gravity.typegraph.basic.annotations.TAnnotatable;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
 // [user defined imports] -->
 
@@ -26,6 +34,7 @@ import org.gravity.typegraph.basic.TMember;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TAccessImpl#getTAnnotation <em>TAnnotation</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TAccessImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TAccessImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TAccessImpl#getStaticType <em>Static Type</em>}</li>
@@ -34,6 +43,16 @@ import org.gravity.typegraph.basic.TMember;
  * @generated
  */
 public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TAccess {
+	/**
+	 * The cached value of the '{@link #getTAnnotation() <em>TAnnotation</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTAnnotation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TAnnotation> tAnnotation;
+
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -71,6 +90,19 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	protected EClass eStaticClass() {
 		return BasicPackage.Literals.TACCESS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TAnnotation> getTAnnotation() {
+		if (tAnnotation == null) {
+			tAnnotation = new EObjectContainmentWithInverseEList<TAnnotation>(TAnnotation.class, this, BasicPackage.TACCESS__TANNOTATION, AnnotationsPackage.TANNOTATION__TANNOTATED);
+		}
+		return tAnnotation;
 	}
 
 	/**
@@ -224,8 +256,23 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	 * @generated
 	 */
 	@Override
+	public EList<TAnnotation> getTAnnotation(EClass tType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case BasicPackage.TACCESS__TANNOTATION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTAnnotation()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TACCESS__TARGET:
 				if (target != null)
 					msgs = ((InternalEObject)target).eInverseRemove(this, BasicPackage.TMEMBER__ACCESSED_BY, TMember.class, msgs);
@@ -246,6 +293,8 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case BasicPackage.TACCESS__TANNOTATION:
+				return ((InternalEList<?>)getTAnnotation()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TACCESS__TARGET:
 				return basicSetTarget(null, msgs);
 			case BasicPackage.TACCESS__SOURCE:
@@ -276,6 +325,8 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case BasicPackage.TACCESS__TANNOTATION:
+				return getTAnnotation();
 			case BasicPackage.TACCESS__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
@@ -293,9 +344,14 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case BasicPackage.TACCESS__TANNOTATION:
+				getTAnnotation().clear();
+				getTAnnotation().addAll((Collection<? extends TAnnotation>)newValue);
+				return;
 			case BasicPackage.TACCESS__TARGET:
 				setTarget((TMember)newValue);
 				return;
@@ -317,6 +373,9 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case BasicPackage.TACCESS__TANNOTATION:
+				getTAnnotation().clear();
+				return;
 			case BasicPackage.TACCESS__TARGET:
 				setTarget((TMember)null);
 				return;
@@ -338,6 +397,8 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case BasicPackage.TACCESS__TANNOTATION:
+				return tAnnotation != null && !tAnnotation.isEmpty();
 			case BasicPackage.TACCESS__TARGET:
 				return target != null;
 			case BasicPackage.TACCESS__SOURCE:
@@ -346,6 +407,68 @@ public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TA
 				return staticType != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == TAnnotatable.class) {
+			switch (derivedFeatureID) {
+				case BasicPackage.TACCESS__TANNOTATION: return AnnotationsPackage.TANNOTATABLE__TANNOTATION;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == TAnnotatable.class) {
+			switch (baseFeatureID) {
+				case AnnotationsPackage.TANNOTATABLE__TANNOTATION: return BasicPackage.TACCESS__TANNOTATION;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TAnnotatable.class) {
+			switch (baseOperationID) {
+				case AnnotationsPackage.TANNOTATABLE___GET_TANNOTATION__ECLASS: return BasicPackage.TACCESS___GET_TANNOTATION__ECLASS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case BasicPackage.TACCESS___GET_TANNOTATION__ECLASS:
+				return getTAnnotation((EClass)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 	// <-- [user code injected with eMoflon]
 

@@ -63,31 +63,36 @@ public final class ZipUtil {
 	 */
 	public static void unzip(final String zipFilePath, final String unzipLocation) {
 		final Path destination = Paths.get(unzipLocation).normalize();
-		if (!destination.toFile().exists()) {
+		try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(Paths.get(zipFilePath)))) {
+			unzip(zipInputStream, destination);
+		} catch (final Exception e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+		}
+	}
+
+	public static void unzip(final ZipInputStream zipInputStream, final Path unzipLocation) throws IOException {
+		if (!unzipLocation.toFile().exists()) {
 			try {
-				Files.createDirectories(destination);
+				Files.createDirectories(unzipLocation);
 			} catch (final IOException e) {
 
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
 		}
-		try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(Paths.get(zipFilePath)))) {
-			ZipEntry entry;
-			while ((entry = zipInputStream.getNextEntry()) != null) {
 
-				final File filePath = new File(destination.toFile(), entry.getName());
-				if(!filePath.getCanonicalPath().startsWith(unzipLocation)){
-					throw new SecurityException("Entry is trying to leave the target dir: " + entry.getName());
-				}
-				if (!entry.isDirectory()) {
-					unzipFiles(zipInputStream, filePath.toPath());
-				} else {
-					Files.createDirectories(filePath.toPath());
-				}
-				zipInputStream.closeEntry();
+		ZipEntry entry;
+		while ((entry = zipInputStream.getNextEntry()) != null) {
+
+			final File filePath = new File(unzipLocation.toFile(), entry.getName());
+			if(!filePath.getCanonicalPath().startsWith(unzipLocation.toString())){
+				throw new SecurityException("Entry is trying to leave the target dir: " + entry.getName());
 			}
-		} catch (final Exception e) {
-			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			if (!entry.isDirectory()) {
+				unzipFiles(zipInputStream, filePath.toPath());
+			} else {
+				Files.createDirectories(filePath.toPath());
+			}
+			zipInputStream.closeEntry();
 		}
 	}
 

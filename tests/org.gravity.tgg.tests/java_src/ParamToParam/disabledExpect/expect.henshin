@@ -46,10 +46,10 @@
         <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_den1oKWCEeq_r7aJI3b8wg" source="_SU2r4KWCEeq_r7aJI3b8wg" target="_Re6iYKWCEeq_r7aJI3b8wg">
-        <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/tAccessing"/>
+        <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/accessing"/>
       </edges>
       <edges xmi:id="_ePMW8KWCEeq_r7aJI3b8wg" source="_Re6iYKWCEeq_r7aJI3b8wg" target="_SU2r4KWCEeq_r7aJI3b8wg">
-        <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess/tTarget"/>
+        <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess/target"/>
       </edges>
       <edges xmi:id="_hfg4MKWCEeq_r7aJI3b8wg" source="_SpHrsKWCEeq_r7aJI3b8wg" target="_UH5W0KWCEeq_r7aJI3b8wg">
         <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/firstParameter"/>
@@ -117,10 +117,10 @@
         <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_den1oaWCEeq_r7aJI3b8wg" source="_SU2r4aWCEeq_r7aJI3b8wg" target="_Re6iYaWCEeq_r7aJI3b8wg">
-        <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/tAccessing"/>
+        <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/accessing"/>
       </edges>
       <edges xmi:id="_ePMW8aWCEeq_r7aJI3b8wg" source="_Re6iYaWCEeq_r7aJI3b8wg" target="_SU2r4aWCEeq_r7aJI3b8wg">
-        <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess/tTarget"/>
+        <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess/target"/>
       </edges>
       <edges xmi:id="_hfg4MaWCEeq_r7aJI3b8wg" source="_SpHrsaWCEeq_r7aJI3b8wg" target="_UH5W0aWCEeq_r7aJI3b8wg">
         <type href="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/firstParameter"/>

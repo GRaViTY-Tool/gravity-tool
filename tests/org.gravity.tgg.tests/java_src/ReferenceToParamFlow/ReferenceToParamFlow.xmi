@@ -4,20 +4,20 @@
   <methods tName="m">
     <signatures returnType="//@ownedTypes.10">
       <paramList first="//@methods.0/@signatures.0/@paramList/@entries.0">
-        <entries incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" type="//@ownedTypes.4"/>
+        <entries incomingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.0" type="//@ownedTypes.4"/>
       </paramList>
       <definitions definedBy="//@ownedTypes.8" returnType="//@ownedTypes.10">
-        <tAccessing xsi:type="org.gravity.typegraph.basic:TWrite" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1 //@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" tTarget="//@fields.0/@signatures.0/@definitions.0">
-          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0" flowTarget="//@methods.0/@signatures.0/@paramList/@entries.0"/>
-          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0" flowTarget="//@fields.0/@signatures.0/@definitions.0"/>
-        </tAccessing>
+        <accessing xsi:type="org.gravity.typegraph.basic:TWrite" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.1 //@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.0" target="//@fields.0/@signatures.0/@definitions.0">
+          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@accessing.0" flowTarget="//@methods.0/@signatures.0/@paramList/@entries.0"/>
+          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@accessing.0" flowTarget="//@fields.0/@signatures.0/@definitions.0"/>
+        </accessing>
         <tModifier tVisibility="TPackage"/>
       </definitions>
     </signatures>
   </methods>
   <fields tName="a">
     <signatures type="//@ownedTypes.2">
-      <definitions incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" definedBy="//@ownedTypes.4" accessedBy="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0">
+      <definitions incomingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.1" definedBy="//@ownedTypes.4" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.0">
         <tModifier tVisibility="TPackage"/>
       </definitions>
     </signatures>

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.gravity.eclipse.importer.maven;
 
@@ -52,7 +52,7 @@ import org.xml.sax.SAXException;
 
 /**
  * A project importer for maven projects
- * 
+ *
  * @author speldszus
  *
  */
@@ -73,51 +73,51 @@ public class MavenImport extends ProjectImport {
 
 	/**
 	 * Creates an new instance of the maven project importer
-	 * 
+	 *
 	 * @param rootDir           The root directory of the maven project to import
 	 * @param ignoreBuildErrors If build errors should be ignored
 	 * @throws ImportException If the importer cannot be created for the project
 	 */
-	public MavenImport(File rootDir, boolean ignoreBuildErrors) throws ImportException {
+	public MavenImport(final File rootDir, final boolean ignoreBuildErrors) throws ImportException {
 		super(rootDir, "pom.xml", ignoreBuildErrors);
 		this.modulePoms = new HashSet<>();
 		this.sourceFolders = new HashSet<>();
 		this.dependencies = new HashMap<>();
 		try {
 			this.builder = PomParser.createDocumentBuilder();
-		} catch (ParserConfigurationException e) {
+		} catch (final ParserConfigurationException e) {
 			throw new ImportException(e);
 		}
 		this.m2 = new File(new File(System.getProperty("user.home")), ".m2");
 		if (!this.m2.exists()) {
-			throw new ImportException(new FileNotFoundException("Gradle user home not found"));
+			throw new ImportException(new FileNotFoundException("Maven user home not found"));
 		}
 		this.mavenRepository = new File(this.m2, "repository");
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.gravity.eclipse.importer.ProjectImport#importProject(org.eclipse.core.
 	 * runtime.IProgressMonitor)
 	 */
 	@Override
-	public IJavaProject importProject(IProgressMonitor monitor) throws ImportException {
-		File parentPom = getRootFile();
+	public IJavaProject importProject(final IProgressMonitor monitor) throws ImportException {
+		final File parentPom = getRootFile();
 		build();
-		Deque<File> stack = new LinkedList<>();
+		final Deque<File> stack = new LinkedList<>();
 		stack.add(parentPom);
 		while (!stack.isEmpty()) {
 			stack.addAll(processPOM(stack.pop()));
 		}
-		Set<File> libs = dependencies.values().parallelStream().map(Path::toFile).collect(Collectors.toSet());
-		IJavaProject javaProject = createJavaProject(sourceFolders, libs, monitor);
+		final Set<File> libs = this.dependencies.values().parallelStream().map(Path::toFile).collect(Collectors.toSet());
+		final IJavaProject javaProject = createJavaProject(this.sourceFolders, libs, monitor);
 		try {
-			IProject project = javaProject.getProject();
+			final IProject project = javaProject.getProject();
 			project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 			project.build(IncrementalProjectBuilder.FULL_BUILD, monitor);
-		} catch (CoreException e) {
+		} catch (final CoreException e) {
 			if (!ignoreBuildErrors()) {
 				throw new ImportException(e);
 			} else {
@@ -129,15 +129,15 @@ public class MavenImport extends ProjectImport {
 
 	/**
 	 * Builds the maven project
-	 * 
+	 *
 	 * @throws ImportException If the project couldn't be built and build errors
 	 *                         shouldn't be ignored
 	 */
 	private void build() throws ImportException {
 		try {
-			List<String> args = Arrays.asList("clean", "compile");
-			File rootDir = getRootDir();
-			Process process = Execute.run(rootDir, "mvn", args, null);
+			final List<String> args = Arrays.asList("clean", "compile");
+			final File rootDir = getRootDir();
+			final Process process = Execute.run(rootDir, "mvn", args, null);
 			if (!Execute.execute(process) && !ignoreBuildErrors()) {
 				throw new ImportException("Couldn't build the maven project");
 			}
@@ -147,19 +147,19 @@ public class MavenImport extends ProjectImport {
 			} else {
 				throw new ImportException(e);
 			}
-		} 
+		}
 	}
 
 	/**
 	 * Creates a java project from the given source folders and libs
-	 * 
+	 *
 	 * @param sourceFolders The folders containing the java source files
 	 * @param libs          A set of jar files containing libs
 	 * @param monitor       A progress monitor
 	 * @return The created project
 	 * @throws ImportException If the creation of the project fails
 	 */
-	private IJavaProject createJavaProject(Set<File> sourceFolders, Set<File> libs, IProgressMonitor monitor)
+	private IJavaProject createJavaProject(final Set<File> sourceFolders, final Set<File> libs, final IProgressMonitor monitor)
 			throws ImportException {
 		IJavaProject project;
 		try {
@@ -174,18 +174,18 @@ public class MavenImport extends ProjectImport {
 
 	/**
 	 * Adds the source folders to the project
-	 * 
+	 *
 	 * @param sources The root folder containing the sources
 	 * @param project The java project
 	 * @param monitor A progress monitor
 	 * @throws CoreException
 	 * @throws IOException
 	 */
-	private void addSourceFolders(Set<File> sources, IJavaProject project, IProgressMonitor monitor)
+	private void addSourceFolders(final Set<File> sources, final IJavaProject project, final IProgressMonitor monitor)
 			throws CoreException, IOException {
-		for (File src : sources) {
-			String srcFolderName = getRootDir().toPath().relativize(src.toPath()).toString();
-			String[] names = srcFolderName.split("/|\\\\");
+		for (final File src : sources) {
+			final String srcFolderName = getRootDir().toPath().relativize(src.toPath()).toString();
+			final String[] names = srcFolderName.split("/|\\\\");
 			IFolder folder = project.getProject().getFolder(names[0]);
 			for (int i = 1; i < names.length; i++) {
 				folder = folder.getFolder(names[i]);
@@ -196,7 +196,7 @@ public class MavenImport extends ProjectImport {
 			final IPackageFragmentRoot packageFragmentRoot = project.getPackageFragmentRoot(folder);
 			JavaProjectUtil.addToClassPath(project,
 					Arrays.asList(JavaCore.newSourceEntry(packageFragmentRoot.getPath())), monitor);
-			ExtensionFileVisitor visitor = new ExtensionFileVisitor("java");
+			final ExtensionFileVisitor visitor = new ExtensionFileVisitor("java");
 			Files.walkFileTree(src.toPath(), visitor);
 			JavaProjectUtil.addJavaSourceFilesToRoot(visitor.getFiles(), packageFragmentRoot, LINKONPROJECT, monitor);
 		}
@@ -204,53 +204,53 @@ public class MavenImport extends ProjectImport {
 
 	/**
 	 * Adds a set of libs to the project
-	 * 
+	 *
 	 * @param libs    The jar files
 	 * @param project The project
 	 * @param monitor A progress monitor
 	 * @throws JavaModelException If adding a lib fails
 	 */
-	private void addLibsToProject(Set<File> libs, IJavaProject project, IProgressMonitor monitor)
+	private void addLibsToProject(final Set<File> libs, final IJavaProject project, final IProgressMonitor monitor)
 			throws JavaModelException {
 		final IFolder libFolder = project.getProject().getFolder("lib");
-		Stream<IFile> linkedFiles = libs.stream().map(libPath -> {
+		final Stream<IFile> linkedFiles = libs.stream().map(libPath -> {
 			final IFile libFileInProject = libFolder.getFile(libPath.getName());
 			if (libFileInProject.exists()) {
 				LOGGER.warn("Lib is already existent");
 			} else {
 				try {
 					EclipseProjectUtil.createLink(libPath, libFileInProject, monitor);
-				} catch (CoreException e) {
+				} catch (final CoreException e) {
 					throw new IllegalStateException(e);
 				}
 			}
 			return libFileInProject;
 		});
-		Stream<IClasspathEntry> entries = JavaProjectUtil.getClasspathEntries(linkedFiles.distinct());
+		final Stream<IClasspathEntry> entries = JavaProjectUtil.getClasspathEntries(linkedFiles.distinct());
 		JavaProjectUtil.addToClassPath(project, entries.collect(Collectors.toList()), monitor);
 	}
 
 	/**
 	 * Discovers all modules, source folders and dependencies
-	 * 
+	 *
 	 * @param pomFile The parent pom file
 	 * @throws ImportException
 	 */
-	private Collection<File> processPOM(File pomFile) throws ImportException {
-		if (modulePoms.contains(pomFile)) {
+	private Collection<File> processPOM(final File pomFile) throws ImportException {
+		if (this.modulePoms.contains(pomFile)) {
 			return Collections.emptyList();
 		}
-		File parent = pomFile.getParentFile();
-		File src = new File(parent, "src/main/java");
+		final File parent = pomFile.getParentFile();
+		final File src = new File(parent, "src/main/java");
 		if (src.exists()) {
-			sourceFolders.add(src);
+			this.sourceFolders.add(src);
 		}
 		Document document;
 		try {
-			document = builder.parse(pomFile);
-			Collection<File> child = getModules(document, parent);
-			PomParser.getDependencies(document, mavenRepository, dependencies);
-			modulePoms.add(pomFile);
+			document = this.builder.parse(pomFile);
+			final Collection<File> child = getModules(document, parent);
+			PomParser.getDependencies(document, this.mavenRepository, this.dependencies);
+			this.modulePoms.add(pomFile);
 			return child;
 		} catch (SAXException | IOException e) {
 			throw new ImportException(e);
@@ -259,18 +259,18 @@ public class MavenImport extends ProjectImport {
 
 	/**
 	 * Gets the modules of the pom file
-	 * 
+	 *
 	 * @param pom    The parsed pom file
 	 * @param parent The folder containing the pom
 	 * @return The modules
 	 */
-	public Collection<File> getModules(Document pom, File parent) {
-		NodeList modules = pom.getElementsByTagName("module");
-		List<File> child = new ArrayList<>(modules.getLength());
+	public Collection<File> getModules(final Document pom, final File parent) {
+		final NodeList modules = pom.getElementsByTagName("module");
+		final List<File> child = new ArrayList<>(modules.getLength());
 		for (int i = 0; i < modules.getLength(); i++) {
-			Node module = modules.item(i);
-			String text = module.getTextContent();
-			File moduleFile = new File(new File(parent, text), "pom.xml");
+			final Node module = modules.item(i);
+			final String text = module.getTextContent();
+			final File moduleFile = new File(new File(parent, text), "pom.xml");
 			if (moduleFile.exists()) {
 				child.add(moduleFile);
 			}

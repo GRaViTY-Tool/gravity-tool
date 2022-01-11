@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_DHGmUdPvEem1sfMQQxK1rw" type="Henshin" name="expect.henshin_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_DHGmUdPvEem1sfMQQxK1rw" type="Henshin" name="expect.henshin_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_FTIZANPvEem1sfMQQxK1rw" type="2001" fontName="Ubuntu" italic="true" lineColor="0">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LL1409PvEem1sfMQQxK1rw" source="defaultAction">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LL141NPvEem1sfMQQxK1rw" key="value" value="preserve"/>
@@ -18,7 +18,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_LL4VEtPvEem1sfMQQxK1rw"/>
         </children>
         <element xmi:type="henshin:Node" href="expect.henshin#_LL140NPvEem1sfMQQxK1rw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LL3uAdPvEem1sfMQQxK1rw" x="374" y="4"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LL3uAdPvEem1sfMQQxK1rw" x="387" y="5"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_LyPKcNPvEem1sfMQQxK1rw" type="3001" fontName="Ubuntu">
         <children xmi:type="notation:DecorationNode" xmi:id="_LyPxgNPvEem1sfMQQxK1rw" type="5002"/>
@@ -42,7 +42,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_MrGsI9PvEem1sfMQQxK1rw"/>
         </children>
         <element xmi:type="henshin:Node" href="expect.henshin#_Mq_-cNPvEem1sfMQQxK1rw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MrE28dPvEem1sfMQQxK1rw" x="392" y="230"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MrE28dPvEem1sfMQQxK1rw" x="405" y="229"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_gZI9ANPvEem1sfMQQxK1rw" type="3001" fontName="Ubuntu">
         <children xmi:type="notation:DecorationNode" xmi:id="_gZKLINPvEem1sfMQQxK1rw" type="5002"/>

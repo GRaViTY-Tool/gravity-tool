@@ -16,6 +16,7 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runners.model.InitializationError;
 
 public class RefactoringFinalProgram3Test extends AbstractRefactoringTestCase {
 
@@ -26,32 +27,37 @@ public class RefactoringFinalProgram3Test extends AbstractRefactoringTestCase {
 
 	/**
 	 * description "Pull up to lib"
+	 * @throws InitializationError
 	 */
 	@Test
-	public void test31() {
-		TypeGraph pm = getProgramModel();
+	public void test31_PullUp_Forbid_ToLib() throws InitializationError {
+		final TypeGraph pm = getProgramModel();
 
-		TClass child1 = pm.getClass("hidden.program.three.ChildClass1");
-		TClass child2 = pm.getClass("hidden.program.three.ChildClass2");
-		TClass parent = pm.getClass("java.lang.SecurityManager");
-		
-		TMethodSignature m = pm.getMethodSignature("method():void");
-		
-		PullUpMethodConfiguration pum = new PullUpMethodConfiguration(m, parent);
-		RefactoringTool tool = new RefactoringTool(pm, false);
+		final TClass child1 = pm.getClass("hidden.program.three.ChildClass1");
+		final TClass child2 = pm.getClass("hidden.program.three.ChildClass2");
+		final TClass parent = pm.getClass("java.lang.SecurityManager");
+
+		final TMethodSignature m = pm.getMethodSignature("method():void");
+
+		if((child1 == null) || (child2== null) || (parent == null) || (m == null)) {
+			throw new InitializationError("Couldn't find all elements in program model.");
+		}
+
+		final PullUpMethodConfiguration pum = new PullUpMethodConfiguration(m, parent);
+		final RefactoringTool tool = new RefactoringTool(pm, false);
 		try {
-			boolean applicible = tool.applyRefactoring(pum);
+			final boolean applicible = tool.applyRefactoring(pum);
 			assertFalse(applicible);
 
 			assertFalse(parent.getSignature().contains(m));
 			assertNull(m.getTDefinition(parent));
-			
+
 			assertTrue(child1.getSignature().contains(m));
 			assertNotNull(m.getTDefinition(child1));
-			
+
 			assertTrue(child2.getSignature().contains(m));
 			assertNotNull(m.getTDefinition(child2));
-		} catch (RefactoringFailedException e) {
+		} catch (final RefactoringFailedException e) {
 			throw new AssertionError(e.getMessage(), e);
 		}
 	}

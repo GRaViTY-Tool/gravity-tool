@@ -456,7 +456,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_130(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_99(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = IgnoreOrphanTypesEdgeImpl
 				.pattern_IgnoreOrphanTypesEdge_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -832,8 +832,8 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_130__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_130((EMoflonEdge) arguments.get(0));
+		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_99__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_99((EMoflonEdge) arguments.get(0));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

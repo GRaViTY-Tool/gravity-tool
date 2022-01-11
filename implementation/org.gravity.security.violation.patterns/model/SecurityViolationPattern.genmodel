@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gravity.security.violation.patterns/gen" modelPluginID="org.gravity.security.violation.patterns"
+    modelName="SecurityViolationPattern" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.genmodel#//antipatterngraph ../../org.gravity.typegraph.basic/model/Basic.genmodel#//basic ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml ../../carisma.profile.umlsec/profile/UMLsec.genmodel#//umlsec"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SecurityViolationPattern.ecore</foreignModel>
+  <genPackages prefix="Violations" basePackage="org.gravity.security.violation.patterns"
+      resource="XML" disposableProviderFactory="true" ecorePackage="SecurityViolationPattern.ecore#/">
+    <genClasses ecoreClass="SecurityViolationPattern.ecore#//SecureDependencyViolation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SecurityViolationPattern.ecore#//SecureDependencyViolation/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SecurityViolationPattern.ecore#//SecureDependencyViolation/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SecurityViolationPattern.ecore#//SecureDependencyViolation/requirement"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

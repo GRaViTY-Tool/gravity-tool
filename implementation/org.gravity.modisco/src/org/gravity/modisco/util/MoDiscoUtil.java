@@ -110,7 +110,8 @@ public final class MoDiscoUtil {
 	 */
 	private static boolean isSuperInterface(final Type type, final Type supertype) {
 		for (final TypeAccess interf : ((AbstractTypeDeclaration) type).getSuperInterfaces()) {
-			if (interf.getType().equals(supertype) || isSuperType(interf.getType(), supertype)) {
+			final Type superInterface = interf.getType();
+			if ((superInterface != null) && (superInterface.equals(supertype) || isSuperType(superInterface, supertype))) {
 				return true;
 			}
 		}

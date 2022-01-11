@@ -4,19 +4,19 @@
   <methods tName="n">
     <signatures returnType="//@ownedTypes.5">
       <paramList/>
-      <definitions incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" definedBy="//@ownedTypes.6" returnType="//@ownedTypes.5">
-        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" tTarget="//@methods.1/@signatures.0/@definitions.0" staticType="//@ownedTypes.6">
-          <ownedFlows flowSource="//@methods.1/@signatures.0" flowTarget="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0"/>
-          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0" flowTarget="//@methods.0/@signatures.0/@definitions.0"/>
-        </tAccessing>
+      <definitions incomingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.1" definedBy="//@ownedTypes.6" returnType="//@ownedTypes.5">
+        <accessing xsi:type="org.gravity.typegraph.basic:TCall" incomingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.0" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.1" target="//@methods.1/@signatures.0/@definitions.0" staticType="//@ownedTypes.6">
+          <ownedFlows flowSource="//@methods.1/@signatures.0" flowTarget="//@methods.0/@signatures.0/@definitions.0/@accessing.0"/>
+          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@accessing.0" flowTarget="//@methods.0/@signatures.0/@definitions.0"/>
+        </accessing>
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
   <methods tName="m">
-    <signatures outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" returnType="//@ownedTypes.5">
+    <signatures outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.0" returnType="//@ownedTypes.5">
       <paramList/>
-      <definitions definedBy="//@ownedTypes.6" accessedBy="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0" returnType="//@ownedTypes.5">
+      <definitions definedBy="//@ownedTypes.6" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.0" returnType="//@ownedTypes.5">
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>

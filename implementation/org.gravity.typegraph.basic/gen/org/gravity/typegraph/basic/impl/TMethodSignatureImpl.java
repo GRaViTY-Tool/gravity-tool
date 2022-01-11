@@ -3,37 +3,32 @@
 package org.gravity.typegraph.basic.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractFlowElement;
 import org.gravity.typegraph.basic.TAbstractMultiplicity;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TFlow;
+import org.gravity.typegraph.basic.TMember;
+// [user defined imports] -->
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TParameter;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
-import org.gravity.typegraph.basic.TParameter;
-import org.gravity.typegraph.basic.TMember;
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -426,18 +421,19 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public String getSignatureString() {
-		StringBuilder s = new StringBuilder(getMethod().getTName());
+		final StringBuilder s = new StringBuilder(getMethod().getTName());
 		s.append('(');
 		TParameter current = getFirstParameter();
 		while (current != null) {
-			TAbstractType type = current.getType();
+			final TAbstractType type = current.getType();
 			if (type != null) {
 				s.append(type.getTName());
 				if(current.isArray()) {
 					s.append("[]");
 				}
-			} 
+			}
 			else {
 				throw new IllegalStateException("The type of a parameter is null!");
 			}
@@ -446,7 +442,7 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				s.append(", ");
 			}
 		}
-		TAbstractType ret = getReturnType();
+		final TAbstractType ret = getReturnType();
 		if (ret == null) {
 			return s.append(')').toString();
 		} else {
@@ -463,11 +459,12 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public TMethodDefinition getTDefinition(TAbstractType defining) {
+	@Override
+	public TMethodDefinition getTDefinition(final TAbstractType defining) {
 		// [user code injected with eMoflon]
 		if (defining.getSignature().contains(this)) {
-			for (TMember definition : defining.getDefines()) {
-				if (this.getDefinitions().contains(definition)) {
+			for (final TMember definition : defining.getDefines()) {
+				if (getDefinitions().contains(definition)) {
 					return (TMethodDefinition) definition;
 				}
 			}
@@ -792,9 +789,12 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 
 	@Override
 	public String toString() {
-		String string = super.toString();
-		String name = getMethod().getTName();
-		return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
+		final String string = super.toString();
+		final String name = getMethod().getTName();
+		if(name != null) {
+			return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
+		}
+		return string;
 	}
 
 	/**

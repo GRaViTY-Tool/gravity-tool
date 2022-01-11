@@ -32,6 +32,7 @@
 }
 
 #attributeConditions {
+	eq(jm.name, um.name)
 	eq(up.name, jp.name)
 }
 

@@ -12,7 +12,7 @@ import org.eclipse.jgit.errors.NoWorkTreeException;
 
 /**
  * Functionalities to easily clone GIT repositories and change versions
- * 
+ *
  * @author speldszus
  *
  */
@@ -22,42 +22,32 @@ public class GitTools implements Closeable {
 	 * The logger of this class
 	 */
 	public static final Logger LOGGER = Logger.getLogger(GitTools.class);
-	
+
 	/**
 	 * An internal instance of the JGit client
 	 */
 	private Git git;
 
-	/**
-	 * Creates a new client and clones the repository
-	 * 
-	 * @param url The url of a public GIT repository
-	 * @param destination The destination to which the repository should be cloned
-	 * @throws GitCloneException If cloning the repository failed
-	 */
-	public GitTools(String url, File destination)
-			throws GitCloneException {
-		this(url, destination, false, true);
-	}
+	private File repository;
 
 	/**
 	 * Creates a new client and clones the repository
-	 * 
+	 *
 	 * @param url The url of a public GIT repository
 	 * @param destination The destination to which the repository should be cloned
 	 * @param replace if existing content at the destination should be replaced
 	 * @param submodules if submodules should be cloned
 	 * @throws GitCloneException If cloning the repository failed
 	 */
-	public GitTools(String url, File destination, boolean replace, boolean submodules) throws GitCloneException {
+	public GitTools(final String url, final File destination, final boolean replace, final boolean submodules) throws GitCloneException {
 		if (!destination.exists()) {
 			destination.mkdirs();
 		}
-		String productName = url.substring(url.lastIndexOf('/') + 1, url.length() - 4);
-		File repository = new File(destination, productName);
-		if (repository.exists()) {
+		final String productName = url.substring(url.lastIndexOf('/') + 1, url.length() - 4);
+		repository = new File(destination, productName);
+		if (getRepositoryLocation().exists()) {
 			if (replace) {
-				if (!FileUtils.recursiveDelete(repository)) {
+				if (!FileUtils.recursiveDelete(getRepositoryLocation())) {
 					throw new GitCloneException("There is already a repository with the name \"" + productName
 							+ "\" which couldn't be deleted.");
 				}
@@ -66,12 +56,12 @@ public class GitTools implements Closeable {
 			}
 		}
 		try {
-			git = Git.cloneRepository()
-					.setDirectory(repository)
+			this.git = Git.cloneRepository()
+					.setDirectory(getRepositoryLocation())
 					.setURI(url)
 					.setCloneSubmodules(submodules)
 					.call();
-		} catch (GitAPIException e) {
+		} catch (final GitAPIException e) {
 			LOGGER.error(e.getMessage(), e);
 			throw new GitCloneException(e);
 		}
@@ -79,15 +69,15 @@ public class GitTools implements Closeable {
 
 	/**
 	 * Checks out the specified version of the repository
-	 * 
+	 *
 	 * @param id The id of the repository
 	 * @return true, iff the version change was successful
 	 */
-	public boolean changeVersion(String id) {
+	public boolean changeVersion(final String id) {
 		try {
-			git.clean().setForce(true).setCleanDirectories(true).call();
-			git.revert().call();
-			git.checkout().setCreateBranch(false).setName(id).call();
+			this.git.clean().setForce(true).setCleanDirectories(true).call();
+			this.git.revert().call();
+			this.git.checkout().setCreateBranch(false).setName(id).call();
 		} catch (NoWorkTreeException | GitAPIException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			return false;
@@ -97,6 +87,10 @@ public class GitTools implements Closeable {
 
 	@Override
 	public void close() throws IOException {
-		git.getRepository().close();
+		this.git.getRepository().close();
+	}
+
+	public File getRepositoryLocation() {
+		return repository;
 	}
 }

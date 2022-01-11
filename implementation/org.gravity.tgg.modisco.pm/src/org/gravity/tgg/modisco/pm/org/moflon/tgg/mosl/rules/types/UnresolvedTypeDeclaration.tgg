@@ -13,11 +13,11 @@
 }
 
 #target {
-	++tClass:TUnresolvedType
-
 	pg:TypeGraph {
 		++  -ownedTypes -> tClass
 	}
+
+	++tClass:TUnresolvedType
 }
 
 #correspondence {
@@ -34,8 +34,5 @@
 
 #attributeConditions {
 	eq(unresolvedType.name, tClass.tName)
-
 	eq(unresolvedType.proxy, tClass.tLib)
 }
-
-

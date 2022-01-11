@@ -30,7 +30,7 @@ public class GradleDependencies {
 	 * @param androidApp       If the configuration being parsed is the
 	 *                         configuration of an Android APP
 	 */
-	public GradleDependencies(List<String> parsedBuildFiles, boolean androidApp) {
+	public GradleDependencies(final List<String> parsedBuildFiles, final boolean androidApp) {
 		this.compileDependencies = new HashSet<>();
 		this.useDependencies = new HashSet<>();
 		parsedBuildFiles.parallelStream().forEach(content -> {
@@ -54,7 +54,7 @@ public class GradleDependencies {
 	 *                         be searched
 	 * @param parsedBuildFiles The contents of the build.gradle files
 	 */
-	public void getMultipleDependencies(String content, List<String> parsedBuildFiles) {
+	public void getMultipleDependencies(final String content, final List<String> parsedBuildFiles) {
 		String cur = content;
 		int i;
 		final String str = "dependencies";
@@ -66,7 +66,7 @@ public class GradleDependencies {
 				String dependency = entryMatecher.group(2);
 				try {
 					dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
-					this.getCompileDependencies().add(dependency);
+					getCompileDependencies().add(dependency);
 				} catch (final GradleImportException e) {
 					GradleImport.LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
@@ -82,20 +82,18 @@ public class GradleDependencies {
 	 *                         be searched
 	 * @param parsedBuildFiles The contents of the build.gradle files
 	 */
-	public void getSingleDependencies(String content, List<String> parsedBuildFiles) {
+	public void getSingleDependencies(final String content, final List<String> parsedBuildFiles) {
 		final Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
 		while (m.find()) {
-			String dependency = m.group(4);
+			String dependency = m.group(3);
 			try {
 				dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
-				if ("compile".equals(m.group(0))) {
-					this.getCompileDependencies().add(dependency);
+				if (m.group(0).startsWith("compile")) {
+					getCompileDependencies().add(dependency);
+				} else if (dependency.contains(":")) {
+					getCompileDependencies().add(dependency);
 				} else {
-					if (dependency.contains(":")) {
-						this.getCompileDependencies().add(dependency);
-					} else {
-						this.getUseDependencies().add(dependency);
-					}
+					getUseDependencies().add(dependency);
 				}
 			} catch (final GradleImportException e) {
 				GradleImport.LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
@@ -113,7 +111,7 @@ public class GradleDependencies {
 	 * @return The normalized dependency string
 	 * @throws GradleImportException If the normalization failed
 	 */
-	private static String resolveDependencyString(String dependency, String content, List<String> parsedBuildFiles)
+	private static String resolveDependencyString(final String dependency, final String content, final List<String> parsedBuildFiles)
 			throws GradleImportException {
 		final int index = dependency.indexOf('$');
 		if (index < 0) {

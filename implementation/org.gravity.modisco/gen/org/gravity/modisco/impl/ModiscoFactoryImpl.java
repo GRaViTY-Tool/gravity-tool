@@ -78,6 +78,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 			case ModiscoPackage.MCLASS_INSTANCE_CREATION: return createMClassInstanceCreation();
 			case ModiscoPackage.MSUPER_CONSTRUCTOR_INVOCATION: return createMSuperConstructorInvocation();
 			case ModiscoPackage.MINITIALIZER: return createMInitializer();
+			case ModiscoPackage.MENUM_CONSTANT_DECLARATION: return createMEnumConstantDeclaration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -342,6 +343,17 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	public MInitializer createMInitializer() {
 		MInitializerImpl mInitializer = new MInitializerImpl();
 		return mInitializer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MEnumConstantDeclaration createMEnumConstantDeclaration() {
+		MEnumConstantDeclarationImpl mEnumConstantDeclaration = new MEnumConstantDeclarationImpl();
+		return mEnumConstantDeclaration;
 	}
 
 	/**

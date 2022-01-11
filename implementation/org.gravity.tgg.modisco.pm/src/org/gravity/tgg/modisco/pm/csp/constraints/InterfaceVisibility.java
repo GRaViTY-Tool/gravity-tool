@@ -2,40 +2,39 @@ package org.gravity.tgg.modisco.pm.csp.constraints;
 
 import org.eclipse.modisco.java.VisibilityKind;
 import org.gravity.typegraph.basic.TVisibility;
-import org.moflon.tgg.csp.constraints.*;
 import org.moflon.tgg.language.csp.Variable;
 import org.moflon.tgg.language.csp.impl.TGGConstraintImpl;
 
 public class InterfaceVisibility extends TGGConstraintImpl {
-	public void solve(Variable var_0, Variable var_1){
-       	String bindingStates = getBindingStates(var_0, var_1);
+	public void solve(final Variable modisco, final Variable pm){
+		final String bindingStates = getBindingStates(modisco, pm);
 
 		switch(bindingStates){
-    	case "FB":
-    		TVisibility tVisibility = (TVisibility) var_1.getValue();
-    		var_0.bindToValue(tVisibilityToVKind(tVisibility));
-    		setSatisfied(true);
-    		break;
-    	case "BF":
-    		VisibilityKind vKind = (VisibilityKind) var_0.getValue();
-    		var_1.bindToValue(vKindToTVisibility(vKind));
-    		setSatisfied(true);
-    		break;
-    	case "BB":
-    		TVisibility tVis = (TVisibility) var_1.getValue();
-    		VisibilityKind visKind = (VisibilityKind) var_0.getValue();
-    		setSatisfied(tVis.equals(vKindToTVisibility(visKind)));
-    		break;
-    	case "FF":
-    		setSatisfied(true);
-    		break;
-    	default: 
-    		setSatisfied(true);
-    		break;
-    	}
+		case "FB":
+			final TVisibility tVisibility = (TVisibility) pm.getValue();
+			modisco.bindToValue(tVisibilityToVKind(tVisibility));
+			setSatisfied(true);
+			break;
+		case "BF":
+			final VisibilityKind vKind = (VisibilityKind) modisco.getValue();
+			pm.bindToValue(vKindToTVisibility(vKind));
+			setSatisfied(true);
+			break;
+		case "BB":
+			final TVisibility tVis = (TVisibility) pm.getValue();
+			final VisibilityKind visKind = (VisibilityKind) modisco.getValue();
+			setSatisfied(tVis.equals(vKindToTVisibility(visKind)));
+			break;
+		case "FF":
+			setSatisfied(true);
+			break;
+		default:
+			setSatisfied(true);
+			break;
+		}
 	}
-	
-	private VisibilityKind tVisibilityToVKind(TVisibility tVisibility){		
+
+	private VisibilityKind tVisibilityToVKind(final TVisibility tVisibility){
 		if(tVisibility == TVisibility.TPUBLIC){
 			return VisibilityKind.PUBLIC;
 		}
@@ -47,13 +46,13 @@ public class InterfaceVisibility extends TGGConstraintImpl {
 		}
 		if(tVisibility == TVisibility.TPRIVATE){
 			return VisibilityKind.PRIVATE;
-		}	
+		}
 		// default Value
 		return VisibilityKind.NONE;
 	}
-	
-	
-	private TVisibility vKindToTVisibility(VisibilityKind vKind){		
+
+
+	private TVisibility vKindToTVisibility(final VisibilityKind vKind){
 		if(vKind == VisibilityKind.PUBLIC){
 			return TVisibility.TPUBLIC;
 		}
@@ -65,7 +64,7 @@ public class InterfaceVisibility extends TGGConstraintImpl {
 		}
 		if(vKind == VisibilityKind.PRIVATE){
 			return TVisibility.TPRIVATE;
-		}	
+		}
 		// default Value
 		return TVisibility.TPUBLIC;
 	}

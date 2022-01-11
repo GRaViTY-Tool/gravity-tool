@@ -34,13 +34,13 @@ import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.security.annotations.AnnotationsActivator;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.moflon.tgg.language.LanguagePackage;
 import org.moflon.tgg.runtime.RuntimePackage;
 
-import com.googlecode.junittoolbox.ParallelParameterized;
-
-@RunWith(ParallelParameterized.class)
+//@RunWith(ParallelParameterized.class)
+@RunWith(Parameterized.class)
 public abstract class AbstractParameterizedTransformationTest {
 
 	/**

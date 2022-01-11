@@ -154,47 +154,47 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeGraph typeGraph = (TypeGraph) result1_bindingAndBlack[0];
-		MGravityModel model = (MGravityModel) result1_bindingAndBlack[1];
-		ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[2];
-		MFieldName mFieldName = (MFieldName) result1_bindingAndBlack[3];
+		MGravityModel model = (MGravityModel) result1_bindingAndBlack[0];
+		TypeGraph typeGraph = (TypeGraph) result1_bindingAndBlack[1];
+		MFieldName mFieldName = (MFieldName) result1_bindingAndBlack[2];
+		ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = FieldNameImpl.pattern_FieldName_1_1_performtransformation_greenBFFBB(typeGraph,
+		Object[] result1_green = FieldNameImpl.pattern_FieldName_1_1_performtransformation_greenBBFFB(typeGraph,
 				mFieldName, csp);
-		TField tField = (TField) result1_green[1];
-		MFieldNameToTField eFieldDeclarationToTField = (MFieldNameToTField) result1_green[2];
+		TField tField = (TField) result1_green[2];
+		MFieldNameToTField eFieldDeclarationToTField = (MFieldNameToTField) result1_green[3];
 
-		Object[] result2_black = FieldNameImpl.pattern_FieldName_1_2_collecttranslatedelements_blackBBB(tField,
-				eFieldDeclarationToTField, mFieldName);
+		Object[] result2_black = FieldNameImpl.pattern_FieldName_1_2_collecttranslatedelements_blackBBB(mFieldName,
+				tField, eFieldDeclarationToTField);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tField] = " + tField + ", "
-					+ "[eFieldDeclarationToTField] = " + eFieldDeclarationToTField + ", " + "[mFieldName] = "
-					+ mFieldName + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[mFieldName] = " + mFieldName + ", " + "[tField] = "
+							+ tField + ", " + "[eFieldDeclarationToTField] = " + eFieldDeclarationToTField + ".");
 		}
-		Object[] result2_green = FieldNameImpl.pattern_FieldName_1_2_collecttranslatedelements_greenFBBB(tField,
-				eFieldDeclarationToTField, mFieldName);
+		Object[] result2_green = FieldNameImpl.pattern_FieldName_1_2_collecttranslatedelements_greenFBBB(mFieldName,
+				tField, eFieldDeclarationToTField);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = FieldNameImpl.pattern_FieldName_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
-				typeGraph, tField, model, modelToTypeGraph, eFieldDeclarationToTField, mFieldName);
+		Object[] result3_black = FieldNameImpl.pattern_FieldName_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, model,
+				typeGraph, mFieldName, tField, modelToTypeGraph, eFieldDeclarationToTField);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[typeGraph] = " + typeGraph + ", " + "[tField] = " + tField + ", " + "[model] = " + model
-					+ ", " + "[modelToTypeGraph] = " + modelToTypeGraph + ", " + "[eFieldDeclarationToTField] = "
-					+ eFieldDeclarationToTField + ", " + "[mFieldName] = " + mFieldName + ".");
+					+ ", " + "[model] = " + model + ", " + "[typeGraph] = " + typeGraph + ", " + "[mFieldName] = "
+					+ mFieldName + ", " + "[tField] = " + tField + ", " + "[modelToTypeGraph] = " + modelToTypeGraph
+					+ ", " + "[eFieldDeclarationToTField] = " + eFieldDeclarationToTField + ".");
 		}
-		FieldNameImpl.pattern_FieldName_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, typeGraph, tField, model,
-				eFieldDeclarationToTField, mFieldName);
-		//nothing EMoflonEdge model__mFieldName____mFieldNames = (EMoflonEdge) result3_green[6];
+		FieldNameImpl.pattern_FieldName_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, model, typeGraph,
+				mFieldName, tField, eFieldDeclarationToTField);
+		//nothing EMoflonEdge eFieldDeclarationToTField__mFieldName____source = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge eFieldDeclarationToTField__tField____target = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge typeGraph__tField____fields = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge tField__typeGraph____model = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge eFieldDeclarationToTField__mFieldName____source = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge model__mFieldName____mFieldNames = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
-		FieldNameImpl.pattern_FieldName_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, typeGraph, tField,
-				model, modelToTypeGraph, eFieldDeclarationToTField, mFieldName);
+		FieldNameImpl.pattern_FieldName_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, model, typeGraph,
+				mFieldName, tField, modelToTypeGraph, eFieldDeclarationToTField);
 		return FieldNameImpl.pattern_FieldName_1_6_expressionFB(ruleresult);
 	}
 
@@ -223,27 +223,27 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		}
 		MGravityModel model = (MGravityModel) result2_binding[0];
 		MFieldName mFieldName = (MFieldName) result2_binding[1];
-		for (Object[] result2_black : FieldNameImpl.pattern_FieldName_2_2_corematch_blackFBFBB(model, mFieldName,
+		for (Object[] result2_black : FieldNameImpl.pattern_FieldName_2_2_corematch_blackBFBFB(model, mFieldName,
 				match)) {
-			TypeGraph typeGraph = (TypeGraph) result2_black[0];
-			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result2_black[2];
+			TypeGraph typeGraph = (TypeGraph) result2_black[1];
+			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : FieldNameImpl.pattern_FieldName_2_3_findcontext_blackBBBB(typeGraph, model,
-					modelToTypeGraph, mFieldName)) {
-				Object[] result3_green = FieldNameImpl.pattern_FieldName_2_3_findcontext_greenBBBBFFFF(typeGraph, model,
-						modelToTypeGraph, mFieldName);
+			for (Object[] result3_black : FieldNameImpl.pattern_FieldName_2_3_findcontext_blackBBBB(model, typeGraph,
+					mFieldName, modelToTypeGraph)) {
+				Object[] result3_green = FieldNameImpl.pattern_FieldName_2_3_findcontext_greenBBBBFFFF(model, typeGraph,
+						mFieldName, modelToTypeGraph);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge model__mFieldName____mFieldNames = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge modelToTypeGraph__model____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge modelToTypeGraph__typeGraph____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge modelToTypeGraph__model____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge modelToTypeGraph__typeGraph____target = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge model__mFieldName____mFieldNames = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = FieldNameImpl.pattern_FieldName_2_4_solveCSP_bindingAndBlackFBBBBBB(
-						this, isApplicableMatch, typeGraph, model, modelToTypeGraph, mFieldName);
+						this, isApplicableMatch, model, typeGraph, mFieldName, modelToTypeGraph);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[typeGraph] = " + typeGraph + ", "
-							+ "[model] = " + model + ", " + "[modelToTypeGraph] = " + modelToTypeGraph + ", "
-							+ "[mFieldName] = " + mFieldName + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[model] = " + model + ", "
+							+ "[typeGraph] = " + typeGraph + ", " + "[mFieldName] = " + mFieldName + ", "
+							+ "[modelToTypeGraph] = " + modelToTypeGraph + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -311,8 +311,8 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, MGravityModel model,
-			ModelToTypeGraph modelToTypeGraph, MFieldName mFieldName) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MGravityModel model, TypeGraph typeGraph,
+			MFieldName mFieldName, ModelToTypeGraph modelToTypeGraph) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -337,10 +337,10 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		eq.solve(var_mFieldName_mName, var_tField_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("typeGraph", typeGraph);
 		isApplicableMatch.registerObject("model", model);
-		isApplicableMatch.registerObject("modelToTypeGraph", modelToTypeGraph);
+		isApplicableMatch.registerObject("typeGraph", typeGraph);
 		isApplicableMatch.registerObject("mFieldName", mFieldName);
+		isApplicableMatch.registerObject("modelToTypeGraph", modelToTypeGraph);
 		return csp;
 	}
 
@@ -358,14 +358,14 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject typeGraph, EObject tField, EObject model,
-			EObject modelToTypeGraph, EObject eFieldDeclarationToTField, EObject mFieldName) {
-		ruleresult.registerObject("typeGraph", typeGraph);
-		ruleresult.registerObject("tField", tField);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject typeGraph, EObject mFieldName,
+			EObject tField, EObject modelToTypeGraph, EObject eFieldDeclarationToTField) {
 		ruleresult.registerObject("model", model);
+		ruleresult.registerObject("typeGraph", typeGraph);
+		ruleresult.registerObject("mFieldName", mFieldName);
+		ruleresult.registerObject("tField", tField);
 		ruleresult.registerObject("modelToTypeGraph", modelToTypeGraph);
 		ruleresult.registerObject("eFieldDeclarationToTField", eFieldDeclarationToTField);
-		ruleresult.registerObject("mFieldName", mFieldName);
 
 	}
 
@@ -443,47 +443,47 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeGraph typeGraph = (TypeGraph) result1_bindingAndBlack[0];
-		TField tField = (TField) result1_bindingAndBlack[1];
-		MGravityModel model = (MGravityModel) result1_bindingAndBlack[2];
+		MGravityModel model = (MGravityModel) result1_bindingAndBlack[0];
+		TypeGraph typeGraph = (TypeGraph) result1_bindingAndBlack[1];
+		TField tField = (TField) result1_bindingAndBlack[2];
 		ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = FieldNameImpl.pattern_FieldName_11_1_performtransformation_greenBBFFB(tField, model,
+		Object[] result1_green = FieldNameImpl.pattern_FieldName_11_1_performtransformation_greenBFBFB(model, tField,
 				csp);
-		MFieldNameToTField eFieldDeclarationToTField = (MFieldNameToTField) result1_green[2];
-		MFieldName mFieldName = (MFieldName) result1_green[3];
+		MFieldName mFieldName = (MFieldName) result1_green[1];
+		MFieldNameToTField eFieldDeclarationToTField = (MFieldNameToTField) result1_green[3];
 
-		Object[] result2_black = FieldNameImpl.pattern_FieldName_11_2_collecttranslatedelements_blackBBB(tField,
-				eFieldDeclarationToTField, mFieldName);
+		Object[] result2_black = FieldNameImpl.pattern_FieldName_11_2_collecttranslatedelements_blackBBB(mFieldName,
+				tField, eFieldDeclarationToTField);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tField] = " + tField + ", "
-					+ "[eFieldDeclarationToTField] = " + eFieldDeclarationToTField + ", " + "[mFieldName] = "
-					+ mFieldName + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[mFieldName] = " + mFieldName + ", " + "[tField] = "
+							+ tField + ", " + "[eFieldDeclarationToTField] = " + eFieldDeclarationToTField + ".");
 		}
-		Object[] result2_green = FieldNameImpl.pattern_FieldName_11_2_collecttranslatedelements_greenFBBB(tField,
-				eFieldDeclarationToTField, mFieldName);
+		Object[] result2_green = FieldNameImpl.pattern_FieldName_11_2_collecttranslatedelements_greenFBBB(mFieldName,
+				tField, eFieldDeclarationToTField);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldNameImpl.pattern_FieldName_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
-				typeGraph, tField, model, modelToTypeGraph, eFieldDeclarationToTField, mFieldName);
+				model, typeGraph, mFieldName, tField, modelToTypeGraph, eFieldDeclarationToTField);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[typeGraph] = " + typeGraph + ", " + "[tField] = " + tField + ", " + "[model] = " + model
-					+ ", " + "[modelToTypeGraph] = " + modelToTypeGraph + ", " + "[eFieldDeclarationToTField] = "
-					+ eFieldDeclarationToTField + ", " + "[mFieldName] = " + mFieldName + ".");
+					+ ", " + "[model] = " + model + ", " + "[typeGraph] = " + typeGraph + ", " + "[mFieldName] = "
+					+ mFieldName + ", " + "[tField] = " + tField + ", " + "[modelToTypeGraph] = " + modelToTypeGraph
+					+ ", " + "[eFieldDeclarationToTField] = " + eFieldDeclarationToTField + ".");
 		}
-		FieldNameImpl.pattern_FieldName_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, typeGraph, tField, model,
-				eFieldDeclarationToTField, mFieldName);
-		//nothing EMoflonEdge model__mFieldName____mFieldNames = (EMoflonEdge) result3_green[6];
+		FieldNameImpl.pattern_FieldName_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, model, typeGraph,
+				mFieldName, tField, eFieldDeclarationToTField);
+		//nothing EMoflonEdge eFieldDeclarationToTField__mFieldName____source = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge eFieldDeclarationToTField__tField____target = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge typeGraph__tField____fields = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge tField__typeGraph____model = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge eFieldDeclarationToTField__mFieldName____source = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge model__mFieldName____mFieldNames = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
-		FieldNameImpl.pattern_FieldName_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, typeGraph, tField,
-				model, modelToTypeGraph, eFieldDeclarationToTField, mFieldName);
+		FieldNameImpl.pattern_FieldName_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, model, typeGraph,
+				mFieldName, tField, modelToTypeGraph, eFieldDeclarationToTField);
 		return FieldNameImpl.pattern_FieldName_11_6_expressionFB(ruleresult);
 	}
 
@@ -512,28 +512,28 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		}
 		TypeGraph typeGraph = (TypeGraph) result2_binding[0];
 		TField tField = (TField) result2_binding[1];
-		for (Object[] result2_black : FieldNameImpl.pattern_FieldName_12_2_corematch_blackBBFFB(typeGraph, tField,
+		for (Object[] result2_black : FieldNameImpl.pattern_FieldName_12_2_corematch_blackFBBFB(typeGraph, tField,
 				match)) {
-			MGravityModel model = (MGravityModel) result2_black[2];
+			MGravityModel model = (MGravityModel) result2_black[0];
 			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : FieldNameImpl.pattern_FieldName_12_3_findcontext_blackBBBB(typeGraph, tField,
-					model, modelToTypeGraph)) {
-				Object[] result3_green = FieldNameImpl.pattern_FieldName_12_3_findcontext_greenBBBBFFFFF(typeGraph,
-						tField, model, modelToTypeGraph);
+			for (Object[] result3_black : FieldNameImpl.pattern_FieldName_12_3_findcontext_blackBBBB(model, typeGraph,
+					tField, modelToTypeGraph)) {
+				Object[] result3_green = FieldNameImpl.pattern_FieldName_12_3_findcontext_greenBBBBFFFFF(model,
+						typeGraph, tField, modelToTypeGraph);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
 				//nothing EMoflonEdge modelToTypeGraph__model____source = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge typeGraph__tField____fields = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge tField__typeGraph____model = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge modelToTypeGraph__typeGraph____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge modelToTypeGraph__typeGraph____target = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge typeGraph__tField____fields = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge tField__typeGraph____model = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = FieldNameImpl.pattern_FieldName_12_4_solveCSP_bindingAndBlackFBBBBBB(
-						this, isApplicableMatch, typeGraph, tField, model, modelToTypeGraph);
+						this, isApplicableMatch, model, typeGraph, tField, modelToTypeGraph);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[typeGraph] = " + typeGraph + ", "
-							+ "[tField] = " + tField + ", " + "[model] = " + model + ", " + "[modelToTypeGraph] = "
-							+ modelToTypeGraph + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[model] = " + model + ", "
+							+ "[typeGraph] = " + typeGraph + ", " + "[tField] = " + tField + ", "
+							+ "[modelToTypeGraph] = " + modelToTypeGraph + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -601,8 +601,8 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, TField tField,
-			MGravityModel model, ModelToTypeGraph modelToTypeGraph) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MGravityModel model, TypeGraph typeGraph,
+			TField tField, ModelToTypeGraph modelToTypeGraph) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -627,9 +627,9 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		eq.solve(var_mFieldName_mName, var_tField_tName);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("model", model);
 		isApplicableMatch.registerObject("typeGraph", typeGraph);
 		isApplicableMatch.registerObject("tField", tField);
-		isApplicableMatch.registerObject("model", model);
 		isApplicableMatch.registerObject("modelToTypeGraph", modelToTypeGraph);
 		return csp;
 	}
@@ -648,14 +648,14 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject typeGraph, EObject tField, EObject model,
-			EObject modelToTypeGraph, EObject eFieldDeclarationToTField, EObject mFieldName) {
-		ruleresult.registerObject("typeGraph", typeGraph);
-		ruleresult.registerObject("tField", tField);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject model, EObject typeGraph, EObject mFieldName,
+			EObject tField, EObject modelToTypeGraph, EObject eFieldDeclarationToTField) {
 		ruleresult.registerObject("model", model);
+		ruleresult.registerObject("typeGraph", typeGraph);
+		ruleresult.registerObject("mFieldName", mFieldName);
+		ruleresult.registerObject("tField", tField);
 		ruleresult.registerObject("modelToTypeGraph", modelToTypeGraph);
 		ruleresult.registerObject("eFieldDeclarationToTField", eFieldDeclarationToTField);
-		ruleresult.registerObject("mFieldName", mFieldName);
 
 	}
 
@@ -674,7 +674,7 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_45(EMoflonEdge _edge_fields) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_0(EMoflonEdge _edge_fields) {
 
 		Object[] result1_bindingAndBlack = FieldNameImpl
 				.pattern_FieldName_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -727,7 +727,7 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_48(EMoflonEdge _edge_mFieldNames) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_0(EMoflonEdge _edge_mFieldNames) {
 
 		Object[] result1_bindingAndBlack = FieldNameImpl
 				.pattern_FieldName_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -790,13 +790,13 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tField_tName = CSPFactoryHelper.eINSTANCE.createVariable("tField", true, csp);
-		var_tField_tName.setValue(__helper.getValue("tField", "tName"));
-		var_tField_tName.setType("String");
-
 		Variable var_mFieldName_mName = CSPFactoryHelper.eINSTANCE.createVariable("mFieldName", true, csp);
 		var_mFieldName_mName.setValue(__helper.getValue("mFieldName", "mName"));
 		var_mFieldName_mName.setType("String");
+
+		Variable var_tField_tName = CSPFactoryHelper.eINSTANCE.createVariable("tField", true, csp);
+		var_tField_tName.setValue(__helper.getValue("tField", "tName"));
+		var_tField_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -837,13 +837,13 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tField_tName = CSPFactoryHelper.eINSTANCE.createVariable("tField", true, csp);
-		var_tField_tName.setValue(__helper.getValue("tField", "tName"));
-		var_tField_tName.setType("String");
-
 		Variable var_mFieldName_mName = CSPFactoryHelper.eINSTANCE.createVariable("mFieldName", true, csp);
 		var_mFieldName_mName.setValue(__helper.getValue("mFieldName", "mName"));
 		var_mFieldName_mName.setType("String");
+
+		Variable var_tField_tName = CSPFactoryHelper.eINSTANCE.createVariable("tField", true, csp);
+		var_tField_tName.setValue(__helper.getValue("tField", "tName"));
+		var_tField_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -889,39 +889,39 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TypeGraph typeGraph = (TypeGraph) result2_bindingAndBlack[0];
-		TField tField = (TField) result2_bindingAndBlack[1];
-		MGravityModel model = (MGravityModel) result2_bindingAndBlack[2];
-		MFieldName mFieldName = (MFieldName) result2_bindingAndBlack[3];
+		MGravityModel model = (MGravityModel) result2_bindingAndBlack[0];
+		TypeGraph typeGraph = (TypeGraph) result2_bindingAndBlack[1];
+		MFieldName mFieldName = (MFieldName) result2_bindingAndBlack[2];
+		TField tField = (TField) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = FieldNameImpl.pattern_FieldName_24_3_solvecsp_bindingAndBlackFBBBBBBB(this,
-				typeGraph, tField, model, mFieldName, sourceMatch, targetMatch);
+				model, typeGraph, mFieldName, tField, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[typeGraph] = " + typeGraph + ", " + "[tField] = " + tField + ", " + "[model] = " + model + ", "
-					+ "[mFieldName] = " + mFieldName + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[model] = " + model + ", " + "[typeGraph] = " + typeGraph + ", " + "[mFieldName] = " + mFieldName
+					+ ", " + "[tField] = " + tField + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (FieldNameImpl.pattern_FieldName_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : FieldNameImpl.pattern_FieldName_24_5_matchcorrcontext_blackBBFBB(typeGraph,
-					model, sourceMatch, targetMatch)) {
+			for (Object[] result5_black : FieldNameImpl.pattern_FieldName_24_5_matchcorrcontext_blackBBFBB(model,
+					typeGraph, sourceMatch, targetMatch)) {
 				ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result5_black[2];
 				Object[] result5_green = FieldNameImpl
 						.pattern_FieldName_24_5_matchcorrcontext_greenBBBF(modelToTypeGraph, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
-				Object[] result6_black = FieldNameImpl.pattern_FieldName_24_6_createcorrespondence_blackBBBBB(typeGraph,
-						tField, model, mFieldName, ccMatch);
+				Object[] result6_black = FieldNameImpl.pattern_FieldName_24_6_createcorrespondence_blackBBBBB(model,
+						typeGraph, mFieldName, tField, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[typeGraph] = "
-							+ typeGraph + ", " + "[tField] = " + tField + ", " + "[model] = " + model + ", "
-							+ "[mFieldName] = " + mFieldName + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model] = " + model + ", "
+							+ "[typeGraph] = " + typeGraph + ", " + "[mFieldName] = " + mFieldName + ", "
+							+ "[tField] = " + tField + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				FieldNameImpl.pattern_FieldName_24_6_createcorrespondence_greenBFBB(tField, mFieldName, ccMatch);
-				//nothing MFieldNameToTField eFieldDeclarationToTField = (MFieldNameToTField) result6_green[1];
+				FieldNameImpl.pattern_FieldName_24_6_createcorrespondence_greenBBFB(mFieldName, tField, ccMatch);
+				//nothing MFieldNameToTField eFieldDeclarationToTField = (MFieldNameToTField) result6_green[2];
 
 				Object[] result7_black = FieldNameImpl.pattern_FieldName_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -943,7 +943,7 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TypeGraph typeGraph, TField tField, MGravityModel model, MFieldName mFieldName,
+	public CSP isApplicable_solveCsp_CC(MGravityModel model, TypeGraph typeGraph, MFieldName mFieldName, TField tField,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -1029,37 +1029,37 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		for (Object[] result2_black : FieldNameImpl
 				.pattern_FieldName_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList modelToTypeGraphList = (RuleEntryList) result2_black[0];
-			TypeGraph typeGraph = (TypeGraph) result2_black[1];
+			MGravityModel model = (MGravityModel) result2_black[1];
 			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result2_black[2];
-			MGravityModel model = (MGravityModel) result2_black[3];
+			TypeGraph typeGraph = (TypeGraph) result2_black[3];
 
 			Object[] result3_bindingAndBlack = FieldNameImpl.pattern_FieldName_29_3_solveCSP_bindingAndBlackFBBBBBB(
-					this, isApplicableMatch, typeGraph, model, modelToTypeGraph, ruleResult);
+					this, isApplicableMatch, model, typeGraph, modelToTypeGraph, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[typeGraph] = " + typeGraph + ", "
-						+ "[model] = " + model + ", " + "[modelToTypeGraph] = " + modelToTypeGraph + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[model] = " + model + ", "
+						+ "[typeGraph] = " + typeGraph + ", " + "[modelToTypeGraph] = " + modelToTypeGraph + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (FieldNameImpl.pattern_FieldName_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = FieldNameImpl.pattern_FieldName_29_5_checknacs_blackBBB(typeGraph, model,
+				Object[] result5_black = FieldNameImpl.pattern_FieldName_29_5_checknacs_blackBBB(model, typeGraph,
 						modelToTypeGraph);
 				if (result5_black != null) {
 
-					Object[] result6_black = FieldNameImpl.pattern_FieldName_29_6_perform_blackBBBB(typeGraph, model,
+					Object[] result6_black = FieldNameImpl.pattern_FieldName_29_6_perform_blackBBBB(model, typeGraph,
 							modelToTypeGraph, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[typeGraph] = "
-								+ typeGraph + ", " + "[model] = " + model + ", " + "[modelToTypeGraph] = "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model] = " + model
+								+ ", " + "[typeGraph] = " + typeGraph + ", " + "[modelToTypeGraph] = "
 								+ modelToTypeGraph + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					FieldNameImpl.pattern_FieldName_29_6_perform_greenBFBFFBB(typeGraph, model, ruleResult, csp);
-					//nothing TField tField = (TField) result6_green[1];
-					//nothing MFieldNameToTField eFieldDeclarationToTField = (MFieldNameToTField) result6_green[3];
-					//nothing MFieldName mFieldName = (MFieldName) result6_green[4];
+					FieldNameImpl.pattern_FieldName_29_6_perform_greenBBFFFBB(model, typeGraph, ruleResult, csp);
+					//nothing MFieldName mFieldName = (MFieldName) result6_green[2];
+					//nothing TField tField = (TField) result6_green[3];
+					//nothing MFieldNameToTField eFieldDeclarationToTField = (MFieldNameToTField) result6_green[4];
 
 				} else {
 				}
@@ -1076,7 +1076,7 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, MGravityModel model,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MGravityModel model, TypeGraph typeGraph,
 			ModelToTypeGraph modelToTypeGraph, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1101,8 +1101,8 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		eq.solve(var_mFieldName_mName, var_tField_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("typeGraph", typeGraph);
 		isApplicableMatch.registerObject("model", model);
+		isApplicableMatch.registerObject("typeGraph", typeGraph);
 		isApplicableMatch.registerObject("modelToTypeGraph", modelToTypeGraph);
 		return csp;
 	}
@@ -1140,10 +1140,9 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 					(MFieldName) arguments.get(2));
 		case RulesPackage.FIELD_NAME___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_NAME___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEGRAPH_MGRAVITYMODEL_MODELTOTYPEGRAPH_MFIELDNAME:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-					(MGravityModel) arguments.get(2), (ModelToTypeGraph) arguments.get(3),
-					(MFieldName) arguments.get(4));
+		case RulesPackage.FIELD_NAME___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MGRAVITYMODEL_TYPEGRAPH_MFIELDNAME_MODELTOTYPEGRAPH:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MGravityModel) arguments.get(1),
+					(TypeGraph) arguments.get(2), (MFieldName) arguments.get(3), (ModelToTypeGraph) arguments.get(4));
 		case RulesPackage.FIELD_NAME___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.FIELD_NAME___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1168,9 +1167,9 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 					(TField) arguments.get(2));
 		case RulesPackage.FIELD_NAME___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_NAME___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_TFIELD_MGRAVITYMODEL_MODELTOTYPEGRAPH:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-					(TField) arguments.get(2), (MGravityModel) arguments.get(3), (ModelToTypeGraph) arguments.get(4));
+		case RulesPackage.FIELD_NAME___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MGRAVITYMODEL_TYPEGRAPH_TFIELD_MODELTOTYPEGRAPH:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MGravityModel) arguments.get(1),
+					(TypeGraph) arguments.get(2), (TField) arguments.get(3), (ModelToTypeGraph) arguments.get(4));
 		case RulesPackage.FIELD_NAME___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.FIELD_NAME___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1180,19 +1179,19 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 			return null;
 		case RulesPackage.FIELD_NAME___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_NAME___IS_APPROPRIATE_BWD_EMOFLON_EDGE_45__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_45((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_NAME___IS_APPROPRIATE_FWD_EMOFLON_EDGE_48__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_48((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_NAME___IS_APPROPRIATE_BWD_EMOFLON_EDGE_0__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_0((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_NAME___IS_APPROPRIATE_FWD_EMOFLON_EDGE_0__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_0((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_NAME___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_NAME___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_NAME___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FIELD_NAME___IS_APPLICABLE_SOLVE_CSP_CC__TYPEGRAPH_TFIELD_MGRAVITYMODEL_MFIELDNAME_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TypeGraph) arguments.get(0), (TField) arguments.get(1),
-					(MGravityModel) arguments.get(2), (MFieldName) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.FIELD_NAME___IS_APPLICABLE_SOLVE_CSP_CC__MGRAVITYMODEL_TYPEGRAPH_MFIELDNAME_TFIELD_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((MGravityModel) arguments.get(0), (TypeGraph) arguments.get(1),
+					(MFieldName) arguments.get(2), (TField) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.FIELD_NAME___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1202,9 +1201,9 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 			return checkDEC_BWD((TypeGraph) arguments.get(0), (TField) arguments.get(1));
 		case RulesPackage.FIELD_NAME___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-		case RulesPackage.FIELD_NAME___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_MGRAVITYMODEL_MODELTOTYPEGRAPH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-					(MGravityModel) arguments.get(2), (ModelToTypeGraph) arguments.get(3),
+		case RulesPackage.FIELD_NAME___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MGRAVITYMODEL_TYPEGRAPH_MODELTOTYPEGRAPH_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MGravityModel) arguments.get(1),
+					(TypeGraph) arguments.get(2), (ModelToTypeGraph) arguments.get(3),
 					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.FIELD_NAME___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1299,23 +1298,23 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 
 	public static final Object[] pattern_FieldName_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("typeGraph");
-		EObject _localVariable_1 = isApplicableMatch.getObject("model");
-		EObject _localVariable_2 = isApplicableMatch.getObject("modelToTypeGraph");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mFieldName");
-		EObject tmpTypeGraph = _localVariable_0;
-		EObject tmpModel = _localVariable_1;
-		EObject tmpModelToTypeGraph = _localVariable_2;
-		EObject tmpMFieldName = _localVariable_3;
-		if (tmpTypeGraph instanceof TypeGraph) {
-			TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
-			if (tmpModel instanceof MGravityModel) {
-				MGravityModel model = (MGravityModel) tmpModel;
-				if (tmpModelToTypeGraph instanceof ModelToTypeGraph) {
-					ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) tmpModelToTypeGraph;
-					if (tmpMFieldName instanceof MFieldName) {
-						MFieldName mFieldName = (MFieldName) tmpMFieldName;
-						return new Object[] { typeGraph, model, modelToTypeGraph, mFieldName, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("model");
+		EObject _localVariable_1 = isApplicableMatch.getObject("typeGraph");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mFieldName");
+		EObject _localVariable_3 = isApplicableMatch.getObject("modelToTypeGraph");
+		EObject tmpModel = _localVariable_0;
+		EObject tmpTypeGraph = _localVariable_1;
+		EObject tmpMFieldName = _localVariable_2;
+		EObject tmpModelToTypeGraph = _localVariable_3;
+		if (tmpModel instanceof MGravityModel) {
+			MGravityModel model = (MGravityModel) tmpModel;
+			if (tmpTypeGraph instanceof TypeGraph) {
+				TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
+				if (tmpMFieldName instanceof MFieldName) {
+					MFieldName mFieldName = (MFieldName) tmpMFieldName;
+					if (tmpModelToTypeGraph instanceof ModelToTypeGraph) {
+						ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) tmpModelToTypeGraph;
+						return new Object[] { model, typeGraph, mFieldName, modelToTypeGraph, isApplicableMatch };
 					}
 				}
 			}
@@ -1323,13 +1322,13 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		return null;
 	}
 
-	public static final Object[] pattern_FieldName_1_1_performtransformation_blackBBBBFBB(TypeGraph typeGraph,
-			MGravityModel model, ModelToTypeGraph modelToTypeGraph, MFieldName mFieldName, FieldName _this,
+	public static final Object[] pattern_FieldName_1_1_performtransformation_blackBBBBFBB(MGravityModel model,
+			TypeGraph typeGraph, MFieldName mFieldName, ModelToTypeGraph modelToTypeGraph, FieldName _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { typeGraph, model, modelToTypeGraph, mFieldName, csp, _this, isApplicableMatch };
+				return new Object[] { model, typeGraph, mFieldName, modelToTypeGraph, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1340,70 +1339,71 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		Object[] result_pattern_FieldName_1_1_performtransformation_binding = pattern_FieldName_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_FieldName_1_1_performtransformation_binding != null) {
-			TypeGraph typeGraph = (TypeGraph) result_pattern_FieldName_1_1_performtransformation_binding[0];
-			MGravityModel model = (MGravityModel) result_pattern_FieldName_1_1_performtransformation_binding[1];
-			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result_pattern_FieldName_1_1_performtransformation_binding[2];
-			MFieldName mFieldName = (MFieldName) result_pattern_FieldName_1_1_performtransformation_binding[3];
+			MGravityModel model = (MGravityModel) result_pattern_FieldName_1_1_performtransformation_binding[0];
+			TypeGraph typeGraph = (TypeGraph) result_pattern_FieldName_1_1_performtransformation_binding[1];
+			MFieldName mFieldName = (MFieldName) result_pattern_FieldName_1_1_performtransformation_binding[2];
+			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result_pattern_FieldName_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_FieldName_1_1_performtransformation_black = pattern_FieldName_1_1_performtransformation_blackBBBBFBB(
-					typeGraph, model, modelToTypeGraph, mFieldName, _this, isApplicableMatch);
+					model, typeGraph, mFieldName, modelToTypeGraph, _this, isApplicableMatch);
 			if (result_pattern_FieldName_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FieldName_1_1_performtransformation_black[4];
 
-				return new Object[] { typeGraph, model, modelToTypeGraph, mFieldName, csp, _this, isApplicableMatch };
+				return new Object[] { model, typeGraph, mFieldName, modelToTypeGraph, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FieldName_1_1_performtransformation_greenBFFBB(TypeGraph typeGraph,
+	public static final Object[] pattern_FieldName_1_1_performtransformation_greenBBFFB(TypeGraph typeGraph,
 			MFieldName mFieldName, CSP csp) {
 		TField tField = BasicFactory.eINSTANCE.createTField();
 		MFieldNameToTField eFieldDeclarationToTField = PmFactory.eINSTANCE.createMFieldNameToTField();
 		Object _localVariable_0 = csp.getValue("tField", "tName");
 		typeGraph.getFields().add(tField);
-		eFieldDeclarationToTField.setTarget(tField);
 		eFieldDeclarationToTField.setSource(mFieldName);
+		eFieldDeclarationToTField.setTarget(tField);
 		String tField_tName_prime = (String) _localVariable_0;
 		tField.setTName(tField_tName_prime);
-		return new Object[] { typeGraph, tField, eFieldDeclarationToTField, mFieldName, csp };
+		return new Object[] { typeGraph, mFieldName, tField, eFieldDeclarationToTField, csp };
 	}
 
-	public static final Object[] pattern_FieldName_1_2_collecttranslatedelements_blackBBB(TField tField,
-			MFieldNameToTField eFieldDeclarationToTField, MFieldName mFieldName) {
-		return new Object[] { tField, eFieldDeclarationToTField, mFieldName };
+	public static final Object[] pattern_FieldName_1_2_collecttranslatedelements_blackBBB(MFieldName mFieldName,
+			TField tField, MFieldNameToTField eFieldDeclarationToTField) {
+		return new Object[] { mFieldName, tField, eFieldDeclarationToTField };
 	}
 
-	public static final Object[] pattern_FieldName_1_2_collecttranslatedelements_greenFBBB(TField tField,
-			MFieldNameToTField eFieldDeclarationToTField, MFieldName mFieldName) {
+	public static final Object[] pattern_FieldName_1_2_collecttranslatedelements_greenFBBB(MFieldName mFieldName,
+			TField tField, MFieldNameToTField eFieldDeclarationToTField) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getTranslatedElements().add(mFieldName);
 		ruleresult.getCreatedElements().add(tField);
 		ruleresult.getCreatedLinkElements().add(eFieldDeclarationToTField);
-		ruleresult.getTranslatedElements().add(mFieldName);
-		return new Object[] { ruleresult, tField, eFieldDeclarationToTField, mFieldName };
+		return new Object[] { ruleresult, mFieldName, tField, eFieldDeclarationToTField };
 	}
 
 	public static final Object[] pattern_FieldName_1_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject typeGraph, EObject tField, EObject model, EObject modelToTypeGraph,
-			EObject eFieldDeclarationToTField, EObject mFieldName) {
-		if (!tField.equals(typeGraph)) {
-			if (!model.equals(typeGraph)) {
-				if (!model.equals(tField)) {
-					if (!model.equals(modelToTypeGraph)) {
-						if (!modelToTypeGraph.equals(typeGraph)) {
-							if (!modelToTypeGraph.equals(tField)) {
-								if (!eFieldDeclarationToTField.equals(typeGraph)) {
-									if (!eFieldDeclarationToTField.equals(tField)) {
-										if (!eFieldDeclarationToTField.equals(model)) {
-											if (!eFieldDeclarationToTField.equals(modelToTypeGraph)) {
-												if (!eFieldDeclarationToTField.equals(mFieldName)) {
-													if (!mFieldName.equals(typeGraph)) {
-														if (!mFieldName.equals(tField)) {
-															if (!mFieldName.equals(model)) {
-																if (!mFieldName.equals(modelToTypeGraph)) {
-																	return new Object[] { ruleresult, typeGraph, tField,
-																			model, modelToTypeGraph,
-																			eFieldDeclarationToTField, mFieldName };
+			EObject model, EObject typeGraph, EObject mFieldName, EObject tField, EObject modelToTypeGraph,
+			EObject eFieldDeclarationToTField) {
+		if (!model.equals(typeGraph)) {
+			if (!model.equals(tField)) {
+				if (!model.equals(modelToTypeGraph)) {
+					if (!mFieldName.equals(model)) {
+						if (!mFieldName.equals(typeGraph)) {
+							if (!mFieldName.equals(tField)) {
+								if (!mFieldName.equals(modelToTypeGraph)) {
+									if (!tField.equals(typeGraph)) {
+										if (!modelToTypeGraph.equals(typeGraph)) {
+											if (!modelToTypeGraph.equals(tField)) {
+												if (!eFieldDeclarationToTField.equals(model)) {
+													if (!eFieldDeclarationToTField.equals(typeGraph)) {
+														if (!eFieldDeclarationToTField.equals(mFieldName)) {
+															if (!eFieldDeclarationToTField.equals(tField)) {
+																if (!eFieldDeclarationToTField
+																		.equals(modelToTypeGraph)) {
+																	return new Object[] { ruleresult, model, typeGraph,
+																			mFieldName, tField, modelToTypeGraph,
+																			eFieldDeclarationToTField };
 																}
 															}
 														}
@@ -1423,22 +1423,22 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	}
 
 	public static final Object[] pattern_FieldName_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject typeGraph, EObject tField, EObject model,
-			EObject eFieldDeclarationToTField, EObject mFieldName) {
-		EMoflonEdge model__mFieldName____mFieldNames = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject model, EObject typeGraph, EObject mFieldName, EObject tField,
+			EObject eFieldDeclarationToTField) {
+		EMoflonEdge eFieldDeclarationToTField__mFieldName____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eFieldDeclarationToTField__tField____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tField____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tField__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eFieldDeclarationToTField__mFieldName____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model__mFieldName____mFieldNames = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "FieldName";
-		String model__mFieldName____mFieldNames_name_prime = "mFieldNames";
+		String eFieldDeclarationToTField__mFieldName____source_name_prime = "source";
 		String eFieldDeclarationToTField__tField____target_name_prime = "target";
 		String typeGraph__tField____fields_name_prime = "fields";
 		String tField__typeGraph____model_name_prime = "model";
-		String eFieldDeclarationToTField__mFieldName____source_name_prime = "source";
-		model__mFieldName____mFieldNames.setSrc(model);
-		model__mFieldName____mFieldNames.setTrg(mFieldName);
-		ruleresult.getTranslatedEdges().add(model__mFieldName____mFieldNames);
+		String model__mFieldName____mFieldNames_name_prime = "mFieldNames";
+		eFieldDeclarationToTField__mFieldName____source.setSrc(eFieldDeclarationToTField);
+		eFieldDeclarationToTField__mFieldName____source.setTrg(mFieldName);
+		ruleresult.getCreatedEdges().add(eFieldDeclarationToTField__mFieldName____source);
 		eFieldDeclarationToTField__tField____target.setSrc(eFieldDeclarationToTField);
 		eFieldDeclarationToTField__tField____target.setTrg(tField);
 		ruleresult.getCreatedEdges().add(eFieldDeclarationToTField__tField____target);
@@ -1448,27 +1448,26 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		tField__typeGraph____model.setSrc(tField);
 		tField__typeGraph____model.setTrg(typeGraph);
 		ruleresult.getCreatedEdges().add(tField__typeGraph____model);
-		eFieldDeclarationToTField__mFieldName____source.setSrc(eFieldDeclarationToTField);
-		eFieldDeclarationToTField__mFieldName____source.setTrg(mFieldName);
-		ruleresult.getCreatedEdges().add(eFieldDeclarationToTField__mFieldName____source);
+		model__mFieldName____mFieldNames.setSrc(model);
+		model__mFieldName____mFieldNames.setTrg(mFieldName);
+		ruleresult.getTranslatedEdges().add(model__mFieldName____mFieldNames);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		model__mFieldName____mFieldNames.setName(model__mFieldName____mFieldNames_name_prime);
+		eFieldDeclarationToTField__mFieldName____source
+				.setName(eFieldDeclarationToTField__mFieldName____source_name_prime);
 		eFieldDeclarationToTField__tField____target.setName(eFieldDeclarationToTField__tField____target_name_prime);
 		typeGraph__tField____fields.setName(typeGraph__tField____fields_name_prime);
 		tField__typeGraph____model.setName(tField__typeGraph____model_name_prime);
-		eFieldDeclarationToTField__mFieldName____source
-				.setName(eFieldDeclarationToTField__mFieldName____source_name_prime);
-		return new Object[] { ruleresult, typeGraph, tField, model, eFieldDeclarationToTField, mFieldName,
-				model__mFieldName____mFieldNames, eFieldDeclarationToTField__tField____target,
-				typeGraph__tField____fields, tField__typeGraph____model,
-				eFieldDeclarationToTField__mFieldName____source };
+		model__mFieldName____mFieldNames.setName(model__mFieldName____mFieldNames_name_prime);
+		return new Object[] { ruleresult, model, typeGraph, mFieldName, tField, eFieldDeclarationToTField,
+				eFieldDeclarationToTField__mFieldName____source, eFieldDeclarationToTField__tField____target,
+				typeGraph__tField____fields, tField__typeGraph____model, model__mFieldName____mFieldNames };
 	}
 
 	public static final void pattern_FieldName_1_5_registerobjects_expressionBBBBBBBB(FieldName _this,
-			PerformRuleResult ruleresult, EObject typeGraph, EObject tField, EObject model, EObject modelToTypeGraph,
-			EObject eFieldDeclarationToTField, EObject mFieldName) {
-		_this.registerObjects_FWD(ruleresult, typeGraph, tField, model, modelToTypeGraph, eFieldDeclarationToTField,
-				mFieldName);
+			PerformRuleResult ruleresult, EObject model, EObject typeGraph, EObject mFieldName, EObject tField,
+			EObject modelToTypeGraph, EObject eFieldDeclarationToTField) {
+		_this.registerObjects_FWD(ruleresult, model, typeGraph, mFieldName, tField, modelToTypeGraph,
+				eFieldDeclarationToTField);
 
 	}
 
@@ -1539,71 +1538,71 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldName_2_2_corematch_blackFBFBB(MGravityModel model,
+	public static final Iterable<Object[]> pattern_FieldName_2_2_corematch_blackBFBFB(MGravityModel model,
 			MFieldName mFieldName, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph modelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(model, ModelToTypeGraph.class, "source")) {
 			TypeGraph typeGraph = modelToTypeGraph.getTarget();
 			if (typeGraph != null) {
-				_result.add(new Object[] { typeGraph, model, modelToTypeGraph, mFieldName, match });
+				_result.add(new Object[] { model, typeGraph, mFieldName, modelToTypeGraph, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldName_2_3_findcontext_blackBBBB(TypeGraph typeGraph,
-			MGravityModel model, ModelToTypeGraph modelToTypeGraph, MFieldName mFieldName) {
+	public static final Iterable<Object[]> pattern_FieldName_2_3_findcontext_blackBBBB(MGravityModel model,
+			TypeGraph typeGraph, MFieldName mFieldName, ModelToTypeGraph modelToTypeGraph) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (model.getMFieldNames().contains(mFieldName)) {
-			if (model.equals(modelToTypeGraph.getSource())) {
-				if (typeGraph.equals(modelToTypeGraph.getTarget())) {
-					_result.add(new Object[] { typeGraph, model, modelToTypeGraph, mFieldName });
+		if (model.equals(modelToTypeGraph.getSource())) {
+			if (typeGraph.equals(modelToTypeGraph.getTarget())) {
+				if (model.getMFieldNames().contains(mFieldName)) {
+					_result.add(new Object[] { model, typeGraph, mFieldName, modelToTypeGraph });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldName_2_3_findcontext_greenBBBBFFFF(TypeGraph typeGraph,
-			MGravityModel model, ModelToTypeGraph modelToTypeGraph, MFieldName mFieldName) {
+	public static final Object[] pattern_FieldName_2_3_findcontext_greenBBBBFFFF(MGravityModel model,
+			TypeGraph typeGraph, MFieldName mFieldName, ModelToTypeGraph modelToTypeGraph) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge model__mFieldName____mFieldNames = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modelToTypeGraph__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modelToTypeGraph__typeGraph____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String model__mFieldName____mFieldNames_name_prime = "mFieldNames";
+		EMoflonEdge model__mFieldName____mFieldNames = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String modelToTypeGraph__model____source_name_prime = "source";
 		String modelToTypeGraph__typeGraph____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(typeGraph);
+		String model__mFieldName____mFieldNames_name_prime = "mFieldNames";
 		isApplicableMatch.getAllContextElements().add(model);
-		isApplicableMatch.getAllContextElements().add(modelToTypeGraph);
+		isApplicableMatch.getAllContextElements().add(typeGraph);
 		isApplicableMatch.getAllContextElements().add(mFieldName);
-		model__mFieldName____mFieldNames.setSrc(model);
-		model__mFieldName____mFieldNames.setTrg(mFieldName);
-		isApplicableMatch.getAllContextElements().add(model__mFieldName____mFieldNames);
+		isApplicableMatch.getAllContextElements().add(modelToTypeGraph);
 		modelToTypeGraph__model____source.setSrc(modelToTypeGraph);
 		modelToTypeGraph__model____source.setTrg(model);
 		isApplicableMatch.getAllContextElements().add(modelToTypeGraph__model____source);
 		modelToTypeGraph__typeGraph____target.setSrc(modelToTypeGraph);
 		modelToTypeGraph__typeGraph____target.setTrg(typeGraph);
 		isApplicableMatch.getAllContextElements().add(modelToTypeGraph__typeGraph____target);
-		model__mFieldName____mFieldNames.setName(model__mFieldName____mFieldNames_name_prime);
+		model__mFieldName____mFieldNames.setSrc(model);
+		model__mFieldName____mFieldNames.setTrg(mFieldName);
+		isApplicableMatch.getAllContextElements().add(model__mFieldName____mFieldNames);
 		modelToTypeGraph__model____source.setName(modelToTypeGraph__model____source_name_prime);
 		modelToTypeGraph__typeGraph____target.setName(modelToTypeGraph__typeGraph____target_name_prime);
-		return new Object[] { typeGraph, model, modelToTypeGraph, mFieldName, isApplicableMatch,
-				model__mFieldName____mFieldNames, modelToTypeGraph__model____source,
-				modelToTypeGraph__typeGraph____target };
+		model__mFieldName____mFieldNames.setName(model__mFieldName____mFieldNames_name_prime);
+		return new Object[] { model, typeGraph, mFieldName, modelToTypeGraph, isApplicableMatch,
+				modelToTypeGraph__model____source, modelToTypeGraph__typeGraph____target,
+				model__mFieldName____mFieldNames };
 	}
 
 	public static final Object[] pattern_FieldName_2_4_solveCSP_bindingFBBBBBB(FieldName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, MGravityModel model,
-			ModelToTypeGraph modelToTypeGraph, MFieldName mFieldName) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, typeGraph, model, modelToTypeGraph,
-				mFieldName);
+			IsApplicableMatch isApplicableMatch, MGravityModel model, TypeGraph typeGraph, MFieldName mFieldName,
+			ModelToTypeGraph modelToTypeGraph) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, model, typeGraph, mFieldName,
+				modelToTypeGraph);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, typeGraph, model, modelToTypeGraph, mFieldName };
+			return new Object[] { csp, _this, isApplicableMatch, model, typeGraph, mFieldName, modelToTypeGraph };
 		}
 		return null;
 	}
@@ -1613,17 +1612,17 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	}
 
 	public static final Object[] pattern_FieldName_2_4_solveCSP_bindingAndBlackFBBBBBB(FieldName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, MGravityModel model,
-			ModelToTypeGraph modelToTypeGraph, MFieldName mFieldName) {
+			IsApplicableMatch isApplicableMatch, MGravityModel model, TypeGraph typeGraph, MFieldName mFieldName,
+			ModelToTypeGraph modelToTypeGraph) {
 		Object[] result_pattern_FieldName_2_4_solveCSP_binding = pattern_FieldName_2_4_solveCSP_bindingFBBBBBB(_this,
-				isApplicableMatch, typeGraph, model, modelToTypeGraph, mFieldName);
+				isApplicableMatch, model, typeGraph, mFieldName, modelToTypeGraph);
 		if (result_pattern_FieldName_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldName_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_FieldName_2_4_solveCSP_black = pattern_FieldName_2_4_solveCSP_blackB(csp);
 			if (result_pattern_FieldName_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, typeGraph, model, modelToTypeGraph, mFieldName };
+				return new Object[] { csp, _this, isApplicableMatch, model, typeGraph, mFieldName, modelToTypeGraph };
 			}
 		}
 		return null;
@@ -1748,23 +1747,23 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 
 	public static final Object[] pattern_FieldName_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("typeGraph");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tField");
-		EObject _localVariable_2 = isApplicableMatch.getObject("model");
+		EObject _localVariable_0 = isApplicableMatch.getObject("model");
+		EObject _localVariable_1 = isApplicableMatch.getObject("typeGraph");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tField");
 		EObject _localVariable_3 = isApplicableMatch.getObject("modelToTypeGraph");
-		EObject tmpTypeGraph = _localVariable_0;
-		EObject tmpTField = _localVariable_1;
-		EObject tmpModel = _localVariable_2;
+		EObject tmpModel = _localVariable_0;
+		EObject tmpTypeGraph = _localVariable_1;
+		EObject tmpTField = _localVariable_2;
 		EObject tmpModelToTypeGraph = _localVariable_3;
-		if (tmpTypeGraph instanceof TypeGraph) {
-			TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
-			if (tmpTField instanceof TField) {
-				TField tField = (TField) tmpTField;
-				if (tmpModel instanceof MGravityModel) {
-					MGravityModel model = (MGravityModel) tmpModel;
+		if (tmpModel instanceof MGravityModel) {
+			MGravityModel model = (MGravityModel) tmpModel;
+			if (tmpTypeGraph instanceof TypeGraph) {
+				TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
+				if (tmpTField instanceof TField) {
+					TField tField = (TField) tmpTField;
 					if (tmpModelToTypeGraph instanceof ModelToTypeGraph) {
 						ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) tmpModelToTypeGraph;
-						return new Object[] { typeGraph, tField, model, modelToTypeGraph, isApplicableMatch };
+						return new Object[] { model, typeGraph, tField, modelToTypeGraph, isApplicableMatch };
 					}
 				}
 			}
@@ -1772,13 +1771,13 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		return null;
 	}
 
-	public static final Object[] pattern_FieldName_11_1_performtransformation_blackBBBBFBB(TypeGraph typeGraph,
-			TField tField, MGravityModel model, ModelToTypeGraph modelToTypeGraph, FieldName _this,
+	public static final Object[] pattern_FieldName_11_1_performtransformation_blackBBBBFBB(MGravityModel model,
+			TypeGraph typeGraph, TField tField, ModelToTypeGraph modelToTypeGraph, FieldName _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { typeGraph, tField, model, modelToTypeGraph, csp, _this, isApplicableMatch };
+				return new Object[] { model, typeGraph, tField, modelToTypeGraph, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1789,70 +1788,71 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		Object[] result_pattern_FieldName_11_1_performtransformation_binding = pattern_FieldName_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_FieldName_11_1_performtransformation_binding != null) {
-			TypeGraph typeGraph = (TypeGraph) result_pattern_FieldName_11_1_performtransformation_binding[0];
-			TField tField = (TField) result_pattern_FieldName_11_1_performtransformation_binding[1];
-			MGravityModel model = (MGravityModel) result_pattern_FieldName_11_1_performtransformation_binding[2];
+			MGravityModel model = (MGravityModel) result_pattern_FieldName_11_1_performtransformation_binding[0];
+			TypeGraph typeGraph = (TypeGraph) result_pattern_FieldName_11_1_performtransformation_binding[1];
+			TField tField = (TField) result_pattern_FieldName_11_1_performtransformation_binding[2];
 			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result_pattern_FieldName_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_FieldName_11_1_performtransformation_black = pattern_FieldName_11_1_performtransformation_blackBBBBFBB(
-					typeGraph, tField, model, modelToTypeGraph, _this, isApplicableMatch);
+					model, typeGraph, tField, modelToTypeGraph, _this, isApplicableMatch);
 			if (result_pattern_FieldName_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FieldName_11_1_performtransformation_black[4];
 
-				return new Object[] { typeGraph, tField, model, modelToTypeGraph, csp, _this, isApplicableMatch };
+				return new Object[] { model, typeGraph, tField, modelToTypeGraph, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FieldName_11_1_performtransformation_greenBBFFB(TField tField,
-			MGravityModel model, CSP csp) {
-		MFieldNameToTField eFieldDeclarationToTField = PmFactory.eINSTANCE.createMFieldNameToTField();
+	public static final Object[] pattern_FieldName_11_1_performtransformation_greenBFBFB(MGravityModel model,
+			TField tField, CSP csp) {
 		MFieldName mFieldName = ModiscoFactory.eINSTANCE.createMFieldName();
+		MFieldNameToTField eFieldDeclarationToTField = PmFactory.eINSTANCE.createMFieldNameToTField();
 		Object _localVariable_0 = csp.getValue("mFieldName", "mName");
-		eFieldDeclarationToTField.setTarget(tField);
 		model.getMFieldNames().add(mFieldName);
 		eFieldDeclarationToTField.setSource(mFieldName);
+		eFieldDeclarationToTField.setTarget(tField);
 		String mFieldName_mName_prime = (String) _localVariable_0;
 		mFieldName.setMName(mFieldName_mName_prime);
-		return new Object[] { tField, model, eFieldDeclarationToTField, mFieldName, csp };
+		return new Object[] { model, mFieldName, tField, eFieldDeclarationToTField, csp };
 	}
 
-	public static final Object[] pattern_FieldName_11_2_collecttranslatedelements_blackBBB(TField tField,
-			MFieldNameToTField eFieldDeclarationToTField, MFieldName mFieldName) {
-		return new Object[] { tField, eFieldDeclarationToTField, mFieldName };
+	public static final Object[] pattern_FieldName_11_2_collecttranslatedelements_blackBBB(MFieldName mFieldName,
+			TField tField, MFieldNameToTField eFieldDeclarationToTField) {
+		return new Object[] { mFieldName, tField, eFieldDeclarationToTField };
 	}
 
-	public static final Object[] pattern_FieldName_11_2_collecttranslatedelements_greenFBBB(TField tField,
-			MFieldNameToTField eFieldDeclarationToTField, MFieldName mFieldName) {
+	public static final Object[] pattern_FieldName_11_2_collecttranslatedelements_greenFBBB(MFieldName mFieldName,
+			TField tField, MFieldNameToTField eFieldDeclarationToTField) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedElements().add(mFieldName);
 		ruleresult.getTranslatedElements().add(tField);
 		ruleresult.getCreatedLinkElements().add(eFieldDeclarationToTField);
-		ruleresult.getCreatedElements().add(mFieldName);
-		return new Object[] { ruleresult, tField, eFieldDeclarationToTField, mFieldName };
+		return new Object[] { ruleresult, mFieldName, tField, eFieldDeclarationToTField };
 	}
 
 	public static final Object[] pattern_FieldName_11_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject typeGraph, EObject tField, EObject model, EObject modelToTypeGraph,
-			EObject eFieldDeclarationToTField, EObject mFieldName) {
-		if (!tField.equals(typeGraph)) {
-			if (!model.equals(typeGraph)) {
-				if (!model.equals(tField)) {
-					if (!model.equals(modelToTypeGraph)) {
-						if (!modelToTypeGraph.equals(typeGraph)) {
-							if (!modelToTypeGraph.equals(tField)) {
-								if (!eFieldDeclarationToTField.equals(typeGraph)) {
-									if (!eFieldDeclarationToTField.equals(tField)) {
-										if (!eFieldDeclarationToTField.equals(model)) {
-											if (!eFieldDeclarationToTField.equals(modelToTypeGraph)) {
-												if (!eFieldDeclarationToTField.equals(mFieldName)) {
-													if (!mFieldName.equals(typeGraph)) {
-														if (!mFieldName.equals(tField)) {
-															if (!mFieldName.equals(model)) {
-																if (!mFieldName.equals(modelToTypeGraph)) {
-																	return new Object[] { ruleresult, typeGraph, tField,
-																			model, modelToTypeGraph,
-																			eFieldDeclarationToTField, mFieldName };
+			EObject model, EObject typeGraph, EObject mFieldName, EObject tField, EObject modelToTypeGraph,
+			EObject eFieldDeclarationToTField) {
+		if (!model.equals(typeGraph)) {
+			if (!model.equals(tField)) {
+				if (!model.equals(modelToTypeGraph)) {
+					if (!mFieldName.equals(model)) {
+						if (!mFieldName.equals(typeGraph)) {
+							if (!mFieldName.equals(tField)) {
+								if (!mFieldName.equals(modelToTypeGraph)) {
+									if (!tField.equals(typeGraph)) {
+										if (!modelToTypeGraph.equals(typeGraph)) {
+											if (!modelToTypeGraph.equals(tField)) {
+												if (!eFieldDeclarationToTField.equals(model)) {
+													if (!eFieldDeclarationToTField.equals(typeGraph)) {
+														if (!eFieldDeclarationToTField.equals(mFieldName)) {
+															if (!eFieldDeclarationToTField.equals(tField)) {
+																if (!eFieldDeclarationToTField
+																		.equals(modelToTypeGraph)) {
+																	return new Object[] { ruleresult, model, typeGraph,
+																			mFieldName, tField, modelToTypeGraph,
+																			eFieldDeclarationToTField };
 																}
 															}
 														}
@@ -1872,22 +1872,22 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	}
 
 	public static final Object[] pattern_FieldName_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject typeGraph, EObject tField, EObject model,
-			EObject eFieldDeclarationToTField, EObject mFieldName) {
-		EMoflonEdge model__mFieldName____mFieldNames = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject model, EObject typeGraph, EObject mFieldName, EObject tField,
+			EObject eFieldDeclarationToTField) {
+		EMoflonEdge eFieldDeclarationToTField__mFieldName____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eFieldDeclarationToTField__tField____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tField____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tField__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eFieldDeclarationToTField__mFieldName____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model__mFieldName____mFieldNames = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "FieldName";
-		String model__mFieldName____mFieldNames_name_prime = "mFieldNames";
+		String eFieldDeclarationToTField__mFieldName____source_name_prime = "source";
 		String eFieldDeclarationToTField__tField____target_name_prime = "target";
 		String typeGraph__tField____fields_name_prime = "fields";
 		String tField__typeGraph____model_name_prime = "model";
-		String eFieldDeclarationToTField__mFieldName____source_name_prime = "source";
-		model__mFieldName____mFieldNames.setSrc(model);
-		model__mFieldName____mFieldNames.setTrg(mFieldName);
-		ruleresult.getCreatedEdges().add(model__mFieldName____mFieldNames);
+		String model__mFieldName____mFieldNames_name_prime = "mFieldNames";
+		eFieldDeclarationToTField__mFieldName____source.setSrc(eFieldDeclarationToTField);
+		eFieldDeclarationToTField__mFieldName____source.setTrg(mFieldName);
+		ruleresult.getCreatedEdges().add(eFieldDeclarationToTField__mFieldName____source);
 		eFieldDeclarationToTField__tField____target.setSrc(eFieldDeclarationToTField);
 		eFieldDeclarationToTField__tField____target.setTrg(tField);
 		ruleresult.getCreatedEdges().add(eFieldDeclarationToTField__tField____target);
@@ -1897,27 +1897,26 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		tField__typeGraph____model.setSrc(tField);
 		tField__typeGraph____model.setTrg(typeGraph);
 		ruleresult.getTranslatedEdges().add(tField__typeGraph____model);
-		eFieldDeclarationToTField__mFieldName____source.setSrc(eFieldDeclarationToTField);
-		eFieldDeclarationToTField__mFieldName____source.setTrg(mFieldName);
-		ruleresult.getCreatedEdges().add(eFieldDeclarationToTField__mFieldName____source);
+		model__mFieldName____mFieldNames.setSrc(model);
+		model__mFieldName____mFieldNames.setTrg(mFieldName);
+		ruleresult.getCreatedEdges().add(model__mFieldName____mFieldNames);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		model__mFieldName____mFieldNames.setName(model__mFieldName____mFieldNames_name_prime);
+		eFieldDeclarationToTField__mFieldName____source
+				.setName(eFieldDeclarationToTField__mFieldName____source_name_prime);
 		eFieldDeclarationToTField__tField____target.setName(eFieldDeclarationToTField__tField____target_name_prime);
 		typeGraph__tField____fields.setName(typeGraph__tField____fields_name_prime);
 		tField__typeGraph____model.setName(tField__typeGraph____model_name_prime);
-		eFieldDeclarationToTField__mFieldName____source
-				.setName(eFieldDeclarationToTField__mFieldName____source_name_prime);
-		return new Object[] { ruleresult, typeGraph, tField, model, eFieldDeclarationToTField, mFieldName,
-				model__mFieldName____mFieldNames, eFieldDeclarationToTField__tField____target,
-				typeGraph__tField____fields, tField__typeGraph____model,
-				eFieldDeclarationToTField__mFieldName____source };
+		model__mFieldName____mFieldNames.setName(model__mFieldName____mFieldNames_name_prime);
+		return new Object[] { ruleresult, model, typeGraph, mFieldName, tField, eFieldDeclarationToTField,
+				eFieldDeclarationToTField__mFieldName____source, eFieldDeclarationToTField__tField____target,
+				typeGraph__tField____fields, tField__typeGraph____model, model__mFieldName____mFieldNames };
 	}
 
 	public static final void pattern_FieldName_11_5_registerobjects_expressionBBBBBBBB(FieldName _this,
-			PerformRuleResult ruleresult, EObject typeGraph, EObject tField, EObject model, EObject modelToTypeGraph,
-			EObject eFieldDeclarationToTField, EObject mFieldName) {
-		_this.registerObjects_BWD(ruleresult, typeGraph, tField, model, modelToTypeGraph, eFieldDeclarationToTField,
-				mFieldName);
+			PerformRuleResult ruleresult, EObject model, EObject typeGraph, EObject mFieldName, EObject tField,
+			EObject modelToTypeGraph, EObject eFieldDeclarationToTField) {
+		_this.registerObjects_BWD(ruleresult, model, typeGraph, mFieldName, tField, modelToTypeGraph,
+				eFieldDeclarationToTField);
 
 	}
 
@@ -1988,7 +1987,7 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldName_12_2_corematch_blackBBFFB(TypeGraph typeGraph,
+	public static final Iterable<Object[]> pattern_FieldName_12_2_corematch_blackFBBFB(TypeGraph typeGraph,
 			TField tField, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph modelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
@@ -1996,70 +1995,70 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 			Model tmpModel = modelToTypeGraph.getSource();
 			if (tmpModel instanceof MGravityModel) {
 				MGravityModel model = (MGravityModel) tmpModel;
-				_result.add(new Object[] { typeGraph, tField, model, modelToTypeGraph, match });
+				_result.add(new Object[] { model, typeGraph, tField, modelToTypeGraph, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldName_12_3_findcontext_blackBBBB(TypeGraph typeGraph,
-			TField tField, MGravityModel model, ModelToTypeGraph modelToTypeGraph) {
+	public static final Iterable<Object[]> pattern_FieldName_12_3_findcontext_blackBBBB(MGravityModel model,
+			TypeGraph typeGraph, TField tField, ModelToTypeGraph modelToTypeGraph) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (model.equals(modelToTypeGraph.getSource())) {
-			if (typeGraph.getFields().contains(tField)) {
-				if (typeGraph.equals(modelToTypeGraph.getTarget())) {
-					_result.add(new Object[] { typeGraph, tField, model, modelToTypeGraph });
+			if (typeGraph.equals(modelToTypeGraph.getTarget())) {
+				if (typeGraph.getFields().contains(tField)) {
+					_result.add(new Object[] { model, typeGraph, tField, modelToTypeGraph });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldName_12_3_findcontext_greenBBBBFFFFF(TypeGraph typeGraph, TField tField,
-			MGravityModel model, ModelToTypeGraph modelToTypeGraph) {
+	public static final Object[] pattern_FieldName_12_3_findcontext_greenBBBBFFFFF(MGravityModel model,
+			TypeGraph typeGraph, TField tField, ModelToTypeGraph modelToTypeGraph) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge modelToTypeGraph__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge modelToTypeGraph__typeGraph____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tField____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tField__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge modelToTypeGraph__typeGraph____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String modelToTypeGraph__model____source_name_prime = "source";
+		String modelToTypeGraph__typeGraph____target_name_prime = "target";
 		String typeGraph__tField____fields_name_prime = "fields";
 		String tField__typeGraph____model_name_prime = "model";
-		String modelToTypeGraph__typeGraph____target_name_prime = "target";
+		isApplicableMatch.getAllContextElements().add(model);
 		isApplicableMatch.getAllContextElements().add(typeGraph);
 		isApplicableMatch.getAllContextElements().add(tField);
-		isApplicableMatch.getAllContextElements().add(model);
 		isApplicableMatch.getAllContextElements().add(modelToTypeGraph);
 		modelToTypeGraph__model____source.setSrc(modelToTypeGraph);
 		modelToTypeGraph__model____source.setTrg(model);
 		isApplicableMatch.getAllContextElements().add(modelToTypeGraph__model____source);
+		modelToTypeGraph__typeGraph____target.setSrc(modelToTypeGraph);
+		modelToTypeGraph__typeGraph____target.setTrg(typeGraph);
+		isApplicableMatch.getAllContextElements().add(modelToTypeGraph__typeGraph____target);
 		typeGraph__tField____fields.setSrc(typeGraph);
 		typeGraph__tField____fields.setTrg(tField);
 		isApplicableMatch.getAllContextElements().add(typeGraph__tField____fields);
 		tField__typeGraph____model.setSrc(tField);
 		tField__typeGraph____model.setTrg(typeGraph);
 		isApplicableMatch.getAllContextElements().add(tField__typeGraph____model);
-		modelToTypeGraph__typeGraph____target.setSrc(modelToTypeGraph);
-		modelToTypeGraph__typeGraph____target.setTrg(typeGraph);
-		isApplicableMatch.getAllContextElements().add(modelToTypeGraph__typeGraph____target);
 		modelToTypeGraph__model____source.setName(modelToTypeGraph__model____source_name_prime);
+		modelToTypeGraph__typeGraph____target.setName(modelToTypeGraph__typeGraph____target_name_prime);
 		typeGraph__tField____fields.setName(typeGraph__tField____fields_name_prime);
 		tField__typeGraph____model.setName(tField__typeGraph____model_name_prime);
-		modelToTypeGraph__typeGraph____target.setName(modelToTypeGraph__typeGraph____target_name_prime);
-		return new Object[] { typeGraph, tField, model, modelToTypeGraph, isApplicableMatch,
-				modelToTypeGraph__model____source, typeGraph__tField____fields, tField__typeGraph____model,
-				modelToTypeGraph__typeGraph____target };
+		return new Object[] { model, typeGraph, tField, modelToTypeGraph, isApplicableMatch,
+				modelToTypeGraph__model____source, modelToTypeGraph__typeGraph____target, typeGraph__tField____fields,
+				tField__typeGraph____model };
 	}
 
 	public static final Object[] pattern_FieldName_12_4_solveCSP_bindingFBBBBBB(FieldName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, TField tField, MGravityModel model,
+			IsApplicableMatch isApplicableMatch, MGravityModel model, TypeGraph typeGraph, TField tField,
 			ModelToTypeGraph modelToTypeGraph) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, typeGraph, tField, model,
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, model, typeGraph, tField,
 				modelToTypeGraph);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, typeGraph, tField, model, modelToTypeGraph };
+			return new Object[] { csp, _this, isApplicableMatch, model, typeGraph, tField, modelToTypeGraph };
 		}
 		return null;
 	}
@@ -2069,17 +2068,17 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	}
 
 	public static final Object[] pattern_FieldName_12_4_solveCSP_bindingAndBlackFBBBBBB(FieldName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, TField tField, MGravityModel model,
+			IsApplicableMatch isApplicableMatch, MGravityModel model, TypeGraph typeGraph, TField tField,
 			ModelToTypeGraph modelToTypeGraph) {
 		Object[] result_pattern_FieldName_12_4_solveCSP_binding = pattern_FieldName_12_4_solveCSP_bindingFBBBBBB(_this,
-				isApplicableMatch, typeGraph, tField, model, modelToTypeGraph);
+				isApplicableMatch, model, typeGraph, tField, modelToTypeGraph);
 		if (result_pattern_FieldName_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldName_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_FieldName_12_4_solveCSP_black = pattern_FieldName_12_4_solveCSP_blackB(csp);
 			if (result_pattern_FieldName_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, typeGraph, tField, model, modelToTypeGraph };
+				return new Object[] { csp, _this, isApplicableMatch, model, typeGraph, tField, modelToTypeGraph };
 			}
 		}
 		return null;
@@ -2348,25 +2347,25 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_FieldName_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
-			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("typeGraph");
-		EObject _localVariable_1 = targetMatch.getObject("tField");
-		EObject _localVariable_2 = sourceMatch.getObject("model");
-		EObject _localVariable_3 = sourceMatch.getObject("mFieldName");
-		EObject tmpTypeGraph = _localVariable_0;
-		EObject tmpTField = _localVariable_1;
-		EObject tmpModel = _localVariable_2;
-		EObject tmpMFieldName = _localVariable_3;
-		if (tmpTypeGraph instanceof TypeGraph) {
-			TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
-			if (tmpTField instanceof TField) {
-				TField tField = (TField) tmpTField;
-				if (tmpModel instanceof MGravityModel) {
-					MGravityModel model = (MGravityModel) tmpModel;
-					if (tmpMFieldName instanceof MFieldName) {
-						MFieldName mFieldName = (MFieldName) tmpMFieldName;
-						return new Object[] { typeGraph, tField, model, mFieldName, targetMatch, sourceMatch };
+	public static final Object[] pattern_FieldName_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
+			Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("model");
+		EObject _localVariable_1 = targetMatch.getObject("typeGraph");
+		EObject _localVariable_2 = sourceMatch.getObject("mFieldName");
+		EObject _localVariable_3 = targetMatch.getObject("tField");
+		EObject tmpModel = _localVariable_0;
+		EObject tmpTypeGraph = _localVariable_1;
+		EObject tmpMFieldName = _localVariable_2;
+		EObject tmpTField = _localVariable_3;
+		if (tmpModel instanceof MGravityModel) {
+			MGravityModel model = (MGravityModel) tmpModel;
+			if (tmpTypeGraph instanceof TypeGraph) {
+				TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
+				if (tmpMFieldName instanceof MFieldName) {
+					MFieldName mFieldName = (MFieldName) tmpMFieldName;
+					if (tmpTField instanceof TField) {
+						TField tField = (TField) tmpTField;
+						return new Object[] { model, typeGraph, mFieldName, tField, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2374,10 +2373,10 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		return null;
 	}
 
-	public static final Object[] pattern_FieldName_24_2_matchsrctrgcontext_blackBBBBBB(TypeGraph typeGraph,
-			TField tField, MGravityModel model, MFieldName mFieldName, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_FieldName_24_2_matchsrctrgcontext_blackBBBBBB(MGravityModel model,
+			TypeGraph typeGraph, MFieldName mFieldName, TField tField, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { typeGraph, tField, model, mFieldName, sourceMatch, targetMatch };
+			return new Object[] { model, typeGraph, mFieldName, tField, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2385,30 +2384,30 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	public static final Object[] pattern_FieldName_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_FieldName_24_2_matchsrctrgcontext_binding = pattern_FieldName_24_2_matchsrctrgcontext_bindingFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_FieldName_24_2_matchsrctrgcontext_binding != null) {
-			TypeGraph typeGraph = (TypeGraph) result_pattern_FieldName_24_2_matchsrctrgcontext_binding[0];
-			TField tField = (TField) result_pattern_FieldName_24_2_matchsrctrgcontext_binding[1];
-			MGravityModel model = (MGravityModel) result_pattern_FieldName_24_2_matchsrctrgcontext_binding[2];
-			MFieldName mFieldName = (MFieldName) result_pattern_FieldName_24_2_matchsrctrgcontext_binding[3];
+			MGravityModel model = (MGravityModel) result_pattern_FieldName_24_2_matchsrctrgcontext_binding[0];
+			TypeGraph typeGraph = (TypeGraph) result_pattern_FieldName_24_2_matchsrctrgcontext_binding[1];
+			MFieldName mFieldName = (MFieldName) result_pattern_FieldName_24_2_matchsrctrgcontext_binding[2];
+			TField tField = (TField) result_pattern_FieldName_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_FieldName_24_2_matchsrctrgcontext_black = pattern_FieldName_24_2_matchsrctrgcontext_blackBBBBBB(
-					typeGraph, tField, model, mFieldName, sourceMatch, targetMatch);
+					model, typeGraph, mFieldName, tField, sourceMatch, targetMatch);
 			if (result_pattern_FieldName_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { typeGraph, tField, model, mFieldName, sourceMatch, targetMatch };
+				return new Object[] { model, typeGraph, mFieldName, tField, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FieldName_24_3_solvecsp_bindingFBBBBBBB(FieldName _this, TypeGraph typeGraph,
-			TField tField, MGravityModel model, MFieldName mFieldName, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(typeGraph, tField, model, mFieldName, sourceMatch,
+	public static final Object[] pattern_FieldName_24_3_solvecsp_bindingFBBBBBBB(FieldName _this, MGravityModel model,
+			TypeGraph typeGraph, MFieldName mFieldName, TField tField, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(model, typeGraph, mFieldName, tField, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, typeGraph, tField, model, mFieldName, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, model, typeGraph, mFieldName, tField, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2418,17 +2417,17 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	}
 
 	public static final Object[] pattern_FieldName_24_3_solvecsp_bindingAndBlackFBBBBBBB(FieldName _this,
-			TypeGraph typeGraph, TField tField, MGravityModel model, MFieldName mFieldName, Match sourceMatch,
+			MGravityModel model, TypeGraph typeGraph, MFieldName mFieldName, TField tField, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_FieldName_24_3_solvecsp_binding = pattern_FieldName_24_3_solvecsp_bindingFBBBBBBB(_this,
-				typeGraph, tField, model, mFieldName, sourceMatch, targetMatch);
+				model, typeGraph, mFieldName, tField, sourceMatch, targetMatch);
 		if (result_pattern_FieldName_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldName_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_FieldName_24_3_solvecsp_black = pattern_FieldName_24_3_solvecsp_blackB(csp);
 			if (result_pattern_FieldName_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, typeGraph, tField, model, mFieldName, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, model, typeGraph, mFieldName, tField, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2440,14 +2439,14 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldName_24_5_matchcorrcontext_blackBBFBB(TypeGraph typeGraph,
-			MGravityModel model, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_FieldName_24_5_matchcorrcontext_blackBBFBB(MGravityModel model,
+			TypeGraph typeGraph, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (ModelToTypeGraph modelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(model, ModelToTypeGraph.class, "source")) {
 				if (typeGraph.equals(modelToTypeGraph.getTarget())) {
-					_result.add(new Object[] { typeGraph, model, modelToTypeGraph, sourceMatch, targetMatch });
+					_result.add(new Object[] { model, typeGraph, modelToTypeGraph, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2465,18 +2464,18 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		return new Object[] { modelToTypeGraph, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_FieldName_24_6_createcorrespondence_blackBBBBB(TypeGraph typeGraph,
-			TField tField, MGravityModel model, MFieldName mFieldName, CCMatch ccMatch) {
-		return new Object[] { typeGraph, tField, model, mFieldName, ccMatch };
+	public static final Object[] pattern_FieldName_24_6_createcorrespondence_blackBBBBB(MGravityModel model,
+			TypeGraph typeGraph, MFieldName mFieldName, TField tField, CCMatch ccMatch) {
+		return new Object[] { model, typeGraph, mFieldName, tField, ccMatch };
 	}
 
-	public static final Object[] pattern_FieldName_24_6_createcorrespondence_greenBFBB(TField tField,
-			MFieldName mFieldName, CCMatch ccMatch) {
+	public static final Object[] pattern_FieldName_24_6_createcorrespondence_greenBBFB(MFieldName mFieldName,
+			TField tField, CCMatch ccMatch) {
 		MFieldNameToTField eFieldDeclarationToTField = PmFactory.eINSTANCE.createMFieldNameToTField();
-		eFieldDeclarationToTField.setTarget(tField);
 		eFieldDeclarationToTField.setSource(mFieldName);
+		eFieldDeclarationToTField.setTarget(tField);
 		ccMatch.getCreateCorr().add(eFieldDeclarationToTField);
-		return new Object[] { tField, eFieldDeclarationToTField, mFieldName, ccMatch };
+		return new Object[] { mFieldName, tField, eFieldDeclarationToTField, ccMatch };
 	}
 
 	public static final Object[] pattern_FieldName_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2547,9 +2546,9 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	}
 
 	public static final Object[] pattern_FieldName_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph typeGraph) {
-		if (ruleResult.getTargetObjects().contains(typeGraph)) {
-			return new Object[] { ruleResult, typeGraph };
+			ModelgeneratorRuleResult ruleResult, MGravityModel model) {
+		if (ruleResult.getSourceObjects().contains(model)) {
+			return new Object[] { ruleResult, model };
 		}
 		return null;
 	}
@@ -2563,9 +2562,9 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	}
 
 	public static final Object[] pattern_FieldName_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, MGravityModel model) {
-		if (ruleResult.getSourceObjects().contains(model)) {
-			return new Object[] { ruleResult, model };
+			ModelgeneratorRuleResult ruleResult, TypeGraph typeGraph) {
+		if (ruleResult.getTargetObjects().contains(typeGraph)) {
+			return new Object[] { ruleResult, typeGraph };
 		}
 		return null;
 	}
@@ -2577,19 +2576,18 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 			for (EObject tmpModelToTypeGraph : modelToTypeGraphList.getEntryObjects()) {
 				if (tmpModelToTypeGraph instanceof ModelToTypeGraph) {
 					ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) tmpModelToTypeGraph;
-					TypeGraph typeGraph = modelToTypeGraph.getTarget();
-					if (typeGraph != null) {
-						Model tmpModel = modelToTypeGraph.getSource();
-						if (tmpModel instanceof MGravityModel) {
-							MGravityModel model = (MGravityModel) tmpModel;
+					Model tmpModel = modelToTypeGraph.getSource();
+					if (tmpModel instanceof MGravityModel) {
+						MGravityModel model = (MGravityModel) tmpModel;
+						TypeGraph typeGraph = modelToTypeGraph.getTarget();
+						if (typeGraph != null) {
 							if (pattern_FieldName_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 									modelToTypeGraph) == null) {
-								if (pattern_FieldName_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-										typeGraph) == null) {
+								if (pattern_FieldName_29_2_isapplicablecore_black_nac_0BB(ruleResult, model) == null) {
 									if (pattern_FieldName_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											model) == null) {
-										_result.add(new Object[] { modelToTypeGraphList, typeGraph, modelToTypeGraph,
-												model, ruleEntryContainer, ruleResult });
+											typeGraph) == null) {
+										_result.add(new Object[] { modelToTypeGraphList, model, modelToTypeGraph,
+												typeGraph, ruleEntryContainer, ruleResult });
 									}
 								}
 							}
@@ -2604,13 +2602,13 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	}
 
 	public static final Object[] pattern_FieldName_29_3_solveCSP_bindingFBBBBBB(FieldName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, MGravityModel model,
+			IsApplicableMatch isApplicableMatch, MGravityModel model, TypeGraph typeGraph,
 			ModelToTypeGraph modelToTypeGraph, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, typeGraph, model, modelToTypeGraph,
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, model, typeGraph, modelToTypeGraph,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, typeGraph, model, modelToTypeGraph, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, model, typeGraph, modelToTypeGraph, ruleResult };
 		}
 		return null;
 	}
@@ -2620,17 +2618,17 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	}
 
 	public static final Object[] pattern_FieldName_29_3_solveCSP_bindingAndBlackFBBBBBB(FieldName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph typeGraph, MGravityModel model,
+			IsApplicableMatch isApplicableMatch, MGravityModel model, TypeGraph typeGraph,
 			ModelToTypeGraph modelToTypeGraph, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_FieldName_29_3_solveCSP_binding = pattern_FieldName_29_3_solveCSP_bindingFBBBBBB(_this,
-				isApplicableMatch, typeGraph, model, modelToTypeGraph, ruleResult);
+				isApplicableMatch, model, typeGraph, modelToTypeGraph, ruleResult);
 		if (result_pattern_FieldName_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldName_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_FieldName_29_3_solveCSP_black = pattern_FieldName_29_3_solveCSP_blackB(csp);
 			if (result_pattern_FieldName_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, typeGraph, model, modelToTypeGraph, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, model, typeGraph, modelToTypeGraph, ruleResult };
 			}
 		}
 		return null;
@@ -2642,40 +2640,40 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldName_29_5_checknacs_blackBBB(TypeGraph typeGraph, MGravityModel model,
+	public static final Object[] pattern_FieldName_29_5_checknacs_blackBBB(MGravityModel model, TypeGraph typeGraph,
 			ModelToTypeGraph modelToTypeGraph) {
-		return new Object[] { typeGraph, model, modelToTypeGraph };
+		return new Object[] { model, typeGraph, modelToTypeGraph };
 	}
 
-	public static final Object[] pattern_FieldName_29_6_perform_blackBBBB(TypeGraph typeGraph, MGravityModel model,
+	public static final Object[] pattern_FieldName_29_6_perform_blackBBBB(MGravityModel model, TypeGraph typeGraph,
 			ModelToTypeGraph modelToTypeGraph, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { typeGraph, model, modelToTypeGraph, ruleResult };
+		return new Object[] { model, typeGraph, modelToTypeGraph, ruleResult };
 	}
 
-	public static final Object[] pattern_FieldName_29_6_perform_greenBFBFFBB(TypeGraph typeGraph, MGravityModel model,
+	public static final Object[] pattern_FieldName_29_6_perform_greenBBFFFBB(MGravityModel model, TypeGraph typeGraph,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
+		MFieldName mFieldName = ModiscoFactory.eINSTANCE.createMFieldName();
 		TField tField = BasicFactory.eINSTANCE.createTField();
 		MFieldNameToTField eFieldDeclarationToTField = PmFactory.eINSTANCE.createMFieldNameToTField();
-		MFieldName mFieldName = ModiscoFactory.eINSTANCE.createMFieldName();
-		Object _localVariable_0 = csp.getValue("tField", "tName");
-		Object _localVariable_1 = csp.getValue("mFieldName", "mName");
+		Object _localVariable_0 = csp.getValue("mFieldName", "mName");
+		Object _localVariable_1 = csp.getValue("tField", "tName");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
+		model.getMFieldNames().add(mFieldName);
+		ruleResult.getSourceObjects().add(mFieldName);
 		typeGraph.getFields().add(tField);
 		ruleResult.getTargetObjects().add(tField);
+		eFieldDeclarationToTField.setSource(mFieldName);
 		eFieldDeclarationToTField.setTarget(tField);
 		ruleResult.getCorrObjects().add(eFieldDeclarationToTField);
-		model.getMFieldNames().add(mFieldName);
-		eFieldDeclarationToTField.setSource(mFieldName);
-		ruleResult.getSourceObjects().add(mFieldName);
-		String tField_tName_prime = (String) _localVariable_0;
-		String mFieldName_mName_prime = (String) _localVariable_1;
+		String mFieldName_mName_prime = (String) _localVariable_0;
+		String tField_tName_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
-		tField.setTName(tField_tName_prime);
 		mFieldName.setMName(mFieldName_mName_prime);
+		tField.setTName(tField_tName_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { typeGraph, tField, model, eFieldDeclarationToTField, mFieldName, ruleResult, csp };
+		return new Object[] { model, typeGraph, mFieldName, tField, eFieldDeclarationToTField, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_FieldName_29_7_expressionFB(

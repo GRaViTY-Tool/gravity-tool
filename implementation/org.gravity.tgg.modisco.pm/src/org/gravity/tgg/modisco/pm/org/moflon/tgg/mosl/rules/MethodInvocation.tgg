@@ -76,10 +76,6 @@
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	mMember:MDefinition {
-		-mMethodInvocations->invocation
-	} 
-
 	invocation:AbstractMethodInvocation {
 		++  -method -> mInvokedMember
 	}
@@ -89,11 +85,7 @@
 }
 
 #target {
-	tMember:TMember {
-		-accessing->tAccess
-	}
-
-	tAccess:TCall {
+	tAccess:TAccess {
 		++-target -> tInvokedMember
 	}
 	
@@ -101,11 +93,6 @@
 }
 
 #correspondence {
-	mMemberToTMember :MDefinitionToTMember {
-		#src->mMember
-		#trg->tMember
-	}
-	
 	invocationToTAccess :AbstractMethodInvocationToTAccess {
 		#src->invocation
 		#trg->tAccess
@@ -114,43 +101,5 @@
 	mInvokedMemberToTInvokedMember :MDefinitionToTMember {
 		#src->mInvokedMember
 		#trg->tInvokedMember
-	}
-}
-
-#using org.gravity.tgg.modisco.pm.*
-#using AttrCondDefLibrary.*
-
-#rule MethodInvocationTargetRecursive
-#with org.gravity.tgg.modisco.pm
-
-#source {
-	mMember:MAbstractMethodDefinition {
-		-mMethodInvocations->invocation
-	} 
-
-	invocation:AbstractMethodInvocation {
-		++  -method -> mMember
-	}
-}
-
-#target {
-	tMember:TMember {
-		-accessing->tAccess
-	}
-
-	tAccess:TCall {
-		++-target -> tMember
-	}
-}
-
-#correspondence {
-	mMemberToTMember :MDefinitionToTMember {
-		#src->mMember
-		#trg->tMember
-	}
-	
-	invocationToTAccess :AbstractMethodInvocationToTAccess {
-		#src->invocation
-		#trg->tAccess
 	}
 }

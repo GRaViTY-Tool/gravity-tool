@@ -3,24 +3,19 @@
 package org.gravity.hulk.refactoringgraph.refactorings.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import org.gravity.hulk.refactoringgraph.refactorings.HExtractClass;
-import org.gravity.hulk.refactoringgraph.refactorings.RefactoringsPackage;
-
-import org.gravity.typegraph.basic.TMember;
-// <-- [user defined imports]
-import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.eclipse.swt.widgets.TreeItem;
 import org.gravity.hulk.refactoringgraph.HInBlobAccess;
 // [user defined imports] -->
+import org.gravity.hulk.refactoringgraph.refactorings.HExtractClass;
+import org.gravity.hulk.refactoringgraph.refactorings.RefactoringsPackage;
+import org.gravity.typegraph.basic.TMember;
+// <-- [user defined imports]
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +47,6 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	 * @generated
 	 */
 	protected HExtractClassImpl() {
-		super();
 	}
 
 	/**
@@ -72,11 +66,11 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	 */
 	@Override
 	public EList<TMember> getTMembers() {
-		if (tMembers == null) {
-			tMembers = new EObjectResolvingEList<TMember>(TMember.class, this,
+		if (this.tMembers == null) {
+			this.tMembers = new EObjectResolvingEList<>(TMember.class, this,
 					RefactoringsPackage.HEXTRACT_CLASS__TMEMBERS);
 		}
-		return tMembers;
+		return this.tMembers;
 	}
 
 	/**
@@ -84,18 +78,21 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public double getAvgIba() {
 		// [user code injected with eMoflon]
-
 		double sum = 0.0;
 		int count = 0;
-		for (TMember m : getTMembers()) {
-			for (TAnnotation a : m.getTAnnotation()) {
+		for (final TMember m : getTMembers()) {
+			for (final TAnnotation a : m.getTAnnotation()) {
 				if (a instanceof HInBlobAccess) {
 					sum += ((HInBlobAccess) a).getValue();
 					count++;
 				}
 			}
+		}
+		if(count == 0) {
+			return 0;
 		}
 		return sum / count;
 
@@ -107,7 +104,7 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
 		case RefactoringsPackage.HEXTRACT_CLASS__TMEMBERS:
 			return getTMembers();
@@ -122,7 +119,7 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case RefactoringsPackage.HEXTRACT_CLASS__TMEMBERS:
 			getTMembers().clear();
@@ -138,7 +135,7 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case RefactoringsPackage.HEXTRACT_CLASS__TMEMBERS:
 			getTMembers().clear();
@@ -153,10 +150,10 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case RefactoringsPackage.HEXTRACT_CLASS__TMEMBERS:
-			return tMembers != null && !tMembers.isEmpty();
+			return (this.tMembers != null) && !this.tMembers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -167,7 +164,7 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case RefactoringsPackage.HEXTRACT_CLASS___GET_AVG_IBA:
 			return getAvgIba();
@@ -177,15 +174,16 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	// <-- [user code injected with eMoflon]
 
 	@Override
-	public TreeItem createItemContents(TreeItem item, int style) {
+	public TreeItem createItemContents(final TreeItem item, final int style) {
 		item.setText("Extract " + getTMembers().size() + " members to a new class.");
-		for (TMember tMember : getTMembers()) {
+		for (final TMember tMember : getTMembers()) {
 			new TreeItem(item, style).setText(tMember.getSignatureString());
 		}
 		return item;
 	}
 
-	public int compare(HExtractClass hExtractClass) {
+	@Override
+	public int compare(final HExtractClass hExtractClass) {
 		return (int) (1000 * (getAvgIba() - hExtractClass.getAvgIba()));
 	}
 

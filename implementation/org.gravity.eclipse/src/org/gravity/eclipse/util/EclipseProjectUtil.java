@@ -102,7 +102,8 @@ public final class EclipseProjectUtil {
 	 *                       org.eclipse.core.resources.IProject.setDescription(IProjectDescription
 	 *                       description, IProgressMonitor monitor)
 	 */
-	public static void addNature(final IProject project, final String nature, final IProgressMonitor monitor) throws CoreException {
+	public static void addNature(final IProject project, final String nature, final IProgressMonitor monitor)
+			throws CoreException {
 		final IProjectDescription description = project.getDescription();
 		final String[] oldNatures = description.getNatureIds();
 		for (final String o : oldNatures) {
@@ -143,7 +144,8 @@ public final class EclipseProjectUtil {
 	 * @param project The project
 	 * @param monitor A progress monitor
 	 * @return The gravity folder
-	 * @throws IOException If the gravity folder doesn't exists and cannot be created
+	 * @throws IOException If the gravity folder doesn't exists and cannot be
+	 *                     created
 	 */
 	public static IFolder getGravityFolder(final IProject project, final IProgressMonitor monitor) throws IOException {
 		final IFolder gravityFolder = project.getFolder(GravityActivator.GRAVITY_FOLDER_NAME);
@@ -164,11 +166,13 @@ public final class EclipseProjectUtil {
 	 * @return The class path entry
 	 */
 	public static ClasspathEntry createClassPathEntry(final IFile file) {
+		final IPath projectRelativePath = file.getProjectRelativePath();
 		return new org.eclipse.jdt.internal.core.ClasspathEntry(IPackageFragmentRoot.K_BINARY,
-				IClasspathEntry.CPE_LIBRARY, file.getLocation(), ClasspathEntry.INCLUDE_ALL, // inclusion
+				IClasspathEntry.CPE_LIBRARY, projectRelativePath, ClasspathEntry.INCLUDE_ALL, // inclusion
 				// patterns
 				ClasspathEntry.EXCLUDE_NONE, // exclusion patterns
-				null, null, null, // specific output folder
+				null, // source path
+				null, null, // specific output folder
 				false, // exported
 				ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to combine
 				ClasspathEntry.NO_EXTRA_ATTRIBUTES);
@@ -182,7 +186,8 @@ public final class EclipseProjectUtil {
 	 * @return The created classpath entry
 	 * @throws JavaModelException if the classpath could not be set
 	 */
-	public static IClasspathEntry addLibToClasspath(final IJavaProject project, final IFile lib) throws JavaModelException {
+	public static IClasspathEntry addLibToClasspath(final IJavaProject project, final IFile lib)
+			throws JavaModelException {
 		return addLibToClasspath(project, lib, new NullProgressMonitor());
 	}
 
@@ -195,10 +200,24 @@ public final class EclipseProjectUtil {
 	 * @return The created classpath entry
 	 * @throws JavaModelException if the classpath could not be set
 	 */
-	public static IClasspathEntry addLibToClasspath(final IJavaProject project, final IFile lib, final IProgressMonitor monitor)
-			throws JavaModelException {
-		final IClasspathEntry relativeLibraryEntry = createClassPathEntry(lib);
+	public static IClasspathEntry addLibToClasspath(final IJavaProject project, final IFile lib,
+			final IProgressMonitor monitor) throws JavaModelException {
 		final IClasspathEntry[] oldEntries = project.getRawClasspath();
+		for (int i = 0; i < oldEntries.length; i++) {
+			final IClasspathEntry entry = oldEntries[i];
+			if (entry.getEntryKind() == IClasspathEntry.CPE_LIBRARY) {
+				final IPath path = entry.getPath();
+				if (entry.getPath().makeRelativeTo(project.getProject().getLocation()).equals(lib.getProjectRelativePath())) {
+					if (path.isAbsolute()) {
+						// If the element is already referenced using an absolute path but is located within the project, replace the reference with a relative one
+						oldEntries[i] = createClassPathEntry(lib);
+						project.setRawClasspath(oldEntries, monitor);
+					}
+					return oldEntries[i];
+				}
+			}
+		}
+		final IClasspathEntry relativeLibraryEntry = createClassPathEntry(lib);
 		final IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
 		System.arraycopy(oldEntries, 0, newEntries, 0, oldEntries.length);
 		newEntries[oldEntries.length] = relativeLibraryEntry;
@@ -239,7 +258,8 @@ public final class EclipseProjectUtil {
 	 * @param monitor A progress monitor
 	 * @throws CoreException If the link cannot be created
 	 */
-	public static void createLink(final File source, final IFile target, final IProgressMonitor monitor) throws CoreException {
+	public static void createLink(final File source, final IFile target, final IProgressMonitor monitor)
+			throws CoreException {
 		final IPath jarPath = new org.eclipse.core.runtime.Path(source.getAbsolutePath());
 		target.createLink(jarPath, IResource.FILE, monitor);
 	}
@@ -252,7 +272,8 @@ public final class EclipseProjectUtil {
 	 * @return The imported Eclipse projects
 	 * @throws CoreException If the import fails for a project
 	 */
-	public static List<IProject> importProjectsFromWorkspaceLocation(final IProgressMonitor monitor) throws CoreException {
+	public static List<IProject> importProjectsFromWorkspaceLocation(final IProgressMonitor monitor)
+			throws CoreException {
 		final File src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
 		return importProjects(src, monitor);
 	}
@@ -265,16 +286,18 @@ public final class EclipseProjectUtil {
 	 * @return The imported Eclipse projects
 	 * @throws CoreException If the import fails for a project
 	 */
-	public static List<IProject> importProjects(final File rootFolder, final IProgressMonitor monitor) throws CoreException {
+	public static List<IProject> importProjects(final File rootFolder, final IProgressMonitor monitor)
+			throws CoreException {
 		final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		final List<IProject> projects = Stream.of(rootFolder.listFiles()).filter(File::isDirectory).parallel().map(projectFolder -> {
-			try {
-				return importProject(projectFolder, monitor);
-			} catch (final CoreException e) {
-				LOGGER.error(e);
-				return null;
-			}
-		}).filter(Objects::nonNull).collect(Collectors.toList());
+		final List<IProject> projects = Stream.of(rootFolder.listFiles()).filter(File::isDirectory).parallel()
+				.map(projectFolder -> {
+					try {
+						return importProject(projectFolder, monitor);
+					} catch (final CoreException e) {
+						LOGGER.error(e);
+						return null;
+					}
+				}).filter(Objects::nonNull).collect(Collectors.toList());
 		root.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 		return projects;
 	}
@@ -300,14 +323,12 @@ public final class EclipseProjectUtil {
 		final IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		final java.nio.file.Path workspaceLocation = workspace.getRoot().getLocation().toFile().toPath();
 		Path path;
-		if(dotProject.getAbsoluteFile().toPath().startsWith(workspaceLocation)) {
+		if (dotProject.getAbsoluteFile().toPath().startsWith(workspaceLocation)) {
 			path = new Path(dotProject.getPath());
-		}
-		else {
+		} else {
 			path = new Path(dotProject.getAbsolutePath());
 		}
-		final IProjectDescription description = workspace
-				.loadProjectDescription(path);
+		final IProjectDescription description = workspace.loadProjectDescription(path);
 		final IProject project = workspace.getRoot().getProject(description.getName());
 		if (!project.exists()) {
 			project.create(description, monitor);

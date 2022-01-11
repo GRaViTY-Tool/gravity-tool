@@ -2,6 +2,7 @@ package org.gravity.tgg.modisco.pm;
 
 import static org.gravity.eclipse.io.ModelSaver.saveModel;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -103,10 +104,10 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		GravityActivator.getDefault().addProject(project.getProject());
 
 		if (load) {
-			final CorrespondenceModel correspondenceModel = getCorrespondenceModel(project.getProject(), set);
-			if (correspondenceModel != null) {
-				final SynchronizationProtocol protocol = getProtocol(project, set);
-				if (protocol != null) {
+			final SynchronizationProtocol protocol = getProtocol(project, set);
+			if (protocol != null) {
+				final CorrespondenceModel correspondenceModel = getCorrespondenceModel(project.getProject(), set);
+				if (correspondenceModel != null) {
 					setCorr(correspondenceModel);
 					setSrc(correspondenceModel.getSource());
 					setTrg(correspondenceModel.getTarget());
@@ -507,12 +508,25 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			}
 			resource.getContents().add(ps);
 			final Map<Object, Object> saveOptions = new HashMap<>();
+			final File file = new File(this.iJavaProject.getProject().getWorkspace().getRoot().getLocation().toFile(),
+					path);
+			if (!file.exists()) {
+				try {
+					final File parent = file.getParentFile();
+					if (parent.exists() || parent.mkdirs()) {
+						file.createNewFile();
+					}
+				} catch (final IOException e) {
+					LOGGER.error(e);
+				}
+			}
 			if (ps.getTripleMatches().size() > 100000) {
 				saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_FILE_BUFFER);
 			} else {
 				saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED,
 						Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 			}
+
 			try {
 				resource.save(saveOptions);
 			} catch (final IOException e) {

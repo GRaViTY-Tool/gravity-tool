@@ -4,7 +4,7 @@
 #rule AbstractTypeAccess2ReturnParam #with org.gravity.tgg.modisco.uml
 
 #source {
-	method:MethodDeclaration{
+	method:MMethodDefinition{
 		++-returnType -> typeAccess
 	}
 

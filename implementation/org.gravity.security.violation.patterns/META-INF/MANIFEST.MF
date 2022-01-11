@@ -1,13 +1,21 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: GRaViTY UMLsec at Code
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.gravity.security.violation.patterns;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: University of Koblenz-Landau
-Automatic-Module-Name: org.gravity.pm.umlsec
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Automatic-Module-Name: org.gravity.security.violation.patterns
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Require-Bundle: carisma.profile.umlsec,
- org.gravity.typegraph.basic,
+Require-Bundle: carisma.profile.umlsec;visibility:=reexport,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.gravity.hulk.antipatterngraph;visibility:=reexport,
+ org.gravity.typegraph.basic;visibility:=reexport,
+ org.eclipse.uml2.types;visibility:=reexport,
+ org.eclipse.uml2.uml;visibility:=reexport,
  org.eclipse.emf.henshin.interpreter;bundle-version="1.7.0",
  org.gravity.tgg.pm.uml,
  org.moflon.tgg.runtime,
@@ -15,6 +23,13 @@ Require-Bundle: carisma.profile.umlsec,
  org.gravity.security.annotations,
  carisma.check.staticcheck;bundle-version="1.0.4",
  carisma.core,
- org.apache.log4j
-Export-Package: org.gravity.pm.umlsec
+ org.apache.log4j,
+ org.gravity.hulk,
+ org.eclipse.swt,
+ org.gravity.eclipse
+Export-Package: org.gravity.pm.umlsec,
+ org.gravity.security.violation.patterns.violations,
+ org.gravity.security.violation.patterns.violations.impl,
+ org.gravity.security.violation.patterns.violations.util
 Bundle-ActivationPolicy: lazy
+Import-Package: org.gravity.eclipse

@@ -8,7 +8,14 @@
 }
 
 #target {
-	++feature:uml.Operation
+	++feature:uml.Operation {
+		++-ownedComment->comment
+	}
+	
+	++comment:Comment {
+		body:="Constructor"
+		++-annotatedElement->feature
+	}
 }
 
 #correspondence {	

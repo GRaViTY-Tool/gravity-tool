@@ -16,6 +16,7 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runners.model.InitializationError;
 
 public class RefactoringPaperExample03Test extends AbstractRefactoringTestCase {
 
@@ -28,23 +29,30 @@ public class RefactoringPaperExample03Test extends AbstractRefactoringTestCase {
 	 * description "PUM-NEG: (paper3) Pull-up of a method from two child classes
 	 * into a parent class, a third sibling does not have the method." program
 	 * "paper-example02"
+	 * @throws InitializationError
 	 */
 	@Test
-	public void test31() {
-		TypeGraph pm = getProgramModel();
+	public void test31_Forbid_NotAllChildHaveMethod() throws InitializationError {
+		final TypeGraph pm = getProgramModel();
 
-		TClass parent = pm.getClass("example03.ParentClass");
-		TClass child1 = pm.getClass("example03.ChildClass1");
-		TClass child2 = pm.getClass("example03.ChildClass2");
-		TClass child3 = pm.getClass("example03.ChildClass3");
-		TMethodSignature signature = pm.getMethodSignature("method():void");
-		TMethodDefinition definition1 = signature.getTDefinition(child1);
-		TMethodDefinition definition2 = signature.getTDefinition(child2);
+		final TClass parent = pm.getClass("example03.ParentClass");
+		final TClass child1 = pm.getClass("example03.ChildClass1");
+		final TClass child2 = pm.getClass("example03.ChildClass2");
+		final TClass child3 = pm.getClass("example03.ChildClass3");
+		final TMethodSignature signature = pm.getMethodSignature("method():void");
 
-		PullUpMethodConfiguration pum = new PullUpMethodConfiguration(signature, parent);
-		RefactoringTool tool = new RefactoringTool(pm, false);
+
+		if((child1 == null) || (child2 == null) || (child3 == null) || (parent == null) || (signature == null)) {
+			throw new InitializationError("Couldn't find all elements in the program model!");
+		}
+
+		final TMethodDefinition definition1 = signature.getTDefinition(child1);
+		final TMethodDefinition definition2 = signature.getTDefinition(child2);
+
+		final PullUpMethodConfiguration pum = new PullUpMethodConfiguration(signature, parent);
+		final RefactoringTool tool = new RefactoringTool(pm, false);
 		try {
-			boolean applicible = tool.applyRefactoring(pum);
+			final boolean applicible = tool.applyRefactoring(pum);
 			assertFalse(applicible);
 
 			// Check if the parent implements the signature and the child not
@@ -61,7 +69,7 @@ public class RefactoringPaperExample03Test extends AbstractRefactoringTestCase {
 			assertFalse(child3.getDeclaredTMethodDefinitions().contains(definition1)
 					|| child3.getDeclaredTMethodDefinitions().contains(definition2));
 			assertNull(signature.getTDefinition(child3));
-		} catch (RefactoringFailedException e) {
+		} catch (final RefactoringFailedException e) {
 			throw new AssertionError(e.getMessage(), e);
 		}
 	}

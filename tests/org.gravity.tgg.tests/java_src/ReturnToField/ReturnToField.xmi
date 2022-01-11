@@ -2,20 +2,20 @@
 <org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="http://www.gravity-tool.org/typegraph/basic" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9" tName="ReturnToField">
   <packages classes="//@ownedTypes.2" ownedTypes="//@ownedTypes.2" typeGraph="/" tName="(default package)"/>
   <methods tName="m">
-    <signatures outgoingFlows="//@fields.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" returnType="//@ownedTypes.3">
+    <signatures outgoingFlows="//@fields.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.1" returnType="//@ownedTypes.3">
       <paramList/>
-      <definitions definedBy="//@ownedTypes.2" accessedBy="//@fields.0/@signatures.0/@definitions.0/@tAccessing.0" returnType="//@ownedTypes.3">
+      <definitions definedBy="//@ownedTypes.2" accessedBy="//@fields.0/@signatures.0/@definitions.0/@accessing.0" returnType="//@ownedTypes.3">
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
   <fields tName="a">
     <signatures type="//@ownedTypes.3">
-      <definitions incomingFlows="//@fields.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" definedBy="//@ownedTypes.2">
-        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" incomingFlows="//@fields.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" outgoingFlows="//@fields.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" tTarget="//@methods.0/@signatures.0/@definitions.0">
-          <ownedFlows flowSource="//@fields.0/@signatures.0/@definitions.0/@tAccessing.0" flowTarget="//@fields.0/@signatures.0/@definitions.0"/>
-          <ownedFlows flowSource="//@methods.0/@signatures.0" flowTarget="//@fields.0/@signatures.0/@definitions.0/@tAccessing.0"/>
-        </tAccessing>
+      <definitions incomingFlows="//@fields.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.0" definedBy="//@ownedTypes.2">
+        <accessing xsi:type="org.gravity.typegraph.basic:TCall" incomingFlows="//@fields.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.1" outgoingFlows="//@fields.0/@signatures.0/@definitions.0/@accessing.0/@ownedFlows.0" target="//@methods.0/@signatures.0/@definitions.0">
+          <ownedFlows flowSource="//@fields.0/@signatures.0/@definitions.0/@accessing.0" flowTarget="//@fields.0/@signatures.0/@definitions.0"/>
+          <ownedFlows flowSource="//@methods.0/@signatures.0" flowTarget="//@fields.0/@signatures.0/@definitions.0/@accessing.0"/>
+        </accessing>
         <tModifier tVisibility="TPackage"/>
       </definitions>
     </signatures>

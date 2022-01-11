@@ -128,3 +128,8 @@
 		#trg->TTextAnnotation
 	}
 }
+
+
+#attributeConditions {
+	
+}

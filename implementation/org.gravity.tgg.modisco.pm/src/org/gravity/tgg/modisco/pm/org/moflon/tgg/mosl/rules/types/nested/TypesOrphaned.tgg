@@ -9,7 +9,7 @@
 		++  -orphanTypes -> mType
 	}
 
-	++mType: MClass
+	mType: MClass
 }
 
 #target {
@@ -17,7 +17,7 @@
 		++  -ownedTypes -> tType
 	}
 
-	++tType:TClass
+	tType:TClass
 }
 
 #correspondence {
@@ -26,19 +26,8 @@
 		#trg->pg
 	}
 
-	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
-		#src->mType
-		#trg->tType
-	}
-
-	++ mTypeToTType :TypeToTAbstractType {
+	mTypeToTType :TypeToTAbstractType {
 		#src->mType
 		#trg->tType
 	}
 }
-
-#attributeConditions {
-	eq(mType.proxy, tType.tLib)
-}
-
-
