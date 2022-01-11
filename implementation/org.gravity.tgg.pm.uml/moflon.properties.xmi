@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.core.propertycontainer:MoflonPropertiesContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.moflon.core.propertycontainer="platform:/plugin/org.moflon.core.propertycontainer/model/Propertycontainer.ecore" projectName="org.gravity.tgg.pm.uml">
+  <additionalDependencies value="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"/>
+  <additionalDependencies value="platform:/plugin/org.eclipse.uml2.types/model/Types.ecore"/>
+  <additionalDependencies value="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"/>
+  <replaceGenModel/>
+  <sdmCodegeneratorHandlerId value="DEMOCLES_REVERSE_NAVI"/>
+  <tGGBuildMode/>
+  <importMappings key="http://www.eclipse.org/uml2/5.0.0/UML" value="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"/>
+  <importMappings key="http://www.eclipse.org/uml2/5.0.0/Types" value="platform:/plugin/org.eclipse.uml2.types/model/Types.ecore"/>
+  <importMappings key="http://www.gravity-tool.org/typegraph/basic" value="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"/>
+  <additionalUsedGenPackages value="platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel"/>
+  <additionalUsedGenPackages value="platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel"/>
+  <additionalUsedGenPackages value="platform:/resource/org.gravity.typegraph.basic/model/Basic.genmodel"/>
+</org.moflon.core.propertycontainer:MoflonPropertiesContainer>
