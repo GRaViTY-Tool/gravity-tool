@@ -7,7 +7,5 @@
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="lib/json-simple-3.1.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/junit-toolbox-2.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
