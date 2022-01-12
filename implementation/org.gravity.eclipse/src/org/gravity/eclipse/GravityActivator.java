@@ -2,7 +2,6 @@ package org.gravity.eclipse;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
@@ -15,8 +14,6 @@ import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -101,14 +98,13 @@ public class GravityActivator extends Plugin {
 		plugin = this;
 
 		this.listener = event -> {
-			final IResource resource = event.getResource();
+			final var resource = event.getResource();
 			if ((resource != null) && (resource.getType() == IResource.PROJECT)
 					&& GravityActivator.this.converters.containsKey(resource.getName())
 					&& (event.getType() == IResourceChangeEvent.PRE_DELETE)) {
 				GravityActivator.this.converters.remove(resource.getName());
 
 			}
-
 		};
 
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(this.listener);
@@ -124,8 +120,8 @@ public class GravityActivator extends Plugin {
 	 *                                        read
 	 */
 	private void initializeSelectedConverter() throws NoConverterRegisteredException, CoreException {
-		final IExtensionRegistry extensionRegistry = Platform.getExtensionRegistry();
-		final IConfigurationElement[] configurationElements = extensionRegistry
+		final var extensionRegistry = Platform.getExtensionRegistry();
+		final var configurationElements = extensionRegistry
 				.getConfigurationElementsFor(GRAVITY_CONVERTER_EXTENSION_POINT_ID);
 		if (configurationElements.length <= 0) {
 			throw new NoConverterRegisteredException();
@@ -188,14 +184,14 @@ public class GravityActivator extends Plugin {
 	 *                                        read
 	 */
 	public IPGConverter getConverter(final IProject project) throws NoConverterRegisteredException, CoreException {
-		final String name = project.getName();
+		final var name = project.getName();
 		if (this.converters.containsKey(name)) {
-			final IPGConverter converter = this.converters.get(name);
+			final var converter = this.converters.get(name);
 			if (this.selectedConverterFactory.belongsToFactory(converter)) {
 				return converter;
 			}
 		}
-		final IPGConverter converter = getNewConverter(project);
+		final var converter = getNewConverter(project);
 		converter.setDebug(isVerbose());
 		return converter;
 	}
@@ -209,7 +205,7 @@ public class GravityActivator extends Plugin {
 	 */
 	public boolean discardConverter(final IProject project) {
 		if (this.converters.containsKey(project.getName())) {
-			final IPGConverter converter = this.converters.remove(project.getName());
+			final var converter = this.converters.remove(project.getName());
 			return (converter != null) && converter.discard();
 		}
 		return false;
@@ -227,7 +223,7 @@ public class GravityActivator extends Plugin {
 	 *                                        read
 	 */
 	public IPGConverter getNewConverter(final IProject project) throws NoConverterRegisteredException, CoreException {
-		final IPGConverter converter = getSelectedConverterFactory().createConverter(project);
+		final var converter = getSelectedConverterFactory().createConverter(project);
 		converter.setDebug(isVerbose());
 		this.converters.put(project.getName(), converter);
 		return converter;
@@ -280,8 +276,8 @@ public class GravityActivator extends Plugin {
 	}
 
 	public ResourceSet getResourceSet(final IProject project) {
-		final String name = project.getName();
-		ResourceSet set = this.resourceSets.get(name);
+		final var name = project.getName();
+		var set = this.resourceSets.get(name);
 		if(set == null) {
 			set = new ResourceSetImpl();
 			this.resourceSets.put(name, set);
@@ -299,8 +295,8 @@ public class GravityActivator extends Plugin {
 		}
 		System.out.println(string);
 		try {
-			final Path path = Paths.get(measureLocation, measureRecordsKey, "data.txt");
-			final java.io.File file = path.getParent().toFile();
+			final var path = Paths.get(measureLocation, measureRecordsKey, "data.txt");
+			final var file = path.getParent().toFile();
 			if(!file.exists() && !file.mkdirs()){
 				throw new IOException("Couldn't create folder: "+path.getParent());
 			}

@@ -10,18 +10,13 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
 import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
-import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
-import org.eclipse.jdt.launching.environments.IExecutionEnvironmentsManager;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.os.Execute;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
@@ -49,13 +44,15 @@ public class GradleBuild {
 	 *
 	 */
 	public GradleBuild() {
-		final String env = System.getenv("GRADLE_HOME");
+		final var env = System.getenv("GRADLE_HOME");
 		if (env != null) {
-			final File gradleHome = new File(env);
+			final var gradleHome = new File(env);
 			if (gradleHome.exists()) {
-				final File bin = new File(gradleHome, "bin/gradle");
+				final var bin = new File(gradleHome, "bin/gradle");
 				if (bin.exists() && bin.isFile()) {
 					this.gradleBin = bin;
+					LOGGER.info("Found gradle binaries at \""+this.gradleBin
+							+ "\"");
 				} else {
 					this.gradleBin = null;
 					LOGGER.warn("The gradle installation at \"" + env + "\" doesn't has the expected structure.");
@@ -83,7 +80,7 @@ public class GradleBuild {
 	 */
 	boolean buildGradleProject(final File gradleRootFolder, final Iterable<Path> buildDotGradleFiles,
 			final boolean androidApp) throws IOException, InterruptedException, UnsupportedOperationSystemException {
-		File gradlew = new File(gradleRootFolder, "gradlew");
+		var gradlew = new File(gradleRootFolder, "gradlew");
 		if (!gradlew.exists()) {
 			if (this.gradleBin == null) {
 				return false;
@@ -93,28 +90,28 @@ public class GradleBuild {
 
 		try {
 			FileUtils.changeToOSEncoding(gradlew);
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			LOGGER.warn("could not change gradlew to os specific line delimiters");
 		}
 		if (!gradlew.setExecutable(true)) {
 			return false;
 		}
 
-		final File localProperties = new File(gradleRootFolder, "local.properties");
+		final var localProperties = new File(gradleRootFolder, "local.properties");
 		if (localProperties.exists() && !localProperties.delete()) {
 			return false;
 
 		}
 
-		Process process = createBuildProcess(gradleRootFolder, "assemble");
-		final StringBuilder message = Execute.collectMessages(process);
+		var process = createBuildProcess(gradleRootFolder, "assemble");
+		final var message = Execute.collectMessages(process);
 		process.waitFor();
 		process.destroy();
 
-		boolean success = process.exitValue() == 0;
+		var success = process.exitValue() == 0;
 
 		if (!success && androidApp && message.toString().contains("File google-services.json is missing")) {
-			boolean fix = false;
+			var fix = false;
 			for (final Path buildFile : buildDotGradleFiles) {
 				fix |= replaceGoogleServices(buildFile);
 			}
@@ -142,12 +139,12 @@ public class GradleBuild {
 	public static Process createBuildProcess(final File path, final String buildTarget)
 			throws IOException, UnsupportedOperationSystemException {
 		List<String> env = null;
-		List<String> args = new LinkedList<>();
-		
-		String java = getCompatibleJvmPath(path);
+		final List<String> args = new LinkedList<>();
+
+		final var java = getCompatibleJvmPath(path);
 		if (java != null) {
 			args.add("-Dorg.gradle.java.home=" + java);
-			HashMap<String, String> envMap = new HashMap<>(System.getenv());
+			final var envMap = new HashMap<>(System.getenv());
 			envMap.put("JAVA_HOME", java);
 			env = envMap.entrySet().parallelStream().map(e -> e.getKey() + '=' + e.getValue())
 					.collect(Collectors.toList());
@@ -164,28 +161,28 @@ public class GradleBuild {
 	 */
 	private static String getCompatibleJvmPath(final File root) throws IOException {
 		String java = null;
-		File propertiesPath = new File(root, "gradle/wrapper/gradle-wrapper.properties");
+		final var propertiesPath = new File(root, "gradle/wrapper/gradle-wrapper.properties");
 		if (propertiesPath.exists()) {
-			String gradleVersion = Files.readAllLines(propertiesPath.toPath()).parallelStream()
+			final var gradleVersion = Files.readAllLines(propertiesPath.toPath()).parallelStream()
 					.filter(line -> line.startsWith("distributionUrl=")).map(line -> {
-						String version = line.substring(0, line.lastIndexOf('-'));
+						final var version = line.substring(0, line.lastIndexOf('-'));
 						return version.substring(version.lastIndexOf('-') + 1);
 					}).findAny().orElse("5.0");
 			if (gradleVersion.compareTo("5.0") < 0) {
-				IExecutionEnvironmentsManager manager = JavaRuntime.getExecutionEnvironmentsManager();
-				Optional<IExecutionEnvironment> optional = Stream.of(manager.getExecutionEnvironments())
+				final var manager = JavaRuntime.getExecutionEnvironmentsManager();
+				final var optional = Stream.of(manager.getExecutionEnvironments())
 						.filter(e -> e.getId().indexOf(JavaCore.VERSION_1_8) != -1).findAny();
 				if (optional.isPresent()) {
-					IExecutionEnvironment ienv = optional.get();
-					IVMInstall vm = ienv.getDefaultVM();
+					final var ienv = optional.get();
+					var vm = ienv.getDefaultVM();
 					if (vm == null) {
-						IVMInstall[] comp = ienv.getCompatibleVMs();
+						final var comp = ienv.getCompatibleVMs();
 						if (comp.length > 0) {
 							vm = comp[0];
 						}
 					}
 					if (vm != null) {
-						File location = vm.getInstallLocation();
+						final var location = vm.getInstallLocation();
 						java = location.toString();
 					}
 				}
@@ -204,11 +201,11 @@ public class GradleBuild {
 	 *                      file, or the text cannot be encoded as UTF-8
 	 */
 	private static boolean replaceGoogleServices(final Path buildFile) throws IOException {
-		boolean change = false;
-		final List<String> content = Files.readAllLines(buildFile);
-		for (int i = 0; i < content.size(); i++) {
-			final String l = content.get(i);
-			final Matcher matcher = GOOGLE_SERVICES_PATTERN.matcher(l);
+		var change = false;
+		final var content = Files.readAllLines(buildFile);
+		for (var i = 0; i < content.size(); i++) {
+			final var l = content.get(i);
+			final var matcher = GOOGLE_SERVICES_PATTERN.matcher(l);
 			while (matcher.find()) {
 				change = true;
 				content.set(i, l.substring(0, matcher.regionStart()) + l.substring(matcher.regionEnd()));
