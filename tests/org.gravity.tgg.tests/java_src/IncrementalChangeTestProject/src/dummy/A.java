@@ -1,7 +1,7 @@
 package dummy;
 
 public class A {
-	void test() {
+	public void test() {
 	}
 	//TODO: Implement this operation
 

@@ -24,5 +24,6 @@ Bundle-ActivationPolicy: lazy
 Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau
 Bundle-Activator: org.gravity.tgg.test.activator.MoDiscoTestActivator
 Automatic-Module-Name: org.gravity.tgg.modisco.test
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ target/dependency/gson.jar
 

@@ -7,7 +7,6 @@ import static org.junit.Assert.assertTrue;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.Reader;
 import java.math.BigDecimal;
 import java.nio.file.Files;
@@ -18,14 +17,11 @@ import org.apache.log4j.Level;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.henshin.interpreter.Engine;
-import org.eclipse.emf.henshin.interpreter.Match;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.emf.henshin.interpreter.impl.EngineImpl;
-import org.eclipse.emf.henshin.model.Module;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
@@ -45,9 +41,10 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.moflon.tgg.algorithm.configuration.PGSavingConfigurator;
 
-import com.github.cliftonlabs.json_simple.JsonException;
-import com.github.cliftonlabs.json_simple.JsonObject;
-import com.github.cliftonlabs.json_simple.Jsoner;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 
 /**
  * An abstract test template collecting test java projects and allows to test
@@ -89,15 +86,15 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 
 		if (JSON_CHECKS) {
 			// Check, if element counts (e. g. number of TFlows) are as expected
-			final IFile file = this.project.getProject().getFile("expectModisco.json");
+			final var file = this.project.getProject().getFile("expectModisco.json");
 			if (file.exists()) {
 				checkModel(preprocessedModel, file);
 			}
 		}
 		// Store the model
 		if (SERIALIZE) {
-			final IFile outputFile = GravityModiscoProjectDiscoverer.getModiscoFile(this.project.getProject(), null);
-			try (OutputStream outputStream = Files.newOutputStream(outputFile.getLocation().toFile().toPath())) {
+			final var outputFile = GravityModiscoProjectDiscoverer.getModiscoFile(this.project.getProject(), null);
+			try (var outputStream = Files.newOutputStream(outputFile.getLocation().toFile().toPath())) {
 				preprocessedModel.eResource().save(outputStream, Collections.emptyMap());
 			} catch (final IOException e) {
 				throw new AssertionError(e.getLocalizedMessage(), e);
@@ -117,7 +114,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 	@Test
 	public final void test1ProgramModelTGG() throws CoreException, IOException, DiscoveryException {
 		LOGGER.info("Test PM TGG for: " + this.project.getProject().getName());
-		final NullProgressMonitor monitor = new NullProgressMonitor();
+		final var monitor = new NullProgressMonitor();
 
 		MoDiscoTGGConverter.getFolder(this.project.getProject(), monitor).delete(true, monitor);
 
@@ -129,17 +126,17 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		} catch (final IOException e) {
 			throw new AssertionError(String.format("Unable to load '%s': %s", this.project, e.getMessage()));
 		}
-		final MGravityModel modiscoModel = getModiscoModel();
+		final var modiscoModel = getModiscoModel();
 		if (!conv.convertModel(modiscoModel, monitor)) {
 			throw new AssertionError("Trafo failed");
 		}
 
-		final TypeGraph pg = conv.getPG();
+		final var pg = conv.getPG();
 		assertNotNull(pg);
 		save(pg, "pm", GravityActivator.FILE_EXTENSION_XMI);
 
 		if (JSON_CHECKS) {
-			final IFile expectJsonFile = this.project.getProject().getFile("expect.json");
+			final var expectJsonFile = this.project.getProject().getFile("expect.json");
 			if (expectJsonFile.exists()) {
 				checkModel(pg, expectJsonFile);
 			}
@@ -154,21 +151,21 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 	 * @param pm The model to ckeck
 	 */
 	private void checkModel(final TypeGraph pm) {
-		final ExtensionFileVisitor visitor = new ExtensionFileVisitor("henshin");
+		final var visitor = new ExtensionFileVisitor("henshin");
 		try {
 			this.project.getProject().accept(visitor);
 		} catch (final CoreException e) {
 			LOGGER.error(e.getLocalizedMessage(), e);
 		}
-		final EGraphImpl graph = new EGraphImpl(pm);
-		final HenshinResourceSet resourceSet = new HenshinResourceSet();
+		final var graph = new EGraphImpl(pm);
+		final var resourceSet = new HenshinResourceSet();
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSet.getResources().add(pm.eResource());
 		final Engine engine = new EngineImpl();
 		for (final Path file : visitor.getFiles()) {
-			final Module module = resourceSet.getModule(file.toAbsolutePath().toString(), false);
+			final var module = resourceSet.getModule(file.toAbsolutePath().toString(), false);
 			for (final org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()) {
-				final Iterable<Match> matches = engine.findMatches(rule, graph, null);
+				final var matches = engine.findMatches(rule, graph, null);
 				assertTrue(matches.iterator().hasNext());
 			}
 		}
@@ -194,15 +191,15 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 	public void test2UmlTGG() throws DiscoveryException {
 		try {
 			LOGGER.info("Test UML TGG for: " + this.project.getProject().getName());
-			final NullProgressMonitor monitor = new NullProgressMonitor();
+			final var monitor = new NullProgressMonitor();
 			Model model;
 			try {
-				final Transformation transformation = new Transformation(this.project, null, false);
+				final var transformation = new Transformation(this.project, null, false);
 				transformation.setConfigurator(new PGSavingConfigurator(transformation, this.project.getProject().getFile("pg.xmi").getLocation().toFile().getAbsolutePath()));
 				if (ADD_UMLSEC) {
 					model = transformation.projectToModel(ADD_UMLSEC, monitor);
 				} else {
-					final MGravityModel preprocessedModel = getModiscoModel();
+					final var preprocessedModel = getModiscoModel();
 					model = transformation.modiscoToModel(preprocessedModel, monitor);
 				}
 				assertNotNull(model);
@@ -232,23 +229,23 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 	 * @param expectJsonFile The JSON file containing the expectations
 	 */
 	private void checkModel(final EObject model, final IFile expectJsonFile) {
-		JsonObject map;
-		try (Reader fileReader = new InputStreamReader(expectJsonFile.getContents())) {
-			map = (JsonObject) Jsoner.deserialize(fileReader);
-		} catch (IOException | JsonException | CoreException e) {
+		JsonObject object;
+		try (Reader reader = new InputStreamReader(expectJsonFile.getContents())) {
+			object = JsonParser.parseReader(reader).getAsJsonObject();
+		} catch (IOException | JsonIOException | CoreException e) {
 			LOGGER.error(e.getMessage(), e);
 			throw new AssertionError(e.getMessage(), e);
 		}
-		final TreeIterator<EObject> it = model.eResource().getAllContents();
+		final var it = model.eResource().getAllContents();
 		while (it.hasNext()) {
-			final EObject eObject = it.next();
-			final String typeName = eObject.eClass().getName();
-			if (map.containsKey(typeName)) {
-				final BigDecimal count = (BigDecimal) map.get(typeName);
-				map.put(typeName, count.subtract(BigDecimal.ONE));
+			final var eObject = it.next();
+			final var typeName = eObject.eClass().getName();
+			if (object.has(typeName)) {
+				final var count = object.get(typeName).getAsBigDecimal();
+				object.addProperty(typeName, count.subtract(BigDecimal.ONE));
 			}
 		}
-		map.entrySet().parallelStream().forEach(entry -> {
+		object.entrySet().parallelStream().forEach(entry -> {
 			final Object value = entry.getValue();
 			assertEquals(value + " elements of type " + entry.getKey() + " could not be transformed.", 0,
 					((BigDecimal) value).intValue());
