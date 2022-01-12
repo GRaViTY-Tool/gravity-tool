@@ -119,15 +119,16 @@ public class GravityActivator extends Plugin {
 	 * @throws CoreException                  If the extension point couldn't be
 	 *                                        read
 	 */
-	private void initializeSelectedConverter() throws NoConverterRegisteredException, CoreException {
+	private boolean initializeSelectedConverter() throws NoConverterRegisteredException, CoreException {
 		final var extensionRegistry = Platform.getExtensionRegistry();
 		final var configurationElements = extensionRegistry
 				.getConfigurationElementsFor(GRAVITY_CONVERTER_EXTENSION_POINT_ID);
 		if (configurationElements.length <= 0) {
 			throw new NoConverterRegisteredException();
 		}
-		setSelectedConverterFactory((IPGConverterFactory) configurationElements[0].createExecutableExtension("class")); //$NON-NLS-1$
-
+		this.selectedConverterFactory = ((IPGConverterFactory) configurationElements[0]
+				.createExecutableExtension("class")); //$NON-NLS-1$
+		return this.selectedConverterFactory  != null;
 	}
 
 	/**
@@ -249,8 +250,8 @@ public class GravityActivator extends Plugin {
 	 *                                        read
 	 */
 	public IPGConverterFactory getSelectedConverterFactory() throws NoConverterRegisteredException, CoreException {
-		if (this.selectedConverterFactory == null) {
-			initializeSelectedConverter();
+		if ((this.selectedConverterFactory == null) && !initializeSelectedConverter()) {
+			throw new NoConverterRegisteredException();
 		}
 		return this.selectedConverterFactory;
 	}
@@ -278,7 +279,7 @@ public class GravityActivator extends Plugin {
 	public ResourceSet getResourceSet(final IProject project) {
 		final var name = project.getName();
 		var set = this.resourceSets.get(name);
-		if(set == null) {
+		if (set == null) {
 			set = new ResourceSetImpl();
 			this.resourceSets.put(name, set);
 		}
@@ -289,7 +290,7 @@ public class GravityActivator extends Plugin {
 	private static String measureLocation = "../measurements";
 
 	public static void record(final String string) {
-		if(measureRecordsKey == null) {
+		if (measureRecordsKey == null) {
 			LOGGER.error("No key for recording set");
 			return;
 		}
@@ -297,10 +298,10 @@ public class GravityActivator extends Plugin {
 		try {
 			final var path = Paths.get(measureLocation, measureRecordsKey, "data.txt");
 			final var file = path.getParent().toFile();
-			if(!file.exists() && !file.mkdirs()){
-				throw new IOException("Couldn't create folder: "+path.getParent());
+			if (!file.exists() && !file.mkdirs()) {
+				throw new IOException("Couldn't create folder: " + path.getParent());
 			}
-			Files.write(path, (string+'\n').getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+			Files.write(path, (string + '\n').getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
 		} catch (final IOException e) {
 			LOGGER.error(e);
 		}
