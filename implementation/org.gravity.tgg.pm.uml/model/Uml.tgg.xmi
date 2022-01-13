@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.language:TripleGraphGrammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:csp="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//csp" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.moflon.tgg.language="platform:/plugin/org.moflon.tgg.language/model/Language.ecore" name="org.gravity.tgg.pm.uml">
+  <domain name="Target" metamodel="//@metamodel.1" type="TARGET"/>
+  <domain name="Source" metamodel="//@metamodel.0" type="SOURCE"/>
+  <domain name="Correspondence" metamodel="//@metamodel.2"/>
+  <tggRule name="Model2TypeGraph" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="pm" incomingLink="//@tggRule.0/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="model2PM" outgoingLink="//@tggRule.0/@linkVariable.0 //@tggRule.0/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Model2TypeGraph"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="model" incomingLink="//@tggRule.0/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Model"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.0" source="//@tggRule.0/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.2" source="//@tggRule.0/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2"/>
+    <csp>
+      <constraints variables="//@tggRule.0/@csp/@variables.0 //@tggRule.0/@csp/@variables.1" name="eq">
+        <signature type="" index="1"/>
+        <signature type=""/>
+        <allowedAdornments value="BF"/>
+        <allowedAdornments value="BB"/>
+        <allowedAdornments value="FB"/>
+        <modelgenAdornments value="FF"/>
+        <modelgenAdornments value="BB"/>
+        <modelgenAdornments value="BF"/>
+        <modelgenAdornments value="FB"/>
+      </constraints>
+      <variables xsi:type="csp:AttributeVariable" type="String" attribute="name" objectVariable="model"/>
+      <variables xsi:type="csp:AttributeVariable" type="String" attribute="tName" objectVariable="pm"/>
+    </csp>
+  </tggRule>
+  <tggRule name="ModelNested2TypeGraph" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="pm" incomingLink="//@tggRule.1/@linkVariable.0 //@tggRule.1/@linkVariable.4" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="outerModel2PM" outgoingLink="//@tggRule.1/@linkVariable.0 //@tggRule.1/@linkVariable.2" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Model2TypeGraph"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="model" incomingLink="//@tggRule.1/@linkVariable.3 //@tggRule.1/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Model"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="outerModel" incomingLink="//@tggRule.1/@linkVariable.2" outgoingLink="//@tggRule.1/@linkVariable.1" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Model"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="model2PM" outgoingLink="//@tggRule.1/@linkVariable.3 //@tggRule.1/@linkVariable.4" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Model2TypeGraph"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.0" source="//@tggRule.1/@objectVariable.1" domain="//@domain.2">
+      <type href="../../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Model2TypeGraph/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="nestedPackage" target="//@tggRule.1/@objectVariable.2" source="//@tggRule.1/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/nestedPackage"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.3" source="//@tggRule.1/@objectVariable.1" domain="//@domain.2">
+      <type href="../../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Model2TypeGraph/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.2" source="//@tggRule.1/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="../../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Model2TypeGraph/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.0" source="//@tggRule.1/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="../../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Model2TypeGraph/target"/>
+    </linkVariable>
+    <csp>
+      <constraints variables="//@tggRule.1/@csp/@variables.0 //@tggRule.1/@csp/@variables.1" name="eq">
+        <signature type="" index="1"/>
+        <signature type=""/>
+        <allowedAdornments value="BF"/>
+        <allowedAdornments value="BB"/>
+        <allowedAdornments value="FB"/>
+        <modelgenAdornments value="FF"/>
+        <modelgenAdornments value="BB"/>
+        <modelgenAdornments value="BF"/>
+        <modelgenAdornments value="FB"/>
+      </constraints>
+      <variables xsi:type="csp:AttributeVariable" type="String" attribute="name" objectVariable="model"/>
+      <variables xsi:type="csp:AttributeVariable" type="String" attribute="tName" objectVariable="pm"/>
+    </csp>
+  </tggRule>
+  <metamodel name="uml">
+    <outermostPackage href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#/"/>
+  </metamodel>
+  <metamodel name="basic">
+    <outermostPackage href="../../../plugin/org.gravity.typegraph.basic/model/Basic.ecore#/"/>
+  </metamodel>
+  <metamodel name="uml">
+    <outermostPackage href="../../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#/"/>
+  </metamodel>
+</org.moflon.tgg.language:TripleGraphGrammar>
