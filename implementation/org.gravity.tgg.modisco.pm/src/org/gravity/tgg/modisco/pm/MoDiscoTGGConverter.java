@@ -5,7 +5,6 @@ import static org.gravity.eclipse.io.ModelSaver.saveModel;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
@@ -169,7 +168,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		loadRulesFromProject();
 	}
 
-	private void loadRulesFromProject() throws IOException, MalformedURLException {
+	private void loadRulesFromProject() throws IOException {
 		final String smaXmiURI = "platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.sma.xmi"; //$NON-NLS-1$
 		final Resource tggRulesResource = this.set.createResource(URI.createURI(smaXmiURI));
 		try (InputStream tggRulesStream = new URL(smaXmiURI).openConnection().getInputStream()) {

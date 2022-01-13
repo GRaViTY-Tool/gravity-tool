@@ -19,7 +19,7 @@
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.organization>svenpeldszus-github</sonar.organization>
-    <!--<sonar.projectKey>gravity</sonar.projectKey>-->
+    <sonar.projectKey>gravity</sonar.projectKey>
     <sonar.coverage.jacoco.xmlReportPaths>${jacoco.aggregate.reportPaths}/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <sonar.junit.reportPaths>${maven.multiModuleProjectDirectory}/target/surefire-reports</sonar.junit.reportPaths>
   </properties>
@@ -147,7 +147,7 @@
     <repository>
       <id>Eclipse</id>
       <layout>p2</layout>
-      <url>http://download.eclipse.org/releases/2021-12</url>
+      <url>https://download.eclipse.org/releases/2021-12</url>
     </repository>
     <repository>
       <id>eMoflon TIE</id>
