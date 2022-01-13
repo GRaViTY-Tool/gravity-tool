@@ -9,7 +9,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jdt.core,
  org.apache.log4j,
  org.gravity.eclipse,
- org.junit
+ org.junit,
+ org.gravity.tgg.modisco.pm
 Automatic-Module-Name: org.gravity.eclipse.tests
 Bundle-ClassPath: .
 Bundle-Vendor: University of Koblenz-Landau

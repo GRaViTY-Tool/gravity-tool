@@ -24,6 +24,7 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.gravity.eclipse.importer.ImportException;
 import org.gravity.eclipse.importer.ProjectImport;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
+import org.gravity.tgg.modisco.pm.PmPackage;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -40,6 +41,7 @@ public abstract class ImportTest {
 			final Map<String, String> expected) {
 		this.expected = expected;
 		this.importer = importer;
+		LOGGER.info("Explicitly loaded TGG: "+PmPackage.eINSTANCE.getNsURI());
 	}
 
 	public static Collection<Object[]> getTestProjects(final String fileExtension) throws CoreException, IOException {
