@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.gravity.headless"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="org.gravity.headless.ConsoleApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="gravity_cli"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.gravity.headless"
+            name="GRaViTY CLI">
+         <property
+               name="appName"
+               value="GRaViTY CLI">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

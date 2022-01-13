@@ -1,0 +1,172 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "GRaViTY Web API",
+    "description": "This is the web API of GRaViTY.",
+    "contact": {
+      "email": "contact@gravity-tool.org"
+    },
+    "license": {
+      "name": "Eclipse Public License (EPL) 2.0",
+      "url": "https://www.eclipse.org/legal/epl-2.0/"
+    },
+    "version": "0.1.0"
+  },
+  "externalDocs": {
+    "description": "Find out more about GRaViTY",
+    "url": "http://gravity-tool.org"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "pm",
+      "description": "Everything about creating program models",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://gravity-tool.org"
+      }
+    }
+  ],
+  "paths": {
+    "/pm/git": {
+      "get": {
+        "tags": [
+          "pm"
+        ],
+        "summary": "Get a program model",
+        "description": "Creates a program model  for the given commit and repository.",
+        "operationId": "getPM4Git",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "The url of the git repository",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "commit",
+            "in": "query",
+            "description": "The id of a commit in the repository",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypeGraph"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {}
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/pm/mvn": {
+      "get": {
+        "tags": [
+          "pm"
+        ],
+        "summary": "Get a program model",
+        "description": "Creates a program model  for the given commit and repository.",
+        "operationId": "getPM4Mvn",
+        "parameters": [
+          {
+            "name": "repo",
+            "in": "query",
+            "description": "The maven repository url if the artifact is not in the default repository",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupId",
+            "in": "query",
+            "description": "The maven group ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "artifactId",
+            "in": "query",
+            "description": "The maven artifact ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "The maven artifact version",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypeGraph"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {}
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {}
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TypeGraph": {
+        "type": "object",
+        "properties": {
+          "tName": {
+            "type": "string",
+            "xml": {
+              "attribute": true
+            }
+          }
+        },
+        "xml": {
+          "namespace": "http://www.gravity-tool.org/typegraph/basic/",
+          "prefix": "org.gravity.typegraph.basic"
+        }
+      }
+    }
+  }
+}
