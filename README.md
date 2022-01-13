@@ -1,7 +1,7 @@
 
 # GRaViTY-Tool
 
- ![GitHub](https://img.shields.io/github/license/GRaViTY-Tool/gravity-tool)  [![Build Status](https://travis-ci.com/GRaViTY-Tool/gravity-tool.svg?branch=master)](https://travis-ci.com/GRaViTY-Tool/gravity-tool) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gravity&metric=alert_status)](https://sonarcloud.io/dashboard?id=gravity) 
+ ![GitHub](https://img.shields.io/github/license/GRaViTY-Tool/gravity-tool)  [![Java CI](https://github.com/GRaViTY-Tool/gravity-tool/actions/workflows/maven.yml/badge.svg)](https://github.com/GRaViTY-Tool/gravity-tool/actions/workflows/maven.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gravity&metric=alert_status)](https://sonarcloud.io/dashboard?id=gravity) 
 
 The GRaViTY tool is a research prototype for the analysis of software design and security, evaluation and execution of refactorings and automated software optimization.
 
