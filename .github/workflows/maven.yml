@@ -18,14 +18,10 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '11'
-        cache: 'maven'
-    - name: Generate settings.xml
-      uses: whelk-io/maven-settings-xml-action@v6
-      with:
-        servers: '[{"id": "MoMOT", "username": "", "password": "", "configuration": {"httpConfiguration": {"all": {"connectionTimeout": "120000", "readTimeout": "1200000"}}}}]'
+        cache: 'maven'  
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     - name: Build with Maven
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn clean verify -e sonar:sonar -Pcoverage -Dsonar.projectKey=gravity -Dsonar.login=${{secrets.SONAR_LOGIN}} -Dtycho.disableP2Mirrors=true --file pom.xml
+      run: mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=gravity -Dsonar.login=${{secrets.SONAR_LOGIN}}
