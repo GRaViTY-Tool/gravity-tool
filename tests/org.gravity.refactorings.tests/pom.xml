@@ -22,7 +22,7 @@
           <argLine>${surefireArgLine} -Xms1g -Xmx6g</argLine>
           <deleteOsgiDataDirectory>false</deleteOsgiDataDirectory>
           <osgiDataDirectory>${project.basedir}/testdata</osgiDataDirectory>
-   	  	  <useUIHarness>false</useUIHarness>
+   	  <useUIHarness>false</useUIHarness>
           <useUIThread>true</useUIThread>
           <product>org.eclipse.platform.ide</product>
           <application>org.eclipse.pde.junit.runtime.coretestapplication</application>

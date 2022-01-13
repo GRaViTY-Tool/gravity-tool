@@ -19,7 +19,8 @@
         <artifactId>tycho-surefire-plugin</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-   	      <useUIHarness>false</useUIHarness>
+          <argLine>${surefireArgLine}</argLine>
+   	  <useUIHarness>false</useUIHarness>
           <useUIThread>true</useUIThread>
           <product>org.eclipse.platform.ide</product>
           <application>org.eclipse.pde.junit.runtime.coretestapplication</application>

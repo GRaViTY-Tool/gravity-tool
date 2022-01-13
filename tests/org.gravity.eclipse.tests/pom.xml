@@ -19,7 +19,6 @@
         <artifactId>tycho-surefire-plugin</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <!--<skipTests>true</skipTests>-->
           <argLine>${surefireArgLine} -Xms1g -Xmx6g</argLine>
           <deleteOsgiDataDirectory>false</deleteOsgiDataDirectory>
           <!--<osgiDataDirectory>${project.basedir}/data</osgiDataDirectory>-->
