@@ -2,3 +2,5 @@
 *.class
 *.uml
 *.xmi
+/IncrementalChangeTestProject/
+
