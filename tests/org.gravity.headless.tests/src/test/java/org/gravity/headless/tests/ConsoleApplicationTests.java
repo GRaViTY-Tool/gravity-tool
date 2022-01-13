@@ -12,12 +12,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
+import org.apache.commons.cli.ParseException;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.gravity.headless.ConsoleApplication;
@@ -165,7 +167,7 @@ class ConsoleApplicationTests {
 				try {
 					final var start = app.start(new DummyApplicationContext(buildArgs(args)));
 					assertEquals(IApplication.EXIT_OK, start);
-				} catch (final Exception e) {
+				} catch (final IOException | ParseException e) {
 					fail(e.getLocalizedMessage());
 				}
 			});

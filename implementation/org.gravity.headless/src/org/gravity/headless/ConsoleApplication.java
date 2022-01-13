@@ -12,6 +12,7 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 
@@ -40,7 +41,7 @@ public class ConsoleApplication implements IApplication {
 	private GravityServer server;
 
 	@Override
-	public Object start(final IApplicationContext context) throws Exception {
+	public Object start(final IApplicationContext context) throws IOException, ParseException {
 		final var args = (String[]) context.getArguments().get(IApplicationContext.APPLICATION_ARGS);
 
 		final CommandLineParser parser = new DefaultParser();
