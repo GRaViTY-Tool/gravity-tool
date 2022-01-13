@@ -2,3 +2,5 @@ target/
 *.class
 *.xmi
 *.png
+.antlr-generator-3.2.0-patch.jar
+
