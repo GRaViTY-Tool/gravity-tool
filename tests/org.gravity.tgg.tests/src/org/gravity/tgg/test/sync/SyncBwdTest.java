@@ -40,6 +40,7 @@ import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.util.MoDiscoUtil;
 import org.gravity.tgg.uml.GravityUmlActivator;
+import org.junit.After;
 import org.junit.Test;
 
 import carisma.profile.umlsec.UmlsecFactory;
@@ -125,10 +126,6 @@ public class SyncBwdTest {
 		return ("package " + namespace + ";\n" + "\n" + "public class " + name + " {\n" + "\n" + "}").getBytes();
 	}
 
-	public void cleanup() throws CoreException {
-		this.project.delete(true, this.monitor);
-	}
-
 	@Test
 	public void simpleSyncTest()
 			throws IOException, CoreException, TransformationFailedException, DuplicateProjectNameException {
@@ -151,6 +148,13 @@ public class SyncBwdTest {
 		transformation.applyChangeAndGenerateCode(changeTrg, this.monitor);
 
 		assertOutcome(src);
+	}
+
+	@After
+	public void cleanup() throws CoreException {
+		if(this.project != null) {
+			this.project.delete(true, this.monitor);
+		}
 	}
 
 	private void assertOutcome(final MGravityModel src) throws JavaModelException {
