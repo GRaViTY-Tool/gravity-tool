@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Security Violation Pattern Tests
+Bundle-SymbolicName: org.gravity.security.violation.patterns.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: University of Koblenz Landau and Ruhr University Bochum
+Automatic-Module-Name: org.gravity.security.violation.patterns.tests
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.gravity.typegraph.basic,
+ org.eclipse.emf.henshin.model,
+ org.eclipse.uml2.uml,
+ org.junit,
+ org.junit.jupiter.api,
+ org.gravity.tgg.pm.uml,
+ carisma.profile.umlsec,
+ org.gravity.security.violation.patterns
+Bundle-ClassPath: .

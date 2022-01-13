@@ -1,7 +1,5 @@
 package org.gravity.pm.umlsec;
 
-import static org.junit.Assert.assertFalse;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -74,12 +72,9 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		final var module = this.set.getModule(new File("SecureDependency.henshin").getAbsolutePath());
 		final var rule = module.getAllRules().get(0);
 
-		rule.getLhs().getNodes().forEach(n -> assertFalse(n.getType().eIsProxy()));
-
 		final Engine engine = new EngineImpl("org.gravity.pm.umlsec.SignatureHelper");
 		final List<Match> matches = new LinkedList<>();
 		for (final Match m : engine.findMatches(rule, graph, null)) {
-			System.out.println(m);
 			matches.add(m);
 		}
 		return matches;
