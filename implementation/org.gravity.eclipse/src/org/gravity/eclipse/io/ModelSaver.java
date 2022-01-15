@@ -15,6 +15,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -47,8 +48,8 @@ public final class ModelSaver {
 		if (model == null) {
 			return false;
 		}
-		final URI uri = URI.createPlatformResourceURI(new File(new File(file.getProject().getName()),file.getProjectRelativePath().toString()).toString(), true);
-		Resource resource = model.eResource();
+		final var uri = URI.createPlatformResourceURI(new File(new File(file.getProject().getName()),file.getProjectRelativePath().toString()).toString(), true);
+		var resource = model.eResource();
 		if (resource == null) {
 			resource = new ResourceSetImpl().createResource(uri);
 			resource.getContents().add(model);
@@ -71,13 +72,17 @@ public final class ModelSaver {
 		if (resource == null) {
 			return false;
 		}
-		final File javaFile = file.getLocation().toFile();
-		final File parentFile = javaFile.getParentFile();
+		final var location = file.getLocation();
+		if(location == null) {
+			return false;
+		}
+		final var javaFile = location.toFile();
+		final var parentFile = javaFile.getParentFile();
 		if (!parentFile.exists() && !parentFile.mkdirs()) {
 			LOGGER.warn("Couldn't create parent directory of: " + javaFile.toString());
 			return false;
 		}
-		try (OutputStream out = Files.newOutputStream(javaFile.toPath())) {
+		try (var out = Files.newOutputStream(javaFile.toPath())) {
 			resource.save(out, Collections.emptyMap());
 			file.refreshLocal(IResource.DEPTH_ONE, monitor);
 		} catch (final IOException e) {
@@ -102,7 +107,7 @@ public final class ModelSaver {
 			return false;
 		}
 
-		try (PipedInputStream in = new PipedInputStream(); PipedOutputStream out = new PipedOutputStream(in);) {
+		try (var in = new PipedInputStream(); var out = new PipedOutputStream(in);) {
 
 			final Runnable rout = () -> {
 				try {
@@ -116,9 +121,9 @@ public final class ModelSaver {
 					if (file.exists()) {
 						file.setContents(in, true, false, monitor);
 					} else {
-						final IContainer parent = file.getParent();
+						final var parent = file.getParent();
 						if (!parent.exists()) {
-							final IFolder folder = parent.getProject().getFolder(parent.getProjectRelativePath());
+							final var folder = parent.getProject().getFolder(parent.getProjectRelativePath());
 							folder.create(true, true, monitor);
 						}
 						file.create(in, true, monitor);
@@ -127,8 +132,8 @@ public final class ModelSaver {
 					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
 			};
-			final Thread threadOut = new Thread(rout);
-			final Thread threadIn = new Thread(rin);
+			final var threadOut = new Thread(rout);
+			final var threadIn = new Thread(rin);
 			threadIn.start();
 			threadOut.start();
 			threadIn.join();
