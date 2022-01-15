@@ -6,10 +6,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.text.MessageFormat;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 import java.util.jar.JarInputStream;
 import java.util.stream.Collectors;
 
@@ -28,6 +30,7 @@ import org.gravity.eclipse.importer.ImportException;
 import org.gravity.eclipse.importer.ProjectImport;
 import org.gravity.eclipse.importer.gradle.GradleImport;
 import org.gravity.eclipse.importer.maven.MavenImport;
+import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.io.GitCloneException;
 import org.gravity.eclipse.io.GitTools;
@@ -47,7 +50,13 @@ import org.gravity.typegraph.basic.TypeGraph;
  */
 public class ProgramModelApiServiceImpl implements ProgramModelApi {
 
+	private static final String CACHE_LOCATION_MVN = "mvn";
+	private static final String CACHE_LOCATION_GIT = "git";
+	private static final String GRAVITY_LOCK = ".gravity.lock";
+	private static final long TIMEOUT_LOCK_MS = 60*1000;
+
 	private static final Logger LOGGER = Logger.getLogger(ProgramModelApiServiceImpl.class);
+
 
 	private final File workspace = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
 
@@ -63,11 +72,12 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * Get a program model
 	 *
 	 * Creates a program model for the given commit and repository.
+	 * @throws TimeoutException
 	 *
 	 */
 	@Override
 	public Response getPM4Git(final String url, final String commit) {
-		final var model = getCacheFile("git", url, commit); //$NON-NLS-1$
+		final var model = getCacheFile(CACHE_LOCATION_GIT, url, commit,"pm.xmi");
 		if (model.exists()) {
 			try {
 				return readModel(model);
@@ -75,6 +85,20 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 				// Try a new construction of a pm
 			}
 		}
+		try {
+			waitIfLocked(model, TIMEOUT_LOCK_MS);
+		} catch (final TimeoutException e) {
+			return Response.status(Response.Status.REQUEST_TIMEOUT).build();
+		}
+
+		if (model.exists()) {
+			try {
+				return readModel(model);
+			} catch (final IOException e) {
+				// Try a new construction of a pm
+			}
+		}
+		createLock(model);
 
 		final var monitor = new NullProgressMonitor();
 		try {
@@ -93,7 +117,9 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		} catch (final IOException e) {
 			return Response.serverError().entity(e.getMessage()).build();
 		}
-
+		finally {
+			deleteLock(model);
+		}
 	}
 
 	/**
@@ -113,7 +139,14 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		if (version == null) {
 			return Response.status(Response.Status.BAD_REQUEST).entity(Messages.errorHttpNoVersion).build();
 		}
-		final var model = getCacheFile("mvn", groupId, artifactId, version); //$NON-NLS-1$
+		final var model = getCacheFile(CACHE_LOCATION_MVN, groupId, artifactId, version,"pm.xmi");
+
+		try {
+			waitIfLocked(model, TIMEOUT_LOCK_MS);
+		} catch (final TimeoutException e) {
+			return Response.status(Response.Status.REQUEST_TIMEOUT).build();
+		}
+
 		if (model.exists()) {
 			try {
 				return readModel(model);
@@ -121,13 +154,9 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 				// Try a new construction of a pm
 			}
 		}
+		createLock(model);
 
-		String domain;
-		if ((repo == null) || repo.isBlank()) {
-			domain = "https://repo1.maven.org/maven2"; //$NON-NLS-1$
-		} else {
-			domain = repo;
-		}
+		final var domain = getMvnRepoDomain(repo);
 
 		final var monitor = new NullProgressMonitor();
 		IJavaProject project = null;
@@ -165,10 +194,80 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 					LOGGER.error(e);
 				}
 			}
+			deleteLock(model);
 		}
 		return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Messages.errorGravityTGG).build();
 	}
 
+	private String getMvnRepoDomain(final String repo) {
+		String domain;
+		if ((repo == null) || repo.isBlank()) {
+			domain = "https://repo1.maven.org/maven2"; //$NON-NLS-1$
+		} else {
+			domain = repo;
+		}
+		return domain;
+	}
+
+	/**
+	 * Waits id the location of the model has been locked until the lock has been
+	 * removed
+	 *
+	 * @param model   The model to be monitored
+	 * @param timeout Timeout in ms for waiting for the lock beeing released.
+	 *                Non positive values are rated as no timeout.
+	 * @throws TimeoutException If
+	 */
+	private void waitIfLocked(final File model, final long timeout) throws TimeoutException {
+		final var lock = new File(model.getParentFile(), GRAVITY_LOCK);
+		final var start = System.currentTimeMillis();
+		while (lock.exists() && !model.exists()) {
+			if ((timeout >=0) && ((System.currentTimeMillis() - start) > timeout)) {
+				throw new TimeoutException();
+			}
+			try {
+				Thread.sleep(500);
+			} catch (final InterruptedException e) {
+				LOGGER.error(e.getMessage(), e);
+				Thread.currentThread().interrupt();
+			}
+		}
+	}
+
+	/**
+	 * Deletes the lock file for the model
+	 *
+	 * @param model The model that had been locked
+	 * @return true, iff the lock has been deleted
+	 */
+	private boolean deleteLock(final File model) {
+		return new File(model.getParentFile(), GRAVITY_LOCK).delete();
+	}
+
+	/**
+	 * Creates a lock in the model cache
+	 *
+	 * @param model The model to be created
+	 * @return true, iff the lock has been created
+	 */
+	private boolean createLock(final File model) {
+		final var lock = new File(model.getParentFile(), GRAVITY_LOCK);
+		try {
+			if (lock.getParentFile().mkdirs() && lock.createNewFile()) {
+				return true;
+			}
+		} catch (final IOException e) {
+			LOGGER.error(e.getMessage(), e);
+		}
+		return false;
+	}
+
+	/**
+	 * Reads the model from the given file
+	 * @param model
+	 * @return
+	 * @throws IOException
+	 */
 	private Response readModel(final File model) throws IOException {
 		try {
 			return Response.ok(Files.readAllLines(model.toPath()).stream().collect(Collectors.joining())).build();
@@ -180,7 +279,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	}
 
 	/**
-	 * Calculates a file in the cache folder with the given segment ids
+	 * Calculates a folder in the cache folder with the given segment ids
 	 *
 	 * @param ids The ids of the segments
 	 * @return A file in the cache
@@ -223,13 +322,17 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		} catch (final TransformationFailedException e) {
 			throw new IOException(Messages.errorPM);
 		}
-		if (model.getParentFile().mkdirs()) {
+		final var folder = model.getParentFile();
+		if (folder.exists() ||folder .mkdirs()) {
 			try (var out = new FileOutputStream(model)) {
 				pm.eResource().save(out, Collections.emptyMap());
 			} catch (final IOException e) {
 				LOGGER.error(e);
 				return pm;
 			}
+		}
+		else {
+			LOGGER.error("Cannot create cache location: "+folder);
 		}
 		this.models.add(model);
 		return pm;
@@ -289,7 +392,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * Deletes elements in the cache exceeding the given maximum
 	 *
 	 * @param elements The elements currently contained in the cache
-	 * @param max The allowed maximum size of the cache
+	 * @param max      The allowed maximum size of the cache
 	 * @throws IOException If cache space cannot be freed
 	 */
 	private void freeCache(final List<File> elements, final int max) throws IOException {
@@ -299,6 +402,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			do {
 				final var parent = next.getParentFile();
 				if (!next.delete()) {
+					elements.add(0, delete);
 					throw new IOException(Messages.errorFreeCache);
 				}
 				next = parent;
@@ -334,8 +438,15 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * not be deleted.
 	 *
 	 * @param cache The cache location
+	 * @throws IOException If the cache cannot be initialized
 	 */
-	public void setCache(final File cache) {
+	public void setCache(final File cache) throws IOException {
 		this.cache = cache;
+		if(!this.cache.exists()) {
+			this.cache.mkdirs();
+		}
+		final var visitor = new ExtensionFileVisitor("xmi");
+		Files.walkFileTree(cache.toPath(), visitor);
+		this.models.addAll(visitor.getFiles().stream().map(Path::toFile).collect(Collectors.toList()));
 	}
 }

@@ -10,18 +10,22 @@ import org.eclipse.osgi.util.NLS;
  */
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
-	public static String batch;
-	public static String createCacheFailed;
+	// Explaination of launcher options
 	public static String explainOptionCache;
 	public static String explainOptionCacheModelNumber;
 	public static String explainOptionCacheRepositoryNumber;
 	public static String explainOptionHelp;
 	public static String explainOptionPort;
 	public static String explainOptionServer;
+	public static String explainOptionWorkspace;
+	public static String batch;
+	public static String createCacheFailed;
 	public static String howtoShutdown;
 	public static String launched;
 	public static String runningOn;
 	public static String noPort;
+
+	// Runtime error messages
 	public static String errorCloneFailed;
 	public static String errorHttpNoGroupID;
 	public static String errorHttpNoArtifactID;

@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
  * @author speldszus
  *
  */
-class WebApiMavenTests extends AbstractWebApiTests{
+class WebApiMavenTests extends AbstractWebApiTests {
 
 	private static final String VERSION1 = "3.0.1";
 	private static final String ARTIFACT1 = "jakarta.xml.ws-api";
@@ -53,8 +53,9 @@ class WebApiMavenTests extends AbstractWebApiTests{
 
 		final var response1 = service.getPM4Mvn(GROUP1, ARTIFACT1, VERSION1, null);
 
-		final var file = new File(new File(this.cache, "mvn"), GROUP1);
-		assertTrue(file.exists());
+		final var file = new File(
+				new File(new File(new File(new File(this.cache, "mvn"), GROUP1), ARTIFACT1), VERSION1), "pm.xmi");
+		assertTrue(file.exists(), "The model doesn't exist in the cache loaction afte rthe first run.");
 
 		final var resource1 = getResource(response1);
 		assertFalse(resource1.getContents().isEmpty());

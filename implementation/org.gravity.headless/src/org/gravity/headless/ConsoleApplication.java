@@ -37,6 +37,7 @@ public class ConsoleApplication implements IApplication {
 	public static final String OPTION_SERVER_SHORT = "s"; //$NON-NLS-1$
 	public static final String OPTION_HELP_LONG = "help"; //$NON-NLS-1$
 	public static final String OPTION_HELP_SHORT = "h"; //$NON-NLS-1$
+	private static final String OPTION_WORKSPACE_LOCATION = "data"; //$NON-NLS-1$
 
 	private GravityServer server;
 
@@ -49,6 +50,7 @@ public class ConsoleApplication implements IApplication {
 		final var line = parser.parse(options, args);
 		if (line.hasOption(OPTION_HELP_SHORT)) {
 			printHelp(options);
+			return IApplication.EXIT_OK;
 		}
 		final var cache = initCache(line);
 
@@ -129,6 +131,7 @@ public class ConsoleApplication implements IApplication {
 		final var opt = new Options();
 		// General
 		opt.addOption(OPTION_HELP_SHORT, OPTION_HELP_LONG, false, Messages.explainOptionHelp);
+		opt.addOption(OPTION_WORKSPACE_LOCATION, true, Messages.explainOptionWorkspace);
 
 		// Server mode specific
 		opt.addOption(new Option(OPTION_SERVER_SHORT, OPTION_SERVER_LONG, false, Messages.explainOptionServer));
