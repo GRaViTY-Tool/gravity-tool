@@ -26,3 +26,5 @@ Export-Package: org.gravity.tgg.pm.uml,
  org.gravity.tgg.pm.uml.org.moflon.tie,
  org.gravity.tgg.pm.uml.util
 Automatic-Module-Name: org.gravity.tgg.pm.uml
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
