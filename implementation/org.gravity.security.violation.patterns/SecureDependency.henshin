@@ -238,6 +238,6 @@
     <mappings xmi:id="_a5Jp4Q_KEeudadBB8ldcmg" origin="_a5JC0A_KEeudadBB8ldcmg" image="_a5Jp4A_KEeudadBB8ldcmg"/>
     <mappings xmi:id="_cBjcYA_KEeudadBB8ldcmg" origin="_cBi1UA_KEeudadBB8ldcmg" image="_cBi1UQ_KEeudadBB8ldcmg"/>
     <mappings xmi:id="_cHRC0g_KEeudadBB8ldcmg" origin="_cHRC0A_KEeudadBB8ldcmg" image="_cHRC0Q_KEeudadBB8ldcmg"/>
-    <javaImports>org.gravity.pm.umlsec</javaImports>
+    <javaImports>org.gravity.security.violation.patterns</javaImports>
   </units>
 </henshin:Module>

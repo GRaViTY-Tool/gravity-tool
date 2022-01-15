@@ -1,4 +1,4 @@
-package org.gravity.pm.umlsec;
+package org.gravity.security.violation.patterns;
 
 import java.util.List;
 

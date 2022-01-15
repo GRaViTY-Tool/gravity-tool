@@ -1,6 +1,5 @@
-package org.gravity.pm.umlsec;
+package org.gravity.security.violation.patterns;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,6 +15,7 @@ import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.Match;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.emf.henshin.interpreter.impl.EngineImpl;
+import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
 import org.eclipse.uml2.uml.Model;
 import org.gravity.eclipse.util.EclipseProjectUtil;
@@ -43,38 +43,37 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 	private CorrespondenceModel corr;
 	private Model uml;
 
-	private HenshinResourceSet set;
+	private final HenshinResourceSet set;
+	private final Rule rule;
 
-	public SecurityViolationPattern(final CorrespondenceModel corr) {
-		init(corr);
+	public SecurityViolationPattern() {
+		this.set = new HenshinResourceSet();
+		final var module = this.set.getModule(SecurityViolationPatternsActivator.URI_PATTERN_RULE, true);
+		this.rule = module.getAllRules().get(0);
 	}
 
 	private void init(final CorrespondenceModel corr) {
 		this.corr = corr;
-		this.pm = (TypeGraph) corr.getSource();
-		this.uml = (Model) corr.getTarget();
-		final var resourceSet = corr.eResource().getResourceSet();
-		if (resourceSet instanceof HenshinResourceSet) {
-			this.set = (HenshinResourceSet) resourceSet;
-		} else {
-			this.set = new HenshinResourceSet();
-			this.set.getResources().addAll(this.set.getResources());
-		}
+		this.pm = (TypeGraph) corr.getTarget();
+		this.uml = (Model) corr.getSource();
+		this.set.getResources().add(this.pm.eResource());
+		this.set.getResources().add(this.uml.eResource());
+		this.set.getResources().add(this.corr.eResource());
 	}
 
-	public List<Match> detect() {
+	public List<Match> detect(final CorrespondenceModel corr) {
+		init(corr);
 		final List<EObject> umlContents = this.uml.eResource().getContents();
 		final List<EObject> roots = new ArrayList<>(umlContents.size() + 2);
 		roots.add(this.pm);
 		roots.add(this.corr);
 		roots.addAll(umlContents);
 		final EGraph graph = new EGraphImpl(roots);
-		final var module = this.set.getModule(new File("SecureDependency.henshin").getAbsolutePath());
-		final var rule = module.getAllRules().get(0);
 
-		final Engine engine = new EngineImpl("org.gravity.pm.umlsec.SignatureHelper");
+		final Engine engine = new EngineImpl();
+		engine.getScriptEngine().put(SignatureHelper.class.getName(), SignatureHelper.class);
 		final List<Match> matches = new LinkedList<>();
-		for (final Match m : engine.findMatches(rule, graph, null)) {
+		for (final Match m : engine.findMatches(this.rule, graph, null)) {
 			matches.add(m);
 		}
 		return matches;
@@ -93,12 +92,11 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		final var originalSet = originalPM.eResource().getResourceSet();
 
 		final var project = JavaProjectUtil.getJavaProject(EclipseProjectUtil.getProjectByName(originalPM.getTName()));
-		init(CorrespondenceGraphGenerator.createModel(project, new NullProgressMonitor()));
+		this.corr = CorrespondenceGraphGenerator.createModel(project, new NullProgressMonitor());
 
-		for (final Match m : detect()) {
-			final var rule = m.getRule();
-			final var requirement = (critical) m.getParameterValue(rule.getParameter("supplierCritical"));
-			final var access = (TAccess) m.getNodeTarget(rule.getLhs().getNode("access"));
+		for (final Match m : detect(this.corr)) {
+			final var requirement = (critical) m.getParameterValue(this.rule.getParameter("supplierCritical"));
+			final var access = (TAccess) m.getNodeTarget(this.rule.getLhs().getNode("access"));
 			final var source = access.getSource();
 			final var target = access.getTarget();
 
@@ -123,10 +121,9 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 						.filter(a -> a
 								.getTAnnotation(ViolationsPackage.eINSTANCE.getSecureDependencyViolation()) == null)
 						.findAny();
-				if(accessSearch.isPresent()) {
+				if (accessSearch.isPresent()) {
 					violation.setTAnnotated(accessSearch.get());
-				}
-				else {
+				} else {
 					violation.setTAnnotated(source);
 				}
 			}
@@ -145,11 +142,12 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 
 	@Override
 	public boolean perform(final Map<String, CheckParameter> parameters, final AnalysisHost host) {
-		final var project = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(host.getCurrentModelFilename())).getProject();
-		init(CorrespondenceGraphGenerator.createModel(JavaProjectUtil.getJavaProject(project), new NullProgressMonitor()));
-		for (final Match m : detect()) {
-			final var rule = m.getRule();
-			final var access = (TAccess) m.getNodeTarget(rule.getLhs().getNode("access"));
+		final var project = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(host.getCurrentModelFilename()))
+				.getProject();
+		this.corr = CorrespondenceGraphGenerator.createModel(JavaProjectUtil.getJavaProject(project),
+				new NullProgressMonitor());
+		for (final Match m : detect(this.corr)) {
+			final var access = (TAccess) m.getNodeTarget(this.rule.getLhs().getNode("access"));
 
 			final var source = access.getSource();
 			final var sourceSignature = source.getSignatureString();
@@ -159,8 +157,10 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 			final var targetSignature = target.getSignatureString();
 			final var targetClass = target.getDefinedBy().getFullyQualifiedName();
 
-			host.addResultMessage(new AnalysisResultMessage(StatusType.ERROR, "Secure dependency is violated in the implementation for the member "+sourceSignature+" of the class "+
-					sourceClass +" for the security-level of "+"secrecy"+ "by an access to the member "+targetSignature+" of the class "+targetClass));
+			host.addResultMessage(new AnalysisResultMessage(StatusType.ERROR,
+					"Secure dependency is violated in the implementation for the member " + sourceSignature
+					+ " of the class " + sourceClass + " for the security-level of " + "secrecy"
+					+ "by an access to the member " + targetSignature + " of the class " + targetClass));
 		}
 		return true;
 	}

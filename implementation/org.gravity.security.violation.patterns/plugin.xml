@@ -25,7 +25,7 @@
       <check
             description="Checks the implementation for compliance reagarding the specified secure dependency requirements."
             id="org.gravity.security.violation.patterns.securedependency"
-            implementingClass="org.gravity.pm.umlsec.SecurityViolationPattern"
+            implementingClass="org.gravity.security.violation.patterns.SecurityViolationPattern"
             name="Secure Dependency ImplementationCompliance"
             publisher="University of Koblenz-Landau"
             targetModelType="UML2">

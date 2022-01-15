@@ -1,4 +1,4 @@
-package org.gravity.pm.umlsec;
+package org.gravity.securtity.violation.patterns.tests;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -11,8 +11,6 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.URIConverter;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
 import org.eclipse.uml2.uml.Class;
@@ -22,8 +20,9 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.internal.resource.UMLResourceFactoryImpl;
 import org.eclipse.uml2.uml.resource.UMLResource;
+import org.gravity.security.violation.patterns.SecurityViolationPattern;
+import org.gravity.security.violation.patterns.SignatureHelper;
 import org.gravity.tgg.pm.uml.Feature2TMember;
 import org.gravity.tgg.pm.uml.Package2TPackage;
 import org.gravity.tgg.pm.uml.Type2TAbstractType;
@@ -43,6 +42,7 @@ import org.junit.Test;
 import org.moflon.tgg.runtime.CorrespondenceModel;
 import org.moflon.tgg.runtime.RuntimeFactory;
 
+import carisma.profile.umlsec.UMLsecActivator;
 import carisma.profile.umlsec.UmlsecPackage;
 import carisma.profile.umlsec.critical;
 
@@ -64,7 +64,7 @@ public class PatternTest {
 	@Test
 	public void testCompliantModel() throws IOException {
 		generateCompliantModel();
-		final var matches = new SecurityViolationPattern(this.corr).detect();
+		final var matches = new SecurityViolationPattern().detect(this.corr);
 		assertTrue(matches.isEmpty());
 	}
 
@@ -75,7 +75,7 @@ public class PatternTest {
 	@Test
 	public void testViolatingModel() throws IOException {
 		generateViolatingModel();
-		final var matches =  new SecurityViolationPattern(this.corr).detect();
+		final var matches =  new SecurityViolationPattern().detect(this.corr);
 		assertFalse(matches.isEmpty());
 	}
 
@@ -93,10 +93,10 @@ public class PatternTest {
 		final var name = supplier.getOwnedOperations().get(0).getName();
 
 		((critical) supplier.applyStereotype(critical)).getSecrecy().add(name);
-		//		((critical) client.applyStereotype(critical)).getSecrecy().add(signature);
 
 		save();
 	}
+
 	private void generateCompliantModel() throws IOException {
 		final var id = "compliant";
 		createBaseModel(id);
@@ -116,14 +116,10 @@ public class PatternTest {
 		save();
 	}
 
-	private void createBaseModel(final String id) {
-		initResourceSet("");
+	private void createBaseModel(final String id) throws IOException {
+		initResourceSet();
 
-		final var profileRes = set.getResource(URI.createFileURI(
-				"profile/UMLsec.profile.uml"),
-				true);
-		EcoreUtil.resolveAll(profileRes);
-		this.umlsec = (Profile) EcoreUtil.getObjectByType(profileRes.getContents(), UMLPackage.Literals.PROFILE);
+		this.umlsec = UMLsecActivator.loadUMLsecProfile(set);
 
 		this.pm = createProgramModel(set, id);
 		this.uml = createUMLModel(set, id);
@@ -148,28 +144,17 @@ public class PatternTest {
 
 	}
 
-	private static ResourceSet initResourceSet(final String folder) {
-		set = new HenshinResourceSet(folder);
+	private static ResourceSet initResourceSet() {
+		set = new HenshinResourceSet();
 		set.getPackageRegistry().put(UMLPackage.eNS_URI, UMLPackage.eINSTANCE);
 		set.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		set.getPackageRegistry().put(UmlPackage.eNS_URI, UmlPackage.eINSTANCE);
 		set.getPackageRegistry().put(UmlsecPackage.eNS_URI, UmlsecPackage.eINSTANCE);
 
-		set.getResourceFactoryRegistry().getExtensionToFactoryMap().put("uml", new UMLResourceFactoryImpl());
+		set.getResourceFactoryRegistry().getExtensionToFactoryMap().put("uml", UMLResource.Factory.INSTANCE);
 		set.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 		set.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
 
-		final var umlProfile = "metamodels/UML.metamodel.uml";
-		final var url = Profile.class.getClassLoader().getResource(umlProfile);
-		var baseUrl = url.toString();
-		baseUrl = baseUrl.substring(0, baseUrl.length() - umlProfile.length());
-		final var baseUri = URI.createURI(baseUrl);
-		URIConverter.URI_MAP.put(URI.createURI(UMLResource.LIBRARIES_PATHMAP),
-				baseUri.appendSegment("libraries").appendSegment(""));
-		URIConverter.URI_MAP.put(URI.createURI(UMLResource.METAMODELS_PATHMAP),
-				baseUri.appendSegment("metamodels").appendSegment(""));
-		URIConverter.URI_MAP.put(URI.createURI(UMLResource.PROFILES_PATHMAP),
-				baseUri.appendSegment("profiles").appendSegment(""));
 		return set;
 	}
 

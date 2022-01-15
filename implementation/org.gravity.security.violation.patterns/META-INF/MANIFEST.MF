@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.gravity.security.violation.patterns;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ target/dependency/rhino.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Automatic-Module-Name: org.gravity.security.violation.patterns
@@ -15,8 +16,9 @@ Require-Bundle: carisma.profile.umlsec;visibility:=reexport,
  carisma.core,
  org.gravity.hulk,
  org.eclipse.swt
-Export-Package: org.gravity.pm.umlsec,
+Export-Package: org.gravity.security.violation.patterns,
  org.gravity.security.violation.patterns.violations,
  org.gravity.security.violation.patterns.violations.impl,
  org.gravity.security.violation.patterns.violations.util
 Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.gravity.security.violation.patterns.SecurityViolationPatternsActivator
