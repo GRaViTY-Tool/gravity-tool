@@ -20,7 +20,9 @@ import javax.ws.rs.core.Response;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityAPI;
@@ -37,6 +39,7 @@ import org.gravity.eclipse.io.GitTools;
 import org.gravity.eclipse.io.ZipUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
+import org.gravity.headless.HeadlessActivator;
 import org.gravity.headless.Messages;
 import org.gravity.headless.webapi.ProgramModelApi;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -53,10 +56,9 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	private static final String CACHE_LOCATION_MVN = "mvn";
 	private static final String CACHE_LOCATION_GIT = "git";
 	private static final String GRAVITY_LOCK = ".gravity.lock";
-	private static final long TIMEOUT_LOCK_MS = 60*1000;
+	private static final long TIMEOUT_LOCK_MS = 60L * 1000;
 
 	private static final Logger LOGGER = Logger.getLogger(ProgramModelApiServiceImpl.class);
-
 
 	private final File workspace = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
 
@@ -72,53 +74,35 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * Get a program model
 	 *
 	 * Creates a program model for the given commit and repository.
-	 * @throws TimeoutException
-	 *
 	 */
 	@Override
 	public Response getPM4Git(final String url, final String commit) {
-		final var model = getCacheFile(CACHE_LOCATION_GIT, url, commit,"pm.xmi");
-		if (model.exists()) {
-			try {
-				return readModel(model);
-			} catch (final IOException e) {
-				// Try a new construction of a pm
-			}
-		}
-		try {
-			waitIfLocked(model, TIMEOUT_LOCK_MS);
-		} catch (final TimeoutException e) {
-			return Response.status(Response.Status.REQUEST_TIMEOUT).build();
-		}
+		final var model = getCacheFile(CACHE_LOCATION_GIT, url, commit, "pm.xmi");
 
-		if (model.exists()) {
-			try {
-				return readModel(model);
-			} catch (final IOException e) {
-				// Try a new construction of a pm
-			}
+		final var response = readModelOrLock(model);
+		if (response != null) {
+			return response;
 		}
-		createLock(model);
 
 		final var monitor = new NullProgressMonitor();
+		IJavaProject project = null;
 		try {
 			final var root = checkout(url, commit);
 			if (root == null) {
 				return Response.serverError().entity(Messages.errorCloneFailed).build();
 			}
 
-			final var project = importProject(root, monitor);
-
+			project = importProject(root, monitor);
 			if (project == null) {
-				return null;
+				return Response.serverError().build();
 			}
+
 			final var pm = createModelAndSaveToCache(project, model, monitor);
 			return getResponse(pm.eResource());
 		} catch (final IOException e) {
 			return Response.serverError().entity(e.getMessage()).build();
-		}
-		finally {
-			deleteLock(model);
+		} finally {
+			cleanup(model, project, monitor);
 		}
 	}
 
@@ -126,7 +110,6 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * Get a program model
 	 *
 	 * Creates a program model for the given commit and repository.
-	 *
 	 */
 	@Override
 	public Response getPM4Mvn(final String groupId, final String artifactId, final String version, final String repo) {
@@ -139,22 +122,12 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		if (version == null) {
 			return Response.status(Response.Status.BAD_REQUEST).entity(Messages.errorHttpNoVersion).build();
 		}
-		final var model = getCacheFile(CACHE_LOCATION_MVN, groupId, artifactId, version,"pm.xmi");
 
-		try {
-			waitIfLocked(model, TIMEOUT_LOCK_MS);
-		} catch (final TimeoutException e) {
-			return Response.status(Response.Status.REQUEST_TIMEOUT).build();
+		final var model = getCacheFile(CACHE_LOCATION_MVN, groupId, artifactId, version, "pm.xmi");
+		final var response = readModelOrLock(model);
+		if (response != null) {
+			return response;
 		}
-
-		if (model.exists()) {
-			try {
-				return readModel(model);
-			} catch (final IOException e) {
-				// Try a new construction of a pm
-			}
-		}
-		createLock(model);
 
 		final var domain = getMvnRepoDomain(repo);
 
@@ -166,17 +139,11 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			final var base = String.join("/", domain, groupId.replace('.', '/'), artifactId, version); //$NON-NLS-1$
 			final var url = new URL(base + '/' + file);
 
-			final var old = EclipseProjectUtil.getProjectByName(name);
-			if (old.exists()) {
-				old.delete(true, monitor);
+			project = forceCreateJavaProject(name, monitor);
+			if (project == null) {
+				return Response.serverError().build();
 			}
-			final var projectFile = new File(this.workspace, name);
-			if (projectFile.exists()) {
-				FileUtils.recursiveDelete(projectFile);
-			}
-			project = JavaProjectUtil.createJavaProject(name, Collections.singleton("src"), monitor); //$NON-NLS-1$
 			final var src = project.getProject().getFolder("src").getLocation().toFile(); //$NON-NLS-1$
-
 			try (var stream = new JarInputStream(url.openStream(), true)) {
 				ZipUtil.unzip(stream, src.toPath());
 			}
@@ -184,19 +151,65 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			final var pm = createModelAndSaveToCache(project, model, monitor);
 			return getResponse(pm.eResource());
 
-		} catch (final IOException | DuplicateProjectNameException | CoreException e) {
-			LOGGER.error(e);
+		} catch (final IOException | CoreException e) {
+			LOGGER.error(e.getMessage(), e);
 		} finally {
-			if (project != null) {
-				try {
-					project.getProject().delete(true, monitor);
-				} catch (final CoreException e) {
-					LOGGER.error(e);
-				}
-			}
-			deleteLock(model);
+			cleanup(model, project, monitor);
 		}
 		return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Messages.errorGravityTGG).build();
+	}
+
+	/**
+	 * Creates a new Java project with the given name. Any existing project with the
+	 * same name will be deleted.
+	 *
+	 * @param name    The name of the new Java project
+	 * @param monitor A progress monitor
+	 * @return The new Java project
+	 * @throws CoreException If the creation of the Java project fails
+	 */
+	private IJavaProject forceCreateJavaProject(final String name, final NullProgressMonitor monitor)
+			throws CoreException {
+		IJavaProject project = null;
+		final var old = EclipseProjectUtil.getProjectByName(name);
+		if (old.exists()) {
+			old.delete(true, monitor);
+		}
+		final var projectFile = new File(this.workspace, name);
+		if (projectFile.exists()) {
+			FileUtils.recursiveDelete(projectFile);
+		}
+		try {
+			project = JavaProjectUtil.createJavaProject(name, Collections.singleton("src"), monitor); //$NON-NLS-1$
+		} catch (final DuplicateProjectNameException e) {
+			final var message = "Although project \"" + name + "\"has been deleted, it still exists in the workspace: "
+					+ this.workspace.getAbsolutePath();
+			LOGGER.error(message);
+			throw new CoreException(new Status(IStatus.ERROR, HeadlessActivator.PLUGIN_ID, message));
+		}
+		return project;
+	}
+
+	/**
+	 * Deletes the lock and the project from the workspace
+	 *
+	 * @param model   The location of the model that has been created in the cache
+	 * @param project The project in the workspace
+	 * @param monitor A progress monitor
+	 */
+	private void cleanup(final File model, final IJavaProject project, final NullProgressMonitor monitor) {
+		if (project != null) {
+			try {
+				project.getProject().delete(true, monitor);
+			} catch (final CoreException e) {
+				LOGGER.error(e);
+			}
+		}
+		try {
+			deleteLock(model);
+		} catch (final IOException e) {
+			LOGGER.error(e.getMessage(), e);
+		}
 	}
 
 	private String getMvnRepoDomain(final String repo) {
@@ -214,15 +227,15 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * removed
 	 *
 	 * @param model   The model to be monitored
-	 * @param timeout Timeout in ms for waiting for the lock beeing released.
-	 *                Non positive values are rated as no timeout.
-	 * @throws TimeoutException If
+	 * @param timeout Timeout in ms for waiting for the lock being released. Non
+	 *                positive values are rated as no timeout.
+	 * @throws TimeoutException If the timeout in case of a locked model exceeded
 	 */
 	private void waitIfLocked(final File model, final long timeout) throws TimeoutException {
 		final var lock = new File(model.getParentFile(), GRAVITY_LOCK);
 		final var start = System.currentTimeMillis();
 		while (lock.exists() && !model.exists()) {
-			if ((timeout >=0) && ((System.currentTimeMillis() - start) > timeout)) {
+			if ((timeout >= 0) && ((System.currentTimeMillis() - start) > timeout)) {
 				throw new TimeoutException();
 			}
 			try {
@@ -239,9 +252,10 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 *
 	 * @param model The model that had been locked
 	 * @return true, iff the lock has been deleted
+	 * @throws IOException If the model is file does not contain a valid path
 	 */
-	private boolean deleteLock(final File model) {
-		return new File(model.getParentFile(), GRAVITY_LOCK).delete();
+	private boolean deleteLock(final File model) throws IOException {
+		return Files.deleteIfExists(new File(model.getParentFile(), GRAVITY_LOCK).toPath());
 	}
 
 	/**
@@ -263,7 +277,41 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	}
 
 	/**
+	 * Reads the model from the file system or locks the location if the model is
+	 * not present
+	 *
+	 * @param model The model to read
+	 * @return A response message if the model has been read or a timeout occurred,
+	 *         otherwise <code>null</code>
+	 */
+	private Response readModelOrLock(final File model) {
+		if (model.exists()) {
+			try {
+				return readModel(model);
+			} catch (final IOException e) {
+				// Try a new construction of a pm
+			}
+		}
+		try {
+			waitIfLocked(model, TIMEOUT_LOCK_MS);
+		} catch (final TimeoutException e) {
+			return Response.status(Response.Status.REQUEST_TIMEOUT).build();
+		}
+
+		if (model.exists()) {
+			try {
+				return readModel(model);
+			} catch (final IOException e) {
+				// Try a new construction of a pm
+			}
+		}
+		createLock(model);
+		return null;
+	}
+
+	/**
 	 * Reads the model from the given file
+	 *
 	 * @param model
 	 * @return
 	 * @throws IOException
@@ -323,16 +371,15 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			throw new IOException(Messages.errorPM);
 		}
 		final var folder = model.getParentFile();
-		if (folder.exists() ||folder .mkdirs()) {
+		if (folder.exists() || folder.mkdirs()) {
 			try (var out = new FileOutputStream(model)) {
 				pm.eResource().save(out, Collections.emptyMap());
 			} catch (final IOException e) {
 				LOGGER.error(e);
 				return pm;
 			}
-		}
-		else {
-			LOGGER.error("Cannot create cache location: "+folder);
+		} else {
+			LOGGER.error("Cannot create cache location: " + folder);
 		}
 		this.models.add(model);
 		return pm;
@@ -401,9 +448,12 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			var next = delete;
 			do {
 				final var parent = next.getParentFile();
-				if (!next.delete()) {
+				try {
+					if (!Files.deleteIfExists(next.toPath())) {
+						throw new IOException(Messages.errorFreeCache);
+					}
+				} finally {
 					elements.add(0, delete);
-					throw new IOException(Messages.errorFreeCache);
 				}
 				next = parent;
 			} while ((!next.equals(this.cache)) && (next.list().length == 0));
@@ -442,7 +492,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 */
 	public void setCache(final File cache) throws IOException {
 		this.cache = cache;
-		if(!this.cache.exists()) {
+		if (!this.cache.exists()) {
 			this.cache.mkdirs();
 		}
 		final var visitor = new ExtensionFileVisitor("xmi");

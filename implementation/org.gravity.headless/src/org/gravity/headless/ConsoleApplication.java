@@ -2,7 +2,6 @@ package org.gravity.headless;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.text.MessageFormat;
 import java.util.Scanner;
 
@@ -15,6 +14,7 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
+import org.gravity.eclipse.io.FileUtils;
 
 /**
  * A console application of GRaViTY
@@ -110,7 +110,7 @@ public class ConsoleApplication implements IApplication {
 				throw new IOException(Messages.createCacheFailed);
 			}
 		} else {
-			cache = Files.createTempDirectory("gravity-cache").toFile(); //$NON-NLS-1$
+			cache = FileUtils.createTempDirectory("gravity-cache").toFile(); //$NON-NLS-1$
 		}
 		return cache;
 	}

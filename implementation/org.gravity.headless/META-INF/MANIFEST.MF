@@ -62,3 +62,4 @@ Export-Package: javax.ws.rs.core,
  org.gravity.headless,
  org.gravity.headless.webapi.impl
 Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.gravity.headless.HeadlessActivator
