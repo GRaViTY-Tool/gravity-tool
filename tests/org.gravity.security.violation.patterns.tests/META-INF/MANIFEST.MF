@@ -12,6 +12,10 @@ Require-Bundle: org.gravity.typegraph.basic,
  org.gravity.tgg.pm.uml,
  carisma.profile.umlsec,
  org.gravity.security.violation.patterns,
- org.junit
+ org.junit,
+ org.gravity.hulk.antipatterngraph,
+ org.gravity.hulk,
+ carisma.core,
+ carisma.ui.console
 Bundle-ClassPath: .
 Bundle-ActivationPolicy: lazy

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLsec="http://www.umlsec.de/profiles/UMLsec" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
-  <uml:Model xmi:id="_PSMG4HY2EeyqraNVhqUNQA" name="violating">
-    <packagedElement xmi:type="uml:Package" xmi:id="_PSWe8HY2EeyqraNVhqUNQA" name="violating">
-      <packagedElement xmi:type="uml:Class" xmi:id="_PSsdMHY2EeyqraNVhqUNQA" name="Supplier">
-        <ownedOperation xmi:id="_PTThMHY2EeyqraNVhqUNQA" name="method"/>
+  <uml:Model xmi:id="_6FgCAHd6EeyPBJte83VDKg" name="violating">
+    <packagedElement xmi:type="uml:Package" xmi:id="_6Fs2UHd6EeyPBJte83VDKg" name="violating">
+      <packagedElement xmi:type="uml:Class" xmi:id="_6GSFIHd6EeyPBJte83VDKg" name="Supplier">
+        <ownedOperation xmi:id="_6G8McHd6EeyPBJte83VDKg" name="method"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_PTaO4HY2EeyqraNVhqUNQA" name="Client">
-        <ownedOperation xmi:id="_PTbdAHY2EeyqraNVhqUNQA" name="caller"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_6HAd4Hd6EeyPBJte83VDKg" name="Client">
+        <ownedOperation xmi:id="_6HBE8Hd6EeyPBJte83VDKg" name="caller"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_PTfHYHY2EeyqraNVhqUNQA" client="_PTaO4HY2EeyqraNVhqUNQA" supplier="_PSsdMHY2EeyqraNVhqUNQA"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_6HFWYHd6EeyPBJte83VDKg" client="_6HAd4Hd6EeyPBJte83VDKg" supplier="_6GSFIHd6EeyPBJte83VDKg"/>
     </packagedElement>
-    <profileApplication xmi:id="_PTiKsHY2EeyqraNVhqUNQA">
-      <eAnnotations xmi:id="_PTnDMHY2EeyqraNVhqUNQA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:id="_6HKO4Hd6EeyPBJte83VDKg">
+      <eAnnotations xmi:id="_6HQVgHd6EeyPBJte83VDKg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.umlsec.de/profiles/UMLsec#/"/>
       </eAnnotations>
       <appliedProfile href="http://www.umlsec.de/profiles/UMLsec#_kGQWQDnkEeCyb9nmG-9Lpw"/>
     </profileApplication>
   </uml:Model>
-  <UMLsec:critical xmi:id="_PfSuwHY2EeyqraNVhqUNQA" base_Class="_PSsdMHY2EeyqraNVhqUNQA" base_Classifier="_PSsdMHY2EeyqraNVhqUNQA">
+  <UMLsec:critical xmi:id="_6PNXoHd6EeyPBJte83VDKg" base_Class="_6GSFIHd6EeyPBJte83VDKg" base_Classifier="_6GSFIHd6EeyPBJte83VDKg">
     <secrecy>method</secrecy>
   </UMLsec:critical>
 </xmi:XMI>

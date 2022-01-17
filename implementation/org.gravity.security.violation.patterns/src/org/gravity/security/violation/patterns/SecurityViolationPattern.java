@@ -1,15 +1,20 @@
 package org.gravity.security.violation.patterns;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.Match;
@@ -34,11 +39,14 @@ import carisma.core.analysis.result.AnalysisResultMessage;
 import carisma.core.analysis.result.StatusType;
 import carisma.core.checks.CarismaCheckWithID;
 import carisma.core.checks.CheckParameter;
+import carisma.profile.umlsec.UmlsecPackage;
 import carisma.profile.umlsec.critical;
 
 public class SecurityViolationPattern extends HDetectorImpl implements CarismaCheckWithID {
-	private static final String CHECK_NAME = "Security Violation Pattern";
-	private static final String CARISMA_ID = "org.gravity.security.violation.patterns.securedependency";
+
+	public static final String CHECK_NAME = "Security Violation Pattern";
+	public static final String CARISMA_ID = "org.gravity.security.violation.patterns.securedependency";
+
 	private TypeGraph pm;
 	private CorrespondenceModel corr;
 	private Model uml;
@@ -62,8 +70,10 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 	}
 
 	public List<Match> detect(final CorrespondenceModel corr) {
+		final var oldSet = corr.eResource().getResourceSet();
 		init(corr);
 		final List<EObject> umlContents = this.uml.eResource().getContents();
+		final var signatures = replaceAllWithNames(umlContents);
 		final List<EObject> roots = new ArrayList<>(umlContents.size() + 2);
 		roots.add(this.pm);
 		roots.add(this.corr);
@@ -76,7 +86,66 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		for (final Match m : engine.findMatches(this.rule, graph, null)) {
 			matches.add(m);
 		}
+		restore(oldSet, umlContents, signatures);
 		return matches;
+	}
+
+	private Map<critical, Map<Integer, List<String>>> replaceAllWithNames(final List<EObject> uml) {
+		final Map<critical, Map<Integer, List<String>>> signatures = new HashMap<>();
+		for (final EObject object : uml) {
+			if (object instanceof critical) {
+				final var crit = (critical) object;
+				signatures.computeIfAbsent(crit, key -> {
+					final Map<Integer, List<String>> map = new HashMap<>();
+					final var secrecy = key.getSecrecy();
+					map.put(UmlsecPackage.CRITICAL__SECRECY, new ArrayList<>(secrecy));
+					replaceWithNames(secrecy);
+					final var integrity = key.getIntegrity();
+					map.put(UmlsecPackage.CRITICAL__INTEGRITY, new ArrayList<>(integrity));
+					replaceWithNames(integrity);
+					final var high = key.getHigh();
+					map.put(UmlsecPackage.CRITICAL__HIGH, new ArrayList<>(high));
+					replaceWithNames(high);
+					return map;
+				});
+			}
+		}
+		return signatures;
+	}
+
+	private void restore(final ResourceSet rs, final List<EObject> contents,
+			final Map<critical, Map<Integer, List<String>>> signatures) {
+		for (final EObject object : contents) {
+			final var values = signatures.get(object);
+			if(values != null) {
+				final var crit = (critical) object;
+				crit.getSecrecy().clear();
+				crit.getSecrecy().addAll(values.get(UmlsecPackage.CRITICAL__SECRECY));
+				crit.getIntegrity().clear();
+				crit.getIntegrity().addAll(values.get(UmlsecPackage.CRITICAL__INTEGRITY));
+				crit.getHigh().clear();
+				crit.getHigh().addAll(values.get(UmlsecPackage.CRITICAL__HIGH));
+			}
+		}
+		rs.getResources().add(this.pm.eResource());
+		rs.getResources().add(this.uml.eResource());
+		rs.getResources().add(this.corr.eResource());
+	}
+
+	private void replaceWithNames(final List<String> critical) {
+		final List<String> names = critical.stream().map(signature -> {
+			final var paramSep = signature.indexOf('(');
+			if (paramSep > 0) {
+				return signature.substring(0, paramSep);
+			}
+			final var typeSep = signature.indexOf(':');
+			if(typeSep > 0) {
+				return signature.substring(0, typeSep);
+			}
+			return signature;
+		}).collect(Collectors.toList());
+		critical.clear();
+		critical.addAll(names);
 	}
 
 	// From here starts the implementation of the Hulk check
@@ -95,7 +164,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		this.corr = CorrespondenceGraphGenerator.createModel(project, new NullProgressMonitor());
 
 		for (final Match m : detect(this.corr)) {
-			final var requirement = (critical) m.getParameterValue(this.rule.getParameter("supplierCritical"));
+			final var requirement = (critical) m.getNodeTarget(this.rule.getLhs().getNode("required"));
 			final var access = (TAccess) m.getNodeTarget(this.rule.getLhs().getNode("access"));
 			final var source = access.getSource();
 			final var target = access.getTarget();
@@ -127,6 +196,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 					violation.setTAnnotated(source);
 				}
 			}
+			apg.getHAnnotations().add(violation);
 			originalSet.getResources().addAll(this.set.getResources());
 		}
 
@@ -142,8 +212,41 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 
 	@Override
 	public boolean perform(final Map<String, CheckParameter> parameters, final AnalysisHost host) {
-		final var project = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(host.getCurrentModelFilename()))
-				.getProject();
+		final var workspace = ResourcesPlugin.getWorkspace().getRoot();
+		final var uri = host.getAnalyzedModel().getURI();
+		IProject project = null;
+		if (uri.isPlatform()) {
+			project = workspace.getFile(new Path(host.getCurrentModelFilename())).getProject();
+		} else {
+			final var string = uri.toString();
+			final var file = new File(string);
+			if (file.exists()) {
+				if (file.isAbsolute()) {
+					for (final IProject p : workspace.getProjects()) {
+						if (file.toPath().startsWith(p.getLocation().toFile().toPath())) {
+							project = p;
+							break;
+						}
+					}
+					if (project == null) {
+						host.addResultMessage(new AnalysisResultMessage(StatusType.ERROR,
+								"Couldn't find project containing the model"));
+					}
+				} else {
+					final var ifile = workspace.getFile(Path.fromPortableString(string));
+					if (ifile.exists()) {
+						project = ifile.getProject();
+					} else {
+						for (final IProject p : workspace.getProjects()) {
+							if (p.getFile(string).exists()) {
+								project = p;
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
 		this.corr = CorrespondenceGraphGenerator.createModel(JavaProjectUtil.getJavaProject(project),
 				new NullProgressMonitor());
 		for (final Match m : detect(this.corr)) {

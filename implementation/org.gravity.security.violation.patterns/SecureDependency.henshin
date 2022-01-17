@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_m2xZ0A_HEeudadBB8ldcmg">
   <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
-  <imports href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#/"/>
+  <imports href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#/"/>
   <imports href="http://www.umlsec.de/profiles/UMLsec#/"/>
   <imports href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_oO31MA_HEeudadBB8ldcmg" name="SecureDependency">
@@ -9,40 +9,40 @@
     <parameters xmi:id="_sPYTAB0JEeuO7Y24MIpqMA" name="supplierCritical" kind="VAR"/>
     <parameters xmi:id="_jWMEwB0JEeuO7Y24MIpqMA" name="member" kind="VAR"/>
     <lhs xmi:id="_oQrMAA_HEeudadBB8ldcmg" name="Lhs">
-      <nodes xmi:id="_ruQtMA_HEeudadBB8ldcmg" outgoing="_utISEA_HEeudadBB8ldcmg">
+      <nodes xmi:id="_ruQtMA_HEeudadBB8ldcmg" name="required" outgoing="_utISEA_HEeudadBB8ldcmg">
         <type href="http://www.umlsec.de/profiles/UMLsec#//critical"/>
         <attributes xmi:id="_TprIkB0JEeuO7Y24MIpqMA" value="supplierCritical">
           <type href="http://www.umlsec.de/profiles/UMLsec#//critical/secrecy"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_s7qUcA_HEeudadBB8ldcmg" name="supplierClass" incoming="_utISEA_HEeudadBB8ldcmg" outgoing="_1Hu-AA_HEeudadBB8ldcmg">
+      <nodes xmi:id="_s7qUcA_HEeudadBB8ldcmg" name="umlSupplier" incoming="_utISEA_HEeudadBB8ldcmg" outgoing="_1Hu-AA_HEeudadBB8ldcmg">
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
       </nodes>
-      <nodes xmi:id="_yokz8A_HEeudadBB8ldcmg" name="member" incoming="_1Hu-AA_HEeudadBB8ldcmg _efL8cA_KEeudadBB8ldcmg">
+      <nodes xmi:id="_yokz8A_HEeudadBB8ldcmg" name="criticalUMLMember" incoming="_1Hu-AA_HEeudadBB8ldcmg _efL8cA_KEeudadBB8ldcmg">
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Feature"/>
         <attributes xmi:id="_hxVm0B0JEeuO7Y24MIpqMA" value="member">
           <type href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_URKCMA_KEeudadBB8ldcmg" outgoing="_fGsBUA_KEeudadBB8ldcmg _fhdRwA_KEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType"/>
+      <nodes xmi:id="_URKCMA_KEeudadBB8ldcmg" name="t2t" outgoing="_fGsBUA_KEeudadBB8ldcmg _fhdRwA_KEeudadBB8ldcmg">
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType"/>
       </nodes>
-      <nodes xmi:id="_VgNPQA_KEeudadBB8ldcmg" outgoing="_efL8cA_KEeudadBB8ldcmg _es_H4A_KEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember"/>
+      <nodes xmi:id="_VgNPQA_KEeudadBB8ldcmg" name="f2m" outgoing="_efL8cA_KEeudadBB8ldcmg _es_H4A_KEeudadBB8ldcmg">
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember"/>
       </nodes>
-      <nodes xmi:id="_X531UA_KEeudadBB8ldcmg" name="clientClass" incoming="_fGsBUA_KEeudadBB8ldcmg">
+      <nodes xmi:id="_X531UA_KEeudadBB8ldcmg" name="umlClient" incoming="_fGsBUA_KEeudadBB8ldcmg">
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
       </nodes>
-      <nodes xmi:id="_acSuwA_KEeudadBB8ldcmg" incoming="_fhdRwA_KEeudadBB8ldcmg" outgoing="_odpJoA_KEeudadBB8ldcmg">
+      <nodes xmi:id="_acSuwA_KEeudadBB8ldcmg" name="client" incoming="_fhdRwA_KEeudadBB8ldcmg" outgoing="_odpJoA_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
       </nodes>
-      <nodes xmi:id="_a5JC0A_KEeudadBB8ldcmg" incoming="_ni0gIA_KEeudadBB8ldcmg" outgoing="_oDeWIA_KEeudadBB8ldcmg">
+      <nodes xmi:id="_a5JC0A_KEeudadBB8ldcmg" name="access" incoming="_ni0gIA_KEeudadBB8ldcmg" outgoing="_oDeWIA_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
       </nodes>
-      <nodes xmi:id="_cBi1UA_KEeudadBB8ldcmg" incoming="_es_H4A_KEeudadBB8ldcmg _oDeWIA_KEeudadBB8ldcmg">
+      <nodes xmi:id="_cBi1UA_KEeudadBB8ldcmg" name="called" incoming="_es_H4A_KEeudadBB8ldcmg _oDeWIA_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
       </nodes>
-      <nodes xmi:id="_cHRC0A_KEeudadBB8ldcmg" incoming="_odpJoA_KEeudadBB8ldcmg" outgoing="_ni0gIA_KEeudadBB8ldcmg">
+      <nodes xmi:id="_cHRC0A_KEeudadBB8ldcmg" name="caller" incoming="_odpJoA_KEeudadBB8ldcmg" outgoing="_ni0gIA_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
       </nodes>
       <edges xmi:id="_utISEA_HEeudadBB8ldcmg" source="_ruQtMA_HEeudadBB8ldcmg" target="_s7qUcA_HEeudadBB8ldcmg">
@@ -52,16 +52,16 @@
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/member"/>
       </edges>
       <edges xmi:id="_efL8cA_KEeudadBB8ldcmg" source="_VgNPQA_KEeudadBB8ldcmg" target="_yokz8A_HEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/source"/>
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/source"/>
       </edges>
       <edges xmi:id="_es_H4A_KEeudadBB8ldcmg" source="_VgNPQA_KEeudadBB8ldcmg" target="_cBi1UA_KEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/target"/>
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/target"/>
       </edges>
       <edges xmi:id="_fGsBUA_KEeudadBB8ldcmg" source="_URKCMA_KEeudadBB8ldcmg" target="_X531UA_KEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
       </edges>
       <edges xmi:id="_fhdRwA_KEeudadBB8ldcmg" source="_URKCMA_KEeudadBB8ldcmg" target="_acSuwA_KEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
       </edges>
       <edges xmi:id="_ni0gIA_KEeudadBB8ldcmg" source="_cHRC0A_KEeudadBB8ldcmg" target="_a5JC0A_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>
@@ -75,7 +75,7 @@
       <formula xsi:type="henshin:Not" xmi:id="_1MtdQA_KEeudadBB8ldcmg">
         <child xsi:type="henshin:NestedCondition" xmi:id="_1MtdQQ_KEeudadBB8ldcmg">
           <conclusion xmi:id="_1MtdQg_KEeudadBB8ldcmg">
-            <nodes xmi:id="_whwKAA_KEeudadBB8ldcmg" outgoing="_yIF1sA_KEeudadBB8ldcmg">
+            <nodes xmi:id="_whwKAA_KEeudadBB8ldcmg" name="notProvided" outgoing="_yIF1sA_KEeudadBB8ldcmg">
               <type href="http://www.umlsec.de/profiles/UMLsec#//critical"/>
               <attributes xmi:id="_tSkOUB0JEeuO7Y24MIpqMA" value="clientCritical">
                 <type href="http://www.umlsec.de/profiles/UMLsec#//critical/secrecy"/>
@@ -100,10 +100,10 @@
               </attributes>
             </nodes>
             <nodes xmi:id="_3fwd9g_KEeudadBB8ldcmg" outgoing="_3fwd-A_KEeudadBB8ldcmg _3fxsFQ_KEeudadBB8ldcmg">
-              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember"/>
+              <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember"/>
             </nodes>
             <nodes xmi:id="_3fxFBg_KEeudadBB8ldcmg" outgoing="_3fxFCA_KEeudadBB8ldcmg _3fxsEg_KEeudadBB8ldcmg">
-              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType"/>
+              <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType"/>
             </nodes>
             <nodes xmi:id="_3fxsEA_KEeudadBB8ldcmg" incoming="_3fxsEg_KEeudadBB8ldcmg" outgoing="_3fyTIg_KEeudadBB8ldcmg">
               <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
@@ -127,16 +127,16 @@
               <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/member"/>
             </edges>
             <edges xmi:id="_3fwd-A_KEeudadBB8ldcmg" source="_3fwd9g_KEeudadBB8ldcmg" target="_3fwd8w_KEeudadBB8ldcmg">
-              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/source"/>
+              <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/source"/>
             </edges>
             <edges xmi:id="_3fxFCA_KEeudadBB8ldcmg" source="_3fxFBg_KEeudadBB8ldcmg" target="_1MuEUg_KEeudadBB8ldcmg">
-              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
+              <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
             </edges>
             <edges xmi:id="_3fxsEg_KEeudadBB8ldcmg" source="_3fxFBg_KEeudadBB8ldcmg" target="_3fxsEA_KEeudadBB8ldcmg">
-              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
+              <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
             </edges>
             <edges xmi:id="_3fxsFQ_KEeudadBB8ldcmg" source="_3fwd9g_KEeudadBB8ldcmg" target="_3fxsEw_KEeudadBB8ldcmg">
-              <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/target"/>
+              <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/target"/>
             </edges>
             <edges xmi:id="_3fyTIg_KEeudadBB8ldcmg" source="_3fxsEA_KEeudadBB8ldcmg" target="_3fyTIA_KEeudadBB8ldcmg">
               <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
@@ -162,40 +162,40 @@
       </formula>
     </lhs>
     <rhs xmi:id="_oQrMAQ_HEeudadBB8ldcmg" name="Rhs">
-      <nodes xmi:id="_ruQtMQ_HEeudadBB8ldcmg" outgoing="_utISEQ_HEeudadBB8ldcmg">
+      <nodes xmi:id="_ruQtMQ_HEeudadBB8ldcmg" name="required" outgoing="_utISEQ_HEeudadBB8ldcmg">
         <type href="http://www.umlsec.de/profiles/UMLsec#//critical"/>
         <attributes xmi:id="_Tps9wB0JEeuO7Y24MIpqMA" value="supplierCritical">
           <type href="http://www.umlsec.de/profiles/UMLsec#//critical/secrecy"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_s7qUcQ_HEeudadBB8ldcmg" name="supplierClass" incoming="_utISEQ_HEeudadBB8ldcmg" outgoing="_1HvlEA_HEeudadBB8ldcmg">
+      <nodes xmi:id="_s7qUcQ_HEeudadBB8ldcmg" name="umlSupplier" incoming="_utISEQ_HEeudadBB8ldcmg" outgoing="_1HvlEA_HEeudadBB8ldcmg">
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
       </nodes>
-      <nodes xmi:id="_yokz8Q_HEeudadBB8ldcmg" name="member" incoming="_1HvlEA_HEeudadBB8ldcmg _efL8cQ_KEeudadBB8ldcmg">
+      <nodes xmi:id="_yokz8Q_HEeudadBB8ldcmg" name="criticalUMLMember" incoming="_1HvlEA_HEeudadBB8ldcmg _efL8cQ_KEeudadBB8ldcmg">
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Feature"/>
         <attributes xmi:id="_hxWN4B0JEeuO7Y24MIpqMA" value="member">
           <type href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_URKCMQ_KEeudadBB8ldcmg" outgoing="_fGsBUQ_KEeudadBB8ldcmg _fhd40A_KEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType"/>
+      <nodes xmi:id="_URKCMQ_KEeudadBB8ldcmg" name="t2t" outgoing="_fGsBUQ_KEeudadBB8ldcmg _fhd40A_KEeudadBB8ldcmg">
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType"/>
       </nodes>
-      <nodes xmi:id="_VgNPQQ_KEeudadBB8ldcmg" outgoing="_efL8cQ_KEeudadBB8ldcmg _es_H4Q_KEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember"/>
+      <nodes xmi:id="_VgNPQQ_KEeudadBB8ldcmg" name="f2m" outgoing="_efL8cQ_KEeudadBB8ldcmg _es_H4Q_KEeudadBB8ldcmg">
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember"/>
       </nodes>
-      <nodes xmi:id="_X531UQ_KEeudadBB8ldcmg" name="clientClass" incoming="_fGsBUQ_KEeudadBB8ldcmg">
+      <nodes xmi:id="_X531UQ_KEeudadBB8ldcmg" name="umlClient" incoming="_fGsBUQ_KEeudadBB8ldcmg">
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
       </nodes>
-      <nodes xmi:id="_acSuwQ_KEeudadBB8ldcmg" incoming="_fhd40A_KEeudadBB8ldcmg" outgoing="_odpJoQ_KEeudadBB8ldcmg">
+      <nodes xmi:id="_acSuwQ_KEeudadBB8ldcmg" name="client" incoming="_fhd40A_KEeudadBB8ldcmg" outgoing="_odpJoQ_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
       </nodes>
-      <nodes xmi:id="_a5Jp4A_KEeudadBB8ldcmg" incoming="_ni0gIQ_KEeudadBB8ldcmg" outgoing="_oDeWIQ_KEeudadBB8ldcmg">
+      <nodes xmi:id="_a5Jp4A_KEeudadBB8ldcmg" name="access" incoming="_ni0gIQ_KEeudadBB8ldcmg" outgoing="_oDeWIQ_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
       </nodes>
-      <nodes xmi:id="_cBi1UQ_KEeudadBB8ldcmg" incoming="_es_H4Q_KEeudadBB8ldcmg _oDeWIQ_KEeudadBB8ldcmg">
+      <nodes xmi:id="_cBi1UQ_KEeudadBB8ldcmg" name="called" incoming="_es_H4Q_KEeudadBB8ldcmg _oDeWIQ_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
       </nodes>
-      <nodes xmi:id="_cHRC0Q_KEeudadBB8ldcmg" incoming="_odpJoQ_KEeudadBB8ldcmg" outgoing="_ni0gIQ_KEeudadBB8ldcmg">
+      <nodes xmi:id="_cHRC0Q_KEeudadBB8ldcmg" name="caller" incoming="_odpJoQ_KEeudadBB8ldcmg" outgoing="_ni0gIQ_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
       </nodes>
       <edges xmi:id="_utISEQ_HEeudadBB8ldcmg" source="_ruQtMQ_HEeudadBB8ldcmg" target="_s7qUcQ_HEeudadBB8ldcmg">
@@ -205,16 +205,16 @@
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/member"/>
       </edges>
       <edges xmi:id="_efL8cQ_KEeudadBB8ldcmg" source="_VgNPQQ_KEeudadBB8ldcmg" target="_yokz8Q_HEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/source"/>
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/source"/>
       </edges>
       <edges xmi:id="_es_H4Q_KEeudadBB8ldcmg" source="_VgNPQQ_KEeudadBB8ldcmg" target="_cBi1UQ_KEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/target"/>
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Feature2TMember/target"/>
       </edges>
       <edges xmi:id="_fGsBUQ_KEeudadBB8ldcmg" source="_URKCMQ_KEeudadBB8ldcmg" target="_X531UQ_KEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/source"/>
       </edges>
       <edges xmi:id="_fhd40A_KEeudadBB8ldcmg" source="_URKCMQ_KEeudadBB8ldcmg" target="_acSuwQ_KEeudadBB8ldcmg">
-        <type href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
+        <type href="../../plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Type2TAbstractType/target"/>
       </edges>
       <edges xmi:id="_ni0gIQ_KEeudadBB8ldcmg" source="_cHRC0Q_KEeudadBB8ldcmg" target="_a5Jp4A_KEeudadBB8ldcmg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessing"/>

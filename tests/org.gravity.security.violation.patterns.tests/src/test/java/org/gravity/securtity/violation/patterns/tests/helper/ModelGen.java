@@ -1,11 +1,9 @@
-package org.gravity.securtity.violation.patterns.tests;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+package org.gravity.securtity.violation.patterns.tests.helper;
 
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -21,8 +19,8 @@ import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
-import org.gravity.security.violation.patterns.SecurityViolationPattern;
 import org.gravity.security.violation.patterns.SignatureHelper;
+import org.gravity.tgg.pm.uml.FDependency2TAccess;
 import org.gravity.tgg.pm.uml.Feature2TMember;
 import org.gravity.tgg.pm.uml.Package2TPackage;
 import org.gravity.tgg.pm.uml.Type2TAbstractType;
@@ -38,7 +36,6 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TypeGraph;
-import org.junit.Test;
 import org.moflon.tgg.runtime.CorrespondenceModel;
 import org.moflon.tgg.runtime.RuntimeFactory;
 
@@ -46,48 +43,36 @@ import carisma.profile.umlsec.UMLsecActivator;
 import carisma.profile.umlsec.UmlsecPackage;
 import carisma.profile.umlsec.critical;
 
-public class PatternTest {
+public class ModelGen {
+
+	private static final String CLIENT_NAME = "Client";
+	private static final String SUPPLIER_NAME = "Supplier";
+	private static final String CRITICAL = "critical";
+
 	private static final UmlFactory CORR_FACTORY = UmlFactory.eINSTANCE;
 	private static final UMLFactory UML_FACTORY = UMLFactory.eINSTANCE;
 	private static final BasicFactory PM_FACTORY = BasicFactory.eINSTANCE;
+
 	private static HenshinResourceSet set;
+
+	private final String output;
+
+	public ModelGen(final String output) {
+		this.output = output;
+	}
 
 	private TypeGraph pm;
 	private Model uml;
 	private CorrespondenceModel corr;
 	private Profile umlsec;
 
-	/**
-	 * Generates a compliant model and tests if no violation is detected
-	 * @throws IOException
-	 */
-	@Test
-	public void testCompliantModel() throws IOException {
-		generateCompliantModel();
-		final var matches = new SecurityViolationPattern().detect(this.corr);
-		assertTrue(matches.isEmpty());
-	}
-
-	/**
-	 * Generates a violating model and tests if the violation is detected
-	 * @throws IOException
-	 */
-	@Test
-	public void testViolatingModel() throws IOException {
-		generateViolatingModel();
-		final var matches =  new SecurityViolationPattern().detect(this.corr);
-		assertFalse(matches.isEmpty());
-	}
-
-	private void generateViolatingModel() throws IOException {
-		final var id = "violating";
+	public CorrespondenceModel generateViolatingModel(final String id) throws IOException {
 		createBaseModel(id);
 
-		final var critical = this.umlsec.getOwnedStereotype("critical");
+		final var critical = this.umlsec.getOwnedStereotype(CRITICAL);
 
 		final var root = this.uml.getNestedPackage(id);
-		final var supplier = (Class) root.getOwnedType("Supplier");
-		final var client = (Class) root.getOwnedType("Client");
+		final var supplier = (Class) root.getOwnedType(SUPPLIER_NAME);
 
 		final var signature = SignatureHelper.getSignature(supplier.getOwnedOperations().get(0));
 		final var name = supplier.getOwnedOperations().get(0).getName();
@@ -95,17 +80,17 @@ public class PatternTest {
 		((critical) supplier.applyStereotype(critical)).getSecrecy().add(name);
 
 		save();
+		return this.corr;
 	}
 
-	private void generateCompliantModel() throws IOException {
-		final var id = "compliant";
+	public CorrespondenceModel generateCompliantModel(final String id) throws IOException {
 		createBaseModel(id);
 
-		final var critical = this.umlsec.getOwnedStereotype("critical");
+		final var critical = this.umlsec.getOwnedStereotype(CRITICAL);
 
 		final var root = this.uml.getNestedPackage(id);
-		final var supplier = (Class) root.getOwnedType("Supplier");
-		final var client = (Class) root.getOwnedType("Client");
+		final var supplier = (Class) root.getOwnedType(SUPPLIER_NAME);
+		final var client = (Class) root.getOwnedType(CLIENT_NAME);
 
 		final var signature = SignatureHelper.getSignature(supplier.getOwnedOperations().get(0));
 		final var name = supplier.getOwnedOperations().get(0).getName();
@@ -114,6 +99,7 @@ public class PatternTest {
 		((critical) client.applyStereotype(critical)).getSecrecy().add(name);
 
 		save();
+		return this.corr;
 	}
 
 	private void createBaseModel(final String id) throws IOException {
@@ -127,15 +113,13 @@ public class PatternTest {
 
 		final var packageCorr = createPackage(this.corr, this.uml, this.pm, id);
 
-		final var supplierCorr = createClass(this.corr, packageCorr.getSource(), packageCorr.getTarget(), "Supplier");
+		final var supplierCorr = createClass(this.corr, packageCorr.getSource(), packageCorr.getTarget(), SUPPLIER_NAME);
 
-		final var supplierOperationCorr = createOperation(this.corr, (Class) supplierCorr.getSource(),
-				supplierCorr.getTarget(), "method", null, null, Collections.emptyList(), Collections.emptyList());
+		final var supplierOperationCorr = createOperation(this.corr, supplierCorr, "method", null, Collections.emptyList());
 
-		final var clientCorr = createClass(this.corr, packageCorr.getSource(), packageCorr.getTarget(), "Client");
+		final var clientCorr = createClass(this.corr, packageCorr.getSource(), packageCorr.getTarget(), CLIENT_NAME);
 
-		final var clientOperationCorr = createOperation(this.corr, (Class) clientCorr.getSource(),
-				clientCorr.getTarget(), "caller", null, null, Collections.emptyList(), Collections.emptyList());
+		final var clientOperationCorr = createOperation(this.corr, clientCorr, "caller", null, Collections.emptyList());
 
 		createDependency(this.corr, clientCorr.getSource(), clientOperationCorr.getTarget(), supplierCorr.getSource(),
 				supplierOperationCorr.getTarget());
@@ -164,7 +148,7 @@ public class PatternTest {
 		this.corr.eResource().save(Collections.emptyMap());
 	}
 
-	private static void createDependency(final CorrespondenceModel corr, final Type client, final TMember caller,
+	private static FDependency2TAccess createDependency(final CorrespondenceModel corr, final Type client, final TMember caller,
 			final Type supplier, final TMember callee) {
 		TAccess access;
 		if (callee instanceof TMethodDefinition) {
@@ -175,13 +159,30 @@ public class PatternTest {
 		access.setTarget(callee);
 		access.setSource(caller);
 
-		client.createDependency(supplier);
+		final var dependency = client.createDependency(supplier);
+
+		final var correspondence = CORR_FACTORY.createFDependency2TAccess();
+		correspondence.setSource(dependency);
+		correspondence.setTarget(access);
+		corr.getCorrespondences().add(correspondence);
+		return correspondence;
 	}
 
-	private static Feature2TMember createOperation(final CorrespondenceModel corr, final Class umlOwner,
-			final TAbstractType pmOwner, final String methodName, final Type umlReturnType,
-			final TAbstractType pmReturnType, final List<Type> umlParameterTypes,
-			final List<TAbstractType> pmParameterTypes) {
+	/**
+	 * Creates a new operation in the UML model and program model
+	 *
+	 * @param corr The correspondence model between the UML model and program model
+	 * @param owner The owner of the new operation
+	 * @param methodName The name of the new operation
+	 * @param returnType The return type of the new operation
+	 * @param parameterTypes The parameter types
+	 * @return The correspondence of the new operation
+	 */
+	private static Feature2TMember createOperation(final CorrespondenceModel corr, final Type2TAbstractType owner, final String methodName, final Type2TAbstractType returnType, final List<Type2TAbstractType> parameterTypes) {
+
+		final var umlOwner = (Class) owner.getSource();
+		final var pmOwner = owner.getTarget();
+
 		final var pm = pmOwner.getModel();
 		var pmMethod = pm.getMethod(methodName);
 		if (pmMethod == null) {
@@ -189,6 +190,17 @@ public class PatternTest {
 			pmMethod.setTName(methodName);
 			pm.getMethods().add(pmMethod);
 		}
+
+		Type umlReturnType = null;
+		TAbstractType pmReturnType = null;
+		if(returnType != null) {
+			umlReturnType = returnType.getSource();
+			pmReturnType = returnType.getTarget();
+		}
+
+		final List<Type> umlParameterTypes = parameterTypes.stream().map(Type2TAbstractType::getSource).collect(Collectors.toList());
+		final List<TAbstractType> pmParameterTypes = parameterTypes.stream().map(Type2TAbstractType::getTarget).collect(Collectors.toList());
+
 		TMethodSignature pmSignature = null;
 		for (final TMethodSignature sig : pmMethod.getSignatures()) {
 			if (isEqual(sig, pmReturnType, pmParameterTypes)) {
@@ -300,25 +312,25 @@ public class PatternTest {
 		return correspondence;
 	}
 
-	private static TypeGraph createProgramModel(final ResourceSet set, final String id) {
-		final var pmResource = set.createResource(URI.createURI("instances/" + id + "/pm.xmi"));
+	private TypeGraph createProgramModel(final ResourceSet set, final String id) {
+		final var pmResource = set.createResource(URI.createURI(this.output + id + "/pm.xmi"));
 		final var pm = PM_FACTORY.createTypeGraph();
 		pm.setTName(id);
 		pmResource.getContents().add(pm);
 		return pm;
 	}
 
-	private static Model createUMLModel(final ResourceSet set, final String id) {
-		final var umlResource = set.createResource(URI.createURI("instances/" + id + "/model.uml"));
+	private Model createUMLModel(final ResourceSet set, final String id) {
+		final var umlResource = set.createResource(URI.createURI(this.output + id + "/model.uml"));
 		final var uml = UML_FACTORY.createModel();
 		uml.setName(id);
 		umlResource.getContents().add(uml);
 		return uml;
 	}
 
-	private static CorrespondenceModel createCorr(final ResourceSet set, final TypeGraph pm, final Model uml,
+	private CorrespondenceModel createCorr(final ResourceSet set, final TypeGraph pm, final Model uml,
 			final String id) {
-		final var corrResource = set.createResource(URI.createURI("instances/" + id + "/corr.xmi"));
+		final var corrResource = set.createResource(URI.createURI(this.output + id + "/corr.xmi"));
 		final var corr = RuntimeFactory.eINSTANCE.createCorrespondenceModel();
 		corr.setSource(uml);
 		corr.setTarget(pm);
