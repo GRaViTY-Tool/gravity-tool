@@ -4,7 +4,7 @@ import org.eclipse.core.resources.IProject;
 
 /**
  * A factory for creating IPGConverter instances.
- * 
+ *
  * Implementations can be registered at the extension point
  * "org.gravity.eclipse.converters" for usage in the GRaViTY plugin.
  */
@@ -13,12 +13,11 @@ public interface IPGConverterFactory {
 	/**
 	 * Creates a new IPGConverter instance for an eclipse project.
 	 *
-	 * @param project
-	 *            the project
+	 * @param project the project
 	 * @return the IPG converter
 	 */
-	public IPGConverter createConverter(IProject project);
-	
+	IPGConverter createConverter(IProject project);
+
 	/**
 	 * Checks whether the given converter can be created by this factory
 	 *
@@ -26,8 +25,8 @@ public interface IPGConverterFactory {
 	 *            the converter
 	 * @return true, if the converter can be created by this factory
 	 */
-	public boolean belongsToFactory(IPGConverter converter);
-	
+	boolean belongsToFactory(IPGConverter converter);
+
 
 	/**
 	 * Returns a name for usage in the UI
@@ -43,13 +42,13 @@ public interface IPGConverterFactory {
 	 * @return the description
 	 */
 	String getDescription();
-	
+
 	boolean supportsFWDTrafo();
-	
+
 	boolean supportsBWDTrafo();
-	
+
 	boolean supportsFWDSync();
-	
+
 	boolean supportsBWDSync();
 
 }

@@ -9,16 +9,11 @@ import java.util.Collections;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.converter.IPGConverter;
@@ -75,7 +70,14 @@ public class GravityAPI {
 				LOGGER.log(Level.ERROR, e);
 			}
 		}
-		final IProject iproject = project.getProject();
+		else {
+			try {
+				GravityActivator.getProgramModelFolder(project.getProject(), monitor).delete(true, monitor);
+			} catch (CoreException | IOException e) {
+				throw new TransformationFailedException(e);
+			}
+		}
+		final var iproject = project.getProject();
 		IPGConverter converter;
 		try {
 			converter = GravityActivator.getDefault().getNewConverter(iproject);
@@ -83,8 +85,8 @@ public class GravityAPI {
 			throw new TransformationFailedException(e);
 		}
 
-		final boolean success = converter.convertProject(Collections.emptySet(), monitor);
-		if (!success || converter.getPG() == null) {
+		final var success = converter.convertProject(Collections.emptySet(), monitor);
+		if (!success || (converter.getPG() == null)) {
 			throw new TransformationFailedException(
 					Messages.createPMFailed + project.getProject().getName());
 		}
@@ -101,8 +103,8 @@ public class GravityAPI {
 	 */
 	private static TypeGraph loadProgramModel(final IJavaProject javaProject, final IProgressMonitor monitor) throws IOException {
 		try {
-			final IFolder folder = EclipseProjectUtil.getGravityFolder(javaProject.getProject(), monitor);
-			final IFile file = folder.getFile(javaProject.getProject().getName() + '.'+GravityActivator.FILE_EXTENSION_XMI);
+			final var folder = EclipseProjectUtil.getGravityFolder(javaProject.getProject(), monitor);
+			final var file = folder.getFile(javaProject.getProject().getName() + '.'+GravityActivator.FILE_EXTENSION_XMI);
 			if (file.exists() && isUptoDate(file)) {
 				return loadProgramModel(file);
 			}
@@ -120,8 +122,8 @@ public class GravityAPI {
 	 * @return true, if the file is up to date
 	 */
 	private static boolean isUptoDate(final IFile file) {
-		final long timestamp = file.getLocalTimeStamp();
-		final UptodateVisitor visitor = new UptodateVisitor(timestamp);
+		final var timestamp = file.getLocalTimeStamp();
+		final var visitor = new UptodateVisitor(timestamp);
 		try {
 			file.getProject().accept(visitor);
 		} catch (final CoreException e) {
@@ -139,12 +141,12 @@ public class GravityAPI {
 	 * @throws IOException If the model couldn't be loaded
 	 */
 	private static TypeGraph loadProgramModel(final IFile file) throws IOException, CoreException {
-		final Resource resource = new ResourceSetImpl()
+		final var resource = new ResourceSetImpl()
 				.createResource(URI.createURI(file.getProjectRelativePath().toString()));
 		resource.load(file.getContents(), Collections.emptyMap());
-		final EList<EObject> contents = resource.getContents();
+		final var contents = resource.getContents();
 		if (contents.size() == 1) {
-			final EObject object = contents.get(0);
+			final var object = contents.get(0);
 			if (object instanceof TypeGraph) {
 				return (TypeGraph) object;
 			}
@@ -181,7 +183,7 @@ public class GravityAPI {
 				return true;
 			}
 			if(GravityActivator.FILE_EXTENSION_JAVA.equals(((IFile) resource).getFileExtension())) {
-				final long fileTimestamp = resource.getLocalTimeStamp();
+				final var fileTimestamp = resource.getLocalTimeStamp();
 				if(this.timestamp < fileTimestamp) {
 					this.upToDate = false;
 				}

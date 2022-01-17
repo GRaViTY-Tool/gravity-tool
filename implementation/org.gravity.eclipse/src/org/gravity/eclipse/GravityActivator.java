@@ -8,12 +8,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -21,6 +23,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -307,5 +310,13 @@ public class GravityActivator extends Plugin {
 
 	public static void setMeasurementsLocation(final String path) {
 		measureRecordsKey = path;
+	}
+
+	public IPGConverter getNewConverter(final IProject iproject, final boolean force) {
+		return null;
+	}
+
+	public static IFolder getProgramModelFolder(final IProject project, final IProgressMonitor monitor) throws IOException {
+		return EclipseProjectUtil.getGravityFolder(project, monitor).getFolder("pm");
 	}
 }

@@ -129,7 +129,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	private SynchronizationProtocol getProtocol(final IJavaProject project, final ResourceSet set)
 			throws IOException, CoreException {
 		final NullProgressMonitor monitor = new NullProgressMonitor();
-		final IFolder folder = getFolder(project.getProject(), monitor);
+		final IFolder folder = GravityActivator.getProgramModelFolder(project.getProject(), monitor);
 		IFile protocolFile = folder.getFile(PROTOCOL_BIN);
 		if (!protocolFile.exists()) {
 			protocolFile = folder.getFile(PROTOCOL_XMI);
@@ -483,7 +483,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		IFolder folder;
 		try {
 			final IProject project = this.iJavaProject.getProject();
-			folder = getFolder(project, progressMonitor);
+			folder = GravityActivator.getProgramModelFolder(project, progressMonitor);
 		} catch (final IOException e) {
 			LOGGER.error(e);
 			return false;
@@ -501,14 +501,10 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		return true;
 	}
 
-	public static IFolder getFolder(final IProject project, final IProgressMonitor monitor) throws IOException {
-		return EclipseProjectUtil.getGravityFolder(project, monitor).getFolder("pm");
-	}
-
 	private static CorrespondenceModel getCorrespondenceModel(final IProject project, final ResourceSet set)
 			throws IOException, CoreException {
 		final NullProgressMonitor monitor = new NullProgressMonitor();
-		final IFile corrFile = getFolder(project, monitor).getFile(CORRESPONDENCE_MODEL_XMI);
+		final IFile corrFile = GravityActivator.getProgramModelFolder(project, monitor).getFile(CORRESPONDENCE_MODEL_XMI);
 		if (!corrFile.exists()) {
 			return null;
 		}
@@ -591,7 +587,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	}
 
 	public static IFile getPMFile(final IProject project, final IProgressMonitor monitor) throws IOException {
-		return getFolder(project, monitor).getFile(PM_XMI);
+		return GravityActivator.getProgramModelFolder(project, monitor).getFile(PM_XMI);
 	}
 
 	public void enableAutosave() {

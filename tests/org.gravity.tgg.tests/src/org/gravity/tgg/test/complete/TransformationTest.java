@@ -116,7 +116,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		LOGGER.info("Test PM TGG for: " + this.project.getProject().getName());
 		final var monitor = new NullProgressMonitor();
 
-		MoDiscoTGGConverter.getFolder(this.project.getProject(), monitor).delete(true, monitor);
+		GravityActivator.getProgramModelFolder(this.project.getProject(), monitor).delete(true, monitor);
 
 		MoDiscoTGGConverter conv = null;
 		try {
