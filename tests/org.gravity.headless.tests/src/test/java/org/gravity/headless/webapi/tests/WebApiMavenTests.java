@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +17,8 @@ import org.junit.jupiter.api.Test;
  *
  */
 class WebApiMavenTests extends AbstractWebApiTests {
+
+	private static final Logger LOGGER = Logger.getLogger(WebApiMavenTests.class);
 
 	private static final String VERSION1 = "3.0.1";
 	private static final String ARTIFACT1 = "jakarta.xml.ws-api";
@@ -40,8 +43,8 @@ class WebApiMavenTests extends AbstractWebApiTests {
 
 		final var first = mid - start;
 		final var second = stop - mid;
-		System.out.println("First request: " + first + "ms");
-		System.out.println("Second request: " + second + "ms");
+		LOGGER.info("First request: " + first + "ms");
+		LOGGER.info("Second request: " + second + "ms");
 
 		// We expect the cache hit to be substantial faster
 		assertTrue(second < first);

@@ -37,8 +37,7 @@ public abstract class ImportTest {
 	protected final Map<String, String> expected;
 	protected final ProjectImport importer;
 
-	public ImportTest(final ProjectImport importer, final String name, final File projectLocation,
-			final Map<String, String> expected) {
+	protected ImportTest(final ProjectImport importer, final Map<String, String> expected) {
 		this.expected = expected;
 		this.importer = importer;
 		LOGGER.info("Explicitly loaded TGG: "+PmPackage.eINSTANCE.getNsURI());
@@ -70,7 +69,7 @@ public abstract class ImportTest {
 	 * @throws IOException
 	 */
 	@Test
-	public void testProjectImport() throws ImportException, JavaModelException, IOException {
+	public void testProjectImport() throws ImportException, JavaModelException {
 		final var importedProject = this.importer.importProject(new NullProgressMonitor());
 		final Set<String> libs = Stream.of(importedProject.getRawClasspath()).parallel()
 				.filter(entry -> entry.getEntryKind() == IClasspathEntry.CPE_LIBRARY).map(IClasspathEntry::getPath)

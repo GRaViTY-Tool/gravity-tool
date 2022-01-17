@@ -14,6 +14,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -108,11 +109,11 @@ class ConsoleApplicationTests {
 	 *
 	 * Tests whether the server can be started and terminated from the console
 	 *
-	 * @throws Exception
+	 * @throws IOException If the cache cannot be deleted after the test
 	 */
 	@Test
 	@Timeout(value = 30, unit = TimeUnit.SECONDS)
-	void testStartBatchCusomCache() throws Exception {
+	void testStartBatchCusomCache() throws IOException {
 		final var cache = new File("cache");
 		final var cmn = "6";
 		final var crn = "7";
@@ -122,9 +123,10 @@ class ConsoleApplicationTests {
 			final var server = getServer(app);
 			assertNotNull(server);
 			assertTrue(cache.exists());
-			assertTrue(cache.delete());
 			writeToInputStream("exit");
 		});
+		//Clean up
+		Files.delete(cache.toPath());
 	}
 
 	/**
@@ -160,7 +162,7 @@ class ConsoleApplicationTests {
 	 * @param assertions The consumer to which the launched application should be handed
 	 * @throws Exception If the launch of the application failed
 	 */
-	private void run(final String[] args, final Consumer<ConsoleApplication> assertions) throws Exception {
+	private void run(final String[] args, final Consumer<ConsoleApplication> assertions) {
 		final var app = new ConsoleApplication();
 		try {
 			final var thread = new Thread(() -> {
@@ -275,6 +277,7 @@ class ConsoleApplicationTests {
 
 		@Override
 		public void applicationRunning() {
+			// Not needed
 		}
 	}
 

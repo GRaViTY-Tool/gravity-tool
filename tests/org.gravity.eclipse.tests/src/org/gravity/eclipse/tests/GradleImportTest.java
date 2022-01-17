@@ -16,7 +16,7 @@ import org.junit.runners.Parameterized.Parameters;
 public class GradleImportTest extends ImportTest {
 
 	public GradleImportTest(final String name, final File projectLocation, final Map<String, String> expected) throws IOException, ImportException {
-		super(new GradleImport(projectLocation, true), name, projectLocation, expected);
+		super(new GradleImport(projectLocation, true), expected);
 	}
 
 	@Parameters(name = "{index}: Import gradle project: {0}")

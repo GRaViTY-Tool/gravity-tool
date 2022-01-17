@@ -3,7 +3,6 @@ package org.gravity.headless.webapi.tests;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.Collections;
 
 import javax.ws.rs.core.Response;
@@ -39,7 +38,7 @@ abstract class AbstractWebApiTests {
 	 */
 	@BeforeEach
 	public void initCache() throws IOException {
-		this.cache = Files.createTempDirectory(this.getClass().getName()).toFile();
+		this.cache = FileUtils.createTempDirectory(this.getClass().getName()).toFile();
 	}
 
 

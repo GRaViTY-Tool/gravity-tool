@@ -16,7 +16,7 @@ import org.junit.runners.Parameterized.Parameters;
 public class MavenImportTest extends ImportTest {
 
 	public MavenImportTest(final String name, final File projectLocation, final Map<String, String> expected) throws ImportException {
-		super(new MavenImport(projectLocation, false), name, projectLocation, expected);
+		super(new MavenImport(projectLocation, false), expected);
 	}
 
 	@Parameters(name = "{index}: Import gradle project: {0}")

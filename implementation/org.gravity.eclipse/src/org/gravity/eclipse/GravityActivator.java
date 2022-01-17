@@ -128,7 +128,7 @@ public class GravityActivator extends Plugin {
 		}
 		this.selectedConverterFactory = ((IPGConverterFactory) configurationElements[0]
 				.createExecutableExtension("class")); //$NON-NLS-1$
-		return this.selectedConverterFactory  != null;
+		return this.selectedConverterFactory != null;
 	}
 
 	/**
@@ -277,24 +277,18 @@ public class GravityActivator extends Plugin {
 	}
 
 	public ResourceSet getResourceSet(final IProject project) {
-		final var name = project.getName();
-		var set = this.resourceSets.get(name);
-		if (set == null) {
-			set = new ResourceSetImpl();
-			this.resourceSets.put(name, set);
-		}
-		return set;
+		return this.resourceSets.computeIfAbsent(project.getName(), key -> new ResourceSetImpl());
 	}
 
 	private static String measureRecordsKey;
 	private static String measureLocation = "../measurements";
 
-	public static void record(final String string) {
+	public static void recordMessage(final String string) {
 		if (measureRecordsKey == null) {
 			LOGGER.error("No key for recording set");
 			return;
 		}
-		System.out.println(string);
+		LOGGER.info(string);
 		try {
 			final var path = Paths.get(measureLocation, measureRecordsKey, "data.txt");
 			final var file = path.getParent().toFile();

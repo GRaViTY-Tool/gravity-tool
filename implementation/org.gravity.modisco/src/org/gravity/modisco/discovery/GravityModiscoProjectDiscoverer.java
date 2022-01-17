@@ -212,7 +212,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 		final Model eobject = discoverProject(javaProject, uri, libs, progressMonitor);
 
 		if (GravityActivator.MEASURE_PERFORMANCE) {
-			GravityActivator.record("Discovery:" + (System.currentTimeMillis() - t0) + "ms");
+			GravityActivator.recordMessage("Discovery:" + (System.currentTimeMillis() - t0) + "ms");
 		} else if (LOGGER.isInfoEnabled()) {
 			final long t1 = System.currentTimeMillis();
 			LOGGER.info(t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
@@ -252,7 +252,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 			throw new DiscoveryException("Discovered modisco model is not of type MGravityModel");
 		}
 		if (GravityActivator.MEASURE_PERFORMANCE) {
-			GravityActivator.record("preprocessing:" + (System.currentTimeMillis() - t2) + "ms");
+			GravityActivator.recordMessage("preprocessing:" + (System.currentTimeMillis() - t2) + "ms");
 		} else if (LOGGER.isInfoEnabled()) {
 			final long t3 = System.currentTimeMillis();
 			LOGGER.info(t3 + " MoDisco preprocessing - done " + (t3 - t2) + "ms");

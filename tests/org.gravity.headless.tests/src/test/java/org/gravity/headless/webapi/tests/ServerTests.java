@@ -7,10 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
-import java.nio.file.Files;
 import java.util.Collections;
 
 import org.eclipse.emf.common.util.URI;
@@ -43,7 +40,7 @@ public class ServerTests {
 	 */
 	@BeforeAll
 	public static void launchServer() throws IOException {
-		cache = Files.createTempDirectory("gravity-test").toFile();
+		cache = FileUtils.createTempDirectory("gravity-test").toFile();
 		final var maxRepositories = 1;
 		final var maxModels = 1;
 		server = GravityServer.launchServer(cache, maxRepositories, maxModels, DOMAIN, PORT);
@@ -52,11 +49,10 @@ public class ServerTests {
 	/**
 	 * Tests an invalid access with no arguments
 	 *
-	 * @throws MalformedURLException
 	 * @throws IOException
 	 */
 	@Test
-	void testMvnWebAPI_fail_noParams1() throws MalformedURLException, IOException {
+	void testMvnWebAPIFailNoParams1() throws IOException {
 		final var connection = GetConnectionBuilder.getConnection(null, null, null);
 		assertEquals(400, connection.getResponseCode());
 	}
@@ -64,11 +60,10 @@ public class ServerTests {
 	/**
 	 * Tests an illegal access where only one argument is given
 	 *
-	 * @throws MalformedURLException
 	 * @throws IOException
 	 */
 	@Test
-	void testMvnWebAPI_fail_noParams2() throws MalformedURLException, IOException {
+	void testMvnWebAPIFailNoParams2() throws IOException {
 		final var connection = GetConnectionBuilder.getConnection("", null, null);
 		assertEquals(400, connection.getResponseCode());
 	}
@@ -76,11 +71,10 @@ public class ServerTests {
 	/**
 	 * Tests an illegal access where only two of three mandatory arguments are given
 	 *
-	 * @throws MalformedURLException
 	 * @throws IOException
 	 */
 	@Test
-	void testMvnWebAPI_fail_noParams3() throws MalformedURLException, IOException {
+	void testMvnWebAPIFailNoParams3() throws IOException {
 		final var connection = GetConnectionBuilder.getConnection("", "", null);
 		assertEquals(400, connection.getResponseCode());
 	}
@@ -88,11 +82,10 @@ public class ServerTests {
 	/**
 	 * Tests a valid request for creating a program model for a artifact in the maven standard repository
 	 *
-	 * @throws MalformedURLException
 	 * @throws IOException
 	 */
 	@Test
-	void testMvnWebAPI_success() throws MalformedURLException, IOException {
+	void testMvnWebAPISuccess() throws IOException {
 		final var connection = GetConnectionBuilder.getConnection("jakarta.xml.ws", "jakarta.xml.ws-api", "3.0.1");
 
 		assertEquals(200, connection.getResponseCode());
@@ -142,11 +135,9 @@ public class ServerTests {
 		 * @param version The artifact's version
 		 * @return A connection to the server
 		 * @throws IOException
-		 * @throws MalformedURLException
-		 * @throws ProtocolException
 		 */
 		private static HttpURLConnection getConnection(final String group, final String artifact,
-				final String version) throws IOException, MalformedURLException, ProtocolException {
+				final String version) throws IOException {
 			final var builder = new GetConnectionBuilder(LOCATION_MVN);
 			if (group != null) {
 				builder.appendParam("groupId=", group);
@@ -165,10 +156,8 @@ public class ServerTests {
 		 *
 		 * @return The opened connection
 		 * @throws IOException
-		 * @throws MalformedURLException
-		 * @throws ProtocolException
 		 */
-		private HttpURLConnection getConnection() throws IOException, MalformedURLException, ProtocolException {
+		private HttpURLConnection getConnection() throws IOException {
 			final var connection = (HttpURLConnection) new URL("http", DOMAIN, PORT, this.path.toString())
 					.openConnection();
 			connection.setRequestMethod("GET");
