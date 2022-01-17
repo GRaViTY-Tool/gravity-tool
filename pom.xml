@@ -58,7 +58,7 @@
     <module>implementation/org.gravity.tgg.modisco.uml</module>
     <module>implementation/org.gravity.tgg.pm.uml/</module>
     <module>implementation/org.gravity.typegraph.basic</module>
-    <module>implementation/org.gravity.typegraph.spl</module>
+    <module>implementation/org.gravity.typegraph.basic.ui</module>  <module>implementation/org.gravity.typegraph.spl</module>
     <module>implementation/org.gravity.umlsecrt</module>
     <module>implementation/org.gravity.variability.secpl</module>
     <module>tests/org.gravity.eclipse.tests</module>
