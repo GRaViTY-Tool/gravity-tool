@@ -3,19 +3,13 @@
 package org.gravity.tgg.pm.uml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.uml2.uml.Type;
-
 import org.gravity.tgg.pm.uml.Type2TAbstractType;
 import org.gravity.tgg.pm.uml.UmlPackage;
-
 import org.gravity.typegraph.basic.TAbstractType;
-
 import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -61,7 +55,6 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	 * @generated
 	 */
 	protected Type2TAbstractTypeImpl() {
-		super();
 	}
 
 	/**
@@ -79,17 +72,17 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Type getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject) source;
-			source = (Type) eResolveProxy(oldSource);
-			if (source != oldSource) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE,
-							oldSource, source));
+		if ((this.source != null) && this.source.eIsProxy()) {
+			final InternalEObject oldSource = (InternalEObject) this.source;
+			this.source = (Type) eResolveProxy(oldSource);
+			if ((this.source != oldSource) && eNotificationRequired()) {
+				eNotify(new ENotificationImpl(this, Notification.RESOLVE, UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE,
+						oldSource, this.source));
 			}
 		}
-		return source;
+		return this.source;
 	}
 
 	/**
@@ -98,60 +91,7 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	 * @generated
 	 */
 	public Type basicGetSource() {
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSource(Type newSource) {
-		Type oldSource = source;
-		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE, oldSource,
-					source));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TAbstractType getTarget() {
-		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject) target;
-			target = (TAbstractType) eResolveProxy(oldTarget);
-			if (target != oldTarget) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET,
-							oldTarget, target));
-			}
-		}
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TAbstractType basicGetTarget() {
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTarget(TAbstractType newTarget) {
-		TAbstractType oldTarget = target;
-		target = newTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET, oldTarget,
-					target));
+		return this.source;
 	}
 
 	/**
@@ -160,15 +100,74 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public void setSource(final Type newSource) {
+		final Type oldSource = this.source;
+		this.source = newSource;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE, oldSource,
+					this.source));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TAbstractType getTarget() {
+		if ((this.target != null) && this.target.eIsProxy()) {
+			final InternalEObject oldTarget = (InternalEObject) this.target;
+			this.target = (TAbstractType) eResolveProxy(oldTarget);
+			if ((this.target != oldTarget) && eNotificationRequired()) {
+				eNotify(new ENotificationImpl(this, Notification.RESOLVE, UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET,
+						oldTarget, this.target));
+			}
+		}
+		return this.target;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TAbstractType basicGetTarget() {
+		return this.target;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTarget(final TAbstractType newTarget) {
+		final TAbstractType oldTarget = this.target;
+		this.target = newTarget;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET, oldTarget,
+					this.target));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
 		case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
-			if (resolve)
+			if (resolve) {
 				return getSource();
+			}
 			return basicGetSource();
 		case UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET:
-			if (resolve)
+			if (resolve) {
 				return getTarget();
+			}
 			return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -180,7 +179,7 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
 			setSource((Type) newValue);
@@ -198,7 +197,7 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
 			setSource((Type) null);
@@ -216,16 +215,19 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
-			return source != null;
+			return this.source != null;
 		case UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET:
-			return target != null;
+			return this.target != null;
 		}
 		return super.eIsSet(featureID);
 	}
 	// <-- [user code injected with eMoflon]
-
+	@Override
+	public String toString() {
+		return super.toString() + " ("+getSource()+" <--> "+getTarget()	+ ")";
+	}
 	// [user code injected with eMoflon] -->
 } //Type2TAbstractTypeImpl

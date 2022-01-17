@@ -2,7 +2,6 @@ package org.gravity.tgg.modisco.pm;
 
 import static org.gravity.eclipse.io.ModelSaver.saveModel;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -32,7 +31,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
@@ -53,6 +52,7 @@ import org.moflon.tgg.algorithm.datastructures.SynchronizationProtocol;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.moflon.tgg.language.analysis.StaticAnalysis;
 import org.moflon.tgg.runtime.CorrespondenceModel;
+import org.moflon.tgg.runtime.PrecedenceStructure;
 
 /**
  * A converter for creating a program model from eclipse projects using MoDisco
@@ -66,7 +66,9 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	private static final String CORRESPONDENCE_MODEL_XMI = "pm_correspondence_model.xmi";
 
-	private static final String PROTOCOL_BIN = "pm_protocol.bin";
+	private static final String PROTOCOL_NAME = "pm_protocol";
+	private static final String PROTOCOL_BIN = PROTOCOL_NAME + ".bin";
+	private static final String PROTOCOL_XMI = PROTOCOL_NAME + ".xmi";
 
 	private final IJavaProject iJavaProject;
 
@@ -103,10 +105,11 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		GravityActivator.getDefault().addProject(project.getProject());
 
 		if (load) {
-			final SynchronizationProtocol protocol = getProtocol(project, set);
-			if (protocol != null) {
-				final CorrespondenceModel correspondenceModel = getCorrespondenceModel(project.getProject(), set);
-				if (correspondenceModel != null) {
+			final CorrespondenceModel correspondenceModel = getCorrespondenceModel(project.getProject(), set);
+			if (correspondenceModel != null) {
+				EcoreUtil.resolveAll(correspondenceModel);
+				final SynchronizationProtocol protocol = getProtocol(project, set);
+				if (protocol != null) {
 					setCorr(correspondenceModel);
 					setSrc(correspondenceModel.getSource());
 					setTrg(correspondenceModel.getTarget());
@@ -126,9 +129,13 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	private SynchronizationProtocol getProtocol(final IJavaProject project, final ResourceSet set)
 			throws IOException, CoreException {
 		final NullProgressMonitor monitor = new NullProgressMonitor();
-		final IFile protocolFile = getFolder(project.getProject(), monitor).getFile(PROTOCOL_BIN);
+		final IFolder folder = getFolder(project.getProject(), monitor);
+		IFile protocolFile = folder.getFile(PROTOCOL_BIN);
 		if (!protocolFile.exists()) {
-			return null;
+			protocolFile = folder.getFile(PROTOCOL_XMI);
+			if (!protocolFile.exists()) {
+				return null;
+			}
 		}
 		final URI uri = EMFUtil.getPlatformResourceURI(protocolFile);
 		Resource protocolResource;
@@ -145,7 +152,9 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			protocolFile.delete(true, monitor);
 			return null;
 		}
-		return (SynchronizationProtocol) protocolResource.getContents().get(0);
+		final SynchronizationProtocol synchronizationProtocol = new SynchronizationProtocol();
+		synchronizationProtocol.load((PrecedenceStructure) protocolResource.getContents().get(0));
+		return synchronizationProtocol;
 	}
 
 	/**
@@ -184,13 +193,19 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			this.src.eResource().unload();
 			this.src = null;
 		}
+		if (this.trg != null) {
+			this.trg.eResource().unload();
+			this.trg = null;
+		}
 		if (this.corr != null) {
 			this.corr.eResource().unload();
 			this.corr = null;
 		}
+		if (this.protocol != null) {
+			this.protocol = null;
+		}
 		this.changeSrc = null;
 		this.changeTrg = null;
-		this.protocol = null;
 		return true;
 	}
 
@@ -201,6 +216,19 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	@Override
 	public boolean convertProject(final Collection<IPath> libs, final IProgressMonitor monitor) {
+		if(this.load && (getTrg() != null) && (getSrc() != null) && (getCorr() != null)) {
+			final IProject project = this.iJavaProject.getProject();
+			try {
+				if(project.getModificationStamp() <= EclipseProjectUtil.getGravityFolder(project, monitor).getModificationStamp()) {
+					return true;
+				}
+			} catch (final IOException e) {
+				LOGGER.error(e.getMessage(), e);
+				discard();
+				clearChanges();
+			}
+		}
+
 		IProgressMonitor progressMonitor;
 		if (monitor == null) {
 			progressMonitor = new NullProgressMonitor();
@@ -468,7 +496,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			return false;
 		}
 		monitor.worked(1);
-		saveSynchronizationProtocol(folder.getFile(PROTOCOL_BIN).getFullPath().toString());
+		saveSynchronizationProtocol(folder.getFile(PROTOCOL_XMI).getFullPath().toString());
 		monitor.worked(1);
 		return true;
 	}
@@ -507,18 +535,6 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			}
 			resource.getContents().add(ps);
 			final Map<Object, Object> saveOptions = new HashMap<>();
-			final File file = new File(this.iJavaProject.getProject().getWorkspace().getRoot().getLocation().toFile(),
-					path);
-			if (!file.exists()) {
-				try {
-					final File parent = file.getParentFile();
-					if (parent.exists() || parent.mkdirs()) {
-						file.createNewFile();
-					}
-				} catch (final IOException e) {
-					LOGGER.error(e);
-				}
-			}
 			if (ps.getTripleMatches().size() > 100000) {
 				saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_FILE_BUFFER);
 			} else {
@@ -547,28 +563,6 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	@Override
 	public TypeGraph getTrg() {
 		return (TypeGraph) super.getTrg();
-	}
-
-	/**
-	 * Resets the converter to initial values
-	 */
-	private void reset() {
-		if (this.src != null) {
-			this.src.eResource().unload();
-			this.src = null;
-		}
-		if (this.trg != null) {
-			this.trg.eResource().unload();
-			this.trg = null;
-		}
-		if (this.corr != null) {
-			this.corr.eResource().unload();
-			this.corr = null;
-		}
-		if (this.protocol != null) {
-			this.protocol = null;
-		}
-		this.set = new ResourceSetImpl();
 	}
 
 	/**

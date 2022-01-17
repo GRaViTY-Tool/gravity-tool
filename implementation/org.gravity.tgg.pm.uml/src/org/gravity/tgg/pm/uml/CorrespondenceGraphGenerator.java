@@ -24,6 +24,10 @@ import org.moflon.tgg.runtime.CorrespondenceModel;
 public class CorrespondenceGraphGenerator {
 	private static final Logger LOGGER = Logger.getLogger(CorrespondenceGraphGenerator.class);
 
+	private CorrespondenceGraphGenerator() {
+		// This class should not be instantiated
+	}
+
 	public static CorrespondenceModel createModel(final IJavaProject javaProject, final IProgressMonitor monitor) {
 		final IProject project = javaProject.getProject();
 
@@ -46,12 +50,18 @@ public class CorrespondenceGraphGenerator {
 		}
 
 		try {
+			CorrespondenceModel correspondenceModel;
 			final IFile file = EclipseProjectUtil.getGravityFolder(project, monitor).getFile("bi_corr.xmi");
-			final CorrespondenceModel correspondenceModel = new CorrespondenceGraphCreator(umlCorr, pmCorr)
-					.createCorrespondenceGraph(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
-			correspondenceModel.setSource(umlCorr.getTarget());
-			correspondenceModel.setTarget(pmCorr.getTarget());
-			ModelSaver.saveModel(correspondenceModel, file, monitor);
+			final URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+			if (file.exists() && (file.getModificationStamp() >= project.getModificationStamp())) {
+				correspondenceModel = (CorrespondenceModel) pmCorr.eResource().getResourceSet().getResource(uri, true)
+						.getContents().get(0);
+			} else {
+				correspondenceModel = new CorrespondenceGraphCreator(umlCorr, pmCorr).createCorrespondenceGraph(uri);
+				correspondenceModel.setSource(umlCorr.getTarget());
+				correspondenceModel.setTarget(pmCorr.getTarget());
+				ModelSaver.saveModel(correspondenceModel, file, monitor);
+			}
 			return correspondenceModel;
 		} catch (IOException | InvocationTargetException e) {
 			LOGGER.error(e);

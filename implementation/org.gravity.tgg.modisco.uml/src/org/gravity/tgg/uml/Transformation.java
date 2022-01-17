@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.uml2.uml.Model;
@@ -51,6 +52,7 @@ import org.moflon.tgg.algorithm.delta.OnlineChangeDetector;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.moflon.tgg.language.analysis.StaticAnalysis;
 import org.moflon.tgg.runtime.CorrespondenceModel;
+import org.moflon.tgg.runtime.PrecedenceStructure;
 
 import carisma.profile.umlsec.UMLsecActivator;
 
@@ -68,7 +70,9 @@ public final class Transformation extends SynchronizationHelper {
 	/**
 	 * The name of the protocol file
 	 */
-	public static final String PROTOCOL_BIN = "uml_protocol.bin";
+	private static final String PROTOCOL_NAME = "uml_protocol";
+	public static final String PROTOCOL_BIN = PROTOCOL_NAME + ".bin";
+	public static final String PROTOCOL_XMI = PROTOCOL_NAME + ".xmi";
 
 	/**
 	 * The name of the correspondence model file
@@ -87,12 +91,15 @@ public final class Transformation extends SynchronizationHelper {
 
 	private final GravityModiscoProjectDiscoverer discoverer;
 
+	private final boolean load;
+
 	public Transformation(final IJavaProject javaProject, final Resource target) throws IOException, CoreException {
 		this(javaProject, target, true);
 	}
 
 	public Transformation(final IJavaProject javaProject, final Resource target, final boolean load)
 			throws CoreException, IOException {
+		this.load = load;
 		this.project = javaProject;
 		this.outputFolder = getFolder(javaProject.getProject(), new NullProgressMonitor());
 		if (!this.outputFolder.exists()) {
@@ -113,11 +120,11 @@ public final class Transformation extends SynchronizationHelper {
 		loadRulesFromProject();
 
 		if (load) {
-			final SynchronizationProtocol synchonizationProtocol = getProtocol(javaProject, this.set);
-			if (synchonizationProtocol != null) {
-				final CorrespondenceModel correspondenceModel = getCorrespondenceModel(javaProject.getProject(),
-						this.set);
-				if (correspondenceModel != null) {
+			final CorrespondenceModel correspondenceModel = getCorrespondenceModel(javaProject.getProject(), this.set);
+			if ((correspondenceModel != null)) {
+				EcoreUtil.resolveAll(correspondenceModel);
+				final SynchronizationProtocol synchonizationProtocol = getProtocol(javaProject, this.set);
+				if ((synchonizationProtocol != null)) {
 					setCorr(correspondenceModel);
 					setSrc(correspondenceModel.getSource());
 					setTrg(correspondenceModel.getTarget());
@@ -128,6 +135,14 @@ public final class Transformation extends SynchronizationHelper {
 		this.discoverer = new GravityModiscoProjectDiscoverer(this.set, load);
 	}
 
+	/**
+	 * A getter for the default UML folder of a project
+	 *
+	 * @param project The project for which the UML folder is requested
+	 * @param monitor A progress monitor
+	 * @return The GRaViTY UML folder of the project
+	 * @throws IOException If the gravity folder doesn't exists and cannot be created
+	 */
 	public static IFolder getFolder(final IProject project, final IProgressMonitor monitor) throws IOException {
 		return EclipseProjectUtil.getGravityFolder(project, monitor).getFolder(UML);
 	}
@@ -136,7 +151,7 @@ public final class Transformation extends SynchronizationHelper {
 		final String smaXmiURI = "platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.sma.xmi"; //$NON-NLS-1$
 		final Resource tggRulesResource = this.set.createResource(URI.createURI(smaXmiURI));
 		try (InputStream tggRulesStream = new URL(smaXmiURI).openConnection().getInputStream()) {
-			tggRulesResource.load(tggRulesStream, Collections.EMPTY_MAP);
+			tggRulesResource.load(tggRulesStream, Collections.emptyMap());
 		}
 
 		setRules((StaticAnalysis) tggRulesResource.getContents().get(0));
@@ -165,17 +180,21 @@ public final class Transformation extends SynchronizationHelper {
 	 */
 	public Model projectToModel(final boolean addUMLsec, final IProgressMonitor monitor)
 			throws TransformationFailedException, IOException {
-
-		final SubMonitor subMonitor = SubMonitor.convert(monitor, 100);
-
-		final Collection<IPath> libs  = new ArrayList<>();
-		if (addUMLsec) {
+		if(this.load && (getTrg() != null) && (getSrc() != null) && (getCorr() != null)) {
+			final IProject iproject = this.project.getProject();
 			try {
-				libs.add(AnnotationsActivator.applyUMLsecLib(this.project, subMonitor));
-			} catch (CoreException | IOException e) {
-				throw new TransformationFailedException(e);
+				if(iproject.getModificationStamp() <= EclipseProjectUtil.getGravityFolder(iproject, monitor).getModificationStamp()) {
+					return (Model) getTrg();
+				}
+			} catch (final IOException e) {
+				LOGGER.error(e.getMessage(), e);
+				unload();
+				clearChanges();
 			}
 		}
+
+		final SubMonitor subMonitor = SubMonitor.convert(monitor, 100);
+		final Collection<IPath> libs = getLibs(addUMLsec, subMonitor);
 		subMonitor.setWorkRemaining(95);
 		subMonitor.setTaskName("Discover MoDiscoModel");
 
@@ -199,7 +218,7 @@ public final class Transformation extends SynchronizationHelper {
 		try {
 			final Model model = modiscoToModel(mGravityModel, subMonitor);
 			if (GravityActivator.MEASURE_PERFORMANCE) {
-				GravityActivator.record("All:" + (System.currentTimeMillis() - start) + "ms");
+				GravityActivator.recordMessage("All:" + (System.currentTimeMillis() - start) + "ms");
 			}
 			if (addUMLsec) {
 				postprocessUMLsec(model);
@@ -209,6 +228,48 @@ public final class Transformation extends SynchronizationHelper {
 			mGravityModel.eResource().unload();
 			throw e;
 		}
+	}
+
+	/**
+	 * Calculates the libraries to consider in detail
+	 *
+	 * @param addUMLsec Whether the UMLsec lib should be added as dependency
+	 * @param monitor A progress monitor
+	 * @return The libs to consider, currently, none or only UMLsec iff added
+	 * @throws TransformationFailedException If the UMLsec lib cannot be added to the project
+	 */
+	private Collection<IPath> getLibs(final boolean addUMLsec, final SubMonitor monitor)
+			throws TransformationFailedException {
+		final Collection<IPath> libs = new ArrayList<>();
+		if (addUMLsec) {
+			try {
+				libs.add(AnnotationsActivator.applyUMLsecLib(this.project, monitor));
+			} catch (CoreException | IOException e) {
+				throw new TransformationFailedException(e);
+			}
+		}
+		return libs;
+	}
+
+	private boolean unload() {
+		if (this.src != null) {
+			this.src.eResource().unload();
+			this.src = null;
+		}
+		if (this.trg != null) {
+			this.trg.eResource().unload();
+			this.trg = null;
+		}
+		if (this.corr != null) {
+			this.corr.eResource().unload();
+			this.corr = null;
+		}
+		if (this.protocol != null) {
+			this.protocol = null;
+		}
+		this.changeSrc = null;
+		this.changeTrg = null;
+		return true;
 	}
 
 	public Model modiscoToModel(final MGravityModel mGravityModel, final IProgressMonitor monitor)
@@ -236,7 +297,7 @@ public final class Transformation extends SynchronizationHelper {
 		}
 		integrateForward();
 		if (GravityActivator.MEASURE_PERFORMANCE) {
-			GravityActivator.record("TGG:" + (System.currentTimeMillis() - start) + "ms");
+			GravityActivator.recordMessage("TGG:" + (System.currentTimeMillis() - start) + "ms");
 		}
 
 		subMonitor.setTaskName("Postprocess UML Model");
@@ -273,7 +334,7 @@ public final class Transformation extends SynchronizationHelper {
 			model.applyProfile(profile);
 			new UmlSecProcessor(model).processFwd();
 			if (GravityActivator.MEASURE_PERFORMANCE) {
-				GravityActivator.record("Postpocessing: " + (System.currentTimeMillis() - start) + "ms");
+				GravityActivator.recordMessage("Postpocessing: " + (System.currentTimeMillis() - start) + "ms");
 			}
 		} catch (final ProcessingException | IOException e) {
 			throw new TransformationFailedException(e);
@@ -340,7 +401,7 @@ public final class Transformation extends SynchronizationHelper {
 		if (!ModelSaver.saveModel(getCorr(), folder.getFile(CORRESPONDENCE_MODEL_XMI), monitor)) {
 			return false;
 		}
-		saveSynchronizationProtocol(folder.getFile(PROTOCOL_BIN));
+		saveSynchronizationProtocol(folder.getFile(PROTOCOL_XMI));
 		return true;
 	}
 
@@ -409,9 +470,13 @@ public final class Transformation extends SynchronizationHelper {
 	private SynchronizationProtocol getProtocol(final IJavaProject project, final ResourceSet set)
 			throws IOException, CoreException {
 		final NullProgressMonitor monitor = new NullProgressMonitor();
-		final IFile protocolFile = getFolder(project.getProject(), monitor).getFile(PROTOCOL_BIN);
+		final IFolder folder = getFolder(project.getProject(), monitor);
+		IFile protocolFile = folder.getFile(PROTOCOL_BIN);
 		if (!protocolFile.exists()) {
-			return null;
+			protocolFile = folder.getFile(PROTOCOL_XMI);
+			if (!protocolFile.exists()) {
+				return null;
+			}
 		}
 		try {
 			final URI uri = EMFUtil.getPlatformResourceURI(protocolFile);
@@ -421,9 +486,12 @@ public final class Transformation extends SynchronizationHelper {
 			} else {
 				protocolResource = new BinaryResourceImpl(uri);
 				set.getResources().add(protocolResource);
-				protocolResource.load(protocolFile.getContents(), Collections.emptyMap());
+				protocolResource.load(Collections.emptyMap());
 			}
-			return (SynchronizationProtocol) protocolResource.getContents().get(0);
+			final PrecedenceStructure ps = (PrecedenceStructure) protocolResource.getContents().get(0);
+			final SynchronizationProtocol synchronizationProtocol = new SynchronizationProtocol();
+			synchronizationProtocol.load(ps);
+			return synchronizationProtocol;
 		} catch (final IOException | NullPointerException e) {
 			protocolFile.delete(true, monitor);
 			return null;
