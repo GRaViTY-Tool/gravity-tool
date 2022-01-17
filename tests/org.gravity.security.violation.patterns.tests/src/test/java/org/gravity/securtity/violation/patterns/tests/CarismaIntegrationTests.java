@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.gravity.eclipse.util.EclipseProjectUtil;
@@ -16,8 +17,11 @@ import org.junit.Test;
 import carisma.core.Carisma;
 import carisma.core.analysis.Analysis;
 import carisma.core.analysis.CheckReference;
+import carisma.core.analysis.UIConnector;
+import carisma.core.analysis.result.StatusType;
+import carisma.core.checks.CheckDescriptor;
+import carisma.core.checks.CheckParameter;
 import carisma.core.checks.CheckRegistry;
-import carisma.ui.console.ConsoleUIConnector;
 
 /**
  *
@@ -27,6 +31,8 @@ import carisma.ui.console.ConsoleUIConnector;
  *
  */
 public class CarismaIntegrationTests {
+
+	protected static final Logger LOGGER = Logger.getLogger(CarismaIntegrationTests.class);
 
 	@Test
 	public void testCarismaIntegration() throws IOException, CoreException {
@@ -47,7 +53,38 @@ public class CarismaIntegrationTests {
 
 		final var analysis = new Analysis("Test CARiSMA Integration", "uml", uml);
 		analysis.getChecks().add(new CheckReference(SecurityViolationPattern.CARISMA_ID, true));
-		carisma.runAnalysis(analysis, new ConsoleUIConnector());
+		carisma.runAnalysis(analysis, new UIConnector() {
+
+			@Override
+			public void updateView() {
+				// Nothing to do
+			}
+
+			@Override
+			public int sendMessage(final String title, final String message, final StatusType type,
+					final String[] answers, final int defaultIndex) {
+				final var string = title + ": " + message;
+				switch (type) {
+				case INFO:
+					LOGGER.info(string);
+					break;
+				case WARNING:
+					LOGGER.warn(string);
+					break;
+				case ERROR:
+					LOGGER.error(string);
+					break;
+				}
+				return 0;
+			}
+
+			@Override
+			public <T extends CheckParameter> T askParameter(final CheckDescriptor checkDescriptor,
+					final T checkParameter) {
+				// No params used in this test
+				return null;
+			}
+		});
 		final var results = carisma.getAnalysisResults();
 		assertFalse(results.isEmpty());
 	}
