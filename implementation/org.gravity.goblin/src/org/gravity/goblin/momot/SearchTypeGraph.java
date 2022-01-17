@@ -11,6 +11,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.henshin.model.Unit;
+import org.gravity.eclipse.io.FileUtils;
 import org.gravity.goblin.EGraphUtil;
 import org.gravity.goblin.GoblinActivator;
 import org.gravity.goblin.SearchParameters;
@@ -211,7 +212,7 @@ public class SearchTypeGraph {
 			throws IOException {
 		final var index = module.lastIndexOf('/');
 		final var substring = index == -1 ? module : module.substring(index + 1);
-		final var file = Files.createTempFile(substring, "goblin");
+		final var file = FileUtils.createTempFile(substring, "goblin");
 		Files.copy(stream, file);
 		manager.addModule(file.toAbsolutePath().toString());
 	}

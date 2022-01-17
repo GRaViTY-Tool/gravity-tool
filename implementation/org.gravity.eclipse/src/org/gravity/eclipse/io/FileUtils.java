@@ -4,17 +4,17 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.util.LinkedList;
-import java.util.stream.Stream;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
+import org.gravity.eclipse.os.OperationSystem;
 
 /**
  *
@@ -38,10 +38,10 @@ public final class FileUtils {
 	 * @return true, if the endings have been replaced successfully
 	 * @throws IOException Iff the original file has been lost due to an error
 	 */
-	public static boolean changeToOSEncoding(File file) throws IOException {
+	public static boolean changeToOSEncoding(final File file) throws IOException {
 		File tempFile;
 		try {
-			tempFile = Files.createTempFile("gravity", null).toFile();
+			tempFile = createTempFile("gravity", null).toFile();
 			tempFile.deleteOnExit();
 		} catch (final IOException e) {
 			LOGGER.log(Level.ERROR, "Couldn't create temp file: " + e.getMessage(), e);
@@ -85,12 +85,12 @@ public final class FileUtils {
 	 * @throws IOException If the source file cannot be read or the target file
 	 *                     cannot be written
 	 */
-	public static void copy(File source, File target) throws IOException {
+	public static void copy(final File source, final File target) throws IOException {
 		if (!target.exists() && !target.createNewFile()) {
 			throw new IOException("Cannot create file: " + target);
 		}
-		try (PrintWriter stream = new PrintWriter(Files.newBufferedWriter(target.toPath(), StandardOpenOption.APPEND));
-				Stream<String> lines = Files.lines(source.toPath());) {
+		try (var stream = new PrintWriter(Files.newBufferedWriter(target.toPath(), StandardOpenOption.APPEND));
+				var lines = Files.lines(source.toPath());) {
 			lines.forEach(stream::println);
 		}
 	}
@@ -102,8 +102,8 @@ public final class FileUtils {
 	 * @return The contents of the stream as string
 	 * @throws IOException if an I/O error occurs.
 	 */
-	public static String getContentsAsString(InputStream stream) throws IOException {
-		final StringBuilder noComments = new StringBuilder();
+	public static String getContentsAsString(final InputStream stream) throws IOException {
+		final var noComments = new StringBuilder();
 
 		int nextInt;
 		while ((nextInt = stream.read()) != -1) {
@@ -119,8 +119,8 @@ public final class FileUtils {
 	 * @return The content of the file
 	 * @throws IOException If an I/O error occurs
 	 */
-	public static String getContentsAsString(File file) throws IOException {
-		try (InputStream stream = Files.newInputStream(file.toPath())) {
+	public static String getContentsAsString(final File file) throws IOException {
+		try (var stream = Files.newInputStream(file.toPath())) {
 			return getContentsAsString(stream);
 		}
 	}
@@ -136,8 +136,8 @@ public final class FileUtils {
 	 */
 	public static Path extractToTmpFile(final String bundle, final String folder, final String file)
 			throws IOException {
-		final URL image = Platform.getBundle(bundle).getEntry(folder + File.separator + file);
-		final Path tmp = Files.createTempFile(file, "");
+		final var image = Platform.getBundle(bundle).getEntry(folder + File.separator + file);
+		final var tmp = createTempFile(file, "");
 		Files.copy(image.openStream(), tmp, StandardCopyOption.REPLACE_EXISTING);
 		tmp.toFile().deleteOnExit();
 		return tmp;
@@ -151,13 +151,13 @@ public final class FileUtils {
 	 * @param filename The file name
 	 * @return The match
 	 */
-	public static File findRecursive(File folder, String filename) {
+	public static File findRecursive(final File folder, final String filename) {
 		File nextRoot = null;
-		final LinkedList<File> queue = new LinkedList<>();
+		final var queue = new LinkedList<File>();
 		queue.add(folder);
 		while (!queue.isEmpty()) {
-			final File tmp = queue.poll();
-			final File tmpSubProject = new File(tmp, filename);
+			final var tmp = queue.poll();
+			final var tmpSubProject = new File(tmp, filename);
 			if (tmpSubProject.exists()) {
 				nextRoot = tmpSubProject;
 				break;
@@ -178,9 +178,9 @@ public final class FileUtils {
 	 * @param directoryPath - The path where the file will be created
 	 * @return - The new File with the given path
 	 */
-	public static File createDirectory(String directoryPath) {
+	public static File createDirectory(final String directoryPath) {
 		try {
-			final File dir = new File(directoryPath);
+			final var dir = new File(directoryPath);
 			if (dir.exists()) {
 				return dir;
 			}
@@ -200,8 +200,8 @@ public final class FileUtils {
 	 * @param file The file
 	 * @return true, iff the file has been deleted successfully
 	 */
-	public static boolean recursiveDelete(File file) {
-		boolean success = true;
+	public static boolean recursiveDelete(final File file) {
+		var success = true;
 		if (file.exists()) {
 			if (file.isDirectory()) {
 				for (final File f : file.listFiles()) {
@@ -225,7 +225,56 @@ public final class FileUtils {
 	 * @return
 	 * @return true, iff the file has been deleted successfully
 	 */
-	public static boolean recursiveDelete(String file) {
+	public static boolean recursiveDelete(final String file) {
 		return recursiveDelete(new File(file));
+	}
+
+	/**
+	 * Creates a temporary directory with secure file permissions
+	 *
+	 * @param name The name of the temporary directory
+	 * @return The directory
+	 * @throws IOException If creating the directory failed or the file permissions
+	 *                     cannot be set
+	 */
+	public static Path createTempDirectory(final String name) throws IOException {
+		Path tmp;
+		if (OperationSystem.os == OperationSystem.WINDOWS) {
+			tmp = Files.createTempDirectory(name);
+			final var file = tmp.toFile();
+			if (!file.setReadable(true, true) && !file.setWritable(true, true) && !file.setExecutable(true, true)) {
+				Files.deleteIfExists(tmp);
+				throw new IOException("Cannot set the permissions for directory: " + file.getAbsolutePath());
+			}
+		} else {
+			final var attr = PosixFilePermissions.asFileAttribute(PosixFilePermissions.fromString("rwx------"));
+			tmp = Files.createTempDirectory(name, attr);
+		}
+		return tmp;
+	}
+
+	/**
+	 * Creates a temporary file with secure file permissions
+	 *
+	 * @param prefix the prefix string to be used in generating the file's name; may be null
+	 * @param suffix the suffix string to be used in generating the file's name; may be null, in which case ".tmp" is used
+	 * @return The directory
+	 * @throws IOException If creating the file failed or the file permissions
+	 *                     cannot be set
+	 */
+	public static Path createTempFile(final String prefix, final String suffix) throws IOException {
+		Path tmp;
+		if (OperationSystem.os == OperationSystem.WINDOWS) {
+			tmp = Files.createTempFile(prefix, suffix);
+			final var file = tmp.toFile();
+			if (!file.setReadable(true, true) && !file.setWritable(true, true) && !file.setExecutable(true, true)) {
+				Files.deleteIfExists(tmp);
+				throw new IOException("Cannot set the permissions for file: " + file.getAbsolutePath());
+			}
+		} else {
+			final var attr = PosixFilePermissions.asFileAttribute(PosixFilePermissions.fromString("rwx------"));
+			tmp = Files.createTempFile(prefix, suffix, attr);
+		}
+		return tmp;
 	}
 }

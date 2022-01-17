@@ -2,10 +2,10 @@ package org.gravity.headless;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 
 import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
+import org.gravity.eclipse.io.FileUtils;
 import org.gravity.headless.webapi.impl.ProgramModelApiServiceImpl;
 
 /**
@@ -40,7 +40,7 @@ public class GravityServer {
 	 */
 	public static GravityServer launchServer(File cache, final int maxRepositories, final int maxModels, final String domain, final int port) throws IOException {
 		if((maxModels > 0) && ((cache == null) || !cache.exists())) {
-			cache = Files.createTempDirectory("gravity-cache").toFile();
+			cache = FileUtils.createTempDirectory("gravity-cache").toFile();
 		}
 		final var implementor = new ProgramModelApiServiceImpl();
 		implementor.setMaxModels(maxModels);

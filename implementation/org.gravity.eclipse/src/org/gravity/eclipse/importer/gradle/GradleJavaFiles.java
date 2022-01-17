@@ -9,6 +9,8 @@ import java.nio.file.StandardOpenOption;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.gravity.eclipse.io.FileUtils;
+
 /**
  * This class can be used to insert a print java files task into a gradle
  * project and to read the results
@@ -30,14 +32,14 @@ public class GradleJavaFiles {
 	 * @param path The path to the build.gradle file
 	 * @throws IOException if an I/O error occurs manipulating the file
 	 */
-	public GradleJavaFiles(Path path) throws IOException {
+	public GradleJavaFiles(final Path path) throws IOException {
 		this.path = path;
-		this.output = Files.createTempFile("gravityGradleJava", "");
+		this.output = FileUtils.createTempFile("gravityGradleJava", "");
 		this.original = manipuateBuildFile(path);
 	}
 
 	public Set<Path> getJavaFiles() throws IOException, GradleImportException {
-		final boolean success = GradleBuild.build(this.path.getParent().toFile(), BUILD_TARGET);
+		final var success = GradleBuild.build(this.path.getParent().toFile(), BUILD_TARGET);
 		if(!success) {
 			throw new GradleImportException("Couldn't get Java files");
 		}
@@ -56,10 +58,10 @@ public class GradleJavaFiles {
 	 * @throws IOException if an I/O error occurs manipulating the file
 	 * @return path to a backup of the original file
 	 */
-	private Path manipuateBuildFile(Path build) throws IOException {
-		final Path backupLocation = Files.copy(build, Files.createTempFile("backupBuildGardle", ""),
+	private Path manipuateBuildFile(final Path build) throws IOException {
+		final var backupLocation = Files.copy(build, FileUtils.createTempFile("backupBuildGardle", ""),
 				StandardCopyOption.REPLACE_EXISTING);
-		final String taskCode = "\n" + "task " + BUILD_TARGET + " {\n" + "  def outputFile = file(\"" + this.output.toString().replace("\\", "/") + "\")\n"
+		final var taskCode = "\n" + "task " + BUILD_TARGET + " {\n" + "  def outputFile = file(\"" + this.output.toString().replace("\\", "/") + "\")\n"
 				+ "  outputs.file  outputFile\n" + "  doLast {\n" + "    subprojects { project ->\n"
 				+ "      project.plugins.withType(JavaPlugin) {\n"
 				+ "        project.sourceSets.main.allJava.collect { sourceFile ->\n"
