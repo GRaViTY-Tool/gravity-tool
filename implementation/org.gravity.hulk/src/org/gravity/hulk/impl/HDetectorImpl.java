@@ -48,7 +48,7 @@ import org.moflon.core.dfs.impl.NodeImpl;
  */
 public abstract class HDetectorImpl extends NodeImpl implements HDetector {
 
-	private static Logger LOGGER = Logger.getLogger(HDetector.class);
+	private static final Logger LOGGER = Logger.getLogger(HDetector.class);
 
 	/**
 	 * The cached value of the '{@link #getHAnnotation() <em>HAnnotation</em>}' reference list.
@@ -323,6 +323,7 @@ public abstract class HDetectorImpl extends NodeImpl implements HDetector {
 			final var value = HulkDetector.getDefaultThresholds().get(clazz.getName());
 			if((value == null) || value.isBlank()) {
 				LOGGER.error("No default value for: "+clazz.getName());
+				return Double.NaN;
 			}
 			return Double.valueOf(value);
 		}
