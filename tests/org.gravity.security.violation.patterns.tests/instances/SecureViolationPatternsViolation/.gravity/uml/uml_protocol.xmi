@@ -1,0 +1,2733 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:PrecedenceStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <tripleMatches children="//@tripleMatches.23" ruleName="PrimitiveTypeBoolean">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.4"/>
+    <nodeMappings nodeName="a2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="../modisco.xmi#//@orphanTypes.4"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../modisco.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    <correspondenceElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.0"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <createdElements href="../modisco.xmi#//@orphanTypes.4"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.35" ruleName="PrimitiveTypeChar" number="1">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.6"/>
+    <nodeMappings nodeName="a2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="../modisco.xmi#//@orphanTypes.6"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.1"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.1"/>
+      <trg href="../modisco.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    <correspondenceElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.1"/>
+    <correspondenceElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.1"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <createdElements href="../modisco.xmi#//@orphanTypes.6"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.16 //@tripleMatches.10" ruleName="MethodDec2OperationWithModifier" number="2">
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.7"/>
+    <nodeMappings nodeName="m2f">
+      <node href="uml_correspondence_model.xmi#//@correspondences.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    </nodeMappings>
+    <nodeMappings nodeName="b2e">
+      <node href="uml_correspondence_model.xmi#//@correspondences.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="modifier">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.2"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.3"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.3"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.2"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.2"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.2"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.3"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.3"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.2"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.2"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.4"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.3"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.17 //@tripleMatches.12" ruleName="MethodDec2OperationWithModifier" number="3">
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.6"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.7"/>
+    <nodeMappings nodeName="m2f">
+      <node href="uml_correspondence_model.xmi#//@correspondences.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    </nodeMappings>
+    <nodeMappings nodeName="b2e">
+      <node href="uml_correspondence_model.xmi#//@correspondences.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="modifier">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.4"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.5"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.5"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.4"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.4"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.5"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.4"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.5"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.2"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.5"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.4"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.5"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.37" ruleName="PrimitiveTypeDouble" number="4">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.3"/>
+    <nodeMappings nodeName="a2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="../modisco.xmi#//@orphanTypes.3"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.6"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.6"/>
+      <trg href="../modisco.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    <correspondenceElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.6"/>
+    <correspondenceElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    <createdElements href="../modisco.xmi#//@orphanTypes.3"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.6"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.28" ruleName="PrimitiveTypeInt" number="5">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.0"/>
+    <nodeMappings nodeName="a2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="../modisco.xmi#//@orphanTypes.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.7"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.7"/>
+      <trg href="../modisco.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    <correspondenceElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.7"/>
+    <correspondenceElements href="#//@tripleMatches.5/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    <createdElements href="../modisco.xmi#//@orphanTypes.0"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.7"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.33" ruleName="PrimitiveTypeByte" number="6">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.8"/>
+    <nodeMappings nodeName="a2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="../modisco.xmi#//@orphanTypes.8"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="../modisco.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.8"/>
+    <correspondenceElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.6/@containedEdges.1"/>
+    <createdElements href="../modisco.xmi#//@orphanTypes.8"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.8"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.21" ruleName="PrimitiveTypeLong" number="7">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.1"/>
+    <nodeMappings nodeName="a2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.9"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="../modisco.xmi#//@orphanTypes.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.9"/>
+      <trg href="../modisco.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.9"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    <correspondenceElements href="#//@tripleMatches.7/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.9"/>
+    <correspondenceElements href="#//@tripleMatches.7/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.0"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.9"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.1"/>
+    <createdElements href="../modisco.xmi#//@orphanTypes.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.27" ruleName="PrimitiveTypeFloat" number="8">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.2"/>
+    <nodeMappings nodeName="a2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.10"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="../modisco.xmi#//@orphanTypes.2"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.10"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.10"/>
+      <trg href="../modisco.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    <correspondenceElements href="#//@tripleMatches.8/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.10"/>
+    <correspondenceElements href="#//@tripleMatches.8/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.0"/>
+    <createdElements href="../modisco.xmi#//@orphanTypes.2"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.10"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.1"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.38 //@tripleMatches.36 //@tripleMatches.10 //@tripleMatches.31 //@tripleMatches.25" ruleName="ClassDecWithModifier2Class" number="9">
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <sourceElements href="#//@tripleMatches.9/@containedEdges.6"/>
+    <sourceElements href="#//@tripleMatches.9/@containedEdges.7"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <nodeMappings nodeName="m2f">
+      <node href="uml_correspondence_model.xmi#//@correspondences.11"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="b2e">
+      <node href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="modifier">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.11"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.11"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.11"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.4"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.5"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.1"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.11"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.2"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.10/@containedEdges.4 //@tripleMatches.10/@containedEdges.5 //@tripleMatches.10/@containedEdges.6 //@tripleMatches.10/@containedEdges.7" ruleName="OperationInClass" number="10">
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.8"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.9"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.1"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.3"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.3"/>
+    <nodeMappings nodeName="bd2ne">
+      <node href="uml_correspondence_model.xmi#//@correspondences.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c2c">
+      <node href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.3"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.3"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedOperation">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="class">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.6"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.3"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.12 //@tripleMatches.34 //@tripleMatches.31 //@tripleMatches.30 //@tripleMatches.22" ruleName="ClassDecWithModifier2Class" number="11">
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.7"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <nodeMappings nodeName="m2f">
+      <node href="uml_correspondence_model.xmi#//@correspondences.13"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </nodeMappings>
+    <nodeMappings nodeName="b2e">
+      <node href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="modifier">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.13"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.13"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <correspondenceElements href="#//@tripleMatches.11/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.11/@containedEdges.2"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    <correspondenceElements href="#//@tripleMatches.11/@containedEdges.4"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.13"/>
+    <correspondenceElements href="#//@tripleMatches.11/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.1"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.3"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.4"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.13"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.12/@containedEdges.4 //@tripleMatches.12/@containedEdges.5 //@tripleMatches.12/@containedEdges.6 //@tripleMatches.12/@containedEdges.7" ruleName="OperationInClass" number="12">
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <sourceElements href="#//@tripleMatches.12/@containedEdges.8"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <sourceElements href="#//@tripleMatches.12/@containedEdges.9"/>
+    <contextElements href="#//@tripleMatches.12/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.12/@containedEdges.1"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <contextElements href="#//@tripleMatches.12/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.12/@containedEdges.3"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.5"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <nodeMappings nodeName="bd2ne">
+      <node href="uml_correspondence_model.xmi#//@correspondences.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c2c">
+      <node href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.5"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.5"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedOperation">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="class">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <targetElements href="#//@tripleMatches.12/@containedEdges.5"/>
+    <targetElements href="#//@tripleMatches.12/@containedEdges.6"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <correspondenceElements href="#//@tripleMatches.12/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.12/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.12/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.12/@containedEdges.3"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.5"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.32" ruleName="PrimitiveTypeShort" number="13">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.7"/>
+    <nodeMappings nodeName="a2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.15"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="../modisco.xmi#//@orphanTypes.7"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.15"/>
+      <trg href="../modisco.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.15"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    <correspondenceElements href="#//@tripleMatches.13/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.15"/>
+    <correspondenceElements href="#//@tripleMatches.13/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.0"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.15"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    <createdElements href="../modisco.xmi#//@orphanTypes.7"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.38" ruleName="ConstructorDec2Operation" number="14">
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="b2e">
+      <node href="uml_correspondence_model.xmi#//@correspondences.16"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="comment">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier/@ownedComment.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.16"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.16"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="annotatedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier/@ownedComment.0"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedComment">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier/@ownedComment.0"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier/@ownedComment.0"/>
+    <targetElements href="#//@tripleMatches.14/@containedEdges.2"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <targetElements href="#//@tripleMatches.14/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.14/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.14/@containedEdges.1"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.16"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.1"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier/@ownedComment.0"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.2"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.16"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.17 //@tripleMatches.16 //@tripleMatches.26" ruleName="PrimitiveTypeVoid" number="15">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.5"/>
+    <nodeMappings nodeName="a2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="../modisco.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.17"/>
+      <trg href="../modisco.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.17"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    <correspondenceElements href="#//@tripleMatches.15/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.15/@containedEdges.1"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <createdElements href="../modisco.xmi#//@orphanTypes.5"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches ruleName="AbstractTypeAccess2ReturnParam" number="16">
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.11"/>
+    <sourceElements href="../modisco.xmi#//@orphanTypes.5"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.12"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.13"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="#//@tripleMatches.16/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.16/@containedEdges.1"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.5"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.3"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="#//@tripleMatches.16/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.16/@containedEdges.3"/>
+    <nodeMappings nodeName="returnParam">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod/@ownedParameter.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="method">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jType">
+      <node href="../modisco.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="m2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ta2p">
+      <node href="uml_correspondence_model.xmi#//@correspondences.18"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ne2ne">
+      <node href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.3"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.3"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.17"/>
+      <trg href="../modisco.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.17"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="../modisco.xmi#//@orphanTypes.5"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod/@ownedParameter.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.18"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+      <trg href="../modisco.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.18"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod/@ownedParameter.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod/@ownedParameter.0"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="../modisco.xmi#//@orphanTypes.5"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+      <trg href="../modisco.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod/@ownedParameter.0"/>
+    <targetElements href="#//@tripleMatches.16/@containedEdges.5"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <targetElements href="#//@tripleMatches.16/@containedEdges.10"/>
+    <correspondenceElements href="#//@tripleMatches.16/@containedEdges.6"/>
+    <correspondenceElements href="#//@tripleMatches.16/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.16/@containedEdges.1"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    <correspondenceElements href="#//@tripleMatches.16/@containedEdges.9"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.18"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.3"/>
+    <correspondenceElements href="#//@tripleMatches.16/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.16/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.4"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod/@ownedParameter.0"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.8"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.9"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.18"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.10"/>
+  </tripleMatches>
+  <tripleMatches ruleName="AbstractTypeAccess2ReturnParam" number="17">
+    <sourceElements href="#//@tripleMatches.17/@containedEdges.11"/>
+    <sourceElements href="#//@tripleMatches.17/@containedEdges.12"/>
+    <sourceElements href="../modisco.xmi#//@orphanTypes.5"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
+    <sourceElements href="#//@tripleMatches.17/@containedEdges.13"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.5"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <contextElements href="#//@tripleMatches.17/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.17/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.17/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.17/@containedEdges.3"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.5"/>
+    <nodeMappings nodeName="returnParam">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod/@ownedParameter.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="method">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jType">
+      <node href="../modisco.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="m2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ta2p">
+      <node href="uml_correspondence_model.xmi#//@correspondences.19"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ne2ne">
+      <node href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.5"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.5"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.17"/>
+      <trg href="../modisco.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.17"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod/@ownedParameter.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod/@ownedParameter.0"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.19"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod/@ownedParameter.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="../modisco.xmi#//@orphanTypes.5"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
+      <trg href="../modisco.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.19"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="../modisco.xmi#//@orphanTypes.5"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
+      <trg href="../modisco.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.17/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.17/@containedEdges.6"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod/@ownedParameter.0"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.7"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.19"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.2"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.5"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.10"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.8"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod/@ownedParameter.0"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.19"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.9"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.10"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.22" ruleName="FieldDec2Property_WithModifier" number="18">
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.8"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.9"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.10"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.11"/>
+    <nodeMappings nodeName="m2f">
+      <node href="uml_correspondence_model.xmi#//@correspondences.20"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="b2e">
+      <node href="uml_correspondence_model.xmi#//@correspondences.21"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="modifier">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="vdf">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.21"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.20"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="variablesContainer">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="fragments">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.20"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.21"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="fragments">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="variablesContainer">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.6"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.7"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.21"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.20"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.0"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.1"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.2"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.6"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.7"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.21"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.20"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.37 //@tripleMatches.35 //@tripleMatches.33 //@tripleMatches.32 //@tripleMatches.29 //@tripleMatches.28 //@tripleMatches.27 //@tripleMatches.26 //@tripleMatches.24 //@tripleMatches.23 //@tripleMatches.21 //@tripleMatches.20" ruleName="JavaModel2UmlModelRule" number="19">
+    <sourceElements href="../modisco.xmi#/"/>
+    <nodeMappings nodeName="jm2commonTypes">
+      <node href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jm2um2">
+      <node href="uml_correspondence_model.xmi#//@correspondences.25"/>
+    </nodeMappings>
+    <nodeMappings nodeName="commonTypes">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="sourceRefModel">
+      <node href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    </nodeMappings>
+    <nodeMappings nodeName="rootModel">
+      <node href="SecureViolationPatternsViolation.uml#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jm2um3">
+      <node href="uml_correspondence_model.xmi#//@correspondences.24"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlModel">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+    </nodeMappings>
+    <nodeMappings nodeName="javaModel">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="externalModel">
+      <node href="SecureViolationPatternsViolation.uml#//externals"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jm2um">
+      <node href="uml_correspondence_model.xmi#//@correspondences.23"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.25"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#/"/>
+      <trg href="SecureViolationPatternsViolation.uml#//externals"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.24"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#/"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.23"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.23"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#/"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.25"/>
+      <trg href="SecureViolationPatternsViolation.uml#//externals"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.24"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#/"/>
+    <targetElements href="#//@tripleMatches.19/@containedEdges.5"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    <targetElements href="#//@tripleMatches.19/@containedEdges.1"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//externals"/>
+    <targetElements href="#//@tripleMatches.19/@containedEdges.8"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <targetElements href="#//@tripleMatches.19/@containedEdges.10"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.24"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.25"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.6"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.7"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.2"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.23"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.9"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.4"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.11"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.24"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.0"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.25"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.2"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//externals"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.4"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#/"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.7"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.23"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.9"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.10"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.11"/>
+    <createdElements href="../modisco.xmi#/"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.34" ruleName="CompilationUnit2Artifact" number="20">
+    <sourceElements href="../modisco.xmi#//@compilationUnits.1"/>
+    <sourceElements href="#//@tripleMatches.20/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.24"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    <contextElements href="#//@tripleMatches.20/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.20/@containedEdges.1"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <nodeMappings nodeName="artifact">
+      <node href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.26"/>
+    </nodeMappings>
+    <nodeMappings nodeName="compilationUnit">
+      <node href="../modisco.xmi#//@compilationUnits.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jm">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="um">
+      <node href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jm2um">
+      <node href="uml_correspondence_model.xmi#//@correspondences.24"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.24"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.24"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.26"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//source%20references"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnits">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@compilationUnits.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.26"/>
+      <trg href="../modisco.xmi#//@compilationUnits.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnits">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@compilationUnits.1"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.20/@containedEdges.3"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.24"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.26"/>
+    <correspondenceElements href="#//@tripleMatches.20/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.20/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.20/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.20/@containedEdges.5"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.26"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.3"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+    <createdElements href="../modisco.xmi#//@compilationUnits.1"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.21/@containedEdges.4 //@tripleMatches.21/@containedEdges.5" ruleName="OrphandedPrimitive2PrimitiveType" number="21">
+    <sourceElements href="#//@tripleMatches.21/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <sourceElements href="../modisco.xmi#//@orphanTypes.1"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <contextElements href="#//@tripleMatches.21/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.21/@containedEdges.1"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <contextElements href="#//@tripleMatches.21/@containedEdges.2"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.9"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <contextElements href="#//@tripleMatches.21/@containedEdges.3"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.1"/>
+    <nodeMappings nodeName="umlPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jPackage">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@orphanTypes.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="md2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.9"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp2up">
+      <node href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.9"/>
+      <trg href="../modisco.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.9"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.21/@containedEdges.5"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="#//@tripleMatches.21/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.21/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.21/@containedEdges.2"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.9"/>
+    <correspondenceElements href="#//@tripleMatches.21/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.22/@containedEdges.4 //@tripleMatches.22/@containedEdges.5 //@tripleMatches.22/@containedEdges.6" ruleName="FieldDec2Property4Class" number="22">
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <sourceElements href="#//@tripleMatches.22/@containedEdges.7"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <sourceElements href="#//@tripleMatches.22/@containedEdges.8"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <contextElements href="#//@tripleMatches.22/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.22/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.22/@containedEdges.2"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <contextElements href="#//@tripleMatches.22/@containedEdges.3"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.21"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uOwnerType">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jOwnerType">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="nd2ne">
+      <node href="uml_correspondence_model.xmi#//@correspondences.21"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jo2uo">
+      <node href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.21"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.21"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedAttribute">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <targetElements href="#//@tripleMatches.22/@containedEdges.6"/>
+    <correspondenceElements href="#//@tripleMatches.22/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.22/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.22/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.22/@containedEdges.3"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.21"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.23/@containedEdges.4 //@tripleMatches.23/@containedEdges.5" ruleName="OrphandedPrimitive2PrimitiveType" number="23">
+    <sourceElements href="#//@tripleMatches.23/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#//@orphanTypes.4"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <contextElements href="#//@tripleMatches.23/@containedEdges.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.4"/>
+    <contextElements href="#//@tripleMatches.23/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.23/@containedEdges.2"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <contextElements href="#//@tripleMatches.23/@containedEdges.3"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.0"/>
+    <nodeMappings nodeName="umlPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jPackage">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@orphanTypes.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="md2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp2up">
+      <node href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../modisco.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <targetElements href="#//@tripleMatches.23/@containedEdges.5"/>
+    <correspondenceElements href="#//@tripleMatches.23/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="#//@tripleMatches.23/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.23/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.23/@containedEdges.3"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.25" ruleName="CompilationUnit2Artifact" number="24">
+    <sourceElements href="../modisco.xmi#//@compilationUnits.0"/>
+    <sourceElements href="#//@tripleMatches.24/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.24"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    <contextElements href="#//@tripleMatches.24/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.24/@containedEdges.1"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <nodeMappings nodeName="artifact">
+      <node href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.27"/>
+    </nodeMappings>
+    <nodeMappings nodeName="compilationUnit">
+      <node href="../modisco.xmi#//@compilationUnits.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jm">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="um">
+      <node href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jm2um">
+      <node href="uml_correspondence_model.xmi#//@correspondences.24"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.24"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.24"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.27"/>
+      <trg href="../modisco.xmi#//@compilationUnits.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnits">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@compilationUnits.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.27"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//source%20references"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnits">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@compilationUnits.0"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    <targetElements href="#//@tripleMatches.24/@containedEdges.5"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.24"/>
+    <correspondenceElements href="#//@tripleMatches.24/@containedEdges.2"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.27"/>
+    <correspondenceElements href="#//@tripleMatches.24/@containedEdges.4"/>
+    <correspondenceElements href="#//@tripleMatches.24/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.24/@containedEdges.1"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+    <createdElements href="#//@tripleMatches.24/@containedEdges.2"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.27"/>
+    <createdElements href="../modisco.xmi#//@compilationUnits.0"/>
+    <createdElements href="#//@tripleMatches.24/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.24/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.24/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches ruleName="Manifestation4CompilationUnit2Artifact" number="25">
+    <sourceElements href="#//@tripleMatches.25/@containedEdges.7"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="../modisco.xmi#//@compilationUnits.0"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <contextElements href="#//@tripleMatches.25/@containedEdges.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.27"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="../modisco.xmi#//@compilationUnits.0"/>
+    <contextElements href="#//@tripleMatches.25/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.25/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.25/@containedEdges.3"/>
+    <nodeMappings nodeName="artifact">
+      <node href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+    </nodeMappings>
+    <nodeMappings nodeName="manifestation">
+      <node href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java/@manifestation.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.27"/>
+    </nodeMappings>
+    <nodeMappings nodeName="compilationUnit">
+      <node href="../modisco.xmi#//@compilationUnits.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="t2c">
+      <node href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classifier">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="type">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.27"/>
+      <trg href="../modisco.xmi#//@compilationUnits.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.27"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="types">
+      <src href="../modisco.xmi#//@compilationUnits.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="manifestation">
+      <src href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java/@manifestation.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="utilizedElement">
+      <src href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java/@manifestation.0"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="types">
+      <src href="../modisco.xmi#//@compilationUnits.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <targetElements href="#//@tripleMatches.25/@containedEdges.5"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java/@manifestation.0"/>
+    <targetElements href="#//@tripleMatches.25/@containedEdges.6"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <correspondenceElements href="#//@tripleMatches.25/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.27"/>
+    <correspondenceElements href="#//@tripleMatches.25/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.25/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.25/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.5"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java/@manifestation.0"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.6"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.26/@containedEdges.4 //@tripleMatches.26/@containedEdges.5" ruleName="OrphandedPrimitive2PrimitiveType" number="26">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.5"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.26/@containedEdges.6"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.5"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <contextElements href="#//@tripleMatches.26/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.26/@containedEdges.1"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <contextElements href="#//@tripleMatches.26/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.26/@containedEdges.3"/>
+    <nodeMappings nodeName="umlPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jPackage">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="md2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp2up">
+      <node href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.17"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.17"/>
+      <trg href="../modisco.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <targetElements href="#//@tripleMatches.26/@containedEdges.4"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.17"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="#//@tripleMatches.26/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.26/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.26/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.26/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.27/@containedEdges.4 //@tripleMatches.27/@containedEdges.5" ruleName="OrphandedPrimitive2PrimitiveType" number="27">
+    <sourceElements href="#//@tripleMatches.27/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#//@orphanTypes.2"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <contextElements href="#//@tripleMatches.27/@containedEdges.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.2"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.10"/>
+    <contextElements href="#//@tripleMatches.27/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.27/@containedEdges.2"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <contextElements href="#//@tripleMatches.27/@containedEdges.3"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <nodeMappings nodeName="umlPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jPackage">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@orphanTypes.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="md2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.10"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp2up">
+      <node href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.10"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.10"/>
+      <trg href="../modisco.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.27/@containedEdges.5"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    <correspondenceElements href="#//@tripleMatches.27/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.10"/>
+    <correspondenceElements href="#//@tripleMatches.27/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.27/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.27/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.28/@containedEdges.4 //@tripleMatches.28/@containedEdges.5" ruleName="OrphandedPrimitive2PrimitiveType" number="28">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.0"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.28/@containedEdges.6"/>
+    <contextElements href="#//@tripleMatches.28/@containedEdges.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <contextElements href="#//@tripleMatches.28/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.28/@containedEdges.2"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.7"/>
+    <contextElements href="#//@tripleMatches.28/@containedEdges.3"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <nodeMappings nodeName="umlPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jPackage">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@orphanTypes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="md2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp2up">
+      <node href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.7"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.7"/>
+      <trg href="../modisco.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    <targetElements href="#//@tripleMatches.28/@containedEdges.4"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <correspondenceElements href="#//@tripleMatches.28/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="#//@tripleMatches.28/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.28/@containedEdges.2"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.7"/>
+    <correspondenceElements href="#//@tripleMatches.28/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.36 //@tripleMatches.31 //@tripleMatches.30" ruleName="JavaPackageToUMLPackage_underModel" number="29">
+    <sourceElements href="#//@tripleMatches.29/@containedEdges.7"/>
+    <sourceElements href="#//@tripleMatches.29/@containedEdges.8"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <contextElements href="#//@tripleMatches.29/@containedEdges.0"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+    <contextElements href="#//@tripleMatches.29/@containedEdges.1"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.23"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp">
+      <node href="../modisco.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="um">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp2up">
+      <node href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jm2um">
+      <node href="uml_correspondence_model.xmi#//@correspondences.23"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.23"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.23"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.28"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.28"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="model">
+      <src href="../modisco.xmi#//@ownedElements.0"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="model">
+      <src href="../modisco.xmi#//@ownedElements.0"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    <targetElements href="#//@tripleMatches.29/@containedEdges.2"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    <correspondenceElements href="#//@tripleMatches.29/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.29/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.29/@containedEdges.1"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.23"/>
+    <correspondenceElements href="#//@tripleMatches.29/@containedEdges.5"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    <createdElements href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    <createdElements href="#//@tripleMatches.29/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.29/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.29/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.29/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.29/@containedEdges.6"/>
+    <createdElements href="../modisco.xmi#//@ownedElements.0"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.30/@containedEdges.4 //@tripleMatches.30/@containedEdges.5 //@tripleMatches.30/@containedEdges.6 //@tripleMatches.30/@containedEdges.7" children="//@tripleMatches.31" ruleName="LinkTypeToPackage" number="30">
+    <sourceElements href="#//@tripleMatches.30/@containedEdges.8"/>
+    <sourceElements href="#//@tripleMatches.30/@containedEdges.9"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0"/>
+    <contextElements href="#//@tripleMatches.30/@containedEdges.0"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    <contextElements href="#//@tripleMatches.30/@containedEdges.1"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    <contextElements href="#//@tripleMatches.30/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.30/@containedEdges.3"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="../modisco.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </nodeMappings>
+    <nodeMappings nodeName="t2t">
+      <node href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="p2p">
+      <node href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.28"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.28"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedType">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="../modisco.xmi#//@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="../modisco.xmi#//@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.30/@containedEdges.4"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    <targetElements href="#//@tripleMatches.30/@containedEdges.5"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <correspondenceElements href="#//@tripleMatches.30/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.30/@containedEdges.1"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    <correspondenceElements href="#//@tripleMatches.30/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.30/@containedEdges.3"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeDependency2UsageDependency" number="31">
+    <sourceElements href="#//@tripleMatches.31/@containedEdges.14"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.31/@containedEdges.15"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.31/@containedEdges.16"/>
+    <contextElements href="#//@tripleMatches.31/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.31/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.31/@containedEdges.2"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    <contextElements href="#//@tripleMatches.31/@containedEdges.3"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <contextElements href="#//@tripleMatches.31/@containedEdges.4"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <contextElements href="#//@tripleMatches.31/@containedEdges.5"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    <contextElements href="#//@tripleMatches.31/@containedEdges.6"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    <contextElements href="#//@tripleMatches.31/@containedEdges.7"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="#//@tripleMatches.31/@containedEdges.8"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <contextElements href="#//@tripleMatches.31/@containedEdges.9"/>
+    <nodeMappings nodeName="mTrgType">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mPackage">
+      <node href="../modisco.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uUsage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/@packagedElement.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </nodeMappings>
+    <nodeMappings nodeName="src2Src">
+      <node href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mSrcType">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uSrcType">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </nodeMappings>
+    <nodeMappings nodeName="trg2Trg">
+      <node href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uTrgType">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="p2p">
+      <node href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.28"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="owner">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="../modisco.xmi#//@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.28"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/@packagedElement.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="supplier">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/@packagedElement.1"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="client">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/@packagedElement.1"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="dependencies">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="../modisco.xmi#//@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="dependencies">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    <targetElements href="#//@tripleMatches.31/@containedEdges.1"/>
+    <targetElements href="#//@tripleMatches.31/@containedEdges.10"/>
+    <targetElements href="#//@tripleMatches.31/@containedEdges.4"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <targetElements href="#//@tripleMatches.31/@containedEdges.11"/>
+    <targetElements href="#//@tripleMatches.31/@containedEdges.12"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/@packagedElement.1"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <correspondenceElements href="#//@tripleMatches.31/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.31/@containedEdges.2"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    <correspondenceElements href="#//@tripleMatches.31/@containedEdges.3"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <correspondenceElements href="#//@tripleMatches.31/@containedEdges.8"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    <correspondenceElements href="#//@tripleMatches.31/@containedEdges.6"/>
+    <correspondenceElements href="#//@tripleMatches.31/@containedEdges.9"/>
+    <createdElements href="#//@tripleMatches.31/@containedEdges.10"/>
+    <createdElements href="#//@tripleMatches.31/@containedEdges.11"/>
+    <createdElements href="#//@tripleMatches.31/@containedEdges.12"/>
+    <createdElements href="#//@tripleMatches.31/@containedEdges.13"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/@packagedElement.1"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.32/@containedEdges.4 //@tripleMatches.32/@containedEdges.5" ruleName="OrphandedPrimitive2PrimitiveType" number="32">
+    <sourceElements href="#//@tripleMatches.32/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#//@orphanTypes.7"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <contextElements href="#//@tripleMatches.32/@containedEdges.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.15"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <contextElements href="#//@tripleMatches.32/@containedEdges.1"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.7"/>
+    <contextElements href="#//@tripleMatches.32/@containedEdges.2"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <contextElements href="#//@tripleMatches.32/@containedEdges.3"/>
+    <nodeMappings nodeName="umlPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jPackage">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@orphanTypes.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="md2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.15"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp2up">
+      <node href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.15"/>
+      <trg href="../modisco.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.15"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    <targetElements href="#//@tripleMatches.32/@containedEdges.5"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <correspondenceElements href="#//@tripleMatches.32/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.15"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="#//@tripleMatches.32/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.32/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.32/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.33/@containedEdges.4 //@tripleMatches.33/@containedEdges.5" ruleName="OrphandedPrimitive2PrimitiveType" number="33">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.8"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.8"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.8"/>
+    <contextElements href="#//@tripleMatches.33/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.33/@containedEdges.1"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <contextElements href="#//@tripleMatches.33/@containedEdges.2"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    <contextElements href="#//@tripleMatches.33/@containedEdges.3"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <nodeMappings nodeName="umlPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jPackage">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@orphanTypes.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="md2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp2up">
+      <node href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="../modisco.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.33/@containedEdges.4"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.8"/>
+    <correspondenceElements href="#//@tripleMatches.33/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.33/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.33/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.33/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches ruleName="Manifestation4CompilationUnit2Artifact" number="34">
+    <sourceElements href="#//@tripleMatches.34/@containedEdges.7"/>
+    <sourceElements href="../modisco.xmi#//@compilationUnits.1"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <contextElements href="#//@tripleMatches.34/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.34/@containedEdges.1"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.26"/>
+    <contextElements href="#//@tripleMatches.34/@containedEdges.2"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+    <contextElements href="../modisco.xmi#//@compilationUnits.1"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <contextElements href="#//@tripleMatches.34/@containedEdges.3"/>
+    <nodeMappings nodeName="artifact">
+      <node href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+    </nodeMappings>
+    <nodeMappings nodeName="manifestation">
+      <node href="SecureViolationPatternsViolation.uml#//source%20references/Client.java/@manifestation.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c2a">
+      <node href="uml_correspondence_model.xmi#//@correspondences.26"/>
+    </nodeMappings>
+    <nodeMappings nodeName="compilationUnit">
+      <node href="../modisco.xmi#//@compilationUnits.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="t2c">
+      <node href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classifier">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </nodeMappings>
+    <nodeMappings nodeName="type">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.26"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.26"/>
+      <trg href="../modisco.xmi#//@compilationUnits.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="utilizedElement">
+      <src href="SecureViolationPatternsViolation.uml#//source%20references/Client.java/@manifestation.0"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="types">
+      <src href="../modisco.xmi#//@compilationUnits.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="manifestation">
+      <src href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+      <trg href="SecureViolationPatternsViolation.uml#//source%20references/Client.java/@manifestation.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="types">
+      <src href="../modisco.xmi#//@compilationUnits.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.34/@containedEdges.4"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//source%20references/Client.java/@manifestation.0"/>
+    <targetElements href="#//@tripleMatches.34/@containedEdges.6"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <correspondenceElements href="#//@tripleMatches.34/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.34/@containedEdges.1"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.26"/>
+    <correspondenceElements href="#//@tripleMatches.34/@containedEdges.2"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.14"/>
+    <correspondenceElements href="#//@tripleMatches.34/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.34/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.34/@containedEdges.5"/>
+    <createdElements href="SecureViolationPatternsViolation.uml#//source%20references/Client.java/@manifestation.0"/>
+    <createdElements href="#//@tripleMatches.34/@containedEdges.6"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.35/@containedEdges.4 //@tripleMatches.35/@containedEdges.5" ruleName="OrphandedPrimitive2PrimitiveType" number="35">
+    <sourceElements href="#//@tripleMatches.35/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <sourceElements href="../modisco.xmi#//@orphanTypes.6"/>
+    <contextElements href="#//@tripleMatches.35/@containedEdges.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.1"/>
+    <contextElements href="#//@tripleMatches.35/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.35/@containedEdges.2"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <contextElements href="#//@tripleMatches.35/@containedEdges.3"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.6"/>
+    <nodeMappings nodeName="umlPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jPackage">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@orphanTypes.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="md2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp2up">
+      <node href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.1"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.1"/>
+      <trg href="../modisco.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <targetElements href="#//@tripleMatches.35/@containedEdges.5"/>
+    <correspondenceElements href="#//@tripleMatches.35/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.1"/>
+    <correspondenceElements href="#//@tripleMatches.35/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.35/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.35/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.36/@containedEdges.4 //@tripleMatches.36/@containedEdges.5 //@tripleMatches.36/@containedEdges.6 //@tripleMatches.36/@containedEdges.7" ruleName="LinkTypeToPackage" number="36">
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.36/@containedEdges.8"/>
+    <sourceElements href="#//@tripleMatches.36/@containedEdges.9"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    <contextElements href="#//@tripleMatches.36/@containedEdges.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="#//@tripleMatches.36/@containedEdges.1"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0"/>
+    <contextElements href="#//@tripleMatches.36/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.36/@containedEdges.3"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="../modisco.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="t2t">
+      <node href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="p2p">
+      <node href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.28"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.28"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="../modisco.xmi#//@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedType">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="../modisco.xmi#//@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    <targetElements href="#//@tripleMatches.36/@containedEdges.4"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <targetElements href="#//@tripleMatches.36/@containedEdges.7"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.28"/>
+    <correspondenceElements href="#//@tripleMatches.36/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <correspondenceElements href="#//@tripleMatches.36/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.36/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.36/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.37/@containedEdges.4 //@tripleMatches.37/@containedEdges.5" ruleName="OrphandedPrimitive2PrimitiveType" number="37">
+    <sourceElements href="../modisco.xmi#//@orphanTypes.3"/>
+    <sourceElements href="#//@tripleMatches.37/@containedEdges.6"/>
+    <sourceElements href="../modisco.xmi#/"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    <contextElements href="../modisco.xmi#//@orphanTypes.3"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <contextElements href="#//@tripleMatches.37/@containedEdges.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.6"/>
+    <contextElements href="#//@tripleMatches.37/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.37/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.37/@containedEdges.3"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <contextElements href="../modisco.xmi#/"/>
+    <nodeMappings nodeName="umlPackage">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jPackage">
+      <node href="../modisco.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@orphanTypes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="md2o">
+      <node href="uml_correspondence_model.xmi#//@correspondences.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp2up">
+      <node href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.6"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.6"/>
+      <trg href="../modisco.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../modisco.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="../modisco.xmi#/"/>
+      <trg href="../modisco.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.37/@containedEdges.4"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="#//@tripleMatches.37/@containedEdges.0"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.6"/>
+    <correspondenceElements href="#//@tripleMatches.37/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.37/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.37/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.38/@containedEdges.4 //@tripleMatches.38/@containedEdges.5 //@tripleMatches.38/@containedEdges.6 //@tripleMatches.38/@containedEdges.7" ruleName="OperationInClass" number="38">
+    <sourceElements href="#//@tripleMatches.38/@containedEdges.8"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <sourceElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.38/@containedEdges.9"/>
+    <contextElements href="#//@tripleMatches.38/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.38/@containedEdges.1"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <contextElements href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="uml_correspondence_model.xmi#//@correspondences.16"/>
+    <contextElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <contextElements href="#//@tripleMatches.38/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.38/@containedEdges.3"/>
+    <nodeMappings nodeName="bd2ne">
+      <node href="uml_correspondence_model.xmi#//@correspondences.16"/>
+    </nodeMappings>
+    <nodeMappings nodeName="feature">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c2c">
+      <node href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.16"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.16"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="uml_correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedOperation">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="class">
+      <src href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+      <trg href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.38/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.38/@containedEdges.5"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <targetElements href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <correspondenceElements href="#//@tripleMatches.38/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.38/@containedEdges.1"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.12"/>
+    <correspondenceElements href="uml_correspondence_model.xmi#//@correspondences.16"/>
+    <correspondenceElements href="#//@tripleMatches.38/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.38/@containedEdges.2"/>
+  </tripleMatches>
+</org.moflon.tgg.runtime:PrecedenceStructure>
