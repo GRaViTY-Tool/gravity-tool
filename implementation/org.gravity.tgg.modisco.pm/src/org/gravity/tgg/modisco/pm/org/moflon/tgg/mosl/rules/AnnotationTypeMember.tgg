@@ -1,0 +1,75 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationTypeMember #with org.gravity.tgg.modisco.pm
+
+#source {
+	mAnnotation:AnnotationTypeDeclaration {
+		++-bodyDeclarations -> mMember
+	}
+
+	++mMember:AnnotationTypeMemberDeclaration{
+		++-type -> access
+	}
+
+	++access:TypeAccess {
+		++-type -> mType
+	}
+
+	mType:Type
+}
+
+#target {
+	pm:TypeGraph
+
+	tAnnotation:TAnnotationType{
+		-model->pm
+		++-defines -> tMember
+		++-signature -> tSignature
+	}
+
+	++tName:TField{
+		++-model -> pm
+		++-signatures -> tSignature
+	}
+
+	++tSignature:TFieldSignature {
+		lowerBound := 0
+		++-type -> tType
+		++-definitions -> tMember
+	}
+
+	++tMember:TFieldDefinition
+
+	tType:TAbstractType
+}
+
+#correspondence {
+	mAnnotationToAnnotation: TypeToTAbstractType {
+		#src->mAnnotation
+		#trg->tAnnotation
+	}
+	
+	++memberToMember:MDefinitionToTMember{
+		#src->mMember
+		#trg->tMember
+	}
+	
+	
+	++anntotatableToTannotatable:ASTNodeToTAnnotatable {
+		#src->mMember
+		#trg->tMember
+	}
+	
+	mTypeToType:TypeToTAbstractType{
+		#src->mType
+		#trg->tType
+	}
+}
+
+#attributeConditions {
+	eq(mMember.name, tName.tName)
+	upperBound(mMember.name, tSignature.upperBound)
+}
+
+

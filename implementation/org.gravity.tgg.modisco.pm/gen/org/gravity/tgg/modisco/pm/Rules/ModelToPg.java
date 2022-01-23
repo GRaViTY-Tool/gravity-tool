@@ -201,7 +201,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TypeGraph_0(TypeGraph tPG);
+	EObjectContainer isAppropriate_BWD_TypeGraph_3(TypeGraph tPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MGravityModel_0(MGravityModel mModel);
+	EObjectContainer isAppropriate_FWD_MGravityModel_2(MGravityModel mModel);
 
 	/**
 	 * <!-- begin-user-doc -->

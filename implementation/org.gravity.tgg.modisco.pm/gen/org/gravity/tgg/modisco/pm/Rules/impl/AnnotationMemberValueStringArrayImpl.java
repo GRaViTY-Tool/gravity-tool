@@ -809,7 +809,7 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_74(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_203(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueStringArrayImpl
 				.pattern_AnnotationMemberValueStringArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -869,7 +869,7 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_77(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_211(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueStringArrayImpl
 				.pattern_AnnotationMemberValueStringArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -942,13 +942,13 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mValue_escapedValue = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
-		var_mValue_escapedValue.setValue(__helper.getValue("mValue", "escapedValue"));
-		var_mValue_escapedValue.setType("String");
-
 		Variable var_tValue_tText = CSPFactoryHelper.eINSTANCE.createVariable("tValue", true, csp);
 		var_tValue_tText.setValue(__helper.getValue("tValue", "tText"));
 		var_tValue_tText.setType("String");
+
+		Variable var_mValue_escapedValue = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
+		var_mValue_escapedValue.setValue(__helper.getValue("mValue", "escapedValue"));
+		var_mValue_escapedValue.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -989,13 +989,13 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mValue_escapedValue = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
-		var_mValue_escapedValue.setValue(__helper.getValue("mValue", "escapedValue"));
-		var_mValue_escapedValue.setType("String");
-
 		Variable var_tValue_tText = CSPFactoryHelper.eINSTANCE.createVariable("tValue", true, csp);
 		var_tValue_tText.setValue(__helper.getValue("tValue", "tText"));
 		var_tValue_tText.setType("String");
+
+		Variable var_mValue_escapedValue = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
+		var_mValue_escapedValue.setValue(__helper.getValue("mValue", "escapedValue"));
+		var_mValue_escapedValue.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1390,10 +1390,10 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_74__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_74((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_77__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_77((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_203__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_203((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_211__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_211((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2850,9 +2850,9 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_AnnotationMemberValueStringArray_21_2_testcorematchandDECs_black_nac_0BB(
 			StringLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_546681 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_148403 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_546681)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_148403)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -3152,9 +3152,9 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_AnnotationMemberValueStringArray_27_1_matchtggpattern_black_nac_0BB(
 			StringLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_802868 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_307322 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_802868)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_307322)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}

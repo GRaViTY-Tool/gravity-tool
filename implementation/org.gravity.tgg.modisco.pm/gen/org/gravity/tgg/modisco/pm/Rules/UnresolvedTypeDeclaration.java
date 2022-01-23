@@ -96,8 +96,9 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel eModel,
-			ModelToTypeGraph eModelToPg, org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MGravityModel eModel,
+			org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType, TypeGraph pg,
+			ModelToTypeGraph eModelToPg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +114,8 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject pg, EObject eModel, EObject eModelToPg,
-			EObject tClass, EObject eAnonymousClassDeclarationToTClass, EObject unresolvedType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eModel, EObject unresolvedType, EObject pg,
+			EObject eAnonymousClassDeclarationToTClass, EObject tClass, EObject eModelToPg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +179,8 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel eModel,
-			ModelToTypeGraph eModelToPg, TUnresolvedType tClass);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MGravityModel eModel, TypeGraph pg,
+			TUnresolvedType tClass, ModelToTypeGraph eModelToPg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +196,8 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject pg, EObject eModel, EObject eModelToPg,
-			EObject tClass, EObject eAnonymousClassDeclarationToTClass, EObject unresolvedType);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eModel, EObject unresolvedType, EObject pg,
+			EObject eAnonymousClassDeclarationToTClass, EObject tClass, EObject eModelToPg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +213,7 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_48(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_204(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +221,7 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_51(EMoflonEdge _edge_unresolvedItems);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_212(EMoflonEdge _edge_unresolvedItems);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,8 +253,9 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TypeGraph pg, MGravityModel eModel, TUnresolvedType tClass,
-			org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(MGravityModel eModel,
+			org.eclipse.modisco.java.UnresolvedTypeDeclaration unresolvedType, TypeGraph pg, TUnresolvedType tClass,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +295,7 @@ public interface UnresolvedTypeDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel eModel,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MGravityModel eModel, TypeGraph pg,
 			ModelToTypeGraph eModelToPg, ModelgeneratorRuleResult ruleResult);
 
 	/**

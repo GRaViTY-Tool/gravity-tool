@@ -156,11 +156,11 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		MMethodDefinition mMethod = (MMethodDefinition) result1_bindingAndBlack[0];
-		MMethodDefinition mOverriding = (MMethodDefinition) result1_bindingAndBlack[1];
-		MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result1_bindingAndBlack[2];
-		TMethodDefinition tMethod = (TMethodDefinition) result1_bindingAndBlack[3];
-		TMethodDefinition tOverriding = (TMethodDefinition) result1_bindingAndBlack[4];
-		MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result1_bindingAndBlack[5];
+		TMethodDefinition tMethod = (TMethodDefinition) result1_bindingAndBlack[1];
+		TMethodDefinition tOverriding = (TMethodDefinition) result1_bindingAndBlack[2];
+		MMethodDefinition mOverriding = (MMethodDefinition) result1_bindingAndBlack[3];
+		MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result1_bindingAndBlack[4];
+		MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		MethodOverridingImpl.pattern_MethodOverriding_1_1_performtransformation_greenBB(tMethod, tOverriding);
 
@@ -171,25 +171,24 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodOverridingImpl.pattern_MethodOverriding_1_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+				ruleresult, mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 		if (result3_black == null) {
-			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[mMethod] = "
-							+ mMethod + ", " + "[mOverriding] = " + mOverriding + ", " + "[mOverridingToTOverriding] = "
-							+ mOverridingToTOverriding + ", " + "[tMethod] = " + tMethod + ", " + "[tOverriding] = "
-							+ tOverriding + ", " + "[mMethodToTMethod] = " + mMethodToTMethod + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
+					+ ", " + "[mMethod] = " + mMethod + ", " + "[tMethod] = " + tMethod + ", " + "[tOverriding] = "
+					+ tOverriding + ", " + "[mOverriding] = " + mOverriding + ", " + "[mMethodToTMethod] = "
+					+ mMethodToTMethod + ", " + "[mOverridingToTOverriding] = " + mOverridingToTOverriding + ".");
 		}
 		MethodOverridingImpl.pattern_MethodOverriding_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult, mMethod,
-				mOverriding, tMethod, tOverriding);
-		//nothing EMoflonEdge mMethod__mOverriding____redefinitions = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge tMethod__tOverriding____overriddenBy = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tOverriding__tMethod____overriding = (EMoflonEdge) result3_green[8];
+				tMethod, tOverriding, mOverriding);
+		//nothing EMoflonEdge tMethod__tOverriding____overriddenBy = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge tOverriding__tMethod____overriding = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mMethod__mOverriding____redefinitions = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		MethodOverridingImpl.pattern_MethodOverriding_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, mMethod,
-				mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+				tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 		return MethodOverridingImpl.pattern_MethodOverriding_1_6_expressionFB(ruleresult);
 	}
 
@@ -219,35 +218,35 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 		}
 		MMethodDefinition mMethod = (MMethodDefinition) result2_binding[0];
 		MMethodDefinition mOverriding = (MMethodDefinition) result2_binding[1];
-		for (Object[] result2_black : MethodOverridingImpl.pattern_MethodOverriding_2_2_corematch_blackBBFFFFB(mMethod,
+		for (Object[] result2_black : MethodOverridingImpl.pattern_MethodOverriding_2_2_corematch_blackBFFBFFB(mMethod,
 				mOverriding, match)) {
-			MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result2_black[2];
-			TMethodDefinition tMethod = (TMethodDefinition) result2_black[3];
-			TMethodDefinition tOverriding = (TMethodDefinition) result2_black[4];
-			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result2_black[5];
+			TMethodDefinition tMethod = (TMethodDefinition) result2_black[1];
+			TMethodDefinition tOverriding = (TMethodDefinition) result2_black[2];
+			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result2_black[4];
+			MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : MethodOverridingImpl.pattern_MethodOverriding_2_3_findcontext_blackBBBBBB(
-					mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod)) {
+					mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding)) {
 				Object[] result3_green = MethodOverridingImpl
-						.pattern_MethodOverriding_2_3_findcontext_greenBBBBBBFFFFFFF(mMethod, mOverriding,
-								mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+						.pattern_MethodOverriding_2_3_findcontext_greenBBBBBBFFFFFFF(mMethod, tMethod, tOverriding,
+								mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge mMethod__mOverriding____redefinitions = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mOverridingToTOverriding__mOverriding____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mOverridingToTOverriding__tOverriding____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mMethodToTMethod__mMethod____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mMethodToTMethod__tMethod____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mMethodToTMethod__mMethod____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mMethodToTMethod__tMethod____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mMethod__mOverriding____redefinitions = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mOverridingToTOverriding__tOverriding____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mOverridingToTOverriding__mOverriding____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = MethodOverridingImpl
 						.pattern_MethodOverriding_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+								mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMethod] = " + mMethod + ", "
-							+ "[mOverriding] = " + mOverriding + ", " + "[mOverridingToTOverriding] = "
-							+ mOverridingToTOverriding + ", " + "[tMethod] = " + tMethod + ", " + "[tOverriding] = "
-							+ tOverriding + ", " + "[mMethodToTMethod] = " + mMethodToTMethod + ".");
+							+ "[tMethod] = " + tMethod + ", " + "[tOverriding] = " + tOverriding + ", "
+							+ "[mOverriding] = " + mOverriding + ", " + "[mMethodToTMethod] = " + mMethodToTMethod
+							+ ", " + "[mOverridingToTOverriding] = " + mOverridingToTOverriding + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -317,8 +316,8 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod) {// Create CSP
+			TMethodDefinition tMethod, TMethodDefinition tOverriding, MMethodDefinition mOverriding,
+			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -334,11 +333,11 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mMethod", mMethod);
-		isApplicableMatch.registerObject("mOverriding", mOverriding);
-		isApplicableMatch.registerObject("mOverridingToTOverriding", mOverridingToTOverriding);
 		isApplicableMatch.registerObject("tMethod", tMethod);
 		isApplicableMatch.registerObject("tOverriding", tOverriding);
+		isApplicableMatch.registerObject("mOverriding", mOverriding);
 		isApplicableMatch.registerObject("mMethodToTMethod", mMethodToTMethod);
+		isApplicableMatch.registerObject("mOverridingToTOverriding", mOverridingToTOverriding);
 		return csp;
 	}
 
@@ -356,14 +355,14 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMethod, EObject mOverriding,
-			EObject mOverridingToTOverriding, EObject tMethod, EObject tOverriding, EObject mMethodToTMethod) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMethod, EObject tMethod, EObject tOverriding,
+			EObject mOverriding, EObject mMethodToTMethod, EObject mOverridingToTOverriding) {
 		ruleresult.registerObject("mMethod", mMethod);
-		ruleresult.registerObject("mOverriding", mOverriding);
-		ruleresult.registerObject("mOverridingToTOverriding", mOverridingToTOverriding);
 		ruleresult.registerObject("tMethod", tMethod);
 		ruleresult.registerObject("tOverriding", tOverriding);
+		ruleresult.registerObject("mOverriding", mOverriding);
 		ruleresult.registerObject("mMethodToTMethod", mMethodToTMethod);
+		ruleresult.registerObject("mOverridingToTOverriding", mOverridingToTOverriding);
 
 	}
 
@@ -446,11 +445,11 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		MMethodDefinition mMethod = (MMethodDefinition) result1_bindingAndBlack[0];
-		MMethodDefinition mOverriding = (MMethodDefinition) result1_bindingAndBlack[1];
-		MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result1_bindingAndBlack[2];
-		TMethodDefinition tMethod = (TMethodDefinition) result1_bindingAndBlack[3];
-		TMethodDefinition tOverriding = (TMethodDefinition) result1_bindingAndBlack[4];
-		MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result1_bindingAndBlack[5];
+		TMethodDefinition tMethod = (TMethodDefinition) result1_bindingAndBlack[1];
+		TMethodDefinition tOverriding = (TMethodDefinition) result1_bindingAndBlack[2];
+		MMethodDefinition mOverriding = (MMethodDefinition) result1_bindingAndBlack[3];
+		MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result1_bindingAndBlack[4];
+		MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		MethodOverridingImpl.pattern_MethodOverriding_11_1_performtransformation_greenBB(mMethod, mOverriding);
 
@@ -461,25 +460,24 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodOverridingImpl.pattern_MethodOverriding_11_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+				ruleresult, mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 		if (result3_black == null) {
-			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[mMethod] = "
-							+ mMethod + ", " + "[mOverriding] = " + mOverriding + ", " + "[mOverridingToTOverriding] = "
-							+ mOverridingToTOverriding + ", " + "[tMethod] = " + tMethod + ", " + "[tOverriding] = "
-							+ tOverriding + ", " + "[mMethodToTMethod] = " + mMethodToTMethod + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
+					+ ", " + "[mMethod] = " + mMethod + ", " + "[tMethod] = " + tMethod + ", " + "[tOverriding] = "
+					+ tOverriding + ", " + "[mOverriding] = " + mOverriding + ", " + "[mMethodToTMethod] = "
+					+ mMethodToTMethod + ", " + "[mOverridingToTOverriding] = " + mOverridingToTOverriding + ".");
 		}
 		MethodOverridingImpl.pattern_MethodOverriding_11_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult, mMethod,
-				mOverriding, tMethod, tOverriding);
-		//nothing EMoflonEdge mMethod__mOverriding____redefinitions = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge tMethod__tOverriding____overriddenBy = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tOverriding__tMethod____overriding = (EMoflonEdge) result3_green[8];
+				tMethod, tOverriding, mOverriding);
+		//nothing EMoflonEdge tMethod__tOverriding____overriddenBy = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge tOverriding__tMethod____overriding = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mMethod__mOverriding____redefinitions = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		MethodOverridingImpl.pattern_MethodOverriding_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, mMethod,
-				mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+				tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 		return MethodOverridingImpl.pattern_MethodOverriding_11_6_expressionFB(ruleresult);
 	}
 
@@ -509,35 +507,35 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 		}
 		TMethodDefinition tMethod = (TMethodDefinition) result2_binding[0];
 		TMethodDefinition tOverriding = (TMethodDefinition) result2_binding[1];
-		for (Object[] result2_black : MethodOverridingImpl.pattern_MethodOverriding_12_2_corematch_blackFFFBBFB(tMethod,
+		for (Object[] result2_black : MethodOverridingImpl.pattern_MethodOverriding_12_2_corematch_blackFBBFFFB(tMethod,
 				tOverriding, match)) {
 			MMethodDefinition mMethod = (MMethodDefinition) result2_black[0];
-			MMethodDefinition mOverriding = (MMethodDefinition) result2_black[1];
-			MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result2_black[2];
-			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result2_black[5];
+			MMethodDefinition mOverriding = (MMethodDefinition) result2_black[3];
+			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result2_black[4];
+			MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : MethodOverridingImpl.pattern_MethodOverriding_12_3_findcontext_blackBBBBBB(
-					mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod)) {
+					mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding)) {
 				Object[] result3_green = MethodOverridingImpl
-						.pattern_MethodOverriding_12_3_findcontext_greenBBBBBBFFFFFFF(mMethod, mOverriding,
-								mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+						.pattern_MethodOverriding_12_3_findcontext_greenBBBBBBFFFFFFF(mMethod, tMethod, tOverriding,
+								mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge mOverridingToTOverriding__mOverriding____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mOverridingToTOverriding__tOverriding____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tMethod__tOverriding____overriddenBy = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tOverriding__tMethod____overriding = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mMethodToTMethod__mMethod____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mMethodToTMethod__tMethod____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tMethod__tOverriding____overriddenBy = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge tOverriding__tMethod____overriding = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mMethodToTMethod__mMethod____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mMethodToTMethod__tMethod____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mOverridingToTOverriding__tOverriding____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mOverridingToTOverriding__mOverriding____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = MethodOverridingImpl
 						.pattern_MethodOverriding_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+								mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMethod] = " + mMethod + ", "
-							+ "[mOverriding] = " + mOverriding + ", " + "[mOverridingToTOverriding] = "
-							+ mOverridingToTOverriding + ", " + "[tMethod] = " + tMethod + ", " + "[tOverriding] = "
-							+ tOverriding + ", " + "[mMethodToTMethod] = " + mMethodToTMethod + ".");
+							+ "[tMethod] = " + tMethod + ", " + "[tOverriding] = " + tOverriding + ", "
+							+ "[mOverriding] = " + mOverriding + ", " + "[mMethodToTMethod] = " + mMethodToTMethod
+							+ ", " + "[mOverridingToTOverriding] = " + mOverridingToTOverriding + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -607,8 +605,8 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod) {// Create CSP
+			TMethodDefinition tMethod, TMethodDefinition tOverriding, MMethodDefinition mOverriding,
+			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -624,11 +622,11 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mMethod", mMethod);
-		isApplicableMatch.registerObject("mOverriding", mOverriding);
-		isApplicableMatch.registerObject("mOverridingToTOverriding", mOverridingToTOverriding);
 		isApplicableMatch.registerObject("tMethod", tMethod);
 		isApplicableMatch.registerObject("tOverriding", tOverriding);
+		isApplicableMatch.registerObject("mOverriding", mOverriding);
 		isApplicableMatch.registerObject("mMethodToTMethod", mMethodToTMethod);
+		isApplicableMatch.registerObject("mOverridingToTOverriding", mOverridingToTOverriding);
 		return csp;
 	}
 
@@ -646,14 +644,14 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMethod, EObject mOverriding,
-			EObject mOverridingToTOverriding, EObject tMethod, EObject tOverriding, EObject mMethodToTMethod) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMethod, EObject tMethod, EObject tOverriding,
+			EObject mOverriding, EObject mMethodToTMethod, EObject mOverridingToTOverriding) {
 		ruleresult.registerObject("mMethod", mMethod);
-		ruleresult.registerObject("mOverriding", mOverriding);
-		ruleresult.registerObject("mOverridingToTOverriding", mOverridingToTOverriding);
 		ruleresult.registerObject("tMethod", tMethod);
 		ruleresult.registerObject("tOverriding", tOverriding);
+		ruleresult.registerObject("mOverriding", mOverriding);
 		ruleresult.registerObject("mMethodToTMethod", mMethodToTMethod);
+		ruleresult.registerObject("mOverridingToTOverriding", mOverridingToTOverriding);
 
 	}
 
@@ -671,7 +669,7 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_42(EMoflonEdge _edge_overriddenBy) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_219(EMoflonEdge _edge_overriddenBy) {
 
 		Object[] result1_bindingAndBlack = MethodOverridingImpl
 				.pattern_MethodOverriding_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -728,7 +726,7 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_44(EMoflonEdge _edge_redefinitions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_227(EMoflonEdge _edge_redefinitions) {
 
 		Object[] result1_bindingAndBlack = MethodOverridingImpl
 				.pattern_MethodOverriding_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -861,39 +859,39 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		MMethodDefinition mMethod = (MMethodDefinition) result2_bindingAndBlack[0];
-		MMethodDefinition mOverriding = (MMethodDefinition) result2_bindingAndBlack[1];
-		TMethodDefinition tMethod = (TMethodDefinition) result2_bindingAndBlack[2];
-		TMethodDefinition tOverriding = (TMethodDefinition) result2_bindingAndBlack[3];
+		TMethodDefinition tMethod = (TMethodDefinition) result2_bindingAndBlack[1];
+		TMethodDefinition tOverriding = (TMethodDefinition) result2_bindingAndBlack[2];
+		MMethodDefinition mOverriding = (MMethodDefinition) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = MethodOverridingImpl
-				.pattern_MethodOverriding_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, mMethod, mOverriding, tMethod,
-						tOverriding, sourceMatch, targetMatch);
+				.pattern_MethodOverriding_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, mMethod, tMethod, tOverriding,
+						mOverriding, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mMethod] = " + mMethod + ", " + "[mOverriding] = " + mOverriding + ", " + "[tMethod] = "
-					+ tMethod + ", " + "[tOverriding] = " + tOverriding + ", " + "[sourceMatch] = " + sourceMatch + ", "
-					+ "[targetMatch] = " + targetMatch + ".");
+					+ "[mMethod] = " + mMethod + ", " + "[tMethod] = " + tMethod + ", " + "[tOverriding] = "
+					+ tOverriding + ", " + "[mOverriding] = " + mOverriding + ", " + "[sourceMatch] = " + sourceMatch
+					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (MethodOverridingImpl.pattern_MethodOverriding_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : MethodOverridingImpl
-					.pattern_MethodOverriding_24_5_matchcorrcontext_blackBBFBBFBB(mMethod, mOverriding, tMethod,
-							tOverriding, sourceMatch, targetMatch)) {
-				MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result5_black[2];
-				MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result5_black[5];
+					.pattern_MethodOverriding_24_5_matchcorrcontext_blackBBBBFFBB(mMethod, tMethod, tOverriding,
+							mOverriding, sourceMatch, targetMatch)) {
+				MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result5_black[4];
+				MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result5_black[5];
 				Object[] result5_green = MethodOverridingImpl.pattern_MethodOverriding_24_5_matchcorrcontext_greenBBBBF(
-						mOverridingToTOverriding, mMethodToTMethod, sourceMatch, targetMatch);
+						mMethodToTMethod, mOverridingToTOverriding, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = MethodOverridingImpl
-						.pattern_MethodOverriding_24_6_createcorrespondence_blackBBBBB(mMethod, mOverriding, tMethod,
-								tOverriding, ccMatch);
+						.pattern_MethodOverriding_24_6_createcorrespondence_blackBBBBB(mMethod, tMethod, tOverriding,
+								mOverriding, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mMethod] = " + mMethod
-							+ ", " + "[mOverriding] = " + mOverriding + ", " + "[tMethod] = " + tMethod + ", "
-							+ "[tOverriding] = " + tOverriding + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ ", " + "[tMethod] = " + tMethod + ", " + "[tOverriding] = " + tOverriding + ", "
+							+ "[mOverriding] = " + mOverriding + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = MethodOverridingImpl
@@ -916,8 +914,8 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MMethodDefinition mMethod, MMethodDefinition mOverriding,
-			TMethodDefinition tMethod, TMethodDefinition tOverriding, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(MMethodDefinition mMethod, TMethodDefinition tMethod,
+			TMethodDefinition tOverriding, MMethodDefinition mOverriding, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -997,19 +995,19 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result2_black[2];
 			TMethodDefinition tMethod = (TMethodDefinition) result2_black[3];
 			//nothing RuleEntryList mOverridingToTOverridingList = (RuleEntryList) result2_black[4];
-			MMethodDefinition mOverriding = (MMethodDefinition) result2_black[5];
+			TMethodDefinition tOverriding = (TMethodDefinition) result2_black[5];
 			MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result2_black[6];
-			TMethodDefinition tOverriding = (TMethodDefinition) result2_black[7];
+			MMethodDefinition mOverriding = (MMethodDefinition) result2_black[7];
 
 			Object[] result3_bindingAndBlack = MethodOverridingImpl
 					.pattern_MethodOverriding_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, mMethod,
-							mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod, ruleResult);
+							tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMethod] = " + mMethod + ", "
-						+ "[mOverriding] = " + mOverriding + ", " + "[mOverridingToTOverriding] = "
-						+ mOverridingToTOverriding + ", " + "[tMethod] = " + tMethod + ", " + "[tOverriding] = "
-						+ tOverriding + ", " + "[mMethodToTMethod] = " + mMethodToTMethod + ", " + "[ruleResult] = "
+						+ "[tMethod] = " + tMethod + ", " + "[tOverriding] = " + tOverriding + ", " + "[mOverriding] = "
+						+ mOverriding + ", " + "[mMethodToTMethod] = " + mMethodToTMethod + ", "
+						+ "[mOverridingToTOverriding] = " + mOverridingToTOverriding + ", " + "[ruleResult] = "
 						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1017,21 +1015,21 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 			if (MethodOverridingImpl.pattern_MethodOverriding_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = MethodOverridingImpl.pattern_MethodOverriding_29_5_checknacs_blackBBBBBB(
-						mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+						mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 				if (result5_black != null) {
 
 					Object[] result6_black = MethodOverridingImpl.pattern_MethodOverriding_29_6_perform_blackBBBBBBB(
-							mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod,
+							mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding,
 							ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mMethod] = "
-								+ mMethod + ", " + "[mOverriding] = " + mOverriding + ", "
-								+ "[mOverridingToTOverriding] = " + mOverridingToTOverriding + ", " + "[tMethod] = "
-								+ tMethod + ", " + "[tOverriding] = " + tOverriding + ", " + "[mMethodToTMethod] = "
-								+ mMethodToTMethod + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ mMethod + ", " + "[tMethod] = " + tMethod + ", " + "[tOverriding] = " + tOverriding
+								+ ", " + "[mOverriding] = " + mOverriding + ", " + "[mMethodToTMethod] = "
+								+ mMethodToTMethod + ", " + "[mOverridingToTOverriding] = " + mOverridingToTOverriding
+								+ ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					MethodOverridingImpl.pattern_MethodOverriding_29_6_perform_greenBBBBB(mMethod, mOverriding, tMethod,
-							tOverriding, ruleResult);
+					MethodOverridingImpl.pattern_MethodOverriding_29_6_perform_greenBBBBB(mMethod, tMethod, tOverriding,
+							mOverriding, ruleResult);
 
 				} else {
 				}
@@ -1049,8 +1047,9 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod, ModelgeneratorRuleResult ruleResult) {// Create CSP
+			TMethodDefinition tMethod, TMethodDefinition tOverriding, MMethodDefinition mOverriding,
+			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1066,11 +1065,11 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mMethod", mMethod);
-		isApplicableMatch.registerObject("mOverriding", mOverriding);
-		isApplicableMatch.registerObject("mOverridingToTOverriding", mOverridingToTOverriding);
 		isApplicableMatch.registerObject("tMethod", tMethod);
 		isApplicableMatch.registerObject("tOverriding", tOverriding);
+		isApplicableMatch.registerObject("mOverriding", mOverriding);
 		isApplicableMatch.registerObject("mMethodToTMethod", mMethodToTMethod);
+		isApplicableMatch.registerObject("mOverridingToTOverriding", mOverridingToTOverriding);
 		return csp;
 	}
 
@@ -1107,10 +1106,10 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 					(MMethodDefinition) arguments.get(2));
 		case RulesPackage.METHOD_OVERRIDING___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_OVERRIDING___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_MMETHODDEFINITION_MDEFINITIONTOTMEMBER_TMETHODDEFINITION_TMETHODDEFINITION_MDEFINITIONTOTMEMBER:
+		case RulesPackage.METHOD_OVERRIDING___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_TMETHODDEFINITION_TMETHODDEFINITION_MMETHODDEFINITION_MDEFINITIONTOTMEMBER_MDEFINITIONTOTMEMBER:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MMethodDefinition) arguments.get(1),
-					(MMethodDefinition) arguments.get(2), (MDefinitionToTMember) arguments.get(3),
-					(TMethodDefinition) arguments.get(4), (TMethodDefinition) arguments.get(5),
+					(TMethodDefinition) arguments.get(2), (TMethodDefinition) arguments.get(3),
+					(MMethodDefinition) arguments.get(4), (MDefinitionToTMember) arguments.get(5),
 					(MDefinitionToTMember) arguments.get(6));
 		case RulesPackage.METHOD_OVERRIDING___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
@@ -1137,10 +1136,10 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 					(TMethodDefinition) arguments.get(2));
 		case RulesPackage.METHOD_OVERRIDING___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_OVERRIDING___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_MMETHODDEFINITION_MDEFINITIONTOTMEMBER_TMETHODDEFINITION_TMETHODDEFINITION_MDEFINITIONTOTMEMBER:
+		case RulesPackage.METHOD_OVERRIDING___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_TMETHODDEFINITION_TMETHODDEFINITION_MMETHODDEFINITION_MDEFINITIONTOTMEMBER_MDEFINITIONTOTMEMBER:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MMethodDefinition) arguments.get(1),
-					(MMethodDefinition) arguments.get(2), (MDefinitionToTMember) arguments.get(3),
-					(TMethodDefinition) arguments.get(4), (TMethodDefinition) arguments.get(5),
+					(TMethodDefinition) arguments.get(2), (TMethodDefinition) arguments.get(3),
+					(MMethodDefinition) arguments.get(4), (MDefinitionToTMember) arguments.get(5),
 					(MDefinitionToTMember) arguments.get(6));
 		case RulesPackage.METHOD_OVERRIDING___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
@@ -1151,19 +1150,19 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 			return null;
 		case RulesPackage.METHOD_OVERRIDING___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_OVERRIDING___IS_APPROPRIATE_BWD_EMOFLON_EDGE_42__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_42((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_OVERRIDING___IS_APPROPRIATE_FWD_EMOFLON_EDGE_44__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_44((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_OVERRIDING___IS_APPROPRIATE_BWD_EMOFLON_EDGE_219__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_219((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_OVERRIDING___IS_APPROPRIATE_FWD_EMOFLON_EDGE_227__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_227((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_OVERRIDING___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_OVERRIDING___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_OVERRIDING___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.METHOD_OVERRIDING___IS_APPLICABLE_SOLVE_CSP_CC__MMETHODDEFINITION_MMETHODDEFINITION_TMETHODDEFINITION_TMETHODDEFINITION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MMethodDefinition) arguments.get(0), (MMethodDefinition) arguments.get(1),
-					(TMethodDefinition) arguments.get(2), (TMethodDefinition) arguments.get(3),
+		case RulesPackage.METHOD_OVERRIDING___IS_APPLICABLE_SOLVE_CSP_CC__MMETHODDEFINITION_TMETHODDEFINITION_TMETHODDEFINITION_MMETHODDEFINITION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((MMethodDefinition) arguments.get(0), (TMethodDefinition) arguments.get(1),
+					(TMethodDefinition) arguments.get(2), (MMethodDefinition) arguments.get(3),
 					(Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.METHOD_OVERRIDING___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1174,11 +1173,11 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 		case RulesPackage.METHOD_OVERRIDING___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER_MDEFINITIONTOTMEMBER:
 			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1),
 					(MDefinitionToTMember) arguments.get(2));
-		case RulesPackage.METHOD_OVERRIDING___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_MMETHODDEFINITION_MDEFINITIONTOTMEMBER_TMETHODDEFINITION_TMETHODDEFINITION_MDEFINITIONTOTMEMBER_MODELGENERATORRULERESULT:
+		case RulesPackage.METHOD_OVERRIDING___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_TMETHODDEFINITION_TMETHODDEFINITION_MMETHODDEFINITION_MDEFINITIONTOTMEMBER_MDEFINITIONTOTMEMBER_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MMethodDefinition) arguments.get(1), (MMethodDefinition) arguments.get(2),
-					(MDefinitionToTMember) arguments.get(3), (TMethodDefinition) arguments.get(4),
-					(TMethodDefinition) arguments.get(5), (MDefinitionToTMember) arguments.get(6),
+					(MMethodDefinition) arguments.get(1), (TMethodDefinition) arguments.get(2),
+					(TMethodDefinition) arguments.get(3), (MMethodDefinition) arguments.get(4),
+					(MDefinitionToTMember) arguments.get(5), (MDefinitionToTMember) arguments.get(6),
 					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.METHOD_OVERRIDING___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1292,31 +1291,31 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	public static final Object[] pattern_MethodOverriding_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mMethod");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mOverriding");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mOverridingToTOverriding");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tMethod");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tOverriding");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mMethodToTMethod");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tMethod");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tOverriding");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mOverriding");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mMethodToTMethod");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mOverridingToTOverriding");
 		EObject tmpMMethod = _localVariable_0;
-		EObject tmpMOverriding = _localVariable_1;
-		EObject tmpMOverridingToTOverriding = _localVariable_2;
-		EObject tmpTMethod = _localVariable_3;
-		EObject tmpTOverriding = _localVariable_4;
-		EObject tmpMMethodToTMethod = _localVariable_5;
+		EObject tmpTMethod = _localVariable_1;
+		EObject tmpTOverriding = _localVariable_2;
+		EObject tmpMOverriding = _localVariable_3;
+		EObject tmpMMethodToTMethod = _localVariable_4;
+		EObject tmpMOverridingToTOverriding = _localVariable_5;
 		if (tmpMMethod instanceof MMethodDefinition) {
 			MMethodDefinition mMethod = (MMethodDefinition) tmpMMethod;
-			if (tmpMOverriding instanceof MMethodDefinition) {
-				MMethodDefinition mOverriding = (MMethodDefinition) tmpMOverriding;
-				if (tmpMOverridingToTOverriding instanceof MDefinitionToTMember) {
-					MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) tmpMOverridingToTOverriding;
-					if (tmpTMethod instanceof TMethodDefinition) {
-						TMethodDefinition tMethod = (TMethodDefinition) tmpTMethod;
-						if (tmpTOverriding instanceof TMethodDefinition) {
-							TMethodDefinition tOverriding = (TMethodDefinition) tmpTOverriding;
-							if (tmpMMethodToTMethod instanceof MDefinitionToTMember) {
-								MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) tmpMMethodToTMethod;
-								return new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod,
-										tOverriding, mMethodToTMethod, isApplicableMatch };
+			if (tmpTMethod instanceof TMethodDefinition) {
+				TMethodDefinition tMethod = (TMethodDefinition) tmpTMethod;
+				if (tmpTOverriding instanceof TMethodDefinition) {
+					TMethodDefinition tOverriding = (TMethodDefinition) tmpTOverriding;
+					if (tmpMOverriding instanceof MMethodDefinition) {
+						MMethodDefinition mOverriding = (MMethodDefinition) tmpMOverriding;
+						if (tmpMMethodToTMethod instanceof MDefinitionToTMember) {
+							MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) tmpMMethodToTMethod;
+							if (tmpMOverridingToTOverriding instanceof MDefinitionToTMember) {
+								MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) tmpMOverridingToTOverriding;
+								return new Object[] { mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+										mOverridingToTOverriding, isApplicableMatch };
 							}
 						}
 					}
@@ -1327,17 +1326,18 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_1_1_performtransformation_blackBBBBBBFBB(
-			MMethodDefinition mMethod, MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding,
-			TMethodDefinition tMethod, TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod,
-			MethodOverriding _this, IsApplicableMatch isApplicableMatch) {
+			MMethodDefinition mMethod, TMethodDefinition tMethod, TMethodDefinition tOverriding,
+			MMethodDefinition mOverriding, MDefinitionToTMember mMethodToTMethod,
+			MDefinitionToTMember mOverridingToTOverriding, MethodOverriding _this,
+			IsApplicableMatch isApplicableMatch) {
 		if (!mMethod.equals(mOverriding)) {
 			if (!tMethod.equals(tOverriding)) {
 				if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-									mMethodToTMethod, csp, _this, isApplicableMatch };
+							return new Object[] { mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+									mOverridingToTOverriding, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -1352,20 +1352,20 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 				isApplicableMatch);
 		if (result_pattern_MethodOverriding_1_1_performtransformation_binding != null) {
 			MMethodDefinition mMethod = (MMethodDefinition) result_pattern_MethodOverriding_1_1_performtransformation_binding[0];
-			MMethodDefinition mOverriding = (MMethodDefinition) result_pattern_MethodOverriding_1_1_performtransformation_binding[1];
-			MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result_pattern_MethodOverriding_1_1_performtransformation_binding[2];
-			TMethodDefinition tMethod = (TMethodDefinition) result_pattern_MethodOverriding_1_1_performtransformation_binding[3];
-			TMethodDefinition tOverriding = (TMethodDefinition) result_pattern_MethodOverriding_1_1_performtransformation_binding[4];
-			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result_pattern_MethodOverriding_1_1_performtransformation_binding[5];
+			TMethodDefinition tMethod = (TMethodDefinition) result_pattern_MethodOverriding_1_1_performtransformation_binding[1];
+			TMethodDefinition tOverriding = (TMethodDefinition) result_pattern_MethodOverriding_1_1_performtransformation_binding[2];
+			MMethodDefinition mOverriding = (MMethodDefinition) result_pattern_MethodOverriding_1_1_performtransformation_binding[3];
+			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result_pattern_MethodOverriding_1_1_performtransformation_binding[4];
+			MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result_pattern_MethodOverriding_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_MethodOverriding_1_1_performtransformation_black = pattern_MethodOverriding_1_1_performtransformation_blackBBBBBBFBB(
-					mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod, _this,
+					mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding, _this,
 					isApplicableMatch);
 			if (result_pattern_MethodOverriding_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodOverriding_1_1_performtransformation_black[6];
 
-				return new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-						mMethodToTMethod, csp, _this, isApplicableMatch };
+				return new Object[] { mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+						mOverridingToTOverriding, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1383,26 +1383,26 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject mMethod, EObject mOverriding, EObject mOverridingToTOverriding,
-			EObject tMethod, EObject tOverriding, EObject mMethodToTMethod) {
-		if (!mMethod.equals(mOverriding)) {
-			if (!mMethod.equals(mOverridingToTOverriding)) {
-				if (!mMethod.equals(tMethod)) {
-					if (!mMethod.equals(tOverriding)) {
-						if (!mMethod.equals(mMethodToTMethod)) {
-							if (!mOverriding.equals(mOverridingToTOverriding)) {
+			PerformRuleResult ruleresult, EObject mMethod, EObject tMethod, EObject tOverriding, EObject mOverriding,
+			EObject mMethodToTMethod, EObject mOverridingToTOverriding) {
+		if (!mMethod.equals(tMethod)) {
+			if (!mMethod.equals(tOverriding)) {
+				if (!mMethod.equals(mOverriding)) {
+					if (!mMethod.equals(mMethodToTMethod)) {
+						if (!mMethod.equals(mOverridingToTOverriding)) {
+							if (!tMethod.equals(tOverriding)) {
 								if (!mOverriding.equals(tMethod)) {
 									if (!mOverriding.equals(tOverriding)) {
-										if (!mOverridingToTOverriding.equals(tMethod)) {
-											if (!mOverridingToTOverriding.equals(tOverriding)) {
-												if (!tMethod.equals(tOverriding)) {
+										if (!mOverriding.equals(mOverridingToTOverriding)) {
+											if (!mMethodToTMethod.equals(tMethod)) {
+												if (!mMethodToTMethod.equals(tOverriding)) {
 													if (!mMethodToTMethod.equals(mOverriding)) {
 														if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
-															if (!mMethodToTMethod.equals(tMethod)) {
-																if (!mMethodToTMethod.equals(tOverriding)) {
-																	return new Object[] { ruleresult, mMethod,
-																			mOverriding, mOverridingToTOverriding,
-																			tMethod, tOverriding, mMethodToTMethod };
+															if (!mOverridingToTOverriding.equals(tMethod)) {
+																if (!mOverridingToTOverriding.equals(tOverriding)) {
+																	return new Object[] { ruleresult, mMethod, tMethod,
+																			tOverriding, mOverriding, mMethodToTMethod,
+																			mOverridingToTOverriding };
 																}
 															}
 														}
@@ -1422,44 +1422,44 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject mMethod, EObject mOverriding, EObject tMethod, EObject tOverriding) {
-		EMoflonEdge mMethod__mOverriding____redefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mMethod, EObject tMethod, EObject tOverriding, EObject mOverriding) {
 		EMoflonEdge tMethod__tOverriding____overriddenBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOverriding__tMethod____overriding = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMethod__mOverriding____redefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodOverriding";
-		String mMethod__mOverriding____redefinitions_name_prime = "redefinitions";
-		String mOverriding__mMethod____redefinedMethodDeclaration_name_prime = "redefinedMethodDeclaration";
 		String tMethod__tOverriding____overriddenBy_name_prime = "overriddenBy";
 		String tOverriding__tMethod____overriding_name_prime = "overriding";
-		mMethod__mOverriding____redefinitions.setSrc(mMethod);
-		mMethod__mOverriding____redefinitions.setTrg(mOverriding);
-		ruleresult.getTranslatedEdges().add(mMethod__mOverriding____redefinitions);
-		mOverriding__mMethod____redefinedMethodDeclaration.setSrc(mOverriding);
-		mOverriding__mMethod____redefinedMethodDeclaration.setTrg(mMethod);
-		ruleresult.getTranslatedEdges().add(mOverriding__mMethod____redefinedMethodDeclaration);
+		String mMethod__mOverriding____redefinitions_name_prime = "redefinitions";
+		String mOverriding__mMethod____redefinedMethodDeclaration_name_prime = "redefinedMethodDeclaration";
 		tMethod__tOverriding____overriddenBy.setSrc(tMethod);
 		tMethod__tOverriding____overriddenBy.setTrg(tOverriding);
 		ruleresult.getCreatedEdges().add(tMethod__tOverriding____overriddenBy);
 		tOverriding__tMethod____overriding.setSrc(tOverriding);
 		tOverriding__tMethod____overriding.setTrg(tMethod);
 		ruleresult.getCreatedEdges().add(tOverriding__tMethod____overriding);
+		mMethod__mOverriding____redefinitions.setSrc(mMethod);
+		mMethod__mOverriding____redefinitions.setTrg(mOverriding);
+		ruleresult.getTranslatedEdges().add(mMethod__mOverriding____redefinitions);
+		mOverriding__mMethod____redefinedMethodDeclaration.setSrc(mOverriding);
+		mOverriding__mMethod____redefinedMethodDeclaration.setTrg(mMethod);
+		ruleresult.getTranslatedEdges().add(mOverriding__mMethod____redefinedMethodDeclaration);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		tMethod__tOverriding____overriddenBy.setName(tMethod__tOverriding____overriddenBy_name_prime);
+		tOverriding__tMethod____overriding.setName(tOverriding__tMethod____overriding_name_prime);
 		mMethod__mOverriding____redefinitions.setName(mMethod__mOverriding____redefinitions_name_prime);
 		mOverriding__mMethod____redefinedMethodDeclaration
 				.setName(mOverriding__mMethod____redefinedMethodDeclaration_name_prime);
-		tMethod__tOverriding____overriddenBy.setName(tMethod__tOverriding____overriddenBy_name_prime);
-		tOverriding__tMethod____overriding.setName(tOverriding__tMethod____overriding_name_prime);
-		return new Object[] { ruleresult, mMethod, mOverriding, tMethod, tOverriding,
-				mMethod__mOverriding____redefinitions, mOverriding__mMethod____redefinedMethodDeclaration,
-				tMethod__tOverriding____overriddenBy, tOverriding__tMethod____overriding };
+		return new Object[] { ruleresult, mMethod, tMethod, tOverriding, mOverriding,
+				tMethod__tOverriding____overriddenBy, tOverriding__tMethod____overriding,
+				mMethod__mOverriding____redefinitions, mOverriding__mMethod____redefinedMethodDeclaration };
 	}
 
 	public static final void pattern_MethodOverriding_1_5_registerobjects_expressionBBBBBBBB(MethodOverriding _this,
-			PerformRuleResult ruleresult, EObject mMethod, EObject mOverriding, EObject mOverridingToTOverriding,
-			EObject tMethod, EObject tOverriding, EObject mMethodToTMethod) {
-		_this.registerObjects_FWD(ruleresult, mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-				mMethodToTMethod);
+			PerformRuleResult ruleresult, EObject mMethod, EObject tMethod, EObject tOverriding, EObject mOverriding,
+			EObject mMethodToTMethod, EObject mOverridingToTOverriding) {
+		_this.registerObjects_FWD(ruleresult, mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+				mOverridingToTOverriding);
 
 	}
 
@@ -1532,24 +1532,24 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodOverriding_2_2_corematch_blackBBFFFFB(
+	public static final Iterable<Object[]> pattern_MethodOverriding_2_2_corematch_blackBFFBFFB(
 			MMethodDefinition mMethod, MMethodDefinition mOverriding, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mMethod.equals(mOverriding)) {
-			for (MDefinitionToTMember mOverridingToTOverriding : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(mOverriding, MDefinitionToTMember.class, "source")) {
-				TMember tmpTOverriding = mOverridingToTOverriding.getTarget();
-				if (tmpTOverriding instanceof TMethodDefinition) {
-					TMethodDefinition tOverriding = (TMethodDefinition) tmpTOverriding;
-					for (MDefinitionToTMember mMethodToTMethod : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mMethod, MDefinitionToTMember.class, "source")) {
+			for (MDefinitionToTMember mMethodToTMethod : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(mMethod, MDefinitionToTMember.class, "source")) {
+				TMember tmpTMethod = mMethodToTMethod.getTarget();
+				if (tmpTMethod instanceof TMethodDefinition) {
+					TMethodDefinition tMethod = (TMethodDefinition) tmpTMethod;
+					for (MDefinitionToTMember mOverridingToTOverriding : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(mOverriding, MDefinitionToTMember.class, "source")) {
 						if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
-							TMember tmpTMethod = mMethodToTMethod.getTarget();
-							if (tmpTMethod instanceof TMethodDefinition) {
-								TMethodDefinition tMethod = (TMethodDefinition) tmpTMethod;
+							TMember tmpTOverriding = mOverridingToTOverriding.getTarget();
+							if (tmpTOverriding instanceof TMethodDefinition) {
+								TMethodDefinition tOverriding = (TMethodDefinition) tmpTOverriding;
 								if (!tMethod.equals(tOverriding)) {
-									_result.add(new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod,
-											tOverriding, mMethodToTMethod, match });
+									_result.add(new Object[] { mMethod, tMethod, tOverriding, mOverriding,
+											mMethodToTMethod, mOverridingToTOverriding, match });
 								}
 							}
 
@@ -1563,19 +1563,20 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Iterable<Object[]> pattern_MethodOverriding_2_3_findcontext_blackBBBBBB(
-			MMethodDefinition mMethod, MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding,
-			TMethodDefinition tMethod, TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod) {
+			MMethodDefinition mMethod, TMethodDefinition tMethod, TMethodDefinition tOverriding,
+			MMethodDefinition mOverriding, MDefinitionToTMember mMethodToTMethod,
+			MDefinitionToTMember mOverridingToTOverriding) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mMethod.equals(mOverriding)) {
 			if (!tMethod.equals(tOverriding)) {
 				if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
-					if (mMethod.getRedefinitions().contains(mOverriding)) {
-						if (mOverriding.equals(mOverridingToTOverriding.getSource())) {
-							if (tOverriding.equals(mOverridingToTOverriding.getTarget())) {
-								if (mMethod.equals(mMethodToTMethod.getSource())) {
-									if (tMethod.equals(mMethodToTMethod.getTarget())) {
-										_result.add(new Object[] { mMethod, mOverriding, mOverridingToTOverriding,
-												tMethod, tOverriding, mMethodToTMethod });
+					if (mMethod.equals(mMethodToTMethod.getSource())) {
+						if (tMethod.equals(mMethodToTMethod.getTarget())) {
+							if (mMethod.getRedefinitions().contains(mOverriding)) {
+								if (tOverriding.equals(mOverridingToTOverriding.getTarget())) {
+									if (mOverriding.equals(mOverridingToTOverriding.getSource())) {
+										_result.add(new Object[] { mMethod, tMethod, tOverriding, mOverriding,
+												mMethodToTMethod, mOverridingToTOverriding });
 									}
 								}
 							}
@@ -1588,71 +1589,70 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_2_3_findcontext_greenBBBBBBFFFFFFF(MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod) {
+			TMethodDefinition tMethod, TMethodDefinition tOverriding, MMethodDefinition mOverriding,
+			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mMethod__mOverriding____redefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mOverridingToTOverriding__mOverriding____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mOverridingToTOverriding__tOverriding____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMethodToTMethod__mMethod____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMethodToTMethod__tMethod____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mMethod__mOverriding____redefinitions_name_prime = "redefinitions";
-		String mOverriding__mMethod____redefinedMethodDeclaration_name_prime = "redefinedMethodDeclaration";
-		String mOverridingToTOverriding__mOverriding____source_name_prime = "source";
-		String mOverridingToTOverriding__tOverriding____target_name_prime = "target";
+		EMoflonEdge mMethod__mOverriding____redefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mOverridingToTOverriding__tOverriding____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mOverridingToTOverriding__mOverriding____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mMethodToTMethod__mMethod____source_name_prime = "source";
 		String mMethodToTMethod__tMethod____target_name_prime = "target";
+		String mMethod__mOverriding____redefinitions_name_prime = "redefinitions";
+		String mOverriding__mMethod____redefinedMethodDeclaration_name_prime = "redefinedMethodDeclaration";
+		String mOverridingToTOverriding__tOverriding____target_name_prime = "target";
+		String mOverridingToTOverriding__mOverriding____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mMethod);
-		isApplicableMatch.getAllContextElements().add(mOverriding);
-		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding);
 		isApplicableMatch.getAllContextElements().add(tMethod);
 		isApplicableMatch.getAllContextElements().add(tOverriding);
+		isApplicableMatch.getAllContextElements().add(mOverriding);
 		isApplicableMatch.getAllContextElements().add(mMethodToTMethod);
-		mMethod__mOverriding____redefinitions.setSrc(mMethod);
-		mMethod__mOverriding____redefinitions.setTrg(mOverriding);
-		isApplicableMatch.getAllContextElements().add(mMethod__mOverriding____redefinitions);
-		mOverriding__mMethod____redefinedMethodDeclaration.setSrc(mOverriding);
-		mOverriding__mMethod____redefinedMethodDeclaration.setTrg(mMethod);
-		isApplicableMatch.getAllContextElements().add(mOverriding__mMethod____redefinedMethodDeclaration);
-		mOverridingToTOverriding__mOverriding____source.setSrc(mOverridingToTOverriding);
-		mOverridingToTOverriding__mOverriding____source.setTrg(mOverriding);
-		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding__mOverriding____source);
-		mOverridingToTOverriding__tOverriding____target.setSrc(mOverridingToTOverriding);
-		mOverridingToTOverriding__tOverriding____target.setTrg(tOverriding);
-		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding__tOverriding____target);
+		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding);
 		mMethodToTMethod__mMethod____source.setSrc(mMethodToTMethod);
 		mMethodToTMethod__mMethod____source.setTrg(mMethod);
 		isApplicableMatch.getAllContextElements().add(mMethodToTMethod__mMethod____source);
 		mMethodToTMethod__tMethod____target.setSrc(mMethodToTMethod);
 		mMethodToTMethod__tMethod____target.setTrg(tMethod);
 		isApplicableMatch.getAllContextElements().add(mMethodToTMethod__tMethod____target);
+		mMethod__mOverriding____redefinitions.setSrc(mMethod);
+		mMethod__mOverriding____redefinitions.setTrg(mOverriding);
+		isApplicableMatch.getAllContextElements().add(mMethod__mOverriding____redefinitions);
+		mOverriding__mMethod____redefinedMethodDeclaration.setSrc(mOverriding);
+		mOverriding__mMethod____redefinedMethodDeclaration.setTrg(mMethod);
+		isApplicableMatch.getAllContextElements().add(mOverriding__mMethod____redefinedMethodDeclaration);
+		mOverridingToTOverriding__tOverriding____target.setSrc(mOverridingToTOverriding);
+		mOverridingToTOverriding__tOverriding____target.setTrg(tOverriding);
+		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding__tOverriding____target);
+		mOverridingToTOverriding__mOverriding____source.setSrc(mOverridingToTOverriding);
+		mOverridingToTOverriding__mOverriding____source.setTrg(mOverriding);
+		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding__mOverriding____source);
+		mMethodToTMethod__mMethod____source.setName(mMethodToTMethod__mMethod____source_name_prime);
+		mMethodToTMethod__tMethod____target.setName(mMethodToTMethod__tMethod____target_name_prime);
 		mMethod__mOverriding____redefinitions.setName(mMethod__mOverriding____redefinitions_name_prime);
 		mOverriding__mMethod____redefinedMethodDeclaration
 				.setName(mOverriding__mMethod____redefinedMethodDeclaration_name_prime);
-		mOverridingToTOverriding__mOverriding____source
-				.setName(mOverridingToTOverriding__mOverriding____source_name_prime);
 		mOverridingToTOverriding__tOverriding____target
 				.setName(mOverridingToTOverriding__tOverriding____target_name_prime);
-		mMethodToTMethod__mMethod____source.setName(mMethodToTMethod__mMethod____source_name_prime);
-		mMethodToTMethod__tMethod____target.setName(mMethodToTMethod__tMethod____target_name_prime);
-		return new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod,
-				isApplicableMatch, mMethod__mOverriding____redefinitions,
-				mOverriding__mMethod____redefinedMethodDeclaration, mOverridingToTOverriding__mOverriding____source,
-				mOverridingToTOverriding__tOverriding____target, mMethodToTMethod__mMethod____source,
-				mMethodToTMethod__tMethod____target };
+		mOverridingToTOverriding__mOverriding____source
+				.setName(mOverridingToTOverriding__mOverriding____source_name_prime);
+		return new Object[] { mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding,
+				isApplicableMatch, mMethodToTMethod__mMethod____source, mMethodToTMethod__tMethod____target,
+				mMethod__mOverriding____redefinitions, mOverriding__mMethod____redefinedMethodDeclaration,
+				mOverridingToTOverriding__tOverriding____target, mOverridingToTOverriding__mOverriding____source };
 	}
 
 	public static final Object[] pattern_MethodOverriding_2_4_solveCSP_bindingFBBBBBBBB(MethodOverriding _this,
-			IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod, MMethodDefinition mOverriding,
-			MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod, TMethodDefinition tOverriding,
-			MDefinitionToTMember mMethodToTMethod) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mMethod, mOverriding,
-				mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+			IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod, TMethodDefinition tMethod,
+			TMethodDefinition tOverriding, MMethodDefinition mOverriding, MDefinitionToTMember mMethodToTMethod,
+			MDefinitionToTMember mOverridingToTOverriding) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mMethod, tMethod, tOverriding,
+				mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMethod, mOverriding, mOverridingToTOverriding,
-					tMethod, tOverriding, mMethodToTMethod };
+			return new Object[] { csp, _this, isApplicableMatch, mMethod, tMethod, tOverriding, mOverriding,
+					mMethodToTMethod, mOverridingToTOverriding };
 		}
 		return null;
 	}
@@ -1662,12 +1662,12 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_2_4_solveCSP_bindingAndBlackFBBBBBBBB(MethodOverriding _this,
-			IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod, MMethodDefinition mOverriding,
-			MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod, TMethodDefinition tOverriding,
-			MDefinitionToTMember mMethodToTMethod) {
+			IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod, TMethodDefinition tMethod,
+			TMethodDefinition tOverriding, MMethodDefinition mOverriding, MDefinitionToTMember mMethodToTMethod,
+			MDefinitionToTMember mOverridingToTOverriding) {
 		Object[] result_pattern_MethodOverriding_2_4_solveCSP_binding = pattern_MethodOverriding_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-				mMethodToTMethod);
+				_this, isApplicableMatch, mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+				mOverridingToTOverriding);
 		if (result_pattern_MethodOverriding_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodOverriding_2_4_solveCSP_binding[0];
 
@@ -1675,8 +1675,8 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 					csp);
 			if (result_pattern_MethodOverriding_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMethod, mOverriding, mOverridingToTOverriding,
-						tMethod, tOverriding, mMethodToTMethod };
+				return new Object[] { csp, _this, isApplicableMatch, mMethod, tMethod, tOverriding, mOverriding,
+						mMethodToTMethod, mOverridingToTOverriding };
 			}
 		}
 		return null;
@@ -1814,31 +1814,31 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	public static final Object[] pattern_MethodOverriding_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mMethod");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mOverriding");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mOverridingToTOverriding");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tMethod");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tOverriding");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mMethodToTMethod");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tMethod");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tOverriding");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mOverriding");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mMethodToTMethod");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mOverridingToTOverriding");
 		EObject tmpMMethod = _localVariable_0;
-		EObject tmpMOverriding = _localVariable_1;
-		EObject tmpMOverridingToTOverriding = _localVariable_2;
-		EObject tmpTMethod = _localVariable_3;
-		EObject tmpTOverriding = _localVariable_4;
-		EObject tmpMMethodToTMethod = _localVariable_5;
+		EObject tmpTMethod = _localVariable_1;
+		EObject tmpTOverriding = _localVariable_2;
+		EObject tmpMOverriding = _localVariable_3;
+		EObject tmpMMethodToTMethod = _localVariable_4;
+		EObject tmpMOverridingToTOverriding = _localVariable_5;
 		if (tmpMMethod instanceof MMethodDefinition) {
 			MMethodDefinition mMethod = (MMethodDefinition) tmpMMethod;
-			if (tmpMOverriding instanceof MMethodDefinition) {
-				MMethodDefinition mOverriding = (MMethodDefinition) tmpMOverriding;
-				if (tmpMOverridingToTOverriding instanceof MDefinitionToTMember) {
-					MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) tmpMOverridingToTOverriding;
-					if (tmpTMethod instanceof TMethodDefinition) {
-						TMethodDefinition tMethod = (TMethodDefinition) tmpTMethod;
-						if (tmpTOverriding instanceof TMethodDefinition) {
-							TMethodDefinition tOverriding = (TMethodDefinition) tmpTOverriding;
-							if (tmpMMethodToTMethod instanceof MDefinitionToTMember) {
-								MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) tmpMMethodToTMethod;
-								return new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod,
-										tOverriding, mMethodToTMethod, isApplicableMatch };
+			if (tmpTMethod instanceof TMethodDefinition) {
+				TMethodDefinition tMethod = (TMethodDefinition) tmpTMethod;
+				if (tmpTOverriding instanceof TMethodDefinition) {
+					TMethodDefinition tOverriding = (TMethodDefinition) tmpTOverriding;
+					if (tmpMOverriding instanceof MMethodDefinition) {
+						MMethodDefinition mOverriding = (MMethodDefinition) tmpMOverriding;
+						if (tmpMMethodToTMethod instanceof MDefinitionToTMember) {
+							MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) tmpMMethodToTMethod;
+							if (tmpMOverridingToTOverriding instanceof MDefinitionToTMember) {
+								MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) tmpMOverridingToTOverriding;
+								return new Object[] { mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+										mOverridingToTOverriding, isApplicableMatch };
 							}
 						}
 					}
@@ -1849,17 +1849,18 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_11_1_performtransformation_blackBBBBBBFBB(
-			MMethodDefinition mMethod, MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding,
-			TMethodDefinition tMethod, TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod,
-			MethodOverriding _this, IsApplicableMatch isApplicableMatch) {
+			MMethodDefinition mMethod, TMethodDefinition tMethod, TMethodDefinition tOverriding,
+			MMethodDefinition mOverriding, MDefinitionToTMember mMethodToTMethod,
+			MDefinitionToTMember mOverridingToTOverriding, MethodOverriding _this,
+			IsApplicableMatch isApplicableMatch) {
 		if (!mMethod.equals(mOverriding)) {
 			if (!tMethod.equals(tOverriding)) {
 				if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-									mMethodToTMethod, csp, _this, isApplicableMatch };
+							return new Object[] { mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+									mOverridingToTOverriding, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -1874,20 +1875,20 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 				isApplicableMatch);
 		if (result_pattern_MethodOverriding_11_1_performtransformation_binding != null) {
 			MMethodDefinition mMethod = (MMethodDefinition) result_pattern_MethodOverriding_11_1_performtransformation_binding[0];
-			MMethodDefinition mOverriding = (MMethodDefinition) result_pattern_MethodOverriding_11_1_performtransformation_binding[1];
-			MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result_pattern_MethodOverriding_11_1_performtransformation_binding[2];
-			TMethodDefinition tMethod = (TMethodDefinition) result_pattern_MethodOverriding_11_1_performtransformation_binding[3];
-			TMethodDefinition tOverriding = (TMethodDefinition) result_pattern_MethodOverriding_11_1_performtransformation_binding[4];
-			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result_pattern_MethodOverriding_11_1_performtransformation_binding[5];
+			TMethodDefinition tMethod = (TMethodDefinition) result_pattern_MethodOverriding_11_1_performtransformation_binding[1];
+			TMethodDefinition tOverriding = (TMethodDefinition) result_pattern_MethodOverriding_11_1_performtransformation_binding[2];
+			MMethodDefinition mOverriding = (MMethodDefinition) result_pattern_MethodOverriding_11_1_performtransformation_binding[3];
+			MDefinitionToTMember mMethodToTMethod = (MDefinitionToTMember) result_pattern_MethodOverriding_11_1_performtransformation_binding[4];
+			MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) result_pattern_MethodOverriding_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_MethodOverriding_11_1_performtransformation_black = pattern_MethodOverriding_11_1_performtransformation_blackBBBBBBFBB(
-					mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod, _this,
+					mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding, _this,
 					isApplicableMatch);
 			if (result_pattern_MethodOverriding_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodOverriding_11_1_performtransformation_black[6];
 
-				return new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-						mMethodToTMethod, csp, _this, isApplicableMatch };
+				return new Object[] { mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+						mOverridingToTOverriding, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1905,26 +1906,26 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject mMethod, EObject mOverriding, EObject mOverridingToTOverriding,
-			EObject tMethod, EObject tOverriding, EObject mMethodToTMethod) {
-		if (!mMethod.equals(mOverriding)) {
-			if (!mMethod.equals(mOverridingToTOverriding)) {
-				if (!mMethod.equals(tMethod)) {
-					if (!mMethod.equals(tOverriding)) {
-						if (!mMethod.equals(mMethodToTMethod)) {
-							if (!mOverriding.equals(mOverridingToTOverriding)) {
+			PerformRuleResult ruleresult, EObject mMethod, EObject tMethod, EObject tOverriding, EObject mOverriding,
+			EObject mMethodToTMethod, EObject mOverridingToTOverriding) {
+		if (!mMethod.equals(tMethod)) {
+			if (!mMethod.equals(tOverriding)) {
+				if (!mMethod.equals(mOverriding)) {
+					if (!mMethod.equals(mMethodToTMethod)) {
+						if (!mMethod.equals(mOverridingToTOverriding)) {
+							if (!tMethod.equals(tOverriding)) {
 								if (!mOverriding.equals(tMethod)) {
 									if (!mOverriding.equals(tOverriding)) {
-										if (!mOverridingToTOverriding.equals(tMethod)) {
-											if (!mOverridingToTOverriding.equals(tOverriding)) {
-												if (!tMethod.equals(tOverriding)) {
+										if (!mOverriding.equals(mOverridingToTOverriding)) {
+											if (!mMethodToTMethod.equals(tMethod)) {
+												if (!mMethodToTMethod.equals(tOverriding)) {
 													if (!mMethodToTMethod.equals(mOverriding)) {
 														if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
-															if (!mMethodToTMethod.equals(tMethod)) {
-																if (!mMethodToTMethod.equals(tOverriding)) {
-																	return new Object[] { ruleresult, mMethod,
-																			mOverriding, mOverridingToTOverriding,
-																			tMethod, tOverriding, mMethodToTMethod };
+															if (!mOverridingToTOverriding.equals(tMethod)) {
+																if (!mOverridingToTOverriding.equals(tOverriding)) {
+																	return new Object[] { ruleresult, mMethod, tMethod,
+																			tOverriding, mOverriding, mMethodToTMethod,
+																			mOverridingToTOverriding };
 																}
 															}
 														}
@@ -1944,44 +1945,44 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_11_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject mMethod, EObject mOverriding, EObject tMethod, EObject tOverriding) {
-		EMoflonEdge mMethod__mOverriding____redefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mMethod, EObject tMethod, EObject tOverriding, EObject mOverriding) {
 		EMoflonEdge tMethod__tOverriding____overriddenBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOverriding__tMethod____overriding = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMethod__mOverriding____redefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mOverriding__mMethod____redefinedMethodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodOverriding";
-		String mMethod__mOverriding____redefinitions_name_prime = "redefinitions";
-		String mOverriding__mMethod____redefinedMethodDeclaration_name_prime = "redefinedMethodDeclaration";
 		String tMethod__tOverriding____overriddenBy_name_prime = "overriddenBy";
 		String tOverriding__tMethod____overriding_name_prime = "overriding";
-		mMethod__mOverriding____redefinitions.setSrc(mMethod);
-		mMethod__mOverriding____redefinitions.setTrg(mOverriding);
-		ruleresult.getCreatedEdges().add(mMethod__mOverriding____redefinitions);
-		mOverriding__mMethod____redefinedMethodDeclaration.setSrc(mOverriding);
-		mOverriding__mMethod____redefinedMethodDeclaration.setTrg(mMethod);
-		ruleresult.getCreatedEdges().add(mOverriding__mMethod____redefinedMethodDeclaration);
+		String mMethod__mOverriding____redefinitions_name_prime = "redefinitions";
+		String mOverriding__mMethod____redefinedMethodDeclaration_name_prime = "redefinedMethodDeclaration";
 		tMethod__tOverriding____overriddenBy.setSrc(tMethod);
 		tMethod__tOverriding____overriddenBy.setTrg(tOverriding);
 		ruleresult.getTranslatedEdges().add(tMethod__tOverriding____overriddenBy);
 		tOverriding__tMethod____overriding.setSrc(tOverriding);
 		tOverriding__tMethod____overriding.setTrg(tMethod);
 		ruleresult.getTranslatedEdges().add(tOverriding__tMethod____overriding);
+		mMethod__mOverriding____redefinitions.setSrc(mMethod);
+		mMethod__mOverriding____redefinitions.setTrg(mOverriding);
+		ruleresult.getCreatedEdges().add(mMethod__mOverriding____redefinitions);
+		mOverriding__mMethod____redefinedMethodDeclaration.setSrc(mOverriding);
+		mOverriding__mMethod____redefinedMethodDeclaration.setTrg(mMethod);
+		ruleresult.getCreatedEdges().add(mOverriding__mMethod____redefinedMethodDeclaration);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		tMethod__tOverriding____overriddenBy.setName(tMethod__tOverriding____overriddenBy_name_prime);
+		tOverriding__tMethod____overriding.setName(tOverriding__tMethod____overriding_name_prime);
 		mMethod__mOverriding____redefinitions.setName(mMethod__mOverriding____redefinitions_name_prime);
 		mOverriding__mMethod____redefinedMethodDeclaration
 				.setName(mOverriding__mMethod____redefinedMethodDeclaration_name_prime);
-		tMethod__tOverriding____overriddenBy.setName(tMethod__tOverriding____overriddenBy_name_prime);
-		tOverriding__tMethod____overriding.setName(tOverriding__tMethod____overriding_name_prime);
-		return new Object[] { ruleresult, mMethod, mOverriding, tMethod, tOverriding,
-				mMethod__mOverriding____redefinitions, mOverriding__mMethod____redefinedMethodDeclaration,
-				tMethod__tOverriding____overriddenBy, tOverriding__tMethod____overriding };
+		return new Object[] { ruleresult, mMethod, tMethod, tOverriding, mOverriding,
+				tMethod__tOverriding____overriddenBy, tOverriding__tMethod____overriding,
+				mMethod__mOverriding____redefinitions, mOverriding__mMethod____redefinedMethodDeclaration };
 	}
 
 	public static final void pattern_MethodOverriding_11_5_registerobjects_expressionBBBBBBBB(MethodOverriding _this,
-			PerformRuleResult ruleresult, EObject mMethod, EObject mOverriding, EObject mOverridingToTOverriding,
-			EObject tMethod, EObject tOverriding, EObject mMethodToTMethod) {
-		_this.registerObjects_BWD(ruleresult, mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-				mMethodToTMethod);
+			PerformRuleResult ruleresult, EObject mMethod, EObject tMethod, EObject tOverriding, EObject mOverriding,
+			EObject mMethodToTMethod, EObject mOverridingToTOverriding) {
+		_this.registerObjects_BWD(ruleresult, mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+				mOverridingToTOverriding);
 
 	}
 
@@ -2054,24 +2055,24 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodOverriding_12_2_corematch_blackFFFBBFB(
+	public static final Iterable<Object[]> pattern_MethodOverriding_12_2_corematch_blackFBBFFFB(
 			TMethodDefinition tMethod, TMethodDefinition tOverriding, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tMethod.equals(tOverriding)) {
-			for (MDefinitionToTMember mOverridingToTOverriding : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tOverriding, MDefinitionToTMember.class, "target")) {
-				BodyDeclaration tmpMOverriding = mOverridingToTOverriding.getSource();
-				if (tmpMOverriding instanceof MMethodDefinition) {
-					MMethodDefinition mOverriding = (MMethodDefinition) tmpMOverriding;
-					for (MDefinitionToTMember mMethodToTMethod : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(tMethod, MDefinitionToTMember.class, "target")) {
+			for (MDefinitionToTMember mMethodToTMethod : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(tMethod, MDefinitionToTMember.class, "target")) {
+				BodyDeclaration tmpMMethod = mMethodToTMethod.getSource();
+				if (tmpMMethod instanceof MMethodDefinition) {
+					MMethodDefinition mMethod = (MMethodDefinition) tmpMMethod;
+					for (MDefinitionToTMember mOverridingToTOverriding : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(tOverriding, MDefinitionToTMember.class, "target")) {
 						if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
-							BodyDeclaration tmpMMethod = mMethodToTMethod.getSource();
-							if (tmpMMethod instanceof MMethodDefinition) {
-								MMethodDefinition mMethod = (MMethodDefinition) tmpMMethod;
+							BodyDeclaration tmpMOverriding = mOverridingToTOverriding.getSource();
+							if (tmpMOverriding instanceof MMethodDefinition) {
+								MMethodDefinition mOverriding = (MMethodDefinition) tmpMOverriding;
 								if (!mMethod.equals(mOverriding)) {
-									_result.add(new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod,
-											tOverriding, mMethodToTMethod, match });
+									_result.add(new Object[] { mMethod, tMethod, tOverriding, mOverriding,
+											mMethodToTMethod, mOverridingToTOverriding, match });
 								}
 							}
 
@@ -2085,19 +2086,20 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Iterable<Object[]> pattern_MethodOverriding_12_3_findcontext_blackBBBBBB(
-			MMethodDefinition mMethod, MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding,
-			TMethodDefinition tMethod, TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod) {
+			MMethodDefinition mMethod, TMethodDefinition tMethod, TMethodDefinition tOverriding,
+			MMethodDefinition mOverriding, MDefinitionToTMember mMethodToTMethod,
+			MDefinitionToTMember mOverridingToTOverriding) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mMethod.equals(mOverriding)) {
 			if (!tMethod.equals(tOverriding)) {
 				if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
-					if (mOverriding.equals(mOverridingToTOverriding.getSource())) {
-						if (tOverriding.equals(mOverridingToTOverriding.getTarget())) {
-							if (tMethod.getOverriddenBy().contains(tOverriding)) {
-								if (mMethod.equals(mMethodToTMethod.getSource())) {
-									if (tMethod.equals(mMethodToTMethod.getTarget())) {
-										_result.add(new Object[] { mMethod, mOverriding, mOverridingToTOverriding,
-												tMethod, tOverriding, mMethodToTMethod });
+					if (tMethod.getOverriddenBy().contains(tOverriding)) {
+						if (mMethod.equals(mMethodToTMethod.getSource())) {
+							if (tMethod.equals(mMethodToTMethod.getTarget())) {
+								if (tOverriding.equals(mOverridingToTOverriding.getTarget())) {
+									if (mOverriding.equals(mOverridingToTOverriding.getSource())) {
+										_result.add(new Object[] { mMethod, tMethod, tOverriding, mOverriding,
+												mMethodToTMethod, mOverridingToTOverriding });
 									}
 								}
 							}
@@ -2110,33 +2112,27 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_12_3_findcontext_greenBBBBBBFFFFFFF(MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod) {
+			TMethodDefinition tMethod, TMethodDefinition tOverriding, MMethodDefinition mOverriding,
+			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mOverridingToTOverriding__mOverriding____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mOverridingToTOverriding__tOverriding____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethod__tOverriding____overriddenBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOverriding__tMethod____overriding = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMethodToTMethod__mMethod____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMethodToTMethod__tMethod____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mOverridingToTOverriding__mOverriding____source_name_prime = "source";
-		String mOverridingToTOverriding__tOverriding____target_name_prime = "target";
+		EMoflonEdge mOverridingToTOverriding__tOverriding____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mOverridingToTOverriding__mOverriding____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tMethod__tOverriding____overriddenBy_name_prime = "overriddenBy";
 		String tOverriding__tMethod____overriding_name_prime = "overriding";
 		String mMethodToTMethod__mMethod____source_name_prime = "source";
 		String mMethodToTMethod__tMethod____target_name_prime = "target";
+		String mOverridingToTOverriding__tOverriding____target_name_prime = "target";
+		String mOverridingToTOverriding__mOverriding____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mMethod);
-		isApplicableMatch.getAllContextElements().add(mOverriding);
-		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding);
 		isApplicableMatch.getAllContextElements().add(tMethod);
 		isApplicableMatch.getAllContextElements().add(tOverriding);
+		isApplicableMatch.getAllContextElements().add(mOverriding);
 		isApplicableMatch.getAllContextElements().add(mMethodToTMethod);
-		mOverridingToTOverriding__mOverriding____source.setSrc(mOverridingToTOverriding);
-		mOverridingToTOverriding__mOverriding____source.setTrg(mOverriding);
-		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding__mOverriding____source);
-		mOverridingToTOverriding__tOverriding____target.setSrc(mOverridingToTOverriding);
-		mOverridingToTOverriding__tOverriding____target.setTrg(tOverriding);
-		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding__tOverriding____target);
+		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding);
 		tMethod__tOverriding____overriddenBy.setSrc(tMethod);
 		tMethod__tOverriding____overriddenBy.setTrg(tOverriding);
 		isApplicableMatch.getAllContextElements().add(tMethod__tOverriding____overriddenBy);
@@ -2149,31 +2145,36 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 		mMethodToTMethod__tMethod____target.setSrc(mMethodToTMethod);
 		mMethodToTMethod__tMethod____target.setTrg(tMethod);
 		isApplicableMatch.getAllContextElements().add(mMethodToTMethod__tMethod____target);
-		mOverridingToTOverriding__mOverriding____source
-				.setName(mOverridingToTOverriding__mOverriding____source_name_prime);
-		mOverridingToTOverriding__tOverriding____target
-				.setName(mOverridingToTOverriding__tOverriding____target_name_prime);
+		mOverridingToTOverriding__tOverriding____target.setSrc(mOverridingToTOverriding);
+		mOverridingToTOverriding__tOverriding____target.setTrg(tOverriding);
+		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding__tOverriding____target);
+		mOverridingToTOverriding__mOverriding____source.setSrc(mOverridingToTOverriding);
+		mOverridingToTOverriding__mOverriding____source.setTrg(mOverriding);
+		isApplicableMatch.getAllContextElements().add(mOverridingToTOverriding__mOverriding____source);
 		tMethod__tOverriding____overriddenBy.setName(tMethod__tOverriding____overriddenBy_name_prime);
 		tOverriding__tMethod____overriding.setName(tOverriding__tMethod____overriding_name_prime);
 		mMethodToTMethod__mMethod____source.setName(mMethodToTMethod__mMethod____source_name_prime);
 		mMethodToTMethod__tMethod____target.setName(mMethodToTMethod__tMethod____target_name_prime);
-		return new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod,
-				isApplicableMatch, mOverridingToTOverriding__mOverriding____source,
-				mOverridingToTOverriding__tOverriding____target, tMethod__tOverriding____overriddenBy,
-				tOverriding__tMethod____overriding, mMethodToTMethod__mMethod____source,
-				mMethodToTMethod__tMethod____target };
+		mOverridingToTOverriding__tOverriding____target
+				.setName(mOverridingToTOverriding__tOverriding____target_name_prime);
+		mOverridingToTOverriding__mOverriding____source
+				.setName(mOverridingToTOverriding__mOverriding____source_name_prime);
+		return new Object[] { mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod, mOverridingToTOverriding,
+				isApplicableMatch, tMethod__tOverriding____overriddenBy, tOverriding__tMethod____overriding,
+				mMethodToTMethod__mMethod____source, mMethodToTMethod__tMethod____target,
+				mOverridingToTOverriding__tOverriding____target, mOverridingToTOverriding__mOverriding____source };
 	}
 
 	public static final Object[] pattern_MethodOverriding_12_4_solveCSP_bindingFBBBBBBBB(MethodOverriding _this,
-			IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod, MMethodDefinition mOverriding,
-			MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod, TMethodDefinition tOverriding,
-			MDefinitionToTMember mMethodToTMethod) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mMethod, mOverriding,
-				mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod);
+			IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod, TMethodDefinition tMethod,
+			TMethodDefinition tOverriding, MMethodDefinition mOverriding, MDefinitionToTMember mMethodToTMethod,
+			MDefinitionToTMember mOverridingToTOverriding) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mMethod, tMethod, tOverriding,
+				mOverriding, mMethodToTMethod, mOverridingToTOverriding);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMethod, mOverriding, mOverridingToTOverriding,
-					tMethod, tOverriding, mMethodToTMethod };
+			return new Object[] { csp, _this, isApplicableMatch, mMethod, tMethod, tOverriding, mOverriding,
+					mMethodToTMethod, mOverridingToTOverriding };
 		}
 		return null;
 	}
@@ -2183,12 +2184,12 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_12_4_solveCSP_bindingAndBlackFBBBBBBBB(MethodOverriding _this,
-			IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod, MMethodDefinition mOverriding,
-			MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod, TMethodDefinition tOverriding,
-			MDefinitionToTMember mMethodToTMethod) {
+			IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod, TMethodDefinition tMethod,
+			TMethodDefinition tOverriding, MMethodDefinition mOverriding, MDefinitionToTMember mMethodToTMethod,
+			MDefinitionToTMember mOverridingToTOverriding) {
 		Object[] result_pattern_MethodOverriding_12_4_solveCSP_binding = pattern_MethodOverriding_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-				mMethodToTMethod);
+				_this, isApplicableMatch, mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+				mOverridingToTOverriding);
 		if (result_pattern_MethodOverriding_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodOverriding_12_4_solveCSP_binding[0];
 
@@ -2196,8 +2197,8 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 					csp);
 			if (result_pattern_MethodOverriding_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMethod, mOverriding, mOverridingToTOverriding,
-						tMethod, tOverriding, mMethodToTMethod };
+				return new Object[] { csp, _this, isApplicableMatch, mMethod, tMethod, tOverriding, mOverriding,
+						mMethodToTMethod, mOverridingToTOverriding };
 			}
 		}
 		return null;
@@ -2478,22 +2479,22 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	public static final Object[] pattern_MethodOverriding_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("mMethod");
-		EObject _localVariable_1 = sourceMatch.getObject("mOverriding");
-		EObject _localVariable_2 = targetMatch.getObject("tMethod");
-		EObject _localVariable_3 = targetMatch.getObject("tOverriding");
+		EObject _localVariable_1 = targetMatch.getObject("tMethod");
+		EObject _localVariable_2 = targetMatch.getObject("tOverriding");
+		EObject _localVariable_3 = sourceMatch.getObject("mOverriding");
 		EObject tmpMMethod = _localVariable_0;
-		EObject tmpMOverriding = _localVariable_1;
-		EObject tmpTMethod = _localVariable_2;
-		EObject tmpTOverriding = _localVariable_3;
+		EObject tmpTMethod = _localVariable_1;
+		EObject tmpTOverriding = _localVariable_2;
+		EObject tmpMOverriding = _localVariable_3;
 		if (tmpMMethod instanceof MMethodDefinition) {
 			MMethodDefinition mMethod = (MMethodDefinition) tmpMMethod;
-			if (tmpMOverriding instanceof MMethodDefinition) {
-				MMethodDefinition mOverriding = (MMethodDefinition) tmpMOverriding;
-				if (tmpTMethod instanceof TMethodDefinition) {
-					TMethodDefinition tMethod = (TMethodDefinition) tmpTMethod;
-					if (tmpTOverriding instanceof TMethodDefinition) {
-						TMethodDefinition tOverriding = (TMethodDefinition) tmpTOverriding;
-						return new Object[] { mMethod, mOverriding, tMethod, tOverriding, sourceMatch, targetMatch };
+			if (tmpTMethod instanceof TMethodDefinition) {
+				TMethodDefinition tMethod = (TMethodDefinition) tmpTMethod;
+				if (tmpTOverriding instanceof TMethodDefinition) {
+					TMethodDefinition tOverriding = (TMethodDefinition) tmpTOverriding;
+					if (tmpMOverriding instanceof MMethodDefinition) {
+						MMethodDefinition mOverriding = (MMethodDefinition) tmpMOverriding;
+						return new Object[] { mMethod, tMethod, tOverriding, mOverriding, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2502,12 +2503,12 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_24_2_matchsrctrgcontext_blackBBBBBB(MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, TMethodDefinition tMethod, TMethodDefinition tOverriding, Match sourceMatch,
+			TMethodDefinition tMethod, TMethodDefinition tOverriding, MMethodDefinition mOverriding, Match sourceMatch,
 			Match targetMatch) {
 		if (!mMethod.equals(mOverriding)) {
 			if (!tMethod.equals(tOverriding)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { mMethod, mOverriding, tMethod, tOverriding, sourceMatch, targetMatch };
+					return new Object[] { mMethod, tMethod, tOverriding, mOverriding, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -2520,28 +2521,28 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 				sourceMatch, targetMatch);
 		if (result_pattern_MethodOverriding_24_2_matchsrctrgcontext_binding != null) {
 			MMethodDefinition mMethod = (MMethodDefinition) result_pattern_MethodOverriding_24_2_matchsrctrgcontext_binding[0];
-			MMethodDefinition mOverriding = (MMethodDefinition) result_pattern_MethodOverriding_24_2_matchsrctrgcontext_binding[1];
-			TMethodDefinition tMethod = (TMethodDefinition) result_pattern_MethodOverriding_24_2_matchsrctrgcontext_binding[2];
-			TMethodDefinition tOverriding = (TMethodDefinition) result_pattern_MethodOverriding_24_2_matchsrctrgcontext_binding[3];
+			TMethodDefinition tMethod = (TMethodDefinition) result_pattern_MethodOverriding_24_2_matchsrctrgcontext_binding[1];
+			TMethodDefinition tOverriding = (TMethodDefinition) result_pattern_MethodOverriding_24_2_matchsrctrgcontext_binding[2];
+			MMethodDefinition mOverriding = (MMethodDefinition) result_pattern_MethodOverriding_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_MethodOverriding_24_2_matchsrctrgcontext_black = pattern_MethodOverriding_24_2_matchsrctrgcontext_blackBBBBBB(
-					mMethod, mOverriding, tMethod, tOverriding, sourceMatch, targetMatch);
+					mMethod, tMethod, tOverriding, mOverriding, sourceMatch, targetMatch);
 			if (result_pattern_MethodOverriding_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mMethod, mOverriding, tMethod, tOverriding, sourceMatch, targetMatch };
+				return new Object[] { mMethod, tMethod, tOverriding, mOverriding, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodOverriding_24_3_solvecsp_bindingFBBBBBBB(MethodOverriding _this,
-			MMethodDefinition mMethod, MMethodDefinition mOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mMethod, mOverriding, tMethod, tOverriding, sourceMatch,
+			MMethodDefinition mMethod, TMethodDefinition tMethod, TMethodDefinition tOverriding,
+			MMethodDefinition mOverriding, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mMethod, tMethod, tOverriding, mOverriding, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, mMethod, mOverriding, tMethod, tOverriding, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mMethod, tMethod, tOverriding, mOverriding, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2551,10 +2552,10 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_24_3_solvecsp_bindingAndBlackFBBBBBBB(MethodOverriding _this,
-			MMethodDefinition mMethod, MMethodDefinition mOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, Match sourceMatch, Match targetMatch) {
+			MMethodDefinition mMethod, TMethodDefinition tMethod, TMethodDefinition tOverriding,
+			MMethodDefinition mOverriding, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_MethodOverriding_24_3_solvecsp_binding = pattern_MethodOverriding_24_3_solvecsp_bindingFBBBBBBB(
-				_this, mMethod, mOverriding, tMethod, tOverriding, sourceMatch, targetMatch);
+				_this, mMethod, tMethod, tOverriding, mOverriding, sourceMatch, targetMatch);
 		if (result_pattern_MethodOverriding_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodOverriding_24_3_solvecsp_binding[0];
 
@@ -2562,7 +2563,7 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 					csp);
 			if (result_pattern_MethodOverriding_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mMethod, mOverriding, tMethod, tOverriding, sourceMatch,
+				return new Object[] { csp, _this, mMethod, tMethod, tOverriding, mOverriding, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2575,22 +2576,22 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodOverriding_24_5_matchcorrcontext_blackBBFBBFBB(
-			MMethodDefinition mMethod, MMethodDefinition mOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_MethodOverriding_24_5_matchcorrcontext_blackBBBBFFBB(
+			MMethodDefinition mMethod, TMethodDefinition tMethod, TMethodDefinition tOverriding,
+			MMethodDefinition mOverriding, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mMethod.equals(mOverriding)) {
 			if (!tMethod.equals(tOverriding)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					for (MDefinitionToTMember mOverridingToTOverriding : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mOverriding, MDefinitionToTMember.class, "source")) {
-						if (tOverriding.equals(mOverridingToTOverriding.getTarget())) {
-							for (MDefinitionToTMember mMethodToTMethod : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(mMethod, MDefinitionToTMember.class, "source")) {
+					for (MDefinitionToTMember mMethodToTMethod : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(mMethod, MDefinitionToTMember.class, "source")) {
+						if (tMethod.equals(mMethodToTMethod.getTarget())) {
+							for (MDefinitionToTMember mOverridingToTOverriding : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(tOverriding, MDefinitionToTMember.class, "target")) {
 								if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
-									if (tMethod.equals(mMethodToTMethod.getTarget())) {
-										_result.add(new Object[] { mMethod, mOverriding, mOverridingToTOverriding,
-												tMethod, tOverriding, mMethodToTMethod, sourceMatch, targetMatch });
+									if (mOverriding.equals(mOverridingToTOverriding.getSource())) {
+										_result.add(new Object[] { mMethod, tMethod, tOverriding, mOverriding,
+												mMethodToTMethod, mOverridingToTOverriding, sourceMatch, targetMatch });
 									}
 								}
 							}
@@ -2603,24 +2604,24 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_24_5_matchcorrcontext_greenBBBBF(
-			MDefinitionToTMember mOverridingToTOverriding, MDefinitionToTMember mMethodToTMethod, Match sourceMatch,
+			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding, Match sourceMatch,
 			Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "MethodOverriding";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(mOverridingToTOverriding);
 		ccMatch.getAllContextElements().add(mMethodToTMethod);
+		ccMatch.getAllContextElements().add(mOverridingToTOverriding);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { mOverridingToTOverriding, mMethodToTMethod, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { mMethodToTMethod, mOverridingToTOverriding, sourceMatch, targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodOverriding_24_6_createcorrespondence_blackBBBBB(
-			MMethodDefinition mMethod, MMethodDefinition mOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, CCMatch ccMatch) {
+			MMethodDefinition mMethod, TMethodDefinition tMethod, TMethodDefinition tOverriding,
+			MMethodDefinition mOverriding, CCMatch ccMatch) {
 		if (!mMethod.equals(mOverriding)) {
 			if (!tMethod.equals(tOverriding)) {
-				return new Object[] { mMethod, mOverriding, tMethod, tOverriding, ccMatch };
+				return new Object[] { mMethod, tMethod, tOverriding, mOverriding, ccMatch };
 			}
 		}
 		return null;
@@ -2724,9 +2725,9 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, MMethodDefinition mOverriding) {
-		if (ruleResult.getSourceObjects().contains(mOverriding)) {
-			return new Object[] { ruleResult, mOverriding };
+			ModelgeneratorRuleResult ruleResult, TMethodDefinition tOverriding) {
+		if (ruleResult.getTargetObjects().contains(tOverriding)) {
+			return new Object[] { ruleResult, tOverriding };
 		}
 		return null;
 	}
@@ -2740,9 +2741,9 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, TMethodDefinition tOverriding) {
-		if (ruleResult.getTargetObjects().contains(tOverriding)) {
-			return new Object[] { ruleResult, tOverriding };
+			ModelgeneratorRuleResult ruleResult, MMethodDefinition mOverriding) {
+		if (ruleResult.getSourceObjects().contains(mOverriding)) {
+			return new Object[] { ruleResult, mOverriding };
 		}
 		return null;
 	}
@@ -2773,34 +2774,34 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 													if (tmpMOverridingToTOverriding instanceof MDefinitionToTMember) {
 														MDefinitionToTMember mOverridingToTOverriding = (MDefinitionToTMember) tmpMOverridingToTOverriding;
 														if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
-															BodyDeclaration tmpMOverriding = mOverridingToTOverriding
-																	.getSource();
-															if (tmpMOverriding instanceof MMethodDefinition) {
-																MMethodDefinition mOverriding = (MMethodDefinition) tmpMOverriding;
-																if (!mMethod.equals(mOverriding)) {
-																	TMember tmpTOverriding = mOverridingToTOverriding
-																			.getTarget();
-																	if (tmpTOverriding instanceof TMethodDefinition) {
-																		TMethodDefinition tOverriding = (TMethodDefinition) tmpTOverriding;
-																		if (!tMethod.equals(tOverriding)) {
+															TMember tmpTOverriding = mOverridingToTOverriding
+																	.getTarget();
+															if (tmpTOverriding instanceof TMethodDefinition) {
+																TMethodDefinition tOverriding = (TMethodDefinition) tmpTOverriding;
+																if (!tMethod.equals(tOverriding)) {
+																	BodyDeclaration tmpMOverriding = mOverridingToTOverriding
+																			.getSource();
+																	if (tmpMOverriding instanceof MMethodDefinition) {
+																		MMethodDefinition mOverriding = (MMethodDefinition) tmpMOverriding;
+																		if (!mMethod.equals(mOverriding)) {
 																			if (pattern_MethodOverriding_29_2_isapplicablecore_black_nac_4BB(
 																					ruleResult,
 																					mOverridingToTOverriding) == null) {
 																				if (pattern_MethodOverriding_29_2_isapplicablecore_black_nac_3BB(
 																						ruleResult,
-																						mOverriding) == null) {
+																						tOverriding) == null) {
 																					if (pattern_MethodOverriding_29_2_isapplicablecore_black_nac_5BB(
 																							ruleResult,
-																							tOverriding) == null) {
+																							mOverriding) == null) {
 																						_result.add(new Object[] {
 																								mMethodToTMethodList,
 																								mMethod,
 																								mMethodToTMethod,
 																								tMethod,
 																								mOverridingToTOverridingList,
-																								mOverriding,
-																								mOverridingToTOverriding,
 																								tOverriding,
+																								mOverridingToTOverriding,
+																								mOverriding,
 																								ruleEntryContainer,
 																								ruleResult });
 																					}
@@ -2831,15 +2832,15 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_29_3_solveCSP_bindingFBBBBBBBBB(MethodOverriding _this,
-			IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod, MMethodDefinition mOverriding,
-			MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod, TMethodDefinition tOverriding,
-			MDefinitionToTMember mMethodToTMethod, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mMethod, mOverriding,
-				mOverridingToTOverriding, tMethod, tOverriding, mMethodToTMethod, ruleResult);
+			IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod, TMethodDefinition tMethod,
+			TMethodDefinition tOverriding, MMethodDefinition mOverriding, MDefinitionToTMember mMethodToTMethod,
+			MDefinitionToTMember mOverridingToTOverriding, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mMethod, tMethod, tOverriding,
+				mOverriding, mMethodToTMethod, mOverridingToTOverriding, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMethod, mOverriding, mOverridingToTOverriding,
-					tMethod, tOverriding, mMethodToTMethod, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mMethod, tMethod, tOverriding, mOverriding,
+					mMethodToTMethod, mOverridingToTOverriding, ruleResult };
 		}
 		return null;
 	}
@@ -2850,11 +2851,12 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 
 	public static final Object[] pattern_MethodOverriding_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
 			MethodOverriding _this, IsApplicableMatch isApplicableMatch, MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod, ModelgeneratorRuleResult ruleResult) {
+			TMethodDefinition tMethod, TMethodDefinition tOverriding, MMethodDefinition mOverriding,
+			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding,
+			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_MethodOverriding_29_3_solveCSP_binding = pattern_MethodOverriding_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-				mMethodToTMethod, ruleResult);
+				_this, isApplicableMatch, mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+				mOverridingToTOverriding, ruleResult);
 		if (result_pattern_MethodOverriding_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodOverriding_29_3_solveCSP_binding[0];
 
@@ -2862,8 +2864,8 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 					csp);
 			if (result_pattern_MethodOverriding_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMethod, mOverriding, mOverridingToTOverriding,
-						tMethod, tOverriding, mMethodToTMethod, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mMethod, tMethod, tOverriding, mOverriding,
+						mMethodToTMethod, mOverridingToTOverriding, ruleResult };
 			}
 		}
 		return null;
@@ -2876,13 +2878,13 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_29_5_checknacs_blackBBBBBB(MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod) {
+			TMethodDefinition tMethod, TMethodDefinition tOverriding, MMethodDefinition mOverriding,
+			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding) {
 		if (!mMethod.equals(mOverriding)) {
 			if (!tMethod.equals(tOverriding)) {
 				if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
-					return new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-							mMethodToTMethod };
+					return new Object[] { mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+							mOverridingToTOverriding };
 				}
 			}
 		}
@@ -2890,13 +2892,14 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_29_6_perform_blackBBBBBBB(MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding, TMethodDefinition tMethod,
-			TMethodDefinition tOverriding, MDefinitionToTMember mMethodToTMethod, ModelgeneratorRuleResult ruleResult) {
+			TMethodDefinition tMethod, TMethodDefinition tOverriding, MMethodDefinition mOverriding,
+			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding,
+			ModelgeneratorRuleResult ruleResult) {
 		if (!mMethod.equals(mOverriding)) {
 			if (!tMethod.equals(tOverriding)) {
 				if (!mMethodToTMethod.equals(mOverridingToTOverriding)) {
-					return new Object[] { mMethod, mOverriding, mOverridingToTOverriding, tMethod, tOverriding,
-							mMethodToTMethod, ruleResult };
+					return new Object[] { mMethod, tMethod, tOverriding, mOverriding, mMethodToTMethod,
+							mOverridingToTOverriding, ruleResult };
 				}
 			}
 		}
@@ -2904,16 +2907,16 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	}
 
 	public static final Object[] pattern_MethodOverriding_29_6_perform_greenBBBBB(MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, TMethodDefinition tMethod, TMethodDefinition tOverriding,
+			TMethodDefinition tMethod, TMethodDefinition tOverriding, MMethodDefinition mOverriding,
 			ModelgeneratorRuleResult ruleResult) {
-		mMethod.getRedefinitions().add(mOverriding);
 		tMethod.getOverriddenBy().add(tOverriding);
+		mMethod.getRedefinitions().add(mOverriding);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mMethod, mOverriding, tMethod, tOverriding, ruleResult };
+		return new Object[] { mMethod, tMethod, tOverriding, mOverriding, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_MethodOverriding_29_7_expressionFB(

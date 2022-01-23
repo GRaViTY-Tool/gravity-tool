@@ -204,6 +204,210 @@
     <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
     <target href="pm.xmi#//@methods.2/@signatures.0/@definitions.0/@tModifier"/>
   </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:ModelToTypeGraph">
+    <source href="../modisco.xmi#/"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeInt" href="../modisco.xmi#//@orphanTypes.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeFloat" href="../modisco.xmi#//@orphanTypes.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeShort" href="../modisco.xmi#//@orphanTypes.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeChar" href="../modisco.xmi#//@orphanTypes.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeBoolean" href="../modisco.xmi#//@orphanTypes.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeDouble" href="../modisco.xmi#//@orphanTypes.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeLong" href="../modisco.xmi#//@orphanTypes.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MMethodNameToTMethod">
+    <source href="../modisco.xmi#//@mMethodNames.1"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeVoid" href="../modisco.xmi#//@orphanTypes.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MMethodNameToTMethod">
+    <source href="../modisco.xmi#//@mMethodNames.2"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:PackageToTPackage">
+    <source href="../modisco.xmi#//@ownedElements.0"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@packages.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MClass" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="org.gravity.modisco:MClass" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MModifierToTModifier">
+    <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.8/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeByte" href="../modisco.xmi#//@orphanTypes.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.9"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MFieldNameToTField">
+    <source href="../modisco.xmi#//@mFieldNames.0"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MClass" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:TypeToTAbstractType">
+    <source xsi:type="org.gravity.modisco:MClass" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="../modisco.xmi#//@mMethodNames.1/@mSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="../modisco.xmi#//@mMethodNames.1/@mSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="../modisco.xmi#//@mFieldNames.0/@mSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="../modisco.xmi#//@mFieldNames.0/@mSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:VariableDeclarationFragmentToTFieldDefinition">
+    <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MClassInstanceCreation" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0/@initializer"/>
+    <target xsi:type="org.gravity.typegraph.basic:TCall" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0/@definitions.0/@accessing.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:AbstractMethodInvocationToTAccess">
+    <source xsi:type="org.gravity.modisco:MClassInstanceCreation" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0/@initializer"/>
+    <target xsi:type="org.gravity.typegraph.basic:TCall" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0/@definitions.0/@accessing.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MModifierToTModifier">
+    <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0/@definitions.0/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MModifierToTModifier">
+    <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.10/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MModifierToTModifier">
+    <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.0/@signatures.0/@definitions.0/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MMethodNameToTMethod">
+    <source href="../modisco.xmi#//@mMethodNames.0"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="../modisco.xmi#//@mMethodNames.2/@mSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="../modisco.xmi#//@mMethodNames.2/@mSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="../modisco.xmi#//@mMethodNames.0/@mSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="../modisco.xmi#//@mMethodNames.0/@mSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MSingleVariableAccess" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@body/@statements.0/@expression/@expression/@field"/>
+    <target xsi:type="org.gravity.typegraph.basic:TRead" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2/@signatures.0/@definitions.0/@accessing.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MSingleVariableAccessToTAccess">
+    <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@body/@statements.0/@expression/@expression/@field"/>
+    <target xsi:type="org.gravity.typegraph.basic:TRead" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2/@signatures.0/@definitions.0/@accessing.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MModifierToTModifier">
+    <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    <target href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2/@signatures.0/@definitions.0/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MMethodInvocation" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@body/@statements.0/@expression"/>
+    <target xsi:type="org.gravity.typegraph.basic:TCall" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2/@signatures.0/@definitions.0/@accessing.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:AbstractMethodInvocationToTAccess">
+    <source xsi:type="org.gravity.modisco:MMethodInvocation" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@body/@statements.0/@expression"/>
+    <target xsi:type="org.gravity.typegraph.basic:TCall" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2/@signatures.0/@definitions.0/@accessing.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:MAbstractFlowElementToTAbstractFlowElement">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco.pm:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="file:/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/basic/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
   <source href="../modisco.xmi#/"/>
   <target href="pm.xmi#/"/>
 </org.moflon.tgg.runtime:CorrespondenceModel>
