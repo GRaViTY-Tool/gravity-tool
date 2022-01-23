@@ -105,7 +105,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModel, EObject mModelToTPG, EObject tPG);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModel, EObject tPG, EObject mModelToTPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModel, EObject mModelToTPG, EObject tPG);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModel, EObject tPG, EObject mModelToTPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TypeGraph_2(TypeGraph tPG);
+	EObjectContainer isAppropriate_BWD_TypeGraph_0(TypeGraph tPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MGravityModel_2(MGravityModel mModel);
+	EObjectContainer isAppropriate_FWD_MGravityModel_0(MGravityModel mModel);
 
 	/**
 	 * <!-- begin-user-doc -->

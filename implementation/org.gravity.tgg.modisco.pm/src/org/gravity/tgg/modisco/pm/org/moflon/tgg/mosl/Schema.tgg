@@ -176,6 +176,12 @@
 		#sync: BB, BF, FB, FF
 		#gen:
 	}
+	
+	#userDefined
+	upperBound(0:EString, 1:EInt){
+		#sync: BB, BF, FB, FF
+		#gen:
+	}
 }
 
 

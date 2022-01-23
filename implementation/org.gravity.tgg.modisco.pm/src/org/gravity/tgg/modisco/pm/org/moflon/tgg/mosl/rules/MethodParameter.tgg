@@ -1,15 +1,16 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule MethodParameter_Abstract
-#with org.gravity.tgg.modisco.pm
+#rule MethodParameter #with org.gravity.tgg.modisco.pm
 
 #source {
 	mSignature:MMethodSignature {
 		++  -mEntrys -> mEntry
 	}
 
-	++mEntry:MEntry
+	++mEntry:MEntry{
+		++  -type -> mType
+	}
 
 	mType:Type
 }
@@ -20,6 +21,7 @@
 	}
 
 	++tParameter:TParameter {
+		lowerBound := 0
 		++  -type -> tAbstractType
 	}
 
@@ -42,89 +44,12 @@
 		#trg->tParameter
 	}
 
-	mTypeToTAbstractType :TypeToTAbstractType {
+	mTypeToTType :TypeToTAbstractType {
 		#src->mType
 		#trg->tAbstractType
 	}
 }
 
-
-#using org.gravity.tgg.modisco.pm.*
-
-#rule MethodParameterSingleType #extends MethodParameter_Abstract
-#with org.gravity.tgg.modisco.pm
-
-#source{
-	++mEntry:MEntry{
-		++  -type -> mType
-	}
-
-	mType:Type
+#attributeConditions {
+	upperBound(mType.name, tParameter.upperBound)
 }
-
-#target{
-	++tParameter:TParameter {
-		lowerBound := 0
-		upperBound := 1
-	}
-}
-
-
-#using org.gravity.tgg.modisco.pm.*
-
-#rule MethodParameterArrayType #extends MethodParameter_Abstract
-#with org.gravity.tgg.modisco.pm
-
-#source {
-	++mEntry:MEntry{
-		++  -type -> mArrayType
-	}
-
-	mArrayType:ArrayType {
-		-elementType -> mElementTypeAccess
-	}
-
-	mElementTypeAccess:TypeAccess{
-		-type -> mType
-	}
-
-	mType:Type
-}
-
-#target {
-	++tParameter:TParameter {
-		lowerBound := 0
-		upperBound := -1
-	}
-}
-
-
-#using org.gravity.tgg.modisco.pm.*
-
-#rule MethodParameterParameterizedType #extends MethodParameter_Abstract
-#with org.gravity.tgg.modisco.pm
-
-#source {
-	++mEntry:MEntry{
-		++  -type -> mParameterizedType
-	}
-
-	mParameterizedType:ParameterizedType {
-		-type -> mElementTypeAccess
-	}
-
-	mElementTypeAccess:TypeAccess{
-		-type -> mType
-	}
-
-	mType:Type
-}
-
-#target {
-	++tParameter:TParameter {
-		lowerBound := 0
-		upperBound := -1
-	}
-}
-
-

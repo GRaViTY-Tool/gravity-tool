@@ -77,9 +77,9 @@
 	}
 }
 
-#attributeConditions {
-	eq(lowerBound, tMethodSignature.lowerBound)
-	eq(upperBound, tMethodSignature.upperBound)
+#attributeConditions{
+	eq(tDefinition.lowerBound,tMethodSignature.lowerBound)
+	eq(tDefinition.upperBound,tMethodSignature.upperBound)
 }
 
 #rule ConstructorDefinition #extends AbstractMethodDefinition

@@ -94,8 +94,8 @@ public interface MethodName extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph modelToPg, MMethodName mName,
-			TypeGraph pg, MGravityModel mModel);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, MMethodName mName,
+			ModelToTypeGraph modelToPg, MGravityModel mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,8 +111,8 @@ public interface MethodName extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mNameToTName, EObject modelToPg, EObject mName,
-			EObject tName, EObject pg, EObject mModel);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tName, EObject pg, EObject mName, EObject modelToPg,
+			EObject mNameToTName, EObject mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,8 +176,8 @@ public interface MethodName extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph modelToPg, TMethod tName,
-			TypeGraph pg, MGravityModel mModel);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethod tName, TypeGraph pg,
+			ModelToTypeGraph modelToPg, MGravityModel mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,8 +193,8 @@ public interface MethodName extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mNameToTName, EObject modelToPg, EObject mName,
-			EObject tName, EObject pg, EObject mModel);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tName, EObject pg, EObject mName, EObject modelToPg,
+			EObject mNameToTName, EObject mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface MethodName extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_215(EMoflonEdge _edge_methods);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_87(EMoflonEdge _edge_methods);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface MethodName extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_224(EMoflonEdge _edge_mMethodNames);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_91(EMoflonEdge _edge_mMethodNames);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +250,7 @@ public interface MethodName extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MMethodName mName, TMethod tName, TypeGraph pg, MGravityModel mModel,
+	CSP isApplicable_solveCsp_CC(TMethod tName, TypeGraph pg, MMethodName mName, MGravityModel mModel,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -291,7 +291,7 @@ public interface MethodName extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph modelToPg, TypeGraph pg,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, ModelToTypeGraph modelToPg,
 			MGravityModel mModel, ModelgeneratorRuleResult ruleResult);
 
 	/**

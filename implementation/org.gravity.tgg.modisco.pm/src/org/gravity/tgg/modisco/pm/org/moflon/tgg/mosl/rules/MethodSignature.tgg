@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule MethodSignature
+#rule MethodSignature
 #with org.gravity.tgg.modisco.pm
 
 #source {
@@ -10,7 +10,7 @@
 	}
 
 	++mSignature:MMethodSignature{
-		++  -returnType -> mType
+		++-returnType->mType
 	}
 
 	mType:Type
@@ -22,10 +22,11 @@
 	}
 
 	++tSignature:TMethodSignature {
-		++  -returnType -> tType
+		lowerBound := 0
+		++  -returnType -> tAbstractType
 	}
 
-	tType:TAbstractType
+	tAbstractType:TAbstractType
 }
 
 #correspondence {
@@ -47,38 +48,10 @@
 	
 	mTypeToTType :TypeToTAbstractType {
 		#src->mType
-		#trg->tType
+		#trg->tAbstractType
 	}
 }
 
-#using org.gravity.tgg.modisco.pm.*
-
-#rule MethodSignatureSingleReturn #extends MethodSignature
-#with org.gravity.tgg.modisco.pm
-
-#source{
-	mType:Type
-}
-
-#target {
-	++tSignature:TMethodSignature {
-		lowerBound:=0
-		upperBound:=1
-	}
-}
-
-#using org.gravity.tgg.modisco.pm.*
-
-#rule MethodSignatureArrayReturn #extends MethodSignature
-#with org.gravity.tgg.modisco.pm
-
-#source {
-	mType:ArrayType
-}
-
-#target {
-	++tSignature:TMethodSignature {
-		lowerBound:=0
-		upperBound:=-1
-	}
+#attributeConditions{
+	upperBound(mType.name, tSignature.upperBound)
 }

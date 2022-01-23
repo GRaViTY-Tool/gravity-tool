@@ -48,7 +48,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MClass mType, Model mModel);
+	boolean isAppropriate_FWD(Match match, Model mModel, MClass mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MClass mType, Model mModel);
+	void registerObjectsToMatch_FWD(Match match, Model mModel, MClass mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MClass mType, Model mModel);
+	CSP isAppropriate_solveCsp_FWD(Match match, Model mModel, MClass mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,8 +96,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MClass mType, TypeToTAbstractType mTypeToTType,
-			TypeGraph pg, TClass tType, Model mModel, ModelToTypeGraph mModelToTypeGraph);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph, Model mModel,
+			TypeGraph pg, MClass mType, TClass tType, TypeToTAbstractType mTypeToTType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +113,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject pg,
-			EObject tType, EObject mModel, EObject mModelToTypeGraph);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModelToTypeGraph, EObject mModel, EObject pg,
+			EObject mType, EObject tType, EObject mTypeToTType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MClass mType, TypeToTAbstractType mTypeToTType,
-			TypeGraph pg, TClass tType, Model mModel, ModelToTypeGraph mModelToTypeGraph);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph, Model mModel,
+			TypeGraph pg, MClass mType, TClass tType, TypeToTAbstractType mTypeToTType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject pg,
-			EObject tType, EObject mModel, EObject mModelToTypeGraph);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModelToTypeGraph, EObject mModel, EObject pg,
+			EObject mType, EObject tType, EObject mTypeToTType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_244(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_12(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_254(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_12(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +252,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MClass mType, TypeGraph pg, TClass tType, Model mModel, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(Model mModel, TypeGraph pg, MClass mType, TClass tType, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -269,7 +269,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MClass mType, Model mModel);
+	boolean checkDEC_FWD(Model mModel, MClass mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,7 +286,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			TypeToTAbstractType mTypeToTTypeParameter, ModelToTypeGraph mModelToTypeGraphParameter);
+			ModelToTypeGraph mModelToTypeGraphParameter, TypeToTAbstractType mTypeToTTypeParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,8 +294,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MClass mType, TypeToTAbstractType mTypeToTType,
-			TypeGraph pg, TClass tType, Model mModel, ModelToTypeGraph mModelToTypeGraph,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph,
+			Model mModel, TypeGraph pg, MClass mType, TClass tType, TypeToTAbstractType mTypeToTType,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

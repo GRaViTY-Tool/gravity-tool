@@ -42,4 +42,7 @@
 	}
 }
 
-
+#attributeConditions {
+	eq(tFieldSignature.lowerBound, lowerBound)
+	eq(tFieldSignature.upperBound, upperBound)
+}

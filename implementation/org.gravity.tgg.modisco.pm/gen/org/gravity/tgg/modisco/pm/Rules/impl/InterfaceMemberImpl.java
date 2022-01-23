@@ -106,47 +106,47 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, MDefinition mDefinition, Modifier mModifier,
+	public boolean isAppropriate_FWD(Match match, Modifier mModifier, MDefinition mDefinition,
 			InterfaceDeclaration mInterface) {
 
 		Object[] result1_black = InterfaceMemberImpl.pattern_InterfaceMember_0_1_initialbindings_blackBBBBB(this, match,
-				mDefinition, mModifier, mInterface);
+				mModifier, mDefinition, mInterface);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mDefinition] = " + mDefinition + ", " + "[mModifier] = "
-					+ mModifier + ", " + "[mInterface] = " + mInterface + ".");
+					+ "[match] = " + match + ", " + "[mModifier] = " + mModifier + ", " + "[mDefinition] = "
+					+ mDefinition + ", " + "[mInterface] = " + mInterface + ".");
 		}
 
 		Object[] result2_bindingAndBlack = InterfaceMemberImpl
-				.pattern_InterfaceMember_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mDefinition, mModifier,
+				.pattern_InterfaceMember_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mModifier, mDefinition,
 						mInterface);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mDefinition] = " + mDefinition + ", " + "[mModifier] = "
-					+ mModifier + ", " + "[mInterface] = " + mInterface + ".");
+					+ "[match] = " + match + ", " + "[mModifier] = " + mModifier + ", " + "[mDefinition] = "
+					+ mDefinition + ", " + "[mInterface] = " + mInterface + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (InterfaceMemberImpl.pattern_InterfaceMember_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = InterfaceMemberImpl
-					.pattern_InterfaceMember_0_4_collectelementstobetranslated_blackBBBB(match, mDefinition, mModifier,
+					.pattern_InterfaceMember_0_4_collectelementstobetranslated_blackBBBB(match, mModifier, mDefinition,
 							mInterface);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[mModifier] = " + mModifier + ", "
+						+ "[mModifier] = " + mModifier + ", " + "[mDefinition] = " + mDefinition + ", "
 						+ "[mInterface] = " + mInterface + ".");
 			}
-			InterfaceMemberImpl.pattern_InterfaceMember_0_4_collectelementstobetranslated_greenBBBFF(match, mDefinition,
-					mModifier);
+			InterfaceMemberImpl.pattern_InterfaceMember_0_4_collectelementstobetranslated_greenBBBFF(match, mModifier,
+					mDefinition);
 			//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = InterfaceMemberImpl.pattern_InterfaceMember_0_5_collectcontextelements_blackBBBB(
-					match, mDefinition, mModifier, mInterface);
+					match, mModifier, mDefinition, mInterface);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[mModifier] = " + mModifier + ", "
+						+ "[mModifier] = " + mModifier + ", " + "[mDefinition] = " + mDefinition + ", "
 						+ "[mInterface] = " + mInterface + ".");
 			}
 			InterfaceMemberImpl.pattern_InterfaceMember_0_5_collectcontextelements_greenBBBFF(match, mDefinition,
@@ -156,7 +156,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 			// 
 			InterfaceMemberImpl.pattern_InterfaceMember_0_6_registerobjectstomatch_expressionBBBBB(this, match,
-					mDefinition, mModifier, mInterface);
+					mModifier, mDefinition, mInterface);
 			return InterfaceMemberImpl.pattern_InterfaceMember_0_7_expressionF();
 		} else {
 			return InterfaceMemberImpl.pattern_InterfaceMember_0_8_expressionF();
@@ -177,54 +177,53 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[0];
-		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[1];
-		TMember tMember = (TMember) result1_bindingAndBlack[2];
-		MDefinitionToTMember defToMember = (MDefinitionToTMember) result1_bindingAndBlack[3];
-		Modifier mModifier = (Modifier) result1_bindingAndBlack[4];
-		TInterface tInterface = (TInterface) result1_bindingAndBlack[5];
-		InterfaceDeclaration mInterface = (InterfaceDeclaration) result1_bindingAndBlack[6];
+		TMember tMember = (TMember) result1_bindingAndBlack[0];
+		MDefinitionToTMember defToMember = (MDefinitionToTMember) result1_bindingAndBlack[1];
+		Modifier mModifier = (Modifier) result1_bindingAndBlack[2];
+		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[3];
+		TInterface tInterface = (TInterface) result1_bindingAndBlack[4];
+		InterfaceDeclaration mInterface = (InterfaceDeclaration) result1_bindingAndBlack[5];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[6];
 		CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = InterfaceMemberImpl
-				.pattern_InterfaceMember_1_1_performtransformation_greenFFBBB(tMember, mModifier, csp);
+				.pattern_InterfaceMember_1_1_performtransformation_greenFBBFB(tMember, mModifier, csp);
 		MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result1_green[0];
-		TModifier tModifier = (TModifier) result1_green[1];
+		TModifier tModifier = (TModifier) result1_green[3];
 
 		Object[] result2_black = InterfaceMemberImpl.pattern_InterfaceMember_1_2_collecttranslatedelements_blackBBB(
-				mModifierToTModifier, tModifier, mModifier);
+				mModifierToTModifier, mModifier, tModifier);
 		if (result2_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[mModifierToTModifier] = " + mModifierToTModifier
-							+ ", " + "[tModifier] = " + tModifier + ", " + "[mModifier] = " + mModifier + ".");
+							+ ", " + "[mModifier] = " + mModifier + ", " + "[tModifier] = " + tModifier + ".");
 		}
 		Object[] result2_green = InterfaceMemberImpl.pattern_InterfaceMember_1_2_collecttranslatedelements_greenFBBB(
-				mModifierToTModifier, tModifier, mModifier);
+				mModifierToTModifier, mModifier, tModifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceMemberImpl.pattern_InterfaceMember_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-				ruleresult, mTypeToTType, mModifierToTModifier, tModifier, mDefinition, tMember, defToMember, mModifier,
-				tInterface, mInterface);
+				ruleresult, mModifierToTModifier, tMember, defToMember, mModifier, mDefinition, tModifier, tInterface,
+				mInterface, mTypeToTType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mModifierToTModifier] = "
-					+ mModifierToTModifier + ", " + "[tModifier] = " + tModifier + ", " + "[mDefinition] = "
-					+ mDefinition + ", " + "[tMember] = " + tMember + ", " + "[defToMember] = " + defToMember + ", "
-					+ "[mModifier] = " + mModifier + ", " + "[tInterface] = " + tInterface + ", " + "[mInterface] = "
-					+ mInterface + ".");
+					+ ", " + "[mModifierToTModifier] = " + mModifierToTModifier + ", " + "[tMember] = " + tMember + ", "
+					+ "[defToMember] = " + defToMember + ", " + "[mModifier] = " + mModifier + ", " + "[mDefinition] = "
+					+ mDefinition + ", " + "[tModifier] = " + tModifier + ", " + "[tInterface] = " + tInterface + ", "
+					+ "[mInterface] = " + mInterface + ", " + "[mTypeToTType] = " + mTypeToTType + ".");
 		}
 		InterfaceMemberImpl.pattern_InterfaceMember_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult,
-				mModifierToTModifier, tModifier, mDefinition, tMember, mModifier);
-		//nothing EMoflonEdge mModifierToTModifier__tModifier____target = (EMoflonEdge) result3_green[6];
+				mModifierToTModifier, tMember, mModifier, mDefinition, tModifier);
+		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mModifierToTModifier__tModifier____target = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		InterfaceMemberImpl.pattern_InterfaceMember_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
-				mTypeToTType, mModifierToTModifier, tModifier, mDefinition, tMember, defToMember, mModifier, tInterface,
-				mInterface);
+				mModifierToTModifier, tMember, defToMember, mModifier, mDefinition, tModifier, tInterface, mInterface,
+				mTypeToTType);
 		return InterfaceMemberImpl.pattern_InterfaceMember_1_6_expressionFB(ruleresult);
 	}
 
@@ -252,42 +251,42 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		MDefinition mDefinition = (MDefinition) result2_binding[0];
-		Modifier mModifier = (Modifier) result2_binding[1];
+		Modifier mModifier = (Modifier) result2_binding[0];
+		MDefinition mDefinition = (MDefinition) result2_binding[1];
 		InterfaceDeclaration mInterface = (InterfaceDeclaration) result2_binding[2];
-		for (Object[] result2_black : InterfaceMemberImpl
-				.pattern_InterfaceMember_2_2_corematch_blackFBFFBFBB(mDefinition, mModifier, mInterface, match)) {
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[0];
-			TMember tMember = (TMember) result2_black[2];
-			MDefinitionToTMember defToMember = (MDefinitionToTMember) result2_black[3];
-			TInterface tInterface = (TInterface) result2_black[5];
+		for (Object[] result2_black : InterfaceMemberImpl.pattern_InterfaceMember_2_2_corematch_blackFFBBFBFB(mModifier,
+				mDefinition, mInterface, match)) {
+			TMember tMember = (TMember) result2_black[0];
+			MDefinitionToTMember defToMember = (MDefinitionToTMember) result2_black[1];
+			TInterface tInterface = (TInterface) result2_black[4];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : InterfaceMemberImpl.pattern_InterfaceMember_2_3_findcontext_blackBBBBBBB(
-					mTypeToTType, mDefinition, tMember, defToMember, mModifier, tInterface, mInterface)) {
+					tMember, defToMember, mModifier, mDefinition, tInterface, mInterface, mTypeToTType)) {
 				Object[] result3_green = InterfaceMemberImpl
-						.pattern_InterfaceMember_2_3_findcontext_greenBBBBBBBFFFFFFFFFFF(mTypeToTType, mDefinition,
-								tMember, defToMember, mModifier, tInterface, mInterface);
+						.pattern_InterfaceMember_2_3_findcontext_greenBBBBBBBFFFFFFFFFFF(tMember, defToMember,
+								mModifier, mDefinition, tInterface, mInterface, mTypeToTType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge defToMember__mDefinition____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge defToMember__tMember____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge defToMember__tMember____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge defToMember__mDefinition____source = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge tInterface__tMember____defines = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge tMember__tInterface____definedBy = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mTypeToTType__mInterface____source = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mInterface__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mDefinition__mInterface____abstractTypeDeclaration = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mInterface__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mDefinition__mInterface____abstractTypeDeclaration = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mTypeToTType__mInterface____source = (EMoflonEdge) result3_green[14];
 				//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result3_green[16];
 				//nothing EMoflonEdge mTypeToTType__tInterface____target = (EMoflonEdge) result3_green[17];
 
 				Object[] result4_bindingAndBlack = InterfaceMemberImpl
 						.pattern_InterfaceMember_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-								mTypeToTType, mDefinition, tMember, defToMember, mModifier, tInterface, mInterface);
+								tMember, defToMember, mModifier, mDefinition, tInterface, mInterface, mTypeToTType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mTypeToTType] = " + mTypeToTType
-							+ ", " + "[mDefinition] = " + mDefinition + ", " + "[tMember] = " + tMember + ", "
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tMember] = " + tMember + ", "
 							+ "[defToMember] = " + defToMember + ", " + "[mModifier] = " + mModifier + ", "
-							+ "[tInterface] = " + tInterface + ", " + "[mInterface] = " + mInterface + ".");
+							+ "[mDefinition] = " + mDefinition + ", " + "[tInterface] = " + tInterface + ", "
+							+ "[mInterface] = " + mInterface + ", " + "[mTypeToTType] = " + mTypeToTType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -316,10 +315,10 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, MDefinition mDefinition, Modifier mModifier,
+	public void registerObjectsToMatch_FWD(Match match, Modifier mModifier, MDefinition mDefinition,
 			InterfaceDeclaration mInterface) {
-		match.registerObject("mDefinition", mDefinition);
 		match.registerObject("mModifier", mModifier);
+		match.registerObject("mDefinition", mDefinition);
 		match.registerObject("mInterface", mInterface);
 
 	}
@@ -329,7 +328,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mDefinition, Modifier mModifier,
+	public CSP isAppropriate_solveCsp_FWD(Match match, Modifier mModifier, MDefinition mDefinition,
 			InterfaceDeclaration mInterface) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -359,9 +358,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			MDefinition mDefinition, TMember tMember, MDefinitionToTMember defToMember, Modifier mModifier,
-			TInterface tInterface, InterfaceDeclaration mInterface) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMember tMember,
+			MDefinitionToTMember defToMember, Modifier mModifier, MDefinition mDefinition, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -396,13 +395,13 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		interfaceVisibility.solve(var_mModifier_visibility, var_tModifier_tVisibility);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
-		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("defToMember", defToMember);
 		isApplicableMatch.registerObject("mModifier", mModifier);
+		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("tInterface", tInterface);
 		isApplicableMatch.registerObject("mInterface", mInterface);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		return csp;
 	}
 
@@ -420,18 +419,18 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mTypeToTType, EObject mModifierToTModifier,
-			EObject tModifier, EObject mDefinition, EObject tMember, EObject defToMember, EObject mModifier,
-			EObject tInterface, EObject mInterface) {
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject tMember,
+			EObject defToMember, EObject mModifier, EObject mDefinition, EObject tModifier, EObject tInterface,
+			EObject mInterface, EObject mTypeToTType) {
 		ruleresult.registerObject("mModifierToTModifier", mModifierToTModifier);
-		ruleresult.registerObject("tModifier", tModifier);
-		ruleresult.registerObject("mDefinition", mDefinition);
 		ruleresult.registerObject("tMember", tMember);
 		ruleresult.registerObject("defToMember", defToMember);
 		ruleresult.registerObject("mModifier", mModifier);
+		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("tModifier", tModifier);
 		ruleresult.registerObject("tInterface", tInterface);
 		ruleresult.registerObject("mInterface", mInterface);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 
 	}
 
@@ -450,22 +449,22 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TModifier tModifier, TMember tMember, TInterface tInterface) {
+	public boolean isAppropriate_BWD(Match match, TMember tMember, TModifier tModifier, TInterface tInterface) {
 
 		Object[] result1_black = InterfaceMemberImpl.pattern_InterfaceMember_10_1_initialbindings_blackBBBBB(this,
-				match, tModifier, tMember, tInterface);
+				match, tMember, tModifier, tInterface);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tModifier] = " + tModifier + ", " + "[tMember] = " + tMember
+					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tModifier] = " + tModifier
 					+ ", " + "[tInterface] = " + tInterface + ".");
 		}
 
 		Object[] result2_bindingAndBlack = InterfaceMemberImpl
-				.pattern_InterfaceMember_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tModifier, tMember,
+				.pattern_InterfaceMember_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tMember, tModifier,
 						tInterface);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tModifier] = " + tModifier + ", " + "[tMember] = " + tMember
+					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tModifier] = " + tModifier
 					+ ", " + "[tInterface] = " + tInterface + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
@@ -473,22 +472,22 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		if (InterfaceMemberImpl.pattern_InterfaceMember_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = InterfaceMemberImpl
-					.pattern_InterfaceMember_10_4_collectelementstobetranslated_blackBBBB(match, tModifier, tMember,
+					.pattern_InterfaceMember_10_4_collectelementstobetranslated_blackBBBB(match, tMember, tModifier,
 							tInterface);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tModifier] = " + tModifier + ", " + "[tMember] = " + tMember + ", " + "[tInterface] = "
+						+ "[tMember] = " + tMember + ", " + "[tModifier] = " + tModifier + ", " + "[tInterface] = "
 						+ tInterface + ".");
 			}
-			InterfaceMemberImpl.pattern_InterfaceMember_10_4_collectelementstobetranslated_greenBBBF(match, tModifier,
-					tMember);
+			InterfaceMemberImpl.pattern_InterfaceMember_10_4_collectelementstobetranslated_greenBBBF(match, tMember,
+					tModifier);
 			//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = InterfaceMemberImpl.pattern_InterfaceMember_10_5_collectcontextelements_blackBBBB(
-					match, tModifier, tMember, tInterface);
+					match, tMember, tModifier, tInterface);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tModifier] = " + tModifier + ", " + "[tMember] = " + tMember + ", " + "[tInterface] = "
+						+ "[tMember] = " + tMember + ", " + "[tModifier] = " + tModifier + ", " + "[tInterface] = "
 						+ tInterface + ".");
 			}
 			InterfaceMemberImpl.pattern_InterfaceMember_10_5_collectcontextelements_greenBBBFF(match, tMember,
@@ -498,7 +497,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 			// 
 			InterfaceMemberImpl.pattern_InterfaceMember_10_6_registerobjectstomatch_expressionBBBBB(this, match,
-					tModifier, tMember, tInterface);
+					tMember, tModifier, tInterface);
 			return InterfaceMemberImpl.pattern_InterfaceMember_10_7_expressionF();
 		} else {
 			return InterfaceMemberImpl.pattern_InterfaceMember_10_8_expressionF();
@@ -519,54 +518,53 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[0];
-		TModifier tModifier = (TModifier) result1_bindingAndBlack[1];
+		TMember tMember = (TMember) result1_bindingAndBlack[0];
+		MDefinitionToTMember defToMember = (MDefinitionToTMember) result1_bindingAndBlack[1];
 		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[2];
-		TMember tMember = (TMember) result1_bindingAndBlack[3];
-		MDefinitionToTMember defToMember = (MDefinitionToTMember) result1_bindingAndBlack[4];
-		TInterface tInterface = (TInterface) result1_bindingAndBlack[5];
-		InterfaceDeclaration mInterface = (InterfaceDeclaration) result1_bindingAndBlack[6];
+		TModifier tModifier = (TModifier) result1_bindingAndBlack[3];
+		TInterface tInterface = (TInterface) result1_bindingAndBlack[4];
+		InterfaceDeclaration mInterface = (InterfaceDeclaration) result1_bindingAndBlack[5];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[6];
 		CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = InterfaceMemberImpl
-				.pattern_InterfaceMember_11_1_performtransformation_greenFBBFB(tModifier, mDefinition, csp);
+				.pattern_InterfaceMember_11_1_performtransformation_greenFFBBB(mDefinition, tModifier, csp);
 		MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result1_green[0];
-		Modifier mModifier = (Modifier) result1_green[3];
+		Modifier mModifier = (Modifier) result1_green[1];
 
 		Object[] result2_black = InterfaceMemberImpl.pattern_InterfaceMember_11_2_collecttranslatedelements_blackBBB(
-				mModifierToTModifier, tModifier, mModifier);
+				mModifierToTModifier, mModifier, tModifier);
 		if (result2_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[mModifierToTModifier] = " + mModifierToTModifier
-							+ ", " + "[tModifier] = " + tModifier + ", " + "[mModifier] = " + mModifier + ".");
+							+ ", " + "[mModifier] = " + mModifier + ", " + "[tModifier] = " + tModifier + ".");
 		}
 		Object[] result2_green = InterfaceMemberImpl.pattern_InterfaceMember_11_2_collecttranslatedelements_greenFBBB(
-				mModifierToTModifier, tModifier, mModifier);
+				mModifierToTModifier, mModifier, tModifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceMemberImpl.pattern_InterfaceMember_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-				ruleresult, mTypeToTType, mModifierToTModifier, tModifier, mDefinition, tMember, defToMember, mModifier,
-				tInterface, mInterface);
+				ruleresult, mModifierToTModifier, tMember, defToMember, mModifier, mDefinition, tModifier, tInterface,
+				mInterface, mTypeToTType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mModifierToTModifier] = "
-					+ mModifierToTModifier + ", " + "[tModifier] = " + tModifier + ", " + "[mDefinition] = "
-					+ mDefinition + ", " + "[tMember] = " + tMember + ", " + "[defToMember] = " + defToMember + ", "
-					+ "[mModifier] = " + mModifier + ", " + "[tInterface] = " + tInterface + ", " + "[mInterface] = "
-					+ mInterface + ".");
+					+ ", " + "[mModifierToTModifier] = " + mModifierToTModifier + ", " + "[tMember] = " + tMember + ", "
+					+ "[defToMember] = " + defToMember + ", " + "[mModifier] = " + mModifier + ", " + "[mDefinition] = "
+					+ mDefinition + ", " + "[tModifier] = " + tModifier + ", " + "[tInterface] = " + tInterface + ", "
+					+ "[mInterface] = " + mInterface + ", " + "[mTypeToTType] = " + mTypeToTType + ".");
 		}
 		InterfaceMemberImpl.pattern_InterfaceMember_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult,
-				mModifierToTModifier, tModifier, mDefinition, tMember, mModifier);
-		//nothing EMoflonEdge mModifierToTModifier__tModifier____target = (EMoflonEdge) result3_green[6];
+				mModifierToTModifier, tMember, mModifier, mDefinition, tModifier);
+		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mModifierToTModifier__tModifier____target = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge mDefinition__mModifier____modifier = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge mModifier__mDefinition____bodyDeclaration = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		InterfaceMemberImpl.pattern_InterfaceMember_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
-				mTypeToTType, mModifierToTModifier, tModifier, mDefinition, tMember, defToMember, mModifier, tInterface,
-				mInterface);
+				mModifierToTModifier, tMember, defToMember, mModifier, mDefinition, tModifier, tInterface, mInterface,
+				mTypeToTType);
 		return InterfaceMemberImpl.pattern_InterfaceMember_11_6_expressionFB(ruleresult);
 	}
 
@@ -594,41 +592,41 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TModifier tModifier = (TModifier) result2_binding[0];
-		TMember tMember = (TMember) result2_binding[1];
+		TMember tMember = (TMember) result2_binding[0];
+		TModifier tModifier = (TModifier) result2_binding[1];
 		TInterface tInterface = (TInterface) result2_binding[2];
-		for (Object[] result2_black : InterfaceMemberImpl
-				.pattern_InterfaceMember_12_2_corematch_blackFBFBFBFB(tModifier, tMember, tInterface, match)) {
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[0];
+		for (Object[] result2_black : InterfaceMemberImpl.pattern_InterfaceMember_12_2_corematch_blackBFFBBFFB(tMember,
+				tModifier, tInterface, match)) {
+			MDefinitionToTMember defToMember = (MDefinitionToTMember) result2_black[1];
 			MDefinition mDefinition = (MDefinition) result2_black[2];
-			MDefinitionToTMember defToMember = (MDefinitionToTMember) result2_black[4];
-			InterfaceDeclaration mInterface = (InterfaceDeclaration) result2_black[6];
+			InterfaceDeclaration mInterface = (InterfaceDeclaration) result2_black[5];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : InterfaceMemberImpl.pattern_InterfaceMember_12_3_findcontext_blackBBBBBBB(
-					mTypeToTType, tModifier, mDefinition, tMember, defToMember, tInterface, mInterface)) {
+					tMember, defToMember, mDefinition, tModifier, tInterface, mInterface, mTypeToTType)) {
 				Object[] result3_green = InterfaceMemberImpl
-						.pattern_InterfaceMember_12_3_findcontext_greenBBBBBBBFFFFFFFFFF(mTypeToTType, tModifier,
-								mDefinition, tMember, defToMember, tInterface, mInterface);
+						.pattern_InterfaceMember_12_3_findcontext_greenBBBBBBBFFFFFFFFFF(tMember, defToMember,
+								mDefinition, tModifier, tInterface, mInterface, mTypeToTType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge defToMember__mDefinition____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge defToMember__tMember____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge defToMember__tMember____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tMember__tModifier____tModifier = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge defToMember__mDefinition____source = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge tInterface__tMember____defines = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge tMember__tInterface____definedBy = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mTypeToTType__mInterface____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mInterface__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge mDefinition__mInterface____abstractTypeDeclaration = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge mInterface__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mDefinition__mInterface____abstractTypeDeclaration = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mTypeToTType__mInterface____source = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge mTypeToTType__tInterface____target = (EMoflonEdge) result3_green[16];
 
 				Object[] result4_bindingAndBlack = InterfaceMemberImpl
 						.pattern_InterfaceMember_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-								mTypeToTType, tModifier, mDefinition, tMember, defToMember, tInterface, mInterface);
+								tMember, defToMember, mDefinition, tModifier, tInterface, mInterface, mTypeToTType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mTypeToTType] = " + mTypeToTType
-							+ ", " + "[tModifier] = " + tModifier + ", " + "[mDefinition] = " + mDefinition + ", "
-							+ "[tMember] = " + tMember + ", " + "[defToMember] = " + defToMember + ", "
-							+ "[tInterface] = " + tInterface + ", " + "[mInterface] = " + mInterface + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tMember] = " + tMember + ", "
+							+ "[defToMember] = " + defToMember + ", " + "[mDefinition] = " + mDefinition + ", "
+							+ "[tModifier] = " + tModifier + ", " + "[tInterface] = " + tInterface + ", "
+							+ "[mInterface] = " + mInterface + ", " + "[mTypeToTType] = " + mTypeToTType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -657,9 +655,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TModifier tModifier, TMember tMember, TInterface tInterface) {
-		match.registerObject("tModifier", tModifier);
+	public void registerObjectsToMatch_BWD(Match match, TMember tMember, TModifier tModifier, TInterface tInterface) {
 		match.registerObject("tMember", tMember);
+		match.registerObject("tModifier", tModifier);
 		match.registerObject("tInterface", tInterface);
 
 	}
@@ -669,7 +667,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TModifier tModifier, TMember tMember, TInterface tInterface) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TModifier tModifier, TInterface tInterface) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -698,9 +696,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TModifier tModifier, MDefinition mDefinition, TMember tMember, MDefinitionToTMember defToMember,
-			TInterface tInterface, InterfaceDeclaration mInterface) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tMember,
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TModifier tModifier, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -735,13 +733,13 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		interfaceVisibility.solve(var_mModifier_visibility, var_tModifier_tVisibility);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
-		isApplicableMatch.registerObject("tModifier", tModifier);
-		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("defToMember", defToMember);
+		isApplicableMatch.registerObject("mDefinition", mDefinition);
+		isApplicableMatch.registerObject("tModifier", tModifier);
 		isApplicableMatch.registerObject("tInterface", tInterface);
 		isApplicableMatch.registerObject("mInterface", mInterface);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		return csp;
 	}
 
@@ -759,18 +757,18 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mTypeToTType, EObject mModifierToTModifier,
-			EObject tModifier, EObject mDefinition, EObject tMember, EObject defToMember, EObject mModifier,
-			EObject tInterface, EObject mInterface) {
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject tMember,
+			EObject defToMember, EObject mModifier, EObject mDefinition, EObject tModifier, EObject tInterface,
+			EObject mInterface, EObject mTypeToTType) {
 		ruleresult.registerObject("mModifierToTModifier", mModifierToTModifier);
-		ruleresult.registerObject("tModifier", tModifier);
-		ruleresult.registerObject("mDefinition", mDefinition);
 		ruleresult.registerObject("tMember", tMember);
 		ruleresult.registerObject("defToMember", defToMember);
 		ruleresult.registerObject("mModifier", mModifier);
+		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("tModifier", tModifier);
 		ruleresult.registerObject("tInterface", tInterface);
 		ruleresult.registerObject("mInterface", mInterface);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 
 	}
 
@@ -789,7 +787,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_264(EMoflonEdge _edge_tModifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_68(EMoflonEdge _edge_tModifier) {
 
 		Object[] result1_bindingAndBlack = InterfaceMemberImpl
 				.pattern_InterfaceMember_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -805,8 +803,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		// ForEach 
 		for (Object[] result2_black : InterfaceMemberImpl
 				.pattern_InterfaceMember_20_2_testcorematchandDECs_blackFFFB(_edge_tModifier)) {
-			TModifier tModifier = (TModifier) result2_black[0];
-			TMember tMember = (TMember) result2_black[1];
+			TMember tMember = (TMember) result2_black[0];
+			TModifier tModifier = (TModifier) result2_black[1];
 			TInterface tInterface = (TInterface) result2_black[2];
 			Object[] result2_green = InterfaceMemberImpl
 					.pattern_InterfaceMember_20_2_testcorematchandDECs_greenFB(__eClass);
@@ -815,7 +813,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 			// 
 			if (InterfaceMemberImpl
 					.pattern_InterfaceMember_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(this,
-							match, tModifier, tMember, tInterface)) {
+							match, tMember, tModifier, tInterface)) {
 				// 
 				if (InterfaceMemberImpl
 						.pattern_InterfaceMember_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -847,7 +845,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_274(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_71(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = InterfaceMemberImpl
 				.pattern_InterfaceMember_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -863,8 +861,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		// ForEach 
 		for (Object[] result2_black : InterfaceMemberImpl
 				.pattern_InterfaceMember_21_2_testcorematchandDECs_blackFFFB(_edge_modifier)) {
-			MDefinition mDefinition = (MDefinition) result2_black[0];
-			Modifier mModifier = (Modifier) result2_black[1];
+			Modifier mModifier = (Modifier) result2_black[0];
+			MDefinition mDefinition = (MDefinition) result2_black[1];
 			InterfaceDeclaration mInterface = (InterfaceDeclaration) result2_black[2];
 			Object[] result2_green = InterfaceMemberImpl
 					.pattern_InterfaceMember_21_2_testcorematchandDECs_greenFB(__eClass);
@@ -873,7 +871,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 			// 
 			if (InterfaceMemberImpl
 					.pattern_InterfaceMember_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(this,
-							match, mDefinition, mModifier, mInterface)) {
+							match, mModifier, mDefinition, mInterface)) {
 				// 
 				if (InterfaceMemberImpl
 						.pattern_InterfaceMember_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -915,21 +913,21 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
-		var_mModifier_static.setValue(__helper.getValue("mModifier", "static"));
-		var_mModifier_static.setType("boolean");
-
 		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier", true, csp);
 		var_tModifier_isStatic.setValue(__helper.getValue("tModifier", "isStatic"));
 		var_tModifier_isStatic.setType("boolean");
 
-		Variable var_mModifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
-		var_mModifier_visibility.setValue(__helper.getValue("mModifier", "visibility"));
-		var_mModifier_visibility.setType("java.VisibilityKind");
+		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
+		var_mModifier_static.setValue(__helper.getValue("mModifier", "static"));
+		var_mModifier_static.setType("boolean");
 
 		Variable var_tModifier_tVisibility = CSPFactoryHelper.eINSTANCE.createVariable("tModifier", true, csp);
 		var_tModifier_tVisibility.setValue(__helper.getValue("tModifier", "tVisibility"));
 		var_tModifier_tVisibility.setType("basic.TVisibility");
+
+		Variable var_mModifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
+		var_mModifier_visibility.setValue(__helper.getValue("mModifier", "visibility"));
+		var_mModifier_visibility.setType("java.VisibilityKind");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -979,21 +977,21 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
-		var_mModifier_static.setValue(__helper.getValue("mModifier", "static"));
-		var_mModifier_static.setType("boolean");
-
 		Variable var_tModifier_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("tModifier", true, csp);
 		var_tModifier_isStatic.setValue(__helper.getValue("tModifier", "isStatic"));
 		var_tModifier_isStatic.setType("boolean");
 
-		Variable var_mModifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
-		var_mModifier_visibility.setValue(__helper.getValue("mModifier", "visibility"));
-		var_mModifier_visibility.setType("java.VisibilityKind");
+		Variable var_mModifier_static = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
+		var_mModifier_static.setValue(__helper.getValue("mModifier", "static"));
+		var_mModifier_static.setType("boolean");
 
 		Variable var_tModifier_tVisibility = CSPFactoryHelper.eINSTANCE.createVariable("tModifier", true, csp);
 		var_tModifier_tVisibility.setValue(__helper.getValue("tModifier", "tVisibility"));
 		var_tModifier_tVisibility.setType("basic.TVisibility");
+
+		Variable var_mModifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("mModifier", true, csp);
+		var_mModifier_visibility.setValue(__helper.getValue("mModifier", "visibility"));
+		var_mModifier_visibility.setType("java.VisibilityKind");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1048,20 +1046,20 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TModifier tModifier = (TModifier) result2_bindingAndBlack[0];
-		MDefinition mDefinition = (MDefinition) result2_bindingAndBlack[1];
-		TMember tMember = (TMember) result2_bindingAndBlack[2];
-		Modifier mModifier = (Modifier) result2_bindingAndBlack[3];
+		TMember tMember = (TMember) result2_bindingAndBlack[0];
+		Modifier mModifier = (Modifier) result2_bindingAndBlack[1];
+		MDefinition mDefinition = (MDefinition) result2_bindingAndBlack[2];
+		TModifier tModifier = (TModifier) result2_bindingAndBlack[3];
 		TInterface tInterface = (TInterface) result2_bindingAndBlack[4];
 		InterfaceDeclaration mInterface = (InterfaceDeclaration) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = InterfaceMemberImpl
-				.pattern_InterfaceMember_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, tModifier, mDefinition, tMember,
-						mModifier, tInterface, mInterface, sourceMatch, targetMatch);
+				.pattern_InterfaceMember_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, tMember, mModifier, mDefinition,
+						tModifier, tInterface, mInterface, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tModifier] = " + tModifier + ", " + "[mDefinition] = " + mDefinition + ", " + "[tMember] = "
-					+ tMember + ", " + "[mModifier] = " + mModifier + ", " + "[tInterface] = " + tInterface + ", "
+					+ "[tMember] = " + tMember + ", " + "[mModifier] = " + mModifier + ", " + "[mDefinition] = "
+					+ mDefinition + ", " + "[tModifier] = " + tModifier + ", " + "[tInterface] = " + tInterface + ", "
 					+ "[mInterface] = " + mInterface + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
@@ -1070,24 +1068,24 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		if (InterfaceMemberImpl.pattern_InterfaceMember_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : InterfaceMemberImpl
-					.pattern_InterfaceMember_24_5_matchcorrcontext_blackFBBFBBBB(mDefinition, tMember, tInterface,
+					.pattern_InterfaceMember_24_5_matchcorrcontext_blackBFBBBFBB(tMember, mDefinition, tInterface,
 							mInterface, sourceMatch, targetMatch)) {
-				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[0];
-				MDefinitionToTMember defToMember = (MDefinitionToTMember) result5_black[3];
+				MDefinitionToTMember defToMember = (MDefinitionToTMember) result5_black[1];
+				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[5];
 				Object[] result5_green = InterfaceMemberImpl.pattern_InterfaceMember_24_5_matchcorrcontext_greenBBBBF(
-						mTypeToTType, defToMember, sourceMatch, targetMatch);
+						defToMember, mTypeToTType, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = InterfaceMemberImpl
-						.pattern_InterfaceMember_24_6_createcorrespondence_blackBBBBBBB(tModifier, mDefinition, tMember,
-								mModifier, tInterface, mInterface, ccMatch);
+						.pattern_InterfaceMember_24_6_createcorrespondence_blackBBBBBBB(tMember, mModifier, mDefinition,
+								tModifier, tInterface, mInterface, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tModifier] = "
-							+ tModifier + ", " + "[mDefinition] = " + mDefinition + ", " + "[tMember] = " + tMember
-							+ ", " + "[mModifier] = " + mModifier + ", " + "[tInterface] = " + tInterface + ", "
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tMember] = " + tMember
+							+ ", " + "[mModifier] = " + mModifier + ", " + "[mDefinition] = " + mDefinition + ", "
+							+ "[tModifier] = " + tModifier + ", " + "[tInterface] = " + tInterface + ", "
 							+ "[mInterface] = " + mInterface + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				InterfaceMemberImpl.pattern_InterfaceMember_24_6_createcorrespondence_greenFBBB(tModifier, mModifier,
+				InterfaceMemberImpl.pattern_InterfaceMember_24_6_createcorrespondence_greenFBBB(mModifier, tModifier,
 						ccMatch);
 				//nothing MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result6_green[0];
 
@@ -1111,8 +1109,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TModifier tModifier, MDefinition mDefinition, TMember tMember,
-			Modifier mModifier, TInterface tInterface, InterfaceDeclaration mInterface, Match sourceMatch,
+	public CSP isApplicable_solveCsp_CC(TMember tMember, Modifier mModifier, MDefinition mDefinition,
+			TModifier tModifier, TInterface tInterface, InterfaceDeclaration mInterface, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -1165,9 +1163,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(MDefinition mDefinition, Modifier mModifier, InterfaceDeclaration mInterface) {// 
-		Object[] result1_black = InterfaceMemberImpl.pattern_InterfaceMember_27_1_matchtggpattern_blackBBB(mDefinition,
-				mModifier, mInterface);
+	public boolean checkDEC_FWD(Modifier mModifier, MDefinition mDefinition, InterfaceDeclaration mInterface) {// 
+		Object[] result1_black = InterfaceMemberImpl.pattern_InterfaceMember_27_1_matchtggpattern_blackBBB(mModifier,
+				mDefinition, mInterface);
 		if (result1_black != null) {
 			return InterfaceMemberImpl.pattern_InterfaceMember_27_2_expressionF();
 		} else {
@@ -1181,9 +1179,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TModifier tModifier, TMember tMember, TInterface tInterface) {// 
-		Object[] result1_black = InterfaceMemberImpl.pattern_InterfaceMember_28_1_matchtggpattern_blackBBB(tModifier,
-				tMember, tInterface);
+	public boolean checkDEC_BWD(TMember tMember, TModifier tModifier, TInterface tInterface) {// 
+		Object[] result1_black = InterfaceMemberImpl.pattern_InterfaceMember_28_1_matchtggpattern_blackBBB(tMember,
+				tModifier, tInterface);
 		if (result1_black != null) {
 			return InterfaceMemberImpl.pattern_InterfaceMember_28_2_expressionF();
 		} else {
@@ -1198,7 +1196,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * @generated
 	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			TypeToTAbstractType mTypeToTTypeParameter) {
+			MDefinitionToTMember defToMemberParameter) {
 
 		Object[] result1_black = InterfaceMemberImpl.pattern_InterfaceMember_29_1_createresult_blackB(this);
 		if (result1_black == null) {
@@ -1211,46 +1209,46 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		// ForEach 
 		for (Object[] result2_black : InterfaceMemberImpl
 				.pattern_InterfaceMember_29_2_isapplicablecore_blackFFFFFFFBB(ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList mTypeToTTypeList = (RuleEntryList) result2_black[0];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[1];
-			InterfaceDeclaration mInterface = (InterfaceDeclaration) result2_black[2];
+			//nothing RuleEntryList defToMemberList = (RuleEntryList) result2_black[0];
+			TMember tMember = (TMember) result2_black[1];
+			MDefinitionToTMember defToMember = (MDefinitionToTMember) result2_black[2];
 			MDefinition mDefinition = (MDefinition) result2_black[3];
-			MDefinitionToTMember defToMember = (MDefinitionToTMember) result2_black[4];
-			TMember tMember = (TMember) result2_black[5];
+			InterfaceDeclaration mInterface = (InterfaceDeclaration) result2_black[4];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[5];
 			TInterface tInterface = (TInterface) result2_black[6];
 
 			Object[] result3_bindingAndBlack = InterfaceMemberImpl
-					.pattern_InterfaceMember_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							mTypeToTType, mDefinition, tMember, defToMember, tInterface, mInterface, ruleResult);
+					.pattern_InterfaceMember_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, tMember,
+							defToMember, mDefinition, tInterface, mInterface, mTypeToTType, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mTypeToTType] = " + mTypeToTType
-						+ ", " + "[mDefinition] = " + mDefinition + ", " + "[tMember] = " + tMember + ", "
-						+ "[defToMember] = " + defToMember + ", " + "[tInterface] = " + tInterface + ", "
-						+ "[mInterface] = " + mInterface + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tMember] = " + tMember + ", "
+						+ "[defToMember] = " + defToMember + ", " + "[mDefinition] = " + mDefinition + ", "
+						+ "[tInterface] = " + tInterface + ", " + "[mInterface] = " + mInterface + ", "
+						+ "[mTypeToTType] = " + mTypeToTType + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (InterfaceMemberImpl.pattern_InterfaceMember_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = InterfaceMemberImpl.pattern_InterfaceMember_29_5_checknacs_blackBBBBBB(
-						mTypeToTType, mDefinition, tMember, defToMember, tInterface, mInterface);
+				Object[] result5_black = InterfaceMemberImpl.pattern_InterfaceMember_29_5_checknacs_blackBBBBBB(tMember,
+						defToMember, mDefinition, tInterface, mInterface, mTypeToTType);
 				if (result5_black != null) {
 
 					Object[] result6_black = InterfaceMemberImpl.pattern_InterfaceMember_29_6_perform_blackBBBBBBB(
-							mTypeToTType, mDefinition, tMember, defToMember, tInterface, mInterface, ruleResult);
+							tMember, defToMember, mDefinition, tInterface, mInterface, mTypeToTType, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mTypeToTType] = "
-								+ mTypeToTType + ", " + "[mDefinition] = " + mDefinition + ", " + "[tMember] = "
-								+ tMember + ", " + "[defToMember] = " + defToMember + ", " + "[tInterface] = "
-								+ tInterface + ", " + "[mInterface] = " + mInterface + ", " + "[ruleResult] = "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tMember] = "
+								+ tMember + ", " + "[defToMember] = " + defToMember + ", " + "[mDefinition] = "
+								+ mDefinition + ", " + "[tInterface] = " + tInterface + ", " + "[mInterface] = "
+								+ mInterface + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[ruleResult] = "
 								+ ruleResult + ".");
 					}
-					InterfaceMemberImpl.pattern_InterfaceMember_29_6_perform_greenFFBBFBB(mDefinition, tMember,
+					InterfaceMemberImpl.pattern_InterfaceMember_29_6_perform_greenFBFBFBB(tMember, mDefinition,
 							ruleResult, csp);
 					//nothing MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result6_green[0];
-					//nothing TModifier tModifier = (TModifier) result6_green[1];
-					//nothing Modifier mModifier = (Modifier) result6_green[4];
+					//nothing Modifier mModifier = (Modifier) result6_green[2];
+					//nothing TModifier tModifier = (TModifier) result6_green[4];
 
 				} else {
 				}
@@ -1267,9 +1265,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			MDefinition mDefinition, TMember tMember, MDefinitionToTMember defToMember, TInterface tInterface,
-			InterfaceDeclaration mInterface, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tMember,
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1301,12 +1299,12 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		interfaceVisibility.solve(var_mModifier_visibility, var_tModifier_tVisibility);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
-		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("defToMember", defToMember);
+		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("tInterface", tInterface);
 		isApplicableMatch.registerObject("mInterface", mInterface);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		return csp;
 	}
 
@@ -1327,27 +1325,27 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_FWD__MATCH_MDEFINITION_MODIFIER_INTERFACEDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
-					(Modifier) arguments.get(2), (InterfaceDeclaration) arguments.get(3));
+		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_FWD__MATCH_MODIFIER_MDEFINITION_INTERFACEDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
+					(MDefinition) arguments.get(2), (InterfaceDeclaration) arguments.get(3));
 		case RulesPackage.INTERFACE_MEMBER___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_MEMBER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MDEFINITION_MODIFIER_INTERFACEDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
-					(Modifier) arguments.get(2), (InterfaceDeclaration) arguments.get(3));
+		case RulesPackage.INTERFACE_MEMBER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODIFIER_MDEFINITION_INTERFACEDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
+					(MDefinition) arguments.get(2), (InterfaceDeclaration) arguments.get(3));
 			return null;
-		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MDEFINITION_MODIFIER_INTERFACEDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
-					(Modifier) arguments.get(2), (InterfaceDeclaration) arguments.get(3));
+		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODIFIER_MDEFINITION_INTERFACEDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
+					(MDefinition) arguments.get(2), (InterfaceDeclaration) arguments.get(3));
 		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_MDEFINITION_TMEMBER_MDEFINITIONTOTMEMBER_MODIFIER_TINTERFACE_INTERFACEDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (MDefinition) arguments.get(2), (TMember) arguments.get(3),
-					(MDefinitionToTMember) arguments.get(4), (Modifier) arguments.get(5), (TInterface) arguments.get(6),
-					(InterfaceDeclaration) arguments.get(7));
+		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TMEMBER_MDEFINITIONTOTMEMBER_MODIFIER_MDEFINITION_TINTERFACE_INTERFACEDECLARATION_TYPETOTABSTRACTTYPE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TMember) arguments.get(1),
+					(MDefinitionToTMember) arguments.get(2), (Modifier) arguments.get(3),
+					(MDefinition) arguments.get(4), (TInterface) arguments.get(5),
+					(InterfaceDeclaration) arguments.get(6), (TypeToTAbstractType) arguments.get(7));
 		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.INTERFACE_MEMBER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1358,27 +1356,27 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 			return null;
 		case RulesPackage.INTERFACE_MEMBER___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_BWD__MATCH_TMODIFIER_TMEMBER_TINTERFACE:
-			return isAppropriate_BWD((Match) arguments.get(0), (TModifier) arguments.get(1), (TMember) arguments.get(2),
+		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TMODIFIER_TINTERFACE:
+			return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TModifier) arguments.get(2),
 					(TInterface) arguments.get(3));
 		case RulesPackage.INTERFACE_MEMBER___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_MEMBER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODIFIER_TMEMBER_TINTERFACE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TModifier) arguments.get(1),
-					(TMember) arguments.get(2), (TInterface) arguments.get(3));
+		case RulesPackage.INTERFACE_MEMBER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TMODIFIER_TINTERFACE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+					(TModifier) arguments.get(2), (TInterface) arguments.get(3));
 			return null;
-		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODIFIER_TMEMBER_TINTERFACE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModifier) arguments.get(1),
-					(TMember) arguments.get(2), (TInterface) arguments.get(3));
+		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TMODIFIER_TINTERFACE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+					(TModifier) arguments.get(2), (TInterface) arguments.get(3));
 		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TMODIFIER_MDEFINITION_TMEMBER_MDEFINITIONTOTMEMBER_TINTERFACE_INTERFACEDECLARATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (TModifier) arguments.get(2),
-					(MDefinition) arguments.get(3), (TMember) arguments.get(4), (MDefinitionToTMember) arguments.get(5),
-					(TInterface) arguments.get(6), (InterfaceDeclaration) arguments.get(7));
+		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMEMBER_MDEFINITIONTOTMEMBER_MDEFINITION_TMODIFIER_TINTERFACE_INTERFACEDECLARATION_TYPETOTABSTRACTTYPE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TMember) arguments.get(1),
+					(MDefinitionToTMember) arguments.get(2), (MDefinition) arguments.get(3),
+					(TModifier) arguments.get(4), (TInterface) arguments.get(5),
+					(InterfaceDeclaration) arguments.get(6), (TypeToTAbstractType) arguments.get(7));
 		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.INTERFACE_MEMBER___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1389,35 +1387,35 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 			return null;
 		case RulesPackage.INTERFACE_MEMBER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_264__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_264((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_274__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_274((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_68__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_68((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_71__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_71((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INTERFACE_MEMBER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_MEMBER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_SOLVE_CSP_CC__TMODIFIER_MDEFINITION_TMEMBER_MODIFIER_TINTERFACE_INTERFACEDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TModifier) arguments.get(0), (MDefinition) arguments.get(1),
-					(TMember) arguments.get(2), (Modifier) arguments.get(3), (TInterface) arguments.get(4),
+		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_SOLVE_CSP_CC__TMEMBER_MODIFIER_MDEFINITION_TMODIFIER_TINTERFACE_INTERFACEDECLARATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TMember) arguments.get(0), (Modifier) arguments.get(1),
+					(MDefinition) arguments.get(2), (TModifier) arguments.get(3), (TInterface) arguments.get(4),
 					(InterfaceDeclaration) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
 		case RulesPackage.INTERFACE_MEMBER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_MEMBER___CHECK_DEC_FWD__MDEFINITION_MODIFIER_INTERFACEDECLARATION:
-			return checkDEC_FWD((MDefinition) arguments.get(0), (Modifier) arguments.get(1),
+		case RulesPackage.INTERFACE_MEMBER___CHECK_DEC_FWD__MODIFIER_MDEFINITION_INTERFACEDECLARATION:
+			return checkDEC_FWD((Modifier) arguments.get(0), (MDefinition) arguments.get(1),
 					(InterfaceDeclaration) arguments.get(2));
-		case RulesPackage.INTERFACE_MEMBER___CHECK_DEC_BWD__TMODIFIER_TMEMBER_TINTERFACE:
-			return checkDEC_BWD((TModifier) arguments.get(0), (TMember) arguments.get(1),
+		case RulesPackage.INTERFACE_MEMBER___CHECK_DEC_BWD__TMEMBER_TMODIFIER_TINTERFACE:
+			return checkDEC_BWD((TMember) arguments.get(0), (TModifier) arguments.get(1),
 					(TInterface) arguments.get(2));
-		case RulesPackage.INTERFACE_MEMBER___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE:
-			return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1));
-		case RulesPackage.INTERFACE_MEMBER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_MDEFINITION_TMEMBER_MDEFINITIONTOTMEMBER_TINTERFACE_INTERFACEDECLARATION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (MDefinition) arguments.get(2), (TMember) arguments.get(3),
-					(MDefinitionToTMember) arguments.get(4), (TInterface) arguments.get(5),
-					(InterfaceDeclaration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.INTERFACE_MEMBER___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
+			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
+		case RulesPackage.INTERFACE_MEMBER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMEMBER_MDEFINITIONTOTMEMBER_MDEFINITION_TINTERFACE_INTERFACEDECLARATION_TYPETOTABSTRACTTYPE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TMember) arguments.get(1),
+					(MDefinitionToTMember) arguments.get(2), (MDefinition) arguments.get(3),
+					(TInterface) arguments.get(4), (InterfaceDeclaration) arguments.get(5),
+					(TypeToTAbstractType) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.INTERFACE_MEMBER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1425,16 +1423,16 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_0_1_initialbindings_blackBBBBB(InterfaceMember _this,
-			Match match, MDefinition mDefinition, Modifier mModifier, InterfaceDeclaration mInterface) {
-		return new Object[] { _this, match, mDefinition, mModifier, mInterface };
+			Match match, Modifier mModifier, MDefinition mDefinition, InterfaceDeclaration mInterface) {
+		return new Object[] { _this, match, mModifier, mDefinition, mInterface };
 	}
 
 	public static final Object[] pattern_InterfaceMember_0_2_SolveCSP_bindingFBBBBB(InterfaceMember _this, Match match,
-			MDefinition mDefinition, Modifier mModifier, InterfaceDeclaration mInterface) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mDefinition, mModifier, mInterface);
+			Modifier mModifier, MDefinition mDefinition, InterfaceDeclaration mInterface) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mModifier, mDefinition, mInterface);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mDefinition, mModifier, mInterface };
+			return new Object[] { csp, _this, match, mModifier, mDefinition, mInterface };
 		}
 		return null;
 	}
@@ -1444,9 +1442,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_0_2_SolveCSP_bindingAndBlackFBBBBB(InterfaceMember _this,
-			Match match, MDefinition mDefinition, Modifier mModifier, InterfaceDeclaration mInterface) {
+			Match match, Modifier mModifier, MDefinition mDefinition, InterfaceDeclaration mInterface) {
 		Object[] result_pattern_InterfaceMember_0_2_SolveCSP_binding = pattern_InterfaceMember_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, mDefinition, mModifier, mInterface);
+				_this, match, mModifier, mDefinition, mInterface);
 		if (result_pattern_InterfaceMember_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceMember_0_2_SolveCSP_binding[0];
 
@@ -1454,7 +1452,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 					csp);
 			if (result_pattern_InterfaceMember_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mDefinition, mModifier, mInterface };
+				return new Object[] { csp, _this, match, mModifier, mDefinition, mInterface };
 			}
 		}
 		return null;
@@ -1467,12 +1465,12 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_0_4_collectelementstobetranslated_blackBBBB(Match match,
-			MDefinition mDefinition, Modifier mModifier, InterfaceDeclaration mInterface) {
-		return new Object[] { match, mDefinition, mModifier, mInterface };
+			Modifier mModifier, MDefinition mDefinition, InterfaceDeclaration mInterface) {
+		return new Object[] { match, mModifier, mDefinition, mInterface };
 	}
 
 	public static final Object[] pattern_InterfaceMember_0_4_collectelementstobetranslated_greenBBBFF(Match match,
-			MDefinition mDefinition, Modifier mModifier) {
+			Modifier mModifier, MDefinition mDefinition) {
 		EMoflonEdge mDefinition__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mDefinition____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mModifier);
@@ -1486,13 +1484,13 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		match.getToBeTranslatedEdges().add(mModifier__mDefinition____bodyDeclaration);
 		mDefinition__mModifier____modifier.setName(mDefinition__mModifier____modifier_name_prime);
 		mModifier__mDefinition____bodyDeclaration.setName(mModifier__mDefinition____bodyDeclaration_name_prime);
-		return new Object[] { match, mDefinition, mModifier, mDefinition__mModifier____modifier,
+		return new Object[] { match, mModifier, mDefinition, mDefinition__mModifier____modifier,
 				mModifier__mDefinition____bodyDeclaration };
 	}
 
 	public static final Object[] pattern_InterfaceMember_0_5_collectcontextelements_blackBBBB(Match match,
-			MDefinition mDefinition, Modifier mModifier, InterfaceDeclaration mInterface) {
-		return new Object[] { match, mDefinition, mModifier, mInterface };
+			Modifier mModifier, MDefinition mDefinition, InterfaceDeclaration mInterface) {
+		return new Object[] { match, mModifier, mDefinition, mInterface };
 	}
 
 	public static final Object[] pattern_InterfaceMember_0_5_collectcontextelements_greenBBBFF(Match match,
@@ -1517,8 +1515,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final void pattern_InterfaceMember_0_6_registerobjectstomatch_expressionBBBBB(InterfaceMember _this,
-			Match match, MDefinition mDefinition, Modifier mModifier, InterfaceDeclaration mInterface) {
-		_this.registerObjectsToMatch_FWD(match, mDefinition, mModifier, mInterface);
+			Match match, Modifier mModifier, MDefinition mDefinition, InterfaceDeclaration mInterface) {
+		_this.registerObjectsToMatch_FWD(match, mModifier, mDefinition, mInterface);
 
 	}
 
@@ -1534,36 +1532,36 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 	public static final Object[] pattern_InterfaceMember_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mTypeToTType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mDefinition");
-		EObject _localVariable_2 = isApplicableMatch.getObject("tMember");
-		EObject _localVariable_3 = isApplicableMatch.getObject("defToMember");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mModifier");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tInterface");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mInterface");
-		EObject tmpMTypeToTType = _localVariable_0;
-		EObject tmpMDefinition = _localVariable_1;
-		EObject tmpTMember = _localVariable_2;
-		EObject tmpDefToMember = _localVariable_3;
-		EObject tmpMModifier = _localVariable_4;
-		EObject tmpTInterface = _localVariable_5;
-		EObject tmpMInterface = _localVariable_6;
-		if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-			if (tmpMDefinition instanceof MDefinition) {
-				MDefinition mDefinition = (MDefinition) tmpMDefinition;
-				if (tmpTMember instanceof TMember) {
-					TMember tMember = (TMember) tmpTMember;
-					if (tmpDefToMember instanceof MDefinitionToTMember) {
-						MDefinitionToTMember defToMember = (MDefinitionToTMember) tmpDefToMember;
-						if (tmpMModifier instanceof Modifier) {
-							Modifier mModifier = (Modifier) tmpMModifier;
-							if (tmpTInterface instanceof TInterface) {
-								TInterface tInterface = (TInterface) tmpTInterface;
-								if (tmpMInterface instanceof InterfaceDeclaration) {
-									InterfaceDeclaration mInterface = (InterfaceDeclaration) tmpMInterface;
-									return new Object[] { mTypeToTType, mDefinition, tMember, defToMember, mModifier,
-											tInterface, mInterface, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("tMember");
+		EObject _localVariable_1 = isApplicableMatch.getObject("defToMember");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mModifier");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tInterface");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mInterface");
+		EObject _localVariable_6 = isApplicableMatch.getObject("mTypeToTType");
+		EObject tmpTMember = _localVariable_0;
+		EObject tmpDefToMember = _localVariable_1;
+		EObject tmpMModifier = _localVariable_2;
+		EObject tmpMDefinition = _localVariable_3;
+		EObject tmpTInterface = _localVariable_4;
+		EObject tmpMInterface = _localVariable_5;
+		EObject tmpMTypeToTType = _localVariable_6;
+		if (tmpTMember instanceof TMember) {
+			TMember tMember = (TMember) tmpTMember;
+			if (tmpDefToMember instanceof MDefinitionToTMember) {
+				MDefinitionToTMember defToMember = (MDefinitionToTMember) tmpDefToMember;
+				if (tmpMModifier instanceof Modifier) {
+					Modifier mModifier = (Modifier) tmpMModifier;
+					if (tmpMDefinition instanceof MDefinition) {
+						MDefinition mDefinition = (MDefinition) tmpMDefinition;
+						if (tmpTInterface instanceof TInterface) {
+							TInterface tInterface = (TInterface) tmpTInterface;
+							if (tmpMInterface instanceof InterfaceDeclaration) {
+								InterfaceDeclaration mInterface = (InterfaceDeclaration) tmpMInterface;
+								if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+									TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+									return new Object[] { tMember, defToMember, mModifier, mDefinition, tInterface,
+											mInterface, mTypeToTType, isApplicableMatch };
 								}
 							}
 						}
@@ -1574,15 +1572,15 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceMember_1_1_performtransformation_blackBBBBBBBFBB(
-			TypeToTAbstractType mTypeToTType, MDefinition mDefinition, TMember tMember,
-			MDefinitionToTMember defToMember, Modifier mModifier, TInterface tInterface,
-			InterfaceDeclaration mInterface, InterfaceMember _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_InterfaceMember_1_1_performtransformation_blackBBBBBBBFBB(TMember tMember,
+			MDefinitionToTMember defToMember, Modifier mModifier, MDefinition mDefinition, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType, InterfaceMember _this,
+			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mTypeToTType, mDefinition, tMember, defToMember, mModifier, tInterface,
-						mInterface, csp, _this, isApplicableMatch };
+				return new Object[] { tMember, defToMember, mModifier, mDefinition, tInterface, mInterface,
+						mTypeToTType, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1593,124 +1591,125 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		Object[] result_pattern_InterfaceMember_1_1_performtransformation_binding = pattern_InterfaceMember_1_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_InterfaceMember_1_1_performtransformation_binding != null) {
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_InterfaceMember_1_1_performtransformation_binding[0];
-			MDefinition mDefinition = (MDefinition) result_pattern_InterfaceMember_1_1_performtransformation_binding[1];
-			TMember tMember = (TMember) result_pattern_InterfaceMember_1_1_performtransformation_binding[2];
-			MDefinitionToTMember defToMember = (MDefinitionToTMember) result_pattern_InterfaceMember_1_1_performtransformation_binding[3];
-			Modifier mModifier = (Modifier) result_pattern_InterfaceMember_1_1_performtransformation_binding[4];
-			TInterface tInterface = (TInterface) result_pattern_InterfaceMember_1_1_performtransformation_binding[5];
-			InterfaceDeclaration mInterface = (InterfaceDeclaration) result_pattern_InterfaceMember_1_1_performtransformation_binding[6];
+			TMember tMember = (TMember) result_pattern_InterfaceMember_1_1_performtransformation_binding[0];
+			MDefinitionToTMember defToMember = (MDefinitionToTMember) result_pattern_InterfaceMember_1_1_performtransformation_binding[1];
+			Modifier mModifier = (Modifier) result_pattern_InterfaceMember_1_1_performtransformation_binding[2];
+			MDefinition mDefinition = (MDefinition) result_pattern_InterfaceMember_1_1_performtransformation_binding[3];
+			TInterface tInterface = (TInterface) result_pattern_InterfaceMember_1_1_performtransformation_binding[4];
+			InterfaceDeclaration mInterface = (InterfaceDeclaration) result_pattern_InterfaceMember_1_1_performtransformation_binding[5];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_InterfaceMember_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_InterfaceMember_1_1_performtransformation_black = pattern_InterfaceMember_1_1_performtransformation_blackBBBBBBBFBB(
-					mTypeToTType, mDefinition, tMember, defToMember, mModifier, tInterface, mInterface, _this,
+					tMember, defToMember, mModifier, mDefinition, tInterface, mInterface, mTypeToTType, _this,
 					isApplicableMatch);
 			if (result_pattern_InterfaceMember_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InterfaceMember_1_1_performtransformation_black[7];
 
-				return new Object[] { mTypeToTType, mDefinition, tMember, defToMember, mModifier, tInterface,
-						mInterface, csp, _this, isApplicableMatch };
+				return new Object[] { tMember, defToMember, mModifier, mDefinition, tInterface, mInterface,
+						mTypeToTType, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceMember_1_1_performtransformation_greenFFBBB(TMember tMember,
+	public static final Object[] pattern_InterfaceMember_1_1_performtransformation_greenFBBFB(TMember tMember,
 			Modifier mModifier, CSP csp) {
 		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
 		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
 		Object _localVariable_0 = csp.getValue("tModifier", "isStatic");
 		Object _localVariable_1 = csp.getValue("tModifier", "tVisibility");
 		mModifierToTModifier.setSource(mModifier);
-		mModifierToTModifier.setTarget(tModifier);
 		tMember.setTModifier(tModifier);
+		mModifierToTModifier.setTarget(tModifier);
 		boolean tModifier_isStatic_prime = (boolean) _localVariable_0;
 		TVisibility tModifier_tVisibility_prime = (TVisibility) _localVariable_1;
 		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
 		tModifier.setTVisibility(tModifier_tVisibility_prime);
-		return new Object[] { mModifierToTModifier, tModifier, tMember, mModifier, csp };
+		return new Object[] { mModifierToTModifier, tMember, mModifier, tModifier, csp };
 	}
 
 	public static final Object[] pattern_InterfaceMember_1_2_collecttranslatedelements_blackBBB(
-			MModifierToTModifier mModifierToTModifier, TModifier tModifier, Modifier mModifier) {
-		return new Object[] { mModifierToTModifier, tModifier, mModifier };
+			MModifierToTModifier mModifierToTModifier, Modifier mModifier, TModifier tModifier) {
+		return new Object[] { mModifierToTModifier, mModifier, tModifier };
 	}
 
 	public static final Object[] pattern_InterfaceMember_1_2_collecttranslatedelements_greenFBBB(
-			MModifierToTModifier mModifierToTModifier, TModifier tModifier, Modifier mModifier) {
+			MModifierToTModifier mModifierToTModifier, Modifier mModifier, TModifier tModifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(mModifierToTModifier);
-		ruleresult.getCreatedElements().add(tModifier);
 		ruleresult.getTranslatedElements().add(mModifier);
-		return new Object[] { ruleresult, mModifierToTModifier, tModifier, mModifier };
+		ruleresult.getCreatedElements().add(tModifier);
+		return new Object[] { ruleresult, mModifierToTModifier, mModifier, tModifier };
 	}
 
 	public static final Object[] pattern_InterfaceMember_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mTypeToTType, EObject mModifierToTModifier, EObject tModifier,
-			EObject mDefinition, EObject tMember, EObject defToMember, EObject mModifier, EObject tInterface,
-			EObject mInterface) {
-		if (!mTypeToTType.equals(tModifier)) {
-			if (!mTypeToTType.equals(tMember)) {
-				if (!mTypeToTType.equals(tInterface)) {
+			PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject tMember, EObject defToMember,
+			EObject mModifier, EObject mDefinition, EObject tModifier, EObject tInterface, EObject mInterface,
+			EObject mTypeToTType) {
+		if (!mModifierToTModifier.equals(tMember)) {
+			if (!mModifierToTModifier.equals(tModifier)) {
+				if (!mModifierToTModifier.equals(tInterface)) {
 					if (!mModifierToTModifier.equals(mTypeToTType)) {
-						if (!mModifierToTModifier.equals(tModifier)) {
-							if (!mModifierToTModifier.equals(tMember)) {
-								if (!mModifierToTModifier.equals(tInterface)) {
-									if (!mDefinition.equals(mTypeToTType)) {
-										if (!mDefinition.equals(mModifierToTModifier)) {
-											if (!mDefinition.equals(tModifier)) {
-												if (!mDefinition.equals(tMember)) {
-													if (!mDefinition.equals(mModifier)) {
-														if (!mDefinition.equals(tInterface)) {
-															if (!mDefinition.equals(mInterface)) {
-																if (!tMember.equals(tModifier)) {
-																	if (!defToMember.equals(mTypeToTType)) {
-																		if (!defToMember.equals(mModifierToTModifier)) {
-																			if (!defToMember.equals(tModifier)) {
-																				if (!defToMember.equals(mDefinition)) {
-																					if (!defToMember.equals(tMember)) {
-																						if (!defToMember
+						if (!tMember.equals(tModifier)) {
+							if (!defToMember.equals(mModifierToTModifier)) {
+								if (!defToMember.equals(tMember)) {
+									if (!defToMember.equals(mModifier)) {
+										if (!defToMember.equals(mDefinition)) {
+											if (!defToMember.equals(tModifier)) {
+												if (!defToMember.equals(tInterface)) {
+													if (!defToMember.equals(mInterface)) {
+														if (!defToMember.equals(mTypeToTType)) {
+															if (!mModifier.equals(mModifierToTModifier)) {
+																if (!mModifier.equals(tMember)) {
+																	if (!mModifier.equals(tModifier)) {
+																		if (!mModifier.equals(tInterface)) {
+																			if (!mModifier.equals(mTypeToTType)) {
+																				if (!mDefinition
+																						.equals(mModifierToTModifier)) {
+																					if (!mDefinition.equals(tMember)) {
+																						if (!mDefinition
 																								.equals(mModifier)) {
-																							if (!defToMember.equals(
-																									tInterface)) {
-																								if (!defToMember.equals(
-																										mInterface)) {
-																									if (!mModifier
-																											.equals(mTypeToTType)) {
-																										if (!mModifier
-																												.equals(mModifierToTModifier)) {
-																											if (!mModifier
-																													.equals(tModifier)) {
-																												if (!mModifier
-																														.equals(tMember)) {
-																													if (!mModifier
-																															.equals(tInterface)) {
-																														if (!tInterface
-																																.equals(tModifier)) {
-																															if (!tInterface
-																																	.equals(tMember)) {
+																							if (!mDefinition.equals(
+																									tModifier)) {
+																								if (!mDefinition.equals(
+																										tInterface)) {
+																									if (!mDefinition
+																											.equals(mInterface)) {
+																										if (!mDefinition
+																												.equals(mTypeToTType)) {
+																											if (!tInterface
+																													.equals(tMember)) {
+																												if (!tInterface
+																														.equals(tModifier)) {
+																													if (!mInterface
+																															.equals(mModifierToTModifier)) {
+																														if (!mInterface
+																																.equals(tMember)) {
+																															if (!mInterface
+																																	.equals(mModifier)) {
 																																if (!mInterface
-																																		.equals(mTypeToTType)) {
+																																		.equals(tModifier)) {
 																																	if (!mInterface
-																																			.equals(mModifierToTModifier)) {
+																																			.equals(tInterface)) {
 																																		if (!mInterface
-																																				.equals(tModifier)) {
-																																			if (!mInterface
+																																				.equals(mTypeToTType)) {
+																																			if (!mTypeToTType
 																																					.equals(tMember)) {
-																																				if (!mInterface
-																																						.equals(mModifier)) {
-																																					if (!mInterface
+																																				if (!mTypeToTType
+																																						.equals(tModifier)) {
+																																					if (!mTypeToTType
 																																							.equals(tInterface)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								mTypeToTType,
 																																								mModifierToTModifier,
-																																								tModifier,
-																																								mDefinition,
 																																								tMember,
 																																								defToMember,
 																																								mModifier,
+																																								mDefinition,
+																																								tModifier,
 																																								tInterface,
-																																								mInterface };
+																																								mInterface,
+																																								mTypeToTType };
 																																					}
 																																				}
 																																			}
@@ -1751,28 +1750,28 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject tModifier, EObject mDefinition,
-			EObject tMember, EObject mModifier) {
-		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject tMember, EObject mModifier,
+			EObject mDefinition, EObject tModifier) {
 		EMoflonEdge mModifierToTModifier__mModifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mDefinition____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceMember";
-		String mModifierToTModifier__tModifier____target_name_prime = "target";
-		String tMember__tModifier____tModifier_name_prime = "tModifier";
 		String mModifierToTModifier__mModifier____source_name_prime = "source";
+		String tMember__tModifier____tModifier_name_prime = "tModifier";
+		String mModifierToTModifier__tModifier____target_name_prime = "target";
 		String mDefinition__mModifier____modifier_name_prime = "modifier";
 		String mModifier__mDefinition____bodyDeclaration_name_prime = "bodyDeclaration";
-		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
-		mModifierToTModifier__tModifier____target.setTrg(tModifier);
-		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
-		tMember__tModifier____tModifier.setSrc(tMember);
-		tMember__tModifier____tModifier.setTrg(tModifier);
-		ruleresult.getCreatedEdges().add(tMember__tModifier____tModifier);
 		mModifierToTModifier__mModifier____source.setSrc(mModifierToTModifier);
 		mModifierToTModifier__mModifier____source.setTrg(mModifier);
 		ruleresult.getCreatedEdges().add(mModifierToTModifier__mModifier____source);
+		tMember__tModifier____tModifier.setSrc(tMember);
+		tMember__tModifier____tModifier.setTrg(tModifier);
+		ruleresult.getCreatedEdges().add(tMember__tModifier____tModifier);
+		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
+		mModifierToTModifier__tModifier____target.setTrg(tModifier);
+		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
 		mDefinition__mModifier____modifier.setSrc(mDefinition);
 		mDefinition__mModifier____modifier.setTrg(mModifier);
 		ruleresult.getTranslatedEdges().add(mDefinition__mModifier____modifier);
@@ -1780,23 +1779,23 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		mModifier__mDefinition____bodyDeclaration.setTrg(mDefinition);
 		ruleresult.getTranslatedEdges().add(mModifier__mDefinition____bodyDeclaration);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
-		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
 		mModifierToTModifier__mModifier____source.setName(mModifierToTModifier__mModifier____source_name_prime);
+		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
+		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
 		mDefinition__mModifier____modifier.setName(mDefinition__mModifier____modifier_name_prime);
 		mModifier__mDefinition____bodyDeclaration.setName(mModifier__mDefinition____bodyDeclaration_name_prime);
-		return new Object[] { ruleresult, mModifierToTModifier, tModifier, mDefinition, tMember, mModifier,
-				mModifierToTModifier__tModifier____target, tMember__tModifier____tModifier,
-				mModifierToTModifier__mModifier____source, mDefinition__mModifier____modifier,
+		return new Object[] { ruleresult, mModifierToTModifier, tMember, mModifier, mDefinition, tModifier,
+				mModifierToTModifier__mModifier____source, tMember__tModifier____tModifier,
+				mModifierToTModifier__tModifier____target, mDefinition__mModifier____modifier,
 				mModifier__mDefinition____bodyDeclaration };
 	}
 
 	public static final void pattern_InterfaceMember_1_5_registerobjects_expressionBBBBBBBBBBB(InterfaceMember _this,
-			PerformRuleResult ruleresult, EObject mTypeToTType, EObject mModifierToTModifier, EObject tModifier,
-			EObject mDefinition, EObject tMember, EObject defToMember, EObject mModifier, EObject tInterface,
-			EObject mInterface) {
-		_this.registerObjects_FWD(ruleresult, mTypeToTType, mModifierToTModifier, tModifier, mDefinition, tMember,
-				defToMember, mModifier, tInterface, mInterface);
+			PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject tMember, EObject defToMember,
+			EObject mModifier, EObject mDefinition, EObject tModifier, EObject tInterface, EObject mInterface,
+			EObject mTypeToTType) {
+		_this.registerObjects_FWD(ruleresult, mModifierToTModifier, tMember, defToMember, mModifier, mDefinition,
+				tModifier, tInterface, mInterface, mTypeToTType);
 
 	}
 
@@ -1855,27 +1854,27 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_2_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mDefinition");
-		EObject _localVariable_1 = match.getObject("mModifier");
+		EObject _localVariable_0 = match.getObject("mModifier");
+		EObject _localVariable_1 = match.getObject("mDefinition");
 		EObject _localVariable_2 = match.getObject("mInterface");
-		EObject tmpMDefinition = _localVariable_0;
-		EObject tmpMModifier = _localVariable_1;
+		EObject tmpMModifier = _localVariable_0;
+		EObject tmpMDefinition = _localVariable_1;
 		EObject tmpMInterface = _localVariable_2;
-		if (tmpMDefinition instanceof MDefinition) {
-			MDefinition mDefinition = (MDefinition) tmpMDefinition;
-			if (tmpMModifier instanceof Modifier) {
-				Modifier mModifier = (Modifier) tmpMModifier;
+		if (tmpMModifier instanceof Modifier) {
+			Modifier mModifier = (Modifier) tmpMModifier;
+			if (tmpMDefinition instanceof MDefinition) {
+				MDefinition mDefinition = (MDefinition) tmpMDefinition;
 				if (tmpMInterface instanceof InterfaceDeclaration) {
 					InterfaceDeclaration mInterface = (InterfaceDeclaration) tmpMInterface;
-					return new Object[] { mDefinition, mModifier, mInterface, match };
+					return new Object[] { mModifier, mDefinition, mInterface, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_InterfaceMember_2_2_corematch_blackFBFFBFBB(MDefinition mDefinition,
-			Modifier mModifier, InterfaceDeclaration mInterface, Match match) {
+	public static final Iterable<Object[]> pattern_InterfaceMember_2_2_corematch_blackFFBBFBFB(Modifier mModifier,
+			MDefinition mDefinition, InterfaceDeclaration mInterface, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember defToMember : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mDefinition, MDefinitionToTMember.class, "source")) {
@@ -1886,8 +1885,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 					TAbstractType tmpTInterface = mTypeToTType.getTarget();
 					if (tmpTInterface instanceof TInterface) {
 						TInterface tInterface = (TInterface) tmpTInterface;
-						_result.add(new Object[] { mTypeToTType, mDefinition, tMember, defToMember, mModifier,
-								tInterface, mInterface, match });
+						_result.add(new Object[] { tMember, defToMember, mModifier, mDefinition, tInterface, mInterface,
+								mTypeToTType, match });
 					}
 
 				}
@@ -1897,20 +1896,19 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_InterfaceMember_2_3_findcontext_blackBBBBBBB(
-			TypeToTAbstractType mTypeToTType, MDefinition mDefinition, TMember tMember,
-			MDefinitionToTMember defToMember, Modifier mModifier, TInterface tInterface,
-			InterfaceDeclaration mInterface) {
+	public static final Iterable<Object[]> pattern_InterfaceMember_2_3_findcontext_blackBBBBBBB(TMember tMember,
+			MDefinitionToTMember defToMember, Modifier mModifier, MDefinition mDefinition, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mDefinition.equals(defToMember.getSource())) {
-			if (tMember.equals(defToMember.getTarget())) {
+		if (tMember.equals(defToMember.getTarget())) {
+			if (mDefinition.equals(defToMember.getSource())) {
 				if (tInterface.getDefines().contains(tMember)) {
-					if (mInterface.equals(mTypeToTType.getSource())) {
-						if (mInterface.getBodyDeclarations().contains(mDefinition)) {
+					if (mInterface.getBodyDeclarations().contains(mDefinition)) {
+						if (mInterface.equals(mTypeToTType.getSource())) {
 							if (mModifier.equals(mDefinition.getModifier())) {
 								if (tInterface.equals(mTypeToTType.getTarget())) {
-									_result.add(new Object[] { mTypeToTType, mDefinition, tMember, defToMember,
-											mModifier, tInterface, mInterface });
+									_result.add(new Object[] { tMember, defToMember, mModifier, mDefinition, tInterface,
+											mInterface, mTypeToTType });
 								}
 							}
 						}
@@ -1921,59 +1919,58 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return _result;
 	}
 
-	public static final Object[] pattern_InterfaceMember_2_3_findcontext_greenBBBBBBBFFFFFFFFFFF(
-			TypeToTAbstractType mTypeToTType, MDefinition mDefinition, TMember tMember,
-			MDefinitionToTMember defToMember, Modifier mModifier, TInterface tInterface,
-			InterfaceDeclaration mInterface) {
+	public static final Object[] pattern_InterfaceMember_2_3_findcontext_greenBBBBBBBFFFFFFFFFFF(TMember tMember,
+			MDefinitionToTMember defToMember, Modifier mModifier, MDefinition mDefinition, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge defToMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge defToMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge defToMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tInterface__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tInterface____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mInterface____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mInterface__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mInterface____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mInterface____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mDefinition____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tInterface____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String defToMember__mDefinition____source_name_prime = "source";
 		String defToMember__tMember____target_name_prime = "target";
+		String defToMember__mDefinition____source_name_prime = "source";
 		String tInterface__tMember____defines_name_prime = "defines";
 		String tMember__tInterface____definedBy_name_prime = "definedBy";
-		String mTypeToTType__mInterface____source_name_prime = "source";
 		String mInterface__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mDefinition__mInterface____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String mTypeToTType__mInterface____source_name_prime = "source";
 		String mDefinition__mModifier____modifier_name_prime = "modifier";
 		String mModifier__mDefinition____bodyDeclaration_name_prime = "bodyDeclaration";
 		String mTypeToTType__tInterface____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(mTypeToTType);
-		isApplicableMatch.getAllContextElements().add(mDefinition);
 		isApplicableMatch.getAllContextElements().add(tMember);
 		isApplicableMatch.getAllContextElements().add(defToMember);
 		isApplicableMatch.getAllContextElements().add(mModifier);
+		isApplicableMatch.getAllContextElements().add(mDefinition);
 		isApplicableMatch.getAllContextElements().add(tInterface);
 		isApplicableMatch.getAllContextElements().add(mInterface);
-		defToMember__mDefinition____source.setSrc(defToMember);
-		defToMember__mDefinition____source.setTrg(mDefinition);
-		isApplicableMatch.getAllContextElements().add(defToMember__mDefinition____source);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType);
 		defToMember__tMember____target.setSrc(defToMember);
 		defToMember__tMember____target.setTrg(tMember);
 		isApplicableMatch.getAllContextElements().add(defToMember__tMember____target);
+		defToMember__mDefinition____source.setSrc(defToMember);
+		defToMember__mDefinition____source.setTrg(mDefinition);
+		isApplicableMatch.getAllContextElements().add(defToMember__mDefinition____source);
 		tInterface__tMember____defines.setSrc(tInterface);
 		tInterface__tMember____defines.setTrg(tMember);
 		isApplicableMatch.getAllContextElements().add(tInterface__tMember____defines);
 		tMember__tInterface____definedBy.setSrc(tMember);
 		tMember__tInterface____definedBy.setTrg(tInterface);
 		isApplicableMatch.getAllContextElements().add(tMember__tInterface____definedBy);
-		mTypeToTType__mInterface____source.setSrc(mTypeToTType);
-		mTypeToTType__mInterface____source.setTrg(mInterface);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__mInterface____source);
 		mInterface__mDefinition____bodyDeclarations.setSrc(mInterface);
 		mInterface__mDefinition____bodyDeclarations.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mInterface__mDefinition____bodyDeclarations);
 		mDefinition__mInterface____abstractTypeDeclaration.setSrc(mDefinition);
 		mDefinition__mInterface____abstractTypeDeclaration.setTrg(mInterface);
 		isApplicableMatch.getAllContextElements().add(mDefinition__mInterface____abstractTypeDeclaration);
+		mTypeToTType__mInterface____source.setSrc(mTypeToTType);
+		mTypeToTType__mInterface____source.setTrg(mInterface);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__mInterface____source);
 		mDefinition__mModifier____modifier.setSrc(mDefinition);
 		mDefinition__mModifier____modifier.setTrg(mModifier);
 		isApplicableMatch.getAllContextElements().add(mDefinition__mModifier____modifier);
@@ -1983,35 +1980,35 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		mTypeToTType__tInterface____target.setSrc(mTypeToTType);
 		mTypeToTType__tInterface____target.setTrg(tInterface);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__tInterface____target);
-		defToMember__mDefinition____source.setName(defToMember__mDefinition____source_name_prime);
 		defToMember__tMember____target.setName(defToMember__tMember____target_name_prime);
+		defToMember__mDefinition____source.setName(defToMember__mDefinition____source_name_prime);
 		tInterface__tMember____defines.setName(tInterface__tMember____defines_name_prime);
 		tMember__tInterface____definedBy.setName(tMember__tInterface____definedBy_name_prime);
-		mTypeToTType__mInterface____source.setName(mTypeToTType__mInterface____source_name_prime);
 		mInterface__mDefinition____bodyDeclarations.setName(mInterface__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__mInterface____abstractTypeDeclaration
 				.setName(mDefinition__mInterface____abstractTypeDeclaration_name_prime);
+		mTypeToTType__mInterface____source.setName(mTypeToTType__mInterface____source_name_prime);
 		mDefinition__mModifier____modifier.setName(mDefinition__mModifier____modifier_name_prime);
 		mModifier__mDefinition____bodyDeclaration.setName(mModifier__mDefinition____bodyDeclaration_name_prime);
 		mTypeToTType__tInterface____target.setName(mTypeToTType__tInterface____target_name_prime);
-		return new Object[] { mTypeToTType, mDefinition, tMember, defToMember, mModifier, tInterface, mInterface,
-				isApplicableMatch, defToMember__mDefinition____source, defToMember__tMember____target,
-				tInterface__tMember____defines, tMember__tInterface____definedBy, mTypeToTType__mInterface____source,
+		return new Object[] { tMember, defToMember, mModifier, mDefinition, tInterface, mInterface, mTypeToTType,
+				isApplicableMatch, defToMember__tMember____target, defToMember__mDefinition____source,
+				tInterface__tMember____defines, tMember__tInterface____definedBy,
 				mInterface__mDefinition____bodyDeclarations, mDefinition__mInterface____abstractTypeDeclaration,
-				mDefinition__mModifier____modifier, mModifier__mDefinition____bodyDeclaration,
-				mTypeToTType__tInterface____target };
+				mTypeToTType__mInterface____source, mDefinition__mModifier____modifier,
+				mModifier__mDefinition____bodyDeclaration, mTypeToTType__tInterface____target };
 	}
 
 	public static final Object[] pattern_InterfaceMember_2_4_solveCSP_bindingFBBBBBBBBB(InterfaceMember _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
-			TMember tMember, MDefinitionToTMember defToMember, Modifier mModifier, TInterface tInterface,
-			InterfaceDeclaration mInterface) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mTypeToTType, mDefinition, tMember,
-				defToMember, mModifier, tInterface, mInterface);
+			IsApplicableMatch isApplicableMatch, TMember tMember, MDefinitionToTMember defToMember, Modifier mModifier,
+			MDefinition mDefinition, TInterface tInterface, InterfaceDeclaration mInterface,
+			TypeToTAbstractType mTypeToTType) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tMember, defToMember, mModifier,
+				mDefinition, tInterface, mInterface, mTypeToTType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, mDefinition, tMember, defToMember,
-					mModifier, tInterface, mInterface };
+			return new Object[] { csp, _this, isApplicableMatch, tMember, defToMember, mModifier, mDefinition,
+					tInterface, mInterface, mTypeToTType };
 		}
 		return null;
 	}
@@ -2021,12 +2018,12 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(InterfaceMember _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
-			TMember tMember, MDefinitionToTMember defToMember, Modifier mModifier, TInterface tInterface,
-			InterfaceDeclaration mInterface) {
+			IsApplicableMatch isApplicableMatch, TMember tMember, MDefinitionToTMember defToMember, Modifier mModifier,
+			MDefinition mDefinition, TInterface tInterface, InterfaceDeclaration mInterface,
+			TypeToTAbstractType mTypeToTType) {
 		Object[] result_pattern_InterfaceMember_2_4_solveCSP_binding = pattern_InterfaceMember_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, mTypeToTType, mDefinition, tMember, defToMember, mModifier, tInterface,
-				mInterface);
+				_this, isApplicableMatch, tMember, defToMember, mModifier, mDefinition, tInterface, mInterface,
+				mTypeToTType);
 		if (result_pattern_InterfaceMember_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceMember_2_4_solveCSP_binding[0];
 
@@ -2034,8 +2031,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 					csp);
 			if (result_pattern_InterfaceMember_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, mDefinition, tMember, defToMember,
-						mModifier, tInterface, mInterface };
+				return new Object[] { csp, _this, isApplicableMatch, tMember, defToMember, mModifier, mDefinition,
+						tInterface, mInterface, mTypeToTType };
 			}
 		}
 		return null;
@@ -2069,16 +2066,16 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_10_1_initialbindings_blackBBBBB(InterfaceMember _this,
-			Match match, TModifier tModifier, TMember tMember, TInterface tInterface) {
-		return new Object[] { _this, match, tModifier, tMember, tInterface };
+			Match match, TMember tMember, TModifier tModifier, TInterface tInterface) {
+		return new Object[] { _this, match, tMember, tModifier, tInterface };
 	}
 
 	public static final Object[] pattern_InterfaceMember_10_2_SolveCSP_bindingFBBBBB(InterfaceMember _this, Match match,
-			TModifier tModifier, TMember tMember, TInterface tInterface) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tModifier, tMember, tInterface);
+			TMember tMember, TModifier tModifier, TInterface tInterface) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tMember, tModifier, tInterface);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tModifier, tMember, tInterface };
+			return new Object[] { csp, _this, match, tMember, tModifier, tInterface };
 		}
 		return null;
 	}
@@ -2088,9 +2085,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_10_2_SolveCSP_bindingAndBlackFBBBBB(InterfaceMember _this,
-			Match match, TModifier tModifier, TMember tMember, TInterface tInterface) {
+			Match match, TMember tMember, TModifier tModifier, TInterface tInterface) {
 		Object[] result_pattern_InterfaceMember_10_2_SolveCSP_binding = pattern_InterfaceMember_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, tModifier, tMember, tInterface);
+				_this, match, tMember, tModifier, tInterface);
 		if (result_pattern_InterfaceMember_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceMember_10_2_SolveCSP_binding[0];
 
@@ -2098,7 +2095,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 					csp);
 			if (result_pattern_InterfaceMember_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tModifier, tMember, tInterface };
+				return new Object[] { csp, _this, match, tMember, tModifier, tInterface };
 			}
 		}
 		return null;
@@ -2111,12 +2108,12 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_10_4_collectelementstobetranslated_blackBBBB(Match match,
-			TModifier tModifier, TMember tMember, TInterface tInterface) {
-		return new Object[] { match, tModifier, tMember, tInterface };
+			TMember tMember, TModifier tModifier, TInterface tInterface) {
+		return new Object[] { match, tMember, tModifier, tInterface };
 	}
 
 	public static final Object[] pattern_InterfaceMember_10_4_collectelementstobetranslated_greenBBBF(Match match,
-			TModifier tModifier, TMember tMember) {
+			TMember tMember, TModifier tModifier) {
 		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tModifier);
 		String tMember__tModifier____tModifier_name_prime = "tModifier";
@@ -2124,12 +2121,12 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		tMember__tModifier____tModifier.setTrg(tModifier);
 		match.getToBeTranslatedEdges().add(tMember__tModifier____tModifier);
 		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
-		return new Object[] { match, tModifier, tMember, tMember__tModifier____tModifier };
+		return new Object[] { match, tMember, tModifier, tMember__tModifier____tModifier };
 	}
 
 	public static final Object[] pattern_InterfaceMember_10_5_collectcontextelements_blackBBBB(Match match,
-			TModifier tModifier, TMember tMember, TInterface tInterface) {
-		return new Object[] { match, tModifier, tMember, tInterface };
+			TMember tMember, TModifier tModifier, TInterface tInterface) {
+		return new Object[] { match, tMember, tModifier, tInterface };
 	}
 
 	public static final Object[] pattern_InterfaceMember_10_5_collectcontextelements_greenBBBFF(Match match,
@@ -2153,8 +2150,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final void pattern_InterfaceMember_10_6_registerobjectstomatch_expressionBBBBB(InterfaceMember _this,
-			Match match, TModifier tModifier, TMember tMember, TInterface tInterface) {
-		_this.registerObjectsToMatch_BWD(match, tModifier, tMember, tInterface);
+			Match match, TMember tMember, TModifier tModifier, TInterface tInterface) {
+		_this.registerObjectsToMatch_BWD(match, tMember, tModifier, tInterface);
 
 	}
 
@@ -2170,36 +2167,36 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 	public static final Object[] pattern_InterfaceMember_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mTypeToTType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tModifier");
+		EObject _localVariable_0 = isApplicableMatch.getObject("tMember");
+		EObject _localVariable_1 = isApplicableMatch.getObject("defToMember");
 		EObject _localVariable_2 = isApplicableMatch.getObject("mDefinition");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tMember");
-		EObject _localVariable_4 = isApplicableMatch.getObject("defToMember");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tInterface");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mInterface");
-		EObject tmpMTypeToTType = _localVariable_0;
-		EObject tmpTModifier = _localVariable_1;
+		EObject _localVariable_3 = isApplicableMatch.getObject("tModifier");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tInterface");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mInterface");
+		EObject _localVariable_6 = isApplicableMatch.getObject("mTypeToTType");
+		EObject tmpTMember = _localVariable_0;
+		EObject tmpDefToMember = _localVariable_1;
 		EObject tmpMDefinition = _localVariable_2;
-		EObject tmpTMember = _localVariable_3;
-		EObject tmpDefToMember = _localVariable_4;
-		EObject tmpTInterface = _localVariable_5;
-		EObject tmpMInterface = _localVariable_6;
-		if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-			if (tmpTModifier instanceof TModifier) {
-				TModifier tModifier = (TModifier) tmpTModifier;
+		EObject tmpTModifier = _localVariable_3;
+		EObject tmpTInterface = _localVariable_4;
+		EObject tmpMInterface = _localVariable_5;
+		EObject tmpMTypeToTType = _localVariable_6;
+		if (tmpTMember instanceof TMember) {
+			TMember tMember = (TMember) tmpTMember;
+			if (tmpDefToMember instanceof MDefinitionToTMember) {
+				MDefinitionToTMember defToMember = (MDefinitionToTMember) tmpDefToMember;
 				if (tmpMDefinition instanceof MDefinition) {
 					MDefinition mDefinition = (MDefinition) tmpMDefinition;
-					if (tmpTMember instanceof TMember) {
-						TMember tMember = (TMember) tmpTMember;
-						if (tmpDefToMember instanceof MDefinitionToTMember) {
-							MDefinitionToTMember defToMember = (MDefinitionToTMember) tmpDefToMember;
-							if (tmpTInterface instanceof TInterface) {
-								TInterface tInterface = (TInterface) tmpTInterface;
-								if (tmpMInterface instanceof InterfaceDeclaration) {
-									InterfaceDeclaration mInterface = (InterfaceDeclaration) tmpMInterface;
-									return new Object[] { mTypeToTType, tModifier, mDefinition, tMember, defToMember,
-											tInterface, mInterface, isApplicableMatch };
+					if (tmpTModifier instanceof TModifier) {
+						TModifier tModifier = (TModifier) tmpTModifier;
+						if (tmpTInterface instanceof TInterface) {
+							TInterface tInterface = (TInterface) tmpTInterface;
+							if (tmpMInterface instanceof InterfaceDeclaration) {
+								InterfaceDeclaration mInterface = (InterfaceDeclaration) tmpMInterface;
+								if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+									TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+									return new Object[] { tMember, defToMember, mDefinition, tModifier, tInterface,
+											mInterface, mTypeToTType, isApplicableMatch };
 								}
 							}
 						}
@@ -2210,15 +2207,15 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceMember_11_1_performtransformation_blackBBBBBBBFBB(
-			TypeToTAbstractType mTypeToTType, TModifier tModifier, MDefinition mDefinition, TMember tMember,
-			MDefinitionToTMember defToMember, TInterface tInterface, InterfaceDeclaration mInterface,
-			InterfaceMember _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_InterfaceMember_11_1_performtransformation_blackBBBBBBBFBB(TMember tMember,
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TModifier tModifier, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType, InterfaceMember _this,
+			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mTypeToTType, tModifier, mDefinition, tMember, defToMember, tInterface,
-						mInterface, csp, _this, isApplicableMatch };
+				return new Object[] { tMember, defToMember, mDefinition, tModifier, tInterface, mInterface,
+						mTypeToTType, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -2229,29 +2226,29 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		Object[] result_pattern_InterfaceMember_11_1_performtransformation_binding = pattern_InterfaceMember_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_InterfaceMember_11_1_performtransformation_binding != null) {
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_InterfaceMember_11_1_performtransformation_binding[0];
-			TModifier tModifier = (TModifier) result_pattern_InterfaceMember_11_1_performtransformation_binding[1];
+			TMember tMember = (TMember) result_pattern_InterfaceMember_11_1_performtransformation_binding[0];
+			MDefinitionToTMember defToMember = (MDefinitionToTMember) result_pattern_InterfaceMember_11_1_performtransformation_binding[1];
 			MDefinition mDefinition = (MDefinition) result_pattern_InterfaceMember_11_1_performtransformation_binding[2];
-			TMember tMember = (TMember) result_pattern_InterfaceMember_11_1_performtransformation_binding[3];
-			MDefinitionToTMember defToMember = (MDefinitionToTMember) result_pattern_InterfaceMember_11_1_performtransformation_binding[4];
-			TInterface tInterface = (TInterface) result_pattern_InterfaceMember_11_1_performtransformation_binding[5];
-			InterfaceDeclaration mInterface = (InterfaceDeclaration) result_pattern_InterfaceMember_11_1_performtransformation_binding[6];
+			TModifier tModifier = (TModifier) result_pattern_InterfaceMember_11_1_performtransformation_binding[3];
+			TInterface tInterface = (TInterface) result_pattern_InterfaceMember_11_1_performtransformation_binding[4];
+			InterfaceDeclaration mInterface = (InterfaceDeclaration) result_pattern_InterfaceMember_11_1_performtransformation_binding[5];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_InterfaceMember_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_InterfaceMember_11_1_performtransformation_black = pattern_InterfaceMember_11_1_performtransformation_blackBBBBBBBFBB(
-					mTypeToTType, tModifier, mDefinition, tMember, defToMember, tInterface, mInterface, _this,
+					tMember, defToMember, mDefinition, tModifier, tInterface, mInterface, mTypeToTType, _this,
 					isApplicableMatch);
 			if (result_pattern_InterfaceMember_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InterfaceMember_11_1_performtransformation_black[7];
 
-				return new Object[] { mTypeToTType, tModifier, mDefinition, tMember, defToMember, tInterface,
-						mInterface, csp, _this, isApplicableMatch };
+				return new Object[] { tMember, defToMember, mDefinition, tModifier, tInterface, mInterface,
+						mTypeToTType, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceMember_11_1_performtransformation_greenFBBFB(TModifier tModifier,
-			MDefinition mDefinition, CSP csp) {
+	public static final Object[] pattern_InterfaceMember_11_1_performtransformation_greenFFBBB(MDefinition mDefinition,
+			TModifier tModifier, CSP csp) {
 		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
 		Modifier mModifier = JavaFactory.eINSTANCE.createModifier();
 		Object _localVariable_0 = csp.getValue("mModifier", "static");
@@ -2263,90 +2260,91 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		VisibilityKind mModifier_visibility_prime = (VisibilityKind) _localVariable_1;
 		mModifier.setStatic(Boolean.valueOf(mModifier_static_prime));
 		mModifier.setVisibility(mModifier_visibility_prime);
-		return new Object[] { mModifierToTModifier, tModifier, mDefinition, mModifier, csp };
+		return new Object[] { mModifierToTModifier, mModifier, mDefinition, tModifier, csp };
 	}
 
 	public static final Object[] pattern_InterfaceMember_11_2_collecttranslatedelements_blackBBB(
-			MModifierToTModifier mModifierToTModifier, TModifier tModifier, Modifier mModifier) {
-		return new Object[] { mModifierToTModifier, tModifier, mModifier };
+			MModifierToTModifier mModifierToTModifier, Modifier mModifier, TModifier tModifier) {
+		return new Object[] { mModifierToTModifier, mModifier, tModifier };
 	}
 
 	public static final Object[] pattern_InterfaceMember_11_2_collecttranslatedelements_greenFBBB(
-			MModifierToTModifier mModifierToTModifier, TModifier tModifier, Modifier mModifier) {
+			MModifierToTModifier mModifierToTModifier, Modifier mModifier, TModifier tModifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(mModifierToTModifier);
-		ruleresult.getTranslatedElements().add(tModifier);
 		ruleresult.getCreatedElements().add(mModifier);
-		return new Object[] { ruleresult, mModifierToTModifier, tModifier, mModifier };
+		ruleresult.getTranslatedElements().add(tModifier);
+		return new Object[] { ruleresult, mModifierToTModifier, mModifier, tModifier };
 	}
 
 	public static final Object[] pattern_InterfaceMember_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mTypeToTType, EObject mModifierToTModifier, EObject tModifier,
-			EObject mDefinition, EObject tMember, EObject defToMember, EObject mModifier, EObject tInterface,
-			EObject mInterface) {
-		if (!mTypeToTType.equals(tModifier)) {
-			if (!mTypeToTType.equals(tMember)) {
-				if (!mTypeToTType.equals(tInterface)) {
+			PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject tMember, EObject defToMember,
+			EObject mModifier, EObject mDefinition, EObject tModifier, EObject tInterface, EObject mInterface,
+			EObject mTypeToTType) {
+		if (!mModifierToTModifier.equals(tMember)) {
+			if (!mModifierToTModifier.equals(tModifier)) {
+				if (!mModifierToTModifier.equals(tInterface)) {
 					if (!mModifierToTModifier.equals(mTypeToTType)) {
-						if (!mModifierToTModifier.equals(tModifier)) {
-							if (!mModifierToTModifier.equals(tMember)) {
-								if (!mModifierToTModifier.equals(tInterface)) {
-									if (!mDefinition.equals(mTypeToTType)) {
-										if (!mDefinition.equals(mModifierToTModifier)) {
-											if (!mDefinition.equals(tModifier)) {
-												if (!mDefinition.equals(tMember)) {
-													if (!mDefinition.equals(mModifier)) {
-														if (!mDefinition.equals(tInterface)) {
-															if (!mDefinition.equals(mInterface)) {
-																if (!tMember.equals(tModifier)) {
-																	if (!defToMember.equals(mTypeToTType)) {
-																		if (!defToMember.equals(mModifierToTModifier)) {
-																			if (!defToMember.equals(tModifier)) {
-																				if (!defToMember.equals(mDefinition)) {
-																					if (!defToMember.equals(tMember)) {
-																						if (!defToMember
+						if (!tMember.equals(tModifier)) {
+							if (!defToMember.equals(mModifierToTModifier)) {
+								if (!defToMember.equals(tMember)) {
+									if (!defToMember.equals(mModifier)) {
+										if (!defToMember.equals(mDefinition)) {
+											if (!defToMember.equals(tModifier)) {
+												if (!defToMember.equals(tInterface)) {
+													if (!defToMember.equals(mInterface)) {
+														if (!defToMember.equals(mTypeToTType)) {
+															if (!mModifier.equals(mModifierToTModifier)) {
+																if (!mModifier.equals(tMember)) {
+																	if (!mModifier.equals(tModifier)) {
+																		if (!mModifier.equals(tInterface)) {
+																			if (!mModifier.equals(mTypeToTType)) {
+																				if (!mDefinition
+																						.equals(mModifierToTModifier)) {
+																					if (!mDefinition.equals(tMember)) {
+																						if (!mDefinition
 																								.equals(mModifier)) {
-																							if (!defToMember.equals(
-																									tInterface)) {
-																								if (!defToMember.equals(
-																										mInterface)) {
-																									if (!mModifier
-																											.equals(mTypeToTType)) {
-																										if (!mModifier
-																												.equals(mModifierToTModifier)) {
-																											if (!mModifier
-																													.equals(tModifier)) {
-																												if (!mModifier
-																														.equals(tMember)) {
-																													if (!mModifier
-																															.equals(tInterface)) {
-																														if (!tInterface
-																																.equals(tModifier)) {
-																															if (!tInterface
-																																	.equals(tMember)) {
+																							if (!mDefinition.equals(
+																									tModifier)) {
+																								if (!mDefinition.equals(
+																										tInterface)) {
+																									if (!mDefinition
+																											.equals(mInterface)) {
+																										if (!mDefinition
+																												.equals(mTypeToTType)) {
+																											if (!tInterface
+																													.equals(tMember)) {
+																												if (!tInterface
+																														.equals(tModifier)) {
+																													if (!mInterface
+																															.equals(mModifierToTModifier)) {
+																														if (!mInterface
+																																.equals(tMember)) {
+																															if (!mInterface
+																																	.equals(mModifier)) {
 																																if (!mInterface
-																																		.equals(mTypeToTType)) {
+																																		.equals(tModifier)) {
 																																	if (!mInterface
-																																			.equals(mModifierToTModifier)) {
+																																			.equals(tInterface)) {
 																																		if (!mInterface
-																																				.equals(tModifier)) {
-																																			if (!mInterface
+																																				.equals(mTypeToTType)) {
+																																			if (!mTypeToTType
 																																					.equals(tMember)) {
-																																				if (!mInterface
-																																						.equals(mModifier)) {
-																																					if (!mInterface
+																																				if (!mTypeToTType
+																																						.equals(tModifier)) {
+																																					if (!mTypeToTType
 																																							.equals(tInterface)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								mTypeToTType,
 																																								mModifierToTModifier,
-																																								tModifier,
-																																								mDefinition,
 																																								tMember,
 																																								defToMember,
 																																								mModifier,
+																																								mDefinition,
+																																								tModifier,
 																																								tInterface,
-																																								mInterface };
+																																								mInterface,
+																																								mTypeToTType };
 																																					}
 																																				}
 																																			}
@@ -2387,28 +2385,28 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject tModifier, EObject mDefinition,
-			EObject tMember, EObject mModifier) {
-		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject tMember, EObject mModifier,
+			EObject mDefinition, EObject tModifier) {
 		EMoflonEdge mModifierToTModifier__mModifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mDefinition____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceMember";
-		String mModifierToTModifier__tModifier____target_name_prime = "target";
-		String tMember__tModifier____tModifier_name_prime = "tModifier";
 		String mModifierToTModifier__mModifier____source_name_prime = "source";
+		String tMember__tModifier____tModifier_name_prime = "tModifier";
+		String mModifierToTModifier__tModifier____target_name_prime = "target";
 		String mDefinition__mModifier____modifier_name_prime = "modifier";
 		String mModifier__mDefinition____bodyDeclaration_name_prime = "bodyDeclaration";
-		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
-		mModifierToTModifier__tModifier____target.setTrg(tModifier);
-		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
-		tMember__tModifier____tModifier.setSrc(tMember);
-		tMember__tModifier____tModifier.setTrg(tModifier);
-		ruleresult.getTranslatedEdges().add(tMember__tModifier____tModifier);
 		mModifierToTModifier__mModifier____source.setSrc(mModifierToTModifier);
 		mModifierToTModifier__mModifier____source.setTrg(mModifier);
 		ruleresult.getCreatedEdges().add(mModifierToTModifier__mModifier____source);
+		tMember__tModifier____tModifier.setSrc(tMember);
+		tMember__tModifier____tModifier.setTrg(tModifier);
+		ruleresult.getTranslatedEdges().add(tMember__tModifier____tModifier);
+		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
+		mModifierToTModifier__tModifier____target.setTrg(tModifier);
+		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
 		mDefinition__mModifier____modifier.setSrc(mDefinition);
 		mDefinition__mModifier____modifier.setTrg(mModifier);
 		ruleresult.getCreatedEdges().add(mDefinition__mModifier____modifier);
@@ -2416,23 +2414,23 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		mModifier__mDefinition____bodyDeclaration.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mModifier__mDefinition____bodyDeclaration);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
-		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
 		mModifierToTModifier__mModifier____source.setName(mModifierToTModifier__mModifier____source_name_prime);
+		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
+		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
 		mDefinition__mModifier____modifier.setName(mDefinition__mModifier____modifier_name_prime);
 		mModifier__mDefinition____bodyDeclaration.setName(mModifier__mDefinition____bodyDeclaration_name_prime);
-		return new Object[] { ruleresult, mModifierToTModifier, tModifier, mDefinition, tMember, mModifier,
-				mModifierToTModifier__tModifier____target, tMember__tModifier____tModifier,
-				mModifierToTModifier__mModifier____source, mDefinition__mModifier____modifier,
+		return new Object[] { ruleresult, mModifierToTModifier, tMember, mModifier, mDefinition, tModifier,
+				mModifierToTModifier__mModifier____source, tMember__tModifier____tModifier,
+				mModifierToTModifier__tModifier____target, mDefinition__mModifier____modifier,
 				mModifier__mDefinition____bodyDeclaration };
 	}
 
 	public static final void pattern_InterfaceMember_11_5_registerobjects_expressionBBBBBBBBBBB(InterfaceMember _this,
-			PerformRuleResult ruleresult, EObject mTypeToTType, EObject mModifierToTModifier, EObject tModifier,
-			EObject mDefinition, EObject tMember, EObject defToMember, EObject mModifier, EObject tInterface,
-			EObject mInterface) {
-		_this.registerObjects_BWD(ruleresult, mTypeToTType, mModifierToTModifier, tModifier, mDefinition, tMember,
-				defToMember, mModifier, tInterface, mInterface);
+			PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject tMember, EObject defToMember,
+			EObject mModifier, EObject mDefinition, EObject tModifier, EObject tInterface, EObject mInterface,
+			EObject mTypeToTType) {
+		_this.registerObjects_BWD(ruleresult, mModifierToTModifier, tMember, defToMember, mModifier, mDefinition,
+				tModifier, tInterface, mInterface, mTypeToTType);
 
 	}
 
@@ -2491,27 +2489,27 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_12_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tModifier");
-		EObject _localVariable_1 = match.getObject("tMember");
+		EObject _localVariable_0 = match.getObject("tMember");
+		EObject _localVariable_1 = match.getObject("tModifier");
 		EObject _localVariable_2 = match.getObject("tInterface");
-		EObject tmpTModifier = _localVariable_0;
-		EObject tmpTMember = _localVariable_1;
+		EObject tmpTMember = _localVariable_0;
+		EObject tmpTModifier = _localVariable_1;
 		EObject tmpTInterface = _localVariable_2;
-		if (tmpTModifier instanceof TModifier) {
-			TModifier tModifier = (TModifier) tmpTModifier;
-			if (tmpTMember instanceof TMember) {
-				TMember tMember = (TMember) tmpTMember;
+		if (tmpTMember instanceof TMember) {
+			TMember tMember = (TMember) tmpTMember;
+			if (tmpTModifier instanceof TModifier) {
+				TModifier tModifier = (TModifier) tmpTModifier;
 				if (tmpTInterface instanceof TInterface) {
 					TInterface tInterface = (TInterface) tmpTInterface;
-					return new Object[] { tModifier, tMember, tInterface, match };
+					return new Object[] { tMember, tModifier, tInterface, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_InterfaceMember_12_2_corematch_blackFBFBFBFB(TModifier tModifier,
-			TMember tMember, TInterface tInterface, Match match) {
+	public static final Iterable<Object[]> pattern_InterfaceMember_12_2_corematch_blackBFFBBFFB(TMember tMember,
+			TModifier tModifier, TInterface tInterface, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember defToMember : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
@@ -2523,8 +2521,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 					Type tmpMInterface = mTypeToTType.getSource();
 					if (tmpMInterface instanceof InterfaceDeclaration) {
 						InterfaceDeclaration mInterface = (InterfaceDeclaration) tmpMInterface;
-						_result.add(new Object[] { mTypeToTType, tModifier, mDefinition, tMember, defToMember,
-								tInterface, mInterface, match });
+						_result.add(new Object[] { tMember, defToMember, mDefinition, tModifier, tInterface, mInterface,
+								mTypeToTType, match });
 					}
 
 				}
@@ -2534,19 +2532,19 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_InterfaceMember_12_3_findcontext_blackBBBBBBB(
-			TypeToTAbstractType mTypeToTType, TModifier tModifier, MDefinition mDefinition, TMember tMember,
-			MDefinitionToTMember defToMember, TInterface tInterface, InterfaceDeclaration mInterface) {
+	public static final Iterable<Object[]> pattern_InterfaceMember_12_3_findcontext_blackBBBBBBB(TMember tMember,
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TModifier tModifier, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tModifier.equals(tMember.getTModifier())) {
-			if (mDefinition.equals(defToMember.getSource())) {
-				if (tMember.equals(defToMember.getTarget())) {
+		if (tMember.equals(defToMember.getTarget())) {
+			if (tModifier.equals(tMember.getTModifier())) {
+				if (mDefinition.equals(defToMember.getSource())) {
 					if (tInterface.getDefines().contains(tMember)) {
-						if (mInterface.equals(mTypeToTType.getSource())) {
-							if (mInterface.getBodyDeclarations().contains(mDefinition)) {
+						if (mInterface.getBodyDeclarations().contains(mDefinition)) {
+							if (mInterface.equals(mTypeToTType.getSource())) {
 								if (tInterface.equals(mTypeToTType.getTarget())) {
-									_result.add(new Object[] { mTypeToTType, tModifier, mDefinition, tMember,
-											defToMember, tInterface, mInterface });
+									_result.add(new Object[] { tMember, defToMember, mDefinition, tModifier, tInterface,
+											mInterface, mTypeToTType });
 								}
 							}
 						}
@@ -2557,89 +2555,89 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return _result;
 	}
 
-	public static final Object[] pattern_InterfaceMember_12_3_findcontext_greenBBBBBBBFFFFFFFFFF(
-			TypeToTAbstractType mTypeToTType, TModifier tModifier, MDefinition mDefinition, TMember tMember,
-			MDefinitionToTMember defToMember, TInterface tInterface, InterfaceDeclaration mInterface) {
+	public static final Object[] pattern_InterfaceMember_12_3_findcontext_greenBBBBBBBFFFFFFFFFF(TMember tMember,
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TModifier tModifier, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge defToMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge defToMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge defToMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tInterface__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tInterface____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mInterface____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mInterface__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mInterface____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mInterface____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tInterface____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String defToMember__tMember____target_name_prime = "target";
 		String tMember__tModifier____tModifier_name_prime = "tModifier";
 		String defToMember__mDefinition____source_name_prime = "source";
-		String defToMember__tMember____target_name_prime = "target";
 		String tInterface__tMember____defines_name_prime = "defines";
 		String tMember__tInterface____definedBy_name_prime = "definedBy";
-		String mTypeToTType__mInterface____source_name_prime = "source";
 		String mInterface__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mDefinition__mInterface____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String mTypeToTType__mInterface____source_name_prime = "source";
 		String mTypeToTType__tInterface____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(mTypeToTType);
-		isApplicableMatch.getAllContextElements().add(tModifier);
-		isApplicableMatch.getAllContextElements().add(mDefinition);
 		isApplicableMatch.getAllContextElements().add(tMember);
 		isApplicableMatch.getAllContextElements().add(defToMember);
+		isApplicableMatch.getAllContextElements().add(mDefinition);
+		isApplicableMatch.getAllContextElements().add(tModifier);
 		isApplicableMatch.getAllContextElements().add(tInterface);
 		isApplicableMatch.getAllContextElements().add(mInterface);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType);
+		defToMember__tMember____target.setSrc(defToMember);
+		defToMember__tMember____target.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(defToMember__tMember____target);
 		tMember__tModifier____tModifier.setSrc(tMember);
 		tMember__tModifier____tModifier.setTrg(tModifier);
 		isApplicableMatch.getAllContextElements().add(tMember__tModifier____tModifier);
 		defToMember__mDefinition____source.setSrc(defToMember);
 		defToMember__mDefinition____source.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(defToMember__mDefinition____source);
-		defToMember__tMember____target.setSrc(defToMember);
-		defToMember__tMember____target.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(defToMember__tMember____target);
 		tInterface__tMember____defines.setSrc(tInterface);
 		tInterface__tMember____defines.setTrg(tMember);
 		isApplicableMatch.getAllContextElements().add(tInterface__tMember____defines);
 		tMember__tInterface____definedBy.setSrc(tMember);
 		tMember__tInterface____definedBy.setTrg(tInterface);
 		isApplicableMatch.getAllContextElements().add(tMember__tInterface____definedBy);
-		mTypeToTType__mInterface____source.setSrc(mTypeToTType);
-		mTypeToTType__mInterface____source.setTrg(mInterface);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__mInterface____source);
 		mInterface__mDefinition____bodyDeclarations.setSrc(mInterface);
 		mInterface__mDefinition____bodyDeclarations.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mInterface__mDefinition____bodyDeclarations);
 		mDefinition__mInterface____abstractTypeDeclaration.setSrc(mDefinition);
 		mDefinition__mInterface____abstractTypeDeclaration.setTrg(mInterface);
 		isApplicableMatch.getAllContextElements().add(mDefinition__mInterface____abstractTypeDeclaration);
+		mTypeToTType__mInterface____source.setSrc(mTypeToTType);
+		mTypeToTType__mInterface____source.setTrg(mInterface);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__mInterface____source);
 		mTypeToTType__tInterface____target.setSrc(mTypeToTType);
 		mTypeToTType__tInterface____target.setTrg(tInterface);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__tInterface____target);
+		defToMember__tMember____target.setName(defToMember__tMember____target_name_prime);
 		tMember__tModifier____tModifier.setName(tMember__tModifier____tModifier_name_prime);
 		defToMember__mDefinition____source.setName(defToMember__mDefinition____source_name_prime);
-		defToMember__tMember____target.setName(defToMember__tMember____target_name_prime);
 		tInterface__tMember____defines.setName(tInterface__tMember____defines_name_prime);
 		tMember__tInterface____definedBy.setName(tMember__tInterface____definedBy_name_prime);
-		mTypeToTType__mInterface____source.setName(mTypeToTType__mInterface____source_name_prime);
 		mInterface__mDefinition____bodyDeclarations.setName(mInterface__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__mInterface____abstractTypeDeclaration
 				.setName(mDefinition__mInterface____abstractTypeDeclaration_name_prime);
+		mTypeToTType__mInterface____source.setName(mTypeToTType__mInterface____source_name_prime);
 		mTypeToTType__tInterface____target.setName(mTypeToTType__tInterface____target_name_prime);
-		return new Object[] { mTypeToTType, tModifier, mDefinition, tMember, defToMember, tInterface, mInterface,
-				isApplicableMatch, tMember__tModifier____tModifier, defToMember__mDefinition____source,
-				defToMember__tMember____target, tInterface__tMember____defines, tMember__tInterface____definedBy,
-				mTypeToTType__mInterface____source, mInterface__mDefinition____bodyDeclarations,
-				mDefinition__mInterface____abstractTypeDeclaration, mTypeToTType__tInterface____target };
+		return new Object[] { tMember, defToMember, mDefinition, tModifier, tInterface, mInterface, mTypeToTType,
+				isApplicableMatch, defToMember__tMember____target, tMember__tModifier____tModifier,
+				defToMember__mDefinition____source, tInterface__tMember____defines, tMember__tInterface____definedBy,
+				mInterface__mDefinition____bodyDeclarations, mDefinition__mInterface____abstractTypeDeclaration,
+				mTypeToTType__mInterface____source, mTypeToTType__tInterface____target };
 	}
 
 	public static final Object[] pattern_InterfaceMember_12_4_solveCSP_bindingFBBBBBBBBB(InterfaceMember _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType, TModifier tModifier,
-			MDefinition mDefinition, TMember tMember, MDefinitionToTMember defToMember, TInterface tInterface,
-			InterfaceDeclaration mInterface) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mTypeToTType, tModifier, mDefinition,
-				tMember, defToMember, tInterface, mInterface);
+			IsApplicableMatch isApplicableMatch, TMember tMember, MDefinitionToTMember defToMember,
+			MDefinition mDefinition, TModifier tModifier, TInterface tInterface, InterfaceDeclaration mInterface,
+			TypeToTAbstractType mTypeToTType) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tMember, defToMember, mDefinition,
+				tModifier, tInterface, mInterface, mTypeToTType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tModifier, mDefinition, tMember,
-					defToMember, tInterface, mInterface };
+			return new Object[] { csp, _this, isApplicableMatch, tMember, defToMember, mDefinition, tModifier,
+					tInterface, mInterface, mTypeToTType };
 		}
 		return null;
 	}
@@ -2649,12 +2647,12 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(InterfaceMember _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType, TModifier tModifier,
-			MDefinition mDefinition, TMember tMember, MDefinitionToTMember defToMember, TInterface tInterface,
-			InterfaceDeclaration mInterface) {
+			IsApplicableMatch isApplicableMatch, TMember tMember, MDefinitionToTMember defToMember,
+			MDefinition mDefinition, TModifier tModifier, TInterface tInterface, InterfaceDeclaration mInterface,
+			TypeToTAbstractType mTypeToTType) {
 		Object[] result_pattern_InterfaceMember_12_4_solveCSP_binding = pattern_InterfaceMember_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, mTypeToTType, tModifier, mDefinition, tMember, defToMember, tInterface,
-				mInterface);
+				_this, isApplicableMatch, tMember, defToMember, mDefinition, tModifier, tInterface, mInterface,
+				mTypeToTType);
 		if (result_pattern_InterfaceMember_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceMember_12_4_solveCSP_binding[0];
 
@@ -2662,8 +2660,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 					csp);
 			if (result_pattern_InterfaceMember_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, tModifier, mDefinition, tMember,
-						defToMember, tInterface, mInterface };
+				return new Object[] { csp, _this, isApplicableMatch, tMember, defToMember, mDefinition, tModifier,
+						tInterface, mInterface, mTypeToTType };
 			}
 		}
 		return null;
@@ -2751,9 +2749,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 	public static final Object[] pattern_InterfaceMember_20_2_testcorematchandDECs_black_nac_0BB(TModifier tModifier,
 			TInterface tInterface) {
-		for (TAbstractType __DEC_tModifier_tModifier_232982 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_976487 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tInterface.equals(__DEC_tModifier_tModifier_232982)) {
+			if (!tInterface.equals(__DEC_tModifier_tModifier_976487)) {
 				return new Object[] { tModifier, tInterface };
 			}
 		}
@@ -2785,7 +2783,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 								tInterface) == null) {
 							if (pattern_InterfaceMember_20_2_testcorematchandDECs_black_nac_1BB(tInterface,
 									tModifier) == null) {
-								_result.add(new Object[] { tModifier, tMember, tInterface, _edge_tModifier });
+								_result.add(new Object[] { tMember, tModifier, tInterface, _edge_tModifier });
 							}
 						}
 					}
@@ -2808,8 +2806,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final boolean pattern_InterfaceMember_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			InterfaceMember _this, Match match, TModifier tModifier, TMember tMember, TInterface tInterface) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tModifier, tMember, tInterface);
+			InterfaceMember _this, Match match, TMember tMember, TModifier tModifier, TInterface tInterface) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tMember, tModifier, tInterface);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2908,7 +2906,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 					AbstractTypeDeclaration tmpMInterface = mDefinition.getAbstractTypeDeclaration();
 					if (tmpMInterface instanceof InterfaceDeclaration) {
 						InterfaceDeclaration mInterface = (InterfaceDeclaration) tmpMInterface;
-						_result.add(new Object[] { mDefinition, mModifier, mInterface, _edge_modifier });
+						_result.add(new Object[] { mModifier, mDefinition, mInterface, _edge_modifier });
 					}
 
 				}
@@ -2929,9 +2927,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final boolean pattern_InterfaceMember_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			InterfaceMember _this, Match match, MDefinition mDefinition, Modifier mModifier,
+			InterfaceMember _this, Match match, Modifier mModifier, MDefinition mDefinition,
 			InterfaceDeclaration mInterface) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mDefinition, mModifier, mInterface);
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mModifier, mDefinition, mInterface);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2975,31 +2973,31 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 	public static final Object[] pattern_InterfaceMember_24_2_matchsrctrgcontext_bindingFFFFFFBB(Match targetMatch,
 			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("tModifier");
-		EObject _localVariable_1 = sourceMatch.getObject("mDefinition");
-		EObject _localVariable_2 = targetMatch.getObject("tMember");
-		EObject _localVariable_3 = sourceMatch.getObject("mModifier");
+		EObject _localVariable_0 = targetMatch.getObject("tMember");
+		EObject _localVariable_1 = sourceMatch.getObject("mModifier");
+		EObject _localVariable_2 = sourceMatch.getObject("mDefinition");
+		EObject _localVariable_3 = targetMatch.getObject("tModifier");
 		EObject _localVariable_4 = targetMatch.getObject("tInterface");
 		EObject _localVariable_5 = sourceMatch.getObject("mInterface");
-		EObject tmpTModifier = _localVariable_0;
-		EObject tmpMDefinition = _localVariable_1;
-		EObject tmpTMember = _localVariable_2;
-		EObject tmpMModifier = _localVariable_3;
+		EObject tmpTMember = _localVariable_0;
+		EObject tmpMModifier = _localVariable_1;
+		EObject tmpMDefinition = _localVariable_2;
+		EObject tmpTModifier = _localVariable_3;
 		EObject tmpTInterface = _localVariable_4;
 		EObject tmpMInterface = _localVariable_5;
-		if (tmpTModifier instanceof TModifier) {
-			TModifier tModifier = (TModifier) tmpTModifier;
-			if (tmpMDefinition instanceof MDefinition) {
-				MDefinition mDefinition = (MDefinition) tmpMDefinition;
-				if (tmpTMember instanceof TMember) {
-					TMember tMember = (TMember) tmpTMember;
-					if (tmpMModifier instanceof Modifier) {
-						Modifier mModifier = (Modifier) tmpMModifier;
+		if (tmpTMember instanceof TMember) {
+			TMember tMember = (TMember) tmpTMember;
+			if (tmpMModifier instanceof Modifier) {
+				Modifier mModifier = (Modifier) tmpMModifier;
+				if (tmpMDefinition instanceof MDefinition) {
+					MDefinition mDefinition = (MDefinition) tmpMDefinition;
+					if (tmpTModifier instanceof TModifier) {
+						TModifier tModifier = (TModifier) tmpTModifier;
 						if (tmpTInterface instanceof TInterface) {
 							TInterface tInterface = (TInterface) tmpTInterface;
 							if (tmpMInterface instanceof InterfaceDeclaration) {
 								InterfaceDeclaration mInterface = (InterfaceDeclaration) tmpMInterface;
-								return new Object[] { tModifier, mDefinition, tMember, mModifier, tInterface,
+								return new Object[] { tMember, mModifier, mDefinition, tModifier, tInterface,
 										mInterface, targetMatch, sourceMatch };
 							}
 						}
@@ -3010,11 +3008,11 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceMember_24_2_matchsrctrgcontext_blackBBBBBBBB(TModifier tModifier,
-			MDefinition mDefinition, TMember tMember, Modifier mModifier, TInterface tInterface,
+	public static final Object[] pattern_InterfaceMember_24_2_matchsrctrgcontext_blackBBBBBBBB(TMember tMember,
+			Modifier mModifier, MDefinition mDefinition, TModifier tModifier, TInterface tInterface,
 			InterfaceDeclaration mInterface, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tModifier, mDefinition, tMember, mModifier, tInterface, mInterface, sourceMatch,
+			return new Object[] { tMember, mModifier, mDefinition, tModifier, tInterface, mInterface, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -3025,18 +3023,18 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		Object[] result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding = pattern_InterfaceMember_24_2_matchsrctrgcontext_bindingFFFFFFBB(
 				targetMatch, sourceMatch);
 		if (result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding != null) {
-			TModifier tModifier = (TModifier) result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding[0];
-			MDefinition mDefinition = (MDefinition) result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding[1];
-			TMember tMember = (TMember) result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding[2];
-			Modifier mModifier = (Modifier) result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding[3];
+			TMember tMember = (TMember) result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding[0];
+			Modifier mModifier = (Modifier) result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding[1];
+			MDefinition mDefinition = (MDefinition) result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding[2];
+			TModifier tModifier = (TModifier) result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding[3];
 			TInterface tInterface = (TInterface) result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding[4];
 			InterfaceDeclaration mInterface = (InterfaceDeclaration) result_pattern_InterfaceMember_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_InterfaceMember_24_2_matchsrctrgcontext_black = pattern_InterfaceMember_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					tModifier, mDefinition, tMember, mModifier, tInterface, mInterface, sourceMatch, targetMatch);
+					tMember, mModifier, mDefinition, tModifier, tInterface, mInterface, sourceMatch, targetMatch);
 			if (result_pattern_InterfaceMember_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tModifier, mDefinition, tMember, mModifier, tInterface, mInterface, sourceMatch,
+				return new Object[] { tMember, mModifier, mDefinition, tModifier, tInterface, mInterface, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3044,13 +3042,13 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_24_3_solvecsp_bindingFBBBBBBBBB(InterfaceMember _this,
-			TModifier tModifier, MDefinition mDefinition, TMember tMember, Modifier mModifier, TInterface tInterface,
+			TMember tMember, Modifier mModifier, MDefinition mDefinition, TModifier tModifier, TInterface tInterface,
 			InterfaceDeclaration mInterface, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(tModifier, mDefinition, tMember, mModifier, tInterface,
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(tMember, mModifier, mDefinition, tModifier, tInterface,
 				mInterface, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, tModifier, mDefinition, tMember, mModifier, tInterface, mInterface,
+			return new Object[] { csp, _this, tMember, mModifier, mDefinition, tModifier, tInterface, mInterface,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -3061,10 +3059,10 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(InterfaceMember _this,
-			TModifier tModifier, MDefinition mDefinition, TMember tMember, Modifier mModifier, TInterface tInterface,
+			TMember tMember, Modifier mModifier, MDefinition mDefinition, TModifier tModifier, TInterface tInterface,
 			InterfaceDeclaration mInterface, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_InterfaceMember_24_3_solvecsp_binding = pattern_InterfaceMember_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, tModifier, mDefinition, tMember, mModifier, tInterface, mInterface, sourceMatch, targetMatch);
+				_this, tMember, mModifier, mDefinition, tModifier, tInterface, mInterface, sourceMatch, targetMatch);
 		if (result_pattern_InterfaceMember_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceMember_24_3_solvecsp_binding[0];
 
@@ -3072,7 +3070,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 					csp);
 			if (result_pattern_InterfaceMember_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tModifier, mDefinition, tMember, mModifier, tInterface, mInterface,
+				return new Object[] { csp, _this, tMember, mModifier, mDefinition, tModifier, tInterface, mInterface,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3085,19 +3083,19 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_InterfaceMember_24_5_matchcorrcontext_blackFBBFBBBB(
-			MDefinition mDefinition, TMember tMember, TInterface tInterface, InterfaceDeclaration mInterface,
-			Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_InterfaceMember_24_5_matchcorrcontext_blackBFBBBFBB(TMember tMember,
+			MDefinition mDefinition, TInterface tInterface, InterfaceDeclaration mInterface, Match sourceMatch,
+			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (MDefinitionToTMember defToMember : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(mDefinition, MDefinitionToTMember.class, "source")) {
-				if (tMember.equals(defToMember.getTarget())) {
+					.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
+				if (mDefinition.equals(defToMember.getSource())) {
 					for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(mInterface, TypeToTAbstractType.class, "source")) {
 						if (tInterface.equals(mTypeToTType.getTarget())) {
-							_result.add(new Object[] { mTypeToTType, mDefinition, tMember, defToMember, tInterface,
-									mInterface, sourceMatch, targetMatch });
+							_result.add(new Object[] { tMember, defToMember, mDefinition, tInterface, mInterface,
+									mTypeToTType, sourceMatch, targetMatch });
 						}
 					}
 				}
@@ -3107,30 +3105,30 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_24_5_matchcorrcontext_greenBBBBF(
-			TypeToTAbstractType mTypeToTType, MDefinitionToTMember defToMember, Match sourceMatch, Match targetMatch) {
+			MDefinitionToTMember defToMember, TypeToTAbstractType mTypeToTType, Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "InterfaceMember";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(mTypeToTType);
 		ccMatch.getAllContextElements().add(defToMember);
+		ccMatch.getAllContextElements().add(mTypeToTType);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { mTypeToTType, defToMember, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { defToMember, mTypeToTType, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_InterfaceMember_24_6_createcorrespondence_blackBBBBBBB(TModifier tModifier,
-			MDefinition mDefinition, TMember tMember, Modifier mModifier, TInterface tInterface,
+	public static final Object[] pattern_InterfaceMember_24_6_createcorrespondence_blackBBBBBBB(TMember tMember,
+			Modifier mModifier, MDefinition mDefinition, TModifier tModifier, TInterface tInterface,
 			InterfaceDeclaration mInterface, CCMatch ccMatch) {
-		return new Object[] { tModifier, mDefinition, tMember, mModifier, tInterface, mInterface, ccMatch };
+		return new Object[] { tMember, mModifier, mDefinition, tModifier, tInterface, mInterface, ccMatch };
 	}
 
-	public static final Object[] pattern_InterfaceMember_24_6_createcorrespondence_greenFBBB(TModifier tModifier,
-			Modifier mModifier, CCMatch ccMatch) {
+	public static final Object[] pattern_InterfaceMember_24_6_createcorrespondence_greenFBBB(Modifier mModifier,
+			TModifier tModifier, CCMatch ccMatch) {
 		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
-		mModifierToTModifier.setTarget(tModifier);
 		mModifierToTModifier.setSource(mModifier);
+		mModifierToTModifier.setTarget(tModifier);
 		ccMatch.getCreateCorr().add(mModifierToTModifier);
-		return new Object[] { mModifierToTModifier, tModifier, mModifier, ccMatch };
+		return new Object[] { mModifierToTModifier, mModifier, tModifier, ccMatch };
 	}
 
 	public static final Object[] pattern_InterfaceMember_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -3154,11 +3152,11 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return _result;
 	}
 
-	public static final Object[] pattern_InterfaceMember_27_1_matchtggpattern_blackBBB(MDefinition mDefinition,
-			Modifier mModifier, InterfaceDeclaration mInterface) {
+	public static final Object[] pattern_InterfaceMember_27_1_matchtggpattern_blackBBB(Modifier mModifier,
+			MDefinition mDefinition, InterfaceDeclaration mInterface) {
 		if (mInterface.getBodyDeclarations().contains(mDefinition)) {
 			if (mModifier.equals(mDefinition.getModifier())) {
-				return new Object[] { mDefinition, mModifier, mInterface };
+				return new Object[] { mModifier, mDefinition, mInterface };
 			}
 		}
 		return null;
@@ -3176,9 +3174,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 	public static final Object[] pattern_InterfaceMember_28_1_matchtggpattern_black_nac_0BB(TModifier tModifier,
 			TInterface tInterface) {
-		for (TAbstractType __DEC_tModifier_tModifier_73705 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_490859 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tInterface.equals(__DEC_tModifier_tModifier_73705)) {
+			if (!tInterface.equals(__DEC_tModifier_tModifier_490859)) {
 				return new Object[] { tModifier, tInterface };
 			}
 		}
@@ -3193,13 +3191,13 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceMember_28_1_matchtggpattern_blackBBB(TModifier tModifier,
-			TMember tMember, TInterface tInterface) {
+	public static final Object[] pattern_InterfaceMember_28_1_matchtggpattern_blackBBB(TMember tMember,
+			TModifier tModifier, TInterface tInterface) {
 		if (tModifier.equals(tMember.getTModifier())) {
 			if (tInterface.getDefines().contains(tMember)) {
 				if (pattern_InterfaceMember_28_1_matchtggpattern_black_nac_0BB(tModifier, tInterface) == null) {
 					if (pattern_InterfaceMember_28_1_matchtggpattern_black_nac_1BB(tInterface, tModifier) == null) {
-						return new Object[] { tModifier, tMember, tInterface };
+						return new Object[] { tMember, tModifier, tInterface };
 					}
 				}
 			}
@@ -3230,17 +3228,17 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mTypeToTType) {
-		if (ruleResult.getCorrObjects().contains(mTypeToTType)) {
-			return new Object[] { ruleResult, mTypeToTType };
+			ModelgeneratorRuleResult ruleResult, TMember tMember) {
+		if (ruleResult.getTargetObjects().contains(tMember)) {
+			return new Object[] { ruleResult, tMember };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InterfaceMember_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration mInterface) {
-		if (ruleResult.getSourceObjects().contains(mInterface)) {
-			return new Object[] { ruleResult, mInterface };
+			ModelgeneratorRuleResult ruleResult, MDefinitionToTMember defToMember) {
+		if (ruleResult.getCorrObjects().contains(defToMember)) {
+			return new Object[] { ruleResult, defToMember };
 		}
 		return null;
 	}
@@ -3254,17 +3252,17 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, MDefinitionToTMember defToMember) {
-		if (ruleResult.getCorrObjects().contains(defToMember)) {
-			return new Object[] { ruleResult, defToMember };
+			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration mInterface) {
+		if (ruleResult.getSourceObjects().contains(mInterface)) {
+			return new Object[] { ruleResult, mInterface };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InterfaceMember_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, TMember tMember) {
-		if (ruleResult.getTargetObjects().contains(tMember)) {
-			return new Object[] { ruleResult, tMember };
+			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mTypeToTType) {
+		if (ruleResult.getCorrObjects().contains(mTypeToTType)) {
+			return new Object[] { ruleResult, mTypeToTType };
 		}
 		return null;
 	}
@@ -3280,41 +3278,41 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	public static final Iterable<Object[]> pattern_InterfaceMember_29_2_isapplicablecore_blackFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList mTypeToTTypeList : ruleEntryContainer.getRuleEntryList()) {
-			for (EObject tmpMTypeToTType : mTypeToTTypeList.getEntryObjects()) {
-				if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-					TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-					Type tmpMInterface = mTypeToTType.getSource();
-					if (tmpMInterface instanceof InterfaceDeclaration) {
-						InterfaceDeclaration mInterface = (InterfaceDeclaration) tmpMInterface;
-						TAbstractType tmpTInterface = mTypeToTType.getTarget();
-						if (tmpTInterface instanceof TInterface) {
-							TInterface tInterface = (TInterface) tmpTInterface;
-							if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-									mTypeToTType) == null) {
-								if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-										mInterface) == null) {
-									if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_5BB(ruleResult,
-											tInterface) == null) {
-										for (BodyDeclaration tmpMDefinition : mInterface.getBodyDeclarations()) {
-											if (tmpMDefinition instanceof MDefinition) {
-												MDefinition mDefinition = (MDefinition) tmpMDefinition;
-												if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_2BB(
-														ruleResult, mDefinition) == null) {
-													for (TMember tMember : tInterface.getDefines()) {
-														if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_4BB(
-																ruleResult, tMember) == null) {
-															for (MDefinitionToTMember defToMember : org.moflon.core.utilities.eMoflonEMFUtil
-																	.getOppositeReferenceTyped(mDefinition,
-																			MDefinitionToTMember.class, "source")) {
-																if (tMember.equals(defToMember.getTarget())) {
-																	if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_3BB(
-																			ruleResult, defToMember) == null) {
-																		_result.add(new Object[] { mTypeToTTypeList,
-																				mTypeToTType, mInterface, mDefinition,
-																				defToMember, tMember, tInterface,
-																				ruleEntryContainer, ruleResult });
-																	}
+		for (RuleEntryList defToMemberList : ruleEntryContainer.getRuleEntryList()) {
+			for (EObject tmpDefToMember : defToMemberList.getEntryObjects()) {
+				if (tmpDefToMember instanceof MDefinitionToTMember) {
+					MDefinitionToTMember defToMember = (MDefinitionToTMember) tmpDefToMember;
+					TMember tMember = defToMember.getTarget();
+					if (tMember != null) {
+						BodyDeclaration tmpMDefinition = defToMember.getSource();
+						if (tmpMDefinition instanceof MDefinition) {
+							MDefinition mDefinition = (MDefinition) tmpMDefinition;
+							TAbstractType tmpTInterface = tMember.getDefinedBy();
+							if (tmpTInterface instanceof TInterface) {
+								TInterface tInterface = (TInterface) tmpTInterface;
+								AbstractTypeDeclaration tmpMInterface = mDefinition.getAbstractTypeDeclaration();
+								if (tmpMInterface instanceof InterfaceDeclaration) {
+									InterfaceDeclaration mInterface = (InterfaceDeclaration) tmpMInterface;
+									if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+											defToMember) == null) {
+										if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+												tMember) == null) {
+											if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_2BB(ruleResult,
+													mDefinition) == null) {
+												if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_5BB(
+														ruleResult, tInterface) == null) {
+													if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_3BB(
+															ruleResult, mInterface) == null) {
+														for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
+																.getOppositeReferenceTyped(tInterface,
+																		TypeToTAbstractType.class, "target")) {
+															if (mInterface.equals(mTypeToTType.getSource())) {
+																if (pattern_InterfaceMember_29_2_isapplicablecore_black_nac_4BB(
+																		ruleResult, mTypeToTType) == null) {
+																	_result.add(new Object[] { defToMemberList, tMember,
+																			defToMember, mDefinition, mInterface,
+																			mTypeToTType, tInterface,
+																			ruleEntryContainer, ruleResult });
 																}
 															}
 														}
@@ -3324,7 +3322,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 										}
 									}
 								}
+
 							}
+
 						}
 
 					}
@@ -3336,15 +3336,15 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_29_3_solveCSP_bindingFBBBBBBBBB(InterfaceMember _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
-			TMember tMember, MDefinitionToTMember defToMember, TInterface tInterface, InterfaceDeclaration mInterface,
-			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mTypeToTType, mDefinition, tMember,
-				defToMember, tInterface, mInterface, ruleResult);
+			IsApplicableMatch isApplicableMatch, TMember tMember, MDefinitionToTMember defToMember,
+			MDefinition mDefinition, TInterface tInterface, InterfaceDeclaration mInterface,
+			TypeToTAbstractType mTypeToTType, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tMember, defToMember, mDefinition,
+				tInterface, mInterface, mTypeToTType, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, mDefinition, tMember, defToMember,
-					tInterface, mInterface, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, tMember, defToMember, mDefinition, tInterface,
+					mInterface, mTypeToTType, ruleResult };
 		}
 		return null;
 	}
@@ -3354,11 +3354,11 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	}
 
 	public static final Object[] pattern_InterfaceMember_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(InterfaceMember _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
-			TMember tMember, MDefinitionToTMember defToMember, TInterface tInterface, InterfaceDeclaration mInterface,
-			ModelgeneratorRuleResult ruleResult) {
+			IsApplicableMatch isApplicableMatch, TMember tMember, MDefinitionToTMember defToMember,
+			MDefinition mDefinition, TInterface tInterface, InterfaceDeclaration mInterface,
+			TypeToTAbstractType mTypeToTType, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_InterfaceMember_29_3_solveCSP_binding = pattern_InterfaceMember_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, mTypeToTType, mDefinition, tMember, defToMember, tInterface, mInterface,
+				_this, isApplicableMatch, tMember, defToMember, mDefinition, tInterface, mInterface, mTypeToTType,
 				ruleResult);
 		if (result_pattern_InterfaceMember_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceMember_29_3_solveCSP_binding[0];
@@ -3367,8 +3367,8 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 					csp);
 			if (result_pattern_InterfaceMember_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mTypeToTType, mDefinition, tMember, defToMember,
-						tInterface, mInterface, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, tMember, defToMember, mDefinition, tInterface,
+						mInterface, mTypeToTType, ruleResult };
 			}
 		}
 		return null;
@@ -3380,48 +3380,48 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 		return _result;
 	}
 
-	public static final Object[] pattern_InterfaceMember_29_5_checknacs_blackBBBBBB(TypeToTAbstractType mTypeToTType,
-			MDefinition mDefinition, TMember tMember, MDefinitionToTMember defToMember, TInterface tInterface,
-			InterfaceDeclaration mInterface) {
-		return new Object[] { mTypeToTType, mDefinition, tMember, defToMember, tInterface, mInterface };
+	public static final Object[] pattern_InterfaceMember_29_5_checknacs_blackBBBBBB(TMember tMember,
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType) {
+		return new Object[] { tMember, defToMember, mDefinition, tInterface, mInterface, mTypeToTType };
 	}
 
-	public static final Object[] pattern_InterfaceMember_29_6_perform_blackBBBBBBB(TypeToTAbstractType mTypeToTType,
-			MDefinition mDefinition, TMember tMember, MDefinitionToTMember defToMember, TInterface tInterface,
-			InterfaceDeclaration mInterface, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { mTypeToTType, mDefinition, tMember, defToMember, tInterface, mInterface, ruleResult };
+	public static final Object[] pattern_InterfaceMember_29_6_perform_blackBBBBBBB(TMember tMember,
+			MDefinitionToTMember defToMember, MDefinition mDefinition, TInterface tInterface,
+			InterfaceDeclaration mInterface, TypeToTAbstractType mTypeToTType, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { tMember, defToMember, mDefinition, tInterface, mInterface, mTypeToTType, ruleResult };
 	}
 
-	public static final Object[] pattern_InterfaceMember_29_6_perform_greenFFBBFBB(MDefinition mDefinition,
-			TMember tMember, ModelgeneratorRuleResult ruleResult, CSP csp) {
+	public static final Object[] pattern_InterfaceMember_29_6_perform_greenFBFBFBB(TMember tMember,
+			MDefinition mDefinition, ModelgeneratorRuleResult ruleResult, CSP csp) {
 		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
-		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
 		Modifier mModifier = JavaFactory.eINSTANCE.createModifier();
-		Object _localVariable_0 = csp.getValue("tModifier", "isStatic");
-		Object _localVariable_1 = csp.getValue("tModifier", "tVisibility");
-		Object _localVariable_2 = csp.getValue("mModifier", "static");
-		Object _localVariable_3 = csp.getValue("mModifier", "visibility");
+		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
+		Object _localVariable_0 = csp.getValue("mModifier", "static");
+		Object _localVariable_1 = csp.getValue("mModifier", "visibility");
+		Object _localVariable_2 = csp.getValue("tModifier", "isStatic");
+		Object _localVariable_3 = csp.getValue("tModifier", "tVisibility");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(mModifierToTModifier);
-		mModifierToTModifier.setTarget(tModifier);
-		tMember.setTModifier(tModifier);
-		ruleResult.getTargetObjects().add(tModifier);
 		mModifierToTModifier.setSource(mModifier);
 		mDefinition.setModifier(mModifier);
 		ruleResult.getSourceObjects().add(mModifier);
-		boolean tModifier_isStatic_prime = (boolean) _localVariable_0;
-		TVisibility tModifier_tVisibility_prime = (TVisibility) _localVariable_1;
-		boolean mModifier_static_prime = (boolean) _localVariable_2;
-		VisibilityKind mModifier_visibility_prime = (VisibilityKind) _localVariable_3;
+		tMember.setTModifier(tModifier);
+		mModifierToTModifier.setTarget(tModifier);
+		ruleResult.getTargetObjects().add(tModifier);
+		boolean mModifier_static_prime = (boolean) _localVariable_0;
+		VisibilityKind mModifier_visibility_prime = (VisibilityKind) _localVariable_1;
+		boolean tModifier_isStatic_prime = (boolean) _localVariable_2;
+		TVisibility tModifier_tVisibility_prime = (TVisibility) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
-		tModifier.setTVisibility(tModifier_tVisibility_prime);
 		mModifier.setStatic(Boolean.valueOf(mModifier_static_prime));
 		mModifier.setVisibility(mModifier_visibility_prime);
+		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
+		tModifier.setTVisibility(tModifier_tVisibility_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mModifierToTModifier, tModifier, mDefinition, tMember, mModifier, ruleResult, csp };
+		return new Object[] { mModifierToTModifier, tMember, mModifier, mDefinition, tModifier, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_InterfaceMember_29_7_expressionFB(

@@ -5,33 +5,42 @@
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	model : Model{
-		++-orphanTypes->eArrayType
+	mModel : Model {
+		++-orphanTypes->mArrayType
 	}
 	
-	++eArrayType:ArrayType {
-		++  -elementType -> eTypeAccess
+	++mArrayType:ArrayType {
+		++  -elementType -> mTypeAccess
 	}
 	
-	++eTypeAccess:TypeAccess {
-		++  -type -> eType
+	++mTypeAccess:TypeAccess {
+		++  -type -> mType
 	}
 
-	eType:Type 
+	mType:Type 
 }
 
 #target {	
-	tArrayClass:TAbstractType
+	tModel : TypeGraph {
+		-ownedTypes->tAbstractType
+	}
+	
+	tAbstractType:TAbstractType
 }
 
 #correspondence {
+	modelToTypeGraph : ModelToTypeGraph {
+		#src->mModel
+		#trg->tModel
+	}
+	
 	++ arrayTypeToTArrayClass :TypeToTAbstractType {
-		#src->eArrayType
-		#trg->tArrayClass
+		#src->mArrayType
+		#trg->tAbstractType
 	}
 
-	eTypeToTArrayClass :TypeToTAbstractType {
-		#src->eType
-		#trg->tArrayClass
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tAbstractType
 	}
 }

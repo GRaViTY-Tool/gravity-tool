@@ -206,9 +206,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge type2Type__mType____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge annotatable2Annotatable__tType____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge type2Type__tType____target = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[17];
@@ -545,9 +545,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge type2Type__mType____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge annotatable2Annotatable__tType____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge type2Type__tType____target = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[17];
@@ -787,7 +787,7 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_226(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_11(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = EnumInPackageImpl
 				.pattern_EnumInPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -846,7 +846,7 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_236(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_11(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = EnumInPackageImpl
 				.pattern_EnumInPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -912,21 +912,21 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
-		var_mType_proxy.setType("boolean");
-
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
 		var_tType_tLib.setType("boolean");
 
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
+		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
+		var_mType_proxy.setType("boolean");
 
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
+
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -976,21 +976,21 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
-		var_mType_proxy.setType("boolean");
-
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
 		var_tType_tLib.setType("boolean");
 
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
+		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
+		var_mType_proxy.setType("boolean");
 
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
+
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1373,10 +1373,10 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 			return null;
 		case RulesPackage.ENUM_IN_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_226__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_226((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ENUM_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_236__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_236((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_11__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_11((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_11__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_11((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ENUM_IN_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM_IN_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1722,9 +1722,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Type__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge annotatable2Annotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotatable2Annotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotatable2Annotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Type__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1737,9 +1737,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		String tPackage__tType____classes_name_prime = "classes";
 		String type2Type__mType____source_name_prime = "source";
 		String annotatable2Annotatable__tType____target_name_prime = "target";
-		String annotatable2Annotatable__mType____source_name_prime = "source";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____model_name_prime = "model";
+		String annotatable2Annotatable__mType____source_name_prime = "source";
 		String type2Type__tType____target_name_prime = "target";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
 		String mType__mPackage____package_name_prime = "package";
@@ -1757,15 +1757,15 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		annotatable2Annotatable__tType____target.setSrc(annotatable2Annotatable);
 		annotatable2Annotatable__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(annotatable2Annotatable__tType____target);
-		annotatable2Annotatable__mType____source.setSrc(annotatable2Annotatable);
-		annotatable2Annotatable__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(annotatable2Annotatable__mType____source);
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(pg__tType____ownedTypes);
 		tType__pg____model.setSrc(tType);
 		tType__pg____model.setTrg(pg);
 		ruleresult.getCreatedEdges().add(tType__pg____model);
+		annotatable2Annotatable__mType____source.setSrc(annotatable2Annotatable);
+		annotatable2Annotatable__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(annotatable2Annotatable__mType____source);
 		type2Type__tType____target.setSrc(type2Type);
 		type2Type__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(type2Type__tType____target);
@@ -1794,9 +1794,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		tPackage__tType____classes.setName(tPackage__tType____classes_name_prime);
 		type2Type__mType____source.setName(type2Type__mType____source_name_prime);
 		annotatable2Annotatable__tType____target.setName(annotatable2Annotatable__tType____target_name_prime);
-		annotatable2Annotatable__mType____source.setName(annotatable2Annotatable__mType____source_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____model.setName(tType__pg____model_name_prime);
+		annotatable2Annotatable__mType____source.setName(annotatable2Annotatable__mType____source_name_prime);
 		type2Type__tType____target.setName(type2Type__tType____target_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
@@ -1807,11 +1807,10 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
 		return new Object[] { ruleresult, tAnnotation, annotatable2Annotatable, tPackage, tType, mPackage, pg,
 				type2Type, mType, tPackage__tType____classes, type2Type__mType____source,
-				annotatable2Annotatable__tType____target, annotatable2Annotatable__mType____source,
-				pg__tType____ownedTypes, tType__pg____model, type2Type__tType____target,
-				mPackage__mType____ownedElements, mType__mPackage____package, tPackage__tType____ownedTypes,
-				tType__tPackage____package, tType__tAnnotation____tAnnotation, tAnnotation__tType____tAnnotated,
-				pg__tType____classes };
+				annotatable2Annotatable__tType____target, pg__tType____ownedTypes, tType__pg____model,
+				annotatable2Annotatable__mType____source, type2Type__tType____target, mPackage__mType____ownedElements,
+				mType__mPackage____package, tPackage__tType____ownedTypes, tType__tPackage____package,
+				tType__tAnnotation____tAnnotation, tAnnotation__tType____tAnnotated, pg__tType____classes };
 	}
 
 	public static final void pattern_EnumInPackage_1_5_registerobjects_expressionBBBBBBBBBBB(EnumInPackage _this,
@@ -2389,9 +2388,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Type__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge annotatable2Annotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotatable2Annotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotatable2Annotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Type__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2404,9 +2403,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		String tPackage__tType____classes_name_prime = "classes";
 		String type2Type__mType____source_name_prime = "source";
 		String annotatable2Annotatable__tType____target_name_prime = "target";
-		String annotatable2Annotatable__mType____source_name_prime = "source";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____model_name_prime = "model";
+		String annotatable2Annotatable__mType____source_name_prime = "source";
 		String type2Type__tType____target_name_prime = "target";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
 		String mType__mPackage____package_name_prime = "package";
@@ -2424,15 +2423,15 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		annotatable2Annotatable__tType____target.setSrc(annotatable2Annotatable);
 		annotatable2Annotatable__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(annotatable2Annotatable__tType____target);
-		annotatable2Annotatable__mType____source.setSrc(annotatable2Annotatable);
-		annotatable2Annotatable__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(annotatable2Annotatable__mType____source);
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(pg__tType____ownedTypes);
 		tType__pg____model.setSrc(tType);
 		tType__pg____model.setTrg(pg);
 		ruleresult.getTranslatedEdges().add(tType__pg____model);
+		annotatable2Annotatable__mType____source.setSrc(annotatable2Annotatable);
+		annotatable2Annotatable__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(annotatable2Annotatable__mType____source);
 		type2Type__tType____target.setSrc(type2Type);
 		type2Type__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(type2Type__tType____target);
@@ -2461,9 +2460,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		tPackage__tType____classes.setName(tPackage__tType____classes_name_prime);
 		type2Type__mType____source.setName(type2Type__mType____source_name_prime);
 		annotatable2Annotatable__tType____target.setName(annotatable2Annotatable__tType____target_name_prime);
-		annotatable2Annotatable__mType____source.setName(annotatable2Annotatable__mType____source_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____model.setName(tType__pg____model_name_prime);
+		annotatable2Annotatable__mType____source.setName(annotatable2Annotatable__mType____source_name_prime);
 		type2Type__tType____target.setName(type2Type__tType____target_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
@@ -2474,11 +2473,10 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
 		return new Object[] { ruleresult, tAnnotation, annotatable2Annotatable, tPackage, tType, mPackage, pg,
 				type2Type, mType, tPackage__tType____classes, type2Type__mType____source,
-				annotatable2Annotatable__tType____target, annotatable2Annotatable__mType____source,
-				pg__tType____ownedTypes, tType__pg____model, type2Type__tType____target,
-				mPackage__mType____ownedElements, mType__mPackage____package, tPackage__tType____ownedTypes,
-				tType__tPackage____package, tType__tAnnotation____tAnnotation, tAnnotation__tType____tAnnotated,
-				pg__tType____classes };
+				annotatable2Annotatable__tType____target, pg__tType____ownedTypes, tType__pg____model,
+				annotatable2Annotatable__mType____source, type2Type__tType____target, mPackage__mType____ownedElements,
+				mType__mPackage____package, tPackage__tType____ownedTypes, tType__tPackage____package,
+				tType__tAnnotation____tAnnotation, tAnnotation__tType____tAnnotated, pg__tType____classes };
 	}
 
 	public static final void pattern_EnumInPackage_11_5_registerobjects_expressionBBBBBBBBBBB(EnumInPackage _this,
@@ -2807,11 +2805,11 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 
 	public static final Object[] pattern_EnumInPackage_20_2_testcorematchandDECs_black_nac_0BBBB(TEnum tAnnotation,
 			TPackage tPackage, TClass tType, TypeGraph pg) {
-		TAnnotatable __DEC_tAnnotation_tAnnotated_198767 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotated_198767 != null) {
-			if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_198767)) {
-				if (!tType.equals(__DEC_tAnnotation_tAnnotated_198767)) {
-					if (!pg.equals(__DEC_tAnnotation_tAnnotated_198767)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotated_104070 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotated_104070 != null) {
+			if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_104070)) {
+				if (!tType.equals(__DEC_tAnnotation_tAnnotated_104070)) {
+					if (!pg.equals(__DEC_tAnnotation_tAnnotated_104070)) {
 						return new Object[] { tAnnotation, tPackage, tType, pg };
 					}
 				}
@@ -2823,9 +2821,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 
 	public static final Object[] pattern_EnumInPackage_20_2_testcorematchandDECs_black_nac_1BB(TClass tType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tType_classes_797762 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_687047 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tType_classes_797762)) {
+			if (!tPackage.equals(__DEC_tType_classes_687047)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2834,9 +2832,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 
 	public static final Object[] pattern_EnumInPackage_20_2_testcorematchandDECs_black_nac_2BB(TClass tType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_905840 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_813382 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_905840)) {
+			if (!pg.equals(__DEC_tType_classes_813382)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2844,9 +2842,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	}
 
 	public static final Object[] pattern_EnumInPackage_20_2_testcorematchandDECs_black_nac_3B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_916960 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_916960 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_916960)) {
+		TAbstractType __DEC_tType_innerTypes_185706 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_185706 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_185706)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3021,9 +3019,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	}
 
 	public static final Object[] pattern_EnumInPackage_21_2_testcorematchandDECs_black_nac_0B(EnumDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_825442 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_825442 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_825442)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_399175 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_399175 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_399175)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3032,9 +3030,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	}
 
 	public static final Object[] pattern_EnumInPackage_21_2_testcorematchandDECs_black_nac_1B(EnumDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_865794 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_912888 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_865794 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_912888 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3042,7 +3040,7 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	}
 
 	public static final Object[] pattern_EnumInPackage_21_2_testcorematchandDECs_black_nac_2B(EnumDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_587650 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_445537 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3301,9 +3299,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	}
 
 	public static final Object[] pattern_EnumInPackage_27_1_matchtggpattern_black_nac_0B(EnumDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_269221 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_269221 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_269221)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_950654 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_950654 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_950654)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3312,9 +3310,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	}
 
 	public static final Object[] pattern_EnumInPackage_27_1_matchtggpattern_black_nac_1B(EnumDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_798883 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_270605 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_798883 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_270605 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3322,7 +3320,7 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	}
 
 	public static final Object[] pattern_EnumInPackage_27_1_matchtggpattern_black_nac_2B(EnumDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_96252 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_422908 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3355,11 +3353,11 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 
 	public static final Object[] pattern_EnumInPackage_28_1_matchtggpattern_black_nac_0BBBB(TEnum tAnnotation,
 			TPackage tPackage, TClass tType, TypeGraph pg) {
-		TAnnotatable __DEC_tAnnotation_tAnnotated_515690 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotated_515690 != null) {
-			if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_515690)) {
-				if (!tType.equals(__DEC_tAnnotation_tAnnotated_515690)) {
-					if (!pg.equals(__DEC_tAnnotation_tAnnotated_515690)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotated_441735 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotated_441735 != null) {
+			if (!tPackage.equals(__DEC_tAnnotation_tAnnotated_441735)) {
+				if (!tType.equals(__DEC_tAnnotation_tAnnotated_441735)) {
+					if (!pg.equals(__DEC_tAnnotation_tAnnotated_441735)) {
 						return new Object[] { tAnnotation, tPackage, tType, pg };
 					}
 				}
@@ -3371,9 +3369,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 
 	public static final Object[] pattern_EnumInPackage_28_1_matchtggpattern_black_nac_1BB(TClass tType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tType_classes_890896 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_205705 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tType_classes_890896)) {
+			if (!tPackage.equals(__DEC_tType_classes_205705)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3381,9 +3379,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	}
 
 	public static final Object[] pattern_EnumInPackage_28_1_matchtggpattern_black_nac_2BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_309759 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_371095 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_309759)) {
+			if (!pg.equals(__DEC_tType_classes_371095)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3391,9 +3389,9 @@ public class EnumInPackageImpl extends AbstractRuleImpl implements EnumInPackage
 	}
 
 	public static final Object[] pattern_EnumInPackage_28_1_matchtggpattern_black_nac_3B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_591275 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_591275 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_591275)) {
+		TAbstractType __DEC_tType_innerTypes_543256 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_543256 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_543256)) {
 				return new Object[] { tType };
 			}
 		}
