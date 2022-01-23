@@ -6,8 +6,6 @@ import java.util.Map;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.uml2.uml.resource.UMLResource;
 import org.gravity.eclipse.util.JavaProjectUtil;
 
 public class TransformationFactory {
@@ -22,23 +20,12 @@ public class TransformationFactory {
 		if (this.map.containsKey(project)) {
 			return  this.map.get(project);
 		}
-		final IJavaProject javaProject = JavaProjectUtil.getJavaProject(project);
+		final var javaProject = JavaProjectUtil.getJavaProject(project);
 		if (javaProject == null) {
 			return null;
 		}
-		final Transformation trafo = new Transformation(javaProject, null);
+		final var trafo = new Transformation(javaProject);
 		registerTransformation(trafo);
-		return trafo;
-	}
-
-	public Transformation getTransformation(final IJavaProject javaProject, final UMLResource targetResource)
-			throws IOException, CoreException {
-		final IProject project = javaProject.getProject();
-		Transformation trafo = this.map.get(project);
-		if (trafo == null) {
-			trafo = new Transformation(javaProject, targetResource);
-			registerTransformation(trafo);
-		}
 		return trafo;
 	}
 
@@ -48,8 +35,8 @@ public class TransformationFactory {
 	 * @param trafo The transformation
 	 */
 	private void registerTransformation(final Transformation trafo) {
-		final IProject project = trafo.getProject().getProject();
-		final Transformation existingTrafo = this.map.get(project);
+		final var project = trafo.getProject().getProject();
+		final var existingTrafo = this.map.get(project);
 		if (existingTrafo != null) {
 			if (!trafo.equals(existingTrafo)) {
 				throw new IllegalStateException();
@@ -63,8 +50,13 @@ public class TransformationFactory {
 	 * Drops the factory for the project
 	 *
 	 * @param project
+	 * @return
 	 */
-	public void drop(final IProject project) {
-		this.map.remove(project);
+	public boolean drop(final IProject project) {
+		if (this.map.containsKey(project)) {
+			final var converter = this.map.remove(project);
+			return (converter != null) && converter.discard();
+		}
+		return false;
 	}
 }

@@ -175,10 +175,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 		Type mType = (Type) result1_bindingAndBlack[5];
 		MFieldSignature mSignature = (MFieldSignature) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
-		Object[] result1_green = FieldSignatureImpl.pattern_FieldSignature_1_1_performtransformation_greenFBFBFB(tType,
+		Object[] result1_green = FieldSignatureImpl.pattern_FieldSignature_1_1_performtransformation_greenFBBFFB(tType,
 				tField, mSignature);
 		TFieldSignature tSignature = (TFieldSignature) result1_green[0];
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[2];
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[3];
 		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_green[4];
 
 		Object[] result2_black = FieldSignatureImpl.pattern_FieldSignature_1_2_collecttranslatedelements_blackBBBB(
@@ -194,19 +194,19 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldSignatureImpl.pattern_FieldSignature_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-				ruleresult, tSignature, mTypeToTType, tType, mFieldName, eFieldDeclarationToTField,
-				mFlowElementToTFlowElement, tField, mSignatureToTSignature, mType, mSignature);
+				ruleresult, tSignature, mTypeToTType, tType, mFieldName, eFieldDeclarationToTField, tField,
+				mFlowElementToTFlowElement, mSignatureToTSignature, mType, mSignature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[tSignature] = " + tSignature + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
 					+ "[tType] = " + tType + ", " + "[mFieldName] = " + mFieldName + ", "
-					+ "[eFieldDeclarationToTField] = " + eFieldDeclarationToTField + ", "
-					+ "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", " + "[tField] = " + tField
-					+ ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mType] = " + mType + ", "
+					+ "[eFieldDeclarationToTField] = " + eFieldDeclarationToTField + ", " + "[tField] = " + tField
+					+ ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", "
+					+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mType] = " + mType + ", "
 					+ "[mSignature] = " + mSignature + ".");
 		}
 		FieldSignatureImpl.pattern_FieldSignature_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFF(ruleresult,
-				tSignature, tType, mFieldName, mFlowElementToTFlowElement, tField, mSignatureToTSignature, mType,
+				tSignature, tType, mFieldName, tField, mFlowElementToTFlowElement, mSignatureToTSignature, mType,
 				mSignature);
 		//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge mSignature__mType____type = (EMoflonEdge) result3_green[10];
@@ -221,8 +221,8 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 		// 
 		// 
 		FieldSignatureImpl.pattern_FieldSignature_1_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
-				tSignature, mTypeToTType, tType, mFieldName, eFieldDeclarationToTField, mFlowElementToTFlowElement,
-				tField, mSignatureToTSignature, mType, mSignature);
+				tSignature, mTypeToTType, tType, mFieldName, eFieldDeclarationToTField, tField,
+				mFlowElementToTFlowElement, mSignatureToTSignature, mType, mSignature);
 		return FieldSignatureImpl.pattern_FieldSignature_1_6_expressionFB(ruleresult);
 	}
 
@@ -392,15 +392,15 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tSignature, EObject mTypeToTType,
-			EObject tType, EObject mFieldName, EObject eFieldDeclarationToTField, EObject mFlowElementToTFlowElement,
-			EObject tField, EObject mSignatureToTSignature, EObject mType, EObject mSignature) {
+			EObject tType, EObject mFieldName, EObject eFieldDeclarationToTField, EObject tField,
+			EObject mFlowElementToTFlowElement, EObject mSignatureToTSignature, EObject mType, EObject mSignature) {
 		ruleresult.registerObject("tSignature", tSignature);
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mFieldName", mFieldName);
 		ruleresult.registerObject("eFieldDeclarationToTField", eFieldDeclarationToTField);
-		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
 		ruleresult.registerObject("tField", tField);
+		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
 		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
 		ruleresult.registerObject("mType", mType);
 		ruleresult.registerObject("mSignature", mSignature);
@@ -516,19 +516,19 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldSignatureImpl.pattern_FieldSignature_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-				ruleresult, tSignature, mTypeToTType, tType, mFieldName, eFieldDeclarationToTField,
-				mFlowElementToTFlowElement, tField, mSignatureToTSignature, mType, mSignature);
+				ruleresult, tSignature, mTypeToTType, tType, mFieldName, eFieldDeclarationToTField, tField,
+				mFlowElementToTFlowElement, mSignatureToTSignature, mType, mSignature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[tSignature] = " + tSignature + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
 					+ "[tType] = " + tType + ", " + "[mFieldName] = " + mFieldName + ", "
-					+ "[eFieldDeclarationToTField] = " + eFieldDeclarationToTField + ", "
-					+ "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", " + "[tField] = " + tField
-					+ ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mType] = " + mType + ", "
+					+ "[eFieldDeclarationToTField] = " + eFieldDeclarationToTField + ", " + "[tField] = " + tField
+					+ ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", "
+					+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mType] = " + mType + ", "
 					+ "[mSignature] = " + mSignature + ".");
 		}
 		FieldSignatureImpl.pattern_FieldSignature_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFF(ruleresult,
-				tSignature, tType, mFieldName, mFlowElementToTFlowElement, tField, mSignatureToTSignature, mType,
+				tSignature, tType, mFieldName, tField, mFlowElementToTFlowElement, mSignatureToTSignature, mType,
 				mSignature);
 		//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge mSignature__mType____type = (EMoflonEdge) result3_green[10];
@@ -543,8 +543,8 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 		// 
 		// 
 		FieldSignatureImpl.pattern_FieldSignature_11_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
-				tSignature, mTypeToTType, tType, mFieldName, eFieldDeclarationToTField, mFlowElementToTFlowElement,
-				tField, mSignatureToTSignature, mType, mSignature);
+				tSignature, mTypeToTType, tType, mFieldName, eFieldDeclarationToTField, tField,
+				mFlowElementToTFlowElement, mSignatureToTSignature, mType, mSignature);
 		return FieldSignatureImpl.pattern_FieldSignature_11_6_expressionFB(ruleresult);
 	}
 
@@ -718,15 +718,15 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tSignature, EObject mTypeToTType,
-			EObject tType, EObject mFieldName, EObject eFieldDeclarationToTField, EObject mFlowElementToTFlowElement,
-			EObject tField, EObject mSignatureToTSignature, EObject mType, EObject mSignature) {
+			EObject tType, EObject mFieldName, EObject eFieldDeclarationToTField, EObject tField,
+			EObject mFlowElementToTFlowElement, EObject mSignatureToTSignature, EObject mType, EObject mSignature) {
 		ruleresult.registerObject("tSignature", tSignature);
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mFieldName", mFieldName);
 		ruleresult.registerObject("eFieldDeclarationToTField", eFieldDeclarationToTField);
-		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
 		ruleresult.registerObject("tField", tField);
+		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
 		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
 		ruleresult.registerObject("mType", mType);
 		ruleresult.registerObject("mSignature", mSignature);
@@ -748,7 +748,7 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_3(EMoflonEdge _edge_signatures) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_207(EMoflonEdge _edge_signatures) {
 
 		Object[] result1_bindingAndBlack = FieldSignatureImpl
 				.pattern_FieldSignature_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -806,7 +806,7 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_3(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_215(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = FieldSignatureImpl
 				.pattern_FieldSignature_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -874,12 +874,12 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("tSignature", "upperBound", 1, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tSignature", "lowerBound", 0, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
 
-		if (!__helper.hasExpectedValue("tSignature", "lowerBound", 0, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tSignature", "upperBound", 1, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
@@ -914,12 +914,12 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("tSignature", "upperBound", 1, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tSignature", "lowerBound", 0, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
 
-		if (!__helper.hasExpectedValue("tSignature", "lowerBound", 0, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tSignature", "upperBound", 1, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
@@ -1136,10 +1136,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 								+ "[tField] = " + tField + ", " + "[mType] = " + mType + ", " + "[ruleResult] = "
 								+ ruleResult + ".");
 					}
-					FieldSignatureImpl.pattern_FieldSignature_29_6_perform_greenFBBFBFBFB(tType, mFieldName, tField,
+					FieldSignatureImpl.pattern_FieldSignature_29_6_perform_greenFBBBFFBFB(tType, mFieldName, tField,
 							mType, ruleResult);
 					//nothing TFieldSignature tSignature = (TFieldSignature) result6_green[0];
-					//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[3];
+					//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[4];
 					//nothing MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result6_green[5];
 					//nothing MFieldSignature mSignature = (MFieldSignature) result6_green[7];
 
@@ -1263,10 +1263,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 			return null;
 		case RulesPackage.FIELD_SIGNATURE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_SIGNATURE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_3__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_3((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_SIGNATURE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_3__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_3((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_SIGNATURE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_207__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_207((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_SIGNATURE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_215__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_215((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_SIGNATURE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_SIGNATURE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1474,23 +1474,23 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 		return null;
 	}
 
-	public static final Object[] pattern_FieldSignature_1_1_performtransformation_greenFBFBFB(TAbstractType tType,
+	public static final Object[] pattern_FieldSignature_1_1_performtransformation_greenFBBFFB(TAbstractType tType,
 			TField tField, MFieldSignature mSignature) {
 		TFieldSignature tSignature = BasicFactory.eINSTANCE.createTFieldSignature();
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
 		MSignatureToTSignature mSignatureToTSignature = PmFactory.eINSTANCE.createMSignatureToTSignature();
-		int tSignature_upperBound_prime = Integer.valueOf(1);
 		int tSignature_lowerBound_prime = Integer.valueOf(0);
+		int tSignature_upperBound_prime = Integer.valueOf(1);
 		tField.getSignatures().add(tSignature);
 		tSignature.setType(tType);
 		mFlowElementToTFlowElement.setTarget(tSignature);
 		mFlowElementToTFlowElement.setSource(mSignature);
 		mSignatureToTSignature.setSource(mSignature);
 		mSignatureToTSignature.setTarget(tSignature);
-		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
 		tSignature.setLowerBound(Integer.valueOf(tSignature_lowerBound_prime));
-		return new Object[] { tSignature, tType, mFlowElementToTFlowElement, tField, mSignatureToTSignature,
+		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
+		return new Object[] { tSignature, tType, tField, mFlowElementToTFlowElement, mSignatureToTSignature,
 				mSignature };
 	}
 
@@ -1513,7 +1513,7 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 
 	public static final Object[] pattern_FieldSignature_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject tSignature, EObject mTypeToTType, EObject tType, EObject mFieldName,
-			EObject eFieldDeclarationToTField, EObject mFlowElementToTFlowElement, EObject tField,
+			EObject eFieldDeclarationToTField, EObject tField, EObject mFlowElementToTFlowElement,
 			EObject mSignatureToTSignature, EObject mType, EObject mSignature) {
 		if (!tSignature.equals(tType)) {
 			if (!mTypeToTType.equals(tSignature)) {
@@ -1522,8 +1522,8 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 						if (!mFieldName.equals(tSignature)) {
 							if (!mFieldName.equals(mTypeToTType)) {
 								if (!mFieldName.equals(tType)) {
-									if (!mFieldName.equals(mFlowElementToTFlowElement)) {
-										if (!mFieldName.equals(tField)) {
+									if (!mFieldName.equals(tField)) {
+										if (!mFieldName.equals(mFlowElementToTFlowElement)) {
 											if (!mFieldName.equals(mSignatureToTSignature)) {
 												if (!mFieldName.equals(mType)) {
 													if (!mFieldName.equals(mSignature)) {
@@ -1531,34 +1531,33 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 															if (!eFieldDeclarationToTField.equals(mTypeToTType)) {
 																if (!eFieldDeclarationToTField.equals(tType)) {
 																	if (!eFieldDeclarationToTField.equals(mFieldName)) {
-																		if (!eFieldDeclarationToTField
-																				.equals(mFlowElementToTFlowElement)) {
-																			if (!eFieldDeclarationToTField
-																					.equals(tField)) {
+																		if (!eFieldDeclarationToTField.equals(tField)) {
+																			if (!eFieldDeclarationToTField.equals(
+																					mFlowElementToTFlowElement)) {
 																				if (!eFieldDeclarationToTField.equals(
 																						mSignatureToTSignature)) {
 																					if (!eFieldDeclarationToTField
 																							.equals(mType)) {
 																						if (!eFieldDeclarationToTField
 																								.equals(mSignature)) {
-																							if (!mFlowElementToTFlowElement
-																									.equals(tSignature)) {
-																								if (!mFlowElementToTFlowElement
-																										.equals(mTypeToTType)) {
+																							if (!tField.equals(
+																									tSignature)) {
+																								if (!tField.equals(
+																										tType)) {
 																									if (!mFlowElementToTFlowElement
-																											.equals(tType)) {
+																											.equals(tSignature)) {
 																										if (!mFlowElementToTFlowElement
-																												.equals(tField)) {
+																												.equals(mTypeToTType)) {
 																											if (!mFlowElementToTFlowElement
-																													.equals(mSignatureToTSignature)) {
+																													.equals(tType)) {
 																												if (!mFlowElementToTFlowElement
-																														.equals(mType)) {
+																														.equals(tField)) {
 																													if (!mFlowElementToTFlowElement
-																															.equals(mSignature)) {
-																														if (!tField
-																																.equals(tSignature)) {
-																															if (!tField
-																																	.equals(tType)) {
+																															.equals(mSignatureToTSignature)) {
+																														if (!mFlowElementToTFlowElement
+																																.equals(mType)) {
+																															if (!mFlowElementToTFlowElement
+																																	.equals(mSignature)) {
 																																if (!mSignatureToTSignature
 																																		.equals(tSignature)) {
 																																	if (!mSignatureToTSignature
@@ -1596,8 +1595,8 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 																																																	tType,
 																																																	mFieldName,
 																																																	eFieldDeclarationToTField,
-																																																	mFlowElementToTFlowElement,
 																																																	tField,
+																																																	mFlowElementToTFlowElement,
 																																																	mSignatureToTSignature,
 																																																	mType,
 																																																	mSignature };
@@ -1650,9 +1649,8 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 	}
 
 	public static final Object[] pattern_FieldSignature_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tSignature, EObject tType, EObject mFieldName,
-			EObject mFlowElementToTFlowElement, EObject tField, EObject mSignatureToTSignature, EObject mType,
-			EObject mSignature) {
+			PerformRuleResult ruleresult, EObject tSignature, EObject tType, EObject mFieldName, EObject tField,
+			EObject mFlowElementToTFlowElement, EObject mSignatureToTSignature, EObject mType, EObject mSignature) {
 		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tField__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1711,7 +1709,7 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 		mFlowElementToTFlowElement__mSignature____source
 				.setName(mFlowElementToTFlowElement__mSignature____source_name_prime);
 		tSignature__tType____type.setName(tSignature__tType____type_name_prime);
-		return new Object[] { ruleresult, tSignature, tType, mFieldName, mFlowElementToTFlowElement, tField,
+		return new Object[] { ruleresult, tSignature, tType, mFieldName, tField, mFlowElementToTFlowElement,
 				mSignatureToTSignature, mType, mSignature, mSignatureToTSignature__mSignature____source,
 				mSignature__mType____type, tField__tSignature____signatures, tSignature__tField____field,
 				mFlowElementToTFlowElement__tSignature____target, mFieldName__mSignature____mSignatures,
@@ -1721,10 +1719,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 
 	public static final void pattern_FieldSignature_1_5_registerobjects_expressionBBBBBBBBBBBB(FieldSignature _this,
 			PerformRuleResult ruleresult, EObject tSignature, EObject mTypeToTType, EObject tType, EObject mFieldName,
-			EObject eFieldDeclarationToTField, EObject mFlowElementToTFlowElement, EObject tField,
+			EObject eFieldDeclarationToTField, EObject tField, EObject mFlowElementToTFlowElement,
 			EObject mSignatureToTSignature, EObject mType, EObject mSignature) {
 		_this.registerObjects_FWD(ruleresult, tSignature, mTypeToTType, tType, mFieldName, eFieldDeclarationToTField,
-				mFlowElementToTFlowElement, tField, mSignatureToTSignature, mType, mSignature);
+				tField, mFlowElementToTFlowElement, mSignatureToTSignature, mType, mSignature);
 
 	}
 
@@ -2181,7 +2179,7 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 
 	public static final Object[] pattern_FieldSignature_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject tSignature, EObject mTypeToTType, EObject tType, EObject mFieldName,
-			EObject eFieldDeclarationToTField, EObject mFlowElementToTFlowElement, EObject tField,
+			EObject eFieldDeclarationToTField, EObject tField, EObject mFlowElementToTFlowElement,
 			EObject mSignatureToTSignature, EObject mType, EObject mSignature) {
 		if (!tSignature.equals(tType)) {
 			if (!mTypeToTType.equals(tSignature)) {
@@ -2190,8 +2188,8 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 						if (!mFieldName.equals(tSignature)) {
 							if (!mFieldName.equals(mTypeToTType)) {
 								if (!mFieldName.equals(tType)) {
-									if (!mFieldName.equals(mFlowElementToTFlowElement)) {
-										if (!mFieldName.equals(tField)) {
+									if (!mFieldName.equals(tField)) {
+										if (!mFieldName.equals(mFlowElementToTFlowElement)) {
 											if (!mFieldName.equals(mSignatureToTSignature)) {
 												if (!mFieldName.equals(mType)) {
 													if (!mFieldName.equals(mSignature)) {
@@ -2199,34 +2197,33 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 															if (!eFieldDeclarationToTField.equals(mTypeToTType)) {
 																if (!eFieldDeclarationToTField.equals(tType)) {
 																	if (!eFieldDeclarationToTField.equals(mFieldName)) {
-																		if (!eFieldDeclarationToTField
-																				.equals(mFlowElementToTFlowElement)) {
-																			if (!eFieldDeclarationToTField
-																					.equals(tField)) {
+																		if (!eFieldDeclarationToTField.equals(tField)) {
+																			if (!eFieldDeclarationToTField.equals(
+																					mFlowElementToTFlowElement)) {
 																				if (!eFieldDeclarationToTField.equals(
 																						mSignatureToTSignature)) {
 																					if (!eFieldDeclarationToTField
 																							.equals(mType)) {
 																						if (!eFieldDeclarationToTField
 																								.equals(mSignature)) {
-																							if (!mFlowElementToTFlowElement
-																									.equals(tSignature)) {
-																								if (!mFlowElementToTFlowElement
-																										.equals(mTypeToTType)) {
+																							if (!tField.equals(
+																									tSignature)) {
+																								if (!tField.equals(
+																										tType)) {
 																									if (!mFlowElementToTFlowElement
-																											.equals(tType)) {
+																											.equals(tSignature)) {
 																										if (!mFlowElementToTFlowElement
-																												.equals(tField)) {
+																												.equals(mTypeToTType)) {
 																											if (!mFlowElementToTFlowElement
-																													.equals(mSignatureToTSignature)) {
+																													.equals(tType)) {
 																												if (!mFlowElementToTFlowElement
-																														.equals(mType)) {
+																														.equals(tField)) {
 																													if (!mFlowElementToTFlowElement
-																															.equals(mSignature)) {
-																														if (!tField
-																																.equals(tSignature)) {
-																															if (!tField
-																																	.equals(tType)) {
+																															.equals(mSignatureToTSignature)) {
+																														if (!mFlowElementToTFlowElement
+																																.equals(mType)) {
+																															if (!mFlowElementToTFlowElement
+																																	.equals(mSignature)) {
 																																if (!mSignatureToTSignature
 																																		.equals(tSignature)) {
 																																	if (!mSignatureToTSignature
@@ -2264,8 +2261,8 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 																																																	tType,
 																																																	mFieldName,
 																																																	eFieldDeclarationToTField,
-																																																	mFlowElementToTFlowElement,
 																																																	tField,
+																																																	mFlowElementToTFlowElement,
 																																																	mSignatureToTSignature,
 																																																	mType,
 																																																	mSignature };
@@ -2318,9 +2315,8 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 	}
 
 	public static final Object[] pattern_FieldSignature_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tSignature, EObject tType, EObject mFieldName,
-			EObject mFlowElementToTFlowElement, EObject tField, EObject mSignatureToTSignature, EObject mType,
-			EObject mSignature) {
+			PerformRuleResult ruleresult, EObject tSignature, EObject tType, EObject mFieldName, EObject tField,
+			EObject mFlowElementToTFlowElement, EObject mSignatureToTSignature, EObject mType, EObject mSignature) {
 		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tField__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2379,7 +2375,7 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 		mFlowElementToTFlowElement__mSignature____source
 				.setName(mFlowElementToTFlowElement__mSignature____source_name_prime);
 		tSignature__tType____type.setName(tSignature__tType____type_name_prime);
-		return new Object[] { ruleresult, tSignature, tType, mFieldName, mFlowElementToTFlowElement, tField,
+		return new Object[] { ruleresult, tSignature, tType, mFieldName, tField, mFlowElementToTFlowElement,
 				mSignatureToTSignature, mType, mSignature, mSignatureToTSignature__mSignature____source,
 				mSignature__mType____type, tField__tSignature____signatures, tSignature__tField____field,
 				mFlowElementToTFlowElement__tSignature____target, mFieldName__mSignature____mSignatures,
@@ -2389,10 +2385,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 
 	public static final void pattern_FieldSignature_11_5_registerobjects_expressionBBBBBBBBBBBB(FieldSignature _this,
 			PerformRuleResult ruleresult, EObject tSignature, EObject mTypeToTType, EObject tType, EObject mFieldName,
-			EObject eFieldDeclarationToTField, EObject mFlowElementToTFlowElement, EObject tField,
+			EObject eFieldDeclarationToTField, EObject tField, EObject mFlowElementToTFlowElement,
 			EObject mSignatureToTSignature, EObject mType, EObject mSignature) {
 		_this.registerObjects_BWD(ruleresult, tSignature, mTypeToTType, tType, mFieldName, eFieldDeclarationToTField,
-				mFlowElementToTFlowElement, tField, mSignatureToTSignature, mType, mSignature);
+				tField, mFlowElementToTFlowElement, mSignatureToTSignature, mType, mSignature);
 
 	}
 
@@ -2473,10 +2469,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 	public static final Iterable<Object[]> pattern_FieldSignature_12_2_corematch_blackBFBFFBFB(
 			TFieldSignature tSignature, TAbstractType tType, TField tField, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		int tSignature_upperBound = tSignature.getUpperBound();
-		if (Integer.valueOf(tSignature_upperBound).equals(Integer.valueOf(1))) {
-			int tSignature_lowerBound = tSignature.getLowerBound();
-			if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
+		int tSignature_lowerBound = tSignature.getLowerBound();
+		if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
+			int tSignature_upperBound = tSignature.getUpperBound();
+			if (Integer.valueOf(tSignature_upperBound).equals(Integer.valueOf(1))) {
 				for (MFieldNameToTField eFieldDeclarationToTField : org.moflon.core.utilities.eMoflonEMFUtil
 						.getOppositeReferenceTyped(tField, MFieldNameToTField.class, "target")) {
 					MFieldName mFieldName = eFieldDeclarationToTField.getSource();
@@ -2510,10 +2506,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 					if (mType.equals(mTypeToTType.getSource())) {
 						if (mFieldName.equals(eFieldDeclarationToTField.getSource())) {
 							if (tType.equals(tSignature.getType())) {
-								int tSignature_upperBound = tSignature.getUpperBound();
-								if (Integer.valueOf(tSignature_upperBound).equals(Integer.valueOf(1))) {
-									int tSignature_lowerBound = tSignature.getLowerBound();
-									if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
+								int tSignature_lowerBound = tSignature.getLowerBound();
+								if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
+									int tSignature_upperBound = tSignature.getUpperBound();
+									if (Integer.valueOf(tSignature_upperBound).equals(Integer.valueOf(1))) {
 										_result.add(new Object[] { tSignature, mTypeToTType, tType, mFieldName,
 												eFieldDeclarationToTField, tField, mType });
 									}
@@ -2710,9 +2706,9 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 
 	public static final Object[] pattern_FieldSignature_20_2_testcorematchandDECs_black_nac_0BB(
 			TFieldSignature tSignature, TField tField) {
-		TField __DEC_tSignature_field_942412 = tSignature.getField();
-		if (__DEC_tSignature_field_942412 != null) {
-			if (!tField.equals(__DEC_tSignature_field_942412)) {
+		TField __DEC_tSignature_field_332244 = tSignature.getField();
+		if (__DEC_tSignature_field_332244 != null) {
+			if (!tField.equals(__DEC_tSignature_field_332244)) {
 				return new Object[] { tSignature, tField };
 			}
 		}
@@ -2732,10 +2728,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 				if (tField.getSignatures().contains(tSignature)) {
 					TAbstractType tType = tSignature.getType();
 					if (tType != null) {
-						int tSignature_upperBound = tSignature.getUpperBound();
-						if (Integer.valueOf(tSignature_upperBound).equals(Integer.valueOf(1))) {
-							int tSignature_lowerBound = tSignature.getLowerBound();
-							if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
+						int tSignature_lowerBound = tSignature.getLowerBound();
+						if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
+							int tSignature_upperBound = tSignature.getUpperBound();
+							if (Integer.valueOf(tSignature_upperBound).equals(Integer.valueOf(1))) {
 								if (pattern_FieldSignature_20_2_testcorematchandDECs_black_nac_0BB(tSignature,
 										tField) == null) {
 									_result.add(new Object[] { tSignature, tType, tField, _edge_signatures });
@@ -2970,10 +2966,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 			TFieldSignature tSignature, TAbstractType tType, MFieldName mFieldName, TField tField, Type mType,
 			MFieldSignature mSignature, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			int tSignature_upperBound = tSignature.getUpperBound();
-			if (Integer.valueOf(tSignature_upperBound).equals(Integer.valueOf(1))) {
-				int tSignature_lowerBound = tSignature.getLowerBound();
-				if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
+			int tSignature_lowerBound = tSignature.getLowerBound();
+			if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
+				int tSignature_upperBound = tSignature.getUpperBound();
+				if (Integer.valueOf(tSignature_upperBound).equals(Integer.valueOf(1))) {
 					return new Object[] { tSignature, tType, mFieldName, tField, mType, mSignature, sourceMatch,
 							targetMatch };
 				}
@@ -3145,9 +3141,9 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 
 	public static final Object[] pattern_FieldSignature_28_1_matchtggpattern_black_nac_0BB(TFieldSignature tSignature,
 			TField tField) {
-		TField __DEC_tSignature_field_529080 = tSignature.getField();
-		if (__DEC_tSignature_field_529080 != null) {
-			if (!tField.equals(__DEC_tSignature_field_529080)) {
+		TField __DEC_tSignature_field_871188 = tSignature.getField();
+		if (__DEC_tSignature_field_871188 != null) {
+			if (!tField.equals(__DEC_tSignature_field_871188)) {
 				return new Object[] { tSignature, tField };
 			}
 		}
@@ -3168,10 +3164,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 	}
 
 	public static final Object[] pattern_FieldSignature_28_1_matchtggpattern_greenB(TFieldSignature tSignature) {
-		int tSignature_upperBound_prime = Integer.valueOf(1);
 		int tSignature_lowerBound_prime = Integer.valueOf(0);
-		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
+		int tSignature_upperBound_prime = Integer.valueOf(1);
 		tSignature.setLowerBound(Integer.valueOf(tSignature_lowerBound_prime));
+		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
 		return new Object[] { tSignature };
 	}
 
@@ -3366,15 +3362,15 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 		return new Object[] { mTypeToTType, tType, mFieldName, eFieldDeclarationToTField, tField, mType, ruleResult };
 	}
 
-	public static final Object[] pattern_FieldSignature_29_6_perform_greenFBBFBFBFB(TAbstractType tType,
+	public static final Object[] pattern_FieldSignature_29_6_perform_greenFBBBFFBFB(TAbstractType tType,
 			MFieldName mFieldName, TField tField, Type mType, ModelgeneratorRuleResult ruleResult) {
 		TFieldSignature tSignature = BasicFactory.eINSTANCE.createTFieldSignature();
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
 		MSignatureToTSignature mSignatureToTSignature = PmFactory.eINSTANCE.createMSignatureToTSignature();
 		MFieldSignature mSignature = ModiscoFactory.eINSTANCE.createMFieldSignature();
-		int tSignature_upperBound_prime = Integer.valueOf(1);
 		int tSignature_lowerBound_prime = Integer.valueOf(0);
+		int tSignature_upperBound_prime = Integer.valueOf(1);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		tField.getSignatures().add(tSignature);
@@ -3389,12 +3385,12 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 		mFieldName.getMSignatures().add(mSignature);
 		mFlowElementToTFlowElement.setSource(mSignature);
 		ruleResult.getSourceObjects().add(mSignature);
-		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
 		tSignature.setLowerBound(Integer.valueOf(tSignature_lowerBound_prime));
+		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tSignature, tType, mFieldName, mFlowElementToTFlowElement, tField, mSignatureToTSignature,
+		return new Object[] { tSignature, tType, mFieldName, tField, mFlowElementToTFlowElement, mSignatureToTSignature,
 				mType, mSignature, ruleResult };
 	}
 

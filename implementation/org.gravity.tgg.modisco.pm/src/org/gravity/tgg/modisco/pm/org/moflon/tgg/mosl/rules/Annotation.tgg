@@ -1,10 +1,12 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule Annotation #with org.gravity.tgg.modisco.pm
+#rule Annotation #with org.gravity.tgg.modisco.pm
 
 #source {
-	astNode : ASTNode
+	astNode : BodyDeclaration {
+		++ -annotations-> Annotation
+	}
 	
 	++ Annotation : Annotation
 }
@@ -25,14 +27,4 @@
 		#src->Annotation
 		#trg->tAnnotation
 	}
-}
-
-#rule AnnotationOnBodyDeclaration #extends Annotation #with org.gravity.tgg.modisco.pm
-
-#source {	
-	astNode : BodyDeclaration {
-		++ -annotations-> Annotation
-	}
-	
-	++ Annotation : Annotation 
 }

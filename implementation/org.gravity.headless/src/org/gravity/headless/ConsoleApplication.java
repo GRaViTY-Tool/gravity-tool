@@ -89,7 +89,7 @@ public class ConsoleApplication implements IApplication {
 	 */
 	private void waitForExit() {
 		try(var scanner = new Scanner(System.in)){
-			while(!"exit".equals(scanner.nextLine())) { //$NON-NLS-1$
+			while(!scanner.hasNext() || !"exit".equals(scanner.nextLine())) { //$NON-NLS-1$
 
 			}
 		}

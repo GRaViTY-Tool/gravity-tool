@@ -15,7 +15,7 @@
 	tMethodSignature:TMethodSignature {
 		++  -definitions -> tDefinition
 	}
-	
+
 	++tDefinition:TMethodDefinition
 }
 
@@ -41,73 +41,58 @@
 	}
 }
 
-#using org.gravity.tgg.modisco.pm.*
 
-#abstract #rule MethodDefinition #extends AbstractMethodDefinition
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule MethodDefinition #extends AbstractMethodDefinition
 #with org.gravity.tgg.modisco.pm
 
 #source {
 	++mDefinition:MMethodDefinition {
-		++-returnType->mTypeAccess
+		++-returnType -> mTypeAccess
 	}
+
 	++mTypeAccess:TypeAccess {
-		++-type->mType
+		++-type -> mType
 	}
+
 	mType:Type
 }
 
 #target {
-	++tDefinition: TMethodDefinition {
-		++-returnType->tType
+	tMethodSignature:TMethodSignature
+
+	++tDefinition:TMethodDefinition {
+		++-returnType -> tType
 	}
-	
+
 	tType:TAbstractType
 }
 
 #correspondence{
-	mTypeToTType : TypeToTAbstractType {
+	mTypeToTType :TypeToTAbstractType {
 		#src->mType
 		#trg->tType
 	}
 }
 
-#using org.gravity.tgg.modisco.pm.*
-
-#rule MethodDefinitionReturnSingle #extends MethodDefinition
-#with org.gravity.tgg.modisco.pm
-
-#target {
-	++tDefinition: TMethodDefinition {
-		lowerBound:=0
-		upperBound:=1
-	}
-}
-
-#using org.gravity.tgg.modisco.pm.*
-
-#rule MethodDefinitionReturnArray #extends MethodDefinition
-#with org.gravity.tgg.modisco.pm
-
-#source{
-	mType:ArrayType
-}
-
-#target {
-	++tDefinition: TMethodDefinition {
-		lowerBound:=0
-		upperBound:=-1
-	}
+#attributeConditions {
+	eq(lowerBound, tMethodSignature.lowerBound)
+	eq(upperBound, tMethodSignature.upperBound)
 }
 
 #rule ConstructorDefinition #extends AbstractMethodDefinition
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	++mDefinition:MConstructorDefinition 
+	++mDefinition:MConstructorDefinition
 }
 
 #target {
 	++tDefinition:TMethodDefinition {
+		lowerBound := 0
+		upperBound := 1
 		++-tAnnotation -> tAnnotation
 	}
 

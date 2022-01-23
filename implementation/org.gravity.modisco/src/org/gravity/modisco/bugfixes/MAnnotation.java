@@ -10,12 +10,11 @@ import org.eclipse.modisco.java.emf.impl.AnnotationImpl;
  * @author speldszus
  *
  */
-@SuppressWarnings("restriction")
 public class MAnnotation extends AnnotationImpl {
 
 	@Override
 	public String toString() {
-		final StringBuilder result = new StringBuilder(getClass().getName());
+		final var result = new StringBuilder(getClass().getName());
 		result.append('@').append(System.identityHashCode(this));
 
 		if (eIsProxy()) {

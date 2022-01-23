@@ -1,14 +1,11 @@
 package org.gravity.hulk;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -63,9 +60,8 @@ public final class HulkAPI {
 		} catch (NoConverterRegisteredException | CoreException e) {
 			throw new DetectionFailedException(e);
 		}
-		final var success = converter.convertProject(Collections.emptySet(), monitor);
+		final var success = converter.convertProject(monitor);
 		final var pg = converter.getPG();
-		converter.discard();
 		if (!success || (pg == null)) {
 			throw new DetectionFailedException(new TransformationFailedException(
 					"Creating PG from project failed: " + project.getProject().getName()));
@@ -74,8 +70,7 @@ public final class HulkAPI {
 
 		final var results = detect(pg, programLocation, aps);
 
-		clean(iproject, pg);
-
+		converter.discard();
 		return results;
 	}
 
@@ -137,31 +132,6 @@ public final class HulkAPI {
 			detectors.add(name.getEClass());
 		}
 		return detectors;
-	}
-
-	/**
-	 * Removes all generated EMF models except for the PG
-	 *
-	 * @param iproject  The project which has been discovered
-	 * @param pg        The created PG
-	 * @return true, iff the cleanup was successful
-	 */
-	private static boolean clean(final IProject iproject, final TypeGraph pg) {
-		final var keep = pg.eResource();
-		final var resources = keep.getResourceSet().getResources();
-		while (!resources.isEmpty()) {
-			final var resource = resources.remove(0);
-			if (resource != keep) {
-				try {
-					resource.delete(Collections.emptyMap());
-				} catch (final IOException e) {
-					LOGGER.warn("Cleaninig resource failed: " + e.getMessage(), e);
-					return false;
-				}
-			}
-		}
-		resources.add(keep);
-		return GravityActivator.getDefault().discardConverter(iproject);
 	}
 
 	/**

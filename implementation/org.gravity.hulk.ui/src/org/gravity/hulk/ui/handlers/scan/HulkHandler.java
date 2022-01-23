@@ -317,7 +317,7 @@ public abstract class HulkHandler extends AbstractHandler {
 					}
 
 					final boolean success = HulkHandler.this.converter.convertProject(libs, monitor);
-					if (!success || HulkHandler.this.converter.getPG() == null) {
+					if (!success || (HulkHandler.this.converter.getPG() == null)) {
 						LOGGER.log(Level.ERROR, "Creating PG from project failed: " + HulkHandler.this.project.getProject().getName());
 						fails.add(javaProject.getProject().getName());
 						continue;
@@ -338,8 +338,8 @@ public abstract class HulkHandler extends AbstractHandler {
 					}
 					final IFile apgXmi = hulkFolder.getFile(HulkActivator.ANTI_PATTERN_XMI_NAME);
 					final IFile pmXmi = hulkFolder.getFile(HulkHandler.this.project.getProject().getName() + ".xmi");
-					if (!ModelSaver.saveModel(HulkHandler.this.hulk.getApg(), apgXmi, monitor)
-							|| !ModelSaver.saveModel(HulkHandler.this.hulk.getApg().getModel(), pmXmi, monitor)) {
+					if (!ModelSaver.saveModel(HulkHandler.this.hulk.getApg(), apgXmi)
+							|| !ModelSaver.saveModel(HulkHandler.this.hulk.getApg().getModel(), pmXmi)) {
 						return new Status(IStatus.WARNING, HulkUiActivator.PLUGIN_ID, Messages.saveAPsFailed);
 					}
 

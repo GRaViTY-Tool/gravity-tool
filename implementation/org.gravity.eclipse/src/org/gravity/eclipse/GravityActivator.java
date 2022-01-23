@@ -18,8 +18,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
@@ -53,12 +51,6 @@ public class GravityActivator extends Plugin {
 	/** The shared instance. */
 	private static GravityActivator plugin;
 
-	/** All converted projects with project name as key */
-	private final Map<String, IProject> project;
-
-	/** All resource sets of converted projects with project name as key */
-	private final Map<String, ResourceSet> resourceSets;
-
 	/** The verbose state (not only for this plugin). */
 	private boolean verbose;
 
@@ -84,9 +76,7 @@ public class GravityActivator extends Plugin {
 	 * loaded.
 	 */
 	public GravityActivator() {
-		this.project = new HashMap<>();
 		this.converters = new HashMap<>();
-		this.resourceSets = new HashMap<>();
 	}
 
 	/**
@@ -259,30 +249,6 @@ public class GravityActivator extends Plugin {
 		return this.selectedConverterFactory;
 	}
 
-	/**
-	 * Returns the project with the given name iff already converted into a program
-	 * model
-	 *
-	 * @param tName The name of the project
-	 * @return the according eclipse project
-	 */
-	public IProject getProject(final String tName) {
-		return this.project.get(tName);
-	}
-
-	/**
-	 * Adds a project to the list of converted projects
-	 *
-	 * @param project the eclipse projecte
-	 */
-	public void addProject(final IProject project) {
-		this.project.put(project.getName(), project);
-	}
-
-	public ResourceSet getResourceSet(final IProject project) {
-		return this.resourceSets.computeIfAbsent(project.getName(), key -> new ResourceSetImpl());
-	}
-
 	private static String measureRecordsKey;
 	private static String measureLocation = "../measurements";
 
@@ -310,10 +276,6 @@ public class GravityActivator extends Plugin {
 
 	public static void setMeasurementsLocation(final String path) {
 		measureRecordsKey = path;
-	}
-
-	public IPGConverter getNewConverter(final IProject iproject, final boolean force) {
-		return null;
 	}
 
 	public static IFolder getProgramModelFolder(final IProject project, final IProgressMonitor monitor) throws IOException {

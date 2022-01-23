@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IJavaProject;
-import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.util.JavaProjectUtil;
@@ -29,8 +28,7 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 	public IPGConverter createConverter(final IProject project) {
 		final IJavaProject javaProject = JavaProjectUtil.getJavaProject(project);
 		try {
-			final MoDiscoTGGConverter converter = new MoDiscoTGGConverter(javaProject,
-					GravityActivator.getDefault().getResourceSet(project));
+			final MoDiscoTGGConverter converter = new MoDiscoTGGConverter(javaProject);
 			MoDiscoTGGActivator.getDefault().addConverter(converter);
 			return converter;
 		} catch (final IOException | CoreException e) {
@@ -51,7 +49,7 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 
 	@Override
 	public boolean belongsToFactory(final IPGConverter converter) {
-		return MoDiscoTGGConverter.class.isInstance(converter);
+		return converter instanceof MoDiscoTGGConverter;
 	}
 
 	@Override

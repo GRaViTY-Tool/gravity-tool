@@ -685,7 +685,7 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_89(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_210(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationImpl
 				.pattern_MethodInvocation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -742,7 +742,7 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_93(EMoflonEdge _edge_mMethodInvocations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_219(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationImpl
 				.pattern_MethodInvocation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1155,10 +1155,10 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 			return null;
 		case RulesPackage.METHOD_INVOCATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_89__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_89((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_93__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_93((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_210__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_210((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_219__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_219((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2349,7 +2349,7 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 
 	public static final Object[] pattern_MethodInvocation_21_2_testcorematchandDECs_black_nac_0B(
 			MMethodInvocation invocation) {
-		for (AnnotationMemberValuePair __DEC_invocation_value_759499 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_invocation_value_189044 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { invocation };
 		}
@@ -2358,9 +2358,9 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 
 	public static final Object[] pattern_MethodInvocation_21_2_testcorematchandDECs_black_nac_1BB(
 			MMethodInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_638726 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_317658 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_638726)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_317658)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2607,7 +2607,7 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 
 	public static final Object[] pattern_MethodInvocation_27_1_matchtggpattern_black_nac_0B(
 			MMethodInvocation invocation) {
-		for (AnnotationMemberValuePair __DEC_invocation_value_793190 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_invocation_value_942834 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { invocation };
 		}
@@ -2616,9 +2616,9 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 
 	public static final Object[] pattern_MethodInvocation_27_1_matchtggpattern_black_nac_1BB(
 			MMethodInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_609253 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_364702 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_609253)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_364702)) {
 				return new Object[] { invocation, mMember };
 			}
 		}

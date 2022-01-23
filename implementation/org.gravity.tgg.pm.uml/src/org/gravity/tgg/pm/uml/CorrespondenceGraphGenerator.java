@@ -60,7 +60,7 @@ public class CorrespondenceGraphGenerator {
 				correspondenceModel = new CorrespondenceGraphCreator(umlCorr, pmCorr).createCorrespondenceGraph(uri);
 				correspondenceModel.setSource(umlCorr.getTarget());
 				correspondenceModel.setTarget(pmCorr.getTarget());
-				ModelSaver.saveModel(correspondenceModel, file, monitor);
+				ModelSaver.saveModel(correspondenceModel, file);
 			}
 			return correspondenceModel;
 		} catch (IOException | InvocationTargetException e) {

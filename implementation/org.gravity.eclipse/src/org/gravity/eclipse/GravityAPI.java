@@ -121,7 +121,7 @@ public class GravityAPI {
 	 * @param file The file
 	 * @return true, if the file is up to date
 	 */
-	private static boolean isUptoDate(final IFile file) {
+	public static boolean isUptoDate(final IFile file) {
 		final var timestamp = file.getLocalTimeStamp();
 		final var visitor = new UptodateVisitor(timestamp);
 		try {

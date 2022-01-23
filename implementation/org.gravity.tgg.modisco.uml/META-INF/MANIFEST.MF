@@ -41,7 +41,6 @@ Export-Package: org.gravity.tgg.modisco.uml,
  org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.types,
  org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.types.parameterized,
  org.gravity.tgg.modisco.uml.org.moflon.tgg.mosl.rules.types.typeparameter,
- org.gravity.tgg.modisco.uml.org.moflon.tie,
  org.gravity.tgg.modisco.uml.util,
  org.gravity.tgg.uml,
  org.gravity.tgg.uml.ui

@@ -2,120 +2,120 @@
 <org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.gravity.modisco="http://www.gravity-tool.org/modisco" xmlns:org.gravity.tgg.modisco.uml="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="java:PrimitiveTypeBoolean" href="../modisco.xmi#//@orphanTypes.4"/>
-    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#_hO0PmndqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="java:PrimitiveTypeChar" href="../modisco.xmi#//@orphanTypes.6"/>
-    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#_hO0PoHdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:Modifier2NamedElement">
     <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
-    <target xsi:type="uml:Operation" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target xsi:type="uml:Operation" href="SecureViolationPatternsViolation.uml#_hO0PqXdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="org.gravity.modisco:MMethodDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
-    <target xsi:type="uml:Operation" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target xsi:type="uml:Operation" href="SecureViolationPatternsViolation.uml#_hO0PqXdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:Modifier2NamedElement">
     <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
-    <target xsi:type="uml:Operation" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target xsi:type="uml:Operation" href="SecureViolationPatternsViolation.uml#_hO0PpXdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="org.gravity.modisco:MMethodDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
-    <target xsi:type="uml:Operation" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target xsi:type="uml:Operation" href="SecureViolationPatternsViolation.uml#_hO0PpXdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="java:PrimitiveTypeDouble" href="../modisco.xmi#//@orphanTypes.3"/>
-    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#_hO0PoXdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="java:PrimitiveTypeInt" href="../modisco.xmi#//@orphanTypes.0"/>
-    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#_hO0PnXdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="java:PrimitiveTypeByte" href="../modisco.xmi#//@orphanTypes.8"/>
-    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#_hO0Pn3dqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="java:PrimitiveTypeLong" href="../modisco.xmi#//@orphanTypes.1"/>
-    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#_hO0PmXdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="java:PrimitiveTypeFloat" href="../modisco.xmi#//@orphanTypes.2"/>
-    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#_hO0PnHdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:Modifier2NamedElement">
     <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
-    <target xsi:type="uml:Class" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <target xsi:type="uml:Class" href="SecureViolationPatternsViolation.uml#_hO0PqHdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="org.gravity.modisco:MClass" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0"/>
-    <target xsi:type="uml:Class" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <target xsi:type="uml:Class" href="SecureViolationPatternsViolation.uml#_hO0PqHdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:Modifier2NamedElement">
     <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
-    <target xsi:type="uml:Class" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <target xsi:type="uml:Class" href="SecureViolationPatternsViolation.uml#_hO0Po3dqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="org.gravity.modisco:MClass" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1"/>
-    <target xsi:type="uml:Class" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <target xsi:type="uml:Class" href="SecureViolationPatternsViolation.uml#_hO0Po3dqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="java:PrimitiveTypeShort" href="../modisco.xmi#//@orphanTypes.7"/>
-    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#_hO0PnndqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
-    <target xsi:type="uml:Operation" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <target xsi:type="uml:Operation" href="SecureViolationPatternsViolation.uml#_hO0Pq3dqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="java:PrimitiveTypeVoid" href="../modisco.xmi#//@orphanTypes.5"/>
-    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <target xsi:type="uml:PrimitiveType" href="SecureViolationPatternsViolation.uml#_hO0Pm3dqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:TypeAccess2Parameter">
     <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
-    <target href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod/@ownedParameter.0"/>
+    <target href="SecureViolationPatternsViolation.uml#_hO0PqndqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:TypeAccess2Parameter">
     <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@returnType"/>
-    <target href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod/@ownedParameter.0"/>
+    <target href="SecureViolationPatternsViolation.uml#_hO0PpndqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:Modifier2NamedElement">
     <source href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
-    <target xsi:type="uml:Property" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target xsi:type="uml:Property" href="SecureViolationPatternsViolation.uml#_hO0PpHdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:ASTNode2Element">
     <source xsi:type="org.gravity.modisco:MFieldDefinition" href="../modisco.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
-    <target xsi:type="uml:Property" href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target xsi:type="uml:Property" href="SecureViolationPatternsViolation.uml#_hO0PpHdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:JavaModel2UMLPackage">
     <source href="../modisco.xmi#/"/>
-    <target href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <target href="SecureViolationPatternsViolation.uml#_hO0PmHdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:JavaModel2UMLPackage">
     <source href="../modisco.xmi#/"/>
-    <target href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation"/>
+    <target href="SecureViolationPatternsViolation.uml#_hO0Pl3dqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:JavaModel2UMLPackage">
     <source href="../modisco.xmi#/"/>
-    <target href="SecureViolationPatternsViolation.uml#//source%20references"/>
+    <target href="SecureViolationPatternsViolation.uml#_hO0PkXdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:JavaModel2UMLPackage">
     <source href="../modisco.xmi#/"/>
-    <target href="SecureViolationPatternsViolation.uml#//externals"/>
+    <target href="SecureViolationPatternsViolation.uml#_hO0PlndqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:CompilationUnit2Artifact">
     <source href="../modisco.xmi#//@compilationUnits.1"/>
-    <target href="SecureViolationPatternsViolation.uml#//source%20references/Client.java"/>
+    <target href="SecureViolationPatternsViolation.uml#_hO0PkndqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:CompilationUnit2Artifact">
     <source href="../modisco.xmi#//@compilationUnits.0"/>
-    <target href="SecureViolationPatternsViolation.uml#//source%20references/Supplier.java"/>
+    <target href="SecureViolationPatternsViolation.uml#_hO0PlHdqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.modisco.uml:JavaPackage2UmlPackage">
     <source href="../modisco.xmi#//@ownedElements.0"/>
-    <target href="SecureViolationPatternsViolation.uml#//SecureViolationPatternsViolation/dummy"/>
+    <target href="SecureViolationPatternsViolation.uml#_hO0PondqEeyRhYNdy-5KGQ"/>
   </correspondences>
   <source href="../modisco.xmi#/"/>
-  <target href="SecureViolationPatternsViolation.uml#/"/>
+  <target href="SecureViolationPatternsViolation.uml#_hO0PkHdqEeyRhYNdy-5KGQ"/>
 </org.moflon.tgg.runtime:CorrespondenceModel>

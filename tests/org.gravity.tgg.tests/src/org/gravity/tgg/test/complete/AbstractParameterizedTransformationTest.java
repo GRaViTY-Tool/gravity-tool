@@ -1,7 +1,6 @@
 package org.gravity.tgg.test.complete;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.Collection;
@@ -14,13 +13,10 @@ import java.util.stream.Collectors;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
@@ -31,7 +27,7 @@ import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
-import org.gravity.security.annotations.AnnotationsActivator;
+import org.gravity.security.annotations.AnnotationsPackage;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -72,7 +68,7 @@ public abstract class AbstractParameterizedTransformationTest {
 		// Add dependency to security annotations
 		LanguagePackage.eINSTANCE.getNsURI();
 		RuntimePackage.eINSTANCE.getNsURI();
-		final String id = AnnotationsActivator.PLUGIN_ID;
+		AnnotationsPackage.eINSTANCE.getNsURI();
 	}
 
 
@@ -80,7 +76,7 @@ public abstract class AbstractParameterizedTransformationTest {
 	public static void initLogging() {
 		// Set up logging
 		BasicConfigurator.configure();
-		final Logger rootLogger = Logger.getRootLogger();
+		final var rootLogger = Logger.getRootLogger();
 		rootLogger.setLevel(Level.WARN);
 		GravityActivator.getDefault().setVerbose(DEBUG);
 		LOGGER.setLevel(Level.ALL);
@@ -109,16 +105,17 @@ public abstract class AbstractParameterizedTransformationTest {
 	 *
 	 * @return The model or null
 	 * @throws DiscoveryException
+	 * @throws IOException
 	 */
-	protected MGravityModel getModiscoModel() throws DiscoveryException {
-		MGravityModel model = models.get(this.name);
+	protected MGravityModel getModiscoModel() throws IOException {
+		var model = models.get(this.name);
 		if (model != null) {
 			return model;
 		}
 
-		final IFile src = GravityModiscoProjectDiscoverer.getModiscoFile(this.project.getProject(), null);
-		final URI uri = EMFUtil.getPlatformResourceURI(src);
-		final Resource resource = new ResourceSetImpl().getResource(uri, true);
+		final var src = GravityModiscoProjectDiscoverer.getModiscoFile(this.project.getProject(), null);
+		final var uri = EMFUtil.getPlatformResourceURI(src);
+		final var resource = new ResourceSetImpl().getResource(uri, true);
 		if (resource == null) {
 			return null;
 		}
@@ -136,14 +133,14 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * @throws CoreException If the gravity folder cannot be deleted
 	 */
 	protected void cleanClassPath() throws IOException, CoreException {
-		final NullProgressMonitor monitor = new NullProgressMonitor();
-		final IFile file = EclipseProjectUtil.getGravityFolder(this.project.getProject(), monitor)
+		final var monitor = new NullProgressMonitor();
+		final var file = EclipseProjectUtil.getGravityFolder(this.project.getProject(), monitor)
 				.getFile("org.gravity.annotations.jar");
-		final IClasspathEntry cpe = this.project.getClasspathEntryFor(file.getLocation());
+		final var cpe = this.project.getClasspathEntryFor(file.getLocation());
 		if (cpe != null) {
-			final IClasspathEntry[] oldCp = this.project.getRawClasspath();
-			final IClasspathEntry[] newCp = new IClasspathEntry[oldCp.length - 1];
-			int i = 0;
+			final var oldCp = this.project.getRawClasspath();
+			final var newCp = new IClasspathEntry[oldCp.length - 1];
+			var i = 0;
 			for (final IClasspathEntry e : oldCp) {
 				if (!e.getPath().equals(file.getLocation())) {
 					newCp[i++] = e;
@@ -155,9 +152,9 @@ public abstract class AbstractParameterizedTransformationTest {
 	}
 
 	protected void save(final EObject eObject, final String prefix, final String fileExtension) {
-		final String fileName = prefix + '_' + this.project.getProject().getName() + "." + fileExtension;
-		final IFile file = this.project.getProject().getFile(fileName);
-		try (OutputStream stream = Files.newOutputStream(file.getLocation().toFile().toPath())) {
+		final var fileName = prefix + '_' + this.project.getProject().getName() + "." + fileExtension;
+		final var file = this.project.getProject().getFile(fileName);
+		try (var stream = Files.newOutputStream(file.getLocation().toFile().toPath())) {
 			eObject.eResource().save(stream, Collections.emptyMap());
 		} catch (final IOException e) {
 			LOGGER.error(e.getMessage(), e);

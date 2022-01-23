@@ -42,7 +42,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 /**
- * Tests GOBLIN refactrorings on the projects located in the "tests" folder.
+ * Tests GOBLIN refactorings on the projects located in the "tests" folder.
  * Each project contains JSON files with refactoring specifications.
  *
  * @author speldszus
@@ -195,7 +195,7 @@ public class GoblinTest {
 
 		@Override
 		public boolean visit(final IResource resource) throws CoreException {
-			if (resource.getFileExtension() != null && resource.getFileExtension().equalsIgnoreCase("JSON")) {
+			if ((resource.getFileExtension() != null) && resource.getFileExtension().equalsIgnoreCase("JSON")) {
 				final JSONParser parser = new JSONParser();
 				final IFile resourceFile = (IFile) resource;
 				final Reader reader = new InputStreamReader(resourceFile.getContents());

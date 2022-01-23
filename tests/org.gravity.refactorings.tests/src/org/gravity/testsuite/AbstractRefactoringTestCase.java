@@ -3,6 +3,7 @@ package org.gravity.testsuite;
 import static org.junit.Assert.fail;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
@@ -11,7 +12,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
@@ -33,24 +33,24 @@ public abstract class AbstractRefactoringTestCase {
 		if (projectName == null) {
 			fail("Project not set!");
 		}
-		final File src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
-		final File projectLocation = new File(src, projectName);
+		final var src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
+		final var projectLocation = new File(src, projectName);
 		if (!projectLocation.exists()) {
 			fail("Project \"" + projectName + "\" doesn't exist at \"" + src.toString() + "\"!");
 		}
 		LOGGER.info("Import project: " + projectName);
-		final NullProgressMonitor monitor = new NullProgressMonitor();
-		final IProject project = EclipseProjectUtil.importProject(projectLocation, monitor);
+		final var monitor = new NullProgressMonitor();
+		final var project = EclipseProjectUtil.importProject(projectLocation, monitor);
 		if ((project == null) || !project.exists()) {
 			fail("Project \"" + projectName + "\" doesn't exist at \"" + src.toString() + "\"!");
 		}
-		final IJavaProject java = JavaProjectUtil.getJavaProject(project);
+		final var java = JavaProjectUtil.getJavaProject(project);
 		if ((java == null) || !java.exists()) {
 			fail("Project \"" + projectName + "\" couldn't be converted to a Java project!");
 		}
 		try {
 			GravityModiscoProjectDiscoverer.getModiscoFile(project, monitor).delete(true, monitor);
-		} catch (CoreException | DiscoveryException e) {
+		} catch (CoreException | IOException e) {
 			LOGGER.warn(e);
 		}
 		pm = GravityAPI.createProgramModel(java, true, monitor);

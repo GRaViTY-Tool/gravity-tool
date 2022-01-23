@@ -4,7 +4,6 @@
   <additionalDependencies value="platform:/plugin/org.eclipse.uml2.types/model/Types.ecore"/>
   <additionalDependencies value="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"/>
   <replaceGenModel/>
-  <sdmCodegeneratorHandlerId value="DEMOCLES_REVERSE_NAVI"/>
   <tGGBuildMode/>
   <importMappings key="http://www.eclipse.org/uml2/5.0.0/UML" value="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"/>
   <importMappings key="http://www.eclipse.org/uml2/5.0.0/Types" value="platform:/plugin/org.eclipse.uml2.types/model/Types.ecore"/>

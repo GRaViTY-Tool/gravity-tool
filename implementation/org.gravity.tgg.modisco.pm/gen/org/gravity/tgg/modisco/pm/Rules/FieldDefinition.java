@@ -94,9 +94,9 @@ public interface FieldDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TFieldSignature tFieldSignature,
-			MFieldSignature mSignature, MSignatureToTSignature mSignatureToTFieldSignature,
-			MFieldDefinition mDefinition);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MFieldSignature mSignature,
+			TFieldSignature tFieldSignature, MFieldDefinition mDefinition,
+			MSignatureToTSignature mSignatureToTFieldSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,9 +112,9 @@ public interface FieldDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tDefinition, EObject tFieldSignature,
-			EObject mSignature, EObject mDefinitionToTMember, EObject mSignatureToTFieldSignature,
-			EObject mDefinitionToTDefinition, EObject mBodyToTAnnotation, EObject mDefinition);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mSignature, EObject tDefinition,
+			EObject tFieldSignature, EObject mBodyToTAnnotation, EObject mDefinition, EObject mDefinitionToTMember,
+			EObject mSignatureToTFieldSignature, EObject mDefinitionToTDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public interface FieldDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TFieldDefinition tDefinition,
-			TFieldSignature tFieldSignature, MFieldSignature mSignature,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MFieldSignature mSignature,
+			TFieldDefinition tDefinition, TFieldSignature tFieldSignature,
 			MSignatureToTSignature mSignatureToTFieldSignature);
 
 	/**
@@ -196,9 +196,9 @@ public interface FieldDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tDefinition, EObject tFieldSignature,
-			EObject mSignature, EObject mDefinitionToTMember, EObject mSignatureToTFieldSignature,
-			EObject mDefinitionToTDefinition, EObject mBodyToTAnnotation, EObject mDefinition);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mSignature, EObject tDefinition,
+			EObject tFieldSignature, EObject mBodyToTAnnotation, EObject mDefinition, EObject mDefinitionToTMember,
+			EObject mSignatureToTFieldSignature, EObject mDefinitionToTDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface FieldDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_90(EMoflonEdge _edge_definitions);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_225(EMoflonEdge _edge_definitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface FieldDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_94(EMoflonEdge _edge_mDefinitions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_235(EMoflonEdge _edge_mDefinitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,8 +254,8 @@ public interface FieldDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TFieldDefinition tDefinition, TFieldSignature tFieldSignature,
-			MFieldSignature mSignature, MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(MFieldSignature mSignature, TFieldDefinition tDefinition,
+			TFieldSignature tFieldSignature, MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,8 +296,8 @@ public interface FieldDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TFieldSignature tFieldSignature,
-			MFieldSignature mSignature, MSignatureToTSignature mSignatureToTFieldSignature,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MFieldSignature mSignature,
+			TFieldSignature tFieldSignature, MSignatureToTSignature mSignatureToTFieldSignature,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

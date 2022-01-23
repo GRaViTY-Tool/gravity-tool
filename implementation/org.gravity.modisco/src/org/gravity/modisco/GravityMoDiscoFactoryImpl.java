@@ -15,7 +15,6 @@ import org.gravity.modisco.bugfixes.MAnnotation;
  * @author speldszus
  *
  */
-@SuppressWarnings("restriction")
 public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
 	@Override

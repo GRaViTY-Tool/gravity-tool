@@ -29,7 +29,6 @@
         <setEntry value="org.gravity.refactorings.tests"/>
         <setEntry value="org.gravity.refactorings.ui"/>
         <setEntry value="org.gravity.tgg.modisco.ui"/>
-        <setEntry value="org.gravity.tgg.modisco.uml.tests"/>
     </setAttribute>
     <booleanAttribute key="includeOptional" value="true"/>
     <stringAttribute key="location" value="${workspace_loc:org.gravity.tgg.tests/java_src}"/>
@@ -58,7 +57,7 @@
     <stringAttribute key="product" value="org.eclipse.platform.ide"/>
     <booleanAttribute key="run_in_ui_thread" value="true"/>
     <setAttribute key="selected_target_bundles">
-        <setEntry value="com.google.guava*21.0.0.v20170206-1425@default:default"/>
+        <setEntry value="com.google.guava@default:default"/>
         <setEntry value="com.google.inject@default:default"/>
         <setEntry value="com.ibm.icu@default:default"/>
         <setEntry value="com.jcraft.jsch@default:default"/>
@@ -76,26 +75,21 @@
         <setEntry value="org.antlr.runtime*3.2.0.v201101311130@default:default"/>
         <setEntry value="org.apache.ant@default:default"/>
         <setEntry value="org.apache.batik.bridge@default:default"/>
-        <setEntry value="org.apache.batik.constants*1.14.0.v20210324-0332@default:default"/>
-        <setEntry value="org.apache.batik.constants*1.9.1.v20180227-1645@default:default"/>
+        <setEntry value="org.apache.batik.constants@default:default"/>
         <setEntry value="org.apache.batik.css*1.6.0.v201011041432@default:default"/>
-        <setEntry value="org.apache.batik.dom*1.6.1.v201505192100@default:default"/>
-        <setEntry value="org.apache.batik.dom*1.9.1.v20190730-1743@default:default"/>
         <setEntry value="org.apache.batik.dom.svg@default:default"/>
+        <setEntry value="org.apache.batik.dom@default:default"/>
         <setEntry value="org.apache.batik.ext.awt@default:default"/>
-        <setEntry value="org.apache.batik.i18n*1.14.0.v20210324-0332@default:default"/>
-        <setEntry value="org.apache.batik.i18n*1.9.1.v20180227-1645@default:default"/>
+        <setEntry value="org.apache.batik.i18n@default:default"/>
         <setEntry value="org.apache.batik.parser@default:default"/>
         <setEntry value="org.apache.batik.pdf@default:default"/>
         <setEntry value="org.apache.batik.svggen@default:default"/>
         <setEntry value="org.apache.batik.transcoder@default:default"/>
         <setEntry value="org.apache.batik.util*1.6.0.v201011041432@default:default"/>
         <setEntry value="org.apache.batik.util.gui@default:default"/>
-        <setEntry value="org.apache.batik.xml*1.6.0.v201011041432@default:default"/>
-        <setEntry value="org.apache.batik.xml*1.9.1.v20190730-1743@default:default"/>
+        <setEntry value="org.apache.batik.xml@default:default"/>
         <setEntry value="org.apache.commons.cli@default:default"/>
-        <setEntry value="org.apache.commons.io*2.6.0.v20190123-2029@default:default"/>
-        <setEntry value="org.apache.commons.io*2.8.0.v20210415-0900@default:default"/>
+        <setEntry value="org.apache.commons.io@default:default"/>
         <setEntry value="org.apache.commons.jxpath@default:default"/>
         <setEntry value="org.apache.commons.lang3@default:default"/>
         <setEntry value="org.apache.commons.lang@default:default"/>
@@ -178,11 +172,6 @@
         <setEntry value="org.eclipse.emf.ecore@default:default"/>
         <setEntry value="org.eclipse.emf.edit.ui@default:default"/>
         <setEntry value="org.eclipse.emf.edit@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.diagram@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.edit@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.editor@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.interpreter@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.model@default:default"/>
         <setEntry value="org.eclipse.emf.mapping.ecore2xml@default:default"/>
         <setEntry value="org.eclipse.emf.mwe.core@default:default"/>
         <setEntry value="org.eclipse.emf.mwe.utils@default:default"/>
@@ -534,21 +523,15 @@
         <setEntry value="org.eclipse.emf.henshin.diagram@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.edit@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.editor@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.examples@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.giraph@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.interpreter.ui@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.interpreter@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.model@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.multicda.cda@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.multicda.cpa.ui@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.multicda.cpa@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.rulegen.tests@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.rulegen.ui@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.rulegen@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.statespace.explorer@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.statespace.external@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.statespace@default:default"/>
-        <setEntry value="org.eclipse.emf.henshin.tests@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.text.ide@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.text.tests@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.text.transformation@default:default"/>
@@ -577,17 +560,21 @@
         <setEntry value="org.gravity.eclipse.ui@default:default"/>
         <setEntry value="org.gravity.eclipse@default:default"/>
         <setEntry value="org.gravity.eval.runtime.tgg.modisco@default:default"/>
+        <setEntry value="org.gravity.headless.tests@default:default"/>
         <setEntry value="org.gravity.headless@default:default"/>
         <setEntry value="org.gravity.hulk.resolve@default:default"/>
         <setEntry value="org.gravity.mapping.secdfd.eval@default:default"/>
         <setEntry value="org.gravity.mapping.secdfd.tests@default:default"/>
         <setEntry value="org.gravity.mapping.secdfd@default:default"/>
         <setEntry value="org.gravity.modisco@default:default"/>
+        <setEntry value="org.gravity.ps.tests@default:default"/>
         <setEntry value="org.gravity.requirements@default:default"/>
         <setEntry value="org.gravity.security.annotations@default:default"/>
         <setEntry value="org.gravity.security.metrics@default:default"/>
         <setEntry value="org.gravity.security.violation.patterns.eval@default:default"/>
+        <setEntry value="org.gravity.security.violation.patterns.tests@default:default"/>
         <setEntry value="org.gravity.security.violation.patterns@default:default"/>
+        <setEntry value="org.gravity.tests@default:default"/>
         <setEntry value="org.gravity.tgg.modisco.pm@default:default"/>
         <setEntry value="org.gravity.tgg.modisco.uml@default:default"/>
         <setEntry value="org.gravity.tgg.pm.uml@default:default"/>

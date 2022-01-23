@@ -699,7 +699,7 @@ public class SuperMethodInvocationImpl extends AbstractRuleImpl implements Super
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_87(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_239(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = SuperMethodInvocationImpl
 				.pattern_SuperMethodInvocation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -757,7 +757,7 @@ public class SuperMethodInvocationImpl extends AbstractRuleImpl implements Super
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_90(EMoflonEdge _edge_mMethodInvocations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_249(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = SuperMethodInvocationImpl
 				.pattern_SuperMethodInvocation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1174,10 +1174,10 @@ public class SuperMethodInvocationImpl extends AbstractRuleImpl implements Super
 			return null;
 		case RulesPackage.SUPER_METHOD_INVOCATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.SUPER_METHOD_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_87__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_87((EMoflonEdge) arguments.get(0));
-		case RulesPackage.SUPER_METHOD_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_90__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_90((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SUPER_METHOD_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_239__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_239((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SUPER_METHOD_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_249__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_249((EMoflonEdge) arguments.get(0));
 		case RulesPackage.SUPER_METHOD_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SUPER_METHOD_INVOCATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2383,7 +2383,7 @@ public class SuperMethodInvocationImpl extends AbstractRuleImpl implements Super
 
 	public static final Object[] pattern_SuperMethodInvocation_21_2_testcorematchandDECs_black_nac_0B(
 			MSuperMethodInvocation invocation) {
-		for (AnnotationMemberValuePair __DEC_invocation_value_119049 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_invocation_value_533589 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { invocation };
 		}
@@ -2392,9 +2392,9 @@ public class SuperMethodInvocationImpl extends AbstractRuleImpl implements Super
 
 	public static final Object[] pattern_SuperMethodInvocation_21_2_testcorematchandDECs_black_nac_1BB(
 			MSuperMethodInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_285127 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_811023 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_285127)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_811023)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2641,7 +2641,7 @@ public class SuperMethodInvocationImpl extends AbstractRuleImpl implements Super
 
 	public static final Object[] pattern_SuperMethodInvocation_27_1_matchtggpattern_black_nac_0B(
 			MSuperMethodInvocation invocation) {
-		for (AnnotationMemberValuePair __DEC_invocation_value_532008 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_invocation_value_774353 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { invocation };
 		}
@@ -2650,9 +2650,9 @@ public class SuperMethodInvocationImpl extends AbstractRuleImpl implements Super
 
 	public static final Object[] pattern_SuperMethodInvocation_27_1_matchtggpattern_black_nac_1BB(
 			MSuperMethodInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_866405 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_113947 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_866405)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_113947)) {
 				return new Object[] { invocation, mMember };
 			}
 		}

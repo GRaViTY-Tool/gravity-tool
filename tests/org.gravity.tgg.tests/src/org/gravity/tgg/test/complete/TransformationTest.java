@@ -18,7 +18,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.emf.henshin.interpreter.impl.EngineImpl;
@@ -30,7 +29,6 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
-import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.tgg.modisco.pm.MoDiscoTGGConverter;
 import org.gravity.tgg.uml.Transformation;
@@ -44,7 +42,6 @@ import org.moflon.tgg.algorithm.configuration.PGSavingConfigurator;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
 
 /**
  * An abstract test template collecting test java projects and allows to test
@@ -64,24 +61,20 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 	private static final boolean SERIALIZE = true;
 	private static final boolean JSON_CHECKS = false;
 
-
 	public TransformationTest(final String name, final IJavaProject project) {
 		super(name, project);
 	}
 
 	/**
 	 * Transforms every input project and checks the created model
+	 *
 	 * @throws DiscoveryException
+	 * @throws IOException
 	 */
 	@Test
-	public void test0ModiscoPreprocessing() throws DiscoveryException {
-		MGravityModel preprocessedModel;
-		try {
-			preprocessedModel = new GravityModiscoProjectDiscoverer().discoverMGravityModelFromProject(this.project,
-					new NullProgressMonitor());
-		} catch (final DiscoveryException e) {
-			throw new AssertionError(e.getLocalizedMessage(), e);
-		}
+	public void test0ModiscoPreprocessing() throws DiscoveryException, IOException {
+		final var preprocessedModel = new GravityModiscoProjectDiscoverer(this.project, false)
+				.discoverModel(new NullProgressMonitor());
 		assertNotNull(preprocessedModel);
 
 		if (JSON_CHECKS) {
@@ -105,11 +98,12 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 
 	/**
 	 * The method in which tests on eclipse java projects can be defined
+	 *
 	 * @throws CoreException
 	 * @throws IOException
 	 * @throws DiscoveryException
 	 *
-	 * @throws Exception The test might throws exceptions
+	 * @throws Exception          The test might throws exceptions
 	 */
 	@Test
 	public final void test1ProgramModelTGG() throws CoreException, IOException, DiscoveryException {
@@ -120,7 +114,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 
 		MoDiscoTGGConverter conv = null;
 		try {
-			conv = new MoDiscoTGGConverter(this.project, new ResourceSetImpl());
+			conv = new MoDiscoTGGConverter(this.project);
 			conv.setDebug(DEBUG);
 			conv.disableAutosave();
 		} catch (final IOException e) {
@@ -142,7 +136,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 			}
 		}
 		checkModel(pg);
-		//		 conv.discard();
+		// conv.discard();
 	}
 
 	/**
@@ -194,8 +188,9 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 			final var monitor = new NullProgressMonitor();
 			Model model;
 			try {
-				final var transformation = new Transformation(this.project, null, false);
-				transformation.setConfigurator(new PGSavingConfigurator(transformation, this.project.getProject().getFile("pg.xmi").getLocation().toFile().getAbsolutePath()));
+				final var transformation = new Transformation(this.project, false);
+				transformation.setConfigurator(new PGSavingConfigurator(transformation,
+						this.project.getProject().getFile("pg.xmi").getLocation().toFile().getAbsolutePath()));
 				if (ADD_UMLSEC) {
 					model = transformation.projectToModel(ADD_UMLSEC, monitor);
 				} else {

@@ -27,7 +27,6 @@ Export-Package: org.gravity.tgg.modisco.pm,
  org.gravity.tgg.modisco.pm.org.moflon.tgg.mosl.csp.constraints,
  org.gravity.tgg.modisco.pm.org.moflon.tgg.mosl.csp.lib,
  org.gravity.tgg.modisco.pm.org.moflon.tgg.mosl.rules,
- org.gravity.tgg.modisco.pm.org.moflon.tie,
  org.gravity.tgg.modisco.pm.processing.modisco,
  org.gravity.tgg.modisco.pm.processing.pg,
  org.gravity.tgg.modisco.pm.util

@@ -4,12 +4,10 @@ import java.io.IOException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.gravity.eclipse.GravityActivator;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.tgg.modisco.pm.processing.pg.IProgramGraphProcessor;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -33,7 +31,7 @@ public class ProgramGraphProcessor implements IProgramGraphProcessor {
 	 */
 	@Override
 	public boolean process(final TypeGraph pg, final IProgressMonitor monitor) {
-		final IProject project = GravityActivator.getDefault().getProject(pg.getTName());
+		final var project = EclipseProjectUtil.getProjectByName(pg.getTName());
 		try {
 			if (!project.hasNature("de.ovgu.featureide.core.featureProjectNature")) {
 				// Only process FeatureIDE projects
@@ -42,7 +40,7 @@ public class ProgramGraphProcessor implements IProgramGraphProcessor {
 		} catch (final CoreException e) {
 			LOGGER.error(e);
 		}
-		final IJavaProject javaProject = JavaCore.create(project);
+		final var javaProject = JavaCore.create(project);
 		for (final TAbstractType tType : pg.getOwnedTypes()) {
 			if (tType.isDeclared() && (tType.getOuterType() == null)) {
 				try {
