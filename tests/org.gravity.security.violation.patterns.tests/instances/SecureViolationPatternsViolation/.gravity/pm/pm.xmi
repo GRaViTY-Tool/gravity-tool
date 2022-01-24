@@ -1,52 +1,27 @@
 <?xml version="1.0" encoding="ASCII"?>
 <org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.security.violation.pattern="http://www.gravity-tool.org/security.violation.pattern/violations" xmlns:org.gravity.typegraph.basic="http://www.gravity-tool.org/typegraph/basic" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10" tName="SecureViolationPatternsViolation">
-  <packages classes="//@ownedTypes.8 //@ownedTypes.10" ownedTypes="//@ownedTypes.8 //@ownedTypes.10" model="/" tName="dummy"/>
-  <methods tName="Supplier">
-    <signatures returnType="//@ownedTypes.10">
-      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.10" accessedBy="//@fields.0/@signatures.0/@definitions.0/@accessing.0">
-        <tAnnotation xsi:type="org.gravity.typegraph.basic:TConstructor"/>
-      </definitions>
-    </signatures>
-  </methods>
+  <packages classes="//@ownedTypes.3 //@ownedTypes.4" ownedTypes="//@ownedTypes.3 //@ownedTypes.4" model="/" tName="dummy"/>
   <methods tName="clientMethod">
-    <signatures returnType="//@ownedTypes.4">
-      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.8" returnType="//@ownedTypes.4">
-        <accessing xsi:type="org.gravity.typegraph.basic:TCall" target="//@methods.2/@signatures.0/@definitions.0" staticType="//@ownedTypes.8">
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
+    <signatures returnType="//@ownedTypes.0">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.4" returnType="//@ownedTypes.0">
+        <accessing xsi:type="org.gravity.typegraph.basic:TCall" target="//@methods.2/@signatures.0/@definitions.0" staticType="//@ownedTypes.4">
+          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.0/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
+            <requirement href="../uml/SecureViolationPatternsViolation.uml#_-qZcYH0TEeyJlLcCPXvoJg"/>
           </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
+          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.0/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
+            <requirement href="../uml/SecureViolationPatternsViolation.uml#_-qZcYH0TEeyJlLcCPXvoJg"/>
           </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
+          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.0/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
+            <requirement href="../uml/SecureViolationPatternsViolation.uml#_-qZcYH0TEeyJlLcCPXvoJg"/>
           </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
+          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.0/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
+            <requirement href="../uml/SecureViolationPatternsViolation.uml#_-qZcYH0TEeyJlLcCPXvoJg"/>
           </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
+          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.0/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
+            <requirement href="../uml/SecureViolationPatternsViolation.uml#_-qZcYH0TEeyJlLcCPXvoJg"/>
           </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
-          </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
-          </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
-          </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
-          </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
-          </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
-          </tAnnotation>
-          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.1/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
-            <requirement href="../uml/SecureViolationPatternsViolation.uml#_syKW8HdqEeyRhYNdy-5KGQ"/>
+          <tAnnotation xsi:type="org.gravity.security.violation.pattern:SecureDependencyViolation" source="//@methods.0/@signatures.0/@definitions.0" target="//@methods.2/@signatures.0/@definitions.0">
+            <requirement href="../uml/SecureViolationPatternsViolation.uml#_-qZcYH0TEeyJlLcCPXvoJg"/>
           </tAnnotation>
         </accessing>
         <accessing xsi:type="org.gravity.typegraph.basic:TRead" target="//@fields.0/@signatures.0/@definitions.0"/>
@@ -54,34 +29,41 @@
       </definitions>
     </signatures>
   </methods>
+  <methods tName="Supplier">
+    <signatures returnType="//@ownedTypes.3">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.3" accessedBy="//@fields.0/@signatures.0/@definitions.0/@accessing.0">
+        <tAnnotation xsi:type="org.gravity.typegraph.basic:TConstructor"/>
+      </definitions>
+    </signatures>
+  </methods>
   <methods tName="supplierMethod">
-    <signatures returnType="//@ownedTypes.4">
-      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.10" accessedBy="//@methods.1/@signatures.0/@definitions.0/@accessing.0" returnType="//@ownedTypes.4">
+    <signatures returnType="//@ownedTypes.0">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.3" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.0" returnType="//@ownedTypes.0">
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
   <fields tName="supplier">
-    <signatures type="//@ownedTypes.10">
-      <definitions xsi:type="org.gravity.typegraph.basic:TFieldDefinition" definedBy="//@ownedTypes.8" accessedBy="//@methods.1/@signatures.0/@definitions.0/@accessing.1">
-        <accessing xsi:type="org.gravity.typegraph.basic:TCall" target="//@methods.0/@signatures.0/@definitions.0"/>
+    <signatures type="//@ownedTypes.3">
+      <definitions xsi:type="org.gravity.typegraph.basic:TFieldDefinition" definedBy="//@ownedTypes.4" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.1">
+        <accessing xsi:type="org.gravity.typegraph.basic:TCall" target="//@methods.1/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPackage"/>
       </definitions>
     </signatures>
   </fields>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@fields.0/@signatures.0 //@methods.1/@signatures.0" defines="//@fields.0/@signatures.0/@definitions.0 //@methods.1/@signatures.0/@definitions.0" tName="Client">
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@methods.1/@signatures.0 //@methods.2/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.0 //@methods.2/@signatures.0/@definitions.0" tName="Supplier">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@methods.0/@signatures.0 //@fields.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0 //@fields.0/@signatures.0/@definitions.0" tName="Client">
     <tModifier tVisibility="TPublic"/>
   </ownedTypes>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@methods.2/@signatures.0 //@methods.0/@signatures.0" defines="//@methods.2/@signatures.0/@definitions.0 //@methods.0/@signatures.0/@definitions.0" tName="Supplier">
-    <tModifier tVisibility="TPublic"/>
-  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
 </org.gravity.typegraph.basic:TypeGraph>

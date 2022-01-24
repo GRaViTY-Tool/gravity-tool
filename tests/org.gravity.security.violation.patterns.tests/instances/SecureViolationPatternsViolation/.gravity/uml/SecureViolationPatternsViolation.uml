@@ -1,42 +1,57 @@
-<?xml version="1.0" encoding="ASCII"?>
-<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="root model">
-  <packagedElement xsi:type="uml:Model" name="source references">
-    <packagedElement xsi:type="uml:Artifact" name="Client.java" fileName="/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/instances/SecureViolationPatternsViolation/src/dummy/Client.java">
-      <manifestation supplier="//SecureViolationPatternsViolation/dummy/Client" utilizedElement="//SecureViolationPatternsViolation/dummy/Client"/>
-    </packagedElement>
-    <packagedElement xsi:type="uml:Artifact" name="Supplier.java" fileName="/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/instances/SecureViolationPatternsViolation/src/dummy/Supplier.java">
-      <manifestation supplier="//SecureViolationPatternsViolation/dummy/Supplier" utilizedElement="//SecureViolationPatternsViolation/dummy/Supplier"/>
-    </packagedElement>
-  </packagedElement>
-  <packagedElement xsi:type="uml:Model" name="externals"/>
-  <packagedElement xsi:type="uml:Model" name="SecureViolationPatternsViolation">
-    <packagedElement xsi:type="uml:Package" name="Common Java datatypes">
-      <packagedElement xsi:type="uml:PrimitiveType" name="int"/>
-      <packagedElement xsi:type="uml:PrimitiveType" name="long"/>
-      <packagedElement xsi:type="uml:PrimitiveType" name="double"/>
-      <packagedElement xsi:type="uml:PrimitiveType" name="void"/>
-      <packagedElement xsi:type="uml:PrimitiveType" name="char"/>
-      <packagedElement xsi:type="uml:PrimitiveType" name="float"/>
-      <packagedElement xsi:type="uml:PrimitiveType" name="boolean"/>
-      <packagedElement xsi:type="uml:PrimitiveType" name="short"/>
-      <packagedElement xsi:type="uml:PrimitiveType" name="byte"/>
-    </packagedElement>
-    <packagedElement xsi:type="uml:Package" name="dummy">
-      <packagedElement xsi:type="uml:Class" name="Client" visibility="public">
-        <ownedAttribute name="supplier" visibility="package"/>
-        <ownedOperation name="clientMethod" visibility="public">
-          <ownedParameter type="//SecureViolationPatternsViolation/Common%20Java%20datatypes/void" direction="return"/>
-        </ownedOperation>
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLsec="http://www.umlsec.de/profiles/UMLsec" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.umlsec.de/profiles/UMLsec ../../../../../carisma.profile.umlsec/profile/UMLsec.profile.uml#_MQjs4FPqEea7isDEsq0j4g">
+  <uml:Model xmi:id="_uCxtYH0UEeyJlLcCPXvoJg" name="root model">
+    <packagedElement xmi:type="uml:Model" xmi:id="_uCxtYX0UEeyJlLcCPXvoJg" name="source references">
+      <packagedElement xmi:type="uml:Artifact" xmi:id="_uCxtYn0UEeyJlLcCPXvoJg" name="Client.java" fileName="/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/instances/SecureViolationPatternsViolation/src/dummy/Client.java">
+        <manifestation xmi:type="uml:Manifestation" xmi:id="_uCxtY30UEeyJlLcCPXvoJg" supplier="_uCxteH0UEeyJlLcCPXvoJg" utilizedElement="_uCxteH0UEeyJlLcCPXvoJg"/>
       </packagedElement>
-      <packagedElement xsi:type="uml:Usage" client="//SecureViolationPatternsViolation/dummy/Client" supplier="//SecureViolationPatternsViolation/dummy/Supplier"/>
-      <packagedElement xsi:type="uml:Class" name="Supplier" visibility="public">
-        <ownedOperation name="Supplier">
-          <ownedComment annotatedElement="//SecureViolationPatternsViolation/dummy/Supplier/Supplier" body="Constructor"/>
-        </ownedOperation>
-        <ownedOperation name="supplierMethod" visibility="public">
-          <ownedParameter type="//SecureViolationPatternsViolation/Common%20Java%20datatypes/void" direction="return"/>
-        </ownedOperation>
+      <packagedElement xmi:type="uml:Artifact" xmi:id="_uCxtZH0UEeyJlLcCPXvoJg" name="Supplier.java" fileName="/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/instances/SecureViolationPatternsViolation/src/dummy/Supplier.java">
+        <manifestation xmi:type="uml:Manifestation" xmi:id="_uCxtZX0UEeyJlLcCPXvoJg" supplier="_uCxtc30UEeyJlLcCPXvoJg" utilizedElement="_uCxtc30UEeyJlLcCPXvoJg"/>
       </packagedElement>
     </packagedElement>
-  </packagedElement>
-</uml:Model>
+    <packagedElement xmi:type="uml:Model" xmi:id="_uCxtZn0UEeyJlLcCPXvoJg" name="externals"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="_uCxtZ30UEeyJlLcCPXvoJg" name="SecureViolationPatternsViolation">
+      <packagedElement xmi:type="uml:Package" xmi:id="_uCxtaH0UEeyJlLcCPXvoJg" name="Common Java datatypes">
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uCxtaX0UEeyJlLcCPXvoJg" name="char"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uCxtan0UEeyJlLcCPXvoJg" name="float"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uCxta30UEeyJlLcCPXvoJg" name="boolean"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uCxtbH0UEeyJlLcCPXvoJg" name="byte"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uCxtbX0UEeyJlLcCPXvoJg" name="double"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uCxtbn0UEeyJlLcCPXvoJg" name="void"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uCxtb30UEeyJlLcCPXvoJg" name="long"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uCxtcH0UEeyJlLcCPXvoJg" name="short"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uCxtcX0UEeyJlLcCPXvoJg" name="int"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_uCxtcn0UEeyJlLcCPXvoJg" name="dummy">
+        <packagedElement xmi:type="uml:Class" xmi:id="_uCxtc30UEeyJlLcCPXvoJg" name="Supplier" visibility="public">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_uCxtdH0UEeyJlLcCPXvoJg" name="supplierMethod" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_uCxtdX0UEeyJlLcCPXvoJg" type="_uCxtbn0UEeyJlLcCPXvoJg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_uCxtdn0UEeyJlLcCPXvoJg" name="Supplier">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_uCxtd30UEeyJlLcCPXvoJg" annotatedElement="_uCxtdn0UEeyJlLcCPXvoJg">
+              <body>Constructor</body>
+            </ownedComment>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_uCxteH0UEeyJlLcCPXvoJg" name="Client" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_uCxteX0UEeyJlLcCPXvoJg" name="supplier" visibility="package"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_uCxten0UEeyJlLcCPXvoJg" name="clientMethod" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_uCxte30UEeyJlLcCPXvoJg" type="_uCxtbn0UEeyJlLcCPXvoJg" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_uCxtfH0UEeyJlLcCPXvoJg" client="_uCxteH0UEeyJlLcCPXvoJg" supplier="_uCxtc30UEeyJlLcCPXvoJg"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0krUIH0UEeyJlLcCPXvoJg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0kr7MH0UEeyJlLcCPXvoJg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../../../../carisma.profile.umlsec/profile/UMLsec.profile.uml#_MQjs4FPqEea7isDEsq0j4g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../../../../../carisma.profile.umlsec/profile/UMLsec.profile.uml#_kGQWQDnkEeCyb9nmG-9Lpw"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLsec:securedependency xmi:id="_1WhAwH0UEeyJlLcCPXvoJg" base_Package="_uCxtYH0UEeyJlLcCPXvoJg"/>
+  <UMLsec:call xmi:id="_2gxNYH0UEeyJlLcCPXvoJg" base_Dependency="_uCxtfH0UEeyJlLcCPXvoJg"/>
+  <UMLsec:critical xmi:id="_3UGHwH0UEeyJlLcCPXvoJg" base_Class="_uCxtc30UEeyJlLcCPXvoJg" base_Classifier="_uCxtc30UEeyJlLcCPXvoJg">
+    <secrecy>supplierMethod():void</secrecy>
+  </UMLsec:critical>
+</xmi:XMI>
