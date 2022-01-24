@@ -313,7 +313,7 @@ public final class Transformation extends GravityModiscoTGGConverter {
 
 
 	public static IFile getUMLFile(final IProject project, final NullProgressMonitor monitor) throws IOException {
-		return EclipseProjectUtil.getGravityFolder(project, monitor).getFile(project.getName()+".uml");
+		return EclipseProjectUtil.getGravityFolder(project, monitor).getFolder(UML).getFile(project.getName()+".uml");
 	}
 
 	@Override

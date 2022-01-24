@@ -1,6 +1,7 @@
 package org.gravity.headless.webapi.tests;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
@@ -27,6 +28,8 @@ class WebApiMavenTests extends AbstractWebApiTests {
 	@Test
 	void testMvn() throws IOException {
 		final var service = getService(this.cache);
+		assertNotNull(service, "Couldn't create GRaViTY web service");
+
 		final var response = service.getPM4Mvn(GROUP1, ARTIFACT1, VERSION1, null);
 		final var resource = getResource(response);
 		assertFalse(resource.getContents().isEmpty());
@@ -53,6 +56,7 @@ class WebApiMavenTests extends AbstractWebApiTests {
 	@Test
 	void testMvnCacheDrop() throws IOException {
 		final var service = getService(this.cache);
+		assertNotNull(service, "Couldn't create GRaViTY web service");
 
 		final var response1 = service.getPM4Mvn(GROUP1, ARTIFACT1, VERSION1, null);
 

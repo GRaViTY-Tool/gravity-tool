@@ -62,6 +62,7 @@ public class CorrespondenceGraphGenerator {
 				correspondenceModel.setTarget(pmCorr.getTarget());
 				ModelSaver.saveModel(correspondenceModel, file);
 			}
+			EcoreUtil.resolveAll(correspondenceModel);
 			return correspondenceModel;
 		} catch (IOException | InvocationTargetException e) {
 			LOGGER.error(e);

@@ -212,8 +212,31 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 
 	@Override
 	public boolean perform(final Map<String, CheckParameter> parameters, final AnalysisHost host) {
-		final var workspace = ResourcesPlugin.getWorkspace().getRoot();
+		final var project = getProject(host);
+		this.corr = CorrespondenceGraphGenerator.createModel(JavaProjectUtil.getJavaProject(project),
+				new NullProgressMonitor());
+		for (final Match m : detect(this.corr)) {
+			final var access = (TAccess) m.getNodeTarget(this.rule.getLhs().getNode("access"));
+
+			final var source = access.getSource();
+			final var sourceSignature = source.getSignatureString();
+			final var sourceClass = source.getDefinedBy().getFullyQualifiedName();
+
+			final var target = access.getTarget();
+			final var targetSignature = target.getSignatureString();
+			final var targetClass = target.getDefinedBy().getFullyQualifiedName();
+
+			host.addResultMessage(new AnalysisResultMessage(StatusType.ERROR,
+					"Secure dependency is violated in the implementation for the member " + sourceSignature
+					+ " of the class " + sourceClass + " for the security-level of " + "secrecy"
+					+ "by an access to the member " + targetSignature + " of the class " + targetClass));
+		}
+		return true;
+	}
+
+	private IProject getProject(final AnalysisHost host) {
 		final var uri = host.getAnalyzedModel().getURI();
+		final var workspace = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = null;
 		if (uri.isPlatform()) {
 			project = workspace.getFile(new Path(host.getCurrentModelFilename())).getProject();
@@ -247,25 +270,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 				}
 			}
 		}
-		this.corr = CorrespondenceGraphGenerator.createModel(JavaProjectUtil.getJavaProject(project),
-				new NullProgressMonitor());
-		for (final Match m : detect(this.corr)) {
-			final var access = (TAccess) m.getNodeTarget(this.rule.getLhs().getNode("access"));
-
-			final var source = access.getSource();
-			final var sourceSignature = source.getSignatureString();
-			final var sourceClass = source.getDefinedBy().getFullyQualifiedName();
-
-			final var target = access.getTarget();
-			final var targetSignature = target.getSignatureString();
-			final var targetClass = target.getDefinedBy().getFullyQualifiedName();
-
-			host.addResultMessage(new AnalysisResultMessage(StatusType.ERROR,
-					"Secure dependency is violated in the implementation for the member " + sourceSignature
-					+ " of the class " + sourceClass + " for the security-level of " + "secrecy"
-					+ "by an access to the member " + targetSignature + " of the class " + targetClass));
-		}
-		return true;
+		return project;
 	}
 
 	@Override

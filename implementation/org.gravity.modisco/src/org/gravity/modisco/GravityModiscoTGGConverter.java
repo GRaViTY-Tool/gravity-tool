@@ -16,6 +16,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -84,6 +85,7 @@ public abstract class GravityModiscoTGGConverter extends SynchronizationHelper {
 			this.corr = getCorrespondenceModel();
 			if (this.corr != null) {
 				EcoreUtil.resolveAll(this.corr);
+				this.trg = this.corr.getTarget();
 				this.protocol = getProtocol();
 				if (this.protocol != null) {
 					// Everything loaded successfully
@@ -103,11 +105,11 @@ public abstract class GravityModiscoTGGConverter extends SynchronizationHelper {
 	 */
 	private SynchronizationProtocol getProtocol() throws IOException, CoreException {
 		final var monitor = new NullProgressMonitor();
-		var protocolFile = this.outputFolder.getFile(PROTOCOL_XMI + ".zip");
+		var protocolFile = this.outputFolder.getFile(this.id+PROTOCOL_XMI + ".zip");
 		if (!protocolFile.exists() || !GravityAPI.isUptoDate(protocolFile)) {
-			protocolFile = this.outputFolder.getFile(PROTOCOL_BIN);
+			protocolFile = this.outputFolder.getFile(this.id+PROTOCOL_BIN);
 			if (!protocolFile.exists() || !GravityAPI.isUptoDate(protocolFile)) {
-				protocolFile = this.outputFolder.getFile(PROTOCOL_XMI);
+				protocolFile = this.outputFolder.getFile(this.id+PROTOCOL_XMI);
 				if (!protocolFile.exists() || !GravityAPI.isUptoDate(protocolFile)) {
 					return null;
 				}
@@ -206,19 +208,25 @@ public abstract class GravityModiscoTGGConverter extends SynchronizationHelper {
 	}
 
 	public void unload() {
-		if (this.trg != null) {
-			this.trg.eResource().unload();
-			this.trg = null;
-		}
-		if (this.corr != null) {
-			this.corr.eResource().unload();
-			this.corr = null;
-		}
+		this.trg = unload(this.trg);
+		this.corr = unload(this.corr);
+
 		if (this.protocol != null) {
 			this.protocol = null;
 		}
 		this.changeSrc = null;
 		this.changeTrg = null;
+	}
+
+	private<T extends EObject> T unload(T object) {
+		if (object != null) {
+			final var resource = object.eResource();
+			if(resource != null) {
+				resource.unload();
+			}
+			object = null;
+		}
+		return object;
 	}
 
 	public void disableAutosave() {
