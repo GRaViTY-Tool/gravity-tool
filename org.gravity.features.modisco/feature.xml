@@ -33,15 +33,22 @@ Darmstadt.
 
    <requires>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.modisco.java"/>
       <import plugin="org.eclipse.modisco.infra.discovery.core"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.modisco.java.discoverer"/>
       <import plugin="org.gravity.eclipse"/>
-      <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.modisco.java.generation"/>
-      <import plugin="org.gravity.typegraph.basic"/>
       <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202010091338"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.modisco.java" version="1.5.0" match="greaterOrEqual"/>
+      <import plugin="org.slf4j.api"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.apache.xmlgraphics"/>
+      <import plugin="org.moflon.core.utilities"/>
+      <import plugin="SDMLanguage"/>
+      <import plugin="org.moflon.tgg.language"/>
+      <import plugin="org.moflon.tgg.runtime"/>
+      <import plugin="MocaTree"/>
    </requires>
 
    <plugin
