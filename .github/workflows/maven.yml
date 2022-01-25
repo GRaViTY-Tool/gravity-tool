@@ -25,7 +25,7 @@ jobs:
     - name: Build with Maven
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=gravity -Dsonar.login=${{secrets.SONAR_LOGIN}}
+      run: mvn clean verify sonar:sonar -Pcoverage -Declipse.p2.mirrors=false -Dsonar.projectKey=gravity -Dsonar.login=${{secrets.SONAR_LOGIN}}
     - name: Publisch Pre-Release
       if: ${{ github.ref == 'refs/heads/master' }}
       uses: "marvinpinto/action-automatic-releases@latest"
