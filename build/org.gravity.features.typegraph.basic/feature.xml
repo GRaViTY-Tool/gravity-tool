@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.gravity.features.typegraph.basic"
+      label="GRaViTY Type Graph Basic"
+      version="1.0.0.qualifier"
+      provider-name="University of Koblenz-Landau"
+      license-feature="org.gravity.license.epl"
+      license-feature-version="1.0.0">
+
+   <description>
+      The meta model of the program model and general operations on program models
+   </description>
+
+   <copyright>
+      (C) Copyright ${year} Research Group Software Engineering - University
+of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
+Darmstadt.
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+   </requires>
+
+   <plugin
+         id="org.gravity.typegraph.basic"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

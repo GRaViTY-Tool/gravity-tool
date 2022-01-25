@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.gravity.features.eclipse"
+      label="GRaViTY Eclipse"
+      version="1.0.0.qualifier"
+      provider-name="University of Koblenz-Landau and TU Darmstadt"
+      license-feature="org.gravity.license.epl"
+      license-feature-version="1.0.0">
+
+   <description>
+      The plugins providing the backend for the GRaViTY tool.
+   </description>
+
+   <copyright>
+      (C) Copyright ${year} Research Group Software Engineering - University
+of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
+Darmstadt.
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <includes
+         id="org.gravity.features.typegraph.basic"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.jdt.launching"/>
+      <import plugin="org.eclipse.jgit"/>
+      <import plugin="org.gravity.typegraph.basic"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+   </requires>
+
+   <plugin
+         id="org.gravity.eclipse.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gravity.eclipse"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

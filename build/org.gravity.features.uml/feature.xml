@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.gravity.features.uml"
+      label="GRaViTY UML"
+      version="1.0.0.qualifier"
+      provider-name="University of Koblenz-Landau"
+      license-feature="org.gravity.license.epl"
+      license-feature-version="1.0.0">
+
+   <description url="http://www.example.com/description">
+      This features provides functionalities for creating and synchronizing UML models with source code and the GRaViTY program model.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="GRaViTY Updatesite" url="https://gravity-tool.org/updatesite"/>
+      <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
+      <discovery label="MoDisco" url="http://download.eclipse.org/releases/latest"/>
+      <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
+      <discovery label="CARiSMA" url="http://carisma.umlsec.de/beta-updatesite"/>
+   </url>
+
+   <includes
+         id="org.gravity.license.epl"
+         version="0.0.0"/>
+
+   <requires>
+      <import feature="feature.carisma.core" version="1.4.7.201807301029"/>
+      <import feature="feature.carisma.uml2" version="1.1.8.201807301029"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.emf.compare"/>
+      <import plugin="carisma.profile.umlsec"/>
+      <import plugin="org.eclipse.modisco.java.discoverer"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.gravity.eclipse"/>
+      <import plugin="org.eclipse.modisco.java.generation"/>
+      <import plugin="org.gravity.modisco"/>
+      <import plugin="org.gravity.security.annotations"/>
+      <import plugin="org.gravity.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202010091338"/>
+   </requires>
+
+   <plugin
+         id="org.gravity.tgg.modisco.uml"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

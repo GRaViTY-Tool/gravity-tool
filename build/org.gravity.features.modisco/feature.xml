@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.gravity.features.modisco"
+      label="Modisco Feature"
+      version="1.0.0.qualifier"
+      provider-name="University of Koblenz-Landau and TU Darmstadt"
+      license-feature="org.gravity.license.epl"
+      license-feature-version="1.0.0">
+
+   <description>
+      The plugins necessary for building a program model from source code.
+   </description>
+
+   <copyright>
+      (C) Copyright ${year} Research Group Software Engineering - University
+of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
+Darmstadt.
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
+      <discovery label="MoDisco" url="http://download.eclipse.org/releases/latest"/>
+      <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
+   </url>
+
+   <includes
+         id="org.gravity.features.eclipse"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.modisco.infra.discovery.core"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.modisco.java.discoverer"/>
+      <import plugin="org.gravity.eclipse"/>
+      <import plugin="org.eclipse.modisco.java.generation"/>
+      <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202010091338"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.modisco.java" version="1.5.0" match="greaterOrEqual"/>
+      <import plugin="org.slf4j.api"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.apache.xmlgraphics"/>
+      <import plugin="org.moflon.core.utilities"/>
+      <import plugin="SDMLanguage"/>
+      <import plugin="org.moflon.tgg.language"/>
+      <import plugin="org.moflon.tgg.runtime"/>
+      <import plugin="MocaTree"/>
+   </requires>
+
+   <plugin
+         id="org.gravity.modisco"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gravity.tgg.modisco.pm"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
