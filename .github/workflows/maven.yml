@@ -26,3 +26,23 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=gravity -Dsonar.login=${{secrets.SONAR_LOGIN}}
+    - name: Publisch Pre-Release
+      if: ${{ github.ref == 'refs/heads/master' }}
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Development Build"
+        files: |
+          build/org.gravity.updatesite/target/site.zip
+          build/org.gravity.headless.product/target/products/*.zip
+    - name: Publisch Release
+      if: ${{ github.ref_type == 'tag' }}
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        prerelease: false
+        files: |
+          build/org.gravity.updatesite/target/site.zip
+          build/org.gravity.headless.product/target/products/*.zip

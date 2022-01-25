@@ -24,7 +24,8 @@
   </properties>
 	
   <modules>
-    <!--<module>build/org.gravity.updatesite</module>-->
+    <module>build/org.gravity.updatesite</module>
+    <module>build/org.gravity.headless.product</module>
     <module>build/org.gravity.features.eclipse</module>
     <module>build/org.gravity.features.hulk</module>
     <module>build/org.gravity.features.modisco</module>
@@ -32,6 +33,7 @@
     <module>build/org.gravity.features.security</module>
     <module>build/org.gravity.features.typegraph.basic</module>
     <module>build/org.gravity.features.uml</module>
+    <module>build/org.gravity.features.variability</module>
     <module>build/org.gravity.license.epl</module>
     <module>implementation/org.gravity.eclipse</module>
     <module>implementation/org.gravity.eclipse.java.spl</module>
@@ -56,9 +58,10 @@
     <module>implementation/org.gravity.tgg.modisco.pm</module>
     <module>implementation/org.gravity.tgg.modisco.ui</module>
     <module>implementation/org.gravity.tgg.modisco.uml</module>
-    <module>implementation/org.gravity.tgg.pm.uml/</module>
+    <module>implementation/org.gravity.tgg.pm.uml</module>
     <module>implementation/org.gravity.typegraph.basic</module>
-    <module>implementation/org.gravity.typegraph.basic.ui</module>  <module>implementation/org.gravity.typegraph.spl</module>
+    <module>implementation/org.gravity.typegraph.basic.ui</module>
+    <module>implementation/org.gravity.typegraph.spl</module>
     <module>implementation/org.gravity.umlsecrt</module>
     <module>implementation/org.gravity.variability.secpl</module>
     <module>tests/org.gravity.eclipse.tests</module>

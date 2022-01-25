@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.gravity.features.variability"
+      label="GRaViTY Variability Support"
+      version="1.0.0.qualifier"
+      provider-name="University of Koblenz-Landau"
+      license-feature="org.gravity.license.epl"
+      license-feature-version="1.0.0">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <discovery label="Henshin MultiVar" url="https://gravity-tool.org/henshin-multivar/updatesite"/>
+   </url>
+
+   <requires>
+      <import plugin="org.gravity.eclipse"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.gravity.tgg.modisco.pm"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.henshin.variability.multi"/>
+      <import plugin="de.ovgu.featureide.fm.core"/>
+      <import plugin="org.eclipse.emf.henshin.model"/>
+      <import feature="org.gravity.features.modisco" version="1.0.0.qualifier"/>
+      <import feature="org.gravity.features.typegraph.basic" version="1.0.0.qualifier"/>
+      <import feature="de.ovgu.featureide" version="3.7.0.202010141034"/>
+      <import feature="org.eclipse.emf.henshin.sdk" version="1.7.0.202011201910"/>
+   </requires>
+
+   <plugin
+         id="org.gravity.eclipse.java.spl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gravity.typegraph.spl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
