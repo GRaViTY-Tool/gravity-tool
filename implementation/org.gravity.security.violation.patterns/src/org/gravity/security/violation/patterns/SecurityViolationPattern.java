@@ -1,6 +1,7 @@
 package org.gravity.security.violation.patterns;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -8,6 +9,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javax.xml.XMLConstants;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -15,6 +21,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.Match;
@@ -33,6 +40,7 @@ import org.gravity.tgg.pm.uml.CorrespondenceGraphGenerator;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.moflon.tgg.runtime.CorrespondenceModel;
+import org.xml.sax.SAXException;
 
 import carisma.core.analysis.AnalysisHost;
 import carisma.core.analysis.result.AnalysisResultMessage;
@@ -46,6 +54,8 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 
 	public static final String CHECK_NAME = "Security Violation Pattern";
 	public static final String CARISMA_ID = "org.gravity.security.violation.patterns.securedependency";
+
+	private static final Logger LOGGER = Logger.getLogger(SecurityViolationPattern.class);
 
 	private TypeGraph pm;
 	private CorrespondenceModel corr;
@@ -62,8 +72,16 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 
 	private void init(final CorrespondenceModel corr) {
 		this.corr = corr;
-		this.pm = (TypeGraph) corr.getTarget();
-		this.uml = (Model) corr.getSource();
+		final var target = corr.getTarget();
+		if (target.eIsProxy()) {
+			EcoreUtil.resolveAll(corr);
+		}
+		this.pm = (TypeGraph) target;
+		final var source = corr.getSource();
+		if (source.eIsProxy()) {
+			EcoreUtil.resolveAll(corr);
+		}
+		this.uml = (Model) source;
 		this.set.getResources().add(this.pm.eResource());
 		this.set.getResources().add(this.uml.eResource());
 		this.set.getResources().add(this.corr.eResource());
@@ -117,7 +135,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 			final Map<critical, Map<Integer, List<String>>> signatures) {
 		for (final EObject object : contents) {
 			final var values = signatures.get(object);
-			if(values != null) {
+			if (values != null) {
 				final var crit = (critical) object;
 				crit.getSecrecy().clear();
 				crit.getSecrecy().addAll(values.get(UmlsecPackage.CRITICAL__SECRECY));
@@ -139,7 +157,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 				return signature.substring(0, paramSep);
 			}
 			final var typeSep = signature.indexOf(':');
-			if(typeSep > 0) {
+			if (typeSep > 0) {
 				return signature.substring(0, typeSep);
 			}
 			return signature;
@@ -237,40 +255,49 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 	private IProject getProject(final AnalysisHost host) {
 		final var uri = host.getAnalyzedModel().getURI();
 		final var workspace = ResourcesPlugin.getWorkspace().getRoot();
-		IProject project = null;
 		if (uri.isPlatform()) {
-			project = workspace.getFile(new Path(host.getCurrentModelFilename())).getProject();
-		} else {
-			final var string = uri.toString();
-			final var file = new File(string);
-			if (file.exists()) {
-				if (file.isAbsolute()) {
-					for (final IProject p : workspace.getProjects()) {
-						if (file.toPath().startsWith(p.getLocation().toFile().toPath())) {
-							project = p;
-							break;
-						}
-					}
-					if (project == null) {
-						host.addResultMessage(new AnalysisResultMessage(StatusType.ERROR,
-								"Couldn't find project containing the model"));
-					}
-				} else {
-					final var ifile = workspace.getFile(Path.fromPortableString(string));
-					if (ifile.exists()) {
-						project = ifile.getProject();
-					} else {
-						for (final IProject p : workspace.getProjects()) {
-							if (p.getFile(string).exists()) {
-								project = p;
-								break;
-							}
-						}
-					}
+			return workspace.getFile(new Path(host.getCurrentModelFilename())).getProject();
+		}
+		final var string = uri.toString();
+		final var file = new File(string);
+		if (file.exists()) {
+			// Iterate trough parent folders and search for Eclipse project file
+			var parent = file;
+			File projectFile = null;
+			while ((parent != null) && !(projectFile = new File(parent, ".project")).exists()) {
+				parent = parent.getParentFile();
+			}
+			if (projectFile.exists()) {
+				// Read the project name from the project file
+				final var name = readProjectName(projectFile);
+				if(name != null) {
+					return workspace.getProject(name);
 				}
 			}
 		}
-		return project;
+		return null;
+	}
+
+	private String readProjectName(final File projectFile) {
+		final var factory = DocumentBuilderFactory.newInstance();
+		try {
+			factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+			factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+			factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
+			final var builder = factory.newDocumentBuilder();
+			final var doc = builder.parse(projectFile);
+			doc.getDocumentElement().normalize();
+			final var nodes = doc.getFirstChild().getChildNodes();
+			for (var i = 0; i < nodes.getLength(); i++) {
+				final var element = nodes.item(i);
+				if ("name".equals(element.getNodeName())) {
+					return element.getTextContent();
+				}
+			}
+		} catch (IOException | ParserConfigurationException | SAXException e) {
+			LOGGER.error(e);
+		}
+		return null;
 	}
 
 	@Override

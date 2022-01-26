@@ -14,7 +14,8 @@ Require-Bundle: carisma.profile.umlsec;visibility:=reexport,
  org.junit,
  carisma.core,
  org.gravity.hulk,
- org.eclipse.swt
+ org.eclipse.swt,
+ org.apache.log4j
 Export-Package: org.gravity.security.violation.patterns,
  org.gravity.security.violation.patterns.violations,
  org.gravity.security.violation.patterns.violations.impl,
