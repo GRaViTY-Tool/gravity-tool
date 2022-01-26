@@ -29,7 +29,6 @@ import org.gravity.hulk.antipatterngraph.metrics.HIGATMetric;
 import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runners.model.InitializationError;
 
@@ -44,7 +43,7 @@ public class HulkApiTest {
 
 	private static final Logger LOGGER = Logger.getLogger(HulkApiTest.class);
 
-	private static IJavaProject javaProject;
+	private final IJavaProject javaProject;
 
 	/**
 	 * Collects the projects from the current workspace on which Hulk should be
@@ -56,40 +55,29 @@ public class HulkApiTest {
 	 * @throws IOException       If the git client cannot be closed
 	 * @throws InitializationError
 	 */
-	@BeforeClass
-	public static void collectProjects() throws CoreException, GitCloneException, IOException, InitializationError {
+	public HulkApiTest() throws CoreException, GitCloneException, IOException, InitializationError {
 		final var location = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), "repository");
 		new GitTools("https://github.com/GRaViTY-Tool/gravity-evaluation-data.git", location, true, false).close();
 
-		javaProject = EclipseProjectUtil
+		this.javaProject = EclipseProjectUtil
 				.importProjects(new File(location, "gravity-evaluation-data"), new NullProgressMonitor())
 				.parallelStream().filter(project -> "SecureMailApp".equals(project.getName()))
 				.map(JavaProjectUtil::getJavaProject).findAny().orElse(null);
-		if(javaProject == null) {
+		if(this.javaProject == null) {
 			throw new InitializationError("Couldn't load java project");
 		}
 		BasicConfigurator.configure();
 	}
 
 	/**
-	 * Deletes old transformation files to force a transformation from scratch
-	 *
-	 * @throws CoreException
-	 * @throws IOException
-	 */
-	@Before
-	public void clean() throws CoreException, IOException {
-		EclipseProjectUtil.getGravityFolder(javaProject.getProject(), null).delete(true, null);
-	}
-
-	/**
 	 * The HulkAPI is used to detect Blob anti-pattern
 	 *
 	 * @throws DetectionFailedException If the detection failed
+	 * @throws CoreException
 	 */
 	@Test
-	public void detectBlobsAPI() throws DetectionFailedException {
-		final var results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB);
+	public void detectBlobsAPI() throws DetectionFailedException, CoreException {
+		final var results = HulkAPI.detect(this.javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB);
 		assertNotNull(results);
 		LOGGER.log(Level.INFO, "Number of Blobs = " + results.size());
 	}
@@ -98,10 +86,11 @@ public class HulkApiTest {
 	 * The HulkAPI is used to calculate multiple metrics and anti-patterns
 	 *
 	 * @throws DetectionFailedException If the detection failed
+	 * @throws CoreException
 	 */
 	@Test
-	public void detectAllAPI() throws DetectionFailedException {
-		final var results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB,
+	public void detectAllAPI() throws DetectionFailedException, CoreException {
+		final var results = HulkAPI.detect(this.javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB,
 				AntiPatternNames.IGAT, AntiPatternNames.IGAM, AntiPatternNames.SPAGHETTI_CODE,
 				AntiPatternNames.SWISS_ARMY_KNIFE, AntiPatternNames.TOTAL_METHOD_VISIBILITY,
 				AntiPatternNames.TOTAL_COUPLING);
@@ -124,15 +113,26 @@ public class HulkApiTest {
 
 	@Test
 	public void detectAllWithSync() throws NoConverterRegisteredException, CoreException, DetectionFailedException {
-		final var converter = GravityActivator.getDefault().getNewConverter(javaProject.getProject());
+		final var project = this.javaProject.getProject();
+		final var converter = GravityActivator.getDefault().getNewConverter(project);
 		final var success = converter.convertProject(new NullProgressMonitor());
 		assertTrue(success);
 		final var pm = converter.getPG();
 		assertNotNull(pm);
-		final var results = HulkAPI.detect(pm, javaProject.getProject().getLocation().toString(),
+		final var results = HulkAPI.detect(pm, project.getLocation().toString(),
 				AntiPatternNames.BLOB, AntiPatternNames.IGAT, AntiPatternNames.IGAM, AntiPatternNames.SPAGHETTI_CODE,
 				AntiPatternNames.SWISS_ARMY_KNIFE, AntiPatternNames.TOTAL_METHOD_VISIBILITY,
 				AntiPatternNames.TOTAL_COUPLING);
 		assertNotNull(results);
 	}
+
+	@Before
+	public void cleanProject() throws IOException, CoreException {
+		GravityActivator.getDefault().discardConverter(this.javaProject.getProject());
+		final var folder = EclipseProjectUtil.getGravityFolder(this.javaProject.getProject(), null);
+		if(folder.exists()) {
+			folder.delete(true, null);
+		}
+	}
+
 }
