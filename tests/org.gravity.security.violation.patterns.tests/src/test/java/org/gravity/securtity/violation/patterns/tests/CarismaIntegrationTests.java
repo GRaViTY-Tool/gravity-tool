@@ -3,16 +3,14 @@ package org.gravity.securtity.violation.patterns.tests;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
-import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.security.violation.patterns.SecurityViolationPattern;
 import org.gravity.tgg.uml.Transformation;
-import org.junit.Test;
 
 import carisma.core.Carisma;
 import carisma.core.analysis.Analysis;
@@ -30,15 +28,12 @@ import carisma.core.checks.CheckRegistry;
  * @author speldszus
  *
  */
-public class CarismaIntegrationTests {
+public class CarismaIntegrationTests extends AbstractIntegrationTest {
 
 	protected static final Logger LOGGER = Logger.getLogger(CarismaIntegrationTests.class);
 
-	@Test
-	public void testCarismaIntegration() throws IOException, CoreException {
-		final var monitor = new NullProgressMonitor();
-		final var location = new File("instances/SecureViolationPatternsViolation");
-		final var project = EclipseProjectUtil.importProject(location, monitor);
+	@Override
+	protected void run(final IProject project, final NullProgressMonitor monitor) {
 		assertNotNull("Couldn't load the test project", project);
 
 		final var carisma = Carisma.getInstance();
@@ -48,7 +43,12 @@ public class CarismaIntegrationTests {
 		final var check = CheckRegistry.getCheck(descriptor);
 		assertNotNull("Couldn't load check from CARiSMA.", check);
 
-		final var uml = Transformation.getUMLFile(project, monitor);
+		IFile uml;
+		try {
+			uml = Transformation.getUMLFile(project, monitor);
+		} catch (final IOException e) {
+			throw new IllegalStateException(e);
+		}
 		assertNotNull("Couldn't find generated UML model", uml);
 
 		final var analysis = new Analysis("Test CARiSMA Integration", "uml", uml);
