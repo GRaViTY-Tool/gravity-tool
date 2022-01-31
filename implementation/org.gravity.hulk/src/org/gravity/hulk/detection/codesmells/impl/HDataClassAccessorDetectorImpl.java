@@ -87,7 +87,7 @@ public class HDataClassAccessorDetectorImpl extends HCodeSmellDetectorImpl imple
 			}
 			return ad;
 		}
-		tClass.getTAnnotation().removeIf(m-> m instanceof HDataClassAccessor);
+		tClass.getTAnnotation().removeIf(HDataClassAccessor.class::isInstance);
 		return null;
 
 	}

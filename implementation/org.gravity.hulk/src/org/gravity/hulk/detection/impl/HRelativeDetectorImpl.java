@@ -5,18 +5,13 @@ package org.gravity.hulk.detection.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
+import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-
 import org.gravity.hulk.detection.DetectionPackage;
 import org.gravity.hulk.detection.HRelativeDetector;
-
 import org.gravity.hulk.impl.HDetectorImpl;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -82,7 +77,6 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * @generated
 	 */
 	protected HRelativeDetectorImpl() {
-		super();
 	}
 
 	/**
@@ -100,8 +94,9 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isRelative() {
-		return relative;
+		return this.relative;
 	}
 
 	/**
@@ -109,12 +104,22 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRelative(boolean newRelative) {
-		boolean oldRelative = relative;
-		relative = newRelative;
-		if (eNotificationRequired())
+	@Override
+	public void setRelative(final boolean newRelative) {
+		final var oldRelative = this.relative;
+		this.relative = newRelative;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DetectionPackage.HRELATIVE_DETECTOR__RELATIVE,
-					oldRelative, relative));
+					oldRelative, this.relative));
+		}
+	}
+
+	public boolean thresholdReached(final HMetric metric) {
+		return thresholdReached(metric, this.threshold);
+	}
+
+	public static boolean thresholdReached(final HMetric metric, final double threshold) {
+		return Double.valueOf(threshold).compareTo(metric.getValue()) <= 0;
 	}
 
 	/**
@@ -122,8 +127,9 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getThreshold() {
-		return threshold;
+		return this.threshold;
 	}
 
 	/**
@@ -131,12 +137,14 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setThreshold(double newThreshold) {
-		double oldThreshold = threshold;
-		threshold = newThreshold;
-		if (eNotificationRequired())
+	@Override
+	public void setThreshold(final double newThreshold) {
+		final var oldThreshold = this.threshold;
+		this.threshold = newThreshold;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DetectionPackage.HRELATIVE_DETECTOR__THRESHOLD,
-					oldThreshold, threshold));
+					oldThreshold, this.threshold));
+		}
 	}
 
 	/**
@@ -144,6 +152,7 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public abstract double calculateRelativeThreshold(HRelativeValueConstants level);
 
 	/**
@@ -152,7 +161,7 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
 		case DetectionPackage.HRELATIVE_DETECTOR__RELATIVE:
 			return isRelative();
@@ -168,7 +177,7 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DetectionPackage.HRELATIVE_DETECTOR__RELATIVE:
 			setRelative((Boolean) newValue);
@@ -186,7 +195,7 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DetectionPackage.HRELATIVE_DETECTOR__RELATIVE:
 			setRelative(RELATIVE_EDEFAULT);
@@ -204,12 +213,12 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DetectionPackage.HRELATIVE_DETECTOR__RELATIVE:
-			return relative != RELATIVE_EDEFAULT;
+			return this.relative != RELATIVE_EDEFAULT;
 		case DetectionPackage.HRELATIVE_DETECTOR__THRESHOLD:
-			return threshold != THRESHOLD_EDEFAULT;
+			return this.threshold != THRESHOLD_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,7 +229,7 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case DetectionPackage.HRELATIVE_DETECTOR___CALCULATE_RELATIVE_THRESHOLD__HRELATIVEVALUECONSTANTS:
 			return calculateRelativeThreshold((HRelativeValueConstants) arguments.get(0));
@@ -235,14 +244,15 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final var result = new StringBuffer(super.toString());
 		result.append(" (relative: ");
-		result.append(relative);
+		result.append(this.relative);
 		result.append(", threshold: ");
-		result.append(threshold);
+		result.append(this.threshold);
 		result.append(')');
 		return result.toString();
 	}

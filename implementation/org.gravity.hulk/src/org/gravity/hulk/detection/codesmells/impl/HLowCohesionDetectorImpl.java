@@ -19,6 +19,7 @@ import org.gravity.hulk.detection.HRelativeDetector;
 import org.gravity.hulk.detection.codesmells.CodesmellsPackage;
 import org.gravity.hulk.detection.codesmells.HLowCohesionDetector;
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
@@ -167,7 +168,7 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 				setRelative(true);
 				setThreshold(calculateRelativeThreshold(HRelativeValueConstants.HIGH));
 				//
-				if (Double.valueOf(getThreshold()).compareTo(lcom.getValue()) < 0) {
+				if (HRelativeDetectorImpl.thresholdReached(lcom, this.threshold)) {
 					//
 					final var smell = CodesmellsFactory.eINSTANCE.createHLowCohesionSmell();
 					smell.setTAnnotated(tClass);

@@ -15,4 +15,5 @@ Automatic-Module-Name: org.gravity.eclipse.tests
 Bundle-ClassPath: .
 Bundle-Vendor: University of Koblenz-Landau
 Bundle-ActivationPolicy: lazy
-Export-Package: org.gravity.eclipse.tests
+Export-Package: org.gravity.eclipse.tests,
+ org.gravity.eclipse.tests.helper

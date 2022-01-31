@@ -22,7 +22,7 @@
         <setEntry value="org.gravity.tgg.modisco.uml.tests"/>
     </setAttribute>
     <booleanAttribute key="includeOptional" value="true"/>
-    <stringAttribute key="location" value="${workspace_loc:org.gravity.hulk.tests/java_src}"/>
+    <stringAttribute key="location" value="/home/speldszus/workspace/junit-workspace"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/org.gravity.hulk.tests"/>
     </listAttribute>

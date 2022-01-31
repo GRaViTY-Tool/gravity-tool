@@ -92,8 +92,8 @@ public abstract class GravityModiscoTGGConverter extends SynchronizationHelper {
 					return;
 				}
 			}
+			unload();
 		}
-		unload();
 	}
 
 	/**

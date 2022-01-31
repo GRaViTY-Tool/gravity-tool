@@ -219,7 +219,10 @@ public class GravityActivator extends Plugin {
 	public IPGConverter getNewConverter(final IProject project) throws NoConverterRegisteredException, CoreException {
 		final var converter = getSelectedConverterFactory().createConverter(project);
 		converter.setDebug(isVerbose());
-		this.converters.put(project.getName(), converter);
+		final var old = this.converters.put(project.getName(), converter);
+		if((old != null) && (old != converter)) {
+			old.discard();
+		}
 		return converter;
 	}
 

@@ -191,7 +191,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 			throws DiscoveryException {
 		if (this.load && this.discoveredLibs.containsAll(libs)) {
 			try {
-				loadModel();
+				this.model = loadModel();
 				if ((this.model != null) && !this.model.eIsProxy()) {
 					return this.model;
 				} else {
@@ -308,8 +308,13 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 				}
 				resource.load(Collections.emptyMap());
 			}
-			return resource.getContents().stream().filter(MGravityModel.class::isInstance)
+			this.model = resource.getContents().stream().filter(MGravityModel.class::isInstance)
 					.map(MGravityModel.class::cast).findAny().orElse(null);
+			return this.model;
+		}
+		else if(this.model != null) {
+			this.model.eResource().unload();
+			this.model = null;
 		}
 		return null;
 	}

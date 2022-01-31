@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:antipattern="http://www.gravity-tool.org/typegraph/antipatterngraph#//antipattern" xmlns:antipattern_1="platform:/resource/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern" xmlns:codesmells="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells" xmlns:codesmells_1="platform:/resource/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells" xmlns:metrics="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics" xmlns:metrics_1="platform:/resource/org.gravity.hulk/model/Hulk.ecore#//detection/metrics" xmlns:org.gravity.hulk="platform:/resource/org.gravity.hulk/model/Hulk.ecore" xmlns:org.moflon.core.dfs="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore">
+  <org.gravity.hulk:HAntiPatternDetection hDetector="/1/@nodes.0 /1/@nodes.1 /1/@nodes.2 /1/@nodes.3 /1/@nodes.4 /1/@nodes.5 /1/@nodes.6 /1/@nodes.7 /1/@nodes.8 /1/@nodes.9 /1/@nodes.10 /1/@nodes.11 /1/@nodes.12 /1/@nodes.13 /1/@nodes.14 /1/@nodes.15 /1/@nodes.16 /1/@nodes.17 /1/@nodes.18 /1/@nodes.19 /1/@nodes.20 /1/@nodes.21 /1/@nodes.22 /1/@nodes.23 /1/@nodes.24 /1/@nodes.25 /1/@nodes.26 /1/@nodes.27 /1/@nodes.28 /1/@nodes.29 /1/@nodes.30 /1/@nodes.31 /1/@nodes.32 /1/@nodes.33 /1/@nodes.34 /1/@nodes.35 /1/@nodes.36 /1/@nodes.37" programlocation="/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.tgg.tests/java_src/ProjectWithBlob">
+    <apg>
+      <pg href="pm/pm.xmi#/"/>
+      <hAnnotations xsi:type="metrics:HOutgoingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.0"/>
+      <hAnnotations xsi:type="metrics:HOutgoingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.0"/>
+      <hAnnotations xsi:type="metrics:HOutgoingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.0"/>
+      <hAnnotations xsi:type="metrics:HIncommingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.1"/>
+      <hAnnotations xsi:type="metrics:HIncommingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.1"/>
+      <hAnnotations xsi:type="metrics:HIncommingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.1"/>
+      <hAnnotations xsi:type="metrics:HInvocationRelation" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.2"/>
+      <hAnnotations xsi:type="metrics:HInvocationRelation" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.2"/>
+      <hAnnotations xsi:type="metrics:HInvocationRelation" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.2"/>
+      <hAnnotations xsi:type="codesmells:HControllerClassSmell" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.3"/>
+      <hAnnotations xsi:type="metrics:HNumberOfMembersMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.3"/>
+      <hAnnotations xsi:type="metrics:HNumberOfMembersMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.3"/>
+      <hAnnotations xsi:type="metrics:HNumberOfMembersMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.4"/>
+      <hAnnotations xsi:type="codesmells:HLargeClassSmell" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.5"/>
+      <hAnnotations xsi:type="metrics:HLocalFieldUniqueAccessMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.4"/>
+      <hAnnotations xsi:type="metrics:HLocalFieldUniqueAccessMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.4"/>
+      <hAnnotations xsi:type="metrics:HLocalFieldUniqueAccessMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.6"/>
+      <hAnnotations xsi:type="metrics:HNumberOfMethodsMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.5"/>
+      <hAnnotations xsi:type="metrics:HNumberOfMethodsMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.5"/>
+      <hAnnotations xsi:type="metrics:HNumberOfMethodsMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.7"/>
+      <hAnnotations xsi:type="metrics:HNumberOfFieldsMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.6"/>
+      <hAnnotations xsi:type="metrics:HNumberOfFieldsMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.6"/>
+      <hAnnotations xsi:type="metrics:HNumberOfFieldsMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.8"/>
+      <hAnnotations xsi:type="metrics:HLCOM5Metric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.7"/>
+      <hAnnotations xsi:type="metrics:HLCOM5Metric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.7"/>
+      <hAnnotations xsi:type="metrics:HLCOM5Metric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.9"/>
+      <hAnnotations xsi:type="codesmells:HLowCohesionSmell" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.10"/>
+      <hAnnotations xsi:type="antipattern:HGodClassAntiPattern" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.11"/>
+      <hAnnotations xsi:type="metrics:HGetterMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.8"/>
+      <hAnnotations xsi:type="metrics:HGetterMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.8"/>
+      <hAnnotations xsi:type="metrics:HGetterMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.12"/>
+      <hAnnotations xsi:type="metrics:HSetterMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.9"/>
+      <hAnnotations xsi:type="metrics:HSetterMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.9"/>
+      <hAnnotations xsi:type="metrics:HSetterMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.13"/>
+      <hAnnotations xsi:type="metrics:HNACCMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.10"/>
+      <hAnnotations xsi:type="metrics:HNACCMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.10"/>
+      <hAnnotations xsi:type="metrics:HNACCMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.14"/>
+      <hAnnotations xsi:type="codesmells:HDataClassSmell" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.11"/>
+      <hAnnotations xsi:type="codesmells:HDataClassSmell" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.11"/>
+      <hAnnotations xsi:type="codesmells:HDataClassAccessor" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.15"/>
+      <hAnnotations xsi:type="antipattern:HBlobAntiPattern" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.16"/>
+    </apg>
+  </org.gravity.hulk:HAntiPatternDetection>
+  <org.moflon.core.dfs:DFSGraph>
+    <edges source="/1/@nodes.15" target="/1/@nodes.6"/>
+    <edges source="/1/@nodes.15" target="/1/@nodes.5"/>
+    <edges source="/1/@nodes.16" target="/1/@nodes.8"/>
+    <edges source="/1/@nodes.16" target="/1/@nodes.9"/>
+    <edges source="/1/@nodes.16" target="/1/@nodes.1" type="CROSS_EDGE"/>
+    <edges source="/1/@nodes.17" target="/1/@nodes.14"/>
+    <edges source="/1/@nodes.17" target="/1/@nodes.13"/>
+    <edges source="/1/@nodes.18" target="/1/@nodes.3"/>
+    <edges source="/1/@nodes.18" target="/1/@nodes.1"/>
+    <edges source="/1/@nodes.18" target="/1/@nodes.2"/>
+    <edges source="/1/@nodes.20" target="/1/@nodes.21"/>
+    <edges source="/1/@nodes.25" target="/1/@nodes.16"/>
+    <edges source="/1/@nodes.26" target="/1/@nodes.25"/>
+    <edges source="/1/@nodes.27" target="/1/@nodes.26"/>
+    <edges source="/1/@nodes.28" target="/1/@nodes.18"/>
+    <edges source="/1/@nodes.29" target="/1/@nodes.0"/>
+    <edges source="/1/@nodes.30" target="/1/@nodes.15"/>
+    <edges source="/1/@nodes.31" target="/1/@nodes.30"/>
+    <edges source="/1/@nodes.31" target="/1/@nodes.29"/>
+    <edges source="/1/@nodes.31" target="/1/@nodes.28"/>
+    <edges source="/1/@nodes.32" target="/1/@nodes.10"/>
+    <edges source="/1/@nodes.33" target="/1/@nodes.11"/>
+    <edges source="/1/@nodes.34" target="/1/@nodes.17"/>
+    <edges source="/1/@nodes.35" target="/1/@nodes.31"/>
+    <edges source="/1/@nodes.35" target="/1/@nodes.27"/>
+    <edges source="/1/@nodes.36" target="/1/@nodes.29"/>
+    <edges source="/1/@nodes.36" target="/1/@nodes.33"/>
+    <edges source="/1/@nodes.36" target="/1/@nodes.5"/>
+    <edges source="/1/@nodes.37" target="/1/@nodes.29"/>
+    <edges source="/1/@nodes.37" target="/1/@nodes.12"/>
+    <edges source="/1/@nodes.37" target="/1/@nodes.7"/>
+    <edges source="/1/@nodes.37" target="/1/@nodes.11"/>
+    <edges source="/1/@nodes.37" target="/1/@nodes.10"/>
+    <edges source="/1/@nodes.37" target="/1/@nodes.34"/>
+    <nodes xsi:type="metrics_1:HMemberNumberCalculator" incoming="/1/@edges.15" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HNumberOfMembersMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.3"/>
+      <hAnnotation xsi:type="metrics:HNumberOfMembersMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.3"/>
+      <hAnnotation xsi:type="metrics:HNumberOfMembersMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.4"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HMethodNumberCalculator" incoming="/1/@edges.4 /1/@edges.8" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HNumberOfMethodsMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.5"/>
+      <hAnnotation xsi:type="metrics:HNumberOfMethodsMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.5"/>
+      <hAnnotation xsi:type="metrics:HNumberOfMethodsMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.7"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HFieldNumberCalculator" incoming="/1/@edges.9" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HNumberOfFieldsMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.6"/>
+      <hAnnotation xsi:type="metrics:HNumberOfFieldsMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.6"/>
+      <hAnnotation xsi:type="metrics:HNumberOfFieldsMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.8"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HLocalFieldUniqueAccessCalculator" incoming="/1/@edges.7" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HLocalFieldUniqueAccessMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.4"/>
+      <hAnnotation xsi:type="metrics:HLocalFieldUniqueAccessMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.4"/>
+      <hAnnotation xsi:type="metrics:HLocalFieldUniqueAccessMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.6"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HAfferentCouplingCalculator" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HIncommingInvocationCalculator" incoming="/1/@edges.1 /1/@edges.27" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HIncommingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.1"/>
+      <hAnnotation xsi:type="metrics:HIncommingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.1"/>
+      <hAnnotation xsi:type="metrics:HIncommingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.1"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HOutgoingInvocationCalculator" incoming="/1/@edges.0" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HOutgoingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.0"/>
+      <hAnnotation xsi:type="metrics:HOutgoingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.0"/>
+      <hAnnotation xsi:type="metrics:HOutgoingInvocationMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.0"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HDepthOfInheritanceCalculator" incoming="/1/@edges.30" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HGetterCalculator" incoming="/1/@edges.2" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HGetterMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.8"/>
+      <hAnnotation xsi:type="metrics:HGetterMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.8"/>
+      <hAnnotation xsi:type="metrics:HGetterMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.12"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HSetterCalculator" incoming="/1/@edges.3" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HSetterMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.9"/>
+      <hAnnotation xsi:type="metrics:HSetterMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.9"/>
+      <hAnnotation xsi:type="metrics:HSetterMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.13"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HAverageParametersCalculator" incoming="/1/@edges.20 /1/@edges.32" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HAverageOverloadingInClassCalculator" incoming="/1/@edges.21 /1/@edges.31" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HNumberOfChildCalculator" incoming="/1/@edges.29" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HLocalMethodAccessCalculator" incoming="/1/@edges.6" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HLocalFieldsAccessCalculator" incoming="/1/@edges.5" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HInvocationRelationCalculator" incoming="/1/@edges.16" outgoing="/1/@edges.0 /1/@edges.1" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HInvocationRelation" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.2"/>
+      <hAnnotation xsi:type="metrics:HInvocationRelation" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.2"/>
+      <hAnnotation xsi:type="metrics:HInvocationRelation" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.2"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HGetterSetterMethodRelationCalculator" incoming="/1/@edges.11" outgoing="/1/@edges.2 /1/@edges.3 /1/@edges.4" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HNACCMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.10"/>
+      <hAnnotation xsi:type="metrics:HNACCMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.10"/>
+      <hAnnotation xsi:type="metrics:HNACCMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.14"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HLocalAccessRelationCalculator" incoming="/1/@edges.22" outgoing="/1/@edges.5 /1/@edges.6" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HLcom5Calculator" incoming="/1/@edges.14" outgoing="/1/@edges.7 /1/@edges.8 /1/@edges.9" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="metrics:HLCOM5Metric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.7"/>
+      <hAnnotation xsi:type="metrics:HLCOM5Metric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.7"/>
+      <hAnnotation xsi:type="metrics:HLCOM5Metric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.9"/>
+    </nodes>
+    <nodes xsi:type="metrics_1:HTotalCouplingCalculator" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HIGATCalculator" outgoing="/1/@edges.10" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HIGAMCalculator" incoming="/1/@edges.10" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HTotalVisibilityCalculator" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="metrics_1:HEfferentCouplingCalculator" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="codesmells_1:HEmptyClassDetector" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="codesmells_1:HGetterSetterDetector" incoming="/1/@edges.12" outgoing="/1/@edges.11" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="codesmells:HGetterSetterSmell" href="pm/pm.xmi#//@methods.3/@signatures.0/@definitions.0/@tAnnotation.0"/>
+      <hAnnotation xsi:type="codesmells:HGetterSetterSmell" href="pm/pm.xmi#//@methods.6/@signatures.0/@definitions.1/@tAnnotation.0"/>
+      <hAnnotation xsi:type="metrics:HNACCMetric" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.10"/>
+      <hAnnotation xsi:type="codesmells:HGetterSetterSmell" href="pm/pm.xmi#//@methods.6/@signatures.0/@definitions.0/@tAnnotation.0"/>
+      <hAnnotation xsi:type="codesmells:HGetterSetterSmell" href="pm/pm.xmi#//@methods.3/@signatures.0/@definitions.1/@tAnnotation.0"/>
+      <hAnnotation xsi:type="metrics:HNACCMetric" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.10"/>
+      <hAnnotation xsi:type="metrics:HNACCMetric" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.14"/>
+    </nodes>
+    <nodes xsi:type="codesmells_1:HDataClassDetector" incoming="/1/@edges.13" outgoing="/1/@edges.12" hAntiPatternHandling="/0" threshold="0.6666666666666666">
+      <hAnnotation xsi:type="codesmells:HDataClassSmell" href="pm/pm.xmi#//@ownedTypes.5/@tAnnotation.11"/>
+      <hAnnotation xsi:type="codesmells:HDataClassSmell" href="pm/pm.xmi#//@ownedTypes.8/@tAnnotation.11"/>
+    </nodes>
+    <nodes xsi:type="codesmells_1:HDataClassAccessorDetector" incoming="/1/@edges.24" outgoing="/1/@edges.13" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="codesmells:HDataClassAccessor" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.15"/>
+    </nodes>
+    <nodes xsi:type="codesmells_1:HLowCohesionDetector" incoming="/1/@edges.19" outgoing="/1/@edges.14" hAntiPatternHandling="/0" threshold="0.8">
+      <hAnnotation xsi:type="codesmells:HLowCohesionSmell" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.10"/>
+    </nodes>
+    <nodes xsi:type="codesmells_1:HLargeClassDetector" incoming="/1/@edges.18 /1/@edges.25 /1/@edges.28" outgoing="/1/@edges.15" hAntiPatternHandling="/0" threshold="9.0">
+      <hAnnotation xsi:type="codesmells:HLargeClassSmell" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.5"/>
+    </nodes>
+    <nodes xsi:type="codesmells_1:HContollerClassDetector" incoming="/1/@edges.17" outgoing="/1/@edges.16" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="codesmells:HControllerClassSmell" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.3"/>
+    </nodes>
+    <nodes xsi:type="antipattern_1:HGodClassDetector" incoming="/1/@edges.23" outgoing="/1/@edges.17 /1/@edges.18 /1/@edges.19" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="antipattern:HGodClassAntiPattern" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.11"/>
+    </nodes>
+    <nodes xsi:type="codesmells_1:HManyParametersDetector" outgoing="/1/@edges.20" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="codesmells_1:HMuchOverloadingDetector" incoming="/1/@edges.26" outgoing="/1/@edges.21" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="codesmells_1:HIntenseFieldUsageDetector" incoming="/1/@edges.33" outgoing="/1/@edges.22" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="antipattern_1:HBlobDetector" outgoing="/1/@edges.23 /1/@edges.24" hAntiPatternHandling="/0">
+      <hAnnotation xsi:type="antipattern:HBlobAntiPattern" href="pm/pm.xmi#//@ownedTypes.11/@tAnnotation.16"/>
+    </nodes>
+    <nodes xsi:type="antipattern_1:HSwissArmyKnifeDetector" outgoing="/1/@edges.25 /1/@edges.26 /1/@edges.27" hAntiPatternHandling="/0"/>
+    <nodes xsi:type="antipattern_1:HSpaghettiCodeDetector" outgoing="/1/@edges.28 /1/@edges.29 /1/@edges.30 /1/@edges.31 /1/@edges.32 /1/@edges.33" hAntiPatternHandling="/0"/>
+  </org.moflon.core.dfs:DFSGraph>
+</xmi:XMI>

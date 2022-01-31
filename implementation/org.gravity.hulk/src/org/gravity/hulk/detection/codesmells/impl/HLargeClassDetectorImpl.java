@@ -19,6 +19,7 @@ import org.gravity.hulk.detection.HRelativeDetector;
 import org.gravity.hulk.detection.codesmells.CodesmellsPackage;
 import org.gravity.hulk.detection.codesmells.HLargeClassDetector;
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
@@ -162,7 +163,7 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 			if (isRelative()) {
 				setThreshold(calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH));
 			}
-			if (Double.valueOf(getThreshold()).compareTo(nm.getValue()) < 0) {
+			if (HRelativeDetectorImpl.thresholdReached(nm, getThreshold())) {
 
 				final var largeClassSmell = CodesmellsFactory.eINSTANCE.createHLargeClassSmell();
 				largeClassSmell.setTAnnotated(tClass);

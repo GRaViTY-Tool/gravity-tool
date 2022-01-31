@@ -9,14 +9,12 @@ import java.io.IOException;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.io.GitCloneException;
-import org.gravity.eclipse.io.GitTools;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.hulk.HulkAPI;
@@ -50,20 +48,15 @@ public class HulkApiTest {
 	 * executed
 	 *
 	 * @return A list of projects and their names
-	 * @throws CoreException     If no projects could be imported
-	 * @throws GitCloneException If the test projects cannot be cloned
-	 * @throws IOException       If the git client cannot be closed
+	 * @throws CoreException       If no projects could be imported
+	 * @throws GitCloneException   If the test projects cannot be cloned
+	 * @throws IOException         If the git client cannot be closed
 	 * @throws InitializationError
 	 */
 	public HulkApiTest() throws CoreException, GitCloneException, IOException, InitializationError {
-		final var location = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), "repository");
-		new GitTools("https://github.com/GRaViTY-Tool/gravity-evaluation-data.git", location, true, false).close();
-
-		this.javaProject = EclipseProjectUtil
-				.importProjects(new File(location, "gravity-evaluation-data"), new NullProgressMonitor())
-				.parallelStream().filter(project -> "SecureMailApp".equals(project.getName()))
-				.map(JavaProjectUtil::getJavaProject).findAny().orElse(null);
-		if(this.javaProject == null) {
+		this.javaProject = JavaProjectUtil.getJavaProject(
+				EclipseProjectUtil.importProject(new File(new File("java_src"), "ProjectWithBlob").getAbsoluteFile(), null));
+		if (this.javaProject == null) {
 			throw new InitializationError("Couldn't load java project");
 		}
 		BasicConfigurator.configure();
@@ -119,8 +112,8 @@ public class HulkApiTest {
 		assertTrue(success);
 		final var pm = converter.getPG();
 		assertNotNull(pm);
-		final var results = HulkAPI.detect(pm, project.getLocation().toString(),
-				AntiPatternNames.BLOB, AntiPatternNames.IGAT, AntiPatternNames.IGAM, AntiPatternNames.SPAGHETTI_CODE,
+		final var results = HulkAPI.detect(pm, project.getLocation().toString(), AntiPatternNames.BLOB,
+				AntiPatternNames.IGAT, AntiPatternNames.IGAM, AntiPatternNames.SPAGHETTI_CODE,
 				AntiPatternNames.SWISS_ARMY_KNIFE, AntiPatternNames.TOTAL_METHOD_VISIBILITY,
 				AntiPatternNames.TOTAL_COUPLING);
 		assertNotNull(results);
@@ -130,7 +123,7 @@ public class HulkApiTest {
 	public void cleanProject() throws IOException, CoreException {
 		GravityActivator.getDefault().discardConverter(this.javaProject.getProject());
 		final var folder = EclipseProjectUtil.getGravityFolder(this.javaProject.getProject(), null);
-		if(folder.exists()) {
+		if (folder.exists()) {
 			folder.delete(true, null);
 		}
 	}
