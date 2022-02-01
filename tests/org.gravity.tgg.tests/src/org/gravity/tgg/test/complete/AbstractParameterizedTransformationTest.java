@@ -42,7 +42,7 @@ public abstract class AbstractParameterizedTransformationTest {
 	/**
 	 * If the test should be executed in debug mode
 	 */
-	protected static final boolean DEBUG = false;
+	protected static final boolean DEBUG = true;
 	private static final List<String> SKIP = Arrays.asList("DF-AssignmentArgument", "ParamToParam");
 	/**
 	 * The logger of this class

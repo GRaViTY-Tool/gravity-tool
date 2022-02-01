@@ -22,6 +22,7 @@ public abstract class AbstractIntegrationTest {
 			final var original = EclipseProjectUtil.importProject(location, monitor);
 			assertNotNull("Couldn't load the test project", original);
 			project = EclipseProjectUtil.copyProject(original, original.getName() + "-Copy");
+
 			run(project, monitor);
 		} finally {
 			if ((project != null) && project.exists()) {

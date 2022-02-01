@@ -25,7 +25,6 @@ import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.uml2.uml.Model;
-import org.eclipse.uml2.uml.resource.UMLResource;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
@@ -37,7 +36,6 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import org.moflon.tgg.algorithm.configuration.PGSavingConfigurator;
 
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonObject;
@@ -116,7 +114,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		try {
 			conv = new MoDiscoTGGConverter(this.project);
 			conv.setDebug(DEBUG);
-			conv.disableAutosave();
+			//			conv.disableAutosave();
 		} catch (final IOException e) {
 			throw new AssertionError(String.format("Unable to load '%s': %s", this.project, e.getMessage()));
 		}
@@ -127,7 +125,6 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 
 		final var pg = conv.getPG();
 		assertNotNull(pg);
-		save(pg, "pm", GravityActivator.FILE_EXTENSION_XMI);
 
 		if (JSON_CHECKS) {
 			final var expectJsonFile = this.project.getProject().getFile("expect.json");
@@ -189,8 +186,6 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 			Model model;
 			try {
 				final var transformation = new Transformation(this.project, false);
-				transformation.setConfigurator(new PGSavingConfigurator(transformation,
-						this.project.getProject().getFile("pg.xmi").getLocation().toFile().getAbsolutePath()));
 				if (ADD_UMLSEC) {
 					model = transformation.projectToModel(ADD_UMLSEC, monitor);
 				} else {
@@ -201,10 +196,6 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 			} catch (TransformationFailedException | IOException | CoreException e) {
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 				throw new AssertionError(e.getMessage(), e);
-			}
-
-			if (DEBUG) {
-				save(model, "uml", UMLResource.FILE_EXTENSION);
 			}
 
 		} finally {

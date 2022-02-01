@@ -9,6 +9,7 @@ import java.util.function.Consumer;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -53,12 +54,16 @@ public final class Transformation extends GravityModiscoTGGConverter {
 	 */
 	static final String UML = "uml";
 
+	/**
+	 * The name of the output file
+	 */
+	private static final String MODEL_UML = "classdiagram.uml";
+
 	public Transformation(final IJavaProject javaProject) throws IOException, CoreException {
 		this(javaProject, true);
 	}
 
-	public Transformation(final IJavaProject javaProject, final boolean load)
-			throws CoreException, IOException {
+	public Transformation(final IJavaProject javaProject, final boolean load) throws CoreException, IOException {
 		super(javaProject, UML, load);
 	}
 
@@ -311,14 +316,28 @@ public final class Transformation extends GravityModiscoTGGConverter {
 		return GravityUmlActivator.getTransformationFactory().drop(this.project.getProject());
 	}
 
-
 	public static IFile getUMLFile(final IProject project, final NullProgressMonitor monitor) throws IOException {
-		return EclipseProjectUtil.getGravityFolder(project, monitor).getFolder(UML).getFile(project.getName()+".uml");
+		return getUMLFile(EclipseProjectUtil.getGravityFolder(project, monitor).getFolder(UML));
+	}
+
+	private static IFile getUMLFile(final IFolder folder) {
+		final var oldFile = folder.getFile(folder.getProject().getName() + '.' + UML);
+		if ((oldFile != null) && oldFile.exists()) {
+			final var file = folder.getFile(MODEL_UML);
+			try {
+				oldFile.move(file.getLocation(), true, null);
+			} catch (final CoreException e) {
+				LOGGER.error(e);
+				return oldFile;
+			}
+			return file;
+		}
+		return folder.getFile(MODEL_UML);
 	}
 
 	@Override
 	protected IFile getTargetFile() {
-		return this.outputFolder.getFile(this.outputFolder.getProject().getName() + ".uml");
+		return getUMLFile(this.outputFolder);
 	}
 
 	@Override

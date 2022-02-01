@@ -1,9 +1,13 @@
 package org.gravity.securtity.violation.patterns.tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -16,6 +20,9 @@ import carisma.core.Carisma;
 import carisma.core.analysis.Analysis;
 import carisma.core.analysis.CheckReference;
 import carisma.core.analysis.UIConnector;
+import carisma.core.analysis.result.AnalysisResult;
+import carisma.core.analysis.result.AnalysisResultMessage;
+import carisma.core.analysis.result.CheckResult;
 import carisma.core.analysis.result.StatusType;
 import carisma.core.checks.CheckDescriptor;
 import carisma.core.checks.CheckParameter;
@@ -49,7 +56,9 @@ public class CarismaIntegrationTests extends AbstractIntegrationTest {
 		} catch (final IOException e) {
 			throw new IllegalStateException(e);
 		}
-		assertNotNull("Couldn't find generated UML model", uml);
+		final var message = "Couldn't find generated UML model";
+		assertNotNull(message, uml);
+		assertTrue(message, uml.exists());
 
 		final var analysis = new Analysis("Test CARiSMA Integration", "uml", uml);
 		analysis.getChecks().add(new CheckReference(SecurityViolationPattern.CARISMA_ID, true));
@@ -86,6 +95,19 @@ public class CarismaIntegrationTests extends AbstractIntegrationTest {
 			}
 		});
 		final var results = carisma.getAnalysisResults();
+		expectError(results);
+	}
+
+	private void expectError(final List<AnalysisResult> results) {
 		assertFalse(results.isEmpty());
+		for (final AnalysisResult result : results) {
+			for (final CheckResult checkResult : result.getCheckResults()) {
+				assertEquals(StatusType.ERROR, checkResult.getStatus());
+				for (final AnalysisResultMessage analysisResult : checkResult.getResults()) {
+					assertNotEquals("A java error occurred while performing check - view report for more information.",
+							analysisResult.getText());
+				}
+			}
+		}
 	}
 }
