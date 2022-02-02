@@ -4,12 +4,12 @@
 package org.gravity.eclipse.tests;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 
 /**
@@ -31,13 +31,13 @@ public final class TestHelper {
 
 	/**
 	 * Prepares the projects for a parameterized test:
-	 * 
+	 *
 	 * Object[]{name:java.lang.String, project:org.eclipse.jdt.core.IJavaProject}
 	 *
 	 * @param importProjects The projects the test should be executed on
 	 * @return The collection containing the prepared test data
 	 */
-	public static Collection<Object[]> prepareTestData(Collection<IProject> importProjects) {
+	public static List<Object[]> prepareTestData(final Collection<IProject> importProjects) {
 		return importProjects.parallelStream().filter(project -> {
 			try {
 				return project.hasNature(JavaCore.NATURE_ID);
@@ -45,9 +45,8 @@ public final class TestHelper {
 				LOGGER.error(e);
 				return false;
 			}
-		}).map(project -> {
-
-			final IJavaProject javaProject = JavaCore.create(project);
+		}).sorted((arg0, arg1) -> arg0.getName().compareTo(arg1.getName())).map(project -> {
+			final var javaProject = JavaCore.create(project);
 			return new Object[] { project.getName(), javaProject };
 		}).collect(Collectors.toList());
 	}
