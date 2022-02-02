@@ -321,17 +321,6 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 	}
 
 	private static IFile getUMLFile(final IFolder folder) {
-		final var oldFile = folder.getFile(folder.getProject().getName() + '.' + UML);
-		if ((oldFile != null) && oldFile.exists()) {
-			final var file = folder.getFile(MODEL_UML);
-			try {
-				oldFile.move(file.getFullPath(), true, null);
-			} catch (final CoreException e) {
-				LOGGER.error(e);
-				return oldFile;
-			}
-			return file;
-		}
 		return folder.getFile(MODEL_UML);
 	}
 
