@@ -7,6 +7,7 @@ import java.util.Collections;
 
 import javax.ws.rs.core.Response;
 
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -26,6 +27,7 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 @TestInstance(Lifecycle.PER_CLASS)
 abstract class AbstractWebApiTests {
 
+	private static final Logger LOGGER = Logger.getLogger(AbstractWebApiTests.class);
 	/**
 	 * The cache location of the tests
 	 */
@@ -40,8 +42,6 @@ abstract class AbstractWebApiTests {
 	public void initCache() throws IOException {
 		this.cache = FileUtils.createTempDirectory(this.getClass().getName()).toFile();
 	}
-
-
 
 	/**
 	 * Deletes the temporary cache
@@ -63,6 +63,10 @@ abstract class AbstractWebApiTests {
 		final var string = response.readEntity(String.class);
 		try (var stream = new ByteArrayInputStream(string.getBytes())) {
 			resource.load(stream, Collections.emptyMap());
+		} catch (final IOException e) {
+			LOGGER.error(e);
+			LOGGER.error("Content: " + string);
+			throw e;
 		}
 		return resource;
 	}
