@@ -456,14 +456,6 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated NOT
 	 */
 	@Override
-	public abstract boolean isSuperTypeOf(TAbstractType tType);
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
 	public boolean isSubTypeOf(final TAbstractType tType) {
 		// [user code injected with eMoflon]
 		return tType.isSuperTypeOf(this);
@@ -912,9 +904,6 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 	// <-- [user code injected with eMoflon]
 
-	@Override
-	public abstract boolean hasCommonSuperType(TAbstractType tAbstractType);
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -1031,21 +1020,21 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 			method.setTName(name);
 			method.setModel(pm);
 		}
-		TMethodSignature signature = method.getMethodSignature(returnType, returnLowerBound, returnUpperBound,
+		TMethodSignature methodSignature = method.getMethodSignature(returnType, returnLowerBound, returnUpperBound,
 				parameters, parameterLowerBounds, parameterUpperBounds);
-		if (signature == null) {
-			signature = method.createMethodSignature(returnType, returnLowerBound, returnUpperBound, parameters,
+		if (methodSignature == null) {
+			methodSignature = method.createMethodSignature(returnType, returnLowerBound, returnUpperBound, parameters,
 					parameterLowerBounds, parameterUpperBounds);
 		}
 
-		TMethodDefinition definition = signature.getTDefinition(this);
+		TMethodDefinition definition = methodSignature.getTDefinition(this);
 		if (definition == null) {
-			getSignature().add(signature);
+			getSignature().add(methodSignature);
 			definition = BasicFactory.eINSTANCE.createTMethodDefinition();
 			if (this instanceof TClass) {
-				final EList<TMethodDefinition> otherMethodDefinitions = signature.getMethodDefinitions();
+				final EList<TMethodDefinition> otherMethodDefinitions = methodSignature.getMethodDefinitions();
 				Deque<TClass> parent = new LinkedList<>(((TClass) this).getParentClasses());
-				while (!parent.isEmpty()) {
+				while (parent != null && !parent.isEmpty()) {
 					final TClass parentCopy = parent.pop();
 					final Optional<TMethodDefinition> match = otherMethodDefinitions.parallelStream()
 							.filter(def -> parentCopy.equals(def.getDefinedBy())).findAny();
@@ -1057,7 +1046,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 					}
 				}
 			}
-			definition.setSignature(signature);
+			definition.setSignature(methodSignature);
 			definition.setDefinedBy(this);
 			definition.setReturnType(returnType);
 			definition.setLowerBound(returnLowerBound);
@@ -1086,33 +1075,33 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 			field.setTName(name);
 			field.setModel(pm);
 		}
-		TFieldSignature signature = null;
+		TFieldSignature fieldSignature = null;
 		for (final TFieldSignature candidate : field.getSignatures()) {
 			if (candidate.getType().equals(type) && (lowerBound == candidate.getLowerBound())
 					&& (upperBound == candidate.getUpperBound())) {
-				signature = candidate;
+				fieldSignature = candidate;
 				break;
 			}
 		}
-		if (signature == null) {
-			signature = BasicFactory.eINSTANCE.createTFieldSignature();
-			signature.setField(field);
-			signature.setType(type);
-			signature.setLowerBound(lowerBound);
-			signature.setUpperBound(upperBound);
+		if (fieldSignature == null) {
+			fieldSignature = BasicFactory.eINSTANCE.createTFieldSignature();
+			fieldSignature.setField(field);
+			fieldSignature.setType(type);
+			fieldSignature.setLowerBound(lowerBound);
+			fieldSignature.setUpperBound(upperBound);
 		}
 
 		TFieldDefinition definition = null;
-		for (final TFieldDefinition candidate : signature.getFieldDefinitions()) {
+		for (final TFieldDefinition candidate : fieldSignature.getFieldDefinitions()) {
 			if (equals(candidate.getDefinedBy())) {
 				definition = candidate;
 				break;
 			}
 		}
 		if (definition == null) {
-			getSignature().add(signature);
+			getSignature().add(fieldSignature);
 			definition = BasicFactory.eINSTANCE.createTFieldDefinition();
-			definition.setSignature(signature);
+			definition.setSignature(fieldSignature);
 			definition.setDefinedBy(this);
 			if (this instanceof TClass) {
 				final Deque<TAbstractType> parents = new LinkedList<>();
@@ -1122,8 +1111,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 					if (parent instanceof TClass) {
 
 						parents.addAll(((TClass) parent).getParentClasses());
-						if ((parent != null) && parent.getSignature().contains(signature)) {
-							definition.setHiding(signature.getTDefinition(parent));
+						if ((parent != null) && parent.getSignature().contains(fieldSignature)) {
+							definition.setHiding(fieldSignature.getTDefinition(parent));
 							break;
 						}
 					}
