@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.gravity.eclipse.util.JavaProjectUtil;
 
 public class TransformationFactory {
@@ -58,5 +60,13 @@ public class TransformationFactory {
 			return (converter != null) && converter.discard();
 		}
 		return false;
+	}
+
+	void shutdown() {
+		final IProgressMonitor monitor = new NullProgressMonitor();
+		for (final Transformation converter : this.map.values()) {
+			converter.save(monitor);
+			converter.discard();
+		}
 	}
 }

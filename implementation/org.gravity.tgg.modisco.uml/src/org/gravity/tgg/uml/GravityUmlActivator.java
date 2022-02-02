@@ -18,13 +18,13 @@ public class GravityUmlActivator extends AbstractUIPlugin {
 	 */
 	public static final String PLUGIN_ID = "org.gravity.tgg.modisco.uml";
 	
-	private static TransformationFactory FACTORY = null;
+	private static TransformationFactory factory = null;
 	
 	public static TransformationFactory getTransformationFactory() {
-		if(FACTORY == null) {
-			FACTORY = new TransformationFactory();
+		if(factory == null) {
+			factory = new TransformationFactory();
 		}
-		return FACTORY;
+		return factory;
 	}
 
 }

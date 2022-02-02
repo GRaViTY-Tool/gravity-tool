@@ -3,7 +3,6 @@ package org.gravity.tgg.test.complete;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -35,24 +34,28 @@ import org.junit.runners.Parameterized.Parameters;
 import org.moflon.tgg.language.LanguagePackage;
 import org.moflon.tgg.runtime.RuntimePackage;
 
-//@RunWith(ParallelParameterized.class)
 @RunWith(Parameterized.class)
 public abstract class AbstractParameterizedTransformationTest {
 
 	/**
 	 * If the test should be executed in debug mode
 	 */
-	protected static final boolean DEBUG = true;
-	private static final List<String> SKIP = Arrays.asList("DF-AssignmentArgument", "ParamToParam");
+	protected static final boolean DEBUG = false;
+
+	/**
+	 * The projects that should be skipped
+	 */
+	private static final List<String> SKIP = Arrays.asList();
+
 	/**
 	 * The logger of this class
 	 */
 	protected static final Logger LOGGER = Logger.getLogger(AbstractParameterizedTransformationTest.class);
+
 	protected final IJavaProject project;
 	protected final String name;
+
 	protected static Map<String, MGravityModel> models = new ConcurrentHashMap<>();
-
-
 
 	/**
 	 * The constructor taking the collected projects
@@ -91,7 +94,7 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * @throws CoreException
 	 */
 	@Parameters(name = "{index}: Forward Transformation From Src: {0}")
-	public static final Collection<Object[]> data() throws CoreException {
+	public static final List<Object[]> data() throws CoreException {
 		LOGGER.info("Collect test data");
 		final List<IProject> projects = EclipseProjectUtil
 				.importProjectsFromWorkspaceLocation(new NullProgressMonitor()).parallelStream()

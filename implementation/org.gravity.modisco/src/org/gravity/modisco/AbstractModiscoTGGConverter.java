@@ -28,23 +28,22 @@ import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
-import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.moflon.tgg.algorithm.datastructures.SynchronizationProtocol;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.moflon.tgg.language.analysis.StaticAnalysis;
 import org.moflon.tgg.runtime.CorrespondenceModel;
 import org.moflon.tgg.runtime.PrecedenceStructure;
 
-public abstract class GravityModiscoTGGConverter extends SynchronizationHelper {
+public abstract class AbstractModiscoTGGConverter extends SynchronizationHelper {
 
-	private static final Logger LOGGER = Logger.getLogger(GravityModiscoTGGConverter.class);
+	private static final Logger LOGGER = Logger.getLogger(AbstractModiscoTGGConverter.class);
 
 	private static final String PROTOCOL_BIN = "_protocol.bin";
 	private static final String PROTOCOL_XMI = "_protocol.xmi";
 	private static final String CORRESPONDENCE_MODEL_XMI = "_correspondence_model.xmi";
 
 	protected final IJavaProject project;
-	protected final GravityModiscoProjectDiscoverer discoverer;
+	protected final IGravityModiscoProjectDiscoverer discoverer;
 	protected final IFolder outputFolder;
 
 	protected boolean load;
@@ -53,7 +52,7 @@ public abstract class GravityModiscoTGGConverter extends SynchronizationHelper {
 
 	private final String id;
 
-	protected GravityModiscoTGGConverter(final IJavaProject project, final String id, final boolean load)
+	protected AbstractModiscoTGGConverter(final IJavaProject project, final String id, final boolean load)
 			throws IOException, CoreException {
 		this.id = id;
 		this.load = load;
@@ -64,8 +63,7 @@ public abstract class GravityModiscoTGGConverter extends SynchronizationHelper {
 			this.outputFolder.create(true, true, new NullProgressMonitor());
 		}
 
-		this.discoverer = load ? GravityMoDiscoActivator.getDiscoverer(this.project)
-				: new GravityModiscoProjectDiscoverer(this.project, load);
+		this.discoverer= GravityMoDiscoActivator.getDiscoverer(this.project, load);
 
 		this.set = initResourceSet(this.discoverer);
 		if (load) {
@@ -148,7 +146,7 @@ public abstract class GravityModiscoTGGConverter extends SynchronizationHelper {
 	 * @param set        The resource set which should be used
 	 * @throws IOException
 	 */
-	protected ResourceSet initResourceSet(final GravityModiscoProjectDiscoverer discoverer) throws IOException {
+	protected ResourceSet initResourceSet(final IGravityModiscoProjectDiscoverer discoverer) throws IOException {
 		this.set = discoverer.getResourceSet();
 		this.set.getResourceFactoryRegistry().getExtensionToFactoryMap()
 		.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());

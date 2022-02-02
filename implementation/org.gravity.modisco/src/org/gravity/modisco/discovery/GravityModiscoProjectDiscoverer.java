@@ -1,6 +1,7 @@
 package org.gravity.modisco.discovery;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
@@ -47,6 +48,7 @@ import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.modisco.GravityMoDiscoActivator;
+import org.gravity.modisco.IGravityModiscoProjectDiscoverer;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 import org.gravity.modisco.processing.GravityMoDiscoProcessorUtil;
@@ -58,7 +60,7 @@ import org.gravity.modisco.processing.IMoDiscoProcessor;
  * @author speldszus
  *
  */
-public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject> {
+public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDiscoverer, IDiscoverer<IJavaProject> {
 
 	private static final Logger LOGGER = Logger.getLogger(GravityModiscoProjectDiscoverer.class.getName());
 
@@ -66,8 +68,6 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	 * The MoDisco Discoverer of this class
 	 */
 	private final MyDiscoverJavaModelFromJavaProject discoverer;
-
-	private final boolean load;
 
 	private final IFile modiscoFile;
 
@@ -77,7 +77,11 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 
 	private MGravityModel model;
 
+	private boolean load;
+
 	private Set<IPath> discoveredLibs = new HashSet<>();
+
+	private Job asyncSave;
 
 	private class MyDiscoverJavaModelFromJavaProject extends DiscoverJavaModelFromJavaProject {
 
@@ -175,6 +179,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	 * @return The discovered MoDisco model with GRaViTY extensions
 	 * @throws DiscoveryException If the discovery fails
 	 */
+	@Override
 	public MGravityModel discoverModel(final IProgressMonitor monitor) throws DiscoveryException {
 		return discoverModel(Collections.emptySet(), monitor);
 	}
@@ -187,6 +192,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	 * @return The discovered MoDisco model with GRaViTY extensions
 	 * @throws DiscoveryException If the discovery fails
 	 */
+	@Override
 	public MGravityModel discoverModel(final Collection<IPath> libs, final IProgressMonitor monitor)
 			throws DiscoveryException {
 		if (this.load && this.discoveredLibs.containsAll(libs)) {
@@ -263,15 +269,21 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	 * Saves the model
 	 */
 	private void asyncSave() {
-		Job.create("Save MoDisco model", runner -> {
-			try {
-				final var resource = this.model.eResource();
-				resource.setURI(this.uri);
-				resource.save(Collections.emptyMap());
-			} catch (final IOException e) {
-				LOGGER.error(e);
-			}
-		}).schedule();
+		if (this.asyncSave == null) {
+			this.asyncSave = Job.create("Save MoDisco model", monitor -> {
+				try (var stream = new FileOutputStream(this.modiscoFile.getLocation().toFile())) {
+					final var resource = this.model.eResource();
+					resource.setURI(this.uri);
+					resource.save(stream, Collections.emptyMap());
+					this.modiscoFile.refreshLocal(IResource.DEPTH_ZERO, monitor);
+				} catch (final IOException e) {
+					LOGGER.error(e);
+				}
+			});
+		} else {
+			this.asyncSave.cancel();
+		}
+		this.asyncSave.schedule();
 	}
 
 	/**
@@ -296,7 +308,20 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	 * @return the model or <code>null</code>
 	 * @throws IOException If there is an error at loading an existing model file
 	 */
+	@Override
 	public MGravityModel loadModel() throws IOException {
+		if (this.asyncSave != null) {
+			final var state = this.asyncSave.getState();
+			if (((state == Job.RUNNING) || (state == Job.WAITING)) && (this.model != null)) {
+				return this.model;
+			}
+			try {
+				this.asyncSave.join();
+			} catch (final InterruptedException e) {
+				LOGGER.error(e);
+				Thread.currentThread().interrupt();
+			}
+		}
 		if (canLoadModel(this.modiscoFile)) {
 			Resource resource;
 			if (this.model == null) {
@@ -311,8 +336,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 			this.model = resource.getContents().stream().filter(MGravityModel.class::isInstance)
 					.map(MGravityModel.class::cast).findAny().orElse(null);
 			return this.model;
-		}
-		else if(this.model != null) {
+		} else if (this.model != null) {
 			this.model.eResource().unload();
 			this.model = null;
 		}
@@ -500,6 +524,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 		return this.discoverer.isApplicableTo(source);
 	}
 
+	@Override
 	public ResourceSet getResourceSet() {
 		return this.discoverer.getResourceSet();
 	}
@@ -511,5 +536,9 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 		} catch (final IOException e) {
 			throw new DiscoveryException(e);
 		}
+	}
+
+	public void setLoad(final boolean load) {
+		this.load = load;
 	}
 }

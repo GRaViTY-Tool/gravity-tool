@@ -27,8 +27,8 @@ import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.modisco.AbstractModiscoTGGConverter;
 import org.gravity.modisco.GravityMoDiscoActivator;
-import org.gravity.modisco.GravityModiscoTGGConverter;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.codegen.GravityModiscoCodeGenerator;
 import org.gravity.security.annotations.AnnotationsActivator;
@@ -45,7 +45,7 @@ import carisma.profile.umlsec.UMLsecActivator;
  * @author speldszus
  *
  */
-public final class Transformation extends GravityModiscoTGGConverter {
+public final class Transformation extends AbstractModiscoTGGConverter {
 
 	public static final Logger LOGGER = Logger.getLogger(Transformation.class);
 
@@ -325,7 +325,7 @@ public final class Transformation extends GravityModiscoTGGConverter {
 		if ((oldFile != null) && oldFile.exists()) {
 			final var file = folder.getFile(MODEL_UML);
 			try {
-				oldFile.move(file.getLocation(), true, null);
+				oldFile.move(file.getFullPath(), true, null);
 			} catch (final CoreException e) {
 				LOGGER.error(e);
 				return oldFile;

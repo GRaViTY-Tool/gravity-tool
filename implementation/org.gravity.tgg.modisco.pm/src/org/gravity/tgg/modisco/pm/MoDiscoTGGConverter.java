@@ -1,7 +1,5 @@
 package org.gravity.tgg.modisco.pm;
 
-import static org.gravity.eclipse.io.ModelSaver.saveModel;
-
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
@@ -30,8 +28,8 @@ import org.eclipse.modisco.java.generation.files.GenerateJavaExtended;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.modisco.AbstractModiscoTGGConverter;
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
-import org.gravity.modisco.GravityModiscoTGGConverter;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.GravityMoDiscoProcessorUtil;
 import org.gravity.modisco.processing.IMoDiscoProcessor;
@@ -46,7 +44,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @author speldszus
  *
  */
-public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements IPGConverter {
+public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements IPGConverter {
 
 	private static final String PM_XMI = "pm.xmi";
 
@@ -77,7 +75,7 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 	@Override
 	public boolean convertProject(final Collection<IPath> libs, final IProgressMonitor monitor) {
 		if (this.load && (getTrg() != null) && (getSrc() != null) && (getCorr() != null)) {
-			final IProject project = this.project.getProject();
+			final var project = this.project.getProject();
 			try {
 				if (project.getModificationStamp() <= EclipseProjectUtil.getGravityFolder(project, monitor)
 						.getModificationStamp()) {
@@ -97,8 +95,8 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 			progressMonitor = monitor;
 		}
 
-		long start = 0;
-		final boolean infoEnabled = LOGGER.isInfoEnabled();
+		var start = 0L;
+		final var infoEnabled = LOGGER.isInfoEnabled();
 		if (GravityActivator.MEASURE_PERFORMANCE) {
 			start = System.currentTimeMillis();
 		} else if (infoEnabled) {
@@ -117,7 +115,7 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 			return true;
 		}
 
-		final boolean success = convertModel(preprocessedModiscoModel, progressMonitor);
+		final var success = convertModel(preprocessedModiscoModel, progressMonitor);
 		if (GravityActivator.MEASURE_PERFORMANCE) {
 			System.out.println("All:" + (System.currentTimeMillis() - start) + "ms");
 		} else if (infoEnabled) {
@@ -138,9 +136,9 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 		if ((this.src != null) && this.src.equals(modiscoModel) && (this.trg instanceof TypeGraph)) {
 			return true;
 		}
-		final SubMonitor submonitor = SubMonitor.convert(monitor, "Transform MoDisco Model to PM", 100);
+		final var submonitor = SubMonitor.convert(monitor, "Transform MoDisco Model to PM", 100);
 
-		final Resource eResource = modiscoModel.eResource();
+		final var eResource = modiscoModel.eResource();
 		if (!getResourceSet().equals(eResource.getResourceSet())) {
 			getResourceSet().createResource(eResource.getURI()).getContents().add(modiscoModel);
 		}
@@ -148,8 +146,8 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 		clearChanges();
 		setSynchronizationProtocol(null);
 
-		final boolean infoEnabled = LOGGER.isInfoEnabled();
-		long start = 0;
+		final var infoEnabled = LOGGER.isInfoEnabled();
+		var start = 0L;
 		if (GravityActivator.MEASURE_PERFORMANCE) {
 			start = System.currentTimeMillis();
 		} else if (infoEnabled) {
@@ -157,7 +155,7 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 			LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo");
 		}
 
-		final SubMonitor integrate = submonitor.split(70);
+		final var integrate = submonitor.split(70);
 		integrate.setTaskName("Integrate FWD");
 		integrateForward();
 		integrate.done();
@@ -168,7 +166,7 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 			LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - start) + "ms");
 		}
 
-		final boolean success = this.trg instanceof TypeGraph;
+		final var success = this.trg instanceof TypeGraph;
 		if (success) {
 			postprocess(submonitor.split(20), infoEnabled);
 			if (this.autosave) {
@@ -188,10 +186,10 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 	 * @param info    If info messages should be logged
 	 */
 	private void postprocess(final IProgressMonitor monitor, final boolean info) {
-		final Collection<IProgramGraphProcessor> sortedProcessors = ProgramGraphProcesorUtil
+		final var sortedProcessors = ProgramGraphProcesorUtil
 				.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD);
-		final SubMonitor processors = SubMonitor.convert(monitor, "Postprocessing", sortedProcessors.size());
-		long start = 0;
+		final var processors = SubMonitor.convert(monitor, "Postprocessing", sortedProcessors.size());
+		var start = 0L;
 		if (GravityActivator.MEASURE_PERFORMANCE) {
 			start = System.currentTimeMillis();
 		} else if (info) {
@@ -214,8 +212,8 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 		if ((this.discoverer == null) || (this.project == null)) {
 			return false;
 		}
-		long start = 0;
-		final boolean infoEnabled = LOGGER.isInfoEnabled();
+		var start = 0L;
+		final var infoEnabled = LOGGER.isInfoEnabled();
 		if (infoEnabled) {
 			start = System.currentTimeMillis();
 			LOGGER.log(Level.INFO, start + " MoDisco sync project: " + this.project.getProject().getName());
@@ -225,7 +223,7 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 			return convertProject(monitor);
 		}
 
-		final MGravityModel oldModiscoModel = getSrc();
+		final var oldModiscoModel = getSrc();
 
 		if (infoEnabled) {
 			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project");
@@ -242,7 +240,7 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project - Done");
 		}
 
-		final GravityMoDiscoModelPatcher patcher = MoDiscoTGGActivator.getDefault().getSelectedPatcher();
+		final var patcher = MoDiscoTGGActivator.getDefault().getSelectedPatcher();
 
 		final Consumer<EObject> changes = change -> {
 			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Calculate Patch");
@@ -250,10 +248,10 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Calculate Patch - Done");
 		};
 
-		final boolean success = syncProjectFwd(changes, monitor);
+		final var success = syncProjectFwd(changes, monitor);
 
 		if (infoEnabled) {
-			final long stop = System.currentTimeMillis();
+			final var stop = System.currentTimeMillis();
 			LOGGER.log(Level.INFO, stop + "MoDisco sync project -done: " + (stop - start) + "ms");
 		}
 
@@ -266,7 +264,7 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 			LOGGER.error("No initial transformation has been performed!");
 			return false;
 		}
-		final boolean infoEnabled = LOGGER.isInfoEnabled();
+		final var infoEnabled = LOGGER.isInfoEnabled();
 		if (infoEnabled) {
 			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD");
 		}
@@ -316,7 +314,7 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 		}
 
 		try {
-			final IFolder srcFile = this.project.getProject().getFolder("src");
+			final var srcFile = this.project.getProject().getFolder("src");
 			new GenerateJavaExtended(src, srcFile.getLocation().toFile(), Collections.emptyList())
 			.doGenerate(new BasicMonitor.EclipseSubProgress(progressMonitor, 1));
 			this.project.getProject().refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
@@ -325,11 +323,6 @@ public class MoDiscoTGGConverter extends GravityModiscoTGGConverter implements I
 		}
 
 		return true;
-	}
-
-	@Override
-	public boolean savePG(final IFile file, final IProgressMonitor monitor) {
-		return saveModel(getTrg(), file);
 	}
 
 	@Override

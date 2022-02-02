@@ -6,7 +6,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.util.JavaProjectUtil;
@@ -26,11 +25,9 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 
 	@Override
 	public IPGConverter createConverter(final IProject project) {
-		final IJavaProject javaProject = JavaProjectUtil.getJavaProject(project);
+		final var javaProject = JavaProjectUtil.getJavaProject(project);
 		try {
-			final MoDiscoTGGConverter converter = new MoDiscoTGGConverter(javaProject);
-			MoDiscoTGGActivator.getDefault().addConverter(converter);
-			return converter;
+			return new MoDiscoTGGConverter(javaProject);
 		} catch (final IOException | CoreException e) {
 			LOGGER.error(e);
 		}
@@ -64,7 +61,7 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 
 	@Override
 	public boolean supportsFWDSync() {
-		final MoDiscoTGGActivator activator = MoDiscoTGGActivator.getDefault();
+		final var activator = MoDiscoTGGActivator.getDefault();
 		if (activator == null) {
 			LOGGER.log(Level.ERROR, "The modisco TGG activator is null");
 			return false;
