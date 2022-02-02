@@ -3,7 +3,6 @@ package org.gravity.eclipse.converter;
 import java.util.Collection;
 import java.util.function.Consumer;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
@@ -75,13 +74,12 @@ public interface IPGConverter {
 	boolean syncProjectFwd(Consumer<EObject> consumer, IProgressMonitor monitor);
 
 	/**
-	 * Saves the PG into the give file.
+	 * Saves the state of the converter
 	 *
-	 * @param file    the file
 	 * @param monitor a progress monitor
 	 * @return true, if successful
 	 */
-	boolean savePG(IFile file, IProgressMonitor monitor);
+	boolean save(IProgressMonitor monitor);
 
 	/**
 	 * Returns the PG of the translated java project.

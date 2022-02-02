@@ -2,16 +2,9 @@ package org.gravity.tgg.modisco.pm;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
-import java.util.HashSet;
-import java.util.Set;
 
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
-import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
 import org.osgi.framework.BundleContext;
 
@@ -30,8 +23,6 @@ public class MoDiscoTGGActivator extends Plugin {
 
 	private GravityMoDiscoModelPatcher patcher;
 
-	private final Set<MoDiscoTGGConverter> converters = new HashSet<>();
-
 	/*
 	 * (non-Javadoc)
 	 *
@@ -39,11 +30,11 @@ public class MoDiscoTGGActivator extends Plugin {
 	 * BundleContext)
 	 */
 	@Override
-	public void start(BundleContext context) throws Exception {
+	public void start(final BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
 
-		final IConfigurationElement[] configurationElements = Platform.getExtensionRegistry()
+		final var configurationElements = Platform.getExtensionRegistry()
 				.getConfigurationElementsFor("org.gravity.modisco.patcher"); //$NON-NLS-1$
 		if (configurationElements.length > 0) {
 			setSelectedPatcher(
@@ -58,12 +49,7 @@ public class MoDiscoTGGActivator extends Plugin {
 	 * BundleContext)
 	 */
 	@Override
-	public void stop(BundleContext context) throws Exception {
-		final IProgressMonitor monitor = new NullProgressMonitor();
-		for (final MoDiscoTGGConverter converter : this.converters) {
-			converter.save(monitor);
-			converter.discard();
-		}
+	public void stop(final BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);
 	}
@@ -77,7 +63,7 @@ public class MoDiscoTGGActivator extends Plugin {
 		return plugin;
 	}
 
-	public void setSelectedPatcher(GravityMoDiscoModelPatcher patcher) {
+	public void setSelectedPatcher(final GravityMoDiscoModelPatcher patcher) {
 		this.patcher = patcher;
 	}
 
@@ -92,15 +78,11 @@ public class MoDiscoTGGActivator extends Plugin {
 	 * @return The stream
 	 * @throws IOException If the entry doesn't exist inside this plugin
 	 */
-	public static InputStream getEntryAsStream(String location) throws IOException {
-		URL entry = plugin.getBundle().getEntry(location);
+	public static InputStream getEntryAsStream(final String location) throws IOException {
+		final var entry = plugin.getBundle().getEntry(location);
 		if (entry == null) {
 			throw new IOException("File not found within plugin \"" + PLUGIN_ID + "\": " + location);
 		}
 		return entry.openStream();
-	}
-
-	public void addConverter(MoDiscoTGGConverter converter) {
-		this.converters.add(converter);
 	}
 }

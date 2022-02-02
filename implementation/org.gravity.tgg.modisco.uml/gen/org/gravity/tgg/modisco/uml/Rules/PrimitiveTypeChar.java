@@ -199,7 +199,7 @@ public interface PrimitiveTypeChar extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_PrimitiveType_6(PrimitiveType umpt);
+	EObjectContainer isAppropriate_BWD_PrimitiveType_8(PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->

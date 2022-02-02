@@ -16,6 +16,7 @@ import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
 import org.gravity.eclipse.converter.IPGConverter;
@@ -59,10 +60,10 @@ public class GravityActivator extends Plugin {
 	 */
 
 	/** The converters for java projects (project name as key). */
-	private final Map<String, IPGConverter> converters;
+	private final Map<IProject, IPGConverter> converters;
 
 	/** The selected converter factory. */
-	private IPGConverterFactory selectedConverterFactory;
+	private IPGConverterFactory factory;
 
 	/** A listener for changes in java files */
 	private IResourceChangeListener listener;
@@ -93,15 +94,13 @@ public class GravityActivator extends Plugin {
 		this.listener = event -> {
 			final var resource = event.getResource();
 			if ((resource != null) && (resource.getType() == IResource.PROJECT)
-					&& GravityActivator.this.converters.containsKey(resource.getName())
+					&& GravityActivator.this.converters.containsKey(resource)
 					&& (event.getType() == IResourceChangeEvent.PRE_DELETE)) {
-				GravityActivator.this.converters.remove(resource.getName());
+				GravityActivator.this.converters.remove(resource);
 
 			}
 		};
-
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(this.listener);
-
 	}
 
 	/**
@@ -119,9 +118,8 @@ public class GravityActivator extends Plugin {
 		if (configurationElements.length <= 0) {
 			throw new NoConverterRegisteredException();
 		}
-		this.selectedConverterFactory = ((IPGConverterFactory) configurationElements[0]
-				.createExecutableExtension("class")); //$NON-NLS-1$
-		return this.selectedConverterFactory != null;
+		this.factory = ((IPGConverterFactory) configurationElements[0].createExecutableExtension("class")); //$NON-NLS-1$
+		return this.factory != null;
 	}
 
 	/**
@@ -131,6 +129,11 @@ public class GravityActivator extends Plugin {
 	 */
 	@Override
 	public void stop(final BundleContext context) throws Exception {
+		final IProgressMonitor monitor = new NullProgressMonitor();
+		for (final IPGConverter converter : this.converters.values()) {
+			converter.save(monitor);
+			converter.discard();
+		}
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(this.listener);
 		plugin = null;
 		super.stop(context);
@@ -178,10 +181,9 @@ public class GravityActivator extends Plugin {
 	 *                                        read
 	 */
 	public IPGConverter getConverter(final IProject project) throws NoConverterRegisteredException, CoreException {
-		final var name = project.getName();
-		if (this.converters.containsKey(name)) {
-			final var converter = this.converters.get(name);
-			if (this.selectedConverterFactory.belongsToFactory(converter)) {
+		if (this.converters.containsKey(project)) {
+			final var converter = this.converters.get(project);
+			if (this.factory.belongsToFactory(converter)) {
 				return converter;
 			}
 		}
@@ -198,11 +200,11 @@ public class GravityActivator extends Plugin {
 	 * @return true iff the converter has been discarded
 	 */
 	public boolean discardConverter(final IProject project) {
-		if (this.converters.containsKey(project.getName())) {
-			final var converter = this.converters.remove(project.getName());
-			return (converter != null) && converter.discard();
+		final var converter = this.converters.remove(project);
+		if (converter != null) {
+			return converter.discard();
 		}
-		return false;
+		return true;
 	}
 
 	/**
@@ -219,8 +221,8 @@ public class GravityActivator extends Plugin {
 	public IPGConverter getNewConverter(final IProject project) throws NoConverterRegisteredException, CoreException {
 		final var converter = getSelectedConverterFactory().createConverter(project);
 		converter.setDebug(isVerbose());
-		final var old = this.converters.put(project.getName(), converter);
-		if((old != null) && (old != converter)) {
+		final var old = this.converters.put(project, converter);
+		if ((old != null) && (old != converter)) {
 			old.discard();
 		}
 		return converter;
@@ -229,10 +231,10 @@ public class GravityActivator extends Plugin {
 	/**
 	 * Sets the selected converter factory.
 	 *
-	 * @param selectedConverterFactory the new selected converter factory
+	 * @param factory the new selected converter factory
 	 */
 	public void setSelectedConverterFactory(final IPGConverterFactory selectedConverterFactory) {
-		this.selectedConverterFactory = selectedConverterFactory;
+		this.factory = selectedConverterFactory;
 	}
 
 	/**
@@ -246,10 +248,10 @@ public class GravityActivator extends Plugin {
 	 *                                        read
 	 */
 	public IPGConverterFactory getSelectedConverterFactory() throws NoConverterRegisteredException, CoreException {
-		if ((this.selectedConverterFactory == null) && !initializeSelectedConverter()) {
+		if ((this.factory == null) && !initializeSelectedConverter()) {
 			throw new NoConverterRegisteredException();
 		}
-		return this.selectedConverterFactory;
+		return this.factory;
 	}
 
 	private static String measureRecordsKey;
@@ -281,7 +283,8 @@ public class GravityActivator extends Plugin {
 		measureRecordsKey = path;
 	}
 
-	public static IFolder getProgramModelFolder(final IProject project, final IProgressMonitor monitor) throws IOException {
+	public static IFolder getProgramModelFolder(final IProject project, final IProgressMonitor monitor)
+			throws IOException {
 		return EclipseProjectUtil.getGravityFolder(project, monitor).getFolder("pm");
 	}
 }

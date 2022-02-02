@@ -94,20 +94,20 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jp, Model jm) {
+	public boolean isAppropriate_FWD(Match match, Model jm, org.eclipse.modisco.java.Package jp) {
 
 		Object[] result1_black = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_0_1_initialbindings_blackBBBB(this, match, jp, jm);
+				.pattern_JavaPackageToUMLPackage_underModel_0_1_initialbindings_blackBBBB(this, match, jm, jp);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[jp] = " + jp + ", " + "[jm] = " + jm + ".");
+					+ "[match] = " + match + ", " + "[jm] = " + jm + ", " + "[jp] = " + jp + ".");
 		}
 
 		Object[] result2_bindingAndBlack = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, jp, jm);
+				.pattern_JavaPackageToUMLPackage_underModel_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, jm, jp);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[jp] = " + jp + ", " + "[jm] = " + jm + ".");
+					+ "[match] = " + match + ", " + "[jm] = " + jm + ", " + "[jp] = " + jp + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -115,23 +115,23 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 				.pattern_JavaPackageToUMLPackage_underModel_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = JavaPackageToUMLPackage_underModelImpl
-					.pattern_JavaPackageToUMLPackage_underModel_0_4_collectelementstobetranslated_blackBBB(match, jp,
-							jm);
+					.pattern_JavaPackageToUMLPackage_underModel_0_4_collectelementstobetranslated_blackBBB(match, jm,
+							jp);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[jp] = " + jp + ", " + "[jm] = " + jm + ".");
+						+ "[jm] = " + jm + ", " + "[jp] = " + jp + ".");
 			}
 			JavaPackageToUMLPackage_underModelImpl
-					.pattern_JavaPackageToUMLPackage_underModel_0_4_collectelementstobetranslated_greenBBBFF(match, jp,
-							jm);
+					.pattern_JavaPackageToUMLPackage_underModel_0_4_collectelementstobetranslated_greenBBBFF(match, jm,
+							jp);
 			//nothing EMoflonEdge jm__jp____ownedElements = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge jp__jm____model = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = JavaPackageToUMLPackage_underModelImpl
-					.pattern_JavaPackageToUMLPackage_underModel_0_5_collectcontextelements_blackBBB(match, jp, jm);
+					.pattern_JavaPackageToUMLPackage_underModel_0_5_collectcontextelements_blackBBB(match, jm, jp);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[jp] = " + jp + ", " + "[jm] = " + jm + ".");
+						+ "[jm] = " + jm + ", " + "[jp] = " + jp + ".");
 			}
 			JavaPackageToUMLPackage_underModelImpl
 					.pattern_JavaPackageToUMLPackage_underModel_0_5_collectcontextelements_greenBB(match, jm);
@@ -139,7 +139,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			// 
 			JavaPackageToUMLPackage_underModelImpl
 					.pattern_JavaPackageToUMLPackage_underModel_0_6_registerobjectstomatch_expressionBBBB(this, match,
-							jp, jm);
+							jm, jp);
 			return JavaPackageToUMLPackage_underModelImpl.pattern_JavaPackageToUMLPackage_underModel_0_7_expressionF();
 		} else {
 			return JavaPackageToUMLPackage_underModelImpl.pattern_JavaPackageToUMLPackage_underModel_0_8_expressionF();
@@ -161,48 +161,48 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_bindingAndBlack[0];
-		org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[1];
-		Model jm = (Model) result1_bindingAndBlack[2];
+		Model jm = (Model) result1_bindingAndBlack[0];
+		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_bindingAndBlack[1];
+		org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[2];
 		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = JavaPackageToUMLPackage_underModelImpl
 				.pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_greenFBBFB(jp, um, csp);
-		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_green[0];
-		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result1_green[3];
+		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result1_green[0];
+		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_green[3];
 
 		Object[] result2_black = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_1_2_collecttranslatedelements_blackBBB(jp2up, jp, up);
+				.pattern_JavaPackageToUMLPackage_underModel_1_2_collecttranslatedelements_blackBBB(up, jp, jp2up);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jp2up] = " + jp2up + ", "
-					+ "[jp] = " + jp + ", " + "[up] = " + up + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[up] = " + up + ", " + "[jp] = "
+					+ jp + ", " + "[jp2up] = " + jp2up + ".");
 		}
 		Object[] result2_green = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_1_2_collecttranslatedelements_greenFBBB(jp2up, jp, up);
+				.pattern_JavaPackageToUMLPackage_underModel_1_2_collecttranslatedelements_greenFBBB(up, jp, jp2up);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jm2um,
-						jp2up, jp, jm, um, up);
+				.pattern_JavaPackageToUMLPackage_underModel_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jm, jm2um,
+						up, jp, um, jp2up);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[jm2um] = " + jm2um + ", " + "[jp2up] = " + jp2up + ", " + "[jp] = " + jp + ", "
-					+ "[jm] = " + jm + ", " + "[um] = " + um + ", " + "[up] = " + up + ".");
+					+ ", " + "[jm] = " + jm + ", " + "[jm2um] = " + jm2um + ", " + "[up] = " + up + ", " + "[jp] = "
+					+ jp + ", " + "[um] = " + um + ", " + "[jp2up] = " + jp2up + ".");
 		}
 		JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, jp2up,
-						jp, jm, um, up);
-		//nothing EMoflonEdge jp2up__jp____source = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge jp2up__up____target = (EMoflonEdge) result3_green[7];
+				.pattern_JavaPackageToUMLPackage_underModel_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, jm, up,
+						jp, um, jp2up);
+		//nothing EMoflonEdge jm__jp____ownedElements = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge jp__jm____model = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge um__up____packagedElement = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge jm__jp____ownedElements = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge jp__jm____model = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge jp2up__jp____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge jp2up__up____target = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-						jm2um, jp2up, jp, jm, um, up);
+				.pattern_JavaPackageToUMLPackage_underModel_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, jm,
+						jm2um, up, jp, um, jp2up);
 		return JavaPackageToUMLPackage_underModelImpl
 				.pattern_JavaPackageToUMLPackage_underModel_1_6_expressionFB(ruleresult);
 	}
@@ -232,30 +232,30 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result2_binding[0];
-		Model jm = (Model) result2_binding[1];
+		Model jm = (Model) result2_binding[0];
+		org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result2_binding[1];
 		for (Object[] result2_black : JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_2_2_corematch_blackFBBFB(jp, jm, match)) {
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result2_black[0];
+				.pattern_JavaPackageToUMLPackage_underModel_2_2_corematch_blackBFBFB(jm, jp, match)) {
+			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result2_black[1];
 			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : JavaPackageToUMLPackage_underModelImpl
-					.pattern_JavaPackageToUMLPackage_underModel_2_3_findcontext_blackBBBB(jm2um, jp, jm, um)) {
+					.pattern_JavaPackageToUMLPackage_underModel_2_3_findcontext_blackBBBB(jm, jm2um, jp, um)) {
 				Object[] result3_green = JavaPackageToUMLPackage_underModelImpl
-						.pattern_JavaPackageToUMLPackage_underModel_2_3_findcontext_greenBBBBFFFFF(jm2um, jp, jm, um);
+						.pattern_JavaPackageToUMLPackage_underModel_2_3_findcontext_greenBBBBFFFFF(jm, jm2um, jp, um);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge jm2um__um____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge jm2um__jm____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge jm__jp____ownedElements = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge jp__jm____model = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge jm2um__jm____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge jm__jp____ownedElements = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge jp__jm____model = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge jm2um__um____target = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = JavaPackageToUMLPackage_underModelImpl
 						.pattern_JavaPackageToUMLPackage_underModel_2_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, jm2um, jp, jm, um);
+								isApplicableMatch, jm, jm2um, jp, um);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm2um] = " + jm2um + ", "
-							+ "[jp] = " + jp + ", " + "[jm] = " + jm + ", " + "[um] = " + um + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm] = " + jm + ", " + "[jm2um] = "
+							+ jm2um + ", " + "[jp] = " + jp + ", " + "[um] = " + um + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -288,9 +288,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jp, Model jm) {
-		match.registerObject("jp", jp);
+	public void registerObjectsToMatch_FWD(Match match, Model jm, org.eclipse.modisco.java.Package jp) {
 		match.registerObject("jm", jm);
+		match.registerObject("jp", jp);
 
 	}
 
@@ -299,7 +299,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jp, Model jm) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, Model jm, org.eclipse.modisco.java.Package jp) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -328,8 +328,8 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2um,
-			org.eclipse.modisco.java.Package jp, Model jm, org.eclipse.uml2.uml.Model um) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
+			org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Model um) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -364,9 +364,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		eq_0.solve(var_up_name, var_jp_name);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("jm", jm);
 		isApplicableMatch.registerObject("jm2um", jm2um);
 		isApplicableMatch.registerObject("jp", jp);
-		isApplicableMatch.registerObject("jm", jm);
 		isApplicableMatch.registerObject("um", um);
 		return csp;
 	}
@@ -385,14 +385,14 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject jm2um, EObject jp2up, EObject jp, EObject jm,
-			EObject um, EObject up) {
-		ruleresult.registerObject("jm2um", jm2um);
-		ruleresult.registerObject("jp2up", jp2up);
-		ruleresult.registerObject("jp", jp);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject jm, EObject jm2um, EObject up, EObject jp,
+			EObject um, EObject jp2up) {
 		ruleresult.registerObject("jm", jm);
-		ruleresult.registerObject("um", um);
+		ruleresult.registerObject("jm2um", jm2um);
 		ruleresult.registerObject("up", up);
+		ruleresult.registerObject("jp", jp);
+		ruleresult.registerObject("um", um);
+		ruleresult.registerObject("jp2up", jp2up);
 
 	}
 
@@ -410,20 +410,20 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {
+	public boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {
 
 		Object[] result1_black = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_10_1_initialbindings_blackBBBB(this, match, um, up);
+				.pattern_JavaPackageToUMLPackage_underModel_10_1_initialbindings_blackBBBB(this, match, up, um);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[um] = " + um + ", " + "[up] = " + up + ".");
+					+ "[match] = " + match + ", " + "[up] = " + up + ", " + "[um] = " + um + ".");
 		}
 
 		Object[] result2_bindingAndBlack = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, um, up);
+				.pattern_JavaPackageToUMLPackage_underModel_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, up, um);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[um] = " + um + ", " + "[up] = " + up + ".");
+					+ "[match] = " + match + ", " + "[up] = " + up + ", " + "[um] = " + um + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -431,22 +431,22 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 				.pattern_JavaPackageToUMLPackage_underModel_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = JavaPackageToUMLPackage_underModelImpl
-					.pattern_JavaPackageToUMLPackage_underModel_10_4_collectelementstobetranslated_blackBBB(match, um,
-							up);
+					.pattern_JavaPackageToUMLPackage_underModel_10_4_collectelementstobetranslated_blackBBB(match, up,
+							um);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[um] = " + um + ", " + "[up] = " + up + ".");
+						+ "[up] = " + up + ", " + "[um] = " + um + ".");
 			}
 			JavaPackageToUMLPackage_underModelImpl
-					.pattern_JavaPackageToUMLPackage_underModel_10_4_collectelementstobetranslated_greenBBBF(match, um,
-							up);
+					.pattern_JavaPackageToUMLPackage_underModel_10_4_collectelementstobetranslated_greenBBBF(match, up,
+							um);
 			//nothing EMoflonEdge um__up____packagedElement = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = JavaPackageToUMLPackage_underModelImpl
-					.pattern_JavaPackageToUMLPackage_underModel_10_5_collectcontextelements_blackBBB(match, um, up);
+					.pattern_JavaPackageToUMLPackage_underModel_10_5_collectcontextelements_blackBBB(match, up, um);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[um] = " + um + ", " + "[up] = " + up + ".");
+						+ "[up] = " + up + ", " + "[um] = " + um + ".");
 			}
 			JavaPackageToUMLPackage_underModelImpl
 					.pattern_JavaPackageToUMLPackage_underModel_10_5_collectcontextelements_greenBB(match, um);
@@ -454,7 +454,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			// 
 			JavaPackageToUMLPackage_underModelImpl
 					.pattern_JavaPackageToUMLPackage_underModel_10_6_registerobjectstomatch_expressionBBBB(this, match,
-							um, up);
+							up, um);
 			return JavaPackageToUMLPackage_underModelImpl.pattern_JavaPackageToUMLPackage_underModel_10_7_expressionF();
 		} else {
 			return JavaPackageToUMLPackage_underModelImpl.pattern_JavaPackageToUMLPackage_underModel_10_8_expressionF();
@@ -476,48 +476,48 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_bindingAndBlack[0];
-		Model jm = (Model) result1_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[2];
-		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[3];
+		Model jm = (Model) result1_bindingAndBlack[0];
+		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_greenFFBBB(jm, up, csp);
-		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_green[0];
-		org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result1_green[1];
+				.pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_greenBBFFB(jm, up, csp);
+		org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result1_green[2];
+		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_green[3];
 
 		Object[] result2_black = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_11_2_collecttranslatedelements_blackBBB(jp2up, jp, up);
+				.pattern_JavaPackageToUMLPackage_underModel_11_2_collecttranslatedelements_blackBBB(up, jp, jp2up);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jp2up] = " + jp2up + ", "
-					+ "[jp] = " + jp + ", " + "[up] = " + up + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[up] = " + up + ", " + "[jp] = "
+					+ jp + ", " + "[jp2up] = " + jp2up + ".");
 		}
 		Object[] result2_green = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_11_2_collecttranslatedelements_greenFBBB(jp2up, jp, up);
+				.pattern_JavaPackageToUMLPackage_underModel_11_2_collecttranslatedelements_greenFBBB(up, jp, jp2up);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jm2um,
-						jp2up, jp, jm, um, up);
+				.pattern_JavaPackageToUMLPackage_underModel_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jm, jm2um,
+						up, jp, um, jp2up);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[jm2um] = " + jm2um + ", " + "[jp2up] = " + jp2up + ", " + "[jp] = " + jp + ", "
-					+ "[jm] = " + jm + ", " + "[um] = " + um + ", " + "[up] = " + up + ".");
+					+ ", " + "[jm] = " + jm + ", " + "[jm2um] = " + jm2um + ", " + "[up] = " + up + ", " + "[jp] = "
+					+ jp + ", " + "[um] = " + um + ", " + "[jp2up] = " + jp2up + ".");
 		}
 		JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, jp2up,
-						jp, jm, um, up);
-		//nothing EMoflonEdge jp2up__jp____source = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge jp2up__up____target = (EMoflonEdge) result3_green[7];
+				.pattern_JavaPackageToUMLPackage_underModel_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, jm,
+						up, jp, um, jp2up);
+		//nothing EMoflonEdge jm__jp____ownedElements = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge jp__jm____model = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge um__up____packagedElement = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge jm__jp____ownedElements = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge jp__jm____model = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge jp2up__jp____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge jp2up__up____target = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		JavaPackageToUMLPackage_underModelImpl
 				.pattern_JavaPackageToUMLPackage_underModel_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-						jm2um, jp2up, jp, jm, um, up);
+						jm, jm2um, up, jp, um, jp2up);
 		return JavaPackageToUMLPackage_underModelImpl
 				.pattern_JavaPackageToUMLPackage_underModel_11_6_expressionFB(ruleresult);
 	}
@@ -547,29 +547,29 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_binding[0];
-		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_binding[1];
+		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_binding[0];
+		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_binding[1];
 		for (Object[] result2_black : JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_12_2_corematch_blackFFBBB(um, up, match)) {
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result2_black[0];
-			Model jm = (Model) result2_black[1];
+				.pattern_JavaPackageToUMLPackage_underModel_12_2_corematch_blackFFBBB(up, um, match)) {
+			Model jm = (Model) result2_black[0];
+			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result2_black[1];
 			// ForEach 
 			for (Object[] result3_black : JavaPackageToUMLPackage_underModelImpl
-					.pattern_JavaPackageToUMLPackage_underModel_12_3_findcontext_blackBBBB(jm2um, jm, um, up)) {
+					.pattern_JavaPackageToUMLPackage_underModel_12_3_findcontext_blackBBBB(jm, jm2um, up, um)) {
 				Object[] result3_green = JavaPackageToUMLPackage_underModelImpl
-						.pattern_JavaPackageToUMLPackage_underModel_12_3_findcontext_greenBBBBFFFF(jm2um, jm, um, up);
+						.pattern_JavaPackageToUMLPackage_underModel_12_3_findcontext_greenBBBBFFFF(jm, jm2um, up, um);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge jm2um__um____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge um__up____packagedElement = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge jm2um__jm____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge jm2um__jm____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge jm2um__um____target = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge um__up____packagedElement = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = JavaPackageToUMLPackage_underModelImpl
 						.pattern_JavaPackageToUMLPackage_underModel_12_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, jm2um, jm, um, up);
+								isApplicableMatch, jm, jm2um, up, um);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm2um] = " + jm2um + ", "
-							+ "[jm] = " + jm + ", " + "[um] = " + um + ", " + "[up] = " + up + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm] = " + jm + ", " + "[jm2um] = "
+							+ jm2um + ", " + "[up] = " + up + ", " + "[um] = " + um + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -602,10 +602,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Model um,
-			org.eclipse.uml2.uml.Package up) {
-		match.registerObject("um", um);
+	public void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Package up,
+			org.eclipse.uml2.uml.Model um) {
 		match.registerObject("up", up);
+		match.registerObject("um", um);
 
 	}
 
@@ -614,7 +614,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -643,8 +643,8 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2um, Model jm,
-			org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
+			org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -679,10 +679,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		eq_0.solve(var_up_name, var_jp_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jm2um", jm2um);
 		isApplicableMatch.registerObject("jm", jm);
-		isApplicableMatch.registerObject("um", um);
+		isApplicableMatch.registerObject("jm2um", jm2um);
 		isApplicableMatch.registerObject("up", up);
+		isApplicableMatch.registerObject("um", um);
 		return csp;
 	}
 
@@ -700,14 +700,14 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject jm2um, EObject jp2up, EObject jp, EObject jm,
-			EObject um, EObject up) {
-		ruleresult.registerObject("jm2um", jm2um);
-		ruleresult.registerObject("jp2up", jp2up);
-		ruleresult.registerObject("jp", jp);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject jm, EObject jm2um, EObject up, EObject jp,
+			EObject um, EObject jp2up) {
 		ruleresult.registerObject("jm", jm);
-		ruleresult.registerObject("um", um);
+		ruleresult.registerObject("jm2um", jm2um);
 		ruleresult.registerObject("up", up);
+		ruleresult.registerObject("jp", jp);
+		ruleresult.registerObject("um", um);
+		ruleresult.registerObject("jp2up", jp2up);
 
 	}
 
@@ -725,7 +725,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_142(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_109(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = JavaPackageToUMLPackage_underModelImpl
 				.pattern_JavaPackageToUMLPackage_underModel_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -742,8 +742,8 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		// ForEach 
 		for (Object[] result2_black : JavaPackageToUMLPackage_underModelImpl
 				.pattern_JavaPackageToUMLPackage_underModel_20_2_testcorematchandDECs_blackFFB(_edge_packagedElement)) {
-			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_black[0];
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_black[1];
+			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_black[0];
+			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_black[1];
 			Object[] result2_green = JavaPackageToUMLPackage_underModelImpl
 					.pattern_JavaPackageToUMLPackage_underModel_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -751,7 +751,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			// 
 			if (JavaPackageToUMLPackage_underModelImpl
 					.pattern_JavaPackageToUMLPackage_underModel_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, um, up)) {
+							this, match, up, um)) {
 				// 
 				if (JavaPackageToUMLPackage_underModelImpl
 						.pattern_JavaPackageToUMLPackage_underModel_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -785,7 +785,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_154(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_117(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = JavaPackageToUMLPackage_underModelImpl
 				.pattern_JavaPackageToUMLPackage_underModel_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -802,8 +802,8 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		// ForEach 
 		for (Object[] result2_black : JavaPackageToUMLPackage_underModelImpl
 				.pattern_JavaPackageToUMLPackage_underModel_21_2_testcorematchandDECs_blackFFB(_edge_ownedElements)) {
-			org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result2_black[0];
-			Model jm = (Model) result2_black[1];
+			Model jm = (Model) result2_black[0];
+			org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result2_black[1];
 			Object[] result2_green = JavaPackageToUMLPackage_underModelImpl
 					.pattern_JavaPackageToUMLPackage_underModel_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -811,7 +811,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			// 
 			if (JavaPackageToUMLPackage_underModelImpl
 					.pattern_JavaPackageToUMLPackage_underModel_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, jp, jm)) {
+							this, match, jm, jp)) {
 				// 
 				if (JavaPackageToUMLPackage_underModelImpl
 						.pattern_JavaPackageToUMLPackage_underModel_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -859,10 +859,6 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		var_um_name.setValue(__helper.getValue("um", "name"));
 		var_um_name.setType("String");
 
-		Variable var_up_name = CSPFactoryHelper.eINSTANCE.createVariable("up", true, csp);
-		var_up_name.setValue(__helper.getValue("up", "name"));
-		var_up_name.setType("String");
-
 		Variable var_jm_name = CSPFactoryHelper.eINSTANCE.createVariable("jm", true, csp);
 		var_jm_name.setValue(__helper.getValue("jm", "name"));
 		var_jm_name.setType("String");
@@ -870,6 +866,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		Variable var_jp_name = CSPFactoryHelper.eINSTANCE.createVariable("jp", true, csp);
 		var_jp_name.setValue(__helper.getValue("jp", "name"));
 		var_jp_name.setType("String");
+
+		Variable var_up_name = CSPFactoryHelper.eINSTANCE.createVariable("up", true, csp);
+		var_up_name.setValue(__helper.getValue("up", "name"));
+		var_up_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -921,10 +921,6 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		var_um_name.setValue(__helper.getValue("um", "name"));
 		var_um_name.setType("String");
 
-		Variable var_up_name = CSPFactoryHelper.eINSTANCE.createVariable("up", true, csp);
-		var_up_name.setValue(__helper.getValue("up", "name"));
-		var_up_name.setType("String");
-
 		Variable var_jm_name = CSPFactoryHelper.eINSTANCE.createVariable("jm", true, csp);
 		var_jm_name.setValue(__helper.getValue("jm", "name"));
 		var_jm_name.setType("String");
@@ -932,6 +928,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		Variable var_jp_name = CSPFactoryHelper.eINSTANCE.createVariable("jp", true, csp);
 		var_jp_name.setValue(__helper.getValue("jp", "name"));
 		var_jp_name.setType("String");
+
+		Variable var_up_name = CSPFactoryHelper.eINSTANCE.createVariable("up", true, csp);
+		var_up_name.setValue(__helper.getValue("up", "name"));
+		var_up_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -987,17 +987,17 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[0];
-		Model jm = (Model) result2_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_bindingAndBlack[2];
-		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[3];
+		Model jm = (Model) result2_bindingAndBlack[0];
+		org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[1];
+		org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, jp, jm, um, up,
+				.pattern_JavaPackageToUMLPackage_underModel_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, jm, up, jp, um,
 						sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[jp] = " + jp + ", " + "[jm] = " + jm + ", " + "[um] = " + um + ", " + "[up] = " + up + ", "
+					+ "[jm] = " + jm + ", " + "[up] = " + up + ", " + "[jp] = " + jp + ", " + "[um] = " + um + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1006,26 +1006,26 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 				.pattern_JavaPackageToUMLPackage_underModel_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : JavaPackageToUMLPackage_underModelImpl
-					.pattern_JavaPackageToUMLPackage_underModel_24_5_matchcorrcontext_blackFBBBB(jm, um, sourceMatch,
+					.pattern_JavaPackageToUMLPackage_underModel_24_5_matchcorrcontext_blackBFBBB(jm, um, sourceMatch,
 							targetMatch)) {
-				JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result5_black[0];
+				JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result5_black[1];
 				Object[] result5_green = JavaPackageToUMLPackage_underModelImpl
 						.pattern_JavaPackageToUMLPackage_underModel_24_5_matchcorrcontext_greenBBBF(jm2um, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = JavaPackageToUMLPackage_underModelImpl
-						.pattern_JavaPackageToUMLPackage_underModel_24_6_createcorrespondence_blackBBBBB(jp, jm, um, up,
+						.pattern_JavaPackageToUMLPackage_underModel_24_6_createcorrespondence_blackBBBBB(jm, up, jp, um,
 								ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException(
-							"Pattern matching failed." + " Variables: " + "[jp] = " + jp + ", " + "[jm] = " + jm + ", "
-									+ "[um] = " + um + ", " + "[up] = " + up + ", " + "[ccMatch] = " + ccMatch + ".");
+							"Pattern matching failed." + " Variables: " + "[jm] = " + jm + ", " + "[up] = " + up + ", "
+									+ "[jp] = " + jp + ", " + "[um] = " + um + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				JavaPackageToUMLPackage_underModelImpl
-						.pattern_JavaPackageToUMLPackage_underModel_24_6_createcorrespondence_greenFBBB(jp, up,
+						.pattern_JavaPackageToUMLPackage_underModel_24_6_createcorrespondence_greenBBFB(up, jp,
 								ccMatch);
-				//nothing JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result6_green[0];
+				//nothing JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result6_green[2];
 
 				Object[] result7_black = JavaPackageToUMLPackage_underModelImpl
 						.pattern_JavaPackageToUMLPackage_underModel_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1049,8 +1049,8 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.Package jp, Model jm, org.eclipse.uml2.uml.Model um,
-			org.eclipse.uml2.uml.Package up, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Model jm, org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jp,
+			org.eclipse.uml2.uml.Model um, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1100,9 +1100,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(org.eclipse.modisco.java.Package jp, Model jm) {// 
+	public boolean checkDEC_FWD(Model jm, org.eclipse.modisco.java.Package jp) {// 
 		Object[] result1_black = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_27_1_matchtggpattern_blackBB(jp, jm);
+				.pattern_JavaPackageToUMLPackage_underModel_27_1_matchtggpattern_blackBB(jm, jp);
 		if (result1_black != null) {
 			return JavaPackageToUMLPackage_underModelImpl.pattern_JavaPackageToUMLPackage_underModel_27_2_expressionF();
 		} else {
@@ -1116,9 +1116,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {// 
+	public boolean checkDEC_BWD(org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {// 
 		Object[] result1_black = JavaPackageToUMLPackage_underModelImpl
-				.pattern_JavaPackageToUMLPackage_underModel_28_1_matchtggpattern_blackBB(um, up);
+				.pattern_JavaPackageToUMLPackage_underModel_28_1_matchtggpattern_blackBB(up, um);
 		if (result1_black != null) {
 			return JavaPackageToUMLPackage_underModelImpl.pattern_JavaPackageToUMLPackage_underModel_28_2_expressionF();
 		} else {
@@ -1150,17 +1150,17 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 				.pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList jm2umList = (RuleEntryList) result2_black[0];
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result2_black[1];
-			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_black[2];
-			Model jm = (Model) result2_black[3];
+			Model jm = (Model) result2_black[1];
+			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result2_black[2];
+			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_black[3];
 
 			Object[] result3_bindingAndBlack = JavaPackageToUMLPackage_underModelImpl
 					.pattern_JavaPackageToUMLPackage_underModel_29_3_solveCSP_bindingAndBlackFBBBBBB(this,
-							isApplicableMatch, jm2um, jm, um, ruleResult);
+							isApplicableMatch, jm, jm2um, um, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm2um] = " + jm2um + ", " + "[jm] = "
-						+ jm + ", " + "[um] = " + um + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm] = " + jm + ", " + "[jm2um] = "
+						+ jm2um + ", " + "[um] = " + um + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1168,23 +1168,23 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 					.pattern_JavaPackageToUMLPackage_underModel_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = JavaPackageToUMLPackage_underModelImpl
-						.pattern_JavaPackageToUMLPackage_underModel_29_5_checknacs_blackBBB(jm2um, jm, um);
+						.pattern_JavaPackageToUMLPackage_underModel_29_5_checknacs_blackBBB(jm, jm2um, um);
 				if (result5_black != null) {
 
 					Object[] result6_black = JavaPackageToUMLPackage_underModelImpl
-							.pattern_JavaPackageToUMLPackage_underModel_29_6_perform_blackBBBB(jm2um, jm, um,
+							.pattern_JavaPackageToUMLPackage_underModel_29_6_perform_blackBBBB(jm, jm2um, um,
 									ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException(
-								"Pattern matching failed." + " Variables: " + "[jm2um] = " + jm2um + ", " + "[jm] = "
-										+ jm + ", " + "[um] = " + um + ", " + "[ruleResult] = " + ruleResult + ".");
+								"Pattern matching failed." + " Variables: " + "[jm] = " + jm + ", " + "[jm2um] = "
+										+ jm2um + ", " + "[um] = " + um + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					JavaPackageToUMLPackage_underModelImpl
-							.pattern_JavaPackageToUMLPackage_underModel_29_6_perform_greenFFBBFBB(jm, um, ruleResult,
+							.pattern_JavaPackageToUMLPackage_underModel_29_6_perform_greenBFFBFBB(jm, um, ruleResult,
 									csp);
-					//nothing JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result6_green[0];
-					//nothing org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result6_green[1];
-					//nothing org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result6_green[4];
+					//nothing org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result6_green[1];
+					//nothing org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result6_green[2];
+					//nothing JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result6_green[4];
 
 				} else {
 				}
@@ -1202,7 +1202,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2um, Model jm,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
 			org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1237,8 +1237,8 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		eq_0.solve(var_up_name, var_jp_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jm2um", jm2um);
 		isApplicableMatch.registerObject("jm", jm);
+		isApplicableMatch.registerObject("jm2um", jm2um);
 		isApplicableMatch.registerObject("um", um);
 		return csp;
 	}
@@ -1260,26 +1260,26 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_FWD__MATCH_PACKAGE_MODEL:
-			return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-					(Model) arguments.get(2));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_FWD__MATCH_MODEL_PACKAGE:
+			return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_MODEL:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-					(Model) arguments.get(2));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_PACKAGE:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2));
 			return null;
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_MODEL:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1), (Model) arguments.get(2));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_PACKAGE:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_JAVAMODEL2UMLPACKAGE_PACKAGE_MODEL_MODEL:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(JavaModel2UMLPackage) arguments.get(1), (org.eclipse.modisco.java.Package) arguments.get(2),
-					(Model) arguments.get(3), (org.eclipse.uml2.uml.Model) arguments.get(4));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_JAVAMODEL2UMLPACKAGE_PACKAGE_MODEL:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
+					(JavaModel2UMLPackage) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
+					(org.eclipse.uml2.uml.Model) arguments.get(4));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1289,26 +1289,26 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_BWD__MATCH_MODEL_PACKAGE:
-			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Model) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_BWD__MATCH_PACKAGE_MODEL:
+			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
+					(org.eclipse.uml2.uml.Model) arguments.get(2));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_MODEL_PACKAGE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Model) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PACKAGE_MODEL:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
+					(org.eclipse.uml2.uml.Model) arguments.get(2));
 			return null;
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_MODEL_PACKAGE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Model) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PACKAGE_MODEL:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
+					(org.eclipse.uml2.uml.Model) arguments.get(2));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAMODEL2UMLPACKAGE_MODEL_MODEL_PACKAGE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(JavaModel2UMLPackage) arguments.get(1), (Model) arguments.get(2),
-					(org.eclipse.uml2.uml.Model) arguments.get(3), (org.eclipse.uml2.uml.Package) arguments.get(4));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_JAVAMODEL2UMLPACKAGE_PACKAGE_MODEL:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
+					(JavaModel2UMLPackage) arguments.get(2), (org.eclipse.uml2.uml.Package) arguments.get(3),
+					(org.eclipse.uml2.uml.Model) arguments.get(4));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1318,34 +1318,33 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_BWD_EMOFLON_EDGE_142__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_142((EMoflonEdge) arguments.get(0));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_FWD_EMOFLON_EDGE_154__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_154((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_BWD_EMOFLON_EDGE_109__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_109((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_FWD_EMOFLON_EDGE_117__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_117((EMoflonEdge) arguments.get(0));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_SOLVE_CSP_CC__PACKAGE_MODEL_MODEL_PACKAGE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((org.eclipse.modisco.java.Package) arguments.get(0),
-					(Model) arguments.get(1), (org.eclipse.uml2.uml.Model) arguments.get(2),
-					(org.eclipse.uml2.uml.Package) arguments.get(3), (Match) arguments.get(4),
-					(Match) arguments.get(5));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_PACKAGE_PACKAGE_MODEL_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Model) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2), (org.eclipse.uml2.uml.Model) arguments.get(3),
+					(Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_DEC_FWD__PACKAGE_MODEL:
-			return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0), (Model) arguments.get(1));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_DEC_BWD__MODEL_PACKAGE:
-			return checkDEC_BWD((org.eclipse.uml2.uml.Model) arguments.get(0),
-					(org.eclipse.uml2.uml.Package) arguments.get(1));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_DEC_FWD__MODEL_PACKAGE:
+			return checkDEC_FWD((Model) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_DEC_BWD__PACKAGE_MODEL:
+			return checkDEC_BWD((org.eclipse.uml2.uml.Package) arguments.get(0),
+					(org.eclipse.uml2.uml.Model) arguments.get(1));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___GENERATE_MODEL__RULEENTRYCONTAINER_JAVAMODEL2UMLPACKAGE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (JavaModel2UMLPackage) arguments.get(1));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAMODEL2UMLPACKAGE_MODEL_MODEL_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(JavaModel2UMLPackage) arguments.get(1), (Model) arguments.get(2),
-					(org.eclipse.uml2.uml.Model) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_JAVAMODEL2UMLPACKAGE_MODEL_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
+					(JavaModel2UMLPackage) arguments.get(2), (org.eclipse.uml2.uml.Model) arguments.get(3),
+					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1353,16 +1352,16 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_0_1_initialbindings_blackBBBB(
-			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.modisco.java.Package jp, Model jm) {
-		return new Object[] { _this, match, jp, jm };
+			JavaPackageToUMLPackage_underModel _this, Match match, Model jm, org.eclipse.modisco.java.Package jp) {
+		return new Object[] { _this, match, jm, jp };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_0_2_SolveCSP_bindingFBBBB(
-			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.modisco.java.Package jp, Model jm) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, jp, jm);
+			JavaPackageToUMLPackage_underModel _this, Match match, Model jm, org.eclipse.modisco.java.Package jp) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, jm, jp);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, jp, jm };
+			return new Object[] { csp, _this, match, jm, jp };
 		}
 		return null;
 	}
@@ -1372,9 +1371,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_0_2_SolveCSP_bindingAndBlackFBBBB(
-			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.modisco.java.Package jp, Model jm) {
+			JavaPackageToUMLPackage_underModel _this, Match match, Model jm, org.eclipse.modisco.java.Package jp) {
 		Object[] result_pattern_JavaPackageToUMLPackage_underModel_0_2_SolveCSP_binding = pattern_JavaPackageToUMLPackage_underModel_0_2_SolveCSP_bindingFBBBB(
-				_this, match, jp, jm);
+				_this, match, jm, jp);
 		if (result_pattern_JavaPackageToUMLPackage_underModel_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaPackageToUMLPackage_underModel_0_2_SolveCSP_binding[0];
 
@@ -1382,7 +1381,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_JavaPackageToUMLPackage_underModel_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, jp, jm };
+				return new Object[] { csp, _this, match, jm, jp };
 			}
 		}
 		return null;
@@ -1396,12 +1395,12 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_0_4_collectelementstobetranslated_blackBBB(
-			Match match, org.eclipse.modisco.java.Package jp, Model jm) {
-		return new Object[] { match, jp, jm };
+			Match match, Model jm, org.eclipse.modisco.java.Package jp) {
+		return new Object[] { match, jm, jp };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_0_4_collectelementstobetranslated_greenBBBFF(
-			Match match, org.eclipse.modisco.java.Package jp, Model jm) {
+			Match match, Model jm, org.eclipse.modisco.java.Package jp) {
 		EMoflonEdge jm__jp____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp__jm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(jp);
@@ -1415,12 +1414,12 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		match.getToBeTranslatedEdges().add(jp__jm____model);
 		jm__jp____ownedElements.setName(jm__jp____ownedElements_name_prime);
 		jp__jm____model.setName(jp__jm____model_name_prime);
-		return new Object[] { match, jp, jm, jm__jp____ownedElements, jp__jm____model };
+		return new Object[] { match, jm, jp, jm__jp____ownedElements, jp__jm____model };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_0_5_collectcontextelements_blackBBB(
-			Match match, org.eclipse.modisco.java.Package jp, Model jm) {
-		return new Object[] { match, jp, jm };
+			Match match, Model jm, org.eclipse.modisco.java.Package jp) {
+		return new Object[] { match, jm, jp };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_0_5_collectcontextelements_greenBB(
@@ -1430,8 +1429,8 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final void pattern_JavaPackageToUMLPackage_underModel_0_6_registerobjectstomatch_expressionBBBB(
-			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.modisco.java.Package jp, Model jm) {
-		_this.registerObjectsToMatch_FWD(match, jp, jm);
+			JavaPackageToUMLPackage_underModel _this, Match match, Model jm, org.eclipse.modisco.java.Package jp) {
+		_this.registerObjectsToMatch_FWD(match, jm, jp);
 
 	}
 
@@ -1447,23 +1446,23 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jm2um");
-		EObject _localVariable_1 = isApplicableMatch.getObject("jp");
-		EObject _localVariable_2 = isApplicableMatch.getObject("jm");
+		EObject _localVariable_0 = isApplicableMatch.getObject("jm");
+		EObject _localVariable_1 = isApplicableMatch.getObject("jm2um");
+		EObject _localVariable_2 = isApplicableMatch.getObject("jp");
 		EObject _localVariable_3 = isApplicableMatch.getObject("um");
-		EObject tmpJm2um = _localVariable_0;
-		EObject tmpJp = _localVariable_1;
-		EObject tmpJm = _localVariable_2;
+		EObject tmpJm = _localVariable_0;
+		EObject tmpJm2um = _localVariable_1;
+		EObject tmpJp = _localVariable_2;
 		EObject tmpUm = _localVariable_3;
-		if (tmpJm2um instanceof JavaModel2UMLPackage) {
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) tmpJm2um;
-			if (tmpJp instanceof org.eclipse.modisco.java.Package) {
-				org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) tmpJp;
-				if (tmpJm instanceof Model) {
-					Model jm = (Model) tmpJm;
+		if (tmpJm instanceof Model) {
+			Model jm = (Model) tmpJm;
+			if (tmpJm2um instanceof JavaModel2UMLPackage) {
+				JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) tmpJm2um;
+				if (tmpJp instanceof org.eclipse.modisco.java.Package) {
+					org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) tmpJp;
 					if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
 						org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
-						return new Object[] { jm2um, jp, jm, um, isApplicableMatch };
+						return new Object[] { jm, jm2um, jp, um, isApplicableMatch };
 					}
 				}
 			}
@@ -1472,12 +1471,12 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_blackBBBBFBB(
-			JavaModel2UMLPackage jm2um, org.eclipse.modisco.java.Package jp, Model jm, org.eclipse.uml2.uml.Model um,
+			Model jm, JavaModel2UMLPackage jm2um, org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Model um,
 			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jm2um, jp, jm, um, csp, _this, isApplicableMatch };
+				return new Object[] { jm, jm2um, jp, um, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1488,17 +1487,17 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		Object[] result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_binding = pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_binding != null) {
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_binding[0];
-			org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_binding[1];
-			Model jm = (Model) result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_binding[2];
+			Model jm = (Model) result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_binding[0];
+			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_binding[1];
+			org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_binding[2];
 			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_black = pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_blackBBBBFBB(
-					jm2um, jp, jm, um, _this, isApplicableMatch);
+					jm, jm2um, jp, um, _this, isApplicableMatch);
 			if (result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_black[4];
 
-				return new Object[] { jm2um, jp, jm, um, csp, _this, isApplicableMatch };
+				return new Object[] { jm, jm2um, jp, um, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1506,51 +1505,51 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_1_1_performtransformation_greenFBBFB(
 			org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Model um, CSP csp) {
-		JavaPackage2UmlPackage jp2up = UmlFactory.eINSTANCE.createJavaPackage2UmlPackage();
 		org.eclipse.uml2.uml.Package up = UMLFactory.eINSTANCE.createPackage();
+		JavaPackage2UmlPackage jp2up = UmlFactory.eINSTANCE.createJavaPackage2UmlPackage();
 		Object _localVariable_0 = csp.getValue("up", "name");
+		um.getPackagedElements().add(up);
 		jp2up.setSource(jp);
 		jp2up.setTarget(up);
-		um.getPackagedElements().add(up);
 		String up_name_prime = (String) _localVariable_0;
 		up.setName(up_name_prime);
-		return new Object[] { jp2up, jp, um, up, csp };
+		return new Object[] { up, jp, um, jp2up, csp };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_1_2_collecttranslatedelements_blackBBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Package up) {
-		return new Object[] { jp2up, jp, up };
+			org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jp, JavaPackage2UmlPackage jp2up) {
+		return new Object[] { up, jp, jp2up };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_1_2_collecttranslatedelements_greenFBBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Package up) {
+			org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jp, JavaPackage2UmlPackage jp2up) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(jp2up);
-		ruleresult.getTranslatedElements().add(jp);
 		ruleresult.getCreatedElements().add(up);
-		return new Object[] { ruleresult, jp2up, jp, up };
+		ruleresult.getTranslatedElements().add(jp);
+		ruleresult.getCreatedLinkElements().add(jp2up);
+		return new Object[] { ruleresult, up, jp, jp2up };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject jm2um, EObject jp2up, EObject jp, EObject jm, EObject um,
-			EObject up) {
-		if (!jm2um.equals(jp2up)) {
-			if (!jm2um.equals(jp)) {
-				if (!jm2um.equals(um)) {
-					if (!jm2um.equals(up)) {
-						if (!jp2up.equals(um)) {
-							if (!jp2up.equals(up)) {
-								if (!jp.equals(jp2up)) {
-									if (!jp.equals(um)) {
-										if (!jp.equals(up)) {
-											if (!jm.equals(jm2um)) {
-												if (!jm.equals(jp2up)) {
-													if (!jm.equals(jp)) {
-														if (!jm.equals(um)) {
-															if (!jm.equals(up)) {
-																if (!um.equals(up)) {
-																	return new Object[] { ruleresult, jm2um, jp2up, jp,
-																			jm, um, up };
+			PerformRuleResult ruleresult, EObject jm, EObject jm2um, EObject up, EObject jp, EObject um,
+			EObject jp2up) {
+		if (!jm.equals(jm2um)) {
+			if (!jm.equals(up)) {
+				if (!jm.equals(jp)) {
+					if (!jm.equals(um)) {
+						if (!jm.equals(jp2up)) {
+							if (!jm2um.equals(up)) {
+								if (!jm2um.equals(jp)) {
+									if (!jm2um.equals(um)) {
+										if (!jm2um.equals(jp2up)) {
+											if (!jp.equals(up)) {
+												if (!jp.equals(um)) {
+													if (!jp.equals(jp2up)) {
+														if (!um.equals(up)) {
+															if (!jp2up.equals(up)) {
+																if (!jp2up.equals(um)) {
+																	return new Object[] { ruleresult, jm, jm2um, up, jp,
+																			um, jp2up };
 																}
 															}
 														}
@@ -1570,47 +1569,47 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject jp2up, EObject jp, EObject jm, EObject um, EObject up) {
-		EMoflonEdge jp2up__jp____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jp2up__up____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge um__up____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject jm, EObject up, EObject jp, EObject um, EObject jp2up) {
 		EMoflonEdge jm__jp____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp__jm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge um__up____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jp2up__jp____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jp2up__up____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "JavaPackageToUMLPackage_underModel";
-		String jp2up__jp____source_name_prime = "source";
-		String jp2up__up____target_name_prime = "target";
-		String um__up____packagedElement_name_prime = "packagedElement";
 		String jm__jp____ownedElements_name_prime = "ownedElements";
 		String jp__jm____model_name_prime = "model";
-		jp2up__jp____source.setSrc(jp2up);
-		jp2up__jp____source.setTrg(jp);
-		ruleresult.getCreatedEdges().add(jp2up__jp____source);
-		jp2up__up____target.setSrc(jp2up);
-		jp2up__up____target.setTrg(up);
-		ruleresult.getCreatedEdges().add(jp2up__up____target);
-		um__up____packagedElement.setSrc(um);
-		um__up____packagedElement.setTrg(up);
-		ruleresult.getCreatedEdges().add(um__up____packagedElement);
+		String um__up____packagedElement_name_prime = "packagedElement";
+		String jp2up__jp____source_name_prime = "source";
+		String jp2up__up____target_name_prime = "target";
 		jm__jp____ownedElements.setSrc(jm);
 		jm__jp____ownedElements.setTrg(jp);
 		ruleresult.getTranslatedEdges().add(jm__jp____ownedElements);
 		jp__jm____model.setSrc(jp);
 		jp__jm____model.setTrg(jm);
 		ruleresult.getTranslatedEdges().add(jp__jm____model);
+		um__up____packagedElement.setSrc(um);
+		um__up____packagedElement.setTrg(up);
+		ruleresult.getCreatedEdges().add(um__up____packagedElement);
+		jp2up__jp____source.setSrc(jp2up);
+		jp2up__jp____source.setTrg(jp);
+		ruleresult.getCreatedEdges().add(jp2up__jp____source);
+		jp2up__up____target.setSrc(jp2up);
+		jp2up__up____target.setTrg(up);
+		ruleresult.getCreatedEdges().add(jp2up__up____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		jp2up__jp____source.setName(jp2up__jp____source_name_prime);
-		jp2up__up____target.setName(jp2up__up____target_name_prime);
-		um__up____packagedElement.setName(um__up____packagedElement_name_prime);
 		jm__jp____ownedElements.setName(jm__jp____ownedElements_name_prime);
 		jp__jm____model.setName(jp__jm____model_name_prime);
-		return new Object[] { ruleresult, jp2up, jp, jm, um, up, jp2up__jp____source, jp2up__up____target,
-				um__up____packagedElement, jm__jp____ownedElements, jp__jm____model };
+		um__up____packagedElement.setName(um__up____packagedElement_name_prime);
+		jp2up__jp____source.setName(jp2up__jp____source_name_prime);
+		jp2up__up____target.setName(jp2up__up____target_name_prime);
+		return new Object[] { ruleresult, jm, up, jp, um, jp2up, jm__jp____ownedElements, jp__jm____model,
+				um__up____packagedElement, jp2up__jp____source, jp2up__up____target };
 	}
 
 	public static final void pattern_JavaPackageToUMLPackage_underModel_1_5_registerobjects_expressionBBBBBBBB(
-			JavaPackageToUMLPackage_underModel _this, PerformRuleResult ruleresult, EObject jm2um, EObject jp2up,
-			EObject jp, EObject jm, EObject um, EObject up) {
-		_this.registerObjects_FWD(ruleresult, jm2um, jp2up, jp, jm, um, up);
+			JavaPackageToUMLPackage_underModel _this, PerformRuleResult ruleresult, EObject jm, EObject jm2um,
+			EObject up, EObject jp, EObject um, EObject jp2up) {
+		_this.registerObjects_FWD(ruleresult, jm, jm2um, up, jp, um, jp2up);
 
 	}
 
@@ -1672,29 +1671,29 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("jp");
-		EObject _localVariable_1 = match.getObject("jm");
-		EObject tmpJp = _localVariable_0;
-		EObject tmpJm = _localVariable_1;
-		if (tmpJp instanceof org.eclipse.modisco.java.Package) {
-			org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) tmpJp;
-			if (tmpJm instanceof Model) {
-				Model jm = (Model) tmpJm;
-				return new Object[] { jp, jm, match };
+		EObject _localVariable_0 = match.getObject("jm");
+		EObject _localVariable_1 = match.getObject("jp");
+		EObject tmpJm = _localVariable_0;
+		EObject tmpJp = _localVariable_1;
+		if (tmpJm instanceof Model) {
+			Model jm = (Model) tmpJm;
+			if (tmpJp instanceof org.eclipse.modisco.java.Package) {
+				org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) tmpJp;
+				return new Object[] { jm, jp, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_JavaPackageToUMLPackage_underModel_2_2_corematch_blackFBBFB(
-			org.eclipse.modisco.java.Package jp, Model jm, Match match) {
+	public static final Iterable<Object[]> pattern_JavaPackageToUMLPackage_underModel_2_2_corematch_blackBFBFB(Model jm,
+			org.eclipse.modisco.java.Package jp, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (JavaModel2UMLPackage jm2um : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jm,
 				JavaModel2UMLPackage.class, "source")) {
 			org.eclipse.uml2.uml.Package tmpUm = jm2um.getTarget();
 			if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
 				org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
-				_result.add(new Object[] { jm2um, jp, jm, um, match });
+				_result.add(new Object[] { jm, jm2um, jp, um, match });
 			}
 
 		}
@@ -1702,36 +1701,33 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_JavaPackageToUMLPackage_underModel_2_3_findcontext_blackBBBB(
-			JavaModel2UMLPackage jm2um, org.eclipse.modisco.java.Package jp, Model jm, org.eclipse.uml2.uml.Model um) {
+			Model jm, JavaModel2UMLPackage jm2um, org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Model um) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (um.equals(jm2um.getTarget())) {
-			if (jm.equals(jm2um.getSource())) {
-				if (jm.getOwnedElements().contains(jp)) {
-					_result.add(new Object[] { jm2um, jp, jm, um });
+		if (jm.equals(jm2um.getSource())) {
+			if (jm.getOwnedElements().contains(jp)) {
+				if (um.equals(jm2um.getTarget())) {
+					_result.add(new Object[] { jm, jm2um, jp, um });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_2_3_findcontext_greenBBBBFFFFF(
-			JavaModel2UMLPackage jm2um, org.eclipse.modisco.java.Package jp, Model jm, org.eclipse.uml2.uml.Model um) {
+	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_2_3_findcontext_greenBBBBFFFFF(Model jm,
+			JavaModel2UMLPackage jm2um, org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Model um) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge jm2um__um____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jm2um__jm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jm__jp____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp__jm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String jm2um__um____target_name_prime = "target";
+		EMoflonEdge jm2um__um____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String jm2um__jm____source_name_prime = "source";
 		String jm__jp____ownedElements_name_prime = "ownedElements";
 		String jp__jm____model_name_prime = "model";
+		String jm2um__um____target_name_prime = "target";
+		isApplicableMatch.getAllContextElements().add(jm);
 		isApplicableMatch.getAllContextElements().add(jm2um);
 		isApplicableMatch.getAllContextElements().add(jp);
-		isApplicableMatch.getAllContextElements().add(jm);
 		isApplicableMatch.getAllContextElements().add(um);
-		jm2um__um____target.setSrc(jm2um);
-		jm2um__um____target.setTrg(um);
-		isApplicableMatch.getAllContextElements().add(jm2um__um____target);
 		jm2um__jm____source.setSrc(jm2um);
 		jm2um__jm____source.setTrg(jm);
 		isApplicableMatch.getAllContextElements().add(jm2um__jm____source);
@@ -1741,21 +1737,24 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		jp__jm____model.setSrc(jp);
 		jp__jm____model.setTrg(jm);
 		isApplicableMatch.getAllContextElements().add(jp__jm____model);
-		jm2um__um____target.setName(jm2um__um____target_name_prime);
+		jm2um__um____target.setSrc(jm2um);
+		jm2um__um____target.setTrg(um);
+		isApplicableMatch.getAllContextElements().add(jm2um__um____target);
 		jm2um__jm____source.setName(jm2um__jm____source_name_prime);
 		jm__jp____ownedElements.setName(jm__jp____ownedElements_name_prime);
 		jp__jm____model.setName(jp__jm____model_name_prime);
-		return new Object[] { jm2um, jp, jm, um, isApplicableMatch, jm2um__um____target, jm2um__jm____source,
-				jm__jp____ownedElements, jp__jm____model };
+		jm2um__um____target.setName(jm2um__um____target_name_prime);
+		return new Object[] { jm, jm2um, jp, um, isApplicableMatch, jm2um__jm____source, jm__jp____ownedElements,
+				jp__jm____model, jm2um__um____target };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_2_4_solveCSP_bindingFBBBBBB(
-			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2um,
-			org.eclipse.modisco.java.Package jp, Model jm, org.eclipse.uml2.uml.Model um) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jm2um, jp, jm, um);
+			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, Model jm,
+			JavaModel2UMLPackage jm2um, org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Model um) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jm, jm2um, jp, um);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jm2um, jp, jm, um };
+			return new Object[] { csp, _this, isApplicableMatch, jm, jm2um, jp, um };
 		}
 		return null;
 	}
@@ -1765,10 +1764,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_2_4_solveCSP_bindingAndBlackFBBBBBB(
-			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2um,
-			org.eclipse.modisco.java.Package jp, Model jm, org.eclipse.uml2.uml.Model um) {
+			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, Model jm,
+			JavaModel2UMLPackage jm2um, org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Model um) {
 		Object[] result_pattern_JavaPackageToUMLPackage_underModel_2_4_solveCSP_binding = pattern_JavaPackageToUMLPackage_underModel_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jm2um, jp, jm, um);
+				_this, isApplicableMatch, jm, jm2um, jp, um);
 		if (result_pattern_JavaPackageToUMLPackage_underModel_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaPackageToUMLPackage_underModel_2_4_solveCSP_binding[0];
 
@@ -1776,7 +1775,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_JavaPackageToUMLPackage_underModel_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jm2um, jp, jm, um };
+				return new Object[] { csp, _this, isApplicableMatch, jm, jm2um, jp, um };
 			}
 		}
 		return null;
@@ -1811,21 +1810,21 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_10_1_initialbindings_blackBBBB(
-			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.uml2.uml.Model um,
-			org.eclipse.uml2.uml.Package up) {
+			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.uml2.uml.Package up,
+			org.eclipse.uml2.uml.Model um) {
 		if (!um.equals(up)) {
-			return new Object[] { _this, match, um, up };
+			return new Object[] { _this, match, up, um };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_10_2_SolveCSP_bindingFBBBB(
-			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.uml2.uml.Model um,
-			org.eclipse.uml2.uml.Package up) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, um, up);
+			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.uml2.uml.Package up,
+			org.eclipse.uml2.uml.Model um) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, up, um);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, um, up };
+			return new Object[] { csp, _this, match, up, um };
 		}
 		return null;
 	}
@@ -1835,10 +1834,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_10_2_SolveCSP_bindingAndBlackFBBBB(
-			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.uml2.uml.Model um,
-			org.eclipse.uml2.uml.Package up) {
+			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.uml2.uml.Package up,
+			org.eclipse.uml2.uml.Model um) {
 		Object[] result_pattern_JavaPackageToUMLPackage_underModel_10_2_SolveCSP_binding = pattern_JavaPackageToUMLPackage_underModel_10_2_SolveCSP_bindingFBBBB(
-				_this, match, um, up);
+				_this, match, up, um);
 		if (result_pattern_JavaPackageToUMLPackage_underModel_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaPackageToUMLPackage_underModel_10_2_SolveCSP_binding[0];
 
@@ -1846,7 +1845,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_JavaPackageToUMLPackage_underModel_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, um, up };
+				return new Object[] { csp, _this, match, up, um };
 			}
 		}
 		return null;
@@ -1860,15 +1859,15 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_10_4_collectelementstobetranslated_blackBBB(
-			Match match, org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {
+			Match match, org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {
 		if (!um.equals(up)) {
-			return new Object[] { match, um, up };
+			return new Object[] { match, up, um };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_10_4_collectelementstobetranslated_greenBBBF(
-			Match match, org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {
+			Match match, org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {
 		EMoflonEdge um__up____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(up);
 		String um__up____packagedElement_name_prime = "packagedElement";
@@ -1876,13 +1875,13 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		um__up____packagedElement.setTrg(up);
 		match.getToBeTranslatedEdges().add(um__up____packagedElement);
 		um__up____packagedElement.setName(um__up____packagedElement_name_prime);
-		return new Object[] { match, um, up, um__up____packagedElement };
+		return new Object[] { match, up, um, um__up____packagedElement };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_10_5_collectcontextelements_blackBBB(
-			Match match, org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {
+			Match match, org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {
 		if (!um.equals(up)) {
-			return new Object[] { match, um, up };
+			return new Object[] { match, up, um };
 		}
 		return null;
 	}
@@ -1894,9 +1893,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final void pattern_JavaPackageToUMLPackage_underModel_10_6_registerobjectstomatch_expressionBBBB(
-			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.uml2.uml.Model um,
-			org.eclipse.uml2.uml.Package up) {
-		_this.registerObjectsToMatch_BWD(match, um, up);
+			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.uml2.uml.Package up,
+			org.eclipse.uml2.uml.Model um) {
+		_this.registerObjectsToMatch_BWD(match, up, um);
 
 	}
 
@@ -1912,23 +1911,23 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jm2um");
-		EObject _localVariable_1 = isApplicableMatch.getObject("jm");
-		EObject _localVariable_2 = isApplicableMatch.getObject("um");
-		EObject _localVariable_3 = isApplicableMatch.getObject("up");
-		EObject tmpJm2um = _localVariable_0;
-		EObject tmpJm = _localVariable_1;
-		EObject tmpUm = _localVariable_2;
-		EObject tmpUp = _localVariable_3;
-		if (tmpJm2um instanceof JavaModel2UMLPackage) {
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) tmpJm2um;
-			if (tmpJm instanceof Model) {
-				Model jm = (Model) tmpJm;
-				if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
-					org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
-					if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
-						org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
-						return new Object[] { jm2um, jm, um, up, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("jm");
+		EObject _localVariable_1 = isApplicableMatch.getObject("jm2um");
+		EObject _localVariable_2 = isApplicableMatch.getObject("up");
+		EObject _localVariable_3 = isApplicableMatch.getObject("um");
+		EObject tmpJm = _localVariable_0;
+		EObject tmpJm2um = _localVariable_1;
+		EObject tmpUp = _localVariable_2;
+		EObject tmpUm = _localVariable_3;
+		if (tmpJm instanceof Model) {
+			Model jm = (Model) tmpJm;
+			if (tmpJm2um instanceof JavaModel2UMLPackage) {
+				JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) tmpJm2um;
+				if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
+					org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
+					if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
+						org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
+						return new Object[] { jm, jm2um, up, um, isApplicableMatch };
 					}
 				}
 			}
@@ -1937,13 +1936,13 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_blackBBBBFBB(
-			JavaModel2UMLPackage jm2um, Model jm, org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up,
+			Model jm, JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um,
 			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch) {
 		if (!um.equals(up)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { jm2um, jm, um, up, csp, _this, isApplicableMatch };
+					return new Object[] { jm, jm2um, up, um, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1955,69 +1954,69 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		Object[] result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_binding = pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_binding != null) {
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_binding[0];
-			Model jm = (Model) result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_binding[1];
-			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_binding[2];
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_binding[3];
+			Model jm = (Model) result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_binding[0];
+			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_binding[1];
+			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_binding[2];
+			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_black = pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_blackBBBBFBB(
-					jm2um, jm, um, up, _this, isApplicableMatch);
+					jm, jm2um, up, um, _this, isApplicableMatch);
 			if (result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_black[4];
 
-				return new Object[] { jm2um, jm, um, up, csp, _this, isApplicableMatch };
+				return new Object[] { jm, jm2um, up, um, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_greenFFBBB(
+	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_11_1_performtransformation_greenBBFFB(
 			Model jm, org.eclipse.uml2.uml.Package up, CSP csp) {
-		JavaPackage2UmlPackage jp2up = UmlFactory.eINSTANCE.createJavaPackage2UmlPackage();
 		org.eclipse.modisco.java.Package jp = JavaFactory.eINSTANCE.createPackage();
+		JavaPackage2UmlPackage jp2up = UmlFactory.eINSTANCE.createJavaPackage2UmlPackage();
 		Object _localVariable_0 = csp.getValue("jp", "name");
-		jp2up.setTarget(up);
-		jp2up.setSource(jp);
 		jm.getOwnedElements().add(jp);
+		jp2up.setSource(jp);
+		jp2up.setTarget(up);
 		String jp_name_prime = (String) _localVariable_0;
 		jp.setName(jp_name_prime);
-		return new Object[] { jp2up, jp, jm, up, csp };
+		return new Object[] { jm, up, jp, jp2up, csp };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_11_2_collecttranslatedelements_blackBBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Package up) {
-		return new Object[] { jp2up, jp, up };
+			org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jp, JavaPackage2UmlPackage jp2up) {
+		return new Object[] { up, jp, jp2up };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_11_2_collecttranslatedelements_greenFBBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Package up) {
+			org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jp, JavaPackage2UmlPackage jp2up) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(jp2up);
-		ruleresult.getCreatedElements().add(jp);
 		ruleresult.getTranslatedElements().add(up);
-		return new Object[] { ruleresult, jp2up, jp, up };
+		ruleresult.getCreatedElements().add(jp);
+		ruleresult.getCreatedLinkElements().add(jp2up);
+		return new Object[] { ruleresult, up, jp, jp2up };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject jm2um, EObject jp2up, EObject jp, EObject jm, EObject um,
-			EObject up) {
-		if (!jm2um.equals(jp2up)) {
-			if (!jm2um.equals(jp)) {
-				if (!jm2um.equals(um)) {
-					if (!jm2um.equals(up)) {
-						if (!jp2up.equals(um)) {
-							if (!jp2up.equals(up)) {
-								if (!jp.equals(jp2up)) {
-									if (!jp.equals(um)) {
-										if (!jp.equals(up)) {
-											if (!jm.equals(jm2um)) {
-												if (!jm.equals(jp2up)) {
-													if (!jm.equals(jp)) {
-														if (!jm.equals(um)) {
-															if (!jm.equals(up)) {
-																if (!um.equals(up)) {
-																	return new Object[] { ruleresult, jm2um, jp2up, jp,
-																			jm, um, up };
+			PerformRuleResult ruleresult, EObject jm, EObject jm2um, EObject up, EObject jp, EObject um,
+			EObject jp2up) {
+		if (!jm.equals(jm2um)) {
+			if (!jm.equals(up)) {
+				if (!jm.equals(jp)) {
+					if (!jm.equals(um)) {
+						if (!jm.equals(jp2up)) {
+							if (!jm2um.equals(up)) {
+								if (!jm2um.equals(jp)) {
+									if (!jm2um.equals(um)) {
+										if (!jm2um.equals(jp2up)) {
+											if (!jp.equals(up)) {
+												if (!jp.equals(um)) {
+													if (!jp.equals(jp2up)) {
+														if (!um.equals(up)) {
+															if (!jp2up.equals(up)) {
+																if (!jp2up.equals(um)) {
+																	return new Object[] { ruleresult, jm, jm2um, up, jp,
+																			um, jp2up };
 																}
 															}
 														}
@@ -2037,47 +2036,47 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject jp2up, EObject jp, EObject jm, EObject um, EObject up) {
-		EMoflonEdge jp2up__jp____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jp2up__up____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge um__up____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject jm, EObject up, EObject jp, EObject um, EObject jp2up) {
 		EMoflonEdge jm__jp____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp__jm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge um__up____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jp2up__jp____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jp2up__up____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "JavaPackageToUMLPackage_underModel";
-		String jp2up__jp____source_name_prime = "source";
-		String jp2up__up____target_name_prime = "target";
-		String um__up____packagedElement_name_prime = "packagedElement";
 		String jm__jp____ownedElements_name_prime = "ownedElements";
 		String jp__jm____model_name_prime = "model";
-		jp2up__jp____source.setSrc(jp2up);
-		jp2up__jp____source.setTrg(jp);
-		ruleresult.getCreatedEdges().add(jp2up__jp____source);
-		jp2up__up____target.setSrc(jp2up);
-		jp2up__up____target.setTrg(up);
-		ruleresult.getCreatedEdges().add(jp2up__up____target);
-		um__up____packagedElement.setSrc(um);
-		um__up____packagedElement.setTrg(up);
-		ruleresult.getTranslatedEdges().add(um__up____packagedElement);
+		String um__up____packagedElement_name_prime = "packagedElement";
+		String jp2up__jp____source_name_prime = "source";
+		String jp2up__up____target_name_prime = "target";
 		jm__jp____ownedElements.setSrc(jm);
 		jm__jp____ownedElements.setTrg(jp);
 		ruleresult.getCreatedEdges().add(jm__jp____ownedElements);
 		jp__jm____model.setSrc(jp);
 		jp__jm____model.setTrg(jm);
 		ruleresult.getCreatedEdges().add(jp__jm____model);
+		um__up____packagedElement.setSrc(um);
+		um__up____packagedElement.setTrg(up);
+		ruleresult.getTranslatedEdges().add(um__up____packagedElement);
+		jp2up__jp____source.setSrc(jp2up);
+		jp2up__jp____source.setTrg(jp);
+		ruleresult.getCreatedEdges().add(jp2up__jp____source);
+		jp2up__up____target.setSrc(jp2up);
+		jp2up__up____target.setTrg(up);
+		ruleresult.getCreatedEdges().add(jp2up__up____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		jp2up__jp____source.setName(jp2up__jp____source_name_prime);
-		jp2up__up____target.setName(jp2up__up____target_name_prime);
-		um__up____packagedElement.setName(um__up____packagedElement_name_prime);
 		jm__jp____ownedElements.setName(jm__jp____ownedElements_name_prime);
 		jp__jm____model.setName(jp__jm____model_name_prime);
-		return new Object[] { ruleresult, jp2up, jp, jm, um, up, jp2up__jp____source, jp2up__up____target,
-				um__up____packagedElement, jm__jp____ownedElements, jp__jm____model };
+		um__up____packagedElement.setName(um__up____packagedElement_name_prime);
+		jp2up__jp____source.setName(jp2up__jp____source_name_prime);
+		jp2up__up____target.setName(jp2up__up____target_name_prime);
+		return new Object[] { ruleresult, jm, up, jp, um, jp2up, jm__jp____ownedElements, jp__jm____model,
+				um__up____packagedElement, jp2up__jp____source, jp2up__up____target };
 	}
 
 	public static final void pattern_JavaPackageToUMLPackage_underModel_11_5_registerobjects_expressionBBBBBBBB(
-			JavaPackageToUMLPackage_underModel _this, PerformRuleResult ruleresult, EObject jm2um, EObject jp2up,
-			EObject jp, EObject jm, EObject um, EObject up) {
-		_this.registerObjects_BWD(ruleresult, jm2um, jp2up, jp, jm, um, up);
+			JavaPackageToUMLPackage_underModel _this, PerformRuleResult ruleresult, EObject jm, EObject jm2um,
+			EObject up, EObject jp, EObject um, EObject jp2up) {
+		_this.registerObjects_BWD(ruleresult, jm, jm2um, up, jp, um, jp2up);
 
 	}
 
@@ -2139,29 +2138,29 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("um");
-		EObject _localVariable_1 = match.getObject("up");
-		EObject tmpUm = _localVariable_0;
-		EObject tmpUp = _localVariable_1;
-		if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
-			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
-			if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
-				return new Object[] { um, up, match };
+		EObject _localVariable_0 = match.getObject("up");
+		EObject _localVariable_1 = match.getObject("um");
+		EObject tmpUp = _localVariable_0;
+		EObject tmpUm = _localVariable_1;
+		if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
+			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
+			if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
+				org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
+				return new Object[] { up, um, match };
 			}
 		}
 		return null;
 	}
 
 	public static final Iterable<Object[]> pattern_JavaPackageToUMLPackage_underModel_12_2_corematch_blackFFBBB(
-			org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up, Match match) {
+			org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!um.equals(up)) {
 			for (JavaModel2UMLPackage jm2um : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(um,
 					JavaModel2UMLPackage.class, "target")) {
 				Model jm = jm2um.getSource();
 				if (jm != null) {
-					_result.add(new Object[] { jm2um, jm, um, up, match });
+					_result.add(new Object[] { jm, jm2um, up, um, match });
 				}
 
 			}
@@ -2170,13 +2169,13 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_JavaPackageToUMLPackage_underModel_12_3_findcontext_blackBBBB(
-			JavaModel2UMLPackage jm2um, Model jm, org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {
+			Model jm, JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!um.equals(up)) {
-			if (um.equals(jm2um.getTarget())) {
-				if (um.getPackagedElements().contains(up)) {
-					if (jm.equals(jm2um.getSource())) {
-						_result.add(new Object[] { jm2um, jm, um, up });
+			if (jm.equals(jm2um.getSource())) {
+				if (um.equals(jm2um.getTarget())) {
+					if (um.getPackagedElements().contains(up)) {
+						_result.add(new Object[] { jm, jm2um, up, um });
 					}
 				}
 			}
@@ -2184,42 +2183,42 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		return _result;
 	}
 
-	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_12_3_findcontext_greenBBBBFFFF(
-			JavaModel2UMLPackage jm2um, Model jm, org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {
+	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_12_3_findcontext_greenBBBBFFFF(Model jm,
+			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge jm2um__jm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jm2um__um____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge um__up____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2um__jm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String jm2um__jm____source_name_prime = "source";
 		String jm2um__um____target_name_prime = "target";
 		String um__up____packagedElement_name_prime = "packagedElement";
-		String jm2um__jm____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(jm2um);
 		isApplicableMatch.getAllContextElements().add(jm);
-		isApplicableMatch.getAllContextElements().add(um);
+		isApplicableMatch.getAllContextElements().add(jm2um);
 		isApplicableMatch.getAllContextElements().add(up);
+		isApplicableMatch.getAllContextElements().add(um);
+		jm2um__jm____source.setSrc(jm2um);
+		jm2um__jm____source.setTrg(jm);
+		isApplicableMatch.getAllContextElements().add(jm2um__jm____source);
 		jm2um__um____target.setSrc(jm2um);
 		jm2um__um____target.setTrg(um);
 		isApplicableMatch.getAllContextElements().add(jm2um__um____target);
 		um__up____packagedElement.setSrc(um);
 		um__up____packagedElement.setTrg(up);
 		isApplicableMatch.getAllContextElements().add(um__up____packagedElement);
-		jm2um__jm____source.setSrc(jm2um);
-		jm2um__jm____source.setTrg(jm);
-		isApplicableMatch.getAllContextElements().add(jm2um__jm____source);
+		jm2um__jm____source.setName(jm2um__jm____source_name_prime);
 		jm2um__um____target.setName(jm2um__um____target_name_prime);
 		um__up____packagedElement.setName(um__up____packagedElement_name_prime);
-		jm2um__jm____source.setName(jm2um__jm____source_name_prime);
-		return new Object[] { jm2um, jm, um, up, isApplicableMatch, jm2um__um____target, um__up____packagedElement,
-				jm2um__jm____source };
+		return new Object[] { jm, jm2um, up, um, isApplicableMatch, jm2um__jm____source, jm2um__um____target,
+				um__up____packagedElement };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_12_4_solveCSP_bindingFBBBBBB(
-			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2um,
-			Model jm, org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jm2um, jm, um, up);
+			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, Model jm,
+			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jm, jm2um, up, um);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jm2um, jm, um, up };
+			return new Object[] { csp, _this, isApplicableMatch, jm, jm2um, up, um };
 		}
 		return null;
 	}
@@ -2229,10 +2228,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_12_4_solveCSP_bindingAndBlackFBBBBBB(
-			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2um,
-			Model jm, org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {
+			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, Model jm,
+			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {
 		Object[] result_pattern_JavaPackageToUMLPackage_underModel_12_4_solveCSP_binding = pattern_JavaPackageToUMLPackage_underModel_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jm2um, jm, um, up);
+				_this, isApplicableMatch, jm, jm2um, up, um);
 		if (result_pattern_JavaPackageToUMLPackage_underModel_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaPackageToUMLPackage_underModel_12_4_solveCSP_binding[0];
 
@@ -2240,7 +2239,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_JavaPackageToUMLPackage_underModel_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jm2um, jm, um, up };
+				return new Object[] { csp, _this, isApplicableMatch, jm, jm2um, up, um };
 			}
 		}
 		return null;
@@ -2339,7 +2338,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 				org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
 				if (!um.equals(up)) {
 					if (um.getPackagedElements().contains(up)) {
-						_result.add(new Object[] { um, up, _edge_packagedElement });
+						_result.add(new Object[] { up, um, _edge_packagedElement });
 					}
 				}
 			}
@@ -2360,9 +2359,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final boolean pattern_JavaPackageToUMLPackage_underModel_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.uml2.uml.Model um,
-			org.eclipse.uml2.uml.Package up) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, um, up);
+			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.uml2.uml.Package up,
+			org.eclipse.uml2.uml.Model um) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, up, um);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2452,9 +2451,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.Package jp) {
-		org.eclipse.modisco.java.Package __DEC_jp_ownedPackages_806918 = jp.getPackage();
-		if (__DEC_jp_ownedPackages_806918 != null) {
-			if (!jp.equals(__DEC_jp_ownedPackages_806918)) {
+		org.eclipse.modisco.java.Package __DEC_jp_ownedPackages_402173 = jp.getPackage();
+		if (__DEC_jp_ownedPackages_402173 != null) {
+			if (!jp.equals(__DEC_jp_ownedPackages_402173)) {
 				return new Object[] { jp };
 			}
 		}
@@ -2473,7 +2472,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 				org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) tmpJp;
 				if (jm.getOwnedElements().contains(jp)) {
 					if (pattern_JavaPackageToUMLPackage_underModel_21_2_testcorematchandDECs_black_nac_0B(jp) == null) {
-						_result.add(new Object[] { jp, jm, _edge_ownedElements });
+						_result.add(new Object[] { jm, jp, _edge_ownedElements });
 					}
 				}
 			}
@@ -2494,8 +2493,8 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final boolean pattern_JavaPackageToUMLPackage_underModel_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			JavaPackageToUMLPackage_underModel _this, Match match, org.eclipse.modisco.java.Package jp, Model jm) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, jp, jm);
+			JavaPackageToUMLPackage_underModel _this, Match match, Model jm, org.eclipse.modisco.java.Package jp) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, jm, jp);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2541,23 +2540,23 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_bindingFFFFBB(
 			Match sourceMatch, Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("jp");
-		EObject _localVariable_1 = sourceMatch.getObject("jm");
-		EObject _localVariable_2 = targetMatch.getObject("um");
-		EObject _localVariable_3 = targetMatch.getObject("up");
-		EObject tmpJp = _localVariable_0;
-		EObject tmpJm = _localVariable_1;
-		EObject tmpUm = _localVariable_2;
-		EObject tmpUp = _localVariable_3;
-		if (tmpJp instanceof org.eclipse.modisco.java.Package) {
-			org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) tmpJp;
-			if (tmpJm instanceof Model) {
-				Model jm = (Model) tmpJm;
-				if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
-					org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
-					if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
-						org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
-						return new Object[] { jp, jm, um, up, sourceMatch, targetMatch };
+		EObject _localVariable_0 = sourceMatch.getObject("jm");
+		EObject _localVariable_1 = targetMatch.getObject("up");
+		EObject _localVariable_2 = sourceMatch.getObject("jp");
+		EObject _localVariable_3 = targetMatch.getObject("um");
+		EObject tmpJm = _localVariable_0;
+		EObject tmpUp = _localVariable_1;
+		EObject tmpJp = _localVariable_2;
+		EObject tmpUm = _localVariable_3;
+		if (tmpJm instanceof Model) {
+			Model jm = (Model) tmpJm;
+			if (tmpUp instanceof org.eclipse.uml2.uml.Package) {
+				org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) tmpUp;
+				if (tmpJp instanceof org.eclipse.modisco.java.Package) {
+					org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) tmpJp;
+					if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
+						org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
+						return new Object[] { jm, up, jp, um, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2566,11 +2565,11 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_blackBBBBBB(
-			org.eclipse.modisco.java.Package jp, Model jm, org.eclipse.uml2.uml.Model um,
-			org.eclipse.uml2.uml.Package up, Match sourceMatch, Match targetMatch) {
+			Model jm, org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jp,
+			org.eclipse.uml2.uml.Model um, Match sourceMatch, Match targetMatch) {
 		if (!um.equals(up)) {
 			if (!sourceMatch.equals(targetMatch)) {
-				return new Object[] { jp, jm, um, up, sourceMatch, targetMatch };
+				return new Object[] { jm, up, jp, um, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2581,28 +2580,28 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		Object[] result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_binding = pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_bindingFFFFBB(
 				sourceMatch, targetMatch);
 		if (result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_binding != null) {
-			org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_binding[0];
-			Model jm = (Model) result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_binding[1];
-			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_binding[2];
-			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_binding[3];
+			Model jm = (Model) result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_binding[0];
+			org.eclipse.uml2.uml.Package up = (org.eclipse.uml2.uml.Package) result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_binding[1];
+			org.eclipse.modisco.java.Package jp = (org.eclipse.modisco.java.Package) result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_binding[2];
+			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_black = pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_blackBBBBBB(
-					jp, jm, um, up, sourceMatch, targetMatch);
+					jm, up, jp, um, sourceMatch, targetMatch);
 			if (result_pattern_JavaPackageToUMLPackage_underModel_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { jp, jm, um, up, sourceMatch, targetMatch };
+				return new Object[] { jm, up, jp, um, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_24_3_solvecsp_bindingFBBBBBBB(
-			JavaPackageToUMLPackage_underModel _this, org.eclipse.modisco.java.Package jp, Model jm,
-			org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(jp, jm, um, up, sourceMatch, targetMatch);
+			JavaPackageToUMLPackage_underModel _this, Model jm, org.eclipse.uml2.uml.Package up,
+			org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Model um, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(jm, up, jp, um, sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, jp, jm, um, up, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, jm, up, jp, um, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2612,10 +2611,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			JavaPackageToUMLPackage_underModel _this, org.eclipse.modisco.java.Package jp, Model jm,
-			org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up, Match sourceMatch, Match targetMatch) {
+			JavaPackageToUMLPackage_underModel _this, Model jm, org.eclipse.uml2.uml.Package up,
+			org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Model um, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_JavaPackageToUMLPackage_underModel_24_3_solvecsp_binding = pattern_JavaPackageToUMLPackage_underModel_24_3_solvecsp_bindingFBBBBBBB(
-				_this, jp, jm, um, up, sourceMatch, targetMatch);
+				_this, jm, up, jp, um, sourceMatch, targetMatch);
 		if (result_pattern_JavaPackageToUMLPackage_underModel_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaPackageToUMLPackage_underModel_24_3_solvecsp_binding[0];
 
@@ -2623,7 +2622,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_JavaPackageToUMLPackage_underModel_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, jp, jm, um, up, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, jm, up, jp, um, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2635,14 +2634,14 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_JavaPackageToUMLPackage_underModel_24_5_matchcorrcontext_blackFBBBB(
+	public static final Iterable<Object[]> pattern_JavaPackageToUMLPackage_underModel_24_5_matchcorrcontext_blackBFBBB(
 			Model jm, org.eclipse.uml2.uml.Model um, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (JavaModel2UMLPackage jm2um : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(um,
-					JavaModel2UMLPackage.class, "target")) {
-				if (jm.equals(jm2um.getSource())) {
-					_result.add(new Object[] { jm2um, jm, um, sourceMatch, targetMatch });
+			for (JavaModel2UMLPackage jm2um : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jm,
+					JavaModel2UMLPackage.class, "source")) {
+				if (um.equals(jm2um.getTarget())) {
+					_result.add(new Object[] { jm, jm2um, um, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2661,21 +2660,21 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_24_6_createcorrespondence_blackBBBBB(
-			org.eclipse.modisco.java.Package jp, Model jm, org.eclipse.uml2.uml.Model um,
-			org.eclipse.uml2.uml.Package up, CCMatch ccMatch) {
+			Model jm, org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jp,
+			org.eclipse.uml2.uml.Model um, CCMatch ccMatch) {
 		if (!um.equals(up)) {
-			return new Object[] { jp, jm, um, up, ccMatch };
+			return new Object[] { jm, up, jp, um, ccMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_24_6_createcorrespondence_greenFBBB(
-			org.eclipse.modisco.java.Package jp, org.eclipse.uml2.uml.Package up, CCMatch ccMatch) {
+	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_24_6_createcorrespondence_greenBBFB(
+			org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jp, CCMatch ccMatch) {
 		JavaPackage2UmlPackage jp2up = UmlFactory.eINSTANCE.createJavaPackage2UmlPackage();
 		jp2up.setSource(jp);
 		jp2up.setTarget(up);
 		ccMatch.getCreateCorr().add(jp2up);
-		return new Object[] { jp2up, jp, up, ccMatch };
+		return new Object[] { up, jp, jp2up, ccMatch };
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_24_7_addtoreturnedresult_blackBB(
@@ -2701,9 +2700,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.Package jp) {
-		org.eclipse.modisco.java.Package __DEC_jp_ownedPackages_453744 = jp.getPackage();
-		if (__DEC_jp_ownedPackages_453744 != null) {
-			if (!jp.equals(__DEC_jp_ownedPackages_453744)) {
+		org.eclipse.modisco.java.Package __DEC_jp_ownedPackages_743627 = jp.getPackage();
+		if (__DEC_jp_ownedPackages_743627 != null) {
+			if (!jp.equals(__DEC_jp_ownedPackages_743627)) {
 				return new Object[] { jp };
 			}
 		}
@@ -2711,11 +2710,11 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_27_1_matchtggpattern_blackBB(
-			org.eclipse.modisco.java.Package jp, Model jm) {
+	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_27_1_matchtggpattern_blackBB(Model jm,
+			org.eclipse.modisco.java.Package jp) {
 		if (jm.getOwnedElements().contains(jp)) {
 			if (pattern_JavaPackageToUMLPackage_underModel_27_1_matchtggpattern_black_nac_0B(jp) == null) {
-				return new Object[] { jp, jm };
+				return new Object[] { jm, jp };
 			}
 		}
 		return null;
@@ -2732,10 +2731,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_28_1_matchtggpattern_blackBB(
-			org.eclipse.uml2.uml.Model um, org.eclipse.uml2.uml.Package up) {
+			org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um) {
 		if (!um.equals(up)) {
 			if (um.getPackagedElements().contains(up)) {
-				return new Object[] { um, up };
+				return new Object[] { up, um };
 			}
 		}
 		return null;
@@ -2765,6 +2764,14 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_black_nac_0BB(
+			ModelgeneratorRuleResult ruleResult, Model jm) {
+		if (ruleResult.getSourceObjects().contains(jm)) {
+			return new Object[] { ruleResult, jm };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, JavaModel2UMLPackage jm2um) {
 		if (ruleResult.getCorrObjects().contains(jm2um)) {
 			return new Object[] { ruleResult, jm2um };
@@ -2772,18 +2779,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_black_nac_1BB(
+	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Model um) {
 		if (ruleResult.getTargetObjects().contains(um)) {
 			return new Object[] { ruleResult, um };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Model jm) {
-		if (ruleResult.getSourceObjects().contains(jm)) {
-			return new Object[] { ruleResult, jm };
 		}
 		return null;
 	}
@@ -2795,18 +2794,18 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			for (EObject tmpJm2um : jm2umList.getEntryObjects()) {
 				if (tmpJm2um instanceof JavaModel2UMLPackage) {
 					JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) tmpJm2um;
-					org.eclipse.uml2.uml.Package tmpUm = jm2um.getTarget();
-					if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
-						org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
-						Model jm = jm2um.getSource();
-						if (jm != null) {
-							if (pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_black_nac_0BB(
+					Model jm = jm2um.getSource();
+					if (jm != null) {
+						org.eclipse.uml2.uml.Package tmpUm = jm2um.getTarget();
+						if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
+							org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
+							if (pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_black_nac_1BB(
 									ruleResult, jm2um) == null) {
-								if (pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_black_nac_1BB(
-										ruleResult, um) == null) {
+								if (pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_black_nac_0BB(
+										ruleResult, jm) == null) {
 									if (pattern_JavaPackageToUMLPackage_underModel_29_2_isapplicablecore_black_nac_2BB(
-											ruleResult, jm) == null) {
-										_result.add(new Object[] { jm2umList, jm2um, um, jm, ruleEntryContainer,
+											ruleResult, um) == null) {
+										_result.add(new Object[] { jm2umList, jm, jm2um, um, ruleEntryContainer,
 												ruleResult });
 									}
 								}
@@ -2822,12 +2821,12 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_3_solveCSP_bindingFBBBBBB(
-			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2um,
-			Model jm, org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jm2um, jm, um, ruleResult);
+			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, Model jm,
+			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jm, jm2um, um, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jm2um, jm, um, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, jm, jm2um, um, ruleResult };
 		}
 		return null;
 	}
@@ -2837,10 +2836,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_3_solveCSP_bindingAndBlackFBBBBBB(
-			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage jm2um,
-			Model jm, org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {
+			JavaPackageToUMLPackage_underModel _this, IsApplicableMatch isApplicableMatch, Model jm,
+			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_JavaPackageToUMLPackage_underModel_29_3_solveCSP_binding = pattern_JavaPackageToUMLPackage_underModel_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jm2um, jm, um, ruleResult);
+				_this, isApplicableMatch, jm, jm2um, um, ruleResult);
 		if (result_pattern_JavaPackageToUMLPackage_underModel_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaPackageToUMLPackage_underModel_29_3_solveCSP_binding[0];
 
@@ -2848,7 +2847,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_JavaPackageToUMLPackage_underModel_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jm2um, jm, um, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, jm, jm2um, um, ruleResult };
 			}
 		}
 		return null;
@@ -2861,40 +2860,40 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 		return _result;
 	}
 
-	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_5_checknacs_blackBBB(
-			JavaModel2UMLPackage jm2um, Model jm, org.eclipse.uml2.uml.Model um) {
-		return new Object[] { jm2um, jm, um };
+	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_5_checknacs_blackBBB(Model jm,
+			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um) {
+		return new Object[] { jm, jm2um, um };
 	}
 
-	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_6_perform_blackBBBB(
-			JavaModel2UMLPackage jm2um, Model jm, org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { jm2um, jm, um, ruleResult };
+	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_6_perform_blackBBBB(Model jm,
+			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { jm, jm2um, um, ruleResult };
 	}
 
-	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_6_perform_greenFFBBFBB(Model jm,
+	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_29_6_perform_greenBFFBFBB(Model jm,
 			org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult, CSP csp) {
-		JavaPackage2UmlPackage jp2up = UmlFactory.eINSTANCE.createJavaPackage2UmlPackage();
-		org.eclipse.modisco.java.Package jp = JavaFactory.eINSTANCE.createPackage();
 		org.eclipse.uml2.uml.Package up = UMLFactory.eINSTANCE.createPackage();
-		Object _localVariable_0 = csp.getValue("jp", "name");
-		Object _localVariable_1 = csp.getValue("up", "name");
+		org.eclipse.modisco.java.Package jp = JavaFactory.eINSTANCE.createPackage();
+		JavaPackage2UmlPackage jp2up = UmlFactory.eINSTANCE.createJavaPackage2UmlPackage();
+		Object _localVariable_0 = csp.getValue("up", "name");
+		Object _localVariable_1 = csp.getValue("jp", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(jp2up);
-		jp2up.setSource(jp);
-		jm.getOwnedElements().add(jp);
-		ruleResult.getSourceObjects().add(jp);
-		jp2up.setTarget(up);
 		um.getPackagedElements().add(up);
 		ruleResult.getTargetObjects().add(up);
-		String jp_name_prime = (String) _localVariable_0;
-		String up_name_prime = (String) _localVariable_1;
+		jm.getOwnedElements().add(jp);
+		ruleResult.getSourceObjects().add(jp);
+		jp2up.setSource(jp);
+		jp2up.setTarget(up);
+		ruleResult.getCorrObjects().add(jp2up);
+		String up_name_prime = (String) _localVariable_0;
+		String jp_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
-		jp.setName(jp_name_prime);
 		up.setName(up_name_prime);
+		jp.setName(jp_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { jp2up, jp, jm, um, up, ruleResult, csp };
+		return new Object[] { jm, up, jp, um, jp2up, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_JavaPackageToUMLPackage_underModel_29_7_expressionFB(

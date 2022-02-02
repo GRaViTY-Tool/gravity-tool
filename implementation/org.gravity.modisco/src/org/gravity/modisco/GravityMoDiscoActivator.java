@@ -36,14 +36,16 @@ public class GravityMoDiscoActivator extends Plugin {
 
 	private static final Map<IJavaProject, GravityModiscoProjectDiscoverer> discoverers = new HashMap<>();
 
-	public static GravityModiscoProjectDiscoverer getDiscoverer(final IJavaProject project) {
-		return discoverers.computeIfAbsent(project, key-> {
+	public static IGravityModiscoProjectDiscoverer getDiscoverer(final IJavaProject project, final boolean load) {
+		final var discoverer = discoverers.computeIfAbsent(project, key-> {
 			try {
-				return new GravityModiscoProjectDiscoverer(key);
+				return new GravityModiscoProjectDiscoverer(key, load);
 			} catch (final IOException e) {
 				LOGGER.error(e);
 			}
 			return null;
 		});
+		discoverer.setLoad(load);
+		return discoverer;
 	}
 }

@@ -96,9 +96,9 @@ public interface InnerDeclaration2InnerClassifier_InAnonymous extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration bodyDeclaration);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration jContainer,
+			AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne, ASTNode2Element b2e, Classifier feature,
+			org.eclipse.uml2.uml.Class uContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,8 +114,8 @@ public interface InnerDeclaration2InnerClassifier_InAnonymous extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject ne2ne, EObject jContainer, EObject b2e,
-			EObject feature, EObject uContainer, EObject bodyDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jContainer, EObject bodyDeclaration, EObject ne2ne,
+			EObject b2e, EObject feature, EObject uContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,9 +179,9 @@ public interface InnerDeclaration2InnerClassifier_InAnonymous extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration bodyDeclaration);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration jContainer,
+			AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne, ASTNode2Element b2e, Classifier feature,
+			org.eclipse.uml2.uml.Class uContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,8 +197,8 @@ public interface InnerDeclaration2InnerClassifier_InAnonymous extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject ne2ne, EObject jContainer, EObject b2e,
-			EObject feature, EObject uContainer, EObject bodyDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jContainer, EObject bodyDeclaration, EObject ne2ne,
+			EObject b2e, EObject feature, EObject uContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface InnerDeclaration2InnerClassifier_InAnonymous extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_104(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_102(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface InnerDeclaration2InnerClassifier_InAnonymous extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_108(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_110(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,9 +254,8 @@ public interface InnerDeclaration2InnerClassifier_InAnonymous extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(AnonymousClassDeclaration jContainer, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration bodyDeclaration, Match sourceMatch,
-			Match targetMatch);
+	CSP isApplicable_solveCsp_CC(AnonymousClassDeclaration jContainer, AbstractTypeDeclaration bodyDeclaration,
+			Classifier feature, org.eclipse.uml2.uml.Class uContainer, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -297,10 +296,9 @@ public interface InnerDeclaration2InnerClassifier_InAnonymous extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration bodyDeclaration,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration jContainer,
+			AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne, ASTNode2Element b2e, Classifier feature,
+			org.eclipse.uml2.uml.Class uContainer, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

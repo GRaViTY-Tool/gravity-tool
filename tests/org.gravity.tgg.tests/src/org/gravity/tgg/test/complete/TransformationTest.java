@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -114,7 +113,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		try {
 			conv = new MoDiscoTGGConverter(this.project);
 			conv.setDebug(DEBUG);
-			//			conv.disableAutosave();
+			// conv.disableAutosave();
 		} catch (final IOException e) {
 			throw new AssertionError(String.format("Unable to load '%s': %s", this.project, e.getMessage()));
 		}
@@ -148,16 +147,24 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		} catch (final CoreException e) {
 			LOGGER.error(e.getLocalizedMessage(), e);
 		}
+		final var projectLocation = this.project.getProject().getLocation().toFile().toPath();
+
 		final var graph = new EGraphImpl(pm);
 		final var resourceSet = new HenshinResourceSet();
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSet.getResources().add(pm.eResource());
 		final Engine engine = new EngineImpl();
+
 		for (final Path file : visitor.getFiles()) {
-			final var module = resourceSet.getModule(file.toAbsolutePath().toString(), false);
-			for (final org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()) {
-				final var matches = engine.findMatches(rule, graph, null);
-				assertTrue(matches.iterator().hasNext());
+			if (file.getParent().equals(projectLocation)) {
+				final var module = resourceSet.getModule(file.toAbsolutePath().toString(), false);
+				for (final org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()) {
+					final var matches = engine.findMatches(rule, graph, null);
+					assertTrue(matches.iterator().hasNext());
+				}
+			}
+			else {
+				System.out.println("SKIP: "+file);
 			}
 		}
 	}
@@ -173,10 +180,8 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 	 *
 	 * @param name    The project name
 	 * @param project The java project
-	 * @throws IOException           If reading or writing files failed
-	 * @throws CoreException
+	 * @throws IOException        If reading or writing files failed
 	 * @throws DiscoveryException
-	 * @throws FileNotFoundException
 	 */
 	@Test
 	public void test2UmlTGG() throws DiscoveryException {
