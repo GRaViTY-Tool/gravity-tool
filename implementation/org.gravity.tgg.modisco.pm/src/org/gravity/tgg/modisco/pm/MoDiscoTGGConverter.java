@@ -9,8 +9,6 @@ import java.util.function.Consumer;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -21,7 +19,6 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.modisco.java.generation.files.GenerateJavaExtended;
@@ -29,7 +26,6 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.AbstractModiscoTGGConverter;
-import org.gravity.modisco.GravityMoDiscoModelPatcher;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.GravityMoDiscoProcessorUtil;
 import org.gravity.modisco.processing.IMoDiscoProcessor;
@@ -49,6 +45,10 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 	private static final String PM_XMI = "pm.xmi";
 
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoTGGConverter.class);
+
+	private final Job saveJob = Job.create("Save models", monitor -> {
+		save(monitor);
+	});
 
 	/**
 	 * Initializes ResourceSet for EMF and eMoflon
@@ -170,9 +170,8 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 		if (success) {
 			postprocess(submonitor.split(20), infoEnabled);
 			if (this.autosave) {
-				Job.create("Save models", runnable -> {
-					save(submonitor.split(10));
-				}).schedule();
+				this.saveJob.cancel();
+				this.saveJob.schedule();
 			}
 		}
 		submonitor.done();
@@ -342,6 +341,13 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 
 	@Override
 	public boolean discard() {
+		try {
+			// Wait for a running save job to finish
+			this.saveJob.join();
+		} catch (final InterruptedException e) {
+			LOGGER.error(e);
+			Thread.currentThread().interrupt();
+		}
 		unload();
 		return GravityActivator.getDefault().discardConverter(this.project.getProject());
 	}
