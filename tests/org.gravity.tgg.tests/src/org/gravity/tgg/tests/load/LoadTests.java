@@ -1,4 +1,4 @@
-package org.gravity.tgg.test.load;
+package org.gravity.tgg.tests.load;
 
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;

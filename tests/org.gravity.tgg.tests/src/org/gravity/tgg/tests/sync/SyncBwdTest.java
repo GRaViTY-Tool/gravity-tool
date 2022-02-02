@@ -1,4 +1,4 @@
-package org.gravity.tgg.test.sync;
+package org.gravity.tgg.tests.sync;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

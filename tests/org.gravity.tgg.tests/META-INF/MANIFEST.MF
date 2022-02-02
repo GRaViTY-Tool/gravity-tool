@@ -22,7 +22,7 @@ Require-Bundle: org.gravity.tgg.modisco.pm,
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau
-Bundle-Activator: org.gravity.tgg.test.activator.MoDiscoTestActivator
+Bundle-Activator: org.gravity.tgg.tests.MoDiscoTestActivator
 Automatic-Module-Name: org.gravity.tgg.modisco.test
 Bundle-ClassPath: .,
  target/dependency/gson.jar

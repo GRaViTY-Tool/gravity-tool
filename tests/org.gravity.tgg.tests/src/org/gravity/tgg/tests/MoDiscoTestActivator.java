@@ -1,4 +1,4 @@
-package org.gravity.tgg.test.activator;
+package org.gravity.tgg.tests;
 
 import org.eclipse.core.runtime.Plugin;
 

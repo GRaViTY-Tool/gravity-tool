@@ -1,4 +1,4 @@
-package org.gravity.tgg.test.complete;
+package org.gravity.tgg.tests.complete;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -98,12 +98,9 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 	 *
 	 * @throws CoreException
 	 * @throws IOException
-	 * @throws DiscoveryException
-	 *
-	 * @throws Exception          The test might throws exceptions
 	 */
 	@Test
-	public final void test1ProgramModelTGG() throws CoreException, IOException, DiscoveryException {
+	public final void test1ProgramModelTGG() throws CoreException, IOException {
 		LOGGER.info("Test PM TGG for: " + this.project.getProject().getName());
 		final var monitor = new NullProgressMonitor();
 
@@ -113,7 +110,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		try {
 			conv = new MoDiscoTGGConverter(this.project);
 			conv.setDebug(DEBUG);
-			// conv.disableAutosave();
+			conv.disableAutosave();
 		} catch (final IOException e) {
 			throw new AssertionError(String.format("Unable to load '%s': %s", this.project, e.getMessage()));
 		}
@@ -132,7 +129,6 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 			}
 		}
 		checkModel(pg);
-		// conv.discard();
 	}
 
 	/**
@@ -163,9 +159,6 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 					assertTrue(matches.iterator().hasNext());
 				}
 			}
-			else {
-				System.out.println("SKIP: "+file);
-			}
 		}
 	}
 
@@ -176,11 +169,10 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 	 *
 	 * This constructor should be only called by junit!
 	 *
-	 * @see org.gravity.tgg.test.complete.TransformationTest#testProgramModelTGG()
+	 * @see org.gravity.tgg.tests.complete.TransformationTest#testProgramModelTGG()
 	 *
 	 * @param name    The project name
 	 * @param project The java project
-	 * @throws IOException        If reading or writing files failed
 	 * @throws DiscoveryException
 	 */
 	@Test
@@ -191,6 +183,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 			Model model;
 			try {
 				final var transformation = new Transformation(this.project, false);
+				transformation.disableAutosave();
 				if (ADD_UMLSEC) {
 					model = transformation.projectToModel(ADD_UMLSEC, monitor);
 				} else {

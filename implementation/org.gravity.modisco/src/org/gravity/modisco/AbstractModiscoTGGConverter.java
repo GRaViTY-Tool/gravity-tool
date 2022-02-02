@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jdt.core.IJavaProject;
-import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.eclipse.util.UptodateVisitor;
 import org.moflon.tgg.algorithm.datastructures.SynchronizationProtocol;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.moflon.tgg.language.analysis.StaticAnalysis;
@@ -104,11 +104,11 @@ public abstract class AbstractModiscoTGGConverter extends SynchronizationHelper 
 	private SynchronizationProtocol getProtocol() throws IOException, CoreException {
 		final var monitor = new NullProgressMonitor();
 		var protocolFile = this.outputFolder.getFile(this.id+PROTOCOL_XMI + ".zip");
-		if (!protocolFile.exists() || !GravityAPI.isUptoDate(protocolFile)) {
+		if (!protocolFile.exists() || !UptodateVisitor.isUptoDate(protocolFile)) {
 			protocolFile = this.outputFolder.getFile(this.id+PROTOCOL_BIN);
-			if (!protocolFile.exists() || !GravityAPI.isUptoDate(protocolFile)) {
+			if (!protocolFile.exists() || !UptodateVisitor.isUptoDate(protocolFile)) {
 				protocolFile = this.outputFolder.getFile(this.id+PROTOCOL_XMI);
-				if (!protocolFile.exists() || !GravityAPI.isUptoDate(protocolFile)) {
+				if (!protocolFile.exists() || !UptodateVisitor.isUptoDate(protocolFile)) {
 					return null;
 				}
 			}
