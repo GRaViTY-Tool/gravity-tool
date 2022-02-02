@@ -215,9 +215,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		//nothing EMoflonEdge typeGraph__tNestedType____ownedTypes = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge typeGraph__tNestedType____interfaces = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge astNodeToAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge astNodeToAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge tOuterPackage__tNestedType____interfaces = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge eNestedType__eOuterType____abstractTypeDeclaration = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge eOuterType__eNestedType____bodyDeclarations = (EMoflonEdge) result3_green[18];
@@ -583,9 +583,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		//nothing EMoflonEdge typeGraph__tNestedType____ownedTypes = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge typeGraph__tNestedType____interfaces = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge astNodeToAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge astNodeToAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge tOuterPackage__tNestedType____interfaces = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge eNestedType__eOuterType____abstractTypeDeclaration = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge eOuterType__eNestedType____bodyDeclarations = (EMoflonEdge) result3_green[18];
@@ -646,10 +646,10 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge tOuterPackage__typeGraph____model = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge eOuterTypeToTOuterInterface__eOuterType____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge typeGraph__tOuterType____ownedTypes = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tOuterType__typeGraph____model = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge typeGraph__tNestedType____ownedTypes = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge typeGraph__tNestedType____ownedTypes = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge typeGraph__tOuterType____ownedTypes = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge tOuterType__typeGraph____model = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge typeGraph__tNestedType____interfaces = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[14];
 				//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[15];
@@ -829,7 +829,7 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_192(EMoflonEdge _edge_ownedTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_82(EMoflonEdge _edge_ownedTypes) {
 
 		Object[] result1_bindingAndBlack = NestedInterfaceInTypeImpl
 				.pattern_NestedInterfaceInType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -889,7 +889,7 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_200(EMoflonEdge _edge_abstractTypeDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_86(EMoflonEdge _edge_abstractTypeDeclaration) {
 
 		Object[] result1_bindingAndBlack = NestedInterfaceInTypeImpl
 				.pattern_NestedInterfaceInType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1411,10 +1411,10 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 			return null;
 		case RulesPackage.NESTED_INTERFACE_IN_TYPE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.NESTED_INTERFACE_IN_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_192__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_192((EMoflonEdge) arguments.get(0));
-		case RulesPackage.NESTED_INTERFACE_IN_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_200__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_200((EMoflonEdge) arguments.get(0));
+		case RulesPackage.NESTED_INTERFACE_IN_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_82__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_82((EMoflonEdge) arguments.get(0));
+		case RulesPackage.NESTED_INTERFACE_IN_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_86__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_86((EMoflonEdge) arguments.get(0));
 		case RulesPackage.NESTED_INTERFACE_IN_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.NESTED_INTERFACE_IN_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1642,8 +1642,8 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		eNestedTypeToTNestedType.setSource(eNestedType);
 		typeGraph.getOwnedTypes().add(tNestedType);
 		typeGraph.getInterfaces().add(tNestedType);
-		tOuterType.getInnerTypes().add(tNestedType);
 		astNodeToAnnotatable.setTarget(tNestedType);
+		tOuterType.getInnerTypes().add(tNestedType);
 		tOuterPackage.getInterfaces().add(tNestedType);
 		tOuterPackage.getOwnedTypes().add(tNestedType);
 		eNestedTypeToTNestedType.setTarget(tNestedType);
@@ -1788,9 +1788,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		EMoflonEdge typeGraph__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tNestedType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge astNodeToAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterType__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterType____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge astNodeToAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterPackage__tNestedType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eNestedType__eOuterType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eOuterType__eNestedType____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1803,9 +1803,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		String typeGraph__tNestedType____ownedTypes_name_prime = "ownedTypes";
 		String tNestedType__typeGraph____model_name_prime = "model";
 		String typeGraph__tNestedType____interfaces_name_prime = "interfaces";
+		String astNodeToAnnotatable__tNestedType____target_name_prime = "target";
 		String tOuterType__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tOuterType____outerType_name_prime = "outerType";
-		String astNodeToAnnotatable__tNestedType____target_name_prime = "target";
 		String tOuterPackage__tNestedType____interfaces_name_prime = "interfaces";
 		String eNestedType__eOuterType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String eOuterType__eNestedType____bodyDeclarations_name_prime = "bodyDeclarations";
@@ -1825,15 +1825,15 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		typeGraph__tNestedType____interfaces.setSrc(typeGraph);
 		typeGraph__tNestedType____interfaces.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(typeGraph__tNestedType____interfaces);
+		astNodeToAnnotatable__tNestedType____target.setSrc(astNodeToAnnotatable);
+		astNodeToAnnotatable__tNestedType____target.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(astNodeToAnnotatable__tNestedType____target);
 		tOuterType__tNestedType____innerTypes.setSrc(tOuterType);
 		tOuterType__tNestedType____innerTypes.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(tOuterType__tNestedType____innerTypes);
 		tNestedType__tOuterType____outerType.setSrc(tNestedType);
 		tNestedType__tOuterType____outerType.setTrg(tOuterType);
 		ruleresult.getCreatedEdges().add(tNestedType__tOuterType____outerType);
-		astNodeToAnnotatable__tNestedType____target.setSrc(astNodeToAnnotatable);
-		astNodeToAnnotatable__tNestedType____target.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(astNodeToAnnotatable__tNestedType____target);
 		tOuterPackage__tNestedType____interfaces.setSrc(tOuterPackage);
 		tOuterPackage__tNestedType____interfaces.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(tOuterPackage__tNestedType____interfaces);
@@ -1860,9 +1860,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		typeGraph__tNestedType____ownedTypes.setName(typeGraph__tNestedType____ownedTypes_name_prime);
 		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
 		typeGraph__tNestedType____interfaces.setName(typeGraph__tNestedType____interfaces_name_prime);
+		astNodeToAnnotatable__tNestedType____target.setName(astNodeToAnnotatable__tNestedType____target_name_prime);
 		tOuterType__tNestedType____innerTypes.setName(tOuterType__tNestedType____innerTypes_name_prime);
 		tNestedType__tOuterType____outerType.setName(tNestedType__tOuterType____outerType_name_prime);
-		astNodeToAnnotatable__tNestedType____target.setName(astNodeToAnnotatable__tNestedType____target_name_prime);
 		tOuterPackage__tNestedType____interfaces.setName(tOuterPackage__tNestedType____interfaces_name_prime);
 		eNestedType__eOuterType____abstractTypeDeclaration
 				.setName(eNestedType__eOuterType____abstractTypeDeclaration_name_prime);
@@ -1876,8 +1876,8 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		return new Object[] { ruleresult, eNestedType, astNodeToAnnotatable, eNestedTypeToTNestedType, typeGraph,
 				tNestedType, tOuterType, eOuterType, tOuterPackage, astNodeToAnnotatable__eNestedType____source,
 				typeGraph__tNestedType____ownedTypes, tNestedType__typeGraph____model,
-				typeGraph__tNestedType____interfaces, tOuterType__tNestedType____innerTypes,
-				tNestedType__tOuterType____outerType, astNodeToAnnotatable__tNestedType____target,
+				typeGraph__tNestedType____interfaces, astNodeToAnnotatable__tNestedType____target,
+				tOuterType__tNestedType____innerTypes, tNestedType__tOuterType____outerType,
 				tOuterPackage__tNestedType____interfaces, eNestedType__eOuterType____abstractTypeDeclaration,
 				eOuterType__eNestedType____bodyDeclarations, eNestedTypeToTNestedType__eNestedType____source,
 				tOuterPackage__tNestedType____ownedTypes, tNestedType__tOuterPackage____package,
@@ -2564,9 +2564,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		EMoflonEdge typeGraph__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tNestedType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge astNodeToAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterType__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterType____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge astNodeToAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterPackage__tNestedType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eNestedType__eOuterType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eOuterType__eNestedType____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2579,9 +2579,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		String typeGraph__tNestedType____ownedTypes_name_prime = "ownedTypes";
 		String tNestedType__typeGraph____model_name_prime = "model";
 		String typeGraph__tNestedType____interfaces_name_prime = "interfaces";
+		String astNodeToAnnotatable__tNestedType____target_name_prime = "target";
 		String tOuterType__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tOuterType____outerType_name_prime = "outerType";
-		String astNodeToAnnotatable__tNestedType____target_name_prime = "target";
 		String tOuterPackage__tNestedType____interfaces_name_prime = "interfaces";
 		String eNestedType__eOuterType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String eOuterType__eNestedType____bodyDeclarations_name_prime = "bodyDeclarations";
@@ -2601,15 +2601,15 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		typeGraph__tNestedType____interfaces.setSrc(typeGraph);
 		typeGraph__tNestedType____interfaces.setTrg(tNestedType);
 		ruleresult.getTranslatedEdges().add(typeGraph__tNestedType____interfaces);
+		astNodeToAnnotatable__tNestedType____target.setSrc(astNodeToAnnotatable);
+		astNodeToAnnotatable__tNestedType____target.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(astNodeToAnnotatable__tNestedType____target);
 		tOuterType__tNestedType____innerTypes.setSrc(tOuterType);
 		tOuterType__tNestedType____innerTypes.setTrg(tNestedType);
 		ruleresult.getTranslatedEdges().add(tOuterType__tNestedType____innerTypes);
 		tNestedType__tOuterType____outerType.setSrc(tNestedType);
 		tNestedType__tOuterType____outerType.setTrg(tOuterType);
 		ruleresult.getTranslatedEdges().add(tNestedType__tOuterType____outerType);
-		astNodeToAnnotatable__tNestedType____target.setSrc(astNodeToAnnotatable);
-		astNodeToAnnotatable__tNestedType____target.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(astNodeToAnnotatable__tNestedType____target);
 		tOuterPackage__tNestedType____interfaces.setSrc(tOuterPackage);
 		tOuterPackage__tNestedType____interfaces.setTrg(tNestedType);
 		ruleresult.getTranslatedEdges().add(tOuterPackage__tNestedType____interfaces);
@@ -2636,9 +2636,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		typeGraph__tNestedType____ownedTypes.setName(typeGraph__tNestedType____ownedTypes_name_prime);
 		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
 		typeGraph__tNestedType____interfaces.setName(typeGraph__tNestedType____interfaces_name_prime);
+		astNodeToAnnotatable__tNestedType____target.setName(astNodeToAnnotatable__tNestedType____target_name_prime);
 		tOuterType__tNestedType____innerTypes.setName(tOuterType__tNestedType____innerTypes_name_prime);
 		tNestedType__tOuterType____outerType.setName(tNestedType__tOuterType____outerType_name_prime);
-		astNodeToAnnotatable__tNestedType____target.setName(astNodeToAnnotatable__tNestedType____target_name_prime);
 		tOuterPackage__tNestedType____interfaces.setName(tOuterPackage__tNestedType____interfaces_name_prime);
 		eNestedType__eOuterType____abstractTypeDeclaration
 				.setName(eNestedType__eOuterType____abstractTypeDeclaration_name_prime);
@@ -2652,8 +2652,8 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		return new Object[] { ruleresult, eNestedType, astNodeToAnnotatable, eNestedTypeToTNestedType, typeGraph,
 				tNestedType, tOuterType, eOuterType, tOuterPackage, astNodeToAnnotatable__eNestedType____source,
 				typeGraph__tNestedType____ownedTypes, tNestedType__typeGraph____model,
-				typeGraph__tNestedType____interfaces, tOuterType__tNestedType____innerTypes,
-				tNestedType__tOuterType____outerType, astNodeToAnnotatable__tNestedType____target,
+				typeGraph__tNestedType____interfaces, astNodeToAnnotatable__tNestedType____target,
+				tOuterType__tNestedType____innerTypes, tNestedType__tOuterType____outerType,
 				tOuterPackage__tNestedType____interfaces, eNestedType__eOuterType____abstractTypeDeclaration,
 				eOuterType__eNestedType____bodyDeclarations, eNestedTypeToTNestedType__eNestedType____source,
 				tOuterPackage__tNestedType____ownedTypes, tNestedType__tOuterPackage____package,
@@ -2778,8 +2778,8 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		if (!tNestedType.equals(tOuterType)) {
 			if (typeGraph.equals(tOuterPackage.getModel())) {
 				if (eOuterType.equals(eOuterTypeToTOuterInterface.getSource())) {
-					if (typeGraph.getOwnedTypes().contains(tOuterType)) {
-						if (typeGraph.getOwnedTypes().contains(tNestedType)) {
+					if (typeGraph.getOwnedTypes().contains(tNestedType)) {
+						if (typeGraph.getOwnedTypes().contains(tOuterType)) {
 							if (typeGraph.getInterfaces().contains(tNestedType)) {
 								if (tOuterType.getInnerTypes().contains(tNestedType)) {
 									if (tOuterPackage.getInterfaces().contains(tNestedType)) {
@@ -2809,10 +2809,10 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge tOuterPackage__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eOuterTypeToTOuterInterface__eOuterType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tOuterType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tOuterType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tNestedType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterType__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterType____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2824,10 +2824,10 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		EMoflonEdge eOuterTypeToTOuterInterface__tOuterType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tOuterPackage__typeGraph____model_name_prime = "model";
 		String eOuterTypeToTOuterInterface__eOuterType____source_name_prime = "source";
-		String typeGraph__tOuterType____ownedTypes_name_prime = "ownedTypes";
-		String tOuterType__typeGraph____model_name_prime = "model";
 		String typeGraph__tNestedType____ownedTypes_name_prime = "ownedTypes";
 		String tNestedType__typeGraph____model_name_prime = "model";
+		String typeGraph__tOuterType____ownedTypes_name_prime = "ownedTypes";
+		String tOuterType__typeGraph____model_name_prime = "model";
 		String typeGraph__tNestedType____interfaces_name_prime = "interfaces";
 		String tOuterType__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tOuterType____outerType_name_prime = "outerType";
@@ -2849,18 +2849,18 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		eOuterTypeToTOuterInterface__eOuterType____source.setSrc(eOuterTypeToTOuterInterface);
 		eOuterTypeToTOuterInterface__eOuterType____source.setTrg(eOuterType);
 		isApplicableMatch.getAllContextElements().add(eOuterTypeToTOuterInterface__eOuterType____source);
-		typeGraph__tOuterType____ownedTypes.setSrc(typeGraph);
-		typeGraph__tOuterType____ownedTypes.setTrg(tOuterType);
-		isApplicableMatch.getAllContextElements().add(typeGraph__tOuterType____ownedTypes);
-		tOuterType__typeGraph____model.setSrc(tOuterType);
-		tOuterType__typeGraph____model.setTrg(typeGraph);
-		isApplicableMatch.getAllContextElements().add(tOuterType__typeGraph____model);
 		typeGraph__tNestedType____ownedTypes.setSrc(typeGraph);
 		typeGraph__tNestedType____ownedTypes.setTrg(tNestedType);
 		isApplicableMatch.getAllContextElements().add(typeGraph__tNestedType____ownedTypes);
 		tNestedType__typeGraph____model.setSrc(tNestedType);
 		tNestedType__typeGraph____model.setTrg(typeGraph);
 		isApplicableMatch.getAllContextElements().add(tNestedType__typeGraph____model);
+		typeGraph__tOuterType____ownedTypes.setSrc(typeGraph);
+		typeGraph__tOuterType____ownedTypes.setTrg(tOuterType);
+		isApplicableMatch.getAllContextElements().add(typeGraph__tOuterType____ownedTypes);
+		tOuterType__typeGraph____model.setSrc(tOuterType);
+		tOuterType__typeGraph____model.setTrg(typeGraph);
+		isApplicableMatch.getAllContextElements().add(tOuterType__typeGraph____model);
 		typeGraph__tNestedType____interfaces.setSrc(typeGraph);
 		typeGraph__tNestedType____interfaces.setTrg(tNestedType);
 		isApplicableMatch.getAllContextElements().add(typeGraph__tNestedType____interfaces);
@@ -2891,10 +2891,10 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		tOuterPackage__typeGraph____model.setName(tOuterPackage__typeGraph____model_name_prime);
 		eOuterTypeToTOuterInterface__eOuterType____source
 				.setName(eOuterTypeToTOuterInterface__eOuterType____source_name_prime);
-		typeGraph__tOuterType____ownedTypes.setName(typeGraph__tOuterType____ownedTypes_name_prime);
-		tOuterType__typeGraph____model.setName(tOuterType__typeGraph____model_name_prime);
 		typeGraph__tNestedType____ownedTypes.setName(typeGraph__tNestedType____ownedTypes_name_prime);
 		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
+		typeGraph__tOuterType____ownedTypes.setName(typeGraph__tOuterType____ownedTypes_name_prime);
+		tOuterType__typeGraph____model.setName(tOuterType__typeGraph____model_name_prime);
 		typeGraph__tNestedType____interfaces.setName(typeGraph__tNestedType____interfaces_name_prime);
 		tOuterType__tNestedType____innerTypes.setName(tOuterType__tNestedType____innerTypes_name_prime);
 		tNestedType__tOuterType____outerType.setName(tNestedType__tOuterType____outerType_name_prime);
@@ -2907,8 +2907,8 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 				.setName(eOuterTypeToTOuterInterface__tOuterType____target_name_prime);
 		return new Object[] { typeGraph, tNestedType, tOuterType, eOuterTypeToTOuterInterface, eOuterType,
 				tOuterPackage, isApplicableMatch, tOuterPackage__typeGraph____model,
-				eOuterTypeToTOuterInterface__eOuterType____source, typeGraph__tOuterType____ownedTypes,
-				tOuterType__typeGraph____model, typeGraph__tNestedType____ownedTypes, tNestedType__typeGraph____model,
+				eOuterTypeToTOuterInterface__eOuterType____source, typeGraph__tNestedType____ownedTypes,
+				tNestedType__typeGraph____model, typeGraph__tOuterType____ownedTypes, tOuterType__typeGraph____model,
 				typeGraph__tNestedType____interfaces, tOuterType__tNestedType____innerTypes,
 				tNestedType__tOuterType____outerType, tOuterPackage__tNestedType____interfaces,
 				tOuterType__tOuterPackage____package, tOuterPackage__tOuterType____ownedTypes,
@@ -3039,9 +3039,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_20_2_testcorematchandDECs_black_nac_0BB(
 			TInterface tNestedType, TPackage tOuterPackage) {
-		for (TPackage __DEC_tNestedType_interfaces_961687 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tNestedType_interfaces_821966 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TPackage.class, "interfaces")) {
-			if (!tOuterPackage.equals(__DEC_tNestedType_interfaces_961687)) {
+			if (!tOuterPackage.equals(__DEC_tNestedType_interfaces_821966)) {
 				return new Object[] { tNestedType, tOuterPackage };
 			}
 		}
@@ -3050,9 +3050,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_20_2_testcorematchandDECs_black_nac_1BB(
 			TInterface tNestedType, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tNestedType_interfaces_678926 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_interfaces_552475 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "interfaces")) {
-			if (!typeGraph.equals(__DEC_tNestedType_interfaces_678926)) {
+			if (!typeGraph.equals(__DEC_tNestedType_interfaces_552475)) {
 				return new Object[] { tNestedType, typeGraph };
 			}
 		}
@@ -3061,9 +3061,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_20_2_testcorematchandDECs_black_nac_2BB(
 			TInterface tNestedType, TPackage tOuterPackage) {
-		TPackage __DEC_tNestedType_ownedTypes_356345 = tNestedType.getPackage();
-		if (__DEC_tNestedType_ownedTypes_356345 != null) {
-			if (!tOuterPackage.equals(__DEC_tNestedType_ownedTypes_356345)) {
+		TPackage __DEC_tNestedType_ownedTypes_39932 = tNestedType.getPackage();
+		if (__DEC_tNestedType_ownedTypes_39932 != null) {
+			if (!tOuterPackage.equals(__DEC_tNestedType_ownedTypes_39932)) {
 				return new Object[] { tNestedType, tOuterPackage };
 			}
 		}
@@ -3074,10 +3074,10 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 	public static final Object[] pattern_NestedInterfaceInType_20_2_testcorematchandDECs_black_nac_3BB(
 			TInterface tNestedType, TAbstractType tOuterType) {
 		if (!tNestedType.equals(tOuterType)) {
-			TAbstractType __DEC_tNestedType_innerTypes_910496 = tNestedType.getOuterType();
-			if (__DEC_tNestedType_innerTypes_910496 != null) {
-				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_910496)) {
-					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_910496)) {
+			TAbstractType __DEC_tNestedType_innerTypes_982935 = tNestedType.getOuterType();
+			if (__DEC_tNestedType_innerTypes_982935 != null) {
+				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_982935)) {
+					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_982935)) {
 						return new Object[] { tNestedType, tOuterType };
 					}
 				}
@@ -3241,9 +3241,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration eNestedType) {
-		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_735960 = eNestedType
+		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_663249 = eNestedType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_eNestedType_anonymousClassDeclarationOwner_735960 != null) {
+		if (__DEC_eNestedType_anonymousClassDeclarationOwner_663249 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3252,8 +3252,8 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_21_2_testcorematchandDECs_black_nac_1B(
 			InterfaceDeclaration eNestedType) {
-		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_585353 = eNestedType.getPackage();
-		if (__DEC_eNestedType_ownedElements_585353 != null) {
+		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_513659 = eNestedType.getPackage();
+		if (__DEC_eNestedType_ownedElements_513659 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3262,7 +3262,7 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_21_2_testcorematchandDECs_black_nac_2B(
 			InterfaceDeclaration eNestedType) {
-		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_350190 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_957324 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { eNestedType };
 		}
@@ -3547,9 +3547,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration eNestedType) {
-		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_889992 = eNestedType
+		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_634775 = eNestedType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_eNestedType_anonymousClassDeclarationOwner_889992 != null) {
+		if (__DEC_eNestedType_anonymousClassDeclarationOwner_634775 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3558,8 +3558,8 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_27_1_matchtggpattern_black_nac_1B(
 			InterfaceDeclaration eNestedType) {
-		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_544233 = eNestedType.getPackage();
-		if (__DEC_eNestedType_ownedElements_544233 != null) {
+		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_954118 = eNestedType.getPackage();
+		if (__DEC_eNestedType_ownedElements_954118 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3568,7 +3568,7 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_27_1_matchtggpattern_black_nac_2B(
 			InterfaceDeclaration eNestedType) {
-		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_597184 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_4646 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { eNestedType };
 		}
@@ -3603,9 +3603,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_28_1_matchtggpattern_black_nac_0BB(
 			TInterface tNestedType, TPackage tOuterPackage) {
-		for (TPackage __DEC_tNestedType_interfaces_488111 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tNestedType_interfaces_664079 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TPackage.class, "interfaces")) {
-			if (!tOuterPackage.equals(__DEC_tNestedType_interfaces_488111)) {
+			if (!tOuterPackage.equals(__DEC_tNestedType_interfaces_664079)) {
 				return new Object[] { tNestedType, tOuterPackage };
 			}
 		}
@@ -3614,9 +3614,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_28_1_matchtggpattern_black_nac_1BB(
 			TInterface tNestedType, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tNestedType_interfaces_912807 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_interfaces_685688 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "interfaces")) {
-			if (!typeGraph.equals(__DEC_tNestedType_interfaces_912807)) {
+			if (!typeGraph.equals(__DEC_tNestedType_interfaces_685688)) {
 				return new Object[] { tNestedType, typeGraph };
 			}
 		}
@@ -3625,9 +3625,9 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 
 	public static final Object[] pattern_NestedInterfaceInType_28_1_matchtggpattern_black_nac_2BB(
 			TInterface tNestedType, TPackage tOuterPackage) {
-		TPackage __DEC_tNestedType_ownedTypes_538969 = tNestedType.getPackage();
-		if (__DEC_tNestedType_ownedTypes_538969 != null) {
-			if (!tOuterPackage.equals(__DEC_tNestedType_ownedTypes_538969)) {
+		TPackage __DEC_tNestedType_ownedTypes_639408 = tNestedType.getPackage();
+		if (__DEC_tNestedType_ownedTypes_639408 != null) {
+			if (!tOuterPackage.equals(__DEC_tNestedType_ownedTypes_639408)) {
 				return new Object[] { tNestedType, tOuterPackage };
 			}
 		}
@@ -3638,10 +3638,10 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 	public static final Object[] pattern_NestedInterfaceInType_28_1_matchtggpattern_black_nac_3BB(
 			TInterface tNestedType, TAbstractType tOuterType) {
 		if (!tNestedType.equals(tOuterType)) {
-			TAbstractType __DEC_tNestedType_innerTypes_171898 = tNestedType.getOuterType();
-			if (__DEC_tNestedType_innerTypes_171898 != null) {
-				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_171898)) {
-					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_171898)) {
+			TAbstractType __DEC_tNestedType_innerTypes_515067 = tNestedType.getOuterType();
+			if (__DEC_tNestedType_innerTypes_515067 != null) {
+				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_515067)) {
+					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_515067)) {
 						return new Object[] { tNestedType, tOuterType };
 					}
 				}
@@ -3655,8 +3655,8 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 			TInterface tNestedType, TAbstractType tOuterType, TPackage tOuterPackage) {
 		if (!tNestedType.equals(tOuterType)) {
 			if (typeGraph.equals(tOuterPackage.getModel())) {
-				if (typeGraph.getOwnedTypes().contains(tOuterType)) {
-					if (typeGraph.getOwnedTypes().contains(tNestedType)) {
+				if (typeGraph.getOwnedTypes().contains(tNestedType)) {
+					if (typeGraph.getOwnedTypes().contains(tOuterType)) {
 						if (typeGraph.getInterfaces().contains(tNestedType)) {
 							if (tOuterType.getInnerTypes().contains(tNestedType)) {
 								if (tOuterPackage.getInterfaces().contains(tNestedType)) {
@@ -3879,8 +3879,8 @@ public class NestedInterfaceInTypeImpl extends AbstractRuleImpl implements Neste
 		ruleResult.getCorrObjects().add(eNestedTypeToTNestedType);
 		typeGraph.getOwnedTypes().add(tNestedType);
 		typeGraph.getInterfaces().add(tNestedType);
-		tOuterType.getInnerTypes().add(tNestedType);
 		astNodeToAnnotatable.setTarget(tNestedType);
+		tOuterType.getInnerTypes().add(tNestedType);
 		tOuterPackage.getInterfaces().add(tNestedType);
 		tOuterPackage.getOwnedTypes().add(tNestedType);
 		eNestedTypeToTNestedType.setTarget(tNestedType);

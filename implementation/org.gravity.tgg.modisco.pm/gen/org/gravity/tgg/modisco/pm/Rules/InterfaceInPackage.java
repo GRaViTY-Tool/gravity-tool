@@ -112,7 +112,7 @@ public interface InterfaceInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotatable2Annotatable, EObject mPackageToTPackage,
-			EObject tType, EObject tPackage, EObject mPackage, EObject pg, EObject type2Type, EObject mType);
+			EObject tPackage, EObject tType, EObject mPackage, EObject pg, EObject type2Type, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +128,7 @@ public interface InterfaceInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TInterface tType, TPackage tPackage, TypeGraph pg);
+	boolean isAppropriate_BWD(Match match, TPackage tPackage, TInterface tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,7 +152,7 @@ public interface InterfaceInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TInterface tType, TPackage tPackage, TypeGraph pg);
+	void registerObjectsToMatch_BWD(Match match, TPackage tPackage, TInterface tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,7 +160,7 @@ public interface InterfaceInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TInterface tType, TPackage tPackage, TypeGraph pg);
+	CSP isAppropriate_solveCsp_BWD(Match match, TPackage tPackage, TInterface tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,7 +177,7 @@ public interface InterfaceInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PackageToTPackage mPackageToTPackage,
-			TInterface tType, TPackage tPackage, org.eclipse.modisco.java.Package mPackage, TypeGraph pg);
+			TPackage tPackage, TInterface tType, org.eclipse.modisco.java.Package mPackage, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,7 +194,7 @@ public interface InterfaceInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotatable2Annotatable, EObject mPackageToTPackage,
-			EObject tType, EObject tPackage, EObject mPackage, EObject pg, EObject type2Type, EObject mType);
+			EObject tPackage, EObject tType, EObject mPackage, EObject pg, EObject type2Type, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface InterfaceInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_261(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_71(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface InterfaceInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_272(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_75(EMoflonEdge _edge_ownedElements);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +250,7 @@ public interface InterfaceInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TInterface tType, TPackage tPackage, org.eclipse.modisco.java.Package mPackage,
+	CSP isApplicable_solveCsp_CC(TPackage tPackage, TInterface tType, org.eclipse.modisco.java.Package mPackage,
 			TypeGraph pg, InterfaceDeclaration mType, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -275,7 +275,7 @@ public interface InterfaceInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TInterface tType, TPackage tPackage, TypeGraph pg);
+	boolean checkDEC_BWD(TPackage tPackage, TInterface tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->

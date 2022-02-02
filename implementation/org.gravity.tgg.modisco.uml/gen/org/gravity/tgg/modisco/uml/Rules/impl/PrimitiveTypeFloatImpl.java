@@ -735,13 +735,13 @@ public class PrimitiveTypeFloatImpl extends AbstractRuleImpl implements Primitiv
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
-		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
-		var_umpt_name.setType("String");
-
 		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
 		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
 		var_jpt_name.setType("String");
+
+		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
+		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
+		var_umpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -782,13 +782,13 @@ public class PrimitiveTypeFloatImpl extends AbstractRuleImpl implements Primitiv
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
-		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
-		var_umpt_name.setType("String");
-
 		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
 		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
 		var_jpt_name.setType("String");
+
+		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
+		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
+		var_umpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
