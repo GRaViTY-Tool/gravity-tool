@@ -8,87 +8,100 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Collections;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
-import org.gravity.eclipse.util.JavaProjectUtil;
+import org.gravity.tgg.tests.MoDiscoTestActivator;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * Tests of the simple GRaViTY API for creating program models
+ *
+ * @author speldszus
+ *
+ */
 public class APITests {
 
-	private static final String PROJECT_NAME = "APITestProject";
-	IJavaProject project;
+	public static final String PROJECT_NAME = "APITestProject";
 
-	public APITests() throws DuplicateProjectNameException, CoreException {
-		this.project = JavaProjectUtil.getJavaProject(EclipseProjectUtil.getProjectByName(PROJECT_NAME));
-	}
+	private static IJavaProject project;
 
+	/**
+	 * Generate a simple Java project for testing
+	 *
+	 * @throws DuplicateProjectNameException
+	 * @throws CoreException
+	 */
 	@BeforeClass
-	public static void createProject() throws DuplicateProjectNameException, CoreException, IOException {
-		final var project = JavaProjectUtil.createJavaProject(PROJECT_NAME, Collections.singleton("src"), null);
-
-		final var srcDummy = project.getProject().getFolder("src").getFolder("dummy");
-		srcDummy.create(true, true, null);
-
-		final var content = "package dummy;\n" + "public class Clazz {\n" + "}";
-		try(var stream = new ByteArrayInputStream(content.getBytes())){
-			srcDummy.getFile("Clazz.java").create(stream, true, null);
-		}
+	public static void createProject() throws DuplicateProjectNameException, CoreException {
+		clean();
+		project = MoDiscoTestActivator.generateSimpleProject(PROJECT_NAME);
 	}
 
 	@Test
 	public void testCreateProgramModel() throws TransformationFailedException {
-		final var pm = GravityAPI.createProgramModel(this.project, null);
+		final var pm = GravityAPI.createProgramModel(APITests.project, null);
 
 		assertNotNull(pm);
 	}
 
 	@Test
 	public void testCreateProgramModelAfterPMChange() throws TransformationFailedException, IOException {
-		final var pm = GravityAPI.createProgramModel(this.project, null);
+		final var pm = GravityAPI.createProgramModel(APITests.project, null);
 		assertNotNull(pm);
 
 		addInterface(pm);
 
-		final var newPm = GravityAPI.createProgramModel(this.project, null);
+		final var newPm = GravityAPI.createProgramModel(APITests.project, null);
 		assertNotNull(newPm);
 		assertNotEquals(pm, newPm);
 		assertTrue(newPm.getInterfaces().isEmpty());
 	}
 
 	@Test
-	public void testCreateProgramModelAfterSrcChange() throws TransformationFailedException, IOException, CoreException {
-		final var pm = GravityAPI.createProgramModel(this.project, null);
+	public void testCreateProgramModelAfterSrcChange()
+			throws TransformationFailedException, IOException, CoreException {
+		final var pm = GravityAPI.createProgramModel(APITests.project, null);
 		assertNotNull(pm);
 
 		// Change project src
-		final var file = this.project.getProject().getFile("src/dummy/Other.java");
+		final var file = APITests.project.getProject().getFile("src/dummy/Other.java");
 		final var content = "package dummy;\n" + "public class Other {\n" + "}";
-		try(var stream = new ByteArrayInputStream(content.getBytes())){
+		try (var stream = new ByteArrayInputStream(content.getBytes())) {
 			file.create(stream, true, null);
 
-			final var newPm = GravityAPI.createProgramModel(this.project, null);
+			final var newPm = GravityAPI.createProgramModel(APITests.project, null);
 			assertNotNull(newPm);
 			assertNotEquals(pm, newPm);
 			assertNotNull(newPm.getClass("dummy.Other"));
-		}
-		finally {
+		} finally {
 			file.delete(true, null);
 		}
 	}
 
+	/**
+	 * Delete the generated project after test execution
+	 *
+	 * @throws CoreException
+	 */
 	@AfterClass
 	public static void clean() throws CoreException {
-		final var project = EclipseProjectUtil.getProjectByName(PROJECT_NAME);
-		if((project != null) && project.exists()) {
-			project.delete(true, null);
+		IProject delete;
+		if (project == null) {
+			delete = EclipseProjectUtil.getProjectByName(PROJECT_NAME);
+		} else {
+			delete = project.getProject();
+		}
+		if ((delete != null) && delete.exists()) {
+			delete.delete(true, null);
 		}
 	}
 
