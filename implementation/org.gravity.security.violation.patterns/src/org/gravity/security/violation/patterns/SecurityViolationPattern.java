@@ -76,12 +76,22 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		if (target.eIsProxy()) {
 			EcoreUtil.resolveAll(corr);
 		}
-		this.pm = (TypeGraph) target;
+		if(target instanceof TypeGraph) {
+			this.pm = (TypeGraph) target;
+		} else {
+			throw new IllegalStateException("Source type is not a program model: class=" + target.eClass().getName()
+					+ ", object=" + target.toString());
+		}
 		final var source = corr.getSource();
 		if (source.eIsProxy()) {
 			EcoreUtil.resolveAll(corr);
 		}
-		this.uml = (Model) source;
+		if (source instanceof Model) {
+			this.uml = (Model) source;
+		} else {
+			throw new IllegalStateException("Source type is not a UML model: class=" + source.eClass().getName()
+					+ ", object=" + source.toString());
+		}
 		this.set.getResources().add(this.pm.eResource());
 		this.set.getResources().add(this.uml.eResource());
 		this.set.getResources().add(this.corr.eResource());
@@ -270,7 +280,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 			if (projectFile.exists()) {
 				// Read the project name from the project file
 				final var name = readProjectName(projectFile);
-				if(name != null) {
+				if (name != null) {
 					return workspace.getProject(name);
 				}
 			}
