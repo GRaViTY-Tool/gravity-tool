@@ -12,6 +12,7 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.gravity.eclipse.io.FileUtils;
@@ -38,6 +39,8 @@ public class ConsoleApplication implements IApplication {
 	public static final String OPTION_HELP_LONG = "help"; //$NON-NLS-1$
 	public static final String OPTION_HELP_SHORT = "h"; //$NON-NLS-1$
 	private static final String OPTION_WORKSPACE_LOCATION = "data"; //$NON-NLS-1$
+	private static final String OPTION_VERSION = "version";//$NON-NLS-1$
+	private static final String OPTION_VERSION_SHORT = "v";//$NON-NLS-1$
 
 	private GravityServer server;
 
@@ -48,6 +51,14 @@ public class ConsoleApplication implements IApplication {
 		final CommandLineParser parser = new DefaultParser();
 		final var options = getCLIOptions();
 		final var line = parser.parse(options, args);
+
+		if (line.hasOption(OPTION_VERSION_SHORT)) {
+			System.out.println(
+					HeadlessActivator.PLUGIN_ID + ':' + Platform.getBundle(HeadlessActivator.PLUGIN_ID).getVersion());
+			if (args.length == 1) {
+				return IApplication.EXIT_OK;
+			}
+		}
 		if (line.hasOption(OPTION_HELP_SHORT)) {
 			printHelp(options);
 			return IApplication.EXIT_OK;
@@ -85,11 +96,12 @@ public class ConsoleApplication implements IApplication {
 	}
 
 	/**
-	 * Scanns the standard input for the exit command and returns when the command has been entered
+	 * Scanns the standard input for the exit command and returns when the command
+	 * has been entered
 	 */
 	private void waitForExit() {
-		try(var scanner = new Scanner(System.in)){
-			while(!scanner.hasNext() || !"exit".equals(scanner.nextLine())) { //$NON-NLS-1$
+		try (var scanner = new Scanner(System.in)) {
+			while (!scanner.hasNext() || !"exit".equals(scanner.nextLine())) { //$NON-NLS-1$
 
 			}
 		}
@@ -132,6 +144,7 @@ public class ConsoleApplication implements IApplication {
 		// General
 		opt.addOption(OPTION_HELP_SHORT, OPTION_HELP_LONG, false, Messages.explainOptionHelp);
 		opt.addOption(OPTION_WORKSPACE_LOCATION, true, Messages.explainOptionWorkspace);
+		opt.addOption(OPTION_VERSION_SHORT, OPTION_VERSION, false, Messages.explainOptionVersion);
 
 		// Server mode specific
 		opt.addOption(new Option(OPTION_SERVER_SHORT, OPTION_SERVER_LONG, false, Messages.explainOptionServer));
@@ -144,11 +157,13 @@ public class ConsoleApplication implements IApplication {
 		cacheOption.setRequired(false);
 		opt.addOption(cacheOption);
 
-		final var cacheRepositoryNumberOption = new Option(OPTION_CRN_SHORT, OPTION_CRN_LONG, true, Messages.explainOptionCacheRepositoryNumber);
+		final var cacheRepositoryNumberOption = new Option(OPTION_CRN_SHORT, OPTION_CRN_LONG, true,
+				Messages.explainOptionCacheRepositoryNumber);
 		cacheRepositoryNumberOption.setRequired(false);
 		opt.addOption(cacheRepositoryNumberOption);
 
-		final var cacheModelNumberOption = new Option(OPTION_CMN_SHORT, OPTION_CMN_LONG, true, Messages.explainOptionCacheModelNumber);
+		final var cacheModelNumberOption = new Option(OPTION_CMN_SHORT, OPTION_CMN_LONG, true,
+				Messages.explainOptionCacheModelNumber);
 		cacheModelNumberOption.setRequired(false);
 		opt.addOption(cacheModelNumberOption);
 
@@ -157,7 +172,7 @@ public class ConsoleApplication implements IApplication {
 
 	@Override
 	public void stop() {
-		if(this.server!=null) {
+		if (this.server != null) {
 			this.server.stopServer();
 		}
 	}

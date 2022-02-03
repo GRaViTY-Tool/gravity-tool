@@ -17,6 +17,7 @@ public class Messages extends NLS {
 	public static String explainOptionHelp;
 	public static String explainOptionPort;
 	public static String explainOptionServer;
+	public static String explainOptionVersion;
 	public static String explainOptionWorkspace;
 	public static String batch;
 	public static String createCacheFailed;
