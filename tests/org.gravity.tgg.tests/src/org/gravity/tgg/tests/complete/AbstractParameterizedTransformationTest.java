@@ -1,4 +1,4 @@
-package org.gravity.tgg.test.complete;
+package org.gravity.tgg.tests.complete;
 
 import java.io.IOException;
 import java.nio.file.Files;

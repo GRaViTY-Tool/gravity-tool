@@ -1,10 +1,12 @@
-package org.gravity.tgg.test.sync;
+package org.gravity.tgg.tests.sync;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+
+import org.apache.log4j.Logger;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -74,6 +76,11 @@ public class SyncBwdTest {
 	private static final String T_NAME = "Test";
 	private static final String T_JAVA_FILE = T_NAME + JAVA_EXTENSION;
 	private static final String T_QUALIFIED_NAME = PACKAGE_NAME + '.' + T_NAME;
+	
+	/**
+	 * The logger of this class
+	 */
+	protected static final Logger LOGGER = Logger.getLogger(SyncBwdTest.class);
 
 	private final IProgressMonitor monitor;
 
@@ -128,7 +135,7 @@ public class SyncBwdTest {
 
 	@Test
 	public void simpleSyncTest()
-			throws IOException, CoreException, TransformationFailedException, DuplicateProjectNameException {
+			throws IOException, CoreException, TransformationFailedException {
 		final var factory = GravityUmlActivator.getTransformationFactory();
 		final var transformation = factory.getTransformation(this.project);
 
@@ -138,11 +145,7 @@ public class SyncBwdTest {
 		assertCorrectTrafo(src);
 
 		final Consumer<EObject> changeTrg = a -> {
-			try {
-				performChange(trg, this.monitor);
-			} catch (TransformationFailedException | IOException e) {
-				e.printStackTrace();
-			}
+			performChange(trg);
 		};
 
 		transformation.applyChangeAndGenerateCode(changeTrg, this.monitor);
@@ -161,7 +164,7 @@ public class SyncBwdTest {
 		try {
 			this.project.refreshLocal(IResource.DEPTH_INFINITE, this.monitor);
 		} catch (final CoreException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 		final var javaProject = JavaCore.create(this.project);
 		final var typeA = MoDiscoUtil.getType(src, A_QUALIFIED_NAME);
@@ -215,13 +218,9 @@ public class SyncBwdTest {
 	}
 
 	/**
-	 * @param transformation
-	 * @param monitor
-	 * @throws TransformationFailedException
-	 * @throws IOException
+	 * @param model the model that should be changed
 	 */
-	private void performChange(final Model model, final IProgressMonitor monitor)
-			throws TransformationFailedException, IOException {
+	private void performChange(final Model model) {
 		final var submodel = (Model) model.getPackagedElement(PROJECT_NAME);
 		final var pack = (Package) submodel.getPackagedElement(PACKAGE_NAME);
 		final var type = (Type) ((Package) submodel.getPackagedElement("Common Java datatypes")).getOwnedMember("void");

@@ -38,7 +38,7 @@ import org.osgi.framework.Bundle;
  */
 class ConsoleApplicationTests {
 
-	private final PrintStream standardOut = System.out;
+	private static final PrintStream standardOut = System.out;
 	private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
 	@BeforeEach
@@ -51,11 +51,9 @@ class ConsoleApplicationTests {
 	 * {@link org.gravity.headless.ConsoleApplication#start(org.eclipse.equinox.app.IApplicationContext)}.
 	 *
 	 * Tests the launch of the console application without parameters
-	 *
-	 * @throws Exception
 	 */
 	@Test
-	void testStartNoParams() throws Exception {
+	void testStartNoParams() {
 		final var args = new String[] {};
 		run(args, app -> {
 			assertNotNull(app);
@@ -70,11 +68,9 @@ class ConsoleApplicationTests {
 	 * {@link org.gravity.headless.ConsoleApplication#start(org.eclipse.equinox.app.IApplicationContext)}.
 	 *
 	 * Tests wheter the help is printed if requested
-	 *
-	 * @throws Exception
 	 */
 	@Test
-	void testStartHelp() throws Exception {
+	void testStartHelp() {
 		final var args = new String[] { "-h" };
 		run(args, app -> {
 			assertNotNull(app);
@@ -89,11 +85,9 @@ class ConsoleApplicationTests {
 	 * {@link org.gravity.headless.ConsoleApplication#start(org.eclipse.equinox.app.IApplicationContext)}.
 	 *
 	 * Tests that the server is not started without a given port
-	 *
-	 * @throws Exception
 	 */
 	@Test
-	void testStartServerNoPort() throws Exception {
+	void testStartServerNoPort() {
 		final var args = new String[] { "-s" };
 		run(args, app -> {
 			assertNotNull(app);

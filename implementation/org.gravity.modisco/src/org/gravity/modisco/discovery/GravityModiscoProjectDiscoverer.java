@@ -40,13 +40,13 @@ import org.eclipse.modisco.java.discoverer.AbstractDiscoverJavaModelFromProject;
 import org.eclipse.modisco.java.discoverer.DiscoverJavaModelFromJavaProject;
 import org.eclipse.modisco.java.discoverer.DiscoverJavaModelFromLibrary;
 import org.eclipse.modisco.java.discoverer.ElementsToAnalyze;
-import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
+import org.gravity.eclipse.util.UptodateVisitor;
 import org.gravity.modisco.GravityMoDiscoActivator;
 import org.gravity.modisco.IGravityModiscoProjectDiscoverer;
 import org.gravity.modisco.MGravityModel;
@@ -368,7 +368,7 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 		if (!this.load) {
 			return false;
 		}
-		return file.exists() && GravityAPI.isUptoDate(file);
+		return file.exists() && UptodateVisitor.isUptoDate(file);
 	}
 
 	/**

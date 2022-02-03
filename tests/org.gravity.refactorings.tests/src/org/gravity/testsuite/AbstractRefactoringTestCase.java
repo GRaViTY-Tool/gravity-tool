@@ -6,12 +6,10 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
@@ -53,7 +51,7 @@ public abstract class AbstractRefactoringTestCase {
 		} catch (CoreException | IOException e) {
 			LOGGER.warn(e);
 		}
-		pm = GravityAPI.createProgramModel(java, true, monitor);
+		pm = GravityAPI.createProgramModel(java, monitor);
 		if(pm == null) {
 			fail("Creating PM failed!");
 		}

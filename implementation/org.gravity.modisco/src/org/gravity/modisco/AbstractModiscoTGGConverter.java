@@ -14,6 +14,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
@@ -24,10 +25,10 @@ import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jdt.core.IJavaProject;
-import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.eclipse.util.UptodateVisitor;
 import org.moflon.tgg.algorithm.datastructures.SynchronizationProtocol;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.moflon.tgg.language.analysis.StaticAnalysis;
@@ -63,7 +64,7 @@ public abstract class AbstractModiscoTGGConverter extends SynchronizationHelper 
 			this.outputFolder.create(true, true, new NullProgressMonitor());
 		}
 
-		this.discoverer= GravityMoDiscoActivator.getDiscoverer(this.project, load);
+		this.discoverer = GravityMoDiscoActivator.getDiscoverer(this.project, load);
 
 		this.set = initResourceSet(this.discoverer);
 		if (load) {
@@ -80,14 +81,18 @@ public abstract class AbstractModiscoTGGConverter extends SynchronizationHelper 
 	private void load() throws IOException, CoreException {
 		this.src = this.discoverer.loadModel();
 		if (this.src != null) {
-			this.corr = getCorrespondenceModel();
-			if (this.corr != null) {
-				EcoreUtil.resolveAll(this.corr);
-				this.trg = this.corr.getTarget();
-				this.protocol = getProtocol();
-				if (this.protocol != null) {
-					// Everything loaded successfully
-					return;
+			this.trg = loadTarget();
+			if (this.trg != null) {
+				this.corr = loadCorrespondenceModel();
+				if (this.corr != null) {
+					EcoreUtil.resolveAll(this.corr);
+					if (this.trg.equals(this.corr.getTarget()) && this.src.equals(this.corr.getSource())) {
+						this.protocol = loadProtocol();
+						if (this.protocol != null) {
+							// Everything loaded successfully
+							return;
+						}
+					}
 				}
 			}
 			unload();
@@ -101,14 +106,14 @@ public abstract class AbstractModiscoTGGConverter extends SynchronizationHelper 
 	 * @throws IOException
 	 * @throws CoreException
 	 */
-	private SynchronizationProtocol getProtocol() throws IOException, CoreException {
+	private SynchronizationProtocol loadProtocol() throws IOException, CoreException {
 		final var monitor = new NullProgressMonitor();
-		var protocolFile = this.outputFolder.getFile(this.id+PROTOCOL_XMI + ".zip");
-		if (!protocolFile.exists() || !GravityAPI.isUptoDate(protocolFile)) {
-			protocolFile = this.outputFolder.getFile(this.id+PROTOCOL_BIN);
-			if (!protocolFile.exists() || !GravityAPI.isUptoDate(protocolFile)) {
-				protocolFile = this.outputFolder.getFile(this.id+PROTOCOL_XMI);
-				if (!protocolFile.exists() || !GravityAPI.isUptoDate(protocolFile)) {
+		var protocolFile = this.outputFolder.getFile(this.id + PROTOCOL_XMI + ".zip");
+		if (!protocolFile.exists() || !UptodateVisitor.isUptoDate(protocolFile)) {
+			protocolFile = this.outputFolder.getFile(this.id + PROTOCOL_BIN);
+			if (!protocolFile.exists() || !UptodateVisitor.isUptoDate(protocolFile)) {
+				protocolFile = this.outputFolder.getFile(this.id + PROTOCOL_XMI);
+				if (!protocolFile.exists() || !UptodateVisitor.isUptoDate(protocolFile)) {
 					return null;
 				}
 			}
@@ -187,18 +192,28 @@ public abstract class AbstractModiscoTGGConverter extends SynchronizationHelper 
 		setRules((StaticAnalysis) tggRulesResource.getContents().get(0));
 	}
 
-	protected CorrespondenceModel getCorrespondenceModel() {
-		final var corrFile = getCorrFile();
-		if (!corrFile.exists()) {
+	protected EObject loadTarget() {
+		return load(getTargetFile());
+	}
+
+	protected CorrespondenceModel loadCorrespondenceModel() {
+		return (CorrespondenceModel) load(getCorrFile());
+	}
+
+	private EObject load(final IFile file) {
+		if (!file.exists()) {
 			return null;
 		}
 		try {
-			final var resource = this.set.getResource(EMFUtil.getPlatformResourceURI(corrFile), true);
-			return (CorrespondenceModel) resource.getContents().get(0);
+			final var resource = this.set.getResource(EMFUtil.getPlatformResourceURI(file), true);
+			final var contents = resource.getContents();
+			if(!contents.isEmpty()) {
+				return contents.get(0);
+			}
 		} catch (final WrappedException e) {
 			LOGGER.error("Stored correspondence model is not valid", e);
-			return null;
 		}
+		return null;
 	}
 
 	protected IFile getCorrFile() {
@@ -216,10 +231,10 @@ public abstract class AbstractModiscoTGGConverter extends SynchronizationHelper 
 		this.changeTrg = null;
 	}
 
-	private<T extends EObject> T unload(T object) {
+	private <T extends EObject> T unload(T object) {
 		if (object != null) {
 			final var resource = object.eResource();
-			if(resource != null) {
+			if (resource != null) {
 				resource.unload();
 			}
 			object = null;

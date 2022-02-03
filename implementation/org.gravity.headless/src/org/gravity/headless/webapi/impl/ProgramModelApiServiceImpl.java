@@ -366,7 +366,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		freeCache(this.models, this.maxModels);
 		TypeGraph pm;
 		try {
-			pm = GravityAPI.createProgramModel(project, true, monitor);
+			pm = GravityAPI.createProgramModel(project, monitor);
 		} catch (final TransformationFailedException e) {
 			throw new IOException(Messages.errorPM);
 		}
