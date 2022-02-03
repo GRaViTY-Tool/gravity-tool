@@ -99,9 +99,9 @@ public abstract class AbstractModiscoTGGConverter extends SynchronizationHelper 
 	}
 
 	/**
-	 * @param project
-	 * @param set
-	 * @return
+	 * Loads the protocol from the given Java project
+	 *
+	 * @return The synchronization protocol
 	 * @throws IOException
 	 * @throws CoreException
 	 */
@@ -206,9 +206,10 @@ public abstract class AbstractModiscoTGGConverter extends SynchronizationHelper 
 		try {
 			final var resource = this.set.getResource(EMFUtil.getPlatformResourceURI(file), true);
 			final var contents = resource.getContents();
-			if(!contents.isEmpty()) {
+			if (!contents.isEmpty()) {
 				return contents.get(0);
 			}
+			LOGGER.error("Model resource loaded from " + file.getLocation().toString() + " is empty.");
 		} catch (final WrappedException e) {
 			LOGGER.error("Stored correspondence model is not valid", e);
 		}

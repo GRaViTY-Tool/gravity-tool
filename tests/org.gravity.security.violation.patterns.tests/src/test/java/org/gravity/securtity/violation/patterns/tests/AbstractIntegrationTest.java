@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.log4j.BasicConfigurator;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -15,6 +16,8 @@ public abstract class AbstractIntegrationTest {
 
 	@Test
 	public void testIntegration() throws IOException, CoreException {
+		BasicConfigurator.configure();
+
 		final var monitor = new NullProgressMonitor();
 		final var location = new File("instances/SecureViolationPatternsViolation");
 		IProject project = null;
