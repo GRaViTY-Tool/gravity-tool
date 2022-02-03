@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
 import org.gravity.eclipse.io.FileUtils;
+import org.gravity.headless.config.LoggingConfiguration;
 import org.gravity.headless.webapi.impl.ProgramModelApiServiceImpl;
 
 /**
@@ -38,11 +39,14 @@ public class GravityServer {
 	 * @return The launched server
 	 * @throws IOException
 	 */
-	public static GravityServer launchServer(File cache, final int maxRepositories, final int maxModels, final String domain, final int port) throws IOException {
+	public static GravityServer launchServer(File cache, final LoggingConfiguration log, final int maxRepositories, final int maxModels, final String domain, final int port) throws IOException {
 		if((maxModels > 0) && ((cache == null) || !cache.exists())) {
 			cache = FileUtils.createTempDirectory("gravity-cache").toFile();
 		}
 		final var implementor = new ProgramModelApiServiceImpl();
+		if((log != null) && log.loggingEnabled()) {
+			implementor.setLogConfiguration(log);
+		}
 		implementor.setMaxModels(maxModels);
 		implementor.setMaxRepositories(maxRepositories);
 		implementor.setCache(cache);

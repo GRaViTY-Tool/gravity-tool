@@ -7,8 +7,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.text.DateFormat;
 import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
@@ -17,7 +20,12 @@ import java.util.stream.Collectors;
 
 import javax.ws.rs.core.Response;
 
+import org.apache.log4j.FileAppender;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+import org.apache.log4j.spi.Filter;
+import org.apache.log4j.spi.LoggingEvent;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
@@ -41,6 +49,7 @@ import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.headless.HeadlessActivator;
 import org.gravity.headless.Messages;
+import org.gravity.headless.config.LoggingConfiguration;
 import org.gravity.headless.webapi.ProgramModelApi;
 import org.gravity.typegraph.basic.TypeGraph;
 
@@ -52,23 +61,26 @@ import org.gravity.typegraph.basic.TypeGraph;
  *
  */
 public class ProgramModelApiServiceImpl implements ProgramModelApi {
-
 	private static final String CACHE_LOCATION_MVN = "mvn";
 	private static final String CACHE_LOCATION_GIT = "git";
 	private static final String GRAVITY_LOCK = ".gravity.lock";
 	private static final long TIMEOUT_LOCK_MS = 60L * 1000;
 
 	private static final Logger LOGGER = Logger.getLogger(ProgramModelApiServiceImpl.class);
+	private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd:HH-mm-ss");
 
 	private final File workspace = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
 
 	private File cache;
+	private LoggingConfiguration log;
 
 	private final List<File> repositories = new LinkedList<>();
 	private int maxRepositories;
 
 	private final List<File> models = new LinkedList<>();
 	private int maxModels;
+	private boolean save;
+	private FileAppender fa;
 
 	/**
 	 * Get a program model
@@ -77,6 +89,29 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 */
 	@Override
 	public Response getPM4Git(final String url, final String commit) {
+		if (url == null) {
+			return Response.status(Response.Status.BAD_REQUEST).entity(Messages.errorHttpNoGitURL).build();
+		}
+		if (commit == null) {
+			return Response.status(Response.Status.BAD_REQUEST).entity(Messages.errorHttpNoCommitID).build();
+		}
+
+		if ((this.log == null) || !this.log.loggingEnabled()) {
+			return internalGetPM4Git(url, commit);
+		}
+
+		final var id = url + ':' + commit;
+		final var fa = initLogging(id);
+
+		LOGGER.info("### Request for: " + id);
+		try {
+			return internalGetPM4Git(url, commit);
+		} finally {
+			clearLogging(fa);
+		}
+	}
+
+	private Response internalGetPM4Git(final String url, final String commit) {
 		final var model = getCacheFile(CACHE_LOCATION_GIT, url, commit, "pm.xmi");
 
 		final var response = readModelOrLock(model);
@@ -100,6 +135,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			final var pm = createModelAndSaveToCache(project, model, monitor);
 			return getResponse(pm.eResource());
 		} catch (final IOException e) {
+			exportProject(project);
 			return Response.serverError().entity(e.getMessage()).build();
 		} finally {
 			cleanup(model, project, monitor);
@@ -123,6 +159,23 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			return Response.status(Response.Status.BAD_REQUEST).entity(Messages.errorHttpNoVersion).build();
 		}
 
+		if ((this.log == null) || !this.log.loggingEnabled()) {
+			return internatlGetPM4Mvn(groupId, artifactId, version, repo);
+		}
+		final var id = groupId + ':' + artifactId + ':' + version;
+
+		this.fa = initLogging(id);
+
+		LOGGER.info("### Request for: " + id);
+		try {
+			return internatlGetPM4Mvn(groupId, artifactId, version, repo);
+		} finally {
+			clearLogging(this.fa);
+		}
+	}
+
+	private Response internatlGetPM4Mvn(final String groupId, final String artifactId, final String version,
+			final String repo) {
 		final var model = getCacheFile(CACHE_LOCATION_MVN, groupId, artifactId, version, "pm.xmi");
 		final var response = readModelOrLock(model);
 		if (response != null) {
@@ -152,11 +205,50 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			return getResponse(pm.eResource());
 
 		} catch (final IOException | CoreException e) {
-			LOGGER.error(e.getMessage(), e);
+			exportProject(project);
+			return Response.serverError().entity(Messages.errorGravityTGG).build();
 		} finally {
 			cleanup(model, project, monitor);
 		}
-		return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Messages.errorGravityTGG).build();
+	}
+
+	private void exportProject(final IJavaProject project) {
+		if(this.save && (project != null) && project.exists()) {
+			final var zip = new File(new File(this.fa.getFile()).getParent(), project.getProject().getName()+".zip");
+			try {
+				ZipUtil.zipProject(project, zip);
+			} catch (final IOException e) {
+				LOGGER.error(e);
+			}
+		}
+	}
+
+	private void clearLogging(final FileAppender appender) {
+		Logger.getRootLogger().removeAppender(appender);
+	}
+
+	private FileAppender initLogging(final String id) {
+		final var thread = Thread.currentThread().getId();
+		final var fa = new FileAppender();
+		fa.setName("FileLogger-" + id);
+		fa.setFile(new File(new File(this.log.getLogDestination(), id), DATE_FORMAT.format(new Date()) + ".log").getAbsolutePath());
+		fa.setLayout(new PatternLayout("%d %-5p [%c{1}] %m%n"));
+		fa.setThreshold(Level.DEBUG);
+		fa.addFilter(new Filter() {
+			@Override
+			public int decide(final LoggingEvent event) {
+				if (thread == Thread.currentThread().getId()) {
+					return ACCEPT;
+				} else {
+					return DENY;
+				}
+			}
+		});
+		fa.setAppend(true);
+		fa.activateOptions();
+
+		Logger.getRootLogger().addAppender(fa);
+		return fa;
 	}
 
 	/**
@@ -498,5 +590,16 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		final var visitor = new ExtensionFileVisitor("xmi");
 		Files.walkFileTree(cache.toPath(), visitor);
 		this.models.addAll(visitor.getFiles().stream().map(Path::toFile).collect(Collectors.toList()));
+	}
+
+	/**
+	 * Enables the logging to the given folder or disables logging if
+	 * <code>null</code> is given
+	 *
+	 * @param log The location to which log files should be written
+	 * @param save Wheter failed projects should be copied to the logs
+	 */
+	public void setLogConfiguration(final LoggingConfiguration configuration) {
+		this.log = configuration;
 	}
 }

@@ -14,15 +14,20 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
+import javax.ws.rs.core.Response;
+
 import org.apache.commons.cli.ParseException;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
+import org.gravity.eclipse.io.FileUtils;
 import org.gravity.headless.ConsoleApplication;
 import org.gravity.headless.GravityServer;
 import org.gravity.headless.HeadlessActivator;
@@ -126,7 +131,7 @@ class ConsoleApplicationTests {
 	 */
 	@Test
 	@Timeout(value = 30, unit = TimeUnit.SECONDS)
-	void testStartBatchCusomCache() throws IOException {
+	void testStartServerCusomCache() throws IOException {
 		final var cache = new File("cache");
 		final var cmn = "6";
 		final var crn = "7";
@@ -140,6 +145,44 @@ class ConsoleApplicationTests {
 		});
 		//Clean up
 		Files.delete(cache.toPath());
+	}
+
+	/**
+	 * Test method for
+	 * {@link org.gravity.headless.ConsoleApplication#start(org.eclipse.equinox.app.IApplicationContext)}.
+	 *
+	 * Tests whether the server can be started and terminated from the console using logging
+	 *
+	 * @throws IOException If the cache cannot be deleted after the test
+	 */
+	@Test
+	@Timeout(value = 30, unit = TimeUnit.SECONDS)
+	void testStartServerLogging() throws IOException {
+		final var cache = new File("cache");
+		final var cmn = "6";
+		final var crn = "7";
+		final var logs = new File("logs");
+		final var args = new String[] { "-s", "-p", "8080", "-c", cache.getAbsolutePath(), "-cmn", cmn, "-crn", crn, "-l", logs.getAbsolutePath() };
+		run(args, app -> {
+			assertNotNull(app);
+			final var server = getServer(app);
+			assertNotNull(server);
+			assertTrue(cache.exists());
+			try {
+				final var connection = (HttpURLConnection) new URL("http://localhost:8080/pm/mvn").openConnection();
+				connection.setRequestMethod("GET");
+				assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), connection.getResponseCode());
+				assertTrue(logs.listFiles().length > 0);
+			} catch (final IOException e) {
+				fail(e.getLocalizedMessage());
+			}
+			finally {
+				writeToInputStream("exit");
+			}
+		});
+		//Clean up
+		FileUtils.recursiveDelete(logs);
+		FileUtils.recursiveDelete(cache);
 	}
 
 	/**
