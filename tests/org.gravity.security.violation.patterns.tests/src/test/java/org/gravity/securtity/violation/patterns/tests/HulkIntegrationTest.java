@@ -4,6 +4,7 @@
 package org.gravity.securtity.violation.patterns.tests;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.eclipse.core.resources.IProject;
@@ -15,6 +16,7 @@ import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.security.violation.patterns.SecurityViolationPattern;
+import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * Tests for the integration into the Hulk anti-pattern detection tool
@@ -36,7 +38,9 @@ public class HulkIntegrationTest extends AbstractIntegrationTest {
 		assertTrue(success);
 
 		final var apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
-		apg.setPg(converter.getPG());
+		final var pm = converter.getPG();
+		assertNotNull(pm);
+		apg.setPg(pm);
 
 		final var hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
 		hulk.setApg(apg);

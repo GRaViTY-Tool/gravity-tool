@@ -337,6 +337,7 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 					.map(MGravityModel.class::cast).findAny().orElse(null);
 			return this.model;
 		} else if (this.model != null) {
+			LOGGER.info("Model is not upto date.");
 			this.model.eResource().unload();
 			this.model = null;
 		}
