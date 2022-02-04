@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLsec="http://www.umlsec.de/profiles/UMLsec" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.umlsec.de/profiles/UMLsec ../../../../../carisma.profile.umlsec/profile/UMLsec.profile.uml#_MQjs4FPqEea7isDEsq0j4g">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLsec="http://www.umlsec.de/profiles/UMLsec" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.umlsec.de/profiles/UMLsec platform:/plugin/carisma.profile.umlsec/profile/UMLsec.profile.uml#_MQjs4FPqEea7isDEsq0j4g">
   <uml:Model xmi:id="_uCxtYH0UEeyJlLcCPXvoJg" name="root model">
     <packagedElement xmi:type="uml:Model" xmi:id="_uCxtYX0UEeyJlLcCPXvoJg" name="source references">
-      <packagedElement xmi:type="uml:Artifact" xmi:id="_uCxtYn0UEeyJlLcCPXvoJg" name="Client.java" fileName="/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/instances/SecureViolationPatternsViolation/src/dummy/Client.java">
+      <packagedElement xmi:type="uml:Artifact" xmi:id="_uCxtYn0UEeyJlLcCPXvoJg" name="Client.java" fileName="SecureViolationPatternsViolation/src/dummy/Client.java">
         <manifestation xmi:type="uml:Manifestation" xmi:id="_uCxtY30UEeyJlLcCPXvoJg" supplier="_uCxteH0UEeyJlLcCPXvoJg" utilizedElement="_uCxteH0UEeyJlLcCPXvoJg"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Artifact" xmi:id="_uCxtZH0UEeyJlLcCPXvoJg" name="Supplier.java" fileName="/home/speldszus/Documents/git/gravity-tool-tie/tests/org.gravity.security.violation.patterns.tests/instances/SecureViolationPatternsViolation/src/dummy/Supplier.java">
+      <packagedElement xmi:type="uml:Artifact" xmi:id="_uCxtZH0UEeyJlLcCPXvoJg" name="Supplier.java" fileName="SecureViolationPatternsViolation/src/dummy/Supplier.java">
         <manifestation xmi:type="uml:Manifestation" xmi:id="_uCxtZX0UEeyJlLcCPXvoJg" supplier="_uCxtc30UEeyJlLcCPXvoJg" utilizedElement="_uCxtc30UEeyJlLcCPXvoJg"/>
       </packagedElement>
     </packagedElement>
@@ -44,9 +44,9 @@
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0krUIH0UEeyJlLcCPXvoJg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0kr7MH0UEeyJlLcCPXvoJg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../../../../../carisma.profile.umlsec/profile/UMLsec.profile.uml#_MQjs4FPqEea7isDEsq0j4g"/>
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/carisma.profile.umlsec/profile/UMLsec.profile.uml#_MQjs4FPqEea7isDEsq0j4g"/>
       </eAnnotations>
-      <appliedProfile xmi:type="uml:Profile" href="../../../../../carisma.profile.umlsec/profile/UMLsec.profile.uml#_kGQWQDnkEeCyb9nmG-9Lpw"/>
+      <appliedProfile xmi:type="uml:Profile" href="platform:/plugin/carisma.profile.umlsec/profile/UMLsec.profile.uml#_kGQWQDnkEeCyb9nmG-9Lpw"/>
     </profileApplication>
   </uml:Model>
   <UMLsec:securedependency xmi:id="_1WhAwH0UEeyJlLcCPXvoJg" base_Package="_uCxtYH0UEeyJlLcCPXvoJg"/>

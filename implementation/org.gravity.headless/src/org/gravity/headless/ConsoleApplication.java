@@ -12,9 +12,15 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.apache.log4j.FileAppender;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.SimpleLayout;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.gravity.eclipse.io.FileUtils;
+import org.gravity.headless.config.LoggingConfiguration;
 
 /**
  * A console application of GRaViTY
@@ -37,7 +43,13 @@ public class ConsoleApplication implements IApplication {
 	public static final String OPTION_SERVER_SHORT = "s"; //$NON-NLS-1$
 	public static final String OPTION_HELP_LONG = "help"; //$NON-NLS-1$
 	public static final String OPTION_HELP_SHORT = "h"; //$NON-NLS-1$
+	private static final String OPTION_LOG = "log";//$NON-NLS-1$
+	private static final String OPTION_LOG_SHORT = "l";//$NON-NLS-1$
+	private static final String OPTION_SAVE_FAILED = "save-failed";//$NON-NLS-1$
+	private static final String OPTION_SAVE_FAILED_SHORT = "sf";//$NON-NLS-1$
 	private static final String OPTION_WORKSPACE_LOCATION = "data"; //$NON-NLS-1$
+	private static final String OPTION_VERSION = "version";//$NON-NLS-1$
+	private static final String OPTION_VERSION_SHORT = "v";//$NON-NLS-1$
 
 	private GravityServer server;
 
@@ -48,11 +60,20 @@ public class ConsoleApplication implements IApplication {
 		final CommandLineParser parser = new DefaultParser();
 		final var options = getCLIOptions();
 		final var line = parser.parse(options, args);
+
+		if (line.hasOption(OPTION_VERSION_SHORT)) {
+			System.out.println(
+					HeadlessActivator.PLUGIN_ID + ':' + Platform.getBundle(HeadlessActivator.PLUGIN_ID).getVersion());
+			if (args.length == 1) {
+				return IApplication.EXIT_OK;
+			}
+		}
 		if (line.hasOption(OPTION_HELP_SHORT)) {
 			printHelp(options);
 			return IApplication.EXIT_OK;
 		}
 		final var cache = initCache(line);
+		final var log = intLog(line);
 
 		if (line.hasOption(OPTION_SERVER_SHORT)) {
 			// Run in server mode
@@ -67,9 +88,9 @@ public class ConsoleApplication implements IApplication {
 				if (line.hasOption(OPTION_CMN_SHORT)) {
 					cmn = Integer.parseInt(line.getOptionValue(OPTION_CRN_SHORT));
 				}
-				this.server = GravityServer.launchServer(cache, crn, cmn, "localhost", port);
+				this.server = GravityServer.launchServer(cache, log, crn, cmn, "localhost", port);
 				System.out.println(Messages.launched);
-				System.out.println(MessageFormat.format(Messages.runningOn, port));
+				System.out.println(MessageFormat.format(Messages.runningOn, Integer.toString(port)));
 				System.out.println(Messages.howtoShutdown);
 				waitForExit();
 				return IApplication.EXIT_OK;
@@ -85,11 +106,12 @@ public class ConsoleApplication implements IApplication {
 	}
 
 	/**
-	 * Scanns the standard input for the exit command and returns when the command has been entered
+	 * Scanns the standard input for the exit command and returns when the command
+	 * has been entered
 	 */
 	private void waitForExit() {
-		try(var scanner = new Scanner(System.in)){
-			while(!scanner.hasNext() || !"exit".equals(scanner.nextLine())) { //$NON-NLS-1$
+		try (var scanner = new Scanner(System.in)) {
+			while (!scanner.hasNext() || !"exit".equals(scanner.nextLine())) { //$NON-NLS-1$
 
 			}
 		}
@@ -116,6 +138,28 @@ public class ConsoleApplication implements IApplication {
 	}
 
 	/**
+	 * Initializes the logging according to the arguments on the command line
+	 *
+	 * @param line the parsed command line the application has been launched with
+	 * @return The configuration containing the location to which log files should be written
+	 * @throws IOException If the log location cannot be initialized
+	 */
+	private LoggingConfiguration intLog(final CommandLine line) throws IOException {
+		if (line.hasOption(OPTION_LOG_SHORT)) {
+			final var log = new File(line.getOptionValue(OPTION_LOG_SHORT));
+			if (!log.exists() && !log.mkdirs()) {
+				throw new IOException(Messages.createLogFailed);
+			}
+			final var logfile = new File(log, "gravity-headless.log").getAbsolutePath();
+			final var appender = new FileAppender(new SimpleLayout(), logfile, true);
+			appender.setThreshold(Level.ERROR);
+			Logger.getRootLogger().addAppender(appender);
+			return new LoggingConfiguration(log, line.hasOption(OPTION_SAVE_FAILED_SHORT));
+		}
+		return LoggingConfiguration.NO_LOGGING;
+	}
+
+	/**
 	 * Prints help for the given options
 	 *
 	 * @param options the options
@@ -132,6 +176,9 @@ public class ConsoleApplication implements IApplication {
 		// General
 		opt.addOption(OPTION_HELP_SHORT, OPTION_HELP_LONG, false, Messages.explainOptionHelp);
 		opt.addOption(OPTION_WORKSPACE_LOCATION, true, Messages.explainOptionWorkspace);
+		opt.addOption(OPTION_LOG_SHORT, OPTION_LOG, true, Messages.explainOptionLog);
+		opt.addOption(OPTION_SAVE_FAILED_SHORT, OPTION_SAVE_FAILED, false, Messages.explainOptionSaveFailed);
+		opt.addOption(OPTION_VERSION_SHORT, OPTION_VERSION, false, Messages.explainOptionVersion);
 
 		// Server mode specific
 		opt.addOption(new Option(OPTION_SERVER_SHORT, OPTION_SERVER_LONG, false, Messages.explainOptionServer));
@@ -144,11 +191,13 @@ public class ConsoleApplication implements IApplication {
 		cacheOption.setRequired(false);
 		opt.addOption(cacheOption);
 
-		final var cacheRepositoryNumberOption = new Option(OPTION_CRN_SHORT, OPTION_CRN_LONG, true, Messages.explainOptionCacheRepositoryNumber);
+		final var cacheRepositoryNumberOption = new Option(OPTION_CRN_SHORT, OPTION_CRN_LONG, true,
+				Messages.explainOptionCacheRepositoryNumber);
 		cacheRepositoryNumberOption.setRequired(false);
 		opt.addOption(cacheRepositoryNumberOption);
 
-		final var cacheModelNumberOption = new Option(OPTION_CMN_SHORT, OPTION_CMN_LONG, true, Messages.explainOptionCacheModelNumber);
+		final var cacheModelNumberOption = new Option(OPTION_CMN_SHORT, OPTION_CMN_LONG, true,
+				Messages.explainOptionCacheModelNumber);
 		cacheModelNumberOption.setRequired(false);
 		opt.addOption(cacheModelNumberOption);
 
@@ -157,7 +206,7 @@ public class ConsoleApplication implements IApplication {
 
 	@Override
 	public void stop() {
-		if(this.server!=null) {
+		if (this.server != null) {
 			this.server.stopServer();
 		}
 	}

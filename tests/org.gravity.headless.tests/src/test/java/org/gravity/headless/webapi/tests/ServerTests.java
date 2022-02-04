@@ -43,7 +43,7 @@ public class ServerTests {
 		cache = FileUtils.createTempDirectory("gravity-test").toFile();
 		final var maxRepositories = 1;
 		final var maxModels = 1;
-		server = GravityServer.launchServer(cache, maxRepositories, maxModels, DOMAIN, PORT);
+		server = GravityServer.launchServer(cache, null, maxRepositories, maxModels, DOMAIN, PORT);
 	}
 
 	/**

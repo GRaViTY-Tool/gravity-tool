@@ -9,8 +9,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
+import org.gravity.eclipse.tests.TestHelper;
 import org.gravity.eclipse.util.EclipseProjectUtil;
-import org.gravity.tgg.tests.MoDiscoTestActivator;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -37,7 +37,7 @@ public class LoadTests {
 	@BeforeClass
 	public static void initProject() throws CoreException, DuplicateProjectNameException {
 		clean();
-		project = MoDiscoTestActivator.generateSimpleProject(PROJECT_NAME).getProject();
+		project = TestHelper.generateSimpleProject(PROJECT_NAME).getProject();
 	}
 
 	/**

@@ -56,6 +56,7 @@ public class CarismaIntegrationTests extends AbstractIntegrationTest {
 		} catch (final IOException e) {
 			throw new IllegalStateException(e);
 		}
+
 		final var message = "Couldn't find generated UML model";
 		assertNotNull(message, uml);
 		assertTrue(message, uml.exists());

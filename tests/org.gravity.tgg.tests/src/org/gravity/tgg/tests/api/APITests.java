@@ -14,8 +14,8 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
+import org.gravity.eclipse.tests.TestHelper;
 import org.gravity.eclipse.util.EclipseProjectUtil;
-import org.gravity.tgg.tests.MoDiscoTestActivator;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.AfterClass;
@@ -43,7 +43,7 @@ public class APITests {
 	@BeforeClass
 	public static void createProject() throws DuplicateProjectNameException, CoreException {
 		clean();
-		project = MoDiscoTestActivator.generateSimpleProject(PROJECT_NAME);
+		project = TestHelper.generateSimpleProject(PROJECT_NAME);
 	}
 
 	@Test
