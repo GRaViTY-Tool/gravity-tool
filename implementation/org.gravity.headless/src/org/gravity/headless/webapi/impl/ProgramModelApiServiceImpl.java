@@ -67,25 +67,26 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	private static final long TIMEOUT_LOCK_MS = 60L * 1000;
 
 	private static final Logger LOGGER = Logger.getLogger(ProgramModelApiServiceImpl.class);
-	private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd:HH-mm-ss");
+	private final DateFormat date = new SimpleDateFormat("yyyy-MM-dd:HH-mm-ss");
 
 	private final File workspace = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
 
 	private File cache;
+
 	private LoggingConfiguration log;
+	private boolean save;
+	private FileAppender appender;
 
 	private final List<File> repositories = new LinkedList<>();
 	private int maxRepositories;
 
 	private final List<File> models = new LinkedList<>();
 	private int maxModels;
-	private boolean save;
-	private FileAppender fa;
 
 	/**
-	 * Get a program model
+	 * Get appender program model
 	 *
-	 * Creates a program model for the given commit and repository.
+	 * Creates appender program model for the given commit and repository.
 	 */
 	@Override
 	public Response getPM4Git(final String url, final String commit) {
@@ -143,9 +144,9 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	}
 
 	/**
-	 * Get a program model
+	 * Get appender program model
 	 *
-	 * Creates a program model for the given commit and repository.
+	 * Creates appender program model for the given commit and repository.
 	 */
 	@Override
 	public Response getPM4Mvn(final String groupId, final String artifactId, final String version, final String repo) {
@@ -164,13 +165,13 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		}
 		final var id = groupId + ':' + artifactId + ':' + version;
 
-		this.fa = initLogging(id);
+		this.appender = initLogging(id);
 
 		LOGGER.info("### Request for: " + id);
 		try {
 			return internatlGetPM4Mvn(groupId, artifactId, version, repo);
 		} finally {
-			clearLogging(this.fa);
+			clearLogging(this.appender);
 		}
 	}
 
@@ -214,7 +215,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 
 	private void exportProject(final IJavaProject project) {
 		if(this.save && (project != null) && project.exists()) {
-			final var zip = new File(new File(this.fa.getFile()).getParent(), project.getProject().getName()+".zip");
+			final var zip = new File(new File(this.appender.getFile()).getParent(), project.getProject().getName()+".zip");
 			try {
 				ZipUtil.zipProject(project, zip);
 			} catch (final IOException e) {
@@ -227,11 +228,17 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		Logger.getRootLogger().removeAppender(appender);
 	}
 
+	/**
+	 * Initializes the loggin with a file appender that only responds to this thread
+	 *
+	 * @param id The id of the log file
+	 * @return The appender
+	 */
 	private FileAppender initLogging(final String id) {
 		final var thread = Thread.currentThread().getId();
 		final var fa = new FileAppender();
 		fa.setName("FileLogger-" + id);
-		fa.setFile(new File(new File(this.log.getLogDestination(), id), DATE_FORMAT.format(new Date()) + ".log").getAbsolutePath());
+		fa.setFile(new File(new File(this.log.getLogDestination(), id), this.date.format(new Date()) + ".log").getAbsolutePath());
 		fa.setLayout(new PatternLayout("%d %-5p [%c{1}] %m%n"));
 		fa.setThreshold(Level.DEBUG);
 		fa.addFilter(new Filter() {
@@ -252,7 +259,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	}
 
 	/**
-	 * Creates a new Java project with the given name. Any existing project with the
+	 * Creates appender new Java project with the given name. Any existing project with the
 	 * same name will be deleted.
 	 *
 	 * @param name    The name of the new Java project
@@ -321,7 +328,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * @param model   The model to be monitored
 	 * @param timeout Timeout in ms for waiting for the lock being released. Non
 	 *                positive values are rated as no timeout.
-	 * @throws TimeoutException If the timeout in case of a locked model exceeded
+	 * @throws TimeoutException If the timeout in case of appender locked model exceeded
 	 */
 	private void waitIfLocked(final File model, final long timeout) throws TimeoutException {
 		final var lock = new File(model.getParentFile(), GRAVITY_LOCK);
@@ -344,14 +351,14 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 *
 	 * @param model The model that had been locked
 	 * @return true, iff the lock has been deleted
-	 * @throws IOException If the model is file does not contain a valid path
+	 * @throws IOException If the model is file does not contain appender valid path
 	 */
 	private boolean deleteLock(final File model) throws IOException {
 		return Files.deleteIfExists(new File(model.getParentFile(), GRAVITY_LOCK).toPath());
 	}
 
 	/**
-	 * Creates a lock in the model cache
+	 * Creates appender lock in the model cache
 	 *
 	 * @param model The model to be created
 	 * @return true, iff the lock has been created
@@ -373,7 +380,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * not present
 	 *
 	 * @param model The model to read
-	 * @return A response message if the model has been read or a timeout occurred,
+	 * @return A response message if the model has been read or appender timeout occurred,
 	 *         otherwise <code>null</code>
 	 */
 	private Response readModelOrLock(final File model) {
@@ -381,7 +388,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			try {
 				return readModel(model);
 			} catch (final IOException e) {
-				// Try a new construction of a pm
+				// Try appender new construction of appender pm
 			}
 		}
 		try {
@@ -394,7 +401,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			try {
 				return readModel(model);
 			} catch (final IOException e) {
-				// Try a new construction of a pm
+				// Try appender new construction of appender pm
 			}
 		}
 		createLock(model);
@@ -419,7 +426,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	}
 
 	/**
-	 * Calculates a folder in the cache folder with the given segment ids
+	 * Calculates appender folder in the cache folder with the given segment ids
 	 *
 	 * @param ids The ids of the segments
 	 * @return A file in the cache
@@ -433,10 +440,10 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	}
 
 	/**
-	 * Creates a response that contains the contents of the EMF resource
+	 * Creates appender response that contains the contents of the EMF resource
 	 *
 	 * @param resource A EMF resource
-	 * @return a response message
+	 * @return appender response message
 	 */
 	private Response getResponse(final Resource resource) {
 		try (var stream = new ByteArrayOutputStream()) {
@@ -448,7 +455,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	}
 
 	/**
-	 * @param project The java project for that a model should be created
+	 * @param project The java project for that appender model should be created
 	 * @param model   The file to which the model should be written
 	 * @param monitor A progress monitor
 	 * @throws IOException If sending an error message failed
@@ -505,7 +512,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	}
 
 	/**
-	 * Clones a git repository and checks out a specific commit
+	 * Clones appender git repository and checks out appender specific commit
 	 *
 	 * @param exchange The http exchange for sending error messages
 	 * @param url      The url of the repository
@@ -575,7 +582,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	}
 
 	/**
-	 * Sets the cache to the given location. If a location was set before, the
+	 * Sets the cache to the given location. If appender location was set before, the
 	 * cached models will not be moved to the new location and the old cache will
 	 * not be deleted.
 	 *

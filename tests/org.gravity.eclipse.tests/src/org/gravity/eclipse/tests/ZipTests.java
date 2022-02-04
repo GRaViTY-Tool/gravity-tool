@@ -21,7 +21,6 @@ public class ZipTests {
 	public void testProjectZipExport() throws CoreException, DuplicateProjectNameException, IOException {
 		final var project = TestHelper.generateSimpleProject("ZipTestProject");
 		final var out = FileUtils.createTempFile("test", ".zip").toFile();
-		System.out.println(out);
 		ZipUtil.zipProject(project, out);
 		assertTrue(out.exists());
 
@@ -35,6 +34,6 @@ public class ZipTests {
 		final var java = JavaProjectUtil.getJavaProject(imported);
 		final var cp = java.getRawClasspath();
 		assertTrue(cp.length > 0);
-		assertTrue(Stream.of(cp).filter(e -> e.getEntryKind() == IClasspathEntry.CPE_SOURCE).findAny().isPresent());
+		assertTrue(Stream.of(cp).anyMatch(e -> e.getEntryKind() == IClasspathEntry.CPE_SOURCE));
 	}
 }
