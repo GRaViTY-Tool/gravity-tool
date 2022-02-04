@@ -24,7 +24,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @author speldszus
  *
  */
-public class HulkIntegrationTest extends AbstractIntegrationTest {
+public class HulkIntegrationTest extends AbstractExisitingModelsTest {
 
 	@Override
 	protected void run(final IProject project, final NullProgressMonitor monitor) {

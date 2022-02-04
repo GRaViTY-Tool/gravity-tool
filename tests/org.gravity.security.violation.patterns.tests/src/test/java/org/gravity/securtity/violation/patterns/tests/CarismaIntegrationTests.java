@@ -35,7 +35,7 @@ import carisma.core.checks.CheckRegistry;
  * @author speldszus
  *
  */
-public class CarismaIntegrationTests extends AbstractIntegrationTest {
+public class CarismaIntegrationTests extends AbstractExisitingModelsTest {
 
 	protected static final Logger LOGGER = Logger.getLogger(CarismaIntegrationTests.class);
 
