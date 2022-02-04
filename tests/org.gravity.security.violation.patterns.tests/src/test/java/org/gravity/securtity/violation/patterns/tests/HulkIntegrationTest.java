@@ -16,7 +16,6 @@ import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.security.violation.patterns.SecurityViolationPattern;
-import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * Tests for the integration into the Hulk anti-pattern detection tool

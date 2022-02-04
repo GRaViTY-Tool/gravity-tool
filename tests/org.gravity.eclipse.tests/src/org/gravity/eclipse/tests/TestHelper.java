@@ -18,6 +18,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 
 /**
@@ -65,14 +66,20 @@ public final class TestHelper {
 	 * (<code>dummy.Clazz</code>)
 	 *
 	 * @param name The name of the project
+	 * @param force If an already existing project should be overwritten
 	 *
 	 * @return the generated Java project
 	 *
 	 * @throws CoreException                 If the creation fails
-	 * @throws DuplicateProjectNameException If the project already exists
+	 * @throws DuplicateProjectNameException If the project already exists and creation is not enforced
 	 */
-	public static IJavaProject generateSimpleProject(final String name) throws CoreException, DuplicateProjectNameException {
+	public static IJavaProject generateSimpleProject(final String name, final boolean force) throws CoreException, DuplicateProjectNameException {
+		final var existing = EclipseProjectUtil.getProjectByName(name);
+		if(existing != null) {
+			existing.delete(true, null);
+		}
 		final var project = JavaProjectUtil.createJavaProject(name, Collections.singleton("src"), null);
+
 
 		final var srcDummy = project.getProject().getFolder("src").getFolder("dummy");
 		srcDummy.create(true, true, null);
@@ -86,6 +93,21 @@ public final class TestHelper {
 			throw new ResourceException(IStatus.ERROR, clazzFile.getFullPath(), e.getMessage(), e);
 		}
 		return project;
+	}
+
+	/**
+	 * Generates a simple Java project with only one class
+	 * (<code>dummy.Clazz</code>)
+	 *
+	 * @param name The name of the project
+	 *
+	 * @return the generated Java project
+	 *
+	 * @throws CoreException                 If the creation fails
+	 * @throws DuplicateProjectNameException If the project already exists
+	 */
+	public static IJavaProject generateSimpleProject(final String name) throws CoreException, DuplicateProjectNameException {
+		return generateSimpleProject(name, false);
 	}
 
 }
