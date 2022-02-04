@@ -68,10 +68,13 @@ public final class JavaProjectUtil {
 	public static void addToClassPath(final IJavaProject project, final List<IClasspathEntry> entries,
 			final IProgressMonitor monitor) throws JavaModelException {
 		final var oldEntries = project.getRawClasspath();
+		final List<IPath> included = Stream.of(oldEntries).map(IClasspathEntry::getPath).collect(Collectors.toList());
+		final List<IClasspathEntry> add = entries.stream().filter(e -> !included.contains(e.getPath()))
+				.collect(Collectors.toList());
 		var i = oldEntries.length;
-		final var newEntries = new IClasspathEntry[entries.size() + i];
+		final var newEntries = new IClasspathEntry[add.size() + i];
 		System.arraycopy(oldEntries, 0, newEntries, 0, i);
-		for (final IClasspathEntry entry : entries) {
+		for (final IClasspathEntry entry : add) {
 			newEntries[i++] = entry;
 		}
 
