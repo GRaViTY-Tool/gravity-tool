@@ -18,5 +18,4 @@ public class HeadlessActivator extends Plugin {
 	 */
 	public static final String PLUGIN_ID = "org.gravity.headless";
 
-	public static boolean saveFailedProjects = false;
 }
