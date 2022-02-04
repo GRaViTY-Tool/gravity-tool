@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.core.propertycontainer:MoflonPropertiesContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.moflon.core.propertycontainer="platform:/plugin/org.moflon.core.propertycontainer/model/Propertycontainer.ecore" projectName="org.gravity.tgg.modisco.uml">
+  <additionalDependencies value="platform:/resource/org.gravity.modisco/model/Modisco.ecore"/>
+  <additionalDependencies value="platform:/plugin/org.eclipse.modisco.java/model/java.ecore"/>
+  <additionalDependencies value="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"/>
+  <additionalDependencies value="platform:/plugin/org.eclipse.uml2.types/model/Types.ecore"/>
+  <replaceGenModel/>
+  <tGGBuildMode/>
+  <importMappings key="http://www.eclipse.org/uml2/5.0.0/UML" value="platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"/>
+  <importMappings key="http://www.eclipse.org/uml2/5.0.0/Types" value="platform:/plugin/org.eclipse.uml2.types/model/Types.ecore"/>
+  <importMappings key="http://www.gravity-tool.org/modisco" value="platform:/resource/org.gravity.modisco/model/Modisco.ecore"/>
+  <importMappings key="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" value="platform:/plugin/org.eclipse.modisco.java/model/java.ecore"/>
+  <additionalUsedGenPackages value="platform:/resource/org.gravity.modisco/model/Modisco.genmodel"/>
+  <additionalUsedGenPackages value="platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel"/>
+  <additionalUsedGenPackages value="platform:/plugin/org.eclipse.modisco.java/model/java.genmodel"/>
+  <additionalUsedGenPackages value="platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel"/>
+</org.moflon.core.propertycontainer:MoflonPropertiesContainer>
