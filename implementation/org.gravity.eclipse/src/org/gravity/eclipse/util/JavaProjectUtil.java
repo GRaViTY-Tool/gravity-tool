@@ -4,15 +4,18 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.log4j.Level;
@@ -32,7 +35,6 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.eclipse.jdt.launching.JavaRuntime;
-import org.eclipse.jdt.launching.LibraryLocation;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.io.FileUtils;
 
@@ -137,39 +139,55 @@ public final class JavaProjectUtil {
 	public static IJavaProject convertToJavaProject(final Collection<String> sourceFolderNames, final IProject project,
 			final IProgressMonitor monitor) throws CoreException {
 		// Add Java-Nature
-		if (project.hasNature(JavaCore.NATURE_ID)) {
-			return JavaCore.create(project);
+		final var alreadyJavaProject = project.hasNature(JavaCore.NATURE_ID);
+		if (!alreadyJavaProject) {
+			EclipseProjectUtil.addNature(project, JavaCore.NATURE_ID, monitor);
 		}
-		EclipseProjectUtil.addNature(project, JavaCore.NATURE_ID, monitor);
-
 		final var javaProject = JavaCore.create(project);
 
 		// Add lib folder
 		final var libFolder = project.getProject().getFolder("lib");
-		if (libFolder.exists()) {
-			libFolder.delete(true, monitor);
+		if (!libFolder.exists()) {
+			libFolder.create(true, true, monitor);
 		}
-		libFolder.create(true, true, monitor);
 
-		final List<IClasspathEntry> entries = new ArrayList<>();
+		final Set<IClasspathEntry> entries = new HashSet<>();
+		if (alreadyJavaProject) {
+			entries.addAll(Arrays.asList(javaProject.getRawClasspath()));
+		}
 
-		// Create src folder
+		// Create src folders
+		final var existing = entries.stream().map(IClasspathEntry::getPath).collect(Collectors.toList());
 		for (final String sourceFolderName : sourceFolderNames) {
 			final var sourceFolder = project.getFolder(sourceFolderName);
-			sourceFolder.create(false, true, monitor);
-			final var packageFragmentRoot = javaProject.getPackageFragmentRoot(sourceFolder);
-			entries.add(JavaCore.newSourceEntry(packageFragmentRoot.getPath()));
+			if (!sourceFolder.exists()) {
+				sourceFolder.create(false, true, monitor);
+			}
+			if (!existing.contains(sourceFolder.getProjectRelativePath())) {
+				final var packageFragmentRoot = javaProject.getPackageFragmentRoot(sourceFolder);
+				entries.add(JavaCore.newSourceEntry(packageFragmentRoot.getPath()));
+			}
 		}
 
-		// Add Java libs
-		final var vmInstall = JavaRuntime.getDefaultVMInstall();
-		final var locations = JavaRuntime.getLibraryLocations(vmInstall);
-		for (final LibraryLocation element : locations) {
-			entries.add(JavaCore.newLibraryEntry(element.getSystemLibraryPath(), null, null));
+		// Add JVM if not present
+		if (!hasJVM(javaProject)) {
+			final var vmInstall = JavaRuntime.getDefaultVMInstall();
+			entries.add(JavaCore.newContainerEntry(JavaRuntime.newJREContainerPath(vmInstall)));
 		}
+
 		javaProject.setRawClasspath(entries.toArray(new IClasspathEntry[0]), monitor);
 
 		return javaProject;
+	}
+
+	private static boolean hasJVM(final IJavaProject javaProject) throws JavaModelException {
+		for (final IClasspathEntry entry : javaProject.getRawClasspath()) {
+			if ((entry.getEntryKind() == IClasspathEntry.CPE_CONTAINER)
+					&& entry.getPath().toString().startsWith(JavaRuntime.JRE_CONTAINER)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -221,10 +239,11 @@ public final class JavaProjectUtil {
 	}
 
 	/**
-	 * Checks whether two classes with the same namespace and name can be ignored or not
+	 * Checks whether two classes with the same namespace and name can be ignored or
+	 * not
 	 *
 	 * @param additional The class that should be added to the projecz
-	 * @param existing The class already contained in the project
+	 * @param existing   The class already contained in the project
 	 * @throws IOException If the overlap cannot be ignored
 	 */
 	private static void checkAlreadyExistingClass(final IPath additional, final IFile existing) throws IOException {
@@ -239,8 +258,8 @@ public final class JavaProjectUtil {
 				LOGGER.warn("Duplicate with identical content: " + additional.toString());
 			} else {
 				throw new IOException(
-						"Duplicate: \n\t" + existing.getLocation().toFile().toPath().toRealPath().toString()
-						+ "\n\t" + additional.toString());
+						"Duplicate: \n\t" + existing.getLocation().toFile().toPath().toRealPath().toString() + "\n\t"
+								+ additional.toString());
 			}
 		}
 	}
@@ -300,7 +319,7 @@ public final class JavaProjectUtil {
 				uniqueName = name;
 			}
 			try {
-				project = createJavaProject(uniqueName, Collections.emptySet(), monitor);
+				project = createJavaProject(uniqueName, Collections.singleton("src"), monitor);
 			} catch (final DuplicateProjectNameException e) {
 				appendix++;
 			}
