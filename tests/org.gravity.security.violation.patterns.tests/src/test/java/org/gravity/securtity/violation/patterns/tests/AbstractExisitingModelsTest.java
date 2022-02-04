@@ -47,7 +47,7 @@ public abstract class AbstractExisitingModelsTest {
 		try {
 			run(project, monitor);
 		} finally {
-			if (backup != null) {
+			if (backup.exists()) {
 				gravity.delete(true, monitor);
 				backup.copy(gravity.getProjectRelativePath(), IResource.DEPTH_INFINITE, monitor);
 				backup.delete(true, monitor);
