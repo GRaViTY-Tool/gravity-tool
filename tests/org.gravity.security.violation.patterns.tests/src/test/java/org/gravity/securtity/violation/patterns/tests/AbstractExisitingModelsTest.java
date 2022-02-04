@@ -64,10 +64,11 @@ public abstract class AbstractExisitingModelsTest {
 	 */
 	private void updateTimeStamps(final IProject project, final IProgressMonitor monitor)
 			throws IOException, CoreException {
+		final var now = System.currentTimeMillis();
 		final var gravity = EclipseProjectUtil.getGravityFolder(project, monitor);
 		try {
 			gravity.accept(resource -> {
-				resource.touch(monitor);
+				resource.setLocalTimeStamp(now);
 				return true;
 			});
 		} catch (final CoreException e) {
