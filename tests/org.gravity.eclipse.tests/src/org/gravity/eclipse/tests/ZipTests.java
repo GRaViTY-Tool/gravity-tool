@@ -40,10 +40,11 @@ public class ZipTests {
 
 			project.getProject().delete(true, null);
 			final var unzip = FileUtils.createTempDirectory("zipOut").toFile();
-			ZipUtil.unzip(out.toString(), unzip.getAbsolutePath());
+			ZipUtil.unzip(out, unzip.getAbsoluteFile());
 			final var imported = EclipseProjectUtil.importProject(unzip, null);
-			assertNotNull(imported);
-			assertTrue(imported.exists());
+			final var importError = "The zipped project cannot be imported after unzipping!";
+			assertNotNull(importError, imported);
+			assertTrue(importError, imported.exists());
 
 			final var java = JavaProjectUtil.getJavaProject(imported);
 			final var cp = java.getRawClasspath();

@@ -65,21 +65,24 @@ public final class TestHelper {
 	 * Generates a simple Java project with only one class
 	 * (<code>dummy.Clazz</code>)
 	 *
-	 * @param name The name of the project
+	 * @param name  The name of the project
 	 * @param force If an already existing project should be overwritten
 	 *
 	 * @return the generated Java project
 	 *
 	 * @throws CoreException                 If the creation fails
-	 * @throws DuplicateProjectNameException If the project already exists and creation is not enforced
+	 * @throws DuplicateProjectNameException If the project already exists and
+	 *                                       creation is not enforced
 	 */
-	public static IJavaProject generateSimpleProject(final String name, final boolean force) throws CoreException, DuplicateProjectNameException {
-		final var existing = EclipseProjectUtil.getProjectByName(name);
-		if(existing != null) {
-			existing.delete(true, null);
+	public static IJavaProject generateSimpleProject(final String name, final boolean force)
+			throws CoreException, DuplicateProjectNameException {
+		if (force) {
+			final var existing = EclipseProjectUtil.getProjectByName(name);
+			if (existing != null) {
+				existing.delete(true, null);
+			}
 		}
 		final var project = JavaProjectUtil.createJavaProject(name, Collections.singleton("src"), null);
-
 
 		final var srcDummy = project.getProject().getFolder("src").getFolder("dummy");
 		srcDummy.create(true, true, null);
@@ -106,7 +109,8 @@ public final class TestHelper {
 	 * @throws CoreException                 If the creation fails
 	 * @throws DuplicateProjectNameException If the project already exists
 	 */
-	public static IJavaProject generateSimpleProject(final String name) throws CoreException, DuplicateProjectNameException {
+	public static IJavaProject generateSimpleProject(final String name)
+			throws CoreException, DuplicateProjectNameException {
 		return generateSimpleProject(name, false);
 	}
 
