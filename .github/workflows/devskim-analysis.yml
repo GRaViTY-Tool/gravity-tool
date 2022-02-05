@@ -35,4 +35,4 @@ jobs:
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: devskim-results.sarif
-          ignore-globs: **/org.gravity.secdfd/examples/**,**/carisma.check.variability.tests/examples/**
+          ignore-globs: org.gravity.secdfd/examples/**
