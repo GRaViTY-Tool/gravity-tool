@@ -105,7 +105,7 @@ public interface AnnotationTypeDeclaration2Interface extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface AnnotationTypeDeclaration2Interface extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface AnnotationTypeDeclaration2Interface extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Interface_1(Interface feature);
+	EObjectContainer isAppropriate_BWD_Interface_2(Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,7 +241,7 @@ public interface AnnotationTypeDeclaration2Interface extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Interface feature, AnnotationTypeDeclaration bodyDeclaration, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(AnnotationTypeDeclaration bodyDeclaration, Interface feature, Match sourceMatch,
 			Match targetMatch);
 
 	/**

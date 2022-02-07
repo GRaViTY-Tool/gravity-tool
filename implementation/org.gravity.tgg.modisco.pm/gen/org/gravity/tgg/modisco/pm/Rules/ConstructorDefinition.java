@@ -218,7 +218,7 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_42(EMoflonEdge _edge_definitions);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_21(EMoflonEdge _edge_definitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_43(EMoflonEdge _edge_mDefinitions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_21(EMoflonEdge _edge_mDefinitions);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -1,12 +1,9 @@
 package org.gravity.security.annotations;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -36,7 +33,7 @@ public class AnnotationsActivator extends Plugin {
 	 * @throws IOException If the annotations can not be saved
 	 */
 	public static void storeAnnotationsToFile(final IFile file, final IProgressMonitor monitor) throws IOException {
-		try (InputStream annotations = new URL(
+		try (var annotations = new URL(
 				"platform:/plugin/org.gravity.security.annotations/org.gravity.annotations.jar") //$NON-NLS-1$
 				.openConnection().getInputStream()) {
 			file.create(annotations, true, monitor);
@@ -58,7 +55,7 @@ public class AnnotationsActivator extends Plugin {
 			throws CoreException, IOException {
 		monitor.setTaskName("Prepare Java Project");
 
-		final IFile annotationsFile = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor)
+		final var annotationsFile = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor)
 				.getFile("org.gravity.annotations.jar");
 		if (!annotationsFile.exists()) {
 			storeAnnotationsToFile(annotationsFile, monitor);
@@ -66,12 +63,12 @@ public class AnnotationsActivator extends Plugin {
 		}
 
 		// If the file exists already, check if it is on the classpath
-		final IWorkspaceRoot ws = project.getProject().getWorkspace().getRoot();
+		final var ws = project.getProject().getWorkspace().getRoot();
 		for (final IClasspathEntry entry : project.getRawClasspath()) {
 			if (entry.getEntryKind() == IClasspathEntry.CPE_LIBRARY) {
-				IPath path = entry.getPath();
+				var path = entry.getPath();
 				if (path.isAbsolute()) {
-					final IProject containingProject = ws.getProject(path.segment(0));
+					final var containingProject = ws.getProject(path.segment(0));
 					if (containingProject.getLocation() != null) {
 						path = containingProject.getLocation().append(path.removeFirstSegments(1));
 					}
@@ -85,7 +82,5 @@ public class AnnotationsActivator extends Plugin {
 			}
 		}
 		return EclipseProjectUtil.addLibToClasspath(project, annotationsFile).getPath();
-
 	}
-
 }

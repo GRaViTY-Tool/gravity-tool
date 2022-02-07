@@ -208,7 +208,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_117(EMoflonEdge _edge_ownedComment);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_118(EMoflonEdge _edge_ownedComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface ConstructorDec2OperationWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_126(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_127(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

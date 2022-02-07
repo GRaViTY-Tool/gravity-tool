@@ -12,23 +12,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//RedefinableTemplateSignature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2Property" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+  <eClassifiers xsi:type="ecore:EClass" name="JavaPackage2UmlPackage" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ASTNode2Element" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2TemplateBinding" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//TemplateBinding"/>
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JavaModel2UMLPackage" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -36,23 +24,35 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit2Artifact" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Artifact"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2InterfaceRealization" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//InterfaceRealization"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JavaPackage2UmlPackage" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+  <eClassifiers xsi:type="ecore:EClass" name="Expression2Comment" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Expression"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Comment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ASTNode2Element" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2Property" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2TemplateBinding" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//TemplateBinding"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2Parameter" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -60,11 +60,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression2Comment" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+  <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit2Artifact" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Expression"/>
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Comment"/>
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Artifact"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Modifier2NamedElement" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -80,130 +80,130 @@
   </eClassifiers>
   <eSubpackages name="Rules" nsURI="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules"
       nsPrefix="Rules">
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Interface_InnerTypeInInterface"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Enum" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Classifier_InnerTypeInInterface_Abstract"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit2Artifact" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotationValue2Comment" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Class" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType2PrimitiveType" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="VariableDec2Parameter4" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property_WithModifier" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationInEnum" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InClass" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeFloat" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="JavaModel2UmlModelRule" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="EnumDec2Enum" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ClassDecWithModifier2Class" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InInterface"
+    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_Abstract" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2InterfaceGeneralization"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InMethod_Abstract"
+    <eClassifiers xsi:type="ecore:EClass" name="OperationInClass" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeDependency2UsageDependency" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Classifier_InnerTypeInClass_Abstract"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AbstractTypeAccess2ReturnParam" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Modifier2Feature_Abstract" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationInAnonymous" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property_WithModifier" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InMethod_InClass"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InEnum"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InMethod4Class"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkTypeToPackage" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InClass"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodDec2OperationWithModifier" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2InterfaceRealization" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Interface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UnresolvedTypeDeclaration2Type" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeDeclaration2Interface_WithModifier"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeShort" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeByte" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InterfaceDec2Interface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass4Anonymous" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass4_Abstract" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Class_InnerTypeInClass"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableDec2Parameter4" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OrphanedClassDec2OrphanedClass" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass4Class" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationInAnnotationType" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Classifier_Abstract"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InMethod_InInterface"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2Operation" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeLong" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InClass" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InAnnotationType"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="JavaPackageToUMLPackage_underPackage"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationInInterface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationInClass" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Classifier_InnerTypeInClass_Abstract"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Modifier2Feature_Abstract" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeDeclaration2Interface"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Modifier2NamedElement_Abstract" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OrphanedClassDec2OrphanedClass" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeDeclaration2Interface_WithModifier"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4_Anonymous" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InMethod4IAnonymous"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass4_Abstract" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeBoolean" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InterfaceDecWithModifier2Interface"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MethodDec2Operation" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2InterfaceRealization" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Interface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InMethod_Abstract"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="ArrayType2NonArrayType" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeLong" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeDouble" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Interface_InnerTypeInClass"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InMethod_InInterface"
+    <eClassifiers xsi:type="ecore:EClass" name="EnumDec2Enum" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass4Interface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Class" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldDeclarationTypeAccessType2PropertyType"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="IgnoreClassInstanceCreation4ArrayInitializer"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MethodDec2OperationWithModifier" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Interface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2Operation" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FieldDeclarationTypeAccessType2PropertyType"
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeChar" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Interface_InnerTypeInInterface"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeDependency2UsageDependency" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotation2Comment4SingleVariableDeclaration"
+    <eClassifiers xsi:type="ecore:EClass" name="OrphandedPrimitive2PrimitiveType"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InMethod_InClass"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeVoid" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InInterface"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InMethod4Interface"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2Generalization" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2OperationWithModifier"
+    <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeDeclaration2Interface"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="IgnoreOrphanTypesEdge" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotation2Comment4BodyDeclaration"
+    <eClassifiers xsi:type="ecore:EClass" name="OperationInEnum" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Classifier_InnerTypeInInterface_Abstract"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeBoolean" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2OperationWithModifier"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodDec2Operation" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InMethod_Abstract"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="EnumDecWithModifier2Enum" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractTypeAccess2ReturnParam" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit2Artifact" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_Abstract"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Interface_InnerTypeInClass"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotationValue2Comment" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2Generalization" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InMethod4Interface"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType2PrimitiveType" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OrphanedTypeDec2OrphanedType_Abstract"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4_Anonymous" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Manifestation4CompilationUnit2Artifact"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InAnonymous"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeShort" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="LinkTypeToPackage" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InterfaceDec2Interface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass4Class" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeChar" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass4Anonymous" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Class" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Interface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotationValueEntry2Comment"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeByte" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InClass"
+    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InInterface"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Class_InnerTypeInClass"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeInt" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="JavaPackageToUMLPackage_underModel"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Classifier_Abstract"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Class" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InEnum"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Enum" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="ClassDec2Class" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OrphandedPrimitive2PrimitiveType"
+    <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotation2Comment_Abstract" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InMethod4IAnonymous"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_Abstract" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InnerDeclaration2InnerClassifier_InMethod4Class"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeFloat" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Manifestation4CompilationUnit2Artifact"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass4Interface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationInAnonymous" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="UnresolvedTypeDeclaration2Type" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OrphanedTypeDec2OrphanedType_Abstract"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2InterfaceGeneralization"
-        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="EnumDecWithModifier2Enum" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeDouble" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeInt" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeVoid" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Modifier2NamedElement_Abstract" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ClassDecWithModifier2Class" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationInInterface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Class_InnerTypeInInterface"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationInAnnotationType" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotation2Comment_Abstract" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InMethod_Abstract"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JavaPackageToUMLPackage_underModel"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotation2Comment4SingleVariableDeclaration"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InterfaceDecWithModifier2Interface"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotation2Comment4BodyDeclaration"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InInterface"
+        eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
   </eSubpackages>
 </ecore:EPackage>

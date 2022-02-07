@@ -739,7 +739,7 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_127(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_113(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4InterfaceImpl
 				.pattern_AnonymousClass4Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -797,7 +797,7 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_138(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_120(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4InterfaceImpl
 				.pattern_AnonymousClass4Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1252,10 +1252,10 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 			return null;
 		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_127__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_127((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_138__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_138((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_113__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_113((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_120__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_120((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2609,7 +2609,7 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Interface_21_2_testcorematchandDECs_black_nac_0B(
 			MClassInstanceCreation mConstructor) {
-		for (AnnotationMemberValuePair __DEC_mConstructor_value_253015 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mConstructor_value_109455 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mConstructor };
 		}
@@ -2618,9 +2618,9 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Interface_21_2_testcorematchandDECs_black_nac_1BB(
 			MClassInstanceCreation mConstructor, MDefinition mMember) {
-		for (MDefinition __DEC_mConstructor_mMethodInvocations_161149 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_mConstructor_mMethodInvocations_685208 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_161149)) {
+			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_685208)) {
 				return new Object[] { mConstructor, mMember };
 			}
 		}
@@ -2896,7 +2896,7 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Interface_27_1_matchtggpattern_black_nac_0B(
 			MClassInstanceCreation mConstructor) {
-		for (AnnotationMemberValuePair __DEC_mConstructor_value_42895 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mConstructor_value_82639 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mConstructor };
 		}
@@ -2905,9 +2905,9 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Interface_27_1_matchtggpattern_black_nac_1BB(
 			MClassInstanceCreation mConstructor, MDefinition mMember) {
-		for (MDefinition __DEC_mConstructor_mMethodInvocations_86171 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_mConstructor_mMethodInvocations_476813 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_86171)) {
+			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_476813)) {
 				return new Object[] { mConstructor, mMember };
 			}
 		}

@@ -150,10 +150,10 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		}
 		MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow = (MAbstractFlowElementToTAbstractFlowElement) result1_bindingAndBlack[0];
 		MAbstractFlowElement mTarget = (MAbstractFlowElement) result1_bindingAndBlack[1];
-		MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result1_bindingAndBlack[2];
-		TAbstractFlowElement tSource = (TAbstractFlowElement) result1_bindingAndBlack[3];
+		TAbstractFlowElement tSource = (TAbstractFlowElement) result1_bindingAndBlack[2];
+		MFlow mSource = (MFlow) result1_bindingAndBlack[3];
 		TAbstractFlowElement tFlow = (TAbstractFlowElement) result1_bindingAndBlack[4];
-		MFlow mSource = (MFlow) result1_bindingAndBlack[5];
+		MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		DataFlowInImpl.pattern_DataFlowIn_1_1_performtransformation_greenBB(tSource, tFlow);
 
@@ -164,24 +164,24 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = DataFlowInImpl.pattern_DataFlowIn_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
-				mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource);
+				mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[mFlowToTFlow] = " + mFlowToTFlow + ", " + "[mTarget] = " + mTarget + ", "
-					+ "[mSourceToTSource] = " + mSourceToTSource + ", " + "[tSource] = " + tSource + ", " + "[tFlow] = "
-					+ tFlow + ", " + "[mSource] = " + mSource + ".");
+					+ "[tSource] = " + tSource + ", " + "[mSource] = " + mSource + ", " + "[tFlow] = " + tFlow + ", "
+					+ "[mSourceToTSource] = " + mSourceToTSource + ".");
 		}
-		DataFlowInImpl.pattern_DataFlowIn_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult, mTarget, tSource, tFlow,
-				mSource);
-		//nothing EMoflonEdge mTarget__mSource____incomingFlows = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge mSource__mTarget____flowTarget = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge tFlow__tSource____incomingFlows = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tSource__tFlow____outgoingFlows = (EMoflonEdge) result3_green[8];
+		DataFlowInImpl.pattern_DataFlowIn_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult, mTarget, tSource, mSource,
+				tFlow);
+		//nothing EMoflonEdge tFlow__tSource____incomingFlows = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge tSource__tFlow____outgoingFlows = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mTarget__mSource____incomingFlows = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mSource__mTarget____flowTarget = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		DataFlowInImpl.pattern_DataFlowIn_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, mFlowToTFlow,
-				mTarget, mSourceToTSource, tSource, tFlow, mSource);
+				mTarget, tSource, mSource, tFlow, mSourceToTSource);
 		return DataFlowInImpl.pattern_DataFlowIn_1_6_expressionFB(ruleresult);
 	}
 
@@ -210,33 +210,33 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		}
 		MAbstractFlowElement mTarget = (MAbstractFlowElement) result2_binding[0];
 		MFlow mSource = (MFlow) result2_binding[1];
-		for (Object[] result2_black : DataFlowInImpl.pattern_DataFlowIn_2_2_corematch_blackFBFFFBB(mTarget, mSource,
+		for (Object[] result2_black : DataFlowInImpl.pattern_DataFlowIn_2_2_corematch_blackFBFBFFB(mTarget, mSource,
 				match)) {
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow = (MAbstractFlowElementToTAbstractFlowElement) result2_black[0];
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result2_black[2];
-			TAbstractFlowElement tSource = (TAbstractFlowElement) result2_black[3];
+			TAbstractFlowElement tSource = (TAbstractFlowElement) result2_black[2];
 			TAbstractFlowElement tFlow = (TAbstractFlowElement) result2_black[4];
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : DataFlowInImpl.pattern_DataFlowIn_2_3_findcontext_blackBBBBBB(mFlowToTFlow,
-					mTarget, mSourceToTSource, tSource, tFlow, mSource)) {
+					mTarget, tSource, mSource, tFlow, mSourceToTSource)) {
 				Object[] result3_green = DataFlowInImpl.pattern_DataFlowIn_2_3_findcontext_greenBBBBBBFFFFFFF(
-						mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource);
+						mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge mSourceToTSource__tSource____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mFlowToTFlow__mTarget____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mTarget__mSource____incomingFlows = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mSource__mTarget____flowTarget = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mFlowToTFlow__tFlow____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mSourceToTSource__mSource____source = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mFlowToTFlow__mTarget____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mFlowToTFlow__tFlow____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mSourceToTSource__tSource____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mSourceToTSource__mSource____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mTarget__mSource____incomingFlows = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mSource__mTarget____flowTarget = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = DataFlowInImpl
 						.pattern_DataFlowIn_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, mFlowToTFlow,
-								mTarget, mSourceToTSource, tSource, tFlow, mSource);
+								mTarget, tSource, mSource, tFlow, mSourceToTSource);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mFlowToTFlow] = " + mFlowToTFlow
-							+ ", " + "[mTarget] = " + mTarget + ", " + "[mSourceToTSource] = " + mSourceToTSource + ", "
-							+ "[tSource] = " + tSource + ", " + "[tFlow] = " + tFlow + ", " + "[mSource] = " + mSource
+							+ ", " + "[mTarget] = " + mTarget + ", " + "[tSource] = " + tSource + ", " + "[mSource] = "
+							+ mSource + ", " + "[tFlow] = " + tFlow + ", " + "[mSourceToTSource] = " + mSourceToTSource
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -307,8 +307,8 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource) {// Create CSP
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -325,10 +325,10 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mFlowToTFlow", mFlowToTFlow);
 		isApplicableMatch.registerObject("mTarget", mTarget);
-		isApplicableMatch.registerObject("mSourceToTSource", mSourceToTSource);
 		isApplicableMatch.registerObject("tSource", tSource);
-		isApplicableMatch.registerObject("tFlow", tFlow);
 		isApplicableMatch.registerObject("mSource", mSource);
+		isApplicableMatch.registerObject("tFlow", tFlow);
+		isApplicableMatch.registerObject("mSourceToTSource", mSourceToTSource);
 		return csp;
 	}
 
@@ -347,13 +347,13 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mFlowToTFlow, EObject mTarget,
-			EObject mSourceToTSource, EObject tSource, EObject tFlow, EObject mSource) {
+			EObject tSource, EObject mSource, EObject tFlow, EObject mSourceToTSource) {
 		ruleresult.registerObject("mFlowToTFlow", mFlowToTFlow);
 		ruleresult.registerObject("mTarget", mTarget);
-		ruleresult.registerObject("mSourceToTSource", mSourceToTSource);
 		ruleresult.registerObject("tSource", tSource);
-		ruleresult.registerObject("tFlow", tFlow);
 		ruleresult.registerObject("mSource", mSource);
+		ruleresult.registerObject("tFlow", tFlow);
+		ruleresult.registerObject("mSourceToTSource", mSourceToTSource);
 
 	}
 
@@ -432,10 +432,10 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		}
 		MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow = (MAbstractFlowElementToTAbstractFlowElement) result1_bindingAndBlack[0];
 		MAbstractFlowElement mTarget = (MAbstractFlowElement) result1_bindingAndBlack[1];
-		MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result1_bindingAndBlack[2];
-		TAbstractFlowElement tSource = (TAbstractFlowElement) result1_bindingAndBlack[3];
+		TAbstractFlowElement tSource = (TAbstractFlowElement) result1_bindingAndBlack[2];
+		MFlow mSource = (MFlow) result1_bindingAndBlack[3];
 		TAbstractFlowElement tFlow = (TAbstractFlowElement) result1_bindingAndBlack[4];
-		MFlow mSource = (MFlow) result1_bindingAndBlack[5];
+		MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		DataFlowInImpl.pattern_DataFlowIn_11_1_performtransformation_greenBB(mTarget, mSource);
 
@@ -446,24 +446,24 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = DataFlowInImpl.pattern_DataFlowIn_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
-				mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource);
+				mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[mFlowToTFlow] = " + mFlowToTFlow + ", " + "[mTarget] = " + mTarget + ", "
-					+ "[mSourceToTSource] = " + mSourceToTSource + ", " + "[tSource] = " + tSource + ", " + "[tFlow] = "
-					+ tFlow + ", " + "[mSource] = " + mSource + ".");
+					+ "[tSource] = " + tSource + ", " + "[mSource] = " + mSource + ", " + "[tFlow] = " + tFlow + ", "
+					+ "[mSourceToTSource] = " + mSourceToTSource + ".");
 		}
-		DataFlowInImpl.pattern_DataFlowIn_11_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult, mTarget, tSource, tFlow,
-				mSource);
-		//nothing EMoflonEdge mTarget__mSource____incomingFlows = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge mSource__mTarget____flowTarget = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge tFlow__tSource____incomingFlows = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tSource__tFlow____outgoingFlows = (EMoflonEdge) result3_green[8];
+		DataFlowInImpl.pattern_DataFlowIn_11_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult, mTarget, tSource, mSource,
+				tFlow);
+		//nothing EMoflonEdge tFlow__tSource____incomingFlows = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge tSource__tFlow____outgoingFlows = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mTarget__mSource____incomingFlows = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mSource__mTarget____flowTarget = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		DataFlowInImpl.pattern_DataFlowIn_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, mFlowToTFlow,
-				mTarget, mSourceToTSource, tSource, tFlow, mSource);
+				mTarget, tSource, mSource, tFlow, mSourceToTSource);
 		return DataFlowInImpl.pattern_DataFlowIn_11_6_expressionFB(ruleresult);
 	}
 
@@ -492,33 +492,33 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		}
 		TAbstractFlowElement tSource = (TAbstractFlowElement) result2_binding[0];
 		TAbstractFlowElement tFlow = (TAbstractFlowElement) result2_binding[1];
-		for (Object[] result2_black : DataFlowInImpl.pattern_DataFlowIn_12_2_corematch_blackFFFBBFB(tSource, tFlow,
+		for (Object[] result2_black : DataFlowInImpl.pattern_DataFlowIn_12_2_corematch_blackFFBFBFB(tSource, tFlow,
 				match)) {
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow = (MAbstractFlowElementToTAbstractFlowElement) result2_black[0];
 			MAbstractFlowElement mTarget = (MAbstractFlowElement) result2_black[1];
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result2_black[2];
-			MFlow mSource = (MFlow) result2_black[5];
+			MFlow mSource = (MFlow) result2_black[3];
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : DataFlowInImpl.pattern_DataFlowIn_12_3_findcontext_blackBBBBBB(mFlowToTFlow,
-					mTarget, mSourceToTSource, tSource, tFlow, mSource)) {
+					mTarget, tSource, mSource, tFlow, mSourceToTSource)) {
 				Object[] result3_green = DataFlowInImpl.pattern_DataFlowIn_12_3_findcontext_greenBBBBBBFFFFFFF(
-						mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource);
+						mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge mSourceToTSource__tSource____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mFlowToTFlow__mTarget____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mFlowToTFlow__tFlow____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tFlow__tSource____incomingFlows = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tSource__tFlow____outgoingFlows = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mFlowToTFlow__mTarget____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mFlowToTFlow__tFlow____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tFlow__tSource____incomingFlows = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tSource__tFlow____outgoingFlows = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mSourceToTSource__tSource____target = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge mSourceToTSource__mSource____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = DataFlowInImpl
 						.pattern_DataFlowIn_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource);
+								mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mFlowToTFlow] = " + mFlowToTFlow
-							+ ", " + "[mTarget] = " + mTarget + ", " + "[mSourceToTSource] = " + mSourceToTSource + ", "
-							+ "[tSource] = " + tSource + ", " + "[tFlow] = " + tFlow + ", " + "[mSource] = " + mSource
+							+ ", " + "[mTarget] = " + mTarget + ", " + "[tSource] = " + tSource + ", " + "[mSource] = "
+							+ mSource + ", " + "[tFlow] = " + tFlow + ", " + "[mSourceToTSource] = " + mSourceToTSource
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -589,8 +589,8 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource) {// Create CSP
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -607,10 +607,10 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mFlowToTFlow", mFlowToTFlow);
 		isApplicableMatch.registerObject("mTarget", mTarget);
-		isApplicableMatch.registerObject("mSourceToTSource", mSourceToTSource);
 		isApplicableMatch.registerObject("tSource", tSource);
-		isApplicableMatch.registerObject("tFlow", tFlow);
 		isApplicableMatch.registerObject("mSource", mSource);
+		isApplicableMatch.registerObject("tFlow", tFlow);
+		isApplicableMatch.registerObject("mSourceToTSource", mSourceToTSource);
 		return csp;
 	}
 
@@ -629,13 +629,13 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mFlowToTFlow, EObject mTarget,
-			EObject mSourceToTSource, EObject tSource, EObject tFlow, EObject mSource) {
+			EObject tSource, EObject mSource, EObject tFlow, EObject mSourceToTSource) {
 		ruleresult.registerObject("mFlowToTFlow", mFlowToTFlow);
 		ruleresult.registerObject("mTarget", mTarget);
-		ruleresult.registerObject("mSourceToTSource", mSourceToTSource);
 		ruleresult.registerObject("tSource", tSource);
-		ruleresult.registerObject("tFlow", tFlow);
 		ruleresult.registerObject("mSource", mSource);
+		ruleresult.registerObject("tFlow", tFlow);
+		ruleresult.registerObject("mSourceToTSource", mSourceToTSource);
 
 	}
 
@@ -653,7 +653,7 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_74(EMoflonEdge _edge_incomingFlows) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_6(EMoflonEdge _edge_incomingFlows) {
 
 		Object[] result1_bindingAndBlack = DataFlowInImpl
 				.pattern_DataFlowIn_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -706,7 +706,7 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_78(EMoflonEdge _edge_incomingFlows) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_6(EMoflonEdge _edge_incomingFlows) {
 
 		Object[] result1_bindingAndBlack = DataFlowInImpl
 				.pattern_DataFlowIn_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -836,35 +836,35 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		}
 		MAbstractFlowElement mTarget = (MAbstractFlowElement) result2_bindingAndBlack[0];
 		TAbstractFlowElement tSource = (TAbstractFlowElement) result2_bindingAndBlack[1];
-		TAbstractFlowElement tFlow = (TAbstractFlowElement) result2_bindingAndBlack[2];
-		MFlow mSource = (MFlow) result2_bindingAndBlack[3];
+		MFlow mSource = (MFlow) result2_bindingAndBlack[2];
+		TAbstractFlowElement tFlow = (TAbstractFlowElement) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = DataFlowInImpl.pattern_DataFlowIn_24_3_solvecsp_bindingAndBlackFBBBBBBB(this,
-				mTarget, tSource, tFlow, mSource, sourceMatch, targetMatch);
+				mTarget, tSource, mSource, tFlow, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mTarget] = " + mTarget + ", " + "[tSource] = " + tSource + ", " + "[tFlow] = " + tFlow + ", "
-					+ "[mSource] = " + mSource + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
+					+ "[mTarget] = " + mTarget + ", " + "[tSource] = " + tSource + ", " + "[mSource] = " + mSource
+					+ ", " + "[tFlow] = " + tFlow + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
 					+ targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (DataFlowInImpl.pattern_DataFlowIn_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : DataFlowInImpl.pattern_DataFlowIn_24_5_matchcorrcontext_blackFBFBBBBB(mTarget,
-					tSource, tFlow, mSource, sourceMatch, targetMatch)) {
+			for (Object[] result5_black : DataFlowInImpl.pattern_DataFlowIn_24_5_matchcorrcontext_blackFBBBBFBB(mTarget,
+					tSource, mSource, tFlow, sourceMatch, targetMatch)) {
 				MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow = (MAbstractFlowElementToTAbstractFlowElement) result5_black[0];
-				MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result5_black[2];
+				MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result5_black[5];
 				Object[] result5_green = DataFlowInImpl.pattern_DataFlowIn_24_5_matchcorrcontext_greenBBBBF(
 						mFlowToTFlow, mSourceToTSource, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = DataFlowInImpl.pattern_DataFlowIn_24_6_createcorrespondence_blackBBBBB(mTarget,
-						tSource, tFlow, mSource, ccMatch);
+						tSource, mSource, tFlow, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mTarget] = " + mTarget
-							+ ", " + "[tSource] = " + tSource + ", " + "[tFlow] = " + tFlow + ", " + "[mSource] = "
-							+ mSource + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ ", " + "[tSource] = " + tSource + ", " + "[mSource] = " + mSource + ", " + "[tFlow] = "
+							+ tFlow + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = DataFlowInImpl.pattern_DataFlowIn_24_7_addtoreturnedresult_blackBB(result,
@@ -887,8 +887,8 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MAbstractFlowElement mTarget, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(MAbstractFlowElement mTarget, TAbstractFlowElement tSource, MFlow mSource,
+			TAbstractFlowElement tFlow, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -967,18 +967,18 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 			MAbstractFlowElement mTarget = (MAbstractFlowElement) result2_black[2];
 			TAbstractFlowElement tFlow = (TAbstractFlowElement) result2_black[3];
 			//nothing RuleEntryList mSourceToTSourceList = (RuleEntryList) result2_black[4];
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result2_black[5];
-			TAbstractFlowElement tSource = (TAbstractFlowElement) result2_black[6];
+			TAbstractFlowElement tSource = (TAbstractFlowElement) result2_black[5];
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result2_black[6];
 			MFlow mSource = (MFlow) result2_black[7];
 
 			Object[] result3_bindingAndBlack = DataFlowInImpl
 					.pattern_DataFlowIn_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, mFlowToTFlow,
-							mTarget, mSourceToTSource, tSource, tFlow, mSource, ruleResult);
+							mTarget, tSource, mSource, tFlow, mSourceToTSource, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mFlowToTFlow] = " + mFlowToTFlow
-						+ ", " + "[mTarget] = " + mTarget + ", " + "[mSourceToTSource] = " + mSourceToTSource + ", "
-						+ "[tSource] = " + tSource + ", " + "[tFlow] = " + tFlow + ", " + "[mSource] = " + mSource
+						+ ", " + "[mTarget] = " + mTarget + ", " + "[tSource] = " + tSource + ", " + "[mSource] = "
+						+ mSource + ", " + "[tFlow] = " + tFlow + ", " + "[mSourceToTSource] = " + mSourceToTSource
 						+ ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -986,18 +986,19 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 			if (DataFlowInImpl.pattern_DataFlowIn_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = DataFlowInImpl.pattern_DataFlowIn_29_5_checknacs_blackBBBBBB(mFlowToTFlow,
-						mTarget, mSourceToTSource, tSource, tFlow, mSource);
+						mTarget, tSource, mSource, tFlow, mSourceToTSource);
 				if (result5_black != null) {
 
 					Object[] result6_black = DataFlowInImpl.pattern_DataFlowIn_29_6_perform_blackBBBBBBB(mFlowToTFlow,
-							mTarget, mSourceToTSource, tSource, tFlow, mSource, ruleResult);
+							mTarget, tSource, mSource, tFlow, mSourceToTSource, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mFlowToTFlow] = "
-								+ mFlowToTFlow + ", " + "[mTarget] = " + mTarget + ", " + "[mSourceToTSource] = "
-								+ mSourceToTSource + ", " + "[tSource] = " + tSource + ", " + "[tFlow] = " + tFlow
-								+ ", " + "[mSource] = " + mSource + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ mFlowToTFlow + ", " + "[mTarget] = " + mTarget + ", " + "[tSource] = " + tSource
+								+ ", " + "[mSource] = " + mSource + ", " + "[tFlow] = " + tFlow + ", "
+								+ "[mSourceToTSource] = " + mSourceToTSource + ", " + "[ruleResult] = " + ruleResult
+								+ ".");
 					}
-					DataFlowInImpl.pattern_DataFlowIn_29_6_perform_greenBBBBB(mTarget, tSource, tFlow, mSource,
+					DataFlowInImpl.pattern_DataFlowIn_29_6_perform_greenBBBBB(mTarget, tSource, mSource, tFlow,
 							ruleResult);
 
 				} else {
@@ -1017,8 +1018,8 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource, ModelgeneratorRuleResult ruleResult) {// Create CSP
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1035,10 +1036,10 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mFlowToTFlow", mFlowToTFlow);
 		isApplicableMatch.registerObject("mTarget", mTarget);
-		isApplicableMatch.registerObject("mSourceToTSource", mSourceToTSource);
 		isApplicableMatch.registerObject("tSource", tSource);
-		isApplicableMatch.registerObject("tFlow", tFlow);
 		isApplicableMatch.registerObject("mSource", mSource);
+		isApplicableMatch.registerObject("tFlow", tFlow);
+		isApplicableMatch.registerObject("mSourceToTSource", mSourceToTSource);
 		return csp;
 	}
 
@@ -1075,13 +1076,12 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 					(MFlow) arguments.get(2));
 		case RulesPackage.DATA_FLOW_IN___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.DATA_FLOW_IN___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_MFLOW:
+		case RulesPackage.DATA_FLOW_IN___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_MFLOW_TABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
 					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(1),
-					(MAbstractFlowElement) arguments.get(2),
-					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(3),
-					(TAbstractFlowElement) arguments.get(4), (TAbstractFlowElement) arguments.get(5),
-					(MFlow) arguments.get(6));
+					(MAbstractFlowElement) arguments.get(2), (TAbstractFlowElement) arguments.get(3),
+					(MFlow) arguments.get(4), (TAbstractFlowElement) arguments.get(5),
+					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(6));
 		case RulesPackage.DATA_FLOW_IN___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.DATA_FLOW_IN___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1107,13 +1107,12 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 					(TAbstractFlowElement) arguments.get(2));
 		case RulesPackage.DATA_FLOW_IN___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.DATA_FLOW_IN___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_MFLOW:
+		case RulesPackage.DATA_FLOW_IN___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_MFLOW_TABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
 					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(1),
-					(MAbstractFlowElement) arguments.get(2),
-					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(3),
-					(TAbstractFlowElement) arguments.get(4), (TAbstractFlowElement) arguments.get(5),
-					(MFlow) arguments.get(6));
+					(MAbstractFlowElement) arguments.get(2), (TAbstractFlowElement) arguments.get(3),
+					(MFlow) arguments.get(4), (TAbstractFlowElement) arguments.get(5),
+					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(6));
 		case RulesPackage.DATA_FLOW_IN___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.DATA_FLOW_IN___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1123,20 +1122,20 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 			return null;
 		case RulesPackage.DATA_FLOW_IN___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.DATA_FLOW_IN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_74__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_74((EMoflonEdge) arguments.get(0));
-		case RulesPackage.DATA_FLOW_IN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_78__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_78((EMoflonEdge) arguments.get(0));
+		case RulesPackage.DATA_FLOW_IN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_6__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_6((EMoflonEdge) arguments.get(0));
+		case RulesPackage.DATA_FLOW_IN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_6__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_6((EMoflonEdge) arguments.get(0));
 		case RulesPackage.DATA_FLOW_IN___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.DATA_FLOW_IN___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.DATA_FLOW_IN___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.DATA_FLOW_IN___IS_APPLICABLE_SOLVE_CSP_CC__MABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_MFLOW_MATCH_MATCH:
+		case RulesPackage.DATA_FLOW_IN___IS_APPLICABLE_SOLVE_CSP_CC__MABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_MFLOW_TABSTRACTFLOWELEMENT_MATCH_MATCH:
 			return isApplicable_solveCsp_CC((MAbstractFlowElement) arguments.get(0),
-					(TAbstractFlowElement) arguments.get(1), (TAbstractFlowElement) arguments.get(2),
-					(MFlow) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
+					(TAbstractFlowElement) arguments.get(1), (MFlow) arguments.get(2),
+					(TAbstractFlowElement) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.DATA_FLOW_IN___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.DATA_FLOW_IN___CHECK_DEC_FWD__MABSTRACTFLOWELEMENT_MFLOW:
@@ -1147,13 +1146,13 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 			return generateModel((RuleEntryContainer) arguments.get(0),
 					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(1),
 					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(2));
-		case RulesPackage.DATA_FLOW_IN___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_MFLOW_MODELGENERATORRULERESULT:
+		case RulesPackage.DATA_FLOW_IN___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_MFLOW_TABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
 					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(1),
-					(MAbstractFlowElement) arguments.get(2),
-					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(3),
-					(TAbstractFlowElement) arguments.get(4), (TAbstractFlowElement) arguments.get(5),
-					(MFlow) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+					(MAbstractFlowElement) arguments.get(2), (TAbstractFlowElement) arguments.get(3),
+					(MFlow) arguments.get(4), (TAbstractFlowElement) arguments.get(5),
+					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(6),
+					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.DATA_FLOW_IN___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1265,29 +1264,29 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mFlowToTFlow");
 		EObject _localVariable_1 = isApplicableMatch.getObject("mTarget");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mSourceToTSource");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tSource");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tSource");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mSource");
 		EObject _localVariable_4 = isApplicableMatch.getObject("tFlow");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mSource");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mSourceToTSource");
 		EObject tmpMFlowToTFlow = _localVariable_0;
 		EObject tmpMTarget = _localVariable_1;
-		EObject tmpMSourceToTSource = _localVariable_2;
-		EObject tmpTSource = _localVariable_3;
+		EObject tmpTSource = _localVariable_2;
+		EObject tmpMSource = _localVariable_3;
 		EObject tmpTFlow = _localVariable_4;
-		EObject tmpMSource = _localVariable_5;
+		EObject tmpMSourceToTSource = _localVariable_5;
 		if (tmpMFlowToTFlow instanceof MAbstractFlowElementToTAbstractFlowElement) {
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow = (MAbstractFlowElementToTAbstractFlowElement) tmpMFlowToTFlow;
 			if (tmpMTarget instanceof MAbstractFlowElement) {
 				MAbstractFlowElement mTarget = (MAbstractFlowElement) tmpMTarget;
-				if (tmpMSourceToTSource instanceof MAbstractFlowElementToTAbstractFlowElement) {
-					MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) tmpMSourceToTSource;
-					if (tmpTSource instanceof TAbstractFlowElement) {
-						TAbstractFlowElement tSource = (TAbstractFlowElement) tmpTSource;
+				if (tmpTSource instanceof TAbstractFlowElement) {
+					TAbstractFlowElement tSource = (TAbstractFlowElement) tmpTSource;
+					if (tmpMSource instanceof MFlow) {
+						MFlow mSource = (MFlow) tmpMSource;
 						if (tmpTFlow instanceof TAbstractFlowElement) {
 							TAbstractFlowElement tFlow = (TAbstractFlowElement) tmpTFlow;
-							if (tmpMSource instanceof MFlow) {
-								MFlow mSource = (MFlow) tmpMSource;
-								return new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource,
+							if (tmpMSourceToTSource instanceof MAbstractFlowElementToTAbstractFlowElement) {
+								MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) tmpMSourceToTSource;
+								return new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource,
 										isApplicableMatch };
 							}
 						}
@@ -1300,15 +1299,16 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Object[] pattern_DataFlowIn_1_1_performtransformation_blackBBBBBBFBB(
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource, DataFlowIn _this, IsApplicableMatch isApplicableMatch) {
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, DataFlowIn _this,
+			IsApplicableMatch isApplicableMatch) {
 		if (!mFlowToTFlow.equals(mSourceToTSource)) {
-			if (!tFlow.equals(tSource)) {
-				if (!mSource.equals(mTarget)) {
+			if (!mSource.equals(mTarget)) {
+				if (!tFlow.equals(tSource)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource, csp,
+							return new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource, csp,
 									_this, isApplicableMatch };
 						}
 					}
@@ -1325,17 +1325,17 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		if (result_pattern_DataFlowIn_1_1_performtransformation_binding != null) {
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow = (MAbstractFlowElementToTAbstractFlowElement) result_pattern_DataFlowIn_1_1_performtransformation_binding[0];
 			MAbstractFlowElement mTarget = (MAbstractFlowElement) result_pattern_DataFlowIn_1_1_performtransformation_binding[1];
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result_pattern_DataFlowIn_1_1_performtransformation_binding[2];
-			TAbstractFlowElement tSource = (TAbstractFlowElement) result_pattern_DataFlowIn_1_1_performtransformation_binding[3];
+			TAbstractFlowElement tSource = (TAbstractFlowElement) result_pattern_DataFlowIn_1_1_performtransformation_binding[2];
+			MFlow mSource = (MFlow) result_pattern_DataFlowIn_1_1_performtransformation_binding[3];
 			TAbstractFlowElement tFlow = (TAbstractFlowElement) result_pattern_DataFlowIn_1_1_performtransformation_binding[4];
-			MFlow mSource = (MFlow) result_pattern_DataFlowIn_1_1_performtransformation_binding[5];
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result_pattern_DataFlowIn_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_DataFlowIn_1_1_performtransformation_black = pattern_DataFlowIn_1_1_performtransformation_blackBBBBBBFBB(
-					mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource, _this, isApplicableMatch);
+					mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource, _this, isApplicableMatch);
 			if (result_pattern_DataFlowIn_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_DataFlowIn_1_1_performtransformation_black[6];
 
-				return new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource, csp, _this,
+				return new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1354,26 +1354,26 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	}
 
 	public static final Object[] pattern_DataFlowIn_1_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject mFlowToTFlow, EObject mTarget, EObject mSourceToTSource, EObject tSource, EObject tFlow,
-			EObject mSource) {
+			EObject mFlowToTFlow, EObject mTarget, EObject tSource, EObject mSource, EObject tFlow,
+			EObject mSourceToTSource) {
 		if (!mFlowToTFlow.equals(mTarget)) {
-			if (!mFlowToTFlow.equals(mSourceToTSource)) {
-				if (!mFlowToTFlow.equals(tSource)) {
+			if (!mFlowToTFlow.equals(tSource)) {
+				if (!mFlowToTFlow.equals(mSource)) {
 					if (!mFlowToTFlow.equals(tFlow)) {
-						if (!mFlowToTFlow.equals(mSource)) {
+						if (!mFlowToTFlow.equals(mSourceToTSource)) {
 							if (!mTarget.equals(tSource)) {
 								if (!mTarget.equals(tFlow)) {
-									if (!mSourceToTSource.equals(mTarget)) {
-										if (!mSourceToTSource.equals(tSource)) {
-											if (!mSourceToTSource.equals(tFlow)) {
-												if (!tFlow.equals(tSource)) {
-													if (!mSource.equals(mTarget)) {
-														if (!mSource.equals(mSourceToTSource)) {
-															if (!mSource.equals(tSource)) {
-																if (!mSource.equals(tFlow)) {
+									if (!mSource.equals(mTarget)) {
+										if (!mSource.equals(tSource)) {
+											if (!mSource.equals(tFlow)) {
+												if (!mSource.equals(mSourceToTSource)) {
+													if (!tFlow.equals(tSource)) {
+														if (!mSourceToTSource.equals(mTarget)) {
+															if (!mSourceToTSource.equals(tSource)) {
+																if (!mSourceToTSource.equals(tFlow)) {
 																	return new Object[] { ruleresult, mFlowToTFlow,
-																			mTarget, mSourceToTSource, tSource, tFlow,
-																			mSource };
+																			mTarget, tSource, mSource, tFlow,
+																			mSourceToTSource };
 																}
 															}
 														}
@@ -1393,41 +1393,41 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	}
 
 	public static final Object[] pattern_DataFlowIn_1_3_bookkeepingforedges_greenBBBBBFFFF(PerformRuleResult ruleresult,
-			EObject mTarget, EObject tSource, EObject tFlow, EObject mSource) {
-		EMoflonEdge mTarget__mSource____incomingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSource__mTarget____flowTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			EObject mTarget, EObject tSource, EObject mSource, EObject tFlow) {
 		EMoflonEdge tFlow__tSource____incomingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSource__tFlow____outgoingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTarget__mSource____incomingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSource__mTarget____flowTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "DataFlowIn";
-		String mTarget__mSource____incomingFlows_name_prime = "incomingFlows";
-		String mSource__mTarget____flowTarget_name_prime = "flowTarget";
 		String tFlow__tSource____incomingFlows_name_prime = "incomingFlows";
 		String tSource__tFlow____outgoingFlows_name_prime = "outgoingFlows";
-		mTarget__mSource____incomingFlows.setSrc(mTarget);
-		mTarget__mSource____incomingFlows.setTrg(mSource);
-		ruleresult.getTranslatedEdges().add(mTarget__mSource____incomingFlows);
-		mSource__mTarget____flowTarget.setSrc(mSource);
-		mSource__mTarget____flowTarget.setTrg(mTarget);
-		ruleresult.getTranslatedEdges().add(mSource__mTarget____flowTarget);
+		String mTarget__mSource____incomingFlows_name_prime = "incomingFlows";
+		String mSource__mTarget____flowTarget_name_prime = "flowTarget";
 		tFlow__tSource____incomingFlows.setSrc(tFlow);
 		tFlow__tSource____incomingFlows.setTrg(tSource);
 		ruleresult.getCreatedEdges().add(tFlow__tSource____incomingFlows);
 		tSource__tFlow____outgoingFlows.setSrc(tSource);
 		tSource__tFlow____outgoingFlows.setTrg(tFlow);
 		ruleresult.getCreatedEdges().add(tSource__tFlow____outgoingFlows);
+		mTarget__mSource____incomingFlows.setSrc(mTarget);
+		mTarget__mSource____incomingFlows.setTrg(mSource);
+		ruleresult.getTranslatedEdges().add(mTarget__mSource____incomingFlows);
+		mSource__mTarget____flowTarget.setSrc(mSource);
+		mSource__mTarget____flowTarget.setTrg(mTarget);
+		ruleresult.getTranslatedEdges().add(mSource__mTarget____flowTarget);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mTarget__mSource____incomingFlows.setName(mTarget__mSource____incomingFlows_name_prime);
-		mSource__mTarget____flowTarget.setName(mSource__mTarget____flowTarget_name_prime);
 		tFlow__tSource____incomingFlows.setName(tFlow__tSource____incomingFlows_name_prime);
 		tSource__tFlow____outgoingFlows.setName(tSource__tFlow____outgoingFlows_name_prime);
-		return new Object[] { ruleresult, mTarget, tSource, tFlow, mSource, mTarget__mSource____incomingFlows,
-				mSource__mTarget____flowTarget, tFlow__tSource____incomingFlows, tSource__tFlow____outgoingFlows };
+		mTarget__mSource____incomingFlows.setName(mTarget__mSource____incomingFlows_name_prime);
+		mSource__mTarget____flowTarget.setName(mSource__mTarget____flowTarget_name_prime);
+		return new Object[] { ruleresult, mTarget, tSource, mSource, tFlow, tFlow__tSource____incomingFlows,
+				tSource__tFlow____outgoingFlows, mTarget__mSource____incomingFlows, mSource__mTarget____flowTarget };
 	}
 
 	public static final void pattern_DataFlowIn_1_5_registerobjects_expressionBBBBBBBB(DataFlowIn _this,
-			PerformRuleResult ruleresult, EObject mFlowToTFlow, EObject mTarget, EObject mSourceToTSource,
-			EObject tSource, EObject tFlow, EObject mSource) {
-		_this.registerObjects_FWD(ruleresult, mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource);
+			PerformRuleResult ruleresult, EObject mFlowToTFlow, EObject mTarget, EObject tSource, EObject mSource,
+			EObject tFlow, EObject mSourceToTSource) {
+		_this.registerObjects_FWD(ruleresult, mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource);
 
 	}
 
@@ -1498,7 +1498,7 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_DataFlowIn_2_2_corematch_blackFBFFFBB(MAbstractFlowElement mTarget,
+	public static final Iterable<Object[]> pattern_DataFlowIn_2_2_corematch_blackFBFBFFB(MAbstractFlowElement mTarget,
 			MFlow mSource, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mSource.equals(mTarget)) {
@@ -1513,8 +1513,8 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 							TAbstractFlowElement tSource = mSourceToTSource.getTarget();
 							if (tSource != null) {
 								if (!tFlow.equals(tSource)) {
-									_result.add(new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow,
-											mSource, match });
+									_result.add(new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+											mSourceToTSource, match });
 								}
 							}
 
@@ -1529,19 +1529,19 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Iterable<Object[]> pattern_DataFlowIn_2_3_findcontext_blackBBBBBB(
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource) {
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mFlowToTFlow.equals(mSourceToTSource)) {
-			if (!tFlow.equals(tSource)) {
-				if (!mSource.equals(mTarget)) {
-					if (tSource.equals(mSourceToTSource.getTarget())) {
-						if (mTarget.equals(mFlowToTFlow.getSource())) {
-							if (mTarget.getIncomingFlows().contains(mSource)) {
-								if (tFlow.equals(mFlowToTFlow.getTarget())) {
-									if (mSource.equals(mSourceToTSource.getSource())) {
-										_result.add(new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource,
-												tFlow, mSource });
+			if (!mSource.equals(mTarget)) {
+				if (!tFlow.equals(tSource)) {
+					if (mTarget.equals(mFlowToTFlow.getSource())) {
+						if (tFlow.equals(mFlowToTFlow.getTarget())) {
+							if (tSource.equals(mSourceToTSource.getTarget())) {
+								if (mSource.equals(mSourceToTSource.getSource())) {
+									if (mTarget.getIncomingFlows().contains(mSource)) {
+										_result.add(new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+												mSourceToTSource });
 									}
 								}
 							}
@@ -1555,66 +1555,67 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Object[] pattern_DataFlowIn_2_3_findcontext_greenBBBBBBFFFFFFF(
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource) {
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mSourceToTSource__tSource____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowToTFlow__mTarget____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mFlowToTFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSourceToTSource__tSource____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSourceToTSource__mSource____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTarget__mSource____incomingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSource__mTarget____flowTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowToTFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSourceToTSource__mSource____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mSourceToTSource__tSource____target_name_prime = "target";
 		String mFlowToTFlow__mTarget____source_name_prime = "source";
+		String mFlowToTFlow__tFlow____target_name_prime = "target";
+		String mSourceToTSource__tSource____target_name_prime = "target";
+		String mSourceToTSource__mSource____source_name_prime = "source";
 		String mTarget__mSource____incomingFlows_name_prime = "incomingFlows";
 		String mSource__mTarget____flowTarget_name_prime = "flowTarget";
-		String mFlowToTFlow__tFlow____target_name_prime = "target";
-		String mSourceToTSource__mSource____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mFlowToTFlow);
 		isApplicableMatch.getAllContextElements().add(mTarget);
-		isApplicableMatch.getAllContextElements().add(mSourceToTSource);
 		isApplicableMatch.getAllContextElements().add(tSource);
-		isApplicableMatch.getAllContextElements().add(tFlow);
 		isApplicableMatch.getAllContextElements().add(mSource);
-		mSourceToTSource__tSource____target.setSrc(mSourceToTSource);
-		mSourceToTSource__tSource____target.setTrg(tSource);
-		isApplicableMatch.getAllContextElements().add(mSourceToTSource__tSource____target);
+		isApplicableMatch.getAllContextElements().add(tFlow);
+		isApplicableMatch.getAllContextElements().add(mSourceToTSource);
 		mFlowToTFlow__mTarget____source.setSrc(mFlowToTFlow);
 		mFlowToTFlow__mTarget____source.setTrg(mTarget);
 		isApplicableMatch.getAllContextElements().add(mFlowToTFlow__mTarget____source);
+		mFlowToTFlow__tFlow____target.setSrc(mFlowToTFlow);
+		mFlowToTFlow__tFlow____target.setTrg(tFlow);
+		isApplicableMatch.getAllContextElements().add(mFlowToTFlow__tFlow____target);
+		mSourceToTSource__tSource____target.setSrc(mSourceToTSource);
+		mSourceToTSource__tSource____target.setTrg(tSource);
+		isApplicableMatch.getAllContextElements().add(mSourceToTSource__tSource____target);
+		mSourceToTSource__mSource____source.setSrc(mSourceToTSource);
+		mSourceToTSource__mSource____source.setTrg(mSource);
+		isApplicableMatch.getAllContextElements().add(mSourceToTSource__mSource____source);
 		mTarget__mSource____incomingFlows.setSrc(mTarget);
 		mTarget__mSource____incomingFlows.setTrg(mSource);
 		isApplicableMatch.getAllContextElements().add(mTarget__mSource____incomingFlows);
 		mSource__mTarget____flowTarget.setSrc(mSource);
 		mSource__mTarget____flowTarget.setTrg(mTarget);
 		isApplicableMatch.getAllContextElements().add(mSource__mTarget____flowTarget);
-		mFlowToTFlow__tFlow____target.setSrc(mFlowToTFlow);
-		mFlowToTFlow__tFlow____target.setTrg(tFlow);
-		isApplicableMatch.getAllContextElements().add(mFlowToTFlow__tFlow____target);
-		mSourceToTSource__mSource____source.setSrc(mSourceToTSource);
-		mSourceToTSource__mSource____source.setTrg(mSource);
-		isApplicableMatch.getAllContextElements().add(mSourceToTSource__mSource____source);
-		mSourceToTSource__tSource____target.setName(mSourceToTSource__tSource____target_name_prime);
 		mFlowToTFlow__mTarget____source.setName(mFlowToTFlow__mTarget____source_name_prime);
+		mFlowToTFlow__tFlow____target.setName(mFlowToTFlow__tFlow____target_name_prime);
+		mSourceToTSource__tSource____target.setName(mSourceToTSource__tSource____target_name_prime);
+		mSourceToTSource__mSource____source.setName(mSourceToTSource__mSource____source_name_prime);
 		mTarget__mSource____incomingFlows.setName(mTarget__mSource____incomingFlows_name_prime);
 		mSource__mTarget____flowTarget.setName(mSource__mTarget____flowTarget_name_prime);
-		mFlowToTFlow__tFlow____target.setName(mFlowToTFlow__tFlow____target_name_prime);
-		mSourceToTSource__mSource____source.setName(mSourceToTSource__mSource____source_name_prime);
-		return new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource, isApplicableMatch,
-				mSourceToTSource__tSource____target, mFlowToTFlow__mTarget____source, mTarget__mSource____incomingFlows,
-				mSource__mTarget____flowTarget, mFlowToTFlow__tFlow____target, mSourceToTSource__mSource____source };
+		return new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource, isApplicableMatch,
+				mFlowToTFlow__mTarget____source, mFlowToTFlow__tFlow____target, mSourceToTSource__tSource____target,
+				mSourceToTSource__mSource____source, mTarget__mSource____incomingFlows,
+				mSource__mTarget____flowTarget };
 	}
 
 	public static final Object[] pattern_DataFlowIn_2_4_solveCSP_bindingFBBBBBBBB(DataFlowIn _this,
 			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow,
-			MAbstractFlowElement mTarget, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource,
-			TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mFlowToTFlow, mTarget,
-				mSourceToTSource, tSource, tFlow, mSource);
+			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mFlowToTFlow, mTarget, tSource,
+				mSource, tFlow, mSourceToTSource);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, mSourceToTSource, tSource,
-					tFlow, mSource };
+			return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+					mSourceToTSource };
 		}
 		return null;
 	}
@@ -1625,18 +1626,18 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Object[] pattern_DataFlowIn_2_4_solveCSP_bindingAndBlackFBBBBBBBB(DataFlowIn _this,
 			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow,
-			MAbstractFlowElement mTarget, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource,
-			TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource) {
+			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
 		Object[] result_pattern_DataFlowIn_2_4_solveCSP_binding = pattern_DataFlowIn_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource);
+				_this, isApplicableMatch, mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource);
 		if (result_pattern_DataFlowIn_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_DataFlowIn_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_DataFlowIn_2_4_solveCSP_black = pattern_DataFlowIn_2_4_solveCSP_blackB(csp);
 			if (result_pattern_DataFlowIn_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, mSourceToTSource, tSource,
-						tFlow, mSource };
+				return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+						mSourceToTSource };
 			}
 		}
 		return null;
@@ -1772,29 +1773,29 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mFlowToTFlow");
 		EObject _localVariable_1 = isApplicableMatch.getObject("mTarget");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mSourceToTSource");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tSource");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tSource");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mSource");
 		EObject _localVariable_4 = isApplicableMatch.getObject("tFlow");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mSource");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mSourceToTSource");
 		EObject tmpMFlowToTFlow = _localVariable_0;
 		EObject tmpMTarget = _localVariable_1;
-		EObject tmpMSourceToTSource = _localVariable_2;
-		EObject tmpTSource = _localVariable_3;
+		EObject tmpTSource = _localVariable_2;
+		EObject tmpMSource = _localVariable_3;
 		EObject tmpTFlow = _localVariable_4;
-		EObject tmpMSource = _localVariable_5;
+		EObject tmpMSourceToTSource = _localVariable_5;
 		if (tmpMFlowToTFlow instanceof MAbstractFlowElementToTAbstractFlowElement) {
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow = (MAbstractFlowElementToTAbstractFlowElement) tmpMFlowToTFlow;
 			if (tmpMTarget instanceof MAbstractFlowElement) {
 				MAbstractFlowElement mTarget = (MAbstractFlowElement) tmpMTarget;
-				if (tmpMSourceToTSource instanceof MAbstractFlowElementToTAbstractFlowElement) {
-					MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) tmpMSourceToTSource;
-					if (tmpTSource instanceof TAbstractFlowElement) {
-						TAbstractFlowElement tSource = (TAbstractFlowElement) tmpTSource;
+				if (tmpTSource instanceof TAbstractFlowElement) {
+					TAbstractFlowElement tSource = (TAbstractFlowElement) tmpTSource;
+					if (tmpMSource instanceof MFlow) {
+						MFlow mSource = (MFlow) tmpMSource;
 						if (tmpTFlow instanceof TAbstractFlowElement) {
 							TAbstractFlowElement tFlow = (TAbstractFlowElement) tmpTFlow;
-							if (tmpMSource instanceof MFlow) {
-								MFlow mSource = (MFlow) tmpMSource;
-								return new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource,
+							if (tmpMSourceToTSource instanceof MAbstractFlowElementToTAbstractFlowElement) {
+								MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) tmpMSourceToTSource;
+								return new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource,
 										isApplicableMatch };
 							}
 						}
@@ -1807,15 +1808,16 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Object[] pattern_DataFlowIn_11_1_performtransformation_blackBBBBBBFBB(
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource, DataFlowIn _this, IsApplicableMatch isApplicableMatch) {
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, DataFlowIn _this,
+			IsApplicableMatch isApplicableMatch) {
 		if (!mFlowToTFlow.equals(mSourceToTSource)) {
-			if (!tFlow.equals(tSource)) {
-				if (!mSource.equals(mTarget)) {
+			if (!mSource.equals(mTarget)) {
+				if (!tFlow.equals(tSource)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource, csp,
+							return new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource, csp,
 									_this, isApplicableMatch };
 						}
 					}
@@ -1832,17 +1834,17 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		if (result_pattern_DataFlowIn_11_1_performtransformation_binding != null) {
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow = (MAbstractFlowElementToTAbstractFlowElement) result_pattern_DataFlowIn_11_1_performtransformation_binding[0];
 			MAbstractFlowElement mTarget = (MAbstractFlowElement) result_pattern_DataFlowIn_11_1_performtransformation_binding[1];
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result_pattern_DataFlowIn_11_1_performtransformation_binding[2];
-			TAbstractFlowElement tSource = (TAbstractFlowElement) result_pattern_DataFlowIn_11_1_performtransformation_binding[3];
+			TAbstractFlowElement tSource = (TAbstractFlowElement) result_pattern_DataFlowIn_11_1_performtransformation_binding[2];
+			MFlow mSource = (MFlow) result_pattern_DataFlowIn_11_1_performtransformation_binding[3];
 			TAbstractFlowElement tFlow = (TAbstractFlowElement) result_pattern_DataFlowIn_11_1_performtransformation_binding[4];
-			MFlow mSource = (MFlow) result_pattern_DataFlowIn_11_1_performtransformation_binding[5];
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource = (MAbstractFlowElementToTAbstractFlowElement) result_pattern_DataFlowIn_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_DataFlowIn_11_1_performtransformation_black = pattern_DataFlowIn_11_1_performtransformation_blackBBBBBBFBB(
-					mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource, _this, isApplicableMatch);
+					mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource, _this, isApplicableMatch);
 			if (result_pattern_DataFlowIn_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_DataFlowIn_11_1_performtransformation_black[6];
 
-				return new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource, csp, _this,
+				return new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1861,26 +1863,26 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	}
 
 	public static final Object[] pattern_DataFlowIn_11_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject mFlowToTFlow, EObject mTarget, EObject mSourceToTSource, EObject tSource, EObject tFlow,
-			EObject mSource) {
+			EObject mFlowToTFlow, EObject mTarget, EObject tSource, EObject mSource, EObject tFlow,
+			EObject mSourceToTSource) {
 		if (!mFlowToTFlow.equals(mTarget)) {
-			if (!mFlowToTFlow.equals(mSourceToTSource)) {
-				if (!mFlowToTFlow.equals(tSource)) {
+			if (!mFlowToTFlow.equals(tSource)) {
+				if (!mFlowToTFlow.equals(mSource)) {
 					if (!mFlowToTFlow.equals(tFlow)) {
-						if (!mFlowToTFlow.equals(mSource)) {
+						if (!mFlowToTFlow.equals(mSourceToTSource)) {
 							if (!mTarget.equals(tSource)) {
 								if (!mTarget.equals(tFlow)) {
-									if (!mSourceToTSource.equals(mTarget)) {
-										if (!mSourceToTSource.equals(tSource)) {
-											if (!mSourceToTSource.equals(tFlow)) {
-												if (!tFlow.equals(tSource)) {
-													if (!mSource.equals(mTarget)) {
-														if (!mSource.equals(mSourceToTSource)) {
-															if (!mSource.equals(tSource)) {
-																if (!mSource.equals(tFlow)) {
+									if (!mSource.equals(mTarget)) {
+										if (!mSource.equals(tSource)) {
+											if (!mSource.equals(tFlow)) {
+												if (!mSource.equals(mSourceToTSource)) {
+													if (!tFlow.equals(tSource)) {
+														if (!mSourceToTSource.equals(mTarget)) {
+															if (!mSourceToTSource.equals(tSource)) {
+																if (!mSourceToTSource.equals(tFlow)) {
 																	return new Object[] { ruleresult, mFlowToTFlow,
-																			mTarget, mSourceToTSource, tSource, tFlow,
-																			mSource };
+																			mTarget, tSource, mSource, tFlow,
+																			mSourceToTSource };
 																}
 															}
 														}
@@ -1900,41 +1902,41 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	}
 
 	public static final Object[] pattern_DataFlowIn_11_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject mTarget, EObject tSource, EObject tFlow, EObject mSource) {
-		EMoflonEdge mTarget__mSource____incomingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSource__mTarget____flowTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mTarget, EObject tSource, EObject mSource, EObject tFlow) {
 		EMoflonEdge tFlow__tSource____incomingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSource__tFlow____outgoingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTarget__mSource____incomingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSource__mTarget____flowTarget = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "DataFlowIn";
-		String mTarget__mSource____incomingFlows_name_prime = "incomingFlows";
-		String mSource__mTarget____flowTarget_name_prime = "flowTarget";
 		String tFlow__tSource____incomingFlows_name_prime = "incomingFlows";
 		String tSource__tFlow____outgoingFlows_name_prime = "outgoingFlows";
-		mTarget__mSource____incomingFlows.setSrc(mTarget);
-		mTarget__mSource____incomingFlows.setTrg(mSource);
-		ruleresult.getCreatedEdges().add(mTarget__mSource____incomingFlows);
-		mSource__mTarget____flowTarget.setSrc(mSource);
-		mSource__mTarget____flowTarget.setTrg(mTarget);
-		ruleresult.getCreatedEdges().add(mSource__mTarget____flowTarget);
+		String mTarget__mSource____incomingFlows_name_prime = "incomingFlows";
+		String mSource__mTarget____flowTarget_name_prime = "flowTarget";
 		tFlow__tSource____incomingFlows.setSrc(tFlow);
 		tFlow__tSource____incomingFlows.setTrg(tSource);
 		ruleresult.getTranslatedEdges().add(tFlow__tSource____incomingFlows);
 		tSource__tFlow____outgoingFlows.setSrc(tSource);
 		tSource__tFlow____outgoingFlows.setTrg(tFlow);
 		ruleresult.getTranslatedEdges().add(tSource__tFlow____outgoingFlows);
+		mTarget__mSource____incomingFlows.setSrc(mTarget);
+		mTarget__mSource____incomingFlows.setTrg(mSource);
+		ruleresult.getCreatedEdges().add(mTarget__mSource____incomingFlows);
+		mSource__mTarget____flowTarget.setSrc(mSource);
+		mSource__mTarget____flowTarget.setTrg(mTarget);
+		ruleresult.getCreatedEdges().add(mSource__mTarget____flowTarget);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mTarget__mSource____incomingFlows.setName(mTarget__mSource____incomingFlows_name_prime);
-		mSource__mTarget____flowTarget.setName(mSource__mTarget____flowTarget_name_prime);
 		tFlow__tSource____incomingFlows.setName(tFlow__tSource____incomingFlows_name_prime);
 		tSource__tFlow____outgoingFlows.setName(tSource__tFlow____outgoingFlows_name_prime);
-		return new Object[] { ruleresult, mTarget, tSource, tFlow, mSource, mTarget__mSource____incomingFlows,
-				mSource__mTarget____flowTarget, tFlow__tSource____incomingFlows, tSource__tFlow____outgoingFlows };
+		mTarget__mSource____incomingFlows.setName(mTarget__mSource____incomingFlows_name_prime);
+		mSource__mTarget____flowTarget.setName(mSource__mTarget____flowTarget_name_prime);
+		return new Object[] { ruleresult, mTarget, tSource, mSource, tFlow, tFlow__tSource____incomingFlows,
+				tSource__tFlow____outgoingFlows, mTarget__mSource____incomingFlows, mSource__mTarget____flowTarget };
 	}
 
 	public static final void pattern_DataFlowIn_11_5_registerobjects_expressionBBBBBBBB(DataFlowIn _this,
-			PerformRuleResult ruleresult, EObject mFlowToTFlow, EObject mTarget, EObject mSourceToTSource,
-			EObject tSource, EObject tFlow, EObject mSource) {
-		_this.registerObjects_BWD(ruleresult, mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource);
+			PerformRuleResult ruleresult, EObject mFlowToTFlow, EObject mTarget, EObject tSource, EObject mSource,
+			EObject tFlow, EObject mSourceToTSource) {
+		_this.registerObjects_BWD(ruleresult, mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource);
 
 	}
 
@@ -2005,24 +2007,24 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_DataFlowIn_12_2_corematch_blackFFFBBFB(TAbstractFlowElement tSource,
+	public static final Iterable<Object[]> pattern_DataFlowIn_12_2_corematch_blackFFBFBFB(TAbstractFlowElement tSource,
 			TAbstractFlowElement tFlow, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tFlow.equals(tSource)) {
-			for (MAbstractFlowElementToTAbstractFlowElement mSourceToTSource : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tSource, MAbstractFlowElementToTAbstractFlowElement.class, "target")) {
-				MAbstractFlowElement tmpMSource = mSourceToTSource.getSource();
-				if (tmpMSource instanceof MFlow) {
-					MFlow mSource = (MFlow) tmpMSource;
-					for (MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(tFlow, MAbstractFlowElementToTAbstractFlowElement.class,
+			for (MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(tFlow, MAbstractFlowElementToTAbstractFlowElement.class, "target")) {
+				MAbstractFlowElement mTarget = mFlowToTFlow.getSource();
+				if (mTarget != null) {
+					for (MAbstractFlowElementToTAbstractFlowElement mSourceToTSource : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(tSource, MAbstractFlowElementToTAbstractFlowElement.class,
 									"target")) {
 						if (!mFlowToTFlow.equals(mSourceToTSource)) {
-							MAbstractFlowElement mTarget = mFlowToTFlow.getSource();
-							if (mTarget != null) {
+							MAbstractFlowElement tmpMSource = mSourceToTSource.getSource();
+							if (tmpMSource instanceof MFlow) {
+								MFlow mSource = (MFlow) tmpMSource;
 								if (!mSource.equals(mTarget)) {
-									_result.add(new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow,
-											mSource, match });
+									_result.add(new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+											mSourceToTSource, match });
 								}
 							}
 
@@ -2037,19 +2039,19 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Iterable<Object[]> pattern_DataFlowIn_12_3_findcontext_blackBBBBBB(
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource) {
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mFlowToTFlow.equals(mSourceToTSource)) {
-			if (!tFlow.equals(tSource)) {
-				if (!mSource.equals(mTarget)) {
-					if (tSource.equals(mSourceToTSource.getTarget())) {
-						if (mTarget.equals(mFlowToTFlow.getSource())) {
-							if (tFlow.equals(mFlowToTFlow.getTarget())) {
-								if (tFlow.getIncomingFlows().contains(tSource)) {
+			if (!mSource.equals(mTarget)) {
+				if (!tFlow.equals(tSource)) {
+					if (mTarget.equals(mFlowToTFlow.getSource())) {
+						if (tFlow.equals(mFlowToTFlow.getTarget())) {
+							if (tFlow.getIncomingFlows().contains(tSource)) {
+								if (tSource.equals(mSourceToTSource.getTarget())) {
 									if (mSource.equals(mSourceToTSource.getSource())) {
-										_result.add(new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource,
-												tFlow, mSource });
+										_result.add(new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+												mSourceToTSource });
 									}
 								}
 							}
@@ -2063,30 +2065,27 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Object[] pattern_DataFlowIn_12_3_findcontext_greenBBBBBBFFFFFFF(
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource) {
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mSourceToTSource__tSource____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowToTFlow__mTarget____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowToTFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tFlow__tSource____incomingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSource__tFlow____outgoingFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSourceToTSource__tSource____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSourceToTSource__mSource____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mSourceToTSource__tSource____target_name_prime = "target";
 		String mFlowToTFlow__mTarget____source_name_prime = "source";
 		String mFlowToTFlow__tFlow____target_name_prime = "target";
 		String tFlow__tSource____incomingFlows_name_prime = "incomingFlows";
 		String tSource__tFlow____outgoingFlows_name_prime = "outgoingFlows";
+		String mSourceToTSource__tSource____target_name_prime = "target";
 		String mSourceToTSource__mSource____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mFlowToTFlow);
 		isApplicableMatch.getAllContextElements().add(mTarget);
-		isApplicableMatch.getAllContextElements().add(mSourceToTSource);
 		isApplicableMatch.getAllContextElements().add(tSource);
-		isApplicableMatch.getAllContextElements().add(tFlow);
 		isApplicableMatch.getAllContextElements().add(mSource);
-		mSourceToTSource__tSource____target.setSrc(mSourceToTSource);
-		mSourceToTSource__tSource____target.setTrg(tSource);
-		isApplicableMatch.getAllContextElements().add(mSourceToTSource__tSource____target);
+		isApplicableMatch.getAllContextElements().add(tFlow);
+		isApplicableMatch.getAllContextElements().add(mSourceToTSource);
 		mFlowToTFlow__mTarget____source.setSrc(mFlowToTFlow);
 		mFlowToTFlow__mTarget____source.setTrg(mTarget);
 		isApplicableMatch.getAllContextElements().add(mFlowToTFlow__mTarget____source);
@@ -2099,30 +2098,34 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		tSource__tFlow____outgoingFlows.setSrc(tSource);
 		tSource__tFlow____outgoingFlows.setTrg(tFlow);
 		isApplicableMatch.getAllContextElements().add(tSource__tFlow____outgoingFlows);
+		mSourceToTSource__tSource____target.setSrc(mSourceToTSource);
+		mSourceToTSource__tSource____target.setTrg(tSource);
+		isApplicableMatch.getAllContextElements().add(mSourceToTSource__tSource____target);
 		mSourceToTSource__mSource____source.setSrc(mSourceToTSource);
 		mSourceToTSource__mSource____source.setTrg(mSource);
 		isApplicableMatch.getAllContextElements().add(mSourceToTSource__mSource____source);
-		mSourceToTSource__tSource____target.setName(mSourceToTSource__tSource____target_name_prime);
 		mFlowToTFlow__mTarget____source.setName(mFlowToTFlow__mTarget____source_name_prime);
 		mFlowToTFlow__tFlow____target.setName(mFlowToTFlow__tFlow____target_name_prime);
 		tFlow__tSource____incomingFlows.setName(tFlow__tSource____incomingFlows_name_prime);
 		tSource__tFlow____outgoingFlows.setName(tSource__tFlow____outgoingFlows_name_prime);
+		mSourceToTSource__tSource____target.setName(mSourceToTSource__tSource____target_name_prime);
 		mSourceToTSource__mSource____source.setName(mSourceToTSource__mSource____source_name_prime);
-		return new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource, isApplicableMatch,
-				mSourceToTSource__tSource____target, mFlowToTFlow__mTarget____source, mFlowToTFlow__tFlow____target,
-				tFlow__tSource____incomingFlows, tSource__tFlow____outgoingFlows, mSourceToTSource__mSource____source };
+		return new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource, isApplicableMatch,
+				mFlowToTFlow__mTarget____source, mFlowToTFlow__tFlow____target, tFlow__tSource____incomingFlows,
+				tSource__tFlow____outgoingFlows, mSourceToTSource__tSource____target,
+				mSourceToTSource__mSource____source };
 	}
 
 	public static final Object[] pattern_DataFlowIn_12_4_solveCSP_bindingFBBBBBBBB(DataFlowIn _this,
 			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow,
-			MAbstractFlowElement mTarget, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource,
-			TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mFlowToTFlow, mTarget,
-				mSourceToTSource, tSource, tFlow, mSource);
+			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mFlowToTFlow, mTarget, tSource,
+				mSource, tFlow, mSourceToTSource);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, mSourceToTSource, tSource,
-					tFlow, mSource };
+			return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+					mSourceToTSource };
 		}
 		return null;
 	}
@@ -2133,18 +2136,18 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Object[] pattern_DataFlowIn_12_4_solveCSP_bindingAndBlackFBBBBBBBB(DataFlowIn _this,
 			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow,
-			MAbstractFlowElement mTarget, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource,
-			TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource) {
+			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
 		Object[] result_pattern_DataFlowIn_12_4_solveCSP_binding = pattern_DataFlowIn_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource);
+				_this, isApplicableMatch, mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource);
 		if (result_pattern_DataFlowIn_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_DataFlowIn_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_DataFlowIn_12_4_solveCSP_black = pattern_DataFlowIn_12_4_solveCSP_blackB(csp);
 			if (result_pattern_DataFlowIn_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, mSourceToTSource, tSource,
-						tFlow, mSource };
+				return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+						mSourceToTSource };
 			}
 		}
 		return null;
@@ -2423,21 +2426,21 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 			Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("mTarget");
 		EObject _localVariable_1 = targetMatch.getObject("tSource");
-		EObject _localVariable_2 = targetMatch.getObject("tFlow");
-		EObject _localVariable_3 = sourceMatch.getObject("mSource");
+		EObject _localVariable_2 = sourceMatch.getObject("mSource");
+		EObject _localVariable_3 = targetMatch.getObject("tFlow");
 		EObject tmpMTarget = _localVariable_0;
 		EObject tmpTSource = _localVariable_1;
-		EObject tmpTFlow = _localVariable_2;
-		EObject tmpMSource = _localVariable_3;
+		EObject tmpMSource = _localVariable_2;
+		EObject tmpTFlow = _localVariable_3;
 		if (tmpMTarget instanceof MAbstractFlowElement) {
 			MAbstractFlowElement mTarget = (MAbstractFlowElement) tmpMTarget;
 			if (tmpTSource instanceof TAbstractFlowElement) {
 				TAbstractFlowElement tSource = (TAbstractFlowElement) tmpTSource;
-				if (tmpTFlow instanceof TAbstractFlowElement) {
-					TAbstractFlowElement tFlow = (TAbstractFlowElement) tmpTFlow;
-					if (tmpMSource instanceof MFlow) {
-						MFlow mSource = (MFlow) tmpMSource;
-						return new Object[] { mTarget, tSource, tFlow, mSource, sourceMatch, targetMatch };
+				if (tmpMSource instanceof MFlow) {
+					MFlow mSource = (MFlow) tmpMSource;
+					if (tmpTFlow instanceof TAbstractFlowElement) {
+						TAbstractFlowElement tFlow = (TAbstractFlowElement) tmpTFlow;
+						return new Object[] { mTarget, tSource, mSource, tFlow, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2446,12 +2449,12 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	}
 
 	public static final Object[] pattern_DataFlowIn_24_2_matchsrctrgcontext_blackBBBBBB(MAbstractFlowElement mTarget,
-			TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource, Match sourceMatch,
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow, Match sourceMatch,
 			Match targetMatch) {
-		if (!tFlow.equals(tSource)) {
-			if (!mSource.equals(mTarget)) {
+		if (!mSource.equals(mTarget)) {
+			if (!tFlow.equals(tSource)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { mTarget, tSource, tFlow, mSource, sourceMatch, targetMatch };
+					return new Object[] { mTarget, tSource, mSource, tFlow, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -2465,27 +2468,27 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		if (result_pattern_DataFlowIn_24_2_matchsrctrgcontext_binding != null) {
 			MAbstractFlowElement mTarget = (MAbstractFlowElement) result_pattern_DataFlowIn_24_2_matchsrctrgcontext_binding[0];
 			TAbstractFlowElement tSource = (TAbstractFlowElement) result_pattern_DataFlowIn_24_2_matchsrctrgcontext_binding[1];
-			TAbstractFlowElement tFlow = (TAbstractFlowElement) result_pattern_DataFlowIn_24_2_matchsrctrgcontext_binding[2];
-			MFlow mSource = (MFlow) result_pattern_DataFlowIn_24_2_matchsrctrgcontext_binding[3];
+			MFlow mSource = (MFlow) result_pattern_DataFlowIn_24_2_matchsrctrgcontext_binding[2];
+			TAbstractFlowElement tFlow = (TAbstractFlowElement) result_pattern_DataFlowIn_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_DataFlowIn_24_2_matchsrctrgcontext_black = pattern_DataFlowIn_24_2_matchsrctrgcontext_blackBBBBBB(
-					mTarget, tSource, tFlow, mSource, sourceMatch, targetMatch);
+					mTarget, tSource, mSource, tFlow, sourceMatch, targetMatch);
 			if (result_pattern_DataFlowIn_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mTarget, tSource, tFlow, mSource, sourceMatch, targetMatch };
+				return new Object[] { mTarget, tSource, mSource, tFlow, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_DataFlowIn_24_3_solvecsp_bindingFBBBBBBB(DataFlowIn _this,
-			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource,
+			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mTarget, tSource, tFlow, mSource, sourceMatch,
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mTarget, tSource, mSource, tFlow, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, mTarget, tSource, tFlow, mSource, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mTarget, tSource, mSource, tFlow, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2495,17 +2498,17 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	}
 
 	public static final Object[] pattern_DataFlowIn_24_3_solvecsp_bindingAndBlackFBBBBBBB(DataFlowIn _this,
-			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource,
+			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_DataFlowIn_24_3_solvecsp_binding = pattern_DataFlowIn_24_3_solvecsp_bindingFBBBBBBB(
-				_this, mTarget, tSource, tFlow, mSource, sourceMatch, targetMatch);
+				_this, mTarget, tSource, mSource, tFlow, sourceMatch, targetMatch);
 		if (result_pattern_DataFlowIn_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_DataFlowIn_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_DataFlowIn_24_3_solvecsp_black = pattern_DataFlowIn_24_3_solvecsp_blackB(csp);
 			if (result_pattern_DataFlowIn_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mTarget, tSource, tFlow, mSource, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, mTarget, tSource, mSource, tFlow, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2517,24 +2520,24 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_DataFlowIn_24_5_matchcorrcontext_blackFBFBBBBB(
-			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource,
+	public static final Iterable<Object[]> pattern_DataFlowIn_24_5_matchcorrcontext_blackFBBBBFBB(
+			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!tFlow.equals(tSource)) {
-			if (!mSource.equals(mTarget)) {
+		if (!mSource.equals(mTarget)) {
+			if (!tFlow.equals(tSource)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					for (MAbstractFlowElementToTAbstractFlowElement mSourceToTSource : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(tSource, MAbstractFlowElementToTAbstractFlowElement.class,
-									"target")) {
-						if (mSource.equals(mSourceToTSource.getSource())) {
-							for (MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(mTarget,
-											MAbstractFlowElementToTAbstractFlowElement.class, "source")) {
+					for (MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(mTarget, MAbstractFlowElementToTAbstractFlowElement.class,
+									"source")) {
+						if (tFlow.equals(mFlowToTFlow.getTarget())) {
+							for (MAbstractFlowElementToTAbstractFlowElement mSourceToTSource : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(tSource,
+											MAbstractFlowElementToTAbstractFlowElement.class, "target")) {
 								if (!mFlowToTFlow.equals(mSourceToTSource)) {
-									if (tFlow.equals(mFlowToTFlow.getTarget())) {
-										_result.add(new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource,
-												tFlow, mSource, sourceMatch, targetMatch });
+									if (mSource.equals(mSourceToTSource.getSource())) {
+										_result.add(new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+												mSourceToTSource, sourceMatch, targetMatch });
 									}
 								}
 							}
@@ -2560,10 +2563,10 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	}
 
 	public static final Object[] pattern_DataFlowIn_24_6_createcorrespondence_blackBBBBB(MAbstractFlowElement mTarget,
-			TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource, CCMatch ccMatch) {
-		if (!tFlow.equals(tSource)) {
-			if (!mSource.equals(mTarget)) {
-				return new Object[] { mTarget, tSource, tFlow, mSource, ccMatch };
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow, CCMatch ccMatch) {
+		if (!mSource.equals(mTarget)) {
+			if (!tFlow.equals(tSource)) {
+				return new Object[] { mTarget, tSource, mSource, tFlow, ccMatch };
 			}
 		}
 		return null;
@@ -2666,17 +2669,17 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	}
 
 	public static final Object[] pattern_DataFlowIn_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
-		if (ruleResult.getCorrObjects().contains(mSourceToTSource)) {
-			return new Object[] { ruleResult, mSourceToTSource };
+			ModelgeneratorRuleResult ruleResult, TAbstractFlowElement tSource) {
+		if (ruleResult.getTargetObjects().contains(tSource)) {
+			return new Object[] { ruleResult, tSource };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_DataFlowIn_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, TAbstractFlowElement tSource) {
-		if (ruleResult.getTargetObjects().contains(tSource)) {
-			return new Object[] { ruleResult, tSource };
+			ModelgeneratorRuleResult ruleResult, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
+		if (ruleResult.getCorrObjects().contains(mSourceToTSource)) {
+			return new Object[] { ruleResult, mSourceToTSource };
 		}
 		return null;
 	}
@@ -2721,10 +2724,10 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 																	if (tmpMSource instanceof MFlow) {
 																		MFlow mSource = (MFlow) tmpMSource;
 																		if (!mSource.equals(mTarget)) {
-																			if (pattern_DataFlowIn_29_2_isapplicablecore_black_nac_3BB(
+																			if (pattern_DataFlowIn_29_2_isapplicablecore_black_nac_4BB(
 																					ruleResult,
 																					mSourceToTSource) == null) {
-																				if (pattern_DataFlowIn_29_2_isapplicablecore_black_nac_4BB(
+																				if (pattern_DataFlowIn_29_2_isapplicablecore_black_nac_3BB(
 																						ruleResult, tSource) == null) {
 																					if (pattern_DataFlowIn_29_2_isapplicablecore_black_nac_5BB(
 																							ruleResult,
@@ -2734,8 +2737,9 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 																								mFlowToTFlow, mTarget,
 																								tFlow,
 																								mSourceToTSourceList,
+																								tSource,
 																								mSourceToTSource,
-																								tSource, mSource,
+																								mSource,
 																								ruleEntryContainer,
 																								ruleResult });
 																					}
@@ -2767,15 +2771,14 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Object[] pattern_DataFlowIn_29_3_solveCSP_bindingFBBBBBBBBB(DataFlowIn _this,
 			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow,
-			MAbstractFlowElement mTarget, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource,
-			TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource,
-			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mFlowToTFlow, mTarget,
-				mSourceToTSource, tSource, tFlow, mSource, ruleResult);
+			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mFlowToTFlow, mTarget, tSource,
+				mSource, tFlow, mSourceToTSource, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, mSourceToTSource, tSource,
-					tFlow, mSource, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+					mSourceToTSource, ruleResult };
 		}
 		return null;
 	}
@@ -2786,19 +2789,18 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Object[] pattern_DataFlowIn_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(DataFlowIn _this,
 			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow,
-			MAbstractFlowElement mTarget, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource,
-			TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource,
-			ModelgeneratorRuleResult ruleResult) {
+			MAbstractFlowElement mTarget, TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_DataFlowIn_29_3_solveCSP_binding = pattern_DataFlowIn_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource, ruleResult);
+				_this, isApplicableMatch, mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource, ruleResult);
 		if (result_pattern_DataFlowIn_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_DataFlowIn_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_DataFlowIn_29_3_solveCSP_black = pattern_DataFlowIn_29_3_solveCSP_blackB(csp);
 			if (result_pattern_DataFlowIn_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, mSourceToTSource, tSource,
-						tFlow, mSource, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mFlowToTFlow, mTarget, tSource, mSource, tFlow,
+						mSourceToTSource, ruleResult };
 			}
 		}
 		return null;
@@ -2812,12 +2814,12 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Object[] pattern_DataFlowIn_29_5_checknacs_blackBBBBBB(
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource) {
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource) {
 		if (!mFlowToTFlow.equals(mSourceToTSource)) {
-			if (!tFlow.equals(tSource)) {
-				if (!mSource.equals(mTarget)) {
-					return new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource };
+			if (!mSource.equals(mTarget)) {
+				if (!tFlow.equals(tSource)) {
+					return new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource };
 				}
 			}
 		}
@@ -2826,12 +2828,12 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 
 	public static final Object[] pattern_DataFlowIn_29_6_perform_blackBBBBBBB(
 			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MAbstractFlowElement mTarget,
-			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, TAbstractFlowElement tSource,
-			TAbstractFlowElement tFlow, MFlow mSource, ModelgeneratorRuleResult ruleResult) {
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, ModelgeneratorRuleResult ruleResult) {
 		if (!mFlowToTFlow.equals(mSourceToTSource)) {
-			if (!tFlow.equals(tSource)) {
-				if (!mSource.equals(mTarget)) {
-					return new Object[] { mFlowToTFlow, mTarget, mSourceToTSource, tSource, tFlow, mSource,
+			if (!mSource.equals(mTarget)) {
+				if (!tFlow.equals(tSource)) {
+					return new Object[] { mFlowToTFlow, mTarget, tSource, mSource, tFlow, mSourceToTSource,
 							ruleResult };
 				}
 			}
@@ -2840,16 +2842,16 @@ public class DataFlowInImpl extends AbstractRuleImpl implements DataFlowIn {
 	}
 
 	public static final Object[] pattern_DataFlowIn_29_6_perform_greenBBBBB(MAbstractFlowElement mTarget,
-			TAbstractFlowElement tSource, TAbstractFlowElement tFlow, MFlow mSource,
+			TAbstractFlowElement tSource, MFlow mSource, TAbstractFlowElement tFlow,
 			ModelgeneratorRuleResult ruleResult) {
-		mTarget.getIncomingFlows().add(mSource);
 		tFlow.getIncomingFlows().add(tSource);
+		mTarget.getIncomingFlows().add(mSource);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mTarget, tSource, tFlow, mSource, ruleResult };
+		return new Object[] { mTarget, tSource, mSource, tFlow, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_DataFlowIn_29_7_expressionFB(

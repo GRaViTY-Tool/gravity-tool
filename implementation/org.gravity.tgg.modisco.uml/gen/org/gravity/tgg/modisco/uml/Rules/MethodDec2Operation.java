@@ -105,7 +105,7 @@ public interface MethodDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface MethodDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,7 +241,7 @@ public interface MethodDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MMethodDefinition bodyDeclaration, Operation feature, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(Operation feature, MMethodDefinition bodyDeclaration, Match sourceMatch,
 			Match targetMatch);
 
 	/**

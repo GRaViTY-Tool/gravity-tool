@@ -105,7 +105,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,7 +241,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(EnumDeclaration bodyDeclaration, Enumeration feature, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(Enumeration feature, EnumDeclaration bodyDeclaration, Match sourceMatch,
 			Match targetMatch);
 
 	/**

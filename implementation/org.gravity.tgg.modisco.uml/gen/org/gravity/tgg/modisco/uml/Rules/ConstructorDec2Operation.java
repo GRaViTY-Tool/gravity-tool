@@ -213,7 +213,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_122(EMoflonEdge _edge_annotatedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_109(EMoflonEdge _edge_annotatedElement);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -157,8 +157,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result1_bindingAndBlack[1];
 		ASTNode2Element t2t = (ASTNode2Element) result1_bindingAndBlack[2];
 		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result1_bindingAndBlack[3];
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[4];
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[5];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[4];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		LinkTypeToPackageImpl.pattern_LinkTypeToPackage_1_1_performtransformation_greenBB(uType, uPackage);
 
@@ -169,24 +169,23 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = LinkTypeToPackageImpl.pattern_LinkTypeToPackage_1_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, uType, p2p, t2t, mType, uPackage, mPackage);
+				ruleresult, uType, p2p, t2t, mType, mPackage, uPackage);
 		if (result3_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[uType] = "
 							+ uType + ", " + "[p2p] = " + p2p + ", " + "[t2t] = " + t2t + ", " + "[mType] = " + mType
-							+ ", " + "[uPackage] = " + uPackage + ", " + "[mPackage] = " + mPackage + ".");
+							+ ", " + "[mPackage] = " + mPackage + ", " + "[uPackage] = " + uPackage + ".");
 		}
-		LinkTypeToPackageImpl.pattern_LinkTypeToPackage_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult, uType, mType,
-				uPackage, mPackage);
-		//nothing EMoflonEdge uType__uPackage____package = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge uPackage__uType____ownedType = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[8];
+		LinkTypeToPackageImpl.pattern_LinkTypeToPackage_1_3_bookkeepingforedges_greenBBBBBFFF(ruleresult, uType, mType,
+				mPackage, uPackage);
+		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge uPackage__uType____packagedElement = (EMoflonEdge) result3_green[7];
 
 		// 
 		// 
 		LinkTypeToPackageImpl.pattern_LinkTypeToPackage_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, uType,
-				p2p, t2t, mType, uPackage, mPackage);
+				p2p, t2t, mType, mPackage, uPackage);
 		return LinkTypeToPackageImpl.pattern_LinkTypeToPackage_1_6_expressionFB(ruleresult);
 	}
 
@@ -216,34 +215,34 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		}
 		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_binding[0];
 		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_binding[1];
-		for (Object[] result2_black : LinkTypeToPackageImpl.pattern_LinkTypeToPackage_2_2_corematch_blackFFFBFBB(mType,
+		for (Object[] result2_black : LinkTypeToPackageImpl.pattern_LinkTypeToPackage_2_2_corematch_blackFFFBBFB(mType,
 				mPackage, match)) {
 			Classifier uType = (Classifier) result2_black[0];
 			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result2_black[1];
 			ASTNode2Element t2t = (ASTNode2Element) result2_black[2];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[4];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : LinkTypeToPackageImpl.pattern_LinkTypeToPackage_2_3_findcontext_blackBBBBBB(
-					uType, p2p, t2t, mType, uPackage, mPackage)) {
+					uType, p2p, t2t, mType, mPackage, uPackage)) {
 				Object[] result3_green = LinkTypeToPackageImpl
-						.pattern_LinkTypeToPackage_2_3_findcontext_greenBBBBBBFFFFFFF(uType, p2p, t2t, mType, uPackage,
-								mPackage);
+						.pattern_LinkTypeToPackage_2_3_findcontext_greenBBBBBBFFFFFFF(uType, p2p, t2t, mType, mPackage,
+								uPackage);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge t2t__uType____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge t2t__mType____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge p2p__mPackage____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge t2t__mType____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge t2t__uType____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge p2p__mPackage____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge p2p__uPackage____target = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = LinkTypeToPackageImpl
 						.pattern_LinkTypeToPackage_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, uType,
-								p2p, t2t, mType, uPackage, mPackage);
+								p2p, t2t, mType, mPackage, uPackage);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uType] = " + uType + ", "
 							+ "[p2p] = " + p2p + ", " + "[t2t] = " + t2t + ", " + "[mType] = " + mType + ", "
-							+ "[uPackage] = " + uPackage + ", " + "[mPackage] = " + mPackage + ".");
+							+ "[mPackage] = " + mPackage + ", " + "[uPackage] = " + uPackage + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -316,7 +315,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage) {// Create CSP
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -335,8 +334,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		isApplicableMatch.registerObject("p2p", p2p);
 		isApplicableMatch.registerObject("t2t", t2t);
 		isApplicableMatch.registerObject("mType", mType);
-		isApplicableMatch.registerObject("uPackage", uPackage);
 		isApplicableMatch.registerObject("mPackage", mPackage);
+		isApplicableMatch.registerObject("uPackage", uPackage);
 		return csp;
 	}
 
@@ -355,13 +354,13 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject uType, EObject p2p, EObject t2t,
-			EObject mType, EObject uPackage, EObject mPackage) {
+			EObject mType, EObject mPackage, EObject uPackage) {
 		ruleresult.registerObject("uType", uType);
 		ruleresult.registerObject("p2p", p2p);
 		ruleresult.registerObject("t2t", t2t);
 		ruleresult.registerObject("mType", mType);
-		ruleresult.registerObject("uPackage", uPackage);
 		ruleresult.registerObject("mPackage", mPackage);
+		ruleresult.registerObject("uPackage", uPackage);
 
 	}
 
@@ -404,10 +403,9 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
 						+ "[uType] = " + uType + ", " + "[uPackage] = " + uPackage + ".");
 			}
-			LinkTypeToPackageImpl.pattern_LinkTypeToPackage_10_4_collectelementstobetranslated_greenBBBFF(match, uType,
+			LinkTypeToPackageImpl.pattern_LinkTypeToPackage_10_4_collectelementstobetranslated_greenBBBF(match, uType,
 					uPackage);
-			//nothing EMoflonEdge uType__uPackage____package = (EMoflonEdge) result4_green[3];
-			//nothing EMoflonEdge uPackage__uType____ownedType = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge uPackage__uType____packagedElement = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = LinkTypeToPackageImpl
 					.pattern_LinkTypeToPackage_10_5_collectcontextelements_blackBBB(match, uType, uPackage);
@@ -445,8 +443,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result1_bindingAndBlack[1];
 		ASTNode2Element t2t = (ASTNode2Element) result1_bindingAndBlack[2];
 		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result1_bindingAndBlack[3];
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[4];
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[5];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[4];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		LinkTypeToPackageImpl.pattern_LinkTypeToPackage_11_1_performtransformation_greenBB(mType, mPackage);
 
@@ -458,24 +456,23 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = LinkTypeToPackageImpl.pattern_LinkTypeToPackage_11_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, uType, p2p, t2t, mType, uPackage, mPackage);
+				ruleresult, uType, p2p, t2t, mType, mPackage, uPackage);
 		if (result3_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[uType] = "
 							+ uType + ", " + "[p2p] = " + p2p + ", " + "[t2t] = " + t2t + ", " + "[mType] = " + mType
-							+ ", " + "[uPackage] = " + uPackage + ", " + "[mPackage] = " + mPackage + ".");
+							+ ", " + "[mPackage] = " + mPackage + ", " + "[uPackage] = " + uPackage + ".");
 		}
-		LinkTypeToPackageImpl.pattern_LinkTypeToPackage_11_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult, uType,
-				mType, uPackage, mPackage);
-		//nothing EMoflonEdge uType__uPackage____package = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge uPackage__uType____ownedType = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[8];
+		LinkTypeToPackageImpl.pattern_LinkTypeToPackage_11_3_bookkeepingforedges_greenBBBBBFFF(ruleresult, uType, mType,
+				mPackage, uPackage);
+		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge uPackage__uType____packagedElement = (EMoflonEdge) result3_green[7];
 
 		// 
 		// 
 		LinkTypeToPackageImpl.pattern_LinkTypeToPackage_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, uType,
-				p2p, t2t, mType, uPackage, mPackage);
+				p2p, t2t, mType, mPackage, uPackage);
 		return LinkTypeToPackageImpl.pattern_LinkTypeToPackage_11_6_expressionFB(ruleresult);
 	}
 
@@ -505,34 +502,33 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		}
 		Classifier uType = (Classifier) result2_binding[0];
 		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_binding[1];
-		for (Object[] result2_black : LinkTypeToPackageImpl.pattern_LinkTypeToPackage_12_2_corematch_blackBFFFBFB(uType,
+		for (Object[] result2_black : LinkTypeToPackageImpl.pattern_LinkTypeToPackage_12_2_corematch_blackBFFFFBB(uType,
 				uPackage, match)) {
 			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result2_black[1];
 			ASTNode2Element t2t = (ASTNode2Element) result2_black[2];
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_black[3];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[5];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : LinkTypeToPackageImpl.pattern_LinkTypeToPackage_12_3_findcontext_blackBBBBBB(
-					uType, p2p, t2t, mType, uPackage, mPackage)) {
+					uType, p2p, t2t, mType, mPackage, uPackage)) {
 				Object[] result3_green = LinkTypeToPackageImpl
-						.pattern_LinkTypeToPackage_12_3_findcontext_greenBBBBBBFFFFFFF(uType, p2p, t2t, mType, uPackage,
-								mPackage);
+						.pattern_LinkTypeToPackage_12_3_findcontext_greenBBBBBBFFFFFF(uType, p2p, t2t, mType, mPackage,
+								uPackage);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge uType__uPackage____package = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge uPackage__uType____ownedType = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge t2t__uType____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge t2t__mType____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge p2p__mPackage____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge p2p__uPackage____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge t2t__mType____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge t2t__uType____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge p2p__mPackage____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge p2p__uPackage____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge uPackage__uType____packagedElement = (EMoflonEdge) result3_green[11];
 
 				Object[] result4_bindingAndBlack = LinkTypeToPackageImpl
 						.pattern_LinkTypeToPackage_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								uType, p2p, t2t, mType, uPackage, mPackage);
+								uType, p2p, t2t, mType, mPackage, uPackage);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uType] = " + uType + ", "
 							+ "[p2p] = " + p2p + ", " + "[t2t] = " + t2t + ", " + "[mType] = " + mType + ", "
-							+ "[uPackage] = " + uPackage + ", " + "[mPackage] = " + mPackage + ".");
+							+ "[mPackage] = " + mPackage + ", " + "[uPackage] = " + uPackage + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -603,7 +599,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage) {// Create CSP
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -622,8 +618,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		isApplicableMatch.registerObject("p2p", p2p);
 		isApplicableMatch.registerObject("t2t", t2t);
 		isApplicableMatch.registerObject("mType", mType);
-		isApplicableMatch.registerObject("uPackage", uPackage);
 		isApplicableMatch.registerObject("mPackage", mPackage);
+		isApplicableMatch.registerObject("uPackage", uPackage);
 		return csp;
 	}
 
@@ -642,13 +638,13 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject uType, EObject p2p, EObject t2t,
-			EObject mType, EObject uPackage, EObject mPackage) {
+			EObject mType, EObject mPackage, EObject uPackage) {
 		ruleresult.registerObject("uType", uType);
 		ruleresult.registerObject("p2p", p2p);
 		ruleresult.registerObject("t2t", t2t);
 		ruleresult.registerObject("mType", mType);
-		ruleresult.registerObject("uPackage", uPackage);
 		ruleresult.registerObject("mPackage", mPackage);
+		ruleresult.registerObject("uPackage", uPackage);
 
 	}
 
@@ -666,7 +662,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_110(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_97(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = LinkTypeToPackageImpl
 				.pattern_LinkTypeToPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -681,7 +677,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 		// ForEach 
 		for (Object[] result2_black : LinkTypeToPackageImpl
-				.pattern_LinkTypeToPackage_20_2_testcorematchandDECs_blackFFB(_edge_package)) {
+				.pattern_LinkTypeToPackage_20_2_testcorematchandDECs_blackFFB(_edge_packagedElement)) {
 			Classifier uType = (Classifier) result2_black[0];
 			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[1];
 			Object[] result2_green = LinkTypeToPackageImpl
@@ -723,7 +719,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_118(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_101(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = LinkTypeToPackageImpl
 				.pattern_LinkTypeToPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -857,16 +853,16 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		}
 		Classifier uType = (Classifier) result2_bindingAndBlack[0];
 		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[2];
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[3];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = LinkTypeToPackageImpl
-				.pattern_LinkTypeToPackage_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, uType, mType, uPackage, mPackage,
+				.pattern_LinkTypeToPackage_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, uType, mType, mPackage, uPackage,
 						sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[uType] = " + uType + ", " + "[mType] = " + mType + ", " + "[uPackage] = " + uPackage + ", "
-					+ "[mPackage] = " + mPackage + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
+					+ "[uType] = " + uType + ", " + "[mType] = " + mType + ", " + "[mPackage] = " + mPackage + ", "
+					+ "[uPackage] = " + uPackage + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
 					+ targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -874,7 +870,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		if (LinkTypeToPackageImpl.pattern_LinkTypeToPackage_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : LinkTypeToPackageImpl
-					.pattern_LinkTypeToPackage_24_5_matchcorrcontext_blackBFFBBBBB(uType, mType, uPackage, mPackage,
+					.pattern_LinkTypeToPackage_24_5_matchcorrcontext_blackBFFBBBBB(uType, mType, mPackage, uPackage,
 							sourceMatch, targetMatch)) {
 				JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result5_black[1];
 				ASTNode2Element t2t = (ASTNode2Element) result5_black[2];
@@ -883,12 +879,12 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = LinkTypeToPackageImpl
-						.pattern_LinkTypeToPackage_24_6_createcorrespondence_blackBBBBB(uType, mType, uPackage,
-								mPackage, ccMatch);
+						.pattern_LinkTypeToPackage_24_6_createcorrespondence_blackBBBBB(uType, mType, mPackage,
+								uPackage, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uType] = " + uType + ", "
-							+ "[mType] = " + mType + ", " + "[uPackage] = " + uPackage + ", " + "[mPackage] = "
-							+ mPackage + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ "[mType] = " + mType + ", " + "[mPackage] = " + mPackage + ", " + "[uPackage] = "
+							+ uPackage + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = LinkTypeToPackageImpl
@@ -912,7 +908,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_CC(Classifier uType, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage, Match sourceMatch,
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -999,31 +995,31 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 			Object[] result3_bindingAndBlack = LinkTypeToPackageImpl
 					.pattern_LinkTypeToPackage_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, uType,
-							p2p, t2t, mType, uPackage, mPackage, ruleResult);
+							p2p, t2t, mType, mPackage, uPackage, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uType] = " + uType + ", " + "[p2p] = "
-						+ p2p + ", " + "[t2t] = " + t2t + ", " + "[mType] = " + mType + ", " + "[uPackage] = "
-						+ uPackage + ", " + "[mPackage] = " + mPackage + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ p2p + ", " + "[t2t] = " + t2t + ", " + "[mType] = " + mType + ", " + "[mPackage] = "
+						+ mPackage + ", " + "[uPackage] = " + uPackage + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (LinkTypeToPackageImpl.pattern_LinkTypeToPackage_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = LinkTypeToPackageImpl.pattern_LinkTypeToPackage_29_5_checknacs_blackBBBBBB(
-						uType, p2p, t2t, mType, uPackage, mPackage);
+						uType, p2p, t2t, mType, mPackage, uPackage);
 				if (result5_black != null) {
 
 					Object[] result6_black = LinkTypeToPackageImpl.pattern_LinkTypeToPackage_29_6_perform_blackBBBBBBB(
-							uType, p2p, t2t, mType, uPackage, mPackage, ruleResult);
+							uType, p2p, t2t, mType, mPackage, uPackage, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uType] = " + uType
 								+ ", " + "[p2p] = " + p2p + ", " + "[t2t] = " + t2t + ", " + "[mType] = " + mType + ", "
-								+ "[uPackage] = " + uPackage + ", " + "[mPackage] = " + mPackage + ", "
+								+ "[mPackage] = " + mPackage + ", " + "[uPackage] = " + uPackage + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					LinkTypeToPackageImpl.pattern_LinkTypeToPackage_29_6_perform_greenBBBBB(uType, mType, uPackage,
-							mPackage, ruleResult);
+					LinkTypeToPackageImpl.pattern_LinkTypeToPackage_29_6_perform_greenBBBBB(uType, mType, mPackage,
+							uPackage, ruleResult);
 
 				} else {
 				}
@@ -1042,7 +1038,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1062,8 +1058,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		isApplicableMatch.registerObject("p2p", p2p);
 		isApplicableMatch.registerObject("t2t", t2t);
 		isApplicableMatch.registerObject("mType", mType);
-		isApplicableMatch.registerObject("uPackage", uPackage);
 		isApplicableMatch.registerObject("mPackage", mPackage);
+		isApplicableMatch.registerObject("uPackage", uPackage);
 		return csp;
 	}
 
@@ -1103,8 +1099,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSIFIER_JAVAPACKAGE2UMLPACKAGE_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_PACKAGE_PACKAGE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
 					(JavaPackage2UmlPackage) arguments.get(2), (ASTNode2Element) arguments.get(3),
-					(AbstractTypeDeclaration) arguments.get(4), (org.eclipse.uml2.uml.Package) arguments.get(5),
-					(org.eclipse.modisco.java.Package) arguments.get(6));
+					(AbstractTypeDeclaration) arguments.get(4), (org.eclipse.modisco.java.Package) arguments.get(5),
+					(org.eclipse.uml2.uml.Package) arguments.get(6));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1133,8 +1129,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_JAVAPACKAGE2UMLPACKAGE_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_PACKAGE_PACKAGE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
 					(JavaPackage2UmlPackage) arguments.get(2), (ASTNode2Element) arguments.get(3),
-					(AbstractTypeDeclaration) arguments.get(4), (org.eclipse.uml2.uml.Package) arguments.get(5),
-					(org.eclipse.modisco.java.Package) arguments.get(6));
+					(AbstractTypeDeclaration) arguments.get(4), (org.eclipse.modisco.java.Package) arguments.get(5),
+					(org.eclipse.uml2.uml.Package) arguments.get(6));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1144,10 +1140,10 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 			return null;
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_110__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_110((EMoflonEdge) arguments.get(0));
-		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_118__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_118((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_97__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_97((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_101__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_101((EMoflonEdge) arguments.get(0));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1156,8 +1152,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPLICABLE_SOLVE_CSP_CC__CLASSIFIER_ABSTRACTTYPEDECLARATION_PACKAGE_PACKAGE_MATCH_MATCH:
 			return isApplicable_solveCsp_CC((Classifier) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2),
-					(org.eclipse.modisco.java.Package) arguments.get(3), (Match) arguments.get(4),
+					(org.eclipse.modisco.java.Package) arguments.get(2),
+					(org.eclipse.uml2.uml.Package) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1172,8 +1168,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_JAVAPACKAGE2UMLPACKAGE_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_PACKAGE_PACKAGE_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
 					(JavaPackage2UmlPackage) arguments.get(2), (ASTNode2Element) arguments.get(3),
-					(AbstractTypeDeclaration) arguments.get(4), (org.eclipse.uml2.uml.Package) arguments.get(5),
-					(org.eclipse.modisco.java.Package) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+					(AbstractTypeDeclaration) arguments.get(4), (org.eclipse.modisco.java.Package) arguments.get(5),
+					(org.eclipse.uml2.uml.Package) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1279,14 +1275,14 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		EObject _localVariable_1 = isApplicableMatch.getObject("p2p");
 		EObject _localVariable_2 = isApplicableMatch.getObject("t2t");
 		EObject _localVariable_3 = isApplicableMatch.getObject("mType");
-		EObject _localVariable_4 = isApplicableMatch.getObject("uPackage");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mPackage");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mPackage");
+		EObject _localVariable_5 = isApplicableMatch.getObject("uPackage");
 		EObject tmpUType = _localVariable_0;
 		EObject tmpP2p = _localVariable_1;
 		EObject tmpT2t = _localVariable_2;
 		EObject tmpMType = _localVariable_3;
-		EObject tmpUPackage = _localVariable_4;
-		EObject tmpMPackage = _localVariable_5;
+		EObject tmpMPackage = _localVariable_4;
+		EObject tmpUPackage = _localVariable_5;
 		if (tmpUType instanceof Classifier) {
 			Classifier uType = (Classifier) tmpUType;
 			if (tmpP2p instanceof JavaPackage2UmlPackage) {
@@ -1295,11 +1291,11 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 					ASTNode2Element t2t = (ASTNode2Element) tmpT2t;
 					if (tmpMType instanceof AbstractTypeDeclaration) {
 						AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-						if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-							org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-							if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
-								org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
-								return new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, isApplicableMatch };
+						if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
+							org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+							if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+								org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+								return new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, isApplicableMatch };
 							}
 						}
 					}
@@ -1311,12 +1307,12 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_1_1_performtransformation_blackBBBBBBFBB(Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage, LinkTypeToPackage _this,
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage, LinkTypeToPackage _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, csp, _this, isApplicableMatch };
+				return new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1331,15 +1327,15 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result_pattern_LinkTypeToPackage_1_1_performtransformation_binding[1];
 			ASTNode2Element t2t = (ASTNode2Element) result_pattern_LinkTypeToPackage_1_1_performtransformation_binding[2];
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_LinkTypeToPackage_1_1_performtransformation_binding[3];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_LinkTypeToPackage_1_1_performtransformation_binding[4];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_LinkTypeToPackage_1_1_performtransformation_binding[5];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_LinkTypeToPackage_1_1_performtransformation_binding[4];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_LinkTypeToPackage_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_LinkTypeToPackage_1_1_performtransformation_black = pattern_LinkTypeToPackage_1_1_performtransformation_blackBBBBBBFBB(
-					uType, p2p, t2t, mType, uPackage, mPackage, _this, isApplicableMatch);
+					uType, p2p, t2t, mType, mPackage, uPackage, _this, isApplicableMatch);
 			if (result_pattern_LinkTypeToPackage_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_LinkTypeToPackage_1_1_performtransformation_black[6];
 
-				return new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, csp, _this, isApplicableMatch };
+				return new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1347,7 +1343,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_1_1_performtransformation_greenBB(Classifier uType,
 			org.eclipse.uml2.uml.Package uPackage) {
-		uType.setPackage(uPackage);
+		uPackage.getPackagedElements().add(uType);
 		return new Object[] { uType, uPackage };
 	}
 
@@ -1357,8 +1353,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject uType, EObject p2p, EObject t2t, EObject mType, EObject uPackage,
-			EObject mPackage) {
+			PerformRuleResult ruleresult, EObject uType, EObject p2p, EObject t2t, EObject mType, EObject mPackage,
+			EObject uPackage) {
 		if (!p2p.equals(uType)) {
 			if (!p2p.equals(t2t)) {
 				if (!p2p.equals(uPackage)) {
@@ -1368,14 +1364,14 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 								if (!mType.equals(p2p)) {
 									if (!mType.equals(t2t)) {
 										if (!mType.equals(uPackage)) {
-											if (!uPackage.equals(uType)) {
-												if (!mPackage.equals(uType)) {
-													if (!mPackage.equals(p2p)) {
-														if (!mPackage.equals(t2t)) {
-															if (!mPackage.equals(mType)) {
-																if (!mPackage.equals(uPackage)) {
+											if (!mPackage.equals(uType)) {
+												if (!mPackage.equals(p2p)) {
+													if (!mPackage.equals(t2t)) {
+														if (!mPackage.equals(mType)) {
+															if (!mPackage.equals(uPackage)) {
+																if (!uPackage.equals(uType)) {
 																	return new Object[] { ruleresult, uType, p2p, t2t,
-																			mType, uPackage, mPackage };
+																			mType, mPackage, uPackage };
 																}
 															}
 														}
@@ -1394,42 +1390,36 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		return null;
 	}
 
-	public static final Object[] pattern_LinkTypeToPackage_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject uType, EObject mType, EObject uPackage, EObject mPackage) {
-		EMoflonEdge uType__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uPackage__uType____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+	public static final Object[] pattern_LinkTypeToPackage_1_3_bookkeepingforedges_greenBBBBBFFF(
+			PerformRuleResult ruleresult, EObject uType, EObject mType, EObject mPackage, EObject uPackage) {
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__uType____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "LinkTypeToPackage";
-		String uType__uPackage____package_name_prime = "package";
-		String uPackage__uType____ownedType_name_prime = "ownedType";
 		String mType__mPackage____package_name_prime = "package";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
-		uType__uPackage____package.setSrc(uType);
-		uType__uPackage____package.setTrg(uPackage);
-		ruleresult.getCreatedEdges().add(uType__uPackage____package);
-		uPackage__uType____ownedType.setSrc(uPackage);
-		uPackage__uType____ownedType.setTrg(uType);
-		ruleresult.getCreatedEdges().add(uPackage__uType____ownedType);
+		String uPackage__uType____packagedElement_name_prime = "packagedElement";
 		mType__mPackage____package.setSrc(mType);
 		mType__mPackage____package.setTrg(mPackage);
 		ruleresult.getTranslatedEdges().add(mType__mPackage____package);
 		mPackage__mType____ownedElements.setSrc(mPackage);
 		mPackage__mType____ownedElements.setTrg(mType);
 		ruleresult.getTranslatedEdges().add(mPackage__mType____ownedElements);
+		uPackage__uType____packagedElement.setSrc(uPackage);
+		uPackage__uType____packagedElement.setTrg(uType);
+		ruleresult.getCreatedEdges().add(uPackage__uType____packagedElement);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		uType__uPackage____package.setName(uType__uPackage____package_name_prime);
-		uPackage__uType____ownedType.setName(uPackage__uType____ownedType_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
-		return new Object[] { ruleresult, uType, mType, uPackage, mPackage, uType__uPackage____package,
-				uPackage__uType____ownedType, mType__mPackage____package, mPackage__mType____ownedElements };
+		uPackage__uType____packagedElement.setName(uPackage__uType____packagedElement_name_prime);
+		return new Object[] { ruleresult, uType, mType, mPackage, uPackage, mType__mPackage____package,
+				mPackage__mType____ownedElements, uPackage__uType____packagedElement };
 	}
 
 	public static final void pattern_LinkTypeToPackage_1_5_registerobjects_expressionBBBBBBBB(LinkTypeToPackage _this,
-			PerformRuleResult ruleresult, EObject uType, EObject p2p, EObject t2t, EObject mType, EObject uPackage,
-			EObject mPackage) {
-		_this.registerObjects_FWD(ruleresult, uType, p2p, t2t, mType, uPackage, mPackage);
+			PerformRuleResult ruleresult, EObject uType, EObject p2p, EObject t2t, EObject mType, EObject mPackage,
+			EObject uPackage) {
+		_this.registerObjects_FWD(ruleresult, uType, p2p, t2t, mType, mPackage, uPackage);
 
 	}
 
@@ -1502,7 +1492,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkTypeToPackage_2_2_corematch_blackFFFBFBB(
+	public static final Iterable<Object[]> pattern_LinkTypeToPackage_2_2_corematch_blackFFFBBFB(
 			AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element t2t : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(mType,
@@ -1514,7 +1504,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 						.getOppositeReferenceTyped(mPackage, JavaPackage2UmlPackage.class, "source")) {
 					org.eclipse.uml2.uml.Package uPackage = p2p.getTarget();
 					if (uPackage != null) {
-						_result.add(new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, match });
+						_result.add(new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, match });
 					}
 
 				}
@@ -1526,14 +1516,14 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Iterable<Object[]> pattern_LinkTypeToPackage_2_3_findcontext_blackBBBBBB(Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage) {
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (uType.equals(t2t.getTarget())) {
-			if (mType.equals(t2t.getSource())) {
-				if (mPackage.equals(mType.getPackage())) {
-					if (mPackage.equals(p2p.getSource())) {
+		if (mType.equals(t2t.getSource())) {
+			if (uType.equals(t2t.getTarget())) {
+				if (mPackage.equals(p2p.getSource())) {
+					if (mPackage.equals(mType.getPackage())) {
 						if (uPackage.equals(p2p.getTarget())) {
-							_result.add(new Object[] { uType, p2p, t2t, mType, uPackage, mPackage });
+							_result.add(new Object[] { uType, p2p, t2t, mType, mPackage, uPackage });
 						}
 					}
 				}
@@ -1544,64 +1534,64 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_2_3_findcontext_greenBBBBBBFFFFFFF(Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage) {
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge t2t__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge t2t__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge t2t__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2p__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge p2p__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2p__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String t2t__uType____target_name_prime = "target";
 		String t2t__mType____source_name_prime = "source";
+		String t2t__uType____target_name_prime = "target";
+		String p2p__mPackage____source_name_prime = "source";
 		String mType__mPackage____package_name_prime = "package";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
-		String p2p__mPackage____source_name_prime = "source";
 		String p2p__uPackage____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(uType);
 		isApplicableMatch.getAllContextElements().add(p2p);
 		isApplicableMatch.getAllContextElements().add(t2t);
 		isApplicableMatch.getAllContextElements().add(mType);
-		isApplicableMatch.getAllContextElements().add(uPackage);
 		isApplicableMatch.getAllContextElements().add(mPackage);
-		t2t__uType____target.setSrc(t2t);
-		t2t__uType____target.setTrg(uType);
-		isApplicableMatch.getAllContextElements().add(t2t__uType____target);
+		isApplicableMatch.getAllContextElements().add(uPackage);
 		t2t__mType____source.setSrc(t2t);
 		t2t__mType____source.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(t2t__mType____source);
+		t2t__uType____target.setSrc(t2t);
+		t2t__uType____target.setTrg(uType);
+		isApplicableMatch.getAllContextElements().add(t2t__uType____target);
+		p2p__mPackage____source.setSrc(p2p);
+		p2p__mPackage____source.setTrg(mPackage);
+		isApplicableMatch.getAllContextElements().add(p2p__mPackage____source);
 		mType__mPackage____package.setSrc(mType);
 		mType__mPackage____package.setTrg(mPackage);
 		isApplicableMatch.getAllContextElements().add(mType__mPackage____package);
 		mPackage__mType____ownedElements.setSrc(mPackage);
 		mPackage__mType____ownedElements.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(mPackage__mType____ownedElements);
-		p2p__mPackage____source.setSrc(p2p);
-		p2p__mPackage____source.setTrg(mPackage);
-		isApplicableMatch.getAllContextElements().add(p2p__mPackage____source);
 		p2p__uPackage____target.setSrc(p2p);
 		p2p__uPackage____target.setTrg(uPackage);
 		isApplicableMatch.getAllContextElements().add(p2p__uPackage____target);
-		t2t__uType____target.setName(t2t__uType____target_name_prime);
 		t2t__mType____source.setName(t2t__mType____source_name_prime);
+		t2t__uType____target.setName(t2t__uType____target_name_prime);
+		p2p__mPackage____source.setName(p2p__mPackage____source_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
-		p2p__mPackage____source.setName(p2p__mPackage____source_name_prime);
 		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
-		return new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, isApplicableMatch, t2t__uType____target,
-				t2t__mType____source, mType__mPackage____package, mPackage__mType____ownedElements,
-				p2p__mPackage____source, p2p__uPackage____target };
+		return new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, isApplicableMatch, t2t__mType____source,
+				t2t__uType____target, p2p__mPackage____source, mType__mPackage____package,
+				mPackage__mType____ownedElements, p2p__uPackage____target };
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_2_4_solveCSP_bindingFBBBBBBBB(LinkTypeToPackage _this,
 			IsApplicableMatch isApplicableMatch, Classifier uType, JavaPackage2UmlPackage p2p, ASTNode2Element t2t,
-			AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, uType, p2p, t2t, mType, uPackage,
-				mPackage);
+			AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, uType, p2p, t2t, mType, mPackage,
+				uPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, uPackage, mPackage };
+			return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, mPackage, uPackage };
 		}
 		return null;
 	}
@@ -1612,10 +1602,10 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			LinkTypeToPackage _this, IsApplicableMatch isApplicableMatch, Classifier uType, JavaPackage2UmlPackage p2p,
-			ASTNode2Element t2t, AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage) {
+			ASTNode2Element t2t, AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage) {
 		Object[] result_pattern_LinkTypeToPackage_2_4_solveCSP_binding = pattern_LinkTypeToPackage_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, uType, p2p, t2t, mType, uPackage, mPackage);
+				_this, isApplicableMatch, uType, p2p, t2t, mType, mPackage, uPackage);
 		if (result_pattern_LinkTypeToPackage_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkTypeToPackage_2_4_solveCSP_binding[0];
 
@@ -1623,7 +1613,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 					csp);
 			if (result_pattern_LinkTypeToPackage_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, uPackage, mPackage };
+				return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, mPackage, uPackage };
 			}
 		}
 		return null;
@@ -1704,21 +1694,15 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		return new Object[] { match, uType, uPackage };
 	}
 
-	public static final Object[] pattern_LinkTypeToPackage_10_4_collectelementstobetranslated_greenBBBFF(Match match,
+	public static final Object[] pattern_LinkTypeToPackage_10_4_collectelementstobetranslated_greenBBBF(Match match,
 			Classifier uType, org.eclipse.uml2.uml.Package uPackage) {
-		EMoflonEdge uType__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uPackage__uType____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String uType__uPackage____package_name_prime = "package";
-		String uPackage__uType____ownedType_name_prime = "ownedType";
-		uType__uPackage____package.setSrc(uType);
-		uType__uPackage____package.setTrg(uPackage);
-		match.getToBeTranslatedEdges().add(uType__uPackage____package);
-		uPackage__uType____ownedType.setSrc(uPackage);
-		uPackage__uType____ownedType.setTrg(uType);
-		match.getToBeTranslatedEdges().add(uPackage__uType____ownedType);
-		uType__uPackage____package.setName(uType__uPackage____package_name_prime);
-		uPackage__uType____ownedType.setName(uPackage__uType____ownedType_name_prime);
-		return new Object[] { match, uType, uPackage, uType__uPackage____package, uPackage__uType____ownedType };
+		EMoflonEdge uPackage__uType____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String uPackage__uType____packagedElement_name_prime = "packagedElement";
+		uPackage__uType____packagedElement.setSrc(uPackage);
+		uPackage__uType____packagedElement.setTrg(uType);
+		match.getToBeTranslatedEdges().add(uPackage__uType____packagedElement);
+		uPackage__uType____packagedElement.setName(uPackage__uType____packagedElement_name_prime);
+		return new Object[] { match, uType, uPackage, uPackage__uType____packagedElement };
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_10_5_collectcontextelements_blackBBB(Match match,
@@ -1755,14 +1739,14 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		EObject _localVariable_1 = isApplicableMatch.getObject("p2p");
 		EObject _localVariable_2 = isApplicableMatch.getObject("t2t");
 		EObject _localVariable_3 = isApplicableMatch.getObject("mType");
-		EObject _localVariable_4 = isApplicableMatch.getObject("uPackage");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mPackage");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mPackage");
+		EObject _localVariable_5 = isApplicableMatch.getObject("uPackage");
 		EObject tmpUType = _localVariable_0;
 		EObject tmpP2p = _localVariable_1;
 		EObject tmpT2t = _localVariable_2;
 		EObject tmpMType = _localVariable_3;
-		EObject tmpUPackage = _localVariable_4;
-		EObject tmpMPackage = _localVariable_5;
+		EObject tmpMPackage = _localVariable_4;
+		EObject tmpUPackage = _localVariable_5;
 		if (tmpUType instanceof Classifier) {
 			Classifier uType = (Classifier) tmpUType;
 			if (tmpP2p instanceof JavaPackage2UmlPackage) {
@@ -1771,11 +1755,11 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 					ASTNode2Element t2t = (ASTNode2Element) tmpT2t;
 					if (tmpMType instanceof AbstractTypeDeclaration) {
 						AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-						if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-							org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-							if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
-								org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
-								return new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, isApplicableMatch };
+						if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
+							org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+							if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+								org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+								return new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, isApplicableMatch };
 							}
 						}
 					}
@@ -1787,12 +1771,12 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_11_1_performtransformation_blackBBBBBBFBB(Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage, LinkTypeToPackage _this,
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage, LinkTypeToPackage _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, csp, _this, isApplicableMatch };
+				return new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1807,15 +1791,15 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result_pattern_LinkTypeToPackage_11_1_performtransformation_binding[1];
 			ASTNode2Element t2t = (ASTNode2Element) result_pattern_LinkTypeToPackage_11_1_performtransformation_binding[2];
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_LinkTypeToPackage_11_1_performtransformation_binding[3];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_LinkTypeToPackage_11_1_performtransformation_binding[4];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_LinkTypeToPackage_11_1_performtransformation_binding[5];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_LinkTypeToPackage_11_1_performtransformation_binding[4];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_LinkTypeToPackage_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_LinkTypeToPackage_11_1_performtransformation_black = pattern_LinkTypeToPackage_11_1_performtransformation_blackBBBBBBFBB(
-					uType, p2p, t2t, mType, uPackage, mPackage, _this, isApplicableMatch);
+					uType, p2p, t2t, mType, mPackage, uPackage, _this, isApplicableMatch);
 			if (result_pattern_LinkTypeToPackage_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_LinkTypeToPackage_11_1_performtransformation_black[6];
 
-				return new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, csp, _this, isApplicableMatch };
+				return new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1833,8 +1817,8 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject uType, EObject p2p, EObject t2t, EObject mType, EObject uPackage,
-			EObject mPackage) {
+			PerformRuleResult ruleresult, EObject uType, EObject p2p, EObject t2t, EObject mType, EObject mPackage,
+			EObject uPackage) {
 		if (!p2p.equals(uType)) {
 			if (!p2p.equals(t2t)) {
 				if (!p2p.equals(uPackage)) {
@@ -1844,14 +1828,14 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 								if (!mType.equals(p2p)) {
 									if (!mType.equals(t2t)) {
 										if (!mType.equals(uPackage)) {
-											if (!uPackage.equals(uType)) {
-												if (!mPackage.equals(uType)) {
-													if (!mPackage.equals(p2p)) {
-														if (!mPackage.equals(t2t)) {
-															if (!mPackage.equals(mType)) {
-																if (!mPackage.equals(uPackage)) {
+											if (!mPackage.equals(uType)) {
+												if (!mPackage.equals(p2p)) {
+													if (!mPackage.equals(t2t)) {
+														if (!mPackage.equals(mType)) {
+															if (!mPackage.equals(uPackage)) {
+																if (!uPackage.equals(uType)) {
 																	return new Object[] { ruleresult, uType, p2p, t2t,
-																			mType, uPackage, mPackage };
+																			mType, mPackage, uPackage };
 																}
 															}
 														}
@@ -1870,42 +1854,36 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		return null;
 	}
 
-	public static final Object[] pattern_LinkTypeToPackage_11_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject uType, EObject mType, EObject uPackage, EObject mPackage) {
-		EMoflonEdge uType__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uPackage__uType____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+	public static final Object[] pattern_LinkTypeToPackage_11_3_bookkeepingforedges_greenBBBBBFFF(
+			PerformRuleResult ruleresult, EObject uType, EObject mType, EObject mPackage, EObject uPackage) {
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__uType____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "LinkTypeToPackage";
-		String uType__uPackage____package_name_prime = "package";
-		String uPackage__uType____ownedType_name_prime = "ownedType";
 		String mType__mPackage____package_name_prime = "package";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
-		uType__uPackage____package.setSrc(uType);
-		uType__uPackage____package.setTrg(uPackage);
-		ruleresult.getTranslatedEdges().add(uType__uPackage____package);
-		uPackage__uType____ownedType.setSrc(uPackage);
-		uPackage__uType____ownedType.setTrg(uType);
-		ruleresult.getTranslatedEdges().add(uPackage__uType____ownedType);
+		String uPackage__uType____packagedElement_name_prime = "packagedElement";
 		mType__mPackage____package.setSrc(mType);
 		mType__mPackage____package.setTrg(mPackage);
 		ruleresult.getCreatedEdges().add(mType__mPackage____package);
 		mPackage__mType____ownedElements.setSrc(mPackage);
 		mPackage__mType____ownedElements.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mPackage__mType____ownedElements);
+		uPackage__uType____packagedElement.setSrc(uPackage);
+		uPackage__uType____packagedElement.setTrg(uType);
+		ruleresult.getTranslatedEdges().add(uPackage__uType____packagedElement);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		uType__uPackage____package.setName(uType__uPackage____package_name_prime);
-		uPackage__uType____ownedType.setName(uPackage__uType____ownedType_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
-		return new Object[] { ruleresult, uType, mType, uPackage, mPackage, uType__uPackage____package,
-				uPackage__uType____ownedType, mType__mPackage____package, mPackage__mType____ownedElements };
+		uPackage__uType____packagedElement.setName(uPackage__uType____packagedElement_name_prime);
+		return new Object[] { ruleresult, uType, mType, mPackage, uPackage, mType__mPackage____package,
+				mPackage__mType____ownedElements, uPackage__uType____packagedElement };
 	}
 
 	public static final void pattern_LinkTypeToPackage_11_5_registerobjects_expressionBBBBBBBB(LinkTypeToPackage _this,
-			PerformRuleResult ruleresult, EObject uType, EObject p2p, EObject t2t, EObject mType, EObject uPackage,
-			EObject mPackage) {
-		_this.registerObjects_BWD(ruleresult, uType, p2p, t2t, mType, uPackage, mPackage);
+			PerformRuleResult ruleresult, EObject uType, EObject p2p, EObject t2t, EObject mType, EObject mPackage,
+			EObject uPackage) {
+		_this.registerObjects_BWD(ruleresult, uType, p2p, t2t, mType, mPackage, uPackage);
 
 	}
 
@@ -1979,7 +1957,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkTypeToPackage_12_2_corematch_blackBFFFBFB(Classifier uType,
+	public static final Iterable<Object[]> pattern_LinkTypeToPackage_12_2_corematch_blackBFFFFBB(Classifier uType,
 			org.eclipse.uml2.uml.Package uPackage, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element t2t : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uType,
@@ -1991,7 +1969,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 						.getOppositeReferenceTyped(uPackage, JavaPackage2UmlPackage.class, "target")) {
 					org.eclipse.modisco.java.Package mPackage = p2p.getSource();
 					if (mPackage != null) {
-						_result.add(new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, match });
+						_result.add(new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, match });
 					}
 
 				}
@@ -2003,14 +1981,14 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Iterable<Object[]> pattern_LinkTypeToPackage_12_3_findcontext_blackBBBBBB(Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage) {
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (uPackage.equals(uType.getPackage())) {
+		if (mType.equals(t2t.getSource())) {
 			if (uType.equals(t2t.getTarget())) {
-				if (mType.equals(t2t.getSource())) {
-					if (mPackage.equals(p2p.getSource())) {
-						if (uPackage.equals(p2p.getTarget())) {
-							_result.add(new Object[] { uType, p2p, t2t, mType, uPackage, mPackage });
+				if (mPackage.equals(p2p.getSource())) {
+					if (uPackage.equals(p2p.getTarget())) {
+						if (uPackage.getPackagedElements().contains(uType)) {
+							_result.add(new Object[] { uType, p2p, t2t, mType, mPackage, uPackage });
 						}
 					}
 				}
@@ -2019,66 +1997,60 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkTypeToPackage_12_3_findcontext_greenBBBBBBFFFFFFF(Classifier uType,
+	public static final Object[] pattern_LinkTypeToPackage_12_3_findcontext_greenBBBBBBFFFFFF(Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage) {
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge uType__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uPackage__uType____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge t2t__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge t2t__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge t2t__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2p__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2p__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String uType__uPackage____package_name_prime = "package";
-		String uPackage__uType____ownedType_name_prime = "ownedType";
-		String t2t__uType____target_name_prime = "target";
+		EMoflonEdge uPackage__uType____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String t2t__mType____source_name_prime = "source";
+		String t2t__uType____target_name_prime = "target";
 		String p2p__mPackage____source_name_prime = "source";
 		String p2p__uPackage____target_name_prime = "target";
+		String uPackage__uType____packagedElement_name_prime = "packagedElement";
 		isApplicableMatch.getAllContextElements().add(uType);
 		isApplicableMatch.getAllContextElements().add(p2p);
 		isApplicableMatch.getAllContextElements().add(t2t);
 		isApplicableMatch.getAllContextElements().add(mType);
-		isApplicableMatch.getAllContextElements().add(uPackage);
 		isApplicableMatch.getAllContextElements().add(mPackage);
-		uType__uPackage____package.setSrc(uType);
-		uType__uPackage____package.setTrg(uPackage);
-		isApplicableMatch.getAllContextElements().add(uType__uPackage____package);
-		uPackage__uType____ownedType.setSrc(uPackage);
-		uPackage__uType____ownedType.setTrg(uType);
-		isApplicableMatch.getAllContextElements().add(uPackage__uType____ownedType);
-		t2t__uType____target.setSrc(t2t);
-		t2t__uType____target.setTrg(uType);
-		isApplicableMatch.getAllContextElements().add(t2t__uType____target);
+		isApplicableMatch.getAllContextElements().add(uPackage);
 		t2t__mType____source.setSrc(t2t);
 		t2t__mType____source.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(t2t__mType____source);
+		t2t__uType____target.setSrc(t2t);
+		t2t__uType____target.setTrg(uType);
+		isApplicableMatch.getAllContextElements().add(t2t__uType____target);
 		p2p__mPackage____source.setSrc(p2p);
 		p2p__mPackage____source.setTrg(mPackage);
 		isApplicableMatch.getAllContextElements().add(p2p__mPackage____source);
 		p2p__uPackage____target.setSrc(p2p);
 		p2p__uPackage____target.setTrg(uPackage);
 		isApplicableMatch.getAllContextElements().add(p2p__uPackage____target);
-		uType__uPackage____package.setName(uType__uPackage____package_name_prime);
-		uPackage__uType____ownedType.setName(uPackage__uType____ownedType_name_prime);
-		t2t__uType____target.setName(t2t__uType____target_name_prime);
+		uPackage__uType____packagedElement.setSrc(uPackage);
+		uPackage__uType____packagedElement.setTrg(uType);
+		isApplicableMatch.getAllContextElements().add(uPackage__uType____packagedElement);
 		t2t__mType____source.setName(t2t__mType____source_name_prime);
+		t2t__uType____target.setName(t2t__uType____target_name_prime);
 		p2p__mPackage____source.setName(p2p__mPackage____source_name_prime);
 		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
-		return new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, isApplicableMatch, uType__uPackage____package,
-				uPackage__uType____ownedType, t2t__uType____target, t2t__mType____source, p2p__mPackage____source,
-				p2p__uPackage____target };
+		uPackage__uType____packagedElement.setName(uPackage__uType____packagedElement_name_prime);
+		return new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, isApplicableMatch, t2t__mType____source,
+				t2t__uType____target, p2p__mPackage____source, p2p__uPackage____target,
+				uPackage__uType____packagedElement };
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_12_4_solveCSP_bindingFBBBBBBBB(LinkTypeToPackage _this,
 			IsApplicableMatch isApplicableMatch, Classifier uType, JavaPackage2UmlPackage p2p, ASTNode2Element t2t,
-			AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, uType, p2p, t2t, mType, uPackage,
-				mPackage);
+			AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, uType, p2p, t2t, mType, mPackage,
+				uPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, uPackage, mPackage };
+			return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, mPackage, uPackage };
 		}
 		return null;
 	}
@@ -2089,10 +2061,10 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			LinkTypeToPackage _this, IsApplicableMatch isApplicableMatch, Classifier uType, JavaPackage2UmlPackage p2p,
-			ASTNode2Element t2t, AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage) {
+			ASTNode2Element t2t, AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage) {
 		Object[] result_pattern_LinkTypeToPackage_12_4_solveCSP_binding = pattern_LinkTypeToPackage_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, uType, p2p, t2t, mType, uPackage, mPackage);
+				_this, isApplicableMatch, uType, p2p, t2t, mType, mPackage, uPackage);
 		if (result_pattern_LinkTypeToPackage_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkTypeToPackage_12_4_solveCSP_binding[0];
 
@@ -2100,7 +2072,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 					csp);
 			if (result_pattern_LinkTypeToPackage_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, uPackage, mPackage };
+				return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, mPackage, uPackage };
 			}
 		}
 		return null;
@@ -2188,16 +2160,16 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	}
 
 	public static final Iterable<Object[]> pattern_LinkTypeToPackage_20_2_testcorematchandDECs_blackFFB(
-			EMoflonEdge _edge_package) {
+			EMoflonEdge _edge_packagedElement) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpUType = _edge_package.getSrc();
-		if (tmpUType instanceof Classifier) {
-			Classifier uType = (Classifier) tmpUType;
-			EObject tmpUPackage = _edge_package.getTrg();
-			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-				if (uPackage.equals(uType.getPackage())) {
-					_result.add(new Object[] { uType, uPackage, _edge_package });
+		EObject tmpUPackage = _edge_packagedElement.getSrc();
+		if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+			EObject tmpUType = _edge_packagedElement.getTrg();
+			if (tmpUType instanceof Classifier) {
+				Classifier uType = (Classifier) tmpUType;
+				if (uPackage.getPackagedElements().contains(uType)) {
+					_result.add(new Object[] { uType, uPackage, _edge_packagedElement });
 				}
 			}
 
@@ -2380,21 +2352,21 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 			Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("uType");
 		EObject _localVariable_1 = sourceMatch.getObject("mType");
-		EObject _localVariable_2 = targetMatch.getObject("uPackage");
-		EObject _localVariable_3 = sourceMatch.getObject("mPackage");
+		EObject _localVariable_2 = sourceMatch.getObject("mPackage");
+		EObject _localVariable_3 = targetMatch.getObject("uPackage");
 		EObject tmpUType = _localVariable_0;
 		EObject tmpMType = _localVariable_1;
-		EObject tmpUPackage = _localVariable_2;
-		EObject tmpMPackage = _localVariable_3;
+		EObject tmpMPackage = _localVariable_2;
+		EObject tmpUPackage = _localVariable_3;
 		if (tmpUType instanceof Classifier) {
 			Classifier uType = (Classifier) tmpUType;
 			if (tmpMType instanceof AbstractTypeDeclaration) {
 				AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-				if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-					org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-					if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
-						org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
-						return new Object[] { uType, mType, uPackage, mPackage, targetMatch, sourceMatch };
+				if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
+					org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+					if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+						org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+						return new Object[] { uType, mType, mPackage, uPackage, targetMatch, sourceMatch };
 					}
 				}
 			}
@@ -2403,10 +2375,10 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_blackBBBBBB(Classifier uType,
-			AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage, Match sourceMatch, Match targetMatch) {
+			AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { uType, mType, uPackage, mPackage, sourceMatch, targetMatch };
+			return new Object[] { uType, mType, mPackage, uPackage, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2418,27 +2390,27 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 		if (result_pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_binding != null) {
 			Classifier uType = (Classifier) result_pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_binding[0];
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_binding[1];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_binding[2];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_binding[3];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_binding[2];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_black = pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_blackBBBBBB(
-					uType, mType, uPackage, mPackage, sourceMatch, targetMatch);
+					uType, mType, mPackage, uPackage, sourceMatch, targetMatch);
 			if (result_pattern_LinkTypeToPackage_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { uType, mType, uPackage, mPackage, sourceMatch, targetMatch };
+				return new Object[] { uType, mType, mPackage, uPackage, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_24_3_solvecsp_bindingFBBBBBBB(LinkTypeToPackage _this,
-			Classifier uType, AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(uType, mType, uPackage, mPackage, sourceMatch,
+			Classifier uType, AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(uType, mType, mPackage, uPackage, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, uType, mType, uPackage, mPackage, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, uType, mType, mPackage, uPackage, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2449,10 +2421,10 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_24_3_solvecsp_bindingAndBlackFBBBBBBB(
 			LinkTypeToPackage _this, Classifier uType, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage, Match sourceMatch,
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_LinkTypeToPackage_24_3_solvecsp_binding = pattern_LinkTypeToPackage_24_3_solvecsp_bindingFBBBBBBB(
-				_this, uType, mType, uPackage, mPackage, sourceMatch, targetMatch);
+				_this, uType, mType, mPackage, uPackage, sourceMatch, targetMatch);
 		if (result_pattern_LinkTypeToPackage_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkTypeToPackage_24_3_solvecsp_binding[0];
 
@@ -2460,7 +2432,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 					csp);
 			if (result_pattern_LinkTypeToPackage_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, uType, mType, uPackage, mPackage, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, uType, mType, mPackage, uPackage, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2473,17 +2445,17 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	}
 
 	public static final Iterable<Object[]> pattern_LinkTypeToPackage_24_5_matchcorrcontext_blackBFFBBBBB(
-			Classifier uType, AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage, Match sourceMatch, Match targetMatch) {
+			Classifier uType, AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ASTNode2Element t2t : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uType,
-					ASTNode2Element.class, "target")) {
-				if (mType.equals(t2t.getSource())) {
+			for (ASTNode2Element t2t : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(mType,
+					ASTNode2Element.class, "source")) {
+				if (uType.equals(t2t.getTarget())) {
 					for (JavaPackage2UmlPackage p2p : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(mPackage, JavaPackage2UmlPackage.class, "source")) {
 						if (uPackage.equals(p2p.getTarget())) {
-							_result.add(new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, sourceMatch,
+							_result.add(new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, sourceMatch,
 									targetMatch });
 						}
 					}
@@ -2506,9 +2478,9 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_24_6_createcorrespondence_blackBBBBB(Classifier uType,
-			AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage, CCMatch ccMatch) {
-		return new Object[] { uType, mType, uPackage, mPackage, ccMatch };
+			AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage, CCMatch ccMatch) {
+		return new Object[] { uType, mType, mPackage, uPackage, ccMatch };
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_24_7_addtoreturnedresult_blackBB(
@@ -2552,7 +2524,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_28_1_matchtggpattern_blackBB(Classifier uType,
 			org.eclipse.uml2.uml.Package uPackage) {
-		if (uPackage.equals(uType.getPackage())) {
+		if (uPackage.getPackagedElements().contains(uType)) {
 			return new Object[] { uType, uPackage };
 		}
 		return null;
@@ -2692,13 +2664,13 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_29_3_solveCSP_bindingFBBBBBBBBB(LinkTypeToPackage _this,
 			IsApplicableMatch isApplicableMatch, Classifier uType, JavaPackage2UmlPackage p2p, ASTNode2Element t2t,
-			AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, uType, p2p, t2t, mType, uPackage,
-				mPackage, ruleResult);
+			AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, uType, p2p, t2t, mType, mPackage,
+				uPackage, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, uPackage, mPackage,
+			return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, mPackage, uPackage,
 					ruleResult };
 		}
 		return null;
@@ -2710,10 +2682,10 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
 			LinkTypeToPackage _this, IsApplicableMatch isApplicableMatch, Classifier uType, JavaPackage2UmlPackage p2p,
-			ASTNode2Element t2t, AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage, ModelgeneratorRuleResult ruleResult) {
+			ASTNode2Element t2t, AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_LinkTypeToPackage_29_3_solveCSP_binding = pattern_LinkTypeToPackage_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, uType, p2p, t2t, mType, uPackage, mPackage, ruleResult);
+				_this, isApplicableMatch, uType, p2p, t2t, mType, mPackage, uPackage, ruleResult);
 		if (result_pattern_LinkTypeToPackage_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkTypeToPackage_29_3_solveCSP_binding[0];
 
@@ -2721,7 +2693,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 					csp);
 			if (result_pattern_LinkTypeToPackage_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, uPackage, mPackage,
+				return new Object[] { csp, _this, isApplicableMatch, uType, p2p, t2t, mType, mPackage, uPackage,
 						ruleResult };
 			}
 		}
@@ -2737,28 +2709,28 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 
 	public static final Object[] pattern_LinkTypeToPackage_29_5_checknacs_blackBBBBBB(Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage) {
-		return new Object[] { uType, p2p, t2t, mType, uPackage, mPackage };
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage) {
+		return new Object[] { uType, p2p, t2t, mType, mPackage, uPackage };
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_29_6_perform_blackBBBBBBB(Classifier uType,
 			JavaPackage2UmlPackage p2p, ASTNode2Element t2t, AbstractTypeDeclaration mType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Package uPackage,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { uType, p2p, t2t, mType, uPackage, mPackage, ruleResult };
+		return new Object[] { uType, p2p, t2t, mType, mPackage, uPackage, ruleResult };
 	}
 
 	public static final Object[] pattern_LinkTypeToPackage_29_6_perform_greenBBBBB(Classifier uType,
-			AbstractTypeDeclaration mType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package mPackage, ModelgeneratorRuleResult ruleResult) {
-		uType.setPackage(uPackage);
+			AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
+			org.eclipse.uml2.uml.Package uPackage, ModelgeneratorRuleResult ruleResult) {
 		mType.setPackage(mPackage);
+		uPackage.getPackagedElements().add(uType);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { uType, mType, uPackage, mPackage, ruleResult };
+		return new Object[] { uType, mType, mPackage, uPackage, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_LinkTypeToPackage_29_7_expressionFB(

@@ -750,7 +750,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_125(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_128(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = EnumDecWithModifier2EnumImpl
 				.pattern_EnumDecWithModifier2Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -826,13 +826,13 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -890,13 +890,13 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1256,8 +1256,8 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 			return checkTypes_BWD((Match) arguments.get(0));
 		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_1__ENUMERATION:
 			return isAppropriate_BWD_Enumeration_1((Enumeration) arguments.get(0));
-		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_125__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_125((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_128__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_128((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

@@ -60,182 +60,7 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass mSyntethicMethodToTSyntethicMethodEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass fieldAccessToTAccessEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass modifierToTFieldEntityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass modifierToTMethodEntityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mAbstractFlowElementToTAbstractFlowElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass staticTypeToAccessStaticTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass unresolvedTypeDeclarationToTClassEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass lineCommentToTTextAnnotationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass packageToTPackageEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass typeParameterToTClassEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass modifierToTClassEntityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mEntryToTParameterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mMethodNameToTMethodEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass modelToTypeGraphEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mSignatureToTSignatureEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass annotationMemberValuePairToTAnnotationValueEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass literalToTNodeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass anonymousClassDeclarationToTClassEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass annotationToTAnnotationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mSingleVariableAccessToTAccessEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mFlowToTFlowEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass astNodeToTAnnotatableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass modifierToAbstractTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass mFieldNameToTFieldEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass typeToTAbstractTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass abstractMethodInvocationToTAccessEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,6 +74,41 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass annotationMemberValuePairToTAnnotationValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass typeToTAbstractTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modifierToTFieldEntityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modifierToAbstractTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractMethodInvocationToTAccessEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass mModifierToTModifierEClass = null;
 
 	/**
@@ -256,7 +116,147 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass mMethodNameToTMethodEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mFlowToTFlowEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mSyntethicMethodToTSyntethicMethodEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass anonymousClassDeclarationToTClassEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass unresolvedTypeDeclarationToTClassEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelToTypeGraphEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modifierToTClassEntityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass literalToTNodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass mDefinitionToTMemberEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mAbstractFlowElementToTAbstractFlowElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mEntryToTParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mSingleVariableAccessToTAccessEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass lineCommentToTTextAnnotationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass astNodeToTAnnotatableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fieldAccessToTAccessEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass packageToTPackageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mSignatureToTSignatureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass typeParameterToTClassEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modifierToTMethodEntityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass staticTypeToAccessStaticTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass annotationToTAnnotationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -341,12 +341,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMSyntethicMethodToTSyntethicMethod() {
-		if (mSyntethicMethodToTSyntethicMethodEClass == null) {
-			mSyntethicMethodToTSyntethicMethodEClass = (EClass) EPackage.Registry.INSTANCE
-					.getEPackage(PmPackage.eNS_URI).getEClassifiers().get(0);
+	public EClass getMFieldNameToTField() {
+		if (mFieldNameToTFieldEClass == null) {
+			mFieldNameToTFieldEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+					.getEClassifiers().get(0);
 		}
-		return mSyntethicMethodToTSyntethicMethodEClass;
+		return mFieldNameToTFieldEClass;
 	}
 
 	/**
@@ -355,8 +355,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMSyntethicMethodToTSyntethicMethod_Source() {
-		return (EReference) getMSyntethicMethodToTSyntethicMethod().getEStructuralFeatures().get(0);
+	public EReference getMFieldNameToTField_Source() {
+		return (EReference) getMFieldNameToTField().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -365,8 +365,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMSyntethicMethodToTSyntethicMethod_Target() {
-		return (EReference) getMSyntethicMethodToTSyntethicMethod().getEStructuralFeatures().get(1);
+	public EReference getMFieldNameToTField_Target() {
+		return (EReference) getMFieldNameToTField().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -375,12 +375,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getFieldAccessToTAccess() {
-		if (fieldAccessToTAccessEClass == null) {
-			fieldAccessToTAccessEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
-					.getEClassifiers().get(1);
+	public EClass getVariableDeclarationFragmentToTFieldDefinition() {
+		if (variableDeclarationFragmentToTFieldDefinitionEClass == null) {
+			variableDeclarationFragmentToTFieldDefinitionEClass = (EClass) EPackage.Registry.INSTANCE
+					.getEPackage(PmPackage.eNS_URI).getEClassifiers().get(1);
 		}
-		return fieldAccessToTAccessEClass;
+		return variableDeclarationFragmentToTFieldDefinitionEClass;
 	}
 
 	/**
@@ -389,8 +389,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getFieldAccessToTAccess_Source() {
-		return (EReference) getFieldAccessToTAccess().getEStructuralFeatures().get(0);
+	public EReference getVariableDeclarationFragmentToTFieldDefinition_Source() {
+		return (EReference) getVariableDeclarationFragmentToTFieldDefinition().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -399,8 +399,76 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getFieldAccessToTAccess_Target() {
-		return (EReference) getFieldAccessToTAccess().getEStructuralFeatures().get(1);
+	public EReference getVariableDeclarationFragmentToTFieldDefinition_Target() {
+		return (EReference) getVariableDeclarationFragmentToTFieldDefinition().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAnnotationMemberValuePairToTAnnotationValue() {
+		if (annotationMemberValuePairToTAnnotationValueEClass == null) {
+			annotationMemberValuePairToTAnnotationValueEClass = (EClass) EPackage.Registry.INSTANCE
+					.getEPackage(PmPackage.eNS_URI).getEClassifiers().get(2);
+		}
+		return annotationMemberValuePairToTAnnotationValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAnnotationMemberValuePairToTAnnotationValue_Source() {
+		return (EReference) getAnnotationMemberValuePairToTAnnotationValue().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAnnotationMemberValuePairToTAnnotationValue_Target() {
+		return (EReference) getAnnotationMemberValuePairToTAnnotationValue().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTypeToTAbstractType() {
+		if (typeToTAbstractTypeEClass == null) {
+			typeToTAbstractTypeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+					.getEClassifiers().get(3);
+		}
+		return typeToTAbstractTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTypeToTAbstractType_Source() {
+		return (EReference) getTypeToTAbstractType().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTypeToTAbstractType_Target() {
+		return (EReference) getTypeToTAbstractType().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -412,7 +480,7 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	public EClass getModifierToTFieldEntity() {
 		if (modifierToTFieldEntityEClass == null) {
 			modifierToTFieldEntityEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
-					.getEClassifiers().get(2);
+					.getEClassifiers().get(4);
 		}
 		return modifierToTFieldEntityEClass;
 	}
@@ -443,80 +511,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getModifierToTMethodEntity() {
-		if (modifierToTMethodEntityEClass == null) {
-			modifierToTMethodEntityEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
-					.getEClassifiers().get(3);
-		}
-		return modifierToTMethodEntityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getModifierToTMethodEntity_Source() {
-		return (EReference) getModifierToTMethodEntity().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getModifierToTMethodEntity_Target() {
-		return (EReference) getModifierToTMethodEntity().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getMAbstractFlowElementToTAbstractFlowElement() {
-		if (mAbstractFlowElementToTAbstractFlowElementEClass == null) {
-			mAbstractFlowElementToTAbstractFlowElementEClass = (EClass) EPackage.Registry.INSTANCE
-					.getEPackage(PmPackage.eNS_URI).getEClassifiers().get(4);
-		}
-		return mAbstractFlowElementToTAbstractFlowElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMAbstractFlowElementToTAbstractFlowElement_Source() {
-		return (EReference) getMAbstractFlowElementToTAbstractFlowElement().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMAbstractFlowElementToTAbstractFlowElement_Target() {
-		return (EReference) getMAbstractFlowElementToTAbstractFlowElement().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getStaticTypeToAccessStaticType() {
-		if (staticTypeToAccessStaticTypeEClass == null) {
-			staticTypeToAccessStaticTypeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getModifierToAbstractType() {
+		if (modifierToAbstractTypeEClass == null) {
+			modifierToAbstractTypeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(5);
 		}
-		return staticTypeToAccessStaticTypeEClass;
+		return modifierToAbstractTypeEClass;
 	}
 
 	/**
@@ -525,8 +525,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getStaticTypeToAccessStaticType_Source() {
-		return (EReference) getStaticTypeToAccessStaticType().getEStructuralFeatures().get(0);
+	public EReference getModifierToAbstractType_Source() {
+		return (EReference) getModifierToAbstractType().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -535,8 +535,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getStaticTypeToAccessStaticType_Target() {
-		return (EReference) getStaticTypeToAccessStaticType().getEStructuralFeatures().get(1);
+	public EReference getModifierToAbstractType_Target() {
+		return (EReference) getModifierToAbstractType().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -545,12 +545,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getUnresolvedTypeDeclarationToTClass() {
-		if (unresolvedTypeDeclarationToTClassEClass == null) {
-			unresolvedTypeDeclarationToTClassEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getAbstractMethodInvocationToTAccess() {
+		if (abstractMethodInvocationToTAccessEClass == null) {
+			abstractMethodInvocationToTAccessEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(6);
 		}
-		return unresolvedTypeDeclarationToTClassEClass;
+		return abstractMethodInvocationToTAccessEClass;
 	}
 
 	/**
@@ -559,8 +559,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getUnresolvedTypeDeclarationToTClass_Source() {
-		return (EReference) getUnresolvedTypeDeclarationToTClass().getEStructuralFeatures().get(0);
+	public EReference getAbstractMethodInvocationToTAccess_Source() {
+		return (EReference) getAbstractMethodInvocationToTAccess().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -569,8 +569,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getUnresolvedTypeDeclarationToTClass_Target() {
-		return (EReference) getUnresolvedTypeDeclarationToTClass().getEStructuralFeatures().get(1);
+	public EReference getAbstractMethodInvocationToTAccess_Target() {
+		return (EReference) getAbstractMethodInvocationToTAccess().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -579,12 +579,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getLineCommentToTTextAnnotation() {
-		if (lineCommentToTTextAnnotationEClass == null) {
-			lineCommentToTTextAnnotationEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getMModifierToTModifier() {
+		if (mModifierToTModifierEClass == null) {
+			mModifierToTModifierEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(7);
 		}
-		return lineCommentToTTextAnnotationEClass;
+		return mModifierToTModifierEClass;
 	}
 
 	/**
@@ -593,8 +593,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getLineCommentToTTextAnnotation_Source() {
-		return (EReference) getLineCommentToTTextAnnotation().getEStructuralFeatures().get(0);
+	public EReference getMModifierToTModifier_Source() {
+		return (EReference) getMModifierToTModifier().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -603,144 +603,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getLineCommentToTTextAnnotation_Target() {
-		return (EReference) getLineCommentToTTextAnnotation().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getPackageToTPackage() {
-		if (packageToTPackageEClass == null) {
-			packageToTPackageEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
-					.getEClassifiers().get(8);
-		}
-		return packageToTPackageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPackageToTPackage_Source() {
-		return (EReference) getPackageToTPackage().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPackageToTPackage_Target() {
-		return (EReference) getPackageToTPackage().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getTypeParameterToTClass() {
-		if (typeParameterToTClassEClass == null) {
-			typeParameterToTClassEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
-					.getEClassifiers().get(9);
-		}
-		return typeParameterToTClassEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTypeParameterToTClass_Source() {
-		return (EReference) getTypeParameterToTClass().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTypeParameterToTClass_Target() {
-		return (EReference) getTypeParameterToTClass().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getModifierToTClassEntity() {
-		if (modifierToTClassEntityEClass == null) {
-			modifierToTClassEntityEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
-					.getEClassifiers().get(10);
-		}
-		return modifierToTClassEntityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getModifierToTClassEntity_Source() {
-		return (EReference) getModifierToTClassEntity().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getModifierToTClassEntity_Target() {
-		return (EReference) getModifierToTClassEntity().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getMEntryToTParameter() {
-		if (mEntryToTParameterEClass == null) {
-			mEntryToTParameterEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
-					.getEClassifiers().get(11);
-		}
-		return mEntryToTParameterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMEntryToTParameter_Source() {
-		return (EReference) getMEntryToTParameter().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMEntryToTParameter_Target() {
-		return (EReference) getMEntryToTParameter().getEStructuralFeatures().get(1);
+	public EReference getMModifierToTModifier_Target() {
+		return (EReference) getMModifierToTModifier().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -752,7 +616,7 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	public EClass getMMethodNameToTMethod() {
 		if (mMethodNameToTMethodEClass == null) {
 			mMethodNameToTMethodEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
-					.getEClassifiers().get(12);
+					.getEClassifiers().get(8);
 		}
 		return mMethodNameToTMethodEClass;
 	}
@@ -775,6 +639,142 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	@Override
 	public EReference getMMethodNameToTMethod_Target() {
 		return (EReference) getMMethodNameToTMethod().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMFlowToTFlow() {
+		if (mFlowToTFlowEClass == null) {
+			mFlowToTFlowEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI).getEClassifiers()
+					.get(9);
+		}
+		return mFlowToTFlowEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMFlowToTFlow_Source() {
+		return (EReference) getMFlowToTFlow().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMFlowToTFlow_Target() {
+		return (EReference) getMFlowToTFlow().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMSyntethicMethodToTSyntethicMethod() {
+		if (mSyntethicMethodToTSyntethicMethodEClass == null) {
+			mSyntethicMethodToTSyntethicMethodEClass = (EClass) EPackage.Registry.INSTANCE
+					.getEPackage(PmPackage.eNS_URI).getEClassifiers().get(10);
+		}
+		return mSyntethicMethodToTSyntethicMethodEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMSyntethicMethodToTSyntethicMethod_Source() {
+		return (EReference) getMSyntethicMethodToTSyntethicMethod().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMSyntethicMethodToTSyntethicMethod_Target() {
+		return (EReference) getMSyntethicMethodToTSyntethicMethod().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAnonymousClassDeclarationToTClass() {
+		if (anonymousClassDeclarationToTClassEClass == null) {
+			anonymousClassDeclarationToTClassEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+					.getEClassifiers().get(11);
+		}
+		return anonymousClassDeclarationToTClassEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAnonymousClassDeclarationToTClass_Source() {
+		return (EReference) getAnonymousClassDeclarationToTClass().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAnonymousClassDeclarationToTClass_Target() {
+		return (EReference) getAnonymousClassDeclarationToTClass().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUnresolvedTypeDeclarationToTClass() {
+		if (unresolvedTypeDeclarationToTClassEClass == null) {
+			unresolvedTypeDeclarationToTClassEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+					.getEClassifiers().get(12);
+		}
+		return unresolvedTypeDeclarationToTClassEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUnresolvedTypeDeclarationToTClass_Source() {
+		return (EReference) getUnresolvedTypeDeclarationToTClass().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUnresolvedTypeDeclarationToTClass_Target() {
+		return (EReference) getUnresolvedTypeDeclarationToTClass().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -817,12 +817,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMSignatureToTSignature() {
-		if (mSignatureToTSignatureEClass == null) {
-			mSignatureToTSignatureEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getModifierToTClassEntity() {
+		if (modifierToTClassEntityEClass == null) {
+			modifierToTClassEntityEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(14);
 		}
-		return mSignatureToTSignatureEClass;
+		return modifierToTClassEntityEClass;
 	}
 
 	/**
@@ -831,8 +831,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMSignatureToTSignature_Source() {
-		return (EReference) getMSignatureToTSignature().getEStructuralFeatures().get(0);
+	public EReference getModifierToTClassEntity_Source() {
+		return (EReference) getModifierToTClassEntity().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -841,42 +841,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMSignatureToTSignature_Target() {
-		return (EReference) getMSignatureToTSignature().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAnnotationMemberValuePairToTAnnotationValue() {
-		if (annotationMemberValuePairToTAnnotationValueEClass == null) {
-			annotationMemberValuePairToTAnnotationValueEClass = (EClass) EPackage.Registry.INSTANCE
-					.getEPackage(PmPackage.eNS_URI).getEClassifiers().get(15);
-		}
-		return annotationMemberValuePairToTAnnotationValueEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAnnotationMemberValuePairToTAnnotationValue_Source() {
-		return (EReference) getAnnotationMemberValuePairToTAnnotationValue().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAnnotationMemberValuePairToTAnnotationValue_Target() {
-		return (EReference) getAnnotationMemberValuePairToTAnnotationValue().getEStructuralFeatures().get(1);
+	public EReference getModifierToTClassEntity_Target() {
+		return (EReference) getModifierToTClassEntity().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -888,7 +854,7 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	public EClass getLiteralToTNode() {
 		if (literalToTNodeEClass == null) {
 			literalToTNodeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI).getEClassifiers()
-					.get(16);
+					.get(15);
 		}
 		return literalToTNodeEClass;
 	}
@@ -919,12 +885,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getAnonymousClassDeclarationToTClass() {
-		if (anonymousClassDeclarationToTClassEClass == null) {
-			anonymousClassDeclarationToTClassEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
-					.getEClassifiers().get(17);
+	public EClass getMDefinitionToTMember() {
+		if (mDefinitionToTMemberEClass == null) {
+			mDefinitionToTMemberEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+					.getEClassifiers().get(16);
 		}
-		return anonymousClassDeclarationToTClassEClass;
+		return mDefinitionToTMemberEClass;
 	}
 
 	/**
@@ -933,8 +899,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnonymousClassDeclarationToTClass_Source() {
-		return (EReference) getAnonymousClassDeclarationToTClass().getEStructuralFeatures().get(0);
+	public EReference getMDefinitionToTMember_Source() {
+		return (EReference) getMDefinitionToTMember().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -943,8 +909,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnonymousClassDeclarationToTClass_Target() {
-		return (EReference) getAnonymousClassDeclarationToTClass().getEStructuralFeatures().get(1);
+	public EReference getMDefinitionToTMember_Target() {
+		return (EReference) getMDefinitionToTMember().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -953,12 +919,46 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getAnnotationToTAnnotation() {
-		if (annotationToTAnnotationEClass == null) {
-			annotationToTAnnotationEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getMAbstractFlowElementToTAbstractFlowElement() {
+		if (mAbstractFlowElementToTAbstractFlowElementEClass == null) {
+			mAbstractFlowElementToTAbstractFlowElementEClass = (EClass) EPackage.Registry.INSTANCE
+					.getEPackage(PmPackage.eNS_URI).getEClassifiers().get(17);
+		}
+		return mAbstractFlowElementToTAbstractFlowElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMAbstractFlowElementToTAbstractFlowElement_Source() {
+		return (EReference) getMAbstractFlowElementToTAbstractFlowElement().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMAbstractFlowElementToTAbstractFlowElement_Target() {
+		return (EReference) getMAbstractFlowElementToTAbstractFlowElement().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMEntryToTParameter() {
+		if (mEntryToTParameterEClass == null) {
+			mEntryToTParameterEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(18);
 		}
-		return annotationToTAnnotationEClass;
+		return mEntryToTParameterEClass;
 	}
 
 	/**
@@ -967,8 +967,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnnotationToTAnnotation_Source() {
-		return (EReference) getAnnotationToTAnnotation().getEStructuralFeatures().get(0);
+	public EReference getMEntryToTParameter_Source() {
+		return (EReference) getMEntryToTParameter().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -977,8 +977,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnnotationToTAnnotation_Target() {
-		return (EReference) getAnnotationToTAnnotation().getEStructuralFeatures().get(1);
+	public EReference getMEntryToTParameter_Target() {
+		return (EReference) getMEntryToTParameter().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1021,12 +1021,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMFlowToTFlow() {
-		if (mFlowToTFlowEClass == null) {
-			mFlowToTFlowEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI).getEClassifiers()
-					.get(20);
+	public EClass getLineCommentToTTextAnnotation() {
+		if (lineCommentToTTextAnnotationEClass == null) {
+			lineCommentToTTextAnnotationEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+					.getEClassifiers().get(20);
 		}
-		return mFlowToTFlowEClass;
+		return lineCommentToTTextAnnotationEClass;
 	}
 
 	/**
@@ -1035,8 +1035,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMFlowToTFlow_Source() {
-		return (EReference) getMFlowToTFlow().getEStructuralFeatures().get(0);
+	public EReference getLineCommentToTTextAnnotation_Source() {
+		return (EReference) getLineCommentToTTextAnnotation().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1045,8 +1045,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMFlowToTFlow_Target() {
-		return (EReference) getMFlowToTFlow().getEStructuralFeatures().get(1);
+	public EReference getLineCommentToTTextAnnotation_Target() {
+		return (EReference) getLineCommentToTTextAnnotation().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1089,12 +1089,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getModifierToAbstractType() {
-		if (modifierToAbstractTypeEClass == null) {
-			modifierToAbstractTypeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getFieldAccessToTAccess() {
+		if (fieldAccessToTAccessEClass == null) {
+			fieldAccessToTAccessEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(22);
 		}
-		return modifierToAbstractTypeEClass;
+		return fieldAccessToTAccessEClass;
 	}
 
 	/**
@@ -1103,8 +1103,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModifierToAbstractType_Source() {
-		return (EReference) getModifierToAbstractType().getEStructuralFeatures().get(0);
+	public EReference getFieldAccessToTAccess_Source() {
+		return (EReference) getFieldAccessToTAccess().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1113,8 +1113,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModifierToAbstractType_Target() {
-		return (EReference) getModifierToAbstractType().getEStructuralFeatures().get(1);
+	public EReference getFieldAccessToTAccess_Target() {
+		return (EReference) getFieldAccessToTAccess().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1123,12 +1123,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMFieldNameToTField() {
-		if (mFieldNameToTFieldEClass == null) {
-			mFieldNameToTFieldEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getPackageToTPackage() {
+		if (packageToTPackageEClass == null) {
+			packageToTPackageEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(23);
 		}
-		return mFieldNameToTFieldEClass;
+		return packageToTPackageEClass;
 	}
 
 	/**
@@ -1137,8 +1137,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMFieldNameToTField_Source() {
-		return (EReference) getMFieldNameToTField().getEStructuralFeatures().get(0);
+	public EReference getPackageToTPackage_Source() {
+		return (EReference) getPackageToTPackage().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1147,8 +1147,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMFieldNameToTField_Target() {
-		return (EReference) getMFieldNameToTField().getEStructuralFeatures().get(1);
+	public EReference getPackageToTPackage_Target() {
+		return (EReference) getPackageToTPackage().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1157,12 +1157,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getTypeToTAbstractType() {
-		if (typeToTAbstractTypeEClass == null) {
-			typeToTAbstractTypeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getMSignatureToTSignature() {
+		if (mSignatureToTSignatureEClass == null) {
+			mSignatureToTSignatureEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(24);
 		}
-		return typeToTAbstractTypeEClass;
+		return mSignatureToTSignatureEClass;
 	}
 
 	/**
@@ -1171,8 +1171,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTypeToTAbstractType_Source() {
-		return (EReference) getTypeToTAbstractType().getEStructuralFeatures().get(0);
+	public EReference getMSignatureToTSignature_Source() {
+		return (EReference) getMSignatureToTSignature().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1181,8 +1181,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTypeToTAbstractType_Target() {
-		return (EReference) getTypeToTAbstractType().getEStructuralFeatures().get(1);
+	public EReference getMSignatureToTSignature_Target() {
+		return (EReference) getMSignatureToTSignature().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1191,12 +1191,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getAbstractMethodInvocationToTAccess() {
-		if (abstractMethodInvocationToTAccessEClass == null) {
-			abstractMethodInvocationToTAccessEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getTypeParameterToTClass() {
+		if (typeParameterToTClassEClass == null) {
+			typeParameterToTClassEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(25);
 		}
-		return abstractMethodInvocationToTAccessEClass;
+		return typeParameterToTClassEClass;
 	}
 
 	/**
@@ -1205,8 +1205,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAbstractMethodInvocationToTAccess_Source() {
-		return (EReference) getAbstractMethodInvocationToTAccess().getEStructuralFeatures().get(0);
+	public EReference getTypeParameterToTClass_Source() {
+		return (EReference) getTypeParameterToTClass().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1215,8 +1215,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAbstractMethodInvocationToTAccess_Target() {
-		return (EReference) getAbstractMethodInvocationToTAccess().getEStructuralFeatures().get(1);
+	public EReference getTypeParameterToTClass_Target() {
+		return (EReference) getTypeParameterToTClass().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1225,12 +1225,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getVariableDeclarationFragmentToTFieldDefinition() {
-		if (variableDeclarationFragmentToTFieldDefinitionEClass == null) {
-			variableDeclarationFragmentToTFieldDefinitionEClass = (EClass) EPackage.Registry.INSTANCE
-					.getEPackage(PmPackage.eNS_URI).getEClassifiers().get(26);
+	public EClass getModifierToTMethodEntity() {
+		if (modifierToTMethodEntityEClass == null) {
+			modifierToTMethodEntityEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+					.getEClassifiers().get(26);
 		}
-		return variableDeclarationFragmentToTFieldDefinitionEClass;
+		return modifierToTMethodEntityEClass;
 	}
 
 	/**
@@ -1239,8 +1239,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getVariableDeclarationFragmentToTFieldDefinition_Source() {
-		return (EReference) getVariableDeclarationFragmentToTFieldDefinition().getEStructuralFeatures().get(0);
+	public EReference getModifierToTMethodEntity_Source() {
+		return (EReference) getModifierToTMethodEntity().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1249,8 +1249,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getVariableDeclarationFragmentToTFieldDefinition_Target() {
-		return (EReference) getVariableDeclarationFragmentToTFieldDefinition().getEStructuralFeatures().get(1);
+	public EReference getModifierToTMethodEntity_Target() {
+		return (EReference) getModifierToTMethodEntity().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1259,12 +1259,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMModifierToTModifier() {
-		if (mModifierToTModifierEClass == null) {
-			mModifierToTModifierEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getStaticTypeToAccessStaticType() {
+		if (staticTypeToAccessStaticTypeEClass == null) {
+			staticTypeToAccessStaticTypeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(27);
 		}
-		return mModifierToTModifierEClass;
+		return staticTypeToAccessStaticTypeEClass;
 	}
 
 	/**
@@ -1273,8 +1273,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMModifierToTModifier_Source() {
-		return (EReference) getMModifierToTModifier().getEStructuralFeatures().get(0);
+	public EReference getStaticTypeToAccessStaticType_Source() {
+		return (EReference) getStaticTypeToAccessStaticType().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1283,8 +1283,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMModifierToTModifier_Target() {
-		return (EReference) getMModifierToTModifier().getEStructuralFeatures().get(1);
+	public EReference getStaticTypeToAccessStaticType_Target() {
+		return (EReference) getStaticTypeToAccessStaticType().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1293,12 +1293,12 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMDefinitionToTMember() {
-		if (mDefinitionToTMemberEClass == null) {
-			mDefinitionToTMemberEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
+	public EClass getAnnotationToTAnnotation() {
+		if (annotationToTAnnotationEClass == null) {
+			annotationToTAnnotationEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(PmPackage.eNS_URI)
 					.getEClassifiers().get(28);
 		}
-		return mDefinitionToTMemberEClass;
+		return annotationToTAnnotationEClass;
 	}
 
 	/**
@@ -1307,8 +1307,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMDefinitionToTMember_Source() {
-		return (EReference) getMDefinitionToTMember().getEStructuralFeatures().get(0);
+	public EReference getAnnotationToTAnnotation_Source() {
+		return (EReference) getAnnotationToTAnnotation().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1317,8 +1317,8 @@ public class PmPackageImpl extends EPackageImpl implements PmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMDefinitionToTMember_Target() {
-		return (EReference) getMDefinitionToTMember().getEStructuralFeatures().get(1);
+	public EReference getAnnotationToTAnnotation_Target() {
+		return (EReference) getAnnotationToTAnnotation().getEStructuralFeatures().get(1);
 	}
 
 	/**

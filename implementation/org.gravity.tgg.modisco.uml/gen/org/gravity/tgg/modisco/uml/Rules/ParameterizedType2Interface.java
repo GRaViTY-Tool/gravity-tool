@@ -47,9 +47,8 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
-			TypeAccess typeTypeAccess);
+	boolean isAppropriate_FWD(Match match, AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +73,7 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjectsToMatch_FWD(Match match, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess);
 
 	/**
@@ -84,7 +83,7 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isAppropriate_solveCsp_FWD(Match match, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess);
 
 	/**
@@ -103,7 +102,7 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package umlPackage,
 			Interface nonParamElement, ASTNode2Element ne2neNonParam, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			JavaPackage2UmlPackage jp2up, TypeAccess typeTypeAccess);
 
 	/**
@@ -121,8 +120,8 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject umlPackage, EObject nonParamElement,
-			EObject ne2neNonParam, EObject parameterizedClassifier, EObject nonParamType, EObject nonParamPackage,
-			EObject parameterizedType, EObject ne2ne, EObject jp2up, EObject typeTypeAccess);
+			EObject ne2neNonParam, EObject parameterizedClassifier, EObject nonParamType, EObject parameterizedType,
+			EObject nonParamPackage, EObject jp2up, EObject ne2ne, EObject typeTypeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,8 +208,8 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject umlPackage, EObject nonParamElement,
-			EObject ne2neNonParam, EObject parameterizedClassifier, EObject nonParamType, EObject nonParamPackage,
-			EObject parameterizedType, EObject ne2ne, EObject jp2up, EObject typeTypeAccess);
+			EObject ne2neNonParam, EObject parameterizedClassifier, EObject nonParamType, EObject parameterizedType,
+			EObject nonParamPackage, EObject jp2up, EObject ne2ne, EObject typeTypeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +225,7 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_103(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_129(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,7 +233,7 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_111(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_139(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,7 +267,7 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 */
 	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package umlPackage, Interface nonParamElement,
 			Interface parameterizedClassifier, AbstractTypeDeclaration nonParamType,
-			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
 			TypeAccess typeTypeAccess, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -285,8 +284,8 @@ public interface ParameterizedType2Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
-			ParameterizedType parameterizedType, TypeAccess typeTypeAccess);
+	boolean checkDEC_FWD(AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
+			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->

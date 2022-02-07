@@ -105,7 +105,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPG, EObject mModel, EObject mModelToTPG);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModelToTPG, EObject tPG, EObject mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPG, EObject mModel, EObject mModelToTPG);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModelToTPG, EObject tPG, EObject mModel);
 
 	/**
 	 * <!-- begin-user-doc -->

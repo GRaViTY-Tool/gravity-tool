@@ -213,9 +213,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 				ruleresult, tAnnotation, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
 				mFlowElementToTFlowElement, mBodyToTAnnotation, mSignature);
 		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tMethodSignature__tDefinition____definitions = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge mBodyToTAnnotation__tDefinition____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mBodyToTAnnotation__tDefinition____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge tMethodSignature__tDefinition____definitions = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__mDefinition____source = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[15];
@@ -543,9 +543,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 				ruleresult, tAnnotation, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
 				mFlowElementToTFlowElement, mBodyToTAnnotation, mSignature);
 		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tMethodSignature__tDefinition____definitions = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge mBodyToTAnnotation__tDefinition____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mBodyToTAnnotation__tDefinition____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge tMethodSignature__tDefinition____definitions = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__mDefinition____source = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[15];
@@ -764,7 +764,7 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_42(EMoflonEdge _edge_definitions) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_21(EMoflonEdge _edge_definitions) {
 
 		Object[] result1_bindingAndBlack = ConstructorDefinitionImpl
 				.pattern_ConstructorDefinition_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -823,7 +823,7 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_43(EMoflonEdge _edge_mDefinitions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_21(EMoflonEdge _edge_mDefinitions) {
 
 		Object[] result1_bindingAndBlack = ConstructorDefinitionImpl
 				.pattern_ConstructorDefinition_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -891,12 +891,12 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("tDefinition", "upperBound", 1, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tDefinition", "lowerBound", 0, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
 
-		if (!__helper.hasExpectedValue("tDefinition", "lowerBound", 0, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tDefinition", "upperBound", 1, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
@@ -931,12 +931,12 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("tDefinition", "upperBound", 1, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tDefinition", "lowerBound", 0, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
 
-		if (!__helper.hasExpectedValue("tDefinition", "lowerBound", 0, ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tDefinition", "upperBound", 1, ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
@@ -1277,10 +1277,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 			return null;
 		case RulesPackage.CONSTRUCTOR_DEFINITION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_42__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_42((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_43__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_43((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_21__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_21((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_21__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_21((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEFINITION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEFINITION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1475,8 +1475,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		int tDefinition_upperBound_prime = Integer.valueOf(1);
 		int tDefinition_lowerBound_prime = Integer.valueOf(0);
+		int tDefinition_upperBound_prime = Integer.valueOf(1);
 		mDefinitionToTMember.setSource(mDefinition);
 		tMethodSignature.getDefinitions().add(tDefinition);
 		mDefinitionToTMember.setTarget(tDefinition);
@@ -1485,8 +1485,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 		mFlowElementToTFlowElement.setTarget(tDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
-		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
 		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
+		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
 		return new Object[] { tAnnotation, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
 				mFlowElementToTFlowElement, mBodyToTAnnotation };
 	}
@@ -1628,9 +1628,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
 			EObject mSignature) {
 		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1641,9 +1641,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 		EMoflonEdge mFlowElementToTFlowElement__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ConstructorDefinition";
 		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
+		String mBodyToTAnnotation__tDefinition____target_name_prime = "target";
 		String tMethodSignature__tDefinition____definitions_name_prime = "definitions";
 		String tDefinition__tMethodSignature____signature_name_prime = "signature";
-		String mBodyToTAnnotation__tDefinition____target_name_prime = "target";
 		String mFlowElementToTFlowElement__mDefinition____source_name_prime = "source";
 		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
 		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
@@ -1655,15 +1655,15 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
 		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mDefinitionToTMember__mDefinition____source);
+		mBodyToTAnnotation__tDefinition____target.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__tDefinition____target.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tDefinition____target);
 		tMethodSignature__tDefinition____definitions.setSrc(tMethodSignature);
 		tMethodSignature__tDefinition____definitions.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(tMethodSignature__tDefinition____definitions);
 		tDefinition__tMethodSignature____signature.setSrc(tDefinition);
 		tDefinition__tMethodSignature____signature.setTrg(tMethodSignature);
 		ruleresult.getCreatedEdges().add(tDefinition__tMethodSignature____signature);
-		mBodyToTAnnotation__tDefinition____target.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__tDefinition____target.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tDefinition____target);
 		mFlowElementToTFlowElement__mDefinition____source.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__mDefinition____source.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__mDefinition____source);
@@ -1690,9 +1690,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tDefinition____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
+		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
 		tMethodSignature__tDefinition____definitions.setName(tMethodSignature__tDefinition____definitions_name_prime);
 		tDefinition__tMethodSignature____signature.setName(tDefinition__tMethodSignature____signature_name_prime);
-		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
 		mFlowElementToTFlowElement__mDefinition____source
 				.setName(mFlowElementToTFlowElement__mDefinition____source_name_prime);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
@@ -1705,8 +1705,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 				.setName(mFlowElementToTFlowElement__tDefinition____target_name_prime);
 		return new Object[] { ruleresult, tAnnotation, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
 				mFlowElementToTFlowElement, mBodyToTAnnotation, mSignature, mDefinitionToTMember__mDefinition____source,
-				tMethodSignature__tDefinition____definitions, tDefinition__tMethodSignature____signature,
-				mBodyToTAnnotation__tDefinition____target, mFlowElementToTFlowElement__mDefinition____source,
+				mBodyToTAnnotation__tDefinition____target, tMethodSignature__tDefinition____definitions,
+				tDefinition__tMethodSignature____signature, mFlowElementToTFlowElement__mDefinition____source,
 				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature,
 				mDefinitionToTMember__tDefinition____target, mBodyToTAnnotation__mDefinition____source,
 				tDefinition__tAnnotation____tAnnotation, tAnnotation__tDefinition____tAnnotated,
@@ -2269,9 +2269,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
 			EObject mSignature) {
 		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2282,9 +2282,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 		EMoflonEdge mFlowElementToTFlowElement__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ConstructorDefinition";
 		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
+		String mBodyToTAnnotation__tDefinition____target_name_prime = "target";
 		String tMethodSignature__tDefinition____definitions_name_prime = "definitions";
 		String tDefinition__tMethodSignature____signature_name_prime = "signature";
-		String mBodyToTAnnotation__tDefinition____target_name_prime = "target";
 		String mFlowElementToTFlowElement__mDefinition____source_name_prime = "source";
 		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
 		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
@@ -2296,15 +2296,15 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
 		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mDefinitionToTMember__mDefinition____source);
+		mBodyToTAnnotation__tDefinition____target.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__tDefinition____target.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tDefinition____target);
 		tMethodSignature__tDefinition____definitions.setSrc(tMethodSignature);
 		tMethodSignature__tDefinition____definitions.setTrg(tDefinition);
 		ruleresult.getTranslatedEdges().add(tMethodSignature__tDefinition____definitions);
 		tDefinition__tMethodSignature____signature.setSrc(tDefinition);
 		tDefinition__tMethodSignature____signature.setTrg(tMethodSignature);
 		ruleresult.getTranslatedEdges().add(tDefinition__tMethodSignature____signature);
-		mBodyToTAnnotation__tDefinition____target.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__tDefinition____target.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tDefinition____target);
 		mFlowElementToTFlowElement__mDefinition____source.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__mDefinition____source.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__mDefinition____source);
@@ -2331,9 +2331,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tDefinition____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
+		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
 		tMethodSignature__tDefinition____definitions.setName(tMethodSignature__tDefinition____definitions_name_prime);
 		tDefinition__tMethodSignature____signature.setName(tDefinition__tMethodSignature____signature_name_prime);
-		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
 		mFlowElementToTFlowElement__mDefinition____source
 				.setName(mFlowElementToTFlowElement__mDefinition____source_name_prime);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
@@ -2346,8 +2346,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 				.setName(mFlowElementToTFlowElement__tDefinition____target_name_prime);
 		return new Object[] { ruleresult, tAnnotation, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
 				mFlowElementToTFlowElement, mBodyToTAnnotation, mSignature, mDefinitionToTMember__mDefinition____source,
-				tMethodSignature__tDefinition____definitions, tDefinition__tMethodSignature____signature,
-				mBodyToTAnnotation__tDefinition____target, mFlowElementToTFlowElement__mDefinition____source,
+				mBodyToTAnnotation__tDefinition____target, tMethodSignature__tDefinition____definitions,
+				tDefinition__tMethodSignature____signature, mFlowElementToTFlowElement__mDefinition____source,
 				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature,
 				mDefinitionToTMember__tDefinition____target, mBodyToTAnnotation__mDefinition____source,
 				tDefinition__tAnnotation____tAnnotation, tAnnotation__tDefinition____tAnnotated,
@@ -2445,10 +2445,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 	public static final Iterable<Object[]> pattern_ConstructorDefinition_12_2_corematch_blackBBFBFB(
 			TConstructor tAnnotation, TMethodSignature tMethodSignature, TMethodDefinition tDefinition, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		int tDefinition_upperBound = tDefinition.getUpperBound();
-		if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(1))) {
-			int tDefinition_lowerBound = tDefinition.getLowerBound();
-			if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
+		int tDefinition_lowerBound = tDefinition.getLowerBound();
+		if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
+			int tDefinition_upperBound = tDefinition.getUpperBound();
+			if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(1))) {
 				for (MSignatureToTSignature mSignatureToTMethodSignature : org.moflon.core.utilities.eMoflonEMFUtil
 						.getOppositeReferenceTyped(tMethodSignature, MSignatureToTSignature.class, "target")) {
 					MSignature tmpMSignature = mSignatureToTMethodSignature.getSource();
@@ -2475,10 +2475,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 			if (tMethodSignature.equals(mSignatureToTMethodSignature.getTarget())) {
 				if (mSignature.equals(mSignatureToTMethodSignature.getSource())) {
 					if (tDefinition.getTAnnotation().contains(tAnnotation)) {
-						int tDefinition_upperBound = tDefinition.getUpperBound();
-						if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(1))) {
-							int tDefinition_lowerBound = tDefinition.getLowerBound();
-							if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
+						int tDefinition_lowerBound = tDefinition.getLowerBound();
+						if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
+							int tDefinition_upperBound = tDefinition.getUpperBound();
+							if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(1))) {
 								_result.add(new Object[] { tAnnotation, tMethodSignature, mSignatureToTMethodSignature,
 										tDefinition, mSignature });
 							}
@@ -2671,10 +2671,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_20_2_testcorematchandDECs_black_nac_0BBB(
 			TConstructor tAnnotation, TMethodSignature tMethodSignature, TMethodDefinition tDefinition) {
-		TAnnotatable __DEC_tAnnotation_tAnnotated_678643 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotated_678643 != null) {
-			if (!tMethodSignature.equals(__DEC_tAnnotation_tAnnotated_678643)) {
-				if (!tDefinition.equals(__DEC_tAnnotation_tAnnotated_678643)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotated_781389 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotated_781389 != null) {
+			if (!tMethodSignature.equals(__DEC_tAnnotation_tAnnotated_781389)) {
+				if (!tDefinition.equals(__DEC_tAnnotation_tAnnotated_781389)) {
 					return new Object[] { tAnnotation, tMethodSignature, tDefinition };
 				}
 			}
@@ -2685,9 +2685,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_20_2_testcorematchandDECs_black_nac_1BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_569307 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_569307 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_569307)) {
+		TSignature __DEC_tDefinition_signature_995973 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_995973 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_995973)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -2697,8 +2697,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_20_2_testcorematchandDECs_black_nac_2B(
 			TMethodDefinition tDefinition) {
-		TAbstractType __DEC_tDefinition_returnType_595752 = tDefinition.getReturnType();
-		if (__DEC_tDefinition_returnType_595752 != null) {
+		TAbstractType __DEC_tDefinition_returnType_885694 = tDefinition.getReturnType();
+		if (__DEC_tDefinition_returnType_885694 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -2723,10 +2723,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 			if (tmpTDefinition instanceof TMethodDefinition) {
 				TMethodDefinition tDefinition = (TMethodDefinition) tmpTDefinition;
 				if (tMethodSignature.getDefinitions().contains(tDefinition)) {
-					int tDefinition_upperBound = tDefinition.getUpperBound();
-					if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(1))) {
-						int tDefinition_lowerBound = tDefinition.getLowerBound();
-						if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
+					int tDefinition_lowerBound = tDefinition.getLowerBound();
+					if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
+						int tDefinition_upperBound = tDefinition.getUpperBound();
+						if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(1))) {
 							if (pattern_ConstructorDefinition_20_2_testcorematchandDECs_black_nac_1BB(tDefinition,
 									tMethodSignature) == null) {
 								if (pattern_ConstructorDefinition_20_2_testcorematchandDECs_black_nac_2B(
@@ -2859,9 +2859,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_21_2_testcorematchandDECs_black_nac_0BB(
 			MConstructorDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_267295 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_267295 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_267295)) {
+		MSignature __DEC_mDefinition_mDefinitions_654349 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_654349 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_654349)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -2980,10 +2980,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 			TConstructor tAnnotation, TMethodSignature tMethodSignature, TMethodDefinition tDefinition,
 			MConstructorDefinition mDefinition, MMethodSignature mSignature, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			int tDefinition_upperBound = tDefinition.getUpperBound();
-			if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(1))) {
-				int tDefinition_lowerBound = tDefinition.getLowerBound();
-				if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
+			int tDefinition_lowerBound = tDefinition.getLowerBound();
+			if (Integer.valueOf(tDefinition_lowerBound).equals(Integer.valueOf(0))) {
+				int tDefinition_upperBound = tDefinition.getUpperBound();
+				if (Integer.valueOf(tDefinition_upperBound).equals(Integer.valueOf(1))) {
 					return new Object[] { tAnnotation, tMethodSignature, tDefinition, mDefinition, mSignature,
 							sourceMatch, targetMatch };
 				}
@@ -3134,9 +3134,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_27_1_matchtggpattern_black_nac_0BB(
 			MConstructorDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_430762 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_430762 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_430762)) {
+		MSignature __DEC_mDefinition_mDefinitions_61170 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_61170 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_61170)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -3166,10 +3166,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_28_1_matchtggpattern_black_nac_0BBB(
 			TConstructor tAnnotation, TMethodSignature tMethodSignature, TMethodDefinition tDefinition) {
-		TAnnotatable __DEC_tAnnotation_tAnnotated_584735 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotated_584735 != null) {
-			if (!tMethodSignature.equals(__DEC_tAnnotation_tAnnotated_584735)) {
-				if (!tDefinition.equals(__DEC_tAnnotation_tAnnotated_584735)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotated_129197 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotated_129197 != null) {
+			if (!tMethodSignature.equals(__DEC_tAnnotation_tAnnotated_129197)) {
+				if (!tDefinition.equals(__DEC_tAnnotation_tAnnotated_129197)) {
 					return new Object[] { tAnnotation, tMethodSignature, tDefinition };
 				}
 			}
@@ -3180,9 +3180,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_28_1_matchtggpattern_black_nac_1BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_440510 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_440510 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_440510)) {
+		TSignature __DEC_tDefinition_signature_508169 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_508169 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_508169)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -3192,8 +3192,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_28_1_matchtggpattern_black_nac_2B(
 			TMethodDefinition tDefinition) {
-		TAbstractType __DEC_tDefinition_returnType_389113 = tDefinition.getReturnType();
-		if (__DEC_tDefinition_returnType_389113 != null) {
+		TAbstractType __DEC_tDefinition_returnType_214307 = tDefinition.getReturnType();
+		if (__DEC_tDefinition_returnType_214307 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -3231,10 +3231,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_28_1_matchtggpattern_greenB(
 			TMethodDefinition tDefinition) {
-		int tDefinition_upperBound_prime = Integer.valueOf(1);
 		int tDefinition_lowerBound_prime = Integer.valueOf(0);
-		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
+		int tDefinition_upperBound_prime = Integer.valueOf(1);
 		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
+		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
 		return new Object[] { tDefinition };
 	}
 
@@ -3385,8 +3385,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		int tDefinition_upperBound_prime = Integer.valueOf(1);
 		int tDefinition_lowerBound_prime = Integer.valueOf(0);
+		int tDefinition_upperBound_prime = Integer.valueOf(1);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getTargetObjects().add(tAnnotation);
@@ -3404,8 +3404,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 		mBodyToTAnnotation.setTarget(tDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
 		ruleResult.getCorrObjects().add(mBodyToTAnnotation);
-		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
 		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
+		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));

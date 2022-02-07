@@ -16,7 +16,6 @@ import org.eclipse.modisco.java.ASTNode;
 import org.eclipse.modisco.java.Annotation;
 import org.eclipse.modisco.java.AnnotationMemberValuePair;
 import org.eclipse.modisco.java.ArrayInitializer;
-import org.eclipse.modisco.java.Expression;
 
 import org.eclipse.modisco.java.emf.JavaFactory;
 
@@ -98,25 +97,25 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value) {
+	public boolean isAppropriate_FWD(Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation) {
 
 		Object[] result1_black = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_0_1_initialbindings_blackBBBBB(this, match, array, annotation,
-						value);
+				.pattern_JavaAnnotationValue2Comment_0_1_initialbindings_blackBBBBB(this, match, array, value,
+						annotation);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[array] = " + array + ", " + "[annotation] = " + annotation + ", "
-					+ "[value] = " + value + ".");
+					+ "[match] = " + match + ", " + "[array] = " + array + ", " + "[value] = " + value + ", "
+					+ "[annotation] = " + annotation + ".");
 		}
 
 		Object[] result2_bindingAndBlack = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, array, annotation,
-						value);
+				.pattern_JavaAnnotationValue2Comment_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, array, value,
+						annotation);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[array] = " + array + ", " + "[annotation] = " + annotation + ", "
-					+ "[value] = " + value + ".");
+					+ "[match] = " + match + ", " + "[array] = " + array + ", " + "[value] = " + value + ", "
+					+ "[annotation] = " + annotation + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -124,25 +123,25 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 
 			Object[] result4_black = JavaAnnotationValue2CommentImpl
 					.pattern_JavaAnnotationValue2Comment_0_4_collectelementstobetranslated_blackBBBB(match, array,
-							annotation, value);
+							value, annotation);
 			if (result4_black == null) {
 				throw new RuntimeException(
 						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[array] = " + array
-								+ ", " + "[annotation] = " + annotation + ", " + "[value] = " + value + ".");
+								+ ", " + "[value] = " + value + ", " + "[annotation] = " + annotation + ".");
 			}
 			JavaAnnotationValue2CommentImpl
 					.pattern_JavaAnnotationValue2Comment_0_4_collectelementstobetranslated_greenBBBBFF(match, array,
-							annotation, value);
-			//nothing EMoflonEdge annotation__value____values = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge value__array____value = (EMoflonEdge) result4_green[5];
+							value, annotation);
+			//nothing EMoflonEdge value__array____value = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge annotation__value____values = (EMoflonEdge) result4_green[5];
 
 			Object[] result5_black = JavaAnnotationValue2CommentImpl
-					.pattern_JavaAnnotationValue2Comment_0_5_collectcontextelements_blackBBBB(match, array, annotation,
-							value);
+					.pattern_JavaAnnotationValue2Comment_0_5_collectcontextelements_blackBBBB(match, array, value,
+							annotation);
 			if (result5_black == null) {
 				throw new RuntimeException(
 						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[array] = " + array
-								+ ", " + "[annotation] = " + annotation + ", " + "[value] = " + value + ".");
+								+ ", " + "[value] = " + value + ", " + "[annotation] = " + annotation + ".");
 			}
 			JavaAnnotationValue2CommentImpl
 					.pattern_JavaAnnotationValue2Comment_0_5_collectcontextelements_greenBB(match, annotation);
@@ -150,7 +149,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 			// 
 			JavaAnnotationValue2CommentImpl
 					.pattern_JavaAnnotationValue2Comment_0_6_registerobjectstomatch_expressionBBBBB(this, match, array,
-							annotation, value);
+							value, annotation);
 			return JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_0_7_expressionF();
 		} else {
 			return JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_0_8_expressionF();
@@ -172,49 +171,49 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Comment comment = (Comment) result1_bindingAndBlack[0];
-		ASTNode2Element a2c = (ASTNode2Element) result1_bindingAndBlack[1];
-		ArrayInitializer array = (ArrayInitializer) result1_bindingAndBlack[2];
-		Annotation annotation = (Annotation) result1_bindingAndBlack[3];
-		AnnotationMemberValuePair value = (AnnotationMemberValuePair) result1_bindingAndBlack[4];
+		ArrayInitializer array = (ArrayInitializer) result1_bindingAndBlack[0];
+		Comment comment = (Comment) result1_bindingAndBlack[1];
+		ASTNode2Element a2c = (ASTNode2Element) result1_bindingAndBlack[2];
+		AnnotationMemberValuePair value = (AnnotationMemberValuePair) result1_bindingAndBlack[3];
+		Annotation annotation = (Annotation) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_1_1_performtransformation_greenBFFBB(comment, value, csp);
-		Comment tag = (Comment) result1_green[1];
+				.pattern_JavaAnnotationValue2Comment_1_1_performtransformation_greenFBFBB(comment, value, csp);
+		Comment tag = (Comment) result1_green[0];
 		ASTNode2Element c2c = (ASTNode2Element) result1_green[2];
 
 		Object[] result2_black = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_1_2_collecttranslatedelements_blackBBBB(tag, array, c2c, value);
+				.pattern_JavaAnnotationValue2Comment_1_2_collecttranslatedelements_blackBBBB(array, tag, c2c, value);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tag] = " + tag + ", "
-					+ "[array] = " + array + ", " + "[c2c] = " + c2c + ", " + "[value] = " + value + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[array] = " + array + ", "
+					+ "[tag] = " + tag + ", " + "[c2c] = " + c2c + ", " + "[value] = " + value + ".");
 		}
 		Object[] result2_green = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_1_2_collecttranslatedelements_greenFBBBB(tag, array, c2c, value);
+				.pattern_JavaAnnotationValue2Comment_1_2_collecttranslatedelements_greenFBBBB(array, tag, c2c, value);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, comment, a2c,
-						tag, array, annotation, c2c, value);
+				.pattern_JavaAnnotationValue2Comment_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, array, tag,
+						comment, c2c, a2c, value, annotation);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[comment] = " + comment + ", " + "[a2c] = " + a2c + ", " + "[tag] = " + tag + ", "
-					+ "[array] = " + array + ", " + "[annotation] = " + annotation + ", " + "[c2c] = " + c2c + ", "
-					+ "[value] = " + value + ".");
+					+ ", " + "[array] = " + array + ", " + "[tag] = " + tag + ", " + "[comment] = " + comment + ", "
+					+ "[c2c] = " + c2c + ", " + "[a2c] = " + a2c + ", " + "[value] = " + value + ", "
+					+ "[annotation] = " + annotation + ".");
 		}
 		JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-				ruleresult, comment, tag, array, annotation, c2c, value);
-		//nothing EMoflonEdge tag__comment____annotatedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge comment__tag____ownedComment = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge annotation__value____values = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge c2c__tag____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge c2c__value____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge value__array____value = (EMoflonEdge) result3_green[12];
+				ruleresult, array, tag, comment, c2c, value, annotation);
+		//nothing EMoflonEdge c2c__tag____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tag__comment____annotatedElement = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge c2c__value____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge comment__tag____ownedComment = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge value__array____value = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge annotation__value____values = (EMoflonEdge) result3_green[12];
 
 		// 
 		// 
 		JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_1_5_registerobjects_expressionBBBBBBBBB(
-				this, ruleresult, comment, a2c, tag, array, annotation, c2c, value);
+				this, ruleresult, array, tag, comment, c2c, a2c, value, annotation);
 		return JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_1_6_expressionFB(ruleresult);
 	}
 
@@ -244,33 +243,33 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
 		ArrayInitializer array = (ArrayInitializer) result2_binding[0];
-		Annotation annotation = (Annotation) result2_binding[1];
-		AnnotationMemberValuePair value = (AnnotationMemberValuePair) result2_binding[2];
+		AnnotationMemberValuePair value = (AnnotationMemberValuePair) result2_binding[1];
+		Annotation annotation = (Annotation) result2_binding[2];
 		for (Object[] result2_black : JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_2_2_corematch_blackFFBBBB(array, annotation, value, match)) {
-			Comment comment = (Comment) result2_black[0];
-			ASTNode2Element a2c = (ASTNode2Element) result2_black[1];
+				.pattern_JavaAnnotationValue2Comment_2_2_corematch_blackBFFBBB(array, value, annotation, match)) {
+			Comment comment = (Comment) result2_black[1];
+			ASTNode2Element a2c = (ASTNode2Element) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : JavaAnnotationValue2CommentImpl
-					.pattern_JavaAnnotationValue2Comment_2_3_findcontext_blackBBBBB(comment, a2c, array, annotation,
-							value)) {
+					.pattern_JavaAnnotationValue2Comment_2_3_findcontext_blackBBBBB(array, comment, a2c, value,
+							annotation)) {
 				Object[] result3_green = JavaAnnotationValue2CommentImpl
-						.pattern_JavaAnnotationValue2Comment_2_3_findcontext_greenBBBBBFFFFF(comment, a2c, array,
-								annotation, value);
+						.pattern_JavaAnnotationValue2Comment_2_3_findcontext_greenBBBBBFFFFF(array, comment, a2c, value,
+								annotation);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
-				//nothing EMoflonEdge annotation__value____values = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge a2c__comment____target = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge value__array____value = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge a2c__annotation____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge a2c__comment____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge annotation__value____values = (EMoflonEdge) result3_green[9];
 
 				Object[] result4_bindingAndBlack = JavaAnnotationValue2CommentImpl
 						.pattern_JavaAnnotationValue2Comment_2_4_solveCSP_bindingAndBlackFBBBBBBB(this,
-								isApplicableMatch, comment, a2c, array, annotation, value);
+								isApplicableMatch, array, comment, a2c, value, annotation);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[comment] = " + comment + ", "
-							+ "[a2c] = " + a2c + ", " + "[array] = " + array + ", " + "[annotation] = " + annotation
-							+ ", " + "[value] = " + value + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[array] = " + array + ", "
+							+ "[comment] = " + comment + ", " + "[a2c] = " + a2c + ", " + "[value] = " + value + ", "
+							+ "[annotation] = " + annotation + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -302,11 +301,11 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value) {
+	public void registerObjectsToMatch_FWD(Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation) {
 		match.registerObject("array", array);
-		match.registerObject("annotation", annotation);
 		match.registerObject("value", value);
+		match.registerObject("annotation", annotation);
 
 	}
 
@@ -315,8 +314,8 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -345,8 +344,8 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Comment comment, ASTNode2Element a2c,
-			ArrayInitializer array, Annotation annotation, AnnotationMemberValuePair value) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ArrayInitializer array, Comment comment,
+			ASTNode2Element a2c, AnnotationMemberValuePair value, Annotation annotation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -371,11 +370,11 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		eq.solve(var_value_name, var_tag_body);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("array", array);
 		isApplicableMatch.registerObject("comment", comment);
 		isApplicableMatch.registerObject("a2c", a2c);
-		isApplicableMatch.registerObject("array", array);
-		isApplicableMatch.registerObject("annotation", annotation);
 		isApplicableMatch.registerObject("value", value);
+		isApplicableMatch.registerObject("annotation", annotation);
 		return csp;
 	}
 
@@ -393,15 +392,15 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject comment, EObject a2c, EObject tag,
-			EObject array, EObject annotation, EObject c2c, EObject value) {
-		ruleresult.registerObject("comment", comment);
-		ruleresult.registerObject("a2c", a2c);
-		ruleresult.registerObject("tag", tag);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject array, EObject tag, EObject comment,
+			EObject c2c, EObject a2c, EObject value, EObject annotation) {
 		ruleresult.registerObject("array", array);
-		ruleresult.registerObject("annotation", annotation);
+		ruleresult.registerObject("tag", tag);
+		ruleresult.registerObject("comment", comment);
 		ruleresult.registerObject("c2c", c2c);
+		ruleresult.registerObject("a2c", a2c);
 		ruleresult.registerObject("value", value);
+		ruleresult.registerObject("annotation", annotation);
 
 	}
 
@@ -423,20 +422,20 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Comment comment, Comment tag) {
+	public boolean isAppropriate_BWD(Match match, Comment tag, Comment comment) {
 
 		Object[] result1_black = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_10_1_initialbindings_blackBBBB(this, match, comment, tag);
+				.pattern_JavaAnnotationValue2Comment_10_1_initialbindings_blackBBBB(this, match, tag, comment);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[comment] = " + comment + ", " + "[tag] = " + tag + ".");
+					+ "[match] = " + match + ", " + "[tag] = " + tag + ", " + "[comment] = " + comment + ".");
 		}
 
 		Object[] result2_bindingAndBlack = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, comment, tag);
+				.pattern_JavaAnnotationValue2Comment_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tag, comment);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[comment] = " + comment + ", " + "[tag] = " + tag + ".");
+					+ "[match] = " + match + ", " + "[tag] = " + tag + ", " + "[comment] = " + comment + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -444,31 +443,31 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 				csp)) {
 
 			Object[] result4_black = JavaAnnotationValue2CommentImpl
-					.pattern_JavaAnnotationValue2Comment_10_4_collectelementstobetranslated_blackBBB(match, comment,
-							tag);
+					.pattern_JavaAnnotationValue2Comment_10_4_collectelementstobetranslated_blackBBB(match, tag,
+							comment);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[comment] = " + comment + ", " + "[tag] = " + tag + ".");
+						+ "[tag] = " + tag + ", " + "[comment] = " + comment + ".");
 			}
 			JavaAnnotationValue2CommentImpl
-					.pattern_JavaAnnotationValue2Comment_10_4_collectelementstobetranslated_greenBBBFF(match, comment,
-							tag);
+					.pattern_JavaAnnotationValue2Comment_10_4_collectelementstobetranslated_greenBBBFF(match, tag,
+							comment);
 			//nothing EMoflonEdge tag__comment____annotatedElement = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge comment__tag____ownedComment = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = JavaAnnotationValue2CommentImpl
-					.pattern_JavaAnnotationValue2Comment_10_5_collectcontextelements_blackBBB(match, comment, tag);
+					.pattern_JavaAnnotationValue2Comment_10_5_collectcontextelements_blackBBB(match, tag, comment);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[comment] = " + comment + ", " + "[tag] = " + tag + ".");
+						+ "[tag] = " + tag + ", " + "[comment] = " + comment + ".");
 			}
 			JavaAnnotationValue2CommentImpl
 					.pattern_JavaAnnotationValue2Comment_10_5_collectcontextelements_greenBB(match, comment);
 
 			// 
 			JavaAnnotationValue2CommentImpl
-					.pattern_JavaAnnotationValue2Comment_10_6_registerobjectstomatch_expressionBBBB(this, match,
-							comment, tag);
+					.pattern_JavaAnnotationValue2Comment_10_6_registerobjectstomatch_expressionBBBB(this, match, tag,
+							comment);
 			return JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_10_7_expressionF();
 		} else {
 			return JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_10_8_expressionF();
@@ -490,49 +489,49 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Comment comment = (Comment) result1_bindingAndBlack[0];
-		ASTNode2Element a2c = (ASTNode2Element) result1_bindingAndBlack[1];
-		Comment tag = (Comment) result1_bindingAndBlack[2];
+		Comment tag = (Comment) result1_bindingAndBlack[0];
+		Comment comment = (Comment) result1_bindingAndBlack[1];
+		ASTNode2Element a2c = (ASTNode2Element) result1_bindingAndBlack[2];
 		Annotation annotation = (Annotation) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_11_1_performtransformation_greenBFBFFB(tag, annotation, csp);
-		ArrayInitializer array = (ArrayInitializer) result1_green[1];
-		ASTNode2Element c2c = (ASTNode2Element) result1_green[3];
-		AnnotationMemberValuePair value = (AnnotationMemberValuePair) result1_green[4];
+				.pattern_JavaAnnotationValue2Comment_11_1_performtransformation_greenFBFFBB(tag, annotation, csp);
+		ArrayInitializer array = (ArrayInitializer) result1_green[0];
+		ASTNode2Element c2c = (ASTNode2Element) result1_green[2];
+		AnnotationMemberValuePair value = (AnnotationMemberValuePair) result1_green[3];
 
 		Object[] result2_black = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_11_2_collecttranslatedelements_blackBBBB(tag, array, c2c, value);
+				.pattern_JavaAnnotationValue2Comment_11_2_collecttranslatedelements_blackBBBB(array, tag, c2c, value);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tag] = " + tag + ", "
-					+ "[array] = " + array + ", " + "[c2c] = " + c2c + ", " + "[value] = " + value + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[array] = " + array + ", "
+					+ "[tag] = " + tag + ", " + "[c2c] = " + c2c + ", " + "[value] = " + value + ".");
 		}
 		Object[] result2_green = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_11_2_collecttranslatedelements_greenFBBBB(tag, array, c2c, value);
+				.pattern_JavaAnnotationValue2Comment_11_2_collecttranslatedelements_greenFBBBB(array, tag, c2c, value);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, comment, a2c,
-						tag, array, annotation, c2c, value);
+				.pattern_JavaAnnotationValue2Comment_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, array, tag,
+						comment, c2c, a2c, value, annotation);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[comment] = " + comment + ", " + "[a2c] = " + a2c + ", " + "[tag] = " + tag + ", "
-					+ "[array] = " + array + ", " + "[annotation] = " + annotation + ", " + "[c2c] = " + c2c + ", "
-					+ "[value] = " + value + ".");
+					+ ", " + "[array] = " + array + ", " + "[tag] = " + tag + ", " + "[comment] = " + comment + ", "
+					+ "[c2c] = " + c2c + ", " + "[a2c] = " + a2c + ", " + "[value] = " + value + ", "
+					+ "[annotation] = " + annotation + ".");
 		}
 		JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-				ruleresult, comment, tag, array, annotation, c2c, value);
-		//nothing EMoflonEdge tag__comment____annotatedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge comment__tag____ownedComment = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge annotation__value____values = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge c2c__tag____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge c2c__value____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge value__array____value = (EMoflonEdge) result3_green[12];
+				ruleresult, array, tag, comment, c2c, value, annotation);
+		//nothing EMoflonEdge c2c__tag____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tag__comment____annotatedElement = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge c2c__value____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge comment__tag____ownedComment = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge value__array____value = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge annotation__value____values = (EMoflonEdge) result3_green[12];
 
 		// 
 		// 
 		JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_11_5_registerobjects_expressionBBBBBBBBB(
-				this, ruleresult, comment, a2c, tag, array, annotation, c2c, value);
+				this, ruleresult, array, tag, comment, c2c, a2c, value, annotation);
 		return JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_11_6_expressionFB(ruleresult);
 	}
 
@@ -561,31 +560,32 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Comment comment = (Comment) result2_binding[0];
-		Comment tag = (Comment) result2_binding[1];
+		Comment tag = (Comment) result2_binding[0];
+		Comment comment = (Comment) result2_binding[1];
 		for (Object[] result2_black : JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_12_2_corematch_blackBFBFB(comment, tag, match)) {
-			ASTNode2Element a2c = (ASTNode2Element) result2_black[1];
+				.pattern_JavaAnnotationValue2Comment_12_2_corematch_blackBBFFB(tag, comment, match)) {
+			ASTNode2Element a2c = (ASTNode2Element) result2_black[2];
 			Annotation annotation = (Annotation) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : JavaAnnotationValue2CommentImpl
-					.pattern_JavaAnnotationValue2Comment_12_3_findcontext_blackBBBB(comment, a2c, tag, annotation)) {
+					.pattern_JavaAnnotationValue2Comment_12_3_findcontext_blackBBBB(tag, comment, a2c, annotation)) {
 				Object[] result3_green = JavaAnnotationValue2CommentImpl
-						.pattern_JavaAnnotationValue2Comment_12_3_findcontext_greenBBBBFFFFF(comment, a2c, tag,
+						.pattern_JavaAnnotationValue2Comment_12_3_findcontext_greenBBBBFFFFF(tag, comment, a2c,
 								annotation);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
 				//nothing EMoflonEdge tag__comment____annotatedElement = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge comment__tag____ownedComment = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge a2c__annotation____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge a2c__comment____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge a2c__comment____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge a2c__annotation____source = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = JavaAnnotationValue2CommentImpl
 						.pattern_JavaAnnotationValue2Comment_12_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, comment, a2c, tag, annotation);
+								isApplicableMatch, tag, comment, a2c, annotation);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[comment] = " + comment + ", "
-							+ "[a2c] = " + a2c + ", " + "[tag] = " + tag + ", " + "[annotation] = " + annotation + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tag] = " + tag + ", "
+							+ "[comment] = " + comment + ", " + "[a2c] = " + a2c + ", " + "[annotation] = " + annotation
+							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -617,9 +617,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Comment comment, Comment tag) {
-		match.registerObject("comment", comment);
+	public void registerObjectsToMatch_BWD(Match match, Comment tag, Comment comment) {
 		match.registerObject("tag", tag);
+		match.registerObject("comment", comment);
 
 	}
 
@@ -628,7 +628,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Comment comment, Comment tag) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Comment tag, Comment comment) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -657,8 +657,8 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Comment comment, ASTNode2Element a2c,
-			Comment tag, Annotation annotation) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Comment tag, Comment comment,
+			ASTNode2Element a2c, Annotation annotation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -683,9 +683,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		eq.solve(var_value_name, var_tag_body);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("tag", tag);
 		isApplicableMatch.registerObject("comment", comment);
 		isApplicableMatch.registerObject("a2c", a2c);
-		isApplicableMatch.registerObject("tag", tag);
 		isApplicableMatch.registerObject("annotation", annotation);
 		return csp;
 	}
@@ -704,15 +704,15 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject comment, EObject a2c, EObject tag,
-			EObject array, EObject annotation, EObject c2c, EObject value) {
-		ruleresult.registerObject("comment", comment);
-		ruleresult.registerObject("a2c", a2c);
-		ruleresult.registerObject("tag", tag);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject array, EObject tag, EObject comment,
+			EObject c2c, EObject a2c, EObject value, EObject annotation) {
 		ruleresult.registerObject("array", array);
-		ruleresult.registerObject("annotation", annotation);
+		ruleresult.registerObject("tag", tag);
+		ruleresult.registerObject("comment", comment);
 		ruleresult.registerObject("c2c", c2c);
+		ruleresult.registerObject("a2c", a2c);
 		ruleresult.registerObject("value", value);
+		ruleresult.registerObject("annotation", annotation);
 
 	}
 
@@ -730,7 +730,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_138(EMoflonEdge _edge_annotatedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_122(EMoflonEdge _edge_annotatedElement) {
 
 		Object[] result1_bindingAndBlack = JavaAnnotationValue2CommentImpl
 				.pattern_JavaAnnotationValue2Comment_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -747,8 +747,8 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		// ForEach 
 		for (Object[] result2_black : JavaAnnotationValue2CommentImpl
 				.pattern_JavaAnnotationValue2Comment_20_2_testcorematchandDECs_blackFFB(_edge_annotatedElement)) {
-			Comment comment = (Comment) result2_black[0];
-			Comment tag = (Comment) result2_black[1];
+			Comment tag = (Comment) result2_black[0];
+			Comment comment = (Comment) result2_black[1];
 			Object[] result2_green = JavaAnnotationValue2CommentImpl
 					.pattern_JavaAnnotationValue2Comment_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -756,7 +756,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 			// 
 			if (JavaAnnotationValue2CommentImpl
 					.pattern_JavaAnnotationValue2Comment_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, comment, tag)) {
+							this, match, tag, comment)) {
 				// 
 				if (JavaAnnotationValue2CommentImpl
 						.pattern_JavaAnnotationValue2Comment_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -789,7 +789,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_149(EMoflonEdge _edge_values) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_132(EMoflonEdge _edge_value) {
 
 		Object[] result1_bindingAndBlack = JavaAnnotationValue2CommentImpl
 				.pattern_JavaAnnotationValue2Comment_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -805,10 +805,10 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 
 		// ForEach 
 		for (Object[] result2_black : JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_21_2_testcorematchandDECs_blackFFFB(_edge_values)) {
+				.pattern_JavaAnnotationValue2Comment_21_2_testcorematchandDECs_blackFFFB(_edge_value)) {
 			ArrayInitializer array = (ArrayInitializer) result2_black[0];
-			Annotation annotation = (Annotation) result2_black[1];
-			AnnotationMemberValuePair value = (AnnotationMemberValuePair) result2_black[2];
+			AnnotationMemberValuePair value = (AnnotationMemberValuePair) result2_black[1];
+			Annotation annotation = (Annotation) result2_black[2];
 			Object[] result2_green = JavaAnnotationValue2CommentImpl
 					.pattern_JavaAnnotationValue2Comment_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -816,7 +816,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 			// 
 			if (JavaAnnotationValue2CommentImpl
 					.pattern_JavaAnnotationValue2Comment_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, array, annotation, value)) {
+							this, match, array, value, annotation)) {
 				// 
 				if (JavaAnnotationValue2CommentImpl
 						.pattern_JavaAnnotationValue2Comment_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -961,19 +961,19 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Comment comment = (Comment) result2_bindingAndBlack[0];
+		ArrayInitializer array = (ArrayInitializer) result2_bindingAndBlack[0];
 		Comment tag = (Comment) result2_bindingAndBlack[1];
-		ArrayInitializer array = (ArrayInitializer) result2_bindingAndBlack[2];
-		Annotation annotation = (Annotation) result2_bindingAndBlack[3];
-		AnnotationMemberValuePair value = (AnnotationMemberValuePair) result2_bindingAndBlack[4];
+		Comment comment = (Comment) result2_bindingAndBlack[2];
+		AnnotationMemberValuePair value = (AnnotationMemberValuePair) result2_bindingAndBlack[3];
+		Annotation annotation = (Annotation) result2_bindingAndBlack[4];
 
 		Object[] result3_bindingAndBlack = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_24_3_solvecsp_bindingAndBlackFBBBBBBBB(this, comment, tag, array,
-						annotation, value, sourceMatch, targetMatch);
+				.pattern_JavaAnnotationValue2Comment_24_3_solvecsp_bindingAndBlackFBBBBBBBB(this, array, tag, comment,
+						value, annotation, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[comment] = " + comment + ", " + "[tag] = " + tag + ", " + "[array] = " + array + ", "
-					+ "[annotation] = " + annotation + ", " + "[value] = " + value + ", " + "[sourceMatch] = "
+					+ "[array] = " + array + ", " + "[tag] = " + tag + ", " + "[comment] = " + comment + ", "
+					+ "[value] = " + value + ", " + "[annotation] = " + annotation + ", " + "[sourceMatch] = "
 					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -990,12 +990,12 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = JavaAnnotationValue2CommentImpl
-						.pattern_JavaAnnotationValue2Comment_24_6_createcorrespondence_blackBBBBBB(comment, tag, array,
-								annotation, value, ccMatch);
+						.pattern_JavaAnnotationValue2Comment_24_6_createcorrespondence_blackBBBBBB(array, tag, comment,
+								value, annotation, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[comment] = " + comment
-							+ ", " + "[tag] = " + tag + ", " + "[array] = " + array + ", " + "[annotation] = "
-							+ annotation + ", " + "[value] = " + value + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[array] = " + array + ", "
+							+ "[tag] = " + tag + ", " + "[comment] = " + comment + ", " + "[value] = " + value + ", "
+							+ "[annotation] = " + annotation + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				JavaAnnotationValue2CommentImpl
 						.pattern_JavaAnnotationValue2Comment_24_6_createcorrespondence_greenBFBB(tag, value, ccMatch);
@@ -1022,8 +1022,8 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Comment comment, Comment tag, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(ArrayInitializer array, Comment tag, Comment comment,
+			AnnotationMemberValuePair value, Annotation annotation, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1063,9 +1063,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(ArrayInitializer array, Annotation annotation, AnnotationMemberValuePair value) {// 
+	public boolean checkDEC_FWD(ArrayInitializer array, AnnotationMemberValuePair value, Annotation annotation) {// 
 		Object[] result1_black = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_27_1_matchtggpattern_blackBBB(array, annotation, value);
+				.pattern_JavaAnnotationValue2Comment_27_1_matchtggpattern_blackBBB(array, value, annotation);
 		if (result1_black != null) {
 			return JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_27_2_expressionF();
 		} else {
@@ -1079,9 +1079,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Comment comment, Comment tag) {// 
+	public boolean checkDEC_BWD(Comment tag, Comment comment) {// 
 		Object[] result1_black = JavaAnnotationValue2CommentImpl
-				.pattern_JavaAnnotationValue2Comment_28_1_matchtggpattern_blackBB(comment, tag);
+				.pattern_JavaAnnotationValue2Comment_28_1_matchtggpattern_blackBB(tag, comment);
 		if (result1_black != null) {
 			return JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_28_2_expressionF();
 		} else {
@@ -1142,12 +1142,12 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 								+ comment + ", " + "[a2c] = " + a2c + ", " + "[annotation] = " + annotation + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_29_6_perform_greenBFFBFFBB(
+					JavaAnnotationValue2CommentImpl.pattern_JavaAnnotationValue2Comment_29_6_perform_greenFFBFFBBB(
 							comment, annotation, ruleResult, csp);
+					//nothing ArrayInitializer array = (ArrayInitializer) result6_green[0];
 					//nothing Comment tag = (Comment) result6_green[1];
-					//nothing ArrayInitializer array = (ArrayInitializer) result6_green[2];
-					//nothing ASTNode2Element c2c = (ASTNode2Element) result6_green[4];
-					//nothing AnnotationMemberValuePair value = (AnnotationMemberValuePair) result6_green[5];
+					//nothing ASTNode2Element c2c = (ASTNode2Element) result6_green[3];
+					//nothing AnnotationMemberValuePair value = (AnnotationMemberValuePair) result6_green[4];
 
 				} else {
 				}
@@ -1212,26 +1212,26 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_FWD__MATCH_ARRAYINITIALIZER_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR:
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_FWD__MATCH_ARRAYINITIALIZER_ANNOTATIONMEMBERVALUEPAIR_ANNOTATION:
 			return isAppropriate_FWD((Match) arguments.get(0), (ArrayInitializer) arguments.get(1),
-					(Annotation) arguments.get(2), (AnnotationMemberValuePair) arguments.get(3));
+					(AnnotationMemberValuePair) arguments.get(2), (Annotation) arguments.get(3));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ARRAYINITIALIZER_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR:
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ARRAYINITIALIZER_ANNOTATIONMEMBERVALUEPAIR_ANNOTATION:
 			registerObjectsToMatch_FWD((Match) arguments.get(0), (ArrayInitializer) arguments.get(1),
-					(Annotation) arguments.get(2), (AnnotationMemberValuePair) arguments.get(3));
+					(AnnotationMemberValuePair) arguments.get(2), (Annotation) arguments.get(3));
 			return null;
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ARRAYINITIALIZER_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR:
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ARRAYINITIALIZER_ANNOTATIONMEMBERVALUEPAIR_ANNOTATION:
 			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ArrayInitializer) arguments.get(1),
-					(Annotation) arguments.get(2), (AnnotationMemberValuePair) arguments.get(3));
+					(AnnotationMemberValuePair) arguments.get(2), (Annotation) arguments.get(3));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_COMMENT_ASTNODE2ELEMENT_ARRAYINITIALIZER_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Comment) arguments.get(1),
-					(ASTNode2Element) arguments.get(2), (ArrayInitializer) arguments.get(3),
-					(Annotation) arguments.get(4), (AnnotationMemberValuePair) arguments.get(5));
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ARRAYINITIALIZER_COMMENT_ASTNODE2ELEMENT_ANNOTATIONMEMBERVALUEPAIR_ANNOTATION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ArrayInitializer) arguments.get(1),
+					(Comment) arguments.get(2), (ASTNode2Element) arguments.get(3),
+					(AnnotationMemberValuePair) arguments.get(4), (Annotation) arguments.get(5));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1256,9 +1256,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 					(Comment) arguments.get(2));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMMENT_ASTNODE2ELEMENT_COMMENT_ANNOTATION:
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMMENT_COMMENT_ASTNODE2ELEMENT_ANNOTATION:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Comment) arguments.get(1),
-					(ASTNode2Element) arguments.get(2), (Comment) arguments.get(3), (Annotation) arguments.get(4));
+					(Comment) arguments.get(2), (ASTNode2Element) arguments.get(3), (Annotation) arguments.get(4));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1268,25 +1268,25 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_138__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_138((EMoflonEdge) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_149__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_149((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_122__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_122((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_132__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_132((EMoflonEdge) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_SOLVE_CSP_CC__COMMENT_COMMENT_ARRAYINITIALIZER_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Comment) arguments.get(0), (Comment) arguments.get(1),
-					(ArrayInitializer) arguments.get(2), (Annotation) arguments.get(3),
-					(AnnotationMemberValuePair) arguments.get(4), (Match) arguments.get(5), (Match) arguments.get(6));
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_SOLVE_CSP_CC__ARRAYINITIALIZER_COMMENT_COMMENT_ANNOTATIONMEMBERVALUEPAIR_ANNOTATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((ArrayInitializer) arguments.get(0), (Comment) arguments.get(1),
+					(Comment) arguments.get(2), (AnnotationMemberValuePair) arguments.get(3),
+					(Annotation) arguments.get(4), (Match) arguments.get(5), (Match) arguments.get(6));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___CHECK_DEC_FWD__ARRAYINITIALIZER_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR:
-			return checkDEC_FWD((ArrayInitializer) arguments.get(0), (Annotation) arguments.get(1),
-					(AnnotationMemberValuePair) arguments.get(2));
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___CHECK_DEC_FWD__ARRAYINITIALIZER_ANNOTATIONMEMBERVALUEPAIR_ANNOTATION:
+			return checkDEC_FWD((ArrayInitializer) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
+					(Annotation) arguments.get(2));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___CHECK_DEC_BWD__COMMENT_COMMENT:
 			return checkDEC_BWD((Comment) arguments.get(0), (Comment) arguments.get(1));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT:
@@ -1302,18 +1302,18 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_0_1_initialbindings_blackBBBBB(
-			JavaAnnotationValue2Comment _this, Match match, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value) {
-		return new Object[] { _this, match, array, annotation, value };
+			JavaAnnotationValue2Comment _this, Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation) {
+		return new Object[] { _this, match, array, value, annotation };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_0_2_SolveCSP_bindingFBBBBB(
-			JavaAnnotationValue2Comment _this, Match match, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, array, annotation, value);
+			JavaAnnotationValue2Comment _this, Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, array, value, annotation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, array, annotation, value };
+			return new Object[] { csp, _this, match, array, value, annotation };
 		}
 		return null;
 	}
@@ -1323,10 +1323,10 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_0_2_SolveCSP_bindingAndBlackFBBBBB(
-			JavaAnnotationValue2Comment _this, Match match, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value) {
+			JavaAnnotationValue2Comment _this, Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation) {
 		Object[] result_pattern_JavaAnnotationValue2Comment_0_2_SolveCSP_binding = pattern_JavaAnnotationValue2Comment_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, array, annotation, value);
+				_this, match, array, value, annotation);
 		if (result_pattern_JavaAnnotationValue2Comment_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaAnnotationValue2Comment_0_2_SolveCSP_binding[0];
 
@@ -1334,7 +1334,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_JavaAnnotationValue2Comment_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, array, annotation, value };
+				return new Object[] { csp, _this, match, array, value, annotation };
 			}
 		}
 		return null;
@@ -1348,32 +1348,32 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_0_4_collectelementstobetranslated_blackBBBB(
-			Match match, ArrayInitializer array, Annotation annotation, AnnotationMemberValuePair value) {
-		return new Object[] { match, array, annotation, value };
+			Match match, ArrayInitializer array, AnnotationMemberValuePair value, Annotation annotation) {
+		return new Object[] { match, array, value, annotation };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_0_4_collectelementstobetranslated_greenBBBBFF(
-			Match match, ArrayInitializer array, Annotation annotation, AnnotationMemberValuePair value) {
-		EMoflonEdge annotation__value____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, ArrayInitializer array, AnnotationMemberValuePair value, Annotation annotation) {
 		EMoflonEdge value__array____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotation__value____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(array);
 		match.getToBeTranslatedNodes().add(value);
-		String annotation__value____values_name_prime = "values";
 		String value__array____value_name_prime = "value";
-		annotation__value____values.setSrc(annotation);
-		annotation__value____values.setTrg(value);
-		match.getToBeTranslatedEdges().add(annotation__value____values);
+		String annotation__value____values_name_prime = "values";
 		value__array____value.setSrc(value);
 		value__array____value.setTrg(array);
 		match.getToBeTranslatedEdges().add(value__array____value);
-		annotation__value____values.setName(annotation__value____values_name_prime);
+		annotation__value____values.setSrc(annotation);
+		annotation__value____values.setTrg(value);
+		match.getToBeTranslatedEdges().add(annotation__value____values);
 		value__array____value.setName(value__array____value_name_prime);
-		return new Object[] { match, array, annotation, value, annotation__value____values, value__array____value };
+		annotation__value____values.setName(annotation__value____values_name_prime);
+		return new Object[] { match, array, value, annotation, value__array____value, annotation__value____values };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_0_5_collectcontextelements_blackBBBB(Match match,
-			ArrayInitializer array, Annotation annotation, AnnotationMemberValuePair value) {
-		return new Object[] { match, array, annotation, value };
+			ArrayInitializer array, AnnotationMemberValuePair value, Annotation annotation) {
+		return new Object[] { match, array, value, annotation };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_0_5_collectcontextelements_greenBB(Match match,
@@ -1383,9 +1383,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final void pattern_JavaAnnotationValue2Comment_0_6_registerobjectstomatch_expressionBBBBB(
-			JavaAnnotationValue2Comment _this, Match match, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value) {
-		_this.registerObjectsToMatch_FWD(match, array, annotation, value);
+			JavaAnnotationValue2Comment _this, Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation) {
+		_this.registerObjectsToMatch_FWD(match, array, value, annotation);
 
 	}
 
@@ -1401,27 +1401,27 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_1_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("comment");
-		EObject _localVariable_1 = isApplicableMatch.getObject("a2c");
-		EObject _localVariable_2 = isApplicableMatch.getObject("array");
-		EObject _localVariable_3 = isApplicableMatch.getObject("annotation");
-		EObject _localVariable_4 = isApplicableMatch.getObject("value");
-		EObject tmpComment = _localVariable_0;
-		EObject tmpA2c = _localVariable_1;
-		EObject tmpArray = _localVariable_2;
-		EObject tmpAnnotation = _localVariable_3;
-		EObject tmpValue = _localVariable_4;
-		if (tmpComment instanceof Comment) {
-			Comment comment = (Comment) tmpComment;
-			if (tmpA2c instanceof ASTNode2Element) {
-				ASTNode2Element a2c = (ASTNode2Element) tmpA2c;
-				if (tmpArray instanceof ArrayInitializer) {
-					ArrayInitializer array = (ArrayInitializer) tmpArray;
-					if (tmpAnnotation instanceof Annotation) {
-						Annotation annotation = (Annotation) tmpAnnotation;
-						if (tmpValue instanceof AnnotationMemberValuePair) {
-							AnnotationMemberValuePair value = (AnnotationMemberValuePair) tmpValue;
-							return new Object[] { comment, a2c, array, annotation, value, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("array");
+		EObject _localVariable_1 = isApplicableMatch.getObject("comment");
+		EObject _localVariable_2 = isApplicableMatch.getObject("a2c");
+		EObject _localVariable_3 = isApplicableMatch.getObject("value");
+		EObject _localVariable_4 = isApplicableMatch.getObject("annotation");
+		EObject tmpArray = _localVariable_0;
+		EObject tmpComment = _localVariable_1;
+		EObject tmpA2c = _localVariable_2;
+		EObject tmpValue = _localVariable_3;
+		EObject tmpAnnotation = _localVariable_4;
+		if (tmpArray instanceof ArrayInitializer) {
+			ArrayInitializer array = (ArrayInitializer) tmpArray;
+			if (tmpComment instanceof Comment) {
+				Comment comment = (Comment) tmpComment;
+				if (tmpA2c instanceof ASTNode2Element) {
+					ASTNode2Element a2c = (ASTNode2Element) tmpA2c;
+					if (tmpValue instanceof AnnotationMemberValuePair) {
+						AnnotationMemberValuePair value = (AnnotationMemberValuePair) tmpValue;
+						if (tmpAnnotation instanceof Annotation) {
+							Annotation annotation = (Annotation) tmpAnnotation;
+							return new Object[] { array, comment, a2c, value, annotation, isApplicableMatch };
 						}
 					}
 				}
@@ -1431,12 +1431,12 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_1_1_performtransformation_blackBBBBBFBB(
-			Comment comment, ASTNode2Element a2c, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value, JavaAnnotationValue2Comment _this, IsApplicableMatch isApplicableMatch) {
+			ArrayInitializer array, Comment comment, ASTNode2Element a2c, AnnotationMemberValuePair value,
+			Annotation annotation, JavaAnnotationValue2Comment _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { comment, a2c, array, annotation, value, csp, _this, isApplicableMatch };
+				return new Object[] { array, comment, a2c, value, annotation, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1447,24 +1447,24 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		Object[] result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding = pattern_JavaAnnotationValue2Comment_1_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding != null) {
-			Comment comment = (Comment) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding[0];
-			ASTNode2Element a2c = (ASTNode2Element) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding[1];
-			ArrayInitializer array = (ArrayInitializer) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding[2];
-			Annotation annotation = (Annotation) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding[3];
-			AnnotationMemberValuePair value = (AnnotationMemberValuePair) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding[4];
+			ArrayInitializer array = (ArrayInitializer) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding[0];
+			Comment comment = (Comment) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding[1];
+			ASTNode2Element a2c = (ASTNode2Element) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding[2];
+			AnnotationMemberValuePair value = (AnnotationMemberValuePair) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding[3];
+			Annotation annotation = (Annotation) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_binding[4];
 
 			Object[] result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_black = pattern_JavaAnnotationValue2Comment_1_1_performtransformation_blackBBBBBFBB(
-					comment, a2c, array, annotation, value, _this, isApplicableMatch);
+					array, comment, a2c, value, annotation, _this, isApplicableMatch);
 			if (result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_JavaAnnotationValue2Comment_1_1_performtransformation_black[5];
 
-				return new Object[] { comment, a2c, array, annotation, value, csp, _this, isApplicableMatch };
+				return new Object[] { array, comment, a2c, value, annotation, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_JavaAnnotationValue2Comment_1_1_performtransformation_greenBFFBB(
+	public static final Object[] pattern_JavaAnnotationValue2Comment_1_1_performtransformation_greenFBFBB(
 			Comment comment, AnnotationMemberValuePair value, CSP csp) {
 		Comment tag = UMLFactory.eINSTANCE.createComment();
 		ASTNode2Element c2c = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -1475,53 +1475,53 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		c2c.setSource(value);
 		String tag_body_prime = (String) _localVariable_0;
 		tag.setBody(tag_body_prime);
-		return new Object[] { comment, tag, c2c, value, csp };
+		return new Object[] { tag, comment, c2c, value, csp };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_1_2_collecttranslatedelements_blackBBBB(
-			Comment tag, ArrayInitializer array, ASTNode2Element c2c, AnnotationMemberValuePair value) {
-		return new Object[] { tag, array, c2c, value };
+			ArrayInitializer array, Comment tag, ASTNode2Element c2c, AnnotationMemberValuePair value) {
+		return new Object[] { array, tag, c2c, value };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_1_2_collecttranslatedelements_greenFBBBB(
-			Comment tag, ArrayInitializer array, ASTNode2Element c2c, AnnotationMemberValuePair value) {
+			ArrayInitializer array, Comment tag, ASTNode2Element c2c, AnnotationMemberValuePair value) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(tag);
 		ruleresult.getTranslatedElements().add(array);
+		ruleresult.getCreatedElements().add(tag);
 		ruleresult.getCreatedLinkElements().add(c2c);
 		ruleresult.getTranslatedElements().add(value);
-		return new Object[] { ruleresult, tag, array, c2c, value };
+		return new Object[] { ruleresult, array, tag, c2c, value };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject comment, EObject a2c, EObject tag, EObject array, EObject annotation,
-			EObject c2c, EObject value) {
-		if (!comment.equals(tag)) {
-			if (!comment.equals(value)) {
-				if (!a2c.equals(comment)) {
-					if (!a2c.equals(tag)) {
-						if (!a2c.equals(array)) {
-							if (!a2c.equals(annotation)) {
-								if (!a2c.equals(c2c)) {
-									if (!a2c.equals(value)) {
-										if (!tag.equals(value)) {
-											if (!array.equals(comment)) {
-												if (!array.equals(tag)) {
-													if (!array.equals(c2c)) {
-														if (!array.equals(value)) {
-															if (!annotation.equals(comment)) {
-																if (!annotation.equals(tag)) {
-																	if (!annotation.equals(array)) {
-																		if (!annotation.equals(c2c)) {
-																			if (!annotation.equals(value)) {
-																				if (!c2c.equals(comment)) {
-																					if (!c2c.equals(tag)) {
-																						if (!c2c.equals(value)) {
+			PerformRuleResult ruleresult, EObject array, EObject tag, EObject comment, EObject c2c, EObject a2c,
+			EObject value, EObject annotation) {
+		if (!array.equals(tag)) {
+			if (!array.equals(comment)) {
+				if (!array.equals(c2c)) {
+					if (!array.equals(value)) {
+						if (!tag.equals(value)) {
+							if (!comment.equals(tag)) {
+								if (!comment.equals(value)) {
+									if (!c2c.equals(tag)) {
+										if (!c2c.equals(comment)) {
+											if (!c2c.equals(value)) {
+												if (!a2c.equals(array)) {
+													if (!a2c.equals(tag)) {
+														if (!a2c.equals(comment)) {
+															if (!a2c.equals(c2c)) {
+																if (!a2c.equals(value)) {
+																	if (!a2c.equals(annotation)) {
+																		if (!annotation.equals(array)) {
+																			if (!annotation.equals(tag)) {
+																				if (!annotation.equals(comment)) {
+																					if (!annotation.equals(c2c)) {
+																						if (!annotation.equals(value)) {
 																							return new Object[] {
-																									ruleresult, comment,
-																									a2c, tag, array,
-																									annotation, c2c,
-																									value };
+																									ruleresult, array,
+																									tag, comment, c2c,
+																									a2c, value,
+																									annotation };
 																						}
 																					}
 																				}
@@ -1547,55 +1547,55 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject comment, EObject tag, EObject array, EObject annotation, EObject c2c,
-			EObject value) {
-		EMoflonEdge tag__comment____annotatedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge comment__tag____ownedComment = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotation__value____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject array, EObject tag, EObject comment, EObject c2c, EObject value,
+			EObject annotation) {
 		EMoflonEdge c2c__tag____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tag__comment____annotatedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2c__value____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge comment__tag____ownedComment = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge value__array____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotation__value____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "JavaAnnotationValue2Comment";
-		String tag__comment____annotatedElement_name_prime = "annotatedElement";
-		String comment__tag____ownedComment_name_prime = "ownedComment";
-		String annotation__value____values_name_prime = "values";
 		String c2c__tag____target_name_prime = "target";
+		String tag__comment____annotatedElement_name_prime = "annotatedElement";
 		String c2c__value____source_name_prime = "source";
+		String comment__tag____ownedComment_name_prime = "ownedComment";
 		String value__array____value_name_prime = "value";
-		tag__comment____annotatedElement.setSrc(tag);
-		tag__comment____annotatedElement.setTrg(comment);
-		ruleresult.getCreatedEdges().add(tag__comment____annotatedElement);
-		comment__tag____ownedComment.setSrc(comment);
-		comment__tag____ownedComment.setTrg(tag);
-		ruleresult.getCreatedEdges().add(comment__tag____ownedComment);
-		annotation__value____values.setSrc(annotation);
-		annotation__value____values.setTrg(value);
-		ruleresult.getTranslatedEdges().add(annotation__value____values);
+		String annotation__value____values_name_prime = "values";
 		c2c__tag____target.setSrc(c2c);
 		c2c__tag____target.setTrg(tag);
 		ruleresult.getCreatedEdges().add(c2c__tag____target);
+		tag__comment____annotatedElement.setSrc(tag);
+		tag__comment____annotatedElement.setTrg(comment);
+		ruleresult.getCreatedEdges().add(tag__comment____annotatedElement);
 		c2c__value____source.setSrc(c2c);
 		c2c__value____source.setTrg(value);
 		ruleresult.getCreatedEdges().add(c2c__value____source);
+		comment__tag____ownedComment.setSrc(comment);
+		comment__tag____ownedComment.setTrg(tag);
+		ruleresult.getCreatedEdges().add(comment__tag____ownedComment);
 		value__array____value.setSrc(value);
 		value__array____value.setTrg(array);
 		ruleresult.getTranslatedEdges().add(value__array____value);
+		annotation__value____values.setSrc(annotation);
+		annotation__value____values.setTrg(value);
+		ruleresult.getTranslatedEdges().add(annotation__value____values);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tag__comment____annotatedElement.setName(tag__comment____annotatedElement_name_prime);
-		comment__tag____ownedComment.setName(comment__tag____ownedComment_name_prime);
-		annotation__value____values.setName(annotation__value____values_name_prime);
 		c2c__tag____target.setName(c2c__tag____target_name_prime);
+		tag__comment____annotatedElement.setName(tag__comment____annotatedElement_name_prime);
 		c2c__value____source.setName(c2c__value____source_name_prime);
+		comment__tag____ownedComment.setName(comment__tag____ownedComment_name_prime);
 		value__array____value.setName(value__array____value_name_prime);
-		return new Object[] { ruleresult, comment, tag, array, annotation, c2c, value, tag__comment____annotatedElement,
-				comment__tag____ownedComment, annotation__value____values, c2c__tag____target, c2c__value____source,
-				value__array____value };
+		annotation__value____values.setName(annotation__value____values_name_prime);
+		return new Object[] { ruleresult, array, tag, comment, c2c, value, annotation, c2c__tag____target,
+				tag__comment____annotatedElement, c2c__value____source, comment__tag____ownedComment,
+				value__array____value, annotation__value____values };
 	}
 
 	public static final void pattern_JavaAnnotationValue2Comment_1_5_registerobjects_expressionBBBBBBBBB(
-			JavaAnnotationValue2Comment _this, PerformRuleResult ruleresult, EObject comment, EObject a2c, EObject tag,
-			EObject array, EObject annotation, EObject c2c, EObject value) {
-		_this.registerObjects_FWD(ruleresult, comment, a2c, tag, array, annotation, c2c, value);
+			JavaAnnotationValue2Comment _this, PerformRuleResult ruleresult, EObject array, EObject tag,
+			EObject comment, EObject c2c, EObject a2c, EObject value, EObject annotation) {
+		_this.registerObjects_FWD(ruleresult, array, tag, comment, c2c, a2c, value, annotation);
 
 	}
 
@@ -1658,33 +1658,33 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_2_2_corematch_bindingFFFB(Match match) {
 		EObject _localVariable_0 = match.getObject("array");
-		EObject _localVariable_1 = match.getObject("annotation");
-		EObject _localVariable_2 = match.getObject("value");
+		EObject _localVariable_1 = match.getObject("value");
+		EObject _localVariable_2 = match.getObject("annotation");
 		EObject tmpArray = _localVariable_0;
-		EObject tmpAnnotation = _localVariable_1;
-		EObject tmpValue = _localVariable_2;
+		EObject tmpValue = _localVariable_1;
+		EObject tmpAnnotation = _localVariable_2;
 		if (tmpArray instanceof ArrayInitializer) {
 			ArrayInitializer array = (ArrayInitializer) tmpArray;
-			if (tmpAnnotation instanceof Annotation) {
-				Annotation annotation = (Annotation) tmpAnnotation;
-				if (tmpValue instanceof AnnotationMemberValuePair) {
-					AnnotationMemberValuePair value = (AnnotationMemberValuePair) tmpValue;
-					return new Object[] { array, annotation, value, match };
+			if (tmpValue instanceof AnnotationMemberValuePair) {
+				AnnotationMemberValuePair value = (AnnotationMemberValuePair) tmpValue;
+				if (tmpAnnotation instanceof Annotation) {
+					Annotation annotation = (Annotation) tmpAnnotation;
+					return new Object[] { array, value, annotation, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_JavaAnnotationValue2Comment_2_2_corematch_blackFFBBBB(
-			ArrayInitializer array, Annotation annotation, AnnotationMemberValuePair value, Match match) {
+	public static final Iterable<Object[]> pattern_JavaAnnotationValue2Comment_2_2_corematch_blackBFFBBB(
+			ArrayInitializer array, AnnotationMemberValuePair value, Annotation annotation, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(annotation,
 				ASTNode2Element.class, "source")) {
 			Element tmpComment = a2c.getTarget();
 			if (tmpComment instanceof Comment) {
 				Comment comment = (Comment) tmpComment;
-				_result.add(new Object[] { comment, a2c, array, annotation, value, match });
+				_result.add(new Object[] { array, comment, a2c, value, annotation, match });
 			}
 
 		}
@@ -1692,14 +1692,14 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Iterable<Object[]> pattern_JavaAnnotationValue2Comment_2_3_findcontext_blackBBBBB(
-			Comment comment, ASTNode2Element a2c, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value) {
+			ArrayInitializer array, Comment comment, ASTNode2Element a2c, AnnotationMemberValuePair value,
+			Annotation annotation) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (annotation.getValues().contains(value)) {
+		if (comment.equals(a2c.getTarget())) {
 			if (array.equals(value.getValue())) {
 				if (annotation.equals(a2c.getSource())) {
-					if (comment.equals(a2c.getTarget())) {
-						_result.add(new Object[] { comment, a2c, array, annotation, value });
+					if (annotation.getValues().contains(value)) {
+						_result.add(new Object[] { array, comment, a2c, value, annotation });
 					}
 				}
 			}
@@ -1707,50 +1707,51 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_JavaAnnotationValue2Comment_2_3_findcontext_greenBBBBBFFFFF(Comment comment,
-			ASTNode2Element a2c, ArrayInitializer array, Annotation annotation, AnnotationMemberValuePair value) {
+	public static final Object[] pattern_JavaAnnotationValue2Comment_2_3_findcontext_greenBBBBBFFFFF(
+			ArrayInitializer array, Comment comment, ASTNode2Element a2c, AnnotationMemberValuePair value,
+			Annotation annotation) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge annotation__value____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2c__comment____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge value__array____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2c__annotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2c__comment____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String annotation__value____values_name_prime = "values";
+		EMoflonEdge annotation__value____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String a2c__comment____target_name_prime = "target";
 		String value__array____value_name_prime = "value";
 		String a2c__annotation____source_name_prime = "source";
-		String a2c__comment____target_name_prime = "target";
+		String annotation__value____values_name_prime = "values";
+		isApplicableMatch.getAllContextElements().add(array);
 		isApplicableMatch.getAllContextElements().add(comment);
 		isApplicableMatch.getAllContextElements().add(a2c);
-		isApplicableMatch.getAllContextElements().add(array);
-		isApplicableMatch.getAllContextElements().add(annotation);
 		isApplicableMatch.getAllContextElements().add(value);
-		annotation__value____values.setSrc(annotation);
-		annotation__value____values.setTrg(value);
-		isApplicableMatch.getAllContextElements().add(annotation__value____values);
+		isApplicableMatch.getAllContextElements().add(annotation);
+		a2c__comment____target.setSrc(a2c);
+		a2c__comment____target.setTrg(comment);
+		isApplicableMatch.getAllContextElements().add(a2c__comment____target);
 		value__array____value.setSrc(value);
 		value__array____value.setTrg(array);
 		isApplicableMatch.getAllContextElements().add(value__array____value);
 		a2c__annotation____source.setSrc(a2c);
 		a2c__annotation____source.setTrg(annotation);
 		isApplicableMatch.getAllContextElements().add(a2c__annotation____source);
-		a2c__comment____target.setSrc(a2c);
-		a2c__comment____target.setTrg(comment);
-		isApplicableMatch.getAllContextElements().add(a2c__comment____target);
-		annotation__value____values.setName(annotation__value____values_name_prime);
+		annotation__value____values.setSrc(annotation);
+		annotation__value____values.setTrg(value);
+		isApplicableMatch.getAllContextElements().add(annotation__value____values);
+		a2c__comment____target.setName(a2c__comment____target_name_prime);
 		value__array____value.setName(value__array____value_name_prime);
 		a2c__annotation____source.setName(a2c__annotation____source_name_prime);
-		a2c__comment____target.setName(a2c__comment____target_name_prime);
-		return new Object[] { comment, a2c, array, annotation, value, isApplicableMatch, annotation__value____values,
-				value__array____value, a2c__annotation____source, a2c__comment____target };
+		annotation__value____values.setName(annotation__value____values_name_prime);
+		return new Object[] { array, comment, a2c, value, annotation, isApplicableMatch, a2c__comment____target,
+				value__array____value, a2c__annotation____source, annotation__value____values };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_2_4_solveCSP_bindingFBBBBBBB(
-			JavaAnnotationValue2Comment _this, IsApplicableMatch isApplicableMatch, Comment comment,
-			ASTNode2Element a2c, ArrayInitializer array, Annotation annotation, AnnotationMemberValuePair value) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, comment, a2c, array, annotation,
-				value);
+			JavaAnnotationValue2Comment _this, IsApplicableMatch isApplicableMatch, ArrayInitializer array,
+			Comment comment, ASTNode2Element a2c, AnnotationMemberValuePair value, Annotation annotation) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, array, comment, a2c, value,
+				annotation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, comment, a2c, array, annotation, value };
+			return new Object[] { csp, _this, isApplicableMatch, array, comment, a2c, value, annotation };
 		}
 		return null;
 	}
@@ -1760,10 +1761,10 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_2_4_solveCSP_bindingAndBlackFBBBBBBB(
-			JavaAnnotationValue2Comment _this, IsApplicableMatch isApplicableMatch, Comment comment,
-			ASTNode2Element a2c, ArrayInitializer array, Annotation annotation, AnnotationMemberValuePair value) {
+			JavaAnnotationValue2Comment _this, IsApplicableMatch isApplicableMatch, ArrayInitializer array,
+			Comment comment, ASTNode2Element a2c, AnnotationMemberValuePair value, Annotation annotation) {
 		Object[] result_pattern_JavaAnnotationValue2Comment_2_4_solveCSP_binding = pattern_JavaAnnotationValue2Comment_2_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, comment, a2c, array, annotation, value);
+				_this, isApplicableMatch, array, comment, a2c, value, annotation);
 		if (result_pattern_JavaAnnotationValue2Comment_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaAnnotationValue2Comment_2_4_solveCSP_binding[0];
 
@@ -1771,7 +1772,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_JavaAnnotationValue2Comment_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, comment, a2c, array, annotation, value };
+				return new Object[] { csp, _this, isApplicableMatch, array, comment, a2c, value, annotation };
 			}
 		}
 		return null;
@@ -1806,19 +1807,19 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_10_1_initialbindings_blackBBBB(
-			JavaAnnotationValue2Comment _this, Match match, Comment comment, Comment tag) {
+			JavaAnnotationValue2Comment _this, Match match, Comment tag, Comment comment) {
 		if (!comment.equals(tag)) {
-			return new Object[] { _this, match, comment, tag };
+			return new Object[] { _this, match, tag, comment };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_10_2_SolveCSP_bindingFBBBB(
-			JavaAnnotationValue2Comment _this, Match match, Comment comment, Comment tag) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, comment, tag);
+			JavaAnnotationValue2Comment _this, Match match, Comment tag, Comment comment) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tag, comment);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, comment, tag };
+			return new Object[] { csp, _this, match, tag, comment };
 		}
 		return null;
 	}
@@ -1828,9 +1829,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_10_2_SolveCSP_bindingAndBlackFBBBB(
-			JavaAnnotationValue2Comment _this, Match match, Comment comment, Comment tag) {
+			JavaAnnotationValue2Comment _this, Match match, Comment tag, Comment comment) {
 		Object[] result_pattern_JavaAnnotationValue2Comment_10_2_SolveCSP_binding = pattern_JavaAnnotationValue2Comment_10_2_SolveCSP_bindingFBBBB(
-				_this, match, comment, tag);
+				_this, match, tag, comment);
 		if (result_pattern_JavaAnnotationValue2Comment_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaAnnotationValue2Comment_10_2_SolveCSP_binding[0];
 
@@ -1838,7 +1839,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_JavaAnnotationValue2Comment_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, comment, tag };
+				return new Object[] { csp, _this, match, tag, comment };
 			}
 		}
 		return null;
@@ -1852,15 +1853,15 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_10_4_collectelementstobetranslated_blackBBB(
-			Match match, Comment comment, Comment tag) {
+			Match match, Comment tag, Comment comment) {
 		if (!comment.equals(tag)) {
-			return new Object[] { match, comment, tag };
+			return new Object[] { match, tag, comment };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_10_4_collectelementstobetranslated_greenBBBFF(
-			Match match, Comment comment, Comment tag) {
+			Match match, Comment tag, Comment comment) {
 		EMoflonEdge tag__comment____annotatedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge comment__tag____ownedComment = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tag);
@@ -1874,13 +1875,13 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		match.getToBeTranslatedEdges().add(comment__tag____ownedComment);
 		tag__comment____annotatedElement.setName(tag__comment____annotatedElement_name_prime);
 		comment__tag____ownedComment.setName(comment__tag____ownedComment_name_prime);
-		return new Object[] { match, comment, tag, tag__comment____annotatedElement, comment__tag____ownedComment };
+		return new Object[] { match, tag, comment, tag__comment____annotatedElement, comment__tag____ownedComment };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_10_5_collectcontextelements_blackBBB(Match match,
-			Comment comment, Comment tag) {
+			Comment tag, Comment comment) {
 		if (!comment.equals(tag)) {
-			return new Object[] { match, comment, tag };
+			return new Object[] { match, tag, comment };
 		}
 		return null;
 	}
@@ -1892,8 +1893,8 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final void pattern_JavaAnnotationValue2Comment_10_6_registerobjectstomatch_expressionBBBB(
-			JavaAnnotationValue2Comment _this, Match match, Comment comment, Comment tag) {
-		_this.registerObjectsToMatch_BWD(match, comment, tag);
+			JavaAnnotationValue2Comment _this, Match match, Comment tag, Comment comment) {
+		_this.registerObjectsToMatch_BWD(match, tag, comment);
 
 	}
 
@@ -1909,23 +1910,23 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("comment");
-		EObject _localVariable_1 = isApplicableMatch.getObject("a2c");
-		EObject _localVariable_2 = isApplicableMatch.getObject("tag");
+		EObject _localVariable_0 = isApplicableMatch.getObject("tag");
+		EObject _localVariable_1 = isApplicableMatch.getObject("comment");
+		EObject _localVariable_2 = isApplicableMatch.getObject("a2c");
 		EObject _localVariable_3 = isApplicableMatch.getObject("annotation");
-		EObject tmpComment = _localVariable_0;
-		EObject tmpA2c = _localVariable_1;
-		EObject tmpTag = _localVariable_2;
+		EObject tmpTag = _localVariable_0;
+		EObject tmpComment = _localVariable_1;
+		EObject tmpA2c = _localVariable_2;
 		EObject tmpAnnotation = _localVariable_3;
-		if (tmpComment instanceof Comment) {
-			Comment comment = (Comment) tmpComment;
-			if (tmpA2c instanceof ASTNode2Element) {
-				ASTNode2Element a2c = (ASTNode2Element) tmpA2c;
-				if (tmpTag instanceof Comment) {
-					Comment tag = (Comment) tmpTag;
+		if (tmpTag instanceof Comment) {
+			Comment tag = (Comment) tmpTag;
+			if (tmpComment instanceof Comment) {
+				Comment comment = (Comment) tmpComment;
+				if (tmpA2c instanceof ASTNode2Element) {
+					ASTNode2Element a2c = (ASTNode2Element) tmpA2c;
 					if (tmpAnnotation instanceof Annotation) {
 						Annotation annotation = (Annotation) tmpAnnotation;
-						return new Object[] { comment, a2c, tag, annotation, isApplicableMatch };
+						return new Object[] { tag, comment, a2c, annotation, isApplicableMatch };
 					}
 				}
 			}
@@ -1934,13 +1935,13 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_11_1_performtransformation_blackBBBBFBB(
-			Comment comment, ASTNode2Element a2c, Comment tag, Annotation annotation, JavaAnnotationValue2Comment _this,
+			Comment tag, Comment comment, ASTNode2Element a2c, Annotation annotation, JavaAnnotationValue2Comment _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!comment.equals(tag)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { comment, a2c, tag, annotation, csp, _this, isApplicableMatch };
+					return new Object[] { tag, comment, a2c, annotation, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1952,81 +1953,81 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		Object[] result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_binding = pattern_JavaAnnotationValue2Comment_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_binding != null) {
-			Comment comment = (Comment) result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_binding[0];
-			ASTNode2Element a2c = (ASTNode2Element) result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_binding[1];
-			Comment tag = (Comment) result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_binding[2];
+			Comment tag = (Comment) result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_binding[0];
+			Comment comment = (Comment) result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_binding[1];
+			ASTNode2Element a2c = (ASTNode2Element) result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_binding[2];
 			Annotation annotation = (Annotation) result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_black = pattern_JavaAnnotationValue2Comment_11_1_performtransformation_blackBBBBFBB(
-					comment, a2c, tag, annotation, _this, isApplicableMatch);
+					tag, comment, a2c, annotation, _this, isApplicableMatch);
 			if (result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_JavaAnnotationValue2Comment_11_1_performtransformation_black[4];
 
-				return new Object[] { comment, a2c, tag, annotation, csp, _this, isApplicableMatch };
+				return new Object[] { tag, comment, a2c, annotation, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_JavaAnnotationValue2Comment_11_1_performtransformation_greenBFBFFB(Comment tag,
+	public static final Object[] pattern_JavaAnnotationValue2Comment_11_1_performtransformation_greenFBFFBB(Comment tag,
 			Annotation annotation, CSP csp) {
 		ArrayInitializer array = JavaFactory.eINSTANCE.createArrayInitializer();
 		ASTNode2Element c2c = UmlFactory.eINSTANCE.createASTNode2Element();
 		AnnotationMemberValuePair value = JavaFactory.eINSTANCE.createAnnotationMemberValuePair();
 		Object _localVariable_0 = csp.getValue("value", "name");
 		c2c.setTarget(tag);
-		annotation.getValues().add(value);
 		c2c.setSource(value);
 		value.setValue(array);
+		annotation.getValues().add(value);
 		String value_name_prime = (String) _localVariable_0;
 		value.setName(value_name_prime);
-		return new Object[] { tag, array, annotation, c2c, value, csp };
+		return new Object[] { array, tag, c2c, value, annotation, csp };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_11_2_collecttranslatedelements_blackBBBB(
-			Comment tag, ArrayInitializer array, ASTNode2Element c2c, AnnotationMemberValuePair value) {
-		return new Object[] { tag, array, c2c, value };
+			ArrayInitializer array, Comment tag, ASTNode2Element c2c, AnnotationMemberValuePair value) {
+		return new Object[] { array, tag, c2c, value };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_11_2_collecttranslatedelements_greenFBBBB(
-			Comment tag, ArrayInitializer array, ASTNode2Element c2c, AnnotationMemberValuePair value) {
+			ArrayInitializer array, Comment tag, ASTNode2Element c2c, AnnotationMemberValuePair value) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(tag);
 		ruleresult.getCreatedElements().add(array);
+		ruleresult.getTranslatedElements().add(tag);
 		ruleresult.getCreatedLinkElements().add(c2c);
 		ruleresult.getCreatedElements().add(value);
-		return new Object[] { ruleresult, tag, array, c2c, value };
+		return new Object[] { ruleresult, array, tag, c2c, value };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject comment, EObject a2c, EObject tag, EObject array, EObject annotation,
-			EObject c2c, EObject value) {
-		if (!comment.equals(tag)) {
-			if (!comment.equals(value)) {
-				if (!a2c.equals(comment)) {
-					if (!a2c.equals(tag)) {
-						if (!a2c.equals(array)) {
-							if (!a2c.equals(annotation)) {
-								if (!a2c.equals(c2c)) {
-									if (!a2c.equals(value)) {
-										if (!tag.equals(value)) {
-											if (!array.equals(comment)) {
-												if (!array.equals(tag)) {
-													if (!array.equals(c2c)) {
-														if (!array.equals(value)) {
-															if (!annotation.equals(comment)) {
-																if (!annotation.equals(tag)) {
-																	if (!annotation.equals(array)) {
-																		if (!annotation.equals(c2c)) {
-																			if (!annotation.equals(value)) {
-																				if (!c2c.equals(comment)) {
-																					if (!c2c.equals(tag)) {
-																						if (!c2c.equals(value)) {
+			PerformRuleResult ruleresult, EObject array, EObject tag, EObject comment, EObject c2c, EObject a2c,
+			EObject value, EObject annotation) {
+		if (!array.equals(tag)) {
+			if (!array.equals(comment)) {
+				if (!array.equals(c2c)) {
+					if (!array.equals(value)) {
+						if (!tag.equals(value)) {
+							if (!comment.equals(tag)) {
+								if (!comment.equals(value)) {
+									if (!c2c.equals(tag)) {
+										if (!c2c.equals(comment)) {
+											if (!c2c.equals(value)) {
+												if (!a2c.equals(array)) {
+													if (!a2c.equals(tag)) {
+														if (!a2c.equals(comment)) {
+															if (!a2c.equals(c2c)) {
+																if (!a2c.equals(value)) {
+																	if (!a2c.equals(annotation)) {
+																		if (!annotation.equals(array)) {
+																			if (!annotation.equals(tag)) {
+																				if (!annotation.equals(comment)) {
+																					if (!annotation.equals(c2c)) {
+																						if (!annotation.equals(value)) {
 																							return new Object[] {
-																									ruleresult, comment,
-																									a2c, tag, array,
-																									annotation, c2c,
-																									value };
+																									ruleresult, array,
+																									tag, comment, c2c,
+																									a2c, value,
+																									annotation };
 																						}
 																					}
 																				}
@@ -2052,55 +2053,55 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject comment, EObject tag, EObject array, EObject annotation, EObject c2c,
-			EObject value) {
-		EMoflonEdge tag__comment____annotatedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge comment__tag____ownedComment = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotation__value____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject array, EObject tag, EObject comment, EObject c2c, EObject value,
+			EObject annotation) {
 		EMoflonEdge c2c__tag____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tag__comment____annotatedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2c__value____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge comment__tag____ownedComment = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge value__array____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotation__value____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "JavaAnnotationValue2Comment";
-		String tag__comment____annotatedElement_name_prime = "annotatedElement";
-		String comment__tag____ownedComment_name_prime = "ownedComment";
-		String annotation__value____values_name_prime = "values";
 		String c2c__tag____target_name_prime = "target";
+		String tag__comment____annotatedElement_name_prime = "annotatedElement";
 		String c2c__value____source_name_prime = "source";
+		String comment__tag____ownedComment_name_prime = "ownedComment";
 		String value__array____value_name_prime = "value";
-		tag__comment____annotatedElement.setSrc(tag);
-		tag__comment____annotatedElement.setTrg(comment);
-		ruleresult.getTranslatedEdges().add(tag__comment____annotatedElement);
-		comment__tag____ownedComment.setSrc(comment);
-		comment__tag____ownedComment.setTrg(tag);
-		ruleresult.getTranslatedEdges().add(comment__tag____ownedComment);
-		annotation__value____values.setSrc(annotation);
-		annotation__value____values.setTrg(value);
-		ruleresult.getCreatedEdges().add(annotation__value____values);
+		String annotation__value____values_name_prime = "values";
 		c2c__tag____target.setSrc(c2c);
 		c2c__tag____target.setTrg(tag);
 		ruleresult.getCreatedEdges().add(c2c__tag____target);
+		tag__comment____annotatedElement.setSrc(tag);
+		tag__comment____annotatedElement.setTrg(comment);
+		ruleresult.getTranslatedEdges().add(tag__comment____annotatedElement);
 		c2c__value____source.setSrc(c2c);
 		c2c__value____source.setTrg(value);
 		ruleresult.getCreatedEdges().add(c2c__value____source);
+		comment__tag____ownedComment.setSrc(comment);
+		comment__tag____ownedComment.setTrg(tag);
+		ruleresult.getTranslatedEdges().add(comment__tag____ownedComment);
 		value__array____value.setSrc(value);
 		value__array____value.setTrg(array);
 		ruleresult.getCreatedEdges().add(value__array____value);
+		annotation__value____values.setSrc(annotation);
+		annotation__value____values.setTrg(value);
+		ruleresult.getCreatedEdges().add(annotation__value____values);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tag__comment____annotatedElement.setName(tag__comment____annotatedElement_name_prime);
-		comment__tag____ownedComment.setName(comment__tag____ownedComment_name_prime);
-		annotation__value____values.setName(annotation__value____values_name_prime);
 		c2c__tag____target.setName(c2c__tag____target_name_prime);
+		tag__comment____annotatedElement.setName(tag__comment____annotatedElement_name_prime);
 		c2c__value____source.setName(c2c__value____source_name_prime);
+		comment__tag____ownedComment.setName(comment__tag____ownedComment_name_prime);
 		value__array____value.setName(value__array____value_name_prime);
-		return new Object[] { ruleresult, comment, tag, array, annotation, c2c, value, tag__comment____annotatedElement,
-				comment__tag____ownedComment, annotation__value____values, c2c__tag____target, c2c__value____source,
-				value__array____value };
+		annotation__value____values.setName(annotation__value____values_name_prime);
+		return new Object[] { ruleresult, array, tag, comment, c2c, value, annotation, c2c__tag____target,
+				tag__comment____annotatedElement, c2c__value____source, comment__tag____ownedComment,
+				value__array____value, annotation__value____values };
 	}
 
 	public static final void pattern_JavaAnnotationValue2Comment_11_5_registerobjects_expressionBBBBBBBBB(
-			JavaAnnotationValue2Comment _this, PerformRuleResult ruleresult, EObject comment, EObject a2c, EObject tag,
-			EObject array, EObject annotation, EObject c2c, EObject value) {
-		_this.registerObjects_BWD(ruleresult, comment, a2c, tag, array, annotation, c2c, value);
+			JavaAnnotationValue2Comment _this, PerformRuleResult ruleresult, EObject array, EObject tag,
+			EObject comment, EObject c2c, EObject a2c, EObject value, EObject annotation) {
+		_this.registerObjects_BWD(ruleresult, array, tag, comment, c2c, a2c, value, annotation);
 
 	}
 
@@ -2162,22 +2163,22 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("comment");
-		EObject _localVariable_1 = match.getObject("tag");
-		EObject tmpComment = _localVariable_0;
-		EObject tmpTag = _localVariable_1;
-		if (tmpComment instanceof Comment) {
-			Comment comment = (Comment) tmpComment;
-			if (tmpTag instanceof Comment) {
-				Comment tag = (Comment) tmpTag;
-				return new Object[] { comment, tag, match };
+		EObject _localVariable_0 = match.getObject("tag");
+		EObject _localVariable_1 = match.getObject("comment");
+		EObject tmpTag = _localVariable_0;
+		EObject tmpComment = _localVariable_1;
+		if (tmpTag instanceof Comment) {
+			Comment tag = (Comment) tmpTag;
+			if (tmpComment instanceof Comment) {
+				Comment comment = (Comment) tmpComment;
+				return new Object[] { tag, comment, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_JavaAnnotationValue2Comment_12_2_corematch_blackBFBFB(
-			Comment comment, Comment tag, Match match) {
+	public static final Iterable<Object[]> pattern_JavaAnnotationValue2Comment_12_2_corematch_blackBBFFB(Comment tag,
+			Comment comment, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!comment.equals(tag)) {
 			for (ASTNode2Element a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(comment,
@@ -2185,7 +2186,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 				ASTNode tmpAnnotation = a2c.getSource();
 				if (tmpAnnotation instanceof Annotation) {
 					Annotation annotation = (Annotation) tmpAnnotation;
-					_result.add(new Object[] { comment, a2c, tag, annotation, match });
+					_result.add(new Object[] { tag, comment, a2c, annotation, match });
 				}
 
 			}
@@ -2193,15 +2194,15 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_JavaAnnotationValue2Comment_12_3_findcontext_blackBBBB(
-			Comment comment, ASTNode2Element a2c, Comment tag, Annotation annotation) {
+	public static final Iterable<Object[]> pattern_JavaAnnotationValue2Comment_12_3_findcontext_blackBBBB(Comment tag,
+			Comment comment, ASTNode2Element a2c, Annotation annotation) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!comment.equals(tag)) {
 			if (tag.getAnnotatedElements().contains(comment)) {
 				if (comment.getOwnedComments().contains(tag)) {
-					if (annotation.equals(a2c.getSource())) {
-						if (comment.equals(a2c.getTarget())) {
-							_result.add(new Object[] { comment, a2c, tag, annotation });
+					if (comment.equals(a2c.getTarget())) {
+						if (annotation.equals(a2c.getSource())) {
+							_result.add(new Object[] { tag, comment, a2c, annotation });
 						}
 					}
 				}
@@ -2210,20 +2211,20 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_JavaAnnotationValue2Comment_12_3_findcontext_greenBBBBFFFFF(Comment comment,
-			ASTNode2Element a2c, Comment tag, Annotation annotation) {
+	public static final Object[] pattern_JavaAnnotationValue2Comment_12_3_findcontext_greenBBBBFFFFF(Comment tag,
+			Comment comment, ASTNode2Element a2c, Annotation annotation) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge tag__comment____annotatedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge comment__tag____ownedComment = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2c__annotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2c__comment____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2c__annotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tag__comment____annotatedElement_name_prime = "annotatedElement";
 		String comment__tag____ownedComment_name_prime = "ownedComment";
-		String a2c__annotation____source_name_prime = "source";
 		String a2c__comment____target_name_prime = "target";
+		String a2c__annotation____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(tag);
 		isApplicableMatch.getAllContextElements().add(comment);
 		isApplicableMatch.getAllContextElements().add(a2c);
-		isApplicableMatch.getAllContextElements().add(tag);
 		isApplicableMatch.getAllContextElements().add(annotation);
 		tag__comment____annotatedElement.setSrc(tag);
 		tag__comment____annotatedElement.setTrg(comment);
@@ -2231,27 +2232,27 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		comment__tag____ownedComment.setSrc(comment);
 		comment__tag____ownedComment.setTrg(tag);
 		isApplicableMatch.getAllContextElements().add(comment__tag____ownedComment);
-		a2c__annotation____source.setSrc(a2c);
-		a2c__annotation____source.setTrg(annotation);
-		isApplicableMatch.getAllContextElements().add(a2c__annotation____source);
 		a2c__comment____target.setSrc(a2c);
 		a2c__comment____target.setTrg(comment);
 		isApplicableMatch.getAllContextElements().add(a2c__comment____target);
+		a2c__annotation____source.setSrc(a2c);
+		a2c__annotation____source.setTrg(annotation);
+		isApplicableMatch.getAllContextElements().add(a2c__annotation____source);
 		tag__comment____annotatedElement.setName(tag__comment____annotatedElement_name_prime);
 		comment__tag____ownedComment.setName(comment__tag____ownedComment_name_prime);
-		a2c__annotation____source.setName(a2c__annotation____source_name_prime);
 		a2c__comment____target.setName(a2c__comment____target_name_prime);
-		return new Object[] { comment, a2c, tag, annotation, isApplicableMatch, tag__comment____annotatedElement,
-				comment__tag____ownedComment, a2c__annotation____source, a2c__comment____target };
+		a2c__annotation____source.setName(a2c__annotation____source_name_prime);
+		return new Object[] { tag, comment, a2c, annotation, isApplicableMatch, tag__comment____annotatedElement,
+				comment__tag____ownedComment, a2c__comment____target, a2c__annotation____source };
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_12_4_solveCSP_bindingFBBBBBB(
-			JavaAnnotationValue2Comment _this, IsApplicableMatch isApplicableMatch, Comment comment,
-			ASTNode2Element a2c, Comment tag, Annotation annotation) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, comment, a2c, tag, annotation);
+			JavaAnnotationValue2Comment _this, IsApplicableMatch isApplicableMatch, Comment tag, Comment comment,
+			ASTNode2Element a2c, Annotation annotation) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tag, comment, a2c, annotation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, comment, a2c, tag, annotation };
+			return new Object[] { csp, _this, isApplicableMatch, tag, comment, a2c, annotation };
 		}
 		return null;
 	}
@@ -2261,10 +2262,10 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_12_4_solveCSP_bindingAndBlackFBBBBBB(
-			JavaAnnotationValue2Comment _this, IsApplicableMatch isApplicableMatch, Comment comment,
-			ASTNode2Element a2c, Comment tag, Annotation annotation) {
+			JavaAnnotationValue2Comment _this, IsApplicableMatch isApplicableMatch, Comment tag, Comment comment,
+			ASTNode2Element a2c, Annotation annotation) {
 		Object[] result_pattern_JavaAnnotationValue2Comment_12_4_solveCSP_binding = pattern_JavaAnnotationValue2Comment_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, comment, a2c, tag, annotation);
+				_this, isApplicableMatch, tag, comment, a2c, annotation);
 		if (result_pattern_JavaAnnotationValue2Comment_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaAnnotationValue2Comment_12_4_solveCSP_binding[0];
 
@@ -2272,7 +2273,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_JavaAnnotationValue2Comment_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, comment, a2c, tag, annotation };
+				return new Object[] { csp, _this, isApplicableMatch, tag, comment, a2c, annotation };
 			}
 		}
 		return null;
@@ -2363,9 +2364,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_JavaAnnotationValue2Comment_20_2_testcorematchandDECs_black_nac_0BB(
 			Comment tag, Comment comment) {
 		if (!comment.equals(tag)) {
-			for (Element __DEC_tag_annotatedElement_891538 : tag.getAnnotatedElements()) {
-				if (!tag.equals(__DEC_tag_annotatedElement_891538)) {
-					if (!comment.equals(__DEC_tag_annotatedElement_891538)) {
+			for (Element __DEC_tag_annotatedElement_276945 : tag.getAnnotatedElements()) {
+				if (!tag.equals(__DEC_tag_annotatedElement_276945)) {
+					if (!comment.equals(__DEC_tag_annotatedElement_276945)) {
 						return new Object[] { tag, comment };
 					}
 				}
@@ -2388,7 +2389,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 						if (comment.getOwnedComments().contains(tag)) {
 							if (pattern_JavaAnnotationValue2Comment_20_2_testcorematchandDECs_black_nac_0BB(tag,
 									comment) == null) {
-								_result.add(new Object[] { comment, tag, _edge_annotatedElement });
+								_result.add(new Object[] { tag, comment, _edge_annotatedElement });
 							}
 						}
 					}
@@ -2411,8 +2412,8 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final boolean pattern_JavaAnnotationValue2Comment_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			JavaAnnotationValue2Comment _this, Match match, Comment comment, Comment tag) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, comment, tag);
+			JavaAnnotationValue2Comment _this, Match match, Comment tag, Comment comment) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tag, comment);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2501,21 +2502,19 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Iterable<Object[]> pattern_JavaAnnotationValue2Comment_21_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_values) {
+			EMoflonEdge _edge_value) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpAnnotation = _edge_values.getSrc();
-		if (tmpAnnotation instanceof Annotation) {
-			Annotation annotation = (Annotation) tmpAnnotation;
-			EObject tmpValue = _edge_values.getTrg();
-			if (tmpValue instanceof AnnotationMemberValuePair) {
-				AnnotationMemberValuePair value = (AnnotationMemberValuePair) tmpValue;
-				if (annotation.getValues().contains(value)) {
-					Expression tmpArray = value.getValue();
-					if (tmpArray instanceof ArrayInitializer) {
-						ArrayInitializer array = (ArrayInitializer) tmpArray;
-						_result.add(new Object[] { array, annotation, value, _edge_values });
+		EObject tmpValue = _edge_value.getSrc();
+		if (tmpValue instanceof AnnotationMemberValuePair) {
+			AnnotationMemberValuePair value = (AnnotationMemberValuePair) tmpValue;
+			EObject tmpArray = _edge_value.getTrg();
+			if (tmpArray instanceof ArrayInitializer) {
+				ArrayInitializer array = (ArrayInitializer) tmpArray;
+				if (array.equals(value.getValue())) {
+					for (Annotation annotation : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(value, Annotation.class, "values")) {
+						_result.add(new Object[] { array, value, annotation, _edge_value });
 					}
-
 				}
 			}
 
@@ -2535,9 +2534,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final boolean pattern_JavaAnnotationValue2Comment_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			JavaAnnotationValue2Comment _this, Match match, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, array, annotation, value);
+			JavaAnnotationValue2Comment _this, Match match, ArrayInitializer array, AnnotationMemberValuePair value,
+			Annotation annotation) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, array, value, annotation);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2582,28 +2581,28 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_bindingFFFFFBB(
-			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("comment");
+			Match sourceMatch, Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("array");
 		EObject _localVariable_1 = targetMatch.getObject("tag");
-		EObject _localVariable_2 = sourceMatch.getObject("array");
-		EObject _localVariable_3 = sourceMatch.getObject("annotation");
-		EObject _localVariable_4 = sourceMatch.getObject("value");
-		EObject tmpComment = _localVariable_0;
+		EObject _localVariable_2 = targetMatch.getObject("comment");
+		EObject _localVariable_3 = sourceMatch.getObject("value");
+		EObject _localVariable_4 = sourceMatch.getObject("annotation");
+		EObject tmpArray = _localVariable_0;
 		EObject tmpTag = _localVariable_1;
-		EObject tmpArray = _localVariable_2;
-		EObject tmpAnnotation = _localVariable_3;
-		EObject tmpValue = _localVariable_4;
-		if (tmpComment instanceof Comment) {
-			Comment comment = (Comment) tmpComment;
+		EObject tmpComment = _localVariable_2;
+		EObject tmpValue = _localVariable_3;
+		EObject tmpAnnotation = _localVariable_4;
+		if (tmpArray instanceof ArrayInitializer) {
+			ArrayInitializer array = (ArrayInitializer) tmpArray;
 			if (tmpTag instanceof Comment) {
 				Comment tag = (Comment) tmpTag;
-				if (tmpArray instanceof ArrayInitializer) {
-					ArrayInitializer array = (ArrayInitializer) tmpArray;
-					if (tmpAnnotation instanceof Annotation) {
-						Annotation annotation = (Annotation) tmpAnnotation;
-						if (tmpValue instanceof AnnotationMemberValuePair) {
-							AnnotationMemberValuePair value = (AnnotationMemberValuePair) tmpValue;
-							return new Object[] { comment, tag, array, annotation, value, targetMatch, sourceMatch };
+				if (tmpComment instanceof Comment) {
+					Comment comment = (Comment) tmpComment;
+					if (tmpValue instanceof AnnotationMemberValuePair) {
+						AnnotationMemberValuePair value = (AnnotationMemberValuePair) tmpValue;
+						if (tmpAnnotation instanceof Annotation) {
+							Annotation annotation = (Annotation) tmpAnnotation;
+							return new Object[] { array, tag, comment, value, annotation, sourceMatch, targetMatch };
 						}
 					}
 				}
@@ -2613,11 +2612,11 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_blackBBBBBBB(
-			Comment comment, Comment tag, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value, Match sourceMatch, Match targetMatch) {
+			ArrayInitializer array, Comment tag, Comment comment, AnnotationMemberValuePair value,
+			Annotation annotation, Match sourceMatch, Match targetMatch) {
 		if (!comment.equals(tag)) {
 			if (!sourceMatch.equals(targetMatch)) {
-				return new Object[] { comment, tag, array, annotation, value, sourceMatch, targetMatch };
+				return new Object[] { array, tag, comment, value, annotation, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2626,32 +2625,32 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_bindingAndBlackFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding = pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_bindingFFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding != null) {
-			Comment comment = (Comment) result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding[0];
+			ArrayInitializer array = (ArrayInitializer) result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding[0];
 			Comment tag = (Comment) result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding[1];
-			ArrayInitializer array = (ArrayInitializer) result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding[2];
-			Annotation annotation = (Annotation) result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding[3];
-			AnnotationMemberValuePair value = (AnnotationMemberValuePair) result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding[4];
+			Comment comment = (Comment) result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding[2];
+			AnnotationMemberValuePair value = (AnnotationMemberValuePair) result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding[3];
+			Annotation annotation = (Annotation) result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_binding[4];
 
 			Object[] result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_black = pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_blackBBBBBBB(
-					comment, tag, array, annotation, value, sourceMatch, targetMatch);
+					array, tag, comment, value, annotation, sourceMatch, targetMatch);
 			if (result_pattern_JavaAnnotationValue2Comment_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { comment, tag, array, annotation, value, sourceMatch, targetMatch };
+				return new Object[] { array, tag, comment, value, annotation, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_24_3_solvecsp_bindingFBBBBBBBB(
-			JavaAnnotationValue2Comment _this, Comment comment, Comment tag, ArrayInitializer array,
-			Annotation annotation, AnnotationMemberValuePair value, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(comment, tag, array, annotation, value, sourceMatch,
+			JavaAnnotationValue2Comment _this, ArrayInitializer array, Comment tag, Comment comment,
+			AnnotationMemberValuePair value, Annotation annotation, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(array, tag, comment, value, annotation, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_5;
 		if (csp != null) {
-			return new Object[] { csp, _this, comment, tag, array, annotation, value, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, array, tag, comment, value, annotation, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2661,10 +2660,10 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_24_3_solvecsp_bindingAndBlackFBBBBBBBB(
-			JavaAnnotationValue2Comment _this, Comment comment, Comment tag, ArrayInitializer array,
-			Annotation annotation, AnnotationMemberValuePair value, Match sourceMatch, Match targetMatch) {
+			JavaAnnotationValue2Comment _this, ArrayInitializer array, Comment tag, Comment comment,
+			AnnotationMemberValuePair value, Annotation annotation, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_JavaAnnotationValue2Comment_24_3_solvecsp_binding = pattern_JavaAnnotationValue2Comment_24_3_solvecsp_bindingFBBBBBBBB(
-				_this, comment, tag, array, annotation, value, sourceMatch, targetMatch);
+				_this, array, tag, comment, value, annotation, sourceMatch, targetMatch);
 		if (result_pattern_JavaAnnotationValue2Comment_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaAnnotationValue2Comment_24_3_solvecsp_binding[0];
 
@@ -2672,7 +2671,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_JavaAnnotationValue2Comment_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, comment, tag, array, annotation, value, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, array, tag, comment, value, annotation, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2688,9 +2687,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 			Comment comment, Annotation annotation, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ASTNode2Element a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(annotation,
-					ASTNode2Element.class, "source")) {
-				if (comment.equals(a2c.getTarget())) {
+			for (ASTNode2Element a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(comment,
+					ASTNode2Element.class, "target")) {
+				if (annotation.equals(a2c.getSource())) {
 					_result.add(new Object[] { comment, a2c, annotation, sourceMatch, targetMatch });
 				}
 			}
@@ -2710,10 +2709,10 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_24_6_createcorrespondence_blackBBBBBB(
-			Comment comment, Comment tag, ArrayInitializer array, Annotation annotation,
-			AnnotationMemberValuePair value, CCMatch ccMatch) {
+			ArrayInitializer array, Comment tag, Comment comment, AnnotationMemberValuePair value,
+			Annotation annotation, CCMatch ccMatch) {
 		if (!comment.equals(tag)) {
-			return new Object[] { comment, tag, array, annotation, value, ccMatch };
+			return new Object[] { array, tag, comment, value, annotation, ccMatch };
 		}
 		return null;
 	}
@@ -2749,10 +2748,10 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_JavaAnnotationValue2Comment_27_1_matchtggpattern_blackBBB(
-			ArrayInitializer array, Annotation annotation, AnnotationMemberValuePair value) {
-		if (annotation.getValues().contains(value)) {
-			if (array.equals(value.getValue())) {
-				return new Object[] { array, annotation, value };
+			ArrayInitializer array, AnnotationMemberValuePair value, Annotation annotation) {
+		if (array.equals(value.getValue())) {
+			if (annotation.getValues().contains(value)) {
+				return new Object[] { array, value, annotation };
 			}
 		}
 		return null;
@@ -2771,9 +2770,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_JavaAnnotationValue2Comment_28_1_matchtggpattern_black_nac_0BB(Comment tag,
 			Comment comment) {
 		if (!comment.equals(tag)) {
-			for (Element __DEC_tag_annotatedElement_369560 : tag.getAnnotatedElements()) {
-				if (!tag.equals(__DEC_tag_annotatedElement_369560)) {
-					if (!comment.equals(__DEC_tag_annotatedElement_369560)) {
+			for (Element __DEC_tag_annotatedElement_39084 : tag.getAnnotatedElements()) {
+				if (!tag.equals(__DEC_tag_annotatedElement_39084)) {
+					if (!comment.equals(__DEC_tag_annotatedElement_39084)) {
 						return new Object[] { tag, comment };
 					}
 				}
@@ -2782,13 +2781,13 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_JavaAnnotationValue2Comment_28_1_matchtggpattern_blackBB(Comment comment,
-			Comment tag) {
+	public static final Object[] pattern_JavaAnnotationValue2Comment_28_1_matchtggpattern_blackBB(Comment tag,
+			Comment comment) {
 		if (!comment.equals(tag)) {
 			if (tag.getAnnotatedElements().contains(comment)) {
 				if (comment.getOwnedComments().contains(tag)) {
 					if (pattern_JavaAnnotationValue2Comment_28_1_matchtggpattern_black_nac_0BB(tag, comment) == null) {
-						return new Object[] { comment, tag };
+						return new Object[] { tag, comment };
 					}
 				}
 			}
@@ -2928,25 +2927,25 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		return new Object[] { comment, a2c, annotation, ruleResult };
 	}
 
-	public static final Object[] pattern_JavaAnnotationValue2Comment_29_6_perform_greenBFFBFFBB(Comment comment,
+	public static final Object[] pattern_JavaAnnotationValue2Comment_29_6_perform_greenFFBFFBBB(Comment comment,
 			Annotation annotation, ModelgeneratorRuleResult ruleResult, CSP csp) {
-		Comment tag = UMLFactory.eINSTANCE.createComment();
 		ArrayInitializer array = JavaFactory.eINSTANCE.createArrayInitializer();
+		Comment tag = UMLFactory.eINSTANCE.createComment();
 		ASTNode2Element c2c = UmlFactory.eINSTANCE.createASTNode2Element();
 		AnnotationMemberValuePair value = JavaFactory.eINSTANCE.createAnnotationMemberValuePair();
 		Object _localVariable_0 = csp.getValue("tag", "body");
 		Object _localVariable_1 = csp.getValue("value", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
+		ruleResult.getSourceObjects().add(array);
 		tag.getAnnotatedElements().add(comment);
 		comment.getOwnedComments().add(tag);
 		ruleResult.getTargetObjects().add(tag);
-		ruleResult.getSourceObjects().add(array);
 		c2c.setTarget(tag);
 		ruleResult.getCorrObjects().add(c2c);
-		annotation.getValues().add(value);
 		c2c.setSource(value);
 		value.setValue(array);
+		annotation.getValues().add(value);
 		ruleResult.getSourceObjects().add(value);
 		String tag_body_prime = (String) _localVariable_0;
 		String value_name_prime = (String) _localVariable_1;
@@ -2955,7 +2954,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 		tag.setBody(tag_body_prime);
 		value.setName(value_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { comment, tag, array, annotation, c2c, value, ruleResult, csp };
+		return new Object[] { array, tag, comment, c2c, value, annotation, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_JavaAnnotationValue2Comment_29_7_expressionFB(

@@ -931,7 +931,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_108(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_135(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -994,7 +994,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_116(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_146(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = ParameterizedType2Class_InnerTypeInInterfaceImpl
 				.pattern_ParameterizedType2Class_InnerTypeInInterface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1400,9 +1400,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			ASTNode2Element ne2neNonParam = (ASTNode2Element) result2_black[4];
 			AbstractTypeDeclaration nonParamType = (AbstractTypeDeclaration) result2_black[5];
 			AbstractTypeDeclaration jContainer = (AbstractTypeDeclaration) result2_black[6];
-			org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result2_black[7];
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[8];
-			ASTNode2Element c2c = (ASTNode2Element) result2_black[9];
+			ASTNode2Element c2c = (ASTNode2Element) result2_black[7];
+			org.eclipse.modisco.java.Package nonParamPackage = (org.eclipse.modisco.java.Package) result2_black[8];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[9];
 
 			Object[] result3_bindingAndBlack = ParameterizedType2Class_InnerTypeInInterfaceImpl
 					.pattern_ParameterizedType2Class_InnerTypeInInterface_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
@@ -1605,10 +1605,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 			return null;
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_108__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_108((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_116__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_116((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_135__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_135((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_146__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_146((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3727,10 +3727,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_0BBB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType) {
 		if (!jContainer.equals(nonParamType)) {
-			for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_714933 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_205489 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(typeTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!jContainer.equals(__DEC_typeTypeAccess_superInterfaces_714933)) {
-					if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_714933)) {
+				if (!jContainer.equals(__DEC_typeTypeAccess_superInterfaces_205489)) {
+					if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_205489)) {
 						return new Object[] { typeTypeAccess, jContainer, nonParamType };
 					}
 				}
@@ -3741,7 +3741,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeTypeAccess) {
-		for (Annotation __DEC_typeTypeAccess_type_923847 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeTypeAccess_type_518488 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, Annotation.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3750,7 +3750,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayType __DEC_typeTypeAccess_elementType_266929 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeTypeAccess_elementType_240463 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3760,10 +3760,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_3BBB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType) {
 		if (!jContainer.equals(nonParamType)) {
-			for (ClassDeclaration __DEC_typeTypeAccess_superClass_880664 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (ClassDeclaration __DEC_typeTypeAccess_superClass_557662 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(typeTypeAccess, ClassDeclaration.class, "superClass")) {
-				if (!jContainer.equals(__DEC_typeTypeAccess_superClass_880664)) {
-					if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_880664)) {
+				if (!jContainer.equals(__DEC_typeTypeAccess_superClass_557662)) {
+					if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_557662)) {
 						return new Object[] { typeTypeAccess, jContainer, nonParamType };
 					}
 				}
@@ -3774,7 +3774,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess typeTypeAccess) {
-		for (MethodDeclaration __DEC_typeTypeAccess_returnType_617049 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeTypeAccess_returnType_573480 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3783,7 +3783,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess typeTypeAccess) {
-		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_11568 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_528389 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3792,7 +3792,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_834893 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_958576 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4183,10 +4183,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_0BBB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType) {
 		if (!jContainer.equals(nonParamType)) {
-			for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_914425 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_125858 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(typeTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!jContainer.equals(__DEC_typeTypeAccess_superInterfaces_914425)) {
-					if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_914425)) {
+				if (!jContainer.equals(__DEC_typeTypeAccess_superInterfaces_125858)) {
+					if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_125858)) {
 						return new Object[] { typeTypeAccess, jContainer, nonParamType };
 					}
 				}
@@ -4197,7 +4197,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeTypeAccess) {
-		for (Annotation __DEC_typeTypeAccess_type_194099 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeTypeAccess_type_320216 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, Annotation.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4206,7 +4206,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayType __DEC_typeTypeAccess_elementType_150079 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeTypeAccess_elementType_166916 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4216,10 +4216,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_3BBB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration jContainer, AbstractTypeDeclaration nonParamType) {
 		if (!jContainer.equals(nonParamType)) {
-			for (ClassDeclaration __DEC_typeTypeAccess_superClass_421661 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (ClassDeclaration __DEC_typeTypeAccess_superClass_273552 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(typeTypeAccess, ClassDeclaration.class, "superClass")) {
-				if (!jContainer.equals(__DEC_typeTypeAccess_superClass_421661)) {
-					if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_421661)) {
+				if (!jContainer.equals(__DEC_typeTypeAccess_superClass_273552)) {
+					if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_273552)) {
 						return new Object[] { typeTypeAccess, jContainer, nonParamType };
 					}
 				}
@@ -4230,7 +4230,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess typeTypeAccess) {
-		for (MethodDeclaration __DEC_typeTypeAccess_returnType_252656 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeTypeAccess_returnType_623124 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4239,7 +4239,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess typeTypeAccess) {
-		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_941796 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_338211 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4248,7 +4248,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_701734 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_907110 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -4415,6 +4415,14 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_6BB(
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element c2c) {
+		if (ruleResult.getCorrObjects().contains(c2c)) {
+			return new Object[] { ruleResult, c2c };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_7BB(
 			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package nonParamPackage) {
 		if (ruleResult.getSourceObjects().contains(nonParamPackage)) {
 			return new Object[] { ruleResult, nonParamPackage };
@@ -4422,18 +4430,10 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 		return null;
 	}
 
-	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_7BB(
+	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_8BB(
 			ModelgeneratorRuleResult ruleResult, JavaPackage2UmlPackage jp2up) {
 		if (ruleResult.getCorrObjects().contains(jp2up)) {
 			return new Object[] { ruleResult, jp2up };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_8BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element c2c) {
-		if (ruleResult.getCorrObjects().contains(c2c)) {
-			return new Object[] { ruleResult, c2c };
 		}
 		return null;
 	}
@@ -4464,7 +4464,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 														ruleResult, nonParamType) == null) {
 													if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_5BB(
 															ruleResult, jContainer) == null) {
-														if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_6BB(
+														if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_7BB(
 																ruleResult, nonParamPackage) == null) {
 															for (Interface uContainer : org.moflon.core.utilities.eMoflonEMFUtil
 																	.getOppositeReferenceTyped(nonParamElement,
@@ -4476,7 +4476,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																					ASTNode2Element.class, "source")) {
 																		if (!c2c.equals(ne2neNonParam)) {
 																			if (uContainer.equals(c2c.getTarget())) {
-																				if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_8BB(
+																				if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_6BB(
 																						ruleResult, c2c) == null) {
 																					for (JavaPackage2UmlPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil
 																							.getOppositeReferenceTyped(
@@ -4490,7 +4490,7 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																									.getPackagedElements()
 																									.contains(
 																											uContainer)) {
-																								if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_7BB(
+																								if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_8BB(
 																										ruleResult,
 																										jp2up) == null) {
 																									if (pattern_ParameterizedType2Class_InnerTypeInInterface_29_2_isapplicablecore_black_nac_0BB(
@@ -4505,9 +4505,9 @@ public class ParameterizedType2Class_InnerTypeInInterfaceImpl extends AbstractRu
 																														ne2neNonParam,
 																														nonParamType,
 																														jContainer,
+																														c2c,
 																														nonParamPackage,
 																														jp2up,
-																														c2c,
 																														ruleEntryContainer,
 																														ruleResult });
 																									}

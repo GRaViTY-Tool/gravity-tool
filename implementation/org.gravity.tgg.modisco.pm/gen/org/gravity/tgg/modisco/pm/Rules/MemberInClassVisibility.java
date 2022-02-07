@@ -50,7 +50,7 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, ClassDeclaration mClass, MDefinition mDefinition, Modifier mModifier);
+	boolean isAppropriate_FWD(Match match, ClassDeclaration mClass, Modifier mModifier, MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, ClassDeclaration mClass, MDefinition mDefinition, Modifier mModifier);
+	void registerObjectsToMatch_FWD(Match match, ClassDeclaration mClass, Modifier mModifier, MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,7 +82,7 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, ClassDeclaration mClass, MDefinition mDefinition, Modifier mModifier);
+	CSP isAppropriate_solveCsp_FWD(Match match, ClassDeclaration mClass, Modifier mModifier, MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,9 +98,9 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mClass,
-			TypeToTAbstractType mTypeToTType, MDefinition mDefinition, Modifier mModifier, TMember tMember,
-			TClass tClass, MDefinitionToTMember defToMember);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mClass, TMember tMember,
+			Modifier mModifier, MDefinition mDefinition, MDefinitionToTMember defToMember,
+			TypeToTAbstractType mTypeToTType, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,9 +116,9 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mClass, EObject mTypeToTType, EObject mDefinition,
-			EObject mModifierToTModifier, EObject mModifier, EObject tMember, EObject tModifier, EObject tClass,
-			EObject defToMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mClass, EObject tMember, EObject mModifier,
+			EObject mDefinition, EObject tModifier, EObject defToMember, EObject mModifierToTModifier,
+			EObject mTypeToTType, EObject tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,9 +182,9 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mClass,
-			TypeToTAbstractType mTypeToTType, MDefinition mDefinition, TMember tMember, TModifier tModifier,
-			TClass tClass, MDefinitionToTMember defToMember);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mClass, TMember tMember,
+			MDefinition mDefinition, TModifier tModifier, MDefinitionToTMember defToMember,
+			TypeToTAbstractType mTypeToTType, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,9 +200,9 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mClass, EObject mTypeToTType, EObject mDefinition,
-			EObject mModifierToTModifier, EObject mModifier, EObject tMember, EObject tModifier, EObject tClass,
-			EObject defToMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mClass, EObject tMember, EObject mModifier,
+			EObject mDefinition, EObject tModifier, EObject defToMember, EObject mModifierToTModifier,
+			EObject mTypeToTType, EObject tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_41(EMoflonEdge _edge_tModifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_48(EMoflonEdge _edge_tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_42(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_50(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,7 +258,7 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(ClassDeclaration mClass, MDefinition mDefinition, Modifier mModifier, TMember tMember,
+	CSP isApplicable_solveCsp_CC(ClassDeclaration mClass, TMember tMember, Modifier mModifier, MDefinition mDefinition,
 			TModifier tModifier, TClass tClass, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -275,7 +275,7 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(ClassDeclaration mClass, MDefinition mDefinition, Modifier mModifier);
+	boolean checkDEC_FWD(ClassDeclaration mClass, Modifier mModifier, MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -300,9 +300,9 @@ public interface MemberInClassVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mClass,
-			TypeToTAbstractType mTypeToTType, MDefinition mDefinition, TMember tMember, TClass tClass,
-			MDefinitionToTMember defToMember, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mClass, TMember tMember,
+			MDefinition mDefinition, MDefinitionToTMember defToMember, TypeToTAbstractType mTypeToTType, TClass tClass,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -48,7 +48,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MDefinition mMember, LineComment mComment);
+	boolean isAppropriate_FWD(Match match, LineComment mComment, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MDefinition mMember, LineComment mComment);
+	void registerObjectsToMatch_FWD(Match match, LineComment mComment, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mMember, LineComment mComment);
+	CSP isAppropriate_solveCsp_FWD(Match match, LineComment mComment, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,7 +97,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			MDefinition mMember, LineComment mComment, TMember tMember);
+			TMember tMember, LineComment mComment, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +113,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCommentToTText,
-			EObject mMember, EObject tText, EObject mComment, EObject tMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tText, EObject mMemberToTMember, EObject tMember,
+			EObject mComment, EObject mMember, EObject mCommentToTText);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			MDefinition mMember, TTextAnnotation tText, TMember tMember);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TTextAnnotation tText,
+			MDefinitionToTMember mMemberToTMember, TMember tMember, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCommentToTText,
-			EObject mMember, EObject tText, EObject mComment, EObject tMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tText, EObject mMemberToTMember, EObject tMember,
+			EObject mComment, EObject mMember, EObject mCommentToTText);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_3(EMoflonEdge _edge_tAnnotated);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_39(EMoflonEdge _edge_tAnnotated);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_3(EMoflonEdge _edge_comments);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_41(EMoflonEdge _edge_comments);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +252,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MDefinition mMember, TTextAnnotation tText, LineComment mComment, TMember tMember,
+	CSP isApplicable_solveCsp_CC(TTextAnnotation tText, TMember tMember, LineComment mComment, MDefinition mMember,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -269,7 +269,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MDefinition mMember, LineComment mComment);
+	boolean checkDEC_FWD(LineComment mComment, MDefinition mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,7 +295,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			MDefinition mMember, TMember tMember, ModelgeneratorRuleResult ruleResult);
+			TMember tMember, MDefinition mMember, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

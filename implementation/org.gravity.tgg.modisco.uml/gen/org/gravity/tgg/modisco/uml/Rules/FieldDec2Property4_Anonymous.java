@@ -95,8 +95,8 @@ public interface FieldDec2Property4_Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element nd2ne, Property feature,
-			AnonymousClassDeclaration jOwnerType, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration jOwnerType,
+			Property feature, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
 			org.eclipse.uml2.uml.Class uOwnerType);
 
 	/**
@@ -113,8 +113,8 @@ public interface FieldDec2Property4_Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject nd2ne, EObject feature, EObject jOwnerType,
-			EObject jo2uo, EObject bodyDeclaration, EObject uOwnerType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject feature, EObject bodyDeclaration,
+			EObject nd2ne, EObject jo2uo, EObject uOwnerType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public interface FieldDec2Property4_Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element nd2ne, Property feature,
-			AnonymousClassDeclaration jOwnerType, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration jOwnerType,
+			Property feature, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
 			org.eclipse.uml2.uml.Class uOwnerType);
 
 	/**
@@ -196,8 +196,8 @@ public interface FieldDec2Property4_Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject nd2ne, EObject feature, EObject jOwnerType,
-			EObject jo2uo, EObject bodyDeclaration, EObject uOwnerType);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject feature, EObject bodyDeclaration,
+			EObject nd2ne, EObject jo2uo, EObject uOwnerType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface FieldDec2Property4_Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_129(EMoflonEdge _edge_ownedAttribute);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_125(EMoflonEdge _edge_ownedAttribute);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface FieldDec2Property4_Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_140(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_135(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,7 +253,7 @@ public interface FieldDec2Property4_Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Property feature, AnonymousClassDeclaration jOwnerType,
+	CSP isApplicable_solveCsp_CC(AnonymousClassDeclaration jOwnerType, Property feature,
 			MFieldDefinition bodyDeclaration, org.eclipse.uml2.uml.Class uOwnerType, Match sourceMatch,
 			Match targetMatch);
 
@@ -287,8 +287,8 @@ public interface FieldDec2Property4_Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element nd2neParameter,
-			ASTNode2Element jo2uoParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element jo2uoParameter,
+			ASTNode2Element nd2neParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,8 +296,8 @@ public interface FieldDec2Property4_Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element nd2ne, Property feature,
-			AnonymousClassDeclaration jOwnerType, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration jOwnerType,
+			Property feature, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
 			org.eclipse.uml2.uml.Class uOwnerType, ModelgeneratorRuleResult ruleResult);
 
 	/**

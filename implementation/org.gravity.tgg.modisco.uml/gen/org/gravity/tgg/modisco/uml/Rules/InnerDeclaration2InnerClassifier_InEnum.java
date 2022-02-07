@@ -223,7 +223,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_89(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_95(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +231,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_94(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_99(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->

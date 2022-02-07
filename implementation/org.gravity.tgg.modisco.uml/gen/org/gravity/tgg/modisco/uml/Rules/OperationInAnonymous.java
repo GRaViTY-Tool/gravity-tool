@@ -97,9 +97,9 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne, Operation feature,
-			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element a2c, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne,
+			ASTNode2Element a2c, AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,8 +115,8 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bd2ne, EObject feature, EObject bodyDeclaration,
-			EObject a2c, EObject umlClass, EObject classDec);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject umlClass, EObject bodyDeclaration,
+			EObject bd2ne, EObject a2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,9 +180,9 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne, Operation feature,
-			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element a2c, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne,
+			ASTNode2Element a2c, AnonymousClassDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,8 +198,8 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bd2ne, EObject feature, EObject bodyDeclaration,
-			EObject a2c, EObject umlClass, EObject classDec);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject umlClass, EObject bodyDeclaration,
+			EObject bd2ne, EObject a2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_97(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_93(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_105(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_96(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,8 +255,8 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Operation feature, MAbstractMethodDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(Operation feature, org.eclipse.uml2.uml.Class umlClass,
+			MAbstractMethodDefinition bodyDeclaration, AnonymousClassDeclaration classDec, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -298,9 +298,9 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne, Operation feature,
-			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element a2c, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne,
+			ASTNode2Element a2c, AnonymousClassDeclaration classDec, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->
