@@ -245,54 +245,6 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 		}
 	}
 
-	/**
-	 * Synchronizes changes from the UML model to the Java project
-	 *
-	 * @param monitor A progress monitor
-	 * @throws TransformationFailedException If the transformation wasn't successful
-	 * @throws IOException                   If writing files failed
-	 * @throws CoreException
-	 */
-	public void umlToProject(final IProgressMonitor monitor) throws TransformationFailedException, IOException, CoreException {
-		final var corrFile = getCorrFile();
-		if (!corrFile.exists() && (this.src != null)) {
-			return;
-		}
-
-		final var oldTrgResource = getTargetFile();
-		final var r = getResourceSet().createResource(EMFUtil.getPlatformResourceURI(oldTrgResource));
-		try {
-			r.load(Collections.emptyMap());
-		} catch (final IOException e) {
-			throw new TransformationFailedException(e);
-		}
-
-		final var oldModel = r.getContents().get(0);
-		final var newModel = getTrg();
-
-		try (var outputStreamOld = Files
-				.newOutputStream(this.outputFolder.getFile("old.xmi").getLocation().toFile().toPath());
-				var outputStreamNew = Files
-						.newOutputStream(this.outputFolder.getFile("new.xmi").getLocation().toFile().toPath());) {
-			oldModel.eResource().save(outputStreamOld, Collections.emptyMap());
-			newModel.eResource().save(outputStreamNew, Collections.emptyMap());
-		} catch (final IOException e) {
-			throw new TransformationFailedException(e);
-		}
-
-		try {
-			new UmlSecProcessor((Model) newModel).processBwd();
-		} catch (final ProcessingException e) {
-			throw new TransformationFailedException(e);
-		}
-
-		integrateBackward();
-
-		save(monitor);
-
-		GravityModiscoCodeGenerator.generateCode(this.project, (MGravityModel) getSrc(), null, monitor);
-	}
-
 	public void applyChangeAndGenerateCode(final Consumer<EObject> changeTrg, final IProgressMonitor monitor)
 			throws IOException, CoreException {
 
