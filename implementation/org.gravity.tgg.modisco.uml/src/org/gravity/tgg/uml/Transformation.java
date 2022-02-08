@@ -323,6 +323,23 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 		return "platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.sma.xmi";
 	}
 
+	 /**
+	 * Synchronizes changes from the UML model to the Java project
+	 *
+	 * @param monitor A progress monitor
+	 * @throws TransformationFailedException If the transformation wasn't successful
+	 * @throws IOException                   If writing files failed
+	 * @throws CoreException
+	 */
+	public void umlToProject(final IProgressMonitor monitor) throws TransformationFailedException, IOException, CoreException {
+		final var corrFile = getCorrFile();
+		if (!corrFile.exists() && (this.src != null)) {
+			return;
+		}
+		//TODO: implement a resource monitor and apply the changes to the model
+		throw new UnsupportedOperationException("Automated detection of changes is currently not possible");
+	}
+
 	public static IStatus generateCode(final IProject project, final IFile uml, final IProgressMonitor monitor) {
 		IJavaProject javaProject;
 		try {
