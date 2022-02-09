@@ -15,7 +15,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
@@ -38,7 +37,7 @@ public class UMLCodeGenTest {
 
 	@Test
 	public void testSimpleCodeGen()
-			throws CoreException, IOException, TransformationFailedException, DuplicateProjectNameException {
+			throws CoreException, IOException, DuplicateProjectNameException {
 		BasicConfigurator.configure();
 		final var monitor = new NullProgressMonitor();
 		final var project = EclipseProjectUtil.createProject(PROJECT_NAME, true, monitor);
