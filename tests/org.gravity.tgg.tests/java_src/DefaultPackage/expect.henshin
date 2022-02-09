@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_tZfgUIp8EeyIFJGbwNZprg">
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_uVTBQIp8EeyIFJGbwNZprg" name="expect">
+    <lhs xmi:id="_uXW2wIp8EeyIFJGbwNZprg" name="Lhs">
+      <nodes xmi:id="_yso08Ip8EeyIFJGbwNZprg" incoming="_1nSBIIp8EeyIFJGbwNZprg _10QGIIp8EeyIFJGbwNZprg _2YgCsIp8EeyIFJGbwNZprg _2kZJoIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_3Mz0gIp8EeyIFJGbwNZprg" value="&quot;Type&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+        <attributes xmi:id="_4QffEIp8EeyIFJGbwNZprg" value="false">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_zwbNMIp8EeyIFJGbwNZprg" incoming="_1AcqoIp8EeyIFJGbwNZprg" outgoing="_1nSBIIp8EeyIFJGbwNZprg _10QGIIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
+        <attributes xmi:id="_44FDgIp8EeyIFJGbwNZprg" value="&quot;(default package)&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_0bRhAIp8EeyIFJGbwNZprg" outgoing="_1AcqoIp8EeyIFJGbwNZprg _2YgCsIp8EeyIFJGbwNZprg _2kZJoIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
+      </nodes>
+      <edges xmi:id="_1AcqoIp8EeyIFJGbwNZprg" source="_0bRhAIp8EeyIFJGbwNZprg" target="_zwbNMIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/packages"/>
+      </edges>
+      <edges xmi:id="_1nSBIIp8EeyIFJGbwNZprg" source="_zwbNMIp8EeyIFJGbwNZprg" target="_yso08Ip8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
+      </edges>
+      <edges xmi:id="_10QGIIp8EeyIFJGbwNZprg" source="_zwbNMIp8EeyIFJGbwNZprg" target="_yso08Ip8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_2YgCsIp8EeyIFJGbwNZprg" source="_0bRhAIp8EeyIFJGbwNZprg" target="_yso08Ip8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
+      </edges>
+      <edges xmi:id="_2kZJoIp8EeyIFJGbwNZprg" source="_0bRhAIp8EeyIFJGbwNZprg" target="_yso08Ip8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_uXW2wYp8EeyIFJGbwNZprg" name="Rhs">
+      <nodes xmi:id="_yspcAIp8EeyIFJGbwNZprg" incoming="_1nSBIYp8EeyIFJGbwNZprg _10QtMIp8EeyIFJGbwNZprg _2YgCsYp8EeyIFJGbwNZprg _2kZwsIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_3M0bkIp8EeyIFJGbwNZprg" value="&quot;Type&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+        <attributes xmi:id="_4QffEYp8EeyIFJGbwNZprg" value="false">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_zwbNMYp8EeyIFJGbwNZprg" incoming="_1AdRsIp8EeyIFJGbwNZprg" outgoing="_1nSBIYp8EeyIFJGbwNZprg _10QtMIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
+        <attributes xmi:id="_44FqkIp8EeyIFJGbwNZprg" value="&quot;(default package)&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_0bSIEIp8EeyIFJGbwNZprg" outgoing="_1AdRsIp8EeyIFJGbwNZprg _2YgCsYp8EeyIFJGbwNZprg _2kZwsIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
+      </nodes>
+      <edges xmi:id="_1AdRsIp8EeyIFJGbwNZprg" source="_0bSIEIp8EeyIFJGbwNZprg" target="_zwbNMYp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/packages"/>
+      </edges>
+      <edges xmi:id="_1nSBIYp8EeyIFJGbwNZprg" source="_zwbNMYp8EeyIFJGbwNZprg" target="_yspcAIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
+      </edges>
+      <edges xmi:id="_10QtMIp8EeyIFJGbwNZprg" source="_zwbNMYp8EeyIFJGbwNZprg" target="_yspcAIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_2YgCsYp8EeyIFJGbwNZprg" source="_0bSIEIp8EeyIFJGbwNZprg" target="_yspcAIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
+      </edges>
+      <edges xmi:id="_2kZwsIp8EeyIFJGbwNZprg" source="_0bSIEIp8EeyIFJGbwNZprg" target="_yspcAIp8EeyIFJGbwNZprg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_ysr4QIp8EeyIFJGbwNZprg" origin="_yso08Ip8EeyIFJGbwNZprg" image="_yspcAIp8EeyIFJGbwNZprg"/>
+    <mappings xmi:id="_zwbNMop8EeyIFJGbwNZprg" origin="_zwbNMIp8EeyIFJGbwNZprg" image="_zwbNMYp8EeyIFJGbwNZprg"/>
+    <mappings xmi:id="_0bSIEYp8EeyIFJGbwNZprg" origin="_0bRhAIp8EeyIFJGbwNZprg" image="_0bSIEIp8EeyIFJGbwNZprg"/>
+  </units>
+</henshin:Module>
