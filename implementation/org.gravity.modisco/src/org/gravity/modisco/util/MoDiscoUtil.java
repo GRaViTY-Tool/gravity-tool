@@ -48,6 +48,11 @@ public final class MoDiscoUtil {
 
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoUtil.class);
 
+	/**
+	 * The name of the Java default package as used by MoDisco
+	 */
+	public static final String DEFAULT_PACKAGE = "(default package)";
+
 	private MoDiscoUtil() {
 		// This class shouldn't be instantiated
 	}
@@ -453,7 +458,11 @@ public final class MoDiscoUtil {
 	}
 
 	public static String getQualifiedName(final AbstractTypeDeclaration type, final CharSequence separator) {
-		return getNameSpace(type.getPackage())+separator+type.getName();
+		final var namespace = getNameSpace(type.getPackage());
+		if(namespace == null) {
+			return type.getName();
+		}
+		return namespace+separator+type.getName();
 	}
 
 	public static String getNameSpace(final Package packageDecl) {
@@ -461,6 +470,9 @@ public final class MoDiscoUtil {
 	}
 
 	public static String getNameSpace(final Package packageDecl, final CharSequence separator) {
+		if(DEFAULT_PACKAGE.equals(packageDecl.getName())) {
+			return null;
+		}
 		final List<String> names = new LinkedList<>();
 		var p = packageDecl;
 		while(p != null) {

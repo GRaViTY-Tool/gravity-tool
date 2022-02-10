@@ -14,7 +14,8 @@ Require-Bundle: org.eclipse.emf.compare,
  org.moflon.tgg.language;visibility:=reexport,
  org.moflon.tgg.runtime;visibility:=reexport,
  SDMLanguage,
- MocaTree
+ MocaTree,
+ org.eclipse.emf.common
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11

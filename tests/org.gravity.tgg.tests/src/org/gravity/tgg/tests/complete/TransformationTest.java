@@ -31,7 +31,6 @@ import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.tgg.modisco.pm.MoDiscoTGGConverter;
 import org.gravity.tgg.uml.Transformation;
 import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -136,7 +135,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 	 *
 	 * @param pm The model to ckeck
 	 */
-	private void checkModel(final TypeGraph pm) {
+	private void checkModel(final EObject root) {
 		final var visitor = new ExtensionFileVisitor("henshin");
 		try {
 			this.project.getProject().accept(visitor);
@@ -145,18 +144,20 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		}
 		final var projectLocation = this.project.getProject().getLocation().toFile().toPath();
 
-		final var graph = new EGraphImpl(pm);
+		final var graph = new EGraphImpl(root.eResource());
 		final var resourceSet = new HenshinResourceSet();
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
-		resourceSet.getResources().add(pm.eResource());
+		resourceSet.getResources().add(root.eResource());
 		final Engine engine = new EngineImpl();
 
 		for (final Path file : visitor.getFiles()) {
 			if (file.getParent().equals(projectLocation)) {
 				final var module = resourceSet.getModule(file.toAbsolutePath().toString(), false);
-				for (final org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()) {
-					final var matches = engine.findMatches(rule, graph, null);
-					assertTrue(matches.iterator().hasNext());
+				if(module.getImports().contains(root.eClass().getEPackage())) {
+					for (final org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()) {
+						final var matches = engine.findMatches(rule, graph, null);
+						assertTrue(matches.iterator().hasNext());
+					}
 				}
 			}
 		}
@@ -195,7 +196,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 				throw new AssertionError(e.getMessage(), e);
 			}
-
+			checkModel(model);
 		} finally {
 			models.remove(this.name);
 			try {

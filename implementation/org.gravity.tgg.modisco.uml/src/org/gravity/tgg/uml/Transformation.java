@@ -46,6 +46,7 @@ import org.gravity.modisco.AbstractModiscoTGGConverter;
 import org.gravity.modisco.GravityMoDiscoActivator;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.codegen.GravityModiscoCodeGenerator;
+import org.gravity.modisco.util.MoDiscoUtil;
 import org.gravity.security.annotations.AnnotationsActivator;
 import org.gravity.tgg.modisco.uml.UmlPackage;
 import org.moflon.tgg.algorithm.delta.Delta;
@@ -181,7 +182,7 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 		final var eResource = mGravityModel.eResource();
 		if (eResource == null) {
 			getResourceSet().createResource(URI.createURI(GravityMoDiscoActivator.FILE_NAME)).getContents()
-			.add(mGravityModel);
+					.add(mGravityModel);
 		} else if (!eResource.getResourceSet().equals(getResourceSet())) {
 			getResourceSet().getResources().add(eResource);
 		}
@@ -243,21 +244,20 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 
 			new UmlSecProcessor(root).processBwd();
 
-
 			targetResource.save(Collections.emptyMap());
 
 			transformation.setTrg(root);
 			transformation.integrateBackward();
 			if (transformation.src instanceof MGravityModel) {
-				GravityModiscoCodeGenerator.generateCode(javaProject, (MGravityModel) transformation.src, null, monitor);
+				GravityModiscoCodeGenerator.generateCode(javaProject, (MGravityModel) transformation.src, null,
+						monitor);
 
 				transformation.integrateForward();
 				transformation.save(monitor);
-			}
-			else {
+			} else {
 				return new Status(IStatus.ERROR, GravityUmlActivator.PLUGIN_ID, "Transformation failed");
 			}
-		} catch (IOException | CoreException | ProcessingException  e) {
+		} catch (IOException | CoreException | ProcessingException e) {
 			return new Status(IStatus.ERROR, GravityUmlActivator.PLUGIN_ID, e.getLocalizedMessage(), e);
 		}
 		return Status.OK_STATUS;
@@ -282,7 +282,8 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 	}
 
 	/**
-	 * Records the changed files while propagating changes from the UML model into the modisco model
+	 * Records the changed files while propagating changes from the UML model into
+	 * the modisco model
 	 *
 	 * @return The changes
 	 */
@@ -397,7 +398,7 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 			throw new IllegalStateException();
 		}
 		final var java = models.get(0);
-		if(java.getPackagedElement(COMMON_JAVA_DATATYPES) == null) {
+		if (java.getPackagedElement(COMMON_JAVA_DATATYPES) == null) {
 			java.createNestedPackage(COMMON_JAVA_DATATYPES);
 		}
 
@@ -422,10 +423,10 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 			}
 		}
 		if (!typesInDefaultPackage.isEmpty()) {
-			var defaultPackage = (Package) projectModel.getOwnedMember("(default package)");
+			var defaultPackage = (Package) projectModel.getOwnedMember(MoDiscoUtil.DEFAULT_PACKAGE);
 			if (defaultPackage == null) {
 				defaultPackage = UMLFactory.eINSTANCE.createPackage();
-				defaultPackage.setName("(default package)");
+				defaultPackage.setName(MoDiscoUtil.DEFAULT_PACKAGE);
 				defaultPackage.setNestingPackage(projectModel);
 			}
 			defaultPackage.getPackagedElements().addAll(typesInDefaultPackage);

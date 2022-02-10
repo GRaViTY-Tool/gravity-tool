@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.modisco.java.ASTNode;
 import org.eclipse.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
@@ -233,7 +234,7 @@ public class GravityModiscoCodeGenerator {
 	/**
 	 * Fixes inconsistencies in added annotations
 	 *
-	 * @param model The model of the program
+	 * @param model     The model of the program
 	 * @param additions the added annotations
 	 */
 	private static void postprocessAddedAnnoatations(final MGravityModel model, final Collection<EObject> additions) {
@@ -296,7 +297,7 @@ public class GravityModiscoCodeGenerator {
 	/**
 	 * Retrieves all imports for a compilation unit
 	 *
-	 * @param cu      A compilation unit
+	 * @param cu A compilation unit
 	 * @return The types imported in the compilation unit
 	 */
 	private static HashSet<NamedElement> getImportedTypes(final CompilationUnit cu) {
@@ -348,15 +349,7 @@ public class GravityModiscoCodeGenerator {
 
 	private static void addTypesToCompilationUnit(final IJavaProject project, final MGravityModel model)
 			throws CoreException {
-		File src;
-		final var result = Stream.of(project.getRawClasspath())
-				.filter(c -> c.getEntryKind() == IClasspathEntry.CPE_SOURCE).findAny();
-		if (result.isPresent()) {
-			src = project.getProject().getWorkspace().getRoot().getFile(result.get().getPath()).getLocation().toFile();
-		} else {
-			JavaProjectUtil.createSrcFolders(Collections.singleton("src"), project, null);
-			src = project.getProject().getFolder("src").getLocation().toFile().getAbsoluteFile();
-		}
+		final var src = getSourceFolder(project);
 
 		final List<CompilationUnit> cus = new LinkedList<>();
 		final Deque<Package> packages = new LinkedList<>(model.getOwnedElements());
@@ -368,12 +361,36 @@ public class GravityModiscoCodeGenerator {
 					final var cu = JavaFactory.eINSTANCE.createCompilationUnit();
 					cu.setName(type.getName() + ".java");
 					cu.getTypes().add(type);
-					cu.setPackage(type.getPackage());
+					if (!MoDiscoUtil.DEFAULT_PACKAGE.equals(p.getName())) {
+						cu.setPackage(type.getPackage());
+					}
 					cu.setOriginalFilePath(new File(src, MoDiscoUtil.getQualifiedName(type, "/") + ".java").toString());
 					cus.add(cu);
 				}
 			}
 		}
 		model.getCompilationUnits().addAll(cus);
+	}
+
+	/**
+	 * Gets any source folder of the Java project or creates one if none is
+	 * available
+	 *
+	 * @param project A Java project
+	 * @return a source folder on the project's classpath
+	 * @throws JavaModelException
+	 * @throws CoreException
+	 */
+	private static File getSourceFolder(final IJavaProject project) throws JavaModelException, CoreException {
+		File src;
+		final var result = Stream.of(project.getRawClasspath())
+				.filter(c -> c.getEntryKind() == IClasspathEntry.CPE_SOURCE).findAny();
+		if (result.isPresent()) {
+			src = project.getProject().getWorkspace().getRoot().getFile(result.get().getPath()).getLocation().toFile();
+		} else {
+			JavaProjectUtil.createSrcFolders(Collections.singleton("src"), project, null);
+			src = project.getProject().getFolder("src").getLocation().toFile().getAbsoluteFile();
+		}
+		return src;
 	}
 }
