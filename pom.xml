@@ -8,7 +8,7 @@
   <packaging>pom</packaging>
   
   <properties>
-    <tycho-version>2.5.0</tycho-version>
+    <tycho-version>2.6.0</tycho-version>
     <jacoco.version>0.8.7</jacoco.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
