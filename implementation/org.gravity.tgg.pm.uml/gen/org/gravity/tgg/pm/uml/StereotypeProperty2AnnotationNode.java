@@ -9,6 +9,8 @@ import org.eclipse.uml2.uml.Property;
 import org.gravity.typegraph.basic.annotations.TAbstractNode;
 
 import org.moflon.tgg.runtime.AbstractCorrespondence;
+// <-- [user defined imports]
+// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -17,11 +19,11 @@ import org.moflon.tgg.runtime.AbstractCorrespondence;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode#getTarget <em>Target</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.gravity.tgg.pm.uml.UmlPackage#getStereotypeProperty2AnnotationNode()
  * @model
@@ -31,6 +33,10 @@ public interface StereotypeProperty2AnnotationNode extends EObject, AbstractCorr
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Property)
@@ -53,6 +59,10 @@ public interface StereotypeProperty2AnnotationNode extends EObject, AbstractCorr
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(TAbstractNode)
@@ -71,5 +81,7 @@ public interface StereotypeProperty2AnnotationNode extends EObject, AbstractCorr
 	 * @generated
 	 */
 	void setTarget(TAbstractNode value);
+	// <-- [user code injected with eMoflon]
 
+	// [user code injected with eMoflon] -->
 } // StereotypeProperty2AnnotationNode

@@ -9,6 +9,8 @@ import org.eclipse.uml2.uml.Operation;
 import org.gravity.typegraph.basic.TMethodDefinition;
 
 import org.moflon.tgg.runtime.AbstractCorrespondence;
+// <-- [user defined imports]
+// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -17,11 +19,11 @@ import org.moflon.tgg.runtime.AbstractCorrespondence;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.gravity.tgg.pm.uml.Operation2TMethodDefinition#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.tgg.pm.uml.Operation2TMethodDefinition#getTarget <em>Target</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.gravity.tgg.pm.uml.UmlPackage#getOperation2TMethodDefinition()
  * @model
@@ -31,6 +33,10 @@ public interface Operation2TMethodDefinition extends EObject, AbstractCorrespond
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Operation)
@@ -53,6 +59,10 @@ public interface Operation2TMethodDefinition extends EObject, AbstractCorrespond
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(TMethodDefinition)
@@ -71,5 +81,7 @@ public interface Operation2TMethodDefinition extends EObject, AbstractCorrespond
 	 * @generated
 	 */
 	void setTarget(TMethodDefinition value);
+	// <-- [user code injected with eMoflon]
 
+	// [user code injected with eMoflon] -->
 } // Operation2TMethodDefinition

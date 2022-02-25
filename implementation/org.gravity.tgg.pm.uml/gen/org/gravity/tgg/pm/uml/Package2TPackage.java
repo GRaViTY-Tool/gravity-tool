@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.gravity.typegraph.basic.TPackage;
 
 import org.moflon.tgg.runtime.AbstractCorrespondence;
+// <-- [user defined imports]
+// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -15,11 +17,11 @@ import org.moflon.tgg.runtime.AbstractCorrespondence;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.gravity.tgg.pm.uml.Package2TPackage#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.tgg.pm.uml.Package2TPackage#getTarget <em>Target</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.gravity.tgg.pm.uml.UmlPackage#getPackage2TPackage()
  * @model
@@ -29,6 +31,10 @@ public interface Package2TPackage extends EObject, AbstractCorrespondence {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(org.eclipse.uml2.uml.Package)
@@ -51,6 +57,10 @@ public interface Package2TPackage extends EObject, AbstractCorrespondence {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(TPackage)
@@ -69,5 +79,7 @@ public interface Package2TPackage extends EObject, AbstractCorrespondence {
 	 * @generated
 	 */
 	void setTarget(TPackage value);
+	// <-- [user code injected with eMoflon]
 
+	// [user code injected with eMoflon] -->
 } // Package2TPackage

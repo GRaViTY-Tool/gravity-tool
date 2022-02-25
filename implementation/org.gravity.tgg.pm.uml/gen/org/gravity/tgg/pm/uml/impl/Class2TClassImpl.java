@@ -15,6 +15,8 @@ import org.gravity.tgg.pm.uml.UmlPackage;
 import org.gravity.typegraph.basic.TClass;
 
 import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
+// <-- [user defined imports]
+// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -22,11 +24,11 @@ import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Class2TClassImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Class2TClassImpl#getTarget <em>Target</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -75,7 +77,6 @@ public class Class2TClassImpl extends AbstractCorrespondenceImpl implements Clas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public org.eclipse.uml2.uml.Class getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject) source;
@@ -103,7 +104,6 @@ public class Class2TClassImpl extends AbstractCorrespondenceImpl implements Clas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setSource(org.eclipse.uml2.uml.Class newSource) {
 		org.eclipse.uml2.uml.Class oldSource = source;
 		source = newSource;
@@ -116,7 +116,6 @@ public class Class2TClassImpl extends AbstractCorrespondenceImpl implements Clas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public TClass getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject) target;
@@ -144,7 +143,6 @@ public class Class2TClassImpl extends AbstractCorrespondenceImpl implements Clas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setTarget(TClass newTarget) {
 		TClass oldTarget = target;
 		target = newTarget;
@@ -223,5 +221,7 @@ public class Class2TClassImpl extends AbstractCorrespondenceImpl implements Clas
 		}
 		return super.eIsSet(featureID);
 	}
+	// <-- [user code injected with eMoflon]
 
+	// [user code injected with eMoflon] -->
 } //Class2TClassImpl

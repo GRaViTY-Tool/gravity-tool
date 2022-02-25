@@ -17,6 +17,8 @@ import org.gravity.tgg.pm.uml.UmlPackage;
 import org.gravity.typegraph.basic.TFieldDefinition;
 
 import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
+// <-- [user defined imports]
+// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -24,11 +26,11 @@ import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Property2TFieldDefinitionImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Property2TFieldDefinitionImpl#getTarget <em>Target</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -77,7 +79,6 @@ public class Property2TFieldDefinitionImpl extends AbstractCorrespondenceImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Property getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject) source;
@@ -105,7 +106,6 @@ public class Property2TFieldDefinitionImpl extends AbstractCorrespondenceImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setSource(Property newSource) {
 		Property oldSource = source;
 		source = newSource;
@@ -119,7 +119,6 @@ public class Property2TFieldDefinitionImpl extends AbstractCorrespondenceImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public TFieldDefinition getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject) target;
@@ -147,7 +146,6 @@ public class Property2TFieldDefinitionImpl extends AbstractCorrespondenceImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setTarget(TFieldDefinition newTarget) {
 		TFieldDefinition oldTarget = target;
 		target = newTarget;
@@ -227,5 +225,7 @@ public class Property2TFieldDefinitionImpl extends AbstractCorrespondenceImpl im
 		}
 		return super.eIsSet(featureID);
 	}
+	// <-- [user code injected with eMoflon]
 
+	// [user code injected with eMoflon] -->
 } //Property2TFieldDefinitionImpl

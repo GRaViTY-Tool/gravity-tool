@@ -9,7 +9,6 @@ import SDMLanguage.SDMLanguagePackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -258,7 +257,6 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 		LanguagePackage.eINSTANCE.eClass();
 		SDMLanguagePackage.eINSTANCE.eClass();
 		MocaTreePackage.eINSTANCE.eClass();
-		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RulesPackage.eNS_URI);

@@ -121,7 +121,6 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	protected TPackageImpl() {
-		super();
 	}
 
 	/**
@@ -139,10 +138,10 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 */
 	@Override
 	public EList<TPackage> getSubpackages() {
-		if (subpackages == null) {
-			subpackages = new EObjectContainmentWithInverseEList<TPackage>(TPackage.class, this, BasicPackage.TPACKAGE__SUBPACKAGES, BasicPackage.TPACKAGE__PARENT);
+		if (this.subpackages == null) {
+			this.subpackages = new EObjectContainmentWithInverseEList<>(TPackage.class, this, BasicPackage.TPACKAGE__SUBPACKAGES, BasicPackage.TPACKAGE__PARENT);
 		}
-		return subpackages;
+		return this.subpackages;
 	}
 
 	/**
@@ -151,7 +150,9 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 */
 	@Override
 	public TPackage getParent() {
-		if (eContainerFeatureID() != BasicPackage.TPACKAGE__PARENT) return null;
+		if (eContainerFeatureID() != BasicPackage.TPACKAGE__PARENT) {
+			return null;
+		}
 		return (TPackage)eInternalContainer();
 	}
 
@@ -159,7 +160,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetParent(TPackage newParent, NotificationChain msgs) {
+	public NotificationChain basicSetParent(final TPackage newParent, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newParent, BasicPackage.TPACKAGE__PARENT, msgs);
 		return msgs;
 	}
@@ -169,20 +170,26 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	@Override
-	public void setParent(TPackage newParent) {
-		if (newParent != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TPACKAGE__PARENT && newParent != null)) {
-			if (EcoreUtil.isAncestor(this, newParent))
+	public void setParent(final TPackage newParent) {
+		if ((newParent != eInternalContainer()) || ((eContainerFeatureID() != BasicPackage.TPACKAGE__PARENT) && (newParent != null))) {
+			if (EcoreUtil.isAncestor(this, newParent)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newParent != null)
+			}
+			if (newParent != null) {
 				msgs = ((InternalEObject)newParent).eInverseAdd(this, BasicPackage.TPACKAGE__SUBPACKAGES, TPackage.class, msgs);
+			}
 			msgs = basicSetParent(newParent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__PARENT, newParent, newParent));
+		}
 	}
 
 	/**
@@ -191,10 +198,10 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 */
 	@Override
 	public EList<TClass> getClasses() {
-		if (classes == null) {
-			classes = new EObjectResolvingEList<TClass>(TClass.class, this, BasicPackage.TPACKAGE__CLASSES);
+		if (this.classes == null) {
+			this.classes = new EObjectResolvingEList<>(TClass.class, this, BasicPackage.TPACKAGE__CLASSES);
 		}
-		return classes;
+		return this.classes;
 	}
 
 	/**
@@ -203,10 +210,10 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 */
 	@Override
 	public EList<TInterface> getInterfaces() {
-		if (interfaces == null) {
-			interfaces = new EObjectResolvingEList<TInterface>(TInterface.class, this, BasicPackage.TPACKAGE__INTERFACES);
+		if (this.interfaces == null) {
+			this.interfaces = new EObjectResolvingEList<>(TInterface.class, this, BasicPackage.TPACKAGE__INTERFACES);
 		}
-		return interfaces;
+		return this.interfaces;
 	}
 
 	/**
@@ -215,10 +222,10 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 */
 	@Override
 	public EList<TAbstractType> getOwnedTypes() {
-		if (ownedTypes == null) {
-			ownedTypes = new EObjectWithInverseResolvingEList<TAbstractType>(TAbstractType.class, this, BasicPackage.TPACKAGE__OWNED_TYPES, BasicPackage.TABSTRACT_TYPE__PACKAGE);
+		if (this.ownedTypes == null) {
+			this.ownedTypes = new EObjectWithInverseResolvingEList<>(TAbstractType.class, this, BasicPackage.TPACKAGE__OWNED_TYPES, BasicPackage.TABSTRACT_TYPE__PACKAGE);
 		}
-		return ownedTypes;
+		return this.ownedTypes;
 	}
 
 	/**
@@ -227,15 +234,14 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 */
 	@Override
 	public TypeGraph getModel() {
-		if (model != null && model.eIsProxy()) {
-			InternalEObject oldModel = (InternalEObject)model;
-			model = (TypeGraph)eResolveProxy(oldModel);
-			if (model != oldModel) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TPACKAGE__MODEL, oldModel, model));
+		if ((this.model != null) && this.model.eIsProxy()) {
+			final InternalEObject oldModel = (InternalEObject)this.model;
+			this.model = (TypeGraph)eResolveProxy(oldModel);
+			if ((this.model != oldModel) && eNotificationRequired()) {
+				eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TPACKAGE__MODEL, oldModel, this.model));
 			}
 		}
-		return model;
+		return this.model;
 	}
 
 	/**
@@ -243,7 +249,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	public TypeGraph basicGetModel() {
-		return model;
+		return this.model;
 	}
 
 	/**
@@ -251,11 +257,12 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	@Override
-	public void setModel(TypeGraph newModel) {
-		TypeGraph oldModel = model;
-		model = newModel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__MODEL, oldModel, model));
+	public void setModel(final TypeGraph newModel) {
+		final TypeGraph oldModel = this.model;
+		this.model = newModel;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__MODEL, oldModel, this.model));
+		}
 	}
 
 	/**
@@ -264,7 +271,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 */
 	@Override
 	public String getTName() {
-		return tName;
+		return this.tName;
 	}
 
 	/**
@@ -272,11 +279,12 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	@Override
-	public void setTName(String newTName) {
-		String oldTName = tName;
-		tName = newTName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__TNAME, oldTName, tName));
+	public void setTName(final String newTName) {
+		final String oldTName = this.tName;
+		this.tName = newTName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TPACKAGE__TNAME, oldTName, this.tName));
+		}
 	}
 
 	/**
@@ -293,7 +301,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 			names.add(0, current.getTName());
 			final TPackage parent = current.getParent();
 			if (parent == current) {
-				break;
+				throw new IllegalStateException("There shouldn't be cycles in the package hierarchy!");
 			}
 			current = parent;
 		}
@@ -393,16 +401,17 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TPACKAGE__SUBPACKAGES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubpackages()).basicAdd(otherEnd, msgs);
-			case BasicPackage.TPACKAGE__PARENT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetParent((TPackage)otherEnd, msgs);
-			case BasicPackage.TPACKAGE__OWNED_TYPES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedTypes()).basicAdd(otherEnd, msgs);
+		case BasicPackage.TPACKAGE__SUBPACKAGES:
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubpackages()).basicAdd(otherEnd, msgs);
+		case BasicPackage.TPACKAGE__PARENT:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetParent((TPackage)otherEnd, msgs);
+		case BasicPackage.TPACKAGE__OWNED_TYPES:
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedTypes()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -412,14 +421,14 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TPACKAGE__SUBPACKAGES:
-				return ((InternalEList<?>)getSubpackages()).basicRemove(otherEnd, msgs);
-			case BasicPackage.TPACKAGE__PARENT:
-				return basicSetParent(null, msgs);
-			case BasicPackage.TPACKAGE__OWNED_TYPES:
-				return ((InternalEList<?>)getOwnedTypes()).basicRemove(otherEnd, msgs);
+		case BasicPackage.TPACKAGE__SUBPACKAGES:
+			return ((InternalEList<?>)getSubpackages()).basicRemove(otherEnd, msgs);
+		case BasicPackage.TPACKAGE__PARENT:
+			return basicSetParent(null, msgs);
+		case BasicPackage.TPACKAGE__OWNED_TYPES:
+			return ((InternalEList<?>)getOwnedTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -429,10 +438,10 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case BasicPackage.TPACKAGE__PARENT:
-				return eInternalContainer().eInverseRemove(this, BasicPackage.TPACKAGE__SUBPACKAGES, TPackage.class, msgs);
+		case BasicPackage.TPACKAGE__PARENT:
+			return eInternalContainer().eInverseRemove(this, BasicPackage.TPACKAGE__SUBPACKAGES, TPackage.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -442,23 +451,25 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
-			case BasicPackage.TPACKAGE__SUBPACKAGES:
-				return getSubpackages();
-			case BasicPackage.TPACKAGE__PARENT:
-				return getParent();
-			case BasicPackage.TPACKAGE__CLASSES:
-				return getClasses();
-			case BasicPackage.TPACKAGE__INTERFACES:
-				return getInterfaces();
-			case BasicPackage.TPACKAGE__OWNED_TYPES:
-				return getOwnedTypes();
-			case BasicPackage.TPACKAGE__MODEL:
-				if (resolve) return getModel();
-				return basicGetModel();
-			case BasicPackage.TPACKAGE__TNAME:
-				return getTName();
+		case BasicPackage.TPACKAGE__SUBPACKAGES:
+			return getSubpackages();
+		case BasicPackage.TPACKAGE__PARENT:
+			return getParent();
+		case BasicPackage.TPACKAGE__CLASSES:
+			return getClasses();
+		case BasicPackage.TPACKAGE__INTERFACES:
+			return getInterfaces();
+		case BasicPackage.TPACKAGE__OWNED_TYPES:
+			return getOwnedTypes();
+		case BasicPackage.TPACKAGE__MODEL:
+			if (resolve) {
+				return getModel();
+			}
+			return basicGetModel();
+		case BasicPackage.TPACKAGE__TNAME:
+			return getTName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -469,33 +480,33 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
-			case BasicPackage.TPACKAGE__SUBPACKAGES:
-				getSubpackages().clear();
-				getSubpackages().addAll((Collection<? extends TPackage>)newValue);
-				return;
-			case BasicPackage.TPACKAGE__PARENT:
-				setParent((TPackage)newValue);
-				return;
-			case BasicPackage.TPACKAGE__CLASSES:
-				getClasses().clear();
-				getClasses().addAll((Collection<? extends TClass>)newValue);
-				return;
-			case BasicPackage.TPACKAGE__INTERFACES:
-				getInterfaces().clear();
-				getInterfaces().addAll((Collection<? extends TInterface>)newValue);
-				return;
-			case BasicPackage.TPACKAGE__OWNED_TYPES:
-				getOwnedTypes().clear();
-				getOwnedTypes().addAll((Collection<? extends TAbstractType>)newValue);
-				return;
-			case BasicPackage.TPACKAGE__MODEL:
-				setModel((TypeGraph)newValue);
-				return;
-			case BasicPackage.TPACKAGE__TNAME:
-				setTName((String)newValue);
-				return;
+		case BasicPackage.TPACKAGE__SUBPACKAGES:
+			getSubpackages().clear();
+			getSubpackages().addAll((Collection<? extends TPackage>)newValue);
+			return;
+		case BasicPackage.TPACKAGE__PARENT:
+			setParent((TPackage)newValue);
+			return;
+		case BasicPackage.TPACKAGE__CLASSES:
+			getClasses().clear();
+			getClasses().addAll((Collection<? extends TClass>)newValue);
+			return;
+		case BasicPackage.TPACKAGE__INTERFACES:
+			getInterfaces().clear();
+			getInterfaces().addAll((Collection<? extends TInterface>)newValue);
+			return;
+		case BasicPackage.TPACKAGE__OWNED_TYPES:
+			getOwnedTypes().clear();
+			getOwnedTypes().addAll((Collection<? extends TAbstractType>)newValue);
+			return;
+		case BasicPackage.TPACKAGE__MODEL:
+			setModel((TypeGraph)newValue);
+			return;
+		case BasicPackage.TPACKAGE__TNAME:
+			setTName((String)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -505,29 +516,29 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
-			case BasicPackage.TPACKAGE__SUBPACKAGES:
-				getSubpackages().clear();
-				return;
-			case BasicPackage.TPACKAGE__PARENT:
-				setParent((TPackage)null);
-				return;
-			case BasicPackage.TPACKAGE__CLASSES:
-				getClasses().clear();
-				return;
-			case BasicPackage.TPACKAGE__INTERFACES:
-				getInterfaces().clear();
-				return;
-			case BasicPackage.TPACKAGE__OWNED_TYPES:
-				getOwnedTypes().clear();
-				return;
-			case BasicPackage.TPACKAGE__MODEL:
-				setModel((TypeGraph)null);
-				return;
-			case BasicPackage.TPACKAGE__TNAME:
-				setTName(TNAME_EDEFAULT);
-				return;
+		case BasicPackage.TPACKAGE__SUBPACKAGES:
+			getSubpackages().clear();
+			return;
+		case BasicPackage.TPACKAGE__PARENT:
+			setParent((TPackage)null);
+			return;
+		case BasicPackage.TPACKAGE__CLASSES:
+			getClasses().clear();
+			return;
+		case BasicPackage.TPACKAGE__INTERFACES:
+			getInterfaces().clear();
+			return;
+		case BasicPackage.TPACKAGE__OWNED_TYPES:
+			getOwnedTypes().clear();
+			return;
+		case BasicPackage.TPACKAGE__MODEL:
+			setModel((TypeGraph)null);
+			return;
+		case BasicPackage.TPACKAGE__TNAME:
+			setTName(TNAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -537,22 +548,22 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
-			case BasicPackage.TPACKAGE__SUBPACKAGES:
-				return subpackages != null && !subpackages.isEmpty();
-			case BasicPackage.TPACKAGE__PARENT:
-				return getParent() != null;
-			case BasicPackage.TPACKAGE__CLASSES:
-				return classes != null && !classes.isEmpty();
-			case BasicPackage.TPACKAGE__INTERFACES:
-				return interfaces != null && !interfaces.isEmpty();
-			case BasicPackage.TPACKAGE__OWNED_TYPES:
-				return ownedTypes != null && !ownedTypes.isEmpty();
-			case BasicPackage.TPACKAGE__MODEL:
-				return model != null;
-			case BasicPackage.TPACKAGE__TNAME:
-				return TNAME_EDEFAULT == null ? tName != null : !TNAME_EDEFAULT.equals(tName);
+		case BasicPackage.TPACKAGE__SUBPACKAGES:
+			return (this.subpackages != null) && !this.subpackages.isEmpty();
+		case BasicPackage.TPACKAGE__PARENT:
+			return getParent() != null;
+		case BasicPackage.TPACKAGE__CLASSES:
+			return (this.classes != null) && !this.classes.isEmpty();
+		case BasicPackage.TPACKAGE__INTERFACES:
+			return (this.interfaces != null) && !this.interfaces.isEmpty();
+		case BasicPackage.TPACKAGE__OWNED_TYPES:
+			return (this.ownedTypes != null) && !this.ownedTypes.isEmpty();
+		case BasicPackage.TPACKAGE__MODEL:
+			return this.model != null;
+		case BasicPackage.TPACKAGE__TNAME:
+			return TNAME_EDEFAULT == null ? this.tName != null : !TNAME_EDEFAULT.equals(this.tName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -562,20 +573,20 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BasicPackage.TPACKAGE___GET_FULLY_QUALIFIED_NAME:
-				return getFullyQualifiedName();
-			case BasicPackage.TPACKAGE___GET_ALL_OWNED_TYPES:
-				return getAllOwnedTypes();
-			case BasicPackage.TPACKAGE___GET_ALL_OWNED_CLASSES:
-				return getAllOwnedClasses();
-			case BasicPackage.TPACKAGE___GET_BASE_PACKAGE:
-				return getBasePackage();
-			case BasicPackage.TPACKAGE___CREATE_TCLASS__STRING_BOOLEAN_TVISIBILITY:
-				return createTClass((String)arguments.get(0), (Boolean)arguments.get(1), (TVisibility)arguments.get(2));
-			case BasicPackage.TPACKAGE___GET_TCLASS__STRING:
-				return getTClass((String)arguments.get(0));
+		case BasicPackage.TPACKAGE___GET_FULLY_QUALIFIED_NAME:
+			return getFullyQualifiedName();
+		case BasicPackage.TPACKAGE___GET_ALL_OWNED_TYPES:
+			return getAllOwnedTypes();
+		case BasicPackage.TPACKAGE___GET_ALL_OWNED_CLASSES:
+			return getAllOwnedClasses();
+		case BasicPackage.TPACKAGE___GET_BASE_PACKAGE:
+			return getBasePackage();
+		case BasicPackage.TPACKAGE___CREATE_TCLASS__STRING_BOOLEAN_TVISIBILITY:
+			return createTClass((String)arguments.get(0), (Boolean)arguments.get(1), (TVisibility)arguments.get(2));
+		case BasicPackage.TPACKAGE___GET_TCLASS__STRING:
+			return getTClass((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -586,11 +597,13 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
-		StringBuilder result = new StringBuilder(super.toString());
+		final StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (tName: ");
-		result.append(tName);
+		result.append(this.tName);
 		result.append(')');
 		return result.toString();
 	}

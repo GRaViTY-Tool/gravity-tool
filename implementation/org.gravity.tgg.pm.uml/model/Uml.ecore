@@ -1164,73 +1164,73 @@
           <eType xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//Match"/>
         </eParameters>
       </eOperations>
-      <eOperations xsi:type="activities:MoflonEOperation" name="isAppropriate_BWD_TypeGraph_4">
+      <eOperations xsi:type="activities:MoflonEOperation" name="isAppropriate_BWD_TypeGraph_0">
         <eType xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
         <eParameters name="pm">
           <eType xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
         </eParameters>
         <activity>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.1" guard="EACH_TIME"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.4" guard="END"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.0" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.1" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.5" guard="SUCCESS"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.5" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3" guard="FAILURE"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.5" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6" guard="SUCCESS"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.1" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3" guard="FAILURE"/>
-          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.2"/>
-          <ownedActivityNode xsi:type="activities:StatementNode" name="bookkeeping with generic isAppropriate method" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.4 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.8" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.0">
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.1" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.4" guard="END"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.0" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.1" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.5" guard="SUCCESS"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.5" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3" guard="FAILURE"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.5" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6" guard="SUCCESS"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.1" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3" guard="FAILURE"/>
+          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.2"/>
+          <ownedActivityNode xsi:type="activities:StatementNode" name="bookkeeping with generic isAppropriate method" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.4 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.8" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.0">
             <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//Rules/Model2TypeGraph/isAppropriate_BWD">
               <ownedParameterBindings parameter="//Rules/Model2TypeGraph/isAppropriate_BWD/match">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
               </ownedParameterBindings>
               <ownedParameterBindings parameter="//Rules/Model2TypeGraph/isAppropriate_BWD/pm">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
               </ownedParameterBindings>
-              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
             </statementExpression>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="prepare return value" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.3" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.2">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="prepare return value" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.3" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.2">
             <storyPattern>
-              <objectVariable name="__performOperation" incomingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0">
+              <objectVariable name="__performOperation" incomingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
                 <constraint>
                   <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
                     <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;isApplicable_BWD&quot;"/>
-                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0">
+                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0">
                       <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                     </leftExpression>
                   </constraintExpression>
                 </constraint>
               </objectVariable>
-              <objectVariable name="__eClass" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1" bindingState="BOUND">
+              <objectVariable name="__eClass" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
                 <bindingExpression xsi:type="callExpressions:MethodCallExpression">
                   <callee href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
-                  <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+                  <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
                 </bindingExpression>
               </objectVariable>
               <objectVariable type="//Rules/Model2TypeGraph" name="this" bindingState="BOUND"/>
               <objectVariable name="__result" bindingOperator="CREATE">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
               </objectVariable>
-              <objectVariable name="isApplicableCC" incomingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1">
+              <objectVariable name="isApplicableCC" incomingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
                 <constraint>
                   <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
                     <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;isApplicable_CC&quot;"/>
-                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4">
+                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4">
                       <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                     </leftExpression>
                   </constraintExpression>
                 </constraint>
               </objectVariable>
-              <linkVariable name="eOperations" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
-              <linkVariable name="eOperations" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
+              <linkVariable name="eOperations" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
+              <linkVariable name="eOperations" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
             </storyPattern>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="test core match and DECs" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.1 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.0" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.3 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.5 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.6 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.8" forEach="true">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="test core match and DECs" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.1 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.0" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.3 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.5 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.6 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.8" forEach="true">
             <storyPattern xsi:type="org.moflon.tgg.language:TGGRule" name="Model2TypeGraph">
               <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="pm" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
@@ -1239,7 +1239,7 @@
               <objectVariable name="match" bindingOperator="CREATE">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//Match"/>
                 <attributeAssignment>
-                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
+                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
                     <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                   </valueExpression>
                   <attribute href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//TGGRuleMorphism/ruleName"/>
@@ -1248,7 +1248,7 @@
               <correspondence href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.2"/>
               <source href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.1"/>
               <csp>
-                <constraints variables="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.1 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.0" name="eq">
+                <constraints variables="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.1 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.0" name="eq">
                   <signature type=""/>
                   <signature type="" index="1"/>
                   <allowedAdornments value="BF"/>
@@ -1265,105 +1265,105 @@
               <target href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.0"/>
             </storyPattern>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StopNode" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.1">
-            <returnValue xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3"/>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.1">
+            <returnValue xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3"/>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StatementNode" name="Ensure that the correct types of elements are matched" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.6 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.7" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.4">
+          <ownedActivityNode xsi:type="activities:StatementNode" name="Ensure that the correct types of elements are matched" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.6 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.7" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.4">
             <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//Rules/Model2TypeGraph/checkTypes_BWD">
               <ownedParameterBindings parameter="//Rules/Model2TypeGraph/checkTypes_BWD/match">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
               </ownedParameterBindings>
-              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
             </statementExpression>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="Add match to rule result" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.5" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityEdge.7">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="Add match to rule result" outgoing="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.5" incoming="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityEdge.7">
             <storyPattern>
-              <objectVariable name="match" incomingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
+              <objectVariable name="match" incomingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//Match"/>
               </objectVariable>
-              <objectVariable name="__performOperation" incomingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1" bindingState="BOUND">
+              <objectVariable name="__performOperation" incomingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
               </objectVariable>
-              <objectVariable name="__result" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <objectVariable name="__result" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
               </objectVariable>
-              <objectVariable name="isApplicableCC" incomingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
+              <objectVariable name="isApplicableCC" incomingLink="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
               </objectVariable>
-              <linkVariable name="contents" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" bindingOperator="CREATE"/>
-              <linkVariable name="isApplicableOperation" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
-              <linkVariable name="isApplicableCCOperation" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.3" source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
+              <linkVariable name="contents" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" bindingOperator="CREATE"/>
+              <linkVariable name="isApplicableOperation" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
+              <linkVariable name="isApplicableCCOperation" target="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.3" source="//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
             </storyPattern>
           </ownedActivityNode>
         </activity>
       </eOperations>
-      <eOperations xsi:type="activities:MoflonEOperation" name="isAppropriate_FWD_Model_1">
+      <eOperations xsi:type="activities:MoflonEOperation" name="isAppropriate_FWD_Model_0">
         <eType xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
         <eParameters name="model">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
         </eParameters>
         <activity>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.1" guard="EACH_TIME"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.4" guard="END"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.0" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.1" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.5" guard="SUCCESS"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.5" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3" guard="FAILURE"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.5" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6" guard="SUCCESS"/>
-          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.1" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3" guard="FAILURE"/>
-          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.2"/>
-          <ownedActivityNode xsi:type="activities:StatementNode" name="bookkeeping with generic isAppropriate method" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.4 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.8" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.0">
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.1" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.4" guard="END"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.0" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.1" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.5" guard="SUCCESS"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.5" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3" guard="FAILURE"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.5" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6" guard="SUCCESS"/>
+          <ownedActivityEdge source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.1" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3" guard="FAILURE"/>
+          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.2"/>
+          <ownedActivityNode xsi:type="activities:StatementNode" name="bookkeeping with generic isAppropriate method" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.4 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.8" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.0">
             <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//Rules/Model2TypeGraph/isAppropriate_FWD">
               <ownedParameterBindings parameter="//Rules/Model2TypeGraph/isAppropriate_FWD/match">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
               </ownedParameterBindings>
               <ownedParameterBindings parameter="//Rules/Model2TypeGraph/isAppropriate_FWD/model">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
               </ownedParameterBindings>
-              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
             </statementExpression>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="prepare return value" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.3" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.2">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="prepare return value" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.3" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.2">
             <storyPattern>
-              <objectVariable name="__performOperation" incomingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0">
+              <objectVariable name="__performOperation" incomingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
                 <constraint>
                   <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
                     <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;isApplicable_FWD&quot;"/>
-                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0">
+                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0">
                       <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                     </leftExpression>
                   </constraintExpression>
                 </constraint>
               </objectVariable>
-              <objectVariable name="__eClass" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1" bindingState="BOUND">
+              <objectVariable name="__eClass" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
                 <bindingExpression xsi:type="callExpressions:MethodCallExpression">
                   <callee href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
-                  <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+                  <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
                 </bindingExpression>
               </objectVariable>
               <objectVariable type="//Rules/Model2TypeGraph" name="this" bindingState="BOUND"/>
               <objectVariable name="__result" bindingOperator="CREATE">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
               </objectVariable>
-              <objectVariable name="isApplicableCC" incomingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1">
+              <objectVariable name="isApplicableCC" incomingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
                 <constraint>
                   <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
                     <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;isApplicable_CC&quot;"/>
-                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4">
+                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4">
                       <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                     </leftExpression>
                   </constraintExpression>
                 </constraint>
               </objectVariable>
-              <linkVariable name="eOperations" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
-              <linkVariable name="eOperations" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
+              <linkVariable name="eOperations" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
+              <linkVariable name="eOperations" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
             </storyPattern>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="test core match and DECs" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.1 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.0" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.3 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.5 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.6 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.8" forEach="true">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="test core match and DECs" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.1 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.0" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.3 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.5 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.6 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.8" forEach="true">
             <storyPattern xsi:type="org.moflon.tgg.language:TGGRule" name="Model2TypeGraph">
               <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="model" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
@@ -1372,7 +1372,7 @@
               <objectVariable name="match" bindingOperator="CREATE">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//Match"/>
                 <attributeAssignment>
-                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
+                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
                     <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                   </valueExpression>
                   <attribute href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//TGGRuleMorphism/ruleName"/>
@@ -1381,7 +1381,7 @@
               <correspondence href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.2"/>
               <source href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.1"/>
               <csp>
-                <constraints variables="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.1 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.0" name="eq">
+                <constraints variables="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.1 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.0" name="eq">
                   <signature type=""/>
                   <signature type="" index="1"/>
                   <allowedAdornments value="BF"/>
@@ -1398,34 +1398,34 @@
               <target href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.0"/>
             </storyPattern>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StopNode" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.1">
-            <returnValue xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3"/>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.1">
+            <returnValue xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3"/>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StatementNode" name="Ensure that the correct types of elements are matched" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.6 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.7" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.4">
+          <ownedActivityNode xsi:type="activities:StatementNode" name="Ensure that the correct types of elements are matched" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.6 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.7" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.4">
             <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//Rules/Model2TypeGraph/checkTypes_FWD">
               <ownedParameterBindings parameter="//Rules/Model2TypeGraph/checkTypes_FWD/match">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
               </ownedParameterBindings>
-              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
             </statementExpression>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="Add match to rule result" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.5" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityEdge.7">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="Add match to rule result" outgoing="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.5" incoming="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityEdge.7">
             <storyPattern>
-              <objectVariable name="match" incomingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
+              <objectVariable name="match" incomingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//Match"/>
               </objectVariable>
-              <objectVariable name="__performOperation" incomingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1" bindingState="BOUND">
+              <objectVariable name="__performOperation" incomingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
               </objectVariable>
-              <objectVariable name="__result" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <objectVariable name="__result" outgoingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
               </objectVariable>
-              <objectVariable name="isApplicableCC" incomingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
+              <objectVariable name="isApplicableCC" incomingLink="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
               </objectVariable>
-              <linkVariable name="contents" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" bindingOperator="CREATE"/>
-              <linkVariable name="isApplicableOperation" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
-              <linkVariable name="isApplicableCCOperation" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.3" source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
+              <linkVariable name="contents" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" bindingOperator="CREATE"/>
+              <linkVariable name="isApplicableOperation" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
+              <linkVariable name="isApplicableCCOperation" target="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.3" source="//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
             </storyPattern>
           </ownedActivityNode>
         </activity>
@@ -3194,73 +3194,73 @@
           <eType xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//Match"/>
         </eParameters>
       </eOperations>
-      <eOperations xsi:type="activities:MoflonEOperation" name="isAppropriate_BWD_TypeGraph_5">
+      <eOperations xsi:type="activities:MoflonEOperation" name="isAppropriate_BWD_TypeGraph_1">
         <eType xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
         <eParameters name="pm">
           <eType xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
         </eParameters>
         <activity>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.1" guard="EACH_TIME"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.4" guard="END"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.0" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.1" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.5" guard="SUCCESS"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.5" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3" guard="FAILURE"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.5" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6" guard="SUCCESS"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.1" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3" guard="FAILURE"/>
-          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.2"/>
-          <ownedActivityNode xsi:type="activities:StatementNode" name="bookkeeping with generic isAppropriate method" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.4 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.8" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.0">
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.1" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.4" guard="END"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.0" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.1" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.5" guard="SUCCESS"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.5" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3" guard="FAILURE"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.5" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6" guard="SUCCESS"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.1" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3" guard="FAILURE"/>
+          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.2"/>
+          <ownedActivityNode xsi:type="activities:StatementNode" name="bookkeeping with generic isAppropriate method" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.4 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.8" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.0">
             <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//Rules/ModelNested2TypeGraph/isAppropriate_BWD">
               <ownedParameterBindings parameter="//Rules/ModelNested2TypeGraph/isAppropriate_BWD/match">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
               </ownedParameterBindings>
               <ownedParameterBindings parameter="//Rules/ModelNested2TypeGraph/isAppropriate_BWD/pm">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
               </ownedParameterBindings>
-              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
             </statementExpression>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="prepare return value" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.3" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.2">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="prepare return value" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.3" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.2">
             <storyPattern>
-              <objectVariable name="__performOperation" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0">
+              <objectVariable name="__performOperation" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
                 <constraint>
                   <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
                     <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;isApplicable_BWD&quot;"/>
-                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0">
+                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0">
                       <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                     </leftExpression>
                   </constraintExpression>
                 </constraint>
               </objectVariable>
-              <objectVariable name="__eClass" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1" bindingState="BOUND">
+              <objectVariable name="__eClass" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
                 <bindingExpression xsi:type="callExpressions:MethodCallExpression">
                   <callee href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
-                  <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+                  <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
                 </bindingExpression>
               </objectVariable>
               <objectVariable type="//Rules/ModelNested2TypeGraph" name="this" bindingState="BOUND"/>
               <objectVariable name="__result" bindingOperator="CREATE">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
               </objectVariable>
-              <objectVariable name="isApplicableCC" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1">
+              <objectVariable name="isApplicableCC" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
                 <constraint>
                   <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
                     <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;isApplicable_CC&quot;"/>
-                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4">
+                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4">
                       <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                     </leftExpression>
                   </constraintExpression>
                 </constraint>
               </objectVariable>
-              <linkVariable name="eOperations" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
-              <linkVariable name="eOperations" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
+              <linkVariable name="eOperations" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
+              <linkVariable name="eOperations" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
             </storyPattern>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="test core match and DECs" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.1 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.0" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.3 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.5 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.6 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.8" forEach="true">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="test core match and DECs" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.1 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.0" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.3 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.5 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.6 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.8" forEach="true">
             <storyPattern xsi:type="org.moflon.tgg.language:TGGRule" name="ModelNested2TypeGraph">
               <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="pm" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
@@ -3269,7 +3269,7 @@
               <objectVariable name="match" bindingOperator="CREATE">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//Match"/>
                 <attributeAssignment>
-                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
+                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
                     <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                   </valueExpression>
                   <attribute href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//TGGRuleMorphism/ruleName"/>
@@ -3278,7 +3278,7 @@
               <correspondence href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.2"/>
               <source href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.1"/>
               <csp>
-                <constraints variables="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.1 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.0" name="eq">
+                <constraints variables="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.1 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.0" name="eq">
                   <signature type=""/>
                   <signature type="" index="1"/>
                   <allowedAdornments value="BF"/>
@@ -3295,144 +3295,144 @@
               <target href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.0"/>
             </storyPattern>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StopNode" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.1">
-            <returnValue xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3"/>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.1">
+            <returnValue xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3"/>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StatementNode" name="Ensure that the correct types of elements are matched" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.6 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.7" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.4">
+          <ownedActivityNode xsi:type="activities:StatementNode" name="Ensure that the correct types of elements are matched" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.6 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.7" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.4">
             <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//Rules/ModelNested2TypeGraph/checkTypes_BWD">
               <ownedParameterBindings parameter="//Rules/ModelNested2TypeGraph/checkTypes_BWD/match">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
               </ownedParameterBindings>
-              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
             </statementExpression>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="Add match to rule result" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.5" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityEdge.7">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="Add match to rule result" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.5" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityEdge.7">
             <storyPattern>
-              <objectVariable name="match" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
+              <objectVariable name="match" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//Match"/>
               </objectVariable>
-              <objectVariable name="__performOperation" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1" bindingState="BOUND">
+              <objectVariable name="__performOperation" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
               </objectVariable>
-              <objectVariable name="__result" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <objectVariable name="__result" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
               </objectVariable>
-              <objectVariable name="isApplicableCC" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
+              <objectVariable name="isApplicableCC" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
               </objectVariable>
-              <linkVariable name="contents" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" bindingOperator="CREATE"/>
-              <linkVariable name="isApplicableOperation" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
-              <linkVariable name="isApplicableCCOperation" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.3" source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
+              <linkVariable name="contents" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" bindingOperator="CREATE"/>
+              <linkVariable name="isApplicableOperation" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
+              <linkVariable name="isApplicableCCOperation" target="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.3" source="//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
             </storyPattern>
           </ownedActivityNode>
         </activity>
       </eOperations>
-      <eOperations xsi:type="activities:MoflonEOperation" name="isAppropriate_FWD_EMoflonEdge_153">
+      <eOperations xsi:type="activities:MoflonEOperation" name="isAppropriate_FWD_EMoflonEdge_0">
         <eType xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
         <eParameters name="_edge_nestedPackage">
           <eType xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EMoflonEdge"/>
         </eParameters>
         <activity>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.1" guard="EACH_TIME"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.4" guard="END"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.0" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.1" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.5" guard="SUCCESS"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.5" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3" guard="FAILURE"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.5" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6" guard="SUCCESS"/>
-          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.1" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3" guard="FAILURE"/>
-          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.2"/>
-          <ownedActivityNode xsi:type="activities:StatementNode" name="bookkeeping with generic isAppropriate method" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.4 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.8" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.0">
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.1" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.4" guard="END"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.0" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.1" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.5" guard="SUCCESS"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.5" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3" guard="FAILURE"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.5" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6" guard="SUCCESS"/>
+          <ownedActivityEdge source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.1" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3" guard="FAILURE"/>
+          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.2"/>
+          <ownedActivityNode xsi:type="activities:StatementNode" name="bookkeeping with generic isAppropriate method" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.4 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.8" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.0">
             <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//Rules/ModelNested2TypeGraph/isAppropriate_FWD">
               <ownedParameterBindings parameter="//Rules/ModelNested2TypeGraph/isAppropriate_FWD/match">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.3"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.3"/>
               </ownedParameterBindings>
               <ownedParameterBindings parameter="//Rules/ModelNested2TypeGraph/isAppropriate_FWD/model">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
               </ownedParameterBindings>
               <ownedParameterBindings parameter="//Rules/ModelNested2TypeGraph/isAppropriate_FWD/outerModel">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
               </ownedParameterBindings>
-              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
             </statementExpression>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="prepare return value" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.3" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.2">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="prepare return value" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.3" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.2">
             <storyPattern>
-              <objectVariable name="__performOperation" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0">
+              <objectVariable name="__performOperation" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
                 <constraint>
                   <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
                     <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;isApplicable_FWD&quot;"/>
-                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0">
+                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0">
                       <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                     </leftExpression>
                   </constraintExpression>
                 </constraint>
               </objectVariable>
-              <objectVariable name="__eClass" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1" bindingState="BOUND">
+              <objectVariable name="__eClass" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
                 <bindingExpression xsi:type="callExpressions:MethodCallExpression">
                   <callee href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
-                  <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+                  <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
                 </bindingExpression>
               </objectVariable>
               <objectVariable type="//Rules/ModelNested2TypeGraph" name="this" bindingState="BOUND"/>
               <objectVariable name="__result" bindingOperator="CREATE">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
               </objectVariable>
-              <objectVariable name="isApplicableCC" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1">
+              <objectVariable name="isApplicableCC" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
                 <constraint>
                   <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
                     <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;isApplicable_CC&quot;"/>
-                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4">
+                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4">
                       <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                     </leftExpression>
                   </constraintExpression>
                 </constraint>
               </objectVariable>
-              <linkVariable name="eOperations" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
-              <linkVariable name="eOperations" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
+              <linkVariable name="eOperations" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
+              <linkVariable name="eOperations" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1"/>
             </storyPattern>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="test core match and DECs" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.1 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.0" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.3 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.5 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.6 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.8" forEach="true">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="test core match and DECs" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.1 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.0" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.3 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.5 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.6 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.8" forEach="true">
             <storyPattern xsi:type="org.moflon.tgg.language:TGGRule" name="ModelNested2TypeGraph">
-              <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="model" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2">
+              <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="model" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
                 <domain href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.1"/>
               </objectVariable>
-              <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="outerModel" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0">
+              <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="outerModel" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
                 <domain href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.1"/>
               </objectVariable>
-              <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="_edge_nestedPackage" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2" bindingState="BOUND">
+              <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="_edge_nestedPackage" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EMoflonEdge"/>
                 <domain href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.1"/>
               </objectVariable>
               <objectVariable name="match" bindingOperator="CREATE">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//Match"/>
                 <attributeAssignment>
-                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
+                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
                     <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
                   </valueExpression>
                   <attribute href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//TGGRuleMorphism/ruleName"/>
                 </attributeAssignment>
               </objectVariable>
-              <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="nestedPackage" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1">
+              <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="nestedPackage" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1">
                 <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/nestedPackage"/>
                 <domain href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.1"/>
               </linkVariable>
-              <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="src" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2">
+              <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="src" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2">
                 <domain href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.1"/>
               </linkVariable>
-              <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="trg" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2">
+              <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="trg" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2">
                 <domain href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.1"/>
               </linkVariable>
               <correspondence href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.2"/>
               <source href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.1"/>
               <csp>
-                <constraints variables="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.1 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.0" name="eq">
+                <constraints variables="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.1 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@csp/@variables.0" name="eq">
                   <signature type=""/>
                   <signature type="" index="1"/>
                   <allowedAdornments value="BF"/>
@@ -3449,34 +3449,34 @@
               <target href="platform:/resource/org.gravity.tgg.pm.uml/model/Uml.tgg.xmi#//@domain.0"/>
             </storyPattern>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StopNode" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.1">
-            <returnValue xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3"/>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.1">
+            <returnValue xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3"/>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StatementNode" name="Ensure that the correct types of elements are matched" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.6 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.7" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.4">
+          <ownedActivityNode xsi:type="activities:StatementNode" name="Ensure that the correct types of elements are matched" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.6 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.7" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.4">
             <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//Rules/ModelNested2TypeGraph/checkTypes_FWD">
               <ownedParameterBindings parameter="//Rules/ModelNested2TypeGraph/checkTypes_FWD/match">
-                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.3"/>
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.3"/>
               </ownedParameterBindings>
-              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2"/>
             </statementExpression>
           </ownedActivityNode>
-          <ownedActivityNode xsi:type="activities:StoryNode" name="Add match to rule result" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.5" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityEdge.7">
+          <ownedActivityNode xsi:type="activities:StoryNode" name="Add match to rule result" outgoing="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.5" incoming="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityEdge.7">
             <storyPattern>
-              <objectVariable name="match" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
+              <objectVariable name="match" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//Match"/>
               </objectVariable>
-              <objectVariable name="__performOperation" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1" bindingState="BOUND">
+              <objectVariable name="__performOperation" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
               </objectVariable>
-              <objectVariable name="__result" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <objectVariable name="__result" outgoingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//EObjectContainer"/>
               </objectVariable>
-              <objectVariable name="isApplicableCC" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
+              <objectVariable name="isApplicableCC" incomingLink="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
                 <type xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
               </objectVariable>
-              <linkVariable name="contents" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" bindingOperator="CREATE"/>
-              <linkVariable name="isApplicableOperation" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
-              <linkVariable name="isApplicableCCOperation" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.3" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
+              <linkVariable name="contents" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" bindingOperator="CREATE"/>
+              <linkVariable name="isApplicableOperation" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
+              <linkVariable name="isApplicableCCOperation" target="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.3" source="//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
             </storyPattern>
           </ownedActivityNode>
         </activity>

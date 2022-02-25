@@ -7,7 +7,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 
 import org.gravity.typegraph.basic.BasicFactory;
-import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TVisibility;
 import org.junit.Test;
 

@@ -87,7 +87,7 @@ public class UMLCodeGenTest {
 	}
 
 	@Test
-	public void testGenerateCode() throws InitializationError, CoreException {
+	public void testGenerateCode() throws CoreException {
 		final var monitor = new NullProgressMonitor();
 		try {
 			final var status = Transformation.generateCode(this.project, this.umlFile, monitor);

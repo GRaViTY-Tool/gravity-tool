@@ -381,7 +381,7 @@ public class GravityModiscoCodeGenerator {
 	 * @throws JavaModelException
 	 * @throws CoreException
 	 */
-	private static File getSourceFolder(final IJavaProject project) throws JavaModelException, CoreException {
+	private static File getSourceFolder(final IJavaProject project) throws CoreException {
 		File src;
 		final var result = Stream.of(project.getRawClasspath())
 				.filter(c -> c.getEntryKind() == IClasspathEntry.CPE_SOURCE).findAny();

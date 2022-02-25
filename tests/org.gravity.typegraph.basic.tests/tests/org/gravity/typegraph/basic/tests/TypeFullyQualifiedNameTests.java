@@ -22,7 +22,7 @@ public class TypeFullyQualifiedNameTests {
 	@Test
 	public void testGetFullyQualifiedName() {
 		final var namespace = "a.b.c";
-		final var name = "Clazz";
+		final var name = "Clazz1";
 
 		final var pm = BasicFactory.eINSTANCE.createTypeGraph();
 
@@ -37,7 +37,7 @@ public class TypeFullyQualifiedNameTests {
 	 */
 	@Test
 	public void testGetFullyQualifiedNameNoPackage() {
-		final var name = "Clazz";
+		final var name = "Clazz2";
 
 		final var pm = BasicFactory.eINSTANCE.createTypeGraph();
 		final var c = BasicFactory.eINSTANCE.createTClass();
@@ -55,7 +55,7 @@ public class TypeFullyQualifiedNameTests {
 	@Test
 	public void testGetFullyQualifiedNameDefaultPackage() {
 		final var namespace = "(default package)";
-		final var name = "Clazz";
+		final var name = "Clazz3";
 
 		final var pm = BasicFactory.eINSTANCE.createTypeGraph();
 

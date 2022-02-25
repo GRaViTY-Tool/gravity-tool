@@ -213,63 +213,137 @@ public final class JavaASTUtil {
 			final var cu = (CompilationUnit) root;
 
 			// Search in imports
-			for (final Object entry : cu.imports()) {
-				final var imp = (ImportDeclaration) entry;
-				final var importedPackage = imp.getName().getFullyQualifiedName();
-
-				if (imp.isOnDemand()) {
-					final var tAbstractType = pm.getType(importedPackage + '.' + fullyQualifiedName);
-					if (tAbstractType != null) {
-						return tAbstractType;
-					}
-				} else {
-					final var name = importedPackage.substring(importedPackage.lastIndexOf('.') + 1);
-					if (name.equals(fullyQualifiedName)) {
-						return pm.getType(importedPackage);
-					}
-				}
+			final var importedType = searchTypeInImports(pm, cu, fullyQualifiedName);
+			if (importedType != null) {
+				return importedType;
 			}
 
 			// Search in same package as cu
-			final var cuPackageDecl = cu.getPackage();
-			if (cuPackageDecl != null) {
-				final var cuPackage = pm.getPackage(cuPackageDecl.getName().getFullyQualifiedName());
-				if (cuPackage != null) {
-					final var result = cuPackage.getOwnedTypes().parallelStream()
-							.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
-					if (result.isPresent()) {
-						return result.get();
-					}
-				}
+			final var packageType = searchTypeInCUsPackage(pm, cu, fullyQualifiedName);
+			if (packageType != null) {
+				return packageType;
 			}
 
 			// Search for java default types
-			for (final String packageName : new String[] { "java.lang", "java.util" }) {
-				final var cuPackage = pm.getPackage(packageName);
-				if (cuPackage != null) {
-					final var result = cuPackage.getOwnedTypes().parallelStream()
-							.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
-					if (result.isPresent()) {
-						return result.get();
-					}
-				}
+			final var standardType = searchTypeInJavaStandardPackages(pm, fullyQualifiedName);
+			if (standardType != null) {
+				return standardType;
 			}
 
-			for (final Object outer : cu.types()) {
-				if (outer instanceof TypeDeclaration) {
-					for (final TypeDeclaration inner : ((TypeDeclaration) outer).getTypes()) {
-						if (inner.getName().getFullyQualifiedName().equals(fullyQualifiedName)) {
-							return pm.getType(cuPackageDecl.getName().getFullyQualifiedName() + '.'
-									+ ((TypeDeclaration) outer).getName().getFullyQualifiedName() + '$'
-									+ fullyQualifiedName);
-						}
-					}
-				}
+			final var nestedType = searchForNestedTypes(pm, cu, fullyQualifiedName);
+			if (nestedType != null) {
+				return nestedType;
 			}
 		} else {
 			LOGGER.error("Root of a SimpleType \"" + fullyQualifiedName + "\"is not a CompilationUnit but: " + root);
 		}
 		return pm.getType(fullyQualifiedName);
+	}
+
+	/**
+	 * Searches the type given by a fully qualified name in the compilation units
+	 * nested types and returns the corresponding program model type
+	 *
+	 * @param pm                 The program model
+	 * @param cu                 The compilation unit
+	 * @param fullyQualifiedName The types fully qualified name
+	 * @return the type from the program model or <code>null</code> if no type has
+	 *         been found
+	 */
+	private static TAbstractType searchForNestedTypes(final TypeGraph pm, final CompilationUnit cu,
+			final String fullyQualifiedName) {
+		for (final Object outer : cu.types()) {
+			if (outer instanceof TypeDeclaration) {
+				for (final TypeDeclaration inner : ((TypeDeclaration) outer).getTypes()) {
+					if (inner.getName().getFullyQualifiedName().equals(fullyQualifiedName)) {
+						return pm.getType(cu.getPackage().getName().getFullyQualifiedName() + '.'
+								+ ((TypeDeclaration) outer).getName().getFullyQualifiedName() + '$'
+								+ fullyQualifiedName);
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Searches the type specified by fully qualified name in the Java standard
+	 * packages
+	 *
+	 * @param pm                 The program model
+	 * @param fullyQualifiedName The types fully qualified name
+	 * @return the type from the program model or <code>null</code> if no type has
+	 *         been found
+	 */
+	private static TAbstractType searchTypeInJavaStandardPackages(final TypeGraph pm, final String fullyQualifiedName) {
+		for (final String packageName : new String[] { "java.lang", "java.util" }) {
+			final var cuPackage = pm.getPackage(packageName);
+			if (cuPackage != null) {
+				final var result = cuPackage.getOwnedTypes().parallelStream()
+						.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
+				if (result.isPresent()) {
+					return result.get();
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Searches the type given by a fully qualified name in the compilation units
+	 * package and returns the corresponding program model type
+	 *
+	 * @param pm                 The program model
+	 * @param cu                 The compilation unit
+	 * @param fullyQualifiedName The types fully qualified name
+	 * @return the type from the program model or <code>null</code> if no type has
+	 *         been found
+	 */
+	private static TAbstractType searchTypeInCUsPackage(final TypeGraph pm, final CompilationUnit cu,
+			final String fullyQualifiedName) {
+		final var cuPackageDecl = cu.getPackage();
+		if (cuPackageDecl != null) {
+			final var cuPackage = pm.getPackage(cuPackageDecl.getName().getFullyQualifiedName());
+			if (cuPackage != null) {
+				final var result = cuPackage.getOwnedTypes().parallelStream()
+						.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
+				if (result.isPresent()) {
+					return result.get();
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Searches the type given by a fully qualified name in the compilation units
+	 * imports and returns the corresponding program model type
+	 *
+	 * @param pm                 The program model
+	 * @param cu                 The compilation unit
+	 * @param fullyQualifiedName The types fully qualified name
+	 * @return the type from the program model or <code>null</code> if no type has
+	 *         been found
+	 */
+	private static TAbstractType searchTypeInImports(final TypeGraph pm, final CompilationUnit cu,
+			final String fullyQualifiedName) {
+		for (final Object entry : cu.imports()) {
+			final var imp = (ImportDeclaration) entry;
+			final var importedPackage = imp.getName().getFullyQualifiedName();
+
+			if (imp.isOnDemand()) {
+				final var tAbstractType = pm.getType(importedPackage + '.' + fullyQualifiedName);
+				if (tAbstractType != null) {
+					return tAbstractType;
+				}
+			} else {
+				final var name = importedPackage.substring(importedPackage.lastIndexOf('.') + 1);
+				if (name.equals(fullyQualifiedName)) {
+					return pm.getType(importedPackage);
+				}
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -289,8 +363,7 @@ public final class JavaASTUtil {
 		} else if (type.isPrimitiveType()) {
 			return ((PrimitiveType) type).toString();
 		}
-		LOGGER.error("Type is not covered: " + type);
-		return null;
+		throw new IllegalStateException("Type is not covered: " + type);
 	}
 
 	/**
@@ -435,10 +508,10 @@ public final class JavaASTUtil {
 		var tParam = signature.getFirstParameter();
 		for (final Object p : method.parameters()) {
 			if (p instanceof SingleVariableDeclaration) {
-				final var var = (SingleVariableDeclaration) p;
-				final var vt = var.getType();
-				final var name = getName(vt);
-				if (tParam.getType().getFullyQualifiedName().endsWith(name) && (vt.isArrayType() == tParam.isArray())) {
+				final var variableType = ((SingleVariableDeclaration) p).getType();
+				final var name = getName(variableType);
+				if (tParam.getType().getFullyQualifiedName().endsWith(name)
+						&& (variableType.isArrayType() == tParam.isArray())) {
 					tParam = tParam.getNext();
 				} else {
 					return false;
