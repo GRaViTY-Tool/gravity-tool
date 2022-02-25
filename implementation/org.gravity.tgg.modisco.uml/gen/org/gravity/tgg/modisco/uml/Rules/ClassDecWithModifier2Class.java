@@ -212,7 +212,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_144(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_142(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

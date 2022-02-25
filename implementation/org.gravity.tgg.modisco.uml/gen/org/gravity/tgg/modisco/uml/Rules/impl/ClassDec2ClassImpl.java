@@ -1960,8 +1960,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_21_2_testcorematchandDECs_black_nac_0B(MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_705807 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_705807 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_460258 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_460258 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2163,8 +2163,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_27_1_matchtggpattern_black_nac_0B(MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_209630 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_209630 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_335249 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_335249 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

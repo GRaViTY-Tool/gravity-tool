@@ -46,7 +46,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AbstractTypeDeclaration mType, Modifier mModifier);
+	boolean isAppropriate_FWD(Match match, Modifier mModifier, AbstractTypeDeclaration mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, AbstractTypeDeclaration mType, Modifier mModifier);
+	void registerObjectsToMatch_FWD(Match match, Modifier mModifier, AbstractTypeDeclaration mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, AbstractTypeDeclaration mType, Modifier mModifier);
+	CSP isAppropriate_solveCsp_FWD(Match match, Modifier mModifier, AbstractTypeDeclaration mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,8 +94,8 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			AbstractTypeDeclaration mType, TAbstractType tType, Modifier mModifier);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier mModifier,
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, AbstractTypeDeclaration mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,8 +111,8 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject mTypeToTType,
-			EObject mType, EObject tType, EObject mModifier, EObject tModifier);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModifier, EObject mTypeToTType,
+			EObject mModifierToTModifier, EObject tModifier, EObject tType, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +128,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TAbstractType tType, TModifier tModifier);
+	boolean isAppropriate_BWD(Match match, TModifier tModifier, TAbstractType tType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,7 +152,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TAbstractType tType, TModifier tModifier);
+	void registerObjectsToMatch_BWD(Match match, TModifier tModifier, TAbstractType tType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,7 +160,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TAbstractType tType, TModifier tModifier);
+	CSP isAppropriate_solveCsp_BWD(Match match, TModifier tModifier, TAbstractType tType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,7 +177,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			AbstractTypeDeclaration mType, TAbstractType tType, TModifier tModifier);
+			TModifier tModifier, TAbstractType tType, AbstractTypeDeclaration mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,8 +193,8 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModifierToTModifier, EObject mTypeToTType,
-			EObject mType, EObject tType, EObject mModifier, EObject tModifier);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModifier, EObject mTypeToTType,
+			EObject mModifierToTModifier, EObject tModifier, EObject tType, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_86(EMoflonEdge _edge_tModifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_33(EMoflonEdge _edge_tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_89(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_36(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,8 +250,8 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(AbstractTypeDeclaration mType, TAbstractType tType, Modifier mModifier,
-			TModifier tModifier, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Modifier mModifier, TModifier tModifier, TAbstractType tType,
+			AbstractTypeDeclaration mType, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -267,7 +267,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AbstractTypeDeclaration mType, Modifier mModifier);
+	boolean checkDEC_FWD(Modifier mModifier, AbstractTypeDeclaration mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,7 +275,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TAbstractType tType, TModifier tModifier);
+	boolean checkDEC_BWD(TModifier tModifier, TAbstractType tType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +293,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			AbstractTypeDeclaration mType, TAbstractType tType, ModelgeneratorRuleResult ruleResult);
+			TAbstractType tType, AbstractTypeDeclaration mType, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

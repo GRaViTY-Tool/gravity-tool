@@ -695,7 +695,7 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_84(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_37(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsShortImpl
 				.pattern_PrimitiveTypeIsShort_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -752,7 +752,7 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_87(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_40(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsShortImpl
 				.pattern_PrimitiveTypeIsShort_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1187,10 +1187,10 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_IS_SHORT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_SHORT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_84__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_84((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_SHORT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_87__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_87((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_SHORT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_37__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_37((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_SHORT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_40__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_40((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_IS_SHORT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_IS_SHORT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2244,7 +2244,7 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsShort_20_2_testcorematchandDECs_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_428173 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_838069 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2253,9 +2253,9 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsShort_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tPrimitiveClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_244117 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_714850 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_244117)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_714850)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2264,9 +2264,19 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsShort_20_2_testcorematchandDECs_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_849505 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_849505 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_849505)) {
+		TPackage __DEC_tPrimitiveClass_ownedTypes_317268 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_ownedTypes_317268 != null) {
+			return new Object[] { tPrimitiveClass };
+		}
+
+		return null;
+	}
+
+	public static final Object[] pattern_PrimitiveTypeIsShort_20_2_testcorematchandDECs_black_nac_3B(
+			TClass tPrimitiveClass) {
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_773429 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_773429 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_773429)) {
 				return new Object[] { tPrimitiveClass };
 			}
 		}
@@ -2295,7 +2305,10 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 											tPrimitiveClass, typeGraph) == null) {
 										if (pattern_PrimitiveTypeIsShort_20_2_testcorematchandDECs_black_nac_2B(
 												tPrimitiveClass) == null) {
-											_result.add(new Object[] { typeGraph, tPrimitiveClass, _edge_classes });
+											if (pattern_PrimitiveTypeIsShort_20_2_testcorematchandDECs_black_nac_3B(
+													tPrimitiveClass) == null) {
+												_result.add(new Object[] { typeGraph, tPrimitiveClass, _edge_classes });
+											}
 										}
 									}
 								}
@@ -2670,7 +2683,7 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsShort_28_1_matchtggpattern_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_228159 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_622202 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2679,9 +2692,9 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsShort_28_1_matchtggpattern_black_nac_1BB(TClass tPrimitiveClass,
 			TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_814996 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_485034 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_814996)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_485034)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2690,9 +2703,19 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsShort_28_1_matchtggpattern_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_803787 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_803787 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_803787)) {
+		TPackage __DEC_tPrimitiveClass_ownedTypes_700375 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_ownedTypes_700375 != null) {
+			return new Object[] { tPrimitiveClass };
+		}
+
+		return null;
+	}
+
+	public static final Object[] pattern_PrimitiveTypeIsShort_28_1_matchtggpattern_black_nac_3B(
+			TClass tPrimitiveClass) {
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_62820 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_62820 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_62820)) {
 				return new Object[] { tPrimitiveClass };
 			}
 		}
@@ -2708,7 +2731,10 @@ public class PrimitiveTypeIsShortImpl extends AbstractRuleImpl implements Primit
 					if (pattern_PrimitiveTypeIsShort_28_1_matchtggpattern_black_nac_1BB(tPrimitiveClass,
 							typeGraph) == null) {
 						if (pattern_PrimitiveTypeIsShort_28_1_matchtggpattern_black_nac_2B(tPrimitiveClass) == null) {
-							return new Object[] { typeGraph, tPrimitiveClass };
+							if (pattern_PrimitiveTypeIsShort_28_1_matchtggpattern_black_nac_3B(
+									tPrimitiveClass) == null) {
+								return new Object[] { typeGraph, tPrimitiveClass };
+							}
 						}
 					}
 				}

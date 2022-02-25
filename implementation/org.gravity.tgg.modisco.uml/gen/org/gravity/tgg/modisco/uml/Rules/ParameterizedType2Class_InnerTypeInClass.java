@@ -47,7 +47,7 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @generated
 	 */
 	boolean isAppropriate_FWD(Match match, TypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
+			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
 			TypeAccess typeTypeAccess);
 
 	/**
@@ -73,7 +73,7 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @generated
 	 */
 	void registerObjectsToMatch_FWD(Match match, TypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
+			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
 			TypeAccess typeTypeAccess);
 
 	/**
@@ -83,7 +83,7 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @generated
 	 */
 	CSP isAppropriate_solveCsp_FWD(Match match, TypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
+			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
 			TypeAccess typeTypeAccess);
 
 	/**
@@ -102,8 +102,8 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package umlPackage,
 			ASTNode2Element ne2neNonParam, org.eclipse.uml2.uml.Class uContainer, TypeDeclaration jContainer,
-			AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
-			org.eclipse.modisco.java.Package nonParamPackage, JavaPackage2UmlPackage jp2up, TypeAccess typeTypeAccess,
+			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
+			ParameterizedType parameterizedType, JavaPackage2UmlPackage jp2up, TypeAccess typeTypeAccess,
 			org.eclipse.uml2.uml.Class nonParamElement, ASTNode2Element c2c);
 
 	/**
@@ -121,8 +121,8 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject umlPackage, EObject ne2neNonParam,
-			EObject uContainer, EObject jContainer, EObject nonParamType, EObject parameterizedType,
-			EObject nonParamPackage, EObject jp2up, EObject ne2ne, EObject typeTypeAccess, EObject nonParamElement,
+			EObject uContainer, EObject jContainer, EObject nonParamType, EObject nonParamPackage,
+			EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess, EObject nonParamElement,
 			EObject c2c, EObject parameterizedClassifier);
 
 	/**
@@ -214,8 +214,8 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject umlPackage, EObject ne2neNonParam,
-			EObject uContainer, EObject jContainer, EObject nonParamType, EObject parameterizedType,
-			EObject nonParamPackage, EObject jp2up, EObject ne2ne, EObject typeTypeAccess, EObject nonParamElement,
+			EObject uContainer, EObject jContainer, EObject nonParamType, EObject nonParamPackage,
+			EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess, EObject nonParamElement,
 			EObject c2c, EObject parameterizedClassifier);
 
 	/**
@@ -232,7 +232,7 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_103(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_100(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -240,7 +240,7 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_109(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_107(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,10 +273,10 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package umlPackage, org.eclipse.uml2.uml.Class uContainer,
-			TypeDeclaration jContainer, AbstractTypeDeclaration nonParamType, ParameterizedType parameterizedType,
-			org.eclipse.modisco.java.Package nonParamPackage, TypeAccess typeTypeAccess,
-			org.eclipse.uml2.uml.Class nonParamElement, org.eclipse.uml2.uml.Class parameterizedClassifier,
-			Match sourceMatch, Match targetMatch);
+			TypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
+			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
+			TypeAccess typeTypeAccess, org.eclipse.uml2.uml.Class nonParamElement,
+			org.eclipse.uml2.uml.Class parameterizedClassifier, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +293,7 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @generated
 	 */
 	boolean checkDEC_FWD(TypeDeclaration jContainer, AbstractTypeDeclaration nonParamType,
-			ParameterizedType parameterizedType, org.eclipse.modisco.java.Package nonParamPackage,
+			org.eclipse.modisco.java.Package nonParamPackage, ParameterizedType parameterizedType,
 			TypeAccess typeTypeAccess);
 
 	/**

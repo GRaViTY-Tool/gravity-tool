@@ -17,8 +17,6 @@ import org.gravity.tgg.pm.uml.UmlPackage;
 import org.gravity.typegraph.basic.TParameter;
 
 import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -26,11 +24,11 @@ import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Parameter2TParameterImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Parameter2TParameterImpl#getTarget <em>Target</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -79,6 +77,7 @@ public class Parameter2TParameterImpl extends AbstractCorrespondenceImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Parameter getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject) source;
@@ -106,6 +105,7 @@ public class Parameter2TParameterImpl extends AbstractCorrespondenceImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSource(Parameter newSource) {
 		Parameter oldSource = source;
 		source = newSource;
@@ -119,6 +119,7 @@ public class Parameter2TParameterImpl extends AbstractCorrespondenceImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TParameter getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject) target;
@@ -146,6 +147,7 @@ public class Parameter2TParameterImpl extends AbstractCorrespondenceImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(TParameter newTarget) {
 		TParameter oldTarget = target;
 		target = newTarget;
@@ -225,7 +227,5 @@ public class Parameter2TParameterImpl extends AbstractCorrespondenceImpl impleme
 		}
 		return super.eIsSet(featureID);
 	}
-	// <-- [user code injected with eMoflon]
 
-	// [user code injected with eMoflon] -->
 } //Parameter2TParameterImpl

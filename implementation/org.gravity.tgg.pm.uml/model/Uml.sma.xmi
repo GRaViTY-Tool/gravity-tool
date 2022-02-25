@@ -2,21 +2,21 @@
 <analysis:StaticAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:analysis="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//analysis">
   <sourceRules>
     <rules ruleName="Model2TypeGraph">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_FWD_Model_0"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_FWD_Model_1"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkDEC_FWD"/>
     </rules>
     <rules ruleName="ModelNested2TypeGraph">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_0"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_153"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkDEC_FWD"/>
     </rules>
   </sourceRules>
   <targetRules>
     <rules ruleName="Model2TypeGraph">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_0"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/isAppropriate_BWD_TypeGraph_4"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkDEC_BWD"/>
     </rules>
     <rules ruleName="ModelNested2TypeGraph">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_1"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_BWD_TypeGraph_5"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkDEC_BWD"/>
     </rules>
   </targetRules>

@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: TypeGraph Tests
+Bundle-Name: GRaViTY TypeGraph Tests
 Bundle-SymbolicName: org.gravity.typegraph.basic.tests
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: University of Koblenz-Landau
 Automatic-Module-Name: org.gravity.typegraph.basic.tests
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.junit,
  org.gravity.typegraph.basic,
  org.eclipse.emf.common

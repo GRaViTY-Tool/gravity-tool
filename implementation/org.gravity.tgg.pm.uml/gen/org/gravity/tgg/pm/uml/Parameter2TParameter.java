@@ -9,8 +9,6 @@ import org.eclipse.uml2.uml.Parameter;
 import org.gravity.typegraph.basic.TParameter;
 
 import org.moflon.tgg.runtime.AbstractCorrespondence;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -19,11 +17,11 @@ import org.moflon.tgg.runtime.AbstractCorrespondence;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.tgg.pm.uml.Parameter2TParameter#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.tgg.pm.uml.Parameter2TParameter#getTarget <em>Target</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.tgg.pm.uml.UmlPackage#getParameter2TParameter()
  * @model
@@ -33,10 +31,6 @@ public interface Parameter2TParameter extends EObject, AbstractCorrespondence {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Source</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Parameter)
@@ -59,10 +53,6 @@ public interface Parameter2TParameter extends EObject, AbstractCorrespondence {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Target</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(TParameter)
@@ -81,7 +71,5 @@ public interface Parameter2TParameter extends EObject, AbstractCorrespondence {
 	 * @generated
 	 */
 	void setTarget(TParameter value);
-	// <-- [user code injected with eMoflon]
 
-	// [user code injected with eMoflon] -->
 } // Parameter2TParameter

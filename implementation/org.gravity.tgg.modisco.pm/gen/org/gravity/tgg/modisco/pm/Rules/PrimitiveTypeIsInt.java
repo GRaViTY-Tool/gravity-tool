@@ -210,7 +210,7 @@ public interface PrimitiveTypeIsInt extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_69(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_68(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->

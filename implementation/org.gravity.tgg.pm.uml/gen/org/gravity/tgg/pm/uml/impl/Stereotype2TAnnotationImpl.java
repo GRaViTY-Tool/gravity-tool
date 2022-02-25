@@ -17,8 +17,6 @@ import org.gravity.tgg.pm.uml.UmlPackage;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -26,11 +24,11 @@ import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Stereotype2TAnnotationImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Stereotype2TAnnotationImpl#getTarget <em>Target</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -79,6 +77,7 @@ public class Stereotype2TAnnotationImpl extends AbstractCorrespondenceImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Stereotype getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject) source;
@@ -106,6 +105,7 @@ public class Stereotype2TAnnotationImpl extends AbstractCorrespondenceImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSource(Stereotype newSource) {
 		Stereotype oldSource = source;
 		source = newSource;
@@ -119,6 +119,7 @@ public class Stereotype2TAnnotationImpl extends AbstractCorrespondenceImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAnnotation getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject) target;
@@ -146,6 +147,7 @@ public class Stereotype2TAnnotationImpl extends AbstractCorrespondenceImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(TAnnotation newTarget) {
 		TAnnotation oldTarget = target;
 		target = newTarget;
@@ -225,7 +227,5 @@ public class Stereotype2TAnnotationImpl extends AbstractCorrespondenceImpl imple
 		}
 		return super.eIsSet(featureID);
 	}
-	// <-- [user code injected with eMoflon]
 
-	// [user code injected with eMoflon] -->
 } //Stereotype2TAnnotationImpl

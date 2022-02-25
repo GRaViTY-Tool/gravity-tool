@@ -1,18 +1,15 @@
 package org.gravity.eclipse.util;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IField;
@@ -26,27 +23,24 @@ import org.eclipse.jdt.core.ISourceReference;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
-import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ArrayType;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
-import org.eclipse.jdt.core.dom.PackageDeclaration;
 import org.eclipse.jdt.core.dom.ParameterizedType;
 import org.eclipse.jdt.core.dom.PrimitiveType;
-import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.SimpleType;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
+import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
-import org.gravity.typegraph.basic.TPackage;
-import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**
@@ -71,14 +65,13 @@ public final class JavaASTUtil {
 	 * @throws JavaModelException If there is an error in accessing contents from
 	 *                            the project
 	 */
-	public static Map<String, IType> getTypesForProject(IJavaProject project) throws JavaModelException {
+	public static Map<String, IType> getTypesForProject(final IJavaProject project) throws JavaModelException {
 		final Map<String, IType> types = new ConcurrentHashMap<>();
 
 		for (final IPackageFragmentRoot element : project.getPackageFragmentRoots()) {
-			final Deque<IJavaElement> children = new LinkedList<>();
-			children.addAll(Arrays.asList(element.getChildren()));
+			final Deque<IJavaElement> children = new LinkedList<>(Arrays.asList(element.getChildren()));
 			while (!children.isEmpty()) {
-				final IJavaElement packageFragment = children.pop();
+				final var packageFragment = children.pop();
 				if (packageFragment.getElementType() == IJavaElement.COMPILATION_UNIT) {
 					for (final IType type : ((ICompilationUnit) packageFragment).getAllTypes()) {
 						types.put(type.getFullyQualifiedName(), type);
@@ -100,12 +93,12 @@ public final class JavaASTUtil {
 	 * @throws JavaModelException If there is an exception in accessing content from
 	 *                            the type
 	 */
-	public static IMethod getIMethod(TMethodSignature signature, IType type) throws JavaModelException {
-		final String tName = signature.getMethod().getTName();
+	public static IMethod getIMethod(final TMethodSignature signature, final IType type) throws JavaModelException {
+		final var tName = signature.getMethod().getTName();
 		for (final IMethod m : type.getMethods()) {
-			if (m.getElementName().equals(tName) && m.getNumberOfParameters() == signature.getParameters().size()) {
-				boolean equal = true;
-				TParameter tParam = signature.getFirstParameter();
+			if (m.getElementName().equals(tName) && (m.getNumberOfParameters() == signature.getParameters().size())) {
+				var equal = true;
+				var tParam = signature.getFirstParameter();
 				for (final ILocalVariable param : m.getParameters()) {
 					equal = tParam.getType().getFullyQualifiedName()
 							.endsWith(Signature.toString(param.getTypeSignature()));
@@ -129,12 +122,12 @@ public final class JavaASTUtil {
 	 * @param pm     The program model
 	 * @return The method definition
 	 */
-	public static TMethodDefinition getTMethodDefinition(IMethod method, TypeGraph pm) {
-		final IType iType = method.getDeclaringType();
-		final TAbstractType tType = pm.getType(iType.getFullyQualifiedName());
+	public static TMethodDefinition getTMethodDefinition(final IMethod method, final TypeGraph pm) {
+		final var iType = method.getDeclaringType();
+		final var tType = pm.getType(iType.getFullyQualifiedName());
 		for (final TMember tMember : tType.getDefines()) {
 			if (tMember instanceof TMethodDefinition) {
-				final TMethodDefinition tMethodDefinition = (TMethodDefinition) tMember;
+				final var tMethodDefinition = (TMethodDefinition) tMember;
 				if (equivalent(tMethodDefinition, method)) {
 					return tMethodDefinition;
 				}
@@ -145,18 +138,19 @@ public final class JavaASTUtil {
 	}
 
 	/**
-	 * A wrapper for
-	 * {@link org.eclipse.jdt.core.IJavaProject# findType(String fullyQualifiedName)}
-	 * using the fully qualified name of the TAbstractType as value
+	 * A wrapper for {@link org.eclipse.jdt.core.IJavaProject# findType(String
+	 * fullyQualifiedName)} using the fully qualified name of the TAbstractType as
+	 * value
 	 *
 	 * @param type    The type which should be search
 	 * @param project The Java project
 	 * @return The according IType or null if not found
 	 * @throws JavaModelException if this project does not exist or if an exception
 	 *                            occurs while accessing its corresponding
-	 *                            {@link org.eclipse.jdt.core.IJavaProject# findType(String fullyQualifiedName)}
+	 *                            {@link org.eclipse.jdt.core.IJavaProject#
+	 *                            findType(String fullyQualifiedName)}
 	 */
-	public static IType getIType(TAbstractType type, IJavaProject project) throws JavaModelException {
+	public static IType getIType(final TAbstractType type, final IJavaProject project) throws JavaModelException {
 		return project.findType(type.getFullyQualifiedName());
 	}
 
@@ -167,32 +161,31 @@ public final class JavaASTUtil {
 	 * @param pm   The program model in which should be searched
 	 * @return the type from the pm
 	 */
-	public static TAbstractType getType(TypeDeclaration type, TypeGraph pm) {
-		SimpleName name = type.getName();
-		String fullyQualifiedName = name.getFullyQualifiedName();
+	public static TAbstractType getType(final TypeDeclaration type, final TypeGraph pm) {
+		final var name = type.getName();
+		final var fullyQualifiedName = name.getFullyQualifiedName();
 		if (name.isQualifiedName()) {
 			return pm.getType(fullyQualifiedName);
 		}
 
-		final ASTNode parent = type.getParent();
+		final var parent = type.getParent();
 		if (parent instanceof CompilationUnit) {
-			final CompilationUnit childcu = (CompilationUnit) parent;
+			final var childcu = (CompilationUnit) parent;
 
-			PackageDeclaration expectedPackage = childcu.getPackage();
+			final var expectedPackage = childcu.getPackage();
 			if (expectedPackage == null) {
 				return pm.getType(fullyQualifiedName);
 			}
-			TPackage tPackage = pm.getPackage(expectedPackage.getName().getFullyQualifiedName());
+			final var tPackage = pm.getPackage(expectedPackage.getName().getFullyQualifiedName());
 			if (tPackage == null) {
 				throw new IllegalStateException("The program model doesn't contain the expected package structure");
 			}
 			return tPackage.getOwnedTypes().parallelStream()
 					.filter(tType -> fullyQualifiedName.equals(tType.getTName())).findAny().orElse(null);
-		}
-		else if (parent instanceof TypeDeclaration) {
-			TAbstractType tParent = getType((TypeDeclaration)parent, pm);
-			for(TAbstractType inner : tParent.getInnerTypes()) {
-				if(inner.getTName().equals(name.getFullyQualifiedName())) {
+		} else if (parent instanceof TypeDeclaration) {
+			final var tParent = getType((TypeDeclaration) parent, pm);
+			for (final TAbstractType inner : tParent.getInnerTypes()) {
+				if (inner.getTName().equals(name.getFullyQualifiedName())) {
 					return inner;
 				}
 			}
@@ -207,66 +200,68 @@ public final class JavaASTUtil {
 	 * @param pm   The program model in which should be searched
 	 * @return the type from the pm
 	 */
-	public static TAbstractType getType(Type type, TypeGraph pm) {
+	public static TAbstractType getType(final Type type, final TypeGraph pm) {
 		if (type.isPrimitiveType()) {
 			return pm.getType(type.toString());
 		}
-		String fullyQualifiedName = getName(type);
+		final var fullyQualifiedName = getName(type);
 		if (fullyQualifiedName.indexOf('.') >= 0) {
 			return pm.getType(fullyQualifiedName);
 		}
-		ASTNode root = type.getRoot();
+		final var root = type.getRoot();
 		if (root instanceof CompilationUnit) {
-			CompilationUnit cu = (CompilationUnit) root;
-			
+			final var cu = (CompilationUnit) root;
+
 			// Search in imports
-			for (Object entry : cu.imports()) {
-				ImportDeclaration imp = (ImportDeclaration) entry;
-				String importedPackage = imp.getName().getFullyQualifiedName();
+			for (final Object entry : cu.imports()) {
+				final var imp = (ImportDeclaration) entry;
+				final var importedPackage = imp.getName().getFullyQualifiedName();
 
 				if (imp.isOnDemand()) {
-					TAbstractType tAbstractType = pm.getType(importedPackage + '.' + fullyQualifiedName);
+					final var tAbstractType = pm.getType(importedPackage + '.' + fullyQualifiedName);
 					if (tAbstractType != null) {
 						return tAbstractType;
 					}
 				} else {
-					String name = importedPackage.substring(importedPackage.lastIndexOf('.') + 1);
+					final var name = importedPackage.substring(importedPackage.lastIndexOf('.') + 1);
 					if (name.equals(fullyQualifiedName)) {
 						return pm.getType(importedPackage);
 					}
 				}
 			}
-			
+
 			// Search in same package as cu
-			PackageDeclaration cuPackageDecl = cu.getPackage();
+			final var cuPackageDecl = cu.getPackage();
 			if (cuPackageDecl != null) {
-				TPackage cuPackage = pm.getPackage(cuPackageDecl.getName().getFullyQualifiedName());
+				final var cuPackage = pm.getPackage(cuPackageDecl.getName().getFullyQualifiedName());
 				if (cuPackage != null) {
-					Optional<TAbstractType> result = cuPackage.getOwnedTypes().parallelStream()
+					final var result = cuPackage.getOwnedTypes().parallelStream()
 							.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
 					if (result.isPresent()) {
 						return result.get();
 					}
 				}
 			}
-			
+
 			// Search for java default types
-			for(String packageName : new String[] {"java.lang", "java.util"}) {
-				TPackage cuPackage = pm.getPackage(packageName);
+			for (final String packageName : new String[] { "java.lang", "java.util" }) {
+				final var cuPackage = pm.getPackage(packageName);
 				if (cuPackage != null) {
-					Optional<TAbstractType> result = cuPackage.getOwnedTypes().parallelStream()
+					final var result = cuPackage.getOwnedTypes().parallelStream()
 							.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
 					if (result.isPresent()) {
 						return result.get();
 					}
 				}
 			}
-			
-			for(Object outer : cu.types()) {
+
+			for (final Object outer : cu.types()) {
 				if (outer instanceof TypeDeclaration) {
-					for(TypeDeclaration inner : ((TypeDeclaration) outer).getTypes()) {
-						if(inner.getName().getFullyQualifiedName().equals(fullyQualifiedName)) {
-							return pm.getType(cuPackageDecl.getName().getFullyQualifiedName()+'.'+((TypeDeclaration) outer).getName().getFullyQualifiedName() +'$'+fullyQualifiedName);
+					for (final TypeDeclaration inner : ((TypeDeclaration) outer).getTypes()) {
+						if (inner.getName().getFullyQualifiedName().equals(fullyQualifiedName)) {
+							return pm.getType(cuPackageDecl.getName().getFullyQualifiedName() + '.'
+									+ ((TypeDeclaration) outer).getName().getFullyQualifiedName() + '$'
+									+ fullyQualifiedName);
 						}
 					}
 				}
@@ -279,11 +274,11 @@ public final class JavaASTUtil {
 
 	/**
 	 * Gets the name object for the given type
-	 * 
+	 *
 	 * @param type A type
 	 * @return The name object
 	 */
-	private static String getName(Type type) {
+	private static String getName(final Type type) {
 		if (type.isSimpleType()) {
 			return ((SimpleType) type).getName().getFullyQualifiedName();
 		} else if (type.isArrayType()) {
@@ -299,6 +294,53 @@ public final class JavaASTUtil {
 	}
 
 	/**
+	 * Searches for the field definition in the program model corresponding to the
+	 * field declarations signature
+	 *
+	 * @param method The field declaration
+	 * @param pm     The program model
+	 * @return The found definition or null
+	 */
+	public static TFieldDefinition getTFieldDefinition(final FieldDeclaration field, final TypeGraph pm) {
+		final var type = getType((TypeDeclaration) field.getParent(), pm);
+		if (type == null) {
+			return null;
+		}
+		final var signature = getTFieldSignature(field, pm);
+		if (signature == null) {
+			return null;
+		}
+		return (TFieldDefinition) type.getTDefinition(signature);
+	}
+
+	/**
+	 * Searches for a signature in the program model corresponding to the field
+	 * declaration. If multiple variables are declared in the field any of these
+	 * present in the pm will be returned.
+	 *
+	 * @param field The field declaration
+	 * @param pm    The program model
+	 * @return The found signature or null
+	 */
+	public static TFieldSignature getTFieldSignature(final FieldDeclaration field, final TypeGraph pm) {
+		final var type = getType(field.getType(), pm);
+		if (type == null) {
+			return null;
+		}
+		for (final Object fragment : field.fragments()) {
+			final var fieldName = pm.getField(((VariableDeclarationFragment) fragment).getName().getIdentifier());
+			if (fieldName != null) {
+				for (final TFieldSignature signature : fieldName.getSignatures()) {
+					if (type.equals(signature.getType())) {
+						return signature;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
 	 * Searches for the method definition in the program model corresponding to the
 	 * method declarations signature
 	 *
@@ -306,12 +348,12 @@ public final class JavaASTUtil {
 	 * @param pm     The program model
 	 * @return The found definition or null
 	 */
-	public static TMethodDefinition getTMethodDefinition(MethodDeclaration method, TypeGraph pm) {
-		final TAbstractType type = getType((TypeDeclaration) method.getParent(), pm);
+	public static TMethodDefinition getTMethodDefinition(final MethodDeclaration method, final TypeGraph pm) {
+		final var type = getType((TypeDeclaration) method.getParent(), pm);
 		if (type == null) {
 			return null;
 		}
-		final TMethodSignature signature = getTMethodSignature(method, pm);
+		final var signature = getTMethodSignature(method, pm);
 		if (signature == null) {
 			return null;
 		}
@@ -326,27 +368,27 @@ public final class JavaASTUtil {
 	 * @param pm     The program model
 	 * @return The found signature or null
 	 */
-	public static TMethodSignature getTMethodSignature(MethodDeclaration method, TypeGraph pm) {
-		String methodName = method.getName().toString();
-		TMethod tMethod = pm.getMethod(methodName);
+	public static TMethodSignature getTMethodSignature(final MethodDeclaration method, final TypeGraph pm) {
+		final var methodName = method.getName().toString();
+		final var tMethod = pm.getMethod(methodName);
 		if (tMethod == null) {
 			return null;
 		}
 
 		for (final TMethodSignature signature : tMethod.getSignatures()) {
-			Type returnType = method.getReturnType2();
-			TAbstractType tExpectedReturnType = getType(returnType, pm);
+			final var returnType = method.getReturnType2();
+			final var tExpectedReturnType = getType(returnType, pm);
 			if (
-			// Return type have to be the same type
-			!signature.getReturnType().equals(tExpectedReturnType)
+					// Return type have to be the same type
+					!signature.getReturnType().equals(tExpectedReturnType)
 					// Both have to be either arrays or not arrays
-					|| signature.isArray() != returnType.isArrayType()
+					|| (signature.isArray() != returnType.isArrayType())
 					// The parameter lists have to have the same size
-					|| method.parameters().size() != signature.getParameters().size()) {
+					|| (method.parameters().size() != signature.getParameters().size())) {
 				continue;
 			}
 
-			final boolean success = hasSameSignature(method, signature);
+			final var success = hasSameSignature(method, signature);
 			if (success) {
 				return signature;
 			}
@@ -362,14 +404,14 @@ public final class JavaASTUtil {
 	 * @return The source code line
 	 * @throws CoreException
 	 */
-	public static int getLine(IJavaElement javaElement) throws CoreException {
-		final IResource underlyingResource = javaElement.getUnderlyingResource();
-		int line = 1;
+	public static int getLine(final IJavaElement javaElement) throws CoreException {
+		final var underlyingResource = javaElement.getUnderlyingResource();
+		var line = 1;
 		if ("java".equals(underlyingResource.getFileExtension())) {
-			try (InputStream stream = ((IFile) underlyingResource).getContents()) {
+			try (var stream = ((IFile) underlyingResource).getContents()) {
 				int ch;
-				int count = ((ISourceReference) javaElement).getSourceRange().getOffset();
-				while ((ch = stream.read()) != -1 && count-- > 0) {
+				var count = ((ISourceReference) javaElement).getSourceRange().getOffset();
+				while (((ch = stream.read()) != -1) && (count-- > 0)) {
 					if (ch == '\n') {
 						line++;
 					}
@@ -389,14 +431,14 @@ public final class JavaASTUtil {
 	 * @param signature A method signature
 	 * @return true, if the signatures are equal
 	 */
-	private static boolean hasSameSignature(MethodDeclaration method, TMethodSignature signature) {
-		TParameter tParam = signature.getFirstParameter();
+	private static boolean hasSameSignature(final MethodDeclaration method, final TMethodSignature signature) {
+		var tParam = signature.getFirstParameter();
 		for (final Object p : method.parameters()) {
 			if (p instanceof SingleVariableDeclaration) {
-				final SingleVariableDeclaration var = (SingleVariableDeclaration) p;
-				final Type vt = var.getType();
-				final String name = getName(vt);
-				if (tParam.getType().getFullyQualifiedName().endsWith(name) && vt.isArrayType() == tParam.isArray()) {
+				final var var = (SingleVariableDeclaration) p;
+				final var vt = var.getType();
+				final var name = getName(vt);
+				if (tParam.getType().getFullyQualifiedName().endsWith(name) && (vt.isArrayType() == tParam.isArray())) {
 					tParam = tParam.getNext();
 				} else {
 					return false;
@@ -413,15 +455,15 @@ public final class JavaASTUtil {
 	 * @param iMethod A method from a Eclipse Java project
 	 * @return true, if the methods are equivalent
 	 */
-	private static boolean equivalent(TMethodDefinition tMethod, IMethod iMethod) {
-		final TMethodSignature tMethodSignature = tMethod.getSignature();
-		final TMethod tMethodName = tMethodSignature.getMethod();
+	private static boolean equivalent(final TMethodDefinition tMethod, final IMethod iMethod) {
+		final var tMethodSignature = tMethod.getSignature();
+		final var tMethodName = tMethodSignature.getMethod();
 
-		final String tName = tMethodName.getTName();
+		final var tName = tMethodName.getTName();
 		if (iMethod.getElementName().equals(tName)
-				&& iMethod.getNumberOfParameters() == tMethodSignature.getParameters().size()) {
-			boolean equal = true;
-			TParameter tParam = tMethodSignature.getFirstParameter();
+				&& (iMethod.getNumberOfParameters() == tMethodSignature.getParameters().size())) {
+			var equal = true;
+			var tParam = tMethodSignature.getFirstParameter();
 			ILocalVariable[] parameters;
 			try {
 				parameters = iMethod.getParameters();
@@ -429,7 +471,7 @@ public final class JavaASTUtil {
 				return false;
 			}
 			for (final ILocalVariable param : parameters) {
-				String iParamSignature = Signature.toString(param.getTypeSignature());
+				var iParamSignature = Signature.toString(param.getTypeSignature());
 				iParamSignature = iParamSignature.replaceAll("<.*>|\\[\\w*\\]", "");
 				equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature);
 				if (!equal) {
@@ -444,8 +486,8 @@ public final class JavaASTUtil {
 		return false;
 	}
 
-	public static IField getIField(TFieldSignature signature, IType type) throws JavaModelException {
-		IField iField = type.getField(signature.getField().getTName());
+	public static IField getIField(final TFieldSignature signature, final IType type) throws JavaModelException {
+		final var iField = type.getField(signature.getField().getTName());
 		iField.getTypeSignature();
 		return iField;
 	}

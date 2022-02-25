@@ -3,9 +3,7 @@
 package org.gravity.typegraph.basic.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Deque;
 // [user defined imports] -->
 // <-- [user defined imports]
@@ -15,7 +13,6 @@ import java.util.Optional;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -668,6 +665,18 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean hasCommonSuperType(final TAbstractType tType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -908,11 +917,6 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 			return hasTMember((TMember)arguments.get(0));
 		case BasicPackage.TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE:
 			return hasCommonSuperType((TAbstractType)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST:
-			fillSameType((EList<TAbstractType>)arguments.get(0));
-			return null;
-		case BasicPackage.TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE:
-			return isInnerType((TAbstractType)arguments.get(0));
 		case BasicPackage.TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE:
 			return getRealPackage((TAbstractType)arguments.get(0));
 		case BasicPackage.TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING:
@@ -946,47 +950,6 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		return result.toString();
 	}
 	// <-- [user code injected with eMoflon]
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public void fillSameType(final EList<TAbstractType> list) {
-		boolean changed = false;
-		final ArrayList<TAbstractType> copy = new ArrayList<>(list);
-
-		for (final TAbstractType type : copy) {
-			for (final TAbstractType innerType : type.getInnerTypes()) {
-				if (!list.contains(innerType)) {
-					list.add(innerType);
-					changed = true;
-				}
-			}
-			if ((type.getOuterType() != null) && !list.contains(type.getOuterType())) {
-				list.add(type.getOuterType());
-				changed = true;
-			}
-		}
-		if (changed) {
-			fillSameType(list);
-		}
-	}
-
-	@Override
-	public boolean isInnerType(final TAbstractType tAbstractType) {
-
-		final EList<TAbstractType> list = new BasicEList<>();
-		list.add(this);
-		fillSameType(list);
-
-		final EList<TAbstractType> listOther = new BasicEList<>();
-		listOther.add(tAbstractType);
-		fillSameType(listOther);
-
-		return !Collections.disjoint(list, listOther);
-	}
 
 	@Override
 	public TPackage getRealPackage(final TAbstractType type) {

@@ -3,16 +3,20 @@
 package org.gravity.tgg.pm.uml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.uml2.uml.Feature;
+
 import org.gravity.tgg.pm.uml.Feature2TMember;
 import org.gravity.tgg.pm.uml.UmlPackage;
+
 import org.gravity.typegraph.basic.TMember;
+
 import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -20,11 +24,11 @@ import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Feature2TMemberImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Feature2TMemberImpl#getTarget <em>Target</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -55,6 +59,7 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 * @generated
 	 */
 	protected Feature2TMemberImpl() {
+		super();
 	}
 
 	/**
@@ -74,15 +79,16 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 */
 	@Override
 	public Feature getSource() {
-		if ((this.source != null) && this.source.eIsProxy()) {
-			final InternalEObject oldSource = (InternalEObject) this.source;
-			this.source = (Feature) eResolveProxy(oldSource);
-			if ((this.source != oldSource) && eNotificationRequired()) {
-				eNotify(new ENotificationImpl(this, Notification.RESOLVE, UmlPackage.FEATURE2_TMEMBER__SOURCE,
-						oldSource, this.source));
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject) source;
+			source = (Feature) eResolveProxy(oldSource);
+			if (source != oldSource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UmlPackage.FEATURE2_TMEMBER__SOURCE,
+							oldSource, source));
 			}
 		}
-		return this.source;
+		return source;
 	}
 
 	/**
@@ -91,7 +97,7 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 * @generated
 	 */
 	public Feature basicGetSource() {
-		return this.source;
+		return source;
 	}
 
 	/**
@@ -100,13 +106,12 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 * @generated
 	 */
 	@Override
-	public void setSource(final Feature newSource) {
-		final Feature oldSource = this.source;
-		this.source = newSource;
-		if (eNotificationRequired()) {
+	public void setSource(Feature newSource) {
+		Feature oldSource = source;
+		source = newSource;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UmlPackage.FEATURE2_TMEMBER__SOURCE, oldSource,
-					this.source));
-		}
+					source));
 	}
 
 	/**
@@ -116,15 +121,16 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 */
 	@Override
 	public TMember getTarget() {
-		if ((this.target != null) && this.target.eIsProxy()) {
-			final InternalEObject oldTarget = (InternalEObject) this.target;
-			this.target = (TMember) eResolveProxy(oldTarget);
-			if ((this.target != oldTarget) && eNotificationRequired()) {
-				eNotify(new ENotificationImpl(this, Notification.RESOLVE, UmlPackage.FEATURE2_TMEMBER__TARGET,
-						oldTarget, this.target));
+		if (target != null && target.eIsProxy()) {
+			InternalEObject oldTarget = (InternalEObject) target;
+			target = (TMember) eResolveProxy(oldTarget);
+			if (target != oldTarget) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UmlPackage.FEATURE2_TMEMBER__TARGET,
+							oldTarget, target));
 			}
 		}
-		return this.target;
+		return target;
 	}
 
 	/**
@@ -133,7 +139,7 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 * @generated
 	 */
 	public TMember basicGetTarget() {
-		return this.target;
+		return target;
 	}
 
 	/**
@@ -142,13 +148,12 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 * @generated
 	 */
 	@Override
-	public void setTarget(final TMember newTarget) {
-		final TMember oldTarget = this.target;
-		this.target = newTarget;
-		if (eNotificationRequired()) {
+	public void setTarget(TMember newTarget) {
+		TMember oldTarget = target;
+		target = newTarget;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UmlPackage.FEATURE2_TMEMBER__TARGET, oldTarget,
-					this.target));
-		}
+					target));
 	}
 
 	/**
@@ -157,17 +162,15 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UmlPackage.FEATURE2_TMEMBER__SOURCE:
-			if (resolve) {
+			if (resolve)
 				return getSource();
-			}
 			return basicGetSource();
 		case UmlPackage.FEATURE2_TMEMBER__TARGET:
-			if (resolve) {
+			if (resolve)
 				return getTarget();
-			}
 			return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -179,7 +182,7 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 * @generated
 	 */
 	@Override
-	public void eSet(final int featureID, final Object newValue) {
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case UmlPackage.FEATURE2_TMEMBER__SOURCE:
 			setSource((Feature) newValue);
@@ -197,7 +200,7 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID) {
+	public void eUnset(int featureID) {
 		switch (featureID) {
 		case UmlPackage.FEATURE2_TMEMBER__SOURCE:
 			setSource((Feature) null);
@@ -215,19 +218,14 @@ public class Feature2TMemberImpl extends AbstractCorrespondenceImpl implements F
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID) {
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case UmlPackage.FEATURE2_TMEMBER__SOURCE:
-			return this.source != null;
+			return source != null;
 		case UmlPackage.FEATURE2_TMEMBER__TARGET:
-			return this.target != null;
+			return target != null;
 		}
 		return super.eIsSet(featureID);
 	}
-	// <-- [user code injected with eMoflon]
-	@Override
-	public String toString() {
-		return super.toString() + " ("+getSource()+" <--> "+getTarget()	+ ")";
-	}
-	// [user code injected with eMoflon] -->
+
 } //Feature2TMemberImpl

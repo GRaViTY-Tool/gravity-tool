@@ -200,7 +200,7 @@ public interface PrimitiveTypeBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_PrimitiveType_5(PrimitiveType umpt);
+	EObjectContainer isAppropriate_BWD_PrimitiveType_6(PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->

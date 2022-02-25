@@ -379,6 +379,16 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated NOT
+	 */
+	@Override
+	public TClass getTClass(final String name) {
+		return getAllOwnedClasses().stream().filter(clazz -> clazz.getTName().equals(name)).findAny().orElse(null);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -564,6 +574,8 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 				return getBasePackage();
 			case BasicPackage.TPACKAGE___CREATE_TCLASS__STRING_BOOLEAN_TVISIBILITY:
 				return createTClass((String)arguments.get(0), (Boolean)arguments.get(1), (TVisibility)arguments.get(2));
+			case BasicPackage.TPACKAGE___GET_TCLASS__STRING:
+				return getTClass((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

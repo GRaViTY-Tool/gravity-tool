@@ -849,7 +849,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_114(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_99(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = ParameterizedType2ClassImpl
 				.pattern_ParameterizedType2Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -908,7 +908,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_121(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_106(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = ParameterizedType2ClassImpl
 				.pattern_ParameterizedType2Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -978,14 +978,14 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		Variable var_parameterizedType_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedType", true, csp);
+		var_parameterizedType_name.setValue(__helper.getValue("parameterizedType", "name"));
+		var_parameterizedType_name.setType("String");
+
 		Variable var_parameterizedClassifier_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedClassifier",
 				true, csp);
 		var_parameterizedClassifier_name.setValue(__helper.getValue("parameterizedClassifier", "name"));
 		var_parameterizedClassifier_name.setType("String");
-
-		Variable var_parameterizedType_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedType", true, csp);
-		var_parameterizedType_name.setValue(__helper.getValue("parameterizedType", "name"));
-		var_parameterizedType_name.setType("String");
 
 		Variable var_nonParamElement_name = CSPFactoryHelper.eINSTANCE.createVariable("nonParamElement", true, csp);
 		var_nonParamElement_name.setValue(__helper.getValue("nonParamElement", "name"));
@@ -1040,14 +1040,14 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		Variable var_parameterizedType_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedType", true, csp);
+		var_parameterizedType_name.setValue(__helper.getValue("parameterizedType", "name"));
+		var_parameterizedType_name.setType("String");
+
 		Variable var_parameterizedClassifier_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedClassifier",
 				true, csp);
 		var_parameterizedClassifier_name.setValue(__helper.getValue("parameterizedClassifier", "name"));
 		var_parameterizedClassifier_name.setType("String");
-
-		Variable var_parameterizedType_name = CSPFactoryHelper.eINSTANCE.createVariable("parameterizedType", true, csp);
-		var_parameterizedType_name.setValue(__helper.getValue("parameterizedType", "name"));
-		var_parameterizedType_name.setType("String");
 
 		Variable var_nonParamElement_name = CSPFactoryHelper.eINSTANCE.createVariable("nonParamElement", true, csp);
 		var_nonParamElement_name.setValue(__helper.getValue("nonParamElement", "name"));
@@ -1472,10 +1472,10 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 			return null;
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_114__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_114((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_121__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_121((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_99__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_99((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_106__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_106((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3131,9 +3131,9 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_0BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_352492 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_727278 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_352492)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_727278)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3142,7 +3142,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeTypeAccess) {
-		for (Annotation __DEC_typeTypeAccess_type_990417 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeTypeAccess_type_646466 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, Annotation.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3151,7 +3151,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayType __DEC_typeTypeAccess_elementType_625023 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeTypeAccess_elementType_358643 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3160,9 +3160,9 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_3BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (ClassDeclaration __DEC_typeTypeAccess_superClass_191541 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeTypeAccess_superClass_703243 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_191541)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_703243)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3171,7 +3171,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess typeTypeAccess) {
-		for (MethodDeclaration __DEC_typeTypeAccess_returnType_779546 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeTypeAccess_returnType_387109 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3180,7 +3180,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess typeTypeAccess) {
-		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_71305 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_197562 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3189,7 +3189,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_209219 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_808564 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3522,9 +3522,9 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_0BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_788158 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_510803 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_788158)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_510803)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3533,7 +3533,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeTypeAccess) {
-		for (Annotation __DEC_typeTypeAccess_type_678650 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeTypeAccess_type_758044 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, Annotation.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3542,7 +3542,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayType __DEC_typeTypeAccess_elementType_163520 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeTypeAccess_elementType_873261 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3551,9 +3551,9 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_3BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (ClassDeclaration __DEC_typeTypeAccess_superClass_911349 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeTypeAccess_superClass_868085 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_911349)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_868085)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3562,7 +3562,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess typeTypeAccess) {
-		for (MethodDeclaration __DEC_typeTypeAccess_returnType_71597 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeTypeAccess_returnType_815855 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3571,7 +3571,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess typeTypeAccess) {
-		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_730516 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_107201 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3580,7 +3580,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_615851 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_427412 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeTypeAccess };
 		}

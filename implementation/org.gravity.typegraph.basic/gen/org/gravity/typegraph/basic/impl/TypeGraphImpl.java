@@ -36,6 +36,7 @@ import org.gravity.typegraph.basic.TName;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TSignature;
+import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
 import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
@@ -500,6 +501,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 				return getMethodDefinition((String)arguments.get(0));
 			case BasicPackage.TYPE_GRAPH___CREATE_PACKAGE__STRING:
 				return createPackage((String)arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___CREATE_TCLASS__STRING_STRING_BOOLEAN_TVISIBILITY:
+				return createTClass((String)arguments.get(0), (String)arguments.get(1), (Boolean)arguments.get(2), (TVisibility)arguments.get(3));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -689,18 +692,17 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		}
 		final boolean isArray = typeName.indexOf('[') >= 0;
 		final String finalTypeName;
-		if(isArray) {
+		if (isArray) {
 			finalTypeName = typeName.substring(0, typeName.indexOf('['));
-		}
-		else {
+		} else {
 			finalTypeName = typeName;
 		}
 		TAbstractType type;
 		if (typeName.contains(".")) {
 			type = getType(typeName);
 		} else {
-			type = getOwnedTypes().parallelStream().filter(element -> finalTypeName.equals(element.getTName())).findAny()
-					.orElse(null);
+			type = getOwnedTypes().parallelStream().filter(element -> finalTypeName.equals(element.getTName()))
+					.findAny().orElse(null);
 		}
 		final int openBraceIndex = signature.lastIndexOf('(');
 		if (openBraceIndex < 0) {
@@ -905,6 +907,29 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 			currentPackage = nextPackage;
 		}
 		return currentPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> Creates a class in the program model
+	 *
+	 * @param namespace  The namespace to which the class should be added
+	 * @param name       The name of the new class
+	 * @param visibility the visibility of the generated class
+	 * @param lib        Whether the class is from a lib or used code
+	 * @return The generated class <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public TClass createTClass(String namespace, final String name, final boolean lib, final TVisibility visibility) {
+		TPackage p;
+		if (namespace == null) {
+			namespace = "(default package)";
+		}
+		p = getPackage(namespace);
+		if (p == null) {
+			p = createPackage(namespace);
+		}
+		return p.createTClass(name, lib, visibility);
 	}
 
 	/**

@@ -9,7 +9,6 @@ import org.eclipse.modisco.java.Model;
 import org.gravity.modisco.MClass;
 
 import org.gravity.tgg.modisco.pm.ModelToTypeGraph;
-import org.gravity.tgg.modisco.pm.TypeToTAbstractType;
 
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -96,8 +95,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MClass mType, ModelToTypeGraph mModelToTypeGraph,
-			Model mModel, TypeGraph pg, TypeToTAbstractType mTypeToTType, TClass tType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph, TypeGraph pg,
+			MClass mType, Model mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +112,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mType, EObject mModelToTypeGraph, EObject mModel,
-			EObject pg, EObject mTypeToTType, EObject tType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModelToTypeGraph, EObject pg, EObject tType,
+			EObject mType, EObject mTypeToTType, EObject mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +177,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MClass mType, ModelToTypeGraph mModelToTypeGraph,
-			Model mModel, TypeGraph pg, TypeToTAbstractType mTypeToTType, TClass tType);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph, TypeGraph pg,
+			TClass tType, Model mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +194,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mType, EObject mModelToTypeGraph, EObject mModel,
-			EObject pg, EObject mTypeToTType, EObject tType);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModelToTypeGraph, EObject pg, EObject tType,
+			EObject mType, EObject mTypeToTType, EObject mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +211,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_28(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_83(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +219,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_29(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_88(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +251,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MClass mType, Model mModel, TypeGraph pg, TClass tType, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(TypeGraph pg, TClass tType, MClass mType, Model mModel, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -286,7 +285,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			TypeToTAbstractType mTypeToTTypeParameter, ModelToTypeGraph mModelToTypeGraphParameter);
+			ModelToTypeGraph mModelToTypeGraphParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,9 +293,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MClass mType,
-			ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph pg, TypeToTAbstractType mTypeToTType,
-			TClass tType, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph,
+			TypeGraph pg, Model mModel, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

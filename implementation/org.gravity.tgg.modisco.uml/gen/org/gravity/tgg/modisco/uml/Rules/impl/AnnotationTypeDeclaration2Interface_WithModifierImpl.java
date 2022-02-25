@@ -743,7 +743,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Interface_0(Interface feature) {
+	public EObjectContainer isAppropriate_BWD_Interface_2(Interface feature) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -803,7 +803,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_107(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_121(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -884,13 +884,13 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -957,13 +957,13 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
 		csp.getConstraints().add(nonParameterizedName0);
@@ -1352,10 +1352,10 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 			return null;
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_INTERFACE_0__INTERFACE:
-			return isAppropriate_BWD_Interface_0((Interface) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_107__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_107((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_INTERFACE_2__INTERFACE:
+			return isAppropriate_BWD_Interface_2((Interface) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_121__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_121((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

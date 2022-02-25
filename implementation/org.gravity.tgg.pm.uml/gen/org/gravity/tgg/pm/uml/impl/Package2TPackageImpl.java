@@ -15,8 +15,6 @@ import org.gravity.tgg.pm.uml.UmlPackage;
 import org.gravity.typegraph.basic.TPackage;
 
 import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -24,11 +22,11 @@ import org.moflon.tgg.runtime.impl.AbstractCorrespondenceImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Package2TPackageImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.gravity.tgg.pm.uml.impl.Package2TPackageImpl#getTarget <em>Target</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -77,6 +75,7 @@ public class Package2TPackageImpl extends AbstractCorrespondenceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Package getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject) source;
@@ -104,6 +103,7 @@ public class Package2TPackageImpl extends AbstractCorrespondenceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSource(org.eclipse.uml2.uml.Package newSource) {
 		org.eclipse.uml2.uml.Package oldSource = source;
 		source = newSource;
@@ -117,6 +117,7 @@ public class Package2TPackageImpl extends AbstractCorrespondenceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TPackage getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject) target;
@@ -144,6 +145,7 @@ public class Package2TPackageImpl extends AbstractCorrespondenceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(TPackage newTarget) {
 		TPackage oldTarget = target;
 		target = newTarget;
@@ -223,7 +225,5 @@ public class Package2TPackageImpl extends AbstractCorrespondenceImpl implements 
 		}
 		return super.eIsSet(featureID);
 	}
-	// <-- [user code injected with eMoflon]
 
-	// [user code injected with eMoflon] -->
 } //Package2TPackageImpl

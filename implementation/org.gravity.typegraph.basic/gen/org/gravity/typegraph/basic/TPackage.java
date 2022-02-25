@@ -209,6 +209,14 @@ public interface TPackage extends TAnnotatable {
 	 * @generated
 	 */
 	TClass createTClass(String name, boolean lib, TVisibility visibility);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	TClass getTClass(String name);
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->

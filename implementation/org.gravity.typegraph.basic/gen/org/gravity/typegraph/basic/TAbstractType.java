@@ -333,22 +333,6 @@ public interface TAbstractType extends TAnnotatable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model listMany="true"
-	 * @generated
-	 */
-	void fillSameType(EList<TAbstractType> list);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	boolean isInnerType(TAbstractType tAbstractType);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */

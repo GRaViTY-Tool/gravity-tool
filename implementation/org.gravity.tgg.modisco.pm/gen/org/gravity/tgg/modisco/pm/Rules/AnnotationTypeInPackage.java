@@ -98,7 +98,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, PackageToTPackage mPackageToTPackage,
-			org.eclipse.modisco.java.Package mPackage, TPackage tPackage, TypeGraph pg,
+			TPackage tPackage, org.eclipse.modisco.java.Package mPackage, TypeGraph pg,
 			AnnotationTypeDeclaration mType);
 
 	/**
@@ -116,7 +116,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject annotatable2Annotatable,
-			EObject tType, EObject mPackage, EObject tPackage, EObject pg, EObject type2Type, EObject mType);
+			EObject tType, EObject tPackage, EObject mPackage, EObject pg, EObject type2Type, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,7 +181,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PackageToTPackage mPackageToTPackage,
-			TAnnotationType tType, org.eclipse.modisco.java.Package mPackage, TPackage tPackage, TypeGraph pg);
+			TAnnotationType tType, TPackage tPackage, org.eclipse.modisco.java.Package mPackage, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,7 +198,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject annotatable2Annotatable,
-			EObject tType, EObject mPackage, EObject tPackage, EObject pg, EObject type2Type, EObject mType);
+			EObject tType, EObject tPackage, EObject mPackage, EObject pg, EObject type2Type, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_54(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_40(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_56(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_43(EMoflonEdge _edge_ownedElements);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,7 +254,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TAnnotationType tType, org.eclipse.modisco.java.Package mPackage, TPackage tPackage,
+	CSP isApplicable_solveCsp_CC(TAnnotationType tType, TPackage tPackage, org.eclipse.modisco.java.Package mPackage,
 			TypeGraph pg, AnnotationTypeDeclaration mType, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -297,7 +297,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PackageToTPackage mPackageToTPackage,
-			org.eclipse.modisco.java.Package mPackage, TPackage tPackage, TypeGraph pg,
+			TPackage tPackage, org.eclipse.modisco.java.Package mPackage, TypeGraph pg,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

@@ -49,7 +49,7 @@ public interface ArrayTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, TypeAccess mTypeAccess, Model mModel, ArrayType mArrayType, Type mType);
+	boolean isAppropriate_FWD(Match match, Type mType, Model mModel, TypeAccess mTypeAccess, ArrayType mArrayType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,8 +73,8 @@ public interface ArrayTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, TypeAccess mTypeAccess, Model mModel, ArrayType mArrayType,
-			Type mType);
+	void registerObjectsToMatch_FWD(Match match, Type mType, Model mModel, TypeAccess mTypeAccess,
+			ArrayType mArrayType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,7 +82,7 @@ public interface ArrayTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess mTypeAccess, Model mModel, ArrayType mArrayType, Type mType);
+	CSP isAppropriate_solveCsp_FWD(Match match, Type mType, Model mModel, TypeAccess mTypeAccess, ArrayType mArrayType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,9 +98,9 @@ public interface ArrayTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TypeGraph tModel, TypeAccess mTypeAccess, TAbstractType tAbstractType, Model mModel, ArrayType mArrayType,
-			ModelToTypeGraph modelToTypeGraph, Type mType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Type mType, TypeToTAbstractType mTypeToTType,
+			TypeGraph tModel, Model mModel, TypeAccess mTypeAccess, ModelToTypeGraph modelToTypeGraph,
+			TAbstractType tAbstractType, ArrayType mArrayType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,9 +116,9 @@ public interface ArrayTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mTypeToTType, EObject tModel, EObject mTypeAccess,
-			EObject arrayTypeToTArrayClass, EObject tAbstractType, EObject mModel, EObject mArrayType,
-			EObject modelToTypeGraph, EObject mType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject tModel,
+			EObject mModel, EObject arrayTypeToTArrayClass, EObject mTypeAccess, EObject modelToTypeGraph,
+			EObject tAbstractType, EObject mArrayType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,7 +190,7 @@ public interface ArrayTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TypeGraph_1(TypeGraph tModel);
+	EObjectContainer isAppropriate_BWD_TypeGraph_3(TypeGraph tModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,7 +198,7 @@ public interface ArrayTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_32(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_76(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,8 +230,8 @@ public interface ArrayTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TypeGraph tModel, TypeAccess mTypeAccess, TAbstractType tAbstractType, Model mModel,
-			ArrayType mArrayType, Type mType, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Type mType, TypeGraph tModel, Model mModel, TypeAccess mTypeAccess,
+			TAbstractType tAbstractType, ArrayType mArrayType, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -247,7 +247,7 @@ public interface ArrayTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(TypeAccess mTypeAccess, Model mModel, ArrayType mArrayType, Type mType);
+	boolean checkDEC_FWD(Type mType, Model mModel, TypeAccess mTypeAccess, ArrayType mArrayType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,8 +272,8 @@ public interface ArrayTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TypeGraph tModel, TAbstractType tAbstractType, Model mModel, ModelToTypeGraph modelToTypeGraph, Type mType,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type mType, TypeToTAbstractType mTypeToTType,
+			TypeGraph tModel, Model mModel, ModelToTypeGraph modelToTypeGraph, TAbstractType tAbstractType,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

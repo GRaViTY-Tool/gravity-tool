@@ -21,8 +21,6 @@ import org.moflon.tgg.runtime.Match;
 import org.moflon.tgg.runtime.ModelgeneratorRuleResult;
 import org.moflon.tgg.runtime.PerformRuleResult;
 import org.moflon.tgg.runtime.TripleMatch;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -105,7 +103,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject pm, EObject model2PM, EObject model);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject pm, EObject model, EObject model2PM);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +183,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject pm, EObject model2PM, EObject model);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject pm, EObject model, EObject model2PM);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +199,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TypeGraph_0(TypeGraph pm);
+	EObjectContainer isAppropriate_BWD_TypeGraph_4(TypeGraph pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +207,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_Model_0(Model model);
+	EObjectContainer isAppropriate_FWD_Model_1(Model model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -290,7 +288,5 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @generated
 	 */
 	boolean generateModel_checkCsp_BWD(CSP csp);
-	// <-- [user code injected with eMoflon]
 
-	// [user code injected with eMoflon] -->
 } // Model2TypeGraph
