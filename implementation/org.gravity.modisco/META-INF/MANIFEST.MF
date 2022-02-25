@@ -1,19 +1,16 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.modisco;singleton:=true
 Require-Bundle: org.eclipse.emf.ecore.xmi,
- org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.modisco.java;bundle-version="1.5.0";visibility:=reexport,
  org.eclipse.modisco.infra.discovery.core;visibility:=reexport,
- org.eclipse.core.resources,
  org.eclipse.modisco.java.discoverer,
  org.gravity.eclipse,
  org.eclipse.modisco.java.generation,
  org.slf4j.api,
  org.apache.log4j,
- org.apache.xmlgraphics,
  org.moflon.tgg.runtime,
- org.moflon.tgg.language
+ org.moflon.tgg.language,
+ org.apache.xmlgraphics
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy

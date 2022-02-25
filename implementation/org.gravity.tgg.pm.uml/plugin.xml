@@ -8,6 +8,14 @@
       <command commandId="org.gravity.tgg.command.corr" label="Generate UML PM Correspondence Model" style="push"/>
     </menuContribution>
   </extension>
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <!-- @generated Uml -->
+    <parser class="org.gravity.tgg.pm.uml.util.UmlResourceFactoryImpl" type="uml"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <!-- @generated Uml -->
+    <parser class="org.gravity.tgg.pm.uml.Rules.util.RulesResourceFactoryImpl" type="rules"/>
+  </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package class="org.gravity.tgg.pm.uml.UmlPackage" genModel="model/Uml.genmodel" uri="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore"/>
   </extension>

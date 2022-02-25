@@ -160,17 +160,7 @@ public final class JavaProjectUtil {
 		}
 
 		// Create src folders
-		final var existing = entries.stream().map(IClasspathEntry::getPath).collect(Collectors.toList());
-		for (final String sourceFolderName : sourceFolderNames) {
-			final var sourceFolder = project.getFolder(sourceFolderName);
-			if (!sourceFolder.exists()) {
-				sourceFolder.create(false, true, monitor);
-			}
-			if (!existing.contains(sourceFolder.getProjectRelativePath())) {
-				final var packageFragmentRoot = javaProject.getPackageFragmentRoot(sourceFolder);
-				entries.add(JavaCore.newSourceEntry(packageFragmentRoot.getPath()));
-			}
-		}
+		entries.addAll(createSrcClasspathEntries(sourceFolderNames, javaProject, monitor));
 
 		// Add JVM if not present
 		if (!hasJVM(javaProject)) {
@@ -181,6 +171,50 @@ public final class JavaProjectUtil {
 		javaProject.setRawClasspath(entries.toArray(new IClasspathEntry[0]), monitor);
 
 		return javaProject;
+	}
+
+	/**
+	 * Adds source folders with the given names to the Java project
+	 *
+	 * @param names   The names of the source folders
+	 * @param project The Java project
+	 * @param monitor A progresss monitor
+	 * @throws CoreException
+	 */
+	public static void createSrcFolders(final Collection<String> names, final IJavaProject project,
+			final IProgressMonitor monitor) throws CoreException {
+		final List<IClasspathEntry> entries = Arrays.asList(project.getRawClasspath());
+		entries.addAll(createSrcClasspathEntries(names, project, monitor));
+		project.setRawClasspath(entries.toArray(new IClasspathEntry[0]), monitor);
+	}
+
+	/**
+	 * Creates class path entries for all folders that are not already on the
+	 * project's classspath but not adds them to the classpath, yet
+	 *
+	 * @param sourceFolderNames The names of the source folders
+	 * @param javaProject       The Java project for which the src folders should be
+	 *                          created
+	 * @param monitor           A progress monitor
+	 * @return The classpath entries
+	 * @throws CoreException
+	 */
+	private static Set<IClasspathEntry> createSrcClasspathEntries(final Collection<String> sourceFolderNames,
+			final IJavaProject javaProject, final IProgressMonitor monitor) throws CoreException {
+		final var existing = Stream.of(javaProject.getRawClasspath()).map(IClasspathEntry::getPath)
+				.collect(Collectors.toList());
+		final Set<IClasspathEntry> entries = new HashSet<>();
+		for (final String sourceFolderName : sourceFolderNames) {
+			final var sourceFolder = javaProject.getProject().getFolder(sourceFolderName);
+			if (!sourceFolder.exists()) {
+				sourceFolder.create(false, true, monitor);
+			}
+			if (!existing.contains(sourceFolder.getProjectRelativePath())) {
+				final var packageFragmentRoot = javaProject.getPackageFragmentRoot(sourceFolder);
+				entries.add(JavaCore.newSourceEntry(packageFragmentRoot.getPath()));
+			}
+		}
+		return entries;
 	}
 
 	private static boolean hasJVM(final IJavaProject javaProject) throws JavaModelException {

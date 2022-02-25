@@ -8,14 +8,12 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.Set;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.ArrayType;
 import org.eclipse.modisco.java.BodyDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
@@ -50,14 +48,19 @@ public final class MoDiscoUtil {
 
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoUtil.class);
 
+	/**
+	 * The name of the Java default package as used by MoDisco
+	 */
+	public static final String DEFAULT_PACKAGE = "(default package)";
+
 	private MoDiscoUtil() {
 		// This class shouldn't be instantiated
 	}
 
 	public static ClassDeclaration getSuperClass(final ClassDeclaration mClass) {
-		final TypeAccess superAccess = mClass.getSuperClass();
+		final var superAccess = mClass.getSuperClass();
 		if (superAccess != null) {
-			final Type superType = superAccess.getType();
+			final var superType = superAccess.getType();
 			if (superType instanceof ClassDeclaration) {
 				return (ClassDeclaration) superType;
 			}
@@ -75,7 +78,7 @@ public final class MoDiscoUtil {
 	public static boolean isSuperType(final Type type, final Type supertype) {
 		if (type instanceof AbstractTypeDeclaration) {
 			if (type instanceof ClassDeclaration) {
-				final boolean superType = isSuperType((ClassDeclaration) type, supertype);
+				final var superType = isSuperType((ClassDeclaration) type, supertype);
 				if (superType) {
 					return true;
 				}
@@ -93,11 +96,11 @@ public final class MoDiscoUtil {
 	 * @return true iff supertype is a supertype of type
 	 */
 	private static boolean isSuperType(final ClassDeclaration type, final Type supertype) {
-		final TypeAccess superClass = type.getSuperClass();
+		final var superClass = type.getSuperClass();
 		if (superClass == null) {
 			return false;
 		}
-		final Type parent = superClass.getType();
+		final var parent = superClass.getType();
 		return supertype.equals(parent) || isSuperType(parent, supertype);
 	}
 
@@ -110,7 +113,7 @@ public final class MoDiscoUtil {
 	 */
 	private static boolean isSuperInterface(final Type type, final Type supertype) {
 		for (final TypeAccess interf : ((AbstractTypeDeclaration) type).getSuperInterfaces()) {
-			final Type superInterface = interf.getType();
+			final var superInterface = interf.getType();
 			if ((superInterface != null) && (superInterface.equals(supertype) || isSuperType(superInterface, supertype))) {
 				return true;
 			}
@@ -128,28 +131,28 @@ public final class MoDiscoUtil {
 	 * @return the most generic return type
 	 */
 	public static Type getMostGenericReturnType(final MAbstractMethodDefinition method) {
-		final AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
+		final var abstractTypeDeclaration = method.getAbstractTypeDeclaration();
 		if (method instanceof MConstructorDefinition) {
 			if (abstractTypeDeclaration != null) {
 				return abstractTypeDeclaration;
 			}
-			final AnonymousClassDeclaration anon = method.getAnonymousClassDeclarationOwner();
+			final var anon = method.getAnonymousClassDeclarationOwner();
 			if (anon != null) {
 				return anon.getClassInstanceCreation().getType().getType();
 			}
 			return null;
 		}
-		Type returnType = ((MMethodDefinition) method).getReturnType().getType();
-		final Set<Type> allTypes = getAllParentTypes(abstractTypeDeclaration);
+		var returnType = ((MMethodDefinition) method).getReturnType().getType();
+		final var allTypes = getAllParentTypes(abstractTypeDeclaration);
 		for (final Type type : allTypes) {
 			if (!(type instanceof AbstractTypeDeclaration)) {
 				continue;
 			}
 
-			final MethodDeclaration otherDecl = getOtherDeclarationOfMethod((MMethodDefinition) method,
+			final var otherDecl = getOtherDeclarationOfMethod((MMethodDefinition) method,
 					(AbstractTypeDeclaration) type);
 			if (otherDecl != null) {
-				final TypeAccess returnTypeDecl = otherDecl.getReturnType();
+				final var returnTypeDecl = otherDecl.getReturnType();
 				if (returnTypeDecl == null) {
 					if (LOGGER.isEnabledFor(Level.WARN)) {
 						LOGGER.warn(NLS.bind(Messages.skippedReturnType, otherDecl));
@@ -169,17 +172,17 @@ public final class MoDiscoUtil {
 	 * @return All parents
 	 */
 	public static Set<Type> getAllParentTypes(final AbstractTypeDeclaration child) {
-		final HashSet<Type> allTypes = new HashSet<>();
+		final var allTypes = new HashSet<Type>();
 		final Deque<Type> stack = new LinkedList<>();
 		if (child != null) {
 			stack.add(child);
 		}
 		while (!stack.isEmpty()) {
-			final Type type = stack.pop();
+			final var type = stack.pop();
 			if (type instanceof AbstractTypeDeclaration) {
 				allTypes.addAll(getTypesOfImplementedInterface(((AbstractTypeDeclaration) type)));
 				if (type instanceof ClassDeclaration) {
-					final TypeAccess superClass = ((ClassDeclaration) type).getSuperClass();
+					final var superClass = ((ClassDeclaration) type).getSuperClass();
 					if (superClass != null) {
 						allTypes.add(superClass.getType());
 					}
@@ -202,7 +205,7 @@ public final class MoDiscoUtil {
 	public static Set<Type> getTypesOfImplementedInterface(final AbstractTypeDeclaration type) {
 		final Set<Type> types = new HashSet<>();
 		for (final TypeAccess superInterfaceReference : type.getSuperInterfaces()) {
-			final Type typeOfInterface = superInterfaceReference.getType();
+			final var typeOfInterface = superInterfaceReference.getType();
 			if (typeOfInterface != null) {
 				types.add(typeOfInterface);
 			} else if (LOGGER.isEnabledFor(Level.WARN)) {
@@ -244,7 +247,7 @@ public final class MoDiscoUtil {
 		MethodDeclaration otherDecl = null;
 		for (final BodyDeclaration body : type.getBodyDeclarations()) {
 			if (body instanceof MethodDeclaration) {
-				final MethodDeclaration decl = (MethodDeclaration) body;
+				final var decl = (MethodDeclaration) body;
 				if (method.getName().equals(decl.getName())
 						&& isParamListEqual(method.getParameters(), decl.getParameters())) {
 					otherDecl = decl;
@@ -282,7 +285,7 @@ public final class MoDiscoUtil {
 	private static boolean isParamListEqual(final EList<SingleVariableDeclaration> parameters1,
 			final EList<SingleVariableDeclaration> parameters2) {
 		if (parameters1.size() == parameters2.size()) {
-			for (int i = 0; i < parameters1.size(); i++) {
+			for (var i = 0; i < parameters1.size(); i++) {
 				if (!parameters1.get(i).getType().equals(parameters2.get(i).getType())) {
 					return false;
 				}
@@ -301,13 +304,13 @@ public final class MoDiscoUtil {
 	 * @return true, iff no error occured
 	 */
 	public static boolean fillParamList(final MAbstractMethodDefinition definition, final MParameterList list) {
-		final EList<MEntry> mEntrys = list.getMEntrys();
+		final var mEntrys = list.getMEntrys();
 		if (!mEntrys.isEmpty()) {
 			return false;
 		}
 		MEntry prev = null;
 		for (final SingleVariableDeclaration param : definition.getParameters()) {
-			final MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
+			final var entry = ModiscoFactory.eINSTANCE.createMEntry();
 			entry.getParameters().add((MSingleVariableDeclaration) param);
 			mEntrys.add(entry);
 			entry.setType(param.getType().getType());
@@ -331,13 +334,13 @@ public final class MoDiscoUtil {
 	 * @return The Type representing "java.lang.String"
 	 */
 	public static Type getOrCreateJavaLangString(final Model model) {
-		AbstractTypeDeclaration string = MoDiscoUtil.getType(model, "java.lang.String"); //$NON-NLS-1$
+		var string = MoDiscoUtil.getType(model, "java.lang.String"); //$NON-NLS-1$
 		if (string == null) {
 			string = JavaFactory.eINSTANCE.createClassDeclaration();
 			string.setName("String"); //$NON-NLS-1$
-			Package lang = MoDiscoUtil.getPackage(model, new String[] { "java", "lang" }); //$NON-NLS-1$ //$NON-NLS-2$
+			var lang = MoDiscoUtil.getPackage(model, new String[] { "java", "lang" }); //$NON-NLS-1$ //$NON-NLS-2$
 			if (lang == null) {
-				Package java = MoDiscoUtil.getPackage(model, new String[] { "java" }); //$NON-NLS-1$
+				var java = MoDiscoUtil.getPackage(model, new String[] { "java" }); //$NON-NLS-1$
 				if (java == null) {
 					java = JavaFactory.eINSTANCE.createPackage();
 					java.setName("java"); //$NON-NLS-1$
@@ -360,14 +363,14 @@ public final class MoDiscoUtil {
 	 * @return The type or null
 	 */
 	public static AbstractTypeDeclaration getType(final Model model, final String fullyQualifiedName) {
-		final int index = fullyQualifiedName.lastIndexOf('.');
-		String defaultPackage = "default"; //$NON-NLS-1$
+		final var index = fullyQualifiedName.lastIndexOf('.');
+		var defaultPackage = "default"; //$NON-NLS-1$
 		if (index > 0) {
 			defaultPackage = fullyQualifiedName.substring(0, index);
 		}
-		final Package tPackage = getPackage(model, defaultPackage);
+		final var tPackage = getPackage(model, defaultPackage);
 		if (tPackage != null) {
-			final String name = fullyQualifiedName.substring(index + 1);
+			final var name = fullyQualifiedName.substring(index + 1);
 			for (final AbstractTypeDeclaration tType : tPackage.getOwnedElements()) {
 				if (tType.getName().equals(name) || tType.getName().contentEquals(fullyQualifiedName)) {
 					return tType;
@@ -396,10 +399,10 @@ public final class MoDiscoUtil {
 	 * @return The last package of the namespace or null
 	 */
 	public static Package getPackage(final Model model, final String[] namespace) {
-		EList<Package> next = model.getOwnedElements();
-		for (int i = 0; i < namespace.length; i++) {
-			final String name = namespace[i];
-			boolean contains = false;
+		var next = model.getOwnedElements();
+		for (var i = 0; i < namespace.length; i++) {
+			final var name = namespace[i];
+			var contains = false;
 			for (final Package tPackage : next) {
 				if (name.equals(tPackage.getName())) {
 					if (i == (namespace.length - 1)) {
@@ -424,15 +427,15 @@ public final class MoDiscoUtil {
 	 * @return The type
 	 */
 	public static Type getJavaLangObject(final MGravityModel model) {
-		Package javaLangPackage = getPackage(model, new String[] { "java", "lang" }); //$NON-NLS-1$ //$NON-NLS-2$
+		var javaLangPackage = getPackage(model, new String[] { "java", "lang" }); //$NON-NLS-1$ //$NON-NLS-2$
 		if (javaLangPackage != null) {
-			final Optional<AbstractTypeDeclaration> result = javaLangPackage.getOwnedElements().parallelStream()
+			final var result = javaLangPackage.getOwnedElements().parallelStream()
 					.filter(Objects::nonNull).filter(c -> c.getName().equals("Object")).findAny(); //$NON-NLS-1$
 			if (result.isPresent()) {
 				return result.get();
 			}
 		} else {
-			Package javaPackage = getPackage(model, "java"); //$NON-NLS-1$
+			var javaPackage = getPackage(model, "java"); //$NON-NLS-1$
 			if (javaPackage == null) {
 				javaPackage = JavaFactory.eINSTANCE.createPackage();
 				javaPackage.setName("java"); //$NON-NLS-1$
@@ -451,32 +454,47 @@ public final class MoDiscoUtil {
 	}
 
 	public static String getQualifiedName(final AbstractTypeDeclaration type) {
-		return getNameSpace(type.getPackage())+'.'+type.getName();
+		return getQualifiedName(type, ".");
+	}
+
+	public static String getQualifiedName(final AbstractTypeDeclaration type, final CharSequence separator) {
+		final var namespace = getNameSpace(type.getPackage());
+		if(namespace == null) {
+			return type.getName();
+		}
+		return namespace+separator+type.getName();
 	}
 
 	public static String getNameSpace(final Package packageDecl) {
+		return getNameSpace(packageDecl, ".");
+	}
+
+	public static String getNameSpace(final Package packageDecl, final CharSequence separator) {
+		if(DEFAULT_PACKAGE.equals(packageDecl.getName())) {
+			return null;
+		}
 		final List<String> names = new LinkedList<>();
-		Package p = packageDecl;
+		var p = packageDecl;
 		while(p != null) {
 			names.add(0, p.getName());
 			p = p.getPackage();
 		}
-		return String.join(".", names);
+		return String.join(separator, names);
 	}
 
 	public static String getSignature(final MethodDeclaration m) {
-		final StringBuilder value = new StringBuilder(m.getName());
+		final var value = new StringBuilder(m.getName());
 		value.append('(');
-		final EList<SingleVariableDeclaration> parameters = m.getParameters();
+		final var parameters = m.getParameters();
 		if(!parameters.isEmpty()) {
 			value.append(parameters.get(0).getType().getType().getName());
-			for(int i = 1 ; i < parameters.size(); i++) {
+			for(var i = 1 ; i < parameters.size(); i++) {
 				value.append(',');
 				value.append(parameters.get(i).getType().getType().getName());
 			}
 		}
 		value.append("):");
-		final Type ret =m.getReturnType().getType();
+		final var ret =m.getReturnType().getType();
 		if(ret!=null) {
 			value.append(ret.getName());
 		}

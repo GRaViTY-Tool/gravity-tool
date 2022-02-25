@@ -40,6 +40,7 @@
     <setAttribute key="selected_target_bundles">
         <setEntry value="MocaTree@default:default"/>
         <setEntry value="SDMLanguage@default:default"/>
+        <setEntry value="biz.aQute.bndlib@default:default"/>
         <setEntry value="ca.odell.glazedlists@default:default"/>
         <setEntry value="com.google.gson*2.7.0.v20170129-0911@default:default"/>
         <setEntry value="com.google.gson*2.8.8.v20211029-0838@default:default"/>
@@ -54,6 +55,7 @@
         <setEntry value="de.ovgu.featureide.fm.ui@default:default"/>
         <setEntry value="de.ovgu.featureide.ui@default:default"/>
         <setEntry value="io.github.classgraph@default:default"/>
+        <setEntry value="jakarta.activation@default:default"/>
         <setEntry value="jakarta.servlet-api@default:default"/>
         <setEntry value="jakarta.xml.bind@default:default"/>
         <setEntry value="javaewah@default:default"/>
@@ -1036,6 +1038,7 @@
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
         <setEntry value="EclipsePluginsToSPL@default:default"/>
+        <setEntry value="at.ac.tuwien.big.moea@default:default"/>
         <setEntry value="carisma.check.staticcheck@default:default"/>
         <setEntry value="carisma.check.variability@default:default"/>
         <setEntry value="carisma.core.io@default:default"/>
@@ -1096,6 +1099,11 @@
         <setEntry value="org.secdfd.model.editor@default:default"/>
         <setEntry value="org.secdfd.model.tests@default:default"/>
         <setEntry value="org.secdfd.model@default:default"/>
+        <setEntry value="org.tracesec.graph.dsl.ide@default:default"/>
+        <setEntry value="org.tracesec.graph.dsl.ui@default:default"/>
+        <setEntry value="org.tracesec.graph.dsl@default:default"/>
+        <setEntry value="org.tracesec.prioritization.ui@default:default"/>
+        <setEntry value="org.tracesec.qualitymodel@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>
     <stringAttribute key="templateConfig" value="${target_home}/configuration/config.ini"/>

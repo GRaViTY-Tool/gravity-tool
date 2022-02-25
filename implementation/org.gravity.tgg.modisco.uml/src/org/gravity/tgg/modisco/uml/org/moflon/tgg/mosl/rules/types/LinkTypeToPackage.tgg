@@ -12,11 +12,11 @@
 }
 
 #target {
-	uPackage : Package
-	
-	uType : Classifier {
-		++-package->uPackage
+	uPackage : Package {
+		++-packagedElement->uType
 	}
+	
+	uType : Classifier
 }
 
 #correspondence {

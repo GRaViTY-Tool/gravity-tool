@@ -281,6 +281,14 @@ public interface TypeGraph extends TAnnotatable {
 	 */
 	TPackage createPackage(String namespace);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	TClass createTClass(String namespace, String name, boolean lib, TVisibility visibility);
+
 	public TAbstractType getType(String fullyQualifiedName);
 
 	// [user code injected with eMoflon] -->

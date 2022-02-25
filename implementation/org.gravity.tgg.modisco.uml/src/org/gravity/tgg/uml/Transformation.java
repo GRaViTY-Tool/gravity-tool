@@ -1,11 +1,14 @@
 package org.gravity.tgg.uml;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -14,23 +17,36 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.OperationCanceledException;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.resource.UMLResource;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.modisco.AbstractModiscoTGGConverter;
 import org.gravity.modisco.GravityMoDiscoActivator;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.codegen.GravityModiscoCodeGenerator;
+import org.gravity.modisco.util.MoDiscoUtil;
 import org.gravity.security.annotations.AnnotationsActivator;
 import org.gravity.tgg.modisco.uml.UmlPackage;
 import org.moflon.tgg.algorithm.delta.Delta;
@@ -46,6 +62,12 @@ import carisma.profile.umlsec.UMLsecActivator;
  *
  */
 public final class Transformation extends AbstractModiscoTGGConverter {
+
+	private static final String COMMON_JAVA_DATATYPES = "Common Java datatypes";
+
+	private static final String SOURCE_REFERENCES = "source references";
+
+	private static final String EXTERNALS = "externals";
 
 	public static final Logger LOGGER = Logger.getLogger(Transformation.class);
 
@@ -123,7 +145,7 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 				GravityActivator.recordMessage("All:" + (System.currentTimeMillis() - start) + "ms");
 			}
 			if (addUMLsec) {
-				postprocessUMLsec(model);
+				postprocessUMLsecFwd(model);
 			}
 			return model;
 		} catch (final TransformationFailedException e) {
@@ -160,7 +182,7 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 		final var eResource = mGravityModel.eResource();
 		if (eResource == null) {
 			getResourceSet().createResource(URI.createURI(GravityMoDiscoActivator.FILE_NAME)).getContents()
-			.add(mGravityModel);
+					.add(mGravityModel);
 		} else if (!eResource.getResourceSet().equals(getResourceSet())) {
 			getResourceSet().getResources().add(eResource);
 		}
@@ -200,82 +222,53 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 		return (Model) this.trg;
 	}
 
-	/**
-	 * Applies postprocessors to the transformed model
-	 *
-	 * @param model The model
-	 * @throws TransformationFailedException
-	 */
-	public void postprocessUMLsec(final Model model) throws TransformationFailedException {
+	public static IStatus generateCode(final IProject project, final IFile uml, final IProgressMonitor monitor) {
+		IJavaProject javaProject;
 		try {
-			long start;
-			if (GravityActivator.MEASURE_PERFORMANCE) {
-				start = System.currentTimeMillis();
+			javaProject = JavaProjectUtil.convertToJavaProject(Collections.singleton("src"), project, monitor);
+			final var transformationFactory = GravityUmlActivator.getTransformationFactory();
+			final var transformation = transformationFactory.getTransformation(javaProject.getProject());
+			final var set = transformation.getResourceSet();
+			set.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION,
+					UMLResource.Factory.INSTANCE);
+			final var uri = EMFUtil.getPlatformResourceURI(uml);
+			final var targetResource = set.getResource(uri, true);
+			final var contents = targetResource.getContents();
+			final Set<EObject> roots = contents.parallelStream().filter(Model.class::isInstance)
+					.collect(Collectors.toSet());
+			if (roots.size() != 1) {
+				return new Status(IStatus.ERROR, GravityUmlActivator.PLUGIN_ID, "Couldn't find root model!");
 			}
-			final var profile = UMLsecActivator.loadUMLsecProfile(this.set);
-			model.applyProfile(profile);
-			new UmlSecProcessor(model).processFwd();
-			if (GravityActivator.MEASURE_PERFORMANCE) {
-				GravityActivator.recordMessage("Postpocessing: " + (System.currentTimeMillis() - start) + "ms");
+			final var root = createModelStructure(project, contents, (Model) roots.iterator().next());
+			addTypesToDefaultPackage(project, root);
+
+			new UmlSecProcessor(root).processBwd();
+
+			targetResource.save(Collections.emptyMap());
+
+			transformation.setTrg(root);
+			transformation.integrateBackward();
+			if (transformation.src instanceof MGravityModel) {
+				GravityModiscoCodeGenerator.generateCode(javaProject, (MGravityModel) transformation.src, null,
+						monitor);
+
+				transformation.integrateForward();
+				transformation.save(monitor);
+			} else {
+				return new Status(IStatus.ERROR, GravityUmlActivator.PLUGIN_ID, "Transformation failed");
 			}
-		} catch (final ProcessingException | IOException e) {
-			throw new TransformationFailedException(e);
+		} catch (IOException | CoreException | ProcessingException e) {
+			return new Status(IStatus.ERROR, GravityUmlActivator.PLUGIN_ID, e.getLocalizedMessage(), e);
 		}
+		return Status.OK_STATUS;
 	}
 
-	/**
-	 * Synchronizes changes from the UML model to the Java project
-	 *
-	 * @param monitor A progress monitor
-	 * @throws TransformationFailedException If the transformation wasn't successful
-	 * @throws IOException                   If writing files failed
-	 */
-	public void umlToProject(final IProgressMonitor monitor) throws TransformationFailedException, IOException {
-		final var corrFile = getCorrFile();
-		if (!corrFile.exists()) {
-			return;
-		}
-
-		final var oldTrgResource = getTargetFile();
-		final var r = getResourceSet().createResource(EMFUtil.getPlatformResourceURI(oldTrgResource));
-		try {
-			r.load(Collections.emptyMap());
-		} catch (final IOException e) {
-			throw new TransformationFailedException(e);
-		}
-
-		final var oldModel = r.getContents().get(0);
-		final var newModel = getTrg();
-
-		try (var outputStreamOld = Files
-				.newOutputStream(this.outputFolder.getFile("old.xmi").getLocation().toFile().toPath());
-				var outputStreamNew = Files
-						.newOutputStream(this.outputFolder.getFile("new.xmi").getLocation().toFile().toPath());) {
-			oldModel.eResource().save(outputStreamOld, Collections.emptyMap());
-			newModel.eResource().save(outputStreamNew, Collections.emptyMap());
-		} catch (final IOException e) {
-			throw new TransformationFailedException(e);
-		}
-
-		try {
-			new UmlSecProcessor((Model) newModel).processBwd();
-		} catch (final ProcessingException e) {
-			throw new TransformationFailedException(e);
-		}
-
-		integrateBackward();
-
-		save(monitor);
-
-		GravityModiscoCodeGenerator.generateCode(this.project.getProject(), (MGravityModel) getSrc(), null, monitor);
-	}
-
-	public void applyChangeAndGenerateCode(final Consumer<EObject> changeTrg, final IProgressMonitor monitor)
-			throws IOException {
+	public void applyChangeAndGenerateCode(final Consumer<EObject> umlChanges, final IProgressMonitor monitor)
+			throws IOException, CoreException {
 
 		final var model = (MGravityModel) getSrc();
 
-		setChangeTrg(changeTrg.andThen(x -> {
+		setChangeTrg(umlChanges.andThen(x -> {
 			try {
 				new UmlSecProcessor((Model) getTrg()).processBwd();
 			} catch (final ProcessingException e) {
@@ -284,14 +277,17 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 		}));
 		final var delta = integrateBackwardAndRecordDelta();
 
-		GravityModiscoCodeGenerator.generateCode(this.project.getProject(), model, delta, monitor);
+		GravityModiscoCodeGenerator.generateCode(this.project, model, delta, monitor);
 
 	}
 
 	/**
-	 * @return
+	 * Records the changed files while propagating changes from the UML model into
+	 * the modisco model
+	 *
+	 * @return The changes
 	 */
-	public Delta integrateBackwardAndRecordDelta() {
+	private Delta integrateBackwardAndRecordDelta() {
 		return applyChangeAndRecordDelta(x -> integrateBackward(), getSrc());
 	}
 
@@ -316,7 +312,16 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 		return GravityUmlActivator.getTransformationFactory().drop(this.project.getProject());
 	}
 
-	public static IFile getUMLFile(final IProject project, final NullProgressMonitor monitor) throws IOException {
+	/**
+	 * Searches the file corresponding to the UML model reverse-engineered by
+	 * GRaViTY
+	 *
+	 * @param project The project
+	 * @param monitor A progress monitor
+	 * @return the file
+	 * @throws IOException If the file system cannot be accessed
+	 */
+	public static IFile getUMLFile(final IProject project, final IProgressMonitor monitor) throws IOException {
 		return getUMLFile(EclipseProjectUtil.getGravityFolder(project, monitor).getFolder(UML));
 	}
 
@@ -337,5 +342,94 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 	@Override
 	protected String getSmaURI() {
 		return "platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.sma.xmi";
+	}
+
+	/**
+	 * Applies postprocessors to the transformed model
+	 *
+	 * @param model The model
+	 * @throws TransformationFailedException
+	 */
+	private void postprocessUMLsecFwd(final Model model) throws TransformationFailedException {
+		try {
+			long start;
+			if (GravityActivator.MEASURE_PERFORMANCE) {
+				start = System.currentTimeMillis();
+			}
+			final var profile = UMLsecActivator.loadUMLsecProfile(this.set);
+			model.applyProfile(profile);
+			new UmlSecProcessor(model).processFwd();
+			if (GravityActivator.MEASURE_PERFORMANCE) {
+				GravityActivator.recordMessage("Postpocessing: " + (System.currentTimeMillis() - start) + "ms");
+			}
+		} catch (final ProcessingException | IOException e) {
+			throw new TransformationFailedException(e);
+		}
+	}
+
+	private static Model createModelStructure(final IProject project, final EList<EObject> container, Model root) {
+		final var name = root.getName();
+		if (!"root model".equals(name)) {
+			if (!project.getName().equals(name)) {
+				root.setName(project.getName());
+			}
+
+			final var model = UMLFactory.eINSTANCE.createModel();
+			model.setName("root model");
+			model.getPackagedElements().add(root);
+
+			container.remove(root);
+			container.add(model);
+			root = model;
+		}
+
+		if (root.getPackagedElement(EXTERNALS) == null) {
+			root.createNestedPackage(EXTERNALS, UMLPackage.eINSTANCE.getModel());
+		}
+
+		if (root.getPackagedElement(SOURCE_REFERENCES) == null) {
+			root.createNestedPackage(SOURCE_REFERENCES, UMLPackage.eINSTANCE.getModel());
+		}
+
+		final List<Model> models = root.getPackagedElements().stream().filter(Model.class::isInstance)
+				.filter(m -> !EXTERNALS.equals(m.getName())).filter(m -> !SOURCE_REFERENCES.equals(m.getName()))
+				.map(Model.class::cast).collect(Collectors.toList());
+		if (models.size() != 1) {
+			throw new IllegalStateException();
+		}
+		final var java = models.get(0);
+		if (java.getPackagedElement(COMMON_JAVA_DATATYPES) == null) {
+			java.createNestedPackage(COMMON_JAVA_DATATYPES);
+		}
+
+		return root;
+	}
+
+	/**
+	 * Adds types that are not in a package to the default package
+	 *
+	 * @param project The project the elements should be added to
+	 * @param root    The root UML model
+	 */
+	private static void addTypesToDefaultPackage(final IProject project, final Model root) {
+		final var projectModel = (Model) root.getOwnedMember(project.getName());
+		final Collection<Classifier> typesInDefaultPackage = new LinkedList<>();
+		for (final Element element : projectModel.getOwnedElements()) {
+			if ((element instanceof Class) || (element instanceof Interface) || (element instanceof Enumeration)) {
+				final var classifier = (Classifier) element;
+				if ((classifier.getPackage() == null) || projectModel.equals(classifier.getPackage())) {
+					typesInDefaultPackage.add(classifier);
+				}
+			}
+		}
+		if (!typesInDefaultPackage.isEmpty()) {
+			var defaultPackage = (Package) projectModel.getOwnedMember(MoDiscoUtil.DEFAULT_PACKAGE);
+			if (defaultPackage == null) {
+				defaultPackage = UMLFactory.eINSTANCE.createPackage();
+				defaultPackage.setName(MoDiscoUtil.DEFAULT_PACKAGE);
+				defaultPackage.setNestingPackage(projectModel);
+			}
+			defaultPackage.getPackagedElements().addAll(typesInDefaultPackage);
+		}
 	}
 }

@@ -11,14 +11,10 @@ import java.util.stream.Stream;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -60,7 +56,7 @@ public final class EclipseProjectUtil {
 	 * @return The copy
 	 */
 	public static IProject copyProject(final IProject project, final String nameOfCopy) {
-		final IProject tmp = getProjectByName(nameOfCopy);
+		final var tmp = getProjectByName(nameOfCopy);
 		if ((tmp != null) && tmp.exists()) {
 			try {
 				tmp.delete(true, null);
@@ -104,14 +100,14 @@ public final class EclipseProjectUtil {
 	 */
 	public static void addNature(final IProject project, final String nature, final IProgressMonitor monitor)
 			throws CoreException {
-		final IProjectDescription description = project.getDescription();
-		final String[] oldNatures = description.getNatureIds();
+		final var description = project.getDescription();
+		final var oldNatures = description.getNatureIds();
 		for (final String o : oldNatures) {
 			if (o.equals(nature)) {
 				return;
 			}
 		}
-		final String[] newNatures = new String[oldNatures.length + 1];
+		final var newNatures = new String[oldNatures.length + 1];
 		newNatures[0] = nature;
 		System.arraycopy(oldNatures, 0, newNatures, 1, oldNatures.length);
 		description.setNatureIds(newNatures);
@@ -129,7 +125,7 @@ public final class EclipseProjectUtil {
 	 */
 	public static void createFolder(final IFolder folder, final IProgressMonitor monitor) throws CoreException {
 		final Deque<IFolder> stack = new LinkedList<>();
-		IContainer parent = folder.getParent();
+		var parent = folder.getParent();
 		while (!parent.exists() && (parent.getType() == IResource.FOLDER)) {
 			stack.add((IFolder) parent);
 			parent = parent.getParent();
@@ -148,7 +144,7 @@ public final class EclipseProjectUtil {
 	 *                     created
 	 */
 	public static IFolder getGravityFolder(final IProject project, final IProgressMonitor monitor) throws IOException {
-		final IFolder gravityFolder = project.getFolder(GravityActivator.GRAVITY_FOLDER_NAME);
+		final var gravityFolder = project.getFolder(GravityActivator.GRAVITY_FOLDER_NAME);
 		if (!gravityFolder.exists()) {
 			try {
 				gravityFolder.create(true, true, monitor);
@@ -166,7 +162,7 @@ public final class EclipseProjectUtil {
 	 * @return The class path entry
 	 */
 	public static ClasspathEntry createClassPathEntry(final IFile file) {
-		final IPath projectRelativePath = file.getProjectRelativePath();
+		final var projectRelativePath = file.getProjectRelativePath();
 		return new org.eclipse.jdt.internal.core.ClasspathEntry(IPackageFragmentRoot.K_BINARY,
 				IClasspathEntry.CPE_LIBRARY, projectRelativePath, ClasspathEntry.INCLUDE_ALL, // inclusion
 				// patterns
@@ -202,14 +198,16 @@ public final class EclipseProjectUtil {
 	 */
 	public static IClasspathEntry addLibToClasspath(final IJavaProject project, final IFile lib,
 			final IProgressMonitor monitor) throws JavaModelException {
-		final IClasspathEntry[] oldEntries = project.getRawClasspath();
-		for (int i = 0; i < oldEntries.length; i++) {
-			final IClasspathEntry entry = oldEntries[i];
+		final var oldEntries = project.getRawClasspath();
+		for (var i = 0; i < oldEntries.length; i++) {
+			final var entry = oldEntries[i];
 			if (entry.getEntryKind() == IClasspathEntry.CPE_LIBRARY) {
-				final IPath path = entry.getPath();
-				if (entry.getPath().makeRelativeTo(project.getProject().getLocation()).equals(lib.getProjectRelativePath())) {
+				final var path = entry.getPath();
+				if (entry.getPath().makeRelativeTo(project.getProject().getLocation())
+						.equals(lib.getProjectRelativePath())) {
 					if (path.isAbsolute()) {
-						// If the element is already referenced using an absolute path but is located within the project, replace the reference with a relative one
+						// If the element is already referenced using an absolute path but is located
+						// within the project, replace the reference with a relative one
 						oldEntries[i] = createClassPathEntry(lib);
 						project.setRawClasspath(oldEntries, monitor);
 					}
@@ -218,11 +216,42 @@ public final class EclipseProjectUtil {
 			}
 		}
 		final IClasspathEntry relativeLibraryEntry = createClassPathEntry(lib);
-		final IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
+		final var newEntries = new IClasspathEntry[oldEntries.length + 1];
 		System.arraycopy(oldEntries, 0, newEntries, 0, oldEntries.length);
 		newEntries[oldEntries.length] = relativeLibraryEntry;
 		project.setRawClasspath(newEntries, monitor);
 		return relativeLibraryEntry;
+	}
+
+	/**
+	 * Creates a new empty project in the current workspace
+	 *
+	 * @param name    The desired name of the project
+	 * @param force   If an existing project should be overwritten
+	 * @param monitor A progress monitor
+	 * @return The new project
+	 * @throws DuplicateProjectNameException If there is already a project with this
+	 *                                       name and force is set to
+	 *                                       <code>false</code>
+	 * @throws CoreException                 If there is an Exception in Eclipse
+	 */
+	public static IProject createProject(final String name, final boolean force, final IProgressMonitor monitor)
+			throws DuplicateProjectNameException, CoreException {
+		final var project = getProjectByName(name);
+
+		if (project.exists()
+				|| new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), name).exists()) {
+			if (force) {
+				project.delete(true, monitor);
+			} else {
+				throw new DuplicateProjectNameException(
+						"There is already a project with the name \"" + name + "\" in the workspace.");
+			}
+		}
+
+		project.create(monitor);
+		project.open(monitor);
+		return project;
 	}
 
 	/**
@@ -237,17 +266,7 @@ public final class EclipseProjectUtil {
 	 */
 	public static IProject createProject(final String name, final IProgressMonitor monitor)
 			throws DuplicateProjectNameException, CoreException {
-		final IProject project = getProjectByName(name);
-
-		if (project.exists()
-				|| new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), name).exists()) {
-			throw new DuplicateProjectNameException(
-					"There is already a project with the name \"" + name + "\" in the workspace.");
-		}
-
-		project.create(monitor);
-		project.open(monitor);
-		return project;
+		return createProject(name, false, monitor);
 	}
 
 	/**
@@ -274,7 +293,7 @@ public final class EclipseProjectUtil {
 	 */
 	public static List<IProject> importProjectsFromWorkspaceLocation(final IProgressMonitor monitor)
 			throws CoreException {
-		final File src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
+		final var src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
 		return importProjects(src, monitor);
 	}
 
@@ -288,7 +307,7 @@ public final class EclipseProjectUtil {
 	 */
 	public static List<IProject> importProjects(final File rootFolder, final IProgressMonitor monitor)
 			throws CoreException {
-		final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		final var root = ResourcesPlugin.getWorkspace().getRoot();
 		final List<IProject> projects = Stream.of(rootFolder.listFiles()).filter(File::isDirectory).parallel()
 				.map(projectFolder -> {
 					try {
@@ -320,16 +339,16 @@ public final class EclipseProjectUtil {
 		if (!dotProject.exists()) {
 			return null;
 		}
-		final IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		final java.nio.file.Path workspaceLocation = workspace.getRoot().getLocation().toFile().toPath();
+		final var workspace = ResourcesPlugin.getWorkspace();
+		final var workspaceLocation = workspace.getRoot().getLocation().toFile().toPath();
 		Path path;
 		if (dotProject.getAbsoluteFile().toPath().startsWith(workspaceLocation)) {
 			path = new Path(dotProject.getPath());
 		} else {
 			path = new Path(dotProject.getAbsolutePath());
 		}
-		final IProjectDescription description = workspace.loadProjectDescription(path);
-		final IProject project = workspace.getRoot().getProject(description.getName());
+		final var description = workspace.loadProjectDescription(path);
+		final var project = workspace.getRoot().getProject(description.getName());
 		if (!project.exists()) {
 			project.create(description, monitor);
 		}

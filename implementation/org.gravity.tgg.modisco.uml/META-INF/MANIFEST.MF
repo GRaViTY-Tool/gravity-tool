@@ -4,10 +4,8 @@ Bundle-SymbolicName: org.gravity.tgg.modisco.uml;singleton:=true
 Require-Bundle: org.eclipse.emf.compare,
  carisma.profile.umlsec,
  org.eclipse.modisco.java.discoverer,
- org.eclipse.core.resources,
- org.eclipse.core.runtime,
  org.gravity.eclipse;visibility:=reexport,
- org.gravity.modisco,
+ org.gravity.modisco;visibility:=reexport,
  org.gravity.security.annotations,
  org.gravity.eclipse.ui,
  org.eclipse.ui.workbench,
@@ -17,7 +15,7 @@ Require-Bundle: org.eclipse.emf.compare,
  org.moflon.tgg.runtime;visibility:=reexport,
  SDMLanguage,
  MocaTree,
- org.eclipse.modisco.java.generation
+ org.eclipse.emf.common
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11

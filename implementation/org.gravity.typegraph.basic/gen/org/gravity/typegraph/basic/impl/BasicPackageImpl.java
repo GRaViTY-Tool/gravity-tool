@@ -1080,6 +1080,16 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTPackage__GetTClass__String() {
+		return tPackageEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTParameter() {
 		return tParameterEClass;
 	}
@@ -1400,6 +1410,16 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTypeGraph__CreateTClass__String_String_boolean_TVisibility() {
+		return typeGraphEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTInterface() {
 		return tInterfaceEClass;
 	}
@@ -1680,7 +1700,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTAbstractType__FillSameType__EList() {
+	public EOperation getTAbstractType__GetRealPackage__TAbstractType() {
 		return tAbstractTypeEClass.getEOperations().get(11);
 	}
 
@@ -1690,7 +1710,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTAbstractType__IsInnerType__TAbstractType() {
+	public EOperation getTAbstractType__GetTFieldSignature__String() {
 		return tAbstractTypeEClass.getEOperations().get(12);
 	}
 
@@ -1700,7 +1720,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTAbstractType__GetRealPackage__TAbstractType() {
+	public EOperation getTAbstractType__GetTFieldDefinition__String() {
 		return tAbstractTypeEClass.getEOperations().get(13);
 	}
 
@@ -1710,7 +1730,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTAbstractType__GetTFieldSignature__String() {
+	public EOperation getTAbstractType__CreateMethodDefinition__String_TAbstractType_int_int_EList_EList_EList_boolean_TVisibility() {
 		return tAbstractTypeEClass.getEOperations().get(14);
 	}
 
@@ -1720,28 +1740,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTAbstractType__GetTFieldDefinition__String() {
-		return tAbstractTypeEClass.getEOperations().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getTAbstractType__CreateMethodDefinition__String_TAbstractType_int_int_EList_EList_EList_boolean_TVisibility() {
-		return tAbstractTypeEClass.getEOperations().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EOperation getTAbstractType__CreateFieldDefinition__String_TAbstractType_int_int_boolean_TVisibility() {
-		return tAbstractTypeEClass.getEOperations().get(17);
+		return tAbstractTypeEClass.getEOperations().get(15);
 	}
 
 	/**
@@ -2108,6 +2108,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(tPackageEClass, TPACKAGE___GET_ALL_OWNED_CLASSES);
 		createEOperation(tPackageEClass, TPACKAGE___GET_BASE_PACKAGE);
 		createEOperation(tPackageEClass, TPACKAGE___CREATE_TCLASS__STRING_BOOLEAN_TVISIBILITY);
+		createEOperation(tPackageEClass, TPACKAGE___GET_TCLASS__STRING);
 
 		tParameterEClass = createEClass(TPARAMETER);
 		createEReference(tParameterEClass, TPARAMETER__NEXT);
@@ -2143,6 +2144,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_FIELD_DEFINITION__STRING);
 		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_METHOD_DEFINITION__STRING);
 		createEOperation(typeGraphEClass, TYPE_GRAPH___CREATE_PACKAGE__STRING);
+		createEOperation(typeGraphEClass, TYPE_GRAPH___CREATE_TCLASS__STRING_STRING_BOOLEAN_TVISIBILITY);
 
 		tInterfaceEClass = createEClass(TINTERFACE);
 		createEReference(tInterfaceEClass, TINTERFACE__IMPLEMENTED_BY);
@@ -2173,8 +2175,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TDEFINITION__STRING);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE);
-		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST);
-		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING);
@@ -2426,6 +2426,9 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		addEParameter(op, ecorePackage.getEBoolean(), "lib", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTVisibility(), "visibility", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getTPackage__GetTClass__String(), this.getTClass(), "getTClass", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(tParameterEClass, TParameter.class, "TParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTParameter_Next(), this.getTParameter(), this.getTParameter_Previous(), "next", null, 0, 1, TParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTParameter_Previous(), this.getTParameter(), this.getTParameter_Next(), "previous", null, 0, 1, TParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2492,6 +2495,12 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		op = initEOperation(getTypeGraph__CreatePackage__String(), this.getTPackage(), "createPackage", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "namespace", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getTypeGraph__CreateTClass__String_String_boolean_TVisibility(), this.getTClass(), "createTClass", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "namespace", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "lib", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTVisibility(), "visibility", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(tInterfaceEClass, TInterface.class, "TInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTInterface_ImplementedBy(), this.getTClass(), this.getTClass_Implements(), "implementedBy", null, 0, -1, TInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTInterface_ParentInterfaces(), this.getTInterface(), this.getTInterface_ChildInterfaces(), "parentInterfaces", null, 0, -1, TInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2546,12 +2555,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 
 		op = initEOperation(getTAbstractType__HasCommonSuperType__TAbstractType(), ecorePackage.getEBoolean(), "hasCommonSuperType", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTAbstractType(), "tType", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getTAbstractType__FillSameType__EList(), null, "fillSameType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTAbstractType(), "list", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getTAbstractType__IsInnerType__TAbstractType(), ecorePackage.getEBoolean(), "isInnerType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTAbstractType(), "tAbstractType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getTAbstractType__GetRealPackage__TAbstractType(), this.getTPackage(), "getRealPackage", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTAbstractType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);

@@ -767,24 +767,6 @@ public interface AnnotationsPackage extends EPackage {
 	int TANNOTATION_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = BasicPackage.TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE;
 
 	/**
-	 * The operation id for the '<em>Fill Same Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TANNOTATION_TYPE___FILL_SAME_TYPE__ELIST = BasicPackage.TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST;
-
-	/**
-	 * The operation id for the '<em>Is Inner Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TANNOTATION_TYPE___IS_INNER_TYPE__TABSTRACTTYPE = BasicPackage.TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE;
-
-	/**
 	 * The operation id for the '<em>Get Real Package</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

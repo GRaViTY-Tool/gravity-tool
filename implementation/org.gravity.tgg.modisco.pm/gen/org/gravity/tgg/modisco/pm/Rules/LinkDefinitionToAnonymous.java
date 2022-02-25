@@ -52,8 +52,8 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous, MSignature mSignature);
+	boolean isAppropriate_FWD(Match match, AnonymousClassDeclaration mAnonymous, ClassInstanceCreation mInstance,
+			MDefinition mDefinition, MSignature mSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,8 +77,8 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous, MSignature mSignature);
+	void registerObjectsToMatch_FWD(Match match, AnonymousClassDeclaration mAnonymous, ClassInstanceCreation mInstance,
+			MDefinition mDefinition, MSignature mSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,8 +86,8 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous, MSignature mSignature);
+	CSP isAppropriate_solveCsp_FWD(Match match, AnonymousClassDeclaration mAnonymous, ClassInstanceCreation mInstance,
+			MDefinition mDefinition, MSignature mSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,11 +103,11 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TSignature tSignature,
-			ClassInstanceCreation mInstance, TClass tAnonymous,
-			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous, MSignatureToTSignature mSignatureToTSignature, TMember tDefinition,
-			MDefinitionToTMember mDefinitionToTMember, MSignature mSignature);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnonymous,
+			ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
+			MSignatureToTSignature mSignatureToTSignature, TMember tDefinition, MSignature mSignature,
+			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous, MDefinitionToTMember mDefinitionToTMember,
+			TSignature tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,9 +123,9 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tSignature, EObject mInstance, EObject tAnonymous,
-			EObject mAnonymousToTAnonymous, EObject mDefinition, EObject mAnonymous, EObject mSignatureToTSignature,
-			EObject tDefinition, EObject mDefinitionToTMember, EObject mSignature);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAnonymous, EObject mInstance, EObject mDefinition,
+			EObject tAnonymous, EObject mSignatureToTSignature, EObject tDefinition, EObject mSignature,
+			EObject mAnonymousToTAnonymous, EObject mDefinitionToTMember, EObject tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,7 +141,7 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TSignature tSignature, TClass tAnonymous, TMember tDefinition);
+	boolean isAppropriate_BWD(Match match, TClass tAnonymous, TMember tDefinition, TSignature tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,7 +165,7 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TSignature tSignature, TClass tAnonymous, TMember tDefinition);
+	void registerObjectsToMatch_BWD(Match match, TClass tAnonymous, TMember tDefinition, TSignature tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,7 +173,7 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TSignature tSignature, TClass tAnonymous, TMember tDefinition);
+	CSP isAppropriate_solveCsp_BWD(Match match, TClass tAnonymous, TMember tDefinition, TSignature tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,11 +189,11 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TSignature tSignature,
-			ClassInstanceCreation mInstance, TClass tAnonymous,
-			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous, MSignatureToTSignature mSignatureToTSignature, TMember tDefinition,
-			MDefinitionToTMember mDefinitionToTMember, MSignature mSignature);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnonymous,
+			ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
+			MSignatureToTSignature mSignatureToTSignature, TMember tDefinition, MSignature mSignature,
+			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous, MDefinitionToTMember mDefinitionToTMember,
+			TSignature tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,9 +209,9 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tSignature, EObject mInstance, EObject tAnonymous,
-			EObject mAnonymousToTAnonymous, EObject mDefinition, EObject mAnonymous, EObject mSignatureToTSignature,
-			EObject tDefinition, EObject mDefinitionToTMember, EObject mSignature);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mAnonymous, EObject mInstance, EObject mDefinition,
+			EObject tAnonymous, EObject mSignatureToTSignature, EObject tDefinition, EObject mSignature,
+			EObject mAnonymousToTAnonymous, EObject mDefinitionToTMember, EObject tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +227,7 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_70(EMoflonEdge _edge_signature);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_78(EMoflonEdge _edge_defines);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,7 +235,7 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_74(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_83(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -267,9 +267,9 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TSignature tSignature, ClassInstanceCreation mInstance, TClass tAnonymous,
-			MDefinition mDefinition, AnonymousClassDeclaration mAnonymous, TMember tDefinition, MSignature mSignature,
-			Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(AnonymousClassDeclaration mAnonymous, ClassInstanceCreation mInstance,
+			MDefinition mDefinition, TClass tAnonymous, TMember tDefinition, MSignature mSignature,
+			TSignature tSignature, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,7 +285,7 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(ClassInstanceCreation mInstance, MDefinition mDefinition, AnonymousClassDeclaration mAnonymous,
+	boolean checkDEC_FWD(AnonymousClassDeclaration mAnonymous, ClassInstanceCreation mInstance, MDefinition mDefinition,
 			MSignature mSignature);
 
 	/**
@@ -294,7 +294,7 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TSignature tSignature, TClass tAnonymous, TMember tDefinition);
+	boolean checkDEC_BWD(TClass tAnonymous, TMember tDefinition, TSignature tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,8 +303,8 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			MDefinitionToTMember mDefinitionToTMemberParameter,
-			AnonymousClassDeclarationToTClass mAnonymousToTAnonymousParameter);
+			AnonymousClassDeclarationToTClass mAnonymousToTAnonymousParameter,
+			MSignatureToTSignature mSignatureToTSignatureParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -312,11 +312,11 @@ public interface LinkDefinitionToAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TSignature tSignature,
-			ClassInstanceCreation mInstance, TClass tAnonymous,
-			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous, MSignatureToTSignature mSignatureToTSignature, TMember tDefinition,
-			MDefinitionToTMember mDefinitionToTMember, MSignature mSignature, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnonymous,
+			ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
+			MSignatureToTSignature mSignatureToTSignature, TMember tDefinition, MSignature mSignature,
+			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous, MDefinitionToTMember mDefinitionToTMember,
+			TSignature tSignature, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

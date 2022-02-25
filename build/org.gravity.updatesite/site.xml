@@ -30,9 +30,9 @@
    <feature url="features/feature.carisma.variability_1.0.0.qualifier.jar" id="feature.carisma.variability" version="1.0.0.qualifier">
       <category name="org.gravity.variability"/>
    </feature>
-   <feature url="features/org.gravity.mapping.secdfd.feature_1.0.0.qualifier.jar" id="org.gravity.mapping.secdfd.feature" version="1.0.0.qualifier">
+   <!--<feature url="features/org.gravity.mapping.secdfd.feature_1.0.0.qualifier.jar" id="org.gravity.mapping.secdfd.feature" version="1.0.0.qualifier">
       <category name="org.gravity.secdfd"/>
-   </feature>
+   </feature>-->
    <feature url="features/org.gravity.features.variability_1.0.0.qualifier.jar" id="org.gravity.features.variability" version="1.0.0.qualifier">
       <category name="org.gravity.variability"/>
    </feature>

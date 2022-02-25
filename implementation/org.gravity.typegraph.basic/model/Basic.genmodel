@@ -129,6 +129,9 @@
         <genParameters ecoreParameter="Basic.ecore#//TPackage/createTClass/lib"/>
         <genParameters ecoreParameter="Basic.ecore#//TPackage/createTClass/visibility"/>
       </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TPackage/getTClass">
+        <genParameters ecoreParameter="Basic.ecore#//TPackage/getTClass/name"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TParameter">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameter/next"/>
@@ -192,6 +195,12 @@
       <genOperations ecoreOperation="Basic.ecore#//TypeGraph/createPackage">
         <genParameters ecoreParameter="Basic.ecore#//TypeGraph/createPackage/namespace"/>
       </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TypeGraph/createTClass">
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/createTClass/namespace"/>
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/createTClass/name"/>
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/createTClass/lib"/>
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/createTClass/visibility"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TInterface">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TInterface/implementedBy"/>
@@ -243,12 +252,6 @@
       </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TAbstractType/hasCommonSuperType">
         <genParameters ecoreParameter="Basic.ecore#//TAbstractType/hasCommonSuperType/tType"/>
-      </genOperations>
-      <genOperations ecoreOperation="Basic.ecore#//TAbstractType/fillSameType">
-        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/fillSameType/list"/>
-      </genOperations>
-      <genOperations ecoreOperation="Basic.ecore#//TAbstractType/isInnerType">
-        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/isInnerType/tAbstractType"/>
       </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TAbstractType/getRealPackage">
         <genParameters ecoreParameter="Basic.ecore#//TAbstractType/getRealPackage/type"/>

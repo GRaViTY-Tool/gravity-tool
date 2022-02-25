@@ -201,7 +201,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TypeGraph_0(TypeGraph tPG);
+	EObjectContainer isAppropriate_BWD_TypeGraph_2(TypeGraph tPG);
 
 	/**
 	 * <!-- begin-user-doc -->

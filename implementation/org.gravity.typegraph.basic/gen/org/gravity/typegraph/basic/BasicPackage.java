@@ -633,31 +633,13 @@ public interface BasicPackage extends EPackage {
 	int TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 10;
 
 	/**
-	 * The operation id for the '<em>Fill Same Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 11;
-
-	/**
-	 * The operation id for the '<em>Is Inner Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 12;
-
-	/**
 	 * The operation id for the '<em>Get Real Package</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 13;
+	int TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Get TField Signature</em>' operation.
@@ -666,7 +648,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 14;
+	int TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 12;
 
 	/**
 	 * The operation id for the '<em>Get TField Definition</em>' operation.
@@ -675,7 +657,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 15;
+	int TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 13;
 
 	/**
 	 * The operation id for the '<em>Create Method Definition</em>' operation.
@@ -684,7 +666,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 16;
+	int TABSTRACT_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 14;
 
 	/**
 	 * The operation id for the '<em>Create Field Definition</em>' operation.
@@ -693,7 +675,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 17;
+	int TABSTRACT_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 15;
 
 	/**
 	 * The number of operations of the '<em>TAbstract Type</em>' class.
@@ -702,7 +684,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 18;
+	int TABSTRACT_TYPE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -910,24 +892,6 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TCLASS___HAS_TMEMBER__TMEMBER = TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER;
-
-	/**
-	 * The operation id for the '<em>Fill Same Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCLASS___FILL_SAME_TYPE__ELIST = TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST;
-
-	/**
-	 * The operation id for the '<em>Is Inner Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCLASS___IS_INNER_TYPE__TABSTRACTTYPE = TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Real Package</em>' operation.
@@ -2316,13 +2280,22 @@ public interface BasicPackage extends EPackage {
 	int TPACKAGE___CREATE_TCLASS__STRING_BOOLEAN_TVISIBILITY = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Get TClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPACKAGE___GET_TCLASS__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 5;
+
+	/**
 	 * The number of operations of the '<em>TPackage</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 5;
+	int TPACKAGE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2676,13 +2649,22 @@ public interface BasicPackage extends EPackage {
 	int TYPE_GRAPH___CREATE_PACKAGE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 14;
 
 	/**
+	 * The operation id for the '<em>Create TClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___CREATE_TCLASS__STRING_STRING_BOOLEAN_TVISIBILITY = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 15;
+
+	/**
 	 * The number of operations of the '<em>Type Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 15;
+	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2890,24 +2872,6 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TINTERFACE___HAS_TMEMBER__TMEMBER = TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER;
-
-	/**
-	 * The operation id for the '<em>Fill Same Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINTERFACE___FILL_SAME_TYPE__ELIST = TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST;
-
-	/**
-	 * The operation id for the '<em>Is Inner Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINTERFACE___IS_INNER_TYPE__TABSTRACTTYPE = TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Real Package</em>' operation.
@@ -3574,24 +3538,6 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TUNRESOLVED_TYPE___HAS_TMEMBER__TMEMBER = TCLASS___HAS_TMEMBER__TMEMBER;
-
-	/**
-	 * The operation id for the '<em>Fill Same Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TUNRESOLVED_TYPE___FILL_SAME_TYPE__ELIST = TCLASS___FILL_SAME_TYPE__ELIST;
-
-	/**
-	 * The operation id for the '<em>Is Inner Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TUNRESOLVED_TYPE___IS_INNER_TYPE__TABSTRACTTYPE = TCLASS___IS_INNER_TYPE__TABSTRACTTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Real Package</em>' operation.
@@ -5151,6 +5097,16 @@ public interface BasicPackage extends EPackage {
 	EOperation getTPackage__CreateTClass__String_boolean_TVisibility();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TPackage#getTClass(java.lang.String) <em>Get TClass</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get TClass</em>' operation.
+	 * @see org.gravity.typegraph.basic.TPackage#getTClass(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTPackage__GetTClass__String();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TParameter <em>TParameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5483,6 +5439,16 @@ public interface BasicPackage extends EPackage {
 	EOperation getTypeGraph__CreatePackage__String();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#createTClass(java.lang.String, java.lang.String, boolean, org.gravity.typegraph.basic.TVisibility) <em>Create TClass</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create TClass</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#createTClass(java.lang.String, java.lang.String, boolean, org.gravity.typegraph.basic.TVisibility)
+	 * @generated
+	 */
+	EOperation getTypeGraph__CreateTClass__String_String_boolean_TVisibility();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TInterface <em>TInterface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5773,26 +5739,6 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTAbstractType__HasCommonSuperType__TAbstractType();
-
-	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TAbstractType#fillSameType(org.eclipse.emf.common.util.EList) <em>Fill Same Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Fill Same Type</em>' operation.
-	 * @see org.gravity.typegraph.basic.TAbstractType#fillSameType(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getTAbstractType__FillSameType__EList();
-
-	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TAbstractType#isInnerType(org.gravity.typegraph.basic.TAbstractType) <em>Is Inner Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Inner Type</em>' operation.
-	 * @see org.gravity.typegraph.basic.TAbstractType#isInnerType(org.gravity.typegraph.basic.TAbstractType)
-	 * @generated
-	 */
-	EOperation getTAbstractType__IsInnerType__TAbstractType();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TAbstractType#getRealPackage(org.gravity.typegraph.basic.TAbstractType) <em>Get Real Package</em>}' operation.
@@ -6750,6 +6696,14 @@ public interface BasicPackage extends EPackage {
 		EOperation TPACKAGE___CREATE_TCLASS__STRING_BOOLEAN_TVISIBILITY = eINSTANCE.getTPackage__CreateTClass__String_boolean_TVisibility();
 
 		/**
+		 * The meta object literal for the '<em><b>Get TClass</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TPACKAGE___GET_TCLASS__STRING = eINSTANCE.getTPackage__GetTClass__String();
+
+		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TParameterImpl <em>TParameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7012,6 +6966,14 @@ public interface BasicPackage extends EPackage {
 		EOperation TYPE_GRAPH___CREATE_PACKAGE__STRING = eINSTANCE.getTypeGraph__CreatePackage__String();
 
 		/**
+		 * The meta object literal for the '<em><b>Create TClass</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___CREATE_TCLASS__STRING_STRING_BOOLEAN_TVISIBILITY = eINSTANCE.getTypeGraph__CreateTClass__String_String_boolean_TVisibility();
+
+		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TInterfaceImpl <em>TInterface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7238,22 +7200,6 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = eINSTANCE.getTAbstractType__HasCommonSuperType__TAbstractType();
-
-		/**
-		 * The meta object literal for the '<em><b>Fill Same Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST = eINSTANCE.getTAbstractType__FillSameType__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Inner Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE = eINSTANCE.getTAbstractType__IsInnerType__TAbstractType();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Real Package</b></em>' operation.

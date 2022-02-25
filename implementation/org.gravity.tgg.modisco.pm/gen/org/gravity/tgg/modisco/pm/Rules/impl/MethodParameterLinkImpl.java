@@ -154,11 +154,11 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		TParameter tPrevParameter = (TParameter) result1_bindingAndBlack[0];
-		TParameter tParameter = (TParameter) result1_bindingAndBlack[1];
+		MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result1_bindingAndBlack[1];
 		MEntry mPrevEntry = (MEntry) result1_bindingAndBlack[2];
 		MEntry mEntry = (MEntry) result1_bindingAndBlack[3];
-		MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result1_bindingAndBlack[4];
-		MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result1_bindingAndBlack[5];
+		TParameter tParameter = (TParameter) result1_bindingAndBlack[4];
+		MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		MethodParameterLinkImpl.pattern_MethodParameterLink_1_1_performtransformation_greenBB(tPrevParameter,
 				tParameter);
@@ -172,27 +172,27 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 
 		Object[] result3_black = MethodParameterLinkImpl
 				.pattern_MethodParameterLink_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, tPrevParameter,
-						tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-						mmethodSignatureToTMethodSignature);
+						mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+						eSingleVariableDeclarationToTParameter);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tPrevParameter] = " + tPrevParameter + ", " + "[tParameter] = " + tParameter + ", "
-					+ "[mPrevEntry] = " + mPrevEntry + ", " + "[mEntry] = " + mEntry + ", "
-					+ "[eSingleVariableDeclarationToTParameter] = " + eSingleVariableDeclarationToTParameter + ", "
-					+ "[mmethodSignatureToTMethodSignature] = " + mmethodSignatureToTMethodSignature + ".");
+					+ ", " + "[tPrevParameter] = " + tPrevParameter + ", " + "[mmethodSignatureToTMethodSignature] = "
+					+ mmethodSignatureToTMethodSignature + ", " + "[mPrevEntry] = " + mPrevEntry + ", " + "[mEntry] = "
+					+ mEntry + ", " + "[tParameter] = " + tParameter + ", "
+					+ "[eSingleVariableDeclarationToTParameter] = " + eSingleVariableDeclarationToTParameter + ".");
 		}
 		MethodParameterLinkImpl.pattern_MethodParameterLink_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
-				tPrevParameter, tParameter, mPrevEntry, mEntry);
-		//nothing EMoflonEdge mPrevEntry__mEntry____mNext = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge mEntry__mPrevEntry____mPrevious = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge tPrevParameter__tParameter____next = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tParameter__tPrevParameter____previous = (EMoflonEdge) result3_green[8];
+				tPrevParameter, mPrevEntry, mEntry, tParameter);
+		//nothing EMoflonEdge tPrevParameter__tParameter____next = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge tParameter__tPrevParameter____previous = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mPrevEntry__mEntry____mNext = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mEntry__mPrevEntry____mPrevious = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		MethodParameterLinkImpl.pattern_MethodParameterLink_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-				tPrevParameter, tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-				mmethodSignatureToTMethodSignature);
+				tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+				eSingleVariableDeclarationToTParameter);
 		return MethodParameterLinkImpl.pattern_MethodParameterLink_1_6_expressionFB(ruleresult);
 	}
 
@@ -225,36 +225,37 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 		for (Object[] result2_black : MethodParameterLinkImpl
 				.pattern_MethodParameterLink_2_2_corematch_blackFFBBFFB(mPrevEntry, mEntry, match)) {
 			TParameter tPrevParameter = (TParameter) result2_black[0];
-			TParameter tParameter = (TParameter) result2_black[1];
-			MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result2_black[4];
-			MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result2_black[5];
+			MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result2_black[1];
+			TParameter tParameter = (TParameter) result2_black[4];
+			MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : MethodParameterLinkImpl
-					.pattern_MethodParameterLink_2_3_findcontext_blackBBBBBB(tPrevParameter, tParameter, mPrevEntry,
-							mEntry, eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature)) {
+					.pattern_MethodParameterLink_2_3_findcontext_blackBBBBBB(tPrevParameter,
+							mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+							eSingleVariableDeclarationToTParameter)) {
 				Object[] result3_green = MethodParameterLinkImpl
-						.pattern_MethodParameterLink_2_3_findcontext_greenBBBBBBFFFFFFF(tPrevParameter, tParameter,
-								mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-								mmethodSignatureToTMethodSignature);
+						.pattern_MethodParameterLink_2_3_findcontext_greenBBBBBBFFFFFFF(tPrevParameter,
+								mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+								eSingleVariableDeclarationToTParameter);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge mPrevEntry__mEntry____mNext = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mEntry__mPrevEntry____mPrevious = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge eSingleVariableDeclarationToTParameter__mEntry____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mmethodSignatureToTMethodSignature__tPrevParameter____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mPrevEntry__mEntry____mNext = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mEntry__mPrevEntry____mPrevious = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge mmethodSignatureToTMethodSignature__mPrevEntry____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge eSingleVariableDeclarationToTParameter__tParameter____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mmethodSignatureToTMethodSignature__tPrevParameter____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge eSingleVariableDeclarationToTParameter__mEntry____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge eSingleVariableDeclarationToTParameter__tParameter____target = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = MethodParameterLinkImpl
 						.pattern_MethodParameterLink_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								tPrevParameter, tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-								mmethodSignatureToTMethodSignature);
+								tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+								eSingleVariableDeclarationToTParameter);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tPrevParameter] = "
-							+ tPrevParameter + ", " + "[tParameter] = " + tParameter + ", " + "[mPrevEntry] = "
-							+ mPrevEntry + ", " + "[mEntry] = " + mEntry + ", "
+							+ tPrevParameter + ", " + "[mmethodSignatureToTMethodSignature] = "
+							+ mmethodSignatureToTMethodSignature + ", " + "[mPrevEntry] = " + mPrevEntry + ", "
+							+ "[mEntry] = " + mEntry + ", " + "[tParameter] = " + tParameter + ", "
 							+ "[eSingleVariableDeclarationToTParameter] = " + eSingleVariableDeclarationToTParameter
-							+ ", " + "[mmethodSignatureToTMethodSignature] = " + mmethodSignatureToTMethodSignature
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -326,9 +327,8 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TParameter tPrevParameter,
-			TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {// Create CSP
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -344,12 +344,12 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tPrevParameter", tPrevParameter);
-		isApplicableMatch.registerObject("tParameter", tParameter);
+		isApplicableMatch.registerObject("mmethodSignatureToTMethodSignature", mmethodSignatureToTMethodSignature);
 		isApplicableMatch.registerObject("mPrevEntry", mPrevEntry);
 		isApplicableMatch.registerObject("mEntry", mEntry);
+		isApplicableMatch.registerObject("tParameter", tParameter);
 		isApplicableMatch.registerObject("eSingleVariableDeclarationToTParameter",
 				eSingleVariableDeclarationToTParameter);
-		isApplicableMatch.registerObject("mmethodSignatureToTMethodSignature", mmethodSignatureToTMethodSignature);
 		return csp;
 	}
 
@@ -367,15 +367,15 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPrevParameter, EObject tParameter,
-			EObject mPrevEntry, EObject mEntry, EObject eSingleVariableDeclarationToTParameter,
-			EObject mmethodSignatureToTMethodSignature) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPrevParameter,
+			EObject mmethodSignatureToTMethodSignature, EObject mPrevEntry, EObject mEntry, EObject tParameter,
+			EObject eSingleVariableDeclarationToTParameter) {
 		ruleresult.registerObject("tPrevParameter", tPrevParameter);
-		ruleresult.registerObject("tParameter", tParameter);
+		ruleresult.registerObject("mmethodSignatureToTMethodSignature", mmethodSignatureToTMethodSignature);
 		ruleresult.registerObject("mPrevEntry", mPrevEntry);
 		ruleresult.registerObject("mEntry", mEntry);
+		ruleresult.registerObject("tParameter", tParameter);
 		ruleresult.registerObject("eSingleVariableDeclarationToTParameter", eSingleVariableDeclarationToTParameter);
-		ruleresult.registerObject("mmethodSignatureToTMethodSignature", mmethodSignatureToTMethodSignature);
 
 	}
 
@@ -462,11 +462,11 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		TParameter tPrevParameter = (TParameter) result1_bindingAndBlack[0];
-		TParameter tParameter = (TParameter) result1_bindingAndBlack[1];
+		MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result1_bindingAndBlack[1];
 		MEntry mPrevEntry = (MEntry) result1_bindingAndBlack[2];
 		MEntry mEntry = (MEntry) result1_bindingAndBlack[3];
-		MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result1_bindingAndBlack[4];
-		MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result1_bindingAndBlack[5];
+		TParameter tParameter = (TParameter) result1_bindingAndBlack[4];
+		MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		MethodParameterLinkImpl.pattern_MethodParameterLink_11_1_performtransformation_greenBB(mPrevEntry, mEntry);
 
@@ -479,27 +479,27 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 
 		Object[] result3_black = MethodParameterLinkImpl
 				.pattern_MethodParameterLink_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, tPrevParameter,
-						tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-						mmethodSignatureToTMethodSignature);
+						mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+						eSingleVariableDeclarationToTParameter);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tPrevParameter] = " + tPrevParameter + ", " + "[tParameter] = " + tParameter + ", "
-					+ "[mPrevEntry] = " + mPrevEntry + ", " + "[mEntry] = " + mEntry + ", "
-					+ "[eSingleVariableDeclarationToTParameter] = " + eSingleVariableDeclarationToTParameter + ", "
-					+ "[mmethodSignatureToTMethodSignature] = " + mmethodSignatureToTMethodSignature + ".");
+					+ ", " + "[tPrevParameter] = " + tPrevParameter + ", " + "[mmethodSignatureToTMethodSignature] = "
+					+ mmethodSignatureToTMethodSignature + ", " + "[mPrevEntry] = " + mPrevEntry + ", " + "[mEntry] = "
+					+ mEntry + ", " + "[tParameter] = " + tParameter + ", "
+					+ "[eSingleVariableDeclarationToTParameter] = " + eSingleVariableDeclarationToTParameter + ".");
 		}
 		MethodParameterLinkImpl.pattern_MethodParameterLink_11_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
-				tPrevParameter, tParameter, mPrevEntry, mEntry);
-		//nothing EMoflonEdge mPrevEntry__mEntry____mNext = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge mEntry__mPrevEntry____mPrevious = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge tPrevParameter__tParameter____next = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tParameter__tPrevParameter____previous = (EMoflonEdge) result3_green[8];
+				tPrevParameter, mPrevEntry, mEntry, tParameter);
+		//nothing EMoflonEdge tPrevParameter__tParameter____next = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge tParameter__tPrevParameter____previous = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mPrevEntry__mEntry____mNext = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mEntry__mPrevEntry____mPrevious = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		MethodParameterLinkImpl.pattern_MethodParameterLink_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-				tPrevParameter, tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-				mmethodSignatureToTMethodSignature);
+				tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+				eSingleVariableDeclarationToTParameter);
 		return MethodParameterLinkImpl.pattern_MethodParameterLink_11_6_expressionFB(ruleresult);
 	}
 
@@ -530,38 +530,39 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 		TParameter tPrevParameter = (TParameter) result2_binding[0];
 		TParameter tParameter = (TParameter) result2_binding[1];
 		for (Object[] result2_black : MethodParameterLinkImpl
-				.pattern_MethodParameterLink_12_2_corematch_blackBBFFFFB(tPrevParameter, tParameter, match)) {
+				.pattern_MethodParameterLink_12_2_corematch_blackBFFFBFB(tPrevParameter, tParameter, match)) {
+			MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result2_black[1];
 			MEntry mPrevEntry = (MEntry) result2_black[2];
 			MEntry mEntry = (MEntry) result2_black[3];
-			MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result2_black[4];
-			MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result2_black[5];
+			MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : MethodParameterLinkImpl
-					.pattern_MethodParameterLink_12_3_findcontext_blackBBBBBB(tPrevParameter, tParameter, mPrevEntry,
-							mEntry, eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature)) {
+					.pattern_MethodParameterLink_12_3_findcontext_blackBBBBBB(tPrevParameter,
+							mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+							eSingleVariableDeclarationToTParameter)) {
 				Object[] result3_green = MethodParameterLinkImpl
-						.pattern_MethodParameterLink_12_3_findcontext_greenBBBBBBFFFFFFF(tPrevParameter, tParameter,
-								mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-								mmethodSignatureToTMethodSignature);
+						.pattern_MethodParameterLink_12_3_findcontext_greenBBBBBBFFFFFFF(tPrevParameter,
+								mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+								eSingleVariableDeclarationToTParameter);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge tPrevParameter__tParameter____next = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge tParameter__tPrevParameter____previous = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge eSingleVariableDeclarationToTParameter__mEntry____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mmethodSignatureToTMethodSignature__tPrevParameter____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge tPrevParameter__tParameter____next = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tParameter__tPrevParameter____previous = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge mmethodSignatureToTMethodSignature__mPrevEntry____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge eSingleVariableDeclarationToTParameter__tParameter____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mmethodSignatureToTMethodSignature__tPrevParameter____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge eSingleVariableDeclarationToTParameter__mEntry____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge eSingleVariableDeclarationToTParameter__tParameter____target = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = MethodParameterLinkImpl
 						.pattern_MethodParameterLink_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								tPrevParameter, tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-								mmethodSignatureToTMethodSignature);
+								tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+								eSingleVariableDeclarationToTParameter);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tPrevParameter] = "
-							+ tPrevParameter + ", " + "[tParameter] = " + tParameter + ", " + "[mPrevEntry] = "
-							+ mPrevEntry + ", " + "[mEntry] = " + mEntry + ", "
+							+ tPrevParameter + ", " + "[mmethodSignatureToTMethodSignature] = "
+							+ mmethodSignatureToTMethodSignature + ", " + "[mPrevEntry] = " + mPrevEntry + ", "
+							+ "[mEntry] = " + mEntry + ", " + "[tParameter] = " + tParameter + ", "
 							+ "[eSingleVariableDeclarationToTParameter] = " + eSingleVariableDeclarationToTParameter
-							+ ", " + "[mmethodSignatureToTMethodSignature] = " + mmethodSignatureToTMethodSignature
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -633,9 +634,8 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TParameter tPrevParameter,
-			TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {// Create CSP
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -651,12 +651,12 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tPrevParameter", tPrevParameter);
-		isApplicableMatch.registerObject("tParameter", tParameter);
+		isApplicableMatch.registerObject("mmethodSignatureToTMethodSignature", mmethodSignatureToTMethodSignature);
 		isApplicableMatch.registerObject("mPrevEntry", mPrevEntry);
 		isApplicableMatch.registerObject("mEntry", mEntry);
+		isApplicableMatch.registerObject("tParameter", tParameter);
 		isApplicableMatch.registerObject("eSingleVariableDeclarationToTParameter",
 				eSingleVariableDeclarationToTParameter);
-		isApplicableMatch.registerObject("mmethodSignatureToTMethodSignature", mmethodSignatureToTMethodSignature);
 		return csp;
 	}
 
@@ -674,15 +674,15 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPrevParameter, EObject tParameter,
-			EObject mPrevEntry, EObject mEntry, EObject eSingleVariableDeclarationToTParameter,
-			EObject mmethodSignatureToTMethodSignature) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPrevParameter,
+			EObject mmethodSignatureToTMethodSignature, EObject mPrevEntry, EObject mEntry, EObject tParameter,
+			EObject eSingleVariableDeclarationToTParameter) {
 		ruleresult.registerObject("tPrevParameter", tPrevParameter);
-		ruleresult.registerObject("tParameter", tParameter);
+		ruleresult.registerObject("mmethodSignatureToTMethodSignature", mmethodSignatureToTMethodSignature);
 		ruleresult.registerObject("mPrevEntry", mPrevEntry);
 		ruleresult.registerObject("mEntry", mEntry);
+		ruleresult.registerObject("tParameter", tParameter);
 		ruleresult.registerObject("eSingleVariableDeclarationToTParameter", eSingleVariableDeclarationToTParameter);
-		ruleresult.registerObject("mmethodSignatureToTMethodSignature", mmethodSignatureToTMethodSignature);
 
 	}
 
@@ -700,7 +700,7 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_26(EMoflonEdge _edge_next) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_3(EMoflonEdge _edge_next) {
 
 		Object[] result1_bindingAndBlack = MethodParameterLinkImpl
 				.pattern_MethodParameterLink_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -757,7 +757,7 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_27(EMoflonEdge _edge_mNext) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_4(EMoflonEdge _edge_mNext) {
 
 		Object[] result1_bindingAndBlack = MethodParameterLinkImpl
 				.pattern_MethodParameterLink_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -890,17 +890,17 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		TParameter tPrevParameter = (TParameter) result2_bindingAndBlack[0];
-		TParameter tParameter = (TParameter) result2_bindingAndBlack[1];
-		MEntry mPrevEntry = (MEntry) result2_bindingAndBlack[2];
-		MEntry mEntry = (MEntry) result2_bindingAndBlack[3];
+		MEntry mPrevEntry = (MEntry) result2_bindingAndBlack[1];
+		MEntry mEntry = (MEntry) result2_bindingAndBlack[2];
+		TParameter tParameter = (TParameter) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = MethodParameterLinkImpl
-				.pattern_MethodParameterLink_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, tPrevParameter, tParameter,
-						mPrevEntry, mEntry, sourceMatch, targetMatch);
+				.pattern_MethodParameterLink_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, tPrevParameter, mPrevEntry,
+						mEntry, tParameter, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tPrevParameter] = " + tPrevParameter + ", " + "[tParameter] = " + tParameter + ", "
-					+ "[mPrevEntry] = " + mPrevEntry + ", " + "[mEntry] = " + mEntry + ", " + "[sourceMatch] = "
+					+ "[tPrevParameter] = " + tPrevParameter + ", " + "[mPrevEntry] = " + mPrevEntry + ", "
+					+ "[mEntry] = " + mEntry + ", " + "[tParameter] = " + tParameter + ", " + "[sourceMatch] = "
 					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -908,23 +908,23 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 		if (MethodParameterLinkImpl.pattern_MethodParameterLink_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : MethodParameterLinkImpl
-					.pattern_MethodParameterLink_24_5_matchcorrcontext_blackBBBBFFBB(tPrevParameter, tParameter,
-							mPrevEntry, mEntry, sourceMatch, targetMatch)) {
-				MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result5_black[4];
-				MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result5_black[5];
+					.pattern_MethodParameterLink_24_5_matchcorrcontext_blackBFBBBFBB(tPrevParameter, mPrevEntry, mEntry,
+							tParameter, sourceMatch, targetMatch)) {
+				MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result5_black[1];
+				MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result5_black[5];
 				Object[] result5_green = MethodParameterLinkImpl
 						.pattern_MethodParameterLink_24_5_matchcorrcontext_greenBBBBF(
-								eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature, sourceMatch,
+								mmethodSignatureToTMethodSignature, eSingleVariableDeclarationToTParameter, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = MethodParameterLinkImpl
-						.pattern_MethodParameterLink_24_6_createcorrespondence_blackBBBBB(tPrevParameter, tParameter,
-								mPrevEntry, mEntry, ccMatch);
+						.pattern_MethodParameterLink_24_6_createcorrespondence_blackBBBBB(tPrevParameter, mPrevEntry,
+								mEntry, tParameter, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tPrevParameter] = "
-							+ tPrevParameter + ", " + "[tParameter] = " + tParameter + ", " + "[mPrevEntry] = "
-							+ mPrevEntry + ", " + "[mEntry] = " + mEntry + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ tPrevParameter + ", " + "[mPrevEntry] = " + mPrevEntry + ", " + "[mEntry] = " + mEntry
+							+ ", " + "[tParameter] = " + tParameter + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = MethodParameterLinkImpl
@@ -947,8 +947,8 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry,
-			MEntry mEntry, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TParameter tPrevParameter, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1029,45 +1029,45 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 			MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result2_black[2];
 			MEntry mPrevEntry = (MEntry) result2_black[3];
 			//nothing RuleEntryList eSingleVariableDeclarationToTParameterList = (RuleEntryList) result2_black[4];
-			TParameter tParameter = (TParameter) result2_black[5];
+			MEntry mEntry = (MEntry) result2_black[5];
 			MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result2_black[6];
-			MEntry mEntry = (MEntry) result2_black[7];
+			TParameter tParameter = (TParameter) result2_black[7];
 
 			Object[] result3_bindingAndBlack = MethodParameterLinkImpl
 					.pattern_MethodParameterLink_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							tPrevParameter, tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-							mmethodSignatureToTMethodSignature, ruleResult);
+							tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+							eSingleVariableDeclarationToTParameter, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tPrevParameter] = " + tPrevParameter
-						+ ", " + "[tParameter] = " + tParameter + ", " + "[mPrevEntry] = " + mPrevEntry + ", "
-						+ "[mEntry] = " + mEntry + ", " + "[eSingleVariableDeclarationToTParameter] = "
-						+ eSingleVariableDeclarationToTParameter + ", " + "[mmethodSignatureToTMethodSignature] = "
-						+ mmethodSignatureToTMethodSignature + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ ", " + "[mmethodSignatureToTMethodSignature] = " + mmethodSignatureToTMethodSignature + ", "
+						+ "[mPrevEntry] = " + mPrevEntry + ", " + "[mEntry] = " + mEntry + ", " + "[tParameter] = "
+						+ tParameter + ", " + "[eSingleVariableDeclarationToTParameter] = "
+						+ eSingleVariableDeclarationToTParameter + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (MethodParameterLinkImpl.pattern_MethodParameterLink_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = MethodParameterLinkImpl.pattern_MethodParameterLink_29_5_checknacs_blackBBBBBB(
-						tPrevParameter, tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-						mmethodSignatureToTMethodSignature);
+						tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+						eSingleVariableDeclarationToTParameter);
 				if (result5_black != null) {
 
 					Object[] result6_black = MethodParameterLinkImpl
-							.pattern_MethodParameterLink_29_6_perform_blackBBBBBBB(tPrevParameter, tParameter,
-									mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-									mmethodSignatureToTMethodSignature, ruleResult);
+							.pattern_MethodParameterLink_29_6_perform_blackBBBBBBB(tPrevParameter,
+									mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+									eSingleVariableDeclarationToTParameter, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tPrevParameter] = "
-								+ tPrevParameter + ", " + "[tParameter] = " + tParameter + ", " + "[mPrevEntry] = "
-								+ mPrevEntry + ", " + "[mEntry] = " + mEntry + ", "
+								+ tPrevParameter + ", " + "[mmethodSignatureToTMethodSignature] = "
+								+ mmethodSignatureToTMethodSignature + ", " + "[mPrevEntry] = " + mPrevEntry + ", "
+								+ "[mEntry] = " + mEntry + ", " + "[tParameter] = " + tParameter + ", "
 								+ "[eSingleVariableDeclarationToTParameter] = " + eSingleVariableDeclarationToTParameter
-								+ ", " + "[mmethodSignatureToTMethodSignature] = " + mmethodSignatureToTMethodSignature
 								+ ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					MethodParameterLinkImpl.pattern_MethodParameterLink_29_6_perform_greenBBBBB(tPrevParameter,
-							tParameter, mPrevEntry, mEntry, ruleResult);
+							mPrevEntry, mEntry, tParameter, ruleResult);
 
 				} else {
 				}
@@ -1085,9 +1085,9 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TParameter tPrevParameter,
-			TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature, ModelgeneratorRuleResult ruleResult) {// Create CSP
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1103,12 +1103,12 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tPrevParameter", tPrevParameter);
-		isApplicableMatch.registerObject("tParameter", tParameter);
+		isApplicableMatch.registerObject("mmethodSignatureToTMethodSignature", mmethodSignatureToTMethodSignature);
 		isApplicableMatch.registerObject("mPrevEntry", mPrevEntry);
 		isApplicableMatch.registerObject("mEntry", mEntry);
+		isApplicableMatch.registerObject("tParameter", tParameter);
 		isApplicableMatch.registerObject("eSingleVariableDeclarationToTParameter",
 				eSingleVariableDeclarationToTParameter);
-		isApplicableMatch.registerObject("mmethodSignatureToTMethodSignature", mmethodSignatureToTMethodSignature);
 		return csp;
 	}
 
@@ -1143,10 +1143,10 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 					(MEntry) arguments.get(2));
 		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TPARAMETER_TPARAMETER_MENTRY_MENTRY_MENTRYTOTPARAMETER_MENTRYTOTPARAMETER:
+		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TPARAMETER_MENTRYTOTPARAMETER_MENTRY_MENTRY_TPARAMETER_MENTRYTOTPARAMETER:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TParameter) arguments.get(1),
-					(TParameter) arguments.get(2), (MEntry) arguments.get(3), (MEntry) arguments.get(4),
-					(MEntryToTParameter) arguments.get(5), (MEntryToTParameter) arguments.get(6));
+					(MEntryToTParameter) arguments.get(2), (MEntry) arguments.get(3), (MEntry) arguments.get(4),
+					(TParameter) arguments.get(5), (MEntryToTParameter) arguments.get(6));
 		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_LINK___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1172,10 +1172,10 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 					(TParameter) arguments.get(2));
 		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TPARAMETER_TPARAMETER_MENTRY_MENTRY_MENTRYTOTPARAMETER_MENTRYTOTPARAMETER:
+		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TPARAMETER_MENTRYTOTPARAMETER_MENTRY_MENTRY_TPARAMETER_MENTRYTOTPARAMETER:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TParameter) arguments.get(1),
-					(TParameter) arguments.get(2), (MEntry) arguments.get(3), (MEntry) arguments.get(4),
-					(MEntryToTParameter) arguments.get(5), (MEntryToTParameter) arguments.get(6));
+					(MEntryToTParameter) arguments.get(2), (MEntry) arguments.get(3), (MEntry) arguments.get(4),
+					(TParameter) arguments.get(5), (MEntryToTParameter) arguments.get(6));
 		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_LINK___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1185,19 +1185,19 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 			return null;
 		case RulesPackage.METHOD_PARAMETER_LINK___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPROPRIATE_BWD_EMOFLON_EDGE_26__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_26((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPROPRIATE_FWD_EMOFLON_EDGE_27__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_27((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPROPRIATE_BWD_EMOFLON_EDGE_3__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_3((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPROPRIATE_FWD_EMOFLON_EDGE_4__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_4((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_LINK___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_LINK___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPLICABLE_SOLVE_CSP_CC__TPARAMETER_TPARAMETER_MENTRY_MENTRY_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TParameter) arguments.get(0), (TParameter) arguments.get(1),
-					(MEntry) arguments.get(2), (MEntry) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPLICABLE_SOLVE_CSP_CC__TPARAMETER_MENTRY_MENTRY_TPARAMETER_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TParameter) arguments.get(0), (MEntry) arguments.get(1),
+					(MEntry) arguments.get(2), (TParameter) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1208,10 +1208,10 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 		case RulesPackage.METHOD_PARAMETER_LINK___GENERATE_MODEL__RULEENTRYCONTAINER_MENTRYTOTPARAMETER_MENTRYTOTPARAMETER:
 			return generateModel((RuleEntryContainer) arguments.get(0), (MEntryToTParameter) arguments.get(1),
 					(MEntryToTParameter) arguments.get(2));
-		case RulesPackage.METHOD_PARAMETER_LINK___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TPARAMETER_TPARAMETER_MENTRY_MENTRY_MENTRYTOTPARAMETER_MENTRYTOTPARAMETER_MODELGENERATORRULERESULT:
+		case RulesPackage.METHOD_PARAMETER_LINK___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TPARAMETER_MENTRYTOTPARAMETER_MENTRY_MENTRY_TPARAMETER_MENTRYTOTPARAMETER_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TParameter) arguments.get(1),
-					(TParameter) arguments.get(2), (MEntry) arguments.get(3), (MEntry) arguments.get(4),
-					(MEntryToTParameter) arguments.get(5), (MEntryToTParameter) arguments.get(6),
+					(MEntryToTParameter) arguments.get(2), (MEntry) arguments.get(3), (MEntry) arguments.get(4),
+					(TParameter) arguments.get(5), (MEntryToTParameter) arguments.get(6),
 					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.METHOD_PARAMETER_LINK___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1324,32 +1324,31 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	public static final Object[] pattern_MethodParameterLink_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("tPrevParameter");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tParameter");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mmethodSignatureToTMethodSignature");
 		EObject _localVariable_2 = isApplicableMatch.getObject("mPrevEntry");
 		EObject _localVariable_3 = isApplicableMatch.getObject("mEntry");
-		EObject _localVariable_4 = isApplicableMatch.getObject("eSingleVariableDeclarationToTParameter");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mmethodSignatureToTMethodSignature");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tParameter");
+		EObject _localVariable_5 = isApplicableMatch.getObject("eSingleVariableDeclarationToTParameter");
 		EObject tmpTPrevParameter = _localVariable_0;
-		EObject tmpTParameter = _localVariable_1;
+		EObject tmpMmethodSignatureToTMethodSignature = _localVariable_1;
 		EObject tmpMPrevEntry = _localVariable_2;
 		EObject tmpMEntry = _localVariable_3;
-		EObject tmpESingleVariableDeclarationToTParameter = _localVariable_4;
-		EObject tmpMmethodSignatureToTMethodSignature = _localVariable_5;
+		EObject tmpTParameter = _localVariable_4;
+		EObject tmpESingleVariableDeclarationToTParameter = _localVariable_5;
 		if (tmpTPrevParameter instanceof TParameter) {
 			TParameter tPrevParameter = (TParameter) tmpTPrevParameter;
-			if (tmpTParameter instanceof TParameter) {
-				TParameter tParameter = (TParameter) tmpTParameter;
+			if (tmpMmethodSignatureToTMethodSignature instanceof MEntryToTParameter) {
+				MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) tmpMmethodSignatureToTMethodSignature;
 				if (tmpMPrevEntry instanceof MEntry) {
 					MEntry mPrevEntry = (MEntry) tmpMPrevEntry;
 					if (tmpMEntry instanceof MEntry) {
 						MEntry mEntry = (MEntry) tmpMEntry;
-						if (tmpESingleVariableDeclarationToTParameter instanceof MEntryToTParameter) {
-							MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) tmpESingleVariableDeclarationToTParameter;
-							if (tmpMmethodSignatureToTMethodSignature instanceof MEntryToTParameter) {
-								MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) tmpMmethodSignatureToTMethodSignature;
-								return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-										eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature,
-										isApplicableMatch };
+						if (tmpTParameter instanceof TParameter) {
+							TParameter tParameter = (TParameter) tmpTParameter;
+							if (tmpESingleVariableDeclarationToTParameter instanceof MEntryToTParameter) {
+								MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) tmpESingleVariableDeclarationToTParameter;
+								return new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry,
+										mEntry, tParameter, eSingleVariableDeclarationToTParameter, isApplicableMatch };
 							}
 						}
 					}
@@ -1360,19 +1359,18 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_1_1_performtransformation_blackBBBBBBFBB(
-			TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature, MethodParameterLink _this,
-			IsApplicableMatch isApplicableMatch) {
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mEntry.equals(mPrevEntry)) {
+			TParameter tPrevParameter, MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry,
+			MEntry mEntry, TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter,
+			MethodParameterLink _this, IsApplicableMatch isApplicableMatch) {
+		if (!mEntry.equals(mPrevEntry)) {
+			if (!tParameter.equals(tPrevParameter)) {
 				if (!eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-									eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature, csp,
-									_this, isApplicableMatch };
+							return new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry,
+									mEntry, tParameter, eSingleVariableDeclarationToTParameter, csp, _this,
+									isApplicableMatch };
 						}
 					}
 				}
@@ -1387,21 +1385,20 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 				isApplicableMatch);
 		if (result_pattern_MethodParameterLink_1_1_performtransformation_binding != null) {
 			TParameter tPrevParameter = (TParameter) result_pattern_MethodParameterLink_1_1_performtransformation_binding[0];
-			TParameter tParameter = (TParameter) result_pattern_MethodParameterLink_1_1_performtransformation_binding[1];
+			MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result_pattern_MethodParameterLink_1_1_performtransformation_binding[1];
 			MEntry mPrevEntry = (MEntry) result_pattern_MethodParameterLink_1_1_performtransformation_binding[2];
 			MEntry mEntry = (MEntry) result_pattern_MethodParameterLink_1_1_performtransformation_binding[3];
-			MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result_pattern_MethodParameterLink_1_1_performtransformation_binding[4];
-			MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result_pattern_MethodParameterLink_1_1_performtransformation_binding[5];
+			TParameter tParameter = (TParameter) result_pattern_MethodParameterLink_1_1_performtransformation_binding[4];
+			MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result_pattern_MethodParameterLink_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_MethodParameterLink_1_1_performtransformation_black = pattern_MethodParameterLink_1_1_performtransformation_blackBBBBBBFBB(
-					tPrevParameter, tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-					mmethodSignatureToTMethodSignature, _this, isApplicableMatch);
+					tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+					eSingleVariableDeclarationToTParameter, _this, isApplicableMatch);
 			if (result_pattern_MethodParameterLink_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodParameterLink_1_1_performtransformation_black[6];
 
-				return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-						eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature, csp, _this,
-						isApplicableMatch };
+				return new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry,
+						tParameter, eSingleVariableDeclarationToTParameter, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1419,31 +1416,31 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject tPrevParameter, EObject tParameter, EObject mPrevEntry,
-			EObject mEntry, EObject eSingleVariableDeclarationToTParameter,
-			EObject mmethodSignatureToTMethodSignature) {
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mPrevEntry.equals(tPrevParameter)) {
-				if (!mPrevEntry.equals(tParameter)) {
+			PerformRuleResult ruleresult, EObject tPrevParameter, EObject mmethodSignatureToTMethodSignature,
+			EObject mPrevEntry, EObject mEntry, EObject tParameter, EObject eSingleVariableDeclarationToTParameter) {
+		if (!mmethodSignatureToTMethodSignature.equals(tPrevParameter)) {
+			if (!mmethodSignatureToTMethodSignature.equals(tParameter)) {
+				if (!mPrevEntry.equals(tPrevParameter)) {
 					if (!mPrevEntry.equals(mmethodSignatureToTMethodSignature)) {
-						if (!mEntry.equals(tPrevParameter)) {
-							if (!mEntry.equals(tParameter)) {
-								if (!mEntry.equals(mPrevEntry)) {
-									if (!mEntry.equals(mmethodSignatureToTMethodSignature)) {
-										if (!eSingleVariableDeclarationToTParameter.equals(tPrevParameter)) {
-											if (!eSingleVariableDeclarationToTParameter.equals(tParameter)) {
-												if (!eSingleVariableDeclarationToTParameter.equals(mPrevEntry)) {
-													if (!eSingleVariableDeclarationToTParameter.equals(mEntry)) {
+						if (!mPrevEntry.equals(tParameter)) {
+							if (!mEntry.equals(tPrevParameter)) {
+								if (!mEntry.equals(mmethodSignatureToTMethodSignature)) {
+									if (!mEntry.equals(mPrevEntry)) {
+										if (!mEntry.equals(tParameter)) {
+											if (!tParameter.equals(tPrevParameter)) {
+												if (!eSingleVariableDeclarationToTParameter.equals(tPrevParameter)) {
+													if (!eSingleVariableDeclarationToTParameter
+															.equals(mmethodSignatureToTMethodSignature)) {
 														if (!eSingleVariableDeclarationToTParameter
-																.equals(mmethodSignatureToTMethodSignature)) {
-															if (!mmethodSignatureToTMethodSignature
-																	.equals(tPrevParameter)) {
-																if (!mmethodSignatureToTMethodSignature
+																.equals(mPrevEntry)) {
+															if (!eSingleVariableDeclarationToTParameter
+																	.equals(mEntry)) {
+																if (!eSingleVariableDeclarationToTParameter
 																		.equals(tParameter)) {
 																	return new Object[] { ruleresult, tPrevParameter,
-																			tParameter, mPrevEntry, mEntry,
-																			eSingleVariableDeclarationToTParameter,
-																			mmethodSignatureToTMethodSignature };
+																			mmethodSignatureToTMethodSignature,
+																			mPrevEntry, mEntry, tParameter,
+																			eSingleVariableDeclarationToTParameter };
 																}
 															}
 														}
@@ -1463,45 +1460,45 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject tPrevParameter, EObject tParameter, EObject mPrevEntry,
-			EObject mEntry) {
-		EMoflonEdge mPrevEntry__mEntry____mNext = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mEntry__mPrevEntry____mPrevious = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject tPrevParameter, EObject mPrevEntry, EObject mEntry,
+			EObject tParameter) {
 		EMoflonEdge tPrevParameter__tParameter____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tParameter__tPrevParameter____previous = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mPrevEntry__mEntry____mNext = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mEntry__mPrevEntry____mPrevious = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodParameterLink";
-		String mPrevEntry__mEntry____mNext_name_prime = "mNext";
-		String mEntry__mPrevEntry____mPrevious_name_prime = "mPrevious";
 		String tPrevParameter__tParameter____next_name_prime = "next";
 		String tParameter__tPrevParameter____previous_name_prime = "previous";
-		mPrevEntry__mEntry____mNext.setSrc(mPrevEntry);
-		mPrevEntry__mEntry____mNext.setTrg(mEntry);
-		ruleresult.getTranslatedEdges().add(mPrevEntry__mEntry____mNext);
-		mEntry__mPrevEntry____mPrevious.setSrc(mEntry);
-		mEntry__mPrevEntry____mPrevious.setTrg(mPrevEntry);
-		ruleresult.getTranslatedEdges().add(mEntry__mPrevEntry____mPrevious);
+		String mPrevEntry__mEntry____mNext_name_prime = "mNext";
+		String mEntry__mPrevEntry____mPrevious_name_prime = "mPrevious";
 		tPrevParameter__tParameter____next.setSrc(tPrevParameter);
 		tPrevParameter__tParameter____next.setTrg(tParameter);
 		ruleresult.getCreatedEdges().add(tPrevParameter__tParameter____next);
 		tParameter__tPrevParameter____previous.setSrc(tParameter);
 		tParameter__tPrevParameter____previous.setTrg(tPrevParameter);
 		ruleresult.getCreatedEdges().add(tParameter__tPrevParameter____previous);
+		mPrevEntry__mEntry____mNext.setSrc(mPrevEntry);
+		mPrevEntry__mEntry____mNext.setTrg(mEntry);
+		ruleresult.getTranslatedEdges().add(mPrevEntry__mEntry____mNext);
+		mEntry__mPrevEntry____mPrevious.setSrc(mEntry);
+		mEntry__mPrevEntry____mPrevious.setTrg(mPrevEntry);
+		ruleresult.getTranslatedEdges().add(mEntry__mPrevEntry____mPrevious);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mPrevEntry__mEntry____mNext.setName(mPrevEntry__mEntry____mNext_name_prime);
-		mEntry__mPrevEntry____mPrevious.setName(mEntry__mPrevEntry____mPrevious_name_prime);
 		tPrevParameter__tParameter____next.setName(tPrevParameter__tParameter____next_name_prime);
 		tParameter__tPrevParameter____previous.setName(tParameter__tPrevParameter____previous_name_prime);
-		return new Object[] { ruleresult, tPrevParameter, tParameter, mPrevEntry, mEntry, mPrevEntry__mEntry____mNext,
-				mEntry__mPrevEntry____mPrevious, tPrevParameter__tParameter____next,
-				tParameter__tPrevParameter____previous };
+		mPrevEntry__mEntry____mNext.setName(mPrevEntry__mEntry____mNext_name_prime);
+		mEntry__mPrevEntry____mPrevious.setName(mEntry__mPrevEntry____mPrevious_name_prime);
+		return new Object[] { ruleresult, tPrevParameter, mPrevEntry, mEntry, tParameter,
+				tPrevParameter__tParameter____next, tParameter__tPrevParameter____previous, mPrevEntry__mEntry____mNext,
+				mEntry__mPrevEntry____mPrevious };
 	}
 
 	public static final void pattern_MethodParameterLink_1_5_registerobjects_expressionBBBBBBBB(
-			MethodParameterLink _this, PerformRuleResult ruleresult, EObject tPrevParameter, EObject tParameter,
-			EObject mPrevEntry, EObject mEntry, EObject eSingleVariableDeclarationToTParameter,
-			EObject mmethodSignatureToTMethodSignature) {
-		_this.registerObjects_FWD(ruleresult, tPrevParameter, tParameter, mPrevEntry, mEntry,
-				eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature);
+			MethodParameterLink _this, PerformRuleResult ruleresult, EObject tPrevParameter,
+			EObject mmethodSignatureToTMethodSignature, EObject mPrevEntry, EObject mEntry, EObject tParameter,
+			EObject eSingleVariableDeclarationToTParameter) {
+		_this.registerObjects_FWD(ruleresult, tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry,
+				tParameter, eSingleVariableDeclarationToTParameter);
 
 	}
 
@@ -1580,18 +1577,18 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 			MEntry mEntry, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mEntry.equals(mPrevEntry)) {
-			for (MEntryToTParameter eSingleVariableDeclarationToTParameter : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(mEntry, MEntryToTParameter.class, "source")) {
-				TParameter tParameter = eSingleVariableDeclarationToTParameter.getTarget();
-				if (tParameter != null) {
-					for (MEntryToTParameter mmethodSignatureToTMethodSignature : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mPrevEntry, MEntryToTParameter.class, "source")) {
+			for (MEntryToTParameter mmethodSignatureToTMethodSignature : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(mPrevEntry, MEntryToTParameter.class, "source")) {
+				TParameter tPrevParameter = mmethodSignatureToTMethodSignature.getTarget();
+				if (tPrevParameter != null) {
+					for (MEntryToTParameter eSingleVariableDeclarationToTParameter : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(mEntry, MEntryToTParameter.class, "source")) {
 						if (!eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature)) {
-							TParameter tPrevParameter = mmethodSignatureToTMethodSignature.getTarget();
-							if (tPrevParameter != null) {
+							TParameter tParameter = eSingleVariableDeclarationToTParameter.getTarget();
+							if (tParameter != null) {
 								if (!tParameter.equals(tPrevParameter)) {
-									_result.add(new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-											eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature,
+									_result.add(new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature,
+											mPrevEntry, mEntry, tParameter, eSingleVariableDeclarationToTParameter,
 											match });
 								}
 							}
@@ -1606,21 +1603,20 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Iterable<Object[]> pattern_MethodParameterLink_2_3_findcontext_blackBBBBBB(
-			TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {
+			TParameter tPrevParameter, MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry,
+			MEntry mEntry, TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mEntry.equals(mPrevEntry)) {
+		if (!mEntry.equals(mPrevEntry)) {
+			if (!tParameter.equals(tPrevParameter)) {
 				if (!eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature)) {
-					if (mEntry.equals(mPrevEntry.getMNext())) {
-						if (mEntry.equals(eSingleVariableDeclarationToTParameter.getSource())) {
+					if (tPrevParameter.equals(mmethodSignatureToTMethodSignature.getTarget())) {
+						if (mEntry.equals(mPrevEntry.getMNext())) {
 							if (mPrevEntry.equals(mmethodSignatureToTMethodSignature.getSource())) {
-								if (tParameter.equals(eSingleVariableDeclarationToTParameter.getTarget())) {
-									if (tPrevParameter.equals(mmethodSignatureToTMethodSignature.getTarget())) {
-										_result.add(new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-												eSingleVariableDeclarationToTParameter,
-												mmethodSignatureToTMethodSignature });
+								if (mEntry.equals(eSingleVariableDeclarationToTParameter.getSource())) {
+									if (tParameter.equals(eSingleVariableDeclarationToTParameter.getTarget())) {
+										_result.add(new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature,
+												mPrevEntry, mEntry, tParameter,
+												eSingleVariableDeclarationToTParameter });
 									}
 								}
 							}
@@ -1633,78 +1629,78 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_2_3_findcontext_greenBBBBBBFFFFFFF(
-			TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {
+			TParameter tPrevParameter, MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry,
+			MEntry mEntry, TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge mmethodSignatureToTMethodSignature__tPrevParameter____target = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
 		EMoflonEdge mPrevEntry__mEntry____mNext = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mEntry__mPrevEntry____mPrevious = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eSingleVariableDeclarationToTParameter__mEntry____source = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
 		EMoflonEdge mmethodSignatureToTMethodSignature__mPrevEntry____source = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
+		EMoflonEdge eSingleVariableDeclarationToTParameter__mEntry____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge eSingleVariableDeclarationToTParameter__tParameter____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge mmethodSignatureToTMethodSignature__tPrevParameter____target = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
+		String mmethodSignatureToTMethodSignature__tPrevParameter____target_name_prime = "target";
 		String mPrevEntry__mEntry____mNext_name_prime = "mNext";
 		String mEntry__mPrevEntry____mPrevious_name_prime = "mPrevious";
-		String eSingleVariableDeclarationToTParameter__mEntry____source_name_prime = "source";
 		String mmethodSignatureToTMethodSignature__mPrevEntry____source_name_prime = "source";
+		String eSingleVariableDeclarationToTParameter__mEntry____source_name_prime = "source";
 		String eSingleVariableDeclarationToTParameter__tParameter____target_name_prime = "target";
-		String mmethodSignatureToTMethodSignature__tPrevParameter____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(tPrevParameter);
-		isApplicableMatch.getAllContextElements().add(tParameter);
+		isApplicableMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature);
 		isApplicableMatch.getAllContextElements().add(mPrevEntry);
 		isApplicableMatch.getAllContextElements().add(mEntry);
+		isApplicableMatch.getAllContextElements().add(tParameter);
 		isApplicableMatch.getAllContextElements().add(eSingleVariableDeclarationToTParameter);
-		isApplicableMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature);
+		mmethodSignatureToTMethodSignature__tPrevParameter____target.setSrc(mmethodSignatureToTMethodSignature);
+		mmethodSignatureToTMethodSignature__tPrevParameter____target.setTrg(tPrevParameter);
+		isApplicableMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature__tPrevParameter____target);
 		mPrevEntry__mEntry____mNext.setSrc(mPrevEntry);
 		mPrevEntry__mEntry____mNext.setTrg(mEntry);
 		isApplicableMatch.getAllContextElements().add(mPrevEntry__mEntry____mNext);
 		mEntry__mPrevEntry____mPrevious.setSrc(mEntry);
 		mEntry__mPrevEntry____mPrevious.setTrg(mPrevEntry);
 		isApplicableMatch.getAllContextElements().add(mEntry__mPrevEntry____mPrevious);
-		eSingleVariableDeclarationToTParameter__mEntry____source.setSrc(eSingleVariableDeclarationToTParameter);
-		eSingleVariableDeclarationToTParameter__mEntry____source.setTrg(mEntry);
-		isApplicableMatch.getAllContextElements().add(eSingleVariableDeclarationToTParameter__mEntry____source);
 		mmethodSignatureToTMethodSignature__mPrevEntry____source.setSrc(mmethodSignatureToTMethodSignature);
 		mmethodSignatureToTMethodSignature__mPrevEntry____source.setTrg(mPrevEntry);
 		isApplicableMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature__mPrevEntry____source);
+		eSingleVariableDeclarationToTParameter__mEntry____source.setSrc(eSingleVariableDeclarationToTParameter);
+		eSingleVariableDeclarationToTParameter__mEntry____source.setTrg(mEntry);
+		isApplicableMatch.getAllContextElements().add(eSingleVariableDeclarationToTParameter__mEntry____source);
 		eSingleVariableDeclarationToTParameter__tParameter____target.setSrc(eSingleVariableDeclarationToTParameter);
 		eSingleVariableDeclarationToTParameter__tParameter____target.setTrg(tParameter);
 		isApplicableMatch.getAllContextElements().add(eSingleVariableDeclarationToTParameter__tParameter____target);
-		mmethodSignatureToTMethodSignature__tPrevParameter____target.setSrc(mmethodSignatureToTMethodSignature);
-		mmethodSignatureToTMethodSignature__tPrevParameter____target.setTrg(tPrevParameter);
-		isApplicableMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature__tPrevParameter____target);
-		mPrevEntry__mEntry____mNext.setName(mPrevEntry__mEntry____mNext_name_prime);
-		mEntry__mPrevEntry____mPrevious.setName(mEntry__mPrevEntry____mPrevious_name_prime);
-		eSingleVariableDeclarationToTParameter__mEntry____source
-				.setName(eSingleVariableDeclarationToTParameter__mEntry____source_name_prime);
-		mmethodSignatureToTMethodSignature__mPrevEntry____source
-				.setName(mmethodSignatureToTMethodSignature__mPrevEntry____source_name_prime);
-		eSingleVariableDeclarationToTParameter__tParameter____target
-				.setName(eSingleVariableDeclarationToTParameter__tParameter____target_name_prime);
 		mmethodSignatureToTMethodSignature__tPrevParameter____target
 				.setName(mmethodSignatureToTMethodSignature__tPrevParameter____target_name_prime);
-		return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-				mmethodSignatureToTMethodSignature, isApplicableMatch, mPrevEntry__mEntry____mNext,
-				mEntry__mPrevEntry____mPrevious, eSingleVariableDeclarationToTParameter__mEntry____source,
-				mmethodSignatureToTMethodSignature__mPrevEntry____source,
-				eSingleVariableDeclarationToTParameter__tParameter____target,
-				mmethodSignatureToTMethodSignature__tPrevParameter____target };
+		mPrevEntry__mEntry____mNext.setName(mPrevEntry__mEntry____mNext_name_prime);
+		mEntry__mPrevEntry____mPrevious.setName(mEntry__mPrevEntry____mPrevious_name_prime);
+		mmethodSignatureToTMethodSignature__mPrevEntry____source
+				.setName(mmethodSignatureToTMethodSignature__mPrevEntry____source_name_prime);
+		eSingleVariableDeclarationToTParameter__mEntry____source
+				.setName(eSingleVariableDeclarationToTParameter__mEntry____source_name_prime);
+		eSingleVariableDeclarationToTParameter__tParameter____target
+				.setName(eSingleVariableDeclarationToTParameter__tParameter____target_name_prime);
+		return new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+				eSingleVariableDeclarationToTParameter, isApplicableMatch,
+				mmethodSignatureToTMethodSignature__tPrevParameter____target, mPrevEntry__mEntry____mNext,
+				mEntry__mPrevEntry____mPrevious, mmethodSignatureToTMethodSignature__mPrevEntry____source,
+				eSingleVariableDeclarationToTParameter__mEntry____source,
+				eSingleVariableDeclarationToTParameter__tParameter____target };
 	}
 
 	public static final Object[] pattern_MethodParameterLink_2_4_solveCSP_bindingFBBBBBBBB(MethodParameterLink _this,
-			IsApplicableMatch isApplicableMatch, TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry,
-			MEntry mEntry, MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tPrevParameter, tParameter,
-				mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature);
+			IsApplicableMatch isApplicableMatch, TParameter tPrevParameter,
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tPrevParameter,
+				mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+				eSingleVariableDeclarationToTParameter);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, tParameter, mPrevEntry, mEntry,
-					eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature };
+			return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, mmethodSignatureToTMethodSignature,
+					mPrevEntry, mEntry, tParameter, eSingleVariableDeclarationToTParameter };
 		}
 		return null;
 	}
@@ -1715,12 +1711,11 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 
 	public static final Object[] pattern_MethodParameterLink_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			MethodParameterLink _this, IsApplicableMatch isApplicableMatch, TParameter tPrevParameter,
-			TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {
 		Object[] result_pattern_MethodParameterLink_2_4_solveCSP_binding = pattern_MethodParameterLink_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, tPrevParameter, tParameter, mPrevEntry, mEntry,
-				eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature);
+				_this, isApplicableMatch, tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry,
+				tParameter, eSingleVariableDeclarationToTParameter);
 		if (result_pattern_MethodParameterLink_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodParameterLink_2_4_solveCSP_binding[0];
 
@@ -1728,8 +1723,8 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 					csp);
 			if (result_pattern_MethodParameterLink_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, tParameter, mPrevEntry, mEntry,
-						eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature };
+				return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, mmethodSignatureToTMethodSignature,
+						mPrevEntry, mEntry, tParameter, eSingleVariableDeclarationToTParameter };
 			}
 		}
 		return null;
@@ -1869,32 +1864,31 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	public static final Object[] pattern_MethodParameterLink_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("tPrevParameter");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tParameter");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mmethodSignatureToTMethodSignature");
 		EObject _localVariable_2 = isApplicableMatch.getObject("mPrevEntry");
 		EObject _localVariable_3 = isApplicableMatch.getObject("mEntry");
-		EObject _localVariable_4 = isApplicableMatch.getObject("eSingleVariableDeclarationToTParameter");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mmethodSignatureToTMethodSignature");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tParameter");
+		EObject _localVariable_5 = isApplicableMatch.getObject("eSingleVariableDeclarationToTParameter");
 		EObject tmpTPrevParameter = _localVariable_0;
-		EObject tmpTParameter = _localVariable_1;
+		EObject tmpMmethodSignatureToTMethodSignature = _localVariable_1;
 		EObject tmpMPrevEntry = _localVariable_2;
 		EObject tmpMEntry = _localVariable_3;
-		EObject tmpESingleVariableDeclarationToTParameter = _localVariable_4;
-		EObject tmpMmethodSignatureToTMethodSignature = _localVariable_5;
+		EObject tmpTParameter = _localVariable_4;
+		EObject tmpESingleVariableDeclarationToTParameter = _localVariable_5;
 		if (tmpTPrevParameter instanceof TParameter) {
 			TParameter tPrevParameter = (TParameter) tmpTPrevParameter;
-			if (tmpTParameter instanceof TParameter) {
-				TParameter tParameter = (TParameter) tmpTParameter;
+			if (tmpMmethodSignatureToTMethodSignature instanceof MEntryToTParameter) {
+				MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) tmpMmethodSignatureToTMethodSignature;
 				if (tmpMPrevEntry instanceof MEntry) {
 					MEntry mPrevEntry = (MEntry) tmpMPrevEntry;
 					if (tmpMEntry instanceof MEntry) {
 						MEntry mEntry = (MEntry) tmpMEntry;
-						if (tmpESingleVariableDeclarationToTParameter instanceof MEntryToTParameter) {
-							MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) tmpESingleVariableDeclarationToTParameter;
-							if (tmpMmethodSignatureToTMethodSignature instanceof MEntryToTParameter) {
-								MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) tmpMmethodSignatureToTMethodSignature;
-								return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-										eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature,
-										isApplicableMatch };
+						if (tmpTParameter instanceof TParameter) {
+							TParameter tParameter = (TParameter) tmpTParameter;
+							if (tmpESingleVariableDeclarationToTParameter instanceof MEntryToTParameter) {
+								MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) tmpESingleVariableDeclarationToTParameter;
+								return new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry,
+										mEntry, tParameter, eSingleVariableDeclarationToTParameter, isApplicableMatch };
 							}
 						}
 					}
@@ -1905,19 +1899,18 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_11_1_performtransformation_blackBBBBBBFBB(
-			TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature, MethodParameterLink _this,
-			IsApplicableMatch isApplicableMatch) {
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mEntry.equals(mPrevEntry)) {
+			TParameter tPrevParameter, MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry,
+			MEntry mEntry, TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter,
+			MethodParameterLink _this, IsApplicableMatch isApplicableMatch) {
+		if (!mEntry.equals(mPrevEntry)) {
+			if (!tParameter.equals(tPrevParameter)) {
 				if (!eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-									eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature, csp,
-									_this, isApplicableMatch };
+							return new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry,
+									mEntry, tParameter, eSingleVariableDeclarationToTParameter, csp, _this,
+									isApplicableMatch };
 						}
 					}
 				}
@@ -1932,21 +1925,20 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 				isApplicableMatch);
 		if (result_pattern_MethodParameterLink_11_1_performtransformation_binding != null) {
 			TParameter tPrevParameter = (TParameter) result_pattern_MethodParameterLink_11_1_performtransformation_binding[0];
-			TParameter tParameter = (TParameter) result_pattern_MethodParameterLink_11_1_performtransformation_binding[1];
+			MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result_pattern_MethodParameterLink_11_1_performtransformation_binding[1];
 			MEntry mPrevEntry = (MEntry) result_pattern_MethodParameterLink_11_1_performtransformation_binding[2];
 			MEntry mEntry = (MEntry) result_pattern_MethodParameterLink_11_1_performtransformation_binding[3];
-			MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result_pattern_MethodParameterLink_11_1_performtransformation_binding[4];
-			MEntryToTParameter mmethodSignatureToTMethodSignature = (MEntryToTParameter) result_pattern_MethodParameterLink_11_1_performtransformation_binding[5];
+			TParameter tParameter = (TParameter) result_pattern_MethodParameterLink_11_1_performtransformation_binding[4];
+			MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) result_pattern_MethodParameterLink_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_MethodParameterLink_11_1_performtransformation_black = pattern_MethodParameterLink_11_1_performtransformation_blackBBBBBBFBB(
-					tPrevParameter, tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-					mmethodSignatureToTMethodSignature, _this, isApplicableMatch);
+					tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+					eSingleVariableDeclarationToTParameter, _this, isApplicableMatch);
 			if (result_pattern_MethodParameterLink_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodParameterLink_11_1_performtransformation_black[6];
 
-				return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-						eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature, csp, _this,
-						isApplicableMatch };
+				return new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry,
+						tParameter, eSingleVariableDeclarationToTParameter, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1964,31 +1956,31 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject tPrevParameter, EObject tParameter, EObject mPrevEntry,
-			EObject mEntry, EObject eSingleVariableDeclarationToTParameter,
-			EObject mmethodSignatureToTMethodSignature) {
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mPrevEntry.equals(tPrevParameter)) {
-				if (!mPrevEntry.equals(tParameter)) {
+			PerformRuleResult ruleresult, EObject tPrevParameter, EObject mmethodSignatureToTMethodSignature,
+			EObject mPrevEntry, EObject mEntry, EObject tParameter, EObject eSingleVariableDeclarationToTParameter) {
+		if (!mmethodSignatureToTMethodSignature.equals(tPrevParameter)) {
+			if (!mmethodSignatureToTMethodSignature.equals(tParameter)) {
+				if (!mPrevEntry.equals(tPrevParameter)) {
 					if (!mPrevEntry.equals(mmethodSignatureToTMethodSignature)) {
-						if (!mEntry.equals(tPrevParameter)) {
-							if (!mEntry.equals(tParameter)) {
-								if (!mEntry.equals(mPrevEntry)) {
-									if (!mEntry.equals(mmethodSignatureToTMethodSignature)) {
-										if (!eSingleVariableDeclarationToTParameter.equals(tPrevParameter)) {
-											if (!eSingleVariableDeclarationToTParameter.equals(tParameter)) {
-												if (!eSingleVariableDeclarationToTParameter.equals(mPrevEntry)) {
-													if (!eSingleVariableDeclarationToTParameter.equals(mEntry)) {
+						if (!mPrevEntry.equals(tParameter)) {
+							if (!mEntry.equals(tPrevParameter)) {
+								if (!mEntry.equals(mmethodSignatureToTMethodSignature)) {
+									if (!mEntry.equals(mPrevEntry)) {
+										if (!mEntry.equals(tParameter)) {
+											if (!tParameter.equals(tPrevParameter)) {
+												if (!eSingleVariableDeclarationToTParameter.equals(tPrevParameter)) {
+													if (!eSingleVariableDeclarationToTParameter
+															.equals(mmethodSignatureToTMethodSignature)) {
 														if (!eSingleVariableDeclarationToTParameter
-																.equals(mmethodSignatureToTMethodSignature)) {
-															if (!mmethodSignatureToTMethodSignature
-																	.equals(tPrevParameter)) {
-																if (!mmethodSignatureToTMethodSignature
+																.equals(mPrevEntry)) {
+															if (!eSingleVariableDeclarationToTParameter
+																	.equals(mEntry)) {
+																if (!eSingleVariableDeclarationToTParameter
 																		.equals(tParameter)) {
 																	return new Object[] { ruleresult, tPrevParameter,
-																			tParameter, mPrevEntry, mEntry,
-																			eSingleVariableDeclarationToTParameter,
-																			mmethodSignatureToTMethodSignature };
+																			mmethodSignatureToTMethodSignature,
+																			mPrevEntry, mEntry, tParameter,
+																			eSingleVariableDeclarationToTParameter };
 																}
 															}
 														}
@@ -2008,45 +2000,45 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_11_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject tPrevParameter, EObject tParameter, EObject mPrevEntry,
-			EObject mEntry) {
-		EMoflonEdge mPrevEntry__mEntry____mNext = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mEntry__mPrevEntry____mPrevious = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject tPrevParameter, EObject mPrevEntry, EObject mEntry,
+			EObject tParameter) {
 		EMoflonEdge tPrevParameter__tParameter____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tParameter__tPrevParameter____previous = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mPrevEntry__mEntry____mNext = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mEntry__mPrevEntry____mPrevious = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodParameterLink";
-		String mPrevEntry__mEntry____mNext_name_prime = "mNext";
-		String mEntry__mPrevEntry____mPrevious_name_prime = "mPrevious";
 		String tPrevParameter__tParameter____next_name_prime = "next";
 		String tParameter__tPrevParameter____previous_name_prime = "previous";
-		mPrevEntry__mEntry____mNext.setSrc(mPrevEntry);
-		mPrevEntry__mEntry____mNext.setTrg(mEntry);
-		ruleresult.getCreatedEdges().add(mPrevEntry__mEntry____mNext);
-		mEntry__mPrevEntry____mPrevious.setSrc(mEntry);
-		mEntry__mPrevEntry____mPrevious.setTrg(mPrevEntry);
-		ruleresult.getCreatedEdges().add(mEntry__mPrevEntry____mPrevious);
+		String mPrevEntry__mEntry____mNext_name_prime = "mNext";
+		String mEntry__mPrevEntry____mPrevious_name_prime = "mPrevious";
 		tPrevParameter__tParameter____next.setSrc(tPrevParameter);
 		tPrevParameter__tParameter____next.setTrg(tParameter);
 		ruleresult.getTranslatedEdges().add(tPrevParameter__tParameter____next);
 		tParameter__tPrevParameter____previous.setSrc(tParameter);
 		tParameter__tPrevParameter____previous.setTrg(tPrevParameter);
 		ruleresult.getTranslatedEdges().add(tParameter__tPrevParameter____previous);
+		mPrevEntry__mEntry____mNext.setSrc(mPrevEntry);
+		mPrevEntry__mEntry____mNext.setTrg(mEntry);
+		ruleresult.getCreatedEdges().add(mPrevEntry__mEntry____mNext);
+		mEntry__mPrevEntry____mPrevious.setSrc(mEntry);
+		mEntry__mPrevEntry____mPrevious.setTrg(mPrevEntry);
+		ruleresult.getCreatedEdges().add(mEntry__mPrevEntry____mPrevious);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mPrevEntry__mEntry____mNext.setName(mPrevEntry__mEntry____mNext_name_prime);
-		mEntry__mPrevEntry____mPrevious.setName(mEntry__mPrevEntry____mPrevious_name_prime);
 		tPrevParameter__tParameter____next.setName(tPrevParameter__tParameter____next_name_prime);
 		tParameter__tPrevParameter____previous.setName(tParameter__tPrevParameter____previous_name_prime);
-		return new Object[] { ruleresult, tPrevParameter, tParameter, mPrevEntry, mEntry, mPrevEntry__mEntry____mNext,
-				mEntry__mPrevEntry____mPrevious, tPrevParameter__tParameter____next,
-				tParameter__tPrevParameter____previous };
+		mPrevEntry__mEntry____mNext.setName(mPrevEntry__mEntry____mNext_name_prime);
+		mEntry__mPrevEntry____mPrevious.setName(mEntry__mPrevEntry____mPrevious_name_prime);
+		return new Object[] { ruleresult, tPrevParameter, mPrevEntry, mEntry, tParameter,
+				tPrevParameter__tParameter____next, tParameter__tPrevParameter____previous, mPrevEntry__mEntry____mNext,
+				mEntry__mPrevEntry____mPrevious };
 	}
 
 	public static final void pattern_MethodParameterLink_11_5_registerobjects_expressionBBBBBBBB(
-			MethodParameterLink _this, PerformRuleResult ruleresult, EObject tPrevParameter, EObject tParameter,
-			EObject mPrevEntry, EObject mEntry, EObject eSingleVariableDeclarationToTParameter,
-			EObject mmethodSignatureToTMethodSignature) {
-		_this.registerObjects_BWD(ruleresult, tPrevParameter, tParameter, mPrevEntry, mEntry,
-				eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature);
+			MethodParameterLink _this, PerformRuleResult ruleresult, EObject tPrevParameter,
+			EObject mmethodSignatureToTMethodSignature, EObject mPrevEntry, EObject mEntry, EObject tParameter,
+			EObject eSingleVariableDeclarationToTParameter) {
+		_this.registerObjects_BWD(ruleresult, tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry,
+				tParameter, eSingleVariableDeclarationToTParameter);
 
 	}
 
@@ -2121,22 +2113,22 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodParameterLink_12_2_corematch_blackBBFFFFB(
+	public static final Iterable<Object[]> pattern_MethodParameterLink_12_2_corematch_blackBFFFBFB(
 			TParameter tPrevParameter, TParameter tParameter, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tParameter.equals(tPrevParameter)) {
-			for (MEntryToTParameter eSingleVariableDeclarationToTParameter : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tParameter, MEntryToTParameter.class, "target")) {
-				MEntry mEntry = eSingleVariableDeclarationToTParameter.getSource();
-				if (mEntry != null) {
-					for (MEntryToTParameter mmethodSignatureToTMethodSignature : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(tPrevParameter, MEntryToTParameter.class, "target")) {
+			for (MEntryToTParameter mmethodSignatureToTMethodSignature : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(tPrevParameter, MEntryToTParameter.class, "target")) {
+				MEntry mPrevEntry = mmethodSignatureToTMethodSignature.getSource();
+				if (mPrevEntry != null) {
+					for (MEntryToTParameter eSingleVariableDeclarationToTParameter : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(tParameter, MEntryToTParameter.class, "target")) {
 						if (!eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature)) {
-							MEntry mPrevEntry = mmethodSignatureToTMethodSignature.getSource();
-							if (mPrevEntry != null) {
+							MEntry mEntry = eSingleVariableDeclarationToTParameter.getSource();
+							if (mEntry != null) {
 								if (!mEntry.equals(mPrevEntry)) {
-									_result.add(new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-											eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature,
+									_result.add(new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature,
+											mPrevEntry, mEntry, tParameter, eSingleVariableDeclarationToTParameter,
 											match });
 								}
 							}
@@ -2151,21 +2143,20 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Iterable<Object[]> pattern_MethodParameterLink_12_3_findcontext_blackBBBBBB(
-			TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {
+			TParameter tPrevParameter, MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry,
+			MEntry mEntry, TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mEntry.equals(mPrevEntry)) {
+		if (!mEntry.equals(mPrevEntry)) {
+			if (!tParameter.equals(tPrevParameter)) {
 				if (!eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature)) {
-					if (tParameter.equals(tPrevParameter.getNext())) {
-						if (mEntry.equals(eSingleVariableDeclarationToTParameter.getSource())) {
+					if (tPrevParameter.equals(mmethodSignatureToTMethodSignature.getTarget())) {
+						if (tParameter.equals(tPrevParameter.getNext())) {
 							if (mPrevEntry.equals(mmethodSignatureToTMethodSignature.getSource())) {
-								if (tParameter.equals(eSingleVariableDeclarationToTParameter.getTarget())) {
-									if (tPrevParameter.equals(mmethodSignatureToTMethodSignature.getTarget())) {
-										_result.add(new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-												eSingleVariableDeclarationToTParameter,
-												mmethodSignatureToTMethodSignature });
+								if (mEntry.equals(eSingleVariableDeclarationToTParameter.getSource())) {
+									if (tParameter.equals(eSingleVariableDeclarationToTParameter.getTarget())) {
+										_result.add(new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature,
+												mPrevEntry, mEntry, tParameter,
+												eSingleVariableDeclarationToTParameter });
 									}
 								}
 							}
@@ -2178,78 +2169,78 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_12_3_findcontext_greenBBBBBBFFFFFFF(
-			TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {
+			TParameter tPrevParameter, MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry,
+			MEntry mEntry, TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge mmethodSignatureToTMethodSignature__tPrevParameter____target = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
 		EMoflonEdge tPrevParameter__tParameter____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tParameter__tPrevParameter____previous = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eSingleVariableDeclarationToTParameter__mEntry____source = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
 		EMoflonEdge mmethodSignatureToTMethodSignature__mPrevEntry____source = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
+		EMoflonEdge eSingleVariableDeclarationToTParameter__mEntry____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge eSingleVariableDeclarationToTParameter__tParameter____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge mmethodSignatureToTMethodSignature__tPrevParameter____target = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
+		String mmethodSignatureToTMethodSignature__tPrevParameter____target_name_prime = "target";
 		String tPrevParameter__tParameter____next_name_prime = "next";
 		String tParameter__tPrevParameter____previous_name_prime = "previous";
-		String eSingleVariableDeclarationToTParameter__mEntry____source_name_prime = "source";
 		String mmethodSignatureToTMethodSignature__mPrevEntry____source_name_prime = "source";
+		String eSingleVariableDeclarationToTParameter__mEntry____source_name_prime = "source";
 		String eSingleVariableDeclarationToTParameter__tParameter____target_name_prime = "target";
-		String mmethodSignatureToTMethodSignature__tPrevParameter____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(tPrevParameter);
-		isApplicableMatch.getAllContextElements().add(tParameter);
+		isApplicableMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature);
 		isApplicableMatch.getAllContextElements().add(mPrevEntry);
 		isApplicableMatch.getAllContextElements().add(mEntry);
+		isApplicableMatch.getAllContextElements().add(tParameter);
 		isApplicableMatch.getAllContextElements().add(eSingleVariableDeclarationToTParameter);
-		isApplicableMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature);
+		mmethodSignatureToTMethodSignature__tPrevParameter____target.setSrc(mmethodSignatureToTMethodSignature);
+		mmethodSignatureToTMethodSignature__tPrevParameter____target.setTrg(tPrevParameter);
+		isApplicableMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature__tPrevParameter____target);
 		tPrevParameter__tParameter____next.setSrc(tPrevParameter);
 		tPrevParameter__tParameter____next.setTrg(tParameter);
 		isApplicableMatch.getAllContextElements().add(tPrevParameter__tParameter____next);
 		tParameter__tPrevParameter____previous.setSrc(tParameter);
 		tParameter__tPrevParameter____previous.setTrg(tPrevParameter);
 		isApplicableMatch.getAllContextElements().add(tParameter__tPrevParameter____previous);
-		eSingleVariableDeclarationToTParameter__mEntry____source.setSrc(eSingleVariableDeclarationToTParameter);
-		eSingleVariableDeclarationToTParameter__mEntry____source.setTrg(mEntry);
-		isApplicableMatch.getAllContextElements().add(eSingleVariableDeclarationToTParameter__mEntry____source);
 		mmethodSignatureToTMethodSignature__mPrevEntry____source.setSrc(mmethodSignatureToTMethodSignature);
 		mmethodSignatureToTMethodSignature__mPrevEntry____source.setTrg(mPrevEntry);
 		isApplicableMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature__mPrevEntry____source);
+		eSingleVariableDeclarationToTParameter__mEntry____source.setSrc(eSingleVariableDeclarationToTParameter);
+		eSingleVariableDeclarationToTParameter__mEntry____source.setTrg(mEntry);
+		isApplicableMatch.getAllContextElements().add(eSingleVariableDeclarationToTParameter__mEntry____source);
 		eSingleVariableDeclarationToTParameter__tParameter____target.setSrc(eSingleVariableDeclarationToTParameter);
 		eSingleVariableDeclarationToTParameter__tParameter____target.setTrg(tParameter);
 		isApplicableMatch.getAllContextElements().add(eSingleVariableDeclarationToTParameter__tParameter____target);
-		mmethodSignatureToTMethodSignature__tPrevParameter____target.setSrc(mmethodSignatureToTMethodSignature);
-		mmethodSignatureToTMethodSignature__tPrevParameter____target.setTrg(tPrevParameter);
-		isApplicableMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature__tPrevParameter____target);
-		tPrevParameter__tParameter____next.setName(tPrevParameter__tParameter____next_name_prime);
-		tParameter__tPrevParameter____previous.setName(tParameter__tPrevParameter____previous_name_prime);
-		eSingleVariableDeclarationToTParameter__mEntry____source
-				.setName(eSingleVariableDeclarationToTParameter__mEntry____source_name_prime);
-		mmethodSignatureToTMethodSignature__mPrevEntry____source
-				.setName(mmethodSignatureToTMethodSignature__mPrevEntry____source_name_prime);
-		eSingleVariableDeclarationToTParameter__tParameter____target
-				.setName(eSingleVariableDeclarationToTParameter__tParameter____target_name_prime);
 		mmethodSignatureToTMethodSignature__tPrevParameter____target
 				.setName(mmethodSignatureToTMethodSignature__tPrevParameter____target_name_prime);
-		return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter,
-				mmethodSignatureToTMethodSignature, isApplicableMatch, tPrevParameter__tParameter____next,
-				tParameter__tPrevParameter____previous, eSingleVariableDeclarationToTParameter__mEntry____source,
-				mmethodSignatureToTMethodSignature__mPrevEntry____source,
-				eSingleVariableDeclarationToTParameter__tParameter____target,
-				mmethodSignatureToTMethodSignature__tPrevParameter____target };
+		tPrevParameter__tParameter____next.setName(tPrevParameter__tParameter____next_name_prime);
+		tParameter__tPrevParameter____previous.setName(tParameter__tPrevParameter____previous_name_prime);
+		mmethodSignatureToTMethodSignature__mPrevEntry____source
+				.setName(mmethodSignatureToTMethodSignature__mPrevEntry____source_name_prime);
+		eSingleVariableDeclarationToTParameter__mEntry____source
+				.setName(eSingleVariableDeclarationToTParameter__mEntry____source_name_prime);
+		eSingleVariableDeclarationToTParameter__tParameter____target
+				.setName(eSingleVariableDeclarationToTParameter__tParameter____target_name_prime);
+		return new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+				eSingleVariableDeclarationToTParameter, isApplicableMatch,
+				mmethodSignatureToTMethodSignature__tPrevParameter____target, tPrevParameter__tParameter____next,
+				tParameter__tPrevParameter____previous, mmethodSignatureToTMethodSignature__mPrevEntry____source,
+				eSingleVariableDeclarationToTParameter__mEntry____source,
+				eSingleVariableDeclarationToTParameter__tParameter____target };
 	}
 
 	public static final Object[] pattern_MethodParameterLink_12_4_solveCSP_bindingFBBBBBBBB(MethodParameterLink _this,
-			IsApplicableMatch isApplicableMatch, TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry,
-			MEntry mEntry, MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tPrevParameter, tParameter,
-				mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature);
+			IsApplicableMatch isApplicableMatch, TParameter tPrevParameter,
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tPrevParameter,
+				mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+				eSingleVariableDeclarationToTParameter);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, tParameter, mPrevEntry, mEntry,
-					eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature };
+			return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, mmethodSignatureToTMethodSignature,
+					mPrevEntry, mEntry, tParameter, eSingleVariableDeclarationToTParameter };
 		}
 		return null;
 	}
@@ -2260,12 +2251,11 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 
 	public static final Object[] pattern_MethodParameterLink_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			MethodParameterLink _this, IsApplicableMatch isApplicableMatch, TParameter tPrevParameter,
-			TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {
 		Object[] result_pattern_MethodParameterLink_12_4_solveCSP_binding = pattern_MethodParameterLink_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, tPrevParameter, tParameter, mPrevEntry, mEntry,
-				eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature);
+				_this, isApplicableMatch, tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry,
+				tParameter, eSingleVariableDeclarationToTParameter);
 		if (result_pattern_MethodParameterLink_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodParameterLink_12_4_solveCSP_binding[0];
 
@@ -2273,8 +2263,8 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 					csp);
 			if (result_pattern_MethodParameterLink_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, tParameter, mPrevEntry, mEntry,
-						eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature };
+				return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, mmethodSignatureToTMethodSignature,
+						mPrevEntry, mEntry, tParameter, eSingleVariableDeclarationToTParameter };
 			}
 		}
 		return null;
@@ -2558,22 +2548,22 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	public static final Object[] pattern_MethodParameterLink_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
 			Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("tPrevParameter");
-		EObject _localVariable_1 = targetMatch.getObject("tParameter");
-		EObject _localVariable_2 = sourceMatch.getObject("mPrevEntry");
-		EObject _localVariable_3 = sourceMatch.getObject("mEntry");
+		EObject _localVariable_1 = sourceMatch.getObject("mPrevEntry");
+		EObject _localVariable_2 = sourceMatch.getObject("mEntry");
+		EObject _localVariable_3 = targetMatch.getObject("tParameter");
 		EObject tmpTPrevParameter = _localVariable_0;
-		EObject tmpTParameter = _localVariable_1;
-		EObject tmpMPrevEntry = _localVariable_2;
-		EObject tmpMEntry = _localVariable_3;
+		EObject tmpMPrevEntry = _localVariable_1;
+		EObject tmpMEntry = _localVariable_2;
+		EObject tmpTParameter = _localVariable_3;
 		if (tmpTPrevParameter instanceof TParameter) {
 			TParameter tPrevParameter = (TParameter) tmpTPrevParameter;
-			if (tmpTParameter instanceof TParameter) {
-				TParameter tParameter = (TParameter) tmpTParameter;
-				if (tmpMPrevEntry instanceof MEntry) {
-					MEntry mPrevEntry = (MEntry) tmpMPrevEntry;
-					if (tmpMEntry instanceof MEntry) {
-						MEntry mEntry = (MEntry) tmpMEntry;
-						return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry, targetMatch,
+			if (tmpMPrevEntry instanceof MEntry) {
+				MEntry mPrevEntry = (MEntry) tmpMPrevEntry;
+				if (tmpMEntry instanceof MEntry) {
+					MEntry mEntry = (MEntry) tmpMEntry;
+					if (tmpTParameter instanceof TParameter) {
+						TParameter tParameter = (TParameter) tmpTParameter;
+						return new Object[] { tPrevParameter, mPrevEntry, mEntry, tParameter, targetMatch,
 								sourceMatch };
 					}
 				}
@@ -2583,12 +2573,12 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_24_2_matchsrctrgcontext_blackBBBBBB(
-			TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry, MEntry mEntry, Match sourceMatch,
+			TParameter tPrevParameter, MEntry mPrevEntry, MEntry mEntry, TParameter tParameter, Match sourceMatch,
 			Match targetMatch) {
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mEntry.equals(mPrevEntry)) {
+		if (!mEntry.equals(mPrevEntry)) {
+			if (!tParameter.equals(tPrevParameter)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry, sourceMatch, targetMatch };
+					return new Object[] { tPrevParameter, mPrevEntry, mEntry, tParameter, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -2601,28 +2591,28 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 				targetMatch, sourceMatch);
 		if (result_pattern_MethodParameterLink_24_2_matchsrctrgcontext_binding != null) {
 			TParameter tPrevParameter = (TParameter) result_pattern_MethodParameterLink_24_2_matchsrctrgcontext_binding[0];
-			TParameter tParameter = (TParameter) result_pattern_MethodParameterLink_24_2_matchsrctrgcontext_binding[1];
-			MEntry mPrevEntry = (MEntry) result_pattern_MethodParameterLink_24_2_matchsrctrgcontext_binding[2];
-			MEntry mEntry = (MEntry) result_pattern_MethodParameterLink_24_2_matchsrctrgcontext_binding[3];
+			MEntry mPrevEntry = (MEntry) result_pattern_MethodParameterLink_24_2_matchsrctrgcontext_binding[1];
+			MEntry mEntry = (MEntry) result_pattern_MethodParameterLink_24_2_matchsrctrgcontext_binding[2];
+			TParameter tParameter = (TParameter) result_pattern_MethodParameterLink_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_MethodParameterLink_24_2_matchsrctrgcontext_black = pattern_MethodParameterLink_24_2_matchsrctrgcontext_blackBBBBBB(
-					tPrevParameter, tParameter, mPrevEntry, mEntry, sourceMatch, targetMatch);
+					tPrevParameter, mPrevEntry, mEntry, tParameter, sourceMatch, targetMatch);
 			if (result_pattern_MethodParameterLink_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry, sourceMatch, targetMatch };
+				return new Object[] { tPrevParameter, mPrevEntry, mEntry, tParameter, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodParameterLink_24_3_solvecsp_bindingFBBBBBBB(MethodParameterLink _this,
-			TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry, MEntry mEntry, Match sourceMatch,
+			TParameter tPrevParameter, MEntry mPrevEntry, MEntry mEntry, TParameter tParameter, Match sourceMatch,
 			Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(tPrevParameter, tParameter, mPrevEntry, mEntry,
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(tPrevParameter, mPrevEntry, mEntry, tParameter,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, tPrevParameter, tParameter, mPrevEntry, mEntry, sourceMatch,
+			return new Object[] { csp, _this, tPrevParameter, mPrevEntry, mEntry, tParameter, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2633,10 +2623,10 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			MethodParameterLink _this, TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry,
-			MEntry mEntry, Match sourceMatch, Match targetMatch) {
+			MethodParameterLink _this, TParameter tPrevParameter, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_MethodParameterLink_24_3_solvecsp_binding = pattern_MethodParameterLink_24_3_solvecsp_bindingFBBBBBBB(
-				_this, tPrevParameter, tParameter, mPrevEntry, mEntry, sourceMatch, targetMatch);
+				_this, tPrevParameter, mPrevEntry, mEntry, tParameter, sourceMatch, targetMatch);
 		if (result_pattern_MethodParameterLink_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodParameterLink_24_3_solvecsp_binding[0];
 
@@ -2644,7 +2634,7 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 					csp);
 			if (result_pattern_MethodParameterLink_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tPrevParameter, tParameter, mPrevEntry, mEntry, sourceMatch,
+				return new Object[] { csp, _this, tPrevParameter, mPrevEntry, mEntry, tParameter, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2657,24 +2647,24 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodParameterLink_24_5_matchcorrcontext_blackBBBBFFBB(
-			TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry, MEntry mEntry, Match sourceMatch,
+	public static final Iterable<Object[]> pattern_MethodParameterLink_24_5_matchcorrcontext_blackBFBBBFBB(
+			TParameter tPrevParameter, MEntry mPrevEntry, MEntry mEntry, TParameter tParameter, Match sourceMatch,
 			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mEntry.equals(mPrevEntry)) {
+		if (!mEntry.equals(mPrevEntry)) {
+			if (!tParameter.equals(tPrevParameter)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					for (MEntryToTParameter eSingleVariableDeclarationToTParameter : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mEntry, MEntryToTParameter.class, "source")) {
-						if (tParameter.equals(eSingleVariableDeclarationToTParameter.getTarget())) {
-							for (MEntryToTParameter mmethodSignatureToTMethodSignature : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(mPrevEntry, MEntryToTParameter.class, "source")) {
+					for (MEntryToTParameter mmethodSignatureToTMethodSignature : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(tPrevParameter, MEntryToTParameter.class, "target")) {
+						if (mPrevEntry.equals(mmethodSignatureToTMethodSignature.getSource())) {
+							for (MEntryToTParameter eSingleVariableDeclarationToTParameter : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(mEntry, MEntryToTParameter.class, "source")) {
 								if (!eSingleVariableDeclarationToTParameter
 										.equals(mmethodSignatureToTMethodSignature)) {
-									if (tPrevParameter.equals(mmethodSignatureToTMethodSignature.getTarget())) {
-										_result.add(new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-												eSingleVariableDeclarationToTParameter,
-												mmethodSignatureToTMethodSignature, sourceMatch, targetMatch });
+									if (tParameter.equals(eSingleVariableDeclarationToTParameter.getTarget())) {
+										_result.add(new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature,
+												mPrevEntry, mEntry, tParameter, eSingleVariableDeclarationToTParameter,
+												sourceMatch, targetMatch });
 									}
 								}
 							}
@@ -2687,24 +2677,24 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_24_5_matchcorrcontext_greenBBBBF(
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature, Match sourceMatch, Match targetMatch) {
+			MEntryToTParameter mmethodSignatureToTMethodSignature,
+			MEntryToTParameter eSingleVariableDeclarationToTParameter, Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "MethodParameterLink";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(eSingleVariableDeclarationToTParameter);
 		ccMatch.getAllContextElements().add(mmethodSignatureToTMethodSignature);
+		ccMatch.getAllContextElements().add(eSingleVariableDeclarationToTParameter);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature, sourceMatch,
+		return new Object[] { mmethodSignatureToTMethodSignature, eSingleVariableDeclarationToTParameter, sourceMatch,
 				targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodParameterLink_24_6_createcorrespondence_blackBBBBB(
-			TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry, MEntry mEntry, CCMatch ccMatch) {
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mEntry.equals(mPrevEntry)) {
-				return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry, ccMatch };
+			TParameter tPrevParameter, MEntry mPrevEntry, MEntry mEntry, TParameter tParameter, CCMatch ccMatch) {
+		if (!mEntry.equals(mPrevEntry)) {
+			if (!tParameter.equals(tPrevParameter)) {
+				return new Object[] { tPrevParameter, mPrevEntry, mEntry, tParameter, ccMatch };
 			}
 		}
 		return null;
@@ -2808,9 +2798,9 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, TParameter tParameter) {
-		if (ruleResult.getTargetObjects().contains(tParameter)) {
-			return new Object[] { ruleResult, tParameter };
+			ModelgeneratorRuleResult ruleResult, MEntry mEntry) {
+		if (ruleResult.getSourceObjects().contains(mEntry)) {
+			return new Object[] { ruleResult, mEntry };
 		}
 		return null;
 	}
@@ -2824,9 +2814,9 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, MEntry mEntry) {
-		if (ruleResult.getSourceObjects().contains(mEntry)) {
-			return new Object[] { ruleResult, mEntry };
+			ModelgeneratorRuleResult ruleResult, TParameter tParameter) {
+		if (ruleResult.getTargetObjects().contains(tParameter)) {
+			return new Object[] { ruleResult, tParameter };
 		}
 		return null;
 	}
@@ -2857,32 +2847,31 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 														MEntryToTParameter eSingleVariableDeclarationToTParameter = (MEntryToTParameter) tmpESingleVariableDeclarationToTParameter;
 														if (!eSingleVariableDeclarationToTParameter
 																.equals(mmethodSignatureToTMethodSignature)) {
-															TParameter tParameter = eSingleVariableDeclarationToTParameter
-																	.getTarget();
-															if (tParameter != null) {
-																if (!tParameter.equals(tPrevParameter)) {
-																	MEntry mEntry = eSingleVariableDeclarationToTParameter
-																			.getSource();
-																	if (mEntry != null) {
-																		if (!mEntry.equals(mPrevEntry)) {
+															MEntry mEntry = eSingleVariableDeclarationToTParameter
+																	.getSource();
+															if (mEntry != null) {
+																if (!mEntry.equals(mPrevEntry)) {
+																	TParameter tParameter = eSingleVariableDeclarationToTParameter
+																			.getTarget();
+																	if (tParameter != null) {
+																		if (!tParameter.equals(tPrevParameter)) {
 																			if (pattern_MethodParameterLink_29_2_isapplicablecore_black_nac_4BB(
 																					ruleResult,
 																					eSingleVariableDeclarationToTParameter) == null) {
 																				if (pattern_MethodParameterLink_29_2_isapplicablecore_black_nac_3BB(
-																						ruleResult,
-																						tParameter) == null) {
+																						ruleResult, mEntry) == null) {
 																					if (pattern_MethodParameterLink_29_2_isapplicablecore_black_nac_5BB(
 																							ruleResult,
-																							mEntry) == null) {
+																							tParameter) == null) {
 																						_result.add(new Object[] {
 																								mmethodSignatureToTMethodSignatureList,
 																								tPrevParameter,
 																								mmethodSignatureToTMethodSignature,
 																								mPrevEntry,
 																								eSingleVariableDeclarationToTParameterList,
-																								tParameter,
-																								eSingleVariableDeclarationToTParameter,
 																								mEntry,
+																								eSingleVariableDeclarationToTParameter,
+																								tParameter,
 																								ruleEntryContainer,
 																								ruleResult });
 																					}
@@ -2913,16 +2902,17 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_29_3_solveCSP_bindingFBBBBBBBBB(MethodParameterLink _this,
-			IsApplicableMatch isApplicableMatch, TParameter tPrevParameter, TParameter tParameter, MEntry mPrevEntry,
-			MEntry mEntry, MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tPrevParameter, tParameter,
-				mPrevEntry, mEntry, eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature,
-				ruleResult);
+			IsApplicableMatch isApplicableMatch, TParameter tPrevParameter,
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter,
+			ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tPrevParameter,
+				mmethodSignatureToTMethodSignature, mPrevEntry, mEntry, tParameter,
+				eSingleVariableDeclarationToTParameter, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, tParameter, mPrevEntry, mEntry,
-					eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, mmethodSignatureToTMethodSignature,
+					mPrevEntry, mEntry, tParameter, eSingleVariableDeclarationToTParameter, ruleResult };
 		}
 		return null;
 	}
@@ -2933,12 +2923,12 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 
 	public static final Object[] pattern_MethodParameterLink_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
 			MethodParameterLink _this, IsApplicableMatch isApplicableMatch, TParameter tPrevParameter,
-			TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature, ModelgeneratorRuleResult ruleResult) {
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter,
+			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_MethodParameterLink_29_3_solveCSP_binding = pattern_MethodParameterLink_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, tPrevParameter, tParameter, mPrevEntry, mEntry,
-				eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature, ruleResult);
+				_this, isApplicableMatch, tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry,
+				tParameter, eSingleVariableDeclarationToTParameter, ruleResult);
 		if (result_pattern_MethodParameterLink_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodParameterLink_29_3_solveCSP_binding[0];
 
@@ -2946,8 +2936,8 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 					csp);
 			if (result_pattern_MethodParameterLink_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, tParameter, mPrevEntry, mEntry,
-						eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, tPrevParameter, mmethodSignatureToTMethodSignature,
+						mPrevEntry, mEntry, tParameter, eSingleVariableDeclarationToTParameter, ruleResult };
 			}
 		}
 		return null;
@@ -2961,14 +2951,13 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_29_5_checknacs_blackBBBBBB(TParameter tPrevParameter,
-			TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature) {
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mEntry.equals(mPrevEntry)) {
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter) {
+		if (!mEntry.equals(mPrevEntry)) {
+			if (!tParameter.equals(tPrevParameter)) {
 				if (!eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature)) {
-					return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-							eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature };
+					return new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry,
+							tParameter, eSingleVariableDeclarationToTParameter };
 				}
 			}
 		}
@@ -2976,14 +2965,14 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_29_6_perform_blackBBBBBBB(TParameter tPrevParameter,
-			TParameter tParameter, MEntry mPrevEntry, MEntry mEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature, ModelgeneratorRuleResult ruleResult) {
-		if (!tParameter.equals(tPrevParameter)) {
-			if (!mEntry.equals(mPrevEntry)) {
+			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry, MEntry mEntry,
+			TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter,
+			ModelgeneratorRuleResult ruleResult) {
+		if (!mEntry.equals(mPrevEntry)) {
+			if (!tParameter.equals(tPrevParameter)) {
 				if (!eSingleVariableDeclarationToTParameter.equals(mmethodSignatureToTMethodSignature)) {
-					return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry,
-							eSingleVariableDeclarationToTParameter, mmethodSignatureToTMethodSignature, ruleResult };
+					return new Object[] { tPrevParameter, mmethodSignatureToTMethodSignature, mPrevEntry, mEntry,
+							tParameter, eSingleVariableDeclarationToTParameter, ruleResult };
 				}
 			}
 		}
@@ -2991,15 +2980,15 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	}
 
 	public static final Object[] pattern_MethodParameterLink_29_6_perform_greenBBBBB(TParameter tPrevParameter,
-			TParameter tParameter, MEntry mPrevEntry, MEntry mEntry, ModelgeneratorRuleResult ruleResult) {
-		mPrevEntry.setMNext(mEntry);
+			MEntry mPrevEntry, MEntry mEntry, TParameter tParameter, ModelgeneratorRuleResult ruleResult) {
 		tPrevParameter.setNext(tParameter);
+		mPrevEntry.setMNext(mEntry);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tPrevParameter, tParameter, mPrevEntry, mEntry, ruleResult };
+		return new Object[] { tPrevParameter, mPrevEntry, mEntry, tParameter, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_MethodParameterLink_29_7_expressionFB(
