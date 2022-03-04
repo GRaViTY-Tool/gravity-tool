@@ -4,7 +4,7 @@
       label="GRaViTY Security"
       version="1.0.0.qualifier"
       license-feature="org.gravity.license.epl"
-      license-feature-version="1.0.0">
+      license-feature-version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
       This feature provides UMLsec (https://http://carisma.umlsec.de) like security annotations to the program model.
@@ -17,6 +17,10 @@
    <license url="http://www.example.com/license">
       [Enter License Description here.]
    </license>
+
+   <includes
+         id="org.gravity.license.epl"
+         version="0.0.0"/>
 
    <requires>
       <import plugin="org.eclipse.core.resources"/>

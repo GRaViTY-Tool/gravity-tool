@@ -5,7 +5,7 @@
       version="1.0.0.qualifier"
       provider-name="University of Koblenz-Landau and TU Darmstadt"
       license-feature="org.gravity.license.epl"
-      license-feature-version="1.0.0">
+      license-feature-version="1.0.0.qualifier">
 
    <description>
       The anti-pattern detection plugins.
@@ -24,6 +24,10 @@ Darmstadt.
    <url>
       <discovery label="Henshin" url="http://download.eclipse.org/modeling/emft/henshin/updates/nightly"/>
    </url>
+
+   <includes
+         id="org.gravity.license.epl"
+         version="0.0.0"/>
 
    <requires>
       <import plugin="org.eclipse.emf.ecore.xmi"/>

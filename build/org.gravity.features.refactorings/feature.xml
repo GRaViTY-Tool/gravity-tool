@@ -3,9 +3,9 @@
       id="org.gravity.features.refactorings"
       label="GRaViTY Refactorings"
       version="1.0.0.qualifier"
-      provider-name="University of Koblenz-Landau and TU Darmstadt"
+      provider-name="University of Koblenz-Landau, TU Darmstadt, and Ruhr University Bochum"
       license-feature="org.gravity.license.epl"
-      license-feature-version="1.0.0">
+      license-feature-version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -23,6 +23,10 @@ Darmstadt.
 
    <includes
          id="org.gravity.features.typegraph.basic"
+         version="0.0.0"/>
+
+   <includes
+         id="org.gravity.license.epl"
          version="0.0.0"/>
 
    <requires>

@@ -5,7 +5,7 @@
       version="1.0.0.qualifier"
       provider-name="University of Koblenz-Landau"
       license-feature="org.gravity.license.epl"
-      license-feature-version="1.0.0">
+      license-feature-version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -22,6 +22,10 @@
    <url>
       <discovery label="Henshin MultiVar" url="https://gravity-tool.org/henshin-multivar/updatesite"/>
    </url>
+
+   <includes
+         id="org.gravity.license.epl"
+         version="0.0.0"/>
 
    <requires>
       <import plugin="org.gravity.eclipse"/>

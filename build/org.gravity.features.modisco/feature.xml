@@ -5,7 +5,7 @@
       version="1.0.0.qualifier"
       provider-name="University of Koblenz-Landau and TU Darmstadt"
       license-feature="org.gravity.license.epl"
-      license-feature-version="1.0.0">
+      license-feature-version="1.0.0.qualifier">
 
    <description>
       The plugins necessary for building a program model from source code.
@@ -29,6 +29,10 @@ Darmstadt.
 
    <includes
          id="org.gravity.features.eclipse"
+         version="0.0.0"/>
+
+   <includes
+         id="org.gravity.license.epl"
          version="0.0.0"/>
 
    <requires>
