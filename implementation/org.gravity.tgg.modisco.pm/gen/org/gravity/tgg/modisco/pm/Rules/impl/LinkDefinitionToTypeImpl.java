@@ -98,58 +98,58 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, MDefinition mDefinition, AbstractTypeDeclaration mType,
-			MSignature mSignature) {
+	public boolean isAppropriate_FWD(Match match, AbstractTypeDeclaration mType, MSignature mSignature,
+			MDefinition mDefinition) {
 
 		Object[] result1_black = LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_0_1_initialbindings_blackBBBBB(
-				this, match, mDefinition, mType, mSignature);
+				this, match, mType, mSignature, mDefinition);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mDefinition] = " + mDefinition + ", " + "[mType] = " + mType
-					+ ", " + "[mSignature] = " + mSignature + ".");
+					+ "[match] = " + match + ", " + "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", "
+					+ "[mDefinition] = " + mDefinition + ".");
 		}
 
 		Object[] result2_bindingAndBlack = LinkDefinitionToTypeImpl
-				.pattern_LinkDefinitionToType_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mDefinition, mType,
-						mSignature);
+				.pattern_LinkDefinitionToType_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mType, mSignature,
+						mDefinition);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mDefinition] = " + mDefinition + ", " + "[mType] = " + mType
-					+ ", " + "[mSignature] = " + mSignature + ".");
+					+ "[match] = " + match + ", " + "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", "
+					+ "[mDefinition] = " + mDefinition + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = LinkDefinitionToTypeImpl
-					.pattern_LinkDefinitionToType_0_4_collectelementstobetranslated_blackBBBB(match, mDefinition, mType,
-							mSignature);
+					.pattern_LinkDefinitionToType_0_4_collectelementstobetranslated_blackBBBB(match, mType, mSignature,
+							mDefinition);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[mType] = " + mType + ", " + "[mSignature] = "
-						+ mSignature + ".");
+						+ "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", " + "[mDefinition] = "
+						+ mDefinition + ".");
 			}
 			LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_0_4_collectelementstobetranslated_greenBBBFF(match,
-					mDefinition, mType);
+					mType, mDefinition);
 			//nothing EMoflonEdge mType__mDefinition____bodyDeclarations = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge mDefinition__mType____abstractTypeDeclaration = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = LinkDefinitionToTypeImpl
-					.pattern_LinkDefinitionToType_0_5_collectcontextelements_blackBBBB(match, mDefinition, mType,
-							mSignature);
+					.pattern_LinkDefinitionToType_0_5_collectcontextelements_blackBBBB(match, mType, mSignature,
+							mDefinition);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[mType] = " + mType + ", " + "[mSignature] = "
-						+ mSignature + ".");
+						+ "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", " + "[mDefinition] = "
+						+ mDefinition + ".");
 			}
-			LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_0_5_collectcontextelements_greenBBBBFF(match,
-					mDefinition, mType, mSignature);
+			LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_0_5_collectcontextelements_greenBBBBFF(match, mType,
+					mSignature, mDefinition);
 			//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result5_green[4];
 			//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result5_green[5];
 
 			// 
 			LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_0_6_registerobjectstomatch_expressionBBBBB(this,
-					match, mDefinition, mType, mSignature);
+					match, mType, mSignature, mDefinition);
 			return LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_0_7_expressionF();
 		} else {
 			return LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_0_8_expressionF();
@@ -171,18 +171,18 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[0];
-		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[1];
-		TSignature tSignature = (TSignature) result1_bindingAndBlack[2];
-		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_bindingAndBlack[3];
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[4];
-		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result1_bindingAndBlack[5];
-		TMember tDefinition = (TMember) result1_bindingAndBlack[6];
-		MSignature mSignature = (MSignature) result1_bindingAndBlack[7];
-		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_bindingAndBlack[8];
+		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result1_bindingAndBlack[0];
+		TMember tDefinition = (TMember) result1_bindingAndBlack[1];
+		MSignature mSignature = (MSignature) result1_bindingAndBlack[2];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[4];
+		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_bindingAndBlack[5];
+		TSignature tSignature = (TSignature) result1_bindingAndBlack[6];
+		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[7];
+		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_bindingAndBlack[8];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[9];
-		LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_1_1_performtransformation_greenBBB(tType, tSignature,
-				tDefinition);
+		LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_1_1_performtransformation_greenBBB(tDefinition,
+				tSignature, tType);
 
 		Object[] result2_green = LinkDefinitionToTypeImpl
 				.pattern_LinkDefinitionToType_1_2_collecttranslatedelements_greenF();
@@ -192,30 +192,30 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = LinkDefinitionToTypeImpl
-				.pattern_LinkDefinitionToType_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, tType, mDefinition,
-						tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature,
-						mDefinitionToTMember);
+				.pattern_LinkDefinitionToType_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, mType, tDefinition,
+						mSignature, mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType,
+						mSignatureToTSignature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tType] = " + tType + ", " + "[mDefinition] = " + mDefinition + ", " + "[tSignature] = "
-					+ tSignature + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", "
-					+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mType] = " + mType + ", " + "[tDefinition] = "
-					+ tDefinition + ", " + "[mSignature] = " + mSignature + ", " + "[mDefinitionToTMember] = "
-					+ mDefinitionToTMember + ".");
+					+ ", " + "[mType] = " + mType + ", " + "[tDefinition] = " + tDefinition + ", " + "[mSignature] = "
+					+ mSignature + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mDefinition] = " + mDefinition
+					+ ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tSignature] = " + tSignature
+					+ ", " + "[tType] = " + tType + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature
+					+ ".");
 		}
 		LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult,
-				tType, mDefinition, tSignature, mType, tDefinition);
-		//nothing EMoflonEdge tType__tDefinition____defines = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge tDefinition__tType____definedBy = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mType__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mDefinition__mType____abstractTypeDeclaration = (EMoflonEdge) result3_green[9];
+				mType, tDefinition, mDefinition, tSignature, tType);
+		//nothing EMoflonEdge mType__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mDefinition__mType____abstractTypeDeclaration = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tType__tDefinition____defines = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tDefinition__tType____definedBy = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge tType__tSignature____signature = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_1_5_registerobjects_expressionBBBBBBBBBBB(this,
-				ruleresult, tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-				mSignature, mDefinitionToTMember);
+				ruleresult, mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember, tSignature,
+				tType, mSignatureToTSignature);
 		return LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_1_6_expressionFB(ruleresult);
 	}
 
@@ -244,52 +244,52 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		MDefinition mDefinition = (MDefinition) result2_binding[0];
-		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_binding[1];
-		MSignature mSignature = (MSignature) result2_binding[2];
+		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_binding[0];
+		MSignature mSignature = (MSignature) result2_binding[1];
+		MDefinition mDefinition = (MDefinition) result2_binding[2];
 		for (Object[] result2_black : LinkDefinitionToTypeImpl
-				.pattern_LinkDefinitionToType_2_2_corematch_blackFBFFFBFBFB(mDefinition, mType, mSignature, match)) {
-			TAbstractType tType = (TAbstractType) result2_black[0];
-			TSignature tSignature = (TSignature) result2_black[2];
-			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result2_black[3];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[4];
-			TMember tDefinition = (TMember) result2_black[6];
-			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[8];
+				.pattern_LinkDefinitionToType_2_2_corematch_blackBFBFBFFFFB(mType, mSignature, mDefinition, match)) {
+			TMember tDefinition = (TMember) result2_black[1];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[3];
+			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[5];
+			TSignature tSignature = (TSignature) result2_black[6];
+			TAbstractType tType = (TAbstractType) result2_black[7];
+			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result2_black[8];
 			// ForEach 
 			for (Object[] result3_black : LinkDefinitionToTypeImpl
-					.pattern_LinkDefinitionToType_2_3_findcontext_blackBBBBBBBBB(tType, mDefinition, tSignature,
-							mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature,
-							mDefinitionToTMember)) {
+					.pattern_LinkDefinitionToType_2_3_findcontext_blackBBBBBBBBB(mType, tDefinition, mSignature,
+							mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType,
+							mSignatureToTSignature)) {
 				Object[] result3_green = LinkDefinitionToTypeImpl
-						.pattern_LinkDefinitionToType_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFFF(tType, mDefinition,
-								tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature,
-								mDefinitionToTMember);
+						.pattern_LinkDefinitionToType_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFFF(mType, tDefinition,
+								mSignature, mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType,
+								mSignatureToTSignature);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[9];
-				//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mType__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mDefinition__mType____abstractTypeDeclaration = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[21];
+				//nothing EMoflonEdge mType__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mDefinition__mType____abstractTypeDeclaration = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[21];
 
 				Object[] result4_bindingAndBlack = LinkDefinitionToTypeImpl
 						.pattern_LinkDefinitionToType_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this, isApplicableMatch,
-								tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType,
-								tDefinition, mSignature, mDefinitionToTMember);
+								mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember,
+								tSignature, tType, mSignatureToTSignature);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tType] = " + tType + ", "
-							+ "[mDefinition] = " + mDefinition + ", " + "[tSignature] = " + tSignature + ", "
-							+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mTypeToTType] = "
-							+ mTypeToTType + ", " + "[mType] = " + mType + ", " + "[tDefinition] = " + tDefinition
-							+ ", " + "[mSignature] = " + mSignature + ", " + "[mDefinitionToTMember] = "
-							+ mDefinitionToTMember + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mType] = " + mType + ", "
+							+ "[tDefinition] = " + tDefinition + ", " + "[mSignature] = " + mSignature + ", "
+							+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mDefinition] = " + mDefinition + ", "
+							+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tSignature] = " + tSignature
+							+ ", " + "[tType] = " + tType + ", " + "[mSignatureToTSignature] = "
+							+ mSignatureToTSignature + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -319,11 +319,11 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, MDefinition mDefinition, AbstractTypeDeclaration mType,
-			MSignature mSignature) {
-		match.registerObject("mDefinition", mDefinition);
+	public void registerObjectsToMatch_FWD(Match match, AbstractTypeDeclaration mType, MSignature mSignature,
+			MDefinition mDefinition) {
 		match.registerObject("mType", mType);
 		match.registerObject("mSignature", mSignature);
+		match.registerObject("mDefinition", mDefinition);
 
 	}
 
@@ -332,8 +332,8 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mDefinition, AbstractTypeDeclaration mType,
-			MSignature mSignature) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, AbstractTypeDeclaration mType, MSignature mSignature,
+			MDefinition mDefinition) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -362,10 +362,10 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
+			TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature, TAbstractType tType,
+			MSignatureToTSignature mSignatureToTSignature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -380,15 +380,15 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tType", tType);
-		isApplicableMatch.registerObject("mDefinition", mDefinition);
-		isApplicableMatch.registerObject("tSignature", tSignature);
-		isApplicableMatch.registerObject("mSignatureToTSignature", mSignatureToTSignature);
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		isApplicableMatch.registerObject("mSignature", mSignature);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
+		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		isApplicableMatch.registerObject("tSignature", tSignature);
+		isApplicableMatch.registerObject("tType", tType);
+		isApplicableMatch.registerObject("mSignatureToTSignature", mSignatureToTSignature);
 		return csp;
 	}
 
@@ -406,18 +406,18 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tType, EObject mDefinition,
-			EObject tSignature, EObject mSignatureToTSignature, EObject mTypeToTType, EObject mType,
-			EObject tDefinition, EObject mSignature, EObject mDefinitionToTMember) {
-		ruleresult.registerObject("tType", tType);
-		ruleresult.registerObject("mDefinition", mDefinition);
-		ruleresult.registerObject("tSignature", tSignature);
-		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mType, EObject tDefinition,
+			EObject mSignature, EObject mTypeToTType, EObject mDefinition, EObject mDefinitionToTMember,
+			EObject tSignature, EObject tType, EObject mSignatureToTSignature) {
 		ruleresult.registerObject("mType", mType);
 		ruleresult.registerObject("tDefinition", tDefinition);
 		ruleresult.registerObject("mSignature", mSignature);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+		ruleresult.registerObject("mDefinition", mDefinition);
 		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		ruleresult.registerObject("tSignature", tSignature);
+		ruleresult.registerObject("tType", tType);
+		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
 
 	}
 
@@ -435,58 +435,58 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TAbstractType tType, TSignature tSignature, TMember tDefinition) {
+	public boolean isAppropriate_BWD(Match match, TMember tDefinition, TSignature tSignature, TAbstractType tType) {
 
 		Object[] result1_black = LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_10_1_initialbindings_blackBBBBB(
-				this, match, tType, tSignature, tDefinition);
+				this, match, tDefinition, tSignature, tType);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tType] = " + tType + ", " + "[tSignature] = " + tSignature + ", "
-					+ "[tDefinition] = " + tDefinition + ".");
+					+ "[match] = " + match + ", " + "[tDefinition] = " + tDefinition + ", " + "[tSignature] = "
+					+ tSignature + ", " + "[tType] = " + tType + ".");
 		}
 
 		Object[] result2_bindingAndBlack = LinkDefinitionToTypeImpl
-				.pattern_LinkDefinitionToType_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tType, tSignature,
-						tDefinition);
+				.pattern_LinkDefinitionToType_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tDefinition, tSignature,
+						tType);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tType] = " + tType + ", " + "[tSignature] = " + tSignature + ", "
-					+ "[tDefinition] = " + tDefinition + ".");
+					+ "[match] = " + match + ", " + "[tDefinition] = " + tDefinition + ", " + "[tSignature] = "
+					+ tSignature + ", " + "[tType] = " + tType + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = LinkDefinitionToTypeImpl
-					.pattern_LinkDefinitionToType_10_4_collectelementstobetranslated_blackBBBB(match, tType, tSignature,
-							tDefinition);
+					.pattern_LinkDefinitionToType_10_4_collectelementstobetranslated_blackBBBB(match, tDefinition,
+							tSignature, tType);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tType] = " + tType + ", " + "[tSignature] = " + tSignature + ", " + "[tDefinition] = "
-						+ tDefinition + ".");
+						+ "[tDefinition] = " + tDefinition + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = "
+						+ tType + ".");
 			}
 			LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_10_4_collectelementstobetranslated_greenBBBBFFF(match,
-					tType, tSignature, tDefinition);
+					tDefinition, tSignature, tType);
 			//nothing EMoflonEdge tType__tDefinition____defines = (EMoflonEdge) result4_green[4];
 			//nothing EMoflonEdge tDefinition__tType____definedBy = (EMoflonEdge) result4_green[5];
 			//nothing EMoflonEdge tType__tSignature____signature = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = LinkDefinitionToTypeImpl
-					.pattern_LinkDefinitionToType_10_5_collectcontextelements_blackBBBB(match, tType, tSignature,
-							tDefinition);
+					.pattern_LinkDefinitionToType_10_5_collectcontextelements_blackBBBB(match, tDefinition, tSignature,
+							tType);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tType] = " + tType + ", " + "[tSignature] = " + tSignature + ", " + "[tDefinition] = "
-						+ tDefinition + ".");
+						+ "[tDefinition] = " + tDefinition + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = "
+						+ tType + ".");
 			}
-			LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_10_5_collectcontextelements_greenBBBBFF(match, tType,
-					tSignature, tDefinition);
+			LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_10_5_collectcontextelements_greenBBBBFF(match,
+					tDefinition, tSignature, tType);
 			//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result5_green[4];
 			//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result5_green[5];
 
 			// 
 			LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_10_6_registerobjectstomatch_expressionBBBBB(this,
-					match, tType, tSignature, tDefinition);
+					match, tDefinition, tSignature, tType);
 			return LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_10_7_expressionF();
 		} else {
 			return LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_10_8_expressionF();
@@ -508,17 +508,17 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[0];
-		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[1];
-		TSignature tSignature = (TSignature) result1_bindingAndBlack[2];
-		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_bindingAndBlack[3];
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[4];
-		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result1_bindingAndBlack[5];
-		TMember tDefinition = (TMember) result1_bindingAndBlack[6];
-		MSignature mSignature = (MSignature) result1_bindingAndBlack[7];
-		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_bindingAndBlack[8];
+		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result1_bindingAndBlack[0];
+		TMember tDefinition = (TMember) result1_bindingAndBlack[1];
+		MSignature mSignature = (MSignature) result1_bindingAndBlack[2];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[4];
+		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_bindingAndBlack[5];
+		TSignature tSignature = (TSignature) result1_bindingAndBlack[6];
+		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[7];
+		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_bindingAndBlack[8];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[9];
-		LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_11_1_performtransformation_greenBB(mDefinition, mType);
+		LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_11_1_performtransformation_greenBB(mType, mDefinition);
 
 		Object[] result2_green = LinkDefinitionToTypeImpl
 				.pattern_LinkDefinitionToType_11_2_collecttranslatedelements_greenF();
@@ -528,30 +528,30 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = LinkDefinitionToTypeImpl
-				.pattern_LinkDefinitionToType_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, tType, mDefinition,
-						tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature,
-						mDefinitionToTMember);
+				.pattern_LinkDefinitionToType_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, mType, tDefinition,
+						mSignature, mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType,
+						mSignatureToTSignature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tType] = " + tType + ", " + "[mDefinition] = " + mDefinition + ", " + "[tSignature] = "
-					+ tSignature + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", "
-					+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mType] = " + mType + ", " + "[tDefinition] = "
-					+ tDefinition + ", " + "[mSignature] = " + mSignature + ", " + "[mDefinitionToTMember] = "
-					+ mDefinitionToTMember + ".");
+					+ ", " + "[mType] = " + mType + ", " + "[tDefinition] = " + tDefinition + ", " + "[mSignature] = "
+					+ mSignature + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mDefinition] = " + mDefinition
+					+ ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tSignature] = " + tSignature
+					+ ", " + "[tType] = " + tType + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature
+					+ ".");
 		}
 		LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult,
-				tType, mDefinition, tSignature, mType, tDefinition);
-		//nothing EMoflonEdge tType__tDefinition____defines = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge tDefinition__tType____definedBy = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mType__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mDefinition__mType____abstractTypeDeclaration = (EMoflonEdge) result3_green[9];
+				mType, tDefinition, mDefinition, tSignature, tType);
+		//nothing EMoflonEdge mType__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mDefinition__mType____abstractTypeDeclaration = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tType__tDefinition____defines = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tDefinition__tType____definedBy = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge tType__tSignature____signature = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_11_5_registerobjects_expressionBBBBBBBBBBB(this,
-				ruleresult, tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-				mSignature, mDefinitionToTMember);
+				ruleresult, mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember, tSignature,
+				tType, mSignatureToTSignature);
 		return LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_11_6_expressionFB(ruleresult);
 	}
 
@@ -580,53 +580,53 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TAbstractType tType = (TAbstractType) result2_binding[0];
+		TMember tDefinition = (TMember) result2_binding[0];
 		TSignature tSignature = (TSignature) result2_binding[1];
-		TMember tDefinition = (TMember) result2_binding[2];
+		TAbstractType tType = (TAbstractType) result2_binding[2];
 		for (Object[] result2_black : LinkDefinitionToTypeImpl
-				.pattern_LinkDefinitionToType_12_2_corematch_blackBFBFFFBFFB(tType, tSignature, tDefinition, match)) {
-			MDefinition mDefinition = (MDefinition) result2_black[1];
-			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result2_black[3];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[4];
-			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_black[5];
-			MSignature mSignature = (MSignature) result2_black[7];
-			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[8];
+				.pattern_LinkDefinitionToType_12_2_corematch_blackFBFFFFBBFB(tDefinition, tSignature, tType, match)) {
+			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_black[0];
+			MSignature mSignature = (MSignature) result2_black[2];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[3];
+			MDefinition mDefinition = (MDefinition) result2_black[4];
+			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[5];
+			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result2_black[8];
 			// ForEach 
 			for (Object[] result3_black : LinkDefinitionToTypeImpl
-					.pattern_LinkDefinitionToType_12_3_findcontext_blackBBBBBBBBB(tType, mDefinition, tSignature,
-							mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature,
-							mDefinitionToTMember)) {
+					.pattern_LinkDefinitionToType_12_3_findcontext_blackBBBBBBBBB(mType, tDefinition, mSignature,
+							mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType,
+							mSignatureToTSignature)) {
 				Object[] result3_green = LinkDefinitionToTypeImpl
-						.pattern_LinkDefinitionToType_12_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFFFF(tType, mDefinition,
-								tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature,
-								mDefinitionToTMember);
+						.pattern_LinkDefinitionToType_12_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFFFF(mType, tDefinition,
+								mSignature, mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType,
+								mSignatureToTSignature);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[9];
-				//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tType__tDefinition____defines = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tDefinition__tType____definedBy = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge tType__tSignature____signature = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[21];
-				//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[22];
+				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge tType__tDefinition____defines = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge tDefinition__tType____definedBy = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge tType__tSignature____signature = (EMoflonEdge) result3_green[21];
+				//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[22];
 
 				Object[] result4_bindingAndBlack = LinkDefinitionToTypeImpl
 						.pattern_LinkDefinitionToType_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this, isApplicableMatch,
-								tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType,
-								tDefinition, mSignature, mDefinitionToTMember);
+								mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember,
+								tSignature, tType, mSignatureToTSignature);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tType] = " + tType + ", "
-							+ "[mDefinition] = " + mDefinition + ", " + "[tSignature] = " + tSignature + ", "
-							+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mTypeToTType] = "
-							+ mTypeToTType + ", " + "[mType] = " + mType + ", " + "[tDefinition] = " + tDefinition
-							+ ", " + "[mSignature] = " + mSignature + ", " + "[mDefinitionToTMember] = "
-							+ mDefinitionToTMember + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mType] = " + mType + ", "
+							+ "[tDefinition] = " + tDefinition + ", " + "[mSignature] = " + mSignature + ", "
+							+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mDefinition] = " + mDefinition + ", "
+							+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tSignature] = " + tSignature
+							+ ", " + "[tType] = " + tType + ", " + "[mSignatureToTSignature] = "
+							+ mSignatureToTSignature + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -656,11 +656,11 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TAbstractType tType, TSignature tSignature,
-			TMember tDefinition) {
-		match.registerObject("tType", tType);
-		match.registerObject("tSignature", tSignature);
+	public void registerObjectsToMatch_BWD(Match match, TMember tDefinition, TSignature tSignature,
+			TAbstractType tType) {
 		match.registerObject("tDefinition", tDefinition);
+		match.registerObject("tSignature", tSignature);
+		match.registerObject("tType", tType);
 
 	}
 
@@ -669,8 +669,8 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TAbstractType tType, TSignature tSignature,
-			TMember tDefinition) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TMember tDefinition, TSignature tSignature,
+			TAbstractType tType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -699,10 +699,10 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
+			TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature, TAbstractType tType,
+			MSignatureToTSignature mSignatureToTSignature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -717,15 +717,15 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tType", tType);
-		isApplicableMatch.registerObject("mDefinition", mDefinition);
-		isApplicableMatch.registerObject("tSignature", tSignature);
-		isApplicableMatch.registerObject("mSignatureToTSignature", mSignatureToTSignature);
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		isApplicableMatch.registerObject("mSignature", mSignature);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
+		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		isApplicableMatch.registerObject("tSignature", tSignature);
+		isApplicableMatch.registerObject("tType", tType);
+		isApplicableMatch.registerObject("mSignatureToTSignature", mSignatureToTSignature);
 		return csp;
 	}
 
@@ -743,18 +743,18 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tType, EObject mDefinition,
-			EObject tSignature, EObject mSignatureToTSignature, EObject mTypeToTType, EObject mType,
-			EObject tDefinition, EObject mSignature, EObject mDefinitionToTMember) {
-		ruleresult.registerObject("tType", tType);
-		ruleresult.registerObject("mDefinition", mDefinition);
-		ruleresult.registerObject("tSignature", tSignature);
-		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mType, EObject tDefinition,
+			EObject mSignature, EObject mTypeToTType, EObject mDefinition, EObject mDefinitionToTMember,
+			EObject tSignature, EObject tType, EObject mSignatureToTSignature) {
 		ruleresult.registerObject("mType", mType);
 		ruleresult.registerObject("tDefinition", tDefinition);
 		ruleresult.registerObject("mSignature", mSignature);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+		ruleresult.registerObject("mDefinition", mDefinition);
 		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		ruleresult.registerObject("tSignature", tSignature);
+		ruleresult.registerObject("tType", tType);
+		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
 
 	}
 
@@ -772,7 +772,7 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_29(EMoflonEdge _edge_defines) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_62(EMoflonEdge _edge_defines) {
 
 		Object[] result1_bindingAndBlack = LinkDefinitionToTypeImpl
 				.pattern_LinkDefinitionToType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -788,9 +788,9 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		// ForEach 
 		for (Object[] result2_black : LinkDefinitionToTypeImpl
 				.pattern_LinkDefinitionToType_20_2_testcorematchandDECs_blackFFFB(_edge_defines)) {
-			TAbstractType tType = (TAbstractType) result2_black[0];
+			TMember tDefinition = (TMember) result2_black[0];
 			TSignature tSignature = (TSignature) result2_black[1];
-			TMember tDefinition = (TMember) result2_black[2];
+			TAbstractType tType = (TAbstractType) result2_black[2];
 			Object[] result2_green = LinkDefinitionToTypeImpl
 					.pattern_LinkDefinitionToType_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -798,7 +798,7 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 			// 
 			if (LinkDefinitionToTypeImpl
 					.pattern_LinkDefinitionToType_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(this,
-							match, tType, tSignature, tDefinition)) {
+							match, tDefinition, tSignature, tType)) {
 				// 
 				if (LinkDefinitionToTypeImpl
 						.pattern_LinkDefinitionToType_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -830,7 +830,7 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_32(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_63(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = LinkDefinitionToTypeImpl
 				.pattern_LinkDefinitionToType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -846,9 +846,9 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		// ForEach 
 		for (Object[] result2_black : LinkDefinitionToTypeImpl
 				.pattern_LinkDefinitionToType_21_2_testcorematchandDECs_blackFFFB(_edge_bodyDeclarations)) {
-			MDefinition mDefinition = (MDefinition) result2_black[0];
-			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_black[1];
-			MSignature mSignature = (MSignature) result2_black[2];
+			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_black[0];
+			MSignature mSignature = (MSignature) result2_black[1];
+			MDefinition mDefinition = (MDefinition) result2_black[2];
 			Object[] result2_green = LinkDefinitionToTypeImpl
 					.pattern_LinkDefinitionToType_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -856,7 +856,7 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 			// 
 			if (LinkDefinitionToTypeImpl
 					.pattern_LinkDefinitionToType_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(this,
-							match, mDefinition, mType, mSignature)) {
+							match, mType, mSignature, mDefinition)) {
 				// 
 				if (LinkDefinitionToTypeImpl
 						.pattern_LinkDefinitionToType_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -963,46 +963,46 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TAbstractType tType = (TAbstractType) result2_bindingAndBlack[0];
-		MDefinition mDefinition = (MDefinition) result2_bindingAndBlack[1];
-		TSignature tSignature = (TSignature) result2_bindingAndBlack[2];
-		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_bindingAndBlack[3];
-		TMember tDefinition = (TMember) result2_bindingAndBlack[4];
-		MSignature mSignature = (MSignature) result2_bindingAndBlack[5];
+		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_bindingAndBlack[0];
+		TMember tDefinition = (TMember) result2_bindingAndBlack[1];
+		MSignature mSignature = (MSignature) result2_bindingAndBlack[2];
+		MDefinition mDefinition = (MDefinition) result2_bindingAndBlack[3];
+		TSignature tSignature = (TSignature) result2_bindingAndBlack[4];
+		TAbstractType tType = (TAbstractType) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = LinkDefinitionToTypeImpl
-				.pattern_LinkDefinitionToType_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, tType, mDefinition,
-						tSignature, mType, tDefinition, mSignature, sourceMatch, targetMatch);
+				.pattern_LinkDefinitionToType_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, mType, tDefinition,
+						mSignature, mDefinition, tSignature, tType, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tType] = " + tType + ", " + "[mDefinition] = " + mDefinition + ", " + "[tSignature] = "
-					+ tSignature + ", " + "[mType] = " + mType + ", " + "[tDefinition] = " + tDefinition + ", "
-					+ "[mSignature] = " + mSignature + ", " + "[sourceMatch] = " + sourceMatch + ", "
-					+ "[targetMatch] = " + targetMatch + ".");
+					+ "[mType] = " + mType + ", " + "[tDefinition] = " + tDefinition + ", " + "[mSignature] = "
+					+ mSignature + ", " + "[mDefinition] = " + mDefinition + ", " + "[tSignature] = " + tSignature
+					+ ", " + "[tType] = " + tType + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
+					+ targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : LinkDefinitionToTypeImpl
-					.pattern_LinkDefinitionToType_24_5_matchcorrcontext_blackBBBFFBBBFBB(tType, mDefinition, tSignature,
-							mType, tDefinition, mSignature, sourceMatch, targetMatch)) {
-				MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result5_black[3];
-				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[4];
-				MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result5_black[8];
+					.pattern_LinkDefinitionToType_24_5_matchcorrcontext_blackBBBFBFBBFBB(mType, tDefinition, mSignature,
+							mDefinition, tSignature, tType, sourceMatch, targetMatch)) {
+				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[3];
+				MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result5_black[5];
+				MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result5_black[8];
 				Object[] result5_green = LinkDefinitionToTypeImpl
-						.pattern_LinkDefinitionToType_24_5_matchcorrcontext_greenBBBBBF(mSignatureToTSignature,
-								mTypeToTType, mDefinitionToTMember, sourceMatch, targetMatch);
+						.pattern_LinkDefinitionToType_24_5_matchcorrcontext_greenBBBBBF(mTypeToTType,
+								mDefinitionToTMember, mSignatureToTSignature, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[5];
 
 				Object[] result6_black = LinkDefinitionToTypeImpl
-						.pattern_LinkDefinitionToType_24_6_createcorrespondence_blackBBBBBBB(tType, mDefinition,
-								tSignature, mType, tDefinition, mSignature, ccMatch);
+						.pattern_LinkDefinitionToType_24_6_createcorrespondence_blackBBBBBBB(mType, tDefinition,
+								mSignature, mDefinition, tSignature, tType, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tType] = " + tType + ", "
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mType] = " + mType + ", "
+							+ "[tDefinition] = " + tDefinition + ", " + "[mSignature] = " + mSignature + ", "
 							+ "[mDefinition] = " + mDefinition + ", " + "[tSignature] = " + tSignature + ", "
-							+ "[mType] = " + mType + ", " + "[tDefinition] = " + tDefinition + ", " + "[mSignature] = "
-							+ mSignature + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ "[tType] = " + tType + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = LinkDefinitionToTypeImpl
@@ -1025,9 +1025,8 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TAbstractType tType, MDefinition mDefinition, TSignature tSignature,
-			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, Match sourceMatch,
-			Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
+			MDefinition mDefinition, TSignature tSignature, TAbstractType tType, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1056,9 +1055,9 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(MDefinition mDefinition, AbstractTypeDeclaration mType, MSignature mSignature) {// 
+	public boolean checkDEC_FWD(AbstractTypeDeclaration mType, MSignature mSignature, MDefinition mDefinition) {// 
 		Object[] result1_black = LinkDefinitionToTypeImpl
-				.pattern_LinkDefinitionToType_27_1_matchtggpattern_blackBBB(mDefinition, mType, mSignature);
+				.pattern_LinkDefinitionToType_27_1_matchtggpattern_blackBBB(mType, mSignature, mDefinition);
 		if (result1_black != null) {
 			return LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_27_2_expressionF();
 		} else {
@@ -1072,9 +1071,9 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TAbstractType tType, TSignature tSignature, TMember tDefinition) {// 
+	public boolean checkDEC_BWD(TMember tDefinition, TSignature tSignature, TAbstractType tType) {// 
 		Object[] result1_black = LinkDefinitionToTypeImpl
-				.pattern_LinkDefinitionToType_28_1_matchtggpattern_blackBBB(tType, tSignature, tDefinition);
+				.pattern_LinkDefinitionToType_28_1_matchtggpattern_blackBBB(tDefinition, tSignature, tType);
 		if (result1_black != null) {
 			return LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_28_2_expressionF();
 		} else {
@@ -1104,28 +1103,28 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 				.pattern_LinkDefinitionToType_29_2_isapplicablecore_blackFFFFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList mTypeToTTypeList = (RuleEntryList) result2_black[0];
-			TAbstractType tType = (TAbstractType) result2_black[1];
+			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_black[1];
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[2];
-			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_black[3];
+			TAbstractType tType = (TAbstractType) result2_black[3];
 			//nothing RuleEntryList mSignatureToTSignatureList = (RuleEntryList) result2_black[4];
-			MDefinition mDefinition = (MDefinition) result2_black[5];
-			MSignature mSignature = (MSignature) result2_black[6];
+			TMember tDefinition = (TMember) result2_black[5];
+			TSignature tSignature = (TSignature) result2_black[6];
 			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result2_black[7];
-			TSignature tSignature = (TSignature) result2_black[8];
-			TMember tDefinition = (TMember) result2_black[9];
+			MSignature mSignature = (MSignature) result2_black[8];
+			MDefinition mDefinition = (MDefinition) result2_black[9];
 			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[10];
 
 			Object[] result3_bindingAndBlack = LinkDefinitionToTypeImpl
 					.pattern_LinkDefinitionToType_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBB(this, isApplicableMatch,
-							tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-							mSignature, mDefinitionToTMember, ruleResult);
+							mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember, tSignature,
+							tType, mSignatureToTSignature, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tType] = " + tType + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[tSignature] = " + tSignature + ", "
-						+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mTypeToTType] = "
-						+ mTypeToTType + ", " + "[mType] = " + mType + ", " + "[tDefinition] = " + tDefinition + ", "
-						+ "[mSignature] = " + mSignature + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mType] = " + mType + ", "
+						+ "[tDefinition] = " + tDefinition + ", " + "[mSignature] = " + mSignature + ", "
+						+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mDefinition] = " + mDefinition + ", "
+						+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tSignature] = " + tSignature
+						+ ", " + "[tType] = " + tType + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature
 						+ ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1133,25 +1132,25 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 			if (LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = LinkDefinitionToTypeImpl
-						.pattern_LinkDefinitionToType_29_5_checknacs_blackBBBBBBBBB(tType, mDefinition, tSignature,
-								mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature,
-								mDefinitionToTMember);
+						.pattern_LinkDefinitionToType_29_5_checknacs_blackBBBBBBBBB(mType, tDefinition, mSignature,
+								mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType,
+								mSignatureToTSignature);
 				if (result5_black != null) {
 
 					Object[] result6_black = LinkDefinitionToTypeImpl
-							.pattern_LinkDefinitionToType_29_6_perform_blackBBBBBBBBBB(tType, mDefinition, tSignature,
-									mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature,
-									mDefinitionToTMember, ruleResult);
+							.pattern_LinkDefinitionToType_29_6_perform_blackBBBBBBBBBB(mType, tDefinition, mSignature,
+									mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType,
+									mSignatureToTSignature, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tType] = " + tType
-								+ ", " + "[mDefinition] = " + mDefinition + ", " + "[tSignature] = " + tSignature + ", "
-								+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mTypeToTType] = "
-								+ mTypeToTType + ", " + "[mType] = " + mType + ", " + "[tDefinition] = " + tDefinition
-								+ ", " + "[mSignature] = " + mSignature + ", " + "[mDefinitionToTMember] = "
-								+ mDefinitionToTMember + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mType] = " + mType
+								+ ", " + "[tDefinition] = " + tDefinition + ", " + "[mSignature] = " + mSignature + ", "
+								+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mDefinition] = " + mDefinition + ", "
+								+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tSignature] = "
+								+ tSignature + ", " + "[tType] = " + tType + ", " + "[mSignatureToTSignature] = "
+								+ mSignatureToTSignature + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_29_6_perform_greenBBBBBB(tType, mDefinition,
-							tSignature, mType, tDefinition, ruleResult);
+					LinkDefinitionToTypeImpl.pattern_LinkDefinitionToType_29_6_perform_greenBBBBBB(mType, tDefinition,
+							mDefinition, tSignature, tType, ruleResult);
 
 				} else {
 				}
@@ -1168,10 +1167,10 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
+			TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature, TAbstractType tType,
+			MSignatureToTSignature mSignatureToTSignature, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1186,15 +1185,15 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tType", tType);
-		isApplicableMatch.registerObject("mDefinition", mDefinition);
-		isApplicableMatch.registerObject("tSignature", tSignature);
-		isApplicableMatch.registerObject("mSignatureToTSignature", mSignatureToTSignature);
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		isApplicableMatch.registerObject("mSignature", mSignature);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
+		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		isApplicableMatch.registerObject("tSignature", tSignature);
+		isApplicableMatch.registerObject("tType", tType);
+		isApplicableMatch.registerObject("mSignatureToTSignature", mSignatureToTSignature);
 		return csp;
 	}
 
@@ -1215,28 +1214,29 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_FWD__MATCH_MDEFINITION_ABSTRACTTYPEDECLARATION_MSIGNATURE:
-			return isAppropriate_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2), (MSignature) arguments.get(3));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_FWD__MATCH_ABSTRACTTYPEDECLARATION_MSIGNATURE_MDEFINITION:
+			return isAppropriate_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
+					(MSignature) arguments.get(2), (MDefinition) arguments.get(3));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MDEFINITION_ABSTRACTTYPEDECLARATION_MSIGNATURE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2), (MSignature) arguments.get(3));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ABSTRACTTYPEDECLARATION_MSIGNATURE_MDEFINITION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
+					(MSignature) arguments.get(2), (MDefinition) arguments.get(3));
 			return null;
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MDEFINITION_ABSTRACTTYPEDECLARATION_MSIGNATURE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2), (MSignature) arguments.get(3));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ABSTRACTTYPEDECLARATION_MSIGNATURE_MDEFINITION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
+					(MSignature) arguments.get(2), (MDefinition) arguments.get(3));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TABSTRACTTYPE_MDEFINITION_TSIGNATURE_MSIGNATURETOTSIGNATURE_TYPETOTABSTRACTTYPE_ABSTRACTTYPEDECLARATION_TMEMBER_MSIGNATURE_MDEFINITIONTOTMEMBER:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TAbstractType) arguments.get(1),
-					(MDefinition) arguments.get(2), (TSignature) arguments.get(3),
-					(MSignatureToTSignature) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
-					(AbstractTypeDeclaration) arguments.get(6), (TMember) arguments.get(7),
-					(MSignature) arguments.get(8), (MDefinitionToTMember) arguments.get(9));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ABSTRACTTYPEDECLARATION_TMEMBER_MSIGNATURE_TYPETOTABSTRACTTYPE_MDEFINITION_MDEFINITIONTOTMEMBER_TSIGNATURE_TABSTRACTTYPE_MSIGNATURETOTSIGNATURE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+					(AbstractTypeDeclaration) arguments.get(1), (TMember) arguments.get(2),
+					(MSignature) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
+					(MDefinition) arguments.get(5), (MDefinitionToTMember) arguments.get(6),
+					(TSignature) arguments.get(7), (TAbstractType) arguments.get(8),
+					(MSignatureToTSignature) arguments.get(9));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1247,28 +1247,29 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 			return null;
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_BWD__MATCH_TABSTRACTTYPE_TSIGNATURE_TMEMBER:
-			return isAppropriate_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TSignature) arguments.get(2), (TMember) arguments.get(3));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TSIGNATURE_TABSTRACTTYPE:
+			return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+					(TSignature) arguments.get(2), (TAbstractType) arguments.get(3));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TABSTRACTTYPE_TSIGNATURE_TMEMBER:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TSignature) arguments.get(2), (TMember) arguments.get(3));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TSIGNATURE_TABSTRACTTYPE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+					(TSignature) arguments.get(2), (TAbstractType) arguments.get(3));
 			return null;
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TABSTRACTTYPE_TSIGNATURE_TMEMBER:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TSignature) arguments.get(2), (TMember) arguments.get(3));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TSIGNATURE_TABSTRACTTYPE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+					(TSignature) arguments.get(2), (TAbstractType) arguments.get(3));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TABSTRACTTYPE_MDEFINITION_TSIGNATURE_MSIGNATURETOTSIGNATURE_TYPETOTABSTRACTTYPE_ABSTRACTTYPEDECLARATION_TMEMBER_MSIGNATURE_MDEFINITIONTOTMEMBER:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TAbstractType) arguments.get(1),
-					(MDefinition) arguments.get(2), (TSignature) arguments.get(3),
-					(MSignatureToTSignature) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
-					(AbstractTypeDeclaration) arguments.get(6), (TMember) arguments.get(7),
-					(MSignature) arguments.get(8), (MDefinitionToTMember) arguments.get(9));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ABSTRACTTYPEDECLARATION_TMEMBER_MSIGNATURE_TYPETOTABSTRACTTYPE_MDEFINITION_MDEFINITIONTOTMEMBER_TSIGNATURE_TABSTRACTTYPE_MSIGNATURETOTSIGNATURE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(AbstractTypeDeclaration) arguments.get(1), (TMember) arguments.get(2),
+					(MSignature) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
+					(MDefinition) arguments.get(5), (MDefinitionToTMember) arguments.get(6),
+					(TSignature) arguments.get(7), (TAbstractType) arguments.get(8),
+					(MSignatureToTSignature) arguments.get(9));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1279,39 +1280,38 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 			return null;
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_29__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_29((EMoflonEdge) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_32__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_32((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_62__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_62((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_63__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_63((EMoflonEdge) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__TABSTRACTTYPE_MDEFINITION_TSIGNATURE_ABSTRACTTYPEDECLARATION_TMEMBER_MSIGNATURE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TAbstractType) arguments.get(0), (MDefinition) arguments.get(1),
-					(TSignature) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
-					(TMember) arguments.get(4), (MSignature) arguments.get(5), (Match) arguments.get(6),
-					(Match) arguments.get(7));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__ABSTRACTTYPEDECLARATION_TMEMBER_MSIGNATURE_MDEFINITION_TSIGNATURE_TABSTRACTTYPE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((AbstractTypeDeclaration) arguments.get(0), (TMember) arguments.get(1),
+					(MSignature) arguments.get(2), (MDefinition) arguments.get(3), (TSignature) arguments.get(4),
+					(TAbstractType) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___CHECK_DEC_FWD__MDEFINITION_ABSTRACTTYPEDECLARATION_MSIGNATURE:
-			return checkDEC_FWD((MDefinition) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
-					(MSignature) arguments.get(2));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___CHECK_DEC_BWD__TABSTRACTTYPE_TSIGNATURE_TMEMBER:
-			return checkDEC_BWD((TAbstractType) arguments.get(0), (TSignature) arguments.get(1),
-					(TMember) arguments.get(2));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___CHECK_DEC_FWD__ABSTRACTTYPEDECLARATION_MSIGNATURE_MDEFINITION:
+			return checkDEC_FWD((AbstractTypeDeclaration) arguments.get(0), (MSignature) arguments.get(1),
+					(MDefinition) arguments.get(2));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___CHECK_DEC_BWD__TMEMBER_TSIGNATURE_TABSTRACTTYPE:
+			return checkDEC_BWD((TMember) arguments.get(0), (TSignature) arguments.get(1),
+					(TAbstractType) arguments.get(2));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE_MSIGNATURETOTSIGNATURE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1),
 					(MSignatureToTSignature) arguments.get(2));
-		case RulesPackage.LINK_DEFINITION_TO_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TABSTRACTTYPE_MDEFINITION_TSIGNATURE_MSIGNATURETOTSIGNATURE_TYPETOTABSTRACTTYPE_ABSTRACTTYPEDECLARATION_TMEMBER_MSIGNATURE_MDEFINITIONTOTMEMBER_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TAbstractType) arguments.get(1),
-					(MDefinition) arguments.get(2), (TSignature) arguments.get(3),
-					(MSignatureToTSignature) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
-					(AbstractTypeDeclaration) arguments.get(6), (TMember) arguments.get(7),
-					(MSignature) arguments.get(8), (MDefinitionToTMember) arguments.get(9),
-					(ModelgeneratorRuleResult) arguments.get(10));
+		case RulesPackage.LINK_DEFINITION_TO_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ABSTRACTTYPEDECLARATION_TMEMBER_MSIGNATURE_TYPETOTABSTRACTTYPE_MDEFINITION_MDEFINITIONTOTMEMBER_TSIGNATURE_TABSTRACTTYPE_MSIGNATURETOTSIGNATURE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(AbstractTypeDeclaration) arguments.get(1), (TMember) arguments.get(2),
+					(MSignature) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
+					(MDefinition) arguments.get(5), (MDefinitionToTMember) arguments.get(6),
+					(TSignature) arguments.get(7), (TAbstractType) arguments.get(8),
+					(MSignatureToTSignature) arguments.get(9), (ModelgeneratorRuleResult) arguments.get(10));
 		case RulesPackage.LINK_DEFINITION_TO_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1319,16 +1319,16 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_0_1_initialbindings_blackBBBBB(LinkDefinitionToType _this,
-			Match match, MDefinition mDefinition, AbstractTypeDeclaration mType, MSignature mSignature) {
-		return new Object[] { _this, match, mDefinition, mType, mSignature };
+			Match match, AbstractTypeDeclaration mType, MSignature mSignature, MDefinition mDefinition) {
+		return new Object[] { _this, match, mType, mSignature, mDefinition };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_0_2_SolveCSP_bindingFBBBBB(LinkDefinitionToType _this,
-			Match match, MDefinition mDefinition, AbstractTypeDeclaration mType, MSignature mSignature) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mDefinition, mType, mSignature);
+			Match match, AbstractTypeDeclaration mType, MSignature mSignature, MDefinition mDefinition) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mType, mSignature, mDefinition);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mDefinition, mType, mSignature };
+			return new Object[] { csp, _this, match, mType, mSignature, mDefinition };
 		}
 		return null;
 	}
@@ -1338,10 +1338,10 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_0_2_SolveCSP_bindingAndBlackFBBBBB(
-			LinkDefinitionToType _this, Match match, MDefinition mDefinition, AbstractTypeDeclaration mType,
-			MSignature mSignature) {
+			LinkDefinitionToType _this, Match match, AbstractTypeDeclaration mType, MSignature mSignature,
+			MDefinition mDefinition) {
 		Object[] result_pattern_LinkDefinitionToType_0_2_SolveCSP_binding = pattern_LinkDefinitionToType_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, mDefinition, mType, mSignature);
+				_this, match, mType, mSignature, mDefinition);
 		if (result_pattern_LinkDefinitionToType_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToType_0_2_SolveCSP_binding[0];
 
@@ -1349,7 +1349,7 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 					csp);
 			if (result_pattern_LinkDefinitionToType_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mDefinition, mType, mSignature };
+				return new Object[] { csp, _this, match, mType, mSignature, mDefinition };
 			}
 		}
 		return null;
@@ -1363,12 +1363,12 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_0_4_collectelementstobetranslated_blackBBBB(Match match,
-			MDefinition mDefinition, AbstractTypeDeclaration mType, MSignature mSignature) {
-		return new Object[] { match, mDefinition, mType, mSignature };
+			AbstractTypeDeclaration mType, MSignature mSignature, MDefinition mDefinition) {
+		return new Object[] { match, mType, mSignature, mDefinition };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_0_4_collectelementstobetranslated_greenBBBFF(Match match,
-			MDefinition mDefinition, AbstractTypeDeclaration mType) {
+			AbstractTypeDeclaration mType, MDefinition mDefinition) {
 		EMoflonEdge mType__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mType__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
@@ -1381,22 +1381,22 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		match.getToBeTranslatedEdges().add(mDefinition__mType____abstractTypeDeclaration);
 		mType__mDefinition____bodyDeclarations.setName(mType__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__mType____abstractTypeDeclaration.setName(mDefinition__mType____abstractTypeDeclaration_name_prime);
-		return new Object[] { match, mDefinition, mType, mType__mDefinition____bodyDeclarations,
+		return new Object[] { match, mType, mDefinition, mType__mDefinition____bodyDeclarations,
 				mDefinition__mType____abstractTypeDeclaration };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_0_5_collectcontextelements_blackBBBB(Match match,
-			MDefinition mDefinition, AbstractTypeDeclaration mType, MSignature mSignature) {
-		return new Object[] { match, mDefinition, mType, mSignature };
+			AbstractTypeDeclaration mType, MSignature mSignature, MDefinition mDefinition) {
+		return new Object[] { match, mType, mSignature, mDefinition };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_0_5_collectcontextelements_greenBBBBFF(Match match,
-			MDefinition mDefinition, AbstractTypeDeclaration mType, MSignature mSignature) {
+			AbstractTypeDeclaration mType, MSignature mSignature, MDefinition mDefinition) {
 		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(mDefinition);
 		match.getContextNodes().add(mType);
 		match.getContextNodes().add(mSignature);
+		match.getContextNodes().add(mDefinition);
 		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
 		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
 		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
@@ -1407,14 +1407,14 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		match.getContextEdges().add(mDefinition__mSignature____mSignature);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		return new Object[] { match, mDefinition, mType, mSignature, mSignature__mDefinition____mDefinitions,
+		return new Object[] { match, mType, mSignature, mDefinition, mSignature__mDefinition____mDefinitions,
 				mDefinition__mSignature____mSignature };
 	}
 
 	public static final void pattern_LinkDefinitionToType_0_6_registerobjectstomatch_expressionBBBBB(
-			LinkDefinitionToType _this, Match match, MDefinition mDefinition, AbstractTypeDeclaration mType,
-			MSignature mSignature) {
-		_this.registerObjectsToMatch_FWD(match, mDefinition, mType, mSignature);
+			LinkDefinitionToType _this, Match match, AbstractTypeDeclaration mType, MSignature mSignature,
+			MDefinition mDefinition) {
+		_this.registerObjectsToMatch_FWD(match, mType, mSignature, mDefinition);
 
 	}
 
@@ -1430,45 +1430,45 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 
 	public static final Object[] pattern_LinkDefinitionToType_1_1_performtransformation_bindingFFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mDefinition");
-		EObject _localVariable_2 = isApplicableMatch.getObject("tSignature");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mSignatureToTSignature");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mTypeToTType");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mType");
-		EObject _localVariable_6 = isApplicableMatch.getObject("tDefinition");
-		EObject _localVariable_7 = isApplicableMatch.getObject("mSignature");
-		EObject _localVariable_8 = isApplicableMatch.getObject("mDefinitionToTMember");
-		EObject tmpTType = _localVariable_0;
-		EObject tmpMDefinition = _localVariable_1;
-		EObject tmpTSignature = _localVariable_2;
-		EObject tmpMSignatureToTSignature = _localVariable_3;
-		EObject tmpMTypeToTType = _localVariable_4;
-		EObject tmpMType = _localVariable_5;
-		EObject tmpTDefinition = _localVariable_6;
-		EObject tmpMSignature = _localVariable_7;
-		EObject tmpMDefinitionToTMember = _localVariable_8;
-		if (tmpTType instanceof TAbstractType) {
-			TAbstractType tType = (TAbstractType) tmpTType;
-			if (tmpMDefinition instanceof MDefinition) {
-				MDefinition mDefinition = (MDefinition) tmpMDefinition;
-				if (tmpTSignature instanceof TSignature) {
-					TSignature tSignature = (TSignature) tmpTSignature;
-					if (tmpMSignatureToTSignature instanceof MSignatureToTSignature) {
-						MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) tmpMSignatureToTSignature;
-						if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-							TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-							if (tmpMType instanceof AbstractTypeDeclaration) {
-								AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-								if (tmpTDefinition instanceof TMember) {
-									TMember tDefinition = (TMember) tmpTDefinition;
-									if (tmpMSignature instanceof MSignature) {
-										MSignature mSignature = (MSignature) tmpMSignature;
-										if (tmpMDefinitionToTMember instanceof MDefinitionToTMember) {
-											MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) tmpMDefinitionToTMember;
-											return new Object[] { tType, mDefinition, tSignature,
-													mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-													mSignature, mDefinitionToTMember, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("mType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tDefinition");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mSignature");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mDefinitionToTMember");
+		EObject _localVariable_6 = isApplicableMatch.getObject("tSignature");
+		EObject _localVariable_7 = isApplicableMatch.getObject("tType");
+		EObject _localVariable_8 = isApplicableMatch.getObject("mSignatureToTSignature");
+		EObject tmpMType = _localVariable_0;
+		EObject tmpTDefinition = _localVariable_1;
+		EObject tmpMSignature = _localVariable_2;
+		EObject tmpMTypeToTType = _localVariable_3;
+		EObject tmpMDefinition = _localVariable_4;
+		EObject tmpMDefinitionToTMember = _localVariable_5;
+		EObject tmpTSignature = _localVariable_6;
+		EObject tmpTType = _localVariable_7;
+		EObject tmpMSignatureToTSignature = _localVariable_8;
+		if (tmpMType instanceof AbstractTypeDeclaration) {
+			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
+			if (tmpTDefinition instanceof TMember) {
+				TMember tDefinition = (TMember) tmpTDefinition;
+				if (tmpMSignature instanceof MSignature) {
+					MSignature mSignature = (MSignature) tmpMSignature;
+					if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+						TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+						if (tmpMDefinition instanceof MDefinition) {
+							MDefinition mDefinition = (MDefinition) tmpMDefinition;
+							if (tmpMDefinitionToTMember instanceof MDefinitionToTMember) {
+								MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) tmpMDefinitionToTMember;
+								if (tmpTSignature instanceof TSignature) {
+									TSignature tSignature = (TSignature) tmpTSignature;
+									if (tmpTType instanceof TAbstractType) {
+										TAbstractType tType = (TAbstractType) tmpTType;
+										if (tmpMSignatureToTSignature instanceof MSignatureToTSignature) {
+											MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) tmpMSignatureToTSignature;
+											return new Object[] { mType, tDefinition, mSignature, mTypeToTType,
+													mDefinition, mDefinitionToTMember, tSignature, tType,
+													mSignatureToTSignature, isApplicableMatch };
 										}
 									}
 								}
@@ -1482,16 +1482,15 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_1_1_performtransformation_blackBBBBBBBBBFBB(
-			TAbstractType tType, MDefinition mDefinition, TSignature tSignature,
-			MSignatureToTSignature mSignatureToTSignature, TypeToTAbstractType mTypeToTType,
-			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember, LinkDefinitionToType _this,
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType,
+			MDefinition mDefinition, MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			TAbstractType tType, MSignatureToTSignature mSignatureToTSignature, LinkDefinitionToType _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType,
-						tDefinition, mSignature, mDefinitionToTMember, csp, _this, isApplicableMatch };
+				return new Object[] { mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember,
+						tSignature, tType, mSignatureToTSignature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1502,34 +1501,34 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		Object[] result_pattern_LinkDefinitionToType_1_1_performtransformation_binding = pattern_LinkDefinitionToType_1_1_performtransformation_bindingFFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_LinkDefinitionToType_1_1_performtransformation_binding != null) {
-			TAbstractType tType = (TAbstractType) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[0];
-			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[1];
-			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[2];
-			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[3];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[4];
-			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[5];
-			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[6];
-			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[7];
-			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[8];
+			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[0];
+			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[1];
+			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[2];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[3];
+			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[4];
+			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[5];
+			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[6];
+			TAbstractType tType = (TAbstractType) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[7];
+			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result_pattern_LinkDefinitionToType_1_1_performtransformation_binding[8];
 
 			Object[] result_pattern_LinkDefinitionToType_1_1_performtransformation_black = pattern_LinkDefinitionToType_1_1_performtransformation_blackBBBBBBBBBFBB(
-					tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-					mSignature, mDefinitionToTMember, _this, isApplicableMatch);
+					mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType,
+					mSignatureToTSignature, _this, isApplicableMatch);
 			if (result_pattern_LinkDefinitionToType_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_LinkDefinitionToType_1_1_performtransformation_black[9];
 
-				return new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType,
-						tDefinition, mSignature, mDefinitionToTMember, csp, _this, isApplicableMatch };
+				return new Object[] { mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember,
+						tSignature, tType, mSignatureToTSignature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToType_1_1_performtransformation_greenBBB(TAbstractType tType,
-			TSignature tSignature, TMember tDefinition) {
+	public static final Object[] pattern_LinkDefinitionToType_1_1_performtransformation_greenBBB(TMember tDefinition,
+			TSignature tSignature, TAbstractType tType) {
 		tType.getDefines().add(tDefinition);
 		tType.getSignature().add(tSignature);
-		return new Object[] { tType, tSignature, tDefinition };
+		return new Object[] { tDefinition, tSignature, tType };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_1_2_collecttranslatedelements_greenF() {
@@ -1538,72 +1537,73 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tType, EObject mDefinition, EObject tSignature,
-			EObject mSignatureToTSignature, EObject mTypeToTType, EObject mType, EObject tDefinition,
-			EObject mSignature, EObject mDefinitionToTMember) {
-		if (!mDefinition.equals(tType)) {
-			if (!mDefinition.equals(tSignature)) {
-				if (!mDefinition.equals(mSignatureToTSignature)) {
-					if (!mDefinition.equals(mTypeToTType)) {
-						if (!mDefinition.equals(mType)) {
-							if (!mDefinition.equals(tDefinition)) {
-								if (!mDefinition.equals(mSignature)) {
-									if (!mDefinition.equals(mDefinitionToTMember)) {
-										if (!tSignature.equals(tType)) {
-											if (!mSignatureToTSignature.equals(tType)) {
-												if (!mSignatureToTSignature.equals(tSignature)) {
-													if (!mSignatureToTSignature.equals(mTypeToTType)) {
-														if (!mSignatureToTSignature.equals(mType)) {
-															if (!mSignatureToTSignature.equals(tDefinition)) {
+			PerformRuleResult ruleresult, EObject mType, EObject tDefinition, EObject mSignature, EObject mTypeToTType,
+			EObject mDefinition, EObject mDefinitionToTMember, EObject tSignature, EObject tType,
+			EObject mSignatureToTSignature) {
+		if (!mType.equals(tDefinition)) {
+			if (!mType.equals(mTypeToTType)) {
+				if (!mType.equals(tSignature)) {
+					if (!mType.equals(tType)) {
+						if (!tDefinition.equals(tSignature)) {
+							if (!tDefinition.equals(tType)) {
+								if (!mSignature.equals(mType)) {
+									if (!mSignature.equals(tDefinition)) {
+										if (!mSignature.equals(mTypeToTType)) {
+											if (!mSignature.equals(tSignature)) {
+												if (!mSignature.equals(tType)) {
+													if (!mSignature.equals(mSignatureToTSignature)) {
+														if (!mTypeToTType.equals(tDefinition)) {
+															if (!mTypeToTType.equals(tSignature)) {
 																if (!mTypeToTType.equals(tType)) {
-																	if (!mTypeToTType.equals(tSignature)) {
-																		if (!mTypeToTType.equals(tDefinition)) {
-																			if (!mType.equals(tType)) {
-																				if (!mType.equals(tSignature)) {
-																					if (!mType.equals(mTypeToTType)) {
-																						if (!mType
-																								.equals(tDefinition)) {
-																							if (!tDefinition
+																	if (!mDefinition.equals(mType)) {
+																		if (!mDefinition.equals(tDefinition)) {
+																			if (!mDefinition.equals(mSignature)) {
+																				if (!mDefinition.equals(mTypeToTType)) {
+																					if (!mDefinition.equals(
+																							mDefinitionToTMember)) {
+																						if (!mDefinition
+																								.equals(tSignature)) {
+																							if (!mDefinition
 																									.equals(tType)) {
-																								if (!tDefinition.equals(
-																										tSignature)) {
-																									if (!mSignature
-																											.equals(tType)) {
-																										if (!mSignature
-																												.equals(tSignature)) {
-																											if (!mSignature
-																													.equals(mSignatureToTSignature)) {
-																												if (!mSignature
+																								if (!mDefinition.equals(
+																										mSignatureToTSignature)) {
+																									if (!mDefinitionToTMember
+																											.equals(mType)) {
+																										if (!mDefinitionToTMember
+																												.equals(tDefinition)) {
+																											if (!mDefinitionToTMember
+																													.equals(mSignature)) {
+																												if (!mDefinitionToTMember
 																														.equals(mTypeToTType)) {
-																													if (!mSignature
-																															.equals(mType)) {
-																														if (!mSignature
-																																.equals(tDefinition)) {
+																													if (!mDefinitionToTMember
+																															.equals(tSignature)) {
+																														if (!mDefinitionToTMember
+																																.equals(tType)) {
 																															if (!mDefinitionToTMember
-																																	.equals(tType)) {
-																																if (!mDefinitionToTMember
-																																		.equals(tSignature)) {
-																																	if (!mDefinitionToTMember
-																																			.equals(mSignatureToTSignature)) {
-																																		if (!mDefinitionToTMember
-																																				.equals(mTypeToTType)) {
-																																			if (!mDefinitionToTMember
-																																					.equals(mType)) {
-																																				if (!mDefinitionToTMember
-																																						.equals(tDefinition)) {
-																																					if (!mDefinitionToTMember
-																																							.equals(mSignature)) {
+																																	.equals(mSignatureToTSignature)) {
+																																if (!tSignature
+																																		.equals(tType)) {
+																																	if (!mSignatureToTSignature
+																																			.equals(mType)) {
+																																		if (!mSignatureToTSignature
+																																				.equals(tDefinition)) {
+																																			if (!mSignatureToTSignature
+																																					.equals(mTypeToTType)) {
+																																				if (!mSignatureToTSignature
+																																						.equals(tSignature)) {
+																																					if (!mSignatureToTSignature
+																																							.equals(tType)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								tType,
-																																								mDefinition,
-																																								tSignature,
-																																								mSignatureToTSignature,
-																																								mTypeToTType,
 																																								mType,
 																																								tDefinition,
 																																								mSignature,
-																																								mDefinitionToTMember };
+																																								mTypeToTType,
+																																								mDefinition,
+																																								mDefinitionToTMember,
+																																								tSignature,
+																																								tType,
+																																								mSignatureToTSignature };
 																																					}
 																																				}
 																																			}
@@ -1644,51 +1644,51 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject tType, EObject mDefinition, EObject tSignature, EObject mType,
-			EObject tDefinition) {
-		EMoflonEdge tType__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mType, EObject tDefinition, EObject mDefinition, EObject tSignature,
+			EObject tType) {
 		EMoflonEdge mType__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "LinkDefinitionToType";
-		String tType__tDefinition____defines_name_prime = "defines";
-		String tDefinition__tType____definedBy_name_prime = "definedBy";
 		String mType__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mDefinition__mType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String tType__tDefinition____defines_name_prime = "defines";
+		String tDefinition__tType____definedBy_name_prime = "definedBy";
 		String tType__tSignature____signature_name_prime = "signature";
-		tType__tDefinition____defines.setSrc(tType);
-		tType__tDefinition____defines.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(tType__tDefinition____defines);
-		tDefinition__tType____definedBy.setSrc(tDefinition);
-		tDefinition__tType____definedBy.setTrg(tType);
-		ruleresult.getCreatedEdges().add(tDefinition__tType____definedBy);
 		mType__mDefinition____bodyDeclarations.setSrc(mType);
 		mType__mDefinition____bodyDeclarations.setTrg(mDefinition);
 		ruleresult.getTranslatedEdges().add(mType__mDefinition____bodyDeclarations);
 		mDefinition__mType____abstractTypeDeclaration.setSrc(mDefinition);
 		mDefinition__mType____abstractTypeDeclaration.setTrg(mType);
 		ruleresult.getTranslatedEdges().add(mDefinition__mType____abstractTypeDeclaration);
+		tType__tDefinition____defines.setSrc(tType);
+		tType__tDefinition____defines.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(tType__tDefinition____defines);
+		tDefinition__tType____definedBy.setSrc(tDefinition);
+		tDefinition__tType____definedBy.setTrg(tType);
+		ruleresult.getCreatedEdges().add(tDefinition__tType____definedBy);
 		tType__tSignature____signature.setSrc(tType);
 		tType__tSignature____signature.setTrg(tSignature);
 		ruleresult.getCreatedEdges().add(tType__tSignature____signature);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tType__tDefinition____defines.setName(tType__tDefinition____defines_name_prime);
-		tDefinition__tType____definedBy.setName(tDefinition__tType____definedBy_name_prime);
 		mType__mDefinition____bodyDeclarations.setName(mType__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__mType____abstractTypeDeclaration.setName(mDefinition__mType____abstractTypeDeclaration_name_prime);
+		tType__tDefinition____defines.setName(tType__tDefinition____defines_name_prime);
+		tDefinition__tType____definedBy.setName(tDefinition__tType____definedBy_name_prime);
 		tType__tSignature____signature.setName(tType__tSignature____signature_name_prime);
-		return new Object[] { ruleresult, tType, mDefinition, tSignature, mType, tDefinition,
-				tType__tDefinition____defines, tDefinition__tType____definedBy, mType__mDefinition____bodyDeclarations,
-				mDefinition__mType____abstractTypeDeclaration, tType__tSignature____signature };
+		return new Object[] { ruleresult, mType, tDefinition, mDefinition, tSignature, tType,
+				mType__mDefinition____bodyDeclarations, mDefinition__mType____abstractTypeDeclaration,
+				tType__tDefinition____defines, tDefinition__tType____definedBy, tType__tSignature____signature };
 	}
 
 	public static final void pattern_LinkDefinitionToType_1_5_registerobjects_expressionBBBBBBBBBBB(
-			LinkDefinitionToType _this, PerformRuleResult ruleresult, EObject tType, EObject mDefinition,
-			EObject tSignature, EObject mSignatureToTSignature, EObject mTypeToTType, EObject mType,
-			EObject tDefinition, EObject mSignature, EObject mDefinitionToTMember) {
-		_this.registerObjects_FWD(ruleresult, tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType,
-				mType, tDefinition, mSignature, mDefinitionToTMember);
+			LinkDefinitionToType _this, PerformRuleResult ruleresult, EObject mType, EObject tDefinition,
+			EObject mSignature, EObject mTypeToTType, EObject mDefinition, EObject mDefinitionToTMember,
+			EObject tSignature, EObject tType, EObject mSignatureToTSignature) {
+		_this.registerObjects_FWD(ruleresult, mType, tDefinition, mSignature, mTypeToTType, mDefinition,
+				mDefinitionToTMember, tSignature, tType, mSignatureToTSignature);
 
 	}
 
@@ -1749,42 +1749,42 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_2_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mDefinition");
-		EObject _localVariable_1 = match.getObject("mType");
-		EObject _localVariable_2 = match.getObject("mSignature");
-		EObject tmpMDefinition = _localVariable_0;
-		EObject tmpMType = _localVariable_1;
-		EObject tmpMSignature = _localVariable_2;
-		if (tmpMDefinition instanceof MDefinition) {
-			MDefinition mDefinition = (MDefinition) tmpMDefinition;
-			if (tmpMType instanceof AbstractTypeDeclaration) {
-				AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-				if (tmpMSignature instanceof MSignature) {
-					MSignature mSignature = (MSignature) tmpMSignature;
-					return new Object[] { mDefinition, mType, mSignature, match };
+		EObject _localVariable_0 = match.getObject("mType");
+		EObject _localVariable_1 = match.getObject("mSignature");
+		EObject _localVariable_2 = match.getObject("mDefinition");
+		EObject tmpMType = _localVariable_0;
+		EObject tmpMSignature = _localVariable_1;
+		EObject tmpMDefinition = _localVariable_2;
+		if (tmpMType instanceof AbstractTypeDeclaration) {
+			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
+			if (tmpMSignature instanceof MSignature) {
+				MSignature mSignature = (MSignature) tmpMSignature;
+				if (tmpMDefinition instanceof MDefinition) {
+					MDefinition mDefinition = (MDefinition) tmpMDefinition;
+					return new Object[] { mType, mSignature, mDefinition, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkDefinitionToType_2_2_corematch_blackFBFFFBFBFB(
-			MDefinition mDefinition, AbstractTypeDeclaration mType, MSignature mSignature, Match match) {
+	public static final Iterable<Object[]> pattern_LinkDefinitionToType_2_2_corematch_blackBFBFBFFFFB(
+			AbstractTypeDeclaration mType, MSignature mSignature, MDefinition mDefinition, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
 			TAbstractType tType = mTypeToTType.getTarget();
 			if (tType != null) {
-				for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(mSignature, MSignatureToTSignature.class, "source")) {
-					TSignature tSignature = mSignatureToTSignature.getTarget();
-					if (tSignature != null) {
-						for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
-								.getOppositeReferenceTyped(mDefinition, MDefinitionToTMember.class, "source")) {
-							TMember tDefinition = mDefinitionToTMember.getTarget();
-							if (tDefinition != null) {
-								_result.add(new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature,
-										mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember, match });
+				for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(mDefinition, MDefinitionToTMember.class, "source")) {
+					TMember tDefinition = mDefinitionToTMember.getTarget();
+					if (tDefinition != null) {
+						for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
+								.getOppositeReferenceTyped(mSignature, MSignatureToTSignature.class, "source")) {
+							TSignature tSignature = mSignatureToTSignature.getTarget();
+							if (tSignature != null) {
+								_result.add(new Object[] { mType, tDefinition, mSignature, mTypeToTType, mDefinition,
+										mDefinitionToTMember, tSignature, tType, mSignatureToTSignature, match });
 							}
 
 						}
@@ -1798,23 +1798,22 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Iterable<Object[]> pattern_LinkDefinitionToType_2_3_findcontext_blackBBBBBBBBB(
-			TAbstractType tType, MDefinition mDefinition, TSignature tSignature,
-			MSignatureToTSignature mSignatureToTSignature, TypeToTAbstractType mTypeToTType,
-			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType,
+			MDefinition mDefinition, MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			TAbstractType tType, MSignatureToTSignature mSignatureToTSignature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tSignature.equals(mSignatureToTSignature.getTarget())) {
-			if (mType.equals(mTypeToTType.getSource())) {
-				if (mType.getBodyDeclarations().contains(mDefinition)) {
-					if (tSignature.getDefinitions().contains(tDefinition)) {
-						if (mSignature.equals(mSignatureToTSignature.getSource())) {
-							if (tDefinition.equals(mDefinitionToTMember.getTarget())) {
-								if (mSignature.getMDefinitions().contains(mDefinition)) {
-									if (tType.equals(mTypeToTType.getTarget())) {
-										if (mDefinition.equals(mDefinitionToTMember.getSource())) {
-											_result.add(new Object[] { tType, mDefinition, tSignature,
-													mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-													mSignature, mDefinitionToTMember });
+		if (mType.getBodyDeclarations().contains(mDefinition)) {
+			if (mSignature.getMDefinitions().contains(mDefinition)) {
+				if (mType.equals(mTypeToTType.getSource())) {
+					if (mDefinition.equals(mDefinitionToTMember.getSource())) {
+						if (tType.equals(mTypeToTType.getTarget())) {
+							if (tSignature.getDefinitions().contains(tDefinition)) {
+								if (tDefinition.equals(mDefinitionToTMember.getTarget())) {
+									if (mSignature.equals(mSignatureToTSignature.getSource())) {
+										if (tSignature.equals(mSignatureToTSignature.getTarget())) {
+											_result.add(new Object[] { mType, tDefinition, mSignature, mTypeToTType,
+													mDefinition, mDefinitionToTMember, tSignature, tType,
+													mSignatureToTSignature });
 										}
 									}
 								}
@@ -1828,113 +1827,112 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFFF(
-			TAbstractType tType, MDefinition mDefinition, TSignature tSignature,
-			MSignatureToTSignature mSignatureToTSignature, TypeToTAbstractType mTypeToTType,
-			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType,
+			MDefinition mDefinition, MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			TAbstractType tType, MSignatureToTSignature mSignatureToTSignature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mSignatureToTSignature__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mSignatureToTSignature__tSignature____target_name_prime = "target";
-		String mTypeToTType__mType____source_name_prime = "source";
+		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSignatureToTSignature__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mType__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mDefinition__mType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		String tSignature__tDefinition____definitions_name_prime = "definitions";
-		String tDefinition__tSignature____signature_name_prime = "signature";
-		String mSignatureToTSignature__mSignature____source_name_prime = "source";
-		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
 		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
 		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
-		String mTypeToTType__tType____target_name_prime = "target";
+		String mTypeToTType__mType____source_name_prime = "source";
 		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(tType);
-		isApplicableMatch.getAllContextElements().add(mDefinition);
-		isApplicableMatch.getAllContextElements().add(tSignature);
-		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType);
+		String mTypeToTType__tType____target_name_prime = "target";
+		String tSignature__tDefinition____definitions_name_prime = "definitions";
+		String tDefinition__tSignature____signature_name_prime = "signature";
+		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		String mSignatureToTSignature__mSignature____source_name_prime = "source";
+		String mSignatureToTSignature__tSignature____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(mType);
 		isApplicableMatch.getAllContextElements().add(tDefinition);
 		isApplicableMatch.getAllContextElements().add(mSignature);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType);
+		isApplicableMatch.getAllContextElements().add(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember);
-		mSignatureToTSignature__tSignature____target.setSrc(mSignatureToTSignature);
-		mSignatureToTSignature__tSignature____target.setTrg(tSignature);
-		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__tSignature____target);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
+		isApplicableMatch.getAllContextElements().add(tSignature);
+		isApplicableMatch.getAllContextElements().add(tType);
+		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature);
 		mType__mDefinition____bodyDeclarations.setSrc(mType);
 		mType__mDefinition____bodyDeclarations.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mType__mDefinition____bodyDeclarations);
 		mDefinition__mType____abstractTypeDeclaration.setSrc(mDefinition);
 		mDefinition__mType____abstractTypeDeclaration.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(mDefinition__mType____abstractTypeDeclaration);
-		tSignature__tDefinition____definitions.setSrc(tSignature);
-		tSignature__tDefinition____definitions.setTrg(tDefinition);
-		isApplicableMatch.getAllContextElements().add(tSignature__tDefinition____definitions);
-		tDefinition__tSignature____signature.setSrc(tDefinition);
-		tDefinition__tSignature____signature.setTrg(tSignature);
-		isApplicableMatch.getAllContextElements().add(tDefinition__tSignature____signature);
-		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
-		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
-		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__mSignature____source);
-		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDefinition____target);
 		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
 		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mSignature__mDefinition____mDefinitions);
 		mDefinition__mSignature____mSignature.setSrc(mDefinition);
 		mDefinition__mSignature____mSignature.setTrg(mSignature);
 		isApplicableMatch.getAllContextElements().add(mDefinition__mSignature____mSignature);
-		mTypeToTType__tType____target.setSrc(mTypeToTType);
-		mTypeToTType__tType____target.setTrg(tType);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__tType____target);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
 		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
 		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__mDefinition____source);
-		mSignatureToTSignature__tSignature____target.setName(mSignatureToTSignature__tSignature____target_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
+		mTypeToTType__tType____target.setSrc(mTypeToTType);
+		mTypeToTType__tType____target.setTrg(tType);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__tType____target);
+		tSignature__tDefinition____definitions.setSrc(tSignature);
+		tSignature__tDefinition____definitions.setTrg(tDefinition);
+		isApplicableMatch.getAllContextElements().add(tSignature__tDefinition____definitions);
+		tDefinition__tSignature____signature.setSrc(tDefinition);
+		tDefinition__tSignature____signature.setTrg(tSignature);
+		isApplicableMatch.getAllContextElements().add(tDefinition__tSignature____signature);
+		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDefinition____target);
+		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
+		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
+		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__mSignature____source);
+		mSignatureToTSignature__tSignature____target.setSrc(mSignatureToTSignature);
+		mSignatureToTSignature__tSignature____target.setTrg(tSignature);
+		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__tSignature____target);
 		mType__mDefinition____bodyDeclarations.setName(mType__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__mType____abstractTypeDeclaration.setName(mDefinition__mType____abstractTypeDeclaration_name_prime);
-		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
-		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
-		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
-		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
-		return new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-				mSignature, mDefinitionToTMember, isApplicableMatch, mSignatureToTSignature__tSignature____target,
-				mTypeToTType__mType____source, mType__mDefinition____bodyDeclarations,
-				mDefinition__mType____abstractTypeDeclaration, tSignature__tDefinition____definitions,
-				tDefinition__tSignature____signature, mSignatureToTSignature__mSignature____source,
-				mDefinitionToTMember__tDefinition____target, mSignature__mDefinition____mDefinitions,
-				mDefinition__mSignature____mSignature, mTypeToTType__tType____target,
-				mDefinitionToTMember__mDefinition____source };
+		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
+		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
+		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
+		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
+		mSignatureToTSignature__tSignature____target.setName(mSignatureToTSignature__tSignature____target_name_prime);
+		return new Object[] { mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember,
+				tSignature, tType, mSignatureToTSignature, isApplicableMatch, mType__mDefinition____bodyDeclarations,
+				mDefinition__mType____abstractTypeDeclaration, mSignature__mDefinition____mDefinitions,
+				mDefinition__mSignature____mSignature, mTypeToTType__mType____source,
+				mDefinitionToTMember__mDefinition____source, mTypeToTType__tType____target,
+				tSignature__tDefinition____definitions, tDefinition__tSignature____signature,
+				mDefinitionToTMember__tDefinition____target, mSignatureToTSignature__mSignature____source,
+				mSignatureToTSignature__tSignature____target };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_2_4_solveCSP_bindingFBBBBBBBBBBB(
-			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tType, mDefinition, tSignature,
-				mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember);
+			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
+			TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature, TAbstractType tType,
+			MSignatureToTSignature mSignatureToTSignature) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mType, tDefinition, mSignature,
+				mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType, mSignatureToTSignature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tType, mDefinition, tSignature, mSignatureToTSignature,
-					mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember };
+			return new Object[] { csp, _this, isApplicableMatch, mType, tDefinition, mSignature, mTypeToTType,
+					mDefinition, mDefinitionToTMember, tSignature, tType, mSignatureToTSignature };
 		}
 		return null;
 	}
@@ -1944,13 +1942,13 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(
-			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {
+			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
+			TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature, TAbstractType tType,
+			MSignatureToTSignature mSignatureToTSignature) {
 		Object[] result_pattern_LinkDefinitionToType_2_4_solveCSP_binding = pattern_LinkDefinitionToType_2_4_solveCSP_bindingFBBBBBBBBBBB(
-				_this, isApplicableMatch, tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType,
-				tDefinition, mSignature, mDefinitionToTMember);
+				_this, isApplicableMatch, mType, tDefinition, mSignature, mTypeToTType, mDefinition,
+				mDefinitionToTMember, tSignature, tType, mSignatureToTSignature);
 		if (result_pattern_LinkDefinitionToType_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToType_2_4_solveCSP_binding[0];
 
@@ -1958,8 +1956,8 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 					csp);
 			if (result_pattern_LinkDefinitionToType_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tType, mDefinition, tSignature,
-						mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember };
+				return new Object[] { csp, _this, isApplicableMatch, mType, tDefinition, mSignature, mTypeToTType,
+						mDefinition, mDefinitionToTMember, tSignature, tType, mSignatureToTSignature };
 			}
 		}
 		return null;
@@ -1994,16 +1992,16 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_10_1_initialbindings_blackBBBBB(
-			LinkDefinitionToType _this, Match match, TAbstractType tType, TSignature tSignature, TMember tDefinition) {
-		return new Object[] { _this, match, tType, tSignature, tDefinition };
+			LinkDefinitionToType _this, Match match, TMember tDefinition, TSignature tSignature, TAbstractType tType) {
+		return new Object[] { _this, match, tDefinition, tSignature, tType };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_10_2_SolveCSP_bindingFBBBBB(LinkDefinitionToType _this,
-			Match match, TAbstractType tType, TSignature tSignature, TMember tDefinition) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tType, tSignature, tDefinition);
+			Match match, TMember tDefinition, TSignature tSignature, TAbstractType tType) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tDefinition, tSignature, tType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tType, tSignature, tDefinition };
+			return new Object[] { csp, _this, match, tDefinition, tSignature, tType };
 		}
 		return null;
 	}
@@ -2013,9 +2011,9 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_10_2_SolveCSP_bindingAndBlackFBBBBB(
-			LinkDefinitionToType _this, Match match, TAbstractType tType, TSignature tSignature, TMember tDefinition) {
+			LinkDefinitionToType _this, Match match, TMember tDefinition, TSignature tSignature, TAbstractType tType) {
 		Object[] result_pattern_LinkDefinitionToType_10_2_SolveCSP_binding = pattern_LinkDefinitionToType_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, tType, tSignature, tDefinition);
+				_this, match, tDefinition, tSignature, tType);
 		if (result_pattern_LinkDefinitionToType_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToType_10_2_SolveCSP_binding[0];
 
@@ -2023,7 +2021,7 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 					csp);
 			if (result_pattern_LinkDefinitionToType_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tType, tSignature, tDefinition };
+				return new Object[] { csp, _this, match, tDefinition, tSignature, tType };
 			}
 		}
 		return null;
@@ -2037,12 +2035,12 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_10_4_collectelementstobetranslated_blackBBBB(Match match,
-			TAbstractType tType, TSignature tSignature, TMember tDefinition) {
-		return new Object[] { match, tType, tSignature, tDefinition };
+			TMember tDefinition, TSignature tSignature, TAbstractType tType) {
+		return new Object[] { match, tDefinition, tSignature, tType };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_10_4_collectelementstobetranslated_greenBBBBFFF(
-			Match match, TAbstractType tType, TSignature tSignature, TMember tDefinition) {
+			Match match, TMember tDefinition, TSignature tSignature, TAbstractType tType) {
 		EMoflonEdge tType__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2061,22 +2059,22 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		tType__tDefinition____defines.setName(tType__tDefinition____defines_name_prime);
 		tDefinition__tType____definedBy.setName(tDefinition__tType____definedBy_name_prime);
 		tType__tSignature____signature.setName(tType__tSignature____signature_name_prime);
-		return new Object[] { match, tType, tSignature, tDefinition, tType__tDefinition____defines,
+		return new Object[] { match, tDefinition, tSignature, tType, tType__tDefinition____defines,
 				tDefinition__tType____definedBy, tType__tSignature____signature };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_10_5_collectcontextelements_blackBBBB(Match match,
-			TAbstractType tType, TSignature tSignature, TMember tDefinition) {
-		return new Object[] { match, tType, tSignature, tDefinition };
+			TMember tDefinition, TSignature tSignature, TAbstractType tType) {
+		return new Object[] { match, tDefinition, tSignature, tType };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_10_5_collectcontextelements_greenBBBBFF(Match match,
-			TAbstractType tType, TSignature tSignature, TMember tDefinition) {
+			TMember tDefinition, TSignature tSignature, TAbstractType tType) {
 		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(tType);
-		match.getContextNodes().add(tSignature);
 		match.getContextNodes().add(tDefinition);
+		match.getContextNodes().add(tSignature);
+		match.getContextNodes().add(tType);
 		String tSignature__tDefinition____definitions_name_prime = "definitions";
 		String tDefinition__tSignature____signature_name_prime = "signature";
 		tSignature__tDefinition____definitions.setSrc(tSignature);
@@ -2087,13 +2085,13 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		match.getContextEdges().add(tDefinition__tSignature____signature);
 		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
 		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
-		return new Object[] { match, tType, tSignature, tDefinition, tSignature__tDefinition____definitions,
+		return new Object[] { match, tDefinition, tSignature, tType, tSignature__tDefinition____definitions,
 				tDefinition__tSignature____signature };
 	}
 
 	public static final void pattern_LinkDefinitionToType_10_6_registerobjectstomatch_expressionBBBBB(
-			LinkDefinitionToType _this, Match match, TAbstractType tType, TSignature tSignature, TMember tDefinition) {
-		_this.registerObjectsToMatch_BWD(match, tType, tSignature, tDefinition);
+			LinkDefinitionToType _this, Match match, TMember tDefinition, TSignature tSignature, TAbstractType tType) {
+		_this.registerObjectsToMatch_BWD(match, tDefinition, tSignature, tType);
 
 	}
 
@@ -2109,45 +2107,45 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 
 	public static final Object[] pattern_LinkDefinitionToType_11_1_performtransformation_bindingFFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mDefinition");
-		EObject _localVariable_2 = isApplicableMatch.getObject("tSignature");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mSignatureToTSignature");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mTypeToTType");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mType");
-		EObject _localVariable_6 = isApplicableMatch.getObject("tDefinition");
-		EObject _localVariable_7 = isApplicableMatch.getObject("mSignature");
-		EObject _localVariable_8 = isApplicableMatch.getObject("mDefinitionToTMember");
-		EObject tmpTType = _localVariable_0;
-		EObject tmpMDefinition = _localVariable_1;
-		EObject tmpTSignature = _localVariable_2;
-		EObject tmpMSignatureToTSignature = _localVariable_3;
-		EObject tmpMTypeToTType = _localVariable_4;
-		EObject tmpMType = _localVariable_5;
-		EObject tmpTDefinition = _localVariable_6;
-		EObject tmpMSignature = _localVariable_7;
-		EObject tmpMDefinitionToTMember = _localVariable_8;
-		if (tmpTType instanceof TAbstractType) {
-			TAbstractType tType = (TAbstractType) tmpTType;
-			if (tmpMDefinition instanceof MDefinition) {
-				MDefinition mDefinition = (MDefinition) tmpMDefinition;
-				if (tmpTSignature instanceof TSignature) {
-					TSignature tSignature = (TSignature) tmpTSignature;
-					if (tmpMSignatureToTSignature instanceof MSignatureToTSignature) {
-						MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) tmpMSignatureToTSignature;
-						if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-							TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-							if (tmpMType instanceof AbstractTypeDeclaration) {
-								AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-								if (tmpTDefinition instanceof TMember) {
-									TMember tDefinition = (TMember) tmpTDefinition;
-									if (tmpMSignature instanceof MSignature) {
-										MSignature mSignature = (MSignature) tmpMSignature;
-										if (tmpMDefinitionToTMember instanceof MDefinitionToTMember) {
-											MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) tmpMDefinitionToTMember;
-											return new Object[] { tType, mDefinition, tSignature,
-													mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-													mSignature, mDefinitionToTMember, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("mType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tDefinition");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mSignature");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mDefinitionToTMember");
+		EObject _localVariable_6 = isApplicableMatch.getObject("tSignature");
+		EObject _localVariable_7 = isApplicableMatch.getObject("tType");
+		EObject _localVariable_8 = isApplicableMatch.getObject("mSignatureToTSignature");
+		EObject tmpMType = _localVariable_0;
+		EObject tmpTDefinition = _localVariable_1;
+		EObject tmpMSignature = _localVariable_2;
+		EObject tmpMTypeToTType = _localVariable_3;
+		EObject tmpMDefinition = _localVariable_4;
+		EObject tmpMDefinitionToTMember = _localVariable_5;
+		EObject tmpTSignature = _localVariable_6;
+		EObject tmpTType = _localVariable_7;
+		EObject tmpMSignatureToTSignature = _localVariable_8;
+		if (tmpMType instanceof AbstractTypeDeclaration) {
+			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
+			if (tmpTDefinition instanceof TMember) {
+				TMember tDefinition = (TMember) tmpTDefinition;
+				if (tmpMSignature instanceof MSignature) {
+					MSignature mSignature = (MSignature) tmpMSignature;
+					if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+						TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+						if (tmpMDefinition instanceof MDefinition) {
+							MDefinition mDefinition = (MDefinition) tmpMDefinition;
+							if (tmpMDefinitionToTMember instanceof MDefinitionToTMember) {
+								MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) tmpMDefinitionToTMember;
+								if (tmpTSignature instanceof TSignature) {
+									TSignature tSignature = (TSignature) tmpTSignature;
+									if (tmpTType instanceof TAbstractType) {
+										TAbstractType tType = (TAbstractType) tmpTType;
+										if (tmpMSignatureToTSignature instanceof MSignatureToTSignature) {
+											MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) tmpMSignatureToTSignature;
+											return new Object[] { mType, tDefinition, mSignature, mTypeToTType,
+													mDefinition, mDefinitionToTMember, tSignature, tType,
+													mSignatureToTSignature, isApplicableMatch };
 										}
 									}
 								}
@@ -2161,16 +2159,15 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_11_1_performtransformation_blackBBBBBBBBBFBB(
-			TAbstractType tType, MDefinition mDefinition, TSignature tSignature,
-			MSignatureToTSignature mSignatureToTSignature, TypeToTAbstractType mTypeToTType,
-			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember, LinkDefinitionToType _this,
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType,
+			MDefinition mDefinition, MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			TAbstractType tType, MSignatureToTSignature mSignatureToTSignature, LinkDefinitionToType _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType,
-						tDefinition, mSignature, mDefinitionToTMember, csp, _this, isApplicableMatch };
+				return new Object[] { mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember,
+						tSignature, tType, mSignatureToTSignature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -2181,33 +2178,33 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		Object[] result_pattern_LinkDefinitionToType_11_1_performtransformation_binding = pattern_LinkDefinitionToType_11_1_performtransformation_bindingFFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_LinkDefinitionToType_11_1_performtransformation_binding != null) {
-			TAbstractType tType = (TAbstractType) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[0];
-			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[1];
-			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[2];
-			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[3];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[4];
-			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[5];
-			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[6];
-			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[7];
-			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[8];
+			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[0];
+			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[1];
+			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[2];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[3];
+			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[4];
+			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[5];
+			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[6];
+			TAbstractType tType = (TAbstractType) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[7];
+			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result_pattern_LinkDefinitionToType_11_1_performtransformation_binding[8];
 
 			Object[] result_pattern_LinkDefinitionToType_11_1_performtransformation_black = pattern_LinkDefinitionToType_11_1_performtransformation_blackBBBBBBBBBFBB(
-					tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-					mSignature, mDefinitionToTMember, _this, isApplicableMatch);
+					mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType,
+					mSignatureToTSignature, _this, isApplicableMatch);
 			if (result_pattern_LinkDefinitionToType_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_LinkDefinitionToType_11_1_performtransformation_black[9];
 
-				return new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType,
-						tDefinition, mSignature, mDefinitionToTMember, csp, _this, isApplicableMatch };
+				return new Object[] { mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember,
+						tSignature, tType, mSignatureToTSignature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_11_1_performtransformation_greenBB(
-			MDefinition mDefinition, AbstractTypeDeclaration mType) {
+			AbstractTypeDeclaration mType, MDefinition mDefinition) {
 		mType.getBodyDeclarations().add(mDefinition);
-		return new Object[] { mDefinition, mType };
+		return new Object[] { mType, mDefinition };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_11_2_collecttranslatedelements_greenF() {
@@ -2216,72 +2213,73 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tType, EObject mDefinition, EObject tSignature,
-			EObject mSignatureToTSignature, EObject mTypeToTType, EObject mType, EObject tDefinition,
-			EObject mSignature, EObject mDefinitionToTMember) {
-		if (!mDefinition.equals(tType)) {
-			if (!mDefinition.equals(tSignature)) {
-				if (!mDefinition.equals(mSignatureToTSignature)) {
-					if (!mDefinition.equals(mTypeToTType)) {
-						if (!mDefinition.equals(mType)) {
-							if (!mDefinition.equals(tDefinition)) {
-								if (!mDefinition.equals(mSignature)) {
-									if (!mDefinition.equals(mDefinitionToTMember)) {
-										if (!tSignature.equals(tType)) {
-											if (!mSignatureToTSignature.equals(tType)) {
-												if (!mSignatureToTSignature.equals(tSignature)) {
-													if (!mSignatureToTSignature.equals(mTypeToTType)) {
-														if (!mSignatureToTSignature.equals(mType)) {
-															if (!mSignatureToTSignature.equals(tDefinition)) {
+			PerformRuleResult ruleresult, EObject mType, EObject tDefinition, EObject mSignature, EObject mTypeToTType,
+			EObject mDefinition, EObject mDefinitionToTMember, EObject tSignature, EObject tType,
+			EObject mSignatureToTSignature) {
+		if (!mType.equals(tDefinition)) {
+			if (!mType.equals(mTypeToTType)) {
+				if (!mType.equals(tSignature)) {
+					if (!mType.equals(tType)) {
+						if (!tDefinition.equals(tSignature)) {
+							if (!tDefinition.equals(tType)) {
+								if (!mSignature.equals(mType)) {
+									if (!mSignature.equals(tDefinition)) {
+										if (!mSignature.equals(mTypeToTType)) {
+											if (!mSignature.equals(tSignature)) {
+												if (!mSignature.equals(tType)) {
+													if (!mSignature.equals(mSignatureToTSignature)) {
+														if (!mTypeToTType.equals(tDefinition)) {
+															if (!mTypeToTType.equals(tSignature)) {
 																if (!mTypeToTType.equals(tType)) {
-																	if (!mTypeToTType.equals(tSignature)) {
-																		if (!mTypeToTType.equals(tDefinition)) {
-																			if (!mType.equals(tType)) {
-																				if (!mType.equals(tSignature)) {
-																					if (!mType.equals(mTypeToTType)) {
-																						if (!mType
-																								.equals(tDefinition)) {
-																							if (!tDefinition
+																	if (!mDefinition.equals(mType)) {
+																		if (!mDefinition.equals(tDefinition)) {
+																			if (!mDefinition.equals(mSignature)) {
+																				if (!mDefinition.equals(mTypeToTType)) {
+																					if (!mDefinition.equals(
+																							mDefinitionToTMember)) {
+																						if (!mDefinition
+																								.equals(tSignature)) {
+																							if (!mDefinition
 																									.equals(tType)) {
-																								if (!tDefinition.equals(
-																										tSignature)) {
-																									if (!mSignature
-																											.equals(tType)) {
-																										if (!mSignature
-																												.equals(tSignature)) {
-																											if (!mSignature
-																													.equals(mSignatureToTSignature)) {
-																												if (!mSignature
+																								if (!mDefinition.equals(
+																										mSignatureToTSignature)) {
+																									if (!mDefinitionToTMember
+																											.equals(mType)) {
+																										if (!mDefinitionToTMember
+																												.equals(tDefinition)) {
+																											if (!mDefinitionToTMember
+																													.equals(mSignature)) {
+																												if (!mDefinitionToTMember
 																														.equals(mTypeToTType)) {
-																													if (!mSignature
-																															.equals(mType)) {
-																														if (!mSignature
-																																.equals(tDefinition)) {
+																													if (!mDefinitionToTMember
+																															.equals(tSignature)) {
+																														if (!mDefinitionToTMember
+																																.equals(tType)) {
 																															if (!mDefinitionToTMember
-																																	.equals(tType)) {
-																																if (!mDefinitionToTMember
-																																		.equals(tSignature)) {
-																																	if (!mDefinitionToTMember
-																																			.equals(mSignatureToTSignature)) {
-																																		if (!mDefinitionToTMember
-																																				.equals(mTypeToTType)) {
-																																			if (!mDefinitionToTMember
-																																					.equals(mType)) {
-																																				if (!mDefinitionToTMember
-																																						.equals(tDefinition)) {
-																																					if (!mDefinitionToTMember
-																																							.equals(mSignature)) {
+																																	.equals(mSignatureToTSignature)) {
+																																if (!tSignature
+																																		.equals(tType)) {
+																																	if (!mSignatureToTSignature
+																																			.equals(mType)) {
+																																		if (!mSignatureToTSignature
+																																				.equals(tDefinition)) {
+																																			if (!mSignatureToTSignature
+																																					.equals(mTypeToTType)) {
+																																				if (!mSignatureToTSignature
+																																						.equals(tSignature)) {
+																																					if (!mSignatureToTSignature
+																																							.equals(tType)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								tType,
-																																								mDefinition,
-																																								tSignature,
-																																								mSignatureToTSignature,
-																																								mTypeToTType,
 																																								mType,
 																																								tDefinition,
 																																								mSignature,
-																																								mDefinitionToTMember };
+																																								mTypeToTType,
+																																								mDefinition,
+																																								mDefinitionToTMember,
+																																								tSignature,
+																																								tType,
+																																								mSignatureToTSignature };
 																																					}
 																																				}
 																																			}
@@ -2322,51 +2320,51 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject tType, EObject mDefinition, EObject tSignature, EObject mType,
-			EObject tDefinition) {
-		EMoflonEdge tType__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mType, EObject tDefinition, EObject mDefinition, EObject tSignature,
+			EObject tType) {
 		EMoflonEdge mType__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "LinkDefinitionToType";
-		String tType__tDefinition____defines_name_prime = "defines";
-		String tDefinition__tType____definedBy_name_prime = "definedBy";
 		String mType__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mDefinition__mType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String tType__tDefinition____defines_name_prime = "defines";
+		String tDefinition__tType____definedBy_name_prime = "definedBy";
 		String tType__tSignature____signature_name_prime = "signature";
-		tType__tDefinition____defines.setSrc(tType);
-		tType__tDefinition____defines.setTrg(tDefinition);
-		ruleresult.getTranslatedEdges().add(tType__tDefinition____defines);
-		tDefinition__tType____definedBy.setSrc(tDefinition);
-		tDefinition__tType____definedBy.setTrg(tType);
-		ruleresult.getTranslatedEdges().add(tDefinition__tType____definedBy);
 		mType__mDefinition____bodyDeclarations.setSrc(mType);
 		mType__mDefinition____bodyDeclarations.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mType__mDefinition____bodyDeclarations);
 		mDefinition__mType____abstractTypeDeclaration.setSrc(mDefinition);
 		mDefinition__mType____abstractTypeDeclaration.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mDefinition__mType____abstractTypeDeclaration);
+		tType__tDefinition____defines.setSrc(tType);
+		tType__tDefinition____defines.setTrg(tDefinition);
+		ruleresult.getTranslatedEdges().add(tType__tDefinition____defines);
+		tDefinition__tType____definedBy.setSrc(tDefinition);
+		tDefinition__tType____definedBy.setTrg(tType);
+		ruleresult.getTranslatedEdges().add(tDefinition__tType____definedBy);
 		tType__tSignature____signature.setSrc(tType);
 		tType__tSignature____signature.setTrg(tSignature);
 		ruleresult.getTranslatedEdges().add(tType__tSignature____signature);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tType__tDefinition____defines.setName(tType__tDefinition____defines_name_prime);
-		tDefinition__tType____definedBy.setName(tDefinition__tType____definedBy_name_prime);
 		mType__mDefinition____bodyDeclarations.setName(mType__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__mType____abstractTypeDeclaration.setName(mDefinition__mType____abstractTypeDeclaration_name_prime);
+		tType__tDefinition____defines.setName(tType__tDefinition____defines_name_prime);
+		tDefinition__tType____definedBy.setName(tDefinition__tType____definedBy_name_prime);
 		tType__tSignature____signature.setName(tType__tSignature____signature_name_prime);
-		return new Object[] { ruleresult, tType, mDefinition, tSignature, mType, tDefinition,
-				tType__tDefinition____defines, tDefinition__tType____definedBy, mType__mDefinition____bodyDeclarations,
-				mDefinition__mType____abstractTypeDeclaration, tType__tSignature____signature };
+		return new Object[] { ruleresult, mType, tDefinition, mDefinition, tSignature, tType,
+				mType__mDefinition____bodyDeclarations, mDefinition__mType____abstractTypeDeclaration,
+				tType__tDefinition____defines, tDefinition__tType____definedBy, tType__tSignature____signature };
 	}
 
 	public static final void pattern_LinkDefinitionToType_11_5_registerobjects_expressionBBBBBBBBBBB(
-			LinkDefinitionToType _this, PerformRuleResult ruleresult, EObject tType, EObject mDefinition,
-			EObject tSignature, EObject mSignatureToTSignature, EObject mTypeToTType, EObject mType,
-			EObject tDefinition, EObject mSignature, EObject mDefinitionToTMember) {
-		_this.registerObjects_BWD(ruleresult, tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType,
-				mType, tDefinition, mSignature, mDefinitionToTMember);
+			LinkDefinitionToType _this, PerformRuleResult ruleresult, EObject mType, EObject tDefinition,
+			EObject mSignature, EObject mTypeToTType, EObject mDefinition, EObject mDefinitionToTMember,
+			EObject tSignature, EObject tType, EObject mSignatureToTSignature) {
+		_this.registerObjects_BWD(ruleresult, mType, tDefinition, mSignature, mTypeToTType, mDefinition,
+				mDefinitionToTMember, tSignature, tType, mSignatureToTSignature);
 
 	}
 
@@ -2427,44 +2425,44 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_12_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tType");
+		EObject _localVariable_0 = match.getObject("tDefinition");
 		EObject _localVariable_1 = match.getObject("tSignature");
-		EObject _localVariable_2 = match.getObject("tDefinition");
-		EObject tmpTType = _localVariable_0;
+		EObject _localVariable_2 = match.getObject("tType");
+		EObject tmpTDefinition = _localVariable_0;
 		EObject tmpTSignature = _localVariable_1;
-		EObject tmpTDefinition = _localVariable_2;
-		if (tmpTType instanceof TAbstractType) {
-			TAbstractType tType = (TAbstractType) tmpTType;
+		EObject tmpTType = _localVariable_2;
+		if (tmpTDefinition instanceof TMember) {
+			TMember tDefinition = (TMember) tmpTDefinition;
 			if (tmpTSignature instanceof TSignature) {
 				TSignature tSignature = (TSignature) tmpTSignature;
-				if (tmpTDefinition instanceof TMember) {
-					TMember tDefinition = (TMember) tmpTDefinition;
-					return new Object[] { tType, tSignature, tDefinition, match };
+				if (tmpTType instanceof TAbstractType) {
+					TAbstractType tType = (TAbstractType) tmpTType;
+					return new Object[] { tDefinition, tSignature, tType, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkDefinitionToType_12_2_corematch_blackBFBFFFBFFB(
-			TAbstractType tType, TSignature tSignature, TMember tDefinition, Match match) {
+	public static final Iterable<Object[]> pattern_LinkDefinitionToType_12_2_corematch_blackFBFFFFBBFB(
+			TMember tDefinition, TSignature tSignature, TAbstractType tType, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(tSignature, MSignatureToTSignature.class, "target")) {
-			MSignature mSignature = mSignatureToTSignature.getSource();
-			if (mSignature != null) {
+		for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(tType, TypeToTAbstractType.class, "target")) {
+			Type tmpMType = mTypeToTType.getSource();
+			if (tmpMType instanceof AbstractTypeDeclaration) {
+				AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
 				for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
 						.getOppositeReferenceTyped(tDefinition, MDefinitionToTMember.class, "target")) {
 					BodyDeclaration tmpMDefinition = mDefinitionToTMember.getSource();
 					if (tmpMDefinition instanceof MDefinition) {
 						MDefinition mDefinition = (MDefinition) tmpMDefinition;
-						for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
-								.getOppositeReferenceTyped(tType, TypeToTAbstractType.class, "target")) {
-							Type tmpMType = mTypeToTType.getSource();
-							if (tmpMType instanceof AbstractTypeDeclaration) {
-								AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-								_result.add(new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature,
-										mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember, match });
+						for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
+								.getOppositeReferenceTyped(tSignature, MSignatureToTSignature.class, "target")) {
+							MSignature mSignature = mSignatureToTSignature.getSource();
+							if (mSignature != null) {
+								_result.add(new Object[] { mType, tDefinition, mSignature, mTypeToTType, mDefinition,
+										mDefinitionToTMember, tSignature, tType, mSignatureToTSignature, match });
 							}
 
 						}
@@ -2478,24 +2476,23 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Iterable<Object[]> pattern_LinkDefinitionToType_12_3_findcontext_blackBBBBBBBBB(
-			TAbstractType tType, MDefinition mDefinition, TSignature tSignature,
-			MSignatureToTSignature mSignatureToTSignature, TypeToTAbstractType mTypeToTType,
-			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType,
+			MDefinition mDefinition, MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			TAbstractType tType, MSignatureToTSignature mSignatureToTSignature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tSignature.equals(mSignatureToTSignature.getTarget())) {
-			if (tType.getDefines().contains(tDefinition)) {
-				if (mType.equals(mTypeToTType.getSource())) {
-					if (tSignature.getDefinitions().contains(tDefinition)) {
-						if (mSignature.equals(mSignatureToTSignature.getSource())) {
-							if (tDefinition.equals(mDefinitionToTMember.getTarget())) {
-								if (mSignature.getMDefinitions().contains(mDefinition)) {
-									if (tType.getSignature().contains(tSignature)) {
-										if (tType.equals(mTypeToTType.getTarget())) {
-											if (mDefinition.equals(mDefinitionToTMember.getSource())) {
-												_result.add(new Object[] { tType, mDefinition, tSignature,
-														mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-														mSignature, mDefinitionToTMember });
+		if (mSignature.getMDefinitions().contains(mDefinition)) {
+			if (mType.equals(mTypeToTType.getSource())) {
+				if (mDefinition.equals(mDefinitionToTMember.getSource())) {
+					if (tType.getDefines().contains(tDefinition)) {
+						if (tType.equals(mTypeToTType.getTarget())) {
+							if (tSignature.getDefinitions().contains(tDefinition)) {
+								if (tDefinition.equals(mDefinitionToTMember.getTarget())) {
+									if (mSignature.equals(mSignatureToTSignature.getSource())) {
+										if (tType.getSignature().contains(tSignature)) {
+											if (tSignature.equals(mSignatureToTSignature.getTarget())) {
+												_result.add(new Object[] { mType, tDefinition, mSignature, mTypeToTType,
+														mDefinition, mDefinitionToTMember, tSignature, tType,
+														mSignatureToTSignature });
 											}
 										}
 									}
@@ -2510,119 +2507,118 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_12_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFFFF(
-			TAbstractType tType, MDefinition mDefinition, TSignature tSignature,
-			MSignatureToTSignature mSignatureToTSignature, TypeToTAbstractType mTypeToTType,
-			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType,
+			MDefinition mDefinition, MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			TAbstractType tType, MSignatureToTSignature mSignatureToTSignature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mSignatureToTSignature__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mSignatureToTSignature__tSignature____target_name_prime = "target";
-		String tType__tDefinition____defines_name_prime = "defines";
-		String tDefinition__tType____definedBy_name_prime = "definedBy";
-		String mTypeToTType__mType____source_name_prime = "source";
-		String tSignature__tDefinition____definitions_name_prime = "definitions";
-		String tDefinition__tSignature____signature_name_prime = "signature";
-		String mSignatureToTSignature__mSignature____source_name_prime = "source";
-		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		EMoflonEdge tType__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSignatureToTSignature__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
 		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
-		String tType__tSignature____signature_name_prime = "signature";
-		String mTypeToTType__tType____target_name_prime = "target";
+		String mTypeToTType__mType____source_name_prime = "source";
 		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(tType);
-		isApplicableMatch.getAllContextElements().add(mDefinition);
-		isApplicableMatch.getAllContextElements().add(tSignature);
-		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType);
+		String tType__tDefinition____defines_name_prime = "defines";
+		String tDefinition__tType____definedBy_name_prime = "definedBy";
+		String mTypeToTType__tType____target_name_prime = "target";
+		String tSignature__tDefinition____definitions_name_prime = "definitions";
+		String tDefinition__tSignature____signature_name_prime = "signature";
+		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		String mSignatureToTSignature__mSignature____source_name_prime = "source";
+		String tType__tSignature____signature_name_prime = "signature";
+		String mSignatureToTSignature__tSignature____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(mType);
 		isApplicableMatch.getAllContextElements().add(tDefinition);
 		isApplicableMatch.getAllContextElements().add(mSignature);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType);
+		isApplicableMatch.getAllContextElements().add(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember);
-		mSignatureToTSignature__tSignature____target.setSrc(mSignatureToTSignature);
-		mSignatureToTSignature__tSignature____target.setTrg(tSignature);
-		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__tSignature____target);
-		tType__tDefinition____defines.setSrc(tType);
-		tType__tDefinition____defines.setTrg(tDefinition);
-		isApplicableMatch.getAllContextElements().add(tType__tDefinition____defines);
-		tDefinition__tType____definedBy.setSrc(tDefinition);
-		tDefinition__tType____definedBy.setTrg(tType);
-		isApplicableMatch.getAllContextElements().add(tDefinition__tType____definedBy);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
-		tSignature__tDefinition____definitions.setSrc(tSignature);
-		tSignature__tDefinition____definitions.setTrg(tDefinition);
-		isApplicableMatch.getAllContextElements().add(tSignature__tDefinition____definitions);
-		tDefinition__tSignature____signature.setSrc(tDefinition);
-		tDefinition__tSignature____signature.setTrg(tSignature);
-		isApplicableMatch.getAllContextElements().add(tDefinition__tSignature____signature);
-		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
-		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
-		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__mSignature____source);
-		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDefinition____target);
+		isApplicableMatch.getAllContextElements().add(tSignature);
+		isApplicableMatch.getAllContextElements().add(tType);
+		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature);
 		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
 		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mSignature__mDefinition____mDefinitions);
 		mDefinition__mSignature____mSignature.setSrc(mDefinition);
 		mDefinition__mSignature____mSignature.setTrg(mSignature);
 		isApplicableMatch.getAllContextElements().add(mDefinition__mSignature____mSignature);
-		tType__tSignature____signature.setSrc(tType);
-		tType__tSignature____signature.setTrg(tSignature);
-		isApplicableMatch.getAllContextElements().add(tType__tSignature____signature);
-		mTypeToTType__tType____target.setSrc(mTypeToTType);
-		mTypeToTType__tType____target.setTrg(tType);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__tType____target);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
 		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
 		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__mDefinition____source);
-		mSignatureToTSignature__tSignature____target.setName(mSignatureToTSignature__tSignature____target_name_prime);
-		tType__tDefinition____defines.setName(tType__tDefinition____defines_name_prime);
-		tDefinition__tType____definedBy.setName(tDefinition__tType____definedBy_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
-		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
-		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
-		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
-		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		tType__tDefinition____defines.setSrc(tType);
+		tType__tDefinition____defines.setTrg(tDefinition);
+		isApplicableMatch.getAllContextElements().add(tType__tDefinition____defines);
+		tDefinition__tType____definedBy.setSrc(tDefinition);
+		tDefinition__tType____definedBy.setTrg(tType);
+		isApplicableMatch.getAllContextElements().add(tDefinition__tType____definedBy);
+		mTypeToTType__tType____target.setSrc(mTypeToTType);
+		mTypeToTType__tType____target.setTrg(tType);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__tType____target);
+		tSignature__tDefinition____definitions.setSrc(tSignature);
+		tSignature__tDefinition____definitions.setTrg(tDefinition);
+		isApplicableMatch.getAllContextElements().add(tSignature__tDefinition____definitions);
+		tDefinition__tSignature____signature.setSrc(tDefinition);
+		tDefinition__tSignature____signature.setTrg(tSignature);
+		isApplicableMatch.getAllContextElements().add(tDefinition__tSignature____signature);
+		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDefinition____target);
+		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
+		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
+		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__mSignature____source);
+		tType__tSignature____signature.setSrc(tType);
+		tType__tSignature____signature.setTrg(tSignature);
+		isApplicableMatch.getAllContextElements().add(tType__tSignature____signature);
+		mSignatureToTSignature__tSignature____target.setSrc(mSignatureToTSignature);
+		mSignatureToTSignature__tSignature____target.setTrg(tSignature);
+		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__tSignature____target);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		tType__tSignature____signature.setName(tType__tSignature____signature_name_prime);
-		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
-		return new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-				mSignature, mDefinitionToTMember, isApplicableMatch, mSignatureToTSignature__tSignature____target,
-				tType__tDefinition____defines, tDefinition__tType____definedBy, mTypeToTType__mType____source,
-				tSignature__tDefinition____definitions, tDefinition__tSignature____signature,
-				mSignatureToTSignature__mSignature____source, mDefinitionToTMember__tDefinition____target,
-				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature,
-				tType__tSignature____signature, mTypeToTType__tType____target,
-				mDefinitionToTMember__mDefinition____source };
+		tType__tDefinition____defines.setName(tType__tDefinition____defines_name_prime);
+		tDefinition__tType____definedBy.setName(tDefinition__tType____definedBy_name_prime);
+		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
+		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
+		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
+		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
+		tType__tSignature____signature.setName(tType__tSignature____signature_name_prime);
+		mSignatureToTSignature__tSignature____target.setName(mSignatureToTSignature__tSignature____target_name_prime);
+		return new Object[] { mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember,
+				tSignature, tType, mSignatureToTSignature, isApplicableMatch, mSignature__mDefinition____mDefinitions,
+				mDefinition__mSignature____mSignature, mTypeToTType__mType____source,
+				mDefinitionToTMember__mDefinition____source, tType__tDefinition____defines,
+				tDefinition__tType____definedBy, mTypeToTType__tType____target, tSignature__tDefinition____definitions,
+				tDefinition__tSignature____signature, mDefinitionToTMember__tDefinition____target,
+				mSignatureToTSignature__mSignature____source, tType__tSignature____signature,
+				mSignatureToTSignature__tSignature____target };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_12_4_solveCSP_bindingFBBBBBBBBBBB(
-			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tType, mDefinition, tSignature,
-				mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember);
+			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
+			TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature, TAbstractType tType,
+			MSignatureToTSignature mSignatureToTSignature) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mType, tDefinition, mSignature,
+				mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType, mSignatureToTSignature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tType, mDefinition, tSignature, mSignatureToTSignature,
-					mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember };
+			return new Object[] { csp, _this, isApplicableMatch, mType, tDefinition, mSignature, mTypeToTType,
+					mDefinition, mDefinitionToTMember, tSignature, tType, mSignatureToTSignature };
 		}
 		return null;
 	}
@@ -2632,13 +2628,13 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(
-			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {
+			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
+			TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature, TAbstractType tType,
+			MSignatureToTSignature mSignatureToTSignature) {
 		Object[] result_pattern_LinkDefinitionToType_12_4_solveCSP_binding = pattern_LinkDefinitionToType_12_4_solveCSP_bindingFBBBBBBBBBBB(
-				_this, isApplicableMatch, tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType,
-				tDefinition, mSignature, mDefinitionToTMember);
+				_this, isApplicableMatch, mType, tDefinition, mSignature, mTypeToTType, mDefinition,
+				mDefinitionToTMember, tSignature, tType, mSignatureToTSignature);
 		if (result_pattern_LinkDefinitionToType_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToType_12_4_solveCSP_binding[0];
 
@@ -2646,8 +2642,8 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 					csp);
 			if (result_pattern_LinkDefinitionToType_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tType, mDefinition, tSignature,
-						mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember };
+				return new Object[] { csp, _this, isApplicableMatch, mType, tDefinition, mSignature, mTypeToTType,
+						mDefinition, mDefinitionToTMember, tSignature, tType, mSignatureToTSignature };
 			}
 		}
 		return null;
@@ -2748,7 +2744,7 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 					TSignature tSignature = tDefinition.getSignature();
 					if (tSignature != null) {
 						if (tType.getSignature().contains(tSignature)) {
-							_result.add(new Object[] { tType, tSignature, tDefinition, _edge_defines });
+							_result.add(new Object[] { tDefinition, tSignature, tType, _edge_defines });
 						}
 					}
 
@@ -2770,8 +2766,8 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final boolean pattern_LinkDefinitionToType_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			LinkDefinitionToType _this, Match match, TAbstractType tType, TSignature tSignature, TMember tDefinition) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tType, tSignature, tDefinition);
+			LinkDefinitionToType _this, Match match, TMember tDefinition, TSignature tSignature, TAbstractType tType) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tDefinition, tSignature, tType);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2870,7 +2866,7 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 				if (mType.getBodyDeclarations().contains(mDefinition)) {
 					MSignature mSignature = mDefinition.getMSignature();
 					if (mSignature != null) {
-						_result.add(new Object[] { mDefinition, mType, mSignature, _edge_bodyDeclarations });
+						_result.add(new Object[] { mType, mSignature, mDefinition, _edge_bodyDeclarations });
 					}
 
 				}
@@ -2891,9 +2887,9 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final boolean pattern_LinkDefinitionToType_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			LinkDefinitionToType _this, Match match, MDefinition mDefinition, AbstractTypeDeclaration mType,
-			MSignature mSignature) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mDefinition, mType, mSignature);
+			LinkDefinitionToType _this, Match match, AbstractTypeDeclaration mType, MSignature mSignature,
+			MDefinition mDefinition) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mType, mSignature, mDefinition);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2935,34 +2931,34 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_bindingFFFFFFBB(Match targetMatch,
-			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("tType");
-		EObject _localVariable_1 = sourceMatch.getObject("mDefinition");
-		EObject _localVariable_2 = targetMatch.getObject("tSignature");
-		EObject _localVariable_3 = sourceMatch.getObject("mType");
-		EObject _localVariable_4 = targetMatch.getObject("tDefinition");
-		EObject _localVariable_5 = sourceMatch.getObject("mSignature");
-		EObject tmpTType = _localVariable_0;
-		EObject tmpMDefinition = _localVariable_1;
-		EObject tmpTSignature = _localVariable_2;
-		EObject tmpMType = _localVariable_3;
-		EObject tmpTDefinition = _localVariable_4;
-		EObject tmpMSignature = _localVariable_5;
-		if (tmpTType instanceof TAbstractType) {
-			TAbstractType tType = (TAbstractType) tmpTType;
-			if (tmpMDefinition instanceof MDefinition) {
-				MDefinition mDefinition = (MDefinition) tmpMDefinition;
-				if (tmpTSignature instanceof TSignature) {
-					TSignature tSignature = (TSignature) tmpTSignature;
-					if (tmpMType instanceof AbstractTypeDeclaration) {
-						AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-						if (tmpTDefinition instanceof TMember) {
-							TMember tDefinition = (TMember) tmpTDefinition;
-							if (tmpMSignature instanceof MSignature) {
-								MSignature mSignature = (MSignature) tmpMSignature;
-								return new Object[] { tType, mDefinition, tSignature, mType, tDefinition, mSignature,
-										targetMatch, sourceMatch };
+	public static final Object[] pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_bindingFFFFFFBB(Match sourceMatch,
+			Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("mType");
+		EObject _localVariable_1 = targetMatch.getObject("tDefinition");
+		EObject _localVariable_2 = sourceMatch.getObject("mSignature");
+		EObject _localVariable_3 = sourceMatch.getObject("mDefinition");
+		EObject _localVariable_4 = targetMatch.getObject("tSignature");
+		EObject _localVariable_5 = targetMatch.getObject("tType");
+		EObject tmpMType = _localVariable_0;
+		EObject tmpTDefinition = _localVariable_1;
+		EObject tmpMSignature = _localVariable_2;
+		EObject tmpMDefinition = _localVariable_3;
+		EObject tmpTSignature = _localVariable_4;
+		EObject tmpTType = _localVariable_5;
+		if (tmpMType instanceof AbstractTypeDeclaration) {
+			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
+			if (tmpTDefinition instanceof TMember) {
+				TMember tDefinition = (TMember) tmpTDefinition;
+				if (tmpMSignature instanceof MSignature) {
+					MSignature mSignature = (MSignature) tmpMSignature;
+					if (tmpMDefinition instanceof MDefinition) {
+						MDefinition mDefinition = (MDefinition) tmpMDefinition;
+						if (tmpTSignature instanceof TSignature) {
+							TSignature tSignature = (TSignature) tmpTSignature;
+							if (tmpTType instanceof TAbstractType) {
+								TAbstractType tType = (TAbstractType) tmpTType;
+								return new Object[] { mType, tDefinition, mSignature, mDefinition, tSignature, tType,
+										sourceMatch, targetMatch };
 							}
 						}
 					}
@@ -2972,11 +2968,11 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_blackBBBBBBBB(TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, AbstractTypeDeclaration mType, TMember tDefinition,
-			MSignature mSignature, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_blackBBBBBBBB(
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, MDefinition mDefinition,
+			TSignature tSignature, TAbstractType tType, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tType, mDefinition, tSignature, mType, tDefinition, mSignature, sourceMatch,
+			return new Object[] { mType, tDefinition, mSignature, mDefinition, tSignature, tType, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2985,20 +2981,20 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	public static final Object[] pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding = pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_bindingFFFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding != null) {
-			TAbstractType tType = (TAbstractType) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[0];
-			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[1];
-			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[2];
-			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[3];
-			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[4];
-			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[5];
+			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[0];
+			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[1];
+			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[2];
+			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[3];
+			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[4];
+			TAbstractType tType = (TAbstractType) result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_black = pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					tType, mDefinition, tSignature, mType, tDefinition, mSignature, sourceMatch, targetMatch);
+					mType, tDefinition, mSignature, mDefinition, tSignature, tType, sourceMatch, targetMatch);
 			if (result_pattern_LinkDefinitionToType_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tType, mDefinition, tSignature, mType, tDefinition, mSignature, sourceMatch,
+				return new Object[] { mType, tDefinition, mSignature, mDefinition, tSignature, tType, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3006,14 +3002,13 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_24_3_solvecsp_bindingFBBBBBBBBB(
-			LinkDefinitionToType _this, TAbstractType tType, MDefinition mDefinition, TSignature tSignature,
-			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, Match sourceMatch,
-			Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(tType, mDefinition, tSignature, mType, tDefinition,
-				mSignature, sourceMatch, targetMatch);
+			LinkDefinitionToType _this, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
+			MDefinition mDefinition, TSignature tSignature, TAbstractType tType, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(mType, tDefinition, mSignature, mDefinition, tSignature,
+				tType, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, tType, mDefinition, tSignature, mType, tDefinition, mSignature,
+			return new Object[] { csp, _this, mType, tDefinition, mSignature, mDefinition, tSignature, tType,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -3024,11 +3019,10 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			LinkDefinitionToType _this, TAbstractType tType, MDefinition mDefinition, TSignature tSignature,
-			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, Match sourceMatch,
-			Match targetMatch) {
+			LinkDefinitionToType _this, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
+			MDefinition mDefinition, TSignature tSignature, TAbstractType tType, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_LinkDefinitionToType_24_3_solvecsp_binding = pattern_LinkDefinitionToType_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, tType, mDefinition, tSignature, mType, tDefinition, mSignature, sourceMatch, targetMatch);
+				_this, mType, tDefinition, mSignature, mDefinition, tSignature, tType, sourceMatch, targetMatch);
 		if (result_pattern_LinkDefinitionToType_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToType_24_3_solvecsp_binding[0];
 
@@ -3036,7 +3030,7 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 					csp);
 			if (result_pattern_LinkDefinitionToType_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tType, mDefinition, tSignature, mType, tDefinition, mSignature,
+				return new Object[] { csp, _this, mType, tDefinition, mSignature, mDefinition, tSignature, tType,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3049,23 +3043,23 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkDefinitionToType_24_5_matchcorrcontext_blackBBBFFBBBFBB(
-			TAbstractType tType, MDefinition mDefinition, TSignature tSignature, AbstractTypeDeclaration mType,
-			TMember tDefinition, MSignature mSignature, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_LinkDefinitionToType_24_5_matchcorrcontext_blackBBBFBFBBFBB(
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, MDefinition mDefinition,
+			TSignature tSignature, TAbstractType tType, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tSignature, MSignatureToTSignature.class, "target")) {
-				if (mSignature.equals(mSignatureToTSignature.getSource())) {
-					for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
-						if (tType.equals(mTypeToTType.getTarget())) {
-							for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(tDefinition, MDefinitionToTMember.class, "target")) {
-								if (mDefinition.equals(mDefinitionToTMember.getSource())) {
-									_result.add(new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature,
-											mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember,
-											sourceMatch, targetMatch });
+			for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
+				if (tType.equals(mTypeToTType.getTarget())) {
+					for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(mDefinition, MDefinitionToTMember.class, "source")) {
+						if (tDefinition.equals(mDefinitionToTMember.getTarget())) {
+							for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(mSignature, MSignatureToTSignature.class, "source")) {
+								if (tSignature.equals(mSignatureToTSignature.getTarget())) {
+									_result.add(new Object[] { mType, tDefinition, mSignature, mTypeToTType,
+											mDefinition, mDefinitionToTMember, tSignature, tType,
+											mSignatureToTSignature, sourceMatch, targetMatch });
 								}
 							}
 						}
@@ -3077,24 +3071,24 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_24_5_matchcorrcontext_greenBBBBBF(
-			MSignatureToTSignature mSignatureToTSignature, TypeToTAbstractType mTypeToTType,
-			MDefinitionToTMember mDefinitionToTMember, Match sourceMatch, Match targetMatch) {
+			TypeToTAbstractType mTypeToTType, MDefinitionToTMember mDefinitionToTMember,
+			MSignatureToTSignature mSignatureToTSignature, Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "LinkDefinitionToType";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(mSignatureToTSignature);
 		ccMatch.getAllContextElements().add(mTypeToTType);
 		ccMatch.getAllContextElements().add(mDefinitionToTMember);
+		ccMatch.getAllContextElements().add(mSignatureToTSignature);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { mSignatureToTSignature, mTypeToTType, mDefinitionToTMember, sourceMatch, targetMatch,
+		return new Object[] { mTypeToTType, mDefinitionToTMember, mSignatureToTSignature, sourceMatch, targetMatch,
 				ccMatch };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_24_6_createcorrespondence_blackBBBBBBB(
-			TAbstractType tType, MDefinition mDefinition, TSignature tSignature, AbstractTypeDeclaration mType,
-			TMember tDefinition, MSignature mSignature, CCMatch ccMatch) {
-		return new Object[] { tType, mDefinition, tSignature, mType, tDefinition, mSignature, ccMatch };
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, MDefinition mDefinition,
+			TSignature tSignature, TAbstractType tType, CCMatch ccMatch) {
+		return new Object[] { mType, tDefinition, mSignature, mDefinition, tSignature, tType, ccMatch };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_24_7_addtoreturnedresult_blackBB(
@@ -3118,11 +3112,11 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToType_27_1_matchtggpattern_blackBBB(MDefinition mDefinition,
-			AbstractTypeDeclaration mType, MSignature mSignature) {
+	public static final Object[] pattern_LinkDefinitionToType_27_1_matchtggpattern_blackBBB(
+			AbstractTypeDeclaration mType, MSignature mSignature, MDefinition mDefinition) {
 		if (mType.getBodyDeclarations().contains(mDefinition)) {
 			if (mSignature.getMDefinitions().contains(mDefinition)) {
-				return new Object[] { mDefinition, mType, mSignature };
+				return new Object[] { mType, mSignature, mDefinition };
 			}
 		}
 		return null;
@@ -3138,12 +3132,12 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToType_28_1_matchtggpattern_blackBBB(TAbstractType tType,
-			TSignature tSignature, TMember tDefinition) {
+	public static final Object[] pattern_LinkDefinitionToType_28_1_matchtggpattern_blackBBB(TMember tDefinition,
+			TSignature tSignature, TAbstractType tType) {
 		if (tType.getDefines().contains(tDefinition)) {
 			if (tSignature.getDefinitions().contains(tDefinition)) {
 				if (tType.getSignature().contains(tSignature)) {
-					return new Object[] { tType, tSignature, tDefinition };
+					return new Object[] { tDefinition, tSignature, tType };
 				}
 			}
 		}
@@ -3173,9 +3167,9 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TAbstractType tType) {
-		if (ruleResult.getTargetObjects().contains(tType)) {
-			return new Object[] { ruleResult, tType };
+			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration mType) {
+		if (ruleResult.getSourceObjects().contains(mType)) {
+			return new Object[] { ruleResult, mType };
 		}
 		return null;
 	}
@@ -3189,25 +3183,25 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration mType) {
-		if (ruleResult.getSourceObjects().contains(mType)) {
-			return new Object[] { ruleResult, mType };
+			ModelgeneratorRuleResult ruleResult, TAbstractType tType) {
+		if (ruleResult.getTargetObjects().contains(tType)) {
+			return new Object[] { ruleResult, tType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, MDefinition mDefinition) {
-		if (ruleResult.getSourceObjects().contains(mDefinition)) {
-			return new Object[] { ruleResult, mDefinition };
+			ModelgeneratorRuleResult ruleResult, TMember tDefinition) {
+		if (ruleResult.getTargetObjects().contains(tDefinition)) {
+			return new Object[] { ruleResult, tDefinition };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, MSignature mSignature) {
-		if (ruleResult.getSourceObjects().contains(mSignature)) {
-			return new Object[] { ruleResult, mSignature };
+			ModelgeneratorRuleResult ruleResult, TSignature tSignature) {
+		if (ruleResult.getTargetObjects().contains(tSignature)) {
+			return new Object[] { ruleResult, tSignature };
 		}
 		return null;
 	}
@@ -3221,17 +3215,17 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_6BB(
-			ModelgeneratorRuleResult ruleResult, TSignature tSignature) {
-		if (ruleResult.getTargetObjects().contains(tSignature)) {
-			return new Object[] { ruleResult, tSignature };
+			ModelgeneratorRuleResult ruleResult, MSignature mSignature) {
+		if (ruleResult.getSourceObjects().contains(mSignature)) {
+			return new Object[] { ruleResult, mSignature };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_7BB(
-			ModelgeneratorRuleResult ruleResult, TMember tDefinition) {
-		if (ruleResult.getTargetObjects().contains(tDefinition)) {
-			return new Object[] { ruleResult, tDefinition };
+			ModelgeneratorRuleResult ruleResult, MDefinition mDefinition) {
+		if (ruleResult.getSourceObjects().contains(mDefinition)) {
+			return new Object[] { ruleResult, mDefinition };
 		}
 		return null;
 	}
@@ -3253,64 +3247,64 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 					for (EObject tmpMTypeToTType : mTypeToTTypeList.getEntryObjects()) {
 						if (tmpMTypeToTType instanceof TypeToTAbstractType) {
 							TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-							TAbstractType tType = mTypeToTType.getTarget();
-							if (tType != null) {
-								Type tmpMType = mTypeToTType.getSource();
-								if (tmpMType instanceof AbstractTypeDeclaration) {
-									AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
+							Type tmpMType = mTypeToTType.getSource();
+							if (tmpMType instanceof AbstractTypeDeclaration) {
+								AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
+								TAbstractType tType = mTypeToTType.getTarget();
+								if (tType != null) {
 									if (pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 											mTypeToTType) == null) {
 										if (pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-												tType) == null) {
+												mType) == null) {
 											if (pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, mType) == null) {
+													ruleResult, tType) == null) {
 												for (EObject tmpMSignatureToTSignature : mSignatureToTSignatureList
 														.getEntryObjects()) {
 													if (tmpMSignatureToTSignature instanceof MSignatureToTSignature) {
 														MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) tmpMSignatureToTSignature;
-														MSignature mSignature = mSignatureToTSignature.getSource();
-														if (mSignature != null) {
-															TSignature tSignature = mSignatureToTSignature.getTarget();
-															if (tSignature != null) {
+														TSignature tSignature = mSignatureToTSignature.getTarget();
+														if (tSignature != null) {
+															MSignature mSignature = mSignatureToTSignature.getSource();
+															if (mSignature != null) {
 																if (pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_5BB(
 																		ruleResult, mSignatureToTSignature) == null) {
 																	if (pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_4BB(
-																			ruleResult, mSignature) == null) {
+																			ruleResult, tSignature) == null) {
 																		if (pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_6BB(
-																				ruleResult, tSignature) == null) {
-																			for (MDefinition mDefinition : mSignature
-																					.getMDefinitions()) {
+																				ruleResult, mSignature) == null) {
+																			for (TMember tDefinition : tSignature
+																					.getDefinitions()) {
 																				if (pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_3BB(
 																						ruleResult,
-																						mDefinition) == null) {
-																					for (TMember tDefinition : tSignature
-																							.getDefinitions()) {
+																						tDefinition) == null) {
+																					for (MDefinition mDefinition : mSignature
+																							.getMDefinitions()) {
 																						if (pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_7BB(
 																								ruleResult,
-																								tDefinition) == null) {
+																								mDefinition) == null) {
 																							for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
 																									.getOppositeReferenceTyped(
-																											mDefinition,
+																											tDefinition,
 																											MDefinitionToTMember.class,
-																											"source")) {
-																								if (tDefinition.equals(
+																											"target")) {
+																								if (mDefinition.equals(
 																										mDefinitionToTMember
-																												.getTarget())) {
+																												.getSource())) {
 																									if (pattern_LinkDefinitionToType_29_2_isapplicablecore_black_nac_8BB(
 																											ruleResult,
 																											mDefinitionToTMember) == null) {
 																										_result.add(
 																												new Object[] {
 																														mTypeToTTypeList,
-																														tType,
-																														mTypeToTType,
 																														mType,
+																														mTypeToTType,
+																														tType,
 																														mSignatureToTSignatureList,
-																														mDefinition,
-																														mSignature,
-																														mSignatureToTSignature,
-																														tSignature,
 																														tDefinition,
+																														tSignature,
+																														mSignatureToTSignature,
+																														mSignature,
+																														mDefinition,
 																														mDefinitionToTMember,
 																														ruleEntryContainer,
 																														ruleResult });
@@ -3346,16 +3340,16 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_29_3_solveCSP_bindingFBBBBBBBBBBBB(
-			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tType, mDefinition, tSignature,
-				mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember, ruleResult);
+			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
+			TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature, TAbstractType tType,
+			MSignatureToTSignature mSignatureToTSignature, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mType, tDefinition, mSignature,
+				mTypeToTType, mDefinition, mDefinitionToTMember, tSignature, tType, mSignatureToTSignature, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tType, mDefinition, tSignature, mSignatureToTSignature,
-					mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mType, tDefinition, mSignature, mTypeToTType,
+					mDefinition, mDefinitionToTMember, tSignature, tType, mSignatureToTSignature, ruleResult };
 		}
 		return null;
 	}
@@ -3365,13 +3359,13 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 	}
 
 	public static final Object[] pattern_LinkDefinitionToType_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
-			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember, ModelgeneratorRuleResult ruleResult) {
+			LinkDefinitionToType _this, IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
+			TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType, MDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature, TAbstractType tType,
+			MSignatureToTSignature mSignatureToTSignature, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_LinkDefinitionToType_29_3_solveCSP_binding = pattern_LinkDefinitionToType_29_3_solveCSP_bindingFBBBBBBBBBBBB(
-				_this, isApplicableMatch, tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType,
-				tDefinition, mSignature, mDefinitionToTMember, ruleResult);
+				_this, isApplicableMatch, mType, tDefinition, mSignature, mTypeToTType, mDefinition,
+				mDefinitionToTMember, tSignature, tType, mSignatureToTSignature, ruleResult);
 		if (result_pattern_LinkDefinitionToType_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToType_29_3_solveCSP_binding[0];
 
@@ -3379,9 +3373,8 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 					csp);
 			if (result_pattern_LinkDefinitionToType_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tType, mDefinition, tSignature,
-						mSignatureToTSignature, mTypeToTType, mType, tDefinition, mSignature, mDefinitionToTMember,
-						ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mType, tDefinition, mSignature, mTypeToTType,
+						mDefinition, mDefinitionToTMember, tSignature, tType, mSignatureToTSignature, ruleResult };
 			}
 		}
 		return null;
@@ -3394,34 +3387,34 @@ public class LinkDefinitionToTypeImpl extends AbstractRuleImpl implements LinkDe
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToType_29_5_checknacs_blackBBBBBBBBB(TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember) {
-		return new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-				mSignature, mDefinitionToTMember };
+	public static final Object[] pattern_LinkDefinitionToType_29_5_checknacs_blackBBBBBBBBB(
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType,
+			MDefinition mDefinition, MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			TAbstractType tType, MSignatureToTSignature mSignatureToTSignature) {
+		return new Object[] { mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember,
+				tSignature, tType, mSignatureToTSignature };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToType_29_6_perform_blackBBBBBBBBBB(TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, MSignatureToTSignature mSignatureToTSignature,
-			TypeToTAbstractType mTypeToTType, AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature,
-			MDefinitionToTMember mDefinitionToTMember, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { tType, mDefinition, tSignature, mSignatureToTSignature, mTypeToTType, mType, tDefinition,
-				mSignature, mDefinitionToTMember, ruleResult };
+	public static final Object[] pattern_LinkDefinitionToType_29_6_perform_blackBBBBBBBBBB(
+			AbstractTypeDeclaration mType, TMember tDefinition, MSignature mSignature, TypeToTAbstractType mTypeToTType,
+			MDefinition mDefinition, MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			TAbstractType tType, MSignatureToTSignature mSignatureToTSignature, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mType, tDefinition, mSignature, mTypeToTType, mDefinition, mDefinitionToTMember,
+				tSignature, tType, mSignatureToTSignature, ruleResult };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToType_29_6_perform_greenBBBBBB(TAbstractType tType,
-			MDefinition mDefinition, TSignature tSignature, AbstractTypeDeclaration mType, TMember tDefinition,
+	public static final Object[] pattern_LinkDefinitionToType_29_6_perform_greenBBBBBB(AbstractTypeDeclaration mType,
+			TMember tDefinition, MDefinition mDefinition, TSignature tSignature, TAbstractType tType,
 			ModelgeneratorRuleResult ruleResult) {
-		tType.getDefines().add(tDefinition);
 		mType.getBodyDeclarations().add(mDefinition);
+		tType.getDefines().add(tDefinition);
 		tType.getSignature().add(tSignature);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tType, mDefinition, tSignature, mType, tDefinition, ruleResult };
+		return new Object[] { mType, tDefinition, mDefinition, tSignature, tType, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_LinkDefinitionToType_29_7_expressionFB(

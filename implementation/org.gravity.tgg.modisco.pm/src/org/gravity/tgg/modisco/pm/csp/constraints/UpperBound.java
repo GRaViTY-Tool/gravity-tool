@@ -5,13 +5,13 @@ import org.moflon.tgg.language.csp.impl.TGGConstraintImpl;
 
 public class UpperBound extends TGGConstraintImpl {
 	public void solve(final Variable var_0, final Variable var_1){
-		final String bindingStates = getBindingStates(var_0, var_1);
+		final var bindingStates = getBindingStates(var_0, var_1);
 
-		final String string = (String)var_0.getValue();
+		final var string = (String)var_0.getValue();
 		if(string == null) {
 			throw new UnsupportedOperationException("This case in the constraint has not been implemented yet: " + bindingStates);
 		}
-		final boolean array = string.trim().endsWith("[]");
+		final var array = string.trim().endsWith("[]");
 		switch(bindingStates){
 		case "BB":
 			if(array) {
