@@ -78,7 +78,6 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * @generated
 	 */
 	protected TClassImpl() {
-		super();
 	}
 
 	/**
@@ -96,10 +95,10 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 */
 	@Override
 	public EList<TClass> getParentClasses() {
-		if (parentClasses == null) {
-			parentClasses = new EObjectWithInverseResolvingEList.ManyInverse<TClass>(TClass.class, this, BasicPackage.TCLASS__PARENT_CLASSES, BasicPackage.TCLASS__CHILD_CLASSES);
+		if (this.parentClasses == null) {
+			this.parentClasses = new EObjectWithInverseResolvingEList.ManyInverse<>(TClass.class, this, BasicPackage.TCLASS__PARENT_CLASSES, BasicPackage.TCLASS__CHILD_CLASSES);
 		}
-		return parentClasses;
+		return this.parentClasses;
 	}
 
 	/**
@@ -108,10 +107,10 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 */
 	@Override
 	public EList<TClass> getChildClasses() {
-		if (childClasses == null) {
-			childClasses = new EObjectWithInverseResolvingEList.ManyInverse<TClass>(TClass.class, this, BasicPackage.TCLASS__CHILD_CLASSES, BasicPackage.TCLASS__PARENT_CLASSES);
+		if (this.childClasses == null) {
+			this.childClasses = new EObjectWithInverseResolvingEList.ManyInverse<>(TClass.class, this, BasicPackage.TCLASS__CHILD_CLASSES, BasicPackage.TCLASS__PARENT_CLASSES);
 		}
-		return childClasses;
+		return this.childClasses;
 	}
 
 	/**
@@ -120,10 +119,10 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 */
 	@Override
 	public EList<TInterface> getImplements() {
-		if (implements_ == null) {
-			implements_ = new EObjectWithInverseResolvingEList.ManyInverse<TInterface>(TInterface.class, this, BasicPackage.TCLASS__IMPLEMENTS, BasicPackage.TINTERFACE__IMPLEMENTED_BY);
+		if (this.implements_ == null) {
+			this.implements_ = new EObjectWithInverseResolvingEList.ManyInverse<>(TInterface.class, this, BasicPackage.TCLASS__IMPLEMENTS, BasicPackage.TINTERFACE__IMPLEMENTED_BY);
 		}
-		return implements_;
+		return this.implements_;
 	}
 
 	/**
@@ -156,14 +155,14 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 		final Deque<TClass> stack = new LinkedList<>();
 		stack.add(this);
 		while (!stack.isEmpty()) {
-			final TClass current = stack.pop();
+			final var current = stack.pop();
 			for (final TMember member : current.getDefines()) {
 				EList<?> redefinedBy;
 				if (member instanceof TMethodDefinition) {
-					final TMethodDefinition method = (TMethodDefinition) member;
+					final var method = (TMethodDefinition) member;
 					redefinedBy = method.getOverriddenBy();
 				} else if (member instanceof TFieldDefinition) {
-					final TFieldDefinition field = (TFieldDefinition) member;
+					final var field = (TFieldDefinition) member;
 					redefinedBy = field.getHiddenBy();
 				} else if (member instanceof TSyntethicMethod) {
 					// Ignore synthetic methods
@@ -171,7 +170,7 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 				} else {
 					throw new RuntimeException("Unknown TMember subtype.");
 				}
-				boolean contained = false;
+				var contained = false;
 				for (final Object o : redefinedBy) {
 					contained |= allMembers.contains(o);
 				}
@@ -214,7 +213,7 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 		if (tType instanceof TClass) {
 			final Deque<TClass> parents = new LinkedList<>(((TClass) tType).getParentClasses());
 			while (!parents.isEmpty()) {
-				final TClass parent = parents.pop();
+				final var parent = parents.pop();
 				seen.add(parent);
 				if (equals(parent)) {
 					return true;
@@ -240,10 +239,10 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 
 		EList<? extends TMember> definitions = null;
 		if (signature instanceof TFieldSignature) {
-			final TFieldSignature tFieldSignature = (TFieldSignature) signature;
+			final var tFieldSignature = (TFieldSignature) signature;
 			definitions = tFieldSignature.getDefinitions();
 		} else if (signature instanceof TMethodSignature) {
-			final TMethodSignature tMethodSignature = (TMethodSignature) signature;
+			final var tMethodSignature = (TMethodSignature) signature;
 			definitions = tMethodSignature.getDefinitions();
 		}
 
@@ -269,7 +268,7 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 		// [user code injected with eMoflon]
 		final Deque<TClass> stack = new LinkedList<>(getParentClasses());
 		while (!stack.isEmpty()) {
-			final TClass parent = stack.pop();
+			final var parent = stack.pop();
 			if ((parent != null) && !parent.equals(this)) {
 				if (parent.getDefines().contains(member)) {
 					return true;
@@ -286,14 +285,14 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TCLASS__PARENT_CLASSES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParentClasses()).basicAdd(otherEnd, msgs);
-			case BasicPackage.TCLASS__CHILD_CLASSES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildClasses()).basicAdd(otherEnd, msgs);
-			case BasicPackage.TCLASS__IMPLEMENTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getImplements()).basicAdd(otherEnd, msgs);
+		case BasicPackage.TCLASS__PARENT_CLASSES:
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getParentClasses()).basicAdd(otherEnd, msgs);
+		case BasicPackage.TCLASS__CHILD_CLASSES:
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildClasses()).basicAdd(otherEnd, msgs);
+		case BasicPackage.TCLASS__IMPLEMENTS:
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getImplements()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -303,14 +302,14 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TCLASS__PARENT_CLASSES:
-				return ((InternalEList<?>)getParentClasses()).basicRemove(otherEnd, msgs);
-			case BasicPackage.TCLASS__CHILD_CLASSES:
-				return ((InternalEList<?>)getChildClasses()).basicRemove(otherEnd, msgs);
-			case BasicPackage.TCLASS__IMPLEMENTS:
-				return ((InternalEList<?>)getImplements()).basicRemove(otherEnd, msgs);
+		case BasicPackage.TCLASS__PARENT_CLASSES:
+			return ((InternalEList<?>)getParentClasses()).basicRemove(otherEnd, msgs);
+		case BasicPackage.TCLASS__CHILD_CLASSES:
+			return ((InternalEList<?>)getChildClasses()).basicRemove(otherEnd, msgs);
+		case BasicPackage.TCLASS__IMPLEMENTS:
+			return ((InternalEList<?>)getImplements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -320,14 +319,14 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
-			case BasicPackage.TCLASS__PARENT_CLASSES:
-				return getParentClasses();
-			case BasicPackage.TCLASS__CHILD_CLASSES:
-				return getChildClasses();
-			case BasicPackage.TCLASS__IMPLEMENTS:
-				return getImplements();
+		case BasicPackage.TCLASS__PARENT_CLASSES:
+			return getParentClasses();
+		case BasicPackage.TCLASS__CHILD_CLASSES:
+			return getChildClasses();
+		case BasicPackage.TCLASS__IMPLEMENTS:
+			return getImplements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -338,20 +337,20 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
-			case BasicPackage.TCLASS__PARENT_CLASSES:
-				getParentClasses().clear();
-				getParentClasses().addAll((Collection<? extends TClass>)newValue);
-				return;
-			case BasicPackage.TCLASS__CHILD_CLASSES:
-				getChildClasses().clear();
-				getChildClasses().addAll((Collection<? extends TClass>)newValue);
-				return;
-			case BasicPackage.TCLASS__IMPLEMENTS:
-				getImplements().clear();
-				getImplements().addAll((Collection<? extends TInterface>)newValue);
-				return;
+		case BasicPackage.TCLASS__PARENT_CLASSES:
+			getParentClasses().clear();
+			getParentClasses().addAll((Collection<? extends TClass>)newValue);
+			return;
+		case BasicPackage.TCLASS__CHILD_CLASSES:
+			getChildClasses().clear();
+			getChildClasses().addAll((Collection<? extends TClass>)newValue);
+			return;
+		case BasicPackage.TCLASS__IMPLEMENTS:
+			getImplements().clear();
+			getImplements().addAll((Collection<? extends TInterface>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -361,17 +360,17 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
-			case BasicPackage.TCLASS__PARENT_CLASSES:
-				getParentClasses().clear();
-				return;
-			case BasicPackage.TCLASS__CHILD_CLASSES:
-				getChildClasses().clear();
-				return;
-			case BasicPackage.TCLASS__IMPLEMENTS:
-				getImplements().clear();
-				return;
+		case BasicPackage.TCLASS__PARENT_CLASSES:
+			getParentClasses().clear();
+			return;
+		case BasicPackage.TCLASS__CHILD_CLASSES:
+			getChildClasses().clear();
+			return;
+		case BasicPackage.TCLASS__IMPLEMENTS:
+			getImplements().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -381,14 +380,14 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
-			case BasicPackage.TCLASS__PARENT_CLASSES:
-				return parentClasses != null && !parentClasses.isEmpty();
-			case BasicPackage.TCLASS__CHILD_CLASSES:
-				return childClasses != null && !childClasses.isEmpty();
-			case BasicPackage.TCLASS__IMPLEMENTS:
-				return implements_ != null && !implements_.isEmpty();
+		case BasicPackage.TCLASS__PARENT_CLASSES:
+			return (this.parentClasses != null) && !this.parentClasses.isEmpty();
+		case BasicPackage.TCLASS__CHILD_CLASSES:
+			return (this.childClasses != null) && !this.childClasses.isEmpty();
+		case BasicPackage.TCLASS__IMPLEMENTS:
+			return (this.implements_ != null) && !this.implements_.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -398,22 +397,22 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BasicPackage.TCLASS___GET_DECLARED_TMETHOD_DEFINITIONS:
-				return getDeclaredTMethodDefinitions();
-			case BasicPackage.TCLASS___GET_ALL_TMEMBERS:
-				return getAllTMembers();
-			case BasicPackage.TCLASS___GET_ALL_CHILDREN:
-				return getAllChildren();
-			case BasicPackage.TCLASS___GET_ALL_OUTGOING_ACCESSES__TSIGNATURE:
-				return getAllOutgoingAccesses((TSignature)arguments.get(0));
-			case BasicPackage.TCLASS___HAS_APARENT_THIS_TMEMBER__TMEMBER:
-				return hasAParentThisTMember((TMember)arguments.get(0));
-			case BasicPackage.TCLASS___TO_STRING:
-				return toString();
-			case BasicPackage.TCLASS___GET_PARENTS:
-				return getParents();
+		case BasicPackage.TCLASS___GET_DECLARED_TMETHOD_DEFINITIONS:
+			return getDeclaredTMethodDefinitions();
+		case BasicPackage.TCLASS___GET_ALL_TMEMBERS:
+			return getAllTMembers();
+		case BasicPackage.TCLASS___GET_ALL_CHILDREN:
+			return getAllChildren();
+		case BasicPackage.TCLASS___GET_ALL_OUTGOING_ACCESSES__TSIGNATURE:
+			return getAllOutgoingAccesses((TSignature)arguments.get(0));
+		case BasicPackage.TCLASS___HAS_APARENT_THIS_TMEMBER__TMEMBER:
+			return hasAParentThisTMember((TMember)arguments.get(0));
+		case BasicPackage.TCLASS___TO_STRING:
+			return toString();
+		case BasicPackage.TCLASS___GET_PARENTS:
+			return getParents();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -421,8 +420,12 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 
 	@Override
 	public String toString() {
-		final String string = super.toString();
-		return string.substring(0, string.length() - 1).concat(", name: ").concat(this.tName).concat(")");
+		final var string = super.toString();
+		var concat = string.substring(0, string.length() - 1).concat(", name: ");
+		if(this.tName != null) {
+			concat = concat.concat(this.tName);
+		}
+		return concat.concat(")");
 	}
 
 	@Override
@@ -430,7 +433,7 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 		final EList<TClass> parents = new BasicEList<>();
 		final Deque<TClass> stack = new LinkedList<>(getParentClasses());
 		while (!stack.isEmpty()) {
-			final TClass parent = stack.pop();
+			final var parent = stack.pop();
 			parents.add(parent);
 			stack.addAll(parent.getParentClasses());
 		}
@@ -442,7 +445,7 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 		if (!(tAbstractType instanceof TClassImpl)) {
 			return false;
 		}
-		final TClassImpl tClass = (TClassImpl) tAbstractType;
+		final var tClass = (TClassImpl) tAbstractType;
 
 		final List<TClass> parents = getParents();
 		parents.add(this);
