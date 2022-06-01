@@ -115,8 +115,8 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject varDeclFragment,
-			EObject eFieldDeclarationToTFieldDefinition, EObject mDefinition, EObject varDeclFragmentToTFieldDefinition,
-			EObject tDefinition);
+			EObject eFieldDeclarationToTFieldDefinition, EObject mDefinition, EObject tDefinition,
+			EObject varDeclFragmentToTFieldDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,7 +196,7 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_17(EMoflonEdge _edge_variablesContainer);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_6(EMoflonEdge _edge_variablesContainer);
 
 	/**
 	 * <!-- begin-user-doc -->

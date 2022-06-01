@@ -748,7 +748,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_5(EMoflonEdge _edge_parentClasses) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_9(EMoflonEdge _edge_parentClasses) {
 
 		Object[] result1_bindingAndBlack = AnonymousClassTypeClassImpl
 				.pattern_AnonymousClassTypeClass_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -806,7 +806,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_6(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_10(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = AnonymousClassTypeClassImpl
 				.pattern_AnonymousClassTypeClass_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1255,10 +1255,10 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 			return null;
 		case RulesPackage.ANONYMOUS_CLASS_TYPE_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS_TYPE_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_5__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_5((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS_TYPE_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_6__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_6((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_TYPE_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_9__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_9((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_TYPE_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_10__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_10((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS_TYPE_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS_TYPE_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2713,9 +2713,9 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_21_2_testcorematchandDECs_black_nac_0BB(
 			TypeAccess mType, ClassDeclaration mParent) {
-		for (AbstractTypeDeclaration __DEC_mType_superInterfaces_929686 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mType_superInterfaces_401057 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mParent.equals(__DEC_mType_superInterfaces_929686)) {
+			if (!mParent.equals(__DEC_mType_superInterfaces_401057)) {
 				return new Object[] { mType, mParent };
 			}
 		}
@@ -2724,7 +2724,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess mType) {
-		for (Annotation __DEC_mType_type_153802 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mType_type_142439 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Annotation.class, "type")) {
 			return new Object[] { mType };
 		}
@@ -2733,7 +2733,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess mType) {
-		for (AnnotationTypeMemberDeclaration __DEC_mType_type_781483 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mType_type_154806 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mType };
 		}
@@ -2742,7 +2742,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess mType) {
-		for (ArrayType __DEC_mType_elementType_590300 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mType_elementType_116457 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, ArrayType.class, "elementType")) {
 			return new Object[] { mType };
 		}
@@ -2751,9 +2751,9 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_21_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess mType, ClassDeclaration mParent) {
-		for (ClassDeclaration __DEC_mType_superClass_285680 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mType_superClass_64739 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, ClassDeclaration.class, "superClass")) {
-			if (!mParent.equals(__DEC_mType_superClass_285680)) {
+			if (!mParent.equals(__DEC_mType_superClass_64739)) {
 				return new Object[] { mType, mParent };
 			}
 		}
@@ -2762,7 +2762,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess mType) {
-		for (MethodDeclaration __DEC_mType_returnType_476409 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mType_returnType_695880 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MethodDeclaration.class, "returnType")) {
 			return new Object[] { mType };
 		}
@@ -2771,7 +2771,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess mType) {
-		for (ParameterizedType __DEC_mType_type_88975 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mType_type_622113 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, ParameterizedType.class, "type")) {
 			return new Object[] { mType };
 		}
@@ -2780,7 +2780,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_21_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess mType) {
-		for (TypeLiteral __DEC_mType_type_974797 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mType_type_808030 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, TypeLiteral.class, "type")) {
 			return new Object[] { mType };
 		}
@@ -2789,7 +2789,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess mType) {
-		for (AnnotationMemberValuePair __DEC_mType_value_272511 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mType_value_75595 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mType };
 		}
@@ -3112,9 +3112,9 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_27_1_matchtggpattern_black_nac_0BB(TypeAccess mType,
 			ClassDeclaration mParent) {
-		for (AbstractTypeDeclaration __DEC_mType_superInterfaces_327852 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mType_superInterfaces_903122 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mParent.equals(__DEC_mType_superInterfaces_327852)) {
+			if (!mParent.equals(__DEC_mType_superInterfaces_903122)) {
 				return new Object[] { mType, mParent };
 			}
 		}
@@ -3122,7 +3122,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 	}
 
 	public static final Object[] pattern_AnonymousClassTypeClass_27_1_matchtggpattern_black_nac_1B(TypeAccess mType) {
-		for (Annotation __DEC_mType_type_818937 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mType_type_616398 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Annotation.class, "type")) {
 			return new Object[] { mType };
 		}
@@ -3130,7 +3130,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 	}
 
 	public static final Object[] pattern_AnonymousClassTypeClass_27_1_matchtggpattern_black_nac_2B(TypeAccess mType) {
-		for (AnnotationTypeMemberDeclaration __DEC_mType_type_894479 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mType_type_803873 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mType };
 		}
@@ -3138,7 +3138,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 	}
 
 	public static final Object[] pattern_AnonymousClassTypeClass_27_1_matchtggpattern_black_nac_3B(TypeAccess mType) {
-		for (ArrayType __DEC_mType_elementType_675796 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mType_elementType_664121 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, ArrayType.class, "elementType")) {
 			return new Object[] { mType };
 		}
@@ -3147,9 +3147,9 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 
 	public static final Object[] pattern_AnonymousClassTypeClass_27_1_matchtggpattern_black_nac_4BB(TypeAccess mType,
 			ClassDeclaration mParent) {
-		for (ClassDeclaration __DEC_mType_superClass_466261 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mType_superClass_149642 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, ClassDeclaration.class, "superClass")) {
-			if (!mParent.equals(__DEC_mType_superClass_466261)) {
+			if (!mParent.equals(__DEC_mType_superClass_149642)) {
 				return new Object[] { mType, mParent };
 			}
 		}
@@ -3157,7 +3157,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 	}
 
 	public static final Object[] pattern_AnonymousClassTypeClass_27_1_matchtggpattern_black_nac_5B(TypeAccess mType) {
-		for (MethodDeclaration __DEC_mType_returnType_898483 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mType_returnType_223312 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MethodDeclaration.class, "returnType")) {
 			return new Object[] { mType };
 		}
@@ -3165,7 +3165,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 	}
 
 	public static final Object[] pattern_AnonymousClassTypeClass_27_1_matchtggpattern_black_nac_6B(TypeAccess mType) {
-		for (ParameterizedType __DEC_mType_type_693166 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mType_type_5833 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, ParameterizedType.class, "type")) {
 			return new Object[] { mType };
 		}
@@ -3173,7 +3173,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 	}
 
 	public static final Object[] pattern_AnonymousClassTypeClass_27_1_matchtggpattern_black_nac_7B(TypeAccess mType) {
-		for (TypeLiteral __DEC_mType_type_188660 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mType_type_22478 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, TypeLiteral.class, "type")) {
 			return new Object[] { mType };
 		}
@@ -3181,7 +3181,7 @@ public class AnonymousClassTypeClassImpl extends AbstractRuleImpl implements Ano
 	}
 
 	public static final Object[] pattern_AnonymousClassTypeClass_27_1_matchtggpattern_black_nac_8B(TypeAccess mType) {
-		for (AnnotationMemberValuePair __DEC_mType_value_246120 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mType_value_45401 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mType };
 		}

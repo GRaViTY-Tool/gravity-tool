@@ -13,6 +13,7 @@
 	tType:TAbstractType {
 		-model -> tPM
 		++  -defines -> tDefinition
+		++ -signature-> tSignature
 	}
 
 	++tDefinition:TMethodDefinition {

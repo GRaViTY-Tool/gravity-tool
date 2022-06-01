@@ -775,7 +775,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_44(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_0(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueNumberImpl
 				.pattern_AnnotationMemberValueNumber_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -834,7 +834,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_47(EMoflonEdge _edge_value) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_0(EMoflonEdge _edge_value) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueNumberImpl
 				.pattern_AnnotationMemberValueNumber_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -905,13 +905,13 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tValue_tNumber = CSPFactoryHelper.eINSTANCE.createVariable("tValue", true, csp);
-		var_tValue_tNumber.setValue(__helper.getValue("tValue", "tNumber"));
-		var_tValue_tNumber.setType("String");
-
 		Variable var_mValue_tokenValue = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
 		var_mValue_tokenValue.setValue(__helper.getValue("mValue", "tokenValue"));
 		var_mValue_tokenValue.setType("String");
+
+		Variable var_tValue_tNumber = CSPFactoryHelper.eINSTANCE.createVariable("tValue", true, csp);
+		var_tValue_tNumber.setValue(__helper.getValue("tValue", "tNumber"));
+		var_tValue_tNumber.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -952,13 +952,13 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tValue_tNumber = CSPFactoryHelper.eINSTANCE.createVariable("tValue", true, csp);
-		var_tValue_tNumber.setValue(__helper.getValue("tValue", "tNumber"));
-		var_tValue_tNumber.setType("String");
-
 		Variable var_mValue_tokenValue = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
 		var_mValue_tokenValue.setValue(__helper.getValue("mValue", "tokenValue"));
 		var_mValue_tokenValue.setType("String");
+
+		Variable var_tValue_tNumber = CSPFactoryHelper.eINSTANCE.createVariable("tValue", true, csp);
+		var_tValue_tNumber.setValue(__helper.getValue("tValue", "tNumber"));
+		var_tValue_tNumber.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1344,10 +1344,10 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_44__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_44((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_47__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_47((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_0__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_0((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_0__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_0((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

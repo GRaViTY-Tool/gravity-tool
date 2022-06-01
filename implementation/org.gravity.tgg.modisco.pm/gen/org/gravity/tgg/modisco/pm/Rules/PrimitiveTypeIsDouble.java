@@ -210,7 +210,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_21(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_23(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->

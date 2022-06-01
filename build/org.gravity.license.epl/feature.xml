@@ -2,8 +2,8 @@
 <feature
       id="org.gravity.license.epl"
       label="GRaViTY EPL License"
-      version="1.0.0"
-      provider-name="University of Koblenz-Landau">
+      version="1.0.0.qualifier"
+      provider-name="University of Koblenz-Landau and Ruhr University Bochum">
 
    <description>
       This is a license feature providing a copy of the Eclipse Public
@@ -11,7 +11,9 @@ License - v2.0 (https://www.eclipse.org/legal/epl-2.0/#)
    </description>
 
    <copyright>
-      (C) Copyright ${year} Research Group Software Engineering - University of Koblenz-Landau and Real-Time Systems Lab - Technische Universität Darmstadt.
+      (C) Copyright ${year} Research Group Software Engineering - University
+of Koblenz-Landau, Real-Time Systems Lab - Technische Universität
+Darmstadt, and Research Group Software Engineering - Ruhr Universit Bochum.
    </copyright>
 
    <license url="https://www.eclipse.org/legal/epl-2.0/#">

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_LVqtcJFQEeqPGpUXqPea8A">
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_QR26oJFQEeqPGpUXqPea8A" name="a">
+    <annotations xmi:id="_QScJcJFQEeqPGpUXqPea8A" key="featureModel" value=" pjpj"/>
+    <annotations xmi:id="_QScJcZFQEeqPGpUXqPea8A" key="injectiveMatchingPresenceCondition" value=""/>
+    <annotations xmi:id="_QScwgJFQEeqPGpUXqPea8A" key="features" value="A,B,C"/>
+    <lhs xmi:id="_QSFkIJFQEeqPGpUXqPea8A" name="Lhs"/>
+    <rhs xmi:id="_QSGLMJFQEeqPGpUXqPea8A" name="Rhs"/>
+  </units>
+</henshin:Module>
