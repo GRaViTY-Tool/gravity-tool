@@ -23,6 +23,7 @@ import org.eclipse.jdt.core.ISourceReference;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
+import org.eclipse.jdt.core.dom.AbstractTypeDeclaration;
 import org.eclipse.jdt.core.dom.ArrayType;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
@@ -100,8 +101,14 @@ public final class JavaASTUtil {
 				var equal = true;
 				var tParam = signature.getFirstParameter();
 				for (final ILocalVariable param : m.getParameters()) {
-					equal = tParam.getType().getFullyQualifiedName()
-							.endsWith(Signature.toString(param.getTypeSignature()));
+					var iParamSignature = Signature.toString(param.getTypeSignature());
+					final var iArray = iParamSignature.endsWith("[]");
+					if (iArray) {
+						iParamSignature = iParamSignature.substring(0, iParamSignature.length() - 2);
+					}
+					equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature) && iArray
+							? ((tParam.getUpperBound() > 1) || (tParam.getUpperBound() == -1))
+									: tParam.getUpperBound() == 1;
 					if (!equal) {
 						break;
 					}
@@ -161,7 +168,7 @@ public final class JavaASTUtil {
 	 * @param pm   The program model in which should be searched
 	 * @return the type from the pm
 	 */
-	public static TAbstractType getType(final TypeDeclaration type, final TypeGraph pm) {
+	public static TAbstractType getType(final AbstractTypeDeclaration type, final TypeGraph pm) {
 		final var name = type.getName();
 		final var fullyQualifiedName = name.getFullyQualifiedName();
 		if (name.isQualifiedName()) {
@@ -375,7 +382,7 @@ public final class JavaASTUtil {
 	 * @return The found definition or null
 	 */
 	public static TFieldDefinition getTFieldDefinition(final FieldDeclaration field, final TypeGraph pm) {
-		final var type = getType((TypeDeclaration) field.getParent(), pm);
+		final var type = getType((AbstractTypeDeclaration) field.getParent(), pm);
 		if (type == null) {
 			return null;
 		}
@@ -422,7 +429,7 @@ public final class JavaASTUtil {
 	 * @return The found definition or null
 	 */
 	public static TMethodDefinition getTMethodDefinition(final MethodDeclaration method, final TypeGraph pm) {
-		final var type = getType((TypeDeclaration) method.getParent(), pm);
+		final var type = getType((AbstractTypeDeclaration) method.getParent(), pm);
 		if (type == null) {
 			return null;
 		}
@@ -448,16 +455,21 @@ public final class JavaASTUtil {
 			return null;
 		}
 
+		TAbstractType tExpectedReturnType;
+		if (method.isConstructor()) {
+			tExpectedReturnType = getType((TypeDeclaration) method.getParent(), pm);
+		} else {
+			tExpectedReturnType = getType(method.getReturnType2(), pm);
+		}
+
 		for (final TMethodSignature signature : tMethod.getSignatures()) {
-			final var returnType = method.getReturnType2();
-			final var tExpectedReturnType = getType(returnType, pm);
 			if (
 					// Return type have to be the same type
 					!signature.getReturnType().equals(tExpectedReturnType)
 					// Both have to be either arrays or not arrays
-					|| (signature.isArray() != returnType.isArrayType())
-					// The parameter lists have to have the same size
-					|| (method.parameters().size() != signature.getParameters().size())) {
+					|| (!method.isConstructor() && ((signature.isArray() != method.getReturnType2().isArrayType())
+							// The parameter lists have to have the same size
+							|| (method.parameters().size() != signature.getParameters().size())))) {
 				continue;
 			}
 
@@ -506,6 +518,9 @@ public final class JavaASTUtil {
 	 */
 	private static boolean hasSameSignature(final MethodDeclaration method, final TMethodSignature signature) {
 		var tParam = signature.getFirstParameter();
+		if (signature.getParameters().size() != method.parameters().size()) {
+			return false;
+		}
 		for (final Object p : method.parameters()) {
 			if (p instanceof SingleVariableDeclaration) {
 				final var variableType = ((SingleVariableDeclaration) p).getType();
@@ -519,6 +534,7 @@ public final class JavaASTUtil {
 			}
 		}
 		return true;
+
 	}
 
 	/**

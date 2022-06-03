@@ -1,4 +1,4 @@
-package org.gravity.eclipse.tests;
+package org.gravity.eclipse.tests.importer;
 
 import java.io.File;
 import java.io.IOException;

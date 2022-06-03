@@ -1,4 +1,4 @@
-package org.gravity.eclipse.tests;
+package org.gravity.eclipse.tests.importer;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -45,7 +45,7 @@ public abstract class ImportTest {
 
 	public static Collection<Object[]> getTestProjects(final String fileExtension) throws CoreException, IOException {
 		final var visitor = new ExtensionFileVisitor(fileExtension);
-		final var path = new File("data").getAbsoluteFile().toPath();
+		final var path = new File("data/import").getAbsoluteFile().toPath();
 		LOGGER.info("Search for test in: " + path);
 		Files.walkFileTree(path, visitor);
 		final var files = visitor.getFiles();
