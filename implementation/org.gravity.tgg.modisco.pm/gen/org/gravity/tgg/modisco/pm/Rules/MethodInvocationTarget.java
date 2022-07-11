@@ -99,9 +99,9 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TAccess tAccess,
-			AbstractMethodInvocation invocation, AbstractMethodDeclaration mInvokedMember,
-			TMethodDefinition tInvokedMember, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodInvocationToTAccess invocationToTAccess);
+			AbstractMethodInvocation invocation, AbstractMethodInvocationToTAccess invocationToTAccess,
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, TMethodDefinition tInvokedMember,
+			AbstractMethodDeclaration mInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,8 +117,9 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAccess, EObject invocation, EObject mInvokedMember,
-			EObject tInvokedMember, EObject mInvokedMemberToTInvokedMember, EObject invocationToTAccess);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAccess, EObject invocation,
+			EObject invocationToTAccess, EObject mInvokedMemberToTInvokedMember, EObject tInvokedMember,
+			EObject mInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,9 +184,9 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAccess tAccess,
-			AbstractMethodInvocation invocation, AbstractMethodDeclaration mInvokedMember,
-			TMethodDefinition tInvokedMember, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodInvocationToTAccess invocationToTAccess);
+			AbstractMethodInvocation invocation, AbstractMethodInvocationToTAccess invocationToTAccess,
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, TMethodDefinition tInvokedMember,
+			AbstractMethodDeclaration mInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,8 +202,9 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAccess, EObject invocation, EObject mInvokedMember,
-			EObject tInvokedMember, EObject mInvokedMemberToTInvokedMember, EObject invocationToTAccess);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAccess, EObject invocation,
+			EObject invocationToTAccess, EObject mInvokedMemberToTInvokedMember, EObject tInvokedMember,
+			EObject mInvokedMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +220,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_73(EMoflonEdge _edge_target);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_40(EMoflonEdge _edge_target);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +228,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_76(EMoflonEdge _edge_method);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_43(EMoflonEdge _edge_method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,9 +260,8 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TAccess tAccess, AbstractMethodInvocation invocation,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember, Match sourceMatch,
-			Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TAccess tAccess, AbstractMethodInvocation invocation, TMethodDefinition tInvokedMember,
+			AbstractMethodDeclaration mInvokedMember, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,9 +304,9 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAccess tAccess,
-			AbstractMethodInvocation invocation, AbstractMethodDeclaration mInvokedMember,
-			TMethodDefinition tInvokedMember, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodInvocationToTAccess invocationToTAccess, ModelgeneratorRuleResult ruleResult);
+			AbstractMethodInvocation invocation, AbstractMethodInvocationToTAccess invocationToTAccess,
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, TMethodDefinition tInvokedMember,
+			AbstractMethodDeclaration mInvokedMember, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

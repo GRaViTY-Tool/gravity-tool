@@ -249,6 +249,13 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 
 		if (eObject instanceof MGravityModel) {
 			this.model = (MGravityModel) eObject;
+			try {
+				final var file = EclipseProjectUtil.getGravityFolder(this.project.getProject(), monitor).getFile("modisco-plain.xmi").getLocation().toFile();
+				this.model.eResource().save(new FileOutputStream(file), Collections.emptyMap());
+			} catch (final IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			processFwd(this.model, (IFolder) this.modiscoFile.getParent(), monitor);
 		} else {
 			throw new DiscoveryException("Discovered modisco model is not of type MGravityModel");

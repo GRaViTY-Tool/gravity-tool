@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.modisco:MGravityModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.gravity.modisco="http://www.gravity-tool.org/modisco" name="Test">
+  <ownedElements name="a">
+    <ownedElements xsi:type="org.gravity.modisco:MClass" originalCompilationUnit="//@compilationUnits.0" name="A">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MFieldDefinition" originalCompilationUnit="//@compilationUnits.0">
+        <modifier visibility="private"/>
+        <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.0"/>
+        <fragments originalCompilationUnit="//@compilationUnits.0" name="f" usageInVariableAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@body/@statements.0/@expression/@leftHandSide/@field"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.0" name="method">
+        <modifier/>
+        <body originalCompilationUnit="//@compilationUnits.0">
+          <statements xsi:type="java:ExpressionStatement" originalCompilationUnit="//@compilationUnits.0">
+            <expression xsi:type="java:Assignment" originalCompilationUnit="//@compilationUnits.0">
+              <leftHandSide xsi:type="java:FieldAccess" originalCompilationUnit="//@compilationUnits.0">
+                <field xsi:type="org.gravity.modisco:MSingleVariableAccess" variable="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@fragments.0"/>
+                <expression xsi:type="java:ThisExpression" originalCompilationUnit="//@compilationUnits.0"/>
+              </leftHandSide>
+              <rightHandSide xsi:type="org.gravity.modisco:MMethodInvocation" originalCompilationUnit="//@compilationUnits.0" method="//@ownedElements.1/@ownedElements.0/@bodyDeclarations.1">
+                <expression xsi:type="org.gravity.modisco:MClassInstanceCreation" originalCompilationUnit="//@compilationUnits.0" method="//@ownedElements.1/@ownedElements.0/@bodyDeclarations.0">
+                  <type type="//@ownedElements.1/@ownedElements.0"/>
+                </expression>
+              </rightHandSide>
+            </expression>
+          </statements>
+        </body>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements name="l" proxy="true">
+    <ownedElements xsi:type="org.gravity.modisco:MClass" name="Lib" proxy="true" usagesInImports="//@compilationUnits.0/@imports.0" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@body/@statements.0/@expression/@rightHandSide/@expression/@type">
+      <bodyDeclarations xsi:type="org.gravity.modisco:MConstructorDefinition" name="Lib" proxy="true" usages="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@body/@statements.0/@expression/@rightHandSide/@expression"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" name="method" proxy="true" usages="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@body/@statements.0/@expression/@rightHandSide"/>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements name="java" proxy="true">
+    <ownedPackages name="lang" proxy="true">
+      <ownedElements xsi:type="org.gravity.modisco:MClass" name="Exception" proxy="true" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@type">
+        <superClass type="//@ownedElements.2/@ownedPackages.0/@ownedElements.1"/>
+      </ownedElements>
+      <ownedElements xsi:type="org.gravity.modisco:MClass" name="Throwable" proxy="true" usagesInTypeAccess="//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@superClass">
+        <superInterfaces type="//@ownedElements.2/@ownedPackages.1/@ownedElements.0"/>
+      </ownedElements>
+    </ownedPackages>
+    <ownedPackages name="io" proxy="true">
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Serializable" proxy="true" usagesInTypeAccess="//@ownedElements.2/@ownedPackages.0/@ownedElements.1/@superInterfaces.0"/>
+    </ownedPackages>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@returnType"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <compilationUnits name="A.java" originalFilePath="/home/sven/workspace/runtime-workspaces/GRaViTY-runtime/Test/src/a/A.java" package="//@ownedElements.0" types="//@ownedElements.0/@ownedElements.0">
+    <imports originalCompilationUnit="//@compilationUnits.0" importedElement="//@ownedElements.1/@ownedElements.0"/>
+  </compilationUnits>
+</org.gravity.modisco:MGravityModel>

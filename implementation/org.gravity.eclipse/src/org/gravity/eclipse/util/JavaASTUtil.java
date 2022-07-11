@@ -42,6 +42,7 @@ import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**
@@ -101,14 +102,7 @@ public final class JavaASTUtil {
 				var equal = true;
 				var tParam = signature.getFirstParameter();
 				for (final ILocalVariable param : m.getParameters()) {
-					var iParamSignature = Signature.toString(param.getTypeSignature());
-					final var iArray = iParamSignature.endsWith("[]");
-					if (iArray) {
-						iParamSignature = iParamSignature.substring(0, iParamSignature.length() - 2);
-					}
-					equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature) && iArray
-							? ((tParam.getUpperBound() > 1) || (tParam.getUpperBound() == -1))
-									: tParam.getUpperBound() == 1;
+					equal = equals(tParam, param);
 					if (!equal) {
 						break;
 					}
@@ -120,6 +114,24 @@ public final class JavaASTUtil {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Checks if the types of the parameters are equal
+	 *
+	 * @param tParam A program model parameter
+	 * @param iParam A JDT parameter
+	 * @return
+	 */
+	private static boolean equals(final TParameter tParam, final ILocalVariable iParam) {
+		var iParamSignature = Signature.toString(iParam.getTypeSignature());
+		final var iArray = iParamSignature.endsWith("[]");
+		if (iArray) {
+			iParamSignature = iParamSignature.substring(0, iParamSignature.length() - 2);
+		}
+		return tParam.getType().getFullyQualifiedName().endsWith(iParamSignature) && iArray
+				? ((tParam.getUpperBound() > 1) || (tParam.getUpperBound() == -1))
+						: tParam.getUpperBound() == 1;
 	}
 
 	/**

@@ -698,7 +698,7 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_29(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_28(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = ConstructorInvocationImpl
 				.pattern_ConstructorInvocation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1173,8 +1173,8 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 			return null;
 		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_29__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_29((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_28__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_28((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_30__EMOFLONEDGE:
 			return isAppropriate_FWD_EMoflonEdge_30((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
@@ -2382,9 +2382,9 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorInvocation_21_2_testcorematchandDECs_black_nac_0BB(
 			MConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_439706 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_655977 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_439706)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_655977)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2629,9 +2629,9 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorInvocation_27_1_matchtggpattern_black_nac_0BB(
 			MConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_529773 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_439915 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_529773)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_439915)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
