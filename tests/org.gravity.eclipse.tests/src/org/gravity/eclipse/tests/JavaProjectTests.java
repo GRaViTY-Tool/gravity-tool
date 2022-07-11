@@ -52,6 +52,19 @@ public class JavaProjectTests {
 		}
 	}
 
+	@Test
+	public void testAddAdditionalSrcFolder() throws CoreException, DuplicateProjectNameException {
+		final var generated = JavaProjectUtil.createJavaProject("TestProject", Collections.emptyList(), null);
+		try {
+			assertNotNull(generated);
+			assertTrue(getSourceFolders(generated).isEmpty());
+			JavaProjectUtil.createSrcFolders(Arrays.asList("src", "gen"), generated, null);
+			assertEquals(2, getSourceFolders(generated).size());
+		} finally {
+			generated.getProject().delete(true, null);
+		}
+	}
+
 	private List<IPath> getSourceFolders(final IJavaProject project) throws JavaModelException {
 		return Stream.of(project.getRawClasspath()).filter(c -> c.getEntryKind() == IClasspathEntry.CPE_SOURCE)
 				.map(IClasspathEntry::getPath).collect(Collectors.toList());
