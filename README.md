@@ -16,24 +16,27 @@ The GRaViTY tool is a research prototype for the analysis of software design and
 
 The tool can be installed from the following updatesite into Eclipse: https://gravity-tool.github.io/updatesite
 
-All dependencies should be installed automatically.
+All dependencies should be installed automatically. Some times it is necessary to activate the updated sides added while installing manually.
 
 ## Repository description
 
 This is the main repository under which everything is merged
 
-## HowTo Build GRaViTY
+## HowTo Build GRaViTY using Maven
+
+1. Clone this repository including submodules
+2. Run ''mvn verify''
+
+## HowTo Build GRaViTY in Eclipse
 
 Requirements:
-1. Eclipse Modeling Tools (tested with Mars and Neon)  
+1. Eclipse Modeling Tools (tested with 2022-06)  
 2. Eclipse plugins:   
- a) MoDisco Plugin (install from Eclipse Modeling Components)  
- b) eMoflon::IBEX  (www.emoflon.org)  
- d) xtext (should be installed with eMoflon)  
+ a) MoDisco Plugin (install from Eclipse 2022-06 update site)  
+ b) eMoflon::TIE  (www.emoflon.org), now hosted at https://gravity-tool.org/emoflon-tie/updatesite/
 
 Get the source code:
 - The whole project is hosted in a git repository via github: https://github.com/GRaViTY-Tool/gravity-tool 
-- An old version is available at gitlab: https://dev.kom.e-technik.tu-darmstadt.de/gitlab/es-projects/gravity
 - For student theses every student should get his/her own branch
 
 Structure of the git Repository:
@@ -44,8 +47,8 @@ Structure of the git Repository:
 - build
 --> The feature projects and updatesite 
 
-Build:
-1. Import all projects from the GRaViTY_Implementation into eclipse
+Building in Eclipse:
+1. Import all projects from the Implementation folder into an Eclipse workspace
 2. Refresh all projects
 3. Build all projects with the eMoflon build command
 6. Tweak memory in runtime configuration arguments to avoid GC or Heap Errors
