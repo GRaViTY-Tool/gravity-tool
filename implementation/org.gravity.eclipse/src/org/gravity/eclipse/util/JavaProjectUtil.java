@@ -183,9 +183,15 @@ public final class JavaProjectUtil {
 	 */
 	public static void createSrcFolders(final Collection<String> names, final IJavaProject project,
 			final IProgressMonitor monitor) throws CoreException {
-		final List<IClasspathEntry> entries = Arrays.asList(project.getRawClasspath());
-		entries.addAll(createSrcClasspathEntries(names, project, monitor));
-		project.setRawClasspath(entries.toArray(new IClasspathEntry[0]), monitor);
+		final var entries = createSrcClasspathEntries(names, project, monitor);
+		final var rawClasspath = project.getRawClasspath();
+		final var newClasspath = new IClasspathEntry[rawClasspath.length + entries.size()];
+		System.arraycopy(rawClasspath, 0, newClasspath, 0, rawClasspath.length);
+		var i = rawClasspath.length;
+		for(final IClasspathEntry entry : entries) {
+			newClasspath[i++] = entry;
+		}
+		project.setRawClasspath(newClasspath, monitor);
 	}
 
 	/**
