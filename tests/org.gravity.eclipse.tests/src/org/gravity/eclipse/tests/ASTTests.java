@@ -7,11 +7,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IClassFile;
@@ -46,11 +46,14 @@ import org.junit.runners.Parameterized.Parameters;
 public class ASTTests {
 
 	private static final String DUMMY_CLAZZ = "dummy.Clazz";
+
+	private static final Logger LOGGER = Logger.getLogger(ASTTests.class);
+
 	private final IJavaProject project;
 	private final TypeGraph pm;
 
-	public ASTTests(final String name, final IJavaProject project, final TypeGraph pm)
-			throws TransformationFailedException, CoreException, IOException {
+	public ASTTests(final String name, final IJavaProject project, final TypeGraph pm) {
+		LOGGER.info("Run AST test for : " + name);
 		this.project = project;
 		this.pm = pm;
 	}
@@ -61,8 +64,7 @@ public class ASTTests {
 		return EclipseProjectUtil.importProjects(new File("data/java"), monitor).parallelStream().map(JavaCore::create)
 				.map(p -> {
 					try {
-						return new Object[] {p.getProject().getName(), p,
-								GravityAPI.createProgramModel(p, monitor)};
+						return new Object[] { p.getProject().getName(), p, GravityAPI.createProgramModel(p, monitor) };
 					} catch (final TransformationFailedException e) {
 						throw new IllegalStateException(e);
 					}
@@ -78,7 +80,7 @@ public class ASTTests {
 	@Test
 	public void testGetTypesForProject() throws JavaModelException {
 		final var map = JavaASTUtil.getTypesForProject(this.project);
-		assertEquals(1, map.size());
+		assertEquals(2, map.size());
 		assertNotNull(map.get(DUMMY_CLAZZ));
 	}
 
@@ -101,6 +103,7 @@ public class ASTTests {
 	/**
 	 * Test method for
 	 * {@link org.gravity.eclipse.util.JavaASTUtil#getTMethodDefinition(org.eclipse.jdt.core.IMethod, org.gravity.typegraph.basic.TypeGraph)}.
+	 *
 	 * @throws JavaModelException
 	 */
 	@Test
@@ -143,9 +146,11 @@ public class ASTTests {
 			outerNode.accept(new ASTVisitor() {
 				@Override
 				public boolean visit(final TypeDeclaration node) {
-					final var pmType = JavaASTUtil.getType(node, ASTTests.this.pm);
-					assertNotNull(pmType);
-					assertEquals(entry.getKey(), pmType.getFullyQualifiedName());
+					if (entry.getKey().endsWith(node.getName().getFullyQualifiedName())) {
+						final var pmType = JavaASTUtil.getType(node, ASTTests.this.pm);
+						assertNotNull(pmType);
+						assertEquals(entry.getKey(), pmType.getFullyQualifiedName());
+					}
 					return false;
 				}
 			});
@@ -156,6 +161,7 @@ public class ASTTests {
 	/**
 	 * Test method for
 	 * {@link org.gravity.eclipse.util.JavaASTUtil#getType(org.eclipse.jdt.core.dom.Type, org.gravity.typegraph.basic.TypeGraph)}.
+	 *
 	 * @throws JavaModelException
 	 */
 	@Test
@@ -176,6 +182,7 @@ public class ASTTests {
 	/**
 	 * Test method for
 	 * {@link org.gravity.eclipse.util.JavaASTUtil#getTFieldDefinition(org.eclipse.jdt.core.dom.FieldDeclaration, org.gravity.typegraph.basic.TypeGraph)}.
+	 *
 	 * @throws JavaModelException
 	 */
 	@Test
@@ -196,6 +203,7 @@ public class ASTTests {
 	/**
 	 * Test method for
 	 * {@link org.gravity.eclipse.util.JavaASTUtil#getTFieldSignature(org.eclipse.jdt.core.dom.FieldDeclaration, org.gravity.typegraph.basic.TypeGraph)}.
+	 *
 	 * @throws JavaModelException
 	 */
 	@Test
@@ -215,6 +223,7 @@ public class ASTTests {
 	/**
 	 * Test method for
 	 * {@link org.gravity.eclipse.util.JavaASTUtil#getTMethodDefinition(org.eclipse.jdt.core.dom.MethodDeclaration, org.gravity.typegraph.basic.TypeGraph)}.
+	 *
 	 * @throws JavaModelException
 	 */
 	@Test
@@ -236,6 +245,7 @@ public class ASTTests {
 	/**
 	 * Test method for
 	 * {@link org.gravity.eclipse.util.JavaASTUtil#getTMethodSignature(org.eclipse.jdt.core.dom.MethodDeclaration, org.gravity.typegraph.basic.TypeGraph)}.
+	 *
 	 * @throws JavaModelException
 	 */
 	@Test
@@ -256,6 +266,7 @@ public class ASTTests {
 	/**
 	 * Test method for
 	 * {@link org.gravity.eclipse.util.JavaASTUtil#getLine(org.eclipse.jdt.core.IJavaElement)}.
+	 *
 	 * @throws CoreException
 	 */
 	@Test
@@ -263,7 +274,7 @@ public class ASTTests {
 		final var iType = this.project.findType(DUMMY_CLAZZ);
 
 		assertEquals(3, JavaASTUtil.getLine(iType));
-		assertEquals(11, JavaASTUtil.getLine(iType.getMethod("main", new String[] {"[QString;"})));
+		assertEquals(11, JavaASTUtil.getLine(iType.getMethod("main", new String[] { "[QString;" })));
 		assertEquals(15, JavaASTUtil.getLine(iType.getMethod("getField", new String[0])));
 	}
 
@@ -285,13 +296,41 @@ public class ASTTests {
 	}
 
 	/**
+	 * Test method for
+	 * {@link org.gravity.eclipse.util.JavaASTUtil#getIField(org.gravity.typegraph.basic.TFieldSignature, org.eclipse.jdt.core.IType)}.
+	 *
+	 * @throws JavaModelException
+	 */
+	@Test
+	public void testGetInnerIType() throws JavaModelException {
+		final var pmClazz = this.pm.getType(DUMMY_CLAZZ + "$Inner");
+
+		final var iType = JavaASTUtil.getIType(pmClazz, this.project);
+		assertNotNull(iType);
+		assertEquals("Inner", iType.getElementName());
+
+		final var outerNode = createAST(iType);
+		outerNode.accept(new ASTVisitor() {
+			@Override
+			public boolean visit(final TypeDeclaration node) {
+				if ("Inner".equals(node.getName().toString())) {
+					final var pmType = JavaASTUtil.getType(node, ASTTests.this.pm);
+					assertNotNull(pmType);
+					assertEquals("Inner", pmType.getFullyQualifiedName());
+				}
+				return false;
+			}
+		});
+	}
+
+	/**
 	 * Creates an AST for the given IType
 	 *
 	 * @param iType
 	 * @return the AST
 	 */
 	private ASTNode createAST(final IType iType) {
-		final var parser = ASTParser.newParser(AST.JLS13);
+		final var parser = ASTParser.newParser(AST.JLS18);
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 		final var typeRoot = iType.getTypeRoot();
 		if (typeRoot.getElementType() == IJavaElement.CLASS_FILE) {
@@ -301,8 +340,7 @@ public class ASTTests {
 			final var icu = typeRoot.getAdapter(ICompilationUnit.class);
 			parser.setSource(icu);
 		}
-		final var outerNode = parser.createAST(null);
-		return outerNode;
+		return parser.createAST(null);
 	}
 
 }

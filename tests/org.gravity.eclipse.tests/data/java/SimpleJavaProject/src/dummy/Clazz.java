@@ -15,4 +15,8 @@ public class Clazz {
 	private Clazz getField() {
 		return this.field;
 	}
+	
+	public class Inner {
+		
+	}
 }
