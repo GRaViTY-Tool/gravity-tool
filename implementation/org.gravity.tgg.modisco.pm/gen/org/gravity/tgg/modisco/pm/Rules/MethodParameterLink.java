@@ -92,8 +92,8 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TParameter tPrevParameter, MEntry mPrevEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter, MEntry mEntry, TParameter tParameter,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MEntry mPrevEntry, TParameter tPrevParameter,
+			MEntry mEntry, TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter,
 			MEntryToTParameter mmethodSignatureToTMethodSignature);
 
 	/**
@@ -110,8 +110,8 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPrevParameter, EObject mPrevEntry,
-			EObject eSingleVariableDeclarationToTParameter, EObject mEntry, EObject tParameter,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mPrevEntry, EObject tPrevParameter, EObject mEntry,
+			EObject tParameter, EObject eSingleVariableDeclarationToTParameter,
 			EObject mmethodSignatureToTMethodSignature);
 
 	/**
@@ -176,8 +176,8 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TParameter tPrevParameter, MEntry mPrevEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter, MEntry mEntry, TParameter tParameter,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MEntry mPrevEntry, TParameter tPrevParameter,
+			MEntry mEntry, TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter,
 			MEntryToTParameter mmethodSignatureToTMethodSignature);
 
 	/**
@@ -194,8 +194,8 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPrevParameter, EObject mPrevEntry,
-			EObject eSingleVariableDeclarationToTParameter, EObject mEntry, EObject tParameter,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mPrevEntry, EObject tPrevParameter, EObject mEntry,
+			EObject tParameter, EObject eSingleVariableDeclarationToTParameter,
 			EObject mmethodSignatureToTMethodSignature);
 
 	/**
@@ -212,7 +212,7 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_60(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_56(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_61(EMoflonEdge _edge_mNext);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_59(EMoflonEdge _edge_mNext);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +252,7 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TParameter tPrevParameter, MEntry mPrevEntry, MEntry mEntry, TParameter tParameter,
+	CSP isApplicable_solveCsp_CC(MEntry mPrevEntry, TParameter tPrevParameter, MEntry mEntry, TParameter tParameter,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -295,8 +295,8 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TParameter tPrevParameter, MEntry mPrevEntry,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter, MEntry mEntry, TParameter tParameter,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MEntry mPrevEntry, TParameter tPrevParameter,
+			MEntry mEntry, TParameter tParameter, MEntryToTParameter eSingleVariableDeclarationToTParameter,
 			MEntryToTParameter mmethodSignatureToTMethodSignature, ModelgeneratorRuleResult ruleResult);
 
 	/**

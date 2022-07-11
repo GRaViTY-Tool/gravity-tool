@@ -147,9 +147,9 @@
 
   <repositories>
     <repository>
-      <id>Eclipse</id>
+      <id>Eclipse 2022-06</id>
       <layout>p2</layout>
-      <url>https://download.eclipse.org/releases/2021-12</url>
+      <url>https://download.eclipse.org/releases/2022-06</url>
     </repository>
     <repository>
       <id>eMoflon TIE</id>
@@ -179,7 +179,12 @@
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
-      <url>https://rgse.uni-koblenz.de/carisma/beta-updatesite/</url>
+      <url>https://rgse.uni-koblenz.de/carisma/updatesite/</url>
+    </repository>
+    <repository>
+      <id>SecPL</id>
+      <layout>p2</layout>
+      <url>https://gravity-tool.org/secpl/updatesite/</url>
     </repository>
     <repository>
       <id>FeatureIDE</id>

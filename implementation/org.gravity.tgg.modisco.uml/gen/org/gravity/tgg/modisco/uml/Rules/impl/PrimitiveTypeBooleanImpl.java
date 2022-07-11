@@ -619,7 +619,7 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_PrimitiveType_6(PrimitiveType umpt) {
+	public EObjectContainer isAppropriate_BWD_PrimitiveType_3(PrimitiveType umpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeBooleanImpl
 				.pattern_PrimitiveTypeBoolean_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -740,13 +740,13 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
-		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
-		var_jpt_name.setType("String");
-
 		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
 		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
 		var_umpt_name.setType("String");
+
+		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
+		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
+		var_jpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -787,13 +787,13 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
-		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
-		var_jpt_name.setType("String");
-
 		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
 		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
 		var_umpt_name.setType("String");
+
+		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
+		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
+		var_jpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1107,8 +1107,8 @@ public class PrimitiveTypeBooleanImpl extends AbstractRuleImpl implements Primit
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_6__PRIMITIVETYPE:
-			return isAppropriate_BWD_PrimitiveType_6((PrimitiveType) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_3__PRIMITIVETYPE:
+			return isAppropriate_BWD_PrimitiveType_3((PrimitiveType) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_BOOLEAN_0__PRIMITIVETYPEBOOLEAN:
 			return isAppropriate_FWD_PrimitiveTypeBoolean_0(
 					(org.eclipse.modisco.java.PrimitiveTypeBoolean) arguments.get(0));

@@ -13,16 +13,12 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.modisco.java.AbstractMethodInvocation;
-import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.AbstractVariablesContainer;
 import org.eclipse.modisco.java.FieldDeclaration;
 import org.eclipse.modisco.java.SingleVariableAccess;
 import org.eclipse.modisco.java.Type;
-import org.eclipse.modisco.java.TypeAccess;
 import org.eclipse.modisco.java.VariableDeclaration;
 import org.eclipse.modisco.java.VariableDeclarationFragment;
 import org.eclipse.modisco.java.emf.JavaPackage;
@@ -95,13 +91,13 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	 * @param access A variable access
 	 */
 	private void process(final MSingleVariableAccess access) {
-		final MDefinition definition = getDefiningMember(access);
+		final var definition = getDefiningMember(access);
 		if (definition == null) {
 			LOGGER.error("Cannot process access as it isn't defined in a member");
 			return;
 		}
 
-		final VariableDeclaration variable = access.getVariable();
+		final var variable = access.getVariable();
 		if ((variable == null) || !(variable.eContainer() instanceof FieldDeclaration)) {
 			return;
 		}
@@ -114,7 +110,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	 * @param call A method call
 	 */
 	private void process(final MAbstractMethodInvocation call) {
-		final MDefinition definition = getDefiningMember(call);
+		final var definition = getDefiningMember(call);
 		if (definition == null) {
 			LOGGER.error("Cannot process access as it isn't defined in a member");
 			return;
@@ -143,7 +139,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 		if (container == null) {
 			return null;
 		}
-		final MDefinition definition = (MDefinition) container;
+		final var definition = (MDefinition) container;
 		seen.stream().forEach(object -> this.cache.put(object, definition));
 		return definition;
 	}
@@ -151,7 +147,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	private static void calculateTypeDependencies(final MDefinition definition) {
 		final Type mType = definition.getAbstractTypeDeclaration();
 		if (mType instanceof MClass) {
-			final EList<Type> deps = ((MClass) mType).getDependencies();
+			final var deps = ((MClass) mType).getDependencies();
 			deps.addAll(calculateTypeDependenciesForCalls(definition));
 			deps.addAll(calculateTypeDependenciesForFieldAccesses(definition));
 		}
@@ -167,15 +163,15 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	private static List<Type> calculateTypeDependenciesForFieldAccesses(final MDefinition definition) {
 		final List<Type> dependencies = new LinkedList<>();
 		for (final SingleVariableAccess methodInvocation : definition.getMAbstractFieldAccess()) {
-			final VariableDeclaration variable = methodInvocation.getVariable();
+			final var variable = methodInvocation.getVariable();
 			if (variable instanceof VariableDeclarationFragment) {
-				final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) variable)
+				final var variablesContainer = ((VariableDeclarationFragment) variable)
 						.getVariablesContainer();
 				if (variablesContainer instanceof FieldDeclaration) {
-					final AbstractTypeDeclaration abstractTypeDeclaration = ((FieldDeclaration) variablesContainer)
+					final var abstractTypeDeclaration = ((FieldDeclaration) variablesContainer)
 							.getAbstractTypeDeclaration();
 					if (abstractTypeDeclaration == null) {
-						final String message = buildUnresolvedFieldAccessErrorMessage(definition, variable,
+						final var message = buildUnresolvedFieldAccessErrorMessage(definition, variable,
 								variablesContainer);
 						LOGGER.error(message);
 					} else {
@@ -197,9 +193,9 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	private static List<Type> calculateTypeDependenciesForCalls(final MDefinition definition) {
 		final List<Type> dependencies = new LinkedList<>();
 		for (final AbstractMethodInvocation methodInvocation : definition.getMMethodInvocations()) {
-			final AbstractMethodDeclaration method = methodInvocation.getMethod();
+			final var method = methodInvocation.getMethod();
 			if (method != null) {
-				final AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
+				final var abstractTypeDeclaration = method.getAbstractTypeDeclaration();
 				if (abstractTypeDeclaration != null) {
 					dependencies.add(abstractTypeDeclaration);
 				} else if (JavaPackage.eINSTANCE.getUnresolvedMethodDeclaration().isSuperTypeOf(method.eClass())) {
@@ -229,8 +225,8 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	 */
 	private static String buildUnresolvedFieldAccessErrorMessage(final MDefinition definition,
 			final VariableDeclaration declaration, final AbstractVariablesContainer container) {
-		final StringBuilder messageBuilder = new StringBuilder(declaration.getName());
-		final TypeAccess fieldTypeAccess = container.getType();
+		final var messageBuilder = new StringBuilder(declaration.getName());
+		final var fieldTypeAccess = container.getType();
 		if (fieldTypeAccess != null) {
 			messageBuilder.append(':').append(fieldTypeAccess.getType().getName());
 		}

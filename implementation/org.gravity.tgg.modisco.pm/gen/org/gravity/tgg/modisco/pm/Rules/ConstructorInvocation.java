@@ -212,7 +212,7 @@ public interface ConstructorInvocation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_29(EMoflonEdge _edge_accessing);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_28(EMoflonEdge _edge_accessing);
 
 	/**
 	 * <!-- begin-user-doc -->

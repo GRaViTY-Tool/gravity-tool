@@ -15,13 +15,8 @@ Bundle-Name: Hulk
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.ecore.xmi,
- org.gravity.hulk.annotations,
  org.gravity.eclipse,
- org.eclipse.jdt.core,
- org.eclipse.core.resources,
- org.eclipse.core.runtime,
  org.eclipse.emf.henshin.interpreter,
- org.gravity.typegraph.basic;visibility:=reexport,
  org.gravity.security.annotations,
  org.gravity.hulk.antipatterngraph;visibility:=reexport,
  org.moflon.core.dfs;visibility:=reexport,

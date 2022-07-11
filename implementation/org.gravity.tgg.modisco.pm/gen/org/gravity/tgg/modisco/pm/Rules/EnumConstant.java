@@ -98,9 +98,8 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph model,
-			TypeToTAbstractType mEnumToTEnum, EnumDeclaration mEnum, TClass tEnum,
-			MEnumConstantDeclaration mDefinition);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TClass tEnum, TypeToTAbstractType mEnumToTEnum,
+			EnumDeclaration mEnum, MEnumConstantDeclaration mDefinition, TypeGraph model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,9 +115,9 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject mEnumToTEnum, EObject tSignature,
-			EObject mBodyToTAnnotation, EObject mEnum, EObject tEnum, EObject tDefinition, EObject mDefinition,
-			EObject tName, EObject mDefinitionToTMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tEnum, EObject tName, EObject mBodyToTAnnotation,
+			EObject mEnumToTEnum, EObject tDefinition, EObject mDefinitionToTMember, EObject tSignature, EObject mEnum,
+			EObject mDefinition, EObject model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,8 +133,8 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TypeGraph model, TFieldSignature tSignature, TClass tEnum,
-			TFieldDefinition tDefinition, TField tName);
+	boolean isAppropriate_BWD(Match match, TClass tEnum, TField tName, TFieldDefinition tDefinition,
+			TFieldSignature tSignature, TypeGraph model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,8 +158,8 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TypeGraph model, TFieldSignature tSignature, TClass tEnum,
-			TFieldDefinition tDefinition, TField tName);
+	void registerObjectsToMatch_BWD(Match match, TClass tEnum, TField tName, TFieldDefinition tDefinition,
+			TFieldSignature tSignature, TypeGraph model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,8 +167,8 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph model, TFieldSignature tSignature, TClass tEnum,
-			TFieldDefinition tDefinition, TField tName);
+	CSP isAppropriate_solveCsp_BWD(Match match, TClass tEnum, TField tName, TFieldDefinition tDefinition,
+			TFieldSignature tSignature, TypeGraph model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,9 +184,9 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph model,
-			TypeToTAbstractType mEnumToTEnum, TFieldSignature tSignature, EnumDeclaration mEnum, TClass tEnum,
-			TFieldDefinition tDefinition, TField tName);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tEnum, TField tName,
+			TypeToTAbstractType mEnumToTEnum, TFieldDefinition tDefinition, TFieldSignature tSignature,
+			EnumDeclaration mEnum, TypeGraph model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,9 +202,9 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject model, EObject mEnumToTEnum, EObject tSignature,
-			EObject mBodyToTAnnotation, EObject mEnum, EObject tEnum, EObject tDefinition, EObject mDefinition,
-			EObject tName, EObject mDefinitionToTMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tEnum, EObject tName, EObject mBodyToTAnnotation,
+			EObject mEnumToTEnum, EObject tDefinition, EObject mDefinitionToTMember, EObject tSignature, EObject mEnum,
+			EObject mDefinition, EObject model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +220,7 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_74(EMoflonEdge _edge_fields);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_55(EMoflonEdge _edge_defines);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +228,7 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_77(EMoflonEdge _edge_enumConstants);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_58(EMoflonEdge _edge_enumConstants);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,8 +260,8 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TypeGraph model, TFieldSignature tSignature, EnumDeclaration mEnum, TClass tEnum,
-			TFieldDefinition tDefinition, MEnumConstantDeclaration mDefinition, TField tName, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(TClass tEnum, TField tName, TFieldDefinition tDefinition, TFieldSignature tSignature,
+			EnumDeclaration mEnum, MEnumConstantDeclaration mDefinition, TypeGraph model, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -287,8 +286,8 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TypeGraph model, TFieldSignature tSignature, TClass tEnum, TFieldDefinition tDefinition,
-			TField tName);
+	boolean checkDEC_BWD(TClass tEnum, TField tName, TFieldDefinition tDefinition, TFieldSignature tSignature,
+			TypeGraph model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -305,8 +304,8 @@ public interface EnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph model,
-			TypeToTAbstractType mEnumToTEnum, EnumDeclaration mEnum, TClass tEnum, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tEnum, TypeToTAbstractType mEnumToTEnum,
+			EnumDeclaration mEnum, TypeGraph model, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

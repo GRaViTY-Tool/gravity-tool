@@ -98,10 +98,10 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		}
 
 		if ((this.log == null) || !this.log.loggingEnabled()) {
-			return internalGetPM4Git(url, commit);
+			return internalGetPM4Git(url.trim(), commit.trim());
 		}
 
-		final var id = url + ':' + commit;
+		final var id = url.trim() + ':' + commit.trim();
 		final var fa = initLogging(id);
 
 		LOGGER.info("### Request for: " + id);
