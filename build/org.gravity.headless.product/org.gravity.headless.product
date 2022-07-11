@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="GRaViTY CLI" uid="org.gravity.headless.product" id="org.gravity.headless.gravity_cli" application="org.gravity.headless" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
+<product name="GRaViTY CLI" uid="org.gravity.headless.product" id="org.gravity.headless.gravity_cli" application="org.gravity.headless" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true" autoIncludeRequirements="true">
 
    <configIni use="default">
    </configIni>
@@ -28,7 +28,6 @@
    <plugins>
       <plugin id="MocaTree"/>
       <plugin id="SDMLanguage"/>
-      <plugin id="biz.aQute.bndlib"/>
       <plugin id="com.google.guava"/>
       <plugin id="com.google.inject"/>
       <plugin id="com.ibm.icu"/>
@@ -39,7 +38,8 @@
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="lpg.runtime.java"/>
-      <plugin id="org.antlr.runtime" version="3.2.0.v201101311130"/>
+      <plugin id="org.antlr.runtime" version="3.2.0.v20220404-1927"/>
+      <plugin id="org.aopalliance"/>
       <plugin id="org.apache.ant"/>
       <plugin id="org.apache.batik.constants"/>
       <plugin id="org.apache.batik.css"/>
@@ -126,7 +126,9 @@
       <plugin id="org.eclipse.equinox.p2.core"/>
       <plugin id="org.eclipse.equinox.p2.director"/>
       <plugin id="org.eclipse.equinox.p2.director.app"/>
+      <plugin id="org.eclipse.equinox.p2.directorywatcher"/>
       <plugin id="org.eclipse.equinox.p2.engine"/>
+      <plugin id="org.eclipse.equinox.p2.extensionlocation"/>
       <plugin id="org.eclipse.equinox.p2.garbagecollector"/>
       <plugin id="org.eclipse.equinox.p2.jarprocessor"/>
       <plugin id="org.eclipse.equinox.p2.metadata"/>
@@ -142,7 +144,6 @@
       <plugin id="org.eclipse.equinox.registry"/>
       <plugin id="org.eclipse.equinox.security"/>
       <plugin id="org.eclipse.equinox.security.linux" fragment="true"/>
-      <plugin id="org.eclipse.equinox.security.linux.x86_64" fragment="true"/>
       <plugin id="org.eclipse.equinox.security.ui"/>
       <plugin id="org.eclipse.equinox.simpleconfigurator"/>
       <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator"/>
@@ -157,7 +158,6 @@
       <plugin id="org.eclipse.jdt.ui"/>
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
-      <plugin id="org.eclipse.jface.notifications"/>
       <plugin id="org.eclipse.jface.text"/>
       <plugin id="org.eclipse.jgit"/>
       <plugin id="org.eclipse.jgit.gpg.bc" fragment="true"/>
@@ -239,7 +239,10 @@
       <plugin id="org.moflon.emf.injection.ide"/>
       <plugin id="org.moflon.tgg.language"/>
       <plugin id="org.moflon.tgg.runtime"/>
-      <plugin id="org.objectweb.asm" version="9.2.0.v20210813-1119"/>
+      <plugin id="org.objectweb.asm"/>
+      <plugin id="org.osgi.service.prefs"/>
+      <plugin id="org.osgi.util.function"/>
+      <plugin id="org.osgi.util.promise"/>
       <plugin id="org.sat4j.core"/>
       <plugin id="org.sat4j.pb"/>
       <plugin id="org.slf4j.api"/>
@@ -250,13 +253,6 @@
       <plugin id="org.w3c.dom.svg"/>
    </plugins>
 
-   <configurations>
-      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-   </configurations>
 
    <preferencesInfo>
       <targetfile overwrite="false"/>
