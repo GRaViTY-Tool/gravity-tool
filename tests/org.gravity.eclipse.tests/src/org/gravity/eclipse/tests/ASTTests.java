@@ -303,7 +303,8 @@ public class ASTTests {
 	 */
 	@Test
 	public void testGetInnerIType() throws JavaModelException {
-		final var pmClazz = this.pm.getType(DUMMY_CLAZZ + "$Inner");
+		final var name = "Inner";
+		final var pmClazz = this.pm.getType(DUMMY_CLAZZ + '$'+name);
 
 		final var iType = JavaASTUtil.getIType(pmClazz, this.project);
 		assertNotNull(iType);
@@ -313,10 +314,10 @@ public class ASTTests {
 		outerNode.accept(new ASTVisitor() {
 			@Override
 			public boolean visit(final TypeDeclaration node) {
-				if ("Inner".equals(node.getName().toString())) {
+				if (name.equals(node.getName().toString())) {
 					final var pmType = JavaASTUtil.getType(node, ASTTests.this.pm);
 					assertNotNull(pmType);
-					assertEquals("Inner", pmType.getFullyQualifiedName());
+					assertEquals(name, pmType.getFullyQualifiedName());
 				}
 				return false;
 			}

@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IClasspathEntry;
@@ -40,10 +39,10 @@ public abstract class ImportTest {
 	protected ImportTest(final ProjectImport importer, final Map<String, String> expected) {
 		this.expected = expected;
 		this.importer = importer;
-		LOGGER.info("Explicitly loaded TGG: "+PmPackage.eINSTANCE.getNsURI());
+		LOGGER.info("Explicitly loaded TGG: " + PmPackage.eINSTANCE.getNsURI());
 	}
 
-	public static Collection<Object[]> getTestProjects(final String fileExtension) throws CoreException, IOException {
+	public static Collection<Object[]> getTestProjects(final String fileExtension) throws IOException {
 		final var visitor = new ExtensionFileVisitor(fileExtension);
 		final var path = new File("data/import").getAbsoluteFile().toPath();
 		LOGGER.info("Search for test in: " + path);
@@ -75,13 +74,13 @@ public abstract class ImportTest {
 				.filter(entry -> entry.getEntryKind() == IClasspathEntry.CPE_LIBRARY).map(IClasspathEntry::getPath)
 				.map(IPath::lastSegment).collect(Collectors.toSet());
 		for (final Entry<String, String> entry : this.expected.entrySet()) {
-			switch (entry.getValue()) {
-			case "class":
+			final var value = entry.getValue();
+			if ("class".equals(value)) {
 				assertNotNull("Class \"" + entry.getKey() + "\" is missing!", importedProject.findType(entry.getKey()));
-				break;
-			case "jar":
+			} else if ("jar".equals(value)) {
 				assertTrue("Lib \"" + entry.getKey() + "\" is missing!", libs.contains(entry.getKey()));
-				break;
+			} else {
+				LOGGER.error("Unknown case: " + value);
 			}
 		}
 	}

@@ -7,7 +7,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.eclipse.emf.common.util.URI;
@@ -41,7 +40,7 @@ public class ReturnTypePreprocessingTests {
 	}
 
 	@Test
-	public void testReturnTypeProcessing() throws FileNotFoundException, IOException {
+	public void testReturnTypeProcessing() throws IOException {
 		final var set = new ResourceSetImpl();
 		set.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 		set.getPackageRegistry().put(JavaPackage.eNS_URI, JavaPackage.eINSTANCE);
