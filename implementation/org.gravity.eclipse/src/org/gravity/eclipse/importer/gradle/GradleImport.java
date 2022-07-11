@@ -267,7 +267,7 @@ public class GradleImport extends ProjectImport {
 	 * @throws FileNotFoundException If GRADLE_USER_HOME hasn't been found
 	 */
 	private File initGradleUserHome() throws FileNotFoundException {
-		final var gradleHome = System.getenv("GRADL_USER_HOME");
+		final var gradleHome = System.getenv("GRADLE_USER_HOME");
 		if (gradleHome != null) {
 			final var tmpGradleHome = new File(gradleHome);
 			if (tmpGradleHome.exists()) {

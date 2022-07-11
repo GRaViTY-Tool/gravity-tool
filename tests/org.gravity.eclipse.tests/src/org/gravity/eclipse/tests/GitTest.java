@@ -13,7 +13,7 @@ import org.junit.Test;
 
 public class GitTest {
 
-	private static final String REPO = "git@github.com:GRaViTY-Tool/sample-maven-project.git";
+	private static final String REPO = "https://github.com/GRaViTY-Tool/sample-maven-project.git";
 	private static final String COMMIT1 = "100f5c6509d4087a0719f9b8c7a9d7e184db8a8a";
 
 	@Test

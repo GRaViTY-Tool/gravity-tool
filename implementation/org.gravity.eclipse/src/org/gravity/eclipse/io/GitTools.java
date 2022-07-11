@@ -11,6 +11,8 @@ import org.eclipse.jgit.api.ResetCommand.ResetType;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.JGitInternalException;
 import org.eclipse.jgit.errors.NoWorkTreeException;
+import org.eclipse.jgit.transport.SshSessionFactory;
+import org.eclipse.jgit.transport.sshd.SshdSessionFactory;
 
 /**
  * Functionalities to easily clone GIT repositories and change versions
@@ -43,27 +45,54 @@ public class GitTools implements Closeable {
 	 */
 	public GitTools(final String url, final File destination, final boolean replace, final boolean submodules)
 			throws GitCloneException {
+		checkSSHSessionFactory();
+		final var productName = url.substring(url.lastIndexOf('/') + 1, url.length() - 4);
 		if (!destination.exists()) {
 			destination.mkdirs();
 		}
-		final var productName = url.substring(url.lastIndexOf('/') + 1, url.length() - 4);
-		this.repository = new File(destination, productName);
-		if (getRepositoryLocation().exists()) {
-			if (replace) {
-				if (!FileUtils.recursiveDelete(getRepositoryLocation())) {
-					throw new GitCloneException("There is already a repository with the name \"" + productName
-							+ "\" which couldn't be deleted.");
-				}
-			} else {
-				throw new GitCloneException("There is already a repository with the name \"" + productName + "\".");
-			}
-		}
+		this.repository = prepareDestination(destination, productName, replace);
 		try {
 			this.git = Git.cloneRepository().setDirectory(getRepositoryLocation()).setURI(url)
 					.setCloneSubmodules(submodules).call();
 		} catch (final GitAPIException e) {
 			LOGGER.error(e.getMessage(), e);
 			throw new GitCloneException(e);
+		}
+	}
+
+	/**
+	 * Prepares the repository on the local disk for checkout
+	 *
+	 * @param destination The folder to which the repository should be cloned
+	 * @param name        The name of the repository on the local disk
+	 * @param replace     Whether an existing repository should be replaced
+	 * @return The location to which a repository can be cloned
+	 * @throws GitCloneException If the repository exists already but should not be
+	 *                           replaced
+	 */
+	private static File prepareDestination(final File destination, final String name, final boolean replace)
+			throws GitCloneException {
+		final var repository = new File(destination, name);
+		if (repository.exists()) {
+			if (replace) {
+				if (!FileUtils.recursiveDelete(repository)) {
+					throw new GitCloneException(
+							"There is already a repository with the name \"" + name + "\" which couldn't be deleted.");
+				}
+			} else {
+				throw new GitCloneException("There is already a repository with the name \"" + name + "\".");
+			}
+		}
+		return repository;
+	}
+
+	/**
+	 * Checks if a SSH Session Factory exists and creates one otherwise
+	 */
+	private static void checkSSHSessionFactory() {
+		final var factory = SshSessionFactory.getInstance();
+		if (factory == null) {
+			SshSessionFactory.setInstance(new SshdSessionFactory());
 		}
 	}
 
