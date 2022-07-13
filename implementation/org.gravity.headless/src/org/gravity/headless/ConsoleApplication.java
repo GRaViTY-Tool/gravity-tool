@@ -2,8 +2,13 @@ package org.gravity.headless;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.text.MessageFormat;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -61,6 +66,8 @@ public class ConsoleApplication implements IApplication {
 		final var options = getCLIOptions();
 		final var line = parser.parse(options, args);
 
+		setWorspaceLocation(line);
+
 		if (line.hasOption(OPTION_VERSION_SHORT)) {
 			System.out.println(
 					HeadlessActivator.PLUGIN_ID + ':' + Platform.getBundle(HeadlessActivator.PLUGIN_ID).getVersion());
@@ -103,6 +110,31 @@ public class ConsoleApplication implements IApplication {
 		}
 		printHelp(options);
 		return IApplication.EXIT_OK;
+	}
+
+	/**
+	 * Sets the workspace location to a temp directory if no location has been specified manually
+	 *
+	 * @param line The command line arguments
+	 * @throws IOException If the workspace location cannot be set
+	 */
+	private void setWorspaceLocation(final CommandLine line) throws IOException {
+		if(!line.hasOption(OPTION_WORKSPACE_LOCATION)) {
+			final Set<PosixFilePermission> perms = new HashSet<>();
+			// user permission
+			perms.add(PosixFilePermission.OWNER_READ);
+			perms.add(PosixFilePermission.OWNER_WRITE);
+			perms.add(PosixFilePermission.OWNER_EXECUTE);
+			// group permissions
+			perms.add(PosixFilePermission.GROUP_READ);
+			perms.add(PosixFilePermission.GROUP_EXECUTE);
+
+			final var ws = Files.createTempDirectory("gravity-ws", PosixFilePermissions.asFileAttribute(perms));
+			final var location = Platform.getInstanceLocation();
+			if(!location.isSet()) {
+				location.set(ws.toUri().toURL(), true);
+			}
+		}
 	}
 
 	/**

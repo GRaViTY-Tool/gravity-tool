@@ -15,6 +15,12 @@
 #target {
 	pg:TypeGraph {
 		++  -ownedTypes -> tClass
+		-packages->tProxyPackage
+	}
+	
+	tProxyPackage : TPackage {
+		tName := "(proxies)"
+		++-ownedTypes->tClass
 	}
 
 	++tClass:TUnresolvedType

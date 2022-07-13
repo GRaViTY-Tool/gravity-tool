@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,6 +28,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jdt.core.IJavaProject;
@@ -434,12 +436,25 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 
 		if (!elements.isEmpty()) {
 			final var keys = elements.keySet();
-			final var iterator = model.eAllContents();
-			while (iterator.hasNext()) {
-				final var next = iterator.next();
-				final Class<? extends EObject> nextClass = next.getClass();
-				keys.parallelStream().filter(c -> c.isAssignableFrom(nextClass))
-				.forEach(c -> ((List<EObject>) elements.get(c)).add(next));
+			final Set<EObject> seen = new HashSet<>();
+			final Deque<EObject> stack = new LinkedList<>();
+			stack.add(model);
+			while (!stack.isEmpty()) {
+				final var next = stack.pop();
+				if (seen.add(next)) {
+					final Class<? extends EObject> nextClass = next.getClass();
+					keys.parallelStream().filter(c -> c.isAssignableFrom(nextClass))
+					.forEach(c -> ((List<EObject>) elements.get(c)).add(next));
+
+					for (final EReference reference : next.eClass().getEAllReferences()) {
+						final var result = next.eGet(reference);
+						if (result instanceof Collection) {
+							stack.addAll((Collection<? extends EObject>) result);
+						} else if (result instanceof EObject) {
+							stack.add((EObject) result);
+						}
+					}
+				}
 			}
 		}
 		return elements;

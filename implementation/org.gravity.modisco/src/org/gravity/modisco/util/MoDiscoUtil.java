@@ -503,4 +503,21 @@ public final class MoDiscoUtil {
 		}
 		return value.toString();
 	}
+
+	/**
+	 * Searches all types defined in the model
+	 *
+	 * @param model a modisco model
+	 * @return
+	 */
+	public static List<AbstractTypeDeclaration> getAllTypes(final Model model) {
+		final List<AbstractTypeDeclaration> types = new LinkedList<>();
+		final Deque<Package> packages = new LinkedList<>(model.getOwnedElements());
+		while (!packages.isEmpty()) {
+			final var p = packages.pop();
+			packages.addAll(p.getOwnedPackages());
+			types.addAll(p.getOwnedElements());
+		}
+		return types;
+	}
 }

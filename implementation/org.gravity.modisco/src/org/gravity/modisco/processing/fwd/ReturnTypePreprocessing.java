@@ -186,13 +186,13 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 */
 	private static Type getReturnType(final AbstractMethodInvocation invocation,
 			final AbstractMethodInvocation container) {
-		final var index = container.getArguments().indexOf(invocation); // Some subtypes of AbstractMethodInvocation are
-		// expressions!
 		final var method = container.getMethod();
 		if (method instanceof UnresolvedMethodDeclaration) {
 			// We cannot retrieve information from unresolved elements
 			return null;
 		}
+
+		final var index = container.getArguments().indexOf(invocation); // Some subtypes of AbstractMethodInvocation are expressions!
 		if (index >= 0) {
 			final var parameters = method.getParameters();
 			final var numParams = parameters.size();
@@ -213,6 +213,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 			return parameters.get(index).getType().getType();
 		} else if (container instanceof MethodInvocation) {
 			final var expression = ((MethodInvocation) container).getExpression();
+			if(expression == null) {
+				// We cannot guess from a method invoked without context.
+				return null;
+			}
 			if (expression.equals(invocation)) {// Some subtypes of AbstractMethodInvocation are expressions!
 				return method.getAbstractTypeDeclaration();
 			}
@@ -252,6 +256,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 				return result.get();
 			}
 			final var array = JavaFactory.eINSTANCE.createArrayType();
+			array.setName(plain.getName()+"[]");
 			final var access = JavaFactory.eINSTANCE.createTypeAccess();
 			access.setType(plain);
 			array.setElementType(access);
