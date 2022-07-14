@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.modisco.java.AbstractMethodInvocation;
 import org.eclipse.modisco.java.ArrayAccess;
 import org.eclipse.modisco.java.ArrayCreation;
@@ -186,38 +187,54 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 */
 	private static Type getReturnType(final AbstractMethodInvocation invocation,
 			final AbstractMethodInvocation container) {
-		final var index = container.getArguments().indexOf(invocation); // Some subtypes of AbstractMethodInvocation are
-		// expressions!
 		final var method = container.getMethod();
 		if (method instanceof UnresolvedMethodDeclaration) {
 			// We cannot retrieve information from unresolved elements
 			return null;
 		}
+
+		final var index = container.getArguments().indexOf(invocation); // Some subtypes of AbstractMethodInvocation are expressions!
 		if (index >= 0) {
-			final var parameters = method.getParameters();
-			final var numParams = parameters.size();
-			if (numParams == 0) {
-				if (method.isProxy()) {
-					// We cannot retrieve information from unresolved elements
-					return null;
-				}
-				throw new IllegalStateException("Arguments are assigned to a method without parameters!");
-			}
-			if (index >= numParams) {
-				final var last = parameters.get(numParams - 1);
-				if (last.isVarargs()) {
-					return last.getType().getType();
-				}
-				throw new IllegalStateException("More arguments are assigned to method than it has parameters!");
-			}
-			return parameters.get(index).getType().getType();
+			return guessReturnTypeFromParameterAssignment(method, index);
 		} else if (container instanceof MethodInvocation) {
 			final var expression = ((MethodInvocation) container).getExpression();
+			if(expression == null) {
+				// We cannot guess from a method invoked without context.
+				return null;
+			}
 			if (expression.equals(invocation)) {// Some subtypes of AbstractMethodInvocation are expressions!
 				return method.getAbstractTypeDeclaration();
 			}
 		}
 		throw new IllegalStateException(NLS.bind(Messages.unknownType, invocation.eClass().getName()));
+	}
+
+	/**
+	 * Guesses the return type from the parameter at the given index
+	 *
+	 * @param method The method to whose parameter the returned value is assigned
+	 * @param index The index of the assignment
+	 * @return The corresponding type
+	 */
+	private static Type guessReturnTypeFromParameterAssignment(final AbstractMethodDeclaration method,
+			final int index) {
+		final var parameters = method.getParameters();
+		final var numParams = parameters.size();
+		if (numParams == 0) {
+			if (method.isProxy()) {
+				// We cannot retrieve information from unresolved elements
+				return null;
+			}
+			throw new IllegalStateException("Arguments are assigned to a method without parameters!");
+		}
+		if (index >= numParams) {
+			final var last = parameters.get(numParams - 1);
+			if (last.isVarargs()) {
+				return last.getType().getType();
+			}
+			throw new IllegalStateException("More arguments are assigned to method than it has parameters!");
+		}
+		return parameters.get(index).getType().getType();
 	}
 
 	/**
@@ -252,6 +269,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 				return result.get();
 			}
 			final var array = JavaFactory.eINSTANCE.createArrayType();
+			array.setName(plain.getName()+"[]");
 			final var access = JavaFactory.eINSTANCE.createTypeAccess();
 			access.setType(plain);
 			array.setElementType(access);

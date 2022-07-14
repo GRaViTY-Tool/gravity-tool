@@ -16,10 +16,11 @@
     <processor priority="1" processor="org.gravity.modisco.processing.fwd.TypeDeclarationStatementPreprocessor"/>
     <processor priority="2" processor="org.gravity.modisco.processing.fwd.SuperInterfacePreprocessing"/>
     <processor priority="5" processor="org.gravity.modisco.processing.fwd.AccessPreprocessing"/>
-    <processor priority="7" processor="org.gravity.modisco.processing.fwd.FieldPreprocessing"/>
-    <processor priority="8" processor="org.gravity.modisco.processing.fwd.TypeParameterPreprocessor"/>
-    <processor priority="8" processor="org.gravity.modisco.processing.fwd.MethodPreprocessing"/>
-    <processor priority="9" processor="org.gravity.modisco.processing.fwd.ReturnTypePreprocessing"/>
+    <processor priority="6" processor="org.gravity.modisco.processing.fwd.FieldPreprocessing"/>
+    <processor priority="7" processor="org.gravity.modisco.processing.fwd.TypeParameterPreprocessor"/>
+    <processor priority="7" processor="org.gravity.modisco.processing.fwd.MethodPreprocessing"/>
+    <processor priority="8" processor="org.gravity.modisco.processing.fwd.ReturnTypePreprocessing"/>
+    <processor priority="9" processor="org.gravity.modisco.processing.fwd.UnresolvedTypePreprocessing"/>
   </extension>
   <extension point="org.eclipse.modisco.infra.discovery.core.discoverer">
     <discoverer class="org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer" id="org.gravity.modisco.Discoverer"/>

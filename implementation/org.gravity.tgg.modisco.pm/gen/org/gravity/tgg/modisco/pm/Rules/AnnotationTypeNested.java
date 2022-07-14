@@ -222,7 +222,7 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_44(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_2(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface AnnotationTypeNested extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_47(EMoflonEdge _edge_abstractTypeDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_abstractTypeDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -48,7 +48,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, LineComment mComment, MDefinition mMember);
+	boolean isAppropriate_FWD(Match match, MDefinition mMember, LineComment mComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, LineComment mComment, MDefinition mMember);
+	void registerObjectsToMatch_FWD(Match match, MDefinition mMember, LineComment mComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, LineComment mComment, MDefinition mMember);
+	CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mMember, LineComment mComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,8 +96,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, LineComment mComment, MDefinition mMember,
-			MDefinitionToTMember mMemberToTMember, TMember tMember);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinition mMember, TMember tMember,
+			MDefinitionToTMember mMemberToTMember, LineComment mComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +113,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tText, EObject mComment, EObject mMember,
-			EObject mMemberToTMember, EObject mCommentToTText, EObject tMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMember, EObject mCommentToTText, EObject tMember,
+			EObject mMemberToTMember, EObject tText, EObject mComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +130,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TTextAnnotation tText, TMember tMember);
+	boolean isAppropriate_BWD(Match match, TMember tMember, TTextAnnotation tText);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +154,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TTextAnnotation tText, TMember tMember);
+	void registerObjectsToMatch_BWD(Match match, TMember tMember, TTextAnnotation tText);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +162,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TTextAnnotation tText, TMember tMember);
+	CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TTextAnnotation tText);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TTextAnnotation tText, MDefinition mMember,
-			MDefinitionToTMember mMemberToTMember, TMember tMember);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mMember, TMember tMember,
+			MDefinitionToTMember mMemberToTMember, TTextAnnotation tText);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tText, EObject mComment, EObject mMember,
-			EObject mMemberToTMember, EObject mCommentToTText, EObject tMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMember, EObject mCommentToTText, EObject tMember,
+			EObject mMemberToTMember, EObject tText, EObject mComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_4(EMoflonEdge _edge_tAnnotated);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_49(EMoflonEdge _edge_tAnnotated);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_4(EMoflonEdge _edge_comments);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_49(EMoflonEdge _edge_comments);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +252,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TTextAnnotation tText, LineComment mComment, MDefinition mMember, TMember tMember,
+	CSP isApplicable_solveCsp_CC(MDefinition mMember, TMember tMember, TTextAnnotation tText, LineComment mComment,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -269,7 +269,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(LineComment mComment, MDefinition mMember);
+	boolean checkDEC_FWD(MDefinition mMember, LineComment mComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,7 +277,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TTextAnnotation tText, TMember tMember);
+	boolean checkDEC_BWD(TMember tMember, TTextAnnotation tText);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,8 +294,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mMember,
-			MDefinitionToTMember mMemberToTMember, TMember tMember, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mMember, TMember tMember,
+			MDefinitionToTMember mMemberToTMember, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

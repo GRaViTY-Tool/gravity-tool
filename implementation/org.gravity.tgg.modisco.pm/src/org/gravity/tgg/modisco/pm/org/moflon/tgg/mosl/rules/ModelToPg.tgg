@@ -9,7 +9,13 @@
 }
 
 #target {
-	++tPG:TypeGraph
+	++tPG:TypeGraph {
+		++-packages->tProxyPackage
+	}
+	
+	++tProxyPackage : TPackage {
+		tName := "(proxies)"
+	}
 }
 
 #correspondence {

@@ -14,11 +14,10 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.EcoreUtil.UsageCrossReferencer;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.InterfaceDeclaration;
-import org.eclipse.modisco.java.Type;
 import org.eclipse.modisco.java.TypeAccess;
 import org.eclipse.modisco.java.emf.JavaFactory;
 import org.eclipse.modisco.java.emf.JavaPackage;
@@ -67,12 +66,12 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 * @param replacements
 	 */
 	private void replace(final MGravityModel model, final Map<ClassDeclaration, InterfaceDeclaration> replacements) {
-		for (final Entry<EObject, Collection<Setting>> entry : EcoreUtil.UsageCrossReferencer
-				.findAll(replacements.keySet(), model.eResource().getResourceSet()).entrySet()) {
-			final EObject key = entry.getKey();
+		for (final Entry<EObject, Collection<Setting>> entry : UsageCrossReferencer
+				.findAll(replacements.keySet(), model.eResource()).entrySet()) {
+			final var key = entry.getKey();
 			if (key instanceof ClassDeclaration) {
-				final ClassDeclaration replacedClass = (ClassDeclaration) key;
-				final Collection<Setting> references = entry.getValue();
+				final var replacedClass = (ClassDeclaration) key;
+				final var references = entry.getValue();
 				for (final Setting setting : references) {
 					setting.getEObject().eSet(setting.getEStructuralFeature(), replacements.get(replacedClass));
 				}
@@ -89,7 +88,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 		final Map<ClassDeclaration, InterfaceDeclaration> replacements = new ConcurrentHashMap<>(
 				brokenTypeAccesses.size());
 		for (final TypeAccess typeAccess : brokenTypeAccesses) {
-			final Type clazz = typeAccess.getType();
+			final var clazz = typeAccess.getType();
 			if (clazz.isProxy()) {
 				replacements.put((ClassDeclaration) clazz, replaceWithInterface((ClassDeclaration) clazz));
 				if (LOGGER.isInfoEnabled()) {
@@ -97,7 +96,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 				}
 			} else {
 				LOGGER.warn(Messages.errorClassNoProxy);
-				final ClassDeclaration child = (ClassDeclaration) typeAccess.eContainer();
+				final var child = (ClassDeclaration) typeAccess.eContainer();
 				if (child.getSuperClass() != null) {
 					LOGGER.error(
 							NLS.bind(Messages.errorClassAlreadyHasSuperType, NameUtil.getFullyQualifiedName(child)));
@@ -121,15 +120,14 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 */
 	private Set<TypeAccess> getAccessedClassDeclarations(final Collection<TypeAccess> accesses) {
 		final Set<TypeAccess> classes = new HashSet<>();
-		for(final TypeAccess access : accesses) {
-			final Type type = access.getType();
-			if(type != null) {
-				if(JavaPackage.eINSTANCE.getClassDeclaration().isSuperTypeOf(type.eClass())){
+		for (final TypeAccess access : accesses) {
+			final var type = access.getType();
+			if (type != null) {
+				if (JavaPackage.eINSTANCE.getClassDeclaration().isSuperTypeOf(type.eClass())) {
 					classes.add(access);
 				}
-			}
-			else {
-				LOGGER.warn("TypeAccess has no type! Access contained in: "+access.eContainer());
+			} else {
+				LOGGER.warn("TypeAccess has no type! Access contained in: " + access.eContainer());
 			}
 		}
 		return classes;
@@ -142,7 +140,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 * @return the interface
 	 */
 	private InterfaceDeclaration replaceWithInterface(final ClassDeclaration clazz) {
-		final InterfaceDeclaration iface = JavaFactory.eINSTANCE.createInterfaceDeclaration();
+		final var iface = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		iface.setName(clazz.getName());
 		iface.setAbstractTypeDeclaration(clazz.getAbstractTypeDeclaration());
 		iface.getAnnotations().addAll(clazz.getAnnotations());
@@ -155,7 +153,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 		iface.setOriginalClassFile(clazz.getOriginalClassFile());
 		iface.setOriginalCompilationUnit(clazz.getOriginalCompilationUnit());
 		iface.setPackage(clazz.getPackage());
-		final TypeAccess superClazz = clazz.getSuperClass();
+		final var superClazz = clazz.getSuperClass();
 		if (superClazz != null) {
 			iface.getSuperInterfaces().add(superClazz);
 		}
@@ -163,7 +161,6 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 		iface.getTypeParameters().addAll(clazz.getTypeParameters());
 		iface.getUsagesInImports().addAll(clazz.getUsagesInImports());
 		iface.getUsagesInTypeAccess().addAll(clazz.getUsagesInTypeAccess());
-		EcoreUtil.replace(clazz, iface);
 		return iface;
 	}
 

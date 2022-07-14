@@ -93,8 +93,8 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMethodToTMethod,
-			TMethodDefinition tOverriding, TMethodDefinition tMethod, MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding);
+			TMethodDefinition tOverriding, TMethodDefinition tMethod, MDefinitionToTMember mOverridingToTOverriding,
+			MMethodDefinition mMethod, MMethodDefinition mOverriding);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,7 +111,7 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMethodToTMethod, EObject tOverriding,
-			EObject tMethod, EObject mMethod, EObject mOverriding, EObject mOverridingToTOverriding);
+			EObject tMethod, EObject mOverridingToTOverriding, EObject mMethod, EObject mOverriding);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,8 +176,8 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMethodToTMethod,
-			TMethodDefinition tOverriding, TMethodDefinition tMethod, MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding);
+			TMethodDefinition tOverriding, TMethodDefinition tMethod, MDefinitionToTMember mOverridingToTOverriding,
+			MMethodDefinition mMethod, MMethodDefinition mOverriding);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,7 +194,7 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMethodToTMethod, EObject tOverriding,
-			EObject tMethod, EObject mMethod, EObject mOverriding, EObject mOverridingToTOverriding);
+			EObject tMethod, EObject mOverridingToTOverriding, EObject mMethod, EObject mOverriding);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1(EMoflonEdge _edge_overriddenBy);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_66(EMoflonEdge _edge_overriddenBy);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1(EMoflonEdge _edge_redefinitions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_67(EMoflonEdge _edge_redefinitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,9 +293,8 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMethodToTMethod,
-			TMethodDefinition tOverriding, TMethodDefinition tMethod, MMethodDefinition mMethod,
-			MMethodDefinition mOverriding, MDefinitionToTMember mOverridingToTOverriding,
-			ModelgeneratorRuleResult ruleResult);
+			TMethodDefinition tOverriding, TMethodDefinition tMethod, MDefinitionToTMember mOverridingToTOverriding,
+			MMethodDefinition mMethod, MMethodDefinition mOverriding, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -168,61 +168,61 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Model mModel = (Model) result1_bindingAndBlack[0];
+		TypeGraph tModel = (TypeGraph) result1_bindingAndBlack[0];
 		ModelToTypeGraph model2pm = (ModelToTypeGraph) result1_bindingAndBlack[1];
-		TypeGraph tModel = (TypeGraph) result1_bindingAndBlack[2];
+		Model mModel = (Model) result1_bindingAndBlack[2];
 		org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = UnresolvedMethodDeclarationImpl
-				.pattern_UnresolvedMethodDeclaration_1_1_performtransformation_greenFBFFBFB(tModel, mMethod, csp);
+				.pattern_UnresolvedMethodDeclaration_1_1_performtransformation_greenFBFFFBB(tModel, mMethod, csp);
 		TMethod tMethodName = (TMethod) result1_green[0];
-		MDefinitionToTMember unresolved2Definiton = (MDefinitionToTMember) result1_green[2];
-		TMethodSignature tMethodSignature = (TMethodSignature) result1_green[3];
-		TMethodDefinition tMethodDefinition = (TMethodDefinition) result1_green[5];
+		TMethodDefinition tMethodDefinition = (TMethodDefinition) result1_green[2];
+		MDefinitionToTMember unresolved2Definiton = (MDefinitionToTMember) result1_green[3];
+		TMethodSignature tMethodSignature = (TMethodSignature) result1_green[4];
 
 		Object[] result2_black = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_1_2_collecttranslatedelements_blackBBBBB(tMethodName,
-						unresolved2Definiton, tMethodSignature, mMethod, tMethodDefinition);
+						tMethodDefinition, unresolved2Definiton, tMethodSignature, mMethod);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tMethodName] = " + tMethodName
-					+ ", " + "[unresolved2Definiton] = " + unresolved2Definiton + ", " + "[tMethodSignature] = "
-					+ tMethodSignature + ", " + "[mMethod] = " + mMethod + ", " + "[tMethodDefinition] = "
-					+ tMethodDefinition + ".");
+					+ ", " + "[tMethodDefinition] = " + tMethodDefinition + ", " + "[unresolved2Definiton] = "
+					+ unresolved2Definiton + ", " + "[tMethodSignature] = " + tMethodSignature + ", " + "[mMethod] = "
+					+ mMethod + ".");
 		}
 		Object[] result2_green = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_1_2_collecttranslatedelements_greenFBBBBB(tMethodName,
-						unresolved2Definiton, tMethodSignature, mMethod, tMethodDefinition);
+						tMethodDefinition, unresolved2Definiton, tMethodSignature, mMethod);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_1_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, tMethodName,
-						mModel, model2pm, tModel, unresolved2Definiton, tMethodSignature, mMethod, tMethodDefinition);
+						tModel, model2pm, tMethodDefinition, mModel, unresolved2Definiton, tMethodSignature, mMethod);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tMethodName] = " + tMethodName + ", " + "[mModel] = " + mModel + ", " + "[model2pm] = "
-					+ model2pm + ", " + "[tModel] = " + tModel + ", " + "[unresolved2Definiton] = "
-					+ unresolved2Definiton + ", " + "[tMethodSignature] = " + tMethodSignature + ", " + "[mMethod] = "
-					+ mMethod + ", " + "[tMethodDefinition] = " + tMethodDefinition + ".");
+					+ ", " + "[tMethodName] = " + tMethodName + ", " + "[tModel] = " + tModel + ", " + "[model2pm] = "
+					+ model2pm + ", " + "[tMethodDefinition] = " + tMethodDefinition + ", " + "[mModel] = " + mModel
+					+ ", " + "[unresolved2Definiton] = " + unresolved2Definiton + ", " + "[tMethodSignature] = "
+					+ tMethodSignature + ", " + "[mMethod] = " + mMethod + ".");
 		}
 		UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFF(ruleresult,
-						tMethodName, mModel, tModel, unresolved2Definiton, tMethodSignature, mMethod,
-						tMethodDefinition);
+						tMethodName, tModel, tMethodDefinition, mModel, unresolved2Definiton, tMethodSignature,
+						mMethod);
 		//nothing EMoflonEdge tModel__tMethodName____methods = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge tMethodName__tModel____model = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mModel__mMethod____unresolvedItems = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tMethodSignature__tMethodDefinition____definitions = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tMethodDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tMethodName__tMethodSignature____signatures = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tMethodSignature__tMethodName____method = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge unresolved2Definiton__mMethod____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge unresolved2Definiton__tMethodDefinition____target = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge tMethodName__tMethodSignature____signatures = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge tMethodSignature__tMethodName____method = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge unresolved2Definiton__tMethodDefinition____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tMethodSignature__tMethodDefinition____definitions = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tMethodDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mModel__mMethod____unresolvedItems = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge unresolved2Definiton__mMethod____source = (EMoflonEdge) result3_green[16];
 
 		// 
 		// 
 		UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_1_5_registerobjects_expressionBBBBBBBBBB(
-				this, ruleresult, tMethodName, mModel, model2pm, tModel, unresolved2Definiton, tMethodSignature,
-				mMethod, tMethodDefinition);
+				this, ruleresult, tMethodName, tModel, model2pm, tMethodDefinition, mModel, unresolved2Definiton,
+				tMethodSignature, mMethod);
 		return UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_1_6_expressionFB(ruleresult);
 	}
 
@@ -254,27 +254,27 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		Model mModel = (Model) result2_binding[0];
 		org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result2_binding[1];
 		for (Object[] result2_black : UnresolvedMethodDeclarationImpl
-				.pattern_UnresolvedMethodDeclaration_2_2_corematch_blackBFFBB(mModel, mMethod, match)) {
+				.pattern_UnresolvedMethodDeclaration_2_2_corematch_blackFFBBB(mModel, mMethod, match)) {
+			TypeGraph tModel = (TypeGraph) result2_black[0];
 			ModelToTypeGraph model2pm = (ModelToTypeGraph) result2_black[1];
-			TypeGraph tModel = (TypeGraph) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : UnresolvedMethodDeclarationImpl
-					.pattern_UnresolvedMethodDeclaration_2_3_findcontext_blackBBBB(mModel, model2pm, tModel, mMethod)) {
+					.pattern_UnresolvedMethodDeclaration_2_3_findcontext_blackBBBB(tModel, model2pm, mModel, mMethod)) {
 				Object[] result3_green = UnresolvedMethodDeclarationImpl
-						.pattern_UnresolvedMethodDeclaration_2_3_findcontext_greenBBBBFFFF(mModel, model2pm, tModel,
+						.pattern_UnresolvedMethodDeclaration_2_3_findcontext_greenBBBBFFFF(tModel, model2pm, mModel,
 								mMethod);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge model2pm__tModel____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge model2pm__mModel____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge model2pm__mModel____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge model2pm__tModel____target = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge mModel__mMethod____unresolvedItems = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = UnresolvedMethodDeclarationImpl
 						.pattern_UnresolvedMethodDeclaration_2_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, mModel, model2pm, tModel, mMethod);
+								isApplicableMatch, tModel, model2pm, mModel, mMethod);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModel] = " + mModel + ", "
-							+ "[model2pm] = " + model2pm + ", " + "[tModel] = " + tModel + ", " + "[mMethod] = "
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tModel] = " + tModel + ", "
+							+ "[model2pm] = " + model2pm + ", " + "[mModel] = " + mModel + ", " + "[mMethod] = "
 							+ mMethod + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -349,8 +349,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model mModel, ModelToTypeGraph model2pm,
-			TypeGraph tModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph tModel,
+			ModelToTypeGraph model2pm, Model mModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -375,9 +375,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		eq.solve(var_mMethod_name, var_tMethodName_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mModel", mModel);
-		isApplicableMatch.registerObject("model2pm", model2pm);
 		isApplicableMatch.registerObject("tModel", tModel);
+		isApplicableMatch.registerObject("model2pm", model2pm);
+		isApplicableMatch.registerObject("mModel", mModel);
 		isApplicableMatch.registerObject("mMethod", mMethod);
 		return csp;
 	}
@@ -396,17 +396,17 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tMethodName, EObject mModel, EObject model2pm,
-			EObject tModel, EObject unresolved2Definiton, EObject tMethodSignature, EObject mMethod,
-			EObject tMethodDefinition) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tMethodName, EObject tModel, EObject model2pm,
+			EObject tMethodDefinition, EObject mModel, EObject unresolved2Definiton, EObject tMethodSignature,
+			EObject mMethod) {
 		ruleresult.registerObject("tMethodName", tMethodName);
-		ruleresult.registerObject("mModel", mModel);
-		ruleresult.registerObject("model2pm", model2pm);
 		ruleresult.registerObject("tModel", tModel);
+		ruleresult.registerObject("model2pm", model2pm);
+		ruleresult.registerObject("tMethodDefinition", tMethodDefinition);
+		ruleresult.registerObject("mModel", mModel);
 		ruleresult.registerObject("unresolved2Definiton", unresolved2Definiton);
 		ruleresult.registerObject("tMethodSignature", tMethodSignature);
 		ruleresult.registerObject("mMethod", mMethod);
-		ruleresult.registerObject("tMethodDefinition", tMethodDefinition);
 
 	}
 
@@ -426,26 +426,26 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public boolean isAppropriate_BWD(Match match, TMethod tMethodName, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {
+			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
 
 		Object[] result1_black = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_10_1_initialbindings_blackBBBBBB(this, match, tMethodName, tModel,
-						tMethodSignature, tMethodDefinition);
+						tMethodDefinition, tMethodSignature);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[match] = " + match + ", " + "[tMethodName] = " + tMethodName + ", " + "[tModel] = " + tModel
-					+ ", " + "[tMethodSignature] = " + tMethodSignature + ", " + "[tMethodDefinition] = "
-					+ tMethodDefinition + ".");
+					+ ", " + "[tMethodDefinition] = " + tMethodDefinition + ", " + "[tMethodSignature] = "
+					+ tMethodSignature + ".");
 		}
 
 		Object[] result2_bindingAndBlack = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_10_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, tMethodName,
-						tModel, tMethodSignature, tMethodDefinition);
+						tModel, tMethodDefinition, tMethodSignature);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[match] = " + match + ", " + "[tMethodName] = " + tMethodName + ", " + "[tModel] = " + tModel
-					+ ", " + "[tMethodSignature] = " + tMethodSignature + ", " + "[tMethodDefinition] = "
-					+ tMethodDefinition + ".");
+					+ ", " + "[tMethodDefinition] = " + tMethodDefinition + ", " + "[tMethodSignature] = "
+					+ tMethodSignature + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -454,31 +454,31 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 			Object[] result4_black = UnresolvedMethodDeclarationImpl
 					.pattern_UnresolvedMethodDeclaration_10_4_collectelementstobetranslated_blackBBBBB(match,
-							tMethodName, tModel, tMethodSignature, tMethodDefinition);
+							tMethodName, tModel, tMethodDefinition, tMethodSignature);
 			if (result4_black == null) {
 				throw new RuntimeException(
 						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[tMethodName] = "
-								+ tMethodName + ", " + "[tModel] = " + tModel + ", " + "[tMethodSignature] = "
-								+ tMethodSignature + ", " + "[tMethodDefinition] = " + tMethodDefinition + ".");
+								+ tMethodName + ", " + "[tModel] = " + tModel + ", " + "[tMethodDefinition] = "
+								+ tMethodDefinition + ", " + "[tMethodSignature] = " + tMethodSignature + ".");
 			}
 			UnresolvedMethodDeclarationImpl
 					.pattern_UnresolvedMethodDeclaration_10_4_collectelementstobetranslated_greenBBBBBFFFFFF(match,
-							tMethodName, tModel, tMethodSignature, tMethodDefinition);
+							tMethodName, tModel, tMethodDefinition, tMethodSignature);
 			//nothing EMoflonEdge tModel__tMethodName____methods = (EMoflonEdge) result4_green[5];
 			//nothing EMoflonEdge tMethodName__tModel____model = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge tMethodSignature__tMethodDefinition____definitions = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge tMethodDefinition__tMethodSignature____signature = (EMoflonEdge) result4_green[8];
-			//nothing EMoflonEdge tMethodName__tMethodSignature____signatures = (EMoflonEdge) result4_green[9];
-			//nothing EMoflonEdge tMethodSignature__tMethodName____method = (EMoflonEdge) result4_green[10];
+			//nothing EMoflonEdge tMethodName__tMethodSignature____signatures = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge tMethodSignature__tMethodName____method = (EMoflonEdge) result4_green[8];
+			//nothing EMoflonEdge tMethodSignature__tMethodDefinition____definitions = (EMoflonEdge) result4_green[9];
+			//nothing EMoflonEdge tMethodDefinition__tMethodSignature____signature = (EMoflonEdge) result4_green[10];
 
 			Object[] result5_black = UnresolvedMethodDeclarationImpl
 					.pattern_UnresolvedMethodDeclaration_10_5_collectcontextelements_blackBBBBB(match, tMethodName,
-							tModel, tMethodSignature, tMethodDefinition);
+							tModel, tMethodDefinition, tMethodSignature);
 			if (result5_black == null) {
 				throw new RuntimeException(
 						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[tMethodName] = "
-								+ tMethodName + ", " + "[tModel] = " + tModel + ", " + "[tMethodSignature] = "
-								+ tMethodSignature + ", " + "[tMethodDefinition] = " + tMethodDefinition + ".");
+								+ tMethodName + ", " + "[tModel] = " + tModel + ", " + "[tMethodDefinition] = "
+								+ tMethodDefinition + ", " + "[tMethodSignature] = " + tMethodSignature + ".");
 			}
 			UnresolvedMethodDeclarationImpl
 					.pattern_UnresolvedMethodDeclaration_10_5_collectcontextelements_greenBB(match, tModel);
@@ -486,7 +486,7 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 			// 
 			UnresolvedMethodDeclarationImpl
 					.pattern_UnresolvedMethodDeclaration_10_6_registerobjectstomatch_expressionBBBBBB(this, match,
-							tMethodName, tModel, tMethodSignature, tMethodDefinition);
+							tMethodName, tModel, tMethodDefinition, tMethodSignature);
 			return UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_10_7_expressionF();
 		} else {
 			return UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_10_8_expressionF();
@@ -509,61 +509,61 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		TMethod tMethodName = (TMethod) result1_bindingAndBlack[0];
-		Model mModel = (Model) result1_bindingAndBlack[1];
+		TypeGraph tModel = (TypeGraph) result1_bindingAndBlack[1];
 		ModelToTypeGraph model2pm = (ModelToTypeGraph) result1_bindingAndBlack[2];
-		TypeGraph tModel = (TypeGraph) result1_bindingAndBlack[3];
-		TMethodSignature tMethodSignature = (TMethodSignature) result1_bindingAndBlack[4];
-		TMethodDefinition tMethodDefinition = (TMethodDefinition) result1_bindingAndBlack[5];
+		TMethodDefinition tMethodDefinition = (TMethodDefinition) result1_bindingAndBlack[3];
+		Model mModel = (Model) result1_bindingAndBlack[4];
+		TMethodSignature tMethodSignature = (TMethodSignature) result1_bindingAndBlack[5];
 		CSP csp = (CSP) result1_bindingAndBlack[6];
 		Object[] result1_green = UnresolvedMethodDeclarationImpl
-				.pattern_UnresolvedMethodDeclaration_11_1_performtransformation_greenBFFBB(mModel, tMethodDefinition,
+				.pattern_UnresolvedMethodDeclaration_11_1_performtransformation_greenBBFFB(tMethodDefinition, mModel,
 						csp);
-		MDefinitionToTMember unresolved2Definiton = (MDefinitionToTMember) result1_green[1];
-		org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result1_green[2];
+		MDefinitionToTMember unresolved2Definiton = (MDefinitionToTMember) result1_green[2];
+		org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result1_green[3];
 
 		Object[] result2_black = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_11_2_collecttranslatedelements_blackBBBBB(tMethodName,
-						unresolved2Definiton, tMethodSignature, mMethod, tMethodDefinition);
+						tMethodDefinition, unresolved2Definiton, tMethodSignature, mMethod);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tMethodName] = " + tMethodName
-					+ ", " + "[unresolved2Definiton] = " + unresolved2Definiton + ", " + "[tMethodSignature] = "
-					+ tMethodSignature + ", " + "[mMethod] = " + mMethod + ", " + "[tMethodDefinition] = "
-					+ tMethodDefinition + ".");
+					+ ", " + "[tMethodDefinition] = " + tMethodDefinition + ", " + "[unresolved2Definiton] = "
+					+ unresolved2Definiton + ", " + "[tMethodSignature] = " + tMethodSignature + ", " + "[mMethod] = "
+					+ mMethod + ".");
 		}
 		Object[] result2_green = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_11_2_collecttranslatedelements_greenFBBBBB(tMethodName,
-						unresolved2Definiton, tMethodSignature, mMethod, tMethodDefinition);
+						tMethodDefinition, unresolved2Definiton, tMethodSignature, mMethod);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_11_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, tMethodName,
-						mModel, model2pm, tModel, unresolved2Definiton, tMethodSignature, mMethod, tMethodDefinition);
+						tModel, model2pm, tMethodDefinition, mModel, unresolved2Definiton, tMethodSignature, mMethod);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tMethodName] = " + tMethodName + ", " + "[mModel] = " + mModel + ", " + "[model2pm] = "
-					+ model2pm + ", " + "[tModel] = " + tModel + ", " + "[unresolved2Definiton] = "
-					+ unresolved2Definiton + ", " + "[tMethodSignature] = " + tMethodSignature + ", " + "[mMethod] = "
-					+ mMethod + ", " + "[tMethodDefinition] = " + tMethodDefinition + ".");
+					+ ", " + "[tMethodName] = " + tMethodName + ", " + "[tModel] = " + tModel + ", " + "[model2pm] = "
+					+ model2pm + ", " + "[tMethodDefinition] = " + tMethodDefinition + ", " + "[mModel] = " + mModel
+					+ ", " + "[unresolved2Definiton] = " + unresolved2Definiton + ", " + "[tMethodSignature] = "
+					+ tMethodSignature + ", " + "[mMethod] = " + mMethod + ".");
 		}
 		UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFF(ruleresult,
-						tMethodName, mModel, tModel, unresolved2Definiton, tMethodSignature, mMethod,
-						tMethodDefinition);
+						tMethodName, tModel, tMethodDefinition, mModel, unresolved2Definiton, tMethodSignature,
+						mMethod);
 		//nothing EMoflonEdge tModel__tMethodName____methods = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge tMethodName__tModel____model = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mModel__mMethod____unresolvedItems = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tMethodSignature__tMethodDefinition____definitions = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tMethodDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tMethodName__tMethodSignature____signatures = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tMethodSignature__tMethodName____method = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge unresolved2Definiton__mMethod____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge unresolved2Definiton__tMethodDefinition____target = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge tMethodName__tMethodSignature____signatures = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge tMethodSignature__tMethodName____method = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge unresolved2Definiton__tMethodDefinition____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tMethodSignature__tMethodDefinition____definitions = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tMethodDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mModel__mMethod____unresolvedItems = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge unresolved2Definiton__mMethod____source = (EMoflonEdge) result3_green[16];
 
 		// 
 		// 
 		UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_11_5_registerobjects_expressionBBBBBBBBBB(
-				this, ruleresult, tMethodName, mModel, model2pm, tModel, unresolved2Definiton, tMethodSignature,
-				mMethod, tMethodDefinition);
+				this, ruleresult, tMethodName, tModel, model2pm, tMethodDefinition, mModel, unresolved2Definiton,
+				tMethodSignature, mMethod);
 		return UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_11_6_expressionFB(ruleresult);
 	}
 
@@ -594,40 +594,40 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		}
 		TMethod tMethodName = (TMethod) result2_binding[0];
 		TypeGraph tModel = (TypeGraph) result2_binding[1];
-		TMethodSignature tMethodSignature = (TMethodSignature) result2_binding[2];
-		TMethodDefinition tMethodDefinition = (TMethodDefinition) result2_binding[3];
+		TMethodDefinition tMethodDefinition = (TMethodDefinition) result2_binding[2];
+		TMethodSignature tMethodSignature = (TMethodSignature) result2_binding[3];
 		for (Object[] result2_black : UnresolvedMethodDeclarationImpl
-				.pattern_UnresolvedMethodDeclaration_12_2_corematch_blackBFFBBBB(tMethodName, tModel, tMethodSignature,
-						tMethodDefinition, match)) {
-			Model mModel = (Model) result2_black[1];
+				.pattern_UnresolvedMethodDeclaration_12_2_corematch_blackBBFBFBB(tMethodName, tModel, tMethodDefinition,
+						tMethodSignature, match)) {
 			ModelToTypeGraph model2pm = (ModelToTypeGraph) result2_black[2];
+			Model mModel = (Model) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : UnresolvedMethodDeclarationImpl
-					.pattern_UnresolvedMethodDeclaration_12_3_findcontext_blackBBBBBB(tMethodName, mModel, model2pm,
-							tModel, tMethodSignature, tMethodDefinition)) {
+					.pattern_UnresolvedMethodDeclaration_12_3_findcontext_blackBBBBBB(tMethodName, tModel, model2pm,
+							tMethodDefinition, mModel, tMethodSignature)) {
 				Object[] result3_green = UnresolvedMethodDeclarationImpl
-						.pattern_UnresolvedMethodDeclaration_12_3_findcontext_greenBBBBBBFFFFFFFFF(tMethodName, mModel,
-								model2pm, tModel, tMethodSignature, tMethodDefinition);
+						.pattern_UnresolvedMethodDeclaration_12_3_findcontext_greenBBBBBBFFFFFFFFF(tMethodName, tModel,
+								model2pm, tMethodDefinition, mModel, tMethodSignature);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge model2pm__tModel____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge tModel__tMethodName____methods = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tMethodName__tModel____model = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge model2pm__mModel____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tMethodSignature__tMethodDefinition____definitions = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tMethodDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge tMethodName__tMethodSignature____signatures = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge tMethodSignature__tMethodName____method = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge tModel__tMethodName____methods = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge tMethodName__tModel____model = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge model2pm__mModel____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tMethodName__tMethodSignature____signatures = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tMethodSignature__tMethodName____method = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge model2pm__tModel____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tMethodSignature__tMethodDefinition____definitions = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge tMethodDefinition__tMethodSignature____signature = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = UnresolvedMethodDeclarationImpl
 						.pattern_UnresolvedMethodDeclaration_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, tMethodName, mModel, model2pm, tModel, tMethodSignature,
-								tMethodDefinition);
+								isApplicableMatch, tMethodName, tModel, model2pm, tMethodDefinition, mModel,
+								tMethodSignature);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tMethodName] = " + tMethodName
-							+ ", " + "[mModel] = " + mModel + ", " + "[model2pm] = " + model2pm + ", " + "[tModel] = "
-							+ tModel + ", " + "[tMethodSignature] = " + tMethodSignature + ", "
-							+ "[tMethodDefinition] = " + tMethodDefinition + ".");
+							+ ", " + "[tModel] = " + tModel + ", " + "[model2pm] = " + model2pm + ", "
+							+ "[tMethodDefinition] = " + tMethodDefinition + ", " + "[mModel] = " + mModel + ", "
+							+ "[tMethodSignature] = " + tMethodSignature + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -660,11 +660,11 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public void registerObjectsToMatch_BWD(Match match, TMethod tMethodName, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {
+			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
 		match.registerObject("tMethodName", tMethodName);
 		match.registerObject("tModel", tModel);
-		match.registerObject("tMethodSignature", tMethodSignature);
 		match.registerObject("tMethodDefinition", tMethodDefinition);
+		match.registerObject("tMethodSignature", tMethodSignature);
 
 	}
 
@@ -674,7 +674,7 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public CSP isAppropriate_solveCsp_BWD(Match match, TMethod tMethodName, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {// Create CSP
+			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -703,9 +703,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethod tMethodName, Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethod tMethodName, TypeGraph tModel,
+			ModelToTypeGraph model2pm, TMethodDefinition tMethodDefinition, Model mModel,
+			TMethodSignature tMethodSignature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -731,11 +731,11 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tMethodName", tMethodName);
-		isApplicableMatch.registerObject("mModel", mModel);
-		isApplicableMatch.registerObject("model2pm", model2pm);
 		isApplicableMatch.registerObject("tModel", tModel);
-		isApplicableMatch.registerObject("tMethodSignature", tMethodSignature);
+		isApplicableMatch.registerObject("model2pm", model2pm);
 		isApplicableMatch.registerObject("tMethodDefinition", tMethodDefinition);
+		isApplicableMatch.registerObject("mModel", mModel);
+		isApplicableMatch.registerObject("tMethodSignature", tMethodSignature);
 		return csp;
 	}
 
@@ -753,17 +753,17 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tMethodName, EObject mModel, EObject model2pm,
-			EObject tModel, EObject unresolved2Definiton, EObject tMethodSignature, EObject mMethod,
-			EObject tMethodDefinition) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tMethodName, EObject tModel, EObject model2pm,
+			EObject tMethodDefinition, EObject mModel, EObject unresolved2Definiton, EObject tMethodSignature,
+			EObject mMethod) {
 		ruleresult.registerObject("tMethodName", tMethodName);
-		ruleresult.registerObject("mModel", mModel);
-		ruleresult.registerObject("model2pm", model2pm);
 		ruleresult.registerObject("tModel", tModel);
+		ruleresult.registerObject("model2pm", model2pm);
+		ruleresult.registerObject("tMethodDefinition", tMethodDefinition);
+		ruleresult.registerObject("mModel", mModel);
 		ruleresult.registerObject("unresolved2Definiton", unresolved2Definiton);
 		ruleresult.registerObject("tMethodSignature", tMethodSignature);
 		ruleresult.registerObject("mMethod", mMethod);
-		ruleresult.registerObject("tMethodDefinition", tMethodDefinition);
 
 	}
 
@@ -776,10 +776,10 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		return true
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tMethodName").eClass())
 						.equals("basic.TMethod.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tMethodSignature").eClass())
-						.equals("basic.TMethodSignature.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tMethodDefinition").eClass())
-						.equals("basic.TMethodDefinition.");
+						.equals("basic.TMethodDefinition.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tMethodSignature").eClass())
+						.equals("basic.TMethodSignature.");
 	}
 
 	/**
@@ -787,7 +787,7 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_24(EMoflonEdge _edge_methods) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_71(EMoflonEdge _edge_methods) {
 
 		Object[] result1_bindingAndBlack = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -806,8 +806,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 				.pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_blackFFFFB(_edge_methods)) {
 			TMethod tMethodName = (TMethod) result2_black[0];
 			TypeGraph tModel = (TypeGraph) result2_black[1];
-			TMethodSignature tMethodSignature = (TMethodSignature) result2_black[2];
-			TMethodDefinition tMethodDefinition = (TMethodDefinition) result2_black[3];
+			TMethodDefinition tMethodDefinition = (TMethodDefinition) result2_black[2];
+			TMethodSignature tMethodSignature = (TMethodSignature) result2_black[3];
 			Object[] result2_green = UnresolvedMethodDeclarationImpl
 					.pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -815,7 +815,7 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 			// 
 			if (UnresolvedMethodDeclarationImpl
 					.pattern_UnresolvedMethodDeclaration_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-							this, match, tMethodName, tModel, tMethodSignature, tMethodDefinition)) {
+							this, match, tMethodName, tModel, tMethodDefinition, tMethodSignature)) {
 				// 
 				if (UnresolvedMethodDeclarationImpl
 						.pattern_UnresolvedMethodDeclaration_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -848,7 +848,7 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_25(EMoflonEdge _edge_unresolvedItems) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_72(EMoflonEdge _edge_unresolvedItems) {
 
 		Object[] result1_bindingAndBlack = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -917,13 +917,13 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tMethodName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tMethodName", true, csp);
-		var_tMethodName_tName.setValue(__helper.getValue("tMethodName", "tName"));
-		var_tMethodName_tName.setType("String");
-
 		Variable var_mMethod_name = CSPFactoryHelper.eINSTANCE.createVariable("mMethod", true, csp);
 		var_mMethod_name.setValue(__helper.getValue("mMethod", "name"));
 		var_mMethod_name.setType("String");
+
+		Variable var_tMethodName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tMethodName", true, csp);
+		var_tMethodName_tName.setValue(__helper.getValue("tMethodName", "tName"));
+		var_tMethodName_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -964,13 +964,13 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tMethodName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tMethodName", true, csp);
-		var_tMethodName_tName.setValue(__helper.getValue("tMethodName", "tName"));
-		var_tMethodName_tName.setType("String");
-
 		Variable var_mMethod_name = CSPFactoryHelper.eINSTANCE.createVariable("mMethod", true, csp);
 		var_mMethod_name.setValue(__helper.getValue("mMethod", "name"));
 		var_mMethod_name.setType("String");
+
+		Variable var_tMethodName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tMethodName", true, csp);
+		var_tMethodName_tName.setValue(__helper.getValue("tMethodName", "tName"));
+		var_tMethodName_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1020,28 +1020,28 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		TMethod tMethodName = (TMethod) result2_bindingAndBlack[0];
-		Model mModel = (Model) result2_bindingAndBlack[1];
-		TypeGraph tModel = (TypeGraph) result2_bindingAndBlack[2];
-		TMethodSignature tMethodSignature = (TMethodSignature) result2_bindingAndBlack[3];
-		org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result2_bindingAndBlack[4];
-		TMethodDefinition tMethodDefinition = (TMethodDefinition) result2_bindingAndBlack[5];
+		TypeGraph tModel = (TypeGraph) result2_bindingAndBlack[1];
+		TMethodDefinition tMethodDefinition = (TMethodDefinition) result2_bindingAndBlack[2];
+		Model mModel = (Model) result2_bindingAndBlack[3];
+		TMethodSignature tMethodSignature = (TMethodSignature) result2_bindingAndBlack[4];
+		org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = UnresolvedMethodDeclarationImpl
-				.pattern_UnresolvedMethodDeclaration_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, tMethodName, mModel,
-						tModel, tMethodSignature, mMethod, tMethodDefinition, sourceMatch, targetMatch);
+				.pattern_UnresolvedMethodDeclaration_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, tMethodName, tModel,
+						tMethodDefinition, mModel, tMethodSignature, mMethod, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tMethodName] = " + tMethodName + ", " + "[mModel] = " + mModel + ", " + "[tModel] = " + tModel
-					+ ", " + "[tMethodSignature] = " + tMethodSignature + ", " + "[mMethod] = " + mMethod + ", "
-					+ "[tMethodDefinition] = " + tMethodDefinition + ", " + "[sourceMatch] = " + sourceMatch + ", "
-					+ "[targetMatch] = " + targetMatch + ".");
+					+ "[tMethodName] = " + tMethodName + ", " + "[tModel] = " + tModel + ", " + "[tMethodDefinition] = "
+					+ tMethodDefinition + ", " + "[mModel] = " + mModel + ", " + "[tMethodSignature] = "
+					+ tMethodSignature + ", " + "[mMethod] = " + mMethod + ", " + "[sourceMatch] = " + sourceMatch
+					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : UnresolvedMethodDeclarationImpl
-					.pattern_UnresolvedMethodDeclaration_24_5_matchcorrcontext_blackBFBBB(mModel, tModel, sourceMatch,
+					.pattern_UnresolvedMethodDeclaration_24_5_matchcorrcontext_blackBFBBB(tModel, mModel, sourceMatch,
 							targetMatch)) {
 				ModelToTypeGraph model2pm = (ModelToTypeGraph) result5_black[1];
 				Object[] result5_green = UnresolvedMethodDeclarationImpl
@@ -1050,17 +1050,18 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = UnresolvedMethodDeclarationImpl
-						.pattern_UnresolvedMethodDeclaration_24_6_createcorrespondence_blackBBBBBBB(tMethodName, mModel,
-								tModel, tMethodSignature, mMethod, tMethodDefinition, ccMatch);
+						.pattern_UnresolvedMethodDeclaration_24_6_createcorrespondence_blackBBBBBBB(tMethodName, tModel,
+								tMethodDefinition, mModel, tMethodSignature, mMethod, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tMethodName] = "
-							+ tMethodName + ", " + "[mModel] = " + mModel + ", " + "[tModel] = " + tModel + ", "
-							+ "[tMethodSignature] = " + tMethodSignature + ", " + "[mMethod] = " + mMethod + ", "
-							+ "[tMethodDefinition] = " + tMethodDefinition + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException(
+							"Pattern matching failed." + " Variables: " + "[tMethodName] = " + tMethodName + ", "
+									+ "[tModel] = " + tModel + ", " + "[tMethodDefinition] = " + tMethodDefinition
+									+ ", " + "[mModel] = " + mModel + ", " + "[tMethodSignature] = " + tMethodSignature
+									+ ", " + "[mMethod] = " + mMethod + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_24_6_createcorrespondence_greenFBBB(
-						mMethod, tMethodDefinition, ccMatch);
-				//nothing MDefinitionToTMember unresolved2Definiton = (MDefinitionToTMember) result6_green[0];
+				UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_24_6_createcorrespondence_greenBFBB(
+						tMethodDefinition, mMethod, ccMatch);
+				//nothing MDefinitionToTMember unresolved2Definiton = (MDefinitionToTMember) result6_green[1];
 
 				Object[] result7_black = UnresolvedMethodDeclarationImpl
 						.pattern_UnresolvedMethodDeclaration_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1083,9 +1084,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TMethod tMethodName, Model mModel, TypeGraph tModel,
-			TMethodSignature tMethodSignature, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod,
-			TMethodDefinition tMethodDefinition, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TMethod tMethodName, TypeGraph tModel, TMethodDefinition tMethodDefinition,
+			Model mModel, TMethodSignature tMethodSignature,
+			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1141,11 +1142,11 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TMethod tMethodName, TypeGraph tModel, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition) {// 
+	public boolean checkDEC_BWD(TMethod tMethodName, TypeGraph tModel, TMethodDefinition tMethodDefinition,
+			TMethodSignature tMethodSignature) {// 
 		Object[] result1_black = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_blackBBBB(tMethodName, tModel,
-						tMethodSignature, tMethodDefinition);
+						tMethodDefinition, tMethodSignature);
 		if (result1_black != null) {
 			return UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_28_2_expressionF();
 		} else {
@@ -1177,17 +1178,17 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 				.pattern_UnresolvedMethodDeclaration_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList model2pmList = (RuleEntryList) result2_black[0];
-			Model mModel = (Model) result2_black[1];
+			TypeGraph tModel = (TypeGraph) result2_black[1];
 			ModelToTypeGraph model2pm = (ModelToTypeGraph) result2_black[2];
-			TypeGraph tModel = (TypeGraph) result2_black[3];
+			Model mModel = (Model) result2_black[3];
 
 			Object[] result3_bindingAndBlack = UnresolvedMethodDeclarationImpl
 					.pattern_UnresolvedMethodDeclaration_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-							mModel, model2pm, tModel, ruleResult);
+							tModel, model2pm, mModel, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModel] = " + mModel + ", "
-						+ "[model2pm] = " + model2pm + ", " + "[tModel] = " + tModel + ", " + "[ruleResult] = "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tModel] = " + tModel + ", "
+						+ "[model2pm] = " + model2pm + ", " + "[mModel] = " + mModel + ", " + "[ruleResult] = "
 						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1196,24 +1197,24 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 					csp)) {
 				// 
 				Object[] result5_black = UnresolvedMethodDeclarationImpl
-						.pattern_UnresolvedMethodDeclaration_29_5_checknacs_blackBBB(mModel, model2pm, tModel);
+						.pattern_UnresolvedMethodDeclaration_29_5_checknacs_blackBBB(tModel, model2pm, mModel);
 				if (result5_black != null) {
 
 					Object[] result6_black = UnresolvedMethodDeclarationImpl
-							.pattern_UnresolvedMethodDeclaration_29_6_perform_blackBBBB(mModel, model2pm, tModel,
+							.pattern_UnresolvedMethodDeclaration_29_6_perform_blackBBBB(tModel, model2pm, mModel,
 									ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mModel] = " + mModel
-								+ ", " + "[model2pm] = " + model2pm + ", " + "[tModel] = " + tModel + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tModel] = " + tModel
+								+ ", " + "[model2pm] = " + model2pm + ", " + "[mModel] = " + mModel + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_29_6_perform_greenFBBFFFFBB(
-							mModel, tModel, ruleResult, csp);
+					UnresolvedMethodDeclarationImpl.pattern_UnresolvedMethodDeclaration_29_6_perform_greenFBFBFFFBB(
+							tModel, mModel, ruleResult, csp);
 					//nothing TMethod tMethodName = (TMethod) result6_green[0];
-					//nothing MDefinitionToTMember unresolved2Definiton = (MDefinitionToTMember) result6_green[3];
-					//nothing TMethodSignature tMethodSignature = (TMethodSignature) result6_green[4];
-					//nothing org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result6_green[5];
-					//nothing TMethodDefinition tMethodDefinition = (TMethodDefinition) result6_green[6];
+					//nothing TMethodDefinition tMethodDefinition = (TMethodDefinition) result6_green[2];
+					//nothing MDefinitionToTMember unresolved2Definiton = (MDefinitionToTMember) result6_green[4];
+					//nothing TMethodSignature tMethodSignature = (TMethodSignature) result6_green[5];
+					//nothing org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result6_green[6];
 
 				} else {
 				}
@@ -1230,8 +1231,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model mModel, ModelToTypeGraph model2pm,
-			TypeGraph tModel, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph tModel,
+			ModelToTypeGraph model2pm, Model mModel, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1255,9 +1256,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		eq.solve(var_mMethod_name, var_tMethodName_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mModel", mModel);
-		isApplicableMatch.registerObject("model2pm", model2pm);
 		isApplicableMatch.registerObject("tModel", tModel);
+		isApplicableMatch.registerObject("model2pm", model2pm);
+		isApplicableMatch.registerObject("mModel", mModel);
 		return csp;
 	}
 
@@ -1294,9 +1295,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 					(org.eclipse.modisco.java.UnresolvedMethodDeclaration) arguments.get(2));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_MODELTOTYPEGRAPH_TYPEGRAPH_UNRESOLVEDMETHODDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(ModelToTypeGraph) arguments.get(2), (TypeGraph) arguments.get(3),
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEGRAPH_MODELTOTYPEGRAPH_MODEL_UNRESOLVEDMETHODDECLARATION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
+					(ModelToTypeGraph) arguments.get(2), (Model) arguments.get(3),
 					(org.eclipse.modisco.java.UnresolvedMethodDeclaration) arguments.get(4));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
@@ -1308,28 +1309,29 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_BWD__MATCH_TMETHOD_TYPEGRAPH_TMETHODSIGNATURE_TMETHODDEFINITION:
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_BWD__MATCH_TMETHOD_TYPEGRAPH_TMETHODDEFINITION_TMETHODSIGNATURE:
 			return isAppropriate_BWD((Match) arguments.get(0), (TMethod) arguments.get(1), (TypeGraph) arguments.get(2),
-					(TMethodSignature) arguments.get(3), (TMethodDefinition) arguments.get(4));
+					(TMethodDefinition) arguments.get(3), (TMethodSignature) arguments.get(4));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMETHOD_TYPEGRAPH_TMETHODSIGNATURE_TMETHODDEFINITION:
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMETHOD_TYPEGRAPH_TMETHODDEFINITION_TMETHODSIGNATURE:
 			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMethod) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TMethodSignature) arguments.get(3),
-					(TMethodDefinition) arguments.get(4));
+					(TypeGraph) arguments.get(2), (TMethodDefinition) arguments.get(3),
+					(TMethodSignature) arguments.get(4));
 			return null;
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMETHOD_TYPEGRAPH_TMETHODSIGNATURE_TMETHODDEFINITION:
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMETHOD_TYPEGRAPH_TMETHODDEFINITION_TMETHODSIGNATURE:
 			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMethod) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TMethodSignature) arguments.get(3),
-					(TMethodDefinition) arguments.get(4));
+					(TypeGraph) arguments.get(2), (TMethodDefinition) arguments.get(3),
+					(TMethodSignature) arguments.get(4));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMETHOD_MODEL_MODELTOTYPEGRAPH_TYPEGRAPH_TMETHODSIGNATURE_TMETHODDEFINITION:
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMETHOD_TYPEGRAPH_MODELTOTYPEGRAPH_TMETHODDEFINITION_MODEL_TMETHODSIGNATURE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TMethod) arguments.get(1),
-					(Model) arguments.get(2), (ModelToTypeGraph) arguments.get(3), (TypeGraph) arguments.get(4),
-					(TMethodSignature) arguments.get(5), (TMethodDefinition) arguments.get(6));
+					(TypeGraph) arguments.get(2), (ModelToTypeGraph) arguments.get(3),
+					(TMethodDefinition) arguments.get(4), (Model) arguments.get(5),
+					(TMethodSignature) arguments.get(6));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1340,34 +1342,34 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_24__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_24((EMoflonEdge) arguments.get(0));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_25__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_25((EMoflonEdge) arguments.get(0));
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_71__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_71((EMoflonEdge) arguments.get(0));
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_72__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_72((EMoflonEdge) arguments.get(0));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_SOLVE_CSP_CC__TMETHOD_MODEL_TYPEGRAPH_TMETHODSIGNATURE_UNRESOLVEDMETHODDECLARATION_TMETHODDEFINITION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TMethod) arguments.get(0), (Model) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TMethodSignature) arguments.get(3),
-					(org.eclipse.modisco.java.UnresolvedMethodDeclaration) arguments.get(4),
-					(TMethodDefinition) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_SOLVE_CSP_CC__TMETHOD_TYPEGRAPH_TMETHODDEFINITION_MODEL_TMETHODSIGNATURE_UNRESOLVEDMETHODDECLARATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TMethod) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TMethodDefinition) arguments.get(2), (Model) arguments.get(3), (TMethodSignature) arguments.get(4),
+					(org.eclipse.modisco.java.UnresolvedMethodDeclaration) arguments.get(5), (Match) arguments.get(6),
+					(Match) arguments.get(7));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___CHECK_DEC_FWD__MODEL_UNRESOLVEDMETHODDECLARATION:
 			return checkDEC_FWD((Model) arguments.get(0),
 					(org.eclipse.modisco.java.UnresolvedMethodDeclaration) arguments.get(1));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___CHECK_DEC_BWD__TMETHOD_TYPEGRAPH_TMETHODSIGNATURE_TMETHODDEFINITION:
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___CHECK_DEC_BWD__TMETHOD_TYPEGRAPH_TMETHODDEFINITION_TMETHODSIGNATURE:
 			return checkDEC_BWD((TMethod) arguments.get(0), (TypeGraph) arguments.get(1),
-					(TMethodSignature) arguments.get(2), (TMethodDefinition) arguments.get(3));
+					(TMethodDefinition) arguments.get(2), (TMethodSignature) arguments.get(3));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODELTOTYPEGRAPH_TYPEGRAPH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(ModelToTypeGraph) arguments.get(2), (TypeGraph) arguments.get(3),
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_MODELTOTYPEGRAPH_MODEL_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
+					(ModelToTypeGraph) arguments.get(2), (Model) arguments.get(3),
 					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1468,23 +1470,23 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mModel");
+		EObject _localVariable_0 = isApplicableMatch.getObject("tModel");
 		EObject _localVariable_1 = isApplicableMatch.getObject("model2pm");
-		EObject _localVariable_2 = isApplicableMatch.getObject("tModel");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mModel");
 		EObject _localVariable_3 = isApplicableMatch.getObject("mMethod");
-		EObject tmpMModel = _localVariable_0;
+		EObject tmpTModel = _localVariable_0;
 		EObject tmpModel2pm = _localVariable_1;
-		EObject tmpTModel = _localVariable_2;
+		EObject tmpMModel = _localVariable_2;
 		EObject tmpMMethod = _localVariable_3;
-		if (tmpMModel instanceof Model) {
-			Model mModel = (Model) tmpMModel;
+		if (tmpTModel instanceof TypeGraph) {
+			TypeGraph tModel = (TypeGraph) tmpTModel;
 			if (tmpModel2pm instanceof ModelToTypeGraph) {
 				ModelToTypeGraph model2pm = (ModelToTypeGraph) tmpModel2pm;
-				if (tmpTModel instanceof TypeGraph) {
-					TypeGraph tModel = (TypeGraph) tmpTModel;
+				if (tmpMModel instanceof Model) {
+					Model mModel = (Model) tmpMModel;
 					if (tmpMMethod instanceof org.eclipse.modisco.java.UnresolvedMethodDeclaration) {
 						org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) tmpMMethod;
-						return new Object[] { mModel, model2pm, tModel, mMethod, isApplicableMatch };
+						return new Object[] { tModel, model2pm, mModel, mMethod, isApplicableMatch };
 					}
 				}
 			}
@@ -1493,13 +1495,13 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_1_1_performtransformation_blackBBBBFBB(
-			Model mModel, ModelToTypeGraph model2pm, TypeGraph tModel,
+			TypeGraph tModel, ModelToTypeGraph model2pm, Model mModel,
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, UnresolvedMethodDeclaration _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mModel, model2pm, tModel, mMethod, csp, _this, isApplicableMatch };
+				return new Object[] { tModel, model2pm, mModel, mMethod, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1510,108 +1512,110 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		Object[] result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_binding = pattern_UnresolvedMethodDeclaration_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_binding != null) {
-			Model mModel = (Model) result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_binding[0];
+			TypeGraph tModel = (TypeGraph) result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_binding[0];
 			ModelToTypeGraph model2pm = (ModelToTypeGraph) result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_binding[1];
-			TypeGraph tModel = (TypeGraph) result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_binding[2];
+			Model mModel = (Model) result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_binding[2];
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_black = pattern_UnresolvedMethodDeclaration_1_1_performtransformation_blackBBBBFBB(
-					mModel, model2pm, tModel, mMethod, _this, isApplicableMatch);
+					tModel, model2pm, mModel, mMethod, _this, isApplicableMatch);
 			if (result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_UnresolvedMethodDeclaration_1_1_performtransformation_black[4];
 
-				return new Object[] { mModel, model2pm, tModel, mMethod, csp, _this, isApplicableMatch };
+				return new Object[] { tModel, model2pm, mModel, mMethod, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_UnresolvedMethodDeclaration_1_1_performtransformation_greenFBFFBFB(
+	public static final Object[] pattern_UnresolvedMethodDeclaration_1_1_performtransformation_greenFBFFFBB(
 			TypeGraph tModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, CSP csp) {
 		TMethod tMethodName = BasicFactory.eINSTANCE.createTMethod();
+		TMethodDefinition tMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
 		MDefinitionToTMember unresolved2Definiton = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		TMethodSignature tMethodSignature = BasicFactory.eINSTANCE.createTMethodSignature();
-		TMethodDefinition tMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
 		Object _localVariable_0 = csp.getValue("tMethodName", "tName");
 		tModel.getMethods().add(tMethodName);
+		unresolved2Definiton.setTarget(tMethodDefinition);
 		unresolved2Definiton.setSource(mMethod);
 		tMethodName.getSignatures().add(tMethodSignature);
 		tMethodSignature.getDefinitions().add(tMethodDefinition);
-		unresolved2Definiton.setTarget(tMethodDefinition);
 		String tMethodName_tName_prime = (String) _localVariable_0;
 		tMethodName.setTName(tMethodName_tName_prime);
-		return new Object[] { tMethodName, tModel, unresolved2Definiton, tMethodSignature, mMethod, tMethodDefinition,
+		return new Object[] { tMethodName, tModel, tMethodDefinition, unresolved2Definiton, tMethodSignature, mMethod,
 				csp };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_1_2_collecttranslatedelements_blackBBBBB(
-			TMethod tMethodName, MDefinitionToTMember unresolved2Definiton, TMethodSignature tMethodSignature,
-			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, TMethodDefinition tMethodDefinition) {
-		return new Object[] { tMethodName, unresolved2Definiton, tMethodSignature, mMethod, tMethodDefinition };
+			TMethod tMethodName, TMethodDefinition tMethodDefinition, MDefinitionToTMember unresolved2Definiton,
+			TMethodSignature tMethodSignature, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
+		return new Object[] { tMethodName, tMethodDefinition, unresolved2Definiton, tMethodSignature, mMethod };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_1_2_collecttranslatedelements_greenFBBBBB(
-			TMethod tMethodName, MDefinitionToTMember unresolved2Definiton, TMethodSignature tMethodSignature,
-			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, TMethodDefinition tMethodDefinition) {
+			TMethod tMethodName, TMethodDefinition tMethodDefinition, MDefinitionToTMember unresolved2Definiton,
+			TMethodSignature tMethodSignature, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(tMethodName);
+		ruleresult.getCreatedElements().add(tMethodDefinition);
 		ruleresult.getCreatedLinkElements().add(unresolved2Definiton);
 		ruleresult.getCreatedElements().add(tMethodSignature);
 		ruleresult.getTranslatedElements().add(mMethod);
-		ruleresult.getCreatedElements().add(tMethodDefinition);
-		return new Object[] { ruleresult, tMethodName, unresolved2Definiton, tMethodSignature, mMethod,
-				tMethodDefinition };
+		return new Object[] { ruleresult, tMethodName, tMethodDefinition, unresolved2Definiton, tMethodSignature,
+				mMethod };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_1_3_bookkeepingforedges_blackBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tMethodName, EObject mModel, EObject model2pm, EObject tModel,
-			EObject unresolved2Definiton, EObject tMethodSignature, EObject mMethod, EObject tMethodDefinition) {
+			PerformRuleResult ruleresult, EObject tMethodName, EObject tModel, EObject model2pm,
+			EObject tMethodDefinition, EObject mModel, EObject unresolved2Definiton, EObject tMethodSignature,
+			EObject mMethod) {
 		if (!tMethodName.equals(tModel)) {
 			if (!tMethodName.equals(unresolved2Definiton)) {
 				if (!tMethodName.equals(tMethodSignature)) {
-					if (!mModel.equals(tMethodName)) {
-						if (!mModel.equals(model2pm)) {
-							if (!mModel.equals(tModel)) {
-								if (!mModel.equals(unresolved2Definiton)) {
-									if (!mModel.equals(tMethodSignature)) {
-										if (!mModel.equals(tMethodDefinition)) {
-											if (!model2pm.equals(tMethodName)) {
-												if (!model2pm.equals(tModel)) {
-													if (!model2pm.equals(unresolved2Definiton)) {
-														if (!model2pm.equals(tMethodSignature)) {
-															if (!model2pm.equals(tMethodDefinition)) {
-																if (!tModel.equals(unresolved2Definiton)) {
-																	if (!tMethodSignature.equals(tModel)) {
-																		if (!tMethodSignature
-																				.equals(unresolved2Definiton)) {
-																			if (!mMethod.equals(tMethodName)) {
-																				if (!mMethod.equals(mModel)) {
-																					if (!mMethod.equals(model2pm)) {
-																						if (!mMethod.equals(tModel)) {
+					if (!tModel.equals(unresolved2Definiton)) {
+						if (!model2pm.equals(tMethodName)) {
+							if (!model2pm.equals(tModel)) {
+								if (!model2pm.equals(tMethodDefinition)) {
+									if (!model2pm.equals(unresolved2Definiton)) {
+										if (!model2pm.equals(tMethodSignature)) {
+											if (!tMethodDefinition.equals(tMethodName)) {
+												if (!tMethodDefinition.equals(tModel)) {
+													if (!tMethodDefinition.equals(unresolved2Definiton)) {
+														if (!tMethodDefinition.equals(tMethodSignature)) {
+															if (!mModel.equals(tMethodName)) {
+																if (!mModel.equals(tModel)) {
+																	if (!mModel.equals(model2pm)) {
+																		if (!mModel.equals(tMethodDefinition)) {
+																			if (!mModel.equals(unresolved2Definiton)) {
+																				if (!mModel.equals(tMethodSignature)) {
+																					if (!tMethodSignature
+																							.equals(tModel)) {
+																						if (!tMethodSignature.equals(
+																								unresolved2Definiton)) {
 																							if (!mMethod.equals(
-																									unresolved2Definiton)) {
+																									tMethodName)) {
 																								if (!mMethod.equals(
-																										tMethodSignature)) {
+																										tModel)) {
 																									if (!mMethod.equals(
-																											tMethodDefinition)) {
-																										if (!tMethodDefinition
-																												.equals(tMethodName)) {
-																											if (!tMethodDefinition
-																													.equals(tModel)) {
-																												if (!tMethodDefinition
+																											model2pm)) {
+																										if (!mMethod
+																												.equals(tMethodDefinition)) {
+																											if (!mMethod
+																													.equals(mModel)) {
+																												if (!mMethod
 																														.equals(unresolved2Definiton)) {
-																													if (!tMethodDefinition
+																													if (!mMethod
 																															.equals(tMethodSignature)) {
 																														return new Object[] {
 																																ruleresult,
 																																tMethodName,
-																																mModel,
-																																model2pm,
 																																tModel,
+																																model2pm,
+																																tMethodDefinition,
+																																mModel,
 																																unresolved2Definiton,
 																																tMethodSignature,
-																																mMethod,
-																																tMethodDefinition };
+																																mMethod };
 																													}
 																												}
 																											}
@@ -1644,81 +1648,81 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tMethodName, EObject mModel, EObject tModel,
-			EObject unresolved2Definiton, EObject tMethodSignature, EObject mMethod, EObject tMethodDefinition) {
+			PerformRuleResult ruleresult, EObject tMethodName, EObject tModel, EObject tMethodDefinition,
+			EObject mModel, EObject unresolved2Definiton, EObject tMethodSignature, EObject mMethod) {
 		EMoflonEdge tModel__tMethodName____methods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodName__tModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModel__mMethod____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethodSignature__tMethodDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethodDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodName__tMethodSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodSignature__tMethodName____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge unresolved2Definiton__mMethod____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge unresolved2Definiton__tMethodDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMethodSignature__tMethodDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMethodDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModel__mMethod____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge unresolved2Definiton__mMethod____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "UnresolvedMethodDeclaration";
 		String tModel__tMethodName____methods_name_prime = "methods";
 		String tMethodName__tModel____model_name_prime = "model";
-		String mModel__mMethod____unresolvedItems_name_prime = "unresolvedItems";
-		String tMethodSignature__tMethodDefinition____definitions_name_prime = "definitions";
-		String tMethodDefinition__tMethodSignature____signature_name_prime = "signature";
 		String tMethodName__tMethodSignature____signatures_name_prime = "signatures";
 		String tMethodSignature__tMethodName____method_name_prime = "method";
-		String unresolved2Definiton__mMethod____source_name_prime = "source";
 		String unresolved2Definiton__tMethodDefinition____target_name_prime = "target";
+		String tMethodSignature__tMethodDefinition____definitions_name_prime = "definitions";
+		String tMethodDefinition__tMethodSignature____signature_name_prime = "signature";
+		String mModel__mMethod____unresolvedItems_name_prime = "unresolvedItems";
+		String unresolved2Definiton__mMethod____source_name_prime = "source";
 		tModel__tMethodName____methods.setSrc(tModel);
 		tModel__tMethodName____methods.setTrg(tMethodName);
 		ruleresult.getCreatedEdges().add(tModel__tMethodName____methods);
 		tMethodName__tModel____model.setSrc(tMethodName);
 		tMethodName__tModel____model.setTrg(tModel);
 		ruleresult.getCreatedEdges().add(tMethodName__tModel____model);
-		mModel__mMethod____unresolvedItems.setSrc(mModel);
-		mModel__mMethod____unresolvedItems.setTrg(mMethod);
-		ruleresult.getTranslatedEdges().add(mModel__mMethod____unresolvedItems);
-		tMethodSignature__tMethodDefinition____definitions.setSrc(tMethodSignature);
-		tMethodSignature__tMethodDefinition____definitions.setTrg(tMethodDefinition);
-		ruleresult.getCreatedEdges().add(tMethodSignature__tMethodDefinition____definitions);
-		tMethodDefinition__tMethodSignature____signature.setSrc(tMethodDefinition);
-		tMethodDefinition__tMethodSignature____signature.setTrg(tMethodSignature);
-		ruleresult.getCreatedEdges().add(tMethodDefinition__tMethodSignature____signature);
 		tMethodName__tMethodSignature____signatures.setSrc(tMethodName);
 		tMethodName__tMethodSignature____signatures.setTrg(tMethodSignature);
 		ruleresult.getCreatedEdges().add(tMethodName__tMethodSignature____signatures);
 		tMethodSignature__tMethodName____method.setSrc(tMethodSignature);
 		tMethodSignature__tMethodName____method.setTrg(tMethodName);
 		ruleresult.getCreatedEdges().add(tMethodSignature__tMethodName____method);
-		unresolved2Definiton__mMethod____source.setSrc(unresolved2Definiton);
-		unresolved2Definiton__mMethod____source.setTrg(mMethod);
-		ruleresult.getCreatedEdges().add(unresolved2Definiton__mMethod____source);
 		unresolved2Definiton__tMethodDefinition____target.setSrc(unresolved2Definiton);
 		unresolved2Definiton__tMethodDefinition____target.setTrg(tMethodDefinition);
 		ruleresult.getCreatedEdges().add(unresolved2Definiton__tMethodDefinition____target);
+		tMethodSignature__tMethodDefinition____definitions.setSrc(tMethodSignature);
+		tMethodSignature__tMethodDefinition____definitions.setTrg(tMethodDefinition);
+		ruleresult.getCreatedEdges().add(tMethodSignature__tMethodDefinition____definitions);
+		tMethodDefinition__tMethodSignature____signature.setSrc(tMethodDefinition);
+		tMethodDefinition__tMethodSignature____signature.setTrg(tMethodSignature);
+		ruleresult.getCreatedEdges().add(tMethodDefinition__tMethodSignature____signature);
+		mModel__mMethod____unresolvedItems.setSrc(mModel);
+		mModel__mMethod____unresolvedItems.setTrg(mMethod);
+		ruleresult.getTranslatedEdges().add(mModel__mMethod____unresolvedItems);
+		unresolved2Definiton__mMethod____source.setSrc(unresolved2Definiton);
+		unresolved2Definiton__mMethod____source.setTrg(mMethod);
+		ruleresult.getCreatedEdges().add(unresolved2Definiton__mMethod____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tModel__tMethodName____methods.setName(tModel__tMethodName____methods_name_prime);
 		tMethodName__tModel____model.setName(tMethodName__tModel____model_name_prime);
-		mModel__mMethod____unresolvedItems.setName(mModel__mMethod____unresolvedItems_name_prime);
+		tMethodName__tMethodSignature____signatures.setName(tMethodName__tMethodSignature____signatures_name_prime);
+		tMethodSignature__tMethodName____method.setName(tMethodSignature__tMethodName____method_name_prime);
+		unresolved2Definiton__tMethodDefinition____target
+				.setName(unresolved2Definiton__tMethodDefinition____target_name_prime);
 		tMethodSignature__tMethodDefinition____definitions
 				.setName(tMethodSignature__tMethodDefinition____definitions_name_prime);
 		tMethodDefinition__tMethodSignature____signature
 				.setName(tMethodDefinition__tMethodSignature____signature_name_prime);
-		tMethodName__tMethodSignature____signatures.setName(tMethodName__tMethodSignature____signatures_name_prime);
-		tMethodSignature__tMethodName____method.setName(tMethodSignature__tMethodName____method_name_prime);
+		mModel__mMethod____unresolvedItems.setName(mModel__mMethod____unresolvedItems_name_prime);
 		unresolved2Definiton__mMethod____source.setName(unresolved2Definiton__mMethod____source_name_prime);
-		unresolved2Definiton__tMethodDefinition____target
-				.setName(unresolved2Definiton__tMethodDefinition____target_name_prime);
-		return new Object[] { ruleresult, tMethodName, mModel, tModel, unresolved2Definiton, tMethodSignature, mMethod,
-				tMethodDefinition, tModel__tMethodName____methods, tMethodName__tModel____model,
-				mModel__mMethod____unresolvedItems, tMethodSignature__tMethodDefinition____definitions,
-				tMethodDefinition__tMethodSignature____signature, tMethodName__tMethodSignature____signatures,
-				tMethodSignature__tMethodName____method, unresolved2Definiton__mMethod____source,
-				unresolved2Definiton__tMethodDefinition____target };
+		return new Object[] { ruleresult, tMethodName, tModel, tMethodDefinition, mModel, unresolved2Definiton,
+				tMethodSignature, mMethod, tModel__tMethodName____methods, tMethodName__tModel____model,
+				tMethodName__tMethodSignature____signatures, tMethodSignature__tMethodName____method,
+				unresolved2Definiton__tMethodDefinition____target, tMethodSignature__tMethodDefinition____definitions,
+				tMethodDefinition__tMethodSignature____signature, mModel__mMethod____unresolvedItems,
+				unresolved2Definiton__mMethod____source };
 	}
 
 	public static final void pattern_UnresolvedMethodDeclaration_1_5_registerobjects_expressionBBBBBBBBBB(
-			UnresolvedMethodDeclaration _this, PerformRuleResult ruleresult, EObject tMethodName, EObject mModel,
-			EObject model2pm, EObject tModel, EObject unresolved2Definiton, EObject tMethodSignature, EObject mMethod,
-			EObject tMethodDefinition) {
-		_this.registerObjects_FWD(ruleresult, tMethodName, mModel, model2pm, tModel, unresolved2Definiton,
-				tMethodSignature, mMethod, tMethodDefinition);
+			UnresolvedMethodDeclaration _this, PerformRuleResult ruleresult, EObject tMethodName, EObject tModel,
+			EObject model2pm, EObject tMethodDefinition, EObject mModel, EObject unresolved2Definiton,
+			EObject tMethodSignature, EObject mMethod) {
+		_this.registerObjects_FWD(ruleresult, tMethodName, tModel, model2pm, tMethodDefinition, mModel,
+				unresolved2Definiton, tMethodSignature, mMethod);
 
 	}
 
@@ -1794,69 +1798,70 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_UnresolvedMethodDeclaration_2_2_corematch_blackBFFBB(Model mModel,
+	public static final Iterable<Object[]> pattern_UnresolvedMethodDeclaration_2_2_corematch_blackFFBBB(Model mModel,
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph model2pm : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(mModel,
 				ModelToTypeGraph.class, "source")) {
 			TypeGraph tModel = model2pm.getTarget();
 			if (tModel != null) {
-				_result.add(new Object[] { mModel, model2pm, tModel, mMethod, match });
+				_result.add(new Object[] { tModel, model2pm, mModel, mMethod, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_UnresolvedMethodDeclaration_2_3_findcontext_blackBBBB(Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
+	public static final Iterable<Object[]> pattern_UnresolvedMethodDeclaration_2_3_findcontext_blackBBBB(
+			TypeGraph tModel, ModelToTypeGraph model2pm, Model mModel,
+			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tModel.equals(model2pm.getTarget())) {
-			if (mModel.equals(model2pm.getSource())) {
+		if (mModel.equals(model2pm.getSource())) {
+			if (tModel.equals(model2pm.getTarget())) {
 				if (mModel.getUnresolvedItems().contains(mMethod)) {
-					_result.add(new Object[] { mModel, model2pm, tModel, mMethod });
+					_result.add(new Object[] { tModel, model2pm, mModel, mMethod });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_UnresolvedMethodDeclaration_2_3_findcontext_greenBBBBFFFF(Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
+	public static final Object[] pattern_UnresolvedMethodDeclaration_2_3_findcontext_greenBBBBFFFF(TypeGraph tModel,
+			ModelToTypeGraph model2pm, Model mModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge model2pm__tModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model2pm__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model2pm__tModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModel__mMethod____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String model2pm__tModel____target_name_prime = "target";
 		String model2pm__mModel____source_name_prime = "source";
+		String model2pm__tModel____target_name_prime = "target";
 		String mModel__mMethod____unresolvedItems_name_prime = "unresolvedItems";
-		isApplicableMatch.getAllContextElements().add(mModel);
-		isApplicableMatch.getAllContextElements().add(model2pm);
 		isApplicableMatch.getAllContextElements().add(tModel);
+		isApplicableMatch.getAllContextElements().add(model2pm);
+		isApplicableMatch.getAllContextElements().add(mModel);
 		isApplicableMatch.getAllContextElements().add(mMethod);
-		model2pm__tModel____target.setSrc(model2pm);
-		model2pm__tModel____target.setTrg(tModel);
-		isApplicableMatch.getAllContextElements().add(model2pm__tModel____target);
 		model2pm__mModel____source.setSrc(model2pm);
 		model2pm__mModel____source.setTrg(mModel);
 		isApplicableMatch.getAllContextElements().add(model2pm__mModel____source);
+		model2pm__tModel____target.setSrc(model2pm);
+		model2pm__tModel____target.setTrg(tModel);
+		isApplicableMatch.getAllContextElements().add(model2pm__tModel____target);
 		mModel__mMethod____unresolvedItems.setSrc(mModel);
 		mModel__mMethod____unresolvedItems.setTrg(mMethod);
 		isApplicableMatch.getAllContextElements().add(mModel__mMethod____unresolvedItems);
-		model2pm__tModel____target.setName(model2pm__tModel____target_name_prime);
 		model2pm__mModel____source.setName(model2pm__mModel____source_name_prime);
+		model2pm__tModel____target.setName(model2pm__tModel____target_name_prime);
 		mModel__mMethod____unresolvedItems.setName(mModel__mMethod____unresolvedItems_name_prime);
-		return new Object[] { mModel, model2pm, tModel, mMethod, isApplicableMatch, model2pm__tModel____target,
-				model2pm__mModel____source, mModel__mMethod____unresolvedItems };
+		return new Object[] { tModel, model2pm, mModel, mMethod, isApplicableMatch, model2pm__mModel____source,
+				model2pm__tModel____target, mModel__mMethod____unresolvedItems };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_2_4_solveCSP_bindingFBBBBBB(
-			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mModel, model2pm, tModel, mMethod);
+			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, TypeGraph tModel,
+			ModelToTypeGraph model2pm, Model mModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tModel, model2pm, mModel, mMethod);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mModel, model2pm, tModel, mMethod };
+			return new Object[] { csp, _this, isApplicableMatch, tModel, model2pm, mModel, mMethod };
 		}
 		return null;
 	}
@@ -1866,10 +1871,10 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_2_4_solveCSP_bindingAndBlackFBBBBBB(
-			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
+			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, TypeGraph tModel,
+			ModelToTypeGraph model2pm, Model mModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
 		Object[] result_pattern_UnresolvedMethodDeclaration_2_4_solveCSP_binding = pattern_UnresolvedMethodDeclaration_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mModel, model2pm, tModel, mMethod);
+				_this, isApplicableMatch, tModel, model2pm, mModel, mMethod);
 		if (result_pattern_UnresolvedMethodDeclaration_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedMethodDeclaration_2_4_solveCSP_binding[0];
 
@@ -1877,7 +1882,7 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_UnresolvedMethodDeclaration_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mModel, model2pm, tModel, mMethod };
+				return new Object[] { csp, _this, isApplicableMatch, tModel, model2pm, mModel, mMethod };
 			}
 		}
 		return null;
@@ -1913,18 +1918,18 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_10_1_initialbindings_blackBBBBBB(
 			UnresolvedMethodDeclaration _this, Match match, TMethod tMethodName, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {
-		return new Object[] { _this, match, tMethodName, tModel, tMethodSignature, tMethodDefinition };
+			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
+		return new Object[] { _this, match, tMethodName, tModel, tMethodDefinition, tMethodSignature };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_10_2_SolveCSP_bindingFBBBBBB(
 			UnresolvedMethodDeclaration _this, Match match, TMethod tMethodName, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tMethodName, tModel, tMethodSignature,
-				tMethodDefinition);
+			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tMethodName, tModel, tMethodDefinition,
+				tMethodSignature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tMethodName, tModel, tMethodSignature, tMethodDefinition };
+			return new Object[] { csp, _this, match, tMethodName, tModel, tMethodDefinition, tMethodSignature };
 		}
 		return null;
 	}
@@ -1935,9 +1940,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_10_2_SolveCSP_bindingAndBlackFBBBBBB(
 			UnresolvedMethodDeclaration _this, Match match, TMethod tMethodName, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {
+			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
 		Object[] result_pattern_UnresolvedMethodDeclaration_10_2_SolveCSP_binding = pattern_UnresolvedMethodDeclaration_10_2_SolveCSP_bindingFBBBBBB(
-				_this, match, tMethodName, tModel, tMethodSignature, tMethodDefinition);
+				_this, match, tMethodName, tModel, tMethodDefinition, tMethodSignature);
 		if (result_pattern_UnresolvedMethodDeclaration_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedMethodDeclaration_10_2_SolveCSP_binding[0];
 
@@ -1945,7 +1950,7 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_UnresolvedMethodDeclaration_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tMethodName, tModel, tMethodSignature, tMethodDefinition };
+				return new Object[] { csp, _this, match, tMethodName, tModel, tMethodDefinition, tMethodSignature };
 			}
 		}
 		return null;
@@ -1959,65 +1964,65 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_10_4_collectelementstobetranslated_blackBBBBB(
-			Match match, TMethod tMethodName, TypeGraph tModel, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition) {
-		return new Object[] { match, tMethodName, tModel, tMethodSignature, tMethodDefinition };
+			Match match, TMethod tMethodName, TypeGraph tModel, TMethodDefinition tMethodDefinition,
+			TMethodSignature tMethodSignature) {
+		return new Object[] { match, tMethodName, tModel, tMethodDefinition, tMethodSignature };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_10_4_collectelementstobetranslated_greenBBBBBFFFFFF(
-			Match match, TMethod tMethodName, TypeGraph tModel, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition) {
+			Match match, TMethod tMethodName, TypeGraph tModel, TMethodDefinition tMethodDefinition,
+			TMethodSignature tMethodSignature) {
 		EMoflonEdge tModel__tMethodName____methods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodName__tModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethodSignature__tMethodDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethodDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodName__tMethodSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodSignature__tMethodName____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMethodSignature__tMethodDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMethodDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tMethodName);
-		match.getToBeTranslatedNodes().add(tMethodSignature);
 		match.getToBeTranslatedNodes().add(tMethodDefinition);
+		match.getToBeTranslatedNodes().add(tMethodSignature);
 		String tModel__tMethodName____methods_name_prime = "methods";
 		String tMethodName__tModel____model_name_prime = "model";
-		String tMethodSignature__tMethodDefinition____definitions_name_prime = "definitions";
-		String tMethodDefinition__tMethodSignature____signature_name_prime = "signature";
 		String tMethodName__tMethodSignature____signatures_name_prime = "signatures";
 		String tMethodSignature__tMethodName____method_name_prime = "method";
+		String tMethodSignature__tMethodDefinition____definitions_name_prime = "definitions";
+		String tMethodDefinition__tMethodSignature____signature_name_prime = "signature";
 		tModel__tMethodName____methods.setSrc(tModel);
 		tModel__tMethodName____methods.setTrg(tMethodName);
 		match.getToBeTranslatedEdges().add(tModel__tMethodName____methods);
 		tMethodName__tModel____model.setSrc(tMethodName);
 		tMethodName__tModel____model.setTrg(tModel);
 		match.getToBeTranslatedEdges().add(tMethodName__tModel____model);
-		tMethodSignature__tMethodDefinition____definitions.setSrc(tMethodSignature);
-		tMethodSignature__tMethodDefinition____definitions.setTrg(tMethodDefinition);
-		match.getToBeTranslatedEdges().add(tMethodSignature__tMethodDefinition____definitions);
-		tMethodDefinition__tMethodSignature____signature.setSrc(tMethodDefinition);
-		tMethodDefinition__tMethodSignature____signature.setTrg(tMethodSignature);
-		match.getToBeTranslatedEdges().add(tMethodDefinition__tMethodSignature____signature);
 		tMethodName__tMethodSignature____signatures.setSrc(tMethodName);
 		tMethodName__tMethodSignature____signatures.setTrg(tMethodSignature);
 		match.getToBeTranslatedEdges().add(tMethodName__tMethodSignature____signatures);
 		tMethodSignature__tMethodName____method.setSrc(tMethodSignature);
 		tMethodSignature__tMethodName____method.setTrg(tMethodName);
 		match.getToBeTranslatedEdges().add(tMethodSignature__tMethodName____method);
+		tMethodSignature__tMethodDefinition____definitions.setSrc(tMethodSignature);
+		tMethodSignature__tMethodDefinition____definitions.setTrg(tMethodDefinition);
+		match.getToBeTranslatedEdges().add(tMethodSignature__tMethodDefinition____definitions);
+		tMethodDefinition__tMethodSignature____signature.setSrc(tMethodDefinition);
+		tMethodDefinition__tMethodSignature____signature.setTrg(tMethodSignature);
+		match.getToBeTranslatedEdges().add(tMethodDefinition__tMethodSignature____signature);
 		tModel__tMethodName____methods.setName(tModel__tMethodName____methods_name_prime);
 		tMethodName__tModel____model.setName(tMethodName__tModel____model_name_prime);
+		tMethodName__tMethodSignature____signatures.setName(tMethodName__tMethodSignature____signatures_name_prime);
+		tMethodSignature__tMethodName____method.setName(tMethodSignature__tMethodName____method_name_prime);
 		tMethodSignature__tMethodDefinition____definitions
 				.setName(tMethodSignature__tMethodDefinition____definitions_name_prime);
 		tMethodDefinition__tMethodSignature____signature
 				.setName(tMethodDefinition__tMethodSignature____signature_name_prime);
-		tMethodName__tMethodSignature____signatures.setName(tMethodName__tMethodSignature____signatures_name_prime);
-		tMethodSignature__tMethodName____method.setName(tMethodSignature__tMethodName____method_name_prime);
-		return new Object[] { match, tMethodName, tModel, tMethodSignature, tMethodDefinition,
+		return new Object[] { match, tMethodName, tModel, tMethodDefinition, tMethodSignature,
 				tModel__tMethodName____methods, tMethodName__tModel____model,
-				tMethodSignature__tMethodDefinition____definitions, tMethodDefinition__tMethodSignature____signature,
-				tMethodName__tMethodSignature____signatures, tMethodSignature__tMethodName____method };
+				tMethodName__tMethodSignature____signatures, tMethodSignature__tMethodName____method,
+				tMethodSignature__tMethodDefinition____definitions, tMethodDefinition__tMethodSignature____signature };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_10_5_collectcontextelements_blackBBBBB(Match match,
-			TMethod tMethodName, TypeGraph tModel, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition) {
-		return new Object[] { match, tMethodName, tModel, tMethodSignature, tMethodDefinition };
+			TMethod tMethodName, TypeGraph tModel, TMethodDefinition tMethodDefinition,
+			TMethodSignature tMethodSignature) {
+		return new Object[] { match, tMethodName, tModel, tMethodDefinition, tMethodSignature };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_10_5_collectcontextelements_greenBB(Match match,
@@ -2028,8 +2033,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final void pattern_UnresolvedMethodDeclaration_10_6_registerobjectstomatch_expressionBBBBBB(
 			UnresolvedMethodDeclaration _this, Match match, TMethod tMethodName, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {
-		_this.registerObjectsToMatch_BWD(match, tMethodName, tModel, tMethodSignature, tMethodDefinition);
+			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
+		_this.registerObjectsToMatch_BWD(match, tMethodName, tModel, tMethodDefinition, tMethodSignature);
 
 	}
 
@@ -2046,31 +2051,31 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_UnresolvedMethodDeclaration_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("tMethodName");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mModel");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tModel");
 		EObject _localVariable_2 = isApplicableMatch.getObject("model2pm");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tModel");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tMethodSignature");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tMethodDefinition");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tMethodDefinition");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mModel");
+		EObject _localVariable_5 = isApplicableMatch.getObject("tMethodSignature");
 		EObject tmpTMethodName = _localVariable_0;
-		EObject tmpMModel = _localVariable_1;
+		EObject tmpTModel = _localVariable_1;
 		EObject tmpModel2pm = _localVariable_2;
-		EObject tmpTModel = _localVariable_3;
-		EObject tmpTMethodSignature = _localVariable_4;
-		EObject tmpTMethodDefinition = _localVariable_5;
+		EObject tmpTMethodDefinition = _localVariable_3;
+		EObject tmpMModel = _localVariable_4;
+		EObject tmpTMethodSignature = _localVariable_5;
 		if (tmpTMethodName instanceof TMethod) {
 			TMethod tMethodName = (TMethod) tmpTMethodName;
-			if (tmpMModel instanceof Model) {
-				Model mModel = (Model) tmpMModel;
+			if (tmpTModel instanceof TypeGraph) {
+				TypeGraph tModel = (TypeGraph) tmpTModel;
 				if (tmpModel2pm instanceof ModelToTypeGraph) {
 					ModelToTypeGraph model2pm = (ModelToTypeGraph) tmpModel2pm;
-					if (tmpTModel instanceof TypeGraph) {
-						TypeGraph tModel = (TypeGraph) tmpTModel;
-						if (tmpTMethodSignature instanceof TMethodSignature) {
-							TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
-							if (tmpTMethodDefinition instanceof TMethodDefinition) {
-								TMethodDefinition tMethodDefinition = (TMethodDefinition) tmpTMethodDefinition;
-								return new Object[] { tMethodName, mModel, model2pm, tModel, tMethodSignature,
-										tMethodDefinition, isApplicableMatch };
+					if (tmpTMethodDefinition instanceof TMethodDefinition) {
+						TMethodDefinition tMethodDefinition = (TMethodDefinition) tmpTMethodDefinition;
+						if (tmpMModel instanceof Model) {
+							Model mModel = (Model) tmpMModel;
+							if (tmpTMethodSignature instanceof TMethodSignature) {
+								TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
+								return new Object[] { tMethodName, tModel, model2pm, tMethodDefinition, mModel,
+										tMethodSignature, isApplicableMatch };
 							}
 						}
 					}
@@ -2081,13 +2086,13 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_11_1_performtransformation_blackBBBBBBFBB(
-			TMethod tMethodName, Model mModel, ModelToTypeGraph model2pm, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition, UnresolvedMethodDeclaration _this,
+			TMethod tMethodName, TypeGraph tModel, ModelToTypeGraph model2pm, TMethodDefinition tMethodDefinition,
+			Model mModel, TMethodSignature tMethodSignature, UnresolvedMethodDeclaration _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tMethodName, mModel, model2pm, tModel, tMethodSignature, tMethodDefinition, csp,
+				return new Object[] { tMethodName, tModel, model2pm, tMethodDefinition, mModel, tMethodSignature, csp,
 						_this, isApplicableMatch };
 			}
 		}
@@ -2100,27 +2105,27 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 				isApplicableMatch);
 		if (result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding != null) {
 			TMethod tMethodName = (TMethod) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding[0];
-			Model mModel = (Model) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding[1];
+			TypeGraph tModel = (TypeGraph) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding[1];
 			ModelToTypeGraph model2pm = (ModelToTypeGraph) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding[2];
-			TypeGraph tModel = (TypeGraph) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding[3];
-			TMethodSignature tMethodSignature = (TMethodSignature) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding[4];
-			TMethodDefinition tMethodDefinition = (TMethodDefinition) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding[5];
+			TMethodDefinition tMethodDefinition = (TMethodDefinition) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding[3];
+			Model mModel = (Model) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding[4];
+			TMethodSignature tMethodSignature = (TMethodSignature) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_black = pattern_UnresolvedMethodDeclaration_11_1_performtransformation_blackBBBBBBFBB(
-					tMethodName, mModel, model2pm, tModel, tMethodSignature, tMethodDefinition, _this,
+					tMethodName, tModel, model2pm, tMethodDefinition, mModel, tMethodSignature, _this,
 					isApplicableMatch);
 			if (result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_UnresolvedMethodDeclaration_11_1_performtransformation_black[6];
 
-				return new Object[] { tMethodName, mModel, model2pm, tModel, tMethodSignature, tMethodDefinition, csp,
+				return new Object[] { tMethodName, tModel, model2pm, tMethodDefinition, mModel, tMethodSignature, csp,
 						_this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_UnresolvedMethodDeclaration_11_1_performtransformation_greenBFFBB(Model mModel,
-			TMethodDefinition tMethodDefinition, CSP csp) {
+	public static final Object[] pattern_UnresolvedMethodDeclaration_11_1_performtransformation_greenBBFFB(
+			TMethodDefinition tMethodDefinition, Model mModel, CSP csp) {
 		MDefinitionToTMember unresolved2Definiton = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = JavaFactory.eINSTANCE
 				.createUnresolvedMethodDeclaration();
@@ -2130,77 +2135,79 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		unresolved2Definiton.setSource(mMethod);
 		String mMethod_name_prime = (String) _localVariable_0;
 		mMethod.setName(mMethod_name_prime);
-		return new Object[] { mModel, unresolved2Definiton, mMethod, tMethodDefinition, csp };
+		return new Object[] { tMethodDefinition, mModel, unresolved2Definiton, mMethod, csp };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_11_2_collecttranslatedelements_blackBBBBB(
-			TMethod tMethodName, MDefinitionToTMember unresolved2Definiton, TMethodSignature tMethodSignature,
-			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, TMethodDefinition tMethodDefinition) {
-		return new Object[] { tMethodName, unresolved2Definiton, tMethodSignature, mMethod, tMethodDefinition };
+			TMethod tMethodName, TMethodDefinition tMethodDefinition, MDefinitionToTMember unresolved2Definiton,
+			TMethodSignature tMethodSignature, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
+		return new Object[] { tMethodName, tMethodDefinition, unresolved2Definiton, tMethodSignature, mMethod };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_11_2_collecttranslatedelements_greenFBBBBB(
-			TMethod tMethodName, MDefinitionToTMember unresolved2Definiton, TMethodSignature tMethodSignature,
-			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, TMethodDefinition tMethodDefinition) {
+			TMethod tMethodName, TMethodDefinition tMethodDefinition, MDefinitionToTMember unresolved2Definiton,
+			TMethodSignature tMethodSignature, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(tMethodName);
+		ruleresult.getTranslatedElements().add(tMethodDefinition);
 		ruleresult.getCreatedLinkElements().add(unresolved2Definiton);
 		ruleresult.getTranslatedElements().add(tMethodSignature);
 		ruleresult.getCreatedElements().add(mMethod);
-		ruleresult.getTranslatedElements().add(tMethodDefinition);
-		return new Object[] { ruleresult, tMethodName, unresolved2Definiton, tMethodSignature, mMethod,
-				tMethodDefinition };
+		return new Object[] { ruleresult, tMethodName, tMethodDefinition, unresolved2Definiton, tMethodSignature,
+				mMethod };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_11_3_bookkeepingforedges_blackBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tMethodName, EObject mModel, EObject model2pm, EObject tModel,
-			EObject unresolved2Definiton, EObject tMethodSignature, EObject mMethod, EObject tMethodDefinition) {
+			PerformRuleResult ruleresult, EObject tMethodName, EObject tModel, EObject model2pm,
+			EObject tMethodDefinition, EObject mModel, EObject unresolved2Definiton, EObject tMethodSignature,
+			EObject mMethod) {
 		if (!tMethodName.equals(tModel)) {
 			if (!tMethodName.equals(unresolved2Definiton)) {
 				if (!tMethodName.equals(tMethodSignature)) {
-					if (!mModel.equals(tMethodName)) {
-						if (!mModel.equals(model2pm)) {
-							if (!mModel.equals(tModel)) {
-								if (!mModel.equals(unresolved2Definiton)) {
-									if (!mModel.equals(tMethodSignature)) {
-										if (!mModel.equals(tMethodDefinition)) {
-											if (!model2pm.equals(tMethodName)) {
-												if (!model2pm.equals(tModel)) {
-													if (!model2pm.equals(unresolved2Definiton)) {
-														if (!model2pm.equals(tMethodSignature)) {
-															if (!model2pm.equals(tMethodDefinition)) {
-																if (!tModel.equals(unresolved2Definiton)) {
-																	if (!tMethodSignature.equals(tModel)) {
-																		if (!tMethodSignature
-																				.equals(unresolved2Definiton)) {
-																			if (!mMethod.equals(tMethodName)) {
-																				if (!mMethod.equals(mModel)) {
-																					if (!mMethod.equals(model2pm)) {
-																						if (!mMethod.equals(tModel)) {
+					if (!tModel.equals(unresolved2Definiton)) {
+						if (!model2pm.equals(tMethodName)) {
+							if (!model2pm.equals(tModel)) {
+								if (!model2pm.equals(tMethodDefinition)) {
+									if (!model2pm.equals(unresolved2Definiton)) {
+										if (!model2pm.equals(tMethodSignature)) {
+											if (!tMethodDefinition.equals(tMethodName)) {
+												if (!tMethodDefinition.equals(tModel)) {
+													if (!tMethodDefinition.equals(unresolved2Definiton)) {
+														if (!tMethodDefinition.equals(tMethodSignature)) {
+															if (!mModel.equals(tMethodName)) {
+																if (!mModel.equals(tModel)) {
+																	if (!mModel.equals(model2pm)) {
+																		if (!mModel.equals(tMethodDefinition)) {
+																			if (!mModel.equals(unresolved2Definiton)) {
+																				if (!mModel.equals(tMethodSignature)) {
+																					if (!tMethodSignature
+																							.equals(tModel)) {
+																						if (!tMethodSignature.equals(
+																								unresolved2Definiton)) {
 																							if (!mMethod.equals(
-																									unresolved2Definiton)) {
+																									tMethodName)) {
 																								if (!mMethod.equals(
-																										tMethodSignature)) {
+																										tModel)) {
 																									if (!mMethod.equals(
-																											tMethodDefinition)) {
-																										if (!tMethodDefinition
-																												.equals(tMethodName)) {
-																											if (!tMethodDefinition
-																													.equals(tModel)) {
-																												if (!tMethodDefinition
+																											model2pm)) {
+																										if (!mMethod
+																												.equals(tMethodDefinition)) {
+																											if (!mMethod
+																													.equals(mModel)) {
+																												if (!mMethod
 																														.equals(unresolved2Definiton)) {
-																													if (!tMethodDefinition
+																													if (!mMethod
 																															.equals(tMethodSignature)) {
 																														return new Object[] {
 																																ruleresult,
 																																tMethodName,
-																																mModel,
-																																model2pm,
 																																tModel,
+																																model2pm,
+																																tMethodDefinition,
+																																mModel,
 																																unresolved2Definiton,
 																																tMethodSignature,
-																																mMethod,
-																																tMethodDefinition };
+																																mMethod };
 																													}
 																												}
 																											}
@@ -2233,81 +2240,81 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tMethodName, EObject mModel, EObject tModel,
-			EObject unresolved2Definiton, EObject tMethodSignature, EObject mMethod, EObject tMethodDefinition) {
+			PerformRuleResult ruleresult, EObject tMethodName, EObject tModel, EObject tMethodDefinition,
+			EObject mModel, EObject unresolved2Definiton, EObject tMethodSignature, EObject mMethod) {
 		EMoflonEdge tModel__tMethodName____methods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodName__tModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModel__mMethod____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethodSignature__tMethodDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethodDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodName__tMethodSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodSignature__tMethodName____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge unresolved2Definiton__mMethod____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge unresolved2Definiton__tMethodDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMethodSignature__tMethodDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMethodDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModel__mMethod____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge unresolved2Definiton__mMethod____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "UnresolvedMethodDeclaration";
 		String tModel__tMethodName____methods_name_prime = "methods";
 		String tMethodName__tModel____model_name_prime = "model";
-		String mModel__mMethod____unresolvedItems_name_prime = "unresolvedItems";
-		String tMethodSignature__tMethodDefinition____definitions_name_prime = "definitions";
-		String tMethodDefinition__tMethodSignature____signature_name_prime = "signature";
 		String tMethodName__tMethodSignature____signatures_name_prime = "signatures";
 		String tMethodSignature__tMethodName____method_name_prime = "method";
-		String unresolved2Definiton__mMethod____source_name_prime = "source";
 		String unresolved2Definiton__tMethodDefinition____target_name_prime = "target";
+		String tMethodSignature__tMethodDefinition____definitions_name_prime = "definitions";
+		String tMethodDefinition__tMethodSignature____signature_name_prime = "signature";
+		String mModel__mMethod____unresolvedItems_name_prime = "unresolvedItems";
+		String unresolved2Definiton__mMethod____source_name_prime = "source";
 		tModel__tMethodName____methods.setSrc(tModel);
 		tModel__tMethodName____methods.setTrg(tMethodName);
 		ruleresult.getTranslatedEdges().add(tModel__tMethodName____methods);
 		tMethodName__tModel____model.setSrc(tMethodName);
 		tMethodName__tModel____model.setTrg(tModel);
 		ruleresult.getTranslatedEdges().add(tMethodName__tModel____model);
-		mModel__mMethod____unresolvedItems.setSrc(mModel);
-		mModel__mMethod____unresolvedItems.setTrg(mMethod);
-		ruleresult.getCreatedEdges().add(mModel__mMethod____unresolvedItems);
-		tMethodSignature__tMethodDefinition____definitions.setSrc(tMethodSignature);
-		tMethodSignature__tMethodDefinition____definitions.setTrg(tMethodDefinition);
-		ruleresult.getTranslatedEdges().add(tMethodSignature__tMethodDefinition____definitions);
-		tMethodDefinition__tMethodSignature____signature.setSrc(tMethodDefinition);
-		tMethodDefinition__tMethodSignature____signature.setTrg(tMethodSignature);
-		ruleresult.getTranslatedEdges().add(tMethodDefinition__tMethodSignature____signature);
 		tMethodName__tMethodSignature____signatures.setSrc(tMethodName);
 		tMethodName__tMethodSignature____signatures.setTrg(tMethodSignature);
 		ruleresult.getTranslatedEdges().add(tMethodName__tMethodSignature____signatures);
 		tMethodSignature__tMethodName____method.setSrc(tMethodSignature);
 		tMethodSignature__tMethodName____method.setTrg(tMethodName);
 		ruleresult.getTranslatedEdges().add(tMethodSignature__tMethodName____method);
-		unresolved2Definiton__mMethod____source.setSrc(unresolved2Definiton);
-		unresolved2Definiton__mMethod____source.setTrg(mMethod);
-		ruleresult.getCreatedEdges().add(unresolved2Definiton__mMethod____source);
 		unresolved2Definiton__tMethodDefinition____target.setSrc(unresolved2Definiton);
 		unresolved2Definiton__tMethodDefinition____target.setTrg(tMethodDefinition);
 		ruleresult.getCreatedEdges().add(unresolved2Definiton__tMethodDefinition____target);
+		tMethodSignature__tMethodDefinition____definitions.setSrc(tMethodSignature);
+		tMethodSignature__tMethodDefinition____definitions.setTrg(tMethodDefinition);
+		ruleresult.getTranslatedEdges().add(tMethodSignature__tMethodDefinition____definitions);
+		tMethodDefinition__tMethodSignature____signature.setSrc(tMethodDefinition);
+		tMethodDefinition__tMethodSignature____signature.setTrg(tMethodSignature);
+		ruleresult.getTranslatedEdges().add(tMethodDefinition__tMethodSignature____signature);
+		mModel__mMethod____unresolvedItems.setSrc(mModel);
+		mModel__mMethod____unresolvedItems.setTrg(mMethod);
+		ruleresult.getCreatedEdges().add(mModel__mMethod____unresolvedItems);
+		unresolved2Definiton__mMethod____source.setSrc(unresolved2Definiton);
+		unresolved2Definiton__mMethod____source.setTrg(mMethod);
+		ruleresult.getCreatedEdges().add(unresolved2Definiton__mMethod____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tModel__tMethodName____methods.setName(tModel__tMethodName____methods_name_prime);
 		tMethodName__tModel____model.setName(tMethodName__tModel____model_name_prime);
-		mModel__mMethod____unresolvedItems.setName(mModel__mMethod____unresolvedItems_name_prime);
+		tMethodName__tMethodSignature____signatures.setName(tMethodName__tMethodSignature____signatures_name_prime);
+		tMethodSignature__tMethodName____method.setName(tMethodSignature__tMethodName____method_name_prime);
+		unresolved2Definiton__tMethodDefinition____target
+				.setName(unresolved2Definiton__tMethodDefinition____target_name_prime);
 		tMethodSignature__tMethodDefinition____definitions
 				.setName(tMethodSignature__tMethodDefinition____definitions_name_prime);
 		tMethodDefinition__tMethodSignature____signature
 				.setName(tMethodDefinition__tMethodSignature____signature_name_prime);
-		tMethodName__tMethodSignature____signatures.setName(tMethodName__tMethodSignature____signatures_name_prime);
-		tMethodSignature__tMethodName____method.setName(tMethodSignature__tMethodName____method_name_prime);
+		mModel__mMethod____unresolvedItems.setName(mModel__mMethod____unresolvedItems_name_prime);
 		unresolved2Definiton__mMethod____source.setName(unresolved2Definiton__mMethod____source_name_prime);
-		unresolved2Definiton__tMethodDefinition____target
-				.setName(unresolved2Definiton__tMethodDefinition____target_name_prime);
-		return new Object[] { ruleresult, tMethodName, mModel, tModel, unresolved2Definiton, tMethodSignature, mMethod,
-				tMethodDefinition, tModel__tMethodName____methods, tMethodName__tModel____model,
-				mModel__mMethod____unresolvedItems, tMethodSignature__tMethodDefinition____definitions,
-				tMethodDefinition__tMethodSignature____signature, tMethodName__tMethodSignature____signatures,
-				tMethodSignature__tMethodName____method, unresolved2Definiton__mMethod____source,
-				unresolved2Definiton__tMethodDefinition____target };
+		return new Object[] { ruleresult, tMethodName, tModel, tMethodDefinition, mModel, unresolved2Definiton,
+				tMethodSignature, mMethod, tModel__tMethodName____methods, tMethodName__tModel____model,
+				tMethodName__tMethodSignature____signatures, tMethodSignature__tMethodName____method,
+				unresolved2Definiton__tMethodDefinition____target, tMethodSignature__tMethodDefinition____definitions,
+				tMethodDefinition__tMethodSignature____signature, mModel__mMethod____unresolvedItems,
+				unresolved2Definiton__mMethod____source };
 	}
 
 	public static final void pattern_UnresolvedMethodDeclaration_11_5_registerobjects_expressionBBBBBBBBBB(
-			UnresolvedMethodDeclaration _this, PerformRuleResult ruleresult, EObject tMethodName, EObject mModel,
-			EObject model2pm, EObject tModel, EObject unresolved2Definiton, EObject tMethodSignature, EObject mMethod,
-			EObject tMethodDefinition) {
-		_this.registerObjects_BWD(ruleresult, tMethodName, mModel, model2pm, tModel, unresolved2Definiton,
-				tMethodSignature, mMethod, tMethodDefinition);
+			UnresolvedMethodDeclaration _this, PerformRuleResult ruleresult, EObject tMethodName, EObject tModel,
+			EObject model2pm, EObject tMethodDefinition, EObject mModel, EObject unresolved2Definiton,
+			EObject tMethodSignature, EObject mMethod) {
+		_this.registerObjects_BWD(ruleresult, tMethodName, tModel, model2pm, tMethodDefinition, mModel,
+				unresolved2Definiton, tMethodSignature, mMethod);
 
 	}
 
@@ -2371,21 +2378,21 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_UnresolvedMethodDeclaration_12_2_corematch_bindingFFFFB(Match match) {
 		EObject _localVariable_0 = match.getObject("tMethodName");
 		EObject _localVariable_1 = match.getObject("tModel");
-		EObject _localVariable_2 = match.getObject("tMethodSignature");
-		EObject _localVariable_3 = match.getObject("tMethodDefinition");
+		EObject _localVariable_2 = match.getObject("tMethodDefinition");
+		EObject _localVariable_3 = match.getObject("tMethodSignature");
 		EObject tmpTMethodName = _localVariable_0;
 		EObject tmpTModel = _localVariable_1;
-		EObject tmpTMethodSignature = _localVariable_2;
-		EObject tmpTMethodDefinition = _localVariable_3;
+		EObject tmpTMethodDefinition = _localVariable_2;
+		EObject tmpTMethodSignature = _localVariable_3;
 		if (tmpTMethodName instanceof TMethod) {
 			TMethod tMethodName = (TMethod) tmpTMethodName;
 			if (tmpTModel instanceof TypeGraph) {
 				TypeGraph tModel = (TypeGraph) tmpTModel;
-				if (tmpTMethodSignature instanceof TMethodSignature) {
-					TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
-					if (tmpTMethodDefinition instanceof TMethodDefinition) {
-						TMethodDefinition tMethodDefinition = (TMethodDefinition) tmpTMethodDefinition;
-						return new Object[] { tMethodName, tModel, tMethodSignature, tMethodDefinition, match };
+				if (tmpTMethodDefinition instanceof TMethodDefinition) {
+					TMethodDefinition tMethodDefinition = (TMethodDefinition) tmpTMethodDefinition;
+					if (tmpTMethodSignature instanceof TMethodSignature) {
+						TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
+						return new Object[] { tMethodName, tModel, tMethodDefinition, tMethodSignature, match };
 					}
 				}
 			}
@@ -2393,15 +2400,15 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_UnresolvedMethodDeclaration_12_2_corematch_blackBFFBBBB(
-			TMethod tMethodName, TypeGraph tModel, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition, Match match) {
+	public static final Iterable<Object[]> pattern_UnresolvedMethodDeclaration_12_2_corematch_blackBBFBFBB(
+			TMethod tMethodName, TypeGraph tModel, TMethodDefinition tMethodDefinition,
+			TMethodSignature tMethodSignature, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph model2pm : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(tModel,
 				ModelToTypeGraph.class, "target")) {
 			Model mModel = model2pm.getSource();
 			if (mModel != null) {
-				_result.add(new Object[] { tMethodName, mModel, model2pm, tModel, tMethodSignature, tMethodDefinition,
+				_result.add(new Object[] { tMethodName, tModel, model2pm, tMethodDefinition, mModel, tMethodSignature,
 						match });
 			}
 
@@ -2410,16 +2417,16 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Iterable<Object[]> pattern_UnresolvedMethodDeclaration_12_3_findcontext_blackBBBBBB(
-			TMethod tMethodName, Model mModel, ModelToTypeGraph model2pm, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {
+			TMethod tMethodName, TypeGraph tModel, ModelToTypeGraph model2pm, TMethodDefinition tMethodDefinition,
+			Model mModel, TMethodSignature tMethodSignature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tModel.equals(model2pm.getTarget())) {
-			if (tModel.getMethods().contains(tMethodName)) {
-				if (mModel.equals(model2pm.getSource())) {
-					if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
-						if (tMethodName.getSignatures().contains(tMethodSignature)) {
-							_result.add(new Object[] { tMethodName, mModel, model2pm, tModel, tMethodSignature,
-									tMethodDefinition });
+		if (tModel.getMethods().contains(tMethodName)) {
+			if (mModel.equals(model2pm.getSource())) {
+				if (tMethodName.getSignatures().contains(tMethodSignature)) {
+					if (tModel.equals(model2pm.getTarget())) {
+						if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
+							_result.add(new Object[] { tMethodName, tModel, model2pm, tMethodDefinition, mModel,
+									tMethodSignature });
 						}
 					}
 				}
@@ -2429,34 +2436,31 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_12_3_findcontext_greenBBBBBBFFFFFFFFF(
-			TMethod tMethodName, Model mModel, ModelToTypeGraph model2pm, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {
+			TMethod tMethodName, TypeGraph tModel, ModelToTypeGraph model2pm, TMethodDefinition tMethodDefinition,
+			Model mModel, TMethodSignature tMethodSignature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge model2pm__tModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tModel__tMethodName____methods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodName__tModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model2pm__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethodSignature__tMethodDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMethodDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodName__tMethodSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMethodSignature__tMethodName____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String model2pm__tModel____target_name_prime = "target";
+		EMoflonEdge model2pm__tModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMethodSignature__tMethodDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMethodDefinition__tMethodSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tModel__tMethodName____methods_name_prime = "methods";
 		String tMethodName__tModel____model_name_prime = "model";
 		String model2pm__mModel____source_name_prime = "source";
-		String tMethodSignature__tMethodDefinition____definitions_name_prime = "definitions";
-		String tMethodDefinition__tMethodSignature____signature_name_prime = "signature";
 		String tMethodName__tMethodSignature____signatures_name_prime = "signatures";
 		String tMethodSignature__tMethodName____method_name_prime = "method";
+		String model2pm__tModel____target_name_prime = "target";
+		String tMethodSignature__tMethodDefinition____definitions_name_prime = "definitions";
+		String tMethodDefinition__tMethodSignature____signature_name_prime = "signature";
 		isApplicableMatch.getAllContextElements().add(tMethodName);
-		isApplicableMatch.getAllContextElements().add(mModel);
-		isApplicableMatch.getAllContextElements().add(model2pm);
 		isApplicableMatch.getAllContextElements().add(tModel);
-		isApplicableMatch.getAllContextElements().add(tMethodSignature);
+		isApplicableMatch.getAllContextElements().add(model2pm);
 		isApplicableMatch.getAllContextElements().add(tMethodDefinition);
-		model2pm__tModel____target.setSrc(model2pm);
-		model2pm__tModel____target.setTrg(tModel);
-		isApplicableMatch.getAllContextElements().add(model2pm__tModel____target);
+		isApplicableMatch.getAllContextElements().add(mModel);
+		isApplicableMatch.getAllContextElements().add(tMethodSignature);
 		tModel__tMethodName____methods.setSrc(tModel);
 		tModel__tMethodName____methods.setTrg(tMethodName);
 		isApplicableMatch.getAllContextElements().add(tModel__tMethodName____methods);
@@ -2466,45 +2470,48 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		model2pm__mModel____source.setSrc(model2pm);
 		model2pm__mModel____source.setTrg(mModel);
 		isApplicableMatch.getAllContextElements().add(model2pm__mModel____source);
-		tMethodSignature__tMethodDefinition____definitions.setSrc(tMethodSignature);
-		tMethodSignature__tMethodDefinition____definitions.setTrg(tMethodDefinition);
-		isApplicableMatch.getAllContextElements().add(tMethodSignature__tMethodDefinition____definitions);
-		tMethodDefinition__tMethodSignature____signature.setSrc(tMethodDefinition);
-		tMethodDefinition__tMethodSignature____signature.setTrg(tMethodSignature);
-		isApplicableMatch.getAllContextElements().add(tMethodDefinition__tMethodSignature____signature);
 		tMethodName__tMethodSignature____signatures.setSrc(tMethodName);
 		tMethodName__tMethodSignature____signatures.setTrg(tMethodSignature);
 		isApplicableMatch.getAllContextElements().add(tMethodName__tMethodSignature____signatures);
 		tMethodSignature__tMethodName____method.setSrc(tMethodSignature);
 		tMethodSignature__tMethodName____method.setTrg(tMethodName);
 		isApplicableMatch.getAllContextElements().add(tMethodSignature__tMethodName____method);
-		model2pm__tModel____target.setName(model2pm__tModel____target_name_prime);
+		model2pm__tModel____target.setSrc(model2pm);
+		model2pm__tModel____target.setTrg(tModel);
+		isApplicableMatch.getAllContextElements().add(model2pm__tModel____target);
+		tMethodSignature__tMethodDefinition____definitions.setSrc(tMethodSignature);
+		tMethodSignature__tMethodDefinition____definitions.setTrg(tMethodDefinition);
+		isApplicableMatch.getAllContextElements().add(tMethodSignature__tMethodDefinition____definitions);
+		tMethodDefinition__tMethodSignature____signature.setSrc(tMethodDefinition);
+		tMethodDefinition__tMethodSignature____signature.setTrg(tMethodSignature);
+		isApplicableMatch.getAllContextElements().add(tMethodDefinition__tMethodSignature____signature);
 		tModel__tMethodName____methods.setName(tModel__tMethodName____methods_name_prime);
 		tMethodName__tModel____model.setName(tMethodName__tModel____model_name_prime);
 		model2pm__mModel____source.setName(model2pm__mModel____source_name_prime);
+		tMethodName__tMethodSignature____signatures.setName(tMethodName__tMethodSignature____signatures_name_prime);
+		tMethodSignature__tMethodName____method.setName(tMethodSignature__tMethodName____method_name_prime);
+		model2pm__tModel____target.setName(model2pm__tModel____target_name_prime);
 		tMethodSignature__tMethodDefinition____definitions
 				.setName(tMethodSignature__tMethodDefinition____definitions_name_prime);
 		tMethodDefinition__tMethodSignature____signature
 				.setName(tMethodDefinition__tMethodSignature____signature_name_prime);
-		tMethodName__tMethodSignature____signatures.setName(tMethodName__tMethodSignature____signatures_name_prime);
-		tMethodSignature__tMethodName____method.setName(tMethodSignature__tMethodName____method_name_prime);
-		return new Object[] { tMethodName, mModel, model2pm, tModel, tMethodSignature, tMethodDefinition,
-				isApplicableMatch, model2pm__tModel____target, tModel__tMethodName____methods,
-				tMethodName__tModel____model, model2pm__mModel____source,
-				tMethodSignature__tMethodDefinition____definitions, tMethodDefinition__tMethodSignature____signature,
-				tMethodName__tMethodSignature____signatures, tMethodSignature__tMethodName____method };
+		return new Object[] { tMethodName, tModel, model2pm, tMethodDefinition, mModel, tMethodSignature,
+				isApplicableMatch, tModel__tMethodName____methods, tMethodName__tModel____model,
+				model2pm__mModel____source, tMethodName__tMethodSignature____signatures,
+				tMethodSignature__tMethodName____method, model2pm__tModel____target,
+				tMethodSignature__tMethodDefinition____definitions, tMethodDefinition__tMethodSignature____signature };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_12_4_solveCSP_bindingFBBBBBBBB(
-			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, TMethod tMethodName, Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tMethodName, mModel, model2pm, tModel,
-				tMethodSignature, tMethodDefinition);
+			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, TMethod tMethodName,
+			TypeGraph tModel, ModelToTypeGraph model2pm, TMethodDefinition tMethodDefinition, Model mModel,
+			TMethodSignature tMethodSignature) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tMethodName, tModel, model2pm,
+				tMethodDefinition, mModel, tMethodSignature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tMethodName, mModel, model2pm, tModel,
-					tMethodSignature, tMethodDefinition };
+			return new Object[] { csp, _this, isApplicableMatch, tMethodName, tModel, model2pm, tMethodDefinition,
+					mModel, tMethodSignature };
 		}
 		return null;
 	}
@@ -2514,11 +2521,11 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, TMethod tMethodName, Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition) {
+			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, TMethod tMethodName,
+			TypeGraph tModel, ModelToTypeGraph model2pm, TMethodDefinition tMethodDefinition, Model mModel,
+			TMethodSignature tMethodSignature) {
 		Object[] result_pattern_UnresolvedMethodDeclaration_12_4_solveCSP_binding = pattern_UnresolvedMethodDeclaration_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, tMethodName, mModel, model2pm, tModel, tMethodSignature, tMethodDefinition);
+				_this, isApplicableMatch, tMethodName, tModel, model2pm, tMethodDefinition, mModel, tMethodSignature);
 		if (result_pattern_UnresolvedMethodDeclaration_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedMethodDeclaration_12_4_solveCSP_binding[0];
 
@@ -2526,8 +2533,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_UnresolvedMethodDeclaration_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tMethodName, mModel, model2pm, tModel,
-						tMethodSignature, tMethodDefinition };
+				return new Object[] { csp, _this, isApplicableMatch, tMethodName, tModel, model2pm, tMethodDefinition,
+						mModel, tMethodSignature };
 			}
 		}
 		return null;
@@ -2617,9 +2624,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_0BB(
 			TMethod tMethodName, TypeGraph tModel) {
-		TypeGraph __DEC_tMethodName_model_30478 = tMethodName.getModel();
-		if (__DEC_tMethodName_model_30478 != null) {
-			if (!tModel.equals(__DEC_tMethodName_model_30478)) {
+		TypeGraph __DEC_tMethodName_model_340553 = tMethodName.getModel();
+		if (__DEC_tMethodName_model_340553 != null) {
+			if (!tModel.equals(__DEC_tMethodName_model_340553)) {
 				return new Object[] { tMethodName, tModel };
 			}
 		}
@@ -2628,32 +2635,10 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_1BB(
-			TMethodSignature tMethodSignature, TMethod tMethodName) {
-		TMethod __DEC_tMethodSignature_method_43351 = tMethodSignature.getMethod();
-		if (__DEC_tMethodSignature_method_43351 != null) {
-			if (!tMethodName.equals(__DEC_tMethodSignature_method_43351)) {
-				return new Object[] { tMethodSignature, tMethodName };
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_2B(
-			TMethodSignature tMethodSignature) {
-		TAbstractType __DEC_tMethodSignature_returnType_975715 = tMethodSignature.getReturnType();
-		if (__DEC_tMethodSignature_returnType_975715 != null) {
-			return new Object[] { tMethodSignature };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_3BB(
 			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tMethodDefinition_signature_954066 = tMethodDefinition.getSignature();
-		if (__DEC_tMethodDefinition_signature_954066 != null) {
-			if (!tMethodSignature.equals(__DEC_tMethodDefinition_signature_954066)) {
+		TSignature __DEC_tMethodDefinition_signature_498860 = tMethodDefinition.getSignature();
+		if (__DEC_tMethodDefinition_signature_498860 != null) {
+			if (!tMethodSignature.equals(__DEC_tMethodDefinition_signature_498860)) {
 				return new Object[] { tMethodDefinition, tMethodSignature };
 			}
 		}
@@ -2661,11 +2646,33 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_4B(
+	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_2B(
 			TMethodDefinition tMethodDefinition) {
-		TAbstractType __DEC_tMethodDefinition_returnType_847193 = tMethodDefinition.getReturnType();
-		if (__DEC_tMethodDefinition_returnType_847193 != null) {
+		TAbstractType __DEC_tMethodDefinition_returnType_674892 = tMethodDefinition.getReturnType();
+		if (__DEC_tMethodDefinition_returnType_674892 != null) {
 			return new Object[] { tMethodDefinition };
+		}
+
+		return null;
+	}
+
+	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_3BB(
+			TMethodSignature tMethodSignature, TMethod tMethodName) {
+		TMethod __DEC_tMethodSignature_method_729767 = tMethodSignature.getMethod();
+		if (__DEC_tMethodSignature_method_729767 != null) {
+			if (!tMethodName.equals(__DEC_tMethodSignature_method_729767)) {
+				return new Object[] { tMethodSignature, tMethodName };
+			}
+		}
+
+		return null;
+	}
+
+	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_4B(
+			TMethodSignature tMethodSignature) {
+		TAbstractType __DEC_tMethodSignature_returnType_943178 = tMethodSignature.getReturnType();
+		if (__DEC_tMethodSignature_returnType_943178 != null) {
+			return new Object[] { tMethodSignature };
 		}
 
 		return null;
@@ -2684,19 +2691,19 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 					if (pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_0BB(tMethodName,
 							tModel) == null) {
 						for (TMethodSignature tMethodSignature : tMethodName.getSignatures()) {
-							if (pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_1BB(
+							if (pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_3BB(
 									tMethodSignature, tMethodName) == null) {
-								if (pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_2B(
+								if (pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_4B(
 										tMethodSignature) == null) {
 									for (TMember tmpTMethodDefinition : tMethodSignature.getDefinitions()) {
 										if (tmpTMethodDefinition instanceof TMethodDefinition) {
 											TMethodDefinition tMethodDefinition = (TMethodDefinition) tmpTMethodDefinition;
-											if (pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_3BB(
+											if (pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_1BB(
 													tMethodDefinition, tMethodSignature) == null) {
-												if (pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_4B(
+												if (pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_2B(
 														tMethodDefinition) == null) {
-													_result.add(new Object[] { tMethodName, tModel, tMethodSignature,
-															tMethodDefinition, _edge_methods });
+													_result.add(new Object[] { tMethodName, tModel, tMethodDefinition,
+															tMethodSignature, _edge_methods });
 												}
 											}
 										}
@@ -2725,9 +2732,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final boolean pattern_UnresolvedMethodDeclaration_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
 			UnresolvedMethodDeclaration _this, Match match, TMethod tMethodName, TypeGraph tModel,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tMethodName, tModel, tMethodSignature,
-				tMethodDefinition);
+			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tMethodName, tModel, tMethodDefinition,
+				tMethodSignature);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2817,8 +2824,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		AbstractTypeDeclaration __DEC_mMethod_abstractTypeDeclaration_704419 = mMethod.getAbstractTypeDeclaration();
-		if (__DEC_mMethod_abstractTypeDeclaration_704419 != null) {
+		AbstractTypeDeclaration __DEC_mMethod_abstractTypeDeclaration_381237 = mMethod.getAbstractTypeDeclaration();
+		if (__DEC_mMethod_abstractTypeDeclaration_381237 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -2827,9 +2834,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_21_2_testcorematchandDECs_black_nac_1B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		AnonymousClassDeclaration __DEC_mMethod_anonymousClassDeclarationOwner_18322 = mMethod
+		AnonymousClassDeclaration __DEC_mMethod_anonymousClassDeclarationOwner_918784 = mMethod
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mMethod_anonymousClassDeclarationOwner_18322 != null) {
+		if (__DEC_mMethod_anonymousClassDeclarationOwner_918784 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -2838,8 +2845,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_21_2_testcorematchandDECs_black_nac_2B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		TypeAccess __DEC_mMethod_returnType_903277 = mMethod.getReturnType();
-		if (__DEC_mMethod_returnType_903277 != null) {
+		TypeAccess __DEC_mMethod_returnType_586694 = mMethod.getReturnType();
+		if (__DEC_mMethod_returnType_586694 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -2933,31 +2940,31 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_bindingFFFFFFBB(
 			Match targetMatch, Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("tMethodName");
-		EObject _localVariable_1 = sourceMatch.getObject("mModel");
-		EObject _localVariable_2 = targetMatch.getObject("tModel");
-		EObject _localVariable_3 = targetMatch.getObject("tMethodSignature");
-		EObject _localVariable_4 = sourceMatch.getObject("mMethod");
-		EObject _localVariable_5 = targetMatch.getObject("tMethodDefinition");
+		EObject _localVariable_1 = targetMatch.getObject("tModel");
+		EObject _localVariable_2 = targetMatch.getObject("tMethodDefinition");
+		EObject _localVariable_3 = sourceMatch.getObject("mModel");
+		EObject _localVariable_4 = targetMatch.getObject("tMethodSignature");
+		EObject _localVariable_5 = sourceMatch.getObject("mMethod");
 		EObject tmpTMethodName = _localVariable_0;
-		EObject tmpMModel = _localVariable_1;
-		EObject tmpTModel = _localVariable_2;
-		EObject tmpTMethodSignature = _localVariable_3;
-		EObject tmpMMethod = _localVariable_4;
-		EObject tmpTMethodDefinition = _localVariable_5;
+		EObject tmpTModel = _localVariable_1;
+		EObject tmpTMethodDefinition = _localVariable_2;
+		EObject tmpMModel = _localVariable_3;
+		EObject tmpTMethodSignature = _localVariable_4;
+		EObject tmpMMethod = _localVariable_5;
 		if (tmpTMethodName instanceof TMethod) {
 			TMethod tMethodName = (TMethod) tmpTMethodName;
-			if (tmpMModel instanceof Model) {
-				Model mModel = (Model) tmpMModel;
-				if (tmpTModel instanceof TypeGraph) {
-					TypeGraph tModel = (TypeGraph) tmpTModel;
-					if (tmpTMethodSignature instanceof TMethodSignature) {
-						TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
-						if (tmpMMethod instanceof org.eclipse.modisco.java.UnresolvedMethodDeclaration) {
-							org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) tmpMMethod;
-							if (tmpTMethodDefinition instanceof TMethodDefinition) {
-								TMethodDefinition tMethodDefinition = (TMethodDefinition) tmpTMethodDefinition;
-								return new Object[] { tMethodName, mModel, tModel, tMethodSignature, mMethod,
-										tMethodDefinition, targetMatch, sourceMatch };
+			if (tmpTModel instanceof TypeGraph) {
+				TypeGraph tModel = (TypeGraph) tmpTModel;
+				if (tmpTMethodDefinition instanceof TMethodDefinition) {
+					TMethodDefinition tMethodDefinition = (TMethodDefinition) tmpTMethodDefinition;
+					if (tmpMModel instanceof Model) {
+						Model mModel = (Model) tmpMModel;
+						if (tmpTMethodSignature instanceof TMethodSignature) {
+							TMethodSignature tMethodSignature = (TMethodSignature) tmpTMethodSignature;
+							if (tmpMMethod instanceof org.eclipse.modisco.java.UnresolvedMethodDeclaration) {
+								org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) tmpMMethod;
+								return new Object[] { tMethodName, tModel, tMethodDefinition, mModel, tMethodSignature,
+										mMethod, targetMatch, sourceMatch };
 							}
 						}
 					}
@@ -2968,11 +2975,11 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_blackBBBBBBBB(
-			TMethod tMethodName, Model mModel, TypeGraph tModel, TMethodSignature tMethodSignature,
-			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, TMethodDefinition tMethodDefinition,
+			TMethod tMethodName, TypeGraph tModel, TMethodDefinition tMethodDefinition, Model mModel,
+			TMethodSignature tMethodSignature, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod,
 			Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tMethodName, mModel, tModel, tMethodSignature, mMethod, tMethodDefinition,
+			return new Object[] { tMethodName, tModel, tMethodDefinition, mModel, tMethodSignature, mMethod,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -2984,18 +2991,18 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 				targetMatch, sourceMatch);
 		if (result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding != null) {
 			TMethod tMethodName = (TMethod) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[0];
-			Model mModel = (Model) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[1];
-			TypeGraph tModel = (TypeGraph) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[2];
-			TMethodSignature tMethodSignature = (TMethodSignature) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[3];
-			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[4];
-			TMethodDefinition tMethodDefinition = (TMethodDefinition) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[5];
+			TypeGraph tModel = (TypeGraph) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[1];
+			TMethodDefinition tMethodDefinition = (TMethodDefinition) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[2];
+			Model mModel = (Model) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[3];
+			TMethodSignature tMethodSignature = (TMethodSignature) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[4];
+			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = (org.eclipse.modisco.java.UnresolvedMethodDeclaration) result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_black = pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					tMethodName, mModel, tModel, tMethodSignature, mMethod, tMethodDefinition, sourceMatch,
+					tMethodName, tModel, tMethodDefinition, mModel, tMethodSignature, mMethod, sourceMatch,
 					targetMatch);
 			if (result_pattern_UnresolvedMethodDeclaration_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tMethodName, mModel, tModel, tMethodSignature, mMethod, tMethodDefinition,
+				return new Object[] { tMethodName, tModel, tMethodDefinition, mModel, tMethodSignature, mMethod,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3003,14 +3010,14 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_24_3_solvecsp_bindingFBBBBBBBBB(
-			UnresolvedMethodDeclaration _this, TMethod tMethodName, Model mModel, TypeGraph tModel,
-			TMethodSignature tMethodSignature, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod,
-			TMethodDefinition tMethodDefinition, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(tMethodName, mModel, tModel, tMethodSignature, mMethod,
-				tMethodDefinition, sourceMatch, targetMatch);
+			UnresolvedMethodDeclaration _this, TMethod tMethodName, TypeGraph tModel,
+			TMethodDefinition tMethodDefinition, Model mModel, TMethodSignature tMethodSignature,
+			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(tMethodName, tModel, tMethodDefinition, mModel,
+				tMethodSignature, mMethod, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, tMethodName, mModel, tModel, tMethodSignature, mMethod, tMethodDefinition,
+			return new Object[] { csp, _this, tMethodName, tModel, tMethodDefinition, mModel, tMethodSignature, mMethod,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -3021,11 +3028,11 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			UnresolvedMethodDeclaration _this, TMethod tMethodName, Model mModel, TypeGraph tModel,
-			TMethodSignature tMethodSignature, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod,
-			TMethodDefinition tMethodDefinition, Match sourceMatch, Match targetMatch) {
+			UnresolvedMethodDeclaration _this, TMethod tMethodName, TypeGraph tModel,
+			TMethodDefinition tMethodDefinition, Model mModel, TMethodSignature tMethodSignature,
+			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_UnresolvedMethodDeclaration_24_3_solvecsp_binding = pattern_UnresolvedMethodDeclaration_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, tMethodName, mModel, tModel, tMethodSignature, mMethod, tMethodDefinition, sourceMatch,
+				_this, tMethodName, tModel, tMethodDefinition, mModel, tMethodSignature, mMethod, sourceMatch,
 				targetMatch);
 		if (result_pattern_UnresolvedMethodDeclaration_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedMethodDeclaration_24_3_solvecsp_binding[0];
@@ -3034,8 +3041,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_UnresolvedMethodDeclaration_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tMethodName, mModel, tModel, tMethodSignature, mMethod,
-						tMethodDefinition, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, tMethodName, tModel, tMethodDefinition, mModel, tMethodSignature,
+						mMethod, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -3048,13 +3055,13 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Iterable<Object[]> pattern_UnresolvedMethodDeclaration_24_5_matchcorrcontext_blackBFBBB(
-			Model mModel, TypeGraph tModel, Match sourceMatch, Match targetMatch) {
+			TypeGraph tModel, Model mModel, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ModelToTypeGraph model2pm : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(tModel,
-					ModelToTypeGraph.class, "target")) {
-				if (mModel.equals(model2pm.getSource())) {
-					_result.add(new Object[] { mModel, model2pm, tModel, sourceMatch, targetMatch });
+			for (ModelToTypeGraph model2pm : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(mModel,
+					ModelToTypeGraph.class, "source")) {
+				if (tModel.equals(model2pm.getTarget())) {
+					_result.add(new Object[] { tModel, model2pm, mModel, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -3073,20 +3080,20 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_24_6_createcorrespondence_blackBBBBBBB(
-			TMethod tMethodName, Model mModel, TypeGraph tModel, TMethodSignature tMethodSignature,
-			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, TMethodDefinition tMethodDefinition,
+			TMethod tMethodName, TypeGraph tModel, TMethodDefinition tMethodDefinition, Model mModel,
+			TMethodSignature tMethodSignature, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod,
 			CCMatch ccMatch) {
-		return new Object[] { tMethodName, mModel, tModel, tMethodSignature, mMethod, tMethodDefinition, ccMatch };
+		return new Object[] { tMethodName, tModel, tMethodDefinition, mModel, tMethodSignature, mMethod, ccMatch };
 	}
 
-	public static final Object[] pattern_UnresolvedMethodDeclaration_24_6_createcorrespondence_greenFBBB(
-			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, TMethodDefinition tMethodDefinition,
+	public static final Object[] pattern_UnresolvedMethodDeclaration_24_6_createcorrespondence_greenBFBB(
+			TMethodDefinition tMethodDefinition, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod,
 			CCMatch ccMatch) {
 		MDefinitionToTMember unresolved2Definiton = PmFactory.eINSTANCE.createMDefinitionToTMember();
-		unresolved2Definiton.setSource(mMethod);
 		unresolved2Definiton.setTarget(tMethodDefinition);
+		unresolved2Definiton.setSource(mMethod);
 		ccMatch.getCreateCorr().add(unresolved2Definiton);
-		return new Object[] { unresolved2Definiton, mMethod, tMethodDefinition, ccMatch };
+		return new Object[] { tMethodDefinition, unresolved2Definiton, mMethod, ccMatch };
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_24_7_addtoreturnedresult_blackBB(
@@ -3112,8 +3119,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		AbstractTypeDeclaration __DEC_mMethod_abstractTypeDeclaration_188903 = mMethod.getAbstractTypeDeclaration();
-		if (__DEC_mMethod_abstractTypeDeclaration_188903 != null) {
+		AbstractTypeDeclaration __DEC_mMethod_abstractTypeDeclaration_708250 = mMethod.getAbstractTypeDeclaration();
+		if (__DEC_mMethod_abstractTypeDeclaration_708250 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -3122,9 +3129,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_27_1_matchtggpattern_black_nac_1B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		AnonymousClassDeclaration __DEC_mMethod_anonymousClassDeclarationOwner_143466 = mMethod
+		AnonymousClassDeclaration __DEC_mMethod_anonymousClassDeclarationOwner_884565 = mMethod
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mMethod_anonymousClassDeclarationOwner_143466 != null) {
+		if (__DEC_mMethod_anonymousClassDeclarationOwner_884565 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -3133,8 +3140,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_27_1_matchtggpattern_black_nac_2B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		TypeAccess __DEC_mMethod_returnType_829955 = mMethod.getReturnType();
-		if (__DEC_mMethod_returnType_829955 != null) {
+		TypeAccess __DEC_mMethod_returnType_28126 = mMethod.getReturnType();
+		if (__DEC_mMethod_returnType_28126 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -3167,9 +3174,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_0BB(
 			TMethod tMethodName, TypeGraph tModel) {
-		TypeGraph __DEC_tMethodName_model_344599 = tMethodName.getModel();
-		if (__DEC_tMethodName_model_344599 != null) {
-			if (!tModel.equals(__DEC_tMethodName_model_344599)) {
+		TypeGraph __DEC_tMethodName_model_672996 = tMethodName.getModel();
+		if (__DEC_tMethodName_model_672996 != null) {
+			if (!tModel.equals(__DEC_tMethodName_model_672996)) {
 				return new Object[] { tMethodName, tModel };
 			}
 		}
@@ -3178,32 +3185,10 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_1BB(
-			TMethodSignature tMethodSignature, TMethod tMethodName) {
-		TMethod __DEC_tMethodSignature_method_634251 = tMethodSignature.getMethod();
-		if (__DEC_tMethodSignature_method_634251 != null) {
-			if (!tMethodName.equals(__DEC_tMethodSignature_method_634251)) {
-				return new Object[] { tMethodSignature, tMethodName };
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_2B(
-			TMethodSignature tMethodSignature) {
-		TAbstractType __DEC_tMethodSignature_returnType_709448 = tMethodSignature.getReturnType();
-		if (__DEC_tMethodSignature_returnType_709448 != null) {
-			return new Object[] { tMethodSignature };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_3BB(
 			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tMethodDefinition_signature_484201 = tMethodDefinition.getSignature();
-		if (__DEC_tMethodDefinition_signature_484201 != null) {
-			if (!tMethodSignature.equals(__DEC_tMethodDefinition_signature_484201)) {
+		TSignature __DEC_tMethodDefinition_signature_796247 = tMethodDefinition.getSignature();
+		if (__DEC_tMethodDefinition_signature_796247 != null) {
+			if (!tMethodSignature.equals(__DEC_tMethodDefinition_signature_796247)) {
 				return new Object[] { tMethodDefinition, tMethodSignature };
 			}
 		}
@@ -3211,33 +3196,55 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_4B(
+	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_2B(
 			TMethodDefinition tMethodDefinition) {
-		TAbstractType __DEC_tMethodDefinition_returnType_340576 = tMethodDefinition.getReturnType();
-		if (__DEC_tMethodDefinition_returnType_340576 != null) {
+		TAbstractType __DEC_tMethodDefinition_returnType_723590 = tMethodDefinition.getReturnType();
+		if (__DEC_tMethodDefinition_returnType_723590 != null) {
 			return new Object[] { tMethodDefinition };
 		}
 
 		return null;
 	}
 
+	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_3BB(
+			TMethodSignature tMethodSignature, TMethod tMethodName) {
+		TMethod __DEC_tMethodSignature_method_676408 = tMethodSignature.getMethod();
+		if (__DEC_tMethodSignature_method_676408 != null) {
+			if (!tMethodName.equals(__DEC_tMethodSignature_method_676408)) {
+				return new Object[] { tMethodSignature, tMethodName };
+			}
+		}
+
+		return null;
+	}
+
+	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_4B(
+			TMethodSignature tMethodSignature) {
+		TAbstractType __DEC_tMethodSignature_returnType_561901 = tMethodSignature.getReturnType();
+		if (__DEC_tMethodSignature_returnType_561901 != null) {
+			return new Object[] { tMethodSignature };
+		}
+
+		return null;
+	}
+
 	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_blackBBBB(TMethod tMethodName,
-			TypeGraph tModel, TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition) {
+			TypeGraph tModel, TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
 		if (tModel.getMethods().contains(tMethodName)) {
-			if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
-				if (tMethodName.getSignatures().contains(tMethodSignature)) {
+			if (tMethodName.getSignatures().contains(tMethodSignature)) {
+				if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
 					if (pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_0BB(tMethodName,
 							tModel) == null) {
-						if (pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_1BB(tMethodSignature,
-								tMethodName) == null) {
+						if (pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_1BB(tMethodDefinition,
+								tMethodSignature) == null) {
 							if (pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_2B(
-									tMethodSignature) == null) {
+									tMethodDefinition) == null) {
 								if (pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_3BB(
-										tMethodDefinition, tMethodSignature) == null) {
+										tMethodSignature, tMethodName) == null) {
 									if (pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_4B(
-											tMethodDefinition) == null) {
-										return new Object[] { tMethodName, tModel, tMethodSignature,
-												tMethodDefinition };
+											tMethodSignature) == null) {
+										return new Object[] { tMethodName, tModel, tMethodDefinition,
+												tMethodSignature };
 									}
 								}
 							}
@@ -3273,9 +3280,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Model mModel) {
-		if (ruleResult.getSourceObjects().contains(mModel)) {
-			return new Object[] { ruleResult, mModel };
+			ModelgeneratorRuleResult ruleResult, TypeGraph tModel) {
+		if (ruleResult.getTargetObjects().contains(tModel)) {
+			return new Object[] { ruleResult, tModel };
 		}
 		return null;
 	}
@@ -3289,9 +3296,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph tModel) {
-		if (ruleResult.getTargetObjects().contains(tModel)) {
-			return new Object[] { ruleResult, tModel };
+			ModelgeneratorRuleResult ruleResult, Model mModel) {
+		if (ruleResult.getSourceObjects().contains(mModel)) {
+			return new Object[] { ruleResult, mModel };
 		}
 		return null;
 	}
@@ -3303,17 +3310,17 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 			for (EObject tmpModel2pm : model2pmList.getEntryObjects()) {
 				if (tmpModel2pm instanceof ModelToTypeGraph) {
 					ModelToTypeGraph model2pm = (ModelToTypeGraph) tmpModel2pm;
-					Model mModel = model2pm.getSource();
-					if (mModel != null) {
-						TypeGraph tModel = model2pm.getTarget();
-						if (tModel != null) {
+					TypeGraph tModel = model2pm.getTarget();
+					if (tModel != null) {
+						Model mModel = model2pm.getSource();
+						if (mModel != null) {
 							if (pattern_UnresolvedMethodDeclaration_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 									model2pm) == null) {
 								if (pattern_UnresolvedMethodDeclaration_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-										mModel) == null) {
+										tModel) == null) {
 									if (pattern_UnresolvedMethodDeclaration_29_2_isapplicablecore_black_nac_2BB(
-											ruleResult, tModel) == null) {
-										_result.add(new Object[] { model2pmList, mModel, model2pm, tModel,
+											ruleResult, mModel) == null) {
+										_result.add(new Object[] { model2pmList, tModel, model2pm, mModel,
 												ruleEntryContainer, ruleResult });
 									}
 								}
@@ -3329,13 +3336,13 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_29_3_solveCSP_bindingFBBBBBB(
-			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mModel, model2pm, tModel,
+			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, TypeGraph tModel,
+			ModelToTypeGraph model2pm, Model mModel, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tModel, model2pm, mModel,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mModel, model2pm, tModel, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, tModel, model2pm, mModel, ruleResult };
 		}
 		return null;
 	}
@@ -3345,10 +3352,10 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_29_3_solveCSP_bindingAndBlackFBBBBBB(
-			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel, ModelgeneratorRuleResult ruleResult) {
+			UnresolvedMethodDeclaration _this, IsApplicableMatch isApplicableMatch, TypeGraph tModel,
+			ModelToTypeGraph model2pm, Model mModel, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_UnresolvedMethodDeclaration_29_3_solveCSP_binding = pattern_UnresolvedMethodDeclaration_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mModel, model2pm, tModel, ruleResult);
+				_this, isApplicableMatch, tModel, model2pm, mModel, ruleResult);
 		if (result_pattern_UnresolvedMethodDeclaration_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedMethodDeclaration_29_3_solveCSP_binding[0];
 
@@ -3356,7 +3363,7 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_UnresolvedMethodDeclaration_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mModel, model2pm, tModel, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, tModel, model2pm, mModel, ruleResult };
 			}
 		}
 		return null;
@@ -3369,39 +3376,39 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_UnresolvedMethodDeclaration_29_5_checknacs_blackBBB(Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel) {
-		return new Object[] { mModel, model2pm, tModel };
+	public static final Object[] pattern_UnresolvedMethodDeclaration_29_5_checknacs_blackBBB(TypeGraph tModel,
+			ModelToTypeGraph model2pm, Model mModel) {
+		return new Object[] { tModel, model2pm, mModel };
 	}
 
-	public static final Object[] pattern_UnresolvedMethodDeclaration_29_6_perform_blackBBBB(Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { mModel, model2pm, tModel, ruleResult };
+	public static final Object[] pattern_UnresolvedMethodDeclaration_29_6_perform_blackBBBB(TypeGraph tModel,
+			ModelToTypeGraph model2pm, Model mModel, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { tModel, model2pm, mModel, ruleResult };
 	}
 
-	public static final Object[] pattern_UnresolvedMethodDeclaration_29_6_perform_greenFBBFFFFBB(Model mModel,
-			TypeGraph tModel, ModelgeneratorRuleResult ruleResult, CSP csp) {
+	public static final Object[] pattern_UnresolvedMethodDeclaration_29_6_perform_greenFBFBFFFBB(TypeGraph tModel,
+			Model mModel, ModelgeneratorRuleResult ruleResult, CSP csp) {
 		TMethod tMethodName = BasicFactory.eINSTANCE.createTMethod();
+		TMethodDefinition tMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
 		MDefinitionToTMember unresolved2Definiton = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		TMethodSignature tMethodSignature = BasicFactory.eINSTANCE.createTMethodSignature();
 		org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod = JavaFactory.eINSTANCE
 				.createUnresolvedMethodDeclaration();
-		TMethodDefinition tMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
 		Object _localVariable_0 = csp.getValue("tMethodName", "tName");
 		Object _localVariable_1 = csp.getValue("mMethod", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
 		tModel.getMethods().add(tMethodName);
 		ruleResult.getTargetObjects().add(tMethodName);
+		ruleResult.getTargetObjects().add(tMethodDefinition);
+		unresolved2Definiton.setTarget(tMethodDefinition);
 		ruleResult.getCorrObjects().add(unresolved2Definiton);
 		tMethodName.getSignatures().add(tMethodSignature);
+		tMethodSignature.getDefinitions().add(tMethodDefinition);
 		ruleResult.getTargetObjects().add(tMethodSignature);
 		mModel.getUnresolvedItems().add(mMethod);
 		unresolved2Definiton.setSource(mMethod);
 		ruleResult.getSourceObjects().add(mMethod);
-		tMethodSignature.getDefinitions().add(tMethodDefinition);
-		unresolved2Definiton.setTarget(tMethodDefinition);
-		ruleResult.getTargetObjects().add(tMethodDefinition);
 		String tMethodName_tName_prime = (String) _localVariable_0;
 		String mMethod_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
@@ -3409,8 +3416,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 		tMethodName.setTName(tMethodName_tName_prime);
 		mMethod.setName(mMethod_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tMethodName, mModel, tModel, unresolved2Definiton, tMethodSignature, mMethod,
-				tMethodDefinition, ruleResult, csp };
+		return new Object[] { tMethodName, tModel, tMethodDefinition, mModel, unresolved2Definiton, tMethodSignature,
+				mMethod, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_UnresolvedMethodDeclaration_29_7_expressionFB(

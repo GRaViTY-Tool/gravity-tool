@@ -11,6 +11,7 @@ import org.gravity.modisco.MClass;
 import org.gravity.tgg.modisco.pm.ModelToTypeGraph;
 
 import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 
 import org.moflon.tgg.language.csp.CSP;
@@ -47,7 +48,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Model mModel, MClass mType);
+	boolean isAppropriate_FWD(Match match, MClass mType, Model mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +72,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Model mModel, MClass mType);
+	void registerObjectsToMatch_FWD(Match match, MClass mType, Model mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +80,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Model mModel, MClass mType);
+	CSP isAppropriate_solveCsp_FWD(Match match, MClass mType, Model mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,8 +96,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model mModel, MClass mType, TypeGraph pg,
-			ModelToTypeGraph mModelToTypeGraph);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, MClass mType, Model mModel,
+			ModelToTypeGraph mModelToTypeGraph, TPackage tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +113,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType, EObject mModel,
-			EObject mType, EObject pg, EObject mModelToTypeGraph);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject pg, EObject tType, EObject mType, EObject mModel,
+			EObject mTypeToTType, EObject mModelToTypeGraph, EObject tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +130,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TClass tType, TypeGraph pg);
+	boolean isAppropriate_BWD(Match match, TypeGraph pg, TClass tType, TPackage tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +154,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TClass tType, TypeGraph pg);
+	void registerObjectsToMatch_BWD(Match match, TypeGraph pg, TClass tType, TPackage tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +162,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TClass tType, TypeGraph pg);
+	CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph pg, TClass tType, TPackage tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,8 +178,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tType, Model mModel, TypeGraph pg,
-			ModelToTypeGraph mModelToTypeGraph);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, TClass tType, Model mModel,
+			ModelToTypeGraph mModelToTypeGraph, TPackage tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,8 +195,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType, EObject mModel,
-			EObject mType, EObject pg, EObject mModelToTypeGraph);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject pg, EObject tType, EObject mType, EObject mModel,
+			EObject mTypeToTType, EObject mModelToTypeGraph, EObject tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,7 +212,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_58(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_82(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +220,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_61(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_84(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,8 +252,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TClass tType, Model mModel, MClass mType, TypeGraph pg, Match sourceMatch,
-			Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TypeGraph pg, TClass tType, MClass mType, Model mModel, TPackage tProxyPackage,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,7 +269,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Model mModel, MClass mType);
+	boolean checkDEC_FWD(MClass mType, Model mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +277,7 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TClass tType, TypeGraph pg);
+	boolean checkDEC_BWD(TypeGraph pg, TClass tType, TPackage tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,8 +294,8 @@ public interface TypesOrphaned extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model mModel, TypeGraph pg,
-			ModelToTypeGraph mModelToTypeGraph, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, Model mModel,
+			ModelToTypeGraph mModelToTypeGraph, TPackage tProxyPackage, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

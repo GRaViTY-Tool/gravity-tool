@@ -154,35 +154,35 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[0];
-		MGravityModel mModel = (MGravityModel) result1_bindingAndBlack[1];
+		MGravityModel mModel = (MGravityModel) result1_bindingAndBlack[0];
+		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[1];
 		MMethodName mName = (MMethodName) result1_bindingAndBlack[2];
 		ModelToTypeGraph modelToPg = (ModelToTypeGraph) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = MethodNameImpl.pattern_MethodName_1_1_performtransformation_greenBFBFB(pg, mName, csp);
-		MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result1_green[1];
+		Object[] result1_green = MethodNameImpl.pattern_MethodName_1_1_performtransformation_greenBBFFB(pg, mName, csp);
+		MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result1_green[2];
 		TMethod tName = (TMethod) result1_green[3];
 
-		Object[] result2_black = MethodNameImpl.pattern_MethodName_1_2_collecttranslatedelements_blackBBB(mNameToTName,
-				mName, tName);
+		Object[] result2_black = MethodNameImpl.pattern_MethodName_1_2_collecttranslatedelements_blackBBB(mName,
+				mNameToTName, tName);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mNameToTName] = " + mNameToTName
-					+ ", " + "[mName] = " + mName + ", " + "[tName] = " + tName + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mName] = " + mName + ", "
+					+ "[mNameToTName] = " + mNameToTName + ", " + "[tName] = " + tName + ".");
 		}
-		Object[] result2_green = MethodNameImpl.pattern_MethodName_1_2_collecttranslatedelements_greenFBBB(mNameToTName,
-				mName, tName);
+		Object[] result2_green = MethodNameImpl.pattern_MethodName_1_2_collecttranslatedelements_greenFBBB(mName,
+				mNameToTName, tName);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = MethodNameImpl.pattern_MethodName_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, pg,
-				mModel, mNameToTName, mName, modelToPg, tName);
+		Object[] result3_black = MethodNameImpl.pattern_MethodName_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
+				mModel, pg, mName, modelToPg, mNameToTName, tName);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[pg] = " + pg + ", " + "[mModel] = " + mModel + ", " + "[mNameToTName] = " + mNameToTName
-					+ ", " + "[mName] = " + mName + ", " + "[modelToPg] = " + modelToPg + ", " + "[tName] = " + tName
-					+ ".");
+					+ ", " + "[mModel] = " + mModel + ", " + "[pg] = " + pg + ", " + "[mName] = " + mName + ", "
+					+ "[modelToPg] = " + modelToPg + ", " + "[mNameToTName] = " + mNameToTName + ", " + "[tName] = "
+					+ tName + ".");
 		}
-		MethodNameImpl.pattern_MethodName_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, pg, mModel, mNameToTName,
-				mName, tName);
+		MethodNameImpl.pattern_MethodName_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, mModel, pg, mName,
+				mNameToTName, tName);
 		//nothing EMoflonEdge pg__tName____methods = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge tName__pg____model = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge mModel__mName____mMethodNames = (EMoflonEdge) result3_green[8];
@@ -191,8 +191,8 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 
 		// 
 		// 
-		MethodNameImpl.pattern_MethodName_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, pg, mModel,
-				mNameToTName, mName, modelToPg, tName);
+		MethodNameImpl.pattern_MethodName_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, mModel, pg, mName,
+				modelToPg, mNameToTName, tName);
 		return MethodNameImpl.pattern_MethodName_1_6_expressionFB(ruleresult);
 	}
 
@@ -221,28 +221,27 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		}
 		MGravityModel mModel = (MGravityModel) result2_binding[0];
 		MMethodName mName = (MMethodName) result2_binding[1];
-		for (Object[] result2_black : MethodNameImpl.pattern_MethodName_2_2_corematch_blackFBBFB(mModel, mName,
+		for (Object[] result2_black : MethodNameImpl.pattern_MethodName_2_2_corematch_blackBFBFB(mModel, mName,
 				match)) {
-			TypeGraph pg = (TypeGraph) result2_black[0];
+			TypeGraph pg = (TypeGraph) result2_black[1];
 			ModelToTypeGraph modelToPg = (ModelToTypeGraph) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : MethodNameImpl.pattern_MethodName_2_3_findcontext_blackBBBB(pg, mModel, mName,
+			for (Object[] result3_black : MethodNameImpl.pattern_MethodName_2_3_findcontext_blackBBBB(mModel, pg, mName,
 					modelToPg)) {
-				Object[] result3_green = MethodNameImpl.pattern_MethodName_2_3_findcontext_greenBBBBFFFF(pg, mModel,
+				Object[] result3_green = MethodNameImpl.pattern_MethodName_2_3_findcontext_greenBBBBFFFF(mModel, pg,
 						mName, modelToPg);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mModel__mName____mMethodNames = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge modelToPg__pg____target = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge modelToPg__mModel____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge modelToPg__pg____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mModel__mName____mMethodNames = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = MethodNameImpl
-						.pattern_MethodName_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, pg, mModel,
+						.pattern_MethodName_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mModel, pg,
 								mName, modelToPg);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[pg] = " + pg + ", "
-							+ "[mModel] = " + mModel + ", " + "[mName] = " + mName + ", " + "[modelToPg] = " + modelToPg
-							+ ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModel] = " + mModel + ", "
+							+ "[pg] = " + pg + ", " + "[mName] = " + mName + ", " + "[modelToPg] = " + modelToPg + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -310,7 +309,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel mModel,
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MGravityModel mModel, TypeGraph pg,
 			MMethodName mName, ModelToTypeGraph modelToPg) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -336,8 +335,8 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		eq.solve(var_mName_mName, var_tName_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("mModel", mModel);
+		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("mName", mName);
 		isApplicableMatch.registerObject("modelToPg", modelToPg);
 		return csp;
@@ -357,13 +356,13 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject pg, EObject mModel, EObject mNameToTName,
-			EObject mName, EObject modelToPg, EObject tName) {
-		ruleresult.registerObject("pg", pg);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModel, EObject pg, EObject mName,
+			EObject modelToPg, EObject mNameToTName, EObject tName) {
 		ruleresult.registerObject("mModel", mModel);
-		ruleresult.registerObject("mNameToTName", mNameToTName);
+		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("mName", mName);
 		ruleresult.registerObject("modelToPg", modelToPg);
+		ruleresult.registerObject("mNameToTName", mNameToTName);
 		ruleresult.registerObject("tName", tName);
 
 	}
@@ -442,36 +441,36 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[0];
-		MGravityModel mModel = (MGravityModel) result1_bindingAndBlack[1];
+		MGravityModel mModel = (MGravityModel) result1_bindingAndBlack[0];
+		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[1];
 		ModelToTypeGraph modelToPg = (ModelToTypeGraph) result1_bindingAndBlack[2];
 		TMethod tName = (TMethod) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = MethodNameImpl.pattern_MethodName_11_1_performtransformation_greenBFFBB(mModel, tName,
 				csp);
-		MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result1_green[1];
-		MMethodName mName = (MMethodName) result1_green[2];
+		MMethodName mName = (MMethodName) result1_green[1];
+		MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result1_green[2];
 
-		Object[] result2_black = MethodNameImpl.pattern_MethodName_11_2_collecttranslatedelements_blackBBB(mNameToTName,
-				mName, tName);
+		Object[] result2_black = MethodNameImpl.pattern_MethodName_11_2_collecttranslatedelements_blackBBB(mName,
+				mNameToTName, tName);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mNameToTName] = " + mNameToTName
-					+ ", " + "[mName] = " + mName + ", " + "[tName] = " + tName + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mName] = " + mName + ", "
+					+ "[mNameToTName] = " + mNameToTName + ", " + "[tName] = " + tName + ".");
 		}
-		Object[] result2_green = MethodNameImpl
-				.pattern_MethodName_11_2_collecttranslatedelements_greenFBBB(mNameToTName, mName, tName);
+		Object[] result2_green = MethodNameImpl.pattern_MethodName_11_2_collecttranslatedelements_greenFBBB(mName,
+				mNameToTName, tName);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = MethodNameImpl.pattern_MethodName_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, pg,
-				mModel, mNameToTName, mName, modelToPg, tName);
+		Object[] result3_black = MethodNameImpl.pattern_MethodName_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
+				mModel, pg, mName, modelToPg, mNameToTName, tName);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[pg] = " + pg + ", " + "[mModel] = " + mModel + ", " + "[mNameToTName] = " + mNameToTName
-					+ ", " + "[mName] = " + mName + ", " + "[modelToPg] = " + modelToPg + ", " + "[tName] = " + tName
-					+ ".");
+					+ ", " + "[mModel] = " + mModel + ", " + "[pg] = " + pg + ", " + "[mName] = " + mName + ", "
+					+ "[modelToPg] = " + modelToPg + ", " + "[mNameToTName] = " + mNameToTName + ", " + "[tName] = "
+					+ tName + ".");
 		}
-		MethodNameImpl.pattern_MethodName_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, pg, mModel,
-				mNameToTName, mName, tName);
+		MethodNameImpl.pattern_MethodName_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, mModel, pg, mName,
+				mNameToTName, tName);
 		//nothing EMoflonEdge pg__tName____methods = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge tName__pg____model = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge mModel__mName____mMethodNames = (EMoflonEdge) result3_green[8];
@@ -480,8 +479,8 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 
 		// 
 		// 
-		MethodNameImpl.pattern_MethodName_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, pg, mModel,
-				mNameToTName, mName, modelToPg, tName);
+		MethodNameImpl.pattern_MethodName_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, mModel, pg, mName,
+				modelToPg, mNameToTName, tName);
 		return MethodNameImpl.pattern_MethodName_11_6_expressionFB(ruleresult);
 	}
 
@@ -510,28 +509,27 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		}
 		TypeGraph pg = (TypeGraph) result2_binding[0];
 		TMethod tName = (TMethod) result2_binding[1];
-		for (Object[] result2_black : MethodNameImpl.pattern_MethodName_12_2_corematch_blackBFFBB(pg, tName, match)) {
-			MGravityModel mModel = (MGravityModel) result2_black[1];
+		for (Object[] result2_black : MethodNameImpl.pattern_MethodName_12_2_corematch_blackFBFBB(pg, tName, match)) {
+			MGravityModel mModel = (MGravityModel) result2_black[0];
 			ModelToTypeGraph modelToPg = (ModelToTypeGraph) result2_black[2];
 			// ForEach 
-			for (Object[] result3_black : MethodNameImpl.pattern_MethodName_12_3_findcontext_blackBBBB(pg, mModel,
+			for (Object[] result3_black : MethodNameImpl.pattern_MethodName_12_3_findcontext_blackBBBB(mModel, pg,
 					modelToPg, tName)) {
-				Object[] result3_green = MethodNameImpl.pattern_MethodName_12_3_findcontext_greenBBBBFFFFF(pg, mModel,
+				Object[] result3_green = MethodNameImpl.pattern_MethodName_12_3_findcontext_greenBBBBFFFFF(mModel, pg,
 						modelToPg, tName);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
 				//nothing EMoflonEdge pg__tName____methods = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge tName__pg____model = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge modelToPg__mModel____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge modelToPg__pg____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge modelToPg__pg____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge modelToPg__mModel____source = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = MethodNameImpl
-						.pattern_MethodName_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, pg, mModel,
+						.pattern_MethodName_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mModel, pg,
 								modelToPg, tName);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[pg] = " + pg + ", "
-							+ "[mModel] = " + mModel + ", " + "[modelToPg] = " + modelToPg + ", " + "[tName] = " + tName
-							+ ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModel] = " + mModel + ", "
+							+ "[pg] = " + pg + ", " + "[modelToPg] = " + modelToPg + ", " + "[tName] = " + tName + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -599,7 +597,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel mModel,
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MGravityModel mModel, TypeGraph pg,
 			ModelToTypeGraph modelToPg, TMethod tName) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -625,8 +623,8 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		eq.solve(var_mName_mName, var_tName_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("mModel", mModel);
+		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("modelToPg", modelToPg);
 		isApplicableMatch.registerObject("tName", tName);
 		return csp;
@@ -646,13 +644,13 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject pg, EObject mModel, EObject mNameToTName,
-			EObject mName, EObject modelToPg, EObject tName) {
-		ruleresult.registerObject("pg", pg);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModel, EObject pg, EObject mName,
+			EObject modelToPg, EObject mNameToTName, EObject tName) {
 		ruleresult.registerObject("mModel", mModel);
-		ruleresult.registerObject("mNameToTName", mNameToTName);
+		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("mName", mName);
 		ruleresult.registerObject("modelToPg", modelToPg);
+		ruleresult.registerObject("mNameToTName", mNameToTName);
 		ruleresult.registerObject("tName", tName);
 
 	}
@@ -672,7 +670,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_52(EMoflonEdge _edge_methods) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_68(EMoflonEdge _edge_methods) {
 
 		Object[] result1_bindingAndBlack = MethodNameImpl
 				.pattern_MethodName_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -725,7 +723,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_55(EMoflonEdge _edge_mMethodNames) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_69(EMoflonEdge _edge_mMethodNames) {
 
 		Object[] result1_bindingAndBlack = MethodNameImpl
 				.pattern_MethodName_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -788,13 +786,13 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tName", true, csp);
-		var_tName_tName.setValue(__helper.getValue("tName", "tName"));
-		var_tName_tName.setType("String");
-
 		Variable var_mName_mName = CSPFactoryHelper.eINSTANCE.createVariable("mName", true, csp);
 		var_mName_mName.setValue(__helper.getValue("mName", "mName"));
 		var_mName_mName.setType("String");
+
+		Variable var_tName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tName", true, csp);
+		var_tName_tName.setValue(__helper.getValue("tName", "tName"));
+		var_tName_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -835,13 +833,13 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tName", true, csp);
-		var_tName_tName.setValue(__helper.getValue("tName", "tName"));
-		var_tName_tName.setType("String");
-
 		Variable var_mName_mName = CSPFactoryHelper.eINSTANCE.createVariable("mName", true, csp);
 		var_mName_mName.setValue(__helper.getValue("mName", "mName"));
 		var_mName_mName.setType("String");
+
+		Variable var_tName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tName", true, csp);
+		var_tName_tName.setValue(__helper.getValue("tName", "tName"));
+		var_tName_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -887,38 +885,38 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TypeGraph pg = (TypeGraph) result2_bindingAndBlack[0];
-		MGravityModel mModel = (MGravityModel) result2_bindingAndBlack[1];
+		MGravityModel mModel = (MGravityModel) result2_bindingAndBlack[0];
+		TypeGraph pg = (TypeGraph) result2_bindingAndBlack[1];
 		MMethodName mName = (MMethodName) result2_bindingAndBlack[2];
 		TMethod tName = (TMethod) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = MethodNameImpl.pattern_MethodName_24_3_solvecsp_bindingAndBlackFBBBBBBB(this,
-				pg, mModel, mName, tName, sourceMatch, targetMatch);
+				mModel, pg, mName, tName, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[pg] = " + pg + ", " + "[mModel] = " + mModel + ", " + "[mName] = " + mName + ", " + "[tName] = "
+					+ "[mModel] = " + mModel + ", " + "[pg] = " + pg + ", " + "[mName] = " + mName + ", " + "[tName] = "
 					+ tName + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (MethodNameImpl.pattern_MethodName_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : MethodNameImpl.pattern_MethodName_24_5_matchcorrcontext_blackBBFBB(pg, mModel,
+			for (Object[] result5_black : MethodNameImpl.pattern_MethodName_24_5_matchcorrcontext_blackBBFBB(mModel, pg,
 					sourceMatch, targetMatch)) {
 				ModelToTypeGraph modelToPg = (ModelToTypeGraph) result5_black[2];
 				Object[] result5_green = MethodNameImpl.pattern_MethodName_24_5_matchcorrcontext_greenBBBF(modelToPg,
 						sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
-				Object[] result6_black = MethodNameImpl.pattern_MethodName_24_6_createcorrespondence_blackBBBBB(pg,
-						mModel, mName, tName, ccMatch);
+				Object[] result6_black = MethodNameImpl.pattern_MethodName_24_6_createcorrespondence_blackBBBBB(mModel,
+						pg, mName, tName, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[pg] = " + pg + ", "
-							+ "[mModel] = " + mModel + ", " + "[mName] = " + mName + ", " + "[tName] = " + tName + ", "
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mModel] = " + mModel
+							+ ", " + "[pg] = " + pg + ", " + "[mName] = " + mName + ", " + "[tName] = " + tName + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
-				MethodNameImpl.pattern_MethodName_24_6_createcorrespondence_greenFBBB(mName, tName, ccMatch);
-				//nothing MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result6_green[0];
+				MethodNameImpl.pattern_MethodName_24_6_createcorrespondence_greenBFBB(mName, tName, ccMatch);
+				//nothing MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result6_green[1];
 
 				Object[] result7_black = MethodNameImpl.pattern_MethodName_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -940,7 +938,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TypeGraph pg, MGravityModel mModel, MMethodName mName, TMethod tName,
+	public CSP isApplicable_solveCsp_CC(MGravityModel mModel, TypeGraph pg, MMethodName mName, TMethod tName,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -1026,35 +1024,36 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		for (Object[] result2_black : MethodNameImpl
 				.pattern_MethodName_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList modelToPgList = (RuleEntryList) result2_black[0];
-			TypeGraph pg = (TypeGraph) result2_black[1];
+			MGravityModel mModel = (MGravityModel) result2_black[1];
 			ModelToTypeGraph modelToPg = (ModelToTypeGraph) result2_black[2];
-			MGravityModel mModel = (MGravityModel) result2_black[3];
+			TypeGraph pg = (TypeGraph) result2_black[3];
 
 			Object[] result3_bindingAndBlack = MethodNameImpl.pattern_MethodName_29_3_solveCSP_bindingAndBlackFBBBBBB(
-					this, isApplicableMatch, pg, mModel, modelToPg, ruleResult);
+					this, isApplicableMatch, mModel, pg, modelToPg, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[pg] = " + pg + ", " + "[mModel] = "
-						+ mModel + ", " + "[modelToPg] = " + modelToPg + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModel] = " + mModel + ", "
+						+ "[pg] = " + pg + ", " + "[modelToPg] = " + modelToPg + ", " + "[ruleResult] = " + ruleResult
+						+ ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (MethodNameImpl.pattern_MethodName_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = MethodNameImpl.pattern_MethodName_29_5_checknacs_blackBBB(pg, mModel,
+				Object[] result5_black = MethodNameImpl.pattern_MethodName_29_5_checknacs_blackBBB(mModel, pg,
 						modelToPg);
 				if (result5_black != null) {
 
-					Object[] result6_black = MethodNameImpl.pattern_MethodName_29_6_perform_blackBBBB(pg, mModel,
+					Object[] result6_black = MethodNameImpl.pattern_MethodName_29_6_perform_blackBBBB(mModel, pg,
 							modelToPg, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[pg] = " + pg + ", "
-								+ "[mModel] = " + mModel + ", " + "[modelToPg] = " + modelToPg + ", "
-								+ "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mModel] = " + mModel
+								+ ", " + "[pg] = " + pg + ", " + "[modelToPg] = " + modelToPg + ", " + "[ruleResult] = "
+								+ ruleResult + ".");
 					}
-					MethodNameImpl.pattern_MethodName_29_6_perform_greenBBFFFBB(pg, mModel, ruleResult, csp);
-					//nothing MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result6_green[2];
-					//nothing MMethodName mName = (MMethodName) result6_green[3];
+					MethodNameImpl.pattern_MethodName_29_6_perform_greenBBFFFBB(mModel, pg, ruleResult, csp);
+					//nothing MMethodName mName = (MMethodName) result6_green[2];
+					//nothing MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result6_green[3];
 					//nothing TMethod tName = (TMethod) result6_green[4];
 
 				} else {
@@ -1072,7 +1071,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel mModel,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MGravityModel mModel, TypeGraph pg,
 			ModelToTypeGraph modelToPg, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1097,8 +1096,8 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		eq.solve(var_mName_mName, var_tName_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("mModel", mModel);
+		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("modelToPg", modelToPg);
 		return csp;
 	}
@@ -1136,10 +1135,9 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 					(MMethodName) arguments.get(2));
 		case RulesPackage.METHOD_NAME___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_NAME___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEGRAPH_MGRAVITYMODEL_MMETHODNAME_MODELTOTYPEGRAPH:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-					(MGravityModel) arguments.get(2), (MMethodName) arguments.get(3),
-					(ModelToTypeGraph) arguments.get(4));
+		case RulesPackage.METHOD_NAME___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MGRAVITYMODEL_TYPEGRAPH_MMETHODNAME_MODELTOTYPEGRAPH:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MGravityModel) arguments.get(1),
+					(TypeGraph) arguments.get(2), (MMethodName) arguments.get(3), (ModelToTypeGraph) arguments.get(4));
 		case RulesPackage.METHOD_NAME___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_NAME___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1165,9 +1163,9 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 					(TMethod) arguments.get(2));
 		case RulesPackage.METHOD_NAME___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_NAME___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_MGRAVITYMODEL_MODELTOTYPEGRAPH_TMETHOD:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-					(MGravityModel) arguments.get(2), (ModelToTypeGraph) arguments.get(3), (TMethod) arguments.get(4));
+		case RulesPackage.METHOD_NAME___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MGRAVITYMODEL_TYPEGRAPH_MODELTOTYPEGRAPH_TMETHOD:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MGravityModel) arguments.get(1),
+					(TypeGraph) arguments.get(2), (ModelToTypeGraph) arguments.get(3), (TMethod) arguments.get(4));
 		case RulesPackage.METHOD_NAME___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_NAME___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1177,18 +1175,18 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 			return null;
 		case RulesPackage.METHOD_NAME___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_NAME___IS_APPROPRIATE_BWD_EMOFLON_EDGE_52__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_52((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_NAME___IS_APPROPRIATE_FWD_EMOFLON_EDGE_55__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_55((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_NAME___IS_APPROPRIATE_BWD_EMOFLON_EDGE_68__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_68((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_NAME___IS_APPROPRIATE_FWD_EMOFLON_EDGE_69__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_69((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_NAME___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_NAME___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_NAME___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.METHOD_NAME___IS_APPLICABLE_SOLVE_CSP_CC__TYPEGRAPH_MGRAVITYMODEL_MMETHODNAME_TMETHOD_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TypeGraph) arguments.get(0), (MGravityModel) arguments.get(1),
+		case RulesPackage.METHOD_NAME___IS_APPLICABLE_SOLVE_CSP_CC__MGRAVITYMODEL_TYPEGRAPH_MMETHODNAME_TMETHOD_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((MGravityModel) arguments.get(0), (TypeGraph) arguments.get(1),
 					(MMethodName) arguments.get(2), (TMethod) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.METHOD_NAME___IS_APPLICABLE_CHECK_CSP_CC__CSP:
@@ -1199,9 +1197,9 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 			return checkDEC_BWD((TypeGraph) arguments.get(0), (TMethod) arguments.get(1));
 		case RulesPackage.METHOD_NAME___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-		case RulesPackage.METHOD_NAME___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_MGRAVITYMODEL_MODELTOTYPEGRAPH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-					(MGravityModel) arguments.get(2), (ModelToTypeGraph) arguments.get(3),
+		case RulesPackage.METHOD_NAME___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MGRAVITYMODEL_TYPEGRAPH_MODELTOTYPEGRAPH_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MGravityModel) arguments.get(1),
+					(TypeGraph) arguments.get(2), (ModelToTypeGraph) arguments.get(3),
 					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.METHOD_NAME___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1296,23 +1294,23 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 
 	public static final Object[] pattern_MethodName_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("pg");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mModel");
+		EObject _localVariable_0 = isApplicableMatch.getObject("mModel");
+		EObject _localVariable_1 = isApplicableMatch.getObject("pg");
 		EObject _localVariable_2 = isApplicableMatch.getObject("mName");
 		EObject _localVariable_3 = isApplicableMatch.getObject("modelToPg");
-		EObject tmpPg = _localVariable_0;
-		EObject tmpMModel = _localVariable_1;
+		EObject tmpMModel = _localVariable_0;
+		EObject tmpPg = _localVariable_1;
 		EObject tmpMName = _localVariable_2;
 		EObject tmpModelToPg = _localVariable_3;
-		if (tmpPg instanceof TypeGraph) {
-			TypeGraph pg = (TypeGraph) tmpPg;
-			if (tmpMModel instanceof MGravityModel) {
-				MGravityModel mModel = (MGravityModel) tmpMModel;
+		if (tmpMModel instanceof MGravityModel) {
+			MGravityModel mModel = (MGravityModel) tmpMModel;
+			if (tmpPg instanceof TypeGraph) {
+				TypeGraph pg = (TypeGraph) tmpPg;
 				if (tmpMName instanceof MMethodName) {
 					MMethodName mName = (MMethodName) tmpMName;
 					if (tmpModelToPg instanceof ModelToTypeGraph) {
 						ModelToTypeGraph modelToPg = (ModelToTypeGraph) tmpModelToPg;
-						return new Object[] { pg, mModel, mName, modelToPg, isApplicableMatch };
+						return new Object[] { mModel, pg, mName, modelToPg, isApplicableMatch };
 					}
 				}
 			}
@@ -1320,13 +1318,13 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		return null;
 	}
 
-	public static final Object[] pattern_MethodName_1_1_performtransformation_blackBBBBFBB(TypeGraph pg,
-			MGravityModel mModel, MMethodName mName, ModelToTypeGraph modelToPg, MethodName _this,
+	public static final Object[] pattern_MethodName_1_1_performtransformation_blackBBBBFBB(MGravityModel mModel,
+			TypeGraph pg, MMethodName mName, ModelToTypeGraph modelToPg, MethodName _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { pg, mModel, mName, modelToPg, csp, _this, isApplicableMatch };
+				return new Object[] { mModel, pg, mName, modelToPg, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1337,23 +1335,23 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		Object[] result_pattern_MethodName_1_1_performtransformation_binding = pattern_MethodName_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodName_1_1_performtransformation_binding != null) {
-			TypeGraph pg = (TypeGraph) result_pattern_MethodName_1_1_performtransformation_binding[0];
-			MGravityModel mModel = (MGravityModel) result_pattern_MethodName_1_1_performtransformation_binding[1];
+			MGravityModel mModel = (MGravityModel) result_pattern_MethodName_1_1_performtransformation_binding[0];
+			TypeGraph pg = (TypeGraph) result_pattern_MethodName_1_1_performtransformation_binding[1];
 			MMethodName mName = (MMethodName) result_pattern_MethodName_1_1_performtransformation_binding[2];
 			ModelToTypeGraph modelToPg = (ModelToTypeGraph) result_pattern_MethodName_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_MethodName_1_1_performtransformation_black = pattern_MethodName_1_1_performtransformation_blackBBBBFBB(
-					pg, mModel, mName, modelToPg, _this, isApplicableMatch);
+					mModel, pg, mName, modelToPg, _this, isApplicableMatch);
 			if (result_pattern_MethodName_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodName_1_1_performtransformation_black[4];
 
-				return new Object[] { pg, mModel, mName, modelToPg, csp, _this, isApplicableMatch };
+				return new Object[] { mModel, pg, mName, modelToPg, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodName_1_1_performtransformation_greenBFBFB(TypeGraph pg,
+	public static final Object[] pattern_MethodName_1_1_performtransformation_greenBBFFB(TypeGraph pg,
 			MMethodName mName, CSP csp) {
 		MMethodNameToTMethod mNameToTName = PmFactory.eINSTANCE.createMMethodNameToTMethod();
 		TMethod tName = BasicFactory.eINSTANCE.createTMethod();
@@ -1363,42 +1361,42 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		mNameToTName.setTarget(tName);
 		String tName_tName_prime = (String) _localVariable_0;
 		tName.setTName(tName_tName_prime);
-		return new Object[] { pg, mNameToTName, mName, tName, csp };
+		return new Object[] { pg, mName, mNameToTName, tName, csp };
 	}
 
-	public static final Object[] pattern_MethodName_1_2_collecttranslatedelements_blackBBB(
-			MMethodNameToTMethod mNameToTName, MMethodName mName, TMethod tName) {
-		return new Object[] { mNameToTName, mName, tName };
+	public static final Object[] pattern_MethodName_1_2_collecttranslatedelements_blackBBB(MMethodName mName,
+			MMethodNameToTMethod mNameToTName, TMethod tName) {
+		return new Object[] { mName, mNameToTName, tName };
 	}
 
-	public static final Object[] pattern_MethodName_1_2_collecttranslatedelements_greenFBBB(
-			MMethodNameToTMethod mNameToTName, MMethodName mName, TMethod tName) {
+	public static final Object[] pattern_MethodName_1_2_collecttranslatedelements_greenFBBB(MMethodName mName,
+			MMethodNameToTMethod mNameToTName, TMethod tName) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(mNameToTName);
 		ruleresult.getTranslatedElements().add(mName);
+		ruleresult.getCreatedLinkElements().add(mNameToTName);
 		ruleresult.getCreatedElements().add(tName);
-		return new Object[] { ruleresult, mNameToTName, mName, tName };
+		return new Object[] { ruleresult, mName, mNameToTName, tName };
 	}
 
 	public static final Object[] pattern_MethodName_1_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject pg, EObject mModel, EObject mNameToTName, EObject mName, EObject modelToPg, EObject tName) {
-		if (!pg.equals(tName)) {
-			if (!mModel.equals(pg)) {
-				if (!mModel.equals(mNameToTName)) {
-					if (!mModel.equals(mName)) {
-						if (!mModel.equals(modelToPg)) {
-							if (!mModel.equals(tName)) {
-								if (!mNameToTName.equals(pg)) {
-									if (!mNameToTName.equals(modelToPg)) {
-										if (!mNameToTName.equals(tName)) {
-											if (!mName.equals(pg)) {
-												if (!mName.equals(mNameToTName)) {
-													if (!mName.equals(modelToPg)) {
-														if (!mName.equals(tName)) {
-															if (!modelToPg.equals(pg)) {
-																if (!modelToPg.equals(tName)) {
-																	return new Object[] { ruleresult, pg, mModel,
-																			mNameToTName, mName, modelToPg, tName };
+			EObject mModel, EObject pg, EObject mName, EObject modelToPg, EObject mNameToTName, EObject tName) {
+		if (!mModel.equals(pg)) {
+			if (!mModel.equals(mName)) {
+				if (!mModel.equals(modelToPg)) {
+					if (!mModel.equals(mNameToTName)) {
+						if (!mModel.equals(tName)) {
+							if (!pg.equals(tName)) {
+								if (!mName.equals(pg)) {
+									if (!mName.equals(modelToPg)) {
+										if (!mName.equals(mNameToTName)) {
+											if (!mName.equals(tName)) {
+												if (!modelToPg.equals(pg)) {
+													if (!modelToPg.equals(tName)) {
+														if (!mNameToTName.equals(pg)) {
+															if (!mNameToTName.equals(modelToPg)) {
+																if (!mNameToTName.equals(tName)) {
+																	return new Object[] { ruleresult, mModel, pg, mName,
+																			modelToPg, mNameToTName, tName };
 																}
 															}
 														}
@@ -1418,7 +1416,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject pg, EObject mModel, EObject mNameToTName, EObject mName,
+			PerformRuleResult ruleresult, EObject mModel, EObject pg, EObject mName, EObject mNameToTName,
 			EObject tName) {
 		EMoflonEdge pg__tName____methods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1452,15 +1450,15 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		mModel__mName____mMethodNames.setName(mModel__mName____mMethodNames_name_prime);
 		mNameToTName__mName____source.setName(mNameToTName__mName____source_name_prime);
 		mNameToTName__tName____target.setName(mNameToTName__tName____target_name_prime);
-		return new Object[] { ruleresult, pg, mModel, mNameToTName, mName, tName, pg__tName____methods,
+		return new Object[] { ruleresult, mModel, pg, mName, mNameToTName, tName, pg__tName____methods,
 				tName__pg____model, mModel__mName____mMethodNames, mNameToTName__mName____source,
 				mNameToTName__tName____target };
 	}
 
 	public static final void pattern_MethodName_1_5_registerobjects_expressionBBBBBBBB(MethodName _this,
-			PerformRuleResult ruleresult, EObject pg, EObject mModel, EObject mNameToTName, EObject mName,
-			EObject modelToPg, EObject tName) {
-		_this.registerObjects_FWD(ruleresult, pg, mModel, mNameToTName, mName, modelToPg, tName);
+			PerformRuleResult ruleresult, EObject mModel, EObject pg, EObject mName, EObject modelToPg,
+			EObject mNameToTName, EObject tName) {
+		_this.registerObjects_FWD(ruleresult, mModel, pg, mName, modelToPg, mNameToTName, tName);
 
 	}
 
@@ -1531,69 +1529,69 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodName_2_2_corematch_blackFBBFB(MGravityModel mModel,
+	public static final Iterable<Object[]> pattern_MethodName_2_2_corematch_blackBFBFB(MGravityModel mModel,
 			MMethodName mName, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph modelToPg : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(mModel,
 				ModelToTypeGraph.class, "source")) {
 			TypeGraph pg = modelToPg.getTarget();
 			if (pg != null) {
-				_result.add(new Object[] { pg, mModel, mName, modelToPg, match });
+				_result.add(new Object[] { mModel, pg, mName, modelToPg, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodName_2_3_findcontext_blackBBBB(TypeGraph pg,
-			MGravityModel mModel, MMethodName mName, ModelToTypeGraph modelToPg) {
+	public static final Iterable<Object[]> pattern_MethodName_2_3_findcontext_blackBBBB(MGravityModel mModel,
+			TypeGraph pg, MMethodName mName, ModelToTypeGraph modelToPg) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mModel.getMMethodNames().contains(mName)) {
+		if (pg.equals(modelToPg.getTarget())) {
 			if (mModel.equals(modelToPg.getSource())) {
-				if (pg.equals(modelToPg.getTarget())) {
-					_result.add(new Object[] { pg, mModel, mName, modelToPg });
+				if (mModel.getMMethodNames().contains(mName)) {
+					_result.add(new Object[] { mModel, pg, mName, modelToPg });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodName_2_3_findcontext_greenBBBBFFFF(TypeGraph pg, MGravityModel mModel,
+	public static final Object[] pattern_MethodName_2_3_findcontext_greenBBBBFFFF(MGravityModel mModel, TypeGraph pg,
 			MMethodName mName, ModelToTypeGraph modelToPg) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mModel__mName____mMethodNames = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge modelToPg__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mModel__mName____mMethodNames_name_prime = "mMethodNames";
-		String modelToPg__mModel____source_name_prime = "source";
+		EMoflonEdge modelToPg__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModel__mName____mMethodNames = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String modelToPg__pg____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(pg);
+		String modelToPg__mModel____source_name_prime = "source";
+		String mModel__mName____mMethodNames_name_prime = "mMethodNames";
 		isApplicableMatch.getAllContextElements().add(mModel);
+		isApplicableMatch.getAllContextElements().add(pg);
 		isApplicableMatch.getAllContextElements().add(mName);
 		isApplicableMatch.getAllContextElements().add(modelToPg);
-		mModel__mName____mMethodNames.setSrc(mModel);
-		mModel__mName____mMethodNames.setTrg(mName);
-		isApplicableMatch.getAllContextElements().add(mModel__mName____mMethodNames);
-		modelToPg__mModel____source.setSrc(modelToPg);
-		modelToPg__mModel____source.setTrg(mModel);
-		isApplicableMatch.getAllContextElements().add(modelToPg__mModel____source);
 		modelToPg__pg____target.setSrc(modelToPg);
 		modelToPg__pg____target.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(modelToPg__pg____target);
-		mModel__mName____mMethodNames.setName(mModel__mName____mMethodNames_name_prime);
-		modelToPg__mModel____source.setName(modelToPg__mModel____source_name_prime);
+		modelToPg__mModel____source.setSrc(modelToPg);
+		modelToPg__mModel____source.setTrg(mModel);
+		isApplicableMatch.getAllContextElements().add(modelToPg__mModel____source);
+		mModel__mName____mMethodNames.setSrc(mModel);
+		mModel__mName____mMethodNames.setTrg(mName);
+		isApplicableMatch.getAllContextElements().add(mModel__mName____mMethodNames);
 		modelToPg__pg____target.setName(modelToPg__pg____target_name_prime);
-		return new Object[] { pg, mModel, mName, modelToPg, isApplicableMatch, mModel__mName____mMethodNames,
-				modelToPg__mModel____source, modelToPg__pg____target };
+		modelToPg__mModel____source.setName(modelToPg__mModel____source_name_prime);
+		mModel__mName____mMethodNames.setName(mModel__mName____mMethodNames_name_prime);
+		return new Object[] { mModel, pg, mName, modelToPg, isApplicableMatch, modelToPg__pg____target,
+				modelToPg__mModel____source, mModel__mName____mMethodNames };
 	}
 
 	public static final Object[] pattern_MethodName_2_4_solveCSP_bindingFBBBBBB(MethodName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel mModel, MMethodName mName,
+			IsApplicableMatch isApplicableMatch, MGravityModel mModel, TypeGraph pg, MMethodName mName,
 			ModelToTypeGraph modelToPg) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, pg, mModel, mName, modelToPg);
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mModel, pg, mName, modelToPg);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, pg, mModel, mName, modelToPg };
+			return new Object[] { csp, _this, isApplicableMatch, mModel, pg, mName, modelToPg };
 		}
 		return null;
 	}
@@ -1603,17 +1601,17 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_2_4_solveCSP_bindingAndBlackFBBBBBB(MethodName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel mModel, MMethodName mName,
+			IsApplicableMatch isApplicableMatch, MGravityModel mModel, TypeGraph pg, MMethodName mName,
 			ModelToTypeGraph modelToPg) {
 		Object[] result_pattern_MethodName_2_4_solveCSP_binding = pattern_MethodName_2_4_solveCSP_bindingFBBBBBB(_this,
-				isApplicableMatch, pg, mModel, mName, modelToPg);
+				isApplicableMatch, mModel, pg, mName, modelToPg);
 		if (result_pattern_MethodName_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodName_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_MethodName_2_4_solveCSP_black = pattern_MethodName_2_4_solveCSP_blackB(csp);
 			if (result_pattern_MethodName_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, pg, mModel, mName, modelToPg };
+				return new Object[] { csp, _this, isApplicableMatch, mModel, pg, mName, modelToPg };
 			}
 		}
 		return null;
@@ -1737,23 +1735,23 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 
 	public static final Object[] pattern_MethodName_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("pg");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mModel");
+		EObject _localVariable_0 = isApplicableMatch.getObject("mModel");
+		EObject _localVariable_1 = isApplicableMatch.getObject("pg");
 		EObject _localVariable_2 = isApplicableMatch.getObject("modelToPg");
 		EObject _localVariable_3 = isApplicableMatch.getObject("tName");
-		EObject tmpPg = _localVariable_0;
-		EObject tmpMModel = _localVariable_1;
+		EObject tmpMModel = _localVariable_0;
+		EObject tmpPg = _localVariable_1;
 		EObject tmpModelToPg = _localVariable_2;
 		EObject tmpTName = _localVariable_3;
-		if (tmpPg instanceof TypeGraph) {
-			TypeGraph pg = (TypeGraph) tmpPg;
-			if (tmpMModel instanceof MGravityModel) {
-				MGravityModel mModel = (MGravityModel) tmpMModel;
+		if (tmpMModel instanceof MGravityModel) {
+			MGravityModel mModel = (MGravityModel) tmpMModel;
+			if (tmpPg instanceof TypeGraph) {
+				TypeGraph pg = (TypeGraph) tmpPg;
 				if (tmpModelToPg instanceof ModelToTypeGraph) {
 					ModelToTypeGraph modelToPg = (ModelToTypeGraph) tmpModelToPg;
 					if (tmpTName instanceof TMethod) {
 						TMethod tName = (TMethod) tmpTName;
-						return new Object[] { pg, mModel, modelToPg, tName, isApplicableMatch };
+						return new Object[] { mModel, pg, modelToPg, tName, isApplicableMatch };
 					}
 				}
 			}
@@ -1761,13 +1759,13 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		return null;
 	}
 
-	public static final Object[] pattern_MethodName_11_1_performtransformation_blackBBBBFBB(TypeGraph pg,
-			MGravityModel mModel, ModelToTypeGraph modelToPg, TMethod tName, MethodName _this,
+	public static final Object[] pattern_MethodName_11_1_performtransformation_blackBBBBFBB(MGravityModel mModel,
+			TypeGraph pg, ModelToTypeGraph modelToPg, TMethod tName, MethodName _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { pg, mModel, modelToPg, tName, csp, _this, isApplicableMatch };
+				return new Object[] { mModel, pg, modelToPg, tName, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1778,17 +1776,17 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		Object[] result_pattern_MethodName_11_1_performtransformation_binding = pattern_MethodName_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodName_11_1_performtransformation_binding != null) {
-			TypeGraph pg = (TypeGraph) result_pattern_MethodName_11_1_performtransformation_binding[0];
-			MGravityModel mModel = (MGravityModel) result_pattern_MethodName_11_1_performtransformation_binding[1];
+			MGravityModel mModel = (MGravityModel) result_pattern_MethodName_11_1_performtransformation_binding[0];
+			TypeGraph pg = (TypeGraph) result_pattern_MethodName_11_1_performtransformation_binding[1];
 			ModelToTypeGraph modelToPg = (ModelToTypeGraph) result_pattern_MethodName_11_1_performtransformation_binding[2];
 			TMethod tName = (TMethod) result_pattern_MethodName_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_MethodName_11_1_performtransformation_black = pattern_MethodName_11_1_performtransformation_blackBBBBFBB(
-					pg, mModel, modelToPg, tName, _this, isApplicableMatch);
+					mModel, pg, modelToPg, tName, _this, isApplicableMatch);
 			if (result_pattern_MethodName_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodName_11_1_performtransformation_black[4];
 
-				return new Object[] { pg, mModel, modelToPg, tName, csp, _this, isApplicableMatch };
+				return new Object[] { mModel, pg, modelToPg, tName, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1796,50 +1794,50 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 
 	public static final Object[] pattern_MethodName_11_1_performtransformation_greenBFFBB(MGravityModel mModel,
 			TMethod tName, CSP csp) {
-		MMethodNameToTMethod mNameToTName = PmFactory.eINSTANCE.createMMethodNameToTMethod();
 		MMethodName mName = ModiscoFactory.eINSTANCE.createMMethodName();
+		MMethodNameToTMethod mNameToTName = PmFactory.eINSTANCE.createMMethodNameToTMethod();
 		Object _localVariable_0 = csp.getValue("mName", "mName");
-		mNameToTName.setTarget(tName);
 		mModel.getMMethodNames().add(mName);
 		mNameToTName.setSource(mName);
+		mNameToTName.setTarget(tName);
 		String mName_mName_prime = (String) _localVariable_0;
 		mName.setMName(mName_mName_prime);
-		return new Object[] { mModel, mNameToTName, mName, tName, csp };
+		return new Object[] { mModel, mName, mNameToTName, tName, csp };
 	}
 
-	public static final Object[] pattern_MethodName_11_2_collecttranslatedelements_blackBBB(
-			MMethodNameToTMethod mNameToTName, MMethodName mName, TMethod tName) {
-		return new Object[] { mNameToTName, mName, tName };
+	public static final Object[] pattern_MethodName_11_2_collecttranslatedelements_blackBBB(MMethodName mName,
+			MMethodNameToTMethod mNameToTName, TMethod tName) {
+		return new Object[] { mName, mNameToTName, tName };
 	}
 
-	public static final Object[] pattern_MethodName_11_2_collecttranslatedelements_greenFBBB(
-			MMethodNameToTMethod mNameToTName, MMethodName mName, TMethod tName) {
+	public static final Object[] pattern_MethodName_11_2_collecttranslatedelements_greenFBBB(MMethodName mName,
+			MMethodNameToTMethod mNameToTName, TMethod tName) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(mNameToTName);
 		ruleresult.getCreatedElements().add(mName);
+		ruleresult.getCreatedLinkElements().add(mNameToTName);
 		ruleresult.getTranslatedElements().add(tName);
-		return new Object[] { ruleresult, mNameToTName, mName, tName };
+		return new Object[] { ruleresult, mName, mNameToTName, tName };
 	}
 
 	public static final Object[] pattern_MethodName_11_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject pg, EObject mModel, EObject mNameToTName, EObject mName, EObject modelToPg, EObject tName) {
-		if (!pg.equals(tName)) {
-			if (!mModel.equals(pg)) {
-				if (!mModel.equals(mNameToTName)) {
-					if (!mModel.equals(mName)) {
-						if (!mModel.equals(modelToPg)) {
-							if (!mModel.equals(tName)) {
-								if (!mNameToTName.equals(pg)) {
-									if (!mNameToTName.equals(modelToPg)) {
-										if (!mNameToTName.equals(tName)) {
-											if (!mName.equals(pg)) {
-												if (!mName.equals(mNameToTName)) {
-													if (!mName.equals(modelToPg)) {
-														if (!mName.equals(tName)) {
-															if (!modelToPg.equals(pg)) {
-																if (!modelToPg.equals(tName)) {
-																	return new Object[] { ruleresult, pg, mModel,
-																			mNameToTName, mName, modelToPg, tName };
+			EObject mModel, EObject pg, EObject mName, EObject modelToPg, EObject mNameToTName, EObject tName) {
+		if (!mModel.equals(pg)) {
+			if (!mModel.equals(mName)) {
+				if (!mModel.equals(modelToPg)) {
+					if (!mModel.equals(mNameToTName)) {
+						if (!mModel.equals(tName)) {
+							if (!pg.equals(tName)) {
+								if (!mName.equals(pg)) {
+									if (!mName.equals(modelToPg)) {
+										if (!mName.equals(mNameToTName)) {
+											if (!mName.equals(tName)) {
+												if (!modelToPg.equals(pg)) {
+													if (!modelToPg.equals(tName)) {
+														if (!mNameToTName.equals(pg)) {
+															if (!mNameToTName.equals(modelToPg)) {
+																if (!mNameToTName.equals(tName)) {
+																	return new Object[] { ruleresult, mModel, pg, mName,
+																			modelToPg, mNameToTName, tName };
 																}
 															}
 														}
@@ -1859,7 +1857,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject pg, EObject mModel, EObject mNameToTName, EObject mName,
+			PerformRuleResult ruleresult, EObject mModel, EObject pg, EObject mName, EObject mNameToTName,
 			EObject tName) {
 		EMoflonEdge pg__tName____methods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1893,15 +1891,15 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		mModel__mName____mMethodNames.setName(mModel__mName____mMethodNames_name_prime);
 		mNameToTName__mName____source.setName(mNameToTName__mName____source_name_prime);
 		mNameToTName__tName____target.setName(mNameToTName__tName____target_name_prime);
-		return new Object[] { ruleresult, pg, mModel, mNameToTName, mName, tName, pg__tName____methods,
+		return new Object[] { ruleresult, mModel, pg, mName, mNameToTName, tName, pg__tName____methods,
 				tName__pg____model, mModel__mName____mMethodNames, mNameToTName__mName____source,
 				mNameToTName__tName____target };
 	}
 
 	public static final void pattern_MethodName_11_5_registerobjects_expressionBBBBBBBB(MethodName _this,
-			PerformRuleResult ruleresult, EObject pg, EObject mModel, EObject mNameToTName, EObject mName,
-			EObject modelToPg, EObject tName) {
-		_this.registerObjects_BWD(ruleresult, pg, mModel, mNameToTName, mName, modelToPg, tName);
+			PerformRuleResult ruleresult, EObject mModel, EObject pg, EObject mName, EObject modelToPg,
+			EObject mNameToTName, EObject tName) {
+		_this.registerObjects_BWD(ruleresult, mModel, pg, mName, modelToPg, mNameToTName, tName);
 
 	}
 
@@ -1972,7 +1970,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodName_12_2_corematch_blackBFFBB(TypeGraph pg, TMethod tName,
+	public static final Iterable<Object[]> pattern_MethodName_12_2_corematch_blackFBFBB(TypeGraph pg, TMethod tName,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph modelToPg : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(pg,
@@ -1980,39 +1978,39 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 			Model tmpMModel = modelToPg.getSource();
 			if (tmpMModel instanceof MGravityModel) {
 				MGravityModel mModel = (MGravityModel) tmpMModel;
-				_result.add(new Object[] { pg, mModel, modelToPg, tName, match });
+				_result.add(new Object[] { mModel, pg, modelToPg, tName, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodName_12_3_findcontext_blackBBBB(TypeGraph pg,
-			MGravityModel mModel, ModelToTypeGraph modelToPg, TMethod tName) {
+	public static final Iterable<Object[]> pattern_MethodName_12_3_findcontext_blackBBBB(MGravityModel mModel,
+			TypeGraph pg, ModelToTypeGraph modelToPg, TMethod tName) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (pg.getMethods().contains(tName)) {
-			if (mModel.equals(modelToPg.getSource())) {
-				if (pg.equals(modelToPg.getTarget())) {
-					_result.add(new Object[] { pg, mModel, modelToPg, tName });
+			if (pg.equals(modelToPg.getTarget())) {
+				if (mModel.equals(modelToPg.getSource())) {
+					_result.add(new Object[] { mModel, pg, modelToPg, tName });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodName_12_3_findcontext_greenBBBBFFFFF(TypeGraph pg, MGravityModel mModel,
+	public static final Object[] pattern_MethodName_12_3_findcontext_greenBBBBFFFFF(MGravityModel mModel, TypeGraph pg,
 			ModelToTypeGraph modelToPg, TMethod tName) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge pg__tName____methods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge modelToPg__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge modelToPg__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String pg__tName____methods_name_prime = "methods";
 		String tName__pg____model_name_prime = "model";
-		String modelToPg__mModel____source_name_prime = "source";
 		String modelToPg__pg____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(pg);
+		String modelToPg__mModel____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mModel);
+		isApplicableMatch.getAllContextElements().add(pg);
 		isApplicableMatch.getAllContextElements().add(modelToPg);
 		isApplicableMatch.getAllContextElements().add(tName);
 		pg__tName____methods.setSrc(pg);
@@ -2021,27 +2019,27 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		tName__pg____model.setSrc(tName);
 		tName__pg____model.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tName__pg____model);
-		modelToPg__mModel____source.setSrc(modelToPg);
-		modelToPg__mModel____source.setTrg(mModel);
-		isApplicableMatch.getAllContextElements().add(modelToPg__mModel____source);
 		modelToPg__pg____target.setSrc(modelToPg);
 		modelToPg__pg____target.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(modelToPg__pg____target);
+		modelToPg__mModel____source.setSrc(modelToPg);
+		modelToPg__mModel____source.setTrg(mModel);
+		isApplicableMatch.getAllContextElements().add(modelToPg__mModel____source);
 		pg__tName____methods.setName(pg__tName____methods_name_prime);
 		tName__pg____model.setName(tName__pg____model_name_prime);
-		modelToPg__mModel____source.setName(modelToPg__mModel____source_name_prime);
 		modelToPg__pg____target.setName(modelToPg__pg____target_name_prime);
-		return new Object[] { pg, mModel, modelToPg, tName, isApplicableMatch, pg__tName____methods, tName__pg____model,
-				modelToPg__mModel____source, modelToPg__pg____target };
+		modelToPg__mModel____source.setName(modelToPg__mModel____source_name_prime);
+		return new Object[] { mModel, pg, modelToPg, tName, isApplicableMatch, pg__tName____methods, tName__pg____model,
+				modelToPg__pg____target, modelToPg__mModel____source };
 	}
 
 	public static final Object[] pattern_MethodName_12_4_solveCSP_bindingFBBBBBB(MethodName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel mModel, ModelToTypeGraph modelToPg,
+			IsApplicableMatch isApplicableMatch, MGravityModel mModel, TypeGraph pg, ModelToTypeGraph modelToPg,
 			TMethod tName) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, pg, mModel, modelToPg, tName);
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mModel, pg, modelToPg, tName);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, pg, mModel, modelToPg, tName };
+			return new Object[] { csp, _this, isApplicableMatch, mModel, pg, modelToPg, tName };
 		}
 		return null;
 	}
@@ -2051,17 +2049,17 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_12_4_solveCSP_bindingAndBlackFBBBBBB(MethodName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel mModel, ModelToTypeGraph modelToPg,
+			IsApplicableMatch isApplicableMatch, MGravityModel mModel, TypeGraph pg, ModelToTypeGraph modelToPg,
 			TMethod tName) {
 		Object[] result_pattern_MethodName_12_4_solveCSP_binding = pattern_MethodName_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, pg, mModel, modelToPg, tName);
+				_this, isApplicableMatch, mModel, pg, modelToPg, tName);
 		if (result_pattern_MethodName_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodName_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_MethodName_12_4_solveCSP_black = pattern_MethodName_12_4_solveCSP_blackB(csp);
 			if (result_pattern_MethodName_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, pg, mModel, modelToPg, tName };
+				return new Object[] { csp, _this, isApplicableMatch, mModel, pg, modelToPg, tName };
 			}
 		}
 		return null;
@@ -2147,9 +2145,9 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 
 	public static final Object[] pattern_MethodName_20_2_testcorematchandDECs_black_nac_0BB(TMethod tName,
 			TypeGraph pg) {
-		TypeGraph __DEC_tName_model_671944 = tName.getModel();
-		if (__DEC_tName_model_671944 != null) {
-			if (!pg.equals(__DEC_tName_model_671944)) {
+		TypeGraph __DEC_tName_model_959518 = tName.getModel();
+		if (__DEC_tName_model_959518 != null) {
+			if (!pg.equals(__DEC_tName_model_959518)) {
 				return new Object[] { tName, pg };
 			}
 		}
@@ -2346,25 +2344,25 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_MethodName_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
-			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("pg");
-		EObject _localVariable_1 = sourceMatch.getObject("mModel");
+	public static final Object[] pattern_MethodName_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
+			Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("mModel");
+		EObject _localVariable_1 = targetMatch.getObject("pg");
 		EObject _localVariable_2 = sourceMatch.getObject("mName");
 		EObject _localVariable_3 = targetMatch.getObject("tName");
-		EObject tmpPg = _localVariable_0;
-		EObject tmpMModel = _localVariable_1;
+		EObject tmpMModel = _localVariable_0;
+		EObject tmpPg = _localVariable_1;
 		EObject tmpMName = _localVariable_2;
 		EObject tmpTName = _localVariable_3;
-		if (tmpPg instanceof TypeGraph) {
-			TypeGraph pg = (TypeGraph) tmpPg;
-			if (tmpMModel instanceof MGravityModel) {
-				MGravityModel mModel = (MGravityModel) tmpMModel;
+		if (tmpMModel instanceof MGravityModel) {
+			MGravityModel mModel = (MGravityModel) tmpMModel;
+			if (tmpPg instanceof TypeGraph) {
+				TypeGraph pg = (TypeGraph) tmpPg;
 				if (tmpMName instanceof MMethodName) {
 					MMethodName mName = (MMethodName) tmpMName;
 					if (tmpTName instanceof TMethod) {
 						TMethod tName = (TMethod) tmpTName;
-						return new Object[] { pg, mModel, mName, tName, targetMatch, sourceMatch };
+						return new Object[] { mModel, pg, mName, tName, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2372,10 +2370,10 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		return null;
 	}
 
-	public static final Object[] pattern_MethodName_24_2_matchsrctrgcontext_blackBBBBBB(TypeGraph pg,
-			MGravityModel mModel, MMethodName mName, TMethod tName, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_MethodName_24_2_matchsrctrgcontext_blackBBBBBB(MGravityModel mModel,
+			TypeGraph pg, MMethodName mName, TMethod tName, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { pg, mModel, mName, tName, sourceMatch, targetMatch };
+			return new Object[] { mModel, pg, mName, tName, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2383,29 +2381,30 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	public static final Object[] pattern_MethodName_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_MethodName_24_2_matchsrctrgcontext_binding = pattern_MethodName_24_2_matchsrctrgcontext_bindingFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_MethodName_24_2_matchsrctrgcontext_binding != null) {
-			TypeGraph pg = (TypeGraph) result_pattern_MethodName_24_2_matchsrctrgcontext_binding[0];
-			MGravityModel mModel = (MGravityModel) result_pattern_MethodName_24_2_matchsrctrgcontext_binding[1];
+			MGravityModel mModel = (MGravityModel) result_pattern_MethodName_24_2_matchsrctrgcontext_binding[0];
+			TypeGraph pg = (TypeGraph) result_pattern_MethodName_24_2_matchsrctrgcontext_binding[1];
 			MMethodName mName = (MMethodName) result_pattern_MethodName_24_2_matchsrctrgcontext_binding[2];
 			TMethod tName = (TMethod) result_pattern_MethodName_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_MethodName_24_2_matchsrctrgcontext_black = pattern_MethodName_24_2_matchsrctrgcontext_blackBBBBBB(
-					pg, mModel, mName, tName, sourceMatch, targetMatch);
+					mModel, pg, mName, tName, sourceMatch, targetMatch);
 			if (result_pattern_MethodName_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { pg, mModel, mName, tName, sourceMatch, targetMatch };
+				return new Object[] { mModel, pg, mName, tName, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodName_24_3_solvecsp_bindingFBBBBBBB(MethodName _this, TypeGraph pg,
-			MGravityModel mModel, MMethodName mName, TMethod tName, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(pg, mModel, mName, tName, sourceMatch, targetMatch);
+	public static final Object[] pattern_MethodName_24_3_solvecsp_bindingFBBBBBBB(MethodName _this,
+			MGravityModel mModel, TypeGraph pg, MMethodName mName, TMethod tName, Match sourceMatch,
+			Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mModel, pg, mName, tName, sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, pg, mModel, mName, tName, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mModel, pg, mName, tName, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2415,17 +2414,17 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_24_3_solvecsp_bindingAndBlackFBBBBBBB(MethodName _this,
-			TypeGraph pg, MGravityModel mModel, MMethodName mName, TMethod tName, Match sourceMatch,
+			MGravityModel mModel, TypeGraph pg, MMethodName mName, TMethod tName, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_MethodName_24_3_solvecsp_binding = pattern_MethodName_24_3_solvecsp_bindingFBBBBBBB(
-				_this, pg, mModel, mName, tName, sourceMatch, targetMatch);
+				_this, mModel, pg, mName, tName, sourceMatch, targetMatch);
 		if (result_pattern_MethodName_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodName_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_MethodName_24_3_solvecsp_black = pattern_MethodName_24_3_solvecsp_blackB(csp);
 			if (result_pattern_MethodName_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, pg, mModel, mName, tName, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, mModel, pg, mName, tName, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2437,14 +2436,14 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodName_24_5_matchcorrcontext_blackBBFBB(TypeGraph pg,
-			MGravityModel mModel, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_MethodName_24_5_matchcorrcontext_blackBBFBB(MGravityModel mModel,
+			TypeGraph pg, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ModelToTypeGraph modelToPg : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(mModel,
-					ModelToTypeGraph.class, "source")) {
-				if (pg.equals(modelToPg.getTarget())) {
-					_result.add(new Object[] { pg, mModel, modelToPg, sourceMatch, targetMatch });
+			for (ModelToTypeGraph modelToPg : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(pg,
+					ModelToTypeGraph.class, "target")) {
+				if (mModel.equals(modelToPg.getSource())) {
+					_result.add(new Object[] { mModel, pg, modelToPg, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2462,18 +2461,18 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		return new Object[] { modelToPg, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_MethodName_24_6_createcorrespondence_blackBBBBB(TypeGraph pg,
-			MGravityModel mModel, MMethodName mName, TMethod tName, CCMatch ccMatch) {
-		return new Object[] { pg, mModel, mName, tName, ccMatch };
+	public static final Object[] pattern_MethodName_24_6_createcorrespondence_blackBBBBB(MGravityModel mModel,
+			TypeGraph pg, MMethodName mName, TMethod tName, CCMatch ccMatch) {
+		return new Object[] { mModel, pg, mName, tName, ccMatch };
 	}
 
-	public static final Object[] pattern_MethodName_24_6_createcorrespondence_greenFBBB(MMethodName mName,
+	public static final Object[] pattern_MethodName_24_6_createcorrespondence_greenBFBB(MMethodName mName,
 			TMethod tName, CCMatch ccMatch) {
 		MMethodNameToTMethod mNameToTName = PmFactory.eINSTANCE.createMMethodNameToTMethod();
 		mNameToTName.setSource(mName);
 		mNameToTName.setTarget(tName);
 		ccMatch.getCreateCorr().add(mNameToTName);
-		return new Object[] { mNameToTName, mName, tName, ccMatch };
+		return new Object[] { mName, mNameToTName, tName, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodName_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2515,9 +2514,9 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_28_1_matchtggpattern_black_nac_0BB(TMethod tName, TypeGraph pg) {
-		TypeGraph __DEC_tName_model_111487 = tName.getModel();
-		if (__DEC_tName_model_111487 != null) {
-			if (!pg.equals(__DEC_tName_model_111487)) {
+		TypeGraph __DEC_tName_model_595758 = tName.getModel();
+		if (__DEC_tName_model_595758 != null) {
+			if (!pg.equals(__DEC_tName_model_595758)) {
 				return new Object[] { tName, pg };
 			}
 		}
@@ -2557,9 +2556,9 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
-		if (ruleResult.getTargetObjects().contains(pg)) {
-			return new Object[] { ruleResult, pg };
+			ModelgeneratorRuleResult ruleResult, MGravityModel mModel) {
+		if (ruleResult.getSourceObjects().contains(mModel)) {
+			return new Object[] { ruleResult, mModel };
 		}
 		return null;
 	}
@@ -2573,9 +2572,9 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, MGravityModel mModel) {
-		if (ruleResult.getSourceObjects().contains(mModel)) {
-			return new Object[] { ruleResult, mModel };
+			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
+		if (ruleResult.getTargetObjects().contains(pg)) {
+			return new Object[] { ruleResult, pg };
 		}
 		return null;
 	}
@@ -2587,16 +2586,17 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 			for (EObject tmpModelToPg : modelToPgList.getEntryObjects()) {
 				if (tmpModelToPg instanceof ModelToTypeGraph) {
 					ModelToTypeGraph modelToPg = (ModelToTypeGraph) tmpModelToPg;
-					TypeGraph pg = modelToPg.getTarget();
-					if (pg != null) {
-						Model tmpMModel = modelToPg.getSource();
-						if (tmpMModel instanceof MGravityModel) {
-							MGravityModel mModel = (MGravityModel) tmpMModel;
+					Model tmpMModel = modelToPg.getSource();
+					if (tmpMModel instanceof MGravityModel) {
+						MGravityModel mModel = (MGravityModel) tmpMModel;
+						TypeGraph pg = modelToPg.getTarget();
+						if (pg != null) {
 							if (pattern_MethodName_29_2_isapplicablecore_black_nac_1BB(ruleResult, modelToPg) == null) {
-								if (pattern_MethodName_29_2_isapplicablecore_black_nac_0BB(ruleResult, pg) == null) {
+								if (pattern_MethodName_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+										mModel) == null) {
 									if (pattern_MethodName_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											mModel) == null) {
-										_result.add(new Object[] { modelToPgList, pg, modelToPg, mModel,
+											pg) == null) {
+										_result.add(new Object[] { modelToPgList, mModel, modelToPg, pg,
 												ruleEntryContainer, ruleResult });
 									}
 								}
@@ -2612,12 +2612,12 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_29_3_solveCSP_bindingFBBBBBB(MethodName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel mModel, ModelToTypeGraph modelToPg,
+			IsApplicableMatch isApplicableMatch, MGravityModel mModel, TypeGraph pg, ModelToTypeGraph modelToPg,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, pg, mModel, modelToPg, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mModel, pg, modelToPg, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, pg, mModel, modelToPg, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mModel, pg, modelToPg, ruleResult };
 		}
 		return null;
 	}
@@ -2627,17 +2627,17 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_29_3_solveCSP_bindingAndBlackFBBBBBB(MethodName _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph pg, MGravityModel mModel, ModelToTypeGraph modelToPg,
+			IsApplicableMatch isApplicableMatch, MGravityModel mModel, TypeGraph pg, ModelToTypeGraph modelToPg,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_MethodName_29_3_solveCSP_binding = pattern_MethodName_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, pg, mModel, modelToPg, ruleResult);
+				_this, isApplicableMatch, mModel, pg, modelToPg, ruleResult);
 		if (result_pattern_MethodName_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodName_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_MethodName_29_3_solveCSP_black = pattern_MethodName_29_3_solveCSP_blackB(csp);
 			if (result_pattern_MethodName_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, pg, mModel, modelToPg, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mModel, pg, modelToPg, ruleResult };
 			}
 		}
 		return null;
@@ -2649,29 +2649,29 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodName_29_5_checknacs_blackBBB(TypeGraph pg, MGravityModel mModel,
+	public static final Object[] pattern_MethodName_29_5_checknacs_blackBBB(MGravityModel mModel, TypeGraph pg,
 			ModelToTypeGraph modelToPg) {
-		return new Object[] { pg, mModel, modelToPg };
+		return new Object[] { mModel, pg, modelToPg };
 	}
 
-	public static final Object[] pattern_MethodName_29_6_perform_blackBBBB(TypeGraph pg, MGravityModel mModel,
+	public static final Object[] pattern_MethodName_29_6_perform_blackBBBB(MGravityModel mModel, TypeGraph pg,
 			ModelToTypeGraph modelToPg, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { pg, mModel, modelToPg, ruleResult };
+		return new Object[] { mModel, pg, modelToPg, ruleResult };
 	}
 
-	public static final Object[] pattern_MethodName_29_6_perform_greenBBFFFBB(TypeGraph pg, MGravityModel mModel,
+	public static final Object[] pattern_MethodName_29_6_perform_greenBBFFFBB(MGravityModel mModel, TypeGraph pg,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
-		MMethodNameToTMethod mNameToTName = PmFactory.eINSTANCE.createMMethodNameToTMethod();
 		MMethodName mName = ModiscoFactory.eINSTANCE.createMMethodName();
+		MMethodNameToTMethod mNameToTName = PmFactory.eINSTANCE.createMMethodNameToTMethod();
 		TMethod tName = BasicFactory.eINSTANCE.createTMethod();
 		Object _localVariable_0 = csp.getValue("mName", "mName");
 		Object _localVariable_1 = csp.getValue("tName", "tName");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(mNameToTName);
 		mModel.getMMethodNames().add(mName);
-		mNameToTName.setSource(mName);
 		ruleResult.getSourceObjects().add(mName);
+		mNameToTName.setSource(mName);
+		ruleResult.getCorrObjects().add(mNameToTName);
 		pg.getMethods().add(tName);
 		mNameToTName.setTarget(tName);
 		ruleResult.getTargetObjects().add(tName);
@@ -2682,7 +2682,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 		mName.setMName(mName_mName_prime);
 		tName.setTName(tName_tName_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { pg, mModel, mNameToTName, mName, tName, ruleResult, csp };
+		return new Object[] { mModel, pg, mName, mNameToTName, tName, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_MethodName_29_7_expressionFB(

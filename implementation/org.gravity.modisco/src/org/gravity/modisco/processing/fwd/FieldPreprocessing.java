@@ -10,11 +10,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.modisco.java.AnonymousClassDeclaration;
-import org.eclipse.modisco.java.Modifier;
 import org.eclipse.modisco.java.Type;
-import org.eclipse.modisco.java.TypeAccess;
 import org.eclipse.modisco.java.VariableDeclarationFragment;
 import org.eclipse.modisco.java.emf.JavaFactory;
 import org.eclipse.osgi.util.NLS;
@@ -43,8 +39,16 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	private Map<String, MFieldName> names;
 
 	@Override
-	public boolean process(final MGravityModel model, final Collection<MFieldDefinition> elements, IFolder debug,
+	public boolean process(final MGravityModel model, final Collection<MFieldDefinition> elements, final IFolder debug,
 			final IProgressMonitor monitor) {
+		for(final MFieldDefinition field : elements) {
+			if(field.eContainer() == null) {
+				final var type = JavaFactory.eINSTANCE.createUnresolvedTypeDeclaration();
+				type.getBodyDeclarations().add(field);
+				model.getUnresolvedItems().add(type);
+			}
+		}
+
 		this.names = new ConcurrentHashMap<>();
 		Collection<MFieldDefinition> allDefinitions;
 		try {
@@ -72,15 +76,15 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 			final Collection<MFieldDefinition> elements) throws ProcessingException {
 		final List<MFieldDefinition> allDefinitions = new LinkedList<>(elements);
 		for (final MFieldDefinition mDefinition : elements) {
-			final EList<VariableDeclarationFragment> fragments = mDefinition.getFragments();
+			final var fragments = mDefinition.getFragments();
 			if (fragments.isEmpty()) {
-				final String message = NLS.bind(Messages.errorFieldNoFragments, mDefinition);
+				final var message = NLS.bind(Messages.errorFieldNoFragments, mDefinition);
 				LOGGER.error(message);
 				throw new ProcessingException(message);
 			}
 			for (final VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition,
 					fragments.get(0))) {
-				final MFieldDefinition newDef = createNewDefinitionForFragment(mDefinition, scndDeclFragment);
+				final var newDef = createNewDefinitionForFragment(mDefinition, scndDeclFragment);
 				allDefinitions.add(newDef);
 			}
 
@@ -100,17 +104,17 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 			final VariableDeclarationFragment declFragment) {
 		declFragment.setVariablesContainer(null);
 
-		final MFieldDefinition newDef = ModiscoFactory.eINSTANCE.createMFieldDefinition();
+		final var newDef = ModiscoFactory.eINSTANCE.createMFieldDefinition();
 		newDef.getFragments().add(declFragment);
 		newDef.setName(oldDefiniton.getName());
 		newDef.setProxy(oldDefiniton.isProxy());
 		newDef.setAbstractTypeDeclaration(oldDefiniton.getAbstractTypeDeclaration());
 
-		final TypeAccess oldTypeAccess = oldDefiniton.getType();
+		final var oldTypeAccess = oldDefiniton.getType();
 		if (oldTypeAccess != null) {
-			final Type type = oldTypeAccess.getType();
+			final var type = oldTypeAccess.getType();
 			if (type != null) {
-				final TypeAccess newTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
+				final var newTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 				newDef.setType(newTypeAccess);
 				newTypeAccess.setType(type);
 			}
@@ -119,13 +123,13 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 			LOGGER.warn(NLS.bind(Messages.errorFieldNoType, oldDefiniton));
 		}
 
-		final Modifier modifier = oldDefiniton.getModifier();
-		final Modifier clonedModifier = JavaFactory.eINSTANCE.createModifier();
+		final var modifier = oldDefiniton.getModifier();
+		final var clonedModifier = JavaFactory.eINSTANCE.createModifier();
 		newDef.setModifier(clonedModifier);
 		clonedModifier.setVisibility(modifier.getVisibility());
 		clonedModifier.setInheritance(modifier.getInheritance());
 
-		final AnonymousClassDeclaration anno = oldDefiniton.getAnonymousClassDeclarationOwner();
+		final var anno = oldDefiniton.getAnonymousClassDeclarationOwner();
 		if (anno != null) {
 			anno.getBodyDeclarations().add(newDef);
 		}
@@ -134,7 +138,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 
 	private static Iterable<VariableDeclarationFragment> getOtherFragments(final MFieldDefinition mDefinition,
 			final VariableDeclarationFragment fragment) {
-		final LinkedList<VariableDeclarationFragment> result = new LinkedList<>();
+		final var result = new LinkedList<VariableDeclarationFragment>();
 		if (mDefinition.getFragments().contains(fragment)) {
 			for (final VariableDeclarationFragment otherFragment : mDefinition.getFragments()) {
 				if (!fragment.equals(otherFragment)) {
@@ -156,8 +160,8 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	 */
 	private boolean createFieldNameNodes(final Collection<MFieldDefinition> mFieldDefinitions,
 			final MGravityModel model) {
-		final boolean success = mFieldDefinitions.stream().allMatch(mfDefinition -> {
-			final EList<VariableDeclarationFragment> fragments = mfDefinition.getFragments();
+		final var success = mFieldDefinitions.stream().allMatch(mfDefinition -> {
+			final var fragments = mfDefinition.getFragments();
 			if (fragments.isEmpty()) {
 				LOGGER.error(NLS.bind(Messages.errorFieldNoFragments, mfDefinition));
 				return false;
@@ -166,9 +170,9 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 				LOGGER.error(NLS.bind(Messages.warnFieldMultipleFragments, mfDefinition));
 				return false;
 			}
-			final VariableDeclarationFragment declFragment = fragments.get(0);
-			final String declFragmentName = declFragment.getName();
-			MFieldName mName = this.names.get(declFragmentName);
+			final var declFragment = fragments.get(0);
+			final var declFragmentName = declFragment.getName();
+			var mName = this.names.get(declFragmentName);
 			if (mName == null) {
 				mName = ModiscoFactory.eINSTANCE.createMFieldName();
 				mName.setMName(declFragmentName);
@@ -190,7 +194,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	private boolean createFieldSignatureNodes(final MGravityModel model) {
 		for(final MFieldName name : model.getMFieldNames()){
 			for (final MDefinition mfDefinition : name.getMDefinitions()) {
-				final MFieldSignature mSig = getMFieldSignature(model, name, (MFieldDefinition) mfDefinition);
+				final var mSig = getMFieldSignature(model, name, (MFieldDefinition) mfDefinition);
 				mSig.getMDefinitions().add(mfDefinition);
 			}
 		}
@@ -208,15 +212,15 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	 */
 	private static MFieldSignature createNewSignature(final MGravityModel model, final MFieldName name,
 			final MFieldDefinition definition) {
-		final MFieldSignature mSig = ModiscoFactory.eINSTANCE.createMFieldSignature();
+		final var mSig = ModiscoFactory.eINSTANCE.createMFieldSignature();
 		name.getMSignatures().add(mSig);
 
 		Type type;
-		final TypeAccess typeAccess = definition.getType();
+		final var typeAccess = definition.getType();
 		if (typeAccess != null) {
 			type = typeAccess.getType();
 		} else {
-			final String message = NLS.bind(Messages.warnFieldNoTypeAssumeObject, definition);
+			final var message = NLS.bind(Messages.warnFieldNoTypeAssumeObject, definition);
 			if (definition.isProxy()) {
 				LOGGER.warn(message);
 			} else {
@@ -238,17 +242,17 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	 * @return A suitable type for the field
 	 */
 	private static Type fixMissingFieldType(final MGravityModel model, final MFieldDefinition definition) {
-		TypeAccess typeAccess = definition.getType();
+		var typeAccess = definition.getType();
 		if (typeAccess == null) {
 			typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 			definition.setType(typeAccess);
 		} else {
-			final Type type = typeAccess.getType();
+			final var type = typeAccess.getType();
 			if (type != null) {
 				return type;
 			}
 		}
-		final Type type = MoDiscoUtil.getJavaLangObject(model);
+		final var type = MoDiscoUtil.getJavaLangObject(model);
 		typeAccess.setType(type);
 		return type;
 	}
@@ -265,12 +269,12 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	 */
 	private static MFieldSignature getMFieldSignature(final MGravityModel model, final MFieldName mName,
 			final MFieldDefinition mfDefinition) {
-		final TypeAccess mAccess = mfDefinition.getType();
+		final var mAccess = mfDefinition.getType();
 		if (mAccess != null) {
-			final Type mType = mAccess.getType();
+			final var mType = mAccess.getType();
 			if (mType != null) {
 				for (final MSignature signature : mName.getMSignatures()) {
-					final MFieldSignature fieldSignature = (MFieldSignature) signature;
+					final var fieldSignature = (MFieldSignature) signature;
 					if (mType.equals(fieldSignature.getType())) {
 						return fieldSignature;
 					}
