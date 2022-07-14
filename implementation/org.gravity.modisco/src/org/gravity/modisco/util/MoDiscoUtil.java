@@ -133,14 +133,7 @@ public final class MoDiscoUtil {
 	public static Type getMostGenericReturnType(final MAbstractMethodDefinition method) {
 		final var abstractTypeDeclaration = method.getAbstractTypeDeclaration();
 		if (method instanceof MConstructorDefinition) {
-			if (abstractTypeDeclaration != null) {
-				return abstractTypeDeclaration;
-			}
-			final var anon = method.getAnonymousClassDeclarationOwner();
-			if (anon != null) {
-				return anon.getClassInstanceCreation().getType().getType();
-			}
-			return null;
+			return getType((MConstructorDefinition) method);
 		}
 		var returnType = ((MMethodDefinition) method).getReturnType().getType();
 		final var allTypes = getAllParentTypes(abstractTypeDeclaration);
@@ -163,6 +156,24 @@ public final class MoDiscoUtil {
 			}
 		}
 		return returnType;
+	}
+
+	/**
+	 * Gets the type created by a constructor
+	 *
+	 * @param constructor The constructor
+	 * @return The created type
+	 */
+	public static Type getType(final MConstructorDefinition constructor) {
+		final var abstractTypeDeclaration =  constructor.getAbstractTypeDeclaration();
+		if (abstractTypeDeclaration != null) {
+			return abstractTypeDeclaration;
+		}
+		final var anon = constructor.getAnonymousClassDeclarationOwner();
+		if (anon != null) {
+			return anon.getClassInstanceCreation().getType().getType();
+		}
+		return null;
 	}
 
 	/**

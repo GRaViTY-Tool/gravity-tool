@@ -68,8 +68,7 @@ public class BrokenModiscoModelTests {
 		assertEquals(null, child.getSuperClass());
 		assertEquals(1, child.getSuperInterfaces().size());
 		assertTrue(child.getSuperInterfaces().stream().map(TypeAccess::getType)
-				.filter(i -> (i instanceof InterfaceDeclaration)).filter(i -> parentName.equals(i.getName())).findAny()
-				.isPresent());
+				.filter(InterfaceDeclaration.class::isInstance).anyMatch(i -> parentName.equals(i.getName())));
 	}
 
 	@Test
@@ -119,10 +118,7 @@ public class BrokenModiscoModelTests {
 		variable.setName("field");
 		field.getFragments().add(variable);
 
-		final var processing = GravityModiscoProjectDiscoverer.class.getDeclaredMethod("processFwd",
-				MGravityModel.class, IFolder.class, IProgressMonitor.class);
-		processing.setAccessible(true);
-		final var processedModel = (MGravityModel) processing.invoke(null, model, null, null);
+		final var processedModel = processFwd(model);
 
 		assertNotNull(processedModel);
 
@@ -140,10 +136,7 @@ public class BrokenModiscoModelTests {
 		final var called = createMethodDefinition("called", null);
 		invocation.setMethod(called);
 
-		final var processing = GravityModiscoProjectDiscoverer.class.getDeclaredMethod("processFwd",
-				MGravityModel.class, IFolder.class, IProgressMonitor.class);
-		processing.setAccessible(true);
-		final var processedModel = (MGravityModel) processing.invoke(null, model, null, null);
+		final var processedModel = processFwd(model);
 
 		assertNotNull(processedModel);
 
@@ -203,8 +196,7 @@ public class BrokenModiscoModelTests {
 		final var processing = GravityModiscoProjectDiscoverer.class.getDeclaredMethod("processFwd",
 				MGravityModel.class, IFolder.class, IProgressMonitor.class);
 		processing.setAccessible(true);
-		final var processedModel = (MGravityModel) processing.invoke(null, model, null, null);
-		return processedModel;
+		return (MGravityModel) processing.invoke(null, model, null, null);
 	}
 
 	private MClass createType(final String namespace, final String name, final MGravityModel model) {
