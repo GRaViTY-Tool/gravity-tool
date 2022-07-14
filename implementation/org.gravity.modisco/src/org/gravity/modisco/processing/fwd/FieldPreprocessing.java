@@ -11,7 +11,6 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.modisco.java.Type;
-import org.eclipse.modisco.java.UnresolvedTypeDeclaration;
 import org.eclipse.modisco.java.VariableDeclarationFragment;
 import org.eclipse.modisco.java.emf.JavaFactory;
 import org.eclipse.osgi.util.NLS;

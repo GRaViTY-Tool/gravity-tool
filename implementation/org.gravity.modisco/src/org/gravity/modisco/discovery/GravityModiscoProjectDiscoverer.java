@@ -446,18 +446,28 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 					keys.parallelStream().filter(c -> c.isAssignableFrom(nextClass))
 					.forEach(c -> ((List<EObject>) elements.get(c)).add(next));
 
-					for (final EReference reference : next.eClass().getEAllReferences()) {
-						final var result = next.eGet(reference);
-						if (result instanceof Collection) {
-							stack.addAll((Collection<? extends EObject>) result);
-						} else if (result instanceof EObject) {
-							stack.add((EObject) result);
-						}
-					}
+					addReferencedObjectsToStack(stack, next);
 				}
 			}
 		}
 		return elements;
+	}
+
+	/**
+	 * Adds all referenced objects to the stack
+	 *
+	 * @param stack The stack
+	 * @param eobject an object
+	 */
+	private static void addReferencedObjectsToStack(final Deque<EObject> stack, final EObject eobject) {
+		for (final EReference reference : eobject.eClass().getEAllReferences()) {
+			final var result = eobject.eGet(reference);
+			if (result instanceof Collection) {
+				stack.addAll((Collection<? extends EObject>) result);
+			} else if (result instanceof EObject) {
+				stack.add((EObject) result);
+			}
+		}
 	}
 
 	private Model discoverProject(final IJavaProject javaProject, final URI uri, final Collection<IPath> libs,

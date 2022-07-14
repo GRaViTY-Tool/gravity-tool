@@ -14,11 +14,10 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.EcoreUtil.UsageCrossReferencer;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.InterfaceDeclaration;
-import org.eclipse.modisco.java.Type;
 import org.eclipse.modisco.java.TypeAccess;
 import org.eclipse.modisco.java.emf.JavaFactory;
 import org.eclipse.modisco.java.emf.JavaPackage;
@@ -67,8 +66,8 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 * @param replacements
 	 */
 	private void replace(final MGravityModel model, final Map<ClassDeclaration, InterfaceDeclaration> replacements) {
-		for (final Entry<EObject, Collection<Setting>> entry : EcoreUtil.UsageCrossReferencer
-				.findAll(replacements.keySet(), model.eResource().getResourceSet()).entrySet()) {
+		for (final Entry<EObject, Collection<Setting>> entry : UsageCrossReferencer
+				.findAll(replacements.keySet(), model.eResource()).entrySet()) {
 			final var key = entry.getKey();
 			if (key instanceof ClassDeclaration) {
 				final var replacedClass = (ClassDeclaration) key;
@@ -121,15 +120,14 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 */
 	private Set<TypeAccess> getAccessedClassDeclarations(final Collection<TypeAccess> accesses) {
 		final Set<TypeAccess> classes = new HashSet<>();
-		for(final TypeAccess access : accesses) {
+		for (final TypeAccess access : accesses) {
 			final var type = access.getType();
-			if(type != null) {
-				if(JavaPackage.eINSTANCE.getClassDeclaration().isSuperTypeOf(type.eClass())){
+			if (type != null) {
+				if (JavaPackage.eINSTANCE.getClassDeclaration().isSuperTypeOf(type.eClass())) {
 					classes.add(access);
 				}
-			}
-			else {
-				LOGGER.warn("TypeAccess has no type! Access contained in: "+access.eContainer());
+			} else {
+				LOGGER.warn("TypeAccess has no type! Access contained in: " + access.eContainer());
 			}
 		}
 		return classes;

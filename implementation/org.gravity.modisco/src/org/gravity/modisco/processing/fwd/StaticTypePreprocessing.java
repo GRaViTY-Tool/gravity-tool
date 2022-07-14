@@ -6,8 +6,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.modisco.java.AbstractMethodInvocation;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.AbstractTypeQualifiedExpression;
@@ -41,7 +39,6 @@ import org.eclipse.modisco.java.TypeAccess;
 import org.eclipse.modisco.java.TypeLiteral;
 import org.eclipse.modisco.java.UnresolvedItemAccess;
 import org.eclipse.modisco.java.UnresolvedMethodDeclaration;
-import org.eclipse.modisco.java.VariableDeclaration;
 import org.eclipse.modisco.java.VariableDeclarationFragment;
 import org.eclipse.osgi.util.NLS;
 import org.gravity.eclipse.exceptions.ProcessingException;
@@ -166,8 +163,8 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 */
 	private Type getStaticType(final SingleVariableAccess expression, final MAbstractMethodDefinition method)
 			throws ProcessingException {
-		final VariableDeclaration var = expression.getVariable();
-		if (var == null) {
+		final var variable = expression.getVariable();
+		if (variable == null) {
 			/*
 			 * Handling of constructs not supported by MoDisco like:
 			 *
@@ -175,26 +172,26 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			 *
 			 * Assume static type to be type in which a called method has been defined.
 			 */
-			final EObject container = expression.eContainer();
+			final var container = expression.eContainer();
 			if (container instanceof MethodInvocation) {
 				return ((MethodInvocation) container).getMethod().getAbstractTypeDeclaration();
 			} else {
 				throw new ProcessingException(Messages.preprocessingOfUnknown);
 			}
-		} else if (var instanceof SingleVariableDeclaration) {
-			return ((SingleVariableDeclaration) var).getType().getType();
-		} else if (var instanceof VariableDeclarationFragment) {
-			final AbstractVariablesContainer container = ((VariableDeclarationFragment) var).getVariablesContainer();
-			final TypeAccess access = container.getType();
+		} else if (variable instanceof SingleVariableDeclaration) {
+			return ((SingleVariableDeclaration) variable).getType().getType();
+		} else if (variable instanceof VariableDeclarationFragment) {
+			final var container = ((VariableDeclarationFragment) variable).getVariablesContainer();
+			final var access = container.getType();
 			if (access != null) {
 				return access.getType();
 			}
-		} else if (var instanceof EnumConstantDeclaration) {
+		} else if (variable instanceof EnumConstantDeclaration) {
 			return getStaticType(expression.getQualifier(), method);
 		} else if (LOGGER.isEnabledFor(Level.WARN)) {
-			LOGGER.warn(NLS.bind(Messages.unknownVarDecl, var.getClass().getName()));
+			LOGGER.warn(NLS.bind(Messages.unknownVarDecl, variable.getClass().getName()));
 		}
-		return getStaticTypeFromInitializer(var.getInitializer());
+		return getStaticTypeFromInitializer(variable.getInitializer());
 	}
 
 	/**
@@ -206,7 +203,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	private Type getStaticTypeFromInitializer(final Expression initializer) {
 		if (initializer != null) {
 			if (initializer instanceof MethodInvocation) {
-				final AbstractMethodDeclaration targetMethod = ((MethodInvocation) initializer).getMethod();
+				final var targetMethod = ((MethodInvocation) initializer).getMethod();
 				if (targetMethod instanceof MMethodDefinition) {
 					return ((MMethodDefinition) targetMethod).getReturnType().getType();
 				}
@@ -282,21 +279,34 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			return getStaticType((UnresolvedItemAccess) expression, method);
 		}
 		if (expression instanceof AbstractMethodInvocation) {
-			final AbstractMethodDeclaration calledOn = ((AbstractMethodInvocation) expression).getMethod();
-			if (calledOn instanceof MethodDeclaration) {
-				final TypeAccess returnType = ((MethodDeclaration) calledOn).getReturnType();
-				if (returnType == null) {
-					if (calledOn instanceof UnresolvedMethodDeclaration) {
-						return null;
-					}
-					throw new ProcessingException();
-				}
-				return returnType.getType();
-			} else if (calledOn instanceof ConstructorDeclaration) {
-				return ((ConstructorDeclaration) calledOn).getAbstractTypeDeclaration();
-			}
+			return getStaticType((AbstractMethodInvocation) expression);
 		}
 		LOGGER.error(NLS.bind(Messages.unsupportedStaticTypeFromExpressionKind, expression.getClass().getSimpleName()));
+		return null;
+	}
+
+	/**
+	 * Guesses the static type from an method invocation
+	 *
+	 * @param invocation The invocation
+	 * @return The static type of the invocation invoked on the invocation
+	 * @throws ProcessingException
+	 */
+	private Type getStaticType(final AbstractMethodInvocation invocation) throws ProcessingException {
+		final var calledOn = invocation.getMethod();
+		if (calledOn instanceof MethodDeclaration) {
+			final var returnType = ((MethodDeclaration) calledOn).getReturnType();
+			if (returnType == null) {
+				if (calledOn instanceof UnresolvedMethodDeclaration) {
+					return null;
+				}
+				throw new ProcessingException();
+			}
+			return returnType.getType();
+		} else if (calledOn instanceof ConstructorDeclaration) {
+			return ((ConstructorDeclaration) calledOn).getAbstractTypeDeclaration();
+		}
+		LOGGER.error("Invocation of unknown member type: "+calledOn);
 		return null;
 	}
 
@@ -308,7 +318,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The static type
 	 */
 	private Type getStaticType(final UnresolvedItemAccess expression, final MAbstractMethodDefinition method) {
-		final String nameOfAccessedElement = expression.getElement().getName();
+		final var nameOfAccessedElement = expression.getElement().getName();
 		// Check if the item is a parameter
 		for (final SingleVariableDeclaration parameter : method.getParameters()) {
 			if (nameOfAccessedElement.equals(parameter.getName())) {
@@ -316,9 +326,9 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			}
 		}
 		// Check is the accessed item is a field
-		final Type declaringType = getDeclaringType(method);
+		final var declaringType = getDeclaringType(method);
 		if (declaringType instanceof AbstractTypeDeclaration) {
-			final Type type = searchTypeOfFieldWithName(nameOfAccessedElement, (AbstractTypeDeclaration) declaringType);
+			final var type = searchTypeOfFieldWithName(nameOfAccessedElement, (AbstractTypeDeclaration) declaringType);
 			if (type != null) {
 				return type;
 			}
@@ -337,8 +347,8 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The type of the field or null if there is no field with this name
 	 */
 	private Type searchTypeOfFieldWithName(final String name, final AbstractTypeDeclaration type) {
-		return type.getBodyDeclarations().parallelStream().filter(body -> body instanceof FieldDeclaration)
-				.map(body -> (FieldDeclaration) body)
+		return type.getBodyDeclarations().parallelStream().filter(FieldDeclaration.class::isInstance)
+				.map(FieldDeclaration.class::cast)
 				.filter(field -> field.getFragments().stream().anyMatch(fragment -> fragment.getName().equals(name)))
 				.map(field -> field.getType().getType()).findAny().orElse(null);
 	}
@@ -353,7 +363,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 */
 	private Type getStaticType(final InfixExpression expression, final MAbstractMethodDefinition method)
 			throws ProcessingException {
-		Type type = getStaticType(expression.getLeftOperand(), method);
+		var type = getStaticType(expression.getLeftOperand(), method);
 		if (type == null) {
 			type = getStaticType(expression.getRightOperand(), method);
 		}
@@ -370,7 +380,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 */
 	private Type getStaticType(final AbstractTypeQualifiedExpression expression, final MAbstractMethodDefinition method)
 			throws ProcessingException {
-		final TypeAccess qualifier = expression.getQualifier();
+		final var qualifier = expression.getQualifier();
 		if (qualifier == null) {
 			if (expression instanceof ThisExpression) {
 				return getDeclaringType(method);
@@ -397,7 +407,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	private Type getDeclaringType(final BodyDeclaration body) {
 		Type type = body.getAbstractTypeDeclaration();
 		if (type == null) {
-			final EObject container = body.eContainer();
+			final var container = body.eContainer();
 			if (container instanceof AnonymousClassDeclaration) {
 				type = getDeclaringType((AnonymousClassDeclaration) container);
 			} else if (container instanceof AbstractTypeDeclaration) {
@@ -416,17 +426,17 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return the declaring type
 	 */
 	private Type getDeclaringType(final AnonymousClassDeclaration anon) {
-		final EObject container = anon.eContainer();
+		final var container = anon.eContainer();
 		if (container instanceof ClassInstanceCreation) {
-			final ClassInstanceCreation classInstanceCreation = (ClassInstanceCreation) container;
-			final TypeAccess typeAccess = classInstanceCreation.getType();
+			final var classInstanceCreation = (ClassInstanceCreation) container;
+			final var typeAccess = classInstanceCreation.getType();
 			if (typeAccess == null) {
 				LOGGER.error(NLS.bind(Messages.errorClassInstanceCreationNoType, classInstanceCreation));
 				return null;
 			}
 			return typeAccess.getType();
 		} else if (container instanceof EnumConstantDeclaration) {
-			final EnumConstantDeclaration enumConst = (EnumConstantDeclaration) container;
+			final var enumConst = (EnumConstantDeclaration) container;
 			return enumConst.getAbstractTypeDeclaration();
 		}
 		LOGGER.error(NLS.bind(Messages.unknownContainerAnon, container.eClass().getName()));

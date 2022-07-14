@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
@@ -23,6 +24,8 @@ import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
 
 public class UnresolvedTypePreprocessing extends AbstractTypedModiscoProcessor<UnresolvedTypeDeclaration> {
+
+	private static final Logger LOGGER = Logger.getLogger(UnresolvedTypePreprocessing.class);
 
 	@Override
 	public boolean process(final MGravityModel model, final Collection<UnresolvedTypeDeclaration> elements,
@@ -55,7 +58,7 @@ public class UnresolvedTypePreprocessing extends AbstractTypedModiscoProcessor<U
 					EcoreUtil.replace(eObject, access);
 					delete.add(eObject);
 				} else {
-					System.out.println("Unhandled reference: "+setting);
+					LOGGER.error("Unhandled reference: "+setting);
 				}
 			}
 		}
