@@ -9,3 +9,17 @@ dependencies {
 } 
 
 def commonsVersion = "2.6"
+
+task exportCode {
+  def outputFile = file("/tmp/gravityGradleJava9838231398563432625")
+  outputs.file  outputFile
+  doLast {
+    subprojects { project ->
+      project.plugins.withType(JavaPlugin) {
+        project.sourceSets.main.allJava.collect { sourceFile ->
+          outputFile << sourceFile.path + '\n'
+        }
+      }
+    }
+  }
+}

@@ -6,3 +6,17 @@ repositories {
 dependencies {
     compile project(':ProjectOne')
 } 
+
+task exportCode {
+  def outputFile = file("/tmp/gravityGradleJava13390818472115990419")
+  outputs.file  outputFile
+  doLast {
+    subprojects { project ->
+      project.plugins.withType(JavaPlugin) {
+        project.sourceSets.main.allJava.collect { sourceFile ->
+          outputFile << sourceFile.path + '\n'
+        }
+      }
+    }
+  }
+}

@@ -12,22 +12,9 @@ dependencies {
     compile "org.apache.logging.log4j:log4j-core:${log4jVersion}"
     // A comment    
 }
-task exportCode {
-  def outputFile = file("/tmp/gravityGradleJava7153495870249970667")
-  outputs.file  outputFile
-  doLast {
-    subprojects { project ->
-      project.plugins.withType(JavaPlugin) {
-        project.sourceSets.main.allJava.collect { sourceFile ->
-          outputFile << sourceFile.path + '\n'
-        }
-      }
-    }
-  }
-}
 
 task exportCode {
-  def outputFile = file("/tmp/gravityGradleJava15677236171239255963")
+  def outputFile = file("/tmp/gravityGradleJava1802352784660997064")
   outputs.file  outputFile
   doLast {
     subprojects { project ->
