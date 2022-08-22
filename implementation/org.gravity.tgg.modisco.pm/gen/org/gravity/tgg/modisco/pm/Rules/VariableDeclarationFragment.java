@@ -44,8 +44,8 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MFieldDefinition mDefinition,
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment);
+	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment,
+			MFieldDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,8 +69,8 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MFieldDefinition mDefinition,
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment);
+	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment,
+			MFieldDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,8 +78,8 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MFieldDefinition mDefinition,
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment);
+	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment,
+			MFieldDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,9 +95,9 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment,
-			MDefinitionToTMember eFieldDeclarationToTFieldDefinition);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, TFieldDefinition tDefinition,
+			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,9 +113,9 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tDefinition, EObject mDefinition,
-			EObject varDeclFragmentToTFieldDefinition, EObject varDeclFragment,
-			EObject eFieldDeclarationToTFieldDefinition);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject varDeclFragment, EObject tDefinition,
+			EObject mDefinition, EObject eFieldDeclarationToTFieldDefinition,
+			EObject varDeclFragmentToTFieldDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,7 +187,7 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TFieldDefinition_0(TFieldDefinition tDefinition);
+	EObjectContainer isAppropriate_BWD_TFieldDefinition_1(TFieldDefinition tDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,7 +195,7 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_66(EMoflonEdge _edge_variablesContainer);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_172(EMoflonEdge _edge_variablesContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,8 +227,8 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TFieldDefinition tDefinition, MFieldDefinition mDefinition,
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment,
+			TFieldDefinition tDefinition, MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,8 +244,8 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MFieldDefinition mDefinition,
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment);
+	boolean checkDEC_FWD(org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment,
+			MFieldDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->

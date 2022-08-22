@@ -171,7 +171,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 
 		// VariableDeclaration
 		else if (container instanceof VariableDeclarationFragment) {
-			return ((VariableDeclarationFragment) container).getVariablesContainer().getType().getType();
+			final var type = ((VariableDeclarationFragment) container).getVariablesContainer().getType();
+			if (type != null) {
+				return type.getType();
+			}
 		}
 
 		throw new IllegalStateException(NLS.bind(Messages.unknownType, container.eClass().getName()));
@@ -188,17 +191,18 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	private static Type getReturnType(final AbstractMethodInvocation invocation,
 			final AbstractMethodInvocation container) {
 		final var method = container.getMethod();
-		if (method instanceof UnresolvedMethodDeclaration) {
+		if ((method == null) || (method instanceof UnresolvedMethodDeclaration)) {
 			// We cannot retrieve information from unresolved elements
 			return null;
 		}
 
-		final var index = container.getArguments().indexOf(invocation); // Some subtypes of AbstractMethodInvocation are expressions!
+		final var index = container.getArguments().indexOf(invocation); // Some subtypes of AbstractMethodInvocation are
+		// expressions!
 		if (index >= 0) {
 			return guessReturnTypeFromParameterAssignment(method, index);
 		} else if (container instanceof MethodInvocation) {
 			final var expression = ((MethodInvocation) container).getExpression();
-			if(expression == null) {
+			if (expression == null) {
 				// We cannot guess from a method invoked without context.
 				return null;
 			}
@@ -213,7 +217,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 * Guesses the return type from the parameter at the given index
 	 *
 	 * @param method The method to whose parameter the returned value is assigned
-	 * @param index The index of the assignment
+	 * @param index  The index of the assignment
 	 * @return The corresponding type
 	 */
 	private static Type guessReturnTypeFromParameterAssignment(final AbstractMethodDeclaration method,
@@ -269,7 +273,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 				return result.get();
 			}
 			final var array = JavaFactory.eINSTANCE.createArrayType();
-			array.setName(plain.getName()+"[]");
+			array.setName(plain.getName() + "[]");
 			final var access = JavaFactory.eINSTANCE.createTypeAccess();
 			access.setType(plain);
 			array.setElementType(access);

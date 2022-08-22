@@ -34,6 +34,7 @@ import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
+import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 
@@ -166,66 +167,66 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result1_bindingAndBlack[0];
+		EnumDeclaration mEnum = (EnumDeclaration) result1_bindingAndBlack[0];
 		TClass tEnum = (TClass) result1_bindingAndBlack[1];
-		EnumDeclaration mEnum = (EnumDeclaration) result1_bindingAndBlack[2];
+		MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result1_bindingAndBlack[2];
 		TypeGraph model = (TypeGraph) result1_bindingAndBlack[3];
-		MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result1_bindingAndBlack[4];
+		TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
-		Object[] result1_green = EnumConstantImpl.pattern_EnumConstant_1_1_performtransformation_greenBFFFBFFBB(tEnum,
-				model, mDefinition, csp);
-		TFieldSignature tSignature = (TFieldSignature) result1_green[1];
-		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[2];
-		TFieldDefinition tDefinition = (TFieldDefinition) result1_green[3];
-		TField tName = (TField) result1_green[5];
-		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[6];
+		Object[] result1_green = EnumConstantImpl.pattern_EnumConstant_1_1_performtransformation_greenFFFBBBFFB(tEnum,
+				mDefinition, model, csp);
+		TField tName = (TField) result1_green[0];
+		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[1];
+		TFieldSignature tSignature = (TFieldSignature) result1_green[2];
+		TFieldDefinition tDefinition = (TFieldDefinition) result1_green[6];
+		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[7];
 
-		Object[] result2_black = EnumConstantImpl.pattern_EnumConstant_1_2_collecttranslatedelements_blackBBBBBB(
-				tSignature, mDefinitionToTMember, tDefinition, tName, mBodyToTAnnotation, mDefinition);
+		Object[] result2_black = EnumConstantImpl.pattern_EnumConstant_1_2_collecttranslatedelements_blackBBBBBB(tName,
+				mBodyToTAnnotation, tSignature, mDefinition, tDefinition, mDefinitionToTMember);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSignature] = " + tSignature
-					+ ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tDefinition] = "
-					+ tDefinition + ", " + "[tName] = " + tName + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation
-					+ ", " + "[mDefinition] = " + mDefinition + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tName] = " + tName + ", "
+					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[tSignature] = " + tSignature + ", "
+					+ "[mDefinition] = " + mDefinition + ", " + "[tDefinition] = " + tDefinition + ", "
+					+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ".");
 		}
-		Object[] result2_green = EnumConstantImpl.pattern_EnumConstant_1_2_collecttranslatedelements_greenFBBBBBB(
-				tSignature, mDefinitionToTMember, tDefinition, tName, mBodyToTAnnotation, mDefinition);
+		Object[] result2_green = EnumConstantImpl.pattern_EnumConstant_1_2_collecttranslatedelements_greenFBBBBBB(tName,
+				mBodyToTAnnotation, tSignature, mDefinition, tDefinition, mDefinitionToTMember);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = EnumConstantImpl.pattern_EnumConstant_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-				ruleresult, mEnumToTEnum, tEnum, tSignature, mDefinitionToTMember, mEnum, tDefinition, model, tName,
-				mBodyToTAnnotation, mDefinition);
+				ruleresult, tName, mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model, mEnumToTEnum,
+				tDefinition, mDefinitionToTMember);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mEnumToTEnum] = " + mEnumToTEnum + ", " + "[tEnum] = " + tEnum + ", " + "[tSignature] = "
-					+ tSignature + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mEnum] = "
-					+ mEnum + ", " + "[tDefinition] = " + tDefinition + ", " + "[model] = " + model + ", "
-					+ "[tName] = " + tName + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
-					+ "[mDefinition] = " + mDefinition + ".");
+					+ ", " + "[tName] = " + tName + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
+					+ "[mEnum] = " + mEnum + ", " + "[tSignature] = " + tSignature + ", " + "[tEnum] = " + tEnum + ", "
+					+ "[mDefinition] = " + mDefinition + ", " + "[model] = " + model + ", " + "[mEnumToTEnum] = "
+					+ mEnumToTEnum + ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinitionToTMember] = "
+					+ mDefinitionToTMember + ".");
 		}
-		EnumConstantImpl.pattern_EnumConstant_1_3_bookkeepingforedges_greenBBBBBBBBBBFFFFFFFFFFFFFFF(ruleresult, tEnum,
-				tSignature, mDefinitionToTMember, mEnum, tDefinition, model, tName, mBodyToTAnnotation, mDefinition);
-		//nothing EMoflonEdge tEnum__tDefinition____defines = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tDefinition__tEnum____definedBy = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tSignature__tEnum____type = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tEnum__tSignature____signature = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mEnum__mDefinition____enumConstants = (EMoflonEdge) result3_green[16];
+		EnumConstantImpl.pattern_EnumConstant_1_3_bookkeepingforedges_greenBBBBBBBBBBFFFFFFFFFFFFFFF(ruleresult, tName,
+				mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model, tDefinition, mDefinitionToTMember);
+		//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tEnum__tDefinition____defines = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tDefinition__tEnum____definedBy = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge mEnum__mDefinition____enumConstants = (EMoflonEdge) result3_green[19];
 		//nothing EMoflonEdge mBodyToTAnnotation__tDefinition____target = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[21];
-		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[22];
+		//nothing EMoflonEdge tSignature__tEnum____type = (EMoflonEdge) result3_green[21];
+		//nothing EMoflonEdge tEnum__tSignature____signature = (EMoflonEdge) result3_green[22];
 		//nothing EMoflonEdge model__tName____fields = (EMoflonEdge) result3_green[23];
 		//nothing EMoflonEdge tName__model____model = (EMoflonEdge) result3_green[24];
 
 		// 
 		// 
-		EnumConstantImpl.pattern_EnumConstant_1_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult, mEnumToTEnum,
-				tEnum, tSignature, mDefinitionToTMember, mEnum, tDefinition, model, tName, mBodyToTAnnotation,
-				mDefinition);
+		EnumConstantImpl.pattern_EnumConstant_1_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult, tName,
+				mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model, mEnumToTEnum, tDefinition,
+				mDefinitionToTMember);
 		return EnumConstantImpl.pattern_EnumConstant_1_6_expressionFB(ruleresult);
 	}
 
@@ -254,31 +255,31 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		}
 		EnumDeclaration mEnum = (EnumDeclaration) result2_binding[0];
 		MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result2_binding[1];
-		for (Object[] result2_black : EnumConstantImpl.pattern_EnumConstant_2_2_corematch_blackFFBBB(mEnum, mDefinition,
+		for (Object[] result2_black : EnumConstantImpl.pattern_EnumConstant_2_2_corematch_blackBFBFB(mEnum, mDefinition,
 				match)) {
-			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result2_black[0];
 			TClass tEnum = (TClass) result2_black[1];
+			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : EnumConstantImpl.pattern_EnumConstant_2_3_findcontext_blackBBBFB(mEnumToTEnum,
-					tEnum, mEnum, mDefinition)) {
+			for (Object[] result3_black : EnumConstantImpl.pattern_EnumConstant_2_3_findcontext_blackBBBFB(mEnum, tEnum,
+					mDefinition, mEnumToTEnum)) {
 				TypeGraph model = (TypeGraph) result3_black[3];
-				Object[] result3_green = EnumConstantImpl.pattern_EnumConstant_2_3_findcontext_greenBBBBBFFFFFF(
-						mEnumToTEnum, tEnum, mEnum, model, mDefinition);
+				Object[] result3_green = EnumConstantImpl.pattern_EnumConstant_2_3_findcontext_greenBBBBBFFFFFF(mEnum,
+						tEnum, mDefinition, model, mEnumToTEnum);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
-				//nothing EMoflonEdge mEnumToTEnum__tEnum____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mEnumToTEnum__mEnum____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mEnum__mDefinition____enumConstants = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tEnum__model____model = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge model__tEnum____ownedTypes = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tEnum__model____model = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge model__tEnum____ownedTypes = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mEnumToTEnum__tEnum____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mEnumToTEnum__mEnum____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mEnum__mDefinition____enumConstants = (EMoflonEdge) result3_green[10];
 
 				Object[] result4_bindingAndBlack = EnumConstantImpl
-						.pattern_EnumConstant_2_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
-								mEnumToTEnum, tEnum, mEnum, model, mDefinition);
+						.pattern_EnumConstant_2_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch, mEnum,
+								tEnum, mDefinition, model, mEnumToTEnum);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mEnumToTEnum] = " + mEnumToTEnum
-							+ ", " + "[tEnum] = " + tEnum + ", " + "[mEnum] = " + mEnum + ", " + "[model] = " + model
-							+ ", " + "[mDefinition] = " + mDefinition + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mEnum] = " + mEnum + ", "
+							+ "[tEnum] = " + tEnum + ", " + "[mDefinition] = " + mDefinition + ", " + "[model] = "
+							+ model + ", " + "[mEnumToTEnum] = " + mEnumToTEnum + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -347,8 +348,8 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mEnumToTEnum,
-			TClass tEnum, EnumDeclaration mEnum, TypeGraph model, MEnumConstantDeclaration mDefinition) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, EnumDeclaration mEnum, TClass tEnum,
+			MEnumConstantDeclaration mDefinition, TypeGraph model, TypeToTAbstractType mEnumToTEnum) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -373,11 +374,11 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		eq.solve(var_mDefinition_name, var_tName_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mEnumToTEnum", mEnumToTEnum);
-		isApplicableMatch.registerObject("tEnum", tEnum);
 		isApplicableMatch.registerObject("mEnum", mEnum);
-		isApplicableMatch.registerObject("model", model);
+		isApplicableMatch.registerObject("tEnum", tEnum);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
+		isApplicableMatch.registerObject("model", model);
+		isApplicableMatch.registerObject("mEnumToTEnum", mEnumToTEnum);
 		return csp;
 	}
 
@@ -395,19 +396,19 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mEnumToTEnum, EObject tEnum,
-			EObject tSignature, EObject mDefinitionToTMember, EObject mEnum, EObject tDefinition, EObject model,
-			EObject tName, EObject mBodyToTAnnotation, EObject mDefinition) {
-		ruleresult.registerObject("mEnumToTEnum", mEnumToTEnum);
-		ruleresult.registerObject("tEnum", tEnum);
-		ruleresult.registerObject("tSignature", tSignature);
-		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
-		ruleresult.registerObject("mEnum", mEnum);
-		ruleresult.registerObject("tDefinition", tDefinition);
-		ruleresult.registerObject("model", model);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tName, EObject mBodyToTAnnotation,
+			EObject mEnum, EObject tSignature, EObject tEnum, EObject mDefinition, EObject model, EObject mEnumToTEnum,
+			EObject tDefinition, EObject mDefinitionToTMember) {
 		ruleresult.registerObject("tName", tName);
 		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
+		ruleresult.registerObject("mEnum", mEnum);
+		ruleresult.registerObject("tSignature", tSignature);
+		ruleresult.registerObject("tEnum", tEnum);
 		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("model", model);
+		ruleresult.registerObject("mEnumToTEnum", mEnumToTEnum);
+		ruleresult.registerObject("tDefinition", tDefinition);
+		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
 
 	}
 
@@ -426,65 +427,65 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TClass tEnum, TFieldSignature tSignature,
-			TFieldDefinition tDefinition, TypeGraph model, TField tName) {
+	public boolean isAppropriate_BWD(Match match, TField tName, TFieldSignature tSignature, TClass tEnum,
+			TypeGraph model, TFieldDefinition tDefinition) {
 
 		Object[] result1_black = EnumConstantImpl.pattern_EnumConstant_10_1_initialbindings_blackBBBBBBB(this, match,
-				tEnum, tSignature, tDefinition, model, tName);
+				tName, tSignature, tEnum, model, tDefinition);
 		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tEnum] = " + tEnum + ", " + "[tSignature] = " + tSignature + ", "
-					+ "[tDefinition] = " + tDefinition + ", " + "[model] = " + model + ", " + "[tName] = " + tName
-					+ ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
+							+ ", " + "[tName] = " + tName + ", " + "[tSignature] = " + tSignature + ", " + "[tEnum] = "
+							+ tEnum + ", " + "[model] = " + model + ", " + "[tDefinition] = " + tDefinition + ".");
 		}
 
 		Object[] result2_bindingAndBlack = EnumConstantImpl.pattern_EnumConstant_10_2_SolveCSP_bindingAndBlackFBBBBBBB(
-				this, match, tEnum, tSignature, tDefinition, model, tName);
+				this, match, tName, tSignature, tEnum, model, tDefinition);
 		if (result2_bindingAndBlack == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tEnum] = " + tEnum + ", " + "[tSignature] = " + tSignature + ", "
-					+ "[tDefinition] = " + tDefinition + ", " + "[model] = " + model + ", " + "[tName] = " + tName
-					+ ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
+							+ ", " + "[tName] = " + tName + ", " + "[tSignature] = " + tSignature + ", " + "[tEnum] = "
+							+ tEnum + ", " + "[model] = " + model + ", " + "[tDefinition] = " + tDefinition + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (EnumConstantImpl.pattern_EnumConstant_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = EnumConstantImpl
-					.pattern_EnumConstant_10_4_collectelementstobetranslated_blackBBBBBB(match, tEnum, tSignature,
-							tDefinition, model, tName);
+					.pattern_EnumConstant_10_4_collectelementstobetranslated_blackBBBBBB(match, tName, tSignature,
+							tEnum, model, tDefinition);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tEnum] = " + tEnum + ", " + "[tSignature] = " + tSignature + ", " + "[tDefinition] = "
-						+ tDefinition + ", " + "[model] = " + model + ", " + "[tName] = " + tName + ".");
+						+ "[tName] = " + tName + ", " + "[tSignature] = " + tSignature + ", " + "[tEnum] = " + tEnum
+						+ ", " + "[model] = " + model + ", " + "[tDefinition] = " + tDefinition + ".");
 			}
-			EnumConstantImpl.pattern_EnumConstant_10_4_collectelementstobetranslated_greenBBBBBBFFFFFFFFFF(match, tEnum,
-					tSignature, tDefinition, model, tName);
-			//nothing EMoflonEdge tEnum__tDefinition____defines = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge tDefinition__tEnum____definedBy = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge tSignature__tEnum____type = (EMoflonEdge) result4_green[8];
-			//nothing EMoflonEdge tEnum__tSignature____signature = (EMoflonEdge) result4_green[9];
-			//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result4_green[10];
-			//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result4_green[11];
-			//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result4_green[12];
-			//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result4_green[13];
+			EnumConstantImpl.pattern_EnumConstant_10_4_collectelementstobetranslated_greenBBBBBBFFFFFFFFFF(match, tName,
+					tSignature, tEnum, model, tDefinition);
+			//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge tEnum__tDefinition____defines = (EMoflonEdge) result4_green[8];
+			//nothing EMoflonEdge tDefinition__tEnum____definedBy = (EMoflonEdge) result4_green[9];
+			//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result4_green[10];
+			//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result4_green[11];
+			//nothing EMoflonEdge tSignature__tEnum____type = (EMoflonEdge) result4_green[12];
+			//nothing EMoflonEdge tEnum__tSignature____signature = (EMoflonEdge) result4_green[13];
 			//nothing EMoflonEdge model__tName____fields = (EMoflonEdge) result4_green[14];
 			//nothing EMoflonEdge tName__model____model = (EMoflonEdge) result4_green[15];
 
 			Object[] result5_black = EnumConstantImpl.pattern_EnumConstant_10_5_collectcontextelements_blackBBBBBB(
-					match, tEnum, tSignature, tDefinition, model, tName);
+					match, tName, tSignature, tEnum, model, tDefinition);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tEnum] = " + tEnum + ", " + "[tSignature] = " + tSignature + ", " + "[tDefinition] = "
-						+ tDefinition + ", " + "[model] = " + model + ", " + "[tName] = " + tName + ".");
+						+ "[tName] = " + tName + ", " + "[tSignature] = " + tSignature + ", " + "[tEnum] = " + tEnum
+						+ ", " + "[model] = " + model + ", " + "[tDefinition] = " + tDefinition + ".");
 			}
 			EnumConstantImpl.pattern_EnumConstant_10_5_collectcontextelements_greenBBBFF(match, tEnum, model);
 			//nothing EMoflonEdge tEnum__model____model = (EMoflonEdge) result5_green[3];
 			//nothing EMoflonEdge model__tEnum____ownedTypes = (EMoflonEdge) result5_green[4];
 
 			// 
-			EnumConstantImpl.pattern_EnumConstant_10_6_registerobjectstomatch_expressionBBBBBBB(this, match, tEnum,
-					tSignature, tDefinition, model, tName);
+			EnumConstantImpl.pattern_EnumConstant_10_6_registerobjectstomatch_expressionBBBBBBB(this, match, tName,
+					tSignature, tEnum, model, tDefinition);
 			return EnumConstantImpl.pattern_EnumConstant_10_7_expressionF();
 		} else {
 			return EnumConstantImpl.pattern_EnumConstant_10_8_expressionF();
@@ -505,66 +506,66 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result1_bindingAndBlack[0];
-		TClass tEnum = (TClass) result1_bindingAndBlack[1];
+		TField tName = (TField) result1_bindingAndBlack[0];
+		EnumDeclaration mEnum = (EnumDeclaration) result1_bindingAndBlack[1];
 		TFieldSignature tSignature = (TFieldSignature) result1_bindingAndBlack[2];
-		EnumDeclaration mEnum = (EnumDeclaration) result1_bindingAndBlack[3];
-		TFieldDefinition tDefinition = (TFieldDefinition) result1_bindingAndBlack[4];
-		TypeGraph model = (TypeGraph) result1_bindingAndBlack[5];
-		TField tName = (TField) result1_bindingAndBlack[6];
+		TClass tEnum = (TClass) result1_bindingAndBlack[3];
+		TypeGraph model = (TypeGraph) result1_bindingAndBlack[4];
+		TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result1_bindingAndBlack[5];
+		TFieldDefinition tDefinition = (TFieldDefinition) result1_bindingAndBlack[6];
 		CSP csp = (CSP) result1_bindingAndBlack[7];
-		Object[] result1_green = EnumConstantImpl.pattern_EnumConstant_11_1_performtransformation_greenFBBFFB(mEnum,
+		Object[] result1_green = EnumConstantImpl.pattern_EnumConstant_11_1_performtransformation_greenFBFBFB(mEnum,
 				tDefinition, csp);
-		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[0];
-		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[3];
-		MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result1_green[4];
+		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[0];
+		MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result1_green[2];
+		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[4];
 
-		Object[] result2_black = EnumConstantImpl.pattern_EnumConstant_11_2_collecttranslatedelements_blackBBBBBB(
-				tSignature, mDefinitionToTMember, tDefinition, tName, mBodyToTAnnotation, mDefinition);
+		Object[] result2_black = EnumConstantImpl.pattern_EnumConstant_11_2_collecttranslatedelements_blackBBBBBB(tName,
+				mBodyToTAnnotation, tSignature, mDefinition, tDefinition, mDefinitionToTMember);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSignature] = " + tSignature
-					+ ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tDefinition] = "
-					+ tDefinition + ", " + "[tName] = " + tName + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation
-					+ ", " + "[mDefinition] = " + mDefinition + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tName] = " + tName + ", "
+					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[tSignature] = " + tSignature + ", "
+					+ "[mDefinition] = " + mDefinition + ", " + "[tDefinition] = " + tDefinition + ", "
+					+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ".");
 		}
 		Object[] result2_green = EnumConstantImpl.pattern_EnumConstant_11_2_collecttranslatedelements_greenFBBBBBB(
-				tSignature, mDefinitionToTMember, tDefinition, tName, mBodyToTAnnotation, mDefinition);
+				tName, mBodyToTAnnotation, tSignature, mDefinition, tDefinition, mDefinitionToTMember);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = EnumConstantImpl.pattern_EnumConstant_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-				ruleresult, mEnumToTEnum, tEnum, tSignature, mDefinitionToTMember, mEnum, tDefinition, model, tName,
-				mBodyToTAnnotation, mDefinition);
+				ruleresult, tName, mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model, mEnumToTEnum,
+				tDefinition, mDefinitionToTMember);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mEnumToTEnum] = " + mEnumToTEnum + ", " + "[tEnum] = " + tEnum + ", " + "[tSignature] = "
-					+ tSignature + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mEnum] = "
-					+ mEnum + ", " + "[tDefinition] = " + tDefinition + ", " + "[model] = " + model + ", "
-					+ "[tName] = " + tName + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
-					+ "[mDefinition] = " + mDefinition + ".");
+					+ ", " + "[tName] = " + tName + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
+					+ "[mEnum] = " + mEnum + ", " + "[tSignature] = " + tSignature + ", " + "[tEnum] = " + tEnum + ", "
+					+ "[mDefinition] = " + mDefinition + ", " + "[model] = " + model + ", " + "[mEnumToTEnum] = "
+					+ mEnumToTEnum + ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinitionToTMember] = "
+					+ mDefinitionToTMember + ".");
 		}
-		EnumConstantImpl.pattern_EnumConstant_11_3_bookkeepingforedges_greenBBBBBBBBBBFFFFFFFFFFFFFFF(ruleresult, tEnum,
-				tSignature, mDefinitionToTMember, mEnum, tDefinition, model, tName, mBodyToTAnnotation, mDefinition);
-		//nothing EMoflonEdge tEnum__tDefinition____defines = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tDefinition__tEnum____definedBy = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tSignature__tEnum____type = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tEnum__tSignature____signature = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mEnum__mDefinition____enumConstants = (EMoflonEdge) result3_green[16];
+		EnumConstantImpl.pattern_EnumConstant_11_3_bookkeepingforedges_greenBBBBBBBBBBFFFFFFFFFFFFFFF(ruleresult, tName,
+				mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model, tDefinition, mDefinitionToTMember);
+		//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tEnum__tDefinition____defines = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tDefinition__tEnum____definedBy = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge mEnum__mDefinition____enumConstants = (EMoflonEdge) result3_green[19];
 		//nothing EMoflonEdge mBodyToTAnnotation__tDefinition____target = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[21];
-		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[22];
+		//nothing EMoflonEdge tSignature__tEnum____type = (EMoflonEdge) result3_green[21];
+		//nothing EMoflonEdge tEnum__tSignature____signature = (EMoflonEdge) result3_green[22];
 		//nothing EMoflonEdge model__tName____fields = (EMoflonEdge) result3_green[23];
 		//nothing EMoflonEdge tName__model____model = (EMoflonEdge) result3_green[24];
 
 		// 
 		// 
-		EnumConstantImpl.pattern_EnumConstant_11_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
-				mEnumToTEnum, tEnum, tSignature, mDefinitionToTMember, mEnum, tDefinition, model, tName,
-				mBodyToTAnnotation, mDefinition);
+		EnumConstantImpl.pattern_EnumConstant_11_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult, tName,
+				mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model, mEnumToTEnum, tDefinition,
+				mDefinitionToTMember);
 		return EnumConstantImpl.pattern_EnumConstant_11_6_expressionFB(ruleresult);
 	}
 
@@ -592,46 +593,46 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TClass tEnum = (TClass) result2_binding[0];
+		TField tName = (TField) result2_binding[0];
 		TFieldSignature tSignature = (TFieldSignature) result2_binding[1];
-		TFieldDefinition tDefinition = (TFieldDefinition) result2_binding[2];
+		TClass tEnum = (TClass) result2_binding[2];
 		TypeGraph model = (TypeGraph) result2_binding[3];
-		TField tName = (TField) result2_binding[4];
-		for (Object[] result2_black : EnumConstantImpl.pattern_EnumConstant_12_2_corematch_blackFBBFBBBB(tEnum,
-				tSignature, tDefinition, model, tName, match)) {
-			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result2_black[0];
-			EnumDeclaration mEnum = (EnumDeclaration) result2_black[3];
+		TFieldDefinition tDefinition = (TFieldDefinition) result2_binding[4];
+		for (Object[] result2_black : EnumConstantImpl.pattern_EnumConstant_12_2_corematch_blackBFBBBFBB(tName,
+				tSignature, tEnum, model, tDefinition, match)) {
+			EnumDeclaration mEnum = (EnumDeclaration) result2_black[1];
+			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result2_black[5];
 			// ForEach 
-			for (Object[] result3_black : EnumConstantImpl.pattern_EnumConstant_12_3_findcontext_blackBBBBBBB(
-					mEnumToTEnum, tEnum, tSignature, mEnum, tDefinition, model, tName)) {
+			for (Object[] result3_black : EnumConstantImpl.pattern_EnumConstant_12_3_findcontext_blackBBBBBBB(tName,
+					mEnum, tSignature, tEnum, model, mEnumToTEnum, tDefinition)) {
 				Object[] result3_green = EnumConstantImpl
-						.pattern_EnumConstant_12_3_findcontext_greenBBBBBBBFFFFFFFFFFFFFFF(mEnumToTEnum, tEnum,
-								tSignature, mEnum, tDefinition, model, tName);
+						.pattern_EnumConstant_12_3_findcontext_greenBBBBBBBFFFFFFFFFFFFFFF(tName, mEnum, tSignature,
+								tEnum, model, mEnumToTEnum, tDefinition);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge tEnum__tDefinition____defines = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tDefinition__tEnum____definedBy = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mEnumToTEnum__tEnum____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tSignature__tEnum____type = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tEnum__tSignature____signature = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mEnumToTEnum__mEnum____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tEnum__model____model = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge model__tEnum____ownedTypes = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge tEnum__tDefinition____defines = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tDefinition__tEnum____definedBy = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mEnumToTEnum__tEnum____target = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mEnumToTEnum__mEnum____source = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[16];
 				//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge tEnum__model____model = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge model__tEnum____ownedTypes = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge tSignature__tEnum____type = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge tEnum__tSignature____signature = (EMoflonEdge) result3_green[19];
 				//nothing EMoflonEdge model__tName____fields = (EMoflonEdge) result3_green[20];
 				//nothing EMoflonEdge tName__model____model = (EMoflonEdge) result3_green[21];
 
 				Object[] result4_bindingAndBlack = EnumConstantImpl
-						.pattern_EnumConstant_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-								mEnumToTEnum, tEnum, tSignature, mEnum, tDefinition, model, tName);
+						.pattern_EnumConstant_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, tName,
+								mEnum, tSignature, tEnum, model, mEnumToTEnum, tDefinition);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mEnumToTEnum] = " + mEnumToTEnum
-							+ ", " + "[tEnum] = " + tEnum + ", " + "[tSignature] = " + tSignature + ", " + "[mEnum] = "
-							+ mEnum + ", " + "[tDefinition] = " + tDefinition + ", " + "[model] = " + model + ", "
-							+ "[tName] = " + tName + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tName] = " + tName + ", "
+							+ "[mEnum] = " + mEnum + ", " + "[tSignature] = " + tSignature + ", " + "[tEnum] = " + tEnum
+							+ ", " + "[model] = " + model + ", " + "[mEnumToTEnum] = " + mEnumToTEnum + ", "
+							+ "[tDefinition] = " + tDefinition + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -660,13 +661,13 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TClass tEnum, TFieldSignature tSignature,
-			TFieldDefinition tDefinition, TypeGraph model, TField tName) {
-		match.registerObject("tEnum", tEnum);
-		match.registerObject("tSignature", tSignature);
-		match.registerObject("tDefinition", tDefinition);
-		match.registerObject("model", model);
+	public void registerObjectsToMatch_BWD(Match match, TField tName, TFieldSignature tSignature, TClass tEnum,
+			TypeGraph model, TFieldDefinition tDefinition) {
 		match.registerObject("tName", tName);
+		match.registerObject("tSignature", tSignature);
+		match.registerObject("tEnum", tEnum);
+		match.registerObject("model", model);
+		match.registerObject("tDefinition", tDefinition);
 
 	}
 
@@ -675,8 +676,8 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TClass tEnum, TFieldSignature tSignature,
-			TFieldDefinition tDefinition, TypeGraph model, TField tName) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TField tName, TFieldSignature tSignature, TClass tEnum,
+			TypeGraph model, TFieldDefinition tDefinition) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -705,9 +706,9 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mEnumToTEnum,
-			TClass tEnum, TFieldSignature tSignature, EnumDeclaration mEnum, TFieldDefinition tDefinition,
-			TypeGraph model, TField tName) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TField tName, EnumDeclaration mEnum,
+			TFieldSignature tSignature, TClass tEnum, TypeGraph model, TypeToTAbstractType mEnumToTEnum,
+			TFieldDefinition tDefinition) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -732,13 +733,13 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		eq.solve(var_mDefinition_name, var_tName_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mEnumToTEnum", mEnumToTEnum);
-		isApplicableMatch.registerObject("tEnum", tEnum);
-		isApplicableMatch.registerObject("tSignature", tSignature);
-		isApplicableMatch.registerObject("mEnum", mEnum);
-		isApplicableMatch.registerObject("tDefinition", tDefinition);
-		isApplicableMatch.registerObject("model", model);
 		isApplicableMatch.registerObject("tName", tName);
+		isApplicableMatch.registerObject("mEnum", mEnum);
+		isApplicableMatch.registerObject("tSignature", tSignature);
+		isApplicableMatch.registerObject("tEnum", tEnum);
+		isApplicableMatch.registerObject("model", model);
+		isApplicableMatch.registerObject("mEnumToTEnum", mEnumToTEnum);
+		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		return csp;
 	}
 
@@ -756,19 +757,19 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mEnumToTEnum, EObject tEnum,
-			EObject tSignature, EObject mDefinitionToTMember, EObject mEnum, EObject tDefinition, EObject model,
-			EObject tName, EObject mBodyToTAnnotation, EObject mDefinition) {
-		ruleresult.registerObject("mEnumToTEnum", mEnumToTEnum);
-		ruleresult.registerObject("tEnum", tEnum);
-		ruleresult.registerObject("tSignature", tSignature);
-		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
-		ruleresult.registerObject("mEnum", mEnum);
-		ruleresult.registerObject("tDefinition", tDefinition);
-		ruleresult.registerObject("model", model);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tName, EObject mBodyToTAnnotation,
+			EObject mEnum, EObject tSignature, EObject tEnum, EObject mDefinition, EObject model, EObject mEnumToTEnum,
+			EObject tDefinition, EObject mDefinitionToTMember) {
 		ruleresult.registerObject("tName", tName);
 		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
+		ruleresult.registerObject("mEnum", mEnum);
+		ruleresult.registerObject("tSignature", tSignature);
+		ruleresult.registerObject("tEnum", tEnum);
 		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("model", model);
+		ruleresult.registerObject("mEnumToTEnum", mEnumToTEnum);
+		ruleresult.registerObject("tDefinition", tDefinition);
+		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
 
 	}
 
@@ -778,12 +779,11 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * @generated
 	 */
 	public boolean checkTypes_BWD(Match match) {
-		return true
+		return true && org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tName").eClass()).equals("basic.TField.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tSignature").eClass())
 						.equals("basic.TFieldSignature.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tDefinition").eClass())
-						.equals("basic.TFieldDefinition.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tName").eClass()).equals("basic.TField.");
+						.equals("basic.TFieldDefinition.");
 	}
 
 	/**
@@ -791,7 +791,7 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_50(EMoflonEdge _edge_defines) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_231(EMoflonEdge _edge_field) {
 
 		Object[] result1_bindingAndBlack = EnumConstantImpl
 				.pattern_EnumConstant_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -806,18 +806,18 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 		// ForEach 
 		for (Object[] result2_black : EnumConstantImpl
-				.pattern_EnumConstant_20_2_testcorematchandDECs_blackFFFFFB(_edge_defines)) {
-			TClass tEnum = (TClass) result2_black[0];
+				.pattern_EnumConstant_20_2_testcorematchandDECs_blackFFFFFB(_edge_field)) {
+			TField tName = (TField) result2_black[0];
 			TFieldSignature tSignature = (TFieldSignature) result2_black[1];
-			TFieldDefinition tDefinition = (TFieldDefinition) result2_black[2];
+			TClass tEnum = (TClass) result2_black[2];
 			TypeGraph model = (TypeGraph) result2_black[3];
-			TField tName = (TField) result2_black[4];
+			TFieldDefinition tDefinition = (TFieldDefinition) result2_black[4];
 			Object[] result2_green = EnumConstantImpl.pattern_EnumConstant_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (EnumConstantImpl.pattern_EnumConstant_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-					this, match, tEnum, tSignature, tDefinition, model, tName)) {
+					this, match, tName, tSignature, tEnum, model, tDefinition)) {
 				// 
 				if (EnumConstantImpl
 						.pattern_EnumConstant_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -848,7 +848,7 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_50(EMoflonEdge _edge_enumConstants) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_245(EMoflonEdge _edge_enumConstants) {
 
 		Object[] result1_bindingAndBlack = EnumConstantImpl
 				.pattern_EnumConstant_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -912,13 +912,13 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mDefinition_name = CSPFactoryHelper.eINSTANCE.createVariable("mDefinition", true, csp);
-		var_mDefinition_name.setValue(__helper.getValue("mDefinition", "name"));
-		var_mDefinition_name.setType("String");
-
 		Variable var_tName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tName", true, csp);
 		var_tName_tName.setValue(__helper.getValue("tName", "tName"));
 		var_tName_tName.setType("String");
+
+		Variable var_mDefinition_name = CSPFactoryHelper.eINSTANCE.createVariable("mDefinition", true, csp);
+		var_mDefinition_name.setValue(__helper.getValue("mDefinition", "name"));
+		var_mDefinition_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -959,13 +959,13 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mDefinition_name = CSPFactoryHelper.eINSTANCE.createVariable("mDefinition", true, csp);
-		var_mDefinition_name.setValue(__helper.getValue("mDefinition", "name"));
-		var_mDefinition_name.setType("String");
-
 		Variable var_tName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tName", true, csp);
 		var_tName_tName.setValue(__helper.getValue("tName", "tName"));
 		var_tName_tName.setType("String");
+
+		Variable var_mDefinition_name = CSPFactoryHelper.eINSTANCE.createVariable("mDefinition", true, csp);
+		var_mDefinition_name.setValue(__helper.getValue("mDefinition", "name"));
+		var_mDefinition_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1011,47 +1011,47 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TClass tEnum = (TClass) result2_bindingAndBlack[0];
-		TFieldSignature tSignature = (TFieldSignature) result2_bindingAndBlack[1];
-		EnumDeclaration mEnum = (EnumDeclaration) result2_bindingAndBlack[2];
-		TFieldDefinition tDefinition = (TFieldDefinition) result2_bindingAndBlack[3];
-		TypeGraph model = (TypeGraph) result2_bindingAndBlack[4];
-		TField tName = (TField) result2_bindingAndBlack[5];
-		MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result2_bindingAndBlack[6];
+		TField tName = (TField) result2_bindingAndBlack[0];
+		EnumDeclaration mEnum = (EnumDeclaration) result2_bindingAndBlack[1];
+		TFieldSignature tSignature = (TFieldSignature) result2_bindingAndBlack[2];
+		TClass tEnum = (TClass) result2_bindingAndBlack[3];
+		MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result2_bindingAndBlack[4];
+		TypeGraph model = (TypeGraph) result2_bindingAndBlack[5];
+		TFieldDefinition tDefinition = (TFieldDefinition) result2_bindingAndBlack[6];
 
 		Object[] result3_bindingAndBlack = EnumConstantImpl
-				.pattern_EnumConstant_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, tEnum, tSignature, mEnum,
-						tDefinition, model, tName, mDefinition, sourceMatch, targetMatch);
+				.pattern_EnumConstant_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, tName, mEnum, tSignature, tEnum,
+						mDefinition, model, tDefinition, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tEnum] = " + tEnum + ", " + "[tSignature] = " + tSignature + ", " + "[mEnum] = " + mEnum + ", "
-					+ "[tDefinition] = " + tDefinition + ", " + "[model] = " + model + ", " + "[tName] = " + tName
-					+ ", " + "[mDefinition] = " + mDefinition + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[tName] = " + tName + ", " + "[mEnum] = " + mEnum + ", " + "[tSignature] = " + tSignature + ", "
+					+ "[tEnum] = " + tEnum + ", " + "[mDefinition] = " + mDefinition + ", " + "[model] = " + model
+					+ ", " + "[tDefinition] = " + tDefinition + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (EnumConstantImpl.pattern_EnumConstant_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : EnumConstantImpl.pattern_EnumConstant_24_5_matchcorrcontext_blackFBBBB(tEnum,
-					mEnum, sourceMatch, targetMatch)) {
-				TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result5_black[0];
+			for (Object[] result5_black : EnumConstantImpl.pattern_EnumConstant_24_5_matchcorrcontext_blackBBFBB(mEnum,
+					tEnum, sourceMatch, targetMatch)) {
+				TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result5_black[2];
 				Object[] result5_green = EnumConstantImpl
 						.pattern_EnumConstant_24_5_matchcorrcontext_greenBBBF(mEnumToTEnum, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = EnumConstantImpl.pattern_EnumConstant_24_6_createcorrespondence_blackBBBBBBBB(
-						tEnum, tSignature, mEnum, tDefinition, model, tName, mDefinition, ccMatch);
+						tName, mEnum, tSignature, tEnum, mDefinition, model, tDefinition, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tEnum] = " + tEnum + ", "
-							+ "[tSignature] = " + tSignature + ", " + "[mEnum] = " + mEnum + ", " + "[tDefinition] = "
-							+ tDefinition + ", " + "[model] = " + model + ", " + "[tName] = " + tName + ", "
-							+ "[mDefinition] = " + mDefinition + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tName] = " + tName + ", "
+							+ "[mEnum] = " + mEnum + ", " + "[tSignature] = " + tSignature + ", " + "[tEnum] = " + tEnum
+							+ ", " + "[mDefinition] = " + mDefinition + ", " + "[model] = " + model + ", "
+							+ "[tDefinition] = " + tDefinition + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				EnumConstantImpl.pattern_EnumConstant_24_6_createcorrespondence_greenFBFBB(tDefinition, mDefinition,
+				EnumConstantImpl.pattern_EnumConstant_24_6_createcorrespondence_greenFBBFB(mDefinition, tDefinition,
 						ccMatch);
-				//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[0];
-				//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[2];
+				//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[0];
+				//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[3];
 
 				Object[] result7_black = EnumConstantImpl.pattern_EnumConstant_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -1073,9 +1073,9 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TClass tEnum, TFieldSignature tSignature, EnumDeclaration mEnum,
-			TFieldDefinition tDefinition, TypeGraph model, TField tName, MEnumConstantDeclaration mDefinition,
-			Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TField tName, EnumDeclaration mEnum, TFieldSignature tSignature, TClass tEnum,
+			MEnumConstantDeclaration mDefinition, TypeGraph model, TFieldDefinition tDefinition, Match sourceMatch,
+			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1130,10 +1130,10 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TClass tEnum, TFieldSignature tSignature, TFieldDefinition tDefinition, TypeGraph model,
-			TField tName) {// 
-		Object[] result1_black = EnumConstantImpl.pattern_EnumConstant_28_1_matchtggpattern_blackBBBBB(tEnum,
-				tSignature, tDefinition, model, tName);
+	public boolean checkDEC_BWD(TField tName, TFieldSignature tSignature, TClass tEnum, TypeGraph model,
+			TFieldDefinition tDefinition) {// 
+		Object[] result1_black = EnumConstantImpl.pattern_EnumConstant_28_1_matchtggpattern_blackBBBBB(tName,
+				tSignature, tEnum, model, tDefinition);
 		if (result1_black != null) {
 			return EnumConstantImpl.pattern_EnumConstant_28_2_expressionF();
 		} else {
@@ -1162,43 +1162,43 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		for (Object[] result2_black : EnumConstantImpl
 				.pattern_EnumConstant_29_2_isapplicablecore_blackFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mEnumToTEnumList = (RuleEntryList) result2_black[0];
-			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result2_black[1];
-			TClass tEnum = (TClass) result2_black[2];
-			TypeGraph model = (TypeGraph) result2_black[3];
-			EnumDeclaration mEnum = (EnumDeclaration) result2_black[4];
+			EnumDeclaration mEnum = (EnumDeclaration) result2_black[1];
+			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result2_black[2];
+			TClass tEnum = (TClass) result2_black[3];
+			TypeGraph model = (TypeGraph) result2_black[4];
 
 			Object[] result3_bindingAndBlack = EnumConstantImpl
-					.pattern_EnumConstant_29_3_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch, mEnumToTEnum,
-							tEnum, mEnum, model, ruleResult);
+					.pattern_EnumConstant_29_3_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch, mEnum, tEnum,
+							model, mEnumToTEnum, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mEnumToTEnum] = " + mEnumToTEnum
-						+ ", " + "[tEnum] = " + tEnum + ", " + "[mEnum] = " + mEnum + ", " + "[model] = " + model + ", "
-						+ "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mEnum] = " + mEnum + ", "
+						+ "[tEnum] = " + tEnum + ", " + "[model] = " + model + ", " + "[mEnumToTEnum] = " + mEnumToTEnum
+						+ ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (EnumConstantImpl.pattern_EnumConstant_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = EnumConstantImpl.pattern_EnumConstant_29_5_checknacs_blackBBBB(mEnumToTEnum,
-						tEnum, mEnum, model);
+				Object[] result5_black = EnumConstantImpl.pattern_EnumConstant_29_5_checknacs_blackBBBB(mEnum, tEnum,
+						model, mEnumToTEnum);
 				if (result5_black != null) {
 
-					Object[] result6_black = EnumConstantImpl.pattern_EnumConstant_29_6_perform_blackBBBBB(mEnumToTEnum,
-							tEnum, mEnum, model, ruleResult);
+					Object[] result6_black = EnumConstantImpl.pattern_EnumConstant_29_6_perform_blackBBBBB(mEnum, tEnum,
+							model, mEnumToTEnum, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mEnumToTEnum] = "
-								+ mEnumToTEnum + ", " + "[tEnum] = " + tEnum + ", " + "[mEnum] = " + mEnum + ", "
-								+ "[model] = " + model + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mEnum] = " + mEnum
+								+ ", " + "[tEnum] = " + tEnum + ", " + "[model] = " + model + ", " + "[mEnumToTEnum] = "
+								+ mEnumToTEnum + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					EnumConstantImpl.pattern_EnumConstant_29_6_perform_greenBFFBFBFFFBB(tEnum, mEnum, model, ruleResult,
+					EnumConstantImpl.pattern_EnumConstant_29_6_perform_greenFFBFBFBFFBB(mEnum, tEnum, model, ruleResult,
 							csp);
-					//nothing TFieldSignature tSignature = (TFieldSignature) result6_green[1];
-					//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[2];
-					//nothing TFieldDefinition tDefinition = (TFieldDefinition) result6_green[4];
-					//nothing TField tName = (TField) result6_green[6];
-					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[7];
-					//nothing MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result6_green[8];
+					//nothing TField tName = (TField) result6_green[0];
+					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[1];
+					//nothing TFieldSignature tSignature = (TFieldSignature) result6_green[3];
+					//nothing MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result6_green[5];
+					//nothing TFieldDefinition tDefinition = (TFieldDefinition) result6_green[7];
+					//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[8];
 
 				} else {
 				}
@@ -1215,8 +1215,8 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mEnumToTEnum,
-			TClass tEnum, EnumDeclaration mEnum, TypeGraph model, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, EnumDeclaration mEnum, TClass tEnum,
+			TypeGraph model, TypeToTAbstractType mEnumToTEnum, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1240,10 +1240,10 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		eq.solve(var_mDefinition_name, var_tName_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mEnumToTEnum", mEnumToTEnum);
-		isApplicableMatch.registerObject("tEnum", tEnum);
 		isApplicableMatch.registerObject("mEnum", mEnum);
+		isApplicableMatch.registerObject("tEnum", tEnum);
 		isApplicableMatch.registerObject("model", model);
+		isApplicableMatch.registerObject("mEnumToTEnum", mEnumToTEnum);
 		return csp;
 	}
 
@@ -1280,11 +1280,10 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 					(MEnumConstantDeclaration) arguments.get(2));
 		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TCLASS_ENUMDECLARATION_TYPEGRAPH_MENUMCONSTANTDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (TClass) arguments.get(2),
-					(EnumDeclaration) arguments.get(3), (TypeGraph) arguments.get(4),
-					(MEnumConstantDeclaration) arguments.get(5));
+		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ENUMDECLARATION_TCLASS_MENUMCONSTANTDECLARATION_TYPEGRAPH_TYPETOTABSTRACTTYPE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (EnumDeclaration) arguments.get(1),
+					(TClass) arguments.get(2), (MEnumConstantDeclaration) arguments.get(3),
+					(TypeGraph) arguments.get(4), (TypeToTAbstractType) arguments.get(5));
 		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.ENUM_CONSTANT___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1295,30 +1294,30 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 			return null;
 		case RulesPackage.ENUM_CONSTANT___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_BWD__MATCH_TCLASS_TFIELDSIGNATURE_TFIELDDEFINITION_TYPEGRAPH_TFIELD:
-			return isAppropriate_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
-					(TFieldSignature) arguments.get(2), (TFieldDefinition) arguments.get(3),
-					(TypeGraph) arguments.get(4), (TField) arguments.get(5));
+		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_BWD__MATCH_TFIELD_TFIELDSIGNATURE_TCLASS_TYPEGRAPH_TFIELDDEFINITION:
+			return isAppropriate_BWD((Match) arguments.get(0), (TField) arguments.get(1),
+					(TFieldSignature) arguments.get(2), (TClass) arguments.get(3), (TypeGraph) arguments.get(4),
+					(TFieldDefinition) arguments.get(5));
 		case RulesPackage.ENUM_CONSTANT___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_CONSTANT___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TCLASS_TFIELDSIGNATURE_TFIELDDEFINITION_TYPEGRAPH_TFIELD:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
-					(TFieldSignature) arguments.get(2), (TFieldDefinition) arguments.get(3),
-					(TypeGraph) arguments.get(4), (TField) arguments.get(5));
+		case RulesPackage.ENUM_CONSTANT___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TFIELD_TFIELDSIGNATURE_TCLASS_TYPEGRAPH_TFIELDDEFINITION:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TField) arguments.get(1),
+					(TFieldSignature) arguments.get(2), (TClass) arguments.get(3), (TypeGraph) arguments.get(4),
+					(TFieldDefinition) arguments.get(5));
 			return null;
-		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TCLASS_TFIELDSIGNATURE_TFIELDDEFINITION_TYPEGRAPH_TFIELD:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
-					(TFieldSignature) arguments.get(2), (TFieldDefinition) arguments.get(3),
-					(TypeGraph) arguments.get(4), (TField) arguments.get(5));
+		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TFIELD_TFIELDSIGNATURE_TCLASS_TYPEGRAPH_TFIELDDEFINITION:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TField) arguments.get(1),
+					(TFieldSignature) arguments.get(2), (TClass) arguments.get(3), (TypeGraph) arguments.get(4),
+					(TFieldDefinition) arguments.get(5));
 		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TCLASS_TFIELDSIGNATURE_ENUMDECLARATION_TFIELDDEFINITION_TYPEGRAPH_TFIELD:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (TClass) arguments.get(2),
-					(TFieldSignature) arguments.get(3), (EnumDeclaration) arguments.get(4),
-					(TFieldDefinition) arguments.get(5), (TypeGraph) arguments.get(6), (TField) arguments.get(7));
+		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TFIELD_ENUMDECLARATION_TFIELDSIGNATURE_TCLASS_TYPEGRAPH_TYPETOTABSTRACTTYPE_TFIELDDEFINITION:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TField) arguments.get(1),
+					(EnumDeclaration) arguments.get(2), (TFieldSignature) arguments.get(3), (TClass) arguments.get(4),
+					(TypeGraph) arguments.get(5), (TypeToTAbstractType) arguments.get(6),
+					(TFieldDefinition) arguments.get(7));
 		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.ENUM_CONSTANT___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1329,34 +1328,33 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 			return null;
 		case RulesPackage.ENUM_CONSTANT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_50__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_50((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_50__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_50((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_231__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_231((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_245__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_245((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ENUM_CONSTANT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM_CONSTANT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_SOLVE_CSP_CC__TCLASS_TFIELDSIGNATURE_ENUMDECLARATION_TFIELDDEFINITION_TYPEGRAPH_TFIELD_MENUMCONSTANTDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TClass) arguments.get(0), (TFieldSignature) arguments.get(1),
-					(EnumDeclaration) arguments.get(2), (TFieldDefinition) arguments.get(3),
-					(TypeGraph) arguments.get(4), (TField) arguments.get(5),
-					(MEnumConstantDeclaration) arguments.get(6), (Match) arguments.get(7), (Match) arguments.get(8));
+		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_SOLVE_CSP_CC__TFIELD_ENUMDECLARATION_TFIELDSIGNATURE_TCLASS_MENUMCONSTANTDECLARATION_TYPEGRAPH_TFIELDDEFINITION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TField) arguments.get(0), (EnumDeclaration) arguments.get(1),
+					(TFieldSignature) arguments.get(2), (TClass) arguments.get(3),
+					(MEnumConstantDeclaration) arguments.get(4), (TypeGraph) arguments.get(5),
+					(TFieldDefinition) arguments.get(6), (Match) arguments.get(7), (Match) arguments.get(8));
 		case RulesPackage.ENUM_CONSTANT___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.ENUM_CONSTANT___CHECK_DEC_FWD__ENUMDECLARATION_MENUMCONSTANTDECLARATION:
 			return checkDEC_FWD((EnumDeclaration) arguments.get(0), (MEnumConstantDeclaration) arguments.get(1));
-		case RulesPackage.ENUM_CONSTANT___CHECK_DEC_BWD__TCLASS_TFIELDSIGNATURE_TFIELDDEFINITION_TYPEGRAPH_TFIELD:
-			return checkDEC_BWD((TClass) arguments.get(0), (TFieldSignature) arguments.get(1),
-					(TFieldDefinition) arguments.get(2), (TypeGraph) arguments.get(3), (TField) arguments.get(4));
+		case RulesPackage.ENUM_CONSTANT___CHECK_DEC_BWD__TFIELD_TFIELDSIGNATURE_TCLASS_TYPEGRAPH_TFIELDDEFINITION:
+			return checkDEC_BWD((TField) arguments.get(0), (TFieldSignature) arguments.get(1),
+					(TClass) arguments.get(2), (TypeGraph) arguments.get(3), (TFieldDefinition) arguments.get(4));
 		case RulesPackage.ENUM_CONSTANT___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1));
-		case RulesPackage.ENUM_CONSTANT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_TCLASS_ENUMDECLARATION_TYPEGRAPH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (TClass) arguments.get(2),
-					(EnumDeclaration) arguments.get(3), (TypeGraph) arguments.get(4),
+		case RulesPackage.ENUM_CONSTANT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ENUMDECLARATION_TCLASS_TYPEGRAPH_TYPETOTABSTRACTTYPE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (EnumDeclaration) arguments.get(1),
+					(TClass) arguments.get(2), (TypeGraph) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
 					(ModelgeneratorRuleResult) arguments.get(5));
 		case RulesPackage.ENUM_CONSTANT___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1451,27 +1449,27 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_1_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mEnumToTEnum");
+		EObject _localVariable_0 = isApplicableMatch.getObject("mEnum");
 		EObject _localVariable_1 = isApplicableMatch.getObject("tEnum");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mEnum");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mDefinition");
 		EObject _localVariable_3 = isApplicableMatch.getObject("model");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mDefinition");
-		EObject tmpMEnumToTEnum = _localVariable_0;
+		EObject _localVariable_4 = isApplicableMatch.getObject("mEnumToTEnum");
+		EObject tmpMEnum = _localVariable_0;
 		EObject tmpTEnum = _localVariable_1;
-		EObject tmpMEnum = _localVariable_2;
+		EObject tmpMDefinition = _localVariable_2;
 		EObject tmpModel = _localVariable_3;
-		EObject tmpMDefinition = _localVariable_4;
-		if (tmpMEnumToTEnum instanceof TypeToTAbstractType) {
-			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) tmpMEnumToTEnum;
+		EObject tmpMEnumToTEnum = _localVariable_4;
+		if (tmpMEnum instanceof EnumDeclaration) {
+			EnumDeclaration mEnum = (EnumDeclaration) tmpMEnum;
 			if (tmpTEnum instanceof TClass) {
 				TClass tEnum = (TClass) tmpTEnum;
-				if (tmpMEnum instanceof EnumDeclaration) {
-					EnumDeclaration mEnum = (EnumDeclaration) tmpMEnum;
+				if (tmpMDefinition instanceof MEnumConstantDeclaration) {
+					MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) tmpMDefinition;
 					if (tmpModel instanceof TypeGraph) {
 						TypeGraph model = (TypeGraph) tmpModel;
-						if (tmpMDefinition instanceof MEnumConstantDeclaration) {
-							MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) tmpMDefinition;
-							return new Object[] { mEnumToTEnum, tEnum, mEnum, model, mDefinition, isApplicableMatch };
+						if (tmpMEnumToTEnum instanceof TypeToTAbstractType) {
+							TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) tmpMEnumToTEnum;
+							return new Object[] { mEnum, tEnum, mDefinition, model, mEnumToTEnum, isApplicableMatch };
 						}
 					}
 				}
@@ -1480,13 +1478,13 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return null;
 	}
 
-	public static final Object[] pattern_EnumConstant_1_1_performtransformation_blackBBBBBFBB(
-			TypeToTAbstractType mEnumToTEnum, TClass tEnum, EnumDeclaration mEnum, TypeGraph model,
-			MEnumConstantDeclaration mDefinition, EnumConstant _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_EnumConstant_1_1_performtransformation_blackBBBBBFBB(EnumDeclaration mEnum,
+			TClass tEnum, MEnumConstantDeclaration mDefinition, TypeGraph model, TypeToTAbstractType mEnumToTEnum,
+			EnumConstant _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mEnumToTEnum, tEnum, mEnum, model, mDefinition, csp, _this, isApplicableMatch };
+				return new Object[] { mEnum, tEnum, mDefinition, model, mEnumToTEnum, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1497,153 +1495,153 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		Object[] result_pattern_EnumConstant_1_1_performtransformation_binding = pattern_EnumConstant_1_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_EnumConstant_1_1_performtransformation_binding != null) {
-			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result_pattern_EnumConstant_1_1_performtransformation_binding[0];
+			EnumDeclaration mEnum = (EnumDeclaration) result_pattern_EnumConstant_1_1_performtransformation_binding[0];
 			TClass tEnum = (TClass) result_pattern_EnumConstant_1_1_performtransformation_binding[1];
-			EnumDeclaration mEnum = (EnumDeclaration) result_pattern_EnumConstant_1_1_performtransformation_binding[2];
+			MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result_pattern_EnumConstant_1_1_performtransformation_binding[2];
 			TypeGraph model = (TypeGraph) result_pattern_EnumConstant_1_1_performtransformation_binding[3];
-			MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result_pattern_EnumConstant_1_1_performtransformation_binding[4];
+			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result_pattern_EnumConstant_1_1_performtransformation_binding[4];
 
 			Object[] result_pattern_EnumConstant_1_1_performtransformation_black = pattern_EnumConstant_1_1_performtransformation_blackBBBBBFBB(
-					mEnumToTEnum, tEnum, mEnum, model, mDefinition, _this, isApplicableMatch);
+					mEnum, tEnum, mDefinition, model, mEnumToTEnum, _this, isApplicableMatch);
 			if (result_pattern_EnumConstant_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_EnumConstant_1_1_performtransformation_black[5];
 
-				return new Object[] { mEnumToTEnum, tEnum, mEnum, model, mDefinition, csp, _this, isApplicableMatch };
+				return new Object[] { mEnum, tEnum, mDefinition, model, mEnumToTEnum, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_EnumConstant_1_1_performtransformation_greenBFFFBFFBB(TClass tEnum,
-			TypeGraph model, MEnumConstantDeclaration mDefinition, CSP csp) {
-		TFieldSignature tSignature = BasicFactory.eINSTANCE.createTFieldSignature();
-		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
-		TFieldDefinition tDefinition = BasicFactory.eINSTANCE.createTFieldDefinition();
+	public static final Object[] pattern_EnumConstant_1_1_performtransformation_greenFFFBBBFFB(TClass tEnum,
+			MEnumConstantDeclaration mDefinition, TypeGraph model, CSP csp) {
 		TField tName = BasicFactory.eINSTANCE.createTField();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
+		TFieldSignature tSignature = BasicFactory.eINSTANCE.createTFieldSignature();
+		TFieldDefinition tDefinition = BasicFactory.eINSTANCE.createTFieldDefinition();
+		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		Object _localVariable_0 = csp.getValue("tName", "tName");
+		model.getFields().add(tName);
+		mBodyToTAnnotation.setSource(mDefinition);
+		tSignature.setField(tName);
 		tSignature.setType(tEnum);
 		tEnum.getSignature().add(tSignature);
-		mDefinitionToTMember.setSource(mDefinition);
 		tEnum.getDefines().add(tDefinition);
-		mDefinitionToTMember.setTarget(tDefinition);
 		tDefinition.setSignature(tSignature);
-		tSignature.setField(tName);
-		model.getFields().add(tName);
 		mBodyToTAnnotation.setTarget(tDefinition);
-		mBodyToTAnnotation.setSource(mDefinition);
+		mDefinitionToTMember.setTarget(tDefinition);
+		mDefinitionToTMember.setSource(mDefinition);
 		String tName_tName_prime = (String) _localVariable_0;
 		tName.setTName(tName_tName_prime);
-		return new Object[] { tEnum, tSignature, mDefinitionToTMember, tDefinition, model, tName, mBodyToTAnnotation,
-				mDefinition, csp };
+		return new Object[] { tName, mBodyToTAnnotation, tSignature, tEnum, mDefinition, model, tDefinition,
+				mDefinitionToTMember, csp };
 	}
 
-	public static final Object[] pattern_EnumConstant_1_2_collecttranslatedelements_blackBBBBBB(
-			TFieldSignature tSignature, MDefinitionToTMember mDefinitionToTMember, TFieldDefinition tDefinition,
-			TField tName, ASTNodeToTAnnotatable mBodyToTAnnotation, MEnumConstantDeclaration mDefinition) {
-		return new Object[] { tSignature, mDefinitionToTMember, tDefinition, tName, mBodyToTAnnotation, mDefinition };
+	public static final Object[] pattern_EnumConstant_1_2_collecttranslatedelements_blackBBBBBB(TField tName,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TFieldSignature tSignature, MEnumConstantDeclaration mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember mDefinitionToTMember) {
+		return new Object[] { tName, mBodyToTAnnotation, tSignature, mDefinition, tDefinition, mDefinitionToTMember };
 	}
 
-	public static final Object[] pattern_EnumConstant_1_2_collecttranslatedelements_greenFBBBBBB(
-			TFieldSignature tSignature, MDefinitionToTMember mDefinitionToTMember, TFieldDefinition tDefinition,
-			TField tName, ASTNodeToTAnnotatable mBodyToTAnnotation, MEnumConstantDeclaration mDefinition) {
+	public static final Object[] pattern_EnumConstant_1_2_collecttranslatedelements_greenFBBBBBB(TField tName,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TFieldSignature tSignature, MEnumConstantDeclaration mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember mDefinitionToTMember) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(tSignature);
-		ruleresult.getCreatedLinkElements().add(mDefinitionToTMember);
-		ruleresult.getCreatedElements().add(tDefinition);
 		ruleresult.getCreatedElements().add(tName);
 		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
+		ruleresult.getCreatedElements().add(tSignature);
 		ruleresult.getTranslatedElements().add(mDefinition);
-		return new Object[] { ruleresult, tSignature, mDefinitionToTMember, tDefinition, tName, mBodyToTAnnotation,
-				mDefinition };
+		ruleresult.getCreatedElements().add(tDefinition);
+		ruleresult.getCreatedLinkElements().add(mDefinitionToTMember);
+		return new Object[] { ruleresult, tName, mBodyToTAnnotation, tSignature, mDefinition, tDefinition,
+				mDefinitionToTMember };
 	}
 
 	public static final Object[] pattern_EnumConstant_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mEnumToTEnum, EObject tEnum, EObject tSignature,
-			EObject mDefinitionToTMember, EObject mEnum, EObject tDefinition, EObject model, EObject tName,
-			EObject mBodyToTAnnotation, EObject mDefinition) {
-		if (!mEnumToTEnum.equals(tEnum)) {
-			if (!mEnumToTEnum.equals(tSignature)) {
-				if (!mEnumToTEnum.equals(tDefinition)) {
-					if (!mEnumToTEnum.equals(model)) {
-						if (!mEnumToTEnum.equals(tName)) {
-							if (!tEnum.equals(tSignature)) {
-								if (!tEnum.equals(tName)) {
-									if (!mDefinitionToTMember.equals(mEnumToTEnum)) {
-										if (!mDefinitionToTMember.equals(tEnum)) {
-											if (!mDefinitionToTMember.equals(tSignature)) {
-												if (!mDefinitionToTMember.equals(mEnum)) {
-													if (!mDefinitionToTMember.equals(tDefinition)) {
-														if (!mDefinitionToTMember.equals(model)) {
-															if (!mDefinitionToTMember.equals(tName)) {
+			PerformRuleResult ruleresult, EObject tName, EObject mBodyToTAnnotation, EObject mEnum, EObject tSignature,
+			EObject tEnum, EObject mDefinition, EObject model, EObject mEnumToTEnum, EObject tDefinition,
+			EObject mDefinitionToTMember) {
+		if (!tName.equals(tSignature)) {
+			if (!mBodyToTAnnotation.equals(tName)) {
+				if (!mBodyToTAnnotation.equals(mEnum)) {
+					if (!mBodyToTAnnotation.equals(tSignature)) {
+						if (!mBodyToTAnnotation.equals(tEnum)) {
+							if (!mBodyToTAnnotation.equals(mDefinition)) {
+								if (!mBodyToTAnnotation.equals(model)) {
+									if (!mBodyToTAnnotation.equals(mEnumToTEnum)) {
+										if (!mBodyToTAnnotation.equals(tDefinition)) {
+											if (!mBodyToTAnnotation.equals(mDefinitionToTMember)) {
+												if (!mEnum.equals(tName)) {
+													if (!mEnum.equals(tSignature)) {
+														if (!mEnum.equals(tEnum)) {
+															if (!mEnum.equals(model)) {
 																if (!mEnum.equals(mEnumToTEnum)) {
-																	if (!mEnum.equals(tEnum)) {
-																		if (!mEnum.equals(tSignature)) {
-																			if (!mEnum.equals(tDefinition)) {
-																				if (!mEnum.equals(model)) {
-																					if (!mEnum.equals(tName)) {
-																						if (!tDefinition
-																								.equals(tEnum)) {
-																							if (!tDefinition.equals(
-																									tSignature)) {
-																								if (!tDefinition.equals(
-																										tName)) {
-																									if (!model.equals(
-																											tEnum)) {
-																										if (!model
-																												.equals(tSignature)) {
-																											if (!model
-																													.equals(tDefinition)) {
+																	if (!mEnum.equals(tDefinition)) {
+																		if (!tEnum.equals(tName)) {
+																			if (!tEnum.equals(tSignature)) {
+																				if (!mDefinition.equals(tName)) {
+																					if (!mDefinition.equals(mEnum)) {
+																						if (!mDefinition
+																								.equals(tSignature)) {
+																							if (!mDefinition
+																									.equals(tEnum)) {
+																								if (!mDefinition.equals(
+																										model)) {
+																									if (!mDefinition
+																											.equals(mEnumToTEnum)) {
+																										if (!mDefinition
+																												.equals(tDefinition)) {
+																											if (!mDefinition
+																													.equals(mDefinitionToTMember)) {
 																												if (!model
 																														.equals(tName)) {
-																													if (!tName
+																													if (!model
 																															.equals(tSignature)) {
-																														if (!mBodyToTAnnotation
-																																.equals(mEnumToTEnum)) {
-																															if (!mBodyToTAnnotation
-																																	.equals(tEnum)) {
-																																if (!mBodyToTAnnotation
-																																		.equals(tSignature)) {
-																																	if (!mBodyToTAnnotation
-																																			.equals(mDefinitionToTMember)) {
-																																		if (!mBodyToTAnnotation
-																																				.equals(mEnum)) {
-																																			if (!mBodyToTAnnotation
-																																					.equals(tDefinition)) {
-																																				if (!mBodyToTAnnotation
-																																						.equals(model)) {
-																																					if (!mBodyToTAnnotation
+																														if (!model
+																																.equals(tEnum)) {
+																															if (!model
+																																	.equals(tDefinition)) {
+																																if (!mEnumToTEnum
+																																		.equals(tName)) {
+																																	if (!mEnumToTEnum
+																																			.equals(tSignature)) {
+																																		if (!mEnumToTEnum
+																																				.equals(tEnum)) {
+																																			if (!mEnumToTEnum
+																																					.equals(model)) {
+																																				if (!mEnumToTEnum
+																																						.equals(tDefinition)) {
+																																					if (!tDefinition
 																																							.equals(tName)) {
-																																						if (!mBodyToTAnnotation
-																																								.equals(mDefinition)) {
-																																							if (!mDefinition
-																																									.equals(mEnumToTEnum)) {
-																																								if (!mDefinition
-																																										.equals(tEnum)) {
-																																									if (!mDefinition
-																																											.equals(tSignature)) {
-																																										if (!mDefinition
-																																												.equals(mDefinitionToTMember)) {
-																																											if (!mDefinition
-																																													.equals(mEnum)) {
-																																												if (!mDefinition
-																																														.equals(tDefinition)) {
-																																													if (!mDefinition
-																																															.equals(model)) {
-																																														if (!mDefinition
-																																																.equals(tName)) {
+																																						if (!tDefinition
+																																								.equals(tSignature)) {
+																																							if (!tDefinition
+																																									.equals(tEnum)) {
+																																								if (!mDefinitionToTMember
+																																										.equals(tName)) {
+																																									if (!mDefinitionToTMember
+																																											.equals(mEnum)) {
+																																										if (!mDefinitionToTMember
+																																												.equals(tSignature)) {
+																																											if (!mDefinitionToTMember
+																																													.equals(tEnum)) {
+																																												if (!mDefinitionToTMember
+																																														.equals(model)) {
+																																													if (!mDefinitionToTMember
+																																															.equals(mEnumToTEnum)) {
+																																														if (!mDefinitionToTMember
+																																																.equals(tDefinition)) {
 																																															return new Object[] {
 																																																	ruleresult,
-																																																	mEnumToTEnum,
-																																																	tEnum,
-																																																	tSignature,
-																																																	mDefinitionToTMember,
-																																																	mEnum,
-																																																	tDefinition,
-																																																	model,
 																																																	tName,
 																																																	mBodyToTAnnotation,
-																																																	mDefinition };
+																																																	mEnum,
+																																																	tSignature,
+																																																	tEnum,
+																																																	mDefinition,
+																																																	model,
+																																																	mEnumToTEnum,
+																																																	tDefinition,
+																																																	mDefinitionToTMember };
 																																														}
 																																													}
 																																												}
@@ -1693,79 +1691,78 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_1_3_bookkeepingforedges_greenBBBBBBBBBBFFFFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tEnum, EObject tSignature, EObject mDefinitionToTMember,
-			EObject mEnum, EObject tDefinition, EObject model, EObject tName, EObject mBodyToTAnnotation,
-			EObject mDefinition) {
-		EMoflonEdge tEnum__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tEnum____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tEnum____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tEnum__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject tName, EObject mBodyToTAnnotation, EObject mEnum, EObject tSignature,
+			EObject tEnum, EObject mDefinition, EObject model, EObject tDefinition, EObject mDefinitionToTMember) {
 		EMoflonEdge tSignature__tName____field = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mEnum__mDefinition____enumConstants = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tEnum__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tEnum____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mEnum__mDefinition____enumConstants = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tEnum____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tEnum__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "EnumConstant";
-		String tEnum__tDefinition____defines_name_prime = "defines";
-		String tDefinition__tEnum____definedBy_name_prime = "definedBy";
-		String tSignature__tEnum____type_name_prime = "type";
-		String tEnum__tSignature____signature_name_prime = "signature";
 		String tSignature__tName____field_name_prime = "field";
 		String tName__tSignature____signatures_name_prime = "signatures";
-		String mEnum__mDefinition____enumConstants_name_prime = "enumConstants";
-		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		String tEnum__tDefinition____defines_name_prime = "defines";
+		String tDefinition__tEnum____definedBy_name_prime = "definedBy";
+		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
 		String tDefinition__tSignature____signature_name_prime = "signature";
 		String tSignature__tDefinition____definitions_name_prime = "definitions";
-		String mBodyToTAnnotation__tDefinition____target_name_prime = "target";
-		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
+		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
 		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
+		String mEnum__mDefinition____enumConstants_name_prime = "enumConstants";
+		String mBodyToTAnnotation__tDefinition____target_name_prime = "target";
+		String tSignature__tEnum____type_name_prime = "type";
+		String tEnum__tSignature____signature_name_prime = "signature";
 		String model__tName____fields_name_prime = "fields";
 		String tName__model____model_name_prime = "model";
-		tEnum__tDefinition____defines.setSrc(tEnum);
-		tEnum__tDefinition____defines.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(tEnum__tDefinition____defines);
-		tDefinition__tEnum____definedBy.setSrc(tDefinition);
-		tDefinition__tEnum____definedBy.setTrg(tEnum);
-		ruleresult.getCreatedEdges().add(tDefinition__tEnum____definedBy);
-		tSignature__tEnum____type.setSrc(tSignature);
-		tSignature__tEnum____type.setTrg(tEnum);
-		ruleresult.getCreatedEdges().add(tSignature__tEnum____type);
-		tEnum__tSignature____signature.setSrc(tEnum);
-		tEnum__tSignature____signature.setTrg(tSignature);
-		ruleresult.getCreatedEdges().add(tEnum__tSignature____signature);
 		tSignature__tName____field.setSrc(tSignature);
 		tSignature__tName____field.setTrg(tName);
 		ruleresult.getCreatedEdges().add(tSignature__tName____field);
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		ruleresult.getCreatedEdges().add(tName__tSignature____signatures);
-		mEnum__mDefinition____enumConstants.setSrc(mEnum);
-		mEnum__mDefinition____enumConstants.setTrg(mDefinition);
-		ruleresult.getTranslatedEdges().add(mEnum__mDefinition____enumConstants);
-		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
+		tEnum__tDefinition____defines.setSrc(tEnum);
+		tEnum__tDefinition____defines.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(tEnum__tDefinition____defines);
+		tDefinition__tEnum____definedBy.setSrc(tDefinition);
+		tDefinition__tEnum____definedBy.setTrg(tEnum);
+		ruleresult.getCreatedEdges().add(tDefinition__tEnum____definedBy);
+		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
 		tDefinition__tSignature____signature.setSrc(tDefinition);
 		tDefinition__tSignature____signature.setTrg(tSignature);
 		ruleresult.getCreatedEdges().add(tDefinition__tSignature____signature);
 		tSignature__tDefinition____definitions.setSrc(tSignature);
 		tSignature__tDefinition____definitions.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(tSignature__tDefinition____definitions);
-		mBodyToTAnnotation__tDefinition____target.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__tDefinition____target.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tDefinition____target);
-		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
+		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
 		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
 		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mDefinitionToTMember__mDefinition____source);
+		mEnum__mDefinition____enumConstants.setSrc(mEnum);
+		mEnum__mDefinition____enumConstants.setTrg(mDefinition);
+		ruleresult.getTranslatedEdges().add(mEnum__mDefinition____enumConstants);
+		mBodyToTAnnotation__tDefinition____target.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__tDefinition____target.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tDefinition____target);
+		tSignature__tEnum____type.setSrc(tSignature);
+		tSignature__tEnum____type.setTrg(tEnum);
+		ruleresult.getCreatedEdges().add(tSignature__tEnum____type);
+		tEnum__tSignature____signature.setSrc(tEnum);
+		tEnum__tSignature____signature.setTrg(tSignature);
+		ruleresult.getCreatedEdges().add(tEnum__tSignature____signature);
 		model__tName____fields.setSrc(model);
 		model__tName____fields.setTrg(tName);
 		ruleresult.getCreatedEdges().add(model__tName____fields);
@@ -1773,37 +1770,37 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		tName__model____model.setTrg(model);
 		ruleresult.getCreatedEdges().add(tName__model____model);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tEnum__tDefinition____defines.setName(tEnum__tDefinition____defines_name_prime);
-		tDefinition__tEnum____definedBy.setName(tDefinition__tEnum____definedBy_name_prime);
-		tSignature__tEnum____type.setName(tSignature__tEnum____type_name_prime);
-		tEnum__tSignature____signature.setName(tEnum__tSignature____signature_name_prime);
 		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
 		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
-		mEnum__mDefinition____enumConstants.setName(mEnum__mDefinition____enumConstants_name_prime);
-		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		tEnum__tDefinition____defines.setName(tEnum__tDefinition____defines_name_prime);
+		tDefinition__tEnum____definedBy.setName(tDefinition__tEnum____definedBy_name_prime);
+		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
 		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
 		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
-		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
-		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
+		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
 		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
+		mEnum__mDefinition____enumConstants.setName(mEnum__mDefinition____enumConstants_name_prime);
+		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
+		tSignature__tEnum____type.setName(tSignature__tEnum____type_name_prime);
+		tEnum__tSignature____signature.setName(tEnum__tSignature____signature_name_prime);
 		model__tName____fields.setName(model__tName____fields_name_prime);
 		tName__model____model.setName(tName__model____model_name_prime);
-		return new Object[] { ruleresult, tEnum, tSignature, mDefinitionToTMember, mEnum, tDefinition, model, tName,
-				mBodyToTAnnotation, mDefinition, tEnum__tDefinition____defines, tDefinition__tEnum____definedBy,
-				tSignature__tEnum____type, tEnum__tSignature____signature, tSignature__tName____field,
-				tName__tSignature____signatures, mEnum__mDefinition____enumConstants,
-				mDefinitionToTMember__tDefinition____target, tDefinition__tSignature____signature,
-				tSignature__tDefinition____definitions, mBodyToTAnnotation__tDefinition____target,
-				mBodyToTAnnotation__mDefinition____source, mDefinitionToTMember__mDefinition____source,
+		return new Object[] { ruleresult, tName, mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model,
+				tDefinition, mDefinitionToTMember, tSignature__tName____field, tName__tSignature____signatures,
+				tEnum__tDefinition____defines, tDefinition__tEnum____definedBy,
+				mBodyToTAnnotation__mDefinition____source, tDefinition__tSignature____signature,
+				tSignature__tDefinition____definitions, mDefinitionToTMember__tDefinition____target,
+				mDefinitionToTMember__mDefinition____source, mEnum__mDefinition____enumConstants,
+				mBodyToTAnnotation__tDefinition____target, tSignature__tEnum____type, tEnum__tSignature____signature,
 				model__tName____fields, tName__model____model };
 	}
 
 	public static final void pattern_EnumConstant_1_5_registerobjects_expressionBBBBBBBBBBBB(EnumConstant _this,
-			PerformRuleResult ruleresult, EObject mEnumToTEnum, EObject tEnum, EObject tSignature,
-			EObject mDefinitionToTMember, EObject mEnum, EObject tDefinition, EObject model, EObject tName,
-			EObject mBodyToTAnnotation, EObject mDefinition) {
-		_this.registerObjects_FWD(ruleresult, mEnumToTEnum, tEnum, tSignature, mDefinitionToTMember, mEnum, tDefinition,
-				model, tName, mBodyToTAnnotation, mDefinition);
+			PerformRuleResult ruleresult, EObject tName, EObject mBodyToTAnnotation, EObject mEnum, EObject tSignature,
+			EObject tEnum, EObject mDefinition, EObject model, EObject mEnumToTEnum, EObject tDefinition,
+			EObject mDefinitionToTMember) {
+		_this.registerObjects_FWD(ruleresult, tName, mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model,
+				mEnumToTEnum, tDefinition, mDefinitionToTMember);
 
 	}
 
@@ -1875,7 +1872,7 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_EnumConstant_2_2_corematch_blackFFBBB(EnumDeclaration mEnum,
+	public static final Iterable<Object[]> pattern_EnumConstant_2_2_corematch_blackBFBFB(EnumDeclaration mEnum,
 			MEnumConstantDeclaration mDefinition, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (TypeToTAbstractType mEnumToTEnum : org.moflon.core.utilities.eMoflonEMFUtil
@@ -1883,23 +1880,22 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 			TAbstractType tmpTEnum = mEnumToTEnum.getTarget();
 			if (tmpTEnum instanceof TClass) {
 				TClass tEnum = (TClass) tmpTEnum;
-				_result.add(new Object[] { mEnumToTEnum, tEnum, mEnum, mDefinition, match });
+				_result.add(new Object[] { mEnum, tEnum, mDefinition, mEnumToTEnum, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_EnumConstant_2_3_findcontext_blackBBBFB(
-			TypeToTAbstractType mEnumToTEnum, TClass tEnum, EnumDeclaration mEnum,
-			MEnumConstantDeclaration mDefinition) {
+	public static final Iterable<Object[]> pattern_EnumConstant_2_3_findcontext_blackBBBFB(EnumDeclaration mEnum,
+			TClass tEnum, MEnumConstantDeclaration mDefinition, TypeToTAbstractType mEnumToTEnum) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (tEnum.equals(mEnumToTEnum.getTarget())) {
 			if (mEnum.equals(mEnumToTEnum.getSource())) {
 				if (mEnum.getEnumConstants().contains(mDefinition)) {
 					TypeGraph model = tEnum.getModel();
 					if (model != null) {
-						_result.add(new Object[] { mEnumToTEnum, tEnum, mEnum, model, mDefinition });
+						_result.add(new Object[] { mEnum, tEnum, mDefinition, model, mEnumToTEnum });
 					}
 
 				}
@@ -1908,24 +1904,30 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return _result;
 	}
 
-	public static final Object[] pattern_EnumConstant_2_3_findcontext_greenBBBBBFFFFFF(TypeToTAbstractType mEnumToTEnum,
-			TClass tEnum, EnumDeclaration mEnum, TypeGraph model, MEnumConstantDeclaration mDefinition) {
+	public static final Object[] pattern_EnumConstant_2_3_findcontext_greenBBBBBFFFFFF(EnumDeclaration mEnum,
+			TClass tEnum, MEnumConstantDeclaration mDefinition, TypeGraph model, TypeToTAbstractType mEnumToTEnum) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge tEnum__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model__tEnum____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mEnumToTEnum__tEnum____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mEnumToTEnum__mEnum____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mEnum__mDefinition____enumConstants = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tEnum__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge model__tEnum____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String tEnum__model____model_name_prime = "model";
+		String model__tEnum____ownedTypes_name_prime = "ownedTypes";
 		String mEnumToTEnum__tEnum____target_name_prime = "target";
 		String mEnumToTEnum__mEnum____source_name_prime = "source";
 		String mEnum__mDefinition____enumConstants_name_prime = "enumConstants";
-		String tEnum__model____model_name_prime = "model";
-		String model__tEnum____ownedTypes_name_prime = "ownedTypes";
-		isApplicableMatch.getAllContextElements().add(mEnumToTEnum);
-		isApplicableMatch.getAllContextElements().add(tEnum);
 		isApplicableMatch.getAllContextElements().add(mEnum);
-		isApplicableMatch.getAllContextElements().add(model);
+		isApplicableMatch.getAllContextElements().add(tEnum);
 		isApplicableMatch.getAllContextElements().add(mDefinition);
+		isApplicableMatch.getAllContextElements().add(model);
+		isApplicableMatch.getAllContextElements().add(mEnumToTEnum);
+		tEnum__model____model.setSrc(tEnum);
+		tEnum__model____model.setTrg(model);
+		isApplicableMatch.getAllContextElements().add(tEnum__model____model);
+		model__tEnum____ownedTypes.setSrc(model);
+		model__tEnum____ownedTypes.setTrg(tEnum);
+		isApplicableMatch.getAllContextElements().add(model__tEnum____ownedTypes);
 		mEnumToTEnum__tEnum____target.setSrc(mEnumToTEnum);
 		mEnumToTEnum__tEnum____target.setTrg(tEnum);
 		isApplicableMatch.getAllContextElements().add(mEnumToTEnum__tEnum____target);
@@ -1935,30 +1937,24 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		mEnum__mDefinition____enumConstants.setSrc(mEnum);
 		mEnum__mDefinition____enumConstants.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mEnum__mDefinition____enumConstants);
-		tEnum__model____model.setSrc(tEnum);
-		tEnum__model____model.setTrg(model);
-		isApplicableMatch.getAllContextElements().add(tEnum__model____model);
-		model__tEnum____ownedTypes.setSrc(model);
-		model__tEnum____ownedTypes.setTrg(tEnum);
-		isApplicableMatch.getAllContextElements().add(model__tEnum____ownedTypes);
+		tEnum__model____model.setName(tEnum__model____model_name_prime);
+		model__tEnum____ownedTypes.setName(model__tEnum____ownedTypes_name_prime);
 		mEnumToTEnum__tEnum____target.setName(mEnumToTEnum__tEnum____target_name_prime);
 		mEnumToTEnum__mEnum____source.setName(mEnumToTEnum__mEnum____source_name_prime);
 		mEnum__mDefinition____enumConstants.setName(mEnum__mDefinition____enumConstants_name_prime);
-		tEnum__model____model.setName(tEnum__model____model_name_prime);
-		model__tEnum____ownedTypes.setName(model__tEnum____ownedTypes_name_prime);
-		return new Object[] { mEnumToTEnum, tEnum, mEnum, model, mDefinition, isApplicableMatch,
-				mEnumToTEnum__tEnum____target, mEnumToTEnum__mEnum____source, mEnum__mDefinition____enumConstants,
-				tEnum__model____model, model__tEnum____ownedTypes };
+		return new Object[] { mEnum, tEnum, mDefinition, model, mEnumToTEnum, isApplicableMatch, tEnum__model____model,
+				model__tEnum____ownedTypes, mEnumToTEnum__tEnum____target, mEnumToTEnum__mEnum____source,
+				mEnum__mDefinition____enumConstants };
 	}
 
 	public static final Object[] pattern_EnumConstant_2_4_solveCSP_bindingFBBBBBBB(EnumConstant _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mEnumToTEnum, TClass tEnum, EnumDeclaration mEnum,
-			TypeGraph model, MEnumConstantDeclaration mDefinition) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mEnumToTEnum, tEnum, mEnum, model,
-				mDefinition);
+			IsApplicableMatch isApplicableMatch, EnumDeclaration mEnum, TClass tEnum,
+			MEnumConstantDeclaration mDefinition, TypeGraph model, TypeToTAbstractType mEnumToTEnum) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mEnum, tEnum, mDefinition, model,
+				mEnumToTEnum);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mEnumToTEnum, tEnum, mEnum, model, mDefinition };
+			return new Object[] { csp, _this, isApplicableMatch, mEnum, tEnum, mDefinition, model, mEnumToTEnum };
 		}
 		return null;
 	}
@@ -1968,17 +1964,17 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_2_4_solveCSP_bindingAndBlackFBBBBBBB(EnumConstant _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mEnumToTEnum, TClass tEnum, EnumDeclaration mEnum,
-			TypeGraph model, MEnumConstantDeclaration mDefinition) {
+			IsApplicableMatch isApplicableMatch, EnumDeclaration mEnum, TClass tEnum,
+			MEnumConstantDeclaration mDefinition, TypeGraph model, TypeToTAbstractType mEnumToTEnum) {
 		Object[] result_pattern_EnumConstant_2_4_solveCSP_binding = pattern_EnumConstant_2_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, mEnumToTEnum, tEnum, mEnum, model, mDefinition);
+				_this, isApplicableMatch, mEnum, tEnum, mDefinition, model, mEnumToTEnum);
 		if (result_pattern_EnumConstant_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_EnumConstant_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_EnumConstant_2_4_solveCSP_black = pattern_EnumConstant_2_4_solveCSP_blackB(csp);
 			if (result_pattern_EnumConstant_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mEnumToTEnum, tEnum, mEnum, model, mDefinition };
+				return new Object[] { csp, _this, isApplicableMatch, mEnum, tEnum, mDefinition, model, mEnumToTEnum };
 			}
 		}
 		return null;
@@ -2012,16 +2008,16 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_10_1_initialbindings_blackBBBBBBB(EnumConstant _this, Match match,
-			TClass tEnum, TFieldSignature tSignature, TFieldDefinition tDefinition, TypeGraph model, TField tName) {
-		return new Object[] { _this, match, tEnum, tSignature, tDefinition, model, tName };
+			TField tName, TFieldSignature tSignature, TClass tEnum, TypeGraph model, TFieldDefinition tDefinition) {
+		return new Object[] { _this, match, tName, tSignature, tEnum, model, tDefinition };
 	}
 
 	public static final Object[] pattern_EnumConstant_10_2_SolveCSP_bindingFBBBBBBB(EnumConstant _this, Match match,
-			TClass tEnum, TFieldSignature tSignature, TFieldDefinition tDefinition, TypeGraph model, TField tName) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tEnum, tSignature, tDefinition, model, tName);
+			TField tName, TFieldSignature tSignature, TClass tEnum, TypeGraph model, TFieldDefinition tDefinition) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tName, tSignature, tEnum, model, tDefinition);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tEnum, tSignature, tDefinition, model, tName };
+			return new Object[] { csp, _this, match, tName, tSignature, tEnum, model, tDefinition };
 		}
 		return null;
 	}
@@ -2031,17 +2027,17 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_10_2_SolveCSP_bindingAndBlackFBBBBBBB(EnumConstant _this,
-			Match match, TClass tEnum, TFieldSignature tSignature, TFieldDefinition tDefinition, TypeGraph model,
-			TField tName) {
+			Match match, TField tName, TFieldSignature tSignature, TClass tEnum, TypeGraph model,
+			TFieldDefinition tDefinition) {
 		Object[] result_pattern_EnumConstant_10_2_SolveCSP_binding = pattern_EnumConstant_10_2_SolveCSP_bindingFBBBBBBB(
-				_this, match, tEnum, tSignature, tDefinition, model, tName);
+				_this, match, tName, tSignature, tEnum, model, tDefinition);
 		if (result_pattern_EnumConstant_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_EnumConstant_10_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_EnumConstant_10_2_SolveCSP_black = pattern_EnumConstant_10_2_SolveCSP_blackB(csp);
 			if (result_pattern_EnumConstant_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tEnum, tSignature, tDefinition, model, tName };
+				return new Object[] { csp, _this, match, tName, tSignature, tEnum, model, tDefinition };
 			}
 		}
 		return null;
@@ -2054,85 +2050,85 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_10_4_collectelementstobetranslated_blackBBBBBB(Match match,
-			TClass tEnum, TFieldSignature tSignature, TFieldDefinition tDefinition, TypeGraph model, TField tName) {
-		return new Object[] { match, tEnum, tSignature, tDefinition, model, tName };
+			TField tName, TFieldSignature tSignature, TClass tEnum, TypeGraph model, TFieldDefinition tDefinition) {
+		return new Object[] { match, tName, tSignature, tEnum, model, tDefinition };
 	}
 
 	public static final Object[] pattern_EnumConstant_10_4_collectelementstobetranslated_greenBBBBBBFFFFFFFFFF(
-			Match match, TClass tEnum, TFieldSignature tSignature, TFieldDefinition tDefinition, TypeGraph model,
-			TField tName) {
-		EMoflonEdge tEnum__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tEnum____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tEnum____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tEnum__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, TField tName, TFieldSignature tSignature, TClass tEnum, TypeGraph model,
+			TFieldDefinition tDefinition) {
 		EMoflonEdge tSignature__tName____field = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tEnum__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tEnum____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tEnum____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tEnum__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		match.getToBeTranslatedNodes().add(tName);
 		match.getToBeTranslatedNodes().add(tSignature);
 		match.getToBeTranslatedNodes().add(tDefinition);
-		match.getToBeTranslatedNodes().add(tName);
-		String tEnum__tDefinition____defines_name_prime = "defines";
-		String tDefinition__tEnum____definedBy_name_prime = "definedBy";
-		String tSignature__tEnum____type_name_prime = "type";
-		String tEnum__tSignature____signature_name_prime = "signature";
 		String tSignature__tName____field_name_prime = "field";
 		String tName__tSignature____signatures_name_prime = "signatures";
+		String tEnum__tDefinition____defines_name_prime = "defines";
+		String tDefinition__tEnum____definedBy_name_prime = "definedBy";
 		String tDefinition__tSignature____signature_name_prime = "signature";
 		String tSignature__tDefinition____definitions_name_prime = "definitions";
+		String tSignature__tEnum____type_name_prime = "type";
+		String tEnum__tSignature____signature_name_prime = "signature";
 		String model__tName____fields_name_prime = "fields";
 		String tName__model____model_name_prime = "model";
-		tEnum__tDefinition____defines.setSrc(tEnum);
-		tEnum__tDefinition____defines.setTrg(tDefinition);
-		match.getToBeTranslatedEdges().add(tEnum__tDefinition____defines);
-		tDefinition__tEnum____definedBy.setSrc(tDefinition);
-		tDefinition__tEnum____definedBy.setTrg(tEnum);
-		match.getToBeTranslatedEdges().add(tDefinition__tEnum____definedBy);
-		tSignature__tEnum____type.setSrc(tSignature);
-		tSignature__tEnum____type.setTrg(tEnum);
-		match.getToBeTranslatedEdges().add(tSignature__tEnum____type);
-		tEnum__tSignature____signature.setSrc(tEnum);
-		tEnum__tSignature____signature.setTrg(tSignature);
-		match.getToBeTranslatedEdges().add(tEnum__tSignature____signature);
 		tSignature__tName____field.setSrc(tSignature);
 		tSignature__tName____field.setTrg(tName);
 		match.getToBeTranslatedEdges().add(tSignature__tName____field);
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		match.getToBeTranslatedEdges().add(tName__tSignature____signatures);
+		tEnum__tDefinition____defines.setSrc(tEnum);
+		tEnum__tDefinition____defines.setTrg(tDefinition);
+		match.getToBeTranslatedEdges().add(tEnum__tDefinition____defines);
+		tDefinition__tEnum____definedBy.setSrc(tDefinition);
+		tDefinition__tEnum____definedBy.setTrg(tEnum);
+		match.getToBeTranslatedEdges().add(tDefinition__tEnum____definedBy);
 		tDefinition__tSignature____signature.setSrc(tDefinition);
 		tDefinition__tSignature____signature.setTrg(tSignature);
 		match.getToBeTranslatedEdges().add(tDefinition__tSignature____signature);
 		tSignature__tDefinition____definitions.setSrc(tSignature);
 		tSignature__tDefinition____definitions.setTrg(tDefinition);
 		match.getToBeTranslatedEdges().add(tSignature__tDefinition____definitions);
+		tSignature__tEnum____type.setSrc(tSignature);
+		tSignature__tEnum____type.setTrg(tEnum);
+		match.getToBeTranslatedEdges().add(tSignature__tEnum____type);
+		tEnum__tSignature____signature.setSrc(tEnum);
+		tEnum__tSignature____signature.setTrg(tSignature);
+		match.getToBeTranslatedEdges().add(tEnum__tSignature____signature);
 		model__tName____fields.setSrc(model);
 		model__tName____fields.setTrg(tName);
 		match.getToBeTranslatedEdges().add(model__tName____fields);
 		tName__model____model.setSrc(tName);
 		tName__model____model.setTrg(model);
 		match.getToBeTranslatedEdges().add(tName__model____model);
-		tEnum__tDefinition____defines.setName(tEnum__tDefinition____defines_name_prime);
-		tDefinition__tEnum____definedBy.setName(tDefinition__tEnum____definedBy_name_prime);
-		tSignature__tEnum____type.setName(tSignature__tEnum____type_name_prime);
-		tEnum__tSignature____signature.setName(tEnum__tSignature____signature_name_prime);
 		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
 		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
+		tEnum__tDefinition____defines.setName(tEnum__tDefinition____defines_name_prime);
+		tDefinition__tEnum____definedBy.setName(tDefinition__tEnum____definedBy_name_prime);
 		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
 		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
+		tSignature__tEnum____type.setName(tSignature__tEnum____type_name_prime);
+		tEnum__tSignature____signature.setName(tEnum__tSignature____signature_name_prime);
 		model__tName____fields.setName(model__tName____fields_name_prime);
 		tName__model____model.setName(tName__model____model_name_prime);
-		return new Object[] { match, tEnum, tSignature, tDefinition, model, tName, tEnum__tDefinition____defines,
-				tDefinition__tEnum____definedBy, tSignature__tEnum____type, tEnum__tSignature____signature,
-				tSignature__tName____field, tName__tSignature____signatures, tDefinition__tSignature____signature,
-				tSignature__tDefinition____definitions, model__tName____fields, tName__model____model };
+		return new Object[] { match, tName, tSignature, tEnum, model, tDefinition, tSignature__tName____field,
+				tName__tSignature____signatures, tEnum__tDefinition____defines, tDefinition__tEnum____definedBy,
+				tDefinition__tSignature____signature, tSignature__tDefinition____definitions, tSignature__tEnum____type,
+				tEnum__tSignature____signature, model__tName____fields, tName__model____model };
 	}
 
-	public static final Object[] pattern_EnumConstant_10_5_collectcontextelements_blackBBBBBB(Match match, TClass tEnum,
-			TFieldSignature tSignature, TFieldDefinition tDefinition, TypeGraph model, TField tName) {
-		return new Object[] { match, tEnum, tSignature, tDefinition, model, tName };
+	public static final Object[] pattern_EnumConstant_10_5_collectcontextelements_blackBBBBBB(Match match, TField tName,
+			TFieldSignature tSignature, TClass tEnum, TypeGraph model, TFieldDefinition tDefinition) {
+		return new Object[] { match, tName, tSignature, tEnum, model, tDefinition };
 	}
 
 	public static final Object[] pattern_EnumConstant_10_5_collectcontextelements_greenBBBFF(Match match, TClass tEnum,
@@ -2155,9 +2151,9 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final void pattern_EnumConstant_10_6_registerobjectstomatch_expressionBBBBBBB(EnumConstant _this,
-			Match match, TClass tEnum, TFieldSignature tSignature, TFieldDefinition tDefinition, TypeGraph model,
-			TField tName) {
-		_this.registerObjectsToMatch_BWD(match, tEnum, tSignature, tDefinition, model, tName);
+			Match match, TField tName, TFieldSignature tSignature, TClass tEnum, TypeGraph model,
+			TFieldDefinition tDefinition) {
+		_this.registerObjectsToMatch_BWD(match, tName, tSignature, tEnum, model, tDefinition);
 
 	}
 
@@ -2173,36 +2169,36 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mEnumToTEnum");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tEnum");
+		EObject _localVariable_0 = isApplicableMatch.getObject("tName");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mEnum");
 		EObject _localVariable_2 = isApplicableMatch.getObject("tSignature");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mEnum");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tDefinition");
-		EObject _localVariable_5 = isApplicableMatch.getObject("model");
-		EObject _localVariable_6 = isApplicableMatch.getObject("tName");
-		EObject tmpMEnumToTEnum = _localVariable_0;
-		EObject tmpTEnum = _localVariable_1;
+		EObject _localVariable_3 = isApplicableMatch.getObject("tEnum");
+		EObject _localVariable_4 = isApplicableMatch.getObject("model");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mEnumToTEnum");
+		EObject _localVariable_6 = isApplicableMatch.getObject("tDefinition");
+		EObject tmpTName = _localVariable_0;
+		EObject tmpMEnum = _localVariable_1;
 		EObject tmpTSignature = _localVariable_2;
-		EObject tmpMEnum = _localVariable_3;
-		EObject tmpTDefinition = _localVariable_4;
-		EObject tmpModel = _localVariable_5;
-		EObject tmpTName = _localVariable_6;
-		if (tmpMEnumToTEnum instanceof TypeToTAbstractType) {
-			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) tmpMEnumToTEnum;
-			if (tmpTEnum instanceof TClass) {
-				TClass tEnum = (TClass) tmpTEnum;
+		EObject tmpTEnum = _localVariable_3;
+		EObject tmpModel = _localVariable_4;
+		EObject tmpMEnumToTEnum = _localVariable_5;
+		EObject tmpTDefinition = _localVariable_6;
+		if (tmpTName instanceof TField) {
+			TField tName = (TField) tmpTName;
+			if (tmpMEnum instanceof EnumDeclaration) {
+				EnumDeclaration mEnum = (EnumDeclaration) tmpMEnum;
 				if (tmpTSignature instanceof TFieldSignature) {
 					TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
-					if (tmpMEnum instanceof EnumDeclaration) {
-						EnumDeclaration mEnum = (EnumDeclaration) tmpMEnum;
-						if (tmpTDefinition instanceof TFieldDefinition) {
-							TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
-							if (tmpModel instanceof TypeGraph) {
-								TypeGraph model = (TypeGraph) tmpModel;
-								if (tmpTName instanceof TField) {
-									TField tName = (TField) tmpTName;
-									return new Object[] { mEnumToTEnum, tEnum, tSignature, mEnum, tDefinition, model,
-											tName, isApplicableMatch };
+					if (tmpTEnum instanceof TClass) {
+						TClass tEnum = (TClass) tmpTEnum;
+						if (tmpModel instanceof TypeGraph) {
+							TypeGraph model = (TypeGraph) tmpModel;
+							if (tmpMEnumToTEnum instanceof TypeToTAbstractType) {
+								TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) tmpMEnumToTEnum;
+								if (tmpTDefinition instanceof TFieldDefinition) {
+									TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
+									return new Object[] { tName, mEnum, tSignature, tEnum, model, mEnumToTEnum,
+											tDefinition, isApplicableMatch };
 								}
 							}
 						}
@@ -2213,14 +2209,14 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return null;
 	}
 
-	public static final Object[] pattern_EnumConstant_11_1_performtransformation_blackBBBBBBBFBB(
-			TypeToTAbstractType mEnumToTEnum, TClass tEnum, TFieldSignature tSignature, EnumDeclaration mEnum,
-			TFieldDefinition tDefinition, TypeGraph model, TField tName, EnumConstant _this,
+	public static final Object[] pattern_EnumConstant_11_1_performtransformation_blackBBBBBBBFBB(TField tName,
+			EnumDeclaration mEnum, TFieldSignature tSignature, TClass tEnum, TypeGraph model,
+			TypeToTAbstractType mEnumToTEnum, TFieldDefinition tDefinition, EnumConstant _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mEnumToTEnum, tEnum, tSignature, mEnum, tDefinition, model, tName, csp, _this,
+				return new Object[] { tName, mEnum, tSignature, tEnum, model, mEnumToTEnum, tDefinition, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -2232,148 +2228,148 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		Object[] result_pattern_EnumConstant_11_1_performtransformation_binding = pattern_EnumConstant_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_EnumConstant_11_1_performtransformation_binding != null) {
-			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result_pattern_EnumConstant_11_1_performtransformation_binding[0];
-			TClass tEnum = (TClass) result_pattern_EnumConstant_11_1_performtransformation_binding[1];
+			TField tName = (TField) result_pattern_EnumConstant_11_1_performtransformation_binding[0];
+			EnumDeclaration mEnum = (EnumDeclaration) result_pattern_EnumConstant_11_1_performtransformation_binding[1];
 			TFieldSignature tSignature = (TFieldSignature) result_pattern_EnumConstant_11_1_performtransformation_binding[2];
-			EnumDeclaration mEnum = (EnumDeclaration) result_pattern_EnumConstant_11_1_performtransformation_binding[3];
-			TFieldDefinition tDefinition = (TFieldDefinition) result_pattern_EnumConstant_11_1_performtransformation_binding[4];
-			TypeGraph model = (TypeGraph) result_pattern_EnumConstant_11_1_performtransformation_binding[5];
-			TField tName = (TField) result_pattern_EnumConstant_11_1_performtransformation_binding[6];
+			TClass tEnum = (TClass) result_pattern_EnumConstant_11_1_performtransformation_binding[3];
+			TypeGraph model = (TypeGraph) result_pattern_EnumConstant_11_1_performtransformation_binding[4];
+			TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) result_pattern_EnumConstant_11_1_performtransformation_binding[5];
+			TFieldDefinition tDefinition = (TFieldDefinition) result_pattern_EnumConstant_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_EnumConstant_11_1_performtransformation_black = pattern_EnumConstant_11_1_performtransformation_blackBBBBBBBFBB(
-					mEnumToTEnum, tEnum, tSignature, mEnum, tDefinition, model, tName, _this, isApplicableMatch);
+					tName, mEnum, tSignature, tEnum, model, mEnumToTEnum, tDefinition, _this, isApplicableMatch);
 			if (result_pattern_EnumConstant_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_EnumConstant_11_1_performtransformation_black[7];
 
-				return new Object[] { mEnumToTEnum, tEnum, tSignature, mEnum, tDefinition, model, tName, csp, _this,
+				return new Object[] { tName, mEnum, tSignature, tEnum, model, mEnumToTEnum, tDefinition, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_EnumConstant_11_1_performtransformation_greenFBBFFB(EnumDeclaration mEnum,
+	public static final Object[] pattern_EnumConstant_11_1_performtransformation_greenFBFBFB(EnumDeclaration mEnum,
 			TFieldDefinition tDefinition, CSP csp) {
-		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		MEnumConstantDeclaration mDefinition = ModiscoFactory.eINSTANCE.createMEnumConstantDeclaration();
+		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		Object _localVariable_0 = csp.getValue("mDefinition", "name");
-		mDefinitionToTMember.setTarget(tDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
-		mEnum.getEnumConstants().add(mDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
+		mEnum.getEnumConstants().add(mDefinition);
+		mDefinitionToTMember.setTarget(tDefinition);
 		mDefinitionToTMember.setSource(mDefinition);
 		String mDefinition_name_prime = (String) _localVariable_0;
 		mDefinition.setName(mDefinition_name_prime);
-		return new Object[] { mDefinitionToTMember, mEnum, tDefinition, mBodyToTAnnotation, mDefinition, csp };
+		return new Object[] { mBodyToTAnnotation, mEnum, mDefinition, tDefinition, mDefinitionToTMember, csp };
 	}
 
-	public static final Object[] pattern_EnumConstant_11_2_collecttranslatedelements_blackBBBBBB(
-			TFieldSignature tSignature, MDefinitionToTMember mDefinitionToTMember, TFieldDefinition tDefinition,
-			TField tName, ASTNodeToTAnnotatable mBodyToTAnnotation, MEnumConstantDeclaration mDefinition) {
-		return new Object[] { tSignature, mDefinitionToTMember, tDefinition, tName, mBodyToTAnnotation, mDefinition };
+	public static final Object[] pattern_EnumConstant_11_2_collecttranslatedelements_blackBBBBBB(TField tName,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TFieldSignature tSignature, MEnumConstantDeclaration mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember mDefinitionToTMember) {
+		return new Object[] { tName, mBodyToTAnnotation, tSignature, mDefinition, tDefinition, mDefinitionToTMember };
 	}
 
-	public static final Object[] pattern_EnumConstant_11_2_collecttranslatedelements_greenFBBBBBB(
-			TFieldSignature tSignature, MDefinitionToTMember mDefinitionToTMember, TFieldDefinition tDefinition,
-			TField tName, ASTNodeToTAnnotatable mBodyToTAnnotation, MEnumConstantDeclaration mDefinition) {
+	public static final Object[] pattern_EnumConstant_11_2_collecttranslatedelements_greenFBBBBBB(TField tName,
+			ASTNodeToTAnnotatable mBodyToTAnnotation, TFieldSignature tSignature, MEnumConstantDeclaration mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember mDefinitionToTMember) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(tSignature);
-		ruleresult.getCreatedLinkElements().add(mDefinitionToTMember);
-		ruleresult.getTranslatedElements().add(tDefinition);
 		ruleresult.getTranslatedElements().add(tName);
 		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
+		ruleresult.getTranslatedElements().add(tSignature);
 		ruleresult.getCreatedElements().add(mDefinition);
-		return new Object[] { ruleresult, tSignature, mDefinitionToTMember, tDefinition, tName, mBodyToTAnnotation,
-				mDefinition };
+		ruleresult.getTranslatedElements().add(tDefinition);
+		ruleresult.getCreatedLinkElements().add(mDefinitionToTMember);
+		return new Object[] { ruleresult, tName, mBodyToTAnnotation, tSignature, mDefinition, tDefinition,
+				mDefinitionToTMember };
 	}
 
 	public static final Object[] pattern_EnumConstant_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mEnumToTEnum, EObject tEnum, EObject tSignature,
-			EObject mDefinitionToTMember, EObject mEnum, EObject tDefinition, EObject model, EObject tName,
-			EObject mBodyToTAnnotation, EObject mDefinition) {
-		if (!mEnumToTEnum.equals(tEnum)) {
-			if (!mEnumToTEnum.equals(tSignature)) {
-				if (!mEnumToTEnum.equals(tDefinition)) {
-					if (!mEnumToTEnum.equals(model)) {
-						if (!mEnumToTEnum.equals(tName)) {
-							if (!tEnum.equals(tSignature)) {
-								if (!tEnum.equals(tName)) {
-									if (!mDefinitionToTMember.equals(mEnumToTEnum)) {
-										if (!mDefinitionToTMember.equals(tEnum)) {
-											if (!mDefinitionToTMember.equals(tSignature)) {
-												if (!mDefinitionToTMember.equals(mEnum)) {
-													if (!mDefinitionToTMember.equals(tDefinition)) {
-														if (!mDefinitionToTMember.equals(model)) {
-															if (!mDefinitionToTMember.equals(tName)) {
+			PerformRuleResult ruleresult, EObject tName, EObject mBodyToTAnnotation, EObject mEnum, EObject tSignature,
+			EObject tEnum, EObject mDefinition, EObject model, EObject mEnumToTEnum, EObject tDefinition,
+			EObject mDefinitionToTMember) {
+		if (!tName.equals(tSignature)) {
+			if (!mBodyToTAnnotation.equals(tName)) {
+				if (!mBodyToTAnnotation.equals(mEnum)) {
+					if (!mBodyToTAnnotation.equals(tSignature)) {
+						if (!mBodyToTAnnotation.equals(tEnum)) {
+							if (!mBodyToTAnnotation.equals(mDefinition)) {
+								if (!mBodyToTAnnotation.equals(model)) {
+									if (!mBodyToTAnnotation.equals(mEnumToTEnum)) {
+										if (!mBodyToTAnnotation.equals(tDefinition)) {
+											if (!mBodyToTAnnotation.equals(mDefinitionToTMember)) {
+												if (!mEnum.equals(tName)) {
+													if (!mEnum.equals(tSignature)) {
+														if (!mEnum.equals(tEnum)) {
+															if (!mEnum.equals(model)) {
 																if (!mEnum.equals(mEnumToTEnum)) {
-																	if (!mEnum.equals(tEnum)) {
-																		if (!mEnum.equals(tSignature)) {
-																			if (!mEnum.equals(tDefinition)) {
-																				if (!mEnum.equals(model)) {
-																					if (!mEnum.equals(tName)) {
-																						if (!tDefinition
-																								.equals(tEnum)) {
-																							if (!tDefinition.equals(
-																									tSignature)) {
-																								if (!tDefinition.equals(
-																										tName)) {
-																									if (!model.equals(
-																											tEnum)) {
-																										if (!model
-																												.equals(tSignature)) {
-																											if (!model
-																													.equals(tDefinition)) {
+																	if (!mEnum.equals(tDefinition)) {
+																		if (!tEnum.equals(tName)) {
+																			if (!tEnum.equals(tSignature)) {
+																				if (!mDefinition.equals(tName)) {
+																					if (!mDefinition.equals(mEnum)) {
+																						if (!mDefinition
+																								.equals(tSignature)) {
+																							if (!mDefinition
+																									.equals(tEnum)) {
+																								if (!mDefinition.equals(
+																										model)) {
+																									if (!mDefinition
+																											.equals(mEnumToTEnum)) {
+																										if (!mDefinition
+																												.equals(tDefinition)) {
+																											if (!mDefinition
+																													.equals(mDefinitionToTMember)) {
 																												if (!model
 																														.equals(tName)) {
-																													if (!tName
+																													if (!model
 																															.equals(tSignature)) {
-																														if (!mBodyToTAnnotation
-																																.equals(mEnumToTEnum)) {
-																															if (!mBodyToTAnnotation
-																																	.equals(tEnum)) {
-																																if (!mBodyToTAnnotation
-																																		.equals(tSignature)) {
-																																	if (!mBodyToTAnnotation
-																																			.equals(mDefinitionToTMember)) {
-																																		if (!mBodyToTAnnotation
-																																				.equals(mEnum)) {
-																																			if (!mBodyToTAnnotation
-																																					.equals(tDefinition)) {
-																																				if (!mBodyToTAnnotation
-																																						.equals(model)) {
-																																					if (!mBodyToTAnnotation
+																														if (!model
+																																.equals(tEnum)) {
+																															if (!model
+																																	.equals(tDefinition)) {
+																																if (!mEnumToTEnum
+																																		.equals(tName)) {
+																																	if (!mEnumToTEnum
+																																			.equals(tSignature)) {
+																																		if (!mEnumToTEnum
+																																				.equals(tEnum)) {
+																																			if (!mEnumToTEnum
+																																					.equals(model)) {
+																																				if (!mEnumToTEnum
+																																						.equals(tDefinition)) {
+																																					if (!tDefinition
 																																							.equals(tName)) {
-																																						if (!mBodyToTAnnotation
-																																								.equals(mDefinition)) {
-																																							if (!mDefinition
-																																									.equals(mEnumToTEnum)) {
-																																								if (!mDefinition
-																																										.equals(tEnum)) {
-																																									if (!mDefinition
-																																											.equals(tSignature)) {
-																																										if (!mDefinition
-																																												.equals(mDefinitionToTMember)) {
-																																											if (!mDefinition
-																																													.equals(mEnum)) {
-																																												if (!mDefinition
-																																														.equals(tDefinition)) {
-																																													if (!mDefinition
-																																															.equals(model)) {
-																																														if (!mDefinition
-																																																.equals(tName)) {
+																																						if (!tDefinition
+																																								.equals(tSignature)) {
+																																							if (!tDefinition
+																																									.equals(tEnum)) {
+																																								if (!mDefinitionToTMember
+																																										.equals(tName)) {
+																																									if (!mDefinitionToTMember
+																																											.equals(mEnum)) {
+																																										if (!mDefinitionToTMember
+																																												.equals(tSignature)) {
+																																											if (!mDefinitionToTMember
+																																													.equals(tEnum)) {
+																																												if (!mDefinitionToTMember
+																																														.equals(model)) {
+																																													if (!mDefinitionToTMember
+																																															.equals(mEnumToTEnum)) {
+																																														if (!mDefinitionToTMember
+																																																.equals(tDefinition)) {
 																																															return new Object[] {
 																																																	ruleresult,
-																																																	mEnumToTEnum,
-																																																	tEnum,
-																																																	tSignature,
-																																																	mDefinitionToTMember,
-																																																	mEnum,
-																																																	tDefinition,
-																																																	model,
 																																																	tName,
 																																																	mBodyToTAnnotation,
-																																																	mDefinition };
+																																																	mEnum,
+																																																	tSignature,
+																																																	tEnum,
+																																																	mDefinition,
+																																																	model,
+																																																	mEnumToTEnum,
+																																																	tDefinition,
+																																																	mDefinitionToTMember };
 																																														}
 																																													}
 																																												}
@@ -2423,79 +2419,78 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_11_3_bookkeepingforedges_greenBBBBBBBBBBFFFFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tEnum, EObject tSignature, EObject mDefinitionToTMember,
-			EObject mEnum, EObject tDefinition, EObject model, EObject tName, EObject mBodyToTAnnotation,
-			EObject mDefinition) {
-		EMoflonEdge tEnum__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tEnum____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tEnum____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tEnum__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject tName, EObject mBodyToTAnnotation, EObject mEnum, EObject tSignature,
+			EObject tEnum, EObject mDefinition, EObject model, EObject tDefinition, EObject mDefinitionToTMember) {
 		EMoflonEdge tSignature__tName____field = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mEnum__mDefinition____enumConstants = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tEnum__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tEnum____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mEnum__mDefinition____enumConstants = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tEnum____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tEnum__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "EnumConstant";
-		String tEnum__tDefinition____defines_name_prime = "defines";
-		String tDefinition__tEnum____definedBy_name_prime = "definedBy";
-		String tSignature__tEnum____type_name_prime = "type";
-		String tEnum__tSignature____signature_name_prime = "signature";
 		String tSignature__tName____field_name_prime = "field";
 		String tName__tSignature____signatures_name_prime = "signatures";
-		String mEnum__mDefinition____enumConstants_name_prime = "enumConstants";
-		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		String tEnum__tDefinition____defines_name_prime = "defines";
+		String tDefinition__tEnum____definedBy_name_prime = "definedBy";
+		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
 		String tDefinition__tSignature____signature_name_prime = "signature";
 		String tSignature__tDefinition____definitions_name_prime = "definitions";
-		String mBodyToTAnnotation__tDefinition____target_name_prime = "target";
-		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
+		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
 		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
+		String mEnum__mDefinition____enumConstants_name_prime = "enumConstants";
+		String mBodyToTAnnotation__tDefinition____target_name_prime = "target";
+		String tSignature__tEnum____type_name_prime = "type";
+		String tEnum__tSignature____signature_name_prime = "signature";
 		String model__tName____fields_name_prime = "fields";
 		String tName__model____model_name_prime = "model";
-		tEnum__tDefinition____defines.setSrc(tEnum);
-		tEnum__tDefinition____defines.setTrg(tDefinition);
-		ruleresult.getTranslatedEdges().add(tEnum__tDefinition____defines);
-		tDefinition__tEnum____definedBy.setSrc(tDefinition);
-		tDefinition__tEnum____definedBy.setTrg(tEnum);
-		ruleresult.getTranslatedEdges().add(tDefinition__tEnum____definedBy);
-		tSignature__tEnum____type.setSrc(tSignature);
-		tSignature__tEnum____type.setTrg(tEnum);
-		ruleresult.getTranslatedEdges().add(tSignature__tEnum____type);
-		tEnum__tSignature____signature.setSrc(tEnum);
-		tEnum__tSignature____signature.setTrg(tSignature);
-		ruleresult.getTranslatedEdges().add(tEnum__tSignature____signature);
 		tSignature__tName____field.setSrc(tSignature);
 		tSignature__tName____field.setTrg(tName);
 		ruleresult.getTranslatedEdges().add(tSignature__tName____field);
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		ruleresult.getTranslatedEdges().add(tName__tSignature____signatures);
-		mEnum__mDefinition____enumConstants.setSrc(mEnum);
-		mEnum__mDefinition____enumConstants.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mEnum__mDefinition____enumConstants);
-		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
+		tEnum__tDefinition____defines.setSrc(tEnum);
+		tEnum__tDefinition____defines.setTrg(tDefinition);
+		ruleresult.getTranslatedEdges().add(tEnum__tDefinition____defines);
+		tDefinition__tEnum____definedBy.setSrc(tDefinition);
+		tDefinition__tEnum____definedBy.setTrg(tEnum);
+		ruleresult.getTranslatedEdges().add(tDefinition__tEnum____definedBy);
+		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
 		tDefinition__tSignature____signature.setSrc(tDefinition);
 		tDefinition__tSignature____signature.setTrg(tSignature);
 		ruleresult.getTranslatedEdges().add(tDefinition__tSignature____signature);
 		tSignature__tDefinition____definitions.setSrc(tSignature);
 		tSignature__tDefinition____definitions.setTrg(tDefinition);
 		ruleresult.getTranslatedEdges().add(tSignature__tDefinition____definitions);
-		mBodyToTAnnotation__tDefinition____target.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__tDefinition____target.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tDefinition____target);
-		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
+		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
 		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
 		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mDefinitionToTMember__mDefinition____source);
+		mEnum__mDefinition____enumConstants.setSrc(mEnum);
+		mEnum__mDefinition____enumConstants.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mEnum__mDefinition____enumConstants);
+		mBodyToTAnnotation__tDefinition____target.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__tDefinition____target.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tDefinition____target);
+		tSignature__tEnum____type.setSrc(tSignature);
+		tSignature__tEnum____type.setTrg(tEnum);
+		ruleresult.getTranslatedEdges().add(tSignature__tEnum____type);
+		tEnum__tSignature____signature.setSrc(tEnum);
+		tEnum__tSignature____signature.setTrg(tSignature);
+		ruleresult.getTranslatedEdges().add(tEnum__tSignature____signature);
 		model__tName____fields.setSrc(model);
 		model__tName____fields.setTrg(tName);
 		ruleresult.getTranslatedEdges().add(model__tName____fields);
@@ -2503,37 +2498,37 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		tName__model____model.setTrg(model);
 		ruleresult.getTranslatedEdges().add(tName__model____model);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tEnum__tDefinition____defines.setName(tEnum__tDefinition____defines_name_prime);
-		tDefinition__tEnum____definedBy.setName(tDefinition__tEnum____definedBy_name_prime);
-		tSignature__tEnum____type.setName(tSignature__tEnum____type_name_prime);
-		tEnum__tSignature____signature.setName(tEnum__tSignature____signature_name_prime);
 		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
 		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
-		mEnum__mDefinition____enumConstants.setName(mEnum__mDefinition____enumConstants_name_prime);
-		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		tEnum__tDefinition____defines.setName(tEnum__tDefinition____defines_name_prime);
+		tDefinition__tEnum____definedBy.setName(tDefinition__tEnum____definedBy_name_prime);
+		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
 		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
 		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
-		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
-		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
+		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
 		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
+		mEnum__mDefinition____enumConstants.setName(mEnum__mDefinition____enumConstants_name_prime);
+		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
+		tSignature__tEnum____type.setName(tSignature__tEnum____type_name_prime);
+		tEnum__tSignature____signature.setName(tEnum__tSignature____signature_name_prime);
 		model__tName____fields.setName(model__tName____fields_name_prime);
 		tName__model____model.setName(tName__model____model_name_prime);
-		return new Object[] { ruleresult, tEnum, tSignature, mDefinitionToTMember, mEnum, tDefinition, model, tName,
-				mBodyToTAnnotation, mDefinition, tEnum__tDefinition____defines, tDefinition__tEnum____definedBy,
-				tSignature__tEnum____type, tEnum__tSignature____signature, tSignature__tName____field,
-				tName__tSignature____signatures, mEnum__mDefinition____enumConstants,
-				mDefinitionToTMember__tDefinition____target, tDefinition__tSignature____signature,
-				tSignature__tDefinition____definitions, mBodyToTAnnotation__tDefinition____target,
-				mBodyToTAnnotation__mDefinition____source, mDefinitionToTMember__mDefinition____source,
+		return new Object[] { ruleresult, tName, mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model,
+				tDefinition, mDefinitionToTMember, tSignature__tName____field, tName__tSignature____signatures,
+				tEnum__tDefinition____defines, tDefinition__tEnum____definedBy,
+				mBodyToTAnnotation__mDefinition____source, tDefinition__tSignature____signature,
+				tSignature__tDefinition____definitions, mDefinitionToTMember__tDefinition____target,
+				mDefinitionToTMember__mDefinition____source, mEnum__mDefinition____enumConstants,
+				mBodyToTAnnotation__tDefinition____target, tSignature__tEnum____type, tEnum__tSignature____signature,
 				model__tName____fields, tName__model____model };
 	}
 
 	public static final void pattern_EnumConstant_11_5_registerobjects_expressionBBBBBBBBBBBB(EnumConstant _this,
-			PerformRuleResult ruleresult, EObject mEnumToTEnum, EObject tEnum, EObject tSignature,
-			EObject mDefinitionToTMember, EObject mEnum, EObject tDefinition, EObject model, EObject tName,
-			EObject mBodyToTAnnotation, EObject mDefinition) {
-		_this.registerObjects_BWD(ruleresult, mEnumToTEnum, tEnum, tSignature, mDefinitionToTMember, mEnum, tDefinition,
-				model, tName, mBodyToTAnnotation, mDefinition);
+			PerformRuleResult ruleresult, EObject tName, EObject mBodyToTAnnotation, EObject mEnum, EObject tSignature,
+			EObject tEnum, EObject mDefinition, EObject model, EObject mEnumToTEnum, EObject tDefinition,
+			EObject mDefinitionToTMember) {
+		_this.registerObjects_BWD(ruleresult, tName, mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model,
+				mEnumToTEnum, tDefinition, mDefinitionToTMember);
 
 	}
 
@@ -2591,27 +2586,27 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_12_2_corematch_bindingFFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tEnum");
+		EObject _localVariable_0 = match.getObject("tName");
 		EObject _localVariable_1 = match.getObject("tSignature");
-		EObject _localVariable_2 = match.getObject("tDefinition");
+		EObject _localVariable_2 = match.getObject("tEnum");
 		EObject _localVariable_3 = match.getObject("model");
-		EObject _localVariable_4 = match.getObject("tName");
-		EObject tmpTEnum = _localVariable_0;
+		EObject _localVariable_4 = match.getObject("tDefinition");
+		EObject tmpTName = _localVariable_0;
 		EObject tmpTSignature = _localVariable_1;
-		EObject tmpTDefinition = _localVariable_2;
+		EObject tmpTEnum = _localVariable_2;
 		EObject tmpModel = _localVariable_3;
-		EObject tmpTName = _localVariable_4;
-		if (tmpTEnum instanceof TClass) {
-			TClass tEnum = (TClass) tmpTEnum;
+		EObject tmpTDefinition = _localVariable_4;
+		if (tmpTName instanceof TField) {
+			TField tName = (TField) tmpTName;
 			if (tmpTSignature instanceof TFieldSignature) {
 				TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
-				if (tmpTDefinition instanceof TFieldDefinition) {
-					TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
+				if (tmpTEnum instanceof TClass) {
+					TClass tEnum = (TClass) tmpTEnum;
 					if (tmpModel instanceof TypeGraph) {
 						TypeGraph model = (TypeGraph) tmpModel;
-						if (tmpTName instanceof TField) {
-							TField tName = (TField) tmpTName;
-							return new Object[] { tEnum, tSignature, tDefinition, model, tName, match };
+						if (tmpTDefinition instanceof TFieldDefinition) {
+							TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
+							return new Object[] { tName, tSignature, tEnum, model, tDefinition, match };
 						}
 					}
 				}
@@ -2620,36 +2615,36 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_EnumConstant_12_2_corematch_blackFBBFBBBB(TClass tEnum,
-			TFieldSignature tSignature, TFieldDefinition tDefinition, TypeGraph model, TField tName, Match match) {
+	public static final Iterable<Object[]> pattern_EnumConstant_12_2_corematch_blackBFBBBFBB(TField tName,
+			TFieldSignature tSignature, TClass tEnum, TypeGraph model, TFieldDefinition tDefinition, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (TypeToTAbstractType mEnumToTEnum : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tEnum, TypeToTAbstractType.class, "target")) {
 			Type tmpMEnum = mEnumToTEnum.getSource();
 			if (tmpMEnum instanceof EnumDeclaration) {
 				EnumDeclaration mEnum = (EnumDeclaration) tmpMEnum;
-				_result.add(new Object[] { mEnumToTEnum, tEnum, tSignature, mEnum, tDefinition, model, tName, match });
+				_result.add(new Object[] { tName, mEnum, tSignature, tEnum, model, mEnumToTEnum, tDefinition, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_EnumConstant_12_3_findcontext_blackBBBBBBB(
-			TypeToTAbstractType mEnumToTEnum, TClass tEnum, TFieldSignature tSignature, EnumDeclaration mEnum,
-			TFieldDefinition tDefinition, TypeGraph model, TField tName) {
+	public static final Iterable<Object[]> pattern_EnumConstant_12_3_findcontext_blackBBBBBBB(TField tName,
+			EnumDeclaration mEnum, TFieldSignature tSignature, TClass tEnum, TypeGraph model,
+			TypeToTAbstractType mEnumToTEnum, TFieldDefinition tDefinition) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tEnum.getDefines().contains(tDefinition)) {
-			if (tEnum.equals(mEnumToTEnum.getTarget())) {
-				if (tEnum.equals(tSignature.getType())) {
-					if (tEnum.getSignature().contains(tSignature)) {
+		if (tName.equals(tSignature.getField())) {
+			if (model.equals(tEnum.getModel())) {
+				if (tEnum.getDefines().contains(tDefinition)) {
+					if (tEnum.equals(mEnumToTEnum.getTarget())) {
 						if (mEnum.equals(mEnumToTEnum.getSource())) {
-							if (tName.equals(tSignature.getField())) {
-								if (tSignature.equals(tDefinition.getSignature())) {
-									if (model.equals(tEnum.getModel())) {
+							if (tSignature.equals(tDefinition.getSignature())) {
+								if (tEnum.equals(tSignature.getType())) {
+									if (tEnum.getSignature().contains(tSignature)) {
 										if (model.getFields().contains(tName)) {
-											_result.add(new Object[] { mEnumToTEnum, tEnum, tSignature, mEnum,
-													tDefinition, model, tName });
+											_result.add(new Object[] { tName, mEnum, tSignature, tEnum, model,
+													mEnumToTEnum, tDefinition });
 										}
 									}
 								}
@@ -2662,45 +2657,57 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return _result;
 	}
 
-	public static final Object[] pattern_EnumConstant_12_3_findcontext_greenBBBBBBBFFFFFFFFFFFFFFF(
-			TypeToTAbstractType mEnumToTEnum, TClass tEnum, TFieldSignature tSignature, EnumDeclaration mEnum,
-			TFieldDefinition tDefinition, TypeGraph model, TField tName) {
+	public static final Object[] pattern_EnumConstant_12_3_findcontext_greenBBBBBBBFFFFFFFFFFFFFFF(TField tName,
+			EnumDeclaration mEnum, TFieldSignature tSignature, TClass tEnum, TypeGraph model,
+			TypeToTAbstractType mEnumToTEnum, TFieldDefinition tDefinition) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge tSignature__tName____field = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tEnum__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model__tEnum____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tEnum__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tEnum____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mEnumToTEnum__tEnum____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tEnum____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tEnum__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mEnumToTEnum__mEnum____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tName____field = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tEnum__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge model__tEnum____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tEnum____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tEnum__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String tSignature__tName____field_name_prime = "field";
+		String tName__tSignature____signatures_name_prime = "signatures";
+		String tEnum__model____model_name_prime = "model";
+		String model__tEnum____ownedTypes_name_prime = "ownedTypes";
 		String tEnum__tDefinition____defines_name_prime = "defines";
 		String tDefinition__tEnum____definedBy_name_prime = "definedBy";
 		String mEnumToTEnum__tEnum____target_name_prime = "target";
-		String tSignature__tEnum____type_name_prime = "type";
-		String tEnum__tSignature____signature_name_prime = "signature";
 		String mEnumToTEnum__mEnum____source_name_prime = "source";
-		String tSignature__tName____field_name_prime = "field";
-		String tName__tSignature____signatures_name_prime = "signatures";
 		String tDefinition__tSignature____signature_name_prime = "signature";
 		String tSignature__tDefinition____definitions_name_prime = "definitions";
-		String tEnum__model____model_name_prime = "model";
-		String model__tEnum____ownedTypes_name_prime = "ownedTypes";
+		String tSignature__tEnum____type_name_prime = "type";
+		String tEnum__tSignature____signature_name_prime = "signature";
 		String model__tName____fields_name_prime = "fields";
 		String tName__model____model_name_prime = "model";
-		isApplicableMatch.getAllContextElements().add(mEnumToTEnum);
-		isApplicableMatch.getAllContextElements().add(tEnum);
-		isApplicableMatch.getAllContextElements().add(tSignature);
-		isApplicableMatch.getAllContextElements().add(mEnum);
-		isApplicableMatch.getAllContextElements().add(tDefinition);
-		isApplicableMatch.getAllContextElements().add(model);
 		isApplicableMatch.getAllContextElements().add(tName);
+		isApplicableMatch.getAllContextElements().add(mEnum);
+		isApplicableMatch.getAllContextElements().add(tSignature);
+		isApplicableMatch.getAllContextElements().add(tEnum);
+		isApplicableMatch.getAllContextElements().add(model);
+		isApplicableMatch.getAllContextElements().add(mEnumToTEnum);
+		isApplicableMatch.getAllContextElements().add(tDefinition);
+		tSignature__tName____field.setSrc(tSignature);
+		tSignature__tName____field.setTrg(tName);
+		isApplicableMatch.getAllContextElements().add(tSignature__tName____field);
+		tName__tSignature____signatures.setSrc(tName);
+		tName__tSignature____signatures.setTrg(tSignature);
+		isApplicableMatch.getAllContextElements().add(tName__tSignature____signatures);
+		tEnum__model____model.setSrc(tEnum);
+		tEnum__model____model.setTrg(model);
+		isApplicableMatch.getAllContextElements().add(tEnum__model____model);
+		model__tEnum____ownedTypes.setSrc(model);
+		model__tEnum____ownedTypes.setTrg(tEnum);
+		isApplicableMatch.getAllContextElements().add(model__tEnum____ownedTypes);
 		tEnum__tDefinition____defines.setSrc(tEnum);
 		tEnum__tDefinition____defines.setTrg(tDefinition);
 		isApplicableMatch.getAllContextElements().add(tEnum__tDefinition____defines);
@@ -2710,71 +2717,58 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		mEnumToTEnum__tEnum____target.setSrc(mEnumToTEnum);
 		mEnumToTEnum__tEnum____target.setTrg(tEnum);
 		isApplicableMatch.getAllContextElements().add(mEnumToTEnum__tEnum____target);
-		tSignature__tEnum____type.setSrc(tSignature);
-		tSignature__tEnum____type.setTrg(tEnum);
-		isApplicableMatch.getAllContextElements().add(tSignature__tEnum____type);
-		tEnum__tSignature____signature.setSrc(tEnum);
-		tEnum__tSignature____signature.setTrg(tSignature);
-		isApplicableMatch.getAllContextElements().add(tEnum__tSignature____signature);
 		mEnumToTEnum__mEnum____source.setSrc(mEnumToTEnum);
 		mEnumToTEnum__mEnum____source.setTrg(mEnum);
 		isApplicableMatch.getAllContextElements().add(mEnumToTEnum__mEnum____source);
-		tSignature__tName____field.setSrc(tSignature);
-		tSignature__tName____field.setTrg(tName);
-		isApplicableMatch.getAllContextElements().add(tSignature__tName____field);
-		tName__tSignature____signatures.setSrc(tName);
-		tName__tSignature____signatures.setTrg(tSignature);
-		isApplicableMatch.getAllContextElements().add(tName__tSignature____signatures);
 		tDefinition__tSignature____signature.setSrc(tDefinition);
 		tDefinition__tSignature____signature.setTrg(tSignature);
 		isApplicableMatch.getAllContextElements().add(tDefinition__tSignature____signature);
 		tSignature__tDefinition____definitions.setSrc(tSignature);
 		tSignature__tDefinition____definitions.setTrg(tDefinition);
 		isApplicableMatch.getAllContextElements().add(tSignature__tDefinition____definitions);
-		tEnum__model____model.setSrc(tEnum);
-		tEnum__model____model.setTrg(model);
-		isApplicableMatch.getAllContextElements().add(tEnum__model____model);
-		model__tEnum____ownedTypes.setSrc(model);
-		model__tEnum____ownedTypes.setTrg(tEnum);
-		isApplicableMatch.getAllContextElements().add(model__tEnum____ownedTypes);
+		tSignature__tEnum____type.setSrc(tSignature);
+		tSignature__tEnum____type.setTrg(tEnum);
+		isApplicableMatch.getAllContextElements().add(tSignature__tEnum____type);
+		tEnum__tSignature____signature.setSrc(tEnum);
+		tEnum__tSignature____signature.setTrg(tSignature);
+		isApplicableMatch.getAllContextElements().add(tEnum__tSignature____signature);
 		model__tName____fields.setSrc(model);
 		model__tName____fields.setTrg(tName);
 		isApplicableMatch.getAllContextElements().add(model__tName____fields);
 		tName__model____model.setSrc(tName);
 		tName__model____model.setTrg(model);
 		isApplicableMatch.getAllContextElements().add(tName__model____model);
+		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
+		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
+		tEnum__model____model.setName(tEnum__model____model_name_prime);
+		model__tEnum____ownedTypes.setName(model__tEnum____ownedTypes_name_prime);
 		tEnum__tDefinition____defines.setName(tEnum__tDefinition____defines_name_prime);
 		tDefinition__tEnum____definedBy.setName(tDefinition__tEnum____definedBy_name_prime);
 		mEnumToTEnum__tEnum____target.setName(mEnumToTEnum__tEnum____target_name_prime);
-		tSignature__tEnum____type.setName(tSignature__tEnum____type_name_prime);
-		tEnum__tSignature____signature.setName(tEnum__tSignature____signature_name_prime);
 		mEnumToTEnum__mEnum____source.setName(mEnumToTEnum__mEnum____source_name_prime);
-		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
-		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
 		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
 		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
-		tEnum__model____model.setName(tEnum__model____model_name_prime);
-		model__tEnum____ownedTypes.setName(model__tEnum____ownedTypes_name_prime);
+		tSignature__tEnum____type.setName(tSignature__tEnum____type_name_prime);
+		tEnum__tSignature____signature.setName(tEnum__tSignature____signature_name_prime);
 		model__tName____fields.setName(model__tName____fields_name_prime);
 		tName__model____model.setName(tName__model____model_name_prime);
-		return new Object[] { mEnumToTEnum, tEnum, tSignature, mEnum, tDefinition, model, tName, isApplicableMatch,
-				tEnum__tDefinition____defines, tDefinition__tEnum____definedBy, mEnumToTEnum__tEnum____target,
-				tSignature__tEnum____type, tEnum__tSignature____signature, mEnumToTEnum__mEnum____source,
-				tSignature__tName____field, tName__tSignature____signatures, tDefinition__tSignature____signature,
-				tSignature__tDefinition____definitions, tEnum__model____model, model__tEnum____ownedTypes,
+		return new Object[] { tName, mEnum, tSignature, tEnum, model, mEnumToTEnum, tDefinition, isApplicableMatch,
+				tSignature__tName____field, tName__tSignature____signatures, tEnum__model____model,
+				model__tEnum____ownedTypes, tEnum__tDefinition____defines, tDefinition__tEnum____definedBy,
+				mEnumToTEnum__tEnum____target, mEnumToTEnum__mEnum____source, tDefinition__tSignature____signature,
+				tSignature__tDefinition____definitions, tSignature__tEnum____type, tEnum__tSignature____signature,
 				model__tName____fields, tName__model____model };
 	}
 
 	public static final Object[] pattern_EnumConstant_12_4_solveCSP_bindingFBBBBBBBBB(EnumConstant _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mEnumToTEnum, TClass tEnum,
-			TFieldSignature tSignature, EnumDeclaration mEnum, TFieldDefinition tDefinition, TypeGraph model,
-			TField tName) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mEnumToTEnum, tEnum, tSignature,
-				mEnum, tDefinition, model, tName);
+			IsApplicableMatch isApplicableMatch, TField tName, EnumDeclaration mEnum, TFieldSignature tSignature,
+			TClass tEnum, TypeGraph model, TypeToTAbstractType mEnumToTEnum, TFieldDefinition tDefinition) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tName, mEnum, tSignature, tEnum,
+				model, mEnumToTEnum, tDefinition);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mEnumToTEnum, tEnum, tSignature, mEnum, tDefinition,
-					model, tName };
+			return new Object[] { csp, _this, isApplicableMatch, tName, mEnum, tSignature, tEnum, model, mEnumToTEnum,
+					tDefinition };
 		}
 		return null;
 	}
@@ -2784,19 +2778,18 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(EnumConstant _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mEnumToTEnum, TClass tEnum,
-			TFieldSignature tSignature, EnumDeclaration mEnum, TFieldDefinition tDefinition, TypeGraph model,
-			TField tName) {
+			IsApplicableMatch isApplicableMatch, TField tName, EnumDeclaration mEnum, TFieldSignature tSignature,
+			TClass tEnum, TypeGraph model, TypeToTAbstractType mEnumToTEnum, TFieldDefinition tDefinition) {
 		Object[] result_pattern_EnumConstant_12_4_solveCSP_binding = pattern_EnumConstant_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, mEnumToTEnum, tEnum, tSignature, mEnum, tDefinition, model, tName);
+				_this, isApplicableMatch, tName, mEnum, tSignature, tEnum, model, mEnumToTEnum, tDefinition);
 		if (result_pattern_EnumConstant_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_EnumConstant_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_EnumConstant_12_4_solveCSP_black = pattern_EnumConstant_12_4_solveCSP_blackB(csp);
 			if (result_pattern_EnumConstant_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mEnumToTEnum, tEnum, tSignature, mEnum,
-						tDefinition, model, tName };
+				return new Object[] { csp, _this, isApplicableMatch, tName, mEnum, tSignature, tEnum, model,
+						mEnumToTEnum, tDefinition };
 			}
 		}
 		return null;
@@ -2881,35 +2874,11 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return new Object[] { __result };
 	}
 
-	public static final Object[] pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_0BB(
-			TFieldSignature tSignature, TField tName) {
-		TField __DEC_tSignature_signatures_1156 = tSignature.getField();
-		if (__DEC_tSignature_signatures_1156 != null) {
-			if (!tName.equals(__DEC_tSignature_signatures_1156)) {
-				return new Object[] { tSignature, tName };
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_1BB(
-			TFieldDefinition tDefinition, TFieldSignature tSignature) {
-		TSignature __DEC_tDefinition_definitions_95876 = tDefinition.getSignature();
-		if (__DEC_tDefinition_definitions_95876 != null) {
-			if (!tSignature.equals(__DEC_tDefinition_definitions_95876)) {
-				return new Object[] { tDefinition, tSignature };
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_2BB(TField tName,
+	public static final Object[] pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_0BB(TField tName,
 			TypeGraph model) {
-		TypeGraph __DEC_tName_model_321093 = tName.getModel();
-		if (__DEC_tName_model_321093 != null) {
-			if (!model.equals(__DEC_tName_model_321093)) {
+		TypeGraph __DEC_tName_model_443218 = tName.getModel();
+		if (__DEC_tName_model_443218 != null) {
+			if (!model.equals(__DEC_tName_model_443218)) {
 				return new Object[] { tName, model };
 			}
 		}
@@ -2917,44 +2886,69 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return null;
 	}
 
+	public static final Object[] pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_1BB(
+			TFieldSignature tSignature, TField tName) {
+		TField __DEC_tSignature_signatures_43468 = tSignature.getField();
+		if (__DEC_tSignature_signatures_43468 != null) {
+			if (!tName.equals(__DEC_tSignature_signatures_43468)) {
+				return new Object[] { tSignature, tName };
+			}
+		}
+
+		return null;
+	}
+
+	public static final Object[] pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_2BB(
+			TFieldDefinition tDefinition, TFieldSignature tSignature) {
+		TSignature __DEC_tDefinition_definitions_453885 = tDefinition.getSignature();
+		if (__DEC_tDefinition_definitions_453885 != null) {
+			if (!tSignature.equals(__DEC_tDefinition_definitions_453885)) {
+				return new Object[] { tDefinition, tSignature };
+			}
+		}
+
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_EnumConstant_20_2_testcorematchandDECs_blackFFFFFB(
-			EMoflonEdge _edge_defines) {
+			EMoflonEdge _edge_field) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpTEnum = _edge_defines.getSrc();
-		if (tmpTEnum instanceof TClass) {
-			TClass tEnum = (TClass) tmpTEnum;
-			EObject tmpTDefinition = _edge_defines.getTrg();
-			if (tmpTDefinition instanceof TFieldDefinition) {
-				TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
-				if (tEnum.getDefines().contains(tDefinition)) {
-					TypeGraph model = tEnum.getModel();
-					if (model != null) {
-						TSignature tmpTSignature = tDefinition.getSignature();
-						if (tmpTSignature instanceof TFieldSignature) {
-							TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
-							if (tEnum.equals(tSignature.getType())) {
-								if (tEnum.getSignature().contains(tSignature)) {
-									TField tName = tSignature.getField();
-									if (tName != null) {
-										if (model.getFields().contains(tName)) {
-											if (pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_1BB(
-													tDefinition, tSignature) == null) {
-												if (pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_0BB(
-														tSignature, tName) == null) {
-													if (pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_2BB(
-															tName, model) == null) {
-														_result.add(new Object[] { tEnum, tSignature, tDefinition,
-																model, tName, _edge_defines });
+		EObject tmpTSignature = _edge_field.getSrc();
+		if (tmpTSignature instanceof TFieldSignature) {
+			TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
+			EObject tmpTName = _edge_field.getTrg();
+			if (tmpTName instanceof TField) {
+				TField tName = (TField) tmpTName;
+				if (tName.equals(tSignature.getField())) {
+					TAbstractType tmpTEnum = tSignature.getType();
+					if (tmpTEnum instanceof TClass) {
+						TClass tEnum = (TClass) tmpTEnum;
+						if (tEnum.getSignature().contains(tSignature)) {
+							TypeGraph model = tName.getModel();
+							if (model != null) {
+								if (model.equals(tEnum.getModel())) {
+									if (pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_1BB(tSignature,
+											tName) == null) {
+										if (pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_0BB(tName,
+												model) == null) {
+											for (TMember tmpTDefinition : tSignature.getDefinitions()) {
+												if (tmpTDefinition instanceof TFieldDefinition) {
+													TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
+													if (tEnum.getDefines().contains(tDefinition)) {
+														if (pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_2BB(
+																tDefinition, tSignature) == null) {
+															_result.add(new Object[] { tName, tSignature, tEnum, model,
+																	tDefinition, _edge_field });
+														}
 													}
 												}
 											}
 										}
 									}
-
 								}
 							}
-						}
 
+						}
 					}
 
 				}
@@ -2975,9 +2969,9 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final boolean pattern_EnumConstant_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-			EnumConstant _this, Match match, TClass tEnum, TFieldSignature tSignature, TFieldDefinition tDefinition,
-			TypeGraph model, TField tName) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tEnum, tSignature, tDefinition, model, tName);
+			EnumConstant _this, Match match, TField tName, TFieldSignature tSignature, TClass tEnum, TypeGraph model,
+			TFieldDefinition tDefinition) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tName, tSignature, tEnum, model, tDefinition);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3064,8 +3058,8 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_21_2_testcorematchandDECs_black_nac_0B(
 			MEnumConstantDeclaration mDefinition) {
-		MSignature __DEC_mDefinition_mDefinitions_98338 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_98338 != null) {
+		MSignature __DEC_mDefinition_mDefinitions_976803 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_976803 != null) {
 			return new Object[] { mDefinition };
 		}
 
@@ -3148,36 +3142,36 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_24_2_matchsrctrgcontext_bindingFFFFFFFBB(Match targetMatch,
 			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("tEnum");
-		EObject _localVariable_1 = targetMatch.getObject("tSignature");
-		EObject _localVariable_2 = sourceMatch.getObject("mEnum");
-		EObject _localVariable_3 = targetMatch.getObject("tDefinition");
-		EObject _localVariable_4 = targetMatch.getObject("model");
-		EObject _localVariable_5 = targetMatch.getObject("tName");
-		EObject _localVariable_6 = sourceMatch.getObject("mDefinition");
-		EObject tmpTEnum = _localVariable_0;
-		EObject tmpTSignature = _localVariable_1;
-		EObject tmpMEnum = _localVariable_2;
-		EObject tmpTDefinition = _localVariable_3;
-		EObject tmpModel = _localVariable_4;
-		EObject tmpTName = _localVariable_5;
-		EObject tmpMDefinition = _localVariable_6;
-		if (tmpTEnum instanceof TClass) {
-			TClass tEnum = (TClass) tmpTEnum;
-			if (tmpTSignature instanceof TFieldSignature) {
-				TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
-				if (tmpMEnum instanceof EnumDeclaration) {
-					EnumDeclaration mEnum = (EnumDeclaration) tmpMEnum;
-					if (tmpTDefinition instanceof TFieldDefinition) {
-						TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
-						if (tmpModel instanceof TypeGraph) {
-							TypeGraph model = (TypeGraph) tmpModel;
-							if (tmpTName instanceof TField) {
-								TField tName = (TField) tmpTName;
-								if (tmpMDefinition instanceof MEnumConstantDeclaration) {
-									MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) tmpMDefinition;
-									return new Object[] { tEnum, tSignature, mEnum, tDefinition, model, tName,
-											mDefinition, targetMatch, sourceMatch };
+		EObject _localVariable_0 = targetMatch.getObject("tName");
+		EObject _localVariable_1 = sourceMatch.getObject("mEnum");
+		EObject _localVariable_2 = targetMatch.getObject("tSignature");
+		EObject _localVariable_3 = targetMatch.getObject("tEnum");
+		EObject _localVariable_4 = sourceMatch.getObject("mDefinition");
+		EObject _localVariable_5 = targetMatch.getObject("model");
+		EObject _localVariable_6 = targetMatch.getObject("tDefinition");
+		EObject tmpTName = _localVariable_0;
+		EObject tmpMEnum = _localVariable_1;
+		EObject tmpTSignature = _localVariable_2;
+		EObject tmpTEnum = _localVariable_3;
+		EObject tmpMDefinition = _localVariable_4;
+		EObject tmpModel = _localVariable_5;
+		EObject tmpTDefinition = _localVariable_6;
+		if (tmpTName instanceof TField) {
+			TField tName = (TField) tmpTName;
+			if (tmpMEnum instanceof EnumDeclaration) {
+				EnumDeclaration mEnum = (EnumDeclaration) tmpMEnum;
+				if (tmpTSignature instanceof TFieldSignature) {
+					TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
+					if (tmpTEnum instanceof TClass) {
+						TClass tEnum = (TClass) tmpTEnum;
+						if (tmpMDefinition instanceof MEnumConstantDeclaration) {
+							MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) tmpMDefinition;
+							if (tmpModel instanceof TypeGraph) {
+								TypeGraph model = (TypeGraph) tmpModel;
+								if (tmpTDefinition instanceof TFieldDefinition) {
+									TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
+									return new Object[] { tName, mEnum, tSignature, tEnum, mDefinition, model,
+											tDefinition, targetMatch, sourceMatch };
 								}
 							}
 						}
@@ -3188,11 +3182,11 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return null;
 	}
 
-	public static final Object[] pattern_EnumConstant_24_2_matchsrctrgcontext_blackBBBBBBBBB(TClass tEnum,
-			TFieldSignature tSignature, EnumDeclaration mEnum, TFieldDefinition tDefinition, TypeGraph model,
-			TField tName, MEnumConstantDeclaration mDefinition, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_EnumConstant_24_2_matchsrctrgcontext_blackBBBBBBBBB(TField tName,
+			EnumDeclaration mEnum, TFieldSignature tSignature, TClass tEnum, MEnumConstantDeclaration mDefinition,
+			TypeGraph model, TFieldDefinition tDefinition, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tEnum, tSignature, mEnum, tDefinition, model, tName, mDefinition, sourceMatch,
+			return new Object[] { tName, mEnum, tSignature, tEnum, mDefinition, model, tDefinition, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -3203,33 +3197,33 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		Object[] result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding = pattern_EnumConstant_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
 				targetMatch, sourceMatch);
 		if (result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding != null) {
-			TClass tEnum = (TClass) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[0];
-			TFieldSignature tSignature = (TFieldSignature) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[1];
-			EnumDeclaration mEnum = (EnumDeclaration) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[2];
-			TFieldDefinition tDefinition = (TFieldDefinition) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[3];
-			TypeGraph model = (TypeGraph) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[4];
-			TField tName = (TField) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[5];
-			MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[6];
+			TField tName = (TField) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[0];
+			EnumDeclaration mEnum = (EnumDeclaration) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[1];
+			TFieldSignature tSignature = (TFieldSignature) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[2];
+			TClass tEnum = (TClass) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[3];
+			MEnumConstantDeclaration mDefinition = (MEnumConstantDeclaration) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[4];
+			TypeGraph model = (TypeGraph) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[5];
+			TFieldDefinition tDefinition = (TFieldDefinition) result_pattern_EnumConstant_24_2_matchsrctrgcontext_binding[6];
 
 			Object[] result_pattern_EnumConstant_24_2_matchsrctrgcontext_black = pattern_EnumConstant_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-					tEnum, tSignature, mEnum, tDefinition, model, tName, mDefinition, sourceMatch, targetMatch);
+					tName, mEnum, tSignature, tEnum, mDefinition, model, tDefinition, sourceMatch, targetMatch);
 			if (result_pattern_EnumConstant_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tEnum, tSignature, mEnum, tDefinition, model, tName, mDefinition, sourceMatch,
+				return new Object[] { tName, mEnum, tSignature, tEnum, mDefinition, model, tDefinition, sourceMatch,
 						targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_EnumConstant_24_3_solvecsp_bindingFBBBBBBBBBB(EnumConstant _this, TClass tEnum,
-			TFieldSignature tSignature, EnumDeclaration mEnum, TFieldDefinition tDefinition, TypeGraph model,
-			TField tName, MEnumConstantDeclaration mDefinition, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(tEnum, tSignature, mEnum, tDefinition, model, tName,
-				mDefinition, sourceMatch, targetMatch);
+	public static final Object[] pattern_EnumConstant_24_3_solvecsp_bindingFBBBBBBBBBB(EnumConstant _this, TField tName,
+			EnumDeclaration mEnum, TFieldSignature tSignature, TClass tEnum, MEnumConstantDeclaration mDefinition,
+			TypeGraph model, TFieldDefinition tDefinition, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(tName, mEnum, tSignature, tEnum, mDefinition, model,
+				tDefinition, sourceMatch, targetMatch);
 		CSP csp = _localVariable_7;
 		if (csp != null) {
-			return new Object[] { csp, _this, tEnum, tSignature, mEnum, tDefinition, model, tName, mDefinition,
+			return new Object[] { csp, _this, tName, mEnum, tSignature, tEnum, mDefinition, model, tDefinition,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -3240,17 +3234,18 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(EnumConstant _this,
-			TClass tEnum, TFieldSignature tSignature, EnumDeclaration mEnum, TFieldDefinition tDefinition,
-			TypeGraph model, TField tName, MEnumConstantDeclaration mDefinition, Match sourceMatch, Match targetMatch) {
+			TField tName, EnumDeclaration mEnum, TFieldSignature tSignature, TClass tEnum,
+			MEnumConstantDeclaration mDefinition, TypeGraph model, TFieldDefinition tDefinition, Match sourceMatch,
+			Match targetMatch) {
 		Object[] result_pattern_EnumConstant_24_3_solvecsp_binding = pattern_EnumConstant_24_3_solvecsp_bindingFBBBBBBBBBB(
-				_this, tEnum, tSignature, mEnum, tDefinition, model, tName, mDefinition, sourceMatch, targetMatch);
+				_this, tName, mEnum, tSignature, tEnum, mDefinition, model, tDefinition, sourceMatch, targetMatch);
 		if (result_pattern_EnumConstant_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_EnumConstant_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_EnumConstant_24_3_solvecsp_black = pattern_EnumConstant_24_3_solvecsp_blackB(csp);
 			if (result_pattern_EnumConstant_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tEnum, tSignature, mEnum, tDefinition, model, tName, mDefinition,
+				return new Object[] { csp, _this, tName, mEnum, tSignature, tEnum, mDefinition, model, tDefinition,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3263,14 +3258,14 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_EnumConstant_24_5_matchcorrcontext_blackFBBBB(TClass tEnum,
-			EnumDeclaration mEnum, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_EnumConstant_24_5_matchcorrcontext_blackBBFBB(EnumDeclaration mEnum,
+			TClass tEnum, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (TypeToTAbstractType mEnumToTEnum : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(tEnum, TypeToTAbstractType.class, "target")) {
 				if (mEnum.equals(mEnumToTEnum.getSource())) {
-					_result.add(new Object[] { mEnumToTEnum, tEnum, mEnum, sourceMatch, targetMatch });
+					_result.add(new Object[] { mEnum, tEnum, mEnumToTEnum, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -3288,23 +3283,23 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return new Object[] { mEnumToTEnum, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_EnumConstant_24_6_createcorrespondence_blackBBBBBBBB(TClass tEnum,
-			TFieldSignature tSignature, EnumDeclaration mEnum, TFieldDefinition tDefinition, TypeGraph model,
-			TField tName, MEnumConstantDeclaration mDefinition, CCMatch ccMatch) {
-		return new Object[] { tEnum, tSignature, mEnum, tDefinition, model, tName, mDefinition, ccMatch };
+	public static final Object[] pattern_EnumConstant_24_6_createcorrespondence_blackBBBBBBBB(TField tName,
+			EnumDeclaration mEnum, TFieldSignature tSignature, TClass tEnum, MEnumConstantDeclaration mDefinition,
+			TypeGraph model, TFieldDefinition tDefinition, CCMatch ccMatch) {
+		return new Object[] { tName, mEnum, tSignature, tEnum, mDefinition, model, tDefinition, ccMatch };
 	}
 
-	public static final Object[] pattern_EnumConstant_24_6_createcorrespondence_greenFBFBB(TFieldDefinition tDefinition,
-			MEnumConstantDeclaration mDefinition, CCMatch ccMatch) {
-		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
+	public static final Object[] pattern_EnumConstant_24_6_createcorrespondence_greenFBBFB(
+			MEnumConstantDeclaration mDefinition, TFieldDefinition tDefinition, CCMatch ccMatch) {
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
+		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
+		mBodyToTAnnotation.setSource(mDefinition);
+		mBodyToTAnnotation.setTarget(tDefinition);
+		ccMatch.getCreateCorr().add(mBodyToTAnnotation);
 		mDefinitionToTMember.setTarget(tDefinition);
 		mDefinitionToTMember.setSource(mDefinition);
 		ccMatch.getCreateCorr().add(mDefinitionToTMember);
-		mBodyToTAnnotation.setTarget(tDefinition);
-		mBodyToTAnnotation.setSource(mDefinition);
-		ccMatch.getCreateCorr().add(mBodyToTAnnotation);
-		return new Object[] { mDefinitionToTMember, tDefinition, mBodyToTAnnotation, mDefinition, ccMatch };
+		return new Object[] { mBodyToTAnnotation, mDefinition, tDefinition, mDefinitionToTMember, ccMatch };
 	}
 
 	public static final Object[] pattern_EnumConstant_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -3329,8 +3324,8 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_27_1_matchtggpattern_black_nac_0B(
 			MEnumConstantDeclaration mDefinition) {
-		MSignature __DEC_mDefinition_mDefinitions_665076 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_665076 != null) {
+		MSignature __DEC_mDefinition_mDefinitions_258511 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_258511 != null) {
 			return new Object[] { mDefinition };
 		}
 
@@ -3357,35 +3352,11 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return _result;
 	}
 
-	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_black_nac_0BB(TFieldSignature tSignature,
-			TField tName) {
-		TField __DEC_tSignature_signatures_819991 = tSignature.getField();
-		if (__DEC_tSignature_signatures_819991 != null) {
-			if (!tName.equals(__DEC_tSignature_signatures_819991)) {
-				return new Object[] { tSignature, tName };
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_black_nac_1BB(TFieldDefinition tDefinition,
-			TFieldSignature tSignature) {
-		TSignature __DEC_tDefinition_definitions_181048 = tDefinition.getSignature();
-		if (__DEC_tDefinition_definitions_181048 != null) {
-			if (!tSignature.equals(__DEC_tDefinition_definitions_181048)) {
-				return new Object[] { tDefinition, tSignature };
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_black_nac_2BB(TField tName,
+	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_black_nac_0BB(TField tName,
 			TypeGraph model) {
-		TypeGraph __DEC_tName_model_340793 = tName.getModel();
-		if (__DEC_tName_model_340793 != null) {
-			if (!model.equals(__DEC_tName_model_340793)) {
+		TypeGraph __DEC_tName_model_869537 = tName.getModel();
+		if (__DEC_tName_model_869537 != null) {
+			if (!model.equals(__DEC_tName_model_869537)) {
 				return new Object[] { tName, model };
 			}
 		}
@@ -3393,22 +3364,45 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return null;
 	}
 
-	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_blackBBBBB(TClass tEnum,
-			TFieldSignature tSignature, TFieldDefinition tDefinition, TypeGraph model, TField tName) {
-		if (tEnum.getDefines().contains(tDefinition)) {
-			if (tEnum.equals(tSignature.getType())) {
-				if (tEnum.getSignature().contains(tSignature)) {
-					if (tName.equals(tSignature.getField())) {
-						if (tSignature.equals(tDefinition.getSignature())) {
-							if (model.equals(tEnum.getModel())) {
+	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_black_nac_1BB(TFieldSignature tSignature,
+			TField tName) {
+		TField __DEC_tSignature_signatures_257509 = tSignature.getField();
+		if (__DEC_tSignature_signatures_257509 != null) {
+			if (!tName.equals(__DEC_tSignature_signatures_257509)) {
+				return new Object[] { tSignature, tName };
+			}
+		}
+
+		return null;
+	}
+
+	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_black_nac_2BB(TFieldDefinition tDefinition,
+			TFieldSignature tSignature) {
+		TSignature __DEC_tDefinition_definitions_539960 = tDefinition.getSignature();
+		if (__DEC_tDefinition_definitions_539960 != null) {
+			if (!tSignature.equals(__DEC_tDefinition_definitions_539960)) {
+				return new Object[] { tDefinition, tSignature };
+			}
+		}
+
+		return null;
+	}
+
+	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_blackBBBBB(TField tName,
+			TFieldSignature tSignature, TClass tEnum, TypeGraph model, TFieldDefinition tDefinition) {
+		if (tName.equals(tSignature.getField())) {
+			if (model.equals(tEnum.getModel())) {
+				if (tEnum.getDefines().contains(tDefinition)) {
+					if (tSignature.equals(tDefinition.getSignature())) {
+						if (tEnum.equals(tSignature.getType())) {
+							if (tEnum.getSignature().contains(tSignature)) {
 								if (model.getFields().contains(tName)) {
-									if (pattern_EnumConstant_28_1_matchtggpattern_black_nac_0BB(tSignature,
-											tName) == null) {
-										if (pattern_EnumConstant_28_1_matchtggpattern_black_nac_1BB(tDefinition,
-												tSignature) == null) {
-											if (pattern_EnumConstant_28_1_matchtggpattern_black_nac_2BB(tName,
-													model) == null) {
-												return new Object[] { tEnum, tSignature, tDefinition, model, tName };
+									if (pattern_EnumConstant_28_1_matchtggpattern_black_nac_0BB(tName, model) == null) {
+										if (pattern_EnumConstant_28_1_matchtggpattern_black_nac_1BB(tSignature,
+												tName) == null) {
+											if (pattern_EnumConstant_28_1_matchtggpattern_black_nac_2BB(tDefinition,
+													tSignature) == null) {
+												return new Object[] { tName, tSignature, tEnum, model, tDefinition };
 											}
 										}
 									}
@@ -3445,6 +3439,14 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_29_2_isapplicablecore_black_nac_0BB(
+			ModelgeneratorRuleResult ruleResult, EnumDeclaration mEnum) {
+		if (ruleResult.getSourceObjects().contains(mEnum)) {
+			return new Object[] { ruleResult, mEnum };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_EnumConstant_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mEnumToTEnum) {
 		if (ruleResult.getCorrObjects().contains(mEnumToTEnum)) {
 			return new Object[] { ruleResult, mEnumToTEnum };
@@ -3452,7 +3454,7 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return null;
 	}
 
-	public static final Object[] pattern_EnumConstant_29_2_isapplicablecore_black_nac_1BB(
+	public static final Object[] pattern_EnumConstant_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, TClass tEnum) {
 		if (ruleResult.getTargetObjects().contains(tEnum)) {
 			return new Object[] { ruleResult, tEnum };
@@ -3460,18 +3462,10 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return null;
 	}
 
-	public static final Object[] pattern_EnumConstant_29_2_isapplicablecore_black_nac_2BB(
+	public static final Object[] pattern_EnumConstant_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, TypeGraph model) {
 		if (ruleResult.getTargetObjects().contains(model)) {
 			return new Object[] { ruleResult, model };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_EnumConstant_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, EnumDeclaration mEnum) {
-		if (ruleResult.getSourceObjects().contains(mEnum)) {
-			return new Object[] { ruleResult, mEnum };
 		}
 		return null;
 	}
@@ -3483,24 +3477,24 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 			for (EObject tmpMEnumToTEnum : mEnumToTEnumList.getEntryObjects()) {
 				if (tmpMEnumToTEnum instanceof TypeToTAbstractType) {
 					TypeToTAbstractType mEnumToTEnum = (TypeToTAbstractType) tmpMEnumToTEnum;
-					TAbstractType tmpTEnum = mEnumToTEnum.getTarget();
-					if (tmpTEnum instanceof TClass) {
-						TClass tEnum = (TClass) tmpTEnum;
-						Type tmpMEnum = mEnumToTEnum.getSource();
-						if (tmpMEnum instanceof EnumDeclaration) {
-							EnumDeclaration mEnum = (EnumDeclaration) tmpMEnum;
+					Type tmpMEnum = mEnumToTEnum.getSource();
+					if (tmpMEnum instanceof EnumDeclaration) {
+						EnumDeclaration mEnum = (EnumDeclaration) tmpMEnum;
+						TAbstractType tmpTEnum = mEnumToTEnum.getTarget();
+						if (tmpTEnum instanceof TClass) {
+							TClass tEnum = (TClass) tmpTEnum;
 							TypeGraph model = tEnum.getModel();
 							if (model != null) {
-								if (pattern_EnumConstant_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+								if (pattern_EnumConstant_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 										mEnumToTEnum) == null) {
-									if (pattern_EnumConstant_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-											tEnum) == null) {
-										if (pattern_EnumConstant_29_2_isapplicablecore_black_nac_3BB(ruleResult,
-												mEnum) == null) {
-											if (pattern_EnumConstant_29_2_isapplicablecore_black_nac_2BB(ruleResult,
+									if (pattern_EnumConstant_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+											mEnum) == null) {
+										if (pattern_EnumConstant_29_2_isapplicablecore_black_nac_2BB(ruleResult,
+												tEnum) == null) {
+											if (pattern_EnumConstant_29_2_isapplicablecore_black_nac_3BB(ruleResult,
 													model) == null) {
-												_result.add(new Object[] { mEnumToTEnumList, mEnumToTEnum, tEnum, model,
-														mEnum, ruleEntryContainer, ruleResult });
+												_result.add(new Object[] { mEnumToTEnumList, mEnum, mEnumToTEnum, tEnum,
+														model, ruleEntryContainer, ruleResult });
 											}
 										}
 									}
@@ -3518,13 +3512,13 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_29_3_solveCSP_bindingFBBBBBBB(EnumConstant _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mEnumToTEnum, TClass tEnum, EnumDeclaration mEnum,
-			TypeGraph model, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mEnumToTEnum, tEnum, mEnum, model,
+			IsApplicableMatch isApplicableMatch, EnumDeclaration mEnum, TClass tEnum, TypeGraph model,
+			TypeToTAbstractType mEnumToTEnum, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mEnum, tEnum, model, mEnumToTEnum,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mEnumToTEnum, tEnum, mEnum, model, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mEnum, tEnum, model, mEnumToTEnum, ruleResult };
 		}
 		return null;
 	}
@@ -3534,17 +3528,17 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_29_3_solveCSP_bindingAndBlackFBBBBBBB(EnumConstant _this,
-			IsApplicableMatch isApplicableMatch, TypeToTAbstractType mEnumToTEnum, TClass tEnum, EnumDeclaration mEnum,
-			TypeGraph model, ModelgeneratorRuleResult ruleResult) {
+			IsApplicableMatch isApplicableMatch, EnumDeclaration mEnum, TClass tEnum, TypeGraph model,
+			TypeToTAbstractType mEnumToTEnum, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_EnumConstant_29_3_solveCSP_binding = pattern_EnumConstant_29_3_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, mEnumToTEnum, tEnum, mEnum, model, ruleResult);
+				_this, isApplicableMatch, mEnum, tEnum, model, mEnumToTEnum, ruleResult);
 		if (result_pattern_EnumConstant_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_EnumConstant_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_EnumConstant_29_3_solveCSP_black = pattern_EnumConstant_29_3_solveCSP_blackB(csp);
 			if (result_pattern_EnumConstant_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mEnumToTEnum, tEnum, mEnum, model, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mEnum, tEnum, model, mEnumToTEnum, ruleResult };
 			}
 		}
 		return null;
@@ -3556,45 +3550,45 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		return _result;
 	}
 
-	public static final Object[] pattern_EnumConstant_29_5_checknacs_blackBBBB(TypeToTAbstractType mEnumToTEnum,
-			TClass tEnum, EnumDeclaration mEnum, TypeGraph model) {
-		return new Object[] { mEnumToTEnum, tEnum, mEnum, model };
+	public static final Object[] pattern_EnumConstant_29_5_checknacs_blackBBBB(EnumDeclaration mEnum, TClass tEnum,
+			TypeGraph model, TypeToTAbstractType mEnumToTEnum) {
+		return new Object[] { mEnum, tEnum, model, mEnumToTEnum };
 	}
 
-	public static final Object[] pattern_EnumConstant_29_6_perform_blackBBBBB(TypeToTAbstractType mEnumToTEnum,
-			TClass tEnum, EnumDeclaration mEnum, TypeGraph model, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { mEnumToTEnum, tEnum, mEnum, model, ruleResult };
+	public static final Object[] pattern_EnumConstant_29_6_perform_blackBBBBB(EnumDeclaration mEnum, TClass tEnum,
+			TypeGraph model, TypeToTAbstractType mEnumToTEnum, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mEnum, tEnum, model, mEnumToTEnum, ruleResult };
 	}
 
-	public static final Object[] pattern_EnumConstant_29_6_perform_greenBFFBFBFFFBB(TClass tEnum, EnumDeclaration mEnum,
+	public static final Object[] pattern_EnumConstant_29_6_perform_greenFFBFBFBFFBB(EnumDeclaration mEnum, TClass tEnum,
 			TypeGraph model, ModelgeneratorRuleResult ruleResult, CSP csp) {
-		TFieldSignature tSignature = BasicFactory.eINSTANCE.createTFieldSignature();
-		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
-		TFieldDefinition tDefinition = BasicFactory.eINSTANCE.createTFieldDefinition();
 		TField tName = BasicFactory.eINSTANCE.createTField();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
+		TFieldSignature tSignature = BasicFactory.eINSTANCE.createTFieldSignature();
 		MEnumConstantDeclaration mDefinition = ModiscoFactory.eINSTANCE.createMEnumConstantDeclaration();
+		TFieldDefinition tDefinition = BasicFactory.eINSTANCE.createTFieldDefinition();
+		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		Object _localVariable_0 = csp.getValue("tName", "tName");
 		Object _localVariable_1 = csp.getValue("mDefinition", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
+		model.getFields().add(tName);
+		ruleResult.getTargetObjects().add(tName);
+		ruleResult.getCorrObjects().add(mBodyToTAnnotation);
+		tSignature.setField(tName);
 		tSignature.setType(tEnum);
 		tEnum.getSignature().add(tSignature);
 		ruleResult.getTargetObjects().add(tSignature);
-		ruleResult.getCorrObjects().add(mDefinitionToTMember);
-		tEnum.getDefines().add(tDefinition);
-		mDefinitionToTMember.setTarget(tDefinition);
-		tDefinition.setSignature(tSignature);
-		ruleResult.getTargetObjects().add(tDefinition);
-		tSignature.setField(tName);
-		model.getFields().add(tName);
-		ruleResult.getTargetObjects().add(tName);
-		mBodyToTAnnotation.setTarget(tDefinition);
-		ruleResult.getCorrObjects().add(mBodyToTAnnotation);
-		mEnum.getEnumConstants().add(mDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
-		mDefinitionToTMember.setSource(mDefinition);
+		mEnum.getEnumConstants().add(mDefinition);
 		ruleResult.getSourceObjects().add(mDefinition);
+		tEnum.getDefines().add(tDefinition);
+		tDefinition.setSignature(tSignature);
+		mBodyToTAnnotation.setTarget(tDefinition);
+		ruleResult.getTargetObjects().add(tDefinition);
+		mDefinitionToTMember.setTarget(tDefinition);
+		mDefinitionToTMember.setSource(mDefinition);
+		ruleResult.getCorrObjects().add(mDefinitionToTMember);
 		String tName_tName_prime = (String) _localVariable_0;
 		String mDefinition_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
@@ -3602,8 +3596,8 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 		tName.setTName(tName_tName_prime);
 		mDefinition.setName(mDefinition_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tEnum, tSignature, mDefinitionToTMember, mEnum, tDefinition, model, tName,
-				mBodyToTAnnotation, mDefinition, ruleResult, csp };
+		return new Object[] { tName, mBodyToTAnnotation, mEnum, tSignature, tEnum, mDefinition, model, tDefinition,
+				mDefinitionToTMember, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_EnumConstant_29_7_expressionFB(

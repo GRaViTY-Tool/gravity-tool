@@ -1,0 +1,41 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+def log4jVersion = '2.17.1'
+
+dependencies {
+    compile "org.apache.logging.log4j:log4j-api:${log4jVersion}"
+    // A comment 
+    compile "org.apache.logging.log4j:log4j-core:${log4jVersion}"
+    // A comment    
+}
+task exportCode {
+  def outputFile = file("/tmp/gravityGradleJava7153495870249970667")
+  outputs.file  outputFile
+  doLast {
+    subprojects { project ->
+      project.plugins.withType(JavaPlugin) {
+        project.sourceSets.main.allJava.collect { sourceFile ->
+          outputFile << sourceFile.path + '\n'
+        }
+      }
+    }
+  }
+}
+
+task exportCode {
+  def outputFile = file("/tmp/gravityGradleJava15677236171239255963")
+  outputs.file  outputFile
+  doLast {
+    subprojects { project ->
+      project.plugins.withType(JavaPlugin) {
+        project.sourceSets.main.allJava.collect { sourceFile ->
+          outputFile << sourceFile.path + '\n'
+        }
+      }
+    }
+  }
+}

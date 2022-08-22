@@ -174,33 +174,33 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_1_performtransformation_greenFFFBBB(
 						bodyDeclaration, modifier, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
-		Interface feature = (Interface) result1_green[2];
+		Interface feature = (Interface) result1_green[1];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 
 		Object[] result2_black = AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_2_collecttranslatedelements_blackBBBBB(m2f,
-						b2e, feature, bodyDeclaration, modifier);
+						feature, b2e, bodyDeclaration, modifier);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
+					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = "
 					+ bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		Object[] result2_green = AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_2_collecttranslatedelements_greenFBBBBB(m2f,
-						b2e, feature, bodyDeclaration, modifier);
+						feature, b2e, bodyDeclaration, modifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_3_bookkeepingforedges_blackBBBBBB(
-						ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
+						ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[m2f] = " + m2f + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", "
+					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
 					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-						ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
+						ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
 		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
@@ -212,7 +212,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		// 
 		AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_5_registerobjects_expressionBBBBBBB(this,
-						ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
+						ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
 		return AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_6_expressionFB(ruleresult);
 	}
@@ -363,19 +363,19 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		var_feature_visibility.setType("uml.VisibilityKind");
 
 		// Create constraints
-		Eq eq = new Eq();
 		NonParameterizedName nonParameterizedName = new NonParameterizedName();
+		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(nonParameterizedName);
+		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		nonParameterizedName.setRuleName("NoRuleName");
 		nonParameterizedName.solve(var_feature_name);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 
@@ -399,11 +399,11 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
 			EObject bodyDeclaration, EObject modifier) {
 		ruleresult.registerObject("m2f", m2f);
-		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("modifier", modifier);
 
@@ -496,37 +496,37 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		Interface feature = (Interface) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = AnnotationTypeDeclaration2Interface_WithModifierImpl
-				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_1_performtransformation_greenFFBFFB(
+				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_1_performtransformation_greenFBFFFB(
 						feature, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 		AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result1_green[3];
 		Modifier modifier = (Modifier) result1_green[4];
 
 		Object[] result2_black = AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_2_collecttranslatedelements_blackBBBBB(m2f,
-						b2e, feature, bodyDeclaration, modifier);
+						feature, b2e, bodyDeclaration, modifier);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
+					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = "
 					+ bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		Object[] result2_green = AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_2_collecttranslatedelements_greenFBBBBB(
-						m2f, b2e, feature, bodyDeclaration, modifier);
+						m2f, feature, b2e, bodyDeclaration, modifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_3_bookkeepingforedges_blackBBBBBB(
-						ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
+						ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[m2f] = " + m2f + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", "
+					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
 					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-						ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
+						ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
 		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
@@ -538,7 +538,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		// 
 		AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_5_registerobjects_expressionBBBBBBB(this,
-						ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
+						ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
 		return AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_6_expressionFB(ruleresult);
 	}
@@ -718,11 +718,11 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
 			EObject bodyDeclaration, EObject modifier) {
 		ruleresult.registerObject("m2f", m2f);
-		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("modifier", modifier);
 
@@ -743,7 +743,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Interface_3(Interface feature) {
+	public EObjectContainer isAppropriate_BWD_Interface_7(Interface feature) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -803,7 +803,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_146(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_286(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeDeclaration2Interface_WithModifierImpl
 				.pattern_AnnotationTypeDeclaration2Interface_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -892,20 +892,20 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Eq eq0 = new Eq();
-		csp.getConstraints().add(eq0);
+		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
+		csp.getConstraints().add(nonParameterizedName0);
 
-		NonParameterizedName nonParameterizedName1 = new NonParameterizedName();
-		csp.getConstraints().add(nonParameterizedName1);
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
 
 		JVisibility2umlVisibility jVisibility2umlVisibility2 = new JVisibility2umlVisibility();
 		csp.getConstraints().add(jVisibility2umlVisibility2);
 
-		eq0.setRuleName("AnnotationTypeDeclaration2Interface_WithModifier");
-		eq0.solve(var_bodyDeclaration_name, var_feature_name);
+		nonParameterizedName0.setRuleName("AnnotationTypeDeclaration2Interface_WithModifier");
+		nonParameterizedName0.solve(var_feature_name);
 
-		nonParameterizedName1.setRuleName("AnnotationTypeDeclaration2Interface_WithModifier");
-		nonParameterizedName1.solve(var_feature_name);
+		eq1.setRuleName("AnnotationTypeDeclaration2Interface_WithModifier");
+		eq1.solve(var_bodyDeclaration_name, var_feature_name);
 
 		jVisibility2umlVisibility2.setRuleName("AnnotationTypeDeclaration2Interface_WithModifier");
 		jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
@@ -916,8 +916,8 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 			var_feature_name.setBound(false);
 			var_feature_name.setBound(false);
 			var_feature_visibility.setBound(false);
-			eq0.solve(var_bodyDeclaration_name, var_feature_name);
-			nonParameterizedName1.solve(var_feature_name);
+			nonParameterizedName0.solve(var_feature_name);
+			eq1.solve(var_bodyDeclaration_name, var_feature_name);
 			jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
@@ -1063,10 +1063,10 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
 				AnnotationTypeDeclaration2Interface_WithModifierImpl
-						.pattern_AnnotationTypeDeclaration2Interface_WithModifier_24_6_createcorrespondence_greenFFBBBB(
+						.pattern_AnnotationTypeDeclaration2Interface_WithModifier_24_6_createcorrespondence_greenFBFBBB(
 								feature, bodyDeclaration, modifier, ccMatch);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 
 				Object[] result7_black = AnnotationTypeDeclaration2Interface_WithModifierImpl
 						.pattern_AnnotationTypeDeclaration2Interface_WithModifier_24_7_addtoreturnedresult_blackBB(
@@ -1099,13 +1099,13 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		// Create literals
 
 		// Create attribute variables
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
+		var_feature_name.setValue(feature.getName());
+		var_feature_name.setType("String");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
 				csp);
 		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
 		var_bodyDeclaration_name.setType("String");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
-		var_feature_name.setValue(feature.getName());
-		var_feature_name.setType("String");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
 		var_modifier_visibility.setValue(modifier.getVisibility());
 		var_modifier_visibility.setType("java.VisibilityKind");
@@ -1116,19 +1116,19 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		// Create unbound variables
 
 		// Create constraints
-		Eq eq = new Eq();
 		NonParameterizedName nonParameterizedName = new NonParameterizedName();
+		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(nonParameterizedName);
+		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		nonParameterizedName.setRuleName("NoRuleName");
 		nonParameterizedName.solve(var_feature_name);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 		return csp;
@@ -1225,8 +1225,8 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 						.pattern_AnnotationTypeDeclaration2Interface_WithModifier_29_6_perform_greenFFFFFBB(ruleResult,
 								csp);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
-				//nothing Interface feature = (Interface) result6_green[2];
+				//nothing Interface feature = (Interface) result6_green[1];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 				//nothing AnnotationTypeDeclaration bodyDeclaration = (AnnotationTypeDeclaration) result6_green[3];
 				//nothing Modifier modifier = (Modifier) result6_green[4];
 
@@ -1253,10 +1253,10 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
-		var_bodyDeclaration_name.setType("String");
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
 		var_feature_name.setType("String");
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
+		var_bodyDeclaration_name.setType("String");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
 		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
@@ -1352,10 +1352,10 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 			return null;
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_INTERFACE_3__INTERFACE:
-			return isAppropriate_BWD_Interface_3((Interface) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_146__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_146((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_INTERFACE_7__INTERFACE:
+			return isAppropriate_BWD_Interface_7((Interface) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_286__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_286((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1525,53 +1525,53 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_1_performtransformation_greenFFFBBB(
 			AnnotationTypeDeclaration bodyDeclaration, Modifier modifier, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Interface feature = UMLFactory.eINSTANCE.createInterface();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("feature", "name");
 		Object _localVariable_1 = csp.getValue("feature", "visibility");
 		m2f.setSource(modifier);
-		b2e.setSource(bodyDeclaration);
 		m2f.setTarget(feature);
+		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
 		feature.setName(feature_name_prime);
 		feature.setVisibility(feature_visibility_prime);
-		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, csp };
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, csp };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_2_collecttranslatedelements_blackBBBBB(
-			Modifier2NamedElement m2f, ASTNode2Element b2e, Interface feature,
+			Modifier2NamedElement m2f, Interface feature, ASTNode2Element b2e,
 			AnnotationTypeDeclaration bodyDeclaration, Modifier modifier) {
-		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier };
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_2_collecttranslatedelements_greenFBBBBB(
-			Modifier2NamedElement m2f, ASTNode2Element b2e, Interface feature,
+			Modifier2NamedElement m2f, Interface feature, ASTNode2Element b2e,
 			AnnotationTypeDeclaration bodyDeclaration, Modifier modifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedElements().add(feature);
+		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
 		ruleresult.getTranslatedElements().add(modifier);
-		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier };
+		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
 			EObject modifier) {
 		if (!m2f.equals(modifier)) {
-			if (!b2e.equals(m2f)) {
-				if (!b2e.equals(feature)) {
-					if (!b2e.equals(bodyDeclaration)) {
-						if (!b2e.equals(modifier)) {
-							if (!feature.equals(m2f)) {
-								if (!feature.equals(modifier)) {
+			if (!feature.equals(m2f)) {
+				if (!feature.equals(modifier)) {
+					if (!b2e.equals(m2f)) {
+						if (!b2e.equals(feature)) {
+							if (!b2e.equals(bodyDeclaration)) {
+								if (!b2e.equals(modifier)) {
 									if (!bodyDeclaration.equals(m2f)) {
 										if (!bodyDeclaration.equals(feature)) {
 											if (!bodyDeclaration.equals(modifier)) {
-												return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration,
+												return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration,
 														modifier };
 											}
 										}
@@ -1587,7 +1587,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
 			EObject modifier) {
 		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1627,15 +1627,15 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, m2f__feature____target,
+		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier, m2f__feature____target,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
 				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
 	}
 
 	public static final void pattern_AnnotationTypeDeclaration2Interface_WithModifier_1_5_registerobjects_expressionBBBBBBB(
 			AnnotationTypeDeclaration2Interface_WithModifier _this, PerformRuleResult ruleresult, EObject m2f,
-			EObject b2e, EObject feature, EObject bodyDeclaration, EObject modifier) {
-		_this.registerObjects_FWD(ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
+			EObject feature, EObject b2e, EObject bodyDeclaration, EObject modifier) {
+		_this.registerObjects_FWD(ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
 
 	}
 
@@ -1927,7 +1927,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_1_performtransformation_greenFFBFFB(
+	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_1_performtransformation_greenFBFFFB(
 			Interface feature, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -1944,41 +1944,41 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_1;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		modifier.setVisibility(modifier_visibility_prime);
-		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, csp };
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, csp };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_2_collecttranslatedelements_blackBBBBB(
-			Modifier2NamedElement m2f, ASTNode2Element b2e, Interface feature,
+			Modifier2NamedElement m2f, Interface feature, ASTNode2Element b2e,
 			AnnotationTypeDeclaration bodyDeclaration, Modifier modifier) {
-		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier };
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_2_collecttranslatedelements_greenFBBBBB(
-			Modifier2NamedElement m2f, ASTNode2Element b2e, Interface feature,
+			Modifier2NamedElement m2f, Interface feature, ASTNode2Element b2e,
 			AnnotationTypeDeclaration bodyDeclaration, Modifier modifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getTranslatedElements().add(feature);
+		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
 		ruleresult.getCreatedElements().add(modifier);
-		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier };
+		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
 			EObject modifier) {
 		if (!m2f.equals(modifier)) {
-			if (!b2e.equals(m2f)) {
-				if (!b2e.equals(feature)) {
-					if (!b2e.equals(bodyDeclaration)) {
-						if (!b2e.equals(modifier)) {
-							if (!feature.equals(m2f)) {
-								if (!feature.equals(modifier)) {
+			if (!feature.equals(m2f)) {
+				if (!feature.equals(modifier)) {
+					if (!b2e.equals(m2f)) {
+						if (!b2e.equals(feature)) {
+							if (!b2e.equals(bodyDeclaration)) {
+								if (!b2e.equals(modifier)) {
 									if (!bodyDeclaration.equals(m2f)) {
 										if (!bodyDeclaration.equals(feature)) {
 											if (!bodyDeclaration.equals(modifier)) {
-												return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration,
+												return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration,
 														modifier };
 											}
 										}
@@ -1994,7 +1994,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
 			EObject modifier) {
 		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2034,15 +2034,15 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, m2f__feature____target,
+		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier, m2f__feature____target,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
 				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
 	}
 
 	public static final void pattern_AnnotationTypeDeclaration2Interface_WithModifier_11_5_registerobjects_expressionBBBBBBB(
 			AnnotationTypeDeclaration2Interface_WithModifier _this, PerformRuleResult ruleresult, EObject m2f,
-			EObject b2e, EObject feature, EObject bodyDeclaration, EObject modifier) {
-		_this.registerObjects_BWD(ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
+			EObject feature, EObject b2e, EObject bodyDeclaration, EObject modifier) {
+		_this.registerObjects_BWD(ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
 
 	}
 
@@ -2549,7 +2549,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		return new Object[] { feature, bodyDeclaration, modifier, ccMatch };
 	}
 
-	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_24_6_createcorrespondence_greenFFBBBB(
+	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_24_6_createcorrespondence_greenFBFBBB(
 			Interface feature, AnnotationTypeDeclaration bodyDeclaration, Modifier modifier, CCMatch ccMatch) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -2559,7 +2559,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, ccMatch };
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, ccMatch };
 	}
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_24_7_addtoreturnedresult_blackBB(
@@ -2683,8 +2683,8 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_WithModifier_29_6_perform_greenFFFFFBB(
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Interface feature = UMLFactory.eINSTANCE.createInterface();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		AnnotationTypeDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createAnnotationTypeDeclaration();
 		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
 		Object _localVariable_0 = csp.getValue("feature", "name");
@@ -2694,10 +2694,10 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(m2f);
-		ruleResult.getCorrObjects().add(b2e);
 		m2f.setTarget(feature);
-		b2e.setTarget(feature);
 		ruleResult.getTargetObjects().add(feature);
+		b2e.setTarget(feature);
+		ruleResult.getCorrObjects().add(b2e);
 		b2e.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
 		bodyDeclaration.setModifier(modifier);
@@ -2714,7 +2714,7 @@ public class AnnotationTypeDeclaration2Interface_WithModifierImpl extends Abstra
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		modifier.setVisibility(modifier_visibility_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, ruleResult, csp };
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_AnnotationTypeDeclaration2Interface_WithModifier_29_7_expressionFB(

@@ -706,7 +706,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_54(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_190(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = SuperConstructorInvocationImpl
 				.pattern_SuperConstructorInvocation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -765,7 +765,7 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_54(EMoflonEdge _edge_mMethodInvocations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_204(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = SuperConstructorInvocationImpl
 				.pattern_SuperConstructorInvocation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1189,10 +1189,10 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 			return null;
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_54__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_54((EMoflonEdge) arguments.get(0));
-		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_54__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_54((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_190__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_190((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_204__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_204((EMoflonEdge) arguments.get(0));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SUPER_CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2406,9 +2406,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_SuperConstructorInvocation_21_2_testcorematchandDECs_black_nac_0BB(
 			MSuperConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_300787 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_328939 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_300787)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_328939)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2657,9 +2657,9 @@ public class SuperConstructorInvocationImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_SuperConstructorInvocation_27_1_matchtggpattern_black_nac_0BB(
 			MSuperConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_11918 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_349354 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_11918)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_349354)) {
 				return new Object[] { invocation, mMember };
 			}
 		}

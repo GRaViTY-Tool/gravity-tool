@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.modisco.java.InterfaceDeclaration;
 import org.eclipse.modisco.java.Type;
 import org.eclipse.modisco.java.TypeAccess;
+import org.eclipse.modisco.java.UnresolvedInterfaceDeclaration;
 import org.eclipse.modisco.java.UnresolvedTypeDeclaration;
 import org.eclipse.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.MClass;
@@ -42,8 +43,8 @@ public class BrokenModiscoModelTests {
 
 		processFwd(model);
 
-		assertTrue(child.getSuperInterfaces().isEmpty());
-		assertEquals(parent, child.getSuperClass().getType());
+		assertEquals(1, child.getSuperInterfaces().size());
+		assertTrue(child.getSuperInterfaces().get(0).getType() instanceof UnresolvedInterfaceDeclaration);
 	}
 
 	@Test

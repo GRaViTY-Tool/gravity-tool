@@ -348,19 +348,19 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		var_feature_visibility.setType("uml.VisibilityKind");
 
 		// Create constraints
-		Eq eq = new Eq();
 		NonParameterizedName nonParameterizedName = new NonParameterizedName();
+		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(nonParameterizedName);
+		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		nonParameterizedName.setRuleName("NoRuleName");
 		nonParameterizedName.solve(var_feature_name);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 
@@ -709,7 +709,7 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Class_0(org.eclipse.uml2.uml.Class feature) {
+	public EObjectContainer isAppropriate_BWD_Class_3(org.eclipse.uml2.uml.Class feature) {
 
 		Object[] result1_bindingAndBlack = ClassDecWithModifier2ClassImpl
 				.pattern_ClassDecWithModifier2Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -766,7 +766,7 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_101(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_284(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = ClassDecWithModifier2ClassImpl
 				.pattern_ClassDecWithModifier2Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -851,20 +851,20 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Eq eq0 = new Eq();
-		csp.getConstraints().add(eq0);
+		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
+		csp.getConstraints().add(nonParameterizedName0);
 
-		NonParameterizedName nonParameterizedName1 = new NonParameterizedName();
-		csp.getConstraints().add(nonParameterizedName1);
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
 
 		JVisibility2umlVisibility jVisibility2umlVisibility2 = new JVisibility2umlVisibility();
 		csp.getConstraints().add(jVisibility2umlVisibility2);
 
-		eq0.setRuleName("ClassDecWithModifier2Class");
-		eq0.solve(var_bodyDeclaration_name, var_feature_name);
+		nonParameterizedName0.setRuleName("ClassDecWithModifier2Class");
+		nonParameterizedName0.solve(var_feature_name);
 
-		nonParameterizedName1.setRuleName("ClassDecWithModifier2Class");
-		nonParameterizedName1.solve(var_feature_name);
+		eq1.setRuleName("ClassDecWithModifier2Class");
+		eq1.solve(var_bodyDeclaration_name, var_feature_name);
 
 		jVisibility2umlVisibility2.setRuleName("ClassDecWithModifier2Class");
 		jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
@@ -875,8 +875,8 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 			var_feature_name.setBound(false);
 			var_feature_name.setBound(false);
 			var_feature_visibility.setBound(false);
-			eq0.solve(var_bodyDeclaration_name, var_feature_name);
-			nonParameterizedName1.solve(var_feature_name);
+			nonParameterizedName0.solve(var_feature_name);
+			eq1.solve(var_bodyDeclaration_name, var_feature_name);
 			jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
@@ -1051,13 +1051,13 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		// Create literals
 
 		// Create attribute variables
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
+		var_feature_name.setValue(feature.getName());
+		var_feature_name.setType("String");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
 				csp);
 		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
 		var_bodyDeclaration_name.setType("String");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
-		var_feature_name.setValue(feature.getName());
-		var_feature_name.setType("String");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
 		var_modifier_visibility.setValue(modifier.getVisibility());
 		var_modifier_visibility.setType("java.VisibilityKind");
@@ -1068,19 +1068,19 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		// Create unbound variables
 
 		// Create constraints
-		Eq eq = new Eq();
 		NonParameterizedName nonParameterizedName = new NonParameterizedName();
+		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(nonParameterizedName);
+		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		nonParameterizedName.setRuleName("NoRuleName");
 		nonParameterizedName.solve(var_feature_name);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 		return csp;
@@ -1198,10 +1198,10 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
-		var_bodyDeclaration_name.setType("String");
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
 		var_feature_name.setType("String");
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
+		var_bodyDeclaration_name.setType("String");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
 		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
@@ -1297,10 +1297,10 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 			return null;
 		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_BWD_CLASS_0__CLASS:
-			return isAppropriate_BWD_Class_0((org.eclipse.uml2.uml.Class) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_101__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_101((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_BWD_CLASS_3__CLASS:
+			return isAppropriate_BWD_Class_3((org.eclipse.uml2.uml.Class) arguments.get(0));
+		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_284__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_284((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

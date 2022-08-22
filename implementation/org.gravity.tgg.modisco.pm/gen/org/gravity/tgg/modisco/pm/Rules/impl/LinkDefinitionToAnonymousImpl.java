@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EOperation;
 
 import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.BodyDeclaration;
-import org.eclipse.modisco.java.ClassInstanceCreation;
 
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MSignature;
@@ -97,37 +96,37 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, MSignature mSignature, ClassInstanceCreation mInstance,
-			MDefinition mDefinition, AnonymousClassDeclaration mAnonymous) {
+	public boolean isAppropriate_FWD(Match match, MDefinition mDefinition, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous) {
 
 		Object[] result1_black = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_0_1_initialbindings_blackBBBBBB(this, match, mSignature, mInstance,
-						mDefinition, mAnonymous);
+				.pattern_LinkDefinitionToAnonymous_0_1_initialbindings_blackBBBBB(this, match, mDefinition, mSignature,
+						mAnonymous);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mSignature] = " + mSignature + ", " + "[mInstance] = " + mInstance
-					+ ", " + "[mDefinition] = " + mDefinition + ", " + "[mAnonymous] = " + mAnonymous + ".");
+					+ "[match] = " + match + ", " + "[mDefinition] = " + mDefinition + ", " + "[mSignature] = "
+					+ mSignature + ", " + "[mAnonymous] = " + mAnonymous + ".");
 		}
 
 		Object[] result2_bindingAndBlack = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, mSignature,
-						mInstance, mDefinition, mAnonymous);
+				.pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mDefinition,
+						mSignature, mAnonymous);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mSignature] = " + mSignature + ", " + "[mInstance] = " + mInstance
-					+ ", " + "[mDefinition] = " + mDefinition + ", " + "[mAnonymous] = " + mAnonymous + ".");
+					+ "[match] = " + match + ", " + "[mDefinition] = " + mDefinition + ", " + "[mSignature] = "
+					+ mSignature + ", " + "[mAnonymous] = " + mAnonymous + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = LinkDefinitionToAnonymousImpl
-					.pattern_LinkDefinitionToAnonymous_0_4_collectelementstobetranslated_blackBBBBB(match, mSignature,
-							mInstance, mDefinition, mAnonymous);
+					.pattern_LinkDefinitionToAnonymous_0_4_collectelementstobetranslated_blackBBBB(match, mDefinition,
+							mSignature, mAnonymous);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mSignature] = " + mSignature + ", " + "[mInstance] = " + mInstance + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[mAnonymous] = " + mAnonymous + ".");
+						+ "[mDefinition] = " + mDefinition + ", " + "[mSignature] = " + mSignature + ", "
+						+ "[mAnonymous] = " + mAnonymous + ".");
 			}
 			LinkDefinitionToAnonymousImpl
 					.pattern_LinkDefinitionToAnonymous_0_4_collectelementstobetranslated_greenBBBFF(match, mDefinition,
@@ -136,23 +135,21 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 			//nothing EMoflonEdge mDefinition__mAnonymous____anonymousClassDeclarationOwner = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = LinkDefinitionToAnonymousImpl
-					.pattern_LinkDefinitionToAnonymous_0_5_collectcontextelements_blackBBBBB(match, mSignature,
-							mInstance, mDefinition, mAnonymous);
+					.pattern_LinkDefinitionToAnonymous_0_5_collectcontextelements_blackBBBB(match, mDefinition,
+							mSignature, mAnonymous);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mSignature] = " + mSignature + ", " + "[mInstance] = " + mInstance + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[mAnonymous] = " + mAnonymous + ".");
+						+ "[mDefinition] = " + mDefinition + ", " + "[mSignature] = " + mSignature + ", "
+						+ "[mAnonymous] = " + mAnonymous + ".");
 			}
-			LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_0_5_collectcontextelements_greenBBBBBFFFF(
-					match, mSignature, mInstance, mDefinition, mAnonymous);
-			//nothing EMoflonEdge mInstance__mAnonymous____anonymousClassDeclaration = (EMoflonEdge) result5_green[5];
-			//nothing EMoflonEdge mAnonymous__mInstance____classInstanceCreation = (EMoflonEdge) result5_green[6];
-			//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result5_green[7];
-			//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result5_green[8];
+			LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_0_5_collectcontextelements_greenBBBBFF(
+					match, mDefinition, mSignature, mAnonymous);
+			//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result5_green[4];
+			//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result5_green[5];
 
 			// 
-			LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_0_6_registerobjectstomatch_expressionBBBBBB(
-					this, match, mSignature, mInstance, mDefinition, mAnonymous);
+			LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_0_6_registerobjectstomatch_expressionBBBBB(
+					this, match, mDefinition, mSignature, mAnonymous);
 			return LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_0_7_expressionF();
 		} else {
 			return LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_0_8_expressionF();
@@ -168,25 +165,24 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	public PerformRuleResult perform_FWD(IsApplicableMatch isApplicableMatch) {
 
 		Object[] result1_bindingAndBlack = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_1_1_performtransformation_bindingAndBlackFFFFFFFFFFFBB(this,
+				.pattern_LinkDefinitionToAnonymous_1_1_performtransformation_bindingAndBlackFFFFFFFFFFBB(this,
 						isApplicableMatch);
 		if (result1_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TMember tDefinition = (TMember) result1_bindingAndBlack[0];
-		MSignature mSignature = (MSignature) result1_bindingAndBlack[1];
-		ClassInstanceCreation mInstance = (ClassInstanceCreation) result1_bindingAndBlack[2];
-		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[3];
+		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[0];
+		TSignature tSignature = (TSignature) result1_bindingAndBlack[1];
+		MSignature mSignature = (MSignature) result1_bindingAndBlack[2];
+		AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result1_bindingAndBlack[3];
 		TClass tAnonymous = (TClass) result1_bindingAndBlack[4];
 		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_bindingAndBlack[5];
-		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_bindingAndBlack[6];
-		AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result1_bindingAndBlack[7];
+		TMember tDefinition = (TMember) result1_bindingAndBlack[6];
+		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_bindingAndBlack[7];
 		AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result1_bindingAndBlack[8];
-		TSignature tSignature = (TSignature) result1_bindingAndBlack[9];
-		//nothing CSP csp = (CSP) result1_bindingAndBlack[10];
-		LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_1_1_performtransformation_greenBBB(tDefinition,
-				tAnonymous, tSignature);
+		//nothing CSP csp = (CSP) result1_bindingAndBlack[9];
+		LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_1_1_performtransformation_greenBBB(tSignature,
+				tAnonymous, tDefinition);
 
 		Object[] result2_green = LinkDefinitionToAnonymousImpl
 				.pattern_LinkDefinitionToAnonymous_1_2_collecttranslatedelements_greenF();
@@ -196,31 +192,30 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_1_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, tDefinition,
-						mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember, mSignatureToTSignature,
-						mAnonymous, mAnonymousToTAnonymous, tSignature);
+				.pattern_LinkDefinitionToAnonymous_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, mDefinition,
+						tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+						mSignatureToTSignature, mAnonymousToTAnonymous);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tDefinition] = " + tDefinition + ", " + "[mSignature] = " + mSignature + ", "
-					+ "[mInstance] = " + mInstance + ", " + "[mDefinition] = " + mDefinition + ", " + "[tAnonymous] = "
-					+ tAnonymous + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", "
-					+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mAnonymous] = " + mAnonymous
-					+ ", " + "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ", " + "[tSignature] = "
-					+ tSignature + ".");
+					+ ", " + "[mDefinition] = " + mDefinition + ", " + "[tSignature] = " + tSignature + ", "
+					+ "[mSignature] = " + mSignature + ", " + "[mAnonymous] = " + mAnonymous + ", " + "[tAnonymous] = "
+					+ tAnonymous + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tDefinition] = "
+					+ tDefinition + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", "
+					+ "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ".");
 		}
 		LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-				ruleresult, tDefinition, mDefinition, tAnonymous, mAnonymous, tSignature);
-		//nothing EMoflonEdge tAnonymous__tSignature____signature = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge tAnonymous__tDefinition____defines = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tDefinition__tAnonymous____definedBy = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mAnonymous__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mDefinition__mAnonymous____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[10];
+				ruleresult, mDefinition, tSignature, mAnonymous, tAnonymous, tDefinition);
+		//nothing EMoflonEdge mAnonymous__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mDefinition__mAnonymous____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tAnonymous__tSignature____signature = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tAnonymous__tDefinition____defines = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge tDefinition__tAnonymous____definedBy = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
-		LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_1_5_registerobjects_expressionBBBBBBBBBBBB(this,
-				ruleresult, tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-				mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature);
+		LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_1_5_registerobjects_expressionBBBBBBBBBBB(this,
+				ruleresult, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember,
+				tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous);
 		return LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_1_6_expressionFB(ruleresult);
 	}
 
@@ -244,63 +239,58 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 
 		// ForEach 
 		Object[] result2_binding = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_2_2_corematch_bindingFFFFB(match);
+				.pattern_LinkDefinitionToAnonymous_2_2_corematch_bindingFFFB(match);
 		if (result2_binding == null) {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		MSignature mSignature = (MSignature) result2_binding[0];
-		ClassInstanceCreation mInstance = (ClassInstanceCreation) result2_binding[1];
-		MDefinition mDefinition = (MDefinition) result2_binding[2];
-		AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result2_binding[3];
+		MDefinition mDefinition = (MDefinition) result2_binding[0];
+		MSignature mSignature = (MSignature) result2_binding[1];
+		AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result2_binding[2];
 		for (Object[] result2_black : LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_2_2_corematch_blackFBBBFFFBFFB(mSignature, mInstance, mDefinition,
-						mAnonymous, match)) {
-			TMember tDefinition = (TMember) result2_black[0];
+				.pattern_LinkDefinitionToAnonymous_2_2_corematch_blackBFBBFFFFFB(mDefinition, mSignature, mAnonymous,
+						match)) {
+			TSignature tSignature = (TSignature) result2_black[1];
 			TClass tAnonymous = (TClass) result2_black[4];
 			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[5];
-			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result2_black[6];
+			TMember tDefinition = (TMember) result2_black[6];
+			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result2_black[7];
 			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result2_black[8];
-			TSignature tSignature = (TSignature) result2_black[9];
 			// ForEach 
 			for (Object[] result3_black : LinkDefinitionToAnonymousImpl
-					.pattern_LinkDefinitionToAnonymous_2_3_findcontext_blackBBBBBBBBBB(tDefinition, mSignature,
-							mInstance, mDefinition, tAnonymous, mDefinitionToTMember, mSignatureToTSignature,
-							mAnonymous, mAnonymousToTAnonymous, tSignature)) {
+					.pattern_LinkDefinitionToAnonymous_2_3_findcontext_blackBBBBBBBBB(mDefinition, tSignature,
+							mSignature, mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+							mSignatureToTSignature, mAnonymousToTAnonymous)) {
 				Object[] result3_green = LinkDefinitionToAnonymousImpl
-						.pattern_LinkDefinitionToAnonymous_2_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFFF(tDefinition,
-								mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-								mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature);
-				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[10];
-				//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mInstance__mAnonymous____anonymousClassDeclaration = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge mAnonymous__mInstance____classInstanceCreation = (EMoflonEdge) result3_green[15];
+						.pattern_LinkDefinitionToAnonymous_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFFF(mDefinition,
+								tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+								mSignatureToTSignature, mAnonymousToTAnonymous);
+				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[9];
+				//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mAnonymous__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mDefinition__mAnonymous____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[16];
 				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge mAnonymousToTAnonymous__tAnonymous____target = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge mAnonymousToTAnonymous__mAnonymous____source = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge mAnonymous__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge mDefinition__mAnonymous____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[21];
-				//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[22];
-				//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[23];
-				//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[24];
+				//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge mAnonymousToTAnonymous__tAnonymous____target = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge mAnonymousToTAnonymous__mAnonymous____source = (EMoflonEdge) result3_green[21];
 
 				Object[] result4_bindingAndBlack = LinkDefinitionToAnonymousImpl
-						.pattern_LinkDefinitionToAnonymous_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(this,
-								isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-								mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-								tSignature);
+						.pattern_LinkDefinitionToAnonymous_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
+								isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+								mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tDefinition] = " + tDefinition
-							+ ", " + "[mSignature] = " + mSignature + ", " + "[mInstance] = " + mInstance + ", "
-							+ "[mDefinition] = " + mDefinition + ", " + "[tAnonymous] = " + tAnonymous + ", "
-							+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mSignatureToTSignature] = "
-							+ mSignatureToTSignature + ", " + "[mAnonymous] = " + mAnonymous + ", "
-							+ "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ", " + "[tSignature] = "
-							+ tSignature + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mDefinition] = " + mDefinition
+							+ ", " + "[tSignature] = " + tSignature + ", " + "[mSignature] = " + mSignature + ", "
+							+ "[mAnonymous] = " + mAnonymous + ", " + "[tAnonymous] = " + tAnonymous + ", "
+							+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tDefinition] = "
+							+ tDefinition + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", "
+							+ "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -331,11 +321,10 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, MSignature mSignature, ClassInstanceCreation mInstance,
-			MDefinition mDefinition, AnonymousClassDeclaration mAnonymous) {
-		match.registerObject("mSignature", mSignature);
-		match.registerObject("mInstance", mInstance);
+	public void registerObjectsToMatch_FWD(Match match, MDefinition mDefinition, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous) {
 		match.registerObject("mDefinition", mDefinition);
+		match.registerObject("mSignature", mSignature);
 		match.registerObject("mAnonymous", mAnonymous);
 
 	}
@@ -345,8 +334,8 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, MSignature mSignature, ClassInstanceCreation mInstance,
-			MDefinition mDefinition, AnonymousClassDeclaration mAnonymous) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mDefinition, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -375,11 +364,10 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
+			TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous,
+			MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -394,16 +382,15 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tDefinition", tDefinition);
-		isApplicableMatch.registerObject("mSignature", mSignature);
-		isApplicableMatch.registerObject("mInstance", mInstance);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
+		isApplicableMatch.registerObject("tSignature", tSignature);
+		isApplicableMatch.registerObject("mSignature", mSignature);
+		isApplicableMatch.registerObject("mAnonymous", mAnonymous);
 		isApplicableMatch.registerObject("tAnonymous", tAnonymous);
 		isApplicableMatch.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		isApplicableMatch.registerObject("mSignatureToTSignature", mSignatureToTSignature);
-		isApplicableMatch.registerObject("mAnonymous", mAnonymous);
 		isApplicableMatch.registerObject("mAnonymousToTAnonymous", mAnonymousToTAnonymous);
-		isApplicableMatch.registerObject("tSignature", tSignature);
 		return csp;
 	}
 
@@ -421,19 +408,18 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tDefinition, EObject mSignature,
-			EObject mInstance, EObject mDefinition, EObject tAnonymous, EObject mDefinitionToTMember,
-			EObject mSignatureToTSignature, EObject mAnonymous, EObject mAnonymousToTAnonymous, EObject tSignature) {
-		ruleresult.registerObject("tDefinition", tDefinition);
-		ruleresult.registerObject("mSignature", mSignature);
-		ruleresult.registerObject("mInstance", mInstance);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mDefinition, EObject tSignature,
+			EObject mSignature, EObject mAnonymous, EObject tAnonymous, EObject mDefinitionToTMember,
+			EObject tDefinition, EObject mSignatureToTSignature, EObject mAnonymousToTAnonymous) {
 		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("tSignature", tSignature);
+		ruleresult.registerObject("mSignature", mSignature);
+		ruleresult.registerObject("mAnonymous", mAnonymous);
 		ruleresult.registerObject("tAnonymous", tAnonymous);
 		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		ruleresult.registerObject("tDefinition", tDefinition);
 		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
-		ruleresult.registerObject("mAnonymous", mAnonymous);
 		ruleresult.registerObject("mAnonymousToTAnonymous", mAnonymousToTAnonymous);
-		ruleresult.registerObject("tSignature", tSignature);
 
 	}
 
@@ -451,60 +437,60 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TMember tDefinition, TClass tAnonymous, TSignature tSignature) {
+	public boolean isAppropriate_BWD(Match match, TSignature tSignature, TClass tAnonymous, TMember tDefinition) {
 
 		Object[] result1_black = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_10_1_initialbindings_blackBBBBB(this, match, tDefinition, tAnonymous,
-						tSignature);
+				.pattern_LinkDefinitionToAnonymous_10_1_initialbindings_blackBBBBB(this, match, tSignature, tAnonymous,
+						tDefinition);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tDefinition] = " + tDefinition + ", " + "[tAnonymous] = "
-					+ tAnonymous + ", " + "[tSignature] = " + tSignature + ".");
+					+ "[match] = " + match + ", " + "[tSignature] = " + tSignature + ", " + "[tAnonymous] = "
+					+ tAnonymous + ", " + "[tDefinition] = " + tDefinition + ".");
 		}
 
 		Object[] result2_bindingAndBlack = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tDefinition,
-						tAnonymous, tSignature);
+				.pattern_LinkDefinitionToAnonymous_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tSignature,
+						tAnonymous, tDefinition);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tDefinition] = " + tDefinition + ", " + "[tAnonymous] = "
-					+ tAnonymous + ", " + "[tSignature] = " + tSignature + ".");
+					+ "[match] = " + match + ", " + "[tSignature] = " + tSignature + ", " + "[tAnonymous] = "
+					+ tAnonymous + ", " + "[tDefinition] = " + tDefinition + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = LinkDefinitionToAnonymousImpl
-					.pattern_LinkDefinitionToAnonymous_10_4_collectelementstobetranslated_blackBBBB(match, tDefinition,
-							tAnonymous, tSignature);
+					.pattern_LinkDefinitionToAnonymous_10_4_collectelementstobetranslated_blackBBBB(match, tSignature,
+							tAnonymous, tDefinition);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tDefinition] = " + tDefinition + ", " + "[tAnonymous] = " + tAnonymous + ", "
-						+ "[tSignature] = " + tSignature + ".");
+						+ "[tSignature] = " + tSignature + ", " + "[tAnonymous] = " + tAnonymous + ", "
+						+ "[tDefinition] = " + tDefinition + ".");
 			}
 			LinkDefinitionToAnonymousImpl
 					.pattern_LinkDefinitionToAnonymous_10_4_collectelementstobetranslated_greenBBBBFFF(match,
-							tDefinition, tAnonymous, tSignature);
+							tSignature, tAnonymous, tDefinition);
 			//nothing EMoflonEdge tAnonymous__tSignature____signature = (EMoflonEdge) result4_green[4];
 			//nothing EMoflonEdge tAnonymous__tDefinition____defines = (EMoflonEdge) result4_green[5];
 			//nothing EMoflonEdge tDefinition__tAnonymous____definedBy = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = LinkDefinitionToAnonymousImpl
-					.pattern_LinkDefinitionToAnonymous_10_5_collectcontextelements_blackBBBB(match, tDefinition,
-							tAnonymous, tSignature);
+					.pattern_LinkDefinitionToAnonymous_10_5_collectcontextelements_blackBBBB(match, tSignature,
+							tAnonymous, tDefinition);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tDefinition] = " + tDefinition + ", " + "[tAnonymous] = " + tAnonymous + ", "
-						+ "[tSignature] = " + tSignature + ".");
+						+ "[tSignature] = " + tSignature + ", " + "[tAnonymous] = " + tAnonymous + ", "
+						+ "[tDefinition] = " + tDefinition + ".");
 			}
 			LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_10_5_collectcontextelements_greenBBBBFF(
-					match, tDefinition, tAnonymous, tSignature);
+					match, tSignature, tAnonymous, tDefinition);
 			//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result5_green[4];
 			//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result5_green[5];
 
 			// 
 			LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_10_6_registerobjectstomatch_expressionBBBBB(
-					this, match, tDefinition, tAnonymous, tSignature);
+					this, match, tSignature, tAnonymous, tDefinition);
 			return LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_10_7_expressionF();
 		} else {
 			return LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_10_8_expressionF();
@@ -520,23 +506,22 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	public PerformRuleResult perform_BWD(IsApplicableMatch isApplicableMatch) {
 
 		Object[] result1_bindingAndBlack = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_11_1_performtransformation_bindingAndBlackFFFFFFFFFFFBB(this,
+				.pattern_LinkDefinitionToAnonymous_11_1_performtransformation_bindingAndBlackFFFFFFFFFFBB(this,
 						isApplicableMatch);
 		if (result1_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TMember tDefinition = (TMember) result1_bindingAndBlack[0];
-		MSignature mSignature = (MSignature) result1_bindingAndBlack[1];
-		ClassInstanceCreation mInstance = (ClassInstanceCreation) result1_bindingAndBlack[2];
-		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[3];
+		MDefinition mDefinition = (MDefinition) result1_bindingAndBlack[0];
+		TSignature tSignature = (TSignature) result1_bindingAndBlack[1];
+		MSignature mSignature = (MSignature) result1_bindingAndBlack[2];
+		AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result1_bindingAndBlack[3];
 		TClass tAnonymous = (TClass) result1_bindingAndBlack[4];
 		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_bindingAndBlack[5];
-		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_bindingAndBlack[6];
-		AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result1_bindingAndBlack[7];
+		TMember tDefinition = (TMember) result1_bindingAndBlack[6];
+		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_bindingAndBlack[7];
 		AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result1_bindingAndBlack[8];
-		TSignature tSignature = (TSignature) result1_bindingAndBlack[9];
-		//nothing CSP csp = (CSP) result1_bindingAndBlack[10];
+		//nothing CSP csp = (CSP) result1_bindingAndBlack[9];
 		LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_11_1_performtransformation_greenBB(mDefinition,
 				mAnonymous);
 
@@ -548,31 +533,30 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_11_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, tDefinition,
-						mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember, mSignatureToTSignature,
-						mAnonymous, mAnonymousToTAnonymous, tSignature);
+				.pattern_LinkDefinitionToAnonymous_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, mDefinition,
+						tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+						mSignatureToTSignature, mAnonymousToTAnonymous);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tDefinition] = " + tDefinition + ", " + "[mSignature] = " + mSignature + ", "
-					+ "[mInstance] = " + mInstance + ", " + "[mDefinition] = " + mDefinition + ", " + "[tAnonymous] = "
-					+ tAnonymous + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", "
-					+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mAnonymous] = " + mAnonymous
-					+ ", " + "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ", " + "[tSignature] = "
-					+ tSignature + ".");
+					+ ", " + "[mDefinition] = " + mDefinition + ", " + "[tSignature] = " + tSignature + ", "
+					+ "[mSignature] = " + mSignature + ", " + "[mAnonymous] = " + mAnonymous + ", " + "[tAnonymous] = "
+					+ tAnonymous + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tDefinition] = "
+					+ tDefinition + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", "
+					+ "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ".");
 		}
 		LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-				ruleresult, tDefinition, mDefinition, tAnonymous, mAnonymous, tSignature);
-		//nothing EMoflonEdge tAnonymous__tSignature____signature = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge tAnonymous__tDefinition____defines = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tDefinition__tAnonymous____definedBy = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mAnonymous__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mDefinition__mAnonymous____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[10];
+				ruleresult, mDefinition, tSignature, mAnonymous, tAnonymous, tDefinition);
+		//nothing EMoflonEdge mAnonymous__mDefinition____bodyDeclarations = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mDefinition__mAnonymous____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tAnonymous__tSignature____signature = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tAnonymous__tDefinition____defines = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge tDefinition__tAnonymous____definedBy = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
-		LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_11_5_registerobjects_expressionBBBBBBBBBBBB(
-				this, ruleresult, tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-				mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature);
+		LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_11_5_registerobjects_expressionBBBBBBBBBBB(this,
+				ruleresult, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember,
+				tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous);
 		return LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_11_6_expressionFB(ruleresult);
 	}
 
@@ -601,59 +585,54 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TMember tDefinition = (TMember) result2_binding[0];
+		TSignature tSignature = (TSignature) result2_binding[0];
 		TClass tAnonymous = (TClass) result2_binding[1];
-		TSignature tSignature = (TSignature) result2_binding[2];
+		TMember tDefinition = (TMember) result2_binding[2];
 		for (Object[] result2_black : LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_12_2_corematch_blackBFFBFFFFBB(tDefinition, tAnonymous, tSignature,
+				.pattern_LinkDefinitionToAnonymous_12_2_corematch_blackFBFFBFBFFB(tSignature, tAnonymous, tDefinition,
 						match)) {
-			MSignature mSignature = (MSignature) result2_black[1];
-			MDefinition mDefinition = (MDefinition) result2_black[2];
-			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[4];
-			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result2_black[5];
-			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result2_black[6];
-			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result2_black[7];
+			MDefinition mDefinition = (MDefinition) result2_black[0];
+			MSignature mSignature = (MSignature) result2_black[2];
+			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result2_black[3];
+			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[5];
+			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result2_black[7];
+			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result2_black[8];
 			// ForEach 
 			for (Object[] result3_black : LinkDefinitionToAnonymousImpl
-					.pattern_LinkDefinitionToAnonymous_12_3_findcontext_blackBBFBBBBBBB(tDefinition, mSignature,
-							mDefinition, tAnonymous, mDefinitionToTMember, mSignatureToTSignature, mAnonymous,
-							mAnonymousToTAnonymous, tSignature)) {
-				ClassInstanceCreation mInstance = (ClassInstanceCreation) result3_black[2];
+					.pattern_LinkDefinitionToAnonymous_12_3_findcontext_blackBBBBBBBBB(mDefinition, tSignature,
+							mSignature, mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+							mSignatureToTSignature, mAnonymousToTAnonymous)) {
 				Object[] result3_green = LinkDefinitionToAnonymousImpl
-						.pattern_LinkDefinitionToAnonymous_12_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFFFF(tDefinition,
-								mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-								mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature);
-				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[10];
-				//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge tAnonymous__tSignature____signature = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge mInstance__mAnonymous____anonymousClassDeclaration = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge mAnonymous__mInstance____classInstanceCreation = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge tAnonymous__tDefinition____defines = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge tDefinition__tAnonymous____definedBy = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[20];
+						.pattern_LinkDefinitionToAnonymous_12_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFFFF(mDefinition,
+								tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+								mSignatureToTSignature, mAnonymousToTAnonymous);
+				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[9];
+				//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge tAnonymous__tSignature____signature = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tAnonymous__tDefinition____defines = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge tDefinition__tAnonymous____definedBy = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[20];
 				//nothing EMoflonEdge mAnonymousToTAnonymous__tAnonymous____target = (EMoflonEdge) result3_green[21];
 				//nothing EMoflonEdge mAnonymousToTAnonymous__mAnonymous____source = (EMoflonEdge) result3_green[22];
-				//nothing EMoflonEdge tSignature__tDefinition____definitions = (EMoflonEdge) result3_green[23];
-				//nothing EMoflonEdge tDefinition__tSignature____signature = (EMoflonEdge) result3_green[24];
-				//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[25];
 
 				Object[] result4_bindingAndBlack = LinkDefinitionToAnonymousImpl
-						.pattern_LinkDefinitionToAnonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(this,
-								isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-								mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-								tSignature);
+						.pattern_LinkDefinitionToAnonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
+								isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+								mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tDefinition] = " + tDefinition
-							+ ", " + "[mSignature] = " + mSignature + ", " + "[mInstance] = " + mInstance + ", "
-							+ "[mDefinition] = " + mDefinition + ", " + "[tAnonymous] = " + tAnonymous + ", "
-							+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mSignatureToTSignature] = "
-							+ mSignatureToTSignature + ", " + "[mAnonymous] = " + mAnonymous + ", "
-							+ "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ", " + "[tSignature] = "
-							+ tSignature + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mDefinition] = " + mDefinition
+							+ ", " + "[tSignature] = " + tSignature + ", " + "[mSignature] = " + mSignature + ", "
+							+ "[mAnonymous] = " + mAnonymous + ", " + "[tAnonymous] = " + tAnonymous + ", "
+							+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tDefinition] = "
+							+ tDefinition + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", "
+							+ "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -684,10 +663,10 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TMember tDefinition, TClass tAnonymous, TSignature tSignature) {
-		match.registerObject("tDefinition", tDefinition);
-		match.registerObject("tAnonymous", tAnonymous);
+	public void registerObjectsToMatch_BWD(Match match, TSignature tSignature, TClass tAnonymous, TMember tDefinition) {
 		match.registerObject("tSignature", tSignature);
+		match.registerObject("tAnonymous", tAnonymous);
+		match.registerObject("tDefinition", tDefinition);
 
 	}
 
@@ -696,7 +675,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TMember tDefinition, TClass tAnonymous, TSignature tSignature) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TSignature tSignature, TClass tAnonymous, TMember tDefinition) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -725,11 +704,10 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
+			TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous,
+			MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -744,16 +722,15 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tDefinition", tDefinition);
-		isApplicableMatch.registerObject("mSignature", mSignature);
-		isApplicableMatch.registerObject("mInstance", mInstance);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
+		isApplicableMatch.registerObject("tSignature", tSignature);
+		isApplicableMatch.registerObject("mSignature", mSignature);
+		isApplicableMatch.registerObject("mAnonymous", mAnonymous);
 		isApplicableMatch.registerObject("tAnonymous", tAnonymous);
 		isApplicableMatch.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		isApplicableMatch.registerObject("mSignatureToTSignature", mSignatureToTSignature);
-		isApplicableMatch.registerObject("mAnonymous", mAnonymous);
 		isApplicableMatch.registerObject("mAnonymousToTAnonymous", mAnonymousToTAnonymous);
-		isApplicableMatch.registerObject("tSignature", tSignature);
 		return csp;
 	}
 
@@ -771,19 +748,18 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tDefinition, EObject mSignature,
-			EObject mInstance, EObject mDefinition, EObject tAnonymous, EObject mDefinitionToTMember,
-			EObject mSignatureToTSignature, EObject mAnonymous, EObject mAnonymousToTAnonymous, EObject tSignature) {
-		ruleresult.registerObject("tDefinition", tDefinition);
-		ruleresult.registerObject("mSignature", mSignature);
-		ruleresult.registerObject("mInstance", mInstance);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mDefinition, EObject tSignature,
+			EObject mSignature, EObject mAnonymous, EObject tAnonymous, EObject mDefinitionToTMember,
+			EObject tDefinition, EObject mSignatureToTSignature, EObject mAnonymousToTAnonymous) {
 		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("tSignature", tSignature);
+		ruleresult.registerObject("mSignature", mSignature);
+		ruleresult.registerObject("mAnonymous", mAnonymous);
 		ruleresult.registerObject("tAnonymous", tAnonymous);
 		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		ruleresult.registerObject("tDefinition", tDefinition);
 		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
-		ruleresult.registerObject("mAnonymous", mAnonymous);
 		ruleresult.registerObject("mAnonymousToTAnonymous", mAnonymousToTAnonymous);
-		ruleresult.registerObject("tSignature", tSignature);
 
 	}
 
@@ -801,7 +777,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_56(EMoflonEdge _edge_signature) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_158(EMoflonEdge _edge_signature) {
 
 		Object[] result1_bindingAndBlack = LinkDefinitionToAnonymousImpl
 				.pattern_LinkDefinitionToAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -818,9 +794,9 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		// ForEach 
 		for (Object[] result2_black : LinkDefinitionToAnonymousImpl
 				.pattern_LinkDefinitionToAnonymous_20_2_testcorematchandDECs_blackFFFB(_edge_signature)) {
-			TMember tDefinition = (TMember) result2_black[0];
+			TSignature tSignature = (TSignature) result2_black[0];
 			TClass tAnonymous = (TClass) result2_black[1];
-			TSignature tSignature = (TSignature) result2_black[2];
+			TMember tDefinition = (TMember) result2_black[2];
 			Object[] result2_green = LinkDefinitionToAnonymousImpl
 					.pattern_LinkDefinitionToAnonymous_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -828,7 +804,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 			// 
 			if (LinkDefinitionToAnonymousImpl
 					.pattern_LinkDefinitionToAnonymous_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, tDefinition, tAnonymous, tSignature)) {
+							this, match, tSignature, tAnonymous, tDefinition)) {
 				// 
 				if (LinkDefinitionToAnonymousImpl
 						.pattern_LinkDefinitionToAnonymous_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -860,7 +836,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_56(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_169(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = LinkDefinitionToAnonymousImpl
 				.pattern_LinkDefinitionToAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -876,19 +852,18 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 
 		// ForEach 
 		for (Object[] result2_black : LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_21_2_testcorematchandDECs_blackFFFFB(_edge_bodyDeclarations)) {
-			MSignature mSignature = (MSignature) result2_black[0];
-			ClassInstanceCreation mInstance = (ClassInstanceCreation) result2_black[1];
-			MDefinition mDefinition = (MDefinition) result2_black[2];
-			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result2_black[3];
+				.pattern_LinkDefinitionToAnonymous_21_2_testcorematchandDECs_blackFFFB(_edge_bodyDeclarations)) {
+			MDefinition mDefinition = (MDefinition) result2_black[0];
+			MSignature mSignature = (MSignature) result2_black[1];
+			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result2_black[2];
 			Object[] result2_green = LinkDefinitionToAnonymousImpl
 					.pattern_LinkDefinitionToAnonymous_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (LinkDefinitionToAnonymousImpl
-					.pattern_LinkDefinitionToAnonymous_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-							this, match, mSignature, mInstance, mDefinition, mAnonymous)) {
+					.pattern_LinkDefinitionToAnonymous_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
+							this, match, mDefinition, mSignature, mAnonymous)) {
 				// 
 				if (LinkDefinitionToAnonymousImpl
 						.pattern_LinkDefinitionToAnonymous_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -991,55 +966,52 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[0];
 
 		Object[] result2_bindingAndBlack = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFBB(sourceMatch,
+				.pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(sourceMatch,
 						targetMatch);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TMember tDefinition = (TMember) result2_bindingAndBlack[0];
-		MSignature mSignature = (MSignature) result2_bindingAndBlack[1];
-		ClassInstanceCreation mInstance = (ClassInstanceCreation) result2_bindingAndBlack[2];
-		MDefinition mDefinition = (MDefinition) result2_bindingAndBlack[3];
+		MDefinition mDefinition = (MDefinition) result2_bindingAndBlack[0];
+		TSignature tSignature = (TSignature) result2_bindingAndBlack[1];
+		MSignature mSignature = (MSignature) result2_bindingAndBlack[2];
+		AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result2_bindingAndBlack[3];
 		TClass tAnonymous = (TClass) result2_bindingAndBlack[4];
-		AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result2_bindingAndBlack[5];
-		TSignature tSignature = (TSignature) result2_bindingAndBlack[6];
+		TMember tDefinition = (TMember) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, tDefinition,
-						mSignature, mInstance, mDefinition, tAnonymous, mAnonymous, tSignature, sourceMatch,
-						targetMatch);
+				.pattern_LinkDefinitionToAnonymous_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, mDefinition,
+						tSignature, mSignature, mAnonymous, tAnonymous, tDefinition, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tDefinition] = " + tDefinition + ", " + "[mSignature] = " + mSignature + ", " + "[mInstance] = "
-					+ mInstance + ", " + "[mDefinition] = " + mDefinition + ", " + "[tAnonymous] = " + tAnonymous + ", "
-					+ "[mAnonymous] = " + mAnonymous + ", " + "[tSignature] = " + tSignature + ", " + "[sourceMatch] = "
-					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[mDefinition] = " + mDefinition + ", " + "[tSignature] = " + tSignature + ", "
+					+ "[mSignature] = " + mSignature + ", " + "[mAnonymous] = " + mAnonymous + ", " + "[tAnonymous] = "
+					+ tAnonymous + ", " + "[tDefinition] = " + tDefinition + ", " + "[sourceMatch] = " + sourceMatch
+					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : LinkDefinitionToAnonymousImpl
-					.pattern_LinkDefinitionToAnonymous_24_5_matchcorrcontext_blackBBBBFFBFBBB(tDefinition, mSignature,
-							mDefinition, tAnonymous, mAnonymous, tSignature, sourceMatch, targetMatch)) {
-				MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result5_black[4];
-				MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result5_black[5];
-				AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result5_black[7];
+					.pattern_LinkDefinitionToAnonymous_24_5_matchcorrcontext_blackBBBBBFBFFBB(mDefinition, tSignature,
+							mSignature, mAnonymous, tAnonymous, tDefinition, sourceMatch, targetMatch)) {
+				MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result5_black[5];
+				MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result5_black[7];
+				AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result5_black[8];
 				Object[] result5_green = LinkDefinitionToAnonymousImpl
 						.pattern_LinkDefinitionToAnonymous_24_5_matchcorrcontext_greenBBBBBF(mDefinitionToTMember,
 								mSignatureToTSignature, mAnonymousToTAnonymous, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[5];
 
 				Object[] result6_black = LinkDefinitionToAnonymousImpl
-						.pattern_LinkDefinitionToAnonymous_24_6_createcorrespondence_blackBBBBBBBB(tDefinition,
-								mSignature, mInstance, mDefinition, tAnonymous, mAnonymous, tSignature, ccMatch);
+						.pattern_LinkDefinitionToAnonymous_24_6_createcorrespondence_blackBBBBBBB(mDefinition,
+								tSignature, mSignature, mAnonymous, tAnonymous, tDefinition, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tDefinition] = "
-							+ tDefinition + ", " + "[mSignature] = " + mSignature + ", " + "[mInstance] = " + mInstance
-							+ ", " + "[mDefinition] = " + mDefinition + ", " + "[tAnonymous] = " + tAnonymous + ", "
-							+ "[mAnonymous] = " + mAnonymous + ", " + "[tSignature] = " + tSignature + ", "
-							+ "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mDefinition] = "
+							+ mDefinition + ", " + "[tSignature] = " + tSignature + ", " + "[mSignature] = "
+							+ mSignature + ", " + "[mAnonymous] = " + mAnonymous + ", " + "[tAnonymous] = " + tAnonymous
+							+ ", " + "[tDefinition] = " + tDefinition + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = LinkDefinitionToAnonymousImpl
@@ -1063,9 +1035,9 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TMember tDefinition, MSignature mSignature, ClassInstanceCreation mInstance,
-			MDefinition mDefinition, TClass tAnonymous, AnonymousClassDeclaration mAnonymous, TSignature tSignature,
-			Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(MDefinition mDefinition, TSignature tSignature, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous, TClass tAnonymous, TMember tDefinition, Match sourceMatch,
+			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1094,11 +1066,9 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous) {// 
+	public boolean checkDEC_FWD(MDefinition mDefinition, MSignature mSignature, AnonymousClassDeclaration mAnonymous) {// 
 		Object[] result1_black = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_27_1_matchtggpattern_blackBBBB(mSignature, mInstance, mDefinition,
-						mAnonymous);
+				.pattern_LinkDefinitionToAnonymous_27_1_matchtggpattern_blackBBB(mDefinition, mSignature, mAnonymous);
 		if (result1_black != null) {
 			return LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_27_2_expressionF();
 		} else {
@@ -1112,9 +1082,9 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TMember tDefinition, TClass tAnonymous, TSignature tSignature) {// 
+	public boolean checkDEC_BWD(TSignature tSignature, TClass tAnonymous, TMember tDefinition) {// 
 		Object[] result1_black = LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_28_1_matchtggpattern_blackBBB(tDefinition, tAnonymous, tSignature);
+				.pattern_LinkDefinitionToAnonymous_28_1_matchtggpattern_blackBBB(tSignature, tAnonymous, tDefinition);
 		if (result1_black != null) {
 			return LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_28_2_expressionF();
 		} else {
@@ -1144,35 +1114,34 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 
 		// ForEach 
 		for (Object[] result2_black : LinkDefinitionToAnonymousImpl
-				.pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_blackFFFFFFFFFFFFBB(ruleEntryContainer,
+				.pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_blackFFFFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList mDefinitionToTMemberList = (RuleEntryList) result2_black[0];
-			TMember tDefinition = (TMember) result2_black[1];
+			MDefinition mDefinition = (MDefinition) result2_black[1];
 			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[2];
-			MDefinition mDefinition = (MDefinition) result2_black[3];
-			MSignature mSignature = (MSignature) result2_black[4];
+			TMember tDefinition = (TMember) result2_black[3];
+			TSignature tSignature = (TSignature) result2_black[4];
 			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result2_black[5];
-			TSignature tSignature = (TSignature) result2_black[6];
+			MSignature mSignature = (MSignature) result2_black[6];
 			//nothing RuleEntryList mAnonymousToTAnonymousList = (RuleEntryList) result2_black[7];
-			ClassInstanceCreation mInstance = (ClassInstanceCreation) result2_black[8];
-			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result2_black[9];
-			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result2_black[10];
-			TClass tAnonymous = (TClass) result2_black[11];
+			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result2_black[8];
+			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result2_black[9];
+			TClass tAnonymous = (TClass) result2_black[10];
 
 			Object[] result3_bindingAndBlack = LinkDefinitionToAnonymousImpl
-					.pattern_LinkDefinitionToAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBBB(this,
-							isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-							mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-							tSignature, ruleResult);
+					.pattern_LinkDefinitionToAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBB(this,
+							isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+							mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous,
+							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tDefinition] = " + tDefinition + ", "
-						+ "[mSignature] = " + mSignature + ", " + "[mInstance] = " + mInstance + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[tAnonymous] = " + tAnonymous + ", "
-						+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mSignatureToTSignature] = "
-						+ mSignatureToTSignature + ", " + "[mAnonymous] = " + mAnonymous + ", "
-						+ "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ", " + "[tSignature] = " + tSignature
-						+ ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mDefinition] = " + mDefinition + ", "
+						+ "[tSignature] = " + tSignature + ", " + "[mSignature] = " + mSignature + ", "
+						+ "[mAnonymous] = " + mAnonymous + ", " + "[tAnonymous] = " + tAnonymous + ", "
+						+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tDefinition] = " + tDefinition
+						+ ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", "
+						+ "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ", " + "[ruleResult] = " + ruleResult
+						+ ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1180,26 +1149,26 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 					csp)) {
 				// 
 				Object[] result5_black = LinkDefinitionToAnonymousImpl
-						.pattern_LinkDefinitionToAnonymous_29_5_checknacs_blackBBBBBBBBBB(tDefinition, mSignature,
-								mInstance, mDefinition, tAnonymous, mDefinitionToTMember, mSignatureToTSignature,
-								mAnonymous, mAnonymousToTAnonymous, tSignature);
+						.pattern_LinkDefinitionToAnonymous_29_5_checknacs_blackBBBBBBBBB(mDefinition, tSignature,
+								mSignature, mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+								mSignatureToTSignature, mAnonymousToTAnonymous);
 				if (result5_black != null) {
 
 					Object[] result6_black = LinkDefinitionToAnonymousImpl
-							.pattern_LinkDefinitionToAnonymous_29_6_perform_blackBBBBBBBBBBB(tDefinition, mSignature,
-									mInstance, mDefinition, tAnonymous, mDefinitionToTMember, mSignatureToTSignature,
-									mAnonymous, mAnonymousToTAnonymous, tSignature, ruleResult);
+							.pattern_LinkDefinitionToAnonymous_29_6_perform_blackBBBBBBBBBB(mDefinition, tSignature,
+									mSignature, mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+									mSignatureToTSignature, mAnonymousToTAnonymous, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tDefinition] = "
-								+ tDefinition + ", " + "[mSignature] = " + mSignature + ", " + "[mInstance] = "
-								+ mInstance + ", " + "[mDefinition] = " + mDefinition + ", " + "[tAnonymous] = "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mDefinition] = "
+								+ mDefinition + ", " + "[tSignature] = " + tSignature + ", " + "[mSignature] = "
+								+ mSignature + ", " + "[mAnonymous] = " + mAnonymous + ", " + "[tAnonymous] = "
 								+ tAnonymous + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", "
-								+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[mAnonymous] = "
-								+ mAnonymous + ", " + "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous + ", "
-								+ "[tSignature] = " + tSignature + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ "[tDefinition] = " + tDefinition + ", " + "[mSignatureToTSignature] = "
+								+ mSignatureToTSignature + ", " + "[mAnonymousToTAnonymous] = " + mAnonymousToTAnonymous
+								+ ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					LinkDefinitionToAnonymousImpl.pattern_LinkDefinitionToAnonymous_29_6_perform_greenBBBBBB(
-							tDefinition, mDefinition, tAnonymous, mAnonymous, tSignature, ruleResult);
+							mDefinition, tSignature, mAnonymous, tAnonymous, tDefinition, ruleResult);
 
 				} else {
 				}
@@ -1216,11 +1185,11 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
+			TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous,
+			MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1235,16 +1204,15 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tDefinition", tDefinition);
-		isApplicableMatch.registerObject("mSignature", mSignature);
-		isApplicableMatch.registerObject("mInstance", mInstance);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
+		isApplicableMatch.registerObject("tSignature", tSignature);
+		isApplicableMatch.registerObject("mSignature", mSignature);
+		isApplicableMatch.registerObject("mAnonymous", mAnonymous);
 		isApplicableMatch.registerObject("tAnonymous", tAnonymous);
 		isApplicableMatch.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		isApplicableMatch.registerObject("mSignatureToTSignature", mSignatureToTSignature);
-		isApplicableMatch.registerObject("mAnonymous", mAnonymous);
 		isApplicableMatch.registerObject("mAnonymousToTAnonymous", mAnonymousToTAnonymous);
-		isApplicableMatch.registerObject("tSignature", tSignature);
 		return csp;
 	}
 
@@ -1265,124 +1233,121 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_FWD__MATCH_MSIGNATURE_CLASSINSTANCECREATION_MDEFINITION_ANONYMOUSCLASSDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (MSignature) arguments.get(1),
-					(ClassInstanceCreation) arguments.get(2), (MDefinition) arguments.get(3),
-					(AnonymousClassDeclaration) arguments.get(4));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_FWD__MATCH_MDEFINITION_MSIGNATURE_ANONYMOUSCLASSDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
+					(MSignature) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MSIGNATURE_CLASSINSTANCECREATION_MDEFINITION_ANONYMOUSCLASSDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MSignature) arguments.get(1),
-					(ClassInstanceCreation) arguments.get(2), (MDefinition) arguments.get(3),
-					(AnonymousClassDeclaration) arguments.get(4));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MDEFINITION_MSIGNATURE_ANONYMOUSCLASSDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
+					(MSignature) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3));
 			return null;
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MSIGNATURE_CLASSINSTANCECREATION_MDEFINITION_ANONYMOUSCLASSDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MSignature) arguments.get(1),
-					(ClassInstanceCreation) arguments.get(2), (MDefinition) arguments.get(3),
-					(AnonymousClassDeclaration) arguments.get(4));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MDEFINITION_MSIGNATURE_ANONYMOUSCLASSDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
+					(MSignature) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TMEMBER_MSIGNATURE_CLASSINSTANCECREATION_MDEFINITION_TCLASS_MDEFINITIONTOTMEMBER_MSIGNATURETOTSIGNATURE_ANONYMOUSCLASSDECLARATION_ANONYMOUSCLASSDECLARATIONTOTCLASS_TSIGNATURE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TMember) arguments.get(1),
-					(MSignature) arguments.get(2), (ClassInstanceCreation) arguments.get(3),
-					(MDefinition) arguments.get(4), (TClass) arguments.get(5), (MDefinitionToTMember) arguments.get(6),
-					(MSignatureToTSignature) arguments.get(7), (AnonymousClassDeclaration) arguments.get(8),
-					(AnonymousClassDeclarationToTClass) arguments.get(9), (TSignature) arguments.get(10));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MDEFINITION_TSIGNATURE_MSIGNATURE_ANONYMOUSCLASSDECLARATION_TCLASS_MDEFINITIONTOTMEMBER_TMEMBER_MSIGNATURETOTSIGNATURE_ANONYMOUSCLASSDECLARATIONTOTCLASS:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MDefinition) arguments.get(1),
+					(TSignature) arguments.get(2), (MSignature) arguments.get(3),
+					(AnonymousClassDeclaration) arguments.get(4), (TClass) arguments.get(5),
+					(MDefinitionToTMember) arguments.get(6), (TMember) arguments.get(7),
+					(MSignatureToTSignature) arguments.get(8), (AnonymousClassDeclarationToTClass) arguments.get(9));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
 					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
 					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+					(EObject) arguments.get(8), (EObject) arguments.get(9));
 			return null;
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TCLASS_TSIGNATURE:
-			return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TClass) arguments.get(2),
-					(TSignature) arguments.get(3));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_BWD__MATCH_TSIGNATURE_TCLASS_TMEMBER:
+			return isAppropriate_BWD((Match) arguments.get(0), (TSignature) arguments.get(1), (TClass) arguments.get(2),
+					(TMember) arguments.get(3));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TCLASS_TSIGNATURE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TClass) arguments.get(2),
-					(TSignature) arguments.get(3));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TSIGNATURE_TCLASS_TMEMBER:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TSignature) arguments.get(1),
+					(TClass) arguments.get(2), (TMember) arguments.get(3));
 			return null;
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TCLASS_TSIGNATURE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
-					(TClass) arguments.get(2), (TSignature) arguments.get(3));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TSIGNATURE_TCLASS_TMEMBER:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TSignature) arguments.get(1),
+					(TClass) arguments.get(2), (TMember) arguments.get(3));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMEMBER_MSIGNATURE_CLASSINSTANCECREATION_MDEFINITION_TCLASS_MDEFINITIONTOTMEMBER_MSIGNATURETOTSIGNATURE_ANONYMOUSCLASSDECLARATION_ANONYMOUSCLASSDECLARATIONTOTCLASS_TSIGNATURE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TMember) arguments.get(1),
-					(MSignature) arguments.get(2), (ClassInstanceCreation) arguments.get(3),
-					(MDefinition) arguments.get(4), (TClass) arguments.get(5), (MDefinitionToTMember) arguments.get(6),
-					(MSignatureToTSignature) arguments.get(7), (AnonymousClassDeclaration) arguments.get(8),
-					(AnonymousClassDeclarationToTClass) arguments.get(9), (TSignature) arguments.get(10));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITION_TSIGNATURE_MSIGNATURE_ANONYMOUSCLASSDECLARATION_TCLASS_MDEFINITIONTOTMEMBER_TMEMBER_MSIGNATURETOTSIGNATURE_ANONYMOUSCLASSDECLARATIONTOTCLASS:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MDefinition) arguments.get(1),
+					(TSignature) arguments.get(2), (MSignature) arguments.get(3),
+					(AnonymousClassDeclaration) arguments.get(4), (TClass) arguments.get(5),
+					(MDefinitionToTMember) arguments.get(6), (TMember) arguments.get(7),
+					(MSignatureToTSignature) arguments.get(8), (AnonymousClassDeclarationToTClass) arguments.get(9));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
 			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
 					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
 					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+					(EObject) arguments.get(8), (EObject) arguments.get(9));
 			return null;
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_56__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_56((EMoflonEdge) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_56__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_56((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_158__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_158((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_169__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_169((EMoflonEdge) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__TMEMBER_MSIGNATURE_CLASSINSTANCECREATION_MDEFINITION_TCLASS_ANONYMOUSCLASSDECLARATION_TSIGNATURE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TMember) arguments.get(0), (MSignature) arguments.get(1),
-					(ClassInstanceCreation) arguments.get(2), (MDefinition) arguments.get(3), (TClass) arguments.get(4),
-					(AnonymousClassDeclaration) arguments.get(5), (TSignature) arguments.get(6),
-					(Match) arguments.get(7), (Match) arguments.get(8));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__MDEFINITION_TSIGNATURE_MSIGNATURE_ANONYMOUSCLASSDECLARATION_TCLASS_TMEMBER_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((MDefinition) arguments.get(0), (TSignature) arguments.get(1),
+					(MSignature) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3),
+					(TClass) arguments.get(4), (TMember) arguments.get(5), (Match) arguments.get(6),
+					(Match) arguments.get(7));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_DEC_FWD__MSIGNATURE_CLASSINSTANCECREATION_MDEFINITION_ANONYMOUSCLASSDECLARATION:
-			return checkDEC_FWD((MSignature) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
-					(MDefinition) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_DEC_BWD__TMEMBER_TCLASS_TSIGNATURE:
-			return checkDEC_BWD((TMember) arguments.get(0), (TClass) arguments.get(1), (TSignature) arguments.get(2));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_DEC_FWD__MDEFINITION_MSIGNATURE_ANONYMOUSCLASSDECLARATION:
+			return checkDEC_FWD((MDefinition) arguments.get(0), (MSignature) arguments.get(1),
+					(AnonymousClassDeclaration) arguments.get(2));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_DEC_BWD__TSIGNATURE_TCLASS_TMEMBER:
+			return checkDEC_BWD((TSignature) arguments.get(0), (TClass) arguments.get(1), (TMember) arguments.get(2));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER_ANONYMOUSCLASSDECLARATIONTOTCLASS:
 			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1),
 					(AnonymousClassDeclarationToTClass) arguments.get(2));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMEMBER_MSIGNATURE_CLASSINSTANCECREATION_MDEFINITION_TCLASS_MDEFINITIONTOTMEMBER_MSIGNATURETOTSIGNATURE_ANONYMOUSCLASSDECLARATION_ANONYMOUSCLASSDECLARATIONTOTCLASS_TSIGNATURE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TMember) arguments.get(1),
-					(MSignature) arguments.get(2), (ClassInstanceCreation) arguments.get(3),
-					(MDefinition) arguments.get(4), (TClass) arguments.get(5), (MDefinitionToTMember) arguments.get(6),
-					(MSignatureToTSignature) arguments.get(7), (AnonymousClassDeclaration) arguments.get(8),
-					(AnonymousClassDeclarationToTClass) arguments.get(9), (TSignature) arguments.get(10),
-					(ModelgeneratorRuleResult) arguments.get(11));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITION_TSIGNATURE_MSIGNATURE_ANONYMOUSCLASSDECLARATION_TCLASS_MDEFINITIONTOTMEMBER_TMEMBER_MSIGNATURETOTSIGNATURE_ANONYMOUSCLASSDECLARATIONTOTCLASS_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MDefinition) arguments.get(1),
+					(TSignature) arguments.get(2), (MSignature) arguments.get(3),
+					(AnonymousClassDeclaration) arguments.get(4), (TClass) arguments.get(5),
+					(MDefinitionToTMember) arguments.get(6), (TMember) arguments.get(7),
+					(MSignatureToTSignature) arguments.get(8), (AnonymousClassDeclarationToTClass) arguments.get(9),
+					(ModelgeneratorRuleResult) arguments.get(10));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_0_1_initialbindings_blackBBBBBB(
-			LinkDefinitionToAnonymous _this, Match match, MSignature mSignature, ClassInstanceCreation mInstance,
-			MDefinition mDefinition, AnonymousClassDeclaration mAnonymous) {
-		return new Object[] { _this, match, mSignature, mInstance, mDefinition, mAnonymous };
+	public static final Object[] pattern_LinkDefinitionToAnonymous_0_1_initialbindings_blackBBBBB(
+			LinkDefinitionToAnonymous _this, Match match, MDefinition mDefinition, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous) {
+		return new Object[] { _this, match, mDefinition, mSignature, mAnonymous };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_bindingFBBBBBB(
-			LinkDefinitionToAnonymous _this, Match match, MSignature mSignature, ClassInstanceCreation mInstance,
-			MDefinition mDefinition, AnonymousClassDeclaration mAnonymous) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mSignature, mInstance, mDefinition, mAnonymous);
+	public static final Object[] pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_bindingFBBBBB(
+			LinkDefinitionToAnonymous _this, Match match, MDefinition mDefinition, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mDefinition, mSignature, mAnonymous);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mSignature, mInstance, mDefinition, mAnonymous };
+			return new Object[] { csp, _this, match, mDefinition, mSignature, mAnonymous };
 		}
 		return null;
 	}
@@ -1391,11 +1356,11 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_bindingAndBlackFBBBBBB(
-			LinkDefinitionToAnonymous _this, Match match, MSignature mSignature, ClassInstanceCreation mInstance,
-			MDefinition mDefinition, AnonymousClassDeclaration mAnonymous) {
-		Object[] result_pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_binding = pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_bindingFBBBBBB(
-				_this, match, mSignature, mInstance, mDefinition, mAnonymous);
+	public static final Object[] pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_bindingAndBlackFBBBBB(
+			LinkDefinitionToAnonymous _this, Match match, MDefinition mDefinition, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous) {
+		Object[] result_pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_binding = pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_bindingFBBBBB(
+				_this, match, mDefinition, mSignature, mAnonymous);
 		if (result_pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_binding[0];
 
@@ -1403,7 +1368,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 					csp);
 			if (result_pattern_LinkDefinitionToAnonymous_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mSignature, mInstance, mDefinition, mAnonymous };
+				return new Object[] { csp, _this, match, mDefinition, mSignature, mAnonymous };
 			}
 		}
 		return null;
@@ -1416,10 +1381,9 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_0_4_collectelementstobetranslated_blackBBBBB(
-			Match match, MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous) {
-		return new Object[] { match, mSignature, mInstance, mDefinition, mAnonymous };
+	public static final Object[] pattern_LinkDefinitionToAnonymous_0_4_collectelementstobetranslated_blackBBBB(
+			Match match, MDefinition mDefinition, MSignature mSignature, AnonymousClassDeclaration mAnonymous) {
+		return new Object[] { match, mDefinition, mSignature, mAnonymous };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_0_4_collectelementstobetranslated_greenBBBFF(
@@ -1442,54 +1406,36 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 				mDefinition__mAnonymous____anonymousClassDeclarationOwner };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_0_5_collectcontextelements_blackBBBBB(Match match,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous) {
-		return new Object[] { match, mSignature, mInstance, mDefinition, mAnonymous };
+	public static final Object[] pattern_LinkDefinitionToAnonymous_0_5_collectcontextelements_blackBBBB(Match match,
+			MDefinition mDefinition, MSignature mSignature, AnonymousClassDeclaration mAnonymous) {
+		return new Object[] { match, mDefinition, mSignature, mAnonymous };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_0_5_collectcontextelements_greenBBBBBFFFF(
-			Match match, MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous) {
-		EMoflonEdge mInstance__mAnonymous____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnonymous__mInstance____classInstanceCreation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+	public static final Object[] pattern_LinkDefinitionToAnonymous_0_5_collectcontextelements_greenBBBBFF(Match match,
+			MDefinition mDefinition, MSignature mSignature, AnonymousClassDeclaration mAnonymous) {
 		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(mSignature);
-		match.getContextNodes().add(mInstance);
 		match.getContextNodes().add(mDefinition);
+		match.getContextNodes().add(mSignature);
 		match.getContextNodes().add(mAnonymous);
-		String mInstance__mAnonymous____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
-		String mAnonymous__mInstance____classInstanceCreation_name_prime = "classInstanceCreation";
 		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
 		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
-		mInstance__mAnonymous____anonymousClassDeclaration.setSrc(mInstance);
-		mInstance__mAnonymous____anonymousClassDeclaration.setTrg(mAnonymous);
-		match.getContextEdges().add(mInstance__mAnonymous____anonymousClassDeclaration);
-		mAnonymous__mInstance____classInstanceCreation.setSrc(mAnonymous);
-		mAnonymous__mInstance____classInstanceCreation.setTrg(mInstance);
-		match.getContextEdges().add(mAnonymous__mInstance____classInstanceCreation);
 		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
 		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
 		match.getContextEdges().add(mSignature__mDefinition____mDefinitions);
 		mDefinition__mSignature____mSignature.setSrc(mDefinition);
 		mDefinition__mSignature____mSignature.setTrg(mSignature);
 		match.getContextEdges().add(mDefinition__mSignature____mSignature);
-		mInstance__mAnonymous____anonymousClassDeclaration
-				.setName(mInstance__mAnonymous____anonymousClassDeclaration_name_prime);
-		mAnonymous__mInstance____classInstanceCreation
-				.setName(mAnonymous__mInstance____classInstanceCreation_name_prime);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		return new Object[] { match, mSignature, mInstance, mDefinition, mAnonymous,
-				mInstance__mAnonymous____anonymousClassDeclaration, mAnonymous__mInstance____classInstanceCreation,
-				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature };
+		return new Object[] { match, mDefinition, mSignature, mAnonymous, mSignature__mDefinition____mDefinitions,
+				mDefinition__mSignature____mSignature };
 	}
 
-	public static final void pattern_LinkDefinitionToAnonymous_0_6_registerobjectstomatch_expressionBBBBBB(
-			LinkDefinitionToAnonymous _this, Match match, MSignature mSignature, ClassInstanceCreation mInstance,
-			MDefinition mDefinition, AnonymousClassDeclaration mAnonymous) {
-		_this.registerObjectsToMatch_FWD(match, mSignature, mInstance, mDefinition, mAnonymous);
+	public static final void pattern_LinkDefinitionToAnonymous_0_6_registerobjectstomatch_expressionBBBBB(
+			LinkDefinitionToAnonymous _this, Match match, MDefinition mDefinition, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous) {
+		_this.registerObjectsToMatch_FWD(match, mDefinition, mSignature, mAnonymous);
 
 	}
 
@@ -1503,53 +1449,47 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_1_1_performtransformation_bindingFFFFFFFFFFB(
+	public static final Object[] pattern_LinkDefinitionToAnonymous_1_1_performtransformation_bindingFFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tDefinition");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mSignature");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mInstance");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_0 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tSignature");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mSignature");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mAnonymous");
 		EObject _localVariable_4 = isApplicableMatch.getObject("tAnonymous");
 		EObject _localVariable_5 = isApplicableMatch.getObject("mDefinitionToTMember");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mSignatureToTSignature");
-		EObject _localVariable_7 = isApplicableMatch.getObject("mAnonymous");
+		EObject _localVariable_6 = isApplicableMatch.getObject("tDefinition");
+		EObject _localVariable_7 = isApplicableMatch.getObject("mSignatureToTSignature");
 		EObject _localVariable_8 = isApplicableMatch.getObject("mAnonymousToTAnonymous");
-		EObject _localVariable_9 = isApplicableMatch.getObject("tSignature");
-		EObject tmpTDefinition = _localVariable_0;
-		EObject tmpMSignature = _localVariable_1;
-		EObject tmpMInstance = _localVariable_2;
-		EObject tmpMDefinition = _localVariable_3;
+		EObject tmpMDefinition = _localVariable_0;
+		EObject tmpTSignature = _localVariable_1;
+		EObject tmpMSignature = _localVariable_2;
+		EObject tmpMAnonymous = _localVariable_3;
 		EObject tmpTAnonymous = _localVariable_4;
 		EObject tmpMDefinitionToTMember = _localVariable_5;
-		EObject tmpMSignatureToTSignature = _localVariable_6;
-		EObject tmpMAnonymous = _localVariable_7;
+		EObject tmpTDefinition = _localVariable_6;
+		EObject tmpMSignatureToTSignature = _localVariable_7;
 		EObject tmpMAnonymousToTAnonymous = _localVariable_8;
-		EObject tmpTSignature = _localVariable_9;
-		if (tmpTDefinition instanceof TMember) {
-			TMember tDefinition = (TMember) tmpTDefinition;
-			if (tmpMSignature instanceof MSignature) {
-				MSignature mSignature = (MSignature) tmpMSignature;
-				if (tmpMInstance instanceof ClassInstanceCreation) {
-					ClassInstanceCreation mInstance = (ClassInstanceCreation) tmpMInstance;
-					if (tmpMDefinition instanceof MDefinition) {
-						MDefinition mDefinition = (MDefinition) tmpMDefinition;
+		if (tmpMDefinition instanceof MDefinition) {
+			MDefinition mDefinition = (MDefinition) tmpMDefinition;
+			if (tmpTSignature instanceof TSignature) {
+				TSignature tSignature = (TSignature) tmpTSignature;
+				if (tmpMSignature instanceof MSignature) {
+					MSignature mSignature = (MSignature) tmpMSignature;
+					if (tmpMAnonymous instanceof AnonymousClassDeclaration) {
+						AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) tmpMAnonymous;
 						if (tmpTAnonymous instanceof TClass) {
 							TClass tAnonymous = (TClass) tmpTAnonymous;
 							if (tmpMDefinitionToTMember instanceof MDefinitionToTMember) {
 								MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) tmpMDefinitionToTMember;
-								if (tmpMSignatureToTSignature instanceof MSignatureToTSignature) {
-									MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) tmpMSignatureToTSignature;
-									if (tmpMAnonymous instanceof AnonymousClassDeclaration) {
-										AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) tmpMAnonymous;
+								if (tmpTDefinition instanceof TMember) {
+									TMember tDefinition = (TMember) tmpTDefinition;
+									if (tmpMSignatureToTSignature instanceof MSignatureToTSignature) {
+										MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) tmpMSignatureToTSignature;
 										if (tmpMAnonymousToTAnonymous instanceof AnonymousClassDeclarationToTClass) {
 											AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) tmpMAnonymousToTAnonymous;
-											if (tmpTSignature instanceof TSignature) {
-												TSignature tSignature = (TSignature) tmpTSignature;
-												return new Object[] { tDefinition, mSignature, mInstance, mDefinition,
-														tAnonymous, mDefinitionToTMember, mSignatureToTSignature,
-														mAnonymous, mAnonymousToTAnonymous, tSignature,
-														isApplicableMatch };
-											}
+											return new Object[] { mDefinition, tSignature, mSignature, mAnonymous,
+													tAnonymous, mDefinitionToTMember, tDefinition,
+													mSignatureToTSignature, mAnonymousToTAnonymous, isApplicableMatch };
 										}
 									}
 								}
@@ -1562,57 +1502,54 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_1_1_performtransformation_blackBBBBBBBBBBFBB(
-			TMember tDefinition, MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature, LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_LinkDefinitionToAnonymous_1_1_performtransformation_blackBBBBBBBBBFBB(
+			MDefinition mDefinition, TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous,
+			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
+			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-						mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature, csp, _this,
-						isApplicableMatch };
+				return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember,
+						tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_1_1_performtransformation_bindingAndBlackFFFFFFFFFFFBB(
+	public static final Object[] pattern_LinkDefinitionToAnonymous_1_1_performtransformation_bindingAndBlackFFFFFFFFFFBB(
 			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch) {
-		Object[] result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding = pattern_LinkDefinitionToAnonymous_1_1_performtransformation_bindingFFFFFFFFFFB(
+		Object[] result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding = pattern_LinkDefinitionToAnonymous_1_1_performtransformation_bindingFFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding != null) {
-			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[0];
-			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[1];
-			ClassInstanceCreation mInstance = (ClassInstanceCreation) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[2];
-			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[3];
+			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[0];
+			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[1];
+			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[2];
+			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[3];
 			TClass tAnonymous = (TClass) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[4];
 			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[5];
-			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[6];
-			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[7];
+			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[6];
+			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[7];
 			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[8];
-			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_binding[9];
 
-			Object[] result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_black = pattern_LinkDefinitionToAnonymous_1_1_performtransformation_blackBBBBBBBBBBFBB(
-					tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-					mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature, _this, isApplicableMatch);
+			Object[] result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_black = pattern_LinkDefinitionToAnonymous_1_1_performtransformation_blackBBBBBBBBBFBB(
+					mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+					mSignatureToTSignature, mAnonymousToTAnonymous, _this, isApplicableMatch);
 			if (result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_black != null) {
-				CSP csp = (CSP) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_black[10];
+				CSP csp = (CSP) result_pattern_LinkDefinitionToAnonymous_1_1_performtransformation_black[9];
 
-				return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-						mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature, csp, _this,
-						isApplicableMatch };
+				return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember,
+						tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_1_1_performtransformation_greenBBB(
-			TMember tDefinition, TClass tAnonymous, TSignature tSignature) {
+			TSignature tSignature, TClass tAnonymous, TMember tDefinition) {
 		tAnonymous.getSignature().add(tSignature);
 		tAnonymous.getDefines().add(tDefinition);
-		return new Object[] { tDefinition, tAnonymous, tSignature };
+		return new Object[] { tSignature, tAnonymous, tDefinition };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_1_2_collecttranslatedelements_greenF() {
@@ -1620,102 +1557,76 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return new Object[] { ruleresult };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tDefinition, EObject mSignature, EObject mInstance,
-			EObject mDefinition, EObject tAnonymous, EObject mDefinitionToTMember, EObject mSignatureToTSignature,
-			EObject mAnonymous, EObject mAnonymousToTAnonymous, EObject tSignature) {
-		if (!tDefinition.equals(tSignature)) {
-			if (!mSignature.equals(tDefinition)) {
-				if (!mSignature.equals(tAnonymous)) {
-					if (!mSignature.equals(mSignatureToTSignature)) {
-						if (!mSignature.equals(tSignature)) {
-							if (!mInstance.equals(tDefinition)) {
-								if (!mInstance.equals(mSignature)) {
-									if (!mInstance.equals(tAnonymous)) {
-										if (!mInstance.equals(mSignatureToTSignature)) {
-											if (!mInstance.equals(tSignature)) {
-												if (!mDefinition.equals(tDefinition)) {
-													if (!mDefinition.equals(mSignature)) {
-														if (!mDefinition.equals(mInstance)) {
-															if (!mDefinition.equals(tAnonymous)) {
-																if (!mDefinition.equals(mDefinitionToTMember)) {
-																	if (!mDefinition.equals(mSignatureToTSignature)) {
-																		if (!mDefinition.equals(tSignature)) {
-																			if (!tAnonymous.equals(tDefinition)) {
+	public static final Object[] pattern_LinkDefinitionToAnonymous_1_3_bookkeepingforedges_blackBBBBBBBBBB(
+			PerformRuleResult ruleresult, EObject mDefinition, EObject tSignature, EObject mSignature,
+			EObject mAnonymous, EObject tAnonymous, EObject mDefinitionToTMember, EObject tDefinition,
+			EObject mSignatureToTSignature, EObject mAnonymousToTAnonymous) {
+		if (!mDefinition.equals(tSignature)) {
+			if (!mDefinition.equals(mSignature)) {
+				if (!mDefinition.equals(tAnonymous)) {
+					if (!mDefinition.equals(mDefinitionToTMember)) {
+						if (!mDefinition.equals(tDefinition)) {
+							if (!mDefinition.equals(mSignatureToTSignature)) {
+								if (!mSignature.equals(tSignature)) {
+									if (!mSignature.equals(tAnonymous)) {
+										if (!mSignature.equals(tDefinition)) {
+											if (!mSignature.equals(mSignatureToTSignature)) {
+												if (!mAnonymous.equals(mDefinition)) {
+													if (!mAnonymous.equals(tSignature)) {
+														if (!mAnonymous.equals(mSignature)) {
+															if (!mAnonymous.equals(tAnonymous)) {
+																if (!mAnonymous.equals(mDefinitionToTMember)) {
+																	if (!mAnonymous.equals(tDefinition)) {
+																		if (!mAnonymous
+																				.equals(mSignatureToTSignature)) {
+																			if (!mAnonymous
+																					.equals(mAnonymousToTAnonymous)) {
 																				if (!tAnonymous.equals(tSignature)) {
-																					if (!mDefinitionToTMember
+																					if (!tAnonymous
 																							.equals(tDefinition)) {
 																						if (!mDefinitionToTMember
-																								.equals(mSignature)) {
+																								.equals(tSignature)) {
 																							if (!mDefinitionToTMember
-																									.equals(mInstance)) {
+																									.equals(mSignature)) {
 																								if (!mDefinitionToTMember
 																										.equals(tAnonymous)) {
 																									if (!mDefinitionToTMember
-																											.equals(mSignatureToTSignature)) {
+																											.equals(tDefinition)) {
 																										if (!mDefinitionToTMember
-																												.equals(tSignature)) {
-																											if (!mSignatureToTSignature
-																													.equals(tDefinition)) {
+																												.equals(mSignatureToTSignature)) {
+																											if (!tDefinition
+																													.equals(tSignature)) {
 																												if (!mSignatureToTSignature
-																														.equals(tAnonymous)) {
+																														.equals(tSignature)) {
 																													if (!mSignatureToTSignature
-																															.equals(tSignature)) {
-																														if (!mAnonymous
+																															.equals(tAnonymous)) {
+																														if (!mSignatureToTSignature
 																																.equals(tDefinition)) {
-																															if (!mAnonymous
-																																	.equals(mSignature)) {
-																																if (!mAnonymous
-																																		.equals(mInstance)) {
-																																	if (!mAnonymous
-																																			.equals(mDefinition)) {
-																																		if (!mAnonymous
+																															if (!mAnonymousToTAnonymous
+																																	.equals(mDefinition)) {
+																																if (!mAnonymousToTAnonymous
+																																		.equals(tSignature)) {
+																																	if (!mAnonymousToTAnonymous
+																																			.equals(mSignature)) {
+																																		if (!mAnonymousToTAnonymous
 																																				.equals(tAnonymous)) {
-																																			if (!mAnonymous
+																																			if (!mAnonymousToTAnonymous
 																																					.equals(mDefinitionToTMember)) {
-																																				if (!mAnonymous
-																																						.equals(mSignatureToTSignature)) {
-																																					if (!mAnonymous
-																																							.equals(mAnonymousToTAnonymous)) {
-																																						if (!mAnonymous
-																																								.equals(tSignature)) {
-																																							if (!mAnonymousToTAnonymous
-																																									.equals(tDefinition)) {
-																																								if (!mAnonymousToTAnonymous
-																																										.equals(mSignature)) {
-																																									if (!mAnonymousToTAnonymous
-																																											.equals(mInstance)) {
-																																										if (!mAnonymousToTAnonymous
-																																												.equals(mDefinition)) {
-																																											if (!mAnonymousToTAnonymous
-																																													.equals(tAnonymous)) {
-																																												if (!mAnonymousToTAnonymous
-																																														.equals(mDefinitionToTMember)) {
-																																													if (!mAnonymousToTAnonymous
-																																															.equals(mSignatureToTSignature)) {
-																																														if (!mAnonymousToTAnonymous
-																																																.equals(tSignature)) {
-																																															return new Object[] {
-																																																	ruleresult,
-																																																	tDefinition,
-																																																	mSignature,
-																																																	mInstance,
-																																																	mDefinition,
-																																																	tAnonymous,
-																																																	mDefinitionToTMember,
-																																																	mSignatureToTSignature,
-																																																	mAnonymous,
-																																																	mAnonymousToTAnonymous,
-																																																	tSignature };
-																																														}
-																																													}
-																																												}
-																																											}
-																																										}
-																																									}
-																																								}
-																																							}
-																																						}
+																																				if (!mAnonymousToTAnonymous
+																																						.equals(tDefinition)) {
+																																					if (!mAnonymousToTAnonymous
+																																							.equals(mSignatureToTSignature)) {
+																																						return new Object[] {
+																																								ruleresult,
+																																								mDefinition,
+																																								tSignature,
+																																								mSignature,
+																																								mAnonymous,
+																																								tAnonymous,
+																																								mDefinitionToTMember,
+																																								tDefinition,
+																																								mSignatureToTSignature,
+																																								mAnonymousToTAnonymous };
 																																					}
 																																				}
 																																			}
@@ -1756,20 +1667,26 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject tDefinition, EObject mDefinition, EObject tAnonymous,
-			EObject mAnonymous, EObject tSignature) {
-		EMoflonEdge tAnonymous__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnonymous__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tAnonymous____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mDefinition, EObject tSignature, EObject mAnonymous,
+			EObject tAnonymous, EObject tDefinition) {
 		EMoflonEdge mAnonymous__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mAnonymous____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
+		EMoflonEdge tAnonymous__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnonymous__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tAnonymous____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "LinkDefinitionToAnonymous";
+		String mAnonymous__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mDefinition__mAnonymous____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
 		String tAnonymous__tSignature____signature_name_prime = "signature";
 		String tAnonymous__tDefinition____defines_name_prime = "defines";
 		String tDefinition__tAnonymous____definedBy_name_prime = "definedBy";
-		String mAnonymous__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
-		String mDefinition__mAnonymous____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
+		mAnonymous__mDefinition____bodyDeclarations.setSrc(mAnonymous);
+		mAnonymous__mDefinition____bodyDeclarations.setTrg(mDefinition);
+		ruleresult.getTranslatedEdges().add(mAnonymous__mDefinition____bodyDeclarations);
+		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setSrc(mDefinition);
+		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setTrg(mAnonymous);
+		ruleresult.getTranslatedEdges().add(mDefinition__mAnonymous____anonymousClassDeclarationOwner);
 		tAnonymous__tSignature____signature.setSrc(tAnonymous);
 		tAnonymous__tSignature____signature.setTrg(tSignature);
 		ruleresult.getCreatedEdges().add(tAnonymous__tSignature____signature);
@@ -1779,31 +1696,25 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		tDefinition__tAnonymous____definedBy.setSrc(tDefinition);
 		tDefinition__tAnonymous____definedBy.setTrg(tAnonymous);
 		ruleresult.getCreatedEdges().add(tDefinition__tAnonymous____definedBy);
-		mAnonymous__mDefinition____bodyDeclarations.setSrc(mAnonymous);
-		mAnonymous__mDefinition____bodyDeclarations.setTrg(mDefinition);
-		ruleresult.getTranslatedEdges().add(mAnonymous__mDefinition____bodyDeclarations);
-		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setSrc(mDefinition);
-		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setTrg(mAnonymous);
-		ruleresult.getTranslatedEdges().add(mDefinition__mAnonymous____anonymousClassDeclarationOwner);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tAnonymous__tSignature____signature.setName(tAnonymous__tSignature____signature_name_prime);
-		tAnonymous__tDefinition____defines.setName(tAnonymous__tDefinition____defines_name_prime);
-		tDefinition__tAnonymous____definedBy.setName(tDefinition__tAnonymous____definedBy_name_prime);
 		mAnonymous__mDefinition____bodyDeclarations.setName(mAnonymous__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__mAnonymous____anonymousClassDeclarationOwner
 				.setName(mDefinition__mAnonymous____anonymousClassDeclarationOwner_name_prime);
-		return new Object[] { ruleresult, tDefinition, mDefinition, tAnonymous, mAnonymous, tSignature,
+		tAnonymous__tSignature____signature.setName(tAnonymous__tSignature____signature_name_prime);
+		tAnonymous__tDefinition____defines.setName(tAnonymous__tDefinition____defines_name_prime);
+		tDefinition__tAnonymous____definedBy.setName(tDefinition__tAnonymous____definedBy_name_prime);
+		return new Object[] { ruleresult, mDefinition, tSignature, mAnonymous, tAnonymous, tDefinition,
+				mAnonymous__mDefinition____bodyDeclarations, mDefinition__mAnonymous____anonymousClassDeclarationOwner,
 				tAnonymous__tSignature____signature, tAnonymous__tDefinition____defines,
-				tDefinition__tAnonymous____definedBy, mAnonymous__mDefinition____bodyDeclarations,
-				mDefinition__mAnonymous____anonymousClassDeclarationOwner };
+				tDefinition__tAnonymous____definedBy };
 	}
 
-	public static final void pattern_LinkDefinitionToAnonymous_1_5_registerobjects_expressionBBBBBBBBBBBB(
-			LinkDefinitionToAnonymous _this, PerformRuleResult ruleresult, EObject tDefinition, EObject mSignature,
-			EObject mInstance, EObject mDefinition, EObject tAnonymous, EObject mDefinitionToTMember,
-			EObject mSignatureToTSignature, EObject mAnonymous, EObject mAnonymousToTAnonymous, EObject tSignature) {
-		_this.registerObjects_FWD(ruleresult, tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-				mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature);
+	public static final void pattern_LinkDefinitionToAnonymous_1_5_registerobjects_expressionBBBBBBBBBBB(
+			LinkDefinitionToAnonymous _this, PerformRuleResult ruleresult, EObject mDefinition, EObject tSignature,
+			EObject mSignature, EObject mAnonymous, EObject tAnonymous, EObject mDefinitionToTMember,
+			EObject tDefinition, EObject mSignatureToTSignature, EObject mAnonymousToTAnonymous) {
+		_this.registerObjects_FWD(ruleresult, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+				mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous);
 
 	}
 
@@ -1864,34 +1775,28 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return new Object[] { performOperation, ruleresult };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_2_2_corematch_bindingFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mSignature");
-		EObject _localVariable_1 = match.getObject("mInstance");
-		EObject _localVariable_2 = match.getObject("mDefinition");
-		EObject _localVariable_3 = match.getObject("mAnonymous");
-		EObject tmpMSignature = _localVariable_0;
-		EObject tmpMInstance = _localVariable_1;
-		EObject tmpMDefinition = _localVariable_2;
-		EObject tmpMAnonymous = _localVariable_3;
-		if (tmpMSignature instanceof MSignature) {
-			MSignature mSignature = (MSignature) tmpMSignature;
-			if (tmpMInstance instanceof ClassInstanceCreation) {
-				ClassInstanceCreation mInstance = (ClassInstanceCreation) tmpMInstance;
-				if (tmpMDefinition instanceof MDefinition) {
-					MDefinition mDefinition = (MDefinition) tmpMDefinition;
-					if (tmpMAnonymous instanceof AnonymousClassDeclaration) {
-						AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) tmpMAnonymous;
-						return new Object[] { mSignature, mInstance, mDefinition, mAnonymous, match };
-					}
+	public static final Object[] pattern_LinkDefinitionToAnonymous_2_2_corematch_bindingFFFB(Match match) {
+		EObject _localVariable_0 = match.getObject("mDefinition");
+		EObject _localVariable_1 = match.getObject("mSignature");
+		EObject _localVariable_2 = match.getObject("mAnonymous");
+		EObject tmpMDefinition = _localVariable_0;
+		EObject tmpMSignature = _localVariable_1;
+		EObject tmpMAnonymous = _localVariable_2;
+		if (tmpMDefinition instanceof MDefinition) {
+			MDefinition mDefinition = (MDefinition) tmpMDefinition;
+			if (tmpMSignature instanceof MSignature) {
+				MSignature mSignature = (MSignature) tmpMSignature;
+				if (tmpMAnonymous instanceof AnonymousClassDeclaration) {
+					AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) tmpMAnonymous;
+					return new Object[] { mDefinition, mSignature, mAnonymous, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_2_2_corematch_blackFBBBFFFBFFB(
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			AnonymousClassDeclaration mAnonymous, Match match) {
+	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_2_2_corematch_blackBFBBFFFFFB(
+			MDefinition mDefinition, MSignature mSignature, AnonymousClassDeclaration mAnonymous, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mDefinition, MDefinitionToTMember.class, "source")) {
@@ -1906,9 +1811,9 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 										"source")) {
 							TClass tAnonymous = mAnonymousToTAnonymous.getTarget();
 							if (tAnonymous != null) {
-								_result.add(new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-										mDefinitionToTMember, mSignatureToTSignature, mAnonymous,
-										mAnonymousToTAnonymous, tSignature, match });
+								_result.add(new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+										mDefinitionToTMember, tDefinition, mSignatureToTSignature,
+										mAnonymousToTAnonymous, match });
 							}
 
 						}
@@ -1921,27 +1826,23 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_2_3_findcontext_blackBBBBBBBBBB(
-			TMember tDefinition, MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {
+	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_2_3_findcontext_blackBBBBBBBBB(
+			MDefinition mDefinition, TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous,
+			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tDefinition.equals(mDefinitionToTMember.getTarget())) {
-			if (mDefinition.equals(mDefinitionToTMember.getSource())) {
-				if (mSignature.equals(mSignatureToTSignature.getSource())) {
-					if (mAnonymous.equals(mInstance.getAnonymousClassDeclaration())) {
+		if (tSignature.getDefinitions().contains(tDefinition)) {
+			if (mAnonymous.getBodyDeclarations().contains(mDefinition)) {
+				if (tDefinition.equals(mDefinitionToTMember.getTarget())) {
+					if (mDefinition.equals(mDefinitionToTMember.getSource())) {
 						if (mSignature.getMDefinitions().contains(mDefinition)) {
-							if (tAnonymous.equals(mAnonymousToTAnonymous.getTarget())) {
-								if (mAnonymous.equals(mAnonymousToTAnonymous.getSource())) {
-									if (mAnonymous.getBodyDeclarations().contains(mDefinition)) {
-										if (tSignature.getDefinitions().contains(tDefinition)) {
-											if (tSignature.equals(mSignatureToTSignature.getTarget())) {
-												_result.add(new Object[] { tDefinition, mSignature, mInstance,
-														mDefinition, tAnonymous, mDefinitionToTMember,
-														mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-														tSignature });
-											}
+							if (tSignature.equals(mSignatureToTSignature.getTarget())) {
+								if (mSignature.equals(mSignatureToTSignature.getSource())) {
+									if (tAnonymous.equals(mAnonymousToTAnonymous.getTarget())) {
+										if (mAnonymous.equals(mAnonymousToTAnonymous.getSource())) {
+											_result.add(new Object[] { mDefinition, tSignature, mSignature, mAnonymous,
+													tAnonymous, mDefinitionToTMember, tDefinition,
+													mSignatureToTSignature, mAnonymousToTAnonymous });
 										}
 									}
 								}
@@ -1954,135 +1855,116 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_2_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFFF(
-			TMember tDefinition, MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {
+	public static final Object[] pattern_LinkDefinitionToAnonymous_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFFF(
+			MDefinition mDefinition, TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous,
+			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mInstance__mAnonymous____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnonymous__mInstance____classInstanceCreation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnonymousToTAnonymous__tAnonymous____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnonymousToTAnonymous__mAnonymous____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnonymous__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mAnonymous____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignatureToTSignature__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
-		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
-		String mSignatureToTSignature__mSignature____source_name_prime = "source";
-		String mInstance__mAnonymous____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
-		String mAnonymous__mInstance____classInstanceCreation_name_prime = "classInstanceCreation";
-		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
-		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
-		String mAnonymousToTAnonymous__tAnonymous____target_name_prime = "target";
-		String mAnonymousToTAnonymous__mAnonymous____source_name_prime = "source";
-		String mAnonymous__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
-		String mDefinition__mAnonymous____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
+		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnonymousToTAnonymous__tAnonymous____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnonymousToTAnonymous__mAnonymous____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tSignature__tDefinition____definitions_name_prime = "definitions";
 		String tDefinition__tSignature____signature_name_prime = "signature";
+		String mAnonymous__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mDefinition__mAnonymous____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
+		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
+		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
+		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
 		String mSignatureToTSignature__tSignature____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(tDefinition);
-		isApplicableMatch.getAllContextElements().add(mSignature);
-		isApplicableMatch.getAllContextElements().add(mInstance);
+		String mSignatureToTSignature__mSignature____source_name_prime = "source";
+		String mAnonymousToTAnonymous__tAnonymous____target_name_prime = "target";
+		String mAnonymousToTAnonymous__mAnonymous____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mDefinition);
+		isApplicableMatch.getAllContextElements().add(tSignature);
+		isApplicableMatch.getAllContextElements().add(mSignature);
+		isApplicableMatch.getAllContextElements().add(mAnonymous);
 		isApplicableMatch.getAllContextElements().add(tAnonymous);
 		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember);
+		isApplicableMatch.getAllContextElements().add(tDefinition);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature);
-		isApplicableMatch.getAllContextElements().add(mAnonymous);
 		isApplicableMatch.getAllContextElements().add(mAnonymousToTAnonymous);
-		isApplicableMatch.getAllContextElements().add(tSignature);
-		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDefinition____target);
-		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__mDefinition____source);
-		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
-		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
-		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__mSignature____source);
-		mInstance__mAnonymous____anonymousClassDeclaration.setSrc(mInstance);
-		mInstance__mAnonymous____anonymousClassDeclaration.setTrg(mAnonymous);
-		isApplicableMatch.getAllContextElements().add(mInstance__mAnonymous____anonymousClassDeclaration);
-		mAnonymous__mInstance____classInstanceCreation.setSrc(mAnonymous);
-		mAnonymous__mInstance____classInstanceCreation.setTrg(mInstance);
-		isApplicableMatch.getAllContextElements().add(mAnonymous__mInstance____classInstanceCreation);
-		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
-		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
-		isApplicableMatch.getAllContextElements().add(mSignature__mDefinition____mDefinitions);
-		mDefinition__mSignature____mSignature.setSrc(mDefinition);
-		mDefinition__mSignature____mSignature.setTrg(mSignature);
-		isApplicableMatch.getAllContextElements().add(mDefinition__mSignature____mSignature);
-		mAnonymousToTAnonymous__tAnonymous____target.setSrc(mAnonymousToTAnonymous);
-		mAnonymousToTAnonymous__tAnonymous____target.setTrg(tAnonymous);
-		isApplicableMatch.getAllContextElements().add(mAnonymousToTAnonymous__tAnonymous____target);
-		mAnonymousToTAnonymous__mAnonymous____source.setSrc(mAnonymousToTAnonymous);
-		mAnonymousToTAnonymous__mAnonymous____source.setTrg(mAnonymous);
-		isApplicableMatch.getAllContextElements().add(mAnonymousToTAnonymous__mAnonymous____source);
-		mAnonymous__mDefinition____bodyDeclarations.setSrc(mAnonymous);
-		mAnonymous__mDefinition____bodyDeclarations.setTrg(mDefinition);
-		isApplicableMatch.getAllContextElements().add(mAnonymous__mDefinition____bodyDeclarations);
-		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setSrc(mDefinition);
-		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setTrg(mAnonymous);
-		isApplicableMatch.getAllContextElements().add(mDefinition__mAnonymous____anonymousClassDeclarationOwner);
 		tSignature__tDefinition____definitions.setSrc(tSignature);
 		tSignature__tDefinition____definitions.setTrg(tDefinition);
 		isApplicableMatch.getAllContextElements().add(tSignature__tDefinition____definitions);
 		tDefinition__tSignature____signature.setSrc(tDefinition);
 		tDefinition__tSignature____signature.setTrg(tSignature);
 		isApplicableMatch.getAllContextElements().add(tDefinition__tSignature____signature);
+		mAnonymous__mDefinition____bodyDeclarations.setSrc(mAnonymous);
+		mAnonymous__mDefinition____bodyDeclarations.setTrg(mDefinition);
+		isApplicableMatch.getAllContextElements().add(mAnonymous__mDefinition____bodyDeclarations);
+		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setSrc(mDefinition);
+		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setTrg(mAnonymous);
+		isApplicableMatch.getAllContextElements().add(mDefinition__mAnonymous____anonymousClassDeclarationOwner);
+		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDefinition____target);
+		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__mDefinition____source);
+		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
+		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
+		isApplicableMatch.getAllContextElements().add(mSignature__mDefinition____mDefinitions);
+		mDefinition__mSignature____mSignature.setSrc(mDefinition);
+		mDefinition__mSignature____mSignature.setTrg(mSignature);
+		isApplicableMatch.getAllContextElements().add(mDefinition__mSignature____mSignature);
 		mSignatureToTSignature__tSignature____target.setSrc(mSignatureToTSignature);
 		mSignatureToTSignature__tSignature____target.setTrg(tSignature);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__tSignature____target);
-		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
-		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
-		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
-		mInstance__mAnonymous____anonymousClassDeclaration
-				.setName(mInstance__mAnonymous____anonymousClassDeclaration_name_prime);
-		mAnonymous__mInstance____classInstanceCreation
-				.setName(mAnonymous__mInstance____classInstanceCreation_name_prime);
-		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
-		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		mAnonymousToTAnonymous__tAnonymous____target.setName(mAnonymousToTAnonymous__tAnonymous____target_name_prime);
-		mAnonymousToTAnonymous__mAnonymous____source.setName(mAnonymousToTAnonymous__mAnonymous____source_name_prime);
+		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
+		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
+		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__mSignature____source);
+		mAnonymousToTAnonymous__tAnonymous____target.setSrc(mAnonymousToTAnonymous);
+		mAnonymousToTAnonymous__tAnonymous____target.setTrg(tAnonymous);
+		isApplicableMatch.getAllContextElements().add(mAnonymousToTAnonymous__tAnonymous____target);
+		mAnonymousToTAnonymous__mAnonymous____source.setSrc(mAnonymousToTAnonymous);
+		mAnonymousToTAnonymous__mAnonymous____source.setTrg(mAnonymous);
+		isApplicableMatch.getAllContextElements().add(mAnonymousToTAnonymous__mAnonymous____source);
+		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
+		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
 		mAnonymous__mDefinition____bodyDeclarations.setName(mAnonymous__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__mAnonymous____anonymousClassDeclarationOwner
 				.setName(mDefinition__mAnonymous____anonymousClassDeclarationOwner_name_prime);
-		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
-		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
+		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
+		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
+		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
 		mSignatureToTSignature__tSignature____target.setName(mSignatureToTSignature__tSignature____target_name_prime);
-		return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-				mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature, isApplicableMatch,
+		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
+		mAnonymousToTAnonymous__tAnonymous____target.setName(mAnonymousToTAnonymous__tAnonymous____target_name_prime);
+		mAnonymousToTAnonymous__mAnonymous____source.setName(mAnonymousToTAnonymous__mAnonymous____source_name_prime);
+		return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember,
+				tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous, isApplicableMatch,
+				tSignature__tDefinition____definitions, tDefinition__tSignature____signature,
+				mAnonymous__mDefinition____bodyDeclarations, mDefinition__mAnonymous____anonymousClassDeclarationOwner,
 				mDefinitionToTMember__tDefinition____target, mDefinitionToTMember__mDefinition____source,
-				mSignatureToTSignature__mSignature____source, mInstance__mAnonymous____anonymousClassDeclaration,
-				mAnonymous__mInstance____classInstanceCreation, mSignature__mDefinition____mDefinitions,
-				mDefinition__mSignature____mSignature, mAnonymousToTAnonymous__tAnonymous____target,
-				mAnonymousToTAnonymous__mAnonymous____source, mAnonymous__mDefinition____bodyDeclarations,
-				mDefinition__mAnonymous____anonymousClassDeclarationOwner, tSignature__tDefinition____definitions,
-				tDefinition__tSignature____signature, mSignatureToTSignature__tSignature____target };
+				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature,
+				mSignatureToTSignature__tSignature____target, mSignatureToTSignature__mSignature____source,
+				mAnonymousToTAnonymous__tAnonymous____target, mAnonymousToTAnonymous__mAnonymous____source };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_2_4_solveCSP_bindingFBBBBBBBBBBBB(
-			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tDefinition, mSignature, mInstance,
-				mDefinition, tAnonymous, mDefinitionToTMember, mSignatureToTSignature, mAnonymous,
-				mAnonymousToTAnonymous, tSignature);
+	public static final Object[] pattern_LinkDefinitionToAnonymous_2_4_solveCSP_bindingFBBBBBBBBBBB(
+			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
+			TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous,
+			MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mDefinition, tSignature, mSignature,
+				mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition, mSignatureToTSignature,
+				mAnonymousToTAnonymous);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition,
-					tAnonymous, mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-					tSignature };
+			return new Object[] { csp, _this, isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous,
+					tAnonymous, mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous };
 		}
 		return null;
 	}
@@ -2091,15 +1973,14 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
-			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {
-		Object[] result_pattern_LinkDefinitionToAnonymous_2_4_solveCSP_binding = pattern_LinkDefinitionToAnonymous_2_4_solveCSP_bindingFBBBBBBBBBBBB(
-				_this, isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-				mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature);
+	public static final Object[] pattern_LinkDefinitionToAnonymous_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(
+			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
+			TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous,
+			MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {
+		Object[] result_pattern_LinkDefinitionToAnonymous_2_4_solveCSP_binding = pattern_LinkDefinitionToAnonymous_2_4_solveCSP_bindingFBBBBBBBBBBB(
+				_this, isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+				mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous);
 		if (result_pattern_LinkDefinitionToAnonymous_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToAnonymous_2_4_solveCSP_binding[0];
 
@@ -2107,9 +1988,8 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 					csp);
 			if (result_pattern_LinkDefinitionToAnonymous_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition,
-						tAnonymous, mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-						tSignature };
+				return new Object[] { csp, _this, isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous,
+						tAnonymous, mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous };
 			}
 		}
 		return null;
@@ -2144,18 +2024,18 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_10_1_initialbindings_blackBBBBB(
-			LinkDefinitionToAnonymous _this, Match match, TMember tDefinition, TClass tAnonymous,
-			TSignature tSignature) {
-		return new Object[] { _this, match, tDefinition, tAnonymous, tSignature };
+			LinkDefinitionToAnonymous _this, Match match, TSignature tSignature, TClass tAnonymous,
+			TMember tDefinition) {
+		return new Object[] { _this, match, tSignature, tAnonymous, tDefinition };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_10_2_SolveCSP_bindingFBBBBB(
-			LinkDefinitionToAnonymous _this, Match match, TMember tDefinition, TClass tAnonymous,
-			TSignature tSignature) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tDefinition, tAnonymous, tSignature);
+			LinkDefinitionToAnonymous _this, Match match, TSignature tSignature, TClass tAnonymous,
+			TMember tDefinition) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tSignature, tAnonymous, tDefinition);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tDefinition, tAnonymous, tSignature };
+			return new Object[] { csp, _this, match, tSignature, tAnonymous, tDefinition };
 		}
 		return null;
 	}
@@ -2165,10 +2045,10 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_10_2_SolveCSP_bindingAndBlackFBBBBB(
-			LinkDefinitionToAnonymous _this, Match match, TMember tDefinition, TClass tAnonymous,
-			TSignature tSignature) {
+			LinkDefinitionToAnonymous _this, Match match, TSignature tSignature, TClass tAnonymous,
+			TMember tDefinition) {
 		Object[] result_pattern_LinkDefinitionToAnonymous_10_2_SolveCSP_binding = pattern_LinkDefinitionToAnonymous_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, tDefinition, tAnonymous, tSignature);
+				_this, match, tSignature, tAnonymous, tDefinition);
 		if (result_pattern_LinkDefinitionToAnonymous_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToAnonymous_10_2_SolveCSP_binding[0];
 
@@ -2176,7 +2056,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 					csp);
 			if (result_pattern_LinkDefinitionToAnonymous_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tDefinition, tAnonymous, tSignature };
+				return new Object[] { csp, _this, match, tSignature, tAnonymous, tDefinition };
 			}
 		}
 		return null;
@@ -2190,12 +2070,12 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_10_4_collectelementstobetranslated_blackBBBB(
-			Match match, TMember tDefinition, TClass tAnonymous, TSignature tSignature) {
-		return new Object[] { match, tDefinition, tAnonymous, tSignature };
+			Match match, TSignature tSignature, TClass tAnonymous, TMember tDefinition) {
+		return new Object[] { match, tSignature, tAnonymous, tDefinition };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_10_4_collectelementstobetranslated_greenBBBBFFF(
-			Match match, TMember tDefinition, TClass tAnonymous, TSignature tSignature) {
+			Match match, TSignature tSignature, TClass tAnonymous, TMember tDefinition) {
 		EMoflonEdge tAnonymous__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnonymous__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tAnonymous____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2214,22 +2094,22 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		tAnonymous__tSignature____signature.setName(tAnonymous__tSignature____signature_name_prime);
 		tAnonymous__tDefinition____defines.setName(tAnonymous__tDefinition____defines_name_prime);
 		tDefinition__tAnonymous____definedBy.setName(tDefinition__tAnonymous____definedBy_name_prime);
-		return new Object[] { match, tDefinition, tAnonymous, tSignature, tAnonymous__tSignature____signature,
+		return new Object[] { match, tSignature, tAnonymous, tDefinition, tAnonymous__tSignature____signature,
 				tAnonymous__tDefinition____defines, tDefinition__tAnonymous____definedBy };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_10_5_collectcontextelements_blackBBBB(Match match,
-			TMember tDefinition, TClass tAnonymous, TSignature tSignature) {
-		return new Object[] { match, tDefinition, tAnonymous, tSignature };
+			TSignature tSignature, TClass tAnonymous, TMember tDefinition) {
+		return new Object[] { match, tSignature, tAnonymous, tDefinition };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_10_5_collectcontextelements_greenBBBBFF(Match match,
-			TMember tDefinition, TClass tAnonymous, TSignature tSignature) {
+			TSignature tSignature, TClass tAnonymous, TMember tDefinition) {
 		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(tDefinition);
-		match.getContextNodes().add(tAnonymous);
 		match.getContextNodes().add(tSignature);
+		match.getContextNodes().add(tAnonymous);
+		match.getContextNodes().add(tDefinition);
 		String tSignature__tDefinition____definitions_name_prime = "definitions";
 		String tDefinition__tSignature____signature_name_prime = "signature";
 		tSignature__tDefinition____definitions.setSrc(tSignature);
@@ -2240,14 +2120,14 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		match.getContextEdges().add(tDefinition__tSignature____signature);
 		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
 		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
-		return new Object[] { match, tDefinition, tAnonymous, tSignature, tSignature__tDefinition____definitions,
+		return new Object[] { match, tSignature, tAnonymous, tDefinition, tSignature__tDefinition____definitions,
 				tDefinition__tSignature____signature };
 	}
 
 	public static final void pattern_LinkDefinitionToAnonymous_10_6_registerobjectstomatch_expressionBBBBB(
-			LinkDefinitionToAnonymous _this, Match match, TMember tDefinition, TClass tAnonymous,
-			TSignature tSignature) {
-		_this.registerObjectsToMatch_BWD(match, tDefinition, tAnonymous, tSignature);
+			LinkDefinitionToAnonymous _this, Match match, TSignature tSignature, TClass tAnonymous,
+			TMember tDefinition) {
+		_this.registerObjectsToMatch_BWD(match, tSignature, tAnonymous, tDefinition);
 
 	}
 
@@ -2261,53 +2141,47 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_11_1_performtransformation_bindingFFFFFFFFFFB(
+	public static final Object[] pattern_LinkDefinitionToAnonymous_11_1_performtransformation_bindingFFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tDefinition");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mSignature");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mInstance");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_0 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tSignature");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mSignature");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mAnonymous");
 		EObject _localVariable_4 = isApplicableMatch.getObject("tAnonymous");
 		EObject _localVariable_5 = isApplicableMatch.getObject("mDefinitionToTMember");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mSignatureToTSignature");
-		EObject _localVariable_7 = isApplicableMatch.getObject("mAnonymous");
+		EObject _localVariable_6 = isApplicableMatch.getObject("tDefinition");
+		EObject _localVariable_7 = isApplicableMatch.getObject("mSignatureToTSignature");
 		EObject _localVariable_8 = isApplicableMatch.getObject("mAnonymousToTAnonymous");
-		EObject _localVariable_9 = isApplicableMatch.getObject("tSignature");
-		EObject tmpTDefinition = _localVariable_0;
-		EObject tmpMSignature = _localVariable_1;
-		EObject tmpMInstance = _localVariable_2;
-		EObject tmpMDefinition = _localVariable_3;
+		EObject tmpMDefinition = _localVariable_0;
+		EObject tmpTSignature = _localVariable_1;
+		EObject tmpMSignature = _localVariable_2;
+		EObject tmpMAnonymous = _localVariable_3;
 		EObject tmpTAnonymous = _localVariable_4;
 		EObject tmpMDefinitionToTMember = _localVariable_5;
-		EObject tmpMSignatureToTSignature = _localVariable_6;
-		EObject tmpMAnonymous = _localVariable_7;
+		EObject tmpTDefinition = _localVariable_6;
+		EObject tmpMSignatureToTSignature = _localVariable_7;
 		EObject tmpMAnonymousToTAnonymous = _localVariable_8;
-		EObject tmpTSignature = _localVariable_9;
-		if (tmpTDefinition instanceof TMember) {
-			TMember tDefinition = (TMember) tmpTDefinition;
-			if (tmpMSignature instanceof MSignature) {
-				MSignature mSignature = (MSignature) tmpMSignature;
-				if (tmpMInstance instanceof ClassInstanceCreation) {
-					ClassInstanceCreation mInstance = (ClassInstanceCreation) tmpMInstance;
-					if (tmpMDefinition instanceof MDefinition) {
-						MDefinition mDefinition = (MDefinition) tmpMDefinition;
+		if (tmpMDefinition instanceof MDefinition) {
+			MDefinition mDefinition = (MDefinition) tmpMDefinition;
+			if (tmpTSignature instanceof TSignature) {
+				TSignature tSignature = (TSignature) tmpTSignature;
+				if (tmpMSignature instanceof MSignature) {
+					MSignature mSignature = (MSignature) tmpMSignature;
+					if (tmpMAnonymous instanceof AnonymousClassDeclaration) {
+						AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) tmpMAnonymous;
 						if (tmpTAnonymous instanceof TClass) {
 							TClass tAnonymous = (TClass) tmpTAnonymous;
 							if (tmpMDefinitionToTMember instanceof MDefinitionToTMember) {
 								MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) tmpMDefinitionToTMember;
-								if (tmpMSignatureToTSignature instanceof MSignatureToTSignature) {
-									MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) tmpMSignatureToTSignature;
-									if (tmpMAnonymous instanceof AnonymousClassDeclaration) {
-										AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) tmpMAnonymous;
+								if (tmpTDefinition instanceof TMember) {
+									TMember tDefinition = (TMember) tmpTDefinition;
+									if (tmpMSignatureToTSignature instanceof MSignatureToTSignature) {
+										MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) tmpMSignatureToTSignature;
 										if (tmpMAnonymousToTAnonymous instanceof AnonymousClassDeclarationToTClass) {
 											AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) tmpMAnonymousToTAnonymous;
-											if (tmpTSignature instanceof TSignature) {
-												TSignature tSignature = (TSignature) tmpTSignature;
-												return new Object[] { tDefinition, mSignature, mInstance, mDefinition,
-														tAnonymous, mDefinitionToTMember, mSignatureToTSignature,
-														mAnonymous, mAnonymousToTAnonymous, tSignature,
-														isApplicableMatch };
-											}
+											return new Object[] { mDefinition, tSignature, mSignature, mAnonymous,
+													tAnonymous, mDefinitionToTMember, tDefinition,
+													mSignatureToTSignature, mAnonymousToTAnonymous, isApplicableMatch };
 										}
 									}
 								}
@@ -2320,47 +2194,44 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_11_1_performtransformation_blackBBBBBBBBBBFBB(
-			TMember tDefinition, MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature, LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_LinkDefinitionToAnonymous_11_1_performtransformation_blackBBBBBBBBBFBB(
+			MDefinition mDefinition, TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous,
+			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
+			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-						mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature, csp, _this,
-						isApplicableMatch };
+				return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember,
+						tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_11_1_performtransformation_bindingAndBlackFFFFFFFFFFFBB(
+	public static final Object[] pattern_LinkDefinitionToAnonymous_11_1_performtransformation_bindingAndBlackFFFFFFFFFFBB(
 			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch) {
-		Object[] result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding = pattern_LinkDefinitionToAnonymous_11_1_performtransformation_bindingFFFFFFFFFFB(
+		Object[] result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding = pattern_LinkDefinitionToAnonymous_11_1_performtransformation_bindingFFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding != null) {
-			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[0];
-			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[1];
-			ClassInstanceCreation mInstance = (ClassInstanceCreation) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[2];
-			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[3];
+			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[0];
+			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[1];
+			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[2];
+			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[3];
 			TClass tAnonymous = (TClass) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[4];
 			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[5];
-			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[6];
-			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[7];
+			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[6];
+			MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[7];
 			AnonymousClassDeclarationToTClass mAnonymousToTAnonymous = (AnonymousClassDeclarationToTClass) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[8];
-			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_binding[9];
 
-			Object[] result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_black = pattern_LinkDefinitionToAnonymous_11_1_performtransformation_blackBBBBBBBBBBFBB(
-					tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-					mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature, _this, isApplicableMatch);
+			Object[] result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_black = pattern_LinkDefinitionToAnonymous_11_1_performtransformation_blackBBBBBBBBBFBB(
+					mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+					mSignatureToTSignature, mAnonymousToTAnonymous, _this, isApplicableMatch);
 			if (result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_black != null) {
-				CSP csp = (CSP) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_black[10];
+				CSP csp = (CSP) result_pattern_LinkDefinitionToAnonymous_11_1_performtransformation_black[9];
 
-				return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-						mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature, csp, _this,
-						isApplicableMatch };
+				return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember,
+						tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -2377,102 +2248,76 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return new Object[] { ruleresult };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tDefinition, EObject mSignature, EObject mInstance,
-			EObject mDefinition, EObject tAnonymous, EObject mDefinitionToTMember, EObject mSignatureToTSignature,
-			EObject mAnonymous, EObject mAnonymousToTAnonymous, EObject tSignature) {
-		if (!tDefinition.equals(tSignature)) {
-			if (!mSignature.equals(tDefinition)) {
-				if (!mSignature.equals(tAnonymous)) {
-					if (!mSignature.equals(mSignatureToTSignature)) {
-						if (!mSignature.equals(tSignature)) {
-							if (!mInstance.equals(tDefinition)) {
-								if (!mInstance.equals(mSignature)) {
-									if (!mInstance.equals(tAnonymous)) {
-										if (!mInstance.equals(mSignatureToTSignature)) {
-											if (!mInstance.equals(tSignature)) {
-												if (!mDefinition.equals(tDefinition)) {
-													if (!mDefinition.equals(mSignature)) {
-														if (!mDefinition.equals(mInstance)) {
-															if (!mDefinition.equals(tAnonymous)) {
-																if (!mDefinition.equals(mDefinitionToTMember)) {
-																	if (!mDefinition.equals(mSignatureToTSignature)) {
-																		if (!mDefinition.equals(tSignature)) {
-																			if (!tAnonymous.equals(tDefinition)) {
+	public static final Object[] pattern_LinkDefinitionToAnonymous_11_3_bookkeepingforedges_blackBBBBBBBBBB(
+			PerformRuleResult ruleresult, EObject mDefinition, EObject tSignature, EObject mSignature,
+			EObject mAnonymous, EObject tAnonymous, EObject mDefinitionToTMember, EObject tDefinition,
+			EObject mSignatureToTSignature, EObject mAnonymousToTAnonymous) {
+		if (!mDefinition.equals(tSignature)) {
+			if (!mDefinition.equals(mSignature)) {
+				if (!mDefinition.equals(tAnonymous)) {
+					if (!mDefinition.equals(mDefinitionToTMember)) {
+						if (!mDefinition.equals(tDefinition)) {
+							if (!mDefinition.equals(mSignatureToTSignature)) {
+								if (!mSignature.equals(tSignature)) {
+									if (!mSignature.equals(tAnonymous)) {
+										if (!mSignature.equals(tDefinition)) {
+											if (!mSignature.equals(mSignatureToTSignature)) {
+												if (!mAnonymous.equals(mDefinition)) {
+													if (!mAnonymous.equals(tSignature)) {
+														if (!mAnonymous.equals(mSignature)) {
+															if (!mAnonymous.equals(tAnonymous)) {
+																if (!mAnonymous.equals(mDefinitionToTMember)) {
+																	if (!mAnonymous.equals(tDefinition)) {
+																		if (!mAnonymous
+																				.equals(mSignatureToTSignature)) {
+																			if (!mAnonymous
+																					.equals(mAnonymousToTAnonymous)) {
 																				if (!tAnonymous.equals(tSignature)) {
-																					if (!mDefinitionToTMember
+																					if (!tAnonymous
 																							.equals(tDefinition)) {
 																						if (!mDefinitionToTMember
-																								.equals(mSignature)) {
+																								.equals(tSignature)) {
 																							if (!mDefinitionToTMember
-																									.equals(mInstance)) {
+																									.equals(mSignature)) {
 																								if (!mDefinitionToTMember
 																										.equals(tAnonymous)) {
 																									if (!mDefinitionToTMember
-																											.equals(mSignatureToTSignature)) {
+																											.equals(tDefinition)) {
 																										if (!mDefinitionToTMember
-																												.equals(tSignature)) {
-																											if (!mSignatureToTSignature
-																													.equals(tDefinition)) {
+																												.equals(mSignatureToTSignature)) {
+																											if (!tDefinition
+																													.equals(tSignature)) {
 																												if (!mSignatureToTSignature
-																														.equals(tAnonymous)) {
+																														.equals(tSignature)) {
 																													if (!mSignatureToTSignature
-																															.equals(tSignature)) {
-																														if (!mAnonymous
+																															.equals(tAnonymous)) {
+																														if (!mSignatureToTSignature
 																																.equals(tDefinition)) {
-																															if (!mAnonymous
-																																	.equals(mSignature)) {
-																																if (!mAnonymous
-																																		.equals(mInstance)) {
-																																	if (!mAnonymous
-																																			.equals(mDefinition)) {
-																																		if (!mAnonymous
+																															if (!mAnonymousToTAnonymous
+																																	.equals(mDefinition)) {
+																																if (!mAnonymousToTAnonymous
+																																		.equals(tSignature)) {
+																																	if (!mAnonymousToTAnonymous
+																																			.equals(mSignature)) {
+																																		if (!mAnonymousToTAnonymous
 																																				.equals(tAnonymous)) {
-																																			if (!mAnonymous
+																																			if (!mAnonymousToTAnonymous
 																																					.equals(mDefinitionToTMember)) {
-																																				if (!mAnonymous
-																																						.equals(mSignatureToTSignature)) {
-																																					if (!mAnonymous
-																																							.equals(mAnonymousToTAnonymous)) {
-																																						if (!mAnonymous
-																																								.equals(tSignature)) {
-																																							if (!mAnonymousToTAnonymous
-																																									.equals(tDefinition)) {
-																																								if (!mAnonymousToTAnonymous
-																																										.equals(mSignature)) {
-																																									if (!mAnonymousToTAnonymous
-																																											.equals(mInstance)) {
-																																										if (!mAnonymousToTAnonymous
-																																												.equals(mDefinition)) {
-																																											if (!mAnonymousToTAnonymous
-																																													.equals(tAnonymous)) {
-																																												if (!mAnonymousToTAnonymous
-																																														.equals(mDefinitionToTMember)) {
-																																													if (!mAnonymousToTAnonymous
-																																															.equals(mSignatureToTSignature)) {
-																																														if (!mAnonymousToTAnonymous
-																																																.equals(tSignature)) {
-																																															return new Object[] {
-																																																	ruleresult,
-																																																	tDefinition,
-																																																	mSignature,
-																																																	mInstance,
-																																																	mDefinition,
-																																																	tAnonymous,
-																																																	mDefinitionToTMember,
-																																																	mSignatureToTSignature,
-																																																	mAnonymous,
-																																																	mAnonymousToTAnonymous,
-																																																	tSignature };
-																																														}
-																																													}
-																																												}
-																																											}
-																																										}
-																																									}
-																																								}
-																																							}
-																																						}
+																																				if (!mAnonymousToTAnonymous
+																																						.equals(tDefinition)) {
+																																					if (!mAnonymousToTAnonymous
+																																							.equals(mSignatureToTSignature)) {
+																																						return new Object[] {
+																																								ruleresult,
+																																								mDefinition,
+																																								tSignature,
+																																								mSignature,
+																																								mAnonymous,
+																																								tAnonymous,
+																																								mDefinitionToTMember,
+																																								tDefinition,
+																																								mSignatureToTSignature,
+																																								mAnonymousToTAnonymous };
 																																					}
 																																				}
 																																			}
@@ -2513,20 +2358,26 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject tDefinition, EObject mDefinition, EObject tAnonymous,
-			EObject mAnonymous, EObject tSignature) {
-		EMoflonEdge tAnonymous__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnonymous__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tAnonymous____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mDefinition, EObject tSignature, EObject mAnonymous,
+			EObject tAnonymous, EObject tDefinition) {
 		EMoflonEdge mAnonymous__mDefinition____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mAnonymous____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
+		EMoflonEdge tAnonymous__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnonymous__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tAnonymous____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "LinkDefinitionToAnonymous";
+		String mAnonymous__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mDefinition__mAnonymous____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
 		String tAnonymous__tSignature____signature_name_prime = "signature";
 		String tAnonymous__tDefinition____defines_name_prime = "defines";
 		String tDefinition__tAnonymous____definedBy_name_prime = "definedBy";
-		String mAnonymous__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
-		String mDefinition__mAnonymous____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
+		mAnonymous__mDefinition____bodyDeclarations.setSrc(mAnonymous);
+		mAnonymous__mDefinition____bodyDeclarations.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mAnonymous__mDefinition____bodyDeclarations);
+		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setSrc(mDefinition);
+		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setTrg(mAnonymous);
+		ruleresult.getCreatedEdges().add(mDefinition__mAnonymous____anonymousClassDeclarationOwner);
 		tAnonymous__tSignature____signature.setSrc(tAnonymous);
 		tAnonymous__tSignature____signature.setTrg(tSignature);
 		ruleresult.getTranslatedEdges().add(tAnonymous__tSignature____signature);
@@ -2536,31 +2387,25 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		tDefinition__tAnonymous____definedBy.setSrc(tDefinition);
 		tDefinition__tAnonymous____definedBy.setTrg(tAnonymous);
 		ruleresult.getTranslatedEdges().add(tDefinition__tAnonymous____definedBy);
-		mAnonymous__mDefinition____bodyDeclarations.setSrc(mAnonymous);
-		mAnonymous__mDefinition____bodyDeclarations.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mAnonymous__mDefinition____bodyDeclarations);
-		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setSrc(mDefinition);
-		mDefinition__mAnonymous____anonymousClassDeclarationOwner.setTrg(mAnonymous);
-		ruleresult.getCreatedEdges().add(mDefinition__mAnonymous____anonymousClassDeclarationOwner);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tAnonymous__tSignature____signature.setName(tAnonymous__tSignature____signature_name_prime);
-		tAnonymous__tDefinition____defines.setName(tAnonymous__tDefinition____defines_name_prime);
-		tDefinition__tAnonymous____definedBy.setName(tDefinition__tAnonymous____definedBy_name_prime);
 		mAnonymous__mDefinition____bodyDeclarations.setName(mAnonymous__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__mAnonymous____anonymousClassDeclarationOwner
 				.setName(mDefinition__mAnonymous____anonymousClassDeclarationOwner_name_prime);
-		return new Object[] { ruleresult, tDefinition, mDefinition, tAnonymous, mAnonymous, tSignature,
+		tAnonymous__tSignature____signature.setName(tAnonymous__tSignature____signature_name_prime);
+		tAnonymous__tDefinition____defines.setName(tAnonymous__tDefinition____defines_name_prime);
+		tDefinition__tAnonymous____definedBy.setName(tDefinition__tAnonymous____definedBy_name_prime);
+		return new Object[] { ruleresult, mDefinition, tSignature, mAnonymous, tAnonymous, tDefinition,
+				mAnonymous__mDefinition____bodyDeclarations, mDefinition__mAnonymous____anonymousClassDeclarationOwner,
 				tAnonymous__tSignature____signature, tAnonymous__tDefinition____defines,
-				tDefinition__tAnonymous____definedBy, mAnonymous__mDefinition____bodyDeclarations,
-				mDefinition__mAnonymous____anonymousClassDeclarationOwner };
+				tDefinition__tAnonymous____definedBy };
 	}
 
-	public static final void pattern_LinkDefinitionToAnonymous_11_5_registerobjects_expressionBBBBBBBBBBBB(
-			LinkDefinitionToAnonymous _this, PerformRuleResult ruleresult, EObject tDefinition, EObject mSignature,
-			EObject mInstance, EObject mDefinition, EObject tAnonymous, EObject mDefinitionToTMember,
-			EObject mSignatureToTSignature, EObject mAnonymous, EObject mAnonymousToTAnonymous, EObject tSignature) {
-		_this.registerObjects_BWD(ruleresult, tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-				mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature);
+	public static final void pattern_LinkDefinitionToAnonymous_11_5_registerobjects_expressionBBBBBBBBBBB(
+			LinkDefinitionToAnonymous _this, PerformRuleResult ruleresult, EObject mDefinition, EObject tSignature,
+			EObject mSignature, EObject mAnonymous, EObject tAnonymous, EObject mDefinitionToTMember,
+			EObject tDefinition, EObject mSignatureToTSignature, EObject mAnonymousToTAnonymous) {
+		_this.registerObjects_BWD(ruleresult, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+				mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous);
 
 	}
 
@@ -2622,44 +2467,45 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_12_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tDefinition");
+		EObject _localVariable_0 = match.getObject("tSignature");
 		EObject _localVariable_1 = match.getObject("tAnonymous");
-		EObject _localVariable_2 = match.getObject("tSignature");
-		EObject tmpTDefinition = _localVariable_0;
+		EObject _localVariable_2 = match.getObject("tDefinition");
+		EObject tmpTSignature = _localVariable_0;
 		EObject tmpTAnonymous = _localVariable_1;
-		EObject tmpTSignature = _localVariable_2;
-		if (tmpTDefinition instanceof TMember) {
-			TMember tDefinition = (TMember) tmpTDefinition;
+		EObject tmpTDefinition = _localVariable_2;
+		if (tmpTSignature instanceof TSignature) {
+			TSignature tSignature = (TSignature) tmpTSignature;
 			if (tmpTAnonymous instanceof TClass) {
 				TClass tAnonymous = (TClass) tmpTAnonymous;
-				if (tmpTSignature instanceof TSignature) {
-					TSignature tSignature = (TSignature) tmpTSignature;
-					return new Object[] { tDefinition, tAnonymous, tSignature, match };
+				if (tmpTDefinition instanceof TMember) {
+					TMember tDefinition = (TMember) tmpTDefinition;
+					return new Object[] { tSignature, tAnonymous, tDefinition, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_12_2_corematch_blackBFFBFFFFBB(
-			TMember tDefinition, TClass tAnonymous, TSignature tSignature, Match match) {
+	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_12_2_corematch_blackFBFFBFBFFB(
+			TSignature tSignature, TClass tAnonymous, TMember tDefinition, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tDefinition, MDefinitionToTMember.class, "target")) {
 			BodyDeclaration tmpMDefinition = mDefinitionToTMember.getSource();
 			if (tmpMDefinition instanceof MDefinition) {
 				MDefinition mDefinition = (MDefinition) tmpMDefinition;
-				for (AnonymousClassDeclarationToTClass mAnonymousToTAnonymous : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(tAnonymous, AnonymousClassDeclarationToTClass.class, "target")) {
-					AnonymousClassDeclaration mAnonymous = mAnonymousToTAnonymous.getSource();
-					if (mAnonymous != null) {
-						for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
-								.getOppositeReferenceTyped(tSignature, MSignatureToTSignature.class, "target")) {
-							MSignature mSignature = mSignatureToTSignature.getSource();
-							if (mSignature != null) {
-								_result.add(new Object[] { tDefinition, mSignature, mDefinition, tAnonymous,
-										mDefinitionToTMember, mSignatureToTSignature, mAnonymous,
-										mAnonymousToTAnonymous, tSignature, match });
+				for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(tSignature, MSignatureToTSignature.class, "target")) {
+					MSignature mSignature = mSignatureToTSignature.getSource();
+					if (mSignature != null) {
+						for (AnonymousClassDeclarationToTClass mAnonymousToTAnonymous : org.moflon.core.utilities.eMoflonEMFUtil
+								.getOppositeReferenceTyped(tAnonymous, AnonymousClassDeclarationToTClass.class,
+										"target")) {
+							AnonymousClassDeclaration mAnonymous = mAnonymousToTAnonymous.getSource();
+							if (mAnonymous != null) {
+								_result.add(new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+										mDefinitionToTMember, tDefinition, mSignatureToTSignature,
+										mAnonymousToTAnonymous, match });
 							}
 
 						}
@@ -2672,30 +2518,24 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_12_3_findcontext_blackBBFBBBBBBB(
-			TMember tDefinition, MSignature mSignature, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {
+	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_12_3_findcontext_blackBBBBBBBBB(
+			MDefinition mDefinition, TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous,
+			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tDefinition.equals(mDefinitionToTMember.getTarget())) {
-			if (mDefinition.equals(mDefinitionToTMember.getSource())) {
-				if (tAnonymous.getSignature().contains(tSignature)) {
-					if (mSignature.equals(mSignatureToTSignature.getSource())) {
-						if (tAnonymous.getDefines().contains(tDefinition)) {
+		if (tSignature.getDefinitions().contains(tDefinition)) {
+			if (tAnonymous.getSignature().contains(tSignature)) {
+				if (tAnonymous.getDefines().contains(tDefinition)) {
+					if (tDefinition.equals(mDefinitionToTMember.getTarget())) {
+						if (mDefinition.equals(mDefinitionToTMember.getSource())) {
 							if (mSignature.getMDefinitions().contains(mDefinition)) {
-								if (tAnonymous.equals(mAnonymousToTAnonymous.getTarget())) {
-									if (mAnonymous.equals(mAnonymousToTAnonymous.getSource())) {
-										if (tSignature.getDefinitions().contains(tDefinition)) {
-											if (tSignature.equals(mSignatureToTSignature.getTarget())) {
-												ClassInstanceCreation mInstance = mAnonymous.getClassInstanceCreation();
-												if (mInstance != null) {
-													_result.add(new Object[] { tDefinition, mSignature, mInstance,
-															mDefinition, tAnonymous, mDefinitionToTMember,
-															mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-															tSignature });
-												}
-
+								if (tSignature.equals(mSignatureToTSignature.getTarget())) {
+									if (mSignature.equals(mSignatureToTSignature.getSource())) {
+										if (tAnonymous.equals(mAnonymousToTAnonymous.getTarget())) {
+											if (mAnonymous.equals(mAnonymousToTAnonymous.getSource())) {
+												_result.add(new Object[] { mDefinition, tSignature, mSignature,
+														mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition,
+														mSignatureToTSignature, mAnonymousToTAnonymous });
 											}
 										}
 									}
@@ -2709,140 +2549,121 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_12_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFFFF(
-			TMember tDefinition, MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {
+	public static final Object[] pattern_LinkDefinitionToAnonymous_12_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFFFF(
+			MDefinition mDefinition, TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous,
+			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnonymous__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mInstance__mAnonymous____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnonymous__mInstance____classInstanceCreation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnonymous__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tDefinition__tAnonymous____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnonymousToTAnonymous__tAnonymous____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnonymousToTAnonymous__mAnonymous____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnonymous__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnonymous__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDefinition__tAnonymous____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignatureToTSignature__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
-		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
-		String tAnonymous__tSignature____signature_name_prime = "signature";
-		String mSignatureToTSignature__mSignature____source_name_prime = "source";
-		String mInstance__mAnonymous____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
-		String mAnonymous__mInstance____classInstanceCreation_name_prime = "classInstanceCreation";
-		String tAnonymous__tDefinition____defines_name_prime = "defines";
-		String tDefinition__tAnonymous____definedBy_name_prime = "definedBy";
-		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
-		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
-		String mAnonymousToTAnonymous__tAnonymous____target_name_prime = "target";
-		String mAnonymousToTAnonymous__mAnonymous____source_name_prime = "source";
+		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnonymousToTAnonymous__tAnonymous____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnonymousToTAnonymous__mAnonymous____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tSignature__tDefinition____definitions_name_prime = "definitions";
 		String tDefinition__tSignature____signature_name_prime = "signature";
+		String tAnonymous__tSignature____signature_name_prime = "signature";
+		String tAnonymous__tDefinition____defines_name_prime = "defines";
+		String tDefinition__tAnonymous____definedBy_name_prime = "definedBy";
+		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
+		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
+		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
 		String mSignatureToTSignature__tSignature____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(tDefinition);
-		isApplicableMatch.getAllContextElements().add(mSignature);
-		isApplicableMatch.getAllContextElements().add(mInstance);
+		String mSignatureToTSignature__mSignature____source_name_prime = "source";
+		String mAnonymousToTAnonymous__tAnonymous____target_name_prime = "target";
+		String mAnonymousToTAnonymous__mAnonymous____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mDefinition);
+		isApplicableMatch.getAllContextElements().add(tSignature);
+		isApplicableMatch.getAllContextElements().add(mSignature);
+		isApplicableMatch.getAllContextElements().add(mAnonymous);
 		isApplicableMatch.getAllContextElements().add(tAnonymous);
 		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember);
+		isApplicableMatch.getAllContextElements().add(tDefinition);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature);
-		isApplicableMatch.getAllContextElements().add(mAnonymous);
 		isApplicableMatch.getAllContextElements().add(mAnonymousToTAnonymous);
-		isApplicableMatch.getAllContextElements().add(tSignature);
-		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDefinition____target);
-		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__mDefinition____source);
-		tAnonymous__tSignature____signature.setSrc(tAnonymous);
-		tAnonymous__tSignature____signature.setTrg(tSignature);
-		isApplicableMatch.getAllContextElements().add(tAnonymous__tSignature____signature);
-		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
-		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
-		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__mSignature____source);
-		mInstance__mAnonymous____anonymousClassDeclaration.setSrc(mInstance);
-		mInstance__mAnonymous____anonymousClassDeclaration.setTrg(mAnonymous);
-		isApplicableMatch.getAllContextElements().add(mInstance__mAnonymous____anonymousClassDeclaration);
-		mAnonymous__mInstance____classInstanceCreation.setSrc(mAnonymous);
-		mAnonymous__mInstance____classInstanceCreation.setTrg(mInstance);
-		isApplicableMatch.getAllContextElements().add(mAnonymous__mInstance____classInstanceCreation);
-		tAnonymous__tDefinition____defines.setSrc(tAnonymous);
-		tAnonymous__tDefinition____defines.setTrg(tDefinition);
-		isApplicableMatch.getAllContextElements().add(tAnonymous__tDefinition____defines);
-		tDefinition__tAnonymous____definedBy.setSrc(tDefinition);
-		tDefinition__tAnonymous____definedBy.setTrg(tAnonymous);
-		isApplicableMatch.getAllContextElements().add(tDefinition__tAnonymous____definedBy);
-		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
-		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
-		isApplicableMatch.getAllContextElements().add(mSignature__mDefinition____mDefinitions);
-		mDefinition__mSignature____mSignature.setSrc(mDefinition);
-		mDefinition__mSignature____mSignature.setTrg(mSignature);
-		isApplicableMatch.getAllContextElements().add(mDefinition__mSignature____mSignature);
-		mAnonymousToTAnonymous__tAnonymous____target.setSrc(mAnonymousToTAnonymous);
-		mAnonymousToTAnonymous__tAnonymous____target.setTrg(tAnonymous);
-		isApplicableMatch.getAllContextElements().add(mAnonymousToTAnonymous__tAnonymous____target);
-		mAnonymousToTAnonymous__mAnonymous____source.setSrc(mAnonymousToTAnonymous);
-		mAnonymousToTAnonymous__mAnonymous____source.setTrg(mAnonymous);
-		isApplicableMatch.getAllContextElements().add(mAnonymousToTAnonymous__mAnonymous____source);
 		tSignature__tDefinition____definitions.setSrc(tSignature);
 		tSignature__tDefinition____definitions.setTrg(tDefinition);
 		isApplicableMatch.getAllContextElements().add(tSignature__tDefinition____definitions);
 		tDefinition__tSignature____signature.setSrc(tDefinition);
 		tDefinition__tSignature____signature.setTrg(tSignature);
 		isApplicableMatch.getAllContextElements().add(tDefinition__tSignature____signature);
+		tAnonymous__tSignature____signature.setSrc(tAnonymous);
+		tAnonymous__tSignature____signature.setTrg(tSignature);
+		isApplicableMatch.getAllContextElements().add(tAnonymous__tSignature____signature);
+		tAnonymous__tDefinition____defines.setSrc(tAnonymous);
+		tAnonymous__tDefinition____defines.setTrg(tDefinition);
+		isApplicableMatch.getAllContextElements().add(tAnonymous__tDefinition____defines);
+		tDefinition__tAnonymous____definedBy.setSrc(tDefinition);
+		tDefinition__tAnonymous____definedBy.setTrg(tAnonymous);
+		isApplicableMatch.getAllContextElements().add(tDefinition__tAnonymous____definedBy);
+		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDefinition____target);
+		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__mDefinition____source);
+		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
+		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
+		isApplicableMatch.getAllContextElements().add(mSignature__mDefinition____mDefinitions);
+		mDefinition__mSignature____mSignature.setSrc(mDefinition);
+		mDefinition__mSignature____mSignature.setTrg(mSignature);
+		isApplicableMatch.getAllContextElements().add(mDefinition__mSignature____mSignature);
 		mSignatureToTSignature__tSignature____target.setSrc(mSignatureToTSignature);
 		mSignatureToTSignature__tSignature____target.setTrg(tSignature);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__tSignature____target);
-		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
-		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
-		tAnonymous__tSignature____signature.setName(tAnonymous__tSignature____signature_name_prime);
-		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
-		mInstance__mAnonymous____anonymousClassDeclaration
-				.setName(mInstance__mAnonymous____anonymousClassDeclaration_name_prime);
-		mAnonymous__mInstance____classInstanceCreation
-				.setName(mAnonymous__mInstance____classInstanceCreation_name_prime);
-		tAnonymous__tDefinition____defines.setName(tAnonymous__tDefinition____defines_name_prime);
-		tDefinition__tAnonymous____definedBy.setName(tDefinition__tAnonymous____definedBy_name_prime);
-		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
-		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		mAnonymousToTAnonymous__tAnonymous____target.setName(mAnonymousToTAnonymous__tAnonymous____target_name_prime);
-		mAnonymousToTAnonymous__mAnonymous____source.setName(mAnonymousToTAnonymous__mAnonymous____source_name_prime);
+		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
+		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
+		isApplicableMatch.getAllContextElements().add(mSignatureToTSignature__mSignature____source);
+		mAnonymousToTAnonymous__tAnonymous____target.setSrc(mAnonymousToTAnonymous);
+		mAnonymousToTAnonymous__tAnonymous____target.setTrg(tAnonymous);
+		isApplicableMatch.getAllContextElements().add(mAnonymousToTAnonymous__tAnonymous____target);
+		mAnonymousToTAnonymous__mAnonymous____source.setSrc(mAnonymousToTAnonymous);
+		mAnonymousToTAnonymous__mAnonymous____source.setTrg(mAnonymous);
+		isApplicableMatch.getAllContextElements().add(mAnonymousToTAnonymous__mAnonymous____source);
 		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
 		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
+		tAnonymous__tSignature____signature.setName(tAnonymous__tSignature____signature_name_prime);
+		tAnonymous__tDefinition____defines.setName(tAnonymous__tDefinition____defines_name_prime);
+		tDefinition__tAnonymous____definedBy.setName(tDefinition__tAnonymous____definedBy_name_prime);
+		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
+		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
+		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
 		mSignatureToTSignature__tSignature____target.setName(mSignatureToTSignature__tSignature____target_name_prime);
-		return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-				mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature, isApplicableMatch,
-				mDefinitionToTMember__tDefinition____target, mDefinitionToTMember__mDefinition____source,
-				tAnonymous__tSignature____signature, mSignatureToTSignature__mSignature____source,
-				mInstance__mAnonymous____anonymousClassDeclaration, mAnonymous__mInstance____classInstanceCreation,
-				tAnonymous__tDefinition____defines, tDefinition__tAnonymous____definedBy,
-				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature,
-				mAnonymousToTAnonymous__tAnonymous____target, mAnonymousToTAnonymous__mAnonymous____source,
+		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
+		mAnonymousToTAnonymous__tAnonymous____target.setName(mAnonymousToTAnonymous__tAnonymous____target_name_prime);
+		mAnonymousToTAnonymous__mAnonymous____source.setName(mAnonymousToTAnonymous__mAnonymous____source_name_prime);
+		return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember,
+				tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous, isApplicableMatch,
 				tSignature__tDefinition____definitions, tDefinition__tSignature____signature,
-				mSignatureToTSignature__tSignature____target };
+				tAnonymous__tSignature____signature, tAnonymous__tDefinition____defines,
+				tDefinition__tAnonymous____definedBy, mDefinitionToTMember__tDefinition____target,
+				mDefinitionToTMember__mDefinition____source, mSignature__mDefinition____mDefinitions,
+				mDefinition__mSignature____mSignature, mSignatureToTSignature__tSignature____target,
+				mSignatureToTSignature__mSignature____source, mAnonymousToTAnonymous__tAnonymous____target,
+				mAnonymousToTAnonymous__mAnonymous____source };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_12_4_solveCSP_bindingFBBBBBBBBBBBB(
-			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tDefinition, mSignature, mInstance,
-				mDefinition, tAnonymous, mDefinitionToTMember, mSignatureToTSignature, mAnonymous,
-				mAnonymousToTAnonymous, tSignature);
+	public static final Object[] pattern_LinkDefinitionToAnonymous_12_4_solveCSP_bindingFBBBBBBBBBBB(
+			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
+			TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous,
+			MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mDefinition, tSignature, mSignature,
+				mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition, mSignatureToTSignature,
+				mAnonymousToTAnonymous);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition,
-					tAnonymous, mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-					tSignature };
+			return new Object[] { csp, _this, isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous,
+					tAnonymous, mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous };
 		}
 		return null;
 	}
@@ -2851,15 +2672,14 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
-			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {
-		Object[] result_pattern_LinkDefinitionToAnonymous_12_4_solveCSP_binding = pattern_LinkDefinitionToAnonymous_12_4_solveCSP_bindingFBBBBBBBBBBBB(
-				_this, isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-				mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature);
+	public static final Object[] pattern_LinkDefinitionToAnonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(
+			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
+			TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous,
+			MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {
+		Object[] result_pattern_LinkDefinitionToAnonymous_12_4_solveCSP_binding = pattern_LinkDefinitionToAnonymous_12_4_solveCSP_bindingFBBBBBBBBBBB(
+				_this, isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+				mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous);
 		if (result_pattern_LinkDefinitionToAnonymous_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToAnonymous_12_4_solveCSP_binding[0];
 
@@ -2867,9 +2687,8 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 					csp);
 			if (result_pattern_LinkDefinitionToAnonymous_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition,
-						tAnonymous, mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-						tSignature };
+				return new Object[] { csp, _this, isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous,
+						tAnonymous, mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous };
 			}
 		}
 		return null;
@@ -2969,7 +2788,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 				if (tAnonymous.getSignature().contains(tSignature)) {
 					for (TMember tDefinition : tAnonymous.getDefines()) {
 						if (tSignature.getDefinitions().contains(tDefinition)) {
-							_result.add(new Object[] { tDefinition, tAnonymous, tSignature, _edge_signature });
+							_result.add(new Object[] { tSignature, tAnonymous, tDefinition, _edge_signature });
 						}
 					}
 				}
@@ -2990,9 +2809,9 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	}
 
 	public static final boolean pattern_LinkDefinitionToAnonymous_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			LinkDefinitionToAnonymous _this, Match match, TMember tDefinition, TClass tAnonymous,
-			TSignature tSignature) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tDefinition, tAnonymous, tSignature);
+			LinkDefinitionToAnonymous _this, Match match, TSignature tSignature, TClass tAnonymous,
+			TMember tDefinition) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tSignature, tAnonymous, tDefinition);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3080,7 +2899,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return new Object[] { __result };
 	}
 
-	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_21_2_testcorematchandDECs_blackFFFFB(
+	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_21_2_testcorematchandDECs_blackFFFB(
 			EMoflonEdge _edge_bodyDeclarations) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		EObject tmpMAnonymous = _edge_bodyDeclarations.getSrc();
@@ -3090,14 +2909,9 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 			if (tmpMDefinition instanceof MDefinition) {
 				MDefinition mDefinition = (MDefinition) tmpMDefinition;
 				if (mAnonymous.getBodyDeclarations().contains(mDefinition)) {
-					ClassInstanceCreation mInstance = mAnonymous.getClassInstanceCreation();
-					if (mInstance != null) {
-						MSignature mSignature = mDefinition.getMSignature();
-						if (mSignature != null) {
-							_result.add(new Object[] { mSignature, mInstance, mDefinition, mAnonymous,
-									_edge_bodyDeclarations });
-						}
-
+					MSignature mSignature = mDefinition.getMSignature();
+					if (mSignature != null) {
+						_result.add(new Object[] { mDefinition, mSignature, mAnonymous, _edge_bodyDeclarations });
 					}
 
 				}
@@ -3117,10 +2931,10 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 
 	}
 
-	public static final boolean pattern_LinkDefinitionToAnonymous_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-			LinkDefinitionToAnonymous _this, Match match, MSignature mSignature, ClassInstanceCreation mInstance,
-			MDefinition mDefinition, AnonymousClassDeclaration mAnonymous) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mSignature, mInstance, mDefinition, mAnonymous);
+	public static final boolean pattern_LinkDefinitionToAnonymous_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
+			LinkDefinitionToAnonymous _this, Match match, MDefinition mDefinition, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mDefinition, mSignature, mAnonymous);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3164,39 +2978,34 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
-			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("tDefinition");
-		EObject _localVariable_1 = sourceMatch.getObject("mSignature");
-		EObject _localVariable_2 = sourceMatch.getObject("mInstance");
-		EObject _localVariable_3 = sourceMatch.getObject("mDefinition");
+	public static final Object[] pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_bindingFFFFFFBB(
+			Match sourceMatch, Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("mDefinition");
+		EObject _localVariable_1 = targetMatch.getObject("tSignature");
+		EObject _localVariable_2 = sourceMatch.getObject("mSignature");
+		EObject _localVariable_3 = sourceMatch.getObject("mAnonymous");
 		EObject _localVariable_4 = targetMatch.getObject("tAnonymous");
-		EObject _localVariable_5 = sourceMatch.getObject("mAnonymous");
-		EObject _localVariable_6 = targetMatch.getObject("tSignature");
-		EObject tmpTDefinition = _localVariable_0;
-		EObject tmpMSignature = _localVariable_1;
-		EObject tmpMInstance = _localVariable_2;
-		EObject tmpMDefinition = _localVariable_3;
+		EObject _localVariable_5 = targetMatch.getObject("tDefinition");
+		EObject tmpMDefinition = _localVariable_0;
+		EObject tmpTSignature = _localVariable_1;
+		EObject tmpMSignature = _localVariable_2;
+		EObject tmpMAnonymous = _localVariable_3;
 		EObject tmpTAnonymous = _localVariable_4;
-		EObject tmpMAnonymous = _localVariable_5;
-		EObject tmpTSignature = _localVariable_6;
-		if (tmpTDefinition instanceof TMember) {
-			TMember tDefinition = (TMember) tmpTDefinition;
-			if (tmpMSignature instanceof MSignature) {
-				MSignature mSignature = (MSignature) tmpMSignature;
-				if (tmpMInstance instanceof ClassInstanceCreation) {
-					ClassInstanceCreation mInstance = (ClassInstanceCreation) tmpMInstance;
-					if (tmpMDefinition instanceof MDefinition) {
-						MDefinition mDefinition = (MDefinition) tmpMDefinition;
+		EObject tmpTDefinition = _localVariable_5;
+		if (tmpMDefinition instanceof MDefinition) {
+			MDefinition mDefinition = (MDefinition) tmpMDefinition;
+			if (tmpTSignature instanceof TSignature) {
+				TSignature tSignature = (TSignature) tmpTSignature;
+				if (tmpMSignature instanceof MSignature) {
+					MSignature mSignature = (MSignature) tmpMSignature;
+					if (tmpMAnonymous instanceof AnonymousClassDeclaration) {
+						AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) tmpMAnonymous;
 						if (tmpTAnonymous instanceof TClass) {
 							TClass tAnonymous = (TClass) tmpTAnonymous;
-							if (tmpMAnonymous instanceof AnonymousClassDeclaration) {
-								AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) tmpMAnonymous;
-								if (tmpTSignature instanceof TSignature) {
-									TSignature tSignature = (TSignature) tmpTSignature;
-									return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-											mAnonymous, tSignature, targetMatch, sourceMatch };
-								}
+							if (tmpTDefinition instanceof TMember) {
+								TMember tDefinition = (TMember) tmpTDefinition;
+								return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+										tDefinition, sourceMatch, targetMatch };
 							}
 						}
 					}
@@ -3206,52 +3015,49 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-			TMember tDefinition, MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			TClass tAnonymous, AnonymousClassDeclaration mAnonymous, TSignature tSignature, Match sourceMatch,
-			Match targetMatch) {
+	public static final Object[] pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_blackBBBBBBBB(
+			MDefinition mDefinition, TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous,
+			TClass tAnonymous, TMember tDefinition, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mAnonymous, tSignature,
-					sourceMatch, targetMatch };
+			return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, tDefinition, sourceMatch,
+					targetMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFBB(
+	public static final Object[] pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
-		Object[] result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding = pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
-				targetMatch, sourceMatch);
+		Object[] result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding = pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_bindingFFFFFFBB(
+				sourceMatch, targetMatch);
 		if (result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding != null) {
-			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[0];
-			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[1];
-			ClassInstanceCreation mInstance = (ClassInstanceCreation) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[2];
-			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[3];
+			MDefinition mDefinition = (MDefinition) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[0];
+			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[1];
+			MSignature mSignature = (MSignature) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[2];
+			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[3];
 			TClass tAnonymous = (TClass) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[4];
-			AnonymousClassDeclaration mAnonymous = (AnonymousClassDeclaration) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[5];
-			TSignature tSignature = (TSignature) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[6];
+			TMember tDefinition = (TMember) result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_binding[5];
 
-			Object[] result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_black = pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-					tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mAnonymous, tSignature, sourceMatch,
-					targetMatch);
+			Object[] result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_black = pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_blackBBBBBBBB(
+					mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, tDefinition, sourceMatch, targetMatch);
 			if (result_pattern_LinkDefinitionToAnonymous_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mAnonymous,
-						tSignature, sourceMatch, targetMatch };
+				return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, tDefinition,
+						sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_24_3_solvecsp_bindingFBBBBBBBBBB(
-			LinkDefinitionToAnonymous _this, TMember tDefinition, MSignature mSignature,
-			ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			AnonymousClassDeclaration mAnonymous, TSignature tSignature, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(tDefinition, mSignature, mInstance, mDefinition,
-				tAnonymous, mAnonymous, tSignature, sourceMatch, targetMatch);
-		CSP csp = _localVariable_7;
+	public static final Object[] pattern_LinkDefinitionToAnonymous_24_3_solvecsp_bindingFBBBBBBBBB(
+			LinkDefinitionToAnonymous _this, MDefinition mDefinition, TSignature tSignature, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous, TClass tAnonymous, TMember tDefinition, Match sourceMatch,
+			Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(mDefinition, tSignature, mSignature, mAnonymous,
+				tAnonymous, tDefinition, sourceMatch, targetMatch);
+		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mAnonymous,
-					tSignature, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, tDefinition,
+					sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -3260,12 +3066,12 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(
-			LinkDefinitionToAnonymous _this, TMember tDefinition, MSignature mSignature,
-			ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			AnonymousClassDeclaration mAnonymous, TSignature tSignature, Match sourceMatch, Match targetMatch) {
-		Object[] result_pattern_LinkDefinitionToAnonymous_24_3_solvecsp_binding = pattern_LinkDefinitionToAnonymous_24_3_solvecsp_bindingFBBBBBBBBBB(
-				_this, tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mAnonymous, tSignature, sourceMatch,
+	public static final Object[] pattern_LinkDefinitionToAnonymous_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
+			LinkDefinitionToAnonymous _this, MDefinition mDefinition, TSignature tSignature, MSignature mSignature,
+			AnonymousClassDeclaration mAnonymous, TClass tAnonymous, TMember tDefinition, Match sourceMatch,
+			Match targetMatch) {
+		Object[] result_pattern_LinkDefinitionToAnonymous_24_3_solvecsp_binding = pattern_LinkDefinitionToAnonymous_24_3_solvecsp_bindingFBBBBBBBBB(
+				_this, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, tDefinition, sourceMatch,
 				targetMatch);
 		if (result_pattern_LinkDefinitionToAnonymous_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToAnonymous_24_3_solvecsp_binding[0];
@@ -3274,8 +3080,8 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 					csp);
 			if (result_pattern_LinkDefinitionToAnonymous_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-						mAnonymous, tSignature, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+						tDefinition, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -3287,24 +3093,24 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_24_5_matchcorrcontext_blackBBBBFFBFBBB(
-			TMember tDefinition, MSignature mSignature, MDefinition mDefinition, TClass tAnonymous,
-			AnonymousClassDeclaration mAnonymous, TSignature tSignature, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_24_5_matchcorrcontext_blackBBBBBFBFFBB(
+			MDefinition mDefinition, TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous,
+			TClass tAnonymous, TMember tDefinition, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(tDefinition, MDefinitionToTMember.class, "target")) {
 				if (mDefinition.equals(mDefinitionToTMember.getSource())) {
 					for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mSignature, MSignatureToTSignature.class, "source")) {
-						if (tSignature.equals(mSignatureToTSignature.getTarget())) {
+							.getOppositeReferenceTyped(tSignature, MSignatureToTSignature.class, "target")) {
+						if (mSignature.equals(mSignatureToTSignature.getSource())) {
 							for (AnonymousClassDeclarationToTClass mAnonymousToTAnonymous : org.moflon.core.utilities.eMoflonEMFUtil
 									.getOppositeReferenceTyped(tAnonymous, AnonymousClassDeclarationToTClass.class,
 											"target")) {
 								if (mAnonymous.equals(mAnonymousToTAnonymous.getSource())) {
-									_result.add(new Object[] { tDefinition, mSignature, mDefinition, tAnonymous,
-											mDefinitionToTMember, mSignatureToTSignature, mAnonymous,
-											mAnonymousToTAnonymous, tSignature, sourceMatch, targetMatch });
+									_result.add(new Object[] { mDefinition, tSignature, mSignature, mAnonymous,
+											tAnonymous, mDefinitionToTMember, tDefinition, mSignatureToTSignature,
+											mAnonymousToTAnonymous, sourceMatch, targetMatch });
 								}
 							}
 						}
@@ -3330,11 +3136,10 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 				targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_24_6_createcorrespondence_blackBBBBBBBB(
-			TMember tDefinition, MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition,
-			TClass tAnonymous, AnonymousClassDeclaration mAnonymous, TSignature tSignature, CCMatch ccMatch) {
-		return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mAnonymous, tSignature,
-				ccMatch };
+	public static final Object[] pattern_LinkDefinitionToAnonymous_24_6_createcorrespondence_blackBBBBBBB(
+			MDefinition mDefinition, TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous,
+			TClass tAnonymous, TMember tDefinition, CCMatch ccMatch) {
+		return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, tDefinition, ccMatch };
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_24_7_addtoreturnedresult_blackBB(
@@ -3358,13 +3163,11 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_27_1_matchtggpattern_blackBBBB(MSignature mSignature,
-			ClassInstanceCreation mInstance, MDefinition mDefinition, AnonymousClassDeclaration mAnonymous) {
-		if (mAnonymous.equals(mInstance.getAnonymousClassDeclaration())) {
+	public static final Object[] pattern_LinkDefinitionToAnonymous_27_1_matchtggpattern_blackBBB(
+			MDefinition mDefinition, MSignature mSignature, AnonymousClassDeclaration mAnonymous) {
+		if (mAnonymous.getBodyDeclarations().contains(mDefinition)) {
 			if (mSignature.getMDefinitions().contains(mDefinition)) {
-				if (mAnonymous.getBodyDeclarations().contains(mDefinition)) {
-					return new Object[] { mSignature, mInstance, mDefinition, mAnonymous };
-				}
+				return new Object[] { mDefinition, mSignature, mAnonymous };
 			}
 		}
 		return null;
@@ -3380,12 +3183,12 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_28_1_matchtggpattern_blackBBB(TMember tDefinition,
-			TClass tAnonymous, TSignature tSignature) {
-		if (tAnonymous.getSignature().contains(tSignature)) {
-			if (tAnonymous.getDefines().contains(tDefinition)) {
-				if (tSignature.getDefinitions().contains(tDefinition)) {
-					return new Object[] { tDefinition, tAnonymous, tSignature };
+	public static final Object[] pattern_LinkDefinitionToAnonymous_28_1_matchtggpattern_blackBBB(TSignature tSignature,
+			TClass tAnonymous, TMember tDefinition) {
+		if (tSignature.getDefinitions().contains(tDefinition)) {
+			if (tAnonymous.getSignature().contains(tSignature)) {
+				if (tAnonymous.getDefines().contains(tDefinition)) {
+					return new Object[] { tSignature, tAnonymous, tDefinition };
 				}
 			}
 		}
@@ -3416,9 +3219,9 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TMember tDefinition) {
-		if (ruleResult.getTargetObjects().contains(tDefinition)) {
-			return new Object[] { ruleResult, tDefinition };
+			ModelgeneratorRuleResult ruleResult, MDefinition mDefinition) {
+		if (ruleResult.getSourceObjects().contains(mDefinition)) {
+			return new Object[] { ruleResult, mDefinition };
 		}
 		return null;
 	}
@@ -3432,17 +3235,17 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, MDefinition mDefinition) {
-		if (ruleResult.getSourceObjects().contains(mDefinition)) {
-			return new Object[] { ruleResult, mDefinition };
+			ModelgeneratorRuleResult ruleResult, TMember tDefinition) {
+		if (ruleResult.getTargetObjects().contains(tDefinition)) {
+			return new Object[] { ruleResult, tDefinition };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, MSignature mSignature) {
-		if (ruleResult.getSourceObjects().contains(mSignature)) {
-			return new Object[] { ruleResult, mSignature };
+			ModelgeneratorRuleResult ruleResult, TSignature tSignature) {
+		if (ruleResult.getTargetObjects().contains(tSignature)) {
+			return new Object[] { ruleResult, tSignature };
 		}
 		return null;
 	}
@@ -3456,22 +3259,14 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, TSignature tSignature) {
-		if (ruleResult.getTargetObjects().contains(tSignature)) {
-			return new Object[] { ruleResult, tSignature };
+			ModelgeneratorRuleResult ruleResult, MSignature mSignature) {
+		if (ruleResult.getSourceObjects().contains(mSignature)) {
+			return new Object[] { ruleResult, mSignature };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_6BB(
-			ModelgeneratorRuleResult ruleResult, ClassInstanceCreation mInstance) {
-		if (ruleResult.getSourceObjects().contains(mInstance)) {
-			return new Object[] { ruleResult, mInstance };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_7BB(
 			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclaration mAnonymous) {
 		if (ruleResult.getSourceObjects().contains(mAnonymous)) {
 			return new Object[] { ruleResult, mAnonymous };
@@ -3479,7 +3274,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_8BB(
+	public static final Object[] pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_7BB(
 			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {
 		if (ruleResult.getCorrObjects().contains(mAnonymousToTAnonymous)) {
 			return new Object[] { ruleResult, mAnonymousToTAnonymous };
@@ -3487,7 +3282,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return null;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_9BB(
+	public static final Object[] pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_8BB(
 			ModelgeneratorRuleResult ruleResult, TClass tAnonymous) {
 		if (ruleResult.getTargetObjects().contains(tAnonymous)) {
 			return new Object[] { ruleResult, tAnonymous };
@@ -3495,7 +3290,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_blackFFFFFFFFFFFFBB(
+	public static final Iterable<Object[]> pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_blackFFFFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (RuleEntryList mDefinitionToTMemberList : ruleEntryContainer.getRuleEntryList()) {
@@ -3504,25 +3299,25 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 					for (EObject tmpMDefinitionToTMember : mDefinitionToTMemberList.getEntryObjects()) {
 						if (tmpMDefinitionToTMember instanceof MDefinitionToTMember) {
 							MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) tmpMDefinitionToTMember;
-							TMember tDefinition = mDefinitionToTMember.getTarget();
-							if (tDefinition != null) {
-								BodyDeclaration tmpMDefinition = mDefinitionToTMember.getSource();
-								if (tmpMDefinition instanceof MDefinition) {
-									MDefinition mDefinition = (MDefinition) tmpMDefinition;
-									TSignature tSignature = tDefinition.getSignature();
-									if (tSignature != null) {
-										MSignature mSignature = mDefinition.getMSignature();
-										if (mSignature != null) {
+							BodyDeclaration tmpMDefinition = mDefinitionToTMember.getSource();
+							if (tmpMDefinition instanceof MDefinition) {
+								MDefinition mDefinition = (MDefinition) tmpMDefinition;
+								TMember tDefinition = mDefinitionToTMember.getTarget();
+								if (tDefinition != null) {
+									MSignature mSignature = mDefinition.getMSignature();
+									if (mSignature != null) {
+										TSignature tSignature = tDefinition.getSignature();
+										if (tSignature != null) {
 											if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_1BB(
 													ruleResult, mDefinitionToTMember) == null) {
 												if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_0BB(
-														ruleResult, tDefinition) == null) {
+														ruleResult, mDefinition) == null) {
 													if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_2BB(
-															ruleResult, mDefinition) == null) {
+															ruleResult, tDefinition) == null) {
 														if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_5BB(
-																ruleResult, tSignature) == null) {
+																ruleResult, mSignature) == null) {
 															if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_3BB(
-																	ruleResult, mSignature) == null) {
+																	ruleResult, tSignature) == null) {
 																for (EObject tmpMAnonymousToTAnonymous : mAnonymousToTAnonymousList
 																		.getEntryObjects()) {
 																	if (tmpMAnonymousToTAnonymous instanceof AnonymousClassDeclarationToTClass) {
@@ -3533,57 +3328,47 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 																			TClass tAnonymous = mAnonymousToTAnonymous
 																					.getTarget();
 																			if (tAnonymous != null) {
-																				ClassInstanceCreation mInstance = mAnonymous
-																						.getClassInstanceCreation();
-																				if (mInstance != null) {
-																					if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_8BB(
+																				if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_7BB(
+																						ruleResult,
+																						mAnonymousToTAnonymous) == null) {
+																					if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_6BB(
 																							ruleResult,
-																							mAnonymousToTAnonymous) == null) {
-																						if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_7BB(
+																							mAnonymous) == null) {
+																						if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_8BB(
 																								ruleResult,
-																								mAnonymous) == null) {
-																							if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_9BB(
-																									ruleResult,
-																									tAnonymous) == null) {
-																								if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_6BB(
-																										ruleResult,
-																										mInstance) == null) {
-																									for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
-																											.getOppositeReferenceTyped(
-																													tSignature,
-																													MSignatureToTSignature.class,
-																													"target")) {
-																										if (mSignature
-																												.equals(mSignatureToTSignature
-																														.getSource())) {
-																											if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_4BB(
-																													ruleResult,
-																													mSignatureToTSignature) == null) {
-																												_result.add(
-																														new Object[] {
-																																mDefinitionToTMemberList,
-																																tDefinition,
-																																mDefinitionToTMember,
-																																mDefinition,
-																																mSignature,
-																																mSignatureToTSignature,
-																																tSignature,
-																																mAnonymousToTAnonymousList,
-																																mInstance,
-																																mAnonymous,
-																																mAnonymousToTAnonymous,
-																																tAnonymous,
-																																ruleEntryContainer,
-																																ruleResult });
-																											}
-																										}
+																								tAnonymous) == null) {
+																							for (MSignatureToTSignature mSignatureToTSignature : org.moflon.core.utilities.eMoflonEMFUtil
+																									.getOppositeReferenceTyped(
+																											mSignature,
+																											MSignatureToTSignature.class,
+																											"source")) {
+																								if (tSignature.equals(
+																										mSignatureToTSignature
+																												.getTarget())) {
+																									if (pattern_LinkDefinitionToAnonymous_29_2_isapplicablecore_black_nac_4BB(
+																											ruleResult,
+																											mSignatureToTSignature) == null) {
+																										_result.add(
+																												new Object[] {
+																														mDefinitionToTMemberList,
+																														mDefinition,
+																														mDefinitionToTMember,
+																														tDefinition,
+																														tSignature,
+																														mSignatureToTSignature,
+																														mSignature,
+																														mAnonymousToTAnonymousList,
+																														mAnonymous,
+																														mAnonymousToTAnonymous,
+																														tAnonymous,
+																														ruleEntryContainer,
+																														ruleResult });
 																									}
 																								}
 																							}
 																						}
 																					}
 																				}
-
 																			}
 
 																		}
@@ -3611,20 +3396,20 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_29_3_solveCSP_bindingFBBBBBBBBBBBBB(
-			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tDefinition, mSignature, mInstance,
-				mDefinition, tAnonymous, mDefinitionToTMember, mSignatureToTSignature, mAnonymous,
-				mAnonymousToTAnonymous, tSignature, ruleResult);
+	public static final Object[] pattern_LinkDefinitionToAnonymous_29_3_solveCSP_bindingFBBBBBBBBBBBB(
+			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
+			TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous,
+			MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
+			ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mDefinition, tSignature, mSignature,
+				mAnonymous, tAnonymous, mDefinitionToTMember, tDefinition, mSignatureToTSignature,
+				mAnonymousToTAnonymous, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition,
-					tAnonymous, mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-					tSignature, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous,
+					tAnonymous, mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous,
+					ruleResult };
 		}
 		return null;
 	}
@@ -3633,16 +3418,15 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBBB(
-			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature, ModelgeneratorRuleResult ruleResult) {
-		Object[] result_pattern_LinkDefinitionToAnonymous_29_3_solveCSP_binding = pattern_LinkDefinitionToAnonymous_29_3_solveCSP_bindingFBBBBBBBBBBBBB(
-				_this, isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition, tAnonymous,
-				mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature,
-				ruleResult);
+	public static final Object[] pattern_LinkDefinitionToAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
+			LinkDefinitionToAnonymous _this, IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
+			TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous,
+			MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
+			ModelgeneratorRuleResult ruleResult) {
+		Object[] result_pattern_LinkDefinitionToAnonymous_29_3_solveCSP_binding = pattern_LinkDefinitionToAnonymous_29_3_solveCSP_bindingFBBBBBBBBBBBB(
+				_this, isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous, tAnonymous,
+				mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous, ruleResult);
 		if (result_pattern_LinkDefinitionToAnonymous_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_LinkDefinitionToAnonymous_29_3_solveCSP_binding[0];
 
@@ -3650,9 +3434,9 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 					csp);
 			if (result_pattern_LinkDefinitionToAnonymous_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tDefinition, mSignature, mInstance, mDefinition,
-						tAnonymous, mDefinitionToTMember, mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous,
-						tSignature, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mDefinition, tSignature, mSignature, mAnonymous,
+						tAnonymous, mDefinitionToTMember, tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous,
+						ruleResult };
 			}
 		}
 		return null;
@@ -3665,36 +3449,35 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 		return _result;
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_29_5_checknacs_blackBBBBBBBBBB(TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature) {
-		return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-				mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature };
+	public static final Object[] pattern_LinkDefinitionToAnonymous_29_5_checknacs_blackBBBBBBBBB(
+			MDefinition mDefinition, TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous,
+			TClass tAnonymous, MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous) {
+		return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember,
+				tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous };
 	}
 
-	public static final Object[] pattern_LinkDefinitionToAnonymous_29_6_perform_blackBBBBBBBBBBB(TMember tDefinition,
-			MSignature mSignature, ClassInstanceCreation mInstance, MDefinition mDefinition, TClass tAnonymous,
-			MDefinitionToTMember mDefinitionToTMember, MSignatureToTSignature mSignatureToTSignature,
-			AnonymousClassDeclaration mAnonymous, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
-			TSignature tSignature, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { tDefinition, mSignature, mInstance, mDefinition, tAnonymous, mDefinitionToTMember,
-				mSignatureToTSignature, mAnonymous, mAnonymousToTAnonymous, tSignature, ruleResult };
-	}
-
-	public static final Object[] pattern_LinkDefinitionToAnonymous_29_6_perform_greenBBBBBB(TMember tDefinition,
-			MDefinition mDefinition, TClass tAnonymous, AnonymousClassDeclaration mAnonymous, TSignature tSignature,
+	public static final Object[] pattern_LinkDefinitionToAnonymous_29_6_perform_blackBBBBBBBBBB(MDefinition mDefinition,
+			TSignature tSignature, MSignature mSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous,
+			MDefinitionToTMember mDefinitionToTMember, TMember tDefinition,
+			MSignatureToTSignature mSignatureToTSignature, AnonymousClassDeclarationToTClass mAnonymousToTAnonymous,
 			ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mDefinition, tSignature, mSignature, mAnonymous, tAnonymous, mDefinitionToTMember,
+				tDefinition, mSignatureToTSignature, mAnonymousToTAnonymous, ruleResult };
+	}
+
+	public static final Object[] pattern_LinkDefinitionToAnonymous_29_6_perform_greenBBBBBB(MDefinition mDefinition,
+			TSignature tSignature, AnonymousClassDeclaration mAnonymous, TClass tAnonymous, TMember tDefinition,
+			ModelgeneratorRuleResult ruleResult) {
+		mAnonymous.getBodyDeclarations().add(mDefinition);
 		tAnonymous.getSignature().add(tSignature);
 		tAnonymous.getDefines().add(tDefinition);
-		mAnonymous.getBodyDeclarations().add(mDefinition);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tDefinition, mDefinition, tAnonymous, mAnonymous, tSignature, ruleResult };
+		return new Object[] { mDefinition, tSignature, mAnonymous, tAnonymous, tDefinition, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_LinkDefinitionToAnonymous_29_7_expressionFB(

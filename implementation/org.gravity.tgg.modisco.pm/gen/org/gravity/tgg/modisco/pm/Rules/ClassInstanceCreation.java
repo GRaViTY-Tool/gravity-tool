@@ -212,7 +212,7 @@ public interface ClassInstanceCreation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_72(EMoflonEdge _edge_accessing);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_221(EMoflonEdge _edge_accessing);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface ClassInstanceCreation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_73(EMoflonEdge _edge_mMethodInvocations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_235(EMoflonEdge _edge_mMethodInvocations);
 
 	/**
 	 * <!-- begin-user-doc -->

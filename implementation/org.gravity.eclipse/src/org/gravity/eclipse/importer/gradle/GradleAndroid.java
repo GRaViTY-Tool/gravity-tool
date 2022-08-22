@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Matcher;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -17,9 +16,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.importer.maven.PomParser;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
@@ -52,9 +48,9 @@ public final class GradleAndroid {
 	static Set<Path> getRClasses(final Set<Path> buildDotGradleFiles) throws IOException {
 		final Set<Path> classes = new HashSet<>();
 		for (final Path buildDotGradle : buildDotGradleFiles) {
-			final File manifestFile = new File(buildDotGradle.getParent().toFile(), "src/main/AndroidManifest.xml");
+			final var manifestFile = new File(buildDotGradle.getParent().toFile(), "src/main/AndroidManifest.xml");
 			if (manifestFile.exists()) {
-				final File rFile = GradleAndroid.searchRClassInAdroidMainfest(manifestFile,
+				final var rFile = GradleAndroid.searchRClassInAdroidMainfest(manifestFile,
 						buildDotGradle.getParent().toFile());
 				if (rFile != null) {
 					if (rFile.exists()) {
@@ -72,18 +68,18 @@ public final class GradleAndroid {
 
 	private static File searchRClassInAdroidMainfest(final File manifestFile, final File gradleRoot)
 			throws IOException {
-		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		final var factory = DocumentBuilderFactory.newInstance();
 		factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
 		factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
 		try {
 			factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-			final Document document = factory.newDocumentBuilder().parse(manifestFile);
+			final var document = factory.newDocumentBuilder().parse(manifestFile);
 			document.getDocumentElement().normalize();
-			final NodeList manifest = document.getElementsByTagName("manifest");
-			final Node attribute = manifest.item(0).getAttributes().getNamedItem("package");
-			final String basePackage = attribute.getNodeValue();
-			final File rFolder = new File(gradleRoot, "build/generated/source/r");
-			File releaseFolder = new File(rFolder, "release");
+			final var manifest = document.getElementsByTagName("manifest");
+			final var attribute = manifest.item(0).getAttributes().getNamedItem("package");
+			final var basePackage = attribute.getNodeValue();
+			final var rFolder = new File(gradleRoot, "build/generated/source/r");
+			var releaseFolder = new File(rFolder, "release");
 			if (!releaseFolder.exists()) {
 				releaseFolder = new File(rFolder, "debug");
 				if (!releaseFolder.exists()) {
@@ -108,19 +104,19 @@ public final class GradleAndroid {
 	 * @return The SDK version information
 	 */
 	static SdkVersion getAndroidSdkVersion(final String gradleContent) {
-		final SdkVersion sdkVersion = new SdkVersion();
-		final Matcher matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(gradleContent);
+		final var sdkVersion = new SdkVersion();
+		final var matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(gradleContent);
 		while (matcherSdk.find()) {
-			final String group = matcherSdk.group(1);
+			final var group = matcherSdk.group(1);
 			if ("minSdkVersion".equals(group)) {
-				final int value = Integer.parseInt(matcherSdk.group(6));
-				final double minSdk = sdkVersion.getMinSdk();
+				final var value = Integer.parseInt(matcherSdk.group(6));
+				final var minSdk = sdkVersion.getMinSdk();
 				if (Double.isNaN(minSdk) || (minSdk > value)) {
 					sdkVersion.setMinSdk(value);
 				}
 			} else if ("targetSdkVersion".equals(group)) {
-				final int value = Integer.parseInt(matcherSdk.group(6));
-				final double targetSdk = sdkVersion.getTargetSdk();
+				final var value = Integer.parseInt(matcherSdk.group(6));
+				final var targetSdk = sdkVersion.getTargetSdk();
 				if (Double.isNaN(targetSdk) || (targetSdk < value)) {
 					sdkVersion.setTargetSdk(value);
 				}
@@ -136,18 +132,18 @@ public final class GradleAndroid {
 	 * @throws GradleImportException If the ANDROID_HOME cannot be found
 	 */
 	private static File initAndroidHome() throws GradleImportException {
-		final String androidHome = System.getenv(ANDROID_HOME);
+		final var androidHome = System.getenv(ANDROID_HOME);
 		if (androidHome != null) {
-			final File tmpAndroidHome = new File(androidHome);
+			final var tmpAndroidHome = new File(androidHome);
 			if (tmpAndroidHome.exists()) {
 				return tmpAndroidHome;
 			}
 		}
-		final File tmpAndroidHome = new File(new File(System.getProperty(USER_HOME)), "Android/Sdk");
+		final var tmpAndroidHome = new File(new File(System.getProperty(USER_HOME)), "Android/Sdk");
 		if (tmpAndroidHome.exists()) {
 			return tmpAndroidHome;
 		} else {
-			final String message = "Adroid home not specified.";
+			final var message = "Adroid home not specified.";
 			LOGGER.warn(message);
 			throw new GradleImportException(message);
 		}
@@ -164,20 +160,20 @@ public final class GradleAndroid {
 	 *                               SDK location failed
 	 */
 	static Map<String, Path> getAndroidLibs(final GradleDependencies dependencies) throws GradleImportException {
-		final SdkVersion sdkVersion = dependencies.getSdkVersion();
-		final HashMap<String, Path> pathsToLibs = new HashMap<>();
+		final var sdkVersion = dependencies.getSdkVersion();
+		final var pathsToLibs = new HashMap<String, Path>();
 		if ((sdkVersion == null) || Double.isNaN(sdkVersion.getTargetSdk()) || Double.isNaN(sdkVersion.getMinSdk())) {
 			throw new GradleImportException("Couldn't determine the SDK version information");
 		}
 
-		final File androidHome = initAndroidHome();
+		final var androidHome = initAndroidHome();
 
-		boolean compAndroidSdk = false;
-		final File platforms = new File(androidHome, ANDROID_SDK_PLATFORMS);
-		for (int i = (int) sdkVersion.getTargetSdk(); i >= (int) sdkVersion.getMinSdk(); i--) {
-			final String android = "android-" + i;
-			final File androidPlatform = new File(platforms, android);
-			final File androidJar = new File(androidPlatform, "android.jar");
+		var compAndroidSdk = false;
+		final var platforms = new File(androidHome, ANDROID_SDK_PLATFORMS);
+		for (var i = (int) sdkVersion.getTargetSdk(); i >= (int) sdkVersion.getMinSdk(); i--) {
+			final var android = "android-" + i;
+			final var androidPlatform = new File(platforms, android);
+			final var androidJar = new File(androidPlatform, "android.jar");
 			if (androidJar.exists()) {
 				compAndroidSdk = addAndroidJarAndOptionalDependencies(dependencies, pathsToLibs, android,
 						androidPlatform, androidJar);
@@ -187,8 +183,8 @@ public final class GradleAndroid {
 		if (!compAndroidSdk) {
 			LOGGER.warn("WARNING: Install android SDK " + sdkVersion.getTargetSdk());
 			for (final File sdk : platforms.listFiles()) {
-				final String name = sdk.getName();
-				final int i = Integer.parseInt(name.substring("android-".length()));
+				final var name = sdk.getName();
+				final var i = Integer.parseInt(name.substring("android-".length()));
 				if (i > sdkVersion.getTargetSdk()) {
 					pathsToLibs.put(name, new File(sdk, "android.jar").toPath());
 					break;
@@ -206,19 +202,25 @@ public final class GradleAndroid {
 	 * @throws IllegalAccessError
 	 * @throws GradleImportException
 	 */
-	public static Map<String, Path> recursivelyAddCompileDependencies(final GradleDependencies dependencies, final File androidHome,
-			final Map<String, Path> pathsToLibs) throws IllegalAccessError, GradleImportException {
-		boolean newLibs = false;
+	public static Map<String, Path> recursivelyAddCompileDependencies(final GradleDependencies dependencies,
+			final File androidHome, final Map<String, Path> pathsToLibs)
+					throws IllegalAccessError, GradleImportException {
+		var newLibs = false;
 		do {
-			final Set<String> compileLibs = dependencies.getCompileDependencies();
+			final var compileLibs = dependencies.getCompileDependencies();
 			for (final String location : new String[] { EXTRAS_ANDROID_M2REPOSITORY, EXTRAS_GOOGLE_M2REPOSITORY,
 					EXTRAS_M2REPOSITORY }) {
-				final int before = compileLibs.size();
+				final var before = compileLibs.size();
 				try {
-					pathsToLibs.putAll(PomParser.searchInCache(compileLibs, new File(androidHome, location)));
-					newLibs |= compileLibs.size() > before;
-					compileLibs.removeAll(pathsToLibs.keySet());
-				} catch (final IOException e) {
+					final var parser = new PomParser();
+					for (final String lib : compileLibs) {
+						if(parser.searchInCache(lib, new File(androidHome, location))) {
+							pathsToLibs.putAll(parser.libraries());
+						}
+						newLibs |= compileLibs.size() > before;
+						compileLibs.removeAll(pathsToLibs.keySet());
+					}
+				} catch (final IOException | ParserConfigurationException e) {
 					throw new GradleImportException(e);
 				}
 			}
@@ -241,9 +243,9 @@ public final class GradleAndroid {
 		compAndroidSdk = true;
 		pathsToLibs.put(android, androidJar.toPath());
 
-		final File optional = new File(androidPlatform, "optional");
+		final var optional = new File(androidPlatform, "optional");
 		for (final String use : dependencies.getUseDependencies()) {
-			final File lib = new File(optional, use + '.' + GravityActivator.FILE_EXTENSION_JAR);
+			final var lib = new File(optional, use + '.' + GravityActivator.FILE_EXTENSION_JAR);
 			if (lib.exists()) {
 				pathsToLibs.put(use, lib.toPath());
 			} else {

@@ -3,9 +3,7 @@ package org.gravity.eclipse.importer.gradle;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.Set;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Level;
@@ -55,15 +53,15 @@ public class GradleDependencies {
 	 * @param parsedBuildFiles The contents of the build.gradle files
 	 */
 	public void getMultipleDependencies(final String content, final List<String> parsedBuildFiles) {
-		String cur = content;
+		var cur = content;
 		int i;
-		final String str = "dependencies";
+		final var str = "dependencies";
 		while ((i = cur.indexOf(str)) > 0) {
 			cur = cur.substring(i + str.length()).trim().substring(1);
-			final String dependencies = cur.substring(0, cur.indexOf('}'));
-			final Matcher entryMatecher = GradleRegexPatterns.MULTIPLE_DEPENDENCIES_ENTRY.matcher(dependencies);
+			final var dependencies = cur.substring(0, cur.indexOf('}'));
+			final var entryMatecher = GradleRegexPatterns.MULTIPLE_DEPENDENCIES_ENTRY.matcher(dependencies);
 			while (entryMatecher.find()) {
-				String dependency = entryMatecher.group(2);
+				var dependency = entryMatecher.group(1);
 				try {
 					dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
 					getCompileDependencies().add(dependency);
@@ -83,9 +81,9 @@ public class GradleDependencies {
 	 * @param parsedBuildFiles The contents of the build.gradle files
 	 */
 	public void getSingleDependencies(final String content, final List<String> parsedBuildFiles) {
-		final Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
+		final var m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
 		while (m.find()) {
-			String dependency = m.group(3);
+			var dependency = m.group(3);
 			try {
 				dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
 				if (m.group(0).startsWith("compile")) {
@@ -113,18 +111,18 @@ public class GradleDependencies {
 	 */
 	private static String resolveDependencyString(final String dependency, final String content, final List<String> parsedBuildFiles)
 			throws GradleImportException {
-		final int index = dependency.indexOf('$');
+		final var index = dependency.indexOf('$');
 		if (index < 0) {
 			return dependency;
 		}
-		final String regex = dependency.substring(index + 1).replaceAll("\\{|\\}", "") + "\\s+=\\s+('|\")(.+)('|\")";
-		final Pattern pattern = Pattern.compile(regex);
-		final Matcher matcher = pattern.matcher(content);
+		final var regex = dependency.substring(index + 1).replaceAll("\\{|\\}", "") + "\\s+=\\s+('|\")(.+)('|\")";
+		final var pattern = Pattern.compile(regex);
+		final var matcher = pattern.matcher(content);
 		if (matcher.find()) {
 			return dependency.substring(0, index) + matcher.group(2);
 		}
-		final Optional<String> result = parsedBuildFiles.parallelStream().map(buildFile -> {
-			final Matcher m = pattern.matcher(buildFile);
+		final var result = parsedBuildFiles.parallelStream().map(buildFile -> {
+			final var m = pattern.matcher(buildFile);
 			if (m.find()) {
 				return m.group(2);
 			} else {

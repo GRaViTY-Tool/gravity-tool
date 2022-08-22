@@ -22,7 +22,7 @@ public class MavenImportTest extends ImportTest {
 		LOGGER.info("Run: "+name);
 	}
 
-	@Parameters(name = "{index}: Import gradle project: {0}")
+	@Parameters(name = "{index}: Import maven project: {0}")
 	public static Collection<Object[]> getTestProjects() throws IOException {
 		return getTestProjects(".mvn.csv");
 	}

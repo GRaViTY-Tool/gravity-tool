@@ -172,33 +172,33 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 				.pattern_InterfaceDecWithModifier2Interface_1_1_performtransformation_greenFFFBBB(bodyDeclaration,
 						modifier, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
-		Interface feature = (Interface) result1_green[1];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
+		Interface feature = (Interface) result1_green[2];
 
 		Object[] result2_black = InterfaceDecWithModifier2InterfaceImpl
-				.pattern_InterfaceDecWithModifier2Interface_1_2_collecttranslatedelements_blackBBBBB(m2f, feature, b2e,
+				.pattern_InterfaceDecWithModifier2Interface_1_2_collecttranslatedelements_blackBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = "
+					+ "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
 					+ bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		Object[] result2_green = InterfaceDecWithModifier2InterfaceImpl
-				.pattern_InterfaceDecWithModifier2Interface_1_2_collecttranslatedelements_greenFBBBBB(m2f, feature, b2e,
+				.pattern_InterfaceDecWithModifier2Interface_1_2_collecttranslatedelements_greenFBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceDecWithModifier2InterfaceImpl
-				.pattern_InterfaceDecWithModifier2Interface_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, m2f,
-						feature, b2e, bodyDeclaration, modifier);
+				.pattern_InterfaceDecWithModifier2Interface_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, m2f, b2e,
+						feature, bodyDeclaration, modifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
+					+ ", " + "[m2f] = " + m2f + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", "
 					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		InterfaceDecWithModifier2InterfaceImpl
 				.pattern_InterfaceDecWithModifier2Interface_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult, m2f,
-						feature, b2e, bodyDeclaration, modifier);
+						b2e, feature, bodyDeclaration, modifier);
 		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
@@ -210,7 +210,7 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		// 
 		InterfaceDecWithModifier2InterfaceImpl
 				.pattern_InterfaceDecWithModifier2Interface_1_5_registerobjects_expressionBBBBBBB(this, ruleresult, m2f,
-						feature, b2e, bodyDeclaration, modifier);
+						b2e, feature, bodyDeclaration, modifier);
 		return InterfaceDecWithModifier2InterfaceImpl
 				.pattern_InterfaceDecWithModifier2Interface_1_6_expressionFB(ruleresult);
 	}
@@ -341,36 +341,36 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		// Create literals
 
 		// Create attribute variables
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
-		var_modifier_visibility.setValue(modifier.getVisibility());
-		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
 				csp);
 		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
 		var_bodyDeclaration_name.setType("String");
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
+		var_modifier_visibility.setValue(modifier.getVisibility());
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		// Create unbound variables
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
-		var_feature_visibility.setType("uml.VisibilityKind");
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
 		var_feature_name.setType("String");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		// Create constraints
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
-		Eq eq = new Eq();
 		NonParameterizedName nonParameterizedName = new NonParameterizedName();
+		Eq eq = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(jVisibility2umlVisibility);
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(nonParameterizedName);
+		csp.getConstraints().add(eq);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		jVisibility2umlVisibility.setRuleName("NoRuleName");
-		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		nonParameterizedName.setRuleName("NoRuleName");
 		nonParameterizedName.solve(var_feature_name);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		jVisibility2umlVisibility.setRuleName("NoRuleName");
+		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
@@ -392,11 +392,11 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier) {
 		ruleresult.registerObject("m2f", m2f);
-		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("modifier", modifier);
 
@@ -484,36 +484,36 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		Interface feature = (Interface) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = InterfaceDecWithModifier2InterfaceImpl
-				.pattern_InterfaceDecWithModifier2Interface_11_1_performtransformation_greenFBFFFB(feature, csp);
+				.pattern_InterfaceDecWithModifier2Interface_11_1_performtransformation_greenFFBFFB(feature, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
 		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_green[3];
 		Modifier modifier = (Modifier) result1_green[4];
 
 		Object[] result2_black = InterfaceDecWithModifier2InterfaceImpl
-				.pattern_InterfaceDecWithModifier2Interface_11_2_collecttranslatedelements_blackBBBBB(m2f, feature, b2e,
+				.pattern_InterfaceDecWithModifier2Interface_11_2_collecttranslatedelements_blackBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = "
+					+ "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
 					+ bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		Object[] result2_green = InterfaceDecWithModifier2InterfaceImpl
-				.pattern_InterfaceDecWithModifier2Interface_11_2_collecttranslatedelements_greenFBBBBB(m2f, feature,
-						b2e, bodyDeclaration, modifier);
+				.pattern_InterfaceDecWithModifier2Interface_11_2_collecttranslatedelements_greenFBBBBB(m2f, b2e,
+						feature, bodyDeclaration, modifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceDecWithModifier2InterfaceImpl
-				.pattern_InterfaceDecWithModifier2Interface_11_3_bookkeepingforedges_blackBBBBBB(ruleresult, m2f,
-						feature, b2e, bodyDeclaration, modifier);
+				.pattern_InterfaceDecWithModifier2Interface_11_3_bookkeepingforedges_blackBBBBBB(ruleresult, m2f, b2e,
+						feature, bodyDeclaration, modifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
+					+ ", " + "[m2f] = " + m2f + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", "
 					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		InterfaceDecWithModifier2InterfaceImpl
 				.pattern_InterfaceDecWithModifier2Interface_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult, m2f,
-						feature, b2e, bodyDeclaration, modifier);
+						b2e, feature, bodyDeclaration, modifier);
 		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
@@ -525,7 +525,7 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		// 
 		InterfaceDecWithModifier2InterfaceImpl
 				.pattern_InterfaceDecWithModifier2Interface_11_5_registerobjects_expressionBBBBBBB(this, ruleresult,
-						m2f, feature, b2e, bodyDeclaration, modifier);
+						m2f, b2e, feature, bodyDeclaration, modifier);
 		return InterfaceDecWithModifier2InterfaceImpl
 				.pattern_InterfaceDecWithModifier2Interface_11_6_expressionFB(ruleresult);
 	}
@@ -657,31 +657,31 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		// Create literals
 
 		// Create attribute variables
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
-		var_feature_visibility.setValue(feature.getVisibility());
-		var_feature_visibility.setType("uml.VisibilityKind");
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
 		var_feature_name.setValue(feature.getName());
 		var_feature_name.setType("String");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
+		var_feature_visibility.setValue(feature.getVisibility());
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		// Create unbound variables
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
-		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
 		var_bodyDeclaration_name.setType("String");
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		// Create constraints
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 		Eq eq = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(jVisibility2umlVisibility);
 		csp.getConstraints().add(eq);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		jVisibility2umlVisibility.setRuleName("NoRuleName");
-		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 		eq.setRuleName("NoRuleName");
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		jVisibility2umlVisibility.setRuleName("NoRuleName");
+		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("feature", feature);
@@ -702,11 +702,11 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier) {
 		ruleresult.registerObject("m2f", m2f);
-		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("modifier", modifier);
 
@@ -727,7 +727,7 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Interface_2(Interface feature) {
+	public EObjectContainer isAppropriate_BWD_Interface_6(Interface feature) {
 
 		Object[] result1_bindingAndBlack = InterfaceDecWithModifier2InterfaceImpl
 				.pattern_InterfaceDecWithModifier2Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -785,7 +785,7 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_144(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_277(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = InterfaceDecWithModifier2InterfaceImpl
 				.pattern_InterfaceDecWithModifier2Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -855,6 +855,14 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
+
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
@@ -863,47 +871,39 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
-		JVisibility2umlVisibility jVisibility2umlVisibility0 = new JVisibility2umlVisibility();
-		csp.getConstraints().add(jVisibility2umlVisibility0);
+		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
+		csp.getConstraints().add(nonParameterizedName0);
 
 		Eq eq1 = new Eq();
 		csp.getConstraints().add(eq1);
 
-		NonParameterizedName nonParameterizedName2 = new NonParameterizedName();
-		csp.getConstraints().add(nonParameterizedName2);
+		JVisibility2umlVisibility jVisibility2umlVisibility2 = new JVisibility2umlVisibility();
+		csp.getConstraints().add(jVisibility2umlVisibility2);
 
-		jVisibility2umlVisibility0.setRuleName("InterfaceDecWithModifier2Interface");
-		jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
+		nonParameterizedName0.setRuleName("InterfaceDecWithModifier2Interface");
+		nonParameterizedName0.solve(var_feature_name);
 
 		eq1.setRuleName("InterfaceDecWithModifier2Interface");
 		eq1.solve(var_bodyDeclaration_name, var_feature_name);
 
-		nonParameterizedName2.setRuleName("InterfaceDecWithModifier2Interface");
-		nonParameterizedName2.solve(var_feature_name);
+		jVisibility2umlVisibility2.setRuleName("InterfaceDecWithModifier2Interface");
+		jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
+			var_feature_name.setBound(false);
+			var_feature_name.setBound(false);
 			var_feature_visibility.setBound(false);
-			var_feature_name.setBound(false);
-			var_feature_name.setBound(false);
-			jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
+			nonParameterizedName0.solve(var_feature_name);
 			eq1.solve(var_bodyDeclaration_name, var_feature_name);
-			nonParameterizedName2.solve(var_feature_name);
+			jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
+				__helper.setValue("feature", "name", var_feature_name.getValue());
+				__helper.setValue("feature", "name", var_feature_name.getValue());
 				__helper.setValue("feature", "visibility", var_feature_visibility.getValue());
-				__helper.setValue("feature", "name", var_feature_name.getValue());
-				__helper.setValue("feature", "name", var_feature_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -928,6 +928,14 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
+
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
@@ -936,45 +944,37 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
 		csp.getConstraints().add(nonParameterizedName0);
 
-		JVisibility2umlVisibility jVisibility2umlVisibility1 = new JVisibility2umlVisibility();
-		csp.getConstraints().add(jVisibility2umlVisibility1);
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
 
-		Eq eq2 = new Eq();
-		csp.getConstraints().add(eq2);
+		JVisibility2umlVisibility jVisibility2umlVisibility2 = new JVisibility2umlVisibility();
+		csp.getConstraints().add(jVisibility2umlVisibility2);
 
 		nonParameterizedName0.setRuleName("InterfaceDecWithModifier2Interface");
 		nonParameterizedName0.solve(var_feature_name);
 
-		jVisibility2umlVisibility1.setRuleName("InterfaceDecWithModifier2Interface");
-		jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+		eq1.setRuleName("InterfaceDecWithModifier2Interface");
+		eq1.solve(var_bodyDeclaration_name, var_feature_name);
 
-		eq2.setRuleName("InterfaceDecWithModifier2Interface");
-		eq2.solve(var_bodyDeclaration_name, var_feature_name);
+		jVisibility2umlVisibility2.setRuleName("InterfaceDecWithModifier2Interface");
+		jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_modifier_visibility.setBound(false);
 			var_bodyDeclaration_name.setBound(false);
+			var_modifier_visibility.setBound(false);
 			nonParameterizedName0.solve(var_feature_name);
-			jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
-			eq2.solve(var_bodyDeclaration_name, var_feature_name);
+			eq1.solve(var_bodyDeclaration_name, var_feature_name);
+			jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("modifier", "visibility", var_modifier_visibility.getValue());
 				__helper.setValue("bodyDeclaration", "name", var_bodyDeclaration_name.getValue());
+				__helper.setValue("modifier", "visibility", var_modifier_visibility.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1042,10 +1042,10 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
 				InterfaceDecWithModifier2InterfaceImpl
-						.pattern_InterfaceDecWithModifier2Interface_24_6_createcorrespondence_greenFBFBBB(feature,
+						.pattern_InterfaceDecWithModifier2Interface_24_6_createcorrespondence_greenFFBBBB(feature,
 								bodyDeclaration, modifier, ccMatch);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
 
 				Object[] result7_black = InterfaceDecWithModifier2InterfaceImpl
 						.pattern_InterfaceDecWithModifier2Interface_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1076,38 +1076,38 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		// Create literals
 
 		// Create attribute variables
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
+		var_feature_name.setValue(feature.getName());
+		var_feature_name.setType("String");
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
+				csp);
+		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
+		var_bodyDeclaration_name.setType("String");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
 		var_modifier_visibility.setValue(modifier.getVisibility());
 		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
 		var_feature_visibility.setValue(feature.getVisibility());
 		var_feature_visibility.setType("uml.VisibilityKind");
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
-				csp);
-		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
-		var_bodyDeclaration_name.setType("String");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
-		var_feature_name.setValue(feature.getName());
-		var_feature_name.setType("String");
 
 		// Create unbound variables
 
 		// Create constraints
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
-		Eq eq = new Eq();
 		NonParameterizedName nonParameterizedName = new NonParameterizedName();
+		Eq eq = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
-		csp.getConstraints().add(jVisibility2umlVisibility);
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(nonParameterizedName);
+		csp.getConstraints().add(eq);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
-		jVisibility2umlVisibility.setRuleName("NoRuleName");
-		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		nonParameterizedName.setRuleName("NoRuleName");
 		nonParameterizedName.solve(var_feature_name);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		jVisibility2umlVisibility.setRuleName("NoRuleName");
+		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
 		return csp;
 	}
 
@@ -1196,8 +1196,8 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 				InterfaceDecWithModifier2InterfaceImpl
 						.pattern_InterfaceDecWithModifier2Interface_29_6_perform_greenFFFFFBB(ruleResult, csp);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
-				//nothing Interface feature = (Interface) result6_green[1];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
+				//nothing Interface feature = (Interface) result6_green[2];
 				//nothing InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result6_green[3];
 				//nothing Modifier modifier = (Modifier) result6_green[4];
 
@@ -1224,14 +1224,14 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		// Create attribute variables
 
 		// Create unbound variables
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
+		var_feature_name.setType("String");
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
+		var_bodyDeclaration_name.setType("String");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
 		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
 		var_feature_visibility.setType("uml.VisibilityKind");
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
-		var_bodyDeclaration_name.setType("String");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
-		var_feature_name.setType("String");
 
 		// Create constraints
 		NonParameterizedName nonParameterizedName = new NonParameterizedName();
@@ -1323,10 +1323,10 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_2__INTERFACE:
-			return isAppropriate_BWD_Interface_2((Interface) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_144__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_144((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_6__INTERFACE:
+			return isAppropriate_BWD_Interface_6((Interface) arguments.get(0));
+		case RulesPackage.INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_277__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_277((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1496,53 +1496,53 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_1_1_performtransformation_greenFFFBBB(
 			InterfaceDeclaration bodyDeclaration, Modifier modifier, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
-		Interface feature = UMLFactory.eINSTANCE.createInterface();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Object _localVariable_0 = csp.getValue("feature", "visibility");
-		Object _localVariable_1 = csp.getValue("feature", "name");
+		Interface feature = UMLFactory.eINSTANCE.createInterface();
+		Object _localVariable_0 = csp.getValue("feature", "name");
+		Object _localVariable_1 = csp.getValue("feature", "visibility");
 		m2f.setSource(modifier);
-		m2f.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		m2f.setTarget(feature);
 		b2e.setTarget(feature);
-		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_0;
-		String feature_name_prime = (String) _localVariable_1;
-		feature.setVisibility(feature_visibility_prime);
+		String feature_name_prime = (String) _localVariable_0;
+		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
 		feature.setName(feature_name_prime);
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, csp };
+		feature.setVisibility(feature_visibility_prime);
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, csp };
 	}
 
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_1_2_collecttranslatedelements_blackBBBBB(
-			Modifier2NamedElement m2f, Interface feature, ASTNode2Element b2e, InterfaceDeclaration bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Interface feature, InterfaceDeclaration bodyDeclaration,
 			Modifier modifier) {
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_1_2_collecttranslatedelements_greenFBBBBB(
-			Modifier2NamedElement m2f, Interface feature, ASTNode2Element b2e, InterfaceDeclaration bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Interface feature, InterfaceDeclaration bodyDeclaration,
 			Modifier modifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
-		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
+		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
 		ruleresult.getTranslatedElements().add(modifier);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier };
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_1_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier) {
 		if (!m2f.equals(modifier)) {
-			if (!feature.equals(m2f)) {
-				if (!feature.equals(modifier)) {
-					if (!b2e.equals(m2f)) {
-						if (!b2e.equals(feature)) {
-							if (!b2e.equals(bodyDeclaration)) {
-								if (!b2e.equals(modifier)) {
+			if (!b2e.equals(m2f)) {
+				if (!b2e.equals(feature)) {
+					if (!b2e.equals(bodyDeclaration)) {
+						if (!b2e.equals(modifier)) {
+							if (!feature.equals(m2f)) {
+								if (!feature.equals(modifier)) {
 									if (!bodyDeclaration.equals(m2f)) {
 										if (!bodyDeclaration.equals(feature)) {
 											if (!bodyDeclaration.equals(modifier)) {
-												return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration,
+												return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration,
 														modifier };
 											}
 										}
@@ -1558,7 +1558,7 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier) {
 		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1598,15 +1598,15 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier, m2f__feature____target,
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, m2f__feature____target,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
 				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
 	}
 
 	public static final void pattern_InterfaceDecWithModifier2Interface_1_5_registerobjects_expressionBBBBBBB(
-			InterfaceDecWithModifier2Interface _this, PerformRuleResult ruleresult, EObject m2f, EObject feature,
-			EObject b2e, EObject bodyDeclaration, EObject modifier) {
-		_this.registerObjects_FWD(ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
+			InterfaceDecWithModifier2Interface _this, PerformRuleResult ruleresult, EObject m2f, EObject b2e,
+			EObject feature, EObject bodyDeclaration, EObject modifier) {
+		_this.registerObjects_FWD(ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
 
 	}
 
@@ -1895,7 +1895,7 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceDecWithModifier2Interface_11_1_performtransformation_greenFBFFFB(
+	public static final Object[] pattern_InterfaceDecWithModifier2Interface_11_1_performtransformation_greenFFBFFB(
 			Interface feature, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -1912,41 +1912,41 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_1;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		modifier.setVisibility(modifier_visibility_prime);
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, csp };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, csp };
 	}
 
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_11_2_collecttranslatedelements_blackBBBBB(
-			Modifier2NamedElement m2f, Interface feature, ASTNode2Element b2e, InterfaceDeclaration bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Interface feature, InterfaceDeclaration bodyDeclaration,
 			Modifier modifier) {
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_11_2_collecttranslatedelements_greenFBBBBB(
-			Modifier2NamedElement m2f, Interface feature, ASTNode2Element b2e, InterfaceDeclaration bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Interface feature, InterfaceDeclaration bodyDeclaration,
 			Modifier modifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
-		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
+		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
 		ruleresult.getCreatedElements().add(modifier);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier };
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_11_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier) {
 		if (!m2f.equals(modifier)) {
-			if (!feature.equals(m2f)) {
-				if (!feature.equals(modifier)) {
-					if (!b2e.equals(m2f)) {
-						if (!b2e.equals(feature)) {
-							if (!b2e.equals(bodyDeclaration)) {
-								if (!b2e.equals(modifier)) {
+			if (!b2e.equals(m2f)) {
+				if (!b2e.equals(feature)) {
+					if (!b2e.equals(bodyDeclaration)) {
+						if (!b2e.equals(modifier)) {
+							if (!feature.equals(m2f)) {
+								if (!feature.equals(modifier)) {
 									if (!bodyDeclaration.equals(m2f)) {
 										if (!bodyDeclaration.equals(feature)) {
 											if (!bodyDeclaration.equals(modifier)) {
-												return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration,
+												return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration,
 														modifier };
 											}
 										}
@@ -1962,7 +1962,7 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier) {
 		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2002,15 +2002,15 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier, m2f__feature____target,
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, m2f__feature____target,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
 				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
 	}
 
 	public static final void pattern_InterfaceDecWithModifier2Interface_11_5_registerobjects_expressionBBBBBBB(
-			InterfaceDecWithModifier2Interface _this, PerformRuleResult ruleresult, EObject m2f, EObject feature,
-			EObject b2e, EObject bodyDeclaration, EObject modifier) {
-		_this.registerObjects_BWD(ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
+			InterfaceDecWithModifier2Interface _this, PerformRuleResult ruleresult, EObject m2f, EObject b2e,
+			EObject feature, EObject bodyDeclaration, EObject modifier) {
+		_this.registerObjects_BWD(ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
 
 	}
 
@@ -2511,7 +2511,7 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		return new Object[] { feature, bodyDeclaration, modifier, ccMatch };
 	}
 
-	public static final Object[] pattern_InterfaceDecWithModifier2Interface_24_6_createcorrespondence_greenFBFBBB(
+	public static final Object[] pattern_InterfaceDecWithModifier2Interface_24_6_createcorrespondence_greenFFBBBB(
 			Interface feature, InterfaceDeclaration bodyDeclaration, Modifier modifier, CCMatch ccMatch) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -2521,7 +2521,7 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, ccMatch };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, ccMatch };
 	}
 
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_24_7_addtoreturnedresult_blackBB(
@@ -2644,38 +2644,38 @@ public class InterfaceDecWithModifier2InterfaceImpl extends AbstractRuleImpl
 	public static final Object[] pattern_InterfaceDecWithModifier2Interface_29_6_perform_greenFFFFFBB(
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
-		Interface feature = UMLFactory.eINSTANCE.createInterface();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		Interface feature = UMLFactory.eINSTANCE.createInterface();
 		InterfaceDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
-		Object _localVariable_0 = csp.getValue("feature", "visibility");
-		Object _localVariable_1 = csp.getValue("feature", "name");
+		Object _localVariable_0 = csp.getValue("feature", "name");
+		Object _localVariable_1 = csp.getValue("feature", "visibility");
 		Object _localVariable_2 = csp.getValue("bodyDeclaration", "name");
 		Object _localVariable_3 = csp.getValue("modifier", "visibility");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(m2f);
-		m2f.setTarget(feature);
-		ruleResult.getTargetObjects().add(feature);
-		b2e.setTarget(feature);
 		ruleResult.getCorrObjects().add(b2e);
+		m2f.setTarget(feature);
+		b2e.setTarget(feature);
+		ruleResult.getTargetObjects().add(feature);
 		b2e.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
 		bodyDeclaration.setModifier(modifier);
 		m2f.setSource(modifier);
 		ruleResult.getSourceObjects().add(modifier);
-		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_0;
-		String feature_name_prime = (String) _localVariable_1;
+		String feature_name_prime = (String) _localVariable_0;
+		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
 		String bodyDeclaration_name_prime = (String) _localVariable_2;
 		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		feature.setVisibility(feature_visibility_prime);
 		feature.setName(feature_name_prime);
+		feature.setVisibility(feature_visibility_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		modifier.setVisibility(modifier_visibility_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, ruleResult, csp };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_InterfaceDecWithModifier2Interface_29_7_expressionFB(
