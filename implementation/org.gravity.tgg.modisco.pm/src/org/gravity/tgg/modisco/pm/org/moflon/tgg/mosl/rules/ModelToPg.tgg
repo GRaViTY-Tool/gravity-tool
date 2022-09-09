@@ -15,6 +15,7 @@
 	
 	++tProxyPackage : TPackage {
 		tName := "(proxies)"
+		++-model->tPG
 	}
 }
 

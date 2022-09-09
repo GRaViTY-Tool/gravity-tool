@@ -192,17 +192,17 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 
 		Object[] result3_black = VariableDeclarationFragmentImpl
 				.pattern_VariableDeclarationFragment_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, varDeclFragment,
-						tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition,
-						varDeclFragmentToTFieldDefinition);
+						tDefinition, varDeclFragmentToTFieldDefinition, mDefinition,
+						eFieldDeclarationToTFieldDefinition);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[varDeclFragment] = " + varDeclFragment + ", " + "[tDefinition] = " + tDefinition + ", "
+					+ "[varDeclFragmentToTFieldDefinition] = " + varDeclFragmentToTFieldDefinition + ", "
 					+ "[mDefinition] = " + mDefinition + ", " + "[eFieldDeclarationToTFieldDefinition] = "
-					+ eFieldDeclarationToTFieldDefinition + ", " + "[varDeclFragmentToTFieldDefinition] = "
-					+ varDeclFragmentToTFieldDefinition + ".");
+					+ eFieldDeclarationToTFieldDefinition + ".");
 		}
 		VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_1_3_bookkeepingforedges_greenBBBBBFFFF(
-				ruleresult, varDeclFragment, tDefinition, mDefinition, varDeclFragmentToTFieldDefinition);
+				ruleresult, varDeclFragment, tDefinition, varDeclFragmentToTFieldDefinition, mDefinition);
 		//nothing EMoflonEdge varDeclFragment__mDefinition____variablesContainer = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge mDefinition__varDeclFragment____fragments = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge varDeclFragmentToTFieldDefinition__tDefinition____target = (EMoflonEdge) result3_green[7];
@@ -211,8 +211,8 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 		// 
 		// 
 		VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_1_5_registerobjects_expressionBBBBBBB(this,
-				ruleresult, varDeclFragment, tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition,
-				varDeclFragmentToTFieldDefinition);
+				ruleresult, varDeclFragment, tDefinition, varDeclFragmentToTFieldDefinition, mDefinition,
+				eFieldDeclarationToTFieldDefinition);
 		return VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_1_6_expressionFB(ruleresult);
 	}
 
@@ -382,13 +382,13 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject varDeclFragment, EObject tDefinition,
-			EObject mDefinition, EObject eFieldDeclarationToTFieldDefinition,
-			EObject varDeclFragmentToTFieldDefinition) {
+			EObject varDeclFragmentToTFieldDefinition, EObject mDefinition,
+			EObject eFieldDeclarationToTFieldDefinition) {
 		ruleresult.registerObject("varDeclFragment", varDeclFragment);
 		ruleresult.registerObject("tDefinition", tDefinition);
+		ruleresult.registerObject("varDeclFragmentToTFieldDefinition", varDeclFragmentToTFieldDefinition);
 		ruleresult.registerObject("mDefinition", mDefinition);
 		ruleresult.registerObject("eFieldDeclarationToTFieldDefinition", eFieldDeclarationToTFieldDefinition);
-		ruleresult.registerObject("varDeclFragmentToTFieldDefinition", varDeclFragmentToTFieldDefinition);
 
 	}
 
@@ -531,7 +531,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_TFieldDefinition_1(TFieldDefinition tDefinition) {
+	public EObjectContainer isAppropriate_BWD_TFieldDefinition_0(TFieldDefinition tDefinition) {
 
 		Object[] result1_bindingAndBlack = VariableDeclarationFragmentImpl
 				.pattern_VariableDeclarationFragment_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -588,7 +588,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_172(EMoflonEdge _edge_variablesContainer) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_40(EMoflonEdge _edge_variablesContainer) {
 
 		Object[] result1_bindingAndBlack = VariableDeclarationFragmentImpl
 				.pattern_VariableDeclarationFragment_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -897,10 +897,10 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 								+ "[eFieldDeclarationToTFieldDefinition] = " + eFieldDeclarationToTFieldDefinition
 								+ ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_26_6_perform_greenFBBFB(
+					VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_26_6_perform_greenFBFBB(
 							tDefinition, mDefinition, ruleResult);
 					//nothing org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = (org.eclipse.modisco.java.VariableDeclarationFragment) result6_green[0];
-					//nothing VariableDeclarationFragmentToTFieldDefinition varDeclFragmentToTFieldDefinition = (VariableDeclarationFragmentToTFieldDefinition) result6_green[3];
+					//nothing VariableDeclarationFragmentToTFieldDefinition varDeclFragmentToTFieldDefinition = (VariableDeclarationFragmentToTFieldDefinition) result6_green[2];
 
 				} else {
 				}
@@ -1005,10 +1005,10 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_BWD_TFIELD_DEFINITION_1__TFIELDDEFINITION:
-			return isAppropriate_BWD_TFieldDefinition_1((TFieldDefinition) arguments.get(0));
-		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_172__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_172((EMoflonEdge) arguments.get(0));
+		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_BWD_TFIELD_DEFINITION_0__TFIELDDEFINITION:
+			return isAppropriate_BWD_TFieldDefinition_0((TFieldDefinition) arguments.get(0));
+		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_40__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_40((EMoflonEdge) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1228,8 +1228,9 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_1_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject varDeclFragment, EObject tDefinition, EObject mDefinition,
-			EObject eFieldDeclarationToTFieldDefinition, EObject varDeclFragmentToTFieldDefinition) {
+			PerformRuleResult ruleresult, EObject varDeclFragment, EObject tDefinition,
+			EObject varDeclFragmentToTFieldDefinition, EObject mDefinition,
+			EObject eFieldDeclarationToTFieldDefinition) {
 		if (!varDeclFragment.equals(varDeclFragmentToTFieldDefinition)) {
 			if (!tDefinition.equals(varDeclFragment)) {
 				if (!tDefinition.equals(varDeclFragmentToTFieldDefinition)) {
@@ -1238,12 +1239,12 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 							if (!mDefinition.equals(varDeclFragmentToTFieldDefinition)) {
 								if (!eFieldDeclarationToTFieldDefinition.equals(varDeclFragment)) {
 									if (!eFieldDeclarationToTFieldDefinition.equals(tDefinition)) {
-										if (!eFieldDeclarationToTFieldDefinition.equals(mDefinition)) {
-											if (!eFieldDeclarationToTFieldDefinition
-													.equals(varDeclFragmentToTFieldDefinition)) {
+										if (!eFieldDeclarationToTFieldDefinition
+												.equals(varDeclFragmentToTFieldDefinition)) {
+											if (!eFieldDeclarationToTFieldDefinition.equals(mDefinition)) {
 												return new Object[] { ruleresult, varDeclFragment, tDefinition,
-														mDefinition, eFieldDeclarationToTFieldDefinition,
-														varDeclFragmentToTFieldDefinition };
+														varDeclFragmentToTFieldDefinition, mDefinition,
+														eFieldDeclarationToTFieldDefinition };
 											}
 										}
 									}
@@ -1258,8 +1259,8 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject varDeclFragment, EObject tDefinition, EObject mDefinition,
-			EObject varDeclFragmentToTFieldDefinition) {
+			PerformRuleResult ruleresult, EObject varDeclFragment, EObject tDefinition,
+			EObject varDeclFragmentToTFieldDefinition, EObject mDefinition) {
 		EMoflonEdge varDeclFragment__mDefinition____variablesContainer = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__varDeclFragment____fragments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge varDeclFragmentToTFieldDefinition__tDefinition____target = RuntimeFactory.eINSTANCE
@@ -1291,7 +1292,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 				.setName(varDeclFragmentToTFieldDefinition__tDefinition____target_name_prime);
 		varDeclFragmentToTFieldDefinition__varDeclFragment____source
 				.setName(varDeclFragmentToTFieldDefinition__varDeclFragment____source_name_prime);
-		return new Object[] { ruleresult, varDeclFragment, tDefinition, mDefinition, varDeclFragmentToTFieldDefinition,
+		return new Object[] { ruleresult, varDeclFragment, tDefinition, varDeclFragmentToTFieldDefinition, mDefinition,
 				varDeclFragment__mDefinition____variablesContainer, mDefinition__varDeclFragment____fragments,
 				varDeclFragmentToTFieldDefinition__tDefinition____target,
 				varDeclFragmentToTFieldDefinition__varDeclFragment____source };
@@ -1299,10 +1300,10 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 
 	public static final void pattern_VariableDeclarationFragment_1_5_registerobjects_expressionBBBBBBB(
 			VariableDeclarationFragment _this, PerformRuleResult ruleresult, EObject varDeclFragment,
-			EObject tDefinition, EObject mDefinition, EObject eFieldDeclarationToTFieldDefinition,
-			EObject varDeclFragmentToTFieldDefinition) {
-		_this.registerObjects_FWD(ruleresult, varDeclFragment, tDefinition, mDefinition,
-				eFieldDeclarationToTFieldDefinition, varDeclFragmentToTFieldDefinition);
+			EObject tDefinition, EObject varDeclFragmentToTFieldDefinition, EObject mDefinition,
+			EObject eFieldDeclarationToTFieldDefinition) {
+		_this.registerObjects_FWD(ruleresult, varDeclFragment, tDefinition, varDeclFragmentToTFieldDefinition,
+				mDefinition, eFieldDeclarationToTFieldDefinition);
 
 	}
 
@@ -2148,7 +2149,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 		return new Object[] { tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition, ruleResult };
 	}
 
-	public static final Object[] pattern_VariableDeclarationFragment_26_6_perform_greenFBBFB(
+	public static final Object[] pattern_VariableDeclarationFragment_26_6_perform_greenFBFBB(
 			TFieldDefinition tDefinition, MFieldDefinition mDefinition, ModelgeneratorRuleResult ruleResult) {
 		org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = JavaFactory.eINSTANCE
 				.createVariableDeclarationFragment();
@@ -2164,7 +2165,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { varDeclFragment, tDefinition, mDefinition, varDeclFragmentToTFieldDefinition,
+		return new Object[] { varDeclFragment, tDefinition, varDeclFragmentToTFieldDefinition, mDefinition,
 				ruleResult };
 	}
 

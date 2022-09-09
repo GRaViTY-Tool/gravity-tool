@@ -50,7 +50,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MFieldSignature mSignature, Type mType, MFieldName mFieldName);
+	boolean isAppropriate_FWD(Match match, Type mType, MFieldSignature mSignature, MFieldName mFieldName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MFieldSignature mSignature, Type mType, MFieldName mFieldName);
+	void registerObjectsToMatch_FWD(Match match, Type mType, MFieldSignature mSignature, MFieldName mFieldName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,7 +82,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MFieldSignature mSignature, Type mType, MFieldName mFieldName);
+	CSP isAppropriate_solveCsp_FWD(Match match, Type mType, MFieldSignature mSignature, MFieldName mFieldName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,9 +98,9 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MFieldNameToTField eFieldDeclarationToTField,
-			TAbstractType tAbstractType, TypeToTAbstractType mTypeToTType, TField tField, MFieldSignature mSignature,
-			Type mType, MFieldName mFieldName);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TAbstractType tAbstractType, Type mType,
+			MFieldNameToTField eFieldDeclarationToTField, MFieldSignature mSignature, TField tField,
+			MFieldName mFieldName, TypeToTAbstractType mTypeToTType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,9 +116,9 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mFlowElementToTFlowElement,
-			EObject eFieldDeclarationToTField, EObject tAbstractType, EObject mTypeToTType, EObject tField,
-			EObject mSignature, EObject mSignatureToTSignature, EObject mType, EObject mFieldName, EObject tSignature);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAbstractType, EObject tSignature, EObject mType,
+			EObject eFieldDeclarationToTField, EObject mSignature, EObject mFlowElementToTFlowElement, EObject tField,
+			EObject mFieldName, EObject mTypeToTType, EObject mSignatureToTSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,7 +134,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TAbstractType tAbstractType, TField tField, TFieldSignature tSignature);
+	boolean isAppropriate_BWD(Match match, TAbstractType tAbstractType, TFieldSignature tSignature, TField tField);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,8 +158,8 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TAbstractType tAbstractType, TField tField,
-			TFieldSignature tSignature);
+	void registerObjectsToMatch_BWD(Match match, TAbstractType tAbstractType, TFieldSignature tSignature,
+			TField tField);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,7 +167,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TAbstractType tAbstractType, TField tField, TFieldSignature tSignature);
+	CSP isAppropriate_solveCsp_BWD(Match match, TAbstractType tAbstractType, TFieldSignature tSignature, TField tField);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,9 +183,9 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MFieldNameToTField eFieldDeclarationToTField,
-			TAbstractType tAbstractType, TypeToTAbstractType mTypeToTType, TField tField, Type mType,
-			MFieldName mFieldName, TFieldSignature tSignature);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractType tAbstractType,
+			TFieldSignature tSignature, Type mType, MFieldNameToTField eFieldDeclarationToTField, TField tField,
+			MFieldName mFieldName, TypeToTAbstractType mTypeToTType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,9 +201,9 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mFlowElementToTFlowElement,
-			EObject eFieldDeclarationToTField, EObject tAbstractType, EObject mTypeToTType, EObject tField,
-			EObject mSignature, EObject mSignatureToTSignature, EObject mType, EObject mFieldName, EObject tSignature);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAbstractType, EObject tSignature, EObject mType,
+			EObject eFieldDeclarationToTField, EObject mSignature, EObject mFlowElementToTFlowElement, EObject tField,
+			EObject mFieldName, EObject mTypeToTType, EObject mSignatureToTSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_183(EMoflonEdge _edge_signatures);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_19(EMoflonEdge _edge_signatures);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +227,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_197(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_19(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,8 +259,8 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TAbstractType tAbstractType, TField tField, MFieldSignature mSignature, Type mType,
-			MFieldName mFieldName, TFieldSignature tSignature, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TAbstractType tAbstractType, TFieldSignature tSignature, Type mType,
+			MFieldSignature mSignature, TField tField, MFieldName mFieldName, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +276,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MFieldSignature mSignature, Type mType, MFieldName mFieldName);
+	boolean checkDEC_FWD(Type mType, MFieldSignature mSignature, MFieldName mFieldName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,7 +284,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TAbstractType tAbstractType, TField tField, TFieldSignature tSignature);
+	boolean checkDEC_BWD(TAbstractType tAbstractType, TFieldSignature tSignature, TField tField);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +293,7 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			MFieldNameToTField eFieldDeclarationToTFieldParameter, TypeToTAbstractType mTypeToTTypeParameter);
+			TypeToTAbstractType mTypeToTTypeParameter, MFieldNameToTField eFieldDeclarationToTFieldParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -301,9 +301,9 @@ public interface FieldSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MFieldNameToTField eFieldDeclarationToTField,
-			TAbstractType tAbstractType, TypeToTAbstractType mTypeToTType, TField tField, Type mType,
-			MFieldName mFieldName, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractType tAbstractType, Type mType,
+			MFieldNameToTField eFieldDeclarationToTField, TField tField, MFieldName mFieldName,
+			TypeToTAbstractType mTypeToTType, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

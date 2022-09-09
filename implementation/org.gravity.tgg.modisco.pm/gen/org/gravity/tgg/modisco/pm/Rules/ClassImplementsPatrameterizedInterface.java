@@ -4,8 +4,8 @@ package org.gravity.tgg.modisco.pm.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
+import org.eclipse.modisco.java.InterfaceDeclaration;
 import org.eclipse.modisco.java.ParameterizedType;
 import org.eclipse.modisco.java.TypeAccess;
 
@@ -49,7 +49,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 * @generated
 	 */
 	boolean isAppropriate_FWD(Match match, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
-			ParameterizedType eType, AbstractTypeDeclaration eSuperInterface, TypeAccess eParameterTypeAccess);
+			ParameterizedType eType, InterfaceDeclaration eSuperInterface, TypeAccess eParameterTypeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 * @generated
 	 */
 	void registerObjectsToMatch_FWD(Match match, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
-			ParameterizedType eType, AbstractTypeDeclaration eSuperInterface, TypeAccess eParameterTypeAccess);
+			ParameterizedType eType, InterfaceDeclaration eSuperInterface, TypeAccess eParameterTypeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,7 +83,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 * @generated
 	 */
 	CSP isAppropriate_solveCsp_FWD(Match match, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
-			ParameterizedType eType, AbstractTypeDeclaration eSuperInterface, TypeAccess eParameterTypeAccess);
+			ParameterizedType eType, InterfaceDeclaration eSuperInterface, TypeAccess eParameterTypeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +101,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TClass tClass,
 			ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess, TInterface tSuperInterface,
-			ParameterizedType eType, AbstractTypeDeclaration eSuperInterface,
+			ParameterizedType eType, InterfaceDeclaration eSuperInterface,
 			TypeToTAbstractType eClassDeclarationToTClass, TypeAccess eParameterTypeAccess,
 			TypeToTAbstractType eSuperInterfaceToTSuperInterface);
 
@@ -187,7 +187,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass,
 			ClassDeclaration eClassDeclaration, TInterface tSuperInterface, ParameterizedType eType,
-			AbstractTypeDeclaration eSuperInterface, TypeToTAbstractType eClassDeclarationToTClass,
+			InterfaceDeclaration eSuperInterface, TypeToTAbstractType eClassDeclarationToTClass,
 			TypeAccess eParameterTypeAccess, TypeToTAbstractType eSuperInterfaceToTSuperInterface);
 
 	/**
@@ -222,7 +222,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_155(EMoflonEdge _edge_implements);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_61(EMoflonEdge _edge_implements);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_166(EMoflonEdge _edge_superInterfaces);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_63(EMoflonEdge _edge_superInterfaces);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,7 +263,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(TClass tClass, ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess,
-			TInterface tSuperInterface, ParameterizedType eType, AbstractTypeDeclaration eSuperInterface,
+			TInterface tSuperInterface, ParameterizedType eType, InterfaceDeclaration eSuperInterface,
 			TypeAccess eParameterTypeAccess, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -281,7 +281,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 * @generated
 	 */
 	boolean checkDEC_FWD(ClassDeclaration eClassDeclaration, TypeAccess eTypeAccess, ParameterizedType eType,
-			AbstractTypeDeclaration eSuperInterface, TypeAccess eParameterTypeAccess);
+			InterfaceDeclaration eSuperInterface, TypeAccess eParameterTypeAccess);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -309,7 +309,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass,
 			ClassDeclaration eClassDeclaration, TInterface tSuperInterface, ParameterizedType eType,
-			AbstractTypeDeclaration eSuperInterface, TypeToTAbstractType eClassDeclarationToTClass,
+			InterfaceDeclaration eSuperInterface, TypeToTAbstractType eClassDeclarationToTClass,
 			TypeAccess eParameterTypeAccess, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
 			ModelgeneratorRuleResult ruleResult);
 

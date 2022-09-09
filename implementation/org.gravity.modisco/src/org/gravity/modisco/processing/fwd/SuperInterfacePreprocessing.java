@@ -71,7 +71,15 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 			if (!(key instanceof InterfaceDeclaration)) {
 				final var replacedClass = key;
 				for (final Setting setting : entry.getValue()) {
-					setting.getEObject().eSet(setting.getEStructuralFeature(), replacements.get(replacedClass));
+					final var eObject = setting.getEObject();
+					final var replacementClass = replacements.get(replacedClass);
+					if (setting.getEStructuralFeature().isMany()) {
+						final var collection = (Collection) eObject.eGet(setting.getEStructuralFeature());
+						collection.remove(replacedClass);
+						collection.add(replacementClass);
+					} else {
+						eObject.eSet(setting.getEStructuralFeature(), replacementClass);
+					}
 				}
 			} else {
 				LOGGER.error(NLS.bind(Messages.errorUnhandeldedCrossref, key));

@@ -113,8 +113,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tMember, EObject mComment, EObject mMember,
-			EObject mMemberToTMember, EObject tText, EObject mCommentToTText);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tMember, EObject mCommentToTText, EObject mComment,
+			EObject mMember, EObject tText, EObject mMemberToTMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,7 +179,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tMember, MDefinition mMember,
-			MDefinitionToTMember mMemberToTMember, TTextAnnotation tText);
+			TTextAnnotation tText, MDefinitionToTMember mMemberToTMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tMember, EObject mComment, EObject mMember,
-			EObject mMemberToTMember, EObject tText, EObject mCommentToTText);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tMember, EObject mCommentToTText, EObject mComment,
+			EObject mMember, EObject tText, EObject mMemberToTMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_145(EMoflonEdge _edge_tAnnotated);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_74(EMoflonEdge _edge_tAnnotated);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_156(EMoflonEdge _edge_comments);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_77(EMoflonEdge _edge_comments);
 
 	/**
 	 * <!-- begin-user-doc -->

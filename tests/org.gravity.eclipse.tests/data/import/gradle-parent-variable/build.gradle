@@ -23,3 +23,31 @@ task exportCode {
     }
   }
 }
+
+task exportCode {
+  def outputFile = file("/tmp/gravityGradleJava4903977978347961736")
+  outputs.file  outputFile
+  doLast {
+    subprojects { project ->
+      project.plugins.withType(JavaPlugin) {
+        project.sourceSets.main.allJava.collect { sourceFile ->
+          outputFile << sourceFile.path + '\n'
+        }
+      }
+    }
+  }
+}
+
+task exportCode {
+  def outputFile = file("/tmp/gravityGradleJava18013804778406209739")
+  outputs.file  outputFile
+  doLast {
+    subprojects { project ->
+      project.plugins.withType(JavaPlugin) {
+        project.sourceSets.main.allJava.collect { sourceFile ->
+          outputFile << sourceFile.path + '\n'
+        }
+      }
+    }
+  }
+}

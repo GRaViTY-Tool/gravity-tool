@@ -64,8 +64,8 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	private MGravityModel model;
 
 	@Override
-	public boolean process(final MGravityModel model, final Collection<MAbstractMethodDefinition> elements, final IFolder debug,
-			final IProgressMonitor monitor) {
+	public boolean process(final MGravityModel model, final Collection<MAbstractMethodDefinition> elements,
+			final IFolder debug, final IProgressMonitor monitor) {
 		this.model = model;
 		for (final MAbstractMethodDefinition definition : elements) {
 			if (!addStaticTypeAccesses(definition)) {
@@ -122,15 +122,22 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		if (methodInvoc instanceof MethodInvocation) {
 			type = getStaticType(((MethodInvocation) methodInvoc).getExpression(), method);
 			if (type == null) {
-				if (LOGGER.isEnabledFor(Level.WARN)) {
-					LOGGER.warn(NLS.bind(Messages.errorFindStaticType,
-							new String[] { NameUtil.getFullyQualifiedName(methodInvoc.getMethod()),
-									NameUtil.getFullyQualifiedName(method) }));
-				}
-				// If we cannot find the static type assume the declaring type
-				type = getDeclaringType(methodInvoc.getMethod());
-			}
+				final var called = methodInvoc.getMethod();
+				if (called != null) {
+					if (LOGGER.isEnabledFor(Level.WARN)) {
+						LOGGER.warn(NLS.bind(Messages.errorFindStaticType, new String[] {
+								NameUtil.getFullyQualifiedName(called), NameUtil.getFullyQualifiedName(method) }));
+					}
 
+					// If we cannot find the static type assume the declaring type
+					type = getDeclaringType(called);
+
+				} else {
+					LOGGER.error(NLS.bind(Messages.errorFindStaticType,
+							new String[] { "unresolved method", NameUtil.getFullyQualifiedName(method) }));
+					type = MoDiscoUtil.getJavaLangObject(this.model);
+				}
+			}
 		} else if (methodInvoc instanceof SuperMethodInvocation) {
 			// super method invoc cannot happen with a qualifier other than "this"
 			// => static type is always the type that defines this method
@@ -227,7 +234,8 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The static type
 	 * @throws ProcessingException
 	 */
-	private Type getStaticType(final Expression expression, final MAbstractMethodDefinition method) throws ProcessingException {
+	private Type getStaticType(final Expression expression, final MAbstractMethodDefinition method)
+			throws ProcessingException {
 		if (expression == null) {
 			// If the access is not contained in an expression the access is to a direct
 			// member of the type declaring the method
@@ -306,7 +314,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		} else if (calledOn instanceof ConstructorDeclaration) {
 			return ((ConstructorDeclaration) calledOn).getAbstractTypeDeclaration();
 		}
-		LOGGER.error("Invocation of unknown member type: "+calledOn);
+		LOGGER.error("Invocation of unknown member type: " + calledOn);
 		return null;
 	}
 
@@ -405,16 +413,18 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return the declaring type
 	 */
 	private Type getDeclaringType(final BodyDeclaration body) {
-		Type type = body.getAbstractTypeDeclaration();
+		final Type type = body.getAbstractTypeDeclaration();
 		if (type == null) {
+			if (body instanceof UnresolvedMethodDeclaration) {
+				return MoDiscoUtil.getJavaLangObject(this.model);
+			}
 			final var container = body.eContainer();
 			if (container instanceof AnonymousClassDeclaration) {
-				type = getDeclaringType((AnonymousClassDeclaration) container);
+				return getDeclaringType((AnonymousClassDeclaration) container);
 			} else if (container instanceof AbstractTypeDeclaration) {
-				type = (AbstractTypeDeclaration) container;
-			} else {
-				LOGGER.error(NLS.bind(Messages.unknownDeclaringType, body));
+				return (AbstractTypeDeclaration) container;
 			}
+			LOGGER.error(NLS.bind(Messages.unknownDeclaringType, body));
 		}
 		return type;
 	}

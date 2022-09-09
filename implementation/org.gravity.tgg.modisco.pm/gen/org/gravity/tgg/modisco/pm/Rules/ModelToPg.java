@@ -107,7 +107,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPG, EObject mModelToTPG, EObject mModel,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModel, EObject mModelToTPG, EObject tPG,
 			EObject tProxyPackage);
 
 	/**
@@ -188,7 +188,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPG, EObject mModelToTPG, EObject mModel,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModel, EObject mModelToTPG, EObject tPG,
 			EObject tProxyPackage);
 
 	/**
@@ -205,7 +205,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MGravityModel_2(MGravityModel mModel);
+	EObjectContainer isAppropriate_FWD_MGravityModel_0(MGravityModel mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_159(EMoflonEdge _edge_packages);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_92(EMoflonEdge _edge_packages);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -245,7 +245,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TypeGraph tPG, MGravityModel mModel, TPackage tProxyPackage, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(MGravityModel mModel, TypeGraph tPG, TPackage tProxyPackage, Match sourceMatch,
 			Match targetMatch);
 
 	/**

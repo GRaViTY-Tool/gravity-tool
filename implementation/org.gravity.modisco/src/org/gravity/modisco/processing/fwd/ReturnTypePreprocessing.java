@@ -140,7 +140,12 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 * @return The return type of the method
 	 */
 	private static Type guessReturnTypeOfCall(final MGravityModel model, final AbstractMethodInvocation invocation) {
-		return guessReturnTypeOfCall(model, invocation, invocation.eContainer());
+		final var container = invocation.eContainer();
+		if(container != null) {
+			return guessReturnTypeOfCall(model, invocation, container);
+		}
+		LOGGER.warn("Cannot guess reurn type as call is in no container");
+		return null;
 	}
 
 	/**
@@ -439,6 +444,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 * @return The type of the variable
 	 */
 	private static Type getType(final MGravityModel pg, final VariableDeclaration variable) {
+		if(variable == null) {
+			LOGGER.warn("Cannot get type as variable is null");
+			return null;
+		}
 		if (variable instanceof UnresolvedVariableDeclarationFragment) {
 			return MoDiscoUtil.getJavaLangObject(pg);
 		} else if (variable instanceof VariableDeclarationFragment) {

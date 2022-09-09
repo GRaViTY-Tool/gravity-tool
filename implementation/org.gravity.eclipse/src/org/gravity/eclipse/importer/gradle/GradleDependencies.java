@@ -115,7 +115,7 @@ public class GradleDependencies {
 		if (index < 0) {
 			return dependency;
 		}
-		final var regex = dependency.substring(index + 1).replaceAll("\\{|\\}", "") + "\\s+=\\s+('|\")(.+)('|\")";
+		final var regex = dependency.substring(index + 1).replaceAll("[\\{\\}]", "") + "\\s+=\\s+('|\")(.+)('|\")";
 		final var pattern = Pattern.compile(regex);
 		final var matcher = pattern.matcher(content);
 		if (matcher.find()) {

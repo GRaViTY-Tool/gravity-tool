@@ -11,7 +11,7 @@
 
 	++eTypeAccess:TypeAccess
 
-	eSuperInterface:Type
+	eSuperInterface:InterfaceDeclaration
 }
 
 #target {
@@ -42,7 +42,7 @@
 		++  -type -> eSuperInterface
 	}
 	
-	eSuperInterface:AbstractTypeDeclaration
+	eSuperInterface:InterfaceDeclaration
 }
 
 #rule ClassImplementsPatrameterizedInterface #extends ClassImplementsInterface_Abstract
@@ -61,7 +61,7 @@
 		-type -> eSuperInterface
 	}
 
-	eSuperInterface:AbstractTypeDeclaration
+	eSuperInterface:InterfaceDeclaration
 }
 
 

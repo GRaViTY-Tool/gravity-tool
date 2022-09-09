@@ -94,45 +94,45 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, MFlow mFlow, MAbstractFlowElement mOwner) {
+	public boolean isAppropriate_FWD(Match match, MAbstractFlowElement mOwner, MFlow mFlow) {
 
-		Object[] result1_black = FlowNodeImpl.pattern_FlowNode_0_1_initialbindings_blackBBBB(this, match, mFlow,
-				mOwner);
+		Object[] result1_black = FlowNodeImpl.pattern_FlowNode_0_1_initialbindings_blackBBBB(this, match, mOwner,
+				mFlow);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mFlow] = " + mFlow + ", " + "[mOwner] = " + mOwner + ".");
+					+ "[match] = " + match + ", " + "[mOwner] = " + mOwner + ", " + "[mFlow] = " + mFlow + ".");
 		}
 
 		Object[] result2_bindingAndBlack = FlowNodeImpl.pattern_FlowNode_0_2_SolveCSP_bindingAndBlackFBBBB(this, match,
-				mFlow, mOwner);
+				mOwner, mFlow);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mFlow] = " + mFlow + ", " + "[mOwner] = " + mOwner + ".");
+					+ "[match] = " + match + ", " + "[mOwner] = " + mOwner + ", " + "[mFlow] = " + mFlow + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (FlowNodeImpl.pattern_FlowNode_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = FlowNodeImpl.pattern_FlowNode_0_4_collectelementstobetranslated_blackBBB(match,
-					mFlow, mOwner);
+					mOwner, mFlow);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mFlow] = " + mFlow + ", " + "[mOwner] = " + mOwner + ".");
+						+ "[mOwner] = " + mOwner + ", " + "[mFlow] = " + mFlow + ".");
 			}
-			FlowNodeImpl.pattern_FlowNode_0_4_collectelementstobetranslated_greenBBBFF(match, mFlow, mOwner);
+			FlowNodeImpl.pattern_FlowNode_0_4_collectelementstobetranslated_greenBBBFF(match, mOwner, mFlow);
 			//nothing EMoflonEdge mOwner__mFlow____ownedFlows = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge mFlow__mOwner____flowOwner = (EMoflonEdge) result4_green[4];
 
-			Object[] result5_black = FlowNodeImpl.pattern_FlowNode_0_5_collectcontextelements_blackBBB(match, mFlow,
-					mOwner);
+			Object[] result5_black = FlowNodeImpl.pattern_FlowNode_0_5_collectcontextelements_blackBBB(match, mOwner,
+					mFlow);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mFlow] = " + mFlow + ", " + "[mOwner] = " + mOwner + ".");
+						+ "[mOwner] = " + mOwner + ", " + "[mFlow] = " + mFlow + ".");
 			}
 			FlowNodeImpl.pattern_FlowNode_0_5_collectcontextelements_greenBB(match, mOwner);
 
 			// 
-			FlowNodeImpl.pattern_FlowNode_0_6_registerobjectstomatch_expressionBBBB(this, match, mFlow, mOwner);
+			FlowNodeImpl.pattern_FlowNode_0_6_registerobjectstomatch_expressionBBBB(this, match, mOwner, mFlow);
 			return FlowNodeImpl.pattern_FlowNode_0_7_expressionF();
 		} else {
 			return FlowNodeImpl.pattern_FlowNode_0_8_expressionF();
@@ -153,50 +153,50 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		MFlow mFlow = (MFlow) result1_bindingAndBlack[0];
-		TAbstractFlowElement tOwner = (TAbstractFlowElement) result1_bindingAndBlack[1];
-		MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result1_bindingAndBlack[2];
-		MAbstractFlowElement mOwner = (MAbstractFlowElement) result1_bindingAndBlack[3];
+		MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result1_bindingAndBlack[0];
+		MAbstractFlowElement mOwner = (MAbstractFlowElement) result1_bindingAndBlack[1];
+		MFlow mFlow = (MFlow) result1_bindingAndBlack[2];
+		TAbstractFlowElement tOwner = (TAbstractFlowElement) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = FlowNodeImpl.pattern_FlowNode_1_1_performtransformation_greenFBFFB(mFlow, tOwner);
+		Object[] result1_green = FlowNodeImpl.pattern_FlowNode_1_1_performtransformation_greenFFBBF(mFlow, tOwner);
 		MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow = (MAbstractFlowElementToTAbstractFlowElement) result1_green[0];
-		TFlow tFlow = (TFlow) result1_green[2];
-		MFlowToTFlow mFlowToTFlow = (MFlowToTFlow) result1_green[3];
+		MFlowToTFlow mFlowToTFlow = (MFlowToTFlow) result1_green[1];
+		TFlow tFlow = (TFlow) result1_green[4];
 
 		Object[] result2_black = FlowNodeImpl.pattern_FlowNode_1_2_collecttranslatedelements_blackBBBB(
-				mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow);
+				mAbstFlowToTAbstFlow, mFlowToTFlow, mFlow, tFlow);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mAbstFlowToTAbstFlow] = "
-					+ mAbstFlowToTAbstFlow + ", " + "[mFlow] = " + mFlow + ", " + "[tFlow] = " + tFlow + ", "
-					+ "[mFlowToTFlow] = " + mFlowToTFlow + ".");
+					+ mAbstFlowToTAbstFlow + ", " + "[mFlowToTFlow] = " + mFlowToTFlow + ", " + "[mFlow] = " + mFlow
+					+ ", " + "[tFlow] = " + tFlow + ".");
 		}
 		Object[] result2_green = FlowNodeImpl.pattern_FlowNode_1_2_collecttranslatedelements_greenFBBBB(
-				mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow);
+				mAbstFlowToTAbstFlow, mFlowToTFlow, mFlow, tFlow);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FlowNodeImpl.pattern_FlowNode_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult,
-				mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow, tOwner, mOwnerToTOwner, mOwner);
+				mOwnerToTOwner, mAbstFlowToTAbstFlow, mFlowToTFlow, mOwner, mFlow, tOwner, tFlow);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mAbstFlowToTAbstFlow] = " + mAbstFlowToTAbstFlow + ", " + "[mFlow] = " + mFlow + ", "
-					+ "[tFlow] = " + tFlow + ", " + "[mFlowToTFlow] = " + mFlowToTFlow + ", " + "[tOwner] = " + tOwner
-					+ ", " + "[mOwnerToTOwner] = " + mOwnerToTOwner + ", " + "[mOwner] = " + mOwner + ".");
+					+ ", " + "[mOwnerToTOwner] = " + mOwnerToTOwner + ", " + "[mAbstFlowToTAbstFlow] = "
+					+ mAbstFlowToTAbstFlow + ", " + "[mFlowToTFlow] = " + mFlowToTFlow + ", " + "[mOwner] = " + mOwner
+					+ ", " + "[mFlow] = " + mFlow + ", " + "[tOwner] = " + tOwner + ", " + "[tFlow] = " + tFlow + ".");
 		}
 		FlowNodeImpl.pattern_FlowNode_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(ruleresult, mAbstFlowToTAbstFlow,
-				mFlow, tFlow, mFlowToTFlow, tOwner, mOwner);
+				mFlowToTFlow, mOwner, mFlow, tOwner, tFlow);
 		//nothing EMoflonEdge mAbstFlowToTAbstFlow__mFlow____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mAbstFlowToTAbstFlow__tFlow____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mFlowToTFlow__tFlow____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mFlowToTFlow__mFlow____source = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mOwner__mFlow____ownedFlows = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge mFlow__mOwner____flowOwner = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tOwner__tFlow____ownedFlows = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tFlow__tOwner____flowOwner = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mFlowToTFlow__mFlow____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mOwner__mFlow____ownedFlows = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mFlow__mOwner____flowOwner = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mAbstFlowToTAbstFlow__tFlow____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tOwner__tFlow____ownedFlows = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tFlow__tOwner____flowOwner = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge mFlowToTFlow__tFlow____target = (EMoflonEdge) result3_green[14];
 
 		// 
 		// 
-		FlowNodeImpl.pattern_FlowNode_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, mAbstFlowToTAbstFlow,
-				mFlow, tFlow, mFlowToTFlow, tOwner, mOwnerToTOwner, mOwner);
+		FlowNodeImpl.pattern_FlowNode_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, mOwnerToTOwner,
+				mAbstFlowToTAbstFlow, mFlowToTFlow, mOwner, mFlow, tOwner, tFlow);
 		return FlowNodeImpl.pattern_FlowNode_1_6_expressionFB(ruleresult);
 	}
 
@@ -223,29 +223,29 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		MFlow mFlow = (MFlow) result2_binding[0];
-		MAbstractFlowElement mOwner = (MAbstractFlowElement) result2_binding[1];
-		for (Object[] result2_black : FlowNodeImpl.pattern_FlowNode_2_2_corematch_blackBFFBB(mFlow, mOwner, match)) {
-			TAbstractFlowElement tOwner = (TAbstractFlowElement) result2_black[1];
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result2_black[2];
+		MAbstractFlowElement mOwner = (MAbstractFlowElement) result2_binding[0];
+		MFlow mFlow = (MFlow) result2_binding[1];
+		for (Object[] result2_black : FlowNodeImpl.pattern_FlowNode_2_2_corematch_blackFBBFB(mOwner, mFlow, match)) {
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result2_black[0];
+			TAbstractFlowElement tOwner = (TAbstractFlowElement) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : FlowNodeImpl.pattern_FlowNode_2_3_findcontext_blackBBBB(mFlow, tOwner,
-					mOwnerToTOwner, mOwner)) {
-				Object[] result3_green = FlowNodeImpl.pattern_FlowNode_2_3_findcontext_greenBBBBFFFFF(mFlow, tOwner,
-						mOwnerToTOwner, mOwner);
+			for (Object[] result3_black : FlowNodeImpl.pattern_FlowNode_2_3_findcontext_blackBBBB(mOwnerToTOwner,
+					mOwner, mFlow, tOwner)) {
+				Object[] result3_green = FlowNodeImpl.pattern_FlowNode_2_3_findcontext_greenBBBBFFFFF(mOwnerToTOwner,
+						mOwner, mFlow, tOwner);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mOwnerToTOwner__tOwner____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge mOwnerToTOwner__mOwner____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mOwner__mFlow____ownedFlows = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mFlow__mOwner____flowOwner = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mOwnerToTOwner__mOwner____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge mOwner__mFlow____ownedFlows = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mFlow__mOwner____flowOwner = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mOwnerToTOwner__tOwner____target = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = FlowNodeImpl.pattern_FlowNode_2_4_solveCSP_bindingAndBlackFBBBBBB(
-						this, isApplicableMatch, mFlow, tOwner, mOwnerToTOwner, mOwner);
+						this, isApplicableMatch, mOwnerToTOwner, mOwner, mFlow, tOwner);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mFlow] = " + mFlow + ", "
-							+ "[tOwner] = " + tOwner + ", " + "[mOwnerToTOwner] = " + mOwnerToTOwner + ", "
-							+ "[mOwner] = " + mOwner + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mOwnerToTOwner] = "
+							+ mOwnerToTOwner + ", " + "[mOwner] = " + mOwner + ", " + "[mFlow] = " + mFlow + ", "
+							+ "[tOwner] = " + tOwner + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -273,9 +273,9 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, MFlow mFlow, MAbstractFlowElement mOwner) {
-		match.registerObject("mFlow", mFlow);
+	public void registerObjectsToMatch_FWD(Match match, MAbstractFlowElement mOwner, MFlow mFlow) {
 		match.registerObject("mOwner", mOwner);
+		match.registerObject("mFlow", mFlow);
 
 	}
 
@@ -284,7 +284,7 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, MFlow mFlow, MAbstractFlowElement mOwner) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, MAbstractFlowElement mOwner, MFlow mFlow) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -313,8 +313,9 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MFlow mFlow, TAbstractFlowElement tOwner,
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner, MFlow mFlow,
+			TAbstractFlowElement tOwner) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -329,10 +330,10 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mFlow", mFlow);
-		isApplicableMatch.registerObject("tOwner", tOwner);
 		isApplicableMatch.registerObject("mOwnerToTOwner", mOwnerToTOwner);
 		isApplicableMatch.registerObject("mOwner", mOwner);
+		isApplicableMatch.registerObject("mFlow", mFlow);
+		isApplicableMatch.registerObject("tOwner", tOwner);
 		return csp;
 	}
 
@@ -350,15 +351,15 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAbstFlowToTAbstFlow, EObject mFlow,
-			EObject tFlow, EObject mFlowToTFlow, EObject tOwner, EObject mOwnerToTOwner, EObject mOwner) {
-		ruleresult.registerObject("mAbstFlowToTAbstFlow", mAbstFlowToTAbstFlow);
-		ruleresult.registerObject("mFlow", mFlow);
-		ruleresult.registerObject("tFlow", tFlow);
-		ruleresult.registerObject("mFlowToTFlow", mFlowToTFlow);
-		ruleresult.registerObject("tOwner", tOwner);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mOwnerToTOwner, EObject mAbstFlowToTAbstFlow,
+			EObject mFlowToTFlow, EObject mOwner, EObject mFlow, EObject tOwner, EObject tFlow) {
 		ruleresult.registerObject("mOwnerToTOwner", mOwnerToTOwner);
+		ruleresult.registerObject("mAbstFlowToTAbstFlow", mAbstFlowToTAbstFlow);
+		ruleresult.registerObject("mFlowToTFlow", mFlowToTFlow);
 		ruleresult.registerObject("mOwner", mOwner);
+		ruleresult.registerObject("mFlow", mFlow);
+		ruleresult.registerObject("tOwner", tOwner);
+		ruleresult.registerObject("tFlow", tFlow);
 
 	}
 
@@ -377,45 +378,45 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TFlow tFlow, TAbstractFlowElement tOwner) {
+	public boolean isAppropriate_BWD(Match match, TAbstractFlowElement tOwner, TFlow tFlow) {
 
-		Object[] result1_black = FlowNodeImpl.pattern_FlowNode_10_1_initialbindings_blackBBBB(this, match, tFlow,
-				tOwner);
+		Object[] result1_black = FlowNodeImpl.pattern_FlowNode_10_1_initialbindings_blackBBBB(this, match, tOwner,
+				tFlow);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tFlow] = " + tFlow + ", " + "[tOwner] = " + tOwner + ".");
+					+ "[match] = " + match + ", " + "[tOwner] = " + tOwner + ", " + "[tFlow] = " + tFlow + ".");
 		}
 
 		Object[] result2_bindingAndBlack = FlowNodeImpl.pattern_FlowNode_10_2_SolveCSP_bindingAndBlackFBBBB(this, match,
-				tFlow, tOwner);
+				tOwner, tFlow);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tFlow] = " + tFlow + ", " + "[tOwner] = " + tOwner + ".");
+					+ "[match] = " + match + ", " + "[tOwner] = " + tOwner + ", " + "[tFlow] = " + tFlow + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (FlowNodeImpl.pattern_FlowNode_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = FlowNodeImpl.pattern_FlowNode_10_4_collectelementstobetranslated_blackBBB(match,
-					tFlow, tOwner);
+					tOwner, tFlow);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tFlow] = " + tFlow + ", " + "[tOwner] = " + tOwner + ".");
+						+ "[tOwner] = " + tOwner + ", " + "[tFlow] = " + tFlow + ".");
 			}
-			FlowNodeImpl.pattern_FlowNode_10_4_collectelementstobetranslated_greenBBBFF(match, tFlow, tOwner);
+			FlowNodeImpl.pattern_FlowNode_10_4_collectelementstobetranslated_greenBBBFF(match, tOwner, tFlow);
 			//nothing EMoflonEdge tOwner__tFlow____ownedFlows = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge tFlow__tOwner____flowOwner = (EMoflonEdge) result4_green[4];
 
-			Object[] result5_black = FlowNodeImpl.pattern_FlowNode_10_5_collectcontextelements_blackBBB(match, tFlow,
-					tOwner);
+			Object[] result5_black = FlowNodeImpl.pattern_FlowNode_10_5_collectcontextelements_blackBBB(match, tOwner,
+					tFlow);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tFlow] = " + tFlow + ", " + "[tOwner] = " + tOwner + ".");
+						+ "[tOwner] = " + tOwner + ", " + "[tFlow] = " + tFlow + ".");
 			}
 			FlowNodeImpl.pattern_FlowNode_10_5_collectcontextelements_greenBB(match, tOwner);
 
 			// 
-			FlowNodeImpl.pattern_FlowNode_10_6_registerobjectstomatch_expressionBBBB(this, match, tFlow, tOwner);
+			FlowNodeImpl.pattern_FlowNode_10_6_registerobjectstomatch_expressionBBBB(this, match, tOwner, tFlow);
 			return FlowNodeImpl.pattern_FlowNode_10_7_expressionF();
 		} else {
 			return FlowNodeImpl.pattern_FlowNode_10_8_expressionF();
@@ -436,50 +437,50 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TFlow tFlow = (TFlow) result1_bindingAndBlack[0];
-		TAbstractFlowElement tOwner = (TAbstractFlowElement) result1_bindingAndBlack[1];
-		MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result1_bindingAndBlack[2];
-		MAbstractFlowElement mOwner = (MAbstractFlowElement) result1_bindingAndBlack[3];
+		MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result1_bindingAndBlack[0];
+		MAbstractFlowElement mOwner = (MAbstractFlowElement) result1_bindingAndBlack[1];
+		TAbstractFlowElement tOwner = (TAbstractFlowElement) result1_bindingAndBlack[2];
+		TFlow tFlow = (TFlow) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = FlowNodeImpl.pattern_FlowNode_11_1_performtransformation_greenFFBFB(tFlow, mOwner);
+		Object[] result1_green = FlowNodeImpl.pattern_FlowNode_11_1_performtransformation_greenFFBFB(mOwner, tFlow);
 		MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow = (MAbstractFlowElementToTAbstractFlowElement) result1_green[0];
-		MFlow mFlow = (MFlow) result1_green[1];
-		MFlowToTFlow mFlowToTFlow = (MFlowToTFlow) result1_green[3];
+		MFlowToTFlow mFlowToTFlow = (MFlowToTFlow) result1_green[1];
+		MFlow mFlow = (MFlow) result1_green[3];
 
 		Object[] result2_black = FlowNodeImpl.pattern_FlowNode_11_2_collecttranslatedelements_blackBBBB(
-				mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow);
+				mAbstFlowToTAbstFlow, mFlowToTFlow, mFlow, tFlow);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mAbstFlowToTAbstFlow] = "
-					+ mAbstFlowToTAbstFlow + ", " + "[mFlow] = " + mFlow + ", " + "[tFlow] = " + tFlow + ", "
-					+ "[mFlowToTFlow] = " + mFlowToTFlow + ".");
+					+ mAbstFlowToTAbstFlow + ", " + "[mFlowToTFlow] = " + mFlowToTFlow + ", " + "[mFlow] = " + mFlow
+					+ ", " + "[tFlow] = " + tFlow + ".");
 		}
 		Object[] result2_green = FlowNodeImpl.pattern_FlowNode_11_2_collecttranslatedelements_greenFBBBB(
-				mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow);
+				mAbstFlowToTAbstFlow, mFlowToTFlow, mFlow, tFlow);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FlowNodeImpl.pattern_FlowNode_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult,
-				mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow, tOwner, mOwnerToTOwner, mOwner);
+				mOwnerToTOwner, mAbstFlowToTAbstFlow, mFlowToTFlow, mOwner, mFlow, tOwner, tFlow);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mAbstFlowToTAbstFlow] = " + mAbstFlowToTAbstFlow + ", " + "[mFlow] = " + mFlow + ", "
-					+ "[tFlow] = " + tFlow + ", " + "[mFlowToTFlow] = " + mFlowToTFlow + ", " + "[tOwner] = " + tOwner
-					+ ", " + "[mOwnerToTOwner] = " + mOwnerToTOwner + ", " + "[mOwner] = " + mOwner + ".");
+					+ ", " + "[mOwnerToTOwner] = " + mOwnerToTOwner + ", " + "[mAbstFlowToTAbstFlow] = "
+					+ mAbstFlowToTAbstFlow + ", " + "[mFlowToTFlow] = " + mFlowToTFlow + ", " + "[mOwner] = " + mOwner
+					+ ", " + "[mFlow] = " + mFlow + ", " + "[tOwner] = " + tOwner + ", " + "[tFlow] = " + tFlow + ".");
 		}
 		FlowNodeImpl.pattern_FlowNode_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(ruleresult, mAbstFlowToTAbstFlow,
-				mFlow, tFlow, mFlowToTFlow, tOwner, mOwner);
+				mFlowToTFlow, mOwner, mFlow, tOwner, tFlow);
 		//nothing EMoflonEdge mAbstFlowToTAbstFlow__mFlow____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mAbstFlowToTAbstFlow__tFlow____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mFlowToTFlow__tFlow____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mFlowToTFlow__mFlow____source = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mOwner__mFlow____ownedFlows = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge mFlow__mOwner____flowOwner = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tOwner__tFlow____ownedFlows = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tFlow__tOwner____flowOwner = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mFlowToTFlow__mFlow____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mOwner__mFlow____ownedFlows = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mFlow__mOwner____flowOwner = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mAbstFlowToTAbstFlow__tFlow____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tOwner__tFlow____ownedFlows = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge tFlow__tOwner____flowOwner = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge mFlowToTFlow__tFlow____target = (EMoflonEdge) result3_green[14];
 
 		// 
 		// 
-		FlowNodeImpl.pattern_FlowNode_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, mAbstFlowToTAbstFlow,
-				mFlow, tFlow, mFlowToTFlow, tOwner, mOwnerToTOwner, mOwner);
+		FlowNodeImpl.pattern_FlowNode_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, mOwnerToTOwner,
+				mAbstFlowToTAbstFlow, mFlowToTFlow, mOwner, mFlow, tOwner, tFlow);
 		return FlowNodeImpl.pattern_FlowNode_11_6_expressionFB(ruleresult);
 	}
 
@@ -506,29 +507,29 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TFlow tFlow = (TFlow) result2_binding[0];
-		TAbstractFlowElement tOwner = (TAbstractFlowElement) result2_binding[1];
-		for (Object[] result2_black : FlowNodeImpl.pattern_FlowNode_12_2_corematch_blackBBFFB(tFlow, tOwner, match)) {
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result2_black[2];
-			MAbstractFlowElement mOwner = (MAbstractFlowElement) result2_black[3];
+		TAbstractFlowElement tOwner = (TAbstractFlowElement) result2_binding[0];
+		TFlow tFlow = (TFlow) result2_binding[1];
+		for (Object[] result2_black : FlowNodeImpl.pattern_FlowNode_12_2_corematch_blackFFBBB(tOwner, tFlow, match)) {
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result2_black[0];
+			MAbstractFlowElement mOwner = (MAbstractFlowElement) result2_black[1];
 			// ForEach 
-			for (Object[] result3_black : FlowNodeImpl.pattern_FlowNode_12_3_findcontext_blackBBBB(tFlow, tOwner,
-					mOwnerToTOwner, mOwner)) {
-				Object[] result3_green = FlowNodeImpl.pattern_FlowNode_12_3_findcontext_greenBBBBFFFFF(tFlow, tOwner,
-						mOwnerToTOwner, mOwner);
+			for (Object[] result3_black : FlowNodeImpl.pattern_FlowNode_12_3_findcontext_blackBBBB(mOwnerToTOwner,
+					mOwner, tOwner, tFlow)) {
+				Object[] result3_green = FlowNodeImpl.pattern_FlowNode_12_3_findcontext_greenBBBBFFFFF(mOwnerToTOwner,
+						mOwner, tOwner, tFlow);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mOwnerToTOwner__tOwner____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge mOwnerToTOwner__mOwner____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mOwnerToTOwner__mOwner____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge mOwnerToTOwner__tOwner____target = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge tOwner__tFlow____ownedFlows = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge tFlow__tOwner____flowOwner = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = FlowNodeImpl.pattern_FlowNode_12_4_solveCSP_bindingAndBlackFBBBBBB(
-						this, isApplicableMatch, tFlow, tOwner, mOwnerToTOwner, mOwner);
+						this, isApplicableMatch, mOwnerToTOwner, mOwner, tOwner, tFlow);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tFlow] = " + tFlow + ", "
-							+ "[tOwner] = " + tOwner + ", " + "[mOwnerToTOwner] = " + mOwnerToTOwner + ", "
-							+ "[mOwner] = " + mOwner + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mOwnerToTOwner] = "
+							+ mOwnerToTOwner + ", " + "[mOwner] = " + mOwner + ", " + "[tOwner] = " + tOwner + ", "
+							+ "[tFlow] = " + tFlow + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -556,9 +557,9 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TFlow tFlow, TAbstractFlowElement tOwner) {
-		match.registerObject("tFlow", tFlow);
+	public void registerObjectsToMatch_BWD(Match match, TAbstractFlowElement tOwner, TFlow tFlow) {
 		match.registerObject("tOwner", tOwner);
+		match.registerObject("tFlow", tFlow);
 
 	}
 
@@ -567,7 +568,7 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TFlow tFlow, TAbstractFlowElement tOwner) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TAbstractFlowElement tOwner, TFlow tFlow) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -596,8 +597,9 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TFlow tFlow, TAbstractFlowElement tOwner,
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner,
+			TAbstractFlowElement tOwner, TFlow tFlow) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -612,10 +614,10 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tFlow", tFlow);
-		isApplicableMatch.registerObject("tOwner", tOwner);
 		isApplicableMatch.registerObject("mOwnerToTOwner", mOwnerToTOwner);
 		isApplicableMatch.registerObject("mOwner", mOwner);
+		isApplicableMatch.registerObject("tOwner", tOwner);
+		isApplicableMatch.registerObject("tFlow", tFlow);
 		return csp;
 	}
 
@@ -633,15 +635,15 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mAbstFlowToTAbstFlow, EObject mFlow,
-			EObject tFlow, EObject mFlowToTFlow, EObject tOwner, EObject mOwnerToTOwner, EObject mOwner) {
-		ruleresult.registerObject("mAbstFlowToTAbstFlow", mAbstFlowToTAbstFlow);
-		ruleresult.registerObject("mFlow", mFlow);
-		ruleresult.registerObject("tFlow", tFlow);
-		ruleresult.registerObject("mFlowToTFlow", mFlowToTFlow);
-		ruleresult.registerObject("tOwner", tOwner);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mOwnerToTOwner, EObject mAbstFlowToTAbstFlow,
+			EObject mFlowToTFlow, EObject mOwner, EObject mFlow, EObject tOwner, EObject tFlow) {
 		ruleresult.registerObject("mOwnerToTOwner", mOwnerToTOwner);
+		ruleresult.registerObject("mAbstFlowToTAbstFlow", mAbstFlowToTAbstFlow);
+		ruleresult.registerObject("mFlowToTFlow", mFlowToTFlow);
 		ruleresult.registerObject("mOwner", mOwner);
+		ruleresult.registerObject("mFlow", mFlow);
+		ruleresult.registerObject("tOwner", tOwner);
+		ruleresult.registerObject("tFlow", tFlow);
 
 	}
 
@@ -659,7 +661,7 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_201(EMoflonEdge _edge_ownedFlows) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_87(EMoflonEdge _edge_ownedFlows) {
 
 		Object[] result1_bindingAndBlack = FlowNodeImpl
 				.pattern_FlowNode_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -675,14 +677,14 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		// ForEach 
 		for (Object[] result2_black : FlowNodeImpl
 				.pattern_FlowNode_20_2_testcorematchandDECs_blackFFB(_edge_ownedFlows)) {
-			TFlow tFlow = (TFlow) result2_black[0];
-			TAbstractFlowElement tOwner = (TAbstractFlowElement) result2_black[1];
+			TAbstractFlowElement tOwner = (TAbstractFlowElement) result2_black[0];
+			TFlow tFlow = (TFlow) result2_black[1];
 			Object[] result2_green = FlowNodeImpl.pattern_FlowNode_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (FlowNodeImpl.pattern_FlowNode_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-					match, tFlow, tOwner)) {
+					match, tOwner, tFlow)) {
 				// 
 				if (FlowNodeImpl.pattern_FlowNode_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
 						match)) {
@@ -712,7 +714,7 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_215(EMoflonEdge _edge_ownedFlows) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_91(EMoflonEdge _edge_ownedFlows) {
 
 		Object[] result1_bindingAndBlack = FlowNodeImpl
 				.pattern_FlowNode_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -728,14 +730,14 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		// ForEach 
 		for (Object[] result2_black : FlowNodeImpl
 				.pattern_FlowNode_21_2_testcorematchandDECs_blackFFB(_edge_ownedFlows)) {
-			MFlow mFlow = (MFlow) result2_black[0];
-			MAbstractFlowElement mOwner = (MAbstractFlowElement) result2_black[1];
+			MAbstractFlowElement mOwner = (MAbstractFlowElement) result2_black[0];
+			MFlow mFlow = (MFlow) result2_black[1];
 			Object[] result2_green = FlowNodeImpl.pattern_FlowNode_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (FlowNodeImpl.pattern_FlowNode_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-					match, mFlow, mOwner)) {
+					match, mOwner, mFlow)) {
 				// 
 				if (FlowNodeImpl.pattern_FlowNode_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
 						match)) {
@@ -840,40 +842,40 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		MFlow mFlow = (MFlow) result2_bindingAndBlack[0];
-		TFlow tFlow = (TFlow) result2_bindingAndBlack[1];
+		MAbstractFlowElement mOwner = (MAbstractFlowElement) result2_bindingAndBlack[0];
+		MFlow mFlow = (MFlow) result2_bindingAndBlack[1];
 		TAbstractFlowElement tOwner = (TAbstractFlowElement) result2_bindingAndBlack[2];
-		MAbstractFlowElement mOwner = (MAbstractFlowElement) result2_bindingAndBlack[3];
+		TFlow tFlow = (TFlow) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = FlowNodeImpl.pattern_FlowNode_24_3_solvecsp_bindingAndBlackFBBBBBBB(this,
-				mFlow, tFlow, tOwner, mOwner, sourceMatch, targetMatch);
+				mOwner, mFlow, tOwner, tFlow, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mFlow] = " + mFlow + ", " + "[tFlow] = " + tFlow + ", " + "[tOwner] = " + tOwner + ", "
-					+ "[mOwner] = " + mOwner + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
-					+ targetMatch + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[mOwner] = " + mOwner
+							+ ", " + "[mFlow] = " + mFlow + ", " + "[tOwner] = " + tOwner + ", " + "[tFlow] = " + tFlow
+							+ ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (FlowNodeImpl.pattern_FlowNode_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : FlowNodeImpl.pattern_FlowNode_24_5_matchcorrcontext_blackBFBBB(tOwner, mOwner,
+			for (Object[] result5_black : FlowNodeImpl.pattern_FlowNode_24_5_matchcorrcontext_blackFBBBB(mOwner, tOwner,
 					sourceMatch, targetMatch)) {
-				MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result5_black[1];
+				MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result5_black[0];
 				Object[] result5_green = FlowNodeImpl.pattern_FlowNode_24_5_matchcorrcontext_greenBBBF(mOwnerToTOwner,
 						sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
-				Object[] result6_black = FlowNodeImpl.pattern_FlowNode_24_6_createcorrespondence_blackBBBBB(mFlow,
-						tFlow, tOwner, mOwner, ccMatch);
+				Object[] result6_black = FlowNodeImpl.pattern_FlowNode_24_6_createcorrespondence_blackBBBBB(mOwner,
+						mFlow, tOwner, tFlow, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mFlow] = " + mFlow + ", "
-							+ "[tFlow] = " + tFlow + ", " + "[tOwner] = " + tOwner + ", " + "[mOwner] = " + mOwner
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mOwner] = " + mOwner
+							+ ", " + "[mFlow] = " + mFlow + ", " + "[tOwner] = " + tOwner + ", " + "[tFlow] = " + tFlow
 							+ ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				FlowNodeImpl.pattern_FlowNode_24_6_createcorrespondence_greenFBBFB(mFlow, tFlow, ccMatch);
+				FlowNodeImpl.pattern_FlowNode_24_6_createcorrespondence_greenFFBBB(mFlow, tFlow, ccMatch);
 				//nothing MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow = (MAbstractFlowElementToTAbstractFlowElement) result6_green[0];
-				//nothing MFlowToTFlow mFlowToTFlow = (MFlowToTFlow) result6_green[3];
+				//nothing MFlowToTFlow mFlowToTFlow = (MFlowToTFlow) result6_green[1];
 
 				Object[] result7_black = FlowNodeImpl.pattern_FlowNode_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -895,8 +897,8 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MFlow mFlow, TFlow tFlow, TAbstractFlowElement tOwner,
-			MAbstractFlowElement mOwner, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(MAbstractFlowElement mOwner, MFlow mFlow, TAbstractFlowElement tOwner,
+			TFlow tFlow, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -925,8 +927,8 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(MFlow mFlow, MAbstractFlowElement mOwner) {// 
-		Object[] result1_black = FlowNodeImpl.pattern_FlowNode_27_1_matchtggpattern_blackBB(mFlow, mOwner);
+	public boolean checkDEC_FWD(MAbstractFlowElement mOwner, MFlow mFlow) {// 
+		Object[] result1_black = FlowNodeImpl.pattern_FlowNode_27_1_matchtggpattern_blackBB(mOwner, mFlow);
 		if (result1_black != null) {
 			return FlowNodeImpl.pattern_FlowNode_27_2_expressionF();
 		} else {
@@ -940,8 +942,8 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TFlow tFlow, TAbstractFlowElement tOwner) {// 
-		Object[] result1_black = FlowNodeImpl.pattern_FlowNode_28_1_matchtggpattern_blackBB(tFlow, tOwner);
+	public boolean checkDEC_BWD(TAbstractFlowElement tOwner, TFlow tFlow) {// 
+		Object[] result1_black = FlowNodeImpl.pattern_FlowNode_28_1_matchtggpattern_blackBB(tOwner, tFlow);
 		if (result1_black != null) {
 			return FlowNodeImpl.pattern_FlowNode_28_2_expressionF();
 		} else {
@@ -970,38 +972,38 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		for (Object[] result2_black : FlowNodeImpl
 				.pattern_FlowNode_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mOwnerToTOwnerList = (RuleEntryList) result2_black[0];
-			TAbstractFlowElement tOwner = (TAbstractFlowElement) result2_black[1];
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result2_black[2];
-			MAbstractFlowElement mOwner = (MAbstractFlowElement) result2_black[3];
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result2_black[1];
+			MAbstractFlowElement mOwner = (MAbstractFlowElement) result2_black[2];
+			TAbstractFlowElement tOwner = (TAbstractFlowElement) result2_black[3];
 
 			Object[] result3_bindingAndBlack = FlowNodeImpl.pattern_FlowNode_29_3_solveCSP_bindingAndBlackFBBBBBB(this,
-					isApplicableMatch, tOwner, mOwnerToTOwner, mOwner, ruleResult);
+					isApplicableMatch, mOwnerToTOwner, mOwner, tOwner, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tOwner] = " + tOwner + ", "
-						+ "[mOwnerToTOwner] = " + mOwnerToTOwner + ", " + "[mOwner] = " + mOwner + ", "
-						+ "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mOwnerToTOwner] = " + mOwnerToTOwner
+						+ ", " + "[mOwner] = " + mOwner + ", " + "[tOwner] = " + tOwner + ", " + "[ruleResult] = "
+						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (FlowNodeImpl.pattern_FlowNode_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = FlowNodeImpl.pattern_FlowNode_29_5_checknacs_blackBBB(tOwner, mOwnerToTOwner,
-						mOwner);
+				Object[] result5_black = FlowNodeImpl.pattern_FlowNode_29_5_checknacs_blackBBB(mOwnerToTOwner, mOwner,
+						tOwner);
 				if (result5_black != null) {
 
-					Object[] result6_black = FlowNodeImpl.pattern_FlowNode_29_6_perform_blackBBBB(tOwner,
-							mOwnerToTOwner, mOwner, ruleResult);
+					Object[] result6_black = FlowNodeImpl.pattern_FlowNode_29_6_perform_blackBBBB(mOwnerToTOwner,
+							mOwner, tOwner, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tOwner] = " + tOwner
-								+ ", " + "[mOwnerToTOwner] = " + mOwnerToTOwner + ", " + "[mOwner] = " + mOwner + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mOwnerToTOwner] = "
+								+ mOwnerToTOwner + ", " + "[mOwner] = " + mOwner + ", " + "[tOwner] = " + tOwner + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					FlowNodeImpl.pattern_FlowNode_29_6_perform_greenFFFFBBB(tOwner, mOwner, ruleResult);
+					FlowNodeImpl.pattern_FlowNode_29_6_perform_greenFFBFBFB(mOwner, tOwner, ruleResult);
 					//nothing MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow = (MAbstractFlowElementToTAbstractFlowElement) result6_green[0];
-					//nothing MFlow mFlow = (MFlow) result6_green[1];
-					//nothing TFlow tFlow = (TFlow) result6_green[2];
-					//nothing MFlowToTFlow mFlowToTFlow = (MFlowToTFlow) result6_green[3];
+					//nothing MFlowToTFlow mFlowToTFlow = (MFlowToTFlow) result6_green[1];
+					//nothing MFlow mFlow = (MFlow) result6_green[3];
+					//nothing TFlow tFlow = (TFlow) result6_green[5];
 
 				} else {
 				}
@@ -1018,9 +1020,9 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractFlowElement tOwner,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
 			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner,
-			ModelgeneratorRuleResult ruleResult) {// Create CSP
+			TAbstractFlowElement tOwner, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1035,9 +1037,9 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tOwner", tOwner);
 		isApplicableMatch.registerObject("mOwnerToTOwner", mOwnerToTOwner);
 		isApplicableMatch.registerObject("mOwner", mOwner);
+		isApplicableMatch.registerObject("tOwner", tOwner);
 		return csp;
 	}
 
@@ -1058,27 +1060,27 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_FWD__MATCH_MFLOW_MABSTRACTFLOWELEMENT:
-			return isAppropriate_FWD((Match) arguments.get(0), (MFlow) arguments.get(1),
-					(MAbstractFlowElement) arguments.get(2));
+		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_FWD__MATCH_MABSTRACTFLOWELEMENT_MFLOW:
+			return isAppropriate_FWD((Match) arguments.get(0), (MAbstractFlowElement) arguments.get(1),
+					(MFlow) arguments.get(2));
 		case RulesPackage.FLOW_NODE___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.FLOW_NODE___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.FLOW_NODE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MFLOW_MABSTRACTFLOWELEMENT:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MFlow) arguments.get(1),
-					(MAbstractFlowElement) arguments.get(2));
+		case RulesPackage.FLOW_NODE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MABSTRACTFLOWELEMENT_MFLOW:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (MAbstractFlowElement) arguments.get(1),
+					(MFlow) arguments.get(2));
 			return null;
-		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MFLOW_MABSTRACTFLOWELEMENT:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MFlow) arguments.get(1),
-					(MAbstractFlowElement) arguments.get(2));
+		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MABSTRACTFLOWELEMENT_MFLOW:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MAbstractFlowElement) arguments.get(1),
+					(MFlow) arguments.get(2));
 		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FLOW_NODE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MFLOW_TABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MFlow) arguments.get(1),
-					(TAbstractFlowElement) arguments.get(2),
-					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(3),
-					(MAbstractFlowElement) arguments.get(4));
+		case RulesPackage.FLOW_NODE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_MFLOW_TABSTRACTFLOWELEMENT:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(1),
+					(MAbstractFlowElement) arguments.get(2), (MFlow) arguments.get(3),
+					(TAbstractFlowElement) arguments.get(4));
 		case RulesPackage.FLOW_NODE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.FLOW_NODE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1088,27 +1090,27 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 			return null;
 		case RulesPackage.FLOW_NODE___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_BWD__MATCH_TFLOW_TABSTRACTFLOWELEMENT:
-			return isAppropriate_BWD((Match) arguments.get(0), (TFlow) arguments.get(1),
-					(TAbstractFlowElement) arguments.get(2));
+		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_BWD__MATCH_TABSTRACTFLOWELEMENT_TFLOW:
+			return isAppropriate_BWD((Match) arguments.get(0), (TAbstractFlowElement) arguments.get(1),
+					(TFlow) arguments.get(2));
 		case RulesPackage.FLOW_NODE___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.FLOW_NODE___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.FLOW_NODE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TFLOW_TABSTRACTFLOWELEMENT:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TFlow) arguments.get(1),
-					(TAbstractFlowElement) arguments.get(2));
+		case RulesPackage.FLOW_NODE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TABSTRACTFLOWELEMENT_TFLOW:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TAbstractFlowElement) arguments.get(1),
+					(TFlow) arguments.get(2));
 			return null;
-		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TFLOW_TABSTRACTFLOWELEMENT:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TFlow) arguments.get(1),
-					(TAbstractFlowElement) arguments.get(2));
+		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TABSTRACTFLOWELEMENT_TFLOW:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TAbstractFlowElement) arguments.get(1),
+					(TFlow) arguments.get(2));
 		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FLOW_NODE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TFLOW_TABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TFlow) arguments.get(1),
-					(TAbstractFlowElement) arguments.get(2),
-					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(3),
-					(MAbstractFlowElement) arguments.get(4));
+		case RulesPackage.FLOW_NODE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_TFLOW:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(1),
+					(MAbstractFlowElement) arguments.get(2), (TAbstractFlowElement) arguments.get(3),
+					(TFlow) arguments.get(4));
 		case RulesPackage.FLOW_NODE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.FLOW_NODE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1118,34 +1120,34 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 			return null;
 		case RulesPackage.FLOW_NODE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_201__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_201((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_215__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_215((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_87__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_87((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_91__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_91((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FLOW_NODE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FLOW_NODE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FLOW_NODE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FLOW_NODE___IS_APPLICABLE_SOLVE_CSP_CC__MFLOW_TFLOW_TABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MFlow) arguments.get(0), (TFlow) arguments.get(1),
-					(TAbstractFlowElement) arguments.get(2), (MAbstractFlowElement) arguments.get(3),
-					(Match) arguments.get(4), (Match) arguments.get(5));
+		case RulesPackage.FLOW_NODE___IS_APPLICABLE_SOLVE_CSP_CC__MABSTRACTFLOWELEMENT_MFLOW_TABSTRACTFLOWELEMENT_TFLOW_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((MAbstractFlowElement) arguments.get(0), (MFlow) arguments.get(1),
+					(TAbstractFlowElement) arguments.get(2), (TFlow) arguments.get(3), (Match) arguments.get(4),
+					(Match) arguments.get(5));
 		case RulesPackage.FLOW_NODE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.FLOW_NODE___CHECK_DEC_FWD__MFLOW_MABSTRACTFLOWELEMENT:
-			return checkDEC_FWD((MFlow) arguments.get(0), (MAbstractFlowElement) arguments.get(1));
-		case RulesPackage.FLOW_NODE___CHECK_DEC_BWD__TFLOW_TABSTRACTFLOWELEMENT:
-			return checkDEC_BWD((TFlow) arguments.get(0), (TAbstractFlowElement) arguments.get(1));
+		case RulesPackage.FLOW_NODE___CHECK_DEC_FWD__MABSTRACTFLOWELEMENT_MFLOW:
+			return checkDEC_FWD((MAbstractFlowElement) arguments.get(0), (MFlow) arguments.get(1));
+		case RulesPackage.FLOW_NODE___CHECK_DEC_BWD__TABSTRACTFLOWELEMENT_TFLOW:
+			return checkDEC_BWD((TAbstractFlowElement) arguments.get(0), (TFlow) arguments.get(1));
 		case RulesPackage.FLOW_NODE___GENERATE_MODEL__RULEENTRYCONTAINER_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0),
 					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(1));
-		case RulesPackage.FLOW_NODE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_MODELGENERATORRULERESULT:
+		case RulesPackage.FLOW_NODE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTFLOWELEMENTTOTABSTRACTFLOWELEMENT_MABSTRACTFLOWELEMENT_TABSTRACTFLOWELEMENT_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TAbstractFlowElement) arguments.get(1),
-					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(2),
-					(MAbstractFlowElement) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+					(MAbstractFlowElementToTAbstractFlowElement) arguments.get(1),
+					(MAbstractFlowElement) arguments.get(2), (TAbstractFlowElement) arguments.get(3),
+					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.FLOW_NODE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1153,19 +1155,19 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_0_1_initialbindings_blackBBBB(FlowNode _this, Match match,
-			MFlow mFlow, MAbstractFlowElement mOwner) {
+			MAbstractFlowElement mOwner, MFlow mFlow) {
 		if (!mFlow.equals(mOwner)) {
-			return new Object[] { _this, match, mFlow, mOwner };
+			return new Object[] { _this, match, mOwner, mFlow };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_0_2_SolveCSP_bindingFBBBB(FlowNode _this, Match match, MFlow mFlow,
-			MAbstractFlowElement mOwner) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mFlow, mOwner);
+	public static final Object[] pattern_FlowNode_0_2_SolveCSP_bindingFBBBB(FlowNode _this, Match match,
+			MAbstractFlowElement mOwner, MFlow mFlow) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mOwner, mFlow);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mFlow, mOwner };
+			return new Object[] { csp, _this, match, mOwner, mFlow };
 		}
 		return null;
 	}
@@ -1175,16 +1177,16 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_0_2_SolveCSP_bindingAndBlackFBBBB(FlowNode _this, Match match,
-			MFlow mFlow, MAbstractFlowElement mOwner) {
+			MAbstractFlowElement mOwner, MFlow mFlow) {
 		Object[] result_pattern_FlowNode_0_2_SolveCSP_binding = pattern_FlowNode_0_2_SolveCSP_bindingFBBBB(_this, match,
-				mFlow, mOwner);
+				mOwner, mFlow);
 		if (result_pattern_FlowNode_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FlowNode_0_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_FlowNode_0_2_SolveCSP_black = pattern_FlowNode_0_2_SolveCSP_blackB(csp);
 			if (result_pattern_FlowNode_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mFlow, mOwner };
+				return new Object[] { csp, _this, match, mOwner, mFlow };
 			}
 		}
 		return null;
@@ -1196,16 +1198,16 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return _result;
 	}
 
-	public static final Object[] pattern_FlowNode_0_4_collectelementstobetranslated_blackBBB(Match match, MFlow mFlow,
-			MAbstractFlowElement mOwner) {
+	public static final Object[] pattern_FlowNode_0_4_collectelementstobetranslated_blackBBB(Match match,
+			MAbstractFlowElement mOwner, MFlow mFlow) {
 		if (!mFlow.equals(mOwner)) {
-			return new Object[] { match, mFlow, mOwner };
+			return new Object[] { match, mOwner, mFlow };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_0_4_collectelementstobetranslated_greenBBBFF(Match match, MFlow mFlow,
-			MAbstractFlowElement mOwner) {
+	public static final Object[] pattern_FlowNode_0_4_collectelementstobetranslated_greenBBBFF(Match match,
+			MAbstractFlowElement mOwner, MFlow mFlow) {
 		EMoflonEdge mOwner__mFlow____ownedFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlow__mOwner____flowOwner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mFlow);
@@ -1219,13 +1221,13 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		match.getToBeTranslatedEdges().add(mFlow__mOwner____flowOwner);
 		mOwner__mFlow____ownedFlows.setName(mOwner__mFlow____ownedFlows_name_prime);
 		mFlow__mOwner____flowOwner.setName(mFlow__mOwner____flowOwner_name_prime);
-		return new Object[] { match, mFlow, mOwner, mOwner__mFlow____ownedFlows, mFlow__mOwner____flowOwner };
+		return new Object[] { match, mOwner, mFlow, mOwner__mFlow____ownedFlows, mFlow__mOwner____flowOwner };
 	}
 
-	public static final Object[] pattern_FlowNode_0_5_collectcontextelements_blackBBB(Match match, MFlow mFlow,
-			MAbstractFlowElement mOwner) {
+	public static final Object[] pattern_FlowNode_0_5_collectcontextelements_blackBBB(Match match,
+			MAbstractFlowElement mOwner, MFlow mFlow) {
 		if (!mFlow.equals(mOwner)) {
-			return new Object[] { match, mFlow, mOwner };
+			return new Object[] { match, mOwner, mFlow };
 		}
 		return null;
 	}
@@ -1237,8 +1239,8 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final void pattern_FlowNode_0_6_registerobjectstomatch_expressionBBBB(FlowNode _this, Match match,
-			MFlow mFlow, MAbstractFlowElement mOwner) {
-		_this.registerObjectsToMatch_FWD(match, mFlow, mOwner);
+			MAbstractFlowElement mOwner, MFlow mFlow) {
+		_this.registerObjectsToMatch_FWD(match, mOwner, mFlow);
 
 	}
 
@@ -1254,23 +1256,23 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 
 	public static final Object[] pattern_FlowNode_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mFlow");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tOwner");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mOwnerToTOwner");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mOwner");
-		EObject tmpMFlow = _localVariable_0;
-		EObject tmpTOwner = _localVariable_1;
-		EObject tmpMOwnerToTOwner = _localVariable_2;
-		EObject tmpMOwner = _localVariable_3;
-		if (tmpMFlow instanceof MFlow) {
-			MFlow mFlow = (MFlow) tmpMFlow;
-			if (tmpTOwner instanceof TAbstractFlowElement) {
-				TAbstractFlowElement tOwner = (TAbstractFlowElement) tmpTOwner;
-				if (tmpMOwnerToTOwner instanceof MAbstractFlowElementToTAbstractFlowElement) {
-					MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) tmpMOwnerToTOwner;
-					if (tmpMOwner instanceof MAbstractFlowElement) {
-						MAbstractFlowElement mOwner = (MAbstractFlowElement) tmpMOwner;
-						return new Object[] { mFlow, tOwner, mOwnerToTOwner, mOwner, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("mOwnerToTOwner");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mOwner");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mFlow");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tOwner");
+		EObject tmpMOwnerToTOwner = _localVariable_0;
+		EObject tmpMOwner = _localVariable_1;
+		EObject tmpMFlow = _localVariable_2;
+		EObject tmpTOwner = _localVariable_3;
+		if (tmpMOwnerToTOwner instanceof MAbstractFlowElementToTAbstractFlowElement) {
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) tmpMOwnerToTOwner;
+			if (tmpMOwner instanceof MAbstractFlowElement) {
+				MAbstractFlowElement mOwner = (MAbstractFlowElement) tmpMOwner;
+				if (tmpMFlow instanceof MFlow) {
+					MFlow mFlow = (MFlow) tmpMFlow;
+					if (tmpTOwner instanceof TAbstractFlowElement) {
+						TAbstractFlowElement tOwner = (TAbstractFlowElement) tmpTOwner;
+						return new Object[] { mOwnerToTOwner, mOwner, mFlow, tOwner, isApplicableMatch };
 					}
 				}
 			}
@@ -1278,14 +1280,14 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_1_1_performtransformation_blackBBBBFBB(MFlow mFlow,
-			TAbstractFlowElement tOwner, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
-			MAbstractFlowElement mOwner, FlowNode _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_FlowNode_1_1_performtransformation_blackBBBBFBB(
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner, MFlow mFlow,
+			TAbstractFlowElement tOwner, FlowNode _this, IsApplicableMatch isApplicableMatch) {
 		if (!mFlow.equals(mOwner)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { mFlow, tOwner, mOwnerToTOwner, mOwner, csp, _this, isApplicableMatch };
+					return new Object[] { mOwnerToTOwner, mOwner, mFlow, tOwner, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1297,86 +1299,84 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		Object[] result_pattern_FlowNode_1_1_performtransformation_binding = pattern_FlowNode_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_FlowNode_1_1_performtransformation_binding != null) {
-			MFlow mFlow = (MFlow) result_pattern_FlowNode_1_1_performtransformation_binding[0];
-			TAbstractFlowElement tOwner = (TAbstractFlowElement) result_pattern_FlowNode_1_1_performtransformation_binding[1];
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result_pattern_FlowNode_1_1_performtransformation_binding[2];
-			MAbstractFlowElement mOwner = (MAbstractFlowElement) result_pattern_FlowNode_1_1_performtransformation_binding[3];
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result_pattern_FlowNode_1_1_performtransformation_binding[0];
+			MAbstractFlowElement mOwner = (MAbstractFlowElement) result_pattern_FlowNode_1_1_performtransformation_binding[1];
+			MFlow mFlow = (MFlow) result_pattern_FlowNode_1_1_performtransformation_binding[2];
+			TAbstractFlowElement tOwner = (TAbstractFlowElement) result_pattern_FlowNode_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_FlowNode_1_1_performtransformation_black = pattern_FlowNode_1_1_performtransformation_blackBBBBFBB(
-					mFlow, tOwner, mOwnerToTOwner, mOwner, _this, isApplicableMatch);
+					mOwnerToTOwner, mOwner, mFlow, tOwner, _this, isApplicableMatch);
 			if (result_pattern_FlowNode_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FlowNode_1_1_performtransformation_black[4];
 
-				return new Object[] { mFlow, tOwner, mOwnerToTOwner, mOwner, csp, _this, isApplicableMatch };
+				return new Object[] { mOwnerToTOwner, mOwner, mFlow, tOwner, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_1_1_performtransformation_greenFBFFB(MFlow mFlow,
+	public static final Object[] pattern_FlowNode_1_1_performtransformation_greenFFBBF(MFlow mFlow,
 			TAbstractFlowElement tOwner) {
 		MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
-		TFlow tFlow = BasicFactory.eINSTANCE.createTFlow();
 		MFlowToTFlow mFlowToTFlow = PmFactory.eINSTANCE.createMFlowToTFlow();
+		TFlow tFlow = BasicFactory.eINSTANCE.createTFlow();
 		mAbstFlowToTAbstFlow.setSource(mFlow);
+		mFlowToTFlow.setSource(mFlow);
 		mAbstFlowToTAbstFlow.setTarget(tFlow);
 		tOwner.getOwnedFlows().add(tFlow);
 		mFlowToTFlow.setTarget(tFlow);
-		mFlowToTFlow.setSource(mFlow);
-		return new Object[] { mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow, tOwner };
+		return new Object[] { mAbstFlowToTAbstFlow, mFlowToTFlow, mFlow, tOwner, tFlow };
 	}
 
 	public static final Object[] pattern_FlowNode_1_2_collecttranslatedelements_blackBBBB(
-			MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow, MFlow mFlow, TFlow tFlow,
-			MFlowToTFlow mFlowToTFlow) {
-		return new Object[] { mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow };
+			MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow, MFlowToTFlow mFlowToTFlow, MFlow mFlow,
+			TFlow tFlow) {
+		return new Object[] { mAbstFlowToTAbstFlow, mFlowToTFlow, mFlow, tFlow };
 	}
 
 	public static final Object[] pattern_FlowNode_1_2_collecttranslatedelements_greenFBBBB(
-			MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow, MFlow mFlow, TFlow tFlow,
-			MFlowToTFlow mFlowToTFlow) {
+			MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow, MFlowToTFlow mFlowToTFlow, MFlow mFlow,
+			TFlow tFlow) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(mAbstFlowToTAbstFlow);
+		ruleresult.getCreatedLinkElements().add(mFlowToTFlow);
 		ruleresult.getTranslatedElements().add(mFlow);
 		ruleresult.getCreatedElements().add(tFlow);
-		ruleresult.getCreatedLinkElements().add(mFlowToTFlow);
-		return new Object[] { ruleresult, mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow };
+		return new Object[] { ruleresult, mAbstFlowToTAbstFlow, mFlowToTFlow, mFlow, tFlow };
 	}
 
 	public static final Object[] pattern_FlowNode_1_3_bookkeepingforedges_blackBBBBBBBB(PerformRuleResult ruleresult,
-			EObject mAbstFlowToTAbstFlow, EObject mFlow, EObject tFlow, EObject mFlowToTFlow, EObject tOwner,
-			EObject mOwnerToTOwner, EObject mOwner) {
-		if (!mAbstFlowToTAbstFlow.equals(mFlow)) {
-			if (!mAbstFlowToTAbstFlow.equals(tFlow)) {
-				if (!mAbstFlowToTAbstFlow.equals(mFlowToTFlow)) {
-					if (!mAbstFlowToTAbstFlow.equals(tOwner)) {
-						if (!mAbstFlowToTAbstFlow.equals(mOwnerToTOwner)) {
-							if (!mAbstFlowToTAbstFlow.equals(mOwner)) {
-								if (!mFlow.equals(tFlow)) {
-									if (!mFlow.equals(mFlowToTFlow)) {
-										if (!mFlow.equals(tOwner)) {
-											if (!mFlow.equals(mOwnerToTOwner)) {
-												if (!mFlow.equals(mOwner)) {
-													if (!tFlow.equals(tOwner)) {
-														if (!mFlowToTFlow.equals(tFlow)) {
-															if (!mFlowToTFlow.equals(tOwner)) {
-																if (!mFlowToTFlow.equals(mOwnerToTOwner)) {
-																	if (!mFlowToTFlow.equals(mOwner)) {
-																		if (!mOwnerToTOwner.equals(tFlow)) {
-																			if (!mOwnerToTOwner.equals(tOwner)) {
-																				if (!mOwner.equals(tFlow)) {
-																					if (!mOwner.equals(tOwner)) {
-																						if (!mOwner.equals(
-																								mOwnerToTOwner)) {
+			EObject mOwnerToTOwner, EObject mAbstFlowToTAbstFlow, EObject mFlowToTFlow, EObject mOwner, EObject mFlow,
+			EObject tOwner, EObject tFlow) {
+		if (!mOwnerToTOwner.equals(tOwner)) {
+			if (!mOwnerToTOwner.equals(tFlow)) {
+				if (!mAbstFlowToTAbstFlow.equals(mOwnerToTOwner)) {
+					if (!mAbstFlowToTAbstFlow.equals(mFlowToTFlow)) {
+						if (!mAbstFlowToTAbstFlow.equals(mOwner)) {
+							if (!mAbstFlowToTAbstFlow.equals(mFlow)) {
+								if (!mAbstFlowToTAbstFlow.equals(tOwner)) {
+									if (!mAbstFlowToTAbstFlow.equals(tFlow)) {
+										if (!mFlowToTFlow.equals(mOwnerToTOwner)) {
+											if (!mFlowToTFlow.equals(mOwner)) {
+												if (!mFlowToTFlow.equals(tOwner)) {
+													if (!mFlowToTFlow.equals(tFlow)) {
+														if (!mOwner.equals(mOwnerToTOwner)) {
+															if (!mOwner.equals(tOwner)) {
+																if (!mOwner.equals(tFlow)) {
+																	if (!mFlow.equals(mOwnerToTOwner)) {
+																		if (!mFlow.equals(mFlowToTFlow)) {
+																			if (!mFlow.equals(mOwner)) {
+																				if (!mFlow.equals(tOwner)) {
+																					if (!mFlow.equals(tFlow)) {
+																						if (!tFlow.equals(tOwner)) {
 																							return new Object[] {
 																									ruleresult,
-																									mAbstFlowToTAbstFlow,
-																									mFlow, tFlow,
-																									mFlowToTFlow,
-																									tOwner,
 																									mOwnerToTOwner,
-																									mOwner };
+																									mAbstFlowToTAbstFlow,
+																									mFlowToTFlow,
+																									mOwner, mFlow,
+																									tOwner, tFlow };
 																						}
 																					}
 																				}
@@ -1402,34 +1402,28 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(
-			PerformRuleResult ruleresult, EObject mAbstFlowToTAbstFlow, EObject mFlow, EObject tFlow,
-			EObject mFlowToTFlow, EObject tOwner, EObject mOwner) {
+			PerformRuleResult ruleresult, EObject mAbstFlowToTAbstFlow, EObject mFlowToTFlow, EObject mOwner,
+			EObject mFlow, EObject tOwner, EObject tFlow) {
 		EMoflonEdge mAbstFlowToTAbstFlow__mFlow____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAbstFlowToTAbstFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowToTFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowToTFlow__mFlow____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mOwner__mFlow____ownedFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlow__mOwner____flowOwner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAbstFlowToTAbstFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOwner__tFlow____ownedFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tFlow__tOwner____flowOwner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mFlowToTFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "FlowNode";
 		String mAbstFlowToTAbstFlow__mFlow____source_name_prime = "source";
-		String mAbstFlowToTAbstFlow__tFlow____target_name_prime = "target";
-		String mFlowToTFlow__tFlow____target_name_prime = "target";
 		String mFlowToTFlow__mFlow____source_name_prime = "source";
 		String mOwner__mFlow____ownedFlows_name_prime = "ownedFlows";
 		String mFlow__mOwner____flowOwner_name_prime = "flowOwner";
+		String mAbstFlowToTAbstFlow__tFlow____target_name_prime = "target";
 		String tOwner__tFlow____ownedFlows_name_prime = "ownedFlows";
 		String tFlow__tOwner____flowOwner_name_prime = "flowOwner";
+		String mFlowToTFlow__tFlow____target_name_prime = "target";
 		mAbstFlowToTAbstFlow__mFlow____source.setSrc(mAbstFlowToTAbstFlow);
 		mAbstFlowToTAbstFlow__mFlow____source.setTrg(mFlow);
 		ruleresult.getCreatedEdges().add(mAbstFlowToTAbstFlow__mFlow____source);
-		mAbstFlowToTAbstFlow__tFlow____target.setSrc(mAbstFlowToTAbstFlow);
-		mAbstFlowToTAbstFlow__tFlow____target.setTrg(tFlow);
-		ruleresult.getCreatedEdges().add(mAbstFlowToTAbstFlow__tFlow____target);
-		mFlowToTFlow__tFlow____target.setSrc(mFlowToTFlow);
-		mFlowToTFlow__tFlow____target.setTrg(tFlow);
-		ruleresult.getCreatedEdges().add(mFlowToTFlow__tFlow____target);
 		mFlowToTFlow__mFlow____source.setSrc(mFlowToTFlow);
 		mFlowToTFlow__mFlow____source.setTrg(mFlow);
 		ruleresult.getCreatedEdges().add(mFlowToTFlow__mFlow____source);
@@ -1439,32 +1433,38 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		mFlow__mOwner____flowOwner.setSrc(mFlow);
 		mFlow__mOwner____flowOwner.setTrg(mOwner);
 		ruleresult.getTranslatedEdges().add(mFlow__mOwner____flowOwner);
+		mAbstFlowToTAbstFlow__tFlow____target.setSrc(mAbstFlowToTAbstFlow);
+		mAbstFlowToTAbstFlow__tFlow____target.setTrg(tFlow);
+		ruleresult.getCreatedEdges().add(mAbstFlowToTAbstFlow__tFlow____target);
 		tOwner__tFlow____ownedFlows.setSrc(tOwner);
 		tOwner__tFlow____ownedFlows.setTrg(tFlow);
 		ruleresult.getCreatedEdges().add(tOwner__tFlow____ownedFlows);
 		tFlow__tOwner____flowOwner.setSrc(tFlow);
 		tFlow__tOwner____flowOwner.setTrg(tOwner);
 		ruleresult.getCreatedEdges().add(tFlow__tOwner____flowOwner);
+		mFlowToTFlow__tFlow____target.setSrc(mFlowToTFlow);
+		mFlowToTFlow__tFlow____target.setTrg(tFlow);
+		ruleresult.getCreatedEdges().add(mFlowToTFlow__tFlow____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mAbstFlowToTAbstFlow__mFlow____source.setName(mAbstFlowToTAbstFlow__mFlow____source_name_prime);
-		mAbstFlowToTAbstFlow__tFlow____target.setName(mAbstFlowToTAbstFlow__tFlow____target_name_prime);
-		mFlowToTFlow__tFlow____target.setName(mFlowToTFlow__tFlow____target_name_prime);
 		mFlowToTFlow__mFlow____source.setName(mFlowToTFlow__mFlow____source_name_prime);
 		mOwner__mFlow____ownedFlows.setName(mOwner__mFlow____ownedFlows_name_prime);
 		mFlow__mOwner____flowOwner.setName(mFlow__mOwner____flowOwner_name_prime);
+		mAbstFlowToTAbstFlow__tFlow____target.setName(mAbstFlowToTAbstFlow__tFlow____target_name_prime);
 		tOwner__tFlow____ownedFlows.setName(tOwner__tFlow____ownedFlows_name_prime);
 		tFlow__tOwner____flowOwner.setName(tFlow__tOwner____flowOwner_name_prime);
-		return new Object[] { ruleresult, mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow, tOwner, mOwner,
-				mAbstFlowToTAbstFlow__mFlow____source, mAbstFlowToTAbstFlow__tFlow____target,
-				mFlowToTFlow__tFlow____target, mFlowToTFlow__mFlow____source, mOwner__mFlow____ownedFlows,
-				mFlow__mOwner____flowOwner, tOwner__tFlow____ownedFlows, tFlow__tOwner____flowOwner };
+		mFlowToTFlow__tFlow____target.setName(mFlowToTFlow__tFlow____target_name_prime);
+		return new Object[] { ruleresult, mAbstFlowToTAbstFlow, mFlowToTFlow, mOwner, mFlow, tOwner, tFlow,
+				mAbstFlowToTAbstFlow__mFlow____source, mFlowToTFlow__mFlow____source, mOwner__mFlow____ownedFlows,
+				mFlow__mOwner____flowOwner, mAbstFlowToTAbstFlow__tFlow____target, tOwner__tFlow____ownedFlows,
+				tFlow__tOwner____flowOwner, mFlowToTFlow__tFlow____target };
 	}
 
 	public static final void pattern_FlowNode_1_5_registerobjects_expressionBBBBBBBBB(FlowNode _this,
-			PerformRuleResult ruleresult, EObject mAbstFlowToTAbstFlow, EObject mFlow, EObject tFlow,
-			EObject mFlowToTFlow, EObject tOwner, EObject mOwnerToTOwner, EObject mOwner) {
-		_this.registerObjects_FWD(ruleresult, mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow, tOwner, mOwnerToTOwner,
-				mOwner);
+			PerformRuleResult ruleresult, EObject mOwnerToTOwner, EObject mAbstFlowToTAbstFlow, EObject mFlowToTFlow,
+			EObject mOwner, EObject mFlow, EObject tOwner, EObject tFlow) {
+		_this.registerObjects_FWD(ruleresult, mOwnerToTOwner, mAbstFlowToTAbstFlow, mFlowToTFlow, mOwner, mFlow, tOwner,
+				tFlow);
 
 	}
 
@@ -1521,29 +1521,29 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mFlow");
-		EObject _localVariable_1 = match.getObject("mOwner");
-		EObject tmpMFlow = _localVariable_0;
-		EObject tmpMOwner = _localVariable_1;
-		if (tmpMFlow instanceof MFlow) {
-			MFlow mFlow = (MFlow) tmpMFlow;
-			if (tmpMOwner instanceof MAbstractFlowElement) {
-				MAbstractFlowElement mOwner = (MAbstractFlowElement) tmpMOwner;
-				return new Object[] { mFlow, mOwner, match };
+		EObject _localVariable_0 = match.getObject("mOwner");
+		EObject _localVariable_1 = match.getObject("mFlow");
+		EObject tmpMOwner = _localVariable_0;
+		EObject tmpMFlow = _localVariable_1;
+		if (tmpMOwner instanceof MAbstractFlowElement) {
+			MAbstractFlowElement mOwner = (MAbstractFlowElement) tmpMOwner;
+			if (tmpMFlow instanceof MFlow) {
+				MFlow mFlow = (MFlow) tmpMFlow;
+				return new Object[] { mOwner, mFlow, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FlowNode_2_2_corematch_blackBFFBB(MFlow mFlow,
-			MAbstractFlowElement mOwner, Match match) {
+	public static final Iterable<Object[]> pattern_FlowNode_2_2_corematch_blackFBBFB(MAbstractFlowElement mOwner,
+			MFlow mFlow, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mFlow.equals(mOwner)) {
 			for (MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mOwner, MAbstractFlowElementToTAbstractFlowElement.class, "source")) {
 				TAbstractFlowElement tOwner = mOwnerToTOwner.getTarget();
 				if (tOwner != null) {
-					_result.add(new Object[] { mFlow, tOwner, mOwnerToTOwner, mOwner, match });
+					_result.add(new Object[] { mOwnerToTOwner, mOwner, mFlow, tOwner, match });
 				}
 
 			}
@@ -1551,15 +1551,15 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FlowNode_2_3_findcontext_blackBBBB(MFlow mFlow,
-			TAbstractFlowElement tOwner, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
-			MAbstractFlowElement mOwner) {
+	public static final Iterable<Object[]> pattern_FlowNode_2_3_findcontext_blackBBBB(
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner, MFlow mFlow,
+			TAbstractFlowElement tOwner) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mFlow.equals(mOwner)) {
-			if (tOwner.equals(mOwnerToTOwner.getTarget())) {
-				if (mOwner.equals(mOwnerToTOwner.getSource())) {
-					if (mOwner.getOwnedFlows().contains(mFlow)) {
-						_result.add(new Object[] { mFlow, tOwner, mOwnerToTOwner, mOwner });
+			if (mOwner.equals(mOwnerToTOwner.getSource())) {
+				if (mOwner.getOwnedFlows().contains(mFlow)) {
+					if (tOwner.equals(mOwnerToTOwner.getTarget())) {
+						_result.add(new Object[] { mOwnerToTOwner, mOwner, mFlow, tOwner });
 					}
 				}
 			}
@@ -1567,25 +1567,22 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return _result;
 	}
 
-	public static final Object[] pattern_FlowNode_2_3_findcontext_greenBBBBFFFFF(MFlow mFlow,
-			TAbstractFlowElement tOwner, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
-			MAbstractFlowElement mOwner) {
+	public static final Object[] pattern_FlowNode_2_3_findcontext_greenBBBBFFFFF(
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner, MFlow mFlow,
+			TAbstractFlowElement tOwner) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mOwnerToTOwner__tOwner____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mOwnerToTOwner__mOwner____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mOwner__mFlow____ownedFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlow__mOwner____flowOwner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mOwnerToTOwner__tOwner____target_name_prime = "target";
+		EMoflonEdge mOwnerToTOwner__tOwner____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mOwnerToTOwner__mOwner____source_name_prime = "source";
 		String mOwner__mFlow____ownedFlows_name_prime = "ownedFlows";
 		String mFlow__mOwner____flowOwner_name_prime = "flowOwner";
-		isApplicableMatch.getAllContextElements().add(mFlow);
-		isApplicableMatch.getAllContextElements().add(tOwner);
+		String mOwnerToTOwner__tOwner____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(mOwnerToTOwner);
 		isApplicableMatch.getAllContextElements().add(mOwner);
-		mOwnerToTOwner__tOwner____target.setSrc(mOwnerToTOwner);
-		mOwnerToTOwner__tOwner____target.setTrg(tOwner);
-		isApplicableMatch.getAllContextElements().add(mOwnerToTOwner__tOwner____target);
+		isApplicableMatch.getAllContextElements().add(mFlow);
+		isApplicableMatch.getAllContextElements().add(tOwner);
 		mOwnerToTOwner__mOwner____source.setSrc(mOwnerToTOwner);
 		mOwnerToTOwner__mOwner____source.setTrg(mOwner);
 		isApplicableMatch.getAllContextElements().add(mOwnerToTOwner__mOwner____source);
@@ -1595,23 +1592,26 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		mFlow__mOwner____flowOwner.setSrc(mFlow);
 		mFlow__mOwner____flowOwner.setTrg(mOwner);
 		isApplicableMatch.getAllContextElements().add(mFlow__mOwner____flowOwner);
-		mOwnerToTOwner__tOwner____target.setName(mOwnerToTOwner__tOwner____target_name_prime);
+		mOwnerToTOwner__tOwner____target.setSrc(mOwnerToTOwner);
+		mOwnerToTOwner__tOwner____target.setTrg(tOwner);
+		isApplicableMatch.getAllContextElements().add(mOwnerToTOwner__tOwner____target);
 		mOwnerToTOwner__mOwner____source.setName(mOwnerToTOwner__mOwner____source_name_prime);
 		mOwner__mFlow____ownedFlows.setName(mOwner__mFlow____ownedFlows_name_prime);
 		mFlow__mOwner____flowOwner.setName(mFlow__mOwner____flowOwner_name_prime);
-		return new Object[] { mFlow, tOwner, mOwnerToTOwner, mOwner, isApplicableMatch,
-				mOwnerToTOwner__tOwner____target, mOwnerToTOwner__mOwner____source, mOwner__mFlow____ownedFlows,
-				mFlow__mOwner____flowOwner };
+		mOwnerToTOwner__tOwner____target.setName(mOwnerToTOwner__tOwner____target_name_prime);
+		return new Object[] { mOwnerToTOwner, mOwner, mFlow, tOwner, isApplicableMatch,
+				mOwnerToTOwner__mOwner____source, mOwner__mFlow____ownedFlows, mFlow__mOwner____flowOwner,
+				mOwnerToTOwner__tOwner____target };
 	}
 
 	public static final Object[] pattern_FlowNode_2_4_solveCSP_bindingFBBBBBB(FlowNode _this,
-			IsApplicableMatch isApplicableMatch, MFlow mFlow, TAbstractFlowElement tOwner,
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mFlow, tOwner, mOwnerToTOwner,
-				mOwner);
+			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
+			MAbstractFlowElement mOwner, MFlow mFlow, TAbstractFlowElement tOwner) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mOwnerToTOwner, mOwner, mFlow,
+				tOwner);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mFlow, tOwner, mOwnerToTOwner, mOwner };
+			return new Object[] { csp, _this, isApplicableMatch, mOwnerToTOwner, mOwner, mFlow, tOwner };
 		}
 		return null;
 	}
@@ -1621,17 +1621,17 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_2_4_solveCSP_bindingAndBlackFBBBBBB(FlowNode _this,
-			IsApplicableMatch isApplicableMatch, MFlow mFlow, TAbstractFlowElement tOwner,
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner) {
+			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
+			MAbstractFlowElement mOwner, MFlow mFlow, TAbstractFlowElement tOwner) {
 		Object[] result_pattern_FlowNode_2_4_solveCSP_binding = pattern_FlowNode_2_4_solveCSP_bindingFBBBBBB(_this,
-				isApplicableMatch, mFlow, tOwner, mOwnerToTOwner, mOwner);
+				isApplicableMatch, mOwnerToTOwner, mOwner, mFlow, tOwner);
 		if (result_pattern_FlowNode_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FlowNode_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_FlowNode_2_4_solveCSP_black = pattern_FlowNode_2_4_solveCSP_blackB(csp);
 			if (result_pattern_FlowNode_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mFlow, tOwner, mOwnerToTOwner, mOwner };
+				return new Object[] { csp, _this, isApplicableMatch, mOwnerToTOwner, mOwner, mFlow, tOwner };
 			}
 		}
 		return null;
@@ -1664,19 +1664,19 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_10_1_initialbindings_blackBBBB(FlowNode _this, Match match,
-			TFlow tFlow, TAbstractFlowElement tOwner) {
+			TAbstractFlowElement tOwner, TFlow tFlow) {
 		if (!tFlow.equals(tOwner)) {
-			return new Object[] { _this, match, tFlow, tOwner };
+			return new Object[] { _this, match, tOwner, tFlow };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_10_2_SolveCSP_bindingFBBBB(FlowNode _this, Match match, TFlow tFlow,
-			TAbstractFlowElement tOwner) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tFlow, tOwner);
+	public static final Object[] pattern_FlowNode_10_2_SolveCSP_bindingFBBBB(FlowNode _this, Match match,
+			TAbstractFlowElement tOwner, TFlow tFlow) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tOwner, tFlow);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tFlow, tOwner };
+			return new Object[] { csp, _this, match, tOwner, tFlow };
 		}
 		return null;
 	}
@@ -1686,16 +1686,16 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_10_2_SolveCSP_bindingAndBlackFBBBB(FlowNode _this, Match match,
-			TFlow tFlow, TAbstractFlowElement tOwner) {
+			TAbstractFlowElement tOwner, TFlow tFlow) {
 		Object[] result_pattern_FlowNode_10_2_SolveCSP_binding = pattern_FlowNode_10_2_SolveCSP_bindingFBBBB(_this,
-				match, tFlow, tOwner);
+				match, tOwner, tFlow);
 		if (result_pattern_FlowNode_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FlowNode_10_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_FlowNode_10_2_SolveCSP_black = pattern_FlowNode_10_2_SolveCSP_blackB(csp);
 			if (result_pattern_FlowNode_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tFlow, tOwner };
+				return new Object[] { csp, _this, match, tOwner, tFlow };
 			}
 		}
 		return null;
@@ -1707,16 +1707,16 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return _result;
 	}
 
-	public static final Object[] pattern_FlowNode_10_4_collectelementstobetranslated_blackBBB(Match match, TFlow tFlow,
-			TAbstractFlowElement tOwner) {
+	public static final Object[] pattern_FlowNode_10_4_collectelementstobetranslated_blackBBB(Match match,
+			TAbstractFlowElement tOwner, TFlow tFlow) {
 		if (!tFlow.equals(tOwner)) {
-			return new Object[] { match, tFlow, tOwner };
+			return new Object[] { match, tOwner, tFlow };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_FlowNode_10_4_collectelementstobetranslated_greenBBBFF(Match match,
-			TFlow tFlow, TAbstractFlowElement tOwner) {
+			TAbstractFlowElement tOwner, TFlow tFlow) {
 		EMoflonEdge tOwner__tFlow____ownedFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tFlow__tOwner____flowOwner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tFlow);
@@ -1730,13 +1730,13 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		match.getToBeTranslatedEdges().add(tFlow__tOwner____flowOwner);
 		tOwner__tFlow____ownedFlows.setName(tOwner__tFlow____ownedFlows_name_prime);
 		tFlow__tOwner____flowOwner.setName(tFlow__tOwner____flowOwner_name_prime);
-		return new Object[] { match, tFlow, tOwner, tOwner__tFlow____ownedFlows, tFlow__tOwner____flowOwner };
+		return new Object[] { match, tOwner, tFlow, tOwner__tFlow____ownedFlows, tFlow__tOwner____flowOwner };
 	}
 
-	public static final Object[] pattern_FlowNode_10_5_collectcontextelements_blackBBB(Match match, TFlow tFlow,
-			TAbstractFlowElement tOwner) {
+	public static final Object[] pattern_FlowNode_10_5_collectcontextelements_blackBBB(Match match,
+			TAbstractFlowElement tOwner, TFlow tFlow) {
 		if (!tFlow.equals(tOwner)) {
-			return new Object[] { match, tFlow, tOwner };
+			return new Object[] { match, tOwner, tFlow };
 		}
 		return null;
 	}
@@ -1748,8 +1748,8 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final void pattern_FlowNode_10_6_registerobjectstomatch_expressionBBBB(FlowNode _this, Match match,
-			TFlow tFlow, TAbstractFlowElement tOwner) {
-		_this.registerObjectsToMatch_BWD(match, tFlow, tOwner);
+			TAbstractFlowElement tOwner, TFlow tFlow) {
+		_this.registerObjectsToMatch_BWD(match, tOwner, tFlow);
 
 	}
 
@@ -1765,23 +1765,23 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 
 	public static final Object[] pattern_FlowNode_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tFlow");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tOwner");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mOwnerToTOwner");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mOwner");
-		EObject tmpTFlow = _localVariable_0;
-		EObject tmpTOwner = _localVariable_1;
-		EObject tmpMOwnerToTOwner = _localVariable_2;
-		EObject tmpMOwner = _localVariable_3;
-		if (tmpTFlow instanceof TFlow) {
-			TFlow tFlow = (TFlow) tmpTFlow;
-			if (tmpTOwner instanceof TAbstractFlowElement) {
-				TAbstractFlowElement tOwner = (TAbstractFlowElement) tmpTOwner;
-				if (tmpMOwnerToTOwner instanceof MAbstractFlowElementToTAbstractFlowElement) {
-					MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) tmpMOwnerToTOwner;
-					if (tmpMOwner instanceof MAbstractFlowElement) {
-						MAbstractFlowElement mOwner = (MAbstractFlowElement) tmpMOwner;
-						return new Object[] { tFlow, tOwner, mOwnerToTOwner, mOwner, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("mOwnerToTOwner");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mOwner");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tOwner");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tFlow");
+		EObject tmpMOwnerToTOwner = _localVariable_0;
+		EObject tmpMOwner = _localVariable_1;
+		EObject tmpTOwner = _localVariable_2;
+		EObject tmpTFlow = _localVariable_3;
+		if (tmpMOwnerToTOwner instanceof MAbstractFlowElementToTAbstractFlowElement) {
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) tmpMOwnerToTOwner;
+			if (tmpMOwner instanceof MAbstractFlowElement) {
+				MAbstractFlowElement mOwner = (MAbstractFlowElement) tmpMOwner;
+				if (tmpTOwner instanceof TAbstractFlowElement) {
+					TAbstractFlowElement tOwner = (TAbstractFlowElement) tmpTOwner;
+					if (tmpTFlow instanceof TFlow) {
+						TFlow tFlow = (TFlow) tmpTFlow;
+						return new Object[] { mOwnerToTOwner, mOwner, tOwner, tFlow, isApplicableMatch };
 					}
 				}
 			}
@@ -1789,14 +1789,14 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_11_1_performtransformation_blackBBBBFBB(TFlow tFlow,
-			TAbstractFlowElement tOwner, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
-			MAbstractFlowElement mOwner, FlowNode _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_FlowNode_11_1_performtransformation_blackBBBBFBB(
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner,
+			TAbstractFlowElement tOwner, TFlow tFlow, FlowNode _this, IsApplicableMatch isApplicableMatch) {
 		if (!tFlow.equals(tOwner)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { tFlow, tOwner, mOwnerToTOwner, mOwner, csp, _this, isApplicableMatch };
+					return new Object[] { mOwnerToTOwner, mOwner, tOwner, tFlow, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1808,86 +1808,84 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		Object[] result_pattern_FlowNode_11_1_performtransformation_binding = pattern_FlowNode_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_FlowNode_11_1_performtransformation_binding != null) {
-			TFlow tFlow = (TFlow) result_pattern_FlowNode_11_1_performtransformation_binding[0];
-			TAbstractFlowElement tOwner = (TAbstractFlowElement) result_pattern_FlowNode_11_1_performtransformation_binding[1];
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result_pattern_FlowNode_11_1_performtransformation_binding[2];
-			MAbstractFlowElement mOwner = (MAbstractFlowElement) result_pattern_FlowNode_11_1_performtransformation_binding[3];
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) result_pattern_FlowNode_11_1_performtransformation_binding[0];
+			MAbstractFlowElement mOwner = (MAbstractFlowElement) result_pattern_FlowNode_11_1_performtransformation_binding[1];
+			TAbstractFlowElement tOwner = (TAbstractFlowElement) result_pattern_FlowNode_11_1_performtransformation_binding[2];
+			TFlow tFlow = (TFlow) result_pattern_FlowNode_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_FlowNode_11_1_performtransformation_black = pattern_FlowNode_11_1_performtransformation_blackBBBBFBB(
-					tFlow, tOwner, mOwnerToTOwner, mOwner, _this, isApplicableMatch);
+					mOwnerToTOwner, mOwner, tOwner, tFlow, _this, isApplicableMatch);
 			if (result_pattern_FlowNode_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FlowNode_11_1_performtransformation_black[4];
 
-				return new Object[] { tFlow, tOwner, mOwnerToTOwner, mOwner, csp, _this, isApplicableMatch };
+				return new Object[] { mOwnerToTOwner, mOwner, tOwner, tFlow, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_11_1_performtransformation_greenFFBFB(TFlow tFlow,
-			MAbstractFlowElement mOwner) {
+	public static final Object[] pattern_FlowNode_11_1_performtransformation_greenFFBFB(MAbstractFlowElement mOwner,
+			TFlow tFlow) {
 		MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
-		MFlow mFlow = ModiscoFactory.eINSTANCE.createMFlow();
 		MFlowToTFlow mFlowToTFlow = PmFactory.eINSTANCE.createMFlowToTFlow();
+		MFlow mFlow = ModiscoFactory.eINSTANCE.createMFlow();
 		mAbstFlowToTAbstFlow.setTarget(tFlow);
-		mAbstFlowToTAbstFlow.setSource(mFlow);
-		mOwner.getOwnedFlows().add(mFlow);
 		mFlowToTFlow.setTarget(tFlow);
+		mAbstFlowToTAbstFlow.setSource(mFlow);
 		mFlowToTFlow.setSource(mFlow);
-		return new Object[] { mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow, mOwner };
+		mOwner.getOwnedFlows().add(mFlow);
+		return new Object[] { mAbstFlowToTAbstFlow, mFlowToTFlow, mOwner, mFlow, tFlow };
 	}
 
 	public static final Object[] pattern_FlowNode_11_2_collecttranslatedelements_blackBBBB(
-			MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow, MFlow mFlow, TFlow tFlow,
-			MFlowToTFlow mFlowToTFlow) {
-		return new Object[] { mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow };
+			MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow, MFlowToTFlow mFlowToTFlow, MFlow mFlow,
+			TFlow tFlow) {
+		return new Object[] { mAbstFlowToTAbstFlow, mFlowToTFlow, mFlow, tFlow };
 	}
 
 	public static final Object[] pattern_FlowNode_11_2_collecttranslatedelements_greenFBBBB(
-			MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow, MFlow mFlow, TFlow tFlow,
-			MFlowToTFlow mFlowToTFlow) {
+			MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow, MFlowToTFlow mFlowToTFlow, MFlow mFlow,
+			TFlow tFlow) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(mAbstFlowToTAbstFlow);
+		ruleresult.getCreatedLinkElements().add(mFlowToTFlow);
 		ruleresult.getCreatedElements().add(mFlow);
 		ruleresult.getTranslatedElements().add(tFlow);
-		ruleresult.getCreatedLinkElements().add(mFlowToTFlow);
-		return new Object[] { ruleresult, mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow };
+		return new Object[] { ruleresult, mAbstFlowToTAbstFlow, mFlowToTFlow, mFlow, tFlow };
 	}
 
 	public static final Object[] pattern_FlowNode_11_3_bookkeepingforedges_blackBBBBBBBB(PerformRuleResult ruleresult,
-			EObject mAbstFlowToTAbstFlow, EObject mFlow, EObject tFlow, EObject mFlowToTFlow, EObject tOwner,
-			EObject mOwnerToTOwner, EObject mOwner) {
-		if (!mAbstFlowToTAbstFlow.equals(mFlow)) {
-			if (!mAbstFlowToTAbstFlow.equals(tFlow)) {
-				if (!mAbstFlowToTAbstFlow.equals(mFlowToTFlow)) {
-					if (!mAbstFlowToTAbstFlow.equals(tOwner)) {
-						if (!mAbstFlowToTAbstFlow.equals(mOwnerToTOwner)) {
-							if (!mAbstFlowToTAbstFlow.equals(mOwner)) {
-								if (!mFlow.equals(tFlow)) {
-									if (!mFlow.equals(mFlowToTFlow)) {
-										if (!mFlow.equals(tOwner)) {
-											if (!mFlow.equals(mOwnerToTOwner)) {
-												if (!mFlow.equals(mOwner)) {
-													if (!tFlow.equals(tOwner)) {
-														if (!mFlowToTFlow.equals(tFlow)) {
-															if (!mFlowToTFlow.equals(tOwner)) {
-																if (!mFlowToTFlow.equals(mOwnerToTOwner)) {
-																	if (!mFlowToTFlow.equals(mOwner)) {
-																		if (!mOwnerToTOwner.equals(tFlow)) {
-																			if (!mOwnerToTOwner.equals(tOwner)) {
-																				if (!mOwner.equals(tFlow)) {
-																					if (!mOwner.equals(tOwner)) {
-																						if (!mOwner.equals(
-																								mOwnerToTOwner)) {
+			EObject mOwnerToTOwner, EObject mAbstFlowToTAbstFlow, EObject mFlowToTFlow, EObject mOwner, EObject mFlow,
+			EObject tOwner, EObject tFlow) {
+		if (!mOwnerToTOwner.equals(tOwner)) {
+			if (!mOwnerToTOwner.equals(tFlow)) {
+				if (!mAbstFlowToTAbstFlow.equals(mOwnerToTOwner)) {
+					if (!mAbstFlowToTAbstFlow.equals(mFlowToTFlow)) {
+						if (!mAbstFlowToTAbstFlow.equals(mOwner)) {
+							if (!mAbstFlowToTAbstFlow.equals(mFlow)) {
+								if (!mAbstFlowToTAbstFlow.equals(tOwner)) {
+									if (!mAbstFlowToTAbstFlow.equals(tFlow)) {
+										if (!mFlowToTFlow.equals(mOwnerToTOwner)) {
+											if (!mFlowToTFlow.equals(mOwner)) {
+												if (!mFlowToTFlow.equals(tOwner)) {
+													if (!mFlowToTFlow.equals(tFlow)) {
+														if (!mOwner.equals(mOwnerToTOwner)) {
+															if (!mOwner.equals(tOwner)) {
+																if (!mOwner.equals(tFlow)) {
+																	if (!mFlow.equals(mOwnerToTOwner)) {
+																		if (!mFlow.equals(mFlowToTFlow)) {
+																			if (!mFlow.equals(mOwner)) {
+																				if (!mFlow.equals(tOwner)) {
+																					if (!mFlow.equals(tFlow)) {
+																						if (!tFlow.equals(tOwner)) {
 																							return new Object[] {
 																									ruleresult,
-																									mAbstFlowToTAbstFlow,
-																									mFlow, tFlow,
-																									mFlowToTFlow,
-																									tOwner,
 																									mOwnerToTOwner,
-																									mOwner };
+																									mAbstFlowToTAbstFlow,
+																									mFlowToTFlow,
+																									mOwner, mFlow,
+																									tOwner, tFlow };
 																						}
 																					}
 																				}
@@ -1913,34 +1911,28 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(
-			PerformRuleResult ruleresult, EObject mAbstFlowToTAbstFlow, EObject mFlow, EObject tFlow,
-			EObject mFlowToTFlow, EObject tOwner, EObject mOwner) {
+			PerformRuleResult ruleresult, EObject mAbstFlowToTAbstFlow, EObject mFlowToTFlow, EObject mOwner,
+			EObject mFlow, EObject tOwner, EObject tFlow) {
 		EMoflonEdge mAbstFlowToTAbstFlow__mFlow____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAbstFlowToTAbstFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowToTFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowToTFlow__mFlow____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mOwner__mFlow____ownedFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlow__mOwner____flowOwner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAbstFlowToTAbstFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOwner__tFlow____ownedFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tFlow__tOwner____flowOwner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mFlowToTFlow__tFlow____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "FlowNode";
 		String mAbstFlowToTAbstFlow__mFlow____source_name_prime = "source";
-		String mAbstFlowToTAbstFlow__tFlow____target_name_prime = "target";
-		String mFlowToTFlow__tFlow____target_name_prime = "target";
 		String mFlowToTFlow__mFlow____source_name_prime = "source";
 		String mOwner__mFlow____ownedFlows_name_prime = "ownedFlows";
 		String mFlow__mOwner____flowOwner_name_prime = "flowOwner";
+		String mAbstFlowToTAbstFlow__tFlow____target_name_prime = "target";
 		String tOwner__tFlow____ownedFlows_name_prime = "ownedFlows";
 		String tFlow__tOwner____flowOwner_name_prime = "flowOwner";
+		String mFlowToTFlow__tFlow____target_name_prime = "target";
 		mAbstFlowToTAbstFlow__mFlow____source.setSrc(mAbstFlowToTAbstFlow);
 		mAbstFlowToTAbstFlow__mFlow____source.setTrg(mFlow);
 		ruleresult.getCreatedEdges().add(mAbstFlowToTAbstFlow__mFlow____source);
-		mAbstFlowToTAbstFlow__tFlow____target.setSrc(mAbstFlowToTAbstFlow);
-		mAbstFlowToTAbstFlow__tFlow____target.setTrg(tFlow);
-		ruleresult.getCreatedEdges().add(mAbstFlowToTAbstFlow__tFlow____target);
-		mFlowToTFlow__tFlow____target.setSrc(mFlowToTFlow);
-		mFlowToTFlow__tFlow____target.setTrg(tFlow);
-		ruleresult.getCreatedEdges().add(mFlowToTFlow__tFlow____target);
 		mFlowToTFlow__mFlow____source.setSrc(mFlowToTFlow);
 		mFlowToTFlow__mFlow____source.setTrg(mFlow);
 		ruleresult.getCreatedEdges().add(mFlowToTFlow__mFlow____source);
@@ -1950,32 +1942,38 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		mFlow__mOwner____flowOwner.setSrc(mFlow);
 		mFlow__mOwner____flowOwner.setTrg(mOwner);
 		ruleresult.getCreatedEdges().add(mFlow__mOwner____flowOwner);
+		mAbstFlowToTAbstFlow__tFlow____target.setSrc(mAbstFlowToTAbstFlow);
+		mAbstFlowToTAbstFlow__tFlow____target.setTrg(tFlow);
+		ruleresult.getCreatedEdges().add(mAbstFlowToTAbstFlow__tFlow____target);
 		tOwner__tFlow____ownedFlows.setSrc(tOwner);
 		tOwner__tFlow____ownedFlows.setTrg(tFlow);
 		ruleresult.getTranslatedEdges().add(tOwner__tFlow____ownedFlows);
 		tFlow__tOwner____flowOwner.setSrc(tFlow);
 		tFlow__tOwner____flowOwner.setTrg(tOwner);
 		ruleresult.getTranslatedEdges().add(tFlow__tOwner____flowOwner);
+		mFlowToTFlow__tFlow____target.setSrc(mFlowToTFlow);
+		mFlowToTFlow__tFlow____target.setTrg(tFlow);
+		ruleresult.getCreatedEdges().add(mFlowToTFlow__tFlow____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mAbstFlowToTAbstFlow__mFlow____source.setName(mAbstFlowToTAbstFlow__mFlow____source_name_prime);
-		mAbstFlowToTAbstFlow__tFlow____target.setName(mAbstFlowToTAbstFlow__tFlow____target_name_prime);
-		mFlowToTFlow__tFlow____target.setName(mFlowToTFlow__tFlow____target_name_prime);
 		mFlowToTFlow__mFlow____source.setName(mFlowToTFlow__mFlow____source_name_prime);
 		mOwner__mFlow____ownedFlows.setName(mOwner__mFlow____ownedFlows_name_prime);
 		mFlow__mOwner____flowOwner.setName(mFlow__mOwner____flowOwner_name_prime);
+		mAbstFlowToTAbstFlow__tFlow____target.setName(mAbstFlowToTAbstFlow__tFlow____target_name_prime);
 		tOwner__tFlow____ownedFlows.setName(tOwner__tFlow____ownedFlows_name_prime);
 		tFlow__tOwner____flowOwner.setName(tFlow__tOwner____flowOwner_name_prime);
-		return new Object[] { ruleresult, mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow, tOwner, mOwner,
-				mAbstFlowToTAbstFlow__mFlow____source, mAbstFlowToTAbstFlow__tFlow____target,
-				mFlowToTFlow__tFlow____target, mFlowToTFlow__mFlow____source, mOwner__mFlow____ownedFlows,
-				mFlow__mOwner____flowOwner, tOwner__tFlow____ownedFlows, tFlow__tOwner____flowOwner };
+		mFlowToTFlow__tFlow____target.setName(mFlowToTFlow__tFlow____target_name_prime);
+		return new Object[] { ruleresult, mAbstFlowToTAbstFlow, mFlowToTFlow, mOwner, mFlow, tOwner, tFlow,
+				mAbstFlowToTAbstFlow__mFlow____source, mFlowToTFlow__mFlow____source, mOwner__mFlow____ownedFlows,
+				mFlow__mOwner____flowOwner, mAbstFlowToTAbstFlow__tFlow____target, tOwner__tFlow____ownedFlows,
+				tFlow__tOwner____flowOwner, mFlowToTFlow__tFlow____target };
 	}
 
 	public static final void pattern_FlowNode_11_5_registerobjects_expressionBBBBBBBBB(FlowNode _this,
-			PerformRuleResult ruleresult, EObject mAbstFlowToTAbstFlow, EObject mFlow, EObject tFlow,
-			EObject mFlowToTFlow, EObject tOwner, EObject mOwnerToTOwner, EObject mOwner) {
-		_this.registerObjects_BWD(ruleresult, mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow, tOwner, mOwnerToTOwner,
-				mOwner);
+			PerformRuleResult ruleresult, EObject mOwnerToTOwner, EObject mAbstFlowToTAbstFlow, EObject mFlowToTFlow,
+			EObject mOwner, EObject mFlow, EObject tOwner, EObject tFlow) {
+		_this.registerObjects_BWD(ruleresult, mOwnerToTOwner, mAbstFlowToTAbstFlow, mFlowToTFlow, mOwner, mFlow, tOwner,
+				tFlow);
 
 	}
 
@@ -2032,29 +2030,29 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tFlow");
-		EObject _localVariable_1 = match.getObject("tOwner");
-		EObject tmpTFlow = _localVariable_0;
-		EObject tmpTOwner = _localVariable_1;
-		if (tmpTFlow instanceof TFlow) {
-			TFlow tFlow = (TFlow) tmpTFlow;
-			if (tmpTOwner instanceof TAbstractFlowElement) {
-				TAbstractFlowElement tOwner = (TAbstractFlowElement) tmpTOwner;
-				return new Object[] { tFlow, tOwner, match };
+		EObject _localVariable_0 = match.getObject("tOwner");
+		EObject _localVariable_1 = match.getObject("tFlow");
+		EObject tmpTOwner = _localVariable_0;
+		EObject tmpTFlow = _localVariable_1;
+		if (tmpTOwner instanceof TAbstractFlowElement) {
+			TAbstractFlowElement tOwner = (TAbstractFlowElement) tmpTOwner;
+			if (tmpTFlow instanceof TFlow) {
+				TFlow tFlow = (TFlow) tmpTFlow;
+				return new Object[] { tOwner, tFlow, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FlowNode_12_2_corematch_blackBBFFB(TFlow tFlow,
-			TAbstractFlowElement tOwner, Match match) {
+	public static final Iterable<Object[]> pattern_FlowNode_12_2_corematch_blackFFBBB(TAbstractFlowElement tOwner,
+			TFlow tFlow, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tFlow.equals(tOwner)) {
 			for (MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(tOwner, MAbstractFlowElementToTAbstractFlowElement.class, "target")) {
 				MAbstractFlowElement mOwner = mOwnerToTOwner.getSource();
 				if (mOwner != null) {
-					_result.add(new Object[] { tFlow, tOwner, mOwnerToTOwner, mOwner, match });
+					_result.add(new Object[] { mOwnerToTOwner, mOwner, tOwner, tFlow, match });
 				}
 
 			}
@@ -2062,15 +2060,15 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FlowNode_12_3_findcontext_blackBBBB(TFlow tFlow,
-			TAbstractFlowElement tOwner, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
-			MAbstractFlowElement mOwner) {
+	public static final Iterable<Object[]> pattern_FlowNode_12_3_findcontext_blackBBBB(
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner,
+			TAbstractFlowElement tOwner, TFlow tFlow) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tFlow.equals(tOwner)) {
-			if (tOwner.equals(mOwnerToTOwner.getTarget())) {
-				if (mOwner.equals(mOwnerToTOwner.getSource())) {
+			if (mOwner.equals(mOwnerToTOwner.getSource())) {
+				if (tOwner.equals(mOwnerToTOwner.getTarget())) {
 					if (tOwner.getOwnedFlows().contains(tFlow)) {
-						_result.add(new Object[] { tFlow, tOwner, mOwnerToTOwner, mOwner });
+						_result.add(new Object[] { mOwnerToTOwner, mOwner, tOwner, tFlow });
 					}
 				}
 			}
@@ -2078,51 +2076,51 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return _result;
 	}
 
-	public static final Object[] pattern_FlowNode_12_3_findcontext_greenBBBBFFFFF(TFlow tFlow,
-			TAbstractFlowElement tOwner, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
-			MAbstractFlowElement mOwner) {
+	public static final Object[] pattern_FlowNode_12_3_findcontext_greenBBBBFFFFF(
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner,
+			TAbstractFlowElement tOwner, TFlow tFlow) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mOwnerToTOwner__tOwner____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mOwnerToTOwner__mOwner____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mOwnerToTOwner__tOwner____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOwner__tFlow____ownedFlows = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tFlow__tOwner____flowOwner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mOwnerToTOwner__tOwner____target_name_prime = "target";
 		String mOwnerToTOwner__mOwner____source_name_prime = "source";
+		String mOwnerToTOwner__tOwner____target_name_prime = "target";
 		String tOwner__tFlow____ownedFlows_name_prime = "ownedFlows";
 		String tFlow__tOwner____flowOwner_name_prime = "flowOwner";
-		isApplicableMatch.getAllContextElements().add(tFlow);
-		isApplicableMatch.getAllContextElements().add(tOwner);
 		isApplicableMatch.getAllContextElements().add(mOwnerToTOwner);
 		isApplicableMatch.getAllContextElements().add(mOwner);
-		mOwnerToTOwner__tOwner____target.setSrc(mOwnerToTOwner);
-		mOwnerToTOwner__tOwner____target.setTrg(tOwner);
-		isApplicableMatch.getAllContextElements().add(mOwnerToTOwner__tOwner____target);
+		isApplicableMatch.getAllContextElements().add(tOwner);
+		isApplicableMatch.getAllContextElements().add(tFlow);
 		mOwnerToTOwner__mOwner____source.setSrc(mOwnerToTOwner);
 		mOwnerToTOwner__mOwner____source.setTrg(mOwner);
 		isApplicableMatch.getAllContextElements().add(mOwnerToTOwner__mOwner____source);
+		mOwnerToTOwner__tOwner____target.setSrc(mOwnerToTOwner);
+		mOwnerToTOwner__tOwner____target.setTrg(tOwner);
+		isApplicableMatch.getAllContextElements().add(mOwnerToTOwner__tOwner____target);
 		tOwner__tFlow____ownedFlows.setSrc(tOwner);
 		tOwner__tFlow____ownedFlows.setTrg(tFlow);
 		isApplicableMatch.getAllContextElements().add(tOwner__tFlow____ownedFlows);
 		tFlow__tOwner____flowOwner.setSrc(tFlow);
 		tFlow__tOwner____flowOwner.setTrg(tOwner);
 		isApplicableMatch.getAllContextElements().add(tFlow__tOwner____flowOwner);
-		mOwnerToTOwner__tOwner____target.setName(mOwnerToTOwner__tOwner____target_name_prime);
 		mOwnerToTOwner__mOwner____source.setName(mOwnerToTOwner__mOwner____source_name_prime);
+		mOwnerToTOwner__tOwner____target.setName(mOwnerToTOwner__tOwner____target_name_prime);
 		tOwner__tFlow____ownedFlows.setName(tOwner__tFlow____ownedFlows_name_prime);
 		tFlow__tOwner____flowOwner.setName(tFlow__tOwner____flowOwner_name_prime);
-		return new Object[] { tFlow, tOwner, mOwnerToTOwner, mOwner, isApplicableMatch,
-				mOwnerToTOwner__tOwner____target, mOwnerToTOwner__mOwner____source, tOwner__tFlow____ownedFlows,
+		return new Object[] { mOwnerToTOwner, mOwner, tOwner, tFlow, isApplicableMatch,
+				mOwnerToTOwner__mOwner____source, mOwnerToTOwner__tOwner____target, tOwner__tFlow____ownedFlows,
 				tFlow__tOwner____flowOwner };
 	}
 
 	public static final Object[] pattern_FlowNode_12_4_solveCSP_bindingFBBBBBB(FlowNode _this,
-			IsApplicableMatch isApplicableMatch, TFlow tFlow, TAbstractFlowElement tOwner,
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tFlow, tOwner, mOwnerToTOwner,
-				mOwner);
+			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
+			MAbstractFlowElement mOwner, TAbstractFlowElement tOwner, TFlow tFlow) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mOwnerToTOwner, mOwner, tOwner,
+				tFlow);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tFlow, tOwner, mOwnerToTOwner, mOwner };
+			return new Object[] { csp, _this, isApplicableMatch, mOwnerToTOwner, mOwner, tOwner, tFlow };
 		}
 		return null;
 	}
@@ -2132,17 +2130,17 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_12_4_solveCSP_bindingAndBlackFBBBBBB(FlowNode _this,
-			IsApplicableMatch isApplicableMatch, TFlow tFlow, TAbstractFlowElement tOwner,
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner) {
+			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
+			MAbstractFlowElement mOwner, TAbstractFlowElement tOwner, TFlow tFlow) {
 		Object[] result_pattern_FlowNode_12_4_solveCSP_binding = pattern_FlowNode_12_4_solveCSP_bindingFBBBBBB(_this,
-				isApplicableMatch, tFlow, tOwner, mOwnerToTOwner, mOwner);
+				isApplicableMatch, mOwnerToTOwner, mOwner, tOwner, tFlow);
 		if (result_pattern_FlowNode_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FlowNode_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_FlowNode_12_4_solveCSP_black = pattern_FlowNode_12_4_solveCSP_blackB(csp);
 			if (result_pattern_FlowNode_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tFlow, tOwner, mOwnerToTOwner, mOwner };
+				return new Object[] { csp, _this, isApplicableMatch, mOwnerToTOwner, mOwner, tOwner, tFlow };
 			}
 		}
 		return null;
@@ -2236,7 +2234,7 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 				TFlow tFlow = (TFlow) tmpTFlow;
 				if (!tFlow.equals(tOwner)) {
 					if (tOwner.getOwnedFlows().contains(tFlow)) {
-						_result.add(new Object[] { tFlow, tOwner, _edge_ownedFlows });
+						_result.add(new Object[] { tOwner, tFlow, _edge_ownedFlows });
 					}
 				}
 			}
@@ -2256,8 +2254,8 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final boolean pattern_FlowNode_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			FlowNode _this, Match match, TFlow tFlow, TAbstractFlowElement tOwner) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tFlow, tOwner);
+			FlowNode _this, Match match, TAbstractFlowElement tOwner, TFlow tFlow) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tOwner, tFlow);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2352,7 +2350,7 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 				MFlow mFlow = (MFlow) tmpMFlow;
 				if (!mFlow.equals(mOwner)) {
 					if (mOwner.getOwnedFlows().contains(mFlow)) {
-						_result.add(new Object[] { mFlow, mOwner, _edge_ownedFlows });
+						_result.add(new Object[] { mOwner, mFlow, _edge_ownedFlows });
 					}
 				}
 			}
@@ -2372,8 +2370,8 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final boolean pattern_FlowNode_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			FlowNode _this, Match match, MFlow mFlow, MAbstractFlowElement mOwner) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mFlow, mOwner);
+			FlowNode _this, Match match, MAbstractFlowElement mOwner, MFlow mFlow) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mOwner, mFlow);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2417,23 +2415,23 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 
 	public static final Object[] pattern_FlowNode_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
 			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("mFlow");
-		EObject _localVariable_1 = targetMatch.getObject("tFlow");
+		EObject _localVariable_0 = sourceMatch.getObject("mOwner");
+		EObject _localVariable_1 = sourceMatch.getObject("mFlow");
 		EObject _localVariable_2 = targetMatch.getObject("tOwner");
-		EObject _localVariable_3 = sourceMatch.getObject("mOwner");
-		EObject tmpMFlow = _localVariable_0;
-		EObject tmpTFlow = _localVariable_1;
+		EObject _localVariable_3 = targetMatch.getObject("tFlow");
+		EObject tmpMOwner = _localVariable_0;
+		EObject tmpMFlow = _localVariable_1;
 		EObject tmpTOwner = _localVariable_2;
-		EObject tmpMOwner = _localVariable_3;
-		if (tmpMFlow instanceof MFlow) {
-			MFlow mFlow = (MFlow) tmpMFlow;
-			if (tmpTFlow instanceof TFlow) {
-				TFlow tFlow = (TFlow) tmpTFlow;
+		EObject tmpTFlow = _localVariable_3;
+		if (tmpMOwner instanceof MAbstractFlowElement) {
+			MAbstractFlowElement mOwner = (MAbstractFlowElement) tmpMOwner;
+			if (tmpMFlow instanceof MFlow) {
+				MFlow mFlow = (MFlow) tmpMFlow;
 				if (tmpTOwner instanceof TAbstractFlowElement) {
 					TAbstractFlowElement tOwner = (TAbstractFlowElement) tmpTOwner;
-					if (tmpMOwner instanceof MAbstractFlowElement) {
-						MAbstractFlowElement mOwner = (MAbstractFlowElement) tmpMOwner;
-						return new Object[] { mFlow, tFlow, tOwner, mOwner, sourceMatch, targetMatch };
+					if (tmpTFlow instanceof TFlow) {
+						TFlow tFlow = (TFlow) tmpTFlow;
+						return new Object[] { mOwner, mFlow, tOwner, tFlow, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2441,12 +2439,12 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_24_2_matchsrctrgcontext_blackBBBBBB(MFlow mFlow, TFlow tFlow,
-			TAbstractFlowElement tOwner, MAbstractFlowElement mOwner, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_FlowNode_24_2_matchsrctrgcontext_blackBBBBBB(MAbstractFlowElement mOwner,
+			MFlow mFlow, TAbstractFlowElement tOwner, TFlow tFlow, Match sourceMatch, Match targetMatch) {
 		if (!mFlow.equals(mOwner)) {
 			if (!tFlow.equals(tOwner)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { mFlow, tFlow, tOwner, mOwner, sourceMatch, targetMatch };
+					return new Object[] { mOwner, mFlow, tOwner, tFlow, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -2458,28 +2456,28 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		Object[] result_pattern_FlowNode_24_2_matchsrctrgcontext_binding = pattern_FlowNode_24_2_matchsrctrgcontext_bindingFFFFBB(
 				sourceMatch, targetMatch);
 		if (result_pattern_FlowNode_24_2_matchsrctrgcontext_binding != null) {
-			MFlow mFlow = (MFlow) result_pattern_FlowNode_24_2_matchsrctrgcontext_binding[0];
-			TFlow tFlow = (TFlow) result_pattern_FlowNode_24_2_matchsrctrgcontext_binding[1];
+			MAbstractFlowElement mOwner = (MAbstractFlowElement) result_pattern_FlowNode_24_2_matchsrctrgcontext_binding[0];
+			MFlow mFlow = (MFlow) result_pattern_FlowNode_24_2_matchsrctrgcontext_binding[1];
 			TAbstractFlowElement tOwner = (TAbstractFlowElement) result_pattern_FlowNode_24_2_matchsrctrgcontext_binding[2];
-			MAbstractFlowElement mOwner = (MAbstractFlowElement) result_pattern_FlowNode_24_2_matchsrctrgcontext_binding[3];
+			TFlow tFlow = (TFlow) result_pattern_FlowNode_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_FlowNode_24_2_matchsrctrgcontext_black = pattern_FlowNode_24_2_matchsrctrgcontext_blackBBBBBB(
-					mFlow, tFlow, tOwner, mOwner, sourceMatch, targetMatch);
+					mOwner, mFlow, tOwner, tFlow, sourceMatch, targetMatch);
 			if (result_pattern_FlowNode_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mFlow, tFlow, tOwner, mOwner, sourceMatch, targetMatch };
+				return new Object[] { mOwner, mFlow, tOwner, tFlow, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_24_3_solvecsp_bindingFBBBBBBB(FlowNode _this, MFlow mFlow,
-			TFlow tFlow, TAbstractFlowElement tOwner, MAbstractFlowElement mOwner, Match sourceMatch,
+	public static final Object[] pattern_FlowNode_24_3_solvecsp_bindingFBBBBBBB(FlowNode _this,
+			MAbstractFlowElement mOwner, MFlow mFlow, TAbstractFlowElement tOwner, TFlow tFlow, Match sourceMatch,
 			Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mFlow, tFlow, tOwner, mOwner, sourceMatch, targetMatch);
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mOwner, mFlow, tOwner, tFlow, sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, mFlow, tFlow, tOwner, mOwner, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mOwner, mFlow, tOwner, tFlow, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2488,18 +2486,18 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_FlowNode_24_3_solvecsp_bindingAndBlackFBBBBBBB(FlowNode _this, MFlow mFlow,
-			TFlow tFlow, TAbstractFlowElement tOwner, MAbstractFlowElement mOwner, Match sourceMatch,
+	public static final Object[] pattern_FlowNode_24_3_solvecsp_bindingAndBlackFBBBBBBB(FlowNode _this,
+			MAbstractFlowElement mOwner, MFlow mFlow, TAbstractFlowElement tOwner, TFlow tFlow, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_FlowNode_24_3_solvecsp_binding = pattern_FlowNode_24_3_solvecsp_bindingFBBBBBBB(_this,
-				mFlow, tFlow, tOwner, mOwner, sourceMatch, targetMatch);
+				mOwner, mFlow, tOwner, tFlow, sourceMatch, targetMatch);
 		if (result_pattern_FlowNode_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_FlowNode_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_FlowNode_24_3_solvecsp_black = pattern_FlowNode_24_3_solvecsp_blackB(csp);
 			if (result_pattern_FlowNode_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mFlow, tFlow, tOwner, mOwner, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, mOwner, mFlow, tOwner, tFlow, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2511,14 +2509,14 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FlowNode_24_5_matchcorrcontext_blackBFBBB(
-			TAbstractFlowElement tOwner, MAbstractFlowElement mOwner, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_FlowNode_24_5_matchcorrcontext_blackFBBBB(
+			MAbstractFlowElement mOwner, TAbstractFlowElement tOwner, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tOwner, MAbstractFlowElementToTAbstractFlowElement.class, "target")) {
-				if (mOwner.equals(mOwnerToTOwner.getSource())) {
-					_result.add(new Object[] { tOwner, mOwnerToTOwner, mOwner, sourceMatch, targetMatch });
+					.getOppositeReferenceTyped(mOwner, MAbstractFlowElementToTAbstractFlowElement.class, "source")) {
+				if (tOwner.equals(mOwnerToTOwner.getTarget())) {
+					_result.add(new Object[] { mOwnerToTOwner, mOwner, tOwner, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2536,17 +2534,17 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return new Object[] { mOwnerToTOwner, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_FlowNode_24_6_createcorrespondence_blackBBBBB(MFlow mFlow, TFlow tFlow,
-			TAbstractFlowElement tOwner, MAbstractFlowElement mOwner, CCMatch ccMatch) {
+	public static final Object[] pattern_FlowNode_24_6_createcorrespondence_blackBBBBB(MAbstractFlowElement mOwner,
+			MFlow mFlow, TAbstractFlowElement tOwner, TFlow tFlow, CCMatch ccMatch) {
 		if (!mFlow.equals(mOwner)) {
 			if (!tFlow.equals(tOwner)) {
-				return new Object[] { mFlow, tFlow, tOwner, mOwner, ccMatch };
+				return new Object[] { mOwner, mFlow, tOwner, tFlow, ccMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_24_6_createcorrespondence_greenFBBFB(MFlow mFlow, TFlow tFlow,
+	public static final Object[] pattern_FlowNode_24_6_createcorrespondence_greenFFBBB(MFlow mFlow, TFlow tFlow,
 			CCMatch ccMatch) {
 		MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
@@ -2554,10 +2552,10 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		mAbstFlowToTAbstFlow.setSource(mFlow);
 		mAbstFlowToTAbstFlow.setTarget(tFlow);
 		ccMatch.getCreateCorr().add(mAbstFlowToTAbstFlow);
-		mFlowToTFlow.setTarget(tFlow);
 		mFlowToTFlow.setSource(mFlow);
+		mFlowToTFlow.setTarget(tFlow);
 		ccMatch.getCreateCorr().add(mFlowToTFlow);
-		return new Object[] { mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow, ccMatch };
+		return new Object[] { mAbstFlowToTAbstFlow, mFlowToTFlow, mFlow, tFlow, ccMatch };
 	}
 
 	public static final Object[] pattern_FlowNode_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2580,11 +2578,11 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return _result;
 	}
 
-	public static final Object[] pattern_FlowNode_27_1_matchtggpattern_blackBB(MFlow mFlow,
-			MAbstractFlowElement mOwner) {
+	public static final Object[] pattern_FlowNode_27_1_matchtggpattern_blackBB(MAbstractFlowElement mOwner,
+			MFlow mFlow) {
 		if (!mFlow.equals(mOwner)) {
 			if (mOwner.getOwnedFlows().contains(mFlow)) {
-				return new Object[] { mFlow, mOwner };
+				return new Object[] { mOwner, mFlow };
 			}
 		}
 		return null;
@@ -2600,11 +2598,11 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return _result;
 	}
 
-	public static final Object[] pattern_FlowNode_28_1_matchtggpattern_blackBB(TFlow tFlow,
-			TAbstractFlowElement tOwner) {
+	public static final Object[] pattern_FlowNode_28_1_matchtggpattern_blackBB(TAbstractFlowElement tOwner,
+			TFlow tFlow) {
 		if (!tFlow.equals(tOwner)) {
 			if (tOwner.getOwnedFlows().contains(tFlow)) {
-				return new Object[] { tFlow, tOwner };
+				return new Object[] { tOwner, tFlow };
 			}
 		}
 		return null;
@@ -2633,14 +2631,6 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TAbstractFlowElement tOwner) {
-		if (ruleResult.getTargetObjects().contains(tOwner)) {
-			return new Object[] { ruleResult, tOwner };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_FlowNode_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner) {
 		if (ruleResult.getCorrObjects().contains(mOwnerToTOwner)) {
 			return new Object[] { ruleResult, mOwnerToTOwner };
@@ -2648,10 +2638,18 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return null;
 	}
 
-	public static final Object[] pattern_FlowNode_29_2_isapplicablecore_black_nac_2BB(
+	public static final Object[] pattern_FlowNode_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, MAbstractFlowElement mOwner) {
 		if (ruleResult.getSourceObjects().contains(mOwner)) {
 			return new Object[] { ruleResult, mOwner };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_FlowNode_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, TAbstractFlowElement tOwner) {
+		if (ruleResult.getTargetObjects().contains(tOwner)) {
+			return new Object[] { ruleResult, tOwner };
 		}
 		return null;
 	}
@@ -2663,16 +2661,16 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 			for (EObject tmpMOwnerToTOwner : mOwnerToTOwnerList.getEntryObjects()) {
 				if (tmpMOwnerToTOwner instanceof MAbstractFlowElementToTAbstractFlowElement) {
 					MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner = (MAbstractFlowElementToTAbstractFlowElement) tmpMOwnerToTOwner;
-					TAbstractFlowElement tOwner = mOwnerToTOwner.getTarget();
-					if (tOwner != null) {
-						MAbstractFlowElement mOwner = mOwnerToTOwner.getSource();
-						if (mOwner != null) {
-							if (pattern_FlowNode_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+					MAbstractFlowElement mOwner = mOwnerToTOwner.getSource();
+					if (mOwner != null) {
+						TAbstractFlowElement tOwner = mOwnerToTOwner.getTarget();
+						if (tOwner != null) {
+							if (pattern_FlowNode_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 									mOwnerToTOwner) == null) {
-								if (pattern_FlowNode_29_2_isapplicablecore_black_nac_0BB(ruleResult, tOwner) == null) {
+								if (pattern_FlowNode_29_2_isapplicablecore_black_nac_1BB(ruleResult, mOwner) == null) {
 									if (pattern_FlowNode_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											mOwner) == null) {
-										_result.add(new Object[] { mOwnerToTOwnerList, tOwner, mOwnerToTOwner, mOwner,
+											tOwner) == null) {
+										_result.add(new Object[] { mOwnerToTOwnerList, mOwnerToTOwner, mOwner, tOwner,
 												ruleEntryContainer, ruleResult });
 									}
 								}
@@ -2688,14 +2686,13 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_29_3_solveCSP_bindingFBBBBBB(FlowNode _this,
-			IsApplicableMatch isApplicableMatch, TAbstractFlowElement tOwner,
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner,
-			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tOwner, mOwnerToTOwner, mOwner,
+			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
+			MAbstractFlowElement mOwner, TAbstractFlowElement tOwner, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mOwnerToTOwner, mOwner, tOwner,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tOwner, mOwnerToTOwner, mOwner, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mOwnerToTOwner, mOwner, tOwner, ruleResult };
 		}
 		return null;
 	}
@@ -2705,18 +2702,17 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	}
 
 	public static final Object[] pattern_FlowNode_29_3_solveCSP_bindingAndBlackFBBBBBB(FlowNode _this,
-			IsApplicableMatch isApplicableMatch, TAbstractFlowElement tOwner,
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner,
-			ModelgeneratorRuleResult ruleResult) {
+			IsApplicableMatch isApplicableMatch, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
+			MAbstractFlowElement mOwner, TAbstractFlowElement tOwner, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_FlowNode_29_3_solveCSP_binding = pattern_FlowNode_29_3_solveCSP_bindingFBBBBBB(_this,
-				isApplicableMatch, tOwner, mOwnerToTOwner, mOwner, ruleResult);
+				isApplicableMatch, mOwnerToTOwner, mOwner, tOwner, ruleResult);
 		if (result_pattern_FlowNode_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FlowNode_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_FlowNode_29_3_solveCSP_black = pattern_FlowNode_29_3_solveCSP_blackB(csp);
 			if (result_pattern_FlowNode_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tOwner, mOwnerToTOwner, mOwner, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mOwnerToTOwner, mOwner, tOwner, ruleResult };
 			}
 		}
 		return null;
@@ -2728,40 +2724,41 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 		return _result;
 	}
 
-	public static final Object[] pattern_FlowNode_29_5_checknacs_blackBBB(TAbstractFlowElement tOwner,
-			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner) {
-		return new Object[] { tOwner, mOwnerToTOwner, mOwner };
-	}
-
-	public static final Object[] pattern_FlowNode_29_6_perform_blackBBBB(TAbstractFlowElement tOwner,
+	public static final Object[] pattern_FlowNode_29_5_checknacs_blackBBB(
 			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner,
-			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { tOwner, mOwnerToTOwner, mOwner, ruleResult };
+			TAbstractFlowElement tOwner) {
+		return new Object[] { mOwnerToTOwner, mOwner, tOwner };
 	}
 
-	public static final Object[] pattern_FlowNode_29_6_perform_greenFFFFBBB(TAbstractFlowElement tOwner,
-			MAbstractFlowElement mOwner, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_FlowNode_29_6_perform_blackBBBB(
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner,
+			TAbstractFlowElement tOwner, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mOwnerToTOwner, mOwner, tOwner, ruleResult };
+	}
+
+	public static final Object[] pattern_FlowNode_29_6_perform_greenFFBFBFB(MAbstractFlowElement mOwner,
+			TAbstractFlowElement tOwner, ModelgeneratorRuleResult ruleResult) {
 		MAbstractFlowElementToTAbstractFlowElement mAbstFlowToTAbstFlow = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
+		MFlowToTFlow mFlowToTFlow = PmFactory.eINSTANCE.createMFlowToTFlow();
 		MFlow mFlow = ModiscoFactory.eINSTANCE.createMFlow();
 		TFlow tFlow = BasicFactory.eINSTANCE.createTFlow();
-		MFlowToTFlow mFlowToTFlow = PmFactory.eINSTANCE.createMFlowToTFlow();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(mAbstFlowToTAbstFlow);
+		ruleResult.getCorrObjects().add(mFlowToTFlow);
 		mAbstFlowToTAbstFlow.setSource(mFlow);
+		mFlowToTFlow.setSource(mFlow);
 		mOwner.getOwnedFlows().add(mFlow);
 		ruleResult.getSourceObjects().add(mFlow);
 		mAbstFlowToTAbstFlow.setTarget(tFlow);
 		tOwner.getOwnedFlows().add(tFlow);
-		ruleResult.getTargetObjects().add(tFlow);
 		mFlowToTFlow.setTarget(tFlow);
-		mFlowToTFlow.setSource(mFlow);
-		ruleResult.getCorrObjects().add(mFlowToTFlow);
+		ruleResult.getTargetObjects().add(tFlow);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mAbstFlowToTAbstFlow, mFlow, tFlow, mFlowToTFlow, tOwner, mOwner, ruleResult };
+		return new Object[] { mAbstFlowToTAbstFlow, mFlowToTFlow, mOwner, mFlow, tOwner, tFlow, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_FlowNode_29_7_expressionFB(
