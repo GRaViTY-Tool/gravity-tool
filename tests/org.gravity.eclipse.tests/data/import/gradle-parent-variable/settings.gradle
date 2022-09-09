@@ -1,3 +1,0 @@
-include   ':ProjectOne', ':ProjectTwo'
-project(':ProjectOne').projectDir = new File(settingsDir, 'ProjectOne')
-project(':ProjectTwo').projectDir = new File(settingsDir, 'ProjectTwo') 
