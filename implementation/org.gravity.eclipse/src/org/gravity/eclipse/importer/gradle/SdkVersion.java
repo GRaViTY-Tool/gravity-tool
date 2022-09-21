@@ -78,15 +78,11 @@ public class SdkVersion {
 	 * @param other
 	 */
 	public void update(final SdkVersion other) {
-		if (Double.isNaN(this.minSdk)) {
-			this.minSdk = other.getMinSdk();
-		} else if (this.minSdk < other.getMinSdk()) {
+		if (Double.isNaN(this.minSdk) || this.minSdk < other.getMinSdk()) {
 			this.minSdk = other.getMinSdk();
 		}
 
-		if (Double.isNaN(this.maxSdk)) {
-			this.maxSdk = other.getMaxSdk();
-		} else if (this.maxSdk > other.getMaxSdk()) {
+		if (Double.isNaN(this.maxSdk) || this.maxSdk > other.getMaxSdk()) {
 			this.maxSdk = other.getMaxSdk();
 		}
 
