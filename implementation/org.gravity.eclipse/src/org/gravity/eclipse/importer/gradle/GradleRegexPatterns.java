@@ -48,6 +48,6 @@ final class GradleRegexPatterns {
 	/**
 	 * The min and max Android SDK version
 	 */
-	protected static final Pattern ANDROID_SDK_VERSION = Pattern.compile("(((min)|(target))SdkVersion)(\\s+)(\\d+)");
+	protected static final Pattern ANDROID_SDK_VERSION = Pattern.compile("(((min)|(target)|(compile))SdkVersion)(\\s+)(\\d+)");
 
 }

@@ -108,14 +108,14 @@ public final class GradleAndroid {
 		final var matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(gradleContent);
 		while (matcherSdk.find()) {
 			final var group = matcherSdk.group(1);
-			if ("minSdkVersion".equals(group)) {
-				final var value = Integer.parseInt(matcherSdk.group(6));
+			if ("minSdkVersion".equals(group) || "compileSdkVersion".equals(group)) {
+				final var value = Integer.parseInt(matcherSdk.group(7));
 				final var minSdk = sdkVersion.getMinSdk();
 				if (Double.isNaN(minSdk) || (minSdk > value)) {
 					sdkVersion.setMinSdk(value);
 				}
 			} else if ("targetSdkVersion".equals(group)) {
-				final var value = Integer.parseInt(matcherSdk.group(6));
+				final var value = Integer.parseInt(matcherSdk.group(7));
 				final var targetSdk = sdkVersion.getTargetSdk();
 				if (Double.isNaN(targetSdk) || (targetSdk < value)) {
 					sdkVersion.setTargetSdk(value);
@@ -162,7 +162,7 @@ public final class GradleAndroid {
 	static Map<String, Path> getAndroidLibs(final GradleDependencies dependencies) throws GradleImportException {
 		final var sdkVersion = dependencies.getSdkVersion();
 		final var pathsToLibs = new HashMap<String, Path>();
-		if ((sdkVersion == null) || Double.isNaN(sdkVersion.getTargetSdk()) || Double.isNaN(sdkVersion.getMinSdk())) {
+		if ((sdkVersion == null) || (Double.isNaN(sdkVersion.getTargetSdk()) && Double.isNaN(sdkVersion.getMinSdk()))) {
 			throw new GradleImportException("Couldn't determine the SDK version information");
 		}
 
