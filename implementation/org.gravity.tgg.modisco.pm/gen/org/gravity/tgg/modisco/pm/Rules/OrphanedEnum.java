@@ -113,9 +113,9 @@ public interface OrphanedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType,
-			EObject mAnnotatableToTAnnotatable, EObject tEnum, EObject pg, EObject mModel, EObject tProxyPackage,
-			EObject mType, EObject mModelToTypeGraph);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tType, EObject mAnnotatableToTAnnotatable,
+			EObject mTypeToTType, EObject tEnum, EObject pg, EObject mModel, EObject tProxyPackage, EObject mType,
+			EObject mModelToTypeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,9 +196,9 @@ public interface OrphanedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType,
-			EObject mAnnotatableToTAnnotatable, EObject tEnum, EObject pg, EObject mModel, EObject tProxyPackage,
-			EObject mType, EObject mModelToTypeGraph);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tType, EObject mAnnotatableToTAnnotatable,
+			EObject mTypeToTType, EObject tEnum, EObject pg, EObject mModel, EObject tProxyPackage, EObject mType,
+			EObject mModelToTypeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface OrphanedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_42(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_69(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface OrphanedEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_44(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_71(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -69,23 +69,13 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected UmlSwitch<Adapter> modelSwitch = new UmlSwitch<Adapter>() {
 		@Override
+		public Adapter caseTypeAccess2Generalization(TypeAccess2Generalization object) {
+			return createTypeAccess2GeneralizationAdapter();
+		}
+
+		@Override
 		public Adapter caseTypeAccess2Parameter(TypeAccess2Parameter object) {
 			return createTypeAccess2ParameterAdapter();
-		}
-
-		@Override
-		public Adapter caseModifier2NamedElement(Modifier2NamedElement object) {
-			return createModifier2NamedElementAdapter();
-		}
-
-		@Override
-		public Adapter caseCompilationUnit2Artifact(CompilationUnit2Artifact object) {
-			return createCompilationUnit2ArtifactAdapter();
-		}
-
-		@Override
-		public Adapter caseTypeAccess2Property(TypeAccess2Property object) {
-			return createTypeAccess2PropertyAdapter();
 		}
 
 		@Override
@@ -95,13 +85,28 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTypeAccess2InterfaceRealization(TypeAccess2InterfaceRealization object) {
-			return createTypeAccess2InterfaceRealizationAdapter();
+		public Adapter caseTypeAccess2Property(TypeAccess2Property object) {
+			return createTypeAccess2PropertyAdapter();
 		}
 
 		@Override
-		public Adapter caseTypeAccess2TemplateBinding(TypeAccess2TemplateBinding object) {
-			return createTypeAccess2TemplateBindingAdapter();
+		public Adapter caseASTNode2Element(ASTNode2Element object) {
+			return createASTNode2ElementAdapter();
+		}
+
+		@Override
+		public Adapter caseExpression2Comment(Expression2Comment object) {
+			return createExpression2CommentAdapter();
+		}
+
+		@Override
+		public Adapter caseModifier2NamedElement(Modifier2NamedElement object) {
+			return createModifier2NamedElementAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeAccess2InterfaceRealization(TypeAccess2InterfaceRealization object) {
+			return createTypeAccess2InterfaceRealizationAdapter();
 		}
 
 		@Override
@@ -115,18 +120,13 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseExpression2Comment(Expression2Comment object) {
-			return createExpression2CommentAdapter();
+		public Adapter caseCompilationUnit2Artifact(CompilationUnit2Artifact object) {
+			return createCompilationUnit2ArtifactAdapter();
 		}
 
 		@Override
-		public Adapter caseTypeAccess2Generalization(TypeAccess2Generalization object) {
-			return createTypeAccess2GeneralizationAdapter();
-		}
-
-		@Override
-		public Adapter caseASTNode2Element(ASTNode2Element object) {
-			return createASTNode2ElementAdapter();
+		public Adapter caseTypeAccess2TemplateBinding(TypeAccess2TemplateBinding object) {
+			return createTypeAccess2TemplateBindingAdapter();
 		}
 
 		@Override
@@ -154,6 +154,20 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Generalization <em>Type Access2 Generalization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Generalization
+	 * @generated
+	 */
+	public Adapter createTypeAccess2GeneralizationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Parameter <em>Type Access2 Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -164,48 +178,6 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTypeAccess2ParameterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.Modifier2NamedElement <em>Modifier2 Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.Modifier2NamedElement
-	 * @generated
-	 */
-	public Adapter createModifier2NamedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.CompilationUnit2Artifact <em>Compilation Unit2 Artifact</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.CompilationUnit2Artifact
-	 * @generated
-	 */
-	public Adapter createCompilationUnit2ArtifactAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Property <em>Type Access2 Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Property
-	 * @generated
-	 */
-	public Adapter createTypeAccess2PropertyAdapter() {
 		return null;
 	}
 
@@ -224,6 +196,62 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Property <em>Type Access2 Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Property
+	 * @generated
+	 */
+	public Adapter createTypeAccess2PropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.ASTNode2Element <em>AST Node2 Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.uml.ASTNode2Element
+	 * @generated
+	 */
+	public Adapter createASTNode2ElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.Expression2Comment <em>Expression2 Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.uml.Expression2Comment
+	 * @generated
+	 */
+	public Adapter createExpression2CommentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.Modifier2NamedElement <em>Modifier2 Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.uml.Modifier2NamedElement
+	 * @generated
+	 */
+	public Adapter createModifier2NamedElementAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2InterfaceRealization <em>Type Access2 Interface Realization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -234,20 +262,6 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTypeAccess2InterfaceRealizationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2TemplateBinding <em>Type Access2 Template Binding</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2TemplateBinding
-	 * @generated
-	 */
-	public Adapter createTypeAccess2TemplateBindingAdapter() {
 		return null;
 	}
 
@@ -280,44 +294,30 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.Expression2Comment <em>Expression2 Comment</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.CompilationUnit2Artifact <em>Compilation Unit2 Artifact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.Expression2Comment
+	 * @see org.gravity.tgg.modisco.uml.CompilationUnit2Artifact
 	 * @generated
 	 */
-	public Adapter createExpression2CommentAdapter() {
+	public Adapter createCompilationUnit2ArtifactAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Generalization <em>Type Access2 Generalization</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2TemplateBinding <em>Type Access2 Template Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Generalization
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2TemplateBinding
 	 * @generated
 	 */
-	public Adapter createTypeAccess2GeneralizationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.ASTNode2Element <em>AST Node2 Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.ASTNode2Element
-	 * @generated
-	 */
-	public Adapter createASTNode2ElementAdapter() {
+	public Adapter createTypeAccess2TemplateBindingAdapter() {
 		return null;
 	}
 

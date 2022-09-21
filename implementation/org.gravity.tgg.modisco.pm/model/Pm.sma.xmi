@@ -1,790 +1,790 @@
 <?xml version="1.0" encoding="ASCII"?>
 <analysis:StaticAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:analysis="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//analysis">
   <sourceRules>
-    <rules ruleName="OrphanedInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedInterface/isAppropriate_FWD_EMoflonEdge_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedInterface/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="SuperMethodInvocation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperMethodInvocation/isAppropriate_FWD_EMoflonEdge_1"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperMethodInvocation/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeIsLong">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsLong/isAppropriate_FWD_EMoflonEdge_2"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsLong/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="SyntethicMethod">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SyntethicMethod/isAppropriate_FWD_EMoflonEdge_3"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SyntethicMethod/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeIsBoolean">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsBoolean/isAppropriate_FWD_EMoflonEdge_4"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsBoolean/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueNumberArray">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumberArray/isAppropriate_FWD_EMoflonEdge_5"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumberArray/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="NestedClassInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedClassInType/isAppropriate_FWD_EMoflonEdge_6"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedClassInType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeIsShort">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsShort/isAppropriate_FWD_EMoflonEdge_7"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsShort/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InterfaceInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInAnonymous/isAppropriate_FWD_EMoflonEdge_8"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInAnonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="LinkDefinitionToAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToAnonymous/isAppropriate_FWD_EMoflonEdge_9"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToAnonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypesIsVoid">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypesIsVoid/isAppropriate_FWD_EMoflonEdge_10"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypesIsVoid/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="UnresolvedClassDeclaration">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedClassDeclaration/isAppropriate_FWD_EMoflonEdge_11"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedClassDeclaration/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MethodInvocationTarget">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationTarget/isAppropriate_FWD_EMoflonEdge_12"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationTarget/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ClassInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInAnonymous/isAppropriate_FWD_EMoflonEdge_13"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInAnonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeIsInt">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsInt/isAppropriate_FWD_EMoflonEdge_14"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsInt/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberKey">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberKey/isAppropriate_FWD_EMoflonEdge_15"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberKey/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="EnumInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInAnonymous/isAppropriate_FWD_EMoflonEdge_16"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInAnonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueAnnotationArray">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotationArray/isAppropriate_FWD_EMoflonEdge_17"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotationArray/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ClassInstanceCreation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInstanceCreation/isAppropriate_FWD_EMoflonEdge_18"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInstanceCreation/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="FieldSignature">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldSignature/isAppropriate_FWD_EMoflonEdge_19"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldSignature/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInAnonymous/isAppropriate_FWD_EMoflonEdge_20"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInAnonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InitializerInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInAnonymous/isAppropriate_FWD_EMoflonEdge_21"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInAnonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="TypeParameter">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypeParameter/isAppropriate_FWD_EMoflonEdge_22"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypeParameter/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnonymousClassTypeClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeClass/isAppropriate_FWD_EMoflonEdge_23"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeClass/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ClassInPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInPackage/isAppropriate_FWD_EMoflonEdge_24"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInPackage/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueString">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueString/isAppropriate_FWD_EMoflonEdge_25"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueString/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeInPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInPackage/isAppropriate_FWD_EMoflonEdge_26"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInPackage/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="OrphanedClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedClass/isAppropriate_FWD_EMoflonEdge_27"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedClass/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ParameterizedTypeToType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ParameterizedTypeToType/isAppropriate_FWD_EMoflonEdge_28"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ParameterizedTypeToType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InitializerInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInType/isAppropriate_FWD_EMoflonEdge_29"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="EnumConstant">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumConstant/isAppropriate_FWD_EMoflonEdge_30"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumConstant/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="NestedEnumInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedEnumInType/isAppropriate_FWD_EMoflonEdge_31"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedEnumInType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnonymousClassInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInAnonymous/isAppropriate_FWD_EMoflonEdge_32"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInAnonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="DataFlowOut">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowOut/isAppropriate_FWD_EMoflonEdge_33"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowOut/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="Annotation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/Annotation/isAppropriate_FWD_EMoflonEdge_34"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/Annotation/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MethodParameterLinkFirst">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLinkFirst/isAppropriate_FWD_EMoflonEdge_35"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLinkFirst/checkDEC_FWD"/>
-    </rules>
     <rules ruleName="FieldAccessReadWrite">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessReadWrite/isAppropriate_FWD_EMoflonEdge_36"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessReadWrite/isAppropriate_FWD_EMoflonEdge_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessReadWrite/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="AnnotationMemberValueAnnotation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotation/isAppropriate_FWD_EMoflonEdge_37"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotation/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MethodOverriding">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodOverriding/isAppropriate_FWD_EMoflonEdge_38"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodOverriding/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="UnresolvedInterfaceDeclaration">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedInterfaceDeclaration/isAppropriate_FWD_EMoflonEdge_39"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedInterfaceDeclaration/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="VariableDeclarationFragment">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/VariableDeclarationFragment/isAppropriate_FWD_EMoflonEdge_40"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/VariableDeclarationFragment/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeIsByte">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsByte/isAppropriate_FWD_EMoflonEdge_41"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsByte/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeIsFloat">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsFloat/isAppropriate_FWD_EMoflonEdge_42"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsFloat/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ConstructorDefinition">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorDefinition/isAppropriate_FWD_EMoflonEdge_43"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorDefinition/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="OrphanedEnum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedEnum/isAppropriate_FWD_EMoflonEdge_44"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedEnum/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnonymousClassTypeInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeInterface/isAppropriate_FWD_EMoflonEdge_45"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeInterface/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="FieldAccessRead">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessRead/isAppropriate_FWD_EMoflonEdge_46"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessRead/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeAccessOnSelf">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnSelf/isAppropriate_FWD_EMoflonEdge_47"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnSelf/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueNumber">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumber/isAppropriate_FWD_EMoflonEdge_48"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumber/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnonymousClassInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInType/isAppropriate_FWD_EMoflonEdge_49"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClass/isAppropriate_FWD_EMoflonEdge_50"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClass/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MethodParameterLink">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLink/isAppropriate_FWD_EMoflonEdge_51"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLink/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ClassInnerClassMember">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerClassMember/isAppropriate_FWD_EMoflonEdge_52"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerClassMember/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="DataFlowIn">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowIn/isAppropriate_FWD_EMoflonEdge_53"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowIn/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnonymousEnumConstant">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousEnumConstant/isAppropriate_FWD_EMoflonEdge_54"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousEnumConstant/checkDEC_FWD"/>
-    </rules>
     <rules ruleName="AnnotationMemberValueBoolean">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBoolean/isAppropriate_FWD_EMoflonEdge_55"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBoolean/isAppropriate_FWD_EMoflonEdge_1"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBoolean/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="ClassInnerAnonClassMember">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerAnonClassMember/isAppropriate_FWD_EMoflonEdge_56"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerAnonClassMember/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="UnresolvedMethodDeclaration">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedMethodDeclaration/isAppropriate_FWD_EMoflonEdge_57"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedMethodDeclaration/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MemberInEnumVisibility">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInEnumVisibility/isAppropriate_FWD_EMoflonEdge_58"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInEnumVisibility/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeNested">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeNested/isAppropriate_FWD_EMoflonEdge_59"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeNested/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueStringArray">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueStringArray/isAppropriate_FWD_EMoflonEdge_60"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueStringArray/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="FieldDefinition">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldDefinition/isAppropriate_FWD_EMoflonEdge_61"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldDefinition/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ClassExtendsClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassExtendsClass/isAppropriate_FWD_EMoflonEdge_62"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassExtendsClass/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ClassImplementsPatrameterizedInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsPatrameterizedInterface/isAppropriate_FWD_EMoflonEdge_63"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsPatrameterizedInterface/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="SuperConstructorInvocation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperConstructorInvocation/isAppropriate_FWD_EMoflonEdge_64"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperConstructorInvocation/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MethodDefinition">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodDefinition/isAppropriate_FWD_EMoflonEdge_65"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodDefinition/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="TypesVisibility">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypesVisibility/isAppropriate_FWD_EMoflonEdge_66"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypesVisibility/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ArrayInitializerIgnoreExpressionsEdge">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayInitializerIgnoreExpressionsEdge/isAppropriate_FWD_EMoflonEdge_67"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayInitializerIgnoreExpressionsEdge/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MethodName">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodName/isAppropriate_FWD_EMoflonEdge_68"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodName/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MethodInvocationStaticType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationStaticType/isAppropriate_FWD_EMoflonEdge_69"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationStaticType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InterfaceInPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInPackage/isAppropriate_FWD_EMoflonEdge_70"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInPackage/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InterfaceMember">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceMember/isAppropriate_FWD_EMoflonEdge_71"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceMember/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="FieldAccessWrite">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessWrite/isAppropriate_FWD_EMoflonEdge_72"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessWrite/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeAccessOnAnnotation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnAnnotation/isAppropriate_FWD_EMoflonEdge_73"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnAnnotation/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MethodSignature">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodSignature/isAppropriate_FWD_EMoflonEdge_74"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodSignature/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InterfaceExtendsInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceExtendsInterface/isAppropriate_FWD_EMoflonEdge_75"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceExtendsInterface/checkDEC_FWD"/>
-    </rules>
     <rules ruleName="AnnotationMemberValueBooleanArray">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBooleanArray/isAppropriate_FWD_EMoflonEdge_76"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBooleanArray/isAppropriate_FWD_EMoflonEdge_2"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBooleanArray/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="TextAnnotations">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TextAnnotations/isAppropriate_FWD_EMoflonEdge_77"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TextAnnotations/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="EnumInPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInPackage/isAppropriate_FWD_EMoflonEdge_78"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInPackage/checkDEC_FWD"/>
+    <rules ruleName="InterfaceExtendsInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceExtendsInterface/isAppropriate_FWD_EMoflonEdge_3"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceExtendsInterface/checkDEC_FWD"/>
     </rules>
     <rules ruleName="FieldName">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldName/isAppropriate_FWD_EMoflonEdge_79"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldName/isAppropriate_FWD_EMoflonEdge_4"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldName/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="MethodParameter">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameter/isAppropriate_FWD_EMoflonEdge_80"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameter/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ConstructorInvocation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorInvocation/isAppropriate_FWD_EMoflonEdge_81"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorInvocation/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeIsDouble">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsDouble/isAppropriate_FWD_EMoflonEdge_82"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsDouble/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueClassArray">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClassArray/isAppropriate_FWD_EMoflonEdge_83"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClassArray/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="LinkDefinitionToType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToType/isAppropriate_FWD_EMoflonEdge_84"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MemberInClassVisibility">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInClassVisibility/isAppropriate_FWD_EMoflonEdge_85"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInClassVisibility/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ArrayTypeToType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayTypeToType/isAppropriate_FWD_EMoflonEdge_86"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayTypeToType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeAccessOnBodyDecl">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnBodyDecl/isAppropriate_FWD_EMoflonEdge_87"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnBodyDecl/checkDEC_FWD"/>
-    </rules>
     <rules ruleName="AnnotationTypeMember">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeMember/isAppropriate_FWD_EMoflonEdge_88"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeMember/isAppropriate_FWD_EMoflonEdge_5"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeMember/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="MemberInAnnotationVisibility">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInAnnotationVisibility/isAppropriate_FWD_EMoflonEdge_89"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInAnnotationVisibility/checkDEC_FWD"/>
+    <rules ruleName="AnnotationMemberKey">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberKey/isAppropriate_FWD_EMoflonEdge_6"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberKey/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodParameter">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameter/isAppropriate_FWD_EMoflonEdge_7"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameter/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ClassInPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInPackage/isAppropriate_FWD_EMoflonEdge_8"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInPackage/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="SuperConstructorInvocation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperConstructorInvocation/isAppropriate_FWD_EMoflonEdge_9"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperConstructorInvocation/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ArrayInitializerIgnoreExpressionsEdge">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayInitializerIgnoreExpressionsEdge/isAppropriate_FWD_EMoflonEdge_10"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayInitializerIgnoreExpressionsEdge/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="NestedEnumInType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedEnumInType/isAppropriate_FWD_EMoflonEdge_11"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedEnumInType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="UnresolvedClassDeclaration">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedClassDeclaration/isAppropriate_FWD_EMoflonEdge_12"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedClassDeclaration/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="TypeParameter">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypeParameter/isAppropriate_FWD_EMoflonEdge_13"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypeParameter/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="LinkDefinitionToType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToType/isAppropriate_FWD_EMoflonEdge_14"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="OrphanedClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedClass/isAppropriate_FWD_EMoflonEdge_15"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedClass/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="SuperMethodInvocation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperMethodInvocation/isAppropriate_FWD_EMoflonEdge_16"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperMethodInvocation/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ConstructorInvocation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorInvocation/isAppropriate_FWD_EMoflonEdge_17"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorInvocation/checkDEC_FWD"/>
     </rules>
     <rules ruleName="SubPackageToPGPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SubPackageToPGPackage/isAppropriate_FWD_EMoflonEdge_90"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SubPackageToPGPackage/isAppropriate_FWD_EMoflonEdge_18"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SubPackageToPGPackage/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="FlowNode">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FlowNode/isAppropriate_FWD_EMoflonEdge_91"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FlowNode/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PackageToPGPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PackageToPGPackage/isAppropriate_FWD_EMoflonEdge_92"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PackageToPGPackage/checkDEC_FWD"/>
-    </rules>
     <rules ruleName="PrimitiveTypeIsChar">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsChar/isAppropriate_FWD_EMoflonEdge_93"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsChar/isAppropriate_FWD_EMoflonEdge_19"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsChar/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="ClassImplementsInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsInterface/isAppropriate_FWD_EMoflonEdge_94"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsInterface/checkDEC_FWD"/>
+    <rules ruleName="PrimitiveTypeIsInt">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsInt/isAppropriate_FWD_EMoflonEdge_20"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsInt/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ParameterizedTypeToType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ParameterizedTypeToType/isAppropriate_FWD_EMoflonEdge_21"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ParameterizedTypeToType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PackageToPGPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PackageToPGPackage/isAppropriate_FWD_EMoflonEdge_22"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PackageToPGPackage/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeAccessOnSelf">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnSelf/isAppropriate_FWD_EMoflonEdge_23"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnSelf/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnonymousClassInType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInType/isAppropriate_FWD_EMoflonEdge_24"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypesIsVoid">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypesIsVoid/isAppropriate_FWD_EMoflonEdge_25"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypesIsVoid/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueAnnotationArray">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotationArray/isAppropriate_FWD_EMoflonEdge_26"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotationArray/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsDouble">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsDouble/isAppropriate_FWD_EMoflonEdge_27"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsDouble/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsByte">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsByte/isAppropriate_FWD_EMoflonEdge_28"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsByte/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="FieldSignature">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldSignature/isAppropriate_FWD_EMoflonEdge_29"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldSignature/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodInvocation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocation/isAppropriate_FWD_EMoflonEdge_30"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocation/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeNested">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeNested/isAppropriate_FWD_EMoflonEdge_31"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeNested/checkDEC_FWD"/>
     </rules>
     <rules ruleName="NestedInterfaceInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedInterfaceInType/isAppropriate_FWD_EMoflonEdge_95"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedInterfaceInType/isAppropriate_FWD_EMoflonEdge_32"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedInterfaceInType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ClassInnerClassMember">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerClassMember/isAppropriate_FWD_EMoflonEdge_33"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerClassMember/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnonymousClassInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInAnonymous/isAppropriate_FWD_EMoflonEdge_34"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInAnonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="FieldAccessRead">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessRead/isAppropriate_FWD_EMoflonEdge_35"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessRead/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsFloat">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsFloat/isAppropriate_FWD_EMoflonEdge_36"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsFloat/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ClassImplementsPatrameterizedInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsPatrameterizedInterface/isAppropriate_FWD_EMoflonEdge_37"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsPatrameterizedInterface/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="Annotation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/Annotation/isAppropriate_FWD_EMoflonEdge_38"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/Annotation/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="EnumInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInAnonymous/isAppropriate_FWD_EMoflonEdge_39"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInAnonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="NestedClassInType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedClassInType/isAppropriate_FWD_EMoflonEdge_40"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedClassInType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InterfaceInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInAnonymous/isAppropriate_FWD_EMoflonEdge_41"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInAnonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsShort">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsShort/isAppropriate_FWD_EMoflonEdge_42"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsShort/checkDEC_FWD"/>
     </rules>
     <rules ruleName="ModelToPg">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ModelToPg/isAppropriate_FWD_MGravityModel_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ModelToPg/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="MethodInvocation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocation/isAppropriate_FWD_EMoflonEdge_96"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocation/checkDEC_FWD"/>
+    <rules ruleName="MethodOverriding">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodOverriding/isAppropriate_FWD_EMoflonEdge_43"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodOverriding/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInAnonymous/isAppropriate_FWD_EMoflonEdge_44"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInAnonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MemberInAnnotationVisibility">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInAnnotationVisibility/isAppropriate_FWD_EMoflonEdge_45"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInAnnotationVisibility/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnonymousEnumConstant">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousEnumConstant/isAppropriate_FWD_EMoflonEdge_46"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousEnumConstant/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="SyntethicMethod">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SyntethicMethod/isAppropriate_FWD_EMoflonEdge_47"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SyntethicMethod/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsLong">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsLong/isAppropriate_FWD_EMoflonEdge_48"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsLong/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodParameterLink">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLink/isAppropriate_FWD_EMoflonEdge_49"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLink/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="FlowNode">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FlowNode/isAppropriate_FWD_EMoflonEdge_50"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FlowNode/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeInPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInPackage/isAppropriate_FWD_EMoflonEdge_51"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInPackage/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnonymousClassTypeInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeInterface/isAppropriate_FWD_EMoflonEdge_52"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeInterface/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ArrayTypeToType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayTypeToType/isAppropriate_FWD_EMoflonEdge_53"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayTypeToType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MemberInEnumVisibility">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInEnumVisibility/isAppropriate_FWD_EMoflonEdge_54"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInEnumVisibility/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodInvocationTarget">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationTarget/isAppropriate_FWD_EMoflonEdge_55"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationTarget/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InitializerInType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInType/isAppropriate_FWD_EMoflonEdge_56"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InterfaceInPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInPackage/isAppropriate_FWD_EMoflonEdge_57"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInPackage/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueNumber">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumber/isAppropriate_FWD_EMoflonEdge_58"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumber/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueAnnotation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotation/isAppropriate_FWD_EMoflonEdge_59"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotation/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="TypesVisibility">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypesVisibility/isAppropriate_FWD_EMoflonEdge_60"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypesVisibility/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InitializerInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInAnonymous/isAppropriate_FWD_EMoflonEdge_61"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInAnonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueNumberArray">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumberArray/isAppropriate_FWD_EMoflonEdge_62"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumberArray/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClass/isAppropriate_FWD_EMoflonEdge_63"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClass/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="EnumConstant">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumConstant/isAppropriate_FWD_EMoflonEdge_64"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumConstant/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="LinkDefinitionToAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToAnonymous/isAppropriate_FWD_EMoflonEdge_65"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToAnonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodName">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodName/isAppropriate_FWD_EMoflonEdge_66"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodName/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeAccessOnBodyDecl">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnBodyDecl/isAppropriate_FWD_EMoflonEdge_67"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnBodyDecl/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ConstructorDefinition">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorDefinition/isAppropriate_FWD_EMoflonEdge_68"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorDefinition/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="UnresolvedInterfaceDeclaration">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedInterfaceDeclaration/isAppropriate_FWD_EMoflonEdge_69"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedInterfaceDeclaration/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="UnresolvedMethodDeclaration">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedMethodDeclaration/isAppropriate_FWD_EMoflonEdge_70"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedMethodDeclaration/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="OrphanedEnum">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedEnum/isAppropriate_FWD_EMoflonEdge_71"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedEnum/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueClassArray">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClassArray/isAppropriate_FWD_EMoflonEdge_72"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClassArray/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="FieldAccessWrite">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessWrite/isAppropriate_FWD_EMoflonEdge_73"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessWrite/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="VariableDeclarationFragment">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/VariableDeclarationFragment/isAppropriate_FWD_EMoflonEdge_74"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/VariableDeclarationFragment/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsBoolean">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsBoolean/isAppropriate_FWD_EMoflonEdge_75"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsBoolean/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ClassImplementsInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsInterface/isAppropriate_FWD_EMoflonEdge_76"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsInterface/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="FieldDefinition">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldDefinition/isAppropriate_FWD_EMoflonEdge_77"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldDefinition/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodParameterLinkFirst">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLinkFirst/isAppropriate_FWD_EMoflonEdge_78"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLinkFirst/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ClassInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInAnonymous/isAppropriate_FWD_EMoflonEdge_79"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInAnonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueStringArray">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueStringArray/isAppropriate_FWD_EMoflonEdge_80"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueStringArray/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodSignature">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodSignature/isAppropriate_FWD_EMoflonEdge_81"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodSignature/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="DataFlowIn">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowIn/isAppropriate_FWD_EMoflonEdge_82"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowIn/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="TextAnnotations">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TextAnnotations/isAppropriate_FWD_EMoflonEdge_83"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TextAnnotations/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodDefinition">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodDefinition/isAppropriate_FWD_EMoflonEdge_84"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodDefinition/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnonymousClassTypeClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeClass/isAppropriate_FWD_EMoflonEdge_85"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeClass/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InterfaceMember">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceMember/isAppropriate_FWD_EMoflonEdge_86"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceMember/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="EnumInPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInPackage/isAppropriate_FWD_EMoflonEdge_87"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInPackage/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MemberInClassVisibility">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInClassVisibility/isAppropriate_FWD_EMoflonEdge_88"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInClassVisibility/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeAccessOnAnnotation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnAnnotation/isAppropriate_FWD_EMoflonEdge_89"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnAnnotation/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ClassInnerAnonClassMember">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerAnonClassMember/isAppropriate_FWD_EMoflonEdge_90"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerAnonClassMember/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueString">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueString/isAppropriate_FWD_EMoflonEdge_91"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueString/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="DataFlowOut">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowOut/isAppropriate_FWD_EMoflonEdge_92"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowOut/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodInvocationStaticType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationStaticType/isAppropriate_FWD_EMoflonEdge_93"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationStaticType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ClassExtendsClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassExtendsClass/isAppropriate_FWD_EMoflonEdge_94"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassExtendsClass/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="OrphanedInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedInterface/isAppropriate_FWD_EMoflonEdge_95"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedInterface/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ClassInstanceCreation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInstanceCreation/isAppropriate_FWD_EMoflonEdge_96"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInstanceCreation/checkDEC_FWD"/>
     </rules>
   </sourceRules>
   <targetRules>
-    <rules ruleName="OrphanedInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedInterface/isAppropriate_BWD_EMoflonEdge_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedInterface/checkDEC_BWD"/>
+    <rules ruleName="FieldAccessReadWrite">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessReadWrite/isAppropriate_BWD_EMoflonEdge_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessReadWrite/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="SuperMethodInvocation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperMethodInvocation/isAppropriate_BWD_EMoflonEdge_1"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperMethodInvocation/checkDEC_BWD"/>
+    <rules ruleName="AnnotationMemberValueBoolean">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBoolean/isAppropriate_BWD_EMoflonEdge_1"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBoolean/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypeIsLong">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsLong/isAppropriate_BWD_EMoflonEdge_2"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsLong/checkDEC_BWD"/>
+    <rules ruleName="AnnotationMemberValueBooleanArray">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBooleanArray/isAppropriate_BWD_EMoflonEdge_2"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBooleanArray/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="SyntethicMethod">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SyntethicMethod/isAppropriate_BWD_EMoflonEdge_3"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SyntethicMethod/checkDEC_BWD"/>
+    <rules ruleName="InterfaceExtendsInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceExtendsInterface/isAppropriate_BWD_EMoflonEdge_3"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceExtendsInterface/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypeIsBoolean">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsBoolean/isAppropriate_BWD_EMoflonEdge_4"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsBoolean/checkDEC_BWD"/>
+    <rules ruleName="FieldName">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldName/isAppropriate_BWD_EMoflonEdge_4"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldName/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="AnnotationMemberValueNumberArray">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumberArray/isAppropriate_BWD_EMoflonEdge_5"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumberArray/checkDEC_BWD"/>
+    <rules ruleName="AnnotationTypeMember">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeMember/isAppropriate_BWD_EMoflonEdge_5"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeMember/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="NestedClassInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedClassInType/isAppropriate_BWD_EMoflonEdge_6"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedClassInType/checkDEC_BWD"/>
+    <rules ruleName="AnnotationMemberKey">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberKey/isAppropriate_BWD_EMoflonEdge_6"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberKey/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypeIsShort">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsShort/isAppropriate_BWD_EMoflonEdge_7"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsShort/checkDEC_BWD"/>
+    <rules ruleName="MethodParameter">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameter/isAppropriate_BWD_EMoflonEdge_7"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameter/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="InterfaceInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInAnonymous/isAppropriate_BWD_EMoflonEdge_8"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInAnonymous/checkDEC_BWD"/>
+    <rules ruleName="ClassInPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInPackage/isAppropriate_BWD_EMoflonEdge_8"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInPackage/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="LinkDefinitionToAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToAnonymous/isAppropriate_BWD_EMoflonEdge_9"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToAnonymous/checkDEC_BWD"/>
+    <rules ruleName="SuperConstructorInvocation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperConstructorInvocation/isAppropriate_BWD_EMoflonEdge_9"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperConstructorInvocation/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypesIsVoid">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypesIsVoid/isAppropriate_BWD_EMoflonEdge_10"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypesIsVoid/checkDEC_BWD"/>
+    <rules ruleName="ArrayInitializerIgnoreExpressionsEdge" ignore="true">
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayInitializerIgnoreExpressionsEdge/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="NestedEnumInType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedEnumInType/isAppropriate_BWD_EMoflonEdge_10"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedEnumInType/checkDEC_BWD"/>
     </rules>
     <rules ruleName="UnresolvedClassDeclaration">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedClassDeclaration/isAppropriate_BWD_EMoflonEdge_11"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedClassDeclaration/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="MethodInvocationTarget">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationTarget/isAppropriate_BWD_EMoflonEdge_12"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationTarget/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ClassInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInAnonymous/isAppropriate_BWD_EMoflonEdge_13"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInAnonymous/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeIsInt">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsInt/isAppropriate_BWD_EMoflonEdge_14"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsInt/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberKey">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberKey/isAppropriate_BWD_EMoflonEdge_15"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberKey/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="EnumInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInAnonymous/isAppropriate_BWD_EMoflonEdge_16"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInAnonymous/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueAnnotationArray">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotationArray/isAppropriate_BWD_EMoflonEdge_17"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotationArray/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ClassInstanceCreation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInstanceCreation/isAppropriate_BWD_EMoflonEdge_18"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInstanceCreation/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="FieldSignature">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldSignature/isAppropriate_BWD_EMoflonEdge_19"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldSignature/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInAnonymous/isAppropriate_BWD_EMoflonEdge_20"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInAnonymous/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InitializerInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInAnonymous/isAppropriate_BWD_EMoflonEdge_21"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInAnonymous/checkDEC_BWD"/>
-    </rules>
     <rules ruleName="TypeParameter">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypeParameter/isAppropriate_BWD_EMoflonEdge_22"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypeParameter/isAppropriate_BWD_EMoflonEdge_12"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypeParameter/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="AnonymousClassTypeClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeClass/isAppropriate_BWD_EMoflonEdge_23"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeClass/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ClassInPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInPackage/isAppropriate_BWD_EMoflonEdge_24"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInPackage/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueString">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueString/isAppropriate_BWD_EMoflonEdge_25"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueString/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeInPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInPackage/isAppropriate_BWD_EMoflonEdge_26"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInPackage/checkDEC_BWD"/>
+    <rules ruleName="LinkDefinitionToType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToType/isAppropriate_BWD_EMoflonEdge_13"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToType/checkDEC_BWD"/>
     </rules>
     <rules ruleName="OrphanedClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedClass/isAppropriate_BWD_EMoflonEdge_27"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedClass/isAppropriate_BWD_EMoflonEdge_14"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedClass/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="SuperMethodInvocation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperMethodInvocation/isAppropriate_BWD_EMoflonEdge_15"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperMethodInvocation/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ConstructorInvocation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorInvocation/isAppropriate_BWD_EMoflonEdge_16"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorInvocation/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="SubPackageToPGPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SubPackageToPGPackage/isAppropriate_BWD_EMoflonEdge_17"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SubPackageToPGPackage/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsChar">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsChar/isAppropriate_BWD_EMoflonEdge_18"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsChar/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsInt">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsInt/isAppropriate_BWD_EMoflonEdge_19"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsInt/checkDEC_BWD"/>
     </rules>
     <rules ruleName="ParameterizedTypeToType" ignore="true">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ParameterizedTypeToType/isAppropriate_BWD_TAbstractType_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ParameterizedTypeToType/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="InitializerInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInType/isAppropriate_BWD_EMoflonEdge_28"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInType/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="EnumConstant">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumConstant/isAppropriate_BWD_EMoflonEdge_29"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumConstant/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="NestedEnumInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedEnumInType/isAppropriate_BWD_EMoflonEdge_30"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedEnumInType/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnonymousClassInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInAnonymous/isAppropriate_BWD_EMoflonEdge_31"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInAnonymous/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="DataFlowOut">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowOut/isAppropriate_BWD_EMoflonEdge_32"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowOut/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="Annotation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/Annotation/isAppropriate_BWD_EMoflonEdge_33"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/Annotation/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="MethodParameterLinkFirst">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLinkFirst/isAppropriate_BWD_EMoflonEdge_34"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLinkFirst/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="FieldAccessReadWrite">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessReadWrite/isAppropriate_BWD_EMoflonEdge_35"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessReadWrite/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueAnnotation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotation/isAppropriate_BWD_EMoflonEdge_36"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotation/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="MethodOverriding">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodOverriding/isAppropriate_BWD_EMoflonEdge_37"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodOverriding/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="UnresolvedInterfaceDeclaration">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedInterfaceDeclaration/isAppropriate_BWD_EMoflonEdge_38"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedInterfaceDeclaration/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="VariableDeclarationFragment" ignore="true">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/VariableDeclarationFragment/isAppropriate_BWD_TFieldDefinition_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/VariableDeclarationFragment/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeIsByte">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsByte/isAppropriate_BWD_EMoflonEdge_39"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsByte/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeIsFloat">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsFloat/isAppropriate_BWD_EMoflonEdge_40"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsFloat/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ConstructorDefinition">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorDefinition/isAppropriate_BWD_EMoflonEdge_41"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorDefinition/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="OrphanedEnum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedEnum/isAppropriate_BWD_EMoflonEdge_42"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedEnum/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnonymousClassTypeInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeInterface/isAppropriate_BWD_EMoflonEdge_43"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeInterface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="FieldAccessRead">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessRead/isAppropriate_BWD_EMoflonEdge_44"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessRead/checkDEC_BWD"/>
+    <rules ruleName="PackageToPGPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PackageToPGPackage/isAppropriate_BWD_EMoflonEdge_20"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PackageToPGPackage/checkDEC_BWD"/>
     </rules>
     <rules ruleName="AnnotationTypeAccessOnSelf">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnSelf/isAppropriate_BWD_EMoflonEdge_45"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnSelf/isAppropriate_BWD_EMoflonEdge_21"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnSelf/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="AnnotationMemberValueNumber">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumber/isAppropriate_BWD_EMoflonEdge_46"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumber/checkDEC_BWD"/>
-    </rules>
     <rules ruleName="AnonymousClassInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInType/isAppropriate_BWD_EMoflonEdge_47"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInType/isAppropriate_BWD_EMoflonEdge_22"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInType/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="AnnotationMemberValueClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClass/isAppropriate_BWD_EMoflonEdge_48"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClass/checkDEC_BWD"/>
+    <rules ruleName="PrimitiveTypesIsVoid">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypesIsVoid/isAppropriate_BWD_EMoflonEdge_23"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypesIsVoid/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="MethodParameterLink">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLink/isAppropriate_BWD_EMoflonEdge_49"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLink/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ClassInnerClassMember">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerClassMember/isAppropriate_BWD_EMoflonEdge_50"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerClassMember/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="DataFlowIn">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowIn/isAppropriate_BWD_EMoflonEdge_51"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowIn/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnonymousEnumConstant">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousEnumConstant/isAppropriate_BWD_EMoflonEdge_52"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousEnumConstant/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueBoolean">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBoolean/isAppropriate_BWD_EMoflonEdge_53"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBoolean/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ClassInnerAnonClassMember">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerAnonClassMember/isAppropriate_BWD_EMoflonEdge_54"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerAnonClassMember/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="UnresolvedMethodDeclaration">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedMethodDeclaration/isAppropriate_BWD_EMoflonEdge_55"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedMethodDeclaration/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="MemberInEnumVisibility">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInEnumVisibility/isAppropriate_BWD_EMoflonEdge_56"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInEnumVisibility/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeNested">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeNested/isAppropriate_BWD_EMoflonEdge_57"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeNested/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueStringArray">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueStringArray/isAppropriate_BWD_EMoflonEdge_58"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueStringArray/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="FieldDefinition">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldDefinition/isAppropriate_BWD_EMoflonEdge_59"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldDefinition/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ClassExtendsClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassExtendsClass/isAppropriate_BWD_EMoflonEdge_60"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassExtendsClass/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ClassImplementsPatrameterizedInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsPatrameterizedInterface/isAppropriate_BWD_EMoflonEdge_61"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsPatrameterizedInterface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="SuperConstructorInvocation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperConstructorInvocation/isAppropriate_BWD_EMoflonEdge_62"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SuperConstructorInvocation/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="MethodDefinition">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodDefinition/isAppropriate_BWD_EMoflonEdge_63"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodDefinition/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="TypesVisibility">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypesVisibility/isAppropriate_BWD_EMoflonEdge_64"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypesVisibility/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ArrayInitializerIgnoreExpressionsEdge" ignore="true">
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayInitializerIgnoreExpressionsEdge/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="MethodName">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodName/isAppropriate_BWD_EMoflonEdge_65"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodName/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="MethodInvocationStaticType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationStaticType/isAppropriate_BWD_EMoflonEdge_66"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationStaticType/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InterfaceInPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInPackage/isAppropriate_BWD_EMoflonEdge_67"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInPackage/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InterfaceMember">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceMember/isAppropriate_BWD_EMoflonEdge_68"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceMember/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="FieldAccessWrite">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessWrite/isAppropriate_BWD_EMoflonEdge_69"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessWrite/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeAccessOnAnnotation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnAnnotation/isAppropriate_BWD_EMoflonEdge_70"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnAnnotation/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="MethodSignature">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodSignature/isAppropriate_BWD_EMoflonEdge_71"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodSignature/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InterfaceExtendsInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceExtendsInterface/isAppropriate_BWD_EMoflonEdge_72"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceExtendsInterface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationMemberValueBooleanArray">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBooleanArray/isAppropriate_BWD_EMoflonEdge_73"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueBooleanArray/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="TextAnnotations">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TextAnnotations/isAppropriate_BWD_EMoflonEdge_74"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TextAnnotations/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="EnumInPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInPackage/isAppropriate_BWD_EMoflonEdge_75"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInPackage/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="FieldName">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldName/isAppropriate_BWD_EMoflonEdge_76"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldName/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="MethodParameter">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameter/isAppropriate_BWD_EMoflonEdge_77"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameter/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ConstructorInvocation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorInvocation/isAppropriate_BWD_EMoflonEdge_78"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorInvocation/checkDEC_BWD"/>
+    <rules ruleName="AnnotationMemberValueAnnotationArray">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotationArray/isAppropriate_BWD_EMoflonEdge_24"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotationArray/checkDEC_BWD"/>
     </rules>
     <rules ruleName="PrimitiveTypeIsDouble">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsDouble/isAppropriate_BWD_EMoflonEdge_79"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsDouble/isAppropriate_BWD_EMoflonEdge_25"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsDouble/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="AnnotationMemberValueClassArray">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClassArray/isAppropriate_BWD_EMoflonEdge_80"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClassArray/checkDEC_BWD"/>
+    <rules ruleName="PrimitiveTypeIsByte">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsByte/isAppropriate_BWD_EMoflonEdge_26"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsByte/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="LinkDefinitionToType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToType/isAppropriate_BWD_EMoflonEdge_81"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToType/checkDEC_BWD"/>
+    <rules ruleName="FieldSignature">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldSignature/isAppropriate_BWD_EMoflonEdge_27"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldSignature/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="MemberInClassVisibility">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInClassVisibility/isAppropriate_BWD_EMoflonEdge_82"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInClassVisibility/checkDEC_BWD"/>
+    <rules ruleName="MethodInvocation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocation/isAppropriate_BWD_EMoflonEdge_28"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocation/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeNested">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeNested/isAppropriate_BWD_EMoflonEdge_29"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeNested/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="NestedInterfaceInType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedInterfaceInType/isAppropriate_BWD_EMoflonEdge_30"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedInterfaceInType/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ClassInnerClassMember">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerClassMember/isAppropriate_BWD_EMoflonEdge_31"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerClassMember/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnonymousClassInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInAnonymous/isAppropriate_BWD_EMoflonEdge_32"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassInAnonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="FieldAccessRead">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessRead/isAppropriate_BWD_EMoflonEdge_33"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessRead/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsFloat">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsFloat/isAppropriate_BWD_EMoflonEdge_34"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsFloat/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ClassImplementsPatrameterizedInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsPatrameterizedInterface/isAppropriate_BWD_EMoflonEdge_35"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsPatrameterizedInterface/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="Annotation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/Annotation/isAppropriate_BWD_EMoflonEdge_36"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/Annotation/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="EnumInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInAnonymous/isAppropriate_BWD_EMoflonEdge_37"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInAnonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="NestedClassInType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedClassInType/isAppropriate_BWD_EMoflonEdge_38"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedClassInType/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="InterfaceInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInAnonymous/isAppropriate_BWD_EMoflonEdge_39"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInAnonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsShort">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsShort/isAppropriate_BWD_EMoflonEdge_40"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsShort/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ModelToPg">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ModelToPg/isAppropriate_BWD_EMoflonEdge_41"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ModelToPg/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="MethodOverriding">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodOverriding/isAppropriate_BWD_EMoflonEdge_42"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodOverriding/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInAnonymous/isAppropriate_BWD_EMoflonEdge_43"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInAnonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="MemberInAnnotationVisibility">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInAnnotationVisibility/isAppropriate_BWD_EMoflonEdge_44"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInAnnotationVisibility/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnonymousEnumConstant">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousEnumConstant/isAppropriate_BWD_EMoflonEdge_45"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousEnumConstant/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="SyntethicMethod">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SyntethicMethod/isAppropriate_BWD_EMoflonEdge_46"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SyntethicMethod/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsLong">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsLong/isAppropriate_BWD_EMoflonEdge_47"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsLong/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="MethodParameterLink">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLink/isAppropriate_BWD_EMoflonEdge_48"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLink/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="FlowNode">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FlowNode/isAppropriate_BWD_EMoflonEdge_49"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FlowNode/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeInPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInPackage/isAppropriate_BWD_EMoflonEdge_50"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeInPackage/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnonymousClassTypeInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeInterface/isAppropriate_BWD_EMoflonEdge_51"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeInterface/checkDEC_BWD"/>
     </rules>
     <rules ruleName="ArrayTypeToType" ignore="true">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayTypeToType/isAppropriate_BWD_TypeGraph_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ArrayTypeToType/checkDEC_BWD"/>
     </rules>
+    <rules ruleName="MemberInEnumVisibility">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInEnumVisibility/isAppropriate_BWD_EMoflonEdge_52"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInEnumVisibility/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="MethodInvocationTarget">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationTarget/isAppropriate_BWD_EMoflonEdge_53"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationTarget/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="InitializerInType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInType/isAppropriate_BWD_EMoflonEdge_54"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInType/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="InterfaceInPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInPackage/isAppropriate_BWD_EMoflonEdge_55"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceInPackage/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueNumber">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumber/isAppropriate_BWD_EMoflonEdge_56"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumber/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueAnnotation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotation/isAppropriate_BWD_EMoflonEdge_57"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueAnnotation/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="TypesVisibility">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypesVisibility/isAppropriate_BWD_EMoflonEdge_58"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TypesVisibility/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="InitializerInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInAnonymous/isAppropriate_BWD_EMoflonEdge_59"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InitializerInAnonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueNumberArray">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumberArray/isAppropriate_BWD_EMoflonEdge_60"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueNumberArray/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClass/isAppropriate_BWD_EMoflonEdge_61"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClass/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="EnumConstant">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumConstant/isAppropriate_BWD_EMoflonEdge_62"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumConstant/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="LinkDefinitionToAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToAnonymous/isAppropriate_BWD_EMoflonEdge_63"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/LinkDefinitionToAnonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="MethodName">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodName/isAppropriate_BWD_EMoflonEdge_64"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodName/checkDEC_BWD"/>
+    </rules>
     <rules ruleName="AnnotationTypeAccessOnBodyDecl">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnBodyDecl/isAppropriate_BWD_EMoflonEdge_83"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnBodyDecl/isAppropriate_BWD_EMoflonEdge_65"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnBodyDecl/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="AnnotationTypeMember">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeMember/isAppropriate_BWD_EMoflonEdge_84"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeMember/checkDEC_BWD"/>
+    <rules ruleName="ConstructorDefinition">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorDefinition/isAppropriate_BWD_EMoflonEdge_66"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ConstructorDefinition/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="MemberInAnnotationVisibility">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInAnnotationVisibility/isAppropriate_BWD_EMoflonEdge_85"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInAnnotationVisibility/checkDEC_BWD"/>
+    <rules ruleName="UnresolvedInterfaceDeclaration">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedInterfaceDeclaration/isAppropriate_BWD_EMoflonEdge_67"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedInterfaceDeclaration/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="SubPackageToPGPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SubPackageToPGPackage/isAppropriate_BWD_EMoflonEdge_86"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/SubPackageToPGPackage/checkDEC_BWD"/>
+    <rules ruleName="UnresolvedMethodDeclaration">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedMethodDeclaration/isAppropriate_BWD_EMoflonEdge_68"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/UnresolvedMethodDeclaration/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="FlowNode">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FlowNode/isAppropriate_BWD_EMoflonEdge_87"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FlowNode/checkDEC_BWD"/>
+    <rules ruleName="OrphanedEnum">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedEnum/isAppropriate_BWD_EMoflonEdge_69"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedEnum/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="PackageToPGPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PackageToPGPackage/isAppropriate_BWD_EMoflonEdge_88"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PackageToPGPackage/checkDEC_BWD"/>
+    <rules ruleName="AnnotationMemberValueClassArray">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClassArray/isAppropriate_BWD_EMoflonEdge_70"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueClassArray/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypeIsChar">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsChar/isAppropriate_BWD_EMoflonEdge_89"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsChar/checkDEC_BWD"/>
+    <rules ruleName="FieldAccessWrite">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessWrite/isAppropriate_BWD_EMoflonEdge_71"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldAccessWrite/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="VariableDeclarationFragment" ignore="true">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/VariableDeclarationFragment/isAppropriate_BWD_TFieldDefinition_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/VariableDeclarationFragment/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeIsBoolean">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsBoolean/isAppropriate_BWD_EMoflonEdge_72"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/PrimitiveTypeIsBoolean/checkDEC_BWD"/>
     </rules>
     <rules ruleName="ClassImplementsInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsInterface/isAppropriate_BWD_EMoflonEdge_90"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsInterface/isAppropriate_BWD_EMoflonEdge_73"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassImplementsInterface/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="NestedInterfaceInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedInterfaceInType/isAppropriate_BWD_EMoflonEdge_91"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/NestedInterfaceInType/checkDEC_BWD"/>
+    <rules ruleName="FieldDefinition">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldDefinition/isAppropriate_BWD_EMoflonEdge_74"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/FieldDefinition/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="ModelToPg">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ModelToPg/isAppropriate_BWD_EMoflonEdge_92"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ModelToPg/checkDEC_BWD"/>
+    <rules ruleName="MethodParameterLinkFirst">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLinkFirst/isAppropriate_BWD_EMoflonEdge_75"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodParameterLinkFirst/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="MethodInvocation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocation/isAppropriate_BWD_EMoflonEdge_93"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocation/checkDEC_BWD"/>
+    <rules ruleName="ClassInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInAnonymous/isAppropriate_BWD_EMoflonEdge_76"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInAnonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueStringArray">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueStringArray/isAppropriate_BWD_EMoflonEdge_77"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueStringArray/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="MethodSignature">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodSignature/isAppropriate_BWD_EMoflonEdge_78"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodSignature/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="DataFlowIn">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowIn/isAppropriate_BWD_EMoflonEdge_79"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowIn/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="TextAnnotations">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TextAnnotations/isAppropriate_BWD_EMoflonEdge_80"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/TextAnnotations/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="MethodDefinition">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodDefinition/isAppropriate_BWD_EMoflonEdge_81"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodDefinition/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnonymousClassTypeClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeClass/isAppropriate_BWD_EMoflonEdge_82"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnonymousClassTypeClass/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="InterfaceMember">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceMember/isAppropriate_BWD_EMoflonEdge_83"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/InterfaceMember/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="EnumInPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInPackage/isAppropriate_BWD_EMoflonEdge_84"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/EnumInPackage/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="MemberInClassVisibility">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInClassVisibility/isAppropriate_BWD_EMoflonEdge_85"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MemberInClassVisibility/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeAccessOnAnnotation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnAnnotation/isAppropriate_BWD_EMoflonEdge_86"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationTypeAccessOnAnnotation/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ClassInnerAnonClassMember">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerAnonClassMember/isAppropriate_BWD_EMoflonEdge_87"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInnerAnonClassMember/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationMemberValueString">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueString/isAppropriate_BWD_EMoflonEdge_88"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/AnnotationMemberValueString/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="DataFlowOut">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowOut/isAppropriate_BWD_EMoflonEdge_89"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/DataFlowOut/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="MethodInvocationStaticType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationStaticType/isAppropriate_BWD_EMoflonEdge_90"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/MethodInvocationStaticType/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ClassExtendsClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassExtendsClass/isAppropriate_BWD_EMoflonEdge_91"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassExtendsClass/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="OrphanedInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedInterface/isAppropriate_BWD_EMoflonEdge_92"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/OrphanedInterface/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ClassInstanceCreation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInstanceCreation/isAppropriate_BWD_EMoflonEdge_93"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.pm/model/Pm.ecore#//Rules/ClassInstanceCreation/checkDEC_BWD"/>
     </rules>
   </targetRules>
 </analysis:StaticAnalysis>

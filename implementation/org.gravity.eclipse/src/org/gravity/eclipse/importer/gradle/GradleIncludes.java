@@ -85,7 +85,7 @@ public final class GradleIncludes {
 	public Set<Path> getJavaSourceFiles(final Path buildDotGradle) throws IOException {
 		Set<Path> javaSourceFiles = null;
 		try {
-			javaSourceFiles = new GradleJavaFiles(buildDotGradle).getJavaFiles();
+			javaSourceFiles = GradleJavaFiles.getJavaFiles(buildDotGradle);
 		} catch (final IOException e) {
 			GradleImport.LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		} catch (final GradleImportException e) {

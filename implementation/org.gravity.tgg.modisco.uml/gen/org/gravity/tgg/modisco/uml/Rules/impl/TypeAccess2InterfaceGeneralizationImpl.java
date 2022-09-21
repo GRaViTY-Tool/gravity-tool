@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 
 import org.eclipse.modisco.java.ASTNode;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.Annotation;
 import org.eclipse.modisco.java.AnnotationMemberValuePair;
 import org.eclipse.modisco.java.ArrayType;
@@ -21,7 +22,6 @@ import org.eclipse.modisco.java.InterfaceDeclaration;
 import org.eclipse.modisco.java.MethodDeclaration;
 import org.eclipse.modisco.java.ParameterizedType;
 import org.eclipse.modisco.java.SingleVariableDeclaration;
-import org.eclipse.modisco.java.Type;
 import org.eclipse.modisco.java.TypeAccess;
 
 import org.eclipse.modisco.java.emf.JavaFactory;
@@ -107,25 +107,25 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, InterfaceDeclaration classDec, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec) {
+	public boolean isAppropriate_FWD(Match match, InterfaceDeclaration superInterfaceDec, TypeAccess typeAcc,
+			InterfaceDeclaration classDec) {
 
 		Object[] result1_black = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_0_1_initialbindings_blackBBBBB(this, match, classDec,
-						typeAcc, superInterfaceDec);
+				.pattern_TypeAccess2InterfaceGeneralization_0_1_initialbindings_blackBBBBB(this, match,
+						superInterfaceDec, typeAcc, classDec);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[classDec] = " + classDec + ", " + "[typeAcc] = " + typeAcc + ", "
-					+ "[superInterfaceDec] = " + superInterfaceDec + ".");
+					+ "[match] = " + match + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", " + "[typeAcc] = "
+					+ typeAcc + ", " + "[classDec] = " + classDec + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, classDec,
-						typeAcc, superInterfaceDec);
+				.pattern_TypeAccess2InterfaceGeneralization_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match,
+						superInterfaceDec, typeAcc, classDec);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[classDec] = " + classDec + ", " + "[typeAcc] = " + typeAcc + ", "
-					+ "[superInterfaceDec] = " + superInterfaceDec + ".");
+					+ "[match] = " + match + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", " + "[typeAcc] = "
+					+ typeAcc + ", " + "[classDec] = " + classDec + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -134,35 +134,35 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 			Object[] result4_black = TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_0_4_collectelementstobetranslated_blackBBBB(match,
-							classDec, typeAcc, superInterfaceDec);
+							superInterfaceDec, typeAcc, classDec);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[classDec] = " + classDec + ", " + "[typeAcc] = " + typeAcc + ", " + "[superInterfaceDec] = "
-						+ superInterfaceDec + ".");
+						+ "[superInterfaceDec] = " + superInterfaceDec + ", " + "[typeAcc] = " + typeAcc + ", "
+						+ "[classDec] = " + classDec + ".");
 			}
 			TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_0_4_collectelementstobetranslated_greenBBBBFFF(match,
-							classDec, typeAcc, superInterfaceDec);
-			//nothing EMoflonEdge classDec__typeAcc____superInterfaces = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge typeAcc__superInterfaceDec____type = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result4_green[6];
+							superInterfaceDec, typeAcc, classDec);
+			//nothing EMoflonEdge typeAcc__superInterfaceDec____type = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge classDec__typeAcc____superInterfaces = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = TypeAccess2InterfaceGeneralizationImpl
-					.pattern_TypeAccess2InterfaceGeneralization_0_5_collectcontextelements_blackBBBB(match, classDec,
-							typeAcc, superInterfaceDec);
+					.pattern_TypeAccess2InterfaceGeneralization_0_5_collectcontextelements_blackBBBB(match,
+							superInterfaceDec, typeAcc, classDec);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[classDec] = " + classDec + ", " + "[typeAcc] = " + typeAcc + ", " + "[superInterfaceDec] = "
-						+ superInterfaceDec + ".");
+						+ "[superInterfaceDec] = " + superInterfaceDec + ", " + "[typeAcc] = " + typeAcc + ", "
+						+ "[classDec] = " + classDec + ".");
 			}
 			TypeAccess2InterfaceGeneralizationImpl
-					.pattern_TypeAccess2InterfaceGeneralization_0_5_collectcontextelements_greenBBB(match, classDec,
-							superInterfaceDec);
+					.pattern_TypeAccess2InterfaceGeneralization_0_5_collectcontextelements_greenBBB(match,
+							superInterfaceDec, classDec);
 
 			// 
 			TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_0_6_registerobjectstomatch_expressionBBBBB(this, match,
-							classDec, typeAcc, superInterfaceDec);
+							superInterfaceDec, typeAcc, classDec);
 			return TypeAccess2InterfaceGeneralizationImpl.pattern_TypeAccess2InterfaceGeneralization_0_7_expressionF();
 		} else {
 			return TypeAccess2InterfaceGeneralizationImpl.pattern_TypeAccess2InterfaceGeneralization_0_8_expressionF();
@@ -184,64 +184,64 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		InterfaceDeclaration classDec = (InterfaceDeclaration) result1_bindingAndBlack[0];
-		ASTNode2Element cd2c2 = (ASTNode2Element) result1_bindingAndBlack[1];
-		TypeAccess typeAcc = (TypeAccess) result1_bindingAndBlack[2];
-		ASTNode2Element cd2c = (ASTNode2Element) result1_bindingAndBlack[3];
-		InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result1_bindingAndBlack[4];
-		Interface childInterface = (Interface) result1_bindingAndBlack[5];
-		Interface superInterface = (Interface) result1_bindingAndBlack[6];
+		Interface childInterface = (Interface) result1_bindingAndBlack[0];
+		InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result1_bindingAndBlack[1];
+		ASTNode2Element cd2c2 = (ASTNode2Element) result1_bindingAndBlack[2];
+		Interface superInterface = (Interface) result1_bindingAndBlack[3];
+		ASTNode2Element cd2c = (ASTNode2Element) result1_bindingAndBlack[4];
+		TypeAccess typeAcc = (TypeAccess) result1_bindingAndBlack[5];
+		InterfaceDeclaration classDec = (InterfaceDeclaration) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_greenFBBBF(typeAcc,
-						childInterface, superInterface);
-		Generalization interfaceGeneralization = (Generalization) result1_green[0];
-		TypeAccess2Generalization ta2g = (TypeAccess2Generalization) result1_green[4];
+				.pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_greenBFBBF(childInterface,
+						superInterface, typeAcc);
+		TypeAccess2Generalization ta2g = (TypeAccess2Generalization) result1_green[1];
+		Generalization interfaceGeneralization = (Generalization) result1_green[4];
 
 		Object[] result2_black = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_1_2_collecttranslatedelements_blackBBB(
-						interfaceGeneralization, typeAcc, ta2g);
+				.pattern_TypeAccess2InterfaceGeneralization_1_2_collecttranslatedelements_blackBBB(ta2g, typeAcc,
+						interfaceGeneralization);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[interfaceGeneralization] = "
-					+ interfaceGeneralization + ", " + "[typeAcc] = " + typeAcc + ", " + "[ta2g] = " + ta2g + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ta2g] = " + ta2g + ", "
+					+ "[typeAcc] = " + typeAcc + ", " + "[interfaceGeneralization] = " + interfaceGeneralization + ".");
 		}
 		Object[] result2_green = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_1_2_collecttranslatedelements_greenFBBB(
-						interfaceGeneralization, typeAcc, ta2g);
+				.pattern_TypeAccess2InterfaceGeneralization_1_2_collecttranslatedelements_greenFBBB(ta2g, typeAcc,
+						interfaceGeneralization);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult,
-						classDec, interfaceGeneralization, cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface,
-						superInterface, ta2g);
+						childInterface, superInterfaceDec, cd2c2, ta2g, superInterface, cd2c, typeAcc, classDec,
+						interfaceGeneralization);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[classDec] = " + classDec + ", " + "[interfaceGeneralization] = "
-					+ interfaceGeneralization + ", " + "[cd2c2] = " + cd2c2 + ", " + "[typeAcc] = " + typeAcc + ", "
-					+ "[cd2c] = " + cd2c + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", "
-					+ "[childInterface] = " + childInterface + ", " + "[superInterface] = " + superInterface + ", "
-					+ "[ta2g] = " + ta2g + ".");
+					+ ", " + "[childInterface] = " + childInterface + ", " + "[superInterfaceDec] = "
+					+ superInterfaceDec + ", " + "[cd2c2] = " + cd2c2 + ", " + "[ta2g] = " + ta2g + ", "
+					+ "[superInterface] = " + superInterface + ", " + "[cd2c] = " + cd2c + ", " + "[typeAcc] = "
+					+ typeAcc + ", " + "[classDec] = " + classDec + ", " + "[interfaceGeneralization] = "
+					+ interfaceGeneralization + ".");
 		}
 		TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFF(ruleresult,
-						classDec, interfaceGeneralization, typeAcc, superInterfaceDec, childInterface, superInterface,
-						ta2g);
-		//nothing EMoflonEdge classDec__typeAcc____superInterfaces = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge typeAcc__superInterfaceDec____type = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge childInterface__superInterface____general = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge interfaceGeneralization__superInterface____general = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge childInterface__interfaceGeneralization____generalization = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge interfaceGeneralization__childInterface____specific = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge ta2g__typeAcc____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge ta2g__interfaceGeneralization____target = (EMoflonEdge) result3_green[16];
+						childInterface, superInterfaceDec, ta2g, superInterface, typeAcc, classDec,
+						interfaceGeneralization);
+		//nothing EMoflonEdge childInterface__superInterface____general = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge childInterface__interfaceGeneralization____generalization = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge interfaceGeneralization__childInterface____specific = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge ta2g__typeAcc____source = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge typeAcc__superInterfaceDec____type = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge classDec__typeAcc____superInterfaces = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge ta2g__interfaceGeneralization____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge interfaceGeneralization__superInterface____general = (EMoflonEdge) result3_green[16];
 
 		// 
 		// 
 		TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
-						classDec, interfaceGeneralization, cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface,
-						superInterface, ta2g);
+						childInterface, superInterfaceDec, cd2c2, ta2g, superInterface, cd2c, typeAcc, classDec,
+						interfaceGeneralization);
 		return TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_1_6_expressionFB(ruleresult);
 	}
@@ -271,42 +271,42 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		InterfaceDeclaration classDec = (InterfaceDeclaration) result2_binding[0];
+		InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result2_binding[0];
 		TypeAccess typeAcc = (TypeAccess) result2_binding[1];
-		InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result2_binding[2];
+		InterfaceDeclaration classDec = (InterfaceDeclaration) result2_binding[2];
 		for (Object[] result2_black : TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_2_2_corematch_blackBFBFBFFB(classDec, typeAcc,
-						superInterfaceDec, match)) {
-			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[1];
-			ASTNode2Element cd2c = (ASTNode2Element) result2_black[3];
-			Interface childInterface = (Interface) result2_black[5];
-			Interface superInterface = (Interface) result2_black[6];
+				.pattern_TypeAccess2InterfaceGeneralization_2_2_corematch_blackFBFFFBBB(superInterfaceDec, typeAcc,
+						classDec, match)) {
+			Interface childInterface = (Interface) result2_black[0];
+			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[2];
+			Interface superInterface = (Interface) result2_black[3];
+			ASTNode2Element cd2c = (ASTNode2Element) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : TypeAccess2InterfaceGeneralizationImpl
-					.pattern_TypeAccess2InterfaceGeneralization_2_3_findcontext_blackBBBBBBB(classDec, cd2c2, typeAcc,
-							cd2c, superInterfaceDec, childInterface, superInterface)) {
+					.pattern_TypeAccess2InterfaceGeneralization_2_3_findcontext_blackBBBBBBB(childInterface,
+							superInterfaceDec, cd2c2, superInterface, cd2c, typeAcc, classDec)) {
 				Object[] result3_green = TypeAccess2InterfaceGeneralizationImpl
-						.pattern_TypeAccess2InterfaceGeneralization_2_3_findcontext_greenBBBBBBBFFFFFFFF(classDec,
-								cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface, superInterface);
+						.pattern_TypeAccess2InterfaceGeneralization_2_3_findcontext_greenBBBBBBBFFFFFFFF(childInterface,
+								superInterfaceDec, cd2c2, superInterface, cd2c, typeAcc, classDec);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge classDec__typeAcc____superInterfaces = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge cd2c__classDec____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge typeAcc__superInterfaceDec____type = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge cd2c2__superInterfaceDec____source = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge cd2c__childInterface____target = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge cd2c2__superInterface____target = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge cd2c2__superInterface____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge cd2c2__superInterfaceDec____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge cd2c__childInterface____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge typeAcc__superInterfaceDec____type = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge cd2c__classDec____source = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge classDec__typeAcc____superInterfaces = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = TypeAccess2InterfaceGeneralizationImpl
 						.pattern_TypeAccess2InterfaceGeneralization_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, classDec, cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface,
-								superInterface);
+								isApplicableMatch, childInterface, superInterfaceDec, cd2c2, superInterface, cd2c,
+								typeAcc, classDec);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[classDec] = " + classDec + ", "
-							+ "[cd2c2] = " + cd2c2 + ", " + "[typeAcc] = " + typeAcc + ", " + "[cd2c] = " + cd2c + ", "
-							+ "[superInterfaceDec] = " + superInterfaceDec + ", " + "[childInterface] = "
-							+ childInterface + ", " + "[superInterface] = " + superInterface + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[childInterface] = "
+							+ childInterface + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", " + "[cd2c2] = "
+							+ cd2c2 + ", " + "[superInterface] = " + superInterface + ", " + "[cd2c] = " + cd2c + ", "
+							+ "[typeAcc] = " + typeAcc + ", " + "[classDec] = " + classDec + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -339,11 +339,11 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, InterfaceDeclaration classDec, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec) {
-		match.registerObject("classDec", classDec);
-		match.registerObject("typeAcc", typeAcc);
+	public void registerObjectsToMatch_FWD(Match match, InterfaceDeclaration superInterfaceDec, TypeAccess typeAcc,
+			InterfaceDeclaration classDec) {
 		match.registerObject("superInterfaceDec", superInterfaceDec);
+		match.registerObject("typeAcc", typeAcc);
+		match.registerObject("classDec", classDec);
 
 	}
 
@@ -352,8 +352,8 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, InterfaceDeclaration classDec, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, InterfaceDeclaration superInterfaceDec, TypeAccess typeAcc,
+			InterfaceDeclaration classDec) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -382,9 +382,9 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration classDec,
-			ASTNode2Element cd2c2, TypeAccess typeAcc, ASTNode2Element cd2c, InterfaceDeclaration superInterfaceDec,
-			Interface childInterface, Interface superInterface) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Interface childInterface,
+			InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2, Interface superInterface,
+			ASTNode2Element cd2c, TypeAccess typeAcc, InterfaceDeclaration classDec) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -399,13 +399,13 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("classDec", classDec);
-		isApplicableMatch.registerObject("cd2c2", cd2c2);
-		isApplicableMatch.registerObject("typeAcc", typeAcc);
-		isApplicableMatch.registerObject("cd2c", cd2c);
-		isApplicableMatch.registerObject("superInterfaceDec", superInterfaceDec);
 		isApplicableMatch.registerObject("childInterface", childInterface);
+		isApplicableMatch.registerObject("superInterfaceDec", superInterfaceDec);
+		isApplicableMatch.registerObject("cd2c2", cd2c2);
 		isApplicableMatch.registerObject("superInterface", superInterface);
+		isApplicableMatch.registerObject("cd2c", cd2c);
+		isApplicableMatch.registerObject("typeAcc", typeAcc);
+		isApplicableMatch.registerObject("classDec", classDec);
 		return csp;
 	}
 
@@ -423,18 +423,18 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject classDec, EObject interfaceGeneralization,
-			EObject cd2c2, EObject typeAcc, EObject cd2c, EObject superInterfaceDec, EObject childInterface,
-			EObject superInterface, EObject ta2g) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject childInterface, EObject superInterfaceDec,
+			EObject cd2c2, EObject ta2g, EObject superInterface, EObject cd2c, EObject typeAcc, EObject classDec,
+			EObject interfaceGeneralization) {
+		ruleresult.registerObject("childInterface", childInterface);
+		ruleresult.registerObject("superInterfaceDec", superInterfaceDec);
+		ruleresult.registerObject("cd2c2", cd2c2);
+		ruleresult.registerObject("ta2g", ta2g);
+		ruleresult.registerObject("superInterface", superInterface);
+		ruleresult.registerObject("cd2c", cd2c);
+		ruleresult.registerObject("typeAcc", typeAcc);
 		ruleresult.registerObject("classDec", classDec);
 		ruleresult.registerObject("interfaceGeneralization", interfaceGeneralization);
-		ruleresult.registerObject("cd2c2", cd2c2);
-		ruleresult.registerObject("typeAcc", typeAcc);
-		ruleresult.registerObject("cd2c", cd2c);
-		ruleresult.registerObject("superInterfaceDec", superInterfaceDec);
-		ruleresult.registerObject("childInterface", childInterface);
-		ruleresult.registerObject("superInterface", superInterface);
-		ruleresult.registerObject("ta2g", ta2g);
 
 	}
 
@@ -453,25 +453,27 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Generalization interfaceGeneralization, Interface childInterface,
-			Interface superInterface) {
+	public boolean isAppropriate_BWD(Match match, Interface childInterface, Interface superInterface,
+			Generalization interfaceGeneralization) {
 
 		Object[] result1_black = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_10_1_initialbindings_blackBBBBB(this, match,
-						interfaceGeneralization, childInterface, superInterface);
+				.pattern_TypeAccess2InterfaceGeneralization_10_1_initialbindings_blackBBBBB(this, match, childInterface,
+						superInterface, interfaceGeneralization);
 		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[interfaceGeneralization] = " + interfaceGeneralization + ", "
-					+ "[childInterface] = " + childInterface + ", " + "[superInterface] = " + superInterface + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
+							+ ", " + "[childInterface] = " + childInterface + ", " + "[superInterface] = "
+							+ superInterface + ", " + "[interfaceGeneralization] = " + interfaceGeneralization + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match,
-						interfaceGeneralization, childInterface, superInterface);
+						childInterface, superInterface, interfaceGeneralization);
 		if (result2_bindingAndBlack == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[interfaceGeneralization] = " + interfaceGeneralization + ", "
-					+ "[childInterface] = " + childInterface + ", " + "[superInterface] = " + superInterface + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
+							+ ", " + "[childInterface] = " + childInterface + ", " + "[superInterface] = "
+							+ superInterface + ", " + "[interfaceGeneralization] = " + interfaceGeneralization + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -480,27 +482,27 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 			Object[] result4_black = TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_10_4_collectelementstobetranslated_blackBBBB(match,
-							interfaceGeneralization, childInterface, superInterface);
+							childInterface, superInterface, interfaceGeneralization);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[interfaceGeneralization] = " + interfaceGeneralization + ", " + "[childInterface] = "
-						+ childInterface + ", " + "[superInterface] = " + superInterface + ".");
+						+ "[childInterface] = " + childInterface + ", " + "[superInterface] = " + superInterface + ", "
+						+ "[interfaceGeneralization] = " + interfaceGeneralization + ".");
 			}
 			TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_10_4_collectelementstobetranslated_greenBBBBFFFF(match,
-							interfaceGeneralization, childInterface, superInterface);
+							childInterface, superInterface, interfaceGeneralization);
 			//nothing EMoflonEdge childInterface__superInterface____general = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge interfaceGeneralization__superInterface____general = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge childInterface__interfaceGeneralization____generalization = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge interfaceGeneralization__childInterface____specific = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge childInterface__interfaceGeneralization____generalization = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge interfaceGeneralization__childInterface____specific = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge interfaceGeneralization__superInterface____general = (EMoflonEdge) result4_green[7];
 
 			Object[] result5_black = TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_10_5_collectcontextelements_blackBBBB(match,
-							interfaceGeneralization, childInterface, superInterface);
+							childInterface, superInterface, interfaceGeneralization);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[interfaceGeneralization] = " + interfaceGeneralization + ", " + "[childInterface] = "
-						+ childInterface + ", " + "[superInterface] = " + superInterface + ".");
+						+ "[childInterface] = " + childInterface + ", " + "[superInterface] = " + superInterface + ", "
+						+ "[interfaceGeneralization] = " + interfaceGeneralization + ".");
 			}
 			TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_10_5_collectcontextelements_greenBBB(match,
@@ -509,7 +511,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 			// 
 			TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_10_6_registerobjectstomatch_expressionBBBBB(this, match,
-							interfaceGeneralization, childInterface, superInterface);
+							childInterface, superInterface, interfaceGeneralization);
 			return TypeAccess2InterfaceGeneralizationImpl.pattern_TypeAccess2InterfaceGeneralization_10_7_expressionF();
 		} else {
 			return TypeAccess2InterfaceGeneralizationImpl.pattern_TypeAccess2InterfaceGeneralization_10_8_expressionF();
@@ -531,64 +533,64 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		InterfaceDeclaration classDec = (InterfaceDeclaration) result1_bindingAndBlack[0];
-		Generalization interfaceGeneralization = (Generalization) result1_bindingAndBlack[1];
+		Interface childInterface = (Interface) result1_bindingAndBlack[0];
+		InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result1_bindingAndBlack[1];
 		ASTNode2Element cd2c2 = (ASTNode2Element) result1_bindingAndBlack[2];
-		ASTNode2Element cd2c = (ASTNode2Element) result1_bindingAndBlack[3];
-		InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result1_bindingAndBlack[4];
-		Interface childInterface = (Interface) result1_bindingAndBlack[5];
-		Interface superInterface = (Interface) result1_bindingAndBlack[6];
+		Interface superInterface = (Interface) result1_bindingAndBlack[3];
+		ASTNode2Element cd2c = (ASTNode2Element) result1_bindingAndBlack[4];
+		InterfaceDeclaration classDec = (InterfaceDeclaration) result1_bindingAndBlack[5];
+		Generalization interfaceGeneralization = (Generalization) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_greenBBFBF(classDec,
-						interfaceGeneralization, superInterfaceDec);
+				.pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_greenBFFBB(superInterfaceDec,
+						classDec, interfaceGeneralization);
+		TypeAccess2Generalization ta2g = (TypeAccess2Generalization) result1_green[1];
 		TypeAccess typeAcc = (TypeAccess) result1_green[2];
-		TypeAccess2Generalization ta2g = (TypeAccess2Generalization) result1_green[4];
 
 		Object[] result2_black = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_11_2_collecttranslatedelements_blackBBB(
-						interfaceGeneralization, typeAcc, ta2g);
+				.pattern_TypeAccess2InterfaceGeneralization_11_2_collecttranslatedelements_blackBBB(ta2g, typeAcc,
+						interfaceGeneralization);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[interfaceGeneralization] = "
-					+ interfaceGeneralization + ", " + "[typeAcc] = " + typeAcc + ", " + "[ta2g] = " + ta2g + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ta2g] = " + ta2g + ", "
+					+ "[typeAcc] = " + typeAcc + ", " + "[interfaceGeneralization] = " + interfaceGeneralization + ".");
 		}
 		Object[] result2_green = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_11_2_collecttranslatedelements_greenFBBB(
-						interfaceGeneralization, typeAcc, ta2g);
+				.pattern_TypeAccess2InterfaceGeneralization_11_2_collecttranslatedelements_greenFBBB(ta2g, typeAcc,
+						interfaceGeneralization);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult,
-						classDec, interfaceGeneralization, cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface,
-						superInterface, ta2g);
+						childInterface, superInterfaceDec, cd2c2, ta2g, superInterface, cd2c, typeAcc, classDec,
+						interfaceGeneralization);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[classDec] = " + classDec + ", " + "[interfaceGeneralization] = "
-					+ interfaceGeneralization + ", " + "[cd2c2] = " + cd2c2 + ", " + "[typeAcc] = " + typeAcc + ", "
-					+ "[cd2c] = " + cd2c + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", "
-					+ "[childInterface] = " + childInterface + ", " + "[superInterface] = " + superInterface + ", "
-					+ "[ta2g] = " + ta2g + ".");
+					+ ", " + "[childInterface] = " + childInterface + ", " + "[superInterfaceDec] = "
+					+ superInterfaceDec + ", " + "[cd2c2] = " + cd2c2 + ", " + "[ta2g] = " + ta2g + ", "
+					+ "[superInterface] = " + superInterface + ", " + "[cd2c] = " + cd2c + ", " + "[typeAcc] = "
+					+ typeAcc + ", " + "[classDec] = " + classDec + ", " + "[interfaceGeneralization] = "
+					+ interfaceGeneralization + ".");
 		}
 		TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFF(ruleresult,
-						classDec, interfaceGeneralization, typeAcc, superInterfaceDec, childInterface, superInterface,
-						ta2g);
-		//nothing EMoflonEdge classDec__typeAcc____superInterfaces = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge typeAcc__superInterfaceDec____type = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge childInterface__superInterface____general = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge interfaceGeneralization__superInterface____general = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge childInterface__interfaceGeneralization____generalization = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge interfaceGeneralization__childInterface____specific = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge ta2g__typeAcc____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge ta2g__interfaceGeneralization____target = (EMoflonEdge) result3_green[16];
+						childInterface, superInterfaceDec, ta2g, superInterface, typeAcc, classDec,
+						interfaceGeneralization);
+		//nothing EMoflonEdge childInterface__superInterface____general = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge childInterface__interfaceGeneralization____generalization = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge interfaceGeneralization__childInterface____specific = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge ta2g__typeAcc____source = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge typeAcc__superInterfaceDec____type = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge classDec__typeAcc____superInterfaces = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge ta2g__interfaceGeneralization____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge interfaceGeneralization__superInterface____general = (EMoflonEdge) result3_green[16];
 
 		// 
 		// 
 		TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
-						classDec, interfaceGeneralization, cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface,
-						superInterface, ta2g);
+						childInterface, superInterfaceDec, cd2c2, ta2g, superInterface, cd2c, typeAcc, classDec,
+						interfaceGeneralization);
 		return TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_11_6_expressionFB(ruleresult);
 	}
@@ -618,45 +620,45 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Generalization interfaceGeneralization = (Generalization) result2_binding[0];
-		Interface childInterface = (Interface) result2_binding[1];
-		Interface superInterface = (Interface) result2_binding[2];
+		Interface childInterface = (Interface) result2_binding[0];
+		Interface superInterface = (Interface) result2_binding[1];
+		Generalization interfaceGeneralization = (Generalization) result2_binding[2];
 		for (Object[] result2_black : TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_12_2_corematch_blackFBFFFBBB(interfaceGeneralization,
-						childInterface, superInterface, match)) {
-			InterfaceDeclaration classDec = (InterfaceDeclaration) result2_black[0];
+				.pattern_TypeAccess2InterfaceGeneralization_12_2_corematch_blackBFFBFFBB(childInterface, superInterface,
+						interfaceGeneralization, match)) {
+			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result2_black[1];
 			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[2];
-			ASTNode2Element cd2c = (ASTNode2Element) result2_black[3];
-			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result2_black[4];
+			ASTNode2Element cd2c = (ASTNode2Element) result2_black[4];
+			InterfaceDeclaration classDec = (InterfaceDeclaration) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : TypeAccess2InterfaceGeneralizationImpl
-					.pattern_TypeAccess2InterfaceGeneralization_12_3_findcontext_blackBBBBBBB(classDec,
-							interfaceGeneralization, cd2c2, cd2c, superInterfaceDec, childInterface, superInterface)) {
+					.pattern_TypeAccess2InterfaceGeneralization_12_3_findcontext_blackBBBBBBB(childInterface,
+							superInterfaceDec, cd2c2, superInterface, cd2c, classDec, interfaceGeneralization)) {
 				Object[] result3_green = TypeAccess2InterfaceGeneralizationImpl
-						.pattern_TypeAccess2InterfaceGeneralization_12_3_findcontext_greenBBBBBBBFFFFFFFFF(classDec,
-								interfaceGeneralization, cd2c2, cd2c, superInterfaceDec, childInterface,
-								superInterface);
+						.pattern_TypeAccess2InterfaceGeneralization_12_3_findcontext_greenBBBBBBBFFFFFFFFF(
+								childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, classDec,
+								interfaceGeneralization);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge cd2c__classDec____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge cd2c2__superInterfaceDec____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge childInterface__superInterface____general = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge cd2c2__superInterface____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge childInterface__superInterface____general = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge cd2c2__superInterfaceDec____source = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge cd2c__childInterface____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge interfaceGeneralization__superInterface____general = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge childInterface__interfaceGeneralization____generalization = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge interfaceGeneralization__childInterface____specific = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge cd2c2__superInterface____target = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge childInterface__interfaceGeneralization____generalization = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge interfaceGeneralization__childInterface____specific = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge cd2c__classDec____source = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge interfaceGeneralization__superInterface____general = (EMoflonEdge) result3_green[15];
 
 				Object[] result4_bindingAndBlack = TypeAccess2InterfaceGeneralizationImpl
 						.pattern_TypeAccess2InterfaceGeneralization_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, classDec, interfaceGeneralization, cd2c2, cd2c, superInterfaceDec,
-								childInterface, superInterface);
+								isApplicableMatch, childInterface, superInterfaceDec, cd2c2, superInterface, cd2c,
+								classDec, interfaceGeneralization);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[classDec] = " + classDec + ", "
-							+ "[interfaceGeneralization] = " + interfaceGeneralization + ", " + "[cd2c2] = " + cd2c2
-							+ ", " + "[cd2c] = " + cd2c + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", "
-							+ "[childInterface] = " + childInterface + ", " + "[superInterface] = " + superInterface
-							+ ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[childInterface] = "
+							+ childInterface + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", " + "[cd2c2] = "
+							+ cd2c2 + ", " + "[superInterface] = " + superInterface + ", " + "[cd2c] = " + cd2c + ", "
+							+ "[classDec] = " + classDec + ", " + "[interfaceGeneralization] = "
+							+ interfaceGeneralization + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -689,11 +691,11 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Generalization interfaceGeneralization,
-			Interface childInterface, Interface superInterface) {
-		match.registerObject("interfaceGeneralization", interfaceGeneralization);
+	public void registerObjectsToMatch_BWD(Match match, Interface childInterface, Interface superInterface,
+			Generalization interfaceGeneralization) {
 		match.registerObject("childInterface", childInterface);
 		match.registerObject("superInterface", superInterface);
+		match.registerObject("interfaceGeneralization", interfaceGeneralization);
 
 	}
 
@@ -702,8 +704,8 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Generalization interfaceGeneralization, Interface childInterface,
-			Interface superInterface) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Interface childInterface, Interface superInterface,
+			Generalization interfaceGeneralization) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -732,9 +734,9 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration classDec,
-			Generalization interfaceGeneralization, ASTNode2Element cd2c2, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface childInterface,
+			InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2, Interface superInterface,
+			ASTNode2Element cd2c, InterfaceDeclaration classDec, Generalization interfaceGeneralization) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -749,13 +751,13 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("childInterface", childInterface);
+		isApplicableMatch.registerObject("superInterfaceDec", superInterfaceDec);
+		isApplicableMatch.registerObject("cd2c2", cd2c2);
+		isApplicableMatch.registerObject("superInterface", superInterface);
+		isApplicableMatch.registerObject("cd2c", cd2c);
 		isApplicableMatch.registerObject("classDec", classDec);
 		isApplicableMatch.registerObject("interfaceGeneralization", interfaceGeneralization);
-		isApplicableMatch.registerObject("cd2c2", cd2c2);
-		isApplicableMatch.registerObject("cd2c", cd2c);
-		isApplicableMatch.registerObject("superInterfaceDec", superInterfaceDec);
-		isApplicableMatch.registerObject("childInterface", childInterface);
-		isApplicableMatch.registerObject("superInterface", superInterface);
 		return csp;
 	}
 
@@ -773,18 +775,18 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject classDec, EObject interfaceGeneralization,
-			EObject cd2c2, EObject typeAcc, EObject cd2c, EObject superInterfaceDec, EObject childInterface,
-			EObject superInterface, EObject ta2g) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject childInterface, EObject superInterfaceDec,
+			EObject cd2c2, EObject ta2g, EObject superInterface, EObject cd2c, EObject typeAcc, EObject classDec,
+			EObject interfaceGeneralization) {
+		ruleresult.registerObject("childInterface", childInterface);
+		ruleresult.registerObject("superInterfaceDec", superInterfaceDec);
+		ruleresult.registerObject("cd2c2", cd2c2);
+		ruleresult.registerObject("ta2g", ta2g);
+		ruleresult.registerObject("superInterface", superInterface);
+		ruleresult.registerObject("cd2c", cd2c);
+		ruleresult.registerObject("typeAcc", typeAcc);
 		ruleresult.registerObject("classDec", classDec);
 		ruleresult.registerObject("interfaceGeneralization", interfaceGeneralization);
-		ruleresult.registerObject("cd2c2", cd2c2);
-		ruleresult.registerObject("typeAcc", typeAcc);
-		ruleresult.registerObject("cd2c", cd2c);
-		ruleresult.registerObject("superInterfaceDec", superInterfaceDec);
-		ruleresult.registerObject("childInterface", childInterface);
-		ruleresult.registerObject("superInterface", superInterface);
-		ruleresult.registerObject("ta2g", ta2g);
 
 	}
 
@@ -803,7 +805,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_254(EMoflonEdge _edge_general) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_125(EMoflonEdge _edge_general) {
 
 		Object[] result1_bindingAndBlack = TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -820,9 +822,9 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 		// ForEach 
 		for (Object[] result2_black : TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_20_2_testcorematchandDECs_blackFFFB(_edge_general)) {
-			Generalization interfaceGeneralization = (Generalization) result2_black[0];
-			Interface childInterface = (Interface) result2_black[1];
-			Interface superInterface = (Interface) result2_black[2];
+			Interface childInterface = (Interface) result2_black[0];
+			Interface superInterface = (Interface) result2_black[1];
+			Generalization interfaceGeneralization = (Generalization) result2_black[2];
 			Object[] result2_green = TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -830,7 +832,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 			// 
 			if (TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, interfaceGeneralization, childInterface, superInterface)) {
+							this, match, childInterface, superInterface, interfaceGeneralization)) {
 				// 
 				if (TypeAccess2InterfaceGeneralizationImpl
 						.pattern_TypeAccess2InterfaceGeneralization_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -864,7 +866,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_268(EMoflonEdge _edge_superInterfaces) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_131(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = TypeAccess2InterfaceGeneralizationImpl
 				.pattern_TypeAccess2InterfaceGeneralization_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -880,11 +882,10 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 		// ForEach 
 		for (Object[] result2_black : TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_blackFFFB(
-						_edge_superInterfaces)) {
-			InterfaceDeclaration classDec = (InterfaceDeclaration) result2_black[0];
+				.pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_blackFFFB(_edge_type)) {
+			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result2_black[0];
 			TypeAccess typeAcc = (TypeAccess) result2_black[1];
-			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result2_black[2];
+			InterfaceDeclaration classDec = (InterfaceDeclaration) result2_black[2];
 			Object[] result2_green = TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -892,7 +893,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 			// 
 			if (TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, classDec, typeAcc, superInterfaceDec)) {
+							this, match, superInterfaceDec, typeAcc, classDec)) {
 				// 
 				if (TypeAccess2InterfaceGeneralizationImpl
 						.pattern_TypeAccess2InterfaceGeneralization_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -1004,23 +1005,23 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		InterfaceDeclaration classDec = (InterfaceDeclaration) result2_bindingAndBlack[0];
-		Generalization interfaceGeneralization = (Generalization) result2_bindingAndBlack[1];
-		TypeAccess typeAcc = (TypeAccess) result2_bindingAndBlack[2];
-		InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result2_bindingAndBlack[3];
-		Interface childInterface = (Interface) result2_bindingAndBlack[4];
-		Interface superInterface = (Interface) result2_bindingAndBlack[5];
+		Interface childInterface = (Interface) result2_bindingAndBlack[0];
+		InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result2_bindingAndBlack[1];
+		Interface superInterface = (Interface) result2_bindingAndBlack[2];
+		TypeAccess typeAcc = (TypeAccess) result2_bindingAndBlack[3];
+		InterfaceDeclaration classDec = (InterfaceDeclaration) result2_bindingAndBlack[4];
+		Generalization interfaceGeneralization = (Generalization) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, classDec,
-						interfaceGeneralization, typeAcc, superInterfaceDec, childInterface, superInterface,
+				.pattern_TypeAccess2InterfaceGeneralization_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this,
+						childInterface, superInterfaceDec, superInterface, typeAcc, classDec, interfaceGeneralization,
 						sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
+					+ "[childInterface] = " + childInterface + ", " + "[superInterfaceDec] = " + superInterfaceDec
+					+ ", " + "[superInterface] = " + superInterface + ", " + "[typeAcc] = " + typeAcc + ", "
 					+ "[classDec] = " + classDec + ", " + "[interfaceGeneralization] = " + interfaceGeneralization
-					+ ", " + "[typeAcc] = " + typeAcc + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", "
-					+ "[childInterface] = " + childInterface + ", " + "[superInterface] = " + superInterface + ", "
-					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
+					+ ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
@@ -1028,30 +1029,30 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 				.pattern_TypeAccess2InterfaceGeneralization_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : TypeAccess2InterfaceGeneralizationImpl
-					.pattern_TypeAccess2InterfaceGeneralization_24_5_matchcorrcontext_blackBFFBBBBB(classDec,
-							superInterfaceDec, childInterface, superInterface, sourceMatch, targetMatch)) {
-				ASTNode2Element cd2c2 = (ASTNode2Element) result5_black[1];
-				ASTNode2Element cd2c = (ASTNode2Element) result5_black[2];
+					.pattern_TypeAccess2InterfaceGeneralization_24_5_matchcorrcontext_blackBBFBFBBB(childInterface,
+							superInterfaceDec, superInterface, classDec, sourceMatch, targetMatch)) {
+				ASTNode2Element cd2c2 = (ASTNode2Element) result5_black[2];
+				ASTNode2Element cd2c = (ASTNode2Element) result5_black[4];
 				Object[] result5_green = TypeAccess2InterfaceGeneralizationImpl
 						.pattern_TypeAccess2InterfaceGeneralization_24_5_matchcorrcontext_greenBBBBF(cd2c2, cd2c,
 								sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = TypeAccess2InterfaceGeneralizationImpl
-						.pattern_TypeAccess2InterfaceGeneralization_24_6_createcorrespondence_blackBBBBBBB(classDec,
-								interfaceGeneralization, typeAcc, superInterfaceDec, childInterface, superInterface,
-								ccMatch);
+						.pattern_TypeAccess2InterfaceGeneralization_24_6_createcorrespondence_blackBBBBBBB(
+								childInterface, superInterfaceDec, superInterface, typeAcc, classDec,
+								interfaceGeneralization, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[classDec] = " + classDec
-							+ ", " + "[interfaceGeneralization] = " + interfaceGeneralization + ", " + "[typeAcc] = "
-							+ typeAcc + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", "
-							+ "[childInterface] = " + childInterface + ", " + "[superInterface] = " + superInterface
-							+ ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[childInterface] = "
+							+ childInterface + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", "
+							+ "[superInterface] = " + superInterface + ", " + "[typeAcc] = " + typeAcc + ", "
+							+ "[classDec] = " + classDec + ", " + "[interfaceGeneralization] = "
+							+ interfaceGeneralization + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				TypeAccess2InterfaceGeneralizationImpl
-						.pattern_TypeAccess2InterfaceGeneralization_24_6_createcorrespondence_greenBBFB(
-								interfaceGeneralization, typeAcc, ccMatch);
-				//nothing TypeAccess2Generalization ta2g = (TypeAccess2Generalization) result6_green[2];
+						.pattern_TypeAccess2InterfaceGeneralization_24_6_createcorrespondence_greenFBBB(typeAcc,
+								interfaceGeneralization, ccMatch);
+				//nothing TypeAccess2Generalization ta2g = (TypeAccess2Generalization) result6_green[0];
 
 				Object[] result7_black = TypeAccess2InterfaceGeneralizationImpl
 						.pattern_TypeAccess2InterfaceGeneralization_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1075,9 +1076,9 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(InterfaceDeclaration classDec, Generalization interfaceGeneralization,
-			TypeAccess typeAcc, InterfaceDeclaration superInterfaceDec, Interface childInterface,
-			Interface superInterface, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Interface childInterface, InterfaceDeclaration superInterfaceDec,
+			Interface superInterface, TypeAccess typeAcc, InterfaceDeclaration classDec,
+			Generalization interfaceGeneralization, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1106,11 +1107,11 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(InterfaceDeclaration classDec, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec) {// 
+	public boolean checkDEC_FWD(InterfaceDeclaration superInterfaceDec, TypeAccess typeAcc,
+			InterfaceDeclaration classDec) {// 
 		Object[] result1_black = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_blackBBB(classDec, typeAcc,
-						superInterfaceDec);
+				.pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_blackBBB(superInterfaceDec, typeAcc,
+						classDec);
 		if (result1_black != null) {
 			return TypeAccess2InterfaceGeneralizationImpl.pattern_TypeAccess2InterfaceGeneralization_27_2_expressionF();
 		} else {
@@ -1124,11 +1125,11 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Generalization interfaceGeneralization, Interface childInterface,
-			Interface superInterface) {// 
+	public boolean checkDEC_BWD(Interface childInterface, Interface superInterface,
+			Generalization interfaceGeneralization) {// 
 		Object[] result1_black = TypeAccess2InterfaceGeneralizationImpl
-				.pattern_TypeAccess2InterfaceGeneralization_28_1_matchtggpattern_blackBBB(interfaceGeneralization,
-						childInterface, superInterface);
+				.pattern_TypeAccess2InterfaceGeneralization_28_1_matchtggpattern_blackBBB(childInterface,
+						superInterface, interfaceGeneralization);
 		if (result1_black != null) {
 			return TypeAccess2InterfaceGeneralizationImpl.pattern_TypeAccess2InterfaceGeneralization_28_2_expressionF();
 		} else {
@@ -1160,24 +1161,24 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 				.pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList cd2cList = (RuleEntryList) result2_black[0];
-			InterfaceDeclaration classDec = (InterfaceDeclaration) result2_black[1];
+			Interface childInterface = (Interface) result2_black[1];
 			ASTNode2Element cd2c = (ASTNode2Element) result2_black[2];
-			Interface childInterface = (Interface) result2_black[3];
+			InterfaceDeclaration classDec = (InterfaceDeclaration) result2_black[3];
 			//nothing RuleEntryList cd2c2List = (RuleEntryList) result2_black[4];
-			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[5];
-			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result2_black[6];
+			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result2_black[5];
+			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[6];
 			Interface superInterface = (Interface) result2_black[7];
 
 			Object[] result3_bindingAndBlack = TypeAccess2InterfaceGeneralizationImpl
 					.pattern_TypeAccess2InterfaceGeneralization_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-							isApplicableMatch, classDec, cd2c2, cd2c, superInterfaceDec, childInterface, superInterface,
+							isApplicableMatch, childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, classDec,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[classDec] = " + classDec + ", "
-						+ "[cd2c2] = " + cd2c2 + ", " + "[cd2c] = " + cd2c + ", " + "[superInterfaceDec] = "
-						+ superInterfaceDec + ", " + "[childInterface] = " + childInterface + ", "
-						+ "[superInterface] = " + superInterface + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[childInterface] = " + childInterface
+						+ ", " + "[superInterfaceDec] = " + superInterfaceDec + ", " + "[cd2c2] = " + cd2c2 + ", "
+						+ "[superInterface] = " + superInterface + ", " + "[cd2c] = " + cd2c + ", " + "[classDec] = "
+						+ classDec + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1185,26 +1186,26 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 					.pattern_TypeAccess2InterfaceGeneralization_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = TypeAccess2InterfaceGeneralizationImpl
-						.pattern_TypeAccess2InterfaceGeneralization_29_5_checknacs_blackBBBBBB(classDec, cd2c2, cd2c,
-								superInterfaceDec, childInterface, superInterface);
+						.pattern_TypeAccess2InterfaceGeneralization_29_5_checknacs_blackBBBBBB(childInterface,
+								superInterfaceDec, cd2c2, superInterface, cd2c, classDec);
 				if (result5_black != null) {
 
 					Object[] result6_black = TypeAccess2InterfaceGeneralizationImpl
-							.pattern_TypeAccess2InterfaceGeneralization_29_6_perform_blackBBBBBBB(classDec, cd2c2, cd2c,
-									superInterfaceDec, childInterface, superInterface, ruleResult);
+							.pattern_TypeAccess2InterfaceGeneralization_29_6_perform_blackBBBBBBB(childInterface,
+									superInterfaceDec, cd2c2, superInterface, cd2c, classDec, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[classDec] = "
-								+ classDec + ", " + "[cd2c2] = " + cd2c2 + ", " + "[cd2c] = " + cd2c + ", "
-								+ "[superInterfaceDec] = " + superInterfaceDec + ", " + "[childInterface] = "
-								+ childInterface + ", " + "[superInterface] = " + superInterface + ", "
-								+ "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[childInterface] = "
+								+ childInterface + ", " + "[superInterfaceDec] = " + superInterfaceDec + ", "
+								+ "[cd2c2] = " + cd2c2 + ", " + "[superInterface] = " + superInterface + ", "
+								+ "[cd2c] = " + cd2c + ", " + "[classDec] = " + classDec + ", " + "[ruleResult] = "
+								+ ruleResult + ".");
 					}
 					TypeAccess2InterfaceGeneralizationImpl
-							.pattern_TypeAccess2InterfaceGeneralization_29_6_perform_greenBFFBBBFB(classDec,
-									superInterfaceDec, childInterface, superInterface, ruleResult);
-					//nothing Generalization interfaceGeneralization = (Generalization) result6_green[1];
-					//nothing TypeAccess typeAcc = (TypeAccess) result6_green[2];
-					//nothing TypeAccess2Generalization ta2g = (TypeAccess2Generalization) result6_green[6];
+							.pattern_TypeAccess2InterfaceGeneralization_29_6_perform_greenBBFBFBFB(childInterface,
+									superInterfaceDec, superInterface, classDec, ruleResult);
+					//nothing TypeAccess2Generalization ta2g = (TypeAccess2Generalization) result6_green[2];
+					//nothing TypeAccess typeAcc = (TypeAccess) result6_green[4];
+					//nothing Generalization interfaceGeneralization = (Generalization) result6_green[6];
 
 				} else {
 				}
@@ -1222,9 +1223,9 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration classDec,
-			ASTNode2Element cd2c2, ASTNode2Element cd2c, InterfaceDeclaration superInterfaceDec,
-			Interface childInterface, Interface superInterface, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface childInterface,
+			InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2, Interface superInterface,
+			ASTNode2Element cd2c, InterfaceDeclaration classDec, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1239,12 +1240,12 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("classDec", classDec);
-		isApplicableMatch.registerObject("cd2c2", cd2c2);
-		isApplicableMatch.registerObject("cd2c", cd2c);
-		isApplicableMatch.registerObject("superInterfaceDec", superInterfaceDec);
 		isApplicableMatch.registerObject("childInterface", childInterface);
+		isApplicableMatch.registerObject("superInterfaceDec", superInterfaceDec);
+		isApplicableMatch.registerObject("cd2c2", cd2c2);
 		isApplicableMatch.registerObject("superInterface", superInterface);
+		isApplicableMatch.registerObject("cd2c", cd2c);
+		isApplicableMatch.registerObject("classDec", classDec);
 		return csp;
 	}
 
@@ -1281,12 +1282,11 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 					(TypeAccess) arguments.get(2), (InterfaceDeclaration) arguments.get(3));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ASTNODE2ELEMENT_TYPEACCESS_ASTNODE2ELEMENT_INTERFACEDECLARATION_INTERFACE_INTERFACE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1), (ASTNode2Element) arguments.get(2),
-					(TypeAccess) arguments.get(3), (ASTNode2Element) arguments.get(4),
-					(InterfaceDeclaration) arguments.get(5), (Interface) arguments.get(6),
-					(Interface) arguments.get(7));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACE_INTERFACEDECLARATION_ASTNODE2ELEMENT_INTERFACE_ASTNODE2ELEMENT_TYPEACCESS_INTERFACEDECLARATION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Interface) arguments.get(1),
+					(InterfaceDeclaration) arguments.get(2), (ASTNode2Element) arguments.get(3),
+					(Interface) arguments.get(4), (ASTNode2Element) arguments.get(5), (TypeAccess) arguments.get(6),
+					(InterfaceDeclaration) arguments.get(7));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1297,28 +1297,27 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_BWD__MATCH_GENERALIZATION_INTERFACE_INTERFACE:
-			return isAppropriate_BWD((Match) arguments.get(0), (Generalization) arguments.get(1),
-					(Interface) arguments.get(2), (Interface) arguments.get(3));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_BWD__MATCH_INTERFACE_INTERFACE_GENERALIZATION:
+			return isAppropriate_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
+					(Interface) arguments.get(2), (Generalization) arguments.get(3));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_GENERALIZATION_INTERFACE_INTERFACE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Generalization) arguments.get(1),
-					(Interface) arguments.get(2), (Interface) arguments.get(3));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_INTERFACE_INTERFACE_GENERALIZATION:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
+					(Interface) arguments.get(2), (Generalization) arguments.get(3));
 			return null;
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_GENERALIZATION_INTERFACE_INTERFACE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Generalization) arguments.get(1),
-					(Interface) arguments.get(2), (Interface) arguments.get(3));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_INTERFACE_INTERFACE_GENERALIZATION:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
+					(Interface) arguments.get(2), (Generalization) arguments.get(3));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_GENERALIZATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_INTERFACEDECLARATION_INTERFACE_INTERFACE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1), (Generalization) arguments.get(2),
-					(ASTNode2Element) arguments.get(3), (ASTNode2Element) arguments.get(4),
-					(InterfaceDeclaration) arguments.get(5), (Interface) arguments.get(6),
-					(Interface) arguments.get(7));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACE_INTERFACEDECLARATION_ASTNODE2ELEMENT_INTERFACE_ASTNODE2ELEMENT_INTERFACEDECLARATION_GENERALIZATION:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Interface) arguments.get(1),
+					(InterfaceDeclaration) arguments.get(2), (ASTNode2Element) arguments.get(3),
+					(Interface) arguments.get(4), (ASTNode2Element) arguments.get(5),
+					(InterfaceDeclaration) arguments.get(6), (Generalization) arguments.get(7));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1329,38 +1328,37 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_254__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_254((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_268__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_268((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_125__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_125((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_131__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_131((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_GENERALIZATION_TYPEACCESS_INTERFACEDECLARATION_INTERFACE_INTERFACE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0), (Generalization) arguments.get(1),
-					(TypeAccess) arguments.get(2), (InterfaceDeclaration) arguments.get(3),
-					(Interface) arguments.get(4), (Interface) arguments.get(5), (Match) arguments.get(6),
-					(Match) arguments.get(7));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACE_INTERFACEDECLARATION_INTERFACE_TYPEACCESS_INTERFACEDECLARATION_GENERALIZATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Interface) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(Interface) arguments.get(2), (TypeAccess) arguments.get(3),
+					(InterfaceDeclaration) arguments.get(4), (Generalization) arguments.get(5),
+					(Match) arguments.get(6), (Match) arguments.get(7));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___CHECK_DEC_FWD__INTERFACEDECLARATION_TYPEACCESS_INTERFACEDECLARATION:
 			return checkDEC_FWD((InterfaceDeclaration) arguments.get(0), (TypeAccess) arguments.get(1),
 					(InterfaceDeclaration) arguments.get(2));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___CHECK_DEC_BWD__GENERALIZATION_INTERFACE_INTERFACE:
-			return checkDEC_BWD((Generalization) arguments.get(0), (Interface) arguments.get(1),
-					(Interface) arguments.get(2));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___CHECK_DEC_BWD__INTERFACE_INTERFACE_GENERALIZATION:
+			return checkDEC_BWD((Interface) arguments.get(0), (Interface) arguments.get(1),
+					(Generalization) arguments.get(2));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
 					(ASTNode2Element) arguments.get(2));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_INTERFACEDECLARATION_INTERFACE_INTERFACE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1), (ASTNode2Element) arguments.get(2),
-					(ASTNode2Element) arguments.get(3), (InterfaceDeclaration) arguments.get(4),
-					(Interface) arguments.get(5), (Interface) arguments.get(6),
-					(ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACE_INTERFACEDECLARATION_ASTNODE2ELEMENT_INTERFACE_ASTNODE2ELEMENT_INTERFACEDECLARATION_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Interface) arguments.get(1),
+					(InterfaceDeclaration) arguments.get(2), (ASTNode2Element) arguments.get(3),
+					(Interface) arguments.get(4), (ASTNode2Element) arguments.get(5),
+					(InterfaceDeclaration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_GENERALIZATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1368,21 +1366,21 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_0_1_initialbindings_blackBBBBB(
-			TypeAccess2InterfaceGeneralization _this, Match match, InterfaceDeclaration classDec, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec) {
+			TypeAccess2InterfaceGeneralization _this, Match match, InterfaceDeclaration superInterfaceDec,
+			TypeAccess typeAcc, InterfaceDeclaration classDec) {
 		if (!classDec.equals(superInterfaceDec)) {
-			return new Object[] { _this, match, classDec, typeAcc, superInterfaceDec };
+			return new Object[] { _this, match, superInterfaceDec, typeAcc, classDec };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_0_2_SolveCSP_bindingFBBBBB(
-			TypeAccess2InterfaceGeneralization _this, Match match, InterfaceDeclaration classDec, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, classDec, typeAcc, superInterfaceDec);
+			TypeAccess2InterfaceGeneralization _this, Match match, InterfaceDeclaration superInterfaceDec,
+			TypeAccess typeAcc, InterfaceDeclaration classDec) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, superInterfaceDec, typeAcc, classDec);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, classDec, typeAcc, superInterfaceDec };
+			return new Object[] { csp, _this, match, superInterfaceDec, typeAcc, classDec };
 		}
 		return null;
 	}
@@ -1392,10 +1390,10 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_0_2_SolveCSP_bindingAndBlackFBBBBB(
-			TypeAccess2InterfaceGeneralization _this, Match match, InterfaceDeclaration classDec, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec) {
+			TypeAccess2InterfaceGeneralization _this, Match match, InterfaceDeclaration superInterfaceDec,
+			TypeAccess typeAcc, InterfaceDeclaration classDec) {
 		Object[] result_pattern_TypeAccess2InterfaceGeneralization_0_2_SolveCSP_binding = pattern_TypeAccess2InterfaceGeneralization_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, classDec, typeAcc, superInterfaceDec);
+				_this, match, superInterfaceDec, typeAcc, classDec);
 		if (result_pattern_TypeAccess2InterfaceGeneralization_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2InterfaceGeneralization_0_2_SolveCSP_binding[0];
 
@@ -1403,7 +1401,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_TypeAccess2InterfaceGeneralization_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, classDec, typeAcc, superInterfaceDec };
+				return new Object[] { csp, _this, match, superInterfaceDec, typeAcc, classDec };
 			}
 		}
 		return null;
@@ -1417,58 +1415,58 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_0_4_collectelementstobetranslated_blackBBBB(
-			Match match, InterfaceDeclaration classDec, TypeAccess typeAcc, InterfaceDeclaration superInterfaceDec) {
+			Match match, InterfaceDeclaration superInterfaceDec, TypeAccess typeAcc, InterfaceDeclaration classDec) {
 		if (!classDec.equals(superInterfaceDec)) {
-			return new Object[] { match, classDec, typeAcc, superInterfaceDec };
+			return new Object[] { match, superInterfaceDec, typeAcc, classDec };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_0_4_collectelementstobetranslated_greenBBBBFFF(
-			Match match, InterfaceDeclaration classDec, TypeAccess typeAcc, InterfaceDeclaration superInterfaceDec) {
-		EMoflonEdge classDec__typeAcc____superInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, InterfaceDeclaration superInterfaceDec, TypeAccess typeAcc, InterfaceDeclaration classDec) {
 		EMoflonEdge typeAcc__superInterfaceDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge classDec__typeAcc____superInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(typeAcc);
-		String classDec__typeAcc____superInterfaces_name_prime = "superInterfaces";
 		String typeAcc__superInterfaceDec____type_name_prime = "type";
 		String superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		classDec__typeAcc____superInterfaces.setSrc(classDec);
-		classDec__typeAcc____superInterfaces.setTrg(typeAcc);
-		match.getToBeTranslatedEdges().add(classDec__typeAcc____superInterfaces);
+		String classDec__typeAcc____superInterfaces_name_prime = "superInterfaces";
 		typeAcc__superInterfaceDec____type.setSrc(typeAcc);
 		typeAcc__superInterfaceDec____type.setTrg(superInterfaceDec);
 		match.getToBeTranslatedEdges().add(typeAcc__superInterfaceDec____type);
 		superInterfaceDec__typeAcc____usagesInTypeAccess.setSrc(superInterfaceDec);
 		superInterfaceDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
 		match.getToBeTranslatedEdges().add(superInterfaceDec__typeAcc____usagesInTypeAccess);
-		classDec__typeAcc____superInterfaces.setName(classDec__typeAcc____superInterfaces_name_prime);
+		classDec__typeAcc____superInterfaces.setSrc(classDec);
+		classDec__typeAcc____superInterfaces.setTrg(typeAcc);
+		match.getToBeTranslatedEdges().add(classDec__typeAcc____superInterfaces);
 		typeAcc__superInterfaceDec____type.setName(typeAcc__superInterfaceDec____type_name_prime);
 		superInterfaceDec__typeAcc____usagesInTypeAccess
 				.setName(superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime);
-		return new Object[] { match, classDec, typeAcc, superInterfaceDec, classDec__typeAcc____superInterfaces,
-				typeAcc__superInterfaceDec____type, superInterfaceDec__typeAcc____usagesInTypeAccess };
+		classDec__typeAcc____superInterfaces.setName(classDec__typeAcc____superInterfaces_name_prime);
+		return new Object[] { match, superInterfaceDec, typeAcc, classDec, typeAcc__superInterfaceDec____type,
+				superInterfaceDec__typeAcc____usagesInTypeAccess, classDec__typeAcc____superInterfaces };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_0_5_collectcontextelements_blackBBBB(
-			Match match, InterfaceDeclaration classDec, TypeAccess typeAcc, InterfaceDeclaration superInterfaceDec) {
+			Match match, InterfaceDeclaration superInterfaceDec, TypeAccess typeAcc, InterfaceDeclaration classDec) {
 		if (!classDec.equals(superInterfaceDec)) {
-			return new Object[] { match, classDec, typeAcc, superInterfaceDec };
+			return new Object[] { match, superInterfaceDec, typeAcc, classDec };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_0_5_collectcontextelements_greenBBB(
-			Match match, InterfaceDeclaration classDec, InterfaceDeclaration superInterfaceDec) {
-		match.getContextNodes().add(classDec);
+			Match match, InterfaceDeclaration superInterfaceDec, InterfaceDeclaration classDec) {
 		match.getContextNodes().add(superInterfaceDec);
-		return new Object[] { match, classDec, superInterfaceDec };
+		match.getContextNodes().add(classDec);
+		return new Object[] { match, superInterfaceDec, classDec };
 	}
 
 	public static final void pattern_TypeAccess2InterfaceGeneralization_0_6_registerobjectstomatch_expressionBBBBB(
-			TypeAccess2InterfaceGeneralization _this, Match match, InterfaceDeclaration classDec, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec) {
-		_this.registerObjectsToMatch_FWD(match, classDec, typeAcc, superInterfaceDec);
+			TypeAccess2InterfaceGeneralization _this, Match match, InterfaceDeclaration superInterfaceDec,
+			TypeAccess typeAcc, InterfaceDeclaration classDec) {
+		_this.registerObjectsToMatch_FWD(match, superInterfaceDec, typeAcc, classDec);
 
 	}
 
@@ -1484,36 +1482,36 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("classDec");
-		EObject _localVariable_1 = isApplicableMatch.getObject("cd2c2");
-		EObject _localVariable_2 = isApplicableMatch.getObject("typeAcc");
-		EObject _localVariable_3 = isApplicableMatch.getObject("cd2c");
-		EObject _localVariable_4 = isApplicableMatch.getObject("superInterfaceDec");
-		EObject _localVariable_5 = isApplicableMatch.getObject("childInterface");
-		EObject _localVariable_6 = isApplicableMatch.getObject("superInterface");
-		EObject tmpClassDec = _localVariable_0;
-		EObject tmpCd2c2 = _localVariable_1;
-		EObject tmpTypeAcc = _localVariable_2;
-		EObject tmpCd2c = _localVariable_3;
-		EObject tmpSuperInterfaceDec = _localVariable_4;
-		EObject tmpChildInterface = _localVariable_5;
-		EObject tmpSuperInterface = _localVariable_6;
-		if (tmpClassDec instanceof InterfaceDeclaration) {
-			InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
-			if (tmpCd2c2 instanceof ASTNode2Element) {
-				ASTNode2Element cd2c2 = (ASTNode2Element) tmpCd2c2;
-				if (tmpTypeAcc instanceof TypeAccess) {
-					TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
-					if (tmpCd2c instanceof ASTNode2Element) {
-						ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
-						if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
-							InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
-							if (tmpChildInterface instanceof Interface) {
-								Interface childInterface = (Interface) tmpChildInterface;
-								if (tmpSuperInterface instanceof Interface) {
-									Interface superInterface = (Interface) tmpSuperInterface;
-									return new Object[] { classDec, cd2c2, typeAcc, cd2c, superInterfaceDec,
-											childInterface, superInterface, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("childInterface");
+		EObject _localVariable_1 = isApplicableMatch.getObject("superInterfaceDec");
+		EObject _localVariable_2 = isApplicableMatch.getObject("cd2c2");
+		EObject _localVariable_3 = isApplicableMatch.getObject("superInterface");
+		EObject _localVariable_4 = isApplicableMatch.getObject("cd2c");
+		EObject _localVariable_5 = isApplicableMatch.getObject("typeAcc");
+		EObject _localVariable_6 = isApplicableMatch.getObject("classDec");
+		EObject tmpChildInterface = _localVariable_0;
+		EObject tmpSuperInterfaceDec = _localVariable_1;
+		EObject tmpCd2c2 = _localVariable_2;
+		EObject tmpSuperInterface = _localVariable_3;
+		EObject tmpCd2c = _localVariable_4;
+		EObject tmpTypeAcc = _localVariable_5;
+		EObject tmpClassDec = _localVariable_6;
+		if (tmpChildInterface instanceof Interface) {
+			Interface childInterface = (Interface) tmpChildInterface;
+			if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
+				InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
+				if (tmpCd2c2 instanceof ASTNode2Element) {
+					ASTNode2Element cd2c2 = (ASTNode2Element) tmpCd2c2;
+					if (tmpSuperInterface instanceof Interface) {
+						Interface superInterface = (Interface) tmpSuperInterface;
+						if (tmpCd2c instanceof ASTNode2Element) {
+							ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
+							if (tmpTypeAcc instanceof TypeAccess) {
+								TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
+								if (tmpClassDec instanceof InterfaceDeclaration) {
+									InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
+									return new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface,
+											cd2c, typeAcc, classDec, isApplicableMatch };
 								}
 							}
 						}
@@ -1525,17 +1523,17 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_blackBBBBBBBFBB(
-			InterfaceDeclaration classDec, ASTNode2Element cd2c2, TypeAccess typeAcc, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface,
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2,
+			Interface superInterface, ASTNode2Element cd2c, TypeAccess typeAcc, InterfaceDeclaration classDec,
 			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch) {
-		if (!classDec.equals(superInterfaceDec)) {
+		if (!childInterface.equals(superInterface)) {
 			if (!cd2c.equals(cd2c2)) {
-				if (!childInterface.equals(superInterface)) {
+				if (!classDec.equals(superInterfaceDec)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { classDec, cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface,
-									superInterface, csp, _this, isApplicableMatch };
+							return new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface, cd2c,
+									typeAcc, classDec, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -1549,120 +1547,119 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 		Object[] result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding = pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding != null) {
-			InterfaceDeclaration classDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[0];
-			ASTNode2Element cd2c2 = (ASTNode2Element) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[1];
-			TypeAccess typeAcc = (TypeAccess) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[2];
-			ASTNode2Element cd2c = (ASTNode2Element) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[3];
-			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[4];
-			Interface childInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[5];
-			Interface superInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[6];
+			Interface childInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[0];
+			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[1];
+			ASTNode2Element cd2c2 = (ASTNode2Element) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[2];
+			Interface superInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[3];
+			ASTNode2Element cd2c = (ASTNode2Element) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[4];
+			TypeAccess typeAcc = (TypeAccess) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[5];
+			InterfaceDeclaration classDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_black = pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_blackBBBBBBBFBB(
-					classDec, cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface, superInterface, _this,
+					childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, typeAcc, classDec, _this,
 					isApplicableMatch);
 			if (result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_black[7];
 
-				return new Object[] { classDec, cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface, superInterface,
+				return new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, typeAcc, classDec,
 						csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_greenFBBBF(
-			TypeAccess typeAcc, Interface childInterface, Interface superInterface) {
-		Generalization interfaceGeneralization = UMLFactory.eINSTANCE.createGeneralization();
+	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_1_1_performtransformation_greenBFBBF(
+			Interface childInterface, Interface superInterface, TypeAccess typeAcc) {
 		TypeAccess2Generalization ta2g = UmlFactory.eINSTANCE.createTypeAccess2Generalization();
+		Generalization interfaceGeneralization = UMLFactory.eINSTANCE.createGeneralization();
 		childInterface.getGenerals().add(superInterface);
-		interfaceGeneralization.setGeneral(superInterface);
-		childInterface.getGeneralizations().add(interfaceGeneralization);
 		ta2g.setSource(typeAcc);
+		childInterface.getGeneralizations().add(interfaceGeneralization);
 		ta2g.setTarget(interfaceGeneralization);
-		return new Object[] { interfaceGeneralization, typeAcc, childInterface, superInterface, ta2g };
+		interfaceGeneralization.setGeneral(superInterface);
+		return new Object[] { childInterface, ta2g, superInterface, typeAcc, interfaceGeneralization };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_1_2_collecttranslatedelements_blackBBB(
-			Generalization interfaceGeneralization, TypeAccess typeAcc, TypeAccess2Generalization ta2g) {
-		return new Object[] { interfaceGeneralization, typeAcc, ta2g };
+			TypeAccess2Generalization ta2g, TypeAccess typeAcc, Generalization interfaceGeneralization) {
+		return new Object[] { ta2g, typeAcc, interfaceGeneralization };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_1_2_collecttranslatedelements_greenFBBB(
-			Generalization interfaceGeneralization, TypeAccess typeAcc, TypeAccess2Generalization ta2g) {
+			TypeAccess2Generalization ta2g, TypeAccess typeAcc, Generalization interfaceGeneralization) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(interfaceGeneralization);
-		ruleresult.getTranslatedElements().add(typeAcc);
 		ruleresult.getCreatedLinkElements().add(ta2g);
-		return new Object[] { ruleresult, interfaceGeneralization, typeAcc, ta2g };
+		ruleresult.getTranslatedElements().add(typeAcc);
+		ruleresult.getCreatedElements().add(interfaceGeneralization);
+		return new Object[] { ruleresult, ta2g, typeAcc, interfaceGeneralization };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject classDec, EObject interfaceGeneralization, EObject cd2c2,
-			EObject typeAcc, EObject cd2c, EObject superInterfaceDec, EObject childInterface, EObject superInterface,
-			EObject ta2g) {
-		if (!classDec.equals(interfaceGeneralization)) {
-			if (!classDec.equals(typeAcc)) {
-				if (!classDec.equals(superInterfaceDec)) {
-					if (!classDec.equals(superInterface)) {
-						if (!classDec.equals(ta2g)) {
-							if (!interfaceGeneralization.equals(typeAcc)) {
-								if (!interfaceGeneralization.equals(superInterfaceDec)) {
-									if (!interfaceGeneralization.equals(superInterface)) {
-										if (!interfaceGeneralization.equals(ta2g)) {
-											if (!cd2c2.equals(classDec)) {
-												if (!cd2c2.equals(interfaceGeneralization)) {
-													if (!cd2c2.equals(typeAcc)) {
-														if (!cd2c2.equals(superInterfaceDec)) {
-															if (!cd2c2.equals(childInterface)) {
-																if (!cd2c2.equals(superInterface)) {
-																	if (!cd2c2.equals(ta2g)) {
-																		if (!cd2c.equals(classDec)) {
-																			if (!cd2c.equals(interfaceGeneralization)) {
-																				if (!cd2c.equals(cd2c2)) {
-																					if (!cd2c.equals(typeAcc)) {
+			PerformRuleResult ruleresult, EObject childInterface, EObject superInterfaceDec, EObject cd2c2,
+			EObject ta2g, EObject superInterface, EObject cd2c, EObject typeAcc, EObject classDec,
+			EObject interfaceGeneralization) {
+		if (!childInterface.equals(superInterfaceDec)) {
+			if (!childInterface.equals(ta2g)) {
+				if (!childInterface.equals(superInterface)) {
+					if (!childInterface.equals(typeAcc)) {
+						if (!childInterface.equals(classDec)) {
+							if (!childInterface.equals(interfaceGeneralization)) {
+								if (!superInterfaceDec.equals(ta2g)) {
+									if (!superInterfaceDec.equals(typeAcc)) {
+										if (!cd2c2.equals(childInterface)) {
+											if (!cd2c2.equals(superInterfaceDec)) {
+												if (!cd2c2.equals(ta2g)) {
+													if (!cd2c2.equals(superInterface)) {
+														if (!cd2c2.equals(typeAcc)) {
+															if (!cd2c2.equals(classDec)) {
+																if (!cd2c2.equals(interfaceGeneralization)) {
+																	if (!ta2g.equals(typeAcc)) {
+																		if (!superInterface.equals(superInterfaceDec)) {
+																			if (!superInterface.equals(ta2g)) {
+																				if (!superInterface.equals(typeAcc)) {
+																					if (!cd2c.equals(childInterface)) {
 																						if (!cd2c.equals(
 																								superInterfaceDec)) {
-																							if (!cd2c.equals(
-																									childInterface)) {
-																								if (!cd2c.equals(
-																										superInterface)) {
+																							if (!cd2c.equals(cd2c2)) {
+																								if (!cd2c
+																										.equals(ta2g)) {
 																									if (!cd2c.equals(
-																											ta2g)) {
-																										if (!superInterfaceDec
+																											superInterface)) {
+																										if (!cd2c
 																												.equals(typeAcc)) {
-																											if (!superInterfaceDec
-																													.equals(ta2g)) {
-																												if (!childInterface
-																														.equals(classDec)) {
-																													if (!childInterface
-																															.equals(interfaceGeneralization)) {
-																														if (!childInterface
-																																.equals(typeAcc)) {
-																															if (!childInterface
-																																	.equals(superInterfaceDec)) {
-																																if (!childInterface
-																																		.equals(superInterface)) {
-																																	if (!childInterface
-																																			.equals(ta2g)) {
-																																		if (!superInterface
-																																				.equals(typeAcc)) {
-																																			if (!superInterface
-																																					.equals(superInterfaceDec)) {
-																																				if (!superInterface
-																																						.equals(ta2g)) {
-																																					if (!ta2g
+																											if (!cd2c
+																													.equals(classDec)) {
+																												if (!cd2c
+																														.equals(interfaceGeneralization)) {
+																													if (!classDec
+																															.equals(superInterfaceDec)) {
+																														if (!classDec
+																																.equals(ta2g)) {
+																															if (!classDec
+																																	.equals(superInterface)) {
+																																if (!classDec
+																																		.equals(typeAcc)) {
+																																	if (!classDec
+																																			.equals(interfaceGeneralization)) {
+																																		if (!interfaceGeneralization
+																																				.equals(superInterfaceDec)) {
+																																			if (!interfaceGeneralization
+																																					.equals(ta2g)) {
+																																				if (!interfaceGeneralization
+																																						.equals(superInterface)) {
+																																					if (!interfaceGeneralization
 																																							.equals(typeAcc)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								classDec,
-																																								interfaceGeneralization,
-																																								cd2c2,
-																																								typeAcc,
-																																								cd2c,
-																																								superInterfaceDec,
 																																								childInterface,
+																																								superInterfaceDec,
+																																								cd2c2,
+																																								ta2g,
 																																								superInterface,
-																																								ta2g };
+																																								cd2c,
+																																								typeAcc,
+																																								classDec,
+																																								interfaceGeneralization };
 																																					}
 																																				}
 																																			}
@@ -1703,43 +1700,31 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject classDec, EObject interfaceGeneralization, EObject typeAcc,
-			EObject superInterfaceDec, EObject childInterface, EObject superInterface, EObject ta2g) {
-		EMoflonEdge classDec__typeAcc____superInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeAcc__superInterfaceDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject childInterface, EObject superInterfaceDec, EObject ta2g,
+			EObject superInterface, EObject typeAcc, EObject classDec, EObject interfaceGeneralization) {
 		EMoflonEdge childInterface__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge interfaceGeneralization__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge childInterface__interfaceGeneralization____generalization = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge interfaceGeneralization__childInterface____specific = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ta2g__typeAcc____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeAcc__superInterfaceDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge classDec__typeAcc____superInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ta2g__interfaceGeneralization____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge interfaceGeneralization__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypeAccess2InterfaceGeneralization";
-		String classDec__typeAcc____superInterfaces_name_prime = "superInterfaces";
-		String typeAcc__superInterfaceDec____type_name_prime = "type";
-		String superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String childInterface__superInterface____general_name_prime = "general";
-		String interfaceGeneralization__superInterface____general_name_prime = "general";
 		String childInterface__interfaceGeneralization____generalization_name_prime = "generalization";
 		String interfaceGeneralization__childInterface____specific_name_prime = "specific";
 		String ta2g__typeAcc____source_name_prime = "source";
+		String typeAcc__superInterfaceDec____type_name_prime = "type";
+		String superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String classDec__typeAcc____superInterfaces_name_prime = "superInterfaces";
 		String ta2g__interfaceGeneralization____target_name_prime = "target";
-		classDec__typeAcc____superInterfaces.setSrc(classDec);
-		classDec__typeAcc____superInterfaces.setTrg(typeAcc);
-		ruleresult.getTranslatedEdges().add(classDec__typeAcc____superInterfaces);
-		typeAcc__superInterfaceDec____type.setSrc(typeAcc);
-		typeAcc__superInterfaceDec____type.setTrg(superInterfaceDec);
-		ruleresult.getTranslatedEdges().add(typeAcc__superInterfaceDec____type);
-		superInterfaceDec__typeAcc____usagesInTypeAccess.setSrc(superInterfaceDec);
-		superInterfaceDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
-		ruleresult.getTranslatedEdges().add(superInterfaceDec__typeAcc____usagesInTypeAccess);
+		String interfaceGeneralization__superInterface____general_name_prime = "general";
 		childInterface__superInterface____general.setSrc(childInterface);
 		childInterface__superInterface____general.setTrg(superInterface);
 		ruleresult.getCreatedEdges().add(childInterface__superInterface____general);
-		interfaceGeneralization__superInterface____general.setSrc(interfaceGeneralization);
-		interfaceGeneralization__superInterface____general.setTrg(superInterface);
-		ruleresult.getCreatedEdges().add(interfaceGeneralization__superInterface____general);
 		childInterface__interfaceGeneralization____generalization.setSrc(childInterface);
 		childInterface__interfaceGeneralization____generalization.setTrg(interfaceGeneralization);
 		ruleresult.getCreatedEdges().add(childInterface__interfaceGeneralization____generalization);
@@ -1749,38 +1734,50 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 		ta2g__typeAcc____source.setSrc(ta2g);
 		ta2g__typeAcc____source.setTrg(typeAcc);
 		ruleresult.getCreatedEdges().add(ta2g__typeAcc____source);
+		typeAcc__superInterfaceDec____type.setSrc(typeAcc);
+		typeAcc__superInterfaceDec____type.setTrg(superInterfaceDec);
+		ruleresult.getTranslatedEdges().add(typeAcc__superInterfaceDec____type);
+		superInterfaceDec__typeAcc____usagesInTypeAccess.setSrc(superInterfaceDec);
+		superInterfaceDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
+		ruleresult.getTranslatedEdges().add(superInterfaceDec__typeAcc____usagesInTypeAccess);
+		classDec__typeAcc____superInterfaces.setSrc(classDec);
+		classDec__typeAcc____superInterfaces.setTrg(typeAcc);
+		ruleresult.getTranslatedEdges().add(classDec__typeAcc____superInterfaces);
 		ta2g__interfaceGeneralization____target.setSrc(ta2g);
 		ta2g__interfaceGeneralization____target.setTrg(interfaceGeneralization);
 		ruleresult.getCreatedEdges().add(ta2g__interfaceGeneralization____target);
+		interfaceGeneralization__superInterface____general.setSrc(interfaceGeneralization);
+		interfaceGeneralization__superInterface____general.setTrg(superInterface);
+		ruleresult.getCreatedEdges().add(interfaceGeneralization__superInterface____general);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		classDec__typeAcc____superInterfaces.setName(classDec__typeAcc____superInterfaces_name_prime);
-		typeAcc__superInterfaceDec____type.setName(typeAcc__superInterfaceDec____type_name_prime);
-		superInterfaceDec__typeAcc____usagesInTypeAccess
-				.setName(superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime);
 		childInterface__superInterface____general.setName(childInterface__superInterface____general_name_prime);
-		interfaceGeneralization__superInterface____general
-				.setName(interfaceGeneralization__superInterface____general_name_prime);
 		childInterface__interfaceGeneralization____generalization
 				.setName(childInterface__interfaceGeneralization____generalization_name_prime);
 		interfaceGeneralization__childInterface____specific
 				.setName(interfaceGeneralization__childInterface____specific_name_prime);
 		ta2g__typeAcc____source.setName(ta2g__typeAcc____source_name_prime);
+		typeAcc__superInterfaceDec____type.setName(typeAcc__superInterfaceDec____type_name_prime);
+		superInterfaceDec__typeAcc____usagesInTypeAccess
+				.setName(superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime);
+		classDec__typeAcc____superInterfaces.setName(classDec__typeAcc____superInterfaces_name_prime);
 		ta2g__interfaceGeneralization____target.setName(ta2g__interfaceGeneralization____target_name_prime);
-		return new Object[] { ruleresult, classDec, interfaceGeneralization, typeAcc, superInterfaceDec, childInterface,
-				superInterface, ta2g, classDec__typeAcc____superInterfaces, typeAcc__superInterfaceDec____type,
-				superInterfaceDec__typeAcc____usagesInTypeAccess, childInterface__superInterface____general,
-				interfaceGeneralization__superInterface____general,
+		interfaceGeneralization__superInterface____general
+				.setName(interfaceGeneralization__superInterface____general_name_prime);
+		return new Object[] { ruleresult, childInterface, superInterfaceDec, ta2g, superInterface, typeAcc, classDec,
+				interfaceGeneralization, childInterface__superInterface____general,
 				childInterface__interfaceGeneralization____generalization,
 				interfaceGeneralization__childInterface____specific, ta2g__typeAcc____source,
-				ta2g__interfaceGeneralization____target };
+				typeAcc__superInterfaceDec____type, superInterfaceDec__typeAcc____usagesInTypeAccess,
+				classDec__typeAcc____superInterfaces, ta2g__interfaceGeneralization____target,
+				interfaceGeneralization__superInterface____general };
 	}
 
 	public static final void pattern_TypeAccess2InterfaceGeneralization_1_5_registerobjects_expressionBBBBBBBBBBB(
-			TypeAccess2InterfaceGeneralization _this, PerformRuleResult ruleresult, EObject classDec,
-			EObject interfaceGeneralization, EObject cd2c2, EObject typeAcc, EObject cd2c, EObject superInterfaceDec,
-			EObject childInterface, EObject superInterface, EObject ta2g) {
-		_this.registerObjects_FWD(ruleresult, classDec, interfaceGeneralization, cd2c2, typeAcc, cd2c,
-				superInterfaceDec, childInterface, superInterface, ta2g);
+			TypeAccess2InterfaceGeneralization _this, PerformRuleResult ruleresult, EObject childInterface,
+			EObject superInterfaceDec, EObject cd2c2, EObject ta2g, EObject superInterface, EObject cd2c,
+			EObject typeAcc, EObject classDec, EObject interfaceGeneralization) {
+		_this.registerObjects_FWD(ruleresult, childInterface, superInterfaceDec, cd2c2, ta2g, superInterface, cd2c,
+				typeAcc, classDec, interfaceGeneralization);
 
 	}
 
@@ -1842,43 +1839,43 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_2_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("classDec");
+		EObject _localVariable_0 = match.getObject("superInterfaceDec");
 		EObject _localVariable_1 = match.getObject("typeAcc");
-		EObject _localVariable_2 = match.getObject("superInterfaceDec");
-		EObject tmpClassDec = _localVariable_0;
+		EObject _localVariable_2 = match.getObject("classDec");
+		EObject tmpSuperInterfaceDec = _localVariable_0;
 		EObject tmpTypeAcc = _localVariable_1;
-		EObject tmpSuperInterfaceDec = _localVariable_2;
-		if (tmpClassDec instanceof InterfaceDeclaration) {
-			InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
+		EObject tmpClassDec = _localVariable_2;
+		if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
+			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
 			if (tmpTypeAcc instanceof TypeAccess) {
 				TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
-				if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
-					InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
-					return new Object[] { classDec, typeAcc, superInterfaceDec, match };
+				if (tmpClassDec instanceof InterfaceDeclaration) {
+					InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
+					return new Object[] { superInterfaceDec, typeAcc, classDec, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeAccess2InterfaceGeneralization_2_2_corematch_blackBFBFBFFB(
-			InterfaceDeclaration classDec, TypeAccess typeAcc, InterfaceDeclaration superInterfaceDec, Match match) {
+	public static final Iterable<Object[]> pattern_TypeAccess2InterfaceGeneralization_2_2_corematch_blackFBFFFBBB(
+			InterfaceDeclaration superInterfaceDec, TypeAccess typeAcc, InterfaceDeclaration classDec, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!classDec.equals(superInterfaceDec)) {
-			for (ASTNode2Element cd2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(classDec,
-					ASTNode2Element.class, "source")) {
-				Element tmpChildInterface = cd2c.getTarget();
-				if (tmpChildInterface instanceof Interface) {
-					Interface childInterface = (Interface) tmpChildInterface;
-					for (ASTNode2Element cd2c2 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(superInterfaceDec, ASTNode2Element.class, "source")) {
+			for (ASTNode2Element cd2c2 : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(superInterfaceDec, ASTNode2Element.class, "source")) {
+				Element tmpSuperInterface = cd2c2.getTarget();
+				if (tmpSuperInterface instanceof Interface) {
+					Interface superInterface = (Interface) tmpSuperInterface;
+					for (ASTNode2Element cd2c : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(classDec, ASTNode2Element.class, "source")) {
 						if (!cd2c.equals(cd2c2)) {
-							Element tmpSuperInterface = cd2c2.getTarget();
-							if (tmpSuperInterface instanceof Interface) {
-								Interface superInterface = (Interface) tmpSuperInterface;
+							Element tmpChildInterface = cd2c.getTarget();
+							if (tmpChildInterface instanceof Interface) {
+								Interface childInterface = (Interface) tmpChildInterface;
 								if (!childInterface.equals(superInterface)) {
-									_result.add(new Object[] { classDec, cd2c2, typeAcc, cd2c, superInterfaceDec,
-											childInterface, superInterface, match });
+									_result.add(new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface,
+											cd2c, typeAcc, classDec, match });
 								}
 							}
 
@@ -1892,20 +1889,20 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_TypeAccess2InterfaceGeneralization_2_3_findcontext_blackBBBBBBB(
-			InterfaceDeclaration classDec, ASTNode2Element cd2c2, TypeAccess typeAcc, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface) {
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2,
+			Interface superInterface, ASTNode2Element cd2c, TypeAccess typeAcc, InterfaceDeclaration classDec) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!classDec.equals(superInterfaceDec)) {
+		if (!childInterface.equals(superInterface)) {
 			if (!cd2c.equals(cd2c2)) {
-				if (!childInterface.equals(superInterface)) {
-					if (classDec.getSuperInterfaces().contains(typeAcc)) {
-						if (classDec.equals(cd2c.getSource())) {
-							if (superInterfaceDec.equals(typeAcc.getType())) {
-								if (superInterfaceDec.equals(cd2c2.getSource())) {
-									if (childInterface.equals(cd2c.getTarget())) {
-										if (superInterface.equals(cd2c2.getTarget())) {
-											_result.add(new Object[] { classDec, cd2c2, typeAcc, cd2c,
-													superInterfaceDec, childInterface, superInterface });
+				if (!classDec.equals(superInterfaceDec)) {
+					if (superInterface.equals(cd2c2.getTarget())) {
+						if (superInterfaceDec.equals(cd2c2.getSource())) {
+							if (childInterface.equals(cd2c.getTarget())) {
+								if (superInterfaceDec.equals(typeAcc.getType())) {
+									if (classDec.equals(cd2c.getSource())) {
+										if (classDec.getSuperInterfaces().contains(typeAcc)) {
+											_result.add(new Object[] { childInterface, superInterfaceDec, cd2c2,
+													superInterface, cd2c, typeAcc, classDec });
 										}
 									}
 								}
@@ -1919,75 +1916,76 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_2_3_findcontext_greenBBBBBBBFFFFFFFF(
-			InterfaceDeclaration classDec, ASTNode2Element cd2c2, TypeAccess typeAcc, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface) {
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2,
+			Interface superInterface, ASTNode2Element cd2c, TypeAccess typeAcc, InterfaceDeclaration classDec) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge classDec__typeAcc____superInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeAcc__superInterfaceDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2c2__superInterface____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd2c2__superInterfaceDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd2c__childInterface____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2c2__superInterface____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String classDec__typeAcc____superInterfaces_name_prime = "superInterfaces";
-		String cd2c__classDec____source_name_prime = "source";
-		String typeAcc__superInterfaceDec____type_name_prime = "type";
-		String superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		EMoflonEdge typeAcc__superInterfaceDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge classDec__typeAcc____superInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String cd2c2__superInterface____target_name_prime = "target";
 		String cd2c2__superInterfaceDec____source_name_prime = "source";
 		String cd2c__childInterface____target_name_prime = "target";
-		String cd2c2__superInterface____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(classDec);
-		isApplicableMatch.getAllContextElements().add(cd2c2);
-		isApplicableMatch.getAllContextElements().add(typeAcc);
-		isApplicableMatch.getAllContextElements().add(cd2c);
-		isApplicableMatch.getAllContextElements().add(superInterfaceDec);
+		String typeAcc__superInterfaceDec____type_name_prime = "type";
+		String superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String cd2c__classDec____source_name_prime = "source";
+		String classDec__typeAcc____superInterfaces_name_prime = "superInterfaces";
 		isApplicableMatch.getAllContextElements().add(childInterface);
+		isApplicableMatch.getAllContextElements().add(superInterfaceDec);
+		isApplicableMatch.getAllContextElements().add(cd2c2);
 		isApplicableMatch.getAllContextElements().add(superInterface);
-		classDec__typeAcc____superInterfaces.setSrc(classDec);
-		classDec__typeAcc____superInterfaces.setTrg(typeAcc);
-		isApplicableMatch.getAllContextElements().add(classDec__typeAcc____superInterfaces);
-		cd2c__classDec____source.setSrc(cd2c);
-		cd2c__classDec____source.setTrg(classDec);
-		isApplicableMatch.getAllContextElements().add(cd2c__classDec____source);
-		typeAcc__superInterfaceDec____type.setSrc(typeAcc);
-		typeAcc__superInterfaceDec____type.setTrg(superInterfaceDec);
-		isApplicableMatch.getAllContextElements().add(typeAcc__superInterfaceDec____type);
-		superInterfaceDec__typeAcc____usagesInTypeAccess.setSrc(superInterfaceDec);
-		superInterfaceDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
-		isApplicableMatch.getAllContextElements().add(superInterfaceDec__typeAcc____usagesInTypeAccess);
+		isApplicableMatch.getAllContextElements().add(cd2c);
+		isApplicableMatch.getAllContextElements().add(typeAcc);
+		isApplicableMatch.getAllContextElements().add(classDec);
+		cd2c2__superInterface____target.setSrc(cd2c2);
+		cd2c2__superInterface____target.setTrg(superInterface);
+		isApplicableMatch.getAllContextElements().add(cd2c2__superInterface____target);
 		cd2c2__superInterfaceDec____source.setSrc(cd2c2);
 		cd2c2__superInterfaceDec____source.setTrg(superInterfaceDec);
 		isApplicableMatch.getAllContextElements().add(cd2c2__superInterfaceDec____source);
 		cd2c__childInterface____target.setSrc(cd2c);
 		cd2c__childInterface____target.setTrg(childInterface);
 		isApplicableMatch.getAllContextElements().add(cd2c__childInterface____target);
-		cd2c2__superInterface____target.setSrc(cd2c2);
-		cd2c2__superInterface____target.setTrg(superInterface);
-		isApplicableMatch.getAllContextElements().add(cd2c2__superInterface____target);
-		classDec__typeAcc____superInterfaces.setName(classDec__typeAcc____superInterfaces_name_prime);
-		cd2c__classDec____source.setName(cd2c__classDec____source_name_prime);
+		typeAcc__superInterfaceDec____type.setSrc(typeAcc);
+		typeAcc__superInterfaceDec____type.setTrg(superInterfaceDec);
+		isApplicableMatch.getAllContextElements().add(typeAcc__superInterfaceDec____type);
+		superInterfaceDec__typeAcc____usagesInTypeAccess.setSrc(superInterfaceDec);
+		superInterfaceDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
+		isApplicableMatch.getAllContextElements().add(superInterfaceDec__typeAcc____usagesInTypeAccess);
+		cd2c__classDec____source.setSrc(cd2c);
+		cd2c__classDec____source.setTrg(classDec);
+		isApplicableMatch.getAllContextElements().add(cd2c__classDec____source);
+		classDec__typeAcc____superInterfaces.setSrc(classDec);
+		classDec__typeAcc____superInterfaces.setTrg(typeAcc);
+		isApplicableMatch.getAllContextElements().add(classDec__typeAcc____superInterfaces);
+		cd2c2__superInterface____target.setName(cd2c2__superInterface____target_name_prime);
+		cd2c2__superInterfaceDec____source.setName(cd2c2__superInterfaceDec____source_name_prime);
+		cd2c__childInterface____target.setName(cd2c__childInterface____target_name_prime);
 		typeAcc__superInterfaceDec____type.setName(typeAcc__superInterfaceDec____type_name_prime);
 		superInterfaceDec__typeAcc____usagesInTypeAccess
 				.setName(superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime);
-		cd2c2__superInterfaceDec____source.setName(cd2c2__superInterfaceDec____source_name_prime);
-		cd2c__childInterface____target.setName(cd2c__childInterface____target_name_prime);
-		cd2c2__superInterface____target.setName(cd2c2__superInterface____target_name_prime);
-		return new Object[] { classDec, cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface, superInterface,
-				isApplicableMatch, classDec__typeAcc____superInterfaces, cd2c__classDec____source,
-				typeAcc__superInterfaceDec____type, superInterfaceDec__typeAcc____usagesInTypeAccess,
-				cd2c2__superInterfaceDec____source, cd2c__childInterface____target, cd2c2__superInterface____target };
+		cd2c__classDec____source.setName(cd2c__classDec____source_name_prime);
+		classDec__typeAcc____superInterfaces.setName(classDec__typeAcc____superInterfaces_name_prime);
+		return new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, typeAcc, classDec,
+				isApplicableMatch, cd2c2__superInterface____target, cd2c2__superInterfaceDec____source,
+				cd2c__childInterface____target, typeAcc__superInterfaceDec____type,
+				superInterfaceDec__typeAcc____usagesInTypeAccess, cd2c__classDec____source,
+				classDec__typeAcc____superInterfaces };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_2_4_solveCSP_bindingFBBBBBBBBB(
-			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch,
-			InterfaceDeclaration classDec, ASTNode2Element cd2c2, TypeAccess typeAcc, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, classDec, cd2c2, typeAcc, cd2c,
-				superInterfaceDec, childInterface, superInterface);
+			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch, Interface childInterface,
+			InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2, Interface superInterface,
+			ASTNode2Element cd2c, TypeAccess typeAcc, InterfaceDeclaration classDec) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, childInterface, superInterfaceDec,
+				cd2c2, superInterface, cd2c, typeAcc, classDec);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, classDec, cd2c2, typeAcc, cd2c, superInterfaceDec,
-					childInterface, superInterface };
+			return new Object[] { csp, _this, isApplicableMatch, childInterface, superInterfaceDec, cd2c2,
+					superInterface, cd2c, typeAcc, classDec };
 		}
 		return null;
 	}
@@ -1997,12 +1995,12 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch,
-			InterfaceDeclaration classDec, ASTNode2Element cd2c2, TypeAccess typeAcc, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface) {
+			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch, Interface childInterface,
+			InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2, Interface superInterface,
+			ASTNode2Element cd2c, TypeAccess typeAcc, InterfaceDeclaration classDec) {
 		Object[] result_pattern_TypeAccess2InterfaceGeneralization_2_4_solveCSP_binding = pattern_TypeAccess2InterfaceGeneralization_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, classDec, cd2c2, typeAcc, cd2c, superInterfaceDec, childInterface,
-				superInterface);
+				_this, isApplicableMatch, childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, typeAcc,
+				classDec);
 		if (result_pattern_TypeAccess2InterfaceGeneralization_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2InterfaceGeneralization_2_4_solveCSP_binding[0];
 
@@ -2010,8 +2008,8 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_TypeAccess2InterfaceGeneralization_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, classDec, cd2c2, typeAcc, cd2c, superInterfaceDec,
-						childInterface, superInterface };
+				return new Object[] { csp, _this, isApplicableMatch, childInterface, superInterfaceDec, cd2c2,
+						superInterface, cd2c, typeAcc, classDec };
 			}
 		}
 		return null;
@@ -2046,22 +2044,22 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_10_1_initialbindings_blackBBBBB(
-			TypeAccess2InterfaceGeneralization _this, Match match, Generalization interfaceGeneralization,
-			Interface childInterface, Interface superInterface) {
+			TypeAccess2InterfaceGeneralization _this, Match match, Interface childInterface, Interface superInterface,
+			Generalization interfaceGeneralization) {
 		if (!childInterface.equals(superInterface)) {
-			return new Object[] { _this, match, interfaceGeneralization, childInterface, superInterface };
+			return new Object[] { _this, match, childInterface, superInterface, interfaceGeneralization };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_10_2_SolveCSP_bindingFBBBBB(
-			TypeAccess2InterfaceGeneralization _this, Match match, Generalization interfaceGeneralization,
-			Interface childInterface, Interface superInterface) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, interfaceGeneralization, childInterface,
-				superInterface);
+			TypeAccess2InterfaceGeneralization _this, Match match, Interface childInterface, Interface superInterface,
+			Generalization interfaceGeneralization) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, childInterface, superInterface,
+				interfaceGeneralization);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, interfaceGeneralization, childInterface, superInterface };
+			return new Object[] { csp, _this, match, childInterface, superInterface, interfaceGeneralization };
 		}
 		return null;
 	}
@@ -2071,10 +2069,10 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_10_2_SolveCSP_bindingAndBlackFBBBBB(
-			TypeAccess2InterfaceGeneralization _this, Match match, Generalization interfaceGeneralization,
-			Interface childInterface, Interface superInterface) {
+			TypeAccess2InterfaceGeneralization _this, Match match, Interface childInterface, Interface superInterface,
+			Generalization interfaceGeneralization) {
 		Object[] result_pattern_TypeAccess2InterfaceGeneralization_10_2_SolveCSP_binding = pattern_TypeAccess2InterfaceGeneralization_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, interfaceGeneralization, childInterface, superInterface);
+				_this, match, childInterface, superInterface, interfaceGeneralization);
 		if (result_pattern_TypeAccess2InterfaceGeneralization_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2InterfaceGeneralization_10_2_SolveCSP_binding[0];
 
@@ -2082,7 +2080,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_TypeAccess2InterfaceGeneralization_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, interfaceGeneralization, childInterface, superInterface };
+				return new Object[] { csp, _this, match, childInterface, superInterface, interfaceGeneralization };
 			}
 		}
 		return null;
@@ -2096,54 +2094,54 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_10_4_collectelementstobetranslated_blackBBBB(
-			Match match, Generalization interfaceGeneralization, Interface childInterface, Interface superInterface) {
+			Match match, Interface childInterface, Interface superInterface, Generalization interfaceGeneralization) {
 		if (!childInterface.equals(superInterface)) {
-			return new Object[] { match, interfaceGeneralization, childInterface, superInterface };
+			return new Object[] { match, childInterface, superInterface, interfaceGeneralization };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_10_4_collectelementstobetranslated_greenBBBBFFFF(
-			Match match, Generalization interfaceGeneralization, Interface childInterface, Interface superInterface) {
+			Match match, Interface childInterface, Interface superInterface, Generalization interfaceGeneralization) {
 		EMoflonEdge childInterface__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge interfaceGeneralization__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge childInterface__interfaceGeneralization____generalization = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge interfaceGeneralization__childInterface____specific = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge interfaceGeneralization__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(interfaceGeneralization);
 		String childInterface__superInterface____general_name_prime = "general";
-		String interfaceGeneralization__superInterface____general_name_prime = "general";
 		String childInterface__interfaceGeneralization____generalization_name_prime = "generalization";
 		String interfaceGeneralization__childInterface____specific_name_prime = "specific";
+		String interfaceGeneralization__superInterface____general_name_prime = "general";
 		childInterface__superInterface____general.setSrc(childInterface);
 		childInterface__superInterface____general.setTrg(superInterface);
 		match.getToBeTranslatedEdges().add(childInterface__superInterface____general);
-		interfaceGeneralization__superInterface____general.setSrc(interfaceGeneralization);
-		interfaceGeneralization__superInterface____general.setTrg(superInterface);
-		match.getToBeTranslatedEdges().add(interfaceGeneralization__superInterface____general);
 		childInterface__interfaceGeneralization____generalization.setSrc(childInterface);
 		childInterface__interfaceGeneralization____generalization.setTrg(interfaceGeneralization);
 		match.getToBeTranslatedEdges().add(childInterface__interfaceGeneralization____generalization);
 		interfaceGeneralization__childInterface____specific.setSrc(interfaceGeneralization);
 		interfaceGeneralization__childInterface____specific.setTrg(childInterface);
 		match.getToBeTranslatedEdges().add(interfaceGeneralization__childInterface____specific);
+		interfaceGeneralization__superInterface____general.setSrc(interfaceGeneralization);
+		interfaceGeneralization__superInterface____general.setTrg(superInterface);
+		match.getToBeTranslatedEdges().add(interfaceGeneralization__superInterface____general);
 		childInterface__superInterface____general.setName(childInterface__superInterface____general_name_prime);
-		interfaceGeneralization__superInterface____general
-				.setName(interfaceGeneralization__superInterface____general_name_prime);
 		childInterface__interfaceGeneralization____generalization
 				.setName(childInterface__interfaceGeneralization____generalization_name_prime);
 		interfaceGeneralization__childInterface____specific
 				.setName(interfaceGeneralization__childInterface____specific_name_prime);
-		return new Object[] { match, interfaceGeneralization, childInterface, superInterface,
-				childInterface__superInterface____general, interfaceGeneralization__superInterface____general,
-				childInterface__interfaceGeneralization____generalization,
-				interfaceGeneralization__childInterface____specific };
+		interfaceGeneralization__superInterface____general
+				.setName(interfaceGeneralization__superInterface____general_name_prime);
+		return new Object[] { match, childInterface, superInterface, interfaceGeneralization,
+				childInterface__superInterface____general, childInterface__interfaceGeneralization____generalization,
+				interfaceGeneralization__childInterface____specific,
+				interfaceGeneralization__superInterface____general };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_10_5_collectcontextelements_blackBBBB(
-			Match match, Generalization interfaceGeneralization, Interface childInterface, Interface superInterface) {
+			Match match, Interface childInterface, Interface superInterface, Generalization interfaceGeneralization) {
 		if (!childInterface.equals(superInterface)) {
-			return new Object[] { match, interfaceGeneralization, childInterface, superInterface };
+			return new Object[] { match, childInterface, superInterface, interfaceGeneralization };
 		}
 		return null;
 	}
@@ -2156,9 +2154,9 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final void pattern_TypeAccess2InterfaceGeneralization_10_6_registerobjectstomatch_expressionBBBBB(
-			TypeAccess2InterfaceGeneralization _this, Match match, Generalization interfaceGeneralization,
-			Interface childInterface, Interface superInterface) {
-		_this.registerObjectsToMatch_BWD(match, interfaceGeneralization, childInterface, superInterface);
+			TypeAccess2InterfaceGeneralization _this, Match match, Interface childInterface, Interface superInterface,
+			Generalization interfaceGeneralization) {
+		_this.registerObjectsToMatch_BWD(match, childInterface, superInterface, interfaceGeneralization);
 
 	}
 
@@ -2174,36 +2172,36 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("classDec");
-		EObject _localVariable_1 = isApplicableMatch.getObject("interfaceGeneralization");
+		EObject _localVariable_0 = isApplicableMatch.getObject("childInterface");
+		EObject _localVariable_1 = isApplicableMatch.getObject("superInterfaceDec");
 		EObject _localVariable_2 = isApplicableMatch.getObject("cd2c2");
-		EObject _localVariable_3 = isApplicableMatch.getObject("cd2c");
-		EObject _localVariable_4 = isApplicableMatch.getObject("superInterfaceDec");
-		EObject _localVariable_5 = isApplicableMatch.getObject("childInterface");
-		EObject _localVariable_6 = isApplicableMatch.getObject("superInterface");
-		EObject tmpClassDec = _localVariable_0;
-		EObject tmpInterfaceGeneralization = _localVariable_1;
+		EObject _localVariable_3 = isApplicableMatch.getObject("superInterface");
+		EObject _localVariable_4 = isApplicableMatch.getObject("cd2c");
+		EObject _localVariable_5 = isApplicableMatch.getObject("classDec");
+		EObject _localVariable_6 = isApplicableMatch.getObject("interfaceGeneralization");
+		EObject tmpChildInterface = _localVariable_0;
+		EObject tmpSuperInterfaceDec = _localVariable_1;
 		EObject tmpCd2c2 = _localVariable_2;
-		EObject tmpCd2c = _localVariable_3;
-		EObject tmpSuperInterfaceDec = _localVariable_4;
-		EObject tmpChildInterface = _localVariable_5;
-		EObject tmpSuperInterface = _localVariable_6;
-		if (tmpClassDec instanceof InterfaceDeclaration) {
-			InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
-			if (tmpInterfaceGeneralization instanceof Generalization) {
-				Generalization interfaceGeneralization = (Generalization) tmpInterfaceGeneralization;
+		EObject tmpSuperInterface = _localVariable_3;
+		EObject tmpCd2c = _localVariable_4;
+		EObject tmpClassDec = _localVariable_5;
+		EObject tmpInterfaceGeneralization = _localVariable_6;
+		if (tmpChildInterface instanceof Interface) {
+			Interface childInterface = (Interface) tmpChildInterface;
+			if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
+				InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
 				if (tmpCd2c2 instanceof ASTNode2Element) {
 					ASTNode2Element cd2c2 = (ASTNode2Element) tmpCd2c2;
-					if (tmpCd2c instanceof ASTNode2Element) {
-						ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
-						if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
-							InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
-							if (tmpChildInterface instanceof Interface) {
-								Interface childInterface = (Interface) tmpChildInterface;
-								if (tmpSuperInterface instanceof Interface) {
-									Interface superInterface = (Interface) tmpSuperInterface;
-									return new Object[] { classDec, interfaceGeneralization, cd2c2, cd2c,
-											superInterfaceDec, childInterface, superInterface, isApplicableMatch };
+					if (tmpSuperInterface instanceof Interface) {
+						Interface superInterface = (Interface) tmpSuperInterface;
+						if (tmpCd2c instanceof ASTNode2Element) {
+							ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
+							if (tmpClassDec instanceof InterfaceDeclaration) {
+								InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
+								if (tmpInterfaceGeneralization instanceof Generalization) {
+									Generalization interfaceGeneralization = (Generalization) tmpInterfaceGeneralization;
+									return new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface,
+											cd2c, classDec, interfaceGeneralization, isApplicableMatch };
 								}
 							}
 						}
@@ -2215,17 +2213,18 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_blackBBBBBBBFBB(
-			InterfaceDeclaration classDec, Generalization interfaceGeneralization, ASTNode2Element cd2c2,
-			ASTNode2Element cd2c, InterfaceDeclaration superInterfaceDec, Interface childInterface,
-			Interface superInterface, TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch) {
-		if (!classDec.equals(superInterfaceDec)) {
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2,
+			Interface superInterface, ASTNode2Element cd2c, InterfaceDeclaration classDec,
+			Generalization interfaceGeneralization, TypeAccess2InterfaceGeneralization _this,
+			IsApplicableMatch isApplicableMatch) {
+		if (!childInterface.equals(superInterface)) {
 			if (!cd2c.equals(cd2c2)) {
-				if (!childInterface.equals(superInterface)) {
+				if (!classDec.equals(superInterfaceDec)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { classDec, interfaceGeneralization, cd2c2, cd2c, superInterfaceDec,
-									childInterface, superInterface, csp, _this, isApplicableMatch };
+							return new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface, cd2c,
+									classDec, interfaceGeneralization, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -2239,120 +2238,119 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 		Object[] result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding = pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding != null) {
-			InterfaceDeclaration classDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[0];
-			Generalization interfaceGeneralization = (Generalization) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[1];
+			Interface childInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[0];
+			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[1];
 			ASTNode2Element cd2c2 = (ASTNode2Element) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[2];
-			ASTNode2Element cd2c = (ASTNode2Element) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[3];
-			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[4];
-			Interface childInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[5];
-			Interface superInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[6];
+			Interface superInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[3];
+			ASTNode2Element cd2c = (ASTNode2Element) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[4];
+			InterfaceDeclaration classDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[5];
+			Generalization interfaceGeneralization = (Generalization) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_black = pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_blackBBBBBBBFBB(
-					classDec, interfaceGeneralization, cd2c2, cd2c, superInterfaceDec, childInterface, superInterface,
+					childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, classDec, interfaceGeneralization,
 					_this, isApplicableMatch);
 			if (result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_black[7];
 
-				return new Object[] { classDec, interfaceGeneralization, cd2c2, cd2c, superInterfaceDec, childInterface,
-						superInterface, csp, _this, isApplicableMatch };
+				return new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, classDec,
+						interfaceGeneralization, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_greenBBFBF(
-			InterfaceDeclaration classDec, Generalization interfaceGeneralization,
-			InterfaceDeclaration superInterfaceDec) {
-		TypeAccess typeAcc = JavaFactory.eINSTANCE.createTypeAccess();
+	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_11_1_performtransformation_greenBFFBB(
+			InterfaceDeclaration superInterfaceDec, InterfaceDeclaration classDec,
+			Generalization interfaceGeneralization) {
 		TypeAccess2Generalization ta2g = UmlFactory.eINSTANCE.createTypeAccess2Generalization();
-		classDec.getSuperInterfaces().add(typeAcc);
-		typeAcc.setType(superInterfaceDec);
-		ta2g.setSource(typeAcc);
+		TypeAccess typeAcc = JavaFactory.eINSTANCE.createTypeAccess();
 		ta2g.setTarget(interfaceGeneralization);
-		return new Object[] { classDec, interfaceGeneralization, typeAcc, superInterfaceDec, ta2g };
+		ta2g.setSource(typeAcc);
+		typeAcc.setType(superInterfaceDec);
+		classDec.getSuperInterfaces().add(typeAcc);
+		return new Object[] { superInterfaceDec, ta2g, typeAcc, classDec, interfaceGeneralization };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_11_2_collecttranslatedelements_blackBBB(
-			Generalization interfaceGeneralization, TypeAccess typeAcc, TypeAccess2Generalization ta2g) {
-		return new Object[] { interfaceGeneralization, typeAcc, ta2g };
+			TypeAccess2Generalization ta2g, TypeAccess typeAcc, Generalization interfaceGeneralization) {
+		return new Object[] { ta2g, typeAcc, interfaceGeneralization };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_11_2_collecttranslatedelements_greenFBBB(
-			Generalization interfaceGeneralization, TypeAccess typeAcc, TypeAccess2Generalization ta2g) {
+			TypeAccess2Generalization ta2g, TypeAccess typeAcc, Generalization interfaceGeneralization) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(interfaceGeneralization);
-		ruleresult.getCreatedElements().add(typeAcc);
 		ruleresult.getCreatedLinkElements().add(ta2g);
-		return new Object[] { ruleresult, interfaceGeneralization, typeAcc, ta2g };
+		ruleresult.getCreatedElements().add(typeAcc);
+		ruleresult.getTranslatedElements().add(interfaceGeneralization);
+		return new Object[] { ruleresult, ta2g, typeAcc, interfaceGeneralization };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject classDec, EObject interfaceGeneralization, EObject cd2c2,
-			EObject typeAcc, EObject cd2c, EObject superInterfaceDec, EObject childInterface, EObject superInterface,
-			EObject ta2g) {
-		if (!classDec.equals(interfaceGeneralization)) {
-			if (!classDec.equals(typeAcc)) {
-				if (!classDec.equals(superInterfaceDec)) {
-					if (!classDec.equals(superInterface)) {
-						if (!classDec.equals(ta2g)) {
-							if (!interfaceGeneralization.equals(typeAcc)) {
-								if (!interfaceGeneralization.equals(superInterfaceDec)) {
-									if (!interfaceGeneralization.equals(superInterface)) {
-										if (!interfaceGeneralization.equals(ta2g)) {
-											if (!cd2c2.equals(classDec)) {
-												if (!cd2c2.equals(interfaceGeneralization)) {
-													if (!cd2c2.equals(typeAcc)) {
-														if (!cd2c2.equals(superInterfaceDec)) {
-															if (!cd2c2.equals(childInterface)) {
-																if (!cd2c2.equals(superInterface)) {
-																	if (!cd2c2.equals(ta2g)) {
-																		if (!cd2c.equals(classDec)) {
-																			if (!cd2c.equals(interfaceGeneralization)) {
-																				if (!cd2c.equals(cd2c2)) {
-																					if (!cd2c.equals(typeAcc)) {
+			PerformRuleResult ruleresult, EObject childInterface, EObject superInterfaceDec, EObject cd2c2,
+			EObject ta2g, EObject superInterface, EObject cd2c, EObject typeAcc, EObject classDec,
+			EObject interfaceGeneralization) {
+		if (!childInterface.equals(superInterfaceDec)) {
+			if (!childInterface.equals(ta2g)) {
+				if (!childInterface.equals(superInterface)) {
+					if (!childInterface.equals(typeAcc)) {
+						if (!childInterface.equals(classDec)) {
+							if (!childInterface.equals(interfaceGeneralization)) {
+								if (!superInterfaceDec.equals(ta2g)) {
+									if (!superInterfaceDec.equals(typeAcc)) {
+										if (!cd2c2.equals(childInterface)) {
+											if (!cd2c2.equals(superInterfaceDec)) {
+												if (!cd2c2.equals(ta2g)) {
+													if (!cd2c2.equals(superInterface)) {
+														if (!cd2c2.equals(typeAcc)) {
+															if (!cd2c2.equals(classDec)) {
+																if (!cd2c2.equals(interfaceGeneralization)) {
+																	if (!ta2g.equals(typeAcc)) {
+																		if (!superInterface.equals(superInterfaceDec)) {
+																			if (!superInterface.equals(ta2g)) {
+																				if (!superInterface.equals(typeAcc)) {
+																					if (!cd2c.equals(childInterface)) {
 																						if (!cd2c.equals(
 																								superInterfaceDec)) {
-																							if (!cd2c.equals(
-																									childInterface)) {
-																								if (!cd2c.equals(
-																										superInterface)) {
+																							if (!cd2c.equals(cd2c2)) {
+																								if (!cd2c
+																										.equals(ta2g)) {
 																									if (!cd2c.equals(
-																											ta2g)) {
-																										if (!superInterfaceDec
+																											superInterface)) {
+																										if (!cd2c
 																												.equals(typeAcc)) {
-																											if (!superInterfaceDec
-																													.equals(ta2g)) {
-																												if (!childInterface
-																														.equals(classDec)) {
-																													if (!childInterface
-																															.equals(interfaceGeneralization)) {
-																														if (!childInterface
-																																.equals(typeAcc)) {
-																															if (!childInterface
-																																	.equals(superInterfaceDec)) {
-																																if (!childInterface
-																																		.equals(superInterface)) {
-																																	if (!childInterface
-																																			.equals(ta2g)) {
-																																		if (!superInterface
-																																				.equals(typeAcc)) {
-																																			if (!superInterface
-																																					.equals(superInterfaceDec)) {
-																																				if (!superInterface
-																																						.equals(ta2g)) {
-																																					if (!ta2g
+																											if (!cd2c
+																													.equals(classDec)) {
+																												if (!cd2c
+																														.equals(interfaceGeneralization)) {
+																													if (!classDec
+																															.equals(superInterfaceDec)) {
+																														if (!classDec
+																																.equals(ta2g)) {
+																															if (!classDec
+																																	.equals(superInterface)) {
+																																if (!classDec
+																																		.equals(typeAcc)) {
+																																	if (!classDec
+																																			.equals(interfaceGeneralization)) {
+																																		if (!interfaceGeneralization
+																																				.equals(superInterfaceDec)) {
+																																			if (!interfaceGeneralization
+																																					.equals(ta2g)) {
+																																				if (!interfaceGeneralization
+																																						.equals(superInterface)) {
+																																					if (!interfaceGeneralization
 																																							.equals(typeAcc)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								classDec,
-																																								interfaceGeneralization,
-																																								cd2c2,
-																																								typeAcc,
-																																								cd2c,
-																																								superInterfaceDec,
 																																								childInterface,
+																																								superInterfaceDec,
+																																								cd2c2,
+																																								ta2g,
 																																								superInterface,
-																																								ta2g };
+																																								cd2c,
+																																								typeAcc,
+																																								classDec,
+																																								interfaceGeneralization };
 																																					}
 																																				}
 																																			}
@@ -2393,43 +2391,31 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject classDec, EObject interfaceGeneralization, EObject typeAcc,
-			EObject superInterfaceDec, EObject childInterface, EObject superInterface, EObject ta2g) {
-		EMoflonEdge classDec__typeAcc____superInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeAcc__superInterfaceDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject childInterface, EObject superInterfaceDec, EObject ta2g,
+			EObject superInterface, EObject typeAcc, EObject classDec, EObject interfaceGeneralization) {
 		EMoflonEdge childInterface__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge interfaceGeneralization__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge childInterface__interfaceGeneralization____generalization = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge interfaceGeneralization__childInterface____specific = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ta2g__typeAcc____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeAcc__superInterfaceDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge superInterfaceDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge classDec__typeAcc____superInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ta2g__interfaceGeneralization____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge interfaceGeneralization__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypeAccess2InterfaceGeneralization";
-		String classDec__typeAcc____superInterfaces_name_prime = "superInterfaces";
-		String typeAcc__superInterfaceDec____type_name_prime = "type";
-		String superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String childInterface__superInterface____general_name_prime = "general";
-		String interfaceGeneralization__superInterface____general_name_prime = "general";
 		String childInterface__interfaceGeneralization____generalization_name_prime = "generalization";
 		String interfaceGeneralization__childInterface____specific_name_prime = "specific";
 		String ta2g__typeAcc____source_name_prime = "source";
+		String typeAcc__superInterfaceDec____type_name_prime = "type";
+		String superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String classDec__typeAcc____superInterfaces_name_prime = "superInterfaces";
 		String ta2g__interfaceGeneralization____target_name_prime = "target";
-		classDec__typeAcc____superInterfaces.setSrc(classDec);
-		classDec__typeAcc____superInterfaces.setTrg(typeAcc);
-		ruleresult.getCreatedEdges().add(classDec__typeAcc____superInterfaces);
-		typeAcc__superInterfaceDec____type.setSrc(typeAcc);
-		typeAcc__superInterfaceDec____type.setTrg(superInterfaceDec);
-		ruleresult.getCreatedEdges().add(typeAcc__superInterfaceDec____type);
-		superInterfaceDec__typeAcc____usagesInTypeAccess.setSrc(superInterfaceDec);
-		superInterfaceDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
-		ruleresult.getCreatedEdges().add(superInterfaceDec__typeAcc____usagesInTypeAccess);
+		String interfaceGeneralization__superInterface____general_name_prime = "general";
 		childInterface__superInterface____general.setSrc(childInterface);
 		childInterface__superInterface____general.setTrg(superInterface);
 		ruleresult.getTranslatedEdges().add(childInterface__superInterface____general);
-		interfaceGeneralization__superInterface____general.setSrc(interfaceGeneralization);
-		interfaceGeneralization__superInterface____general.setTrg(superInterface);
-		ruleresult.getTranslatedEdges().add(interfaceGeneralization__superInterface____general);
 		childInterface__interfaceGeneralization____generalization.setSrc(childInterface);
 		childInterface__interfaceGeneralization____generalization.setTrg(interfaceGeneralization);
 		ruleresult.getTranslatedEdges().add(childInterface__interfaceGeneralization____generalization);
@@ -2439,38 +2425,50 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 		ta2g__typeAcc____source.setSrc(ta2g);
 		ta2g__typeAcc____source.setTrg(typeAcc);
 		ruleresult.getCreatedEdges().add(ta2g__typeAcc____source);
+		typeAcc__superInterfaceDec____type.setSrc(typeAcc);
+		typeAcc__superInterfaceDec____type.setTrg(superInterfaceDec);
+		ruleresult.getCreatedEdges().add(typeAcc__superInterfaceDec____type);
+		superInterfaceDec__typeAcc____usagesInTypeAccess.setSrc(superInterfaceDec);
+		superInterfaceDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
+		ruleresult.getCreatedEdges().add(superInterfaceDec__typeAcc____usagesInTypeAccess);
+		classDec__typeAcc____superInterfaces.setSrc(classDec);
+		classDec__typeAcc____superInterfaces.setTrg(typeAcc);
+		ruleresult.getCreatedEdges().add(classDec__typeAcc____superInterfaces);
 		ta2g__interfaceGeneralization____target.setSrc(ta2g);
 		ta2g__interfaceGeneralization____target.setTrg(interfaceGeneralization);
 		ruleresult.getCreatedEdges().add(ta2g__interfaceGeneralization____target);
+		interfaceGeneralization__superInterface____general.setSrc(interfaceGeneralization);
+		interfaceGeneralization__superInterface____general.setTrg(superInterface);
+		ruleresult.getTranslatedEdges().add(interfaceGeneralization__superInterface____general);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		classDec__typeAcc____superInterfaces.setName(classDec__typeAcc____superInterfaces_name_prime);
-		typeAcc__superInterfaceDec____type.setName(typeAcc__superInterfaceDec____type_name_prime);
-		superInterfaceDec__typeAcc____usagesInTypeAccess
-				.setName(superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime);
 		childInterface__superInterface____general.setName(childInterface__superInterface____general_name_prime);
-		interfaceGeneralization__superInterface____general
-				.setName(interfaceGeneralization__superInterface____general_name_prime);
 		childInterface__interfaceGeneralization____generalization
 				.setName(childInterface__interfaceGeneralization____generalization_name_prime);
 		interfaceGeneralization__childInterface____specific
 				.setName(interfaceGeneralization__childInterface____specific_name_prime);
 		ta2g__typeAcc____source.setName(ta2g__typeAcc____source_name_prime);
+		typeAcc__superInterfaceDec____type.setName(typeAcc__superInterfaceDec____type_name_prime);
+		superInterfaceDec__typeAcc____usagesInTypeAccess
+				.setName(superInterfaceDec__typeAcc____usagesInTypeAccess_name_prime);
+		classDec__typeAcc____superInterfaces.setName(classDec__typeAcc____superInterfaces_name_prime);
 		ta2g__interfaceGeneralization____target.setName(ta2g__interfaceGeneralization____target_name_prime);
-		return new Object[] { ruleresult, classDec, interfaceGeneralization, typeAcc, superInterfaceDec, childInterface,
-				superInterface, ta2g, classDec__typeAcc____superInterfaces, typeAcc__superInterfaceDec____type,
-				superInterfaceDec__typeAcc____usagesInTypeAccess, childInterface__superInterface____general,
-				interfaceGeneralization__superInterface____general,
+		interfaceGeneralization__superInterface____general
+				.setName(interfaceGeneralization__superInterface____general_name_prime);
+		return new Object[] { ruleresult, childInterface, superInterfaceDec, ta2g, superInterface, typeAcc, classDec,
+				interfaceGeneralization, childInterface__superInterface____general,
 				childInterface__interfaceGeneralization____generalization,
 				interfaceGeneralization__childInterface____specific, ta2g__typeAcc____source,
-				ta2g__interfaceGeneralization____target };
+				typeAcc__superInterfaceDec____type, superInterfaceDec__typeAcc____usagesInTypeAccess,
+				classDec__typeAcc____superInterfaces, ta2g__interfaceGeneralization____target,
+				interfaceGeneralization__superInterface____general };
 	}
 
 	public static final void pattern_TypeAccess2InterfaceGeneralization_11_5_registerobjects_expressionBBBBBBBBBBB(
-			TypeAccess2InterfaceGeneralization _this, PerformRuleResult ruleresult, EObject classDec,
-			EObject interfaceGeneralization, EObject cd2c2, EObject typeAcc, EObject cd2c, EObject superInterfaceDec,
-			EObject childInterface, EObject superInterface, EObject ta2g) {
-		_this.registerObjects_BWD(ruleresult, classDec, interfaceGeneralization, cd2c2, typeAcc, cd2c,
-				superInterfaceDec, childInterface, superInterface, ta2g);
+			TypeAccess2InterfaceGeneralization _this, PerformRuleResult ruleresult, EObject childInterface,
+			EObject superInterfaceDec, EObject cd2c2, EObject ta2g, EObject superInterface, EObject cd2c,
+			EObject typeAcc, EObject classDec, EObject interfaceGeneralization) {
+		_this.registerObjects_BWD(ruleresult, childInterface, superInterfaceDec, cd2c2, ta2g, superInterface, cd2c,
+				typeAcc, classDec, interfaceGeneralization);
 
 	}
 
@@ -2532,43 +2530,43 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_12_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("interfaceGeneralization");
-		EObject _localVariable_1 = match.getObject("childInterface");
-		EObject _localVariable_2 = match.getObject("superInterface");
-		EObject tmpInterfaceGeneralization = _localVariable_0;
-		EObject tmpChildInterface = _localVariable_1;
-		EObject tmpSuperInterface = _localVariable_2;
-		if (tmpInterfaceGeneralization instanceof Generalization) {
-			Generalization interfaceGeneralization = (Generalization) tmpInterfaceGeneralization;
-			if (tmpChildInterface instanceof Interface) {
-				Interface childInterface = (Interface) tmpChildInterface;
-				if (tmpSuperInterface instanceof Interface) {
-					Interface superInterface = (Interface) tmpSuperInterface;
-					return new Object[] { interfaceGeneralization, childInterface, superInterface, match };
+		EObject _localVariable_0 = match.getObject("childInterface");
+		EObject _localVariable_1 = match.getObject("superInterface");
+		EObject _localVariable_2 = match.getObject("interfaceGeneralization");
+		EObject tmpChildInterface = _localVariable_0;
+		EObject tmpSuperInterface = _localVariable_1;
+		EObject tmpInterfaceGeneralization = _localVariable_2;
+		if (tmpChildInterface instanceof Interface) {
+			Interface childInterface = (Interface) tmpChildInterface;
+			if (tmpSuperInterface instanceof Interface) {
+				Interface superInterface = (Interface) tmpSuperInterface;
+				if (tmpInterfaceGeneralization instanceof Generalization) {
+					Generalization interfaceGeneralization = (Generalization) tmpInterfaceGeneralization;
+					return new Object[] { childInterface, superInterface, interfaceGeneralization, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeAccess2InterfaceGeneralization_12_2_corematch_blackFBFFFBBB(
-			Generalization interfaceGeneralization, Interface childInterface, Interface superInterface, Match match) {
+	public static final Iterable<Object[]> pattern_TypeAccess2InterfaceGeneralization_12_2_corematch_blackBFFBFFBB(
+			Interface childInterface, Interface superInterface, Generalization interfaceGeneralization, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!childInterface.equals(superInterface)) {
-			for (ASTNode2Element cd2c : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(childInterface, ASTNode2Element.class, "target")) {
-				ASTNode tmpClassDec = cd2c.getSource();
-				if (tmpClassDec instanceof InterfaceDeclaration) {
-					InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
-					for (ASTNode2Element cd2c2 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(superInterface, ASTNode2Element.class, "target")) {
+			for (ASTNode2Element cd2c2 : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(superInterface, ASTNode2Element.class, "target")) {
+				ASTNode tmpSuperInterfaceDec = cd2c2.getSource();
+				if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
+					InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
+					for (ASTNode2Element cd2c : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(childInterface, ASTNode2Element.class, "target")) {
 						if (!cd2c.equals(cd2c2)) {
-							ASTNode tmpSuperInterfaceDec = cd2c2.getSource();
-							if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
-								InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
+							ASTNode tmpClassDec = cd2c.getSource();
+							if (tmpClassDec instanceof InterfaceDeclaration) {
+								InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
 								if (!classDec.equals(superInterfaceDec)) {
-									_result.add(new Object[] { classDec, interfaceGeneralization, cd2c2, cd2c,
-											superInterfaceDec, childInterface, superInterface, match });
+									_result.add(new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface,
+											cd2c, classDec, interfaceGeneralization, match });
 								}
 							}
 
@@ -2582,22 +2580,22 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_TypeAccess2InterfaceGeneralization_12_3_findcontext_blackBBBBBBB(
-			InterfaceDeclaration classDec, Generalization interfaceGeneralization, ASTNode2Element cd2c2,
-			ASTNode2Element cd2c, InterfaceDeclaration superInterfaceDec, Interface childInterface,
-			Interface superInterface) {
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2,
+			Interface superInterface, ASTNode2Element cd2c, InterfaceDeclaration classDec,
+			Generalization interfaceGeneralization) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!classDec.equals(superInterfaceDec)) {
+		if (!childInterface.equals(superInterface)) {
 			if (!cd2c.equals(cd2c2)) {
-				if (!childInterface.equals(superInterface)) {
-					if (classDec.equals(cd2c.getSource())) {
-						if (superInterfaceDec.equals(cd2c2.getSource())) {
-							if (childInterface.getGenerals().contains(superInterface)) {
+				if (!classDec.equals(superInterfaceDec)) {
+					if (superInterface.equals(cd2c2.getTarget())) {
+						if (childInterface.getGenerals().contains(superInterface)) {
+							if (superInterfaceDec.equals(cd2c2.getSource())) {
 								if (childInterface.equals(cd2c.getTarget())) {
-									if (superInterface.equals(interfaceGeneralization.getGeneral())) {
-										if (childInterface.getGeneralizations().contains(interfaceGeneralization)) {
-											if (superInterface.equals(cd2c2.getTarget())) {
-												_result.add(new Object[] { classDec, interfaceGeneralization, cd2c2,
-														cd2c, superInterfaceDec, childInterface, superInterface });
+									if (childInterface.getGeneralizations().contains(interfaceGeneralization)) {
+										if (classDec.equals(cd2c.getSource())) {
+											if (superInterface.equals(interfaceGeneralization.getGeneral())) {
+												_result.add(new Object[] { childInterface, superInterfaceDec, cd2c2,
+														superInterface, cd2c, classDec, interfaceGeneralization });
 											}
 										}
 									}
@@ -2612,88 +2610,87 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_12_3_findcontext_greenBBBBBBBFFFFFFFFF(
-			InterfaceDeclaration classDec, Generalization interfaceGeneralization, ASTNode2Element cd2c2,
-			ASTNode2Element cd2c, InterfaceDeclaration superInterfaceDec, Interface childInterface,
-			Interface superInterface) {
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2,
+			Interface superInterface, ASTNode2Element cd2c, InterfaceDeclaration classDec,
+			Generalization interfaceGeneralization) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge cd2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2c2__superInterfaceDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2c2__superInterface____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge childInterface__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2c2__superInterfaceDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd2c__childInterface____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge interfaceGeneralization__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge childInterface__interfaceGeneralization____generalization = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge interfaceGeneralization__childInterface____specific = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2c2__superInterface____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String cd2c__classDec____source_name_prime = "source";
-		String cd2c2__superInterfaceDec____source_name_prime = "source";
+		EMoflonEdge cd2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge interfaceGeneralization__superInterface____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String cd2c2__superInterface____target_name_prime = "target";
 		String childInterface__superInterface____general_name_prime = "general";
+		String cd2c2__superInterfaceDec____source_name_prime = "source";
 		String cd2c__childInterface____target_name_prime = "target";
-		String interfaceGeneralization__superInterface____general_name_prime = "general";
 		String childInterface__interfaceGeneralization____generalization_name_prime = "generalization";
 		String interfaceGeneralization__childInterface____specific_name_prime = "specific";
-		String cd2c2__superInterface____target_name_prime = "target";
+		String cd2c__classDec____source_name_prime = "source";
+		String interfaceGeneralization__superInterface____general_name_prime = "general";
+		isApplicableMatch.getAllContextElements().add(childInterface);
+		isApplicableMatch.getAllContextElements().add(superInterfaceDec);
+		isApplicableMatch.getAllContextElements().add(cd2c2);
+		isApplicableMatch.getAllContextElements().add(superInterface);
+		isApplicableMatch.getAllContextElements().add(cd2c);
 		isApplicableMatch.getAllContextElements().add(classDec);
 		isApplicableMatch.getAllContextElements().add(interfaceGeneralization);
-		isApplicableMatch.getAllContextElements().add(cd2c2);
-		isApplicableMatch.getAllContextElements().add(cd2c);
-		isApplicableMatch.getAllContextElements().add(superInterfaceDec);
-		isApplicableMatch.getAllContextElements().add(childInterface);
-		isApplicableMatch.getAllContextElements().add(superInterface);
-		cd2c__classDec____source.setSrc(cd2c);
-		cd2c__classDec____source.setTrg(classDec);
-		isApplicableMatch.getAllContextElements().add(cd2c__classDec____source);
-		cd2c2__superInterfaceDec____source.setSrc(cd2c2);
-		cd2c2__superInterfaceDec____source.setTrg(superInterfaceDec);
-		isApplicableMatch.getAllContextElements().add(cd2c2__superInterfaceDec____source);
+		cd2c2__superInterface____target.setSrc(cd2c2);
+		cd2c2__superInterface____target.setTrg(superInterface);
+		isApplicableMatch.getAllContextElements().add(cd2c2__superInterface____target);
 		childInterface__superInterface____general.setSrc(childInterface);
 		childInterface__superInterface____general.setTrg(superInterface);
 		isApplicableMatch.getAllContextElements().add(childInterface__superInterface____general);
+		cd2c2__superInterfaceDec____source.setSrc(cd2c2);
+		cd2c2__superInterfaceDec____source.setTrg(superInterfaceDec);
+		isApplicableMatch.getAllContextElements().add(cd2c2__superInterfaceDec____source);
 		cd2c__childInterface____target.setSrc(cd2c);
 		cd2c__childInterface____target.setTrg(childInterface);
 		isApplicableMatch.getAllContextElements().add(cd2c__childInterface____target);
-		interfaceGeneralization__superInterface____general.setSrc(interfaceGeneralization);
-		interfaceGeneralization__superInterface____general.setTrg(superInterface);
-		isApplicableMatch.getAllContextElements().add(interfaceGeneralization__superInterface____general);
 		childInterface__interfaceGeneralization____generalization.setSrc(childInterface);
 		childInterface__interfaceGeneralization____generalization.setTrg(interfaceGeneralization);
 		isApplicableMatch.getAllContextElements().add(childInterface__interfaceGeneralization____generalization);
 		interfaceGeneralization__childInterface____specific.setSrc(interfaceGeneralization);
 		interfaceGeneralization__childInterface____specific.setTrg(childInterface);
 		isApplicableMatch.getAllContextElements().add(interfaceGeneralization__childInterface____specific);
-		cd2c2__superInterface____target.setSrc(cd2c2);
-		cd2c2__superInterface____target.setTrg(superInterface);
-		isApplicableMatch.getAllContextElements().add(cd2c2__superInterface____target);
-		cd2c__classDec____source.setName(cd2c__classDec____source_name_prime);
-		cd2c2__superInterfaceDec____source.setName(cd2c2__superInterfaceDec____source_name_prime);
+		cd2c__classDec____source.setSrc(cd2c);
+		cd2c__classDec____source.setTrg(classDec);
+		isApplicableMatch.getAllContextElements().add(cd2c__classDec____source);
+		interfaceGeneralization__superInterface____general.setSrc(interfaceGeneralization);
+		interfaceGeneralization__superInterface____general.setTrg(superInterface);
+		isApplicableMatch.getAllContextElements().add(interfaceGeneralization__superInterface____general);
+		cd2c2__superInterface____target.setName(cd2c2__superInterface____target_name_prime);
 		childInterface__superInterface____general.setName(childInterface__superInterface____general_name_prime);
+		cd2c2__superInterfaceDec____source.setName(cd2c2__superInterfaceDec____source_name_prime);
 		cd2c__childInterface____target.setName(cd2c__childInterface____target_name_prime);
-		interfaceGeneralization__superInterface____general
-				.setName(interfaceGeneralization__superInterface____general_name_prime);
 		childInterface__interfaceGeneralization____generalization
 				.setName(childInterface__interfaceGeneralization____generalization_name_prime);
 		interfaceGeneralization__childInterface____specific
 				.setName(interfaceGeneralization__childInterface____specific_name_prime);
-		cd2c2__superInterface____target.setName(cd2c2__superInterface____target_name_prime);
-		return new Object[] { classDec, interfaceGeneralization, cd2c2, cd2c, superInterfaceDec, childInterface,
-				superInterface, isApplicableMatch, cd2c__classDec____source, cd2c2__superInterfaceDec____source,
-				childInterface__superInterface____general, cd2c__childInterface____target,
-				interfaceGeneralization__superInterface____general,
-				childInterface__interfaceGeneralization____generalization,
-				interfaceGeneralization__childInterface____specific, cd2c2__superInterface____target };
+		cd2c__classDec____source.setName(cd2c__classDec____source_name_prime);
+		interfaceGeneralization__superInterface____general
+				.setName(interfaceGeneralization__superInterface____general_name_prime);
+		return new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, classDec,
+				interfaceGeneralization, isApplicableMatch, cd2c2__superInterface____target,
+				childInterface__superInterface____general, cd2c2__superInterfaceDec____source,
+				cd2c__childInterface____target, childInterface__interfaceGeneralization____generalization,
+				interfaceGeneralization__childInterface____specific, cd2c__classDec____source,
+				interfaceGeneralization__superInterface____general };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_12_4_solveCSP_bindingFBBBBBBBBB(
-			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch,
-			InterfaceDeclaration classDec, Generalization interfaceGeneralization, ASTNode2Element cd2c2,
-			ASTNode2Element cd2c, InterfaceDeclaration superInterfaceDec, Interface childInterface,
-			Interface superInterface) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, classDec, interfaceGeneralization,
-				cd2c2, cd2c, superInterfaceDec, childInterface, superInterface);
+			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch, Interface childInterface,
+			InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2, Interface superInterface,
+			ASTNode2Element cd2c, InterfaceDeclaration classDec, Generalization interfaceGeneralization) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, childInterface, superInterfaceDec,
+				cd2c2, superInterface, cd2c, classDec, interfaceGeneralization);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, classDec, interfaceGeneralization, cd2c2, cd2c,
-					superInterfaceDec, childInterface, superInterface };
+			return new Object[] { csp, _this, isApplicableMatch, childInterface, superInterfaceDec, cd2c2,
+					superInterface, cd2c, classDec, interfaceGeneralization };
 		}
 		return null;
 	}
@@ -2703,13 +2700,12 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch,
-			InterfaceDeclaration classDec, Generalization interfaceGeneralization, ASTNode2Element cd2c2,
-			ASTNode2Element cd2c, InterfaceDeclaration superInterfaceDec, Interface childInterface,
-			Interface superInterface) {
+			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch, Interface childInterface,
+			InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2, Interface superInterface,
+			ASTNode2Element cd2c, InterfaceDeclaration classDec, Generalization interfaceGeneralization) {
 		Object[] result_pattern_TypeAccess2InterfaceGeneralization_12_4_solveCSP_binding = pattern_TypeAccess2InterfaceGeneralization_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, classDec, interfaceGeneralization, cd2c2, cd2c, superInterfaceDec,
-				childInterface, superInterface);
+				_this, isApplicableMatch, childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, classDec,
+				interfaceGeneralization);
 		if (result_pattern_TypeAccess2InterfaceGeneralization_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2InterfaceGeneralization_12_4_solveCSP_binding[0];
 
@@ -2717,8 +2713,8 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_TypeAccess2InterfaceGeneralization_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, classDec, interfaceGeneralization, cd2c2, cd2c,
-						superInterfaceDec, childInterface, superInterface };
+				return new Object[] { csp, _this, isApplicableMatch, childInterface, superInterfaceDec, cd2c2,
+						superInterface, cd2c, classDec, interfaceGeneralization };
 			}
 		}
 		return null;
@@ -2819,7 +2815,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 					if (childInterface.getGenerals().contains(superInterface)) {
 						for (Generalization interfaceGeneralization : childInterface.getGeneralizations()) {
 							if (superInterface.equals(interfaceGeneralization.getGeneral())) {
-								_result.add(new Object[] { interfaceGeneralization, childInterface, superInterface,
+								_result.add(new Object[] { childInterface, superInterface, interfaceGeneralization,
 										_edge_general });
 							}
 						}
@@ -2843,10 +2839,10 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final boolean pattern_TypeAccess2InterfaceGeneralization_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			TypeAccess2InterfaceGeneralization _this, Match match, Generalization interfaceGeneralization,
-			Interface childInterface, Interface superInterface) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, interfaceGeneralization, childInterface,
-				superInterface);
+			TypeAccess2InterfaceGeneralization _this, Match match, Interface childInterface, Interface superInterface,
+			Generalization interfaceGeneralization) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, childInterface, superInterface,
+				interfaceGeneralization);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2936,7 +2932,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_0B(
 			TypeAccess typeAcc) {
-		for (Annotation __DEC_typeAcc_type_41544 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAcc_type_685664 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, Annotation.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -2945,7 +2941,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeAcc) {
-		for (ArrayType __DEC_typeAcc_elementType_321421 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeAcc_elementType_984322 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ArrayType.class, "elementType")) {
 			return new Object[] { typeAcc };
 		}
@@ -2954,7 +2950,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess typeAcc) {
-		for (ClassDeclaration __DEC_typeAcc_superClass_487795 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeAcc_superClass_34924 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ClassDeclaration.class, "superClass")) {
 			return new Object[] { typeAcc };
 		}
@@ -2963,7 +2959,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess typeAcc) {
-		for (MethodDeclaration __DEC_typeAcc_returnType_633184 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeAcc_returnType_463077 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeAcc };
 		}
@@ -2972,7 +2968,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess typeAcc) {
-		for (ParameterizedType __DEC_typeAcc_type_501457 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAcc_type_214496 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ParameterizedType.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -2981,7 +2977,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess typeAcc) {
-		for (SingleVariableDeclaration __DEC_typeAcc_type_52516 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeAcc_type_733024 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -2990,7 +2986,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeAcc) {
-		for (AnnotationMemberValuePair __DEC_typeAcc_value_734089 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAcc_value_59724 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAcc };
 		}
@@ -2998,35 +2994,38 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_superInterfaces) {
+			EMoflonEdge _edge_type) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpClassDec = _edge_superInterfaces.getSrc();
-		if (tmpClassDec instanceof InterfaceDeclaration) {
-			InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
-			EObject tmpTypeAcc = _edge_superInterfaces.getTrg();
-			if (tmpTypeAcc instanceof TypeAccess) {
-				TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
-				if (classDec.getSuperInterfaces().contains(typeAcc)) {
-					Type tmpSuperInterfaceDec = typeAcc.getType();
-					if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
-						InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
-						if (!classDec.equals(superInterfaceDec)) {
-							if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_0B(
+		EObject tmpTypeAcc = _edge_type.getSrc();
+		if (tmpTypeAcc instanceof TypeAccess) {
+			TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
+			EObject tmpSuperInterfaceDec = _edge_type.getTrg();
+			if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
+				InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
+				if (superInterfaceDec.equals(typeAcc.getType())) {
+					if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_0B(
+							typeAcc) == null) {
+						if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_1B(
+								typeAcc) == null) {
+							if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_2B(
 									typeAcc) == null) {
-								if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_1B(
+								if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_3B(
 										typeAcc) == null) {
-									if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_2B(
+									if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_4B(
 											typeAcc) == null) {
-										if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_3B(
+										if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_5B(
 												typeAcc) == null) {
-											if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_4B(
+											if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_6B(
 													typeAcc) == null) {
-												if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_5B(
-														typeAcc) == null) {
-													if (pattern_TypeAccess2InterfaceGeneralization_21_2_testcorematchandDECs_black_nac_6B(
-															typeAcc) == null) {
-														_result.add(new Object[] { classDec, typeAcc, superInterfaceDec,
-																_edge_superInterfaces });
+												for (AbstractTypeDeclaration tmpClassDec : org.moflon.core.utilities.eMoflonEMFUtil
+														.getOppositeReferenceTyped(typeAcc,
+																AbstractTypeDeclaration.class, "superInterfaces")) {
+													if (tmpClassDec instanceof InterfaceDeclaration) {
+														InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
+														if (!classDec.equals(superInterfaceDec)) {
+															_result.add(new Object[] { superInterfaceDec, typeAcc,
+																	classDec, _edge_type });
+														}
 													}
 												}
 											}
@@ -3036,7 +3035,6 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 							}
 						}
 					}
-
 				}
 			}
 
@@ -3056,9 +3054,9 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final boolean pattern_TypeAccess2InterfaceGeneralization_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			TypeAccess2InterfaceGeneralization _this, Match match, InterfaceDeclaration classDec, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, classDec, typeAcc, superInterfaceDec);
+			TypeAccess2InterfaceGeneralization _this, Match match, InterfaceDeclaration superInterfaceDec,
+			TypeAccess typeAcc, InterfaceDeclaration classDec) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, superInterfaceDec, typeAcc, classDec);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3103,33 +3101,33 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_bindingFFFFFFBB(
-			Match sourceMatch, Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("classDec");
-		EObject _localVariable_1 = targetMatch.getObject("interfaceGeneralization");
-		EObject _localVariable_2 = sourceMatch.getObject("typeAcc");
-		EObject _localVariable_3 = sourceMatch.getObject("superInterfaceDec");
-		EObject _localVariable_4 = targetMatch.getObject("childInterface");
-		EObject _localVariable_5 = targetMatch.getObject("superInterface");
-		EObject tmpClassDec = _localVariable_0;
-		EObject tmpInterfaceGeneralization = _localVariable_1;
-		EObject tmpTypeAcc = _localVariable_2;
-		EObject tmpSuperInterfaceDec = _localVariable_3;
-		EObject tmpChildInterface = _localVariable_4;
-		EObject tmpSuperInterface = _localVariable_5;
-		if (tmpClassDec instanceof InterfaceDeclaration) {
-			InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
-			if (tmpInterfaceGeneralization instanceof Generalization) {
-				Generalization interfaceGeneralization = (Generalization) tmpInterfaceGeneralization;
-				if (tmpTypeAcc instanceof TypeAccess) {
-					TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
-					if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
-						InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
-						if (tmpChildInterface instanceof Interface) {
-							Interface childInterface = (Interface) tmpChildInterface;
-							if (tmpSuperInterface instanceof Interface) {
-								Interface superInterface = (Interface) tmpSuperInterface;
-								return new Object[] { classDec, interfaceGeneralization, typeAcc, superInterfaceDec,
-										childInterface, superInterface, sourceMatch, targetMatch };
+			Match targetMatch, Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("childInterface");
+		EObject _localVariable_1 = sourceMatch.getObject("superInterfaceDec");
+		EObject _localVariable_2 = targetMatch.getObject("superInterface");
+		EObject _localVariable_3 = sourceMatch.getObject("typeAcc");
+		EObject _localVariable_4 = sourceMatch.getObject("classDec");
+		EObject _localVariable_5 = targetMatch.getObject("interfaceGeneralization");
+		EObject tmpChildInterface = _localVariable_0;
+		EObject tmpSuperInterfaceDec = _localVariable_1;
+		EObject tmpSuperInterface = _localVariable_2;
+		EObject tmpTypeAcc = _localVariable_3;
+		EObject tmpClassDec = _localVariable_4;
+		EObject tmpInterfaceGeneralization = _localVariable_5;
+		if (tmpChildInterface instanceof Interface) {
+			Interface childInterface = (Interface) tmpChildInterface;
+			if (tmpSuperInterfaceDec instanceof InterfaceDeclaration) {
+				InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) tmpSuperInterfaceDec;
+				if (tmpSuperInterface instanceof Interface) {
+					Interface superInterface = (Interface) tmpSuperInterface;
+					if (tmpTypeAcc instanceof TypeAccess) {
+						TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
+						if (tmpClassDec instanceof InterfaceDeclaration) {
+							InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
+							if (tmpInterfaceGeneralization instanceof Generalization) {
+								Generalization interfaceGeneralization = (Generalization) tmpInterfaceGeneralization;
+								return new Object[] { childInterface, superInterfaceDec, superInterface, typeAcc,
+										classDec, interfaceGeneralization, targetMatch, sourceMatch };
 							}
 						}
 					}
@@ -3140,14 +3138,14 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_blackBBBBBBBB(
-			InterfaceDeclaration classDec, Generalization interfaceGeneralization, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface,
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, Interface superInterface,
+			TypeAccess typeAcc, InterfaceDeclaration classDec, Generalization interfaceGeneralization,
 			Match sourceMatch, Match targetMatch) {
-		if (!classDec.equals(superInterfaceDec)) {
-			if (!childInterface.equals(superInterface)) {
+		if (!childInterface.equals(superInterface)) {
+			if (!classDec.equals(superInterfaceDec)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { classDec, interfaceGeneralization, typeAcc, superInterfaceDec, childInterface,
-							superInterface, sourceMatch, targetMatch };
+					return new Object[] { childInterface, superInterfaceDec, superInterface, typeAcc, classDec,
+							interfaceGeneralization, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -3157,37 +3155,37 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding = pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_bindingFFFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding != null) {
-			InterfaceDeclaration classDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[0];
-			Generalization interfaceGeneralization = (Generalization) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[1];
-			TypeAccess typeAcc = (TypeAccess) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[2];
-			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[3];
-			Interface childInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[4];
-			Interface superInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[5];
+			Interface childInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[0];
+			InterfaceDeclaration superInterfaceDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[1];
+			Interface superInterface = (Interface) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[2];
+			TypeAccess typeAcc = (TypeAccess) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[3];
+			InterfaceDeclaration classDec = (InterfaceDeclaration) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[4];
+			Generalization interfaceGeneralization = (Generalization) result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_black = pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					classDec, interfaceGeneralization, typeAcc, superInterfaceDec, childInterface, superInterface,
+					childInterface, superInterfaceDec, superInterface, typeAcc, classDec, interfaceGeneralization,
 					sourceMatch, targetMatch);
 			if (result_pattern_TypeAccess2InterfaceGeneralization_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { classDec, interfaceGeneralization, typeAcc, superInterfaceDec, childInterface,
-						superInterface, sourceMatch, targetMatch };
+				return new Object[] { childInterface, superInterfaceDec, superInterface, typeAcc, classDec,
+						interfaceGeneralization, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_24_3_solvecsp_bindingFBBBBBBBBB(
-			TypeAccess2InterfaceGeneralization _this, InterfaceDeclaration classDec,
-			Generalization interfaceGeneralization, TypeAccess typeAcc, InterfaceDeclaration superInterfaceDec,
-			Interface childInterface, Interface superInterface, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(classDec, interfaceGeneralization, typeAcc,
-				superInterfaceDec, childInterface, superInterface, sourceMatch, targetMatch);
+			TypeAccess2InterfaceGeneralization _this, Interface childInterface, InterfaceDeclaration superInterfaceDec,
+			Interface superInterface, TypeAccess typeAcc, InterfaceDeclaration classDec,
+			Generalization interfaceGeneralization, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(childInterface, superInterfaceDec, superInterface,
+				typeAcc, classDec, interfaceGeneralization, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, classDec, interfaceGeneralization, typeAcc, superInterfaceDec,
-					childInterface, superInterface, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, childInterface, superInterfaceDec, superInterface, typeAcc, classDec,
+					interfaceGeneralization, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -3197,11 +3195,11 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			TypeAccess2InterfaceGeneralization _this, InterfaceDeclaration classDec,
-			Generalization interfaceGeneralization, TypeAccess typeAcc, InterfaceDeclaration superInterfaceDec,
-			Interface childInterface, Interface superInterface, Match sourceMatch, Match targetMatch) {
+			TypeAccess2InterfaceGeneralization _this, Interface childInterface, InterfaceDeclaration superInterfaceDec,
+			Interface superInterface, TypeAccess typeAcc, InterfaceDeclaration classDec,
+			Generalization interfaceGeneralization, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_TypeAccess2InterfaceGeneralization_24_3_solvecsp_binding = pattern_TypeAccess2InterfaceGeneralization_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, classDec, interfaceGeneralization, typeAcc, superInterfaceDec, childInterface, superInterface,
+				_this, childInterface, superInterfaceDec, superInterface, typeAcc, classDec, interfaceGeneralization,
 				sourceMatch, targetMatch);
 		if (result_pattern_TypeAccess2InterfaceGeneralization_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2InterfaceGeneralization_24_3_solvecsp_binding[0];
@@ -3210,8 +3208,8 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_TypeAccess2InterfaceGeneralization_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, classDec, interfaceGeneralization, typeAcc, superInterfaceDec,
-						childInterface, superInterface, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, childInterface, superInterfaceDec, superInterface, typeAcc, classDec,
+						interfaceGeneralization, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -3223,22 +3221,22 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeAccess2InterfaceGeneralization_24_5_matchcorrcontext_blackBFFBBBBB(
-			InterfaceDeclaration classDec, InterfaceDeclaration superInterfaceDec, Interface childInterface,
-			Interface superInterface, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_TypeAccess2InterfaceGeneralization_24_5_matchcorrcontext_blackBBFBFBBB(
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, Interface superInterface,
+			InterfaceDeclaration classDec, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!classDec.equals(superInterfaceDec)) {
-			if (!childInterface.equals(superInterface)) {
+		if (!childInterface.equals(superInterface)) {
+			if (!classDec.equals(superInterfaceDec)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					for (ASTNode2Element cd2c : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(classDec, ASTNode2Element.class, "source")) {
-						if (childInterface.equals(cd2c.getTarget())) {
-							for (ASTNode2Element cd2c2 : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(superInterfaceDec, ASTNode2Element.class, "source")) {
+					for (ASTNode2Element cd2c2 : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(superInterface, ASTNode2Element.class, "target")) {
+						if (superInterfaceDec.equals(cd2c2.getSource())) {
+							for (ASTNode2Element cd2c : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(childInterface, ASTNode2Element.class, "target")) {
 								if (!cd2c.equals(cd2c2)) {
-									if (superInterface.equals(cd2c2.getTarget())) {
-										_result.add(new Object[] { classDec, cd2c2, cd2c, superInterfaceDec,
-												childInterface, superInterface, sourceMatch, targetMatch });
+									if (classDec.equals(cd2c.getSource())) {
+										_result.add(new Object[] { childInterface, superInterfaceDec, cd2c2,
+												superInterface, cd2c, classDec, sourceMatch, targetMatch });
 									}
 								}
 							}
@@ -3263,25 +3261,25 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_24_6_createcorrespondence_blackBBBBBBB(
-			InterfaceDeclaration classDec, Generalization interfaceGeneralization, TypeAccess typeAcc,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface,
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, Interface superInterface,
+			TypeAccess typeAcc, InterfaceDeclaration classDec, Generalization interfaceGeneralization,
 			CCMatch ccMatch) {
-		if (!classDec.equals(superInterfaceDec)) {
-			if (!childInterface.equals(superInterface)) {
-				return new Object[] { classDec, interfaceGeneralization, typeAcc, superInterfaceDec, childInterface,
-						superInterface, ccMatch };
+		if (!childInterface.equals(superInterface)) {
+			if (!classDec.equals(superInterfaceDec)) {
+				return new Object[] { childInterface, superInterfaceDec, superInterface, typeAcc, classDec,
+						interfaceGeneralization, ccMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_24_6_createcorrespondence_greenBBFB(
-			Generalization interfaceGeneralization, TypeAccess typeAcc, CCMatch ccMatch) {
+	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_24_6_createcorrespondence_greenFBBB(
+			TypeAccess typeAcc, Generalization interfaceGeneralization, CCMatch ccMatch) {
 		TypeAccess2Generalization ta2g = UmlFactory.eINSTANCE.createTypeAccess2Generalization();
 		ta2g.setSource(typeAcc);
 		ta2g.setTarget(interfaceGeneralization);
 		ccMatch.getCreateCorr().add(ta2g);
-		return new Object[] { interfaceGeneralization, typeAcc, ta2g, ccMatch };
+		return new Object[] { ta2g, typeAcc, interfaceGeneralization, ccMatch };
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_24_7_addtoreturnedresult_blackBB(
@@ -3307,7 +3305,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_black_nac_0B(
 			TypeAccess typeAcc) {
-		for (Annotation __DEC_typeAcc_type_706992 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAcc_type_358963 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, Annotation.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -3316,7 +3314,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeAcc) {
-		for (ArrayType __DEC_typeAcc_elementType_705067 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeAcc_elementType_434442 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ArrayType.class, "elementType")) {
 			return new Object[] { typeAcc };
 		}
@@ -3325,7 +3323,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess typeAcc) {
-		for (ClassDeclaration __DEC_typeAcc_superClass_406299 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeAcc_superClass_912063 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ClassDeclaration.class, "superClass")) {
 			return new Object[] { typeAcc };
 		}
@@ -3334,7 +3332,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_black_nac_3B(
 			TypeAccess typeAcc) {
-		for (MethodDeclaration __DEC_typeAcc_returnType_91048 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeAcc_returnType_359522 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeAcc };
 		}
@@ -3343,7 +3341,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess typeAcc) {
-		for (ParameterizedType __DEC_typeAcc_type_195772 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAcc_type_553312 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ParameterizedType.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -3352,7 +3350,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess typeAcc) {
-		for (SingleVariableDeclaration __DEC_typeAcc_type_620476 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeAcc_type_88956 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -3361,7 +3359,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeAcc) {
-		for (AnnotationMemberValuePair __DEC_typeAcc_value_389525 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAcc_value_186142 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAcc };
 		}
@@ -3369,10 +3367,10 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_blackBBB(
-			InterfaceDeclaration classDec, TypeAccess typeAcc, InterfaceDeclaration superInterfaceDec) {
+			InterfaceDeclaration superInterfaceDec, TypeAccess typeAcc, InterfaceDeclaration classDec) {
 		if (!classDec.equals(superInterfaceDec)) {
-			if (classDec.getSuperInterfaces().contains(typeAcc)) {
-				if (superInterfaceDec.equals(typeAcc.getType())) {
+			if (superInterfaceDec.equals(typeAcc.getType())) {
+				if (classDec.getSuperInterfaces().contains(typeAcc)) {
 					if (pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_black_nac_0B(typeAcc) == null) {
 						if (pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_black_nac_1B(
 								typeAcc) == null) {
@@ -3386,7 +3384,7 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 												typeAcc) == null) {
 											if (pattern_TypeAccess2InterfaceGeneralization_27_1_matchtggpattern_black_nac_6B(
 													typeAcc) == null) {
-												return new Object[] { classDec, typeAcc, superInterfaceDec };
+												return new Object[] { superInterfaceDec, typeAcc, classDec };
 											}
 										}
 									}
@@ -3411,12 +3409,12 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_28_1_matchtggpattern_blackBBB(
-			Generalization interfaceGeneralization, Interface childInterface, Interface superInterface) {
+			Interface childInterface, Interface superInterface, Generalization interfaceGeneralization) {
 		if (!childInterface.equals(superInterface)) {
 			if (childInterface.getGenerals().contains(superInterface)) {
-				if (superInterface.equals(interfaceGeneralization.getGeneral())) {
-					if (childInterface.getGeneralizations().contains(interfaceGeneralization)) {
-						return new Object[] { interfaceGeneralization, childInterface, superInterface };
+				if (childInterface.getGeneralizations().contains(interfaceGeneralization)) {
+					if (superInterface.equals(interfaceGeneralization.getGeneral())) {
+						return new Object[] { childInterface, superInterface, interfaceGeneralization };
 					}
 				}
 			}
@@ -3448,9 +3446,9 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration classDec) {
-		if (ruleResult.getSourceObjects().contains(classDec)) {
-			return new Object[] { ruleResult, classDec };
+			ModelgeneratorRuleResult ruleResult, Interface childInterface) {
+		if (ruleResult.getTargetObjects().contains(childInterface)) {
+			return new Object[] { ruleResult, childInterface };
 		}
 		return null;
 	}
@@ -3464,25 +3462,25 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Interface childInterface) {
-		if (ruleResult.getTargetObjects().contains(childInterface)) {
-			return new Object[] { ruleResult, childInterface };
+			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration classDec) {
+		if (ruleResult.getSourceObjects().contains(classDec)) {
+			return new Object[] { ruleResult, classDec };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element cd2c2) {
-		if (ruleResult.getCorrObjects().contains(cd2c2)) {
-			return new Object[] { ruleResult, cd2c2 };
+			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration superInterfaceDec) {
+		if (ruleResult.getSourceObjects().contains(superInterfaceDec)) {
+			return new Object[] { ruleResult, superInterfaceDec };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration superInterfaceDec) {
-		if (ruleResult.getSourceObjects().contains(superInterfaceDec)) {
-			return new Object[] { ruleResult, superInterfaceDec };
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element cd2c2) {
+		if (ruleResult.getCorrObjects().contains(cd2c2)) {
+			return new Object[] { ruleResult, cd2c2 };
 		}
 		return null;
 	}
@@ -3504,18 +3502,18 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 					for (EObject tmpCd2c : cd2cList.getEntryObjects()) {
 						if (tmpCd2c instanceof ASTNode2Element) {
 							ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
-							ASTNode tmpClassDec = cd2c.getSource();
-							if (tmpClassDec instanceof InterfaceDeclaration) {
-								InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
-								Element tmpChildInterface = cd2c.getTarget();
-								if (tmpChildInterface instanceof Interface) {
-									Interface childInterface = (Interface) tmpChildInterface;
+							Element tmpChildInterface = cd2c.getTarget();
+							if (tmpChildInterface instanceof Interface) {
+								Interface childInterface = (Interface) tmpChildInterface;
+								ASTNode tmpClassDec = cd2c.getSource();
+								if (tmpClassDec instanceof InterfaceDeclaration) {
+									InterfaceDeclaration classDec = (InterfaceDeclaration) tmpClassDec;
 									if (pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_1BB(
 											ruleResult, cd2c) == null) {
 										if (pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, classDec) == null) {
+												ruleResult, childInterface) == null) {
 											if (pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, childInterface) == null) {
+													ruleResult, classDec) == null) {
 												for (EObject tmpCd2c2 : cd2c2List.getEntryObjects()) {
 													if (tmpCd2c2 instanceof ASTNode2Element) {
 														ASTNode2Element cd2c2 = (ASTNode2Element) tmpCd2c2;
@@ -3528,20 +3526,20 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 																	if (tmpSuperInterface instanceof Interface) {
 																		Interface superInterface = (Interface) tmpSuperInterface;
 																		if (!childInterface.equals(superInterface)) {
-																			if (pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_3BB(
+																			if (pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_4BB(
 																					ruleResult, cd2c2) == null) {
-																				if (pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_4BB(
+																				if (pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_3BB(
 																						ruleResult,
 																						superInterfaceDec) == null) {
 																					if (pattern_TypeAccess2InterfaceGeneralization_29_2_isapplicablecore_black_nac_5BB(
 																							ruleResult,
 																							superInterface) == null) {
 																						_result.add(new Object[] {
-																								cd2cList, classDec,
-																								cd2c, childInterface,
-																								cd2c2List, cd2c2,
+																								cd2cList,
+																								childInterface, cd2c,
+																								classDec, cd2c2List,
 																								superInterfaceDec,
-																								superInterface,
+																								cd2c2, superInterface,
 																								ruleEntryContainer,
 																								ruleResult });
 																					}
@@ -3572,16 +3570,15 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_29_3_solveCSP_bindingFBBBBBBBBB(
-			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch,
-			InterfaceDeclaration classDec, ASTNode2Element cd2c2, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface,
-			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, classDec, cd2c2, cd2c,
-				superInterfaceDec, childInterface, superInterface, ruleResult);
+			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch, Interface childInterface,
+			InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2, Interface superInterface,
+			ASTNode2Element cd2c, InterfaceDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, childInterface, superInterfaceDec,
+				cd2c2, superInterface, cd2c, classDec, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, classDec, cd2c2, cd2c, superInterfaceDec,
-					childInterface, superInterface, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, childInterface, superInterfaceDec, cd2c2,
+					superInterface, cd2c, classDec, ruleResult };
 		}
 		return null;
 	}
@@ -3591,12 +3588,11 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch,
-			InterfaceDeclaration classDec, ASTNode2Element cd2c2, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface,
-			ModelgeneratorRuleResult ruleResult) {
+			TypeAccess2InterfaceGeneralization _this, IsApplicableMatch isApplicableMatch, Interface childInterface,
+			InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2, Interface superInterface,
+			ASTNode2Element cd2c, InterfaceDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_TypeAccess2InterfaceGeneralization_29_3_solveCSP_binding = pattern_TypeAccess2InterfaceGeneralization_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, classDec, cd2c2, cd2c, superInterfaceDec, childInterface, superInterface,
+				_this, isApplicableMatch, childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, classDec,
 				ruleResult);
 		if (result_pattern_TypeAccess2InterfaceGeneralization_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2InterfaceGeneralization_29_3_solveCSP_binding[0];
@@ -3605,8 +3601,8 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_TypeAccess2InterfaceGeneralization_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, classDec, cd2c2, cd2c, superInterfaceDec,
-						childInterface, superInterface, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, childInterface, superInterfaceDec, cd2c2,
+						superInterface, cd2c, classDec, ruleResult };
 			}
 		}
 		return null;
@@ -3620,12 +3616,12 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_29_5_checknacs_blackBBBBBB(
-			InterfaceDeclaration classDec, ASTNode2Element cd2c2, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface) {
-		if (!classDec.equals(superInterfaceDec)) {
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2,
+			Interface superInterface, ASTNode2Element cd2c, InterfaceDeclaration classDec) {
+		if (!childInterface.equals(superInterface)) {
 			if (!cd2c.equals(cd2c2)) {
-				if (!childInterface.equals(superInterface)) {
-					return new Object[] { classDec, cd2c2, cd2c, superInterfaceDec, childInterface, superInterface };
+				if (!classDec.equals(superInterfaceDec)) {
+					return new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, classDec };
 				}
 			}
 		}
@@ -3633,13 +3629,13 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_29_6_perform_blackBBBBBBB(
-			InterfaceDeclaration classDec, ASTNode2Element cd2c2, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, Interface childInterface, Interface superInterface,
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, ASTNode2Element cd2c2,
+			Interface superInterface, ASTNode2Element cd2c, InterfaceDeclaration classDec,
 			ModelgeneratorRuleResult ruleResult) {
-		if (!classDec.equals(superInterfaceDec)) {
+		if (!childInterface.equals(superInterface)) {
 			if (!cd2c.equals(cd2c2)) {
-				if (!childInterface.equals(superInterface)) {
-					return new Object[] { classDec, cd2c2, cd2c, superInterfaceDec, childInterface, superInterface,
+				if (!classDec.equals(superInterfaceDec)) {
+					return new Object[] { childInterface, superInterfaceDec, cd2c2, superInterface, cd2c, classDec,
 							ruleResult };
 				}
 			}
@@ -3647,29 +3643,29 @@ public class TypeAccess2InterfaceGeneralizationImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_29_6_perform_greenBFFBBBFB(
-			InterfaceDeclaration classDec, InterfaceDeclaration superInterfaceDec, Interface childInterface,
-			Interface superInterface, ModelgeneratorRuleResult ruleResult) {
-		Generalization interfaceGeneralization = UMLFactory.eINSTANCE.createGeneralization();
-		TypeAccess typeAcc = JavaFactory.eINSTANCE.createTypeAccess();
+	public static final Object[] pattern_TypeAccess2InterfaceGeneralization_29_6_perform_greenBBFBFBFB(
+			Interface childInterface, InterfaceDeclaration superInterfaceDec, Interface superInterface,
+			InterfaceDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
 		TypeAccess2Generalization ta2g = UmlFactory.eINSTANCE.createTypeAccess2Generalization();
+		TypeAccess typeAcc = JavaFactory.eINSTANCE.createTypeAccess();
+		Generalization interfaceGeneralization = UMLFactory.eINSTANCE.createGeneralization();
 		childInterface.getGenerals().add(superInterface);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		interfaceGeneralization.setGeneral(superInterface);
-		childInterface.getGeneralizations().add(interfaceGeneralization);
-		ruleResult.getTargetObjects().add(interfaceGeneralization);
-		classDec.getSuperInterfaces().add(typeAcc);
-		typeAcc.setType(superInterfaceDec);
-		ruleResult.getSourceObjects().add(typeAcc);
-		ta2g.setSource(typeAcc);
-		ta2g.setTarget(interfaceGeneralization);
 		ruleResult.getCorrObjects().add(ta2g);
+		ta2g.setSource(typeAcc);
+		typeAcc.setType(superInterfaceDec);
+		classDec.getSuperInterfaces().add(typeAcc);
+		ruleResult.getSourceObjects().add(typeAcc);
+		childInterface.getGeneralizations().add(interfaceGeneralization);
+		ta2g.setTarget(interfaceGeneralization);
+		interfaceGeneralization.setGeneral(superInterface);
+		ruleResult.getTargetObjects().add(interfaceGeneralization);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { classDec, interfaceGeneralization, typeAcc, superInterfaceDec, childInterface,
-				superInterface, ta2g, ruleResult };
+		return new Object[] { childInterface, superInterfaceDec, ta2g, superInterface, typeAcc, classDec,
+				interfaceGeneralization, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_TypeAccess2InterfaceGeneralization_29_7_expressionFB(

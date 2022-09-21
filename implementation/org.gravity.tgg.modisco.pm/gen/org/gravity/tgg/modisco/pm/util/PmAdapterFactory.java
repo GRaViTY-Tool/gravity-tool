@@ -69,54 +69,13 @@ public class PmAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected PmSwitch<Adapter> modelSwitch = new PmSwitch<Adapter>() {
 		@Override
-		public Adapter caseMMethodNameToTMethod(MMethodNameToTMethod object) {
-			return createMMethodNameToTMethodAdapter();
+		public Adapter caseModifierToTMethodEntity(ModifierToTMethodEntity object) {
+			return createModifierToTMethodEntityAdapter();
 		}
 
 		@Override
-		public Adapter caseModifierToAbstractType(ModifierToAbstractType object) {
-			return createModifierToAbstractTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseMSyntethicMethodToTSyntethicMethod(MSyntethicMethodToTSyntethicMethod object) {
-			return createMSyntethicMethodToTSyntethicMethodAdapter();
-		}
-
-		@Override
-		public Adapter caseAnonymousClassDeclarationToTClass(AnonymousClassDeclarationToTClass object) {
-			return createAnonymousClassDeclarationToTClassAdapter();
-		}
-
-		@Override
-		public Adapter caseModifierToTClassEntity(ModifierToTClassEntity object) {
-			return createModifierToTClassEntityAdapter();
-		}
-
-		@Override
-		public Adapter caseMSingleVariableAccessToTAccess(MSingleVariableAccessToTAccess object) {
-			return createMSingleVariableAccessToTAccessAdapter();
-		}
-
-		@Override
-		public Adapter casePackageToTPackage(PackageToTPackage object) {
-			return createPackageToTPackageAdapter();
-		}
-
-		@Override
-		public Adapter caseVariableDeclarationFragmentToTFieldDefinition(
-				VariableDeclarationFragmentToTFieldDefinition object) {
-			return createVariableDeclarationFragmentToTFieldDefinitionAdapter();
-		}
-
-		@Override
-		public Adapter caseLiteralToTNode(LiteralToTNode object) {
-			return createLiteralToTNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseModifierToTFieldEntity(ModifierToTFieldEntity object) {
-			return createModifierToTFieldEntityAdapter();
+		public Adapter caseMSignatureToTSignature(MSignatureToTSignature object) {
+			return createMSignatureToTSignatureAdapter();
 		}
 
 		@Override
@@ -125,8 +84,75 @@ public class PmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTypeToTAbstractType(TypeToTAbstractType object) {
-			return createTypeToTAbstractTypeAdapter();
+		public Adapter caseAnnotationMemberValuePairToTAnnotationValue(
+				AnnotationMemberValuePairToTAnnotationValue object) {
+			return createAnnotationMemberValuePairToTAnnotationValueAdapter();
+		}
+
+		@Override
+		public Adapter caseModifierToTClassEntity(ModifierToTClassEntity object) {
+			return createModifierToTClassEntityAdapter();
+		}
+
+		@Override
+		public Adapter caseModifierToTFieldEntity(ModifierToTFieldEntity object) {
+			return createModifierToTFieldEntityAdapter();
+		}
+
+		@Override
+		public Adapter caseMDefinitionToTMember(MDefinitionToTMember object) {
+			return createMDefinitionToTMemberAdapter();
+		}
+
+		@Override
+		public Adapter caseLineCommentToTTextAnnotation(LineCommentToTTextAnnotation object) {
+			return createLineCommentToTTextAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeParameterToTClass(TypeParameterToTClass object) {
+			return createTypeParameterToTClassAdapter();
+		}
+
+		@Override
+		public Adapter caseAnonymousClassDeclarationToTClass(AnonymousClassDeclarationToTClass object) {
+			return createAnonymousClassDeclarationToTClassAdapter();
+		}
+
+		@Override
+		public Adapter caseASTNodeToTAnnotatable(ASTNodeToTAnnotatable object) {
+			return createASTNodeToTAnnotatableAdapter();
+		}
+
+		@Override
+		public Adapter caseModifierToAbstractType(ModifierToAbstractType object) {
+			return createModifierToAbstractTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseLiteralToTNode(LiteralToTNode object) {
+			return createLiteralToTNodeAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationToTAnnotation(AnnotationToTAnnotation object) {
+			return createAnnotationToTAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticTypeToAccessStaticType(StaticTypeToAccessStaticType object) {
+			return createStaticTypeToAccessStaticTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseMSyntethicMethodToTSyntethicMethod(MSyntethicMethodToTSyntethicMethod object) {
+			return createMSyntethicMethodToTSyntethicMethodAdapter();
+		}
+
+		@Override
+		public Adapter caseVariableDeclarationFragmentToTFieldDefinition(
+				VariableDeclarationFragmentToTFieldDefinition object) {
+			return createVariableDeclarationFragmentToTFieldDefinitionAdapter();
 		}
 
 		@Override
@@ -140,39 +166,8 @@ public class PmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseMSignatureToTSignature(MSignatureToTSignature object) {
-			return createMSignatureToTSignatureAdapter();
-		}
-
-		@Override
-		public Adapter caseMAbstractFlowElementToTAbstractFlowElement(
-				MAbstractFlowElementToTAbstractFlowElement object) {
-			return createMAbstractFlowElementToTAbstractFlowElementAdapter();
-		}
-
-		@Override
-		public Adapter caseMDefinitionToTMember(MDefinitionToTMember object) {
-			return createMDefinitionToTMemberAdapter();
-		}
-
-		@Override
-		public Adapter caseASTNodeToTAnnotatable(ASTNodeToTAnnotatable object) {
-			return createASTNodeToTAnnotatableAdapter();
-		}
-
-		@Override
-		public Adapter caseLineCommentToTTextAnnotation(LineCommentToTTextAnnotation object) {
-			return createLineCommentToTTextAnnotationAdapter();
-		}
-
-		@Override
-		public Adapter caseMModifierToTModifier(MModifierToTModifier object) {
-			return createMModifierToTModifierAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationToTAnnotation(AnnotationToTAnnotation object) {
-			return createAnnotationToTAnnotationAdapter();
+		public Adapter caseMMethodNameToTMethod(MMethodNameToTMethod object) {
+			return createMMethodNameToTMethodAdapter();
 		}
 
 		@Override
@@ -186,18 +181,29 @@ public class PmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseUnresolvedTypeDeclarationToTClass(UnresolvedTypeDeclarationToTClass object) {
-			return createUnresolvedTypeDeclarationToTClassAdapter();
+		public Adapter caseTypeToTAbstractType(TypeToTAbstractType object) {
+			return createTypeToTAbstractTypeAdapter();
 		}
 
 		@Override
-		public Adapter caseModifierToTMethodEntity(ModifierToTMethodEntity object) {
-			return createModifierToTMethodEntityAdapter();
+		public Adapter casePackageToTPackage(PackageToTPackage object) {
+			return createPackageToTPackageAdapter();
 		}
 
 		@Override
-		public Adapter caseStaticTypeToAccessStaticType(StaticTypeToAccessStaticType object) {
-			return createStaticTypeToAccessStaticTypeAdapter();
+		public Adapter caseMAbstractFlowElementToTAbstractFlowElement(
+				MAbstractFlowElementToTAbstractFlowElement object) {
+			return createMAbstractFlowElementToTAbstractFlowElementAdapter();
+		}
+
+		@Override
+		public Adapter caseMModifierToTModifier(MModifierToTModifier object) {
+			return createMModifierToTModifierAdapter();
+		}
+
+		@Override
+		public Adapter caseMSingleVariableAccessToTAccess(MSingleVariableAccessToTAccess object) {
+			return createMSingleVariableAccessToTAccessAdapter();
 		}
 
 		@Override
@@ -206,14 +212,8 @@ public class PmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTypeParameterToTClass(TypeParameterToTClass object) {
-			return createTypeParameterToTClassAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValuePairToTAnnotationValue(
-				AnnotationMemberValuePairToTAnnotationValue object) {
-			return createAnnotationMemberValuePairToTAnnotationValueAdapter();
+		public Adapter caseUnresolvedTypeDeclarationToTClass(UnresolvedTypeDeclarationToTClass object) {
+			return createUnresolvedTypeDeclarationToTClassAdapter();
 		}
 
 		@Override
@@ -241,142 +241,30 @@ public class PmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MMethodNameToTMethod <em>MMethod Name To TMethod</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.ModifierToTMethodEntity <em>Modifier To TMethod Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.MMethodNameToTMethod
+	 * @see org.gravity.tgg.modisco.pm.ModifierToTMethodEntity
 	 * @generated
 	 */
-	public Adapter createMMethodNameToTMethodAdapter() {
+	public Adapter createModifierToTMethodEntityAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.ModifierToAbstractType <em>Modifier To Abstract Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MSignatureToTSignature <em>MSignature To TSignature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.ModifierToAbstractType
+	 * @see org.gravity.tgg.modisco.pm.MSignatureToTSignature
 	 * @generated
 	 */
-	public Adapter createModifierToAbstractTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MSyntethicMethodToTSyntethicMethod <em>MSyntethic Method To TSyntethic Method</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.MSyntethicMethodToTSyntethicMethod
-	 * @generated
-	 */
-	public Adapter createMSyntethicMethodToTSyntethicMethodAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.AnonymousClassDeclarationToTClass <em>Anonymous Class Declaration To TClass</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.AnonymousClassDeclarationToTClass
-	 * @generated
-	 */
-	public Adapter createAnonymousClassDeclarationToTClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.ModifierToTClassEntity <em>Modifier To TClass Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.ModifierToTClassEntity
-	 * @generated
-	 */
-	public Adapter createModifierToTClassEntityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MSingleVariableAccessToTAccess <em>MSingle Variable Access To TAccess</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.MSingleVariableAccessToTAccess
-	 * @generated
-	 */
-	public Adapter createMSingleVariableAccessToTAccessAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.PackageToTPackage <em>Package To TPackage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.PackageToTPackage
-	 * @generated
-	 */
-	public Adapter createPackageToTPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.VariableDeclarationFragmentToTFieldDefinition <em>Variable Declaration Fragment To TField Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.VariableDeclarationFragmentToTFieldDefinition
-	 * @generated
-	 */
-	public Adapter createVariableDeclarationFragmentToTFieldDefinitionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.LiteralToTNode <em>Literal To TNode</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.LiteralToTNode
-	 * @generated
-	 */
-	public Adapter createLiteralToTNodeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.ModifierToTFieldEntity <em>Modifier To TField Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.ModifierToTFieldEntity
-	 * @generated
-	 */
-	public Adapter createModifierToTFieldEntityAdapter() {
+	public Adapter createMSignatureToTSignatureAdapter() {
 		return null;
 	}
 
@@ -395,16 +283,198 @@ public class PmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.TypeToTAbstractType <em>Type To TAbstract Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.AnnotationMemberValuePairToTAnnotationValue <em>Annotation Member Value Pair To TAnnotation Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.TypeToTAbstractType
+	 * @see org.gravity.tgg.modisco.pm.AnnotationMemberValuePairToTAnnotationValue
 	 * @generated
 	 */
-	public Adapter createTypeToTAbstractTypeAdapter() {
+	public Adapter createAnnotationMemberValuePairToTAnnotationValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.ModifierToTClassEntity <em>Modifier To TClass Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.ModifierToTClassEntity
+	 * @generated
+	 */
+	public Adapter createModifierToTClassEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.ModifierToTFieldEntity <em>Modifier To TField Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.ModifierToTFieldEntity
+	 * @generated
+	 */
+	public Adapter createModifierToTFieldEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MDefinitionToTMember <em>MDefinition To TMember</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.MDefinitionToTMember
+	 * @generated
+	 */
+	public Adapter createMDefinitionToTMemberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.LineCommentToTTextAnnotation <em>Line Comment To TText Annotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.LineCommentToTTextAnnotation
+	 * @generated
+	 */
+	public Adapter createLineCommentToTTextAnnotationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.TypeParameterToTClass <em>Type Parameter To TClass</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.TypeParameterToTClass
+	 * @generated
+	 */
+	public Adapter createTypeParameterToTClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.AnonymousClassDeclarationToTClass <em>Anonymous Class Declaration To TClass</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.AnonymousClassDeclarationToTClass
+	 * @generated
+	 */
+	public Adapter createAnonymousClassDeclarationToTClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.ASTNodeToTAnnotatable <em>AST Node To TAnnotatable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.ASTNodeToTAnnotatable
+	 * @generated
+	 */
+	public Adapter createASTNodeToTAnnotatableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.ModifierToAbstractType <em>Modifier To Abstract Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.ModifierToAbstractType
+	 * @generated
+	 */
+	public Adapter createModifierToAbstractTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.LiteralToTNode <em>Literal To TNode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.LiteralToTNode
+	 * @generated
+	 */
+	public Adapter createLiteralToTNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.AnnotationToTAnnotation <em>Annotation To TAnnotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.AnnotationToTAnnotation
+	 * @generated
+	 */
+	public Adapter createAnnotationToTAnnotationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.StaticTypeToAccessStaticType <em>Static Type To Access Static Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.StaticTypeToAccessStaticType
+	 * @generated
+	 */
+	public Adapter createStaticTypeToAccessStaticTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MSyntethicMethodToTSyntethicMethod <em>MSyntethic Method To TSyntethic Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.MSyntethicMethodToTSyntethicMethod
+	 * @generated
+	 */
+	public Adapter createMSyntethicMethodToTSyntethicMethodAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.VariableDeclarationFragmentToTFieldDefinition <em>Variable Declaration Fragment To TField Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.VariableDeclarationFragmentToTFieldDefinition
+	 * @generated
+	 */
+	public Adapter createVariableDeclarationFragmentToTFieldDefinitionAdapter() {
 		return null;
 	}
 
@@ -437,100 +507,16 @@ public class PmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MSignatureToTSignature <em>MSignature To TSignature</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MMethodNameToTMethod <em>MMethod Name To TMethod</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.MSignatureToTSignature
+	 * @see org.gravity.tgg.modisco.pm.MMethodNameToTMethod
 	 * @generated
 	 */
-	public Adapter createMSignatureToTSignatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MAbstractFlowElementToTAbstractFlowElement <em>MAbstract Flow Element To TAbstract Flow Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.MAbstractFlowElementToTAbstractFlowElement
-	 * @generated
-	 */
-	public Adapter createMAbstractFlowElementToTAbstractFlowElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MDefinitionToTMember <em>MDefinition To TMember</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.MDefinitionToTMember
-	 * @generated
-	 */
-	public Adapter createMDefinitionToTMemberAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.ASTNodeToTAnnotatable <em>AST Node To TAnnotatable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.ASTNodeToTAnnotatable
-	 * @generated
-	 */
-	public Adapter createASTNodeToTAnnotatableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.LineCommentToTTextAnnotation <em>Line Comment To TText Annotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.LineCommentToTTextAnnotation
-	 * @generated
-	 */
-	public Adapter createLineCommentToTTextAnnotationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MModifierToTModifier <em>MModifier To TModifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.MModifierToTModifier
-	 * @generated
-	 */
-	public Adapter createMModifierToTModifierAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.AnnotationToTAnnotation <em>Annotation To TAnnotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.AnnotationToTAnnotation
-	 * @generated
-	 */
-	public Adapter createAnnotationToTAnnotationAdapter() {
+	public Adapter createMMethodNameToTMethodAdapter() {
 		return null;
 	}
 
@@ -563,44 +549,72 @@ public class PmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.UnresolvedTypeDeclarationToTClass <em>Unresolved Type Declaration To TClass</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.TypeToTAbstractType <em>Type To TAbstract Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.UnresolvedTypeDeclarationToTClass
+	 * @see org.gravity.tgg.modisco.pm.TypeToTAbstractType
 	 * @generated
 	 */
-	public Adapter createUnresolvedTypeDeclarationToTClassAdapter() {
+	public Adapter createTypeToTAbstractTypeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.ModifierToTMethodEntity <em>Modifier To TMethod Entity</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.PackageToTPackage <em>Package To TPackage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.ModifierToTMethodEntity
+	 * @see org.gravity.tgg.modisco.pm.PackageToTPackage
 	 * @generated
 	 */
-	public Adapter createModifierToTMethodEntityAdapter() {
+	public Adapter createPackageToTPackageAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.StaticTypeToAccessStaticType <em>Static Type To Access Static Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MAbstractFlowElementToTAbstractFlowElement <em>MAbstract Flow Element To TAbstract Flow Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.StaticTypeToAccessStaticType
+	 * @see org.gravity.tgg.modisco.pm.MAbstractFlowElementToTAbstractFlowElement
 	 * @generated
 	 */
-	public Adapter createStaticTypeToAccessStaticTypeAdapter() {
+	public Adapter createMAbstractFlowElementToTAbstractFlowElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MModifierToTModifier <em>MModifier To TModifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.MModifierToTModifier
+	 * @generated
+	 */
+	public Adapter createMModifierToTModifierAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.MSingleVariableAccessToTAccess <em>MSingle Variable Access To TAccess</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.MSingleVariableAccessToTAccess
+	 * @generated
+	 */
+	public Adapter createMSingleVariableAccessToTAccessAdapter() {
 		return null;
 	}
 
@@ -619,30 +633,16 @@ public class PmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.TypeParameterToTClass <em>Type Parameter To TClass</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.UnresolvedTypeDeclarationToTClass <em>Unresolved Type Declaration To TClass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.TypeParameterToTClass
+	 * @see org.gravity.tgg.modisco.pm.UnresolvedTypeDeclarationToTClass
 	 * @generated
 	 */
-	public Adapter createTypeParameterToTClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.AnnotationMemberValuePairToTAnnotationValue <em>Annotation Member Value Pair To TAnnotation Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.AnnotationMemberValuePairToTAnnotationValue
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValuePairToTAnnotationValueAdapter() {
+	public Adapter createUnresolvedTypeDeclarationToTClassAdapter() {
 		return null;
 	}
 

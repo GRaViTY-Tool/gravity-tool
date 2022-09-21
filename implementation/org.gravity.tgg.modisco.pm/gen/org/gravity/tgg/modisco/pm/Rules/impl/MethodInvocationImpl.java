@@ -196,8 +196,8 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 				invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess);
 		//nothing EMoflonEdge tMember__tAccess____accessing = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge tAccess__tMember____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[13];
@@ -489,8 +489,8 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 				invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess);
 		//nothing EMoflonEdge tMember__tAccess____accessing = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge tAccess__tMember____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[13];
@@ -685,7 +685,7 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_93(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_28(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationImpl
 				.pattern_MethodInvocation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -742,7 +742,7 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_96(EMoflonEdge _edge_mMethodInvocations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_30(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationImpl
 				.pattern_MethodInvocation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1155,10 +1155,10 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 			return null;
 		case RulesPackage.METHOD_INVOCATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_93__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_93((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_96__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_96((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_28__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_28((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_30__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_30((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1431,16 +1431,16 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 			EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
 		EMoflonEdge tMember__tAccess____accessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodInvocation";
 		String tMember__tAccess____accessing_name_prime = "accessing";
 		String tAccess__tMember____source_name_prime = "source";
-		String invocationToTAccess__invocation____source_name_prime = "source";
 		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
+		String invocationToTAccess__invocation____source_name_prime = "source";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
@@ -1450,12 +1450,12 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 		tAccess__tMember____source.setSrc(tAccess);
 		tAccess__tMember____source.setTrg(tMember);
 		ruleresult.getCreatedEdges().add(tAccess__tMember____source);
-		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
-		invocationToTAccess__invocation____source.setTrg(invocation);
-		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
 		mFlowElementToTFlowElement__tAccess____target.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tAccess____target);
+		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
+		invocationToTAccess__invocation____source.setTrg(invocation);
+		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
 		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
 		invocationToTAccess__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__tAccess____target);
@@ -1468,15 +1468,15 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tMember__tAccess____accessing.setName(tMember__tAccess____accessing_name_prime);
 		tAccess__tMember____source.setName(tAccess__tMember____source_name_prime);
-		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
+		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mFlowElementToTFlowElement__invocation____source
 				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		return new Object[] { ruleresult, invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement,
 				invocationToTAccess, tMember__tAccess____accessing, tAccess__tMember____source,
-				invocationToTAccess__invocation____source, mFlowElementToTFlowElement__tAccess____target,
+				mFlowElementToTFlowElement__tAccess____target, invocationToTAccess__invocation____source,
 				invocationToTAccess__tAccess____target, mFlowElementToTFlowElement__invocation____source,
 				mMember__invocation____mMethodInvocations };
 	}
@@ -1926,16 +1926,16 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 			EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
 		EMoflonEdge tMember__tAccess____accessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodInvocation";
 		String tMember__tAccess____accessing_name_prime = "accessing";
 		String tAccess__tMember____source_name_prime = "source";
-		String invocationToTAccess__invocation____source_name_prime = "source";
 		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
+		String invocationToTAccess__invocation____source_name_prime = "source";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
@@ -1945,12 +1945,12 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 		tAccess__tMember____source.setSrc(tAccess);
 		tAccess__tMember____source.setTrg(tMember);
 		ruleresult.getTranslatedEdges().add(tAccess__tMember____source);
-		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
-		invocationToTAccess__invocation____source.setTrg(invocation);
-		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
 		mFlowElementToTFlowElement__tAccess____target.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tAccess____target);
+		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
+		invocationToTAccess__invocation____source.setTrg(invocation);
+		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
 		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
 		invocationToTAccess__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__tAccess____target);
@@ -1963,15 +1963,15 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tMember__tAccess____accessing.setName(tMember__tAccess____accessing_name_prime);
 		tAccess__tMember____source.setName(tAccess__tMember____source_name_prime);
-		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
+		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mFlowElementToTFlowElement__invocation____source
 				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		return new Object[] { ruleresult, invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement,
 				invocationToTAccess, tMember__tAccess____accessing, tAccess__tMember____source,
-				invocationToTAccess__invocation____source, mFlowElementToTFlowElement__tAccess____target,
+				mFlowElementToTFlowElement__tAccess____target, invocationToTAccess__invocation____source,
 				invocationToTAccess__tAccess____target, mFlowElementToTFlowElement__invocation____source,
 				mMember__invocation____mMethodInvocations };
 	}
@@ -2349,7 +2349,7 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 
 	public static final Object[] pattern_MethodInvocation_21_2_testcorematchandDECs_black_nac_0B(
 			MMethodInvocation invocation) {
-		for (AnnotationMemberValuePair __DEC_invocation_value_54049 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_invocation_value_347759 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { invocation };
 		}
@@ -2358,9 +2358,9 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 
 	public static final Object[] pattern_MethodInvocation_21_2_testcorematchandDECs_black_nac_1BB(
 			MMethodInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_407489 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_298327 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_407489)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_298327)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2607,7 +2607,7 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 
 	public static final Object[] pattern_MethodInvocation_27_1_matchtggpattern_black_nac_0B(
 			MMethodInvocation invocation) {
-		for (AnnotationMemberValuePair __DEC_invocation_value_846465 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_invocation_value_995396 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { invocation };
 		}
@@ -2616,9 +2616,9 @@ public class MethodInvocationImpl extends AbstractRuleImpl implements MethodInvo
 
 	public static final Object[] pattern_MethodInvocation_27_1_matchtggpattern_black_nac_1BB(
 			MMethodInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_852605 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_54665 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_852605)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_54665)) {
 				return new Object[] { invocation, mMember };
 			}
 		}

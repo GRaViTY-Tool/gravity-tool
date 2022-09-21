@@ -428,6 +428,11 @@ public class GradleImport extends ProjectImport {
 
 	public Path findBinary(final String lib, final boolean exactVersion) throws IOException {
 		final var cache = PomParser.getFolderInCacheLocation(lib.split(":"), this.gradleCache);
+		if(!cache.exists()) {
+			LOGGER.error("Cache location of \""+lib
+					+ "\" does not exist: "+cache );
+			return null;
+		}
 		final var visitor = new ExtensionFileVisitor("jar", "aar");
 		Files.walkFileTree(cache.toPath(), visitor);
 		if (!visitor.getFiles().isEmpty()) {

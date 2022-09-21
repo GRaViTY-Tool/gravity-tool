@@ -85,47 +85,47 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, Model model, ParameterizedType pt) {
+	public boolean isAppropriate_FWD(Match match, ParameterizedType pt, Model model) {
 
 		Object[] result1_black = IgnoreOrphanTypesEdgeImpl
-				.pattern_IgnoreOrphanTypesEdge_0_1_initialbindings_blackBBBB(this, match, model, pt);
+				.pattern_IgnoreOrphanTypesEdge_0_1_initialbindings_blackBBBB(this, match, pt, model);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[model] = " + model + ", " + "[pt] = " + pt + ".");
+					+ "[match] = " + match + ", " + "[pt] = " + pt + ", " + "[model] = " + model + ".");
 		}
 
 		Object[] result2_bindingAndBlack = IgnoreOrphanTypesEdgeImpl
-				.pattern_IgnoreOrphanTypesEdge_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, model, pt);
+				.pattern_IgnoreOrphanTypesEdge_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, pt, model);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[model] = " + model + ", " + "[pt] = " + pt + ".");
+					+ "[match] = " + match + ", " + "[pt] = " + pt + ", " + "[model] = " + model + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = IgnoreOrphanTypesEdgeImpl
-					.pattern_IgnoreOrphanTypesEdge_0_4_collectelementstobetranslated_blackBBB(match, model, pt);
+					.pattern_IgnoreOrphanTypesEdge_0_4_collectelementstobetranslated_blackBBB(match, pt, model);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[model] = " + model + ", " + "[pt] = " + pt + ".");
+						+ "[pt] = " + pt + ", " + "[model] = " + model + ".");
 			}
 			IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_0_4_collectelementstobetranslated_greenBBBF(match,
-					model, pt);
+					pt, model);
 			//nothing EMoflonEdge model__pt____orphanTypes = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = IgnoreOrphanTypesEdgeImpl
-					.pattern_IgnoreOrphanTypesEdge_0_5_collectcontextelements_blackBBB(match, model, pt);
+					.pattern_IgnoreOrphanTypesEdge_0_5_collectcontextelements_blackBBB(match, pt, model);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[model] = " + model + ", " + "[pt] = " + pt + ".");
+						+ "[pt] = " + pt + ", " + "[model] = " + model + ".");
 			}
-			IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_0_5_collectcontextelements_greenBBB(match, model,
-					pt);
+			IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_0_5_collectcontextelements_greenBBB(match, pt,
+					model);
 
 			// 
 			IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_0_6_registerobjectstomatch_expressionBBBB(this,
-					match, model, pt);
+					match, pt, model);
 			return IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_0_7_expressionF();
 		} else {
 			return IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_0_8_expressionF();
@@ -146,8 +146,8 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Model model = (Model) result1_bindingAndBlack[0];
-		ParameterizedType pt = (ParameterizedType) result1_bindingAndBlack[1];
+		ParameterizedType pt = (ParameterizedType) result1_bindingAndBlack[0];
+		Model model = (Model) result1_bindingAndBlack[1];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[2];
 
 		Object[] result2_green = IgnoreOrphanTypesEdgeImpl
@@ -158,19 +158,19 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = IgnoreOrphanTypesEdgeImpl
-				.pattern_IgnoreOrphanTypesEdge_1_3_bookkeepingforedges_blackBBB(ruleresult, model, pt);
+				.pattern_IgnoreOrphanTypesEdge_1_3_bookkeepingforedges_blackBBB(ruleresult, pt, model);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[model] = " + model + ", " + "[pt] = " + pt + ".");
+					+ ", " + "[pt] = " + pt + ", " + "[model] = " + model + ".");
 		}
-		IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_1_3_bookkeepingforedges_greenBBBF(ruleresult, model,
-				pt);
+		IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_1_3_bookkeepingforedges_greenBBBF(ruleresult, pt,
+				model);
 		//nothing EMoflonEdge model__pt____orphanTypes = (EMoflonEdge) result3_green[3];
 
 		// 
 		// 
-		IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_1_5_registerobjects_expressionBBBB(this, ruleresult,
-				model, pt);
+		IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_1_5_registerobjects_expressionBBBB(this, ruleresult, pt,
+				model);
 		return IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_1_6_expressionFB(ruleresult);
 	}
 
@@ -199,25 +199,25 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Model model = (Model) result2_binding[0];
-		ParameterizedType pt = (ParameterizedType) result2_binding[1];
-		for (Object[] result2_black : IgnoreOrphanTypesEdgeImpl
-				.pattern_IgnoreOrphanTypesEdge_2_2_corematch_blackBBB(model, pt, match)) {
+		ParameterizedType pt = (ParameterizedType) result2_binding[0];
+		Model model = (Model) result2_binding[1];
+		for (Object[] result2_black : IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_2_2_corematch_blackBBB(pt,
+				model, match)) {
 			// ForEach 
 			for (Object[] result3_black : IgnoreOrphanTypesEdgeImpl
-					.pattern_IgnoreOrphanTypesEdge_2_3_findcontext_blackBB(model, pt)) {
+					.pattern_IgnoreOrphanTypesEdge_2_3_findcontext_blackBB(pt, model)) {
 				Object[] result3_green = IgnoreOrphanTypesEdgeImpl
-						.pattern_IgnoreOrphanTypesEdge_2_3_findcontext_greenBBFF(model, pt);
+						.pattern_IgnoreOrphanTypesEdge_2_3_findcontext_greenBBFF(pt, model);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[2];
 				//nothing EMoflonEdge model__pt____orphanTypes = (EMoflonEdge) result3_green[3];
 
 				Object[] result4_bindingAndBlack = IgnoreOrphanTypesEdgeImpl
-						.pattern_IgnoreOrphanTypesEdge_2_4_solveCSP_bindingAndBlackFBBBB(this, isApplicableMatch, model,
-								pt);
+						.pattern_IgnoreOrphanTypesEdge_2_4_solveCSP_bindingAndBlackFBBBB(this, isApplicableMatch, pt,
+								model);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[model] = " + model + ", "
-							+ "[pt] = " + pt + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[pt] = " + pt + ", " + "[model] = "
+							+ model + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -247,9 +247,9 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, Model model, ParameterizedType pt) {
-		match.registerObject("model", model);
+	public void registerObjectsToMatch_FWD(Match match, ParameterizedType pt, Model model) {
 		match.registerObject("pt", pt);
+		match.registerObject("model", model);
 
 	}
 
@@ -258,7 +258,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, Model model, ParameterizedType pt) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, ParameterizedType pt, Model model) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -287,7 +287,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model model, ParameterizedType pt) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ParameterizedType pt, Model model) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -302,8 +302,8 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("model", model);
 		isApplicableMatch.registerObject("pt", pt);
+		isApplicableMatch.registerObject("model", model);
 		return csp;
 	}
 
@@ -321,9 +321,9 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject pt) {
-		ruleresult.registerObject("model", model);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject pt, EObject model) {
 		ruleresult.registerObject("pt", pt);
+		ruleresult.registerObject("model", model);
 
 	}
 
@@ -456,7 +456,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_311(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_134(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = IgnoreOrphanTypesEdgeImpl
 				.pattern_IgnoreOrphanTypesEdge_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -473,8 +473,8 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		// ForEach 
 		for (Object[] result2_black : IgnoreOrphanTypesEdgeImpl
 				.pattern_IgnoreOrphanTypesEdge_17_2_testcorematchandDECs_blackFFB(_edge_orphanTypes)) {
-			Model model = (Model) result2_black[0];
-			ParameterizedType pt = (ParameterizedType) result2_black[1];
+			ParameterizedType pt = (ParameterizedType) result2_black[0];
+			Model model = (Model) result2_black[1];
 			Object[] result2_green = IgnoreOrphanTypesEdgeImpl
 					.pattern_IgnoreOrphanTypesEdge_17_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -482,7 +482,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 			// 
 			if (IgnoreOrphanTypesEdgeImpl
 					.pattern_IgnoreOrphanTypesEdge_17_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-							match, model, pt)) {
+							match, pt, model)) {
 				// 
 				if (IgnoreOrphanTypesEdgeImpl
 						.pattern_IgnoreOrphanTypesEdge_17_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -589,15 +589,15 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Model model = (Model) result2_bindingAndBlack[0];
-		ParameterizedType pt = (ParameterizedType) result2_bindingAndBlack[1];
+		ParameterizedType pt = (ParameterizedType) result2_bindingAndBlack[0];
+		Model model = (Model) result2_bindingAndBlack[1];
 
 		Object[] result3_bindingAndBlack = IgnoreOrphanTypesEdgeImpl
-				.pattern_IgnoreOrphanTypesEdge_20_3_solvecsp_bindingAndBlackFBBBBB(this, model, pt, sourceMatch,
+				.pattern_IgnoreOrphanTypesEdge_20_3_solvecsp_bindingAndBlackFBBBBB(this, pt, model, sourceMatch,
 						targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[model] = " + model + ", " + "[pt] = " + pt + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[pt] = " + pt + ", " + "[model] = " + model + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -611,10 +611,10 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 				CCMatch ccMatch = (CCMatch) result5_green[2];
 
 				Object[] result6_black = IgnoreOrphanTypesEdgeImpl
-						.pattern_IgnoreOrphanTypesEdge_20_6_createcorrespondence_blackBBB(model, pt, ccMatch);
+						.pattern_IgnoreOrphanTypesEdge_20_6_createcorrespondence_blackBBB(pt, model, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model] = " + model + ", "
-							+ "[pt] = " + pt + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[pt] = " + pt + ", "
+							+ "[model] = " + model + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = IgnoreOrphanTypesEdgeImpl
@@ -638,7 +638,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Model model, ParameterizedType pt, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(ParameterizedType pt, Model model, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -667,9 +667,9 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Model model, ParameterizedType pt) {// 
+	public boolean checkDEC_FWD(ParameterizedType pt, Model model) {// 
 		Object[] result1_black = IgnoreOrphanTypesEdgeImpl
-				.pattern_IgnoreOrphanTypesEdge_23_1_matchtggpattern_blackBB(model, pt);
+				.pattern_IgnoreOrphanTypesEdge_23_1_matchtggpattern_blackBB(pt, model);
 		if (result1_black != null) {
 			return IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_23_2_expressionF();
 		} else {
@@ -693,8 +693,8 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, Model modelParameter,
-			ParameterizedType ptParameter) {
+	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ParameterizedType ptParameter,
+			Model modelParameter) {
 
 		Object[] result1_black = IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_25_1_createresult_blackB(this);
 		if (result1_black == null) {
@@ -707,34 +707,34 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		// ForEach 
 		for (Object[] result2_black : IgnoreOrphanTypesEdgeImpl
 				.pattern_IgnoreOrphanTypesEdge_25_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList modelList = (RuleEntryList) result2_black[0];
-			Model model = (Model) result2_black[1];
-			//nothing RuleEntryList ptList = (RuleEntryList) result2_black[2];
-			ParameterizedType pt = (ParameterizedType) result2_black[3];
+			//nothing RuleEntryList ptList = (RuleEntryList) result2_black[0];
+			ParameterizedType pt = (ParameterizedType) result2_black[1];
+			//nothing RuleEntryList modelList = (RuleEntryList) result2_black[2];
+			Model model = (Model) result2_black[3];
 
 			Object[] result3_bindingAndBlack = IgnoreOrphanTypesEdgeImpl
-					.pattern_IgnoreOrphanTypesEdge_25_3_solveCSP_bindingAndBlackFBBBBB(this, isApplicableMatch, model,
-							pt, ruleResult);
+					.pattern_IgnoreOrphanTypesEdge_25_3_solveCSP_bindingAndBlackFBBBBB(this, isApplicableMatch, pt,
+							model, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[model] = " + model + ", " + "[pt] = "
-						+ pt + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[pt] = " + pt + ", " + "[model] = "
+						+ model + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_25_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = IgnoreOrphanTypesEdgeImpl
-						.pattern_IgnoreOrphanTypesEdge_25_5_checknacs_blackBB(model, pt);
+						.pattern_IgnoreOrphanTypesEdge_25_5_checknacs_blackBB(pt, model);
 				if (result5_black != null) {
 
 					Object[] result6_black = IgnoreOrphanTypesEdgeImpl
-							.pattern_IgnoreOrphanTypesEdge_25_6_perform_blackBBB(model, pt, ruleResult);
+							.pattern_IgnoreOrphanTypesEdge_25_6_perform_blackBBB(pt, model, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model] = " + model
-								+ ", " + "[pt] = " + pt + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[pt] = " + pt + ", "
+								+ "[model] = " + model + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_25_6_perform_greenBBB(model, pt,
+					IgnoreOrphanTypesEdgeImpl.pattern_IgnoreOrphanTypesEdge_25_6_perform_greenBBB(pt, model,
 							ruleResult);
 
 				} else {
@@ -752,7 +752,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model model, ParameterizedType pt,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ParameterizedType pt, Model model,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -768,8 +768,8 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("model", model);
 		isApplicableMatch.registerObject("pt", pt);
+		isApplicableMatch.registerObject("model", model);
 		return csp;
 	}
 
@@ -790,25 +790,25 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD__MATCH_MODEL_PARAMETERIZEDTYPE:
-			return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(ParameterizedType) arguments.get(2));
+		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD__MATCH_PARAMETERIZEDTYPE_MODEL:
+			return isAppropriate_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
+					(Model) arguments.get(2));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_PARAMETERIZEDTYPE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(ParameterizedType) arguments.get(2));
+		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PARAMETERIZEDTYPE_MODEL:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
+					(Model) arguments.get(2));
 			return null;
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_PARAMETERIZEDTYPE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(ParameterizedType) arguments.get(2));
+		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PARAMETERIZEDTYPE_MODEL:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
+					(Model) arguments.get(2));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_PARAMETERIZEDTYPE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(ParameterizedType) arguments.get(2));
+		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PARAMETERIZEDTYPE_MODEL:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ParameterizedType) arguments.get(1),
+					(Model) arguments.get(2));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT:
@@ -832,29 +832,30 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_311__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_311((EMoflonEdge) arguments.get(0));
+		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_134__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_134((EMoflonEdge) arguments.get(0));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_PARAMETERIZEDTYPE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Model) arguments.get(0), (ParameterizedType) arguments.get(1),
+		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_SOLVE_CSP_CC__PARAMETERIZEDTYPE_MODEL_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((ParameterizedType) arguments.get(0), (Model) arguments.get(1),
 					(Match) arguments.get(2), (Match) arguments.get(3));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_DEC_FWD__MODEL_PARAMETERIZEDTYPE:
-			return checkDEC_FWD((Model) arguments.get(0), (ParameterizedType) arguments.get(1));
+		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_DEC_FWD__PARAMETERIZEDTYPE_MODEL:
+			return checkDEC_FWD((ParameterizedType) arguments.get(0), (Model) arguments.get(1));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_DEC_BWD:
 			return checkDEC_BWD();
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL__RULEENTRYCONTAINER_MODEL_PARAMETERIZEDTYPE:
-			return generateModel((RuleEntryContainer) arguments.get(0), (Model) arguments.get(1),
-					(ParameterizedType) arguments.get(2));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_PARAMETERIZEDTYPE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(ParameterizedType) arguments.get(2), (ModelgeneratorRuleResult) arguments.get(3));
+		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL__RULEENTRYCONTAINER_PARAMETERIZEDTYPE_MODEL:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ParameterizedType) arguments.get(1),
+					(Model) arguments.get(2));
+		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PARAMETERIZEDTYPE_MODEL_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(ParameterizedType) arguments.get(1), (Model) arguments.get(2),
+					(ModelgeneratorRuleResult) arguments.get(3));
 		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -862,16 +863,16 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_0_1_initialbindings_blackBBBB(
-			IgnoreOrphanTypesEdge _this, Match match, Model model, ParameterizedType pt) {
-		return new Object[] { _this, match, model, pt };
+			IgnoreOrphanTypesEdge _this, Match match, ParameterizedType pt, Model model) {
+		return new Object[] { _this, match, pt, model };
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_0_2_SolveCSP_bindingFBBBB(IgnoreOrphanTypesEdge _this,
-			Match match, Model model, ParameterizedType pt) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, model, pt);
+			Match match, ParameterizedType pt, Model model) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, pt, model);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, model, pt };
+			return new Object[] { csp, _this, match, pt, model };
 		}
 		return null;
 	}
@@ -881,9 +882,9 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_0_2_SolveCSP_bindingAndBlackFBBBB(
-			IgnoreOrphanTypesEdge _this, Match match, Model model, ParameterizedType pt) {
+			IgnoreOrphanTypesEdge _this, Match match, ParameterizedType pt, Model model) {
 		Object[] result_pattern_IgnoreOrphanTypesEdge_0_2_SolveCSP_binding = pattern_IgnoreOrphanTypesEdge_0_2_SolveCSP_bindingFBBBB(
-				_this, match, model, pt);
+				_this, match, pt, model);
 		if (result_pattern_IgnoreOrphanTypesEdge_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_IgnoreOrphanTypesEdge_0_2_SolveCSP_binding[0];
 
@@ -891,7 +892,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 					csp);
 			if (result_pattern_IgnoreOrphanTypesEdge_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, model, pt };
+				return new Object[] { csp, _this, match, pt, model };
 			}
 		}
 		return null;
@@ -905,36 +906,36 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_0_4_collectelementstobetranslated_blackBBB(Match match,
-			Model model, ParameterizedType pt) {
-		return new Object[] { match, model, pt };
+			ParameterizedType pt, Model model) {
+		return new Object[] { match, pt, model };
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_0_4_collectelementstobetranslated_greenBBBF(Match match,
-			Model model, ParameterizedType pt) {
+			ParameterizedType pt, Model model) {
 		EMoflonEdge model__pt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String model__pt____orphanTypes_name_prime = "orphanTypes";
 		model__pt____orphanTypes.setSrc(model);
 		model__pt____orphanTypes.setTrg(pt);
 		match.getToBeTranslatedEdges().add(model__pt____orphanTypes);
 		model__pt____orphanTypes.setName(model__pt____orphanTypes_name_prime);
-		return new Object[] { match, model, pt, model__pt____orphanTypes };
+		return new Object[] { match, pt, model, model__pt____orphanTypes };
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_0_5_collectcontextelements_blackBBB(Match match,
-			Model model, ParameterizedType pt) {
-		return new Object[] { match, model, pt };
+			ParameterizedType pt, Model model) {
+		return new Object[] { match, pt, model };
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_0_5_collectcontextelements_greenBBB(Match match,
-			Model model, ParameterizedType pt) {
-		match.getContextNodes().add(model);
+			ParameterizedType pt, Model model) {
 		match.getContextNodes().add(pt);
-		return new Object[] { match, model, pt };
+		match.getContextNodes().add(model);
+		return new Object[] { match, pt, model };
 	}
 
 	public static final void pattern_IgnoreOrphanTypesEdge_0_6_registerobjectstomatch_expressionBBBB(
-			IgnoreOrphanTypesEdge _this, Match match, Model model, ParameterizedType pt) {
-		_this.registerObjectsToMatch_FWD(match, model, pt);
+			IgnoreOrphanTypesEdge _this, Match match, ParameterizedType pt, Model model) {
+		_this.registerObjectsToMatch_FWD(match, pt, model);
 
 	}
 
@@ -950,26 +951,26 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_bindingFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("model");
-		EObject _localVariable_1 = isApplicableMatch.getObject("pt");
-		EObject tmpModel = _localVariable_0;
-		EObject tmpPt = _localVariable_1;
-		if (tmpModel instanceof Model) {
-			Model model = (Model) tmpModel;
-			if (tmpPt instanceof ParameterizedType) {
-				ParameterizedType pt = (ParameterizedType) tmpPt;
-				return new Object[] { model, pt, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("pt");
+		EObject _localVariable_1 = isApplicableMatch.getObject("model");
+		EObject tmpPt = _localVariable_0;
+		EObject tmpModel = _localVariable_1;
+		if (tmpPt instanceof ParameterizedType) {
+			ParameterizedType pt = (ParameterizedType) tmpPt;
+			if (tmpModel instanceof Model) {
+				Model model = (Model) tmpModel;
+				return new Object[] { pt, model, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_blackBBFBB(Model model,
-			ParameterizedType pt, IgnoreOrphanTypesEdge _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_blackBBFBB(
+			ParameterizedType pt, Model model, IgnoreOrphanTypesEdge _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { model, pt, csp, _this, isApplicableMatch };
+				return new Object[] { pt, model, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -980,15 +981,15 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		Object[] result_pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_binding = pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_bindingFFB(
 				isApplicableMatch);
 		if (result_pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_binding != null) {
-			Model model = (Model) result_pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_binding[0];
-			ParameterizedType pt = (ParameterizedType) result_pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_binding[1];
+			ParameterizedType pt = (ParameterizedType) result_pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_binding[0];
+			Model model = (Model) result_pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_binding[1];
 
 			Object[] result_pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_black = pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_blackBBFBB(
-					model, pt, _this, isApplicableMatch);
+					pt, model, _this, isApplicableMatch);
 			if (result_pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_IgnoreOrphanTypesEdge_1_1_performtransformation_black[2];
 
-				return new Object[] { model, pt, csp, _this, isApplicableMatch };
+				return new Object[] { pt, model, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1000,15 +1001,15 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_1_3_bookkeepingforedges_blackBBB(
-			PerformRuleResult ruleresult, EObject model, EObject pt) {
+			PerformRuleResult ruleresult, EObject pt, EObject model) {
 		if (!model.equals(pt)) {
-			return new Object[] { ruleresult, model, pt };
+			return new Object[] { ruleresult, pt, model };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_1_3_bookkeepingforedges_greenBBBF(
-			PerformRuleResult ruleresult, EObject model, EObject pt) {
+			PerformRuleResult ruleresult, EObject pt, EObject model) {
 		EMoflonEdge model__pt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "IgnoreOrphanTypesEdge";
 		String model__pt____orphanTypes_name_prime = "orphanTypes";
@@ -1017,12 +1018,12 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		ruleresult.getTranslatedEdges().add(model__pt____orphanTypes);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		model__pt____orphanTypes.setName(model__pt____orphanTypes_name_prime);
-		return new Object[] { ruleresult, model, pt, model__pt____orphanTypes };
+		return new Object[] { ruleresult, pt, model, model__pt____orphanTypes };
 	}
 
 	public static final void pattern_IgnoreOrphanTypesEdge_1_5_registerobjects_expressionBBBB(
-			IgnoreOrphanTypesEdge _this, PerformRuleResult ruleresult, EObject model, EObject pt) {
-		_this.registerObjects_FWD(ruleresult, model, pt);
+			IgnoreOrphanTypesEdge _this, PerformRuleResult ruleresult, EObject pt, EObject model) {
+		_this.registerObjects_FWD(ruleresult, pt, model);
 
 	}
 
@@ -1083,56 +1084,56 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("model");
-		EObject _localVariable_1 = match.getObject("pt");
-		EObject tmpModel = _localVariable_0;
-		EObject tmpPt = _localVariable_1;
-		if (tmpModel instanceof Model) {
-			Model model = (Model) tmpModel;
-			if (tmpPt instanceof ParameterizedType) {
-				ParameterizedType pt = (ParameterizedType) tmpPt;
-				return new Object[] { model, pt, match };
+		EObject _localVariable_0 = match.getObject("pt");
+		EObject _localVariable_1 = match.getObject("model");
+		EObject tmpPt = _localVariable_0;
+		EObject tmpModel = _localVariable_1;
+		if (tmpPt instanceof ParameterizedType) {
+			ParameterizedType pt = (ParameterizedType) tmpPt;
+			if (tmpModel instanceof Model) {
+				Model model = (Model) tmpModel;
+				return new Object[] { pt, model, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_IgnoreOrphanTypesEdge_2_2_corematch_blackBBB(Model model,
-			ParameterizedType pt, Match match) {
+	public static final Iterable<Object[]> pattern_IgnoreOrphanTypesEdge_2_2_corematch_blackBBB(ParameterizedType pt,
+			Model model, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		_result.add(new Object[] { model, pt, match });
+		_result.add(new Object[] { pt, model, match });
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_IgnoreOrphanTypesEdge_2_3_findcontext_blackBB(Model model,
-			ParameterizedType pt) {
+	public static final Iterable<Object[]> pattern_IgnoreOrphanTypesEdge_2_3_findcontext_blackBB(ParameterizedType pt,
+			Model model) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (model.getOrphanTypes().contains(pt)) {
-			_result.add(new Object[] { model, pt });
+			_result.add(new Object[] { pt, model });
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_IgnoreOrphanTypesEdge_2_3_findcontext_greenBBFF(Model model,
-			ParameterizedType pt) {
+	public static final Object[] pattern_IgnoreOrphanTypesEdge_2_3_findcontext_greenBBFF(ParameterizedType pt,
+			Model model) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge model__pt____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String model__pt____orphanTypes_name_prime = "orphanTypes";
-		isApplicableMatch.getAllContextElements().add(model);
 		isApplicableMatch.getAllContextElements().add(pt);
+		isApplicableMatch.getAllContextElements().add(model);
 		model__pt____orphanTypes.setSrc(model);
 		model__pt____orphanTypes.setTrg(pt);
 		isApplicableMatch.getAllContextElements().add(model__pt____orphanTypes);
 		model__pt____orphanTypes.setName(model__pt____orphanTypes_name_prime);
-		return new Object[] { model, pt, isApplicableMatch, model__pt____orphanTypes };
+		return new Object[] { pt, model, isApplicableMatch, model__pt____orphanTypes };
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_2_4_solveCSP_bindingFBBBB(IgnoreOrphanTypesEdge _this,
-			IsApplicableMatch isApplicableMatch, Model model, ParameterizedType pt) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, model, pt);
+			IsApplicableMatch isApplicableMatch, ParameterizedType pt, Model model) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, pt, model);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, model, pt };
+			return new Object[] { csp, _this, isApplicableMatch, pt, model };
 		}
 		return null;
 	}
@@ -1142,9 +1143,9 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_2_4_solveCSP_bindingAndBlackFBBBB(
-			IgnoreOrphanTypesEdge _this, IsApplicableMatch isApplicableMatch, Model model, ParameterizedType pt) {
+			IgnoreOrphanTypesEdge _this, IsApplicableMatch isApplicableMatch, ParameterizedType pt, Model model) {
 		Object[] result_pattern_IgnoreOrphanTypesEdge_2_4_solveCSP_binding = pattern_IgnoreOrphanTypesEdge_2_4_solveCSP_bindingFBBBB(
-				_this, isApplicableMatch, model, pt);
+				_this, isApplicableMatch, pt, model);
 		if (result_pattern_IgnoreOrphanTypesEdge_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_IgnoreOrphanTypesEdge_2_4_solveCSP_binding[0];
 
@@ -1152,7 +1153,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 					csp);
 			if (result_pattern_IgnoreOrphanTypesEdge_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, model, pt };
+				return new Object[] { csp, _this, isApplicableMatch, pt, model };
 			}
 		}
 		return null;
@@ -1317,7 +1318,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 			if (tmpPt instanceof ParameterizedType) {
 				ParameterizedType pt = (ParameterizedType) tmpPt;
 				if (model.getOrphanTypes().contains(pt)) {
-					_result.add(new Object[] { model, pt, _edge_orphanTypes });
+					_result.add(new Object[] { pt, model, _edge_orphanTypes });
 				}
 			}
 
@@ -1336,8 +1337,8 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final boolean pattern_IgnoreOrphanTypesEdge_17_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			IgnoreOrphanTypesEdge _this, Match match, Model model, ParameterizedType pt) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, model, pt);
+			IgnoreOrphanTypesEdge _this, Match match, ParameterizedType pt, Model model) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, pt, model);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -1380,24 +1381,24 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_bindingFFB(Match sourceMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("model");
-		EObject _localVariable_1 = sourceMatch.getObject("pt");
-		EObject tmpModel = _localVariable_0;
-		EObject tmpPt = _localVariable_1;
-		if (tmpModel instanceof Model) {
-			Model model = (Model) tmpModel;
-			if (tmpPt instanceof ParameterizedType) {
-				ParameterizedType pt = (ParameterizedType) tmpPt;
-				return new Object[] { model, pt, sourceMatch };
+		EObject _localVariable_0 = sourceMatch.getObject("pt");
+		EObject _localVariable_1 = sourceMatch.getObject("model");
+		EObject tmpPt = _localVariable_0;
+		EObject tmpModel = _localVariable_1;
+		if (tmpPt instanceof ParameterizedType) {
+			ParameterizedType pt = (ParameterizedType) tmpPt;
+			if (tmpModel instanceof Model) {
+				Model model = (Model) tmpModel;
+				return new Object[] { pt, model, sourceMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_blackBBBB(Model model,
-			ParameterizedType pt, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_blackBBBB(ParameterizedType pt,
+			Model model, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { model, pt, sourceMatch, targetMatch };
+			return new Object[] { pt, model, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1407,25 +1408,25 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		Object[] result_pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_binding = pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_bindingFFB(
 				sourceMatch);
 		if (result_pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_binding != null) {
-			Model model = (Model) result_pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_binding[0];
-			ParameterizedType pt = (ParameterizedType) result_pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_binding[1];
+			ParameterizedType pt = (ParameterizedType) result_pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_binding[0];
+			Model model = (Model) result_pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_binding[1];
 
 			Object[] result_pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_black = pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_blackBBBB(
-					model, pt, sourceMatch, targetMatch);
+					pt, model, sourceMatch, targetMatch);
 			if (result_pattern_IgnoreOrphanTypesEdge_20_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { model, pt, sourceMatch, targetMatch };
+				return new Object[] { pt, model, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_20_3_solvecsp_bindingFBBBBB(IgnoreOrphanTypesEdge _this,
-			Model model, ParameterizedType pt, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(model, pt, sourceMatch, targetMatch);
+			ParameterizedType pt, Model model, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(pt, model, sourceMatch, targetMatch);
 		CSP csp = _localVariable_2;
 		if (csp != null) {
-			return new Object[] { csp, _this, model, pt, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, pt, model, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1435,9 +1436,9 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_20_3_solvecsp_bindingAndBlackFBBBBB(
-			IgnoreOrphanTypesEdge _this, Model model, ParameterizedType pt, Match sourceMatch, Match targetMatch) {
+			IgnoreOrphanTypesEdge _this, ParameterizedType pt, Model model, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_IgnoreOrphanTypesEdge_20_3_solvecsp_binding = pattern_IgnoreOrphanTypesEdge_20_3_solvecsp_bindingFBBBBB(
-				_this, model, pt, sourceMatch, targetMatch);
+				_this, pt, model, sourceMatch, targetMatch);
 		if (result_pattern_IgnoreOrphanTypesEdge_20_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_IgnoreOrphanTypesEdge_20_3_solvecsp_binding[0];
 
@@ -1445,7 +1446,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 					csp);
 			if (result_pattern_IgnoreOrphanTypesEdge_20_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, model, pt, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, pt, model, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -1476,9 +1477,9 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		return new Object[] { sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_IgnoreOrphanTypesEdge_20_6_createcorrespondence_blackBBB(Model model,
-			ParameterizedType pt, CCMatch ccMatch) {
-		return new Object[] { model, pt, ccMatch };
+	public static final Object[] pattern_IgnoreOrphanTypesEdge_20_6_createcorrespondence_blackBBB(ParameterizedType pt,
+			Model model, CCMatch ccMatch) {
+		return new Object[] { pt, model, ccMatch };
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_20_7_addtoreturnedresult_blackBB(
@@ -1502,10 +1503,10 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		return _result;
 	}
 
-	public static final Object[] pattern_IgnoreOrphanTypesEdge_23_1_matchtggpattern_blackBB(Model model,
-			ParameterizedType pt) {
+	public static final Object[] pattern_IgnoreOrphanTypesEdge_23_1_matchtggpattern_blackBB(ParameterizedType pt,
+			Model model) {
 		if (model.getOrphanTypes().contains(pt)) {
-			return new Object[] { model, pt };
+			return new Object[] { pt, model };
 		}
 		return null;
 	}
@@ -1543,14 +1544,6 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Model model) {
-		if (ruleResult.getSourceObjects().contains(model)) {
-			return new Object[] { ruleResult, model };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, ParameterizedType pt) {
 		if (ruleResult.getSourceObjects().contains(pt)) {
 			return new Object[] { ruleResult, pt };
@@ -1558,23 +1551,31 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		return null;
 	}
 
+	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, Model model) {
+		if (ruleResult.getSourceObjects().contains(model)) {
+			return new Object[] { ruleResult, model };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_IgnoreOrphanTypesEdge_25_2_isapplicablecore_blackFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList modelList : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList ptList : ruleEntryContainer.getRuleEntryList()) {
+		for (RuleEntryList ptList : ruleEntryContainer.getRuleEntryList()) {
+			for (RuleEntryList modelList : ruleEntryContainer.getRuleEntryList()) {
 				if (!modelList.equals(ptList)) {
-					for (EObject tmpModel : modelList.getEntryObjects()) {
-						if (tmpModel instanceof Model) {
-							Model model = (Model) tmpModel;
+					for (EObject tmpPt : ptList.getEntryObjects()) {
+						if (tmpPt instanceof ParameterizedType) {
+							ParameterizedType pt = (ParameterizedType) tmpPt;
 							if (pattern_IgnoreOrphanTypesEdge_25_2_isapplicablecore_black_nac_0BB(ruleResult,
-									model) == null) {
-								for (EObject tmpPt : ptList.getEntryObjects()) {
-									if (tmpPt instanceof ParameterizedType) {
-										ParameterizedType pt = (ParameterizedType) tmpPt;
+									pt) == null) {
+								for (EObject tmpModel : modelList.getEntryObjects()) {
+									if (tmpModel instanceof Model) {
+										Model model = (Model) tmpModel;
 										if (pattern_IgnoreOrphanTypesEdge_25_2_isapplicablecore_black_nac_1BB(
-												ruleResult, pt) == null) {
-											_result.add(new Object[] { modelList, model, ptList, pt, ruleEntryContainer,
+												ruleResult, model) == null) {
+											_result.add(new Object[] { ptList, pt, modelList, model, ruleEntryContainer,
 													ruleResult });
 										}
 									}
@@ -1589,12 +1590,12 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_3_solveCSP_bindingFBBBBB(IgnoreOrphanTypesEdge _this,
-			IsApplicableMatch isApplicableMatch, Model model, ParameterizedType pt,
+			IsApplicableMatch isApplicableMatch, ParameterizedType pt, Model model,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, model, pt, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, pt, model, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, model, pt, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, pt, model, ruleResult };
 		}
 		return null;
 	}
@@ -1604,10 +1605,10 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	}
 
 	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_3_solveCSP_bindingAndBlackFBBBBB(
-			IgnoreOrphanTypesEdge _this, IsApplicableMatch isApplicableMatch, Model model, ParameterizedType pt,
+			IgnoreOrphanTypesEdge _this, IsApplicableMatch isApplicableMatch, ParameterizedType pt, Model model,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_IgnoreOrphanTypesEdge_25_3_solveCSP_binding = pattern_IgnoreOrphanTypesEdge_25_3_solveCSP_bindingFBBBBB(
-				_this, isApplicableMatch, model, pt, ruleResult);
+				_this, isApplicableMatch, pt, model, ruleResult);
 		if (result_pattern_IgnoreOrphanTypesEdge_25_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_IgnoreOrphanTypesEdge_25_3_solveCSP_binding[0];
 
@@ -1615,7 +1616,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 					csp);
 			if (result_pattern_IgnoreOrphanTypesEdge_25_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, model, pt, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, pt, model, ruleResult };
 			}
 		}
 		return null;
@@ -1628,17 +1629,17 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		return _result;
 	}
 
-	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_5_checknacs_blackBB(Model model,
-			ParameterizedType pt) {
-		return new Object[] { model, pt };
+	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_5_checknacs_blackBB(ParameterizedType pt,
+			Model model) {
+		return new Object[] { pt, model };
 	}
 
-	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_6_perform_blackBBB(Model model, ParameterizedType pt,
+	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_6_perform_blackBBB(ParameterizedType pt, Model model,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { model, pt, ruleResult };
+		return new Object[] { pt, model, ruleResult };
 	}
 
-	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_6_perform_greenBBB(Model model, ParameterizedType pt,
+	public static final Object[] pattern_IgnoreOrphanTypesEdge_25_6_perform_greenBBB(ParameterizedType pt, Model model,
 			ModelgeneratorRuleResult ruleResult) {
 		model.getOrphanTypes().add(pt);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
@@ -1646,7 +1647,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { model, pt, ruleResult };
+		return new Object[] { pt, model, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_IgnoreOrphanTypesEdge_25_7_expressionFB(
