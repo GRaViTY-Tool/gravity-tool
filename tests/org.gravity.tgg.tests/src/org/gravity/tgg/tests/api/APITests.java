@@ -8,6 +8,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Collections;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IJavaProject;
@@ -31,6 +32,8 @@ import org.junit.Test;
 public class APITests {
 
 	public static final String PROJECT_NAME = "APITestProject";
+
+	private static final Logger LOGGER = Logger.getLogger(APITests.class);
 
 	private static IJavaProject project;
 
@@ -105,7 +108,7 @@ public class APITests {
 		}
 	}
 
-	private void addInterface(final TypeGraph pm) throws IOException {
+	private void addInterface(final TypeGraph pm) {
 		final var iface = BasicFactory.eINSTANCE.createTInterface();
 		iface.setTName("Added");
 		final var p = pm.getPackage("dummy");
@@ -113,6 +116,11 @@ public class APITests {
 		p.getInterfaces().add(iface);
 		pm.getOwnedTypes().add(iface);
 		pm.getInterfaces().add(iface);
-		pm.eResource().save(Collections.emptyMap());
+		try {
+			pm.eResource().save(Collections.emptyMap());
+		}
+		catch(final IOException e) {
+			LOGGER.warn(e);
+		}
 	}
 }
