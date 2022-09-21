@@ -32,7 +32,7 @@ final class GradleRegexPatterns {
 	/**
 	 * inclusions
 	 */
-	protected static final Pattern INCLUDE = Pattern.compile("include\\s*\\(?(((\\s*?,\\s*?)?(['\"]([\\w\\-:]+)['\"])+)+)\\)?");
+	protected static final Pattern INCLUDE = Pattern.compile("include\\s*\\(?(((\\s*?,\\s*?)?(['\"]([\\w\\-:]+)['\"]))+)\\)?");
 
 	/**
 	 * inclusion of variable
