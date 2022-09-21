@@ -122,21 +122,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		if (methodInvoc instanceof MethodInvocation) {
 			type = getStaticType(((MethodInvocation) methodInvoc).getExpression(), method);
 			if (type == null) {
-				final var called = methodInvoc.getMethod();
-				if (called != null) {
-					if (LOGGER.isEnabledFor(Level.WARN)) {
-						LOGGER.warn(NLS.bind(Messages.errorFindStaticType, new String[] {
-								NameUtil.getFullyQualifiedName(called), NameUtil.getFullyQualifiedName(method) }));
-					}
-
-					// If we cannot find the static type assume the declaring type
-					type = getDeclaringType(called);
-
-				} else {
-					LOGGER.error(NLS.bind(Messages.errorFindStaticType,
-							new String[] { "unresolved method", NameUtil.getFullyQualifiedName(method) }));
-					type = MoDiscoUtil.getJavaLangObject(this.model);
-				}
+				type = getStaticTypeFromCalledMethod(methodInvoc, method);
 			}
 		} else if (methodInvoc instanceof SuperMethodInvocation) {
 			// super method invoc cannot happen with a qualifier other than "this"
@@ -156,6 +142,32 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		} else {
 			LOGGER.error(NLS.bind(Messages.unknownInvocationType, methodInvoc.getClass().getName()));
 			throw new ProcessingException(methodInvoc);
+		}
+		return type;
+	}
+
+	/**
+	 * @param methodInvoc
+	 * @param method
+	 * @return
+	 */
+	private Type getStaticTypeFromCalledMethod(final AbstractMethodInvocation methodInvoc,
+			final MAbstractMethodDefinition method) {
+		Type type;
+		final var called = methodInvoc.getMethod();
+		if (called != null) {
+			if (LOGGER.isEnabledFor(Level.WARN)) {
+				LOGGER.warn(NLS.bind(Messages.errorFindStaticType, new String[] {
+						NameUtil.getFullyQualifiedName(called), NameUtil.getFullyQualifiedName(method) }));
+			}
+
+			// If we cannot find the static type assume the declaring type
+			type = getDeclaringType(called);
+
+		} else {
+			LOGGER.error(NLS.bind(Messages.errorFindStaticType,
+					new String[] { "unresolved method", NameUtil.getFullyQualifiedName(method) }));
+			type = MoDiscoUtil.getJavaLangObject(this.model);
 		}
 		return type;
 	}

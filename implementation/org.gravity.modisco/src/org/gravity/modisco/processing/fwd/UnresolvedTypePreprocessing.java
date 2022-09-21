@@ -62,8 +62,6 @@ public class UnresolvedTypePreprocessing extends AbstractTypedModiscoProcessor<U
 				}
 			}
 		}
-
-		//		EcoreUtil.deleteAll(delete, true);
 		return true;
 	}
 

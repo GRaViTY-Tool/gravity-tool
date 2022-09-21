@@ -430,10 +430,15 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 		} else if (expression instanceof FieldAccess) {
 			return getType(pg, ((FieldAccess) expression).getField().getVariable());
 		} else if (expression instanceof ArrayAccess) {
-			return ((ArrayType) getArrayType(pg, (ArrayAccess) expression)).getElementType().getType();
+			final var arrayType = (ArrayType) getArrayType(pg, (ArrayAccess) expression);
+			if(arrayType != null) {
+				return arrayType.getElementType().getType();
+			}
 		} else {
 			throw new IllegalStateException(NLS.bind(Messages.unknownType, expression.eClass().getName()));
 		}
+		// We cannot resolve the type but also have no unknown case
+		return null;
 	}
 
 	/**

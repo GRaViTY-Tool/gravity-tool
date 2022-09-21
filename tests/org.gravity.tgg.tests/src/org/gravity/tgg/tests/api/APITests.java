@@ -57,7 +57,7 @@ public class APITests {
 	}
 
 	@Test
-	public void testCreateProgramModelAfterPMChange() throws TransformationFailedException, IOException {
+	public void testCreateProgramModelAfterPMChange() throws TransformationFailedException {
 		final var pm = GravityAPI.createProgramModel(APITests.project, null);
 		assertNotNull(pm);
 

@@ -13,11 +13,9 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -58,15 +56,11 @@ public class MavenImport extends ProjectImport {
 
 	private final List<File> modulePoms;
 	private final Set<File> sourceFolders;
-	private final Map<String, Path> dependencies;
 
 	private final DocumentBuilder builder;
 
 	private final File m2;
 	private final File mavenRepository;
-
-	private PomParser parser;
-
 	/**
 	 * Creates an new instance of the maven project importer
 	 *
@@ -78,7 +72,6 @@ public class MavenImport extends ProjectImport {
 		super(rootDir, "pom.xml", ignoreBuildErrors);
 		this.modulePoms = new LinkedList<>();
 		this.sourceFolders = new HashSet<>();
-		this.dependencies = new HashMap<>();
 		try {
 			this.builder = PomParser.createDocumentBuilder();
 		} catch (final ParserConfigurationException e) {
@@ -108,20 +101,21 @@ public class MavenImport extends ProjectImport {
 			stack.addAll(processPOM(stack.pop()));
 		}
 
+		PomParser parser;
 		try {
-			this.parser = new PomParser(this.modulePoms);
+			parser = new PomParser(this.modulePoms);
 		} catch (final ParserConfigurationException e) {
 			throw new ImportException(e);
 		}
 		for (final File pom : this.modulePoms) {
 			try {
-				this.parser.getDependencies(this.builder.parse(pom), this.mavenRepository);
+				parser.getDependencies(this.builder.parse(pom), this.mavenRepository);
 			} catch (IllegalAccessError | IOException | SAXException e) {
 				LOGGER.error(e);
 			}
 		}
 
-		final Set<File> libs = this.parser.allPaths().parallelStream().map(Path::toFile).collect(Collectors.toSet());
+		final Set<File> libs = parser.allPaths().parallelStream().map(Path::toFile).collect(Collectors.toSet());
 		final var javaProject = createJavaProject(this.sourceFolders, libs, monitor);
 		try {
 			final var project = javaProject.getProject();
@@ -199,7 +193,7 @@ public class MavenImport extends ProjectImport {
 			throws CoreException, IOException {
 		for (final File src : sources) {
 			final var srcFolderName = getRootDir().toPath().relativize(src.toPath()).toString();
-			final var names = srcFolderName.split("/|\\\\");
+			final var names = srcFolderName.split("/|(\\\\)");
 			var folder = project.getProject().getFolder(names[0]);
 			for (var i = 1; i < names.length; i++) {
 				folder = folder.getFolder(names[i]);
