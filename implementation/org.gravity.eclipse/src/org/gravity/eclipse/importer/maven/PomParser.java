@@ -203,28 +203,42 @@ public class PomParser {
 		final var parentArtifactId = this.xParent.evaluate(pom);
 		if ((parentArtifactId != null) && !parentArtifactId.isBlank()) {
 			final var parentId = groupId + ':' + parentArtifactId + ':' + version;
-			var parentProperties = this.moduleProperties.get(parentId);
-			if (parentProperties == null) {
-				final var pomFile = this.modules.get(parentId);
-				if (pomFile == null) {
-					return properties;
-				} else {
-					try {
-						final var parentPom = this.builder.parse(pomFile);
-						parentProperties = getProperties(parentPom);
-					} catch (SAXException | IOException e) {
-						LOGGER.error(e);
+			final var parentProperties = getProperties(parentId);
+			if(parentProperties != null) {
+				for (final Entry<String, String> entry : parentProperties.entrySet()) {
+					if (!properties.containsKey(entry.getKey())) {
+						properties.put(entry.getKey(), entry.getValue());
 					}
 				}
 			}
-			for (final Entry<String, String> entry : parentProperties.entrySet()) {
-				if (!properties.containsKey(entry.getKey())) {
-					properties.put(entry.getKey(), entry.getValue());
-				}
-			}
-			this.moduleProperties.put(id, properties);
 		}
+		this.moduleProperties.put(id, properties);
 		return properties;
+	}
+
+	/**
+	 * Searches for the properties of a module
+	 *
+	 * @param moduleId The ID of the module
+	 * @return the properties or null if none have been found
+	 * @throws XPathExpressionException
+	 */
+	private Map<String, String> getProperties(final String moduleId)
+			throws XPathExpressionException {
+		final var parentProperties = this.moduleProperties.get(moduleId);
+		if (parentProperties != null) {
+			return parentProperties;
+		}
+		final var pomFile = this.modules.get(moduleId);
+		if (pomFile != null) {
+			try {
+				final var parentPom = this.builder.parse(pomFile);
+				return getProperties(parentPom);
+			} catch (SAXException | IOException e) {
+				LOGGER.error(e);
+			}
+		}
+		return Collections.emptyMap();
 	}
 
 	private boolean getDependency(final Node item, final File cache, final Map<String, String> properties)
@@ -364,9 +378,8 @@ public class PomParser {
 		final Map<String, Path> results = new ConcurrentHashMap<>();
 		final var pom = createPathToLibInCache(lib, cacheFile);
 		if (pom.exists()) {
-			results.putAll(parsePomFile(pom, cacheFile));
-
 			if (isPomPackaging(pom)) {
+				results.putAll(parsePomFile(pom, cacheFile));
 				this.seenPoms.add(lib);
 				return true;
 			}
