@@ -129,7 +129,6 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			// => static type is always the type that defines this method
 			type = getDeclaringType(method);
 		} else if (methodInvoc instanceof ClassInstanceCreation) {
-			type = getStaticType(((ClassInstanceCreation) methodInvoc).getExpression(), method);
 		} else if (methodInvoc instanceof ConstructorInvocation) {
 			// ConstructorInvocation : this()
 			// => does not have a qualifier

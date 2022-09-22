@@ -201,8 +201,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 			return null;
 		}
 
-		final var index = container.getArguments().indexOf(invocation); // Some subtypes of AbstractMethodInvocation are
-		// expressions!
+		final var index = container.getArguments().indexOf(invocation); // Some subtypes of AbstractMethodInvocation are expressions!
 		if (index >= 0) {
 			return guessReturnTypeFromParameterAssignment(method, index);
 		} else if (container instanceof MethodInvocation) {
@@ -222,7 +221,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 * Guesses the return type from the parameter at the given index
 	 *
 	 * @param method The method to whose parameter the returned value is assigned
-	 * @param index  The index of the assignment
+	 * @param index The index of the assignment
 	 * @return The corresponding type
 	 */
 	private static Type guessReturnTypeFromParameterAssignment(final AbstractMethodDeclaration method,
