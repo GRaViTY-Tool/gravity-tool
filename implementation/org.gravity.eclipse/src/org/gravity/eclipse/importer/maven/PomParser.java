@@ -390,13 +390,6 @@ public class PomParser {
 				this.seenPoms.add(lib);
 				return true;
 			}
-
-			final var libAar = getBinary(pom, "aar");
-			if (libAar.exists()) {
-				this.libraries.put(lib, libAar.toPath());
-				this.seenPoms.add(lib);
-				return true;
-			}
 		}
 		return false;
 	}
