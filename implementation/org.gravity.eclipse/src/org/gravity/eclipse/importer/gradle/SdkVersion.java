@@ -3,6 +3,9 @@
  */
 package org.gravity.eclipse.importer.gradle;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * A data class storing supported SDK versions for building a project
  *
@@ -11,29 +14,58 @@ package org.gravity.eclipse.importer.gradle;
  */
 public class SdkVersion {
 
-	private double minSdk = Double.NaN;
-	private double targetSdk = Double.NaN;
-	private double maxSdk = Double.NaN;
+	private final int minSdk;
+	private final int targetSdk;
+	private final int maxSdk;
+
+	/**
+	 * Determines the SDK version information of the android project described in
+	 * the gradle build file
+	 *
+	 * @param gradleContent The content of the gradle build file
+	 */
+	public SdkVersion(final CharSequence... gradleContent) {
+		final List<Integer> minValues = new LinkedList<>();
+		final List<Integer> targetValues = new LinkedList<>();
+		final List<Integer> compileValues = new LinkedList<>();
+		for(final CharSequence content: gradleContent) {
+			final var matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(content);
+			while (matcherSdk.find()) {
+				final var group = matcherSdk.group(1);
+				final var value = Integer.parseInt(matcherSdk.group(7));
+				if ("minSdkVersion".equals(group)) {
+					minValues.add(value);
+				} else if ("targetSdkVersion".equals(group)) {
+					targetValues.add(value);
+				} else if ("compileSdkVersion".equals(group)) {
+					compileValues.add(value);
+				}
+			}
+		}
+		final var min = minValues.stream().mapToInt(Integer::intValue).max();
+		final var target = targetValues.stream().mapToInt(Integer::intValue).min();
+		final var compile = compileValues.stream().mapToInt(Integer::intValue).min();
+
+		this.minSdk = min.orElse(0);
+		if (target.isPresent()) {
+			this.targetSdk = target.getAsInt();
+			this.maxSdk = compile.orElse(this.targetSdk);
+		} else if (compile.isPresent()) {
+			this.maxSdk = compile.getAsInt();
+			this.targetSdk = this.maxSdk;
+		} else {
+			this.targetSdk = this.minSdk;
+			this.maxSdk = this.minSdk;
+		}
+	}
 
 	/**
 	 * Returns the minimal required SDK version
 	 *
 	 * @return the SDK version
 	 */
-	public double getMinSdk() {
+	public int getMinSdk() {
 		return this.minSdk;
-	}
-
-	/**
-	 * Sets the minimal required SDK version
-	 *
-	 * @param minSdk the SDK version
-	 */
-	public void setMinSdk(final double minSdk) {
-		this.minSdk = minSdk;
-		if(this.targetSdk == Double.NaN) {
-			this.targetSdk = minSdk;
-		}
 	}
 
 	/**
@@ -41,17 +73,8 @@ public class SdkVersion {
 	 *
 	 * @return the SDK version
 	 */
-	public double getTargetSdk() {
+	public int getTargetSdk() {
 		return this.targetSdk;
-	}
-
-	/**
-	 * Sets the optimal target SDK version
-	 *
-	 * @param targetSdk the SDK version
-	 */
-	public void setTargetSdk(final double targetSdk) {
-		this.targetSdk = targetSdk;
 	}
 
 	/**
@@ -59,35 +82,7 @@ public class SdkVersion {
 	 *
 	 * @return the SDK version
 	 */
-	public double getMaxSdk() {
+	public int getMaxSdk() {
 		return this.maxSdk;
-	}
-
-	/**
-	 * Sets the newest supported SDK version
-	 *
-	 * @param maxSdk the SDK version
-	 */
-	public void setMaxSdk(final double maxSdk) {
-		this.maxSdk = maxSdk;
-	}
-
-	/**
-	 * Updates the values of this SdkVersion
-	 *
-	 * @param other
-	 */
-	public void update(final SdkVersion other) {
-		if (Double.isNaN(this.minSdk) || this.minSdk < other.getMinSdk()) {
-			this.minSdk = other.getMinSdk();
-		}
-
-		if (Double.isNaN(this.maxSdk) || this.maxSdk > other.getMaxSdk()) {
-			this.maxSdk = other.getMaxSdk();
-		}
-
-		if(Double.isNaN(this.targetSdk)) {
-			this.targetSdk = other.getTargetSdk();
-		}
 	}
 }

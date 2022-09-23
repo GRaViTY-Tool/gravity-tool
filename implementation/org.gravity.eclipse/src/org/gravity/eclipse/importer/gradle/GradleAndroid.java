@@ -97,35 +97,6 @@ public final class GradleAndroid {
 	static final String ANDROID_SDK_PLATFORMS = "platforms";
 
 	/**
-	 * Determines the SDK version information of the android project described in
-	 * the gradle build file
-	 *
-	 * @param gradleContent The content of the gradle build file
-	 * @return The SDK version information
-	 */
-	static SdkVersion getAndroidSdkVersion(final String gradleContent) {
-		final var sdkVersion = new SdkVersion();
-		final var matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(gradleContent);
-		while (matcherSdk.find()) {
-			final var group = matcherSdk.group(1);
-			if ("minSdkVersion".equals(group) || "compileSdkVersion".equals(group)) {
-				final var value = Integer.parseInt(matcherSdk.group(7));
-				final var minSdk = sdkVersion.getMinSdk();
-				if (Double.isNaN(minSdk) || (minSdk > value)) {
-					sdkVersion.setMinSdk(value);
-				}
-			} else if ("targetSdkVersion".equals(group)) {
-				final var value = Integer.parseInt(matcherSdk.group(7));
-				final var targetSdk = sdkVersion.getTargetSdk();
-				if (Double.isNaN(targetSdk) || (targetSdk < value)) {
-					sdkVersion.setTargetSdk(value);
-				}
-			}
-		}
-		return sdkVersion;
-	}
-
-	/**
 	 * Searched the ANDROID_HOME location
 	 *
 	 * @return The location of ANDROID_HOME

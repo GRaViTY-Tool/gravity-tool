@@ -18,7 +18,7 @@ public class GradleDependencies {
 
 	private final Set<String> compileDependencies;
 	private final Set<String> useDependencies;
-	private final SdkVersion sdkVersion;
+	private SdkVersion sdkVersion;
 
 	/**
 	 * Creates a new instance and searches all use and compile dependencies in the
@@ -37,8 +37,7 @@ public class GradleDependencies {
 		});
 
 		if (androidApp) {
-			this.sdkVersion = new SdkVersion();
-			parsedBuildFiles.forEach(content -> this.sdkVersion.update(GradleAndroid.getAndroidSdkVersion(content)));
+			this.sdkVersion = new SdkVersion(parsedBuildFiles.toArray(new String[0]));
 		}
 		else {
 			this.sdkVersion = null;
