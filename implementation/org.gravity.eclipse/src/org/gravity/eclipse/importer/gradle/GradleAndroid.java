@@ -133,7 +133,7 @@ public final class GradleAndroid {
 	static Map<String, Path> getAndroidLibs(final GradleDependencies dependencies) throws GradleImportException {
 		final var sdkVersion = dependencies.getSdkVersion();
 		final var pathsToLibs = new HashMap<String, Path>();
-		if ((sdkVersion == null) || (Double.isNaN(sdkVersion.getTargetSdk()) && Double.isNaN(sdkVersion.getMinSdk()))) {
+		if (sdkVersion == null) {
 			throw new GradleImportException("Couldn't determine the SDK version information");
 		}
 
@@ -141,7 +141,7 @@ public final class GradleAndroid {
 
 		var compAndroidSdk = false;
 		final var platforms = new File(androidHome, ANDROID_SDK_PLATFORMS);
-		for (var i = (int) sdkVersion.getTargetSdk(); i >= (int) sdkVersion.getMinSdk(); i--) {
+		for (var i = sdkVersion.getTargetSdk(); i >= sdkVersion.getMinSdk(); i--) {
 			final var android = "android-" + i;
 			final var androidPlatform = new File(platforms, android);
 			final var androidJar = new File(androidPlatform, "android.jar");
@@ -185,7 +185,7 @@ public final class GradleAndroid {
 				try {
 					final var parser = new PomParser();
 					for (final String lib : compileLibs) {
-						if(parser.searchInCache(lib, new File(androidHome, location))) {
+						if (parser.searchInCache(lib, new File(androidHome, location))) {
 							pathsToLibs.putAll(parser.libraries());
 						}
 						newLibs |= compileLibs.size() > before;

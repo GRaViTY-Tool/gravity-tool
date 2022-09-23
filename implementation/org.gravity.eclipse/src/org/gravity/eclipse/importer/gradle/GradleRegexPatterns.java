@@ -27,7 +27,7 @@ final class GradleRegexPatterns {
 	/**
 	 * The single entries of an include
 	 */
-	protected static final Pattern INCLUDE_ENTRY = Pattern.compile("(['\"](:)?)([\\w\\-_:]+)['\"]");
+	protected static final Pattern INCLUDE_ENTRY = Pattern.compile("(['\"](:)?)([\\w\\-:]+)['\"]");
 
 	/**
 	 * inclusions
