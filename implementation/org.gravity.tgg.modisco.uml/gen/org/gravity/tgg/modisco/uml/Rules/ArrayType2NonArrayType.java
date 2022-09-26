@@ -92,8 +92,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1,
-			org.eclipse.uml2.uml.Type uType, ArrayType arrayType, TypeAccess typeAccess, Type jType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ArrayType arrayType, ASTNode2Element ne2ne1,
+			TypeAccess typeAccess, Type jType, org.eclipse.uml2.uml.Type uType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,8 +109,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject ne2ne1, EObject uType, EObject ne2ne2,
-			EObject arrayType, EObject typeAccess, EObject jType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject ne2ne2, EObject arrayType, EObject ne2ne1,
+			EObject typeAccess, EObject jType, EObject uType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,7 +190,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_154(EMoflonEdge _edge_elementType);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_12(EMoflonEdge _edge_elementType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,8 +222,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Type uType, ArrayType arrayType, TypeAccess typeAccess,
-			Type jType, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(ArrayType arrayType, TypeAccess typeAccess, Type jType,
+			org.eclipse.uml2.uml.Type uType, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,8 +263,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1,
-			org.eclipse.uml2.uml.Type uType, Type jType, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1, Type jType,
+			org.eclipse.uml2.uml.Type uType, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -166,35 +166,35 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		Object[] result1_green = EnumDecWithModifier2EnumImpl
 				.pattern_EnumDecWithModifier2Enum_1_1_performtransformation_greenFFFBBB(bodyDeclaration, modifier, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
-		Enumeration feature = (Enumeration) result1_green[1];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
+		Enumeration feature = (Enumeration) result1_green[2];
 
 		Object[] result2_black = EnumDecWithModifier2EnumImpl
-				.pattern_EnumDecWithModifier2Enum_1_2_collecttranslatedelements_blackBBBBB(m2f, feature, b2e,
+				.pattern_EnumDecWithModifier2Enum_1_2_collecttranslatedelements_blackBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = "
+					+ "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
 					+ bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		Object[] result2_green = EnumDecWithModifier2EnumImpl
-				.pattern_EnumDecWithModifier2Enum_1_2_collecttranslatedelements_greenFBBBBB(m2f, feature, b2e,
+				.pattern_EnumDecWithModifier2Enum_1_2_collecttranslatedelements_greenFBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = EnumDecWithModifier2EnumImpl
-				.pattern_EnumDecWithModifier2Enum_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, m2f, feature, b2e,
+				.pattern_EnumDecWithModifier2Enum_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, m2f, b2e, feature,
 						bodyDeclaration, modifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
+					+ ", " + "[m2f] = " + m2f + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", "
 					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		EnumDecWithModifier2EnumImpl.pattern_EnumDecWithModifier2Enum_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-				ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
-		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[8];
+				ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
+		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge m2f__modifier____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
@@ -202,7 +202,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		// 
 		// 
 		EnumDecWithModifier2EnumImpl.pattern_EnumDecWithModifier2Enum_1_5_registerobjects_expressionBBBBBBB(this,
-				ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
+				ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
 		return EnumDecWithModifier2EnumImpl.pattern_EnumDecWithModifier2Enum_1_6_expressionFB(ruleresult);
 	}
 
@@ -376,11 +376,11 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier) {
 		ruleresult.registerObject("m2f", m2f);
-		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("modifier", modifier);
 
@@ -464,38 +464,38 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		Enumeration feature = (Enumeration) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = EnumDecWithModifier2EnumImpl
-				.pattern_EnumDecWithModifier2Enum_11_1_performtransformation_greenFBFFFB(feature, csp);
+				.pattern_EnumDecWithModifier2Enum_11_1_performtransformation_greenFFBFFB(feature, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
 		EnumDeclaration bodyDeclaration = (EnumDeclaration) result1_green[3];
 		Modifier modifier = (Modifier) result1_green[4];
 
 		Object[] result2_black = EnumDecWithModifier2EnumImpl
-				.pattern_EnumDecWithModifier2Enum_11_2_collecttranslatedelements_blackBBBBB(m2f, feature, b2e,
+				.pattern_EnumDecWithModifier2Enum_11_2_collecttranslatedelements_blackBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = "
+					+ "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
 					+ bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		Object[] result2_green = EnumDecWithModifier2EnumImpl
-				.pattern_EnumDecWithModifier2Enum_11_2_collecttranslatedelements_greenFBBBBB(m2f, feature, b2e,
+				.pattern_EnumDecWithModifier2Enum_11_2_collecttranslatedelements_greenFBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = EnumDecWithModifier2EnumImpl
-				.pattern_EnumDecWithModifier2Enum_11_3_bookkeepingforedges_blackBBBBBB(ruleresult, m2f, feature, b2e,
+				.pattern_EnumDecWithModifier2Enum_11_3_bookkeepingforedges_blackBBBBBB(ruleresult, m2f, b2e, feature,
 						bodyDeclaration, modifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
+					+ ", " + "[m2f] = " + m2f + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", "
 					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		EnumDecWithModifier2EnumImpl.pattern_EnumDecWithModifier2Enum_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-				ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
-		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[8];
+				ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
+		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge m2f__modifier____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
@@ -503,7 +503,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		// 
 		// 
 		EnumDecWithModifier2EnumImpl.pattern_EnumDecWithModifier2Enum_11_5_registerobjects_expressionBBBBBBB(this,
-				ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
+				ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
 		return EnumDecWithModifier2EnumImpl.pattern_EnumDecWithModifier2Enum_11_6_expressionFB(ruleresult);
 	}
 
@@ -669,11 +669,11 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier) {
 		ruleresult.registerObject("m2f", m2f);
-		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("modifier", modifier);
 
@@ -750,7 +750,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_125(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_38(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = EnumDecWithModifier2EnumImpl
 				.pattern_EnumDecWithModifier2Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -818,21 +818,21 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -882,21 +882,21 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -984,10 +984,10 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
-				EnumDecWithModifier2EnumImpl.pattern_EnumDecWithModifier2Enum_24_6_createcorrespondence_greenFBFBBB(
+				EnumDecWithModifier2EnumImpl.pattern_EnumDecWithModifier2Enum_24_6_createcorrespondence_greenFFBBBB(
 						feature, bodyDeclaration, modifier, ccMatch);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
 
 				Object[] result7_black = EnumDecWithModifier2EnumImpl
 						.pattern_EnumDecWithModifier2Enum_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1132,8 +1132,8 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 				EnumDecWithModifier2EnumImpl.pattern_EnumDecWithModifier2Enum_29_6_perform_greenFFFFFBB(ruleResult,
 						csp);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
-				//nothing Enumeration feature = (Enumeration) result6_green[1];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
+				//nothing Enumeration feature = (Enumeration) result6_green[2];
 				//nothing EnumDeclaration bodyDeclaration = (EnumDeclaration) result6_green[3];
 				//nothing Modifier modifier = (Modifier) result6_green[4];
 
@@ -1256,8 +1256,8 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 			return checkTypes_BWD((Match) arguments.get(0));
 		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_1__ENUMERATION:
 			return isAppropriate_BWD_Enumeration_1((Enumeration) arguments.get(0));
-		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_125__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_125((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_38__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_38((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1423,53 +1423,53 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	public static final Object[] pattern_EnumDecWithModifier2Enum_1_1_performtransformation_greenFFFBBB(
 			EnumDeclaration bodyDeclaration, Modifier modifier, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
-		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		Object _localVariable_0 = csp.getValue("feature", "name");
 		Object _localVariable_1 = csp.getValue("feature", "visibility");
 		m2f.setSource(modifier);
-		m2f.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		m2f.setTarget(feature);
 		b2e.setTarget(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
 		feature.setName(feature_name_prime);
 		feature.setVisibility(feature_visibility_prime);
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, csp };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, csp };
 	}
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_1_2_collecttranslatedelements_blackBBBBB(
-			Modifier2NamedElement m2f, Enumeration feature, ASTNode2Element b2e, EnumDeclaration bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Enumeration feature, EnumDeclaration bodyDeclaration,
 			Modifier modifier) {
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_1_2_collecttranslatedelements_greenFBBBBB(
-			Modifier2NamedElement m2f, Enumeration feature, ASTNode2Element b2e, EnumDeclaration bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Enumeration feature, EnumDeclaration bodyDeclaration,
 			Modifier modifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
-		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
+		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
 		ruleresult.getTranslatedElements().add(modifier);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier };
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_1_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier) {
 		if (!m2f.equals(modifier)) {
-			if (!feature.equals(m2f)) {
-				if (!feature.equals(modifier)) {
-					if (!b2e.equals(m2f)) {
-						if (!b2e.equals(feature)) {
-							if (!b2e.equals(bodyDeclaration)) {
-								if (!b2e.equals(modifier)) {
+			if (!b2e.equals(m2f)) {
+				if (!b2e.equals(feature)) {
+					if (!b2e.equals(bodyDeclaration)) {
+						if (!b2e.equals(modifier)) {
+							if (!feature.equals(m2f)) {
+								if (!feature.equals(modifier)) {
 									if (!bodyDeclaration.equals(m2f)) {
 										if (!bodyDeclaration.equals(feature)) {
 											if (!bodyDeclaration.equals(modifier)) {
-												return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration,
+												return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration,
 														modifier };
 											}
 										}
@@ -1485,30 +1485,30 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	}
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier) {
+		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__modifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "EnumDecWithModifier2Enum";
+		String m2f__feature____target_name_prime = "target";
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
-		String m2f__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String m2f__modifier____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
+		m2f__feature____target.setSrc(m2f);
+		m2f__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		ruleresult.getTranslatedEdges().add(bodyDeclaration__modifier____modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setSrc(modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setTrg(bodyDeclaration);
 		ruleresult.getTranslatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
-		m2f__feature____target.setSrc(m2f);
-		m2f__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
@@ -1519,22 +1519,21 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
-		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier,
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, m2f__feature____target,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
-				m2f__feature____target, b2e__bodyDeclaration____source, m2f__modifier____source,
-				b2e__feature____target };
+				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
 	}
 
 	public static final void pattern_EnumDecWithModifier2Enum_1_5_registerobjects_expressionBBBBBBB(
-			EnumDecWithModifier2Enum _this, PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+			EnumDecWithModifier2Enum _this, PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier) {
-		_this.registerObjects_FWD(ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
+		_this.registerObjects_FWD(ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
 
 	}
 
@@ -1823,7 +1822,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		return null;
 	}
 
-	public static final Object[] pattern_EnumDecWithModifier2Enum_11_1_performtransformation_greenFBFFFB(
+	public static final Object[] pattern_EnumDecWithModifier2Enum_11_1_performtransformation_greenFFBFFB(
 			Enumeration feature, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -1840,41 +1839,41 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_1;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		modifier.setVisibility(modifier_visibility_prime);
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, csp };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, csp };
 	}
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_11_2_collecttranslatedelements_blackBBBBB(
-			Modifier2NamedElement m2f, Enumeration feature, ASTNode2Element b2e, EnumDeclaration bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Enumeration feature, EnumDeclaration bodyDeclaration,
 			Modifier modifier) {
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_11_2_collecttranslatedelements_greenFBBBBB(
-			Modifier2NamedElement m2f, Enumeration feature, ASTNode2Element b2e, EnumDeclaration bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Enumeration feature, EnumDeclaration bodyDeclaration,
 			Modifier modifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
-		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
+		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
 		ruleresult.getCreatedElements().add(modifier);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier };
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_11_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier) {
 		if (!m2f.equals(modifier)) {
-			if (!feature.equals(m2f)) {
-				if (!feature.equals(modifier)) {
-					if (!b2e.equals(m2f)) {
-						if (!b2e.equals(feature)) {
-							if (!b2e.equals(bodyDeclaration)) {
-								if (!b2e.equals(modifier)) {
+			if (!b2e.equals(m2f)) {
+				if (!b2e.equals(feature)) {
+					if (!b2e.equals(bodyDeclaration)) {
+						if (!b2e.equals(modifier)) {
+							if (!feature.equals(m2f)) {
+								if (!feature.equals(modifier)) {
 									if (!bodyDeclaration.equals(m2f)) {
 										if (!bodyDeclaration.equals(feature)) {
 											if (!bodyDeclaration.equals(modifier)) {
-												return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration,
+												return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration,
 														modifier };
 											}
 										}
@@ -1890,30 +1889,30 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	}
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier) {
+		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__modifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "EnumDecWithModifier2Enum";
+		String m2f__feature____target_name_prime = "target";
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
-		String m2f__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String m2f__modifier____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
+		m2f__feature____target.setSrc(m2f);
+		m2f__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		ruleresult.getCreatedEdges().add(bodyDeclaration__modifier____modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setSrc(modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
-		m2f__feature____target.setSrc(m2f);
-		m2f__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
@@ -1924,22 +1923,21 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
-		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier,
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, m2f__feature____target,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
-				m2f__feature____target, b2e__bodyDeclaration____source, m2f__modifier____source,
-				b2e__feature____target };
+				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
 	}
 
 	public static final void pattern_EnumDecWithModifier2Enum_11_5_registerobjects_expressionBBBBBBB(
-			EnumDecWithModifier2Enum _this, PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+			EnumDecWithModifier2Enum _this, PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier) {
-		_this.registerObjects_BWD(ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
+		_this.registerObjects_BWD(ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
 
 	}
 
@@ -2433,7 +2431,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		return new Object[] { feature, bodyDeclaration, modifier, ccMatch };
 	}
 
-	public static final Object[] pattern_EnumDecWithModifier2Enum_24_6_createcorrespondence_greenFBFBBB(
+	public static final Object[] pattern_EnumDecWithModifier2Enum_24_6_createcorrespondence_greenFFBBBB(
 			Enumeration feature, EnumDeclaration bodyDeclaration, Modifier modifier, CCMatch ccMatch) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -2443,7 +2441,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, ccMatch };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, ccMatch };
 	}
 
 	public static final Object[] pattern_EnumDecWithModifier2Enum_24_7_addtoreturnedresult_blackBB(
@@ -2563,8 +2561,8 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	public static final Object[] pattern_EnumDecWithModifier2Enum_29_6_perform_greenFFFFFBB(
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
-		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		EnumDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createEnumDeclaration();
 		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
 		Object _localVariable_0 = csp.getValue("feature", "name");
@@ -2574,10 +2572,10 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(m2f);
-		m2f.setTarget(feature);
-		ruleResult.getTargetObjects().add(feature);
-		b2e.setTarget(feature);
 		ruleResult.getCorrObjects().add(b2e);
+		m2f.setTarget(feature);
+		b2e.setTarget(feature);
+		ruleResult.getTargetObjects().add(feature);
 		b2e.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
 		bodyDeclaration.setModifier(modifier);
@@ -2594,7 +2592,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		modifier.setVisibility(modifier_visibility_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, ruleResult, csp };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_EnumDecWithModifier2Enum_29_7_expressionFB(

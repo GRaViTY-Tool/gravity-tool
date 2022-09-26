@@ -222,7 +222,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_80(EMoflonEdge _edge_implements);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_31(EMoflonEdge _edge_implements);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface ClassImplementsPatrameterizedInterface extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_82(EMoflonEdge _edge_superInterfaces);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_33(EMoflonEdge _edge_superInterfaces);
 
 	/**
 	 * <!-- begin-user-doc -->

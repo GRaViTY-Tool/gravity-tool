@@ -806,7 +806,7 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_46(EMoflonEdge _edge_innerTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_45(EMoflonEdge _edge_innerTypes) {
 
 		Object[] result1_bindingAndBlack = ClassInAnonymousImpl
 				.pattern_ClassInAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -936,13 +936,13 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 		var_literal0.setValue("$");
 		var_literal0.setType("");
 
-		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
-		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
-		var_tNestedType_tName.setType("String");
-
 		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
 		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
 		var_mNestedType_name.setType("String");
+
+		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
+		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
+		var_tNestedType_tName.setType("String");
 
 		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
 		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
@@ -991,13 +991,13 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 		var_literal0.setValue("$");
 		var_literal0.setType("");
 
-		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
-		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
-		var_tNestedType_tName.setType("String");
-
 		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
 		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
 		var_mNestedType_name.setType("String");
+
+		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
+		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
+		var_tNestedType_tName.setType("String");
 
 		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
 		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
@@ -1208,9 +1208,9 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 			//nothing RuleEntryList eAnonymousClassDeclarationToTClassList = (RuleEntryList) result2_black[0];
 			TClass tClass = (TClass) result2_black[1];
 			TPackage tPackage = (TPackage) result2_black[2];
-			TypeGraph pg = (TypeGraph) result2_black[3];
-			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass = (AnonymousClassDeclarationToTClass) result2_black[4];
-			AnonymousClassDeclaration eAnonymousClassDeclaration = (AnonymousClassDeclaration) result2_black[5];
+			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass = (AnonymousClassDeclarationToTClass) result2_black[3];
+			AnonymousClassDeclaration eAnonymousClassDeclaration = (AnonymousClassDeclaration) result2_black[4];
+			TypeGraph pg = (TypeGraph) result2_black[5];
 
 			Object[] result3_bindingAndBlack = ClassInAnonymousImpl
 					.pattern_ClassInAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, tClass,
@@ -1380,8 +1380,8 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 			return null;
 		case RulesPackage.CLASS_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_46__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_46((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_45__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_45((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_48__EMOFLONEDGE:
 			return isAppropriate_FWD_EMoflonEdge_48((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
@@ -2908,9 +2908,9 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 
 	public static final Object[] pattern_ClassInAnonymous_20_2_testcorematchandDECs_black_nac_0BB(TClass tNestedType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tNestedType_classes_617237 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tNestedType_classes_91850 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tNestedType_classes_617237)) {
+			if (!tPackage.equals(__DEC_tNestedType_classes_91850)) {
 				return new Object[] { tNestedType, tPackage };
 			}
 		}
@@ -2919,9 +2919,9 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 
 	public static final Object[] pattern_ClassInAnonymous_20_2_testcorematchandDECs_black_nac_1BB(TClass tNestedType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tNestedType_classes_700773 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_classes_720727 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tNestedType_classes_700773)) {
+			if (!pg.equals(__DEC_tNestedType_classes_720727)) {
 				return new Object[] { tNestedType, pg };
 			}
 		}
@@ -2930,9 +2930,9 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 
 	public static final Object[] pattern_ClassInAnonymous_20_2_testcorematchandDECs_black_nac_2BB(TClass tNestedType,
 			TPackage tPackage) {
-		TPackage __DEC_tNestedType_ownedTypes_74638 = tNestedType.getPackage();
-		if (__DEC_tNestedType_ownedTypes_74638 != null) {
-			if (!tPackage.equals(__DEC_tNestedType_ownedTypes_74638)) {
+		TPackage __DEC_tNestedType_ownedTypes_589507 = tNestedType.getPackage();
+		if (__DEC_tNestedType_ownedTypes_589507 != null) {
+			if (!tPackage.equals(__DEC_tNestedType_ownedTypes_589507)) {
 				return new Object[] { tNestedType, tPackage };
 			}
 		}
@@ -2943,10 +2943,10 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	public static final Object[] pattern_ClassInAnonymous_20_2_testcorematchandDECs_black_nac_3BB(TClass tNestedType,
 			TClass tClass) {
 		if (!tClass.equals(tNestedType)) {
-			TAbstractType __DEC_tNestedType_innerTypes_25898 = tNestedType.getOuterType();
-			if (__DEC_tNestedType_innerTypes_25898 != null) {
-				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_25898)) {
-					if (!tClass.equals(__DEC_tNestedType_innerTypes_25898)) {
+			TAbstractType __DEC_tNestedType_innerTypes_335388 = tNestedType.getOuterType();
+			if (__DEC_tNestedType_innerTypes_335388 != null) {
+				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_335388)) {
+					if (!tClass.equals(__DEC_tNestedType_innerTypes_335388)) {
 						return new Object[] { tNestedType, tClass };
 					}
 				}
@@ -3124,10 +3124,10 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	}
 
 	public static final Object[] pattern_ClassInAnonymous_21_2_testcorematchandDECs_black_nac_0B(MClass mNestedType) {
-		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_551208 = mNestedType
+		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_984442 = mNestedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_mNestedType_abstractTypeDeclaration_551208 != null) {
-			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_551208)) {
+		if (__DEC_mNestedType_abstractTypeDeclaration_984442 != null) {
+			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_984442)) {
 				return new Object[] { mNestedType };
 			}
 		}
@@ -3136,7 +3136,7 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	}
 
 	public static final Object[] pattern_ClassInAnonymous_21_2_testcorematchandDECs_black_nac_1B(MClass mNestedType) {
-		for (Model __DEC_mNestedType_orphanTypes_568171 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mNestedType_orphanTypes_324116 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3144,8 +3144,8 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	}
 
 	public static final Object[] pattern_ClassInAnonymous_21_2_testcorematchandDECs_black_nac_2B(MClass mNestedType) {
-		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_925209 = mNestedType.getPackage();
-		if (__DEC_mNestedType_ownedElements_925209 != null) {
+		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_738670 = mNestedType.getPackage();
+		if (__DEC_mNestedType_ownedElements_738670 != null) {
 			return new Object[] { mNestedType };
 		}
 
@@ -3153,7 +3153,7 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	}
 
 	public static final Object[] pattern_ClassInAnonymous_21_2_testcorematchandDECs_black_nac_3B(MClass mNestedType) {
-		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_481493 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_960005 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3431,10 +3431,10 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	}
 
 	public static final Object[] pattern_ClassInAnonymous_27_1_matchtggpattern_black_nac_0B(MClass mNestedType) {
-		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_482044 = mNestedType
+		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_256858 = mNestedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_mNestedType_abstractTypeDeclaration_482044 != null) {
-			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_482044)) {
+		if (__DEC_mNestedType_abstractTypeDeclaration_256858 != null) {
+			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_256858)) {
 				return new Object[] { mNestedType };
 			}
 		}
@@ -3443,7 +3443,7 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	}
 
 	public static final Object[] pattern_ClassInAnonymous_27_1_matchtggpattern_black_nac_1B(MClass mNestedType) {
-		for (Model __DEC_mNestedType_orphanTypes_558817 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mNestedType_orphanTypes_244435 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3451,8 +3451,8 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	}
 
 	public static final Object[] pattern_ClassInAnonymous_27_1_matchtggpattern_black_nac_2B(MClass mNestedType) {
-		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_816067 = mNestedType.getPackage();
-		if (__DEC_mNestedType_ownedElements_816067 != null) {
+		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_790148 = mNestedType.getPackage();
+		if (__DEC_mNestedType_ownedElements_790148 != null) {
 			return new Object[] { mNestedType };
 		}
 
@@ -3460,7 +3460,7 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	}
 
 	public static final Object[] pattern_ClassInAnonymous_27_1_matchtggpattern_black_nac_3B(MClass mNestedType) {
-		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_677103 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_170986 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3495,9 +3495,9 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 
 	public static final Object[] pattern_ClassInAnonymous_28_1_matchtggpattern_black_nac_0BB(TClass tNestedType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tNestedType_classes_947582 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tNestedType_classes_286586 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tNestedType_classes_947582)) {
+			if (!tPackage.equals(__DEC_tNestedType_classes_286586)) {
 				return new Object[] { tNestedType, tPackage };
 			}
 		}
@@ -3506,9 +3506,9 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 
 	public static final Object[] pattern_ClassInAnonymous_28_1_matchtggpattern_black_nac_1BB(TClass tNestedType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tNestedType_classes_649034 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_classes_757267 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tNestedType_classes_649034)) {
+			if (!pg.equals(__DEC_tNestedType_classes_757267)) {
 				return new Object[] { tNestedType, pg };
 			}
 		}
@@ -3517,9 +3517,9 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 
 	public static final Object[] pattern_ClassInAnonymous_28_1_matchtggpattern_black_nac_2BB(TClass tNestedType,
 			TPackage tPackage) {
-		TPackage __DEC_tNestedType_ownedTypes_812247 = tNestedType.getPackage();
-		if (__DEC_tNestedType_ownedTypes_812247 != null) {
-			if (!tPackage.equals(__DEC_tNestedType_ownedTypes_812247)) {
+		TPackage __DEC_tNestedType_ownedTypes_714232 = tNestedType.getPackage();
+		if (__DEC_tNestedType_ownedTypes_714232 != null) {
+			if (!tPackage.equals(__DEC_tNestedType_ownedTypes_714232)) {
 				return new Object[] { tNestedType, tPackage };
 			}
 		}
@@ -3530,10 +3530,10 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	public static final Object[] pattern_ClassInAnonymous_28_1_matchtggpattern_black_nac_3BB(TClass tNestedType,
 			TClass tClass) {
 		if (!tClass.equals(tNestedType)) {
-			TAbstractType __DEC_tNestedType_innerTypes_856636 = tNestedType.getOuterType();
-			if (__DEC_tNestedType_innerTypes_856636 != null) {
-				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_856636)) {
-					if (!tClass.equals(__DEC_tNestedType_innerTypes_856636)) {
+			TAbstractType __DEC_tNestedType_innerTypes_130301 = tNestedType.getOuterType();
+			if (__DEC_tNestedType_innerTypes_130301 != null) {
+				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_130301)) {
+					if (!tClass.equals(__DEC_tNestedType_innerTypes_130301)) {
 						return new Object[] { tNestedType, tClass };
 					}
 				}
@@ -3636,14 +3636,6 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 	}
 
 	public static final Object[] pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
-		if (ruleResult.getTargetObjects().contains(pg)) {
-			return new Object[] { ruleResult, pg };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass) {
 		if (ruleResult.getCorrObjects().contains(eAnonymousClassDeclarationToTClass)) {
 			return new Object[] { ruleResult, eAnonymousClassDeclarationToTClass };
@@ -3651,10 +3643,18 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 		return null;
 	}
 
-	public static final Object[] pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_4BB(
+	public static final Object[] pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclaration eAnonymousClassDeclaration) {
 		if (ruleResult.getSourceObjects().contains(eAnonymousClassDeclaration)) {
 			return new Object[] { ruleResult, eAnonymousClassDeclaration };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
+		if (ruleResult.getTargetObjects().contains(pg)) {
+			return new Object[] { ruleResult, pg };
 		}
 		return null;
 	}
@@ -3677,20 +3677,20 @@ public class ClassInAnonymousImpl extends AbstractRuleImpl implements ClassInAno
 								TypeGraph pg = tClass.getModel();
 								if (pg != null) {
 									if (pg.getClasses().contains(tClass)) {
-										if (pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_3BB(ruleResult,
+										if (pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_2BB(ruleResult,
 												eAnonymousClassDeclarationToTClass) == null) {
 											if (pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 													tClass) == null) {
-												if (pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_4BB(
+												if (pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_3BB(
 														ruleResult, eAnonymousClassDeclaration) == null) {
 													if (pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_1BB(
 															ruleResult, tPackage) == null) {
-														if (pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_2BB(
+														if (pattern_ClassInAnonymous_29_2_isapplicablecore_black_nac_4BB(
 																ruleResult, pg) == null) {
 															_result.add(new Object[] {
 																	eAnonymousClassDeclarationToTClassList, tClass,
-																	tPackage, pg, eAnonymousClassDeclarationToTClass,
-																	eAnonymousClassDeclaration, ruleEntryContainer,
+																	tPackage, eAnonymousClassDeclarationToTClass,
+																	eAnonymousClassDeclaration, pg, ruleEntryContainer,
 																	ruleResult });
 														}
 													}

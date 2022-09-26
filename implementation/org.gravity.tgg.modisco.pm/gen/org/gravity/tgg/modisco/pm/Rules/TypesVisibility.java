@@ -111,8 +111,8 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mType, EObject tModifier,
-			EObject mModifierToTModifier, EObject mModifier, EObject mTypeToTType, EObject tType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mType, EObject mModifier,
+			EObject mModifierToTModifier, EObject mTypeToTType, EObject tModifier, EObject tType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,7 +177,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
-			TModifier tModifier, TypeToTAbstractType mTypeToTType, TAbstractType tType);
+			TypeToTAbstractType mTypeToTType, TModifier tModifier, TAbstractType tType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,8 +193,8 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mType, EObject tModifier,
-			EObject mModifierToTModifier, EObject mModifier, EObject mTypeToTType, EObject tType);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mType, EObject mModifier,
+			EObject mModifierToTModifier, EObject mTypeToTType, EObject tModifier, EObject tType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_56(EMoflonEdge _edge_tModifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_49(EMoflonEdge _edge_tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_58(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_52(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +250,7 @@ public interface TypesVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(AbstractTypeDeclaration mType, TModifier tModifier, Modifier mModifier,
+	CSP isApplicable_solveCsp_CC(AbstractTypeDeclaration mType, Modifier mModifier, TModifier tModifier,
 			TAbstractType tType, Match sourceMatch, Match targetMatch);
 
 	/**

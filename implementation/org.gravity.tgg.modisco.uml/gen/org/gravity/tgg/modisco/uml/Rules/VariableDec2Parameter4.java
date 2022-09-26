@@ -49,7 +49,7 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AbstractMethodDeclaration method, Type jType, TypeAccess typeAccess,
+	boolean isAppropriate_FWD(Match match, Type jType, TypeAccess typeAccess, AbstractMethodDeclaration method,
 			MSingleVariableDeclaration variableDec);
 
 	/**
@@ -74,7 +74,7 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, AbstractMethodDeclaration method, Type jType, TypeAccess typeAccess,
+	void registerObjectsToMatch_FWD(Match match, Type jType, TypeAccess typeAccess, AbstractMethodDeclaration method,
 			MSingleVariableDeclaration variableDec);
 
 	/**
@@ -83,7 +83,7 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, AbstractMethodDeclaration method, Type jType, TypeAccess typeAccess,
+	CSP isAppropriate_solveCsp_FWD(Match match, Type jType, TypeAccess typeAccess, AbstractMethodDeclaration method,
 			MSingleVariableDeclaration variableDec);
 
 	/**
@@ -100,9 +100,9 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AbstractMethodDeclaration method,
-			ASTNode2Element md2o, Type jType, ASTNode2Element ne2ne, TypeAccess typeAccess, Operation operation,
-			MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne,
+			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, TypeAccess typeAccess,
+			AbstractMethodDeclaration method, MSingleVariableDeclaration variableDec, ASTNode2Element md2o);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,9 +118,9 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject method, EObject ty2p, EObject md2o, EObject jType,
-			EObject vd2p, EObject param, EObject ne2ne, EObject typeAccess, EObject operation, EObject variableDec,
-			EObject uType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject ne2ne, EObject uType, EObject jType,
+			EObject operation, EObject ty2p, EObject typeAccess, EObject param, EObject vd2p, EObject method,
+			EObject variableDec, EObject md2o);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,7 +136,7 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Parameter param, Operation operation, org.eclipse.uml2.uml.Type uType);
+	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Type uType, Operation operation, Parameter param);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,7 +160,7 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Parameter param, Operation operation, org.eclipse.uml2.uml.Type uType);
+	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Type uType, Operation operation, Parameter param);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +168,7 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Parameter param, Operation operation, org.eclipse.uml2.uml.Type uType);
+	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Type uType, Operation operation, Parameter param);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,9 +184,9 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractMethodDeclaration method,
-			ASTNode2Element md2o, Type jType, Parameter param, ASTNode2Element ne2ne, Operation operation,
-			org.eclipse.uml2.uml.Type uType);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne,
+			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, Parameter param,
+			AbstractMethodDeclaration method, ASTNode2Element md2o);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,9 +202,9 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject method, EObject ty2p, EObject md2o, EObject jType,
-			EObject vd2p, EObject param, EObject ne2ne, EObject typeAccess, EObject operation, EObject variableDec,
-			EObject uType);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject ne2ne, EObject uType, EObject jType,
+			EObject operation, EObject ty2p, EObject typeAccess, EObject param, EObject vd2p, EObject method,
+			EObject variableDec, EObject md2o);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_94(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_8(EMoflonEdge _edge_ownedParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +228,7 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_97(EMoflonEdge _edge_parameters);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_8(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,9 +260,9 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(AbstractMethodDeclaration method, Type jType, Parameter param, TypeAccess typeAccess,
-			Operation operation, MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType,
-			Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Type uType, Type jType, Operation operation,
+			TypeAccess typeAccess, Parameter param, AbstractMethodDeclaration method,
+			MSingleVariableDeclaration variableDec, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,7 +278,7 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AbstractMethodDeclaration method, Type jType, TypeAccess typeAccess,
+	boolean checkDEC_FWD(Type jType, TypeAccess typeAccess, AbstractMethodDeclaration method,
 			MSingleVariableDeclaration variableDec);
 
 	/**
@@ -287,7 +287,7 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Parameter param, Operation operation, org.eclipse.uml2.uml.Type uType);
+	boolean checkDEC_BWD(org.eclipse.uml2.uml.Type uType, Operation operation, Parameter param);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,8 +295,8 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element md2oParameter,
-			ASTNode2Element ne2neParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element ne2neParameter,
+			ASTNode2Element md2oParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,9 +304,9 @@ public interface VariableDec2Parameter4 extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractMethodDeclaration method,
-			ASTNode2Element md2o, Type jType, ASTNode2Element ne2ne, Operation operation,
-			org.eclipse.uml2.uml.Type uType, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne,
+			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, AbstractMethodDeclaration method,
+			ASTNode2Element md2o, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

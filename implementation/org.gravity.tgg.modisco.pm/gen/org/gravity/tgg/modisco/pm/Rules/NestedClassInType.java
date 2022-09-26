@@ -220,7 +220,7 @@ public interface NestedClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_32(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_71(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +228,7 @@ public interface NestedClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_35(EMoflonEdge _edge_abstractTypeDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_75(EMoflonEdge _edge_abstractTypeDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

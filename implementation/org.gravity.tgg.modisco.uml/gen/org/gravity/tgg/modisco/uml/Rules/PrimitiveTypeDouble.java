@@ -200,7 +200,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_PrimitiveType_8(PrimitiveType umpt);
+	EObjectContainer isAppropriate_BWD_PrimitiveType_2(PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -220,7 +220,7 @@ public interface ClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_46(EMoflonEdge _edge_innerTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_45(EMoflonEdge _edge_innerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->

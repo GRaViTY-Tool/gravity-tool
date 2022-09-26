@@ -113,7 +113,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mPackageToTPackage,
-			EObject annotatable2Annotatable, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
+			EObject annotatable2Annotatable, EObject tPackage, EObject tType, EObject mPackage, EObject pg,
 			EObject type2Type, EObject mType);
 
 	/**
@@ -130,7 +130,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TEnum tAnnotation, TClass tType, TPackage tPackage, TypeGraph pg);
+	boolean isAppropriate_BWD(Match match, TEnum tAnnotation, TPackage tPackage, TClass tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +154,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TEnum tAnnotation, TClass tType, TPackage tPackage, TypeGraph pg);
+	void registerObjectsToMatch_BWD(Match match, TEnum tAnnotation, TPackage tPackage, TClass tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +162,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TEnum tAnnotation, TClass tType, TPackage tPackage, TypeGraph pg);
+	CSP isAppropriate_solveCsp_BWD(Match match, TEnum tAnnotation, TPackage tPackage, TClass tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,7 +179,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TEnum tAnnotation,
-			PackageToTPackage mPackageToTPackage, TClass tType, TPackage tPackage,
+			PackageToTPackage mPackageToTPackage, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg);
 
 	/**
@@ -197,7 +197,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mPackageToTPackage,
-			EObject annotatable2Annotatable, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
+			EObject annotatable2Annotatable, EObject tPackage, EObject tType, EObject mPackage, EObject pg,
 			EObject type2Type, EObject mType);
 
 	/**
@@ -214,7 +214,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_60(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_32(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_62(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_35(EMoflonEdge _edge_ownedElements);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,7 +254,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TEnum tAnnotation, TClass tType, TPackage tPackage,
+	CSP isApplicable_solveCsp_CC(TEnum tAnnotation, TPackage tPackage, TClass tType,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg, EnumDeclaration mType, Match sourceMatch,
 			Match targetMatch);
 
@@ -280,7 +280,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TEnum tAnnotation, TClass tType, TPackage tPackage, TypeGraph pg);
+	boolean checkDEC_BWD(TEnum tAnnotation, TPackage tPackage, TClass tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->

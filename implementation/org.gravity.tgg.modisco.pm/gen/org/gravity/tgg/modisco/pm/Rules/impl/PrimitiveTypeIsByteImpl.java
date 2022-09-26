@@ -691,7 +691,7 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_88(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_16(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsByteImpl
 				.pattern_PrimitiveTypeIsByte_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -748,7 +748,7 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_90(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_18(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsByteImpl
 				.pattern_PrimitiveTypeIsByte_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1181,10 +1181,10 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_IS_BYTE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_BYTE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_88__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_88((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_BYTE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_90__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_90((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_BYTE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_16__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_16((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_BYTE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_18__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_18((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_IS_BYTE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_IS_BYTE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2238,7 +2238,7 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsByte_20_2_testcorematchandDECs_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_716445 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_471143 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2247,9 +2247,9 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsByte_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tPrimitiveClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_347420 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_435628 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_347420)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_435628)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2258,8 +2258,8 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsByte_20_2_testcorematchandDECs_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_ownedTypes_970988 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_ownedTypes_970988 != null) {
+		TPackage __DEC_tPrimitiveClass_ownedTypes_439115 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_ownedTypes_439115 != null) {
 			return new Object[] { tPrimitiveClass };
 		}
 
@@ -2268,9 +2268,9 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsByte_20_2_testcorematchandDECs_black_nac_3B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_686121 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_686121 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_686121)) {
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_334726 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_334726 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_334726)) {
 				return new Object[] { tPrimitiveClass };
 			}
 		}
@@ -2676,7 +2676,7 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 	}
 
 	public static final Object[] pattern_PrimitiveTypeIsByte_28_1_matchtggpattern_black_nac_0B(TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_992566 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_437881 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2685,9 +2685,9 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsByte_28_1_matchtggpattern_black_nac_1BB(TClass tPrimitiveClass,
 			TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_848067 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_252638 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_848067)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_252638)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2695,8 +2695,8 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 	}
 
 	public static final Object[] pattern_PrimitiveTypeIsByte_28_1_matchtggpattern_black_nac_2B(TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_ownedTypes_858428 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_ownedTypes_858428 != null) {
+		TPackage __DEC_tPrimitiveClass_ownedTypes_361669 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_ownedTypes_361669 != null) {
 			return new Object[] { tPrimitiveClass };
 		}
 
@@ -2704,9 +2704,9 @@ public class PrimitiveTypeIsByteImpl extends AbstractRuleImpl implements Primiti
 	}
 
 	public static final Object[] pattern_PrimitiveTypeIsByte_28_1_matchtggpattern_black_nac_3B(TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_751530 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_751530 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_751530)) {
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_441164 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_441164 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_441164)) {
 				return new Object[] { tPrimitiveClass };
 			}
 		}

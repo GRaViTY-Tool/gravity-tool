@@ -48,7 +48,7 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Type mTrgType, MClass mSrcType, org.eclipse.modisco.java.Package mPackage);
+	boolean isAppropriate_FWD(Match match, MClass mSrcType, org.eclipse.modisco.java.Package mPackage, Type mTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,8 +72,8 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Type mTrgType, MClass mSrcType,
-			org.eclipse.modisco.java.Package mPackage);
+	void registerObjectsToMatch_FWD(Match match, MClass mSrcType, org.eclipse.modisco.java.Package mPackage,
+			Type mTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,8 +81,8 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Type mTrgType, MClass mSrcType,
-			org.eclipse.modisco.java.Package mPackage);
+	CSP isAppropriate_solveCsp_FWD(Match match, MClass mSrcType, org.eclipse.modisco.java.Package mPackage,
+			Type mTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,9 +98,10 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage p2p, Type mTrgType,
-			ASTNode2Element trg2Trg, MClass mSrcType, org.eclipse.modisco.java.Package mPackage, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element trg2Trg,
+			org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage p2p, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Class uSrcType, Type mTrgType,
+			ASTNode2Element src2Src, Classifier uTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,9 +117,9 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject p2p, EObject mTrgType, EObject trg2Trg,
-			EObject mSrcType, EObject mPackage, EObject uTrgType, EObject uPackage, EObject src2Src, EObject uSrcType,
-			EObject uUsage);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject trg2Trg, EObject uPackage, EObject uUsage,
+			EObject p2p, EObject mSrcType, EObject mPackage, EObject uSrcType, EObject mTrgType, EObject src2Src,
+			EObject uTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,8 +135,8 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.uml2.uml.Class uSrcType, Usage uUsage);
+	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
+			org.eclipse.uml2.uml.Class uSrcType, Classifier uTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,8 +160,8 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.uml2.uml.Class uSrcType, Usage uUsage);
+	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
+			org.eclipse.uml2.uml.Class uSrcType, Classifier uTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,8 +169,8 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.uml2.uml.Class uSrcType, Usage uUsage);
+	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
+			org.eclipse.uml2.uml.Class uSrcType, Classifier uTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,10 +186,10 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage p2p, Type mTrgType,
-			ASTNode2Element trg2Trg, MClass mSrcType, org.eclipse.modisco.java.Package mPackage, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
-			Usage uUsage);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element trg2Trg,
+			org.eclipse.uml2.uml.Package uPackage, Usage uUsage, JavaPackage2UmlPackage p2p, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Class uSrcType, Type mTrgType,
+			ASTNode2Element src2Src, Classifier uTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,9 +205,9 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject p2p, EObject mTrgType, EObject trg2Trg,
-			EObject mSrcType, EObject mPackage, EObject uTrgType, EObject uPackage, EObject src2Src, EObject uSrcType,
-			EObject uUsage);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject trg2Trg, EObject uPackage, EObject uUsage,
+			EObject p2p, EObject mSrcType, EObject mPackage, EObject uSrcType, EObject mTrgType, EObject src2Src,
+			EObject uTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +223,7 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_129(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_35(EMoflonEdge _edge_supplier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +231,7 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_136(EMoflonEdge _edge_dependencies);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_41(EMoflonEdge _edge_dependencies);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,9 +263,9 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Type mTrgType, MClass mSrcType, org.eclipse.modisco.java.Package mPackage,
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType,
-			Usage uUsage, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package uPackage, Usage uUsage, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Class uSrcType, Type mTrgType,
+			Classifier uTrgType, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,7 +281,7 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Type mTrgType, MClass mSrcType, org.eclipse.modisco.java.Package mPackage);
+	boolean checkDEC_FWD(MClass mSrcType, org.eclipse.modisco.java.Package mPackage, Type mTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,8 +289,8 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.uml2.uml.Class uSrcType, Usage uUsage);
+	boolean checkDEC_BWD(org.eclipse.uml2.uml.Package uPackage, Usage uUsage, org.eclipse.uml2.uml.Class uSrcType,
+			Classifier uTrgType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -297,8 +298,8 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, JavaPackage2UmlPackage p2pParameter,
-			ASTNode2Element trg2TrgParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element trg2TrgParameter,
+			ASTNode2Element src2SrcParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,10 +307,10 @@ public interface TypeDependency2UsageDependency extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage p2p, Type mTrgType,
-			ASTNode2Element trg2Trg, MClass mSrcType, org.eclipse.modisco.java.Package mPackage, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element trg2Trg,
+			org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage p2p, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Class uSrcType, Type mTrgType,
+			ASTNode2Element src2Src, Classifier uTrgType, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

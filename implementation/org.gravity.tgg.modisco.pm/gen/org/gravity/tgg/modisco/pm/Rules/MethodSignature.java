@@ -50,7 +50,7 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MMethodSignature mSignature, MMethodName mName, Type mType);
+	boolean isAppropriate_FWD(Match match, Type mType, MMethodSignature mSignature, MMethodName mName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MMethodSignature mSignature, MMethodName mName, Type mType);
+	void registerObjectsToMatch_FWD(Match match, Type mType, MMethodSignature mSignature, MMethodName mName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,7 +82,7 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MMethodSignature mSignature, MMethodName mName, Type mType);
+	CSP isAppropriate_solveCsp_FWD(Match match, Type mType, MMethodSignature mSignature, MMethodName mName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,9 +98,9 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodSignature mSignature,
-			TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType, TMethod tName,
-			MMethodNameToTMethod mNameToTName, MMethodName mName, Type mType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Type mType, MMethodSignature mSignature,
+			TMethod tName, TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType, MMethodName mName,
+			MMethodNameToTMethod mNameToTName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,9 +116,9 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mSignature, EObject mTypeToTType,
-			EObject tAbstractType, EObject tName, EObject mFlowElementToTFlowElement, EObject mNameToTName,
-			EObject mName, EObject mSignatureToTSignature, EObject mType, EObject tSignature);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mType, EObject mSignatureToTSignature,
+			EObject mSignature, EObject mFlowElementToTFlowElement, EObject tSignature, EObject tName,
+			EObject mTypeToTType, EObject tAbstractType, EObject mName, EObject mNameToTName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,7 +134,7 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TAbstractType tAbstractType, TMethod tName, TMethodSignature tSignature);
+	boolean isAppropriate_BWD(Match match, TMethodSignature tSignature, TMethod tName, TAbstractType tAbstractType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,8 +158,8 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TAbstractType tAbstractType, TMethod tName,
-			TMethodSignature tSignature);
+	void registerObjectsToMatch_BWD(Match match, TMethodSignature tSignature, TMethod tName,
+			TAbstractType tAbstractType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,8 +167,8 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TAbstractType tAbstractType, TMethod tName,
-			TMethodSignature tSignature);
+	CSP isAppropriate_solveCsp_BWD(Match match, TMethodSignature tSignature, TMethod tName,
+			TAbstractType tAbstractType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,9 +184,9 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tAbstractType, TMethod tName, MMethodNameToTMethod mNameToTName, MMethodName mName,
-			Type mType, TMethodSignature tSignature);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type mType, TMethodSignature tSignature,
+			TMethod tName, TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType, MMethodName mName,
+			MMethodNameToTMethod mNameToTName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,9 +202,9 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mSignature, EObject mTypeToTType,
-			EObject tAbstractType, EObject tName, EObject mFlowElementToTFlowElement, EObject mNameToTName,
-			EObject mName, EObject mSignatureToTSignature, EObject mType, EObject tSignature);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mType, EObject mSignatureToTSignature,
+			EObject mSignature, EObject mFlowElementToTFlowElement, EObject tSignature, EObject tName,
+			EObject mTypeToTType, EObject tAbstractType, EObject mName, EObject mNameToTName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_44(EMoflonEdge _edge_signatures);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_86(EMoflonEdge _edge_signatures);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +228,7 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_46(EMoflonEdge _edge_mSignatures);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_90(EMoflonEdge _edge_returnType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,8 +260,8 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MMethodSignature mSignature, TAbstractType tAbstractType, TMethod tName,
-			MMethodName mName, Type mType, TMethodSignature tSignature, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Type mType, MMethodSignature mSignature, TMethodSignature tSignature, TMethod tName,
+			TAbstractType tAbstractType, MMethodName mName, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,7 +277,7 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MMethodSignature mSignature, MMethodName mName, Type mType);
+	boolean checkDEC_FWD(Type mType, MMethodSignature mSignature, MMethodName mName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,7 +285,7 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TAbstractType tAbstractType, TMethod tName, TMethodSignature tSignature);
+	boolean checkDEC_BWD(TMethodSignature tSignature, TMethod tName, TAbstractType tAbstractType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,9 +302,9 @@ public interface MethodSignature extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType mTypeToTType,
-			TAbstractType tAbstractType, TMethod tName, MMethodNameToTMethod mNameToTName, MMethodName mName,
-			Type mType, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type mType, TMethod tName,
+			TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType, MMethodName mName,
+			MMethodNameToTMethod mNameToTName, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

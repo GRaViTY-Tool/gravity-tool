@@ -109,8 +109,8 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jp2up, EObject p2p, EObject up, EObject jp,
-			EObject jParent, EObject uParent);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jp2up, EObject p2p, EObject jp, EObject jParent,
+			EObject up, EObject uParent);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,7 +175,7 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage p2p,
-			org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jParent,
+			org.eclipse.modisco.java.Package jParent, org.eclipse.uml2.uml.Package up,
 			org.eclipse.uml2.uml.Package uParent);
 
 	/**
@@ -192,8 +192,8 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jp2up, EObject p2p, EObject up, EObject jp,
-			EObject jParent, EObject uParent);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jp2up, EObject p2p, EObject jp, EObject jParent,
+			EObject up, EObject uParent);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_104(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_5(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,7 +217,7 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_107(EMoflonEdge _edge_ownedPackages);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_4(EMoflonEdge _edge_ownedPackages);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,8 +249,8 @@ public interface JavaPackageToUMLPackage_underPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package up, org.eclipse.modisco.java.Package jp,
-			org.eclipse.modisco.java.Package jParent, org.eclipse.uml2.uml.Package uParent, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.Package jp, org.eclipse.modisco.java.Package jParent,
+			org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Package uParent, Match sourceMatch,
 			Match targetMatch);
 
 	/**
