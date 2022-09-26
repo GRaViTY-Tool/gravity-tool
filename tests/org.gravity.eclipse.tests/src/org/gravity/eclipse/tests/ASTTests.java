@@ -151,7 +151,7 @@ public class ASTTests {
 						assertNotNull(pmType);
 						assertEquals(entry.getKey(), pmType.getFullyQualifiedName());
 					}
-					return false;
+					return true;
 				}
 			});
 
@@ -308,7 +308,7 @@ public class ASTTests {
 
 		final var iType = JavaASTUtil.getIType(pmClazz, this.project);
 		assertNotNull(iType);
-		assertEquals("Inner", iType.getElementName());
+		assertEquals(name, iType.getElementName());
 
 		final var outerNode = createAST(iType);
 		outerNode.accept(new ASTVisitor() {
@@ -317,9 +317,10 @@ public class ASTTests {
 				if (name.equals(node.getName().toString())) {
 					final var pmType = JavaASTUtil.getType(node, ASTTests.this.pm);
 					assertNotNull(pmType);
-					assertEquals(name, pmType.getFullyQualifiedName());
+					assertEquals("Clazz$"+name, pmType.getTName());
+					assertEquals(iType.getFullyQualifiedName(), pmType.getFullyQualifiedName());
 				}
-				return false;
+				return true;
 			}
 		});
 	}
