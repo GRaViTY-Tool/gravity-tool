@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="target/dependency/activation.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="module" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/asm.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/classgraph.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/commons-lang3.jar"/>
@@ -59,7 +65,6 @@
 	<classpathentry exported="true" kind="lib" path="target/dependency/logback-core.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/neethi.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/saaj-impl.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/servlet-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/slf4j-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/snakeyaml.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/stax2-api.jar"/>
@@ -70,18 +75,11 @@
 	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-jaxrs2.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-models.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/txw2.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/validation-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/woodstox-core.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/wsdl4j.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/xml-resolver.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/xmlschema-core.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
-		<attributes>
-			<attribute name="module" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/javax.activation-api.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
