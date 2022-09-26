@@ -27,6 +27,25 @@ import org.junit.Test;
 public class BrokenModiscoModelTests {
 
 	@Test
+	public void testClassNotInContainer()
+			throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+		final var model = ModiscoFactory.eINSTANCE.createMGravityModel();
+
+		final var contained = createType("p", "Contained", model);
+
+
+		final var notContained = ModiscoFactory.eINSTANCE.createMClass();
+		notContained.setName("NotContained");
+
+		final var method = createMethodDefinition("dummy", notContained);
+		method.setAbstractTypeDeclaration(contained);
+
+		processFwd(model);
+
+		assertTrue(model.getOrphanTypes().contains(notContained));
+	}
+
+	@Test
 	public void testClassImplementsClass()
 			throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 		final var parentName = "ParentClass";
@@ -225,15 +244,15 @@ public class BrokenModiscoModelTests {
 		return invocation;
 	}
 
-	private MMethodDefinition createMethodDefinition(final String name, final Type type) {
+	private MMethodDefinition createMethodDefinition(final String name, final Type returnType) {
 		final var definition = ModiscoFactory.eINSTANCE.createMMethodDefinition();
 		definition.setName(name);
 		final var block = JavaFactory.eINSTANCE.createBlock();
 		definition.setBody(block);
-		if (type != null) {
+		if (returnType != null) {
 			final var typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 			definition.setReturnType(typeAccess);
-			typeAccess.setType(type);
+			typeAccess.setType(returnType);
 		}
 
 		return definition;
