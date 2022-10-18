@@ -46,7 +46,11 @@ public class GitTools implements Closeable {
 	public GitTools(final String url, final File destination, final boolean replace, final boolean submodules)
 			throws GitCloneException {
 		checkSSHSessionFactory();
-		final var productName = url.substring(url.lastIndexOf('/') + 1, url.length() - 4);
+		var end = url.length();
+		if (url.endsWith(".git")) {
+			end -= 4;
+		}
+		final var productName = url.substring(url.lastIndexOf('/') + 1, end);
 		if (!destination.exists()) {
 			destination.mkdirs();
 		}

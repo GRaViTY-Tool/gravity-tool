@@ -36,6 +36,7 @@ import org.eclipse.jdt.core.JavaCore;
 import org.gravity.eclipse.importer.ImportException;
 import org.gravity.eclipse.importer.ProjectImport;
 import org.gravity.eclipse.importer.maven.PomParser;
+import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
@@ -82,7 +83,7 @@ public class GradleImport extends ProjectImport {
 	public GradleImport(final File rootDir, final boolean ignoreBuildErrors) throws IOException, ImportException {
 		super(rootDir, "build.gradle", ignoreBuildErrors);
 		this.buildSuccess = false;
-		this.gradleCache = initGradleUserHome();
+		this.gradleCache = new File(initGradleUserHome(), GRADLE_CACHE);
 		this.includes = new GradleIncludes(getRootDir());
 		this.gradleBuild = new GradleBuild();
 	}
@@ -128,8 +129,8 @@ public class GradleImport extends ProjectImport {
 	 * @return The new Java project
 	 * @throws GradleImportException If the project cannot be created
 	 */
-	private IJavaProject createJavaProject(final String name, final Set<Path> javaSourceFiles, final IProgressMonitor monitor)
-			throws GradleImportException {
+	private IJavaProject createJavaProject(final String name, final Set<Path> javaSourceFiles,
+			final IProgressMonitor monitor) throws GradleImportException {
 		IJavaProject project = null;
 		try {
 			project = JavaProjectUtil.createJavaProjectWithUniqueName(name, monitor);
@@ -289,7 +290,8 @@ public class GradleImport extends ProjectImport {
 	 * @param monitor A progress monitor
 	 * @throws CoreException If the project cannot be changed
 	 */
-	private void linkApkFolderToProject(final IJavaProject project, final IProgressMonitor monitor) throws CoreException {
+	private void linkApkFolderToProject(final IJavaProject project, final IProgressMonitor monitor)
+			throws CoreException {
 		final var outputLocation = project.getOutputLocation().removeFirstSegments(1);
 		final var outputLocationFolder = project.getProject().getFolder(outputLocation);
 		if (!outputLocationFolder.exists()) {
@@ -332,8 +334,7 @@ public class GradleImport extends ProjectImport {
 				final var extracted = GradleLibsUtil.extractAar(libPath, libFolder);
 				if (extracted.isEmpty()) {
 					LOGGER.warn("No jar found in aar file: " + libPath);
-				}
-				else {
+				} else {
 					jarFiles.addAll(extracted);
 				}
 			}
@@ -389,16 +390,21 @@ public class GradleImport extends ProjectImport {
 		return appliedPlugins;
 	}
 
-	private Collection<Path> getLibs(final Collection<Path> buildDotGradleFiles) throws IOException, GradleImportException {
-		final var gradleDependencies = new GradleDependencies(
-				readBuildDotGradleFiles(buildDotGradleFiles), this.androidApp);
+	private Collection<Path> getLibs(final Collection<Path> buildDotGradleFiles)
+			throws IOException, GradleImportException {
+		final var gradleDependencies = new GradleDependencies(readBuildDotGradleFiles(buildDotGradleFiles),
+				this.androidApp);
 		final var compileLibs = gradleDependencies.getCompileDependencies();
 
-		final var pathsToLibs = PomParser.searchInCache(compileLibs,
-				new File(this.gradleCache, GRADLE_CACHE));
-		compileLibs.removeAll(pathsToLibs.keySet());
-
-		final Collection<Path> libsAsJar = new ArrayList<>(pathsToLibs.values());
+		final Collection<Path> libsAsJar = new LinkedList<>();
+		final Collection<String> missing = new LinkedList<>();
+		for (final String lib : compileLibs) {
+			final var binary = findBinary(lib, false);
+			if (binary != null) {
+				missing.remove(lib);
+				libsAsJar.add(binary);
+			}
+		}
 		if (this.androidApp) {
 			try {
 				libsAsJar.addAll(GradleAndroid.getAndroidLibs(gradleDependencies).values());
@@ -411,13 +417,47 @@ public class GradleImport extends ProjectImport {
 			}
 
 		}
-		if (!compileLibs.isEmpty()) {
+		if (!missing.isEmpty()) {
 			LOGGER.warn("The following libs haven't been found on the system:");
-			for (final String lib : compileLibs) {
+			for (final String lib : missing) {
 				LOGGER.warn("\t" + lib);
 			}
 		}
 		return libsAsJar;
+	}
+
+	public Path findBinary(final String lib, final boolean exactVersion) throws IOException {
+		final var cache = PomParser.getFolderInCacheLocation(lib.split(":"), this.gradleCache);
+		if(!cache.exists()) {
+			LOGGER.error("Cache location of \""+lib
+					+ "\" does not exist: "+cache );
+			return null;
+		}
+		final var visitor = new ExtensionFileVisitor("jar", "aar");
+		Files.walkFileTree(cache.toPath(), visitor);
+		if (!visitor.getFiles().isEmpty()) {
+			return getJarOrRandom(visitor.getFiles());
+		} else if(!exactVersion){
+			LOGGER.warn("Didn't find expected version of the lib \"" + lib + "\", selecting a random version");
+			Files.walkFileTree(cache.getParentFile().toPath(), visitor);
+			final var files = visitor.getFiles();
+			if (!files.isEmpty()) {
+				// Sort to get the newest version
+				files.sort((o1, o2) -> o1.getFileName().compareTo(o2.getFileName()));
+				return getJarOrRandom(files);
+			} else {
+				LOGGER.error("Didn't find any version of the lib \"" + lib + "\"!");
+			}
+		}
+		return null;
+	}
+
+	public Path getJarOrRandom(final List<Path> files) {
+		final var jar = files.stream().filter(f -> f.getFileName().toString().endsWith("jar")).findFirst();
+		if(jar.isPresent()) {
+			return jar.get();
+		}
+		return files.get(0);
 	}
 
 	/**
@@ -427,7 +467,8 @@ public class GradleImport extends ProjectImport {
 	 * @return The files contents
 	 * @throws GradleImportException
 	 */
-	private List<String> readBuildDotGradleFiles(final Collection<Path> buildDotGradleFiles) throws GradleImportException {
+	private List<String> readBuildDotGradleFiles(final Collection<Path> buildDotGradleFiles)
+			throws GradleImportException {
 		final var pool = Executors.newCachedThreadPool();
 		final Collection<Callable<String>> tasks = buildDotGradleFiles.parallelStream()
 				.map(path -> (Callable<String>) () -> FileUtils.getContentsAsString(path.toFile()))

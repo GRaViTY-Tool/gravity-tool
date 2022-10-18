@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#rule UnresolvedTypeDeclaration
+#abstract #rule UnresolvedTypeDeclaration
 #with org.gravity.tgg.modisco.pm
 
 #source {
@@ -9,7 +9,7 @@
 		++  -unresolvedItems -> unresolvedType
 	}
 
-	++unresolvedType:UnresolvedTypeDeclaration
+	++unresolvedType:UnresolvedItem
 }
 
 #target {
@@ -31,14 +31,49 @@
 		#src->eModel
 		#trg->pg
 	}
+}
 
+#attributeConditions {
+	eq(unresolvedType.name, tClass.tName)
+	eq(unresolvedType.proxy, tClass.tLib)
+}
+
+#using org.gravity.tgg.modisco.pm.*
+
+#rule UnresolvedClassDeclaration #extends UnresolvedTypeDeclaration #with org.gravity.tgg.modisco.pm
+
+#source {
+	++unresolvedType : UnresolvedTypeDeclaration
+}
+
+#target{
+	++tClass:TUnresolvedType
+}
+
+#correspondence {
+	
 	++ eAnonymousClassDeclarationToTClass :TypeToTAbstractType {
 		#src->unresolvedType
 		#trg->tClass
 	}
 }
 
-#attributeConditions {
-	eq(unresolvedType.name, tClass.tName)
-	eq(unresolvedType.proxy, tClass.tLib)
+#using org.gravity.tgg.modisco.pm.*
+
+#rule UnresolvedInterfaceDeclaration #extends UnresolvedTypeDeclaration #with org.gravity.tgg.modisco.pm
+
+#source {
+	++unresolvedType : UnresolvedInterfaceDeclaration
+}
+
+#target{
+	++tClass:TUnresolvedType
+}
+
+#correspondence {
+	
+	++ eAnonymousClassDeclarationToTClass :TypeToTAbstractType {
+		#src->unresolvedType
+		#trg->tClass
+	}
 }

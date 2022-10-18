@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#rule TypesOrphaned
+#abstract #rule TypesOrphaned
 #with org.gravity.tgg.modisco.pm
 
 #source {
@@ -9,7 +9,7 @@
 		++  -orphanTypes -> mType
 	}
 
-	++mType: MClass
+	++mType: AbstractTypeDeclaration
 }
 
 #target {
@@ -23,7 +23,7 @@
 		++-ownedTypes->tType
 	}
 
-	++tType:TClass
+	++tType:TAbstractType
 }
 
 #correspondence {
@@ -36,8 +36,50 @@
 		#src->mType
 		#trg->tType
 	}
+
+	++mAnnotatableToTAnnotatable :ASTNodeToTAnnotatable {
+		#src->mType
+		#trg->tType
+	}
 }
 
 #attributeConditions {
 	eq(mType.name, tType.tName)
+}
+
+#rule OrphanedClass #extends TypesOrphaned
+#with org.gravity.tgg.modisco.pm
+
+#source{
+	++mType:MClass
+}
+
+#target{
+	++tType:TClass
+}
+
+#rule OrphanedInterface #extends TypesOrphaned
+#with org.gravity.tgg.modisco.pm
+
+#source{
+	++mType:InterfaceDeclaration
+}
+
+#target{
+	++tType:TInterface
+}
+
+#rule OrphanedEnum #extends TypesOrphaned
+#with org.gravity.tgg.modisco.pm
+
+#source{
+	++mType:EnumDeclaration
+}
+
+#target{
+	++tType:TClass
+	
+	++tEnum:TEnum {
+		++-tAnnotated->tType
+	}
 }

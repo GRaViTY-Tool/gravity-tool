@@ -100,7 +100,7 @@ public interface InnerDeclaration2InnerClassifier_InMethod4Interface extends EOb
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration owner, ASTNode2Element o2c,
-			Classifier feature, MAbstractMethodDefinition method, ASTNode2Element bd2ne,
+			MAbstractMethodDefinition method, Classifier feature, ASTNode2Element bd2ne,
 			AbstractTypeDeclaration bodyDeclaration, Interface uContainer);
 
 	/**
@@ -117,7 +117,7 @@ public interface InnerDeclaration2InnerClassifier_InMethod4Interface extends EOb
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject owner, EObject o2c, EObject feature, EObject method,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject owner, EObject o2c, EObject method, EObject feature,
 			EObject bd2ne, EObject bodyDeclaration, EObject uContainer);
 
 	/**
@@ -183,7 +183,7 @@ public interface InnerDeclaration2InnerClassifier_InMethod4Interface extends EOb
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration owner, ASTNode2Element o2c,
-			Classifier feature, MAbstractMethodDefinition method, ASTNode2Element bd2ne,
+			MAbstractMethodDefinition method, Classifier feature, ASTNode2Element bd2ne,
 			AbstractTypeDeclaration bodyDeclaration, Interface uContainer);
 
 	/**
@@ -200,7 +200,7 @@ public interface InnerDeclaration2InnerClassifier_InMethod4Interface extends EOb
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject owner, EObject o2c, EObject feature, EObject method,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject owner, EObject o2c, EObject method, EObject feature,
 			EObject bd2ne, EObject bodyDeclaration, EObject uContainer);
 
 	/**
@@ -217,7 +217,7 @@ public interface InnerDeclaration2InnerClassifier_InMethod4Interface extends EOb
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_96(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_6(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +225,7 @@ public interface InnerDeclaration2InnerClassifier_InMethod4Interface extends EOb
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_103(EMoflonEdge _edge_mInnerTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_5(EMoflonEdge _edge_mInnerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +257,7 @@ public interface InnerDeclaration2InnerClassifier_InMethod4Interface extends EOb
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(InterfaceDeclaration owner, Classifier feature, MAbstractMethodDefinition method,
+	CSP isApplicable_solveCsp_CC(InterfaceDeclaration owner, MAbstractMethodDefinition method, Classifier feature,
 			AbstractTypeDeclaration bodyDeclaration, Interface uContainer, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -301,7 +301,7 @@ public interface InnerDeclaration2InnerClassifier_InMethod4Interface extends EOb
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration owner, ASTNode2Element o2c,
-			Classifier feature, MAbstractMethodDefinition method, ASTNode2Element bd2ne,
+			MAbstractMethodDefinition method, Classifier feature, ASTNode2Element bd2ne,
 			AbstractTypeDeclaration bodyDeclaration, Interface uContainer, ModelgeneratorRuleResult ruleResult);
 
 	/**

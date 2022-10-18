@@ -14,10 +14,6 @@
 	mAnonymous:AnonymousClassDeclaration {
 		++  -bodyDeclarations -> mDefinition
 	}
-	
-	mInstance : ClassInstanceCreation {
-		-anonymousClassDeclaration->mAnonymous
-	}
 
 }
 

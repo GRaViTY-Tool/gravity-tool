@@ -766,7 +766,7 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_101(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_22(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = ClassDecWithModifier2ClassImpl
 				.pattern_ClassDecWithModifier2Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -835,13 +835,13 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
@@ -908,13 +908,13 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
@@ -1299,8 +1299,8 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 			return checkTypes_BWD((Match) arguments.get(0));
 		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_BWD_CLASS_0__CLASS:
 			return isAppropriate_BWD_Class_0((org.eclipse.uml2.uml.Class) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_101__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_101((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_22__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_22((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

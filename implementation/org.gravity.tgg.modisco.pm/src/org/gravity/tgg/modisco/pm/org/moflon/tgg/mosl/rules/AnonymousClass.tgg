@@ -109,3 +109,56 @@
 		#trg->tType
 	}
 }
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule AnonymousEnumConstant #with org.gravity.tgg.modisco.pm
+
+#source {
+	mMember:MEnumConstantDeclaration {
+		++-anonymousClassDeclaration->mAnonymous
+	}
+
+	++mAnonymous:AnonymousClassDeclaration
+}
+
+#target {
+	tPackage:TPackage {
+		++-classes->tAnonymous
+		++-ownedTypes->tAnonymous
+		-model -> pg
+	}
+
+	tType:TAbstractType {
+		-package -> tPackage
+		-defines -> tMember
+		++-innerTypes -> tAnonymous
+	}
+
+	tMember:TMember
+
+	++tAnonymous:TClass
+
+	pg:TypeGraph {
+		++  -classes -> tAnonymous
+		++  -ownedTypes -> tAnonymous
+	}
+}
+
+#correspondence {
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+
+	++ eAnonymousClassDeclarationToTClass :AnonymousClassDeclarationToTClass {
+		#src->mAnonymous
+		#trg->tAnonymous
+	}
+}
+
+#attributeConditions {
+	addSuffix(tType.tName, "$Anonymous", tAnonymous.tName)
+	eq(tType.tLib, tAnonymous.tLib)
+}

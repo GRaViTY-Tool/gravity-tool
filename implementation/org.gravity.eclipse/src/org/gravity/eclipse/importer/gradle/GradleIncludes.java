@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Matcher;
 
 import org.apache.log4j.Level;
 import org.gravity.eclipse.importer.NoRootFolderException;
@@ -42,9 +41,9 @@ public final class GradleIncludes {
 	 */
 	public void searchSingleInclude(final String contentString, final File rootDir, final Set<Path> buildDotGradleFiles)
 			throws IOException {
-		final Matcher includeMatcher = GradleRegexPatterns.INCLUDE.matcher(contentString);
+		final var includeMatcher = GradleRegexPatterns.INCLUDE.matcher(contentString);
 		while (includeMatcher.find()) {
-			final String match = includeMatcher.group(1);
+			final var match = includeMatcher.group(1);
 			for (final String includeMatch : match.split(",")) {
 				addInclude(includeMatch.trim(), rootDir, buildDotGradleFiles);
 			}
@@ -59,9 +58,9 @@ public final class GradleIncludes {
 	 */
 	private void addInclude(final String include, final File rootDir, final Set<Path> buildDotGradleFiles)
 			throws IOException {
-		final String subProject = include.replace("'", "").replace("\"", "").replace(':',
+		final var subProject = include.replace("'", "").replace("\"", "").replace(':',
 				File.separatorChar);
-		final File nextRoot = FileUtils.findRecursive(rootDir, subProject);
+		final var nextRoot = FileUtils.findRecursive(rootDir, subProject);
 		if (nextRoot != null) {
 			if (this.includes.add(nextRoot.toPath())) {
 				try {
@@ -86,7 +85,7 @@ public final class GradleIncludes {
 	public Set<Path> getJavaSourceFiles(final Path buildDotGradle) throws IOException {
 		Set<Path> javaSourceFiles = null;
 		try {
-			javaSourceFiles = new GradleJavaFiles(buildDotGradle).getJavaFiles();
+			javaSourceFiles = GradleJavaFiles.getJavaFiles(buildDotGradle);
 		} catch (final IOException e) {
 			GradleImport.LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		} catch (final GradleImportException e) {
@@ -104,22 +103,22 @@ public final class GradleIncludes {
 
 	public Set<Path> scanDirectoryForSubRoots(final File rootDir) throws IOException, NoRootFolderException {
 		final Set<Path> subRoots = new HashSet<>();
-		final File buildFile = new File(rootDir, "build.gradle");
+		final var buildFile = new File(rootDir, "build.gradle");
 		if (buildFile.exists()) {
 			subRoots.add(buildFile.toPath());
 		} else {
 			throw new NoRootFolderException();
 		}
-		File settingsFile = new File(rootDir, "settings.gradle");
-		boolean exists = settingsFile.exists();
+		var settingsFile = new File(rootDir, "settings.gradle");
+		var exists = settingsFile.exists();
 		if (!exists) {
 			settingsFile = new File(rootDir, "settings.gradle.kts");
 			exists = settingsFile.exists();
 		}
 		if (exists) {
-			final String settingsContentString = FileUtils.getContentsAsString(settingsFile);
-			final HashMap<String, String> defs = new HashMap<>();
-			final Matcher defMatcher = GradleRegexPatterns.DEFINITION.matcher(settingsContentString);
+			final var settingsContentString = FileUtils.getContentsAsString(settingsFile);
+			final var defs = new HashMap<String, String>();
+			final var defMatcher = GradleRegexPatterns.DEFINITION.matcher(settingsContentString);
 			while (defMatcher.find()) {
 				defs.put(defMatcher.group(1), defMatcher.group(2));
 			}
@@ -141,7 +140,7 @@ public final class GradleIncludes {
 			throws IOException {
 		final Set<Path> includedFiles = new HashSet<>();
 		searchSingleInclude(contentString, rootDir, includedFiles);
-		final Matcher matcher = GradleRegexPatterns.INCLUDE_VAR.matcher(contentString);
+		final var matcher = GradleRegexPatterns.INCLUDE_VAR.matcher(contentString);
 		while(matcher.find()) {
 			addInclude(matcher.group(2), rootDir, includedFiles);
 		}
@@ -149,12 +148,12 @@ public final class GradleIncludes {
 	}
 
 	public void scanRootForSourceFiles(final File rootDir, final Set<Path> javaSourceFiles) throws IOException {
-		final File srcFolder = new File(rootDir, "src");
+		final var srcFolder = new File(rootDir, "src");
 		if (srcFolder.exists()) {
 			for (final String name : new String[] { "main", "java" }) {
-				final File main = new File(srcFolder, name);
+				final var main = new File(srcFolder, name);
 				if (main.exists()) {
-					final ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor("java");
+					final var extensionFileVisitor = new ExtensionFileVisitor("java");
 					Files.walkFileTree(main.toPath(), extensionFileVisitor);
 					javaSourceFiles.addAll(extensionFileVisitor.getFiles());
 				}

@@ -1,0 +1,3 @@
+class,one.One
+jar,log4j-core-2.17.1.jar
+jar,log4j-api-2.17.1.jar

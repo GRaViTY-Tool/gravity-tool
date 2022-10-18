@@ -204,7 +204,7 @@ public final class JavaASTUtil {
 		} else if (parent instanceof TypeDeclaration) {
 			final var tParent = getType((TypeDeclaration) parent, pm);
 			for (final TAbstractType inner : tParent.getInnerTypes()) {
-				if (inner.getTName().equals(name.getFullyQualifiedName())) {
+				if (inner.getTName().equals(tParent.getTName()+"$"+name )) {
 					return inner;
 				}
 			}

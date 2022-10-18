@@ -1,6 +1,7 @@
 package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -18,15 +19,15 @@ import org.eclipse.emf.ecore.util.EcoreUtil.UsageCrossReferencer;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.InterfaceDeclaration;
+import org.eclipse.modisco.java.Model;
 import org.eclipse.modisco.java.TypeAccess;
+import org.eclipse.modisco.java.UnresolvedInterfaceDeclaration;
 import org.eclipse.modisco.java.emf.JavaFactory;
 import org.eclipse.modisco.java.emf.JavaPackage;
 import org.eclipse.osgi.util.NLS;
-import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.Messages;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
-import org.gravity.modisco.util.NameUtil;
 
 /**
  * This preprocessor replaces MClasses with Interfaces if they have falsely been
@@ -43,18 +44,13 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	public boolean process(final MGravityModel model, final Collection<AbstractTypeDeclaration> elements,
 			final IFolder debug, final IProgressMonitor monitor) {
 		final Set<TypeAccess> brokenTypeAccesses = elements.parallelStream()
-				.flatMap(type -> getAccessedClassDeclarations(type.getSuperInterfaces()).parallelStream())
+				.flatMap(type -> getNonInterfaceDeclarations(type.getSuperInterfaces()).parallelStream())
 				.collect(Collectors.toSet());
 		return process(model, brokenTypeAccesses);
 	}
 
 	private boolean process(final MGravityModel model, final Set<TypeAccess> brokenTypeAccesses) {
-		Map<ClassDeclaration, InterfaceDeclaration> replacements;
-		try {
-			replacements = calculateReplacements(brokenTypeAccesses);
-		} catch (final ProcessingException e) {
-			return false;
-		}
+		final var replacements = calculateReplacements(brokenTypeAccesses, model);
 		if (!replacements.isEmpty()) {
 			replace(model, replacements);
 		}
@@ -62,18 +58,28 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	}
 
 	/**
-	 * @param model
-	 * @param replacements
+	 * Replaces type instances with interfaces
+	 *
+	 * @param model        The model in which the types should be replaced
+	 * @param replacements the types to be replaced and their replacements
 	 */
-	private void replace(final MGravityModel model, final Map<ClassDeclaration, InterfaceDeclaration> replacements) {
+	private void replace(final MGravityModel model,
+			final Map<AbstractTypeDeclaration, InterfaceDeclaration> replacements) {
 		for (final Entry<EObject, Collection<Setting>> entry : UsageCrossReferencer
 				.findAll(replacements.keySet(), model.eResource()).entrySet()) {
 			final var key = entry.getKey();
-			if (key instanceof ClassDeclaration) {
-				final var replacedClass = (ClassDeclaration) key;
-				final var references = entry.getValue();
-				for (final Setting setting : references) {
-					setting.getEObject().eSet(setting.getEStructuralFeature(), replacements.get(replacedClass));
+			if (!(key instanceof InterfaceDeclaration)) {
+				final var replacedClass = key;
+				for (final Setting setting : entry.getValue()) {
+					final var eObject = setting.getEObject();
+					final var replacementClass = replacements.get(replacedClass);
+					if (setting.getEStructuralFeature().isMany()) {
+						final var collection = (Collection) eObject.eGet(setting.getEStructuralFeature());
+						collection.remove(replacedClass);
+						collection.add(replacementClass);
+					} else {
+						eObject.eSet(setting.getEStructuralFeature(), replacementClass);
+					}
 				}
 			} else {
 				LOGGER.error(NLS.bind(Messages.errorUnhandeldedCrossref, key));
@@ -83,47 +89,53 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 		replacements.clear();
 	}
 
-	private Map<ClassDeclaration, InterfaceDeclaration> calculateReplacements(final Set<TypeAccess> brokenTypeAccesses)
-			throws ProcessingException {
-		final Map<ClassDeclaration, InterfaceDeclaration> replacements = new ConcurrentHashMap<>(
+	final Map<String, UnresolvedInterfaceDeclaration> proxies = new HashMap<>();
+
+	private Map<AbstractTypeDeclaration, InterfaceDeclaration> calculateReplacements(
+			final Set<TypeAccess> brokenTypeAccesses, final Model model) {
+		final Map<AbstractTypeDeclaration, InterfaceDeclaration> replacements = new ConcurrentHashMap<>(
 				brokenTypeAccesses.size());
 		for (final TypeAccess typeAccess : brokenTypeAccesses) {
-			final var clazz = typeAccess.getType();
-			if (clazz.isProxy()) {
-				replacements.put((ClassDeclaration) clazz, replaceWithInterface((ClassDeclaration) clazz));
+			final var type = (AbstractTypeDeclaration) typeAccess.getType();
+			if (type.isProxy()) {
+				replacements.put(type, createReplacementType(type));
 				if (LOGGER.isInfoEnabled()) {
-					LOGGER.info(NLS.bind(Messages.infoReplacedClassWithInterface, clazz));
+					LOGGER.info(NLS.bind(Messages.infoReplacedClassWithInterface, type));
 				}
 			} else {
 				LOGGER.warn(Messages.errorClassNoProxy);
-				final var child = (ClassDeclaration) typeAccess.eContainer();
-				if (child.getSuperClass() != null) {
-					LOGGER.error(
-							NLS.bind(Messages.errorClassAlreadyHasSuperType, NameUtil.getFullyQualifiedName(child)));
-					throw new ProcessingException();
-				}
+				final var child = (AbstractTypeDeclaration) typeAccess.eContainer();
 				if (LOGGER.isEnabledFor(Level.WARN)) {
 					LOGGER.warn(NLS.bind(Messages.warnReplacedInterfaceWithClass,
-							new String[] { child.getName(), clazz.getName() }));
+							new String[] { child.getName(), type.getName() }));
 				}
-				child.setSuperClass(typeAccess);
+
+				final var iface = this.proxies.computeIfAbsent(type.getName(), name -> {
+					final var replacement = JavaFactory.eINSTANCE.createUnresolvedInterfaceDeclaration();
+					model.getUnresolvedItems().add(replacement);
+					replacement.setName(name);
+					return replacement;
+				});
+				typeAccess.setType(iface);
 			}
 		}
 		return replacements;
 	}
 
 	/**
-	 * Searches all types which are class declarations
+	 * Searches all types which are not interface declarations
 	 *
 	 * @param accesses A collection of accesses
-	 * @return A set of accessed class declarations
+	 * @return A set of accessed type declarations that are not interfaces
 	 */
-	private Set<TypeAccess> getAccessedClassDeclarations(final Collection<TypeAccess> accesses) {
+	private Set<TypeAccess> getNonInterfaceDeclarations(final Collection<TypeAccess> accesses) {
 		final Set<TypeAccess> classes = new HashSet<>();
 		for (final TypeAccess access : accesses) {
 			final var type = access.getType();
 			if (type != null) {
-				if (JavaPackage.eINSTANCE.getClassDeclaration().isSuperTypeOf(type.eClass())) {
+				if (JavaPackage.eINSTANCE.getClassDeclaration().isSuperTypeOf(type.eClass())
+						|| JavaPackage.eINSTANCE.getEnumDeclaration().isSuperTypeOf(type.eClass())
+						|| JavaPackage.eINSTANCE.getAnnotationTypeDeclaration().isSuperTypeOf(type.eClass())) {
 					classes.add(access);
 				}
 			} else {
@@ -134,33 +146,36 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	}
 
 	/**
-	 * Replaces the class with an new interface
+	 * Creates a new interface for replacing the type
 	 *
-	 * @param clazz The class
+	 * @param type The class
 	 * @return the interface
 	 */
-	private InterfaceDeclaration replaceWithInterface(final ClassDeclaration clazz) {
+	private InterfaceDeclaration createReplacementType(final AbstractTypeDeclaration type) {
 		final var iface = JavaFactory.eINSTANCE.createInterfaceDeclaration();
-		iface.setName(clazz.getName());
-		iface.setAbstractTypeDeclaration(clazz.getAbstractTypeDeclaration());
-		iface.getAnnotations().addAll(clazz.getAnnotations());
-		iface.setAnonymousClassDeclarationOwner(clazz.getAnonymousClassDeclarationOwner());
-		iface.getBodyDeclarations().addAll(clazz.getBodyDeclarations());
-		iface.getComments().addAll(clazz.getComments());
-		iface.getCommentsAfterBody().addAll(clazz.getCommentsAfterBody());
-		iface.getCommentsBeforeBody().addAll(clazz.getCommentsBeforeBody());
-		iface.setModifier(clazz.getModifier());
-		iface.setOriginalClassFile(clazz.getOriginalClassFile());
-		iface.setOriginalCompilationUnit(clazz.getOriginalCompilationUnit());
-		iface.setPackage(clazz.getPackage());
-		final var superClazz = clazz.getSuperClass();
-		if (superClazz != null) {
-			iface.getSuperInterfaces().add(superClazz);
+		iface.setName(type.getName());
+		iface.setAbstractTypeDeclaration(type.getAbstractTypeDeclaration());
+		iface.getAnnotations().addAll(type.getAnnotations());
+		iface.setAnonymousClassDeclarationOwner(type.getAnonymousClassDeclarationOwner());
+		iface.getBodyDeclarations().addAll(type.getBodyDeclarations());
+		iface.getComments().addAll(type.getComments());
+		iface.getCommentsAfterBody().addAll(type.getCommentsAfterBody());
+		iface.getCommentsBeforeBody().addAll(type.getCommentsBeforeBody());
+		iface.setModifier(type.getModifier());
+		iface.setOriginalClassFile(type.getOriginalClassFile());
+		iface.setOriginalCompilationUnit(type.getOriginalCompilationUnit());
+		iface.setPackage(type.getPackage());
+		iface.getSuperInterfaces().addAll(type.getSuperInterfaces());
+		iface.getUsagesInImports().addAll(type.getUsagesInImports());
+		iface.getUsagesInTypeAccess().addAll(type.getUsagesInTypeAccess());
+		if (type instanceof ClassDeclaration) {
+			final var clazz = (ClassDeclaration) type;
+			final var superClazz = clazz.getSuperClass();
+			if (superClazz != null) {
+				iface.getSuperInterfaces().add(superClazz);
+				iface.getTypeParameters().addAll(clazz.getTypeParameters());
+			}
 		}
-		iface.getSuperInterfaces().addAll(clazz.getSuperInterfaces());
-		iface.getTypeParameters().addAll(clazz.getTypeParameters());
-		iface.getUsagesInImports().addAll(clazz.getUsagesInImports());
-		iface.getUsagesInTypeAccess().addAll(clazz.getUsagesInTypeAccess());
 		return iface;
 	}
 

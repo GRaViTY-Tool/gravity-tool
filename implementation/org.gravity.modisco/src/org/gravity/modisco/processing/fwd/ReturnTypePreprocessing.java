@@ -140,7 +140,12 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 * @return The return type of the method
 	 */
 	private static Type guessReturnTypeOfCall(final MGravityModel model, final AbstractMethodInvocation invocation) {
-		return guessReturnTypeOfCall(model, invocation, invocation.eContainer());
+		final var container = invocation.eContainer();
+		if(container != null) {
+			return guessReturnTypeOfCall(model, invocation, container);
+		}
+		LOGGER.warn("Cannot guess reurn type as call is in no container");
+		return null;
 	}
 
 	/**
@@ -171,7 +176,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 
 		// VariableDeclaration
 		else if (container instanceof VariableDeclarationFragment) {
-			return ((VariableDeclarationFragment) container).getVariablesContainer().getType().getType();
+			final var type = ((VariableDeclarationFragment) container).getVariablesContainer().getType();
+			if (type != null) {
+				return type.getType();
+			}
 		}
 
 		throw new IllegalStateException(NLS.bind(Messages.unknownType, container.eClass().getName()));
@@ -188,7 +196,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	private static Type getReturnType(final AbstractMethodInvocation invocation,
 			final AbstractMethodInvocation container) {
 		final var method = container.getMethod();
-		if (method instanceof UnresolvedMethodDeclaration) {
+		if ((method == null) || (method instanceof UnresolvedMethodDeclaration)) {
 			// We cannot retrieve information from unresolved elements
 			return null;
 		}
@@ -198,7 +206,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 			return guessReturnTypeFromParameterAssignment(method, index);
 		} else if (container instanceof MethodInvocation) {
 			final var expression = ((MethodInvocation) container).getExpression();
-			if(expression == null) {
+			if (expression == null) {
 				// We cannot guess from a method invoked without context.
 				return null;
 			}
@@ -269,7 +277,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 				return result.get();
 			}
 			final var array = JavaFactory.eINSTANCE.createArrayType();
-			array.setName(plain.getName()+"[]");
+			array.setName(plain.getName() + "[]");
 			final var access = JavaFactory.eINSTANCE.createTypeAccess();
 			access.setType(plain);
 			array.setElementType(access);
@@ -421,10 +429,15 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 		} else if (expression instanceof FieldAccess) {
 			return getType(pg, ((FieldAccess) expression).getField().getVariable());
 		} else if (expression instanceof ArrayAccess) {
-			return ((ArrayType) getArrayType(pg, (ArrayAccess) expression)).getElementType().getType();
+			final var arrayType = (ArrayType) getArrayType(pg, (ArrayAccess) expression);
+			if(arrayType != null) {
+				return arrayType.getElementType().getType();
+			}
 		} else {
 			throw new IllegalStateException(NLS.bind(Messages.unknownType, expression.eClass().getName()));
 		}
+		// We cannot resolve the type but also have no unknown case
+		return null;
 	}
 
 	/**
@@ -435,6 +448,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 * @return The type of the variable
 	 */
 	private static Type getType(final MGravityModel pg, final VariableDeclaration variable) {
+		if(variable == null) {
+			LOGGER.warn("Cannot get type as variable is null");
+			return null;
+		}
 		if (variable instanceof UnresolvedVariableDeclarationFragment) {
 			return MoDiscoUtil.getJavaLangObject(pg);
 		} else if (variable instanceof VariableDeclarationFragment) {

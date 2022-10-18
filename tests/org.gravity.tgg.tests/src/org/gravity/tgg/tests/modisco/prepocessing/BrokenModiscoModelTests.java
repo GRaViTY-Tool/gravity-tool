@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.modisco.java.InterfaceDeclaration;
 import org.eclipse.modisco.java.Type;
 import org.eclipse.modisco.java.TypeAccess;
+import org.eclipse.modisco.java.UnresolvedInterfaceDeclaration;
 import org.eclipse.modisco.java.UnresolvedTypeDeclaration;
 import org.eclipse.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.MClass;
@@ -24,6 +25,25 @@ import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.junit.Test;
 
 public class BrokenModiscoModelTests {
+
+	@Test
+	public void testClassNotInContainer()
+			throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+		final var model = ModiscoFactory.eINSTANCE.createMGravityModel();
+
+		final var contained = createType("p", "Contained", model);
+
+
+		final var notContained = ModiscoFactory.eINSTANCE.createMClass();
+		notContained.setName("NotContained");
+
+		final var method = createMethodDefinition("dummy", notContained);
+		method.setAbstractTypeDeclaration(contained);
+
+		processFwd(model);
+
+		assertTrue(model.getOrphanTypes().contains(notContained));
+	}
 
 	@Test
 	public void testClassImplementsClass()
@@ -42,8 +62,8 @@ public class BrokenModiscoModelTests {
 
 		processFwd(model);
 
-		assertTrue(child.getSuperInterfaces().isEmpty());
-		assertEquals(parent, child.getSuperClass().getType());
+		assertEquals(1, child.getSuperInterfaces().size());
+		assertTrue(child.getSuperInterfaces().get(0).getType() instanceof UnresolvedInterfaceDeclaration);
 	}
 
 	@Test
@@ -224,15 +244,15 @@ public class BrokenModiscoModelTests {
 		return invocation;
 	}
 
-	private MMethodDefinition createMethodDefinition(final String name, final Type type) {
+	private MMethodDefinition createMethodDefinition(final String name, final Type returnType) {
 		final var definition = ModiscoFactory.eINSTANCE.createMMethodDefinition();
 		definition.setName(name);
 		final var block = JavaFactory.eINSTANCE.createBlock();
 		definition.setBody(block);
-		if (type != null) {
+		if (returnType != null) {
 			final var typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 			definition.setReturnType(typeAccess);
-			typeAccess.setType(type);
+			typeAccess.setType(returnType);
 		}
 
 		return definition;

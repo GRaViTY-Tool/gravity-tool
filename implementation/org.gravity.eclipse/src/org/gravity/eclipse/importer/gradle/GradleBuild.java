@@ -17,6 +17,7 @@ import java.util.stream.Stream;
 import org.apache.log4j.Logger;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.launching.JavaRuntime;
+import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.os.Execute;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
@@ -29,6 +30,8 @@ import org.gravity.eclipse.os.UnsupportedOperationSystemException;
  *
  */
 public class GradleBuild {
+
+	private static final String GRADLE_DEFAULT_VERSION = "5.0";
 
 	public static final Logger LOGGER = Logger.getLogger(GradleBuild.class);
 
@@ -155,40 +158,62 @@ public class GradleBuild {
 	}
 
 	/**
-	 * @param root
-	 * @return
+	 * Searches the path to a JVM compatible with the gradle version of the project
+	 * @param root The root of a gradle project
+	 * @return The path to a compatible JVM or <code>null</code> if no compatible JVM is available
 	 * @throws IOException
 	 */
 	private static String getCompatibleJvmPath(final File root) throws IOException {
-		String java = null;
 		final var propertiesPath = new File(root, "gradle/wrapper/gradle-wrapper.properties");
 		if (propertiesPath.exists()) {
-			final var gradleVersion = Files.readAllLines(propertiesPath.toPath()).parallelStream()
-					.filter(line -> line.startsWith("distributionUrl=")).map(line -> {
-						final var version = line.substring(0, line.lastIndexOf('-'));
-						return version.substring(version.lastIndexOf('-') + 1);
-					}).findAny().orElse("5.0");
-			if (gradleVersion.compareTo("5.0") < 0) {
+			final var gradleVersion = readGradleVersion(propertiesPath);
+			if (gradleVersion.compareTo(GRADLE_DEFAULT_VERSION) < 0) {
 				final var manager = JavaRuntime.getExecutionEnvironmentsManager();
 				final var optional = Stream.of(manager.getExecutionEnvironments())
 						.filter(e -> e.getId().indexOf(JavaCore.VERSION_1_8) != -1).findAny();
 				if (optional.isPresent()) {
 					final var ienv = optional.get();
-					var vm = ienv.getDefaultVM();
-					if (vm == null) {
-						final var comp = ienv.getCompatibleVMs();
-						if (comp.length > 0) {
-							vm = comp[0];
-						}
-					}
-					if (vm != null) {
-						final var location = vm.getInstallLocation();
-						java = location.toString();
-					}
+					return getJvmPath(ienv);
 				}
 			}
 		}
-		return java;
+		return null;
+	}
+
+	/**
+	 * Searches the path to a compatible JVM
+	 *
+	 * @param environment The Java execution environment
+	 * @return The path to a compatible JVM or <code>null</code> if no compatible JVM is available
+	 */
+	private static String getJvmPath(final IExecutionEnvironment environment) {
+		var vm = environment.getDefaultVM();
+		if (vm == null) {
+			final var comp = environment.getCompatibleVMs();
+			if (comp.length > 0) {
+				vm = comp[0];
+			}
+		}
+		if (vm != null) {
+			final var location = vm.getInstallLocation();
+			return location.toString();
+		}
+		return null;
+	}
+
+	/**
+	 * Searches for the gradle version to be used in the gradle-prapper.properties file
+	 *
+	 * @param gradleWrapperProperties The path to the gradle-wrapper.properties file
+	 * @return the gradle version, if no version is found, 5.0 is returned by default
+	 * @throws IOException If the file cannot be read
+	 */
+	private static String readGradleVersion(final File gradleWrapperProperties) throws IOException {
+		return Files.readAllLines(gradleWrapperProperties.toPath()).parallelStream()
+				.filter(line -> line.startsWith("distributionUrl=")).map(line -> {
+					final var version = line.substring(0, line.lastIndexOf('-'));
+					return version.substring(version.lastIndexOf('-') + 1);
+				}).findAny().orElse(GRADLE_DEFAULT_VERSION);
 	}
 
 	/**

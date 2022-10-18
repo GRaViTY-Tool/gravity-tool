@@ -101,7 +101,7 @@ public interface AnnotationMemberValueAnnotation extends EObject, AbstractRule {
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
 			AnnotationMemberValuePair mAnnotationValue,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			BodyDeclaration mOwner, Annotation mValue, TAnnotationValue tAnnotationValue);
+			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, Annotation mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,7 +119,7 @@ public interface AnnotationMemberValueAnnotation extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject mAnnotationValue,
 			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mTypeToTType, EObject tValue, EObject mOwner,
-			EObject mValue, EObject tAnnotationValue);
+			EObject tAnnotationValue, EObject mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,7 +204,7 @@ public interface AnnotationMemberValueAnnotation extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject mAnnotationValue,
 			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mTypeToTType, EObject tValue, EObject mOwner,
-			EObject mValue, EObject tAnnotationValue);
+			EObject tAnnotationValue, EObject mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface AnnotationMemberValueAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_69(EMoflonEdge _edge_tValue);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_82(EMoflonEdge _edge_tValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +228,7 @@ public interface AnnotationMemberValueAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_70(EMoflonEdge _edge_value);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_86(EMoflonEdge _edge_value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,7 +261,7 @@ public interface AnnotationMemberValueAnnotation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TAnnotation tValue,
-			BodyDeclaration mOwner, Annotation mValue, TAnnotationValue tAnnotationValue, Match sourceMatch,
+			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, Annotation mValue, Match sourceMatch,
 			Match targetMatch);
 
 	/**

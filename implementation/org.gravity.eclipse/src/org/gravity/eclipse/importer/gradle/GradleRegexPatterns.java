@@ -27,12 +27,12 @@ final class GradleRegexPatterns {
 	/**
 	 * The single entries of an include
 	 */
-	protected static final Pattern INCLUDE_ENTRY = Pattern.compile("(['\"](:)?)([\\w\\-_:]+)['\"]");
+	protected static final Pattern INCLUDE_ENTRY = Pattern.compile("(['\"](:)?)([\\w\\-:]+)['\"]");
 
 	/**
 	 * inclusions
 	 */
-	protected static final Pattern INCLUDE = Pattern.compile("include\\s*\\(?(((\\s*?,\\s*?)?(['\"]([\\w\\-:]+)['\"])+)+)\\)?");
+	protected static final Pattern INCLUDE = Pattern.compile("include\\s*\\(?(((\\s*?,\\s*?)?(['\"]([\\w\\-:]+)['\"]))+)\\)?");
 
 	/**
 	 * inclusion of variable
@@ -48,6 +48,6 @@ final class GradleRegexPatterns {
 	/**
 	 * The min and max Android SDK version
 	 */
-	protected static final Pattern ANDROID_SDK_VERSION = Pattern.compile("(((min)|(target))SdkVersion)(\\s+)(\\d+)");
+	protected static final Pattern ANDROID_SDK_VERSION = Pattern.compile("(((min)|(target)|(compile))SdkVersion)(\\s+)(\\d+)");
 
 }

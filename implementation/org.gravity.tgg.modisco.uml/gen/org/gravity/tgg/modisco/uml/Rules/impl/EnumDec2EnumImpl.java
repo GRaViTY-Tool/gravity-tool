@@ -618,7 +618,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Enumeration_1(Enumeration feature) {
+	public EObjectContainer isAppropriate_BWD_Enumeration_0(Enumeration feature) {
 
 		Object[] result1_bindingAndBlack = EnumDec2EnumImpl
 				.pattern_EnumDec2Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -731,13 +731,13 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -778,13 +778,13 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1090,8 +1090,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 			return null;
 		case RulesPackage.ENUM_DEC2_ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_1__ENUMERATION:
-			return isAppropriate_BWD_Enumeration_1((Enumeration) arguments.get(0));
+		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_0__ENUMERATION:
+			return isAppropriate_BWD_Enumeration_0((Enumeration) arguments.get(0));
 		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD_ENUM_DECLARATION_0__ENUMDECLARATION:
 			return isAppropriate_FWD_EnumDeclaration_0((EnumDeclaration) arguments.get(0));
 		case RulesPackage.ENUM_DEC2_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
@@ -1909,8 +1909,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_21_2_testcorematchandDECs_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_986581 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_986581 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_375566 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_375566 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2112,8 +2112,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_27_1_matchtggpattern_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_740001 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_740001 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_682812 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_682812 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

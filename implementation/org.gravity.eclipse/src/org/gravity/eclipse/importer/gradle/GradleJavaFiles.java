@@ -21,9 +21,10 @@ import org.gravity.eclipse.io.FileUtils;
 public class GradleJavaFiles {
 
 	private static final String BUILD_TARGET = "exportCode";
-	private final Path output;
-	private final Path original;
-	private final Path path;
+
+	private GradleJavaFiles() {
+		// This class should not be instantiated
+	}
 
 	/**
 	 * Manipulates the build.gradle file for getting all java files and initializes
@@ -31,22 +32,18 @@ public class GradleJavaFiles {
 	 *
 	 * @param path The path to the build.gradle file
 	 * @throws IOException if an I/O error occurs manipulating the file
+	 * @return the Java source files
 	 */
-	public GradleJavaFiles(final Path path) throws IOException {
-		this.path = path;
-		this.output = FileUtils.createTempFile("gravityGradleJava", "");
-		this.original = manipuateBuildFile(path);
-	}
-
-	public Set<Path> getJavaFiles() throws IOException, GradleImportException {
-		final var success = GradleBuild.build(this.path.getParent().toFile(), BUILD_TARGET);
+	public static Set<Path> getJavaFiles(final Path path) throws IOException, GradleImportException {
+		final var output = FileUtils.createTempFile("gravityGradleJava", "");
+		final var original = manipuateBuildFile(path, output);
+		final var success = GradleBuild.build(path.getParent().toFile(), BUILD_TARGET);
+		Files.move(original, path, StandardCopyOption.REPLACE_EXISTING);
 		if(!success) {
 			throw new GradleImportException("Couldn't get Java files");
 		}
-		final Set<Path> collect = Files.readAllLines(this.output).parallelStream().map(Paths::get)
+		return Files.readAllLines(output).parallelStream().map(Paths::get)
 				.collect(Collectors.toSet());
-		Files.move(this.original, this.path, StandardCopyOption.REPLACE_EXISTING);
-		return collect;
 	}
 
 
@@ -55,13 +52,14 @@ public class GradleJavaFiles {
 	 * Adds a task to save all java sourcefiles into temp file
 	 *
 	 * @param build The path to the build.gradle file
+	 * @param output The path to which results should be written
 	 * @throws IOException if an I/O error occurs manipulating the file
 	 * @return path to a backup of the original file
 	 */
-	private Path manipuateBuildFile(final Path build) throws IOException {
+	private static Path manipuateBuildFile(final Path build, final Path output) throws IOException {
 		final var backupLocation = Files.copy(build, FileUtils.createTempFile("backupBuildGardle", ""),
 				StandardCopyOption.REPLACE_EXISTING);
-		final var taskCode = "\n" + "task " + BUILD_TARGET + " {\n" + "  def outputFile = file(\"" + this.output.toString().replace("\\", "/") + "\")\n"
+		final var taskCode = "\n" + "task " + BUILD_TARGET + " {\n" + "  def outputFile = file(\"" + output.toString().replace("\\", "/") + "\")\n"
 				+ "  outputs.file  outputFile\n" + "  doLast {\n" + "    subprojects { project ->\n"
 				+ "      project.plugins.withType(JavaPlugin) {\n"
 				+ "        project.sourceSets.main.allJava.collect { sourceFile ->\n"
