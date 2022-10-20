@@ -10,7 +10,7 @@ import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * The Interface IPGConverter for specifying converters from java source code
- * into an PG.
+ * into a GRaViTY Program Model.
  */
 public interface IPGConverter {
 

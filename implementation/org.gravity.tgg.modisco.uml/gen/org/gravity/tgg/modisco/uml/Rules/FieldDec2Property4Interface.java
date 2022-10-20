@@ -95,8 +95,9 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element jo2uo, ASTNode2Element nd2ne,
-			Interface uOwnerType, MFieldDefinition bodyDeclaration, Property feature, InterfaceDeclaration jOwnerType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			ASTNode2Element nd2ne, Property feature, ASTNode2Element jo2uo, Interface uOwnerType,
+			InterfaceDeclaration jOwnerType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +113,8 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jo2uo, EObject nd2ne, EObject uOwnerType,
-			EObject bodyDeclaration, EObject feature, EObject jOwnerType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject nd2ne, EObject feature,
+			EObject jo2uo, EObject uOwnerType, EObject jOwnerType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +130,7 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Interface uOwnerType, Property feature);
+	boolean isAppropriate_BWD(Match match, Property feature, Interface uOwnerType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +154,7 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Interface uOwnerType, Property feature);
+	void registerObjectsToMatch_BWD(Match match, Property feature, Interface uOwnerType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +162,7 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Interface uOwnerType, Property feature);
+	CSP isAppropriate_solveCsp_BWD(Match match, Property feature, Interface uOwnerType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,8 +178,9 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element jo2uo, ASTNode2Element nd2ne,
-			Interface uOwnerType, MFieldDefinition bodyDeclaration, Property feature, InterfaceDeclaration jOwnerType);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			ASTNode2Element nd2ne, Property feature, ASTNode2Element jo2uo, Interface uOwnerType,
+			InterfaceDeclaration jOwnerType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,8 +196,8 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jo2uo, EObject nd2ne, EObject uOwnerType,
-			EObject bodyDeclaration, EObject feature, EObject jOwnerType);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject nd2ne, EObject feature,
+			EObject jo2uo, EObject uOwnerType, EObject jOwnerType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,7 +213,7 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_33(EMoflonEdge _edge_ownedAttribute);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_105(EMoflonEdge _edge_ownedAttribute);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +221,7 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_39(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_109(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,7 +253,7 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Interface uOwnerType, MFieldDefinition bodyDeclaration, Property feature,
+	CSP isApplicable_solveCsp_CC(MFieldDefinition bodyDeclaration, Property feature, Interface uOwnerType,
 			InterfaceDeclaration jOwnerType, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -276,7 +278,7 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Interface uOwnerType, Property feature);
+	boolean checkDEC_BWD(Property feature, Interface uOwnerType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,8 +286,8 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element jo2uoParameter,
-			ASTNode2Element nd2neParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element nd2neParameter,
+			ASTNode2Element jo2uoParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,9 +295,9 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element jo2uo, ASTNode2Element nd2ne,
-			Interface uOwnerType, MFieldDefinition bodyDeclaration, Property feature, InterfaceDeclaration jOwnerType,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			ASTNode2Element nd2ne, Property feature, ASTNode2Element jo2uo, Interface uOwnerType,
+			InterfaceDeclaration jOwnerType, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

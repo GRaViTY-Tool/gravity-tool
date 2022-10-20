@@ -101,7 +101,7 @@ public interface AnnotationTypeAccessOnAnnotation extends EObject, AbstractRule 
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TAnnotation tAnnotation, TypeAccess mAccess,
-			AnnotationTypeDeclaration mAnnotationType, AnnotationToTAnnotation AnnotationToTAnnotation,
+			AnnotationToTAnnotation AnnotationToTAnnotation, AnnotationTypeDeclaration mAnnotationType,
 			TypeToTAbstractType AnnotationTypeToTAnnotationType, AnnotationMemberValuePair mOwner,
 			Annotation mAnnotation, TAnnotationType tAnnotationType);
 
@@ -120,7 +120,7 @@ public interface AnnotationTypeAccessOnAnnotation extends EObject, AbstractRule 
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mAccess,
-			EObject mAnnotationType, EObject AnnotationToTAnnotation, EObject AnnotationTypeToTAnnotationType,
+			EObject AnnotationToTAnnotation, EObject mAnnotationType, EObject AnnotationTypeToTAnnotationType,
 			EObject mOwner, EObject mAnnotation, EObject tAnnotationType);
 
 	/**
@@ -186,7 +186,7 @@ public interface AnnotationTypeAccessOnAnnotation extends EObject, AbstractRule 
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAnnotation tAnnotation,
-			AnnotationTypeDeclaration mAnnotationType, AnnotationToTAnnotation AnnotationToTAnnotation,
+			AnnotationToTAnnotation AnnotationToTAnnotation, AnnotationTypeDeclaration mAnnotationType,
 			TypeToTAbstractType AnnotationTypeToTAnnotationType, AnnotationMemberValuePair mOwner,
 			Annotation mAnnotation, TAnnotationType tAnnotationType);
 
@@ -205,7 +205,7 @@ public interface AnnotationTypeAccessOnAnnotation extends EObject, AbstractRule 
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mAccess,
-			EObject mAnnotationType, EObject AnnotationToTAnnotation, EObject AnnotationTypeToTAnnotationType,
+			EObject AnnotationToTAnnotation, EObject mAnnotationType, EObject AnnotationTypeToTAnnotationType,
 			EObject mOwner, EObject mAnnotation, EObject tAnnotationType);
 
 	/**
@@ -222,7 +222,7 @@ public interface AnnotationTypeAccessOnAnnotation extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_79(EMoflonEdge _edge_annotations);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_85(EMoflonEdge _edge_annotations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface AnnotationTypeAccessOnAnnotation extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_83(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_90(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -308,7 +308,7 @@ public interface AnnotationTypeAccessOnAnnotation extends EObject, AbstractRule 
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAnnotation tAnnotation,
-			AnnotationTypeDeclaration mAnnotationType, AnnotationToTAnnotation AnnotationToTAnnotation,
+			AnnotationToTAnnotation AnnotationToTAnnotation, AnnotationTypeDeclaration mAnnotationType,
 			TypeToTAbstractType AnnotationTypeToTAnnotationType, AnnotationMemberValuePair mOwner,
 			Annotation mAnnotation, TAnnotationType tAnnotationType, ModelgeneratorRuleResult ruleResult);
 

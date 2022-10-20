@@ -39,7 +39,7 @@ public abstract class ProjectImport {
 	 * @return The importer
 	 * @throws ImportException
 	 */
-	public ProjectImport(File rootDir, String rootFile, boolean ignoreBuildErrors) throws ImportException {
+	protected ProjectImport(final File rootDir, final String rootFile, final boolean ignoreBuildErrors) throws ImportException {
 		this.ignoreBuildErrors = ignoreBuildErrors;
 		this.rootDir = getRoot(rootDir, rootFile);
 		this.rootFile = new File(this.rootDir, rootFile);
@@ -78,8 +78,8 @@ public abstract class ProjectImport {
 	 * @return The root folder
 	 * @throws NoRootFolderException If no root file has been found
 	 */
-	private final File getRoot(File rootDir, String rootFile) throws NoRootFolderException {
-		final File buildDotGradle = FileUtils.findRecursive(rootDir, rootFile);
+	private final File getRoot(final File rootDir, final String rootFile) throws NoRootFolderException {
+		final var buildDotGradle = FileUtils.findRecursive(rootDir, rootFile);
 		if (buildDotGradle == null) {
 			throw new NoRootFolderException();
 		}

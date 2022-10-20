@@ -404,20 +404,20 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 		// Create literals
 
 		// Create attribute variables
-		Variable var_tMethodSignature_lowerBound = CSPFactoryHelper.eINSTANCE
-				.createVariable("tMethodSignature.lowerBound", true, csp);
-		var_tMethodSignature_lowerBound.setValue(tMethodSignature.getLowerBound());
-		var_tMethodSignature_lowerBound.setType("int");
 		Variable var_tMethodSignature_upperBound = CSPFactoryHelper.eINSTANCE
 				.createVariable("tMethodSignature.upperBound", true, csp);
 		var_tMethodSignature_upperBound.setValue(tMethodSignature.getUpperBound());
 		var_tMethodSignature_upperBound.setType("int");
+		Variable var_tMethodSignature_lowerBound = CSPFactoryHelper.eINSTANCE
+				.createVariable("tMethodSignature.lowerBound", true, csp);
+		var_tMethodSignature_lowerBound.setValue(tMethodSignature.getLowerBound());
+		var_tMethodSignature_lowerBound.setType("int");
 
 		// Create unbound variables
-		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.lowerBound", csp);
-		var_tDefinition_lowerBound.setType("int");
 		Variable var_tDefinition_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.upperBound", csp);
 		var_tDefinition_upperBound.setType("int");
+		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.lowerBound", csp);
+		var_tDefinition_lowerBound.setType("int");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -428,9 +428,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
+		eq.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
+		eq_0.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tType", tType);
@@ -745,14 +745,6 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 		// Create literals
 
 		// Create attribute variables
-		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.lowerBound", true,
-				csp);
-		var_tDefinition_lowerBound.setValue(tDefinition.getLowerBound());
-		var_tDefinition_lowerBound.setType("int");
-		Variable var_tMethodSignature_lowerBound = CSPFactoryHelper.eINSTANCE
-				.createVariable("tMethodSignature.lowerBound", true, csp);
-		var_tMethodSignature_lowerBound.setValue(tMethodSignature.getLowerBound());
-		var_tMethodSignature_lowerBound.setType("int");
 		Variable var_tDefinition_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.upperBound", true,
 				csp);
 		var_tDefinition_upperBound.setValue(tDefinition.getUpperBound());
@@ -761,6 +753,14 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 				.createVariable("tMethodSignature.upperBound", true, csp);
 		var_tMethodSignature_upperBound.setValue(tMethodSignature.getUpperBound());
 		var_tMethodSignature_upperBound.setType("int");
+		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.lowerBound", true,
+				csp);
+		var_tDefinition_lowerBound.setValue(tDefinition.getLowerBound());
+		var_tDefinition_lowerBound.setType("int");
+		Variable var_tMethodSignature_lowerBound = CSPFactoryHelper.eINSTANCE
+				.createVariable("tMethodSignature.lowerBound", true, csp);
+		var_tMethodSignature_lowerBound.setValue(tMethodSignature.getLowerBound());
+		var_tMethodSignature_lowerBound.setType("int");
 
 		// Create unbound variables
 
@@ -773,9 +773,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
+		eq.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
+		eq_0.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
 		return csp;
 	}
 
@@ -869,7 +869,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_51(EMoflonEdge _edge_definitions) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_19(EMoflonEdge _edge_definitions) {
 
 		Object[] result1_bindingAndBlack = MethodDefinitionImpl
 				.pattern_MethodDefinition_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -927,7 +927,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_54(EMoflonEdge _edge_returnType) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_21(EMoflonEdge _edge_returnType) {
 
 		Object[] result1_bindingAndBlack = MethodDefinitionImpl
 				.pattern_MethodDefinition_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -996,23 +996,23 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition", true, csp);
-		var_tDefinition_lowerBound.setValue(__helper.getValue("tDefinition", "lowerBound"));
-		var_tDefinition_lowerBound.setType("int");
+		Variable var_tMethodSignature_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tMethodSignature", true,
+				csp);
+		var_tMethodSignature_upperBound.setValue(__helper.getValue("tMethodSignature", "upperBound"));
+		var_tMethodSignature_upperBound.setType("int");
+
+		Variable var_tDefinition_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition", true, csp);
+		var_tDefinition_upperBound.setValue(__helper.getValue("tDefinition", "upperBound"));
+		var_tDefinition_upperBound.setType("int");
 
 		Variable var_tMethodSignature_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tMethodSignature", true,
 				csp);
 		var_tMethodSignature_lowerBound.setValue(__helper.getValue("tMethodSignature", "lowerBound"));
 		var_tMethodSignature_lowerBound.setType("int");
 
-		Variable var_tDefinition_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition", true, csp);
-		var_tDefinition_upperBound.setValue(__helper.getValue("tDefinition", "upperBound"));
-		var_tDefinition_upperBound.setType("int");
-
-		Variable var_tMethodSignature_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tMethodSignature", true,
-				csp);
-		var_tMethodSignature_upperBound.setValue(__helper.getValue("tMethodSignature", "upperBound"));
-		var_tMethodSignature_upperBound.setType("int");
+		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition", true, csp);
+		var_tDefinition_lowerBound.setValue(__helper.getValue("tDefinition", "lowerBound"));
+		var_tDefinition_lowerBound.setType("int");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1021,23 +1021,23 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 		csp.getConstraints().add(eq1);
 
 		eq0.setRuleName("MethodDefinition");
-		eq0.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
+		eq0.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
 
 		eq1.setRuleName("MethodDefinition");
-		eq1.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
+		eq1.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_tDefinition_lowerBound.setBound(false);
 			var_tDefinition_upperBound.setBound(false);
-			eq0.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
-			eq1.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
+			var_tDefinition_lowerBound.setBound(false);
+			eq0.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
+			eq1.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("tDefinition", "lowerBound", var_tDefinition_lowerBound.getValue());
 				__helper.setValue("tDefinition", "upperBound", var_tDefinition_upperBound.getValue());
+				__helper.setValue("tDefinition", "lowerBound", var_tDefinition_lowerBound.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1062,23 +1062,23 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition", true, csp);
-		var_tDefinition_lowerBound.setValue(__helper.getValue("tDefinition", "lowerBound"));
-		var_tDefinition_lowerBound.setType("int");
+		Variable var_tMethodSignature_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tMethodSignature", true,
+				csp);
+		var_tMethodSignature_upperBound.setValue(__helper.getValue("tMethodSignature", "upperBound"));
+		var_tMethodSignature_upperBound.setType("int");
+
+		Variable var_tDefinition_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition", true, csp);
+		var_tDefinition_upperBound.setValue(__helper.getValue("tDefinition", "upperBound"));
+		var_tDefinition_upperBound.setType("int");
 
 		Variable var_tMethodSignature_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tMethodSignature", true,
 				csp);
 		var_tMethodSignature_lowerBound.setValue(__helper.getValue("tMethodSignature", "lowerBound"));
 		var_tMethodSignature_lowerBound.setType("int");
 
-		Variable var_tDefinition_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition", true, csp);
-		var_tDefinition_upperBound.setValue(__helper.getValue("tDefinition", "upperBound"));
-		var_tDefinition_upperBound.setType("int");
-
-		Variable var_tMethodSignature_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tMethodSignature", true,
-				csp);
-		var_tMethodSignature_upperBound.setValue(__helper.getValue("tMethodSignature", "upperBound"));
-		var_tMethodSignature_upperBound.setType("int");
+		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition", true, csp);
+		var_tDefinition_lowerBound.setValue(__helper.getValue("tDefinition", "lowerBound"));
+		var_tDefinition_lowerBound.setType("int");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1087,16 +1087,16 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 		csp.getConstraints().add(eq1);
 
 		eq0.setRuleName("MethodDefinition");
-		eq0.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
+		eq0.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
 
 		eq1.setRuleName("MethodDefinition");
-		eq1.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
+		eq1.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			eq0.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
-			eq1.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
+			eq0.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
+			eq1.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
@@ -1205,14 +1205,6 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 		// Create literals
 
 		// Create attribute variables
-		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.lowerBound", true,
-				csp);
-		var_tDefinition_lowerBound.setValue(tDefinition.getLowerBound());
-		var_tDefinition_lowerBound.setType("int");
-		Variable var_tMethodSignature_lowerBound = CSPFactoryHelper.eINSTANCE
-				.createVariable("tMethodSignature.lowerBound", true, csp);
-		var_tMethodSignature_lowerBound.setValue(tMethodSignature.getLowerBound());
-		var_tMethodSignature_lowerBound.setType("int");
 		Variable var_tDefinition_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.upperBound", true,
 				csp);
 		var_tDefinition_upperBound.setValue(tDefinition.getUpperBound());
@@ -1221,6 +1213,14 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 				.createVariable("tMethodSignature.upperBound", true, csp);
 		var_tMethodSignature_upperBound.setValue(tMethodSignature.getUpperBound());
 		var_tMethodSignature_upperBound.setType("int");
+		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.lowerBound", true,
+				csp);
+		var_tDefinition_lowerBound.setValue(tDefinition.getLowerBound());
+		var_tDefinition_lowerBound.setType("int");
+		Variable var_tMethodSignature_lowerBound = CSPFactoryHelper.eINSTANCE
+				.createVariable("tMethodSignature.lowerBound", true, csp);
+		var_tMethodSignature_lowerBound.setValue(tMethodSignature.getLowerBound());
+		var_tMethodSignature_lowerBound.setType("int");
 
 		// Create unbound variables
 
@@ -1233,9 +1233,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
+		eq.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
+		eq_0.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
 		return csp;
 	}
 
@@ -1372,20 +1372,20 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 		// Create literals
 
 		// Create attribute variables
-		Variable var_tMethodSignature_lowerBound = CSPFactoryHelper.eINSTANCE
-				.createVariable("tMethodSignature.lowerBound", true, csp);
-		var_tMethodSignature_lowerBound.setValue(tMethodSignature.getLowerBound());
-		var_tMethodSignature_lowerBound.setType("int");
 		Variable var_tMethodSignature_upperBound = CSPFactoryHelper.eINSTANCE
 				.createVariable("tMethodSignature.upperBound", true, csp);
 		var_tMethodSignature_upperBound.setValue(tMethodSignature.getUpperBound());
 		var_tMethodSignature_upperBound.setType("int");
+		Variable var_tMethodSignature_lowerBound = CSPFactoryHelper.eINSTANCE
+				.createVariable("tMethodSignature.lowerBound", true, csp);
+		var_tMethodSignature_lowerBound.setValue(tMethodSignature.getLowerBound());
+		var_tMethodSignature_lowerBound.setType("int");
 
 		// Create unbound variables
-		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.lowerBound", csp);
-		var_tDefinition_lowerBound.setType("int");
 		Variable var_tDefinition_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.upperBound", csp);
 		var_tDefinition_upperBound.setType("int");
+		Variable var_tDefinition_lowerBound = CSPFactoryHelper.eINSTANCE.createVariable("tDefinition.lowerBound", csp);
+		var_tDefinition_lowerBound.setType("int");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -1396,9 +1396,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
+		eq.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_tDefinition_upperBound, var_tMethodSignature_upperBound);
+		eq_0.solve(var_tDefinition_lowerBound, var_tMethodSignature_lowerBound);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tType", tType);
@@ -1491,10 +1491,10 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 			return null;
 		case RulesPackage.METHOD_DEFINITION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_51__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_51((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_54__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_54((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_19__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_19((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_21__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_21((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEFINITION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEFINITION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1743,8 +1743,8 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
-		Object _localVariable_0 = csp.getValue("tDefinition", "lowerBound");
-		Object _localVariable_1 = csp.getValue("tDefinition", "upperBound");
+		Object _localVariable_0 = csp.getValue("tDefinition", "upperBound");
+		Object _localVariable_1 = csp.getValue("tDefinition", "lowerBound");
 		mDefinitionToTMember.setSource(mDefinition);
 		tMethodSignature.getDefinitions().add(tDefinition);
 		mDefinitionToTMember.setTarget(tDefinition);
@@ -1753,10 +1753,10 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 		mBodyToTAnnotation.setTarget(tDefinition);
 		mFlowElementToTFlowElement.setSource(mDefinition);
 		mFlowElementToTFlowElement.setTarget(tDefinition);
-		int tDefinition_lowerBound_prime = (int) _localVariable_0;
-		int tDefinition_upperBound_prime = (int) _localVariable_1;
-		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
+		int tDefinition_upperBound_prime = (int) _localVariable_0;
+		int tDefinition_lowerBound_prime = (int) _localVariable_1;
 		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
+		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
 		return new Object[] { tType, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
 				mBodyToTAnnotation, mFlowElementToTFlowElement, csp };
 	}
@@ -3228,9 +3228,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_20_2_testcorematchandDECs_black_nac_0BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_746269 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_746269 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_746269)) {
+		TSignature __DEC_tDefinition_signature_330144 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_330144 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_330144)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -3364,9 +3364,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_0BB(
 			MMethodDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_127879 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_127879 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_127879)) {
+		MSignature __DEC_mDefinition_mDefinitions_58931 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_58931 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_58931)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -3376,9 +3376,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_1BB(
 			TypeAccess mTypeAccess, Type mType) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_740434 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_767223 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_740434)) {
+			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_767223)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3387,7 +3387,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_526419 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_227849 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3396,7 +3396,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_202382 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_477549 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3405,9 +3405,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess mTypeAccess, Type mType) {
-		for (ArrayType __DEC_mTypeAccess_elementType_98908 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mTypeAccess_elementType_14596 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ArrayType.class, "elementType")) {
-			if (!mType.equals(__DEC_mTypeAccess_elementType_98908)) {
+			if (!mType.equals(__DEC_mTypeAccess_elementType_14596)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3416,7 +3416,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_135715 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_48542 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3425,9 +3425,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_6BB(
 			TypeAccess mTypeAccess, Type mType) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_24356 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_307883 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mTypeAccess_superClass_24356)) {
+			if (!mType.equals(__DEC_mTypeAccess_superClass_307883)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3436,9 +3436,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_7BB(
 			TypeAccess mTypeAccess, Type mType) {
-		for (ParameterizedType __DEC_mTypeAccess_type_872498 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mTypeAccess_type_946782 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mTypeAccess_type_872498)) {
+			if (!mType.equals(__DEC_mTypeAccess_type_946782)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3447,7 +3447,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_933232 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_653025 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3456,7 +3456,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_9B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_887557 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_580243 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3780,9 +3780,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_0BB(
 			MMethodDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_778358 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_778358 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_778358)) {
+		MSignature __DEC_mDefinition_mDefinitions_378842 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_378842 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_378842)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -3792,9 +3792,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_1BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_315254 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_893336 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_315254)) {
+			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_893336)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3802,7 +3802,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	}
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_2B(TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_664554 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_596283 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3810,7 +3810,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	}
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_3B(TypeAccess mTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_293677 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_839860 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3819,9 +3819,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_4BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ArrayType __DEC_mTypeAccess_elementType_632855 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mTypeAccess_elementType_145068 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ArrayType.class, "elementType")) {
-			if (!mType.equals(__DEC_mTypeAccess_elementType_632855)) {
+			if (!mType.equals(__DEC_mTypeAccess_elementType_145068)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3829,7 +3829,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	}
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_5B(TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_665735 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_610632 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3838,9 +3838,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_6BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_46047 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_546932 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mTypeAccess_superClass_46047)) {
+			if (!mType.equals(__DEC_mTypeAccess_superClass_546932)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3849,9 +3849,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_7BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ParameterizedType __DEC_mTypeAccess_type_128354 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mTypeAccess_type_874813 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mTypeAccess_type_128354)) {
+			if (!mType.equals(__DEC_mTypeAccess_type_874813)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3859,7 +3859,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	}
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_8B(TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_78752 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_510099 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3867,7 +3867,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	}
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_9B(TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_223376 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_602477 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3925,9 +3925,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_28_1_matchtggpattern_black_nac_0BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_338559 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_338559 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_338559)) {
+		TSignature __DEC_tDefinition_signature_325296 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_325296 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_325296)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -4157,8 +4157,8 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
 		TypeAccess mTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
-		Object _localVariable_0 = csp.getValue("tDefinition", "lowerBound");
-		Object _localVariable_1 = csp.getValue("tDefinition", "upperBound");
+		Object _localVariable_0 = csp.getValue("tDefinition", "upperBound");
+		Object _localVariable_1 = csp.getValue("tDefinition", "lowerBound");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(mDefinitionToTMember);
@@ -4178,12 +4178,12 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 		mDefinition.setReturnType(mTypeAccess);
 		mTypeAccess.setType(mType);
 		ruleResult.getSourceObjects().add(mTypeAccess);
-		int tDefinition_lowerBound_prime = (int) _localVariable_0;
-		int tDefinition_upperBound_prime = (int) _localVariable_1;
+		int tDefinition_upperBound_prime = (int) _localVariable_0;
+		int tDefinition_lowerBound_prime = (int) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
-		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
 		tDefinition.setUpperBound(Integer.valueOf(tDefinition_upperBound_prime));
+		tDefinition.setLowerBound(Integer.valueOf(tDefinition_lowerBound_prime));
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
 		return new Object[] { tType, mDefinitionToTMember, tMethodSignature, tDefinition, mDefinition,
 				mBodyToTAnnotation, mFlowElementToTFlowElement, mTypeAccess, mType, mSignature, ruleResult, csp };
