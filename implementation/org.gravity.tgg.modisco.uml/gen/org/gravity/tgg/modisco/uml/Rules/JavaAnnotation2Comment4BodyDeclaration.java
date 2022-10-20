@@ -218,7 +218,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_51(EMoflonEdge _edge_ownedComment);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_145(EMoflonEdge _edge_ownedComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface JavaAnnotation2Comment4BodyDeclaration extends EObject, Abstrac
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_59(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_157(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

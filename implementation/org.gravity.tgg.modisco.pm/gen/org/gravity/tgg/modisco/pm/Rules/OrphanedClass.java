@@ -113,8 +113,8 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tType, EObject mAnnotatableToTAnnotatable,
-			EObject mTypeToTType, EObject pg, EObject mModel, EObject tProxyPackage, EObject mType,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType,
+			EObject mAnnotatableToTAnnotatable, EObject pg, EObject mModel, EObject tProxyPackage, EObject mType,
 			EObject mModelToTypeGraph);
 
 	/**
@@ -196,8 +196,8 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tType, EObject mAnnotatableToTAnnotatable,
-			EObject mTypeToTType, EObject pg, EObject mModel, EObject tProxyPackage, EObject mType,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType,
+			EObject mAnnotatableToTAnnotatable, EObject pg, EObject mModel, EObject tProxyPackage, EObject mType,
 			EObject mModelToTypeGraph);
 
 	/**
@@ -214,7 +214,7 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_73(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_42(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_77(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_45(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->

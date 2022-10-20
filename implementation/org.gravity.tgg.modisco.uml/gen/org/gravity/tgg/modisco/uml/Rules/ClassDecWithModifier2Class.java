@@ -106,7 +106,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
 			EObject bodyDeclaration, EObject modifier);
 
 	/**
@@ -187,7 +187,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
 			EObject bodyDeclaration, EObject modifier);
 
 	/**
@@ -212,7 +212,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_22(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_100(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -97,7 +97,7 @@ public interface UnresolvedClassDeclaration extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, UnresolvedTypeDeclaration unresolvedType,
-			ModelToTypeGraph eModelToPg, TypeGraph pg, TPackage tProxyPackage, MGravityModel eModel);
+			ModelToTypeGraph eModelToPg, TypeGraph pg, MGravityModel eModel, TPackage tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,7 +114,7 @@ public interface UnresolvedClassDeclaration extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tClass, EObject unresolvedType, EObject eModelToPg,
-			EObject pg, EObject eAnonymousClassDeclarationToTClass, EObject tProxyPackage, EObject eModel);
+			EObject pg, EObject eAnonymousClassDeclarationToTClass, EObject eModel, EObject tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,7 +179,7 @@ public interface UnresolvedClassDeclaration extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TUnresolvedType tClass,
-			ModelToTypeGraph eModelToPg, TypeGraph pg, TPackage tProxyPackage, MGravityModel eModel);
+			ModelToTypeGraph eModelToPg, TypeGraph pg, MGravityModel eModel, TPackage tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,7 +196,7 @@ public interface UnresolvedClassDeclaration extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tClass, EObject unresolvedType, EObject eModelToPg,
-			EObject pg, EObject eAnonymousClassDeclarationToTClass, EObject tProxyPackage, EObject eModel);
+			EObject pg, EObject eAnonymousClassDeclarationToTClass, EObject eModel, EObject tProxyPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface UnresolvedClassDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_89(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_83(EMoflonEdge _edge_ownedTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface UnresolvedClassDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_93(EMoflonEdge _edge_unresolvedItems);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_88(EMoflonEdge _edge_unresolvedItems);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,7 +253,7 @@ public interface UnresolvedClassDeclaration extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(TUnresolvedType tClass, UnresolvedTypeDeclaration unresolvedType, TypeGraph pg,
-			TPackage tProxyPackage, MGravityModel eModel, Match sourceMatch, Match targetMatch);
+			MGravityModel eModel, TPackage tProxyPackage, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,7 +294,7 @@ public interface UnresolvedClassDeclaration extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph eModelToPg, TypeGraph pg,
-			TPackage tProxyPackage, MGravityModel eModel, ModelgeneratorRuleResult ruleResult);
+			MGravityModel eModel, TPackage tProxyPackage, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

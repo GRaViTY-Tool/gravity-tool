@@ -8,7 +8,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Collections;
 
-import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IJavaProject;
@@ -33,8 +32,6 @@ public class APITests {
 
 	public static final String PROJECT_NAME = "APITestProject";
 
-	private static final Logger LOGGER = Logger.getLogger(APITests.class);
-
 	private static IJavaProject project;
 
 	/**
@@ -57,7 +54,7 @@ public class APITests {
 	}
 
 	@Test
-	public void testCreateProgramModelAfterPMChange() throws TransformationFailedException {
+	public void testCreateProgramModelAfterPMChange() throws TransformationFailedException, IOException {
 		final var pm = GravityAPI.createProgramModel(APITests.project, null);
 		assertNotNull(pm);
 
@@ -108,7 +105,7 @@ public class APITests {
 		}
 	}
 
-	private void addInterface(final TypeGraph pm) {
+	private void addInterface(final TypeGraph pm) throws IOException {
 		final var iface = BasicFactory.eINSTANCE.createTInterface();
 		iface.setTName("Added");
 		final var p = pm.getPackage("dummy");
@@ -116,11 +113,6 @@ public class APITests {
 		p.getInterfaces().add(iface);
 		pm.getOwnedTypes().add(iface);
 		pm.getInterfaces().add(iface);
-		try {
-			pm.eResource().save(Collections.emptyMap());
-		}
-		catch(final IOException e) {
-			LOGGER.warn(e);
-		}
+		pm.eResource().save(Collections.emptyMap());
 	}
 }

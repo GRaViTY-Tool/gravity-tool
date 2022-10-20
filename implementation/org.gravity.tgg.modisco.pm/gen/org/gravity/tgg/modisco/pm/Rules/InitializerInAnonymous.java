@@ -99,9 +99,8 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph tPM,
-			AnonymousClassDeclarationToTClass mTypeToTTYpe, TClass tType, MInitializer mDefinition,
-			AnonymousClassDeclaration mType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph tPM, TClass tType,
+			AnonymousClassDeclarationToTClass mTypeToTTYpe, MInitializer mDefinition, AnonymousClassDeclaration mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,9 +116,9 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject mTypeToTTYpe,
-			EObject tType, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject tDefinition, EObject mBodyToTAnnotation, EObject mType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject tType,
+			EObject mTypeToTTYpe, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
+			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,7 +186,7 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph tPM, TMethodSignature tSignature,
-			AnonymousClassDeclarationToTClass mTypeToTTYpe, TClass tType, TModifier tModifier, TMethod tName,
+			TClass tType, AnonymousClassDeclarationToTClass mTypeToTTYpe, TModifier tModifier, TMethod tName,
 			TMethodDefinition tDefinition, AnonymousClassDeclaration mType);
 
 	/**
@@ -204,9 +203,9 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject mTypeToTTYpe,
-			EObject tType, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject tDefinition, EObject mBodyToTAnnotation, EObject mType);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject tType,
+			EObject mTypeToTTYpe, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
+			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +221,7 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_68(EMoflonEdge _edge_model);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_14(EMoflonEdge _edge_model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +229,7 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_72(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_16(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,8 +305,8 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph tPM,
-			AnonymousClassDeclarationToTClass mTypeToTTYpe, TClass tType, AnonymousClassDeclaration mType,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph tPM, TClass tType,
+			AnonymousClassDeclarationToTClass mTypeToTTYpe, AnonymousClassDeclaration mType,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

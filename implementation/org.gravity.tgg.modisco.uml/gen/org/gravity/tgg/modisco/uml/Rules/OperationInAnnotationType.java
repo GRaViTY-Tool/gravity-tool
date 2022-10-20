@@ -47,8 +47,8 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MAbstractMethodDefinition bodyDeclaration,
-			AnnotationTypeDeclaration classDec);
+	boolean isAppropriate_FWD(Match match, AnnotationTypeDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,8 +72,8 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MAbstractMethodDefinition bodyDeclaration,
-			AnnotationTypeDeclaration classDec);
+	void registerObjectsToMatch_FWD(Match match, AnnotationTypeDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,8 +81,8 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MAbstractMethodDefinition bodyDeclaration,
-			AnnotationTypeDeclaration classDec);
+	CSP isAppropriate_solveCsp_FWD(Match match, AnnotationTypeDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,9 +98,9 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne, Interface umlClass,
-			MAbstractMethodDefinition bodyDeclaration, Operation feature, AnnotationTypeDeclaration classDec,
-			ASTNode2Element c2c);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Interface umlClass, ASTNode2Element bd2ne,
+			ASTNode2Element c2c, AnnotationTypeDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			Operation feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,8 +116,8 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bd2ne, EObject umlClass, EObject bodyDeclaration,
-			EObject feature, EObject classDec, EObject c2c);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject umlClass, EObject bd2ne, EObject c2c,
+			EObject classDec, EObject bodyDeclaration, EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,9 +181,9 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne, Interface umlClass,
-			MAbstractMethodDefinition bodyDeclaration, Operation feature, AnnotationTypeDeclaration classDec,
-			ASTNode2Element c2c);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface umlClass, ASTNode2Element bd2ne,
+			ASTNode2Element c2c, AnnotationTypeDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			Operation feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,8 +199,8 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bd2ne, EObject umlClass, EObject bodyDeclaration,
-			EObject feature, EObject classDec, EObject c2c);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject umlClass, EObject bd2ne, EObject c2c,
+			EObject classDec, EObject bodyDeclaration, EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_9(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_108(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,7 +224,7 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_10(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_112(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,8 +256,8 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Interface umlClass, MAbstractMethodDefinition bodyDeclaration, Operation feature,
-			AnnotationTypeDeclaration classDec, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Interface umlClass, AnnotationTypeDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration, Operation feature, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,7 +273,7 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec);
+	boolean checkDEC_FWD(AnnotationTypeDeclaration classDec, MAbstractMethodDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,8 +289,8 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element bd2neParameter,
-			ASTNode2Element c2cParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element c2cParameter,
+			ASTNode2Element bd2neParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -298,9 +298,9 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne, Interface umlClass,
-			MAbstractMethodDefinition bodyDeclaration, Operation feature, AnnotationTypeDeclaration classDec,
-			ASTNode2Element c2c, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface umlClass, ASTNode2Element bd2ne,
+			ASTNode2Element c2c, AnnotationTypeDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			Operation feature, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

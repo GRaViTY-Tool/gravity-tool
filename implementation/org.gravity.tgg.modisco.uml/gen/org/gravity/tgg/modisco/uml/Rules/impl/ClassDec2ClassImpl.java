@@ -151,36 +151,36 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 		MClass bodyDeclaration = (MClass) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = ClassDec2ClassImpl
-				.pattern_ClassDec2Class_1_1_performtransformation_greenFFBB(bodyDeclaration, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result1_green[1];
+				.pattern_ClassDec2Class_1_1_performtransformation_greenFBFB(bodyDeclaration, csp);
+		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result1_green[0];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 
-		Object[] result2_black = ClassDec2ClassImpl.pattern_ClassDec2Class_1_2_collecttranslatedelements_blackBBB(b2e,
-				feature, bodyDeclaration);
+		Object[] result2_black = ClassDec2ClassImpl
+				.pattern_ClassDec2Class_1_2_collecttranslatedelements_blackBBB(feature, bodyDeclaration, b2e);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", "
-					+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature + ", "
+					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ".");
 		}
-		Object[] result2_green = ClassDec2ClassImpl.pattern_ClassDec2Class_1_2_collecttranslatedelements_greenFBBB(b2e,
-				feature, bodyDeclaration);
+		Object[] result2_green = ClassDec2ClassImpl
+				.pattern_ClassDec2Class_1_2_collecttranslatedelements_greenFBBB(feature, bodyDeclaration, b2e);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ClassDec2ClassImpl.pattern_ClassDec2Class_1_3_bookkeepingforedges_blackBBBB(ruleresult,
-				b2e, feature, bodyDeclaration);
+				feature, bodyDeclaration, b2e);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[b2e] = " + b2e + ".");
 		}
-		ClassDec2ClassImpl.pattern_ClassDec2Class_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e, feature,
-				bodyDeclaration);
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
+		ClassDec2ClassImpl.pattern_ClassDec2Class_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, feature,
+				bodyDeclaration, b2e);
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		ClassDec2ClassImpl.pattern_ClassDec2Class_1_5_registerobjects_expressionBBBBB(this, ruleresult, b2e, feature,
-				bodyDeclaration);
+		ClassDec2ClassImpl.pattern_ClassDec2Class_1_5_registerobjects_expressionBBBBB(this, ruleresult, feature,
+				bodyDeclaration, b2e);
 		return ClassDec2ClassImpl.pattern_ClassDec2Class_1_6_expressionFB(ruleresult);
 	}
 
@@ -340,11 +340,11 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject feature,
-			EObject bodyDeclaration) {
-		ruleresult.registerObject("b2e", b2e);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration,
+			EObject b2e) {
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("b2e", b2e);
 
 	}
 
@@ -420,37 +420,37 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 		}
 		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
-		Object[] result1_green = ClassDec2ClassImpl.pattern_ClassDec2Class_11_1_performtransformation_greenFBFB(feature,
+		Object[] result1_green = ClassDec2ClassImpl.pattern_ClassDec2Class_11_1_performtransformation_greenBFFB(feature,
 				csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		MClass bodyDeclaration = (MClass) result1_green[2];
+		MClass bodyDeclaration = (MClass) result1_green[1];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 
-		Object[] result2_black = ClassDec2ClassImpl.pattern_ClassDec2Class_11_2_collecttranslatedelements_blackBBB(b2e,
-				feature, bodyDeclaration);
+		Object[] result2_black = ClassDec2ClassImpl
+				.pattern_ClassDec2Class_11_2_collecttranslatedelements_blackBBB(feature, bodyDeclaration, b2e);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", "
-					+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature + ", "
+					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ".");
 		}
-		Object[] result2_green = ClassDec2ClassImpl.pattern_ClassDec2Class_11_2_collecttranslatedelements_greenFBBB(b2e,
-				feature, bodyDeclaration);
+		Object[] result2_green = ClassDec2ClassImpl
+				.pattern_ClassDec2Class_11_2_collecttranslatedelements_greenFBBB(feature, bodyDeclaration, b2e);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ClassDec2ClassImpl
-				.pattern_ClassDec2Class_11_3_bookkeepingforedges_blackBBBB(ruleresult, b2e, feature, bodyDeclaration);
+				.pattern_ClassDec2Class_11_3_bookkeepingforedges_blackBBBB(ruleresult, feature, bodyDeclaration, b2e);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[b2e] = " + b2e + ".");
 		}
-		ClassDec2ClassImpl.pattern_ClassDec2Class_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e, feature,
-				bodyDeclaration);
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
+		ClassDec2ClassImpl.pattern_ClassDec2Class_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, feature,
+				bodyDeclaration, b2e);
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		ClassDec2ClassImpl.pattern_ClassDec2Class_11_5_registerobjects_expressionBBBBB(this, ruleresult, b2e, feature,
-				bodyDeclaration);
+		ClassDec2ClassImpl.pattern_ClassDec2Class_11_5_registerobjects_expressionBBBBB(this, ruleresult, feature,
+				bodyDeclaration, b2e);
 		return ClassDec2ClassImpl.pattern_ClassDec2Class_11_6_expressionFB(ruleresult);
 	}
 
@@ -609,11 +609,11 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject feature,
-			EObject bodyDeclaration) {
-		ruleresult.registerObject("b2e", b2e);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration,
+			EObject b2e) {
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("b2e", b2e);
 
 	}
 
@@ -749,13 +749,13 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -805,13 +805,13 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
 		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
 		csp.getConstraints().add(nonParameterizedName0);
@@ -891,9 +891,9 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature
 							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				ClassDec2ClassImpl.pattern_ClassDec2Class_24_6_createcorrespondence_greenFBBB(feature, bodyDeclaration,
+				ClassDec2ClassImpl.pattern_ClassDec2Class_24_6_createcorrespondence_greenBBFB(feature, bodyDeclaration,
 						ccMatch);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 
 				Object[] result7_black = ClassDec2ClassImpl
 						.pattern_ClassDec2Class_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1022,9 +1022,9 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
 				ClassDec2ClassImpl.pattern_ClassDec2Class_29_6_perform_greenFFFBB(ruleResult, csp);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
-				//nothing org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result6_green[1];
-				//nothing MClass bodyDeclaration = (MClass) result6_green[2];
+				//nothing org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result6_green[0];
+				//nothing MClass bodyDeclaration = (MClass) result6_green[1];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 
 			} else {
 			}
@@ -1277,38 +1277,38 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 		return null;
 	}
 
-	public static final Object[] pattern_ClassDec2Class_1_1_performtransformation_greenFFBB(MClass bodyDeclaration,
+	public static final Object[] pattern_ClassDec2Class_1_1_performtransformation_greenFBFB(MClass bodyDeclaration,
 			CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		org.eclipse.uml2.uml.Class feature = UMLFactory.eINSTANCE.createClass();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("feature", "name");
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
-		return new Object[] { b2e, feature, bodyDeclaration, csp };
+		return new Object[] { feature, bodyDeclaration, b2e, csp };
 	}
 
-	public static final Object[] pattern_ClassDec2Class_1_2_collecttranslatedelements_blackBBB(ASTNode2Element b2e,
-			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration) {
-		return new Object[] { b2e, feature, bodyDeclaration };
+	public static final Object[] pattern_ClassDec2Class_1_2_collecttranslatedelements_blackBBB(
+			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, ASTNode2Element b2e) {
+		return new Object[] { feature, bodyDeclaration, b2e };
 	}
 
-	public static final Object[] pattern_ClassDec2Class_1_2_collecttranslatedelements_greenFBBB(ASTNode2Element b2e,
-			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration) {
+	public static final Object[] pattern_ClassDec2Class_1_2_collecttranslatedelements_greenFBBB(
+			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, ASTNode2Element b2e) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
+		ruleresult.getCreatedLinkElements().add(b2e);
+		return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
 	}
 
 	public static final Object[] pattern_ClassDec2Class_1_3_bookkeepingforedges_blackBBBB(PerformRuleResult ruleresult,
-			EObject b2e, EObject feature, EObject bodyDeclaration) {
-		if (!b2e.equals(feature)) {
-			if (!b2e.equals(bodyDeclaration)) {
-				if (!bodyDeclaration.equals(feature)) {
-					return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
+			EObject feature, EObject bodyDeclaration, EObject b2e) {
+		if (!bodyDeclaration.equals(feature)) {
+			if (!b2e.equals(feature)) {
+				if (!b2e.equals(bodyDeclaration)) {
+					return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
 				}
 			}
 		}
@@ -1316,28 +1316,28 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_1_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ClassDec2Class";
-		String b2e__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		String b2e__feature____target_name_prime = "target";
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		return new Object[] { ruleresult, b2e, feature, bodyDeclaration, b2e__feature____target,
-				b2e__bodyDeclaration____source };
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		return new Object[] { ruleresult, feature, bodyDeclaration, b2e, b2e__bodyDeclaration____source,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_ClassDec2Class_1_5_registerobjects_expressionBBBBB(ClassDec2Class _this,
-			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
-		_this.registerObjects_FWD(ruleresult, b2e, feature, bodyDeclaration);
+			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
+		_this.registerObjects_FWD(ruleresult, feature, bodyDeclaration, b2e);
 
 	}
 
@@ -1595,38 +1595,38 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 		return null;
 	}
 
-	public static final Object[] pattern_ClassDec2Class_11_1_performtransformation_greenFBFB(
+	public static final Object[] pattern_ClassDec2Class_11_1_performtransformation_greenBFFB(
 			org.eclipse.uml2.uml.Class feature, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		MClass bodyDeclaration = ModiscoFactory.eINSTANCE.createMClass();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
-		b2e.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { b2e, feature, bodyDeclaration, csp };
+		return new Object[] { feature, bodyDeclaration, b2e, csp };
 	}
 
-	public static final Object[] pattern_ClassDec2Class_11_2_collecttranslatedelements_blackBBB(ASTNode2Element b2e,
-			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration) {
-		return new Object[] { b2e, feature, bodyDeclaration };
+	public static final Object[] pattern_ClassDec2Class_11_2_collecttranslatedelements_blackBBB(
+			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, ASTNode2Element b2e) {
+		return new Object[] { feature, bodyDeclaration, b2e };
 	}
 
-	public static final Object[] pattern_ClassDec2Class_11_2_collecttranslatedelements_greenFBBB(ASTNode2Element b2e,
-			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration) {
+	public static final Object[] pattern_ClassDec2Class_11_2_collecttranslatedelements_greenFBBB(
+			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, ASTNode2Element b2e) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
+		ruleresult.getCreatedLinkElements().add(b2e);
+		return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
 	}
 
 	public static final Object[] pattern_ClassDec2Class_11_3_bookkeepingforedges_blackBBBB(PerformRuleResult ruleresult,
-			EObject b2e, EObject feature, EObject bodyDeclaration) {
-		if (!b2e.equals(feature)) {
-			if (!b2e.equals(bodyDeclaration)) {
-				if (!bodyDeclaration.equals(feature)) {
-					return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
+			EObject feature, EObject bodyDeclaration, EObject b2e) {
+		if (!bodyDeclaration.equals(feature)) {
+			if (!b2e.equals(feature)) {
+				if (!b2e.equals(bodyDeclaration)) {
+					return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
 				}
 			}
 		}
@@ -1634,28 +1634,28 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_11_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ClassDec2Class";
-		String b2e__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		String b2e__feature____target_name_prime = "target";
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		return new Object[] { ruleresult, b2e, feature, bodyDeclaration, b2e__feature____target,
-				b2e__bodyDeclaration____source };
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		return new Object[] { ruleresult, feature, bodyDeclaration, b2e, b2e__bodyDeclaration____source,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_ClassDec2Class_11_5_registerobjects_expressionBBBBB(ClassDec2Class _this,
-			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
-		_this.registerObjects_BWD(ruleresult, b2e, feature, bodyDeclaration);
+			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
+		_this.registerObjects_BWD(ruleresult, feature, bodyDeclaration, b2e);
 
 	}
 
@@ -1959,8 +1959,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_21_2_testcorematchandDECs_black_nac_0B(MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_772795 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_772795 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_343851 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_343851 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2132,13 +2132,13 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 		return new Object[] { feature, bodyDeclaration, ccMatch };
 	}
 
-	public static final Object[] pattern_ClassDec2Class_24_6_createcorrespondence_greenFBBB(
+	public static final Object[] pattern_ClassDec2Class_24_6_createcorrespondence_greenBBFB(
 			org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, CCMatch ccMatch) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		b2e.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { b2e, feature, bodyDeclaration, ccMatch };
+		return new Object[] { feature, bodyDeclaration, b2e, ccMatch };
 	}
 
 	public static final Object[] pattern_ClassDec2Class_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2162,8 +2162,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_27_1_matchtggpattern_black_nac_0B(MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_481031 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_481031 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_758420 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_758420 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2261,18 +2261,18 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 
 	public static final Object[] pattern_ClassDec2Class_29_6_perform_greenFFFBB(ModelgeneratorRuleResult ruleResult,
 			CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		org.eclipse.uml2.uml.Class feature = UMLFactory.eINSTANCE.createClass();
 		MClass bodyDeclaration = ModiscoFactory.eINSTANCE.createMClass();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("feature", "name");
 		Object _localVariable_1 = csp.getValue("bodyDeclaration", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(b2e);
-		b2e.setTarget(feature);
 		ruleResult.getTargetObjects().add(feature);
-		b2e.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
+		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
+		ruleResult.getCorrObjects().add(b2e);
 		String feature_name_prime = (String) _localVariable_0;
 		String bodyDeclaration_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
@@ -2280,7 +2280,7 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 		feature.setName(feature_name_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { b2e, feature, bodyDeclaration, ruleResult, csp };
+		return new Object[] { feature, bodyDeclaration, b2e, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_ClassDec2Class_29_7_expressionFB(

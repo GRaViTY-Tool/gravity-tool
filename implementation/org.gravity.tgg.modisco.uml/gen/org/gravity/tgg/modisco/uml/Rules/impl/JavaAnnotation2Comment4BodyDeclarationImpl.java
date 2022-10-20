@@ -823,7 +823,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_51(EMoflonEdge _edge_ownedComment) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_145(EMoflonEdge _edge_ownedComment) {
 
 		Object[] result1_bindingAndBlack = JavaAnnotation2Comment4BodyDeclarationImpl
 				.pattern_JavaAnnotation2Comment4BodyDeclaration_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -885,7 +885,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_59(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_157(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = JavaAnnotation2Comment4BodyDeclarationImpl
 				.pattern_JavaAnnotation2Comment4BodyDeclaration_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -957,13 +957,13 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_type_name = CSPFactoryHelper.eINSTANCE.createVariable("type", true, csp);
-		var_type_name.setValue(__helper.getValue("type", "name"));
-		var_type_name.setType("String");
-
 		Variable var_comment_body = CSPFactoryHelper.eINSTANCE.createVariable("comment", true, csp);
 		var_comment_body.setValue(__helper.getValue("comment", "body"));
 		var_comment_body.setType("String");
+
+		Variable var_type_name = CSPFactoryHelper.eINSTANCE.createVariable("type", true, csp);
+		var_type_name.setValue(__helper.getValue("type", "name"));
+		var_type_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1004,13 +1004,13 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_type_name = CSPFactoryHelper.eINSTANCE.createVariable("type", true, csp);
-		var_type_name.setValue(__helper.getValue("type", "name"));
-		var_type_name.setType("String");
-
 		Variable var_comment_body = CSPFactoryHelper.eINSTANCE.createVariable("comment", true, csp);
 		var_comment_body.setValue(__helper.getValue("comment", "body"));
 		var_comment_body.setType("String");
+
+		Variable var_type_name = CSPFactoryHelper.eINSTANCE.createVariable("type", true, csp);
+		var_type_name.setValue(__helper.getValue("type", "name"));
+		var_type_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1227,8 +1227,8 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 						ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList b2eList = (RuleEntryList) result2_black[0];
 			ASTNode2Element b2e = (ASTNode2Element) result2_black[1];
-			BodyDeclaration body = (BodyDeclaration) result2_black[2];
-			Element element = (Element) result2_black[3];
+			Element element = (Element) result2_black[2];
+			BodyDeclaration body = (BodyDeclaration) result2_black[3];
 			//nothing RuleEntryList type2InterfaceList = (RuleEntryList) result2_black[4];
 			Interface interf = (Interface) result2_black[5];
 			ASTNode2Element type2Interface = (ASTNode2Element) result2_black[6];
@@ -1405,10 +1405,10 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_51__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_51((EMoflonEdge) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_59__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_59((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_145__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_145((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_157__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_157((EMoflonEdge) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2933,10 +2933,10 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 			Comment comment, Interface interf, Element element) {
 		if (!comment.equals(element)) {
 			if (!element.equals(interf)) {
-				for (Element __DEC_comment_annotatedElement_355606 : comment.getAnnotatedElements()) {
-					if (!comment.equals(__DEC_comment_annotatedElement_355606)) {
-						if (!interf.equals(__DEC_comment_annotatedElement_355606)) {
-							if (!element.equals(__DEC_comment_annotatedElement_355606)) {
+				for (Element __DEC_comment_annotatedElement_35864 : comment.getAnnotatedElements()) {
+					if (!comment.equals(__DEC_comment_annotatedElement_35864)) {
+						if (!interf.equals(__DEC_comment_annotatedElement_35864)) {
+							if (!element.equals(__DEC_comment_annotatedElement_35864)) {
 								return new Object[] { comment, interf, element };
 							}
 						}
@@ -3083,7 +3083,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_21_2_testcorematchandDECs_black_nac_0B(
 			Annotation annotation) {
-		for (SingleVariableDeclaration __DEC_annotation_annotations_141578 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_annotation_annotations_935220 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, SingleVariableDeclaration.class, "annotations")) {
 			return new Object[] { annotation };
 		}
@@ -3092,7 +3092,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_21_2_testcorematchandDECs_black_nac_1B(
 			Annotation annotation) {
-		for (AnnotationMemberValuePair __DEC_annotation_value_243510 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_annotation_value_495469 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { annotation };
 		}
@@ -3102,10 +3102,10 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_21_2_testcorematchandDECs_black_nac_2BBB(
 			TypeAccess access, BodyDeclaration body, AnnotationTypeDeclaration type) {
 		if (!body.equals(type)) {
-			for (AbstractTypeDeclaration __DEC_access_superInterfaces_593874 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_access_superInterfaces_956506 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(access, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!body.equals(__DEC_access_superInterfaces_593874)) {
-					if (!type.equals(__DEC_access_superInterfaces_593874)) {
+				if (!body.equals(__DEC_access_superInterfaces_956506)) {
+					if (!type.equals(__DEC_access_superInterfaces_956506)) {
 						return new Object[] { access, body, type };
 					}
 				}
@@ -3116,7 +3116,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess access) {
-		for (ArrayType __DEC_access_elementType_741449 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_access_elementType_607506 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ArrayType.class, "elementType")) {
 			return new Object[] { access };
 		}
@@ -3125,9 +3125,9 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_21_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess access, BodyDeclaration body) {
-		for (ClassDeclaration __DEC_access_superClass_348294 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_access_superClass_468634 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ClassDeclaration.class, "superClass")) {
-			if (!body.equals(__DEC_access_superClass_348294)) {
+			if (!body.equals(__DEC_access_superClass_468634)) {
 				return new Object[] { access, body };
 			}
 		}
@@ -3136,9 +3136,9 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_21_2_testcorematchandDECs_black_nac_5BB(
 			TypeAccess access, BodyDeclaration body) {
-		for (MethodDeclaration __DEC_access_returnType_357995 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_access_returnType_830723 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, MethodDeclaration.class, "returnType")) {
-			if (!body.equals(__DEC_access_returnType_357995)) {
+			if (!body.equals(__DEC_access_returnType_830723)) {
 				return new Object[] { access, body };
 			}
 		}
@@ -3147,7 +3147,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess access) {
-		for (ParameterizedType __DEC_access_type_443805 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_access_type_618224 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ParameterizedType.class, "type")) {
 			return new Object[] { access };
 		}
@@ -3156,7 +3156,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_21_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess access) {
-		for (SingleVariableDeclaration __DEC_access_type_437716 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_access_type_464355 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { access };
 		}
@@ -3165,7 +3165,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess access) {
-		for (AnnotationMemberValuePair __DEC_access_value_6284 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_access_value_247139 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { access };
 		}
@@ -3506,7 +3506,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_27_1_matchtggpattern_black_nac_0B(
 			Annotation annotation) {
-		for (SingleVariableDeclaration __DEC_annotation_annotations_202267 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_annotation_annotations_509734 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, SingleVariableDeclaration.class, "annotations")) {
 			return new Object[] { annotation };
 		}
@@ -3515,7 +3515,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_27_1_matchtggpattern_black_nac_1B(
 			Annotation annotation) {
-		for (AnnotationMemberValuePair __DEC_annotation_value_331855 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_annotation_value_535463 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { annotation };
 		}
@@ -3525,10 +3525,10 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_27_1_matchtggpattern_black_nac_2BBB(
 			TypeAccess access, BodyDeclaration body, AnnotationTypeDeclaration type) {
 		if (!body.equals(type)) {
-			for (AbstractTypeDeclaration __DEC_access_superInterfaces_221412 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_access_superInterfaces_431301 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(access, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!body.equals(__DEC_access_superInterfaces_221412)) {
-					if (!type.equals(__DEC_access_superInterfaces_221412)) {
+				if (!body.equals(__DEC_access_superInterfaces_431301)) {
+					if (!type.equals(__DEC_access_superInterfaces_431301)) {
 						return new Object[] { access, body, type };
 					}
 				}
@@ -3539,7 +3539,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_27_1_matchtggpattern_black_nac_3B(
 			TypeAccess access) {
-		for (ArrayType __DEC_access_elementType_684900 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_access_elementType_534309 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ArrayType.class, "elementType")) {
 			return new Object[] { access };
 		}
@@ -3548,9 +3548,9 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_27_1_matchtggpattern_black_nac_4BB(
 			TypeAccess access, BodyDeclaration body) {
-		for (ClassDeclaration __DEC_access_superClass_75033 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_access_superClass_362418 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ClassDeclaration.class, "superClass")) {
-			if (!body.equals(__DEC_access_superClass_75033)) {
+			if (!body.equals(__DEC_access_superClass_362418)) {
 				return new Object[] { access, body };
 			}
 		}
@@ -3559,9 +3559,9 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_27_1_matchtggpattern_black_nac_5BB(
 			TypeAccess access, BodyDeclaration body) {
-		for (MethodDeclaration __DEC_access_returnType_334645 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_access_returnType_422781 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, MethodDeclaration.class, "returnType")) {
-			if (!body.equals(__DEC_access_returnType_334645)) {
+			if (!body.equals(__DEC_access_returnType_422781)) {
 				return new Object[] { access, body };
 			}
 		}
@@ -3570,7 +3570,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess access) {
-		for (ParameterizedType __DEC_access_type_786546 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_access_type_380796 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ParameterizedType.class, "type")) {
 			return new Object[] { access };
 		}
@@ -3579,7 +3579,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_27_1_matchtggpattern_black_nac_7B(
 			TypeAccess access) {
-		for (SingleVariableDeclaration __DEC_access_type_110349 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_access_type_348970 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { access };
 		}
@@ -3588,7 +3588,7 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_27_1_matchtggpattern_black_nac_8B(
 			TypeAccess access) {
-		for (AnnotationMemberValuePair __DEC_access_value_344404 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_access_value_109193 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { access };
 		}
@@ -3661,10 +3661,10 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 			Comment comment, Interface interf, Element element) {
 		if (!comment.equals(element)) {
 			if (!element.equals(interf)) {
-				for (Element __DEC_comment_annotatedElement_33576 : comment.getAnnotatedElements()) {
-					if (!comment.equals(__DEC_comment_annotatedElement_33576)) {
-						if (!interf.equals(__DEC_comment_annotatedElement_33576)) {
-							if (!element.equals(__DEC_comment_annotatedElement_33576)) {
+				for (Element __DEC_comment_annotatedElement_998271 : comment.getAnnotatedElements()) {
+					if (!comment.equals(__DEC_comment_annotatedElement_998271)) {
+						if (!interf.equals(__DEC_comment_annotatedElement_998271)) {
+							if (!element.equals(__DEC_comment_annotatedElement_998271)) {
 								return new Object[] { comment, interf, element };
 							}
 						}
@@ -3726,17 +3726,17 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, BodyDeclaration body) {
-		if (ruleResult.getSourceObjects().contains(body)) {
-			return new Object[] { ruleResult, body };
+			ModelgeneratorRuleResult ruleResult, Element element) {
+		if (ruleResult.getTargetObjects().contains(element)) {
+			return new Object[] { ruleResult, element };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_JavaAnnotation2Comment4BodyDeclaration_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Element element) {
-		if (ruleResult.getTargetObjects().contains(element)) {
-			return new Object[] { ruleResult, element };
+			ModelgeneratorRuleResult ruleResult, BodyDeclaration body) {
+		if (ruleResult.getSourceObjects().contains(body)) {
+			return new Object[] { ruleResult, body };
 		}
 		return null;
 	}
@@ -3774,17 +3774,17 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 					for (EObject tmpB2e : b2eList.getEntryObjects()) {
 						if (tmpB2e instanceof ASTNode2Element) {
 							ASTNode2Element b2e = (ASTNode2Element) tmpB2e;
-							ASTNode tmpBody = b2e.getSource();
-							if (tmpBody instanceof BodyDeclaration) {
-								BodyDeclaration body = (BodyDeclaration) tmpBody;
-								Element element = b2e.getTarget();
-								if (element != null) {
+							Element element = b2e.getTarget();
+							if (element != null) {
+								ASTNode tmpBody = b2e.getSource();
+								if (tmpBody instanceof BodyDeclaration) {
+									BodyDeclaration body = (BodyDeclaration) tmpBody;
 									if (pattern_JavaAnnotation2Comment4BodyDeclaration_29_2_isapplicablecore_black_nac_0BB(
 											ruleResult, b2e) == null) {
 										if (pattern_JavaAnnotation2Comment4BodyDeclaration_29_2_isapplicablecore_black_nac_1BB(
-												ruleResult, body) == null) {
+												ruleResult, element) == null) {
 											if (pattern_JavaAnnotation2Comment4BodyDeclaration_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, element) == null) {
+													ruleResult, body) == null) {
 												for (EObject tmpType2Interface : type2InterfaceList.getEntryObjects()) {
 													if (tmpType2Interface instanceof ASTNode2Element) {
 														ASTNode2Element type2Interface = (ASTNode2Element) tmpType2Interface;
@@ -3805,8 +3805,8 @@ public class JavaAnnotation2Comment4BodyDeclarationImpl extends AbstractRuleImpl
 																					if (pattern_JavaAnnotation2Comment4BodyDeclaration_29_2_isapplicablecore_black_nac_5BB(
 																							ruleResult, type) == null) {
 																						_result.add(new Object[] {
-																								b2eList, b2e, body,
-																								element,
+																								b2eList, b2e, element,
+																								body,
 																								type2InterfaceList,
 																								interf, type2Interface,
 																								type,

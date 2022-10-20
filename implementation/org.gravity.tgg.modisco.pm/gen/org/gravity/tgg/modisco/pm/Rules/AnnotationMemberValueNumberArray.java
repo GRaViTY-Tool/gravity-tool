@@ -101,9 +101,9 @@ public interface AnnotationMemberValueNumberArray extends EObject, AbstractRule 
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
+			AnnotationMemberValuePair mAnnotationValue,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			NumberLiteral mValue, TAnnotationValue tAnnotationValue);
+			ArrayInitializer mArray, BodyDeclaration mOwner, NumberLiteral mValue, TAnnotationValue tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,9 +119,9 @@ public interface AnnotationMemberValueNumberArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject mArray, EObject tValue, EObject mOwner, EObject mValue, EObject tAnnotationValue);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject mAnnotationValue,
+			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue,
+			EObject mOwner, EObject mValue, EObject tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,9 +186,9 @@ public interface AnnotationMemberValueNumberArray extends EObject, AbstractRule 
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, TNumberNode tValue, BodyDeclaration mOwner,
-			TAnnotationValue tAnnotationValue);
+			AnnotationMemberValuePair mAnnotationValue,
+			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue, TNumberNode tValue,
+			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,9 +204,9 @@ public interface AnnotationMemberValueNumberArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject mArray, EObject tValue, EObject mOwner, EObject mValue, EObject tAnnotationValue);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject mAnnotationValue,
+			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue,
+			EObject mOwner, EObject mValue, EObject tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface AnnotationMemberValueNumberArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_20(EMoflonEdge _edge_tValue);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_11(EMoflonEdge _edge_tValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface AnnotationMemberValueNumberArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_22(EMoflonEdge _edge_expressions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_13(EMoflonEdge _edge_expressions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -307,9 +307,9 @@ public interface AnnotationMemberValueNumberArray extends EObject, AbstractRule 
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
+			AnnotationMemberValuePair mAnnotationValue,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			ModelgeneratorRuleResult ruleResult);
+			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

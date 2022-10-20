@@ -201,7 +201,7 @@ public interface AnnotationTypeDeclaration2Interface extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Interface_1(Interface feature);
+	EObjectContainer isAppropriate_BWD_Interface_0(Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->

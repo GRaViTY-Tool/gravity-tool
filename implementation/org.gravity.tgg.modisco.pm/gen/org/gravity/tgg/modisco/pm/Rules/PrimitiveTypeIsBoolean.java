@@ -210,7 +210,7 @@ public interface PrimitiveTypeIsBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_13(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_84(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface PrimitiveTypeIsBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_14(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_89(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
