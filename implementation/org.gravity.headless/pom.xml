@@ -27,7 +27,8 @@
 				<version>3.3.0</version>
 				<executions>
 					<execution>
-						<id>copy-dependencies</id>
+						<?m2e ignore?>
+            					<id>copy-dependencies</id>
 						<phase>process-resources</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
