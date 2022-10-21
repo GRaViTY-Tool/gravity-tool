@@ -33,7 +33,8 @@
 							<goal>copy-dependencies</goal>
 						</goals>
 						<configuration>
-							<includeScope>runtime</includeScope>
+							<excludeScope>system</excludeScope>
+                        				<includeScope>runtime</includeScope>
 							<stripVersion>true</stripVersion>
 						</configuration>
 					</execution>
