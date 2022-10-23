@@ -37,6 +37,7 @@
 							<excludeScope>provided</excludeScope>
                         				<includeScope>runtime</includeScope>
 							<stripVersion>true</stripVersion>
+        						<excludeGroupIds>p2.eclipse-plugin</excludeGroupIds>
 						</configuration>
 					</execution>
 				</executions>
