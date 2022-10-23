@@ -32,7 +32,7 @@ jobs:
         uses: microsoft/DevSkim-Action@v1
         with:
           output-filename: devskim-results.sarif
-          ignore-globs: "implementation/org.gravity.variability.secpl/tests/carisma.check.variability.tests/examples/**,implementation/org.gravity.secdfd/examples/**"
+          ignore-globs: "**/implementation/org.gravity.variability.secpl/tests/carisma.check.variability.tests/examples/**,**/implementation/org.gravity.secdfd/examples/**"
         
       - name: Upload DevSkim scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v1
