@@ -5,6 +5,7 @@
 
 The GRaViTY tool is a research prototype for the analysis of software design and security, evaluation and execution of refactorings and automated software optimization.
 
+- Sven Peldszus: Security Compliance in Model-driven Development of Software Systems in Presence of Long-Term Evolution and Variants, Springer, 2022 - [book](https://doi.org/10.1007/978-3-658-37665-9)
 - Sebastian Ruland, Géza Kulcsár, Erhan Leblebici, Sven Peldszus, Malte Lochau: Controlling the Attack Surface of Object-Oriented Refactorings. In: Proceedings of the 21st International Conference on Fundamental Approaches in Software Engineering (FASE), pp. 38-55, April 2018 - [paper - open access](http://dx.doi.org/10.1007/978-3-319-89363-1_3)
 - Sven Peldszus, Géza Kulcsár, Malte Lochau, Sandro Schulze: On Continuous Detection of Design Flaws in Evolving Object-Oriented Programs using Incremental Multi-pattern Matching. In: Proceedings of the Conference on Software Engineering (SE), Gesellschaft für Informatik, 2018 - [paper](http://dl.gi.de/20.500.12116/16314)
 - Sven Peldszus, Géza Kulcsár, Malte Lochau, Sandro Schulze: Continuous Detection of Design Flaws in Evolving Object-Oriented Programs using Incremental Multi-pattern Matching. In: Proceedings of the 31st International Conference on Automated Software Engineering (ASE), September 2016 - [preprint](http://rgse.uni-koblenz.de/web/pages/people/peldszus/publications/SKL2016-ContinuousDetectionOfDesignFlawsInEvolvingObject-OrientedProgramsUsingIncrementalMulti-PatternMatching-preprint.pdf)
@@ -68,8 +69,6 @@ Building in Eclipse:
 This project is licensed under the Eclipse Public License - seet the [LICENSE](https://github.com/GRaViTY-Tool/gravity-tool/blob/master/LICENSE) file for details.
 
 ## Contact
-Sven Peldszus (speldszus@uni-koblenz.de)  
-University of Koblenz-Landau  
-Universitätsstraße 1  
-56073 Koblenz  
-Germany
+Sven Peldszus (sven.peldszus@rub.de)  
+Ruhr University Bochum
+Bochum, Germany
