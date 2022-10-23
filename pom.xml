@@ -10,6 +10,7 @@
   <properties>
     <tycho-version>2.7.5</tycho-version>
     <jacoco.version>0.8.8</jacoco.version>
+    <dependency-plugin>3.3.0</dependency-plugin>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     
