@@ -14,7 +14,7 @@
   },
   "externalDocs": {
     "description": "Find out more about GRaViTY",
-    "url": "http://gravity-tool.org"
+    "url": "https://gravity-tool.org"
   },
   "servers": [
     {
@@ -27,7 +27,7 @@
       "description": "Everything about creating program models",
       "externalDocs": {
         "description": "Find out more",
-        "url": "http://gravity-tool.org"
+        "url": "https://gravity-tool.org"
       }
     }
   ],
