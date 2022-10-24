@@ -10,20 +10,25 @@
 			<accessrule kind="accessible" pattern="org/eclipse/modisco/**"/>
 		</accessrules>
 	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="target/dependency/commons-exec.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/graphviz-java.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/j2v8_linux_x86_64.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jcl-over-slf4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jsr305.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jul-to-slf4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/nashorn-promise.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/org.osgi.service.prefs.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/org.ow2.sat4j.core.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/org.ow2.sat4j.pb.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/osgi.annotation.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/slf4j-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/svgSalamander.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/viz.js-graphviz-java.jar"/>
 	<classpathentry kind="src" path="gen">
 		<attributes>
 			<attribute name="ignore_optional_problems" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="lib/graphviz-java-0.16.2.jar" sourcepath="lib/graphviz-java-0.16.2-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/svgSalamander-1.1.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/graal-sdk-20.1.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/icu4j-67.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/js-20.1.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/nashorn-promise-0.1.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/truffle-api-20.1.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/viz.js-for-graphviz-java-2.1.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/regex-20.1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
