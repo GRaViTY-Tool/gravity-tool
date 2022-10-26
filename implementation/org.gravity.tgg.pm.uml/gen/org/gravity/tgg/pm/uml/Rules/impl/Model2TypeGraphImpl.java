@@ -603,7 +603,7 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_TypeGraph_2(TypeGraph pm) {
+	public EObjectContainer isAppropriate_BWD_TypeGraph_0(TypeGraph pm) {
 
 		Object[] result1_bindingAndBlack = Model2TypeGraphImpl
 				.pattern_Model2TypeGraph_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -658,7 +658,7 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_Model_1(Model model) {
+	public EObjectContainer isAppropriate_FWD_Model_0(Model model) {
 
 		Object[] result1_bindingAndBlack = Model2TypeGraphImpl
 				.pattern_Model2TypeGraph_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -723,13 +723,13 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_pm_tName = CSPFactoryHelper.eINSTANCE.createVariable("pm", true, csp);
-		var_pm_tName.setValue(__helper.getValue("pm", "tName"));
-		var_pm_tName.setType("String");
-
 		Variable var_model_name = CSPFactoryHelper.eINSTANCE.createVariable("model", true, csp);
 		var_model_name.setValue(__helper.getValue("model", "name"));
 		var_model_name.setType("String");
+
+		Variable var_pm_tName = CSPFactoryHelper.eINSTANCE.createVariable("pm", true, csp);
+		var_pm_tName.setValue(__helper.getValue("pm", "tName"));
+		var_pm_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -770,13 +770,13 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_pm_tName = CSPFactoryHelper.eINSTANCE.createVariable("pm", true, csp);
-		var_pm_tName.setValue(__helper.getValue("pm", "tName"));
-		var_pm_tName.setType("String");
-
 		Variable var_model_name = CSPFactoryHelper.eINSTANCE.createVariable("model", true, csp);
 		var_model_name.setValue(__helper.getValue("model", "name"));
 		var_model_name.setType("String");
+
+		Variable var_pm_tName = CSPFactoryHelper.eINSTANCE.createVariable("pm", true, csp);
+		var_pm_tName.setValue(__helper.getValue("pm", "tName"));
+		var_pm_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1079,10 +1079,10 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 			return null;
 		case RulesPackage.MODEL2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_2__TYPEGRAPH:
-			return isAppropriate_BWD_TypeGraph_2((TypeGraph) arguments.get(0));
-		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPROPRIATE_FWD_MODEL_1__MODEL:
-			return isAppropriate_FWD_Model_1((Model) arguments.get(0));
+		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_0__TYPEGRAPH:
+			return isAppropriate_BWD_TypeGraph_0((TypeGraph) arguments.get(0));
+		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPROPRIATE_FWD_MODEL_0__MODEL:
+			return isAppropriate_FWD_Model_0((Model) arguments.get(0));
 		case RulesPackage.MODEL2_TYPE_GRAPH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MODEL2_TYPE_GRAPH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

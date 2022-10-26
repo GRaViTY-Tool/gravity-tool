@@ -107,6 +107,9 @@
              <goals>
                <goal>report-integration</goal>
              </goals>
+             <configuration>
+               <propertyName>surefireArgLine</propertyName>
+             </configuration>
            </execution>
         </executions>
       </plugin>
