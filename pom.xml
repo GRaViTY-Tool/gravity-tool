@@ -11,6 +11,9 @@
     <tycho-version>3.0.3</tycho-version>
     <jacoco.version>0.8.8</jacoco.version>
     <dependency-plugin>3.3.0</dependency-plugin>
+
+    <maven.compiler.release>17</maven.compiler.release>
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     
